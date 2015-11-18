@@ -160,17 +160,6 @@ public class MainWindow : Gtk.ApplicationWindow {
             provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         // Gtk < 3.14: No borders along top or left side of window
         string css = """
-            .folder-frame {
-                border-left-width: 0px;
-                border-top-width: 0px;
-            }
-            .sidebar-pane-separator.horizontal .conversation-frame {
-                border-top-width: 0px;
-                border-bottom-width: 0px;
-            }
-            .sidebar-pane-separator.vertical .conversation-frame {
-                border-left-width: 0px;
-            }
             ComposerBox {
                 border-left-width: 0px;
                 border-right-width: 0px;
@@ -193,23 +182,6 @@ public class MainWindow : Gtk.ApplicationWindow {
                 border-top-left-radius: 0px;
             }
         """;
-        
-        if(Gtk.MAJOR_VERSION > 3 || Gtk.MAJOR_VERSION == 3 && Gtk.MINOR_VERSION >= 14) {
-            // Gtk >= 3.14: Borders only along status bar
-            css += """
-                  .folder-frame {
-                      border-right-width: 0px;
-                  }
-                  .sidebar-pane-separator.vertical .folder-frame {
-                      border-bottom-width: 0px;
-                  }
-                  .conversation-frame {
-                      border-top-width: 0px;
-                      border-left-width: 0px;
-                      border-right-width: 0px;
-                  }
-            """;
-        }
 
         try {
             provider.load_from_data(css, -1);
@@ -217,7 +189,7 @@ public class MainWindow : Gtk.ApplicationWindow {
             debug("Could not load styling from data: %s", error.message);
         }
     }
-    
+
     private void create_layout() {
         Gtk.Box main_layout = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
         
@@ -226,49 +198,35 @@ public class MainWindow : Gtk.ApplicationWindow {
         folder_list_scrolled.set_size_request(FOLDER_LIST_WIDTH, -1);
         folder_list_scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
         folder_list_scrolled.add(folder_list);
-        Gtk.Frame folder_frame = new Gtk.Frame(null);
-        folder_frame.shadow_type = Gtk.ShadowType.IN;
-        folder_frame.get_style_context ().add_class ("folder-frame");
-        folder_frame.add(folder_list_scrolled);
         folder_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
-        folder_box.pack_start(folder_frame, true, true);
-        
+        folder_box.get_style_context().add_class(Gtk.STYLE_CLASS_SIDEBAR);
+        folder_box.pack_start(folder_list_scrolled, true, true);
+
         // message list
         conversation_list_scrolled = new Gtk.ScrolledWindow(null, null);
         conversation_list_scrolled.set_size_request(MESSAGE_LIST_WIDTH, -1);
         conversation_list_scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         conversation_list_scrolled.add(conversation_list_view);
-        Gtk.Frame conversation_frame = new Gtk.Frame(null);
-        conversation_frame.shadow_type = Gtk.ShadowType.IN;
-        conversation_frame.get_style_context ().add_class ("conversation-frame");
-        conversation_frame.add(conversation_list_scrolled);
         conversation_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
-        conversation_box.pack_start(conversation_frame, true, true);
+        conversation_box.pack_start(conversation_list_scrolled, true, true);
         
         // Three-pane display.
         status_bar.set_size_request(-1, STATUS_BAR_HEIGHT);
         status_bar.set_border_width(2);
         spinner.set_size_request(STATUS_BAR_HEIGHT - 2, -1);
         status_bar.add(spinner);
-        
-        folder_paned.get_style_context().add_class("sidebar-pane-separator");
-        
-        Gtk.Frame viewer_frame = new Gtk.Frame(null);
-        viewer_frame.shadow_type = Gtk.ShadowType.NONE;
-        viewer_frame.add(conversation_viewer);
-        
+
         // Folder list to the left of everything.
         folder_paned.pack1(folder_box, false, false);
         folder_paned.pack2(conversation_box, true, false);
-        
+
         Gtk.Box search_bar_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
         search_bar_box.pack_start(search_bar, false, false, 0);
         search_bar_box.pack_start(folder_paned);
-        search_bar_box.get_style_context().add_class(Gtk.STYLE_CLASS_SIDEBAR);
-        
+
         // Message list left of message viewer.
         conversations_paned.pack1(search_bar_box, false, false);
-        conversations_paned.pack2(viewer_frame, true, true);
+        conversations_paned.pack2(conversation_viewer, true, true);
         
         if (GearyApplication.instance.is_running_unity)
             main_layout.pack_start(main_toolbar, false, true, 0);
