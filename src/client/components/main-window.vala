@@ -199,7 +199,7 @@ public class MainWindow : Gtk.ApplicationWindow {
         folder_list_scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
         folder_list_scrolled.add(folder_list);
         folder_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
-        folder_box.get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
+        folder_box.get_style_context().add_class(Gtk.STYLE_CLASS_SIDEBAR);
         folder_box.pack_start(folder_list_scrolled, true, true);
 
         // message list
