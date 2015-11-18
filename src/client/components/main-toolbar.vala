@@ -134,9 +134,9 @@ public class MainToolbar : Gtk.Box {
 #endif
 
         insert.clear();
-        Gtk.Menu application_menu = new Gtk.Menu.from_model (GearyApplication.instance.controller.app_menu);
-        insert.add(conversation_header.create_menu_button ("open-menu", application_menu, GearyController.ACTION_GEAR_MENU));
-        conversation_header.add_end (conversation_header.create_pill_buttons (insert));
+        Gtk.Menu application_menu = new Gtk.Menu.from_model(GearyApplication.instance.controller.app_menu);
+        insert.add(conversation_header.create_menu_button("open-menu", application_menu, GearyController.ACTION_GEAR_MENU));
+        conversation_header.add_end(conversation_header.create_pill_buttons(insert));
 
 #if GTK_3_12
         conversation_header.add_end(undo);
