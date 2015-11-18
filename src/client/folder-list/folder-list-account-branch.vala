@@ -13,20 +13,18 @@ public class FolderList.AccountBranch : Sidebar.Branch {
     public AccountBranch(Geary.Account account) {
         base(new Sidebar.Header(account.information.nickname),
             Sidebar.Branch.Options.NONE, normal_folder_comparator, special_folder_comparator);
-        
-        bool rtl = Gtk.Widget.get_default_direction() == Gtk.TextDirection.RTL;
-        
+
         this.account = account;
-        user_folder_group = new SpecialGrouping(2, "", rtl ? "tag-rtl-symbolic" : "tag-symbolic");
+        user_folder_group = new SpecialGrouping(2, "", "tag");
         folder_entries = new Gee.HashMap<Geary.FolderPath, FolderEntry>();
-        
+
         account.information.notify["nickname"].connect(on_nicknamed_changed);
-        
+
         graft(get_root(), user_folder_group);
-        
+
         entry_removed.connect(on_entry_removed);
     }
-    
+
     ~AccountBranch() {
         account.information.notify["nickname"].disconnect(on_nicknamed_changed);
         entry_removed.disconnect(on_entry_removed);
