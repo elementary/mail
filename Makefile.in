@@ -42,10 +42,6 @@ dist:
 	@$(MAKE) -C $(BUILD_DIR) dist
 	@cp build/*.xz .
 
-.PHONY: ubuntu
-ubuntu:
-	@$(MAKE) -C $(BUILD_DIR) ubuntu
-
 .PHONY: valadoc
 valadoc:
 	@$(MAKE) -C $(BUILD_DIR) valadoc
