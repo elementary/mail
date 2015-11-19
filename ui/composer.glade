@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.18.3 -->
 <interface>
-  <!-- interface-requires gtk+ 3.0 -->
+  <requires lib="gtk+" version="3.0"/>
   <object class="GtkActionGroup" id="compose actions">
     <child>
       <object class="GtkAction" id="undo">
@@ -248,7 +249,6 @@
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="orientation">vertical</property>
-    <property name="spacing">2</property>
     <child>
       <object class="GtkAlignment" id="header_area">
         <property name="visible">True</property>
@@ -280,18 +280,17 @@
                 <property name="margin_left">6</property>
                 <property name="margin_right">6</property>
                 <property name="margin_top">6</property>
-                <property name="row_spacing">0</property>
                 <property name="column_spacing">6</property>
                 <child>
                   <object class="GtkLabel" id="to label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">1</property>
+                    <property name="margin_top">6</property>
                     <property name="label" translatable="yes" comments="Address(es) e-mail is to be sent to">_To</property>
                     <property name="use_underline">True</property>
                     <property name="justify">right</property>
                     <property name="mnemonic_widget">to</property>
-                    <property name="margin_top">6</property>
+                    <property name="xalign">1</property>
                     <style>
                       <class name="dim-label"/>
                     </style>
@@ -299,20 +298,18 @@
                   <packing>
                     <property name="left_attach">0</property>
                     <property name="top_attach">1</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel" id="cc label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">1</property>
+                    <property name="margin_top">6</property>
                     <property name="label" translatable="yes">_Cc</property>
                     <property name="use_underline">True</property>
                     <property name="justify">right</property>
                     <property name="mnemonic_widget">to</property>
-                    <property name="margin_top">6</property>
+                    <property name="xalign">1</property>
                     <style>
                       <class name="dim-label"/>
                     </style>
@@ -320,8 +317,6 @@
                   <packing>
                     <property name="left_attach">0</property>
                     <property name="top_attach">2</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
                   </packing>
                 </child>
                 <child>
@@ -333,8 +328,6 @@
                   <packing>
                     <property name="left_attach">1</property>
                     <property name="top_attach">1</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
                   </packing>
                 </child>
                 <child>
@@ -346,36 +339,31 @@
                   <packing>
                     <property name="left_attach">1</property>
                     <property name="top_attach">2</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkEntry" id="subject">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="margin_top">6</property>
                     <property name="hexpand">True</property>
                     <property name="invisible_char">•</property>
-                    <property name="invisible_char_set">True</property>
-                    <property name="margin_top">6</property>
                   </object>
                   <packing>
                     <property name="left_attach">1</property>
                     <property name="top_attach">5</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel" id="subject label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">1</property>
+                    <property name="margin_top">6</property>
                     <property name="label" translatable="yes">_Subject</property>
                     <property name="use_underline">True</property>
                     <property name="justify">right</property>
                     <property name="mnemonic_widget">subject</property>
-                    <property name="margin_top">6</property>
+                    <property name="xalign">1</property>
                     <style>
                       <class name="dim-label"/>
                     </style>
@@ -383,20 +371,18 @@
                   <packing>
                     <property name="left_attach">0</property>
                     <property name="top_attach">5</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel" id="bcc label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">1</property>
+                    <property name="margin_top">6</property>
                     <property name="label" translatable="yes">_Bcc</property>
                     <property name="use_underline">True</property>
                     <property name="justify">right</property>
                     <property name="mnemonic_widget">to</property>
-                    <property name="margin_top">6</property>
+                    <property name="xalign">1</property>
                     <style>
                       <class name="dim-label"/>
                     </style>
@@ -404,8 +390,6 @@
                   <packing>
                     <property name="left_attach">0</property>
                     <property name="top_attach">3</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
                   </packing>
                 </child>
                 <child>
@@ -417,20 +401,18 @@
                   <packing>
                     <property name="left_attach">1</property>
                     <property name="top_attach">3</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel" id="reply to label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">1</property>
+                    <property name="margin_top">6</property>
                     <property name="label" translatable="yes">_Reply-To</property>
                     <property name="use_underline">True</property>
                     <property name="justify">right</property>
                     <property name="mnemonic_widget">to</property>
-                    <property name="margin_top">6</property>
+                    <property name="xalign">1</property>
                     <style>
                       <class name="dim-label"/>
                     </style>
@@ -438,8 +420,6 @@
                   <packing>
                     <property name="left_attach">0</property>
                     <property name="top_attach">4</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
                   </packing>
                 </child>
                 <child>
@@ -451,18 +431,16 @@
                   <packing>
                     <property name="left_attach">1</property>
                     <property name="top_attach">4</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel" id="from label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">1</property>
                     <property name="label" translatable="yes" comments="Geary account mail will be sent from">From</property>
                     <property name="justify">right</property>
                     <property name="mnemonic_widget">to</property>
+                    <property name="xalign">1</property>
                     <style>
                       <class name="dim-label"/>
                     </style>
@@ -470,8 +448,6 @@
                   <packing>
                     <property name="left_attach">0</property>
                     <property name="top_attach">0</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
                   </packing>
                 </child>
                 <child>
@@ -495,8 +471,6 @@
                       <object class="GtkComboBoxText" id="from_multiple">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="entry_text_column">0</property>
-                        <property name="id_column">1</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -508,8 +482,6 @@
                   <packing>
                     <property name="left_attach">1</property>
                     <property name="top_attach">0</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
                   </packing>
                 </child>
               </object>
@@ -581,6 +553,8 @@
       <object class="GtkAlignment" id="toolbar area">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="margin_top">6</property>
+        <property name="margin_bottom">6</property>
         <property name="left_padding">6</property>
         <property name="right_padding">6</property>
         <child>
@@ -594,28 +568,28 @@
       </packing>
     </child>
     <child>
-      <object class="GtkFrame" id="frame1">
+      <object class="GtkSeparator" id="separator1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="label_xalign">0</property>
-        <property name="shadow_type">in</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">4</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkAlignment" id="message area">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
         <child>
-          <object class="GtkAlignment" id="message area">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <child>
-              <placeholder/>
-            </child>
-          </object>
-        </child>
-        <child type="label_item">
           <placeholder/>
         </child>
       </object>
       <packing>
         <property name="expand">True</property>
         <property name="fill">True</property>
-        <property name="position">4</property>
+        <property name="position">5</property>
       </packing>
     </child>
     <child>
@@ -635,7 +609,7 @@
       <packing>
         <property name="expand">False</property>
         <property name="fill">True</property>
-        <property name="position">5</property>
+        <property name="position">6</property>
       </packing>
     </child>
   </object>
