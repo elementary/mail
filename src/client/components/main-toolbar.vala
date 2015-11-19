@@ -132,15 +132,12 @@ public class MainToolbar : Gtk.Box {
         conversation_header.add_end(archive_trash_delete);
         conversation_header.add_end(undo);
 #endif
-        // Application button.  If we exported an app menu, we don't need this.
-        if (!Gtk.Settings.get_default().gtk_shell_shows_app_menu) {
-            insert.clear();
-            Gtk.Menu application_menu = new Gtk.Menu.from_model(
-                GearyApplication.instance.controller.app_menu);
-            insert.add(conversation_header.create_menu_button("emblem-system-symbolic",
-                application_menu, GearyController.ACTION_GEAR_MENU));
-            conversation_header.add_end(conversation_header.create_pill_buttons(insert));
-        }
+
+        insert.clear();
+        Gtk.Menu application_menu = new Gtk.Menu.from_model(GearyApplication.instance.controller.app_menu);
+        insert.add(conversation_header.create_menu_button("open-menu", application_menu, GearyController.ACTION_GEAR_MENU));
+        conversation_header.add_end(conversation_header.create_pill_buttons(insert));
+
 #if GTK_3_12
         conversation_header.add_end(undo);
         conversation_header.add_end(archive_trash_delete);
