@@ -41,7 +41,7 @@ public class MainToolbar : Gtk.Box {
             this, "left-pane-width", SettingsBindFlags.GET);
         this.bind_property("left-pane-width", folder_header, "width-request",
             BindingFlags.SYNC_CREATE, (binding, source_value, ref target_value) => {
-                target_value = left_pane_width + 6;
+                target_value = left_pane_width;
                 return true;
             });
         

@@ -62,3 +62,7 @@ else (DISABLE_CONTRACT)
     endif (INTLTOOL_MERGE_FOUND)
     install (PROGRAMS geary-attach DESTINATION bin)
 endif (DISABLE_CONTRACT)
+
+add_subdirectory(icons)
+add_subdirectory(theming)
+add_subdirectory(ui)
