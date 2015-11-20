@@ -2,8 +2,8 @@ set(ICONS_DEST share/icons/hicolor/scalable/actions)
 
 set(ICON_FILES
     mail-archive-symbolic.svg
-    detach-symbolic.svg
-    format-text-remove-symbolic.svg
+    window-pop-out-symbolic.svg
+    format-text-clear-formatting-symbolic.svg
 )
 
 install(FILES ${ICON_FILES} DESTINATION ${ICONS_DEST})
