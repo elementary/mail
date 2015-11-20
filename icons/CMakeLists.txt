@@ -2,7 +2,7 @@ set(ICONS_DEST share/icons/hicolor/scalable/actions)
 
 set(ICON_FILES
     mail-archive-symbolic.svg
-    detach-symbolic.svg
+    window-pop-out-symbolic.svg
     format-text-remove-symbolic.svg
 )
 
