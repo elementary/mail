@@ -12,7 +12,7 @@ extern const string _SOURCE_ROOT_DIR;
 extern const string GETTEXT_PACKAGE;
 
 public class GearyApplication : Gtk.Application {
-    public const string NAME = "Geary";
+    public const string NAME = "Mail";
     public const string PRGNAME = "geary";
     public const string APP_ID = "org.yorba.geary";
     public const string DESCRIPTION = _("Mail Client");

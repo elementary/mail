@@ -63,14 +63,6 @@ pkg_check_modules(WEBKITGTK110X QUIET webkitgtk-3.0>=1.10.0 webkitgtk-3.0<=1.10.
 
 pkg_check_modules(GTK312X QUIET gtk+-3.0>=3.12.0)
 
-# intl
-include(Gettext)
-if (XGETTEXT_FOUND)
-    message(STATUS "xgettext found")
-else ()
-    message(STATUS "xgettext not found")
-endif ()
-
 #
 # Uninstall target
 #
