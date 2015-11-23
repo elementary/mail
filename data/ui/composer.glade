@@ -91,7 +91,7 @@
     <child>
       <object class="GtkAction" id="removeformat">
         <property name="tooltip" translatable="yes">Remove formatting (Ctrl+Space)</property>
-        <property name="icon_name">format-text-remove-symbolic</property>
+        <property name="icon_name">format-text-clear-formatting-symbolic</property>
       </object>
       <accelerator key="space" modifiers="GDK_CONTROL_MASK"/>
     </child>
@@ -209,7 +209,7 @@
         <property name="label" translatable="yes">Detach</property>
         <property name="short_label" translatable="yes">Detach</property>
         <property name="tooltip" translatable="yes">Detach (Ctrl+D)</property>
-        <property name="icon_name">detach-symbolic</property>
+        <property name="icon_name">window-pop-out-symbolic</property>
       </object>
       <accelerator key="d" modifiers="GDK_CONTROL_MASK"/>
     </child>
