@@ -65,8 +65,7 @@ public class Libnotify : Geary.BaseObject {
         this.folder = null;
         email = null;
         
-        if (!GearyApplication.instance.config.show_notifications ||
-            !monitor.should_notify_new_messages(folder))
+        if (!monitor.should_notify_new_messages(folder))
             return;
         
         string body = ngettext("%d new message", "%d new messages", added).printf(added);
@@ -87,10 +86,9 @@ public class Libnotify : Geary.BaseObject {
         this.folder = folder;
         this.email = email;
         
-        if (!GearyApplication.instance.config.show_notifications ||
-            !monitor.should_notify_new_messages(folder))
+        if (!monitor.should_notify_new_messages(folder))
             return;
-        
+
         // possible to receive email with no originator
         Geary.RFC822.MailboxAddress? primary = email.get_primary_originator();
         if (primary == null) {
@@ -183,9 +181,6 @@ public class Libnotify : Geary.BaseObject {
     }
     
     public static void play_sound(string sound) {
-        if (!GearyApplication.instance.config.play_sounds)
-            return;
-        
         init_sound();
         sound_context.play(0, Canberra.PROP_EVENT_ID, sound);
     }
