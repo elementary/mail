@@ -571,7 +571,7 @@ set(CONSOLE_PACKAGES
     gtk+-3.0
 )
 
-set(GSETTINGS_DIR ${CMAKE_SOURCE_DIR}/desktop)
+set(GSETTINGS_DIR ${CMAKE_SOURCE_DIR}/data)
 
 set(CFLAGS 
     ${DEPS_CFLAGS}

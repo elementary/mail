@@ -1,10 +1,5 @@
-
-file(STRINGS "LINGUAS" TRANSLATED)
-
-IF (XGETTEXT_FOUND)
-    GETTEXT_CREATE_TRANSLATIONS(ALL ${TRANSLATED}
-	    COMMENT "Creating translations.")
-ELSE ()
-    message(STATUS "xgettext not found")
-ENDIF()
-
+include(Translations)
+add_translations_directory(${GETTEXT_PACKAGE})
+add_translations_catalog(${GETTEXT_PACKAGE}
+    ../src
+)

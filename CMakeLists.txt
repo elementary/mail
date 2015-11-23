@@ -63,14 +63,6 @@ pkg_check_modules(WEBKITGTK110X QUIET webkitgtk-3.0>=1.10.0 webkitgtk-3.0<=1.10.
 
 pkg_check_modules(GTK312X QUIET gtk+-3.0>=3.12.0)
 
-# intl
-include(Gettext)
-if (XGETTEXT_FOUND)
-    message(STATUS "xgettext found")
-else ()
-    message(STATUS "xgettext not found")
-endif ()
-
 #
 # Uninstall target
 #
@@ -112,38 +104,9 @@ add_custom_target(
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 )
 
-# Ubuntu
-# Builds the source Debian package used for the Launchpad PPA
-add_custom_target(
-    ubuntu_pre
-    DEPENDS
-        dist
-    COMMAND 
-        ${CMAKE_COMMAND} -E copy ${ARCHIVE_FULL_NAME} ${ARCHIVE_DEBUILD_FULL_NAME}
-    COMMAND
-        tar xvfx ${ARCHIVE_FULL_NAME}
-)
-
-add_custom_target(
-    ubuntu
-    DEPENDS
-        ubuntu_pre
-    COMMAND
-        ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/debian" 
-        "${CMAKE_CURRENT_BINARY_DIR}/${ARCHIVE_BASE_NAME}/debian"
-    COMMAND 
-        debuild -S -k$ENV{GPGKEY}
-    COMMAND
-
-    WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/${ARCHIVE_BASE_NAME}"
-)
-
-add_subdirectory(desktop)
+add_subdirectory(data)
 add_subdirectory(help)
-add_subdirectory(icons)
 add_subdirectory(po)
 add_subdirectory(sql)
 add_subdirectory(src)
-add_subdirectory(theming)
-add_subdirectory(ui)
 

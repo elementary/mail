@@ -16,7 +16,8 @@ public class ComposerBox : Gtk.Frame, ComposerContainer {
     
     public ComposerBox(ComposerWidget composer) {
         this.composer = composer;
-        
+        this.get_style_context().add_class(Gtk.STYLE_CLASS_FLAT);
+
         add(composer);
         composer.editor.focus_in_event.connect(on_focus_in);
         composer.editor.focus_out_event.connect(on_focus_out);
