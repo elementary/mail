@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.18.3 -->
 <interface>
-  <!-- interface-requires gtk+ 3.0 -->
+  <requires lib="gtk+" version="3.12"/>
   <object class="GtkImage" id="image1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -9,8 +10,9 @@
   <object class="GtkImage" id="image2">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
+    <property name="valign">center</property>
     <property name="icon_name">window-close-symbolic</property>
-    <property name="icon-size">1</property>
+    <property name="icon_size">1</property>
   </object>
   <object class="GtkImage" id="image3">
     <property name="visible">True</property>
@@ -22,31 +24,18 @@
     <property name="can_focus">False</property>
     <property name="orientation">vertical</property>
     <child>
-      <object class="GtkSeparator" id="separator1">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">0</property>
-      </packing>
-    </child>
-    <child>
       <object class="GtkBox" id="box: controls">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">2</property>
-        <property name="margin_bottom">2</property>
-        <style>
-          <class name="toolbar"/>
-        </style>
+        <property name="spacing">6</property>
         <child>
           <object class="GtkButton" id="button: close">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="margin_right">6</property>
+            <property name="valign">center</property>
+            <property name="margin_left">3</property>
+            <property name="margin_right">3</property>
             <property name="image">image2</property>
             <property name="relief">none</property>
             <property name="always_show_image">True</property>
@@ -58,25 +47,16 @@
           </packing>
         </child>
         <child>
-          <object class="GtkLabel" id="label: find">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="margin_right">2</property>
-            <property name="yalign">0.4699999988079071</property>
-            <property name="label" translatable="yes">Find:</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
           <object class="GtkEntry" id="entry: find">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
+            <property name="valign">center</property>
+            <property name="margin_top">3</property>
+            <property name="margin_bottom">3</property>
             <property name="invisible_char">●</property>
-            <property name="invisible_char_set">True</property>
+            <property name="primary_icon_name">edit-find-symbolic</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="placeholder_text" translatable="yes">Find</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -86,10 +66,11 @@
         </child>
         <child>
           <object class="GtkButton" id="button: previous">
-            <property name="label" translatable="yes">_Previous</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Previous Result</property>
+            <property name="valign">center</property>
             <property name="margin_left">2</property>
             <property name="image">image3</property>
             <property name="relief">none</property>
@@ -104,10 +85,11 @@
         </child>
         <child>
           <object class="GtkButton" id="button: next">
-            <property name="label" translatable="yes">_Next</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Next result</property>
+            <property name="valign">center</property>
             <property name="image">image1</property>
             <property name="relief">none</property>
             <property name="use_underline">True</property>
@@ -150,6 +132,10 @@
             <property name="position">6</property>
           </packing>
         </child>
+        <style>
+          <class name="toolbar"/>
+          <class name="bottom-toolbar"/>
+        </style>
       </object>
       <packing>
         <property name="expand">False</property>
