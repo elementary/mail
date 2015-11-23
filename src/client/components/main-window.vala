@@ -103,8 +103,7 @@ public class MainWindow : Gtk.ApplicationWindow {
             bind_property("current-folder", this, "title", BindingFlags.SYNC_CREATE, title_func);
             main_toolbar.bind_property("account", this, "title", BindingFlags.SYNC_CREATE, title_func);
         }
-        
-        set_styling();
+
         create_layout();
         on_change_orientation();
     }
@@ -152,42 +151,6 @@ public class MainWindow : Gtk.ApplicationWindow {
             window_maximized = maximized;
 
         return base.window_state_event(event);
-    }
-    
-    private void set_styling() {
-        Gtk.CssProvider provider = new Gtk.CssProvider();
-        Gtk.StyleContext.add_provider_for_screen(Gdk.Display.get_default().get_default_screen(),
-            provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        // Gtk < 3.14: No borders along top or left side of window
-        string css = """
-            ComposerBox {
-                border-left-width: 0px;
-                border-right-width: 0px;
-                border-bottom-width: 0px;
-            }
-            ComposerBox.full-pane {
-                border-top-width: 0px;
-            }
-            ComposerEmbed GtkHeaderBar,
-            ComposerBox GtkHeaderBar,
-            GtkBox.vertical GtkHeaderBar {
-                border-radius: 0px;
-            }
-            .geary-titlebar-left:dir(ltr),
-            .geary-titlebar-right:dir(rtl) {
-                border-top-right-radius: 0px;
-            }
-            .geary-titlebar-right:dir(ltr),
-            .geary-titlebar-left:dir(rtl) {
-                border-top-left-radius: 0px;
-            }
-        """;
-
-        try {
-            provider.load_from_data(css, -1);
-        } catch (Error error) {
-            debug("Could not load styling from data: %s", error.message);
-        }
     }
 
     private void create_layout() {
