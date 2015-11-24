@@ -1,12 +1,10 @@
 [Desktop Entry]
-_Name=Geary
-_GenericName=Mail Client
-_X-GNOME-FullName=Geary Mail
-_Comment=Send and receive email
-_Keywords=Email;E-mail;Mail;
-Icon=internet-mail
-TryExec=geary
-Exec=geary --hidden
+Name=@APP_NAME@
+Comment=@RELEASE_NAME@
+TryExec=@EXEC_NAME@
+Exec=@EXEC_NAME@ --hidden
+Icon=@DESKTOP_ICON@
+Keywords=Email;E-mail;Mail;
 Type=Application
 Terminal=false
 Categories=GNOME;GTK;Network;Email;
