@@ -10,43 +10,38 @@ public class MainToolbar : Gtk.Box {
     public FolderMenu move_folder_menu { get; private set; default = new FolderMenu(); }
     public string account { get; set; }
     public string folder { get; set; }
-    public string search_text { get { return search_entry.text; } }
-    public bool search_entry_has_focus { get { return search_entry.has_focus; } }
     public bool show_close_button { get; set; default = false; }
     public bool show_close_button_left { get; private set; default = true; }
     public bool show_close_button_right { get; private set; default = true; }
     public bool search_open { get; set; default = false; }
     public int left_pane_width { get; set; }
 
-    private PillHeaderbar folder_header;
+    private Gtk.HeaderBar folder_header;
     private PillHeaderbar conversation_header;
     private Gtk.Button archive_button;
     private Gtk.Button trash_delete_button;
     private Binding guest_header_binding;
-    private Gtk.SearchEntry search_entry = new Gtk.SearchEntry();
+    private Gtk.SearchEntry search_entry = new Gtk.SearchEntry ();
     private Geary.ProgressMonitor? search_upgrade_progress_monitor = null;
-    private MonitoredProgressBar search_upgrade_progress_bar = new MonitoredProgressBar();
+    private MonitoredProgressBar search_upgrade_progress_bar = new MonitoredProgressBar ();
     private Geary.Account? current_account = null;
 
     private const string DEFAULT_SEARCH_TEXT = _("Search");
 
-    public signal void search_text_changed(string search_text);
+    public signal void search_text_changed (string search_text);
 
     public MainToolbar() {
         Object(orientation: Gtk.Orientation.HORIZONTAL, spacing: 0);
 
-        folder_header = new PillHeaderbar(GearyApplication.instance.actions);
+        folder_header = new Gtk.HeaderBar ();
         conversation_header = new PillHeaderbar(GearyApplication.instance.actions);
         folder_header.get_style_context().add_class("titlebar");
-        folder_header.get_style_context().add_class("geary-titlebar-left");
         conversation_header.get_style_context().add_class("titlebar");
         conversation_header.get_style_context().add_class("geary-titlebar-right");
 
         // Instead of putting a separator between the two headerbars, as other applications do,
         // we put a separator at the right end of the left headerbar.  This greatly improves
-        // the appearance under the Ambiance theme (see bug #746171).  To get this separator to
-        // line up with the handle of the pane, we need to extend the width of the left-hand
-        // headerbar a bit.  Six pixels is right both for Adwaita and Ambiance.
+        // the appearance under the Ambiance theme (see bug #746171).
         GearyApplication.instance.config.bind(Configuration.MESSAGES_PANE_POSITION_KEY,
             this, "left-pane-width", SettingsBindFlags.GET);
         this.bind_property("left-pane-width", folder_header, "width-request",
@@ -61,7 +56,7 @@ public class MainToolbar : Gtk.Box {
             BindingFlags.SYNC_CREATE);
 
         bool rtl = get_direction() == Gtk.TextDirection.RTL;
-        GearyApplication.instance.controller.account_selected.connect(on_account_changed);
+        GearyApplication.instance.controller.account_selected.connect (on_account_changed);
 
         // Assemble mark menu.
         GearyApplication.instance.load_ui_file("toolbar_mark_menu.ui");
@@ -92,9 +87,9 @@ public class MainToolbar : Gtk.Box {
         search_entry.width_chars = 28;
         search_entry.tooltip_text = _("Search all mail in account for keywords (Ctrl+S)");
         search_entry.valign = Gtk.Align.CENTER;
-        search_entry.changed.connect(on_search_entry_changed);
-        search_entry.key_press_event.connect(on_search_key_press);
-        on_search_entry_changed(); // set initial state
+        search_entry.changed.connect (on_search_entry_changed);
+        search_entry.key_press_event.connect (on_search_key_press);
+        on_search_entry_changed (); // set initial state
         search_entry.has_focus = true;
 
         // Search upgrade progress bar.
@@ -104,12 +99,12 @@ public class MainToolbar : Gtk.Box {
         search_upgrade_progress_bar.visible = false;
         search_upgrade_progress_bar.no_show_all = true;
 
-        set_search_placeholder_text(DEFAULT_SEARCH_TEXT);
+        set_search_placeholder_text (DEFAULT_SEARCH_TEXT);
 
-        folder_header.add_end(empty);
-        folder_header.add_end(search_entry);
-        folder_header.add_end(search_upgrade_progress_bar);
-        folder_header.add_end(new Gtk.Separator(Gtk.Orientation.VERTICAL));
+        folder_header.pack_end (empty);
+        folder_header.pack_end (search_entry);
+        folder_header.pack_end (search_upgrade_progress_bar);
+        folder_header.pack_end (new Gtk.Separator(Gtk.Orientation.VERTICAL));
 
         // Reply buttons
         insert.clear();
@@ -174,6 +169,24 @@ public class MainToolbar : Gtk.Box {
         realize.connect(set_window_buttons);
     }
 
+    public bool search_entry_has_focus {
+        get {
+            return search_entry.has_focus;
+        }
+        set {
+            search_entry.grab_focus ();
+        }
+    }
+
+    public string search_text {
+        get {
+            return search_entry.text;
+        }
+        set {
+            search_entry.text = value;
+        }
+    }
+
     /// Updates the trash button as trash or delete, and shows or hides the archive button.
     public void update_trash_archive_buttons(bool trash, bool archive) {
         string action_name = (trash ? GearyController.ACTION_TRASH_MESSAGE
@@ -215,78 +228,70 @@ public class MainToolbar : Gtk.Box {
         conversation_header.decoration_layout = ":" + buttons[1];
     }
 
-    public void set_search_text(string text) {
-        search_entry.text = text;
-    }
-
-    public void give_search_focus() {
-        search_entry.grab_focus();
-    }
-
-    public void set_search_placeholder_text(string placeholder) {
+    public void set_search_placeholder_text (string placeholder) {
         search_entry.placeholder_text = placeholder;
     }
 
-    private void on_search_entry_changed() {
-        search_text_changed(search_entry.text);
+    private void on_search_entry_changed () {
+        search_text_changed (search_entry.text);
         // Enable/disable clear button.
-        search_entry.secondary_icon_name = search_entry.text != "" ?
-            ("edit-clear-symbolic") : null;
+        search_entry.secondary_icon_name = search_entry.text != "" ? ("edit-clear-symbolic") : null;
     }
 
-    private bool on_search_key_press(Gdk.EventKey event) {
+    private bool on_search_key_press (Gdk.EventKey event) {
         // Clear box if user hits escape.
-        if (Gdk.keyval_name(event.keyval) == "Escape")
+        if (Gdk.keyval_name (event.keyval) == "Escape") {
             search_entry.text = "";
+        }
 
         // Force search if user hits enter.
-        if (Gdk.keyval_name(event.keyval) == "Return")
+        if (Gdk.keyval_name (event.keyval) == "Return") {
             on_search_entry_changed();
+        }
 
         return false;
     }
 
-    private void on_search_upgrade_start() {
+    private void on_search_upgrade_start () {
         // Set the progress bar's width to match the search entry's width.
         int minimum_width = 0;
         int natural_width = 0;
-        search_entry.get_preferred_width(out minimum_width, out natural_width);
+        search_entry.get_preferred_width (out minimum_width, out natural_width);
         search_upgrade_progress_bar.width_request = minimum_width;
 
-        search_entry.hide();
-        search_upgrade_progress_bar.show();
+        search_entry.hide ();
+        search_upgrade_progress_bar.show ();
     }
 
-    private void on_search_upgrade_finished() {
-        search_entry.show();
-        search_upgrade_progress_bar.hide();
+    private void on_search_upgrade_finished () {
+        search_entry.show ();
+        search_upgrade_progress_bar.hide ();
     }
 
-    private void on_account_changed(Geary.Account? account) {
-        on_search_upgrade_finished(); // Reset search box.
+    private void on_account_changed (Geary.Account? account) {
+        on_search_upgrade_finished (); // Reset search box.
 
         if (search_upgrade_progress_monitor != null) {
-            search_upgrade_progress_monitor.start.disconnect(on_search_upgrade_start);
-            search_upgrade_progress_monitor.finish.disconnect(on_search_upgrade_finished);
+            search_upgrade_progress_monitor.start.disconnect (on_search_upgrade_start);
+            search_upgrade_progress_monitor.finish.disconnect (on_search_upgrade_finished);
             search_upgrade_progress_monitor = null;
         }
 
         if (current_account != null) {
-            current_account.information.notify[Geary.AccountInformation.PROP_NICKNAME].disconnect(
-                on_nickname_changed);
+            current_account.information.notify[Geary.AccountInformation.PROP_NICKNAME].disconnect (on_nickname_changed);
         }
 
         if (account != null) {
             search_upgrade_progress_monitor = account.search_upgrade_monitor;
-            search_upgrade_progress_bar.set_progress_monitor(search_upgrade_progress_monitor);
+            search_upgrade_progress_bar.set_progress_monitor (search_upgrade_progress_monitor);
 
-            search_upgrade_progress_monitor.start.connect(on_search_upgrade_start);
-            search_upgrade_progress_monitor.finish.connect(on_search_upgrade_finished);
-            if (search_upgrade_progress_monitor.is_in_progress)
+            search_upgrade_progress_monitor.start.connect (on_search_upgrade_start);
+            search_upgrade_progress_monitor.finish.connect (on_search_upgrade_finished);
+            if (search_upgrade_progress_monitor.is_in_progress) {
                 on_search_upgrade_start(); // Remove search box, we're already in progress.
+            }
 
-            account.information.notify[Geary.AccountInformation.PROP_NICKNAME].connect(
-                on_nickname_changed);
+            account.information.notify[Geary.AccountInformation.PROP_NICKNAME].connect (on_nickname_changed);
 
             search_upgrade_progress_bar.text = _("Indexing %s account").printf(account.information.nickname);
         }
@@ -298,7 +303,7 @@ public class MainToolbar : Gtk.Box {
 
     private void on_nickname_changed() {
         if (current_account == null ||GearyApplication.instance.controller.get_num_accounts() == 1) {
-            set_search_placeholder_text(DEFAULT_SEARCH_TEXT);
+            set_search_placeholder_text (DEFAULT_SEARCH_TEXT);
         } else {
             set_search_placeholder_text (_("Search %s").printf(current_account.information.nickname));
         }

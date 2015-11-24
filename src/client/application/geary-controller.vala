@@ -1209,7 +1209,7 @@ public class GearyController : Geary.BaseObject {
         cancel_inbox(account);
 
         previous_non_search_folder = null;
-        main_window.main_toolbar.set_search_text(""); // Reset search.
+        main_window.main_toolbar.search_text = ""; // Reset search.
         if (current_account == account) {
             cancel_folder();
             switch_to_first_inbox(); // Switch folder.
@@ -2639,7 +2639,7 @@ public class GearyController : Geary.BaseObject {
     }
 
     private void on_search() {
-        main_window.main_toolbar.give_search_focus();
+        main_window.main_toolbar.search_entry_has_focus = true;
     }
 
     private void on_conversation_list() {
