@@ -103,14 +103,24 @@ public class MainToolbar : Gtk.Box {
         conversation_header.add_start(conversation_header.create_pill_buttons(insert));
 
         // Mark, copy, move.
-        insert.clear();
-        insert.add(conversation_header.create_menu_button("marker-symbolic", mark_menu,
-            GearyController.ACTION_MARK_AS_MENU));
-        insert.add(conversation_header.create_menu_button(rtl ? "tag-rtl-symbolic" : "tag-symbolic",
-            copy_folder_menu, GearyController.ACTION_COPY_MENU));
-        insert.add(conversation_header.create_menu_button("folder-symbolic", move_folder_menu,
-            GearyController.ACTION_MOVE_MENU));
-        conversation_header.add_start(conversation_header.create_pill_buttons(insert));
+        Gtk.MenuButton mark = new Gtk.MenuButton();
+        mark.image = new Gtk.Image.from_icon_name("edit-flag", Gtk.IconSize.LARGE_TOOLBAR);
+        mark.popup = mark_menu;
+        mark.tooltip_text = _("Mark conversation");
+
+        Gtk.MenuButton tag = new Gtk.MenuButton();
+        tag.image = new Gtk.Image.from_icon_name("tag-new", Gtk.IconSize.LARGE_TOOLBAR);
+        tag.popup = copy_folder_menu;
+        tag.tooltip_text = _("Add label to conversation");
+
+        Gtk.MenuButton move = new Gtk.MenuButton();
+        move.image = new Gtk.Image.from_icon_name("mail-move", Gtk.IconSize.LARGE_TOOLBAR);
+        move.popup = move_folder_menu;
+        move.tooltip_text = _("Move conversation");
+
+        conversation_header.pack_start(mark);
+        conversation_header.pack_start(tag);
+        conversation_header.pack_start(move);
 
         Gtk.Button trash_delete = new Gtk.Button();
         trash_delete.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_TRASH_MESSAGE);
