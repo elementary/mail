@@ -74,10 +74,11 @@ public class MainToolbar : Gtk.Box {
         GearyApplication.instance.load_ui_file("toolbar_empty_menu.ui");
         Gtk.Menu empty_menu = (Gtk.Menu) GearyApplication.instance.ui_manager.get_widget("/ui/ToolbarEmptyMenu");
         empty_menu.foreach(GtkUtil.show_menuitem_accel_labels);
-        insert.clear();
-        insert.add(folder_header.create_menu_button(null, empty_menu,
-            GearyController.ACTION_EMPTY_MENU));
-        Gtk.Box empty = folder_header.create_pill_buttons(insert, false);
+
+        Gtk.MenuButton empty = new Gtk.MenuButton();
+        empty.image = new Gtk.Image.from_icon_name("edit-clear", Gtk.IconSize.LARGE_TOOLBAR);
+        empty.popup = empty_menu;
+        empty.tooltip_text = _("Empty Spam or Trash folders");
 
         // Search
         insert.clear();
