@@ -2,17 +2,12 @@
 # Build and install geary.desktop
 #
 
-install(FILES geary.appdata.xml DESTINATION share/appdata)
+configure_file(geary.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/geary.desktop)
+configure_file(geary-autostart.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/geary-autostart.desktop)
 
-include (FindDesktopFileValidate)
-if (DESKTOP_VALIDATE)
-    if (DESKTOP_FILE_VALIDATE_FOUND)
-        VALIDATE_DESKTOP_FILE (geary)
-        VALIDATE_DESKTOP_FILE (geary-autostart)
-    else (DESKTOP_FILE_VALIDATE_FOUND)
-        message (FATAL_ERROR "desktop-file-validate must be installed to validate generated .desktop file")
-    endif (DESKTOP_FILE_VALIDATE_FOUND)
-endif (DESKTOP_VALIDATE)
+install(FILES geary.appdata.xml DESTINATION share/appdata)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/geary.desktop DESTINATION share/applications)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/geary-autostart.desktop DESTINATION share/applications)
 
 # Optional: run update-desktop-database at install time.
 # (This has to happen after the geary.desktop file is installed.)
