@@ -87,22 +87,9 @@ public class MainWindow : Gtk.ApplicationWindow {
         main_toolbar = new MainToolbar();
         main_toolbar.bind_property("search-open", search_bar, "search-mode-enabled",
             BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL);
-        if (!GearyApplication.instance.is_running_unity) {
-            main_toolbar.show_close_button = true;
-            set_titlebar(main_toolbar);
-            title = GearyApplication.NAME;
-        } else {
-            BindingTransformFunc title_func = (binding, source, ref target) => {
-                string folder = current_folder != null ? current_folder.get_display_name() + " " : "";
-                string account = main_toolbar.account != null ? "(%s)".printf(main_toolbar.account) : "";
-
-                target = "%s%s - %s".printf(folder, account, GearyApplication.NAME);
-
-                return true;
-            };
-            bind_property("current-folder", this, "title", BindingFlags.SYNC_CREATE, title_func);
-            main_toolbar.bind_property("account", this, "title", BindingFlags.SYNC_CREATE, title_func);
-        }
+        main_toolbar.show_close_button = true;
+        set_titlebar(main_toolbar);
+        title = GearyApplication.NAME;
 
         create_layout();
         on_change_orientation();
@@ -255,19 +242,8 @@ public class MainWindow : Gtk.ApplicationWindow {
             folder_progress = folder.opening_monitor;
             progress_monitor.add(folder_progress);
         }
-
-        // disconnect from old folder
-        if (current_folder != null)
-            current_folder.properties.notify.disconnect(update_headerbar);
-
-        // connect to new folder
-        if (folder != null)
-            folder.properties.notify.connect(update_headerbar);
-
         // swap it in
         current_folder = folder;
-
-        update_headerbar();
     }
 
     private void on_account_available(Geary.AccountInformation account) {
@@ -317,36 +293,6 @@ public class MainWindow : Gtk.ApplicationWindow {
             horizontal ? Configuration.FOLDER_LIST_PANE_POSITION_HORIZONTAL_KEY
             : Configuration.FOLDER_LIST_PANE_POSITION_VERTICAL_KEY,
             folder_paned, "position");
-    }
-
-    private void update_headerbar() {
-        if (current_folder == null) {
-            main_toolbar.account = null;
-            main_toolbar.folder = null;
-
-            return;
-        }
-
-        main_toolbar.account = current_folder.account.information.nickname;
-
-        /// Current folder's name followed by its unread count, i.e. "Inbox (42)"
-        // except for Drafts and Outbox, where we show total count
-        int count;
-        switch (current_folder.special_folder_type) {
-            case Geary.SpecialFolderType.DRAFTS:
-            case Geary.SpecialFolderType.OUTBOX:
-                count = current_folder.properties.email_total;
-            break;
-
-            default:
-                count = current_folder.properties.email_unread;
-            break;
-        }
-
-        if (count > 0)
-            main_toolbar.folder = _("%s (%d)").printf(current_folder.get_display_name(), count);
-        else
-            main_toolbar.folder = current_folder.get_display_name();
     }
 }
 
