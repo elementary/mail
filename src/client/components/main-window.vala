@@ -15,7 +15,6 @@ public class MainWindow : Gtk.ApplicationWindow {
     public FolderList.Tree folder_list { get; private set; default = new FolderList.Tree(); }
     public ConversationListStore conversation_list_store { get; private set; default = new ConversationListStore(); }
     public MainToolbar main_toolbar { get; private set; }
-    public SearchBar search_bar { get; private set; default = new SearchBar(); }
     public ConversationListView conversation_list_view  { get; private set; }
     public ConversationViewer conversation_viewer { get; private set; default = new ConversationViewer(); }
     public StatusBar status_bar { get; private set; default = new StatusBar(); }
@@ -85,8 +84,6 @@ public class MainWindow : Gtk.ApplicationWindow {
 
         // Toolbar.
         main_toolbar = new MainToolbar();
-        main_toolbar.bind_property("search-open", search_bar, "search-mode-enabled",
-            BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL);
         main_toolbar.show_close_button = true;
         set_titlebar(main_toolbar);
         title = GearyApplication.NAME;
