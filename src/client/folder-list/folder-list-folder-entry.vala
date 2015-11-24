@@ -49,13 +49,13 @@ public class FolderList.FolderEntry : FolderList.AbstractFolderEntry, Sidebar.In
 
         switch (folder.special_folder_type) {
             case Geary.SpecialFolderType.NONE:
-                return "tag";
+                return "folder-tag";
 
             case Geary.SpecialFolderType.INBOX:
                 return "mail-inbox";
 
             case Geary.SpecialFolderType.DRAFTS:
-                return "accessories-text-editor";
+                return "folder-documents";
 
             case Geary.SpecialFolderType.SENT:
                 return "mail-sent";
