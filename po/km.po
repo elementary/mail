@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2015-11-20 14:02-0600\n"
-"PO-Revision-Date: 2015-11-23 01:07+0000\n"
+"PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Jim Nelson <jim@yorba.org>\n"
 "Language-Team: Khmer (Cambodia) "
 "(http://www.transifex.com/projects/p/geary/language/km_KH/)\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-11-23 05:55+0000\n"
+"X-Launchpad-Export-Date: 2015-11-24 05:41+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 "Language: km_KH\n"
 
@@ -1391,105 +1391,3 @@ msgstr ""
 #: ../src/client/components/search-bar.vala:118
 msgid "Indexing %s account"
 msgstr ""
-
-#~ msgid "%u conversations selected."
-#~ msgstr "បាន​ជ្រើស​ការ​សន្ទនា %u"
-
-#~ msgid "Compose Message"
-#~ msgstr "តែង​សារ"
-
-#~ msgid "Do you want to discard the unsaved message?"
-#~ msgstr "តើ​អ្នក​ចង់​ចោល​សារ​ដែល​មិន​ទាន់​រក្សា​ទុក​ឬទេ ?"
-
-#~ msgid "Drop files here"
-#~ msgstr "ជម្រុះ​ឯកសារ​នៅ​ទី​នេះ"
-
-#~ msgid "Geary Mail"
-#~ msgstr "Geary Mail"
-
-#~ msgid "IMAP Credentials"
-#~ msgstr "លិខិត​តែង​តាំង IMAP"
-
-#~ msgid "IMAP settings"
-#~ msgstr "ការ​កំណត់ IMAP"
-
-#~ msgid "Large"
-#~ msgstr "ធំ"
-
-#~ msgid "Medium"
-#~ msgstr "មធ្យម"
-
-#~ msgid "Password:"
-#~ msgstr "ពាក្យ​សម្ងាត់ ៖"
-
-#~ msgid "Please enter your email password"
-#~ msgstr "សូម​បញ្ចូល​ពាក្យ​សម្ងាត់​អ៊ីមែល​របស់​អ្នក"
-
-#~ msgid "Port:"
-#~ msgstr "ច្រក ៖"
-
-#~ msgid "Real name:"
-#~ msgstr "ឈ្មោះ​ពិត ៖"
-
-#~ msgid "SMTP Credentials"
-#~ msgstr "លិខិត​តែង​តាំង SMTP"
-
-#~ msgid "SMTP settings"
-#~ msgstr "ការ​កំណត់ SMTP"
-
-#~ msgid "SSL/TLS encryption:"
-#~ msgstr "អ៊ិនគ្រីប SSL/TLS ៖"
-
-#~ msgid "Sans Serif"
-#~ msgstr "Sans Serif"
-
-#~ msgid "Send and receive email"
-#~ msgstr "ផ្ញើ​និង​ទទួល​អ៊ីមែល"
-
-#~ msgid "Serif"
-#~ msgstr "Serif"
-
-#~ msgid "Server:"
-#~ msgstr "ម៉ាស៊ីន​បម្រើ ៖"
-
-#~ msgid "Service:"
-#~ msgstr "សេវាកម្ម ៖"
-
-#~ msgid "Small"
-#~ msgstr "តូច"
-
-#~ msgid "To add them as attachments"
-#~ msgstr "ដើម្បី​បន្ថែម​ជា​ឯកសារ​ភ្ជាប់"
-
-#~ msgid "Unable to login to email server"
-#~ msgstr "មិន​អាច​ចូល​ម៉ាស៊ីន​បម្រើ​សំបុត្រ​បាន​ទេ"
-
-#~ msgid "Username:"
-#~ msgstr "ឈ្មោះ​អ្នក​ប្រើ ៖"
-
-#~ msgid "_Center"
-#~ msgstr "_កណ្ដាល"
-
-#~ msgid "_Delete"
-#~ msgstr "_លុប"
-
-#~ msgid "_Details"
-#~ msgstr "_លម្អិត"
-
-#~ msgid "_Justify"
-#~ msgstr "_ត្រឹម​សង​ខាង"
-
-#~ msgid "_Left"
-#~ msgstr "_ឆ្វេង"
-
-#~ msgid "_Password:"
-#~ msgstr "_ពាក្យ​សម្ងាត់ ៖"
-
-#~ msgid "_Right"
-#~ msgstr "_ស្ដាំ"
-
-#~ msgid "_Send"
-#~ msgstr "_ផ្ញើ​ទៅ"
-
-#~ msgid "_Username:"
-#~ msgstr "_ឈ្មោះ​អ្នក​ប្រើ ៖"

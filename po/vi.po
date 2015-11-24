@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2015-11-20 14:02-0600\n"
-"PO-Revision-Date: 2015-11-23 01:13+0000\n"
+"PO-Revision-Date: 2015-11-23 11:52+0000\n"
 "Last-Translator: Jim Nelson <jim@yorba.org>\n"
 "Language-Team: Vietnamese "
 "(http://www.transifex.com/projects/p/geary/language/vi/)\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-11-23 05:56+0000\n"
+"X-Launchpad-Export-Date: 2015-11-24 05:41+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 "Language: vi\n"
 
@@ -1385,27 +1385,3 @@ msgstr ""
 #: ../src/client/components/search-bar.vala:118
 msgid "Indexing %s account"
 msgstr ""
-
-#~ msgid "%u conversations selected."
-#~ msgstr "%u cuộc đối thoại đã được chọn."
-
-#~ msgid "Compose Message"
-#~ msgstr "Soạn tin nhắn"
-
-#~ msgid "Do you want to discard the unsaved message?"
-#~ msgstr "Bạn có muốn loại bỏ các tin nhắn chưa được lưu hay không?"
-
-#~ msgid "Geary Mail"
-#~ msgstr "Dịch vụ mail Geary"
-
-#~ msgid "Large"
-#~ msgstr "Lớn"
-
-#~ msgid "Medium"
-#~ msgstr "Trung bình"
-
-#~ msgid "Please enter your email password"
-#~ msgstr "Xin vui lòng điền vào mật khẩu email của bạn"
-
-#~ msgid "Sans Serif"
-#~ msgstr "Sans Serif"

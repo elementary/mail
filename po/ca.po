@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-20 14:02-0600\n"
-"PO-Revision-Date: 2015-11-23 00:58+0000\n"
+"PO-Revision-Date: 2015-11-23 11:52+0000\n"
 "Last-Translator: Jim Nelson <jim@yorba.org>\n"
 "Language-Team: Catalan "
 "(http://www.transifex.com/projects/p/geary/language/ca/)\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-11-23 05:53+0000\n"
+"X-Launchpad-Export-Date: 2015-11-24 05:41+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 "Language: ca\n"
 
@@ -1390,173 +1390,3 @@ msgstr ""
 #: ../src/client/components/search-bar.vala:118
 msgid "Indexing %s account"
 msgstr ""
-
-#~ msgid "Geary Mail"
-#~ msgstr "Geary Mail"
-
-#~ msgid "Send and receive email"
-#~ msgstr "Envieu i rebeu correus electrònics"
-
-#~ msgid "Compose Message"
-#~ msgstr "Redacta un missatge"
-
-#~ msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
-#~ msgstr ""
-#~ "<span weight=\"bold\" size=\"larger\">No s'ha pogut eliminar el "
-#~ "compte</span> "
-
-#~ msgid ""
-#~ "A composer window associated with this account is currently open. Send or "
-#~ "discard the message and try again."
-#~ msgstr ""
-#~ "Hi ha una finestra de redacció associada a aquest compte que està oberta. "
-#~ "Desa o descarta el missatge i torna-ho a intentar."
-
-#~ msgid "Please wait while Geary validates your account."
-#~ msgstr "Espereu mentre Geary està validant el vostre compte."
-
-#~ msgid "_Left"
-#~ msgstr "_Esquerra"
-
-#~ msgid "_Right"
-#~ msgstr "_Dreta"
-
-#~ msgid "_Center"
-#~ msgstr "_Centrat"
-
-#~ msgid "_Justify"
-#~ msgstr "_Justificat"
-
-#~ msgid "Link (Ctrl+L)"
-#~ msgstr "Enllaç (Ctrl+L)"
-
-#~ msgid "C_olor"
-#~ msgstr "C_olor"
-
-#~ msgid "Remove formatting (Ctrl+Space)"
-#~ msgstr "Suprimeix la formatació (Ctrl+Espai)"
-
-#~ msgid "Bold (Ctrl+B)"
-#~ msgstr "Negreta (Ctrl+B)"
-
-#~ msgid "Italic (Ctrl+I)"
-#~ msgstr "Cursiva (Ctrl+I)"
-
-#~ msgid "Underline (Ctrl+U)"
-#~ msgstr "Subratllat (Ctrl+U)"
-
-#~ msgid "Strikethrough (Ctrl+K)"
-#~ msgstr "Barrat (Ctrl+K)"
-
-#~ msgid "Large"
-#~ msgstr "Gran"
-
-#~ msgid "Medium"
-#~ msgstr "Mitjà"
-
-#~ msgid "Small"
-#~ msgstr "Petit"
-
-#~ msgid "Sans Serif"
-#~ msgstr "Sans Serif"
-
-#~ msgid "Serif"
-#~ msgstr "Serif"
-
-#~ msgid "_Send"
-#~ msgstr "_Envia"
-
-#~ msgid "_Attach File"
-#~ msgstr "_Adjunta fitxer"
-
-#~ msgid "Drop files here"
-#~ msgstr "Deixeu anar els fitxers aquí"
-
-#~ msgid "To add them as attachments"
-#~ msgstr "Per afegir-los com a adjunts"
-
-#~ msgid "IMAP settings"
-#~ msgstr "Configuració de l'IMAP"
-
-#~ msgid "SMTP settings"
-#~ msgstr "Configuració del SMTP"
-
-#~ msgid "STARTTLS"
-#~ msgstr "STARTTLS"
-
-#~ msgid "No authentication re_quired"
-#~ msgstr "_No es requereix autenticació"
-
-#~ msgid "Composer"
-#~ msgstr "Autor"
-
-#~ msgid "Storage"
-#~ msgstr "Emmagatzematge"
-
-#~ msgid "SMTP Credentials"
-#~ msgstr "Credencials SMTP"
-
-#~ msgid "Reading"
-#~ msgstr "Lectura"
-
-#~ msgid "_Automatically select next message"
-#~ msgstr "Selecciona el missatge següent _automàticament"
-
-#~ msgid "Enable _spell checking"
-#~ msgstr "Activa la verificació de l'_ortografia"
-
-#~ msgid "Notifications"
-#~ msgstr "Notificacions"
-
-#~ msgid "_Play notification sounds"
-#~ msgstr "_Reprodueix un so per a les notificacions"
-
-#~ msgid "Show _notifications for new mail"
-#~ msgstr "Mostra _notificacions quan arribi correu nou"
-
-#~ msgid ""
-#~ "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
-#~ "account?</span> "
-#~ msgstr ""
-#~ "<span weight=\"bold\" size=\"larger\">N'esteu segur que voleu eliminar "
-#~ "aquest compte?</span> "
-
-#~ msgid ""
-#~ "All email associated with this account will be removed from your computer. "
-#~ "This will not affect email on the server."
-#~ msgstr ""
-#~ "Tots els missatges associats a aquest compte s'eliminaran del vostre "
-#~ "ordinador. Això no afectarà els missatges al servidor."
-
-#~ msgid "Nickname:"
-#~ msgstr "Sobrenom:"
-
-#~ msgid "Email address:"
-#~ msgstr "Adreça de correu electrònic:"
-
-#~ msgid "Archive conversation (Delete, Backspace, A)"
-#~ msgstr "Arxiva la conversa (Suprimir, Retrocés, A)"
-
-#~ msgid "Password:"
-#~ msgstr "Contrasenya:"
-
-#~ msgid "Port:"
-#~ msgstr "Port:"
-
-#~ msgid "Real name:"
-#~ msgstr "Nom real:"
-
-#~ msgid "SSL"
-#~ msgstr "SSL"
-
-#~ msgid "SSL/TLS encryption:"
-#~ msgstr "Xifrat SSL/TLS:"
-
-#~ msgid "Server:"
-#~ msgstr "Servidor:"
-
-#~ msgid "Unable to login to email server"
-#~ msgstr "No s'ha pogut entrar al teu compte al servidor del correu electrònic"
-
-#~ msgid "_Details"
-#~ msgstr "_Detalls"

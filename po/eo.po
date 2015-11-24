@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2015-11-20 14:02-0600\n"
-"PO-Revision-Date: 2015-11-23 01:01+0000\n"
+"PO-Revision-Date: 2015-11-23 11:52+0000\n"
 "Last-Translator: Jim Nelson <jim@yorba.org>\n"
 "Language-Team: Esperanto "
 "(http://www.transifex.com/projects/p/geary/language/eo/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-11-23 05:54+0000\n"
+"X-Launchpad-Export-Date: 2015-11-24 05:41+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 "Language: eo\n"
 
@@ -1388,45 +1388,3 @@ msgstr ""
 #: ../src/client/components/search-bar.vala:118
 msgid "Indexing %s account"
 msgstr ""
-
-#~ msgid "%u conversations selected."
-#~ msgstr "%u konversacioj elektitaj."
-
-#~ msgid "Compose Message"
-#~ msgstr "Verki mesaĝon"
-
-#~ msgid "Do you want to discard the unsaved message?"
-#~ msgstr "Ĉu vi volas forigi la nekonservitan dosieron?"
-
-#~ msgid "Geary Mail"
-#~ msgstr "Geary Mail"
-
-#~ msgid "Large"
-#~ msgstr "Granda"
-
-#~ msgid "Password:"
-#~ msgstr "Pasvorto:"
-
-#~ msgid "Please enter your email password"
-#~ msgstr "Bonvole enigu vian retpoŝtan pasvorton"
-
-#~ msgid "Sans Serif"
-#~ msgstr "Sans Serif"
-
-#~ msgid "Send and receive email"
-#~ msgstr "Sendi kaj ricevi retpoŝton"
-
-#~ msgid "Small"
-#~ msgstr "Malgranda"
-
-#~ msgid "To add them as attachments"
-#~ msgstr "Por aldoni ilin kiel kunsendaĵoj"
-
-#~ msgid "Unable to login to email server"
-#~ msgstr "Ne konekteblas al retpoŝta servilo"
-
-#~ msgid "_Delete"
-#~ msgstr "_Forigi"
-
-#~ msgid "_Password:"
-#~ msgstr "_Pasvorto:"

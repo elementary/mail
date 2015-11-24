@@ -10,14 +10,14 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-20 14:02-0600\n"
-"PO-Revision-Date: 2015-11-23 01:02+0000\n"
-"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
+"PO-Revision-Date: 2015-11-23 20:59+0000\n"
+"Last-Translator: Félix Brezo <felixbrezo@gmail.com>\n"
 "Language-Team: Basque <librezale@librezale.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-11-23 05:53+0000\n"
+"X-Launchpad-Export-Date: 2015-11-24 05:41+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 "Language: eu\n"
 
@@ -46,11 +46,11 @@ msgstr "Zakarrontzia | Trash | Rubbish | Rubbish Bin"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:595
 msgid "Archive | Archives"
-msgstr ""
+msgstr "Artxiboa | Artxiboak"
 
 #: ../src/engine/api/geary-special-folder-type.vala:24
 msgid "Inbox"
-msgstr "Sarrera"
+msgstr ""
 
 #: ../src/engine/api/geary-special-folder-type.vala:27
 msgid "Drafts"
@@ -100,11 +100,11 @@ msgstr "Bat ere ez"
 
 #: ../src/engine/api/geary-service.vala:20
 msgid "IMAP"
-msgstr ""
+msgstr "IMAP"
 
 #: ../src/engine/api/geary-service.vala:23
 msgid "SMTP"
-msgstr ""
+msgstr "SMTP"
 
 #: ../src/engine/api/geary-service-provider.vala:52
 msgid "Gmail"
@@ -253,7 +253,7 @@ msgstr "Bisitatu Yorba-ren webgunea"
 
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete conversation"
-msgstr ""
+msgstr "Ezabatu berriketa"
 
 #: ../src/client/application/geary-controller.vala:62
 msgid "Delete conversation (Shift+Delete)"
@@ -261,7 +261,7 @@ msgstr "Ezabatu berriketa (Maius+Ezabatu)"
 
 #: ../src/client/application/geary-controller.vala:63
 msgid "Delete conversations (Shift+Delete)"
-msgstr "Ezabatu berriketa (Maius+Ezabatu)"
+msgstr "Ezabatu berriketak (Maius+Ezabatu)"
 
 #: ../src/client/application/geary-controller.vala:67
 msgid "Move conversation to Trash (Delete, Backspace)"
@@ -405,7 +405,7 @@ msgstr "Aurrera (Ktrl+L, F)"
 
 #: ../src/client/application/geary-controller.vala:491
 msgid "Empty"
-msgstr ""
+msgstr "Hutsik"
 
 #: ../src/client/application/geary-controller.vala:492
 msgid "Empty Spam or Trash folders"
@@ -587,6 +587,7 @@ msgstr ""
 "Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "\n"
 "Launchpad Contributions:\n"
+"  Félix Brezo https://launchpad.net/~febrezo\n"
 "  Iñaki Larrañaga Murgoitio https://launchpad.net/~dooteo-zundan"
 
 #: ../src/client/application/geary-controller.vala:1976
@@ -1431,379 +1432,3 @@ msgstr "Bilatu kontuaren mezu guztietan gako-hitzak (Ktrl+S)"
 #: ../src/client/components/search-bar.vala:118
 msgid "Indexing %s account"
 msgstr "'%s' kontua indexatzen"
-
-#~ msgid "Geary"
-#~ msgstr "Geary"
-
-#~ msgid "Geary Mail"
-#~ msgstr "Geary posta"
-
-#~ msgid "Send and receive email"
-#~ msgstr "Bidali eta jaso mezuak"
-
-#~ msgid "Email;E-mail;Mail;"
-#~ msgstr "posta;helb.elek;helb.el.;"
-
-#~ msgid "Compose Message"
-#~ msgstr "Prestatu mezua"
-
-#~ msgid "Copyright 2011-2014 Yorba Foundation"
-#~ msgstr "Copyright-a 2011-2014 Yorba Fundazioa"
-
-#~ msgid "_Delete"
-#~ msgstr "E_zabatu"
-
-#~ msgid "_Trash"
-#~ msgstr "_Zakarrontzia"
-
-#~ msgid "Move conversation to trash (Delete, Backspace)"
-#~ msgstr "Bota berriketa zakarrontzira (Ezabatu, Atzera tekla)"
-
-#~ msgid "Move conversations to trash (Delete, Backspace)"
-#~ msgstr "Bota berriketak zakarrontzira (Ezabatu, Atzera tekla)"
-
-#~ msgid "_Donate"
-#~ msgstr "_Eman dirua"
-
-#~ msgid "attach|enclosed|enclosing|cover letter"
-#~ msgstr "eranskina|inguratua|inguratzea|gutun-azala"
-
-#~ msgid "Do you want to discard the unsaved message?"
-#~ msgstr "Gorde gabeko mezua baztertzea nahi duzu?"
-
-#~ msgid "Please enter your password"
-#~ msgstr "Sartu zure pasahitza"
-
-#~ msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
-#~ msgstr "<span weight=\"bold\" size=\"larger\">Ezin da kontua kendu</span> "
-
-#~ msgid ""
-#~ "A composer window associated with this account is currently open. Send or "
-#~ "discard the message and try again."
-#~ msgstr ""
-#~ "Kontu honekin esleitutako konposatzailearen leihoa irekita dago. Bidali edo "
-#~ "baztertu mezua eta saiatu berriro."
-
-#~ msgid "Add account"
-#~ msgstr "Gehitu kontua"
-
-#~ msgid "Edit account"
-#~ msgstr "Editatu kontua"
-
-#~ msgid "Remove account"
-#~ msgstr "Kendu kontua"
-
-#~ msgid "Please wait while Geary validates your account."
-#~ msgstr "Itxaron Geary-k zure kontua balidatu arte."
-
-#~ msgid "_Undo"
-#~ msgstr "_Desegin"
-
-#~ msgid "_Redo"
-#~ msgstr "_Berregin"
-
-#~ msgid "Cu_t"
-#~ msgstr "_Ebaki"
-
-#~ msgid "_Paste"
-#~ msgstr "_Itsatsi"
-
-#~ msgid "_Left"
-#~ msgstr "E_zkerrean"
-
-#~ msgid "_Right"
-#~ msgstr "E_skuinean"
-
-#~ msgid "_Center"
-#~ msgstr "_Erdian"
-
-#~ msgid "_Justify"
-#~ msgstr "_Justifikatu"
-
-#~ msgid "Link (Ctrl+L)"
-#~ msgstr "Estekatu (Ktrl+L)"
-
-#~ msgid "C_olor"
-#~ msgstr "_Kolorea"
-
-#~ msgid "More options"
-#~ msgstr "Aukera gehiago"
-
-#~ msgid "Quote text  (Ctrl+])"
-#~ msgstr "Jarri komatxoak testuari (Ktrl+])"
-
-#~ msgid "Unquote text (Ctrl+[)"
-#~ msgstr "Kendu komatxoak testutik (Ctrl+[)"
-
-#~ msgid "Remove formatting (Ctrl+Space)"
-#~ msgstr "Kendu formatua (Ktrl+Zuriunea)"
-
-#~ msgctxt "Clipboard paste with rich text"
-#~ msgid "Paste _With Formatting"
-#~ msgstr "Itsatsi _formatuarekin"
-
-#~ msgid "Bold (Ctrl+B)"
-#~ msgstr "Lodia (Ktrl+B)"
-
-#~ msgid "Italic (Ctrl+I)"
-#~ msgstr "Etzana (Ktrl+I)"
-
-#~ msgid "Underline (Ctrl+U)"
-#~ msgstr "Azpimarratua (Ktrl+U)"
-
-#~ msgid "Strikethrough (Ctrl+K)"
-#~ msgstr "Marratua (Ktrl+K)"
-
-#~ msgid "_Rich Text"
-#~ msgstr "Testu a_beratsa"
-
-#~ msgid "Lar_ge"
-#~ msgstr "_Handia"
-
-#~ msgid "Large"
-#~ msgstr "Handia"
-
-#~ msgid "_Medium"
-#~ msgstr "_Ertaina"
-
-#~ msgid "Medium"
-#~ msgstr "Ertaina"
-
-#~ msgid "_Small"
-#~ msgstr "T_xikia"
-
-#~ msgid "Small"
-#~ msgstr "Txikia"
-
-#~ msgid "S_ans Serif"
-#~ msgstr "S_ans serif"
-
-#~ msgid "Sans Serif"
-#~ msgstr "Sans Serif"
-
-#~ msgid "S_erif"
-#~ msgstr "S_erif"
-
-#~ msgid "Serif"
-#~ msgstr "Serif"
-
-#~ msgid "_Fixed Width"
-#~ msgstr "_Zabalera finkoa"
-
-#~ msgid "Fixed Width"
-#~ msgstr "Zabalera finkoa"
-
-#~ msgid "Detach"
-#~ msgstr "Desuztartu"
-
-#~ msgid "_Send"
-#~ msgstr "_Bidali"
-
-#~ msgid "Send"
-#~ msgstr "Bidali"
-
-#~ msgid "_Attach File"
-#~ msgstr "_Erantsi fitxategia"
-
-#~ msgid "Attach File"
-#~ msgstr "Erantsi fitxategia"
-
-#~ msgid "_Include Original Attachments"
-#~ msgstr "_Barneratu jatorrizko eranskinak"
-
-#~ msgid "Include Original Attachments"
-#~ msgstr "Barneratu jatorrizko eranskinak"
-
-#~ msgid "_To:"
-#~ msgstr "Nor_i:"
-
-#~ msgid "_Cc:"
-#~ msgstr "_Cc:"
-
-#~ msgid "_Subject:"
-#~ msgstr "_Gaia:"
-
-#~ msgid "_Bcc:"
-#~ msgstr "_Bcc:"
-
-#~ msgid "Drop files here"
-#~ msgstr "Jaregin fitxategiak hemen"
-
-#~ msgid "To add them as attachments"
-#~ msgstr "Eranskin gisa gehitzeko"
-
-#~ msgid "Find:"
-#~ msgstr "Bilatu:"
-
-#~ msgid "_Previous"
-#~ msgstr "_Aurrekoa"
-
-#~ msgid "_Next"
-#~ msgstr "_Hurrengoa"
-
-#~ msgid "_Case sensitive"
-#~ msgstr "_Maiuskula/minuskula"
-
-#~ msgid "label"
-#~ msgstr "etiketa"
-
-#~ msgid "Password"
-#~ msgstr "Pasahitza"
-
-#~ msgid "E_mail address"
-#~ msgstr "_Helb. elektronikoa"
-
-#~ msgid "_Password"
-#~ msgstr "_Pasahitza"
-
-#~ msgid "S_ervice"
-#~ msgstr "_Zerbitzua"
-
-#~ msgid "N_ame"
-#~ msgstr "_Izena"
-
-#~ msgid "N_ickname"
-#~ msgstr "_Goitizena"
-
-#~ msgid "Work, Home, etc."
-#~ msgstr "Lana, etxea, e.a."
-
-#~ msgid "_Save sent mail"
-#~ msgstr "_Gorde bidalitako mezua"
-
-#~ msgid "IMAP settings"
-#~ msgstr "IMAP ezarpenak"
-
-#~ msgid "Se_rver"
-#~ msgstr "_Zerbitzaria"
-
-#~ msgid "P_ort"
-#~ msgstr "A_taka"
-
-#~ msgid "Ser_ver"
-#~ msgstr "_Zerbitzaria"
-
-#~ msgid "Por_t"
-#~ msgstr "_Ataka"
-
-#~ msgid "SMTP settings"
-#~ msgstr "SMTP ezarpenak"
-
-#~ msgid "User_name"
-#~ msgstr "_Erabiltzaile-izena"
-
-#~ msgid "Pass_word"
-#~ msgstr "_Pasahitza"
-
-#~ msgid "SMTP username"
-#~ msgstr "SMTP erabiltzaile-izena"
-
-#~ msgid "SMTP password"
-#~ msgstr "SMTP pasahitza"
-
-#~ msgid "_Username"
-#~ msgstr "_Erabiltzaile-izena"
-
-#~ msgid "IMAP username"
-#~ msgstr "IMAP erabiltzaile-izena"
-
-#~ msgid "IMAP password"
-#~ msgstr "IMAP pasahitza"
-
-#~ msgid "Encr_yption"
-#~ msgstr "_Enkriptazioa"
-
-#~ msgid "Encrypt_ion"
-#~ msgstr "Enk_riptazioa"
-
-#~ msgid "SSL/TLS"
-#~ msgstr "SSL/TLS"
-
-#~ msgid "STARTTLS"
-#~ msgstr "STARTTLS"
-
-#~ msgid "No authentication re_quired"
-#~ msgstr "Ez da autentifikaziorik behar"
-
-#~ msgid "Use IMAP cre_dentials"
-#~ msgstr "Erabili IMAP _kredentzialak"
-
-#~ msgid "Storage"
-#~ msgstr "Biltegia"
-
-#~ msgid "_Download mail"
-#~ msgstr "_Deskargatu posta"
-
-#~ msgid "Composer"
-#~ msgstr "Konposatzailea"
-
-#~ msgid "Save dra_fts on server"
-#~ msgstr "Gorde _zirriborroak zerbitzarian"
-
-#~ msgid "Si_gn emails:"
-#~ msgstr "_Sinatu mezuak:"
-
-#~ msgid "SMTP Credentials"
-#~ msgstr "SMTP kredentzialak"
-
-#~ msgid "Username:"
-#~ msgstr "Erabiltzaile-izena:"
-
-#~ msgid "Password:"
-#~ msgstr "Pasahitza:"
-
-#~ msgid "_Remember password"
-#~ msgstr "_Gogoratu pasahitza"
-
-#~ msgid "Preferences"
-#~ msgstr "Hobespenak"
-
-#~ msgid "Reading"
-#~ msgstr "Irakurketa"
-
-#~ msgid "_Automatically select next message"
-#~ msgstr "Hautatu _automatikoki hurrengo mezua"
-
-#~ msgid "_Display conversation preview"
-#~ msgstr "_Bistaratu berriketaren aurrebista"
-
-#~ msgid "Enable _spell checking"
-#~ msgstr "Gaitu _ortografia-egiaztapena"
-
-#~ msgid "Notifications"
-#~ msgstr "Jakinarazpenak"
-
-#~ msgid "_Play notification sounds"
-#~ msgstr "_Erreproduzitu jakinarazpenaren soinuak"
-
-#~ msgid "Show _notifications for new mail"
-#~ msgstr "Erakutsi mezu berrien _jakinarazpenak"
-
-#~ msgid "Notify of new mail at start_up"
-#~ msgstr "Jakinarazi mezu berriak _abioan"
-
-#~ msgid ""
-#~ "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
-#~ "account?</span> "
-#~ msgstr ""
-#~ "<span weight=\"bold\" size=\"larger\">Ziur zaude kontu hori ezabatzea nahi "
-#~ "duzula?</span> "
-
-#~ msgid ""
-#~ "All email associated with this account will be removed from your computer. "
-#~ "This will not affect email on the server."
-#~ msgstr ""
-#~ "Kontu honekin esleitutako mezu guztiak ordenagailutik ezabatuko dira. Ez dio "
-#~ "zerbitzariko mezuei eraginik egingo."
-
-#~ msgid "Nickname:"
-#~ msgstr "Goitizena:"
-
-#~ msgid "Email address:"
-#~ msgstr "Helb. elektronikoa:"
-
-#~ msgid "Geary upgrade in progress."
-#~ msgstr "Geary-ren eguneraketa lantzen."
-
-#~ msgid "C_lose"
-#~ msgstr "It_xi"

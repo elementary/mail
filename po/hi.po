@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2015-11-20 14:02-0600\n"
-"PO-Revision-Date: 2015-11-23 01:04+0000\n"
+"PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Jim Nelson <jim@yorba.org>\n"
 "Language-Team: Hindi (India) "
 "(http://www.transifex.com/projects/p/geary/language/hi_IN/)\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-11-23 05:54+0000\n"
+"X-Launchpad-Export-Date: 2015-11-24 05:41+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 "Language: hi_IN\n"
 
@@ -1381,65 +1381,3 @@ msgstr ""
 #: ../src/client/components/search-bar.vala:118
 msgid "Indexing %s account"
 msgstr ""
-
-#~ msgid "%u read messages"
-#~ msgstr "%u पढे हुए संदेश"
-
-#~ msgid ""
-#~ "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
-#~ "account?</span> "
-#~ msgstr ""
-#~ "<span weight=\"bold\" size=\"larger\">क्या आप सुनिश्चित हैं कि आप इस खाते को "
-#~ "हटाना चाहते हैं?</span> "
-
-#~ msgid ""
-#~ "All email associated with this account will be removed from your computer. "
-#~ "This will not affect email on the server."
-#~ msgstr ""
-#~ "इस खाते से संबंधित सभी ईमेल आपके कंप्यूटर से हटा दिये जाएंगे । इससे सर्वर पर "
-#~ "कोई प्रभाव नहीं पड़ेगा।"
-
-#~ msgid "Copyright 2011-2013 Yorba Foundation"
-#~ msgstr "सत्त्वाधिकार 2011-2013 योरबा फ़ाउंडेशन"
-
-#~ msgid "Delete conversation (Delete, Backspace, A)"
-#~ msgstr "वार्तालाप को मिटाएं (Delete, Backspace, A)"
-
-#~ msgid "Delete conversations (Delete, Backspace, A)"
-#~ msgstr "वार्तालापों को मिटाएं (Delete, Backspace, A)"
-
-#~ msgid "Email address:"
-#~ msgstr "ईमेल एड्रेस:"
-
-#~ msgid "N_ickname:"
-#~ msgstr "उपनाम"
-
-#~ msgid "Nickname:"
-#~ msgstr "उपनाम:"
-
-#~ msgid "No authentication re_quired"
-#~ msgstr "प्रमाणीकरण की आवश्यकता नहीं"
-
-#~ msgid "Please wait while Geary validates your account."
-#~ msgstr "कृपया प्रतीक्षा करें, गीयरी आपके खाते की पुष्टि कर रहा है."
-
-#~ msgid "Remove formatting (Ctrl+Space)"
-#~ msgstr "प्रारूपण हटाएं (Ctrl+Space)"
-
-#~ msgid "SSL"
-#~ msgstr "SSL"
-
-#~ msgid "STARTTLS"
-#~ msgstr "STARTTLS"
-
-#~ msgid "Storage"
-#~ msgstr "भंडार"
-
-#~ msgid "_Attach File"
-#~ msgstr "फ़ाइल संलग्न करें"
-
-#~ msgid "_Download mail:"
-#~ msgstr "_मेल डाउनलोड करें:"
-
-#~ msgid "_Remember passwords"
-#~ msgstr "_पासवर्ड याद रखें"

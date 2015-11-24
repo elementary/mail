@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2015-11-20 14:02-0600\n"
-"PO-Revision-Date: 2015-11-23 01:00+0000\n"
+"PO-Revision-Date: 2015-11-23 11:49+0000\n"
 "Last-Translator: Jim Nelson <jim@yorba.org>\n"
 "Language-Team: English (Canada) "
 "(http://www.transifex.com/projects/p/geary/language/en_CA/)\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-11-23 05:56+0000\n"
+"X-Launchpad-Export-Date: 2015-11-24 05:41+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 "Language: en_CA\n"
 
@@ -1389,156 +1389,3 @@ msgstr ""
 #: ../src/client/components/search-bar.vala:118
 msgid "Indexing %s account"
 msgstr ""
-
-#~ msgid "%u conversations selected."
-#~ msgstr "%u conversations selected."
-
-#~ msgid "C_olor"
-#~ msgstr "C_olour"
-
-#~ msgid "Compose Message"
-#~ msgstr "Compose Message"
-
-#~ msgid "Composer"
-#~ msgstr "Composer"
-
-#~ msgid "Do you want to discard the unsaved message?"
-#~ msgstr "Do you want to discard the unsaved message?"
-
-#~ msgid "Drop files here"
-#~ msgstr "Drop files here"
-
-#~ msgid "Enable _spell checking"
-#~ msgstr "Enable _spell checking"
-
-#~ msgid "Encr_yption:"
-#~ msgstr "Encr_yption:"
-
-#~ msgid "Encrypt_ion:"
-#~ msgstr "Encrypt_ion:"
-
-#~ msgid "Geary Mail"
-#~ msgstr "Geary Mail"
-
-#~ msgid "IMAP Credentials"
-#~ msgstr "IMAP Credentials"
-
-#~ msgid "IMAP settings"
-#~ msgstr "IMAP settings"
-
-#~ msgid "Large"
-#~ msgstr "Large"
-
-#~ msgid "Medium"
-#~ msgstr "Medium"
-
-#~ msgid "N_ame:"
-#~ msgstr "N_ame:"
-
-#~ msgid "Notifications"
-#~ msgstr "Notifications"
-
-#~ msgid "P_ort:"
-#~ msgstr "P_ort:"
-
-#~ msgid "Pass_word:"
-#~ msgstr "Pass_word:"
-
-#~ msgid "Password:"
-#~ msgstr "Password:"
-
-#~ msgid "Please enter your email password"
-#~ msgstr "Please enter your e-mail password"
-
-#~ msgid "Por_t:"
-#~ msgstr "Por_t:"
-
-#~ msgid "Port:"
-#~ msgstr "Port:"
-
-#~ msgid "Reading"
-#~ msgstr "Reading"
-
-#~ msgid "Real name:"
-#~ msgstr "Real name:"
-
-#~ msgid "SMTP Credentials"
-#~ msgstr "SMTP Credentials"
-
-#~ msgid "SMTP settings"
-#~ msgstr "SMTP settings"
-
-#~ msgid "SSL/TLS encryption:"
-#~ msgstr "SSL/TLS encryption:"
-
-#~ msgid "Sans Serif"
-#~ msgstr "Sans Serif"
-
-#~ msgid "Se_rver:"
-#~ msgstr "Se_rver:"
-
-#~ msgid "Send and receive email"
-#~ msgstr "Send and receive e-mail"
-
-#~ msgid "Ser_ver:"
-#~ msgstr "Ser_ver:"
-
-#~ msgid "Serif"
-#~ msgstr "Serif"
-
-#~ msgid "Server:"
-#~ msgstr "Server:"
-
-#~ msgid "Service:"
-#~ msgstr "Service:"
-
-#~ msgid "Show _notifications for new mail"
-#~ msgstr "Show _notifications for new mail"
-
-#~ msgid "Small"
-#~ msgstr "Small"
-
-#~ msgid "To add them as attachments"
-#~ msgstr "To add them as attachments"
-
-#~ msgid "Unable to login to email server"
-#~ msgstr "Unable to log-in to e-mail server"
-
-#~ msgid "User_name:"
-#~ msgstr "User_name:"
-
-#~ msgid "Username:"
-#~ msgstr "Username:"
-
-#~ msgid "_Automatically select next message"
-#~ msgstr "_Automatically select next message"
-
-#~ msgid "_Center"
-#~ msgstr "_Centre"
-
-#~ msgid "_Delete"
-#~ msgstr "_Delete"
-
-#~ msgid "_Details"
-#~ msgstr "_Details"
-
-#~ msgid "_Justify"
-#~ msgstr "_Justify"
-
-#~ msgid "_Left"
-#~ msgstr "_Left"
-
-#~ msgid "_Password:"
-#~ msgstr "_Password:"
-
-#~ msgid "_Play notification sounds"
-#~ msgstr "_Play notification sounds"
-
-#~ msgid "_Right"
-#~ msgstr "_Right"
-
-#~ msgid "_Send"
-#~ msgstr "_Send"
-
-#~ msgid "_Username:"
-#~ msgstr "_Username:"
