@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
-"POT-Creation-Date: 2015-11-20 14:02-0600\n"
+"POT-Creation-Date: 2015-11-24 09:47-0800\n"
 "PO-Revision-Date: 2015-11-23 11:50+0000\n"
 "Last-Translator: Jim Nelson <jim@yorba.org>\n"
 "Language-Team: Estonian "
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-11-24 05:41+0000\n"
+"X-Launchpad-Export-Date: 2015-11-25 05:39+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 "Language: et\n"
 
@@ -290,6 +290,7 @@ msgstr ""
 
 #: ../src/client/application/geary-controller.vala:80
 #: ../src/client/application/geary-controller.vala:392
+#: ../src/client/components/main-toolbar.vala:109
 msgid "Mark conversation"
 msgstr "Märgi kui..."
 
@@ -298,6 +299,7 @@ msgid "Mark conversations"
 msgstr "Märgi kui..."
 
 #: ../src/client/application/geary-controller.vala:82
+#: ../src/client/components/main-toolbar.vala:114
 msgid "Add label to conversation"
 msgstr "Sildista kui..."
 
@@ -307,6 +309,7 @@ msgstr "Sildista kui..."
 
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:431
+#: ../src/client/components/main-toolbar.vala:119
 msgid "Move conversation"
 msgstr "Liiguta asukohta..."
 
@@ -712,18 +715,21 @@ msgid "%s - New Messages"
 msgstr "%s - uued kirjad"
 
 #: ../src/client/notification/libnotify.vala:72
+#: ../src/client/notification/libnotify.vala:71
 msgid "%d new message"
 msgid_plural "%d new messages"
 msgstr[0] "%d uus kiri"
 msgstr[1] "%d uut kirja"
 
 #: ../src/client/notification/libnotify.vala:75
+#: ../src/client/notification/libnotify.vala:74
 msgid "%s, %d new message total"
 msgid_plural "%s, %d new messages total"
 msgstr[0] ""
 msgstr[1] ""
 
 #: ../src/client/notification/libnotify.vala:107
+#: ../src/client/notification/libnotify.vala:105
 msgid ""
 "%s\n"
 "(%d other new message for %s)"
@@ -734,6 +740,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: ../src/client/notification/libnotify.vala:160
+#: ../src/client/notification/libnotify.vala:158
 msgid "Open"
 msgstr "Ava"
 
@@ -821,6 +828,7 @@ msgstr "Manuse valimine"
 msgid "_Attach"
 msgstr "_Olgu"
 
+#. /clear widgets
 #: ../src/client/accounts/account-dialog-edit-alternate-emails-pane.vala:124
 msgid "Additional addresses for %s"
 msgstr ""
@@ -1328,6 +1336,7 @@ msgid "_From:"
 msgstr ""
 
 #: ../src/client/components/main-window.vala:388
+#: ../src/client/components/main-window.vala:351
 msgid "%s (%d)"
 msgstr ""
 
@@ -1390,4 +1399,8 @@ msgstr ""
 
 #: ../src/client/components/search-bar.vala:118
 msgid "Indexing %s account"
+msgstr ""
+
+#: ../src/client/components/main-toolbar.vala:144
+msgid "Menu"
 msgstr ""

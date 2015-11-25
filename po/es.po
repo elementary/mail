@@ -18,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2015-11-20 14:02-0600\n"
+"POT-Creation-Date: 2015-11-24 09:47-0800\n"
 "PO-Revision-Date: 2015-11-23 11:52+0000\n"
 "Last-Translator: Adolfo Jayme <fitoschido@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-11-24 05:41+0000\n"
+"X-Launchpad-Export-Date: 2015-11-25 05:40+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 "Language: es\n"
 
@@ -301,6 +301,7 @@ msgstr "Marcar como no _spam"
 
 #: ../src/client/application/geary-controller.vala:80
 #: ../src/client/application/geary-controller.vala:392
+#: ../src/client/components/main-toolbar.vala:109
 msgid "Mark conversation"
 msgstr "Marcar conversación"
 
@@ -309,6 +310,7 @@ msgid "Mark conversations"
 msgstr "Marcar conversaciones"
 
 #: ../src/client/application/geary-controller.vala:82
+#: ../src/client/components/main-toolbar.vala:114
 msgid "Add label to conversation"
 msgstr "Añadir etiqueta a la conversación"
 
@@ -318,6 +320,7 @@ msgstr "Añadir etiqueta a las conversaciones"
 
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:431
+#: ../src/client/components/main-toolbar.vala:119
 msgid "Move conversation"
 msgstr "Mover conversación"
 
@@ -759,18 +762,21 @@ msgid "%s - New Messages"
 msgstr "%s: mensajes nuevos"
 
 #: ../src/client/notification/libnotify.vala:72
+#: ../src/client/notification/libnotify.vala:71
 msgid "%d new message"
 msgid_plural "%d new messages"
 msgstr[0] "%d mensaje nuevo"
 msgstr[1] "%d mensajes nuevos"
 
 #: ../src/client/notification/libnotify.vala:75
+#: ../src/client/notification/libnotify.vala:74
 msgid "%s, %d new message total"
 msgid_plural "%s, %d new messages total"
 msgstr[0] "%s, %d mensaje nuevo en total"
 msgstr[1] "%s, %d mensajes nuevos en total"
 
 #: ../src/client/notification/libnotify.vala:107
+#: ../src/client/notification/libnotify.vala:105
 msgid ""
 "%s\n"
 "(%d other new message for %s)"
@@ -785,6 +791,7 @@ msgstr[1] ""
 "(%d mensajes nuevos más para %s)"
 
 #: ../src/client/notification/libnotify.vala:160
+#: ../src/client/notification/libnotify.vala:158
 msgid "Open"
 msgstr "Abrir"
 
@@ -884,6 +891,7 @@ msgstr "Elija un archivo"
 msgid "_Attach"
 msgstr "_Adjuntar"
 
+#. /clear widgets
 #: ../src/client/accounts/account-dialog-edit-alternate-emails-pane.vala:124
 msgid "Additional addresses for %s"
 msgstr "Direcciones adicionales para %s"
@@ -1395,6 +1403,7 @@ msgid "_From:"
 msgstr "_De:"
 
 #: ../src/client/components/main-window.vala:388
+#: ../src/client/components/main-window.vala:351
 msgid "%s (%d)"
 msgstr "%s (%d)"
 
@@ -1458,3 +1467,7 @@ msgstr "Buscar palabras en todo el correo de la cuenta (Ctrl+S)"
 #: ../src/client/components/search-bar.vala:118
 msgid "Indexing %s account"
 msgstr "Indexando la cuenta %s"
+
+#: ../src/client/components/main-toolbar.vala:144
+msgid "Menu"
+msgstr ""

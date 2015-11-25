@@ -69,7 +69,6 @@ public class GearyController : Geary.BaseObject {
     private const string TRASH_MESSAGE_ICON_NAME = "user-trash-symbolic";
 
     // This refers to the action ("archive an email"), not the Archive folder itself
-    private const string ARCHIVE_MESSAGE_LABEL = _("_Archive");
     private const string ARCHIVE_MESSAGE_TOOLTIP_SINGLE = _("Archive conversation (A)");
     private const string ARCHIVE_MESSAGE_TOOLTIP_MULTIPLE = _("Archive conversations (A)");
     private const string ARCHIVE_MESSAGE_ICON_NAME = "mail-archive-symbolic";
@@ -437,18 +436,18 @@ public class GearyController : Geary.BaseObject {
         entries += new_message;
         add_accelerator("N", ACTION_NEW_MESSAGE);
 
-        Gtk.ActionEntry reply_to_message = { ACTION_REPLY_TO_MESSAGE, null, _("_Reply"), "<Ctrl>R",
+        Gtk.ActionEntry reply_to_message = { ACTION_REPLY_TO_MESSAGE, null, null, "<Ctrl>R",
             _("Reply (Ctrl+R, R)"), on_reply_to_message_action };
         entries += reply_to_message;
         add_accelerator("R", ACTION_REPLY_TO_MESSAGE);
 
-        Gtk.ActionEntry reply_all_message = { ACTION_REPLY_ALL_MESSAGE, null, _("R_eply All"),
+        Gtk.ActionEntry reply_all_message = { ACTION_REPLY_ALL_MESSAGE, null, null,
             "<Ctrl><Shift>R", _("Reply all (Ctrl+Shift+R, Shift+R)"),
             on_reply_all_message_action };
         entries += reply_all_message;
         add_accelerator("<Shift>R", ACTION_REPLY_ALL_MESSAGE);
 
-        Gtk.ActionEntry forward_message = { ACTION_FORWARD_MESSAGE, null, _("_Forward"), "<Ctrl>L",
+        Gtk.ActionEntry forward_message = { ACTION_FORWARD_MESSAGE, null, null, "<Ctrl>L",
             _("Forward (Ctrl+L, F)"), on_forward_message_action };
         entries += forward_message;
         add_accelerator("F", ACTION_FORWARD_MESSAGE);
@@ -467,7 +466,7 @@ public class GearyController : Geary.BaseObject {
         entries += find_previous_in_conversation;
 
         Gtk.ActionEntry archive_message = { ACTION_ARCHIVE_MESSAGE, ARCHIVE_MESSAGE_ICON_NAME,
-            ARCHIVE_MESSAGE_LABEL, "A", null, on_archive_message };
+            null, "A", null, on_archive_message };
         archive_message.tooltip = ARCHIVE_MESSAGE_TOOLTIP_SINGLE;
         entries += archive_message;
 

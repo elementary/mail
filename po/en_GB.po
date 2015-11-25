@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
-"POT-Creation-Date: 2015-11-20 14:02-0600\n"
-"PO-Revision-Date: 2015-11-23 11:52+0000\n"
+"POT-Creation-Date: 2015-11-24 09:47-0800\n"
+"PO-Revision-Date: 2015-11-24 15:47+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: English (United Kingdom) "
 "(http://www.transifex.com/projects/p/geary/language/en_GB/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-11-24 05:41+0000\n"
+"X-Launchpad-Export-Date: 2015-11-25 05:40+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 "Language: en_GB\n"
 
@@ -291,6 +291,7 @@ msgstr "Mark as not S_pam"
 
 #: ../src/client/application/geary-controller.vala:80
 #: ../src/client/application/geary-controller.vala:392
+#: ../src/client/components/main-toolbar.vala:109
 msgid "Mark conversation"
 msgstr "Mark conversation"
 
@@ -299,6 +300,7 @@ msgid "Mark conversations"
 msgstr "Mark conversations"
 
 #: ../src/client/application/geary-controller.vala:82
+#: ../src/client/components/main-toolbar.vala:114
 msgid "Add label to conversation"
 msgstr "Add label to conversation"
 
@@ -308,6 +310,7 @@ msgstr "Add label to conversations"
 
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:431
+#: ../src/client/components/main-toolbar.vala:119
 msgid "Move conversation"
 msgstr "Move conversation"
 
@@ -743,18 +746,21 @@ msgid "%s - New Messages"
 msgstr "%s - New Messages"
 
 #: ../src/client/notification/libnotify.vala:72
+#: ../src/client/notification/libnotify.vala:71
 msgid "%d new message"
 msgid_plural "%d new messages"
 msgstr[0] "%d new message"
 msgstr[1] "%d new messages"
 
 #: ../src/client/notification/libnotify.vala:75
+#: ../src/client/notification/libnotify.vala:74
 msgid "%s, %d new message total"
 msgid_plural "%s, %d new messages total"
 msgstr[0] "%s, %d new message total"
 msgstr[1] "%s, %d new messages total"
 
 #: ../src/client/notification/libnotify.vala:107
+#: ../src/client/notification/libnotify.vala:105
 msgid ""
 "%s\n"
 "(%d other new message for %s)"
@@ -769,6 +775,7 @@ msgstr[1] ""
 "(%d other new messages for %s)"
 
 #: ../src/client/notification/libnotify.vala:160
+#: ../src/client/notification/libnotify.vala:158
 msgid "Open"
 msgstr "Open"
 
@@ -856,6 +863,7 @@ msgstr "Choose a file"
 msgid "_Attach"
 msgstr "_Attach"
 
+#. /clear widgets
 #: ../src/client/accounts/account-dialog-edit-alternate-emails-pane.vala:124
 msgid "Additional addresses for %s"
 msgstr ""
@@ -1363,6 +1371,7 @@ msgid "_From:"
 msgstr ""
 
 #: ../src/client/components/main-window.vala:388
+#: ../src/client/components/main-window.vala:351
 msgid "%s (%d)"
 msgstr ""
 
@@ -1426,3 +1435,7 @@ msgstr "Search all mail in account for keywords (Ctrl+S)"
 #: ../src/client/components/search-bar.vala:118
 msgid "Indexing %s account"
 msgstr "Indexing %s account"
+
+#: ../src/client/components/main-toolbar.vala:144
+msgid "Menu"
+msgstr ""

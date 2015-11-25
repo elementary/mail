@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2015-11-20 14:02-0600\n"
+"POT-Creation-Date: 2015-11-24 09:47-0800\n"
 "PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-11-24 05:41+0000\n"
+"X-Launchpad-Export-Date: 2015-11-25 05:40+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 "X-Project-Style: gnome\n"
 "Language: sr\n"
@@ -296,6 +296,7 @@ msgstr "Označi da nije _nepoželjno"
 
 #: ../src/client/application/geary-controller.vala:80
 #: ../src/client/application/geary-controller.vala:392
+#: ../src/client/components/main-toolbar.vala:109
 msgid "Mark conversation"
 msgstr "Označite razgovor"
 
@@ -304,6 +305,7 @@ msgid "Mark conversations"
 msgstr "Označite razgovore"
 
 #: ../src/client/application/geary-controller.vala:82
+#: ../src/client/components/main-toolbar.vala:114
 msgid "Add label to conversation"
 msgstr "Dodajte natpis razgovoru"
 
@@ -313,6 +315,7 @@ msgstr "Dodajte natpis razgovorima"
 
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:431
+#: ../src/client/components/main-toolbar.vala:119
 msgid "Move conversation"
 msgstr "Premestite razgovor"
 
@@ -754,6 +757,7 @@ msgid "%s - New Messages"
 msgstr "%s — Nove poruke"
 
 #: ../src/client/notification/libnotify.vala:72
+#: ../src/client/notification/libnotify.vala:71
 msgid "%d new message"
 msgid_plural "%d new messages"
 msgstr[0] "%d nova poruka"
@@ -761,6 +765,7 @@ msgstr[1] "%d nove poruke"
 msgstr[2] "%d novih poruka"
 
 #: ../src/client/notification/libnotify.vala:75
+#: ../src/client/notification/libnotify.vala:74
 msgid "%s, %d new message total"
 msgid_plural "%s, %d new messages total"
 msgstr[0] "%s, ukupno %d nova poruka"
@@ -768,6 +773,7 @@ msgstr[1] "%s, ukupno %d nove poruke"
 msgstr[2] "%s, ukupno %d novih poruka"
 
 #: ../src/client/notification/libnotify.vala:107
+#: ../src/client/notification/libnotify.vala:105
 msgid ""
 "%s\n"
 "(%d other new message for %s)"
@@ -785,6 +791,7 @@ msgstr[2] ""
 "(%d drugih novih poruka za %s)"
 
 #: ../src/client/notification/libnotify.vala:160
+#: ../src/client/notification/libnotify.vala:158
 msgid "Open"
 msgstr "Otvori"
 
@@ -880,6 +887,7 @@ msgstr "Izaberite datoteku"
 msgid "_Attach"
 msgstr "_Priloži"
 
+#. /clear widgets
 #: ../src/client/accounts/account-dialog-edit-alternate-emails-pane.vala:124
 msgid "Additional addresses for %s"
 msgstr ""
@@ -1397,6 +1405,7 @@ msgid "_From:"
 msgstr "_Šalje:"
 
 #: ../src/client/components/main-window.vala:388
+#: ../src/client/components/main-window.vala:351
 msgid "%s (%d)"
 msgstr "%s (%d)"
 
@@ -1462,3 +1471,7 @@ msgstr "Potražite ključne reči u svim porukama u nalogu (Ktrl+S)"
 #: ../src/client/components/search-bar.vala:118
 msgid "Indexing %s account"
 msgstr "Popisujem nalog „%s“"
+
+#: ../src/client/components/main-toolbar.vala:144
+msgid "Menu"
+msgstr ""

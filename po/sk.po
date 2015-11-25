@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2015-11-20 14:02-0600\n"
+"POT-Creation-Date: 2015-11-24 09:47-0800\n"
 "PO-Revision-Date: 2015-11-23 11:52+0000\n"
 "Last-Translator: Dusan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak "
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Launchpad-Export-Date: 2015-11-24 05:41+0000\n"
+"X-Launchpad-Export-Date: 2015-11-25 05:40+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 "Language: sk\n"
 
@@ -292,6 +292,7 @@ msgstr "Označiť ako _vyžiadanú poštu"
 
 #: ../src/client/application/geary-controller.vala:80
 #: ../src/client/application/geary-controller.vala:392
+#: ../src/client/components/main-toolbar.vala:109
 msgid "Mark conversation"
 msgstr "Označí rozhovor"
 
@@ -300,6 +301,7 @@ msgid "Mark conversations"
 msgstr "Označí rozhovory"
 
 #: ../src/client/application/geary-controller.vala:82
+#: ../src/client/components/main-toolbar.vala:114
 msgid "Add label to conversation"
 msgstr "Pridá menovku rozhovoru"
 
@@ -309,6 +311,7 @@ msgstr "Pridá menovku rozhovorom"
 
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:431
+#: ../src/client/components/main-toolbar.vala:119
 msgid "Move conversation"
 msgstr "Presunie rozhovor"
 
@@ -752,6 +755,7 @@ msgid "%s - New Messages"
 msgstr "%s - Nové správy"
 
 #: ../src/client/notification/libnotify.vala:72
+#: ../src/client/notification/libnotify.vala:71
 msgid "%d new message"
 msgid_plural "%d new messages"
 msgstr[0] "%d nových správ"
@@ -759,6 +763,7 @@ msgstr[1] "%d nová správa"
 msgstr[2] "%d nové správy"
 
 #: ../src/client/notification/libnotify.vala:75
+#: ../src/client/notification/libnotify.vala:74
 msgid "%s, %d new message total"
 msgid_plural "%s, %d new messages total"
 msgstr[0] "%s, celkom %d nových správ"
@@ -766,6 +771,7 @@ msgstr[1] "%s, celkom %d nová správa"
 msgstr[2] "%s, celkom %d nové správy"
 
 #: ../src/client/notification/libnotify.vala:107
+#: ../src/client/notification/libnotify.vala:105
 msgid ""
 "%s\n"
 "(%d other new message for %s)"
@@ -783,6 +789,7 @@ msgstr[2] ""
 "(%d iné nové správy na účte %s)"
 
 #: ../src/client/notification/libnotify.vala:160
+#: ../src/client/notification/libnotify.vala:158
 msgid "Open"
 msgstr "Otvoriť"
 
@@ -879,6 +886,7 @@ msgstr "Zvoľte súbor"
 msgid "_Attach"
 msgstr "_Priložiť"
 
+#. /clear widgets
 #: ../src/client/accounts/account-dialog-edit-alternate-emails-pane.vala:124
 msgid "Additional addresses for %s"
 msgstr "Dodatočné adresy pre %s"
@@ -1401,6 +1409,7 @@ msgid "_From:"
 msgstr "Od:"
 
 #: ../src/client/components/main-window.vala:388
+#: ../src/client/components/main-window.vala:351
 msgid "%s (%d)"
 msgstr "%s (%d)"
 
@@ -1466,3 +1475,7 @@ msgstr "Cyhľadá kľúčové slová vo všetkých správach poštového účtu 
 #: ../src/client/components/search-bar.vala:118
 msgid "Indexing %s account"
 msgstr "Indexuje sa účet %s"
+
+#: ../src/client/components/main-toolbar.vala:144
+msgid "Menu"
+msgstr ""
