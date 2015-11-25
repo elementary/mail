@@ -9,15 +9,15 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2015-11-20 14:02-0600\n"
-"PO-Revision-Date: 2015-11-23 11:51+0000\n"
+"POT-Creation-Date: 2015-11-24 09:47-0800\n"
+"PO-Revision-Date: 2015-11-24 15:45+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-11-24 05:41+0000\n"
+"X-Launchpad-Export-Date: 2015-11-25 05:40+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 "Language: kk\n"
 
@@ -291,6 +291,7 @@ msgstr "С_пам емес етіп белгілеу"
 
 #: ../src/client/application/geary-controller.vala:80
 #: ../src/client/application/geary-controller.vala:392
+#: ../src/client/components/main-toolbar.vala:109
 msgid "Mark conversation"
 msgstr "Сөйлесуді белгілеу"
 
@@ -299,6 +300,7 @@ msgid "Mark conversations"
 msgstr "Сөйлесулерді белгілеу"
 
 #: ../src/client/application/geary-controller.vala:82
+#: ../src/client/components/main-toolbar.vala:114
 msgid "Add label to conversation"
 msgstr "Сөйлесуге белгіні қосу"
 
@@ -308,6 +310,7 @@ msgstr "Сөйлесулерге белгіні қосу"
 
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:431
+#: ../src/client/components/main-toolbar.vala:119
 msgid "Move conversation"
 msgstr "Сөйлесуді жылжыту"
 
@@ -749,16 +752,19 @@ msgid "%s - New Messages"
 msgstr "%s - жаңа хаттар"
 
 #: ../src/client/notification/libnotify.vala:72
+#: ../src/client/notification/libnotify.vala:71
 msgid "%d new message"
 msgid_plural "%d new messages"
 msgstr[0] "%d жаңа хат"
 
 #: ../src/client/notification/libnotify.vala:75
+#: ../src/client/notification/libnotify.vala:74
 msgid "%s, %d new message total"
 msgid_plural "%s, %d new messages total"
 msgstr[0] "%s, %d жалпы жаңа хат"
 
 #: ../src/client/notification/libnotify.vala:107
+#: ../src/client/notification/libnotify.vala:105
 msgid ""
 "%s\n"
 "(%d other new message for %s)"
@@ -770,6 +776,7 @@ msgstr[0] ""
 "(%d басқа жаңа хат, %s үшін)"
 
 #: ../src/client/notification/libnotify.vala:160
+#: ../src/client/notification/libnotify.vala:158
 msgid "Open"
 msgstr "Ашу"
 
@@ -865,6 +872,7 @@ msgstr "Файлды таңдау"
 msgid "_Attach"
 msgstr "Салынымды қ_осып жіберу"
 
+#. /clear widgets
 #: ../src/client/accounts/account-dialog-edit-alternate-emails-pane.vala:124
 msgid "Additional addresses for %s"
 msgstr "%s үшін қосымша адрестер"
@@ -1368,6 +1376,7 @@ msgid "_From:"
 msgstr "_Кімнен:"
 
 #: ../src/client/components/main-window.vala:388
+#: ../src/client/components/main-window.vala:351
 msgid "%s (%d)"
 msgstr "%s (%d)"
 
@@ -1429,3 +1438,7 @@ msgstr "Тіркелгінің барлық хаттарынан кілтсөз�
 #: ../src/client/components/search-bar.vala:118
 msgid "Indexing %s account"
 msgstr "%s тіркелгісін индекстеу"
+
+#: ../src/client/components/main-toolbar.vala:144
+msgid "Menu"
+msgstr ""

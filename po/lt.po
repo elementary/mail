@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2015-11-20 14:02-0600\n"
+"POT-Creation-Date: 2015-11-24 09:47-0800\n"
 "PO-Revision-Date: 2015-11-23 11:50+0000\n"
 "Last-Translator: aurisc4 <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-11-24 05:41+0000\n"
+"X-Launchpad-Export-Date: 2015-11-25 05:40+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 "Language: lt\n"
 
@@ -296,6 +296,7 @@ msgstr "Žymėti kaip ne š_lamštą"
 
 #: ../src/client/application/geary-controller.vala:80
 #: ../src/client/application/geary-controller.vala:392
+#: ../src/client/components/main-toolbar.vala:109
 msgid "Mark conversation"
 msgstr "Žymėti pokalbį"
 
@@ -304,6 +305,7 @@ msgid "Mark conversations"
 msgstr "Žymėti pokalbius"
 
 #: ../src/client/application/geary-controller.vala:82
+#: ../src/client/components/main-toolbar.vala:114
 msgid "Add label to conversation"
 msgstr "Pridėti žymą pokalbiui"
 
@@ -313,6 +315,7 @@ msgstr "Pridėti žymas pokalbiams"
 
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:431
+#: ../src/client/components/main-toolbar.vala:119
 msgid "Move conversation"
 msgstr "Perkelti pokalbį"
 
@@ -750,6 +753,7 @@ msgid "%s - New Messages"
 msgstr "%s - Nauji laiškai"
 
 #: ../src/client/notification/libnotify.vala:72
+#: ../src/client/notification/libnotify.vala:71
 msgid "%d new message"
 msgid_plural "%d new messages"
 msgstr[0] "%d naujas laiškas"
@@ -757,6 +761,7 @@ msgstr[1] "%d nauji laiškai"
 msgstr[2] "%d naujų laiškų"
 
 #: ../src/client/notification/libnotify.vala:75
+#: ../src/client/notification/libnotify.vala:74
 msgid "%s, %d new message total"
 msgid_plural "%s, %d new messages total"
 msgstr[0] "%s, iš viso %d naujas laiškas"
@@ -764,6 +769,7 @@ msgstr[1] "%s, iš viso %d nauji laiškai"
 msgstr[2] "%s, iš viso %d naujų laiškų"
 
 #: ../src/client/notification/libnotify.vala:107
+#: ../src/client/notification/libnotify.vala:105
 msgid ""
 "%s\n"
 "(%d other new message for %s)"
@@ -781,6 +787,7 @@ msgstr[2] ""
 "(%d naujų laiškų %s)"
 
 #: ../src/client/notification/libnotify.vala:160
+#: ../src/client/notification/libnotify.vala:158
 msgid "Open"
 msgstr "Atverti"
 
@@ -876,6 +883,7 @@ msgstr "Pasirinkite failą"
 msgid "_Attach"
 msgstr "_Prisegti"
 
+#. /clear widgets
 #: ../src/client/accounts/account-dialog-edit-alternate-emails-pane.vala:124
 msgid "Additional addresses for %s"
 msgstr "Papildomi %s adresai"
@@ -1395,6 +1403,7 @@ msgid "_From:"
 msgstr "_Nuo:"
 
 #: ../src/client/components/main-window.vala:388
+#: ../src/client/components/main-window.vala:351
 msgid "%s (%d)"
 msgstr "%s (%d)"
 
@@ -1460,3 +1469,7 @@ msgstr "Ieškoti visame naudotojo pašte pagal žodžius (Ctrl+S)"
 #: ../src/client/components/search-bar.vala:118
 msgid "Indexing %s account"
 msgstr "Indeksuojama %s paskyra"
+
+#: ../src/client/components/main-toolbar.vala:144
+msgid "Menu"
+msgstr ""
