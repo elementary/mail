@@ -53,8 +53,6 @@ public class MainToolbar : Gtk.Box {
         this.bind_property("show-close-button-right", conversation_header, "show-close-button",
             BindingFlags.SYNC_CREATE);
 
-        bool rtl = get_direction() == Gtk.TextDirection.RTL;
-
         // Assemble mark menu.
         GearyApplication.instance.load_ui_file("toolbar_mark_menu.ui");
         Gtk.Menu mark_menu = (Gtk.Menu) GearyApplication.instance.ui_manager.get_widget("/ui/ToolbarMarkMenu");
@@ -94,14 +92,20 @@ public class MainToolbar : Gtk.Box {
         folder_header.add_end(new Gtk.Separator(Gtk.Orientation.VERTICAL));
 
         // Reply buttons
-        insert.clear();
-        insert.add(conversation_header.create_toolbar_button(rtl ? "mail-reply-sender-rtl-symbolic"
-            : "mail-reply-sender-symbolic", GearyController.ACTION_REPLY_TO_MESSAGE));
-        insert.add(conversation_header.create_toolbar_button(rtl ? "mail-reply-all-rtl-symbolic"
-            : "mail-reply-all-symbolic", GearyController.ACTION_REPLY_ALL_MESSAGE));
-        insert.add(conversation_header.create_toolbar_button(rtl ? "mail-forward-rtl-symbolic"
-            : "mail-forward-symbolic", GearyController.ACTION_FORWARD_MESSAGE));
-        conversation_header.add_start(conversation_header.create_pill_buttons(insert));
+        Gtk.Button reply = new Gtk.Button();
+        reply.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_REPLY_TO_MESSAGE);
+        reply.tooltip_text = reply.related_action.tooltip;
+        reply.image = new Gtk.Image.from_icon_name("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
+
+        Gtk.Button reply_all = new Gtk.Button();
+        reply_all.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_REPLY_ALL_MESSAGE);
+        reply_all.tooltip_text = reply_all.related_action.tooltip;
+        reply_all.image = new Gtk.Image.from_icon_name("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
+
+        Gtk.Button forward = new Gtk.Button();
+        forward.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_FORWARD_MESSAGE);
+        forward.tooltip_text = forward.related_action.tooltip;
+        forward.image = new Gtk.Image.from_icon_name("mail-forward", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
         // Mark, copy, move.
         Gtk.MenuButton mark = new Gtk.MenuButton();
@@ -119,6 +123,9 @@ public class MainToolbar : Gtk.Box {
         move.popup = move_folder_menu;
         move.tooltip_text = _("Move conversation");
 
+        conversation_header.pack_start(reply);
+        conversation_header.pack_start(reply_all);
+        conversation_header.pack_start(forward);
         conversation_header.pack_start(mark);
         conversation_header.pack_start(tag);
         conversation_header.pack_start(move);
@@ -128,16 +135,16 @@ public class MainToolbar : Gtk.Box {
         trash_delete.tooltip_text = trash_delete.related_action.tooltip;
         trash_delete.image = new Gtk.Image.from_icon_name("edit-delete", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
-        insert.clear();
-        insert.add(archive_button = conversation_header.create_toolbar_button(null, GearyController.ACTION_ARCHIVE_MESSAGE, true));
-        Gtk.Box archive_trash_delete = conversation_header.create_pill_buttons(insert);
+        Gtk.Button archive = new Gtk.Button();
+        archive.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_ARCHIVE_MESSAGE);
+        archive.tooltip_text = archive.related_action.tooltip;
+        archive.image = new Gtk.Image.from_icon_name("mail-archive", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
         Gtk.Button undo = new Gtk.Button();
         undo.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_UNDO);
         undo.tooltip_text = undo.related_action.tooltip;
         undo.related_action.notify["tooltip"].connect(() => { undo.tooltip_text = undo.related_action.tooltip; });
         undo.image = new Gtk.Image.from_icon_name("edit-undo", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
-
 
         Gtk.MenuButton menu = new Gtk.MenuButton();
         menu.image = new Gtk.Image.from_icon_name("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
@@ -146,7 +153,7 @@ public class MainToolbar : Gtk.Box {
 
         conversation_header.pack_end(menu);
         conversation_header.pack_end(undo);
-        conversation_header.add_end(archive_trash_delete);
+        conversation_header.pack_end(archive);
         conversation_header.pack_end(trash_delete);
 
         pack_start(folder_header, false, false);
