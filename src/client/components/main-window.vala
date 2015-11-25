@@ -8,26 +8,25 @@ public class MainWindow : Gtk.ApplicationWindow {
     private const int MESSAGE_LIST_WIDTH = 250;
     private const int FOLDER_LIST_WIDTH = 100;
     private const int STATUS_BAR_HEIGHT = 18;
-    
+
     /// Fired when the shift key is pressed or released.
     public signal void on_shift_key(bool pressed);
-    
+
     public FolderList.Tree folder_list { get; private set; default = new FolderList.Tree(); }
     public ConversationListStore conversation_list_store { get; private set; default = new ConversationListStore(); }
     public MainToolbar main_toolbar { get; private set; }
-    public SearchBar search_bar { get; private set; default = new SearchBar(); }
     public ConversationListView conversation_list_view  { get; private set; }
     public ConversationViewer conversation_viewer { get; private set; default = new ConversationViewer(); }
     public StatusBar status_bar { get; private set; default = new StatusBar(); }
     public Geary.Folder? current_folder { get; private set; default = null; }
-    
+
     public int window_width { get; set; }
     public int window_height { get; set; }
     public bool window_maximized { get; set; }
 
     private Gtk.Paned folder_paned = new Gtk.Paned(Gtk.Orientation.HORIZONTAL);
     private Gtk.Paned conversations_paned = new Gtk.Paned(Gtk.Orientation.HORIZONTAL);
-    
+
     private Gtk.ScrolledWindow conversation_list_scrolled;
     private MonitoredSpinner spinner = new MonitoredSpinner();
     private Gtk.Box folder_box;
@@ -35,15 +34,15 @@ public class MainWindow : Gtk.ApplicationWindow {
     private Geary.AggregateProgressMonitor progress_monitor = new Geary.AggregateProgressMonitor();
     private Geary.ProgressMonitor? conversation_monitor_progress = null;
     private Geary.ProgressMonitor? folder_progress = null;
-    
+
     public MainWindow(GearyApplication application) {
         Object(application: application);
-        
+
         conversation_list_view = new ConversationListView(conversation_list_store);
-        
+
         add_events(Gdk.EventMask.KEY_PRESS_MASK | Gdk.EventMask.KEY_RELEASE_MASK
             | Gdk.EventMask.FOCUS_CHANGE_MASK);
-        
+
         // This code both loads AND saves the pane positions with live
         // updating. This is more resilient against crashes because
         // the value in dconf changes *immediately*, and stays saved
@@ -58,19 +57,19 @@ public class MainWindow : Gtk.ApplicationWindow {
             config.folder_list_pane_position_horizontal = config.folder_list_pane_position_old;
             config.messages_pane_position += config.folder_list_pane_position_old;
         }
-        
+
         add_accel_group(GearyApplication.instance.ui_manager.get_accel_group());
-        
+
         spinner.set_progress_monitor(progress_monitor);
         progress_monitor.add(conversation_list_store.preview_monitor);
-        
+
         GLib.List<Gdk.Pixbuf> pixbuf_list = new GLib.List<Gdk.Pixbuf>();
         pixbuf_list.append(IconFactory.instance.application_icon);
         // Use copy() because set_default_icon_list() actually accepts an owned reference
         // If we didn't hold the pixbufs in memory, would need to use copy_deep()
         // See https://mail.gnome.org/archives/vala-list/2014-August/msg00022.html
         set_default_icon_list(pixbuf_list.copy());
-        
+
         delete_event.connect(on_delete_event);
         key_press_event.connect(on_key_press_event);
         key_release_event.connect(on_key_release_event);
@@ -82,47 +81,32 @@ public class MainWindow : Gtk.ApplicationWindow {
         GearyApplication.instance.controller.folder_selected.connect(on_folder_selected);
         Geary.Engine.instance.account_available.connect(on_account_available);
         Geary.Engine.instance.account_unavailable.connect(on_account_unavailable);
-        
+
         // Toolbar.
         main_toolbar = new MainToolbar();
-        main_toolbar.bind_property("search-open", search_bar, "search-mode-enabled",
-            BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL);
-        if (!GearyApplication.instance.is_running_unity) {
-            main_toolbar.show_close_button = true;
-            set_titlebar(main_toolbar);
-            title = GearyApplication.NAME;
-        } else {
-            BindingTransformFunc title_func = (binding, source, ref target) => {
-                string folder = current_folder != null ? current_folder.get_display_name() + " " : "";
-                string account = main_toolbar.account != null ? "(%s)".printf(main_toolbar.account) : "";
-                
-                target = "%s%s - %s".printf(folder, account, GearyApplication.NAME);
-                
-                return true;
-            };
-            bind_property("current-folder", this, "title", BindingFlags.SYNC_CREATE, title_func);
-            main_toolbar.bind_property("account", this, "title", BindingFlags.SYNC_CREATE, title_func);
-        }
+        main_toolbar.show_close_button = true;
+        set_titlebar(main_toolbar);
+        title = GearyApplication.NAME;
 
         create_layout();
         on_change_orientation();
     }
-    
+
     public override void show_all() {
         set_default_size(GearyApplication.instance.config.window_width,
             GearyApplication.instance.config.window_height);
         if (GearyApplication.instance.config.window_maximize)
             maximize();
-        
+
         base.show_all();
     }
-    
+
     private bool on_delete_event() {
         if (Args.hidden_startup || GearyApplication.instance.config.startup_notifications)
             return hide_on_delete();
-        
+
         GearyApplication.instance.exit();
-        
+
         return true;
     }
 
@@ -155,7 +139,7 @@ public class MainWindow : Gtk.ApplicationWindow {
 
     private void create_layout() {
         Gtk.Box main_layout = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
-        
+
         // folder list
         Gtk.ScrolledWindow folder_list_scrolled = new Gtk.ScrolledWindow(null, null);
         folder_list_scrolled.set_size_request(FOLDER_LIST_WIDTH, -1);
@@ -172,7 +156,7 @@ public class MainWindow : Gtk.ApplicationWindow {
         conversation_list_scrolled.add(conversation_list_view);
         conversation_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
         conversation_box.pack_start(conversation_list_scrolled, true, true);
-        
+
         // Three-pane display.
         status_bar.set_size_request(-1, STATUS_BAR_HEIGHT);
         status_bar.set_border_width(2);
@@ -183,97 +167,82 @@ public class MainWindow : Gtk.ApplicationWindow {
         folder_paned.pack1(folder_box, false, false);
         folder_paned.pack2(conversation_box, true, false);
 
-        Gtk.Box search_bar_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
-        search_bar_box.pack_start(search_bar, false, false, 0);
-        search_bar_box.pack_start(folder_paned);
-
         // Message list left of message viewer.
-        conversations_paned.pack1(search_bar_box, false, false);
+        conversations_paned.pack1(folder_paned, true, true);
         conversations_paned.pack2(conversation_viewer, true, true);
-        
+
         if (GearyApplication.instance.is_running_unity)
             main_layout.pack_start(main_toolbar, false, true, 0);
-        
+
         main_layout.pack_end(conversations_paned, true, true, 0);
-        
+
         add(main_layout);
     }
-    
+
     // Returns true when there's a conversation list scrollbar visible, i.e. the list is tall
     // enough to need one.  Otherwise returns false.
     public bool conversation_list_has_scrollbar() {
         Gtk.Scrollbar? scrollbar = conversation_list_scrolled.get_vscrollbar() as Gtk.Scrollbar;
         return scrollbar != null && scrollbar.get_visible();
     }
-    
+
     private bool on_key_press_event(Gdk.EventKey event) {
         if ((event.keyval == Gdk.Key.Shift_L || event.keyval == Gdk.Key.Shift_R)
-            && (event.state & Gdk.ModifierType.SHIFT_MASK) == 0 && !search_bar.search_entry_has_focus)
+            && (event.state & Gdk.ModifierType.SHIFT_MASK) == 0 && !main_toolbar.search_entry_has_focus)
             on_shift_key(true);
-        
+
         // Check whether the focused widget wants to handle it, if not let the accelerators kick in
         // via the default handling
         return propagate_key_event(event);
     }
-    
+
     private bool on_key_release_event(Gdk.EventKey event) {
         // FIXME: it's possible the user will press two shift keys.  We want
         // the shift key to report as released when they release ALL of them.
         // There doesn't seem to be an easy way to do this in Gdk.
         if ((event.keyval == Gdk.Key.Shift_L || event.keyval == Gdk.Key.Shift_R)
-            && !search_bar.search_entry_has_focus)
+            && !main_toolbar.search_entry_has_focus)
             on_shift_key(false);
-        
+
         return propagate_key_event(event);
     }
-    
+
     private bool on_focus_event() {
         on_shift_key(false);
         return false;
     }
-    
+
     private void on_conversation_monitor_changed() {
         Geary.App.ConversationMonitor? conversation_monitor =
             GearyApplication.instance.controller.current_conversations;
-        
+
         // Remove existing progress monitor.
         if (conversation_monitor_progress != null) {
             progress_monitor.remove(conversation_monitor_progress);
             conversation_monitor_progress = null;
         }
-        
+
         // Add new one.
         if (conversation_monitor != null) {
             conversation_monitor_progress = conversation_monitor.progress_monitor;
             progress_monitor.add(conversation_monitor_progress);
         }
     }
-    
+
     private void on_folder_selected(Geary.Folder? folder) {
         if (folder_progress != null) {
             progress_monitor.remove(folder_progress);
             folder_progress = null;
         }
-        
+
         if (folder != null) {
             folder_progress = folder.opening_monitor;
             progress_monitor.add(folder_progress);
         }
-        
-        // disconnect from old folder
-        if (current_folder != null)
-            current_folder.properties.notify.disconnect(update_headerbar);
-        
-        // connect to new folder
-        if (folder != null)
-            folder.properties.notify.connect(update_headerbar);
-        
         // swap it in
         current_folder = folder;
-        
-        update_headerbar();
     }
-    
+
     private void on_account_available(Geary.AccountInformation account) {
         try {
             progress_monitor.add(Geary.Engine.instance.get_account_instance(account).opening_monitor);
@@ -282,7 +251,7 @@ public class MainWindow : Gtk.ApplicationWindow {
             debug("Could not access account progress monitors: %s", e.message);
         }
     }
-    
+
     private void on_account_unavailable(Geary.AccountInformation account) {
         try {
             progress_monitor.remove(Geary.Engine.instance.get_account_instance(account).opening_monitor);
@@ -291,20 +260,20 @@ public class MainWindow : Gtk.ApplicationWindow {
             debug("Could not access account progress monitors: %s", e.message);
         }
     }
-    
+
     private void on_change_orientation() {
         bool horizontal = GearyApplication.instance.config.folder_list_pane_horizontal;
         bool initial = true;
-        
+
         if (status_bar.parent != null) {
             status_bar.parent.remove(status_bar);
             initial = false;
         }
-        
+
         GLib.Settings.unbind(folder_paned, "position");
         folder_paned.orientation = horizontal ? Gtk.Orientation.HORIZONTAL :
             Gtk.Orientation.VERTICAL;
-        
+
         int folder_list_width =
             GearyApplication.instance.config.folder_list_pane_position_horizontal;
         if (horizontal) {
@@ -316,41 +285,11 @@ public class MainWindow : Gtk.ApplicationWindow {
                 conversations_paned.position -= folder_list_width;
             conversation_box.pack_start(status_bar, false, false);
         }
-        
+
         GearyApplication.instance.config.bind(
             horizontal ? Configuration.FOLDER_LIST_PANE_POSITION_HORIZONTAL_KEY
             : Configuration.FOLDER_LIST_PANE_POSITION_VERTICAL_KEY,
             folder_paned, "position");
-    }
-    
-    private void update_headerbar() {
-        if (current_folder == null) {
-            main_toolbar.account = null;
-            main_toolbar.folder = null;
-            
-            return;
-        }
-        
-        main_toolbar.account = current_folder.account.information.nickname;
-        
-        /// Current folder's name followed by its unread count, i.e. "Inbox (42)"
-        // except for Drafts and Outbox, where we show total count
-        int count;
-        switch (current_folder.special_folder_type) {
-            case Geary.SpecialFolderType.DRAFTS:
-            case Geary.SpecialFolderType.OUTBOX:
-                count = current_folder.properties.email_total;
-            break;
-            
-            default:
-                count = current_folder.properties.email_unread;
-            break;
-        }
-        
-        if (count > 0)
-            main_toolbar.folder = _("%s (%d)").printf(current_folder.get_display_name(), count);
-        else
-            main_toolbar.folder = current_folder.get_display_name();
     }
 }
 
