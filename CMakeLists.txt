@@ -14,7 +14,10 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake )
 # Base bits
 #
 set(GETTEXT_PACKAGE "geary")
-set(RELEASE_NAME "Lightweight email client for GNOME.")
+set(EXEC_NAME "geary")
+set(APP_NAME "Mail")
+set(RELEASE_NAME "Lightweight email client")
+set(DESKTOP_ICON "internet-mail")
 set(VERSION "0.10.0")
 set(VERSION_INFO "Release")
 set(LANGUAGE_SUPPORT_DIRECTORY ${CMAKE_INSTALL_PREFIX}/share/locale)

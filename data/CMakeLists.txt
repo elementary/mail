@@ -2,12 +2,12 @@
 # Build and install geary.desktop
 #
 
-configure_file(geary.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/geary.desktop)
-configure_file(geary-autostart.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/geary-autostart.desktop)
+configure_file(pantheon-mail.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/pantheon-mail.desktop)
+configure_file(pantheon-mail-autostart.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/pantheon-mail-autostart.desktop)
 
-install(FILES geary.appdata.xml DESTINATION share/appdata)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/geary.desktop DESTINATION share/applications)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/geary-autostart.desktop DESTINATION share/applications)
+install(FILES pantheon-mail.appdata.xml DESTINATION share/appdata)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/pantheon-mail.desktop DESTINATION share/applications)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/pantheon-mail-autostart.desktop DESTINATION share/applications)
 
 # Optional: run update-desktop-database at install time.
 # (This has to happen after the geary.desktop file is installed.)
