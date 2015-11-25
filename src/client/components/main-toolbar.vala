@@ -17,20 +17,19 @@ public class MainToolbar : Gtk.Box {
     public int left_pane_width { get; set; }
 
     private PillHeaderbar folder_header;
-    private PillHeaderbar conversation_header;
+    private Gtk.HeaderBar conversation_header;
     private Gtk.Button archive_button;
-    private Gtk.Button trash_delete_button;
+    private Gtk.Button trash_delete;
     private Binding guest_header_binding;
 
     public MainToolbar() {
         Object(orientation: Gtk.Orientation.HORIZONTAL, spacing: 0);
 
         folder_header = new PillHeaderbar(GearyApplication.instance.actions);
-        conversation_header = new PillHeaderbar(GearyApplication.instance.actions);
+        conversation_header = new Gtk.HeaderBar ();
         folder_header.get_style_context().add_class("titlebar");
         folder_header.get_style_context().add_class("geary-titlebar-left");
         conversation_header.get_style_context().add_class("titlebar");
-        conversation_header.get_style_context().add_class("geary-titlebar-right");
 
         // Instead of putting a separator between the two headerbars, as other applications do,
         // we put a separator at the right end of the left headerbar.  This greatly improves
@@ -165,10 +164,10 @@ public class MainToolbar : Gtk.Box {
 
     /// Updates the trash button as trash or delete, and shows or hides the archive button.
     public void update_trash_archive_buttons(bool trash, bool archive) {
-        string action_name = (trash ? GearyController.ACTION_TRASH_MESSAGE
-            : GearyController.ACTION_DELETE_MESSAGE);
-        conversation_header.setup_button(trash_delete_button, null, action_name, false);
+        string action_name = (trash ? GearyController.ACTION_TRASH_MESSAGE : GearyController.ACTION_DELETE_MESSAGE);
 
+        trash_delete.related_action = GearyApplication.instance.actions.get_action(action_name);
+        trash_delete.tooltip_text = trash_delete.related_action.tooltip;
         archive_button.visible = archive;
     }
 
