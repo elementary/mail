@@ -21,12 +21,15 @@ public class GearyApplication : Gtk.Application {
     public const string WEBSITE_LABEL = _("Visit the Yorba web site");
     public const string BUGREPORT = "https://wiki.gnome.org/Apps/Geary/ReportingABug";
     public const string DONATE = "http://www.yorba.org/about/donate";
-    
+
+    public const string CONTRACT_NAME = _("Send by Email");
+    public const string CONTRACT_DESCRIPTION = _("Send files using Mail");
+
     public const string VERSION = _VERSION;
     public const string INSTALL_PREFIX = _INSTALL_PREFIX;
     public const string GSETTINGS_DIR = _GSETTINGS_DIR;
     public const string SOURCE_ROOT_DIR = _SOURCE_ROOT_DIR;
-    
+
     public const string[] AUTHORS = {
         "Jim Nelson <jim@yorba.org>",
         "Eric Gregory <eric@yorba.org>",
