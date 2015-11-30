@@ -5,9 +5,14 @@
 configure_file(pantheon-mail.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/pantheon-mail.desktop)
 configure_file(pantheon-mail-autostart.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/pantheon-mail-autostart.desktop)
 
+configure_file(mail-attach.contract.in ${CMAKE_CURRENT_BINARY_DIR}/mail-attach.contract)
+
 install(FILES pantheon-mail.appdata.xml DESTINATION share/appdata)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/pantheon-mail.desktop DESTINATION share/applications)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/pantheon-mail-autostart.desktop DESTINATION share/applications)
+
+install(FILES mail-attach DESTINATION bin)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/mail-attach.contract DESTINATION share/contractor)
 
 # Optional: run update-desktop-database at install time.
 # (This has to happen after the geary.desktop file is installed.)
@@ -31,24 +36,6 @@ else ()
         CODE "message (STATUS \"Not updating desktop database\")"
     )
 endif ()
-
-if (DISABLE_CONTRACT)
-    message (STATUS "Install Contractor contract: OFF")
-else (DISABLE_CONTRACT)
-    message (STATUS "Install Contractor contract: ON")
-    if (INTLTOOL_MERGE_FOUND)
-        INTLTOOL_MERGE_CONTRACT (geary-attach po)
-        
-        if (DESKTOP_VALIDATE)
-            if (DESKTOP_FILE_VALIDATE_FOUND)
-                VALIDATE_DESKTOP_FILE (geary-attach)
-            else (DESKTOP_FILE_VALIDATE_FOUND)
-                message (FATAL_ERROR "desktop-file-validate must be installed to validate generated .desktop file")
-            endif (DESKTOP_FILE_VALIDATE_FOUND)
-        endif (DESKTOP_VALIDATE)
-    endif (INTLTOOL_MERGE_FOUND)
-    install (PROGRAMS geary-attach DESTINATION bin)
-endif (DISABLE_CONTRACT)
 
 add_subdirectory(icons)
 add_subdirectory(theming)

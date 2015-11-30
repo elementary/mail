@@ -30,7 +30,6 @@ set(ARCHIVE_DEBUILD_FULL_NAME ${CMAKE_PROJECT_NAME}_${VERSION}.orig.tar.xz)
 option(DEBUG "Build for debugging." OFF)
 option(ICON_UPDATE "Run gtk-update-icon-cache after the install." ON)
 option(DESKTOP_UPDATE "Run update-desktop-database after the install." ON)
-option(DESKTOP_VALIDATE "Check generated desktop file for errors during build." ON)
 option(TRANSLATE_HELP "Generate and install translated help documentation." ON)
 
 if (DEBUG)
@@ -43,10 +42,6 @@ endif ()
 
 if (DESKTOP_UPDATE)
     message(STATUS "Desktop database will be updated")
-endif ()
-
-if (DESKTOP_VALIDATE)
-    message(STATUS "Generated desktop file will be checked for errors")
 endif ()
 
 if (TRANSLATE_HELP)
