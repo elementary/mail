@@ -5,8 +5,7 @@
  */
 
 public class AccountDialog : Gtk.Dialog {
-    private const int MARGIN = 12;
-    
+
     private Gtk.Stack stack = new Gtk.Stack();
     private AccountDialogAccountListPane account_list_pane;
     private AccountDialogAddEditPane add_edit_pane;
@@ -14,20 +13,13 @@ public class AccountDialog : Gtk.Dialog {
     private AccountDialogRemoveConfirmPane remove_confirm_pane;
     private AccountDialogRemoveFailPane remove_fail_pane;
     private AccountDialogEditAlternateEmailsPane edit_alternate_emails_pane;
-    private Gtk.HeaderBar headerbar = new Gtk.HeaderBar();
-    
+
     public AccountDialog(Gtk.Window parent) {
         set_size_request(450, -1); // Sets min size.
-        headerbar.title = _("Accounts");
-        headerbar.show_close_button = true;
         set_transient_for(parent);
         set_modal(true);
-        set_titlebar (headerbar);
-        get_content_area().margin_top = MARGIN;
-        get_content_area().margin_left = MARGIN;
-        get_content_area().margin_right = MARGIN;
-        get_content_area().margin_bottom = MARGIN;
-        
+        get_content_area().margin = 12;
+
         // Add pages to stack.
         account_list_pane = new AccountDialogAccountListPane(stack);
         add_edit_pane = new AccountDialogAddEditPane(stack);

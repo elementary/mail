@@ -156,8 +156,9 @@ public class AddEditPage : Gtk.Box {
     private PageMode mode = PageMode.WELCOME;
     
     private Gtk.Widget container_widget;
-    private Gtk.Box welcome_box;
-    
+    private Gtk.Image application_icon;
+    private Gtk.Label label_welcome;
+
     private Gtk.Label label_error;
     
     private Gtk.Entry entry_email;
@@ -226,9 +227,9 @@ public class AddEditPage : Gtk.Box {
         // Primary container.
         container_widget = (Gtk.Widget) builder.get_object("container");
         pack_start(container_widget);
-        
-        welcome_box = (Gtk.Box) builder.get_object("welcome_box");
-        Gtk.Label label_welcome = (Gtk.Label) builder.get_object("label-welcome");
+
+        application_icon = (Gtk.Image) builder.get_object("application-icon");
+        label_welcome = (Gtk.Label) builder.get_object("label-welcome");
         label_welcome.set_markup("<span size=\"large\"><b>%s</b></span>\n%s".printf(
             _("Welcome to Mail"), _("Enter your account information to get started.")));
         
@@ -705,8 +706,9 @@ public class AddEditPage : Gtk.Box {
     // Updates UI based on various options.
     internal void update_ui() {
         base.show_all();
-        
-        welcome_box.visible = mode == PageMode.WELCOME;
+
+        application_icon.visible = mode == PageMode.WELCOME;
+        label_welcome.visible = mode == PageMode.WELCOME;
         entry_nickname.visible = label_nickname.visible = mode != PageMode.WELCOME;
         storage_container.visible = mode == PageMode.EDIT;
         check_save_sent_mail.visible = mode == PageMode.EDIT;
