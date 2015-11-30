@@ -230,7 +230,7 @@ public class AddEditPage : Gtk.Box {
         welcome_box = (Gtk.Box) builder.get_object("welcome_box");
         Gtk.Label label_welcome = (Gtk.Label) builder.get_object("label-welcome");
         label_welcome.set_markup("<span size=\"large\"><b>%s</b></span>\n%s".printf(
-            _("Welcome to Geary."), _("Enter your account information to get started.")));
+            _("Welcome to Mail"), _("Enter your account information to get started.")));
         
         entry_real_name = (Gtk.Entry) builder.get_object("entry: real_name");
         entry_real_name.placeholder_text = REAL_NAME_PLACEHOLDER;
