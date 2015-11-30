@@ -1,6 +1,6 @@
 [Contractor Entry]
 Name=Send by Email
 Icon=mail-send
-Description=Send files using @APP_NAME@
+Description=Send files using Mail
 MimeType=!inode;
 Exec=mail-attach %F
