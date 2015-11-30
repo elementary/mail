@@ -14,8 +14,10 @@ public class LoginDialog : Gtk.Dialog {
     public LoginDialog() {
         Object();
         set_type_hint(Gdk.WindowTypeHint.DIALOG);
+        set_deletable(false);
         set_size_request(450, -1); // Sets min width.
-        
+
+        border_width = 5;
         page.margin = 5;
         spinner_page.margin = 5;
         get_content_area().pack_start(page, true, true, 0);
