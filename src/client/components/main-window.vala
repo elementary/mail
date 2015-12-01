@@ -171,9 +171,6 @@ public class MainWindow : Gtk.ApplicationWindow {
         conversations_paned.pack1(folder_paned, true, true);
         conversations_paned.pack2(conversation_viewer, true, true);
 
-        if (GearyApplication.instance.is_running_unity)
-            main_layout.pack_start(main_toolbar, false, true, 0);
-
         main_layout.pack_end(conversations_paned, true, true, 0);
 
         add(main_layout);
