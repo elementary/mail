@@ -58,9 +58,9 @@ public class GearyController : Geary.BaseObject {
 
     public const int MIN_CONVERSATION_COUNT = 50;
 
-    private const string DELETE_MESSAGE_LABEL = _("Delete conversation");
-    private const string DELETE_MESSAGE_TOOLTIP_SINGLE = _("Delete conversation (Shift+Delete)");
-    private const string DELETE_MESSAGE_TOOLTIP_MULTIPLE = _("Delete conversations (Shift+Delete)");
+    private const string DELETE_MESSAGE_LABEL = _("Delete Conversation");
+    private const string DELETE_MESSAGE_TOOLTIP_SINGLE = _("Delete Conversation (Shift+Delete)");
+    private const string DELETE_MESSAGE_TOOLTIP_MULTIPLE = _("Delete Conversations (Shift+Delete)");
     private const string DELETE_MESSAGE_ICON_NAME = "edit-delete-symbolic";
 
     // This refers to the action ("move email to the trash"), not the Trash folder itself
