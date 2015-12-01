@@ -35,7 +35,7 @@ public class PreferencesDialog : Object {
         display_preview_label.margin_left = 12;
 
         three_pane_view = new Gtk.Switch ();
-        Gtk.Label three_pane_view_label = new Gtk.Label (_("Three-pane view:"));
+        Gtk.Label three_pane_view_label = new Gtk.Label (_("Three-pane layout:"));
         three_pane_view_label.halign = Gtk.Align.END;
         three_pane_view_label.margin_left = 12;
 
