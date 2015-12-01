@@ -12,13 +12,13 @@ public class PreferencesDialog : Object {
     private Gtk.Switch startup_notifications;
     private Gtk.Switch three_pane_view;
 
-    public PreferencesDialog(Gtk.Window parent) {
+    public PreferencesDialog (Gtk.Window parent) {
         dialog = new Gtk.Dialog ();
         dialog.border_width = 4;
         dialog.deletable = false;
         dialog.resizable = false;
-        dialog.set_transient_for(parent);
-        dialog.set_modal(true);
+        dialog.set_transient_for (parent);
+        dialog.set_modal (true);
 
         Gtk.Label reading = new Gtk.Label (_("Reading"));
         reading.get_style_context ().add_class ("h4");
@@ -88,19 +88,19 @@ public class PreferencesDialog : Object {
 
     public void bind_keys () {
         Configuration config = GearyApplication.instance.config;
-        config.bind(Configuration.AUTOSELECT_KEY, autoselect, "active");
-        config.bind(Configuration.DISPLAY_PREVIEW_KEY, display_preview, "active");
-        config.bind(Configuration.FOLDER_LIST_PANE_HORIZONTAL_KEY, three_pane_view, "active");
-        config.bind(Configuration.SPELL_CHECK_KEY, spell_check, "active");
-        config.bind(Configuration.STARTUP_NOTIFICATIONS_KEY, startup_notifications, "active");
+        config.bind (Configuration.AUTOSELECT_KEY, autoselect, "active");
+        config.bind (Configuration.DISPLAY_PREVIEW_KEY, display_preview, "active");
+        config.bind (Configuration.FOLDER_LIST_PANE_HORIZONTAL_KEY, three_pane_view, "active");
+        config.bind (Configuration.SPELL_CHECK_KEY, spell_check, "active");
+        config.bind (Configuration.STARTUP_NOTIFICATIONS_KEY, startup_notifications, "active");
     }
 
-    public void run() {
+    public void run () {
         // Sync startup notification option with file state
-        GearyApplication.instance.controller.autostart_manager.sync_with_config();
-        dialog.show_all();
-        dialog.run();
-        dialog.destroy();
+        GearyApplication.instance.controller.autostart_manager.sync_with_config ();
+        dialog.show_all ();
+        dialog.run ();
+        dialog.destroy ();
     }
 }
 
