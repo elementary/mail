@@ -23,16 +23,6 @@ public interface PillBar : Gtk.Container {
         size = new Gtk.SizeGroup(Gtk.SizeGroupMode.VERTICAL);
     }
 
-    public virtual void add_start(Gtk.Widget widget) {
-        pack_start(widget);
-        size.add_widget(widget);
-    }
-
-    public virtual void add_end(Gtk.Widget widget) {
-        pack_end(widget);
-        size.add_widget(widget);
-    }
-
     public virtual void setup_button(Gtk.Button b, string? icon_name, string action_name,
         bool show_label = false) {
         b.related_action = action_group.get_action(action_name);

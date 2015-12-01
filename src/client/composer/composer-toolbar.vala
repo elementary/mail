@@ -18,23 +18,23 @@ public class ComposerToolbar : PillToolbar {
         insert.add(create_toggle_button(null, ComposerWidget.ACTION_ITALIC));
         insert.add(create_toggle_button(null, ComposerWidget.ACTION_UNDERLINE));
         insert.add(create_toggle_button(null, ComposerWidget.ACTION_STRIKETHROUGH));
-        add_start(create_pill_buttons(insert, false, true));
+        pack_start(create_pill_buttons(insert, false, true));
 
         // Indent level.
         insert.clear();
         insert.add(create_toolbar_button(null, ComposerWidget.ACTION_INDENT));
         insert.add(create_toolbar_button(null, ComposerWidget.ACTION_OUTDENT));
-        add_start(create_pill_buttons(insert, false));
+        pack_start(create_pill_buttons(insert, false));
 
         // Link.
         insert.clear();
         insert.add(create_toolbar_button(null, ComposerWidget.ACTION_INSERT_LINK));
-        add_start(create_pill_buttons(insert));
+        pack_start(create_pill_buttons(insert));
 
         // Remove formatting.
         insert.clear();
         insert.add(create_toolbar_button(null, ComposerWidget.ACTION_REMOVE_FORMAT));
-        add_start(create_pill_buttons(insert));
+        pack_start(create_pill_buttons(insert));
 
         // Menu.
         Gtk.MenuButton more = new Gtk.MenuButton();
@@ -46,7 +46,7 @@ public class ComposerToolbar : PillToolbar {
         Gtk.Label label = new Gtk.Label(null);
         label.get_style_context().add_class("dim-label");
         bind_property("label-text", label, "label", BindingFlags.SYNC_CREATE);
-        add_end(label);
+        pack_end(label);
     }
 }
 
