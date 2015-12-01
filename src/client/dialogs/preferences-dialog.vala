@@ -30,12 +30,12 @@ public class PreferencesDialog : Object {
         autoselect_label.margin_left = 12;
 
         display_preview = new Gtk.Switch ();
-        Gtk.Label display_preview_label = new Gtk.Label (_("Display conversation preview:"));
+        Gtk.Label display_preview_label = new Gtk.Label (_("Conversation previews:"));
         display_preview_label.halign = Gtk.Align.END;
         display_preview_label.margin_left = 12;
 
         three_pane_view = new Gtk.Switch ();
-        Gtk.Label three_pane_view_label = new Gtk.Label (_("Use three pane view:"));
+        Gtk.Label three_pane_view_label = new Gtk.Label (_("Three-pane view:"));
         three_pane_view_label.halign = Gtk.Align.END;
         three_pane_view_label.margin_left = 12;
 
@@ -44,7 +44,7 @@ public class PreferencesDialog : Object {
         composer.halign = Gtk.Align.START;
 
         spell_check = new Gtk.Switch ();
-        Gtk.Label spell_check_label = new Gtk.Label (_("Enable spell checking:"));
+        Gtk.Label spell_check_label = new Gtk.Label (_("Spell check:"));
         spell_check_label.halign = Gtk.Align.END;
         spell_check_label.margin_left = 12;
 
