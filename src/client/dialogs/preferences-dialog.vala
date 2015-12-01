@@ -14,7 +14,7 @@ public class PreferencesDialog : Object {
 
     public PreferencesDialog (Gtk.Window parent) {
         dialog = new Gtk.Dialog ();
-        dialog.border_width = 4;
+        dialog.border_width = 5;
         dialog.deletable = false;
         dialog.resizable = false;
         dialog.set_transient_for (parent);
@@ -60,7 +60,7 @@ public class PreferencesDialog : Object {
         Gtk.Grid layout = new Gtk.Grid ();
         layout.column_spacing = 12;
         layout.row_spacing = 6;
-        layout.margin = 4;
+        layout.margin = 5;
         layout.margin_bottom = 19;
         layout.margin_top = 0;
 
