@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2015-11-24 09:47-0800\n"
+"POT-Creation-Date: 2015-11-30 11:51-0600\n"
 "PO-Revision-Date: 2015-11-24 15:45+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-11-25 05:40+0000\n"
+"X-Launchpad-Export-Date: 2015-12-01 05:54+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 "Language: kk\n"
 
@@ -85,6 +85,7 @@ msgstr "Шығыс"
 #: ../src/engine/api/geary-special-folder-type.vala:51
 #: ../src/client/folder-list/folder-list-search-branch.vala:38
 #: ../src/client/components/search-bar.vala:10
+#: ../src/client/components/main-toolbar.vala:29
 msgid "Search"
 msgstr "Іздеу"
 
@@ -274,107 +275,136 @@ msgid "_Archive"
 msgstr "_Архив"
 
 #: ../src/client/application/geary-controller.vala:73
+#: ../src/client/application/geary-controller.vala:72
 msgid "Archive conversation (A)"
 msgstr "Сөйлесуді архивтеу (A)"
 
 #: ../src/client/application/geary-controller.vala:74
+#: ../src/client/application/geary-controller.vala:73
 msgid "Archive conversations (A)"
 msgstr "Сөйлесулерді архивтеу (A)"
 
 #: ../src/client/application/geary-controller.vala:77
+#: ../src/client/application/geary-controller.vala:76
 msgid "Mark as S_pam"
 msgstr "С_пам етіп белгілеу"
 
 #: ../src/client/application/geary-controller.vala:78
+#: ../src/client/application/geary-controller.vala:77
 msgid "Mark as not S_pam"
 msgstr "С_пам емес етіп белгілеу"
 
 #: ../src/client/application/geary-controller.vala:80
 #: ../src/client/application/geary-controller.vala:392
 #: ../src/client/components/main-toolbar.vala:109
+#: ../src/client/application/geary-controller.vala:79
+#: ../src/client/application/geary-controller.vala:391
+#: ../src/client/components/main-toolbar.vala:124
 msgid "Mark conversation"
 msgstr "Сөйлесуді белгілеу"
 
 #: ../src/client/application/geary-controller.vala:81
+#: ../src/client/application/geary-controller.vala:80
 msgid "Mark conversations"
 msgstr "Сөйлесулерді белгілеу"
 
 #: ../src/client/application/geary-controller.vala:82
 #: ../src/client/components/main-toolbar.vala:114
+#: ../src/client/application/geary-controller.vala:81
+#: ../src/client/components/main-toolbar.vala:129
 msgid "Add label to conversation"
 msgstr "Сөйлесуге белгіні қосу"
 
 #: ../src/client/application/geary-controller.vala:83
+#: ../src/client/application/geary-controller.vala:82
 msgid "Add label to conversations"
 msgstr "Сөйлесулерге белгіні қосу"
 
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:431
 #: ../src/client/components/main-toolbar.vala:119
+#: ../src/client/application/geary-controller.vala:83
+#: ../src/client/application/geary-controller.vala:430
+#: ../src/client/components/main-toolbar.vala:134
 msgid "Move conversation"
 msgstr "Сөйлесуді жылжыту"
 
 #: ../src/client/application/geary-controller.vala:85
+#: ../src/client/application/geary-controller.vala:84
 msgid "Move conversations"
 msgstr "Сөйлесулерді жылжыту"
 
 #: ../src/client/application/geary-controller.vala:372
+#: ../src/client/application/geary-controller.vala:371
 msgid "A_ccounts"
 msgstr "_Тіркелгілер"
 
 #: ../src/client/application/geary-controller.vala:377
 #: ../src/client/components/stock.vala:27
+#: ../src/client/application/geary-controller.vala:376
 msgid "_Preferences"
 msgstr "Ба_птаулар"
 
 #: ../src/client/application/geary-controller.vala:381
 #: ../src/client/components/stock.vala:25
+#: ../src/client/application/geary-controller.vala:380
 msgid "_Help"
 msgstr "_Көмек"
 
 #: ../src/client/application/geary-controller.vala:385
 #: ../src/client/components/stock.vala:21
+#: ../src/client/application/geary-controller.vala:384
 msgid "_About"
 msgstr "Осы тур_алы"
 
 #: ../src/client/application/geary-controller.vala:389
 #: ../src/client/components/stock.vala:29
+#: ../src/client/application/geary-controller.vala:388
 msgid "_Quit"
 msgstr "_Шығу"
 
 #: ../src/client/application/geary-controller.vala:394
+#: ../src/client/application/geary-controller.vala:393
 msgid "_Mark as..."
 msgstr "Қалайша _белгілеу..."
 
 #: ../src/client/application/geary-controller.vala:400
+#: ../src/client/application/geary-controller.vala:399
 msgid "Mark as _Read"
 msgstr "Оқ_ылған етіп белгілеу"
 
 #: ../src/client/application/geary-controller.vala:406
+#: ../src/client/application/geary-controller.vala:405
 msgid "Mark as _Unread"
 msgstr "Оқыл_маған етіп белгілеу"
 
 #: ../src/client/application/geary-controller.vala:412
+#: ../src/client/application/geary-controller.vala:411
 msgid "_Star"
 msgstr "_Жұлдызшаны орнату"
 
 #: ../src/client/application/geary-controller.vala:417
+#: ../src/client/application/geary-controller.vala:416
 msgid "U_nstar"
 msgstr "Жұлдызшаны алы_п тастау"
 
 #: ../src/client/application/geary-controller.vala:427
+#: ../src/client/application/geary-controller.vala:426
 msgid "Add label"
 msgstr "Белгіні қосу"
 
 #: ../src/client/application/geary-controller.vala:428
+#: ../src/client/application/geary-controller.vala:427
 msgid "_Label"
 msgstr "Ж_азу"
 
 #: ../src/client/application/geary-controller.vala:432
+#: ../src/client/application/geary-controller.vala:431
 msgid "_Move"
 msgstr "Жы_лжыту"
 
 #: ../src/client/application/geary-controller.vala:436
+#: ../src/client/application/geary-controller.vala:435
 msgid "Compose new message (Ctrl+N, N)"
 msgstr "Жаңа хатты жазу (Ctrl+N, N)"
 
@@ -384,6 +414,7 @@ msgid "_Reply"
 msgstr "Жауап бе_ру"
 
 #: ../src/client/application/geary-controller.vala:441
+#: ../src/client/application/geary-controller.vala:440
 msgid "Reply (Ctrl+R, R)"
 msgstr "Жауап беру (Ctrl+R, R)"
 
@@ -392,6 +423,7 @@ msgid "R_eply All"
 msgstr "Барлығына жауап б_еру"
 
 #: ../src/client/application/geary-controller.vala:446
+#: ../src/client/application/geary-controller.vala:445
 msgid "Reply all (Ctrl+Shift+R, Shift+R)"
 msgstr "Барлығына жауап беру (Ctrl+Shift+R, Shift+R)"
 
@@ -401,22 +433,28 @@ msgid "_Forward"
 msgstr "Қа_йта бағдарлау"
 
 #: ../src/client/application/geary-controller.vala:452
+#: ../src/client/application/geary-controller.vala:451
 msgid "Forward (Ctrl+L, F)"
 msgstr "Қайта бағдарлау (Ctrl+L, F)"
 
 #: ../src/client/application/geary-controller.vala:491
+#: ../src/client/application/geary-controller.vala:490
 msgid "Empty"
 msgstr "Босату"
 
 #: ../src/client/application/geary-controller.vala:492
+#: ../src/client/application/geary-controller.vala:491
+#: ../src/client/components/main-toolbar.vala:79
 msgid "Empty Spam or Trash folders"
 msgstr "Спам немесе Қоқыс шелегі бумаларын босату"
 
 #: ../src/client/application/geary-controller.vala:496
+#: ../src/client/application/geary-controller.vala:495
 msgid "Empty _Spam…"
 msgstr "_Спам бумасын босату…"
 
 #: ../src/client/application/geary-controller.vala:500
+#: ../src/client/application/geary-controller.vala:499
 msgid "Empty _Trash…"
 msgstr "Қ_оқыс шелегін босату…"
 
@@ -425,14 +463,17 @@ msgid "Toggle search bar"
 msgstr "Іздеу панелін іске қосу/сөндіру"
 
 #: ../src/client/application/geary-controller.vala:746
+#: ../src/client/application/geary-controller.vala:740
 msgid "Unable to store server trust exception"
 msgstr "Серверге сену ережесін сақтау қатесі"
 
 #: ../src/client/application/geary-controller.vala:983
+#: ../src/client/application/geary-controller.vala:977
 msgid "Your settings are insecure"
 msgstr "Сіздің баптауларыңыз қауіпсіз емес"
 
 #: ../src/client/application/geary-controller.vala:984
+#: ../src/client/application/geary-controller.vala:978
 msgid ""
 "Your IMAP and/or SMTP settings do not specify SSL or TLS.  This means your "
 "username and password could be read by another person on the network.  Are "
@@ -443,16 +484,19 @@ msgstr ""
 "алады. Осыны жасауды шынымен қалайсыз ба?"
 
 #: ../src/client/application/geary-controller.vala:985
+#: ../src/client/application/geary-controller.vala:979
 msgid "Co_ntinue"
 msgstr "Жалғ_астыру"
 
 #. / Displayed in the space-limited status bar when a message fails to be sent due to error.
 #: ../src/client/application/geary-controller.vala:1063
 #: ../src/client/components/status-bar.vala:29
+#: ../src/client/application/geary-controller.vala:1057
 msgid "Error sending email"
 msgstr "Хатты жіберу сәтсіз"
 
 #: ../src/client/application/geary-controller.vala:1064
+#: ../src/client/application/geary-controller.vala:1058
 msgid ""
 "Geary encountered an error sending an email.  If the problem persists, "
 "please manually delete the email from your Outbox folder."
@@ -462,10 +506,12 @@ msgstr ""
 
 #: ../src/client/application/geary-controller.vala:1068
 #: ../src/client/components/status-bar.vala:33
+#: ../src/client/application/geary-controller.vala:1062
 msgid "Error saving sent mail"
 msgstr "Жіберліген хаттын сақтау сәтсіз"
 
 #: ../src/client/application/geary-controller.vala:1069
+#: ../src/client/application/geary-controller.vala:1063
 msgid ""
 "Geary encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
@@ -474,14 +520,17 @@ msgstr ""
 "алды. Бұл хат сіз оны қолмен өшірілгенге дейін Шығыс бумасында қала береді."
 
 #: ../src/client/application/geary-controller.vala:1138
+#: ../src/client/application/geary-controller.vala:1132
 msgid "Labels"
 msgstr "Белгілер"
 
 #: ../src/client/application/geary-controller.vala:1150
+#: ../src/client/application/geary-controller.vala:1144
 msgid "Unable to open the database for %s"
 msgstr "%s үшін дерекқорды ашу мүмкін емес"
 
 #: ../src/client/application/geary-controller.vala:1151
+#: ../src/client/application/geary-controller.vala:1145
 msgid ""
 "There was an error opening the local mail database for this account. This is "
 "possibly due to corruption of the database file in this directory:\n"
@@ -505,18 +554,22 @@ msgstr ""
 "жояды. <b>Сервердегі поштаға әсері болмайды.</b>"
 
 #: ../src/client/application/geary-controller.vala:1153
+#: ../src/client/application/geary-controller.vala:1147
 msgid "_Rebuild"
 msgstr "Қа_йта құрастыру"
 
 #: ../src/client/application/geary-controller.vala:1153
+#: ../src/client/application/geary-controller.vala:1147
 msgid "E_xit"
 msgstr "_Шығу"
 
 #: ../src/client/application/geary-controller.vala:1162
+#: ../src/client/application/geary-controller.vala:1156
 msgid "Unable to rebuild database for \"%s\""
 msgstr "\"%s\" үшін дерекқорды қайта құрастыру мүмкін емес"
 
 #: ../src/client/application/geary-controller.vala:1163
+#: ../src/client/application/geary-controller.vala:1157
 msgid ""
 "Error during rebuild:\n"
 "\n"
@@ -529,10 +582,14 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1185
 #: ../src/client/application/geary-controller.vala:1195
 #: ../src/client/application/geary-controller.vala:1206
+#: ../src/client/application/geary-controller.vala:1179
+#: ../src/client/application/geary-controller.vala:1189
+#: ../src/client/application/geary-controller.vala:1200
 msgid "Unable to open local mailbox for %s"
 msgstr "%s үшін жергілікті эл. пошта жәшігін ашу мүмкін емес"
 
 #: ../src/client/application/geary-controller.vala:1186
+#: ../src/client/application/geary-controller.vala:1180
 msgid ""
 "There was an error opening the local mail database for this account. This is "
 "possibly due to a file permissions problem.\n"
@@ -551,6 +608,7 @@ msgstr ""
 "%s"
 
 #: ../src/client/application/geary-controller.vala:1196
+#: ../src/client/application/geary-controller.vala:1190
 msgid ""
 "The version number of the local mail database is formatted for a newer "
 "version of Geary. Unfortunately, the database cannot be \"rolled back\" to "
@@ -566,6 +624,7 @@ msgstr ""
 "Geary қолданбасының соңғы нұсқасын орнатып, қайталап көріңіз."
 
 #: ../src/client/application/geary-controller.vala:1207
+#: ../src/client/application/geary-controller.vala:1201
 msgid ""
 "There was an error opening the local account. This is probably due to "
 "connectivity issues.\n"
@@ -578,12 +637,14 @@ msgstr ""
 "Желілік байланысыңызды тексеріп, Geary қолданбасын қайта іске қосыңыз."
 
 #: ../src/client/application/geary-controller.vala:1715
+#: ../src/client/application/geary-controller.vala:1709
 msgid "About %s"
 msgstr "%s туралы"
 
 #. / Translators: add your name and email address to receive credit in the About dialog
 #. / For example: Yamada Taro <yamada.taro@example.com>
 #: ../src/client/application/geary-controller.vala:1718
+#: ../src/client/application/geary-controller.vala:1712
 msgid "translator-credits"
 msgstr ""
 "Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
@@ -593,14 +654,17 @@ msgstr ""
 "  elementary Apps team https://launchpad.net/~elementary-apps"
 
 #: ../src/client/application/geary-controller.vala:1976
+#: ../src/client/application/geary-controller.vala:1970
 msgid "Undo move (Ctrl+Z)"
 msgstr "Жылжытуды болдырмау (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:1986
+#: ../src/client/application/geary-controller.vala:1980
 msgid "Are you sure you want to open \"%s\"?"
 msgstr "\"%s\" ашуды шынымен қалайсыз ба?"
 
 #: ../src/client/application/geary-controller.vala:1987
+#: ../src/client/application/geary-controller.vala:1981
 msgid ""
 "Attachments may cause damage to your system if opened.  Only open files from "
 "trusted sources."
@@ -609,68 +673,83 @@ msgstr ""
 "жіберушілерден салынымдарды ашыңыз."
 
 #: ../src/client/application/geary-controller.vala:1988
+#: ../src/client/application/geary-controller.vala:1982
 msgid "Don't _ask me again"
 msgstr "М_ені қайта сұрамау"
 
 #: ../src/client/application/geary-controller.vala:2006
+#: ../src/client/application/geary-controller.vala:2000
 msgid "A file named \"%s\" already exists.  Do you want to replace it?"
 msgstr ""
 "\"%s\" деп аталатын файл бар болып тұр. Оны үстінен жазуды қалайсыз ба?"
 
 #: ../src/client/application/geary-controller.vala:2008
+#: ../src/client/application/geary-controller.vala:2002
 msgid ""
 "The file already exists in \"%s\".  Replacing it will overwrite its contents."
 msgstr ""
 "Файл \"%s\" ішінде бар болып тұр.  Оны ауыстырсаңыз, құрамы үстінен жазылады."
 
 #: ../src/client/application/geary-controller.vala:2011
+#: ../src/client/application/geary-controller.vala:2005
 msgid "_Replace"
 msgstr "А_лмастыру"
 
 #: ../src/client/application/geary-controller.vala:2309
+#: ../src/client/application/geary-controller.vala:2303
 msgid "Close open draft messages?"
 msgstr "Ашық шимай хаттарды жабу керек пе?"
 
 #: ../src/client/application/geary-controller.vala:2439
+#: ../src/client/application/geary-controller.vala:2433
 msgid "Empty all email from your %s folder?"
 msgstr "Барлық хаттарды сіздің %s бумаңыздан босату керек пе?"
 
 #: ../src/client/application/geary-controller.vala:2440
+#: ../src/client/application/geary-controller.vala:2434
 msgid "This removes the email from Geary and your email server."
 msgstr ""
 "Бұл әрекет бұл эл. пошта хатын Geary ішінен және эл. пошта серверінен де "
 "өшіреді."
 
 #: ../src/client/application/geary-controller.vala:2441
+#: ../src/client/application/geary-controller.vala:2435
 msgid "This cannot be undone."
 msgstr "Бұны болдырмау мүмкін емес болады."
 
 #: ../src/client/application/geary-controller.vala:2442
+#: ../src/client/application/geary-controller.vala:2436
 msgid "Empty %s"
 msgstr "%s босату"
 
 #: ../src/client/application/geary-controller.vala:2459
+#: ../src/client/application/geary-controller.vala:2453
 msgid "Error emptying %s"
 msgstr "%s босату сәтсіз аяқталды"
 
 #: ../src/client/application/geary-controller.vala:2489
+#: ../src/client/application/geary-controller.vala:2483
 msgid "Do you want to permanently delete this message?"
 msgid_plural "Do you want to permanently delete these messages?"
 msgstr[0] "Бұл хат(тар)ды толығымен өшіруді қалайсыз ба?"
 
 #: ../src/client/application/geary-controller.vala:2491
+#: ../src/client/application/geary-controller.vala:2485
 msgid "Delete"
 msgstr "Өшіру"
 
 #: ../src/client/application/geary-controller.vala:2522
+#: ../src/client/application/geary-controller.vala:2516
 msgid "Undo archive (Ctrl+Z)"
 msgstr "Архивтеуді болдырмау (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:2537
+#: ../src/client/application/geary-controller.vala:2531
 msgid "Undo trash (Ctrl+Z)"
 msgstr "Қоқыс шелегіне тастауды болдырмау (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:2590
+#: ../src/client/application/geary-controller.vala:2584
 msgid "Undo (Ctrl+Z)"
 msgstr "Болдырмау (Ctrl+Z)"
 
@@ -1432,13 +1511,37 @@ msgid "_Keep"
 msgstr "Ұс_тау"
 
 #: ../src/client/components/search-bar.vala:25
+#: ../src/client/components/main-toolbar.vala:83
 msgid "Search all mail in account for keywords (Ctrl+S)"
 msgstr "Тіркелгінің барлық хаттарынан кілтсөзді іздеу (Ctrl+S)"
 
 #: ../src/client/components/search-bar.vala:118
+#: ../src/client/components/main-toolbar.vala:300
 msgid "Indexing %s account"
 msgstr "%s тіркелгісін индекстеу"
 
 #: ../src/client/components/main-toolbar.vala:144
+#: ../src/client/composer/composer-headerbar.vala:90
+#: ../src/client/components/main-toolbar.vala:162
 msgid "Menu"
+msgstr ""
+
+#: ../src/client/application/geary-application.vala:25
+msgid "Send by Email"
+msgstr ""
+
+#: ../src/client/application/geary-application.vala:26
+msgid "Send files using Mail"
+msgstr ""
+
+#: ../src/client/accounts/add-edit-page.vala:233
+msgid "Welcome to Mail"
+msgstr ""
+
+#: ../src/client/composer/composer-toolbar.vala:43
+msgid "More options"
+msgstr ""
+
+#: ../src/client/components/main-toolbar.vala:312
+msgid "Search %s"
 msgstr ""

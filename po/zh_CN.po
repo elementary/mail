@@ -16,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2015-11-24 09:47-0800\n"
+"POT-Creation-Date: 2015-11-30 11:51-0600\n"
 "PO-Revision-Date: 2015-11-24 15:53+0000\n"
 "Last-Translator: YunQiang Su <wzssyqa@gmail.com>\n"
 "Language-Team: Chinese (China) "
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-11-25 05:40+0000\n"
+"X-Launchpad-Export-Date: 2015-12-01 05:55+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 "Language: zh_CN\n"
 
@@ -93,6 +93,7 @@ msgstr "已发邮件"
 #: ../src/engine/api/geary-special-folder-type.vala:51
 #: ../src/client/folder-list/folder-list-search-branch.vala:38
 #: ../src/client/components/search-bar.vala:10
+#: ../src/client/components/main-toolbar.vala:29
 msgid "Search"
 msgstr "搜索"
 
@@ -288,109 +289,138 @@ msgid "_Archive"
 msgstr "存档(_A)"
 
 #: ../src/client/application/geary-controller.vala:73
+#: ../src/client/application/geary-controller.vala:72
 #| msgid "Move conversation"
 msgid "Archive conversation (A)"
 msgstr "归档会话 (A)"
 
 #: ../src/client/application/geary-controller.vala:74
+#: ../src/client/application/geary-controller.vala:73
 #| msgid "Move conversations"
 msgid "Archive conversations (A)"
 msgstr "归档多个会话 (A)"
 
 #: ../src/client/application/geary-controller.vala:77
+#: ../src/client/application/geary-controller.vala:76
 msgid "Mark as S_pam"
 msgstr "标记为垃圾邮件(_P)"
 
 #: ../src/client/application/geary-controller.vala:78
+#: ../src/client/application/geary-controller.vala:77
 msgid "Mark as not S_pam"
 msgstr "取消标记为垃圾邮件(_P)"
 
 #: ../src/client/application/geary-controller.vala:80
 #: ../src/client/application/geary-controller.vala:392
 #: ../src/client/components/main-toolbar.vala:109
+#: ../src/client/application/geary-controller.vala:79
+#: ../src/client/application/geary-controller.vala:391
+#: ../src/client/components/main-toolbar.vala:124
 msgid "Mark conversation"
 msgstr "增加标签"
 
 #: ../src/client/application/geary-controller.vala:81
+#: ../src/client/application/geary-controller.vala:80
 msgid "Mark conversations"
 msgstr "为"
 
 #: ../src/client/application/geary-controller.vala:82
 #: ../src/client/components/main-toolbar.vala:114
+#: ../src/client/application/geary-controller.vala:81
+#: ../src/client/components/main-toolbar.vala:129
 msgid "Add label to conversation"
 msgstr "增加标签到会话"
 
 #: ../src/client/application/geary-controller.vala:83
+#: ../src/client/application/geary-controller.vala:82
 msgid "Add label to conversations"
 msgstr "增加标签到已选会话"
 
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:431
 #: ../src/client/components/main-toolbar.vala:119
+#: ../src/client/application/geary-controller.vala:83
+#: ../src/client/application/geary-controller.vala:430
+#: ../src/client/components/main-toolbar.vala:134
 msgid "Move conversation"
 msgstr "移动会话"
 
 #: ../src/client/application/geary-controller.vala:85
+#: ../src/client/application/geary-controller.vala:84
 msgid "Move conversations"
 msgstr "移动所选会话"
 
 #: ../src/client/application/geary-controller.vala:372
+#: ../src/client/application/geary-controller.vala:371
 msgid "A_ccounts"
 msgstr "账号"
 
 #: ../src/client/application/geary-controller.vala:377
 #: ../src/client/components/stock.vala:27
+#: ../src/client/application/geary-controller.vala:376
 msgid "_Preferences"
 msgstr "首选项(_P)"
 
 #: ../src/client/application/geary-controller.vala:381
 #: ../src/client/components/stock.vala:25
+#: ../src/client/application/geary-controller.vala:380
 msgid "_Help"
 msgstr "帮助(_H)"
 
 #: ../src/client/application/geary-controller.vala:385
 #: ../src/client/components/stock.vala:21
+#: ../src/client/application/geary-controller.vala:384
 msgid "_About"
 msgstr "关于(_A)"
 
 #: ../src/client/application/geary-controller.vala:389
 #: ../src/client/components/stock.vala:29
+#: ../src/client/application/geary-controller.vala:388
 msgid "_Quit"
 msgstr "退出(_Q)"
 
 #: ../src/client/application/geary-controller.vala:394
+#: ../src/client/application/geary-controller.vala:393
 msgid "_Mark as..."
 msgstr "标记为(_M)..."
 
 #: ../src/client/application/geary-controller.vala:400
+#: ../src/client/application/geary-controller.vala:399
 msgid "Mark as _Read"
 msgstr "标记为已读(_R)"
 
 #: ../src/client/application/geary-controller.vala:406
+#: ../src/client/application/geary-controller.vala:405
 msgid "Mark as _Unread"
 msgstr "标记为未读(_U)"
 
 #: ../src/client/application/geary-controller.vala:412
+#: ../src/client/application/geary-controller.vala:411
 msgid "_Star"
 msgstr "加注星标(_S)"
 
 #: ../src/client/application/geary-controller.vala:417
+#: ../src/client/application/geary-controller.vala:416
 msgid "U_nstar"
 msgstr "取消星标(_N)"
 
 #: ../src/client/application/geary-controller.vala:427
+#: ../src/client/application/geary-controller.vala:426
 msgid "Add label"
 msgstr "添加标签"
 
 #: ../src/client/application/geary-controller.vala:428
+#: ../src/client/application/geary-controller.vala:427
 msgid "_Label"
 msgstr "标签(_L)"
 
 #: ../src/client/application/geary-controller.vala:432
+#: ../src/client/application/geary-controller.vala:431
 msgid "_Move"
 msgstr "移动(_M)"
 
 #: ../src/client/application/geary-controller.vala:436
+#: ../src/client/application/geary-controller.vala:435
 msgid "Compose new message (Ctrl+N, N)"
 msgstr "撰写新邮件(Ctrl+N, N)"
 
@@ -400,6 +430,7 @@ msgid "_Reply"
 msgstr "回复(_R)"
 
 #: ../src/client/application/geary-controller.vala:441
+#: ../src/client/application/geary-controller.vala:440
 msgid "Reply (Ctrl+R, R)"
 msgstr "回复(Ctrl+R, R)"
 
@@ -408,6 +439,7 @@ msgid "R_eply All"
 msgstr "回复全部(_E)"
 
 #: ../src/client/application/geary-controller.vala:446
+#: ../src/client/application/geary-controller.vala:445
 msgid "Reply all (Ctrl+Shift+R, Shift+R)"
 msgstr "回复全部(Ctrl+Shift+R, Shift+R)"
 
@@ -417,22 +449,28 @@ msgid "_Forward"
 msgstr "转发(_F)"
 
 #: ../src/client/application/geary-controller.vala:452
+#: ../src/client/application/geary-controller.vala:451
 msgid "Forward (Ctrl+L, F)"
 msgstr "转发(Ctrl+L, F)"
 
 #: ../src/client/application/geary-controller.vala:491
+#: ../src/client/application/geary-controller.vala:490
 msgid "Empty"
 msgstr ""
 
 #: ../src/client/application/geary-controller.vala:492
+#: ../src/client/application/geary-controller.vala:491
+#: ../src/client/components/main-toolbar.vala:79
 msgid "Empty Spam or Trash folders"
 msgstr ""
 
 #: ../src/client/application/geary-controller.vala:496
+#: ../src/client/application/geary-controller.vala:495
 msgid "Empty _Spam…"
 msgstr ""
 
 #: ../src/client/application/geary-controller.vala:500
+#: ../src/client/application/geary-controller.vala:499
 msgid "Empty _Trash…"
 msgstr ""
 
@@ -441,14 +479,17 @@ msgid "Toggle search bar"
 msgstr ""
 
 #: ../src/client/application/geary-controller.vala:746
+#: ../src/client/application/geary-controller.vala:740
 msgid "Unable to store server trust exception"
 msgstr ""
 
 #: ../src/client/application/geary-controller.vala:983
+#: ../src/client/application/geary-controller.vala:977
 msgid "Your settings are insecure"
 msgstr "您的设置不安全"
 
 #: ../src/client/application/geary-controller.vala:984
+#: ../src/client/application/geary-controller.vala:978
 msgid ""
 "Your IMAP and/or SMTP settings do not specify SSL or TLS.  This means your "
 "username and password could be read by another person on the network.  Are "
@@ -457,16 +498,19 @@ msgstr ""
 "您的 IMAP 和/或 SMTP 设置没有指定 SSL 或 TLS。这意味着您的用户名和密码可以被同一网络中的其他人看到。您确定要这样做吗？"
 
 #: ../src/client/application/geary-controller.vala:985
+#: ../src/client/application/geary-controller.vala:979
 msgid "Co_ntinue"
 msgstr "继续(_N)"
 
 #. / Displayed in the space-limited status bar when a message fails to be sent due to error.
 #: ../src/client/application/geary-controller.vala:1063
 #: ../src/client/components/status-bar.vala:29
+#: ../src/client/application/geary-controller.vala:1057
 msgid "Error sending email"
 msgstr "发送邮件出错"
 
 #: ../src/client/application/geary-controller.vala:1064
+#: ../src/client/application/geary-controller.vala:1058
 msgid ""
 "Geary encountered an error sending an email.  If the problem persists, "
 "please manually delete the email from your Outbox folder."
@@ -474,11 +518,13 @@ msgstr "发送邮件时 Geary 遇到了错误。如果持续出错，请手动�
 
 #: ../src/client/application/geary-controller.vala:1068
 #: ../src/client/components/status-bar.vala:33
+#: ../src/client/application/geary-controller.vala:1062
 #| msgid "Error sending email"
 msgid "Error saving sent mail"
 msgstr "保存已发送邮件出错"
 
 #: ../src/client/application/geary-controller.vala:1069
+#: ../src/client/application/geary-controller.vala:1063
 #| msgid ""
 #| "Geary encountered an error sending an email.  If the problem persists, "
 #| "please manually delete the email from your Outbox folder."
@@ -488,14 +534,17 @@ msgid ""
 msgstr "将已发送的邮件保存至“已发送”时出错。此封邮件仍然会在发件箱文件夹中，直至被手动删除。"
 
 #: ../src/client/application/geary-controller.vala:1138
+#: ../src/client/application/geary-controller.vala:1132
 msgid "Labels"
 msgstr "标签"
 
 #: ../src/client/application/geary-controller.vala:1150
+#: ../src/client/application/geary-controller.vala:1144
 msgid "Unable to open the database for %s"
 msgstr "无法打开 %s 的数据库"
 
 #: ../src/client/application/geary-controller.vala:1151
+#: ../src/client/application/geary-controller.vala:1145
 msgid ""
 "There was an error opening the local mail database for this account. This is "
 "possibly due to corruption of the database file in this directory:\n"
@@ -516,18 +565,22 @@ msgstr ""
 "重建数据库将会删除所有本地邮件及其中包含的附件。 <b>服务器中的邮件不会受到任何影响。</b>"
 
 #: ../src/client/application/geary-controller.vala:1153
+#: ../src/client/application/geary-controller.vala:1147
 msgid "_Rebuild"
 msgstr "重新构建(_R)"
 
 #: ../src/client/application/geary-controller.vala:1153
+#: ../src/client/application/geary-controller.vala:1147
 msgid "E_xit"
 msgstr "退出(_X)"
 
 #: ../src/client/application/geary-controller.vala:1162
+#: ../src/client/application/geary-controller.vala:1156
 msgid "Unable to rebuild database for \"%s\""
 msgstr "无法重建 \"%s\" 的数据"
 
 #: ../src/client/application/geary-controller.vala:1163
+#: ../src/client/application/geary-controller.vala:1157
 msgid ""
 "Error during rebuild:\n"
 "\n"
@@ -540,10 +593,14 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1185
 #: ../src/client/application/geary-controller.vala:1195
 #: ../src/client/application/geary-controller.vala:1206
+#: ../src/client/application/geary-controller.vala:1179
+#: ../src/client/application/geary-controller.vala:1189
+#: ../src/client/application/geary-controller.vala:1200
 msgid "Unable to open local mailbox for %s"
 msgstr "无法打开 %s 的本地邮箱"
 
 #: ../src/client/application/geary-controller.vala:1186
+#: ../src/client/application/geary-controller.vala:1180
 msgid ""
 "There was an error opening the local mail database for this account. This is "
 "possibly due to a file permissions problem.\n"
@@ -560,6 +617,7 @@ msgstr ""
 "%s"
 
 #: ../src/client/application/geary-controller.vala:1196
+#: ../src/client/application/geary-controller.vala:1190
 msgid ""
 "The version number of the local mail database is formatted for a newer "
 "version of Geary. Unfortunately, the database cannot be \"rolled back\" to "
@@ -572,6 +630,7 @@ msgstr ""
 "请安装最新版本的 Geary 后重试。"
 
 #: ../src/client/application/geary-controller.vala:1207
+#: ../src/client/application/geary-controller.vala:1201
 msgid ""
 "There was an error opening the local account. This is probably due to "
 "connectivity issues.\n"
@@ -582,12 +641,14 @@ msgstr ""
 "请检查您的网络连接后重新启动 Geary。"
 
 #: ../src/client/application/geary-controller.vala:1715
+#: ../src/client/application/geary-controller.vala:1709
 msgid "About %s"
 msgstr "关于 %s"
 
 #. / Translators: add your name and email address to receive credit in the About dialog
 #. / For example: Yamada Taro <yamada.taro@example.com>
 #: ../src/client/application/geary-controller.vala:1718
+#: ../src/client/application/geary-controller.vala:1712
 msgid "translator-credits"
 msgstr ""
 "tuhaihe <1132321739qq@gmail.com>, 2012\n"
@@ -598,80 +659,98 @@ msgstr ""
 "  colindemian https://launchpad.net/~colindemian"
 
 #: ../src/client/application/geary-controller.vala:1976
+#: ../src/client/application/geary-controller.vala:1970
 msgid "Undo move (Ctrl+Z)"
 msgstr ""
 
 #: ../src/client/application/geary-controller.vala:1986
+#: ../src/client/application/geary-controller.vala:1980
 msgid "Are you sure you want to open \"%s\"?"
 msgstr "确定要打开“%s”?"
 
 #: ../src/client/application/geary-controller.vala:1987
+#: ../src/client/application/geary-controller.vala:1981
 msgid ""
 "Attachments may cause damage to your system if opened.  Only open files from "
 "trusted sources."
 msgstr "如果打开，附件可能会对您的系统造成破坏。仅打开可信任来源的文件。"
 
 #: ../src/client/application/geary-controller.vala:1988
+#: ../src/client/application/geary-controller.vala:1982
 msgid "Don't _ask me again"
 msgstr "不再询问(_A)"
 
 #: ../src/client/application/geary-controller.vala:2006
+#: ../src/client/application/geary-controller.vala:2000
 msgid "A file named \"%s\" already exists.  Do you want to replace it?"
 msgstr "名为“%s”的文件已经存在。您要替换它吗？"
 
 #: ../src/client/application/geary-controller.vala:2008
+#: ../src/client/application/geary-controller.vala:2002
 msgid ""
 "The file already exists in \"%s\".  Replacing it will overwrite its contents."
 msgstr "“%s”中已有该文件。替换它将覆盖其内容。"
 
 #: ../src/client/application/geary-controller.vala:2011
+#: ../src/client/application/geary-controller.vala:2005
 msgid "_Replace"
 msgstr "替换(_R)"
 
 #: ../src/client/application/geary-controller.vala:2309
+#: ../src/client/application/geary-controller.vala:2303
 msgid "Close open draft messages?"
 msgstr ""
 
 #: ../src/client/application/geary-controller.vala:2439
+#: ../src/client/application/geary-controller.vala:2433
 msgid "Empty all email from your %s folder?"
 msgstr ""
 
 #: ../src/client/application/geary-controller.vala:2440
+#: ../src/client/application/geary-controller.vala:2434
 msgid "This removes the email from Geary and your email server."
 msgstr ""
 
 #: ../src/client/application/geary-controller.vala:2441
+#: ../src/client/application/geary-controller.vala:2435
 msgid "This cannot be undone."
 msgstr ""
 
 #: ../src/client/application/geary-controller.vala:2442
+#: ../src/client/application/geary-controller.vala:2436
 msgid "Empty %s"
 msgstr ""
 
 #: ../src/client/application/geary-controller.vala:2459
+#: ../src/client/application/geary-controller.vala:2453
 msgid "Error emptying %s"
 msgstr ""
 
 #: ../src/client/application/geary-controller.vala:2489
+#: ../src/client/application/geary-controller.vala:2483
 #| msgid "Do you want to discard this message?"
 msgid "Do you want to permanently delete this message?"
 msgid_plural "Do you want to permanently delete these messages?"
 msgstr[0] "您要永久删除该封邮件吗？"
 
 #: ../src/client/application/geary-controller.vala:2491
+#: ../src/client/application/geary-controller.vala:2485
 #| msgid "_Delete"
 msgid "Delete"
 msgstr "删除"
 
 #: ../src/client/application/geary-controller.vala:2522
+#: ../src/client/application/geary-controller.vala:2516
 msgid "Undo archive (Ctrl+Z)"
 msgstr ""
 
 #: ../src/client/application/geary-controller.vala:2537
+#: ../src/client/application/geary-controller.vala:2531
 msgid "Undo trash (Ctrl+Z)"
 msgstr ""
 
 #: ../src/client/application/geary-controller.vala:2590
+#: ../src/client/application/geary-controller.vala:2584
 msgid "Undo (Ctrl+Z)"
 msgstr ""
 
@@ -1431,13 +1510,37 @@ msgid "_Keep"
 msgstr "保存(_K)"
 
 #: ../src/client/components/search-bar.vala:25
+#: ../src/client/components/main-toolbar.vala:83
 msgid "Search all mail in account for keywords (Ctrl+S)"
 msgstr "在此帐号的所有邮件中搜索关键字 (Ctrl+S)"
 
 #: ../src/client/components/search-bar.vala:118
+#: ../src/client/components/main-toolbar.vala:300
 msgid "Indexing %s account"
 msgstr "正在索引 %s 帐号"
 
 #: ../src/client/components/main-toolbar.vala:144
+#: ../src/client/composer/composer-headerbar.vala:90
+#: ../src/client/components/main-toolbar.vala:162
 msgid "Menu"
+msgstr ""
+
+#: ../src/client/application/geary-application.vala:25
+msgid "Send by Email"
+msgstr ""
+
+#: ../src/client/application/geary-application.vala:26
+msgid "Send files using Mail"
+msgstr ""
+
+#: ../src/client/accounts/add-edit-page.vala:233
+msgid "Welcome to Mail"
+msgstr ""
+
+#: ../src/client/composer/composer-toolbar.vala:43
+msgid "More options"
+msgstr ""
+
+#: ../src/client/components/main-toolbar.vala:312
+msgid "Search %s"
 msgstr ""
