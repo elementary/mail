@@ -18,35 +18,35 @@ public class ComposerToolbar : PillToolbar {
         insert.add(create_toggle_button(null, ComposerWidget.ACTION_ITALIC));
         insert.add(create_toggle_button(null, ComposerWidget.ACTION_UNDERLINE));
         insert.add(create_toggle_button(null, ComposerWidget.ACTION_STRIKETHROUGH));
-        pack_start(create_pill_buttons(insert, false, true), false, false, 0);
+        pack_start (create_pill_buttons(insert, false, true), false, false, 0);
 
         // Indent level.
         insert.clear();
         insert.add(create_toolbar_button(null, ComposerWidget.ACTION_INDENT));
         insert.add(create_toolbar_button(null, ComposerWidget.ACTION_OUTDENT));
-        pack_start(create_pill_buttons(insert, false), false, false, 0);
+        pack_start (create_pill_buttons(insert, false), false, false, 0);
 
         // Link.
         insert.clear();
         insert.add(create_toolbar_button(null, ComposerWidget.ACTION_INSERT_LINK));
-        pack_start(create_pill_buttons(insert), false, false, 0);
+        pack_start (create_pill_buttons(insert), false, false, 0);
 
         // Remove formatting.
         insert.clear();
         insert.add(create_toolbar_button(null, ComposerWidget.ACTION_REMOVE_FORMAT));
-        pack_start(create_pill_buttons(insert), false, false, 0);
+        pack_start (create_pill_buttons(insert), false, false, 0);
 
         // Menu.
         Gtk.MenuButton more = new Gtk.MenuButton();
         more.image = new Gtk.Image.from_icon_name("view-more-symbolic", Gtk.IconSize.MENU);
         more.popup = menu;
         more.tooltip_text = _("More options");
-        pack_end(more, false, false, 0);
+        pack_end (more, false, false, 0);
 
         Gtk.Label label = new Gtk.Label(null);
         label.get_style_context().add_class("dim-label");
         bind_property("label-text", label, "label", BindingFlags.SYNC_CREATE);
-        pack_end(label, false, false, 0);
+        pack_end (label, false, false, 0);
     }
 }
 

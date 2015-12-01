@@ -44,8 +44,8 @@ public class ComposerHeaderbar : PillHeaderbar {
         insert.add(create_toolbar_button(null, ComposerWidget.ACTION_ADD_ATTACHMENT));
         insert.add(create_toolbar_button(null, ComposerWidget.ACTION_ADD_ORIGINAL_ATTACHMENTS));
         Gtk.Box attach_pending = create_pill_buttons(insert, false);
-        attach_buttons.pack_start (attach_only);
-        attach_buttons.pack_start (attach_pending);
+        attach_buttons.pack_start(attach_only);
+        attach_buttons.pack_start(attach_pending);
 
         recipients = new Gtk.Button();
         recipients.set_relief(Gtk.ReliefStyle.NONE);
@@ -74,7 +74,7 @@ public class ComposerHeaderbar : PillHeaderbar {
         menu.popup = new Gtk.Menu.from_model(GearyApplication.instance.controller.app_menu);
         menu.tooltip_text = _("Menu");
 
-        pack_end(menu);
+        pack_end (menu);
         bind_property("state", menu, "visible", BindingFlags.SYNC_CREATE,
             (binding, source_value, ref target_value) => {
                 target_value = (state == ComposerWidget.ComposerState.NEW);

@@ -18,7 +18,7 @@ public interface PillBar : Gtk.Container {
         action_group = toolbar_action_group;
     }
 
-    public virtual void setup_button(Gtk.Button b, string? icon_name, string action_name, bool show_label = false) {
+    public virtual void setup_button (Gtk.Button b, string? icon_name, string action_name, bool show_label = false) {
         b.related_action = action_group.get_action(action_name);
         b.tooltip_text = b.related_action.tooltip;
         b.related_action.notify["tooltip"].connect(() => { b.tooltip_text = b.related_action.tooltip; });
