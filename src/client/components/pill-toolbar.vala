@@ -67,8 +67,7 @@ public interface PillBar : Gtk.Container {
      * toolbar.  Optionally adds spacers "before" and "after" the buttons (those terms depending
      * on Gtk.TextDirection)
      */
-    public virtual Gtk.Box create_pill_buttons(Gee.Collection<Gtk.Button> buttons,
-        bool before_spacer = true, bool after_spacer = false) {
+    public virtual Gtk.Box create_pill_buttons (Gee.Collection<Gtk.Button> buttons, bool before_spacer = true, bool after_spacer = false) {
         Gtk.Box box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         box.valign = Gtk.Align.CENTER;
         box.halign = Gtk.Align.CENTER;
@@ -77,8 +76,10 @@ public interface PillBar : Gtk.Container {
             box.get_style_context().add_class(Gtk.STYLE_CLASS_LINKED);
         }
 
-        foreach(Gtk.Button button in buttons)
+        foreach(Gtk.Button button in buttons) {
             box.add(button);
+        }
+
         return box;
     }
 }
