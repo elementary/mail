@@ -54,12 +54,13 @@ a {
 td, th {
     vertical-align: top;
 }
+
 hr {
     background-color: #999;
     height: 1px;
     border: 0;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 .body, .header, .preview {
@@ -73,18 +74,22 @@ hr {
 
 .button {
     border: 1px transparent solid;
-    border-radius: 2.5px;
+    border-radius: 3px;
     cursor: pointer;
     padding: 4px;
     margin-top: 7px;
     text-align: center;
 }
+
 .button * {
     pointer-events: none;
 }
+
 .button:hover {
     border-color: rgba(0,0,0,0.18);
-    box-shadow: inset 0px 0px 1px rgba(255,255,255,0.8);
+    box-shadow: inset 0 0 1px rgba(255,255,255,0.15),
+                inset 0 1px 1px rgba(255,255,255,0.55),
+                inset 0 -1px 1px rgba(255,255,255,0.25);
 }
 .button:active {
     border-color: rgba(0,0,0,0.20);
@@ -94,15 +99,16 @@ hr {
 }
 
 .email, .composer_embed {
-    border: 1px rgba(0,0,0,1) solid;
     background-color: white;/* recv-normal */
-    color: black;
-    box-shadow: 0 3px 11px rgba(0,0,0,1);
-    display: block;
-    word-wrap: break-word;
-    width: 100%;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.10),
+                0 10px 20px rgba(0,0,0,0.19),
+                0 6px 6px rgba(0,0,0,0.23);
     box-sizing:border-box;
+    color: #333;
+    display: block;
     margin-top: 16px;
+    width: 100%;
+    word-wrap: break-word;
 }
 
 .composer_embed {
@@ -126,12 +132,12 @@ hr {
     display: none;
 }
 .email.read, #multiple_messages .email, .composer_embed {
-    border-color: rgba(0,0,0,0.4);
-    box-shadow: 0 3px 11px rgba(0,0,0,0.21);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.10),
+                0 3px 6px rgba(0,0,0,0.16),
+                0 3px 6px rgba(0,0,0,0.23);
 }
 .email.animate {
-    -webkit-transition: border-color 3s ease;
-    -webkit-transition: box-shadow 3s ease;
+    -webkit-transition: all 200ms ease;
 }
 
 .email .email_warning {
@@ -150,7 +156,7 @@ hr {
     overflow: hidden;
 }
 .email_container .header_container {
-    padding: 15px;
+    padding: 12px;
 }
 
 .email_container .header_container a:hover * {
@@ -185,21 +191,20 @@ hr {
     width: 48px;
     height: 48px;
     float: left;
-    border-radius: 5px;
+    border-radius: 50%;
 }
 
 body:not(.nohide) .email.hide .header_container .avatar {
     width: 32px;
     height: 32px;
     margin-right: 12px;
-    border-radius: 2.5px;
 }
 
 .email .body {
     border-top: 1px solid #999;
-    margin: 16px;
+    margin: 12px;
     margin-top: 0;
-    padding-top: 16px;
+    padding-top: 12px;
     overflow-x: auto;
     overflow-y: hidden;
     position: relative;  /* in case anything inside is positioned */
@@ -207,17 +212,30 @@ body:not(.nohide) .email.hide .header_container .avatar {
 
 .email .remote_images {
     display: none;
-    margin: 0 16px;
-    border: 1px solid #999;
-    border-bottom: none;
-    padding: 1em;
-    background: #ffc;
+    margin: 0 12px 12px;
+    background-image: linear-gradient(to bottom,
+                                  #fddf78,
+                                  #fac94a
+                                  );
+    border: 1px solid #c9a341;
+    border-radius: 3px;
+    box-shadow: inset 0 0 1px rgba(255,255,255,0.15),
+                inset 0 1px 1px rgba(255,255,255,0.55),
+                inset 0 -1px 1px rgba(255,255,255,0.25),
+                0 1px 3px rgba(0,0,0,0.12);
+    color: #614b17;
+    padding: 6px;
+    line-height: 26px;
+}
+
+.email .remote_images input {
+    float: right;
+    color: #614b17;
 }
 
 .email .remote_images .close_show_images {
-    float: right;
-    margin-top: -0.67em;
-    margin-right: -0.67em;
+    float: left;
+    margin: 0 6px 0 0;
 }
 
 .email .replaced_inline_image {
@@ -254,12 +272,14 @@ body:not(.nohide) .email.hide .header_container .avatar {
 @media screen {
 
     body {
-        background-color: #ccc !important;
+        background-color: #e2e2e2 !important;
     }
     body:not(.nohide) .email.hide,
     body:not(.nohide) .email .email.hide {
         background-color: #f5f5f5;/* recv-collapsed */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.10),
+                    0 1px 3px rgba(0,0,0,0.12),
+                    0 1px 2px rgba(0,0,0,0.24);
     }
     body:not(.nohide) .email.sent.hide,
     body:not(.nohide) .email.sent .email.hide {
@@ -460,13 +480,13 @@ body.nohide .email .compressed_note > span {
     position: absolute;
 }
 .header .field .value {
-    color: black;
+    color: #333;
     margin-left: 5.25em;
     max-height: 5em;
     overflow-y: auto;
 }
 .header .field .value a {
-    color: black;
+    color: #333;
     text-decoration: none;
 }
 .header .field.important .address_name {
@@ -528,7 +548,7 @@ body:not(.nohide) .quote_container.controllable.show .quote {
 .quote_container > .shower > input,
 .quote_container > .hider > input {
     width: 100%;
-    height: 15px;
+    height: 12px;
     padding: 0;
     font-size: 7px;  /* Absolute size in pixels for graphics */
     color: #888;
@@ -558,7 +578,7 @@ body:not(.nohide) .quote_container.controllable.show > .hider {
     position: absolute;
     left: 0;
     right: 0;
-    padding: 0 15px 15px;
+    padding: 0 12px 12px;
     box-sizing: border-box;
     min-height: 100%;
 }
@@ -570,7 +590,7 @@ body:not(.nohide) .quote_container.controllable.show > .hider {
     margin: 100px auto;
     display: inline-block;
     width: auto;
-    padding: 15px;
+    padding: 12px;
 }
 #email_template,
 #attachment_template,
@@ -644,8 +664,8 @@ License: http://cssload.net/en/terms_of_use
 }
 
 #spinner #frotateG_02 {
-    left:15px;
-    top:15px;
+    left:12px;
+    top:12px;
     -webkit-animation-delay:0.52s;
     animation-delay:0.52s;
 }
@@ -658,8 +678,8 @@ License: http://cssload.net/en/terms_of_use
 }
 
 #spinner #frotateG_04 {
-    right:15px;
-    top:15px;
+    right:12px;
+    top:12px;
     -webkit-animation-delay:0.78s;
     animation-delay:0.78s;
 }
@@ -672,8 +692,8 @@ License: http://cssload.net/en/terms_of_use
 }
 
 #spinner #frotateG_06 {
-    right:15px;
-    bottom:15px;
+    right:12px;
+    bottom:12px;
     -webkit-animation-delay:1.04s;
     animation-delay:1.04s;
 }
@@ -689,8 +709,8 @@ License: http://cssload.net/en/terms_of_use
 }
 
 #spinner #frotateG_08 {
-    left:15px;
-    bottom:15px;
+    left:12px;
+    bottom:12px;
     -moz-animation-delay:1.3s;
     -webkit-animation-delay:1.3s;
     -ms-animation-delay:1.3s;

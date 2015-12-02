@@ -146,7 +146,7 @@ public class ConversationWebView : StylishWebView {
         
         conversation_icon_color.parse("#888888");
         // Load the icons.
-        set_icon_src("#email_template .menu .icon", "go-down-symbolic");
+        set_icon_src("#email_template .menu .icon", "view-more-symbolic");
         set_icon_src("#email_template .starred .icon", "starred-symbolic");
         set_icon_src("#email_template .unstarred .icon", "non-starred-symbolic");
         set_icon_src("#email_template .attachment.icon", "mail-attachment-symbolic");
