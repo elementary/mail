@@ -13,28 +13,12 @@
  */
 public interface PillBar : Gtk.Container {
     protected abstract Gtk.ActionGroup action_group { get; set; }
-    protected abstract Gtk.SizeGroup size { get; set; }
-
-    public abstract void pack_start(Gtk.Widget widget);
-    public abstract void pack_end(Gtk.Widget widget);
 
     protected virtual void initialize(Gtk.ActionGroup toolbar_action_group) {
         action_group = toolbar_action_group;
-        size = new Gtk.SizeGroup(Gtk.SizeGroupMode.VERTICAL);
     }
 
-    public virtual void add_start(Gtk.Widget widget) {
-        pack_start(widget);
-        size.add_widget(widget);
-    }
-
-    public virtual void add_end(Gtk.Widget widget) {
-        pack_end(widget);
-        size.add_widget(widget);
-    }
-
-    public virtual void setup_button(Gtk.Button b, string? icon_name, string action_name,
-        bool show_label = false) {
+    public virtual void setup_button (Gtk.Button b, string? icon_name, string action_name, bool show_label = false) {
         b.related_action = action_group.get_action(action_name);
         b.tooltip_text = b.related_action.tooltip;
         b.related_action.notify["tooltip"].connect(() => { b.tooltip_text = b.related_action.tooltip; });
@@ -47,11 +31,8 @@ public interface PillBar : Gtk.Container {
         if (icon_to_load == null)
             icon_to_load = b.related_action.stock_id;
 
-        // set pixel size to force GTK+ to load our images from our installed directory, not the theme
-        // directory
         if (icon_to_load != null) {
             Gtk.Image image = new Gtk.Image.from_icon_name(icon_to_load, Gtk.IconSize.MENU);
-            image.set_pixel_size(16);
             b.image = image;
         }
 
@@ -86,19 +67,18 @@ public interface PillBar : Gtk.Container {
      * toolbar.  Optionally adds spacers "before" and "after" the buttons (those terms depending
      * on Gtk.TextDirection)
      */
-    public virtual Gtk.Box create_pill_buttons(Gee.Collection<Gtk.Button> buttons,
-        bool before_spacer = true, bool after_spacer = false) {
+    public virtual Gtk.Box create_pill_buttons (Gee.Collection<Gtk.Button> buttons, bool before_spacer = true, bool after_spacer = false) {
         Gtk.Box box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         box.valign = Gtk.Align.CENTER;
         box.halign = Gtk.Align.CENTER;
 
         if (buttons.size > 1) {
-            box.get_style_context().add_class(Gtk.STYLE_CLASS_RAISED);
             box.get_style_context().add_class(Gtk.STYLE_CLASS_LINKED);
         }
 
-        foreach(Gtk.Button button in buttons)
+        foreach(Gtk.Button button in buttons) {
             box.add(button);
+        }
 
         return box;
     }
@@ -109,7 +89,6 @@ public interface PillBar : Gtk.Container {
  */
 public class PillHeaderbar : Gtk.HeaderBar, PillBar {
     protected Gtk.ActionGroup action_group { get; set; }
-    protected Gtk.SizeGroup size { get; set; }
 
     public PillHeaderbar(Gtk.ActionGroup toolbar_action_group) {
         initialize(toolbar_action_group);
@@ -118,11 +97,7 @@ public class PillHeaderbar : Gtk.HeaderBar, PillBar {
     public bool close_button_at_end() {
         string layout;
         bool at_end = false;
-#if GTK_3_12
         layout = decoration_layout;
-#else
-        get_toplevel().style_get("decoration-button-layout", out layout);
-#endif
         // Based on logic of close_button_at_end in gtkheaderbar.c: Close button appears
         // at end iff "close" follows a colon in the layout string.
         if (layout != null) {
@@ -138,19 +113,10 @@ public class PillHeaderbar : Gtk.HeaderBar, PillBar {
  */
 public class PillToolbar : Gtk.Box, PillBar {
     protected Gtk.ActionGroup action_group { get; set; }
-    protected Gtk.SizeGroup size { get; set; }
 
     public PillToolbar(Gtk.ActionGroup toolbar_action_group) {
         Object(orientation: Gtk.Orientation.HORIZONTAL, spacing: 6);
         initialize(toolbar_action_group);
-    }
-
-    public new void pack_start(Gtk.Widget widget) {
-        base.pack_start(widget, false, false, 0);
-    }
-
-    public new void pack_end(Gtk.Widget widget) {
-        base.pack_end(widget, false, false, 0);
     }
 }
 

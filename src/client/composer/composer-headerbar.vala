@@ -12,39 +12,23 @@ public class ComposerHeaderbar : PillHeaderbar {
 
     private Gtk.Button recipients;
     private Gtk.Label recipients_label;
-    private Gtk.Box detach_start;
-    private Gtk.Box detach_end;
+    private Gtk.Button detach_start;
+    private Gtk.Button detach_end;
 
     public ComposerHeaderbar(Gtk.ActionGroup action_group) {
         base(action_group);
 
         show_close_button = false;
 
-        bool rtl = (get_direction() == Gtk.TextDirection.RTL);
-
         // Toolbar setup.
         Gee.List<Gtk.Button> insert = new Gee.ArrayList<Gtk.Button>();
 
         // Window management.
-        detach_start = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
-        Gtk.Button detach_button = create_toolbar_button(null, ComposerWidget.ACTION_DETACH);
-        detach_button.set_relief(Gtk.ReliefStyle.NONE);
-        if (rtl)
-            detach_button.set_margin_left(6);
-        else
-            detach_button.set_margin_right(6);
-        detach_start.pack_start(detach_button);
-        detach_start.pack_start(new Gtk.Separator(Gtk.Orientation.VERTICAL));
+        detach_start = create_toolbar_button(null, ComposerWidget.ACTION_DETACH);
+        detach_start.margin_end = 6;
 
-        detach_end = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
-        detach_button = create_toolbar_button(null, ComposerWidget.ACTION_DETACH);
-        detach_button.set_relief(Gtk.ReliefStyle.NONE);
-        if (rtl)
-            detach_button.set_margin_right(6);
-        else
-            detach_button.set_margin_left(6);
-        detach_end.pack_end(detach_button);
-        detach_end.pack_end(new Gtk.Separator(Gtk.Orientation.VERTICAL));
+        detach_end = create_toolbar_button(null, ComposerWidget.ACTION_DETACH);
+        detach_end.margin_start = 6;
 
         insert.add(create_toolbar_button(null, ComposerWidget.ACTION_CLOSE_DISCARD));
         insert.add(create_toolbar_button(null, ComposerWidget.ACTION_CLOSE_SAVE));
@@ -52,6 +36,7 @@ public class ComposerHeaderbar : PillHeaderbar {
         insert.clear();
 
         Gtk.Button send_button = create_toolbar_button(null, ComposerWidget.ACTION_SEND, true);
+        send_button.valign = Gtk.Align.CENTER;
         send_button.get_style_context().add_class("suggested-action");
 
         Gtk.Box attach_buttons = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
@@ -80,25 +65,25 @@ public class ComposerHeaderbar : PillHeaderbar {
             BindingFlags.SYNC_CREATE);
         bind_property("send-enabled", send_button, "sensitive", BindingFlags.SYNC_CREATE);
 
-        add_start(detach_start);
-        add_start(attach_buttons);
-        add_start(recipients);
+        pack_start (detach_start);
+        pack_start (attach_buttons);
+        pack_start (recipients);
 
         Gtk.MenuButton menu = new Gtk.MenuButton();
         menu.image = new Gtk.Image.from_icon_name("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
         menu.popup = new Gtk.Menu.from_model(GearyApplication.instance.controller.app_menu);
         menu.tooltip_text = _("Menu");
 
-        add_end(menu);
+        pack_end (menu);
         bind_property("state", menu, "visible", BindingFlags.SYNC_CREATE,
             (binding, source_value, ref target_value) => {
                 target_value = (state == ComposerWidget.ComposerState.NEW);
                 return true;
             });
 
-        add_end(detach_end);
-        add_end(close_buttons);
-        add_end(send_button);
+        pack_end (detach_end);
+        pack_end (send_button);
+        pack_end (close_buttons);
 
         notify["decoration-layout"].connect(set_detach_button_side);
 
