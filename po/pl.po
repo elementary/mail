@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-30 11:51-0600\n"
-"PO-Revision-Date: 2015-12-07 13:44+0000\n"
+"PO-Revision-Date: 2015-12-08 14:07+0000\n"
 "Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-12-08 05:54+0000\n"
+"X-Launchpad-Export-Date: 2015-12-09 05:56+0000\n"
 "X-Generator: Launchpad (build 17862)\n"
 "X-Poedit-Country: Poland\n"
 "Language: pl\n"
@@ -1586,11 +1586,11 @@ msgstr "Wyślij e-mailem"
 
 #: ../src/client/application/geary-application.vala:26
 msgid "Send files using Mail"
-msgstr ""
+msgstr "Wyślij pliki używając e-maila"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 msgid "Welcome to Mail"
-msgstr ""
+msgstr "Witamy w Poczcie"
 
 #: ../src/client/composer/composer-toolbar.vala:43
 msgid "More options"
