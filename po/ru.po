@@ -18,7 +18,7 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2015-11-30 11:51-0600\n"
-"PO-Revision-Date: 2015-12-04 13:47+0000\n"
+"PO-Revision-Date: 2015-12-09 15:14+0000\n"
 "Last-Translator: Yuly Nesterov <crow@rikka.io>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,8 +26,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-12-05 05:51+0000\n"
-"X-Generator: Launchpad (build 17862)\n"
+"X-Launchpad-Export-Date: 2015-12-11 06:36+0000\n"
+"X-Generator: Launchpad (build 17865)\n"
 "Language: ru\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -384,7 +384,7 @@ msgstr "Отметить как _Прочитанное"
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:405
 msgid "Mark as _Unread"
-msgstr "Отметить как _Непрочитанное"
+msgstr "Отметить как _непрочитанное"
 
 #: ../src/client/application/geary-controller.vala:412
 #: ../src/client/application/geary-controller.vala:411
