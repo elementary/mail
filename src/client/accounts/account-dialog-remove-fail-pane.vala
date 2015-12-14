@@ -11,7 +11,7 @@ public class AccountDialogRemoveFailPane : AccountDialogPane {
     public AccountDialogRemoveFailPane(Gtk.Stack stack) {
         base(stack);
         
-        Gtk.Builder builder = GearyApplication.instance.create_builder("account_cannot_remove.glade");
+        Gtk.Builder builder = GearyApplication.instance.create_builder("account_cannot_remove.ui");
         pack_end((Gtk.Box) builder.get_object("container"));
         Gtk.ActionGroup actions = (Gtk.ActionGroup) builder.get_object("actions");
         actions.get_action("ok_action").activate.connect(() => { ok(); });

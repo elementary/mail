@@ -36,7 +36,7 @@ public class ConversationFindBar : Gtk.Layout {
     public ConversationFindBar(ConversationWebView web_view) {
         this.web_view = web_view;
         
-        builder = GearyApplication.instance.create_builder("find_bar.glade");
+        builder = GearyApplication.instance.create_builder("find_bar.ui");
         
         key_press_event.connect(on_key_press);
         button_press_event.connect(on_button_press);
