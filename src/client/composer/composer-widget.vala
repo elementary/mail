@@ -292,7 +292,7 @@ public class ComposerWidget : Gtk.EventBox {
         setup_drag_destination(this);
         
         add_events(Gdk.EventMask.KEY_PRESS_MASK | Gdk.EventMask.KEY_RELEASE_MASK);
-        builder = GearyApplication.instance.create_builder("composer.glade");
+        builder = GearyApplication.instance.create_builder("composer.ui");
         
         Gtk.Box box = builder.get_object("composer") as Gtk.Box;
         attachments_box = builder.get_object("attachments_box") as Gtk.Box;

@@ -9,7 +9,7 @@ public class AccountSpinnerPage : Gtk.Box {
     public AccountSpinnerPage() {
         Object(orientation: Gtk.Orientation.VERTICAL, spacing: 4);
         
-        Gtk.Builder builder = GearyApplication.instance.create_builder("account_spinner.glade");
+        Gtk.Builder builder = GearyApplication.instance.create_builder("account_spinner.ui");
         pack_end((Gtk.Box) builder.get_object("container"));
     }
 }

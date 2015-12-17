@@ -222,7 +222,7 @@ public class AddEditPage : Gtk.Box {
     public AddEditPage() {
         Object(orientation: Gtk.Orientation.VERTICAL, spacing: 4);
         
-        Gtk.Builder builder = GearyApplication.instance.create_builder("login.glade");
+        Gtk.Builder builder = GearyApplication.instance.create_builder("login.ui");
         
         // Primary container.
         container_widget = (Gtk.Widget) builder.get_object("container");
