@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2015-11-30 11:51-0600\n"
+"POT-Creation-Date: 2015-12-14 14:34-0200\n"
 "PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Stas Solovey <whats_up@tut.by>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
@@ -22,8 +22,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n == 1 ? 0: (((n % 100 > 19) || ((n % 100 "
 "== 0) && (n != 0))) ? 2: 1));\n"
-"X-Launchpad-Export-Date: 2015-12-01 05:55+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2015-12-18 06:00+0000\n"
+"X-Generator: Launchpad (build 17865)\n"
 "X-Project-Style: gnome\n"
 "Language: ro\n"
 
@@ -99,7 +99,8 @@ msgstr "Caută"
 msgid "Archive"
 msgstr "Arhivă"
 
-#: ../src/engine/api/geary-special-folder-type.vala:58
+#: ../src/engine/api/geary-special-folder-type.vala:58 ../data/ui/login.ui:633
+#: ../data/ui/login.ui:650
 msgid "None"
 msgstr "Nici una"
 
@@ -989,91 +990,113 @@ msgid "Welcome to Geary."
 msgstr "Bine ați venit la Geary."
 
 #: ../src/client/accounts/add-edit-page.vala:233
+#: ../src/client/accounts/add-edit-page.vala:234
 msgid "Enter your account information to get started."
 msgstr "Introduceți detaliile contului pentru a începe."
 
 #: ../src/client/accounts/add-edit-page.vala:253
+#: ../src/client/accounts/add-edit-page.vala:254
 msgid "2 weeks back"
 msgstr "acum 2 săptămâni"
 
 #: ../src/client/accounts/add-edit-page.vala:254
+#: ../src/client/accounts/add-edit-page.vala:255
 msgid "1 month back"
 msgstr "acum o lună"
 
 #: ../src/client/accounts/add-edit-page.vala:255
+#: ../src/client/accounts/add-edit-page.vala:256
 msgid "3 months back"
 msgstr "acum 3 luni"
 
 #: ../src/client/accounts/add-edit-page.vala:256
+#: ../src/client/accounts/add-edit-page.vala:257
 msgid "6 months back"
 msgstr "acum 6 luni"
 
 #: ../src/client/accounts/add-edit-page.vala:257
+#: ../src/client/accounts/add-edit-page.vala:258
 msgid "1 year back"
 msgstr "acum 1 an"
 
 #: ../src/client/accounts/add-edit-page.vala:258
+#: ../src/client/accounts/add-edit-page.vala:259
 msgid "2 years back"
 msgstr "acum 2 ani"
 
 #: ../src/client/accounts/add-edit-page.vala:259
+#: ../src/client/accounts/add-edit-page.vala:260
 msgid "4 years back"
 msgstr "acum 4 ani"
 
 #: ../src/client/accounts/add-edit-page.vala:261
+#: ../src/client/accounts/add-edit-page.vala:262
 msgid "Everything"
 msgstr "Totul"
 
 #: ../src/client/accounts/add-edit-page.vala:280
+#: ../src/client/accounts/add-edit-page.vala:281
 msgid "Edit"
 msgstr ""
 
 #: ../src/client/accounts/add-edit-page.vala:282
+#: ../src/client/accounts/add-edit-page.vala:283
 msgid "Preview"
 msgstr ""
 
 #: ../src/client/accounts/add-edit-page.vala:723
+#: ../src/client/accounts/add-edit-page.vala:725
 msgid "Remem_ber passwords"
 msgstr "_Memorează parolele"
 
 #: ../src/client/accounts/add-edit-page.vala:730
+#: ../src/client/accounts/add-edit-page.vala:732 ../data/ui/login.ui:62
 msgid "Remem_ber password"
 msgstr "_Memorează parola"
 
 #: ../src/client/accounts/add-edit-page.vala:764
+#: ../src/client/accounts/add-edit-page.vala:766
 msgid "Unable to validate:\n"
 msgstr "Nu s-a putut valida:\n"
 
 #: ../src/client/accounts/add-edit-page.vala:766
+#: ../src/client/accounts/add-edit-page.vala:768
 msgid "        &#8226; Invalid account nickname.\n"
 msgstr "        &#8226; Pseudonimul nu este valid.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:769
+#: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Geary.\n"
 msgstr "        &#8226; Adresa de email este deja adăugată în Geary.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:773
+#: ../src/client/accounts/add-edit-page.vala:775
 msgid "        &#8226; IMAP connection error.\n"
 msgstr "        &#8226; Eroare la conexiunea IMAP.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:776
+#: ../src/client/accounts/add-edit-page.vala:778
 msgid "        &#8226; IMAP username or password incorrect.\n"
 msgstr "        &#8226; Nume utilizator sau parolă IMAP incorecte.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:779
+#: ../src/client/accounts/add-edit-page.vala:781
 msgid "        &#8226; SMTP connection error.\n"
 msgstr "        &#8226; Eroare la conexiunea SMTP.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:782
+#: ../src/client/accounts/add-edit-page.vala:784
 msgid "        &#8226; SMTP username or password incorrect.\n"
 msgstr ""
 "        &#8226; Numele de utilizator sau parola SMTP sunt incorecte.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:786
+#: ../src/client/accounts/add-edit-page.vala:788
 msgid "        &#8226; Connection error.\n"
 msgstr "        &#8226; Eroare de conexiune.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:790
+#: ../src/client/accounts/add-edit-page.vala:792
 msgid "        &#8226; Username or password incorrect.\n"
 msgstr "        &#8226; Numele de utilizator sau parola sunt incorecte.\n"
 
@@ -1299,6 +1322,7 @@ msgid "This message was sent successfully, but could not be saved to %s."
 msgstr "Acest mesaj a fost trimis cu succes, dar nu a putut fi salvat în %s."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1297
+#: ../data/ui/composer.ui:29
 msgid "_Copy"
 msgstr "_Copiază"
 
@@ -1307,6 +1331,7 @@ msgid "Copy _Email Address"
 msgstr "Copiază adresa de _email"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1310
+#: ../data/ui/composer.ui:106
 msgid "Copy _Link"
 msgstr "Copiază _legătura"
 
@@ -1519,14 +1544,17 @@ msgid "not found"
 msgstr "nu a fost găsit"
 
 #: ../src/client/components/stock.vala:18
+#: ../data/ui/account_cannot_remove.ui:74
 msgid "_OK"
 msgstr "_OK"
 
-#: ../src/client/components/stock.vala:19
+#: ../src/client/components/stock.vala:19 ../data/ui/remove_confirm.ui:153
+#: ../data/ui/edit_alternate_emails.ui:160 ../data/ui/password-dialog.ui:196
 msgid "_Cancel"
 msgstr "_Anulează"
 
 #: ../src/client/components/stock.vala:23
+#: ../src/client/dialogs/preferences-dialog.vala:84
 msgid "_Close"
 msgstr "În_chide"
 
@@ -1542,7 +1570,7 @@ msgstr "_Deschide"
 msgid "_Print..."
 msgstr "Ti_părește..."
 
-#: ../src/client/components/stock.vala:30
+#: ../src/client/components/stock.vala:30 ../data/ui/remove_confirm.ui:168
 msgid "_Remove"
 msgstr "_Șterge"
 
@@ -1563,6 +1591,7 @@ msgstr "Se indexează contul %s"
 #: ../src/client/components/main-toolbar.vala:144
 #: ../src/client/composer/composer-headerbar.vala:90
 #: ../src/client/components/main-toolbar.vala:162
+#: ../src/client/composer/composer-headerbar.vala:75
 msgid "Menu"
 msgstr ""
 
@@ -1575,13 +1604,535 @@ msgid "Send files using Mail"
 msgstr ""
 
 #: ../src/client/accounts/add-edit-page.vala:233
+#: ../src/client/accounts/add-edit-page.vala:234
 msgid "Welcome to Mail"
 msgstr ""
 
-#: ../src/client/composer/composer-toolbar.vala:43
+#: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
 msgid "More options"
 msgstr ""
 
 #: ../src/client/components/main-toolbar.vala:312
 msgid "Search %s"
+msgstr ""
+
+#: ../src/client/dialogs/preferences-dialog.vala:23
+msgid "Reading"
+msgstr ""
+
+#: ../src/client/dialogs/preferences-dialog.vala:28
+msgid "Automatically select next message:"
+msgstr ""
+
+#: ../src/client/dialogs/preferences-dialog.vala:33
+msgid "Conversation previews:"
+msgstr ""
+
+#: ../src/client/dialogs/preferences-dialog.vala:38
+msgid "Three-pane layout:"
+msgstr ""
+
+#: ../src/client/dialogs/preferences-dialog.vala:42 ../data/ui/login.ui:853
+msgid "Composer"
+msgstr ""
+
+#: ../src/client/dialogs/preferences-dialog.vala:47
+msgid "Spell check:"
+msgstr ""
+
+#: ../src/client/dialogs/preferences-dialog.vala:51
+msgid "Notifications"
+msgstr ""
+
+#: ../src/client/dialogs/preferences-dialog.vala:56
+msgid "Always watch for new mail:"
+msgstr ""
+
+#: ../src/client/application/geary-controller.vala:61
+msgid "Delete Conversation"
+msgstr ""
+
+#: ../src/client/application/geary-controller.vala:62
+msgid "Delete Conversation (Shift+Delete)"
+msgstr ""
+
+#: ../src/client/application/geary-controller.vala:63
+msgid "Delete Conversations (Shift+Delete)"
+msgstr ""
+
+#: ../data/ui/remove_confirm.ui:43
+msgid ""
+"<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
+"account?</span> "
+msgstr ""
+
+#: ../data/ui/remove_confirm.ui:58
+msgid ""
+"All email associated with this account will be removed from your computer. "
+"This will not affect email on the server."
+msgstr ""
+
+#: ../data/ui/remove_confirm.ui:80
+msgid "Nickname:"
+msgstr ""
+
+#: ../data/ui/remove_confirm.ui:94
+msgid "Email address:"
+msgstr ""
+
+#: ../data/ui/find_bar.ui:59
+msgid "Find"
+msgstr ""
+
+#: ../data/ui/find_bar.ui:72
+msgid "Previous Result"
+msgstr ""
+
+#: ../data/ui/find_bar.ui:91
+msgid "Next result"
+msgstr ""
+
+#: ../data/ui/find_bar.ui:107
+msgid "_Case sensitive"
+msgstr ""
+
+#: ../data/ui/find_bar.ui:127
+msgid "label"
+msgstr ""
+
+#: ../data/ui/upgrade_dialog.ui:60
+msgid "Geary update in progress…"
+msgstr ""
+
+#: ../data/ui/edit_alternate_emails.ui:112
+msgid "Remove email address"
+msgstr ""
+
+#: ../data/ui/edit_alternate_emails.ui:136
+msgid ""
+"Some email services require additional addresses be configured on the "
+"server.  Contact your email provider for more information."
+msgstr ""
+
+#: ../data/ui/edit_alternate_emails.ui:175
+msgid "_Update"
+msgstr ""
+
+#: ../data/ui/account_spinner.ui:41
+msgid "Please wait while Geary validates your account."
+msgstr ""
+
+#: ../data/ui/composer.ui:8
+msgid "_Undo"
+msgstr ""
+
+#: ../data/ui/composer.ui:15
+msgid "_Redo"
+msgstr ""
+
+#: ../data/ui/composer.ui:22
+msgid "Cu_t"
+msgstr ""
+
+#: ../data/ui/composer.ui:36
+msgid "_Paste"
+msgstr ""
+
+#: ../data/ui/composer.ui:43
+msgid "_Left"
+msgstr ""
+
+#: ../data/ui/composer.ui:48
+msgid "_Right"
+msgstr ""
+
+#: ../data/ui/composer.ui:53
+msgid "_Center"
+msgstr ""
+
+#: ../data/ui/composer.ui:58
+msgid "_Justify"
+msgstr ""
+
+#: ../data/ui/composer.ui:63
+msgid "Link (Ctrl+L)"
+msgstr ""
+
+#: ../data/ui/composer.ui:70
+msgid "C_olor"
+msgstr ""
+
+#: ../data/ui/composer.ui:81
+msgid "Quote text  (Ctrl+])"
+msgstr ""
+
+#: ../data/ui/composer.ui:87
+msgid "Unquote text (Ctrl+[)"
+msgstr ""
+
+#: ../data/ui/composer.ui:93
+msgid "Remove formatting (Ctrl+Space)"
+msgstr ""
+
+#: ../data/ui/composer.ui:100
+msgctxt "Clipboard paste with rich text"
+msgid "Paste _With Formatting"
+msgstr ""
+
+#: ../data/ui/composer.ui:111
+msgid "Bold (Ctrl+B)"
+msgstr ""
+
+#: ../data/ui/composer.ui:118
+msgid "Italic (Ctrl+I)"
+msgstr ""
+
+#: ../data/ui/composer.ui:125
+msgid "Underline (Ctrl+U)"
+msgstr ""
+
+#: ../data/ui/composer.ui:132
+msgid "Strikethrough (Ctrl+K)"
+msgstr ""
+
+#: ../data/ui/composer.ui:139
+msgid "_Rich Text"
+msgstr ""
+
+#: ../data/ui/composer.ui:145
+msgid "Show Extended Fields"
+msgstr ""
+
+#: ../data/ui/composer.ui:157
+msgctxt "Label"
+msgid "Close and Save"
+msgstr ""
+
+#: ../data/ui/composer.ui:158
+msgctxt "Short Label"
+msgid "Close and Save"
+msgstr ""
+
+#: ../data/ui/composer.ui:159
+msgctxt "Tooltip"
+msgid "Close and Save"
+msgstr ""
+
+#: ../data/ui/composer.ui:165
+msgctxt "Label"
+msgid "Close and Discard"
+msgstr ""
+
+#: ../data/ui/composer.ui:166
+msgctxt "Short Label"
+msgid "Close and Discard"
+msgstr ""
+
+#: ../data/ui/composer.ui:167
+msgctxt "Tooltip"
+msgid "Close and Discard"
+msgstr ""
+
+#: ../data/ui/composer.ui:173
+msgid "Lar_ge"
+msgstr ""
+
+#: ../data/ui/composer.ui:174
+msgid "Large"
+msgstr ""
+
+#: ../data/ui/composer.ui:179
+msgid "_Medium"
+msgstr ""
+
+#: ../data/ui/composer.ui:180
+msgid "Medium"
+msgstr ""
+
+#: ../data/ui/composer.ui:185
+msgid "_Small"
+msgstr ""
+
+#: ../data/ui/composer.ui:186
+msgid "Small"
+msgstr ""
+
+#: ../data/ui/composer.ui:191
+msgid "S_ans Serif"
+msgstr ""
+
+#: ../data/ui/composer.ui:192
+msgid "Sans Serif"
+msgstr ""
+
+#: ../data/ui/composer.ui:197
+msgid "S_erif"
+msgstr ""
+
+#: ../data/ui/composer.ui:198
+msgid "Serif"
+msgstr ""
+
+#: ../data/ui/composer.ui:203
+msgid "_Fixed Width"
+msgstr ""
+
+#: ../data/ui/composer.ui:204
+msgid "Fixed Width"
+msgstr ""
+
+#: ../data/ui/composer.ui:209 ../data/ui/composer.ui:210
+msgid "Detach"
+msgstr ""
+
+#: ../data/ui/composer.ui:211
+msgid "Detach (Ctrl+D)"
+msgstr ""
+
+#: ../data/ui/composer.ui:218
+msgid "_Send"
+msgstr ""
+
+#: ../data/ui/composer.ui:219
+msgid "Send"
+msgstr ""
+
+#: ../data/ui/composer.ui:220
+msgid "Send (Ctrl+Enter)"
+msgstr ""
+
+#: ../data/ui/composer.ui:226
+msgid "_Attach File"
+msgstr ""
+
+#: ../data/ui/composer.ui:227 ../data/ui/composer.ui:228
+msgid "Attach File"
+msgstr ""
+
+#: ../data/ui/composer.ui:234
+msgid "_Include Original Attachments"
+msgstr ""
+
+#: ../data/ui/composer.ui:235 ../data/ui/composer.ui:236
+msgid "Include Original Attachments"
+msgstr ""
+
+#: ../data/ui/composer.ui:242
+msgid "Application Menu"
+msgstr ""
+
+#. Address(es) e-mail is to be sent to
+#: ../data/ui/composer.ui:289
+msgid "_To"
+msgstr ""
+
+#: ../data/ui/composer.ui:308
+msgid "_Cc"
+msgstr ""
+
+#: ../data/ui/composer.ui:362
+msgid "_Subject"
+msgstr ""
+
+#: ../data/ui/composer.ui:381
+msgid "_Bcc"
+msgstr ""
+
+#: ../data/ui/composer.ui:411
+msgid "_Reply-To"
+msgstr ""
+
+#. Geary account mail will be sent from
+#: ../data/ui/composer.ui:440
+msgid "From"
+msgstr ""
+
+#: ../data/ui/composer.ui:519
+msgid "Drop files here"
+msgstr ""
+
+#: ../data/ui/composer.ui:535
+msgid "To add them as attachments"
+msgstr ""
+
+#: ../data/ui/account_cannot_remove.ui:40
+msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
+msgstr ""
+
+#: ../data/ui/account_cannot_remove.ui:56
+msgid ""
+"A composer window associated with this account is currently open. Send or "
+"discard the message and try again."
+msgstr ""
+
+#: ../data/ui/login.ui:34
+msgid "Addi_tional email addresses…"
+msgstr ""
+
+#: ../data/ui/login.ui:46
+msgid "_Save sent mail"
+msgstr ""
+
+#: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
+msgid "Password"
+msgstr ""
+
+#: ../data/ui/login.ui:97 ../data/ui/login.ui:545
+msgid "_Password:"
+msgstr ""
+
+#: ../data/ui/login.ui:130
+msgid "E_mail address:"
+msgstr ""
+
+#: ../data/ui/login.ui:152
+msgid "Work, Home, etc."
+msgstr ""
+
+#: ../data/ui/login.ui:163
+msgid "N_ickname:"
+msgstr ""
+
+#: ../data/ui/login.ui:195
+msgid "N_ame:"
+msgstr ""
+
+#: ../data/ui/login.ui:211
+msgid "S_ervice:"
+msgstr ""
+
+#: ../data/ui/login.ui:298
+msgid "IMAP settings"
+msgstr ""
+
+#: ../data/ui/login.ui:315
+msgid "Se_rver:"
+msgstr ""
+
+#: ../data/ui/login.ui:347
+msgid "P_ort"
+msgstr ""
+
+#: ../data/ui/login.ui:409
+msgid "Ser_ver:"
+msgstr ""
+
+#: ../data/ui/login.ui:427
+msgid "Por_t"
+msgstr ""
+
+#: ../data/ui/login.ui:446
+msgid "SMTP settings"
+msgstr ""
+
+#: ../data/ui/login.ui:462
+msgid "User_name:"
+msgstr ""
+
+#: ../data/ui/login.ui:480
+msgid "Pass_word:"
+msgstr ""
+
+#: ../data/ui/login.ui:499
+msgid "SMTP username"
+msgstr ""
+
+#: ../data/ui/login.ui:514
+msgid "SMTP password"
+msgstr ""
+
+#: ../data/ui/login.ui:527
+msgid "_Username:"
+msgstr ""
+
+#: ../data/ui/login.ui:564
+msgid "IMAP username"
+msgstr ""
+
+#: ../data/ui/login.ui:579
+msgid "IMAP password"
+msgstr ""
+
+#: ../data/ui/login.ui:593
+msgid "Encr_yption:"
+msgstr ""
+
+#: ../data/ui/login.ui:613
+msgid "Encrypt_ion:"
+msgstr ""
+
+#: ../data/ui/login.ui:634 ../data/ui/login.ui:651
+msgid "SSL/TLS"
+msgstr ""
+
+#: ../data/ui/login.ui:635 ../data/ui/login.ui:652
+msgid "STARTTLS"
+msgstr ""
+
+#: ../data/ui/login.ui:663
+msgid "No authentication re_quired"
+msgstr ""
+
+#: ../data/ui/login.ui:679
+msgid "Use IMAP cre_dentials"
+msgstr ""
+
+#: ../data/ui/login.ui:783
+msgid "Storage"
+msgstr ""
+
+#: ../data/ui/login.ui:804
+msgid "_Download mail"
+msgstr ""
+
+#: ../data/ui/login.ui:867
+msgid "Save dra_fts on server"
+msgstr ""
+
+#: ../data/ui/login.ui:884
+msgid "Si_gn emails (HTML allowed):"
+msgstr ""
+
+#: ../data/ui/account_list.ui:69
+msgid "Add account"
+msgstr ""
+
+#: ../data/ui/account_list.ui:82
+msgid "Edit account"
+msgstr ""
+
+#: ../data/ui/account_list.ui:95
+msgid "Remove account"
+msgstr ""
+
+#: ../data/ui/certificate_warning_dialog.ui:7
+msgid "Untrusted Connection"
+msgstr ""
+
+#: ../data/ui/certificate_warning_dialog.ui:29
+msgid "_Always Trust This Server"
+msgstr ""
+
+#: ../data/ui/certificate_warning_dialog.ui:43
+msgid "_Trust This Server"
+msgstr ""
+
+#: ../data/ui/certificate_warning_dialog.ui:57
+msgid "_Don't Trust This Server"
+msgstr ""
+
+#: ../data/ui/password-dialog.ui:74
+msgid "SMTP Credentials"
+msgstr ""
+
+#: ../data/ui/password-dialog.ui:91
+msgid "Username"
+msgstr ""
+
+#: ../data/ui/password-dialog.ui:152
+msgid "_Remember password"
+msgstr ""
+
+#: ../data/ui/password-dialog.ui:210
+msgid "_Authenticate"
 msgstr ""
