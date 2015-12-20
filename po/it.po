@@ -20,14 +20,14 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2015-12-14 14:34-0200\n"
-"PO-Revision-Date: 2015-12-06 12:51+0000\n"
+"PO-Revision-Date: 2015-12-18 20:36+0000\n"
 "Last-Translator: Fabio Zaramella <FFabio.96.X@Gmail.com>\n"
 "Language-Team: Italiano <gnome-it-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-12-18 06:00+0000\n"
+"X-Launchpad-Export-Date: 2015-12-20 07:12+0000\n"
 "X-Generator: Launchpad (build 17865)\n"
 "Language: it\n"
 
@@ -1611,149 +1611,156 @@ msgstr "Cerca %s"
 
 #: ../src/client/dialogs/preferences-dialog.vala:23
 msgid "Reading"
-msgstr ""
+msgstr "Lettura"
 
 #: ../src/client/dialogs/preferences-dialog.vala:28
 msgid "Automatically select next message:"
-msgstr ""
+msgstr "Seleziona automaticamente il prossimo messaggio:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:33
 msgid "Conversation previews:"
-msgstr ""
+msgstr "Anteprime di conversazione:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:38
 msgid "Three-pane layout:"
-msgstr ""
+msgstr "Layout a tre riquadri:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:42 ../data/ui/login.ui:853
 msgid "Composer"
-msgstr ""
+msgstr "Compositore"
 
 #: ../src/client/dialogs/preferences-dialog.vala:47
 msgid "Spell check:"
-msgstr ""
+msgstr "Controllo ortografico:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:51
 msgid "Notifications"
-msgstr ""
+msgstr "Notifiche"
 
 #: ../src/client/dialogs/preferences-dialog.vala:56
 msgid "Always watch for new mail:"
-msgstr ""
+msgstr "Controlla sempre per la nuova posta:"
 
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete Conversation"
-msgstr ""
+msgstr "Cancella la conversazione"
 
 #: ../src/client/application/geary-controller.vala:62
 msgid "Delete Conversation (Shift+Delete)"
-msgstr ""
+msgstr "Cancella la conversazione (Maiusc+Canc)"
 
 #: ../src/client/application/geary-controller.vala:63
 msgid "Delete Conversations (Shift+Delete)"
-msgstr ""
+msgstr "Eliminare le conversazioni (Maiusc+Canc)"
 
 #: ../data/ui/remove_confirm.ui:43
 msgid ""
 "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
 "account?</span> "
 msgstr ""
+"<span weight=\"bold\" size=\"larger\">Sei sicuro di voler rimuovere questo "
+"account?</span> "
 
 #: ../data/ui/remove_confirm.ui:58
 msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
 msgstr ""
+"Tutte le email associate a questo account verranno rimosse dal computer. Ciò "
+"non influirà le email sul server."
 
 #: ../data/ui/remove_confirm.ui:80
 msgid "Nickname:"
-msgstr ""
+msgstr "Soprannome:"
 
 #: ../data/ui/remove_confirm.ui:94
 msgid "Email address:"
-msgstr ""
+msgstr "Indirizzo email:"
 
 #: ../data/ui/find_bar.ui:59
 msgid "Find"
-msgstr ""
+msgstr "Trova"
 
 #: ../data/ui/find_bar.ui:72
 msgid "Previous Result"
-msgstr ""
+msgstr "Risultato precedente"
 
 #: ../data/ui/find_bar.ui:91
 msgid "Next result"
-msgstr ""
+msgstr "Risultato successivo"
 
 #: ../data/ui/find_bar.ui:107
 msgid "_Case sensitive"
-msgstr ""
+msgstr "_Distinzione maiuscole/minuscole"
 
 #: ../data/ui/find_bar.ui:127
 msgid "label"
-msgstr ""
+msgstr "etichetta"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr ""
+msgstr "Aggiornamento in corso..."
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
-msgstr ""
+msgstr "Rimuovi indirizzo email"
 
 #: ../data/ui/edit_alternate_emails.ui:136
 msgid ""
 "Some email services require additional addresses be configured on the "
 "server.  Contact your email provider for more information."
 msgstr ""
+"Alcuni servizi di posta elettronica richiedono che ulteriori indirizzi siano "
+"configurati sul server. Rivolgersi al proprio provider di posta elettronica "
+"per ulteriori informazioni."
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
-msgstr ""
+msgstr "_Aggiorna"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
-msgstr ""
+msgstr "Per favore attendi mentre il tuo account viene convalidato."
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
-msgstr ""
+msgstr "_Annulla"
 
 #: ../data/ui/composer.ui:15
 msgid "_Redo"
-msgstr ""
+msgstr "_Ripeti"
 
 #: ../data/ui/composer.ui:22
 msgid "Cu_t"
-msgstr ""
+msgstr "_Taglia"
 
 #: ../data/ui/composer.ui:36
 msgid "_Paste"
-msgstr ""
+msgstr "_Incolla"
 
 #: ../data/ui/composer.ui:43
 msgid "_Left"
-msgstr ""
+msgstr "_Sinistra"
 
 #: ../data/ui/composer.ui:48
 msgid "_Right"
-msgstr ""
+msgstr "_Destra"
 
 #: ../data/ui/composer.ui:53
 msgid "_Center"
-msgstr ""
+msgstr "_Centro"
 
 #: ../data/ui/composer.ui:58
 msgid "_Justify"
-msgstr ""
+msgstr "_Giustificato"
 
 #: ../data/ui/composer.ui:63
 msgid "Link (Ctrl+L)"
-msgstr ""
+msgstr "Collegamento (Ctrl+L)"
 
 #: ../data/ui/composer.ui:70
 msgid "C_olor"
-msgstr ""
+msgstr "C_olore"
 
 #: ../data/ui/composer.ui:81
 msgid "Quote text  (Ctrl+])"
@@ -1765,28 +1772,28 @@ msgstr ""
 
 #: ../data/ui/composer.ui:93
 msgid "Remove formatting (Ctrl+Space)"
-msgstr ""
+msgstr "Rimuovi formattazione (Ctrl+Spazio)"
 
 #: ../data/ui/composer.ui:100
 msgctxt "Clipboard paste with rich text"
 msgid "Paste _With Formatting"
-msgstr ""
+msgstr "Incolla _con formattazione"
 
 #: ../data/ui/composer.ui:111
 msgid "Bold (Ctrl+B)"
-msgstr ""
+msgstr "Grassetto (Ctrl+B)"
 
 #: ../data/ui/composer.ui:118
 msgid "Italic (Ctrl+I)"
-msgstr ""
+msgstr "Corsivo (Ctrl+I)"
 
 #: ../data/ui/composer.ui:125
 msgid "Underline (Ctrl+U)"
-msgstr ""
+msgstr "Sottolineato (Ctrl+U)"
 
 #: ../data/ui/composer.ui:132
 msgid "Strikethrough (Ctrl+K)"
-msgstr ""
+msgstr "Barrato (Ctrl+K)"
 
 #: ../data/ui/composer.ui:139
 msgid "_Rich Text"
@@ -1794,338 +1801,341 @@ msgstr ""
 
 #: ../data/ui/composer.ui:145
 msgid "Show Extended Fields"
-msgstr ""
+msgstr "Mostra campi estesi"
 
 #: ../data/ui/composer.ui:157
 msgctxt "Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "Chiudi e salva"
 
 #: ../data/ui/composer.ui:158
 msgctxt "Short Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "Chiudi e salva"
 
 #: ../data/ui/composer.ui:159
 msgctxt "Tooltip"
 msgid "Close and Save"
-msgstr ""
+msgstr "Chiudi e salva"
 
 #: ../data/ui/composer.ui:165
 msgctxt "Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Chiudi e scarta"
 
 #: ../data/ui/composer.ui:166
 msgctxt "Short Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Chiudi e scarta"
 
 #: ../data/ui/composer.ui:167
 msgctxt "Tooltip"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Chiudi e scarta"
 
 #: ../data/ui/composer.ui:173
 msgid "Lar_ge"
-msgstr ""
+msgstr "Grande"
 
 #: ../data/ui/composer.ui:174
 msgid "Large"
-msgstr ""
+msgstr "Grande"
 
 #: ../data/ui/composer.ui:179
 msgid "_Medium"
-msgstr ""
+msgstr "_Medio"
 
 #: ../data/ui/composer.ui:180
 msgid "Medium"
-msgstr ""
+msgstr "Medio"
 
 #: ../data/ui/composer.ui:185
 msgid "_Small"
-msgstr ""
+msgstr "_Piccolo"
 
 #: ../data/ui/composer.ui:186
 msgid "Small"
-msgstr ""
+msgstr "Piccolo"
 
 #: ../data/ui/composer.ui:191
 msgid "S_ans Serif"
-msgstr ""
+msgstr "Sans Serif"
 
 #: ../data/ui/composer.ui:192
 msgid "Sans Serif"
-msgstr ""
+msgstr "Sans Serif"
 
 #: ../data/ui/composer.ui:197
 msgid "S_erif"
-msgstr ""
+msgstr "Serif"
 
 #: ../data/ui/composer.ui:198
 msgid "Serif"
-msgstr ""
+msgstr "Serif"
 
 #: ../data/ui/composer.ui:203
 msgid "_Fixed Width"
-msgstr ""
+msgstr "Larghezza _fissa"
 
 #: ../data/ui/composer.ui:204
 msgid "Fixed Width"
-msgstr ""
+msgstr "Larghezza fissa"
 
 #: ../data/ui/composer.ui:209 ../data/ui/composer.ui:210
 msgid "Detach"
-msgstr ""
+msgstr "Sgancia"
 
 #: ../data/ui/composer.ui:211
 msgid "Detach (Ctrl+D)"
-msgstr ""
+msgstr "Sgancia (Ctrl+D)"
 
 #: ../data/ui/composer.ui:218
 msgid "_Send"
-msgstr ""
+msgstr "_Invia"
 
 #: ../data/ui/composer.ui:219
 msgid "Send"
-msgstr ""
+msgstr "Invia"
 
 #: ../data/ui/composer.ui:220
 msgid "Send (Ctrl+Enter)"
-msgstr ""
+msgstr "Invia (Ctrl+Invio)"
 
 #: ../data/ui/composer.ui:226
 msgid "_Attach File"
-msgstr ""
+msgstr "_Allega file"
 
 #: ../data/ui/composer.ui:227 ../data/ui/composer.ui:228
 msgid "Attach File"
-msgstr ""
+msgstr "Allega file"
 
 #: ../data/ui/composer.ui:234
 msgid "_Include Original Attachments"
-msgstr ""
+msgstr "_Includi allegati originali"
 
 #: ../data/ui/composer.ui:235 ../data/ui/composer.ui:236
 msgid "Include Original Attachments"
-msgstr ""
+msgstr "Includi allegati originali"
 
 #: ../data/ui/composer.ui:242
 msgid "Application Menu"
-msgstr ""
+msgstr "Menu delle applicazioni"
 
 #. Address(es) e-mail is to be sent to
 #: ../data/ui/composer.ui:289
 msgid "_To"
-msgstr ""
+msgstr "_A"
 
 #: ../data/ui/composer.ui:308
 msgid "_Cc"
-msgstr ""
+msgstr "_Cc"
 
 #: ../data/ui/composer.ui:362
 msgid "_Subject"
-msgstr ""
+msgstr "_Oggetto"
 
 #: ../data/ui/composer.ui:381
 msgid "_Bcc"
-msgstr ""
+msgstr "_Bcc"
 
 #: ../data/ui/composer.ui:411
 msgid "_Reply-To"
-msgstr ""
+msgstr "_Rispondi a"
 
 #. Geary account mail will be sent from
 #: ../data/ui/composer.ui:440
 msgid "From"
-msgstr ""
+msgstr "Da"
 
 #: ../data/ui/composer.ui:519
 msgid "Drop files here"
-msgstr ""
+msgstr "Rilascia i file qui"
 
 #: ../data/ui/composer.ui:535
 msgid "To add them as attachments"
-msgstr ""
+msgstr "Per aggiungerli come allegati"
 
 #: ../data/ui/account_cannot_remove.ui:40
 msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
 msgstr ""
+"<span weight=\"bold\" size=\"larger\">Impossibile rimuovere l'account</span> "
 
 #: ../data/ui/account_cannot_remove.ui:56
 msgid ""
 "A composer window associated with this account is currently open. Send or "
 "discard the message and try again."
 msgstr ""
+"Una finestra di composizione associata a questo account è aperta. Inviare o "
+"scartare il messaggio e riprovare."
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr ""
+msgstr "Indirizzi email addizionali..."
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
-msgstr ""
+msgstr "_Salva la posta inviata"
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
-msgstr ""
+msgstr "Password"
 
 #: ../data/ui/login.ui:97 ../data/ui/login.ui:545
 msgid "_Password:"
-msgstr ""
+msgstr "_Password:"
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
-msgstr ""
+msgstr "Indirizzo email:"
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
-msgstr ""
+msgstr "Lavoro, Casa, ecc."
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
-msgstr ""
+msgstr "Soprannome:"
 
 #: ../data/ui/login.ui:195
 msgid "N_ame:"
-msgstr ""
+msgstr "Nome:"
 
 #: ../data/ui/login.ui:211
 msgid "S_ervice:"
-msgstr ""
+msgstr "Servizio:"
 
 #: ../data/ui/login.ui:298
 msgid "IMAP settings"
-msgstr ""
+msgstr "Impostazioni IMAP"
 
 #: ../data/ui/login.ui:315
 msgid "Se_rver:"
-msgstr ""
+msgstr "Server:"
 
 #: ../data/ui/login.ui:347
 msgid "P_ort"
-msgstr ""
+msgstr "Porta"
 
 #: ../data/ui/login.ui:409
 msgid "Ser_ver:"
-msgstr ""
+msgstr "_Server:"
 
 #: ../data/ui/login.ui:427
 msgid "Por_t"
-msgstr ""
+msgstr "Porta"
 
 #: ../data/ui/login.ui:446
 msgid "SMTP settings"
-msgstr ""
+msgstr "Impostazioni SMTP"
 
 #: ../data/ui/login.ui:462
 msgid "User_name:"
-msgstr ""
+msgstr "Nome utente:"
 
 #: ../data/ui/login.ui:480
 msgid "Pass_word:"
-msgstr ""
+msgstr "Password:"
 
 #: ../data/ui/login.ui:499
 msgid "SMTP username"
-msgstr ""
+msgstr "Nome utente SMTP"
 
 #: ../data/ui/login.ui:514
 msgid "SMTP password"
-msgstr ""
+msgstr "Password SMTP"
 
 #: ../data/ui/login.ui:527
 msgid "_Username:"
-msgstr ""
+msgstr "_Nome utente:"
 
 #: ../data/ui/login.ui:564
 msgid "IMAP username"
-msgstr ""
+msgstr "Nome utente IMAP"
 
 #: ../data/ui/login.ui:579
 msgid "IMAP password"
-msgstr ""
+msgstr "Password IMAP"
 
 #: ../data/ui/login.ui:593
 msgid "Encr_yption:"
-msgstr ""
+msgstr "Crittografia:"
 
 #: ../data/ui/login.ui:613
 msgid "Encrypt_ion:"
-msgstr ""
+msgstr "Crittografia:"
 
 #: ../data/ui/login.ui:634 ../data/ui/login.ui:651
 msgid "SSL/TLS"
-msgstr ""
+msgstr "SSL/TLS"
 
 #: ../data/ui/login.ui:635 ../data/ui/login.ui:652
 msgid "STARTTLS"
-msgstr ""
+msgstr "STARTTLS"
 
 #: ../data/ui/login.ui:663
 msgid "No authentication re_quired"
-msgstr ""
+msgstr "Nessuna autenticazione richiesta"
 
 #: ../data/ui/login.ui:679
 msgid "Use IMAP cre_dentials"
-msgstr ""
+msgstr "Usa credenziali IMAP"
 
 #: ../data/ui/login.ui:783
 msgid "Storage"
-msgstr ""
+msgstr "Memoria"
 
 #: ../data/ui/login.ui:804
 msgid "_Download mail"
-msgstr ""
+msgstr "_Scarica la posta"
 
 #: ../data/ui/login.ui:867
 msgid "Save dra_fts on server"
-msgstr ""
+msgstr "Salva le bozze sul server"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr ""
+msgstr "Firma email (HTML consentito):"
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
-msgstr ""
+msgstr "Aggiungi account"
 
 #: ../data/ui/account_list.ui:82
 msgid "Edit account"
-msgstr ""
+msgstr "Modifica account"
 
 #: ../data/ui/account_list.ui:95
 msgid "Remove account"
-msgstr ""
+msgstr "Rimuovi account"
 
 #: ../data/ui/certificate_warning_dialog.ui:7
 msgid "Untrusted Connection"
-msgstr ""
+msgstr "Collegamento non attendibile"
 
 #: ../data/ui/certificate_warning_dialog.ui:29
 msgid "_Always Trust This Server"
-msgstr ""
+msgstr "_Fidati sempre di questo server"
 
 #: ../data/ui/certificate_warning_dialog.ui:43
 msgid "_Trust This Server"
-msgstr ""
+msgstr "_Fidati di questo server"
 
 #: ../data/ui/certificate_warning_dialog.ui:57
 msgid "_Don't Trust This Server"
-msgstr ""
+msgstr "_Non fidarti di questo server"
 
 #: ../data/ui/password-dialog.ui:74
 msgid "SMTP Credentials"
-msgstr ""
+msgstr "Credenziali SMTP"
 
 #: ../data/ui/password-dialog.ui:91
 msgid "Username"
-msgstr ""
+msgstr "Nome utente"
 
 #: ../data/ui/password-dialog.ui:152
 msgid "_Remember password"
-msgstr ""
+msgstr "_Ricorda la password"
 
 #: ../data/ui/password-dialog.ui:210
 msgid "_Authenticate"
-msgstr ""
+msgstr "_Autentica"
