@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2013-2015 Yorba Foundation <geary@yorba.org> 
      Copyright 2015 elementary, LLC <contact@elementary.io> -->
-<application>
-    <id type="desktop">geary.desktop</id>
+<component type="desktop">
+    <id>pantheon-mail.desktop</id>
     <metadata_license>CC0</metadata_license>
     <project_group>elementary</project_group>
     <project_license>LGPL-2.1+</project_license>
@@ -27,4 +27,4 @@
     </description>
     <url type="homepage">https://elementary.io/</url>
     <updatecontact>contact_at_elementary.io</updatecontact>
-</application>
+</component>
