@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-14 14:34-0200\n"
-"PO-Revision-Date: 2015-12-17 15:15+0000\n"
+"PO-Revision-Date: 2015-12-22 14:12+0000\n"
 "Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-12-18 06:00+0000\n"
+"X-Launchpad-Export-Date: 2015-12-23 05:23+0000\n"
 "X-Generator: Launchpad (build 17865)\n"
 "X-Poedit-Country: Poland\n"
 "Language: pl\n"
@@ -673,6 +673,7 @@ msgstr ""
 "Aviary.pl <gnomepl@aviary.pl>, 2014-2015\n"
 "\n"
 "Launchpad Contributions:\n"
+"  Damian Woźniak https://launchpad.net/~fisz\n"
 "  Piotr Drąg https://launchpad.net/~raven46\n"
 "  Piotr Strębski https://launchpad.net/~strebski"
 
@@ -1679,12 +1680,16 @@ msgid ""
 "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
 "account?</span> "
 msgstr ""
+"<span weight=\"bold\" size=\"larger\">Czy jesteś pewien, że chcesz usunąć to "
+"konto?</span> "
 
 #: ../data/ui/remove_confirm.ui:58
 msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
 msgstr ""
+"Wszystkie wiadomości e-mail powiązane z tym kontem zostaną usunięte z "
+"Twojego komputera. Nie wpłynie to na wiadomości znajdujące się na serwerze."
 
 #: ../data/ui/remove_confirm.ui:80
 msgid "Nickname:"
@@ -1727,6 +1732,9 @@ msgid ""
 "Some email services require additional addresses be configured on the "
 "server.  Contact your email provider for more information."
 msgstr ""
+"Niektóre usługi e-mail wymagają dodatkowych adresów do skonfigurowania na "
+"serwerze. Skontaktuj się z Twoim dostawcą poczty, aby uzyskać więcej "
+"informacji."
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
@@ -1734,7 +1742,7 @@ msgstr "Zakt_ualizuj"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
-msgstr ""
+msgstr "Poczekaj, Geary sprawdza Twoje konto."
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
@@ -1770,7 +1778,7 @@ msgstr "Wyj_ustowanie"
 
 #: ../data/ui/composer.ui:63
 msgid "Link (Ctrl+L)"
-msgstr ""
+msgstr "Odnośnik (Ctrl+L)"
 
 #: ../data/ui/composer.ui:70
 msgid "C_olor"
@@ -1778,74 +1786,74 @@ msgstr "_Kolor"
 
 #: ../data/ui/composer.ui:81
 msgid "Quote text  (Ctrl+])"
-msgstr ""
+msgstr "Cytuj tekst (Ctrl+])"
 
 #: ../data/ui/composer.ui:87
 msgid "Unquote text (Ctrl+[)"
-msgstr ""
+msgstr "Usuń cytat (Ctrl+[)"
 
 #: ../data/ui/composer.ui:93
 msgid "Remove formatting (Ctrl+Space)"
-msgstr ""
+msgstr "Usuń formatowanie (Ctrl+Space)"
 
 #: ../data/ui/composer.ui:100
 msgctxt "Clipboard paste with rich text"
 msgid "Paste _With Formatting"
-msgstr ""
+msgstr "Wklej _z formatowaniem"
 
 #: ../data/ui/composer.ui:111
 msgid "Bold (Ctrl+B)"
-msgstr ""
+msgstr "Pogrubienie (Ctrl+B)"
 
 #: ../data/ui/composer.ui:118
 msgid "Italic (Ctrl+I)"
-msgstr ""
+msgstr "Kursywa (Ctrl+I)"
 
 #: ../data/ui/composer.ui:125
 msgid "Underline (Ctrl+U)"
-msgstr ""
+msgstr "Podkreślenie (Ctrl+U)"
 
 #: ../data/ui/composer.ui:132
 msgid "Strikethrough (Ctrl+K)"
-msgstr ""
+msgstr "Przekreślenie (Ctrl+K)"
 
 #: ../data/ui/composer.ui:139
 msgid "_Rich Text"
-msgstr ""
+msgstr "Tekst _formatowany"
 
 #: ../data/ui/composer.ui:145
 msgid "Show Extended Fields"
-msgstr ""
+msgstr "Pokaż rozszerzone pola"
 
 #: ../data/ui/composer.ui:157
 msgctxt "Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "Zamknij i zapisz"
 
 #: ../data/ui/composer.ui:158
 msgctxt "Short Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "Zamknij i zapisz"
 
 #: ../data/ui/composer.ui:159
 msgctxt "Tooltip"
 msgid "Close and Save"
-msgstr ""
+msgstr "Zamknij i zapisz"
 
 #: ../data/ui/composer.ui:165
 msgctxt "Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Zamknij i odrzuć"
 
 #: ../data/ui/composer.ui:166
 msgctxt "Short Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Zamknij i odrzuć"
 
 #: ../data/ui/composer.ui:167
 msgctxt "Tooltip"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Zamknij i odrzuć"
 
 #: ../data/ui/composer.ui:173
 msgid "Lar_ge"
@@ -1873,19 +1881,19 @@ msgstr "Mała"
 
 #: ../data/ui/composer.ui:191
 msgid "S_ans Serif"
-msgstr ""
+msgstr "B_ezszeryfowa"
 
 #: ../data/ui/composer.ui:192
 msgid "Sans Serif"
-msgstr ""
+msgstr "Bezszeryfowa"
 
 #: ../data/ui/composer.ui:197
 msgid "S_erif"
-msgstr ""
+msgstr "S_zeryfowa"
 
 #: ../data/ui/composer.ui:198
 msgid "Serif"
-msgstr ""
+msgstr "Szeryfowa"
 
 #: ../data/ui/composer.ui:203
 msgid "_Fixed Width"
@@ -1901,7 +1909,7 @@ msgstr "Odłącz"
 
 #: ../data/ui/composer.ui:211
 msgid "Detach (Ctrl+D)"
-msgstr ""
+msgstr "Odłącz (Ctrl+D)"
 
 #: ../data/ui/composer.ui:218
 msgid "_Send"
@@ -1925,11 +1933,11 @@ msgstr "Załącz plik"
 
 #: ../data/ui/composer.ui:234
 msgid "_Include Original Attachments"
-msgstr ""
+msgstr "_Dołącz oryginalne załączniki"
 
 #: ../data/ui/composer.ui:235 ../data/ui/composer.ui:236
 msgid "Include Original Attachments"
-msgstr ""
+msgstr "Dołącz oryginalne załączniki"
 
 #: ../data/ui/composer.ui:242
 msgid "Application Menu"
@@ -1942,19 +1950,19 @@ msgstr "_Do"
 
 #: ../data/ui/composer.ui:308
 msgid "_Cc"
-msgstr ""
+msgstr "_Dw"
 
 #: ../data/ui/composer.ui:362
 msgid "_Subject"
-msgstr ""
+msgstr "_Temat"
 
 #: ../data/ui/composer.ui:381
 msgid "_Bcc"
-msgstr ""
+msgstr "_UDW"
 
 #: ../data/ui/composer.ui:411
 msgid "_Reply-To"
-msgstr ""
+msgstr "_Odpowiedz"
 
 #. Geary account mail will be sent from
 #: ../data/ui/composer.ui:440
@@ -1978,10 +1986,12 @@ msgid ""
 "A composer window associated with this account is currently open. Send or "
 "discard the message and try again."
 msgstr ""
+"Okno kompozytora powiązane z tym kontem jest aktualnie otwarte. Wyślij lub "
+"odrzuć wiadomość i spróbuj ponownie."
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr ""
+msgstr "Doda_tkowe adresy e-mail..."
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
@@ -2085,11 +2095,11 @@ msgstr "STARTTLS"
 
 #: ../data/ui/login.ui:663
 msgid "No authentication re_quired"
-msgstr ""
+msgstr "Poświadczenie nie jest wy_magane"
 
 #: ../data/ui/login.ui:679
 msgid "Use IMAP cre_dentials"
-msgstr ""
+msgstr "Użyj poś_wiadczeń IMAP"
 
 #: ../data/ui/login.ui:783
 msgid "Storage"
@@ -2097,7 +2107,7 @@ msgstr "Przechowywanie"
 
 #: ../data/ui/login.ui:804
 msgid "_Download mail"
-msgstr ""
+msgstr "_Pobierz wiadomość"
 
 #: ../data/ui/login.ui:867
 msgid "Save dra_fts on server"
@@ -2105,7 +2115,7 @@ msgstr "Zapisuj sz_kice na serwerze"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr ""
+msgstr "Po_dpisz e-mail (HTML dozwolony):"
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
@@ -2133,11 +2143,11 @@ msgstr "_Ufaj temu serwerowi"
 
 #: ../data/ui/certificate_warning_dialog.ui:57
 msgid "_Don't Trust This Server"
-msgstr ""
+msgstr "_Nie ufaj temu serwerowi"
 
 #: ../data/ui/password-dialog.ui:74
 msgid "SMTP Credentials"
-msgstr ""
+msgstr "Poświadczenia SMTP"
 
 #: ../data/ui/password-dialog.ui:91
 msgid "Username"
