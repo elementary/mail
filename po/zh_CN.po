@@ -17,42 +17,39 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2015-12-14 14:34-0200\n"
-"PO-Revision-Date: 2015-11-24 15:53+0000\n"
-"Last-Translator: YunQiang Su <wzssyqa@gmail.com>\n"
+"PO-Revision-Date: 2016-01-02 17:33+0000\n"
+"Last-Translator: colindemian <dengmengpc@gmail.com>\n"
 "Language-Team: Chinese (China) "
 "(http://www.transifex.com/projects/p/geary/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-12-18 06:01+0000\n"
+"X-Launchpad-Export-Date: 2016-01-03 05:36+0000\n"
 "X-Generator: Launchpad (build 17865)\n"
 "Language: zh_CN\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
-#| msgid "Drafts"
 msgid "Drafts | Draft"
-msgstr "Drafts | Draft | 草稿 | 草稿箱"
+msgstr "草稿箱"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:580
 msgid "Sent | Sent Mail | Sent Email | Sent E-Mail"
-msgstr "Sent | Sent Mail | Sent Email | Sent E-Mail | 发件箱"
+msgstr "已发邮件"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:585
 msgid ""
 "Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
 "| Bulk E-Mail"
-msgstr ""
-"Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
-"| Bulk E-Mail | 垃圾邮件 | 垃圾箱"
+msgstr "垃圾邮件"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:590
 msgid "Trash | Rubbish | Rubbish Bin"
-msgstr "Trash | Rubbish | Rubbish Bin | 已删除 | 回收站"
+msgstr "回收站"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:595
 msgid "Archive | Archives"
-msgstr ""
+msgstr "归档邮件"
 
 #: ../src/engine/api/geary-special-folder-type.vala:24
 msgid "Inbox"
@@ -207,7 +204,7 @@ msgstr "%Y年%m月%-e，%p %-l:%M"
 #. / the original sender.
 #: ../src/engine/rfc822/rfc822-utils.vala:221
 msgid "On %1$s, %2$s wrote:"
-msgstr "在%1$s，%2$s 写道："
+msgstr "在 %1$s 中，%2$s 写道："
 
 #. / The quoted header for a message being replied to (in case the date is not known).
 #. / %s will be replaced by the original sender.
@@ -219,7 +216,7 @@ msgstr "%s 写道："
 #. / %s will be replaced by the original date
 #: ../src/engine/rfc822/rfc822-utils.vala:234
 msgid "On %s:"
-msgstr "在%s："
+msgstr "在 %s 中："
 
 #: ../src/engine/rfc822/rfc822-utils.vala:263
 msgid "---------- Forwarded message ----------"
@@ -257,7 +254,7 @@ msgstr "邮件客户端"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "Copyright 2011-2015 Yorba Foundation"
-msgstr ""
+msgstr "版权所有 2011-2015 Yorba 基金会"
 
 #: ../src/client/application/geary-application.vala:21
 msgid "Visit the Yorba web site"
@@ -265,7 +262,7 @@ msgstr "访问 Yorba 网站"
 
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete conversation"
-msgstr ""
+msgstr "删除会话"
 
 #: ../src/client/application/geary-controller.vala:62
 #| msgid "Delete conversation (Delete, Backspace, A)"
@@ -279,27 +276,25 @@ msgstr "删除多个会话 (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:67
 msgid "Move conversation to Trash (Delete, Backspace)"
-msgstr ""
+msgstr "将会话移至回收站 (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:68
 msgid "Move conversations to Trash (Delete, Backspace)"
-msgstr ""
+msgstr "将多个会话移至回收站 (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
-msgstr "存档(_A)"
+msgstr "归档(_A)"
 
 #: ../src/client/application/geary-controller.vala:73
 #: ../src/client/application/geary-controller.vala:72
-#| msgid "Move conversation"
 msgid "Archive conversation (A)"
-msgstr "归档会话 (A)"
+msgstr "归档会话"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
-#| msgid "Move conversations"
 msgid "Archive conversations (A)"
-msgstr "归档多个会话 (A)"
+msgstr "归档多个会话"
 
 #: ../src/client/application/geary-controller.vala:77
 #: ../src/client/application/geary-controller.vala:76
@@ -318,24 +313,24 @@ msgstr "取消标记为垃圾邮件(_P)"
 #: ../src/client/application/geary-controller.vala:391
 #: ../src/client/components/main-toolbar.vala:124
 msgid "Mark conversation"
-msgstr "增加标签"
+msgstr "添加标签"
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
 msgid "Mark conversations"
-msgstr "为"
+msgstr "添加标签"
 
 #: ../src/client/application/geary-controller.vala:82
 #: ../src/client/components/main-toolbar.vala:114
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/components/main-toolbar.vala:129
 msgid "Add label to conversation"
-msgstr "增加标签到会话"
+msgstr "添加标签到会话"
 
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
 msgid "Add label to conversations"
-msgstr "增加标签到已选会话"
+msgstr "添加标签到已选会话"
 
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:431
@@ -349,12 +344,12 @@ msgstr "移动会话"
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
 msgid "Move conversations"
-msgstr "移动所选会话"
+msgstr "移动已选会话"
 
 #: ../src/client/application/geary-controller.vala:372
 #: ../src/client/application/geary-controller.vala:371
 msgid "A_ccounts"
-msgstr "账号"
+msgstr "帐号(_C)"
 
 #: ../src/client/application/geary-controller.vala:377
 #: ../src/client/components/stock.vala:27
@@ -383,7 +378,7 @@ msgstr "退出(_Q)"
 #: ../src/client/application/geary-controller.vala:394
 #: ../src/client/application/geary-controller.vala:393
 msgid "_Mark as..."
-msgstr "标记为(_M)..."
+msgstr "标记为...(_M)"
 
 #: ../src/client/application/geary-controller.vala:400
 #: ../src/client/application/geary-controller.vala:399
@@ -398,7 +393,7 @@ msgstr "标记为未读(_U)"
 #: ../src/client/application/geary-controller.vala:412
 #: ../src/client/application/geary-controller.vala:411
 msgid "_Star"
-msgstr "加注星标(_S)"
+msgstr "添加星标(_S)"
 
 #: ../src/client/application/geary-controller.vala:417
 #: ../src/client/application/geary-controller.vala:416
@@ -457,32 +452,32 @@ msgstr "转发(Ctrl+L, F)"
 #: ../src/client/application/geary-controller.vala:491
 #: ../src/client/application/geary-controller.vala:490
 msgid "Empty"
-msgstr ""
+msgstr "清空"
 
 #: ../src/client/application/geary-controller.vala:492
 #: ../src/client/application/geary-controller.vala:491
 #: ../src/client/components/main-toolbar.vala:79
 msgid "Empty Spam or Trash folders"
-msgstr ""
+msgstr "清空垃圾邮件或回收站"
 
 #: ../src/client/application/geary-controller.vala:496
 #: ../src/client/application/geary-controller.vala:495
 msgid "Empty _Spam…"
-msgstr ""
+msgstr "清空垃圾邮件...(_S)"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
 msgid "Empty _Trash…"
-msgstr ""
+msgstr "清空回收站...(_T)"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
-msgstr ""
+msgstr "搜索栏切换"
 
 #: ../src/client/application/geary-controller.vala:746
 #: ../src/client/application/geary-controller.vala:740
 msgid "Unable to store server trust exception"
-msgstr ""
+msgstr "无法储存信任服务器例外"
 
 #: ../src/client/application/geary-controller.vala:983
 #: ../src/client/application/geary-controller.vala:977
@@ -568,7 +563,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1153
 #: ../src/client/application/geary-controller.vala:1147
 msgid "_Rebuild"
-msgstr "重新构建(_R)"
+msgstr "重建(_R)"
 
 #: ../src/client/application/geary-controller.vala:1153
 #: ../src/client/application/geary-controller.vala:1147
@@ -587,7 +582,7 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"重新构建时发生错误：\n"
+"重建时发生错误：\n"
 "\n"
 "%s"
 
@@ -626,7 +621,7 @@ msgid ""
 "\n"
 "Please install the latest version of Geary and try again."
 msgstr ""
-"此版本的本地邮件数据库已由更新版本的 Geary 格式化。很遗憾，数据文件不能 “回滚” 以在该版本的 Geary 中正常使用。\n"
+"此版本的本地邮件数据库已由被新版本的 Geary 格式化。很遗憾，数据文件不能 “回滚” 以在该版本的 Geary 中正常使用。\n"
 "\n"
 "请安装最新版本的 Geary 后重试。"
 
@@ -662,12 +657,12 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1976
 #: ../src/client/application/geary-controller.vala:1970
 msgid "Undo move (Ctrl+Z)"
-msgstr ""
+msgstr "撤销操作 (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:1986
 #: ../src/client/application/geary-controller.vala:1980
 msgid "Are you sure you want to open \"%s\"?"
-msgstr "确定要打开“%s”?"
+msgstr "确定要打开 “%s” 吗?"
 
 #: ../src/client/application/geary-controller.vala:1987
 #: ../src/client/application/geary-controller.vala:1981
@@ -684,13 +679,13 @@ msgstr "不再询问(_A)"
 #: ../src/client/application/geary-controller.vala:2006
 #: ../src/client/application/geary-controller.vala:2000
 msgid "A file named \"%s\" already exists.  Do you want to replace it?"
-msgstr "名为“%s”的文件已经存在。您要替换它吗？"
+msgstr "名为 “%s” 的文件已经存在。要替换吗？"
 
 #: ../src/client/application/geary-controller.vala:2008
 #: ../src/client/application/geary-controller.vala:2002
 msgid ""
 "The file already exists in \"%s\".  Replacing it will overwrite its contents."
-msgstr "“%s”中已有该文件。替换它将覆盖其内容。"
+msgstr "“%s” 中已有该文件。替换它将覆盖其内容。"
 
 #: ../src/client/application/geary-controller.vala:2011
 #: ../src/client/application/geary-controller.vala:2005
@@ -700,39 +695,38 @@ msgstr "替换(_R)"
 #: ../src/client/application/geary-controller.vala:2309
 #: ../src/client/application/geary-controller.vala:2303
 msgid "Close open draft messages?"
-msgstr ""
+msgstr "关闭已打开的草稿？"
 
 #: ../src/client/application/geary-controller.vala:2439
 #: ../src/client/application/geary-controller.vala:2433
 msgid "Empty all email from your %s folder?"
-msgstr ""
+msgstr "清空 %s 中的所有邮件？"
 
 #: ../src/client/application/geary-controller.vala:2440
 #: ../src/client/application/geary-controller.vala:2434
 msgid "This removes the email from Geary and your email server."
-msgstr ""
+msgstr "邮件将会从 Geary 和服务器中同时删除。"
 
 #: ../src/client/application/geary-controller.vala:2441
 #: ../src/client/application/geary-controller.vala:2435
 msgid "This cannot be undone."
-msgstr ""
+msgstr "此操作无法撤销。"
 
 #: ../src/client/application/geary-controller.vala:2442
 #: ../src/client/application/geary-controller.vala:2436
 msgid "Empty %s"
-msgstr ""
+msgstr "清空 %s"
 
 #: ../src/client/application/geary-controller.vala:2459
 #: ../src/client/application/geary-controller.vala:2453
 msgid "Error emptying %s"
-msgstr ""
+msgstr "清空 %s 出错"
 
 #: ../src/client/application/geary-controller.vala:2489
 #: ../src/client/application/geary-controller.vala:2483
-#| msgid "Do you want to discard this message?"
 msgid "Do you want to permanently delete this message?"
 msgid_plural "Do you want to permanently delete these messages?"
-msgstr[0] "您要永久删除该封邮件吗？"
+msgstr[0] "您要永久删除这些邮件吗？"
 
 #: ../src/client/application/geary-controller.vala:2491
 #: ../src/client/application/geary-controller.vala:2485
@@ -743,21 +737,21 @@ msgstr "删除"
 #: ../src/client/application/geary-controller.vala:2522
 #: ../src/client/application/geary-controller.vala:2516
 msgid "Undo archive (Ctrl+Z)"
-msgstr ""
+msgstr "撤销归档 (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:2537
 #: ../src/client/application/geary-controller.vala:2531
 msgid "Undo trash (Ctrl+Z)"
-msgstr ""
+msgstr "撤销删除 (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:2590
 #: ../src/client/application/geary-controller.vala:2584
 msgid "Undo (Ctrl+Z)"
-msgstr ""
+msgstr "撤销  (Ctrl+Z)"
 
 #: ../src/client/application/geary-args.vala:10
 msgid "Start Geary with hidden main window"
-msgstr ""
+msgstr "启动 Geary 时隐藏主窗口"
 
 #: ../src/client/application/geary-args.vala:11
 msgid "Output debugging information"
@@ -793,7 +787,7 @@ msgstr "记录周期性活动"
 
 #: ../src/client/application/geary-args.vala:22
 msgid "Log database queries (generates lots of messages)"
-msgstr "记录数据库查询(产生大量信息)"
+msgstr "记录数据库查询(会产生大量信息)"
 
 #. / "Normalization" can also be called "synchronization"
 #: ../src/client/application/geary-args.vala:24
@@ -806,7 +800,7 @@ msgstr "允许查看邮件内嵌网页"
 
 #: ../src/client/application/geary-args.vala:26
 msgid "Revoke all server certificates with TLS warnings"
-msgstr ""
+msgstr "删除所有带有 TLS 警告的证书"
 
 #: ../src/client/application/geary-args.vala:27
 msgid "Display program version"
@@ -818,7 +812,7 @@ msgstr "用 %s 打开新的撰写窗口"
 
 #: ../src/client/application/geary-args.vala:52
 msgid "Please report comments, suggestions and bugs to:"
-msgstr "请将评论、建议和问题反馈到："
+msgstr "请将评论、建议和问题反馈至："
 
 #: ../src/client/application/geary-args.vala:59
 msgid "Failed to parse command line options: %s\n"
@@ -830,7 +824,7 @@ msgstr "无法识别的命令行选项“%s”\n"
 
 #: ../src/client/notification/libmessagingmenu.vala:75
 msgid "%s - New Messages"
-msgstr "%s -新邮件"
+msgstr "%s - 新邮件"
 
 #: ../src/client/notification/libnotify.vala:72
 #: ../src/client/notification/libnotify.vala:71
@@ -854,7 +848,7 @@ msgid_plural ""
 "(%d other new messages for %s)"
 msgstr[0] ""
 "%s\n"
-"(另有 %d 条新邮件给 %s)"
+"(另有 %d 封新邮件给 %s)"
 
 #: ../src/client/notification/libnotify.vala:160
 #: ../src/client/notification/libnotify.vala:158
@@ -867,75 +861,75 @@ msgstr "我"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:33
 msgid "Untrusted Connection: %s"
-msgstr ""
+msgstr "不受信任的连接：%s"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:36
 msgid "The identity of the %s mail server at %s:%u could not be verified."
-msgstr ""
+msgstr "无法验证 %s 的身份地址 at %s:%u 。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:44
 msgid ""
 "Selecting \"Trust This Server\" or \"Always Trust This Server\" may cause "
 "your username and password to be transmitted insecurely."
-msgstr ""
+msgstr "选择 “信任此服务器” 或  “永久信任此服务器” 会用户名和密码的传输变得不安全。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary not to access this "
 "server."
-msgstr ""
+msgstr "选择 “不信任此服务器”，Geary 将会拒绝此服务器。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Geary will not add or update this email account."
-msgstr ""
+msgstr "Geary 将不会添加和更新此邮件账户。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary to stop accessing "
 "this account."
-msgstr ""
+msgstr "选择 “不信任此服务器”，Geary 将会停止接入此账户。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Geary will exit if you have no other open email accounts."
-msgstr ""
+msgstr "若您没有其他邮件账户，Geary 将会自动退出"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:66
 msgid ""
 "Contact your system administrator or email service provider if you have any "
 "question about these issues."
-msgstr ""
+msgstr "若您对此类事件有疑问，请联系系统管理员或邮件服务提供商。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:73
 msgid "The server's certificate is not signed by a known authority"
-msgstr ""
+msgstr "此服务器的证书不是由已知的机构签发的"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:76
 msgid "The server's identity does not match the identity in the certificate"
-msgstr ""
+msgstr "此服务器的身份与证书中的身份不匹配"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:79
 msgid "The server's certificate has expired"
-msgstr ""
+msgstr "此服务器的证书已过期"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:82
 msgid "The server's certificate has not been activated"
-msgstr ""
+msgstr "此服务器的证书未激活"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:85
 msgid "The server's certificate has been revoked and is now invalid"
-msgstr ""
+msgstr "此服务器的证书已被吊销，目前不可用"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:88
 msgid "The server's certificate is considered insecure"
-msgstr ""
+msgstr "此服务器的证书被认为不安全"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:91
 msgid "An error has occurred processing the server's certificate"
-msgstr ""
+msgstr "验证服务器证书时出错"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 msgid "Geary requires your email password to continue"
-msgstr ""
+msgstr "Geary 需要您输入邮件密码来继续"
 
 #: ../src/client/dialogs/attachment-dialog.vala:18
 msgid "Choose a file"
@@ -948,7 +942,7 @@ msgstr "附件(_A)"
 #. /clear widgets
 #: ../src/client/accounts/account-dialog-edit-alternate-emails-pane.vala:124
 msgid "Additional addresses for %s"
-msgstr ""
+msgstr "%s 的附加地址"
 
 #: ../src/client/accounts/account-dialog.vala:21
 msgid "Accounts"
@@ -966,32 +960,32 @@ msgstr "欢迎使用 Geary。"
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
 msgid "Enter your account information to get started."
-msgstr "请先输入您的帐号信息。"
+msgstr "请输入您的帐号信息。"
 
 #: ../src/client/accounts/add-edit-page.vala:253
 #: ../src/client/accounts/add-edit-page.vala:254
 msgid "2 weeks back"
-msgstr "2周前"
+msgstr "2 周前"
 
 #: ../src/client/accounts/add-edit-page.vala:254
 #: ../src/client/accounts/add-edit-page.vala:255
 msgid "1 month back"
-msgstr "1个月前"
+msgstr "1 个月前"
 
 #: ../src/client/accounts/add-edit-page.vala:255
 #: ../src/client/accounts/add-edit-page.vala:256
 msgid "3 months back"
-msgstr "3个月前"
+msgstr "3 个月前"
 
 #: ../src/client/accounts/add-edit-page.vala:256
 #: ../src/client/accounts/add-edit-page.vala:257
 msgid "6 months back"
-msgstr "6个月前"
+msgstr "6 个月前"
 
 #: ../src/client/accounts/add-edit-page.vala:257
 #: ../src/client/accounts/add-edit-page.vala:258
 msgid "1 year back"
-msgstr "1年前"
+msgstr "1 年前"
 
 #: ../src/client/accounts/add-edit-page.vala:258
 #: ../src/client/accounts/add-edit-page.vala:259
@@ -1013,12 +1007,12 @@ msgstr "所有"
 #: ../src/client/accounts/add-edit-page.vala:280
 #: ../src/client/accounts/add-edit-page.vala:281
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #: ../src/client/accounts/add-edit-page.vala:282
 #: ../src/client/accounts/add-edit-page.vala:283
 msgid "Preview"
-msgstr ""
+msgstr "预览"
 
 #: ../src/client/accounts/add-edit-page.vala:723
 #: ../src/client/accounts/add-edit-page.vala:725
@@ -1048,32 +1042,32 @@ msgstr "        &#8226; 邮件地址已添加到 Geary。\n"
 #: ../src/client/accounts/add-edit-page.vala:773
 #: ../src/client/accounts/add-edit-page.vala:775
 msgid "        &#8226; IMAP connection error.\n"
-msgstr "        &#8226; IMAP 连接错误.\n"
+msgstr "        &#8226; IMAP 连接错误。\n"
 
 #: ../src/client/accounts/add-edit-page.vala:776
 #: ../src/client/accounts/add-edit-page.vala:778
 msgid "        &#8226; IMAP username or password incorrect.\n"
-msgstr "        &#8226; IMAP 用户名或密码错误.\n"
+msgstr "        &#8226; IMAP 用户名或密码错误。\n"
 
 #: ../src/client/accounts/add-edit-page.vala:779
 #: ../src/client/accounts/add-edit-page.vala:781
 msgid "        &#8226; SMTP connection error.\n"
-msgstr "        &#8226; SMTP 连接错误.\n"
+msgstr "        &#8226; SMTP 连接错误。\n"
 
 #: ../src/client/accounts/add-edit-page.vala:782
 #: ../src/client/accounts/add-edit-page.vala:784
 msgid "        &#8226; SMTP username or password incorrect.\n"
-msgstr "        &#8226; SMTP 用户名或密码错误.\n"
+msgstr "        &#8226; SMTP 用户名或密码错误。\n"
 
 #: ../src/client/accounts/add-edit-page.vala:786
 #: ../src/client/accounts/add-edit-page.vala:788
 msgid "        &#8226; Connection error.\n"
-msgstr "        &#8226; 连接错误.\n"
+msgstr "        &#8226; 连接错误。\n"
 
 #: ../src/client/accounts/add-edit-page.vala:790
 #: ../src/client/accounts/add-edit-page.vala:792
 msgid "        &#8226; Username or password incorrect.\n"
-msgstr "        &#8226; 用户名或密码错误.\n"
+msgstr "        &#8226; 用户名或密码错误。\n"
 
 #: ../src/client/accounts/account-dialog-add-edit-pane.vala:51
 #: ../src/client/components/stock.vala:31
@@ -1385,7 +1379,7 @@ msgstr "保存出错"
 
 #: ../src/client/composer/composer-widget.vala:76
 msgid "Press Backspace to delete quote"
-msgstr ""
+msgstr "长按 Backspace 删除引用"
 
 #: ../src/client/composer/composer-widget.vala:77
 msgid "New Message"
@@ -1395,7 +1389,7 @@ msgstr "新邮件"
 msgid ""
 "attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
 "closing|encloses|enclosure|enclosures"
-msgstr ""
+msgstr "附件|添加中|附件|附件|附件|已添加|封装|已封装|封装中|附入|附件|附件"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -1449,19 +1443,19 @@ msgstr "%s (%s)"
 
 #: ../src/client/composer/composer-widget.vala:1645
 msgid "To: "
-msgstr ""
+msgstr "收件人： "
 
 #: ../src/client/composer/composer-widget.vala:1648
 msgid "Cc: "
-msgstr ""
+msgstr "抄送： "
 
 #: ../src/client/composer/composer-widget.vala:1651
 msgid "Bcc: "
-msgstr ""
+msgstr "密送： "
 
 #: ../src/client/composer/composer-widget.vala:1654
 msgid "Reply-To: "
-msgstr ""
+msgstr "回复给： "
 
 #: ../src/client/composer/composer-widget.vala:1887
 msgid "Select Color"
@@ -1469,7 +1463,7 @@ msgstr "选择颜色"
 
 #: ../src/client/composer/composer-widget.vala:2322
 msgid "%1$s via %2$s"
-msgstr ""
+msgstr "%1$s 通过 %2$s"
 
 #: ../src/client/composer/composer-widget.vala:2364
 #| msgid "From:"
@@ -1479,7 +1473,7 @@ msgstr "发件人(_F)："
 #: ../src/client/components/main-window.vala:388
 #: ../src/client/components/main-window.vala:351
 msgid "%s (%d)"
-msgstr ""
+msgstr "%s (%d)"
 
 #. / Displayed in the space-limited status bar while a message is in the process of being sent.
 #: ../src/client/components/status-bar.vala:26
@@ -1552,546 +1546,546 @@ msgstr "正在索引 %s 帐号"
 #: ../src/client/components/main-toolbar.vala:162
 #: ../src/client/composer/composer-headerbar.vala:75
 msgid "Menu"
-msgstr ""
+msgstr "菜单"
 
 #: ../src/client/application/geary-application.vala:25
 msgid "Send by Email"
-msgstr ""
+msgstr "通过邮件发送"
 
 #: ../src/client/application/geary-application.vala:26
 msgid "Send files using Mail"
-msgstr ""
+msgstr "用邮件发送文件"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
 msgid "Welcome to Mail"
-msgstr ""
+msgstr "欢迎使用邮件"
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
 msgid "More options"
-msgstr ""
+msgstr "更多选项"
 
 #: ../src/client/components/main-toolbar.vala:312
 msgid "Search %s"
-msgstr ""
+msgstr "搜索 %s"
 
 #: ../src/client/dialogs/preferences-dialog.vala:23
 msgid "Reading"
-msgstr ""
+msgstr "读取中"
 
 #: ../src/client/dialogs/preferences-dialog.vala:28
 msgid "Automatically select next message:"
-msgstr ""
+msgstr "自动选择下一条消息："
 
 #: ../src/client/dialogs/preferences-dialog.vala:33
 msgid "Conversation previews:"
-msgstr ""
+msgstr "会话预览："
 
 #: ../src/client/dialogs/preferences-dialog.vala:38
 msgid "Three-pane layout:"
-msgstr ""
+msgstr "三栏视图："
 
 #: ../src/client/dialogs/preferences-dialog.vala:42 ../data/ui/login.ui:853
 msgid "Composer"
-msgstr ""
+msgstr "作者："
 
 #: ../src/client/dialogs/preferences-dialog.vala:47
 msgid "Spell check:"
-msgstr ""
+msgstr "拼写检查："
 
 #: ../src/client/dialogs/preferences-dialog.vala:51
 msgid "Notifications"
-msgstr ""
+msgstr "通知"
 
 #: ../src/client/dialogs/preferences-dialog.vala:56
 msgid "Always watch for new mail:"
-msgstr ""
+msgstr "总是监视新邮件："
 
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete Conversation"
-msgstr ""
+msgstr "删除会话"
 
 #: ../src/client/application/geary-controller.vala:62
 msgid "Delete Conversation (Shift+Delete)"
-msgstr ""
+msgstr "删除会话 (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
 msgid "Delete Conversations (Shift+Delete)"
-msgstr ""
+msgstr "删除所有会话 (Shift+Delete)"
 
 #: ../data/ui/remove_confirm.ui:43
 msgid ""
 "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
 "account?</span> "
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"larger\">您确定要删除此账户吗？</span> "
 
 #: ../data/ui/remove_confirm.ui:58
 msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
-msgstr ""
+msgstr "与此账户关联的所有邮件都将从计算机中删除。不会影响您在服务器中的邮件。"
 
 #: ../data/ui/remove_confirm.ui:80
 msgid "Nickname:"
-msgstr ""
+msgstr "昵称："
 
 #: ../data/ui/remove_confirm.ui:94
 msgid "Email address:"
-msgstr ""
+msgstr "邮件地址："
 
 #: ../data/ui/find_bar.ui:59
 msgid "Find"
-msgstr ""
+msgstr "查找"
 
 #: ../data/ui/find_bar.ui:72
 msgid "Previous Result"
-msgstr ""
+msgstr "上一结果"
 
 #: ../data/ui/find_bar.ui:91
 msgid "Next result"
-msgstr ""
+msgstr "下一结果"
 
 #: ../data/ui/find_bar.ui:107
 msgid "_Case sensitive"
-msgstr ""
+msgstr "区分大小写(_C)"
 
 #: ../data/ui/find_bar.ui:127
 msgid "label"
-msgstr ""
+msgstr "标签"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr ""
+msgstr "Geary 正在更新..."
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
-msgstr ""
+msgstr "删除邮件地址"
 
 #: ../data/ui/edit_alternate_emails.ui:136
 msgid ""
 "Some email services require additional addresses be configured on the "
 "server.  Contact your email provider for more information."
-msgstr ""
+msgstr "某些邮件服务需要提供服务器配置的额外地址。联系您的邮件服务提供商获取更多信息。"
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
-msgstr ""
+msgstr "更新(_U)"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
-msgstr ""
+msgstr "请稍等，Geary 正在验证您的账户。"
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
-msgstr ""
+msgstr "撤消(_U)"
 
 #: ../data/ui/composer.ui:15
 msgid "_Redo"
-msgstr ""
+msgstr "恢复(_R)"
 
 #: ../data/ui/composer.ui:22
 msgid "Cu_t"
-msgstr ""
+msgstr "剪切(_T)"
 
 #: ../data/ui/composer.ui:36
 msgid "_Paste"
-msgstr ""
+msgstr "粘贴(_P)"
 
 #: ../data/ui/composer.ui:43
 msgid "_Left"
-msgstr ""
+msgstr "左对齐(_L)"
 
 #: ../data/ui/composer.ui:48
 msgid "_Right"
-msgstr ""
+msgstr "右对齐(_R)"
 
 #: ../data/ui/composer.ui:53
 msgid "_Center"
-msgstr ""
+msgstr "居中(_C)"
 
 #: ../data/ui/composer.ui:58
 msgid "_Justify"
-msgstr ""
+msgstr "调整(_J)"
 
 #: ../data/ui/composer.ui:63
 msgid "Link (Ctrl+L)"
-msgstr ""
+msgstr "链接 (Ctrl+L)"
 
 #: ../data/ui/composer.ui:70
 msgid "C_olor"
-msgstr ""
+msgstr "颜色(_O)"
 
 #: ../data/ui/composer.ui:81
 msgid "Quote text  (Ctrl+])"
-msgstr ""
+msgstr "引用文本 (Ctrl+])"
 
 #: ../data/ui/composer.ui:87
 msgid "Unquote text (Ctrl+[)"
-msgstr ""
+msgstr "取消引用 (Ctrl+[)"
 
 #: ../data/ui/composer.ui:93
 msgid "Remove formatting (Ctrl+Space)"
-msgstr ""
+msgstr "删除格式 (Ctrl+Space)"
 
 #: ../data/ui/composer.ui:100
 msgctxt "Clipboard paste with rich text"
 msgid "Paste _With Formatting"
-msgstr ""
+msgstr "粘贴并保留格式(_W)"
 
 #: ../data/ui/composer.ui:111
 msgid "Bold (Ctrl+B)"
-msgstr ""
+msgstr "粗体 (Ctrl+B)"
 
 #: ../data/ui/composer.ui:118
 msgid "Italic (Ctrl+I)"
-msgstr ""
+msgstr "斜体 (Ctrl+I)"
 
 #: ../data/ui/composer.ui:125
 msgid "Underline (Ctrl+U)"
-msgstr ""
+msgstr "下划线 (Ctrl+U)"
 
 #: ../data/ui/composer.ui:132
 msgid "Strikethrough (Ctrl+K)"
-msgstr ""
+msgstr "删除线 (Ctrl+K)"
 
 #: ../data/ui/composer.ui:139
 msgid "_Rich Text"
-msgstr ""
+msgstr "富文本(_R)"
 
 #: ../data/ui/composer.ui:145
 msgid "Show Extended Fields"
-msgstr ""
+msgstr "显示扩展区域"
 
 #: ../data/ui/composer.ui:157
 msgctxt "Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "保存并关闭"
 
 #: ../data/ui/composer.ui:158
 msgctxt "Short Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "保存并关闭"
 
 #: ../data/ui/composer.ui:159
 msgctxt "Tooltip"
 msgid "Close and Save"
-msgstr ""
+msgstr "保存并关闭"
 
 #: ../data/ui/composer.ui:165
 msgctxt "Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "不保存关闭"
 
 #: ../data/ui/composer.ui:166
 msgctxt "Short Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "不保存关闭"
 
 #: ../data/ui/composer.ui:167
 msgctxt "Tooltip"
 msgid "Close and Discard"
-msgstr ""
+msgstr "不保存关闭"
 
 #: ../data/ui/composer.ui:173
 msgid "Lar_ge"
-msgstr ""
+msgstr "大号字体(_G)"
 
 #: ../data/ui/composer.ui:174
 msgid "Large"
-msgstr ""
+msgstr "大号字体"
 
 #: ../data/ui/composer.ui:179
 msgid "_Medium"
-msgstr ""
+msgstr "中等字体(_M)"
 
 #: ../data/ui/composer.ui:180
 msgid "Medium"
-msgstr ""
+msgstr "中等字体"
 
 #: ../data/ui/composer.ui:185
 msgid "_Small"
-msgstr ""
+msgstr "小号字体(_S)"
 
 #: ../data/ui/composer.ui:186
 msgid "Small"
-msgstr ""
+msgstr "小号字体"
 
 #: ../data/ui/composer.ui:191
 msgid "S_ans Serif"
-msgstr ""
+msgstr "无衬线字体(_A)"
 
 #: ../data/ui/composer.ui:192
 msgid "Sans Serif"
-msgstr ""
+msgstr "无衬线字体"
 
 #: ../data/ui/composer.ui:197
 msgid "S_erif"
-msgstr ""
+msgstr "衬线字体(_E)"
 
 #: ../data/ui/composer.ui:198
 msgid "Serif"
-msgstr ""
+msgstr "衬线字体"
 
 #: ../data/ui/composer.ui:203
 msgid "_Fixed Width"
-msgstr ""
+msgstr "等宽字体"
 
 #: ../data/ui/composer.ui:204
 msgid "Fixed Width"
-msgstr ""
+msgstr "等宽字体"
 
 #: ../data/ui/composer.ui:209 ../data/ui/composer.ui:210
 msgid "Detach"
-msgstr ""
+msgstr "移除附件"
 
 #: ../data/ui/composer.ui:211
 msgid "Detach (Ctrl+D)"
-msgstr ""
+msgstr "移除附件 (Ctrl+D)"
 
 #: ../data/ui/composer.ui:218
 msgid "_Send"
-msgstr ""
+msgstr "发送(_S)"
 
 #: ../data/ui/composer.ui:219
 msgid "Send"
-msgstr ""
+msgstr "发送"
 
 #: ../data/ui/composer.ui:220
 msgid "Send (Ctrl+Enter)"
-msgstr ""
+msgstr "发送 (Ctrl+Enter)"
 
 #: ../data/ui/composer.ui:226
 msgid "_Attach File"
-msgstr ""
+msgstr "附加文件(_A)"
 
 #: ../data/ui/composer.ui:227 ../data/ui/composer.ui:228
 msgid "Attach File"
-msgstr ""
+msgstr "附加文件"
 
 #: ../data/ui/composer.ui:234
 msgid "_Include Original Attachments"
-msgstr ""
+msgstr "包括原邮件附件(_I)"
 
 #: ../data/ui/composer.ui:235 ../data/ui/composer.ui:236
 msgid "Include Original Attachments"
-msgstr ""
+msgstr "包括原邮件附件"
 
 #: ../data/ui/composer.ui:242
 msgid "Application Menu"
-msgstr ""
+msgstr "应用程序菜单"
 
 #. Address(es) e-mail is to be sent to
 #: ../data/ui/composer.ui:289
 msgid "_To"
-msgstr ""
+msgstr "收件人(_T)"
 
 #: ../data/ui/composer.ui:308
 msgid "_Cc"
-msgstr ""
+msgstr "抄送(_C)"
 
 #: ../data/ui/composer.ui:362
 msgid "_Subject"
-msgstr ""
+msgstr "主题(_S)"
 
 #: ../data/ui/composer.ui:381
 msgid "_Bcc"
-msgstr ""
+msgstr "密送(_B)"
 
 #: ../data/ui/composer.ui:411
 msgid "_Reply-To"
-msgstr ""
+msgstr "回复给(R)"
 
 #. Geary account mail will be sent from
 #: ../data/ui/composer.ui:440
 msgid "From"
-msgstr ""
+msgstr "来自"
 
 #: ../data/ui/composer.ui:519
 msgid "Drop files here"
-msgstr ""
+msgstr "拖放文件到此处"
 
 #: ../data/ui/composer.ui:535
 msgid "To add them as attachments"
-msgstr ""
+msgstr "以添加为附件"
 
 #: ../data/ui/account_cannot_remove.ui:40
 msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"larger\">无法删除账户</span> "
 
 #: ../data/ui/account_cannot_remove.ui:56
 msgid ""
 "A composer window associated with this account is currently open. Send or "
 "discard the message and try again."
-msgstr ""
+msgstr "当前有与此账户有关的编辑窗口还未关闭。请先处理完后再重试。"
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr ""
+msgstr "附加邮件地址...(_T)"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
-msgstr ""
+msgstr "保存已发送的邮件(_S)"
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
-msgstr ""
+msgstr "密码"
 
 #: ../data/ui/login.ui:97 ../data/ui/login.ui:545
 msgid "_Password:"
-msgstr ""
+msgstr "密码(_P)："
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
-msgstr ""
+msgstr "邮件地址(_M)："
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
-msgstr ""
+msgstr "工作、生活等。"
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
-msgstr ""
+msgstr "昵称(_I)："
 
 #: ../data/ui/login.ui:195
 msgid "N_ame:"
-msgstr ""
+msgstr "名字(_A)："
 
 #: ../data/ui/login.ui:211
 msgid "S_ervice:"
-msgstr ""
+msgstr "服务器(_E)："
 
 #: ../data/ui/login.ui:298
 msgid "IMAP settings"
-msgstr ""
+msgstr "IMAP 设置"
 
 #: ../data/ui/login.ui:315
 msgid "Se_rver:"
-msgstr ""
+msgstr "服务器(_R)："
 
 #: ../data/ui/login.ui:347
 msgid "P_ort"
-msgstr ""
+msgstr "端口(_O)："
 
 #: ../data/ui/login.ui:409
 msgid "Ser_ver:"
-msgstr ""
+msgstr "服务器(_V)："
 
 #: ../data/ui/login.ui:427
 msgid "Por_t"
-msgstr ""
+msgstr "端口(_T)："
 
 #: ../data/ui/login.ui:446
 msgid "SMTP settings"
-msgstr ""
+msgstr "SMTP 设置"
 
 #: ../data/ui/login.ui:462
 msgid "User_name:"
-msgstr ""
+msgstr "用户名(_N)："
 
 #: ../data/ui/login.ui:480
 msgid "Pass_word:"
-msgstr ""
+msgstr "密码(_W)："
 
 #: ../data/ui/login.ui:499
 msgid "SMTP username"
-msgstr ""
+msgstr "SMTP 用户名"
 
 #: ../data/ui/login.ui:514
 msgid "SMTP password"
-msgstr ""
+msgstr "SMTP 密码"
 
 #: ../data/ui/login.ui:527
 msgid "_Username:"
-msgstr ""
+msgstr "用户名(_U)："
 
 #: ../data/ui/login.ui:564
 msgid "IMAP username"
-msgstr ""
+msgstr "IMAP 用户名"
 
 #: ../data/ui/login.ui:579
 msgid "IMAP password"
-msgstr ""
+msgstr "IMAP 密码"
 
 #: ../data/ui/login.ui:593
 msgid "Encr_yption:"
-msgstr ""
+msgstr "加密(_Y)："
 
 #: ../data/ui/login.ui:613
 msgid "Encrypt_ion:"
-msgstr ""
+msgstr "加密(_I)："
 
 #: ../data/ui/login.ui:634 ../data/ui/login.ui:651
 msgid "SSL/TLS"
-msgstr ""
+msgstr "SSL/TLS"
 
 #: ../data/ui/login.ui:635 ../data/ui/login.ui:652
 msgid "STARTTLS"
-msgstr ""
+msgstr "STARTTLS"
 
 #: ../data/ui/login.ui:663
 msgid "No authentication re_quired"
-msgstr ""
+msgstr "无需验证(_Q)："
 
 #: ../data/ui/login.ui:679
 msgid "Use IMAP cre_dentials"
-msgstr ""
+msgstr "使用 IMAP 凭证(_D)"
 
 #: ../data/ui/login.ui:783
 msgid "Storage"
-msgstr ""
+msgstr "存储"
 
 #: ../data/ui/login.ui:804
 msgid "_Download mail"
-msgstr ""
+msgstr "下载邮件(_D)"
 
 #: ../data/ui/login.ui:867
 msgid "Save dra_fts on server"
-msgstr ""
+msgstr "保存邮件至服务器(_F)"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr ""
+msgstr "邮件签名 (HTML 可用)："
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
-msgstr ""
+msgstr "添加帐户"
 
 #: ../data/ui/account_list.ui:82
 msgid "Edit account"
-msgstr ""
+msgstr "编辑账户"
 
 #: ../data/ui/account_list.ui:95
 msgid "Remove account"
-msgstr ""
+msgstr "移除帐户"
 
 #: ../data/ui/certificate_warning_dialog.ui:7
 msgid "Untrusted Connection"
-msgstr ""
+msgstr "不可信的连接"
 
 #: ../data/ui/certificate_warning_dialog.ui:29
 msgid "_Always Trust This Server"
-msgstr ""
+msgstr "总是信任此服务器(_A)"
 
 #: ../data/ui/certificate_warning_dialog.ui:43
 msgid "_Trust This Server"
-msgstr ""
+msgstr "信任此服务器(_T)"
 
 #: ../data/ui/certificate_warning_dialog.ui:57
 msgid "_Don't Trust This Server"
-msgstr ""
+msgstr "不信任此服务器(_D)"
 
 #: ../data/ui/password-dialog.ui:74
 msgid "SMTP Credentials"
-msgstr ""
+msgstr "SMTP 凭证"
 
 #: ../data/ui/password-dialog.ui:91
 msgid "Username"
-msgstr ""
+msgstr "用户名"
 
 #: ../data/ui/password-dialog.ui:152
 msgid "_Remember password"
-msgstr ""
+msgstr "记住密码(_R)"
 
 #: ../data/ui/password-dialog.ui:210
 msgid "_Authenticate"
-msgstr ""
+msgstr "验证(_A)"
