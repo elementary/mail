@@ -17,7 +17,7 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2015-12-14 14:34-0200\n"
-"PO-Revision-Date: 2016-01-02 17:33+0000\n"
+"PO-Revision-Date: 2016-01-03 08:38+0000\n"
 "Last-Translator: colindemian <dengmengpc@gmail.com>\n"
 "Language-Team: Chinese (China) "
 "(http://www.transifex.com/projects/p/geary/language/zh_CN/)\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-01-03 05:36+0000\n"
+"X-Launchpad-Export-Date: 2016-01-04 05:37+0000\n"
 "X-Generator: Launchpad (build 17865)\n"
 "Language: zh_CN\n"
 
@@ -57,7 +57,7 @@ msgstr "收件箱"
 
 #: ../src/engine/api/geary-special-folder-type.vala:27
 msgid "Drafts"
-msgstr "草稿"
+msgstr "草稿箱"
 
 #: ../src/engine/api/geary-special-folder-type.vala:30
 msgid "Sent Mail"
@@ -1571,7 +1571,7 @@ msgstr "搜索 %s"
 
 #: ../src/client/dialogs/preferences-dialog.vala:23
 msgid "Reading"
-msgstr "读取中"
+msgstr "阅读："
 
 #: ../src/client/dialogs/preferences-dialog.vala:28
 msgid "Automatically select next message:"
@@ -1595,7 +1595,7 @@ msgstr "拼写检查："
 
 #: ../src/client/dialogs/preferences-dialog.vala:51
 msgid "Notifications"
-msgstr "通知"
+msgstr "通知："
 
 #: ../src/client/dialogs/preferences-dialog.vala:56
 msgid "Always watch for new mail:"
@@ -1754,7 +1754,7 @@ msgstr "富文本(_R)"
 
 #: ../data/ui/composer.ui:145
 msgid "Show Extended Fields"
-msgstr "显示扩展区域"
+msgstr "显示额外内容"
 
 #: ../data/ui/composer.ui:157
 msgctxt "Label"
@@ -1856,11 +1856,11 @@ msgstr "发送 (Ctrl+Enter)"
 
 #: ../data/ui/composer.ui:226
 msgid "_Attach File"
-msgstr "附加文件(_A)"
+msgstr "附件(_A)"
 
 #: ../data/ui/composer.ui:227 ../data/ui/composer.ui:228
 msgid "Attach File"
-msgstr "附加文件"
+msgstr "附件"
 
 #: ../data/ui/composer.ui:234
 msgid "_Include Original Attachments"
