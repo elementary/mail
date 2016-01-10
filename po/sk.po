@@ -12,16 +12,16 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2015-12-14 14:34-0200\n"
-"PO-Revision-Date: 2015-11-23 11:52+0000\n"
-"Last-Translator: Dusan Kazik <prescott66@gmail.com>\n"
+"PO-Revision-Date: 2016-01-09 20:17+0000\n"
+"Last-Translator: Lukáš Papík <stereo839@gmail.com>\n"
 "Language-Team: Slovak "
 "(http://www.transifex.com/projects/p/geary/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Launchpad-Export-Date: 2015-12-18 06:01+0000\n"
-"X-Generator: Launchpad (build 17865)\n"
+"X-Launchpad-Export-Date: 2016-01-10 05:34+0000\n"
+"X-Generator: Launchpad (build 17881)\n"
 "Language: sk\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -653,7 +653,8 @@ msgstr ""
 "Dušan Kazik <prescott66@gmail.com>\n"
 "\n"
 "Launchpad Contributions:\n"
-"  Dusan Kazik https://launchpad.net/~prescott66"
+"  Dusan Kazik https://launchpad.net/~prescott66\n"
+"  Lukáš Papík https://launchpad.net/~stereo839"
 
 #: ../src/client/application/geary-controller.vala:1976
 #: ../src/client/application/geary-controller.vala:1970
@@ -1590,40 +1591,40 @@ msgstr "Indexuje sa účet %s"
 #: ../src/client/components/main-toolbar.vala:162
 #: ../src/client/composer/composer-headerbar.vala:75
 msgid "Menu"
-msgstr ""
+msgstr "Ponuka"
 
 #: ../src/client/application/geary-application.vala:25
 msgid "Send by Email"
-msgstr ""
+msgstr "Odoslať cez Email"
 
 #: ../src/client/application/geary-application.vala:26
 msgid "Send files using Mail"
-msgstr ""
+msgstr "Poslať súbory použitím Mail"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
 msgid "Welcome to Mail"
-msgstr ""
+msgstr "Vitajte v Mail"
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
 msgid "More options"
-msgstr ""
+msgstr "Viac možností"
 
 #: ../src/client/components/main-toolbar.vala:312
 msgid "Search %s"
-msgstr ""
+msgstr "Hľadať %s"
 
 #: ../src/client/dialogs/preferences-dialog.vala:23
 msgid "Reading"
-msgstr ""
+msgstr "Čítanie"
 
 #: ../src/client/dialogs/preferences-dialog.vala:28
 msgid "Automatically select next message:"
-msgstr ""
+msgstr "Automaticky vybrať ďalšiu zprávu:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:33
 msgid "Conversation previews:"
-msgstr ""
+msgstr "Náhľad konverzácie:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:38
 msgid "Three-pane layout:"
@@ -1631,505 +1632,513 @@ msgstr ""
 
 #: ../src/client/dialogs/preferences-dialog.vala:42 ../data/ui/login.ui:853
 msgid "Composer"
-msgstr ""
+msgstr "Skladateľ"
 
 #: ../src/client/dialogs/preferences-dialog.vala:47
 msgid "Spell check:"
-msgstr ""
+msgstr "Kontrola pravopisu:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:51
 msgid "Notifications"
-msgstr ""
+msgstr "Upozornenia"
 
 #: ../src/client/dialogs/preferences-dialog.vala:56
 msgid "Always watch for new mail:"
-msgstr ""
+msgstr "Vždy sledovať nové zprávy:"
 
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete Conversation"
-msgstr ""
+msgstr "Odstraniť konverzáciu"
 
 #: ../src/client/application/geary-controller.vala:62
 msgid "Delete Conversation (Shift+Delete)"
-msgstr ""
+msgstr "Odstraniť konverzáciu (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
 msgid "Delete Conversations (Shift+Delete)"
-msgstr ""
+msgstr "Odstraniť konverzácie (Shift+Delete)"
 
 #: ../data/ui/remove_confirm.ui:43
 msgid ""
 "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
 "account?</span> "
 msgstr ""
+"<span weight=\"bold\" size=\"larger\">Ste si istý že chcete odstrániť tento "
+"účet?</span> "
 
 #: ../data/ui/remove_confirm.ui:58
 msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
 msgstr ""
+"Všetke emaily spojené s týmto účtom budú odstránené z vašeho počítača. Toto "
+"nebude mať vliv na emaily na serveri."
 
 #: ../data/ui/remove_confirm.ui:80
 msgid "Nickname:"
-msgstr ""
+msgstr "Prezývka:"
 
 #: ../data/ui/remove_confirm.ui:94
 msgid "Email address:"
-msgstr ""
+msgstr "Emailová adresa:"
 
 #: ../data/ui/find_bar.ui:59
 msgid "Find"
-msgstr ""
+msgstr "Nájsť"
 
 #: ../data/ui/find_bar.ui:72
 msgid "Previous Result"
-msgstr ""
+msgstr "Predošlý výsledok"
 
 #: ../data/ui/find_bar.ui:91
 msgid "Next result"
-msgstr ""
+msgstr "Ďalší výsledok"
 
 #: ../data/ui/find_bar.ui:107
 msgid "_Case sensitive"
-msgstr ""
+msgstr "_Velikosť písmen"
 
 #: ../data/ui/find_bar.ui:127
 msgid "label"
-msgstr ""
+msgstr "menovka"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr ""
+msgstr "Geary aktualizácia prebieha..."
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
-msgstr ""
+msgstr "Odstraniť emailovú adresu"
 
 #: ../data/ui/edit_alternate_emails.ui:136
 msgid ""
 "Some email services require additional addresses be configured on the "
 "server.  Contact your email provider for more information."
 msgstr ""
+"Nejaké emailové služby vyžadujú prídavnú adresu, nastavenú na serveri. "
+"Kontaktujte vášho emailové poskytovateľa pre viac informácií."
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
-msgstr ""
+msgstr "_Aktualizácia"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
-msgstr ""
+msgstr "Prosím čakajte kým Geary overí váš účet."
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
-msgstr ""
+msgstr "_Späť"
 
 #: ../data/ui/composer.ui:15
 msgid "_Redo"
-msgstr ""
+msgstr "_Znovu vykonať"
 
 #: ../data/ui/composer.ui:22
 msgid "Cu_t"
-msgstr ""
+msgstr "Vystri_hnúť"
 
 #: ../data/ui/composer.ui:36
 msgid "_Paste"
-msgstr ""
+msgstr "_Vložiť"
 
 #: ../data/ui/composer.ui:43
 msgid "_Left"
-msgstr ""
+msgstr "_Vľavo"
 
 #: ../data/ui/composer.ui:48
 msgid "_Right"
-msgstr ""
+msgstr "V_pravo"
 
 #: ../data/ui/composer.ui:53
 msgid "_Center"
-msgstr ""
+msgstr "V _strede"
 
 #: ../data/ui/composer.ui:58
 msgid "_Justify"
-msgstr ""
+msgstr "_Zarovnať"
 
 #: ../data/ui/composer.ui:63
 msgid "Link (Ctrl+L)"
-msgstr ""
+msgstr "Odkaz (Ctrl+L)"
 
 #: ../data/ui/composer.ui:70
 msgid "C_olor"
-msgstr ""
+msgstr "F_arba"
 
 #: ../data/ui/composer.ui:81
 msgid "Quote text  (Ctrl+])"
-msgstr ""
+msgstr "Citácia textu (Ctrl+])"
 
 #: ../data/ui/composer.ui:87
 msgid "Unquote text (Ctrl+[)"
-msgstr ""
+msgstr "Koniec citácie textu (Ctrl+[)"
 
 #: ../data/ui/composer.ui:93
 msgid "Remove formatting (Ctrl+Space)"
-msgstr ""
+msgstr "Odstrániť formátovanie (Ctrl+Mezerník)"
 
 #: ../data/ui/composer.ui:100
 msgctxt "Clipboard paste with rich text"
 msgid "Paste _With Formatting"
-msgstr ""
+msgstr "Vložiť _s formátovaním"
 
 #: ../data/ui/composer.ui:111
 msgid "Bold (Ctrl+B)"
-msgstr ""
+msgstr "Tučné (Ctrl+B)"
 
 #: ../data/ui/composer.ui:118
 msgid "Italic (Ctrl+I)"
-msgstr ""
+msgstr "Kurzíva (Ctrl+I)"
 
 #: ../data/ui/composer.ui:125
 msgid "Underline (Ctrl+U)"
-msgstr ""
+msgstr "Podtrhnuté (Ctrl+U)"
 
 #: ../data/ui/composer.ui:132
 msgid "Strikethrough (Ctrl+K)"
-msgstr ""
+msgstr "Prečiarknuté (Ctrl+K)"
 
 #: ../data/ui/composer.ui:139
 msgid "_Rich Text"
-msgstr ""
+msgstr "Tučný text"
 
 #: ../data/ui/composer.ui:145
 msgid "Show Extended Fields"
-msgstr ""
+msgstr "Zobraziť rozšírené poľa"
 
 #: ../data/ui/composer.ui:157
 msgctxt "Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "Zavrieť a uložiť"
 
 #: ../data/ui/composer.ui:158
 msgctxt "Short Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "Zavrieť a uložiť"
 
 #: ../data/ui/composer.ui:159
 msgctxt "Tooltip"
 msgid "Close and Save"
-msgstr ""
+msgstr "Zavrieť a uložiť"
 
 #: ../data/ui/composer.ui:165
 msgctxt "Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Zavrieť a zahodiť zmeny"
 
 #: ../data/ui/composer.ui:166
 msgctxt "Short Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Zavrieť a zahodiť zmeny"
 
 #: ../data/ui/composer.ui:167
 msgctxt "Tooltip"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Zavrieť a zahodiť zmeny"
 
 #: ../data/ui/composer.ui:173
 msgid "Lar_ge"
-msgstr ""
+msgstr "Veľ_ké"
 
 #: ../data/ui/composer.ui:174
 msgid "Large"
-msgstr ""
+msgstr "Veľké"
 
 #: ../data/ui/composer.ui:179
 msgid "_Medium"
-msgstr ""
+msgstr "_Stredné"
 
 #: ../data/ui/composer.ui:180
 msgid "Medium"
-msgstr ""
+msgstr "Stredné"
 
 #: ../data/ui/composer.ui:185
 msgid "_Small"
-msgstr ""
+msgstr "_Malé"
 
 #: ../data/ui/composer.ui:186
 msgid "Small"
-msgstr ""
+msgstr "Malé"
 
 #: ../data/ui/composer.ui:191
 msgid "S_ans Serif"
-msgstr ""
+msgstr "S_ans Serif"
 
 #: ../data/ui/composer.ui:192
 msgid "Sans Serif"
-msgstr ""
+msgstr "Sans Serif"
 
 #: ../data/ui/composer.ui:197
 msgid "S_erif"
-msgstr ""
+msgstr "S_erif"
 
 #: ../data/ui/composer.ui:198
 msgid "Serif"
-msgstr ""
+msgstr "Serif"
 
 #: ../data/ui/composer.ui:203
 msgid "_Fixed Width"
-msgstr ""
+msgstr "_Pevná šírka"
 
 #: ../data/ui/composer.ui:204
 msgid "Fixed Width"
-msgstr ""
+msgstr "Pevná šírka"
 
 #: ../data/ui/composer.ui:209 ../data/ui/composer.ui:210
 msgid "Detach"
-msgstr ""
+msgstr "Odpojiť"
 
 #: ../data/ui/composer.ui:211
 msgid "Detach (Ctrl+D)"
-msgstr ""
+msgstr "Odpojiť"
 
 #: ../data/ui/composer.ui:218
 msgid "_Send"
-msgstr ""
+msgstr "_Odoslať"
 
 #: ../data/ui/composer.ui:219
 msgid "Send"
-msgstr ""
+msgstr "Odošli"
 
 #: ../data/ui/composer.ui:220
 msgid "Send (Ctrl+Enter)"
-msgstr ""
+msgstr "Odoslať (Ctrl+Enter)"
 
 #: ../data/ui/composer.ui:226
 msgid "_Attach File"
-msgstr ""
+msgstr "_Pripojiť súbor"
 
 #: ../data/ui/composer.ui:227 ../data/ui/composer.ui:228
 msgid "Attach File"
-msgstr ""
+msgstr "Pripojiť súbor"
 
 #: ../data/ui/composer.ui:234
 msgid "_Include Original Attachments"
-msgstr ""
+msgstr "_Vrátane originálnej prílohy"
 
 #: ../data/ui/composer.ui:235 ../data/ui/composer.ui:236
 msgid "Include Original Attachments"
-msgstr ""
+msgstr "Vrátane originálnej prílohy"
 
 #: ../data/ui/composer.ui:242
 msgid "Application Menu"
-msgstr ""
+msgstr "Ponuka aplikácie"
 
 #. Address(es) e-mail is to be sent to
 #: ../data/ui/composer.ui:289
 msgid "_To"
-msgstr ""
+msgstr "_Komu"
 
 #: ../data/ui/composer.ui:308
 msgid "_Cc"
-msgstr ""
+msgstr "_Cc"
 
 #: ../data/ui/composer.ui:362
 msgid "_Subject"
-msgstr ""
+msgstr "_Objekt"
 
 #: ../data/ui/composer.ui:381
 msgid "_Bcc"
-msgstr ""
+msgstr "Bcc"
 
 #: ../data/ui/composer.ui:411
 msgid "_Reply-To"
-msgstr ""
+msgstr "_Odpovedať"
 
 #. Geary account mail will be sent from
 #: ../data/ui/composer.ui:440
 msgid "From"
-msgstr ""
+msgstr "Od"
 
 #: ../data/ui/composer.ui:519
 msgid "Drop files here"
-msgstr ""
+msgstr "Pretiahnite súbory tu"
 
 #: ../data/ui/composer.ui:535
 msgid "To add them as attachments"
-msgstr ""
+msgstr "Pridať ako prílohu"
 
 #: ../data/ui/account_cannot_remove.ui:40
 msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"larger\">Nemožem odstrániť účet</span> "
 
 #: ../data/ui/account_cannot_remove.ui:56
 msgid ""
 "A composer window associated with this account is currently open. Send or "
 "discard the message and try again."
 msgstr ""
+"Kompozičné okno spojené s týmto účtom je aktuálne otvorené. Odoslať alebo "
+"zrušiť správu a skúste to znova."
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr ""
+msgstr "Doda_točná emailová adresa..."
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
-msgstr ""
+msgstr "_Uložiť poslaný mail"
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
-msgstr ""
+msgstr "Heslo"
 
 #: ../data/ui/login.ui:97 ../data/ui/login.ui:545
 msgid "_Password:"
-msgstr ""
+msgstr "_Heslo:"
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
-msgstr ""
+msgstr "E_mailová adresa:"
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
-msgstr ""
+msgstr "Práca, Domov, atď."
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
-msgstr ""
+msgstr "P_rezývka"
 
 #: ../data/ui/login.ui:195
 msgid "N_ame:"
-msgstr ""
+msgstr "M_eno"
 
 #: ../data/ui/login.ui:211
 msgid "S_ervice:"
-msgstr ""
+msgstr "S_lužba:"
 
 #: ../data/ui/login.ui:298
 msgid "IMAP settings"
-msgstr ""
+msgstr "IMAP nastavenia"
 
 #: ../data/ui/login.ui:315
 msgid "Se_rver:"
-msgstr ""
+msgstr "Se_rver:"
 
 #: ../data/ui/login.ui:347
 msgid "P_ort"
-msgstr ""
+msgstr "P_ort"
 
 #: ../data/ui/login.ui:409
 msgid "Ser_ver:"
-msgstr ""
+msgstr "Ser_ver:"
 
 #: ../data/ui/login.ui:427
 msgid "Por_t"
-msgstr ""
+msgstr "Por_t"
 
 #: ../data/ui/login.ui:446
 msgid "SMTP settings"
-msgstr ""
+msgstr "SMTP nastavenia"
 
 #: ../data/ui/login.ui:462
 msgid "User_name:"
-msgstr ""
+msgstr "Používateľ:"
 
 #: ../data/ui/login.ui:480
 msgid "Pass_word:"
-msgstr ""
+msgstr "He_slo:"
 
 #: ../data/ui/login.ui:499
 msgid "SMTP username"
-msgstr ""
+msgstr "SMTP používateľské meno"
 
 #: ../data/ui/login.ui:514
 msgid "SMTP password"
-msgstr ""
+msgstr "SMTP heslo"
 
 #: ../data/ui/login.ui:527
 msgid "_Username:"
-msgstr ""
+msgstr "Po_užívateľské meno:"
 
 #: ../data/ui/login.ui:564
 msgid "IMAP username"
-msgstr ""
+msgstr "IMAP používateľské meno"
 
 #: ../data/ui/login.ui:579
 msgid "IMAP password"
-msgstr ""
+msgstr "IMAP heslo"
 
 #: ../data/ui/login.ui:593
 msgid "Encr_yption:"
-msgstr ""
+msgstr "Šifro_vanie:"
 
 #: ../data/ui/login.ui:613
 msgid "Encrypt_ion:"
-msgstr ""
+msgstr "Šifrova_nie:"
 
 #: ../data/ui/login.ui:634 ../data/ui/login.ui:651
 msgid "SSL/TLS"
-msgstr ""
+msgstr "SSL/TLS"
 
 #: ../data/ui/login.ui:635 ../data/ui/login.ui:652
 msgid "STARTTLS"
-msgstr ""
+msgstr "STARTTLS"
 
 #: ../data/ui/login.ui:663
 msgid "No authentication re_quired"
-msgstr ""
+msgstr "Nieje potrebná aute_ntifikácia"
 
 #: ../data/ui/login.ui:679
 msgid "Use IMAP cre_dentials"
-msgstr ""
+msgstr "Použi IMAP overovacie údaje"
 
 #: ../data/ui/login.ui:783
 msgid "Storage"
-msgstr ""
+msgstr "Úložisko"
 
 #: ../data/ui/login.ui:804
 msgid "_Download mail"
-msgstr ""
+msgstr "_Stiahnuť mail"
 
 #: ../data/ui/login.ui:867
 msgid "Save dra_fts on server"
-msgstr ""
+msgstr "Uložiť ná_vrh na server"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr ""
+msgstr "Prihlásiť sa (HTML povolené):"
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
-msgstr ""
+msgstr "Pridať účet"
 
 #: ../data/ui/account_list.ui:82
 msgid "Edit account"
-msgstr ""
+msgstr "Upraviť účet"
 
 #: ../data/ui/account_list.ui:95
 msgid "Remove account"
-msgstr ""
+msgstr "Odstrániť účet"
 
 #: ../data/ui/certificate_warning_dialog.ui:7
 msgid "Untrusted Connection"
-msgstr ""
+msgstr "Nedôveryhodné pripojenie"
 
 #: ../data/ui/certificate_warning_dialog.ui:29
 msgid "_Always Trust This Server"
-msgstr ""
+msgstr "_Vždy dôverovať tomuto serveru"
 
 #: ../data/ui/certificate_warning_dialog.ui:43
 msgid "_Trust This Server"
-msgstr ""
+msgstr "Dôverovať tomuto serveru"
 
 #: ../data/ui/certificate_warning_dialog.ui:57
 msgid "_Don't Trust This Server"
-msgstr ""
+msgstr "Nedôverovať tomuto sereru"
 
 #: ../data/ui/password-dialog.ui:74
 msgid "SMTP Credentials"
-msgstr ""
+msgstr "SMTP poverovacie údaje"
 
 #: ../data/ui/password-dialog.ui:91
 msgid "Username"
-msgstr ""
+msgstr "Užívateľské meno:"
 
 #: ../data/ui/password-dialog.ui:152
 msgid "_Remember password"
-msgstr ""
+msgstr "_Zapamätať heslo"
 
 #: ../data/ui/password-dialog.ui:210
 msgid "_Authenticate"
-msgstr ""
+msgstr "_Overiť totožnosť"
