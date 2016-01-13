@@ -140,7 +140,7 @@ public class MainToolbar : Gtk.Box {
         conversation_header.pack_start(tag);
         conversation_header.pack_start(move);
 
-        Gtk.Button trash_delete = new Gtk.Button();
+        trash_delete = new Gtk.Button();
         trash_delete.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_TRASH_MESSAGE);
         trash_delete.tooltip_text = trash_delete.related_action.tooltip;
         trash_delete.image = new Gtk.Image.from_icon_name("edit-delete", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
