@@ -692,7 +692,9 @@ public class ConversationViewer : Gtk.Box {
         if (remote_images) {
             Geary.Contact contact = current_folder.account.get_contact_store().get_by_rfc822(
                 email.get_primary_originator());
-            bool always_load = contact != null && contact.always_load_remote_images();
+            bool contact_reated_load = contact != null && contact.always_load_remote_images();
+            bool always_load = GearyApplication.instance.config.generally_show_remote_images
+                || contact_reated_load;
             
             if (always_load || email.load_remote_images().is_certain()) {
                 show_images_email(div_message, false);
