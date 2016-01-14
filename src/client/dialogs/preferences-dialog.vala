@@ -41,7 +41,7 @@ public class PreferencesDialog : Object {
         three_pane_view_label.margin_left = 12;
 
         show_images = new Gtk.Switch ();
-        Gtk.Label show_images_label = new Gtk.Label (_("Always show remote images in mail:"));
+        Gtk.Label show_images_label = new Gtk.Label (_("Always show remote images:"));
         show_images_label.halign = Gtk.Align.END;
         show_images_label.margin_left = 12;
 
