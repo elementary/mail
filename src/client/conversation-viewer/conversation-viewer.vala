@@ -243,6 +243,8 @@ public class ConversationViewer : Gtk.Box {
                 message_overlay.show();
             });
         
+        config.settings.changed[Configuration.GENERALLY_SHOW_REMOTE_IMAGES_KEY].connect(on_show_images_change);
+        
         conversation_find_bar = new ConversationFindBar(web_view);
         conversation_find_bar.no_show_all = true;
         conversation_find_bar.close.connect(() => { fsm.issue(SearchEvent.CLOSE_FIND_BAR); });
@@ -2483,6 +2485,24 @@ public class ConversationViewer : Gtk.Box {
     private bool in_drafts_folder() {
         return current_folder != null && current_folder.special_folder_type
             == Geary.SpecialFolderType.DRAFTS;
+    }
+    
+    private void on_show_images_change() {
+        // When the setting is changed to 'show images', the currently selected message is updated.
+        // When the setting is changed to 'do not show images' the method returns, as there is no benefit
+        // in 'unloading' images (like saving bandwidth or relating to security concerns).
+        if (!GearyApplication.instance.config.generally_show_remote_images)
+            
+            return;
+            
+        string? quote;
+        Geary.Email? message = get_selected_message(out quote);
+        if (message == null)
+            
+            return;
+            
+        WebKit.DOM.HTMLElement element = email_to_element.get(message.id);
+        show_images_email(element, false);
     }
 }
 
