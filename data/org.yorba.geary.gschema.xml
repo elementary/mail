@@ -45,7 +45,7 @@
     </key>
 
     <key name="show-images" type="b">
-        <default>false</default>
+        <default>true</default>
         <summary>show remote images in all messages</summary>
         <description>True if remote images are always shown in messages.</description>
     </key>
