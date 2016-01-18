@@ -1703,6 +1703,7 @@ public class GearyController : Geary.BaseObject {
             "authors", GearyApplication.AUTHORS,
             "copyright", GearyApplication.COPYRIGHT,
             "license-type", Gtk.License.LGPL_2_1,
+            "logo_icon_name", "internet-mail",
             "version", GearyApplication.VERSION,
             "website", GearyApplication.WEBSITE,
             "website-label", GearyApplication.WEBSITE_LABEL,
