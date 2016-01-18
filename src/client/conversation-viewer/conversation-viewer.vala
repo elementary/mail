@@ -698,8 +698,9 @@ public class ConversationViewer : Gtk.Box {
             bool always_load = GearyApplication.instance.config.generally_show_remote_images
                 || contact_related_load;
             
-            if (always_load || email.load_remote_images().is_certain()) {
-                show_images_email(div_message, false);
+            if (current_folder.special_folder_type != Geary.SpecialFolderType.SPAM &&
+                always_load || email.load_remote_images().is_certain()) {
+                    show_images_email(div_message, false);
             } else {
                 WebKit.DOM.HTMLElement remote_images_bar =
                     Util.DOM.select(div_message, ".remote_images");
@@ -2497,7 +2498,7 @@ public class ConversationViewer : Gtk.Box {
             
         string? quote;
         Geary.Email? message = get_selected_message(out quote);
-        if (message == null)
+        if (message == null || current_folder.special_folder_type == Geary.SpecialFolderType.SPAM)
             
             return;
             
