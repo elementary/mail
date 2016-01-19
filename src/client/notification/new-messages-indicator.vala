@@ -26,11 +26,6 @@ public abstract class NewMessagesIndicator : Geary.BaseObject {
         // Indicators are ordered from most to least prefered.  If more than one is available,
         // use the first.
         
-#if HAVE_LIBMESSAGINGMENU
-        if (indicator == null)
-            indicator = new Libmessagingmenu(monitor);
-#endif
-        
         if (indicator == null)
             indicator = new NullIndicator(monitor);
         

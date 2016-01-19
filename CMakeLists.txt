@@ -50,7 +50,6 @@ endif ()
 
 find_package(PkgConfig)
 pkg_check_modules(LIBUNITY QUIET unity>=5.12.0)
-pkg_check_modules(LIBMESSAGINGMENU QUIET messaging-menu>=12.10.2)
 
 # CMake's range-checking syntax doesn't allow for a bare less-than, so using
 # improbably high version numbers to indicate maximum
