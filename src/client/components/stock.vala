@@ -22,7 +22,6 @@ public const string _ABOUT = _("_About");
 public const string _ADD = _("_Add");
 public const string _CLOSE = _("_Close");
 public const string _DISCARD = _("_Discard");
-public const string _HELP = _("_Help");
 public const string _OPEN_BUTTON = _("_Open");
 public const string _PREFERENCES = _("_Preferences");
 public const string _PRINT_MENU = _("_Print...");
