@@ -97,14 +97,7 @@ public class Libnotify : Geary.BaseObject {
             return;
         }
         
-        string body;
-        int count = monitor.get_new_message_count(folder);
-        if (count <= 1) {
-            body = EmailUtil.strip_subject_prefixes(email);
-        } else {
-            body = ngettext("%s\n(%d other new message for %s)", "%s\n(%d other new messages for %s)", count - 1).printf(
-                EmailUtil.strip_subject_prefixes(email), count - 1, folder.account.information.email);
-        }
+        string body = EmailUtil.strip_subject_prefixes(email);
         
         // get the avatar
         Gdk.Pixbuf? avatar = null;
