@@ -16,11 +16,10 @@ public class GearyApplication : Gtk.Application {
     public const string PRGNAME = "geary";
     public const string APP_ID = "org.yorba.geary";
     public const string DESCRIPTION = _("Mail Client");
-    public const string COPYRIGHT = _("Copyright 2011-2015 Yorba Foundation");
-    public const string WEBSITE = "http://www.yorba.org";
-    public const string WEBSITE_LABEL = _("Visit the Yorba web site");
-    public const string BUGREPORT = "https://wiki.gnome.org/Apps/Geary/ReportingABug";
-    public const string DONATE = "http://www.yorba.org/about/donate";
+    public const string COPYRIGHT = _("© 2011-2015 Yorba Foundation, © 2016 elementary LLC.");
+    public const string WEBSITE = "https://www.elementary.io";
+    public const string WEBSITE_LABEL = _("Website");
+    public const string BUGREPORT = "https://bugs.launchpad.net/pantheon-mail/+filebug";
 
     public const string CONTRACT_NAME = _("Send by Email");
     public const string CONTRACT_DESCRIPTION = _("Send files using Mail");
