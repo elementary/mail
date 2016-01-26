@@ -424,27 +424,6 @@ else ()
     message(STATUS "Found vapigen: " ${VAPIGEN})
 endif ()
 
-# Packages
-if (LIBMESSAGINGMENU_FOUND)
-    message(STATUS "Unity messaging menu support: ON")
-    set(EXTRA_CLIENT_PKG_CONFIG
-        ${EXTRA_CLIENT_PKG_CONFIG}
-        messaging-menu
-    )
-    
-    set(EXTRA_CLIENT_PACKAGES
-        ${EXTRA_CLIENT_PACKAGES}
-        MessagingMenu-1.0
-    )
-    
-    set(EXTRA_VALA_OPTIONS
-        ${EXTRA_VALA_OPTIONS}
-        -D HAVE_LIBMESSAGINGMENU
-    )
-else ()
-    message(STATUS "Unity messaging menu support: OFF")
-endif ()
-
 if (LIBUNITY_FOUND)
     message(STATUS "Unity launcher support: ON")
     set(EXTRA_CLIENT_PKG_CONFIG
