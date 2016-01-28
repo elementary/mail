@@ -57,7 +57,7 @@
               <object class="GtkLabel" id="text_label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Geary update in progress…</property>
+                <property name="label" translatable="yes">Mail update in progress…</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
