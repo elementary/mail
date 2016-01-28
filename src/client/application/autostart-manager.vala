@@ -10,7 +10,7 @@
  */
 public class AutostartManager : Object {
     private const string AUTOSTART_FOLDER = "autostart";
-    private const string AUTOSTART_DESKTOP_FILE = "geary-autostart.desktop";
+    private const string AUTOSTART_DESKTOP_FILE = "pantheon-mail-autostart.desktop";
 
     private File startup_file; // Startup '.desktop' file
 
