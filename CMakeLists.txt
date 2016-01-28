@@ -30,7 +30,6 @@ set(ARCHIVE_DEBUILD_FULL_NAME ${CMAKE_PROJECT_NAME}_${VERSION}.orig.tar.xz)
 option(DEBUG "Build for debugging." OFF)
 option(ICON_UPDATE "Run gtk-update-icon-cache after the install." ON)
 option(DESKTOP_UPDATE "Run update-desktop-database after the install." ON)
-option(TRANSLATE_HELP "Generate and install translated help documentation." ON)
 
 if (DEBUG)
     message(STATUS "Debug build")
@@ -42,10 +41,6 @@ endif ()
 
 if (DESKTOP_UPDATE)
     message(STATUS "Desktop database will be updated")
-endif ()
-
-if (TRANSLATE_HELP)
-    message(STATUS "Help translations will be generated and installed")
 endif ()
 
 find_package(PkgConfig)
@@ -102,7 +97,6 @@ add_custom_target(
 )
 
 add_subdirectory(data)
-add_subdirectory(help)
 add_subdirectory(po)
 add_subdirectory(sql)
 add_subdirectory(src)

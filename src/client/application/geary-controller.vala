@@ -19,7 +19,6 @@ public class GearyController : Geary.BaseObject {
     // Named actions.
     //
     // NOTE: Some actions with accelerators need to also be added to ui/accelerators.ui
-    public const string ACTION_HELP = "GearyHelp";
     public const string ACTION_ABOUT = "GearyAbout";
     public const string ACTION_QUIT = "GearyQuit";
     public const string ACTION_NEW_MESSAGE = "GearyNewMessage";
@@ -376,10 +375,6 @@ public class GearyController : Geary.BaseObject {
         prefs.label = _("_Preferences");
         entries += prefs;
 
-        Gtk.ActionEntry help = { ACTION_HELP, Stock._HELP, TRANSLATABLE, "F1", null, on_help };
-        help.label = _("_Help");
-        entries += help;
-
         Gtk.ActionEntry about = { ACTION_ABOUT, Stock._ABOUT, TRANSLATABLE, null, null, on_about };
         about.label = _("_About");
         entries += about;
@@ -553,7 +548,6 @@ public class GearyController : Geary.BaseObject {
         const string[] exported_actions = {
             ACTION_ACCOUNTS,
             ACTION_PREFERENCES,
-            ACTION_HELP,
             ACTION_ABOUT,
             ACTION_QUIT,
         };
@@ -1667,33 +1661,6 @@ public class GearyController : Geary.BaseObject {
 
     private void on_quit() {
         GearyApplication.instance.exit();
-    }
-
-    private void on_help() {
-        try {
-            if (GearyApplication.instance.is_installed()) {
-                Gtk.show_uri(null, "ghelp:geary", Gdk.CURRENT_TIME);
-            } else {
-                Pid pid;
-                File exec_dir = GearyApplication.instance.get_exec_dir();
-                string[] argv = new string[3];
-                argv[0] = "gnome-help";
-                argv[1] = GearyApplication.SOURCE_ROOT_DIR + "/help/C/";
-                argv[2] = null;
-                if (!Process.spawn_async(exec_dir.get_path(), argv, null,
-                    SpawnFlags.SEARCH_PATH | SpawnFlags.STDERR_TO_DEV_NULL, null, out pid)) {
-                    debug("Failed to launch help locally.");
-                }
-            }
-        } catch (Error error) {
-            debug("Error showing help: %s", error.message);
-            Gtk.Dialog dialog = new Gtk.Dialog.with_buttons("Error", null,
-                Gtk.DialogFlags.DESTROY_WITH_PARENT, Stock._CLOSE, Gtk.ResponseType.CLOSE, null);
-            dialog.response.connect(() => { dialog.destroy(); });
-            dialog.get_content_area().add(new Gtk.Label("Error showing help: %s".printf(error.message)));
-            dialog.show_all();
-            dialog.run();
-        }
     }
 
     private void on_about() {
