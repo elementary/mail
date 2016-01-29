@@ -768,7 +768,7 @@ public class AddEditPage : Gtk.Box {
                 error_string += _("        &#8226; Invalid account nickname.\n");
             
             if (last_validation_result.is_all_set(Geary.Engine.ValidationResult.EMAIL_EXISTS))
-                error_string += _("        &#8226; Email address already added to Geary.\n");
+                error_string += _("        &#8226; Email address already added to Mail.\n");
             
             if (get_service_provider() == Geary.ServiceProvider.OTHER) {
                 if (last_validation_result.is_all_set(Geary.Engine.ValidationResult.IMAP_CONNECTION_FAILED))

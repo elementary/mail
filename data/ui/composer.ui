@@ -437,7 +437,7 @@
                   <object class="GtkLabel" id="from label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes" comments="Geary account mail will be sent from">From</property>
+                    <property name="label" translatable="yes" comments="Account mail will be sent from">From</property>
                     <property name="justify">right</property>
                     <property name="mnemonic_widget">to</property>
                     <property name="xalign">1</property>

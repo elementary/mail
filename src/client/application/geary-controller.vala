@@ -1049,12 +1049,12 @@ public class GearyController : Geary.BaseObject {
             switch (message) {
                 case StatusBar.Message.OUTBOX_SEND_FAILURE:
                     libnotify.set_error_notification(_("Error sending email"),
-                        _("Geary encountered an error sending an email.  If the problem persists, please manually delete the email from your Outbox folder."));
+                        _("Mail encountered an error sending an email.  If the problem persists, please manually delete the email from your Outbox folder."));
                 break;
 
                 case StatusBar.Message.OUTBOX_SAVE_SENT_MAIL_FAILED:
                     libnotify.set_error_notification(_("Error saving sent mail"),
-                        _("Geary encountered an error saving a sent message to Sent Mail.  The message will stay in your Outbox folder until you delete it."));
+                        _("Mail encountered an error saving a sent message to Sent Mail.  The message will stay in your Outbox folder until you delete it."));
                 break;
 
                 default:
@@ -1136,7 +1136,7 @@ public class GearyController : Geary.BaseObject {
         // have provisions for that.
         AlertDialog dialog = new QuestionDialog(main_window,
             _("Unable to open the database for %s").printf(account.information.email),
-            _("There was an error opening the local mail database for this account. This is possibly due to corruption of the database file in this directory:\n\n%s\n\nGeary can rebuild the database and re-synchronize with the server or exit.\n\nRebuilding the database will destroy all local email and its attachments. <b>The mail on the your server will not be affected.</b>")
+            _("There was an error opening the local mail database for this account. This is possibly due to corruption of the database file in this directory:\n\n%s\n\nMail can rebuild the database and re-synchronize with the server or exit.\n\nRebuilding the database will destroy all local email and its attachments. <b>The mail on the your server will not be affected.</b>")
                 .printf(account.information.settings_dir.get_path()),
             _("_Rebuild"), _("E_xit"));
         dialog.use_secondary_markup(true);
@@ -1181,7 +1181,7 @@ public class GearyController : Geary.BaseObject {
     private async void account_database_version_async(Geary.Account account) {
         ErrorDialog dialog = new ErrorDialog(main_window,
             _("Unable to open local mailbox for %s").printf(account.information.email),
-            _("The version number of the local mail database is formatted for a newer version of Geary. Unfortunately, the database cannot be \"rolled back\" to work with this version of Geary.\n\nPlease install the latest version of Geary and try again."));
+            _("The version number of the local mail database is formatted for a newer version of Mail. Unfortunately, the database cannot be \"rolled back\" to work with this version of Mail.\n\nPlease install the latest version of Mail and try again."));
         dialog.run();
 
         GearyApplication.instance.exit(1);
@@ -1192,7 +1192,7 @@ public class GearyController : Geary.BaseObject {
         // Geary today with an account in unopened state, so have to exit
         ErrorDialog dialog = new ErrorDialog(main_window,
             _("Unable to open local mailbox for %s").printf(account.information.email),
-            _("There was an error opening the local account. This is probably due to connectivity issues.\n\nPlease check your network connection and restart Geary."));
+            _("There was an error opening the local account. This is probably due to connectivity issues.\n\nPlease check your network connection and restart Mail."));
         dialog.run();
 
         GearyApplication.instance.exit(1);
@@ -2399,7 +2399,7 @@ public class GearyController : Geary.BaseObject {
 
         ConfirmationDialog dialog = new ConfirmationDialog(main_window,
             _("Empty all email from your %s folder?").printf(special_folder_type.get_display_name()),
-            _("This removes the email from Geary and your email server.")
+            _("This removes the email from Mail and your email server.")
                 + "  <b>" + _("This cannot be undone.") + "</b>",
             _("Empty %s").printf(special_folder_type.get_display_name()));
         dialog.use_secondary_markup(true);
