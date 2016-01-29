@@ -49,16 +49,16 @@ public class CertificateWarningDialog {
             // could be a new or existing account
             dont_trust_label.label =
                 "<b>"
-                + _("Selecting \"Don't Trust This Server\" will cause Geary not to access this server.")
+                + _("Selecting \"Don't Trust This Server\" will cause Mail not to access this server.")
                 + "</b> "
-                + _("Geary will not add or update this email account.");
+                + _("Mail will not add or update this email account.");
         } else {
             // a registered account
             dont_trust_label.label =
                 "<b>"
-                + _("Selecting \"Don't Trust This Server\" will cause Geary to stop accessing this account.")
+                + _("Selecting \"Don't Trust This Server\" will cause Mail to stop accessing this account.")
                 + "</b> "
-                + _("Geary will exit if you have no other open email accounts.");
+                + _("Mail will exit if you have no other open email accounts.");
         }
         dont_trust_label.use_markup = true;
         
