@@ -20,14 +20,14 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-01-29 11:17-0800\n"
-"PO-Revision-Date: 2016-01-30 08:58+0000\n"
+"PO-Revision-Date: 2016-01-31 09:48+0000\n"
 "Last-Translator: Fabio Zaramella <FFabio.96.X@Gmail.com>\n"
 "Language-Team: Italiano <gnome-it-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-01-31 06:06+0000\n"
+"X-Launchpad-Export-Date: 2016-02-02 06:02+0000\n"
 "X-Generator: Launchpad (build 17908)\n"
 "Language: it\n"
 
@@ -2101,7 +2101,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr "Indirizzi email addizionali..."
+msgstr "Indirizzi email aggiuntivi..."
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
@@ -2273,23 +2273,28 @@ msgstr "_Autentica"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
-msgstr ""
+msgstr "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
 
 #: ../src/client/application/geary-application.vala:21
 msgid "Website"
-msgstr ""
+msgstr "Sito web"
 
 #: ../src/client/application/geary-controller.vala:1052
 msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
 msgstr ""
+"Mail ha rilevato un errore durante l'invio di una email. Se il problema "
+"persiste, elimina manualmente l'email dalla cartella Posta in uscita."
 
 #: ../src/client/application/geary-controller.vala:1057
 msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
+"Mail ha rilevato un errore durante il salvataggio di un messaggio inviato "
+"nella cartella Posta inviata. Il messaggio rimarrà nella cartella Posta in "
+"uscita finché non lo elimini."
 
 #: ../src/client/application/geary-controller.vala:1139
 msgid ""
@@ -2303,6 +2308,17 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
+"Si è verificato un errore durante l'apertura del database di posta locale "
+"per questo account. Ciò è probabilmente dovuto alla corruzione del file del "
+"database in questa directory:\n"
+"\n"
+"%s\n"
+"\n"
+"Mail può ricostruire il database e sincronizzarsi nuovamente con il server "
+"oppure terminare.\n"
+"\n"
+"La ricostruzione del database distruggerà tutte le email locali e loro "
+"allegati. <b>La posta sul vostro server non sarà influenzata.</b>"
 
 #: ../src/client/application/geary-controller.vala:1184
 msgid ""
@@ -2312,6 +2328,11 @@ msgid ""
 "\n"
 "Please install the latest version of Mail and try again."
 msgstr ""
+"Il numero di versione del database di posta locale è formattato per una "
+"nuova versione di Mail. Purtroppo, il database non può essere "
+"\"ripristinato\" per lavorare con questa versione di Mail.\n"
+"\n"
+"Per favore, installa l'ultima versione di Mail e riprova."
 
 #: ../src/client/application/geary-controller.vala:1195
 msgid ""
@@ -2320,14 +2341,17 @@ msgid ""
 "\n"
 "Please check your network connection and restart Mail."
 msgstr ""
+"Si è verificato un errore durante l'apertura dell'account locale. Ciò è "
+"probabilmente dovuto a problemi di connettività."
 
 #: ../src/client/application/geary-controller.vala:2402
 msgid "This removes the email from Mail and your email server."
 msgstr ""
+"Ciò elimina la posta da Mail e dal vostro server di posta elettronica."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
-msgstr ""
+msgstr "        &#8226; indirizzo email già aggiunto a Mail.\n"
 
 #: ../src/client/dialogs/preferences-dialog.vala:44
 msgid "Always show remote images:"
@@ -2368,4 +2392,4 @@ msgstr "Per favore attendi mentre Mail convalida il tuo account."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr "Aggiornamento Mail in corso ..."
+msgstr "Aggiornamento Mail in corso..."

@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-29 11:17-0800\n"
-"PO-Revision-Date: 2015-12-23 12:18+0000\n"
+"PO-Revision-Date: 2016-02-01 09:26+0000\n"
 "Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-01-30 05:52+0000\n"
+"X-Launchpad-Export-Date: 2016-02-02 06:02+0000\n"
 "X-Generator: Launchpad (build 17908)\n"
 "X-Poedit-Country: Poland\n"
 "Language: pl\n"
@@ -2294,23 +2294,28 @@ msgstr "_Uwierzytelnij"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
-msgstr ""
+msgstr "© 2011-2015 Fundacja Yorba, © 2016 elementary LLC."
 
 #: ../src/client/application/geary-application.vala:21
 msgid "Website"
-msgstr ""
+msgstr "Strona internetowa"
 
 #: ../src/client/application/geary-controller.vala:1052
 msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
 msgstr ""
+"Mail napotkał błąd podczas wysyłania wiadomości. Jeśli problem nie ustąpi, "
+"proszę ręcznie usunąć wiadomość z folderu Skrzynka nadawcza."
 
 #: ../src/client/application/geary-controller.vala:1057
 msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
+"Mail napotkał błąd podczas zapisywania wysłanej wiadomości do folderu "
+"Wysłane. Wiadomość pozostanie w folderze Skrzynka odbiorcza, do momentu jej "
+"usunięcia."
 
 #: ../src/client/application/geary-controller.vala:1139
 msgid ""
@@ -2324,6 +2329,16 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
+"Wystąpił błąd podczas otwierania lokalnej bazy e-maili dla tego konta. "
+"Prawdopodobnie jest to spowodowane uszkodzeniem pliku bazy w katalogu:\n"
+"\n"
+"%s\n"
+"\n"
+"Mail może odbudować bazę oraz ponownie synchronizować z serwerem lub "
+"zakończyć pracę.\n"
+"\n"
+"Odbudowa bazy zniszczy wszystkie lokalne e-maile oraz ich załączniki. "
+"<b>Wiadomości znajdujące się na serwerze nie zostaną naruszone.</b>"
 
 #: ../src/client/application/geary-controller.vala:1184
 msgid ""
@@ -2333,6 +2348,11 @@ msgid ""
 "\n"
 "Please install the latest version of Mail and try again."
 msgstr ""
+"Numer wersji lokalnej bazy e-maili jest sformatowany do nowszej wersji "
+"programu Mail. Niestety, baza nie może zostać przekonwertowana do pracy z tą "
+"wersją programu Mail.\n"
+"\n"
+"Proszę zainstalować najnowszą wersję programu Mail oraz spróbować ponownie."
 
 #: ../src/client/application/geary-controller.vala:1195
 msgid ""
@@ -2341,47 +2361,58 @@ msgid ""
 "\n"
 "Please check your network connection and restart Mail."
 msgstr ""
+"Wystąpił błąd podczas otwierania lokalnego konta. Prawdopodobnie jest to "
+"spowodowane problemem z łącznością.\n"
+"\n"
+"Proszę sprawdzić połączenie sieciowe oraz uruchomić ponownie program Mail."
 
 #: ../src/client/application/geary-controller.vala:2402
 msgid "This removes the email from Mail and your email server."
 msgstr ""
+"To usuwa wiadomości z programu Mail oraz wiadomości znajdujące się na "
+"serwerze."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
-msgstr ""
+msgstr "        &#8226; Adres e-mail został już dodany do programu Mail.\n"
 
 #: ../src/client/dialogs/preferences-dialog.vala:44
 msgid "Always show remote images:"
-msgstr ""
+msgstr "Zawsze wyświetlaj zdalne obrazy:"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 msgid "Mail requires your email password to continue"
-msgstr ""
+msgstr "Mail, aby kontynuować, wymaga hasła do konta e-mail."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail not to access this "
 "server."
 msgstr ""
+"Wybranie \"Nie ufaj temu serwerowi\" spowoduje, że Mail nie będzie miał "
+"dostępu do tego serwera."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Mail will not add or update this email account."
-msgstr ""
+msgstr "Mail nie doda i nie będzie aktualizować tego konta e-mail."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail to stop accessing this "
 "account."
 msgstr ""
+"Wybranie \"Nie ufaj temu serwerowi\" spowoduje zatrzymanie dostępu do tego "
+"konta."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Mail will exit if you have no other open email accounts."
 msgstr ""
+"Mail zakończy pracę, jeśli nie posiadasz innych otwartych kont e-mail."
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Mail validates your account."
-msgstr ""
+msgstr "Proszę poczekać, Mail weryfikuje Twoje konto."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr ""
+msgstr "Aktualizacja poczty w toku..."
