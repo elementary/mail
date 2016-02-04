@@ -17,7 +17,6 @@ public class Configuration {
     public const string COMPOSER_PANE_POSITION_KEY = "composer-pane-position";
     public const string AUTOSELECT_KEY = "autoselect";
     public const string DISPLAY_PREVIEW_KEY = "display-preview";
-    public const string SPELL_CHECK_KEY = "spell-check";
     public const string STARTUP_NOTIFICATIONS_KEY = "startup-notifications";
     public const string ASK_OPEN_ATTACHMENT_KEY = "ask-open-attachment";
     public const string COMPOSE_AS_HTML_KEY = "compose-as-html";
@@ -72,10 +71,6 @@ public class Configuration {
     
     public bool display_preview {
         get { return settings.get_boolean(DISPLAY_PREVIEW_KEY); }
-    }
-    
-    public bool spell_check {
-        get { return settings.get_boolean(SPELL_CHECK_KEY); }
     }
 
     public bool startup_notifications {
