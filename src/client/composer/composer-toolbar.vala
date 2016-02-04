@@ -4,12 +4,13 @@
  * (version 2.1 or later).  See the COPYING file in this distribution.
  */
 
-public class ComposerToolbar : PillToolbar {
+public class ComposerToolbar : Gtk.Box {
 
     public string label_text { get; set; }
 
     public ComposerToolbar(Gtk.ActionGroup toolbar_action_group, Gtk.Menu menu) {
-        base(toolbar_action_group);
+
+        spacing = 6;
 
         // Font formatting
         Gtk.Grid formatting = new Gtk.Grid ();
