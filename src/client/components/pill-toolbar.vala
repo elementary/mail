@@ -53,16 +53,6 @@ public interface PillBar : Gtk.Container {
     }
 
     /**
-     * Given an icon and action, creates a toggle button that triggers the action.
-     */
-    public virtual Gtk.Button create_toggle_button(string? icon_name, string action_name) {
-        Gtk.ToggleButton b = new Gtk.ToggleButton();
-        setup_button(b, icon_name, action_name);
-
-        return b;
-    }
-
-    /**
      * Given a list of buttons, creates a "pill-style" tool item that can be appended to this
      * toolbar.  Optionally adds spacers "before" and "after" the buttons (those terms depending
      * on Gtk.TextDirection)
