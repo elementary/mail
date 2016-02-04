@@ -11,8 +11,6 @@ public class ComposerToolbar : PillToolbar {
     public ComposerToolbar(Gtk.ActionGroup toolbar_action_group, Gtk.Menu menu) {
         base(toolbar_action_group);
 
-        Gee.List<Gtk.Button> insert = new Gee.ArrayList<Gtk.Button>();
-
         // Font formatting
         Gtk.Grid formatting = new Gtk.Grid ();
         formatting.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
@@ -44,20 +42,32 @@ public class ComposerToolbar : PillToolbar {
         add (formatting);
 
         // Indent level.
-        insert.clear();
-        insert.add(create_toolbar_button(null, ComposerWidget.ACTION_INDENT));
-        insert.add(create_toolbar_button(null, ComposerWidget.ACTION_OUTDENT));
-        pack_start (create_pill_buttons(insert, false), false, false, 0);
+        Gtk.Grid indent = new Gtk.Grid ();
+        indent.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
 
-        // Link.
-        insert.clear();
-        insert.add(create_toolbar_button(null, ComposerWidget.ACTION_INSERT_LINK));
-        pack_start (create_pill_buttons(insert), false, false, 0);
+        Gtk.Button indent_more = new Gtk.Button.from_icon_name ("format-indent-more-symbolic", Gtk.IconSize.MENU);
+        indent_more.related_action = toolbar_action_group.get_action (ComposerWidget.ACTION_INDENT);
+        indent_more.tooltip_text = indent_more.related_action.tooltip;
 
-        // Remove formatting.
-        insert.clear();
-        insert.add(create_toolbar_button(null, ComposerWidget.ACTION_REMOVE_FORMAT));
-        pack_start (create_pill_buttons(insert), false, false, 0);
+        Gtk.Button indent_less = new Gtk.Button.from_icon_name ("format-indent-less-symbolic", Gtk.IconSize.MENU);
+        indent_less.related_action = toolbar_action_group.get_action (ComposerWidget.ACTION_OUTDENT);
+        indent_less.tooltip_text = indent_less.related_action.tooltip;
+
+        indent.add (indent_more);
+        indent.add (indent_less);
+        add (indent);
+
+        // Link
+        Gtk.Button link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU);
+        link.related_action = toolbar_action_group.get_action (ComposerWidget.ACTION_INSERT_LINK);
+        link.tooltip_text = link.related_action.tooltip;
+        add (link);
+
+        // Clear formatting.
+        Gtk.Button clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU);
+        clear_format.related_action = toolbar_action_group.get_action (ComposerWidget.ACTION_REMOVE_FORMAT);
+        clear_format.tooltip_text = clear_format.related_action.tooltip;
+        add (clear_format);
 
         // Menu.
         Gtk.MenuButton more = new Gtk.MenuButton();
