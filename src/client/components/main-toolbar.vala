@@ -126,9 +126,11 @@ public class MainToolbar : Gtk.HeaderBar {
         conversation_header.pack_start(reply);
         conversation_header.pack_start(reply_all);
         conversation_header.pack_start(forward);
+        conversation_header.pack_start(new Gtk.Separator(Gtk.Orientation.VERTICAL));
         conversation_header.pack_start(mark);
         conversation_header.pack_start(tag);
         conversation_header.pack_start(move);
+        conversation_header.pack_start(new Gtk.Separator(Gtk.Orientation.VERTICAL));
 
         trash_delete = new Gtk.Button();
         trash_delete.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_TRASH_MESSAGE);
@@ -139,6 +141,9 @@ public class MainToolbar : Gtk.HeaderBar {
         archive.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_ARCHIVE_MESSAGE);
         archive.tooltip_text = archive.related_action.tooltip;
         archive.image = new Gtk.Image.from_icon_name("mail-archive", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
+
+        conversation_header.pack_end(archive);
+        conversation_header.pack_end(trash_delete);
 
         Gtk.Button undo = new Gtk.Button();
         undo.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_UNDO);
@@ -151,13 +156,10 @@ public class MainToolbar : Gtk.HeaderBar {
         menu.popup = new Gtk.Menu.from_model(GearyApplication.instance.controller.app_menu);
         menu.tooltip_text = _("Menu");
 
-        conversation_header.pack_end(undo);
-        conversation_header.pack_end(archive);
-        conversation_header.pack_end(trash_delete);
-
         add (folder_header);
         add (conversation_header);
         pack_end (menu);
+        pack_end (undo);
     }
 
     public bool search_entry_has_focus {
