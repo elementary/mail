@@ -13,7 +13,7 @@ public class MainToolbar : Gtk.HeaderBar {
     public bool search_open { get; set; default = false; }
     public int left_pane_width { get; set; }
 
-    private Gtk.HeaderBar folder_header;
+    private Gtk.Box folder_header;
     private Gtk.Box conversation_header;
     private Gtk.Button archive_button;
     private Gtk.Button trash_delete;
@@ -31,9 +31,8 @@ public class MainToolbar : Gtk.HeaderBar {
         show_close_button = true;
         set_custom_title (new Gtk.Label (null)); //Set title as a null label so that it doesn't take up space
 
-        folder_header = new Gtk.HeaderBar ();
+        folder_header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
         conversation_header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
-        conversation_header.hexpand = true;
 
         // FIXME: This doesn't play nice with changing window decoration layout
         GearyApplication.instance.config.bind(Configuration.MESSAGES_PANE_POSITION_KEY,
@@ -53,6 +52,7 @@ public class MainToolbar : Gtk.HeaderBar {
 
         // Compose.
         Gtk.Button compose = new Gtk.Button();
+        compose.halign = Gtk.Align.START;
         compose.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_NEW_MESSAGE);
         compose.tooltip_text = compose.related_action.tooltip;
         compose.image = new Gtk.Image.from_icon_name("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
@@ -64,6 +64,7 @@ public class MainToolbar : Gtk.HeaderBar {
         empty_menu.foreach(GtkUtil.show_menuitem_accel_labels);
 
         Gtk.MenuButton empty = new Gtk.MenuButton();
+        empty.halign = Gtk.Align.END;
         empty.image = new Gtk.Image.from_icon_name("edit-clear", Gtk.IconSize.LARGE_TOOLBAR);
         empty.popup = empty_menu;
         empty.tooltip_text = _("Empty Spam or Trash folders");
