@@ -1,18 +1,15 @@
 /* Copyright 2011-2015 Yorba Foundation
+/* Copyright 2016 elementary LLC
  *
  * This software is licensed under the GNU Lesser General Public License
  * (version 2.1 or later).  See the COPYING file in this distribution.
  */
 
-// Draws the main toolbar.
-public class MainToolbar : Gtk.Box {
+public class MainToolbar : Gtk.HeaderBar {
     public FolderMenu copy_folder_menu { get; private set; default = new FolderMenu(); }
     public FolderMenu move_folder_menu { get; private set; default = new FolderMenu(); }
     public string account { get; set; }
     public string folder { get; set; }
-    public bool show_close_button { get; set; default = false; }
-    public bool show_close_button_left { get; private set; default = true; }
-    public bool show_close_button_right { get; private set; default = true; }
     public bool search_open { get; set; default = false; }
     public int left_pane_width { get; set; }
 
@@ -31,28 +28,19 @@ public class MainToolbar : Gtk.Box {
     public signal void search_text_changed (string search_text);
 
     public MainToolbar() {
-        Object(orientation: Gtk.Orientation.HORIZONTAL, spacing: 0);
+        show_close_button = true;
 
         folder_header = new Gtk.HeaderBar ();
         conversation_header = new Gtk.HeaderBar ();
-        folder_header.get_style_context().add_class("titlebar");
-        conversation_header.get_style_context().add_class("titlebar");
 
-        // Instead of putting a separator between the two headerbars, as other applications do,
-        // we put a separator at the right end of the left headerbar.  This greatly improves
-        // the appearance under the Ambiance theme (see bug #746171).
+        // FIXME: This doesn't play nice with changing window decoration layout
         GearyApplication.instance.config.bind(Configuration.MESSAGES_PANE_POSITION_KEY,
             this, "left-pane-width", SettingsBindFlags.GET);
         this.bind_property("left-pane-width", folder_header, "width-request",
             BindingFlags.SYNC_CREATE, (binding, source_value, ref target_value) => {
-                target_value = left_pane_width;
+                target_value = left_pane_width - 43;
                 return true;
             });
-
-        this.bind_property("show-close-button-left", folder_header, "show-close-button",
-            BindingFlags.SYNC_CREATE);
-        this.bind_property("show-close-button-right", conversation_header, "show-close-button",
-            BindingFlags.SYNC_CREATE);
 
         GearyApplication.instance.controller.account_selected.connect (on_account_changed);
 
@@ -96,8 +84,8 @@ public class MainToolbar : Gtk.Box {
 
         set_search_placeholder_text (DEFAULT_SEARCH_TEXT);
 
-        folder_header.pack_end (empty);
         folder_header.pack_end (search_entry);
+        folder_header.pack_end (empty);
         folder_header.pack_end (search_upgrade_progress_bar);
         folder_header.pack_end (new Gtk.Separator(Gtk.Orientation.VERTICAL));
 
@@ -166,11 +154,8 @@ public class MainToolbar : Gtk.Box {
         conversation_header.pack_end(archive);
         conversation_header.pack_end(trash_delete);
 
-        pack_start(folder_header, false, false);
-        pack_start(conversation_header, true, true);
-
-        Gtk.Settings.get_default().notify["gtk-decoration-layout"].connect(set_window_buttons);
-        realize.connect(set_window_buttons);
+        add (folder_header);
+        add (conversation_header);
     }
 
     public bool search_entry_has_focus {
@@ -202,34 +187,13 @@ public class MainToolbar : Gtk.Box {
 
     public void set_conversation_header(Gtk.HeaderBar header) {
         conversation_header.hide();
-        header.get_style_context().add_class("titlebar");
-        header.get_style_context().add_class("geary-titlebar-right");
-        guest_header_binding = bind_property("show-close-button-right", header,
-            "show-close-button", BindingFlags.SYNC_CREATE);
-        pack_start(header, true, true);
-        header.decoration_layout = conversation_header.decoration_layout;
+        pack_start(header);
     }
 
     public void remove_conversation_header(Gtk.HeaderBar header) {
         remove(header);
-        header.get_style_context().remove_class("titlebar");
-        header.get_style_context().remove_class("geary-titlebar-right");
         GtkUtil.unbind(guest_header_binding);
-        header.show_close_button = false;
-        header.decoration_layout = Gtk.Settings.get_default().gtk_decoration_layout;
         conversation_header.show();
-    }
-
-    private void set_window_buttons() {
-        string[] buttons = Gtk.Settings.get_default().gtk_decoration_layout.split(":");
-        if (buttons.length != 2) {
-            warning("gtk_decoration_layout in unexpected format");
-            return;
-        }
-        show_close_button_left = show_close_button;
-        show_close_button_right = show_close_button;
-        folder_header.decoration_layout = buttons[0] + ":";
-        conversation_header.decoration_layout = ":" + buttons[1];
     }
 
     public void set_search_placeholder_text (string placeholder) {
