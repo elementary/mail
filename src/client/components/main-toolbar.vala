@@ -14,7 +14,7 @@ public class MainToolbar : Gtk.HeaderBar {
     public int left_pane_width { get; set; }
 
     private Gtk.Box folder_header;
-    private Gtk.Box conversation_header;
+    private Gtk.Grid conversation_header;
     private Gtk.Button archive_button;
     private Gtk.Button trash_delete;
     private Binding guest_header_binding;
@@ -23,7 +23,7 @@ public class MainToolbar : Gtk.HeaderBar {
     private MonitoredProgressBar search_upgrade_progress_bar = new MonitoredProgressBar ();
     private Geary.Account? current_account = null;
 
-    private const string DEFAULT_SEARCH_TEXT = _("Search");
+    private const string DEFAULT_SEARCH_TEXT = _("Search Mail");
 
     public signal void search_text_changed (string search_text);
 
@@ -32,7 +32,8 @@ public class MainToolbar : Gtk.HeaderBar {
         set_custom_title (new Gtk.Label (null)); //Set title as a null label so that it doesn't take up space
 
         folder_header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
-        conversation_header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
+        conversation_header = new Gtk.Grid ();
+        conversation_header.column_spacing = 6;
 
         // FIXME: This doesn't play nice with changing window decoration layout
         GearyApplication.instance.config.bind(Configuration.MESSAGES_PANE_POSITION_KEY,
@@ -123,15 +124,6 @@ public class MainToolbar : Gtk.HeaderBar {
         move.popup = move_folder_menu;
         move.tooltip_text = _("Move conversation");
 
-        conversation_header.pack_start(reply);
-        conversation_header.pack_start(reply_all);
-        conversation_header.pack_start(forward);
-        conversation_header.pack_start(new Gtk.Separator(Gtk.Orientation.VERTICAL));
-        conversation_header.pack_start(mark);
-        conversation_header.pack_start(tag);
-        conversation_header.pack_start(move);
-        conversation_header.pack_start(new Gtk.Separator(Gtk.Orientation.VERTICAL));
-
         trash_delete = new Gtk.Button();
         trash_delete.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_TRASH_MESSAGE);
         trash_delete.tooltip_text = trash_delete.related_action.tooltip;
@@ -142,8 +134,16 @@ public class MainToolbar : Gtk.HeaderBar {
         archive.tooltip_text = archive.related_action.tooltip;
         archive.image = new Gtk.Image.from_icon_name("mail-archive", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
-        conversation_header.pack_end(archive);
-        conversation_header.pack_end(trash_delete);
+        conversation_header.add (reply);
+        conversation_header.add (reply_all);
+        conversation_header.add (forward);
+        conversation_header.add (new Gtk.Separator(Gtk.Orientation.VERTICAL));
+        conversation_header.add (archive);
+        conversation_header.add (mark);
+        conversation_header.add (trash_delete);
+        conversation_header.add (new Gtk.Separator(Gtk.Orientation.VERTICAL));
+        conversation_header.add (move);
+        conversation_header.add (tag);
 
         Gtk.Button undo = new Gtk.Button();
         undo.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_UNDO);
