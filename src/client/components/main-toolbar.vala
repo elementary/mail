@@ -14,7 +14,7 @@ public class MainToolbar : Gtk.HeaderBar {
     public int left_pane_width { get; set; }
 
     private Gtk.HeaderBar folder_header;
-    private Gtk.HeaderBar conversation_header;
+    private Gtk.Box conversation_header;
     private Gtk.Button archive_button;
     private Gtk.Button trash_delete;
     private Binding guest_header_binding;
@@ -29,9 +29,11 @@ public class MainToolbar : Gtk.HeaderBar {
 
     public MainToolbar() {
         show_close_button = true;
+        set_custom_title (new Gtk.Label (null)); //Set title as a null label so that it doesn't take up space
 
         folder_header = new Gtk.HeaderBar ();
-        conversation_header = new Gtk.HeaderBar ();
+        conversation_header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
+        conversation_header.hexpand = true;
 
         // FIXME: This doesn't play nice with changing window decoration layout
         GearyApplication.instance.config.bind(Configuration.MESSAGES_PANE_POSITION_KEY,
@@ -87,7 +89,6 @@ public class MainToolbar : Gtk.HeaderBar {
         folder_header.pack_end (search_entry);
         folder_header.pack_end (empty);
         folder_header.pack_end (search_upgrade_progress_bar);
-        folder_header.pack_end (new Gtk.Separator(Gtk.Orientation.VERTICAL));
 
         // Reply buttons
         Gtk.Button reply = new Gtk.Button();
@@ -149,13 +150,13 @@ public class MainToolbar : Gtk.HeaderBar {
         menu.popup = new Gtk.Menu.from_model(GearyApplication.instance.controller.app_menu);
         menu.tooltip_text = _("Menu");
 
-        conversation_header.pack_end(menu);
         conversation_header.pack_end(undo);
         conversation_header.pack_end(archive);
         conversation_header.pack_end(trash_delete);
 
         add (folder_header);
         add (conversation_header);
+        pack_end (menu);
     }
 
     public bool search_entry_has_focus {

@@ -84,7 +84,9 @@ public class MainWindow : Gtk.ApplicationWindow {
 
         // Toolbar.
         main_toolbar = new MainToolbar();
+        main_toolbar.show_close_button = true;
         set_titlebar(main_toolbar);
+        title = GearyApplication.NAME;
 
         create_layout();
         on_change_orientation();
