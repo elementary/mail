@@ -6,17 +6,17 @@
 
 // LibSecret password adapter.
 public class SecretMediator : Geary.CredentialsMediator, Object {
-    private const string OLD_GEARY_USERNAME_PREFIX = "org.yorba.geary username:";
+    private const string OLD_GEARY_USERNAME_PREFIX = "org.pantheon.mail username:";
     
     private Geary.Nonblocking.Mutex dialog_mutex = new Geary.Nonblocking.Mutex();
     
     private string get_key_name(Geary.Service service, string user) {
         switch (service) {
             case Geary.Service.IMAP:
-                return "org.yorba.geary imap_username:" + user;
+                return "org.pantheon.mail imap_username:" + user;
             
             case Geary.Service.SMTP:
-                return "org.yorba.geary smtp_username:" + user;
+                return "org.pantheon.mail smtp_username:" + user;
             
             default:
                 assert_not_reached();
