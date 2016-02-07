@@ -1666,18 +1666,23 @@ public class GearyController : Geary.BaseObject {
     private void on_about() {
         Granite.Widgets.show_about_dialog (main_window,
             "program-name", GearyApplication.NAME,
-            "comments", GearyApplication.DESCRIPTION,
-            "authors", GearyApplication.AUTHORS,
-            "copyright", GearyApplication.COPYRIGHT,
-            "license-type", Gtk.License.LGPL_2_1,
-            "logo_icon_name", "internet-mail",
             "version", GearyApplication.VERSION,
+            "logo_icon_name", "internet-mail",
+
+            "comments", GearyApplication.DESCRIPTION,
+            "copyright", GearyApplication.COPYRIGHT,
             "website", GearyApplication.WEBSITE,
             "website-label", GearyApplication.WEBSITE_LABEL,
-            "title", _("About %s").printf(GearyApplication.NAME),
+
+            "authors", GearyApplication.AUTHORS,
             /// Translators: add your name and email address to receive credit in the About dialog
             /// For example: Yamada Taro <yamada.taro@example.com>
-            "translator-credits", _("translator-credits")
+            "translator-credits", _("translator-credits"),
+            "license-type", Gtk.License.LGPL_2_1,
+
+            "help", GearyApplication.HELP,
+            "translate", GearyApplication.TRANSLATE,
+            "bug", GearyApplication.BUGREPORT
         );
     }
 

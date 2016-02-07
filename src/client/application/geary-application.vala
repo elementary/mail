@@ -16,10 +16,12 @@ public class GearyApplication : Granite.Application {
     public const string PRGNAME = "geary";
     public const string APP_ID = "org.yorba.geary";
     public const string DESCRIPTION = _("Mail Client");
-    public const string COPYRIGHT = _("© 2011-2015 Yorba Foundation, © 2016 elementary LLC.");
+    public const string COPYRIGHT = _("2011-2015 Yorba Foundation, © 2016 elementary LLC.");
     public const string WEBSITE = "https://www.elementary.io";
     public const string WEBSITE_LABEL = _("Website");
     public const string BUGREPORT = "https://bugs.launchpad.net/pantheon-mail/+filebug";
+    public const string HELP = "https://elementary.io/help/geary";
+    public const string TRANSLATE = "https://translations.launchpad.net/pantheon-mail";
 
     public const string CONTRACT_NAME = _("Send by Email");
     public const string CONTRACT_DESCRIPTION = _("Send files using Mail");
