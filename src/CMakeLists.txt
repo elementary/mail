@@ -535,7 +535,7 @@ pkg_check_modules(DEPS REQUIRED
 )
 
 set(ENGINE_PACKAGES
-    glib-2.0 gee-0.8 gio-2.0 gmime-2.6 posix sqlite3 libxml-2.0
+    glib-2.0 granite gee-0.8 gio-2.0 gmime-2.6 posix sqlite3 libxml-2.0
 )
 
 # webkitgtk-3.0 is listed as a custom VAPI (below) to ensure it's treated as a dependency and

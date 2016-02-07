@@ -1664,7 +1664,7 @@ public class GearyController : Geary.BaseObject {
     }
 
     private void on_about() {
-        Gtk.show_about_dialog(main_window,
+        Granite.Widgets.show_about_dialog (main_window,
             "program-name", GearyApplication.NAME,
             "comments", GearyApplication.DESCRIPTION,
             "authors", GearyApplication.AUTHORS,
