@@ -15,7 +15,6 @@ public class GearyApplication : Granite.Application {
     public const string NAME = "Mail";
     public const string PRGNAME = "geary";
     public const string APP_ID = "org.yorba.geary";
-    public const string DESCRIPTION = _("Mail Client");
     public const string COPYRIGHT = _("2011-2015 Yorba Foundation, © 2016 elementary LLC.");
     public const string WEBSITE = "https://www.elementary.io";
     public const string WEBSITE_LABEL = _("Website");

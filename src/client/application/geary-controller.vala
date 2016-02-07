@@ -1669,7 +1669,6 @@ public class GearyController : Geary.BaseObject {
             "version", GearyApplication.VERSION,
             "logo_icon_name", "internet-mail",
 
-            "comments", GearyApplication.DESCRIPTION,
             "copyright", GearyApplication.COPYRIGHT,
             "website", GearyApplication.WEBSITE,
             "website-label", GearyApplication.WEBSITE_LABEL,
