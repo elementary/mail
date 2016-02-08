@@ -80,6 +80,7 @@ public bool parse(string[] args) {
         var dialog = GearyController.create_about_dialog ();
         dialog.run ();
         dialog.destroy ();
+        return false;
     }
 
     if (version) {

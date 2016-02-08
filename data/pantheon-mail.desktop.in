@@ -12,7 +12,7 @@ StartupNotify=true
 Categories=GNOME;GTK;Network;Email;
 X-GNOME-Gettext-Domain=@GETTEXT_PACKAGE@
 X-GNOME-UsesNotifications=true
-Actions=Compose;
+Actions=AboutDialog;Compose;
 
 [Desktop Action AboutDialog]
 Name=About @APP_NAME@
