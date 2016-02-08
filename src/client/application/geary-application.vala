@@ -11,7 +11,7 @@ extern const string _GSETTINGS_DIR;
 extern const string _SOURCE_ROOT_DIR;
 extern const string GETTEXT_PACKAGE;
 
-public class GearyApplication : Granite.Application {
+public class GearyApplication : Gtk.Application {
     public const string NAME = "Mail";
     public const string PRGNAME = "geary";
     public const string APP_ID = "org.pantheon.mail";
