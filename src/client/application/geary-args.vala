@@ -7,6 +7,7 @@
 namespace Args {
 
 private const OptionEntry[] options = {
+    { "about", 'a', 0, OptionArg.NONE, ref show_about, N_("Show About dialog"), null },
     { "hidden", 0, 0, OptionArg.NONE, ref hidden_startup, N_("Start Geary with hidden main window"), null },
     { "debug", 'd', 0, OptionArg.NONE, ref log_debug, N_("Output debugging information"), null },
     { "log-conversations", 0, 0, OptionArg.NONE, ref log_conversations, N_("Log conversation monitoring"), null },
@@ -28,6 +29,7 @@ private const OptionEntry[] options = {
     { null }
 };
 
+public bool show_about = false;
 public bool hidden_startup = false;
 public bool log_debug = false;
 public bool log_network = false;
@@ -73,7 +75,13 @@ public bool parse(string[] args) {
             return false;
         }
     }
-    
+
+    if (show_about) {
+        var dialog = GearyController.create_about_dialog ();
+        dialog.run ();
+        dialog.destroy ();
+    }
+
     if (version) {
         stdout.printf("%s %s\n", GearyApplication.PRGNAME, GearyApplication.VERSION);
         Process.exit(0);
