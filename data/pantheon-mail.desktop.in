@@ -15,10 +15,10 @@ X-GNOME-UsesNotifications=true
 Actions=Compose;
 
 [Desktop Action AboutDialog]
-_Name=About @APP_NAME@
+Name=About @APP_NAME@
 Exec=@EXEC_NAME@ --about
 
 [Desktop Action Compose]
-_Name=Compose Message
+Name=Compose Message
 Exec=@EXEC_NAME@ mailto:
 
