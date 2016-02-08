@@ -1677,8 +1677,7 @@ public class GearyController : Geary.BaseObject {
         about.copyright = GearyApplication.COPYRIGHT;
         about.website = GearyApplication.WEBSITE;
         about.authors = GearyApplication.AUTHORS;
-        about.documenters = {};
-        about.artists = {};
+        about.artists = GearyApplication.ARTISTS;
         // Translators: add your name and email address to receive credit in the About dialog
         // For example: Yamada Taro <yamada.taro@example.com>
         about.translator_credits = _("translator-credits");

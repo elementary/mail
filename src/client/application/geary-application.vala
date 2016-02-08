@@ -39,6 +39,12 @@ public class GearyApplication : Granite.Application {
         "Robert Schroll <rschroll@gmail.com>",
         null
     };
+
+    public const string[] ARTISTS = {
+        "Daniel Foré <daniel@elementary.io>",
+        "Sam Hewitt <sam@elementary.io>",
+        null
+    };
     
     private static const string ACTION_ENTRY_COMPOSE = "compose";
     
