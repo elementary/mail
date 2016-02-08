@@ -8,8 +8,7 @@
  * Draws the count badge and calculates its dimensions.
  */
 public class CountBadge : Geary.BaseObject {
-    public const string UNREAD_BG_COLOR = "#888888";
-    
+
     private const int FONT_SIZE_MESSAGE_COUNT = 8;
     
     public int count { get; set; default = 0; }
@@ -39,7 +38,7 @@ public class CountBadge : Geary.BaseObject {
     }
     
     public void render(Gtk.Widget widget, Cairo.Context? ctx, int x, int y, bool selected) {
-        render_internal(widget, ctx, x, y, selected, null, null);
+        render_internal(widget, ctx, x, y - 2, selected, null, null);
     }
     
     private void render_internal(Gtk.Widget widget, Cairo.Context? ctx, int x, int y, bool selected,
@@ -64,10 +63,10 @@ public class CountBadge : Geary.BaseObject {
         layout_num.get_pixel_extents(out ink_rect, out logical_rect);
         if (ctx != null) {
             double bg_width = logical_rect.width + FormattedConversationData.LINE_SPACING;
-            double bg_height = logical_rect.height;
+            double bg_height = logical_rect.height + 2;
             double radius = bg_height / 2.0;
             double degrees = Math.PI / 180.0;
-            
+
             // Create rounded rect.
             ctx.new_sub_path();
             ctx.arc(x + bg_width - radius,  y + radius, radius, -90 * degrees, 0 * degrees);
@@ -77,16 +76,14 @@ public class CountBadge : Geary.BaseObject {
             ctx.close_path();
             
             // Colorize our shape.
-            GtkUtil.set_source_color_from_string(ctx, UNREAD_BG_COLOR);
+            ctx.set_source_rgba (0,0,0,0.4);
             ctx.fill_preserve();
-            ctx.set_line_width(2.0);
-            ctx.stroke();
             
             // Center the text.
-            ctx.move_to(x + (bg_width / 2) - logical_rect.width / 2, y);
+            ctx.move_to(x + (bg_width / 2) - logical_rect.width / 2, y + 1);
             Pango.cairo_show_layout(ctx, layout_num);
         }
-        
+
         width = logical_rect.width + FormattedConversationData.LINE_SPACING;
         height = logical_rect.height;
     }
