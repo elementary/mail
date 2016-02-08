@@ -536,10 +536,7 @@ public class ComposerWidget : Gtk.EventBox {
         
         editor.navigation_policy_decision_requested.connect(on_navigation_policy_decision_requested);
         editor.new_window_policy_decision_requested.connect(on_navigation_policy_decision_requested);
-        
-        GearyApplication.instance.config.settings.changed[Configuration.SPELL_CHECK_KEY].connect(
-            on_spell_check_changed);
-        
+
         // Font family menu items.
         font_sans = new Gtk.RadioMenuItem(new SList<Gtk.RadioMenuItem>());
         font_sans.activate.connect(on_font_sans);
@@ -573,7 +570,7 @@ public class ComposerWidget : Gtk.EventBox {
         html_item2.related_action = ui.get_action("ui/htmlcompose");
         
         WebKit.WebSettings s = editor.settings;
-        s.enable_spell_checking = GearyApplication.instance.config.spell_check;
+        s.enable_spell_checking = true;
         s.auto_load_images = false;
         s.enable_scripts = false;
         s.enable_java_applet = false;
@@ -2048,11 +2045,7 @@ public class ComposerWidget : Gtk.EventBox {
     private void on_message_overlay_label_style_changed() {
         update_message_overlay_label_style();
     }
-    
-    private void on_spell_check_changed() {
-        editor.settings.enable_spell_checking = GearyApplication.instance.config.spell_check;
-    }
-    
+
     // This overrides the keypress handling for the *widget*; the WebView editor's keypress overrides
     // are handled by on_editor_key_press
     public override bool key_press_event(Gdk.EventKey event) {
