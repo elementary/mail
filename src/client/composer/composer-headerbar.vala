@@ -69,18 +69,6 @@ public class ComposerHeaderbar : PillHeaderbar {
         pack_start (attach_buttons);
         pack_start (recipients);
 
-        Gtk.MenuButton menu = new Gtk.MenuButton();
-        menu.image = new Gtk.Image.from_icon_name("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
-        menu.popup = new Gtk.Menu.from_model(GearyApplication.instance.controller.app_menu);
-        menu.tooltip_text = _("Menu");
-
-        pack_end (menu);
-        bind_property("state", menu, "visible", BindingFlags.SYNC_CREATE,
-            (binding, source_value, ref target_value) => {
-                target_value = (state == ComposerWidget.ComposerState.NEW);
-                return true;
-            });
-
         pack_end (detach_end);
         pack_end (send_button);
         pack_end (close_buttons);
