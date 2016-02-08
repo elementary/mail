@@ -20,14 +20,14 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-01-29 11:17-0800\n"
-"PO-Revision-Date: 2016-01-31 09:48+0000\n"
+"PO-Revision-Date: 2016-02-07 12:50+0000\n"
 "Last-Translator: Fabio Zaramella <FFabio.96.X@Gmail.com>\n"
 "Language-Team: Italiano <gnome-it-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-02-02 06:02+0000\n"
+"X-Launchpad-Export-Date: 2016-02-08 05:41+0000\n"
 "X-Generator: Launchpad (build 17908)\n"
 "Language: it\n"
 
@@ -278,12 +278,12 @@ msgstr "Elimina conversazioni (Maiusc+Canc)"
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 msgid "Move conversation to Trash (Delete, Backspace)"
-msgstr "Sposta la conversazione nel cestino (Canc, Backspace)"
+msgstr "Sposta la conversazione nel cestino (Canc, Barra spaziatrice)"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
 msgid "Move conversations to Trash (Delete, Backspace)"
-msgstr "Sposta le conversazioni nel cestino (Canc, Backspace)"
+msgstr "Sposta le conversazioni nel cestino (Canc, Barra spaziatrice)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
@@ -495,19 +495,19 @@ msgstr "Svuota"
 #: ../src/client/components/main-toolbar.vala:79
 #: ../src/client/application/geary-controller.vala:486
 msgid "Empty Spam or Trash folders"
-msgstr "Svuota la cartella Indesiderata o Cestino"
+msgstr "Cancella la posta indesiderata o svuota il cestino"
 
 #: ../src/client/application/geary-controller.vala:496
 #: ../src/client/application/geary-controller.vala:495
 #: ../src/client/application/geary-controller.vala:490
 msgid "Empty _Spam…"
-msgstr "Svuota _Indesiderata…"
+msgstr "Cancella la posta _indesiderata…"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
 #: ../src/client/application/geary-controller.vala:494
 msgid "Empty _Trash…"
-msgstr "Svuota _Cestino…"
+msgstr "Svuota il _cestino…"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -1529,7 +1529,7 @@ msgstr "Errore durante il salvataggio"
 
 #: ../src/client/composer/composer-widget.vala:76
 msgid "Press Backspace to delete quote"
-msgstr "Premere Backspace per eliminare la citazione"
+msgstr "Premere la barra spaziatrice per eliminare la citazione"
 
 #: ../src/client/composer/composer-widget.vala:77
 msgid "New Message"
@@ -1927,7 +1927,7 @@ msgstr "Barrato (Ctrl+K)"
 
 #: ../data/ui/composer.ui:139
 msgid "_Rich Text"
-msgstr ""
+msgstr "Testo _formattato"
 
 #: ../data/ui/composer.ui:145
 msgid "Show Extended Fields"

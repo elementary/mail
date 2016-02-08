@@ -1,23 +1,20 @@
 /* Copyright 2011-2015 Yorba Foundation
+/* Copyright 2016 elementary LLC
  *
  * This software is licensed under the GNU Lesser General Public License
  * (version 2.1 or later).  See the COPYING file in this distribution.
  */
 
-// Draws the main toolbar.
-public class MainToolbar : Gtk.Box {
+public class MainToolbar : Gtk.HeaderBar {
     public FolderMenu copy_folder_menu { get; private set; default = new FolderMenu(); }
     public FolderMenu move_folder_menu { get; private set; default = new FolderMenu(); }
     public string account { get; set; }
     public string folder { get; set; }
-    public bool show_close_button { get; set; default = false; }
-    public bool show_close_button_left { get; private set; default = true; }
-    public bool show_close_button_right { get; private set; default = true; }
     public bool search_open { get; set; default = false; }
     public int left_pane_width { get; set; }
 
-    private Gtk.HeaderBar folder_header;
-    private Gtk.HeaderBar conversation_header;
+    private Gtk.Box folder_header;
+    private Gtk.Grid conversation_header;
     private Gtk.Button archive_button;
     private Gtk.Button trash_delete;
     private Binding guest_header_binding;
@@ -26,33 +23,26 @@ public class MainToolbar : Gtk.Box {
     private MonitoredProgressBar search_upgrade_progress_bar = new MonitoredProgressBar ();
     private Geary.Account? current_account = null;
 
-    private const string DEFAULT_SEARCH_TEXT = _("Search");
+    private const string DEFAULT_SEARCH_TEXT = _("Search Mail");
 
     public signal void search_text_changed (string search_text);
 
     public MainToolbar() {
-        Object(orientation: Gtk.Orientation.HORIZONTAL, spacing: 0);
+        show_close_button = true;
+        set_custom_title (new Gtk.Label (null)); //Set title as a null label so that it doesn't take up space
 
-        folder_header = new Gtk.HeaderBar ();
-        conversation_header = new Gtk.HeaderBar ();
-        folder_header.get_style_context().add_class("titlebar");
-        conversation_header.get_style_context().add_class("titlebar");
+        folder_header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
+        conversation_header = new Gtk.Grid ();
+        conversation_header.column_spacing = 6;
 
-        // Instead of putting a separator between the two headerbars, as other applications do,
-        // we put a separator at the right end of the left headerbar.  This greatly improves
-        // the appearance under the Ambiance theme (see bug #746171).
+        // FIXME: This doesn't play nice with changing window decoration layout
         GearyApplication.instance.config.bind(Configuration.MESSAGES_PANE_POSITION_KEY,
             this, "left-pane-width", SettingsBindFlags.GET);
         this.bind_property("left-pane-width", folder_header, "width-request",
             BindingFlags.SYNC_CREATE, (binding, source_value, ref target_value) => {
-                target_value = left_pane_width;
+                target_value = left_pane_width - 43;
                 return true;
             });
-
-        this.bind_property("show-close-button-left", folder_header, "show-close-button",
-            BindingFlags.SYNC_CREATE);
-        this.bind_property("show-close-button-right", conversation_header, "show-close-button",
-            BindingFlags.SYNC_CREATE);
 
         GearyApplication.instance.controller.account_selected.connect (on_account_changed);
 
@@ -63,6 +53,7 @@ public class MainToolbar : Gtk.Box {
 
         // Compose.
         Gtk.Button compose = new Gtk.Button();
+        compose.halign = Gtk.Align.START;
         compose.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_NEW_MESSAGE);
         compose.tooltip_text = compose.related_action.tooltip;
         compose.image = new Gtk.Image.from_icon_name("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
@@ -74,6 +65,7 @@ public class MainToolbar : Gtk.Box {
         empty_menu.foreach(GtkUtil.show_menuitem_accel_labels);
 
         Gtk.MenuButton empty = new Gtk.MenuButton();
+        empty.halign = Gtk.Align.END;
         empty.image = new Gtk.Image.from_icon_name("edit-clear", Gtk.IconSize.LARGE_TOOLBAR);
         empty.popup = empty_menu;
         empty.tooltip_text = _("Empty Spam or Trash folders");
@@ -96,10 +88,9 @@ public class MainToolbar : Gtk.Box {
 
         set_search_placeholder_text (DEFAULT_SEARCH_TEXT);
 
-        folder_header.pack_end (empty);
         folder_header.pack_end (search_entry);
+        folder_header.pack_end (empty);
         folder_header.pack_end (search_upgrade_progress_bar);
-        folder_header.pack_end (new Gtk.Separator(Gtk.Orientation.VERTICAL));
 
         // Reply buttons
         Gtk.Button reply = new Gtk.Button();
@@ -133,13 +124,6 @@ public class MainToolbar : Gtk.Box {
         move.popup = move_folder_menu;
         move.tooltip_text = _("Move conversation");
 
-        conversation_header.pack_start(reply);
-        conversation_header.pack_start(reply_all);
-        conversation_header.pack_start(forward);
-        conversation_header.pack_start(mark);
-        conversation_header.pack_start(tag);
-        conversation_header.pack_start(move);
-
         trash_delete = new Gtk.Button();
         trash_delete.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_TRASH_MESSAGE);
         trash_delete.use_action_appearance = false;
@@ -150,6 +134,17 @@ public class MainToolbar : Gtk.Box {
         archive.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_ARCHIVE_MESSAGE);
         archive.tooltip_text = archive.related_action.tooltip;
         archive.image = new Gtk.Image.from_icon_name("mail-archive", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
+
+        conversation_header.add (reply);
+        conversation_header.add (reply_all);
+        conversation_header.add (forward);
+        conversation_header.add (new Gtk.Separator(Gtk.Orientation.VERTICAL));
+        conversation_header.add (archive);
+        conversation_header.add (mark);
+        conversation_header.add (trash_delete);
+        conversation_header.add (new Gtk.Separator(Gtk.Orientation.VERTICAL));
+        conversation_header.add (move);
+        conversation_header.add (tag);
 
         Gtk.Button undo = new Gtk.Button();
         undo.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_UNDO);
@@ -162,16 +157,10 @@ public class MainToolbar : Gtk.Box {
         menu.popup = new Gtk.Menu.from_model(GearyApplication.instance.controller.app_menu);
         menu.tooltip_text = _("Menu");
 
-        conversation_header.pack_end(menu);
-        conversation_header.pack_end(undo);
-        conversation_header.pack_end(archive);
-        conversation_header.pack_end(trash_delete);
-
-        pack_start(folder_header, false, false);
-        pack_start(conversation_header, true, true);
-
-        Gtk.Settings.get_default().notify["gtk-decoration-layout"].connect(set_window_buttons);
-        realize.connect(set_window_buttons);
+        add (folder_header);
+        add (conversation_header);
+        pack_end (menu);
+        pack_end (undo);
     }
 
     public bool search_entry_has_focus {
@@ -203,34 +192,13 @@ public class MainToolbar : Gtk.Box {
 
     public void set_conversation_header(Gtk.HeaderBar header) {
         conversation_header.hide();
-        header.get_style_context().add_class("titlebar");
-        header.get_style_context().add_class("geary-titlebar-right");
-        guest_header_binding = bind_property("show-close-button-right", header,
-            "show-close-button", BindingFlags.SYNC_CREATE);
-        pack_start(header, true, true);
-        header.decoration_layout = conversation_header.decoration_layout;
+        pack_start(header);
     }
 
     public void remove_conversation_header(Gtk.HeaderBar header) {
         remove(header);
-        header.get_style_context().remove_class("titlebar");
-        header.get_style_context().remove_class("geary-titlebar-right");
         GtkUtil.unbind(guest_header_binding);
-        header.show_close_button = false;
-        header.decoration_layout = Gtk.Settings.get_default().gtk_decoration_layout;
         conversation_header.show();
-    }
-
-    private void set_window_buttons() {
-        string[] buttons = Gtk.Settings.get_default().gtk_decoration_layout.split(":");
-        if (buttons.length != 2) {
-            warning("gtk_decoration_layout in unexpected format");
-            return;
-        }
-        show_close_button_left = show_close_button;
-        show_close_button_right = show_close_button;
-        folder_header.decoration_layout = buttons[0] + ":";
-        conversation_header.decoration_layout = ":" + buttons[1];
     }
 
     public void set_search_placeholder_text (string placeholder) {
