@@ -77,10 +77,8 @@ public bool parse(string[] args) {
     }
 
     if (show_about) {
-        var dialog = GearyController.create_about_dialog ();
-        dialog.run ();
-        dialog.destroy ();
-        return false;
+        GearyController.on_about ();
+        Process.exit (0);
     }
 
     if (version) {

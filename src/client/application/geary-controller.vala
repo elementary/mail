@@ -1663,7 +1663,7 @@ public class GearyController : Geary.BaseObject {
         GearyApplication.instance.exit();
     }
 
-    public void on_about() {
+    public static void on_about() {
         var dialog = create_about_dialog ();
         dialog.run ();
         dialog.destroy ();
