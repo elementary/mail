@@ -18,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-01-29 11:17-0800\n"
+"POT-Creation-Date: 2016-02-08 02:42-0600\n"
 "PO-Revision-Date: 2015-11-24 15:49+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-01-30 05:52+0000\n"
+"X-Launchpad-Export-Date: 2016-02-09 06:16+0000\n"
 "X-Generator: Launchpad (build 17908)\n"
 "Language: tr\n"
 "X-POOTLE-MTIME: 1423290848.000000\n"
@@ -325,6 +325,7 @@ msgstr "İstenen olarak İşaretle"
 #: ../src/client/components/main-toolbar.vala:124
 #: ../src/client/application/geary-controller.vala:78
 #: ../src/client/application/geary-controller.vala:386
+#: ../src/client/components/main-toolbar.vala:115
 msgid "Mark conversation"
 msgstr "Konuşmayı işaretle"
 
@@ -339,6 +340,7 @@ msgstr "Konuşmaları işaretle"
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/components/main-toolbar.vala:129
 #: ../src/client/application/geary-controller.vala:80
+#: ../src/client/components/main-toolbar.vala:120
 msgid "Add label to conversation"
 msgstr "Konuşmayı etiketle"
 
@@ -356,6 +358,7 @@ msgstr "Konuşmaya etiket ekle"
 #: ../src/client/components/main-toolbar.vala:134
 #: ../src/client/application/geary-controller.vala:82
 #: ../src/client/application/geary-controller.vala:425
+#: ../src/client/components/main-toolbar.vala:125
 msgid "Move conversation"
 msgstr "Daha fazla konuşma"
 
@@ -498,6 +501,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:491
 #: ../src/client/components/main-toolbar.vala:79
 #: ../src/client/application/geary-controller.vala:486
+#: ../src/client/components/main-toolbar.vala:71
 msgid "Empty Spam or Trash folders"
 msgstr ""
 
@@ -1530,80 +1534,100 @@ msgstr ""
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
+#: ../src/client/composer/composer-widget.vala:1097
+#: ../src/client/composer/composer-widget.vala:1101
 msgid "Do you want to discard this message?"
 msgstr "Bu iletiden vazgeçmek istiyor musunuz?"
 
 #: ../src/client/composer/composer-widget.vala:1262
+#: ../src/client/composer/composer-widget.vala:1257
 msgid "Send message with an empty subject and body?"
 msgstr "İleti konusu ve gövdesi olmadan gönderilsin mi?"
 
 #: ../src/client/composer/composer-widget.vala:1264
+#: ../src/client/composer/composer-widget.vala:1259
 msgid "Send message with an empty subject?"
 msgstr "İleti konusu olmadan gönderilsin mi?"
 
 #: ../src/client/composer/composer-widget.vala:1266
+#: ../src/client/composer/composer-widget.vala:1261
 msgid "Send message with an empty body?"
 msgstr "İleti, ileti gövdesi olmadan gönderilsin mi?"
 
 #: ../src/client/composer/composer-widget.vala:1268
+#: ../src/client/composer/composer-widget.vala:1263
 msgid "Send message without an attachment?"
 msgstr "İleti eki olmadan gönderilsin mi?"
 
 #: ../src/client/composer/composer-widget.vala:1530
+#: ../src/client/composer/composer-widget.vala:1525
 msgid "Cannot add attachment"
 msgstr "Eklenti eklenemiyor"
 
 #: ../src/client/composer/composer-widget.vala:1541
+#: ../src/client/composer/composer-widget.vala:1536
 msgid "\"%s\" could not be found."
 msgstr "\"%s\" bulunamadı."
 
 #: ../src/client/composer/composer-widget.vala:1548
+#: ../src/client/composer/composer-widget.vala:1543
 msgid "\"%s\" is a folder."
 msgstr "\"%s\" bir klasör."
 
 #: ../src/client/composer/composer-widget.vala:1555
+#: ../src/client/composer/composer-widget.vala:1550
 msgid "\"%s\" is an empty file."
 msgstr "\"%s\" boş bir dosya."
 
 #: ../src/client/composer/composer-widget.vala:1569
+#: ../src/client/composer/composer-widget.vala:1564
 msgid "\"%s\" could not be opened for reading."
 msgstr "\"%s\" okuma için açılamadı."
 
 #: ../src/client/composer/composer-widget.vala:1576
+#: ../src/client/composer/composer-widget.vala:1571
 msgid "\"%s\" already attached for delivery."
 msgstr "\"%s\" gönderim için zaten eklendi."
 
 #. / In the composer, the filename followed by its filesize, i.e. "notes.txt (1.12KB)"
 #: ../src/client/composer/composer-widget.vala:1585
+#: ../src/client/composer/composer-widget.vala:1580
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
 #: ../src/client/composer/composer-widget.vala:1645
+#: ../src/client/composer/composer-widget.vala:1640
 msgid "To: "
 msgstr "Kime: "
 
 #: ../src/client/composer/composer-widget.vala:1648
+#: ../src/client/composer/composer-widget.vala:1643
 msgid "Cc: "
 msgstr "Cc: "
 
 #: ../src/client/composer/composer-widget.vala:1651
+#: ../src/client/composer/composer-widget.vala:1646
 msgid "Bcc: "
 msgstr "Bcc: "
 
 #: ../src/client/composer/composer-widget.vala:1654
+#: ../src/client/composer/composer-widget.vala:1649
 #| msgid "_Reply"
 msgid "Reply-To: "
 msgstr "Yanıtla: "
 
 #: ../src/client/composer/composer-widget.vala:1887
+#: ../src/client/composer/composer-widget.vala:1882
 msgid "Select Color"
 msgstr "Renk Seç"
 
 #: ../src/client/composer/composer-widget.vala:2322
+#: ../src/client/composer/composer-widget.vala:2317
 msgid "%1$s via %2$s"
 msgstr ""
 
 #: ../src/client/composer/composer-widget.vala:2364
+#: ../src/client/composer/composer-widget.vala:2359
 msgid "_From:"
 msgstr "_Gönderen:"
 
@@ -1673,11 +1697,13 @@ msgstr "_Sakla"
 
 #: ../src/client/components/search-bar.vala:25
 #: ../src/client/components/main-toolbar.vala:83
+#: ../src/client/components/main-toolbar.vala:75
 msgid "Search all mail in account for keywords (Ctrl+S)"
 msgstr "Anahtar kelimeler için hesaptaki bütün postaları ara (Ctrl+S)"
 
 #: ../src/client/components/search-bar.vala:118
 #: ../src/client/components/main-toolbar.vala:300
+#: ../src/client/components/main-toolbar.vala:269
 msgid "Indexing %s account"
 msgstr "%s hesabı indeksleniyor"
 
@@ -1685,6 +1711,7 @@ msgstr "%s hesabı indeksleniyor"
 #: ../src/client/composer/composer-headerbar.vala:90
 #: ../src/client/components/main-toolbar.vala:162
 #: ../src/client/composer/composer-headerbar.vala:75
+#: ../src/client/components/main-toolbar.vala:158
 msgid "Menu"
 msgstr ""
 
@@ -1704,10 +1731,12 @@ msgid "Welcome to Mail"
 msgstr ""
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
+#: ../src/client/composer/composer-toolbar.vala:77
 msgid "More options"
 msgstr ""
 
 #: ../src/client/components/main-toolbar.vala:312
+#: ../src/client/components/main-toolbar.vala:281
 msgid "Search %s"
 msgstr ""
 
@@ -2336,4 +2365,8 @@ msgstr ""
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
+msgstr ""
+
+#: ../src/client/components/main-toolbar.vala:26
+msgid "Search Mail"
 msgstr ""
