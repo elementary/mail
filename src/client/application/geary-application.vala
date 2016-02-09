@@ -113,7 +113,8 @@ public class GearyApplication : Gtk.Application {
         } catch (Error e) {
             error("Error registering GearyApplication: %s", e.message);
         }
-        
+
+        startup();
         if (!Args.parse(args)) {
             exit_status = 1;
             return true;
