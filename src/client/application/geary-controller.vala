@@ -1670,6 +1670,7 @@ public class GearyController : Geary.BaseObject {
         about.logo_icon_name = "internet-mail";
         about.copyright = GearyApplication.COPYRIGHT;
         about.website = GearyApplication.WEBSITE;
+        about.website_label = GearyApplication.WEBSITE_LABEL;
         about.authors = GearyApplication.AUTHORS;
         about.artists = GearyApplication.ARTISTS;
         // Translators: add your name and email address to receive credit in the About dialog

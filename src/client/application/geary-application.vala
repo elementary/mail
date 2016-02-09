@@ -15,8 +15,8 @@ public class GearyApplication : Gtk.Application {
     public const string NAME = "Mail";
     public const string PRGNAME = "geary";
     public const string APP_ID = "org.pantheon.mail";
-    public const string COPYRIGHT = _("2011-2015 Yorba Foundation, © 2016 elementary LLC.");
-    public const string WEBSITE = "https://www.elementary.io";
+    public const string COPYRIGHT = _("2011-2015 Yorba Foundation\n© 2016 elementary LLC.");
+    public const string WEBSITE = "https://elementary.io";
     public const string WEBSITE_LABEL = _("Website");
     public const string BUGREPORT = "https://bugs.launchpad.net/pantheon-mail/+filebug";
     public const string HELP = "https://elementary.io/help/geary";
