@@ -115,6 +115,7 @@ public class GearyApplication : Gtk.Application {
         }
 
         startup();
+
         if (!Args.parse(args)) {
             exit_status = 1;
             return true;
