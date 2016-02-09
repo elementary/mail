@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-01-29 11:17-0800\n"
+"POT-Creation-Date: 2016-02-08 02:42-0600\n"
 "PO-Revision-Date: 2015-11-23 11:52+0000\n"
 "Last-Translator: Miloš Popović <gpopac@gmail.com>\n"
 "Language-Team: српски <gnome-sr@googlegroups.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-01-30 05:52+0000\n"
+"X-Launchpad-Export-Date: 2016-02-09 06:16+0000\n"
 "X-Generator: Launchpad (build 17908)\n"
 "X-Project-Style: gnome\n"
 "Language: sr\n"
@@ -320,6 +320,7 @@ msgstr "Означи да није _непожељно"
 #: ../src/client/components/main-toolbar.vala:124
 #: ../src/client/application/geary-controller.vala:78
 #: ../src/client/application/geary-controller.vala:386
+#: ../src/client/components/main-toolbar.vala:115
 msgid "Mark conversation"
 msgstr "Означи разговор"
 
@@ -334,6 +335,7 @@ msgstr "Означи разговоре"
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/components/main-toolbar.vala:129
 #: ../src/client/application/geary-controller.vala:80
+#: ../src/client/components/main-toolbar.vala:120
 msgid "Add label to conversation"
 msgstr "Додај натпис разговору"
 
@@ -351,6 +353,7 @@ msgstr "Додај натпис разговорима"
 #: ../src/client/components/main-toolbar.vala:134
 #: ../src/client/application/geary-controller.vala:82
 #: ../src/client/application/geary-controller.vala:425
+#: ../src/client/components/main-toolbar.vala:125
 msgid "Move conversation"
 msgstr "Премести разговор"
 
@@ -493,6 +496,7 @@ msgstr "Испразни"
 #: ../src/client/application/geary-controller.vala:491
 #: ../src/client/components/main-toolbar.vala:79
 #: ../src/client/application/geary-controller.vala:486
+#: ../src/client/components/main-toolbar.vala:71
 msgid "Empty Spam or Trash folders"
 msgstr "Испразни фасцикле с непожељном поштом или отпад"
 
@@ -1556,79 +1560,99 @@ msgstr ""
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
+#: ../src/client/composer/composer-widget.vala:1097
+#: ../src/client/composer/composer-widget.vala:1101
 msgid "Do you want to discard this message?"
 msgstr "Да ли желите да одбаците ову поруку?"
 
 #: ../src/client/composer/composer-widget.vala:1262
+#: ../src/client/composer/composer-widget.vala:1257
 msgid "Send message with an empty subject and body?"
 msgstr "Да пошаљем поруку са празним насловом и текстом?"
 
 #: ../src/client/composer/composer-widget.vala:1264
+#: ../src/client/composer/composer-widget.vala:1259
 msgid "Send message with an empty subject?"
 msgstr "Да пошаљем поруку са празним насловом?"
 
 #: ../src/client/composer/composer-widget.vala:1266
+#: ../src/client/composer/composer-widget.vala:1261
 msgid "Send message with an empty body?"
 msgstr "Да пошаљем поруку без икаквог текста?"
 
 #: ../src/client/composer/composer-widget.vala:1268
+#: ../src/client/composer/composer-widget.vala:1263
 msgid "Send message without an attachment?"
 msgstr "Да пошаљем поруку без прилога?"
 
 #: ../src/client/composer/composer-widget.vala:1530
+#: ../src/client/composer/composer-widget.vala:1525
 msgid "Cannot add attachment"
 msgstr "Не могу да додам прилог"
 
 #: ../src/client/composer/composer-widget.vala:1541
+#: ../src/client/composer/composer-widget.vala:1536
 msgid "\"%s\" could not be found."
 msgstr "Не могу да пронађем „%s“."
 
 #: ../src/client/composer/composer-widget.vala:1548
+#: ../src/client/composer/composer-widget.vala:1543
 msgid "\"%s\" is a folder."
 msgstr "„%s“ је фасцикла."
 
 #: ../src/client/composer/composer-widget.vala:1555
+#: ../src/client/composer/composer-widget.vala:1550
 msgid "\"%s\" is an empty file."
 msgstr "„%s“ је празна датотека."
 
 #: ../src/client/composer/composer-widget.vala:1569
+#: ../src/client/composer/composer-widget.vala:1564
 msgid "\"%s\" could not be opened for reading."
 msgstr "Не могу да отворим „%s“ за читање."
 
 #: ../src/client/composer/composer-widget.vala:1576
+#: ../src/client/composer/composer-widget.vala:1571
 msgid "\"%s\" already attached for delivery."
 msgstr "„%s“ је већ приложено за испоруку."
 
 #. / In the composer, the filename followed by its filesize, i.e. "notes.txt (1.12KB)"
 #: ../src/client/composer/composer-widget.vala:1585
+#: ../src/client/composer/composer-widget.vala:1580
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
 #: ../src/client/composer/composer-widget.vala:1645
+#: ../src/client/composer/composer-widget.vala:1640
 msgid "To: "
 msgstr "Прима: "
 
 #: ../src/client/composer/composer-widget.vala:1648
+#: ../src/client/composer/composer-widget.vala:1643
 msgid "Cc: "
 msgstr "Цц: "
 
 #: ../src/client/composer/composer-widget.vala:1651
+#: ../src/client/composer/composer-widget.vala:1646
 msgid "Bcc: "
 msgstr "Бцц: "
 
 #: ../src/client/composer/composer-widget.vala:1654
+#: ../src/client/composer/composer-widget.vala:1649
 msgid "Reply-To: "
 msgstr "Одговор за: "
 
 #: ../src/client/composer/composer-widget.vala:1887
+#: ../src/client/composer/composer-widget.vala:1882
 msgid "Select Color"
 msgstr "Изаберите боју"
 
 #: ../src/client/composer/composer-widget.vala:2322
+#: ../src/client/composer/composer-widget.vala:2317
 msgid "%1$s via %2$s"
 msgstr "%1$s преко %2$s"
 
 #: ../src/client/composer/composer-widget.vala:2364
+#: ../src/client/composer/composer-widget.vala:2359
 msgid "_From:"
 msgstr "_Шаље:"
 
@@ -1702,11 +1726,13 @@ msgstr "_Задржи"
 
 #: ../src/client/components/search-bar.vala:25
 #: ../src/client/components/main-toolbar.vala:83
+#: ../src/client/components/main-toolbar.vala:75
 msgid "Search all mail in account for keywords (Ctrl+S)"
 msgstr "Потражите кључне речи у свим порукама у налогу (Ctrl+S)"
 
 #: ../src/client/components/search-bar.vala:118
 #: ../src/client/components/main-toolbar.vala:300
+#: ../src/client/components/main-toolbar.vala:269
 msgid "Indexing %s account"
 msgstr "Пописујем налог „%s“"
 
@@ -1714,6 +1740,7 @@ msgstr "Пописујем налог „%s“"
 #: ../src/client/composer/composer-headerbar.vala:90
 #: ../src/client/components/main-toolbar.vala:162
 #: ../src/client/composer/composer-headerbar.vala:75
+#: ../src/client/components/main-toolbar.vala:158
 msgid "Menu"
 msgstr ""
 
@@ -1733,10 +1760,12 @@ msgid "Welcome to Mail"
 msgstr ""
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
+#: ../src/client/composer/composer-toolbar.vala:77
 msgid "More options"
 msgstr ""
 
 #: ../src/client/components/main-toolbar.vala:312
+#: ../src/client/components/main-toolbar.vala:281
 msgid "Search %s"
 msgstr ""
 
@@ -2365,4 +2394,8 @@ msgstr ""
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
+msgstr ""
+
+#: ../src/client/components/main-toolbar.vala:26
+msgid "Search Mail"
 msgstr ""

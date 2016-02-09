@@ -17,16 +17,16 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-01-29 11:17-0800\n"
-"PO-Revision-Date: 2016-01-29 19:38+0000\n"
-"Last-Translator: Yuly Nesterov <crow@rikka.io>\n"
+"POT-Creation-Date: 2016-02-08 02:42-0600\n"
+"PO-Revision-Date: 2016-02-08 11:03+0000\n"
+"Last-Translator: Djaler <djaler1@gmail.com>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-01-30 05:52+0000\n"
+"X-Launchpad-Export-Date: 2016-02-09 06:15+0000\n"
 "X-Generator: Launchpad (build 17908)\n"
 "Language: ru\n"
 
@@ -318,6 +318,7 @@ msgstr "Отметить как _не Спам"
 #: ../src/client/components/main-toolbar.vala:124
 #: ../src/client/application/geary-controller.vala:78
 #: ../src/client/application/geary-controller.vala:386
+#: ../src/client/components/main-toolbar.vala:115
 msgid "Mark conversation"
 msgstr "Отметить беседу"
 
@@ -332,6 +333,7 @@ msgstr "Отметить беседы"
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/components/main-toolbar.vala:129
 #: ../src/client/application/geary-controller.vala:80
+#: ../src/client/components/main-toolbar.vala:120
 msgid "Add label to conversation"
 msgstr "Добавить метку беседе"
 
@@ -349,6 +351,7 @@ msgstr "Добавить метку беседам"
 #: ../src/client/components/main-toolbar.vala:134
 #: ../src/client/application/geary-controller.vala:82
 #: ../src/client/application/geary-controller.vala:425
+#: ../src/client/components/main-toolbar.vala:125
 msgid "Move conversation"
 msgstr "Переместить беседу"
 
@@ -491,6 +494,7 @@ msgstr "Очистить"
 #: ../src/client/application/geary-controller.vala:491
 #: ../src/client/components/main-toolbar.vala:79
 #: ../src/client/application/geary-controller.vala:486
+#: ../src/client/components/main-toolbar.vala:71
 msgid "Empty Spam or Trash folders"
 msgstr "Очистить Корзину или Спам"
 
@@ -715,6 +719,7 @@ msgstr ""
 "Stas Solovey <whats_up@tut.by>, 2015.\n"
 "\n"
 "Launchpad Contributions:\n"
+"  Djaler https://launchpad.net/~djaler1\n"
 "  Maxim Taranov https://launchpad.net/~png2378\n"
 "  Stas Solovey https://launchpad.net/~whats-up\n"
 "  Yuly Nesterov https://launchpad.net/~inpr1se"
@@ -1547,79 +1552,99 @@ msgstr ""
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
+#: ../src/client/composer/composer-widget.vala:1097
+#: ../src/client/composer/composer-widget.vala:1101
 msgid "Do you want to discard this message?"
 msgstr "Отказаться от этого сообщения?"
 
 #: ../src/client/composer/composer-widget.vala:1262
+#: ../src/client/composer/composer-widget.vala:1257
 msgid "Send message with an empty subject and body?"
 msgstr "Отправить сообщение с пустой темой и без текста?"
 
 #: ../src/client/composer/composer-widget.vala:1264
+#: ../src/client/composer/composer-widget.vala:1259
 msgid "Send message with an empty subject?"
 msgstr "Отправить сообщение с пустой темой?"
 
 #: ../src/client/composer/composer-widget.vala:1266
+#: ../src/client/composer/composer-widget.vala:1261
 msgid "Send message with an empty body?"
 msgstr "Отправить сообщение без текста?"
 
 #: ../src/client/composer/composer-widget.vala:1268
+#: ../src/client/composer/composer-widget.vala:1263
 msgid "Send message without an attachment?"
 msgstr "Отправить сообщение без прикреплённых файлов?"
 
 #: ../src/client/composer/composer-widget.vala:1530
+#: ../src/client/composer/composer-widget.vala:1525
 msgid "Cannot add attachment"
 msgstr "Невозможно добавить вложение"
 
 #: ../src/client/composer/composer-widget.vala:1541
+#: ../src/client/composer/composer-widget.vala:1536
 msgid "\"%s\" could not be found."
 msgstr "Невозможно найти «%s»."
 
 #: ../src/client/composer/composer-widget.vala:1548
+#: ../src/client/composer/composer-widget.vala:1543
 msgid "\"%s\" is a folder."
 msgstr "«%s» является каталогом."
 
 #: ../src/client/composer/composer-widget.vala:1555
+#: ../src/client/composer/composer-widget.vala:1550
 msgid "\"%s\" is an empty file."
 msgstr "«%s» — пустой файл."
 
 #: ../src/client/composer/composer-widget.vala:1569
+#: ../src/client/composer/composer-widget.vala:1564
 msgid "\"%s\" could not be opened for reading."
 msgstr "Невозможно открыть для чтения «%s»."
 
 #: ../src/client/composer/composer-widget.vala:1576
+#: ../src/client/composer/composer-widget.vala:1571
 msgid "\"%s\" already attached for delivery."
 msgstr "«%s» уже вложено в письмо."
 
 #. / In the composer, the filename followed by its filesize, i.e. "notes.txt (1.12KB)"
 #: ../src/client/composer/composer-widget.vala:1585
+#: ../src/client/composer/composer-widget.vala:1580
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
 #: ../src/client/composer/composer-widget.vala:1645
+#: ../src/client/composer/composer-widget.vala:1640
 msgid "To: "
 msgstr "Кому: "
 
 #: ../src/client/composer/composer-widget.vala:1648
+#: ../src/client/composer/composer-widget.vala:1643
 msgid "Cc: "
 msgstr "Копия: "
 
 #: ../src/client/composer/composer-widget.vala:1651
+#: ../src/client/composer/composer-widget.vala:1646
 msgid "Bcc: "
 msgstr "Скрытая копия: "
 
 #: ../src/client/composer/composer-widget.vala:1654
+#: ../src/client/composer/composer-widget.vala:1649
 msgid "Reply-To: "
 msgstr "Ответить: "
 
 #: ../src/client/composer/composer-widget.vala:1887
+#: ../src/client/composer/composer-widget.vala:1882
 msgid "Select Color"
 msgstr "Выбрать цвет"
 
 #: ../src/client/composer/composer-widget.vala:2322
+#: ../src/client/composer/composer-widget.vala:2317
 msgid "%1$s via %2$s"
 msgstr "%1$s через %2$s"
 
 #: ../src/client/composer/composer-widget.vala:2364
+#: ../src/client/composer/composer-widget.vala:2359
 msgid "_From:"
 msgstr "_От:"
 
@@ -1693,11 +1718,13 @@ msgstr "О_ставить"
 
 #: ../src/client/components/search-bar.vala:25
 #: ../src/client/components/main-toolbar.vala:83
+#: ../src/client/components/main-toolbar.vala:75
 msgid "Search all mail in account for keywords (Ctrl+S)"
 msgstr "Поиск по всей почте учётной записи по ключевым словам (Ctrl+S)"
 
 #: ../src/client/components/search-bar.vala:118
 #: ../src/client/components/main-toolbar.vala:300
+#: ../src/client/components/main-toolbar.vala:269
 msgid "Indexing %s account"
 msgstr "Индексируется учётная запись %s"
 
@@ -1705,6 +1732,7 @@ msgstr "Индексируется учётная запись %s"
 #: ../src/client/composer/composer-headerbar.vala:90
 #: ../src/client/components/main-toolbar.vala:162
 #: ../src/client/composer/composer-headerbar.vala:75
+#: ../src/client/components/main-toolbar.vala:158
 msgid "Menu"
 msgstr "Меню"
 
@@ -1724,10 +1752,12 @@ msgid "Welcome to Mail"
 msgstr "Добро пожаловать в Почту"
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
+#: ../src/client/composer/composer-toolbar.vala:77
 msgid "More options"
 msgstr "Дополнительные параметры"
 
 #: ../src/client/components/main-toolbar.vala:312
+#: ../src/client/components/main-toolbar.vala:281
 msgid "Search %s"
 msgstr "Поиск %s"
 
@@ -2394,3 +2424,7 @@ msgstr "Подождите пока Mail проверит учётную зап�
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
 msgstr "Идёт обновление Mail…"
+
+#: ../src/client/components/main-toolbar.vala:26
+msgid "Search Mail"
+msgstr "Поиск писем"

@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-01-29 11:17-0800\n"
+"POT-Creation-Date: 2016-02-08 02:42-0600\n"
 "PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Úr Balázs <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-01-30 05:52+0000\n"
+"X-Launchpad-Export-Date: 2016-02-09 06:15+0000\n"
 "X-Generator: Launchpad (build 17908)\n"
 "Language: hu_HU\n"
 
@@ -310,6 +310,7 @@ msgstr "Megjelölés nem levél_szemétként"
 #: ../src/client/components/main-toolbar.vala:124
 #: ../src/client/application/geary-controller.vala:78
 #: ../src/client/application/geary-controller.vala:386
+#: ../src/client/components/main-toolbar.vala:115
 msgid "Mark conversation"
 msgstr "Beszélgetés megjelölése"
 
@@ -324,6 +325,7 @@ msgstr "Beszélgetések megjelölése"
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/components/main-toolbar.vala:129
 #: ../src/client/application/geary-controller.vala:80
+#: ../src/client/components/main-toolbar.vala:120
 msgid "Add label to conversation"
 msgstr "Címke hozzáadása a beszélgetéshez"
 
@@ -341,6 +343,7 @@ msgstr "Címke hozzáadása a beszélgetésekhez"
 #: ../src/client/components/main-toolbar.vala:134
 #: ../src/client/application/geary-controller.vala:82
 #: ../src/client/application/geary-controller.vala:425
+#: ../src/client/components/main-toolbar.vala:125
 msgid "Move conversation"
 msgstr "Beszélgetés áthelyezése"
 
@@ -483,6 +486,7 @@ msgstr "Ürítés"
 #: ../src/client/application/geary-controller.vala:491
 #: ../src/client/components/main-toolbar.vala:79
 #: ../src/client/application/geary-controller.vala:486
+#: ../src/client/components/main-toolbar.vala:71
 msgid "Empty Spam or Trash folders"
 msgstr "Levélszemét vagy kuka mappák ürítése"
 
@@ -1540,79 +1544,99 @@ msgstr ""
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
+#: ../src/client/composer/composer-widget.vala:1097
+#: ../src/client/composer/composer-widget.vala:1101
 msgid "Do you want to discard this message?"
 msgstr "El szeretné dobni ezt a levelet?"
 
 #: ../src/client/composer/composer-widget.vala:1262
+#: ../src/client/composer/composer-widget.vala:1257
 msgid "Send message with an empty subject and body?"
 msgstr "Elküldi a levelet üres tárggyal és törzzsel?"
 
 #: ../src/client/composer/composer-widget.vala:1264
+#: ../src/client/composer/composer-widget.vala:1259
 msgid "Send message with an empty subject?"
 msgstr "Elküldi a levelet üres tárggyal?"
 
 #: ../src/client/composer/composer-widget.vala:1266
+#: ../src/client/composer/composer-widget.vala:1261
 msgid "Send message with an empty body?"
 msgstr "Elküldi a levelet üres törzzsel?"
 
 #: ../src/client/composer/composer-widget.vala:1268
+#: ../src/client/composer/composer-widget.vala:1263
 msgid "Send message without an attachment?"
 msgstr "Elküldi a levelet melléklet nélkül?"
 
 #: ../src/client/composer/composer-widget.vala:1530
+#: ../src/client/composer/composer-widget.vala:1525
 msgid "Cannot add attachment"
 msgstr "Nem sikerült mellékletet hozzáadni"
 
 #: ../src/client/composer/composer-widget.vala:1541
+#: ../src/client/composer/composer-widget.vala:1536
 msgid "\"%s\" could not be found."
 msgstr "„%s” nem található."
 
 #: ../src/client/composer/composer-widget.vala:1548
+#: ../src/client/composer/composer-widget.vala:1543
 msgid "\"%s\" is a folder."
 msgstr "„%s” egy mappa."
 
 #: ../src/client/composer/composer-widget.vala:1555
+#: ../src/client/composer/composer-widget.vala:1550
 msgid "\"%s\" is an empty file."
 msgstr "„%s” egy üres fájl."
 
 #: ../src/client/composer/composer-widget.vala:1569
+#: ../src/client/composer/composer-widget.vala:1564
 msgid "\"%s\" could not be opened for reading."
 msgstr "„%s” nem nyitható meg olvasásra."
 
 #: ../src/client/composer/composer-widget.vala:1576
+#: ../src/client/composer/composer-widget.vala:1571
 msgid "\"%s\" already attached for delivery."
 msgstr "„%s” már csatolva van a küldeményhez."
 
 #. / In the composer, the filename followed by its filesize, i.e. "notes.txt (1.12KB)"
 #: ../src/client/composer/composer-widget.vala:1585
+#: ../src/client/composer/composer-widget.vala:1580
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
 #: ../src/client/composer/composer-widget.vala:1645
+#: ../src/client/composer/composer-widget.vala:1640
 msgid "To: "
 msgstr "Címzett: "
 
 #: ../src/client/composer/composer-widget.vala:1648
+#: ../src/client/composer/composer-widget.vala:1643
 msgid "Cc: "
 msgstr "Másolat: "
 
 #: ../src/client/composer/composer-widget.vala:1651
+#: ../src/client/composer/composer-widget.vala:1646
 msgid "Bcc: "
 msgstr "Titkos másolat: "
 
 #: ../src/client/composer/composer-widget.vala:1654
+#: ../src/client/composer/composer-widget.vala:1649
 msgid "Reply-To: "
 msgstr "Válaszcím: "
 
 #: ../src/client/composer/composer-widget.vala:1887
+#: ../src/client/composer/composer-widget.vala:1882
 msgid "Select Color"
 msgstr "Szín kiválasztása"
 
 #: ../src/client/composer/composer-widget.vala:2322
+#: ../src/client/composer/composer-widget.vala:2317
 msgid "%1$s via %2$s"
 msgstr "%1$s ezen keresztül: %2$s"
 
 #: ../src/client/composer/composer-widget.vala:2364
+#: ../src/client/composer/composer-widget.vala:2359
 msgid "_From:"
 msgstr "_Feladó:"
 
@@ -1684,11 +1708,13 @@ msgstr "_Megtartás"
 
 #: ../src/client/components/search-bar.vala:25
 #: ../src/client/components/main-toolbar.vala:83
+#: ../src/client/components/main-toolbar.vala:75
 msgid "Search all mail in account for keywords (Ctrl+S)"
 msgstr "A fiók minden levélének keresése kulcsszavakra (Ctrl+S)"
 
 #: ../src/client/components/search-bar.vala:118
 #: ../src/client/components/main-toolbar.vala:300
+#: ../src/client/components/main-toolbar.vala:269
 msgid "Indexing %s account"
 msgstr "%s fiók indexelése"
 
@@ -1696,6 +1722,7 @@ msgstr "%s fiók indexelése"
 #: ../src/client/composer/composer-headerbar.vala:90
 #: ../src/client/components/main-toolbar.vala:162
 #: ../src/client/composer/composer-headerbar.vala:75
+#: ../src/client/components/main-toolbar.vala:158
 msgid "Menu"
 msgstr ""
 
@@ -1715,10 +1742,12 @@ msgid "Welcome to Mail"
 msgstr ""
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
+#: ../src/client/composer/composer-toolbar.vala:77
 msgid "More options"
 msgstr ""
 
 #: ../src/client/components/main-toolbar.vala:312
+#: ../src/client/components/main-toolbar.vala:281
 msgid "Search %s"
 msgstr ""
 
@@ -2347,4 +2376,8 @@ msgstr ""
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
+msgstr ""
+
+#: ../src/client/components/main-toolbar.vala:26
+msgid "Search Mail"
 msgstr ""

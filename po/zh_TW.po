@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-01-29 11:17-0800\n"
+"POT-Creation-Date: 2016-02-08 02:42-0600\n"
 "PO-Revision-Date: 2016-01-21 14:42+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) "
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-01-30 05:53+0000\n"
+"X-Launchpad-Export-Date: 2016-02-09 06:16+0000\n"
 "X-Generator: Launchpad (build 17908)\n"
 "Language: zh_TW\n"
 
@@ -313,6 +313,7 @@ msgstr "標記為非垃圾郵件(_P)"
 #: ../src/client/components/main-toolbar.vala:124
 #: ../src/client/application/geary-controller.vala:78
 #: ../src/client/application/geary-controller.vala:386
+#: ../src/client/components/main-toolbar.vala:115
 msgid "Mark conversation"
 msgstr "標記對話"
 
@@ -327,6 +328,7 @@ msgstr "標記對話"
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/components/main-toolbar.vala:129
 #: ../src/client/application/geary-controller.vala:80
+#: ../src/client/components/main-toolbar.vala:120
 msgid "Add label to conversation"
 msgstr "貼加標籤到對話"
 
@@ -344,6 +346,7 @@ msgstr "貼加標籤到對話"
 #: ../src/client/components/main-toolbar.vala:134
 #: ../src/client/application/geary-controller.vala:82
 #: ../src/client/application/geary-controller.vala:425
+#: ../src/client/components/main-toolbar.vala:125
 msgid "Move conversation"
 msgstr "更多對話"
 
@@ -486,6 +489,7 @@ msgstr "淨空"
 #: ../src/client/application/geary-controller.vala:491
 #: ../src/client/components/main-toolbar.vala:79
 #: ../src/client/application/geary-controller.vala:486
+#: ../src/client/components/main-toolbar.vala:71
 msgid "Empty Spam or Trash folders"
 msgstr "淨空垃圾信或垃圾桶資料夾"
 
@@ -1487,79 +1491,99 @@ msgstr ""
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
+#: ../src/client/composer/composer-widget.vala:1097
+#: ../src/client/composer/composer-widget.vala:1101
 msgid "Do you want to discard this message?"
 msgstr "您是否想丟棄此封訊息？"
 
 #: ../src/client/composer/composer-widget.vala:1262
+#: ../src/client/composer/composer-widget.vala:1257
 msgid "Send message with an empty subject and body?"
 msgstr "是否要寄送主旨與內文皆空白的訊息？"
 
 #: ../src/client/composer/composer-widget.vala:1264
+#: ../src/client/composer/composer-widget.vala:1259
 msgid "Send message with an empty subject?"
 msgstr "是否要寄送主旨空白的訊息？"
 
 #: ../src/client/composer/composer-widget.vala:1266
+#: ../src/client/composer/composer-widget.vala:1261
 msgid "Send message with an empty body?"
 msgstr "是否要寄送沒有內文的訊息？"
 
 #: ../src/client/composer/composer-widget.vala:1268
+#: ../src/client/composer/composer-widget.vala:1263
 msgid "Send message without an attachment?"
 msgstr "是否要寄送沒有附件的訊息？"
 
 #: ../src/client/composer/composer-widget.vala:1530
+#: ../src/client/composer/composer-widget.vala:1525
 msgid "Cannot add attachment"
 msgstr "無法加入附件"
 
 #: ../src/client/composer/composer-widget.vala:1541
+#: ../src/client/composer/composer-widget.vala:1536
 msgid "\"%s\" could not be found."
 msgstr "「%s」無法找到。"
 
 #: ../src/client/composer/composer-widget.vala:1548
+#: ../src/client/composer/composer-widget.vala:1543
 msgid "\"%s\" is a folder."
 msgstr "「%s」是資料夾。"
 
 #: ../src/client/composer/composer-widget.vala:1555
+#: ../src/client/composer/composer-widget.vala:1550
 msgid "\"%s\" is an empty file."
 msgstr "「%s」是空白檔案。"
 
 #: ../src/client/composer/composer-widget.vala:1569
+#: ../src/client/composer/composer-widget.vala:1564
 msgid "\"%s\" could not be opened for reading."
 msgstr "「%s」無法開啟以供讀取。"
 
 #: ../src/client/composer/composer-widget.vala:1576
+#: ../src/client/composer/composer-widget.vala:1571
 msgid "\"%s\" already attached for delivery."
 msgstr "「%s」已附上可供郵遞。"
 
 #. / In the composer, the filename followed by its filesize, i.e. "notes.txt (1.12KB)"
 #: ../src/client/composer/composer-widget.vala:1585
+#: ../src/client/composer/composer-widget.vala:1580
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
 #: ../src/client/composer/composer-widget.vala:1645
+#: ../src/client/composer/composer-widget.vala:1640
 msgid "To: "
 msgstr "收件者： "
 
 #: ../src/client/composer/composer-widget.vala:1648
+#: ../src/client/composer/composer-widget.vala:1643
 msgid "Cc: "
 msgstr "副本： "
 
 #: ../src/client/composer/composer-widget.vala:1651
+#: ../src/client/composer/composer-widget.vala:1646
 msgid "Bcc: "
 msgstr "密件副本： "
 
 #: ../src/client/composer/composer-widget.vala:1654
+#: ../src/client/composer/composer-widget.vala:1649
 msgid "Reply-To: "
 msgstr "回覆： "
 
 #: ../src/client/composer/composer-widget.vala:1887
+#: ../src/client/composer/composer-widget.vala:1882
 msgid "Select Color"
 msgstr "選取色彩"
 
 #: ../src/client/composer/composer-widget.vala:2322
+#: ../src/client/composer/composer-widget.vala:2317
 msgid "%1$s via %2$s"
 msgstr "%1$s 經由 %2$s"
 
 #: ../src/client/composer/composer-widget.vala:2364
+#: ../src/client/composer/composer-widget.vala:2359
 msgid "_From:"
 msgstr "寄件者(_F)："
 
@@ -1629,11 +1653,13 @@ msgstr "保留(_K)"
 
 #: ../src/client/components/search-bar.vala:25
 #: ../src/client/components/main-toolbar.vala:83
+#: ../src/client/components/main-toolbar.vala:75
 msgid "Search all mail in account for keywords (Ctrl+S)"
 msgstr "以關鍵字搜尋帳號中的所有郵件 (Ctrl+S)"
 
 #: ../src/client/components/search-bar.vala:118
 #: ../src/client/components/main-toolbar.vala:300
+#: ../src/client/components/main-toolbar.vala:269
 msgid "Indexing %s account"
 msgstr "正為 %s 帳號製作索引"
 
@@ -1641,6 +1667,7 @@ msgstr "正為 %s 帳號製作索引"
 #: ../src/client/composer/composer-headerbar.vala:90
 #: ../src/client/components/main-toolbar.vala:162
 #: ../src/client/composer/composer-headerbar.vala:75
+#: ../src/client/components/main-toolbar.vala:158
 msgid "Menu"
 msgstr ""
 
@@ -1660,10 +1687,12 @@ msgid "Welcome to Mail"
 msgstr ""
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
+#: ../src/client/composer/composer-toolbar.vala:77
 msgid "More options"
 msgstr ""
 
 #: ../src/client/components/main-toolbar.vala:312
+#: ../src/client/components/main-toolbar.vala:281
 msgid "Search %s"
 msgstr ""
 
@@ -2292,4 +2321,8 @@ msgstr ""
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
+msgstr ""
+
+#: ../src/client/components/main-toolbar.vala:26
+msgid "Search Mail"
 msgstr ""
