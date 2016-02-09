@@ -19,7 +19,6 @@ public class GearyController : Geary.BaseObject {
     // Named actions.
     //
     // NOTE: Some actions with accelerators need to also be added to ui/accelerators.ui
-    public const string ACTION_ABOUT = "GearyAbout";
     public const string ACTION_QUIT = "GearyQuit";
     public const string ACTION_NEW_MESSAGE = "GearyNewMessage";
     public const string ACTION_REPLY_TO_MESSAGE = "GearyReplyToMessage";
@@ -375,10 +374,6 @@ public class GearyController : Geary.BaseObject {
         prefs.label = _("_Preferences");
         entries += prefs;
 
-        Gtk.ActionEntry about = { ACTION_ABOUT, Stock._ABOUT, TRANSLATABLE, null, null, on_about };
-        about.label = _("_About");
-        entries += about;
-
         Gtk.ActionEntry quit = { ACTION_QUIT, Stock._QUIT, TRANSLATABLE, "<Ctrl>Q", null, on_quit };
         quit.label = _("_Quit");
         entries += quit;
@@ -548,7 +543,6 @@ public class GearyController : Geary.BaseObject {
         const string[] exported_actions = {
             ACTION_ACCOUNTS,
             ACTION_PREFERENCES,
-            ACTION_ABOUT,
             ACTION_QUIT,
         };
 
