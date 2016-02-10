@@ -19,7 +19,6 @@ public class GearyController : Geary.BaseObject {
     // Named actions.
     //
     // NOTE: Some actions with accelerators need to also be added to ui/accelerators.ui
-    public const string ACTION_ABOUT = "GearyAbout";
     public const string ACTION_QUIT = "GearyQuit";
     public const string ACTION_NEW_MESSAGE = "GearyNewMessage";
     public const string ACTION_REPLY_TO_MESSAGE = "GearyReplyToMessage";
@@ -375,10 +374,6 @@ public class GearyController : Geary.BaseObject {
         prefs.label = _("_Preferences");
         entries += prefs;
 
-        Gtk.ActionEntry about = { ACTION_ABOUT, Stock._ABOUT, TRANSLATABLE, null, null, on_about };
-        about.label = _("_About");
-        entries += about;
-
         Gtk.ActionEntry quit = { ACTION_QUIT, Stock._QUIT, TRANSLATABLE, "<Ctrl>Q", null, on_quit };
         quit.label = _("_Quit");
         entries += quit;
@@ -548,7 +543,6 @@ public class GearyController : Geary.BaseObject {
         const string[] exported_actions = {
             ACTION_ACCOUNTS,
             ACTION_PREFERENCES,
-            ACTION_ABOUT,
             ACTION_QUIT,
         };
 
@@ -1663,22 +1657,30 @@ public class GearyController : Geary.BaseObject {
         GearyApplication.instance.exit();
     }
 
-    private void on_about() {
-        Gtk.show_about_dialog(main_window,
-            "program-name", GearyApplication.NAME,
-            "comments", GearyApplication.DESCRIPTION,
-            "authors", GearyApplication.AUTHORS,
-            "copyright", GearyApplication.COPYRIGHT,
-            "license-type", Gtk.License.LGPL_2_1,
-            "logo_icon_name", "internet-mail",
-            "version", GearyApplication.VERSION,
-            "website", GearyApplication.WEBSITE,
-            "website-label", GearyApplication.WEBSITE_LABEL,
-            "title", _("About %s").printf(GearyApplication.NAME),
-            /// Translators: add your name and email address to receive credit in the About dialog
-            /// For example: Yamada Taro <yamada.taro@example.com>
-            "translator-credits", _("translator-credits")
-        );
+    public static void on_about() {
+        var dialog = create_about_dialog ();
+        dialog.run ();
+        dialog.destroy ();
+    }
+
+    public static Granite.Widgets.AboutDialog create_about_dialog () {
+        var about = new Granite.Widgets.AboutDialog ();
+        about.program_name = GearyApplication.NAME;
+        about.version = GearyApplication.VERSION;
+        about.logo_icon_name = "internet-mail";
+        about.copyright = GearyApplication.COPYRIGHT;
+        about.website = GearyApplication.WEBSITE;
+        about.website_label = GearyApplication.WEBSITE_LABEL;
+        about.authors = GearyApplication.AUTHORS;
+        about.artists = GearyApplication.ARTISTS;
+        // Translators: add your name and email address to receive credit in the About dialog
+        // For example: Yamada Taro <yamada.taro@example.com>
+        about.translator_credits = _("translator-credits");
+        about.license_type = Gtk.License.LGPL_2_1;
+        about.help = GearyApplication.HELP;
+        about.translate = GearyApplication.TRANSLATE;
+        about.bug = GearyApplication.BUGREPORT;
+        return about;
     }
 
     private void on_shift_key(bool pressed) {

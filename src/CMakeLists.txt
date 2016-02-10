@@ -518,6 +518,7 @@ endif ()
 set(TARGET_GLIB 2.34)
 
 pkg_check_modules(DEPS REQUIRED
+    granite
     gthread-2.0
     glib-2.0>=${TARGET_GLIB}.0
     gio-2.0>=2.28.0
@@ -535,17 +536,18 @@ pkg_check_modules(DEPS REQUIRED
 )
 
 set(ENGINE_PACKAGES
-    glib-2.0 gee-0.8 gio-2.0 gmime-2.6 posix sqlite3 libxml-2.0
+    glib-2.0 granite gee-0.8 gio-2.0 gmime-2.6 posix sqlite3 libxml-2.0
 )
 
 # webkitgtk-3.0 is listed as a custom VAPI (below) to ensure it's treated as a dependency and
 # built before compilation
 set(CLIENT_PACKAGES
-    gtk+-3.0 libsecret-1 libsoup-2.4 libnotify libcanberra gcr-3 ${EXTRA_CLIENT_PACKAGES}
+    gtk+-3.0 granite libsecret-1 libsoup-2.4 libnotify libcanberra gcr-3 ${EXTRA_CLIENT_PACKAGES}
 )
 
 set(CONSOLE_PACKAGES
     gtk+-3.0
+    granite
 )
 
 set(GSETTINGS_DIR ${CMAKE_SOURCE_DIR}/data)

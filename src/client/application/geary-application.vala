@@ -15,11 +15,12 @@ public class GearyApplication : Gtk.Application {
     public const string NAME = "Mail";
     public const string PRGNAME = "geary";
     public const string APP_ID = "org.pantheon.mail";
-    public const string DESCRIPTION = _("Mail Client");
-    public const string COPYRIGHT = _("© 2011-2015 Yorba Foundation, © 2016 elementary LLC.");
-    public const string WEBSITE = "https://www.elementary.io";
+    public const string COPYRIGHT = _("2011-2015 Yorba Foundation\n© 2016 elementary LLC.");
+    public const string WEBSITE = "https://elementary.io";
     public const string WEBSITE_LABEL = _("Website");
     public const string BUGREPORT = "https://bugs.launchpad.net/pantheon-mail/+filebug";
+    public const string HELP = "https://elementary.io/help/geary";
+    public const string TRANSLATE = "https://translations.launchpad.net/pantheon-mail";
 
     public const string CONTRACT_NAME = _("Send by Email");
     public const string CONTRACT_DESCRIPTION = _("Send files using Mail");
@@ -36,6 +37,12 @@ public class GearyApplication : Gtk.Application {
         "Matthew Pirocchi <matthew@yorba.org>",
         "Charles Lindsay <chaz@yorba.org>",
         "Robert Schroll <rschroll@gmail.com>",
+        null
+    };
+
+    public const string[] ARTISTS = {
+        "Daniel Foré <daniel@elementary.io>",
+        "Sam Hewitt <sam@elementary.io>",
         null
     };
     
@@ -106,7 +113,9 @@ public class GearyApplication : Gtk.Application {
         } catch (Error e) {
             error("Error registering GearyApplication: %s", e.message);
         }
-        
+
+        startup();
+
         if (!Args.parse(args)) {
             exit_status = 1;
             return true;
