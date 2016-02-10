@@ -3,7 +3,7 @@
      Copyright 2015 elementary, LLC <contact@elementary.io> -->
 <component type="desktop">
     <id>pantheon-mail.desktop</id>
-    <metadata_license>CC0</metadata_license>
+    <metadata_license>CC0-1.0</metadata_license>
     <project_group>elementary</project_group>
     <project_license>LGPL-2.1+</project_license>
     <name>Mail</name>
@@ -25,6 +25,13 @@
             <li>Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular IMAP servers</li>
         </ul>
     </description>
+    <provides>
+        <binary>geary</binary>
+    </provides>
+    <developer_name>elementary LLC.</developer_name>
     <url type="homepage">https://elementary.io/</url>
+    <url type="bugtracker">https://bugs.launchpad.net/pantheon-mail</url>
+    <url type="donation">https://elementary.io/get-involved#funding</url>
+    <url type="help">https://elementaryos.stackexchange.com/questions/tagged/geary</url>
     <updatecontact>contact_at_elementary.io</updatecontact>
 </component>
