@@ -182,6 +182,7 @@ public class ConversationViewer : Gtk.Box {
     private int next_replaced_buffer_number = 0;
     private Gee.HashMap<string, ReplacedImage> replaced_images = new Gee.HashMap<string, ReplacedImage>();
     private Gee.HashSet<string> replaced_content_ids = new Gee.HashSet<string>();
+    private Gee.HashMap<string, string> replaced_images_index = new Gee.HashMap<string, string>();
     private Gee.HashSet<string> blacklist_ids = new Gee.HashSet<string>();
     
     public ConversationViewer() {
@@ -1011,6 +1012,10 @@ public class ConversationViewer : Gtk.Box {
         ReplacedImage replaced_image = new ReplacedImage(next_replaced_buffer_number++, filename,
             buffer);
         replaced_images.set(replaced_image.id, replaced_image);
+        
+        if (!Geary.String.is_empty(content_id)) {
+            replaced_images_index.set(content_id, replaced_image.id);
+        }
         
         return "<img alt=\"%s\" class=\"%s %s\" src=\"%s\" replaced-id=\"%s\" %s />".printf(
             Geary.HTML.escape_markup(filename),
@@ -2005,7 +2010,8 @@ public class ConversationViewer : Gtk.Box {
                 
                 // if image has a Content-ID and it's already been replaced by the image replacer,
                 // drop this tag, otherwise fix up this one with the Base-64 data URI of the image
-                if (!replaced_content_ids.contains(content_id)) {
+                // and the replaced id
+                if (!src.has_prefix("data:")) {
                     string? filename = message.get_content_filename_by_mime_id(content_id);
                     Geary.Memory.Buffer image_content = message.get_content_by_mime_id(content_id);
                     Geary.Memory.UnownedBytesBuffer? unowned_buffer =
@@ -2026,6 +2032,7 @@ public class ConversationViewer : Gtk.Box {
                     img.set_attribute("class", DATA_IMAGE_CLASS);
                     if (!Geary.String.is_empty(filename))
                         img.set_attribute("alt", filename);
+                    img.set_attribute("replaced-id", replaced_images_index.get(content_id));
                     
                     // stash here so inlined image isn't listed as attachment (esp. if it has no
                     // Content-Disposition)

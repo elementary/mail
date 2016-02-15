@@ -529,14 +529,14 @@ public class Geary.RFC822.Message : BaseObject {
         // presented to the user as structure dictates; for alternative and related, the inline
         // part is referred to elsewhere in the document and it's the callers responsibility to
         // locate them
-        if (replacer == null || container_subtype != Mime.MultipartSubtype.MIXED)
+        if (replacer == null)
             return false;
         
         // Hand off to the replacer for processing
         body = replacer(RFC822.Utils.get_clean_attachment_filename(part),
             this_content_type, disposition, part.get_content_id(), mime_part_to_memory_buffer(part));
         
-        return body != null;
+        return false;
     }
     
     /**
