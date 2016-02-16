@@ -860,7 +860,7 @@ public class ConversationViewer : Gtk.Box {
         //
         // * Geary.RFC822.Message.get_body() recursively walks the message's MIME structure looking
         //   for text MIME parts and assembles them sequentially.  If non-text MIME parts are
-        //   discovered within a multipart/mixed container, it calls inline_image_replacer(), which
+        //   discovered, it calls inline_image_replacer(), which
         //   converts them to an IMG tag with a data: URI if they are a supported image type.
         //   Otherwise, the MIME part is dropped.
         //
@@ -942,7 +942,7 @@ public class ConversationViewer : Gtk.Box {
     }
     
     // This delegate is called from within Geary.RFC822.Message.get_body while assembling the plain
-    // or HTML document when a non-text MIME part is encountered within a multipart/mixed container.
+    // or HTML document when a non-text MIME part is encountered.
     // If this returns null, the MIME part is dropped from the final returned document; otherwise,
     // this returns HTML that is placed into the document in the position where the MIME part was
     // found
@@ -2027,7 +2027,7 @@ public class ConversationViewer : Gtk.Box {
                     string mimetype = ContentType.get_mime_type(guess);
                     
                     // Replace the SRC to a data URI, the class to a known label for the popup menu,
-                    // and the ALT to its filename, if supplied
+                    // the ALT to its filename, if supplied and add the replaced-id
                     img.set_attribute("src", assemble_data_uri(mimetype, image_content));
                     img.set_attribute("class", DATA_IMAGE_CLASS);
                     if (!Geary.String.is_empty(filename))
