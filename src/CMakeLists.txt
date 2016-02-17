@@ -419,7 +419,7 @@ include(ValaPrecompile)
 # Vapigen
 find_program(VAPIGEN vapigen)
 if (VAPIGEN STREQUAL "VAPIGEN-NOTFOUND")
-    message(FATAL_ERROR "vapigen must be installed to build Geary.")
+    message(FATAL_ERROR "vapigen must be installed to build Mail.")
 else ()
     message(STATUS "Found vapigen: " ${VAPIGEN})
 endif ()
@@ -610,19 +610,19 @@ set(VALAC_OPTIONS
 
 # Engine (static library used for building)
 #################################################
-vala_precompile(ENGINE_VALA_C geary-static
+vala_precompile(ENGINE_VALA_C ${CMAKE_PROJECT_NAME}-static
     ${ENGINE_SRC}
 PACKAGES
     ${CONSOLE_PACKAGES}
     ${ENGINE_PACKAGES}
 GENERATE_VAPI
-    geary-static
+    ${CMAKE_PROJECT_NAME}-static
 OPTIONS
     ${VALAC_OPTIONS}
 )
 
-add_library(geary-static STATIC ${ENGINE_VALA_C})
-target_link_libraries(geary-static ${DEPS_LIBRARIES} sqlite3-unicodesn gthread-2.0)
+add_library(${CMAKE_PROJECT_NAME}-static STATIC ${ENGINE_VALA_C})
+target_link_libraries(${CMAKE_PROJECT_NAME}-static ${DEPS_LIBRARIES} sqlite3-unicodesn gthread-2.0)
 
 # WebKitGTK VAPI generation
 #################################################
@@ -635,83 +635,83 @@ add_custom_command(
         vapigen --pkg=gio-2.0 --pkg=gtk+-3.0 --pkg=libsoup-2.4 --metadatadir=. --metadatadir=${WEBKITGTK_METADATA_DIR} --library=webkitgtk-3.0 --directory=${CMAKE_BINARY_DIR}/src ${WEBKITGTK_CUSTOM_VALA} `pkg-config --variable=girdir gobject-introspection-1.0`/WebKit-3.0.gir
 )
 
-# Geary client app
+# Mail client app
 #################################################
-vala_precompile(GEARY_VALA_C geary
+vala_precompile(GEARY_VALA_C ${CMAKE_PROJECT_NAME}
     ${CLIENT_SRC}
 PACKAGES
     ${CLIENT_PACKAGES}
     ${ENGINE_PACKAGES}
 CUSTOM_VAPIS
-    "${CMAKE_BINARY_DIR}/src/geary-static.vapi"
+    "${CMAKE_BINARY_DIR}/src/${CMAKE_PROJECT_NAME}-static.vapi"
     "${CMAKE_BINARY_DIR}/src/webkitgtk-3.0.vapi"
 OPTIONS
     ${VALAC_OPTIONS}
     --vapidir=${CMAKE_BINARY_DIR}/src
 )
 
-add_executable(geary ${GEARY_VALA_C})
-target_link_libraries(geary m ${DEPS_LIBRARIES} gthread-2.0 geary-static)
-install(TARGETS geary RUNTIME DESTINATION bin)
+add_executable(${CMAKE_PROJECT_NAME} ${GEARY_VALA_C})
+target_link_libraries(${CMAKE_PROJECT_NAME} m ${DEPS_LIBRARIES} gthread-2.0 ${CMAKE_PROJECT_NAME}-static)
+install(TARGETS ${CMAKE_PROJECT_NAME} RUNTIME DESTINATION bin)
 add_custom_command(
     TARGET
-        geary
+        ${CMAKE_PROJECT_NAME}
     POST_BUILD
     COMMAND 
-        ${CMAKE_COMMAND} -E copy geary ${CMAKE_BINARY_DIR}/
+        ${CMAKE_COMMAND} -E copy ${CMAKE_PROJECT_NAME} ${CMAKE_BINARY_DIR}/
 )
 
 # GSettings
-# This needs to be here and not in desktop/CMakeLists.txt in order for Geary to run in the build
+# This needs to be here and not in desktop/CMakeLists.txt in order for Mail to run in the build
 # directory
 include(GSettings)
-add_schemas(geary ${GSETTINGS_DIR} ${CMAKE_INSTALL_PREFIX})
+add_schemas(${CMAKE_PROJECT_NAME} ${GSETTINGS_DIR} ${CMAKE_INSTALL_PREFIX})
 
 # Console app
 #################################################
-vala_precompile(CONSOLE_VALA_C geary-console
+vala_precompile(CONSOLE_VALA_C ${CMAKE_PROJECT_NAME}-console
     ${CONSOLE_SRC}
 PACKAGES
     ${CONSOLE_PACKAGES}
     ${ENGINE_PACKAGES}
 CUSTOM_VAPIS
-    "${CMAKE_BINARY_DIR}/src/geary-static.vapi"
+    "${CMAKE_BINARY_DIR}/src/${CMAKE_PROJECT_NAME}-static.vapi"
 OPTIONS
     ${VALAC_OPTIONS}
     --vapidir=${CMAKE_BINARY_DIR}/src
 )
 
-add_executable(geary-console ${CONSOLE_VALA_C})
-target_link_libraries(geary-console ${DEPS_LIBRARIES} gthread-2.0 geary-static)
+add_executable(${CMAKE_PROJECT_NAME}-console ${CONSOLE_VALA_C})
+target_link_libraries(${CMAKE_PROJECT_NAME}-console ${DEPS_LIBRARIES} gthread-2.0 ${CMAKE_PROJECT_NAME}-static)
 add_custom_command(
     TARGET
-        geary-console
+        ${CMAKE_PROJECT_NAME}-console
     POST_BUILD
     COMMAND 
-        ${CMAKE_COMMAND} -E copy geary-console ${CMAKE_BINARY_DIR}/
+        ${CMAKE_COMMAND} -E copy ${CMAKE_PROJECT_NAME}-console ${CMAKE_BINARY_DIR}/
 )
 
 # Mailer app
 #################################################
-vala_precompile(MAILER_VALA_C geary-mailer
+vala_precompile(MAILER_VALA_C ${CMAKE_PROJECT_NAME}-mailer
     ${MAILER_SRC}
 PACKAGES
     ${ENGINE_PACKAGES}
 CUSTOM_VAPIS
-    "${CMAKE_BINARY_DIR}/src/geary-static.vapi"
+    "${CMAKE_BINARY_DIR}/src/${CMAKE_PROJECT_NAME}-static.vapi"
 OPTIONS
     ${VALAC_OPTIONS}
     --vapidir=${CMAKE_BINARY_DIR}/src
 )
 
-add_executable(geary-mailer ${MAILER_VALA_C})
-target_link_libraries(geary-mailer ${DEPS_LIBRARIES} gthread-2.0 geary-static)
+add_executable(${CMAKE_PROJECT_NAME}-mailer ${MAILER_VALA_C})
+target_link_libraries(${CMAKE_PROJECT_NAME}-mailer ${DEPS_LIBRARIES} gthread-2.0 ${CMAKE_PROJECT_NAME}-static)
 add_custom_command(
     TARGET
-        geary-mailer
+        ${CMAKE_PROJECT_NAME}-mailer
     POST_BUILD
     COMMAND 
-        ${CMAKE_COMMAND} -E copy geary-mailer ${CMAKE_BINARY_DIR}/
+        ${CMAKE_COMMAND} -E copy ${CMAKE_PROJECT_NAME}-mailer ${CMAKE_BINARY_DIR}/
 )
 
 # Valadoc
@@ -726,7 +726,7 @@ add_custom_target(
     WORKING_DIRECTORY
         ${CMAKE_SOURCE_DIR}/src
     COMMAND
-        ${VALADOC_EXECUTABLE} --force --no-protected --target-glib=${TARGET_GLIB} -b ${CMAKE_CURRENT_SOURCE_DIR} -o ${CMAKE_SOURCE_DIR}/valadoc --package-name=geary --package-version=${VERSION} ${ENGINE_SRC} ${valadoc_pkg_opts} --vapidir=${CMAKE_SOURCE_DIR}/bindings/vapi
+        ${VALADOC_EXECUTABLE} --force --no-protected --target-glib=${TARGET_GLIB} -b ${CMAKE_CURRENT_SOURCE_DIR} -o ${CMAKE_SOURCE_DIR}/valadoc --package-name=${CMAKE_PROJECT_NAME} --package-version=${VERSION} ${ENGINE_SRC} ${valadoc_pkg_opts} --vapidir=${CMAKE_SOURCE_DIR}/bindings/vapi
 )
 
 ## Make clean: remove copied files
@@ -735,8 +735,8 @@ set_property(
     DIRECTORY ..
     APPEND
     PROPERTY ADDITIONAL_MAKE_CLEAN_FILES
-        geary
-        geary-console
+        ${CMAKE_PROJECT_NAME}
+        ${CMAKE_PROJECT_NAME}-console
         geary-mailer
 )
 

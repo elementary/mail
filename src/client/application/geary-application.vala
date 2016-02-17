@@ -13,7 +13,7 @@ extern const string GETTEXT_PACKAGE;
 
 public class GearyApplication : Gtk.Application {
     public const string NAME = "Mail";
-    public const string PRGNAME = "geary";
+    public const string PRGNAME = "pantheon-mail";
     public const string APP_ID = "org.pantheon.mail";
     public const string COPYRIGHT = _("2011-2015 Yorba Foundation\n© 2016 elementary LLC.");
     public const string WEBSITE = "https://elementary.io";
@@ -231,11 +231,11 @@ public class GearyApplication : Gtk.Application {
     }
     
     public File get_user_data_directory() {
-        return File.new_for_path(Environment.get_user_data_dir()).get_child("geary");
+        return File.new_for_path(Environment.get_user_data_dir()).get_child("pantheon-mail");
     }
     
     public File get_user_config_directory() {
-        return File.new_for_path(Environment.get_user_config_dir()).get_child("geary");
+        return File.new_for_path(Environment.get_user_config_dir()).get_child("pantheon-mail");
     }
     
     /**
@@ -246,9 +246,9 @@ public class GearyApplication : Gtk.Application {
      */
     public File get_resource_directory() {
         if (get_install_dir() != null)
-            return get_install_dir().get_child("share").get_child("geary");
+            return get_install_dir().get_child("share").get_child("pantheon-mail");
         else
-            return File.new_for_path(SOURCE_ROOT_DIR);
+            return File.new_for_path(SOURCE_ROOT_DIR + "/data");
     }
     
     // Returns the directory the application is currently executing from.
@@ -259,8 +259,8 @@ public class GearyApplication : Gtk.Application {
     public File? get_desktop_file() {
         File? install_dir = get_install_dir();
         File desktop_file = (install_dir != null)
-            ? install_dir.get_child("share").get_child("applications").get_child("geary.desktop")
-            : File.new_for_path(SOURCE_ROOT_DIR).get_child("build").get_child("desktop").get_child("geary.desktop");
+            ? install_dir.get_child("share").get_child("applications").get_child("pantheon-mail.desktop")
+            : File.new_for_path(SOURCE_ROOT_DIR).get_child("build").get_child("desktop").get_child("pantheon-mail.desktop");
         
         return desktop_file.query_exists() ? desktop_file : null;
     }
@@ -343,7 +343,7 @@ public class GearyApplication : Gtk.Application {
         }
         
         // Give asynchronous destroy_async() a chance to complete, but to avoid bug(s) where
-        // Geary hangs at exit, shut the whole thing down if destroy_async() takes too long to
+        // Mail hangs at exit, shut the whole thing down if destroy_async() takes too long to
         // complete
         int64 start_usec = get_monotonic_time();
         destroy_async.begin();
@@ -352,7 +352,7 @@ public class GearyApplication : Gtk.Application {
             
             int64 delta_usec = get_monotonic_time() - start_usec;
             if (delta_usec >= FORCE_SHUTDOWN_USEC) {
-                debug("Forcing shutdown of Geary, %ss passed...", (delta_usec / USEC_PER_SEC).to_string());
+                debug("Forcing shutdown of Mail, %ss passed...", (delta_usec / USEC_PER_SEC).to_string());
                 
                 break;
             }

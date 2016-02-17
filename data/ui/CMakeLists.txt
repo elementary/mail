@@ -1,4 +1,4 @@
-set(UI_DEST share/geary/ui)
+set(UI_DEST share/${CMAKE_PROJECT_NAME}/ui)
 
 install(FILES accelerators.ui DESTINATION ${UI_DEST})
 install(FILES account_list.ui DESTINATION ${UI_DEST})
