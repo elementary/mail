@@ -35,6 +35,5 @@ else ()
     )
 endif ()
 
-add_subdirectory(icons)
 add_subdirectory(theming)
 add_subdirectory(ui)
