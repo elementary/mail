@@ -1,4 +1,4 @@
-set(SQL_DEST share/geary/sql)
+set(SQL_DEST share/${CMAKE_PROJECT_NAME}/sql)
 
 install(FILES version-001.sql DESTINATION ${SQL_DEST})
 install(FILES version-002.sql DESTINATION ${SQL_DEST})

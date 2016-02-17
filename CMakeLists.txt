@@ -1,4 +1,4 @@
-# Geary build script
+# Mail build script
 # Copyright 2011-2015 Yorba Foundation
 #
 # Check http://webdev.elementaryos.org/docs/developer-guide/cmake for documentation
@@ -6,15 +6,15 @@
 cmake_minimum_required(VERSION 2.8)
 cmake_policy(VERSION 2.6)
 
-project(geary C)
+project(pantheon-mail C)
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake )
 
 #
 # Base bits
 #
-set(GETTEXT_PACKAGE "geary")
-set(EXEC_NAME "geary")
+set(GETTEXT_PACKAGE ${CMAKE_PROJECT_NAME})
+set(EXEC_NAME ${CMAKE_PROJECT_NAME})
 set(APP_NAME "Mail")
 set(RELEASE_NAME "Lightweight email client")
 set(DESKTOP_ICON "internet-mail")

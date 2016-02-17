@@ -1,5 +1,5 @@
 #
-# Build and install geary.desktop
+# Build and install pantheon-mail.desktop
 #
 
 configure_file(pantheon-mail.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/pantheon-mail.desktop)
@@ -13,7 +13,7 @@ install(FILES mail-attach DESTINATION bin)
 install(FILES mail-attach.contract DESTINATION share/contractor)
 
 # Optional: run update-desktop-database at install time.
-# (This has to happen after the geary.desktop file is installed.)
+# (This has to happen after the pantheon-mail.desktop file is installed.)
 if (DESKTOP_UPDATE)
     install(
         CODE
