@@ -27,8 +27,6 @@ Homepage: http://launchpad.net/pantheon-mail
 
 Package: pantheon-mail
 Architecture: any
-Conflicts: geary
-Replaces: geary
 Depends: ${misc:Depends},
          ${shlibs:Depends}
 Description: Email client
