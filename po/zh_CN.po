@@ -17,7 +17,7 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-02-08 02:42-0600\n"
-"PO-Revision-Date: 2016-01-03 08:38+0000\n"
+"PO-Revision-Date: 2016-02-18 01:04+0000\n"
 "Last-Translator: colindemian <dengmengpc@gmail.com>\n"
 "Language-Team: Chinese (China) "
 "(http://www.transifex.com/projects/p/geary/language/zh_CN/)\n"
@@ -25,8 +25,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-02-09 06:16+0000\n"
-"X-Generator: Launchpad (build 17908)\n"
+"X-Launchpad-Export-Date: 2016-02-18 06:04+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
 "Language: zh_CN\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -2252,23 +2252,23 @@ msgstr "验证(_A)"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
-msgstr ""
+msgstr "© 2011-2015 Yorba 基金会, © 2016 elementary LLC."
 
 #: ../src/client/application/geary-application.vala:21
 msgid "Website"
-msgstr ""
+msgstr "网站"
 
 #: ../src/client/application/geary-controller.vala:1052
 msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
-msgstr ""
+msgstr "程序发送邮件时出现错误。若此问题持续出现，请手动从发件箱中将此邮件删除。"
 
 #: ../src/client/application/geary-controller.vala:1057
 msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
-msgstr ""
+msgstr "程序将邮件保存至“已发送”时出现错误。此邮件将会保留在发件箱中直至您手动将其删除。"
 
 #: ../src/client/application/geary-controller.vala:1139
 msgid ""
@@ -2282,6 +2282,13 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
+"读取此账户的本地数据出错。 可能此目录的数据文件已损坏：\n"
+"\n"
+"%s\n"
+"\n"
+"您可以选择修复数据文件并重新与服务器同步，也可以选择退出。\n"
+"\n"
+"修复数据文件将会丢失所有本地邮件及其标签 <b>您在服务器中邮件则不受影响</b>"
 
 #: ../src/client/application/geary-controller.vala:1184
 msgid ""
@@ -2291,6 +2298,9 @@ msgid ""
 "\n"
 "Please install the latest version of Mail and try again."
 msgstr ""
+"本地数据文件由更新版本的 邮件 应用生成. 无法“回滚”并在旧版应用中使用，抱歉。\n"
+"\n"
+"请安装最新版本的 邮件 应用后重试。"
 
 #: ../src/client/application/geary-controller.vala:1195
 msgid ""
@@ -2299,51 +2309,54 @@ msgid ""
 "\n"
 "Please check your network connection and restart Mail."
 msgstr ""
+"打开本地账户出错。可能是网络连接存在问题。\n"
+"\n"
+"请检查您的网络连接后重启应用。"
 
 #: ../src/client/application/geary-controller.vala:2402
 msgid "This removes the email from Mail and your email server."
-msgstr ""
+msgstr "这将会同时从应用和邮件服务器中删除邮件。"
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
-msgstr ""
+msgstr "        &#8226; 邮件地址已经存在。\n"
 
 #: ../src/client/dialogs/preferences-dialog.vala:44
 msgid "Always show remote images:"
-msgstr ""
+msgstr "总是显示远程图片："
 
 #: ../src/client/dialogs/password-dialog.vala:16
 msgid "Mail requires your email password to continue"
-msgstr ""
+msgstr "若要继续，请输入您的邮箱密码"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail not to access this "
 "server."
-msgstr ""
+msgstr "选择\"不信任此服务器\"，程序将不会接入此服务器。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Mail will not add or update this email account."
-msgstr ""
+msgstr "程序将不会添加和更新此邮件账户。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail to stop accessing this "
 "account."
-msgstr ""
+msgstr "选择\"不信任此服务器\"，程序将停止接入此服务器。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Mail will exit if you have no other open email accounts."
-msgstr ""
+msgstr "若您已没有使用中的邮件账户，程序将自动退出。"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Mail validates your account."
-msgstr ""
+msgstr "正在验证您的账户，请稍候。"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr ""
+msgstr "正在更新程序..."
 
 #: ../src/client/components/main-toolbar.vala:26
 msgid "Search Mail"
-msgstr ""
+msgstr "搜索邮件"
