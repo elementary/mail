@@ -82,12 +82,6 @@ public class MainWindow : Gtk.ApplicationWindow {
         Geary.Engine.instance.account_available.connect(on_account_available);
         Geary.Engine.instance.account_unavailable.connect(on_account_unavailable);
 
-        // Toolbar.
-        main_toolbar = new MainToolbar();
-        main_toolbar.show_close_button = true;
-        set_titlebar(main_toolbar);
-        title = GearyApplication.NAME;
-
         create_layout();
         on_change_orientation();
     }
@@ -138,7 +132,10 @@ public class MainWindow : Gtk.ApplicationWindow {
     }
 
     private void create_layout() {
-        Gtk.Box main_layout = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+        main_toolbar = new MainToolbar();
+        main_toolbar.show_close_button = true;
+        set_titlebar (main_toolbar);
+        title = GearyApplication.NAME;
 
         // folder list
         Gtk.ScrolledWindow folder_list_scrolled = new Gtk.ScrolledWindow(null, null);
@@ -170,10 +167,9 @@ public class MainWindow : Gtk.ApplicationWindow {
         // Message list left of message viewer.
         conversations_paned.pack1(folder_paned, true, false);
         conversations_paned.pack2(conversation_viewer, true, true);
+        conversations_paned.expand = true;
 
-        main_layout.pack_end(conversations_paned, true, true, 0);
-
-        add(main_layout);
+        add (conversations_paned);
     }
 
     // Returns true when there's a conversation list scrollbar visible, i.e. the list is tall
