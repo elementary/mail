@@ -98,6 +98,5 @@ add_custom_target(
 
 add_subdirectory(data)
 add_subdirectory(po)
-add_subdirectory(sql)
 add_subdirectory(src)
 
