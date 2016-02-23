@@ -5,8 +5,6 @@
  */
 
 public class MainWindow : Gtk.ApplicationWindow {
-    private const int MESSAGE_LIST_WIDTH = 250;
-    private const int FOLDER_LIST_WIDTH = 100;
     private const int STATUS_BAR_HEIGHT = 18;
 
     /// Fired when the shift key is pressed or released.
@@ -29,8 +27,6 @@ public class MainWindow : Gtk.ApplicationWindow {
 
     private Gtk.ScrolledWindow conversation_list_scrolled;
     private MonitoredSpinner spinner = new MonitoredSpinner();
-    private Gtk.Box folder_box;
-    private Gtk.Box conversation_box;
     private Geary.AggregateProgressMonitor progress_monitor = new Geary.AggregateProgressMonitor();
     private Geary.ProgressMonitor? conversation_monitor_progress = null;
     private Geary.ProgressMonitor? folder_progress = null;
@@ -82,12 +78,6 @@ public class MainWindow : Gtk.ApplicationWindow {
         Geary.Engine.instance.account_available.connect(on_account_available);
         Geary.Engine.instance.account_unavailable.connect(on_account_unavailable);
 
-        // Toolbar.
-        main_toolbar = new MainToolbar();
-        main_toolbar.show_close_button = true;
-        set_titlebar(main_toolbar);
-        title = GearyApplication.NAME;
-
         create_layout();
         on_change_orientation();
     }
@@ -137,43 +127,45 @@ public class MainWindow : Gtk.ApplicationWindow {
         return base.window_state_event(event);
     }
 
-    private void create_layout() {
-        Gtk.Box main_layout = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+    private void create_layout () {
+        main_toolbar = new MainToolbar ();
+        main_toolbar.show_close_button = true;
+        set_titlebar (main_toolbar);
+        title = GearyApplication.NAME;
 
         // folder list
-        Gtk.ScrolledWindow folder_list_scrolled = new Gtk.ScrolledWindow(null, null);
-        folder_list_scrolled.set_size_request(FOLDER_LIST_WIDTH, -1);
-        folder_list_scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
-        folder_list_scrolled.add(folder_list);
-        folder_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
-        folder_box.get_style_context().add_class(Gtk.STYLE_CLASS_SIDEBAR);
-        folder_box.pack_start(folder_list_scrolled, true, true);
+        Gtk.ScrolledWindow folder_list_scrolled = new Gtk.ScrolledWindow (null, null);
+        folder_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        folder_list_scrolled.width_request = 100;
+        folder_list_scrolled.add (folder_list);
+
+        spinner.height_request = STATUS_BAR_HEIGHT - 2;
+
+        status_bar.height_request = STATUS_BAR_HEIGHT;
+        status_bar.margin = 3;
+        status_bar.add (spinner);
+
+        Gtk.Box folder_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        folder_box.get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
+        folder_box.pack_start (folder_list_scrolled, true, true);
+        folder_box.pack_start (status_bar, false, false);
 
         // message list
-        conversation_list_scrolled = new Gtk.ScrolledWindow(null, null);
-        conversation_list_scrolled.set_size_request(MESSAGE_LIST_WIDTH, -1);
-        conversation_list_scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
-        conversation_list_scrolled.add(conversation_list_view);
-        conversation_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
-        conversation_box.pack_start(conversation_list_scrolled, true, true);
-
-        // Three-pane display.
-        status_bar.set_size_request(-1, STATUS_BAR_HEIGHT);
-        status_bar.set_border_width(2);
-        spinner.set_size_request(STATUS_BAR_HEIGHT - 2, -1);
-        status_bar.add(spinner);
+        conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
+        conversation_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        conversation_list_scrolled.width_request = 250;
+        conversation_list_scrolled.add (conversation_list_view);
 
         // Folder list to the left of everything.
-        folder_paned.pack1(folder_box, false, false);
-        folder_paned.pack2(conversation_box, true, false);
+        folder_paned.pack1 (folder_box, false, false);
+        folder_paned.pack2 (conversation_list_scrolled, true, false);
 
         // Message list left of message viewer.
-        conversations_paned.pack1(folder_paned, true, false);
-        conversations_paned.pack2(conversation_viewer, true, true);
+        conversations_paned.pack1 (folder_paned, true, false);
+        conversations_paned.pack2 (conversation_viewer, true, true);
+        conversations_paned.expand = true;
 
-        main_layout.pack_end(conversations_paned, true, true, 0);
-
-        add(main_layout);
+        add (conversations_paned);
     }
 
     // Returns true when there's a conversation list scrollbar visible, i.e. the list is tall
@@ -260,33 +252,13 @@ public class MainWindow : Gtk.ApplicationWindow {
 
     private void on_change_orientation() {
         bool horizontal = GearyApplication.instance.config.folder_list_pane_horizontal;
-        bool initial = true;
-
-        if (status_bar.parent != null) {
-            status_bar.parent.remove(status_bar);
-            initial = false;
-        }
 
         GLib.Settings.unbind(folder_paned, "position");
-        folder_paned.orientation = horizontal ? Gtk.Orientation.HORIZONTAL :
-            Gtk.Orientation.VERTICAL;
-
-        int folder_list_width =
-            GearyApplication.instance.config.folder_list_pane_position_horizontal;
-        if (horizontal) {
-            if (!initial)
-                conversations_paned.position += folder_list_width;
-            folder_box.pack_start(status_bar, false, false);
-        } else {
-            if (!initial)
-                conversations_paned.position -= folder_list_width;
-            conversation_box.pack_start(status_bar, false, false);
-        }
+        folder_paned.orientation = horizontal ? Gtk.Orientation.HORIZONTAL : Gtk.Orientation.VERTICAL;
 
         GearyApplication.instance.config.bind(
             horizontal ? Configuration.FOLDER_LIST_PANE_POSITION_HORIZONTAL_KEY
-            : Configuration.FOLDER_LIST_PANE_POSITION_VERTICAL_KEY,
-            folder_paned, "position");
+            : Configuration.FOLDER_LIST_PANE_POSITION_VERTICAL_KEY, folder_paned, "position");
     }
 }
 
