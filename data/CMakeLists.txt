@@ -37,3 +37,5 @@ endif ()
 
 add_subdirectory(theming)
 add_subdirectory(ui)
+add_subdirectory(sql)
+
