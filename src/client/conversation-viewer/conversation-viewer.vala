@@ -145,10 +145,7 @@ public class ConversationViewer : Gtk.Box {
     public Geary.App.Conversation? current_conversation = null;
     
     // Overlay consisting of a label in front of a webpage
-    private Gtk.Overlay message_overlay;
-    
-    // Label for displaying overlay messages.
-    private Gtk.Label message_overlay_label;
+    private Granite.Widgets.OverlayBar message_overlay;
     
     // Overlay containing any inline composers.
     public ScrollableOverlay compose_overlay;
@@ -228,21 +225,19 @@ public class ConversationViewer : Gtk.Box {
         conversation_viewer_scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         conversation_viewer_scrolled.add(compose_overlay);
         
-        message_overlay = new Gtk.Overlay();
-        message_overlay.add(conversation_viewer_scrolled);
+        var view_overlay = new Gtk.Overlay();
+        view_overlay.add(conversation_viewer_scrolled);
+        
+        message_overlay = new Granite.Widgets.OverlayBar(view_overlay);
         
         Gtk.Paned composer_paned = new Gtk.Paned(Gtk.Orientation.VERTICAL);
-        composer_paned.pack1(message_overlay, true, false);
+        composer_paned.pack1(view_overlay, true, false);
         composer_boxes = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
         composer_boxes.no_show_all = true;
         composer_paned.pack2(composer_boxes, true, false);
         Configuration config = GearyApplication.instance.config;
         config.bind(Configuration.COMPOSER_PANE_POSITION_KEY, composer_paned, "position");
         pack_start(composer_paned);
-        composer_boxes.notify["visible"].connect(() => {
-            if (!composer_boxes.visible && !message_overlay.visible)
-                message_overlay.show();
-            });
         
         config.settings.changed[Configuration.GENERALLY_SHOW_REMOTE_IMAGES_KEY].connect(on_show_images_change);
         
@@ -2258,65 +2253,16 @@ public class ConversationViewer : Gtk.Box {
         }
     }
     
-    private void build_message_overlay_label(string? url) {
-        message_overlay_label = new Gtk.Label(url);
-        message_overlay_label.ellipsize = Pango.EllipsizeMode.MIDDLE;
-        message_overlay_label.halign = Gtk.Align.START;
-        message_overlay_label.valign = Gtk.Align.END;
-        message_overlay_label.realize.connect(on_message_overlay_label_realize);
-        message_overlay.add_overlay(message_overlay_label);
-    }
-    
-    // This ensures the overlay's background color matches the background color of the
-    // main window
-    private void update_message_overlay_label_style() {
-        Gtk.Window main_window = GearyApplication.instance.controller.main_window;
-        Gdk.RGBA window_background = main_window.get_style_context()
-            .get_background_color(Gtk.StateFlags.NORMAL);
-        Gdk.RGBA label_background = message_overlay_label.get_style_context()
-            .get_background_color(Gtk.StateFlags.NORMAL);
-        
-        // To prevent an event loop situation, only update the background if it actually changed.
-        if (label_background == window_background)
-            return;
-        
-        message_overlay_label.get_style_context().changed.disconnect(
-            on_message_overlay_label_style_changed);
-        
-        message_overlay_label.override_background_color(Gtk.StateFlags.NORMAL, window_background);
-        
-        message_overlay_label.get_style_context().changed.connect(
-            on_message_overlay_label_style_changed);
-    }
-    
-    private void on_message_overlay_label_realize() {
-        update_message_overlay_label_style();
-    }
-    
-    private void on_message_overlay_label_style_changed() {
-        // The Gtk theme has probably changed - update the label background.
-        update_message_overlay_label_style();
-    }
-    
     private void on_hovering_over_link(string? title, string? url) {
         // Copy the link the user is hovering over.  Note that when the user mouses-out, 
         // this signal is called again with null for both parameters.
         hover_url = url != null ? Uri.unescape_string(url) : null;
         
-        if (message_overlay_label == null) {
-            if (url == null)
-                return;
-            build_message_overlay_label(Uri.unescape_string(url));
-            message_overlay_label.show();
-            return;
-        }
-        
-        if (url == null) {
-            message_overlay_label.hide();
-            message_overlay_label.label = null;
+        if (hover_url == null) {
+            message_overlay.hide();
         } else {
-            message_overlay_label.show();
-            message_overlay_label.label = Uri.unescape_string(url);
+            message_overlay.status = hover_url;
+            message_overlay.show_all();
         }
     }
     
