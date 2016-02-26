@@ -140,6 +140,7 @@ public class ConversationViewer : Gtk.Box {
     
     // The HTML viewer to view the emails.
     public ConversationWebView web_view { get; private set; }
+    public Gtk.ListBox conversation_list_box { get; private set; }
     
     // Current conversation, or null if none.
     public Geary.App.Conversation? current_conversation = null;
@@ -230,8 +231,20 @@ public class ConversationViewer : Gtk.Box {
         
         message_overlay = new Granite.Widgets.OverlayBar(view_overlay);
         
+        conversation_list_box = new Gtk.ListBox ();
+        conversation_list_box.expand = true;
+        conversation_list_box.get_style_context ().add_class ("deck");
+        conversation_list_box.set_selection_mode (Gtk.SelectionMode.NONE);
+        var conversation_scrolled = new Gtk.ScrolledWindow (null, null);
+        conversation_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        conversation_scrolled.add (conversation_list_box);
+        var grid = new Gtk.Grid ();
+        grid.expand = true;
+        grid.add (conversation_scrolled);
+        grid.add (view_overlay);
+        
         Gtk.Paned composer_paned = new Gtk.Paned(Gtk.Orientation.VERTICAL);
-        composer_paned.pack1(view_overlay, true, false);
+        composer_paned.pack1(grid, true, false);
         composer_boxes = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
         composer_boxes.no_show_all = true;
         composer_paned.pack2(composer_boxes, true, false);
@@ -319,6 +332,9 @@ public class ConversationViewer : Gtk.Box {
     
     // Removes all displayed e-mails from the view.
     private void clear(Geary.Folder? new_folder, Geary.AccountInformation? account_information) {
+        conversation_list_box.get_children ().foreach ((child) => {
+            child.destroy ();
+        });
         // Remove all messages from DOM.
         try {
             foreach (WebKit.DOM.HTMLElement element in email_to_element.values) {
@@ -651,6 +667,10 @@ public class ConversationViewer : Gtk.Box {
         
         if (messages.contains(email))
             return;
+        
+        var message_widget = new ConversationWidget (email);
+        message_widget.show_all ();
+        conversation_list_box.add (message_widget);
         
         string message_id = get_div_id(email.id);
         

@@ -363,6 +363,7 @@ client/conversation-list/formatted-conversation-data.vala
 
 client/conversation-viewer/conversation-viewer.vala
 client/conversation-viewer/conversation-web-view.vala
+client/conversation-viewer/ConversationWidget.vala
 
 client/dialogs/alert-dialog.vala
 client/dialogs/attachment-dialog.vala
