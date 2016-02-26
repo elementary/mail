@@ -178,6 +178,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
 
         user_mail = new Gtk.Label (null);
         user_mail.ellipsize = Pango.EllipsizeMode.END;
+        user_mail.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
         ((Gtk.Misc) user_mail).xalign = 0;
         user_mail.hexpand = true;
 
@@ -189,6 +190,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
         message_content.single_line_mode = true;
 
         datetime = new Gtk.Label (null);
+        datetime.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
         datetime.halign = Gtk.Align.END;
         datetime.valign = Gtk.Align.END;
 
