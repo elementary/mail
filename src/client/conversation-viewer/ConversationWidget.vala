@@ -153,6 +153,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
 
     construct {
         margin = 12;
+        margin_bottom = 3;
         get_style_context ().add_class ("card");
         get_style_context ().add_class ("collapsed");
 
