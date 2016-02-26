@@ -21,7 +21,6 @@
  */
 
 public class ConversationWidget : Gtk.ListBoxRow {
-
     Gtk.EventBox header;
     Gtk.Stack header_fields_stack;
     Gtk.Grid header_expanded_fields;
@@ -49,6 +48,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
     Gtk.Button star_button;
     Gtk.ToggleButton menu_button;
 
+    Gtk.InfoBar info_bar;
     Geary.Email email;
     ConversationWebView conversation_webview;
     bool opened = false;
@@ -102,9 +102,10 @@ public class ConversationWidget : Gtk.ListBoxRow {
         if (email.subject != null) {
             var title_label = new Gtk.Label (_("Subject:"));
             title_label.halign = Gtk.Align.END;
+            title_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             var value_label = new Gtk.Label (email.subject.value);
             value_label.hexpand = true;
-            value_label.halign = Gtk.Align.START;
+            ((Gtk.Misc) value_label).xalign = 0;
             value_label.wrap = true;
             header_expanded_fields.attach (title_label, 0, row_id, 1, 1);
             header_expanded_fields.attach (value_label, 1, row_id, 1, 1);
@@ -114,9 +115,10 @@ public class ConversationWidget : Gtk.ListBoxRow {
         if (email.date != null) {
             var title_label = new Gtk.Label (_("Date:"));
             title_label.halign = Gtk.Align.END;
+            title_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             var value_label = new Gtk.Label (Date.pretty_print_verbose (email.date.value, clock_format));
             value_label.hexpand = true;
-            value_label.halign = Gtk.Align.START;
+            ((Gtk.Misc) value_label).xalign = 0;
             header_expanded_fields.attach (title_label, 0, row_id, 1, 1);
             header_expanded_fields.attach (value_label, 1, row_id, 1, 1);
             row_id++;
@@ -152,6 +154,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
     construct {
         margin = 12;
         get_style_context ().add_class ("card");
+        get_style_context ().add_class ("collapsed");
 
         // Creating the Header
         var header_grid = new Gtk.Grid ();
@@ -169,20 +172,19 @@ public class ConversationWidget : Gtk.ListBoxRow {
         avatar.valign = Gtk.Align.START;
 
         user_name = new Gtk.Label (null);
-        user_name.halign = Gtk.Align.START;
+        ((Gtk.Misc) user_name).xalign = 0;
         user_name.use_markup = true;
 
         user_mail = new Gtk.Label (null);
         user_mail.ellipsize = Pango.EllipsizeMode.END;
-        user_mail.halign = Gtk.Align.START;
+        ((Gtk.Misc) user_mail).xalign = 0;
         user_mail.hexpand = true;
 
         message_content = new Gtk.Label (null);
         message_content.hexpand = true;
         message_content.ellipsize = Pango.EllipsizeMode.END;
         message_content.use_markup = true;
-        message_content.halign = Gtk.Align.START;
-        message_content.valign = Gtk.Align.START;
+        ((Gtk.Misc) message_content).xalign = 0;
         message_content.single_line_mode = true;
 
         datetime = new Gtk.Label (null);
@@ -192,7 +194,8 @@ public class ConversationWidget : Gtk.ListBoxRow {
         var header_summary_fields = new Gtk.Grid ();
         header_summary_fields.column_spacing = 6;
         header_summary_fields.row_spacing = 6;
-        header_summary_fields.margin_top = 6;
+        header_summary_fields.margin_top = 12;
+        header_summary_fields.margin_bottom = 12;
         header_summary_fields.attach (user_name, 0, 0, 1, 1);
         header_summary_fields.attach (user_mail, 1, 0, 1, 1);
         header_summary_fields.attach (datetime, 2, 0, 1, 1);
@@ -201,7 +204,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
         header_expanded_fields = new Gtk.Grid ();
         header_expanded_fields.column_spacing = 6;
         header_expanded_fields.row_spacing = 6;
-        header_expanded_fields.margin_top = 6;
+        header_expanded_fields.margin_top = 12;
         header_expanded_fields.no_show_all = true;
 
         header_fields_stack = new Gtk.Stack ();
@@ -227,15 +230,24 @@ public class ConversationWidget : Gtk.ListBoxRow {
         header_grid.attach (star_button, 4, 0, 1, 1);
         header_grid.attach (menu_button, 5, 0, 1, 1);
 
+        info_bar = new Gtk.InfoBar ();
+        info_bar.message_type = Gtk.MessageType.WARNING;
+        var action_area = (Gtk.Box) info_bar.get_action_area ();
+        action_area.orientation = Gtk.Orientation.VERTICAL;
+        info_bar.add_action_widget (new Gtk.Button.with_label (_("Show Images")), 1);
+        info_bar.add_action_widget (new Gtk.Button.with_label (_("Always Show From Sender")), 2);
+        info_bar.get_content_area ().add (new Gtk.Label (_("This message contains remote images.")));
+
         conversation_webview = new ConversationWebView ();
+        conversation_webview.margin = 6;
         conversation_webview.transparent = true;
         conversation_webview.expand = true;
 
         content_grid = new Gtk.Grid ();
-        content_grid.margin = 6;
         content_grid.margin_top = 0;
         content_grid.orientation = Gtk.Orientation.VERTICAL;
         content_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        content_grid.add (info_bar);
         content_grid.add (conversation_webview);
 
         content_revealer = new Gtk.Revealer ();
@@ -296,11 +308,12 @@ public class ConversationWidget : Gtk.ListBoxRow {
 
         var title_label = new Gtk.Label (title);
         title_label.halign = Gtk.Align.END;
+        title_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
         var value_label = new Gtk.Label (value);
         value_label.hexpand = true;
         value_label.ellipsize = Pango.EllipsizeMode.END;
         value_label.use_markup = true;
-        value_label.halign = Gtk.Align.START;
+        ((Gtk.Misc) value_label).xalign = 0;
         header_expanded_fields.attach (title_label, 0, index, 1, 1);
         header_expanded_fields.attach (value_label, 1, index, 1, 1);
     }
@@ -321,6 +334,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
 
     private void toggle_view () {
         if (content_revealer.child_revealed) {
+            get_style_context ().add_class ("collapsed");
             content_revealer.no_show_all = true;
             header_expanded_fields.no_show_all = true;
             header_fields_stack.set_visible_child_name ("summary");
@@ -332,6 +346,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
             });
 
         } else {
+            get_style_context ().remove_class ("collapsed");
             content_revealer.no_show_all = false;
             content_revealer.show_all ();
             header_expanded_fields.no_show_all = false;
@@ -355,6 +370,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
         try {
             var message = email.get_message ();
             var body_text = message.get_html_body (null);
+            warning (BODY.printf (body_text));
             conversation_webview.load_string (BODY.printf (body_text), "text/html", "UTF8", "");
         } catch (Error err) {
             debug("Could not get message text. %s", err.message);
