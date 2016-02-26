@@ -231,6 +231,8 @@ public class ConversationWidget : Gtk.ListBoxRow {
         header_grid.attach (menu_button, 5, 0, 1, 1);
 
         info_bar = new Gtk.InfoBar ();
+        info_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FRAME);
+        info_bar.margin = 6;
         info_bar.message_type = Gtk.MessageType.WARNING;
         var action_area = (Gtk.Box) info_bar.get_action_area ();
         action_area.orientation = Gtk.Orientation.VERTICAL;
