@@ -240,7 +240,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
         var action_area = (Gtk.Box) info_bar.get_action_area ();
         action_area.orientation = Gtk.Orientation.VERTICAL;
         info_bar.add_action_widget (new Gtk.Button.with_label (_("Show Images")), 1);
-        info_bar.add_action_widget (new Gtk.Button.with_label (_("Always Show From Sender")), 2);
+        info_bar.add_action_widget (new Gtk.Button.with_label (_("Always Show from Sender")), 2);
         info_bar.get_content_area ().add (new Gtk.Label (_("This message contains remote images.")));
 
         conversation_webview = new ConversationWebView ();
