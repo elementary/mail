@@ -10,55 +10,55 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2016-02-18 18:26-0800\n"
-"PO-Revision-Date: 2015-11-23 11:51+0000\n"
-"Last-Translator: Jim Nelson <jim@yorba.org>\n"
+"PO-Revision-Date: 2016-02-26 13:51+0000\n"
+"Last-Translator: Bhavin Dave <bhavindave88@yahoo.com>\n"
 "Language-Team: Hindi (India) "
 "(http://www.transifex.com/projects/p/geary/language/hi_IN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-02-20 05:48+0000\n"
+"X-Launchpad-Export-Date: 2016-02-27 05:25+0000\n"
 "X-Generator: Launchpad (build 17925)\n"
 "Language: hi_IN\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
-msgstr ""
+msgstr "प्रारूप"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:580
 msgid "Sent | Sent Mail | Sent Email | Sent E-Mail"
-msgstr ""
+msgstr "भेजे पत्र"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:585
 msgid ""
 "Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
 "| Bulk E-Mail"
-msgstr ""
+msgstr "स्पैम"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:590
 msgid "Trash | Rubbish | Rubbish Bin"
-msgstr ""
+msgstr "कूड़ा"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:595
 msgid "Archive | Archives"
-msgstr ""
+msgstr "लेखागार"
 
 #: ../src/engine/api/geary-special-folder-type.vala:24
 msgid "Inbox"
-msgstr ""
+msgstr "आए पत्र"
 
 #: ../src/engine/api/geary-special-folder-type.vala:27
 msgid "Drafts"
-msgstr ""
+msgstr "प्रारूप"
 
 #: ../src/engine/api/geary-special-folder-type.vala:30
 msgid "Sent Mail"
-msgstr ""
+msgstr "भेजे पत्र"
 
 #: ../src/engine/api/geary-special-folder-type.vala:33
 msgid "Starred"
-msgstr ""
+msgstr "अंकित"
 
 #: ../src/engine/api/geary-special-folder-type.vala:36
 msgid "Important"
@@ -66,47 +66,47 @@ msgstr "महत्वपूर्ण"
 
 #: ../src/engine/api/geary-special-folder-type.vala:39
 msgid "All Mail"
-msgstr ""
+msgstr "सब पत्र"
 
 #: ../src/engine/api/geary-special-folder-type.vala:42
 msgid "Spam"
-msgstr ""
+msgstr "अवांछनीय(स्पैम)"
 
 #: ../src/engine/api/geary-special-folder-type.vala:45
 msgid "Trash"
-msgstr ""
+msgstr "रद्दी"
 
 #: ../src/engine/api/geary-special-folder-type.vala:48
 msgid "Outbox"
-msgstr ""
+msgstr "जाती डाक"
 
 #: ../src/engine/api/geary-special-folder-type.vala:51
 #: ../src/client/folder-list/folder-list-search-branch.vala:38
 #: ../src/client/components/search-bar.vala:10
 #: ../src/client/components/main-toolbar.vala:29
 msgid "Search"
-msgstr ""
+msgstr "खोज"
 
 #: ../src/engine/api/geary-special-folder-type.vala:54
 msgid "Archive"
-msgstr ""
+msgstr "पुरालेख"
 
 #: ../src/engine/api/geary-special-folder-type.vala:58 ../data/ui/login.ui:633
 #: ../data/ui/login.ui:650
 msgid "None"
-msgstr ""
+msgstr "कुछ नही"
 
 #: ../src/engine/api/geary-service.vala:20
 msgid "IMAP"
-msgstr ""
+msgstr "आईमैप"
 
 #: ../src/engine/api/geary-service.vala:23
 msgid "SMTP"
-msgstr ""
+msgstr "एसएमटीपी"
 
 #: ../src/engine/api/geary-service-provider.vala:52
 msgid "Gmail"
-msgstr ""
+msgstr "जिमेल"
 
 #: ../src/engine/api/geary-service-provider.vala:55
 msgid "Yahoo! Mail"
@@ -114,18 +114,18 @@ msgstr "याहू ! मेल"
 
 #: ../src/engine/api/geary-service-provider.vala:58
 msgid "Outlook.com"
-msgstr ""
+msgstr "आउटलुक.कॉम"
 
 #: ../src/engine/api/geary-service-provider.vala:61
 msgid "Other"
-msgstr ""
+msgstr "अन्य"
 
 #. / Can be typed in the search box like attachment:file.txt to find
 #. / messages with attachments with a particular name.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:710
 msgid "attachment"
-msgstr ""
+msgstr "आसक्ति"
 
 #. / Can be typed in the search box like bcc:johndoe@example.com to find
 #. / messages bcc'd to a particular person.  The translated
@@ -133,14 +133,14 @@ msgstr ""
 #: ../src/engine/imap-db/imap-db-account.vala:714
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "bcc"
-msgstr ""
+msgstr "बीसीसी"
 
 #. / Can be typed in the search box like body:word to find the word only
 #. / if it occurs in the body of a message.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:718
 msgid "body"
-msgstr ""
+msgstr "बाडी"
 
 #. / Can be typed in the search box like cc:johndoe@example.com to find
 #. / messages cc'd to a particular person.  The translated
@@ -148,7 +148,7 @@ msgstr ""
 #: ../src/engine/imap-db/imap-db-account.vala:722
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "cc"
-msgstr ""
+msgstr "प्रतिभागी"
 
 #. / Can be typed in the search box like from:johndoe@example.com to
 #. / find messages from a particular sender.  The translated
@@ -156,14 +156,14 @@ msgstr ""
 #: ../src/engine/imap-db/imap-db-account.vala:726
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "from"
-msgstr ""
+msgstr "किससे"
 
 #. / Can be typed in the search box like subject:word to find the word
 #. / only if it occurs in the subject of a message.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:730
 msgid "subject"
-msgstr ""
+msgstr "विषय"
 
 #. / Can be typed in the search box like to:johndoe@example.com to find
 #. / messages received by a particular person.  The translated
@@ -171,16 +171,16 @@ msgstr ""
 #: ../src/engine/imap-db/imap-db-account.vala:734
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "to"
-msgstr ""
+msgstr "किसको"
 
 #: ../src/engine/imap-db/imap-db-account.vala:754
 msgid "me"
-msgstr ""
+msgstr "मैं"
 
 #: ../src/engine/rfc822/rfc822-message.vala:781
 #: ../src/client/util/util-email.vala:30
 msgid "(no subject)"
-msgstr ""
+msgstr "(कोई विषय नहीं)"
 
 #. / Format for the datetime that a message being replied to was received
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
@@ -193,27 +193,27 @@ msgstr ""
 #. / the original sender.
 #: ../src/engine/rfc822/rfc822-utils.vala:221
 msgid "On %1$s, %2$s wrote:"
-msgstr ""
+msgstr "दिनाक %1$s, %2$s ने लिखा:"
 
 #. / The quoted header for a message being replied to (in case the date is not known).
 #. / %s will be replaced by the original sender.
 #: ../src/engine/rfc822/rfc822-utils.vala:228
 msgid "%s wrote:"
-msgstr ""
+msgstr "%s ने लिखा:"
 
 #. / The quoted header for a message being replied to (in case the sender is not known).
 #. / %s will be replaced by the original date
 #: ../src/engine/rfc822/rfc822-utils.vala:234
 msgid "On %s:"
-msgstr ""
+msgstr "दिनाक %s:"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:263
 msgid "---------- Forwarded message ----------"
-msgstr ""
+msgstr "---------- प्रस्तुत पत्र ----------"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:267
 msgid "From: %s\n"
-msgstr ""
+msgstr "किससे: %s\n"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:268
 msgid "Subject: %s\n"
@@ -221,90 +221,90 @@ msgstr "विषय: %s\n"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:269
 msgid "Date: %s\n"
-msgstr ""
+msgstr "दिनाक: %s\n"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:272
 msgid "To: %s\n"
-msgstr ""
+msgstr "किसको: %s\n"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:275
 msgid "Cc: %s\n"
-msgstr ""
+msgstr "सहभागी: %s\n"
 
 #. / Placeholder filename for attachments with no filename.
 #: ../src/engine/rfc822/rfc822-utils.vala:378
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2227
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2232
 msgid "none"
-msgstr ""
+msgstr "कुछ नहीं"
 
 #: ../src/client/application/geary-application.vala:18
 msgid "Mail Client"
-msgstr ""
+msgstr "डाकिया"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "Copyright 2011-2015 Yorba Foundation"
-msgstr ""
+msgstr "कॉपीराइट 2011-2015 योरबा फाउंडेशन"
 
 #: ../src/client/application/geary-application.vala:21
 msgid "Visit the Yorba web site"
-msgstr ""
+msgstr "योरबा की वेब साइट पर जाएँ"
 
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete conversation"
-msgstr ""
+msgstr "संवाद हटाऍ"
 
 #: ../src/client/application/geary-controller.vala:62
 msgid "Delete conversation (Shift+Delete)"
-msgstr ""
+msgstr "संवाद हटाऍ  (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
 msgid "Delete conversations (Shift+Delete)"
-msgstr ""
+msgstr "अधिक संवाद हटाऍ  (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 #: ../src/client/application/geary-controller.vala:65
 msgid "Move conversation to Trash (Delete, Backspace)"
-msgstr ""
+msgstr "संवाद रद्दी में भेजे (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 msgid "Move conversations to Trash (Delete, Backspace)"
-msgstr ""
+msgstr "अधिक संवाद रद्दी में भेजे (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
-msgstr ""
+msgstr "_पुरालेख"
 
 #: ../src/client/application/geary-controller.vala:73
 #: ../src/client/application/geary-controller.vala:72
 #: ../src/client/application/geary-controller.vala:71
 #: ../src/client/application/geary-controller.vala:70
 msgid "Archive conversation (A)"
-msgstr ""
+msgstr "संवाद पुरालेख (A)"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
 #: ../src/client/application/geary-controller.vala:72
 #: ../src/client/application/geary-controller.vala:71
 msgid "Archive conversations (A)"
-msgstr ""
+msgstr "अधिक संवाद पुरालेख (A)"
 
 #: ../src/client/application/geary-controller.vala:77
 #: ../src/client/application/geary-controller.vala:76
 #: ../src/client/application/geary-controller.vala:75
 #: ../src/client/application/geary-controller.vala:74
 msgid "Mark as S_pam"
-msgstr ""
+msgstr "स्पैम संकेत"
 
 #: ../src/client/application/geary-controller.vala:78
 #: ../src/client/application/geary-controller.vala:77
 #: ../src/client/application/geary-controller.vala:76
 #: ../src/client/application/geary-controller.vala:75
 msgid "Mark as not S_pam"
-msgstr ""
+msgstr "स्पैम नही संकेत"
 
 #: ../src/client/application/geary-controller.vala:80
 #: ../src/client/application/geary-controller.vala:392
@@ -318,14 +318,14 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:77
 #: ../src/client/application/geary-controller.vala:381
 msgid "Mark conversation"
-msgstr ""
+msgstr "संवाद संकेत"
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
 #: ../src/client/application/geary-controller.vala:79
 #: ../src/client/application/geary-controller.vala:78
 msgid "Mark conversations"
-msgstr ""
+msgstr "अधिक संवाद संकेत"
 
 #: ../src/client/application/geary-controller.vala:82
 #: ../src/client/components/main-toolbar.vala:114
@@ -335,14 +335,14 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:120
 #: ../src/client/application/geary-controller.vala:79
 msgid "Add label to conversation"
-msgstr ""
+msgstr "संवाद को लेबल जोड़े"
 
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
 msgid "Add label to conversations"
-msgstr ""
+msgstr "अधिक संवाद को लेबल जोड़े"
 
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:431
@@ -356,21 +356,21 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:420
 msgid "Move conversation"
-msgstr "वार्तालप का स्थान परिवर्तन करें"
+msgstr "संवाद का स्थान परिवर्तन करें"
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
 msgid "Move conversations"
-msgstr "वार्तालपों का स्थान परिवर्तन करें"
+msgstr "अधिक संवाद का स्थान परिवर्तन करें"
 
 #: ../src/client/application/geary-controller.vala:372
 #: ../src/client/application/geary-controller.vala:371
 #: ../src/client/application/geary-controller.vala:370
 #: ../src/client/application/geary-controller.vala:369
 msgid "A_ccounts"
-msgstr ""
+msgstr "खाते(_c)"
 
 #: ../src/client/application/geary-controller.vala:377
 #: ../src/client/components/stock.vala:27
@@ -379,20 +379,20 @@ msgstr ""
 #: ../src/client/components/stock.vala:26
 #: ../src/client/application/geary-controller.vala:374
 msgid "_Preferences"
-msgstr ""
+msgstr "वरीयता(_P)"
 
 #: ../src/client/application/geary-controller.vala:381
 #: ../src/client/components/stock.vala:25
 #: ../src/client/application/geary-controller.vala:380
 msgid "_Help"
-msgstr ""
+msgstr "मदद (_H)"
 
 #: ../src/client/application/geary-controller.vala:385
 #: ../src/client/components/stock.vala:21
 #: ../src/client/application/geary-controller.vala:384
 #: ../src/client/application/geary-controller.vala:379
 msgid "_About"
-msgstr ""
+msgstr "परिचय (_A)"
 
 #: ../src/client/application/geary-controller.vala:389
 #: ../src/client/components/stock.vala:29
@@ -401,94 +401,94 @@ msgstr ""
 #: ../src/client/components/stock.vala:28
 #: ../src/client/application/geary-controller.vala:378
 msgid "_Quit"
-msgstr ""
+msgstr "बाहर (_Q)"
 
 #: ../src/client/application/geary-controller.vala:394
 #: ../src/client/application/geary-controller.vala:393
 #: ../src/client/application/geary-controller.vala:388
 #: ../src/client/application/geary-controller.vala:383
 msgid "_Mark as..."
-msgstr ""
+msgstr "_संकेत करें..."
 
 #: ../src/client/application/geary-controller.vala:400
 #: ../src/client/application/geary-controller.vala:399
 #: ../src/client/application/geary-controller.vala:394
 #: ../src/client/application/geary-controller.vala:389
 msgid "Mark as _Read"
-msgstr ""
+msgstr "पढ़ लिया संकेत करे"
 
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:405
 #: ../src/client/application/geary-controller.vala:400
 #: ../src/client/application/geary-controller.vala:395
 msgid "Mark as _Unread"
-msgstr ""
+msgstr "पढ़ा नही संकेत करे"
 
 #: ../src/client/application/geary-controller.vala:412
 #: ../src/client/application/geary-controller.vala:411
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:401
 msgid "_Star"
-msgstr ""
+msgstr "तारा"
 
 #: ../src/client/application/geary-controller.vala:417
 #: ../src/client/application/geary-controller.vala:416
 #: ../src/client/application/geary-controller.vala:411
 #: ../src/client/application/geary-controller.vala:406
 msgid "U_nstar"
-msgstr ""
+msgstr "तारा हटाए"
 
 #: ../src/client/application/geary-controller.vala:427
 #: ../src/client/application/geary-controller.vala:426
 #: ../src/client/application/geary-controller.vala:421
 #: ../src/client/application/geary-controller.vala:416
 msgid "Add label"
-msgstr ""
+msgstr "लेबल जोड़े"
 
 #: ../src/client/application/geary-controller.vala:428
 #: ../src/client/application/geary-controller.vala:427
 #: ../src/client/application/geary-controller.vala:422
 #: ../src/client/application/geary-controller.vala:417
 msgid "_Label"
-msgstr ""
+msgstr "लेबल (_L)"
 
 #: ../src/client/application/geary-controller.vala:432
 #: ../src/client/application/geary-controller.vala:431
 #: ../src/client/application/geary-controller.vala:426
 #: ../src/client/application/geary-controller.vala:421
 msgid "_Move"
-msgstr ""
+msgstr "खिसकाएँ (_M)"
 
 #: ../src/client/application/geary-controller.vala:436
 #: ../src/client/application/geary-controller.vala:435
 #: ../src/client/application/geary-controller.vala:430
 #: ../src/client/application/geary-controller.vala:425
 msgid "Compose new message (Ctrl+N, N)"
-msgstr ""
+msgstr "नया पत्र लिखे (Ctrl+N, N)"
 
 #: ../src/client/application/geary-controller.vala:440
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1857
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1862
 msgid "_Reply"
-msgstr ""
+msgstr "जवाब (_R)"
 
 #: ../src/client/application/geary-controller.vala:441
 #: ../src/client/application/geary-controller.vala:440
 #: ../src/client/application/geary-controller.vala:435
 #: ../src/client/application/geary-controller.vala:430
 msgid "Reply (Ctrl+R, R)"
-msgstr ""
+msgstr "जवाब (Ctrl+R, R)"
 
 #: ../src/client/application/geary-controller.vala:445
 msgid "R_eply All"
-msgstr ""
+msgstr "सबको जवाब दे (_e)"
 
 #: ../src/client/application/geary-controller.vala:446
 #: ../src/client/application/geary-controller.vala:445
 #: ../src/client/application/geary-controller.vala:440
 #: ../src/client/application/geary-controller.vala:435
 msgid "Reply all (Ctrl+Shift+R, Shift+R)"
-msgstr ""
+msgstr "सबको जवाब दे (Ctrl+Shift+R, Shift+R)"
 
 #: ../src/client/application/geary-controller.vala:451
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1867
@@ -721,6 +721,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  Bhavin Dave https://launchpad.net/~bhavindave88\n"
 "  Jim Nelson https://launchpad.net/~yorba-jim"
 
 #: ../src/client/application/geary-controller.vala:1976
