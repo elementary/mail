@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-02-18 18:26-0800\n"
-"PO-Revision-Date: 2016-02-26 17:16+0000\n"
+"PO-Revision-Date: 2016-02-27 12:07+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-02-27 05:25+0000\n"
+"X-Launchpad-Export-Date: 2016-02-28 05:54+0000\n"
 "X-Generator: Launchpad (build 17925)\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -85,7 +85,7 @@ msgstr "검색"
 
 #: ../src/engine/api/geary-special-folder-type.vala:54
 msgid "Archive"
-msgstr "보관함"
+msgstr "보관하기"
 
 #: ../src/engine/api/geary-special-folder-type.vala:58 ../data/ui/login.ui:633
 #: ../data/ui/login.ui:650
@@ -272,7 +272,7 @@ msgstr "대화를 휴지통으로 옮기기 (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
-msgstr "보관함(A)"
+msgstr "보관하기(_A)"
 
 #: ../src/client/application/geary-controller.vala:73
 #: ../src/client/application/geary-controller.vala:72
@@ -696,6 +696,11 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
+"이 계정의 메일 데이터 베이스를 여는 동안 오류가 생겼습니다. 파일 퍼미션 문제가 아닌가 합니다.\n"
+"\n"
+"이 디렉토리를 읽고 쓸 수 있는 권한이 있는지 확인해보시길 바랍니다:\n"
+"\n"
+"%s"
 
 #: ../src/client/application/geary-controller.vala:1196
 #: ../src/client/application/geary-controller.vala:1190
@@ -720,7 +725,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1709
 #: ../src/client/application/geary-controller.vala:1677
 msgid "About %s"
-msgstr ""
+msgstr "%s 소개"
 
 #. / Translators: add your name and email address to receive credit in the About dialog
 #. / For example: Yamada Taro <yamada.taro@example.com>
@@ -738,14 +743,14 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1938
 #: ../src/client/application/geary-controller.vala:1940
 msgid "Undo move (Ctrl+Z)"
-msgstr ""
+msgstr "이동 취소 (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:1986
 #: ../src/client/application/geary-controller.vala:1980
 #: ../src/client/application/geary-controller.vala:1948
 #: ../src/client/application/geary-controller.vala:1950
 msgid "Are you sure you want to open \"%s\"?"
-msgstr ""
+msgstr "정말 \"%s\"를 여시겠습니까?"
 
 #: ../src/client/application/geary-controller.vala:1987
 #: ../src/client/application/geary-controller.vala:1981
@@ -754,21 +759,21 @@ msgstr ""
 msgid ""
 "Attachments may cause damage to your system if opened.  Only open files from "
 "trusted sources."
-msgstr ""
+msgstr "열린 첨부 파일은 시스템에 손상을 입힐 수 있습니다. 믿을 만한 곳에서 온 것만 여시 길 바랍니다."
 
 #: ../src/client/application/geary-controller.vala:1988
 #: ../src/client/application/geary-controller.vala:1982
 #: ../src/client/application/geary-controller.vala:1950
 #: ../src/client/application/geary-controller.vala:1952
 msgid "Don't _ask me again"
-msgstr ""
+msgstr "이제 묻지 않아도 좋습니다(A)"
 
 #: ../src/client/application/geary-controller.vala:2006
 #: ../src/client/application/geary-controller.vala:2000
 #: ../src/client/application/geary-controller.vala:1968
 #: ../src/client/application/geary-controller.vala:1970
 msgid "A file named \"%s\" already exists.  Do you want to replace it?"
-msgstr ""
+msgstr "이름이 \"%s\"인 파일이 이미 있습니다.  이 파일과 바꾸시겠습니까?"
 
 #: ../src/client/application/geary-controller.vala:2008
 #: ../src/client/application/geary-controller.vala:2002
@@ -776,54 +781,54 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1972
 msgid ""
 "The file already exists in \"%s\".  Replacing it will overwrite its contents."
-msgstr ""
+msgstr "\"%s\" 안에 파일이 이미 있습니다.  파일을 바꾸면 그 내용을 덮어 쓰게 됩니다."
 
 #: ../src/client/application/geary-controller.vala:2011
 #: ../src/client/application/geary-controller.vala:2005
 #: ../src/client/application/geary-controller.vala:1973
 #: ../src/client/application/geary-controller.vala:1975
 msgid "_Replace"
-msgstr ""
+msgstr "바꾸기(R)"
 
 #: ../src/client/application/geary-controller.vala:2309
 #: ../src/client/application/geary-controller.vala:2303
 #: ../src/client/application/geary-controller.vala:2271
 #: ../src/client/application/geary-controller.vala:2273
 msgid "Close open draft messages?"
-msgstr ""
+msgstr "임시 보관함의 메시지를 닫을까요?"
 
 #: ../src/client/application/geary-controller.vala:2439
 #: ../src/client/application/geary-controller.vala:2433
 #: ../src/client/application/geary-controller.vala:2401
 #: ../src/client/application/geary-controller.vala:2403
 msgid "Empty all email from your %s folder?"
-msgstr ""
+msgstr "%s 폴더의 모든 메일을 비울까요?"
 
 #: ../src/client/application/geary-controller.vala:2440
 #: ../src/client/application/geary-controller.vala:2434
 msgid "This removes the email from Geary and your email server."
-msgstr ""
+msgstr "기어리와 메일 서버 안의 모든 메일을 지우게 됩니다."
 
 #: ../src/client/application/geary-controller.vala:2441
 #: ../src/client/application/geary-controller.vala:2435
 #: ../src/client/application/geary-controller.vala:2403
 #: ../src/client/application/geary-controller.vala:2405
 msgid "This cannot be undone."
-msgstr ""
+msgstr "이 작업은 취소할 수 없습니다."
 
 #: ../src/client/application/geary-controller.vala:2442
 #: ../src/client/application/geary-controller.vala:2436
 #: ../src/client/application/geary-controller.vala:2404
 #: ../src/client/application/geary-controller.vala:2406
 msgid "Empty %s"
-msgstr ""
+msgstr "%s 비우기"
 
 #: ../src/client/application/geary-controller.vala:2459
 #: ../src/client/application/geary-controller.vala:2453
 #: ../src/client/application/geary-controller.vala:2421
 #: ../src/client/application/geary-controller.vala:2423
 msgid "Error emptying %s"
-msgstr ""
+msgstr "%s 비우기 오류 발생"
 
 #: ../src/client/application/geary-controller.vala:2489
 #: ../src/client/application/geary-controller.vala:2483
@@ -831,22 +836,21 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2453
 msgid "Do you want to permanently delete this message?"
 msgid_plural "Do you want to permanently delete these messages?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "이 메시지를 완전히 지우시겠습니까?"
 
 #: ../src/client/application/geary-controller.vala:2491
 #: ../src/client/application/geary-controller.vala:2485
 #: ../src/client/application/geary-controller.vala:2453
 #: ../src/client/application/geary-controller.vala:2455
 msgid "Delete"
-msgstr ""
+msgstr "지우기"
 
 #: ../src/client/application/geary-controller.vala:2522
 #: ../src/client/application/geary-controller.vala:2516
 #: ../src/client/application/geary-controller.vala:2484
 #: ../src/client/application/geary-controller.vala:2486
 msgid "Undo archive (Ctrl+Z)"
-msgstr ""
+msgstr "보관하기 취소 (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:2537
 #: ../src/client/application/geary-controller.vala:2531
@@ -2365,6 +2369,14 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
+"이 계정의 메일 데이터 베이스를 여는 동안 오류가 생겼습니다.  이 디렉토리의 데이터 베이스 파일에 문제가 생겨서 그런 것이 아닌가 "
+"합니다:\n"
+"\n"
+"%s\n"
+"\n"
+"기어리는 데이터 베이스를 재구성하고 서버와 다시 동기화 시키거나 나갈 수 있습니다.\n"
+"\n"
+"데이터 베이스를 재구성하게 되면 로컬 메일과 첨부파일들이 모두 사라지게 됩니다. <b>서버에 있는 메일은 영향 받지 않습니다.</b>"
 
 #: ../src/client/application/geary-controller.vala:1184
 #: ../src/client/application/geary-controller.vala:1178
