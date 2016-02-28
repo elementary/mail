@@ -35,8 +35,20 @@ public class ConversationWidget : Gtk.ListBoxRow {
             <title>Geary</title>
         </head>
         <body>
-            <div id="message_container"></div>
             %s
+        </body>
+    </html>
+    """;
+
+    private const string BODY_PLAINTEXT = """
+    <html>
+        <head>
+            <title>Geary</title>
+        </head>
+        <body>
+            <div>
+                %s
+            </div>
         </body>
     </html>
     """;
@@ -50,7 +62,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
 
     Gtk.InfoBar info_bar;
     Geary.Email email;
-    ConversationWebView conversation_webview;
+    StylishWebView webview;
     bool opened = false;
     public ConversationWidget (Geary.Email email) {
         this.email = email;
@@ -247,9 +259,9 @@ public class ConversationWidget : Gtk.ListBoxRow {
         info_bar.add_action_widget (new Gtk.Button.with_label (_("Always Show from Sender")), 2);
         info_bar.get_content_area ().add (new Gtk.Label (_("This message contains remote images.")));
 
-        conversation_webview = new ConversationWebView ();
-        conversation_webview.transparent = true;
-        conversation_webview.expand = true;
+        webview = new StylishWebView ();
+        webview.transparent = true;
+        webview.expand = true;
 
         content_grid = new Gtk.Grid ();
         content_grid.margin = 6;
@@ -257,7 +269,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
         content_grid.orientation = Gtk.Orientation.VERTICAL;
         content_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         content_grid.add (info_bar);
-        content_grid.add (conversation_webview);
+        content_grid.add (webview);
 
         content_revealer = new Gtk.Revealer ();
         content_revealer.no_show_all = true;
@@ -300,11 +312,11 @@ public class ConversationWidget : Gtk.ListBoxRow {
             value += "<a href='mailto:%s'>".printf(Uri.escape_string (a.to_rfc822_string()));
             if (!Geary.String.is_empty (a.name)) {
                 if (get_direction () == Gtk.TextDirection.RTL) {
-                    value += Geary.HTML.escape_markup (a.address);
+                    value += "<small>%s</small>".printf (Geary.HTML.escape_markup (a.address));
                     value += " <b>%s</b>".printf (Geary.HTML.escape_markup (a.name));
                 } else {
                     value += "<b>%s</b> ".printf (Geary.HTML.escape_markup (a.name));
-                    value += Geary.HTML.escape_markup (a.address);
+                    value += "<small>%s</small>".printf (Geary.HTML.escape_markup (a.address));
                 }
             } else {
                 value += Geary.HTML.escape_markup (a.address);
@@ -376,13 +388,29 @@ public class ConversationWidget : Gtk.ListBoxRow {
 
     private void open_message () {
         email.notify["body"].disconnect (open_message);
+        Geary.RFC822.Message? message = null;
         try {
-            var message = email.get_message ();
+            message = email.get_message ();
+        } catch (Error e) {
+            debug("Could not get message. %s", e.message);
+            return;
+        }
+
+        try {
             var body_text = message.get_html_body (null);
-            warning (BODY.printf (body_text));
-            conversation_webview.load_string (BODY.printf (body_text), "text/html", "UTF8", "");
+            webview.load_string (BODY.printf (body_text), "text/html", "UTF8", "");
+            return;
         } catch (Error err) {
-            debug("Could not get message text. %s", err.message);
+            if (err is Geary.RFC822Error.NOT_FOUND) {
+                debug ("Could not get message html body text. %s", err.message);
+            }
+        }
+
+        try {
+            var body_text = message.get_plain_body (true, null);
+            webview.load_string (BODY_PLAINTEXT.printf (body_text), "text/html", "UTF8", "");
+        } catch (Error err) {
+            debug ("Could not get message plain body text. %s", err.message);
         }
     }
 }
