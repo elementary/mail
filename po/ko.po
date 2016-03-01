@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-02-18 18:26-0800\n"
-"PO-Revision-Date: 2016-02-29 03:22+0000\n"
+"PO-Revision-Date: 2016-03-01 03:23+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-02-29 06:07+0000\n"
+"X-Launchpad-Export-Date: 2016-03-01 06:00+0000\n"
 "X-Generator: Launchpad (build 17925)\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -711,6 +711,10 @@ msgid ""
 "\n"
 "Please install the latest version of Geary and try again."
 msgstr ""
+"로컬 메일 데이터 베이스의 버전 번호가 새 버전의 기어리를 위해서 포맷되었습니다. 안타깝게도, 현재 버전의 기어리 사용을 위해 데이터 "
+"베이스를 \"되돌릴\" 수 없습니다.\n"
+"\n"
+"최신 버전의 기어리를 설치하시고 다시 실행해 보세요."
 
 #: ../src/client/application/geary-controller.vala:1207
 #: ../src/client/application/geary-controller.vala:1201
@@ -720,6 +724,9 @@ msgid ""
 "\n"
 "Please check your network connection and restart Geary."
 msgstr ""
+"로컬 계정을 여는 동안 오류가 생겼습니다. 인터넷 연결 문제가 아닌가 합니다.\n"
+"\n"
+"네트워크 연결을 확인하시고 기어리를 다시 시작해주세요."
 
 #: ../src/client/application/geary-controller.vala:1715
 #: ../src/client/application/geary-controller.vala:1709
@@ -864,115 +871,113 @@ msgstr "휴지통으로 취소"
 #: ../src/client/application/geary-controller.vala:2552
 #: ../src/client/application/geary-controller.vala:2554
 msgid "Undo (Ctrl+Z)"
-msgstr ""
+msgstr "되돌리기 (Ctrl+Z)"
 
 #: ../src/client/application/geary-args.vala:10
 #: ../src/client/application/geary-args.vala:11
 msgid "Start Geary with hidden main window"
-msgstr ""
+msgstr "기어리의 창을 숨긴 채로 시작하기"
 
 #: ../src/client/application/geary-args.vala:11
 #: ../src/client/application/geary-args.vala:12
 msgid "Output debugging information"
-msgstr ""
+msgstr "디버깅 정보 출력하기"
 
 #: ../src/client/application/geary-args.vala:12
 #: ../src/client/application/geary-args.vala:13
 msgid "Log conversation monitoring"
-msgstr ""
+msgstr "대화 모니터링 로그"
 
 #: ../src/client/application/geary-args.vala:13
 #: ../src/client/application/geary-args.vala:14
 msgid "Log network deserialization"
-msgstr ""
+msgstr "네트워크 역 직렬화 로그"
 
 #: ../src/client/application/geary-args.vala:14
 #: ../src/client/application/geary-args.vala:15
 msgid "Log network activity"
-msgstr ""
+msgstr "네트워크 활동 로그"
 
 #. / The IMAP replay queue is how changes on the server are replicated on the client.
 #. / It could also be called the IMAP events queue.
 #: ../src/client/application/geary-args.vala:17
 #: ../src/client/application/geary-args.vala:18
 msgid "Log IMAP replay queue"
-msgstr ""
+msgstr "IMAP 응답 대기 로그"
 
 #. / Serialization is how commands and responses are converted into a stream of bytes for
 #. / network transmission
 #: ../src/client/application/geary-args.vala:20
 #: ../src/client/application/geary-args.vala:21
 msgid "Log network serialization"
-msgstr ""
+msgstr "네트워크 직렬화 로그"
 
 #: ../src/client/application/geary-args.vala:21
 #: ../src/client/application/geary-args.vala:22
 msgid "Log periodic activity"
-msgstr ""
+msgstr "정기 활동 로그"
 
 #: ../src/client/application/geary-args.vala:22
 #: ../src/client/application/geary-args.vala:23
 msgid "Log database queries (generates lots of messages)"
-msgstr ""
+msgstr "데이터베이스 질의 로그 (많은 메시지를 만듭니다)"
 
 #. / "Normalization" can also be called "synchronization"
 #: ../src/client/application/geary-args.vala:24
 #: ../src/client/application/geary-args.vala:25
 msgid "Log folder normalization"
-msgstr ""
+msgstr "폴더 정상화 로그"
 
 #: ../src/client/application/geary-args.vala:25
 #: ../src/client/application/geary-args.vala:26
 msgid "Allow inspection of WebView"
-msgstr ""
+msgstr "웹 보기 검사 로그"
 
 #: ../src/client/application/geary-args.vala:26
 #: ../src/client/application/geary-args.vala:27
 msgid "Revoke all server certificates with TLS warnings"
-msgstr ""
+msgstr "TLS 경고와 함께 모든 서버 인증 취소"
 
 #: ../src/client/application/geary-args.vala:27
 #: ../src/client/application/geary-args.vala:28
 msgid "Display program version"
-msgstr ""
+msgstr "프로그램 버전 표시"
 
 #: ../src/client/application/geary-args.vala:51
 #: ../src/client/application/geary-args.vala:53
 msgid "Use %s to open a new composer window"
-msgstr ""
+msgstr "%s로 새 메일 작성 창 열기"
 
 #: ../src/client/application/geary-args.vala:52
 #: ../src/client/application/geary-args.vala:54
 msgid "Please report comments, suggestions and bugs to:"
-msgstr ""
+msgstr "코멘트, 제안, 버그 리포트 등을 이곳에 해주세요:"
 
 #: ../src/client/application/geary-args.vala:59
 #: ../src/client/application/geary-args.vala:61
 msgid "Failed to parse command line options: %s\n"
-msgstr ""
+msgstr "명령 줄 옵션 구문을 분석하지 못했습니다: %s\n"
 
 #: ../src/client/application/geary-args.vala:70
 #: ../src/client/application/geary-args.vala:72
 msgid "Unrecognized command line option \"%s\"\n"
-msgstr ""
+msgstr "알 수 없는 명령 줄 옵션 \"%s\"\n"
 
 #: ../src/client/notification/libmessagingmenu.vala:75
 msgid "%s - New Messages"
-msgstr ""
+msgstr "%s - 새 메시지"
 
 #: ../src/client/notification/libnotify.vala:72
 #: ../src/client/notification/libnotify.vala:71
 msgid "%d new message"
 msgid_plural "%d new messages"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "새 메시지 %d개"
 
 #: ../src/client/notification/libnotify.vala:75
 #: ../src/client/notification/libnotify.vala:74
 msgid "%s, %d new message total"
 msgid_plural "%s, %d new messages total"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s, 총 %d개의 새 메시지"
 
 #: ../src/client/notification/libnotify.vala:107
 #: ../src/client/notification/libnotify.vala:105
@@ -983,236 +988,239 @@ msgid_plural ""
 "%s\n"
 "(%d other new messages for %s)"
 msgstr[0] ""
-msgstr[1] ""
+"%s\n"
+"(%s의 다른 메시지 %d개)"
 
 #: ../src/client/notification/libnotify.vala:160
 #: ../src/client/notification/libnotify.vala:158
 #: ../src/client/notification/libnotify.vala:151
 msgid "Open"
-msgstr ""
+msgstr "열기"
 
 #: ../src/client/conversation-list/formatted-conversation-data.vala:11
 msgid "Me"
-msgstr ""
+msgstr "나"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:33
 msgid "Untrusted Connection: %s"
-msgstr ""
+msgstr "신뢰할 수 없는 연결: %s"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:36
 msgid "The identity of the %s mail server at %s:%u could not be verified."
-msgstr ""
+msgstr "%s:%u에서 메일 서버 %s의 신원을 확인할 수 없습니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:44
 msgid ""
 "Selecting \"Trust This Server\" or \"Always Trust This Server\" may cause "
 "your username and password to be transmitted insecurely."
 msgstr ""
+"\"이 서버를 신뢰합니다\"를 선택하거나 \"언제나 이 서버를 신뢰합니다\"를 선택하게 되면 사용자 이름(계정)과 비밀번호를 암호화되지 "
+"않은 채로 전송할 수 있습니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary not to access this "
 "server."
-msgstr ""
+msgstr "\"이 서버를 신뢰하지 않습니다\"를 선택하게 되면 기어리가 이 서버에 접근하지 못하게 될 수 있습니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Geary will not add or update this email account."
-msgstr ""
+msgstr "기어리는 이 메일 계정을 업데이트하거나 추가하지 않습니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary to stop accessing "
 "this account."
-msgstr ""
+msgstr "\"이 서버를 신뢰하지 않습니다\"를 선택하게 되면 기어리가 이 계정의 접근을 중단할 수 있습니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Geary will exit if you have no other open email accounts."
-msgstr ""
+msgstr "열려 있는 다른 이메일 계정이 없다면 기어리를 끝내겠습니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:66
 msgid ""
 "Contact your system administrator or email service provider if you have any "
 "question about these issues."
-msgstr ""
+msgstr "이 문제에 관해서 궁금한 게 있으시면 이메일 서비스 제공업체나 시스템 관리자에게 문의하세요."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:73
 msgid "The server's certificate is not signed by a known authority"
-msgstr ""
+msgstr "서버의 인증서가 알려진 권한에 의해 서명되지 않았습니다"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:76
 msgid "The server's identity does not match the identity in the certificate"
-msgstr ""
+msgstr "서버의 신원이 인증서의 신원과 일치하지 않습니다"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:79
 msgid "The server's certificate has expired"
-msgstr ""
+msgstr "서버 인증서가 만료되었습니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:82
 msgid "The server's certificate has not been activated"
-msgstr ""
+msgstr "서버의 인증서가 활성화되지 않았습니다"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:85
 msgid "The server's certificate has been revoked and is now invalid"
-msgstr ""
+msgstr "서버의 인증서가 폐지되어서 이제 유효하지 않습니다"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:88
 msgid "The server's certificate is considered insecure"
-msgstr ""
+msgstr "서버의 인증서가 안전하지 않은 것으로 여겨집니다"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:91
 msgid "An error has occurred processing the server's certificate"
-msgstr ""
+msgstr "서버의 인증을 하던 중 오류가 생겼습니다"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 msgid "Geary requires your email password to continue"
-msgstr ""
+msgstr "계속하려면 기어리에 여러분의 이메일 비밀번호가 필요합니다"
 
 #: ../src/client/dialogs/attachment-dialog.vala:18
 msgid "Choose a file"
-msgstr ""
+msgstr "파일을 선택하세요"
 
 #: ../src/client/dialogs/attachment-dialog.vala:23
 msgid "_Attach"
-msgstr ""
+msgstr "첨부(_A)"
 
 #. /clear widgets
 #: ../src/client/accounts/account-dialog-edit-alternate-emails-pane.vala:124
 msgid "Additional addresses for %s"
-msgstr ""
+msgstr "%s용 추가 주소"
 
 #: ../src/client/accounts/account-dialog.vala:21
 msgid "Accounts"
-msgstr ""
+msgstr "계정"
 
 #. / Placeholder text indicating that the user should type their first name and last name
 #: ../src/client/accounts/add-edit-page.vala:10
 msgid "First Last"
-msgstr ""
+msgstr "처음 마지막"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 msgid "Welcome to Geary."
-msgstr ""
+msgstr "기어리 사용을 환영합니다."
 
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
 msgid "Enter your account information to get started."
-msgstr ""
+msgstr "시작하려면 계정 정보를 입력하세요."
 
 #: ../src/client/accounts/add-edit-page.vala:253
 #: ../src/client/accounts/add-edit-page.vala:254
 msgid "2 weeks back"
-msgstr ""
+msgstr "2 주 전"
 
 #: ../src/client/accounts/add-edit-page.vala:254
 #: ../src/client/accounts/add-edit-page.vala:255
 msgid "1 month back"
-msgstr ""
+msgstr "1 개월 전"
 
 #: ../src/client/accounts/add-edit-page.vala:255
 #: ../src/client/accounts/add-edit-page.vala:256
 msgid "3 months back"
-msgstr ""
+msgstr "3 개월 전"
 
 #: ../src/client/accounts/add-edit-page.vala:256
 #: ../src/client/accounts/add-edit-page.vala:257
 msgid "6 months back"
-msgstr ""
+msgstr "6 개월 전"
 
 #: ../src/client/accounts/add-edit-page.vala:257
 #: ../src/client/accounts/add-edit-page.vala:258
 msgid "1 year back"
-msgstr ""
+msgstr "1 년 전"
 
 #: ../src/client/accounts/add-edit-page.vala:258
 #: ../src/client/accounts/add-edit-page.vala:259
 msgid "2 years back"
-msgstr ""
+msgstr "2 년 전"
 
 #: ../src/client/accounts/add-edit-page.vala:259
 #: ../src/client/accounts/add-edit-page.vala:260
 msgid "4 years back"
-msgstr ""
+msgstr "4 년 전"
 
 #: ../src/client/accounts/add-edit-page.vala:261
 #: ../src/client/accounts/add-edit-page.vala:262
 msgid "Everything"
-msgstr ""
+msgstr "모두"
 
 #: ../src/client/accounts/add-edit-page.vala:280
 #: ../src/client/accounts/add-edit-page.vala:281
 msgid "Edit"
-msgstr ""
+msgstr "수정"
 
 #: ../src/client/accounts/add-edit-page.vala:282
 #: ../src/client/accounts/add-edit-page.vala:283
 msgid "Preview"
-msgstr ""
+msgstr "미리 보기"
 
 #: ../src/client/accounts/add-edit-page.vala:723
 #: ../src/client/accounts/add-edit-page.vala:725
 msgid "Remem_ber passwords"
-msgstr ""
+msgstr "비밀 번호 저장(_B)"
 
 #: ../src/client/accounts/add-edit-page.vala:730
 #: ../src/client/accounts/add-edit-page.vala:732 ../data/ui/login.ui:62
 msgid "Remem_ber password"
-msgstr ""
+msgstr "비밀 번호 저장(_B)"
 
 #: ../src/client/accounts/add-edit-page.vala:764
 #: ../src/client/accounts/add-edit-page.vala:766
 msgid "Unable to validate:\n"
-msgstr ""
+msgstr "유효한지 확인할 수 없습니다:\n"
 
 #: ../src/client/accounts/add-edit-page.vala:766
 #: ../src/client/accounts/add-edit-page.vala:768
 msgid "        &#8226; Invalid account nickname.\n"
-msgstr ""
+msgstr "        &#8226; 사용자 계정 닉네임이 다릅니다.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:769
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Geary.\n"
-msgstr ""
+msgstr "        &#8226; 기어리에 이미 등록된 이메일 주소입니다.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:773
 #: ../src/client/accounts/add-edit-page.vala:775
 msgid "        &#8226; IMAP connection error.\n"
-msgstr ""
+msgstr "        &#8226; IMAP 연결 오류.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:776
 #: ../src/client/accounts/add-edit-page.vala:778
 msgid "        &#8226; IMAP username or password incorrect.\n"
-msgstr ""
+msgstr "        &#8226; IMAP 사용자 계정이나 비밀번호가 다릅니다.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:779
 #: ../src/client/accounts/add-edit-page.vala:781
 msgid "        &#8226; SMTP connection error.\n"
-msgstr ""
+msgstr "        &#8226; SMTP 연결 오류.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:782
 #: ../src/client/accounts/add-edit-page.vala:784
 msgid "        &#8226; SMTP username or password incorrect.\n"
-msgstr ""
+msgstr "        &#8226; SMTP 사용자 계정이나 비밀번호가 다릅니다.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:786
 #: ../src/client/accounts/add-edit-page.vala:788
 msgid "        &#8226; Connection error.\n"
-msgstr ""
+msgstr "        &#8226; 연결 오류.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:790
 #: ../src/client/accounts/add-edit-page.vala:792
 msgid "        &#8226; Username or password incorrect.\n"
-msgstr ""
+msgstr "        &#8226; 사용자 계정이나 비밀번호가 다릅니다.\n"
 
 #: ../src/client/accounts/account-dialog-add-edit-pane.vala:51
 #: ../src/client/components/stock.vala:31
 #: ../src/client/components/stock.vala:30
 msgid "_Save"
-msgstr ""
+msgstr "저장(_S)"
 
 #: ../src/client/accounts/account-dialog-add-edit-pane.vala:51
 #: ../src/client/components/stock.vala:22
 msgid "_Add"
-msgstr ""
+msgstr "추가(_A)"
 
 #. / Datetime format for 12-hour time, i.e. 8:31 am
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
@@ -1237,14 +1245,14 @@ msgstr ""
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/client/util/util-date.vala:78
 msgid "%b %-e"
-msgstr ""
+msgstr "%b %-e일"
 
 #. / Date format for dates within a different year, i.e. 02/04/10
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/client/util/util-date.vala:83
 #, no-c-format
 msgid "%x"
-msgstr ""
+msgstr "%x"
 
 #. / Verbose datetime format for 12-hour time, i.e. November 8, 2010 8:42 am
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
@@ -1267,120 +1275,114 @@ msgstr ""
 
 #: ../src/client/util/util-date.vala:164
 msgid "Now"
-msgstr ""
+msgstr "현재"
 
 #: ../src/client/util/util-date.vala:167
 msgid "%dm ago"
 msgid_plural "%dm ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d분 전"
 
 #: ../src/client/util/util-date.vala:171
 msgid "%dh ago"
 msgid_plural "%dh ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d시간 전"
 
 #: ../src/client/util/util-date.vala:178
 msgid "Yesterday"
-msgstr ""
+msgstr "어제"
 
 #. / Date format that shows the weekday (Monday, Tuesday, ...)
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/client/util/util-date.vala:183
 msgid "%A"
-msgstr ""
+msgstr "%A"
 
 #: ../src/client/util/util-files.vala:16
 msgid "bytes"
-msgstr ""
+msgstr "바이트"
 
 #: ../src/client/util/util-files.vala:19
 msgctxt "Abbreviation for terabyte"
 msgid "TB"
-msgstr ""
+msgstr "TB"
 
 #: ../src/client/util/util-files.vala:22
 msgctxt "Abbreviation for gigabyte"
 msgid "GB"
-msgstr ""
+msgstr "GB"
 
 #: ../src/client/util/util-files.vala:25
 msgctxt "Abbreviation for megabyte"
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #: ../src/client/util/util-files.vala:28
 msgctxt "Abbreviation for kilobyte"
 msgid "KB"
-msgstr ""
+msgstr "KB"
 
 #: ../src/client/folder-list/folder-list-folder-entry.vala:32
 msgid "%d message"
 msgid_plural "%d messages"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "메시지 %d개"
 
 #. / Label displaying number of unread email messages in a folder
 #: ../src/client/folder-list/folder-list-folder-entry.vala:39
 msgid "%d unread"
 msgid_plural "%d unread"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d개 읽지 않음"
 
 #. / This string represents the divider between two messages: "n messages" and "n unread",
 #. / shown in the folder list as a tooltip.  Please use your languages conventions for
 #. / combining the two, i.e. a comma (",") for English; "6 messages, 3 unread"
 #: ../src/client/folder-list/folder-list-folder-entry.vala:45
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #: ../src/client/folder-list/folder-list-inboxes-branch.vala:14
 msgid "Inboxes"
-msgstr ""
+msgstr "받은 편지함"
 
 #: ../src/client/folder-list/folder-list-search-branch.vala:39
 #: ../src/client/components/search-bar.vala:129
 msgid "Search %s account"
-msgstr ""
+msgstr "%s 계정 검색"
 
 #: ../src/client/folder-list/folder-list-search-branch.vala:44
 msgid "%d result"
 msgid_plural "%d results"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "검색 결과 %d개"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:413
 #: ../src/client/conversation-viewer/conversation-viewer.vala:415
 msgid "No conversations selected."
-msgstr ""
+msgstr "선택한 대화 없음."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:415
 #: ../src/client/conversation-viewer/conversation-viewer.vala:417
 msgid "%u conversation selected."
 msgid_plural "%u conversations selected."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u 대화 선태함."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:444
 #: ../src/client/conversation-viewer/conversation-viewer.vala:446
 msgid "No search results found."
-msgstr ""
+msgstr "검색 결과가 없습니다."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:446
 #: ../src/client/conversation-viewer/conversation-viewer.vala:448
 msgid "No conversations in folder."
-msgstr ""
+msgstr "폴더에 대화가 없습니다."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:708
 #: ../src/client/conversation-viewer/conversation-viewer.vala:713
 msgid "This message contains remote images."
-msgstr ""
+msgstr "이 메시지는 원격 이미지를 포함하고 있습니다."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:708
 #: ../src/client/conversation-viewer/conversation-viewer.vala:713
 msgid "Show Images"
-msgstr ""
+msgstr "이미지 표시"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:709
 #: ../src/client/conversation-viewer/conversation-viewer.vala:714
@@ -2396,6 +2398,9 @@ msgid ""
 "\n"
 "Please check your network connection and restart Mail."
 msgstr ""
+"로컬 계정을 여는 동안 오류가 생겼습니다. 인터넷 연결 문제가 아닌가 합니다.\n"
+"\n"
+"네트워크 연결을 확인하시고 기어리를 다시 시작해주세요."
 
 #: ../src/client/application/geary-controller.vala:2402
 #: ../src/client/application/geary-controller.vala:2404
