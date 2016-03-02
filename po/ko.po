@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-02-18 18:26-0800\n"
-"PO-Revision-Date: 2016-03-01 03:23+0000\n"
+"PO-Revision-Date: 2016-03-02 05:10+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-03-01 06:00+0000\n"
+"X-Launchpad-Export-Date: 2016-03-02 05:54+0000\n"
 "X-Generator: Launchpad (build 17925)\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -70,7 +70,7 @@ msgstr "스팸 메일함"
 
 #: ../src/engine/api/geary-special-folder-type.vala:45
 msgid "Trash"
-msgstr "휴지통으로"
+msgstr "휴지통"
 
 #: ../src/engine/api/geary-special-folder-type.vala:48
 msgid "Outbox"
@@ -182,30 +182,30 @@ msgstr "(제목 없음)"
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/engine/rfc822/rfc822-utils.vala:215
 msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr ""
+msgstr "%Y년 %a, %b %-e일, %p %-l:%M"
 
 #. / The quoted header for a message being replied to.
 #. / %1$s will be substituted for the date, and %2$s will be substituted for
 #. / the original sender.
 #: ../src/engine/rfc822/rfc822-utils.vala:221
 msgid "On %1$s, %2$s wrote:"
-msgstr ""
+msgstr "%1$s 에, %2$s 작성:"
 
 #. / The quoted header for a message being replied to (in case the date is not known).
 #. / %s will be replaced by the original sender.
 #: ../src/engine/rfc822/rfc822-utils.vala:228
 msgid "%s wrote:"
-msgstr ""
+msgstr "%s 작성함:"
 
 #. / The quoted header for a message being replied to (in case the sender is not known).
 #. / %s will be replaced by the original date
 #: ../src/engine/rfc822/rfc822-utils.vala:234
 msgid "On %s:"
-msgstr ""
+msgstr "%s 작성 됨:"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:263
 msgid "---------- Forwarded message ----------"
-msgstr "전달된 메시지"
+msgstr "전달 내용"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:267
 msgid "From: %s\n"
@@ -460,7 +460,7 @@ msgstr "옮기기(M)"
 #: ../src/client/application/geary-controller.vala:430
 #: ../src/client/application/geary-controller.vala:425
 msgid "Compose new message (Ctrl+N, N)"
-msgstr "새 메일 쓰기 (Ctrl+N, N)"
+msgstr "새 편지 쓰기 (Ctrl+N, N)"
 
 #: ../src/client/application/geary-controller.vala:440
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1857
@@ -490,14 +490,14 @@ msgstr "전체 답장 (Ctrl+Shift+R, Shift+R)"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1867
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1872
 msgid "_Forward"
-msgstr "다음(F)"
+msgstr "전달(_F)"
 
 #: ../src/client/application/geary-controller.vala:452
 #: ../src/client/application/geary-controller.vala:451
 #: ../src/client/application/geary-controller.vala:446
 #: ../src/client/application/geary-controller.vala:441
 msgid "Forward (Ctrl+L, F)"
-msgstr "다음 (Ctrl+L, F)"
+msgstr "전달 (Ctrl+L, F)"
 
 #: ../src/client/application/geary-controller.vala:491
 #: ../src/client/application/geary-controller.vala:490
@@ -802,7 +802,7 @@ msgstr "바꾸기(R)"
 #: ../src/client/application/geary-controller.vala:2271
 #: ../src/client/application/geary-controller.vala:2273
 msgid "Close open draft messages?"
-msgstr "임시 보관함의 메시지를 닫을까요?"
+msgstr "임시 보관함의 편지를 닫을까요?"
 
 #: ../src/client/application/geary-controller.vala:2439
 #: ../src/client/application/geary-controller.vala:2433
@@ -843,7 +843,7 @@ msgstr "%s 비우기 오류 발생"
 #: ../src/client/application/geary-controller.vala:2453
 msgid "Do you want to permanently delete this message?"
 msgid_plural "Do you want to permanently delete these messages?"
-msgstr[0] "이 메시지를 완전히 지우시겠습니까?"
+msgstr[0] "이 편지를 완전히 지우시겠습니까?"
 
 #: ../src/client/application/geary-controller.vala:2491
 #: ../src/client/application/geary-controller.vala:2485
@@ -864,7 +864,7 @@ msgstr "보관하기 취소 (Ctrl+Z)"
 #: ../src/client/application/geary-controller.vala:2499
 #: ../src/client/application/geary-controller.vala:2501
 msgid "Undo trash (Ctrl+Z)"
-msgstr "휴지통으로 취소"
+msgstr "휴지통 취소"
 
 #: ../src/client/application/geary-controller.vala:2590
 #: ../src/client/application/geary-controller.vala:2584
@@ -965,19 +965,19 @@ msgstr "알 수 없는 명령 줄 옵션 \"%s\"\n"
 
 #: ../src/client/notification/libmessagingmenu.vala:75
 msgid "%s - New Messages"
-msgstr "%s - 새 메시지"
+msgstr "%s - 새 편지"
 
 #: ../src/client/notification/libnotify.vala:72
 #: ../src/client/notification/libnotify.vala:71
 msgid "%d new message"
 msgid_plural "%d new messages"
-msgstr[0] "새 메시지 %d개"
+msgstr[0] "새 편지 %d개"
 
 #: ../src/client/notification/libnotify.vala:75
 #: ../src/client/notification/libnotify.vala:74
 msgid "%s, %d new message total"
 msgid_plural "%s, %d new messages total"
-msgstr[0] "%s, 총 %d개의 새 메시지"
+msgstr[0] "%s, 총 %d개의 새 편지"
 
 #: ../src/client/notification/libnotify.vala:107
 #: ../src/client/notification/libnotify.vala:105
@@ -989,7 +989,7 @@ msgid_plural ""
 "(%d other new messages for %s)"
 msgstr[0] ""
 "%s\n"
-"(%s의 다른 메시지 %d개)"
+"(%s의 다른 편지 %d개)"
 
 #: ../src/client/notification/libnotify.vala:160
 #: ../src/client/notification/libnotify.vala:158
@@ -1226,20 +1226,20 @@ msgstr "추가(_A)"
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/client/util/util-date.vala:68
 msgid "%l:%M %P"
-msgstr ""
+msgstr "%p %l:%M"
 
 #. / Datetime format for 24-hour time, i.e. 16:35
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/client/util/util-date.vala:71
 msgid "%H:%M"
-msgstr ""
+msgstr "%H:%M"
 
 #. / Datetime format for the locale default, i.e. 8:31 am or 16:35,
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/client/util/util-date.vala:74
 msgctxt "Default clock format"
 msgid "%l:%M %P"
-msgstr ""
+msgstr "%p %l:%M"
 
 #. / Date format for dates within the current year, i.e. Nov 8
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
@@ -1258,20 +1258,20 @@ msgstr "%x"
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/client/util/util-date.vala:88
 msgid "%B %-e, %Y %-l:%M %P"
-msgstr ""
+msgstr "%Y년 %B %-e일, %P %-l:%M"
 
 #. / Verbose datetime format for 24-hour time, i.e. November 8, 2010 16:35
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/client/util/util-date.vala:91
 msgid "%B %-e, %Y %-H:%M"
-msgstr ""
+msgstr "%Y년 %B %-e일, %-H:%M"
 
 #. / Verbose datetime format for the locale default (full month, day and time)
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/client/util/util-date.vala:94
 msgctxt "Default full date"
 msgid "%B %-e, %Y %-l:%M %P"
-msgstr ""
+msgstr "%Y년 %B %-e일, %P %-l:%M"
 
 #: ../src/client/util/util-date.vala:164
 msgid "Now"
@@ -1324,7 +1324,7 @@ msgstr "KB"
 #: ../src/client/folder-list/folder-list-folder-entry.vala:32
 msgid "%d message"
 msgid_plural "%d messages"
-msgstr[0] "메시지 %d개"
+msgstr[0] "%d개의 편지"
 
 #. / Label displaying number of unread email messages in a folder
 #: ../src/client/folder-list/folder-list-folder-entry.vala:39
@@ -1377,7 +1377,7 @@ msgstr "폴더에 대화가 없습니다."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:708
 #: ../src/client/conversation-viewer/conversation-viewer.vala:713
 msgid "This message contains remote images."
-msgstr "이 메시지는 원격 이미지를 포함하고 있습니다."
+msgstr "이 편지는 원격 이미지를 포함하고 있습니다."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:708
 #: ../src/client/conversation-viewer/conversation-viewer.vala:713
@@ -1387,185 +1387,183 @@ msgstr "이미지 표시"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:709
 #: ../src/client/conversation-viewer/conversation-viewer.vala:714
 msgid "Always Show From Sender"
-msgstr ""
+msgstr "보내는 사람 언제나 표시"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:733
 #: ../src/client/conversation-viewer/conversation-viewer.vala:738
 msgid "Edit Draft"
-msgstr ""
+msgstr "임시 보관함 편집"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:809
 #: ../src/client/conversation-viewer/conversation-viewer.vala:814
 msgid "From:"
-msgstr ""
+msgstr "보내는 사람:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:812
 #: ../src/client/conversation-viewer/conversation-viewer.vala:817
 msgid "To:"
-msgstr ""
+msgstr "받는 사람:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:815
 #: ../src/client/conversation-viewer/conversation-viewer.vala:820
 msgid "Cc:"
-msgstr ""
+msgstr "함께 받는 사람:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:818
 #: ../src/client/conversation-viewer/conversation-viewer.vala:823
 msgid "Bcc:"
-msgstr ""
+msgstr "숨겨 받는 사람:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:821
 #: ../src/client/conversation-viewer/conversation-viewer.vala:826
 msgid "Subject:"
-msgstr ""
+msgstr "제목:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:824
 #: ../src/client/conversation-viewer/conversation-viewer.vala:829
 msgid "Date:"
-msgstr ""
+msgstr "날짜:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1139
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1144
 msgid "%u read message"
 msgid_plural "%u read messages"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "읽은 편지 %u"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1271
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1276
 msgid "This message was sent successfully, but could not be saved to %s."
-msgstr ""
+msgstr "편지는 제대로 보내졌지만, %s에 저장할 수 없습니다."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1297
 #: ../data/ui/composer.ui:29
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1302
 msgid "_Copy"
-msgstr ""
+msgstr "복사(_C)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1305
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1310
 msgid "Copy _Email Address"
-msgstr ""
+msgstr "이메일 주소 복사(_E)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1310
 #: ../data/ui/composer.ui:106
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1315
 msgid "Copy _Link"
-msgstr ""
+msgstr "링크 복사(_L)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1318
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1323
 msgid "Select _Message"
-msgstr ""
+msgstr "편지 선택(_M)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1324
 #: ../src/client/components/stock.vala:32
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1329
 #: ../src/client/components/stock.vala:31
 msgid "Select _All"
-msgstr ""
+msgstr "모두 선택(_A)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1330
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1335
 msgid "_Inspect"
-msgstr ""
+msgstr "검사(_I)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1556
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1561
 msgid "This link appears to go to"
-msgstr ""
+msgstr "이 링크는  이곳으로 가게 된 것으로 보입니다"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1557
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1562
 msgid "but actually goes to"
-msgstr ""
+msgstr "하지만 실제로는  이곳으로 갑니다"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1612
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1617
 msgid " (Invalid?)"
-msgstr ""
+msgstr " (무효?)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1718
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1723
 msgid "_Save Image As..."
-msgstr ""
+msgstr "다른 이름으로 그림 저장(_S)..."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1822
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 msgid "_Save As..."
-msgstr ""
+msgstr "다른 이름으로 저장(_S)..."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1832
 msgid "Save All A_ttachments..."
-msgstr ""
+msgstr "모든 첨부 파일 저장(_T)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1847
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1852
 msgid "Save A_ttachment..."
 msgid_plural "Save All A_ttachments..."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "모든 첨부 파일 저장(_T)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1862
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1867
 msgid "Reply to _All"
-msgstr ""
+msgstr "모두 답장(_A)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1879
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1884
 msgid "_Mark as Read"
-msgstr ""
+msgstr "읽음으로 표시(_M)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1883
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1888
 msgid "_Mark as Unread"
-msgstr ""
+msgstr "안 읽음으로 표시(_M)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1889
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1894
 msgid "Mark Unread From _Here"
-msgstr ""
+msgstr "여기부터 읽지 않음으로 표시(_H)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1904
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1909
 msgid "_View Source"
-msgstr ""
+msgstr "소스 보기(_V)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2362
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2367
 msgid "Failed to open default text editor."
-msgstr ""
+msgstr "기본 텍스트 편집기를 열지 못 했습니다."
 
 #: ../src/client/conversation-viewer/conversation-web-view.vala:322
 msgid "%s - Conversation Inspector"
-msgstr ""
+msgstr "%s - 대화 검사기"
 
 #: ../src/client/composer/composer-widget.vala:73
 msgid "Saved"
-msgstr ""
+msgstr "저장됨"
 
 #: ../src/client/composer/composer-widget.vala:74
 msgid "Saving"
-msgstr ""
+msgstr "저장 중"
 
 #: ../src/client/composer/composer-widget.vala:75
 msgid "Error saving"
-msgstr ""
+msgstr "저장 중 오류"
 
 #: ../src/client/composer/composer-widget.vala:76
 msgid "Press Backspace to delete quote"
-msgstr ""
+msgstr "백스페이스를 눌러서 인용부호를 지웁니다"
 
 #: ../src/client/composer/composer-widget.vala:77
 msgid "New Message"
-msgstr ""
+msgstr "새 편지"
 
 #: ../src/client/composer/composer-widget.vala:138
 msgid ""
 "attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
 "closing|encloses|enclosure|enclosures"
-msgstr ""
+msgstr "첨부|첨부하기|첨부파일|첨부|첨부파일|첨부한|동봉|동봉한|동봉|동봉|동봉함|동봉물"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -1574,195 +1572,193 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1094
 #: ../src/client/composer/composer-widget.vala:1098
 msgid "Do you want to discard this message?"
-msgstr ""
+msgstr "이 편지를 버릴까요?"
 
 #: ../src/client/composer/composer-widget.vala:1262
 #: ../src/client/composer/composer-widget.vala:1257
 #: ../src/client/composer/composer-widget.vala:1254
 msgid "Send message with an empty subject and body?"
-msgstr ""
+msgstr "제목과 내용 없이 편지를 보낼까요?"
 
 #: ../src/client/composer/composer-widget.vala:1264
 #: ../src/client/composer/composer-widget.vala:1259
 #: ../src/client/composer/composer-widget.vala:1256
 msgid "Send message with an empty subject?"
-msgstr ""
+msgstr "제목 없이 편지를 보낼까요?"
 
 #: ../src/client/composer/composer-widget.vala:1266
 #: ../src/client/composer/composer-widget.vala:1261
 #: ../src/client/composer/composer-widget.vala:1258
 msgid "Send message with an empty body?"
-msgstr ""
+msgstr "내용 없이 편지를 보낼까요?"
 
 #: ../src/client/composer/composer-widget.vala:1268
 #: ../src/client/composer/composer-widget.vala:1263
 #: ../src/client/composer/composer-widget.vala:1260
 msgid "Send message without an attachment?"
-msgstr ""
+msgstr "첨부 파일 없이 메일을 보낼까요?"
 
 #: ../src/client/composer/composer-widget.vala:1530
 #: ../src/client/composer/composer-widget.vala:1525
 #: ../src/client/composer/composer-widget.vala:1522
 msgid "Cannot add attachment"
-msgstr ""
+msgstr "첨부할 수 없습니다"
 
 #: ../src/client/composer/composer-widget.vala:1541
 #: ../src/client/composer/composer-widget.vala:1536
 #: ../src/client/composer/composer-widget.vala:1533
 msgid "\"%s\" could not be found."
-msgstr ""
+msgstr "\"%s\"를 찾을 수 없습니다."
 
 #: ../src/client/composer/composer-widget.vala:1548
 #: ../src/client/composer/composer-widget.vala:1543
 #: ../src/client/composer/composer-widget.vala:1540
 msgid "\"%s\" is a folder."
-msgstr ""
+msgstr "\"%s\"는 폴더 입니다."
 
 #: ../src/client/composer/composer-widget.vala:1555
 #: ../src/client/composer/composer-widget.vala:1550
 #: ../src/client/composer/composer-widget.vala:1547
 msgid "\"%s\" is an empty file."
-msgstr ""
+msgstr "\"%s\"는 빈 파일입니다."
 
 #: ../src/client/composer/composer-widget.vala:1569
 #: ../src/client/composer/composer-widget.vala:1564
 #: ../src/client/composer/composer-widget.vala:1561
 msgid "\"%s\" could not be opened for reading."
-msgstr ""
+msgstr "\"%s\"읽어 볼 수 있게 열리지 않습니다."
 
 #: ../src/client/composer/composer-widget.vala:1576
 #: ../src/client/composer/composer-widget.vala:1571
 #: ../src/client/composer/composer-widget.vala:1568
 msgid "\"%s\" already attached for delivery."
-msgstr ""
+msgstr "\"%s\"에 이미 전달할 내용이 첨부되어있습니다."
 
 #. / In the composer, the filename followed by its filesize, i.e. "notes.txt (1.12KB)"
 #: ../src/client/composer/composer-widget.vala:1585
 #: ../src/client/composer/composer-widget.vala:1580
 #: ../src/client/composer/composer-widget.vala:1577
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: ../src/client/composer/composer-widget.vala:1645
 #: ../src/client/composer/composer-widget.vala:1640
 #: ../src/client/composer/composer-widget.vala:1637
 msgid "To: "
-msgstr ""
+msgstr "받는 사람: "
 
 #: ../src/client/composer/composer-widget.vala:1648
 #: ../src/client/composer/composer-widget.vala:1643
 #: ../src/client/composer/composer-widget.vala:1640
 msgid "Cc: "
-msgstr ""
+msgstr "함께 받는 사람: "
 
 #: ../src/client/composer/composer-widget.vala:1651
 #: ../src/client/composer/composer-widget.vala:1646
 #: ../src/client/composer/composer-widget.vala:1643
 msgid "Bcc: "
-msgstr ""
+msgstr "숨겨 받는 사람: "
 
 #: ../src/client/composer/composer-widget.vala:1654
 #: ../src/client/composer/composer-widget.vala:1649
 #: ../src/client/composer/composer-widget.vala:1646
 msgid "Reply-To: "
-msgstr ""
+msgstr "답장 하기: "
 
 #: ../src/client/composer/composer-widget.vala:1887
 #: ../src/client/composer/composer-widget.vala:1882
 #: ../src/client/composer/composer-widget.vala:1879
 msgid "Select Color"
-msgstr ""
+msgstr "색상 선택"
 
 #: ../src/client/composer/composer-widget.vala:2322
 #: ../src/client/composer/composer-widget.vala:2317
 #: ../src/client/composer/composer-widget.vala:2310
 msgid "%1$s via %2$s"
-msgstr ""
+msgstr "%2$s 를 경유해서 %1$s"
 
 #: ../src/client/composer/composer-widget.vala:2364
 #: ../src/client/composer/composer-widget.vala:2359
 #: ../src/client/composer/composer-widget.vala:2352
 msgid "_From:"
-msgstr ""
+msgstr "보내는 사람(_F)"
 
 #: ../src/client/components/main-window.vala:388
 #: ../src/client/components/main-window.vala:351
 msgid "%s (%d)"
-msgstr ""
+msgstr "%s (%d)"
 
 #. / Displayed in the space-limited status bar while a message is in the process of being sent.
 #: ../src/client/components/status-bar.vala:26
 msgid "Sending..."
-msgstr ""
+msgstr "보내는 중..."
 
 #: ../src/client/components/conversation-find-bar.vala:214
 msgid "%i match"
 msgid_plural "%i matches"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%i개 일치"
 
 #: ../src/client/components/conversation-find-bar.vala:216
 msgid "%i match (wrapped)"
 msgid_plural "%i matches (wrapped)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%i개 일치 (다해서)"
 
 #: ../src/client/components/conversation-find-bar.vala:218
 msgid "not found"
-msgstr ""
+msgstr "찾을 수 없음"
 
 #: ../src/client/components/stock.vala:18
 #: ../data/ui/account_cannot_remove.ui:74
 msgid "_OK"
-msgstr ""
+msgstr "확인(_O)"
 
 #: ../src/client/components/stock.vala:19 ../data/ui/remove_confirm.ui:153
 #: ../data/ui/edit_alternate_emails.ui:160 ../data/ui/password-dialog.ui:196
 msgid "_Cancel"
-msgstr ""
+msgstr "취소(_C)"
 
 #: ../src/client/components/stock.vala:23
 #: ../src/client/dialogs/preferences-dialog.vala:84
 #: ../src/client/dialogs/preferences-dialog.vala:92
 #: ../src/client/dialogs/preferences-dialog.vala:79
 msgid "_Close"
-msgstr ""
+msgstr "닫기(_C)"
 
 #: ../src/client/components/stock.vala:24
 msgid "_Discard"
-msgstr ""
+msgstr "버리기(_D)"
 
 #: ../src/client/components/stock.vala:26
 #: ../src/client/components/stock.vala:25
 msgid "_Open"
-msgstr ""
+msgstr "열기(_O)"
 
 #: ../src/client/components/stock.vala:28
 #: ../src/client/components/stock.vala:27
 msgid "_Print..."
-msgstr ""
+msgstr "인쇄(_P)..."
 
 #: ../src/client/components/stock.vala:30 ../data/ui/remove_confirm.ui:168
 #: ../src/client/components/stock.vala:29
 msgid "_Remove"
-msgstr ""
+msgstr "제거(_R)"
 
 #: ../src/client/components/stock.vala:33
 #: ../src/client/components/stock.vala:32
 msgid "_Keep"
-msgstr ""
+msgstr "보관(_K)"
 
 #: ../src/client/components/search-bar.vala:25
 #: ../src/client/components/main-toolbar.vala:83
 #: ../src/client/components/main-toolbar.vala:75
 msgid "Search all mail in account for keywords (Ctrl+S)"
-msgstr ""
+msgstr "계정의 모든 메일에서 키워드 검색 (Ctrl+S)"
 
 #: ../src/client/components/search-bar.vala:118
 #: ../src/client/components/main-toolbar.vala:300
 #: ../src/client/components/main-toolbar.vala:269
 msgid "Indexing %s account"
-msgstr ""
+msgstr "%s 계정 정돈"
 
 #: ../src/client/components/main-toolbar.vala:144
 #: ../src/client/composer/composer-headerbar.vala:90
@@ -1770,7 +1766,7 @@ msgstr ""
 #: ../src/client/composer/composer-headerbar.vala:75
 #: ../src/client/components/main-toolbar.vala:158
 msgid "Menu"
-msgstr ""
+msgstr "메뉴"
 
 #: ../src/client/application/geary-application.vala:25
 #: ../src/client/application/geary-application.vala:24
@@ -1780,569 +1776,570 @@ msgstr "이메일로 보내기"
 #: ../src/client/application/geary-application.vala:26
 #: ../src/client/application/geary-application.vala:25
 msgid "Send files using Mail"
-msgstr ""
+msgstr "기어리로 파일 보내기"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
 msgid "Welcome to Mail"
-msgstr ""
+msgstr "기어리 사용을 환영합니다"
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
 #: ../src/client/composer/composer-toolbar.vala:77
 msgid "More options"
-msgstr ""
+msgstr "추가 옵션"
 
 #: ../src/client/components/main-toolbar.vala:312
 #: ../src/client/components/main-toolbar.vala:281
 msgid "Search %s"
-msgstr ""
+msgstr "%s 찾기"
 
 #: ../src/client/dialogs/preferences-dialog.vala:23
 #: ../src/client/dialogs/preferences-dialog.vala:24
 msgid "Reading"
-msgstr ""
+msgstr "읽기"
 
 #: ../src/client/dialogs/preferences-dialog.vala:28
 #: ../src/client/dialogs/preferences-dialog.vala:29
 msgid "Automatically select next message:"
-msgstr ""
+msgstr "자동으로 다음 메일 선택:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:33
 #: ../src/client/dialogs/preferences-dialog.vala:34
 msgid "Conversation previews:"
-msgstr ""
+msgstr "대화 미리 보기:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:38
 #: ../src/client/dialogs/preferences-dialog.vala:39
 msgid "Three-pane layout:"
-msgstr ""
+msgstr "3 패널 레이아웃"
 
 #: ../src/client/dialogs/preferences-dialog.vala:42 ../data/ui/login.ui:853
 #: ../src/client/dialogs/preferences-dialog.vala:48
 msgid "Composer"
-msgstr ""
+msgstr "새 메일"
 
 #: ../src/client/dialogs/preferences-dialog.vala:47
 #: ../src/client/dialogs/preferences-dialog.vala:53
 msgid "Spell check:"
-msgstr ""
+msgstr "맞춤법 검사:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:51
 #: ../src/client/dialogs/preferences-dialog.vala:57
 #: ../src/client/dialogs/preferences-dialog.vala:47
 msgid "Notifications"
-msgstr ""
+msgstr "알림"
 
 #: ../src/client/dialogs/preferences-dialog.vala:56
 #: ../src/client/dialogs/preferences-dialog.vala:62
 #: ../src/client/dialogs/preferences-dialog.vala:52
 msgid "Always watch for new mail:"
-msgstr ""
+msgstr "항상 새 메일 확인:"
 
 #: ../src/client/application/geary-controller.vala:61
 #: ../src/client/application/geary-controller.vala:60
 #: ../src/client/application/geary-controller.vala:59
 msgid "Delete Conversation"
-msgstr ""
+msgstr "대화 지우기"
 
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
 #: ../src/client/application/geary-controller.vala:60
 msgid "Delete Conversation (Shift+Delete)"
-msgstr ""
+msgstr "대화 지우기 (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete Conversations (Shift+Delete)"
-msgstr ""
+msgstr "대화 지우기 (Shift+Delete)"
 
 #: ../data/ui/remove_confirm.ui:43
 msgid ""
 "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
 "account?</span> "
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"larger\">이 계정을 정말 제거하시겠습니까?</span> "
 
 #: ../data/ui/remove_confirm.ui:58
 msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
-msgstr ""
+msgstr "컴퓨터에서 이 계정과 연관된 모든 이메일이 지워지게 됩니다. 서버에 있는 이메일에는 영향을 주지 않습니다."
 
 #: ../data/ui/remove_confirm.ui:80
 msgid "Nickname:"
-msgstr ""
+msgstr "닉네임:"
 
 #: ../data/ui/remove_confirm.ui:94
 msgid "Email address:"
-msgstr ""
+msgstr "이메일 주소:"
 
 #: ../data/ui/find_bar.ui:59
 msgid "Find"
-msgstr ""
+msgstr "찾기"
 
 #: ../data/ui/find_bar.ui:72
 msgid "Previous Result"
-msgstr ""
+msgstr "이전 결과"
 
 #: ../data/ui/find_bar.ui:91
 msgid "Next result"
-msgstr ""
+msgstr "다음 결과"
 
 #: ../data/ui/find_bar.ui:107
 msgid "_Case sensitive"
-msgstr ""
+msgstr "대소문자 구별(_C)"
 
 #: ../data/ui/find_bar.ui:127
 msgid "label"
-msgstr ""
+msgstr "이름표"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr ""
+msgstr "기어리 업데이트 중..."
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
-msgstr ""
+msgstr "이메일 주소 지우기"
 
 #: ../data/ui/edit_alternate_emails.ui:136
 msgid ""
 "Some email services require additional addresses be configured on the "
 "server.  Contact your email provider for more information."
 msgstr ""
+"이메일 서비스 중에 더러 서버를 확인하기 위해 추가 주소들을 요구하기도 합니다. 더 많은 정보는 이메일 서비스 제공 업체에 문의해보세요."
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
-msgstr ""
+msgstr "업데이트(_U)"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
-msgstr ""
+msgstr "기어리가 계정을 확인하는 동안 기다려 주세요."
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
-msgstr ""
+msgstr "실행 취소(_U)"
 
 #: ../data/ui/composer.ui:15
 msgid "_Redo"
-msgstr ""
+msgstr "다시 실행(_R)"
 
 #: ../data/ui/composer.ui:22
 msgid "Cu_t"
-msgstr ""
+msgstr "잘라내기(_T)"
 
 #: ../data/ui/composer.ui:36
 msgid "_Paste"
-msgstr ""
+msgstr "붙여넣기(_P)"
 
 #: ../data/ui/composer.ui:43
 msgid "_Left"
-msgstr ""
+msgstr "왼쪽(_L)"
 
 #: ../data/ui/composer.ui:48
 msgid "_Right"
-msgstr ""
+msgstr "오른쪽(_R)"
 
 #: ../data/ui/composer.ui:53
 msgid "_Center"
-msgstr ""
+msgstr "가운데(_C)"
 
 #: ../data/ui/composer.ui:58
 msgid "_Justify"
-msgstr ""
+msgstr "균등(_J)"
 
 #: ../data/ui/composer.ui:63
 msgid "Link (Ctrl+L)"
-msgstr ""
+msgstr "링크 (Ctrl+L)"
 
 #: ../data/ui/composer.ui:70
 msgid "C_olor"
-msgstr ""
+msgstr "색상(_O)"
 
 #: ../data/ui/composer.ui:81
 msgid "Quote text  (Ctrl+])"
-msgstr ""
+msgstr "구문 인용  (Ctrl+])"
 
 #: ../data/ui/composer.ui:87
 msgid "Unquote text (Ctrl+[)"
-msgstr ""
+msgstr "구문 인용 취소(Ctrl+[)"
 
 #: ../data/ui/composer.ui:93
 msgid "Remove formatting (Ctrl+Space)"
-msgstr ""
+msgstr "서식 제거 (Ctrl+Space)"
 
 #: ../data/ui/composer.ui:100
 msgctxt "Clipboard paste with rich text"
 msgid "Paste _With Formatting"
-msgstr ""
+msgstr "서식을 유지한 채 붙이기(_W)"
 
 #: ../data/ui/composer.ui:111
 msgid "Bold (Ctrl+B)"
-msgstr ""
+msgstr "굵게 (Ctrl+B)"
 
 #: ../data/ui/composer.ui:118
 msgid "Italic (Ctrl+I)"
-msgstr ""
+msgstr "이탤릭 (Ctrl+I)"
 
 #: ../data/ui/composer.ui:125
 msgid "Underline (Ctrl+U)"
-msgstr ""
+msgstr "밑줄 (Ctrl+U)"
 
 #: ../data/ui/composer.ui:132
 msgid "Strikethrough (Ctrl+K)"
-msgstr ""
+msgstr "가운데 줄긋기 (Ctrl+K)"
 
 #: ../data/ui/composer.ui:139
 msgid "_Rich Text"
-msgstr ""
+msgstr "리치 텍스트(_R)"
 
 #: ../data/ui/composer.ui:145
 msgid "Show Extended Fields"
-msgstr ""
+msgstr "확장 필드 보기"
 
 #: ../data/ui/composer.ui:157
 msgctxt "Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "닫고 저장하기"
 
 #: ../data/ui/composer.ui:158
 msgctxt "Short Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "닫고 저장하기"
 
 #: ../data/ui/composer.ui:159
 msgctxt "Tooltip"
 msgid "Close and Save"
-msgstr ""
+msgstr "닫고 저장하기"
 
 #: ../data/ui/composer.ui:165
 msgctxt "Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "닫고 버리기"
 
 #: ../data/ui/composer.ui:166
 msgctxt "Short Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "닫고 버리기"
 
 #: ../data/ui/composer.ui:167
 msgctxt "Tooltip"
 msgid "Close and Discard"
-msgstr ""
+msgstr "닫고 버리기"
 
 #: ../data/ui/composer.ui:173
 msgid "Lar_ge"
-msgstr ""
+msgstr "크게(_G)"
 
 #: ../data/ui/composer.ui:174
 msgid "Large"
-msgstr ""
+msgstr "크게"
 
 #: ../data/ui/composer.ui:179
 msgid "_Medium"
-msgstr ""
+msgstr "중간(_M)"
 
 #: ../data/ui/composer.ui:180
 msgid "Medium"
-msgstr ""
+msgstr "중간"
 
 #: ../data/ui/composer.ui:185
 msgid "_Small"
-msgstr ""
+msgstr "작게(_S)"
 
 #: ../data/ui/composer.ui:186
 msgid "Small"
-msgstr ""
+msgstr "작게"
 
 #: ../data/ui/composer.ui:191
 msgid "S_ans Serif"
-msgstr ""
+msgstr "S_ans Serif"
 
 #: ../data/ui/composer.ui:192
 msgid "Sans Serif"
-msgstr ""
+msgstr "Sans Serif"
 
 #: ../data/ui/composer.ui:197
 msgid "S_erif"
-msgstr ""
+msgstr "S_erif"
 
 #: ../data/ui/composer.ui:198
 msgid "Serif"
-msgstr ""
+msgstr "Serif"
 
 #: ../data/ui/composer.ui:203
 msgid "_Fixed Width"
-msgstr ""
+msgstr "고정 폭(_F)"
 
 #: ../data/ui/composer.ui:204
 msgid "Fixed Width"
-msgstr ""
+msgstr "너비 고정"
 
 #: ../data/ui/composer.ui:209 ../data/ui/composer.ui:210
 msgid "Detach"
-msgstr ""
+msgstr "분리"
 
 #: ../data/ui/composer.ui:211
 msgid "Detach (Ctrl+D)"
-msgstr ""
+msgstr "분리 (Ctrl+D)"
 
 #: ../data/ui/composer.ui:218
 msgid "_Send"
-msgstr ""
+msgstr "보내기(_S)"
 
 #: ../data/ui/composer.ui:219
 msgid "Send"
-msgstr ""
+msgstr "보내기"
 
 #: ../data/ui/composer.ui:220
 msgid "Send (Ctrl+Enter)"
-msgstr ""
+msgstr "보내기 (Ctrl+Enter)"
 
 #: ../data/ui/composer.ui:226
 msgid "_Attach File"
-msgstr ""
+msgstr "파일 첨부(_A)"
 
 #: ../data/ui/composer.ui:227 ../data/ui/composer.ui:228
 msgid "Attach File"
-msgstr ""
+msgstr "파일 첨부"
 
 #: ../data/ui/composer.ui:234
 msgid "_Include Original Attachments"
-msgstr ""
+msgstr "첨부파일 원본 포함(_I)"
 
 #: ../data/ui/composer.ui:235 ../data/ui/composer.ui:236
 msgid "Include Original Attachments"
-msgstr ""
+msgstr "첨부파일 원본 포함"
 
 #: ../data/ui/composer.ui:242
 msgid "Application Menu"
-msgstr ""
+msgstr "애플리케이션 메뉴"
 
 #. Address(es) e-mail is to be sent to
 #: ../data/ui/composer.ui:289
 msgid "_To"
-msgstr ""
+msgstr "받는 사람(_T)"
 
 #: ../data/ui/composer.ui:308
 msgid "_Cc"
-msgstr ""
+msgstr "함께 받는 사람(_C)"
 
 #: ../data/ui/composer.ui:362
 msgid "_Subject"
-msgstr ""
+msgstr "제목(_S)"
 
 #: ../data/ui/composer.ui:381
 msgid "_Bcc"
-msgstr ""
+msgstr "숨겨 받는 사람(_B)"
 
 #: ../data/ui/composer.ui:411
 msgid "_Reply-To"
-msgstr ""
+msgstr "답장(_R)"
 
 #. Geary account mail will be sent from
 #. Account mail will be sent from
 #: ../data/ui/composer.ui:440
 msgid "From"
-msgstr ""
+msgstr "보내는 사람"
 
 #: ../data/ui/composer.ui:519
 msgid "Drop files here"
-msgstr ""
+msgstr "파일을 이곳에 두시오"
 
 #: ../data/ui/composer.ui:535
 msgid "To add them as attachments"
-msgstr ""
+msgstr "첨부 파일로 추가하기"
 
 #: ../data/ui/account_cannot_remove.ui:40
 msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"larger\">계정을 제거할 수 없습니다</span> "
 
 #: ../data/ui/account_cannot_remove.ui:56
 msgid ""
 "A composer window associated with this account is currently open. Send or "
 "discard the message and try again."
-msgstr ""
+msgstr "이 계정과 연관된 새 메일 창을 지금 열었습니다. 메일을 보내거나 버리고 다시 시도해 보세요."
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr ""
+msgstr "추가 이메일 주소(_T)..."
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
-msgstr ""
+msgstr "보낸 메일 저장(_S)"
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
-msgstr ""
+msgstr "비밀번호"
 
 #: ../data/ui/login.ui:97 ../data/ui/login.ui:545
 msgid "_Password:"
-msgstr ""
+msgstr "비밀번호(_P):"
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
-msgstr ""
+msgstr "이메일 주소(_M):"
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
-msgstr ""
+msgstr "작업, 홈, 기타."
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
-msgstr ""
+msgstr "닉네임(_N):"
 
 #: ../data/ui/login.ui:195
 msgid "N_ame:"
-msgstr ""
+msgstr "이름(_A):"
 
 #: ../data/ui/login.ui:211
 msgid "S_ervice:"
-msgstr ""
+msgstr "서비스(_E):"
 
 #: ../data/ui/login.ui:298
 msgid "IMAP settings"
-msgstr ""
+msgstr "IMAP 설정"
 
 #: ../data/ui/login.ui:315
 msgid "Se_rver:"
-msgstr ""
+msgstr "서버(_R):"
 
 #: ../data/ui/login.ui:347
 msgid "P_ort"
-msgstr ""
+msgstr "포트(_O)"
 
 #: ../data/ui/login.ui:409
 msgid "Ser_ver:"
-msgstr ""
+msgstr "서버(_V):"
 
 #: ../data/ui/login.ui:427
 msgid "Por_t"
-msgstr ""
+msgstr "포트(_T)"
 
 #: ../data/ui/login.ui:446
 msgid "SMTP settings"
-msgstr ""
+msgstr "SMTP 설정"
 
 #: ../data/ui/login.ui:462
 msgid "User_name:"
-msgstr ""
+msgstr "사용자이름(_N):"
 
 #: ../data/ui/login.ui:480
 msgid "Pass_word:"
-msgstr ""
+msgstr "비밀번호(_W)"
 
 #: ../data/ui/login.ui:499
 msgid "SMTP username"
-msgstr ""
+msgstr "SMTP 사용자 이름"
 
 #: ../data/ui/login.ui:514
 msgid "SMTP password"
-msgstr ""
+msgstr "SMTP 비밀번호"
 
 #: ../data/ui/login.ui:527
 msgid "_Username:"
-msgstr ""
+msgstr "사용자이름(_U):"
 
 #: ../data/ui/login.ui:564
 msgid "IMAP username"
-msgstr ""
+msgstr "IMAP 사용자 이름"
 
 #: ../data/ui/login.ui:579
 msgid "IMAP password"
-msgstr ""
+msgstr "IMAP 비밀번호"
 
 #: ../data/ui/login.ui:593
 msgid "Encr_yption:"
-msgstr ""
+msgstr "암호화(_Y):"
 
 #: ../data/ui/login.ui:613
 msgid "Encrypt_ion:"
-msgstr ""
+msgstr "암호화(_I):"
 
 #: ../data/ui/login.ui:634 ../data/ui/login.ui:651
 msgid "SSL/TLS"
-msgstr ""
+msgstr "SSL/TLS"
 
 #: ../data/ui/login.ui:635 ../data/ui/login.ui:652
 msgid "STARTTLS"
-msgstr ""
+msgstr "STARTTLS"
 
 #: ../data/ui/login.ui:663
 msgid "No authentication re_quired"
-msgstr ""
+msgstr "인증 필요 없음(_Q)"
 
 #: ../data/ui/login.ui:679
 msgid "Use IMAP cre_dentials"
-msgstr ""
+msgstr "IMAP 신임장 사용하기(_C)"
 
 #: ../data/ui/login.ui:783
 msgid "Storage"
-msgstr ""
+msgstr "저장 장치"
 
 #: ../data/ui/login.ui:804
 msgid "_Download mail"
-msgstr ""
+msgstr "메일 다운로드(_D)"
 
 #: ../data/ui/login.ui:867
 msgid "Save dra_fts on server"
-msgstr ""
+msgstr "임시 보관함 서버에 저장하기(_F)"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr ""
+msgstr "이메일(G) 사인 (HTML 가능):"
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
-msgstr ""
+msgstr "계정 추가"
 
 #: ../data/ui/account_list.ui:82
 msgid "Edit account"
-msgstr ""
+msgstr "계정 편집"
 
 #: ../data/ui/account_list.ui:95
 msgid "Remove account"
-msgstr ""
+msgstr "계정 삭제"
 
 #: ../data/ui/certificate_warning_dialog.ui:7
 msgid "Untrusted Connection"
-msgstr ""
+msgstr "신뢰할 수 없는 연결"
 
 #: ../data/ui/certificate_warning_dialog.ui:29
 msgid "_Always Trust This Server"
-msgstr ""
+msgstr "언제나 이 서버를 신뢰합니다(_A)"
 
 #: ../data/ui/certificate_warning_dialog.ui:43
 msgid "_Trust This Server"
-msgstr ""
+msgstr "이 서버를 신뢰합니다(_T)"
 
 #: ../data/ui/certificate_warning_dialog.ui:57
 msgid "_Don't Trust This Server"
-msgstr ""
+msgstr "이 서버를 신뢰하지 않습니다(_D)"
 
 #: ../data/ui/password-dialog.ui:74
 msgid "SMTP Credentials"
-msgstr ""
+msgstr "SMTP 신임장"
 
 #: ../data/ui/password-dialog.ui:91
 msgid "Username"
-msgstr ""
+msgstr "사용자 이름"
 
 #: ../data/ui/password-dialog.ui:152
 msgid "_Remember password"
-msgstr ""
+msgstr "비밀번호 저장(_R)"
 
 #: ../data/ui/password-dialog.ui:210
 msgid "_Authenticate"
-msgstr ""
+msgstr "인증(_A)"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
-msgstr ""
+msgstr "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
 
 #: ../src/client/application/geary-application.vala:21
 #: ../src/client/application/geary-application.vala:20
 msgid "Website"
-msgstr ""
+msgstr "웹 사이트"
 
 #: ../src/client/application/geary-controller.vala:1052
 #: ../src/client/application/geary-controller.vala:1046
@@ -2350,13 +2347,14 @@ msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
 msgstr ""
+"기어리(Geary)가 이메일을 보내는 도중 오류가 생겼습니다. 문제가 지속되면, 보낸 편지함 폴더에서 이메일을 직접 지워주세요."
 
 #: ../src/client/application/geary-controller.vala:1057
 #: ../src/client/application/geary-controller.vala:1051
 msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
-msgstr ""
+msgstr "기어리(Geary)가 보낸 메일을 저장하는 도중 오류가 생겼습니다. 메일은 지우지 않으면 보낸 편지함 폴더에 있습니다."
 
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
@@ -2389,6 +2387,10 @@ msgid ""
 "\n"
 "Please install the latest version of Mail and try again."
 msgstr ""
+"로컬 메일 데이터 베이스의 버전 번호가 새 버전의 기어리를 위해서 포맷되었습니다. 안타깝게도, 현재 버전의 기어리 사용을 위해 데이터 "
+"베이스를 \"되돌릴\" 수 없습니다.\n"
+"\n"
+"최신 버전의 기어리를 설치하시고 다시 실행해 보세요."
 
 #: ../src/client/application/geary-controller.vala:1195
 #: ../src/client/application/geary-controller.vala:1189
@@ -2405,59 +2407,61 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2402
 #: ../src/client/application/geary-controller.vala:2404
 msgid "This removes the email from Mail and your email server."
-msgstr ""
+msgstr "기어리와 메일 서버 안의 모든 메일을 지우게 됩니다."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
-msgstr ""
+msgstr "        &#8226; 기어리에 이미 등록된 이메일 주소입니다.\n"
 
 #: ../src/client/dialogs/preferences-dialog.vala:44
 #: ../src/client/dialogs/preferences-dialog.vala:43
 msgid "Always show remote images:"
-msgstr ""
+msgstr "원격 미이지 항상 표시:"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 msgid "Mail requires your email password to continue"
-msgstr ""
+msgstr "계속하려면 기어리에 여러분의 이메일 비밀번호가 필요합니다"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail not to access this "
 "server."
-msgstr ""
+msgstr "\"이 서버를 신뢰하지 않습니다\"를 선택하게 되면 기어리가 이 서버에 접근하지 못하게 될 수 있습니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Mail will not add or update this email account."
-msgstr ""
+msgstr "기어리는 이 메일 계정을 업데이트하거나 추가하지 않습니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail to stop accessing this "
 "account."
-msgstr ""
+msgstr "\"이 서버를 신뢰하지 않습니다\"를 선택하게 되면 기어리가 이 계정의 접근을 중단할 수 있습니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Mail will exit if you have no other open email accounts."
-msgstr ""
+msgstr "열려 있는 다른 이메일 계정이 없다면 기어리를 끝내겠습니다."
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Mail validates your account."
-msgstr ""
+msgstr "기어리가 계정을 확인하는 동안 기다려 주세요."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr ""
+msgstr "기어리 업데이트 중..."
 
 #: ../src/client/components/main-toolbar.vala:26
 msgid "Search Mail"
-msgstr ""
+msgstr "메일 검색"
 
 #: ../src/client/application/geary-application.vala:18
 msgid ""
 "2011-2015 Yorba Foundation\n"
 "© 2016 elementary LLC."
 msgstr ""
+"2011-2015 Yorba Foundation\n"
+"© 2016 elementary LLC."
 
 #: ../src/client/application/geary-args.vala:10
 msgid "Show About dialog"
-msgstr ""
+msgstr "정보 대화상자 보이기"
