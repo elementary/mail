@@ -757,6 +757,8 @@ public class Sidebar.Tree : Gtk.TreeView {
         EntryWrapper? wrapper = get_wrapper(entry);
         assert(wrapper != null);
         
+        // update the icon e.g. for trash empty & full
+        store.set(wrapper.get_iter(), Columns.ICON, entry.get_sidebar_icon());
         store.set(wrapper.get_iter(), Columns.COUNTER, entry.get_count());
     }
     
