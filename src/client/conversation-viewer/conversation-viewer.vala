@@ -213,23 +213,11 @@ public class ConversationViewer : Gtk.Box {
         GearyApplication.instance.controller.folder_selected.connect(on_folder_selected);
         GearyApplication.instance.controller.conversation_count_changed.connect(on_conversation_count_changed);
         
-        web_view.hovering_over_link.connect(on_hovering_over_link);
-        web_view.context_menu.connect(() => { return true; }); // Suppress default context menu.
-        web_view.realize.connect( () => { web_view.get_vadjustment().value_changed.connect(mark_read); });
-        web_view.size_allocate.connect(mark_read);
-
-        web_view.link_selected.connect((link) => { link_selected(link); });
-        
         compose_overlay = new ScrollableOverlay(web_view);
         
         Gtk.ScrolledWindow conversation_viewer_scrolled = new Gtk.ScrolledWindow(null, null);
         conversation_viewer_scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         conversation_viewer_scrolled.add(compose_overlay);
-        
-        var view_overlay = new Gtk.Overlay();
-        view_overlay.add(conversation_viewer_scrolled);
-        
-        message_overlay = new Granite.Widgets.OverlayBar(view_overlay);
         
         conversation_list_box = new Gtk.ListBox ();
         conversation_list_box.expand = true;
@@ -238,10 +226,18 @@ public class ConversationViewer : Gtk.Box {
         var conversation_scrolled = new Gtk.ScrolledWindow (null, null);
         conversation_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         conversation_scrolled.add (conversation_list_box);
+        conversation_scrolled.realize.connect(() => { conversation_scrolled.get_vadjustment().value_changed.connect (mark_read); });
+        conversation_scrolled.size_allocate.connect(mark_read);
+        
+        var view_overlay = new Gtk.Overlay();
+        view_overlay.add(conversation_scrolled);
+        
+        message_overlay = new Granite.Widgets.OverlayBar(view_overlay);
+        
         var grid = new Gtk.Grid ();
         grid.expand = true;
-        grid.add (conversation_scrolled);
         grid.add (view_overlay);
+        grid.add (conversation_viewer_scrolled);
         
         Gtk.Paned composer_paned = new Gtk.Paned(Gtk.Orientation.VERTICAL);
         composer_paned.pack1(grid, true, false);
@@ -445,9 +441,9 @@ public class ConversationViewer : Gtk.Box {
         
         if (current_folder is Geary.SearchFolder) {
             fsm.issue(SearchEvent.ENTER_SEARCH_FOLDER);
-            web_view.allow_collapsing(false);
+            allow_collapsing(false);
         } else {
-            web_view.allow_collapsing(true);
+            allow_collapsing(true);
         }
     }
     
@@ -668,8 +664,10 @@ public class ConversationViewer : Gtk.Box {
         if (messages.contains(email))
             return;
         
-        var message_widget = new ConversationWidget (email);
-        message_widget.show_all ();
+        var message_widget = new ConversationWidget(email);
+        message_widget.hovering_over_link.connect((title, url) => on_hovering_over_link(title, url));
+        message_widget.link_selected.connect((link) => link_selected(link));
+        message_widget.show_all();
         conversation_list_box.add (message_widget);
         
         string message_id = get_div_id(email.id);
@@ -2390,7 +2388,7 @@ public class ConversationViewer : Gtk.Box {
     // State reset.
     private uint on_reset(uint state, uint event, void *user, Object? object) {
         web_view.set_highlight_text_matches(false);
-        web_view.allow_collapsing(true);
+        allow_collapsing(true);
         web_view.unmark_text_matches();
         
         if (search_folder != null) {
@@ -2410,7 +2408,7 @@ public class ConversationViewer : Gtk.Box {
             conversation_find_bar.show();
         
         conversation_find_bar.focus_entry();
-        web_view.allow_collapsing(false);
+        allow_collapsing(false);
         
         return SearchState.FIND;
     }
@@ -2422,10 +2420,16 @@ public class ConversationViewer : Gtk.Box {
             
             return SearchState.SEARCH_FOLDER;
         } else {
-            web_view.allow_collapsing(true);
+            allow_collapsing(true);
             
             return SearchState.NONE;
         } 
+    }
+    
+    private void allow_collapsing(bool allow) {
+        conversation_list_box.get_children().foreach((child) => {
+            ((ConversationWidget) child).collapsable = allow;
+        });
     }
     
     // Search folder entered.

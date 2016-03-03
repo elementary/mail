@@ -21,6 +21,11 @@
  */
 
 public class ConversationWidget : Gtk.ListBoxRow {
+    public signal void hovering_over_link (string? title, string? url);
+    public signal void link_selected (string link);
+
+    public bool collapsable { get; set; default = true; }
+
     Gtk.EventBox header;
     Gtk.Stack header_fields_stack;
     Gtk.Grid header_expanded_fields;
@@ -30,17 +35,6 @@ public class ConversationWidget : Gtk.ListBoxRow {
     Granite.Widgets.Avatar avatar;
 
     private const string BODY = """
-    <html>
-        <head>
-            <title>Geary</title>
-        </head>
-        <body>
-            %s
-        </body>
-    </html>
-    """;
-
-    private const string BODY_PLAINTEXT = """
     <html>
         <head>
             <title>Geary</title>
@@ -58,12 +52,13 @@ public class ConversationWidget : Gtk.ListBoxRow {
     Gtk.Label message_content;
     Gtk.Label datetime;
     Gtk.Button star_button;
-    Gtk.ToggleButton menu_button;
+    Gtk.MenuButton menu_button;
 
     Gtk.InfoBar info_bar;
     Geary.Email email;
     StylishWebView webview;
     bool opened = false;
+
     public ConversationWidget (Geary.Email email) {
         this.email = email;
 
@@ -238,7 +233,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
         star_button.valign = Gtk.Align.START;
         star_button.halign = Gtk.Align.END;
 
-        menu_button = new Gtk.ToggleButton ();
+        menu_button = new Gtk.MenuButton ();
         menu_button.image = new Gtk.Image.from_icon_name ("view-more-symbolic", Gtk.IconSize.MENU);
         menu_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         menu_button.margin_top = 6;
@@ -262,6 +257,10 @@ public class ConversationWidget : Gtk.ListBoxRow {
         webview = new StylishWebView ();
         webview.transparent = true;
         webview.expand = true;
+        webview.hovering_over_link.connect ((title, url) => hovering_over_link (title, url));
+        webview.context_menu.connect(() => { return true; }); // Suppress default context menu.
+        webview.navigation_policy_decision_requested.connect ((frame, request, navigation_action, policy_decision) => on_navigation_policy_decision_requested (frame, request, navigation_action, policy_decision));
+        webview.new_window_policy_decision_requested.connect ((frame, request, navigation_action, policy_decision) => on_navigation_policy_decision_requested (frame, request, navigation_action, policy_decision));
 
         content_grid = new Gtk.Grid ();
         content_grid.margin = 6;
@@ -386,6 +385,19 @@ public class ConversationWidget : Gtk.ListBoxRow {
         }
     }
 
+    private bool on_navigation_policy_decision_requested (WebKit.WebFrame frame,
+        WebKit.NetworkRequest request, WebKit.WebNavigationAction navigation_action,
+        WebKit.WebPolicyDecision policy_decision) {
+        policy_decision.ignore ();
+
+        // Other policy-decisions may be requested for various reasons. The existence of an iframe,
+        // for example, causes a policy-decision request with an "OTHER" reason. We don't want to
+        // open a webpage in the browser just because an email contains an iframe.
+        if (navigation_action.reason == WebKit.WebNavigationReason.LINK_CLICKED)
+            link_selected (request.uri);
+        return true;
+    }
+
     private void open_message () {
         email.notify["body"].disconnect (open_message);
         Geary.RFC822.Message? message = null;
@@ -398,7 +410,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
 
         try {
             var body_text = message.get_html_body (null);
-            webview.load_string (BODY.printf (body_text), "text/html", "UTF8", "");
+            webview.load_string (body_text, "text/html", "UTF8", "");
             return;
         } catch (Error err) {
             if (err is Geary.RFC822Error.NOT_FOUND) {
@@ -408,7 +420,8 @@ public class ConversationWidget : Gtk.ListBoxRow {
 
         try {
             var body_text = message.get_plain_body (true, null);
-            webview.load_string (BODY_PLAINTEXT.printf (body_text), "text/html", "UTF8", "");
+            webview.load_string (BODY.printf (body_text), "text/html", "UTF8", "");
+            warning (BODY.printf (body_text));
         } catch (Error err) {
             debug ("Could not get message plain body text. %s", err.message);
         }
