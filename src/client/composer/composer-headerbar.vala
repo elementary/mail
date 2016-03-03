@@ -31,7 +31,6 @@ public class ComposerHeaderbar : PillHeaderbar {
         detach_end.margin_start = 6;
 
         insert.add(create_toolbar_button(null, ComposerWidget.ACTION_CLOSE_DISCARD));
-        insert.add(create_toolbar_button(null, ComposerWidget.ACTION_CLOSE_SAVE));
         Gtk.Box close_buttons = create_pill_buttons(insert, false);
         insert.clear();
 
