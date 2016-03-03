@@ -74,7 +74,7 @@ public class FolderList.FolderEntry : FolderList.AbstractFolderEntry, Sidebar.In
                 return "edit-flag";
 
             case Geary.SpecialFolderType.TRASH:
-                return "user-trash";
+                return folder.properties.email_total == 0 ? "user-trash" : "user-trash-full";
 
             case Geary.SpecialFolderType.OUTBOX:
                 return "mail-outbox";
