@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-02-18 18:26-0800\n"
-"PO-Revision-Date: 2016-03-02 05:10+0000\n"
+"PO-Revision-Date: 2016-03-02 20:25+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-03-02 05:54+0000\n"
+"X-Launchpad-Export-Date: 2016-03-03 06:23+0000\n"
 "X-Generator: Launchpad (build 17925)\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -262,13 +262,13 @@ msgstr "대화 지우기 (Shift+Delete)"
 #: ../src/client/application/geary-controller.vala:66
 #: ../src/client/application/geary-controller.vala:65
 msgid "Move conversation to Trash (Delete, Backspace)"
-msgstr "대화를 휴지통으로 옮기기 (Delete, Backspace)"
+msgstr "휴지통으로 (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 msgid "Move conversations to Trash (Delete, Backspace)"
-msgstr "대화를 휴지통으로 옮기기 (Delete, Backspace)"
+msgstr "휴지통으로 (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
@@ -1776,12 +1776,12 @@ msgstr "이메일로 보내기"
 #: ../src/client/application/geary-application.vala:26
 #: ../src/client/application/geary-application.vala:25
 msgid "Send files using Mail"
-msgstr "기어리로 파일 보내기"
+msgstr "판테온 메일로 파일 보내기"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
 msgid "Welcome to Mail"
-msgstr "기어리 사용을 환영합니다"
+msgstr "판테온 메일 사용을 환영합니다"
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
 #: ../src/client/composer/composer-toolbar.vala:77
@@ -2347,14 +2347,14 @@ msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
 msgstr ""
-"기어리(Geary)가 이메일을 보내는 도중 오류가 생겼습니다. 문제가 지속되면, 보낸 편지함 폴더에서 이메일을 직접 지워주세요."
+"판테온 메일(Mail)이 이메일을 보내는 도중 오류가 생겼습니다. 문제가 지속되면, 보낸 편지함 폴더에서 이메일을 직접 지워주세요."
 
 #: ../src/client/application/geary-controller.vala:1057
 #: ../src/client/application/geary-controller.vala:1051
 msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
-msgstr "기어리(Geary)가 보낸 메일을 저장하는 도중 오류가 생겼습니다. 메일은 지우지 않으면 보낸 편지함 폴더에 있습니다."
+msgstr "판테온 메일(Mail)이 보낸 메일을 저장하는 도중 오류가 생겼습니다. 메일은 지우지 않으면 보낸 편지함 폴더에 있습니다."
 
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
@@ -2387,8 +2387,8 @@ msgid ""
 "\n"
 "Please install the latest version of Mail and try again."
 msgstr ""
-"로컬 메일 데이터 베이스의 버전 번호가 새 버전의 기어리를 위해서 포맷되었습니다. 안타깝게도, 현재 버전의 기어리 사용을 위해 데이터 "
-"베이스를 \"되돌릴\" 수 없습니다.\n"
+"로컬 메일 데이터 베이스의 버전 번호가 새 버전의 판테온 메일을 위해서 포맷되었습니다. 안타깝게도, 현재 버전의 판테온 메일 사용을 위해 "
+"데이터 베이스를 \"되돌릴\" 수 없습니다.\n"
 "\n"
 "최신 버전의 기어리를 설치하시고 다시 실행해 보세요."
 
@@ -2402,16 +2402,16 @@ msgid ""
 msgstr ""
 "로컬 계정을 여는 동안 오류가 생겼습니다. 인터넷 연결 문제가 아닌가 합니다.\n"
 "\n"
-"네트워크 연결을 확인하시고 기어리를 다시 시작해주세요."
+"네트워크 연결을 확인하시고 판테온 메일을 다시 시작해주세요."
 
 #: ../src/client/application/geary-controller.vala:2402
 #: ../src/client/application/geary-controller.vala:2404
 msgid "This removes the email from Mail and your email server."
-msgstr "기어리와 메일 서버 안의 모든 메일을 지우게 됩니다."
+msgstr "판테온 메일과 메일 서버 안의 모든 메일을 지우게 됩니다."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
-msgstr "        &#8226; 기어리에 이미 등록된 이메일 주소입니다.\n"
+msgstr "        &#8226; 판테온 메일에 이미 등록된 이메일 주소입니다.\n"
 
 #: ../src/client/dialogs/preferences-dialog.vala:44
 #: ../src/client/dialogs/preferences-dialog.vala:43
@@ -2420,35 +2420,35 @@ msgstr "원격 미이지 항상 표시:"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 msgid "Mail requires your email password to continue"
-msgstr "계속하려면 기어리에 여러분의 이메일 비밀번호가 필요합니다"
+msgstr "계속하려면 판테온 메일에 여러분의 이메일 비밀번호가 필요합니다"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail not to access this "
 "server."
-msgstr "\"이 서버를 신뢰하지 않습니다\"를 선택하게 되면 기어리가 이 서버에 접근하지 못하게 될 수 있습니다."
+msgstr "\"이 서버를 신뢰하지 않습니다\"를 선택하게 되면 판테온 메일이 이 서버에 접근하지 못하게 될 수 있습니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Mail will not add or update this email account."
-msgstr "기어리는 이 메일 계정을 업데이트하거나 추가하지 않습니다."
+msgstr "판테온 메일은 메일 계정을 업데이트하거나 추가하지 않습니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail to stop accessing this "
 "account."
-msgstr "\"이 서버를 신뢰하지 않습니다\"를 선택하게 되면 기어리가 이 계정의 접근을 중단할 수 있습니다."
+msgstr "\"이 서버를 신뢰하지 않습니다\"를 선택하게 되면 판테온 메일이 이 계정의 접근을 중단할 수 있습니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Mail will exit if you have no other open email accounts."
-msgstr "열려 있는 다른 이메일 계정이 없다면 기어리를 끝내겠습니다."
+msgstr "열려 있는 다른 이메일 계정이 없다면 판테온 메일을 끝내겠습니다."
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Mail validates your account."
-msgstr "기어리가 계정을 확인하는 동안 기다려 주세요."
+msgstr "판테온 메일이 계정을 확인하는 동안 기다려 주세요."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr "기어리 업데이트 중..."
+msgstr "판테온 메일 업데이트 중..."
 
 #: ../src/client/components/main-toolbar.vala:26
 msgid "Search Mail"
