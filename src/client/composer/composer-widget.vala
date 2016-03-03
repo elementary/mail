@@ -1084,11 +1084,9 @@ public class ComposerWidget : Gtk.EventBox {
         if (is_closing)
             return CloseStatus.PENDING_CLOSE;
         
-        bool try_to_save = can_save();
-        
         container.present();
         
-        if (try_to_save) {
+        if (can_save()) {
             save_and_exit_async.begin(); // Save
             return CloseStatus.PENDING_CLOSE;
         } else {
