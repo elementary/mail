@@ -16,7 +16,6 @@ public class ComposerWidget : Gtk.EventBox {
     public enum CloseStatus {
         DO_CLOSE,
         PENDING_CLOSE,
-        CANCEL_CLOSE
     }
     
     public enum ComposerState {

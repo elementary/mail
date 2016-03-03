@@ -2110,37 +2110,28 @@ public class GearyController : Geary.BaseObject {
 
     private bool close_composition_windows() {
         Gee.List<ComposerWidget> composers_to_destroy = new Gee.ArrayList<ComposerWidget>();
-        bool quit_cancelled = false;
 
         // If there's composer windows open, give the user a chance to save or cancel.
         foreach(ComposerWidget cw in composer_widgets) {
             // Check if we should close the window immediately, or if we need to wait.
-            ComposerWidget.CloseStatus status = cw.should_close();
-            if (status == ComposerWidget.CloseStatus.PENDING_CLOSE) {
-                // Window is currently busy saving.
-                waiting_to_close.add(cw);
-            } else if (status == ComposerWidget.CloseStatus.CANCEL_CLOSE) {
-                // User cancelled operation.
-                quit_cancelled = true;
-                break;
-            } else if (status == ComposerWidget.CloseStatus.DO_CLOSE) {
-                // Hide any existing composer windows for the moment; actually deleting the windows
-                // will result in their removal from composer_windows, which could crash this loop.
-                composers_to_destroy.add(cw);
-                ((ComposerContainer) cw.parent).vanish();
+            switch (cw.should_close()) {
+                    case ComposerWidget.CloseStatus.PENDING_CLOSE:
+                        // Window is currently busy saving.
+                        waiting_to_close.add(cw);
+                        break;
+
+                    case ComposerWidget.CloseStatus.DO_CLOSE:
+                        // Hide any existing composer windows for the moment; actually deleting the windows
+                        // will result in their removal from composer_windows, which could crash this loop.
+                        composers_to_destroy.add(cw);
+                        ((ComposerContainer) cw.parent).vanish();
+                        break;
             }
         }
 
         // Safely destroy windows.
         foreach(ComposerWidget cw in composers_to_destroy)
             ((ComposerContainer) cw.parent).close_container();
-
-        // If we cancelled the quit we can bail here.
-        if (quit_cancelled) {
-            waiting_to_close.clear();
-
-            return false;
-        }
 
         // If there's still windows saving, we can't exit just yet.  Hide the main window and wait.
         if (waiting_to_close.size > 0) {
@@ -2272,8 +2263,19 @@ public class GearyController : Geary.BaseObject {
         // Find out what to do with the inline composers.
         Gee.List<ComposerWidget> composers_to_destroy = new Gee.ArrayList<ComposerWidget>();
         foreach (ComposerWidget cw in composer_widgets) {
-            if (cw.state != ComposerWidget.ComposerState.DETACHED)
-                composers_to_destroy.add(cw);
+            // Skip non-inline composers
+            if (cw.state != ComposerWidget.ComposerState.DETACHED) {
+                switch (cw.should_close()) {
+                    case ComposerWidget.CloseStatus.PENDING_CLOSE:
+                        // save_and_exit_async() takes care of killing the
+                        // container when it's done saving the draft
+                        break;
+
+                    case ComposerWidget.CloseStatus.DO_CLOSE:
+                        composers_to_destroy.add(cw);
+                        break;
+                }
+            }
         }
         foreach(ComposerWidget cw in composers_to_destroy)
             ((ComposerContainer) cw.parent).close_container();
