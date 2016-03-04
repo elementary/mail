@@ -25,6 +25,8 @@ public class ConversationWidget : Gtk.ListBoxRow {
     public signal void link_selected (string link);
 
     public bool collapsable { get; set; default = true; }
+    public Geary.Email email { get; private set; }
+    public StylishWebView webview { get; private set; }
 
     Gtk.EventBox header;
     Gtk.Stack header_fields_stack;
@@ -55,8 +57,6 @@ public class ConversationWidget : Gtk.ListBoxRow {
     Gtk.MenuButton menu_button;
 
     Gtk.InfoBar info_bar;
-    Geary.Email email;
-    StylishWebView webview;
     bool opened = false;
 
     public ConversationWidget (Geary.Email email) {

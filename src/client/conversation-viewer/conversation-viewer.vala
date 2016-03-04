@@ -234,8 +234,19 @@ public class ConversationViewer : Gtk.Box {
         
         message_overlay = new Granite.Widgets.OverlayBar(view_overlay);
         
+        conversation_find_bar = new ConversationFindBar(conversation_list_box);
+        conversation_find_bar.notify["child-revealed"].connect(() => {
+            if (conversation_find_bar.child_revealed) {
+                fsm.issue(SearchEvent.OPEN_FIND_BAR);
+            } else {
+                fsm.issue(SearchEvent.CLOSE_FIND_BAR);
+            }
+        });
+        
         var grid = new Gtk.Grid ();
+        grid.orientation = Gtk.Orientation.VERTICAL;
         grid.expand = true;
+        grid.add (conversation_find_bar);
         grid.add (view_overlay);
         grid.add (conversation_viewer_scrolled);
         
@@ -249,12 +260,6 @@ public class ConversationViewer : Gtk.Box {
         pack_start(composer_paned);
         
         config.settings.changed[Configuration.GENERALLY_SHOW_REMOTE_IMAGES_KEY].connect(on_show_images_change);
-        
-        conversation_find_bar = new ConversationFindBar(web_view);
-        conversation_find_bar.no_show_all = true;
-        conversation_find_bar.close.connect(() => { fsm.issue(SearchEvent.CLOSE_FIND_BAR); });
-        
-        pack_start(conversation_find_bar, false);
     }
     
     public void set_paned_composer(ComposerWidget composer) {
@@ -786,10 +791,6 @@ public class ConversationViewer : Gtk.Box {
         bind_event(web_view, ".remote_images .show_from", "click", (Callback) on_show_images_from, this);
         bind_event(web_view, ".remote_images .close_show_images", "click", (Callback) on_close_show_images, this);
         bind_event(web_view, ".body a", "click", (Callback) on_link_clicked, this);
-        
-        // Update the search results
-        if (conversation_find_bar.visible)
-            conversation_find_bar.commence_search();
     }
     
     private WebKit.DOM.HTMLElement make_email_div() {
@@ -2339,14 +2340,13 @@ public class ConversationViewer : Gtk.Box {
             dialog.run();
         }
     }
-    
+
     public void show_find_bar() {
-        fsm.issue(SearchEvent.OPEN_FIND_BAR);
-        conversation_find_bar.focus_entry();
+        conversation_find_bar.reveal(true);
     }
-    
+
     public void find(bool forward) {
-        if (!conversation_find_bar.visible)
+        if (!conversation_find_bar.child_revealed)
             show_find_bar();
         
         conversation_find_bar.find(forward);
@@ -2396,18 +2396,17 @@ public class ConversationViewer : Gtk.Box {
             search_folder = null;
         }
         
-        if (conversation_find_bar.visible)
-            fsm.do_post_transition(() => { conversation_find_bar.hide(); }, user, object);
+        if (conversation_find_bar.child_revealed)
+            fsm.do_post_transition(() => { conversation_find_bar.reveal(false); }, user, object);
         
         return SearchState.NONE;
     }
     
     // Find bar opened.
     private uint on_open_find_bar(uint state, uint event, void *user, Object? object) {
-        if (!conversation_find_bar.visible)
-            conversation_find_bar.show();
+        if (!conversation_find_bar.child_revealed)
+            show_find_bar();
         
-        conversation_find_bar.focus_entry();
         allow_collapsing(false);
         
         return SearchState.FIND;
