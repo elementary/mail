@@ -16,7 +16,6 @@ public class ComposerWidget : Gtk.EventBox {
     public enum CloseStatus {
         DO_CLOSE,
         PENDING_CLOSE,
-        CANCEL_CLOSE
     }
     
     public enum ComposerState {
@@ -1084,33 +1083,13 @@ public class ComposerWidget : Gtk.EventBox {
         if (is_closing)
             return CloseStatus.PENDING_CLOSE;
         
-        bool try_to_save = can_save();
-        
         container.present();
-        AlertDialog dialog;
         
-        if (try_to_save) {
-            dialog = new TernaryConfirmationDialog(container.top_window,
-                _("Do you want to discard this message?"), null, Stock._KEEP, Stock._DISCARD,
-                Gtk.ResponseType.CLOSE);
-        } else {
-            dialog = new ConfirmationDialog(container.top_window,
-                _("Do you want to discard this message?"), null, Stock._DISCARD);
-        }
-        
-        Gtk.ResponseType response = dialog.run();
-        if (response == Gtk.ResponseType.CANCEL || response == Gtk.ResponseType.DELETE_EVENT) {
-            return CloseStatus.CANCEL_CLOSE; // Cancel
-        } else if (response == Gtk.ResponseType.OK) {
-            if (try_to_save) {
-                save_and_exit_async.begin(); // Save
-                return CloseStatus.PENDING_CLOSE;
-            } else {
-                return CloseStatus.DO_CLOSE;
-            }
-        } else {
-            discard_and_exit_async.begin(); // Discard
+        if (can_save()) {
+            save_and_exit_async.begin(); // Save
             return CloseStatus.PENDING_CLOSE;
+        } else {
+            return CloseStatus.DO_CLOSE;
         }
     }
     
