@@ -29,8 +29,19 @@ public class ConversationFindBar : Gtk.Revealer {
     Gtk.CheckButton case_check;
     Gtk.Label answer_label;
 
+    unowned WebKit.WebView latest_view = null;
+
     public ConversationFindBar (Gtk.ListBox mail_list_box) {
         this.mail_list_box = mail_list_box;
+        mail_list_box.add.connect ((child) => {
+            if (!(child is ConversationWidget)) {
+                return;
+            }
+
+            if (child_revealed) {
+                mark_text_matches ();
+            }
+        });
     }
 
     construct {
@@ -42,12 +53,18 @@ public class ConversationFindBar : Gtk.Revealer {
         var search_item = new Gtk.ToolItem ();
         search_item.valign = Gtk.Align.CENTER;
         search_item.add (search_entry);
+        search_entry.search_changed.connect (() => mark_text_matches ());
+        search_entry.next_match.connect (() => find (true));
+        search_entry.previous_match.connect (() => find (false));
+        search_entry.activate.connect (() => find (true));
 
         previous_button = new Gtk.ToolButton (null, null);
         previous_button.icon_name = "go-up-symbolic";
+        previous_button.sensitive = false;
 
         next_button = new Gtk.ToolButton (null, null);
         next_button.icon_name = "go-down-symbolic";
+        next_button.sensitive = false;
 
         case_check = new Gtk.CheckButton.with_label (_("Case sensitive"));
         var case_item = new Gtk.ToolItem ();
@@ -82,6 +99,7 @@ public class ConversationFindBar : Gtk.Revealer {
         set_reveal_child (do_reveal);
         if (do_reveal) {
             search_entry.grab_focus ();
+            populate_entry ();
             mark_text_matches ();
         } else {
             unmark_text_matches ();
@@ -93,21 +111,71 @@ public class ConversationFindBar : Gtk.Revealer {
             return;
         }
 
+        // we need the second_start to seach from the beginning
+        bool second_start = false;
+        int i = next ? 0 : (int)mail_list_box.get_children ().length () - 1;
+        for (weak Gtk.Widget child = mail_list_box.get_row_at_index (i); child != null; child = mail_list_box.get_row_at_index (i)) {
+            var conv_widget = (ConversationWidget) child;
+            var webview = conv_widget.webview;
+            if (latest_view == null || latest_view == webview) {
+                var found = webview.search_text (search_entry.text, case_check.active, next, false);
+                if (found) {
+                    // expand the view so that the result is shown.
+                    conv_widget.collapsed = false;
+                    latest_view = webview;
+                    return;
+                } else {
+                    latest_view = null;
+                }
+            }
+
+            if (next) {
+                i++;
+            } else {
+                i--;
+            }
+
+            if (mail_list_box.get_row_at_index (i) == null && !second_start) {
+                i = next ? 0 : (int)mail_list_box.get_children ().length () - 1;
+                second_start = true;
+            }
+        }
+    }
+
+    private void populate_entry () {
         mail_list_box.get_children ().foreach ((child) => {
             if (!(child is ConversationWidget)) {
                 return;
             }
 
-            //var webview = ((ConversationWidget) child).webview;
+            var webview = ((ConversationWidget) child).webview;
+            var selection = webview.get_dom_document ().default_view.get_selection ();
+            if (selection.get_range_count () <= 0)
+                return;
+
+            try {
+                WebKit.DOM.Range range = selection.get_range_at (0);
+                if (range.get_text ().strip () != "") {
+                    search_entry.text = range.get_text ();
+                }
+            } catch (Error e) {
+                warning ("Could not get selected text from web view: %s", e.message);
+            }
         });
+    
     }
 
     private void mark_text_matches () {
         var search = search_entry.text.strip ();
         if (search == "") {
+            unmark_text_matches ();
+            next_button.sensitive = false;
+            previous_button.sensitive = false;
+            search_entry.get_style_context ().remove_class ("error");
             return;
         }
 
+        latest_view = null;
         uint matches = 0U;
         mail_list_box.get_children ().foreach ((child) => {
             if (!(child is ConversationWidget)) {
@@ -115,14 +183,20 @@ public class ConversationFindBar : Gtk.Revealer {
             }
 
             var webview = ((ConversationWidget) child).webview;
+            webview.unmark_text_matches ();
             matches += webview.mark_text_matches (search, case_check.active, 0);
             webview.set_highlight_text_matches (true);
         });
-        
+
+        previous_button.sensitive = false;
         if (matches == 0) {
+            search_entry.get_style_context ().add_class ("error");
             answer_label.label = _("not found");
+            next_button.sensitive = false;
         } else {
+            search_entry.get_style_context ().remove_class ("error");
             answer_label.label = ngettext ("%u match", "%u matches", matches).printf (matches);
+            next_button.sensitive = true;
         }
     }
 

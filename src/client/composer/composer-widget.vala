@@ -1554,7 +1554,7 @@ public class ComposerWidget : Gtk.EventBox {
         
         /// In the composer, the filename followed by its filesize, i.e. "notes.txt (1.12KB)"
         string label_text = _("%s (%s)").printf(attachment_file.get_basename(),
-            Files.get_filesize_as_string(attachment_file_info.get_size()));
+            GLib.format_size(attachment_file_info.get_size()));
         Gtk.Label label = new Gtk.Label(label_text);
         box.pack_start(label);
         label.halign = Gtk.Align.START;

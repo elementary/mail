@@ -364,6 +364,7 @@ client/conversation-viewer/conversation-viewer.vala
 client/conversation-viewer/conversation-web-view.vala
 client/conversation-viewer/ConversationWidget.vala
 client/conversation-viewer/ConversationFindBar.vala
+client/conversation-viewer/AttachmentWidget.vala
 
 client/dialogs/alert-dialog.vala
 client/dialogs/attachment-dialog.vala
@@ -395,7 +396,6 @@ client/sidebar/sidebar-tree.vala
 
 client/util/util-date.vala
 client/util/util-email.vala
-client/util/util-files.vala
 client/util/util-gravatar.vala
 client/util/util-gtk.vala
 client/util/util-international.vala

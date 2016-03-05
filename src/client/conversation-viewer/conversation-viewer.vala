@@ -219,14 +219,15 @@ public class ConversationViewer : Gtk.Box {
         conversation_viewer_scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         conversation_viewer_scrolled.add(compose_overlay);
         
-        conversation_list_box = new Gtk.ListBox ();
+        conversation_list_box = new Gtk.ListBox();
         conversation_list_box.expand = true;
-        conversation_list_box.get_style_context ().add_class ("deck");
-        conversation_list_box.set_selection_mode (Gtk.SelectionMode.NONE);
-        var conversation_scrolled = new Gtk.ScrolledWindow (null, null);
+        conversation_list_box.get_style_context().add_class("deck");
+        conversation_list_box.set_selection_mode(Gtk.SelectionMode.NONE);
+        conversation_list_box.set_sort_func((row1, row2) => sort_messages(row1, row2));
+        var conversation_scrolled = new Gtk.ScrolledWindow(null, null);
         conversation_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        conversation_scrolled.add (conversation_list_box);
-        conversation_scrolled.realize.connect(() => { conversation_scrolled.get_vadjustment().value_changed.connect (mark_read); });
+        conversation_scrolled.add(conversation_list_box);
+        conversation_scrolled.realize.connect(() => { conversation_scrolled.get_vadjustment().value_changed.connect(mark_read); });
         conversation_scrolled.size_allocate.connect(mark_read);
         
         var view_overlay = new Gtk.Overlay();
@@ -243,12 +244,12 @@ public class ConversationViewer : Gtk.Box {
             }
         });
         
-        var grid = new Gtk.Grid ();
+        var grid = new Gtk.Grid();
         grid.orientation = Gtk.Orientation.VERTICAL;
         grid.expand = true;
-        grid.add (conversation_find_bar);
-        grid.add (view_overlay);
-        grid.add (conversation_viewer_scrolled);
+        grid.add(conversation_find_bar);
+        grid.add(view_overlay);
+        grid.add(conversation_viewer_scrolled);
         
         Gtk.Paned composer_paned = new Gtk.Paned(Gtk.Orientation.VERTICAL);
         composer_paned.pack1(grid, true, false);
@@ -258,8 +259,6 @@ public class ConversationViewer : Gtk.Box {
         Configuration config = GearyApplication.instance.config;
         config.bind(Configuration.COMPOSER_PANE_POSITION_KEY, composer_paned, "position");
         pack_start(composer_paned);
-        
-        config.settings.changed[Configuration.GENERALLY_SHOW_REMOTE_IMAGES_KEY].connect(on_show_images_change);
     }
     
     public void set_paned_composer(ComposerWidget composer) {
@@ -333,8 +332,8 @@ public class ConversationViewer : Gtk.Box {
     
     // Removes all displayed e-mails from the view.
     private void clear(Geary.Folder? new_folder, Geary.AccountInformation? account_information) {
-        conversation_list_box.get_children ().foreach ((child) => {
-            child.destroy ();
+        conversation_list_box.get_children().foreach((child) => {
+            child.destroy();
         });
         // Remove all messages from DOM.
         try {
@@ -398,6 +397,14 @@ public class ConversationViewer : Gtk.Box {
                 debug("Error setting blaklist CSS: %s", error.message);
             }
         }
+    }
+    
+    private int sort_messages (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
+        if (!(row1 is ConversationWidget && row2 is ConversationWidget)) {
+            return 0;
+        }
+
+        return Geary.Email.compare_sent_date_ascending(((ConversationWidget) row1).email, ((ConversationWidget) row2).email);
     }
     
     private void show_special_message(string msg) {
@@ -533,7 +540,11 @@ public class ConversationViewer : Gtk.Box {
             yield highlight_search_terms();
         } else {
             unhide_last_email();
-            compress_emails();
+            if (conversation_list_box.get_children().length() == 1) {
+                conversation_list_box.get_children().foreach((child) => {
+                    ((ConversationWidget)child).collapsable = false;
+                });
+            }
         }
     }
     
@@ -573,9 +584,6 @@ public class ConversationViewer : Gtk.Box {
         if (search_folder == null)
             return;
         
-        // Remove existing highlights.
-        web_view.unmark_text_matches();
-        
         // List all IDs of emails we're viewing.
         Gee.Collection<Geary.EmailIdentifier> ids = new Gee.ArrayList<Geary.EmailIdentifier>();
         foreach (Geary.Email email in messages)
@@ -599,13 +607,22 @@ public class ConversationViewer : Gtk.Box {
             ordered_matches.add_all(search_matches);
             ordered_matches.sort((a, b) => a.length - b.length);
             
-            foreach(string match in ordered_matches)
-                web_view.mark_text_matches(match, false, 0);
+            conversation_list_box.get_children().foreach((child) => {
+                if (!(child is ConversationWidget)) {
+                    return;
+                }
+                
+                var webview = ((ConversationWidget) child).webview;
+                webview.unmark_text_matches();
+                foreach(string match in ordered_matches) {
+                    webview.mark_text_matches(match, false, 0);
+                }
+                
+                webview.set_highlight_text_matches(true);
+            });
         } catch (Error e) {
             debug("Error highlighting search results: %s", e.message);
         }
-        
-        web_view.set_highlight_text_matches(true);
     }
     
     // Given some emails, fetch the full versions with all required fields.
@@ -669,11 +686,37 @@ public class ConversationViewer : Gtk.Box {
         if (messages.contains(email))
             return;
         
-        var message_widget = new ConversationWidget(email);
+        var message_widget = new ConversationWidget(email, current_folder);
         message_widget.hovering_over_link.connect((title, url) => on_hovering_over_link(title, url));
         message_widget.link_selected.connect((link) => link_selected(link));
+        message_widget.mark_read.connect((read) => {
+            if (read) {
+                on_mark_read_message(message_widget.email);
+            } else {
+                on_mark_unread_message(message_widget.email);
+            }
+        });
+
+        message_widget.star.connect ((star) => {
+            if (star) {
+                flag_message(message_widget.email);
+            } else {
+                unflag_message(message_widget.email);
+            }
+        });
+
+        message_widget.mark_load_remote_images.connect(() => load_remote_images_message(message_widget.email));
+
+        message_widget.open_attachment.connect((attachment) => open_attachment(attachment));
+        message_widget.save_attachments.connect((attachments) => save_attachments(attachments));
+
+        if (email.is_unread() != Geary.Trillian.FALSE) {
+            message_widget.collapsed = false;
+        }
+        
         message_widget.show_all();
-        conversation_list_box.add (message_widget);
+        
+        conversation_list_box.add(message_widget);
         
         string message_id = get_div_id(email.id);
         
@@ -775,15 +818,9 @@ public class ConversationViewer : Gtk.Box {
         
         // Attach to the click events for hiding/showing quotes, opening the menu, and so forth.
         bind_event(web_view, ".email", "contextmenu", (Callback) on_context_menu, this);
-        bind_event(web_view, ".quote_container > .hider", "click", (Callback) on_hide_quote_clicked);
-        bind_event(web_view, ".quote_container > .shower", "click", (Callback) on_show_quote_clicked);
         bind_event(web_view, ".email_container .menu", "click", (Callback) on_menu_clicked, this);
-        bind_event(web_view, ".email_container .starred", "click", (Callback) on_unstar_clicked, this);
-        bind_event(web_view, ".email_container .unstarred", "click", (Callback) on_star_clicked, this);
         bind_event(web_view, ".email_container .draft_edit .button", "click", (Callback) on_draft_edit_menu, this);
         bind_event(web_view, ".header .field .value", "click", (Callback) on_value_clicked, this);
-        bind_event(web_view, ".email:not(:only-of-type) .header_container, .email .email .header_container","click", (Callback) on_body_toggle_clicked, this);
-        bind_event(web_view, ".email .compressed_note", "click", (Callback) on_body_toggle_clicked, this);
         bind_event(web_view, ".attachment_container .attachment", "click", (Callback) on_attachment_clicked, this);
         bind_event(web_view, ".attachment_container .attachment", "contextmenu", (Callback) on_attachment_menu, this);
         bind_event(web_view, "." + DATA_IMAGE_CLASS, "contextmenu", (Callback) on_data_image_menu_handler, this);
@@ -1112,94 +1149,12 @@ public class ConversationViewer : Gtk.Box {
     }
     
     private void unhide_last_email() {
-        WebKit.DOM.HTMLElement last_email = (WebKit.DOM.HTMLElement) web_view.container.get_last_child().previous_sibling;
-        if (last_email != null) {
-            WebKit.DOM.DOMTokenList class_list = last_email.get_class_list();
-            try {
-                class_list.remove("hide");
-            } catch (Error error) {
-                // Expected, if not hidden
-            }
-        }
-    }
-    
-    private void compress_emails() {
-        if (messages.size == 0)
+        var child = conversation_list_box.get_row_at_index ((int)conversation_list_box.get_children ().length () - 1);
+        if (child == null && !(child is ConversationWidget)) {
             return;
-        
-        WebKit.DOM.Document document = web_view.get_dom_document();
-        WebKit.DOM.Element first_compressed = null, prev_message = null,
-            curr_message = document.get_element_by_id("message_container").get_first_element_child(),
-            next_message = curr_message.next_element_sibling;
-        int compress_count = 0;
-        bool prev_hidden = false, curr_hidden = false, next_hidden = false;
-        try {
-            next_hidden = curr_message.get_class_list().contains("hide");
-            // The first step of the loop is to advance the hidden statuses.
-        } catch (Error error) {
-            debug("Error checking hidden status: %s", error.message);
         }
         
-        // Note that next_message = span#placeholder when current_message is last in conversation.
-        while (next_message != null) {
-            try {
-                prev_hidden = curr_hidden;
-                curr_hidden = next_hidden;
-                next_hidden = next_message.get_class_list().contains("hide");
-                if (curr_hidden && prev_hidden && next_hidden ||
-                    curr_message.get_class_list().contains("compressed")) {
-                    curr_message.get_class_list().add("compressed");
-                    compress_count += 1;
-                    if (first_compressed == null)
-                        first_compressed = curr_message;
-                } else if (compress_count > 0) {
-                    if (compress_count == 1) {
-                        prev_message.get_class_list().remove("compressed");
-                    } else {
-                        WebKit.DOM.HTMLElement span =
-                            first_compressed.first_element_child.first_element_child
-                            as WebKit.DOM.HTMLElement;
-                        span.set_inner_html(
-                            ngettext("%u read message", "%u read messages", compress_count).printf(compress_count));
-                        // We need to set the display to get an accurate offset_height
-                        span.set_attribute("style", "display:inline-block;");
-                        span.set_attribute("style", "display:inline-block; top:%ipx".printf(
-                            (int) (curr_message.offset_top - first_compressed.offset_top
-                            - span.offset_height) / 2));
-                    }
-                    compress_count = 0;
-                    first_compressed = null;
-                }
-            } catch (Error error) {
-                debug("Error compressing emails: %s", error.message);
-            }
-            prev_message = curr_message;
-            curr_message = next_message;
-            next_message = curr_message.next_element_sibling;
-        }
-    }
-    
-    private void decompress_emails(WebKit.DOM.Element email_element) {
-        WebKit.DOM.Element iter_element = email_element;
-        try {
-            while ((iter_element != null) && iter_element.get_class_list().contains("compressed")) {
-                iter_element.get_class_list().remove("compressed");
-                iter_element.first_element_child.first_element_child.set_attribute("style", "display:none");
-                iter_element = iter_element.previous_element_sibling;
-            }
-        } catch (Error error) {
-            debug("Error decompressing emails: %s", error.message);
-        }
-        iter_element = email_element.next_element_sibling;
-        try {
-            while ((iter_element != null) && iter_element.get_class_list().contains("compressed")) {
-                iter_element.get_class_list().remove("compressed");
-                iter_element.first_element_child.first_element_child.set_attribute("style", "display:none");
-                iter_element = iter_element.next_element_sibling;
-            }
-        } catch (Error error) {
-            debug("Error decompressing emails: %s", error.message);
-        }
+        ((ConversationWidget) child).collapsed = false;
     }
     
     private Geary.Email? get_email_from_element(WebKit.DOM.Element element) {
@@ -1359,46 +1314,12 @@ public class ConversationViewer : Gtk.Box {
         return menu;
     }
 
-    private static void on_hide_quote_clicked(WebKit.DOM.Element element) {
-        try {
-            WebKit.DOM.Element parent = element.get_parent_element();
-            parent.set_attribute("class", "quote_container controllable hide");
-        } catch (Error error) {
-            warning("Error hiding quote: %s", error.message);
-        }
-    }
-
-    private static void on_show_quote_clicked(WebKit.DOM.Element element) {
-        try {
-            WebKit.DOM.Element parent = element.get_parent_element();
-            parent.set_attribute("class", "quote_container controllable show");
-        } catch (Error error) {
-            warning("Error hiding quote: %s", error.message);
-        }
-    }
-
     private static void on_menu_clicked(WebKit.DOM.Element element, WebKit.DOM.Event event,
         ConversationViewer conversation_viewer) {
         event.stop_propagation();
         Geary.Email email = conversation_viewer.get_email_from_element(element);
         if (email != null)
             conversation_viewer.show_message_menu(email);
-    }
-
-    private static void on_unstar_clicked(WebKit.DOM.Element element, WebKit.DOM.Event event,
-        ConversationViewer conversation_viewer) {
-        event.stop_propagation();
-        Geary.Email? email = conversation_viewer.get_email_from_element(element);
-        if (email != null)
-            conversation_viewer.unflag_message(email);
-    }
-
-    private static void on_star_clicked(WebKit.DOM.Element element, WebKit.DOM.Event event,
-        ConversationViewer conversation_viewer) {
-        event.stop_propagation();
-        Geary.Email? email = conversation_viewer.get_email_from_element(element);
-        if (email != null)
-            conversation_viewer.flag_message(email);
     }
 
     private static void on_value_clicked(WebKit.DOM.Element element, WebKit.DOM.Event event,
@@ -1419,36 +1340,6 @@ public class ConversationViewer : Gtk.Box {
             warning("Error getting hidden status: %s", error.message);
             return false;
         }
-    }
-
-    private static void on_body_toggle_clicked(WebKit.DOM.Element element, WebKit.DOM.Event event,
-        ConversationViewer conversation_viewer) {
-        conversation_viewer.on_body_toggle_clicked_self(element);
-    }
-
-    private void on_body_toggle_clicked_self(WebKit.DOM.Element element) {
-        try {
-            if (web_view.get_dom_document().get_body().get_class_list().contains("nohide"))
-                return;
-            
-            WebKit.DOM.HTMLElement? email_element = closest_ancestor(element, ".email");
-            if (email_element == null)
-                return;
-            
-            WebKit.DOM.DOMTokenList class_list = email_element.get_class_list();
-            if (class_list.contains("compressed")) {
-                decompress_emails(email_element);
-            } else if (class_list.contains("hide")) {
-                class_list.remove("hide");
-                unset_controllable_quotes(email_element);
-            } else {
-                class_list.add("hide");
-            }
-        } catch (Error error) {
-            warning("Error toggling message: %s", error.message);
-        }
-
-        mark_read();
     }
 
     private static void on_show_images(WebKit.DOM.Element element, WebKit.DOM.Event event,
@@ -1777,6 +1668,12 @@ public class ConversationViewer : Gtk.Box {
         mark_messages(Geary.iterate<Geary.EmailIdentifier>(message.id).to_array_list(), flags, null);
         mark_manual_read(message.id);
     }
+
+    private void load_remote_images_message(Geary.Email message) {
+        Geary.EmailFlags flags = new Geary.EmailFlags();
+        flags.add(Geary.EmailFlags.LOAD_REMOTE_IMAGES);
+        mark_messages(Geary.iterate<Geary.EmailIdentifier>(message.id).to_array_list(), flags, null);
+    }
     
     private void on_mark_unread_from_here(Geary.Email message) {
         Geary.EmailFlags flags = new Geary.EmailFlags();
@@ -1808,16 +1705,6 @@ public class ConversationViewer : Gtk.Box {
             } catch (Error error) {
                 debug("Adding manual_read class failed: %s", error.message);
             }
-        }
-    }
-
-    private void on_print_message(Geary.Email message) {
-        try {
-            email_to_element.get(message.id).get_class_list().add("print");
-            web_view.get_main_frame().print();
-            email_to_element.get(message.id).get_class_list().remove("print");
-        } catch (GLib.Error error) {
-            debug("Hiding elements for printing failed: %s", error.message);
         }
     }
     
@@ -1918,7 +1805,6 @@ public class ConversationViewer : Gtk.Box {
         
         // Print a message.
         Gtk.MenuItem print_item = new Gtk.MenuItem.with_mnemonic(Stock._PRINT_MENU);
-        print_item.activate.connect(() => on_print_message(email));
         menu.append(print_item);
 
         // Separator.
@@ -1926,7 +1812,6 @@ public class ConversationViewer : Gtk.Box {
 
         // View original message source.
         Gtk.MenuItem view_source_item = new Gtk.MenuItem.with_mnemonic(_("_View Source"));
-        view_source_item.activate.connect(() => on_view_source(email));
         menu.append(view_source_item);
 
         return menu;
@@ -2264,7 +2149,7 @@ public class ConversationViewer : Gtk.Box {
                 Util.DOM.select(attachment_table, ".info .filename")
                     .set_inner_text(filename);
                 Util.DOM.select(attachment_table, ".info .filesize")
-                    .set_inner_text(Files.get_filesize_as_string(attachment.filesize));
+                    .set_inner_text(GLib.format_size(attachment.filesize));
                 attachment_table.set_attribute("data-attachment-id", attachment.id);
 
                 // Set the image preview and insert it into the container.
@@ -2325,29 +2210,6 @@ public class ConversationViewer : Gtk.Box {
             web_view.get_dom_document().get_default_view().get_selection().select_all_children(email_element);
         } catch (Error error) {
             warning("Could not make selection: %s", error.message);
-        }
-    }
-    
-    private void on_view_source(Geary.Email message) {
-        string source = message.header.buffer.to_string() + message.body.buffer.to_string();
-        
-        try {
-            string temporary_filename;
-            int temporary_handle = FileUtils.open_tmp("geary-message-XXXXXX.txt",
-                out temporary_filename);
-            FileUtils.set_contents(temporary_filename, source);
-            FileUtils.close(temporary_handle);
-            
-            // ensure this file is only readable by the user ... this needs to be done after the
-            // file is closed
-            FileUtils.chmod(temporary_filename, (int) (Posix.S_IRUSR | Posix.S_IWUSR));
-            
-            string temporary_uri = Filename.to_uri(temporary_filename, null);
-            Gtk.show_uri(web_view.get_screen(), temporary_uri, Gdk.CURRENT_TIME);
-        } catch (Error error) {
-            ErrorDialog dialog = new ErrorDialog(GearyApplication.instance.controller.main_window,
-                _("Failed to open default text editor."), error.message);
-            dialog.run();
         }
     }
 
@@ -2472,24 +2334,6 @@ public class ConversationViewer : Gtk.Box {
     private bool in_drafts_folder() {
         return current_folder != null && current_folder.special_folder_type
             == Geary.SpecialFolderType.DRAFTS;
-    }
-    
-    private void on_show_images_change() {
-        // When the setting is changed to 'show images', the currently selected message is updated.
-        // When the setting is changed to 'do not show images' the method returns, as there is no benefit
-        // in 'unloading' images (like saving bandwidth or relating to security concerns).
-        if (!GearyApplication.instance.config.generally_show_remote_images)
-            
-            return;
-            
-        string? quote;
-        Geary.Email? message = get_selected_message(out quote);
-        if (message == null || current_folder.special_folder_type == Geary.SpecialFolderType.SPAM)
-            
-            return;
-            
-        WebKit.DOM.HTMLElement element = email_to_element.get(message.id);
-        show_images_email(element, false);
     }
 }
 
