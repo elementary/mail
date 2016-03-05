@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2016-02-18 18:26-0800\n"
-"PO-Revision-Date: 2016-03-01 10:49+0000\n"
+"PO-Revision-Date: 2016-03-05 01:32+0000\n"
 "Last-Translator: Andi Chandler <Unknown>\n"
 "Language-Team: English (United Kingdom) "
 "(http://www.transifex.com/projects/p/geary/language/en_GB/)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-03-02 05:54+0000\n"
-"X-Generator: Launchpad (build 17925)\n"
+"X-Launchpad-Export-Date: 2016-03-05 06:45+0000\n"
+"X-Generator: Launchpad (build 17936)\n"
 "Language: en_GB\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -1931,257 +1931,259 @@ msgstr "Find"
 
 #: ../data/ui/find_bar.ui:72
 msgid "Previous Result"
-msgstr ""
+msgstr "Previous Result"
 
 #: ../data/ui/find_bar.ui:91
 msgid "Next result"
-msgstr ""
+msgstr "Next result"
 
 #: ../data/ui/find_bar.ui:107
 msgid "_Case sensitive"
-msgstr ""
+msgstr "_Case sensitive"
 
 #: ../data/ui/find_bar.ui:127
 msgid "label"
-msgstr ""
+msgstr "label"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr ""
+msgstr "Geary update in progress…"
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
-msgstr ""
+msgstr "Remove email address"
 
 #: ../data/ui/edit_alternate_emails.ui:136
 msgid ""
 "Some email services require additional addresses be configured on the "
 "server.  Contact your email provider for more information."
 msgstr ""
+"Some email services require additional addresses be configured on the "
+"server.  Contact your email provider for more information."
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
-msgstr ""
+msgstr "_Update"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
-msgstr ""
+msgstr "Please wait while Geary validates your account."
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
-msgstr ""
+msgstr "_Undo"
 
 #: ../data/ui/composer.ui:15
 msgid "_Redo"
-msgstr ""
+msgstr "_Redo"
 
 #: ../data/ui/composer.ui:22
 msgid "Cu_t"
-msgstr ""
+msgstr "Cu_t"
 
 #: ../data/ui/composer.ui:36
 msgid "_Paste"
-msgstr ""
+msgstr "_Paste"
 
 #: ../data/ui/composer.ui:43
 msgid "_Left"
-msgstr ""
+msgstr "_Left"
 
 #: ../data/ui/composer.ui:48
 msgid "_Right"
-msgstr ""
+msgstr "_Right"
 
 #: ../data/ui/composer.ui:53
 msgid "_Center"
-msgstr ""
+msgstr "_Centre"
 
 #: ../data/ui/composer.ui:58
 msgid "_Justify"
-msgstr ""
+msgstr "_Justify"
 
 #: ../data/ui/composer.ui:63
 msgid "Link (Ctrl+L)"
-msgstr ""
+msgstr "Link (Ctrl+L)"
 
 #: ../data/ui/composer.ui:70
 msgid "C_olor"
-msgstr ""
+msgstr "C_olour"
 
 #: ../data/ui/composer.ui:81
 msgid "Quote text  (Ctrl+])"
-msgstr ""
+msgstr "Quote text  (Ctrl+])"
 
 #: ../data/ui/composer.ui:87
 msgid "Unquote text (Ctrl+[)"
-msgstr ""
+msgstr "Unquote text (Ctrl+[)"
 
 #: ../data/ui/composer.ui:93
 msgid "Remove formatting (Ctrl+Space)"
-msgstr ""
+msgstr "Remove formatting (Ctrl+Space)"
 
 #: ../data/ui/composer.ui:100
 msgctxt "Clipboard paste with rich text"
 msgid "Paste _With Formatting"
-msgstr ""
+msgstr "Paste _With Formatting"
 
 #: ../data/ui/composer.ui:111
 msgid "Bold (Ctrl+B)"
-msgstr ""
+msgstr "Bold (Ctrl+B)"
 
 #: ../data/ui/composer.ui:118
 msgid "Italic (Ctrl+I)"
-msgstr ""
+msgstr "Italic (Ctrl+I)"
 
 #: ../data/ui/composer.ui:125
 msgid "Underline (Ctrl+U)"
-msgstr ""
+msgstr "Underline (Ctrl+U)"
 
 #: ../data/ui/composer.ui:132
 msgid "Strikethrough (Ctrl+K)"
-msgstr ""
+msgstr "Strikethrough (Ctrl+K)"
 
 #: ../data/ui/composer.ui:139
 msgid "_Rich Text"
-msgstr ""
+msgstr "_Rich Text"
 
 #: ../data/ui/composer.ui:145
 msgid "Show Extended Fields"
-msgstr ""
+msgstr "Show Extended Fields"
 
 #: ../data/ui/composer.ui:157
 msgctxt "Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "Close and Save"
 
 #: ../data/ui/composer.ui:158
 msgctxt "Short Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "Close and Save"
 
 #: ../data/ui/composer.ui:159
 msgctxt "Tooltip"
 msgid "Close and Save"
-msgstr ""
+msgstr "Close and Save"
 
 #: ../data/ui/composer.ui:165
 msgctxt "Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Close and Discard"
 
 #: ../data/ui/composer.ui:166
 msgctxt "Short Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Close and Discard"
 
 #: ../data/ui/composer.ui:167
 msgctxt "Tooltip"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Close and Discard"
 
 #: ../data/ui/composer.ui:173
 msgid "Lar_ge"
-msgstr ""
+msgstr "Lar_ge"
 
 #: ../data/ui/composer.ui:174
 msgid "Large"
-msgstr ""
+msgstr "Large"
 
 #: ../data/ui/composer.ui:179
 msgid "_Medium"
-msgstr ""
+msgstr "_Medium"
 
 #: ../data/ui/composer.ui:180
 msgid "Medium"
-msgstr ""
+msgstr "Medium"
 
 #: ../data/ui/composer.ui:185
 msgid "_Small"
-msgstr ""
+msgstr "_Small"
 
 #: ../data/ui/composer.ui:186
 msgid "Small"
-msgstr ""
+msgstr "Small"
 
 #: ../data/ui/composer.ui:191
 msgid "S_ans Serif"
-msgstr ""
+msgstr "S_ans Serif"
 
 #: ../data/ui/composer.ui:192
 msgid "Sans Serif"
-msgstr ""
+msgstr "Sans Serif"
 
 #: ../data/ui/composer.ui:197
 msgid "S_erif"
-msgstr ""
+msgstr "S_erif"
 
 #: ../data/ui/composer.ui:198
 msgid "Serif"
-msgstr ""
+msgstr "Serif"
 
 #: ../data/ui/composer.ui:203
 msgid "_Fixed Width"
-msgstr ""
+msgstr "_Fixed Width"
 
 #: ../data/ui/composer.ui:204
 msgid "Fixed Width"
-msgstr ""
+msgstr "Fixed Width"
 
 #: ../data/ui/composer.ui:209 ../data/ui/composer.ui:210
 msgid "Detach"
-msgstr ""
+msgstr "Detach"
 
 #: ../data/ui/composer.ui:211
 msgid "Detach (Ctrl+D)"
-msgstr ""
+msgstr "Detach (Ctrl+D)"
 
 #: ../data/ui/composer.ui:218
 msgid "_Send"
-msgstr ""
+msgstr "_Send"
 
 #: ../data/ui/composer.ui:219
 msgid "Send"
-msgstr ""
+msgstr "Send"
 
 #: ../data/ui/composer.ui:220
 msgid "Send (Ctrl+Enter)"
-msgstr ""
+msgstr "Send (Ctrl+Enter)"
 
 #: ../data/ui/composer.ui:226
 msgid "_Attach File"
-msgstr ""
+msgstr "_Attach File"
 
 #: ../data/ui/composer.ui:227 ../data/ui/composer.ui:228
 msgid "Attach File"
-msgstr ""
+msgstr "Attach File"
 
 #: ../data/ui/composer.ui:234
 msgid "_Include Original Attachments"
-msgstr ""
+msgstr "_Include Original Attachments"
 
 #: ../data/ui/composer.ui:235 ../data/ui/composer.ui:236
 msgid "Include Original Attachments"
-msgstr ""
+msgstr "Include Original Attachments"
 
 #: ../data/ui/composer.ui:242
 msgid "Application Menu"
-msgstr ""
+msgstr "Application Menu"
 
 #. Address(es) e-mail is to be sent to
 #: ../data/ui/composer.ui:289
 msgid "_To"
-msgstr ""
+msgstr "_To"
 
 #: ../data/ui/composer.ui:308
 msgid "_Cc"
-msgstr ""
+msgstr "_Cc"
 
 #: ../data/ui/composer.ui:362
 msgid "_Subject"
-msgstr ""
+msgstr "_Subject"
 
 #: ../data/ui/composer.ui:381
 msgid "_Bcc"
-msgstr ""
+msgstr "_Bcc"
 
 #: ../data/ui/composer.ui:411
 msgid "_Reply-To"

@@ -20,15 +20,15 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-02-18 18:26-0800\n"
-"PO-Revision-Date: 2016-02-09 17:50+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
+"PO-Revision-Date: 2016-03-04 08:55+0000\n"
+"Last-Translator: Mathias Dietrich <Unknown>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-02-20 05:48+0000\n"
-"X-Generator: Launchpad (build 17925)\n"
+"X-Launchpad-Export-Date: 2016-03-05 06:45+0000\n"
+"X-Generator: Launchpad (build 17936)\n"
 "Language: de\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -775,7 +775,10 @@ msgstr ""
 "Benjamin Steinwender <b@stbe.at>\n"
 "\n"
 "Launchpad Contributions:\n"
+"  Artem Anufrij https://launchpad.net/~artem-anufrij\n"
 "  Domar https://launchpad.net/~domar\n"
+"  JayNutZ https://launchpad.net/~thejaynutz\n"
+"  Mathias Dietrich https://launchpad.net/~theghost\n"
 "  Phillip Sz https://launchpad.net/~phillip-sz\n"
 "  SSX https://launchpad.net/~ssx1337ssy\n"
 "  Simon Linden https://launchpad.net/~xhi2018\n"
@@ -1888,7 +1891,7 @@ msgstr ""
 #: ../src/client/dialogs/preferences-dialog.vala:38
 #: ../src/client/dialogs/preferences-dialog.vala:39
 msgid "Three-pane layout:"
-msgstr ""
+msgstr "Drei-Spalten-Ansicht:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:42 ../data/ui/login.ui:853
 #: ../src/client/dialogs/preferences-dialog.vala:48
@@ -1898,13 +1901,13 @@ msgstr ""
 #: ../src/client/dialogs/preferences-dialog.vala:47
 #: ../src/client/dialogs/preferences-dialog.vala:53
 msgid "Spell check:"
-msgstr ""
+msgstr "Rechtschreibprüfung:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:51
 #: ../src/client/dialogs/preferences-dialog.vala:57
 #: ../src/client/dialogs/preferences-dialog.vala:47
 msgid "Notifications"
-msgstr ""
+msgstr "Benach­rich­ti­gungen"
 
 #: ../src/client/dialogs/preferences-dialog.vala:56
 #: ../src/client/dialogs/preferences-dialog.vala:62
@@ -1935,20 +1938,24 @@ msgid ""
 "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
 "account?</span> "
 msgstr ""
+"<span weight=\"bold\" size=\"larger\">Sind Sie sicher, dass Sie dieses Konto "
+"löschen möchten?</span> "
 
 #: ../data/ui/remove_confirm.ui:58
 msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
 msgstr ""
+"Alle E-Mails dieses Kontos werden von Ihrem Computer gelöscht. Dies betrifft "
+"nicht die E-Mails auf dem Server."
 
 #: ../data/ui/remove_confirm.ui:80
 msgid "Nickname:"
-msgstr ""
+msgstr "Benutzername:"
 
 #: ../data/ui/remove_confirm.ui:94
 msgid "Email address:"
-msgstr ""
+msgstr "E-Mail Adresse:"
 
 #: ../data/ui/find_bar.ui:59
 msgid "Find"
@@ -1956,11 +1963,11 @@ msgstr ""
 
 #: ../data/ui/find_bar.ui:72
 msgid "Previous Result"
-msgstr ""
+msgstr "Vorheriges Ergebnis"
 
 #: ../data/ui/find_bar.ui:91
 msgid "Next result"
-msgstr ""
+msgstr "Nächstes Ergebnis"
 
 #: ../data/ui/find_bar.ui:107
 msgid "_Case sensitive"
@@ -1976,7 +1983,7 @@ msgstr ""
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
-msgstr ""
+msgstr "E-Mail Adresse entfernen"
 
 #: ../data/ui/edit_alternate_emails.ui:136
 msgid ""
@@ -2014,15 +2021,15 @@ msgstr ""
 
 #: ../data/ui/composer.ui:48
 msgid "_Right"
-msgstr ""
+msgstr "_Rechts"
 
 #: ../data/ui/composer.ui:53
 msgid "_Center"
-msgstr ""
+msgstr "_Zentriert"
 
 #: ../data/ui/composer.ui:58
 msgid "_Justify"
-msgstr ""
+msgstr "_Blocksatz"
 
 #: ../data/ui/composer.ui:63
 msgid "Link (Ctrl+L)"
@@ -2034,15 +2041,15 @@ msgstr ""
 
 #: ../data/ui/composer.ui:81
 msgid "Quote text  (Ctrl+])"
-msgstr ""
+msgstr "Text zitieren (Strg+])"
 
 #: ../data/ui/composer.ui:87
 msgid "Unquote text (Ctrl+[)"
-msgstr ""
+msgstr "Zitat aufheben (Strg+[)"
 
 #: ../data/ui/composer.ui:93
 msgid "Remove formatting (Ctrl+Space)"
-msgstr ""
+msgstr "Formatierung entfernen (Strg+Leertaste)"
 
 #: ../data/ui/composer.ui:100
 msgctxt "Clipboard paste with rich text"
@@ -2051,19 +2058,19 @@ msgstr ""
 
 #: ../data/ui/composer.ui:111
 msgid "Bold (Ctrl+B)"
-msgstr ""
+msgstr "Fett (Strg+B)"
 
 #: ../data/ui/composer.ui:118
 msgid "Italic (Ctrl+I)"
-msgstr ""
+msgstr "Kursiv (Strg+I)"
 
 #: ../data/ui/composer.ui:125
 msgid "Underline (Ctrl+U)"
-msgstr ""
+msgstr "Unterstrichen (Strg+U)"
 
 #: ../data/ui/composer.ui:132
 msgid "Strikethrough (Ctrl+K)"
-msgstr ""
+msgstr "Durchgestrichen (Strg+K)"
 
 #: ../data/ui/composer.ui:139
 msgid "_Rich Text"
@@ -2071,7 +2078,7 @@ msgstr ""
 
 #: ../data/ui/composer.ui:145
 msgid "Show Extended Fields"
-msgstr ""
+msgstr "Erweiterte Felder anzeigen"
 
 #: ../data/ui/composer.ui:157
 msgctxt "Label"
@@ -2105,87 +2112,87 @@ msgstr ""
 
 #: ../data/ui/composer.ui:173
 msgid "Lar_ge"
-msgstr ""
+msgstr "_Groß"
 
 #: ../data/ui/composer.ui:174
 msgid "Large"
-msgstr ""
+msgstr "Groß"
 
 #: ../data/ui/composer.ui:179
 msgid "_Medium"
-msgstr ""
+msgstr "_Mittel"
 
 #: ../data/ui/composer.ui:180
 msgid "Medium"
-msgstr ""
+msgstr "Mittel"
 
 #: ../data/ui/composer.ui:185
 msgid "_Small"
-msgstr ""
+msgstr "_Klein"
 
 #: ../data/ui/composer.ui:186
 msgid "Small"
-msgstr ""
+msgstr "Klein"
 
 #: ../data/ui/composer.ui:191
 msgid "S_ans Serif"
-msgstr ""
+msgstr "S_ans Serif"
 
 #: ../data/ui/composer.ui:192
 msgid "Sans Serif"
-msgstr ""
+msgstr "Sans Serif"
 
 #: ../data/ui/composer.ui:197
 msgid "S_erif"
-msgstr ""
+msgstr "S_erif"
 
 #: ../data/ui/composer.ui:198
 msgid "Serif"
-msgstr ""
+msgstr "Serif"
 
 #: ../data/ui/composer.ui:203
 msgid "_Fixed Width"
-msgstr ""
+msgstr "_Feste Breite"
 
 #: ../data/ui/composer.ui:204
 msgid "Fixed Width"
-msgstr ""
+msgstr "Feste Breite"
 
 #: ../data/ui/composer.ui:209 ../data/ui/composer.ui:210
 msgid "Detach"
-msgstr ""
+msgstr "Lösen"
 
 #: ../data/ui/composer.ui:211
 msgid "Detach (Ctrl+D)"
-msgstr ""
+msgstr "Lösen (Strg+D)"
 
 #: ../data/ui/composer.ui:218
 msgid "_Send"
-msgstr ""
+msgstr "_Senden"
 
 #: ../data/ui/composer.ui:219
 msgid "Send"
-msgstr ""
+msgstr "Senden"
 
 #: ../data/ui/composer.ui:220
 msgid "Send (Ctrl+Enter)"
-msgstr ""
+msgstr "Senden (Strg+Enter)"
 
 #: ../data/ui/composer.ui:226
 msgid "_Attach File"
-msgstr ""
+msgstr "Datei _anhängen"
 
 #: ../data/ui/composer.ui:227 ../data/ui/composer.ui:228
 msgid "Attach File"
-msgstr ""
+msgstr "Datei anhängen"
 
 #: ../data/ui/composer.ui:234
 msgid "_Include Original Attachments"
-msgstr ""
+msgstr "Ursprüngliche Anhänge h_inzufügen"
 
 #: ../data/ui/composer.ui:235 ../data/ui/composer.ui:236
 msgid "Include Original Attachments"
-msgstr ""
+msgstr "Ursprüngliche Anhänge hinzufügen"
 
 #: ../data/ui/composer.ui:242
 msgid "Application Menu"
@@ -2198,7 +2205,7 @@ msgstr ""
 
 #: ../data/ui/composer.ui:308
 msgid "_Cc"
-msgstr ""
+msgstr "_Cc"
 
 #: ../data/ui/composer.ui:362
 msgid "_Subject"
@@ -2206,7 +2213,7 @@ msgstr ""
 
 #: ../data/ui/composer.ui:381
 msgid "_Bcc"
-msgstr ""
+msgstr "_Bcc"
 
 #: ../data/ui/composer.ui:411
 msgid "_Reply-To"
@@ -2216,11 +2223,11 @@ msgstr ""
 #. Account mail will be sent from
 #: ../data/ui/composer.ui:440
 msgid "From"
-msgstr ""
+msgstr "Von"
 
 #: ../data/ui/composer.ui:519
 msgid "Drop files here"
-msgstr ""
+msgstr "Dateien hier ablegen"
 
 #: ../data/ui/composer.ui:535
 msgid "To add them as attachments"
@@ -2229,6 +2236,8 @@ msgstr ""
 #: ../data/ui/account_cannot_remove.ui:40
 msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
 msgstr ""
+"<span weight=\"bold\" size=\"larger\">Konto kann nicht entfernt "
+"werden</span> "
 
 #: ../data/ui/account_cannot_remove.ui:56
 msgid ""
@@ -2246,11 +2255,11 @@ msgstr ""
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
-msgstr ""
+msgstr "Kennwort"
 
 #: ../data/ui/login.ui:97 ../data/ui/login.ui:545
 msgid "_Password:"
-msgstr ""
+msgstr "_Kennwort:"
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
@@ -2258,7 +2267,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
-msgstr ""
+msgstr "Arbeit, zu Hause, usw."
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
