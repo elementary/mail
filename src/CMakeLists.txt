@@ -330,7 +330,6 @@ client/accounts/account-spinner-page.vala
 client/accounts/add-edit-page.vala
 client/accounts/login-dialog.vala
 
-client/components/conversation-find-bar.vala
 client/components/count-badge.vala
 client/components/folder-menu.vala
 client/components/icon-factory.vala
@@ -363,6 +362,8 @@ client/conversation-list/formatted-conversation-data.vala
 
 client/conversation-viewer/conversation-viewer.vala
 client/conversation-viewer/conversation-web-view.vala
+client/conversation-viewer/ConversationWidget.vala
+client/conversation-viewer/ConversationFindBar.vala
 
 client/dialogs/alert-dialog.vala
 client/dialogs/attachment-dialog.vala
