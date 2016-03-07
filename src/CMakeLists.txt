@@ -342,17 +342,15 @@ client/components/status-bar.vala
 client/components/stock.vala
 client/components/stylish-webview.vala
 
-client/composer/composer-box.vala
 client/composer/composer-container.vala
-client/composer/composer-embed.vala
 client/composer/composer-headerbar.vala
 client/composer/composer-toolbar.vala
 client/composer/composer-widget.vala
 client/composer/composer-window.vala
+client/composer/ComposerCard.vala
 client/composer/contact-entry-completion.vala
 client/composer/contact-list-store.vala
 client/composer/email-entry.vala
-client/composer/scrollable-overlay.vala
 client/composer/webview-edit-fixer.vala
 
 client/conversation-list/conversation-list-cell-renderer.vala

@@ -148,12 +148,6 @@ public class ConversationViewer : Gtk.Box {
     // Overlay consisting of a label in front of a webpage
     private Granite.Widgets.OverlayBar message_overlay;
     
-    // Overlay containing any inline composers.
-    public ScrollableOverlay compose_overlay;
-    
-    // Paned for holding any paned composers.
-    private Gtk.Box composer_boxes;
-    
     // Maps emails to their corresponding elements.
     private Gee.HashMap<Geary.EmailIdentifier, WebKit.DOM.HTMLElement> email_to_element = new
         Gee.HashMap<Geary.EmailIdentifier, WebKit.DOM.HTMLElement>();
@@ -213,11 +207,8 @@ public class ConversationViewer : Gtk.Box {
         GearyApplication.instance.controller.folder_selected.connect(on_folder_selected);
         GearyApplication.instance.controller.conversation_count_changed.connect(on_conversation_count_changed);
         
-        compose_overlay = new ScrollableOverlay(web_view);
-        
         Gtk.ScrolledWindow conversation_viewer_scrolled = new Gtk.ScrolledWindow(null, null);
         conversation_viewer_scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
-        conversation_viewer_scrolled.add(compose_overlay);
         
         conversation_list_box = new Gtk.ListBox();
         conversation_list_box.expand = true;
@@ -251,22 +242,17 @@ public class ConversationViewer : Gtk.Box {
         grid.add(view_overlay);
         grid.add(conversation_viewer_scrolled);
         
-        Gtk.Paned composer_paned = new Gtk.Paned(Gtk.Orientation.VERTICAL);
-        composer_paned.pack1(grid, true, false);
-        composer_boxes = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
-        composer_boxes.no_show_all = true;
-        composer_paned.pack2(composer_boxes, true, false);
-        Configuration config = GearyApplication.instance.config;
-        config.bind(Configuration.COMPOSER_PANE_POSITION_KEY, composer_paned, "position");
-        pack_start(composer_paned);
+        pack_start(grid);
     }
     
     public void set_paned_composer(ComposerWidget composer) {
-        ComposerBox container = new ComposerBox(composer);
-        composer_boxes.pack_start(container);
-        composer_boxes.show();
-        if (composer.state == ComposerWidget.ComposerState.NEW)
-            message_overlay.hide();
+        if (composer.state == ComposerWidget.ComposerState.NEW) {
+            clear(current_folder, current_account_information);
+        }
+
+        var container = new ComposerCard(composer);
+        container.show_all();
+        conversation_list_box.add(container);
     }
     
     public Geary.Email? get_last_message() {
@@ -686,7 +672,7 @@ public class ConversationViewer : Gtk.Box {
         if (messages.contains(email))
             return;
         
-        var message_widget = new ConversationWidget(email, current_folder);
+        var message_widget = new ConversationWidget(email, current_folder, is_in_folder);
         message_widget.hovering_over_link.connect((title, url) => on_hovering_over_link(title, url));
         message_widget.link_selected.connect((link) => link_selected(link));
         message_widget.mark_read.connect((read) => {
@@ -706,9 +692,9 @@ public class ConversationViewer : Gtk.Box {
         });
 
         message_widget.mark_load_remote_images.connect(() => load_remote_images_message(message_widget.email));
-
         message_widget.open_attachment.connect((attachment) => open_attachment(attachment));
         message_widget.save_attachments.connect((attachments) => save_attachments(attachments));
+        message_widget.edit_draft.connect(() => edit_draft(message_widget.email));
 
         if (email.is_unread() != Geary.Trillian.FALSE) {
             message_widget.collapsed = false;
@@ -1368,29 +1354,6 @@ public class ConversationViewer : Gtk.Box {
         Gee.ArrayList<Geary.Contact> contact_list = new Gee.ArrayList<Geary.Contact>();
         contact_list.add(contact);
         contact_store.mark_contacts_async.begin(contact_list, flags, null);
-        
-        WebKit.DOM.Document document = conversation_viewer.web_view.get_dom_document();
-        try {
-            WebKit.DOM.NodeList nodes = document.query_selector_all(".email");
-            for (ulong i = 0; i < nodes.length; i ++) {
-                WebKit.DOM.Element? email_element = nodes.item(i) as WebKit.DOM.Element;
-                if (email_element != null) {
-                    string? address = null;
-                    WebKit.DOM.Element? address_el = email_element.query_selector(".address_value");
-                    if (address_el != null) {
-                        address = ((WebKit.DOM.HTMLElement) address_el).get_inner_text();
-                    } else {
-                        address_el = email_element.query_selector(".address_name");
-                        if (address_el != null)
-                            address = ((WebKit.DOM.HTMLElement) address_el).get_inner_text();
-                    }
-                    if (address != null && address.normalize().casefold() == contact.normalized_email)
-                        conversation_viewer.show_images_email(email_element, false);
-                }
-            }
-        } catch (Error error) {
-            debug("Error showing images: %s", error.message);
-        }
     }
     
     private void show_images_email(WebKit.DOM.Element email_element, bool remember) {

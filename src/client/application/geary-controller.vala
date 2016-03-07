@@ -2203,11 +2203,7 @@ public class GearyController : Geary.BaseObject {
         widget.destroy.connect(on_composer_widget_destroy);
 
         if (inline) {
-            if (widget.state == ComposerWidget.ComposerState.NEW ||
-                widget.state == ComposerWidget.ComposerState.PANED)
-                main_window.conversation_viewer.set_paned_composer(widget);
-            else
-                new ComposerEmbed(widget, main_window.conversation_viewer, referred); // is_draft
+            main_window.conversation_viewer.set_paned_composer(widget);
         } else {
             new ComposerWindow(widget);
             widget.state = ComposerWidget.ComposerState.DETACHED;
@@ -2216,7 +2212,7 @@ public class GearyController : Geary.BaseObject {
 
     private bool should_create_new_composer(ComposerWidget.ComposeType? compose_type,
         Geary.Email? referred, string? quote, bool is_draft, out bool inline) {
-        inline = true;
+        inline = false;
 
         // In we're replying, see whether we already have a reply for that message.
         if (compose_type != null && compose_type != ComposerWidget.ComposeType.NEW_MESSAGE) {

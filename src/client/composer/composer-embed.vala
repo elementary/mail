@@ -4,7 +4,7 @@
  * (version 2.1 or later).  See the COPYING file in this distribution.
  */
 
-public class ComposerEmbed : Gtk.EventBox, ComposerContainer {
+public class ComposerEmbed : Gtk.ListBoxRow, ComposerContainer {
     
     private const int MIN_EDITOR_HEIGHT = 200;
     
@@ -22,65 +22,22 @@ public class ComposerEmbed : Gtk.EventBox, ComposerContainer {
         get { return (Gtk.Window) get_toplevel(); }
     }
     
-    public ComposerEmbed(ComposerWidget composer, ConversationViewer conversation_viewer,
-        Geary.Email referred) {
+    public ComposerEmbed(ComposerWidget composer, ConversationViewer conversation_viewer, Geary.Email referred) {
         this.composer = composer;
         this.conversation_viewer = conversation_viewer;
-        halign = Gtk.Align.FILL;
-        valign = Gtk.Align.FILL;
-        
-        WebKit.DOM.HTMLElement? email_element = null;
-        email_element = conversation_viewer.web_view.get_dom_document().get_element_by_id(
-            conversation_viewer.get_div_id(referred.id)) as WebKit.DOM.HTMLElement;
-        embed_id = referred.id.to_string() + "_reply";
-        if (email_element == null) {
-            warning("Embedded composer could not find email to follow.");
-            email_element = conversation_viewer.web_view.get_dom_document().get_element_by_id(
-                "placeholder") as WebKit.DOM.HTMLElement;
-        }
-        
-        try {
-            email_element.insert_adjacent_html("afterend",
-                @"<div id='$embed_id' class='composer_embed'></div>");
-        } catch (Error error) {
-            debug("Error creating embed element: %s", error.message);
-            return;
-        }
-        
-        add(composer);
-        realize.connect(on_realize);
+        get_style_context().add_class("card");
+        margin = 12;
+        margin_bottom = 3;
+        var grid = new Gtk.Grid();
+        grid.expand = true;
+        grid.margin = 6;
+        grid.add(composer);
+        add(grid);
         composer.editor.focus_in_event.connect(on_focus_in);
         composer.editor.focus_out_event.connect(on_focus_out);
-        composer.editor.document_load_finished.connect(on_loaded);
-        conversation_viewer.compose_overlay.add_overlay(this);
-        show();
+        conversation_viewer.conversation_list_box.add (this);
+        show_all();
         present();
-    }
-    
-    private void on_realize() {
-        update_style();
-        
-        Gtk.ScrolledWindow win = (Gtk.ScrolledWindow) composer.editor.parent;
-        win.get_vscrollbar().hide();
-        
-        composer.editor.vadjustment.value_changed.connect(on_inner_scroll);
-        composer.editor.vadjustment.changed.connect(on_adjust_changed);
-        composer.editor.user_changed_contents.connect(on_inner_size_changed);
-        
-        reroute_scroll_handling(this);
-    }
-    
-    private void on_loaded() {
-        try {
-           composer.editor.get_dom_document().body.get_class_list().add("embedded");
-        } catch (Error error) {
-            debug("Error setting class of editor: %s", error.message);
-        }
-        Idle.add(() => {
-            recalc_height();
-            conversation_viewer.compose_overlay.queue_resize();
-            return false;
-        });
     }
     
     private void reroute_scroll_handling(Gtk.Widget widget) {
@@ -102,19 +59,6 @@ public class ComposerEmbed : Gtk.EventBox, ComposerContainer {
         }
     }
     
-    private void update_style() {
-        Gdk.RGBA window_background = top_window.get_style_context()
-            .get_background_color(Gtk.StateFlags.NORMAL);
-        Gdk.RGBA background = get_style_context().get_background_color(Gtk.StateFlags.NORMAL);
-        
-        if (background == window_background)
-            return;
-        
-        get_style_context().changed.disconnect(update_style);
-        override_background_color(Gtk.StateFlags.NORMAL, window_background);
-        get_style_context().changed.connect(update_style);
-    }
-    
     public void remove_composer() {
         if (composer.editor.has_focus)
             on_focus_out();
@@ -126,13 +70,7 @@ public class ComposerEmbed : Gtk.EventBox, ComposerContainer {
         Gtk.ScrolledWindow win = (Gtk.ScrolledWindow) composer.editor.parent;
         win.get_vscrollbar().show();
         
-        try {
-            composer.editor.get_dom_document().body.get_class_list().remove("embedded");
-        } catch (Error error) {
-            debug("Error setting class of editor: %s", error.message);
-        }
-        
-        remove(composer);
+        composer.parent.remove(composer);
         close_container();
     }
     
@@ -201,14 +139,6 @@ public class ComposerEmbed : Gtk.EventBox, ComposerContainer {
         }
     }
     
-    private void on_adjust_changed(Gtk.Adjustment adj) {
-        if (scrolled_to_bottom) {
-            setting_inner_scroll = true;
-            adj.set_value(adj.upper);
-            setting_inner_scroll = false;
-        }
-    }
-    
     private void on_inner_size_changed() {
         scrolled_to_bottom = false;  // The inserted character may cause a desired scroll
         Idle.add(recalc_height);  // So that this runs after the character has been inserted
@@ -263,19 +193,12 @@ public class ComposerEmbed : Gtk.EventBox, ComposerContainer {
         composer.state = ComposerWidget.ComposerState.DETACHED;
         composer.editor.focus_in_event.disconnect(on_focus_in);
         composer.editor.focus_out_event.disconnect(on_focus_out);
-        
-        WebKit.DOM.Element embed = conversation_viewer.web_view.get_dom_document().get_element_by_id(embed_id);
-        try{
-            embed.parent_element.remove_child(embed);
-        } catch (Error error) {
-            warning("Could not remove embed from WebView: %s", error.message);
-        }
     }
     
     public void close_container() {
         if (visible)
             vanish();
-        conversation_viewer.compose_overlay.remove(this);
+        destroy();
     }
 }
 

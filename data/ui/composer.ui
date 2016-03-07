@@ -253,6 +253,9 @@
       <object class="GtkAlignment" id="header_area">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="margin_start">6</property>
+        <property name="margin_end">6</property>
+        <property name="margin_top">6</property>
         <child>
           <placeholder/>
         </child>

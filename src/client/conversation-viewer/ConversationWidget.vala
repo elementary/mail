@@ -28,6 +28,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
     public signal void mark_read (bool read);
     public signal void star (bool starred);
     public signal void mark_load_remote_images ();
+    public signal void edit_draft ();
 
     public Geary.Email email { get; private set; }
     public StylishWebView webview { get; private set; }
@@ -73,17 +74,6 @@ public class ConversationWidget : Gtk.ListBoxRow {
     private const string REPLACED_IMAGE_CLASS = "replaced_inline_image";
     private const string DATA_IMAGE_CLASS = "data_inline_image";
 
-    private const string BODY = """
-    <html>
-        <head>
-            <title>Geary</title>
-        </head>
-        <body>
-            %s
-        </body>
-    </html>
-    """;
-
     private weak Geary.Folder? current_folder = null;
 
     private string allow_prefix;
@@ -105,6 +95,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
     private Gtk.Label user_mail;
     private Gtk.Label message_content;
     private Gtk.Label datetime;
+    private Gtk.Button draft_edit_button;
     private Gtk.Button attachment_image;
     private Gtk.Button star_button;
     private Gtk.MenuButton menu_button;
@@ -112,9 +103,8 @@ public class ConversationWidget : Gtk.ListBoxRow {
     private Gtk.InfoBar info_bar;
 
     private Gtk.FlowBox attachments_box;
-    private Gtk.Grid attachments_grid;
 
-    public ConversationWidget (Geary.Email email, Geary.Folder? current_folder) {
+    public ConversationWidget (Geary.Email email, Geary.Folder? current_folder, bool is_in_folder) {
         this.email = email;
         this.current_folder = current_folder;
 
@@ -243,6 +233,10 @@ public class ConversationWidget : Gtk.ListBoxRow {
             menu.add (new Gtk.SeparatorMenuItem ());
         }
 
+        if (!is_in_folder || !in_drafts_folder ()) {
+            draft_edit_button.destroy ();
+        }
+
         var read_item = new Gtk.MenuItem.with_label (_("Mark as Read"));
         if (email.is_unread () == Geary.Trillian.FALSE) {
             read_item.label = _("Mark as Unread");
@@ -283,8 +277,8 @@ public class ConversationWidget : Gtk.ListBoxRow {
             });
         } else {
             attachment_image.destroy ();
-            attachments_grid.no_show_all = true;
-            attachments_grid.hide ();
+            attachments_box.no_show_all = true;
+            attachments_box.hide ();
         }
 
         source_item.activate.connect (() => on_view_source ());
@@ -361,6 +355,14 @@ public class ConversationWidget : Gtk.ListBoxRow {
         header_fields_stack.add_named (header_summary_fields, "summary");
         header_fields_stack.add_named (header_expanded_fields, "expanded");
 
+        draft_edit_button = new Gtk.Button.from_icon_name ("edit-symbolic", Gtk.IconSize.MENU);
+        draft_edit_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        draft_edit_button.margin_top = 6;
+        draft_edit_button.valign = Gtk.Align.START;
+        draft_edit_button.halign = Gtk.Align.END;
+        draft_edit_button.tooltip_text = _("Edit Draft");
+        draft_edit_button.clicked.connect (() => edit_draft ());
+
         attachment_image = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
         attachment_image.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         attachment_image.margin_top = 6;
@@ -394,6 +396,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
 
         header_grid.add (avatar);
         header_grid.add (header_fields_stack);
+        header_grid.add (draft_edit_button);
         header_grid.add (attachment_image);
         header_grid.add (star_button);
         header_grid.add (menu_button);
@@ -407,6 +410,13 @@ public class ConversationWidget : Gtk.ListBoxRow {
         info_bar.add_action_widget (new Gtk.Button.with_label (_("Show Images")), 1);
         info_bar.add_action_widget (new Gtk.Button.with_label (_("Always Show from Sender")), 2);
         info_bar.get_content_area ().add (new Gtk.Label (_("This message contains remote images.")));
+        info_bar.response.connect ((id) => {
+            if (id == 2) {
+                show_images_from ();
+            } else {
+                show_images_email (false);
+            }
+        });
 
         webview = new StylishWebView ();
         webview.expand = true;
@@ -420,27 +430,28 @@ public class ConversationWidget : Gtk.ListBoxRow {
         attachments_box = new Gtk.FlowBox ();
         attachments_box.hexpand = true;
         attachments_box.activate_on_single_click = true;
-
-        attachments_grid = new Gtk.Grid ();
-        attachments_grid.orientation = Gtk.Orientation.VERTICAL;
-        attachments_grid.row_spacing = 6;
-        attachments_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        attachments_grid.add (attachments_box);
+        attachments_box.get_style_context ().add_class (Gtk.STYLE_CLASS_TOOLBAR);
+        attachments_box.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
 
         content_grid = new Gtk.Grid ();
         content_grid.margin = 6;
         content_grid.row_spacing = 6;
         content_grid.orientation = Gtk.Orientation.VERTICAL;
-        content_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         content_grid.add (info_bar);
         content_grid.add (webview);
-        content_grid.add (attachments_grid);
+
+        var outside_grid = new Gtk.Grid ();
+        outside_grid.row_spacing = 6;
+        outside_grid.orientation = Gtk.Orientation.VERTICAL;
+        outside_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        outside_grid.add (content_grid);
+        outside_grid.add (attachments_box);
 
         content_revealer = new Gtk.Revealer ();
         content_revealer.no_show_all = true;
         content_revealer.set_reveal_child (false);
         content_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_UP;
-        content_revealer.add (content_grid);
+        content_revealer.add (outside_grid);
 
         header.button_press_event.connect ((event) => header_button_press_event (event));
         header.key_press_event.connect ((event) => header_key_press_event (event));
@@ -614,6 +625,26 @@ public class ConversationWidget : Gtk.ListBoxRow {
             return;
         }
 
+        //
+        // Build an HTML document from the email with two passes:
+        //
+        // * Geary.RFC822.Message.get_body() recursively walks the message's MIME structure looking
+        //   for text MIME parts and assembles them sequentially.  If non-text MIME parts are
+        //   discovered, it calls inline_image_replacer(), which
+        //   converts them to an IMG tag with a data: URI if they are a supported image type.
+        //   Otherwise, the MIME part is dropped.
+        //
+        // * insert_html_markup() then strips everything outside the BODY, turning the BODY tag
+        //   itself into a DIV, and performs other massaging of the HTML.  It also looks for IMG
+        //   tags that refer to other MIME parts via their Content-ID, converts them to data: URIs,
+        //   and inserts them into the document.
+        //
+        // Attachments are generated and added in add_message(), which calls this method before
+        // building the HTML for them.  The above two steps take steps to avoid inlining images
+        // that are actually attachments (in particular, get_body() considers their
+        // Content-Disposition)
+        //
+
         try {
             var body_text = message.get_body (Geary.RFC822.TextFormat.HTML, inline_image_replacer) ?? "";
             bool remote_images;
@@ -766,7 +797,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
         loader.set_size (adj_width, adj_height);
     }
 
-    private string insert_html_markup(string text, Geary.RFC822.Message message, out bool remote_images) {
+    private string insert_html_markup (string text, Geary.RFC822.Message message, out bool remote_images) {
         remote_images = false;
         try {
             string inner_text = text;
@@ -775,23 +806,23 @@ public class ConversationWidget : Gtk.ListBoxRow {
             GLib.Regex body_regex = new GLib.Regex ("<body([^>]*)>(.*)</body>", GLib.RegexCompileFlags.DOTALL);
             GLib.MatchInfo matches;
             if (body_regex.match(text, 0, out matches)) {
-                inner_text = matches.fetch(2);
-                string attrs = matches.fetch(1);
+                inner_text = matches.fetch (2);
+                string attrs = matches.fetch (1);
                 if (attrs != "")
                     inner_text = @"<div$attrs>$inner_text</div>";
             }
             
             // Create a workspace for manipulating the HTML.
-            WebKit.DOM.HTMLElement container = create_div();
-            container.set_inner_html(inner_text);
+            WebKit.DOM.HTMLElement container = create_div ();
+            container.set_inner_html (inner_text);
             
 
             // Now look for the signature.
-            wrap_html_signature(ref container);
+            wrap_html_signature (ref container);
 
             // Then look for all <img> tags. Inline images are replaced with
             // data URLs.
-            WebKit.DOM.NodeList inline_list = container.query_selector_all("img");
+            WebKit.DOM.NodeList inline_list = container.query_selector_all ("img");
             for (ulong i = 0; i < inline_list.length; ++i) {
                 // Get the MIME content for the image.
                 var img = (WebKit.DOM.HTMLImageElement) inline_list.item (i);
@@ -875,23 +906,23 @@ public class ConversationWidget : Gtk.ListBoxRow {
         }
     }
 
-    private void wrap_html_signature(ref WebKit.DOM.HTMLElement container) throws Error {
+    private void wrap_html_signature (ref WebKit.DOM.HTMLElement container) throws Error {
         // Most HTML signatures fall into one of these designs which are handled by this method:
         //
         // 1. GMail:            <div>-- </div>$SIGNATURE
         // 2. GMail Alternate:  <div><span>-- </span></div>$SIGNATURE
         // 3. Thunderbird:      <div>-- <br>$SIGNATURE</div>
         //
-        WebKit.DOM.NodeList div_list = container.query_selector_all("div,span,p");
+        WebKit.DOM.NodeList div_list = container.query_selector_all ("div,span,p");
         int i = 0;
-        Regex sig_regex = new Regex("^--\\s*$");
-        Regex alternate_sig_regex = new Regex("^--\\s*(?:<br|\\R)");
+        Regex sig_regex = new Regex ("^--\\s*$");
+        Regex alternate_sig_regex = new Regex ("^--\\s*(?:<br|\\R)");
         for (; i < div_list.length; ++i) {
             // Get the div and check that it starts a signature block and is not inside a quote.
             WebKit.DOM.HTMLElement div = div_list.item(i) as WebKit.DOM.HTMLElement;
             string inner_html = div.get_inner_html();
-            if ((sig_regex.match(inner_html) || alternate_sig_regex.match(inner_html)) &&
-                !node_is_child_of(div, "BLOCKQUOTE")) {
+            if ((sig_regex.match (inner_html) || alternate_sig_regex.match (inner_html)) &&
+                !node_is_child_of (div, "BLOCKQUOTE")) {
                 break;
             }
         }
@@ -902,10 +933,10 @@ public class ConversationWidget : Gtk.ListBoxRow {
             return;
         }
 
-        WebKit.DOM.Node elem = div_list.item(i) as WebKit.DOM.Node;
-        WebKit.DOM.Element parent = elem.get_parent_element();
-        WebKit.DOM.HTMLElement signature_container = create_div();
-        signature_container.set_attribute("class", "signature");
+        WebKit.DOM.Node elem = div_list.item (i) as WebKit.DOM.Node;
+        WebKit.DOM.Element parent = elem.get_parent_element ();
+        WebKit.DOM.HTMLElement signature_container = create_div ();
+        signature_container.set_attribute ("class", "signature");
         do {
             // Get its sibling _before_ we move it into the signature div.
             WebKit.DOM.Node? sibling = elem.get_next_sibling ();
@@ -957,8 +988,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
             FileUtils.set_contents (temporary_filename, source);
             FileUtils.close (temporary_handle);
 
-            // ensure this file is only readable by the user ... this needs to be done after the
-            // file is closed
+            // ensure this file is only readable by the user… this needs to be done after the file is closed
             FileUtils.chmod (temporary_filename, (int) (Posix.S_IRUSR | Posix.S_IWUSR));
 
             string temporary_uri = Filename.to_uri (temporary_filename, null);
@@ -978,25 +1008,44 @@ public class ConversationWidget : Gtk.ListBoxRow {
         return current_folder != null && current_folder.special_folder_type == Geary.SpecialFolderType.DRAFTS;
     }
 
+    private void show_images_from () {
+        Geary.ContactStore contact_store = current_folder.account.get_contact_store();
+        Geary.Contact? contact = contact_store.get_by_rfc822(email.get_primary_originator());
+        if (contact == null) {
+            debug("Couldn't find contact for %s", email.from.to_string());
+            return;
+        }
+        
+        Geary.ContactFlags flags = new Geary.ContactFlags();
+        flags.add(Geary.ContactFlags.ALWAYS_LOAD_REMOTE_IMAGES);
+        Gee.ArrayList<Geary.Contact> contact_list = new Gee.ArrayList<Geary.Contact>();
+        contact_list.add(contact);
+        contact_store.mark_contacts_async.begin(contact_list, flags, null);
+        show_images_email (false);
+    }
+
     private void show_images_email (bool remember) {
         try {
             WebKit.DOM.HTMLCollection nodes = webview.get_dom_document ().images;
             for (ulong i = 0; i < nodes.length; i++) {
                 var element = nodes.item (i) as WebKit.DOM.Element;
-                if (element == null || !element.has_attribute ("src"))
+                if (element == null || !element.has_attribute ("src")) {
                     continue;
+                }
 
                 string src = element.get_attribute ("src");
-                if (src != null && !src.has_prefix ("data:"))
+                if (src != null && !src.has_prefix ("data:")) {
                     element.set_attribute ("src", allow_prefix + src);
+                }
             }
         } catch (Error error) {
-            warning("Error showing images: %s", error.message);
+            warning ("Error showing images: %s", error.message);
         }
-        
+
+        info_bar.hide ();
         if (remember) {
             // only add flag to load remote images if not already present
-            if (email != null && !email.load_remote_images().is_certain()) {
+            if (email != null && !email.load_remote_images ().is_certain ()) {
                 mark_load_remote_images ();
             }
         }

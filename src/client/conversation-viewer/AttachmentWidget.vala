@@ -36,6 +36,7 @@ public class AttachmentWidget : Gtk.FlowBoxChild {
     }
 
     construct {
+        margin = 6;
         var event_box = new Gtk.EventBox ();
         event_box.events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         event_box.button_press_event.connect ((event) => {

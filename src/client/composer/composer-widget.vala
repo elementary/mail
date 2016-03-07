@@ -20,7 +20,6 @@ public class ComposerWidget : Gtk.EventBox {
     
     public enum ComposerState {
         DETACHED,
-        PANED,
         NEW,
         INLINE,
         INLINE_COMPACT
@@ -312,7 +311,7 @@ public class ComposerWidget : Gtk.EventBox {
             Gtk.Widget widget = builder.get_object(name) as Gtk.Widget;
             bind_property("state", widget, "visible", BindingFlags.SYNC_CREATE,
                 (binding, source_value, ref target_value) => {
-                    target_value = (state != ComposerState.INLINE && state != ComposerState.PANED);
+                    target_value = (state != ComposerState.INLINE);
                     return true;
                 });
         }
@@ -700,10 +699,8 @@ public class ComposerWidget : Gtk.EventBox {
         if (bcc != "")
             bcc_entry.modified = true;
         
-        if (in_reply_to.size > 1) {
-            state = ComposerState.PANED;
-        } else if (compose_type == ComposeType.FORWARD || to_entry.modified || cc_entry.modified ||
-            bcc_entry.modified) {
+        if (in_reply_to.size > 1 || compose_type == ComposeType.FORWARD ||
+            to_entry.modified || cc_entry.modified || bcc_entry.modified) {
             state = ComposerState.INLINE;
         } else {
             state = ComposerState.INLINE_COMPACT;
@@ -1126,12 +1123,12 @@ public class ComposerWidget : Gtk.EventBox {
     }
     
     public void ensure_paned() {
-        if (state == ComposerState.PANED || state == ComposerState.DETACHED)
+        if (state == ComposerState.INLINE || state == ComposerState.DETACHED)
             return;
         container.remove_composer();
         GearyApplication.instance.controller.main_window.conversation_viewer
             .set_paned_composer(this);
-        state = ComposerWidget.ComposerState.PANED;
+        state = ComposerWidget.ComposerState.INLINE;
     }
     
     public void embed_header() {
@@ -2312,9 +2309,8 @@ public class ComposerWidget : Gtk.EventBox {
             return;
         }
         
-        // Don't show in inline, compact, or paned modes.
-        if (state == ComposerState.INLINE || state == ComposerState.INLINE_COMPACT ||
-            state == ComposerState.PANED)
+        // Don't show in inline or compact modes.
+        if (state == ComposerState.INLINE || state == ComposerState.INLINE_COMPACT)
             return;
         
         // If there's only one account, show nothing. (From fields are hidden above.)
