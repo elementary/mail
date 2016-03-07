@@ -1837,8 +1837,18 @@ public class GearyController : Geary.BaseObject {
     private void on_mark_conversations(Gee.Collection<Geary.App.Conversation> conversations,
         Geary.EmailFlags? flags_to_add, Geary.EmailFlags? flags_to_remove,
         bool latest_only = false) {
-        mark_email(get_conversation_collection_email_ids(conversations, latest_only),
-            flags_to_add, flags_to_remove);
+        var ids = get_conversation_collection_email_ids(conversations, latest_only);
+        main_window.conversation_viewer.conversation_list_box.get_children().foreach((child) => {
+            if (!(child is ConversationWidget)) {
+                return;
+            }
+            
+            if (((ConversationWidget) child).email.id in ids) {
+                ((ConversationWidget) child).forced_unread = flags_to_add.is_unread();
+            }
+        });
+
+        mark_email(ids, flags_to_add, flags_to_remove);
     }
 
     private void on_conversation_viewer_mark_messages(Gee.Collection<Geary.EmailIdentifier> emails,
@@ -1849,7 +1859,6 @@ public class GearyController : Geary.BaseObject {
     private void on_mark_as_read() {
         Geary.EmailFlags flags = new Geary.EmailFlags();
         flags.add(Geary.EmailFlags.UNREAD);
-
         Gee.ArrayList<Geary.EmailIdentifier> ids = get_selected_email_ids(false);
         mark_email(ids, null, flags);
     }
@@ -1857,8 +1866,7 @@ public class GearyController : Geary.BaseObject {
     private void on_mark_as_unread() {
         Geary.EmailFlags flags = new Geary.EmailFlags();
         flags.add(Geary.EmailFlags.UNREAD);
-
-        Gee.ArrayList<Geary.EmailIdentifier> ids = get_selected_email_ids(true);
+        Gee.ArrayList<Geary.EmailIdentifier> ids = get_selected_email_ids(false);
         mark_email(ids, flags, null);
     }
 
@@ -2140,15 +2148,21 @@ public class GearyController : Geary.BaseObject {
 
     // message is the email from whose menu this reply or forward was triggered.  If null,
     // this was triggered from the headerbar or shortcut.
-    private void create_reply_forward_widget(ComposerWidget.ComposeType compose_type,
-        Geary.Email? message) {
-        string? quote;
-        Geary.Email? quote_message = main_window.conversation_viewer.get_selected_message(out quote);
-        if (message == null)
-            message = quote_message;
-        if (quote_message != message)
-            quote = null;
-        create_compose_widget(compose_type, message, quote);
+    private void create_reply_forward_widget(ComposerWidget.ComposeType compose_type, Geary.Email? message) {
+        Geary.Email? quote_message = message;
+        if (quote_message == null) {
+            quote_message = main_window.conversation_viewer.get_last_message();
+        }
+
+        string quote = null;
+        try {
+            quote = quote_message.get_message ().get_body (Geary.RFC822.TextFormat.HTML, null);
+        } catch (Error e) {
+            debug("Could not get message. %s", e.message);
+            return;
+        }
+
+        create_compose_widget(compose_type, quote_message, quote);
     }
 
     private void create_compose_widget(ComposerWidget.ComposeType compose_type,

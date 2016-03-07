@@ -359,7 +359,6 @@ client/conversation-list/conversation-list-view.vala
 client/conversation-list/formatted-conversation-data.vala
 
 client/conversation-viewer/conversation-viewer.vala
-client/conversation-viewer/conversation-web-view.vala
 client/conversation-viewer/ConversationWidget.vala
 client/conversation-viewer/ConversationFindBar.vala
 client/conversation-viewer/AttachmentWidget.vala

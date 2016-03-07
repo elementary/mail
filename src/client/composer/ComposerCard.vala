@@ -32,7 +32,6 @@ public class ComposerCard : Gtk.ListBoxRow, ComposerContainer {
     construct {
         margin = 12;
         margin_bottom = 3;
-        height_request = 300;
         get_style_context ().add_class ("card");
     }
 

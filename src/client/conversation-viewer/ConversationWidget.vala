@@ -45,6 +45,9 @@ public class ConversationWidget : Gtk.ListBoxRow {
         }
     }
 
+    // this is needed to blacklist the mail.
+    public bool forced_unread { get; set; default = false; }
+
     // Internal class to associate inline image buffers (replaced by rotated scaled versions of
     // them) so they can be saved intact if the user requires it
     private class ReplacedImage : Geary.BaseObject {
@@ -103,6 +106,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
     private Gtk.InfoBar info_bar;
 
     private Gtk.FlowBox attachments_box;
+    private Gtk.MenuItem read_item;
 
     public ConversationWidget (Geary.Email email, Geary.Folder? current_folder, bool is_in_folder) {
         this.email = email;
@@ -237,9 +241,9 @@ public class ConversationWidget : Gtk.ListBoxRow {
             draft_edit_button.destroy ();
         }
 
-        var read_item = new Gtk.MenuItem.with_label (_("Mark as Read"));
-        if (email.is_unread () == Geary.Trillian.FALSE) {
-            read_item.label = _("Mark as Unread");
+        read_item = new Gtk.MenuItem.with_label (_("Mark as Unread"));
+        if (email.is_unread () == Geary.Trillian.TRUE) {
+            read_item.label = _("Mark as Read");
         }
 
         var print_item = new Gtk.MenuItem.with_label (_("Print…"));
@@ -253,10 +257,10 @@ public class ConversationWidget : Gtk.ListBoxRow {
 
         read_item.activate.connect (() => {
             if (email.is_unread () == Geary.Trillian.FALSE) {
-                read_item.label = _("Mark as Read");
+                forced_unread = true;
                 mark_read (false);
             } else {
-                read_item.label = _("Mark as Unread");
+                forced_unread = false;
                 mark_read (true);
             }
         });
@@ -280,6 +284,8 @@ public class ConversationWidget : Gtk.ListBoxRow {
             attachments_box.no_show_all = true;
             attachments_box.hide ();
         }
+
+        email.notify["email-flags"].connect (() => email_flags_changed ());
 
         source_item.activate.connect (() => on_view_source ());
         print_item.activate.connect (() => on_print_message ());
@@ -351,7 +357,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
         header_expanded_fields.no_show_all = true;
 
         header_fields_stack = new Gtk.Stack ();
-        header_fields_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+        header_fields_stack.transition_type = Gtk.StackTransitionType.NONE;
         header_fields_stack.add_named (header_summary_fields, "summary");
         header_fields_stack.add_named (header_expanded_fields, "expanded");
 
@@ -450,7 +456,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
         content_revealer = new Gtk.Revealer ();
         content_revealer.no_show_all = true;
         content_revealer.set_reveal_child (false);
-        content_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_UP;
+        content_revealer.transition_type = Gtk.RevealerTransitionType.NONE;
         content_revealer.add (outside_grid);
 
         header.button_press_event.connect ((event) => header_button_press_event (event));
@@ -483,6 +489,11 @@ public class ConversationWidget : Gtk.ListBoxRow {
         add (main_grid);
 
         GearyApplication.instance.config.settings.changed[Configuration.GENERALLY_SHOW_REMOTE_IMAGES_KEY].connect(on_show_images_change);
+        
+        realize.connect (() => {
+            header_fields_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+            content_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_UP;
+        });
     }
 
     public override bool draw (Cairo.Context cr) {
@@ -1063,5 +1074,20 @@ public class ConversationWidget : Gtk.ListBoxRow {
             return;
 
         show_images_email (false);
+    }
+    
+    private void email_flags_changed () {
+        if (email.is_unread () == Geary.Trillian.TRUE) {
+            read_item.label = _("Mark as Read");
+        } else {
+            read_item.label = _("Mark as Unread");
+        }
+
+        var star_image = (Gtk.Image) star_button.image;
+        if (email.is_flagged () == Geary.Trillian.TRUE) {
+            star_image.icon_name = "starred-symbolic";
+        } else {
+            star_image.icon_name = "non-starred-symbolic";
+        }
     }
 }

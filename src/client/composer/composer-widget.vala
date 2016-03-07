@@ -377,6 +377,7 @@ public class ComposerWidget : Gtk.EventBox {
         // TODO: also listen for account updates to allow adding identities while writing an email
         
         Gtk.ScrolledWindow scroll = new Gtk.ScrolledWindow(null, null);
+        scroll.min_content_height = 200;
         scroll.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         
         Gtk.Overlay message_overlay = new Gtk.Overlay();

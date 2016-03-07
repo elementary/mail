@@ -31,6 +31,8 @@ public class ConversationViewer : Gtk.Box {
     private const string DATA_IMAGE_CLASS = "data_inline_image";
     private const int MAX_INLINE_IMAGE_MAJOR_DIM = 1024;
     private const int QUOTE_SIZE_THRESHOLD = 120;
+    // The upper and lower margin on which the mail is considered as not viewed.
+    private static const int READ_MARGIN = 100;
     
     private enum SearchState {
         // Search/find states.
@@ -157,8 +159,8 @@ public class ConversationViewer : Gtk.Box {
         conversation_scrolled = new Gtk.ScrolledWindow(null, null);
         conversation_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         conversation_scrolled.add(conversation_list_box);
-        conversation_scrolled.realize.connect(() => { conversation_scrolled.get_vadjustment().value_changed.connect(mark_read); });
         conversation_scrolled.size_allocate.connect(mark_read);
+        conversation_scrolled.vadjustment.value = conversation_scrolled.vadjustment.lower;
         
         var view_overlay = new Gtk.Overlay();
         view_overlay.add(conversation_scrolled);
@@ -218,7 +220,7 @@ public class ConversationViewer : Gtk.Box {
         return "message_%s".printf(id.to_string());
     }
     
-    private int sort_messages (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
+    private int sort_messages(Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
         if (!(row1 is ConversationWidget && row2 is ConversationWidget)) {
             return 0;
         }
@@ -313,6 +315,8 @@ public class ConversationViewer : Gtk.Box {
             
             current_conversation = Geary.Collection.get_first(conversations);
             
+            // Disable marking emails as read until the view is filled
+            conversation_scrolled.get_vadjustment().value_changed.disconnect(mark_read);
             select_conversation_async.begin(current_conversation, current_folder,
                 on_select_conversation_completed);
             
@@ -354,11 +358,14 @@ public class ConversationViewer : Gtk.Box {
                 });
             }
         }
+        
     }
     
     private void on_select_conversation_completed(Object? source, AsyncResult result) {
         try {
             select_conversation_async.end(result);
+            // Re-enable marking emails as read
+            conversation_scrolled.get_vadjustment().value_changed.connect(mark_read);
             
             mark_read();
         } catch (Error err) {
@@ -494,6 +501,8 @@ public class ConversationViewer : Gtk.Box {
         if (messages.contains(email))
             return;
         
+        messages.add (email);
+        
         var message_widget = new ConversationWidget(email, current_folder, is_in_folder);
         message_widget.hovering_over_link.connect((title, url) => on_hovering_over_link(title, url));
         message_widget.link_selected.connect((link) => link_selected(link));
@@ -522,9 +531,9 @@ public class ConversationViewer : Gtk.Box {
             message_widget.collapsed = false;
         }
         
-        message_widget.show_all();
-        
         conversation_list_box.add(message_widget);
+        
+        message_widget.show_all();
         
         // Add classes according to the state of the email.
         update_flags(email);
@@ -622,24 +631,18 @@ public class ConversationViewer : Gtk.Box {
     }
     
     public void mark_read() {
-        /*Gee.ArrayList<Geary.EmailIdentifier> emails = new Gee.ArrayList<Geary.EmailIdentifier>();
-        WebKit.DOM.Document document = web_view.get_dom_document();
-        long scroll_top = document.body.scroll_top;
-        long scroll_height = document.document_element.scroll_height;
-
-        foreach (Geary.Email message in messages) {
-            try {
-                if (message.email_flags.is_unread()) {
-                    WebKit.DOM.HTMLElement element = email_to_element.get(message.id);
-                    WebKit.DOM.HTMLElement body = (WebKit.DOM.HTMLElement) element.get_elements_by_class_name("body").item(0);
-                    if (!element.get_class_list().contains("manual_read") &&
-                            body.offset_top + body.offset_height > scroll_top &&
-                            body.offset_top + 28 < scroll_top + scroll_height) {  // 28 = 15 padding + 13 first line of text
-                        emails.add(message.id);
-                    }
+        var start_y = (int) GLib.Math.trunc(conversation_scrolled.vadjustment.value) + READ_MARGIN;
+        var view_height = conversation_scrolled.get_allocated_height();
+        
+        var emails = new Gee.ArrayList<Geary.EmailIdentifier>();
+        // Mark all visible widgets of the view as read (if it's considered as visible)
+        for (int y = start_y; y < start_y + view_height - 2 * READ_MARGIN; y = y + READ_MARGIN) {
+            var row = conversation_list_box.get_row_at_y(y);
+            if (row != null && row is ConversationWidget) {
+                var email = ((ConversationWidget) row).email;
+                if (email.email_flags.is_unread() && !emails.contains(email.id) && !((ConversationWidget) row).forced_unread) {
+                    emails.add(email.id);
                 }
-            } catch (Error error) {
-                debug("Problem checking email class: %s", error.message);
             }
         }
 
@@ -647,7 +650,7 @@ public class ConversationViewer : Gtk.Box {
             Geary.EmailFlags flags = new Geary.EmailFlags();
             flags.add(Geary.EmailFlags.UNREAD);
             mark_messages(emails, null, flags);
-        }*/
+        }
     }
     
     // State reset.
