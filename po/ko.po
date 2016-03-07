@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-02-18 18:26-0800\n"
-"PO-Revision-Date: 2016-03-06 05:50+0000\n"
+"PO-Revision-Date: 2016-03-06 06:30+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-03-06 05:50+0000\n"
+"X-Launchpad-Export-Date: 2016-03-07 06:07+0000\n"
 "X-Generator: Launchpad (build 17936)\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -85,7 +85,7 @@ msgstr "검색"
 
 #: ../src/engine/api/geary-special-folder-type.vala:54
 msgid "Archive"
-msgstr "보관하기"
+msgstr "보관 기록함"
 
 #: ../src/engine/api/geary-special-folder-type.vala:58 ../data/ui/login.ui:633
 #: ../data/ui/login.ui:650
@@ -272,7 +272,7 @@ msgstr "휴지통으로 (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
-msgstr "보관하기(_A)"
+msgstr "보관 기록함(_A)"
 
 #: ../src/client/application/geary-controller.vala:73
 #: ../src/client/application/geary-controller.vala:72
@@ -857,7 +857,7 @@ msgstr "지우기"
 #: ../src/client/application/geary-controller.vala:2484
 #: ../src/client/application/geary-controller.vala:2486
 msgid "Undo archive (Ctrl+Z)"
-msgstr "보관하기 취소 (Ctrl+Z)"
+msgstr "보관 기록함 취소 (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:2537
 #: ../src/client/application/geary-controller.vala:2531
