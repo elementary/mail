@@ -1852,9 +1852,6 @@ public class GearyController : Geary.BaseObject {
 
         Gee.ArrayList<Geary.EmailIdentifier> ids = get_selected_email_ids(false);
         mark_email(ids, null, flags);
-
-        foreach (Geary.EmailIdentifier id in ids)
-            main_window.conversation_viewer.mark_manual_read(id);
     }
 
     private void on_mark_as_unread() {
@@ -1863,9 +1860,6 @@ public class GearyController : Geary.BaseObject {
 
         Gee.ArrayList<Geary.EmailIdentifier> ids = get_selected_email_ids(true);
         mark_email(ids, flags, null);
-
-        foreach (Geary.EmailIdentifier id in ids)
-            main_window.conversation_viewer.mark_manual_read(id);
     }
 
     private void on_mark_as_starred() {
@@ -2191,7 +2185,6 @@ public class GearyController : Geary.BaseObject {
             widget = new ComposerWidget(current_account, compose_type, full, quote, is_draft);
             if (is_draft) {
                 yield widget.restore_draft_state_async(current_account);
-                main_window.conversation_viewer.blacklist_by_id(referred.id);
             }
         }
         widget.show_all();
@@ -2590,15 +2583,15 @@ public class GearyController : Geary.BaseObject {
     }
 
     private void on_zoom_in() {
-        main_window.conversation_viewer.web_view.zoom_in();
+        main_window.conversation_viewer.zoom_in();
     }
 
     private void on_zoom_out() {
-        main_window.conversation_viewer.web_view.zoom_out();
+        main_window.conversation_viewer.zoom_out();
     }
 
     private void on_zoom_normal() {
-        main_window.conversation_viewer.web_view.zoom_level = 1.0f;
+        main_window.conversation_viewer.zoom_normal();
     }
 
     private void on_search() {

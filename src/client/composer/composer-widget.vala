@@ -595,14 +595,6 @@ public class ComposerWidget : Gtk.EventBox {
         if (!from_multiple.visible)
             open_draft_manager_async.begin(null);
         
-        // Remind the conversation viewer of draft ids when it reloads
-        ConversationViewer conversation_viewer =
-            GearyApplication.instance.controller.main_window.conversation_viewer;
-        conversation_viewer.cleared.connect(() => {
-            if (draft_manager != null)
-                conversation_viewer.blacklist_by_id(draft_manager.current_draft_id);
-        });
-        
         destroy.connect(() => { close_draft_manager_async.begin(null); });
     }
     
@@ -1301,8 +1293,6 @@ public class ComposerWidget : Gtk.EventBox {
     }
     
     private void on_draft_id_changed() {
-        GearyApplication.instance.controller.main_window.conversation_viewer.blacklist_by_id(
-            draft_manager.current_draft_id);
     }
     
     private void on_draft_manager_fatal(Error err) {
@@ -1442,9 +1432,6 @@ public class ComposerWidget : Gtk.EventBox {
         } catch (Error err) {
             // ignored
         }
-        if (draft_manager != null)
-            GearyApplication.instance.controller.main_window.conversation_viewer
-                .unblacklist_by_id(draft_manager.current_draft_id);
         
         container.close_container();
     }
