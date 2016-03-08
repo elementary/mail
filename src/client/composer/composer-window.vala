@@ -13,7 +13,7 @@ public class ComposerWindow : Gtk.Window, ComposerContainer {
         Object(type: Gtk.WindowType.TOPLEVEL);
         
         add(composer);
-
+        composer.scroll.vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
         composer.header.show_close_button = true;
         composer.free_header();
         set_titlebar(composer.header);

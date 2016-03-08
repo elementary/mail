@@ -29,6 +29,9 @@ public class ConversationWidget : Gtk.ListBoxRow {
     public signal void star (bool starred);
     public signal void mark_load_remote_images ();
     public signal void edit_draft ();
+    public signal void reply ();
+    public signal void reply_all ();
+    public signal void forward ();
 
     public Geary.Email email { get; private set; }
     public StylishWebView webview { get; private set; }
@@ -166,20 +169,15 @@ public class ConversationWidget : Gtk.ListBoxRow {
             ((Gtk.Misc) value_label).xalign = 0;
             value_label.wrap = true;
             header_expanded_fields.attach (title_label, 0, row_id, 1, 1);
-            header_expanded_fields.attach (value_label, 1, row_id, 1, 1);
+            header_expanded_fields.attach (value_label, 1, row_id, 2, 1);
             row_id++;
         }
 
         if (email.date != null) {
-            var title_label = new Gtk.Label (_("Date:"));
-            title_label.halign = Gtk.Align.END;
-            title_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             var value_label = new Gtk.Label (Date.pretty_print_verbose (email.date.value, clock_format));
-            value_label.hexpand = true;
-            ((Gtk.Misc) value_label).xalign = 0;
-            header_expanded_fields.attach (title_label, 0, row_id, 1, 1);
-            header_expanded_fields.attach (value_label, 1, row_id, 1, 1);
-            row_id++;
+            value_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+            value_label.halign = Gtk.Align.END;
+            header_expanded_fields.attach (value_label, 2, 0, 1, 1);
         }
 
         // Add the avatar.
@@ -235,6 +233,11 @@ public class ConversationWidget : Gtk.ListBoxRow {
             menu.add (reply_all_item);
             menu.add (forward_item);
             menu.add (new Gtk.SeparatorMenuItem ());
+            reply_item.activate.connect (() => reply ());
+
+            reply_all_item.activate.connect (() => reply_all ());
+
+            forward_item.activate.connect (() => forward ());
         }
 
         if (!is_in_folder || !in_drafts_folder ()) {
@@ -294,7 +297,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
     construct {
         allow_prefix = random_string (10) + ":";
         margin = 12;
-        margin_bottom = 3;
+        margin_top = 0;
         get_style_context ().add_class ("card");
         get_style_context ().add_class ("collapsed");
 
@@ -307,7 +310,11 @@ public class ConversationWidget : Gtk.ListBoxRow {
         header = new Gtk.EventBox ();
         header.events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         header.events |= Gdk.EventMask.KEY_PRESS_MASK;
-        header.tooltip_text = _("Click to view the message");
+        header.events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
+        header.events |= Gdk.EventMask.SCROLL_MASK;
+        header.events |= Gdk.EventMask.TOUCH_MASK;
+        header.events |= Gdk.EventMask.TOUCHPAD_GESTURE_MASK;
+        header.tooltip_text = _("View message");
         header.add (header_grid);
 
         avatar = new Granite.Widgets.Avatar.with_default_icon (48);
@@ -354,6 +361,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
         header_expanded_fields.column_spacing = 6;
         header_expanded_fields.row_spacing = 6;
         header_expanded_fields.margin_top = 12;
+        header_expanded_fields.margin_bottom = 6;
         header_expanded_fields.no_show_all = true;
 
         header_fields_stack = new Gtk.Stack ();
@@ -540,9 +548,33 @@ public class ConversationWidget : Gtk.ListBoxRow {
         value_label.hexpand = true;
         value_label.ellipsize = Pango.EllipsizeMode.END;
         value_label.use_markup = true;
+        value_label.button_press_event.connect ((event) => {
+            if (event.button == Gdk.BUTTON_SECONDARY) {
+                var menu = new Gtk.Menu ();
+                var open_item = new Gtk.MenuItem.with_label (_("Compose New Message"));
+                var copy_item = new Gtk.MenuItem.with_label (_("Copy Email Address"));
+                open_item.activate.connect (() => {
+                    value_label.activate_link (value_label.get_current_uri ());
+                });
+
+                copy_item.activate.connect (() => {
+                    var clipboard = Gtk.Clipboard.get_for_display (copy_item.get_display (), Gdk.SELECTION_CLIPBOARD);
+                    clipboard.set_text (GLib.Uri.unescape_string (value_label.get_current_uri ()).replace ("mailto:", ""), -1);
+                });
+
+                menu.add (open_item);
+                menu.add (copy_item);
+                menu.show_all ();
+                menu.attach_widget = value_label;
+                menu.popup (null, null, null, event.button, event.time);
+                return true;
+            }
+
+            return false;
+        });
         ((Gtk.Misc) value_label).xalign = 0;
         header_expanded_fields.attach (title_label, 0, index, 1, 1);
-        header_expanded_fields.attach (value_label, 1, index, 1, 1);
+        header_expanded_fields.attach (value_label, 1, index, index == 0 ? 1 : 2, 1);
     }
 
     private bool header_button_press_event (Gdk.EventButton event) {
@@ -569,7 +601,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
             header_fields_stack.set_visible_child_name ("summary");
             header_expanded_fields.hide ();
             content_revealer.set_reveal_child (false);
-            header.tooltip_text = _("Click to view the message");
+            header.tooltip_text = _("View message");
             Timeout.add (content_revealer.transition_duration, () => {
                 content_revealer.hide ();
                 return GLib.Source.REMOVE;
@@ -583,7 +615,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
             header_fields_stack.set_visible_child_name ("expanded");
             content_revealer.set_reveal_child (true);
             if (collapsable) {
-                header.tooltip_text = _("Click to hide the message");
+                header.tooltip_text = _("Hide message");
             }
         }
     }

@@ -24,6 +24,7 @@ public class ComposerCard : Gtk.ListBoxRow, ComposerContainer {
     private ComposerWidget composer;
     public ComposerCard (ComposerWidget composer) {
         this.composer = composer;
+        composer.scroll.vscrollbar_policy = Gtk.PolicyType.NEVER;
         add (composer);
         show_all ();
         present ();
@@ -31,13 +32,13 @@ public class ComposerCard : Gtk.ListBoxRow, ComposerContainer {
 
     construct {
         margin = 12;
-        margin_bottom = 3;
+        margin_top = 0;
         get_style_context ().add_class ("card");
     }
 
     public Gtk.Window top_window {
         get {
-            return (Gtk.Window) get_toplevel ();
+            return get_toplevel () as Gtk.Window;
         }
     }
 

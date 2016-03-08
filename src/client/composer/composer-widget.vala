@@ -99,7 +99,7 @@ public class ComposerWidget : Gtk.EventBox {
         }
         #message-body {
             box-sizing: border-box;
-            padding: 10px;
+            padding: 6px;
             outline: 0px solid transparent;
             min-height: 100%;
         }
@@ -109,10 +109,10 @@ public class ComposerWidget : Gtk.EventBox {
         blockquote {
             margin-top: 0px;
             margin-bottom: 0px;
-            margin-left: 10px;
-            margin-right: 10px;
-            padding-left: 5px;
-            padding-right: 5px;
+            margin-left: 12px;
+            margin-right: 12px;
+            padding-left: 6px;
+            padding-right: 6px;
             background-color: white;
             border: 0;
             border-left: 3px #aaa solid;
@@ -267,6 +267,7 @@ public class ComposerWidget : Gtk.EventBox {
     private uint draft_save_timeout_id = 0;
     private bool is_closing = false;
     
+    public Gtk.ScrolledWindow scroll;
     public WebKit.WebView editor;
     // We need to keep a reference to the edit-fixer in composer-window, so it doesn't get
     // garbage-collected.
@@ -376,7 +377,7 @@ public class ComposerWidget : Gtk.EventBox {
         Geary.Engine.instance.account_unavailable.connect(update_from_field);
         // TODO: also listen for account updates to allow adding identities while writing an email
         
-        Gtk.ScrolledWindow scroll = new Gtk.ScrolledWindow(null, null);
+        scroll = new Gtk.ScrolledWindow(null, null);
         scroll.min_content_height = 200;
         scroll.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         
@@ -577,7 +578,6 @@ public class ComposerWidget : Gtk.EventBox {
         editor.settings = s;
         
         scroll.add(editor);
-        scroll.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         
         add(box);
         validate_send_button();

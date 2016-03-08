@@ -155,7 +155,8 @@ public class ConversationViewer : Gtk.Box {
         conversation_list_box.expand = true;
         conversation_list_box.get_style_context().add_class("deck");
         conversation_list_box.set_selection_mode(Gtk.SelectionMode.NONE);
-        conversation_list_box.set_sort_func((row1, row2) => sort_messages(row1, row2));
+        conversation_list_box.set_sort_func(sort_messages);
+        conversation_list_box.set_header_func(header_margin_hack);
         conversation_scrolled = new Gtk.ScrolledWindow(null, null);
         conversation_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         conversation_scrolled.add(conversation_list_box);
@@ -219,7 +220,17 @@ public class ConversationViewer : Gtk.Box {
     public string get_div_id(Geary.EmailIdentifier id) {
         return "message_%s".printf(id.to_string());
     }
+
+    [CCode (instance_pos = -1)]
+    private void header_margin_hack (Gtk.ListBoxRow row, Gtk.ListBoxRow? before)  {
+        if (before == null) {
+            row.margin_top = 12;
+        } else {
+            row.margin_top = 0;
+        }
+    }
     
+    [CCode (instance_pos = -1)]
     private int sort_messages(Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
         if (!(row1 is ConversationWidget && row2 is ConversationWidget)) {
             return 0;
@@ -526,6 +537,9 @@ public class ConversationViewer : Gtk.Box {
         message_widget.open_attachment.connect((attachment) => open_attachment(attachment));
         message_widget.save_attachments.connect((attachments) => save_attachments(attachments));
         message_widget.edit_draft.connect(() => edit_draft(message_widget.email));
+        message_widget.reply.connect(() => reply_to_message(message_widget.email));
+        message_widget.reply_all.connect(() => reply_all_message(message_widget.email));
+        message_widget.forward.connect(() => forward_message(message_widget.email));
 
         if (email.is_unread() != Geary.Trillian.FALSE) {
             message_widget.collapsed = false;
