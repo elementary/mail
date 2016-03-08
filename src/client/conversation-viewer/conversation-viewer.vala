@@ -11,7 +11,7 @@
  * {@link Geary.Email.date} field (the Date: header), as that's the date displayed to the user.
  */
 
-public class ConversationViewer : Gtk.Box {
+public class ConversationViewer : Gtk.Stack {
     public const Geary.Email.Field REQUIRED_FIELDS =
         Geary.Email.Field.HEADER
         | Geary.Email.Field.BODY
@@ -102,6 +102,9 @@ public class ConversationViewer : Gtk.Box {
     public Gtk.ListBox conversation_list_box { get; private set; }
     private Gtk.ScrolledWindow conversation_scrolled;
     
+    private Gtk.Label message_label;
+    private Gtk.Grid conversation_grid;
+    
     // Current conversation, or null if none.
     public Geary.App.Conversation? current_conversation = null;
     
@@ -124,8 +127,7 @@ public class ConversationViewer : Gtk.Box {
     private uint select_conversation_timeout_id = 0;
     
     public ConversationViewer() {
-        Object(orientation: Gtk.Orientation.VERTICAL, spacing: 0);
-        
+        transition_type = Gtk.StackTransitionType.CROSSFADE;
         // Setup state machine for search/find states.
         Geary.State.Mapping[] mappings = {
             new Geary.State.Mapping(SearchState.NONE, SearchEvent.RESET, on_reset),
@@ -177,13 +179,20 @@ public class ConversationViewer : Gtk.Box {
             }
         });
         
-        var grid = new Gtk.Grid();
-        grid.orientation = Gtk.Orientation.VERTICAL;
-        grid.expand = true;
-        grid.add(conversation_find_bar);
-        grid.add(view_overlay);
+        conversation_grid = new Gtk.Grid();
+        conversation_grid.orientation = Gtk.Orientation.VERTICAL;
+        conversation_grid.expand = true;
+        conversation_grid.add(conversation_find_bar);
+        conversation_grid.add(view_overlay);
         
-        pack_start(grid);
+        message_label = new Gtk.Label(null);
+        message_label.get_style_context().add_class("h2");
+        message_label.expand = true;
+        message_label.halign = Gtk.Align.CENTER;
+        message_label.valign = Gtk.Align.CENTER;
+        
+        add(conversation_grid);
+        add(message_label);
     }
     
     public void set_paned_composer(ComposerWidget composer) {
@@ -240,10 +249,12 @@ public class ConversationViewer : Gtk.Box {
     }
     
     private void show_special_message(string msg) {
-        //TODO
+        message_label.label = msg;
+        set_visible_child(message_label);
     }
     
     private void hide_special_message() {
+        set_visible_child(conversation_grid);
         if (display_mode != DisplayMode.MULTISELECT)
             return;
         
@@ -310,6 +321,7 @@ public class ConversationViewer : Gtk.Box {
         }
         
         if (conversations.size == 1) {
+            set_visible_child(conversation_grid);
             clear(current_folder, current_folder.account.information);
             conversation_scrolled.vadjustment.value = conversation_scrolled.vadjustment.upper;
             
