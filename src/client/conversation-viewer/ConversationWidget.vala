@@ -436,7 +436,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
         webview.expand = true;
         webview.transparent = true;
         webview.hovering_over_link.connect (on_hovering_over_link);
-        webview.context_menu.connect(() => { return true; }); // Suppress default context menu.
+        webview.context_menu.connect (context_menu);
         webview.resource_request_starting.connect (on_resource_request_starting);
         webview.navigation_policy_decision_requested.connect (on_navigation_policy_decision_requested);
         webview.new_window_policy_decision_requested.connect (on_navigation_policy_decision_requested);
@@ -559,7 +559,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
 
                 copy_item.activate.connect (() => {
                     var clipboard = Gtk.Clipboard.get_for_display (copy_item.get_display (), Gdk.SELECTION_CLIPBOARD);
-                    clipboard.set_text (GLib.Uri.unescape_string (value_label.get_current_uri ()).replace ("mailto:", ""), -1);
+                    clipboard.set_text (GLib.Uri.unescape_string (value_label.get_current_uri ()).replace (Geary.ComposedEmail.MAILTO_SCHEME, ""), -1);
                 });
 
                 menu.add (open_item);
@@ -1107,7 +1107,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
 
         show_images_email (false);
     }
-    
+
     private void email_flags_changed () {
         if (email.is_unread () == Geary.Trillian.TRUE) {
             read_item.label = _("Mark as Read");
@@ -1121,5 +1121,55 @@ public class ConversationWidget : Gtk.ListBoxRow {
         } else {
             star_image.icon_name = "non-starred-symbolic";
         }
+    }
+
+    [CCode (instance_pos = -1)]
+    private bool context_menu (Gtk.Widget default_menu, WebKit.HitTestResult hit_test_result, bool triggered_with_keyboard) {
+        var menu = new Gtk.Menu ();
+        menu.attach_widget = webview;
+        if (webview.can_copy_clipboard ()) {
+            // Add a menu item for copying the current selection.
+            var item = new Gtk.MenuItem.with_mnemonic (_("_Copy"));
+            menu.append (item);
+            item.activate.connect (() => webview.copy_clipboard ());
+        }
+
+        if (WebKit.HitTestResultContext.LINK in hit_test_result.context) {
+            if (hit_test_result.link_uri.has_prefix (Geary.ComposedEmail.MAILTO_SCHEME)) {
+                // Add a menu item for copying the address.
+                var item = new Gtk.MenuItem.with_mnemonic (_("Copy _Email Address"));
+                menu.append (item);
+                item.activate.connect (() => {
+                    var clipboard = Gtk.Clipboard.get (Gdk.SELECTION_CLIPBOARD);
+                    clipboard.set_text (hit_test_result.link_uri.substring (Geary.ComposedEmail.MAILTO_SCHEME.length, -1), -1);
+                    clipboard.store ();
+                });
+            } else {
+                // Add a menu item for copying the link.
+                var item = new Gtk.MenuItem.with_mnemonic (_("Copy _Link"));
+                menu.append (item);
+                item.activate.connect (() => {
+                    var clipboard = Gtk.Clipboard.get (Gdk.SELECTION_CLIPBOARD);
+                    clipboard.set_text (hit_test_result.link_uri, -1);
+                    clipboard.store ();
+                });
+            }
+        }
+
+        // Select all.
+        var select_all_item = new Gtk.MenuItem.with_mnemonic (_("Select _All"));
+        select_all_item.activate.connect (() => webview.select_all ());
+        menu.append (select_all_item);
+
+        // Inspect.
+        if (Args.inspector) {
+            var inspect_item = new Gtk.MenuItem.with_mnemonic (_("_Inspect"));
+            inspect_item.activate.connect (() => {webview.web_inspector.show ();});
+            menu.append (inspect_item);
+        }
+
+        menu.show_all ();
+        menu.popup (null, null, null, 0, Gtk.get_current_event_time ());
+        return true;
     }
 }
