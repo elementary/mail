@@ -34,6 +34,26 @@ public class ConversationViewer : Gtk.Stack {
     // The upper and lower margin on which the mail is considered as not viewed.
     private static const int READ_MARGIN = 100;
     
+    private static const string EMBEDDED_CSS = """
+        .deck {
+            background-color: shade (shade (#FFF, 0.96), 0.92);
+        }
+
+        .card {
+            background-color: #fff;
+            border: none;
+            box-shadow: 0 0 0 1px alpha (#000, 0.05),
+                        0 3px 3px alpha (#000, 0.22);
+            transition: all 150ms ease-in-out;
+        }
+
+        .card.collapsed {
+            background-color: #f5f5f5;
+            box-shadow: 0 0 0 1px alpha (#000, 0.05),
+                        0 1px 2px alpha (#000, 0.22);
+        }
+    """;
+    
     private enum SearchState {
         // Search/find states.
         NONE,         // Not in search
@@ -164,6 +184,13 @@ public class ConversationViewer : Gtk.Stack {
         conversation_scrolled.add(conversation_list_box);
         conversation_scrolled.size_allocate.connect(mark_read);
         conversation_scrolled.vadjustment.value = conversation_scrolled.vadjustment.lower;
+        try {
+            var css_provider = new Gtk.CssProvider();
+            css_provider.load_from_data(EMBEDDED_CSS, EMBEDDED_CSS.length);
+            Gtk.StyleContext.add_provider_for_screen(conversation_list_box.get_screen(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK);
+        } catch (Error e) {
+            critical(e.message);
+        }
         
         var view_overlay = new Gtk.Overlay();
         view_overlay.add(conversation_scrolled);
