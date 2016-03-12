@@ -72,6 +72,7 @@ public class Sidebar.Tree : Gtk.TreeView {
     private bool mask_entry_selected_signal = false;
     private weak EntryWrapper? selected_wrapper = null;
     private Gtk.Menu? default_context_menu = null;
+    private Gtk.Menu? context_menu = null;
     private bool expander_called_manually = false;
     private int expander_special_count = 0;
     private bool is_internal_drag_in_progress = false;
@@ -827,13 +828,33 @@ public class Sidebar.Tree : Gtk.TreeView {
         if (wrapper == null)
             return false;
         
-        Sidebar.Contextable? contextable = wrapper.entry as Sidebar.Contextable;
-        if (contextable == null)
+        Sidebar.SelectableEntry? selectable = wrapper.entry as Sidebar.SelectableEntry;
+        if (selectable == null)
             return false;
         
-        Gtk.Menu? context_menu = contextable.get_sidebar_context_menu(event);
-        if (context_menu == null)
+        FolderList.AbstractFolderEntry? abstract_folder_entry = selectable as FolderList.AbstractFolderEntry;
+        if (abstract_folder_entry == null)
             return false;
+        
+        Geary.Folder? folder = abstract_folder_entry.folder;
+        Geary.SpecialFolderType type = folder.special_folder_type;
+        Gtk.Action? menu_action = null;
+        
+        switch (type) {
+            case Geary.SpecialFolderType.TRASH:
+                menu_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_EMPTY_TRASH);
+            break;
+                
+            case Geary.SpecialFolderType.SPAM:
+                menu_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_EMPTY_SPAM);
+            break;
+                
+        default:
+            return false;
+        }
+        
+        context_menu = new Gtk.Menu();
+        context_menu.add(menu_action.create_menu_item());
         
         if (event != null)
             context_menu.popup(null, null, null, event.button, event.time);
