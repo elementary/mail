@@ -1,0 +1,7 @@
+<ui>
+    <popup name="ContextEmptyMenu">
+        <menuitem name="EmptySpam" action="GearyEmptySpam" />
+        <menuitem name="EmptyTrash" action="GearyEmptyTrash" />
+    </popup>
+</ui>
+
