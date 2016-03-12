@@ -19,15 +19,15 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-02-18 18:26-0800\n"
-"PO-Revision-Date: 2016-02-19 15:31+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
+"PO-Revision-Date: 2016-03-11 17:38+0000\n"
+"Last-Translator: kay van der Zander <Unknown>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-02-20 05:48+0000\n"
-"X-Generator: Launchpad (build 17925)\n"
+"X-Launchpad-Export-Date: 2016-03-12 06:33+0000\n"
+"X-Generator: Launchpad (build 17939)\n"
 "Language: nl_NL\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -37,23 +37,23 @@ msgstr "Concepten | Concept"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:580
 msgid "Sent | Sent Mail | Sent Email | Sent E-Mail"
-msgstr "Verzonden | Verzonden berichten | Verzonden e-mail"
+msgstr "Verzonden | Verzonden berichten | Verzonden Email | Verzonden E-Mail"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:585
 msgid ""
 "Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
 "| Bulk E-Mail"
 msgstr ""
-"Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
-"| Bulk E-Mail"
+"Ongewenste | Spam | Ongewenste berichten | Ongewenste Email | Meerdere "
+"Berichten | Meerdere Email | Meerdere E-Mail"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:590
 msgid "Trash | Rubbish | Rubbish Bin"
-msgstr "Trash | Rubbish | Rubbish Bin | Prullenbak"
+msgstr "Prullenbak | Afval | Prullenbak"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:595
 msgid "Archive | Archives"
-msgstr ""
+msgstr "Archief | Archieven"
 
 #: ../src/engine/api/geary-special-folder-type.vala:24
 msgid "Inbox"
@@ -109,11 +109,11 @@ msgstr "Geen"
 
 #: ../src/engine/api/geary-service.vala:20
 msgid "IMAP"
-msgstr ""
+msgstr "IMA"
 
 #: ../src/engine/api/geary-service.vala:23
 msgid "SMTP"
-msgstr ""
+msgstr "SMTP"
 
 #: ../src/engine/api/geary-service-provider.vala:52
 msgid "Gmail"
@@ -259,7 +259,7 @@ msgstr "E-mailprogramma"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "Copyright 2011-2015 Yorba Foundation"
-msgstr ""
+msgstr "Kopieer recht 2011-2015 Yorba Foundation"
 
 #: ../src/client/application/geary-application.vala:21
 msgid "Visit the Yorba web site"
@@ -267,7 +267,7 @@ msgstr "De Yorba-website bezoeken"
 
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete conversation"
-msgstr ""
+msgstr "Gesprek verwijderen"
 
 #: ../src/client/application/geary-controller.vala:62
 #| msgid "Delete conversation (Delete, Backspace, A)"
@@ -283,13 +283,13 @@ msgstr "Conversaties verwijderen (Shift+Delete)"
 #: ../src/client/application/geary-controller.vala:66
 #: ../src/client/application/geary-controller.vala:65
 msgid "Move conversation to Trash (Delete, Backspace)"
-msgstr ""
+msgstr "Verplaats gesprek naar de prullenbak (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 msgid "Move conversations to Trash (Delete, Backspace)"
-msgstr ""
+msgstr "Verplaats gesprekken naar de prullenbak (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
@@ -527,7 +527,7 @@ msgstr "Doorsturen (Ctrl+L, F)"
 #: ../src/client/application/geary-controller.vala:485
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty"
-msgstr ""
+msgstr "Leeg"
 
 #: ../src/client/application/geary-controller.vala:492
 #: ../src/client/application/geary-controller.vala:491
@@ -536,21 +536,21 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:71
 #: ../src/client/application/geary-controller.vala:481
 msgid "Empty Spam or Trash folders"
-msgstr ""
+msgstr "Maak spam en prullenbak leeg"
 
 #: ../src/client/application/geary-controller.vala:496
 #: ../src/client/application/geary-controller.vala:495
 #: ../src/client/application/geary-controller.vala:490
 #: ../src/client/application/geary-controller.vala:485
 msgid "Empty _Spam…"
-msgstr ""
+msgstr "Spam legen..."
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
 #: ../src/client/application/geary-controller.vala:494
 #: ../src/client/application/geary-controller.vala:489
 msgid "Empty _Trash…"
-msgstr ""
+msgstr "Prullenbak legen..."
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -561,7 +561,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:734
 #: ../src/client/application/geary-controller.vala:728
 msgid "Unable to store server trust exception"
-msgstr ""
+msgstr "Kon geen uitzondering maken voor een vertrouwelijke server"
 
 #: ../src/client/application/geary-controller.vala:983
 #: ../src/client/application/geary-controller.vala:977
@@ -786,14 +786,15 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  Andreas https://launchpad.net/~a-knoben\n"
 "  Hannie Dumoleyn https://launchpad.net/~lafeber-dumoleyn\n"
-"  elementary Apps team https://launchpad.net/~elementary-apps"
+"  elementary Apps team https://launchpad.net/~elementary-apps\n"
+"  kay van der Zander https://launchpad.net/~kay20"
 
 #: ../src/client/application/geary-controller.vala:1976
 #: ../src/client/application/geary-controller.vala:1970
 #: ../src/client/application/geary-controller.vala:1938
 #: ../src/client/application/geary-controller.vala:1940
 msgid "Undo move (Ctrl+Z)"
-msgstr ""
+msgstr "Actie ongedaan maken (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:1986
 #: ../src/client/application/geary-controller.vala:1980
@@ -854,33 +855,33 @@ msgstr "Geopende conceptberichten sluiten?"
 #: ../src/client/application/geary-controller.vala:2401
 #: ../src/client/application/geary-controller.vala:2403
 msgid "Empty all email from your %s folder?"
-msgstr ""
+msgstr "Alle emails uit de %s map verwijderen?"
 
 #: ../src/client/application/geary-controller.vala:2440
 #: ../src/client/application/geary-controller.vala:2434
 msgid "This removes the email from Geary and your email server."
-msgstr ""
+msgstr "Dit verwijderd de email in Geary en in de cloud"
 
 #: ../src/client/application/geary-controller.vala:2441
 #: ../src/client/application/geary-controller.vala:2435
 #: ../src/client/application/geary-controller.vala:2403
 #: ../src/client/application/geary-controller.vala:2405
 msgid "This cannot be undone."
-msgstr ""
+msgstr "Dit kan niet ongedaan worden gemaakt."
 
 #: ../src/client/application/geary-controller.vala:2442
 #: ../src/client/application/geary-controller.vala:2436
 #: ../src/client/application/geary-controller.vala:2404
 #: ../src/client/application/geary-controller.vala:2406
 msgid "Empty %s"
-msgstr ""
+msgstr "%s legen"
 
 #: ../src/client/application/geary-controller.vala:2459
 #: ../src/client/application/geary-controller.vala:2453
 #: ../src/client/application/geary-controller.vala:2421
 #: ../src/client/application/geary-controller.vala:2423
 msgid "Error emptying %s"
-msgstr ""
+msgstr "Fout bij het legen van %s"
 
 #: ../src/client/application/geary-controller.vala:2489
 #: ../src/client/application/geary-controller.vala:2483
@@ -905,21 +906,21 @@ msgstr "Verwijderen"
 #: ../src/client/application/geary-controller.vala:2484
 #: ../src/client/application/geary-controller.vala:2486
 msgid "Undo archive (Ctrl+Z)"
-msgstr ""
+msgstr "Archiveren ongedaan maken (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:2537
 #: ../src/client/application/geary-controller.vala:2531
 #: ../src/client/application/geary-controller.vala:2499
 #: ../src/client/application/geary-controller.vala:2501
 msgid "Undo trash (Ctrl+Z)"
-msgstr ""
+msgstr "Ongedaan maken van verplaatsing naar prullenbak"
 
 #: ../src/client/application/geary-controller.vala:2590
 #: ../src/client/application/geary-controller.vala:2584
 #: ../src/client/application/geary-controller.vala:2552
 #: ../src/client/application/geary-controller.vala:2554
 msgid "Undo (Ctrl+Z)"
-msgstr ""
+msgstr "Ongedaan maken (Ctrl+Z)"
 
 #: ../src/client/application/geary-args.vala:10
 #: ../src/client/application/geary-args.vala:11
@@ -984,7 +985,7 @@ msgstr "Inspectie van WebView toestaan"
 #: ../src/client/application/geary-args.vala:26
 #: ../src/client/application/geary-args.vala:27
 msgid "Revoke all server certificates with TLS warnings"
-msgstr ""
+msgstr "Trek alle servers certificaten met TLS waarschuwingen in"
 
 #: ../src/client/application/geary-args.vala:27
 #: ../src/client/application/geary-args.vala:28
@@ -1056,43 +1057,54 @@ msgstr "Ik"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:33
 msgid "Untrusted Connection: %s"
-msgstr ""
+msgstr "Onbetrouwbare verbinding: %s"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:36
 msgid "The identity of the %s mail server at %s:%u could not be verified."
 msgstr ""
+"The identiteit van %s email server  op %s:%u kon niet geverifieerd worden."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:44
 msgid ""
 "Selecting \"Trust This Server\" or \"Always Trust This Server\" may cause "
 "your username and password to be transmitted insecurely."
 msgstr ""
+"Het selecteren van \"Vertrouw deze Server\" of \"Vertrouw deze server "
+"altijd\" kan veroorzaken dat uw gebruikersnaam en wachtwoord om onbeveiligd "
+"worden verzonden."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary not to access this "
 "server."
 msgstr ""
+"Het selecteren van \"Vertrouw deze server niet\", dan zal Geary geen "
+"verbinding maken met deze server."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Geary will not add or update this email account."
-msgstr ""
+msgstr "Geary zal dit email account niet toevoegen of updaten"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary to stop accessing "
 "this account."
 msgstr ""
+"Het selecteren van \"Vertrouw deze server niet\", dan zal Geary geen "
+"verbinding meer maken met deze server."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Geary will exit if you have no other open email accounts."
 msgstr ""
+"Geary zal zich zelf afsluiten als er geen andere email accounts aanwezig zijn"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:66
 msgid ""
 "Contact your system administrator or email service provider if you have any "
 "question about these issues."
 msgstr ""
+"Contacteer je systeem administrator of email provider als je vragen hebt "
+"over dit probleem."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:73
 msgid "The server's certificate is not signed by a known authority"
