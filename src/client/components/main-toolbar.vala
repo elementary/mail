@@ -59,16 +59,10 @@ public class MainToolbar : Gtk.HeaderBar {
         compose.image = new Gtk.Image.from_icon_name("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
         folder_header.pack_start(compose);
 
-        // Assemble the empty menu
-        GearyApplication.instance.load_ui_file("toolbar_empty_menu.ui");
-        Gtk.Menu empty_menu = (Gtk.Menu) GearyApplication.instance.ui_manager.get_widget("/ui/ToolbarEmptyMenu");
+        // Set accel labels for EmptyTrash and EmptySpam context menus
+        GearyApplication.instance.load_ui_file("context_empty_menu.ui");
+        Gtk.Menu empty_menu = (Gtk.Menu) GearyApplication.instance.ui_manager.get_widget("/ui/ContextEmptyMenu");
         empty_menu.foreach(GtkUtil.show_menuitem_accel_labels);
-
-        Gtk.MenuButton empty = new Gtk.MenuButton();
-        empty.halign = Gtk.Align.END;
-        empty.image = new Gtk.Image.from_icon_name("edit-clear", Gtk.IconSize.LARGE_TOOLBAR);
-        empty.popup = empty_menu;
-        empty.tooltip_text = _("Empty Spam or Trash folders");
 
         // Search bar.
         search_entry.width_chars = 28;
@@ -89,7 +83,6 @@ public class MainToolbar : Gtk.HeaderBar {
         set_search_placeholder_text (DEFAULT_SEARCH_TEXT);
 
         folder_header.pack_end (search_entry);
-        folder_header.pack_end (empty);
         folder_header.pack_end (search_upgrade_progress_bar);
 
         // Reply buttons
