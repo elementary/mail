@@ -68,7 +68,7 @@ public class MainToolbar : Gtk.HeaderBar {
         search_entry.width_chars = 28;
         search_entry.tooltip_text = _("Search all mail in account for keywords (Ctrl+S)");
         search_entry.valign = Gtk.Align.CENTER;
-        search_entry.changed.connect (on_search_entry_changed);
+        search_entry.search_changed.connect (on_search_entry_changed);
         search_entry.key_press_event.connect (on_search_key_press);
         on_search_entry_changed (); // set initial state
         search_entry.has_focus = true;
@@ -200,8 +200,6 @@ public class MainToolbar : Gtk.HeaderBar {
 
     private void on_search_entry_changed () {
         search_text_changed (search_entry.text);
-        // Enable/disable clear button.
-        search_entry.secondary_icon_name = search_entry.text != "" ? ("edit-clear-symbolic") : null;
     }
 
     private bool on_search_key_press (Gdk.EventKey event) {
