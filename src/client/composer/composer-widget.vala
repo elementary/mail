@@ -125,7 +125,7 @@ public class ComposerWidget : Gtk.EventBox {
         </head><body>
         <div id="message-body" contenteditable="true"></div>
         </body></html>""";
-    private const string CURSOR = "<span id=\"cursormarker\"></span>";
+    private const string CURSOR = "<span id=\"cursormarker\"></span></br>";
     
     private const int DRAFT_TIMEOUT_SEC = 10;
     
@@ -478,9 +478,7 @@ public class ComposerWidget : Gtk.EventBox {
                     body_html = "\n\n" + Geary.RFC822.Utils.quote_email_for_reply(referred, quote,
                         Geary.RFC822.TextFormat.HTML);
                     pending_attachments = referred.attachments;
-                    if (quote != null)
-                        top_posting = false;
-                    else
+                    if (quote == null)
                         can_delete_quote = true;
                 break;
                 
