@@ -462,7 +462,6 @@ public class ConversationWidget : Gtk.ListBoxRow {
         outside_grid.add (attachments_box);
 
         content_revealer = new Gtk.Revealer ();
-        content_revealer.no_show_all = true;
         content_revealer.set_reveal_child (false);
         content_revealer.transition_type = Gtk.RevealerTransitionType.NONE;
         content_revealer.add (outside_grid);
@@ -596,7 +595,6 @@ public class ConversationWidget : Gtk.ListBoxRow {
     private void toggle_view () {
         if (content_revealer.child_revealed) {
             get_style_context ().add_class ("collapsed");
-            content_revealer.no_show_all = true;
             header_expanded_fields.no_show_all = true;
             header_fields_stack.set_visible_child_name ("summary");
             header_expanded_fields.hide ();
@@ -608,7 +606,6 @@ public class ConversationWidget : Gtk.ListBoxRow {
             });
         } else {
             get_style_context ().remove_class ("collapsed");
-            content_revealer.no_show_all = false;
             content_revealer.show_all ();
             header_expanded_fields.no_show_all = false;
             header_expanded_fields.show_all ();
