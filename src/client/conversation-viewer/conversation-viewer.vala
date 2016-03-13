@@ -145,6 +145,7 @@ public class ConversationViewer : Gtk.Stack {
     private Geary.State.Machine fsm;
     private DisplayMode display_mode = DisplayMode.NONE;
     private uint select_conversation_timeout_id = 0;
+    private bool stay_down = true;
     
     public ConversationViewer() {
         transition_type = Gtk.StackTransitionType.CROSSFADE;
@@ -183,7 +184,13 @@ public class ConversationViewer : Gtk.Stack {
         conversation_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         conversation_scrolled.add(conversation_list_box);
         conversation_scrolled.size_allocate.connect(mark_read);
-        conversation_scrolled.vadjustment.value = conversation_scrolled.vadjustment.lower;
+        conversation_scrolled.vadjustment.value_changed.connect(mark_read);
+        conversation_scrolled.vadjustment.changed.connect (() => {
+            if (stay_down) {
+                var last_child = conversation_list_box.get_row_at_index ((int)conversation_list_box.get_children ().length () -1);
+                conversation_scrolled.vadjustment.value = conversation_scrolled.vadjustment.upper - last_child.get_allocated_height () - 18;
+            }
+        });
         try {
             var css_provider = new Gtk.CssProvider();
             css_provider.load_from_data(EMBEDDED_CSS, EMBEDDED_CSS.length);
@@ -230,6 +237,7 @@ public class ConversationViewer : Gtk.Stack {
         var container = new ComposerCard(composer);
         container.show_all();
         conversation_list_box.add(container);
+        conversation_scrolled.vadjustment.value = conversation_scrolled.vadjustment.upper - container.get_allocated_height () - 18;
     }
     
     public Geary.Email? get_last_message() {
@@ -350,7 +358,6 @@ public class ConversationViewer : Gtk.Stack {
         if (conversations.size == 1) {
             set_visible_child(conversation_grid);
             clear(current_folder, current_folder.account.information);
-            conversation_scrolled.vadjustment.value = conversation_scrolled.vadjustment.upper;
             
             if (select_conversation_timeout_id != 0)
                 Source.remove(select_conversation_timeout_id);
@@ -366,9 +373,17 @@ public class ConversationViewer : Gtk.Stack {
             current_conversation = Geary.Collection.get_first(conversations);
             
             // Disable marking emails as read until the view is filled
-            conversation_scrolled.get_vadjustment().value_changed.disconnect(mark_read);
-            select_conversation_async.begin(current_conversation, current_folder,
-                on_select_conversation_completed);
+            conversation_scrolled.vadjustment.value_changed.disconnect(mark_read);
+            select_conversation_async.begin(current_conversation, current_folder, (obj, res) => {
+                try {
+                    select_conversation_async.end(res);
+                    // Re-enable marking emails as read
+                    conversation_scrolled.vadjustment.value_changed.connect(mark_read);
+                    mark_read();
+                } catch (Error err) {
+                    debug("Unable to select conversation: %s", err.message);
+                }
+            });
             
             current_conversation.appended.connect(on_conversation_appended);
             current_conversation.trimmed.connect(on_conversation_trimmed);
@@ -404,22 +419,11 @@ public class ConversationViewer : Gtk.Stack {
             unhide_last_email();
             if (conversation_list_box.get_children().length() == 1) {
                 conversation_list_box.get_children().foreach((child) => {
-                    ((ConversationWidget)child).collapsable = false;
+                    if (child is ConversationWidget) {
+                        ((ConversationWidget)child).collapsable = false;
+                    }
                 });
             }
-        }
-        
-    }
-    
-    private void on_select_conversation_completed(Object? source, AsyncResult result) {
-        try {
-            select_conversation_async.end(result);
-            // Re-enable marking emails as read
-            conversation_scrolled.get_vadjustment().value_changed.connect(mark_read);
-            
-            mark_read();
-        } catch (Error err) {
-            debug("Unable to select conversation: %s", err.message);
         }
     }
     
@@ -684,6 +688,9 @@ public class ConversationViewer : Gtk.Stack {
     }
     
     public void mark_read() {
+        var last_child = conversation_list_box.get_row_at_index ((int)conversation_list_box.get_children ().length () -1);
+        var min_value = conversation_scrolled.vadjustment.upper - conversation_scrolled.vadjustment.page_size - last_child.get_allocated_height ();
+        stay_down = conversation_scrolled.vadjustment.value >= min_value;
         var start_y = (int) GLib.Math.trunc(conversation_scrolled.vadjustment.value) + READ_MARGIN;
         var view_height = conversation_scrolled.get_allocated_height();
         

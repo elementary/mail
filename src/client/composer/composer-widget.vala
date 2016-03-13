@@ -267,7 +267,6 @@ public class ComposerWidget : Gtk.EventBox {
     private uint draft_save_timeout_id = 0;
     private bool is_closing = false;
     
-    public Gtk.ScrolledWindow scroll;
     public WebKit.WebView editor;
     // We need to keep a reference to the edit-fixer in composer-window, so it doesn't get
     // garbage-collected.
@@ -363,12 +362,13 @@ public class ComposerWidget : Gtk.EventBox {
                     ? DEFAULT_TITLE : subject_entry.text.strip();
                 return true;
             });
-        Gtk.Alignment message_area = builder.get_object("message area") as Gtk.Alignment;
+        Gtk.Overlay message_overlay = builder.get_object("message overlay") as Gtk.Overlay;
         actions = builder.get_object("compose actions") as Gtk.ActionGroup;
         // Can only happen after actions exits
         compose_as_html = GearyApplication.instance.config.compose_as_html;
         
         header = new ComposerHeaderbar(actions);
+        header.hexpand = true;
         embed_header();
         bind_property("state", header, "state", BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL);
         
@@ -376,21 +376,6 @@ public class ComposerWidget : Gtk.EventBox {
         Geary.Engine.instance.account_available.connect(update_from_field);
         Geary.Engine.instance.account_unavailable.connect(update_from_field);
         // TODO: also listen for account updates to allow adding identities while writing an email
-        
-        scroll = new Gtk.ScrolledWindow(null, null);
-        scroll.min_content_height = 200;
-        scroll.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
-        
-        Gtk.Overlay message_overlay = new Gtk.Overlay();
-        message_overlay.add(scroll);
-        message_area.add(message_overlay);
-        
-        message_overlay_label = new Gtk.Label(null);
-        message_overlay_label.ellipsize = Pango.EllipsizeMode.MIDDLE;
-        message_overlay_label.halign = Gtk.Align.START;
-        message_overlay_label.valign = Gtk.Align.END;
-        message_overlay_label.realize.connect(on_message_overlay_label_realize);
-        message_overlay.add_overlay(message_overlay_label);
         
         subject_entry.changed.connect(on_subject_changed);
         to_entry.changed.connect(validate_send_button);
@@ -402,7 +387,7 @@ public class ComposerWidget : Gtk.EventBox {
         actions.get_action(ACTION_OUTDENT).icon_name = "format-indent-less-symbolic";
 
         ComposerToolbar composer_toolbar = new ComposerToolbar(actions, menu);
-        Gtk.Alignment toolbar_area = (Gtk.Alignment) builder.get_object("toolbar area");
+        Gtk.Grid toolbar_area = (Gtk.Grid) builder.get_object("toolbar area");
         toolbar_area.add(composer_toolbar);
         bind_property("toolbar-text", composer_toolbar, "label-text", BindingFlags.SYNC_CREATE);
         
@@ -577,7 +562,17 @@ public class ComposerWidget : Gtk.EventBox {
         s.enable_plugins = false;
         editor.settings = s;
         
+        var scroll = new Gtk.ScrolledWindow(null, null);
+        message_overlay.add(scroll);
+        message_overlay_label = new Gtk.Label(null);
+        message_overlay_label.ellipsize = Pango.EllipsizeMode.MIDDLE;
+        message_overlay_label.halign = Gtk.Align.START;
+        message_overlay_label.valign = Gtk.Align.END;
+        message_overlay_label.realize.connect(on_message_overlay_label_realize);
+        message_overlay.add_overlay(message_overlay_label);
         scroll.add(editor);
+        scroll.min_content_height = 200;
+        scroll.vscrollbar_policy = Gtk.PolicyType.NEVER;
         
         add(box);
         validate_send_button();
@@ -586,7 +581,7 @@ public class ComposerWidget : Gtk.EventBox {
         // the user can tab directly from the Subject: field to the message area.
         List<Gtk.Widget> chain = new List<Gtk.Widget>();
         chain.append(hidden_on_attachment_drag_over);
-        chain.append(message_area);
+        chain.append(message_overlay);
         chain.append(composer_toolbar);
         chain.append(attachments_box);
         box.set_focus_chain(chain);
@@ -597,6 +592,13 @@ public class ComposerWidget : Gtk.EventBox {
             open_draft_manager_async.begin(null);
         
         destroy.connect(() => { close_draft_manager_async.begin(null); });
+        map.connect (() => {
+            if (get_parent () is Gtk.Window) {
+                height_request = 200;
+            } else {
+                height_request = GearyApplication.instance.controller.main_window.conversation_viewer.get_allocated_height () - 18;
+            }
+        });
     }
     
     public ComposerWidget.from_mailto(Geary.Account account, string mailto) {
@@ -1126,7 +1128,7 @@ public class ComposerWidget : Gtk.EventBox {
     
     public void embed_header() {
         if (header.parent == null) {
-            Gtk.Alignment header_area = (Gtk.Alignment) builder.get_object("header_area");
+            Gtk.Grid header_area = (Gtk.Grid) builder.get_object("header area");
             header_area.add(header);
         }
     }
