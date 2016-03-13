@@ -162,7 +162,7 @@ public class MainWindow : Gtk.ApplicationWindow {
 
         // Message list left of message viewer.
         conversations_paned.pack1 (folder_paned, true, false);
-        conversations_paned.pack2 (conversation_viewer, true, true);
+        conversations_paned.pack2 (conversation_viewer, true, false);
         conversations_paned.expand = true;
 
         add (conversations_paned);

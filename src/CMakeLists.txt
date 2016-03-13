@@ -330,7 +330,6 @@ client/accounts/account-spinner-page.vala
 client/accounts/add-edit-page.vala
 client/accounts/login-dialog.vala
 
-client/components/conversation-find-bar.vala
 client/components/count-badge.vala
 client/components/folder-menu.vala
 client/components/icon-factory.vala
@@ -343,17 +342,15 @@ client/components/status-bar.vala
 client/components/stock.vala
 client/components/stylish-webview.vala
 
-client/composer/composer-box.vala
 client/composer/composer-container.vala
-client/composer/composer-embed.vala
 client/composer/composer-headerbar.vala
 client/composer/composer-toolbar.vala
 client/composer/composer-widget.vala
 client/composer/composer-window.vala
+client/composer/ComposerCard.vala
 client/composer/contact-entry-completion.vala
 client/composer/contact-list-store.vala
 client/composer/email-entry.vala
-client/composer/scrollable-overlay.vala
 client/composer/webview-edit-fixer.vala
 
 client/conversation-list/conversation-list-cell-renderer.vala
@@ -362,7 +359,9 @@ client/conversation-list/conversation-list-view.vala
 client/conversation-list/formatted-conversation-data.vala
 
 client/conversation-viewer/conversation-viewer.vala
-client/conversation-viewer/conversation-web-view.vala
+client/conversation-viewer/ConversationWidget.vala
+client/conversation-viewer/ConversationFindBar.vala
+client/conversation-viewer/AttachmentWidget.vala
 
 client/dialogs/alert-dialog.vala
 client/dialogs/attachment-dialog.vala
@@ -394,7 +393,6 @@ client/sidebar/sidebar-tree.vala
 
 client/util/util-date.vala
 client/util/util-email.vala
-client/util/util-files.vala
 client/util/util-gravatar.vala
 client/util/util-gtk.vala
 client/util/util-international.vala

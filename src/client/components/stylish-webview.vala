@@ -59,5 +59,11 @@ public class StylishWebView : WebKit.WebView {
         system_settings.bind("monospace-font-name", this, "monospace-font", SettingsBindFlags.DEFAULT);
         system_settings.bind("font-name", this, "interface-font", SettingsBindFlags.DEFAULT);
     }
+    
+    public override void get_preferred_width (out int minimum_width, out int natural_width) {
+        base.get_preferred_width (out minimum_width, out natural_width);
+        minimum_width = 100;
+        natural_width = int.max (natural_width, minimum_width);
+    }
 }
 

@@ -97,18 +97,6 @@ public void clear_menu(Gtk.Menu menu) {
         menu.remove(child);
 }
 
-void apply_style(Gtk.Widget widget, string style) {
-    try {
-        Gtk.CssProvider style_provider = new Gtk.CssProvider();
-        style_provider.load_from_data(style, -1);
-        
-        Gtk.StyleContext style_context = widget.get_style_context();
-        style_context.add_provider(style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-    } catch (Error e) {
-        warning("Could not load style: %s", e.message);
-    }
-}
-
 /**
  * This is not bound in Vala < 0.26.
  */

@@ -1831,8 +1831,18 @@ public class GearyController : Geary.BaseObject {
     private void on_mark_conversations(Gee.Collection<Geary.App.Conversation> conversations,
         Geary.EmailFlags? flags_to_add, Geary.EmailFlags? flags_to_remove,
         bool latest_only = false) {
-        mark_email(get_conversation_collection_email_ids(conversations, latest_only),
-            flags_to_add, flags_to_remove);
+        var ids = get_conversation_collection_email_ids(conversations, latest_only);
+        main_window.conversation_viewer.conversation_list_box.get_children().foreach((child) => {
+            if (!(child is ConversationWidget)) {
+                return;
+            }
+            
+            if (((ConversationWidget) child).email.id in ids) {
+                ((ConversationWidget) child).forced_unread = flags_to_add.is_unread();
+            }
+        });
+
+        mark_email(ids, flags_to_add, flags_to_remove);
     }
 
     private void on_conversation_viewer_mark_messages(Gee.Collection<Geary.EmailIdentifier> emails,
@@ -1843,23 +1853,15 @@ public class GearyController : Geary.BaseObject {
     private void on_mark_as_read() {
         Geary.EmailFlags flags = new Geary.EmailFlags();
         flags.add(Geary.EmailFlags.UNREAD);
-
         Gee.ArrayList<Geary.EmailIdentifier> ids = get_selected_email_ids(false);
         mark_email(ids, null, flags);
-
-        foreach (Geary.EmailIdentifier id in ids)
-            main_window.conversation_viewer.mark_manual_read(id);
     }
 
     private void on_mark_as_unread() {
         Geary.EmailFlags flags = new Geary.EmailFlags();
         flags.add(Geary.EmailFlags.UNREAD);
-
-        Gee.ArrayList<Geary.EmailIdentifier> ids = get_selected_email_ids(true);
+        Gee.ArrayList<Geary.EmailIdentifier> ids = get_selected_email_ids(false);
         mark_email(ids, flags, null);
-
-        foreach (Geary.EmailIdentifier id in ids)
-            main_window.conversation_viewer.mark_manual_read(id);
     }
 
     private void on_mark_as_starred() {
@@ -2140,15 +2142,21 @@ public class GearyController : Geary.BaseObject {
 
     // message is the email from whose menu this reply or forward was triggered.  If null,
     // this was triggered from the headerbar or shortcut.
-    private void create_reply_forward_widget(ComposerWidget.ComposeType compose_type,
-        Geary.Email? message) {
-        string? quote;
-        Geary.Email? quote_message = main_window.conversation_viewer.get_selected_message(out quote);
-        if (message == null)
-            message = quote_message;
-        if (quote_message != message)
-            quote = null;
-        create_compose_widget(compose_type, message, quote);
+    private void create_reply_forward_widget(ComposerWidget.ComposeType compose_type, Geary.Email? message) {
+        Geary.Email? quote_message = message;
+        if (quote_message == null) {
+            quote_message = main_window.conversation_viewer.get_last_message();
+        }
+
+        string quote = null;
+        try {
+            quote = quote_message.get_message ().get_body (Geary.RFC822.TextFormat.HTML, null);
+        } catch (Error e) {
+            debug("Could not get message. %s", e.message);
+            return;
+        }
+
+        create_compose_widget(compose_type, quote_message, quote);
     }
 
     private void create_compose_widget(ComposerWidget.ComposeType compose_type,
@@ -2185,7 +2193,6 @@ public class GearyController : Geary.BaseObject {
             widget = new ComposerWidget(current_account, compose_type, full, quote, is_draft);
             if (is_draft) {
                 yield widget.restore_draft_state_async(current_account);
-                main_window.conversation_viewer.blacklist_by_id(referred.id);
             }
         }
         widget.show_all();
@@ -2197,11 +2204,7 @@ public class GearyController : Geary.BaseObject {
         widget.destroy.connect(on_composer_widget_destroy);
 
         if (inline) {
-            if (widget.state == ComposerWidget.ComposerState.NEW ||
-                widget.state == ComposerWidget.ComposerState.PANED)
-                main_window.conversation_viewer.set_paned_composer(widget);
-            else
-                new ComposerEmbed(widget, main_window.conversation_viewer, referred); // is_draft
+            main_window.conversation_viewer.set_paned_composer(widget);
         } else {
             new ComposerWindow(widget);
             widget.state = ComposerWidget.ComposerState.DETACHED;
@@ -2210,7 +2213,7 @@ public class GearyController : Geary.BaseObject {
 
     private bool should_create_new_composer(ComposerWidget.ComposeType? compose_type,
         Geary.Email? referred, string? quote, bool is_draft, out bool inline) {
-        inline = true;
+        inline = false;
 
         // In we're replying, see whether we already have a reply for that message.
         if (compose_type != null && compose_type != ComposerWidget.ComposeType.NEW_MESSAGE) {
@@ -2588,15 +2591,15 @@ public class GearyController : Geary.BaseObject {
     }
 
     private void on_zoom_in() {
-        main_window.conversation_viewer.web_view.zoom_in();
+        main_window.conversation_viewer.zoom_in();
     }
 
     private void on_zoom_out() {
-        main_window.conversation_viewer.web_view.zoom_out();
+        main_window.conversation_viewer.zoom_out();
     }
 
     private void on_zoom_normal() {
-        main_window.conversation_viewer.web_view.zoom_level = 1.0f;
+        main_window.conversation_viewer.zoom_normal();
     }
 
     private void on_search() {
