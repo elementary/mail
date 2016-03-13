@@ -70,7 +70,6 @@ public class MainToolbar : Gtk.HeaderBar {
         search_entry.valign = Gtk.Align.CENTER;
         search_entry.search_changed.connect (on_search_entry_changed);
         search_entry.key_press_event.connect (on_search_key_press);
-        on_search_entry_changed (); // set initial state
         search_entry.has_focus = true;
 
         // Search upgrade progress bar.
