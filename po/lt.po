@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-02-18 18:26-0800\n"
+"POT-Creation-Date: 2016-03-13 17:01-0700\n"
 "PO-Revision-Date: 2015-11-23 11:50+0000\n"
 "Last-Translator: aurisc4 <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
@@ -23,8 +23,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-02-20 05:49+0000\n"
-"X-Generator: Launchpad (build 17925)\n"
+"X-Launchpad-Export-Date: 2016-03-14 06:01+0000\n"
+"X-Generator: Launchpad (build 17939)\n"
 "Language: lt\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -185,6 +185,7 @@ msgstr "man"
 
 #: ../src/engine/rfc822/rfc822-message.vala:781
 #: ../src/client/util/util-email.vala:30
+#: ../src/engine/rfc822/rfc822-message.vala:783
 msgid "(no subject)"
 msgstr "(be temos)"
 
@@ -241,6 +242,7 @@ msgstr "Kopija: %s\n"
 #: ../src/engine/rfc822/rfc822-utils.vala:378
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2227
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2232
+#: ../src/client/conversation-viewer/AttachmentWidget.vala:32
 msgid "none"
 msgstr "tuščia"
 
@@ -324,6 +326,7 @@ msgstr "Žymėti kaip ne š_lamštą"
 #: ../src/client/components/main-toolbar.vala:115
 #: ../src/client/application/geary-controller.vala:77
 #: ../src/client/application/geary-controller.vala:381
+#: ../src/client/components/main-toolbar.vala:108
 msgid "Mark conversation"
 msgstr "Žymėti pokalbį"
 
@@ -341,6 +344,7 @@ msgstr "Žymėti pokalbius"
 #: ../src/client/application/geary-controller.vala:80
 #: ../src/client/components/main-toolbar.vala:120
 #: ../src/client/application/geary-controller.vala:79
+#: ../src/client/components/main-toolbar.vala:113
 msgid "Add label to conversation"
 msgstr "Pridėti žymą pokalbiui"
 
@@ -362,6 +366,7 @@ msgstr "Pridėti žymas pokalbiams"
 #: ../src/client/components/main-toolbar.vala:125
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:420
+#: ../src/client/components/main-toolbar.vala:118
 msgid "Move conversation"
 msgstr "Perkelti pokalbį"
 
@@ -530,6 +535,7 @@ msgstr "Išvalyti šlamšto ir šiukšlių aplankus"
 #: ../src/client/application/geary-controller.vala:495
 #: ../src/client/application/geary-controller.vala:490
 #: ../src/client/application/geary-controller.vala:485
+#: ../src/client/application/geary-controller.vala:479
 msgid "Empty _Spam…"
 msgstr "Išvalyti š_lamštą"
 
@@ -537,6 +543,7 @@ msgstr "Išvalyti š_lamštą"
 #: ../src/client/application/geary-controller.vala:499
 #: ../src/client/application/geary-controller.vala:494
 #: ../src/client/application/geary-controller.vala:489
+#: ../src/client/application/geary-controller.vala:483
 msgid "Empty _Trash…"
 msgstr "Išvalyti _šiukšlinę"
 
@@ -548,6 +555,7 @@ msgstr "Perjungti paieškos juostą"
 #: ../src/client/application/geary-controller.vala:740
 #: ../src/client/application/geary-controller.vala:734
 #: ../src/client/application/geary-controller.vala:728
+#: ../src/client/application/geary-controller.vala:722
 msgid "Unable to store server trust exception"
 msgstr "Nepavyko išsaugoti serverio patikimumo išimties"
 
@@ -555,6 +563,7 @@ msgstr "Nepavyko išsaugoti serverio patikimumo išimties"
 #: ../src/client/application/geary-controller.vala:977
 #: ../src/client/application/geary-controller.vala:971
 #: ../src/client/application/geary-controller.vala:965
+#: ../src/client/application/geary-controller.vala:959
 msgid "Your settings are insecure"
 msgstr "Jūsų nustatytmai yra nesaugūs"
 
@@ -562,6 +571,7 @@ msgstr "Jūsų nustatytmai yra nesaugūs"
 #: ../src/client/application/geary-controller.vala:978
 #: ../src/client/application/geary-controller.vala:972
 #: ../src/client/application/geary-controller.vala:966
+#: ../src/client/application/geary-controller.vala:960
 msgid ""
 "Your IMAP and/or SMTP settings do not specify SSL or TLS.  This means your "
 "username and password could be read by another person on the network.  Are "
@@ -575,6 +585,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:979
 #: ../src/client/application/geary-controller.vala:973
 #: ../src/client/application/geary-controller.vala:967
+#: ../src/client/application/geary-controller.vala:961
 msgid "Co_ntinue"
 msgstr "Tęs_ti"
 
@@ -584,6 +595,7 @@ msgstr "Tęs_ti"
 #: ../src/client/application/geary-controller.vala:1057
 #: ../src/client/application/geary-controller.vala:1051
 #: ../src/client/application/geary-controller.vala:1045
+#: ../src/client/application/geary-controller.vala:1039
 msgid "Error sending email"
 msgstr "Siuntimo klaida"
 
@@ -601,6 +613,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1062
 #: ../src/client/application/geary-controller.vala:1056
 #: ../src/client/application/geary-controller.vala:1050
+#: ../src/client/application/geary-controller.vala:1044
 msgid "Error saving sent mail"
 msgstr "Pašto siuntimo klaida"
 
@@ -617,6 +630,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1132
 #: ../src/client/application/geary-controller.vala:1126
 #: ../src/client/application/geary-controller.vala:1120
+#: ../src/client/application/geary-controller.vala:1114
 msgid "Labels"
 msgstr "Žymos"
 
@@ -624,6 +638,7 @@ msgstr "Žymos"
 #: ../src/client/application/geary-controller.vala:1144
 #: ../src/client/application/geary-controller.vala:1138
 #: ../src/client/application/geary-controller.vala:1132
+#: ../src/client/application/geary-controller.vala:1126
 msgid "Unable to open the database for %s"
 msgstr "Negalima atidaryti duomenų bazės %s"
 
@@ -655,6 +670,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1147
 #: ../src/client/application/geary-controller.vala:1141
 #: ../src/client/application/geary-controller.vala:1135
+#: ../src/client/application/geary-controller.vala:1129
 msgid "_Rebuild"
 msgstr "_Atstatyti"
 
@@ -662,6 +678,7 @@ msgstr "_Atstatyti"
 #: ../src/client/application/geary-controller.vala:1147
 #: ../src/client/application/geary-controller.vala:1141
 #: ../src/client/application/geary-controller.vala:1135
+#: ../src/client/application/geary-controller.vala:1129
 msgid "E_xit"
 msgstr "Iš_eiti"
 
@@ -669,6 +686,7 @@ msgstr "Iš_eiti"
 #: ../src/client/application/geary-controller.vala:1156
 #: ../src/client/application/geary-controller.vala:1150
 #: ../src/client/application/geary-controller.vala:1144
+#: ../src/client/application/geary-controller.vala:1138
 msgid "Unable to rebuild database for \"%s\""
 msgstr "Negalima atstatyti duomenų bazės \"%s\""
 
@@ -676,6 +694,7 @@ msgstr "Negalima atstatyti duomenų bazės \"%s\""
 #: ../src/client/application/geary-controller.vala:1157
 #: ../src/client/application/geary-controller.vala:1151
 #: ../src/client/application/geary-controller.vala:1145
+#: ../src/client/application/geary-controller.vala:1139
 msgid ""
 "Error during rebuild:\n"
 "\n"
@@ -697,6 +716,9 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1167
 #: ../src/client/application/geary-controller.vala:1177
 #: ../src/client/application/geary-controller.vala:1188
+#: ../src/client/application/geary-controller.vala:1161
+#: ../src/client/application/geary-controller.vala:1171
+#: ../src/client/application/geary-controller.vala:1182
 msgid "Unable to open local mailbox for %s"
 msgstr "Negalima atidaryti lokalios pašto dėžutės %s"
 
@@ -704,6 +726,7 @@ msgstr "Negalima atidaryti lokalios pašto dėžutės %s"
 #: ../src/client/application/geary-controller.vala:1180
 #: ../src/client/application/geary-controller.vala:1174
 #: ../src/client/application/geary-controller.vala:1168
+#: ../src/client/application/geary-controller.vala:1162
 msgid ""
 "There was an error opening the local mail database for this account. This is "
 "possibly due to a file permissions problem.\n"
@@ -761,6 +784,7 @@ msgstr "Apie %s"
 #: ../src/client/application/geary-controller.vala:1712
 #: ../src/client/application/geary-controller.vala:1680
 #: ../src/client/application/geary-controller.vala:1678
+#: ../src/client/application/geary-controller.vala:1672
 msgid "translator-credits"
 msgstr ""
 "Vertėjų sąrašas\n"
@@ -772,6 +796,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1970
 #: ../src/client/application/geary-controller.vala:1938
 #: ../src/client/application/geary-controller.vala:1940
+#: ../src/client/application/geary-controller.vala:1936
 msgid "Undo move (Ctrl+Z)"
 msgstr "Atšaukti perkelimą (Ctrl+Z)"
 
@@ -779,6 +804,7 @@ msgstr "Atšaukti perkelimą (Ctrl+Z)"
 #: ../src/client/application/geary-controller.vala:1980
 #: ../src/client/application/geary-controller.vala:1948
 #: ../src/client/application/geary-controller.vala:1950
+#: ../src/client/application/geary-controller.vala:1946
 msgid "Are you sure you want to open \"%s\"?"
 msgstr "Ar tikrai norite atidaryti \"%s\"?"
 
@@ -786,6 +812,7 @@ msgstr "Ar tikrai norite atidaryti \"%s\"?"
 #: ../src/client/application/geary-controller.vala:1981
 #: ../src/client/application/geary-controller.vala:1949
 #: ../src/client/application/geary-controller.vala:1951
+#: ../src/client/application/geary-controller.vala:1947
 msgid ""
 "Attachments may cause damage to your system if opened.  Only open files from "
 "trusted sources."
@@ -797,6 +824,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1982
 #: ../src/client/application/geary-controller.vala:1950
 #: ../src/client/application/geary-controller.vala:1952
+#: ../src/client/application/geary-controller.vala:1948
 msgid "Don't _ask me again"
 msgstr "Nebeklausti _"
 
@@ -804,6 +832,7 @@ msgstr "Nebeklausti _"
 #: ../src/client/application/geary-controller.vala:2000
 #: ../src/client/application/geary-controller.vala:1968
 #: ../src/client/application/geary-controller.vala:1970
+#: ../src/client/application/geary-controller.vala:1966
 msgid "A file named \"%s\" already exists.  Do you want to replace it?"
 msgstr "Failas su pavadinimu \"%s\" jau yra.  Norite jį pakeisti?"
 
@@ -811,6 +840,7 @@ msgstr "Failas su pavadinimu \"%s\" jau yra.  Norite jį pakeisti?"
 #: ../src/client/application/geary-controller.vala:2002
 #: ../src/client/application/geary-controller.vala:1970
 #: ../src/client/application/geary-controller.vala:1972
+#: ../src/client/application/geary-controller.vala:1968
 msgid ""
 "The file already exists in \"%s\".  Replacing it will overwrite its contents."
 msgstr "Toks failas jau yra \"%s\".  Pakeitimas perrašys failo turinį."
@@ -819,6 +849,7 @@ msgstr "Toks failas jau yra \"%s\".  Pakeitimas perrašys failo turinį."
 #: ../src/client/application/geary-controller.vala:2005
 #: ../src/client/application/geary-controller.vala:1973
 #: ../src/client/application/geary-controller.vala:1975
+#: ../src/client/application/geary-controller.vala:1971
 msgid "_Replace"
 msgstr "_Pakeisti"
 
@@ -833,6 +864,7 @@ msgstr "Užverti atvertus juodraščius?"
 #: ../src/client/application/geary-controller.vala:2433
 #: ../src/client/application/geary-controller.vala:2401
 #: ../src/client/application/geary-controller.vala:2403
+#: ../src/client/application/geary-controller.vala:2398
 msgid "Empty all email from your %s folder?"
 msgstr "Išvalyti visus laiškus iš %s katalogo?"
 
@@ -845,6 +877,7 @@ msgstr "Tai pašalina laiškus iš Geary ir jūsų el. pašto serverio."
 #: ../src/client/application/geary-controller.vala:2435
 #: ../src/client/application/geary-controller.vala:2403
 #: ../src/client/application/geary-controller.vala:2405
+#: ../src/client/application/geary-controller.vala:2400
 msgid "This cannot be undone."
 msgstr "Tai negali būti atšaukta."
 
@@ -852,6 +885,7 @@ msgstr "Tai negali būti atšaukta."
 #: ../src/client/application/geary-controller.vala:2436
 #: ../src/client/application/geary-controller.vala:2404
 #: ../src/client/application/geary-controller.vala:2406
+#: ../src/client/application/geary-controller.vala:2401
 msgid "Empty %s"
 msgstr "Išvalyti %s"
 
@@ -859,6 +893,7 @@ msgstr "Išvalyti %s"
 #: ../src/client/application/geary-controller.vala:2453
 #: ../src/client/application/geary-controller.vala:2421
 #: ../src/client/application/geary-controller.vala:2423
+#: ../src/client/application/geary-controller.vala:2418
 msgid "Error emptying %s"
 msgstr "Klaida išvalant %s"
 
@@ -866,6 +901,7 @@ msgstr "Klaida išvalant %s"
 #: ../src/client/application/geary-controller.vala:2483
 #: ../src/client/application/geary-controller.vala:2451
 #: ../src/client/application/geary-controller.vala:2453
+#: ../src/client/application/geary-controller.vala:2448
 msgid "Do you want to permanently delete this message?"
 msgid_plural "Do you want to permanently delete these messages?"
 msgstr[0] "Norite visam laikui ištrinti šį laišką?"
@@ -876,6 +912,7 @@ msgstr[2] "Norite visam laikui ištrinti šiuos laiškus?"
 #: ../src/client/application/geary-controller.vala:2485
 #: ../src/client/application/geary-controller.vala:2453
 #: ../src/client/application/geary-controller.vala:2455
+#: ../src/client/application/geary-controller.vala:2450
 msgid "Delete"
 msgstr "Ištrinti"
 
@@ -883,6 +920,7 @@ msgstr "Ištrinti"
 #: ../src/client/application/geary-controller.vala:2516
 #: ../src/client/application/geary-controller.vala:2484
 #: ../src/client/application/geary-controller.vala:2486
+#: ../src/client/application/geary-controller.vala:2481
 msgid "Undo archive (Ctrl+Z)"
 msgstr "Atšaukti archyvavimą (Ctrl+Z)"
 
@@ -890,6 +928,7 @@ msgstr "Atšaukti archyvavimą (Ctrl+Z)"
 #: ../src/client/application/geary-controller.vala:2531
 #: ../src/client/application/geary-controller.vala:2499
 #: ../src/client/application/geary-controller.vala:2501
+#: ../src/client/application/geary-controller.vala:2496
 msgid "Undo trash (Ctrl+Z)"
 msgstr "Atšaukti išmetimą (Ctrl+Z)"
 
@@ -897,6 +936,7 @@ msgstr "Atšaukti išmetimą (Ctrl+Z)"
 #: ../src/client/application/geary-controller.vala:2584
 #: ../src/client/application/geary-controller.vala:2552
 #: ../src/client/application/geary-controller.vala:2554
+#: ../src/client/application/geary-controller.vala:2549
 msgid "Undo (Ctrl+Z)"
 msgstr "Atšaukti (Ctrl+Z)"
 
@@ -1031,6 +1071,7 @@ msgstr[2] ""
 #: ../src/client/notification/libnotify.vala:160
 #: ../src/client/notification/libnotify.vala:158
 #: ../src/client/notification/libnotify.vala:151
+#: ../src/client/conversation-viewer/AttachmentWidget.vala:44
 msgid "Open"
 msgstr "Atverti"
 
@@ -1408,11 +1449,13 @@ msgstr[2] "%d rezultatų"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:413
 #: ../src/client/conversation-viewer/conversation-viewer.vala:415
+#: ../src/client/conversation-viewer/conversation-viewer.vala:302
 msgid "No conversations selected."
 msgstr "Nepasirinkti jokie pokalbiai."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:415
 #: ../src/client/conversation-viewer/conversation-viewer.vala:417
+#: ../src/client/conversation-viewer/conversation-viewer.vala:304
 msgid "%u conversation selected."
 msgid_plural "%u conversations selected."
 msgstr[0] "%u pasirinktas pokalbis."
@@ -1421,21 +1464,25 @@ msgstr[2] "%u pasirinktų pokalbių."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:444
 #: ../src/client/conversation-viewer/conversation-viewer.vala:446
+#: ../src/client/conversation-viewer/conversation-viewer.vala:333
 msgid "No search results found."
 msgstr "Nieko nerasta."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:446
 #: ../src/client/conversation-viewer/conversation-viewer.vala:448
+#: ../src/client/conversation-viewer/conversation-viewer.vala:335
 msgid "No conversations in folder."
 msgstr "Tuščias aplnakas."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:708
 #: ../src/client/conversation-viewer/conversation-viewer.vala:713
+#: ../src/client/conversation-viewer/ConversationWidget.vala:426
 msgid "This message contains remote images."
 msgstr "Šiame laiške yra nuotolinių paveikslėlių."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:708
 #: ../src/client/conversation-viewer/conversation-viewer.vala:713
+#: ../src/client/conversation-viewer/ConversationWidget.vala:424
 msgid "Show Images"
 msgstr "Rodyti paveikslėlius"
 
@@ -1446,31 +1493,37 @@ msgstr "Visada rodyti iš siuntėjo"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:733
 #: ../src/client/conversation-viewer/conversation-viewer.vala:738
+#: ../src/client/conversation-viewer/ConversationWidget.vala:377
 msgid "Edit Draft"
 msgstr "Redaguoti juodraštį"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:809
 #: ../src/client/conversation-viewer/conversation-viewer.vala:814
+#: ../src/client/conversation-viewer/ConversationWidget.vala:145
 msgid "From:"
 msgstr "Nuo:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:812
 #: ../src/client/conversation-viewer/conversation-viewer.vala:817
+#: ../src/client/conversation-viewer/ConversationWidget.vala:149
 msgid "To:"
 msgstr "Kam:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:815
 #: ../src/client/conversation-viewer/conversation-viewer.vala:820
+#: ../src/client/conversation-viewer/ConversationWidget.vala:154
 msgid "Cc:"
 msgstr "Kopija:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:818
 #: ../src/client/conversation-viewer/conversation-viewer.vala:823
+#: ../src/client/conversation-viewer/ConversationWidget.vala:159
 msgid "Bcc:"
 msgstr "Nematoma kopija:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:821
 #: ../src/client/conversation-viewer/conversation-viewer.vala:826
+#: ../src/client/conversation-viewer/ConversationWidget.vala:164
 msgid "Subject:"
 msgstr "Tema:"
 
@@ -1496,17 +1549,20 @@ msgstr ""
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1297
 #: ../data/ui/composer.ui:29
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1302
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1129
 msgid "_Copy"
 msgstr "_Kopijuoti"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1305
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1310
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1137
 msgid "Copy _Email Address"
 msgstr "Kopijuoti _pašto adresą"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1310
 #: ../data/ui/composer.ui:106
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1315
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1146
 msgid "Copy _Link"
 msgstr "Kopijuoti _nuorodą"
 
@@ -1519,11 +1575,13 @@ msgstr "Pasirinkti _laišką"
 #: ../src/client/components/stock.vala:32
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1329
 #: ../src/client/components/stock.vala:31
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1157
 msgid "Select _All"
 msgstr "Pasirinkti _viską"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1330
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1335
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1163
 msgid "_Inspect"
 msgstr "_Tikrinti"
 
@@ -1592,6 +1650,7 @@ msgstr "_Žiūrėti kodą"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2362
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2367
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1038
 msgid "Failed to open default text editor."
 msgstr "Klaida bandant atidaryti numatytą teksto redaktorių."
 
@@ -1600,26 +1659,32 @@ msgid "%s - Conversation Inspector"
 msgstr "%s - Pokalbio tikrintojas"
 
 #: ../src/client/composer/composer-widget.vala:73
+#: ../src/client/composer/composer-widget.vala:71
 msgid "Saved"
 msgstr "Išsaugota"
 
 #: ../src/client/composer/composer-widget.vala:74
+#: ../src/client/composer/composer-widget.vala:72
 msgid "Saving"
 msgstr "Saugoma"
 
 #: ../src/client/composer/composer-widget.vala:75
+#: ../src/client/composer/composer-widget.vala:73
 msgid "Error saving"
 msgstr "Saugojimo klaida"
 
 #: ../src/client/composer/composer-widget.vala:76
+#: ../src/client/composer/composer-widget.vala:74
 msgid "Press Backspace to delete quote"
 msgstr "Paspauskite naikinimo klavišą citatai ištrinti"
 
 #: ../src/client/composer/composer-widget.vala:77
+#: ../src/client/composer/composer-widget.vala:75
 msgid "New Message"
 msgstr "Naujas laiškas"
 
 #: ../src/client/composer/composer-widget.vala:138
+#: ../src/client/composer/composer-widget.vala:136
 msgid ""
 "attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
 "closing|encloses|enclosure|enclosures"
@@ -1640,60 +1705,70 @@ msgstr "Norite atmesti šį laišką?"
 #: ../src/client/composer/composer-widget.vala:1262
 #: ../src/client/composer/composer-widget.vala:1257
 #: ../src/client/composer/composer-widget.vala:1254
+#: ../src/client/composer/composer-widget.vala:1223
 msgid "Send message with an empty subject and body?"
 msgstr "Ar siųsti laišką be teksto ir temos?"
 
 #: ../src/client/composer/composer-widget.vala:1264
 #: ../src/client/composer/composer-widget.vala:1259
 #: ../src/client/composer/composer-widget.vala:1256
+#: ../src/client/composer/composer-widget.vala:1225
 msgid "Send message with an empty subject?"
 msgstr "Ar siųsti laišką be temos?"
 
 #: ../src/client/composer/composer-widget.vala:1266
 #: ../src/client/composer/composer-widget.vala:1261
 #: ../src/client/composer/composer-widget.vala:1258
+#: ../src/client/composer/composer-widget.vala:1227
 msgid "Send message with an empty body?"
 msgstr "Ar siųsti laišką be teksto?"
 
 #: ../src/client/composer/composer-widget.vala:1268
 #: ../src/client/composer/composer-widget.vala:1263
 #: ../src/client/composer/composer-widget.vala:1260
+#: ../src/client/composer/composer-widget.vala:1229
 msgid "Send message without an attachment?"
 msgstr "Ar siųsti laišką be priedų?"
 
 #: ../src/client/composer/composer-widget.vala:1530
 #: ../src/client/composer/composer-widget.vala:1525
 #: ../src/client/composer/composer-widget.vala:1522
+#: ../src/client/composer/composer-widget.vala:1486
 msgid "Cannot add attachment"
 msgstr "Negalima pridėti"
 
 #: ../src/client/composer/composer-widget.vala:1541
 #: ../src/client/composer/composer-widget.vala:1536
 #: ../src/client/composer/composer-widget.vala:1533
+#: ../src/client/composer/composer-widget.vala:1497
 msgid "\"%s\" could not be found."
 msgstr "\"%s\" negali būti rastas."
 
 #: ../src/client/composer/composer-widget.vala:1548
 #: ../src/client/composer/composer-widget.vala:1543
 #: ../src/client/composer/composer-widget.vala:1540
+#: ../src/client/composer/composer-widget.vala:1504
 msgid "\"%s\" is a folder."
 msgstr "\"%s\" aplankas."
 
 #: ../src/client/composer/composer-widget.vala:1555
 #: ../src/client/composer/composer-widget.vala:1550
 #: ../src/client/composer/composer-widget.vala:1547
+#: ../src/client/composer/composer-widget.vala:1511
 msgid "\"%s\" is an empty file."
 msgstr "\"%s\" tusčias failas."
 
 #: ../src/client/composer/composer-widget.vala:1569
 #: ../src/client/composer/composer-widget.vala:1564
 #: ../src/client/composer/composer-widget.vala:1561
+#: ../src/client/composer/composer-widget.vala:1525
 msgid "\"%s\" could not be opened for reading."
 msgstr "\"%s\" negali būti atidarytas skaitymui."
 
 #: ../src/client/composer/composer-widget.vala:1576
 #: ../src/client/composer/composer-widget.vala:1571
 #: ../src/client/composer/composer-widget.vala:1568
+#: ../src/client/composer/composer-widget.vala:1532
 msgid "\"%s\" already attached for delivery."
 msgstr "\"%s\" prisegtas siuntimui."
 
@@ -1701,48 +1776,56 @@ msgstr "\"%s\" prisegtas siuntimui."
 #: ../src/client/composer/composer-widget.vala:1585
 #: ../src/client/composer/composer-widget.vala:1580
 #: ../src/client/composer/composer-widget.vala:1577
+#: ../src/client/composer/composer-widget.vala:1541
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
 #: ../src/client/composer/composer-widget.vala:1645
 #: ../src/client/composer/composer-widget.vala:1640
 #: ../src/client/composer/composer-widget.vala:1637
+#: ../src/client/composer/composer-widget.vala:1601
 msgid "To: "
 msgstr "Kam: "
 
 #: ../src/client/composer/composer-widget.vala:1648
 #: ../src/client/composer/composer-widget.vala:1643
 #: ../src/client/composer/composer-widget.vala:1640
+#: ../src/client/composer/composer-widget.vala:1604
 msgid "Cc: "
 msgstr "Kopija: "
 
 #: ../src/client/composer/composer-widget.vala:1651
 #: ../src/client/composer/composer-widget.vala:1646
 #: ../src/client/composer/composer-widget.vala:1643
+#: ../src/client/composer/composer-widget.vala:1607
 msgid "Bcc: "
 msgstr "Nematoma kopija: "
 
 #: ../src/client/composer/composer-widget.vala:1654
 #: ../src/client/composer/composer-widget.vala:1649
 #: ../src/client/composer/composer-widget.vala:1646
+#: ../src/client/composer/composer-widget.vala:1610
 msgid "Reply-To: "
 msgstr "Kam _atsakyti: "
 
 #: ../src/client/composer/composer-widget.vala:1887
 #: ../src/client/composer/composer-widget.vala:1882
 #: ../src/client/composer/composer-widget.vala:1879
+#: ../src/client/composer/composer-widget.vala:1843
 msgid "Select Color"
 msgstr "Pasirinkti spalvą"
 
 #: ../src/client/composer/composer-widget.vala:2322
 #: ../src/client/composer/composer-widget.vala:2317
 #: ../src/client/composer/composer-widget.vala:2310
+#: ../src/client/composer/composer-widget.vala:2274
 msgid "%1$s via %2$s"
 msgstr "%1$s per %2$s"
 
 #: ../src/client/composer/composer-widget.vala:2364
 #: ../src/client/composer/composer-widget.vala:2359
 #: ../src/client/composer/composer-widget.vala:2352
+#: ../src/client/composer/composer-widget.vala:2315
 msgid "_From:"
 msgstr "_Nuo:"
 
@@ -1771,6 +1854,7 @@ msgstr[1] "%i atitikmenys (perkelti)"
 msgstr[2] "%i atitikmenų (perkelti)"
 
 #: ../src/client/components/conversation-find-bar.vala:218
+#: ../src/client/conversation-viewer/ConversationFindBar.vala:194
 msgid "not found"
 msgstr "nerasta"
 
@@ -1818,12 +1902,14 @@ msgstr "_Paimti"
 #: ../src/client/components/search-bar.vala:25
 #: ../src/client/components/main-toolbar.vala:83
 #: ../src/client/components/main-toolbar.vala:75
+#: ../src/client/components/main-toolbar.vala:69
 msgid "Search all mail in account for keywords (Ctrl+S)"
 msgstr "Ieškoti visame naudotojo pašte pagal žodžius (Ctrl+S)"
 
 #: ../src/client/components/search-bar.vala:118
 #: ../src/client/components/main-toolbar.vala:300
 #: ../src/client/components/main-toolbar.vala:269
+#: ../src/client/components/main-toolbar.vala:262
 msgid "Indexing %s account"
 msgstr "Indeksuojama %s paskyra"
 
@@ -1832,6 +1918,7 @@ msgstr "Indeksuojama %s paskyra"
 #: ../src/client/components/main-toolbar.vala:162
 #: ../src/client/composer/composer-headerbar.vala:75
 #: ../src/client/components/main-toolbar.vala:158
+#: ../src/client/components/main-toolbar.vala:151
 msgid "Menu"
 msgstr ""
 
@@ -1857,6 +1944,7 @@ msgstr ""
 
 #: ../src/client/components/main-toolbar.vala:312
 #: ../src/client/components/main-toolbar.vala:281
+#: ../src/client/components/main-toolbar.vala:274
 msgid "Search %s"
 msgstr ""
 
@@ -2182,37 +2270,37 @@ msgid "Application Menu"
 msgstr ""
 
 #. Address(es) e-mail is to be sent to
-#: ../data/ui/composer.ui:289
+#: ../data/ui/composer.ui:289 ../data/ui/composer.ui:317
 msgid "_To"
 msgstr ""
 
-#: ../data/ui/composer.ui:308
+#: ../data/ui/composer.ui:308 ../data/ui/composer.ui:336
 msgid "_Cc"
 msgstr ""
 
-#: ../data/ui/composer.ui:362
+#: ../data/ui/composer.ui:362 ../data/ui/composer.ui:390
 msgid "_Subject"
 msgstr ""
 
-#: ../data/ui/composer.ui:381
+#: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
 msgid "_Bcc"
 msgstr ""
 
-#: ../data/ui/composer.ui:411
+#: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
 msgid "_Reply-To"
 msgstr ""
 
 #. Geary account mail will be sent from
 #. Account mail will be sent from
-#: ../data/ui/composer.ui:440
+#: ../data/ui/composer.ui:440 ../data/ui/composer.ui:468
 msgid "From"
 msgstr ""
 
-#: ../data/ui/composer.ui:519
+#: ../data/ui/composer.ui:519 ../data/ui/composer.ui:547
 msgid "Drop files here"
 msgstr ""
 
-#: ../data/ui/composer.ui:535
+#: ../data/ui/composer.ui:535 ../data/ui/composer.ui:563
 msgid "To add them as attachments"
 msgstr ""
 
@@ -2409,6 +2497,7 @@ msgstr ""
 
 #: ../src/client/application/geary-controller.vala:1052
 #: ../src/client/application/geary-controller.vala:1046
+#: ../src/client/application/geary-controller.vala:1040
 msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
@@ -2416,6 +2505,7 @@ msgstr ""
 
 #: ../src/client/application/geary-controller.vala:1057
 #: ../src/client/application/geary-controller.vala:1051
+#: ../src/client/application/geary-controller.vala:1045
 msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
@@ -2423,6 +2513,7 @@ msgstr ""
 
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
+#: ../src/client/application/geary-controller.vala:1127
 msgid ""
 "There was an error opening the local mail database for this account. This is "
 "possibly due to corruption of the database file in this directory:\n"
@@ -2437,6 +2528,7 @@ msgstr ""
 
 #: ../src/client/application/geary-controller.vala:1184
 #: ../src/client/application/geary-controller.vala:1178
+#: ../src/client/application/geary-controller.vala:1172
 msgid ""
 "The version number of the local mail database is formatted for a newer "
 "version of Mail. Unfortunately, the database cannot be \"rolled back\" to "
@@ -2447,6 +2539,7 @@ msgstr ""
 
 #: ../src/client/application/geary-controller.vala:1195
 #: ../src/client/application/geary-controller.vala:1189
+#: ../src/client/application/geary-controller.vala:1183
 msgid ""
 "There was an error opening the local account. This is probably due to "
 "connectivity issues.\n"
@@ -2456,6 +2549,7 @@ msgstr ""
 
 #: ../src/client/application/geary-controller.vala:2402
 #: ../src/client/application/geary-controller.vala:2404
+#: ../src/client/application/geary-controller.vala:2399
 msgid "This removes the email from Mail and your email server."
 msgstr ""
 
@@ -2513,3 +2607,80 @@ msgstr ""
 #: ../src/client/application/geary-args.vala:10
 msgid "Show About dialog"
 msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:218
+msgid "Save Attachment…"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:220
+msgid "Save All Attachments…"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:229
+msgid "Reply"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:230
+msgid "Reply to All"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:231
+msgid "Forward"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:247
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1112
+msgid "Mark as Unread"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:249
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1110
+msgid "Mark as Read"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:252
+msgid "Print…"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:253
+msgid "View Source"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:317
+#: ../src/client/conversation-viewer/ConversationWidget.vala:602
+msgid "View message"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:386
+msgid "This message contains one or more attachments"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:425
+msgid "Always Show from Sender"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:553
+msgid "Compose New Message"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:554
+msgid "Copy Email Address"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:615
+msgid "Hide message"
+msgstr ""
+
+#: ../src/client/conversation-viewer/AttachmentWidget.vala:46
+msgid "Save As…"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationFindBar.vala:69
+msgid "Case sensitive"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationFindBar.vala:198
+msgid "%u match"
+msgid_plural "%u matches"
+msgstr[0] ""
+msgstr[1] ""
