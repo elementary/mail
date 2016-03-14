@@ -2789,6 +2789,10 @@ public class GearyController : Geary.BaseObject {
         return false;
     }
 
+    public void notification_clicked () {
+        libnotify.notification_clicked ();
+    }
+
     /**
      * Returns a read-only set of currently selected conversations.
      */

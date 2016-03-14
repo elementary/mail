@@ -144,6 +144,13 @@ public class GearyApplication : Gtk.Application {
         
         base.startup();
         
+        var notification_action = new SimpleAction ("go-to-notification", null);
+        notification_action.activate.connect (() => {
+            this.activate ();
+            controller.notification_clicked ();
+        });
+        add_action (notification_action);
+        
         add_action_entries(action_entries, this);
     }
     
