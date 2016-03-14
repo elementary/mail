@@ -97,16 +97,3 @@ public class PillHeaderbar : Gtk.HeaderBar, PillBar {
         return at_end;
     }
 }
-
-/**
- * A pill-style toolbar.
- */
-public class PillToolbar : Gtk.Box, PillBar {
-    protected Gtk.ActionGroup action_group { get; set; }
-
-    public PillToolbar(Gtk.ActionGroup toolbar_action_group) {
-        Object(orientation: Gtk.Orientation.HORIZONTAL, spacing: 6);
-        initialize(toolbar_action_group);
-    }
-}
-
