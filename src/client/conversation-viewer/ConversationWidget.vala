@@ -387,6 +387,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
 
         star_button = new Gtk.Button.from_icon_name ("non-starred-symbolic", Gtk.IconSize.MENU);
         star_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        star_button.tooltip_text = _("Star message");
         star_button.margin_top = 6;
         star_button.valign = Gtk.Align.START;
         star_button.halign = Gtk.Align.END;
@@ -396,14 +397,17 @@ public class ConversationWidget : Gtk.ListBoxRow {
             star (new_state);
             if (new_state) {
                 star_image.icon_name = "starred-symbolic";
+                star_button.tooltip_text = _("Unstar message");
             } else {
                 star_image.icon_name = "non-starred-symbolic";
+                star_button.tooltip_text = _("Star message");
             }
         });
 
         menu_button = new Gtk.MenuButton ();
         menu_button.image = new Gtk.Image.from_icon_name ("view-more-symbolic", Gtk.IconSize.MENU);
         menu_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        menu_button.tooltip_text = _("More");
         menu_button.margin_top = 6;
         menu_button.valign = Gtk.Align.START;
         menu_button.halign = Gtk.Align.END;
