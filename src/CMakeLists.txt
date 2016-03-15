@@ -513,7 +513,7 @@ else ()
     )
 endif ()
 
-set(TARGET_GLIB 2.34)
+set(TARGET_GLIB 2.40)
 
 pkg_check_modules(DEPS REQUIRED
     granite
@@ -522,7 +522,6 @@ pkg_check_modules(DEPS REQUIRED
     gio-2.0>=2.28.0
     gtk+-3.0>=3.10.0
     gee-0.8>=0.8.5
-    libnotify>=0.7.5
     libcanberra>=0.28
     sqlite3>=3.7.4
     gmime-2.6>=2.6.14
@@ -540,7 +539,7 @@ set(ENGINE_PACKAGES
 # webkitgtk-3.0 is listed as a custom VAPI (below) to ensure it's treated as a dependency and
 # built before compilation
 set(CLIENT_PACKAGES
-    gtk+-3.0 granite libsecret-1 libsoup-2.4 libnotify libcanberra gcr-3 ${EXTRA_CLIENT_PACKAGES}
+    gtk+-3.0 granite libsecret-1 libsoup-2.4 libcanberra gcr-3 ${EXTRA_CLIENT_PACKAGES}
 )
 
 set(CONSOLE_PACKAGES

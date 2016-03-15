@@ -8,41 +8,20 @@
 public class Libnotify : Geary.BaseObject {
     public const Geary.Email.Field REQUIRED_FIELDS =
         Geary.Email.Field.ORIGINATORS | Geary.Email.Field.SUBJECT;
-    
     private static Canberra.Context? sound_context = null;
     
     private NewMessagesMonitor monitor;
-    private Notify.Notification? current_notification = null;
-    private Notify.Notification? error_notification = null;
+    private bool visible_notification = false;
+    private bool visible_error = false;
     private Geary.Folder? folder = null;
     private Geary.Email? email = null;
-    private List<string> caps;
-
+    
     public signal void invoked(Geary.Folder? folder, Geary.Email? email);
     
     public Libnotify(NewMessagesMonitor monitor) {
         this.monitor = monitor;
-        
         monitor.add_required_fields(REQUIRED_FIELDS);
-        
-        if (!Notify.is_initted()) {
-            if (!Notify.init(GearyApplication.PRGNAME))
-                message("Failed to initialize libnotify.");
-        }
-        
-        init_sound();
-        caps = Notify.get_server_caps();
-        
         monitor.new_messages_arrived.connect(on_new_messages_arrived);
-    }
-    
-    ~Libnotify() {
-        monitor.new_messages_arrived.disconnect(on_new_messages_arrived);
-    }
-    
-    private static void init_sound() {
-        if (sound_context == null)
-            Canberra.Context.create(out sound_context);
     }
     
     private void on_new_messages_arrived(Geary.Folder folder, int total, int added) {
@@ -53,11 +32,6 @@ public class Libnotify : Geary.BaseObject {
         } else if (added > 0) {
             notify_new_mail(folder, added);
         }
-    }
-    
-    private void on_default_action(Notify.Notification notification, string action) {
-        invoked(folder, email);
-        GearyApplication.instance.activate();
     }
     
     private void notify_new_mail(Geary.Folder folder, int added) {
@@ -98,107 +72,66 @@ public class Libnotify : Geary.BaseObject {
         }
         
         string body = EmailUtil.strip_subject_prefixes(email);
-        
         // get the avatar
-        Gdk.Pixbuf? avatar = null;
-        InputStream? ins = null;
-        File file = File.new_for_uri(Gravatar.get_image_uri(primary, Gravatar.Default.MYSTERY_MAN));
+        var avatar_file = File.new_for_uri (Gravatar.get_image_uri(primary, Gravatar.Default.NOT_FOUND));
+        GLib.Icon icon = null;
         try {
-            ins = yield file.read_async(GLib.Priority.DEFAULT, cancellable);
-            avatar = yield new Gdk.Pixbuf.from_stream_async(ins, cancellable);
-        } catch (Error err) {
-            debug("Failed to get avatar for notification: %s", err.message);
+            FileIOStream iostream;
+            var file = File.new_tmp("geary-contact-XXXXXX.png", out iostream);
+            iostream.close();
+            avatar_file.copy(file, GLib.FileCopyFlags.OVERWRITE);
+            icon = new FileIcon(file);
+        } catch (Error e) {
+            critical (e.message);
         }
-        
-        if (ins != null) {
-            try {
-                yield ins.close_async(Priority.DEFAULT, cancellable);
-            } catch (Error close_err) {
-                // ignored
-            }
-            
-            ins = null;
-        }
-        
-        issue_current_notification(primary.get_short_address(), body, avatar);
+
+        issue_current_notification(primary.get_short_address(), body, icon);
     }
     
-    private void issue_current_notification(string summary, string body, Gdk.Pixbuf? icon) {
+    private void issue_current_notification(string summary, string body, GLib.Icon? icon) {
         // only one outstanding notification at a time
-        if (current_notification != null) {
-            try {
-                current_notification.close();
-            } catch (Error err) {
-                debug("Unable to close current libnotify notification: %s", err.message);
-            }
-            
-            current_notification = null;
+        if (visible_notification) {
+            GearyApplication.instance.withdraw_notification ("email.arrived");
+            visible_notification = false;
         }
         
-        current_notification = issue_notification("email.arrived", summary, body, icon, "message-new_email");
-        
-    }
-    
-    private Notify.Notification issue_notification(string category, string summary,
-        string body, Gdk.Pixbuf? icon, string? sound) {
-        // Avoid constructor due to ABI change
-        Notify.Notification notification = (Notify.Notification) GLib.Object.new(
-            typeof (Notify.Notification),
-            "icon-name", "internet-mail",
-            "summary", GLib.Environment.get_application_name());
-        notification.set_hint_string("desktop-entry", "geary");
-        if (caps.find_custom("actions", GLib.strcmp) != null)
-            notification.add_action("default", _("Open"), on_default_action);
-        
-        notification.set_category(category);
-        notification.set("summary", summary);
-        notification.set("body", body);
-        
-        if (icon != null)
-            notification.set_image_from_pixbuf(icon);
-        
-        if (sound != null) {
-            if (caps.find("sound") != null)
-                notification.set_hint_string("sound-name", sound);
-            else
-                play_sound(sound);
-        }
-        
-        try {
-            notification.show();
-        } catch (Error err) {
-            message("Unable to show notification: %s", err.message);
-        }
-        
-        return notification;
-    }
-    
-    public static void play_sound(string sound) {
-        init_sound();
-        sound_context.play(0, Canberra.PROP_EVENT_ID, sound);
+        var notification = new Notification(summary);
+        notification.set_body(body);
+        notification.set_icon(icon ?? new ThemedIcon("internet-mail"));
+        notification.set_default_action ("app.go-to-notification");
+        GearyApplication.instance.send_notification ("email.arrived", notification);
     }
     
     public void set_error_notification(string summary, string body) {
         // Only one error at a time, guys.  (This means subsequent errors will
         // be dropped.  Since this is only used for one thing now, that's ok,
         // but it means in the future, a more robust system will be needed.)
-        if (error_notification != null)
+        if (visible_error)
             return;
         
-        error_notification = issue_notification("email", summary, body,
-            IconFactory.instance.application_icon, null);
+        var notification = new Notification(summary);
+        notification.set_body(body);
+        GearyApplication.instance.send_notification ("email.error", notification);
+        visible_error = true;
     }
     
     public void clear_error_notification() {
-        if (error_notification != null) {
-            try {
-                error_notification.close();
-            } catch (Error err) {
-                debug("Unable to close libnotify error notification: %s", err.message);
-            }
-            
-            error_notification = null;
-        }
+        GearyApplication.instance.withdraw_notification ("email.error");
+        visible_error = false;
+    }
+    
+    public void notification_clicked() {
+        invoked(folder, email);
+    }
+    
+    private static void init_sound() {
+        if (sound_context == null)
+            Canberra.Context.create(out sound_context);
+    }
+    
+    public static void play_sound(string sound) {
+        init_sound();
+        sound_context.play(0, Canberra.PROP_EVENT_ID, sound);
     }
 }
 
