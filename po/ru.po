@@ -18,7 +18,7 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-03-13 17:01-0700\n"
-"PO-Revision-Date: 2016-03-14 00:39+0000\n"
+"PO-Revision-Date: 2016-03-14 07:59+0000\n"
 "Last-Translator: Yuly Nesterov <crow@rikka.io>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-03-14 06:02+0000\n"
+"X-Launchpad-Export-Date: 2016-03-15 06:17+0000\n"
 "X-Generator: Launchpad (build 17939)\n"
 "Language: ru\n"
 
@@ -2655,11 +2655,11 @@ msgstr "О программе"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:218
 msgid "Save Attachment…"
-msgstr ""
+msgstr "Сохранить вложение..."
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 msgid "Save All Attachments…"
-msgstr ""
+msgstr "Сохранить все вложения..."
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 msgid "Reply"
@@ -2676,12 +2676,12 @@ msgstr "Переслать"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:247
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1112
 msgid "Mark as Unread"
-msgstr "Отметить как непрочитанные"
+msgstr "Отметить как непрочитанное"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:249
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1110
 msgid "Mark as Read"
-msgstr "Отметить как прочитанные"
+msgstr "Отметить как прочитанное"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:252
 msgid "Print…"
@@ -2698,11 +2698,11 @@ msgstr "Показать сообщение"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:386
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "Это письмо содержит одно или больше вложение"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:425
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "Всегда показывать от этого отправителя"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:553
 msgid "Compose New Message"
@@ -2714,7 +2714,7 @@ msgstr "Копировать адрес эл. почты"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:615
 msgid "Hide message"
-msgstr ""
+msgstr "Скрыть письмо"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
@@ -2727,5 +2727,6 @@ msgstr "Учитывать регистр"
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
 msgid_plural "%u matches"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u совпадение"
+msgstr[1] "% совпадения"
+msgstr[2] "% совпадений"
