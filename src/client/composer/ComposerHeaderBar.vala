@@ -27,11 +27,10 @@ public class ComposerHeaderbar : Gtk.HeaderBar {
 
     private Gtk.Button recipients;
     private Gtk.Label recipients_label;
-    private Gtk.Button detach;
 
     public ComposerHeaderbar(Gtk.ActionGroup action_group) {
 
-        detach = new Gtk.Button.from_icon_name ("window-pop-out-symbolic", Gtk.IconSize.MENU);
+        var detach = new Gtk.Button.from_icon_name ("window-pop-out-symbolic", Gtk.IconSize.MENU);
         detach.related_action = action_group.get_action (ComposerWidget.ACTION_DETACH);
         detach.margin_end = 6;
         detach.tooltip_text = _("Detach (Ctrl+D)");
