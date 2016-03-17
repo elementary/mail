@@ -342,7 +342,7 @@ client/components/stock.vala
 client/components/stylish-webview.vala
 
 client/composer/composer-container.vala
-client/composer/composer-headerbar.vala
+client/composer/ComposerHeaderBar.vala
 client/composer/composer-toolbar.vala
 client/composer/composer-widget.vala
 client/composer/composer-window.vala
