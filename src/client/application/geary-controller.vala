@@ -2699,6 +2699,12 @@ public class GearyController : Geary.BaseObject {
             sensitive && (supported_operations.contains(typeof(Geary.FolderSupport.Copy)));
     }
 
+    // Disables the reply to and reply all buttons on the toolbar.
+    public void disable_reply_buttons() {
+        GearyApplication.instance.actions.get_action(ACTION_REPLY_TO_MESSAGE).sensitive = false;
+        GearyApplication.instance.actions.get_action(ACTION_REPLY_ALL_MESSAGE).sensitive = false;
+    }
+  
     // Updates tooltip text depending on number of conversations selected.
     private void update_tooltips() {
         bool single = selected_conversations.size == 1;

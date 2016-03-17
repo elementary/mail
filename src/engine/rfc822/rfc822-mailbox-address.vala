@@ -122,10 +122,18 @@ public class Geary.RFC822.MailboxAddress : Geary.MessageData.SearchableMessageDa
     
     /**
      * Returns a human-readable pretty address, showing only the name, but if unavailable, the
-     * mailbox name (that is, the account name without the domain).
+     * mailbox name (that is, the account name without the domain). In case the mailbox name
+     * contains 'noreply', then the domain (that is the part behind the '@') gets returned instead.
      */
     public string get_short_address() {
-        return name ?? mailbox;
+        if (name != null) {
+            return name;
+        } else {
+            if (is_noreply())
+                return domain;
+            
+            return mailbox;
+        }
     }
 
     /**
@@ -148,6 +156,18 @@ public class Geary.RFC822.MailboxAddress : Geary.MessageData.SearchableMessageDa
             return email_regex.match(address);
         } catch (RegexError e) {
             debug("Regex error validating email address: %s", e.message);
+            return false;
+        }
+    }
+    
+    /**
+     * Checks whether the mailbox part of the address contains 'noreply'.
+     * Returns true or false accordingly.
+     */
+    public bool is_noreply() {
+        if (mailbox.down().contains("noreply")) {
+            return true;
+        } else {
             return false;
         }
     }

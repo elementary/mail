@@ -143,6 +143,14 @@ public class ConversationWidget : Gtk.ListBoxRow {
 
         // Populate the extended widgets
         insert_header_address(_("From:"), email.from, 0);
+        Gee.List<Geary.RFC822.MailboxAddress>? addresses = email.from.get_all();
+        bool noreply = false;
+        foreach (Geary.RFC822.MailboxAddress a in addresses) {
+            if (a.is_noreply()) {
+                noreply = true; break;
+            }
+        }
+        if (noreply) GearyApplication.instance.controller.disable_reply_buttons();
 
         int row_id = 1;
         if (email.to != null) {
@@ -226,18 +234,30 @@ public class ConversationWidget : Gtk.ListBoxRow {
         }
 
         if (!in_drafts_folder ()) {
-            var reply_item = new Gtk.MenuItem.with_label (_("Reply"));
-            var reply_all_item = new Gtk.MenuItem.with_label (_("Reply to All"));
+            
+            // Gets only added to the menu if the according button in the main toolbar is sensitive.
+            const string ACTION_REPLY_TO_MESSAGE = GearyController.ACTION_REPLY_TO_MESSAGE;
+            bool reply_to_is_sensitive = GearyApplication.instance.actions.get_action(ACTION_REPLY_TO_MESSAGE).get_sensitive();
+            if (reply_to_is_sensitive) {
+                var reply_item = new Gtk.MenuItem.with_label (_("Reply"));
+                menu.add (reply_item);
+                reply_item.activate.connect (() => reply ());
+            }
+            
+            // Gets only added to the menu if the according button in the main toolbar is sensitive.
+            const string ACTION_REPLY_ALL_MESSAGE = GearyController.ACTION_REPLY_ALL_MESSAGE;
+            bool reply_all_is_sensitive = GearyApplication.instance.actions.get_action(ACTION_REPLY_ALL_MESSAGE).get_sensitive();
+            if (reply_all_is_sensitive) {
+                var reply_all_item = new Gtk.MenuItem.with_label (_("Reply to All"));
+                menu.add (reply_all_item);
+                reply_all_item.activate.connect (() => reply_all ());
+            }
+            
             var forward_item = new Gtk.MenuItem.with_label (_("Forward"));
-            menu.add (reply_item);
-            menu.add (reply_all_item);
             menu.add (forward_item);
             menu.add (new Gtk.SeparatorMenuItem ());
-            reply_item.activate.connect (() => reply ());
-
-            reply_all_item.activate.connect (() => reply_all ());
-
             forward_item.activate.connect (() => forward ());
+            
         }
 
         if (!is_in_folder || !in_drafts_folder ()) {
