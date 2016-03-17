@@ -36,22 +36,22 @@ public class ComposerHeaderbar : Gtk.HeaderBar {
         detach.margin_end = 6;
         detach.tooltip_text = _("Detach (Ctrl+D)");
 
-        Gtk.Button discard = new Gtk.Button.from_icon_name ("edit-delete-symolic", Gtk.IconSize.MENU);
+        var discard = new Gtk.Button.from_icon_name ("edit-delete-symolic", Gtk.IconSize.MENU);
         discard.related_action = action_group.get_action (ComposerWidget.ACTION_CLOSE_DISCARD);
         discard.tooltip_text = _("Delete draft");
 
-        Gtk.Button send_button = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
+        var send_button = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
         send_button.related_action = action_group.get_action (ComposerWidget.ACTION_SEND);
         send_button.always_show_image = true;
         send_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         send_button.label = _("Send");
         send_button.tooltip_text = _("Send (Ctrl+Enter)");
 
-        Gtk.Button attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
+        var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
         attach.related_action = action_group.get_action (ComposerWidget.ACTION_ADD_ATTACHMENT);
         attach.tooltip_text = _("Attach file");
 
-        Gtk.Button attach_original = new Gtk.Button.from_icon_name ("edit-copy-symbolic", Gtk.IconSize.MENU);
+        var attach_original = new Gtk.Button.from_icon_name ("edit-copy-symbolic", Gtk.IconSize.MENU);
         attach_original.related_action = action_group.get_action (ComposerWidget.ACTION_ADD_ORIGINAL_ATTACHMENTS);
         attach_original.tooltip_text = _("Include original attachments");
 
