@@ -153,19 +153,9 @@
       <accelerator key="w" modifiers="GDK_CONTROL_MASK"/>
     </child>
     <child>
-      <object class="GtkAction" id="close and save">
-        <property name="label" translatable="yes" context="Label">Close and Save</property>
-        <property name="short_label" translatable="yes" context="Short Label">Close and Save</property>
-        <property name="tooltip" translatable="yes" context="Tooltip">Close and Save</property>
-        <property name="icon_name">document-save-symbolic</property>
-      </object>
-    </child>
-    <child>
       <object class="GtkAction" id="close and discard">
-        <property name="label" translatable="yes" context="Label">Close and Discard</property>
-        <property name="short_label" translatable="yes" context="Short Label">Close and Discard</property>
         <property name="tooltip" translatable="yes" context="Tooltip">Close and Discard</property>
-        <property name="icon_name">user-trash-symbolic</property>
+        <property name="icon_name">edit-delete-symbolic</property>
       </object>
     </child>
     <child>
@@ -206,34 +196,22 @@
     </child>
     <child>
       <object class="GtkAction" id="detach">
-        <property name="label" translatable="yes">Detach</property>
-        <property name="short_label" translatable="yes">Detach</property>
-        <property name="tooltip" translatable="yes">Detach (Ctrl+D)</property>
         <property name="icon_name">window-pop-out-symbolic</property>
       </object>
       <accelerator key="d" modifiers="GDK_CONTROL_MASK"/>
     </child>
     <child>
       <object class="GtkAction" id="send">
-        <property name="label" translatable="yes">_Send</property>
-        <property name="short_label" translatable="yes">Send</property>
-        <property name="tooltip" translatable="yes">Send (Ctrl+Enter)</property>
         <property name="icon_name">mail-send-symbolic</property>
       </object>
     </child>
     <child>
       <object class="GtkAction" id="add attachment">
-        <property name="label" translatable="yes">_Attach File</property>
-        <property name="short_label" translatable="yes">Attach File</property>
-        <property name="tooltip" translatable="yes">Attach File</property>
         <property name="icon_name">mail-attachment-symbolic</property>
       </object>
     </child>
     <child>
       <object class="GtkAction" id="add original attachments">
-        <property name="label" translatable="yes">_Include Original Attachments</property>
-        <property name="short_label" translatable="yes">Include Original Attachments</property>
-        <property name="tooltip" translatable="yes">Include Original Attachments</property>
         <property name="icon_name">edit-copy-symbolic</property>
       </object>
     </child>
