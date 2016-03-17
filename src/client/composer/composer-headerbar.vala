@@ -18,25 +18,29 @@ public class ComposerHeaderbar : PillHeaderbar {
     public ComposerHeaderbar(Gtk.ActionGroup action_group) {
         base(action_group);
 
-        show_close_button = false;
-
-        // Toolbar setup.
         Gee.List<Gtk.Button> insert = new Gee.ArrayList<Gtk.Button>();
 
-        // Window management.
-        detach_start = create_toolbar_button(null, ComposerWidget.ACTION_DETACH);
+        detach_start = new Gtk.Button.from_icon_name ("window-pop-out-symbolic", Gtk.IconSize.MENU);
+        detach_start.related_action = action_group.get_action (ComposerWidget.ACTION_DETACH);
         detach_start.margin_end = 6;
+        detach_start.tooltip_text = _("Detach (Ctrl+D)");
 
-        detach_end = create_toolbar_button(null, ComposerWidget.ACTION_DETACH);
+        detach_end = new Gtk.Button.from_icon_name ("window-pop-out-symbolic", Gtk.IconSize.MENU);
+        detach_end.related_action = action_group.get_action (ComposerWidget.ACTION_DETACH);
         detach_end.margin_start = 6;
+        detach_end.tooltip_text = detach_end.related_action.tooltip;
 
-        insert.add(create_toolbar_button(null, ComposerWidget.ACTION_CLOSE_DISCARD));
-        Gtk.Box close_buttons = create_pill_buttons(insert, false);
-        insert.clear();
+        Gtk.Button discard = new Gtk.Button.from_icon_name ("edit-delete-symolic", Gtk.IconSize.MENU);
+        discard.related_action = action_group.get_action (ComposerWidget.ACTION_CLOSE_DISCARD);
+        discard.tooltip_text = _("Close and Discard");
 
-        Gtk.Button send_button = create_toolbar_button(null, ComposerWidget.ACTION_SEND, true);
-        send_button.valign = Gtk.Align.CENTER;
-        send_button.get_style_context().add_class("suggested-action");
+        Gtk.Button send_button = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
+        send_button.related_action = action_group.get_action (ComposerWidget.ACTION_SEND);
+        send_button.always_show_image = true;
+        send_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        send_button.label = _("Send");
+        send_button.tooltip_text = _("Send (Ctrl+Enter)");
+
 
         Gtk.Box attach_buttons = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         Gtk.Button attach_only = create_toolbar_button(null, ComposerWidget.ACTION_ADD_ATTACHMENT);
@@ -47,7 +51,7 @@ public class ComposerHeaderbar : PillHeaderbar {
         attach_buttons.pack_start(attach_pending);
 
         recipients = new Gtk.Button();
-        recipients.set_relief(Gtk.ReliefStyle.NONE);
+        recipients.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         recipients_label = new Gtk.Label(null);
         recipients_label.set_ellipsize(Pango.EllipsizeMode.END);
         recipients.add(recipients_label);
@@ -58,10 +62,8 @@ public class ComposerHeaderbar : PillHeaderbar {
                 target_value = (state == ComposerWidget.ComposerState.INLINE_COMPACT);
                 return true;
             });
-        bind_property("show-pending-attachments", attach_only, "visible",
-            BindingFlags.SYNC_CREATE | BindingFlags.INVERT_BOOLEAN);
-        bind_property("show-pending-attachments", attach_pending, "visible",
-            BindingFlags.SYNC_CREATE);
+        bind_property("show-pending-attachments", attach_only, "visible", BindingFlags.SYNC_CREATE | BindingFlags.INVERT_BOOLEAN);
+        bind_property("show-pending-attachments", attach_pending, "visible", BindingFlags.SYNC_CREATE);
         bind_property("send-enabled", send_button, "sensitive", BindingFlags.SYNC_CREATE);
 
         pack_start (detach_start);
@@ -70,7 +72,7 @@ public class ComposerHeaderbar : PillHeaderbar {
 
         pack_end (detach_end);
         pack_end (send_button);
-        pack_end (close_buttons);
+        pack_end (discard);
 
         notify["decoration-layout"].connect(set_detach_button_side);
 
