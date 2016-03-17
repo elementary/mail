@@ -38,7 +38,7 @@ public class ComposerHeaderbar : Gtk.HeaderBar {
 
         Gtk.Button discard = new Gtk.Button.from_icon_name ("edit-delete-symolic", Gtk.IconSize.MENU);
         discard.related_action = action_group.get_action (ComposerWidget.ACTION_CLOSE_DISCARD);
-        discard.tooltip_text = _("Close and Discard");
+        discard.tooltip_text = _("Close and discard");
 
         Gtk.Button send_button = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
         send_button.related_action = action_group.get_action (ComposerWidget.ACTION_SEND);
@@ -49,11 +49,11 @@ public class ComposerHeaderbar : Gtk.HeaderBar {
 
         Gtk.Button attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
         attach.related_action = action_group.get_action (ComposerWidget.ACTION_ADD_ATTACHMENT);
-        attach.tooltip_text = _("Attach File");
+        attach.tooltip_text = _("Attach file");
 
         Gtk.Button attach_original = new Gtk.Button.from_icon_name ("edit-copy-symbolic", Gtk.IconSize.MENU);
         attach_original.related_action = action_group.get_action (ComposerWidget.ACTION_ADD_ORIGINAL_ATTACHMENTS);
-        attach_original.tooltip_text = _("Include Original Attachments");
+        attach_original.tooltip_text = _("Include original attachments");
 
         recipients = new Gtk.Button();
         recipients.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
@@ -65,9 +65,9 @@ public class ComposerHeaderbar : Gtk.HeaderBar {
         });
 
         bind_property ("state", recipients, "visible", BindingFlags.SYNC_CREATE, (binding, source_value, ref target_value) => {
-                target_value = (state == ComposerWidget.ComposerState.INLINE_COMPACT);
-                return true;
-            });
+            target_value = (state == ComposerWidget.ComposerState.INLINE_COMPACT);
+            return true;
+        });
 
         bind_property ("show-pending-attachments", attach_original, "visible", BindingFlags.SYNC_CREATE);
         bind_property ("send-enabled", send_button, "sensitive", BindingFlags.SYNC_CREATE);
