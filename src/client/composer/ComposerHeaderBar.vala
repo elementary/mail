@@ -38,7 +38,7 @@ public class ComposerHeaderbar : Gtk.HeaderBar {
 
         Gtk.Button discard = new Gtk.Button.from_icon_name ("edit-delete-symolic", Gtk.IconSize.MENU);
         discard.related_action = action_group.get_action (ComposerWidget.ACTION_CLOSE_DISCARD);
-        discard.tooltip_text = _("Close and discard");
+        discard.tooltip_text = _("Delete draft");
 
         Gtk.Button send_button = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
         send_button.related_action = action_group.get_action (ComposerWidget.ACTION_SEND);
