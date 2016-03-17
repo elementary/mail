@@ -256,26 +256,22 @@ public class ConversationListView : Gtk.TreeView {
     
     private void on_show() {
         // Wait until we're visible to set this signal up.
-        ((Gtk.Scrollable) this).get_vadjustment().value_changed.connect(on_value_changed);
+        Gtk.ScrolledWindow? parent = get_parent() as Gtk.ScrolledWindow;
+        parent.edge_reached.connect (on_edge_reached);
     }
-    
-    private void on_value_changed() {
-        if (!enable_load_more)
+
+    private void on_edge_reached (Gtk.PositionType position) {
+        if (!enable_load_more) {
             return;
-        
-        // Check if we're at the very bottom of the list. If we are, it's time to
-        // issue a load_more signal.
-        Gtk.Adjustment adjustment = ((Gtk.Scrollable) this).get_vadjustment();
-        double upper = adjustment.get_upper();
-        if (adjustment.get_value() >= upper - adjustment.page_size - LOAD_MORE_HEIGHT &&
-            upper > last_upper) {
-            load_more();
-            last_upper = upper;
         }
-        
-        schedule_visible_conversations_changed();
+
+        if (position == Gtk.PositionType.BOTTOM) {
+            load_more ();
+        }
+
+        schedule_visible_conversations_changed ();
     }
-    
+
     private static Gtk.TreeViewColumn create_column(ConversationListStore.Column column,
         Gtk.CellRenderer renderer, string attr, int width = 0) {
         Gtk.TreeViewColumn view_column = new Gtk.TreeViewColumn.with_attributes(column.to_string(),
