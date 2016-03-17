@@ -207,17 +207,11 @@
     </child>
     <child>
       <object class="GtkAction" id="add attachment">
-        <property name="label" translatable="yes">_Attach File</property>
-        <property name="short_label" translatable="yes">Attach File</property>
-        <property name="tooltip" translatable="yes">Attach File</property>
         <property name="icon_name">mail-attachment-symbolic</property>
       </object>
     </child>
     <child>
       <object class="GtkAction" id="add original attachments">
-        <property name="label" translatable="yes">_Include Original Attachments</property>
-        <property name="short_label" translatable="yes">Include Original Attachments</property>
-        <property name="tooltip" translatable="yes">Include Original Attachments</property>
         <property name="icon_name">edit-copy-symbolic</property>
       </object>
     </child>
