@@ -165,25 +165,13 @@ public class Geary.RFC822.MailboxAddress : Geary.MessageData.SearchableMessageDa
      * Returns true or false accordingly.
      */
     public bool is_noreply() {
-        try {
-            // support for English, matches no-reply;noreply;do-not-reply
-            Regex regex_en = new Regex("(do)?+[-_]?+no(t)?[-_]?+reply",
-                RegexCompileFlags.CASELESS);
-            // support for French, matches ne-pas-repondre;pas-repondre;pasrepondre
-            Regex regex_fr = new Regex("(ne)?+[-_]?+pas[-_]?+repondre",
-                RegexCompileFlags.CASELESS);
-            // support for German, matches bitte-nicht-antworten;nicht-antworten;nichtantworten
-            Regex regex_de = new Regex("(bitte)?+[-_]?+nicht[-_]?+antworten",
-                RegexCompileFlags.CASELESS);
-            
-            string mailbox_lowercase = mailbox.down();
-            return ( regex_en.match(mailbox_lowercase) ||
-                     regex_fr.match(mailbox_lowercase) ||
-                     regex_de.match(mailbox_lowercase) );
-        } catch (RegexError e) {
-            debug("Regex error validating email address: %s", e.message);
+        /// TRANSLATORS: please copy the original string and append all local parts of "no reply" email addresses
+        /// (that is the part before the '@') that exist in your language (separated with a semicolon)
+        foreach (var member in _("no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply").split (";")) {
+            if (mailbox.down().contains(member))
+                return true;
+         }   
             return false;
-        }
     }
     
     /**
