@@ -165,9 +165,23 @@ public class Geary.RFC822.MailboxAddress : Geary.MessageData.SearchableMessageDa
      * Returns true or false accordingly.
      */
     public bool is_noreply() {
-        if (mailbox.down().contains("noreply")) {
-            return true;
-        } else {
+        try {
+            // support for English, matches no-reply;noreply;do-not-reply
+            Regex regex_en = new Regex("(do)?+[-_]?+no(t)?[-_]?+reply",
+                RegexCompileFlags.CASELESS);
+            // support for French, matches ne-pas-repondre;pas-repondre;pasrepondre
+            Regex regex_fr = new Regex("(ne)?+[-_]?+pas[-_]?+repondre",
+                RegexCompileFlags.CASELESS);
+            // support for German, matches bitte-nicht-antworten;nicht-antworten;nichtantworten
+            Regex regex_de = new Regex("(bitte)?+[-_]?+nicht[-_]?+antworten",
+                RegexCompileFlags.CASELESS);
+            
+            string mailbox_lowercase = mailbox.down();
+            return ( regex_en.match(mailbox_lowercase) ||
+                     regex_fr.match(mailbox_lowercase) ||
+                     regex_de.match(mailbox_lowercase) );
+        } catch (RegexError e) {
+            debug("Regex error validating email address: %s", e.message);
             return false;
         }
     }
