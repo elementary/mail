@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2016-03-13 17:01-0700\n"
-"PO-Revision-Date: 2016-03-15 10:29+0000\n"
+"PO-Revision-Date: 2016-03-17 11:16+0000\n"
 "Last-Translator: Andi Chandler <Unknown>\n"
 "Language-Team: English (United Kingdom) "
 "(http://www.transifex.com/projects/p/geary/language/en_GB/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-03-16 06:20+0000\n"
+"X-Launchpad-Export-Date: 2016-03-18 06:25+0000\n"
 "X-Generator: Launchpad (build 17947)\n"
 "Language: en_GB\n"
 
@@ -2548,12 +2548,16 @@ msgid ""
 "\n"
 "Please check your network connection and restart Mail."
 msgstr ""
+"There was an error opening the local account. This is probably due to "
+"connectivity issues.\n"
+"\n"
+"Please check your network connection and restart Mail."
 
 #: ../src/client/application/geary-controller.vala:2402
 #: ../src/client/application/geary-controller.vala:2404
 #: ../src/client/application/geary-controller.vala:2399
 msgid "This removes the email from Mail and your email server."
-msgstr ""
+msgstr "This removes the email from Mail and your email server."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
@@ -2566,13 +2570,15 @@ msgstr ""
 
 #: ../src/client/dialogs/password-dialog.vala:16
 msgid "Mail requires your email password to continue"
-msgstr ""
+msgstr "Mail requires your email password to continue"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail not to access this "
 "server."
 msgstr ""
+"Selecting \"Don't Trust This Server\" will cause Mail not to access this "
+"server."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Mail will not add or update this email account."
@@ -2583,40 +2589,44 @@ msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail to stop accessing this "
 "account."
 msgstr ""
+"Selecting \"Don't Trust This Server\" will cause Mail to stop accessing this "
+"account."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Mail will exit if you have no other open email accounts."
-msgstr ""
+msgstr "Mail will exit if you have no other open email accounts."
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Mail validates your account."
-msgstr ""
+msgstr "Please wait while Mail validates your account."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr ""
+msgstr "Mail update in progress…"
 
 #: ../src/client/components/main-toolbar.vala:26
 msgid "Search Mail"
-msgstr ""
+msgstr "Search Mail"
 
 #: ../src/client/application/geary-application.vala:18
 msgid ""
 "2011-2015 Yorba Foundation\n"
 "© 2016 elementary LLC."
 msgstr ""
+"2011-2015 Yorba Foundation\n"
+"© 2016 elementary LLC."
 
 #: ../src/client/application/geary-args.vala:10
 msgid "Show About dialog"
-msgstr ""
+msgstr "Show About dialogue"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:218
 msgid "Save Attachment…"
-msgstr ""
+msgstr "Save Attachment…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 msgid "Save All Attachments…"
-msgstr ""
+msgstr "Save All Attachments…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 msgid "Reply"
