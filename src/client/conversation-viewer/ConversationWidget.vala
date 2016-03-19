@@ -150,7 +150,8 @@ public class ConversationWidget : Gtk.ListBoxRow {
                 noreply = true; break;
             }
         }
-        if (noreply) GearyApplication.instance.controller.disable_reply_buttons();
+        if (noreply)
+            GearyApplication.instance.controller.disable_reply_buttons();
 
         int row_id = 1;
         if (email.to != null) {
