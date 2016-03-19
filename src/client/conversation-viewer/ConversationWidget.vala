@@ -143,6 +143,15 @@ public class ConversationWidget : Gtk.ListBoxRow {
 
         // Populate the extended widgets
         insert_header_address(_("From:"), email.from, 0);
+        Gee.List<Geary.RFC822.MailboxAddress>? addresses = email.from.get_all();
+        bool noreply = false;
+        foreach (Geary.RFC822.MailboxAddress a in addresses) {
+            if (a.is_noreply()) {
+                noreply = true; break;
+            }
+        }
+        if (noreply)
+            GearyApplication.instance.controller.disable_reply_buttons();
 
         int row_id = 1;
         if (email.to != null) {
@@ -233,11 +242,22 @@ public class ConversationWidget : Gtk.ListBoxRow {
             menu.add (reply_all_item);
             menu.add (forward_item);
             menu.add (new Gtk.SeparatorMenuItem ());
+            
             reply_item.activate.connect (() => reply ());
-
             reply_all_item.activate.connect (() => reply_all ());
-
             forward_item.activate.connect (() => forward ());
+            
+            // Sensitivity for reply_item and reply_all_item get set according to the buttons in the main toolbar
+            const string ACTION_REPLY_TO_MESSAGE = GearyController.ACTION_REPLY_TO_MESSAGE;
+            bool reply_to_is_sensitive = GearyApplication.instance.actions.get_action(ACTION_REPLY_TO_MESSAGE).get_sensitive();
+            if (!reply_to_is_sensitive) {
+                reply_item.sensitive = false;
+            }
+            const string ACTION_REPLY_ALL_MESSAGE = GearyController.ACTION_REPLY_ALL_MESSAGE;
+            bool reply_all_is_sensitive = GearyApplication.instance.actions.get_action(ACTION_REPLY_ALL_MESSAGE).get_sensitive();
+            if (!reply_all_is_sensitive) {
+                reply_all_item.sensitive = false;
+            }
         }
 
         if (!is_in_folder || !in_drafts_folder ()) {
