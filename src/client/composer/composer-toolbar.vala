@@ -1,7 +1,22 @@
-/* Copyright 2011-2015 Yorba Foundation
+// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
+/*-
+ * Copyright (c) 2011-2015 Yorba Foundation
+ * Copyright (c) 2016 elementary LLC.
  *
- * This software is licensed under the GNU Lesser General Public License
- * (version 2.1 or later).  See the COPYING file in this distribution.
+ * This software is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the
+ * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 public class ComposerToolbar : Gtk.Box {
@@ -40,7 +55,6 @@ public class ComposerToolbar : Gtk.Box {
         formatting.add (italic);
         formatting.add (underline);
         formatting.add (strikethrough);
-        add (formatting);
 
         // Indent level.
         Gtk.Grid indent = new Gtk.Grid ();
@@ -56,30 +70,32 @@ public class ComposerToolbar : Gtk.Box {
 
         indent.add (indent_more);
         indent.add (indent_less);
-        add (indent);
 
         // Link
         Gtk.Button link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU);
         link.related_action = toolbar_action_group.get_action (ComposerWidget.ACTION_INSERT_LINK);
         link.tooltip_text = _("Link (Ctrl+L)");
-        add (link);
 
         // Clear formatting.
         Gtk.Button clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU);
         clear_format.related_action = toolbar_action_group.get_action (ComposerWidget.ACTION_REMOVE_FORMAT);
         clear_format.tooltip_text = _("Remove formatting (Ctrl+Space)");
-        add (clear_format);
 
         // Menu.
-        Gtk.MenuButton more = new Gtk.MenuButton();
-        more.image = new Gtk.Image.from_icon_name("view-more-symbolic", Gtk.IconSize.MENU);
+        Gtk.MenuButton more = new Gtk.MenuButton ();
+        more.image = new Gtk.Image.from_icon_name ("view-more-symbolic", Gtk.IconSize.MENU);
         more.popup = menu;
         more.tooltip_text = _("More options");
-        pack_end (more, false, false, 0);
 
-        Gtk.Label label = new Gtk.Label(null);
-        label.get_style_context().add_class("dim-label");
-        bind_property("label-text", label, "label", BindingFlags.SYNC_CREATE);
+        Gtk.Label label = new Gtk.Label (null);
+        label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        bind_property ("label-text", label, "label", BindingFlags.SYNC_CREATE);
+
+        add (formatting);
+        add (indent);
+        add (link);
+        add (clear_format);
+        pack_end (more, false, false, 0);
         pack_end (label, false, false, 0);
     }
 }
