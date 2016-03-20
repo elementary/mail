@@ -23,7 +23,7 @@ public class ComposerToolbar : Gtk.Box {
 
     public string label_text { get; set; }
 
-    public ComposerToolbar(Gtk.ActionGroup toolbar_action_group, Gtk.Menu menu) {
+    public ComposerToolbar (Gtk.ActionGroup toolbar_action_group, Gtk.Menu menu) {
         hexpand = true;
         spacing = 6;
 
