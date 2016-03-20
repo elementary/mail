@@ -383,9 +383,6 @@ public class ComposerWidget : Gtk.EventBox {
         bcc_entry.changed.connect(validate_send_button);
         reply_to_entry.changed.connect(validate_send_button);
 
-        actions.get_action(ACTION_INDENT).icon_name = "format-indent-more-symbolic";
-        actions.get_action(ACTION_OUTDENT).icon_name = "format-indent-less-symbolic";
-
         ComposerToolbar composer_toolbar = new ComposerToolbar(actions, menu);
         Gtk.Grid toolbar_area = (Gtk.Grid) builder.get_object("toolbar area");
         toolbar_area.add(composer_toolbar);
