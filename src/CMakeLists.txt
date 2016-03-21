@@ -343,7 +343,7 @@ client/components/stylish-webview.vala
 
 client/composer/composer-container.vala
 client/composer/ComposerHeaderBar.vala
-client/composer/composer-toolbar.vala
+client/composer/ComposerToolbar.vala
 client/composer/composer-widget.vala
 client/composer/composer-window.vala
 client/composer/ComposerCard.vala
