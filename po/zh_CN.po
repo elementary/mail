@@ -16,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-03-13 17:01-0700\n"
+"POT-Creation-Date: 2016-03-21 09:44-0700\n"
 "PO-Revision-Date: 2016-02-24 08:31+0000\n"
 "Last-Translator: colindemian <dengmengpc@gmail.com>\n"
 "Language-Team: Chinese (China) "
@@ -25,8 +25,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-03-15 06:18+0000\n"
-"X-Generator: Launchpad (build 17939)\n"
+"X-Launchpad-Export-Date: 2016-03-22 06:09+0000\n"
+"X-Generator: Launchpad (build 17958)\n"
 "Language: zh_CN\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -333,6 +333,7 @@ msgstr "取消标记为垃圾邮件(_P)"
 #: ../src/client/application/geary-controller.vala:77
 #: ../src/client/application/geary-controller.vala:381
 #: ../src/client/components/main-toolbar.vala:108
+#: ../src/client/components/main-toolbar.vala:107
 msgid "Mark conversation"
 msgstr "添加标签"
 
@@ -351,6 +352,7 @@ msgstr "添加标签"
 #: ../src/client/components/main-toolbar.vala:120
 #: ../src/client/application/geary-controller.vala:79
 #: ../src/client/components/main-toolbar.vala:113
+#: ../src/client/components/main-toolbar.vala:112
 msgid "Add label to conversation"
 msgstr "添加标签到会话"
 
@@ -373,6 +375,7 @@ msgstr "添加标签到已选会话"
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:420
 #: ../src/client/components/main-toolbar.vala:118
+#: ../src/client/components/main-toolbar.vala:117
 msgid "Move conversation"
 msgstr "移动会话"
 
@@ -1030,12 +1033,14 @@ msgstr "%s - 新邮件"
 
 #: ../src/client/notification/libnotify.vala:72
 #: ../src/client/notification/libnotify.vala:71
+#: ../src/client/notification/libnotify.vala:45
 msgid "%d new message"
 msgid_plural "%d new messages"
 msgstr[0] "%d 封新邮件"
 
 #: ../src/client/notification/libnotify.vala:75
 #: ../src/client/notification/libnotify.vala:74
+#: ../src/client/notification/libnotify.vala:48
 msgid "%s, %d new message total"
 msgid_plural "%s, %d new messages total"
 msgstr[0] "%s, 共 %d 封新邮件"
@@ -1447,12 +1452,14 @@ msgstr "文件夹中无对话。"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:708
 #: ../src/client/conversation-viewer/conversation-viewer.vala:713
 #: ../src/client/conversation-viewer/ConversationWidget.vala:426
+#: ../src/client/conversation-viewer/ConversationWidget.vala:450
 msgid "This message contains remote images."
 msgstr "该邮件包含远程图像。"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:708
 #: ../src/client/conversation-viewer/conversation-viewer.vala:713
 #: ../src/client/conversation-viewer/ConversationWidget.vala:424
+#: ../src/client/conversation-viewer/ConversationWidget.vala:448
 msgid "Show Images"
 msgstr "显示图片"
 
@@ -1464,6 +1471,7 @@ msgstr "总是显示发件人"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:733
 #: ../src/client/conversation-viewer/conversation-viewer.vala:738
 #: ../src/client/conversation-viewer/ConversationWidget.vala:377
+#: ../src/client/conversation-viewer/ConversationWidget.vala:397
 msgid "Edit Draft"
 msgstr "编辑草稿"
 
@@ -1476,24 +1484,28 @@ msgstr "发件人："
 #: ../src/client/conversation-viewer/conversation-viewer.vala:812
 #: ../src/client/conversation-viewer/conversation-viewer.vala:817
 #: ../src/client/conversation-viewer/ConversationWidget.vala:149
+#: ../src/client/conversation-viewer/ConversationWidget.vala:158
 msgid "To:"
 msgstr "收件人："
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:815
 #: ../src/client/conversation-viewer/conversation-viewer.vala:820
 #: ../src/client/conversation-viewer/ConversationWidget.vala:154
+#: ../src/client/conversation-viewer/ConversationWidget.vala:163
 msgid "Cc:"
 msgstr "抄送："
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:818
 #: ../src/client/conversation-viewer/conversation-viewer.vala:823
 #: ../src/client/conversation-viewer/ConversationWidget.vala:159
+#: ../src/client/conversation-viewer/ConversationWidget.vala:168
 msgid "Bcc:"
 msgstr "密送："
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:821
 #: ../src/client/conversation-viewer/conversation-viewer.vala:826
 #: ../src/client/conversation-viewer/ConversationWidget.vala:164
+#: ../src/client/conversation-viewer/ConversationWidget.vala:173
 msgid "Subject:"
 msgstr "主题："
 
@@ -1518,12 +1530,14 @@ msgstr "该邮件已成功发送，但无法保存到 %s 中。"
 #: ../data/ui/composer.ui:29
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1302
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1129
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1153
 msgid "_Copy"
 msgstr "复制(_C)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1305
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1310
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1137
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1161
 msgid "Copy _Email Address"
 msgstr "复制邮件地址(_E)"
 
@@ -1531,6 +1545,8 @@ msgstr "复制邮件地址(_E)"
 #: ../data/ui/composer.ui:106
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1315
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1146
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1170
+#: ../data/ui/composer.ui:103
 msgid "Copy _Link"
 msgstr "复制链接(_L)"
 
@@ -1544,12 +1560,14 @@ msgstr "选择消息(_M)"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1329
 #: ../src/client/components/stock.vala:31
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1157
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1181
 msgid "Select _All"
 msgstr "全选(_A)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1330
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1335
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1163
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1187
 msgid "_Inspect"
 msgstr "检查(_I)"
 
@@ -1617,6 +1635,7 @@ msgstr "查看来源(_V)"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2362
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2367
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1038
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1062
 msgid "Failed to open default text editor."
 msgstr "无法打开默认文本编辑器。"
 
@@ -1669,6 +1688,7 @@ msgstr "您要舍弃该封邮件吗？"
 #: ../src/client/composer/composer-widget.vala:1257
 #: ../src/client/composer/composer-widget.vala:1254
 #: ../src/client/composer/composer-widget.vala:1223
+#: ../src/client/composer/composer-widget.vala:1220
 msgid "Send message with an empty subject and body?"
 msgstr "确认发送无主题无正文的邮件吗？"
 
@@ -1676,6 +1696,7 @@ msgstr "确认发送无主题无正文的邮件吗？"
 #: ../src/client/composer/composer-widget.vala:1259
 #: ../src/client/composer/composer-widget.vala:1256
 #: ../src/client/composer/composer-widget.vala:1225
+#: ../src/client/composer/composer-widget.vala:1222
 msgid "Send message with an empty subject?"
 msgstr "确认发送无主题的邮件吗？"
 
@@ -1683,6 +1704,7 @@ msgstr "确认发送无主题的邮件吗？"
 #: ../src/client/composer/composer-widget.vala:1261
 #: ../src/client/composer/composer-widget.vala:1258
 #: ../src/client/composer/composer-widget.vala:1227
+#: ../src/client/composer/composer-widget.vala:1224
 msgid "Send message with an empty body?"
 msgstr "确认发送无正文的邮件吗？"
 
@@ -1690,6 +1712,7 @@ msgstr "确认发送无正文的邮件吗？"
 #: ../src/client/composer/composer-widget.vala:1263
 #: ../src/client/composer/composer-widget.vala:1260
 #: ../src/client/composer/composer-widget.vala:1229
+#: ../src/client/composer/composer-widget.vala:1226
 msgid "Send message without an attachment?"
 msgstr "确认发送无附件的邮件吗？"
 
@@ -1697,6 +1720,7 @@ msgstr "确认发送无附件的邮件吗？"
 #: ../src/client/composer/composer-widget.vala:1525
 #: ../src/client/composer/composer-widget.vala:1522
 #: ../src/client/composer/composer-widget.vala:1486
+#: ../src/client/composer/composer-widget.vala:1483
 msgid "Cannot add attachment"
 msgstr "无法添加附件"
 
@@ -1704,6 +1728,7 @@ msgstr "无法添加附件"
 #: ../src/client/composer/composer-widget.vala:1536
 #: ../src/client/composer/composer-widget.vala:1533
 #: ../src/client/composer/composer-widget.vala:1497
+#: ../src/client/composer/composer-widget.vala:1494
 msgid "\"%s\" could not be found."
 msgstr "文件 \"%s\" 不存在"
 
@@ -1711,6 +1736,7 @@ msgstr "文件 \"%s\" 不存在"
 #: ../src/client/composer/composer-widget.vala:1543
 #: ../src/client/composer/composer-widget.vala:1540
 #: ../src/client/composer/composer-widget.vala:1504
+#: ../src/client/composer/composer-widget.vala:1501
 msgid "\"%s\" is a folder."
 msgstr "\"%s\" 是一个文件夹."
 
@@ -1718,6 +1744,7 @@ msgstr "\"%s\" 是一个文件夹."
 #: ../src/client/composer/composer-widget.vala:1550
 #: ../src/client/composer/composer-widget.vala:1547
 #: ../src/client/composer/composer-widget.vala:1511
+#: ../src/client/composer/composer-widget.vala:1508
 msgid "\"%s\" is an empty file."
 msgstr "\"%s\" 是一个空文件."
 
@@ -1725,6 +1752,7 @@ msgstr "\"%s\" 是一个空文件."
 #: ../src/client/composer/composer-widget.vala:1564
 #: ../src/client/composer/composer-widget.vala:1561
 #: ../src/client/composer/composer-widget.vala:1525
+#: ../src/client/composer/composer-widget.vala:1522
 msgid "\"%s\" could not be opened for reading."
 msgstr "打开文件 \"%s\" 失败"
 
@@ -1732,6 +1760,7 @@ msgstr "打开文件 \"%s\" 失败"
 #: ../src/client/composer/composer-widget.vala:1571
 #: ../src/client/composer/composer-widget.vala:1568
 #: ../src/client/composer/composer-widget.vala:1532
+#: ../src/client/composer/composer-widget.vala:1529
 msgid "\"%s\" already attached for delivery."
 msgstr "文件 \"%s\" 已位于附件列表"
 
@@ -1740,6 +1769,7 @@ msgstr "文件 \"%s\" 已位于附件列表"
 #: ../src/client/composer/composer-widget.vala:1580
 #: ../src/client/composer/composer-widget.vala:1577
 #: ../src/client/composer/composer-widget.vala:1541
+#: ../src/client/composer/composer-widget.vala:1538
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
@@ -1747,6 +1777,7 @@ msgstr "%s (%s)"
 #: ../src/client/composer/composer-widget.vala:1640
 #: ../src/client/composer/composer-widget.vala:1637
 #: ../src/client/composer/composer-widget.vala:1601
+#: ../src/client/composer/composer-widget.vala:1598
 msgid "To: "
 msgstr "收件人： "
 
@@ -1754,6 +1785,7 @@ msgstr "收件人： "
 #: ../src/client/composer/composer-widget.vala:1643
 #: ../src/client/composer/composer-widget.vala:1640
 #: ../src/client/composer/composer-widget.vala:1604
+#: ../src/client/composer/composer-widget.vala:1601
 msgid "Cc: "
 msgstr "抄送： "
 
@@ -1761,6 +1793,7 @@ msgstr "抄送： "
 #: ../src/client/composer/composer-widget.vala:1646
 #: ../src/client/composer/composer-widget.vala:1643
 #: ../src/client/composer/composer-widget.vala:1607
+#: ../src/client/composer/composer-widget.vala:1604
 msgid "Bcc: "
 msgstr "密送： "
 
@@ -1768,6 +1801,7 @@ msgstr "密送： "
 #: ../src/client/composer/composer-widget.vala:1649
 #: ../src/client/composer/composer-widget.vala:1646
 #: ../src/client/composer/composer-widget.vala:1610
+#: ../src/client/composer/composer-widget.vala:1607
 msgid "Reply-To: "
 msgstr "回复给： "
 
@@ -1775,6 +1809,7 @@ msgstr "回复给： "
 #: ../src/client/composer/composer-widget.vala:1882
 #: ../src/client/composer/composer-widget.vala:1879
 #: ../src/client/composer/composer-widget.vala:1843
+#: ../src/client/composer/composer-widget.vala:1840
 msgid "Select Color"
 msgstr "选择颜色"
 
@@ -1782,6 +1817,7 @@ msgstr "选择颜色"
 #: ../src/client/composer/composer-widget.vala:2317
 #: ../src/client/composer/composer-widget.vala:2310
 #: ../src/client/composer/composer-widget.vala:2274
+#: ../src/client/composer/composer-widget.vala:2271
 msgid "%1$s via %2$s"
 msgstr "%1$s 通过 %2$s"
 
@@ -1789,6 +1825,7 @@ msgstr "%1$s 通过 %2$s"
 #: ../src/client/composer/composer-widget.vala:2359
 #: ../src/client/composer/composer-widget.vala:2352
 #: ../src/client/composer/composer-widget.vala:2315
+#: ../src/client/composer/composer-widget.vala:2312
 #| msgid "From:"
 msgid "_From:"
 msgstr "发件人(_F)："
@@ -1872,6 +1909,7 @@ msgstr "在此帐号的所有邮件中搜索关键字 (Ctrl+S)"
 #: ../src/client/components/main-toolbar.vala:300
 #: ../src/client/components/main-toolbar.vala:269
 #: ../src/client/components/main-toolbar.vala:262
+#: ../src/client/components/main-toolbar.vala:259
 msgid "Indexing %s account"
 msgstr "正在索引 %s 帐号"
 
@@ -1881,6 +1919,7 @@ msgstr "正在索引 %s 帐号"
 #: ../src/client/composer/composer-headerbar.vala:75
 #: ../src/client/components/main-toolbar.vala:158
 #: ../src/client/components/main-toolbar.vala:151
+#: ../src/client/components/main-toolbar.vala:150
 msgid "Menu"
 msgstr "菜单"
 
@@ -1901,12 +1940,14 @@ msgstr "欢迎使用邮件"
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
 #: ../src/client/composer/composer-toolbar.vala:77
+#: ../src/client/composer/ComposerToolbar.vala:88
 msgid "More options"
 msgstr "更多选项"
 
 #: ../src/client/components/main-toolbar.vala:312
 #: ../src/client/components/main-toolbar.vala:281
 #: ../src/client/components/main-toolbar.vala:274
+#: ../src/client/components/main-toolbar.vala:271
 msgid "Search %s"
 msgstr "搜索 %s"
 
@@ -2064,11 +2105,11 @@ msgstr "居中(_C)"
 msgid "_Justify"
 msgstr "调整(_J)"
 
-#: ../data/ui/composer.ui:63
+#: ../data/ui/composer.ui:63 ../src/client/composer/ComposerToolbar.vala:77
 msgid "Link (Ctrl+L)"
 msgstr "链接 (Ctrl+L)"
 
-#: ../data/ui/composer.ui:70
+#: ../data/ui/composer.ui:70 ../data/ui/composer.ui:69
 msgid "C_olor"
 msgstr "颜色(_O)"
 
@@ -2076,40 +2117,40 @@ msgstr "颜色(_O)"
 msgid "Quote text  (Ctrl+])"
 msgstr "引用文本 (Ctrl+])"
 
-#: ../data/ui/composer.ui:87
+#: ../data/ui/composer.ui:87 ../src/client/composer/ComposerToolbar.vala:69
 msgid "Unquote text (Ctrl+[)"
 msgstr "取消引用 (Ctrl+[)"
 
-#: ../data/ui/composer.ui:93
+#: ../data/ui/composer.ui:93 ../src/client/composer/ComposerToolbar.vala:82
 msgid "Remove formatting (Ctrl+Space)"
 msgstr "删除格式 (Ctrl+Space)"
 
-#: ../data/ui/composer.ui:100
+#: ../data/ui/composer.ui:100 ../data/ui/composer.ui:97
 msgctxt "Clipboard paste with rich text"
 msgid "Paste _With Formatting"
 msgstr "粘贴并保留格式(_W)"
 
-#: ../data/ui/composer.ui:111
+#: ../data/ui/composer.ui:111 ../src/client/composer/ComposerToolbar.vala:36
 msgid "Bold (Ctrl+B)"
 msgstr "粗体 (Ctrl+B)"
 
-#: ../data/ui/composer.ui:118
+#: ../data/ui/composer.ui:118 ../src/client/composer/ComposerToolbar.vala:41
 msgid "Italic (Ctrl+I)"
 msgstr "斜体 (Ctrl+I)"
 
-#: ../data/ui/composer.ui:125
+#: ../data/ui/composer.ui:125 ../src/client/composer/ComposerToolbar.vala:46
 msgid "Underline (Ctrl+U)"
 msgstr "下划线 (Ctrl+U)"
 
-#: ../data/ui/composer.ui:132
+#: ../data/ui/composer.ui:132 ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+K)"
 msgstr "删除线 (Ctrl+K)"
 
-#: ../data/ui/composer.ui:139
+#: ../data/ui/composer.ui:139 ../data/ui/composer.ui:132
 msgid "_Rich Text"
 msgstr "富文本(_R)"
 
-#: ../data/ui/composer.ui:145
+#: ../data/ui/composer.ui:145 ../data/ui/composer.ui:138
 msgid "Show Extended Fields"
 msgstr "显示额外内容"
 
@@ -2143,51 +2184,51 @@ msgctxt "Tooltip"
 msgid "Close and Discard"
 msgstr "不保存关闭"
 
-#: ../data/ui/composer.ui:173
+#: ../data/ui/composer.ui:173 ../data/ui/composer.ui:155
 msgid "Lar_ge"
 msgstr "大号字体(_G)"
 
-#: ../data/ui/composer.ui:174
+#: ../data/ui/composer.ui:174 ../data/ui/composer.ui:156
 msgid "Large"
 msgstr "大号字体"
 
-#: ../data/ui/composer.ui:179
+#: ../data/ui/composer.ui:179 ../data/ui/composer.ui:161
 msgid "_Medium"
 msgstr "中等字体(_M)"
 
-#: ../data/ui/composer.ui:180
+#: ../data/ui/composer.ui:180 ../data/ui/composer.ui:162
 msgid "Medium"
 msgstr "中等字体"
 
-#: ../data/ui/composer.ui:185
+#: ../data/ui/composer.ui:185 ../data/ui/composer.ui:167
 msgid "_Small"
 msgstr "小号字体(_S)"
 
-#: ../data/ui/composer.ui:186
+#: ../data/ui/composer.ui:186 ../data/ui/composer.ui:168
 msgid "Small"
 msgstr "小号字体"
 
-#: ../data/ui/composer.ui:191
+#: ../data/ui/composer.ui:191 ../data/ui/composer.ui:173
 msgid "S_ans Serif"
 msgstr "无衬线字体(_A)"
 
-#: ../data/ui/composer.ui:192
+#: ../data/ui/composer.ui:192 ../data/ui/composer.ui:174
 msgid "Sans Serif"
 msgstr "无衬线字体"
 
-#: ../data/ui/composer.ui:197
+#: ../data/ui/composer.ui:197 ../data/ui/composer.ui:179
 msgid "S_erif"
 msgstr "衬线字体(_E)"
 
-#: ../data/ui/composer.ui:198
+#: ../data/ui/composer.ui:198 ../data/ui/composer.ui:180
 msgid "Serif"
 msgstr "衬线字体"
 
-#: ../data/ui/composer.ui:203
+#: ../data/ui/composer.ui:203 ../data/ui/composer.ui:185
 msgid "_Fixed Width"
 msgstr "等宽字体"
 
-#: ../data/ui/composer.ui:204
+#: ../data/ui/composer.ui:204 ../data/ui/composer.ui:186
 msgid "Fixed Width"
 msgstr "等宽字体"
 
@@ -2195,7 +2236,7 @@ msgstr "等宽字体"
 msgid "Detach"
 msgstr "移除附件"
 
-#: ../data/ui/composer.ui:211
+#: ../data/ui/composer.ui:211 ../src/client/composer/ComposerHeaderBar.vala:36
 msgid "Detach (Ctrl+D)"
 msgstr "移除附件 (Ctrl+D)"
 
@@ -2203,11 +2244,11 @@ msgstr "移除附件 (Ctrl+D)"
 msgid "_Send"
 msgstr "发送(_S)"
 
-#: ../data/ui/composer.ui:219
+#: ../data/ui/composer.ui:219 ../src/client/composer/ComposerHeaderBar.vala:46
 msgid "Send"
 msgstr "发送"
 
-#: ../data/ui/composer.ui:220
+#: ../data/ui/composer.ui:220 ../src/client/composer/ComposerHeaderBar.vala:47
 msgid "Send (Ctrl+Enter)"
 msgstr "发送 (Ctrl+Enter)"
 
@@ -2227,42 +2268,50 @@ msgstr "包括原邮件附件(_I)"
 msgid "Include Original Attachments"
 msgstr "包括原邮件附件"
 
-#: ../data/ui/composer.ui:242
+#: ../data/ui/composer.ui:242 ../data/ui/composer.ui:212
 msgid "Application Menu"
 msgstr "应用程序菜单"
 
 #. Address(es) e-mail is to be sent to
 #: ../data/ui/composer.ui:289 ../data/ui/composer.ui:317
+#: ../data/ui/composer.ui:287
 msgid "_To"
 msgstr "收件人(_T)"
 
 #: ../data/ui/composer.ui:308 ../data/ui/composer.ui:336
+#: ../data/ui/composer.ui:306
 msgid "_Cc"
 msgstr "抄送(_C)"
 
 #: ../data/ui/composer.ui:362 ../data/ui/composer.ui:390
+#: ../data/ui/composer.ui:360
 msgid "_Subject"
 msgstr "主题(_S)"
 
 #: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
+#: ../data/ui/composer.ui:379
 msgid "_Bcc"
 msgstr "密送(_B)"
 
 #: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
+#: ../data/ui/composer.ui:409
 msgid "_Reply-To"
 msgstr "回复给(R)"
 
 #. Geary account mail will be sent from
 #. Account mail will be sent from
 #: ../data/ui/composer.ui:440 ../data/ui/composer.ui:468
+#: ../data/ui/composer.ui:438
 msgid "From"
 msgstr "来自"
 
 #: ../data/ui/composer.ui:519 ../data/ui/composer.ui:547
+#: ../data/ui/composer.ui:517
 msgid "Drop files here"
 msgstr "拖放文件到此处"
 
 #: ../data/ui/composer.ui:535 ../data/ui/composer.ui:563
+#: ../data/ui/composer.ui:533
 msgid "To add them as attachments"
 msgstr "以添加为附件"
 
@@ -2586,65 +2635,83 @@ msgid "Show About dialog"
 msgstr "显示关于界面"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:218
+#: ../src/client/conversation-viewer/ConversationWidget.vala:227
 msgid "Save Attachment…"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
+#: ../src/client/conversation-viewer/ConversationWidget.vala:229
 msgid "Save All Attachments…"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
+#: ../src/client/conversation-viewer/ConversationWidget.vala:238
 msgid "Reply"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
+#: ../src/client/conversation-viewer/ConversationWidget.vala:239
 msgid "Reply to All"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:231
+#: ../src/client/conversation-viewer/ConversationWidget.vala:240
 msgid "Forward"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:247
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1112
+#: ../src/client/conversation-viewer/ConversationWidget.vala:267
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1136
 msgid "Mark as Unread"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:249
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1110
+#: ../src/client/conversation-viewer/ConversationWidget.vala:269
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1134
 msgid "Mark as Read"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:252
+#: ../src/client/conversation-viewer/ConversationWidget.vala:272
 msgid "Print…"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
+#: ../src/client/conversation-viewer/ConversationWidget.vala:273
 msgid "View Source"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:317
 #: ../src/client/conversation-viewer/ConversationWidget.vala:602
+#: ../src/client/conversation-viewer/ConversationWidget.vala:337
+#: ../src/client/conversation-viewer/ConversationWidget.vala:626
 msgid "View message"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:386
+#: ../src/client/conversation-viewer/ConversationWidget.vala:406
 msgid "This message contains one or more attachments"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:425
+#: ../src/client/conversation-viewer/ConversationWidget.vala:449
 msgid "Always Show from Sender"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:553
+#: ../src/client/conversation-viewer/ConversationWidget.vala:577
 msgid "Compose New Message"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:554
+#: ../src/client/conversation-viewer/ConversationWidget.vala:578
 msgid "Copy Email Address"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:615
+#: ../src/client/conversation-viewer/ConversationWidget.vala:639
 msgid "Hide message"
 msgstr ""
 
@@ -2661,3 +2728,38 @@ msgid "%u match"
 msgid_plural "%u matches"
 msgstr[0] ""
 msgstr[1] ""
+
+#. / TRANSLATORS: please copy the original string and append all local parts of "no reply" email addresses
+#. / (that is the part before the '@') that exist in your language (separated with a semicolon)
+#: ../src/engine/rfc822/rfc822-mailbox-address.vala:170
+msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:410
+#: ../src/client/conversation-viewer/ConversationWidget.vala:423
+msgid "Star message"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:420
+msgid "Unstar message"
+msgstr ""
+
+#: ../src/client/conversation-viewer/ConversationWidget.vala:430
+msgid "More"
+msgstr ""
+
+#: ../src/client/composer/ComposerHeaderBar.vala:40
+msgid "Delete draft"
+msgstr ""
+
+#: ../src/client/composer/ComposerHeaderBar.vala:51
+msgid "Attach file"
+msgstr ""
+
+#: ../src/client/composer/ComposerHeaderBar.vala:55
+msgid "Include original attachments"
+msgstr ""
+
+#: ../src/client/composer/ComposerToolbar.vala:65
+msgid "Quote text (Ctrl+])"
+msgstr ""
