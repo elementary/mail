@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-03-21 09:44-0700\n"
-"PO-Revision-Date: 2016-03-21 17:50+0000\n"
+"PO-Revision-Date: 2016-03-22 17:10+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-03-22 06:08+0000\n"
+"X-Launchpad-Export-Date: 2016-03-23 06:14+0000\n"
 "X-Generator: Launchpad (build 17958)\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -836,7 +836,7 @@ msgstr "바꾸기(R)"
 #: ../src/client/application/geary-controller.vala:2271
 #: ../src/client/application/geary-controller.vala:2273
 msgid "Close open draft messages?"
-msgstr "임시 보관함의 편지를 닫을까요?"
+msgstr "쓰고 있는 편지를 닫을까요?"
 
 #: ../src/client/application/geary-controller.vala:2439
 #: ../src/client/application/geary-controller.vala:2433
@@ -1448,7 +1448,7 @@ msgstr "보내는 사람 언제나 표시"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:377
 #: ../src/client/conversation-viewer/ConversationWidget.vala:397
 msgid "Edit Draft"
-msgstr "임시 보관함 편집"
+msgstr "쓰던 편지 계속 쓰기"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:809
 #: ../src/client/conversation-viewer/conversation-viewer.vala:814
@@ -2087,11 +2087,11 @@ msgstr "색상(_O)"
 
 #: ../data/ui/composer.ui:81
 msgid "Quote text  (Ctrl+])"
-msgstr "구문 인용  (Ctrl+])"
+msgstr "들여 쓰기  (Ctrl+])"
 
 #: ../data/ui/composer.ui:87 ../src/client/composer/ComposerToolbar.vala:69
 msgid "Unquote text (Ctrl+[)"
-msgstr "구문 인용 취소(Ctrl+[)"
+msgstr "내어 쓰기 (Ctrl+[)"
 
 #: ../data/ui/composer.ui:93 ../src/client/composer/ComposerToolbar.vala:82
 msgid "Remove formatting (Ctrl+Space)"
@@ -2723,7 +2723,7 @@ msgstr "더 보기"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
 msgid "Delete draft"
-msgstr "임시보관함 지우기"
+msgstr "쓰던 편지 지우기"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:51
 msgid "Attach file"
@@ -2735,4 +2735,4 @@ msgstr "원본 파일 포함"
 
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
-msgstr "인용구 삽입 (Ctrl+])"
+msgstr "들여 쓰기 (Ctrl+])"

@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2016-03-21 09:44-0700\n"
-"PO-Revision-Date: 2016-03-21 11:18+0000\n"
+"PO-Revision-Date: 2016-03-22 11:39+0000\n"
 "Last-Translator: Andi Chandler <Unknown>\n"
 "Language-Team: English (United Kingdom) "
 "(http://www.transifex.com/projects/p/geary/language/en_GB/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-03-22 06:09+0000\n"
+"X-Launchpad-Export-Date: 2016-03-23 06:14+0000\n"
 "X-Generator: Launchpad (build 17958)\n"
 "Language: en_GB\n"
 
@@ -2704,102 +2704,102 @@ msgstr "Forward"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:267
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1136
 msgid "Mark as Unread"
-msgstr ""
+msgstr "Mark as Unread"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:249
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1110
 #: ../src/client/conversation-viewer/ConversationWidget.vala:269
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1134
 msgid "Mark as Read"
-msgstr ""
+msgstr "Mark as Read"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:252
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 msgid "Print…"
-msgstr ""
+msgstr "Print…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
 msgid "View Source"
-msgstr ""
+msgstr "View Source"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:317
 #: ../src/client/conversation-viewer/ConversationWidget.vala:602
 #: ../src/client/conversation-viewer/ConversationWidget.vala:337
 #: ../src/client/conversation-viewer/ConversationWidget.vala:626
 msgid "View message"
-msgstr ""
+msgstr "View message"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:386
 #: ../src/client/conversation-viewer/ConversationWidget.vala:406
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "This message contains one or more attachments"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:425
 #: ../src/client/conversation-viewer/ConversationWidget.vala:449
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "Always Show from Sender"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:553
 #: ../src/client/conversation-viewer/ConversationWidget.vala:577
 msgid "Compose New Message"
-msgstr ""
+msgstr "Compose New Message"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:554
 #: ../src/client/conversation-viewer/ConversationWidget.vala:578
 msgid "Copy Email Address"
-msgstr ""
+msgstr "Copy Email Address"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:615
 #: ../src/client/conversation-viewer/ConversationWidget.vala:639
 msgid "Hide message"
-msgstr ""
+msgstr "Hide message"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr ""
+msgstr "Save As…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
-msgstr ""
+msgstr "Case sensitive"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
 msgid_plural "%u matches"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u match"
+msgstr[1] "%u matches"
 
 #. / TRANSLATORS: please copy the original string and append all local parts of "no reply" email addresses
 #. / (that is the part before the '@') that exist in your language (separated with a semicolon)
 #: ../src/engine/rfc822/rfc822-mailbox-address.vala:170
 msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
-msgstr ""
+msgstr "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:410
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
 msgid "Star message"
-msgstr ""
+msgstr "Star message"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:420
 msgid "Unstar message"
-msgstr ""
+msgstr "Unstar message"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:430
 msgid "More"
-msgstr ""
+msgstr "More"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
 msgid "Delete draft"
-msgstr ""
+msgstr "Delete draft"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:51
 msgid "Attach file"
-msgstr ""
+msgstr "Attach file"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:55
 msgid "Include original attachments"
-msgstr ""
+msgstr "Include original attachments"
 
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
-msgstr ""
+msgstr "Quote text (Ctrl+])"
