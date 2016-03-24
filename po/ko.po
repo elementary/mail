@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-03-21 09:44-0700\n"
-"PO-Revision-Date: 2016-03-22 17:10+0000\n"
+"PO-Revision-Date: 2016-03-24 08:27+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-03-23 06:14+0000\n"
+"X-Launchpad-Export-Date: 2016-03-24 15:12+0000\n"
 "X-Generator: Launchpad (build 17958)\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -24,13 +24,13 @@ msgstr "임시 보관함 | 임시 보관함"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:580
 msgid "Sent | Sent Mail | Sent Email | Sent E-Mail"
-msgstr "보낸 편지함 | 보낸 편지함 | 보낸 편지함 | 보낸 편지함"
+msgstr "보냄 | 보낸 편지 | 보낸 이메일 | 보낸-이메일"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:585
 msgid ""
 "Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
 "| Bulk E-Mail"
-msgstr "스팸 메일함 | 스팸 메일함 | 스팸 메일함| 스팸 메일함 | 스팸 메일함 | 스팸 메일함 | 스팸 메일함 | 스팸 메일함"
+msgstr "정크 | 스팸 | 정크 메일 | 정크 이메일 | 정크-이메일 | 벌크 메일 | 벌크 이메일 | 벌크-이메일"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:590
 msgid "Trash | Rubbish | Rubbish Bin"
@@ -85,7 +85,7 @@ msgstr "검색"
 
 #: ../src/engine/api/geary-special-folder-type.vala:54
 msgid "Archive"
-msgstr "저장 편지함"
+msgstr "편지 보관함"
 
 #: ../src/engine/api/geary-special-folder-type.vala:58 ../data/ui/login.ui:633
 #: ../data/ui/login.ui:650
@@ -295,14 +295,14 @@ msgstr "편지 저장 (A)"
 #: ../src/client/application/geary-controller.vala:75
 #: ../src/client/application/geary-controller.vala:74
 msgid "Mark as S_pam"
-msgstr "스팸으로 표시(P)"
+msgstr "스팸으로 표시(_P)"
 
 #: ../src/client/application/geary-controller.vala:78
 #: ../src/client/application/geary-controller.vala:77
 #: ../src/client/application/geary-controller.vala:76
 #: ../src/client/application/geary-controller.vala:75
 msgid "Mark as not S_pam"
-msgstr "스팸 아님으로  표시(P)"
+msgstr "스팸 아님으로  표시(_P)"
 
 #: ../src/client/application/geary-controller.vala:80
 #: ../src/client/application/geary-controller.vala:392
@@ -374,7 +374,7 @@ msgstr "편지 이동"
 #: ../src/client/application/geary-controller.vala:370
 #: ../src/client/application/geary-controller.vala:369
 msgid "A_ccounts"
-msgstr "계정(C)"
+msgstr "계정(_C)"
 
 #: ../src/client/application/geary-controller.vala:377
 #: ../src/client/components/stock.vala:27
@@ -383,20 +383,20 @@ msgstr "계정(C)"
 #: ../src/client/components/stock.vala:26
 #: ../src/client/application/geary-controller.vala:374
 msgid "_Preferences"
-msgstr "설정(P)"
+msgstr "설정(_P)"
 
 #: ../src/client/application/geary-controller.vala:381
 #: ../src/client/components/stock.vala:25
 #: ../src/client/application/geary-controller.vala:380
 msgid "_Help"
-msgstr "도움말(H)"
+msgstr "도움말(_H)"
 
 #: ../src/client/application/geary-controller.vala:385
 #: ../src/client/components/stock.vala:21
 #: ../src/client/application/geary-controller.vala:384
 #: ../src/client/application/geary-controller.vala:379
 msgid "_About"
-msgstr "정보(A)"
+msgstr "소개(_A)"
 
 #: ../src/client/application/geary-controller.vala:389
 #: ../src/client/components/stock.vala:29
@@ -405,42 +405,42 @@ msgstr "정보(A)"
 #: ../src/client/components/stock.vala:28
 #: ../src/client/application/geary-controller.vala:378
 msgid "_Quit"
-msgstr "끝내기(Q)"
+msgstr "끝내기(_Q)"
 
 #: ../src/client/application/geary-controller.vala:394
 #: ../src/client/application/geary-controller.vala:393
 #: ../src/client/application/geary-controller.vala:388
 #: ../src/client/application/geary-controller.vala:383
 msgid "_Mark as..."
-msgstr "표시하기...(M)"
+msgstr "표시하기...(_M)"
 
 #: ../src/client/application/geary-controller.vala:400
 #: ../src/client/application/geary-controller.vala:399
 #: ../src/client/application/geary-controller.vala:394
 #: ../src/client/application/geary-controller.vala:389
 msgid "Mark as _Read"
-msgstr "읽음으로 표시(R)"
+msgstr "읽음으로 표시(_R)"
 
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:405
 #: ../src/client/application/geary-controller.vala:400
 #: ../src/client/application/geary-controller.vala:395
 msgid "Mark as _Unread"
-msgstr "읽지 않음으로 표시(R)"
+msgstr "읽지 않음으로 표시(_R)"
 
 #: ../src/client/application/geary-controller.vala:412
 #: ../src/client/application/geary-controller.vala:411
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:401
 msgid "_Star"
-msgstr "별표 표시(S)"
+msgstr "별표 표시(_S)"
 
 #: ../src/client/application/geary-controller.vala:417
 #: ../src/client/application/geary-controller.vala:416
 #: ../src/client/application/geary-controller.vala:411
 #: ../src/client/application/geary-controller.vala:406
 msgid "U_nstar"
-msgstr "별표 해제(N)"
+msgstr "별표 취소(_N)"
 
 #: ../src/client/application/geary-controller.vala:427
 #: ../src/client/application/geary-controller.vala:426
@@ -454,14 +454,14 @@ msgstr "라벨 추가"
 #: ../src/client/application/geary-controller.vala:422
 #: ../src/client/application/geary-controller.vala:417
 msgid "_Label"
-msgstr "라벨(L)"
+msgstr "라벨(_L)"
 
 #: ../src/client/application/geary-controller.vala:432
 #: ../src/client/application/geary-controller.vala:431
 #: ../src/client/application/geary-controller.vala:426
 #: ../src/client/application/geary-controller.vala:421
 msgid "_Move"
-msgstr "옮기기(M)"
+msgstr "옮기기(_M)"
 
 #: ../src/client/application/geary-controller.vala:436
 #: ../src/client/application/geary-controller.vala:435
@@ -474,7 +474,7 @@ msgstr "새 편지 쓰기 (Ctrl+N, N)"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1857
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1862
 msgid "_Reply"
-msgstr "답장(R)"
+msgstr "답장(_R)"
 
 #: ../src/client/application/geary-controller.vala:441
 #: ../src/client/application/geary-controller.vala:440
@@ -485,7 +485,7 @@ msgstr "답장 (Ctrl+R, R)"
 
 #: ../src/client/application/geary-controller.vala:445
 msgid "R_eply All"
-msgstr "전체 답장(E)"
+msgstr "전체 답장(_E)"
 
 #: ../src/client/application/geary-controller.vala:446
 #: ../src/client/application/geary-controller.vala:445
@@ -529,7 +529,7 @@ msgstr "스팸 편지함이나 휴지통 비우기"
 #: ../src/client/application/geary-controller.vala:485
 #: ../src/client/application/geary-controller.vala:479
 msgid "Empty _Spam…"
-msgstr "스팸 편지함 비우기(S)"
+msgstr "스팸 편지함 비우기(_S)"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -537,7 +537,7 @@ msgstr "스팸 편지함 비우기(S)"
 #: ../src/client/application/geary-controller.vala:489
 #: ../src/client/application/geary-controller.vala:483
 msgid "Empty _Trash…"
-msgstr "휴지통 비우기(T)"
+msgstr "휴지통 비우기(_T)"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -578,7 +578,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:967
 #: ../src/client/application/geary-controller.vala:961
 msgid "Co_ntinue"
-msgstr "계속(N)"
+msgstr "계속(_N)"
 
 #. / Displayed in the space-limited status bar when a message fails to be sent due to error.
 #: ../src/client/application/geary-controller.vala:1063
@@ -658,7 +658,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1135
 #: ../src/client/application/geary-controller.vala:1129
 msgid "_Rebuild"
-msgstr "재구성하기(R)"
+msgstr "재구성하기(_R)"
 
 #: ../src/client/application/geary-controller.vala:1153
 #: ../src/client/application/geary-controller.vala:1147
@@ -666,7 +666,7 @@ msgstr "재구성하기(R)"
 #: ../src/client/application/geary-controller.vala:1135
 #: ../src/client/application/geary-controller.vala:1129
 msgid "E_xit"
-msgstr "나가기(X)"
+msgstr "나가기(_X)"
 
 #: ../src/client/application/geary-controller.vala:1162
 #: ../src/client/application/geary-controller.vala:1156
@@ -804,7 +804,7 @@ msgstr "열린 첨부 파일은 시스템에 손상을 입힐 수 있습니다. 
 #: ../src/client/application/geary-controller.vala:1952
 #: ../src/client/application/geary-controller.vala:1948
 msgid "Don't _ask me again"
-msgstr "이제 묻지 않아도 좋습니다(A)"
+msgstr "이제 묻지 않아도 좋습니다(_A)"
 
 #: ../src/client/application/geary-controller.vala:2006
 #: ../src/client/application/geary-controller.vala:2000
@@ -829,7 +829,7 @@ msgstr "\"%s\" 안에 파일이 이미 있습니다.  파일을 바꾸면 그 �
 #: ../src/client/application/geary-controller.vala:1975
 #: ../src/client/application/geary-controller.vala:1971
 msgid "_Replace"
-msgstr "바꾸기(R)"
+msgstr "바꾸기(_R)"
 
 #: ../src/client/application/geary-controller.vala:2309
 #: ../src/client/application/geary-controller.vala:2303
@@ -1579,7 +1579,7 @@ msgstr "모든 첨부 파일 저장(_T)"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1852
 msgid "Save A_ttachment..."
 msgid_plural "Save All A_ttachments..."
-msgstr[0] "모든 첨부 파일 저장(_T)"
+msgstr[0] "첨부 파일 저장(_T)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1862
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1867
@@ -2423,7 +2423,7 @@ msgstr "임시 보관함 서버에 저장하기(_F)"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr "이메일(G) 사인 (HTML 가능):"
+msgstr "이메일 싸인(_G) (HTML 가능):"
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"

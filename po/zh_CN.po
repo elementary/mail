@@ -17,7 +17,7 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-03-21 09:44-0700\n"
-"PO-Revision-Date: 2016-02-24 08:31+0000\n"
+"PO-Revision-Date: 2016-03-24 01:40+0000\n"
 "Last-Translator: colindemian <dengmengpc@gmail.com>\n"
 "Language-Team: Chinese (China) "
 "(http://www.transifex.com/projects/p/geary/language/zh_CN/)\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-03-22 06:09+0000\n"
+"X-Launchpad-Export-Date: 2016-03-24 15:12+0000\n"
 "X-Generator: Launchpad (build 17958)\n"
 "Language: zh_CN\n"
 
@@ -485,7 +485,7 @@ msgstr "移动(_M)"
 #: ../src/client/application/geary-controller.vala:430
 #: ../src/client/application/geary-controller.vala:425
 msgid "Compose new message (Ctrl+N, N)"
-msgstr "撰写新邮件(Ctrl+N, N)"
+msgstr "撰写新邮件("
 
 #: ../src/client/application/geary-controller.vala:440
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1857
@@ -498,7 +498,7 @@ msgstr "回复(_R)"
 #: ../src/client/application/geary-controller.vala:435
 #: ../src/client/application/geary-controller.vala:430
 msgid "Reply (Ctrl+R, R)"
-msgstr "回复(Ctrl+R, R)"
+msgstr "回复"
 
 #: ../src/client/application/geary-controller.vala:445
 msgid "R_eply All"
@@ -509,7 +509,7 @@ msgstr "回复全部(_E)"
 #: ../src/client/application/geary-controller.vala:440
 #: ../src/client/application/geary-controller.vala:435
 msgid "Reply all (Ctrl+Shift+R, Shift+R)"
-msgstr "回复全部(Ctrl+Shift+R, Shift+R)"
+msgstr "回复全部"
 
 #: ../src/client/application/geary-controller.vala:451
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1867
@@ -522,7 +522,7 @@ msgstr "转发(_F)"
 #: ../src/client/application/geary-controller.vala:446
 #: ../src/client/application/geary-controller.vala:441
 msgid "Forward (Ctrl+L, F)"
-msgstr "转发(Ctrl+L, F)"
+msgstr "转发"
 
 #: ../src/client/application/geary-controller.vala:491
 #: ../src/client/application/geary-controller.vala:490
@@ -798,7 +798,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1940
 #: ../src/client/application/geary-controller.vala:1936
 msgid "Undo move (Ctrl+Z)"
-msgstr "撤销操作 (Ctrl+Z)"
+msgstr "撤销操作"
 
 #: ../src/client/application/geary-controller.vala:1986
 #: ../src/client/application/geary-controller.vala:1980
@@ -919,7 +919,7 @@ msgstr "删除"
 #: ../src/client/application/geary-controller.vala:2486
 #: ../src/client/application/geary-controller.vala:2481
 msgid "Undo archive (Ctrl+Z)"
-msgstr "撤销归档 (Ctrl+Z)"
+msgstr "撤销归档"
 
 #: ../src/client/application/geary-controller.vala:2537
 #: ../src/client/application/geary-controller.vala:2531
@@ -927,7 +927,7 @@ msgstr "撤销归档 (Ctrl+Z)"
 #: ../src/client/application/geary-controller.vala:2501
 #: ../src/client/application/geary-controller.vala:2496
 msgid "Undo trash (Ctrl+Z)"
-msgstr "撤销删除 (Ctrl+Z)"
+msgstr "撤销删除"
 
 #: ../src/client/application/geary-controller.vala:2590
 #: ../src/client/application/geary-controller.vala:2584
@@ -935,7 +935,7 @@ msgstr "撤销删除 (Ctrl+Z)"
 #: ../src/client/application/geary-controller.vala:2554
 #: ../src/client/application/geary-controller.vala:2549
 msgid "Undo (Ctrl+Z)"
-msgstr "撤销  (Ctrl+Z)"
+msgstr "撤销"
 
 #: ../src/client/application/geary-args.vala:10
 #: ../src/client/application/geary-args.vala:11
@@ -1903,7 +1903,7 @@ msgstr "保存(_K)"
 #: ../src/client/components/main-toolbar.vala:75
 #: ../src/client/components/main-toolbar.vala:69
 msgid "Search all mail in account for keywords (Ctrl+S)"
-msgstr "在此帐号的所有邮件中搜索关键字 (Ctrl+S)"
+msgstr "在此帐号的所有邮件中搜索关键字"
 
 #: ../src/client/components/search-bar.vala:118
 #: ../src/client/components/main-toolbar.vala:300
@@ -2107,7 +2107,7 @@ msgstr "调整(_J)"
 
 #: ../data/ui/composer.ui:63 ../src/client/composer/ComposerToolbar.vala:77
 msgid "Link (Ctrl+L)"
-msgstr "链接 (Ctrl+L)"
+msgstr "链接"
 
 #: ../data/ui/composer.ui:70 ../data/ui/composer.ui:69
 msgid "C_olor"
@@ -2115,15 +2115,15 @@ msgstr "颜色(_O)"
 
 #: ../data/ui/composer.ui:81
 msgid "Quote text  (Ctrl+])"
-msgstr "引用文本 (Ctrl+])"
+msgstr "引用文本"
 
 #: ../data/ui/composer.ui:87 ../src/client/composer/ComposerToolbar.vala:69
 msgid "Unquote text (Ctrl+[)"
-msgstr "取消引用 (Ctrl+[)"
+msgstr "取消引用"
 
 #: ../data/ui/composer.ui:93 ../src/client/composer/ComposerToolbar.vala:82
 msgid "Remove formatting (Ctrl+Space)"
-msgstr "删除格式 (Ctrl+Space)"
+msgstr "删除格式"
 
 #: ../data/ui/composer.ui:100 ../data/ui/composer.ui:97
 msgctxt "Clipboard paste with rich text"
@@ -2132,19 +2132,19 @@ msgstr "粘贴并保留格式(_W)"
 
 #: ../data/ui/composer.ui:111 ../src/client/composer/ComposerToolbar.vala:36
 msgid "Bold (Ctrl+B)"
-msgstr "粗体 (Ctrl+B)"
+msgstr "粗体"
 
 #: ../data/ui/composer.ui:118 ../src/client/composer/ComposerToolbar.vala:41
 msgid "Italic (Ctrl+I)"
-msgstr "斜体 (Ctrl+I)"
+msgstr "斜体"
 
 #: ../data/ui/composer.ui:125 ../src/client/composer/ComposerToolbar.vala:46
 msgid "Underline (Ctrl+U)"
-msgstr "下划线 (Ctrl+U)"
+msgstr "下划线"
 
 #: ../data/ui/composer.ui:132 ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+K)"
-msgstr "删除线 (Ctrl+K)"
+msgstr "删除线"
 
 #: ../data/ui/composer.ui:139 ../data/ui/composer.ui:132
 msgid "_Rich Text"
@@ -2238,7 +2238,7 @@ msgstr "移除附件"
 
 #: ../data/ui/composer.ui:211 ../src/client/composer/ComposerHeaderBar.vala:36
 msgid "Detach (Ctrl+D)"
-msgstr "移除附件 (Ctrl+D)"
+msgstr "移除附件"
 
 #: ../data/ui/composer.ui:218
 msgid "_Send"
@@ -2250,7 +2250,7 @@ msgstr "发送"
 
 #: ../data/ui/composer.ui:220 ../src/client/composer/ComposerHeaderBar.vala:47
 msgid "Send (Ctrl+Enter)"
-msgstr "发送 (Ctrl+Enter)"
+msgstr "发送"
 
 #: ../data/ui/composer.ui:226
 msgid "_Attach File"
@@ -2637,129 +2637,128 @@ msgstr "显示关于界面"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:218
 #: ../src/client/conversation-viewer/ConversationWidget.vala:227
 msgid "Save Attachment…"
-msgstr ""
+msgstr "保存附件..."
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 msgid "Save All Attachments…"
-msgstr ""
+msgstr "保存所有附件..."
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
 msgid "Reply"
-msgstr ""
+msgstr "回复"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:239
 msgid "Reply to All"
-msgstr ""
+msgstr "全部回复"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:231
 #: ../src/client/conversation-viewer/ConversationWidget.vala:240
 msgid "Forward"
-msgstr ""
+msgstr "转发"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:247
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1112
 #: ../src/client/conversation-viewer/ConversationWidget.vala:267
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1136
 msgid "Mark as Unread"
-msgstr ""
+msgstr "标为未读"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:249
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1110
 #: ../src/client/conversation-viewer/ConversationWidget.vala:269
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1134
 msgid "Mark as Read"
-msgstr ""
+msgstr "标为已读"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:252
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 msgid "Print…"
-msgstr ""
+msgstr "打印..."
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
 msgid "View Source"
-msgstr ""
+msgstr "查看来源"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:317
 #: ../src/client/conversation-viewer/ConversationWidget.vala:602
 #: ../src/client/conversation-viewer/ConversationWidget.vala:337
 #: ../src/client/conversation-viewer/ConversationWidget.vala:626
 msgid "View message"
-msgstr ""
+msgstr "查看信息"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:386
 #: ../src/client/conversation-viewer/ConversationWidget.vala:406
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "此消息包含至少一个附件"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:425
 #: ../src/client/conversation-viewer/ConversationWidget.vala:449
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "总是在收件箱中显示"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:553
 #: ../src/client/conversation-viewer/ConversationWidget.vala:577
 msgid "Compose New Message"
-msgstr ""
+msgstr "撰写新消息"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:554
 #: ../src/client/conversation-viewer/ConversationWidget.vala:578
 msgid "Copy Email Address"
-msgstr ""
+msgstr "复制邮件地址"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:615
 #: ../src/client/conversation-viewer/ConversationWidget.vala:639
 msgid "Hide message"
-msgstr ""
+msgstr "隐藏消息"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr ""
+msgstr "另存为..."
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
-msgstr ""
+msgstr "区分大小写"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
 msgid_plural "%u matches"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u 匹配"
 
 #. / TRANSLATORS: please copy the original string and append all local parts of "no reply" email addresses
 #. / (that is the part before the '@') that exist in your language (separated with a semicolon)
 #: ../src/engine/rfc822/rfc822-mailbox-address.vala:170
 msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
-msgstr ""
+msgstr "请勿回复;请勿回复;请勿回复;请勿回复;请勿回复;请勿回复"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:410
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
 msgid "Star message"
-msgstr ""
+msgstr "星标消息"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:420
 msgid "Unstar message"
-msgstr ""
+msgstr "取消星标"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:430
 msgid "More"
-msgstr ""
+msgstr "更多"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
 msgid "Delete draft"
-msgstr ""
+msgstr "删除草稿"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:51
 msgid "Attach file"
-msgstr ""
+msgstr "添加附件"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:55
 msgid "Include original attachments"
-msgstr ""
+msgstr "包括原文附件"
 
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
-msgstr ""
+msgstr "引用文本"
