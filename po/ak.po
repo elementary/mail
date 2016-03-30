@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-03-21 09:44-0700\n"
-"PO-Revision-Date: 2016-03-28 17:58+0000\n"
+"PO-Revision-Date: 2016-03-29 11:07+0000\n"
 "Last-Translator: laberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <ak@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-03-29 05:50+0000\n"
+"X-Launchpad-Export-Date: 2016-03-30 06:35+0000\n"
 "X-Generator: Launchpad (build 17967)\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -24,7 +24,7 @@ msgstr ""
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:580
 msgid "Sent | Sent Mail | Sent Email | Sent E-Mail"
-msgstr ""
+msgstr "Soma | Soma Asɛm | Asɛm a W'asoma Dedaw | Asɛm a W'asoma Dedaw"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:585
 msgid ""
@@ -42,7 +42,7 @@ msgstr ""
 
 #: ../src/engine/api/geary-special-folder-type.vala:24
 msgid "Inbox"
-msgstr "Nkra ahoroɔ"
+msgstr "Asɛm a w'asoma ama wo"
 
 #: ../src/engine/api/geary-special-folder-type.vala:27
 msgid "Drafts"
@@ -50,11 +50,11 @@ msgstr ""
 
 #: ../src/engine/api/geary-special-folder-type.vala:30
 msgid "Sent Mail"
-msgstr "Soma nsɛm"
+msgstr "Asɛm a W'asoma Dedaw"
 
 #: ../src/engine/api/geary-special-folder-type.vala:33
 msgid "Starred"
-msgstr ""
+msgstr "Nea w'ani abɔso"
 
 #: ../src/engine/api/geary-special-folder-type.vala:36
 msgid "Important"
@@ -62,11 +62,11 @@ msgstr "Nea ɛhia paa"
 
 #: ../src/engine/api/geary-special-folder-type.vala:39
 msgid "All Mail"
-msgstr ""
+msgstr "Nsɛm a wanya nyinaa"
 
 #: ../src/engine/api/geary-special-folder-type.vala:42
 msgid "Spam"
-msgstr ""
+msgstr "Adaadaa nsɛm"
 
 #: ../src/engine/api/geary-special-folder-type.vala:45
 msgid "Trash"
@@ -74,14 +74,14 @@ msgstr ""
 
 #: ../src/engine/api/geary-special-folder-type.vala:48
 msgid "Outbox"
-msgstr ""
+msgstr "Nea w'asoma"
 
 #: ../src/engine/api/geary-special-folder-type.vala:51
 #: ../src/client/folder-list/folder-list-search-branch.vala:38
 #: ../src/client/components/search-bar.vala:10
 #: ../src/client/components/main-toolbar.vala:29
 msgid "Search"
-msgstr ""
+msgstr "Hwehwɛ"
 
 #: ../src/engine/api/geary-special-folder-type.vala:54
 msgid "Archive"
@@ -114,14 +114,14 @@ msgstr ""
 
 #: ../src/engine/api/geary-service-provider.vala:61
 msgid "Other"
-msgstr ""
+msgstr "Foforɔ"
 
 #. / Can be typed in the search box like attachment:file.txt to find
 #. / messages with attachments with a particular name.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:710
 msgid "attachment"
-msgstr ""
+msgstr "Nea wɔdekaa ho"
 
 #. / Can be typed in the search box like bcc:johndoe@example.com to find
 #. / messages bcc'd to a particular person.  The translated
@@ -136,7 +136,7 @@ msgstr ""
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:718
 msgid "body"
-msgstr ""
+msgstr "Asɛm no"
 
 #. / Can be typed in the search box like cc:johndoe@example.com to find
 #. / messages cc'd to a particular person.  The translated
@@ -152,14 +152,14 @@ msgstr ""
 #: ../src/engine/imap-db/imap-db-account.vala:726
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "from"
-msgstr ""
+msgstr "ɛfiri"
 
 #. / Can be typed in the search box like subject:word to find the word
 #. / only if it occurs in the subject of a message.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:730
 msgid "subject"
-msgstr ""
+msgstr "Asɛm ti"
 
 #. / Can be typed in the search box like to:johndoe@example.com to find
 #. / messages received by a particular person.  The translated
@@ -167,23 +167,23 @@ msgstr ""
 #: ../src/engine/imap-db/imap-db-account.vala:734
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "to"
-msgstr ""
+msgstr "De kɔma"
 
 #: ../src/engine/imap-db/imap-db-account.vala:754
 msgid "me"
-msgstr ""
+msgstr "me"
 
 #: ../src/engine/rfc822/rfc822-message.vala:781
 #: ../src/client/util/util-email.vala:30
 #: ../src/engine/rfc822/rfc822-message.vala:783
 msgid "(no subject)"
-msgstr ""
+msgstr "(asɛm ti nka ho)"
 
 #. / Format for the datetime that a message being replied to was received
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/engine/rfc822/rfc822-utils.vala:215
 msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr ""
+msgstr "%a, %b %-e, %Y at %-l:%M %p"
 
 #. / The quoted header for a message being replied to.
 #. / %1$s will be substituted for the date, and %2$s will be substituted for
@@ -196,25 +196,25 @@ msgstr ""
 #. / %s will be replaced by the original sender.
 #: ../src/engine/rfc822/rfc822-utils.vala:228
 msgid "%s wrote:"
-msgstr ""
+msgstr "%s  twerɔɔ:"
 
 #. / The quoted header for a message being replied to (in case the sender is not known).
 #. / %s will be replaced by the original date
 #: ../src/engine/rfc822/rfc822-utils.vala:234
 msgid "On %s:"
-msgstr ""
+msgstr "Wɔ %s:"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:263
 msgid "---------- Forwarded message ----------"
-msgstr ""
+msgstr "---------- Nea w'soma ama aforɔ ----------"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:267
 msgid "From: %s\n"
-msgstr ""
+msgstr "Ɛfiri: %s\n"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:268
 msgid "Subject: %s\n"
-msgstr ""
+msgstr "Asɛm ti: %s\n"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:269
 msgid "Date: %s\n"
@@ -222,11 +222,11 @@ msgstr ""
 
 #: ../src/engine/rfc822/rfc822-utils.vala:272
 msgid "To: %s\n"
-msgstr ""
+msgstr "De kɔma: %s\n"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:275
 msgid "Cc: %s\n"
-msgstr ""
+msgstr "Cc: %s\n"
 
 #. / Placeholder filename for attachments with no filename.
 #: ../src/engine/rfc822/rfc822-utils.vala:378
@@ -234,37 +234,37 @@ msgstr ""
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2232
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:32
 msgid "none"
-msgstr ""
+msgstr "Ɛnnyɛ emu biara"
 
 #: ../src/client/application/geary-application.vala:18
 msgid "Mail Client"
-msgstr ""
+msgstr "Soma ma ɔbi"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "Copyright 2011-2015 Yorba Foundation"
-msgstr ""
+msgstr "Copyright 2011-2015 Yorba Foundation"
 
 #: ../src/client/application/geary-application.vala:21
 msgid "Visit the Yorba web site"
-msgstr ""
+msgstr "Kɔ Yorba web site"
 
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete conversation"
-msgstr ""
+msgstr "Yi nkɔmodie no"
 
 #: ../src/client/application/geary-controller.vala:62
 msgid "Delete conversation (Shift+Delete)"
-msgstr ""
+msgstr "Yi nkɔmodie no (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
 msgid "Delete conversations (Shift+Delete)"
-msgstr ""
+msgstr "Yi nkɔmodie ahoroɔ no (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 #: ../src/client/application/geary-controller.vala:65
 msgid "Move conversation to Trash (Delete, Backspace)"
-msgstr ""
+msgstr "Yi nkɔmodie ahoroɔ no kɔ Trash no mu (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
