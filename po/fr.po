@@ -24,15 +24,15 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-03-21 09:44-0700\n"
-"PO-Revision-Date: 2016-03-22 19:48+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementaryos.org>\n"
+"PO-Revision-Date: 2016-04-18 15:33+0000\n"
+"Last-Translator: Dabou <Unknown>\n"
 "Language-Team: français <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-03-23 06:14+0000\n"
-"X-Generator: Launchpad (build 17958)\n"
+"X-Launchpad-Export-Date: 2016-04-19 05:17+0000\n"
+"X-Generator: Launchpad (build 17995)\n"
 "Language: fr\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -814,8 +814,11 @@ msgstr ""
 "Claude Paroz <claude@2xlibre.net>\n"
 "\n"
 "Launchpad Contributions:\n"
+"  Christophe CHAUVET https://launchpad.net/~christophe-chauvet\n"
 "  Corentin Noël https://launchpad.net/~tintou\n"
 "  Cédric Bellegarde https://launchpad.net/~gnumdk\n"
+"  Dabou https://launchpad.net/~dbouthier\n"
+"  Lulucmy https://launchpad.net/~lulucmy\n"
 "  NykO18 https://launchpad.net/~nyko18\n"
 "  Vincent https://launchpad.net/~gbrtvince\n"
 "  Xavier Laffargue https://launchpad.net/~laffargue-xavier\n"
@@ -2628,6 +2631,10 @@ msgid ""
 "\n"
 "Please check your network connection and restart Mail."
 msgstr ""
+"Il y a eu un problème dans l'ouverture du compte local. Ceci peut être due à "
+"des problèmes de connectivité.\n"
+"\n"
+"Veuillez vérifier votre connexion réseau et redémarrer Mail."
 
 #: ../src/client/application/geary-controller.vala:2402
 #: ../src/client/application/geary-controller.vala:2404
@@ -2797,6 +2804,8 @@ msgstr[1] "%u correspondances"
 #: ../src/engine/rfc822/rfc822-mailbox-address.vala:170
 msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 msgstr ""
+"no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply;ne-pas-"
+"répondre;ne-pas-repondre"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:410
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
@@ -2817,11 +2826,11 @@ msgstr ""
 
 #: ../src/client/composer/ComposerHeaderBar.vala:51
 msgid "Attach file"
-msgstr ""
+msgstr "Joindre un fichier"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:55
 msgid "Include original attachments"
-msgstr ""
+msgstr "Inclure les fichiers joints originaux"
 
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
