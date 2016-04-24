@@ -24,14 +24,14 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-03-21 09:44-0700\n"
-"PO-Revision-Date: 2016-04-20 17:36+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
+"PO-Revision-Date: 2016-04-23 23:42+0000\n"
+"Last-Translator: Christophe CHAUVET <Unknown>\n"
 "Language-Team: français <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-04-21 05:53+0000\n"
+"X-Launchpad-Export-Date: 2016-04-24 06:12+0000\n"
 "X-Generator: Launchpad (build 17995)\n"
 "Language: fr\n"
 
@@ -2611,6 +2611,18 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
+"Il y a eu un problème dans l'ouverture de la base de données de messages "
+"locale pour ce compte. Ceci peut être due à une corruption du fichier de la "
+"base de données dans ce dossier:\n"
+"\n"
+"%s\n"
+"\n"
+"Mail peut reconstruire la base de données et resynchroniser avec le serveur "
+"ou peut être fermée.\n"
+"\n"
+"La reconstruction de la base de données détruira tout message local ainsi "
+"que ses pièces jointes. <b>Les messages sur votre serveur ne seront pas "
+"affectés</b>"
 
 #: ../src/client/application/geary-controller.vala:1184
 #: ../src/client/application/geary-controller.vala:1178
@@ -2622,6 +2634,11 @@ msgid ""
 "\n"
 "Please install the latest version of Mail and try again."
 msgstr ""
+"Le numéro de version de la base de données de messages locale est formaté "
+"pour une version plus récente de Mail. Malheureusement la base de données ne "
+"peut \"revenir en arrière\" afin de fonctionner avec cette version de Mail.\n"
+"\n"
+"Veuillez installer la version de Mail la plus récente et réessayer."
 
 #: ../src/client/application/geary-controller.vala:1195
 #: ../src/client/application/geary-controller.vala:1189
@@ -2811,19 +2828,19 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:410
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
 msgid "Star message"
-msgstr ""
+msgstr "Suivre ce message"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:420
 msgid "Unstar message"
-msgstr ""
+msgstr "Ne plus suivre ce message"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:430
 msgid "More"
-msgstr ""
+msgstr "Plus"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
 msgid "Delete draft"
-msgstr ""
+msgstr "Supprimer le brouillon"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:51
 msgid "Attach file"
@@ -2835,4 +2852,4 @@ msgstr "Inclure les fichiers joints originaux"
 
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
-msgstr ""
+msgstr "Citation (Ctrl + ])"
