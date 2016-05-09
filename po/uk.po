@@ -12,16 +12,16 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-21 09:44-0700\n"
-"PO-Revision-Date: 2016-03-14 18:29+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
+"PO-Revision-Date: 2016-05-08 12:13+0000\n"
+"Last-Translator: Igor Peschak <ziaccot@gmail.com>\n"
 "Language-Team: linux.org.ua\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-03-22 06:09+0000\n"
-"X-Generator: Launchpad (build 17958)\n"
+"X-Launchpad-Export-Date: 2016-05-09 05:31+0000\n"
+"X-Generator: Launchpad (build 18025)\n"
 "X-Project-Style: gnome\n"
 "Language: uk\n"
 
@@ -49,7 +49,7 @@ msgstr "Сміття | Смітник | Кошик | TTrash | Rubbish | Rubbish 
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:595
 msgid "Archive | Archives"
-msgstr ""
+msgstr "Архів | Архіви"
 
 #: ../src/engine/api/geary-special-folder-type.vala:24
 msgid "Inbox"
@@ -261,7 +261,7 @@ msgstr "Відвідати сайт Yorba"
 
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete conversation"
-msgstr ""
+msgstr "Видалити розмову"
 
 #: ../src/client/application/geary-controller.vala:62
 msgid "Delete conversation (Shift+Delete)"
@@ -275,13 +275,13 @@ msgstr "Вилучити розмови (Shift+Delete)"
 #: ../src/client/application/geary-controller.vala:66
 #: ../src/client/application/geary-controller.vala:65
 msgid "Move conversation to Trash (Delete, Backspace)"
-msgstr ""
+msgstr "Перемістити розмову в кошик (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 msgid "Move conversations to Trash (Delete, Backspace)"
-msgstr ""
+msgstr "Перемістити розмову в кошик (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
@@ -540,7 +540,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:485
 #: ../src/client/application/geary-controller.vala:479
 msgid "Empty _Spam…"
-msgstr ""
+msgstr "Очистити спам"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -548,7 +548,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:489
 #: ../src/client/application/geary-controller.vala:483
 msgid "Empty _Trash…"
-msgstr ""
+msgstr "Очистити кошик"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -797,6 +797,7 @@ msgstr ""
 "  Alexander Grechko https://launchpad.net/~alexxxander1111\n"
 "  Bogdan Lisnenko https://launchpad.net/~lem8r\n"
 "  Daniel Korostil https://launchpad.net/~ted-korostiled\n"
+"  Igor Peschak https://launchpad.net/~ziaccot\n"
 "  Orest https://launchpad.net/~falchuko\n"
 "  elementary Apps team https://launchpad.net/~elementary-apps"
 
@@ -806,7 +807,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1940
 #: ../src/client/application/geary-controller.vala:1936
 msgid "Undo move (Ctrl+Z)"
-msgstr ""
+msgstr "Скасувати переміщення (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:1986
 #: ../src/client/application/geary-controller.vala:1980
@@ -874,12 +875,12 @@ msgstr "Закрити відкриту чернетку листа?"
 #: ../src/client/application/geary-controller.vala:2403
 #: ../src/client/application/geary-controller.vala:2398
 msgid "Empty all email from your %s folder?"
-msgstr ""
+msgstr "Видалити усі листи із %s ?"
 
 #: ../src/client/application/geary-controller.vala:2440
 #: ../src/client/application/geary-controller.vala:2434
 msgid "This removes the email from Geary and your email server."
-msgstr ""
+msgstr "Це видалить лист з Geary та із серверу."
 
 #: ../src/client/application/geary-controller.vala:2441
 #: ../src/client/application/geary-controller.vala:2435
@@ -930,7 +931,7 @@ msgstr "Вилучити"
 #: ../src/client/application/geary-controller.vala:2486
 #: ../src/client/application/geary-controller.vala:2481
 msgid "Undo archive (Ctrl+Z)"
-msgstr ""
+msgstr "Скасувати архівування (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:2537
 #: ../src/client/application/geary-controller.vala:2531
@@ -938,7 +939,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2501
 #: ../src/client/application/geary-controller.vala:2496
 msgid "Undo trash (Ctrl+Z)"
-msgstr ""
+msgstr "Скасувати видалення (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:2590
 #: ../src/client/application/geary-controller.vala:2584
@@ -946,7 +947,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2554
 #: ../src/client/application/geary-controller.vala:2549
 msgid "Undo (Ctrl+Z)"
-msgstr ""
+msgstr "Скасувати (Ctrl+Z)"
 
 #: ../src/client/application/geary-args.vala:10
 #: ../src/client/application/geary-args.vala:11
@@ -1170,7 +1171,7 @@ msgstr "Виникла помилка під час оброблення сер�
 
 #: ../src/client/dialogs/password-dialog.vala:16
 msgid "Geary requires your email password to continue"
-msgstr ""
+msgstr "Geary потрібен ваш email та пароль щоб продовжити"
 
 #: ../src/client/dialogs/attachment-dialog.vala:18
 msgid "Choose a file"
@@ -1246,12 +1247,12 @@ msgstr "Загалом"
 #: ../src/client/accounts/add-edit-page.vala:280
 #: ../src/client/accounts/add-edit-page.vala:281
 msgid "Edit"
-msgstr ""
+msgstr "Редагувати"
 
 #: ../src/client/accounts/add-edit-page.vala:282
 #: ../src/client/accounts/add-edit-page.vala:283
 msgid "Preview"
-msgstr ""
+msgstr "Попередній перегляд"
 
 #: ../src/client/accounts/add-edit-page.vala:723
 #: ../src/client/accounts/add-edit-page.vala:725
@@ -1702,7 +1703,7 @@ msgstr "Помилка зберігання"
 #: ../src/client/composer/composer-widget.vala:76
 #: ../src/client/composer/composer-widget.vala:74
 msgid "Press Backspace to delete quote"
-msgstr ""
+msgstr "Натисніть Backspace щоб видалити цитату"
 
 #: ../src/client/composer/composer-widget.vala:77
 #: ../src/client/composer/composer-widget.vala:75
@@ -1844,7 +1845,7 @@ msgstr "Потайна копія: "
 #: ../src/client/composer/composer-widget.vala:1610
 #: ../src/client/composer/composer-widget.vala:1607
 msgid "Reply-To: "
-msgstr ""
+msgstr "Відповісти: "
 
 #: ../src/client/composer/composer-widget.vala:1887
 #: ../src/client/composer/composer-widget.vala:1882
@@ -1963,7 +1964,7 @@ msgstr "Індексування облікового запису %s"
 #: ../src/client/components/main-toolbar.vala:151
 #: ../src/client/components/main-toolbar.vala:150
 msgid "Menu"
-msgstr ""
+msgstr "Меню"
 
 #: ../src/client/application/geary-application.vala:25
 #: ../src/client/application/geary-application.vala:24
@@ -1978,13 +1979,13 @@ msgstr "Надіслати файли поштою"
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
 msgid "Welcome to Mail"
-msgstr ""
+msgstr "Вітаємо у Mail"
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
 #: ../src/client/composer/composer-toolbar.vala:77
 #: ../src/client/composer/ComposerToolbar.vala:88
 msgid "More options"
-msgstr ""
+msgstr "Додаткові параметри"
 
 #: ../src/client/components/main-toolbar.vala:312
 #: ../src/client/components/main-toolbar.vala:281
@@ -2001,12 +2002,12 @@ msgstr ""
 #: ../src/client/dialogs/preferences-dialog.vala:28
 #: ../src/client/dialogs/preferences-dialog.vala:29
 msgid "Automatically select next message:"
-msgstr ""
+msgstr "Автоматично вибирати наступне повідомлення:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:33
 #: ../src/client/dialogs/preferences-dialog.vala:34
 msgid "Conversation previews:"
-msgstr ""
+msgstr "Попередній перегляд розмов:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:38
 #: ../src/client/dialogs/preferences-dialog.vala:39
@@ -2021,37 +2022,37 @@ msgstr ""
 #: ../src/client/dialogs/preferences-dialog.vala:47
 #: ../src/client/dialogs/preferences-dialog.vala:53
 msgid "Spell check:"
-msgstr ""
+msgstr "Перевірка орфографії:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:51
 #: ../src/client/dialogs/preferences-dialog.vala:57
 #: ../src/client/dialogs/preferences-dialog.vala:47
 msgid "Notifications"
-msgstr ""
+msgstr "Сповіщення"
 
 #: ../src/client/dialogs/preferences-dialog.vala:56
 #: ../src/client/dialogs/preferences-dialog.vala:62
 #: ../src/client/dialogs/preferences-dialog.vala:52
 msgid "Always watch for new mail:"
-msgstr ""
+msgstr "Завжди перевіряти нові листи:"
 
 #: ../src/client/application/geary-controller.vala:61
 #: ../src/client/application/geary-controller.vala:60
 #: ../src/client/application/geary-controller.vala:59
 msgid "Delete Conversation"
-msgstr ""
+msgstr "Видалити розмову:"
 
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
 #: ../src/client/application/geary-controller.vala:60
 msgid "Delete Conversation (Shift+Delete)"
-msgstr ""
+msgstr "Видалити розомву (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete Conversations (Shift+Delete)"
-msgstr ""
+msgstr "Видалити розмови (Shift+Delete)"
 
 #: ../data/ui/remove_confirm.ui:43
 msgid ""

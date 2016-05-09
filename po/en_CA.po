@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2016-03-21 09:44-0700\n"
-"PO-Revision-Date: 2016-05-05 14:37+0000\n"
+"PO-Revision-Date: 2016-05-08 15:16+0000\n"
 "Last-Translator: Giovanni Caligaris <giovannicaligaris@gmail.com>\n"
 "Language-Team: English (Canada) "
 "(http://www.transifex.com/projects/p/geary/language/en_CA/)\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-05-06 05:02+0000\n"
-"X-Generator: Launchpad (build 17995)\n"
+"X-Launchpad-Export-Date: 2016-05-09 05:31+0000\n"
+"X-Generator: Launchpad (build 18025)\n"
 "Language: en_CA\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -1087,64 +1087,72 @@ msgid ""
 "Selecting \"Trust This Server\" or \"Always Trust This Server\" may cause "
 "your username and password to be transmitted insecurely."
 msgstr ""
+"Selecting \"Trust This Server\" or \"Always Trust This Server\" may cause "
+"your username and password to be transmitted insecurely."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary not to access this "
 "server."
 msgstr ""
+"Selecting \"Don't Trust This Server\" will cause Geary not to access this "
+"server."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Geary will not add or update this email account."
-msgstr ""
+msgstr "Geary will not add or update this email account."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary to stop accessing "
 "this account."
 msgstr ""
+"Selecting \"Don't Trust This Server\" will cause Geary to stop accessing "
+"this account."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Geary will exit if you have no other open email accounts."
-msgstr ""
+msgstr "Geary will exit if you have no other open email accounts."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:66
 msgid ""
 "Contact your system administrator or email service provider if you have any "
 "question about these issues."
 msgstr ""
+"Contact your system administrator or email service provider if you have any "
+"question about these issues."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:73
 msgid "The server's certificate is not signed by a known authority"
-msgstr ""
+msgstr "The server's certificate is not signed by a known authority"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:76
 msgid "The server's identity does not match the identity in the certificate"
-msgstr ""
+msgstr "The server's identity does not match the identity in the certificate"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:79
 msgid "The server's certificate has expired"
-msgstr ""
+msgstr "The server's certificate has expired"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:82
 msgid "The server's certificate has not been activated"
-msgstr ""
+msgstr "The server's certificate has not been activated"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:85
 msgid "The server's certificate has been revoked and is now invalid"
-msgstr ""
+msgstr "The server's certificate has been revoked and is now invalid"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:88
 msgid "The server's certificate is considered insecure"
-msgstr ""
+msgstr "The server's certificate is considered insecure"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:91
 msgid "An error has occurred processing the server's certificate"
-msgstr ""
+msgstr "An error has occurred processing the server's certificate"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 msgid "Geary requires your email password to continue"
-msgstr ""
+msgstr "Geary requires your email password to continue"
 
 #: ../src/client/dialogs/attachment-dialog.vala:18
 msgid "Choose a file"
@@ -1157,16 +1165,16 @@ msgstr "_Attach"
 #. /clear widgets
 #: ../src/client/accounts/account-dialog-edit-alternate-emails-pane.vala:124
 msgid "Additional addresses for %s"
-msgstr ""
+msgstr "Additional addresses for %s"
 
 #: ../src/client/accounts/account-dialog.vala:21
 msgid "Accounts"
-msgstr ""
+msgstr "Accounts"
 
 #. / Placeholder text indicating that the user should type their first name and last name
 #: ../src/client/accounts/add-edit-page.vala:10
 msgid "First Last"
-msgstr ""
+msgstr "First Last"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 msgid "Welcome to Geary."
@@ -1180,118 +1188,118 @@ msgstr "Enter your account information to get started."
 #: ../src/client/accounts/add-edit-page.vala:253
 #: ../src/client/accounts/add-edit-page.vala:254
 msgid "2 weeks back"
-msgstr ""
+msgstr "2 weeks back"
 
 #: ../src/client/accounts/add-edit-page.vala:254
 #: ../src/client/accounts/add-edit-page.vala:255
 msgid "1 month back"
-msgstr ""
+msgstr "1 month back"
 
 #: ../src/client/accounts/add-edit-page.vala:255
 #: ../src/client/accounts/add-edit-page.vala:256
 msgid "3 months back"
-msgstr ""
+msgstr "3 months back"
 
 #: ../src/client/accounts/add-edit-page.vala:256
 #: ../src/client/accounts/add-edit-page.vala:257
 msgid "6 months back"
-msgstr ""
+msgstr "6 months back"
 
 #: ../src/client/accounts/add-edit-page.vala:257
 #: ../src/client/accounts/add-edit-page.vala:258
 msgid "1 year back"
-msgstr ""
+msgstr "1 year back"
 
 #: ../src/client/accounts/add-edit-page.vala:258
 #: ../src/client/accounts/add-edit-page.vala:259
 msgid "2 years back"
-msgstr ""
+msgstr "2 years back"
 
 #: ../src/client/accounts/add-edit-page.vala:259
 #: ../src/client/accounts/add-edit-page.vala:260
 msgid "4 years back"
-msgstr ""
+msgstr "4 years back"
 
 #: ../src/client/accounts/add-edit-page.vala:261
 #: ../src/client/accounts/add-edit-page.vala:262
 msgid "Everything"
-msgstr ""
+msgstr "Everything"
 
 #: ../src/client/accounts/add-edit-page.vala:280
 #: ../src/client/accounts/add-edit-page.vala:281
 msgid "Edit"
-msgstr ""
+msgstr "Edit"
 
 #: ../src/client/accounts/add-edit-page.vala:282
 #: ../src/client/accounts/add-edit-page.vala:283
 msgid "Preview"
-msgstr ""
+msgstr "Preview"
 
 #: ../src/client/accounts/add-edit-page.vala:723
 #: ../src/client/accounts/add-edit-page.vala:725
 msgid "Remem_ber passwords"
-msgstr ""
+msgstr "Remem_ber passwords"
 
 #: ../src/client/accounts/add-edit-page.vala:730
 #: ../src/client/accounts/add-edit-page.vala:732 ../data/ui/login.ui:62
 msgid "Remem_ber password"
-msgstr ""
+msgstr "Remem_ber password"
 
 #: ../src/client/accounts/add-edit-page.vala:764
 #: ../src/client/accounts/add-edit-page.vala:766
 msgid "Unable to validate:\n"
-msgstr ""
+msgstr "Unable to validate:\n"
 
 #: ../src/client/accounts/add-edit-page.vala:766
 #: ../src/client/accounts/add-edit-page.vala:768
 msgid "        &#8226; Invalid account nickname.\n"
-msgstr ""
+msgstr "        &#8226; Invalid account nickname.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:769
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Geary.\n"
-msgstr ""
+msgstr "        &#8226; Email address already added to Geary.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:773
 #: ../src/client/accounts/add-edit-page.vala:775
 msgid "        &#8226; IMAP connection error.\n"
-msgstr ""
+msgstr "        &#8226; IMAP connection error.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:776
 #: ../src/client/accounts/add-edit-page.vala:778
 msgid "        &#8226; IMAP username or password incorrect.\n"
-msgstr ""
+msgstr "        &#8226; IMAP username or password incorrect.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:779
 #: ../src/client/accounts/add-edit-page.vala:781
 msgid "        &#8226; SMTP connection error.\n"
-msgstr ""
+msgstr "        &#8226; SMTP connection error.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:782
 #: ../src/client/accounts/add-edit-page.vala:784
 msgid "        &#8226; SMTP username or password incorrect.\n"
-msgstr ""
+msgstr "        &#8226; SMTP username or password incorrect.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:786
 #: ../src/client/accounts/add-edit-page.vala:788
 msgid "        &#8226; Connection error.\n"
-msgstr ""
+msgstr "        &#8226; Connection error.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:790
 #: ../src/client/accounts/add-edit-page.vala:792
 msgid "        &#8226; Username or password incorrect.\n"
-msgstr ""
+msgstr "        &#8226; Username or password incorrect.\n"
 
 #: ../src/client/accounts/account-dialog-add-edit-pane.vala:51
 #: ../src/client/components/stock.vala:31
 #: ../src/client/components/stock.vala:30
 msgid "_Save"
-msgstr ""
+msgstr "_Save"
 
 #: ../src/client/accounts/account-dialog-add-edit-pane.vala:51
 #: ../src/client/components/stock.vala:22
 msgid "_Add"
-msgstr ""
+msgstr "_Add"
 
 #. / Datetime format for 12-hour time, i.e. 8:31 am
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
@@ -1346,29 +1354,29 @@ msgstr "%-e %B, %Y %-l:%M %P"
 
 #: ../src/client/util/util-date.vala:164
 msgid "Now"
-msgstr ""
+msgstr "Now"
 
 #: ../src/client/util/util-date.vala:167
 msgid "%dm ago"
 msgid_plural "%dm ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%dm ago"
+msgstr[1] "%dm ago"
 
 #: ../src/client/util/util-date.vala:171
 msgid "%dh ago"
 msgid_plural "%dh ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%dh ago"
+msgstr[1] "%dh ago"
 
 #: ../src/client/util/util-date.vala:178
 msgid "Yesterday"
-msgstr ""
+msgstr "Yesterday"
 
 #. / Date format that shows the weekday (Monday, Tuesday, ...)
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/client/util/util-date.vala:183
 msgid "%A"
-msgstr ""
+msgstr "%A"
 
 #: ../src/client/util/util-files.vala:16
 msgid "bytes"
@@ -1397,37 +1405,37 @@ msgstr "KB"
 #: ../src/client/folder-list/folder-list-folder-entry.vala:32
 msgid "%d message"
 msgid_plural "%d messages"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d message"
+msgstr[1] "%d messages"
 
 #. / Label displaying number of unread email messages in a folder
 #: ../src/client/folder-list/folder-list-folder-entry.vala:39
 msgid "%d unread"
 msgid_plural "%d unread"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d unread"
+msgstr[1] "%d unread"
 
 #. / This string represents the divider between two messages: "n messages" and "n unread",
 #. / shown in the folder list as a tooltip.  Please use your languages conventions for
 #. / combining the two, i.e. a comma (",") for English; "6 messages, 3 unread"
 #: ../src/client/folder-list/folder-list-folder-entry.vala:45
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #: ../src/client/folder-list/folder-list-inboxes-branch.vala:14
 msgid "Inboxes"
-msgstr ""
+msgstr "Inboxes"
 
 #: ../src/client/folder-list/folder-list-search-branch.vala:39
 #: ../src/client/components/search-bar.vala:129
 msgid "Search %s account"
-msgstr ""
+msgstr "Search %s account"
 
 #: ../src/client/folder-list/folder-list-search-branch.vala:44
 msgid "%d result"
 msgid_plural "%d results"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d result"
+msgstr[1] "%d results"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:413
 #: ../src/client/conversation-viewer/conversation-viewer.vala:415
@@ -1440,46 +1448,46 @@ msgstr "No conversations selected."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:304
 msgid "%u conversation selected."
 msgid_plural "%u conversations selected."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u conversation selected."
+msgstr[1] "%u conversations selected."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:444
 #: ../src/client/conversation-viewer/conversation-viewer.vala:446
 #: ../src/client/conversation-viewer/conversation-viewer.vala:333
 msgid "No search results found."
-msgstr ""
+msgstr "No search results found."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:446
 #: ../src/client/conversation-viewer/conversation-viewer.vala:448
 #: ../src/client/conversation-viewer/conversation-viewer.vala:335
 msgid "No conversations in folder."
-msgstr ""
+msgstr "No conversations in folder."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:708
 #: ../src/client/conversation-viewer/conversation-viewer.vala:713
 #: ../src/client/conversation-viewer/ConversationWidget.vala:426
 #: ../src/client/conversation-viewer/ConversationWidget.vala:450
 msgid "This message contains remote images."
-msgstr ""
+msgstr "This message contains remote images."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:708
 #: ../src/client/conversation-viewer/conversation-viewer.vala:713
 #: ../src/client/conversation-viewer/ConversationWidget.vala:424
 #: ../src/client/conversation-viewer/ConversationWidget.vala:448
 msgid "Show Images"
-msgstr ""
+msgstr "Show Images"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:709
 #: ../src/client/conversation-viewer/conversation-viewer.vala:714
 msgid "Always Show From Sender"
-msgstr ""
+msgstr "Always Show From Sender"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:733
 #: ../src/client/conversation-viewer/conversation-viewer.vala:738
 #: ../src/client/conversation-viewer/ConversationWidget.vala:377
 #: ../src/client/conversation-viewer/ConversationWidget.vala:397
 msgid "Edit Draft"
-msgstr ""
+msgstr "Edit Draft"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:809
 #: ../src/client/conversation-viewer/conversation-viewer.vala:814
@@ -1524,13 +1532,13 @@ msgstr "Date:"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1144
 msgid "%u read message"
 msgid_plural "%u read messages"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u read message"
+msgstr[1] "%u read messages"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1271
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1276
 msgid "This message was sent successfully, but could not be saved to %s."
-msgstr ""
+msgstr "This message was sent successfully, but could not be saved to %s."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1297
 #: ../data/ui/composer.ui:29
@@ -1559,7 +1567,7 @@ msgstr "Copy _Link"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1318
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1323
 msgid "Select _Message"
-msgstr ""
+msgstr "Select _Message"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1324
 #: ../src/client/components/stock.vala:32
@@ -1575,27 +1583,27 @@ msgstr "Select _All"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1163
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1187
 msgid "_Inspect"
-msgstr ""
+msgstr "_Inspect"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1556
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1561
 msgid "This link appears to go to"
-msgstr ""
+msgstr "This link appears to go to"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1557
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1562
 msgid "but actually goes to"
-msgstr ""
+msgstr "but actually goes to"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1612
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1617
 msgid " (Invalid?)"
-msgstr ""
+msgstr " (Invalid?)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1718
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1723
 msgid "_Save Image As..."
-msgstr ""
+msgstr "_Save Image As..."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1822
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
@@ -1632,7 +1640,7 @@ msgstr "_Mark as Unread"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1889
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1894
 msgid "Mark Unread From _Here"
-msgstr ""
+msgstr "Mark Unread From _Here"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1904
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1909
@@ -1648,27 +1656,27 @@ msgstr "Failed to open default text editor."
 
 #: ../src/client/conversation-viewer/conversation-web-view.vala:322
 msgid "%s - Conversation Inspector"
-msgstr ""
+msgstr "%s - Conversation Inspector"
 
 #: ../src/client/composer/composer-widget.vala:73
 #: ../src/client/composer/composer-widget.vala:71
 msgid "Saved"
-msgstr ""
+msgstr "Saved"
 
 #: ../src/client/composer/composer-widget.vala:74
 #: ../src/client/composer/composer-widget.vala:72
 msgid "Saving"
-msgstr ""
+msgstr "Saving"
 
 #: ../src/client/composer/composer-widget.vala:75
 #: ../src/client/composer/composer-widget.vala:73
 msgid "Error saving"
-msgstr ""
+msgstr "Error saving"
 
 #: ../src/client/composer/composer-widget.vala:76
 #: ../src/client/composer/composer-widget.vala:74
 msgid "Press Backspace to delete quote"
-msgstr ""
+msgstr "Press Backspace to delete quote"
 
 #: ../src/client/composer/composer-widget.vala:77
 #: ../src/client/composer/composer-widget.vala:75
@@ -1681,6 +1689,8 @@ msgid ""
 "attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
 "closing|encloses|enclosure|enclosures"
 msgstr ""
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
+"closing|encloses|enclosure|enclosures"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -1689,7 +1699,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1094
 #: ../src/client/composer/composer-widget.vala:1098
 msgid "Do you want to discard this message?"
-msgstr ""
+msgstr "Do you want to discard this message?"
 
 #: ../src/client/composer/composer-widget.vala:1262
 #: ../src/client/composer/composer-widget.vala:1257
@@ -1697,7 +1707,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1223
 #: ../src/client/composer/composer-widget.vala:1220
 msgid "Send message with an empty subject and body?"
-msgstr ""
+msgstr "Send message with an empty subject and body?"
 
 #: ../src/client/composer/composer-widget.vala:1264
 #: ../src/client/composer/composer-widget.vala:1259
@@ -1705,7 +1715,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1225
 #: ../src/client/composer/composer-widget.vala:1222
 msgid "Send message with an empty subject?"
-msgstr ""
+msgstr "Send message with an empty subject?"
 
 #: ../src/client/composer/composer-widget.vala:1266
 #: ../src/client/composer/composer-widget.vala:1261
@@ -1713,7 +1723,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1227
 #: ../src/client/composer/composer-widget.vala:1224
 msgid "Send message with an empty body?"
-msgstr ""
+msgstr "Send message with an empty body?"
 
 #: ../src/client/composer/composer-widget.vala:1268
 #: ../src/client/composer/composer-widget.vala:1263
@@ -1721,7 +1731,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1229
 #: ../src/client/composer/composer-widget.vala:1226
 msgid "Send message without an attachment?"
-msgstr ""
+msgstr "Send message without an attachment?"
 
 #: ../src/client/composer/composer-widget.vala:1530
 #: ../src/client/composer/composer-widget.vala:1525
@@ -1737,7 +1747,7 @@ msgstr "Cannot add attachment"
 #: ../src/client/composer/composer-widget.vala:1497
 #: ../src/client/composer/composer-widget.vala:1494
 msgid "\"%s\" could not be found."
-msgstr ""
+msgstr "\"%s\" could not be found."
 
 #: ../src/client/composer/composer-widget.vala:1548
 #: ../src/client/composer/composer-widget.vala:1543
@@ -1745,7 +1755,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1504
 #: ../src/client/composer/composer-widget.vala:1501
 msgid "\"%s\" is a folder."
-msgstr ""
+msgstr "\"%s\" is a folder."
 
 #: ../src/client/composer/composer-widget.vala:1555
 #: ../src/client/composer/composer-widget.vala:1550
@@ -1753,7 +1763,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1511
 #: ../src/client/composer/composer-widget.vala:1508
 msgid "\"%s\" is an empty file."
-msgstr ""
+msgstr "\"%s\" is an empty file."
 
 #: ../src/client/composer/composer-widget.vala:1569
 #: ../src/client/composer/composer-widget.vala:1564
@@ -1761,7 +1771,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1525
 #: ../src/client/composer/composer-widget.vala:1522
 msgid "\"%s\" could not be opened for reading."
-msgstr ""
+msgstr "\"%s\" could not be opened for reading."
 
 #: ../src/client/composer/composer-widget.vala:1576
 #: ../src/client/composer/composer-widget.vala:1571
@@ -1769,7 +1779,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1532
 #: ../src/client/composer/composer-widget.vala:1529
 msgid "\"%s\" already attached for delivery."
-msgstr ""
+msgstr "\"%s\" already attached for delivery."
 
 #. / In the composer, the filename followed by its filesize, i.e. "notes.txt (1.12KB)"
 #: ../src/client/composer/composer-widget.vala:1585
@@ -1778,7 +1788,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1541
 #: ../src/client/composer/composer-widget.vala:1538
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: ../src/client/composer/composer-widget.vala:1645
 #: ../src/client/composer/composer-widget.vala:1640
@@ -1786,7 +1796,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1601
 #: ../src/client/composer/composer-widget.vala:1598
 msgid "To: "
-msgstr ""
+msgstr "To: "
 
 #: ../src/client/composer/composer-widget.vala:1648
 #: ../src/client/composer/composer-widget.vala:1643
@@ -1794,7 +1804,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1604
 #: ../src/client/composer/composer-widget.vala:1601
 msgid "Cc: "
-msgstr ""
+msgstr "Cc: "
 
 #: ../src/client/composer/composer-widget.vala:1651
 #: ../src/client/composer/composer-widget.vala:1646
@@ -1802,7 +1812,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1607
 #: ../src/client/composer/composer-widget.vala:1604
 msgid "Bcc: "
-msgstr ""
+msgstr "Bcc: "
 
 #: ../src/client/composer/composer-widget.vala:1654
 #: ../src/client/composer/composer-widget.vala:1649
@@ -1810,7 +1820,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1610
 #: ../src/client/composer/composer-widget.vala:1607
 msgid "Reply-To: "
-msgstr ""
+msgstr "Reply-To: "
 
 #: ../src/client/composer/composer-widget.vala:1887
 #: ../src/client/composer/composer-widget.vala:1882
@@ -1818,7 +1828,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1843
 #: ../src/client/composer/composer-widget.vala:1840
 msgid "Select Color"
-msgstr ""
+msgstr "Select Color"
 
 #: ../src/client/composer/composer-widget.vala:2322
 #: ../src/client/composer/composer-widget.vala:2317
@@ -1826,7 +1836,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:2274
 #: ../src/client/composer/composer-widget.vala:2271
 msgid "%1$s via %2$s"
-msgstr ""
+msgstr "%1$s via %2$s"
 
 #: ../src/client/composer/composer-widget.vala:2364
 #: ../src/client/composer/composer-widget.vala:2359
@@ -1834,39 +1844,39 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:2315
 #: ../src/client/composer/composer-widget.vala:2312
 msgid "_From:"
-msgstr ""
+msgstr "_From:"
 
 #: ../src/client/components/main-window.vala:388
 #: ../src/client/components/main-window.vala:351
 msgid "%s (%d)"
-msgstr ""
+msgstr "%s (%d)"
 
 #. / Displayed in the space-limited status bar while a message is in the process of being sent.
 #: ../src/client/components/status-bar.vala:26
 msgid "Sending..."
-msgstr ""
+msgstr "Sending..."
 
 #: ../src/client/components/conversation-find-bar.vala:214
 msgid "%i match"
 msgid_plural "%i matches"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%i match"
+msgstr[1] "%i matches"
 
 #: ../src/client/components/conversation-find-bar.vala:216
 msgid "%i match (wrapped)"
 msgid_plural "%i matches (wrapped)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%i match (wrapped)"
+msgstr[1] "%i matches (wrapped)"
 
 #: ../src/client/components/conversation-find-bar.vala:218
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:194
 msgid "not found"
-msgstr ""
+msgstr "not found"
 
 #: ../src/client/components/stock.vala:18
 #: ../data/ui/account_cannot_remove.ui:74
 msgid "_OK"
-msgstr ""
+msgstr "_OK"
 
 #: ../src/client/components/stock.vala:19 ../data/ui/remove_confirm.ui:153
 #: ../data/ui/edit_alternate_emails.ui:160 ../data/ui/password-dialog.ui:196
@@ -1878,38 +1888,38 @@ msgstr "_Cancel"
 #: ../src/client/dialogs/preferences-dialog.vala:92
 #: ../src/client/dialogs/preferences-dialog.vala:79
 msgid "_Close"
-msgstr ""
+msgstr "_Close"
 
 #: ../src/client/components/stock.vala:24
 msgid "_Discard"
-msgstr ""
+msgstr "_Discard"
 
 #: ../src/client/components/stock.vala:26
 #: ../src/client/components/stock.vala:25
 msgid "_Open"
-msgstr ""
+msgstr "_Open"
 
 #: ../src/client/components/stock.vala:28
 #: ../src/client/components/stock.vala:27
 msgid "_Print..."
-msgstr ""
+msgstr "_Print..."
 
 #: ../src/client/components/stock.vala:30 ../data/ui/remove_confirm.ui:168
 #: ../src/client/components/stock.vala:29
 msgid "_Remove"
-msgstr ""
+msgstr "_Remove"
 
 #: ../src/client/components/stock.vala:33
 #: ../src/client/components/stock.vala:32
 msgid "_Keep"
-msgstr ""
+msgstr "_Keep"
 
 #: ../src/client/components/search-bar.vala:25
 #: ../src/client/components/main-toolbar.vala:83
 #: ../src/client/components/main-toolbar.vala:75
 #: ../src/client/components/main-toolbar.vala:69
 msgid "Search all mail in account for keywords (Ctrl+S)"
-msgstr ""
+msgstr "Search all mail in account for keywords (Ctrl+S)"
 
 #: ../src/client/components/search-bar.vala:118
 #: ../src/client/components/main-toolbar.vala:300
@@ -1917,7 +1927,7 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:262
 #: ../src/client/components/main-toolbar.vala:259
 msgid "Indexing %s account"
-msgstr ""
+msgstr "Indexing %s account"
 
 #: ../src/client/components/main-toolbar.vala:144
 #: ../src/client/composer/composer-headerbar.vala:90
@@ -1927,28 +1937,28 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:151
 #: ../src/client/components/main-toolbar.vala:150
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: ../src/client/application/geary-application.vala:25
 #: ../src/client/application/geary-application.vala:24
 msgid "Send by Email"
-msgstr ""
+msgstr "Send by Email"
 
 #: ../src/client/application/geary-application.vala:26
 #: ../src/client/application/geary-application.vala:25
 msgid "Send files using Mail"
-msgstr ""
+msgstr "Send files using Mail"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
 msgid "Welcome to Mail"
-msgstr ""
+msgstr "Welcome to Mail"
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
 #: ../src/client/composer/composer-toolbar.vala:77
 #: ../src/client/composer/ComposerToolbar.vala:88
 msgid "More options"
-msgstr ""
+msgstr "More options"
 
 #: ../src/client/components/main-toolbar.vala:312
 #: ../src/client/components/main-toolbar.vala:281
