@@ -147,6 +147,8 @@ public class ConversationViewer : Gtk.Stack {
     private uint select_conversation_timeout_id = 0;
     private bool stay_down = true;
     
+    private double vadjust_before = -1;
+    
     public ConversationViewer() {
         transition_type = Gtk.StackTransitionType.CROSSFADE;
         // Setup state machine for search/find states.
@@ -559,7 +561,10 @@ public class ConversationViewer : Gtk.Stack {
         
         var message_widget = new ConversationWidget(email, current_folder, is_in_folder);
         message_widget.hovering_over_link.connect((title, url) => on_hovering_over_link(title, url));
-        message_widget.link_selected.connect((link) => link_selected(link));
+        message_widget.link_selected.connect((link) => {
+            vadjust_before = conversation_scrolled.vadjustment.value;
+            link_selected(link);
+        });
         message_widget.mark_read.connect((read) => {
             if (read) {
                 on_mark_read_message(message_widget.email);
@@ -688,6 +693,11 @@ public class ConversationViewer : Gtk.Stack {
     }
     
     public void mark_read() {
+        if (vadjust_before > 0) {
+            conversation_scrolled.vadjustment.value = vadjust_before;
+            vadjust_before = -1;
+        }
+        
         var last_child = conversation_list_box.get_row_at_index ((int)conversation_list_box.get_children ().length () -1);
         var min_value = conversation_scrolled.vadjustment.upper - conversation_scrolled.vadjustment.page_size - last_child.get_allocated_height ();
         stay_down = conversation_scrolled.vadjustment.value >= min_value;
