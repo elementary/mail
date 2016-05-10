@@ -22,15 +22,15 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-03-21 09:44-0700\n"
-"PO-Revision-Date: 2016-04-15 20:58+0000\n"
-"Last-Translator: Leonardo Lemos <Unknown>\n"
+"PO-Revision-Date: 2016-05-09 16:52+0000\n"
+"Last-Translator: Lucas Cenir Friederich <lcf51@hotmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-04-16 05:54+0000\n"
-"X-Generator: Launchpad (build 17995)\n"
+"X-Launchpad-Export-Date: 2016-05-10 05:56+0000\n"
+"X-Generator: Launchpad (build 18025)\n"
 "Language: pt_BR\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -804,6 +804,7 @@ msgstr ""
 "  Cleiton Floss https://launchpad.net/~cleitonfloss\n"
 "  Guilmour Alves da Silva Cunha https://launchpad.net/~guilmour-asc\n"
 "  Leonardo Lemos https://launchpad.net/~leonardolemos\n"
+"  Lucas Cenir Friederich https://launchpad.net/~lucasfriederich\n"
 "  Marcelo Hosannah https://launchpad.net/~mhosannah\n"
 "  Marco Aurélio Krause https://launchpad.net/~fxhelp-br\n"
 "  Matheus Macabu https://launchpad.net/~mkbu\n"
@@ -2484,7 +2485,7 @@ msgstr "STARTTLS"
 
 #: ../data/ui/login.ui:663
 msgid "No authentication re_quired"
-msgstr ""
+msgstr "Sem autenticação re_querida"
 
 #: ../data/ui/login.ui:679
 msgid "Use IMAP cre_dentials"
@@ -2496,15 +2497,15 @@ msgstr "Armazenamento"
 
 #: ../data/ui/login.ui:804
 msgid "_Download mail"
-msgstr ""
+msgstr "_Baixar e-mail"
 
 #: ../data/ui/login.ui:867
 msgid "Save dra_fts on server"
-msgstr ""
+msgstr "Salvar ras_cunhos no servidor"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr ""
+msgstr "As_sinar e-mail (HTML ativado)"
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
@@ -2524,19 +2525,19 @@ msgstr "Conexão não confiável"
 
 #: ../data/ui/certificate_warning_dialog.ui:29
 msgid "_Always Trust This Server"
-msgstr ""
+msgstr "_Sempre confiar neste servidor"
 
 #: ../data/ui/certificate_warning_dialog.ui:43
 msgid "_Trust This Server"
-msgstr ""
+msgstr "_Confiar neste servidor"
 
 #: ../data/ui/certificate_warning_dialog.ui:57
 msgid "_Don't Trust This Server"
-msgstr ""
+msgstr "_Não confiar neste servidor"
 
 #: ../data/ui/password-dialog.ui:74
 msgid "SMTP Credentials"
-msgstr ""
+msgstr "Credenciais SMTP"
 
 #: ../data/ui/password-dialog.ui:91
 msgid "Username"
@@ -2566,6 +2567,8 @@ msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
 msgstr ""
+"O Correio Eletrônico encontrou um erro enviando um e-mail. Se o problema "
+"persistir, por favor remova manualmente o e-mail da caixa de saída."
 
 #: ../src/client/application/geary-controller.vala:1057
 #: ../src/client/application/geary-controller.vala:1051
@@ -2574,6 +2577,9 @@ msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
+"O Correio Eletrônico encontrou um erro salvando uma mensagem enviada para a "
+"pasta de mensagens enviadas. A mensagem estará na sua caixa de saída até "
+"você a deletar."
 
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
@@ -2589,6 +2595,17 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
+"Houve um erro abrindo o banco de dados local de e-mails para esta conta. "
+"Isto provavelmente foi causado por corrompimento do arquivo de banco de "
+"dados neste diretório:\n"
+"\n"
+"%s\n"
+"\n"
+"O Correio Eletrônico pode reconstruir o banco de dados e re-sincronizar com "
+"o servidor ou fechar.\n"
+"\n"
+"Reconstruir o banco de dados destruirá todos os e-mails locais e seus "
+"anexos. <b>O e-mail do servidor não será afetado.</b>"
 
 #: ../src/client/application/geary-controller.vala:1184
 #: ../src/client/application/geary-controller.vala:1178
@@ -2610,21 +2627,28 @@ msgid ""
 "\n"
 "Please check your network connection and restart Mail."
 msgstr ""
+"Houve um erro abrindo a conta local. Este erro provavelmente foi causado por "
+"problemas de conexão.\n"
+"\n"
+"Por favor, cheque sua conexão de internet e reinicie o Correio Eletrônico."
 
 #: ../src/client/application/geary-controller.vala:2402
 #: ../src/client/application/geary-controller.vala:2404
 #: ../src/client/application/geary-controller.vala:2399
 msgid "This removes the email from Mail and your email server."
 msgstr ""
+"Isto removerá o e-mail do Correio Eletrônico e do servidor de e-mail."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
 msgstr ""
+"        &#8226; Este endereço de e-mail já foi adicionado ao Correio "
+"Eletrônico.\n"
 
 #: ../src/client/dialogs/preferences-dialog.vala:44
 #: ../src/client/dialogs/preferences-dialog.vala:43
 msgid "Always show remote images:"
-msgstr ""
+msgstr "Sempre mostrar imagens remotas:"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 msgid "Mail requires your email password to continue"
@@ -2653,6 +2677,8 @@ msgstr ""
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Mail will exit if you have no other open email accounts."
 msgstr ""
+"O Correio Eletrônico fechará se você não tiver outras contas de e-mail "
+"abertas."
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Mail validates your account."
@@ -2681,12 +2707,12 @@ msgstr "Mostrar a caixa de diálogo Sobre"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:218
 #: ../src/client/conversation-viewer/ConversationWidget.vala:227
 msgid "Save Attachment…"
-msgstr ""
+msgstr "Salvar anexo…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 msgid "Save All Attachments…"
-msgstr ""
+msgstr "Salvar todos os anexos…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
@@ -2737,12 +2763,12 @@ msgstr "Ver mensagem"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:386
 #: ../src/client/conversation-viewer/ConversationWidget.vala:406
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "Esta mensagem contém um ou mais anexos"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:425
 #: ../src/client/conversation-viewer/ConversationWidget.vala:449
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "Sempre mostrar deste remetente"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:553
 #: ../src/client/conversation-viewer/ConversationWidget.vala:577
@@ -2757,7 +2783,7 @@ msgstr "Copiar endereço de e-mail"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:615
 #: ../src/client/conversation-viewer/ConversationWidget.vala:639
 msgid "Hide message"
-msgstr ""
+msgstr "Esconder mensagem"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
@@ -2770,23 +2796,23 @@ msgstr "Diferenciar maiúsculas/minúsculas"
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
 msgid_plural "%u matches"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u corresponde"
+msgstr[1] "%u correspondem"
 
 #. / TRANSLATORS: please copy the original string and append all local parts of "no reply" email addresses
 #. / (that is the part before the '@') that exist in your language (separated with a semicolon)
 #: ../src/engine/rfc822/rfc822-mailbox-address.vala:170
 msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
-msgstr ""
+msgstr "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:410
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
 msgid "Star message"
-msgstr ""
+msgstr "Favoritar mensagem"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:420
 msgid "Unstar message"
-msgstr ""
+msgstr "Remover favorito da mensagem"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:430
 msgid "More"
@@ -2794,7 +2820,7 @@ msgstr "Mais"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
 msgid "Delete draft"
-msgstr ""
+msgstr "Deletar o rascunho"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:51
 msgid "Attach file"
@@ -2802,8 +2828,8 @@ msgstr "Anexar arquivo"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:55
 msgid "Include original attachments"
-msgstr ""
+msgstr "Incluir anexos originais"
 
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
-msgstr ""
+msgstr "Citar texto (Ctrl+])"
