@@ -145,9 +145,7 @@ public class ConversationViewer : Gtk.Stack {
     private Geary.State.Machine fsm;
     private DisplayMode display_mode = DisplayMode.NONE;
     private uint select_conversation_timeout_id = 0;
-    private bool stay_down = true;
-    
-    private double vadjust_before = -1;
+    private bool stay_down = true;   
     
     public ConversationViewer() {
         transition_type = Gtk.StackTransitionType.CROSSFADE;
@@ -193,6 +191,12 @@ public class ConversationViewer : Gtk.Stack {
                 conversation_scrolled.vadjustment.value = conversation_scrolled.vadjustment.upper - last_child.get_allocated_height () - 18;
             }
         });
+        
+        // Stops button_press_event
+        conversation_list_box.button_press_event.connect((b) => {            
+            return true;
+        });               
+        
         try {
             var css_provider = new Gtk.CssProvider();
             css_provider.load_from_data(EMBEDDED_CSS, EMBEDDED_CSS.length);
@@ -561,8 +565,7 @@ public class ConversationViewer : Gtk.Stack {
         
         var message_widget = new ConversationWidget(email, current_folder, is_in_folder);
         message_widget.hovering_over_link.connect((title, url) => on_hovering_over_link(title, url));
-        message_widget.link_selected.connect((link) => {
-            vadjust_before = conversation_scrolled.vadjustment.value;
+        message_widget.link_selected.connect((link) => {            
             link_selected(link);
         });
         message_widget.mark_read.connect((read) => {
@@ -690,14 +693,9 @@ public class ConversationViewer : Gtk.Stack {
             show_find_bar();
         
         conversation_find_bar.find(forward);
-    }
+    }      
     
-    public void mark_read() {
-        if (vadjust_before > 0) {
-            conversation_scrolled.vadjustment.value = vadjust_before;
-            vadjust_before = -1;
-        }
-        
+    public void mark_read() {        
         var last_child = conversation_list_box.get_row_at_index ((int)conversation_list_box.get_children ().length () -1);
         var min_value = conversation_scrolled.vadjustment.upper - conversation_scrolled.vadjustment.page_size - last_child.get_allocated_height ();
         stay_down = conversation_scrolled.vadjustment.value >= min_value;
