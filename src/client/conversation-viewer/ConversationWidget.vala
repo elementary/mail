@@ -315,6 +315,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
     }
 
     construct {
+        can_focus = false;
         allow_prefix = random_string (10) + ":";
         margin = 12;
         margin_top = 0;
@@ -323,11 +324,13 @@ public class ConversationWidget : Gtk.ListBoxRow {
 
         // Creating the Header
         var header_grid = new Gtk.Grid ();
-        header_grid.orientation = Gtk.Orientation.HORIZONTAL;
+        header_grid.can_focus = false;
+        header_grid.orientation = Gtk.Orientation.HORIZONTAL;        
         header_grid.margin = 6;
         header_grid.column_spacing = 6;
 
         header = new Gtk.EventBox ();
+        header.can_focus = false;
         header.events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         header.events |= Gdk.EventMask.KEY_PRESS_MASK;
         header.events |= Gdk.EventMask.SMOOTH_SCROLL_MASK;
@@ -457,6 +460,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
         });
 
         webview = new StylishWebView ();
+        webview.can_focus = false;
         webview.expand = true;
         webview.transparent = true;
         webview.hovering_over_link.connect (on_hovering_over_link);
