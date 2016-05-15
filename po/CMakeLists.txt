@@ -4,6 +4,6 @@ add_translations_catalog(${GETTEXT_PACKAGE}
     ../src
     ../data
     DESKTOP_FILES
-	${CMAKE_CURRENT_BINARY_DIR}/../data/pantheon-mail.desktop.in
+	    ${CMAKE_CURRENT_BINARY_DIR}/../data/pantheon-mail.desktop.in
         ${CMAKE_CURRENT_BINARY_DIR}/../data/pantheon-mail-autostart.desktop.in
 )
