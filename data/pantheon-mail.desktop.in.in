@@ -1,10 +1,10 @@
 [Desktop Entry]
-Name=@APP_NAME@
-Comment=@RELEASE_NAME@
+_Name=@APP_NAME@
+_Comment=@RELEASE_NAME@
 TryExec=@EXEC_NAME@
 Exec=@EXEC_NAME@ %U
 Icon=@DESKTOP_ICON@
-Keywords=Email;E-mail;Mail;
+_Keywords=Email;E-mail;Mail;
 Terminal=false
 Type=Application
 MimeType=x-scheme-handler/mailto;
@@ -15,10 +15,10 @@ X-GNOME-UsesNotifications=true
 Actions=AboutDialog;Compose;
 
 [Desktop Action AboutDialog]
-Name=About @APP_NAME@
+_Name=About @APP_NAME@
 Exec=@EXEC_NAME@ --about
 
 [Desktop Action Compose]
-Name=Compose Message
+_Name=Compose Message
 Exec=@EXEC_NAME@ mailto:
 
