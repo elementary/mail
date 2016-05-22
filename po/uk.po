@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-21 09:44-0700\n"
-"PO-Revision-Date: 2016-05-09 12:27+0000\n"
+"PO-Revision-Date: 2016-05-21 15:14+0000\n"
 "Last-Translator: Igor Peschak <ziaccot@gmail.com>\n"
 "Language-Team: linux.org.ua\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-05-21 05:53+0000\n"
+"X-Launchpad-Export-Date: 2016-05-22 05:59+0000\n"
 "X-Generator: Launchpad (build 18025)\n"
 "X-Project-Style: gnome\n"
 "Language: uk\n"
@@ -523,7 +523,7 @@ msgstr "Переслати (Ctrl+L, F)"
 #: ../src/client/application/geary-controller.vala:485
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty"
-msgstr ""
+msgstr "Немає вмісту"
 
 #: ../src/client/application/geary-controller.vala:492
 #: ../src/client/application/geary-controller.vala:491
@@ -532,7 +532,7 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:71
 #: ../src/client/application/geary-controller.vala:481
 msgid "Empty Spam or Trash folders"
-msgstr ""
+msgstr "Видалити спам або папки"
 
 #: ../src/client/application/geary-controller.vala:496
 #: ../src/client/application/geary-controller.vala:495
@@ -888,7 +888,7 @@ msgstr "Це видалить лист з Geary та із серверу."
 #: ../src/client/application/geary-controller.vala:2405
 #: ../src/client/application/geary-controller.vala:2400
 msgid "This cannot be undone."
-msgstr ""
+msgstr "Не можна скасувати."
 
 #: ../src/client/application/geary-controller.vala:2442
 #: ../src/client/application/geary-controller.vala:2436
@@ -896,7 +896,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2406
 #: ../src/client/application/geary-controller.vala:2401
 msgid "Empty %s"
-msgstr ""
+msgstr "Видалити %s"
 
 #: ../src/client/application/geary-controller.vala:2459
 #: ../src/client/application/geary-controller.vala:2453
@@ -904,7 +904,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2423
 #: ../src/client/application/geary-controller.vala:2418
 msgid "Error emptying %s"
-msgstr ""
+msgstr "омилка при видалленні %s"
 
 #: ../src/client/application/geary-controller.vala:2489
 #: ../src/client/application/geary-controller.vala:2483
@@ -1992,12 +1992,12 @@ msgstr "Додаткові параметри"
 #: ../src/client/components/main-toolbar.vala:274
 #: ../src/client/components/main-toolbar.vala:271
 msgid "Search %s"
-msgstr ""
+msgstr "Шукати у розділі «%s»"
 
 #: ../src/client/dialogs/preferences-dialog.vala:23
 #: ../src/client/dialogs/preferences-dialog.vala:24
 msgid "Reading"
-msgstr ""
+msgstr "Читання"
 
 #: ../src/client/dialogs/preferences-dialog.vala:28
 #: ../src/client/dialogs/preferences-dialog.vala:29
@@ -2017,7 +2017,7 @@ msgstr ""
 #: ../src/client/dialogs/preferences-dialog.vala:42 ../data/ui/login.ui:853
 #: ../src/client/dialogs/preferences-dialog.vala:48
 msgid "Composer"
-msgstr ""
+msgstr "Редактор"
 
 #: ../src/client/dialogs/preferences-dialog.vala:47
 #: ../src/client/dialogs/preferences-dialog.vala:53
@@ -2068,19 +2068,19 @@ msgstr ""
 
 #: ../data/ui/remove_confirm.ui:80
 msgid "Nickname:"
-msgstr ""
+msgstr "Нік:"
 
 #: ../data/ui/remove_confirm.ui:94
 msgid "Email address:"
-msgstr ""
+msgstr "Адреса ел. пошти:"
 
 #: ../data/ui/find_bar.ui:59
 msgid "Find"
-msgstr ""
+msgstr "Пошук"
 
 #: ../data/ui/find_bar.ui:72
 msgid "Previous Result"
-msgstr ""
+msgstr "Попередній результат"
 
 #: ../data/ui/find_bar.ui:91
 msgid "Next result"
@@ -2110,7 +2110,7 @@ msgstr ""
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
-msgstr ""
+msgstr "_Оновити"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
@@ -2118,7 +2118,7 @@ msgstr ""
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
-msgstr ""
+msgstr "Скасувати"
 
 #: ../data/ui/composer.ui:15
 msgid "_Redo"
@@ -2126,23 +2126,23 @@ msgstr ""
 
 #: ../data/ui/composer.ui:22
 msgid "Cu_t"
-msgstr ""
+msgstr "Вирі_зати"
 
 #: ../data/ui/composer.ui:36
 msgid "_Paste"
-msgstr ""
+msgstr "_Вставити"
 
 #: ../data/ui/composer.ui:43
 msgid "_Left"
-msgstr ""
+msgstr "_Ліворуч"
 
 #: ../data/ui/composer.ui:48
 msgid "_Right"
-msgstr ""
+msgstr "_Праворуч"
 
 #: ../data/ui/composer.ui:53
 msgid "_Center"
-msgstr ""
+msgstr "По _центру"
 
 #: ../data/ui/composer.ui:58
 msgid "_Justify"
@@ -2175,7 +2175,7 @@ msgstr ""
 
 #: ../data/ui/composer.ui:111 ../src/client/composer/ComposerToolbar.vala:36
 msgid "Bold (Ctrl+B)"
-msgstr ""
+msgstr "Жирний (Ctrl+B)"
 
 #: ../data/ui/composer.ui:118 ../src/client/composer/ComposerToolbar.vala:41
 msgid "Italic (Ctrl+I)"
@@ -2183,7 +2183,7 @@ msgstr ""
 
 #: ../data/ui/composer.ui:125 ../src/client/composer/ComposerToolbar.vala:46
 msgid "Underline (Ctrl+U)"
-msgstr ""
+msgstr "Підкреслення"
 
 #: ../data/ui/composer.ui:132 ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+K)"
@@ -2200,12 +2200,12 @@ msgstr ""
 #: ../data/ui/composer.ui:157
 msgctxt "Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "Зберегти і Вийти"
 
 #: ../data/ui/composer.ui:158
 msgctxt "Short Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "Зберегти і Вийти"
 
 #: ../data/ui/composer.ui:159
 msgctxt "Tooltip"
