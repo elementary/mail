@@ -4,4 +4,4 @@ Icon=mail-send
 Description=Send files using Mail
 MimeType=!inode;
 Exec=mail-attach %F
-X-GNOME-Gettext-Domain=geary
+X-GNOME-Gettext-Domain=pantheon-mail
