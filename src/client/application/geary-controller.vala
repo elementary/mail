@@ -1942,15 +1942,11 @@ public class GearyController : Geary.BaseObject {
 
     private void on_open_attachment(Geary.Attachment attachment) {
         if (GearyApplication.instance.config.ask_open_attachment) {
-            QuestionDialog ask_to_open = new QuestionDialog.with_checkbox(main_window,
-                _("Are you sure you want to open \"%s\"?").printf(attachment.file.get_basename()),
-                _("Attachments may cause damage to your system if opened.  Only open files from trusted sources."),
-                Stock._OPEN_BUTTON, Stock._CANCEL, _("Don't _ask me again"), false);
-            if (ask_to_open.run() != Gtk.ResponseType.OK)
+            var ask_to_open = new AskToOpenDialog (main_window, attachment);
+            if (ask_to_open.run() != Gtk.ResponseType.OK) {
                 return;
-
-            // only save checkbox state if OK was selected
-            GearyApplication.instance.config.ask_open_attachment = !ask_to_open.is_checked;
+            }
+            ask_to_open.destroy ();
         }
 
         // Open the attachment if we know what to do with it.
