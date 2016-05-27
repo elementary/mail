@@ -19,10 +19,10 @@
 * Authored by: Daniel Foré <daniel@elementary.io>
 */
 
-public class AskToOpenDialog : Gtk.Dialog {
+public class OpenAttachmentDialog : Gtk.Dialog {
     private Gtk.CheckButton checkbox;
 
-    public AskToOpenDialog (Gtk.Window parent, Geary.Attachment attachment) {
+    public OpenAttachmentDialog (Gtk.Window parent, Geary.Attachment attachment) {
         border_width = 6;
         deletable = false;
         resizable = false;

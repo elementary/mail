@@ -363,7 +363,7 @@ client/conversation-viewer/ConversationFindBar.vala
 client/conversation-viewer/AttachmentWidget.vala
 
 client/dialogs/alert-dialog.vala
-client/dialogs/AskToOpenDialog.vala
+client/dialogs/OpenAttachmentDialog.vala
 client/dialogs/attachment-dialog.vala
 client/dialogs/certificate-warning-dialog.vala
 client/dialogs/password-dialog.vala

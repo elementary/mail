@@ -1942,7 +1942,7 @@ public class GearyController : Geary.BaseObject {
 
     private void on_open_attachment(Geary.Attachment attachment) {
         if (GearyApplication.instance.config.ask_open_attachment) {
-            var ask_to_open = new AskToOpenDialog (main_window, attachment);
+            var ask_to_open = new OpenAttachmentDialog (main_window, attachment);
             if (ask_to_open.run() != Gtk.ResponseType.OK) {
                 return;
             }
