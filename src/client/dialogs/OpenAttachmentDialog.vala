@@ -34,7 +34,6 @@ public class OpenAttachmentDialog : Gtk.Dialog {
         var primary_label = new Gtk.Label (_("Are you sure you want to open %s?").printf(attachment.file.get_basename()));
         primary_label.get_style_context ().add_class ("primary");
         primary_label.max_width_chars = 60;
-        primary_label.use_markup = true;
         primary_label.wrap = true;
         primary_label.xalign = 0;
 
