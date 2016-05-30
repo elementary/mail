@@ -43,15 +43,20 @@ public class PasswordDialog : Gtk.Dialog {
 
         var username_label = new Gtk.Label (_("Username:"));
         username_label.halign = Gtk.Align.END;
+
         var username_widget = new Gtk.Label ("");
         username_widget.hexpand = true;
         username_widget.xalign = 0;
+
         var password_label = new Gtk.Label (_("Password:"));
         password_label.halign = Gtk.Align.END;
-        var smtp_label = new Gtk.Label (_("SMTP Credentials"));
+
+        var smtp_label = new Gtk.Label (_("SMTP Credentials:"));
+        smtp_label.no_show_all = true;
 
         password_entry = new Gtk.Entry ();
-        //password_entry.input_purpose = Gtk.INPUT_PURPOSE_PASSWORD;
+        password_entry.set_input_purpose (Gtk.InputPurpose.PASSWORD);
+        password_entry.visibility = false;
 
         checkbox = new Gtk.CheckButton.with_label (_("Remember password"));
         checkbox.margin_top = 6;
@@ -70,7 +75,6 @@ public class PasswordDialog : Gtk.Dialog {
         }
 
         var authenticate_button = new Gtk.Button.with_label (_("Authenticate"));
-        authenticate_button.bind_property ("sensitive", password_entry, "empty", BindingFlags.DEFAULT);
         authenticate_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         var layout = new Gtk.Grid ();
@@ -80,11 +84,12 @@ public class PasswordDialog : Gtk.Dialog {
         layout.row_spacing = 6;
         layout.attach (password_image, 0, 0, 1, 4);
         layout.attach (primary_label, 1, 0, 2, 1);
-        layout.attach (username_label, 1, 1, 1, 1);
-        layout.attach (username_widget, 2, 1, 1, 1);
-        layout.attach (password_label, 1, 2, 1, 1);
-        layout.attach (password_entry, 2, 2, 1, 1);
-        layout.attach (checkbox, 2, 3, 1, 1);
+        layout.attach (smtp_label, 1, 1, 2, 1);
+        layout.attach (username_label, 1, 2, 1, 1);
+        layout.attach (username_widget, 2, 2, 1, 1);
+        layout.attach (password_label, 1, 3, 1, 1);
+        layout.attach (password_entry, 2, 3, 1, 1);
+        layout.attach (checkbox, 2, 4, 1, 1);
 
         var content = get_content_area () as Gtk.Box;
         content.add (layout);
