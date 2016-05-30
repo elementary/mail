@@ -107,7 +107,7 @@ public class PasswordDialog : Gtk.Dialog {
         });
     }
 
-    private void refresh_ok_button_sensitivity() {
+    private void refresh_ok_button_sensitivity () {
         authenticate_button.sensitive = !Geary.String.is_empty_or_whitespace (password_entry.get_text ());
     }
 
