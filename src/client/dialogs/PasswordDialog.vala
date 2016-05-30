@@ -20,6 +20,7 @@
 */
 
 public class PasswordDialog : Gtk.Dialog {
+    private Gtk.Button authenticate_button;
     private Gtk.CheckButton checkbox; 
     private Gtk.Entry password_entry;
     
@@ -74,8 +75,9 @@ public class PasswordDialog : Gtk.Dialog {
             smtp_label.show ();
         }
 
-        var authenticate_button = new Gtk.Button.with_label (_("Authenticate"));
+        authenticate_button = new Gtk.Button.with_label (_("Authenticate"));
         authenticate_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        authenticate_button.sensitive = false;
 
         var layout = new Gtk.Grid ();
         layout.margin = 6;
@@ -99,6 +101,14 @@ public class PasswordDialog : Gtk.Dialog {
         show_all ();
 
         response.connect (on_response);
+        password_entry.changed.connect (refresh_ok_button_sensitivity);
+        password_entry.activate.connect (() => {
+            authenticate_button.activate ();
+        });
+    }
+
+    private void refresh_ok_button_sensitivity() {
+        authenticate_button.sensitive = !Geary.String.is_empty_or_whitespace (password_entry.get_text ());
     }
 
     private void on_response (Gtk.Dialog source, int response_id) {

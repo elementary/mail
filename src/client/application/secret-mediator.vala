@@ -152,6 +152,7 @@ public class SecretMediator : Geary.CredentialsMediator, Object {
             smtp_password = null;
             smtp_remember_password = false;
         }
+        password_dialog.destroy ();
         return true;
     }
 }
