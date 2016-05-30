@@ -113,10 +113,10 @@ public class PasswordDialog : Gtk.Dialog {
         case Gtk.ResponseType.OK:
             password = password_entry.get_text ();
             remember_password = checkbox.active;
-	        break;
+            break;
         case Gtk.ResponseType.CLOSE:
-	        destroy ();
-	        break;
+            destroy ();
+            break;
         }
     }
 }
