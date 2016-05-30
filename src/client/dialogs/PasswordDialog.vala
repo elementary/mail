@@ -114,7 +114,7 @@ public class PasswordDialog : Gtk.Dialog {
     private void on_response (Gtk.Dialog source, int response_id) {
         switch (response_id) {
         case Gtk.ResponseType.OK:
-            password = password_entry.get_text();
+            password = password_entry.get_text ();
             remember_password = checkbox.active;
 	        break;
         case Gtk.ResponseType.CLOSE:
