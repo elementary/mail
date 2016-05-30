@@ -61,18 +61,15 @@ public class PasswordDialog : Gtk.Dialog {
 
         checkbox = new Gtk.CheckButton.with_label (_("Remember password"));
         checkbox.margin_top = 6;
+        checkbox.active = (smtp ? account_information.smtp_remember_password : account_information.imap_remember_password);
 
         if (smtp) {
             username_widget.set_text (account_information.smtp_credentials.user ?? "");
             password_entry.set_text (account_information.smtp_credentials.pass ?? "");
+            smtp_label.show ();
         } else {
             username_widget.set_text (account_information.imap_credentials.user ?? "");
             password_entry.set_text (account_information.imap_credentials.pass ?? "");
-        }
-
-        checkbox.active = (smtp ? account_information.smtp_remember_password : account_information.imap_remember_password);
-        if (smtp) {
-            smtp_label.show ();
         }
 
         authenticate_button = new Gtk.Button.with_label (_("Authenticate"));
