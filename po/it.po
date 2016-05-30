@@ -19,7 +19,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-05-15 18:08+0400\n"
+"POT-Creation-Date: 2016-05-29 21:09-0700\n"
 "PO-Revision-Date: 2016-03-25 22:54+0000\n"
 "Last-Translator: Fabio Zaramella <FFabio.96.X@Gmail.com>\n"
 "Language-Team: Italiano <gnome-it-list@gnome.org>\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-05-26 05:54+0000\n"
+"X-Launchpad-Export-Date: 2016-05-30 05:43+0000\n"
 "X-Generator: Launchpad (build 18053)\n"
 "Language: it\n"
 
@@ -847,6 +847,7 @@ msgstr "_Non chiederlo più"
 #: ../src/client/application/geary-controller.vala:1968
 #: ../src/client/application/geary-controller.vala:1970
 #: ../src/client/application/geary-controller.vala:1966
+#: ../src/client/application/geary-controller.vala:1962
 msgid "A file named \"%s\" already exists.  Do you want to replace it?"
 msgstr "Il file «%s» esiste già. Sostituirlo?"
 
@@ -855,6 +856,7 @@ msgstr "Il file «%s» esiste già. Sostituirlo?"
 #: ../src/client/application/geary-controller.vala:1970
 #: ../src/client/application/geary-controller.vala:1972
 #: ../src/client/application/geary-controller.vala:1968
+#: ../src/client/application/geary-controller.vala:1964
 msgid ""
 "The file already exists in \"%s\".  Replacing it will overwrite its contents."
 msgstr ""
@@ -866,6 +868,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1973
 #: ../src/client/application/geary-controller.vala:1975
 #: ../src/client/application/geary-controller.vala:1971
+#: ../src/client/application/geary-controller.vala:1967
 msgid "_Replace"
 msgstr "_Sostituisci"
 
@@ -881,6 +884,7 @@ msgstr "Chiudere le bozze aperte?"
 #: ../src/client/application/geary-controller.vala:2401
 #: ../src/client/application/geary-controller.vala:2403
 #: ../src/client/application/geary-controller.vala:2398
+#: ../src/client/application/geary-controller.vala:2394
 msgid "Empty all email from your %s folder?"
 msgstr "Svuotare tutti i messaggi dalla cartella %s?"
 
@@ -894,6 +898,7 @@ msgstr "Saranno eliminati i messaggi sia da Geary sia dal server di posta."
 #: ../src/client/application/geary-controller.vala:2403
 #: ../src/client/application/geary-controller.vala:2405
 #: ../src/client/application/geary-controller.vala:2400
+#: ../src/client/application/geary-controller.vala:2396
 msgid "This cannot be undone."
 msgstr "Impossibile annullare questa azione."
 
@@ -902,6 +907,7 @@ msgstr "Impossibile annullare questa azione."
 #: ../src/client/application/geary-controller.vala:2404
 #: ../src/client/application/geary-controller.vala:2406
 #: ../src/client/application/geary-controller.vala:2401
+#: ../src/client/application/geary-controller.vala:2397
 msgid "Empty %s"
 msgstr "Svuota %s"
 
@@ -910,6 +916,7 @@ msgstr "Svuota %s"
 #: ../src/client/application/geary-controller.vala:2421
 #: ../src/client/application/geary-controller.vala:2423
 #: ../src/client/application/geary-controller.vala:2418
+#: ../src/client/application/geary-controller.vala:2414
 msgid "Error emptying %s"
 msgstr "Errore nello svuotare %s"
 
@@ -918,6 +925,7 @@ msgstr "Errore nello svuotare %s"
 #: ../src/client/application/geary-controller.vala:2451
 #: ../src/client/application/geary-controller.vala:2453
 #: ../src/client/application/geary-controller.vala:2448
+#: ../src/client/application/geary-controller.vala:2444
 msgid "Do you want to permanently delete this message?"
 msgid_plural "Do you want to permanently delete these messages?"
 msgstr[0] "Eliminare permanentemente questo messaggio?"
@@ -928,6 +936,7 @@ msgstr[1] "Eliminare permanentemente questi messaggi?"
 #: ../src/client/application/geary-controller.vala:2453
 #: ../src/client/application/geary-controller.vala:2455
 #: ../src/client/application/geary-controller.vala:2450
+#: ../src/client/application/geary-controller.vala:2446
 msgid "Delete"
 msgstr "Elimina"
 
@@ -936,6 +945,7 @@ msgstr "Elimina"
 #: ../src/client/application/geary-controller.vala:2484
 #: ../src/client/application/geary-controller.vala:2486
 #: ../src/client/application/geary-controller.vala:2481
+#: ../src/client/application/geary-controller.vala:2477
 msgid "Undo archive (Ctrl+Z)"
 msgstr "Annulla l'archiviazione (Ctrl+Z)"
 
@@ -944,6 +954,7 @@ msgstr "Annulla l'archiviazione (Ctrl+Z)"
 #: ../src/client/application/geary-controller.vala:2499
 #: ../src/client/application/geary-controller.vala:2501
 #: ../src/client/application/geary-controller.vala:2496
+#: ../src/client/application/geary-controller.vala:2492
 msgid "Undo trash (Ctrl+Z)"
 msgstr "Annulla lo spostamento nel cestino (Ctrl+Z)"
 
@@ -952,6 +963,7 @@ msgstr "Annulla lo spostamento nel cestino (Ctrl+Z)"
 #: ../src/client/application/geary-controller.vala:2552
 #: ../src/client/application/geary-controller.vala:2554
 #: ../src/client/application/geary-controller.vala:2549
+#: ../src/client/application/geary-controller.vala:2545
 msgid "Undo (Ctrl+Z)"
 msgstr "Annulla (Ctrl+Z)"
 
@@ -2649,6 +2661,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2402
 #: ../src/client/application/geary-controller.vala:2404
 #: ../src/client/application/geary-controller.vala:2399
+#: ../src/client/application/geary-controller.vala:2395
 msgid "This removes the email from Mail and your email server."
 msgstr ""
 "Ciò elimina la posta da Mail e dal vostro server di posta elettronica."
@@ -2857,3 +2870,25 @@ msgstr "Includi allegati originali"
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
 msgstr "Cita testo (Ctrl+])"
+
+#: ../src/client/dialogs/OpenAttachmentDialog.vala:34
+msgid "Are you sure you want to open %s?"
+msgstr ""
+
+#: ../src/client/dialogs/OpenAttachmentDialog.vala:40
+msgid ""
+"Attachments may cause damage to your system if opened. Only open files from "
+"trusted sources."
+msgstr ""
+
+#: ../src/client/dialogs/OpenAttachmentDialog.vala:45
+msgid "Don't ask me again"
+msgstr ""
+
+#: ../src/client/dialogs/OpenAttachmentDialog.vala:48
+msgid "Open Anyway"
+msgstr ""
+
+#: ../src/client/dialogs/OpenAttachmentDialog.vala:64
+msgid "Cancel"
+msgstr ""

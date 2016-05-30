@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-05-15 18:08+0400\n"
+"POT-Creation-Date: 2016-05-29 21:09-0700\n"
 "PO-Revision-Date: 2016-05-28 08:21+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-05-29 05:39+0000\n"
+"X-Launchpad-Export-Date: 2016-05-30 05:43+0000\n"
 "X-Generator: Launchpad (build 18053)\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -811,6 +811,7 @@ msgstr "이제 묻지 않아도 좋습니다(_A)"
 #: ../src/client/application/geary-controller.vala:1968
 #: ../src/client/application/geary-controller.vala:1970
 #: ../src/client/application/geary-controller.vala:1966
+#: ../src/client/application/geary-controller.vala:1962
 msgid "A file named \"%s\" already exists.  Do you want to replace it?"
 msgstr "이름이 \"%s\"인 파일이 이미 있습니다.  이 파일과 바꾸시겠습니까?"
 
@@ -819,6 +820,7 @@ msgstr "이름이 \"%s\"인 파일이 이미 있습니다.  이 파일과 바꾸
 #: ../src/client/application/geary-controller.vala:1970
 #: ../src/client/application/geary-controller.vala:1972
 #: ../src/client/application/geary-controller.vala:1968
+#: ../src/client/application/geary-controller.vala:1964
 msgid ""
 "The file already exists in \"%s\".  Replacing it will overwrite its contents."
 msgstr "\"%s\" 안에 파일이 이미 있습니다.  파일을 바꾸면 그 내용을 덮어 쓰게 됩니다."
@@ -828,6 +830,7 @@ msgstr "\"%s\" 안에 파일이 이미 있습니다.  파일을 바꾸면 그 �
 #: ../src/client/application/geary-controller.vala:1973
 #: ../src/client/application/geary-controller.vala:1975
 #: ../src/client/application/geary-controller.vala:1971
+#: ../src/client/application/geary-controller.vala:1967
 msgid "_Replace"
 msgstr "바꾸기(_R)"
 
@@ -843,6 +846,7 @@ msgstr "쓰고 있는 편지를 닫을까요?"
 #: ../src/client/application/geary-controller.vala:2401
 #: ../src/client/application/geary-controller.vala:2403
 #: ../src/client/application/geary-controller.vala:2398
+#: ../src/client/application/geary-controller.vala:2394
 msgid "Empty all email from your %s folder?"
 msgstr "%s 폴더의 모든 이메일을 비울까요?"
 
@@ -856,6 +860,7 @@ msgstr "기어리와 이메일 서버 안의 모든 메일을 지우게 됩니�
 #: ../src/client/application/geary-controller.vala:2403
 #: ../src/client/application/geary-controller.vala:2405
 #: ../src/client/application/geary-controller.vala:2400
+#: ../src/client/application/geary-controller.vala:2396
 msgid "This cannot be undone."
 msgstr "이 작업은 취소할 수 없습니다."
 
@@ -864,6 +869,7 @@ msgstr "이 작업은 취소할 수 없습니다."
 #: ../src/client/application/geary-controller.vala:2404
 #: ../src/client/application/geary-controller.vala:2406
 #: ../src/client/application/geary-controller.vala:2401
+#: ../src/client/application/geary-controller.vala:2397
 msgid "Empty %s"
 msgstr "%s 비우기"
 
@@ -872,6 +878,7 @@ msgstr "%s 비우기"
 #: ../src/client/application/geary-controller.vala:2421
 #: ../src/client/application/geary-controller.vala:2423
 #: ../src/client/application/geary-controller.vala:2418
+#: ../src/client/application/geary-controller.vala:2414
 msgid "Error emptying %s"
 msgstr "%s 비우기 오류 발생"
 
@@ -880,6 +887,7 @@ msgstr "%s 비우기 오류 발생"
 #: ../src/client/application/geary-controller.vala:2451
 #: ../src/client/application/geary-controller.vala:2453
 #: ../src/client/application/geary-controller.vala:2448
+#: ../src/client/application/geary-controller.vala:2444
 msgid "Do you want to permanently delete this message?"
 msgid_plural "Do you want to permanently delete these messages?"
 msgstr[0] "이 편지를 완전히 지우시겠습니까?"
@@ -889,6 +897,7 @@ msgstr[0] "이 편지를 완전히 지우시겠습니까?"
 #: ../src/client/application/geary-controller.vala:2453
 #: ../src/client/application/geary-controller.vala:2455
 #: ../src/client/application/geary-controller.vala:2450
+#: ../src/client/application/geary-controller.vala:2446
 msgid "Delete"
 msgstr "지우기"
 
@@ -897,6 +906,7 @@ msgstr "지우기"
 #: ../src/client/application/geary-controller.vala:2484
 #: ../src/client/application/geary-controller.vala:2486
 #: ../src/client/application/geary-controller.vala:2481
+#: ../src/client/application/geary-controller.vala:2477
 msgid "Undo archive (Ctrl+Z)"
 msgstr "편지 저장 취소 (Ctrl+Z)"
 
@@ -905,6 +915,7 @@ msgstr "편지 저장 취소 (Ctrl+Z)"
 #: ../src/client/application/geary-controller.vala:2499
 #: ../src/client/application/geary-controller.vala:2501
 #: ../src/client/application/geary-controller.vala:2496
+#: ../src/client/application/geary-controller.vala:2492
 msgid "Undo trash (Ctrl+Z)"
 msgstr "휴지통 취소"
 
@@ -913,6 +924,7 @@ msgstr "휴지통 취소"
 #: ../src/client/application/geary-controller.vala:2552
 #: ../src/client/application/geary-controller.vala:2554
 #: ../src/client/application/geary-controller.vala:2549
+#: ../src/client/application/geary-controller.vala:2545
 msgid "Undo (Ctrl+Z)"
 msgstr "되돌리기 (Ctrl+Z)"
 
@@ -2563,6 +2575,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2402
 #: ../src/client/application/geary-controller.vala:2404
 #: ../src/client/application/geary-controller.vala:2399
+#: ../src/client/application/geary-controller.vala:2395
 msgid "This removes the email from Mail and your email server."
 msgstr "메일과 이메일 서버 안의 모든 편지를 지우게 됩니다."
 
@@ -2764,3 +2777,25 @@ msgstr "원본 파일 포함"
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
 msgstr "들여 쓰기 (Ctrl+])"
+
+#: ../src/client/dialogs/OpenAttachmentDialog.vala:34
+msgid "Are you sure you want to open %s?"
+msgstr ""
+
+#: ../src/client/dialogs/OpenAttachmentDialog.vala:40
+msgid ""
+"Attachments may cause damage to your system if opened. Only open files from "
+"trusted sources."
+msgstr ""
+
+#: ../src/client/dialogs/OpenAttachmentDialog.vala:45
+msgid "Don't ask me again"
+msgstr ""
+
+#: ../src/client/dialogs/OpenAttachmentDialog.vala:48
+msgid "Open Anyway"
+msgstr ""
+
+#: ../src/client/dialogs/OpenAttachmentDialog.vala:64
+msgid "Cancel"
+msgstr ""
