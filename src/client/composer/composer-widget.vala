@@ -1540,8 +1540,9 @@ public class ComposerWidget : Gtk.EventBox {
         Gtk.Label label = new Gtk.Label(label_text);
         box.pack_start(label);
         label.halign = Gtk.Align.START;
-        label.xpad = 4;
-        
+        label.margin_start = 4;
+        label.margin_end = 4;
+
         Gtk.Button remove_button = new Gtk.Button.with_mnemonic(Stock._REMOVE);
         box.pack_start(remove_button, false, false);
         remove_button.clicked.connect(() => remove_attachment(attachment_file, box));
