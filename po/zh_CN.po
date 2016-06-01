@@ -17,15 +17,15 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-05-29 21:09-0700\n"
-"PO-Revision-Date: 2016-03-24 01:40+0000\n"
-"Last-Translator: colindemian <dengmengpc@gmail.com>\n"
+"PO-Revision-Date: 2016-05-31 10:16+0000\n"
+"Last-Translator: Menci <huanghaorui301@gmail.com>\n"
 "Language-Team: Chinese (China) "
 "(http://www.transifex.com/projects/p/geary/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-05-31 06:44+0000\n"
+"X-Launchpad-Export-Date: 2016-06-01 06:04+0000\n"
 "X-Generator: Launchpad (build 18053)\n"
 "Language: zh_CN\n"
 
@@ -789,6 +789,7 @@ msgstr ""
 "hepin <hepin@sosia.us>, 2013\n"
 "\n"
 "Launchpad Contributions:\n"
+"  Menci https://launchpad.net/~menci\n"
 "  YunQiang Su https://launchpad.net/~wzssyqa\n"
 "  colindemian https://launchpad.net/~colindemian"
 
@@ -2806,22 +2807,22 @@ msgstr "引用文本"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:34
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "您确定要打开 “%s”？"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:40
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
-msgstr ""
+msgstr "打开的附件可能会破坏您的系统。请只打开来自可信任源的文件。"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:45
 msgid "Don't ask me again"
-msgstr ""
+msgstr "不再询问"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:48
 msgid "Open Anyway"
-msgstr ""
+msgstr "仍然打开"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:64
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
