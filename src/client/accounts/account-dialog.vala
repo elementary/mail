@@ -36,8 +36,8 @@ public class AccountDialog : Gtk.Dialog {
         add_edit_pane.cancel.connect(on_cancel_back_to_list);
         add_edit_pane.size_changed.connect(() => { resize(1, 1); });
         add_edit_pane.edit_alternate_emails.connect(on_edit_alternate_emails);
-        remove_confirm_pane.ok.connect(on_delete_account_confirmed);
-        remove_confirm_pane.cancel.connect(on_cancel_back_to_list);
+        remove_confirm_pane.remove_account.connect (on_delete_account_confirmed);
+        remove_confirm_pane.cancel_button.clicked.connect (on_cancel_back_to_list);
         remove_fail_pane.ok.connect(on_cancel_back_to_list);
         edit_alternate_emails_pane.done.connect(on_done_back_to_editor);
         
