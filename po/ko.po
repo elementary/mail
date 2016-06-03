@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-05-29 21:09-0700\n"
+"POT-Creation-Date: 2016-06-02 00:59+0400\n"
 "PO-Revision-Date: 2016-05-30 06:15+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-05-31 06:43+0000\n"
-"X-Generator: Launchpad (build 18053)\n"
+"X-Launchpad-Export-Date: 2016-06-03 06:26+0000\n"
+"X-Generator: Launchpad (build 18086)\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -176,6 +176,7 @@ msgstr "나에게"
 #: ../src/engine/rfc822/rfc822-message.vala:781
 #: ../src/client/util/util-email.vala:30
 #: ../src/engine/rfc822/rfc822-message.vala:783
+#: ../src/engine/rfc822/rfc822-message.vala:775
 msgid "(no subject)"
 msgstr "(제목 없음)"
 
@@ -1777,6 +1778,7 @@ msgstr "%s (%s)"
 #: ../src/client/composer/composer-widget.vala:1637
 #: ../src/client/composer/composer-widget.vala:1601
 #: ../src/client/composer/composer-widget.vala:1598
+#: ../src/client/composer/composer-widget.vala:1599
 msgid "To: "
 msgstr "받는 사람: "
 
@@ -1785,6 +1787,7 @@ msgstr "받는 사람: "
 #: ../src/client/composer/composer-widget.vala:1640
 #: ../src/client/composer/composer-widget.vala:1604
 #: ../src/client/composer/composer-widget.vala:1601
+#: ../src/client/composer/composer-widget.vala:1602
 msgid "Cc: "
 msgstr "함께 받는 사람: "
 
@@ -1793,6 +1796,7 @@ msgstr "함께 받는 사람: "
 #: ../src/client/composer/composer-widget.vala:1643
 #: ../src/client/composer/composer-widget.vala:1607
 #: ../src/client/composer/composer-widget.vala:1604
+#: ../src/client/composer/composer-widget.vala:1605
 msgid "Bcc: "
 msgstr "숨겨 받는 사람: "
 
@@ -1801,6 +1805,7 @@ msgstr "숨겨 받는 사람: "
 #: ../src/client/composer/composer-widget.vala:1646
 #: ../src/client/composer/composer-widget.vala:1610
 #: ../src/client/composer/composer-widget.vala:1607
+#: ../src/client/composer/composer-widget.vala:1608
 msgid "Reply-To: "
 msgstr "답장 하기: "
 
@@ -1809,6 +1814,7 @@ msgstr "답장 하기: "
 #: ../src/client/composer/composer-widget.vala:1879
 #: ../src/client/composer/composer-widget.vala:1843
 #: ../src/client/composer/composer-widget.vala:1840
+#: ../src/client/composer/composer-widget.vala:1841
 msgid "Select Color"
 msgstr "색상 선택"
 
@@ -1817,6 +1823,7 @@ msgstr "색상 선택"
 #: ../src/client/composer/composer-widget.vala:2310
 #: ../src/client/composer/composer-widget.vala:2274
 #: ../src/client/composer/composer-widget.vala:2271
+#: ../src/client/composer/composer-widget.vala:2272
 msgid "%1$s via %2$s"
 msgstr "%2$s 를 경유해서 %1$s"
 
@@ -1825,6 +1832,7 @@ msgstr "%2$s 를 경유해서 %1$s"
 #: ../src/client/composer/composer-widget.vala:2352
 #: ../src/client/composer/composer-widget.vala:2315
 #: ../src/client/composer/composer-widget.vala:2312
+#: ../src/client/composer/composer-widget.vala:2313
 msgid "_From:"
 msgstr "보내는 사람(_F)"
 
@@ -1860,6 +1868,7 @@ msgstr "확인(_O)"
 
 #: ../src/client/components/stock.vala:19 ../data/ui/remove_confirm.ui:153
 #: ../data/ui/edit_alternate_emails.ui:160 ../data/ui/password-dialog.ui:196
+#: ../data/ui/remove_confirm.ui:155
 msgid "_Cancel"
 msgstr "취소(_C)"
 
@@ -1885,7 +1894,7 @@ msgid "_Print..."
 msgstr "인쇄(_P)..."
 
 #: ../src/client/components/stock.vala:30 ../data/ui/remove_confirm.ui:168
-#: ../src/client/components/stock.vala:29
+#: ../src/client/components/stock.vala:29 ../data/ui/remove_confirm.ui:170
 msgid "_Remove"
 msgstr "제거(_R)"
 

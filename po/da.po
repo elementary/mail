@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
-"POT-Creation-Date: 2016-05-29 21:09-0700\n"
+"POT-Creation-Date: 2016-06-02 00:59+0400\n"
 "PO-Revision-Date: 2016-01-30 16:18+0000\n"
 "Last-Translator: Jimmy Merrild Krag <jimmy@kragenet.dk>\n"
 "Language-Team: Danish "
@@ -19,8 +19,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-05-31 06:42+0000\n"
-"X-Generator: Launchpad (build 18053)\n"
+"X-Launchpad-Export-Date: 2016-06-03 06:25+0000\n"
+"X-Generator: Launchpad (build 18086)\n"
 "Language: da\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -181,6 +181,7 @@ msgstr "mig"
 #: ../src/engine/rfc822/rfc822-message.vala:781
 #: ../src/client/util/util-email.vala:30
 #: ../src/engine/rfc822/rfc822-message.vala:783
+#: ../src/engine/rfc822/rfc822-message.vala:775
 msgid "(no subject)"
 msgstr "(intet emne)"
 
@@ -1819,6 +1820,7 @@ msgstr "%s (%s)"
 #: ../src/client/composer/composer-widget.vala:1637
 #: ../src/client/composer/composer-widget.vala:1601
 #: ../src/client/composer/composer-widget.vala:1598
+#: ../src/client/composer/composer-widget.vala:1599
 msgid "To: "
 msgstr "Til: "
 
@@ -1827,6 +1829,7 @@ msgstr "Til: "
 #: ../src/client/composer/composer-widget.vala:1640
 #: ../src/client/composer/composer-widget.vala:1604
 #: ../src/client/composer/composer-widget.vala:1601
+#: ../src/client/composer/composer-widget.vala:1602
 msgid "Cc: "
 msgstr "Cc: "
 
@@ -1835,6 +1838,7 @@ msgstr "Cc: "
 #: ../src/client/composer/composer-widget.vala:1643
 #: ../src/client/composer/composer-widget.vala:1607
 #: ../src/client/composer/composer-widget.vala:1604
+#: ../src/client/composer/composer-widget.vala:1605
 msgid "Bcc: "
 msgstr "Bcc: "
 
@@ -1843,6 +1847,7 @@ msgstr "Bcc: "
 #: ../src/client/composer/composer-widget.vala:1646
 #: ../src/client/composer/composer-widget.vala:1610
 #: ../src/client/composer/composer-widget.vala:1607
+#: ../src/client/composer/composer-widget.vala:1608
 msgid "Reply-To: "
 msgstr "Svar-til: "
 
@@ -1851,6 +1856,7 @@ msgstr "Svar-til: "
 #: ../src/client/composer/composer-widget.vala:1879
 #: ../src/client/composer/composer-widget.vala:1843
 #: ../src/client/composer/composer-widget.vala:1840
+#: ../src/client/composer/composer-widget.vala:1841
 msgid "Select Color"
 msgstr "Vælg farve"
 
@@ -1859,6 +1865,7 @@ msgstr "Vælg farve"
 #: ../src/client/composer/composer-widget.vala:2310
 #: ../src/client/composer/composer-widget.vala:2274
 #: ../src/client/composer/composer-widget.vala:2271
+#: ../src/client/composer/composer-widget.vala:2272
 msgid "%1$s via %2$s"
 msgstr "%1$s via %2$s"
 
@@ -1867,6 +1874,7 @@ msgstr "%1$s via %2$s"
 #: ../src/client/composer/composer-widget.vala:2352
 #: ../src/client/composer/composer-widget.vala:2315
 #: ../src/client/composer/composer-widget.vala:2312
+#: ../src/client/composer/composer-widget.vala:2313
 msgid "_From:"
 msgstr "_Fra:"
 
@@ -1904,6 +1912,7 @@ msgstr "_OK"
 
 #: ../src/client/components/stock.vala:19 ../data/ui/remove_confirm.ui:153
 #: ../data/ui/edit_alternate_emails.ui:160 ../data/ui/password-dialog.ui:196
+#: ../data/ui/remove_confirm.ui:155
 msgid "_Cancel"
 msgstr "Annullér"
 
@@ -1929,7 +1938,7 @@ msgid "_Print..."
 msgstr "_Udskriv"
 
 #: ../src/client/components/stock.vala:30 ../data/ui/remove_confirm.ui:168
-#: ../src/client/components/stock.vala:29
+#: ../src/client/components/stock.vala:29 ../data/ui/remove_confirm.ui:170
 msgid "_Remove"
 msgstr "_Fjern"
 

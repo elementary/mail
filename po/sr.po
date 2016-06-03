@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-05-29 21:09-0700\n"
+"POT-Creation-Date: 2016-06-02 00:59+0400\n"
 "PO-Revision-Date: 2015-11-23 11:52+0000\n"
 "Last-Translator: Miloš Popović <gpopac@gmail.com>\n"
 "Language-Team: српски <gnome-sr@googlegroups.org>\n"
@@ -21,8 +21,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-05-31 06:43+0000\n"
-"X-Generator: Launchpad (build 18053)\n"
+"X-Launchpad-Export-Date: 2016-06-03 06:26+0000\n"
+"X-Generator: Launchpad (build 18086)\n"
 "X-Project-Style: gnome\n"
 "Language: sr\n"
 
@@ -188,6 +188,7 @@ msgstr "моја"
 #: ../src/engine/rfc822/rfc822-message.vala:781
 #: ../src/client/util/util-email.vala:30
 #: ../src/engine/rfc822/rfc822-message.vala:783
+#: ../src/engine/rfc822/rfc822-message.vala:775
 msgid "(no subject)"
 msgstr "(без наслова)"
 
@@ -1854,6 +1855,7 @@ msgstr "%s (%s)"
 #: ../src/client/composer/composer-widget.vala:1637
 #: ../src/client/composer/composer-widget.vala:1601
 #: ../src/client/composer/composer-widget.vala:1598
+#: ../src/client/composer/composer-widget.vala:1599
 msgid "To: "
 msgstr "Прима: "
 
@@ -1862,6 +1864,7 @@ msgstr "Прима: "
 #: ../src/client/composer/composer-widget.vala:1640
 #: ../src/client/composer/composer-widget.vala:1604
 #: ../src/client/composer/composer-widget.vala:1601
+#: ../src/client/composer/composer-widget.vala:1602
 msgid "Cc: "
 msgstr "Цц: "
 
@@ -1870,6 +1873,7 @@ msgstr "Цц: "
 #: ../src/client/composer/composer-widget.vala:1643
 #: ../src/client/composer/composer-widget.vala:1607
 #: ../src/client/composer/composer-widget.vala:1604
+#: ../src/client/composer/composer-widget.vala:1605
 msgid "Bcc: "
 msgstr "Бцц: "
 
@@ -1878,6 +1882,7 @@ msgstr "Бцц: "
 #: ../src/client/composer/composer-widget.vala:1646
 #: ../src/client/composer/composer-widget.vala:1610
 #: ../src/client/composer/composer-widget.vala:1607
+#: ../src/client/composer/composer-widget.vala:1608
 msgid "Reply-To: "
 msgstr "Одговор за: "
 
@@ -1886,6 +1891,7 @@ msgstr "Одговор за: "
 #: ../src/client/composer/composer-widget.vala:1879
 #: ../src/client/composer/composer-widget.vala:1843
 #: ../src/client/composer/composer-widget.vala:1840
+#: ../src/client/composer/composer-widget.vala:1841
 msgid "Select Color"
 msgstr "Изаберите боју"
 
@@ -1894,6 +1900,7 @@ msgstr "Изаберите боју"
 #: ../src/client/composer/composer-widget.vala:2310
 #: ../src/client/composer/composer-widget.vala:2274
 #: ../src/client/composer/composer-widget.vala:2271
+#: ../src/client/composer/composer-widget.vala:2272
 msgid "%1$s via %2$s"
 msgstr "%1$s преко %2$s"
 
@@ -1902,6 +1909,7 @@ msgstr "%1$s преко %2$s"
 #: ../src/client/composer/composer-widget.vala:2352
 #: ../src/client/composer/composer-widget.vala:2315
 #: ../src/client/composer/composer-widget.vala:2312
+#: ../src/client/composer/composer-widget.vala:2313
 msgid "_From:"
 msgstr "_Шаље:"
 
@@ -1941,6 +1949,7 @@ msgstr "У _реду"
 
 #: ../src/client/components/stock.vala:19 ../data/ui/remove_confirm.ui:153
 #: ../data/ui/edit_alternate_emails.ui:160 ../data/ui/password-dialog.ui:196
+#: ../data/ui/remove_confirm.ui:155
 msgid "_Cancel"
 msgstr "От_кажи"
 
@@ -1966,7 +1975,7 @@ msgid "_Print..."
 msgstr "_Штампај..."
 
 #: ../src/client/components/stock.vala:30 ../data/ui/remove_confirm.ui:168
-#: ../src/client/components/stock.vala:29
+#: ../src/client/components/stock.vala:29 ../data/ui/remove_confirm.ui:170
 msgid "_Remove"
 msgstr "_Уклони"
 
