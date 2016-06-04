@@ -366,7 +366,7 @@ client/dialogs/alert-dialog.vala
 client/dialogs/OpenAttachmentDialog.vala
 client/dialogs/attachment-dialog.vala
 client/dialogs/certificate-warning-dialog.vala
-client/dialogs/password-dialog.vala
+client/dialogs/PasswordDialog.vala
 client/dialogs/preferences-dialog.vala
 client/dialogs/upgrade-dialog.vala
 
@@ -524,7 +524,7 @@ pkg_check_modules(DEPS REQUIRED
     gee-0.8>=0.8.5
     libcanberra>=0.28
     sqlite3>=3.7.4
-    gmime-2.6>=2.6.14
+    gmime-2.6>=2.6.17
     libsecret-1>=0.11
     libxml-2.0>=2.7.8
     gcr-3>=3.10.1

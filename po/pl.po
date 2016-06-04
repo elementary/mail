@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-29 21:09-0700\n"
-"PO-Revision-Date: 2016-05-30 16:08+0000\n"
+"POT-Creation-Date: 2016-06-02 00:59+0400\n"
+"PO-Revision-Date: 2016-06-03 08:14+0000\n"
 "Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "MIME-Version: 1.0\n"
@@ -27,8 +27,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-05-31 06:43+0000\n"
-"X-Generator: Launchpad (build 18053)\n"
+"X-Launchpad-Export-Date: 2016-06-04 06:20+0000\n"
+"X-Generator: Launchpad (build 18086)\n"
 "X-Poedit-Country: Poland\n"
 "Language: pl\n"
 "X-Poedit-Language: Polish\n"
@@ -197,6 +197,7 @@ msgstr "ja"
 #: ../src/engine/rfc822/rfc822-message.vala:781
 #: ../src/client/util/util-email.vala:30
 #: ../src/engine/rfc822/rfc822-message.vala:783
+#: ../src/engine/rfc822/rfc822-message.vala:775
 msgid "(no subject)"
 msgstr "(brak tematu)"
 
@@ -1863,6 +1864,7 @@ msgstr "%s (%s)"
 #: ../src/client/composer/composer-widget.vala:1637
 #: ../src/client/composer/composer-widget.vala:1601
 #: ../src/client/composer/composer-widget.vala:1598
+#: ../src/client/composer/composer-widget.vala:1599
 msgid "To: "
 msgstr "Do: "
 
@@ -1871,6 +1873,7 @@ msgstr "Do: "
 #: ../src/client/composer/composer-widget.vala:1640
 #: ../src/client/composer/composer-widget.vala:1604
 #: ../src/client/composer/composer-widget.vala:1601
+#: ../src/client/composer/composer-widget.vala:1602
 msgid "Cc: "
 msgstr "Dw: "
 
@@ -1879,6 +1882,7 @@ msgstr "Dw: "
 #: ../src/client/composer/composer-widget.vala:1643
 #: ../src/client/composer/composer-widget.vala:1607
 #: ../src/client/composer/composer-widget.vala:1604
+#: ../src/client/composer/composer-widget.vala:1605
 msgid "Bcc: "
 msgstr "Udw: "
 
@@ -1887,6 +1891,7 @@ msgstr "Udw: "
 #: ../src/client/composer/composer-widget.vala:1646
 #: ../src/client/composer/composer-widget.vala:1610
 #: ../src/client/composer/composer-widget.vala:1607
+#: ../src/client/composer/composer-widget.vala:1608
 msgid "Reply-To: "
 msgstr "Odpowiedź do: "
 
@@ -1895,6 +1900,7 @@ msgstr "Odpowiedź do: "
 #: ../src/client/composer/composer-widget.vala:1879
 #: ../src/client/composer/composer-widget.vala:1843
 #: ../src/client/composer/composer-widget.vala:1840
+#: ../src/client/composer/composer-widget.vala:1841
 msgid "Select Color"
 msgstr "Wybór koloru"
 
@@ -1903,6 +1909,7 @@ msgstr "Wybór koloru"
 #: ../src/client/composer/composer-widget.vala:2310
 #: ../src/client/composer/composer-widget.vala:2274
 #: ../src/client/composer/composer-widget.vala:2271
+#: ../src/client/composer/composer-widget.vala:2272
 msgid "%1$s via %2$s"
 msgstr "%1$s przez %2$s"
 
@@ -1911,6 +1918,7 @@ msgstr "%1$s przez %2$s"
 #: ../src/client/composer/composer-widget.vala:2352
 #: ../src/client/composer/composer-widget.vala:2315
 #: ../src/client/composer/composer-widget.vala:2312
+#: ../src/client/composer/composer-widget.vala:2313
 msgid "_From:"
 msgstr "_Od:"
 
@@ -1950,6 +1958,7 @@ msgstr "_OK"
 
 #: ../src/client/components/stock.vala:19 ../data/ui/remove_confirm.ui:153
 #: ../data/ui/edit_alternate_emails.ui:160 ../data/ui/password-dialog.ui:196
+#: ../data/ui/remove_confirm.ui:155
 msgid "_Cancel"
 msgstr "_Anuluj"
 
@@ -1975,7 +1984,7 @@ msgid "_Print..."
 msgstr "Wy_drukuj…"
 
 #: ../src/client/components/stock.vala:30 ../data/ui/remove_confirm.ui:168
-#: ../src/client/components/stock.vala:29
+#: ../src/client/components/stock.vala:29 ../data/ui/remove_confirm.ui:170
 msgid "_Remove"
 msgstr "_Usuń"
 
@@ -2899,22 +2908,24 @@ msgstr "Cytuj tekst (Ctrl+])"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:34
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "Czy na pewno chcesz otworzyć %s?"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:40
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"Załączniki, jeśli zostaną otwarte, mogą spowodować uszkodzenie systemu. "
+"Otwieraj załączniki pochodzące tylko z zaufanych źródeł."
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:45
 msgid "Don't ask me again"
-msgstr ""
+msgstr "Nie pytaj ponownie"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:48
 msgid "Open Anyway"
-msgstr ""
+msgstr "Otwórz mimo to"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:64
 msgid "Cancel"
-msgstr ""
+msgstr "Anuluj"
