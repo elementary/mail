@@ -127,11 +127,10 @@ public class SecretMediator : Geary.CredentialsMediator, Object {
         
         PasswordDialog password_dialog = new PasswordDialog(main_window, services.has_smtp(),
             account_information, services);
-        bool result = password_dialog.run();
         
         dialog_mutex.release(ref token);
         
-        if (!result) {
+        if (password_dialog.run () != Gtk.ResponseType.OK) {
             // user cancelled the dialog
             imap_password = null;
             smtp_password = null;
@@ -153,6 +152,7 @@ public class SecretMediator : Geary.CredentialsMediator, Object {
             smtp_password = null;
             smtp_remember_password = false;
         }
+        password_dialog.destroy ();
         return true;
     }
 }

@@ -366,7 +366,7 @@ client/dialogs/alert-dialog.vala
 client/dialogs/OpenAttachmentDialog.vala
 client/dialogs/attachment-dialog.vala
 client/dialogs/certificate-warning-dialog.vala
-client/dialogs/password-dialog.vala
+client/dialogs/PasswordDialog.vala
 client/dialogs/preferences-dialog.vala
 client/dialogs/upgrade-dialog.vala
 
