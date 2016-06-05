@@ -20,10 +20,7 @@ public class IconFactory {
         
         private set { _instance = value; }
     }
-    
-    public const int APPLICATION_ICON_SIZE = 128;
-    public Gdk.Pixbuf application_icon { get; private set; }
-    
+
     public const int UNREAD_ICON_SIZE = 16;
     public const int STAR_ICON_SIZE = 16;
     
@@ -41,9 +38,6 @@ public class IconFactory {
         append_icons_search_path("48x48");
         append_icons_search_path("24x24");
         append_icons_search_path("16x16");
-        
-        // Load icons here.
-        application_icon = load("geary", APPLICATION_ICON_SIZE);
     }
     
     public void init() {
@@ -86,25 +80,7 @@ public class IconFactory {
         else
             icon_theme.append_search_path(icons_dir.get_child(name).get_path());
     }
-    
-    private Gdk.Pixbuf? load(string icon_name, int size, Gtk.IconLookupFlags flags = 0) {
-        // Try looking up IconInfo (to report path in case of error) then load image
-        Gtk.IconInfo? icon_info = icon_theme.lookup_icon(icon_name, size, flags);
-        if (icon_info != null) {
-            try {
-                return icon_info.load_icon();
-            } catch (Error err) {
-                warning("Couldn't load icon %s at %s, falling back to image-missing: %s", icon_name,
-                    icon_info.get_filename(), err.message);
-            }
-        } else {
-            debug("Unable to lookup icon %s, falling back to image-missing...", icon_name);
-        }
-        
-        // Default: missing image icon.
-        return get_missing_icon(size, flags);
-    }
-    
+
     // Attempts to load and return the missing image icon.
     private Gdk.Pixbuf? get_missing_icon(int size, Gtk.IconLookupFlags flags = 0) {
         try {
