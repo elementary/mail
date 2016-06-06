@@ -17,16 +17,16 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-06-02 00:59+0400\n"
-"PO-Revision-Date: 2016-05-30 17:56+0000\n"
-"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
+"POT-Creation-Date: 2016-06-04 23:08-0700\n"
+"PO-Revision-Date: 2016-06-05 16:54+0000\n"
+"Last-Translator: Djaler <djaler1@gmail.com>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-06-04 06:20+0000\n"
+"X-Launchpad-Export-Date: 2016-06-06 05:28+0000\n"
 "X-Generator: Launchpad (build 18086)\n"
 "Language: ru\n"
 
@@ -2100,6 +2100,7 @@ msgstr ""
 "учётную запись?</span> "
 
 #: ../data/ui/remove_confirm.ui:58
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:42
 msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
@@ -2108,6 +2109,7 @@ msgstr ""
 "Это не повлияет на письма, находящиеся на сервере."
 
 #: ../data/ui/remove_confirm.ui:80
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:47
 msgid "Nickname:"
 msgstr "Псевдоним:"
 
@@ -2689,6 +2691,7 @@ msgid "Always show remote images:"
 msgstr "Всегда показывать изображения:"
 
 #: ../src/client/dialogs/password-dialog.vala:16
+#: ../src/client/dialogs/PasswordDialog.vala:39
 msgid "Mail requires your email password to continue"
 msgstr "Mail требуется пароль эл. почты чтобы продолжить"
 
@@ -2904,5 +2907,39 @@ msgid "Open Anyway"
 msgstr "Всё равно открыть"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:64
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:59
+#: ../src/client/dialogs/PasswordDialog.vala:96
 msgid "Cancel"
 msgstr "Отменить"
+
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:36
+msgid "Are you sure you want to remove this account?"
+msgstr "Вы уверены, что хотите удалить этот аккаунт?"
+
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:53
+msgid "Email Address:"
+msgstr "Адрес электронной почты:"
+
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:61
+msgid "Remove Account"
+msgstr "Удалить аккаунт"
+
+#: ../src/client/dialogs/PasswordDialog.vala:45
+msgid "Username:"
+msgstr "Имя пользователя:"
+
+#: ../src/client/dialogs/PasswordDialog.vala:52
+msgid "Password:"
+msgstr "Пароль:"
+
+#: ../src/client/dialogs/PasswordDialog.vala:55
+msgid "SMTP Credentials:"
+msgstr "Учетные данные SMTP:"
+
+#: ../src/client/dialogs/PasswordDialog.vala:62
+msgid "Remember password"
+msgstr "Запомнить пароль"
+
+#: ../src/client/dialogs/PasswordDialog.vala:75
+msgid "Authenticate"
+msgstr "Аутентификация"

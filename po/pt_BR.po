@@ -21,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-06-02 00:59+0400\n"
+"POT-Creation-Date: 2016-06-04 23:08-0700\n"
 "PO-Revision-Date: 2016-06-03 16:49+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-06-04 06:20+0000\n"
+"X-Launchpad-Export-Date: 2016-06-06 05:28+0000\n"
 "X-Generator: Launchpad (build 18086)\n"
 "Language: pt_BR\n"
 
@@ -807,6 +807,7 @@ msgstr ""
 "  Guilmour Alves da Silva Cunha https://launchpad.net/~guilmour-asc\n"
 "  Leonardo Lemos https://launchpad.net/~leonardolemos\n"
 "  Lucas Cenir Friederich https://launchpad.net/~lucasfriederich\n"
+"  Lucas Trevisan https://launchpad.net/~furle\n"
 "  Marcelo Hosannah https://launchpad.net/~mhosannah\n"
 "  Marco Aurélio Krause https://launchpad.net/~fxhelp-br\n"
 "  Matheus Macabu https://launchpad.net/~mkbu\n"
@@ -2101,6 +2102,7 @@ msgstr ""
 "esta conta?</span> "
 
 #: ../data/ui/remove_confirm.ui:58
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:42
 msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
@@ -2109,6 +2111,7 @@ msgstr ""
 "Isso não afetará emails no servidor."
 
 #: ../data/ui/remove_confirm.ui:80
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:47
 msgid "Nickname:"
 msgstr "Apelido:"
 
@@ -2694,6 +2697,7 @@ msgid "Always show remote images:"
 msgstr "Sempre mostrar imagens remotas:"
 
 #: ../src/client/dialogs/password-dialog.vala:16
+#: ../src/client/dialogs/PasswordDialog.vala:39
 msgid "Mail requires your email password to continue"
 msgstr "Mail requer a senha de seu email para continuar"
 
@@ -2909,5 +2913,39 @@ msgid "Open Anyway"
 msgstr ""
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:64
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:59
+#: ../src/client/dialogs/PasswordDialog.vala:96
 msgid "Cancel"
+msgstr ""
+
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:36
+msgid "Are you sure you want to remove this account?"
+msgstr ""
+
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:53
+msgid "Email Address:"
+msgstr ""
+
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:61
+msgid "Remove Account"
+msgstr ""
+
+#: ../src/client/dialogs/PasswordDialog.vala:45
+msgid "Username:"
+msgstr ""
+
+#: ../src/client/dialogs/PasswordDialog.vala:52
+msgid "Password:"
+msgstr ""
+
+#: ../src/client/dialogs/PasswordDialog.vala:55
+msgid "SMTP Credentials:"
+msgstr ""
+
+#: ../src/client/dialogs/PasswordDialog.vala:62
+msgid "Remember password"
+msgstr ""
+
+#: ../src/client/dialogs/PasswordDialog.vala:75
+msgid "Authenticate"
 msgstr ""

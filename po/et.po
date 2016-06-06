@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
-"POT-Creation-Date: 2016-06-02 00:59+0400\n"
+"POT-Creation-Date: 2016-06-04 23:08-0700\n"
 "PO-Revision-Date: 2015-11-23 11:50+0000\n"
 "Last-Translator: Jim Nelson <jim@yorba.org>\n"
 "Language-Team: Estonian "
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-06-04 06:19+0000\n"
+"X-Launchpad-Export-Date: 2016-06-06 05:27+0000\n"
 "X-Generator: Launchpad (build 18086)\n"
 "Language: et\n"
 
@@ -2023,12 +2023,14 @@ msgid ""
 msgstr ""
 
 #: ../data/ui/remove_confirm.ui:58
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:42
 msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
 msgstr ""
 
 #: ../data/ui/remove_confirm.ui:80
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:47
 msgid "Nickname:"
 msgstr ""
 
@@ -2580,6 +2582,7 @@ msgid "Always show remote images:"
 msgstr ""
 
 #: ../src/client/dialogs/password-dialog.vala:16
+#: ../src/client/dialogs/PasswordDialog.vala:39
 msgid "Mail requires your email password to continue"
 msgstr ""
 
@@ -2787,5 +2790,39 @@ msgid "Open Anyway"
 msgstr ""
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:64
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:59
+#: ../src/client/dialogs/PasswordDialog.vala:96
 msgid "Cancel"
+msgstr ""
+
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:36
+msgid "Are you sure you want to remove this account?"
+msgstr ""
+
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:53
+msgid "Email Address:"
+msgstr ""
+
+#: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:61
+msgid "Remove Account"
+msgstr ""
+
+#: ../src/client/dialogs/PasswordDialog.vala:45
+msgid "Username:"
+msgstr ""
+
+#: ../src/client/dialogs/PasswordDialog.vala:52
+msgid "Password:"
+msgstr ""
+
+#: ../src/client/dialogs/PasswordDialog.vala:55
+msgid "SMTP Credentials:"
+msgstr ""
+
+#: ../src/client/dialogs/PasswordDialog.vala:62
+msgid "Remember password"
+msgstr ""
+
+#: ../src/client/dialogs/PasswordDialog.vala:75
+msgid "Authenticate"
 msgstr ""
