@@ -10,16 +10,16 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2016-06-04 23:08-0700\n"
-"PO-Revision-Date: 2015-11-24 15:53+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
+"PO-Revision-Date: 2016-06-07 05:10+0000\n"
+"Last-Translator: Timothy <timothy.wong@rocketmail.com>\n"
 "Language-Team: Malay (Malaysia) "
 "(http://www.transifex.com/projects/p/geary/language/ms_MY/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-06-06 05:28+0000\n"
-"X-Generator: Launchpad (build 18086)\n"
+"X-Launchpad-Export-Date: 2016-06-07 05:45+0000\n"
+"X-Generator: Launchpad (build 18097)\n"
 "Language: ms_MY\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -275,7 +275,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 msgid "Move conversations to Trash (Delete, Backspace)"
-msgstr ""
+msgstr "Pindahkan perbualan-perbualan ke Tong Sampah (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
@@ -517,7 +517,7 @@ msgstr "Maju (Ctrl+L, F)"
 #: ../src/client/application/geary-controller.vala:485
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty"
-msgstr ""
+msgstr "Kosong"
 
 #: ../src/client/application/geary-controller.vala:492
 #: ../src/client/application/geary-controller.vala:491
@@ -526,7 +526,7 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:71
 #: ../src/client/application/geary-controller.vala:481
 msgid "Empty Spam or Trash folders"
-msgstr ""
+msgstr "Kosongkan \"Spam\" atau Tong Sampah"
 
 #: ../src/client/application/geary-controller.vala:496
 #: ../src/client/application/geary-controller.vala:495
@@ -542,11 +542,11 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:489
 #: ../src/client/application/geary-controller.vala:483
 msgid "Empty _Trash…"
-msgstr ""
+msgstr "Kosongkan_TongSampah"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
-msgstr ""
+msgstr "Togolkan bar carian"
 
 #: ../src/client/application/geary-controller.vala:746
 #: ../src/client/application/geary-controller.vala:740
@@ -785,6 +785,7 @@ msgstr ""
 "Abuyop <abuyop@gmail.com>\n"
 "\n"
 "Launchpad Contributions:\n"
+"  Timothy https://launchpad.net/~timothy-wong\n"
 "  abuyop https://launchpad.net/~abuyop\n"
 "  elementary Apps team https://launchpad.net/~elementary-apps"
 
