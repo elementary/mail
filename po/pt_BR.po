@@ -22,14 +22,14 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-06-04 23:08-0700\n"
-"PO-Revision-Date: 2016-06-06 17:13+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
+"PO-Revision-Date: 2016-06-14 00:29+0000\n"
+"Last-Translator: Leonardo Lemos <Unknown>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-06-07 05:45+0000\n"
+"X-Launchpad-Export-Date: 2016-06-14 06:29+0000\n"
 "X-Generator: Launchpad (build 18097)\n"
 "Language: pt_BR\n"
 
@@ -2896,56 +2896,58 @@ msgstr "Citar texto (Ctrl+])"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:34
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "Você tem certeza que deseja abrir %s?"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:40
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"Se abertos, anexos podem causar danos ao seu sistema. Abra apenas arquivos "
+"de fontes confiáveis."
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:45
 msgid "Don't ask me again"
-msgstr ""
+msgstr "Não me pergunte novamente"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:48
 msgid "Open Anyway"
-msgstr ""
+msgstr "Abrir de qualquer maneira"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:64
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:59
 #: ../src/client/dialogs/PasswordDialog.vala:96
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:36
 msgid "Are you sure you want to remove this account?"
-msgstr ""
+msgstr "Você tem certeza que deseja remover essa conta?"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:53
 msgid "Email Address:"
-msgstr ""
+msgstr "Endereço de E-mail:"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:61
 msgid "Remove Account"
-msgstr ""
+msgstr "Remover conta"
 
 #: ../src/client/dialogs/PasswordDialog.vala:45
 msgid "Username:"
-msgstr ""
+msgstr "Nome de usuário:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:52
 msgid "Password:"
-msgstr ""
+msgstr "Senha:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:55
 msgid "SMTP Credentials:"
-msgstr ""
+msgstr "Credenciais SMTP:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:62
 msgid "Remember password"
-msgstr ""
+msgstr "Lembrar senha"
 
 #: ../src/client/dialogs/PasswordDialog.vala:75
 msgid "Authenticate"
-msgstr ""
+msgstr "Autenticar"
