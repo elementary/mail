@@ -32,9 +32,9 @@ public class ConversationViewer : Gtk.Stack {
     private const int MAX_INLINE_IMAGE_MAJOR_DIM = 1024;
     private const int QUOTE_SIZE_THRESHOLD = 120;
     // The upper and lower margin on which the mail is considered as not viewed.
-    private static const int READ_MARGIN = 100;
+    private const int READ_MARGIN = 100;
     
-    private static const string EMBEDDED_CSS = """
+    private const string EMBEDDED_CSS = """
         .deck {
             background-color: shade (shade (#FFF, 0.96), 0.92);
         }
