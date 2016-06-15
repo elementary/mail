@@ -11,39 +11,39 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2016-06-04 23:08-0700\n"
-"PO-Revision-Date: 2015-11-23 11:50+0000\n"
-"Last-Translator: Jim Nelson <jim@yorba.org>\n"
+"PO-Revision-Date: 2016-06-14 10:01+0000\n"
+"Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
 "Language-Team: Estonian "
 "(http://www.transifex.com/projects/p/geary/language/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-06-06 05:27+0000\n"
-"X-Generator: Launchpad (build 18086)\n"
+"X-Launchpad-Export-Date: 2016-06-15 06:27+0000\n"
+"X-Generator: Launchpad (build 18097)\n"
 "Language: et\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
-msgstr ""
+msgstr "Mustandid | Mustand"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:580
 msgid "Sent | Sent Mail | Sent Email | Sent E-Mail"
-msgstr ""
+msgstr "Saadetud | Saadetud kirjad | Saadetud meil | Saadetud e-kirjad"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:585
 msgid ""
 "Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
 "| Bulk E-Mail"
-msgstr ""
+msgstr "Rämps | Spämm | Spam | Junk | Rämpspost | Rämpskirjad | Rämpskiri"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:590
 msgid "Trash | Rubbish | Rubbish Bin"
-msgstr ""
+msgstr "Prügi | Prügikast"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:595
 msgid "Archive | Archives"
-msgstr ""
+msgstr "Arhiiv | Arhiivid"
 
 #: ../src/engine/api/geary-special-folder-type.vala:24
 msgid "Inbox"
@@ -90,7 +90,7 @@ msgstr ""
 
 #: ../src/engine/api/geary-special-folder-type.vala:54
 msgid "Archive"
-msgstr ""
+msgstr "Arhiiv"
 
 #: ../src/engine/api/geary-special-folder-type.vala:58 ../data/ui/login.ui:633
 #: ../data/ui/login.ui:650
@@ -755,7 +755,8 @@ msgstr ""
 "translator-credits\n"
 "\n"
 "Launchpad Contributions:\n"
-"  Jim Nelson https://launchpad.net/~yorba-jim"
+"  Jim Nelson https://launchpad.net/~yorba-jim\n"
+"  Kristjan Vool https://launchpad.net/~tictac7x"
 
 #: ../src/client/application/geary-controller.vala:1976
 #: ../src/client/application/geary-controller.vala:1970
@@ -1151,7 +1152,7 @@ msgstr "Teretulemast meiliklienti Geary"
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
 msgid "Enter your account information to get started."
-msgstr "Alustuseks sisesta oma e-maili konto andmed"
+msgstr "Alustuseks sisesta oma e-posti konto andmed"
 
 #: ../src/client/accounts/add-edit-page.vala:253
 #: ../src/client/accounts/add-edit-page.vala:254
@@ -1840,7 +1841,7 @@ msgstr ""
 #. / Displayed in the space-limited status bar while a message is in the process of being sent.
 #: ../src/client/components/status-bar.vala:26
 msgid "Sending..."
-msgstr ""
+msgstr "Saatmine..."
 
 #: ../src/client/components/conversation-find-bar.vala:214
 msgid "%i match"
@@ -1941,7 +1942,7 @@ msgstr ""
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
 msgid "Welcome to Mail"
-msgstr ""
+msgstr "Teretulemast kasutama e-posti"
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
 #: ../src/client/composer/composer-toolbar.vala:77
@@ -2036,7 +2037,7 @@ msgstr ""
 
 #: ../data/ui/remove_confirm.ui:94
 msgid "Email address:"
-msgstr ""
+msgstr "E-posti aadress:"
 
 #: ../data/ui/find_bar.ui:59
 msgid "Find"
@@ -2249,15 +2250,15 @@ msgstr ""
 
 #: ../data/ui/composer.ui:218
 msgid "_Send"
-msgstr ""
+msgstr "_Saada"
 
 #: ../data/ui/composer.ui:219 ../src/client/composer/ComposerHeaderBar.vala:46
 msgid "Send"
-msgstr ""
+msgstr "Saada"
 
 #: ../data/ui/composer.ui:220 ../src/client/composer/ComposerHeaderBar.vala:47
 msgid "Send (Ctrl+Enter)"
-msgstr ""
+msgstr "Saada (Ctrl + Enter)"
 
 #: ../data/ui/composer.ui:226
 msgid "_Attach File"
@@ -2342,11 +2343,11 @@ msgstr ""
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
-msgstr ""
+msgstr "Parool"
 
 #: ../data/ui/login.ui:97 ../data/ui/login.ui:545
 msgid "_Password:"
-msgstr ""
+msgstr "_Parool:"
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
@@ -2498,7 +2499,7 @@ msgstr ""
 
 #: ../data/ui/password-dialog.ui:152
 msgid "_Remember password"
-msgstr ""
+msgstr "Parooli _meeldejätmine"
 
 #: ../data/ui/password-dialog.ui:210
 msgid "_Authenticate"
@@ -2608,7 +2609,7 @@ msgstr ""
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Mail validates your account."
-msgstr ""
+msgstr "Konto andmete kontrollimine..."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
@@ -2616,7 +2617,7 @@ msgstr ""
 
 #: ../src/client/components/main-toolbar.vala:26
 msgid "Search Mail"
-msgstr ""
+msgstr "Otsi kirjadest..."
 
 #: ../src/client/application/geary-application.vala:18
 msgid ""
@@ -2801,7 +2802,7 @@ msgstr ""
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:53
 msgid "Email Address:"
-msgstr ""
+msgstr "E-posti aadress:"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:61
 msgid "Remove Account"
@@ -2813,7 +2814,7 @@ msgstr ""
 
 #: ../src/client/dialogs/PasswordDialog.vala:52
 msgid "Password:"
-msgstr ""
+msgstr "Parool:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:55
 msgid "SMTP Credentials:"
@@ -2821,7 +2822,7 @@ msgstr ""
 
 #: ../src/client/dialogs/PasswordDialog.vala:62
 msgid "Remember password"
-msgstr ""
+msgstr "Parooli meeldejätmine"
 
 #: ../src/client/dialogs/PasswordDialog.vala:75
 msgid "Authenticate"
