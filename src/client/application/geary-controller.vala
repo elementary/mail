@@ -417,28 +417,23 @@ public class GearyController : Geary.BaseObject {
         copy_menu.label = _("_Label");
         entries += copy_menu;
 
-        Gtk.ActionEntry move_menu = { ACTION_MOVE_MENU, null, TRANSLATABLE, "M", _("Move conversation"), null };
+        Gtk.ActionEntry move_menu = { ACTION_MOVE_MENU, null, TRANSLATABLE, "M", null, null };
         move_menu.label = _("_Move");
         entries += move_menu;
 
-        Gtk.ActionEntry new_message = { ACTION_NEW_MESSAGE, null, null, "<Ctrl>N",
-            _("Compose new message (Ctrl+N, N)"), on_new_message };
+        Gtk.ActionEntry new_message = { ACTION_NEW_MESSAGE, null, null, "<Ctrl>N", null, on_new_message };
         entries += new_message;
         add_accelerator("N", ACTION_NEW_MESSAGE);
 
-        Gtk.ActionEntry reply_to_message = { ACTION_REPLY_TO_MESSAGE, null, null, "<Ctrl>R",
-            _("Reply (Ctrl+R, R)"), on_reply_to_message_action };
+        Gtk.ActionEntry reply_to_message = { ACTION_REPLY_TO_MESSAGE, null, null, "<Ctrl>R", null, on_reply_to_message_action };
         entries += reply_to_message;
         add_accelerator("R", ACTION_REPLY_TO_MESSAGE);
 
-        Gtk.ActionEntry reply_all_message = { ACTION_REPLY_ALL_MESSAGE, null, null,
-            "<Ctrl><Shift>R", _("Reply all (Ctrl+Shift+R, Shift+R)"),
-            on_reply_all_message_action };
+        Gtk.ActionEntry reply_all_message = { ACTION_REPLY_ALL_MESSAGE, null, null, "<Ctrl><Shift>R", null, on_reply_all_message_action };
         entries += reply_all_message;
         add_accelerator("<Shift>R", ACTION_REPLY_ALL_MESSAGE);
 
-        Gtk.ActionEntry forward_message = { ACTION_FORWARD_MESSAGE, null, null, "<Ctrl>L",
-            _("Forward (Ctrl+L, F)"), on_forward_message_action };
+        Gtk.ActionEntry forward_message = { ACTION_FORWARD_MESSAGE, null, null, "<Ctrl>L", null, on_forward_message_action };
         entries += forward_message;
         add_accelerator("F", ACTION_FORWARD_MESSAGE);
 

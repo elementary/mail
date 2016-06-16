@@ -57,7 +57,7 @@ public class MainToolbar : Gtk.HeaderBar {
         var compose = new Gtk.Button ();
         compose.halign = Gtk.Align.START;
         compose.related_action = GearyApplication.instance.actions.get_action (GearyController.ACTION_NEW_MESSAGE);
-        compose.tooltip_text = compose.related_action.tooltip;
+        compose.tooltip_text = _("Compose new message (Ctrl+N, N)");
         compose.image = new Gtk.Image.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
         // Set accel labels for EmptyTrash and EmptySpam context menus
@@ -99,17 +99,17 @@ public class MainToolbar : Gtk.HeaderBar {
         // Reply buttons
         var reply = new Gtk.Button ();
         reply.related_action = GearyApplication.instance.actions.get_action (GearyController.ACTION_REPLY_TO_MESSAGE);
-        reply.tooltip_text = reply.related_action.tooltip;
+        reply.tooltip_text = _("Reply (Ctrl+R, R)");
         reply.image = new Gtk.Image.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
         var reply_all = new Gtk.Button ();
         reply_all.related_action = GearyApplication.instance.actions.get_action (GearyController.ACTION_REPLY_ALL_MESSAGE);
-        reply_all.tooltip_text = reply_all.related_action.tooltip;
+        reply_all.tooltip_text = _("Reply all (Ctrl+Shift+R, Shift+R)");
         reply_all.image = new Gtk.Image.from_icon_name ("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
         var forward = new Gtk.Button();
         forward.related_action = GearyApplication.instance.actions.get_action (GearyController.ACTION_FORWARD_MESSAGE);
-        forward.tooltip_text = forward.related_action.tooltip;
+        forward.tooltip_text = _("Forward (Ctrl+L, F)");
         forward.image = new Gtk.Image.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
         // Mark, copy, move.
