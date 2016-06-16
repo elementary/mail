@@ -30,7 +30,7 @@ public class MainToolbar : Gtk.HeaderBar {
     public MainToolbar() {
         show_close_button = true;
         set_custom_title (new Gtk.Label (null)); //Set title as a null label so that it doesn't take up space
-        set_resize_mode(Gtk.ResizeMode.QUEUE);
+        set_resize_mode (Gtk.ResizeMode.QUEUE); //without this, toolbar rapidly expands and forces the window larger than the screen
 
         folder_header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
         conversation_header = new Gtk.Grid ();
