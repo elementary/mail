@@ -18,9 +18,9 @@ public class MainToolbar : Gtk.HeaderBar {
     private Gtk.Button archive_button;
     private Gtk.Button trash_delete;
     private Binding guest_header_binding;
-    private Gtk.SearchEntry search_entry = new Gtk.SearchEntry ();
+    private Gtk.SearchEntry search_entry;
     private Geary.ProgressMonitor? search_upgrade_progress_monitor = null;
-    private MonitoredProgressBar search_upgrade_progress_bar = new MonitoredProgressBar ();
+    private MonitoredProgressBar search_upgrade_progress_bar;
     private Geary.Account? current_account = null;
 
     private const string DEFAULT_SEARCH_TEXT = _("Search Mail");
@@ -65,6 +65,7 @@ public class MainToolbar : Gtk.HeaderBar {
         empty_menu.foreach (GtkUtil.show_menuitem_accel_labels);
 
         // Search bar.
+        search_entry = new Gtk.SearchEntry ();
         search_entry.width_chars = 28;
         search_entry.tooltip_text = _("Search all mail in account for keywords (Ctrl+S)");
         search_entry.valign = Gtk.Align.CENTER;
@@ -73,6 +74,7 @@ public class MainToolbar : Gtk.HeaderBar {
         search_entry.has_focus = true;
 
         // Search upgrade progress bar.
+        search_upgrade_progress_bar = new MonitoredProgressBar ();
         search_upgrade_progress_bar.margin_top = 3;
         search_upgrade_progress_bar.margin_bottom = 3;
         search_upgrade_progress_bar.show_text = true;
