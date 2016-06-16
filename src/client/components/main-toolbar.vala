@@ -46,19 +46,6 @@ public class MainToolbar : Gtk.HeaderBar {
         show_close_button = true;
         set_custom_title (new Gtk.Label (null)); //Set title as a null label so that it doesn't take up space
 
-        folder_header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
-        conversation_header = new Gtk.Grid ();
-        conversation_header.column_spacing = 6;
-
-        // FIXME: This doesn't play nice with changing window decoration layout
-        GearyApplication.instance.config.bind (Configuration.MESSAGES_PANE_POSITION_KEY,
-            this, "left-pane-width", SettingsBindFlags.GET);
-        this.bind_property ("left-pane-width", folder_header, "width-request",
-            BindingFlags.SYNC_CREATE, (binding, source_value, ref target_value) => {
-                target_value = left_pane_width - 43;
-                return true;
-            });
-
         GearyApplication.instance.controller.account_selected.connect (on_account_changed);
 
         // Assemble mark menu.
@@ -72,7 +59,6 @@ public class MainToolbar : Gtk.HeaderBar {
         compose.related_action = GearyApplication.instance.actions.get_action (GearyController.ACTION_NEW_MESSAGE);
         compose.tooltip_text = compose.related_action.tooltip;
         compose.image = new Gtk.Image.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
-        folder_header.pack_start (compose);
 
         // Set accel labels for EmptyTrash and EmptySpam context menus
         GearyApplication.instance.load_ui_file ("context_empty_menu.ui");
@@ -98,8 +84,17 @@ public class MainToolbar : Gtk.HeaderBar {
 
         set_search_placeholder_text (DEFAULT_SEARCH_TEXT);
 
+        folder_header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
+        folder_header.pack_start (compose);
         folder_header.pack_end (search_entry);
         folder_header.pack_end (search_upgrade_progress_bar);
+
+        // FIXME: This doesn't play nice with changing window decoration layout
+        GearyApplication.instance.config.bind (Configuration.MESSAGES_PANE_POSITION_KEY, this, "left-pane-width", SettingsBindFlags.GET);
+        bind_property ("left-pane-width", folder_header, "width-request", BindingFlags.SYNC_CREATE, (binding, source_value, ref target_value) => {
+            target_value = left_pane_width - 43;
+            return true;
+        });
 
         // Reply buttons
         var reply = new Gtk.Button ();
@@ -144,6 +139,8 @@ public class MainToolbar : Gtk.HeaderBar {
         archive.tooltip_text = archive.related_action.tooltip;
         archive.image = new Gtk.Image.from_icon_name ("mail-archive", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
+        conversation_header = new Gtk.Grid ();
+        conversation_header.column_spacing = 6;
         conversation_header.add (reply);
         conversation_header.add (reply_all);
         conversation_header.add (forward);
