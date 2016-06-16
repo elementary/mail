@@ -53,7 +53,6 @@ public class MainToolbar : Gtk.HeaderBar {
         var mark_menu = (Gtk.Menu) GearyApplication.instance.ui_manager.get_widget ("/ui/ToolbarMarkMenu");
         mark_menu.foreach (GtkUtil.show_menuitem_accel_labels);
 
-        // Compose.
         var compose = new Gtk.Button ();
         compose.halign = Gtk.Align.START;
         compose.related_action = GearyApplication.instance.actions.get_action (GearyController.ACTION_NEW_MESSAGE);
@@ -65,7 +64,6 @@ public class MainToolbar : Gtk.HeaderBar {
         var empty_menu = (Gtk.Menu) GearyApplication.instance.ui_manager.get_widget ("/ui/ContextEmptyMenu");
         empty_menu.foreach (GtkUtil.show_menuitem_accel_labels);
 
-        // Search bar.
         search_entry = new Gtk.SearchEntry ();
         search_entry.width_chars = 28;
         search_entry.tooltip_text = _("Search all mail in account for keywords (Ctrl+S)");
@@ -74,7 +72,6 @@ public class MainToolbar : Gtk.HeaderBar {
         search_entry.key_press_event.connect (on_search_key_press);
         search_entry.has_focus = true;
 
-        // Search upgrade progress bar.
         search_upgrade_progress_bar = new MonitoredProgressBar ();
         search_upgrade_progress_bar.margin_top = 3;
         search_upgrade_progress_bar.margin_bottom = 3;
@@ -96,7 +93,6 @@ public class MainToolbar : Gtk.HeaderBar {
             return true;
         });
 
-        // Reply buttons
         var reply = new Gtk.Button ();
         reply.related_action = GearyApplication.instance.actions.get_action (GearyController.ACTION_REPLY_TO_MESSAGE);
         reply.tooltip_text = _("Reply (Ctrl+R, R)");
@@ -112,7 +108,6 @@ public class MainToolbar : Gtk.HeaderBar {
         forward.tooltip_text = _("Forward (Ctrl+L, F)");
         forward.image = new Gtk.Image.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
-        // Mark, copy, move.
         var mark = new Gtk.MenuButton ();
         mark.image = new Gtk.Image.from_icon_name ("edit-flag", Gtk.IconSize.LARGE_TOOLBAR);
         mark.popup = mark_menu;
