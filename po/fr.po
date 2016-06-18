@@ -24,15 +24,15 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-06-04 23:08-0700\n"
-"PO-Revision-Date: 2016-05-31 22:13+0000\n"
+"PO-Revision-Date: 2016-06-17 15:52+0000\n"
 "Last-Translator: Corentin Noël <corentin@elementaryos.org>\n"
 "Language-Team: français <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-06-06 05:27+0000\n"
-"X-Generator: Launchpad (build 18086)\n"
+"X-Launchpad-Export-Date: 2016-06-18 06:22+0000\n"
+"X-Generator: Launchpad (build 18097)\n"
 "Language: fr\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -2126,7 +2126,7 @@ msgstr ""
 #: ../data/ui/remove_confirm.ui:80
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:47
 msgid "Nickname:"
-msgstr "Surnom :"
+msgstr "Surnom de l'adresse :"
 
 #: ../data/ui/remove_confirm.ui:94
 msgid "Email address:"
@@ -2459,7 +2459,7 @@ msgstr "Travail, Maison, etc."
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
-msgstr "Surnom :"
+msgstr "Surnom de l'adresse :"
 
 #: ../data/ui/login.ui:195
 msgid "N_ame:"
@@ -2935,32 +2935,32 @@ msgstr "Annuler"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:36
 msgid "Are you sure you want to remove this account?"
-msgstr ""
+msgstr "Voulez-vous vraiment supprimer ce compte ?"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:53
 msgid "Email Address:"
-msgstr ""
+msgstr "Adresse électronique :"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:61
 msgid "Remove Account"
-msgstr ""
+msgstr "Supprimer le compte"
 
 #: ../src/client/dialogs/PasswordDialog.vala:45
 msgid "Username:"
-msgstr ""
+msgstr "Nom d'utilisateur :"
 
 #: ../src/client/dialogs/PasswordDialog.vala:52
 msgid "Password:"
-msgstr ""
+msgstr "Mot de passe :"
 
 #: ../src/client/dialogs/PasswordDialog.vala:55
 msgid "SMTP Credentials:"
-msgstr ""
+msgstr "Identifiants SMTP :"
 
 #: ../src/client/dialogs/PasswordDialog.vala:62
 msgid "Remember password"
-msgstr ""
+msgstr "Mémoriser le mot de passe"
 
 #: ../src/client/dialogs/PasswordDialog.vala:75
 msgid "Authenticate"
-msgstr ""
+msgstr "S’identifier"
