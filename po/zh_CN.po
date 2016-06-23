@@ -17,7 +17,7 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-06-04 23:08-0700\n"
-"PO-Revision-Date: 2016-06-18 09:52+0000\n"
+"PO-Revision-Date: 2016-06-22 07:15+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (China) "
 "(http://www.transifex.com/projects/p/geary/language/zh_CN/)\n"
@@ -25,8 +25,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-06-19 06:12+0000\n"
-"X-Generator: Launchpad (build 18097)\n"
+"X-Launchpad-Export-Date: 2016-06-23 05:45+0000\n"
+"X-Generator: Launchpad (build 18111)\n"
 "Language: zh_CN\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -142,7 +142,7 @@ msgstr "附件"
 #: ../src/engine/imap-db/imap-db-account.vala:714
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "bcc"
-msgstr "密送"
+msgstr "密送："
 
 #. / Can be typed in the search box like body:word to find the word only
 #. / if it occurs in the body of a message.  The translated
@@ -156,9 +156,8 @@ msgstr "正文"
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:722
 #: ../src/engine/imap-db/imap-db-account.vala:738
-#| msgid "Bcc:"
 msgid "cc"
-msgstr "抄送"
+msgstr "抄送："
 
 #. / Can be typed in the search box like from:johndoe@example.com to
 #. / find messages from a particular sender.  The translated
@@ -172,9 +171,8 @@ msgstr "发件人"
 #. / only if it occurs in the subject of a message.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:730
-#| msgid "Subject:"
 msgid "subject"
-msgstr "主题"
+msgstr "主题："
 
 #. / Can be typed in the search box like to:johndoe@example.com to find
 #. / messages received by a particular person.  The translated
@@ -182,7 +180,7 @@ msgstr "主题"
 #: ../src/engine/imap-db/imap-db-account.vala:734
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "to"
-msgstr "收件人"
+msgstr "收件人："
 
 #: ../src/engine/imap-db/imap-db-account.vala:754
 msgid "me"
@@ -492,7 +490,7 @@ msgstr "撰写新邮件"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1857
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1862
 msgid "_Reply"
-msgstr "回复"
+msgstr "回复："
 
 #: ../src/client/application/geary-controller.vala:441
 #: ../src/client/application/geary-controller.vala:440
@@ -2314,27 +2312,27 @@ msgstr "应用程序菜单"
 #: ../data/ui/composer.ui:289 ../data/ui/composer.ui:317
 #: ../data/ui/composer.ui:287
 msgid "_To"
-msgstr "收件人"
+msgstr "收件人："
 
 #: ../data/ui/composer.ui:308 ../data/ui/composer.ui:336
 #: ../data/ui/composer.ui:306
 msgid "_Cc"
-msgstr "抄送"
+msgstr "抄送："
 
 #: ../data/ui/composer.ui:362 ../data/ui/composer.ui:390
 #: ../data/ui/composer.ui:360
 msgid "_Subject"
-msgstr "主题"
+msgstr "主题："
 
 #: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
 #: ../data/ui/composer.ui:379
 msgid "_Bcc"
-msgstr "密送"
+msgstr "密送："
 
 #: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
 #: ../data/ui/composer.ui:409
 msgid "_Reply-To"
-msgstr "回复"
+msgstr "回复："
 
 #. Geary account mail will be sent from
 #. Account mail will be sent from
