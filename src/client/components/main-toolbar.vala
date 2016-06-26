@@ -1,13 +1,28 @@
-/* Copyright 2011-2015 Yorba Foundation
-/* Copyright 2016 elementary LLC
+// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
+/*-
+ * Copyright (c) 2011-2015 Yorba Foundation
+ * Copyright (c) 2016 elementary LLC.
  *
- * This software is licensed under the GNU Lesser General Public License
- * (version 2.1 or later).  See the COPYING file in this distribution.
+ * This software is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the
+ * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ * Boston, MA 02111-1307, USA.
+ *
  */
 
 public class MainToolbar : Gtk.HeaderBar {
-    public FolderMenu copy_folder_menu { get; private set; default = new FolderMenu(); }
-    public FolderMenu move_folder_menu { get; private set; default = new FolderMenu(); }
+    public FolderMenu copy_folder_menu { get; private set; default = new FolderMenu (); }
+    public FolderMenu move_folder_menu { get; private set; default = new FolderMenu (); }
     public string account { get; set; }
     public string folder { get; set; }
     public bool search_open { get; set; default = false; }
@@ -18,54 +33,39 @@ public class MainToolbar : Gtk.HeaderBar {
     private Gtk.Button archive_button;
     private Gtk.Button trash_delete;
     private Binding guest_header_binding;
-    private Gtk.SearchEntry search_entry = new Gtk.SearchEntry ();
+    private Gtk.SearchEntry search_entry;
     private Geary.ProgressMonitor? search_upgrade_progress_monitor = null;
-    private MonitoredProgressBar search_upgrade_progress_bar = new MonitoredProgressBar ();
+    private MonitoredProgressBar search_upgrade_progress_bar;
     private Geary.Account? current_account = null;
 
     private const string DEFAULT_SEARCH_TEXT = _("Search Mail");
 
     public signal void search_text_changed (string search_text);
 
-    public MainToolbar() {
+    public MainToolbar () {
         show_close_button = true;
         set_custom_title (new Gtk.Label (null)); //Set title as a null label so that it doesn't take up space
         set_resize_mode (Gtk.ResizeMode.QUEUE); //without this, toolbar rapidly expands and forces the window larger than the screen
 
-        folder_header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
-        conversation_header = new Gtk.Grid ();
-        conversation_header.column_spacing = 6;
-
-        // FIXME: This doesn't play nice with changing window decoration layout
-        GearyApplication.instance.config.bind(Configuration.MESSAGES_PANE_POSITION_KEY,
-            this, "left-pane-width", SettingsBindFlags.GET);
-        this.bind_property("left-pane-width", folder_header, "width-request",
-            BindingFlags.SYNC_CREATE, (binding, source_value, ref target_value) => {
-                target_value = left_pane_width - 43;
-                return true;
-            });
-
         GearyApplication.instance.controller.account_selected.connect (on_account_changed);
 
         // Assemble mark menu.
-        GearyApplication.instance.load_ui_file("toolbar_mark_menu.ui");
-        Gtk.Menu mark_menu = (Gtk.Menu) GearyApplication.instance.ui_manager.get_widget("/ui/ToolbarMarkMenu");
-        mark_menu.foreach(GtkUtil.show_menuitem_accel_labels);
+        GearyApplication.instance.load_ui_file ("toolbar_mark_menu.ui");
+        var mark_menu = (Gtk.Menu) GearyApplication.instance.ui_manager.get_widget ("/ui/ToolbarMarkMenu");
+        mark_menu.foreach (GtkUtil.show_menuitem_accel_labels);
 
-        // Compose.
-        Gtk.Button compose = new Gtk.Button();
+        var compose = new Gtk.Button ();
         compose.halign = Gtk.Align.START;
-        compose.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_NEW_MESSAGE);
-        compose.tooltip_text = compose.related_action.tooltip;
-        compose.image = new Gtk.Image.from_icon_name("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
-        folder_header.pack_start(compose);
+        compose.related_action = GearyApplication.instance.actions.get_action (GearyController.ACTION_NEW_MESSAGE);
+        compose.tooltip_text = _("Compose new message (Ctrl+N, N)");
+        compose.image = new Gtk.Image.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
         // Set accel labels for EmptyTrash and EmptySpam context menus
-        GearyApplication.instance.load_ui_file("context_empty_menu.ui");
-        Gtk.Menu empty_menu = (Gtk.Menu) GearyApplication.instance.ui_manager.get_widget("/ui/ContextEmptyMenu");
-        empty_menu.foreach(GtkUtil.show_menuitem_accel_labels);
+        GearyApplication.instance.load_ui_file ("context_empty_menu.ui");
+        var empty_menu = (Gtk.Menu) GearyApplication.instance.ui_manager.get_widget ("/ui/ContextEmptyMenu");
+        empty_menu.foreach (GtkUtil.show_menuitem_accel_labels);
 
-        // Search bar.
+        search_entry = new Gtk.SearchEntry ();
         search_entry.width_chars = 28;
         search_entry.tooltip_text = _("Search all mail in account for keywords (Ctrl+S)");
         search_entry.valign = Gtk.Align.CENTER;
@@ -73,7 +73,7 @@ public class MainToolbar : Gtk.HeaderBar {
         search_entry.key_press_event.connect (on_search_key_press);
         search_entry.has_focus = true;
 
-        // Search upgrade progress bar.
+        search_upgrade_progress_bar = new MonitoredProgressBar ();
         search_upgrade_progress_bar.margin_top = 3;
         search_upgrade_progress_bar.margin_bottom = 3;
         search_upgrade_progress_bar.show_text = true;
@@ -82,72 +82,81 @@ public class MainToolbar : Gtk.HeaderBar {
 
         set_search_placeholder_text (DEFAULT_SEARCH_TEXT);
 
+        folder_header = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
+        folder_header.pack_start (compose);
         folder_header.pack_end (search_entry);
         folder_header.pack_end (search_upgrade_progress_bar);
 
-        // Reply buttons
-        Gtk.Button reply = new Gtk.Button();
-        reply.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_REPLY_TO_MESSAGE);
-        reply.tooltip_text = reply.related_action.tooltip;
-        reply.image = new Gtk.Image.from_icon_name("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
+        // FIXME: This doesn't play nice with changing window decoration layout
+        GearyApplication.instance.config.bind (Configuration.MESSAGES_PANE_POSITION_KEY, this, "left-pane-width", SettingsBindFlags.GET);
+        bind_property ("left-pane-width", folder_header, "width-request", BindingFlags.SYNC_CREATE, (binding, source_value, ref target_value) => {
+            target_value = left_pane_width - 43;
+            return true;
+        });
 
-        Gtk.Button reply_all = new Gtk.Button();
-        reply_all.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_REPLY_ALL_MESSAGE);
-        reply_all.tooltip_text = reply_all.related_action.tooltip;
-        reply_all.image = new Gtk.Image.from_icon_name("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
+        var reply = new Gtk.Button ();
+        reply.related_action = GearyApplication.instance.actions.get_action (GearyController.ACTION_REPLY_TO_MESSAGE);
+        reply.tooltip_text = _("Reply (Ctrl+R, R)");
+        reply.image = new Gtk.Image.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
-        Gtk.Button forward = new Gtk.Button();
-        forward.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_FORWARD_MESSAGE);
-        forward.tooltip_text = forward.related_action.tooltip;
-        forward.image = new Gtk.Image.from_icon_name("mail-forward", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
+        var reply_all = new Gtk.Button ();
+        reply_all.related_action = GearyApplication.instance.actions.get_action (GearyController.ACTION_REPLY_ALL_MESSAGE);
+        reply_all.tooltip_text = _("Reply all (Ctrl+Shift+R, Shift+R)");
+        reply_all.image = new Gtk.Image.from_icon_name ("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
-        // Mark, copy, move.
-        Gtk.MenuButton mark = new Gtk.MenuButton();
-        mark.image = new Gtk.Image.from_icon_name("edit-flag", Gtk.IconSize.LARGE_TOOLBAR);
+        var forward = new Gtk.Button();
+        forward.related_action = GearyApplication.instance.actions.get_action (GearyController.ACTION_FORWARD_MESSAGE);
+        forward.tooltip_text = _("Forward (Ctrl+L, F)");
+        forward.image = new Gtk.Image.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
+
+        var mark = new Gtk.MenuButton ();
+        mark.image = new Gtk.Image.from_icon_name ("edit-flag", Gtk.IconSize.LARGE_TOOLBAR);
         mark.popup = mark_menu;
         mark.tooltip_text = _("Mark conversation");
 
-        Gtk.MenuButton tag = new Gtk.MenuButton();
-        tag.image = new Gtk.Image.from_icon_name("tag-new", Gtk.IconSize.LARGE_TOOLBAR);
+        var tag = new Gtk.MenuButton ();
+        tag.image = new Gtk.Image.from_icon_name ("tag-new", Gtk.IconSize.LARGE_TOOLBAR);
         tag.popup = copy_folder_menu;
         tag.tooltip_text = _("Add label to conversation");
 
-        Gtk.MenuButton move = new Gtk.MenuButton();
-        move.image = new Gtk.Image.from_icon_name("mail-move", Gtk.IconSize.LARGE_TOOLBAR);
+        var move = new Gtk.MenuButton ();
+        move.image = new Gtk.Image.from_icon_name ("mail-move", Gtk.IconSize.LARGE_TOOLBAR);
         move.popup = move_folder_menu;
         move.tooltip_text = _("Move conversation");
 
-        trash_delete = new Gtk.Button();
-        trash_delete.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_TRASH_MESSAGE);
+        trash_delete = new Gtk.Button ();
+        trash_delete.related_action = GearyApplication.instance.actions.get_action (GearyController.ACTION_TRASH_MESSAGE);
         trash_delete.use_action_appearance = false;
         trash_delete.tooltip_text = trash_delete.related_action.tooltip;
-        trash_delete.image = new Gtk.Image.from_icon_name("edit-delete", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
+        trash_delete.image = new Gtk.Image.from_icon_name ("edit-delete", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
-        Gtk.Button archive = new Gtk.Button();
-        archive.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_ARCHIVE_MESSAGE);
+        var archive = new Gtk.Button ();
+        archive.related_action = GearyApplication.instance.actions.get_action (GearyController.ACTION_ARCHIVE_MESSAGE);
         archive.tooltip_text = archive.related_action.tooltip;
-        archive.image = new Gtk.Image.from_icon_name("mail-archive", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
+        archive.image = new Gtk.Image.from_icon_name ("mail-archive", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
+        conversation_header = new Gtk.Grid ();
+        conversation_header.column_spacing = 6;
         conversation_header.add (reply);
         conversation_header.add (reply_all);
         conversation_header.add (forward);
-        conversation_header.add (new Gtk.Separator(Gtk.Orientation.VERTICAL));
+        conversation_header.add (new Gtk.Separator (Gtk.Orientation.VERTICAL));
         conversation_header.add (archive);
         conversation_header.add (mark);
         conversation_header.add (trash_delete);
-        conversation_header.add (new Gtk.Separator(Gtk.Orientation.VERTICAL));
+        conversation_header.add (new Gtk.Separator (Gtk.Orientation.VERTICAL));
         conversation_header.add (move);
         conversation_header.add (tag);
 
-        Gtk.Button undo = new Gtk.Button();
-        undo.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_UNDO);
+        var undo = new Gtk.Button ();
+        undo.related_action = GearyApplication.instance.actions.get_action (GearyController.ACTION_UNDO);
         undo.tooltip_text = undo.related_action.tooltip;
-        undo.related_action.notify["tooltip"].connect(() => { undo.tooltip_text = undo.related_action.tooltip; });
-        undo.image = new Gtk.Image.from_icon_name("edit-undo", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
+        undo.related_action.notify["tooltip"].connect (() => { undo.tooltip_text = undo.related_action.tooltip; });
+        undo.image = new Gtk.Image.from_icon_name ("edit-undo", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
-        Gtk.MenuButton menu = new Gtk.MenuButton();
-        menu.image = new Gtk.Image.from_icon_name("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
-        menu.popup = new Gtk.Menu.from_model(GearyApplication.instance.controller.app_menu);
+        var menu = new Gtk.MenuButton ();
+        menu.image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
+        menu.popup = new Gtk.Menu.from_model (GearyApplication.instance.controller.app_menu);
         menu.tooltip_text = _("Menu");
 
         add (folder_header);
@@ -175,23 +184,23 @@ public class MainToolbar : Gtk.HeaderBar {
     }
 
     /// Updates the trash button as trash or delete, and shows or hides the archive button.
-    public void update_trash_archive_buttons(bool trash, bool archive) {
+    public void update_trash_archive_buttons (bool trash, bool archive) {
         string action_name = (trash ? GearyController.ACTION_TRASH_MESSAGE : GearyController.ACTION_DELETE_MESSAGE);
 
-        trash_delete.related_action = GearyApplication.instance.actions.get_action(action_name);
+        trash_delete.related_action = GearyApplication.instance.actions.get_action (action_name);
         trash_delete.tooltip_text = trash_delete.related_action.tooltip;
         archive_button.visible = archive;
     }
 
-    public void set_conversation_header(Gtk.HeaderBar header) {
-        conversation_header.hide();
-        pack_start(header);
+    public void set_conversation_header (Gtk.HeaderBar header) {
+        conversation_header.hide ();
+        pack_start (header);
     }
 
-    public void remove_conversation_header(Gtk.HeaderBar header) {
-        remove(header);
-        GtkUtil.unbind(guest_header_binding);
-        conversation_header.show();
+    public void remove_conversation_header (Gtk.HeaderBar header) {
+        remove (header);
+        GtkUtil.unbind (guest_header_binding);
+        conversation_header.show ();
     }
 
     public void set_search_placeholder_text (string placeholder) {
@@ -210,7 +219,7 @@ public class MainToolbar : Gtk.HeaderBar {
 
         // Force search if user hits enter.
         if (Gdk.keyval_name (event.keyval) == "Return") {
-            on_search_entry_changed();
+            on_search_entry_changed ();
         }
 
         return false;
@@ -252,24 +261,24 @@ public class MainToolbar : Gtk.HeaderBar {
             search_upgrade_progress_monitor.start.connect (on_search_upgrade_start);
             search_upgrade_progress_monitor.finish.connect (on_search_upgrade_finished);
             if (search_upgrade_progress_monitor.is_in_progress) {
-                on_search_upgrade_start(); // Remove search box, we're already in progress.
+                on_search_upgrade_start (); // Remove search box, we're already in progress.
             }
 
             account.information.notify[Geary.AccountInformation.PROP_NICKNAME].connect (on_nickname_changed);
 
-            search_upgrade_progress_bar.text = _("Indexing %s account").printf(account.information.nickname);
+            search_upgrade_progress_bar.text = _("Indexing %s account").printf (account.information.nickname);
         }
 
         current_account = account;
 
-        on_nickname_changed(); // Set new account name.
+        on_nickname_changed (); // Set new account name.
     }
 
-    private void on_nickname_changed() {
-        if (current_account == null ||GearyApplication.instance.controller.get_num_accounts() == 1) {
+    private void on_nickname_changed () {
+        if (current_account == null ||GearyApplication.instance.controller.get_num_accounts () == 1) {
             set_search_placeholder_text (DEFAULT_SEARCH_TEXT);
         } else {
-            set_search_placeholder_text (_("Search %s").printf(current_account.information.nickname));
+            set_search_placeholder_text (_("Search %s").printf (current_account.information.nickname));
         }
     }
 }
