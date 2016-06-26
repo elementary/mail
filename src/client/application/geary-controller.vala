@@ -412,12 +412,12 @@ public class GearyController : Geary.BaseObject {
         entries += mark_spam;
         add_accelerator("exclam", ACTION_MARK_AS_SPAM); // Exclamation mark (!)
 
-        Gtk.ActionEntry copy_menu = { ACTION_COPY_MENU, null, TRANSLATABLE, "L",
+        Gtk.ActionEntry copy_menu = { ACTION_COPY_MENU, null, TRANSLATABLE, null,
             _("Add label"), null };
         copy_menu.label = _("_Label");
         entries += copy_menu;
 
-        Gtk.ActionEntry move_menu = { ACTION_MOVE_MENU, null, TRANSLATABLE, "M", null, null };
+        Gtk.ActionEntry move_menu = { ACTION_MOVE_MENU, null, TRANSLATABLE, null, null, null };
         move_menu.label = _("_Move");
         entries += move_menu;
 
