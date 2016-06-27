@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-06-04 23:08-0700\n"
+"POT-Creation-Date: 2016-06-26 10:15-0700\n"
 "PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian "
@@ -21,8 +21,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-06-06 05:27+0000\n"
-"X-Generator: Launchpad (build 18086)\n"
+"X-Launchpad-Export-Date: 2016-06-27 06:42+0000\n"
+"X-Generator: Launchpad (build 18115)\n"
 "Language: id\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -478,6 +478,7 @@ msgstr "_Pindahkan"
 #: ../src/client/application/geary-controller.vala:435
 #: ../src/client/application/geary-controller.vala:430
 #: ../src/client/application/geary-controller.vala:425
+#: ../src/client/components/main-toolbar.vala:60
 msgid "Compose new message (Ctrl+N, N)"
 msgstr "Susun pesan baru (Ctrl+N, N)"
 
@@ -491,6 +492,7 @@ msgstr "B_alas"
 #: ../src/client/application/geary-controller.vala:440
 #: ../src/client/application/geary-controller.vala:435
 #: ../src/client/application/geary-controller.vala:430
+#: ../src/client/components/main-toolbar.vala:99
 msgid "Reply (Ctrl+R, R)"
 msgstr "Balas (Ctrl+R, R)"
 
@@ -502,6 +504,7 @@ msgstr "Balas S_emua"
 #: ../src/client/application/geary-controller.vala:445
 #: ../src/client/application/geary-controller.vala:440
 #: ../src/client/application/geary-controller.vala:435
+#: ../src/client/components/main-toolbar.vala:104
 msgid "Reply all (Ctrl+Shift+R, Shift+R)"
 msgstr "Balas semua (Ctrl+Shift+R, Shift+R)"
 
@@ -515,6 +518,7 @@ msgstr "_Teruskan"
 #: ../src/client/application/geary-controller.vala:451
 #: ../src/client/application/geary-controller.vala:446
 #: ../src/client/application/geary-controller.vala:441
+#: ../src/client/components/main-toolbar.vala:109
 msgid "Forward (Ctrl+L, F)"
 msgstr "Maju (Ctrl+L, F)"
 
@@ -539,6 +543,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:490
 #: ../src/client/application/geary-controller.vala:485
 #: ../src/client/application/geary-controller.vala:479
+#: ../src/client/application/geary-controller.vala:474
 msgid "Empty _Spam…"
 msgstr ""
 
@@ -547,6 +552,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:494
 #: ../src/client/application/geary-controller.vala:489
 #: ../src/client/application/geary-controller.vala:483
+#: ../src/client/application/geary-controller.vala:478
 msgid "Empty _Trash…"
 msgstr ""
 
@@ -559,6 +565,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:734
 #: ../src/client/application/geary-controller.vala:728
 #: ../src/client/application/geary-controller.vala:722
+#: ../src/client/application/geary-controller.vala:717
 msgid "Unable to store server trust exception"
 msgstr "Tak bisa menyimpan pengecualian kepercayaan server"
 
@@ -567,6 +574,7 @@ msgstr "Tak bisa menyimpan pengecualian kepercayaan server"
 #: ../src/client/application/geary-controller.vala:971
 #: ../src/client/application/geary-controller.vala:965
 #: ../src/client/application/geary-controller.vala:959
+#: ../src/client/application/geary-controller.vala:954
 msgid "Your settings are insecure"
 msgstr "Pengaturan Anda tak aman"
 
@@ -575,6 +583,7 @@ msgstr "Pengaturan Anda tak aman"
 #: ../src/client/application/geary-controller.vala:972
 #: ../src/client/application/geary-controller.vala:966
 #: ../src/client/application/geary-controller.vala:960
+#: ../src/client/application/geary-controller.vala:955
 msgid ""
 "Your IMAP and/or SMTP settings do not specify SSL or TLS.  This means your "
 "username and password could be read by another person on the network.  Are "
@@ -589,6 +598,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:973
 #: ../src/client/application/geary-controller.vala:967
 #: ../src/client/application/geary-controller.vala:961
+#: ../src/client/application/geary-controller.vala:956
 msgid "Co_ntinue"
 msgstr "La_njutkan"
 
@@ -599,6 +609,7 @@ msgstr "La_njutkan"
 #: ../src/client/application/geary-controller.vala:1051
 #: ../src/client/application/geary-controller.vala:1045
 #: ../src/client/application/geary-controller.vala:1039
+#: ../src/client/application/geary-controller.vala:1034
 msgid "Error sending email"
 msgstr "Galat saat mengirim surel"
 
@@ -617,6 +628,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1056
 #: ../src/client/application/geary-controller.vala:1050
 #: ../src/client/application/geary-controller.vala:1044
+#: ../src/client/application/geary-controller.vala:1039
 msgid "Error saving sent mail"
 msgstr "Galat saat menyimpan surel terkirim"
 
@@ -634,6 +646,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1126
 #: ../src/client/application/geary-controller.vala:1120
 #: ../src/client/application/geary-controller.vala:1114
+#: ../src/client/application/geary-controller.vala:1109
 msgid "Labels"
 msgstr "Label"
 
@@ -642,6 +655,7 @@ msgstr "Label"
 #: ../src/client/application/geary-controller.vala:1138
 #: ../src/client/application/geary-controller.vala:1132
 #: ../src/client/application/geary-controller.vala:1126
+#: ../src/client/application/geary-controller.vala:1121
 msgid "Unable to open the database for %s"
 msgstr "Tak bisa membuka basis data bagi %s"
 
@@ -674,6 +688,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1141
 #: ../src/client/application/geary-controller.vala:1135
 #: ../src/client/application/geary-controller.vala:1129
+#: ../src/client/application/geary-controller.vala:1124
 msgid "_Rebuild"
 msgstr "_Bangun Ulang"
 
@@ -682,6 +697,7 @@ msgstr "_Bangun Ulang"
 #: ../src/client/application/geary-controller.vala:1141
 #: ../src/client/application/geary-controller.vala:1135
 #: ../src/client/application/geary-controller.vala:1129
+#: ../src/client/application/geary-controller.vala:1124
 msgid "E_xit"
 msgstr "_Keluar"
 
@@ -690,6 +706,7 @@ msgstr "_Keluar"
 #: ../src/client/application/geary-controller.vala:1150
 #: ../src/client/application/geary-controller.vala:1144
 #: ../src/client/application/geary-controller.vala:1138
+#: ../src/client/application/geary-controller.vala:1133
 msgid "Unable to rebuild database for \"%s\""
 msgstr "Tak bisa membangun ulang basis data bagi \"%s\""
 
@@ -698,6 +715,7 @@ msgstr "Tak bisa membangun ulang basis data bagi \"%s\""
 #: ../src/client/application/geary-controller.vala:1151
 #: ../src/client/application/geary-controller.vala:1145
 #: ../src/client/application/geary-controller.vala:1139
+#: ../src/client/application/geary-controller.vala:1134
 msgid ""
 "Error during rebuild:\n"
 "\n"
@@ -722,6 +740,8 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1161
 #: ../src/client/application/geary-controller.vala:1171
 #: ../src/client/application/geary-controller.vala:1182
+#: ../src/client/application/geary-controller.vala:1156
+#: ../src/client/application/geary-controller.vala:1166
 msgid "Unable to open local mailbox for %s"
 msgstr "Tak bisa membuka kotak surat bagi %s"
 
@@ -730,6 +750,7 @@ msgstr "Tak bisa membuka kotak surat bagi %s"
 #: ../src/client/application/geary-controller.vala:1174
 #: ../src/client/application/geary-controller.vala:1168
 #: ../src/client/application/geary-controller.vala:1162
+#: ../src/client/application/geary-controller.vala:1157
 msgid ""
 "There was an error opening the local mail database for this account. This is "
 "possibly due to a file permissions problem.\n"
@@ -787,6 +808,7 @@ msgstr "Tentang %s"
 #: ../src/client/application/geary-controller.vala:1680
 #: ../src/client/application/geary-controller.vala:1678
 #: ../src/client/application/geary-controller.vala:1672
+#: ../src/client/application/geary-controller.vala:1667
 msgid "translator-credits"
 msgstr ""
 "Andika Triwidada <andika@gmail.com>, 2012, 2013\n"
@@ -801,6 +823,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1938
 #: ../src/client/application/geary-controller.vala:1940
 #: ../src/client/application/geary-controller.vala:1936
+#: ../src/client/application/geary-controller.vala:1931
 msgid "Undo move (Ctrl+Z)"
 msgstr ""
 
@@ -838,6 +861,7 @@ msgstr "Jangan t_anya lagi"
 #: ../src/client/application/geary-controller.vala:1970
 #: ../src/client/application/geary-controller.vala:1966
 #: ../src/client/application/geary-controller.vala:1962
+#: ../src/client/application/geary-controller.vala:1957
 msgid "A file named \"%s\" already exists.  Do you want to replace it?"
 msgstr "Berkas bernama \"%s\" sudah ada. Anda ingin menimpanya?"
 
@@ -847,6 +871,7 @@ msgstr "Berkas bernama \"%s\" sudah ada. Anda ingin menimpanya?"
 #: ../src/client/application/geary-controller.vala:1972
 #: ../src/client/application/geary-controller.vala:1968
 #: ../src/client/application/geary-controller.vala:1964
+#: ../src/client/application/geary-controller.vala:1959
 msgid ""
 "The file already exists in \"%s\".  Replacing it will overwrite its contents."
 msgstr "Berkas telah ada di \"%s\".  Kalau ditimpa isi sebelumnya hilang."
@@ -857,6 +882,7 @@ msgstr "Berkas telah ada di \"%s\".  Kalau ditimpa isi sebelumnya hilang."
 #: ../src/client/application/geary-controller.vala:1975
 #: ../src/client/application/geary-controller.vala:1971
 #: ../src/client/application/geary-controller.vala:1967
+#: ../src/client/application/geary-controller.vala:1962
 msgid "_Replace"
 msgstr "Timp_a"
 
@@ -873,6 +899,7 @@ msgstr "Tutup draf pesan yang terbuka?"
 #: ../src/client/application/geary-controller.vala:2403
 #: ../src/client/application/geary-controller.vala:2398
 #: ../src/client/application/geary-controller.vala:2394
+#: ../src/client/application/geary-controller.vala:2389
 msgid "Empty all email from your %s folder?"
 msgstr ""
 
@@ -887,6 +914,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2405
 #: ../src/client/application/geary-controller.vala:2400
 #: ../src/client/application/geary-controller.vala:2396
+#: ../src/client/application/geary-controller.vala:2391
 msgid "This cannot be undone."
 msgstr ""
 
@@ -896,6 +924,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2406
 #: ../src/client/application/geary-controller.vala:2401
 #: ../src/client/application/geary-controller.vala:2397
+#: ../src/client/application/geary-controller.vala:2392
 msgid "Empty %s"
 msgstr ""
 
@@ -905,6 +934,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2423
 #: ../src/client/application/geary-controller.vala:2418
 #: ../src/client/application/geary-controller.vala:2414
+#: ../src/client/application/geary-controller.vala:2409
 msgid "Error emptying %s"
 msgstr ""
 
@@ -914,6 +944,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2453
 #: ../src/client/application/geary-controller.vala:2448
 #: ../src/client/application/geary-controller.vala:2444
+#: ../src/client/application/geary-controller.vala:2439
 msgid "Do you want to permanently delete this message?"
 msgid_plural "Do you want to permanently delete these messages?"
 msgstr[0] "Anda mau membuang pesan ini secara permanen?"
@@ -924,6 +955,7 @@ msgstr[0] "Anda mau membuang pesan ini secara permanen?"
 #: ../src/client/application/geary-controller.vala:2455
 #: ../src/client/application/geary-controller.vala:2450
 #: ../src/client/application/geary-controller.vala:2446
+#: ../src/client/application/geary-controller.vala:2441
 msgid "Delete"
 msgstr "Hapus"
 
@@ -933,6 +965,7 @@ msgstr "Hapus"
 #: ../src/client/application/geary-controller.vala:2486
 #: ../src/client/application/geary-controller.vala:2481
 #: ../src/client/application/geary-controller.vala:2477
+#: ../src/client/application/geary-controller.vala:2472
 msgid "Undo archive (Ctrl+Z)"
 msgstr ""
 
@@ -942,6 +975,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2501
 #: ../src/client/application/geary-controller.vala:2496
 #: ../src/client/application/geary-controller.vala:2492
+#: ../src/client/application/geary-controller.vala:2487
 msgid "Undo trash (Ctrl+Z)"
 msgstr ""
 
@@ -951,6 +985,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2554
 #: ../src/client/application/geary-controller.vala:2549
 #: ../src/client/application/geary-controller.vala:2545
+#: ../src/client/application/geary-controller.vala:2540
 msgid "Undo (Ctrl+Z)"
 msgstr ""
 
@@ -1941,6 +1976,7 @@ msgstr "_Pertahankan"
 #: ../src/client/components/main-toolbar.vala:83
 #: ../src/client/components/main-toolbar.vala:75
 #: ../src/client/components/main-toolbar.vala:69
+#: ../src/client/components/main-toolbar.vala:70
 msgid "Search all mail in account for keywords (Ctrl+S)"
 msgstr "Cari kata kunci pada semua surat dalam akun (Ctrl+S)"
 
@@ -1959,6 +1995,7 @@ msgstr "Mengindeks akun %s"
 #: ../src/client/components/main-toolbar.vala:158
 #: ../src/client/components/main-toolbar.vala:151
 #: ../src/client/components/main-toolbar.vala:150
+#: ../src/client/components/main-toolbar.vala:160
 msgid "Menu"
 msgstr ""
 
@@ -2552,6 +2589,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1052
 #: ../src/client/application/geary-controller.vala:1046
 #: ../src/client/application/geary-controller.vala:1040
+#: ../src/client/application/geary-controller.vala:1035
 msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
@@ -2560,6 +2598,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1057
 #: ../src/client/application/geary-controller.vala:1051
 #: ../src/client/application/geary-controller.vala:1045
+#: ../src/client/application/geary-controller.vala:1040
 msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
@@ -2568,6 +2607,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
 #: ../src/client/application/geary-controller.vala:1127
+#: ../src/client/application/geary-controller.vala:1122
 msgid ""
 "There was an error opening the local mail database for this account. This is "
 "possibly due to corruption of the database file in this directory:\n"
@@ -2583,6 +2623,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1184
 #: ../src/client/application/geary-controller.vala:1178
 #: ../src/client/application/geary-controller.vala:1172
+#: ../src/client/application/geary-controller.vala:1167
 msgid ""
 "The version number of the local mail database is formatted for a newer "
 "version of Mail. Unfortunately, the database cannot be \"rolled back\" to "
@@ -2594,6 +2635,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1195
 #: ../src/client/application/geary-controller.vala:1189
 #: ../src/client/application/geary-controller.vala:1183
+#: ../src/client/application/geary-controller.vala:1178
 msgid ""
 "There was an error opening the local account. This is probably due to "
 "connectivity issues.\n"
@@ -2605,6 +2647,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2404
 #: ../src/client/application/geary-controller.vala:2399
 #: ../src/client/application/geary-controller.vala:2395
+#: ../src/client/application/geary-controller.vala:2390
 msgid "This removes the email from Mail and your email server."
 msgstr ""
 
@@ -2651,6 +2694,7 @@ msgid "Mail update in progress…"
 msgstr ""
 
 #: ../src/client/components/main-toolbar.vala:26
+#: ../src/client/components/main-toolbar.vala:41
 msgid "Search Mail"
 msgstr ""
 
