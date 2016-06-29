@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This is a wrapper script to attach several files to an email in Geary.
+# This is a wrapper script to attach several files to an email in Mail.
 # Written by Viko Adi Rahmawan <vikoadi@gmail.com>
 # License: 3-clause BSD
 
@@ -15,7 +15,7 @@ Relative paths are also supported."
     exit 1 # so that calling without parameters is counted as a failure
 fi
 
-#we dont do file checking as geary is clever enough
+#we dont do file checking as pantheon-mail is clever enough
 ARG="mailto:?attachment=$1" #add first file
 shift
 while [ -n "$1" ]; do
@@ -24,8 +24,8 @@ while [ -n "$1" ]; do
 done
 
 if [ -n "$ARG" ]; then
-    # Finally execute geary
-    geary "${ARG}"
+    # Finally execute pantheon-mail
+    pantheon-mail "${ARG}"
 else
     exit 1
 fi
