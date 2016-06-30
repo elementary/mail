@@ -1855,7 +1855,16 @@ public class GearyController : Geary.BaseObject {
     private void on_mark_as_unread() {
         Geary.EmailFlags flags = new Geary.EmailFlags();
         flags.add(Geary.EmailFlags.UNREAD);
-        Gee.ArrayList<Geary.EmailIdentifier> ids = get_selected_email_ids(false);
+        Gee.ArrayList<Geary.EmailIdentifier> ids = get_selected_email_ids(true);
+        main_window.conversation_viewer.conversation_list_box.get_children().foreach((child) => {
+            if (!(child is ConversationWidget)) {
+                return;
+            }
+            
+            if (((ConversationWidget) child).email.id in ids) {
+                ((ConversationWidget) child).forced_unread = flags.is_unread();
+            }
+        });
         mark_email(ids, flags, null);
     }
 
