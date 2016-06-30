@@ -1827,15 +1827,7 @@ public class GearyController : Geary.BaseObject {
         Geary.EmailFlags? flags_to_add, Geary.EmailFlags? flags_to_remove,
         bool latest_only = false) {
         var ids = get_conversation_collection_email_ids(conversations, latest_only);
-        main_window.conversation_viewer.conversation_list_box.get_children().foreach((child) => {
-            if (!(child is ConversationWidget)) {
-                return;
-            }
-            
-            if (((ConversationWidget) child).email.id in ids) {
-                ((ConversationWidget) child).forced_unread = flags_to_add.is_unread();
-            }
-        });
+        flag_conversation_unread (ids, flags_to_add);
 
         mark_email(ids, flags_to_add, flags_to_remove);
     }
@@ -1856,16 +1848,21 @@ public class GearyController : Geary.BaseObject {
         Geary.EmailFlags flags = new Geary.EmailFlags();
         flags.add(Geary.EmailFlags.UNREAD);
         Gee.ArrayList<Geary.EmailIdentifier> ids = get_selected_email_ids(true);
+        flag_conversation_unread (ids, flags);
+        mark_email(ids, flags, null);
+    }
+
+    // Set flag_unread to prevent the conversation from getting set to read again right away
+    private void flag_conversation_unread (Gee.Collection<Geary.EmailIdentifier> emails, Geary.EmailFlags flags) {
         main_window.conversation_viewer.conversation_list_box.get_children().foreach((child) => {
             if (!(child is ConversationWidget)) {
                 return;
             }
             
-            if (((ConversationWidget) child).email.id in ids) {
+            if (((ConversationWidget) child).email.id in emails) {
                 ((ConversationWidget) child).forced_unread = flags.is_unread();
             }
         });
-        mark_email(ids, flags, null);
     }
 
     private void on_mark_as_starred() {
