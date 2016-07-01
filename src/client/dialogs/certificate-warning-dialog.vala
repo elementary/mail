@@ -17,7 +17,7 @@ public class CertificateWarningDialog {
     
     public CertificateWarningDialog(Gtk.Window? parent, Geary.AccountInformation account_information,
         Geary.Service service, TlsCertificateFlags warnings, bool is_validation) {
-        Gtk.Builder builder = GearyApplication.instance.create_builder("certificate_warning_dialog.ui");
+        var builder = new Gtk.Builder.from_resource("%s/certificate_warning_dialog.ui".printf(GearyApplication.GRESOURCE_PREFIX));
         
         dialog = (Gtk.Dialog) builder.get_object("CertificateWarningDialog");
         dialog.transient_for = parent;

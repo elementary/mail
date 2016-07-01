@@ -22,7 +22,7 @@ public class UpgradeDialog : Object {
      */
     public UpgradeDialog() {
         // Load UI.
-        Gtk.Builder builder = GearyApplication.instance.create_builder("upgrade_dialog.ui");
+        var builder = new Gtk.Builder.from_resource("%s/upgrade_dialog.ui".printf(GearyApplication.GRESOURCE_PREFIX));
         dialog = (Gtk.Dialog) builder.get_object("dialog");
         
         // Hook up signals.
