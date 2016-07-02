@@ -169,11 +169,21 @@ public class ConversationListView : Gtk.TreeView {
             bool read_clicked = false;
             bool star_clicked = false;
             if (GearyApplication.instance.config.display_preview) {
-                read_clicked = cell_x < 25 && cell_y >= 14 && cell_y <= 30;
-                star_clicked = cell_x < 25 && cell_y >= 40 && cell_y <= 62;
+                if (get_direction() == Gtk.TextDirection.RTL) {
+                    read_clicked = cell_x > get_allocated_width() - 25 && cell_y >= 14 && cell_y <= 30;
+                    star_clicked = cell_x > get_allocated_width() - 25 && cell_y >= 40 && cell_y <= 62;
+                } else {
+                    read_clicked = cell_x < 28 && cell_y >= 14 && cell_y <= 30;
+                    star_clicked = cell_x < 28 && cell_y >= 40 && cell_y <= 62;
+                }
             } else {
-                read_clicked = cell_x < 25 && cell_y >= 8 && cell_y <= 22;
-                star_clicked = cell_x < 25 && cell_y >= 28 && cell_y <= 43;
+                if (get_direction() == Gtk.TextDirection.RTL) {
+                    read_clicked = cell_x > get_allocated_width() - 28 && cell_y >= 8 && cell_y <= 22;
+                    star_clicked = cell_x > get_allocated_width() - 28 && cell_y >= 28 && cell_y <= 43;
+                } else {
+                    read_clicked = cell_x < 28 && cell_y >= 8 && cell_y <= 22;
+                    star_clicked = cell_x < 28 && cell_y >= 28 && cell_y <= 43;
+                }
             }
             
             // Get the current conversation.  If it's selected, we'll apply the mark operation to

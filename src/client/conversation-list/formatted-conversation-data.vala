@@ -11,7 +11,7 @@ public class FormattedConversationData : Geary.BaseObject {
     private const string ME = _("Me");
     private const string STYLE_EXAMPLE = "Gg"; // Use both upper and lower case to get max height.
     private const int LEFT_ICON_SIZE = 16;
-    private const int TEXT_LEFT = LINE_SPACING * 2;
+    private const int TEXT_LEFT = LINE_SPACING * 2 + LEFT_ICON_SIZE;
     private const double DIM_TEXT_AMOUNT = 0.05;
     private const double DIM_PREVIEW_TEXT_AMOUNT = 0.25;
     
@@ -88,11 +88,11 @@ public class FormattedConversationData : Geary.BaseObject {
     private Gee.List<Geary.RFC822.MailboxAddress>? account_owner_emails = null;
     private bool use_to = true;
     private CountBadge count_badge = new CountBadge(2);
-    private Gdk.Pixbuf read_pixbuf = null;
-    private Gdk.Pixbuf unread_pixbuf = null;
-    private Gdk.Pixbuf starred_pixbuf = null;
-    private Gdk.Pixbuf unstarred_pixbuf = null;
-    private int current_scale_factor = 1;
+    private static Gdk.Pixbuf read_pixbuf = null;
+    private static Gdk.Pixbuf unread_pixbuf = null;
+    private static Gdk.Pixbuf starred_pixbuf = null;
+    private static Gdk.Pixbuf unstarred_pixbuf = null;
+    private static int current_scale_factor = 1;
     
     // Creates a formatted message data from an e-mail.
     public FormattedConversationData(Geary.App.Conversation conversation, Geary.Email preview,
@@ -260,7 +260,11 @@ public class FormattedConversationData : Geary.BaseObject {
             y += ink_rect.height + ink_rect.y + LINE_SPACING;
             
             // Number of e-mails field.
-            count_badge.render(widget, ctx, counter_x, y, selected);
+            if (widget.get_direction() == Gtk.TextDirection.RTL) {
+                count_badge.render(widget, ctx, cell_area.x + (3 * LINE_SPACING / 2), y, selected);
+            } else {
+                count_badge.render(widget, ctx, counter_x, y, selected);
+            }
             
             // Body preview.
             ink_rect = render_preview(widget, cell_area, ctx, y, selected, counter_width);
@@ -292,7 +296,11 @@ public class FormattedConversationData : Geary.BaseObject {
             if (is_unread || hover) {
                 var read_icon = get_read_pixbuf(widget, is_unread);
                 if (read_icon != null) {
-                    style_context.render_icon(ctx, read_icon, cell_area.x + LINE_SPACING, unread_y);
+                    if (widget.get_direction() == Gtk.TextDirection.RTL) {
+                        style_context.render_icon(ctx, read_icon, cell_area.x + cell_area.width - LEFT_ICON_SIZE - LINE_SPACING, unread_y);
+                    } else {
+                        style_context.render_icon(ctx, read_icon, cell_area.x + LINE_SPACING, unread_y);
+                    }
                 }
             }
             
@@ -301,7 +309,11 @@ public class FormattedConversationData : Geary.BaseObject {
                 var starred_icon = get_starred_pixbuf(widget, is_flagged);
                 int star_y = cell_area.y + (cell_area.height / 2) + (display_preview ? LINE_SPACING : 0);
                 if (starred_icon != null) {
-                    style_context.render_icon(ctx, starred_icon, cell_area.x + LINE_SPACING, star_y);
+                    if (widget.get_direction() == Gtk.TextDirection.RTL) {
+                        style_context.render_icon(ctx, starred_icon, cell_area.x + cell_area.width - LEFT_ICON_SIZE - LINE_SPACING, star_y);
+                    } else {
+                        style_context.render_icon(ctx, starred_icon, cell_area.x + LINE_SPACING, star_y);
+                    }
                 }
             }
         }
@@ -324,7 +336,11 @@ public class FormattedConversationData : Geary.BaseObject {
 
         layout_date.get_pixel_extents(out ink_rect, out logical_rect);
         if (ctx != null && cell_area != null) {
-            widget.get_style_context ().render_layout (ctx, cell_area.width - cell_area.x - ink_rect.width - ink_rect.x - LINE_SPACING, y, layout_date);
+            if (widget.get_direction() == Gtk.TextDirection.RTL) {
+                widget.get_style_context ().render_layout (ctx, cell_area.x + LINE_SPACING, y, layout_date);
+            } else {
+                widget.get_style_context ().render_layout (ctx, cell_area.width - cell_area.x - ink_rect.width - ink_rect.x - LINE_SPACING, y, layout_date);
+            }
         }
         return ink_rect;
     }
@@ -345,9 +361,13 @@ public class FormattedConversationData : Geary.BaseObject {
         }
         if (ctx != null && cell_area != null) {
             layout_from.set_width((cell_area.width - ink_rect.width - ink_rect.x - (LINE_SPACING * 3) -
-                TEXT_LEFT - LEFT_ICON_SIZE * widget.get_scale_factor())
+                TEXT_LEFT)
             * Pango.SCALE);
-            widget.get_style_context ().render_layout (ctx, cell_area.x + TEXT_LEFT + LEFT_ICON_SIZE * widget.get_scale_factor(), y, layout_from);
+            if (widget.get_direction() == Gtk.TextDirection.RTL) {
+                widget.get_style_context ().render_layout (ctx, cell_area.x + ink_rect.width + LINE_SPACING * 2 , y, layout_from);
+            } else {
+                widget.get_style_context ().render_layout (ctx, cell_area.x + TEXT_LEFT, y, layout_from);
+            }
         }
         return ink_rect;
     }
@@ -363,7 +383,7 @@ public class FormattedConversationData : Geary.BaseObject {
         layout_subject.set_font_description(font_subject);
         layout_subject.set_markup(Geary.HTML.escape_markup(subject), -1);
         if (cell_area != null)
-            layout_subject.set_width((cell_area.width - TEXT_LEFT - LEFT_ICON_SIZE * widget.get_scale_factor() - counter_width) * Pango.SCALE);
+            layout_subject.set_width((cell_area.width - TEXT_LEFT - counter_width - LINE_SPACING) * Pango.SCALE);
 
         if (widget.get_direction() == Gtk.TextDirection.RTL) {
             layout_subject.set_ellipsize(Pango.EllipsizeMode.START);
@@ -372,7 +392,11 @@ public class FormattedConversationData : Geary.BaseObject {
         }
 
         if (ctx != null && cell_area != null) {
-            widget.get_style_context ().render_layout (ctx, cell_area.x + TEXT_LEFT + LEFT_ICON_SIZE * widget.get_scale_factor(), y, layout_subject);
+            if (widget.get_direction() == Gtk.TextDirection.RTL) {
+                widget.get_style_context ().render_layout (ctx, cell_area.x, y, layout_subject);
+            } else {
+                widget.get_style_context ().render_layout (ctx, cell_area.x + TEXT_LEFT, y, layout_subject);
+            }
         }
     }
     
@@ -393,10 +417,14 @@ public class FormattedConversationData : Geary.BaseObject {
             layout_preview.set_ellipsize(Pango.EllipsizeMode.END);
         }
         if (ctx != null && cell_area != null) {
-            layout_preview.set_width((cell_area.width - TEXT_LEFT - LEFT_ICON_SIZE * widget.get_scale_factor() - counter_width - LINE_SPACING) * Pango.SCALE);
+            layout_preview.set_width((cell_area.width - TEXT_LEFT - counter_width - LINE_SPACING) * Pango.SCALE);
             layout_preview.set_height(preview_height * Pango.SCALE);
             
-            style_context.render_layout (ctx, cell_area.x + TEXT_LEFT + LEFT_ICON_SIZE * widget.get_scale_factor(), y, layout_preview);
+            if (widget.get_direction() == Gtk.TextDirection.RTL) {
+                style_context.render_layout (ctx, cell_area.x + counter_width, y, layout_preview);
+            } else {
+                style_context.render_layout (ctx, cell_area.x + TEXT_LEFT, y, layout_preview);
+            }
         } else {
             layout_preview.set_width(int.MAX);
             layout_preview.set_height(int.MAX);
@@ -414,7 +442,7 @@ public class FormattedConversationData : Geary.BaseObject {
             if (unread_pixbuf == null) {
                 var icon_theme = Gtk.IconTheme.get_default();
                 var style_context = widget.get_style_context();
-                var icon_info = icon_theme.lookup_icon_for_scale("mail-unread-symbolic", LEFT_ICON_SIZE, widget.get_scale_factor(), Gtk.IconLookupFlags.GENERIC_FALLBACK|Gtk.IconLookupFlags.FORCE_SIZE);
+                var icon_info = icon_theme.lookup_icon("mail-unread-symbolic", LEFT_ICON_SIZE, Gtk.IconLookupFlags.GENERIC_FALLBACK|Gtk.IconLookupFlags.FORCE_SIZE);
                 if (icon_info != null) {
                     try {
                         unread_pixbuf = icon_info.load_symbolic_for_context(style_context);
@@ -429,7 +457,7 @@ public class FormattedConversationData : Geary.BaseObject {
             if (read_pixbuf == null) {
                 var icon_theme = Gtk.IconTheme.get_default();
                 var style_context = widget.get_style_context();
-                var icon_info = icon_theme.lookup_icon_for_scale("mail-read-symbolic", LEFT_ICON_SIZE, widget.get_scale_factor(), Gtk.IconLookupFlags.GENERIC_FALLBACK|Gtk.IconLookupFlags.FORCE_SIZE);
+                var icon_info = icon_theme.lookup_icon("mail-read-symbolic", LEFT_ICON_SIZE, Gtk.IconLookupFlags.GENERIC_FALLBACK|Gtk.IconLookupFlags.FORCE_SIZE);
                 if (icon_info != null) {
                     try {
                         read_pixbuf = icon_info.load_symbolic_for_context(style_context);
@@ -448,7 +476,7 @@ public class FormattedConversationData : Geary.BaseObject {
             if (starred_pixbuf == null) {
                 var icon_theme = Gtk.IconTheme.get_default();
                 var style_context = widget.get_style_context();
-                var icon_info = icon_theme.lookup_icon_for_scale("starred-symbolic", LEFT_ICON_SIZE, widget.get_scale_factor(), Gtk.IconLookupFlags.GENERIC_FALLBACK|Gtk.IconLookupFlags.FORCE_SIZE);
+                var icon_info = icon_theme.lookup_icon("starred-symbolic", LEFT_ICON_SIZE, Gtk.IconLookupFlags.GENERIC_FALLBACK|Gtk.IconLookupFlags.FORCE_SIZE);
                 if (icon_info != null) {
                     try {
                         starred_pixbuf = icon_info.load_symbolic_for_context(style_context);
@@ -463,7 +491,7 @@ public class FormattedConversationData : Geary.BaseObject {
             if (unstarred_pixbuf == null) {
                 var icon_theme = Gtk.IconTheme.get_default();
                 var style_context = widget.get_style_context();
-                var icon_info = icon_theme.lookup_icon_for_scale("non-starred-symbolic", LEFT_ICON_SIZE, widget.get_scale_factor(), Gtk.IconLookupFlags.GENERIC_FALLBACK|Gtk.IconLookupFlags.FORCE_SIZE);
+                var icon_info = icon_theme.lookup_icon("non-starred-symbolic", LEFT_ICON_SIZE, Gtk.IconLookupFlags.GENERIC_FALLBACK|Gtk.IconLookupFlags.FORCE_SIZE);
                 if (icon_info != null) {
                     try {
                         unstarred_pixbuf = icon_info.load_symbolic_for_context(style_context);
