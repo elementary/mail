@@ -50,7 +50,11 @@ public class MainToolbar : Gtk.HeaderBar {
         GearyApplication.instance.controller.account_selected.connect (on_account_changed);
 
         // Assemble mark menu.
-        GearyApplication.instance.load_ui_file ("toolbar_mark_menu.ui");
+        try {
+            GearyApplication.instance.ui_manager.add_ui_from_resource("%s/toolbar_mark_menu.ui".printf(GearyApplication.GRESOURCE_PREFIX));
+        } catch (Error e) {
+            critical (e.message);
+        }
         var mark_menu = (Gtk.Menu) GearyApplication.instance.ui_manager.get_widget ("/ui/ToolbarMarkMenu");
         mark_menu.foreach (GtkUtil.show_menuitem_accel_labels);
 
@@ -61,7 +65,11 @@ public class MainToolbar : Gtk.HeaderBar {
         compose.image = new Gtk.Image.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
         // Set accel labels for EmptyTrash and EmptySpam context menus
-        GearyApplication.instance.load_ui_file ("context_empty_menu.ui");
+        try {
+            GearyApplication.instance.ui_manager.add_ui_from_resource("%s/context_empty_menu.ui".printf(GearyApplication.GRESOURCE_PREFIX));
+        } catch (Error e) {
+            critical (e.message);
+        }
         var empty_menu = (Gtk.Menu) GearyApplication.instance.ui_manager.get_widget ("/ui/ContextEmptyMenu");
         empty_menu.foreach (GtkUtil.show_menuitem_accel_labels);
 

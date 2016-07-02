@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/io/elementary/pantheon-mail">
+    <file alias="accelerators.ui" compressed="true" preprocess="xml-stripblanks">accelerators.ui</file>
+    <file alias="account_list.ui" compressed="true" preprocess="xml-stripblanks">account_list.ui</file>
+    <file alias="account_cannot_remove.ui" compressed="true" preprocess="xml-stripblanks">account_cannot_remove.ui</file>
+    <file alias="app_menu.interface" compressed="true" preprocess="xml-stripblanks">app_menu.interface</file>
+    <file alias="certificate_warning_dialog.ui" compressed="true" preprocess="xml-stripblanks">certificate_warning_dialog.ui</file>
+    <file alias="composer_accelerators.ui" compressed="true" preprocess="xml-stripblanks">composer_accelerators.ui</file>
+    <file alias="composer.ui" compressed="true" preprocess="xml-stripblanks">composer.ui</file>
+    <file alias="context_empty_menu.ui" compressed="true" preprocess="xml-stripblanks">context_empty_menu.ui</file>
+    <file alias="edit_alternate_emails.ui" compressed="true" preprocess="xml-stripblanks">edit_alternate_emails.ui</file>
+    <file alias="find_bar.ui" compressed="true" preprocess="xml-stripblanks">find_bar.ui</file>
+    <file alias="login.ui" compressed="true" preprocess="xml-stripblanks">login.ui</file>
+    <file alias="message.ui" compressed="true" preprocess="xml-stripblanks">message.ui</file>
+    <file alias="toolbar_mark_menu.ui" compressed="true" preprocess="xml-stripblanks">toolbar_mark_menu.ui</file>
+    <file alias="upgrade_dialog.ui" compressed="true" preprocess="xml-stripblanks">upgrade_dialog.ui</file>
+  </gresource>
+</gresources>

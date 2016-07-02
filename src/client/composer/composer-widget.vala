@@ -290,7 +290,7 @@ public class ComposerWidget : Gtk.EventBox {
         setup_drag_destination(this);
         
         add_events(Gdk.EventMask.KEY_PRESS_MASK | Gdk.EventMask.KEY_RELEASE_MASK);
-        builder = GearyApplication.instance.create_builder("composer.ui");
+        builder = new Gtk.Builder.from_resource("%s/composer.ui".printf(GearyApplication.GRESOURCE_PREFIX));
         
         Gtk.Box box = builder.get_object("composer") as Gtk.Box;
         attachments_box = builder.get_object("attachments_box") as Gtk.Box;
@@ -428,9 +428,12 @@ public class ComposerWidget : Gtk.EventBox {
         
         ui = new Gtk.UIManager();
         ui.insert_action_group(actions, 0);
-        GearyApplication.instance.load_ui_file_for_manager(ui, "composer_accelerators.ui");
-        
-        add_extra_accelerators();
+        try {
+            ui.add_ui_from_resource("%s/composer_accelerators.ui".printf(GearyApplication.GRESOURCE_PREFIX));
+            add_extra_accelerators();
+        } catch (Error e) {
+            critical (e.message);
+        }
         
         from = account.information.get_primary_from();
         update_from_field();

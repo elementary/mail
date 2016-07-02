@@ -24,7 +24,7 @@ public class AccountDialogAccountListPane : AccountDialogPane {
     
     public AccountDialogAccountListPane(Gtk.Stack stack) {
         base(stack);
-        Gtk.Builder builder = GearyApplication.instance.create_builder("account_list.ui");
+        var builder = new Gtk.Builder.from_resource("%s/account_list.ui".printf(GearyApplication.GRESOURCE_PREFIX));
         pack_end((Gtk.Box) builder.get_object("container"));
         Gtk.ActionGroup actions = (Gtk.ActionGroup) builder.get_object("account list actions");
         edit_action = actions.get_action("edit_account");
