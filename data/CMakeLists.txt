@@ -4,15 +4,14 @@
 include(Translations)
 
 configure_file(org.pantheon.mail.desktop.in.in ${CMAKE_CURRENT_BINARY_DIR}/org.pantheon.mail.desktop.in)
-configure_file(${CMAKE_CURRENT_BINARY_DIR}/org.pantheon.mail.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/org.pantheon.mail.desktop)
 configure_file_translation(${CMAKE_CURRENT_BINARY_DIR}/org.pantheon.mail.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/org.pantheon.mail.desktop ${CMAKE_SOURCE_DIR}/po/)
 
 configure_file(pantheon-mail-autostart.desktop.in.in ${CMAKE_CURRENT_BINARY_DIR}/pantheon-mail-autostart.desktop.in)
-configure_file(${CMAKE_CURRENT_BINARY_DIR}/pantheon-mail-autostart.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/pantheon-mail-autostart.desktop)
 configure_file_translation(${CMAKE_CURRENT_BINARY_DIR}/pantheon-mail-autostart.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/pantheon-mail-autostart.desktop ${CMAKE_SOURCE_DIR}/po/)
 
+configure_file_translation(${CMAKE_CURRENT_SOURCE_DIR}/org.pantheon.mail.appdata.xml.in ${CMAKE_CURRENT_BINARY_DIR}/org.pantheon.mail.appdata.xml ${CMAKE_SOURCE_DIR}/po/)
 
-install(FILES pantheon-mail.appdata.xml DESTINATION share/appdata)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.pantheon.mail.appdata.xml DESTINATION share/metainfo)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.pantheon.mail.desktop DESTINATION share/applications)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/pantheon-mail-autostart.desktop DESTINATION share/applications)
 
