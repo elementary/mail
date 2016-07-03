@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-06-26 10:15-0700\n"
-"PO-Revision-Date: 2016-06-14 21:00+0000\n"
+"POT-Creation-Date: 2016-07-02 23:20+0200\n"
+"PO-Revision-Date: 2016-07-03 00:31+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-06-27 06:42+0000\n"
+"X-Launchpad-Export-Date: 2016-07-03 05:45+0000\n"
 "X-Generator: Launchpad (build 18115)\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -318,6 +318,7 @@ msgstr "스팸 아님으로  표시(_P)"
 #: ../src/client/application/geary-controller.vala:381
 #: ../src/client/components/main-toolbar.vala:108
 #: ../src/client/components/main-toolbar.vala:107
+#: ../src/client/components/main-toolbar.vala:123
 msgid "Mark conversation"
 msgstr "표시하기"
 
@@ -337,6 +338,7 @@ msgstr "표시하기"
 #: ../src/client/application/geary-controller.vala:79
 #: ../src/client/components/main-toolbar.vala:113
 #: ../src/client/components/main-toolbar.vala:112
+#: ../src/client/components/main-toolbar.vala:128
 msgid "Add label to conversation"
 msgstr "라벨 표시"
 
@@ -360,6 +362,7 @@ msgstr "라벨 표시"
 #: ../src/client/application/geary-controller.vala:420
 #: ../src/client/components/main-toolbar.vala:118
 #: ../src/client/components/main-toolbar.vala:117
+#: ../src/client/components/main-toolbar.vala:133
 msgid "Move conversation"
 msgstr "편지 이동"
 
@@ -469,6 +472,7 @@ msgstr "옮기기(_M)"
 #: ../src/client/application/geary-controller.vala:430
 #: ../src/client/application/geary-controller.vala:425
 #: ../src/client/components/main-toolbar.vala:60
+#: ../src/client/components/main-toolbar.vala:64
 msgid "Compose new message (Ctrl+N, N)"
 msgstr "새 편지 쓰기 (Ctrl+N, N)"
 
@@ -483,6 +487,7 @@ msgstr "답장(_R)"
 #: ../src/client/application/geary-controller.vala:435
 #: ../src/client/application/geary-controller.vala:430
 #: ../src/client/components/main-toolbar.vala:99
+#: ../src/client/components/main-toolbar.vala:107
 msgid "Reply (Ctrl+R, R)"
 msgstr "답장 (Ctrl+R, R)"
 
@@ -495,6 +500,7 @@ msgstr "전체 답장(_E)"
 #: ../src/client/application/geary-controller.vala:440
 #: ../src/client/application/geary-controller.vala:435
 #: ../src/client/components/main-toolbar.vala:104
+#: ../src/client/components/main-toolbar.vala:112
 msgid "Reply all (Ctrl+Shift+R, Shift+R)"
 msgstr "전체 답장 (Ctrl+Shift+R, Shift+R)"
 
@@ -509,6 +515,7 @@ msgstr "전달(_F)"
 #: ../src/client/application/geary-controller.vala:446
 #: ../src/client/application/geary-controller.vala:441
 #: ../src/client/components/main-toolbar.vala:109
+#: ../src/client/components/main-toolbar.vala:117
 msgid "Forward (Ctrl+L, F)"
 msgstr "전달 (Ctrl+L, F)"
 
@@ -556,6 +563,7 @@ msgstr "검색"
 #: ../src/client/application/geary-controller.vala:728
 #: ../src/client/application/geary-controller.vala:722
 #: ../src/client/application/geary-controller.vala:717
+#: ../src/client/application/geary-controller.vala:711
 msgid "Unable to store server trust exception"
 msgstr "서버 신뢰 예외를 저장할 수 없습니다"
 
@@ -565,6 +573,7 @@ msgstr "서버 신뢰 예외를 저장할 수 없습니다"
 #: ../src/client/application/geary-controller.vala:965
 #: ../src/client/application/geary-controller.vala:959
 #: ../src/client/application/geary-controller.vala:954
+#: ../src/client/application/geary-controller.vala:948
 msgid "Your settings are insecure"
 msgstr "설정이 안전하지 않습니다"
 
@@ -574,6 +583,7 @@ msgstr "설정이 안전하지 않습니다"
 #: ../src/client/application/geary-controller.vala:966
 #: ../src/client/application/geary-controller.vala:960
 #: ../src/client/application/geary-controller.vala:955
+#: ../src/client/application/geary-controller.vala:949
 msgid ""
 "Your IMAP and/or SMTP settings do not specify SSL or TLS.  This means your "
 "username and password could be read by another person on the network.  Are "
@@ -588,6 +598,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:967
 #: ../src/client/application/geary-controller.vala:961
 #: ../src/client/application/geary-controller.vala:956
+#: ../src/client/application/geary-controller.vala:950
 msgid "Co_ntinue"
 msgstr "계속(_N)"
 
@@ -599,6 +610,7 @@ msgstr "계속(_N)"
 #: ../src/client/application/geary-controller.vala:1045
 #: ../src/client/application/geary-controller.vala:1039
 #: ../src/client/application/geary-controller.vala:1034
+#: ../src/client/application/geary-controller.vala:1028
 msgid "Error sending email"
 msgstr "이메일 보내기 오류"
 
@@ -617,6 +629,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1050
 #: ../src/client/application/geary-controller.vala:1044
 #: ../src/client/application/geary-controller.vala:1039
+#: ../src/client/application/geary-controller.vala:1033
 msgid "Error saving sent mail"
 msgstr "보낸 편지 저장하기 오류"
 
@@ -633,6 +646,7 @@ msgstr "기어리(Geary)가 보낸 편지를 저장하는 도중 오류가 생�
 #: ../src/client/application/geary-controller.vala:1120
 #: ../src/client/application/geary-controller.vala:1114
 #: ../src/client/application/geary-controller.vala:1109
+#: ../src/client/application/geary-controller.vala:1103
 msgid "Labels"
 msgstr "라벨"
 
@@ -642,6 +656,7 @@ msgstr "라벨"
 #: ../src/client/application/geary-controller.vala:1132
 #: ../src/client/application/geary-controller.vala:1126
 #: ../src/client/application/geary-controller.vala:1121
+#: ../src/client/application/geary-controller.vala:1115
 msgid "Unable to open the database for %s"
 msgstr "%s 용 데이터 베이스를 열 수 없습니다"
 
@@ -673,6 +688,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1135
 #: ../src/client/application/geary-controller.vala:1129
 #: ../src/client/application/geary-controller.vala:1124
+#: ../src/client/application/geary-controller.vala:1118
 msgid "_Rebuild"
 msgstr "재구성하기(_R)"
 
@@ -682,6 +698,7 @@ msgstr "재구성하기(_R)"
 #: ../src/client/application/geary-controller.vala:1135
 #: ../src/client/application/geary-controller.vala:1129
 #: ../src/client/application/geary-controller.vala:1124
+#: ../src/client/application/geary-controller.vala:1118
 msgid "E_xit"
 msgstr "나가기(_X)"
 
@@ -691,6 +708,7 @@ msgstr "나가기(_X)"
 #: ../src/client/application/geary-controller.vala:1144
 #: ../src/client/application/geary-controller.vala:1138
 #: ../src/client/application/geary-controller.vala:1133
+#: ../src/client/application/geary-controller.vala:1127
 msgid "Unable to rebuild database for \"%s\""
 msgstr "\"%s\"용 데이터 베이스를 재구성할 수 없습니다"
 
@@ -700,6 +718,7 @@ msgstr "\"%s\"용 데이터 베이스를 재구성할 수 없습니다"
 #: ../src/client/application/geary-controller.vala:1145
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1134
+#: ../src/client/application/geary-controller.vala:1128
 msgid ""
 "Error during rebuild:\n"
 "\n"
@@ -726,6 +745,8 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1182
 #: ../src/client/application/geary-controller.vala:1156
 #: ../src/client/application/geary-controller.vala:1166
+#: ../src/client/application/geary-controller.vala:1150
+#: ../src/client/application/geary-controller.vala:1160
 msgid "Unable to open local mailbox for %s"
 msgstr "%s 용 로컬 메일 박스를 열 수 없습니다"
 
@@ -735,6 +756,7 @@ msgstr "%s 용 로컬 메일 박스를 열 수 없습니다"
 #: ../src/client/application/geary-controller.vala:1168
 #: ../src/client/application/geary-controller.vala:1162
 #: ../src/client/application/geary-controller.vala:1157
+#: ../src/client/application/geary-controller.vala:1151
 msgid ""
 "There was an error opening the local mail database for this account. This is "
 "possibly due to a file permissions problem.\n"
@@ -790,6 +812,7 @@ msgstr "%s 소개"
 #: ../src/client/application/geary-controller.vala:1678
 #: ../src/client/application/geary-controller.vala:1672
 #: ../src/client/application/geary-controller.vala:1667
+#: ../src/client/application/geary-controller.vala:1661
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -1814,6 +1837,7 @@ msgstr "%s (%s)"
 #: ../src/client/composer/composer-widget.vala:1601
 #: ../src/client/composer/composer-widget.vala:1598
 #: ../src/client/composer/composer-widget.vala:1599
+#: ../src/client/composer/composer-widget.vala:1602
 msgid "To: "
 msgstr "받는 사람: "
 
@@ -1823,6 +1847,7 @@ msgstr "받는 사람: "
 #: ../src/client/composer/composer-widget.vala:1604
 #: ../src/client/composer/composer-widget.vala:1601
 #: ../src/client/composer/composer-widget.vala:1602
+#: ../src/client/composer/composer-widget.vala:1605
 msgid "Cc: "
 msgstr "함께 받는 사람: "
 
@@ -1832,6 +1857,7 @@ msgstr "함께 받는 사람: "
 #: ../src/client/composer/composer-widget.vala:1607
 #: ../src/client/composer/composer-widget.vala:1604
 #: ../src/client/composer/composer-widget.vala:1605
+#: ../src/client/composer/composer-widget.vala:1608
 msgid "Bcc: "
 msgstr "숨겨 받는 사람: "
 
@@ -1841,6 +1867,7 @@ msgstr "숨겨 받는 사람: "
 #: ../src/client/composer/composer-widget.vala:1610
 #: ../src/client/composer/composer-widget.vala:1607
 #: ../src/client/composer/composer-widget.vala:1608
+#: ../src/client/composer/composer-widget.vala:1611
 msgid "Reply-To: "
 msgstr "답장 하기: "
 
@@ -1850,6 +1877,7 @@ msgstr "답장 하기: "
 #: ../src/client/composer/composer-widget.vala:1843
 #: ../src/client/composer/composer-widget.vala:1840
 #: ../src/client/composer/composer-widget.vala:1841
+#: ../src/client/composer/composer-widget.vala:1844
 msgid "Select Color"
 msgstr "색상 선택"
 
@@ -1859,6 +1887,7 @@ msgstr "색상 선택"
 #: ../src/client/composer/composer-widget.vala:2274
 #: ../src/client/composer/composer-widget.vala:2271
 #: ../src/client/composer/composer-widget.vala:2272
+#: ../src/client/composer/composer-widget.vala:2275
 msgid "%1$s via %2$s"
 msgstr "%2$s 를 경유해서 %1$s"
 
@@ -1868,6 +1897,7 @@ msgstr "%2$s 를 경유해서 %1$s"
 #: ../src/client/composer/composer-widget.vala:2315
 #: ../src/client/composer/composer-widget.vala:2312
 #: ../src/client/composer/composer-widget.vala:2313
+#: ../src/client/composer/composer-widget.vala:2316
 msgid "_From:"
 msgstr "보내는 사람(_F)"
 
@@ -1943,6 +1973,7 @@ msgstr "보관(_K)"
 #: ../src/client/components/main-toolbar.vala:75
 #: ../src/client/components/main-toolbar.vala:69
 #: ../src/client/components/main-toolbar.vala:70
+#: ../src/client/components/main-toolbar.vala:78
 msgid "Search all mail in account for keywords (Ctrl+S)"
 msgstr "계정의 모든 편지에서 키워드 검색 (Ctrl+S)"
 
@@ -1951,6 +1982,7 @@ msgstr "계정의 모든 편지에서 키워드 검색 (Ctrl+S)"
 #: ../src/client/components/main-toolbar.vala:269
 #: ../src/client/components/main-toolbar.vala:262
 #: ../src/client/components/main-toolbar.vala:259
+#: ../src/client/components/main-toolbar.vala:277
 msgid "Indexing %s account"
 msgstr "%s 계정 정돈"
 
@@ -1962,6 +1994,7 @@ msgstr "%s 계정 정돈"
 #: ../src/client/components/main-toolbar.vala:151
 #: ../src/client/components/main-toolbar.vala:150
 #: ../src/client/components/main-toolbar.vala:160
+#: ../src/client/components/main-toolbar.vala:168
 msgid "Menu"
 msgstr "메뉴"
 
@@ -1992,6 +2025,7 @@ msgstr "추가 옵션"
 #: ../src/client/components/main-toolbar.vala:281
 #: ../src/client/components/main-toolbar.vala:274
 #: ../src/client/components/main-toolbar.vala:271
+#: ../src/client/components/main-toolbar.vala:289
 msgid "Search %s"
 msgstr "%s 찾기"
 
@@ -2557,6 +2591,7 @@ msgstr "웹 사이트"
 #: ../src/client/application/geary-controller.vala:1046
 #: ../src/client/application/geary-controller.vala:1040
 #: ../src/client/application/geary-controller.vala:1035
+#: ../src/client/application/geary-controller.vala:1029
 msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
@@ -2566,6 +2601,7 @@ msgstr "메일이 이메일을 보내는 도중 오류가 생겼습니다. 문�
 #: ../src/client/application/geary-controller.vala:1051
 #: ../src/client/application/geary-controller.vala:1045
 #: ../src/client/application/geary-controller.vala:1040
+#: ../src/client/application/geary-controller.vala:1034
 msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
@@ -2575,6 +2611,7 @@ msgstr "메일이 보낸 편지를 저장하는 도중 오류가 생겼습니다
 #: ../src/client/application/geary-controller.vala:1133
 #: ../src/client/application/geary-controller.vala:1127
 #: ../src/client/application/geary-controller.vala:1122
+#: ../src/client/application/geary-controller.vala:1116
 msgid ""
 "There was an error opening the local mail database for this account. This is "
 "possibly due to corruption of the database file in this directory:\n"
@@ -2599,6 +2636,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1178
 #: ../src/client/application/geary-controller.vala:1172
 #: ../src/client/application/geary-controller.vala:1167
+#: ../src/client/application/geary-controller.vala:1161
 msgid ""
 "The version number of the local mail database is formatted for a newer "
 "version of Mail. Unfortunately, the database cannot be \"rolled back\" to "
@@ -2615,6 +2653,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1189
 #: ../src/client/application/geary-controller.vala:1183
 #: ../src/client/application/geary-controller.vala:1178
+#: ../src/client/application/geary-controller.vala:1172
 msgid ""
 "There was an error opening the local account. This is probably due to "
 "connectivity issues.\n"
@@ -2668,6 +2707,7 @@ msgid "Mail will exit if you have no other open email accounts."
 msgstr "열려 있는 다른 이메일 계정이 없다면 메일을 끝내겠습니다."
 
 #: ../data/ui/account_spinner.ui:41
+#: ../src/client/accounts/account-spinner-page.vala:22
 msgid "Please wait while Mail validates your account."
 msgstr "메일이 계정을 확인하는 동안 기다려 주세요."
 
@@ -2889,3 +2929,9 @@ msgstr "비밀번호 저장"
 #: ../src/client/dialogs/PasswordDialog.vala:75
 msgid "Authenticate"
 msgstr "인증"
+
+#. /Translators: this is the ponctuation between two names ("John, Jane")
+#: ../src/client/conversation-list/formatted-conversation-data.vala:188
+#: ../src/client/conversation-list/formatted-conversation-data.vala:190
+msgid ", "
+msgstr ", "

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-26 10:15-0700\n"
+"POT-Creation-Date: 2016-07-02 23:20+0200\n"
 "PO-Revision-Date: 2016-06-14 18:54+0000\n"
 "Last-Translator: Damian Woźniak <fiszet@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-06-27 06:42+0000\n"
+"X-Launchpad-Export-Date: 2016-07-03 05:45+0000\n"
 "X-Generator: Launchpad (build 18115)\n"
 "X-Poedit-Country: Poland\n"
 "Language: pl\n"
@@ -339,6 +339,7 @@ msgstr "Odznacz jako _niechciana"
 #: ../src/client/application/geary-controller.vala:381
 #: ../src/client/components/main-toolbar.vala:108
 #: ../src/client/components/main-toolbar.vala:107
+#: ../src/client/components/main-toolbar.vala:123
 msgid "Mark conversation"
 msgstr "Oznacz wątek"
 
@@ -358,6 +359,7 @@ msgstr "Oznacz wątek"
 #: ../src/client/application/geary-controller.vala:79
 #: ../src/client/components/main-toolbar.vala:113
 #: ../src/client/components/main-toolbar.vala:112
+#: ../src/client/components/main-toolbar.vala:128
 msgid "Add label to conversation"
 msgstr "Nadaj etykietę wątkowi"
 
@@ -381,6 +383,7 @@ msgstr "Nadaj etykietę wątkom"
 #: ../src/client/application/geary-controller.vala:420
 #: ../src/client/components/main-toolbar.vala:118
 #: ../src/client/components/main-toolbar.vala:117
+#: ../src/client/components/main-toolbar.vala:133
 msgid "Move conversation"
 msgstr "Przenieś wątek"
 
@@ -490,6 +493,7 @@ msgstr "_Przenieś"
 #: ../src/client/application/geary-controller.vala:430
 #: ../src/client/application/geary-controller.vala:425
 #: ../src/client/components/main-toolbar.vala:60
+#: ../src/client/components/main-toolbar.vala:64
 msgid "Compose new message (Ctrl+N, N)"
 msgstr "Utwórz nową wiadomość (Ctrl+N, N)"
 
@@ -504,6 +508,7 @@ msgstr "_Odpowiedz"
 #: ../src/client/application/geary-controller.vala:435
 #: ../src/client/application/geary-controller.vala:430
 #: ../src/client/components/main-toolbar.vala:99
+#: ../src/client/components/main-toolbar.vala:107
 msgid "Reply (Ctrl+R, R)"
 msgstr "Odpowiedz (Ctrl+R, R)"
 
@@ -516,6 +521,7 @@ msgstr "O_dpowiedz wszystkim"
 #: ../src/client/application/geary-controller.vala:440
 #: ../src/client/application/geary-controller.vala:435
 #: ../src/client/components/main-toolbar.vala:104
+#: ../src/client/components/main-toolbar.vala:112
 msgid "Reply all (Ctrl+Shift+R, Shift+R)"
 msgstr "Odpowiedz wszystkim (Ctrl+Shift+R, Shift+R)"
 
@@ -530,6 +536,7 @@ msgstr "_Przekaż"
 #: ../src/client/application/geary-controller.vala:446
 #: ../src/client/application/geary-controller.vala:441
 #: ../src/client/components/main-toolbar.vala:109
+#: ../src/client/components/main-toolbar.vala:117
 msgid "Forward (Ctrl+L, F)"
 msgstr "Naprzód (Ctrl+L, F)"
 
@@ -577,6 +584,7 @@ msgstr "Przełącz pasek wyszukiwania"
 #: ../src/client/application/geary-controller.vala:728
 #: ../src/client/application/geary-controller.vala:722
 #: ../src/client/application/geary-controller.vala:717
+#: ../src/client/application/geary-controller.vala:711
 msgid "Unable to store server trust exception"
 msgstr "Nie można przechować wyjątku zaufania serwera"
 
@@ -586,6 +594,7 @@ msgstr "Nie można przechować wyjątku zaufania serwera"
 #: ../src/client/application/geary-controller.vala:965
 #: ../src/client/application/geary-controller.vala:959
 #: ../src/client/application/geary-controller.vala:954
+#: ../src/client/application/geary-controller.vala:948
 msgid "Your settings are insecure"
 msgstr "Ustawienia konta nie są bezpieczne"
 
@@ -595,6 +604,7 @@ msgstr "Ustawienia konta nie są bezpieczne"
 #: ../src/client/application/geary-controller.vala:966
 #: ../src/client/application/geary-controller.vala:960
 #: ../src/client/application/geary-controller.vala:955
+#: ../src/client/application/geary-controller.vala:949
 msgid ""
 "Your IMAP and/or SMTP settings do not specify SSL or TLS.  This means your "
 "username and password could be read by another person on the network.  Are "
@@ -610,6 +620,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:967
 #: ../src/client/application/geary-controller.vala:961
 #: ../src/client/application/geary-controller.vala:956
+#: ../src/client/application/geary-controller.vala:950
 msgid "Co_ntinue"
 msgstr "_Kontynuuj"
 
@@ -621,6 +632,7 @@ msgstr "_Kontynuuj"
 #: ../src/client/application/geary-controller.vala:1045
 #: ../src/client/application/geary-controller.vala:1039
 #: ../src/client/application/geary-controller.vala:1034
+#: ../src/client/application/geary-controller.vala:1028
 msgid "Error sending email"
 msgstr "Błąd podczas wysyłania wiadomości"
 
@@ -640,6 +652,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1050
 #: ../src/client/application/geary-controller.vala:1044
 #: ../src/client/application/geary-controller.vala:1039
+#: ../src/client/application/geary-controller.vala:1033
 msgid "Error saving sent mail"
 msgstr "Błąd podczas zapisywania wysłanej wiadomości"
 
@@ -658,6 +671,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1120
 #: ../src/client/application/geary-controller.vala:1114
 #: ../src/client/application/geary-controller.vala:1109
+#: ../src/client/application/geary-controller.vala:1103
 msgid "Labels"
 msgstr "Etykiety"
 
@@ -667,6 +681,7 @@ msgstr "Etykiety"
 #: ../src/client/application/geary-controller.vala:1132
 #: ../src/client/application/geary-controller.vala:1126
 #: ../src/client/application/geary-controller.vala:1121
+#: ../src/client/application/geary-controller.vala:1115
 msgid "Unable to open the database for %s"
 msgstr "Nie można otworzyć bazy danych dla %s"
 
@@ -701,6 +716,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1135
 #: ../src/client/application/geary-controller.vala:1129
 #: ../src/client/application/geary-controller.vala:1124
+#: ../src/client/application/geary-controller.vala:1118
 msgid "_Rebuild"
 msgstr "P_rzebuduj"
 
@@ -710,6 +726,7 @@ msgstr "P_rzebuduj"
 #: ../src/client/application/geary-controller.vala:1135
 #: ../src/client/application/geary-controller.vala:1129
 #: ../src/client/application/geary-controller.vala:1124
+#: ../src/client/application/geary-controller.vala:1118
 msgid "E_xit"
 msgstr "Za_kończ"
 
@@ -719,6 +736,7 @@ msgstr "Za_kończ"
 #: ../src/client/application/geary-controller.vala:1144
 #: ../src/client/application/geary-controller.vala:1138
 #: ../src/client/application/geary-controller.vala:1133
+#: ../src/client/application/geary-controller.vala:1127
 msgid "Unable to rebuild database for \"%s\""
 msgstr "Nie można przebudować bazy danych dla „%s”"
 
@@ -728,6 +746,7 @@ msgstr "Nie można przebudować bazy danych dla „%s”"
 #: ../src/client/application/geary-controller.vala:1145
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1134
+#: ../src/client/application/geary-controller.vala:1128
 msgid ""
 "Error during rebuild:\n"
 "\n"
@@ -754,6 +773,8 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1182
 #: ../src/client/application/geary-controller.vala:1156
 #: ../src/client/application/geary-controller.vala:1166
+#: ../src/client/application/geary-controller.vala:1150
+#: ../src/client/application/geary-controller.vala:1160
 msgid "Unable to open local mailbox for %s"
 msgstr "Nie można otworzyć lokalnej skrzynki pocztowej dla %s"
 
@@ -763,6 +784,7 @@ msgstr "Nie można otworzyć lokalnej skrzynki pocztowej dla %s"
 #: ../src/client/application/geary-controller.vala:1168
 #: ../src/client/application/geary-controller.vala:1162
 #: ../src/client/application/geary-controller.vala:1157
+#: ../src/client/application/geary-controller.vala:1151
 msgid ""
 "There was an error opening the local mail database for this account. This is "
 "possibly due to a file permissions problem.\n"
@@ -820,6 +842,7 @@ msgstr "O programie %s"
 #: ../src/client/application/geary-controller.vala:1678
 #: ../src/client/application/geary-controller.vala:1672
 #: ../src/client/application/geary-controller.vala:1667
+#: ../src/client/application/geary-controller.vala:1661
 msgid "translator-credits"
 msgstr ""
 "scrx <mattpiskorz@gmail.com>, 2012\n"
@@ -1900,6 +1923,7 @@ msgstr "%s (%s)"
 #: ../src/client/composer/composer-widget.vala:1601
 #: ../src/client/composer/composer-widget.vala:1598
 #: ../src/client/composer/composer-widget.vala:1599
+#: ../src/client/composer/composer-widget.vala:1602
 msgid "To: "
 msgstr "Do: "
 
@@ -1909,6 +1933,7 @@ msgstr "Do: "
 #: ../src/client/composer/composer-widget.vala:1604
 #: ../src/client/composer/composer-widget.vala:1601
 #: ../src/client/composer/composer-widget.vala:1602
+#: ../src/client/composer/composer-widget.vala:1605
 msgid "Cc: "
 msgstr "Dw: "
 
@@ -1918,6 +1943,7 @@ msgstr "Dw: "
 #: ../src/client/composer/composer-widget.vala:1607
 #: ../src/client/composer/composer-widget.vala:1604
 #: ../src/client/composer/composer-widget.vala:1605
+#: ../src/client/composer/composer-widget.vala:1608
 msgid "Bcc: "
 msgstr "Udw: "
 
@@ -1927,6 +1953,7 @@ msgstr "Udw: "
 #: ../src/client/composer/composer-widget.vala:1610
 #: ../src/client/composer/composer-widget.vala:1607
 #: ../src/client/composer/composer-widget.vala:1608
+#: ../src/client/composer/composer-widget.vala:1611
 msgid "Reply-To: "
 msgstr "Odpowiedź do: "
 
@@ -1936,6 +1963,7 @@ msgstr "Odpowiedź do: "
 #: ../src/client/composer/composer-widget.vala:1843
 #: ../src/client/composer/composer-widget.vala:1840
 #: ../src/client/composer/composer-widget.vala:1841
+#: ../src/client/composer/composer-widget.vala:1844
 msgid "Select Color"
 msgstr "Wybór koloru"
 
@@ -1945,6 +1973,7 @@ msgstr "Wybór koloru"
 #: ../src/client/composer/composer-widget.vala:2274
 #: ../src/client/composer/composer-widget.vala:2271
 #: ../src/client/composer/composer-widget.vala:2272
+#: ../src/client/composer/composer-widget.vala:2275
 msgid "%1$s via %2$s"
 msgstr "%1$s przez %2$s"
 
@@ -1954,6 +1983,7 @@ msgstr "%1$s przez %2$s"
 #: ../src/client/composer/composer-widget.vala:2315
 #: ../src/client/composer/composer-widget.vala:2312
 #: ../src/client/composer/composer-widget.vala:2313
+#: ../src/client/composer/composer-widget.vala:2316
 msgid "_From:"
 msgstr "_Od:"
 
@@ -2033,6 +2063,7 @@ msgstr "_Zachowaj"
 #: ../src/client/components/main-toolbar.vala:75
 #: ../src/client/components/main-toolbar.vala:69
 #: ../src/client/components/main-toolbar.vala:70
+#: ../src/client/components/main-toolbar.vala:78
 msgid "Search all mail in account for keywords (Ctrl+S)"
 msgstr ""
 "Przeszukaj wszystkie wiadomości z konta pod kątem słów kluczowych (Ctrl+S)"
@@ -2042,6 +2073,7 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:269
 #: ../src/client/components/main-toolbar.vala:262
 #: ../src/client/components/main-toolbar.vala:259
+#: ../src/client/components/main-toolbar.vala:277
 msgid "Indexing %s account"
 msgstr "Indeksowanie konta %s"
 
@@ -2053,6 +2085,7 @@ msgstr "Indeksowanie konta %s"
 #: ../src/client/components/main-toolbar.vala:151
 #: ../src/client/components/main-toolbar.vala:150
 #: ../src/client/components/main-toolbar.vala:160
+#: ../src/client/components/main-toolbar.vala:168
 msgid "Menu"
 msgstr "Menu"
 
@@ -2083,6 +2116,7 @@ msgstr "Więcej opcji"
 #: ../src/client/components/main-toolbar.vala:281
 #: ../src/client/components/main-toolbar.vala:274
 #: ../src/client/components/main-toolbar.vala:271
+#: ../src/client/components/main-toolbar.vala:289
 msgid "Search %s"
 msgstr "Wyszukaj %s"
 
@@ -2656,6 +2690,7 @@ msgstr "Strona internetowa"
 #: ../src/client/application/geary-controller.vala:1046
 #: ../src/client/application/geary-controller.vala:1040
 #: ../src/client/application/geary-controller.vala:1035
+#: ../src/client/application/geary-controller.vala:1029
 msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
@@ -2667,6 +2702,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1051
 #: ../src/client/application/geary-controller.vala:1045
 #: ../src/client/application/geary-controller.vala:1040
+#: ../src/client/application/geary-controller.vala:1034
 msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
@@ -2679,6 +2715,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1133
 #: ../src/client/application/geary-controller.vala:1127
 #: ../src/client/application/geary-controller.vala:1122
+#: ../src/client/application/geary-controller.vala:1116
 msgid ""
 "There was an error opening the local mail database for this account. This is "
 "possibly due to corruption of the database file in this directory:\n"
@@ -2705,6 +2742,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1178
 #: ../src/client/application/geary-controller.vala:1172
 #: ../src/client/application/geary-controller.vala:1167
+#: ../src/client/application/geary-controller.vala:1161
 msgid ""
 "The version number of the local mail database is formatted for a newer "
 "version of Mail. Unfortunately, the database cannot be \"rolled back\" to "
@@ -2722,6 +2760,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1189
 #: ../src/client/application/geary-controller.vala:1183
 #: ../src/client/application/geary-controller.vala:1178
+#: ../src/client/application/geary-controller.vala:1172
 msgid ""
 "There was an error opening the local account. This is probably due to "
 "connectivity issues.\n"
@@ -2783,6 +2822,7 @@ msgstr ""
 "Mail zakończy pracę, jeśli nie posiadasz innych otwartych kont e-mail."
 
 #: ../data/ui/account_spinner.ui:41
+#: ../src/client/accounts/account-spinner-page.vala:22
 msgid "Please wait while Mail validates your account."
 msgstr "Proszę poczekać, Mail weryfikuje Twoje konto."
 
@@ -3010,3 +3050,9 @@ msgstr "Zapamiętaj hasło"
 #: ../src/client/dialogs/PasswordDialog.vala:75
 msgid "Authenticate"
 msgstr "Uwierzytelnij"
+
+#. /Translators: this is the ponctuation between two names ("John, Jane")
+#: ../src/client/conversation-list/formatted-conversation-data.vala:188
+#: ../src/client/conversation-list/formatted-conversation-data.vala:190
+msgid ", "
+msgstr ""
