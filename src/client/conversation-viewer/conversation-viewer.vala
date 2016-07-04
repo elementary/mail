@@ -145,6 +145,7 @@ public class ConversationViewer : Gtk.Stack {
     private Geary.State.Machine fsm;
     private DisplayMode display_mode = DisplayMode.NONE;
     private uint select_conversation_timeout_id = 0;
+    private bool stay_down = true;   
     
     public ConversationViewer() {
         transition_type = Gtk.StackTransitionType.CROSSFADE;
@@ -184,6 +185,7 @@ public class ConversationViewer : Gtk.Stack {
         conversation_scrolled.add(conversation_list_box);
         conversation_scrolled.size_allocate.connect(mark_read);
         conversation_scrolled.vadjustment.value_changed.connect(mark_read);
+        conversation_scrolled.vadjustment.changed.connect(display_last_email);
         
         // Stops button_press_event
         conversation_list_box.button_press_event.connect ((b) => {            
@@ -228,6 +230,13 @@ public class ConversationViewer : Gtk.Stack {
         add(message_label);
     }
     
+    private void display_last_email () {
+        if (stay_down) {
+                var last_child = conversation_list_box.get_row_at_index ((int)conversation_list_box.get_children ().length () -1);
+                conversation_scrolled.vadjustment.value = conversation_scrolled.vadjustment.upper - last_child.get_allocated_height () - 18;
+            }
+    }
+
     public void set_paned_composer(ComposerWidget composer) {
         if (composer.state == ComposerWidget.ComposerState.NEW) {
             clear(current_folder, current_account_information);
@@ -334,6 +343,12 @@ public class ConversationViewer : Gtk.Stack {
             show_special_message(_("No conversations in folder."));
     }
     
+    // This disables the check if the last email of the conversation should be displayed
+    // (displaying the last email of the conversation is necessary for a newly selected conversation)
+    private void on_stop_stay_down () {
+        conversation_scrolled.vadjustment.changed.disconnect(display_last_email);
+    }
+
     private void on_conversations_selected(Gee.Set<Geary.App.Conversation>? conversations,
         Geary.Folder? current_folder) {
         cancel_load();
@@ -355,6 +370,9 @@ public class ConversationViewer : Gtk.Stack {
         }
         
         if (conversations.size == 1) {
+            // This enables the check if the last email of the conversation should be displayed
+            // (displaying the last email of the conversation is necessary for a newly selected conversation)
+            conversation_scrolled.vadjustment.changed.connect(display_last_email);
             set_visible_child(conversation_grid);
             clear(current_folder, current_folder.account.information);
             
@@ -584,6 +602,7 @@ public class ConversationViewer : Gtk.Stack {
         message_widget.reply.connect(() => reply_to_message(message_widget.email));
         message_widget.reply_all.connect(() => reply_all_message(message_widget.email));
         message_widget.forward.connect(() => forward_message(message_widget.email));
+        message_widget.disable_display_last_email.connect(on_stop_stay_down);
 
         if (email.is_unread() != Geary.Trillian.FALSE) {
             message_widget.collapsed = false;
@@ -689,6 +708,9 @@ public class ConversationViewer : Gtk.Stack {
     }      
     
     public void mark_read () {        
+        var last_child = conversation_list_box.get_row_at_index ((int)conversation_list_box.get_children ().length () -1);
+        var min_value = conversation_scrolled.vadjustment.upper - conversation_scrolled.vadjustment.page_size - last_child.get_allocated_height ();
+        stay_down = conversation_scrolled.vadjustment.value >= min_value;
         var start_y = (int) GLib.Math.trunc(conversation_scrolled.vadjustment.value) + READ_MARGIN;
         var view_height = conversation_scrolled.get_allocated_height();
         
