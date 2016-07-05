@@ -32,6 +32,9 @@ public class ConversationWidget : Gtk.ListBoxRow {
     public signal void reply ();
     public signal void reply_all ();
     public signal void forward ();
+    // The signal gets sent every time a ConversationWidget
+    // is collapsed or expanded manually
+    public signal void disable_display_last_email ();
 
     public Geary.Email email { get; private set; }
     public StylishWebView webview { get; private set; }
@@ -607,6 +610,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
     private bool header_button_press_event (Gdk.EventButton event) {
         if (collapsable) {
             toggle_view ();
+            disable_display_last_email ();
         }
         return true;
     }
@@ -614,6 +618,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
     private bool header_key_press_event (Gdk.EventKey event) {
         if (event.state == 0 && event.keyval == Gdk.Key.KP_Enter && collapsable) {
             toggle_view ();
+            disable_display_last_email ();
             return true;
         }
 
