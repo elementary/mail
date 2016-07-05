@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2016-07-02 23:20+0200\n"
-"PO-Revision-Date: 2016-04-11 19:23+0000\n"
+"PO-Revision-Date: 2016-07-04 22:12+0000\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian "
 "(http://www.transifex.com/projects/p/geary/language/hr/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-07-03 05:45+0000\n"
+"X-Launchpad-Export-Date: 2016-07-05 06:06+0000\n"
 "X-Generator: Launchpad (build 18115)\n"
 "Language: hr\n"
 
@@ -1147,7 +1147,7 @@ msgstr[2] ""
 #: ../src/client/notification/libnotify.vala:151
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:44
 msgid "Open"
-msgstr "Otrvori"
+msgstr "Otvori"
 
 #: ../src/client/conversation-list/formatted-conversation-data.vala:11
 msgid "Me"
