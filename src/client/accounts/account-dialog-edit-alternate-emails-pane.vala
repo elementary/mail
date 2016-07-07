@@ -40,7 +40,7 @@ public class AccountDialogEditAlternateEmailsPane : AccountDialogPane {
     public AccountDialogEditAlternateEmailsPane(Gtk.Stack stack) {
         base (stack);
         
-        var builder = new Gtk.Builder.from_resource("%s/edit_alternate_emails.ui".printf(GearyApplication.GRESOURCE_PREFIX));
+        var builder = new Gtk.Builder.from_resource("%s/edit_alternate_emails.ui".printf(GearyApplication.GRESOURCE_UI_PREFIX));
         
         // Primary container
         pack_start((Gtk.Widget) builder.get_object("container"));

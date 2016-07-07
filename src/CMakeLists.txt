@@ -564,6 +564,7 @@ set(CFLAGS
 # GResource
 include (GResource)
 glib_compile_resources (GLIB_RESOURCES_UI SOURCE ../data/ui/pantheon-mail.gresource.xml)
+glib_compile_resources (GLIB_RESOURCES_SQL SOURCE ../data/sql/mail-sql.gresource.xml)
 
 if (NOT DEBUG)
     set(CFLAGS
@@ -650,7 +651,7 @@ OPTIONS
     --vapidir=${CMAKE_BINARY_DIR}/src
 )
 
-add_executable(${CMAKE_PROJECT_NAME} ${GEARY_VALA_C} ${GLIB_RESOURCES_UI})
+add_executable(${CMAKE_PROJECT_NAME} ${GEARY_VALA_C} ${GLIB_RESOURCES_UI} ${GLIB_RESOURCES_SQL})
 target_link_libraries(${CMAKE_PROJECT_NAME} m ${DEPS_LIBRARIES} gthread-2.0 ${CMAKE_PROJECT_NAME}-static)
 install(TARGETS ${CMAKE_PROJECT_NAME} RUNTIME DESTINATION bin)
 add_custom_command(

@@ -29,7 +29,7 @@ public class GearyApplication : Gtk.Application {
     public const string INSTALL_PREFIX = _INSTALL_PREFIX;
     public const string GSETTINGS_DIR = _GSETTINGS_DIR;
     public const string SOURCE_ROOT_DIR = _SOURCE_ROOT_DIR;
-    public const string GRESOURCE_PREFIX = "/io/elementary/pantheon-mail";
+    public const string GRESOURCE_UI_PREFIX = "/io/elementary/pantheon-mail/ui";
 
     public const string[] AUTHORS = {
         "Jim Nelson <jim@yorba.org>",

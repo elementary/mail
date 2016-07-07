@@ -40,6 +40,3 @@ else ()
         CODE "message (STATUS \"Not updating desktop database\")"
     )
 endif ()
-
-add_subdirectory(sql)
-
