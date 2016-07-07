@@ -120,10 +120,16 @@ public class Geary.Db.Connection : Geary.Db.Context {
     public void exec_file(File file, Cancellable? cancellable = null) throws Error {
         check_cancelled("Connection.exec_file", cancellable);
         
-        string sql;
-        FileUtils.get_contents(file.get_path(), out sql);
+        var sql_builder = new StringBuilder();
+        DataInputStream ins = new DataInputStream(file.read());
+        string line = ins.read_line();
+        while (line != null) {
+            sql_builder.append(line);
+            sql_builder.append("\n");
+            line = ins.read_line();
+        }
         
-        exec(sql, cancellable);
+        exec(sql_builder.str, cancellable);
     }
     
     /**

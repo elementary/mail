@@ -5,6 +5,8 @@
  */
 
 public class Geary.Db.VersionedDatabase : Geary.Db.Database {
+    public const string GRESOURCE_SQL_PREFIX = "/io/elementary/pantheon-mail/sql";
+
     public delegate void WorkCallback();
     
     private static Mutex upgrade_mutex = new Mutex();
@@ -56,7 +58,9 @@ public class Geary.Db.VersionedDatabase : Geary.Db.Database {
     }
     
     private File get_schema_file(int db_version) {
-        return schema_dir.get_child("version-%03d.sql".printf(db_version));
+        string schema_file_uri = "resource://"+GRESOURCE_SQL_PREFIX+"/"+"version-%03d.sql".printf(db_version);
+        debug("Looking for schema file: %s", schema_file_uri);
+        return File.new_for_uri(schema_file_uri);
     }
     
     /**
@@ -123,7 +127,7 @@ public class Geary.Db.VersionedDatabase : Geary.Db.Database {
             check_cancelled("VersionedDatabase.open", cancellable);
             
             try {
-                debug("Upgrading database to version %d with %s", db_version, upgrade_script.get_path());
+                debug("Upgrading database to version %d with %s", db_version, upgrade_script.get_uri());
                 cx.exec_transaction(TransactionType.EXCLUSIVE, (cx) => {
                     cx.exec_file(upgrade_script, cancellable);
                     cx.set_user_version_number(db_version);

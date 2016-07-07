@@ -222,7 +222,7 @@ public class AddEditPage : Gtk.Box {
     public AddEditPage() {
         Object(orientation: Gtk.Orientation.VERTICAL, spacing: 4);
         
-        var builder = new Gtk.Builder.from_resource("%s/login.ui".printf(GearyApplication.GRESOURCE_PREFIX));
+        var builder = new Gtk.Builder.from_resource("%s/login.ui".printf(GearyApplication.GRESOURCE_UI_PREFIX));
         
         // Primary container.
         container_widget = (Gtk.Widget) builder.get_object("container");

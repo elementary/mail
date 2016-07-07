@@ -51,7 +51,7 @@ public class MainToolbar : Gtk.HeaderBar {
 
         // Assemble mark menu.
         try {
-            GearyApplication.instance.ui_manager.add_ui_from_resource("%s/toolbar_mark_menu.ui".printf(GearyApplication.GRESOURCE_PREFIX));
+            GearyApplication.instance.ui_manager.add_ui_from_resource("%s/toolbar_mark_menu.ui".printf(GearyApplication.GRESOURCE_UI_PREFIX));
         } catch (Error e) {
             critical (e.message);
         }
@@ -66,7 +66,7 @@ public class MainToolbar : Gtk.HeaderBar {
 
         // Set accel labels for EmptyTrash and EmptySpam context menus
         try {
-            GearyApplication.instance.ui_manager.add_ui_from_resource("%s/context_empty_menu.ui".printf(GearyApplication.GRESOURCE_PREFIX));
+            GearyApplication.instance.ui_manager.add_ui_from_resource("%s/context_empty_menu.ui".printf(GearyApplication.GRESOURCE_UI_PREFIX));
         } catch (Error e) {
             critical (e.message);
         }

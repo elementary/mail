@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/io/elementary/pantheon-mail">
+  <gresource prefix="/io/elementary/pantheon-mail/ui">
     <file alias="accelerators.ui" compressed="true" preprocess="xml-stripblanks">accelerators.ui</file>
     <file alias="account_list.ui" compressed="true" preprocess="xml-stripblanks">account_list.ui</file>
     <file alias="account_cannot_remove.ui" compressed="true" preprocess="xml-stripblanks">account_cannot_remove.ui</file>
