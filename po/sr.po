@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-07-02 23:20+0200\n"
+"POT-Creation-Date: 2016-07-09 10:27-0700\n"
 "PO-Revision-Date: 2015-11-23 11:52+0000\n"
 "Last-Translator: Miloš Popović <gpopac@gmail.com>\n"
 "Language-Team: српски <gnome-sr@googlegroups.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-07-03 05:45+0000\n"
+"X-Launchpad-Export-Date: 2016-07-10 05:42+0000\n"
 "X-Generator: Launchpad (build 18115)\n"
 "X-Project-Style: gnome\n"
 "Language: sr\n"
@@ -1542,6 +1542,7 @@ msgstr[2] "%d резултата"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:415
 #: ../src/client/conversation-viewer/conversation-viewer.vala:302
 #: ../src/client/conversation-viewer/conversation-viewer.vala:308
+#: ../src/client/conversation-viewer/conversation-viewer.vala:310
 msgid "No conversations selected."
 msgstr "Није изабран разговор."
 
@@ -1549,6 +1550,7 @@ msgstr "Није изабран разговор."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:417
 #: ../src/client/conversation-viewer/conversation-viewer.vala:304
 #: ../src/client/conversation-viewer/conversation-viewer.vala:310
+#: ../src/client/conversation-viewer/conversation-viewer.vala:312
 msgid "%u conversation selected."
 msgid_plural "%u conversations selected."
 msgstr[0] "Изабран је %u разговор."
@@ -1559,6 +1561,7 @@ msgstr[2] "Изабрано је %u разговора."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:446
 #: ../src/client/conversation-viewer/conversation-viewer.vala:333
 #: ../src/client/conversation-viewer/conversation-viewer.vala:339
+#: ../src/client/conversation-viewer/conversation-viewer.vala:341
 msgid "No search results found."
 msgstr "Нема резултата претраге."
 
@@ -1566,6 +1569,7 @@ msgstr "Нема резултата претраге."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:448
 #: ../src/client/conversation-viewer/conversation-viewer.vala:335
 #: ../src/client/conversation-viewer/conversation-viewer.vala:341
+#: ../src/client/conversation-viewer/conversation-viewer.vala:343
 msgid "No conversations in folder."
 msgstr "Нема разговора у фасцикли."
 
@@ -1574,6 +1578,7 @@ msgstr "Нема разговора у фасцикли."
 #: ../src/client/conversation-viewer/ConversationWidget.vala:426
 #: ../src/client/conversation-viewer/ConversationWidget.vala:450
 #: ../src/client/conversation-viewer/ConversationWidget.vala:453
+#: ../src/client/conversation-viewer/ConversationWidget.vala:456
 msgid "This message contains remote images."
 msgstr "Ова порука садржи непреузете слике."
 
@@ -1582,6 +1587,7 @@ msgstr "Ова порука садржи непреузете слике."
 #: ../src/client/conversation-viewer/ConversationWidget.vala:424
 #: ../src/client/conversation-viewer/ConversationWidget.vala:448
 #: ../src/client/conversation-viewer/ConversationWidget.vala:451
+#: ../src/client/conversation-viewer/ConversationWidget.vala:454
 msgid "Show Images"
 msgstr "Прикажи слике"
 
@@ -1595,12 +1601,14 @@ msgstr "Увек прикажи од овог пошиљаоца"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:377
 #: ../src/client/conversation-viewer/ConversationWidget.vala:397
 #: ../src/client/conversation-viewer/ConversationWidget.vala:400
+#: ../src/client/conversation-viewer/ConversationWidget.vala:403
 msgid "Edit Draft"
 msgstr "Уреди нацрт"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:809
 #: ../src/client/conversation-viewer/conversation-viewer.vala:814
 #: ../src/client/conversation-viewer/ConversationWidget.vala:145
+#: ../src/client/conversation-viewer/ConversationWidget.vala:148
 msgid "From:"
 msgstr "Шаље:"
 
@@ -1608,6 +1616,7 @@ msgstr "Шаље:"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:817
 #: ../src/client/conversation-viewer/ConversationWidget.vala:149
 #: ../src/client/conversation-viewer/ConversationWidget.vala:158
+#: ../src/client/conversation-viewer/ConversationWidget.vala:161
 msgid "To:"
 msgstr "Прима:"
 
@@ -1615,6 +1624,7 @@ msgstr "Прима:"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:820
 #: ../src/client/conversation-viewer/ConversationWidget.vala:154
 #: ../src/client/conversation-viewer/ConversationWidget.vala:163
+#: ../src/client/conversation-viewer/ConversationWidget.vala:166
 msgid "Cc:"
 msgstr "Цц:"
 
@@ -1622,6 +1632,7 @@ msgstr "Цц:"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:823
 #: ../src/client/conversation-viewer/ConversationWidget.vala:159
 #: ../src/client/conversation-viewer/ConversationWidget.vala:168
+#: ../src/client/conversation-viewer/ConversationWidget.vala:171
 msgid "Bcc:"
 msgstr "Бцц:"
 
@@ -1629,6 +1640,7 @@ msgstr "Бцц:"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:826
 #: ../src/client/conversation-viewer/ConversationWidget.vala:164
 #: ../src/client/conversation-viewer/ConversationWidget.vala:173
+#: ../src/client/conversation-viewer/ConversationWidget.vala:176
 msgid "Subject:"
 msgstr "Наслов:"
 
@@ -1656,6 +1668,7 @@ msgstr "Ова порука је успешно послата, али не мо
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1129
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1153
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1157
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1162
 msgid "_Copy"
 msgstr "_Умножи"
 
@@ -1664,6 +1677,7 @@ msgstr "_Умножи"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1137
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1161
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1165
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1170
 msgid "Copy _Email Address"
 msgstr "Умножи адресу _е-поште"
 
@@ -1674,6 +1688,7 @@ msgstr "Умножи адресу _е-поште"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1170
 #: ../data/ui/composer.ui:103
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1174
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1179
 msgid "Copy _Link"
 msgstr "Умножи _везу"
 
@@ -1689,6 +1704,7 @@ msgstr "Изабери _поруку"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1157
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1181
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1185
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1190
 msgid "Select _All"
 msgstr "Изабери _све"
 
@@ -1697,6 +1713,7 @@ msgstr "Изабери _све"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1163
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1187
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1191
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1196
 msgid "_Inspect"
 msgstr "_Провери"
 
@@ -1768,6 +1785,7 @@ msgstr "_Погледај извор"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1038
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1062
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1066
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1071
 msgid "Failed to open default text editor."
 msgstr "Не могу да отворим подразумевани уредник текста."
 
@@ -2797,26 +2815,31 @@ msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:218
 #: ../src/client/conversation-viewer/ConversationWidget.vala:227
+#: ../src/client/conversation-viewer/ConversationWidget.vala:230
 msgid "Save Attachment…"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
+#: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save All Attachments…"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
+#: ../src/client/conversation-viewer/ConversationWidget.vala:241
 msgid "Reply"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:239
+#: ../src/client/conversation-viewer/ConversationWidget.vala:242
 msgid "Reply to All"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:231
 #: ../src/client/conversation-viewer/ConversationWidget.vala:240
+#: ../src/client/conversation-viewer/ConversationWidget.vala:243
 msgid "Forward"
 msgstr ""
 
@@ -2825,6 +2848,8 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:267
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1136
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1140
+#: ../src/client/conversation-viewer/ConversationWidget.vala:270
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1145
 msgid "Mark as Unread"
 msgstr ""
 
@@ -2833,16 +2858,20 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:269
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1134
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1138
+#: ../src/client/conversation-viewer/ConversationWidget.vala:272
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1143
 msgid "Mark as Read"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:252
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
+#: ../src/client/conversation-viewer/ConversationWidget.vala:275
 msgid "Print…"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
+#: ../src/client/conversation-viewer/ConversationWidget.vala:276
 msgid "View Source"
 msgstr ""
 
@@ -2852,36 +2881,43 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:626
 #: ../src/client/conversation-viewer/ConversationWidget.vala:340
 #: ../src/client/conversation-viewer/ConversationWidget.vala:630
+#: ../src/client/conversation-viewer/ConversationWidget.vala:343
+#: ../src/client/conversation-viewer/ConversationWidget.vala:635
 msgid "View message"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:386
 #: ../src/client/conversation-viewer/ConversationWidget.vala:406
 #: ../src/client/conversation-viewer/ConversationWidget.vala:409
+#: ../src/client/conversation-viewer/ConversationWidget.vala:412
 msgid "This message contains one or more attachments"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:425
 #: ../src/client/conversation-viewer/ConversationWidget.vala:449
 #: ../src/client/conversation-viewer/ConversationWidget.vala:452
+#: ../src/client/conversation-viewer/ConversationWidget.vala:455
 msgid "Always Show from Sender"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:553
 #: ../src/client/conversation-viewer/ConversationWidget.vala:577
 #: ../src/client/conversation-viewer/ConversationWidget.vala:581
+#: ../src/client/conversation-viewer/ConversationWidget.vala:584
 msgid "Compose New Message"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:554
 #: ../src/client/conversation-viewer/ConversationWidget.vala:578
 #: ../src/client/conversation-viewer/ConversationWidget.vala:582
+#: ../src/client/conversation-viewer/ConversationWidget.vala:585
 msgid "Copy Email Address"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:615
 #: ../src/client/conversation-viewer/ConversationWidget.vala:639
 #: ../src/client/conversation-viewer/ConversationWidget.vala:643
+#: ../src/client/conversation-viewer/ConversationWidget.vala:648
 msgid "Hide message"
 msgstr ""
 
@@ -2909,16 +2945,20 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
 #: ../src/client/conversation-viewer/ConversationWidget.vala:413
 #: ../src/client/conversation-viewer/ConversationWidget.vala:426
+#: ../src/client/conversation-viewer/ConversationWidget.vala:416
+#: ../src/client/conversation-viewer/ConversationWidget.vala:429
 msgid "Star message"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:420
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
+#: ../src/client/conversation-viewer/ConversationWidget.vala:426
 msgid "Unstar message"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:430
 #: ../src/client/conversation-viewer/ConversationWidget.vala:433
+#: ../src/client/conversation-viewer/ConversationWidget.vala:436
 msgid "More"
 msgstr ""
 

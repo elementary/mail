@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-07-02 23:20+0200\n"
+"POT-Creation-Date: 2016-07-09 10:27-0700\n"
 "PO-Revision-Date: 2016-05-21 17:13+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) "
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-07-03 05:45+0000\n"
+"X-Launchpad-Export-Date: 2016-07-10 05:42+0000\n"
 "X-Generator: Launchpad (build 18115)\n"
 "Language: zh_TW\n"
 
@@ -1481,6 +1481,7 @@ msgstr[0] "%d 項結果"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:415
 #: ../src/client/conversation-viewer/conversation-viewer.vala:302
 #: ../src/client/conversation-viewer/conversation-viewer.vala:308
+#: ../src/client/conversation-viewer/conversation-viewer.vala:310
 msgid "No conversations selected."
 msgstr "未選取對話。"
 
@@ -1488,6 +1489,7 @@ msgstr "未選取對話。"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:417
 #: ../src/client/conversation-viewer/conversation-viewer.vala:304
 #: ../src/client/conversation-viewer/conversation-viewer.vala:310
+#: ../src/client/conversation-viewer/conversation-viewer.vala:312
 msgid "%u conversation selected."
 msgid_plural "%u conversations selected."
 msgstr[0] "%u 則對話已選取。"
@@ -1496,6 +1498,7 @@ msgstr[0] "%u 則對話已選取。"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:446
 #: ../src/client/conversation-viewer/conversation-viewer.vala:333
 #: ../src/client/conversation-viewer/conversation-viewer.vala:339
+#: ../src/client/conversation-viewer/conversation-viewer.vala:341
 msgid "No search results found."
 msgstr "找不到符合的搜尋結果。"
 
@@ -1503,6 +1506,7 @@ msgstr "找不到符合的搜尋結果。"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:448
 #: ../src/client/conversation-viewer/conversation-viewer.vala:335
 #: ../src/client/conversation-viewer/conversation-viewer.vala:341
+#: ../src/client/conversation-viewer/conversation-viewer.vala:343
 msgid "No conversations in folder."
 msgstr "資料夾中沒有對話。"
 
@@ -1511,6 +1515,7 @@ msgstr "資料夾中沒有對話。"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:426
 #: ../src/client/conversation-viewer/ConversationWidget.vala:450
 #: ../src/client/conversation-viewer/ConversationWidget.vala:453
+#: ../src/client/conversation-viewer/ConversationWidget.vala:456
 msgid "This message contains remote images."
 msgstr "此訊息包含遠端影像。"
 
@@ -1519,6 +1524,7 @@ msgstr "此訊息包含遠端影像。"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:424
 #: ../src/client/conversation-viewer/ConversationWidget.vala:448
 #: ../src/client/conversation-viewer/ConversationWidget.vala:451
+#: ../src/client/conversation-viewer/ConversationWidget.vala:454
 msgid "Show Images"
 msgstr "顯示影像"
 
@@ -1532,12 +1538,14 @@ msgstr "總是顯示寄件者"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:377
 #: ../src/client/conversation-viewer/ConversationWidget.vala:397
 #: ../src/client/conversation-viewer/ConversationWidget.vala:400
+#: ../src/client/conversation-viewer/ConversationWidget.vala:403
 msgid "Edit Draft"
 msgstr "編輯草稿"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:809
 #: ../src/client/conversation-viewer/conversation-viewer.vala:814
 #: ../src/client/conversation-viewer/ConversationWidget.vala:145
+#: ../src/client/conversation-viewer/ConversationWidget.vala:148
 msgid "From:"
 msgstr "寄件者："
 
@@ -1545,6 +1553,7 @@ msgstr "寄件者："
 #: ../src/client/conversation-viewer/conversation-viewer.vala:817
 #: ../src/client/conversation-viewer/ConversationWidget.vala:149
 #: ../src/client/conversation-viewer/ConversationWidget.vala:158
+#: ../src/client/conversation-viewer/ConversationWidget.vala:161
 msgid "To:"
 msgstr "收件者："
 
@@ -1552,6 +1561,7 @@ msgstr "收件者："
 #: ../src/client/conversation-viewer/conversation-viewer.vala:820
 #: ../src/client/conversation-viewer/ConversationWidget.vala:154
 #: ../src/client/conversation-viewer/ConversationWidget.vala:163
+#: ../src/client/conversation-viewer/ConversationWidget.vala:166
 msgid "Cc:"
 msgstr "副本："
 
@@ -1559,6 +1569,7 @@ msgstr "副本："
 #: ../src/client/conversation-viewer/conversation-viewer.vala:823
 #: ../src/client/conversation-viewer/ConversationWidget.vala:159
 #: ../src/client/conversation-viewer/ConversationWidget.vala:168
+#: ../src/client/conversation-viewer/ConversationWidget.vala:171
 msgid "Bcc:"
 msgstr "密件副本："
 
@@ -1566,6 +1577,7 @@ msgstr "密件副本："
 #: ../src/client/conversation-viewer/conversation-viewer.vala:826
 #: ../src/client/conversation-viewer/ConversationWidget.vala:164
 #: ../src/client/conversation-viewer/ConversationWidget.vala:173
+#: ../src/client/conversation-viewer/ConversationWidget.vala:176
 msgid "Subject:"
 msgstr "主旨："
 
@@ -1591,6 +1603,7 @@ msgstr "這封訊息已成功寄送，但無法到 %s。"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1129
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1153
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1157
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1162
 msgid "_Copy"
 msgstr "複製(_C)"
 
@@ -1599,6 +1612,7 @@ msgstr "複製(_C)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1137
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1161
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1165
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1170
 msgid "Copy _Email Address"
 msgstr "複製電子郵件位址(_E)"
 
@@ -1609,6 +1623,7 @@ msgstr "複製電子郵件位址(_E)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1170
 #: ../data/ui/composer.ui:103
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1174
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1179
 msgid "Copy _Link"
 msgstr "複製連結(_L)"
 
@@ -1624,6 +1639,7 @@ msgstr "選取訊息(_M)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1157
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1181
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1185
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1190
 msgid "Select _All"
 msgstr "選取全部(_A)"
 
@@ -1632,6 +1648,7 @@ msgstr "選取全部(_A)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1163
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1187
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1191
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1196
 msgid "_Inspect"
 msgstr "檢閱(_I)"
 
@@ -1701,6 +1718,7 @@ msgstr "檢視來源(_V)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1038
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1062
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1066
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1071
 msgid "Failed to open default text editor."
 msgstr "無法開啟預設的文字編輯器。"
 
@@ -2725,26 +2743,31 @@ msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:218
 #: ../src/client/conversation-viewer/ConversationWidget.vala:227
+#: ../src/client/conversation-viewer/ConversationWidget.vala:230
 msgid "Save Attachment…"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
+#: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save All Attachments…"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
+#: ../src/client/conversation-viewer/ConversationWidget.vala:241
 msgid "Reply"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:239
+#: ../src/client/conversation-viewer/ConversationWidget.vala:242
 msgid "Reply to All"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:231
 #: ../src/client/conversation-viewer/ConversationWidget.vala:240
+#: ../src/client/conversation-viewer/ConversationWidget.vala:243
 msgid "Forward"
 msgstr ""
 
@@ -2753,6 +2776,8 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:267
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1136
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1140
+#: ../src/client/conversation-viewer/ConversationWidget.vala:270
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1145
 msgid "Mark as Unread"
 msgstr ""
 
@@ -2761,16 +2786,20 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:269
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1134
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1138
+#: ../src/client/conversation-viewer/ConversationWidget.vala:272
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1143
 msgid "Mark as Read"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:252
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
+#: ../src/client/conversation-viewer/ConversationWidget.vala:275
 msgid "Print…"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
+#: ../src/client/conversation-viewer/ConversationWidget.vala:276
 msgid "View Source"
 msgstr ""
 
@@ -2780,36 +2809,43 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:626
 #: ../src/client/conversation-viewer/ConversationWidget.vala:340
 #: ../src/client/conversation-viewer/ConversationWidget.vala:630
+#: ../src/client/conversation-viewer/ConversationWidget.vala:343
+#: ../src/client/conversation-viewer/ConversationWidget.vala:635
 msgid "View message"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:386
 #: ../src/client/conversation-viewer/ConversationWidget.vala:406
 #: ../src/client/conversation-viewer/ConversationWidget.vala:409
+#: ../src/client/conversation-viewer/ConversationWidget.vala:412
 msgid "This message contains one or more attachments"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:425
 #: ../src/client/conversation-viewer/ConversationWidget.vala:449
 #: ../src/client/conversation-viewer/ConversationWidget.vala:452
+#: ../src/client/conversation-viewer/ConversationWidget.vala:455
 msgid "Always Show from Sender"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:553
 #: ../src/client/conversation-viewer/ConversationWidget.vala:577
 #: ../src/client/conversation-viewer/ConversationWidget.vala:581
+#: ../src/client/conversation-viewer/ConversationWidget.vala:584
 msgid "Compose New Message"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:554
 #: ../src/client/conversation-viewer/ConversationWidget.vala:578
 #: ../src/client/conversation-viewer/ConversationWidget.vala:582
+#: ../src/client/conversation-viewer/ConversationWidget.vala:585
 msgid "Copy Email Address"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:615
 #: ../src/client/conversation-viewer/ConversationWidget.vala:639
 #: ../src/client/conversation-viewer/ConversationWidget.vala:643
+#: ../src/client/conversation-viewer/ConversationWidget.vala:648
 msgid "Hide message"
 msgstr ""
 
@@ -2837,16 +2873,20 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
 #: ../src/client/conversation-viewer/ConversationWidget.vala:413
 #: ../src/client/conversation-viewer/ConversationWidget.vala:426
+#: ../src/client/conversation-viewer/ConversationWidget.vala:416
+#: ../src/client/conversation-viewer/ConversationWidget.vala:429
 msgid "Star message"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:420
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
+#: ../src/client/conversation-viewer/ConversationWidget.vala:426
 msgid "Unstar message"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:430
 #: ../src/client/conversation-viewer/ConversationWidget.vala:433
+#: ../src/client/conversation-viewer/ConversationWidget.vala:436
 msgid "More"
 msgstr ""
 
