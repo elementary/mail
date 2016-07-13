@@ -437,6 +437,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
         menu_button.margin_top = 6;
         menu_button.valign = Gtk.Align.START;
         menu_button.halign = Gtk.Align.END;
+        menu_button.button_press_event.connect ((event) => menu_button_press_event (event));
 
         header_grid.add (avatar);
         header_grid.add (header_fields_stack);
@@ -648,6 +649,11 @@ public class ConversationWidget : Gtk.ListBoxRow {
                 header.tooltip_text = _("Hide message");
             }
         }
+    }
+
+    private bool menu_button_press_event (Gdk.EventButton event) {
+        disable_display_last_email ();
+        return false;
     }
 
     [CCode (instance_pos = -1)]

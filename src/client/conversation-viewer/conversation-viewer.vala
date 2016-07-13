@@ -173,6 +173,7 @@ public class ConversationViewer : Gtk.Stack {
         GearyApplication.instance.controller.conversations_selected.connect(on_conversations_selected);
         GearyApplication.instance.controller.folder_selected.connect(on_folder_selected);
         GearyApplication.instance.controller.conversation_count_changed.connect(on_conversation_count_changed);
+        GearyApplication.instance.controller.enable_display_last_email.connect(on_start_stay_down);
         
         conversation_list_box = new Gtk.ListBox();
         conversation_list_box.expand = true;
@@ -231,8 +232,8 @@ public class ConversationViewer : Gtk.Stack {
     }
     
     private void display_last_email () {
-        if (stay_down) {
-                var last_child = conversation_list_box.get_row_at_index ((int)conversation_list_box.get_children ().length () -1);
+        var last_child = conversation_list_box.get_row_at_index ((int)conversation_list_box.get_children ().length () -1);
+        if (stay_down || last_child is ComposerCard) {
                 conversation_scrolled.vadjustment.value = conversation_scrolled.vadjustment.upper - last_child.get_allocated_height () - 18;
             }
     }
@@ -347,6 +348,10 @@ public class ConversationViewer : Gtk.Stack {
     // (displaying the last email of the conversation is necessary for a newly selected conversation)
     private void on_stop_stay_down () {
         conversation_scrolled.vadjustment.changed.disconnect(display_last_email);
+    }
+
+    private void on_start_stay_down () {
+        conversation_scrolled.vadjustment.changed.connect(display_last_email);
     }
 
     private void on_conversations_selected(Gee.Set<Geary.App.Conversation>? conversations,
