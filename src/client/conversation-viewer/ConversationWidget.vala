@@ -465,7 +465,6 @@ public class ConversationWidget : Gtk.ListBoxRow {
         webview = new StylishWebView ();
         webview.can_focus = false;
         webview.expand = true;
-        webview.transparent = true;
         webview.hovering_over_link.connect (on_hovering_over_link);
         webview.context_menu.connect (context_menu);
         webview.resource_request_starting.connect (on_resource_request_starting);
