@@ -344,12 +344,16 @@ public class ConversationViewer : Gtk.Stack {
             show_special_message(_("No conversations in folder."));
     }
     
-    // This disables the check if the last email of the conversation should be displayed
-    // (displaying the last email of the conversation is necessary for a newly selected conversation)
+    // This disables the check if the last email of the conversation should be displayed.
+    // Displaying the last email of the conversation is necessary for a newly selected conversation
+    // and after displaying a ComposerCard (reply / forward an email).
     private void on_stop_stay_down () {
         conversation_scrolled.vadjustment.changed.disconnect(display_last_email);
     }
 
+    // This enables the check if the last email of the conversation should be displayed.
+    // Displaying the last email of the conversation is necessary for a newly selected conversation
+    // and after displaying a ComposerCard (reply / forward an email).
     private void on_start_stay_down () {
         conversation_scrolled.vadjustment.changed.connect(display_last_email);
     }

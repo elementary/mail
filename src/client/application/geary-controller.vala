@@ -160,7 +160,7 @@ public class GearyController : Geary.BaseObject {
     public signal void search_text_changed(string keywords);
 
     /**
-     * Fired when when a keyboard shotcut is used to reply to an email.
+     * Fired when when a keyboard shotcut is used to reply to / forward an email.
      * This ensures that the Gtk.ListBox scrolls to its end / the ComposerCard widget .
      */
     public signal void enable_display_last_email ();
