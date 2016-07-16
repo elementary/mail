@@ -1852,7 +1852,7 @@ public class GearyController : Geary.BaseObject {
             if (!(child is ConversationWidget)) {
                 return;
             }
-            
+
             if (((ConversationWidget) child).email.id in emails) {
                 ((ConversationWidget) child).forced_unread = flags.is_unread();
             }
@@ -2695,24 +2695,22 @@ public class GearyController : Geary.BaseObject {
         GearyApplication.instance.actions.get_action(ACTION_REPLY_TO_MESSAGE).sensitive = false;
         GearyApplication.instance.actions.get_action(ACTION_REPLY_ALL_MESSAGE).sensitive = false;
     }
-  
+
     // Updates tooltip text depending on number of conversations selected.
     private void update_tooltips() {
-        bool single = selected_conversations.size == 1;
+        GearyApplication.instance.actions.get_action(ACTION_MARK_AS_MENU).tooltip =
+            ngettext (MARK_MESSAGE_MENU_TOOLTIP_SINGLE, MARK_MESSAGE_MENU_TOOLTIP_MULTIPLE, (ulong) selected_conversations.size);
+        GearyApplication.instance.actions.get_action(ACTION_COPY_MENU).tooltip =
+            ngettext (LABEL_MESSAGE_TOOLTIP_SINGLE, LABEL_MESSAGE_TOOLTIP_MULTIPLE, (ulong) selected_conversations.size);
+        GearyApplication.instance.actions.get_action(ACTION_MOVE_MENU).tooltip =
+            ngettext (MOVE_MESSAGE_TOOLTIP_SINGLE, MOVE_MESSAGE_TOOLTIP_MULTIPLE, (ulong) selected_conversations.size);
 
-        GearyApplication.instance.actions.get_action(ACTION_MARK_AS_MENU).tooltip = single ?
-            MARK_MESSAGE_MENU_TOOLTIP_SINGLE : MARK_MESSAGE_MENU_TOOLTIP_MULTIPLE;
-        GearyApplication.instance.actions.get_action(ACTION_COPY_MENU).tooltip = single ?
-            LABEL_MESSAGE_TOOLTIP_SINGLE : LABEL_MESSAGE_TOOLTIP_MULTIPLE;
-        GearyApplication.instance.actions.get_action(ACTION_MOVE_MENU).tooltip = single ?
-            MOVE_MESSAGE_TOOLTIP_SINGLE : MOVE_MESSAGE_TOOLTIP_MULTIPLE;
-
-        GearyApplication.instance.actions.get_action(ACTION_ARCHIVE_MESSAGE).tooltip = single ?
-            ARCHIVE_MESSAGE_TOOLTIP_SINGLE : ARCHIVE_MESSAGE_TOOLTIP_MULTIPLE;
-        GearyApplication.instance.actions.get_action(ACTION_TRASH_MESSAGE).tooltip = single ?
-            TRASH_MESSAGE_TOOLTIP_SINGLE : TRASH_MESSAGE_TOOLTIP_MULTIPLE;
-        GearyApplication.instance.actions.get_action(ACTION_DELETE_MESSAGE).tooltip = single ?
-            DELETE_MESSAGE_TOOLTIP_SINGLE : DELETE_MESSAGE_TOOLTIP_MULTIPLE;
+        GearyApplication.instance.actions.get_action(ACTION_ARCHIVE_MESSAGE).tooltip =
+            ngettext (ARCHIVE_MESSAGE_TOOLTIP_SINGLE, ARCHIVE_MESSAGE_TOOLTIP_MULTIPLE, (ulong) selected_conversations.size);
+        GearyApplication.instance.actions.get_action(ACTION_TRASH_MESSAGE).tooltip =
+            ngettext (TRASH_MESSAGE_TOOLTIP_SINGLE, TRASH_MESSAGE_TOOLTIP_MULTIPLE, (ulong) selected_conversations.size);
+        GearyApplication.instance.actions.get_action(ACTION_DELETE_MESSAGE).tooltip =
+            ngettext (DELETE_MESSAGE_TOOLTIP_SINGLE, DELETE_MESSAGE_TOOLTIP_MULTIPLE, (ulong) selected_conversations.size);
     }
 
     public void compose_mailto(string mailto) {
@@ -2824,4 +2822,3 @@ public class GearyController : Geary.BaseObject {
         }
     }
 }
-
