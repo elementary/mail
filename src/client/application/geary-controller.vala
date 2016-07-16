@@ -2699,18 +2699,18 @@ public class GearyController : Geary.BaseObject {
     // Updates tooltip text depending on number of conversations selected.
     private void update_tooltips() {
         GearyApplication.instance.actions.get_action(ACTION_MARK_AS_MENU).tooltip =
-            ngettext (MARK_MESSAGE_MENU_TOOLTIP_SINGLE, MARK_MESSAGE_MENU_TOOLTIP_MULTIPLE, (ulong) selected_conversations.size);
+            ngettext ("Mark conversation", "Mark conversations", (ulong) selected_conversations.size);
         GearyApplication.instance.actions.get_action(ACTION_COPY_MENU).tooltip =
-            ngettext (LABEL_MESSAGE_TOOLTIP_SINGLE, LABEL_MESSAGE_TOOLTIP_MULTIPLE, (ulong) selected_conversations.size);
+            ngettext ("Add label to conversation", "Add label to conversations", (ulong) selected_conversations.size);
         GearyApplication.instance.actions.get_action(ACTION_MOVE_MENU).tooltip =
-            ngettext (MOVE_MESSAGE_TOOLTIP_SINGLE, MOVE_MESSAGE_TOOLTIP_MULTIPLE, (ulong) selected_conversations.size);
+            ngettext ("Move conversation", "Move conversations", (ulong) selected_conversations.size);
 
         GearyApplication.instance.actions.get_action(ACTION_ARCHIVE_MESSAGE).tooltip =
-            ngettext (ARCHIVE_MESSAGE_TOOLTIP_SINGLE, ARCHIVE_MESSAGE_TOOLTIP_MULTIPLE, (ulong) selected_conversations.size);
+            ngettext ("Archive conversation (A)", "Archive conversations (A)", (ulong) selected_conversations.size);
         GearyApplication.instance.actions.get_action(ACTION_TRASH_MESSAGE).tooltip =
-            ngettext (TRASH_MESSAGE_TOOLTIP_SINGLE, TRASH_MESSAGE_TOOLTIP_MULTIPLE, (ulong) selected_conversations.size);
+            ngettext ("Move conversation to Trash (Delete, Backspace)", "Move conversations to Trash (Delete, Backspace)", (ulong) selected_conversations.size);
         GearyApplication.instance.actions.get_action(ACTION_DELETE_MESSAGE).tooltip =
-            ngettext (DELETE_MESSAGE_TOOLTIP_SINGLE, DELETE_MESSAGE_TOOLTIP_MULTIPLE, (ulong) selected_conversations.size);
+            ngettext ("Delete Conversation (Shift+Delete)", "Delete Conversations (Shift+Delete)", (ulong) selected_conversations.size);
     }
 
     public void compose_mailto(string mailto) {
