@@ -159,6 +159,12 @@ public class GearyController : Geary.BaseObject {
      */
     public signal void search_text_changed(string keywords);
 
+    /**
+     * Fired when when a keyboard shotcut is used to reply to / forward an email.
+     * This ensures that the Gtk.ListBox scrolls to its end / the ComposerCard widget .
+     */
+    public signal void enable_display_last_email ();
+
     public GearyController() {
     }
 
@@ -2300,26 +2306,32 @@ public class GearyController : Geary.BaseObject {
     }
 
     private void on_reply_to_message(Geary.Email message) {
+        enable_display_last_email ();
         create_reply_forward_widget(ComposerWidget.ComposeType.REPLY, message);
     }
 
     private void on_reply_to_message_action() {
+        enable_display_last_email ();
         create_reply_forward_widget(ComposerWidget.ComposeType.REPLY, null);
     }
 
     private void on_reply_all_message(Geary.Email message) {
+        enable_display_last_email ();
         create_reply_forward_widget(ComposerWidget.ComposeType.REPLY_ALL, message);
     }
 
     private void on_reply_all_message_action() {
+        enable_display_last_email ();
         create_reply_forward_widget(ComposerWidget.ComposeType.REPLY_ALL, null);
     }
 
     private void on_forward_message(Geary.Email message) {
+        enable_display_last_email ();
         create_reply_forward_widget(ComposerWidget.ComposeType.FORWARD, message);
     }
 
     private void on_forward_message_action() {
+        enable_display_last_email ();
         create_reply_forward_widget(ComposerWidget.ComposeType.FORWARD, null);
     }
 

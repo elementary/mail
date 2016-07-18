@@ -32,8 +32,10 @@ public class ConversationWidget : Gtk.ListBoxRow {
     public signal void reply ();
     public signal void reply_all ();
     public signal void forward ();
-    // The signal gets sent every time a ConversationWidget
-    // is collapsed or expanded manually
+    // The signal gets sent every time
+    // - a ConversationWidget is collapsed or expanded manually
+    // - a "More" menu is opened in a ConversationWidget
+    // to prevent the list of emails to scroll in an unwanted manner
     public signal void disable_display_last_email ();
 
     public Geary.Email email { get; private set; }
@@ -437,6 +439,7 @@ public class ConversationWidget : Gtk.ListBoxRow {
         menu_button.margin_top = 6;
         menu_button.valign = Gtk.Align.START;
         menu_button.halign = Gtk.Align.END;
+        menu_button.button_press_event.connect ((event) => menu_button_press_event (event));
 
         header_grid.add (avatar);
         header_grid.add (header_fields_stack);
@@ -648,6 +651,13 @@ public class ConversationWidget : Gtk.ListBoxRow {
                 header.tooltip_text = _("Hide message");
             }
         }
+    }
+
+    // This is triggered when a "More" menu is opened in a ConversationWidget
+    // and prevents the list of emails from scrolling on opening the menu
+    private bool menu_button_press_event (Gdk.EventButton event) {
+        disable_display_last_email ();
+        return false;
     }
 
     [CCode (instance_pos = -1)]
