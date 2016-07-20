@@ -18,6 +18,8 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/pantheon-mail-autostart.desktop DESTIN
 install(FILES mail-attach DESTINATION bin)
 install(FILES mail-attach.contract DESTINATION share/contractor)
 
+install(FILES pantheon-mail.application DESTINATION share/accounts/applications/)
+
 # Optional: run update-desktop-database at install time.
 # (This has to happen after the pantheon-mail.desktop file is installed.)
 if (DESKTOP_UPDATE)
