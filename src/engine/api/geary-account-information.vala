@@ -147,7 +147,9 @@ public class Geary.AccountInformation : BaseObject {
     private bool _save_sent_mail = true;
     private Endpoint? imap_endpoint = null;
     private Endpoint? smtp_endpoint = null;
-    
+
+    private static Geary.OnlineAccountsWrapper online_accounts_wrapper;
+
     /**
      * Indicates the supplied {@link Endpoint} has reported TLS certificate warnings during
      * connection.
@@ -258,6 +260,7 @@ public class Geary.AccountInformation : BaseObject {
     
     internal static void init() {
         known_endpoints = new Gee.HashMap<string, Geary.Endpoint>();
+        online_accounts_wrapper = new Geary.OnlineAccountsWrapper ();
     }
     
     private static Geary.Endpoint get_shared_endpoint(Service service, Endpoint endpoint) {

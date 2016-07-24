@@ -43,6 +43,7 @@ engine/api/geary-search-query.vala
 engine/api/geary-service.vala
 engine/api/geary-service-provider.vala
 engine/api/geary-special-folder-type.vala
+engine/api/OnlineAccountsWrapper.vala
 
 engine/app/app-conversation.vala
 engine/app/app-conversation-monitor.vala
@@ -528,11 +529,13 @@ pkg_check_modules(DEPS REQUIRED
     libxml-2.0>=2.7.8
     gcr-3>=3.10.1
     gobject-introspection-1.0
+    libaccounts-glib
+    libgsignon-glib
     ${EXTRA_CLIENT_PKG_CONFIG}
 )
 
 set(ENGINE_PACKAGES
-    glib-2.0 granite gee-0.8 gio-2.0 gmime-2.6 posix sqlite3 libxml-2.0
+    glib-2.0 granite gee-0.8 gio-2.0 gmime-2.6 posix sqlite3 libxml-2.0 libaccounts-glib libgsignon-glib
 )
 
 # webkitgtk-3.0 is listed as a custom VAPI (below) to ensure it's treated as a dependency and

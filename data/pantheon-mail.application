@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application id="pantheon-mail">
+  <description>Pantheon Mail</description>
+  <desktop-entry>org.pantheon.mail.desktop</desktop-entry>
+  <translations>pantheon-mail</translations>
+  <service-types>
+    <service-type id="mail">
+    </service-type>
+  </service-types>
+</application>
