@@ -12,16 +12,16 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-07-09 10:27-0700\n"
-"PO-Revision-Date: 2016-07-24 20:40+0000\n"
-"Last-Translator: Jernej Virag <Unknown>\n"
+"PO-Revision-Date: 2016-07-25 22:26+0000\n"
+"Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
 "n%100==4 ? 3 : 0);\n"
-"X-Launchpad-Export-Date: 2016-07-25 05:39+0000\n"
-"X-Generator: Launchpad (build 18147)\n"
+"X-Launchpad-Export-Date: 2016-07-26 05:43+0000\n"
+"X-Generator: Launchpad (build 18153)\n"
 "Language: sl_SI\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
@@ -250,7 +250,7 @@ msgstr "Poštni klient"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "Copyright 2011-2015 Yorba Foundation"
-msgstr ""
+msgstr "Copyright 2011-2015 Yorba Foundation"
 
 #: ../src/client/application/geary-application.vala:21
 msgid "Visit the Yorba web site"
@@ -835,7 +835,8 @@ msgstr ""
 "\n"
 "Launchpad Contributions:\n"
 "  Jernej Virag https://launchpad.net/~jernej\n"
-"  Matej Urbančič https://launchpad.net/~mateju"
+"  Matej Urbančič https://launchpad.net/~mateju\n"
+"  elementary Apps team https://launchpad.net/~elementary-apps"
 
 #: ../src/client/application/geary-controller.vala:1976
 #: ../src/client/application/geary-controller.vala:1970
@@ -1588,7 +1589,7 @@ msgstr "Prikaži slike"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:709
 #: ../src/client/conversation-viewer/conversation-viewer.vala:714
 msgid "Always Show From Sender"
-msgstr ""
+msgstr "Vedno pokaži od pošiljatelja"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:733
 #: ../src/client/conversation-viewer/conversation-viewer.vala:738
@@ -2012,8 +2013,10 @@ msgstr[3] "%i zadetki"
 #: ../src/client/components/conversation-find-bar.vala:216
 msgid "%i match (wrapped)"
 msgid_plural "%i matches (wrapped)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%i zadetkov"
+msgstr[1] "%i zadetek"
+msgstr[2] "%i zadetka"
+msgstr[3] "%i zadetki"
 
 #: ../src/client/components/conversation-find-bar.vala:218
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:194
@@ -2683,7 +2686,7 @@ msgstr "_Overi"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
-msgstr ""
+msgstr "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
 
 #: ../src/client/application/geary-application.vala:21
 #: ../src/client/application/geary-application.vala:20
@@ -2730,6 +2733,16 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
+"Prišlo je do napake pri odpiranju lokalne podatkovne baze za ta račun. To je "
+"verjetno zaradi okvare podatkovne baze v mapi:\n"
+"\n"
+"%s\n"
+"\n"
+"Geary lahko ponovno izgradi bazo in jo sinhronizira s strežnikom ali pa se "
+"zapre.\n"
+"\n"
+"Izgradnja baze bo uničila vso pošto in priponke shranjene na tem "
+"računalniku. <b>Pošta na strežniku bo ostala nedotaknjena.</b>"
 
 #: ../src/client/application/geary-controller.vala:1184
 #: ../src/client/application/geary-controller.vala:1178
@@ -2743,6 +2756,10 @@ msgid ""
 "\n"
 "Please install the latest version of Mail and try again."
 msgstr ""
+"Lokalna podatkovna baza s pošto je bila ustvarjena z novejšo verzijo Gearya. "
+"Na žalost te baze ta verzija Gearya ne more odpreti.\n"
+"\n"
+"Prosimo namestite novo različico in poskusite znova."
 
 #: ../src/client/application/geary-controller.vala:1195
 #: ../src/client/application/geary-controller.vala:1189
@@ -2755,6 +2772,10 @@ msgid ""
 "\n"
 "Please check your network connection and restart Mail."
 msgstr ""
+"Prišlo je do napake pri odpiranju lokalnega računa. Vzrok je verjetno v "
+"težavah s povezljivostjo.\n"
+"\n"
+"Prosimo preverite vašo internetno povezavo in ponovno poženite Pošto."
 
 #: ../src/client/application/geary-controller.vala:2402
 #: ../src/client/application/geary-controller.vala:2404
@@ -2762,95 +2783,101 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2395
 #: ../src/client/application/geary-controller.vala:2390
 msgid "This removes the email from Mail and your email server."
-msgstr ""
+msgstr "To odstrani sporočilo s Pošte in vašega poštnega strežnika."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
-msgstr ""
+msgstr "        &#8226; Poštni naslov je že bil dodan.\n"
 
 #: ../src/client/dialogs/preferences-dialog.vala:44
 #: ../src/client/dialogs/preferences-dialog.vala:43
 msgid "Always show remote images:"
-msgstr ""
+msgstr "Vedno prikaži slike z interneta:"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 #: ../src/client/dialogs/PasswordDialog.vala:39
 msgid "Mail requires your email password to continue"
-msgstr ""
+msgstr "Potrebno je vaše poštno geslo za nadaljevanje"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail not to access this "
 "server."
 msgstr ""
+"Izbira \"Ne zaupaj temu strežniku\" bo preprečila Pošti dostop do tega "
+"strežnika."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Mail will not add or update this email account."
-msgstr ""
+msgstr "Pošta ne bo dodala ali posodabljala tega poštnega računa."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail to stop accessing this "
 "account."
 msgstr ""
+"Izbira \"Ne zaupaj temu strežniku\" po preprečila Pošti dostop do tega "
+"računa."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Mail will exit if you have no other open email accounts."
-msgstr ""
+msgstr "Pošta se bo zaprla če nimate drugih odprtih poštnih računov."
 
 #: ../data/ui/account_spinner.ui:41
 #: ../src/client/accounts/account-spinner-page.vala:22
 msgid "Please wait while Mail validates your account."
-msgstr ""
+msgstr "Prosimo počakajte da Pošta potrdi vaš račun."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr ""
+msgstr "Posodabljanje pošte v teku..."
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
 msgid "Search Mail"
-msgstr ""
+msgstr "Išči pošto"
 
 #: ../src/client/application/geary-application.vala:18
 msgid ""
 "2011-2015 Yorba Foundation\n"
 "© 2016 elementary LLC."
 msgstr ""
+"2011-2015 Yorba Foundation\n"
+"© 2016 elementary LLC."
 
 #: ../src/client/application/geary-args.vala:10
 msgid "Show About dialog"
-msgstr ""
+msgstr "Prikaži informacije o programu"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:218
 #: ../src/client/conversation-viewer/ConversationWidget.vala:227
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 msgid "Save Attachment…"
-msgstr ""
+msgstr "Shrani priponko..."
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save All Attachments…"
-msgstr ""
+msgstr "Shrani vse priponke..."
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
 #: ../src/client/conversation-viewer/ConversationWidget.vala:241
 msgid "Reply"
-msgstr ""
+msgstr "Odgovori"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:239
 #: ../src/client/conversation-viewer/ConversationWidget.vala:242
 msgid "Reply to All"
-msgstr ""
+msgstr "Odgovori vsem"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:231
 #: ../src/client/conversation-viewer/ConversationWidget.vala:240
 #: ../src/client/conversation-viewer/ConversationWidget.vala:243
 msgid "Forward"
-msgstr ""
+msgstr "Posreduj"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:247
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1112
@@ -2860,7 +2887,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:270
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1145
 msgid "Mark as Unread"
-msgstr ""
+msgstr "Označi kot neprebrano"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:249
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1110
@@ -2870,19 +2897,19 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1143
 msgid "Mark as Read"
-msgstr ""
+msgstr "Označi kot prebrano"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:252
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:275
 msgid "Print…"
-msgstr ""
+msgstr "Natisni ..."
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
 #: ../src/client/conversation-viewer/ConversationWidget.vala:276
 msgid "View Source"
-msgstr ""
+msgstr "Pokaži izvorno kodo"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:317
 #: ../src/client/conversation-viewer/ConversationWidget.vala:602
@@ -2893,56 +2920,58 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:343
 #: ../src/client/conversation-viewer/ConversationWidget.vala:635
 msgid "View message"
-msgstr ""
+msgstr "Ogled sporočila"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:386
 #: ../src/client/conversation-viewer/ConversationWidget.vala:406
 #: ../src/client/conversation-viewer/ConversationWidget.vala:409
 #: ../src/client/conversation-viewer/ConversationWidget.vala:412
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "To sporočilo vključuje eno ali več priponk"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:425
 #: ../src/client/conversation-viewer/ConversationWidget.vala:449
 #: ../src/client/conversation-viewer/ConversationWidget.vala:452
 #: ../src/client/conversation-viewer/ConversationWidget.vala:455
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "Vedno pokaži od pošiljatelja"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:553
 #: ../src/client/conversation-viewer/ConversationWidget.vala:577
 #: ../src/client/conversation-viewer/ConversationWidget.vala:581
 #: ../src/client/conversation-viewer/ConversationWidget.vala:584
 msgid "Compose New Message"
-msgstr ""
+msgstr "Sestavi novo sporočilo"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:554
 #: ../src/client/conversation-viewer/ConversationWidget.vala:578
 #: ../src/client/conversation-viewer/ConversationWidget.vala:582
 #: ../src/client/conversation-viewer/ConversationWidget.vala:585
 msgid "Copy Email Address"
-msgstr ""
+msgstr "Kopiraj e-poštni naslov"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:615
 #: ../src/client/conversation-viewer/ConversationWidget.vala:639
 #: ../src/client/conversation-viewer/ConversationWidget.vala:643
 #: ../src/client/conversation-viewer/ConversationWidget.vala:648
 msgid "Hide message"
-msgstr ""
+msgstr "Skrij sporočilo"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr ""
+msgstr "Shrani kot ..."
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
-msgstr ""
+msgstr "Razlikuj velike in male črke"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
 msgid_plural "%u matches"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u zadetkov"
+msgstr[1] "%u zadetek"
+msgstr[2] "%u zadetka"
+msgstr[3] "%u zadetki"
 
 #. / TRANSLATORS: please copy the original string and append all local parts of "no reply" email addresses
 #. / (that is the part before the '@') that exist in your language (separated with a semicolon)
@@ -2957,94 +2986,96 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:416
 #: ../src/client/conversation-viewer/ConversationWidget.vala:429
 msgid "Star message"
-msgstr ""
+msgstr "Označi sporočilo z zvezdico"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:420
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
 #: ../src/client/conversation-viewer/ConversationWidget.vala:426
 msgid "Unstar message"
-msgstr ""
+msgstr "Odstrani zvezdico s sporočila"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:430
 #: ../src/client/conversation-viewer/ConversationWidget.vala:433
 #: ../src/client/conversation-viewer/ConversationWidget.vala:436
 msgid "More"
-msgstr ""
+msgstr "Več"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
 msgid "Delete draft"
-msgstr ""
+msgstr "Izbriši osnutek"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:51
 msgid "Attach file"
-msgstr ""
+msgstr "Pripni datoteko"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:55
 msgid "Include original attachments"
-msgstr ""
+msgstr "Vključi izvorne priponke"
 
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
-msgstr ""
+msgstr "Citiraj besedilo (Ctrl + J)"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:34
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "Ali ste prepričani da želite odpreti %s?"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:40
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"Odpiranje priponk lahko škodi vašemu sistemu. Odpirajte samo datoteke, ki "
+"prihajajo z zaupanja vrednih virov."
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:45
 msgid "Don't ask me again"
-msgstr ""
+msgstr "Ne sprašuj me več"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:48
 msgid "Open Anyway"
-msgstr ""
+msgstr "Vseeno odpri"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:64
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:59
 #: ../src/client/dialogs/PasswordDialog.vala:96
 msgid "Cancel"
-msgstr ""
+msgstr "Prekliči"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:36
 msgid "Are you sure you want to remove this account?"
-msgstr ""
+msgstr "Ali ste prepričani da želite odstraniti ta račun?"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:53
 msgid "Email Address:"
-msgstr ""
+msgstr "E-poštni naslov:"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:61
 msgid "Remove Account"
-msgstr ""
+msgstr "Odstrani račun"
 
 #: ../src/client/dialogs/PasswordDialog.vala:45
 msgid "Username:"
-msgstr ""
+msgstr "Uporabniško ime:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:52
 msgid "Password:"
-msgstr ""
+msgstr "Geslo:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:55
 msgid "SMTP Credentials:"
-msgstr ""
+msgstr "SMTP poverilnice:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:62
 msgid "Remember password"
-msgstr ""
+msgstr "Zapomni si geslo"
 
 #: ../src/client/dialogs/PasswordDialog.vala:75
 msgid "Authenticate"
-msgstr ""
+msgstr "Overi"
 
 #. /Translators: this is the ponctuation between two names ("John, Jane")
 #: ../src/client/conversation-list/formatted-conversation-data.vala:188
 #: ../src/client/conversation-list/formatted-conversation-data.vala:190
 msgid ", "
-msgstr ""
+msgstr ", "
