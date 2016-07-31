@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-07-09 10:27-0700\n"
+"POT-Creation-Date: 2016-07-17 03:31+0400\n"
 "PO-Revision-Date: 2015-11-23 11:52+0000\n"
 "Last-Translator: Miloš Popović <gpopac@gmail.com>\n"
 "Language-Team: српски <gnome-sr@googlegroups.org>\n"
@@ -21,8 +21,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-07-10 05:42+0000\n"
-"X-Generator: Launchpad (build 18115)\n"
+"X-Launchpad-Export-Date: 2016-07-31 06:15+0000\n"
+"X-Generator: Launchpad (build 18169)\n"
 "X-Project-Style: gnome\n"
 "Language: sr\n"
 
@@ -278,9 +278,11 @@ msgstr "Обриши разговоре (Shift+Del)"
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 #: ../src/client/application/geary-controller.vala:65
-#| msgid "Move conversation to trash (Delete, Backspace)"
+#: ../src/client/application/geary-controller.vala:2711
 msgid "Move conversation to Trash (Delete, Backspace)"
-msgstr "Премести разговор у смеће (Del, Backspace)"
+msgid_plural "Move conversations to Trash (Delete, Backspace)"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
@@ -297,8 +299,11 @@ msgstr "_Архивирај"
 #: ../src/client/application/geary-controller.vala:72
 #: ../src/client/application/geary-controller.vala:71
 #: ../src/client/application/geary-controller.vala:70
+#: ../src/client/application/geary-controller.vala:2709
 msgid "Archive conversation (A)"
-msgstr "Архивирај разговор (А)"
+msgid_plural "Archive conversations (A)"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
@@ -335,8 +340,11 @@ msgstr "Означи да није _непожељно"
 #: ../src/client/components/main-toolbar.vala:108
 #: ../src/client/components/main-toolbar.vala:107
 #: ../src/client/components/main-toolbar.vala:123
+#: ../src/client/application/geary-controller.vala:2702
 msgid "Mark conversation"
-msgstr "Означи разговор"
+msgid_plural "Mark conversations"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
@@ -355,8 +363,11 @@ msgstr "Означи разговоре"
 #: ../src/client/components/main-toolbar.vala:113
 #: ../src/client/components/main-toolbar.vala:112
 #: ../src/client/components/main-toolbar.vala:128
+#: ../src/client/application/geary-controller.vala:2704
 msgid "Add label to conversation"
-msgstr "Додај натпис разговору"
+msgid_plural "Add label to conversations"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
@@ -379,8 +390,11 @@ msgstr "Додај натпис разговорима"
 #: ../src/client/components/main-toolbar.vala:118
 #: ../src/client/components/main-toolbar.vala:117
 #: ../src/client/components/main-toolbar.vala:133
+#: ../src/client/application/geary-controller.vala:2706
 msgid "Move conversation"
-msgstr "Премести разговор"
+msgid_plural "Move conversations"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
@@ -2179,8 +2193,11 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
 #: ../src/client/application/geary-controller.vala:60
+#: ../src/client/application/geary-controller.vala:2713
 msgid "Delete Conversation (Shift+Delete)"
-msgstr ""
+msgid_plural "Delete Conversations (Shift+Delete)"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/client/application/geary-controller.vala:63
 #: ../src/client/application/geary-controller.vala:62

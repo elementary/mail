@@ -18,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-07-09 10:27-0700\n"
+"POT-Creation-Date: 2016-07-17 03:31+0400\n"
 "PO-Revision-Date: 2016-07-09 17:24+0000\n"
 "Last-Translator: Félix Brezo <felixbrezo@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
@@ -26,8 +26,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-07-10 05:42+0000\n"
-"X-Generator: Launchpad (build 18115)\n"
+"X-Launchpad-Export-Date: 2016-07-31 06:16+0000\n"
+"X-Generator: Launchpad (build 18169)\n"
 "Language: es\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -280,8 +280,11 @@ msgstr "Eliminar conversaciones (Mayús+Supr)"
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 #: ../src/client/application/geary-controller.vala:65
+#: ../src/client/application/geary-controller.vala:2711
 msgid "Move conversation to Trash (Delete, Backspace)"
-msgstr "Mover conversación a la papelera (Supr, Retroceso)"
+msgid_plural "Move conversations to Trash (Delete, Backspace)"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
@@ -297,8 +300,11 @@ msgstr "_Archivar"
 #: ../src/client/application/geary-controller.vala:72
 #: ../src/client/application/geary-controller.vala:71
 #: ../src/client/application/geary-controller.vala:70
+#: ../src/client/application/geary-controller.vala:2709
 msgid "Archive conversation (A)"
-msgstr "Archivar conversación (A)"
+msgid_plural "Archive conversations (A)"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
@@ -335,8 +341,11 @@ msgstr "Marcar como no _spam"
 #: ../src/client/components/main-toolbar.vala:108
 #: ../src/client/components/main-toolbar.vala:107
 #: ../src/client/components/main-toolbar.vala:123
+#: ../src/client/application/geary-controller.vala:2702
 msgid "Mark conversation"
-msgstr "Marcar conversación"
+msgid_plural "Mark conversations"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
@@ -355,8 +364,11 @@ msgstr "Marcar conversaciones"
 #: ../src/client/components/main-toolbar.vala:113
 #: ../src/client/components/main-toolbar.vala:112
 #: ../src/client/components/main-toolbar.vala:128
+#: ../src/client/application/geary-controller.vala:2704
 msgid "Add label to conversation"
-msgstr "Añadir etiqueta a la conversación"
+msgid_plural "Add label to conversations"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
@@ -379,8 +391,11 @@ msgstr "Añadir etiqueta a las conversaciones"
 #: ../src/client/components/main-toolbar.vala:118
 #: ../src/client/components/main-toolbar.vala:117
 #: ../src/client/components/main-toolbar.vala:133
+#: ../src/client/application/geary-controller.vala:2706
 msgid "Move conversation"
-msgstr "Mover conversación"
+msgid_plural "Move conversations"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
@@ -2170,8 +2185,11 @@ msgstr "Eliminar conversación"
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
 #: ../src/client/application/geary-controller.vala:60
+#: ../src/client/application/geary-controller.vala:2713
 msgid "Delete Conversation (Shift+Delete)"
-msgstr "Borrar conversación (Mayús+Supr)"
+msgid_plural "Delete Conversations (Shift+Delete)"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/client/application/geary-controller.vala:63
 #: ../src/client/application/geary-controller.vala:62

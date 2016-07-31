@@ -19,15 +19,15 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-07-09 10:27-0700\n"
-"PO-Revision-Date: 2016-07-29 18:10+0000\n"
-"Last-Translator: Squiggles <luc.boillat@outlook.com>\n"
+"POT-Creation-Date: 2016-07-17 03:31+0400\n"
+"PO-Revision-Date: 2016-07-30 20:19+0000\n"
+"Last-Translator: UweS <Unknown>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-07-30 06:20+0000\n"
+"X-Launchpad-Export-Date: 2016-07-31 06:15+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "Language: de\n"
 
@@ -281,8 +281,11 @@ msgstr "Konversationen löschen (Umschalt+Entf)"
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 #: ../src/client/application/geary-controller.vala:65
+#: ../src/client/application/geary-controller.vala:2711
 msgid "Move conversation to Trash (Delete, Backspace)"
-msgstr "Konversation in den Papierkorb verschieben (Entf, Rücktaste)"
+msgid_plural "Move conversations to Trash (Delete, Backspace)"
+msgstr[0] "Konversation in den Papierkorb verschieben (Entf, Rücktaste)"
+msgstr[1] "Konversationen in den Papierkorb verschieben (Entf, Rücktaste)"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
@@ -298,8 +301,11 @@ msgstr "_Archivieren"
 #: ../src/client/application/geary-controller.vala:72
 #: ../src/client/application/geary-controller.vala:71
 #: ../src/client/application/geary-controller.vala:70
+#: ../src/client/application/geary-controller.vala:2709
 msgid "Archive conversation (A)"
-msgstr "Konversation archivieren (A)"
+msgid_plural "Archive conversations (A)"
+msgstr[0] "Konversation archivieren (A)"
+msgstr[1] "Konversationen archivieren (A)"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
@@ -336,8 +342,11 @@ msgstr "S_pam-Markierung entfernen"
 #: ../src/client/components/main-toolbar.vala:108
 #: ../src/client/components/main-toolbar.vala:107
 #: ../src/client/components/main-toolbar.vala:123
+#: ../src/client/application/geary-controller.vala:2702
 msgid "Mark conversation"
-msgstr "Konversation markieren"
+msgid_plural "Mark conversations"
+msgstr[0] "Konversation markieren"
+msgstr[1] "Konversationen markieren"
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
@@ -356,8 +365,11 @@ msgstr "Konversationen markieren"
 #: ../src/client/components/main-toolbar.vala:113
 #: ../src/client/components/main-toolbar.vala:112
 #: ../src/client/components/main-toolbar.vala:128
+#: ../src/client/application/geary-controller.vala:2704
 msgid "Add label to conversation"
-msgstr "Konversation ein Label zuweisen"
+msgid_plural "Add label to conversations"
+msgstr[0] "Konversation ein Label zuweisen"
+msgstr[1] "Konversationen ein Label zuweisen"
 
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
@@ -380,8 +392,11 @@ msgstr "Konversationen ein Label zuweisen"
 #: ../src/client/components/main-toolbar.vala:118
 #: ../src/client/components/main-toolbar.vala:117
 #: ../src/client/components/main-toolbar.vala:133
+#: ../src/client/application/geary-controller.vala:2706
 msgid "Move conversation"
-msgstr "Konversation verschieben"
+msgid_plural "Move conversations"
+msgstr[0] "Konversation verschieben"
+msgstr[1] "Konversationen verschieben"
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
@@ -859,6 +874,7 @@ msgstr ""
 "  SSX https://launchpad.net/~ssx1337ssy\n"
 "  Simon Linden https://launchpad.net/~xhi2018\n"
 "  Squiggles https://launchpad.net/~luc-boillat\n"
+"  UweS https://launchpad.net/~uwes\n"
 "  elementary Apps team https://launchpad.net/~elementary-apps\n"
 "  webdepp https://launchpad.net/~webdepp"
 
@@ -1376,7 +1392,7 @@ msgstr "        &#8226; IMAP-Verbindungsfehler.\n"
 #: ../src/client/accounts/add-edit-page.vala:776
 #: ../src/client/accounts/add-edit-page.vala:778
 msgid "        &#8226; IMAP username or password incorrect.\n"
-msgstr "        &#8226; IMAP-Benutzername oder Passwort ungültig.\n"
+msgstr "        &#8226; IMAP-Benutzername oder -Passwort ungültig.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:779
 #: ../src/client/accounts/add-edit-page.vala:781
@@ -1386,7 +1402,7 @@ msgstr "        &#8226; SMTP-Verbindungsfehler.\n"
 #: ../src/client/accounts/add-edit-page.vala:782
 #: ../src/client/accounts/add-edit-page.vala:784
 msgid "        &#8226; SMTP username or password incorrect.\n"
-msgstr "        &#8226; SMTP-Benutzername oder Passwort ungültig.\n"
+msgstr "        &#8226; SMTP-Benutzername oder -Passwort ungültig.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:786
 #: ../src/client/accounts/add-edit-page.vala:788
@@ -1396,7 +1412,7 @@ msgstr "        &#8226; Verbindungsfehler.\n"
 #: ../src/client/accounts/add-edit-page.vala:790
 #: ../src/client/accounts/add-edit-page.vala:792
 msgid "        &#8226; Username or password incorrect.\n"
-msgstr "        &#8226; IMAP-Benutzername oder Passwort ungültig.\n"
+msgstr "        &#8226; IMAP-Benutzername oder -Passwort ungültig.\n"
 
 #: ../src/client/accounts/account-dialog-add-edit-pane.vala:51
 #: ../src/client/components/stock.vala:31
@@ -2182,8 +2198,11 @@ msgstr "Nachrichtenverlauf löschen"
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
 #: ../src/client/application/geary-controller.vala:60
+#: ../src/client/application/geary-controller.vala:2713
 msgid "Delete Conversation (Shift+Delete)"
-msgstr "Nachrichtenverlauf löschen (Umschalt+Entf)"
+msgid_plural "Delete Conversations (Shift+Delete)"
+msgstr[0] "Konversation löschen (Umschalt+Entf)"
+msgstr[1] "Konversationen löschen (Umschalt+Entf)"
 
 #: ../src/client/application/geary-controller.vala:63
 #: ../src/client/application/geary-controller.vala:62
@@ -2215,7 +2234,7 @@ msgstr "Benutzername:"
 
 #: ../data/ui/remove_confirm.ui:94
 msgid "Email address:"
-msgstr "E-Mail Adresse:"
+msgstr "E-Mail-Adresse:"
 
 #: ../data/ui/find_bar.ui:59
 msgid "Find"
@@ -2250,8 +2269,8 @@ msgid ""
 "Some email services require additional addresses be configured on the "
 "server.  Contact your email provider for more information."
 msgstr ""
-"Einige E-Mail Dienste benötigen zusätzliche Adressen, die auf dem Server "
-"konfiguriert werden müssen. Bitte Kontaktieren Sie Ihren E-Mail Anbieter für "
+"Einige E-Mail-Dienste benötigen zusätzliche Adressen, die auf dem Server "
+"konfiguriert werden müssen. Bitte kontaktieren Sie Ihren E-Mail-Anbieter für "
 "weitere Informationen."
 
 #: ../data/ui/edit_alternate_emails.ui:175
@@ -2520,23 +2539,23 @@ msgstr ""
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr "Weitere E-Mail Adressen …"
+msgstr "Weitere E-Mail-Adressen …"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
-msgstr "_Speichere gesendete E-Mail"
+msgstr "Gesendete E-Mail _speichern"
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
-msgstr "Kennwort"
+msgstr "Passwort"
 
 #: ../data/ui/login.ui:97 ../data/ui/login.ui:545
 msgid "_Password:"
-msgstr "_Kennwort:"
+msgstr "_Passwort:"
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
-msgstr "E-_Mail Adresse:"
+msgstr "E-_Mail-Adresse:"
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
@@ -2556,7 +2575,7 @@ msgstr "Di_enst:"
 
 #: ../data/ui/login.ui:298
 msgid "IMAP settings"
-msgstr "IMAP Einstellungen"
+msgstr "IMAP-Einstellungen"
 
 #: ../data/ui/login.ui:315
 msgid "Se_rver:"
@@ -2576,7 +2595,7 @@ msgstr "Por_t"
 
 #: ../data/ui/login.ui:446
 msgid "SMTP settings"
-msgstr "SMTP Einstellungen"
+msgstr "SMTP-Einstellungen"
 
 #: ../data/ui/login.ui:462
 msgid "User_name:"
@@ -2588,11 +2607,11 @@ msgstr "Kenn_wort:"
 
 #: ../data/ui/login.ui:499
 msgid "SMTP username"
-msgstr "SMTP Benutzername"
+msgstr "SMTP-Benutzername"
 
 #: ../data/ui/login.ui:514
 msgid "SMTP password"
-msgstr "SMTP Passwort"
+msgstr "SMTP-Passwort"
 
 #: ../data/ui/login.ui:527
 msgid "_Username:"
@@ -2600,11 +2619,11 @@ msgstr "Ben_utzername:"
 
 #: ../data/ui/login.ui:564
 msgid "IMAP username"
-msgstr "IMAP Benutzername"
+msgstr "IMAP- Benutzername"
 
 #: ../data/ui/login.ui:579
 msgid "IMAP password"
-msgstr "IMAP Passwort"
+msgstr "IMAP-Passwort"
 
 #: ../data/ui/login.ui:593
 msgid "Encr_yption:"
@@ -2628,7 +2647,7 @@ msgstr "Keine Authenfizierung erforderlich"
 
 #: ../data/ui/login.ui:679
 msgid "Use IMAP cre_dentials"
-msgstr "Benutze IMAP Zugangs_daten"
+msgstr "IMAP- Zugangs_daten verwenden"
 
 #: ../data/ui/login.ui:783
 msgid "Storage"
@@ -2644,7 +2663,7 @@ msgstr "Entwür_fe auf Server speichern"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr "Si_gniere E-Mails (HTML erlaubt):"
+msgstr "E-Mails si_gnieren (HTML erlaubt):"
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
@@ -2676,7 +2695,7 @@ msgstr "_Diesem Server nicht vertrauen"
 
 #: ../data/ui/password-dialog.ui:74
 msgid "SMTP Credentials"
-msgstr "SMTP Zugangsdaten"
+msgstr "SMTP-Zugangsdaten"
 
 #: ../data/ui/password-dialog.ui:91
 msgid "Username"
@@ -2800,7 +2819,7 @@ msgstr ""
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
-msgstr "        &#8226; E-Mailadresse wurde bereits in Mail hinzugefügt.\n"
+msgstr "        &#8226; E-Mail-Adresse wurde bereits in Mail hinzugefügt.\n"
 
 #: ../src/client/dialogs/preferences-dialog.vala:44
 #: ../src/client/dialogs/preferences-dialog.vala:43
@@ -2810,7 +2829,7 @@ msgstr "Bilder automatisch anzeigen:"
 #: ../src/client/dialogs/password-dialog.vala:16
 #: ../src/client/dialogs/PasswordDialog.vala:39
 msgid "Mail requires your email password to continue"
-msgstr "Zum Fortfahren erfordert Mail Ihr E-Mail-Kennwort"
+msgstr "Zum Fortfahren benötigt Mail Ihr E-Mail-Passwort"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
@@ -2962,7 +2981,7 @@ msgstr "Neue Nachricht verfassen"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:582
 #: ../src/client/conversation-viewer/ConversationWidget.vala:585
 msgid "Copy Email Address"
-msgstr ""
+msgstr "E-Mail-Adresse kopieren"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:615
 #: ../src/client/conversation-viewer/ConversationWidget.vala:639
@@ -2977,7 +2996,7 @@ msgstr "Speichern unter …"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
-msgstr ""
+msgstr "Groß-/Kleinschreibung beachten"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
@@ -3013,7 +3032,7 @@ msgstr "Stern von Nachricht entfernen"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:433
 #: ../src/client/conversation-viewer/ConversationWidget.vala:436
 msgid "More"
-msgstr ""
+msgstr "Mehr"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
 msgid "Delete draft"
@@ -3075,15 +3094,15 @@ msgstr "Nutzername:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:52
 msgid "Password:"
-msgstr ""
+msgstr "Passwort:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:55
 msgid "SMTP Credentials:"
-msgstr "SMTP-Legitimation:"
+msgstr "SMTP-Zugangsdaten:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:62
 msgid "Remember password"
-msgstr ""
+msgstr "Passwort merken"
 
 #: ../src/client/dialogs/PasswordDialog.vala:75
 msgid "Authenticate"
@@ -3093,4 +3112,4 @@ msgstr "Legitimieren"
 #: ../src/client/conversation-list/formatted-conversation-data.vala:188
 #: ../src/client/conversation-list/formatted-conversation-data.vala:190
 msgid ", "
-msgstr ""
+msgstr ", "
