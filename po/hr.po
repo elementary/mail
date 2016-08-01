@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2016-07-17 03:31+0400\n"
-"PO-Revision-Date: 2016-07-08 17:51+0000\n"
+"PO-Revision-Date: 2016-07-31 19:46+0000\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian "
 "(http://www.transifex.com/projects/p/geary/language/hr/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-07-31 06:16+0000\n"
+"X-Launchpad-Export-Date: 2016-08-01 05:42+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "Language: hr\n"
 
@@ -276,8 +276,9 @@ msgstr "Obriši razgovore (Shift+Delete)"
 #: ../src/client/application/geary-controller.vala:2711
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Premjesti razgovor u smeće (Delete, Backspace)"
+msgstr[1] "Premjesti razgovore u smeće (Delete, Backspace)"
+msgstr[2] "Premjesti razgovore u smeće (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
@@ -296,8 +297,9 @@ msgstr "_Arhiva"
 #: ../src/client/application/geary-controller.vala:2709
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Arhiviraj razgovor (A)"
+msgstr[1] "Arhiviraj razgovore (A)"
+msgstr[2] "Arhiviraj razgovore (A)"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
@@ -337,8 +339,9 @@ msgstr "Ukloni iz neželjene _pošte"
 #: ../src/client/application/geary-controller.vala:2702
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Označi razgovor"
+msgstr[1] "Označi razgovore"
+msgstr[2] "Označi razgovore"
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
@@ -360,15 +363,16 @@ msgstr "Označi razgovore"
 #: ../src/client/application/geary-controller.vala:2704
 msgid "Add label to conversation"
 msgid_plural "Add label to conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Dodaj oznaku razgovoru"
+msgstr[1] "Dodaj oznaku razgovorima"
+msgstr[2] "Dodaj oznaku razgovorima"
 
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
 msgid "Add label to conversations"
-msgstr "Dodavaj oznaku razgovorima"
+msgstr "Dodaj oznaku razgovorima"
 
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:431
@@ -387,8 +391,9 @@ msgstr "Dodavaj oznaku razgovorima"
 #: ../src/client/application/geary-controller.vala:2706
 msgid "Move conversation"
 msgid_plural "Move conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Premjesti razgovor"
+msgstr[1] "Premjesti razgovore"
+msgstr[2] "Premjesti razgovore"
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
@@ -1555,7 +1560,7 @@ msgstr "Nema odabranih razgovora."
 msgid "%u conversation selected."
 msgid_plural "%u conversations selected."
 msgstr[0] "%u razgovor odabran."
-msgstr[1] "%u razgovora odabrano."
+msgstr[1] "%u razgovora odabrana."
 msgstr[2] "%u razgovora odabrano."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:444
@@ -2182,8 +2187,9 @@ msgstr "Obriši razgovor"
 #: ../src/client/application/geary-controller.vala:2713
 msgid "Delete Conversation (Shift+Delete)"
 msgid_plural "Delete Conversations (Shift+Delete)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Obriši razgovor (Shift+Delete)"
+msgstr[1] "Obriši razgovore (Shift+Delete)"
+msgstr[2] "Obriši razgovore (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
 #: ../src/client/application/geary-controller.vala:62

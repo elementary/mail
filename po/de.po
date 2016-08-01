@@ -20,14 +20,14 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-07-17 03:31+0400\n"
-"PO-Revision-Date: 2016-07-30 20:19+0000\n"
+"PO-Revision-Date: 2016-07-31 18:17+0000\n"
 "Last-Translator: UweS <Unknown>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-07-31 06:15+0000\n"
+"X-Launchpad-Export-Date: 2016-08-01 05:42+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "Language: de\n"
 
@@ -2534,7 +2534,7 @@ msgid ""
 "A composer window associated with this account is currently open. Send or "
 "discard the message and try again."
 msgstr ""
-"Ein E-Mail Fenster ist momentan noch geöffnet. Bitte Senden oder verwerfen "
+"Ein E-Mail-Fenster ist momentan noch geöffnet. Bitte senden oder verwerfen "
 "Sie die Nachricht und versuchen Sie es dann erneut."
 
 #: ../data/ui/login.ui:34
@@ -2543,7 +2543,7 @@ msgstr "Weitere E-Mail-Adressen …"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
-msgstr "Gesendete E-Mail _speichern"
+msgstr "Gesendete E-Mails _speichern"
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
@@ -2559,7 +2559,7 @@ msgstr "E-_Mail-Adresse:"
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
-msgstr "Arbeit, zu Hause, usw."
+msgstr "Arbeit, zu Hause usw."
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
@@ -2603,7 +2603,7 @@ msgstr "Benutzer_name:"
 
 #: ../data/ui/login.ui:480
 msgid "Pass_word:"
-msgstr "Kenn_wort:"
+msgstr "Pass_wort:"
 
 #: ../data/ui/login.ui:499
 msgid "SMTP username"
@@ -2740,9 +2740,9 @@ msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
-"Beim Speichern einer gesendeten Nachricht, in den Ordner gesendete "
-"Nachrichten, ist ein Fehler aufgetreten. Die Nachricht wird in Ihrem "
-"Ausgangsordner verbleiben, bis Sie diese löschen."
+"Beim Speichern einer gesendeten Nachricht im Ordner »Gesendete E-Mails« ist "
+"ein Fehler aufgetreten. Die Nachricht verbleibt in Ihrem Ausgangsordner, bis "
+"Sie diese löschen."
 
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
@@ -3090,7 +3090,7 @@ msgstr "Konto entfernen"
 
 #: ../src/client/dialogs/PasswordDialog.vala:45
 msgid "Username:"
-msgstr "Nutzername:"
+msgstr "Benutzername:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:52
 msgid "Password:"
