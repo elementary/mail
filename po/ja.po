@@ -11,39 +11,39 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2016-07-17 03:31+0400\n"
-"PO-Revision-Date: 2016-05-21 17:14+0000\n"
-"Last-Translator: Jim Nelson <jim@yorba.org>\n"
+"PO-Revision-Date: 2016-08-02 00:35+0000\n"
+"Last-Translator: BALLOON a.k.a. Fu-sen. (Keiichi SHIGA) <Unknown>\n"
 "Language-Team: Japanese (Japan) "
 "(http://www.transifex.com/projects/p/geary/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-07-31 06:15+0000\n"
+"X-Launchpad-Export-Date: 2016-08-02 06:08+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "Language: ja_JP\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
-msgstr ""
+msgstr "下書き | 下書き"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:580
 msgid "Sent | Sent Mail | Sent Email | Sent E-Mail"
-msgstr ""
+msgstr "送信 | メール送信 | メール送信 | メール送信"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:585
 msgid ""
 "Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
 "| Bulk E-Mail"
-msgstr ""
+msgstr "迷惑メール | 迷惑メール | 迷惑メール | 迷惑メール | 迷惑メール | 迷惑メール | 迷惑メール | 迷惑メール"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:590
 msgid "Trash | Rubbish | Rubbish Bin"
-msgstr ""
+msgstr "ごみ箱 | 削除済み | 削除済みメール"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:595
 msgid "Archive | Archives"
-msgstr ""
+msgstr "アーカイブ | アーカイブ"
 
 #: ../src/engine/api/geary-special-folder-type.vala:24
 msgid "Inbox"
@@ -115,7 +115,7 @@ msgstr "Yahoo! Mail"
 
 #: ../src/engine/api/geary-service-provider.vala:58
 msgid "Outlook.com"
-msgstr ""
+msgstr "Outlook.com"
 
 #: ../src/engine/api/geary-service-provider.vala:61
 msgid "Other"
@@ -196,7 +196,7 @@ msgstr "%Y %b %-e日 (%a), %l:%M %p"
 #. / the original sender.
 #: ../src/engine/rfc822/rfc822-utils.vala:221
 msgid "On %1$s, %2$s wrote:"
-msgstr ""
+msgstr "%1$s 、 %2$s さんより:"
 
 #. / The quoted header for a message being replied to (in case the date is not known).
 #. / %s will be replaced by the original sender.
@@ -232,7 +232,7 @@ msgstr "宛先: %s\n"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:275
 msgid "Cc: %s\n"
-msgstr ""
+msgstr "Cc: %s\n"
 
 #. / Placeholder filename for attachments with no filename.
 #: ../src/engine/rfc822/rfc822-utils.vala:378
@@ -443,14 +443,14 @@ msgstr "名前を付けてマーク(_M)"
 #: ../src/client/application/geary-controller.vala:394
 #: ../src/client/application/geary-controller.vala:389
 msgid "Mark as _Read"
-msgstr ""
+msgstr "既読にする (_R)"
 
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:405
 #: ../src/client/application/geary-controller.vala:400
 #: ../src/client/application/geary-controller.vala:395
 msgid "Mark as _Unread"
-msgstr ""
+msgstr "未読にする (_R)"
 
 #: ../src/client/application/geary-controller.vala:412
 #: ../src/client/application/geary-controller.vala:411
@@ -494,7 +494,7 @@ msgstr "移動(_M)"
 #: ../src/client/components/main-toolbar.vala:60
 #: ../src/client/components/main-toolbar.vala:64
 msgid "Compose new message (Ctrl+N, N)"
-msgstr ""
+msgstr "新しいメッセージを作成 (Ctrl+N, N)"
 
 #: ../src/client/application/geary-controller.vala:440
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1857
@@ -509,11 +509,11 @@ msgstr "返信(_R)"
 #: ../src/client/components/main-toolbar.vala:99
 #: ../src/client/components/main-toolbar.vala:107
 msgid "Reply (Ctrl+R, R)"
-msgstr ""
+msgstr "返信 (Ctrl+R, R)"
 
 #: ../src/client/application/geary-controller.vala:445
 msgid "R_eply All"
-msgstr ""
+msgstr "全員に返信 (_E)"
 
 #: ../src/client/application/geary-controller.vala:446
 #: ../src/client/application/geary-controller.vala:445
@@ -522,7 +522,7 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:104
 #: ../src/client/components/main-toolbar.vala:112
 msgid "Reply all (Ctrl+Shift+R, Shift+R)"
-msgstr ""
+msgstr "全員に返信 (Ctrl+Shift+R, Shift+R)"
 
 #: ../src/client/application/geary-controller.vala:451
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1867
@@ -537,7 +537,7 @@ msgstr "転送(_F)"
 #: ../src/client/components/main-toolbar.vala:109
 #: ../src/client/components/main-toolbar.vala:117
 msgid "Forward (Ctrl+L, F)"
-msgstr ""
+msgstr "転送 (Ctrl+L, F)"
 
 #: ../src/client/application/geary-controller.vala:491
 #: ../src/client/application/geary-controller.vala:490
@@ -575,7 +575,7 @@ msgstr ""
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
-msgstr ""
+msgstr "検索バーの表示・非表示"
 
 #: ../src/client/application/geary-controller.vala:746
 #: ../src/client/application/geary-controller.vala:740
@@ -650,7 +650,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1039
 #: ../src/client/application/geary-controller.vala:1033
 msgid "Error saving sent mail"
-msgstr ""
+msgstr "送信メールの保存でエラーが発生しました"
 
 #: ../src/client/application/geary-controller.vala:1069
 #: ../src/client/application/geary-controller.vala:1063
@@ -677,7 +677,7 @@ msgstr "ラベル"
 #: ../src/client/application/geary-controller.vala:1121
 #: ../src/client/application/geary-controller.vala:1115
 msgid "Unable to open the database for %s"
-msgstr ""
+msgstr "データーベース %s を開けませんでした"
 
 #: ../src/client/application/geary-controller.vala:1151
 #: ../src/client/application/geary-controller.vala:1145
@@ -814,6 +814,7 @@ msgstr ""
 "Minato Kanzaki <pikadcolon@gmail.com>\n"
 "\n"
 "Launchpad Contributions:\n"
+"  BALLOON a.k.a. Fu-sen. (Keiichi SHIGA) https://launchpad.net/~balloon\n"
 "  Jim Nelson https://launchpad.net/~yorba-jim\n"
 "  Masayuki Sugahara https://launchpad.net/~brindflontia\n"
 "  Ryo Nakano https://launchpad.net/~uq3-him13de-9spzka7"
@@ -924,7 +925,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2397
 #: ../src/client/application/geary-controller.vala:2392
 msgid "Empty %s"
-msgstr ""
+msgstr "%sを空にする"
 
 #: ../src/client/application/geary-controller.vala:2459
 #: ../src/client/application/geary-controller.vala:2453
@@ -2073,7 +2074,7 @@ msgstr ""
 #: ../src/client/dialogs/preferences-dialog.vala:38
 #: ../src/client/dialogs/preferences-dialog.vala:39
 msgid "Three-pane layout:"
-msgstr ""
+msgstr "3ペインレイアウト:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:42 ../data/ui/login.ui:853
 #: ../src/client/dialogs/preferences-dialog.vala:48

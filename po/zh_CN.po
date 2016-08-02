@@ -17,7 +17,7 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-07-17 03:31+0400\n"
-"PO-Revision-Date: 2016-07-05 06:14+0000\n"
+"PO-Revision-Date: 2016-08-01 06:24+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (China) "
 "(http://www.transifex.com/projects/p/geary/language/zh_CN/)\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-07-31 06:16+0000\n"
+"X-Launchpad-Export-Date: 2016-08-02 06:08+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "Language: zh_CN\n"
 
@@ -282,8 +282,7 @@ msgstr "删除多个会话 (Shift+Delete)"
 #: ../src/client/application/geary-controller.vala:2711
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "将会话移至回收站"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
@@ -302,8 +301,7 @@ msgstr "归档邮件"
 #: ../src/client/application/geary-controller.vala:2709
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "归档会话"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
@@ -343,8 +341,7 @@ msgstr "取消标记为垃圾邮件"
 #: ../src/client/application/geary-controller.vala:2702
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "标记会话"
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
@@ -366,8 +363,7 @@ msgstr "添加标签"
 #: ../src/client/application/geary-controller.vala:2704
 msgid "Add label to conversation"
 msgid_plural "Add label to conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "添加标签"
 
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
@@ -393,8 +389,7 @@ msgstr "添加标签到已选会话"
 #: ../src/client/application/geary-controller.vala:2706
 msgid "Move conversation"
 msgid_plural "Move conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "移动会话"
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
@@ -2143,8 +2138,7 @@ msgstr "删除会话"
 #: ../src/client/application/geary-controller.vala:2713
 msgid "Delete Conversation (Shift+Delete)"
 msgid_plural "Delete Conversations (Shift+Delete)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "删除会话"
 
 #: ../src/client/application/geary-controller.vala:63
 #: ../src/client/application/geary-controller.vala:62
