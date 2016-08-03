@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-07-17 03:31+0400\n"
+"POT-Creation-Date: 2016-08-02 20:42-0500\n"
 "PO-Revision-Date: 2015-11-24 15:45+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-07-31 06:15+0000\n"
+"X-Launchpad-Export-Date: 2016-08-03 06:31+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "Language: kk\n"
 
@@ -271,6 +271,7 @@ msgstr "Сөйлесулерді өшіру (Shift+Delete)"
 #: ../src/client/application/geary-controller.vala:66
 #: ../src/client/application/geary-controller.vala:65
 #: ../src/client/application/geary-controller.vala:2711
+#: ../src/client/application/geary-controller.vala:2723
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
 msgstr[0] ""
@@ -291,6 +292,7 @@ msgstr "_Архив"
 #: ../src/client/application/geary-controller.vala:71
 #: ../src/client/application/geary-controller.vala:70
 #: ../src/client/application/geary-controller.vala:2709
+#: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
 msgstr[0] ""
@@ -332,6 +334,8 @@ msgstr "С_пам емес етіп белгілеу"
 #: ../src/client/components/main-toolbar.vala:107
 #: ../src/client/components/main-toolbar.vala:123
 #: ../src/client/application/geary-controller.vala:2702
+#: ../src/client/application/geary-controller.vala:387
+#: ../src/client/application/geary-controller.vala:2714
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
 msgstr[0] ""
@@ -355,6 +359,7 @@ msgstr "Сөйлесулерді белгілеу"
 #: ../src/client/components/main-toolbar.vala:112
 #: ../src/client/components/main-toolbar.vala:128
 #: ../src/client/application/geary-controller.vala:2704
+#: ../src/client/application/geary-controller.vala:2716
 msgid "Add label to conversation"
 msgid_plural "Add label to conversations"
 msgstr[0] ""
@@ -382,6 +387,7 @@ msgstr "Сөйлесулерге белгіні қосу"
 #: ../src/client/components/main-toolbar.vala:117
 #: ../src/client/components/main-toolbar.vala:133
 #: ../src/client/application/geary-controller.vala:2706
+#: ../src/client/application/geary-controller.vala:2718
 msgid "Move conversation"
 msgid_plural "Move conversations"
 msgstr[0] ""
@@ -398,6 +404,7 @@ msgstr "Сөйлесулерді жылжыту"
 #: ../src/client/application/geary-controller.vala:371
 #: ../src/client/application/geary-controller.vala:370
 #: ../src/client/application/geary-controller.vala:369
+#: ../src/client/application/geary-controller.vala:375
 msgid "A_ccounts"
 msgstr "_Тіркелгілер"
 
@@ -407,6 +414,7 @@ msgstr "_Тіркелгілер"
 #: ../src/client/application/geary-controller.vala:375
 #: ../src/client/components/stock.vala:26
 #: ../src/client/application/geary-controller.vala:374
+#: ../src/client/application/geary-controller.vala:380
 msgid "_Preferences"
 msgstr "Ба_птаулар"
 
@@ -429,6 +437,7 @@ msgstr "Осы тур_алы"
 #: ../src/client/application/geary-controller.vala:383
 #: ../src/client/components/stock.vala:28
 #: ../src/client/application/geary-controller.vala:378
+#: ../src/client/application/geary-controller.vala:384
 msgid "_Quit"
 msgstr "_Шығу"
 
@@ -436,6 +445,7 @@ msgstr "_Шығу"
 #: ../src/client/application/geary-controller.vala:393
 #: ../src/client/application/geary-controller.vala:388
 #: ../src/client/application/geary-controller.vala:383
+#: ../src/client/application/geary-controller.vala:389
 msgid "_Mark as..."
 msgstr "Қалайша _белгілеу..."
 
@@ -443,6 +453,7 @@ msgstr "Қалайша _белгілеу..."
 #: ../src/client/application/geary-controller.vala:399
 #: ../src/client/application/geary-controller.vala:394
 #: ../src/client/application/geary-controller.vala:389
+#: ../src/client/application/geary-controller.vala:395
 msgid "Mark as _Read"
 msgstr "Оқ_ылған етіп белгілеу"
 
@@ -450,6 +461,7 @@ msgstr "Оқ_ылған етіп белгілеу"
 #: ../src/client/application/geary-controller.vala:405
 #: ../src/client/application/geary-controller.vala:400
 #: ../src/client/application/geary-controller.vala:395
+#: ../src/client/application/geary-controller.vala:401
 msgid "Mark as _Unread"
 msgstr "Оқыл_маған етіп белгілеу"
 
@@ -457,6 +469,7 @@ msgstr "Оқыл_маған етіп белгілеу"
 #: ../src/client/application/geary-controller.vala:411
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:401
+#: ../src/client/application/geary-controller.vala:407
 msgid "_Star"
 msgstr "_Жұлдызшаны орнату"
 
@@ -464,6 +477,7 @@ msgstr "_Жұлдызшаны орнату"
 #: ../src/client/application/geary-controller.vala:416
 #: ../src/client/application/geary-controller.vala:411
 #: ../src/client/application/geary-controller.vala:406
+#: ../src/client/application/geary-controller.vala:412
 msgid "U_nstar"
 msgstr "Жұлдызшаны алы_п тастау"
 
@@ -471,6 +485,7 @@ msgstr "Жұлдызшаны алы_п тастау"
 #: ../src/client/application/geary-controller.vala:426
 #: ../src/client/application/geary-controller.vala:421
 #: ../src/client/application/geary-controller.vala:416
+#: ../src/client/application/geary-controller.vala:422
 msgid "Add label"
 msgstr "Белгіні қосу"
 
@@ -478,6 +493,7 @@ msgstr "Белгіні қосу"
 #: ../src/client/application/geary-controller.vala:427
 #: ../src/client/application/geary-controller.vala:422
 #: ../src/client/application/geary-controller.vala:417
+#: ../src/client/application/geary-controller.vala:423
 msgid "_Label"
 msgstr "Ж_азу"
 
@@ -485,6 +501,7 @@ msgstr "Ж_азу"
 #: ../src/client/application/geary-controller.vala:431
 #: ../src/client/application/geary-controller.vala:426
 #: ../src/client/application/geary-controller.vala:421
+#: ../src/client/application/geary-controller.vala:427
 msgid "_Move"
 msgstr "Жы_лжыту"
 
@@ -562,6 +579,7 @@ msgstr "Спам немесе Қоқыс шелегі бумаларын бос�
 #: ../src/client/application/geary-controller.vala:485
 #: ../src/client/application/geary-controller.vala:479
 #: ../src/client/application/geary-controller.vala:474
+#: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
 msgstr "_Спам бумасын босату…"
 
@@ -571,6 +589,7 @@ msgstr "_Спам бумасын босату…"
 #: ../src/client/application/geary-controller.vala:489
 #: ../src/client/application/geary-controller.vala:483
 #: ../src/client/application/geary-controller.vala:478
+#: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
 msgstr "Қ_оқыс шелегін босату…"
 
@@ -859,6 +878,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1940
 #: ../src/client/application/geary-controller.vala:1936
 #: ../src/client/application/geary-controller.vala:1931
+#: ../src/client/application/geary-controller.vala:1937
 msgid "Undo move (Ctrl+Z)"
 msgstr "Жылжытуды болдырмау (Ctrl+Z)"
 
@@ -897,6 +917,7 @@ msgstr "М_ені қайта сұрамау"
 #: ../src/client/application/geary-controller.vala:1966
 #: ../src/client/application/geary-controller.vala:1962
 #: ../src/client/application/geary-controller.vala:1957
+#: ../src/client/application/geary-controller.vala:1963
 msgid "A file named \"%s\" already exists.  Do you want to replace it?"
 msgstr ""
 "\"%s\" деп аталатын файл бар болып тұр. Оны үстінен жазуды қалайсыз ба?"
@@ -908,6 +929,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1968
 #: ../src/client/application/geary-controller.vala:1964
 #: ../src/client/application/geary-controller.vala:1959
+#: ../src/client/application/geary-controller.vala:1965
 msgid ""
 "The file already exists in \"%s\".  Replacing it will overwrite its contents."
 msgstr ""
@@ -920,6 +942,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1971
 #: ../src/client/application/geary-controller.vala:1967
 #: ../src/client/application/geary-controller.vala:1962
+#: ../src/client/application/geary-controller.vala:1968
 msgid "_Replace"
 msgstr "А_лмастыру"
 
@@ -1522,6 +1545,7 @@ msgstr[0] "%d нәтиже"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:302
 #: ../src/client/conversation-viewer/conversation-viewer.vala:308
 #: ../src/client/conversation-viewer/conversation-viewer.vala:310
+#: ../src/client/conversation-viewer/conversation-viewer.vala:311
 msgid "No conversations selected."
 msgstr "Бірде-бір сөйлесу таңдалмады."
 
@@ -1530,6 +1554,7 @@ msgstr "Бірде-бір сөйлесу таңдалмады."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:304
 #: ../src/client/conversation-viewer/conversation-viewer.vala:310
 #: ../src/client/conversation-viewer/conversation-viewer.vala:312
+#: ../src/client/conversation-viewer/conversation-viewer.vala:313
 msgid "%u conversation selected."
 msgid_plural "%u conversations selected."
 msgstr[0] "%u сөйлесу таңдалды."
@@ -1539,6 +1564,7 @@ msgstr[0] "%u сөйлесу таңдалды."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:333
 #: ../src/client/conversation-viewer/conversation-viewer.vala:339
 #: ../src/client/conversation-viewer/conversation-viewer.vala:341
+#: ../src/client/conversation-viewer/conversation-viewer.vala:342
 msgid "No search results found."
 msgstr "Іздеу нәтижелері жоқ."
 
@@ -1547,6 +1573,7 @@ msgstr "Іздеу нәтижелері жоқ."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:335
 #: ../src/client/conversation-viewer/conversation-viewer.vala:341
 #: ../src/client/conversation-viewer/conversation-viewer.vala:343
+#: ../src/client/conversation-viewer/conversation-viewer.vala:344
 msgid "No conversations in folder."
 msgstr "Бумада сөйлесулер жоқ."
 
@@ -1556,6 +1583,7 @@ msgstr "Бумада сөйлесулер жоқ."
 #: ../src/client/conversation-viewer/ConversationWidget.vala:450
 #: ../src/client/conversation-viewer/ConversationWidget.vala:453
 #: ../src/client/conversation-viewer/ConversationWidget.vala:456
+#: ../src/client/conversation-viewer/ConversationWidget.vala:459
 msgid "This message contains remote images."
 msgstr "Бұл хатта қашықтағы суреттер бар."
 
@@ -1565,6 +1593,7 @@ msgstr "Бұл хатта қашықтағы суреттер бар."
 #: ../src/client/conversation-viewer/ConversationWidget.vala:448
 #: ../src/client/conversation-viewer/ConversationWidget.vala:451
 #: ../src/client/conversation-viewer/ConversationWidget.vala:454
+#: ../src/client/conversation-viewer/ConversationWidget.vala:457
 msgid "Show Images"
 msgstr "Суреттерді көрсету"
 
@@ -1579,6 +1608,7 @@ msgstr "Жіберушіден әрқашан көрсету"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:397
 #: ../src/client/conversation-viewer/ConversationWidget.vala:400
 #: ../src/client/conversation-viewer/ConversationWidget.vala:403
+#: ../src/client/conversation-viewer/ConversationWidget.vala:405
 msgid "Edit Draft"
 msgstr "Шимайды түзету"
 
@@ -1586,6 +1616,7 @@ msgstr "Шимайды түзету"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:814
 #: ../src/client/conversation-viewer/ConversationWidget.vala:145
 #: ../src/client/conversation-viewer/ConversationWidget.vala:148
+#: ../src/client/conversation-viewer/ConversationWidget.vala:150
 msgid "From:"
 msgstr "Кімнен:"
 
@@ -1594,6 +1625,7 @@ msgstr "Кімнен:"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:149
 #: ../src/client/conversation-viewer/ConversationWidget.vala:158
 #: ../src/client/conversation-viewer/ConversationWidget.vala:161
+#: ../src/client/conversation-viewer/ConversationWidget.vala:163
 msgid "To:"
 msgstr "Кімге:"
 
@@ -1602,6 +1634,7 @@ msgstr "Кімге:"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:154
 #: ../src/client/conversation-viewer/ConversationWidget.vala:163
 #: ../src/client/conversation-viewer/ConversationWidget.vala:166
+#: ../src/client/conversation-viewer/ConversationWidget.vala:168
 msgid "Cc:"
 msgstr "Көшірмесі:"
 
@@ -1610,6 +1643,7 @@ msgstr "Көшірмесі:"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:159
 #: ../src/client/conversation-viewer/ConversationWidget.vala:168
 #: ../src/client/conversation-viewer/ConversationWidget.vala:171
+#: ../src/client/conversation-viewer/ConversationWidget.vala:173
 msgid "Bcc:"
 msgstr "Жасырын көшірме:"
 
@@ -1618,6 +1652,7 @@ msgstr "Жасырын көшірме:"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:164
 #: ../src/client/conversation-viewer/ConversationWidget.vala:173
 #: ../src/client/conversation-viewer/ConversationWidget.vala:176
+#: ../src/client/conversation-viewer/ConversationWidget.vala:178
 msgid "Subject:"
 msgstr "Тақырып:"
 
@@ -1645,6 +1680,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1153
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1157
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1162
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1172
 msgid "_Copy"
 msgstr "_Көшіру"
 
@@ -1654,6 +1690,7 @@ msgstr "_Көшіру"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1161
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1165
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1170
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1180
 msgid "Copy _Email Address"
 msgstr "Эл. пошта а_дресін көшіру"
 
@@ -1665,6 +1702,7 @@ msgstr "Эл. пошта а_дресін көшіру"
 #: ../data/ui/composer.ui:103
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1174
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1179
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1189
 msgid "Copy _Link"
 msgstr "_Сілтемені көшіріп алу"
 
@@ -1681,6 +1719,7 @@ msgstr "_Хатты таңдау"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1181
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1185
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1190
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1200
 msgid "Select _All"
 msgstr "Барлығын _таңдау"
 
@@ -1690,6 +1729,7 @@ msgstr "Барлығын _таңдау"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1187
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1191
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1196
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1206
 msgid "_Inspect"
 msgstr "_Бақылау"
 
@@ -1760,6 +1800,7 @@ msgstr "Бастапқы кодын қ_арау"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1062
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1066
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1071
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1081
 msgid "Failed to open default text editor."
 msgstr "Үнсіз келісім бойынша мәтіндік түзеткішін ашу сәтсіз аяқталды."
 
@@ -2150,6 +2191,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:61
 #: ../src/client/application/geary-controller.vala:60
 #: ../src/client/application/geary-controller.vala:2713
+#: ../src/client/application/geary-controller.vala:2725
 msgid "Delete Conversation (Shift+Delete)"
 msgid_plural "Delete Conversations (Shift+Delete)"
 msgstr[0] ""
@@ -2789,30 +2831,35 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:218
 #: ../src/client/conversation-viewer/ConversationWidget.vala:227
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
+#: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
+#: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
 #: ../src/client/conversation-viewer/ConversationWidget.vala:241
+#: ../src/client/conversation-viewer/ConversationWidget.vala:243
 msgid "Reply"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:239
 #: ../src/client/conversation-viewer/ConversationWidget.vala:242
+#: ../src/client/conversation-viewer/ConversationWidget.vala:244
 msgid "Reply to All"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:231
 #: ../src/client/conversation-viewer/ConversationWidget.vala:240
 #: ../src/client/conversation-viewer/ConversationWidget.vala:243
+#: ../src/client/conversation-viewer/ConversationWidget.vala:245
 msgid "Forward"
 msgstr ""
 
@@ -2823,6 +2870,8 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1140
 #: ../src/client/conversation-viewer/ConversationWidget.vala:270
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1145
+#: ../src/client/conversation-viewer/ConversationWidget.vala:272
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1155
 msgid "Mark as Unread"
 msgstr ""
 
@@ -2833,18 +2882,22 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1138
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1143
+#: ../src/client/conversation-viewer/ConversationWidget.vala:274
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1153
 msgid "Mark as Read"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:252
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:275
+#: ../src/client/conversation-viewer/ConversationWidget.vala:277
 msgid "Print…"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
 #: ../src/client/conversation-viewer/ConversationWidget.vala:276
+#: ../src/client/conversation-viewer/ConversationWidget.vala:278
 msgid "View Source"
 msgstr ""
 
@@ -2856,6 +2909,8 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:630
 #: ../src/client/conversation-viewer/ConversationWidget.vala:343
 #: ../src/client/conversation-viewer/ConversationWidget.vala:635
+#: ../src/client/conversation-viewer/ConversationWidget.vala:345
+#: ../src/client/conversation-viewer/ConversationWidget.vala:638
 msgid "View message"
 msgstr ""
 
@@ -2863,6 +2918,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:406
 #: ../src/client/conversation-viewer/ConversationWidget.vala:409
 #: ../src/client/conversation-viewer/ConversationWidget.vala:412
+#: ../src/client/conversation-viewer/ConversationWidget.vala:414
 msgid "This message contains one or more attachments"
 msgstr ""
 
@@ -2870,6 +2926,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:449
 #: ../src/client/conversation-viewer/ConversationWidget.vala:452
 #: ../src/client/conversation-viewer/ConversationWidget.vala:455
+#: ../src/client/conversation-viewer/ConversationWidget.vala:458
 msgid "Always Show from Sender"
 msgstr ""
 
@@ -2877,6 +2934,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:577
 #: ../src/client/conversation-viewer/ConversationWidget.vala:581
 #: ../src/client/conversation-viewer/ConversationWidget.vala:584
+#: ../src/client/conversation-viewer/ConversationWidget.vala:587
 msgid "Compose New Message"
 msgstr ""
 
@@ -2884,6 +2942,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:578
 #: ../src/client/conversation-viewer/ConversationWidget.vala:582
 #: ../src/client/conversation-viewer/ConversationWidget.vala:585
+#: ../src/client/conversation-viewer/ConversationWidget.vala:588
 msgid "Copy Email Address"
 msgstr ""
 
@@ -2891,6 +2950,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:639
 #: ../src/client/conversation-viewer/ConversationWidget.vala:643
 #: ../src/client/conversation-viewer/ConversationWidget.vala:648
+#: ../src/client/conversation-viewer/ConversationWidget.vala:651
 msgid "Hide message"
 msgstr ""
 
@@ -2920,18 +2980,22 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:426
 #: ../src/client/conversation-viewer/ConversationWidget.vala:416
 #: ../src/client/conversation-viewer/ConversationWidget.vala:429
+#: ../src/client/conversation-viewer/ConversationWidget.vala:418
+#: ../src/client/conversation-viewer/ConversationWidget.vala:431
 msgid "Star message"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:420
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
 #: ../src/client/conversation-viewer/ConversationWidget.vala:426
+#: ../src/client/conversation-viewer/ConversationWidget.vala:428
 msgid "Unstar message"
 msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:430
 #: ../src/client/conversation-viewer/ConversationWidget.vala:433
 #: ../src/client/conversation-viewer/ConversationWidget.vala:436
+#: ../src/client/conversation-viewer/ConversationWidget.vala:438
 msgid "More"
 msgstr ""
 
@@ -3011,4 +3075,8 @@ msgstr ""
 #: ../src/client/conversation-list/formatted-conversation-data.vala:188
 #: ../src/client/conversation-list/formatted-conversation-data.vala:190
 msgid ", "
+msgstr ""
+
+#: ../src/client/application/geary-application.vala:15
+msgid "Mail"
 msgstr ""

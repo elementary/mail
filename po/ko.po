@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-07-17 03:31+0400\n"
-"PO-Revision-Date: 2016-07-30 18:38+0000\n"
+"POT-Creation-Date: 2016-08-02 20:42-0500\n"
+"PO-Revision-Date: 2016-08-03 04:40+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-07-31 06:15+0000\n"
+"X-Launchpad-Export-Date: 2016-08-03 06:31+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -265,6 +265,7 @@ msgstr "지우기 (Shift+Delete)"
 #: ../src/client/application/geary-controller.vala:66
 #: ../src/client/application/geary-controller.vala:65
 #: ../src/client/application/geary-controller.vala:2711
+#: ../src/client/application/geary-controller.vala:2723
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
 msgstr[0] "휴지통으로 (Delete, Backspace)"
@@ -284,6 +285,7 @@ msgstr "편지 저장(_A)"
 #: ../src/client/application/geary-controller.vala:71
 #: ../src/client/application/geary-controller.vala:70
 #: ../src/client/application/geary-controller.vala:2709
+#: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
 msgstr[0] "편지 저장 (A)"
@@ -324,6 +326,8 @@ msgstr "스팸 아님으로  표시(_P)"
 #: ../src/client/components/main-toolbar.vala:107
 #: ../src/client/components/main-toolbar.vala:123
 #: ../src/client/application/geary-controller.vala:2702
+#: ../src/client/application/geary-controller.vala:387
+#: ../src/client/application/geary-controller.vala:2714
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
 msgstr[0] "표시하기"
@@ -346,6 +350,7 @@ msgstr "표시하기"
 #: ../src/client/components/main-toolbar.vala:112
 #: ../src/client/components/main-toolbar.vala:128
 #: ../src/client/application/geary-controller.vala:2704
+#: ../src/client/application/geary-controller.vala:2716
 msgid "Add label to conversation"
 msgid_plural "Add label to conversations"
 msgstr[0] "라벨 표시"
@@ -372,6 +377,7 @@ msgstr "라벨 표시"
 #: ../src/client/components/main-toolbar.vala:117
 #: ../src/client/components/main-toolbar.vala:133
 #: ../src/client/application/geary-controller.vala:2706
+#: ../src/client/application/geary-controller.vala:2718
 msgid "Move conversation"
 msgid_plural "Move conversations"
 msgstr[0] "편지 이동"
@@ -387,6 +393,7 @@ msgstr "편지 이동"
 #: ../src/client/application/geary-controller.vala:371
 #: ../src/client/application/geary-controller.vala:370
 #: ../src/client/application/geary-controller.vala:369
+#: ../src/client/application/geary-controller.vala:375
 msgid "A_ccounts"
 msgstr "계정(_C)"
 
@@ -396,6 +403,7 @@ msgstr "계정(_C)"
 #: ../src/client/application/geary-controller.vala:375
 #: ../src/client/components/stock.vala:26
 #: ../src/client/application/geary-controller.vala:374
+#: ../src/client/application/geary-controller.vala:380
 msgid "_Preferences"
 msgstr "설정(_P)"
 
@@ -418,6 +426,7 @@ msgstr "소개(_A)"
 #: ../src/client/application/geary-controller.vala:383
 #: ../src/client/components/stock.vala:28
 #: ../src/client/application/geary-controller.vala:378
+#: ../src/client/application/geary-controller.vala:384
 msgid "_Quit"
 msgstr "끝내기(_Q)"
 
@@ -425,6 +434,7 @@ msgstr "끝내기(_Q)"
 #: ../src/client/application/geary-controller.vala:393
 #: ../src/client/application/geary-controller.vala:388
 #: ../src/client/application/geary-controller.vala:383
+#: ../src/client/application/geary-controller.vala:389
 msgid "_Mark as..."
 msgstr "표시하기...(_M)"
 
@@ -432,6 +442,7 @@ msgstr "표시하기...(_M)"
 #: ../src/client/application/geary-controller.vala:399
 #: ../src/client/application/geary-controller.vala:394
 #: ../src/client/application/geary-controller.vala:389
+#: ../src/client/application/geary-controller.vala:395
 msgid "Mark as _Read"
 msgstr "읽음으로 표시(_R)"
 
@@ -439,6 +450,7 @@ msgstr "읽음으로 표시(_R)"
 #: ../src/client/application/geary-controller.vala:405
 #: ../src/client/application/geary-controller.vala:400
 #: ../src/client/application/geary-controller.vala:395
+#: ../src/client/application/geary-controller.vala:401
 msgid "Mark as _Unread"
 msgstr "읽지 않음으로 표시(_R)"
 
@@ -446,6 +458,7 @@ msgstr "읽지 않음으로 표시(_R)"
 #: ../src/client/application/geary-controller.vala:411
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:401
+#: ../src/client/application/geary-controller.vala:407
 msgid "_Star"
 msgstr "별표 표시(_S)"
 
@@ -453,6 +466,7 @@ msgstr "별표 표시(_S)"
 #: ../src/client/application/geary-controller.vala:416
 #: ../src/client/application/geary-controller.vala:411
 #: ../src/client/application/geary-controller.vala:406
+#: ../src/client/application/geary-controller.vala:412
 msgid "U_nstar"
 msgstr "별표 취소(_N)"
 
@@ -460,6 +474,7 @@ msgstr "별표 취소(_N)"
 #: ../src/client/application/geary-controller.vala:426
 #: ../src/client/application/geary-controller.vala:421
 #: ../src/client/application/geary-controller.vala:416
+#: ../src/client/application/geary-controller.vala:422
 msgid "Add label"
 msgstr "라벨 추가"
 
@@ -467,6 +482,7 @@ msgstr "라벨 추가"
 #: ../src/client/application/geary-controller.vala:427
 #: ../src/client/application/geary-controller.vala:422
 #: ../src/client/application/geary-controller.vala:417
+#: ../src/client/application/geary-controller.vala:423
 msgid "_Label"
 msgstr "라벨(_L)"
 
@@ -474,6 +490,7 @@ msgstr "라벨(_L)"
 #: ../src/client/application/geary-controller.vala:431
 #: ../src/client/application/geary-controller.vala:426
 #: ../src/client/application/geary-controller.vala:421
+#: ../src/client/application/geary-controller.vala:427
 msgid "_Move"
 msgstr "옮기기(_M)"
 
@@ -551,6 +568,7 @@ msgstr "스팸 편지함이나 휴지통 비우기"
 #: ../src/client/application/geary-controller.vala:485
 #: ../src/client/application/geary-controller.vala:479
 #: ../src/client/application/geary-controller.vala:474
+#: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
 msgstr "스팸 편지함 비우기(_S)"
 
@@ -560,6 +578,7 @@ msgstr "스팸 편지함 비우기(_S)"
 #: ../src/client/application/geary-controller.vala:489
 #: ../src/client/application/geary-controller.vala:483
 #: ../src/client/application/geary-controller.vala:478
+#: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
 msgstr "휴지통 비우기(_T)"
 
@@ -834,6 +853,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1940
 #: ../src/client/application/geary-controller.vala:1936
 #: ../src/client/application/geary-controller.vala:1931
+#: ../src/client/application/geary-controller.vala:1937
 msgid "Undo move (Ctrl+Z)"
 msgstr "이동 취소 (Ctrl+Z)"
 
@@ -870,6 +890,7 @@ msgstr "이제 묻지 않아도 좋습니다(_A)"
 #: ../src/client/application/geary-controller.vala:1966
 #: ../src/client/application/geary-controller.vala:1962
 #: ../src/client/application/geary-controller.vala:1957
+#: ../src/client/application/geary-controller.vala:1963
 msgid "A file named \"%s\" already exists.  Do you want to replace it?"
 msgstr "이름이 \"%s\"인 파일이 이미 있습니다.  이 파일과 바꾸시겠습니까?"
 
@@ -880,6 +901,7 @@ msgstr "이름이 \"%s\"인 파일이 이미 있습니다.  이 파일과 바꾸
 #: ../src/client/application/geary-controller.vala:1968
 #: ../src/client/application/geary-controller.vala:1964
 #: ../src/client/application/geary-controller.vala:1959
+#: ../src/client/application/geary-controller.vala:1965
 msgid ""
 "The file already exists in \"%s\".  Replacing it will overwrite its contents."
 msgstr "\"%s\" 안에 파일이 이미 있습니다.  파일을 바꾸면 그 내용을 덮어 쓰게 됩니다."
@@ -891,6 +913,7 @@ msgstr "\"%s\" 안에 파일이 이미 있습니다.  파일을 바꾸면 그 �
 #: ../src/client/application/geary-controller.vala:1971
 #: ../src/client/application/geary-controller.vala:1967
 #: ../src/client/application/geary-controller.vala:1962
+#: ../src/client/application/geary-controller.vala:1968
 msgid "_Replace"
 msgstr "바꾸기(_R)"
 
@@ -1485,6 +1508,7 @@ msgstr[0] "검색 결과 %d개"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:302
 #: ../src/client/conversation-viewer/conversation-viewer.vala:308
 #: ../src/client/conversation-viewer/conversation-viewer.vala:310
+#: ../src/client/conversation-viewer/conversation-viewer.vala:311
 msgid "No conversations selected."
 msgstr "선택한 대화 없음."
 
@@ -1493,6 +1517,7 @@ msgstr "선택한 대화 없음."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:304
 #: ../src/client/conversation-viewer/conversation-viewer.vala:310
 #: ../src/client/conversation-viewer/conversation-viewer.vala:312
+#: ../src/client/conversation-viewer/conversation-viewer.vala:313
 msgid "%u conversation selected."
 msgid_plural "%u conversations selected."
 msgstr[0] "%u개 대화 선택함."
@@ -1502,6 +1527,7 @@ msgstr[0] "%u개 대화 선택함."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:333
 #: ../src/client/conversation-viewer/conversation-viewer.vala:339
 #: ../src/client/conversation-viewer/conversation-viewer.vala:341
+#: ../src/client/conversation-viewer/conversation-viewer.vala:342
 msgid "No search results found."
 msgstr "검색 결과가 없습니다."
 
@@ -1510,6 +1536,7 @@ msgstr "검색 결과가 없습니다."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:335
 #: ../src/client/conversation-viewer/conversation-viewer.vala:341
 #: ../src/client/conversation-viewer/conversation-viewer.vala:343
+#: ../src/client/conversation-viewer/conversation-viewer.vala:344
 msgid "No conversations in folder."
 msgstr "폴더에 편지가 없습니다."
 
@@ -1519,6 +1546,7 @@ msgstr "폴더에 편지가 없습니다."
 #: ../src/client/conversation-viewer/ConversationWidget.vala:450
 #: ../src/client/conversation-viewer/ConversationWidget.vala:453
 #: ../src/client/conversation-viewer/ConversationWidget.vala:456
+#: ../src/client/conversation-viewer/ConversationWidget.vala:459
 msgid "This message contains remote images."
 msgstr "이 편지는 원격 이미지를 포함하고 있습니다."
 
@@ -1528,6 +1556,7 @@ msgstr "이 편지는 원격 이미지를 포함하고 있습니다."
 #: ../src/client/conversation-viewer/ConversationWidget.vala:448
 #: ../src/client/conversation-viewer/ConversationWidget.vala:451
 #: ../src/client/conversation-viewer/ConversationWidget.vala:454
+#: ../src/client/conversation-viewer/ConversationWidget.vala:457
 msgid "Show Images"
 msgstr "이미지 표시"
 
@@ -1542,6 +1571,7 @@ msgstr "보내는 사람 언제나 표시"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:397
 #: ../src/client/conversation-viewer/ConversationWidget.vala:400
 #: ../src/client/conversation-viewer/ConversationWidget.vala:403
+#: ../src/client/conversation-viewer/ConversationWidget.vala:405
 msgid "Edit Draft"
 msgstr "쓰던 편지 계속 쓰기"
 
@@ -1549,6 +1579,7 @@ msgstr "쓰던 편지 계속 쓰기"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:814
 #: ../src/client/conversation-viewer/ConversationWidget.vala:145
 #: ../src/client/conversation-viewer/ConversationWidget.vala:148
+#: ../src/client/conversation-viewer/ConversationWidget.vala:150
 msgid "From:"
 msgstr "보내는 사람:"
 
@@ -1557,6 +1588,7 @@ msgstr "보내는 사람:"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:149
 #: ../src/client/conversation-viewer/ConversationWidget.vala:158
 #: ../src/client/conversation-viewer/ConversationWidget.vala:161
+#: ../src/client/conversation-viewer/ConversationWidget.vala:163
 msgid "To:"
 msgstr "받는 사람:"
 
@@ -1565,6 +1597,7 @@ msgstr "받는 사람:"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:154
 #: ../src/client/conversation-viewer/ConversationWidget.vala:163
 #: ../src/client/conversation-viewer/ConversationWidget.vala:166
+#: ../src/client/conversation-viewer/ConversationWidget.vala:168
 msgid "Cc:"
 msgstr "함께 받는 사람:"
 
@@ -1573,6 +1606,7 @@ msgstr "함께 받는 사람:"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:159
 #: ../src/client/conversation-viewer/ConversationWidget.vala:168
 #: ../src/client/conversation-viewer/ConversationWidget.vala:171
+#: ../src/client/conversation-viewer/ConversationWidget.vala:173
 msgid "Bcc:"
 msgstr "숨겨 받는 사람:"
 
@@ -1581,6 +1615,7 @@ msgstr "숨겨 받는 사람:"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:164
 #: ../src/client/conversation-viewer/ConversationWidget.vala:173
 #: ../src/client/conversation-viewer/ConversationWidget.vala:176
+#: ../src/client/conversation-viewer/ConversationWidget.vala:178
 msgid "Subject:"
 msgstr "제목:"
 
@@ -1607,6 +1642,7 @@ msgstr "편지는 제대로 보내졌지만, %s에 저장할 수 없습니다."
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1153
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1157
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1162
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1172
 msgid "_Copy"
 msgstr "복사(_C)"
 
@@ -1616,6 +1652,7 @@ msgstr "복사(_C)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1161
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1165
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1170
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1180
 msgid "Copy _Email Address"
 msgstr "이메일 주소 복사(_E)"
 
@@ -1627,6 +1664,7 @@ msgstr "이메일 주소 복사(_E)"
 #: ../data/ui/composer.ui:103
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1174
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1179
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1189
 msgid "Copy _Link"
 msgstr "링크 복사(_L)"
 
@@ -1643,6 +1681,7 @@ msgstr "편지 선택(_M)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1181
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1185
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1190
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1200
 msgid "Select _All"
 msgstr "모두 선택(_A)"
 
@@ -1652,6 +1691,7 @@ msgstr "모두 선택(_A)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1187
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1191
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1196
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1206
 msgid "_Inspect"
 msgstr "검사(_I)"
 
@@ -1722,6 +1762,7 @@ msgstr "소스 보기(_V)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1062
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1066
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1071
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1081
 msgid "Failed to open default text editor."
 msgstr "기본 텍스트 편집기를 열지 못 했습니다."
 
@@ -2109,6 +2150,7 @@ msgstr "지우기"
 #: ../src/client/application/geary-controller.vala:61
 #: ../src/client/application/geary-controller.vala:60
 #: ../src/client/application/geary-controller.vala:2713
+#: ../src/client/application/geary-controller.vala:2725
 msgid "Delete Conversation (Shift+Delete)"
 msgid_plural "Delete Conversations (Shift+Delete)"
 msgstr[0] "지우기 (Shift+Delete)"
@@ -2765,30 +2807,35 @@ msgstr "정보 대화상자 보이기"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:218
 #: ../src/client/conversation-viewer/ConversationWidget.vala:227
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
+#: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
 msgstr "첨부 파일 저장..."
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
+#: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
 msgstr "모든 첨부 파일 저장..."
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
 #: ../src/client/conversation-viewer/ConversationWidget.vala:241
+#: ../src/client/conversation-viewer/ConversationWidget.vala:243
 msgid "Reply"
 msgstr "답장"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:239
 #: ../src/client/conversation-viewer/ConversationWidget.vala:242
+#: ../src/client/conversation-viewer/ConversationWidget.vala:244
 msgid "Reply to All"
 msgstr "모두에게 답장"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:231
 #: ../src/client/conversation-viewer/ConversationWidget.vala:240
 #: ../src/client/conversation-viewer/ConversationWidget.vala:243
+#: ../src/client/conversation-viewer/ConversationWidget.vala:245
 msgid "Forward"
 msgstr "전달"
 
@@ -2799,6 +2846,8 @@ msgstr "전달"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1140
 #: ../src/client/conversation-viewer/ConversationWidget.vala:270
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1145
+#: ../src/client/conversation-viewer/ConversationWidget.vala:272
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1155
 msgid "Mark as Unread"
 msgstr "읽지 않음으로 표시"
 
@@ -2809,18 +2858,22 @@ msgstr "읽지 않음으로 표시"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1138
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1143
+#: ../src/client/conversation-viewer/ConversationWidget.vala:274
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1153
 msgid "Mark as Read"
 msgstr "읽음으로 표시"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:252
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:275
+#: ../src/client/conversation-viewer/ConversationWidget.vala:277
 msgid "Print…"
 msgstr "인쇄..."
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
 #: ../src/client/conversation-viewer/ConversationWidget.vala:276
+#: ../src/client/conversation-viewer/ConversationWidget.vala:278
 msgid "View Source"
 msgstr "소스 보기"
 
@@ -2832,6 +2885,8 @@ msgstr "소스 보기"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:630
 #: ../src/client/conversation-viewer/ConversationWidget.vala:343
 #: ../src/client/conversation-viewer/ConversationWidget.vala:635
+#: ../src/client/conversation-viewer/ConversationWidget.vala:345
+#: ../src/client/conversation-viewer/ConversationWidget.vala:638
 msgid "View message"
 msgstr "편지 보기"
 
@@ -2839,6 +2894,7 @@ msgstr "편지 보기"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:406
 #: ../src/client/conversation-viewer/ConversationWidget.vala:409
 #: ../src/client/conversation-viewer/ConversationWidget.vala:412
+#: ../src/client/conversation-viewer/ConversationWidget.vala:414
 msgid "This message contains one or more attachments"
 msgstr "이 편지에는 첨부파일이 포함되어 있습니다"
 
@@ -2846,6 +2902,7 @@ msgstr "이 편지에는 첨부파일이 포함되어 있습니다"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:449
 #: ../src/client/conversation-viewer/ConversationWidget.vala:452
 #: ../src/client/conversation-viewer/ConversationWidget.vala:455
+#: ../src/client/conversation-viewer/ConversationWidget.vala:458
 msgid "Always Show from Sender"
 msgstr "보낸 사람 항상 표시"
 
@@ -2853,6 +2910,7 @@ msgstr "보낸 사람 항상 표시"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:577
 #: ../src/client/conversation-viewer/ConversationWidget.vala:581
 #: ../src/client/conversation-viewer/ConversationWidget.vala:584
+#: ../src/client/conversation-viewer/ConversationWidget.vala:587
 msgid "Compose New Message"
 msgstr "새 편지 쓰기"
 
@@ -2860,6 +2918,7 @@ msgstr "새 편지 쓰기"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:578
 #: ../src/client/conversation-viewer/ConversationWidget.vala:582
 #: ../src/client/conversation-viewer/ConversationWidget.vala:585
+#: ../src/client/conversation-viewer/ConversationWidget.vala:588
 msgid "Copy Email Address"
 msgstr "이메일 주소 복사"
 
@@ -2867,6 +2926,7 @@ msgstr "이메일 주소 복사"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:639
 #: ../src/client/conversation-viewer/ConversationWidget.vala:643
 #: ../src/client/conversation-viewer/ConversationWidget.vala:648
+#: ../src/client/conversation-viewer/ConversationWidget.vala:651
 msgid "Hide message"
 msgstr "편지 숨김"
 
@@ -2895,18 +2955,22 @@ msgstr "답장-하지마시오;답장_하지마시오;답장하지마시오;답�
 #: ../src/client/conversation-viewer/ConversationWidget.vala:426
 #: ../src/client/conversation-viewer/ConversationWidget.vala:416
 #: ../src/client/conversation-viewer/ConversationWidget.vala:429
+#: ../src/client/conversation-viewer/ConversationWidget.vala:418
+#: ../src/client/conversation-viewer/ConversationWidget.vala:431
 msgid "Star message"
 msgstr "별표 표시"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:420
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
 #: ../src/client/conversation-viewer/ConversationWidget.vala:426
+#: ../src/client/conversation-viewer/ConversationWidget.vala:428
 msgid "Unstar message"
 msgstr "별표 취소"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:430
 #: ../src/client/conversation-viewer/ConversationWidget.vala:433
 #: ../src/client/conversation-viewer/ConversationWidget.vala:436
+#: ../src/client/conversation-viewer/ConversationWidget.vala:438
 msgid "More"
 msgstr "더 보기"
 
@@ -2987,3 +3051,7 @@ msgstr "인증"
 #: ../src/client/conversation-list/formatted-conversation-data.vala:190
 msgid ", "
 msgstr ", "
+
+#: ../src/client/application/geary-application.vala:15
+msgid "Mail"
+msgstr "메일"
