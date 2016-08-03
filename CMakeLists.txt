@@ -18,7 +18,7 @@ set(EXEC_NAME ${CMAKE_PROJECT_NAME})
 set(APP_NAME "Mail")
 set(RELEASE_NAME "Lightweight email client")
 set(DESKTOP_ICON "internet-mail")
-set(VERSION "0.10.0")
+set(VERSION "1.0.0")
 set(VERSION_INFO "Release")
 set(LANGUAGE_SUPPORT_DIRECTORY ${CMAKE_INSTALL_PREFIX}/share/locale)
 
