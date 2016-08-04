@@ -20,14 +20,14 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-08-02 20:42-0500\n"
-"PO-Revision-Date: 2016-07-31 18:17+0000\n"
-"Last-Translator: UweS <Unknown>\n"
+"PO-Revision-Date: 2016-08-03 17:18+0000\n"
+"Last-Translator: Denis Graipel <Unknown>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-08-03 06:31+0000\n"
+"X-Launchpad-Export-Date: 2016-08-04 05:50+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "Language: de\n"
 
@@ -673,8 +673,8 @@ msgid ""
 "Geary encountered an error sending an email.  If the problem persists, "
 "please manually delete the email from your Outbox folder."
 msgstr ""
-"Beim Senden einer E-Mail trat ein Fehler auf. Wenn dieses Problem auch "
-"weiterhin besteht, löschen Sie bitte die E-Mail aus dem Postausgang."
+"Beim Senden einer E-Mail ist ein Fehler aufgetreten. Wenn dieses Problem "
+"auch weiterhin besteht, löschen Sie bitte die E-Mail aus »Postausgang«."
 
 #: ../src/client/application/geary-controller.vala:1068
 #: ../src/client/components/status-bar.vala:33
@@ -693,8 +693,9 @@ msgid ""
 "Geary encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
-"Beim Speichern einer gesendeten E-Mail trat ein Fehler auf. Die Nachricht "
-"bleibt im Postausgang bis Sie sie löschen."
+"Beim Speichern einer gesendeten Nachricht im Ordner »Gesendete E-Mails« ist "
+"ein Fehler aufgetreten. Die Nachricht verbleibt in  »Postausgang«, bis Sie "
+"diese löschen."
 
 #: ../src/client/application/geary-controller.vala:1138
 #: ../src/client/application/geary-controller.vala:1132
@@ -885,6 +886,7 @@ msgstr ""
 "  Alex Luxat https://launchpad.net/~m-alex-n\n"
 "  Artem Anufrij https://launchpad.net/~artem-anufrij\n"
 "  BlueNine https://launchpad.net/~ubunt6one\n"
+"  Denis Graipel https://launchpad.net/~denis98\n"
 "  Domar https://launchpad.net/~domar\n"
 "  JayNutZ https://launchpad.net/~thejaynutz\n"
 "  Leo https://launchpad.net/~leonard-freyberg\n"
@@ -2783,8 +2785,8 @@ msgid ""
 "will stay in your Outbox folder until you delete it."
 msgstr ""
 "Beim Speichern einer gesendeten Nachricht im Ordner »Gesendete E-Mails« ist "
-"ein Fehler aufgetreten. Die Nachricht verbleibt in Ihrem Ausgangsordner, bis "
-"Sie diese löschen."
+"ein Fehler aufgetreten. Die Nachricht verbleibt in  »Postausgang«, bis Sie "
+"diese löschen."
 
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
@@ -2950,7 +2952,7 @@ msgstr "Antworten"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:242
 #: ../src/client/conversation-viewer/ConversationWidget.vala:244
 msgid "Reply to All"
-msgstr "An Alle antworten"
+msgstr "Allen antworten"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:231
 #: ../src/client/conversation-viewer/ConversationWidget.vala:240
@@ -3180,4 +3182,4 @@ msgstr ", "
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
-msgstr ""
+msgstr "Mail"
