@@ -20,14 +20,14 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-08-02 20:42-0500\n"
-"PO-Revision-Date: 2016-08-03 17:18+0000\n"
-"Last-Translator: Denis Graipel <Unknown>\n"
+"PO-Revision-Date: 2016-08-04 22:33+0000\n"
+"Last-Translator: UweS <Unknown>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-08-04 05:50+0000\n"
+"X-Launchpad-Export-Date: 2016-08-05 05:49+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "Language: de\n"
 
@@ -2268,7 +2268,7 @@ msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
 msgstr ""
-"Alle E-Mails dieses Kontos werden von Ihrem Computer gelöscht. Dies betrifft "
+"Alle E-Mails dieses Kontos werden von Ihrem Rechner gelöscht. Dies betrifft "
 "nicht die E-Mails auf dem Server."
 
 #: ../data/ui/remove_confirm.ui:80
@@ -2306,7 +2306,7 @@ msgstr "Aktualisierung von Geary läuft..."
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
-msgstr "E-Mail Adresse entfernen"
+msgstr "E-Mail-Adresse entfernen"
 
 #: ../data/ui/edit_alternate_emails.ui:136
 msgid ""
@@ -2699,7 +2699,7 @@ msgstr "Speicher"
 
 #: ../data/ui/login.ui:804
 msgid "_Download mail"
-msgstr "E-Mail herunterla_den"
+msgstr "E-Mails herunterla_den"
 
 #: ../data/ui/login.ui:867
 msgid "Save dra_fts on server"
@@ -2858,8 +2858,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2395
 #: ../src/client/application/geary-controller.vala:2390
 msgid "This removes the email from Mail and your email server."
-msgstr ""
-"Dies löscht ihre E-Mail aus dieser Anwendung und von ihrem E-Mail-Server."
+msgstr "Dies löscht die E-Mail aus dieser Anwendung und vom E-Mail-Server."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
@@ -2898,7 +2897,7 @@ msgstr ""
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Mail will exit if you have no other open email accounts."
 msgstr ""
-"Mail wird beendet wenn Sie keine weiteren E-Mailkonten geöffnet haben."
+"Mail wird beendet wenn Sie keine weiteren E-Mail-Konten geöffnet haben."
 
 #: ../data/ui/account_spinner.ui:41
 #: ../src/client/accounts/account-spinner-page.vala:22
