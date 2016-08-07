@@ -11,15 +11,15 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2016-08-02 20:42-0500\n"
-"PO-Revision-Date: 2016-08-03 21:42+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
+"PO-Revision-Date: 2016-08-06 07:15+0000\n"
+"Last-Translator: Ryo Nakano <Unknown>\n"
 "Language-Team: Japanese (Japan) "
 "(http://www.transifex.com/projects/p/geary/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-08-04 05:50+0000\n"
+"X-Launchpad-Export-Date: 2016-08-07 05:50+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "Language: ja_JP\n"
 
@@ -157,7 +157,7 @@ msgstr "cc"
 #: ../src/engine/imap-db/imap-db-account.vala:726
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "from"
-msgstr ""
+msgstr "送信者"
 
 #. / Can be typed in the search box like subject:word to find the word
 #. / only if it occurs in the subject of a message.  The translated
@@ -256,15 +256,15 @@ msgstr "Yorba の Web サイトを参照"
 
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete conversation"
-msgstr ""
+msgstr "メッセージを削除"
 
 #: ../src/client/application/geary-controller.vala:62
 msgid "Delete conversation (Shift+Delete)"
-msgstr ""
+msgstr "メッセージを削除 (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
 msgid "Delete conversations (Shift+Delete)"
-msgstr ""
+msgstr "メッセージを削除 (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
@@ -273,14 +273,13 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2723
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "メッセージをゴミ箱に移動する (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 msgid "Move conversations to Trash (Delete, Backspace)"
-msgstr ""
+msgstr "メッセージをゴミ箱に移動 (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
@@ -294,15 +293,14 @@ msgstr "アーカイブ(_A)"
 #: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "メッセージをアーカイブする (A)"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
 #: ../src/client/application/geary-controller.vala:72
 #: ../src/client/application/geary-controller.vala:71
 msgid "Archive conversations (A)"
-msgstr ""
+msgstr "メッセージをアーカイブ (_A)"
 
 #: ../src/client/application/geary-controller.vala:77
 #: ../src/client/application/geary-controller.vala:76
@@ -337,8 +335,7 @@ msgstr "迷惑マークをはずす (_P)"
 #: ../src/client/application/geary-controller.vala:2714
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "メッセージをマークする"
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
@@ -361,15 +358,14 @@ msgstr "スレッドをマーク"
 #: ../src/client/application/geary-controller.vala:2716
 msgid "Add label to conversation"
 msgid_plural "Add label to conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "メッセージにラベルを付ける"
 
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
 msgid "Add label to conversations"
-msgstr "スレッドにラベルを付ける"
+msgstr "メッセージにラベルを付ける"
 
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:431
@@ -389,15 +385,14 @@ msgstr "スレッドにラベルを付ける"
 #: ../src/client/application/geary-controller.vala:2718
 msgid "Move conversation"
 msgid_plural "Move conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "メッセージを移動"
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
 msgid "Move conversations"
-msgstr "スレッドを移動"
+msgstr "メッセージを移動"
 
 #: ../src/client/application/geary-controller.vala:372
 #: ../src/client/application/geary-controller.vala:371
@@ -561,7 +556,7 @@ msgstr "転送 (Ctrl+L, F)"
 #: ../src/client/application/geary-controller.vala:485
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty"
-msgstr ""
+msgstr "空"
 
 #: ../src/client/application/geary-controller.vala:492
 #: ../src/client/application/geary-controller.vala:491
@@ -570,7 +565,7 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:71
 #: ../src/client/application/geary-controller.vala:481
 msgid "Empty Spam or Trash folders"
-msgstr ""
+msgstr "迷惑メールフォルダーとゴミ箱を空にする"
 
 #: ../src/client/application/geary-controller.vala:496
 #: ../src/client/application/geary-controller.vala:495
@@ -580,7 +575,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr ""
+msgstr "迷惑メールフォルダーを空にする (_S)"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -590,7 +585,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr ""
+msgstr "ゴミ箱を空にする (_T)"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -604,7 +599,7 @@ msgstr "検索バーの表示・非表示"
 #: ../src/client/application/geary-controller.vala:717
 #: ../src/client/application/geary-controller.vala:711
 msgid "Unable to store server trust exception"
-msgstr ""
+msgstr "サーバーの信頼の例外を保存することができません。"
 
 #: ../src/client/application/geary-controller.vala:983
 #: ../src/client/application/geary-controller.vala:977
@@ -740,7 +735,7 @@ msgstr "終了 (_X)"
 #: ../src/client/application/geary-controller.vala:1133
 #: ../src/client/application/geary-controller.vala:1127
 msgid "Unable to rebuild database for \"%s\""
-msgstr ""
+msgstr "%s のデーターベースの再読み込みができませんでした。"
 
 #: ../src/client/application/geary-controller.vala:1163
 #: ../src/client/application/geary-controller.vala:1157
@@ -754,6 +749,9 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
+"再読み込みの途中でエラーが発生しました。\n"
+"\n"
+"%s"
 
 #: ../src/client/application/geary-controller.vala:1185
 #: ../src/client/application/geary-controller.vala:1195
@@ -793,6 +791,11 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
+"このアカウントのローカル メール データーベースを開く途中でエラーが発生しました。これは、ファイルのアクセス権の問題に起因している可能性があります。\n"
+"\n"
+"このディレクトリにおいてファイルのアクセス権があるか確認してください。\n"
+"\n"
+"%s"
 
 #: ../src/client/application/geary-controller.vala:1196
 #: ../src/client/application/geary-controller.vala:1190
@@ -803,6 +806,9 @@ msgid ""
 "\n"
 "Please install the latest version of Geary and try again."
 msgstr ""
+"ローカル  データーベースのバージョン番号は新しいバージョンの Geary のものです。残念ですが、データーベースはこのバージョンの Geary "
+"で動作するようにロールバックできません。\n"
+"最新のバージョンの Geary をインストールしてもう一度試してください。"
 
 #: ../src/client/application/geary-controller.vala:1207
 #: ../src/client/application/geary-controller.vala:1201
@@ -1018,7 +1024,7 @@ msgstr "元に戻す(Ctrl+Z)"
 #: ../src/client/application/geary-args.vala:10
 #: ../src/client/application/geary-args.vala:11
 msgid "Start Geary with hidden main window"
-msgstr ""
+msgstr "メインウィンドウを隠してGearyを起動する"
 
 #: ../src/client/application/geary-args.vala:11
 #: ../src/client/application/geary-args.vala:12
@@ -1033,7 +1039,7 @@ msgstr "会話の監視を記録"
 #: ../src/client/application/geary-args.vala:13
 #: ../src/client/application/geary-args.vala:14
 msgid "Log network deserialization"
-msgstr ""
+msgstr "ネットワークのデシリアライゼーションを記録する"
 
 #: ../src/client/application/geary-args.vala:14
 #: ../src/client/application/geary-args.vala:15
@@ -1148,7 +1154,7 @@ msgstr "自分"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:33
 msgid "Untrusted Connection: %s"
-msgstr ""
+msgstr "%s は信頼できない接続です。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:36
 msgid "The identity of the %s mail server at %s:%u could not be verified."
@@ -1513,8 +1519,7 @@ msgstr "メッセージが選択されていません。"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:313
 msgid "%u conversation selected."
 msgid_plural "%u conversations selected."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u つのメッセージが選択されています。"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:444
 #: ../src/client/conversation-viewer/conversation-viewer.vala:446
@@ -1532,7 +1537,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/conversation-viewer.vala:343
 #: ../src/client/conversation-viewer/conversation-viewer.vala:344
 msgid "No conversations in folder."
-msgstr ""
+msgstr "フォルダーにメッセージがありません。"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:708
 #: ../src/client/conversation-viewer/conversation-viewer.vala:713
@@ -2097,17 +2102,17 @@ msgstr "%s を検索"
 #: ../src/client/dialogs/preferences-dialog.vala:23
 #: ../src/client/dialogs/preferences-dialog.vala:24
 msgid "Reading"
-msgstr ""
+msgstr "メールの読み込み"
 
 #: ../src/client/dialogs/preferences-dialog.vala:28
 #: ../src/client/dialogs/preferences-dialog.vala:29
 msgid "Automatically select next message:"
-msgstr ""
+msgstr "新しいメッセージを自動的に選択する"
 
 #: ../src/client/dialogs/preferences-dialog.vala:33
 #: ../src/client/dialogs/preferences-dialog.vala:34
 msgid "Conversation previews:"
-msgstr ""
+msgstr "メッセージのプレビューを表示する"
 
 #: ../src/client/dialogs/preferences-dialog.vala:38
 #: ../src/client/dialogs/preferences-dialog.vala:39
@@ -2134,13 +2139,13 @@ msgstr "通知"
 #: ../src/client/dialogs/preferences-dialog.vala:62
 #: ../src/client/dialogs/preferences-dialog.vala:52
 msgid "Always watch for new mail:"
-msgstr ""
+msgstr "常に新しいメールを確認する"
 
 #: ../src/client/application/geary-controller.vala:61
 #: ../src/client/application/geary-controller.vala:60
 #: ../src/client/application/geary-controller.vala:59
 msgid "Delete Conversation"
-msgstr ""
+msgstr "メッセージを削除する"
 
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
@@ -2149,14 +2154,13 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2725
 msgid "Delete Conversation (Shift+Delete)"
 msgid_plural "Delete Conversations (Shift+Delete)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "メッセージを削除する (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete Conversations (Shift+Delete)"
-msgstr ""
+msgstr "メッセージを削除する (Shift+Delete)"
 
 #: ../data/ui/remove_confirm.ui:43
 msgid ""
@@ -2301,7 +2305,7 @@ msgstr "リッチテキスト (_R)"
 
 #: ../data/ui/composer.ui:145 ../data/ui/composer.ui:138
 msgid "Show Extended Fields"
-msgstr ""
+msgstr "拡張画面を表示する"
 
 #: ../data/ui/composer.ui:157
 msgctxt "Label"
@@ -2480,7 +2484,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
-msgstr ""
+msgstr "送信したメールを保存する (_S)"
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
@@ -2496,7 +2500,7 @@ msgstr "メールアドレス (_M):"
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
-msgstr ""
+msgstr "仕事用、自宅用など"
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
@@ -2580,11 +2584,11 @@ msgstr "STARTTLS"
 
 #: ../data/ui/login.ui:663
 msgid "No authentication re_quired"
-msgstr ""
+msgstr "認証は不要 (_Q)"
 
 #: ../data/ui/login.ui:679
 msgid "Use IMAP cre_dentials"
-msgstr ""
+msgstr "IMAPの資格情報を使用する (_D)"
 
 #: ../data/ui/login.ui:783
 msgid "Storage"
@@ -2592,15 +2596,15 @@ msgstr "ストレージ"
 
 #: ../data/ui/login.ui:804
 msgid "_Download mail"
-msgstr "メールをダウンロード (_D)"
+msgstr "次の日時より後のメールをダウンロード (_D)"
 
 #: ../data/ui/login.ui:867
 msgid "Save dra_fts on server"
-msgstr ""
+msgstr "サーバーに下書きを保存する (_F)"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr ""
+msgstr "メールに署名する (HTMLも可) (_G)"
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
@@ -2620,7 +2624,7 @@ msgstr ""
 
 #: ../data/ui/certificate_warning_dialog.ui:29
 msgid "_Always Trust This Server"
-msgstr ""
+msgstr "_常にこのサーバーを信用する"
 
 #: ../data/ui/certificate_warning_dialog.ui:43
 msgid "_Trust This Server"
@@ -2704,6 +2708,9 @@ msgid ""
 "\n"
 "Please install the latest version of Mail and try again."
 msgstr ""
+"ローカル  データーベースのバージョン番号は新しいバージョンの Mail のものです。残念ですが、データーベースはこのバージョンの Mail "
+"で動作するようにロールバックできません。\n"
+"最新のバージョンの Mail をインストールしてもう一度試してください。"
 
 #: ../src/client/application/geary-controller.vala:1195
 #: ../src/client/application/geary-controller.vala:1189
@@ -2716,6 +2723,9 @@ msgid ""
 "\n"
 "Please check your network connection and restart Mail."
 msgstr ""
+"ローカルアカウントを開く時にエラーが発生しました。これは接続の問題によるものと予測されます。\n"
+"\n"
+"ネットワーク接続を確認し Mail を再起動してください。"
 
 #: ../src/client/application/geary-controller.vala:2402
 #: ../src/client/application/geary-controller.vala:2404
@@ -2954,11 +2964,11 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:436
 #: ../src/client/conversation-viewer/ConversationWidget.vala:438
 msgid "More"
-msgstr ""
+msgstr "詳細"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
 msgid "Delete draft"
-msgstr ""
+msgstr "下書きを削除"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:51
 msgid "Attach file"
@@ -2970,7 +2980,7 @@ msgstr ""
 
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
-msgstr ""
+msgstr "引用テキスト  (Ctrl+])"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:34
 msgid "Are you sure you want to open %s?"
