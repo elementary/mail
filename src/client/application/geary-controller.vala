@@ -374,15 +374,18 @@ public class GearyController : Geary.BaseObject {
             null, on_accounts };
         accounts.label = _("A_ccounts");
         entries += accounts;
+        add_accelerator("<Ctrl>M", ACTION_ACCOUNTS);
 
         Gtk.ActionEntry prefs = { ACTION_PREFERENCES, Stock._PREFERENCES, TRANSLATABLE, "<Ctrl>E",
             null, on_preferences };
         prefs.label = _("_Preferences");
         entries += prefs;
+        add_accelerator("<Ctrl>E", ACTION_PREFERENCES);
 
         Gtk.ActionEntry quit = { ACTION_QUIT, Stock._QUIT, TRANSLATABLE, "<Ctrl>Q", null, on_quit };
         quit.label = _("_Quit");
         entries += quit;
+        add_accelerator("<Ctrl>Q", ACTION_QUIT);
 
         Gtk.ActionEntry mark_menu = { ACTION_MARK_AS_MENU, null, TRANSLATABLE, null, _("Mark conversation"),
             on_show_mark_menu };
