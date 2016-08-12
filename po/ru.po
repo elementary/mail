@@ -18,7 +18,7 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-08-02 20:42-0500\n"
-"PO-Revision-Date: 2016-08-03 09:28+0000\n"
+"PO-Revision-Date: 2016-08-11 16:46+0000\n"
 "Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-08-04 05:51+0000\n"
+"X-Launchpad-Export-Date: 2016-08-12 06:23+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "Language: ru\n"
 
@@ -198,7 +198,7 @@ msgstr "(без темы)"
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/engine/rfc822/rfc822-utils.vala:215
 msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%A, %-e %b. %Y в %-l:%M %p"
+msgstr "%A, %-e %b. %Y в %-k:%M"
 
 #. / The quoted header for a message being replied to.
 #. / %1$s will be substituted for the date, and %2$s will be substituted for
@@ -674,7 +674,7 @@ msgid ""
 "Geary encountered an error sending an email.  If the problem persists, "
 "please manually delete the email from your Outbox folder."
 msgstr ""
-"В Mail произошла ошибка при отправке электронной почты. Если проблема не "
+"В Geary произошла ошибка при отправке электронной почты. Если проблема не "
 "устраняется, вручную удалите почту из папки «Исходящие»."
 
 #: ../src/client/application/geary-controller.vala:1068
@@ -694,7 +694,7 @@ msgid ""
 "Geary encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
-"В Mail произошла ошибка при сохранении отправленного сообщения в папку "
+"В Geary произошла ошибка при сохранении отправленного сообщения в папку "
 "«Отправленные». Сообщение будет в папке «Исходящие» пока вы не удалите его."
 
 #: ../src/client/application/geary-controller.vala:1138
@@ -736,7 +736,7 @@ msgstr ""
 "\n"
 "%s\n"
 "\n"
-"Mail может пересоздать базу данных и выполнить повторную синхронизацию с "
+"Geary может пересоздать базу данных и выполнить повторную синхронизацию с "
 "сервером или завершить работу.\n"
 "\n"
 "Пересоздание базы данных уничтожит все локальные письма и их вложения. "
@@ -842,11 +842,11 @@ msgid ""
 "\n"
 "Please install the latest version of Geary and try again."
 msgstr ""
-"Версия локальной базы данных почты имеет формат более новой версии Mail. К "
+"Версия локальной базы данных почты имеет формат более новой версии Geary. К "
 "сожалению, невозможно произвести изменение базы данных для работы с этой "
-"версией Mail.\n"
+"версией.\n"
 "\n"
-"Установите последнюю версию Mail и попробуйте снова."
+"Установите последнюю версию Geary и попробуйте снова."
 
 #: ../src/client/application/geary-controller.vala:1207
 #: ../src/client/application/geary-controller.vala:1201
@@ -859,7 +859,7 @@ msgstr ""
 "Произошла ошибка при открытии локальной учётной записи. Возможно, это "
 "произошло из-за проблем с подключением.\n"
 "\n"
-"Проверьте подключение к сети и перезапустите Mail."
+"Проверьте подключение к сети и перезапустите Geary."
 
 #: ../src/client/application/geary-controller.vala:1715
 #: ../src/client/application/geary-controller.vala:1709
@@ -980,7 +980,7 @@ msgstr "Очистить все письма папки %s?"
 #: ../src/client/application/geary-controller.vala:2440
 #: ../src/client/application/geary-controller.vala:2434
 msgid "This removes the email from Geary and your email server."
-msgstr "Удаляет все письма из Mail и почтового сервера."
+msgstr "Удаляет все письма из Geary и почтового сервера."
 
 #: ../src/client/application/geary-controller.vala:2441
 #: ../src/client/application/geary-controller.vala:2435
@@ -1068,7 +1068,7 @@ msgstr "Отменить (Ctrl+Z)"
 #: ../src/client/application/geary-args.vala:10
 #: ../src/client/application/geary-args.vala:11
 msgid "Start Geary with hidden main window"
-msgstr "Запускать Mail свёрнутым"
+msgstr "Запускать Geary свёрнутым"
 
 #: ../src/client/application/geary-args.vala:11
 #: ../src/client/application/geary-args.vala:12
@@ -1232,7 +1232,7 @@ msgstr ""
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Geary will not add or update this email account."
-msgstr "Mail не добавит и не изменит эту учётную запись."
+msgstr "Geary не добавит и не изменит эту учётную запись."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
@@ -1244,7 +1244,7 @@ msgstr ""
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Geary will exit if you have no other open email accounts."
-msgstr "Mail завершит работу если нет других открытых учётных записей."
+msgstr "Geary завершит работу если нет других открытых учётных записей."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:66
 msgid ""
@@ -1284,7 +1284,7 @@ msgstr "Произошла ошибка обработки сертификат�
 
 #: ../src/client/dialogs/password-dialog.vala:16
 msgid "Geary requires your email password to continue"
-msgstr "Mail требуется пароль эл. почты чтобы продолжить"
+msgstr "Geary требуется пароль эл. почты чтобы продолжить"
 
 #: ../src/client/dialogs/attachment-dialog.vala:18
 msgid "Choose a file"
@@ -1310,7 +1310,7 @@ msgstr "Имя Фамилия"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 msgid "Welcome to Geary."
-msgstr "Добро пожаловать в Mail."
+msgstr "Добро пожаловать в Geary."
 
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
@@ -1390,7 +1390,7 @@ msgstr "        &#8226; Неверный псевдоним учётной за�
 #: ../src/client/accounts/add-edit-page.vala:769
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Geary.\n"
-msgstr "        &#8226; Адрес электронной почты уже добавлен в Mail.\n"
+msgstr "        &#8226; Адрес электронной почты уже добавлен в Geary.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:773
 #: ../src/client/accounts/add-edit-page.vala:775
@@ -2294,7 +2294,7 @@ msgstr "метка"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr "Mail обновляется..."
+msgstr "Geary обновляется..."
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
@@ -2315,7 +2315,7 @@ msgstr "_Обновить"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
-msgstr "Подождите, пока Mail проверит вашу учётную запись."
+msgstr "Подождите, пока Geary проверит вашу учётную запись."
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
@@ -2662,11 +2662,11 @@ msgstr "Пароль IMAP"
 
 #: ../data/ui/login.ui:593
 msgid "Encr_yption:"
-msgstr "Шифр_ование"
+msgstr "Шифр_ование:"
 
 #: ../data/ui/login.ui:613
 msgid "Encrypt_ion:"
-msgstr "Шифрова_ние"
+msgstr "Шифрова_ние:"
 
 #: ../data/ui/login.ui:634 ../data/ui/login.ui:651
 msgid "SSL/TLS"
@@ -3146,7 +3146,7 @@ msgstr "Пароль:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:55
 msgid "SMTP Credentials:"
-msgstr "Учетные данные SMTP:"
+msgstr "Учётные данные SMTP:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:62
 msgid "Remember password"
