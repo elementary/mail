@@ -11,15 +11,15 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2016-08-02 20:42-0500\n"
-"PO-Revision-Date: 2016-08-08 19:27+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
+"PO-Revision-Date: 2016-08-12 10:28+0000\n"
+"Last-Translator: Ryo Nakano <Unknown>\n"
 "Language-Team: Japanese (Japan) "
 "(http://www.transifex.com/projects/p/geary/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-08-09 05:54+0000\n"
+"X-Launchpad-Export-Date: 2016-08-13 06:16+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "Language: ja_JP\n"
 
@@ -715,7 +715,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1124
 #: ../src/client/application/geary-controller.vala:1118
 msgid "_Rebuild"
-msgstr ""
+msgstr "並べ替え"
 
 #: ../src/client/application/geary-controller.vala:1153
 #: ../src/client/application/geary-controller.vala:1147
@@ -1085,7 +1085,7 @@ msgstr "WebView での検証を有効にする"
 #: ../src/client/application/geary-args.vala:26
 #: ../src/client/application/geary-args.vala:27
 msgid "Revoke all server certificates with TLS warnings"
-msgstr ""
+msgstr "すべてのサーバー証明書の TLS 警告を取り消す"
 
 #: ../src/client/application/geary-args.vala:27
 #: ../src/client/application/geary-args.vala:28
@@ -1171,59 +1171,59 @@ msgstr ""
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary not to access this "
 "server."
-msgstr ""
+msgstr "\"このサーバーを信頼しない\" を選択することにより、 Geary はこのアカウントへのアクセスを停止します。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Geary will not add or update this email account."
-msgstr ""
+msgstr "Geary はこのメールアカウントを追加または更新できません。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary to stop accessing "
 "this account."
-msgstr ""
+msgstr "\"このサーバーを信頼しない\" を選択することにより、 Geary はこのアカウントへのアクセスを停止します。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Geary will exit if you have no other open email accounts."
-msgstr ""
+msgstr "ほかに開くメールアカウントがなければ、 Geary は終了します。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:66
 msgid ""
 "Contact your system administrator or email service provider if you have any "
 "question about these issues."
-msgstr ""
+msgstr "これらの問題について疑問があればシステムの管理者かメールサービスのプロバイダーに連絡してください。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:73
 msgid "The server's certificate is not signed by a known authority"
-msgstr ""
+msgstr "サーバ証明書は既知の認証局によって署名されていません"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:76
 msgid "The server's identity does not match the identity in the certificate"
-msgstr ""
+msgstr "サーバーの身元が証明書内の身元と一致しません"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:79
 msgid "The server's certificate has expired"
-msgstr ""
+msgstr "サーバーの証明書が期限切れです"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:82
 msgid "The server's certificate has not been activated"
-msgstr ""
+msgstr "サーバーの証明書は認証されていません"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:85
 msgid "The server's certificate has been revoked and is now invalid"
-msgstr ""
+msgstr "サーバーの証明書は取り消され、現在無効です"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:88
 msgid "The server's certificate is considered insecure"
-msgstr ""
+msgstr "サーバーの証明書は安全でないと考えられます"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:91
 msgid "An error has occurred processing the server's certificate"
-msgstr ""
+msgstr "サーバー証明書を読み込み中にエラーが発生しました"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 msgid "Geary requires your email password to continue"
-msgstr ""
+msgstr "続行するには、メールのパスワードが必要です"
 
 #: ../src/client/dialogs/attachment-dialog.vala:18
 msgid "Choose a file"
@@ -1309,12 +1309,12 @@ msgstr "プレビュー"
 #: ../src/client/accounts/add-edit-page.vala:723
 #: ../src/client/accounts/add-edit-page.vala:725
 msgid "Remem_ber passwords"
-msgstr ""
+msgstr "パスワードを記憶する (_B)"
 
 #: ../src/client/accounts/add-edit-page.vala:730
 #: ../src/client/accounts/add-edit-page.vala:732 ../data/ui/login.ui:62
 msgid "Remem_ber password"
-msgstr ""
+msgstr "パスワードを記憶する (_B)"
 
 #: ../src/client/accounts/add-edit-page.vala:764
 #: ../src/client/accounts/add-edit-page.vala:766
@@ -1520,7 +1520,7 @@ msgstr "メッセージが選択されていません。"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:313
 msgid "%u conversation selected."
 msgid_plural "%u conversations selected."
-msgstr[0] "%u つのメッセージが選択されています。"
+msgstr[0] "%u 件のメッセージが選択されています。"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:444
 #: ../src/client/conversation-viewer/conversation-viewer.vala:446
@@ -1529,7 +1529,7 @@ msgstr[0] "%u つのメッセージが選択されています。"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:341
 #: ../src/client/conversation-viewer/conversation-viewer.vala:342
 msgid "No search results found."
-msgstr ""
+msgstr "検索の結果、お探しのものは見つかりませんでした。"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:446
 #: ../src/client/conversation-viewer/conversation-viewer.vala:448
@@ -1548,7 +1548,7 @@ msgstr "フォルダーにメッセージがありません。"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:456
 #: ../src/client/conversation-viewer/ConversationWidget.vala:459
 msgid "This message contains remote images."
-msgstr ""
+msgstr "このメッセージはリモートイメージを含んでいます。"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:708
 #: ../src/client/conversation-viewer/conversation-viewer.vala:713
@@ -1563,7 +1563,7 @@ msgstr "画像を表示"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:709
 #: ../src/client/conversation-viewer/conversation-viewer.vala:714
 msgid "Always Show From Sender"
-msgstr ""
+msgstr "常に送信者から表示する"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:733
 #: ../src/client/conversation-viewer/conversation-viewer.vala:738
@@ -1628,13 +1628,12 @@ msgstr "日時:"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1144
 msgid "%u read message"
 msgid_plural "%u read messages"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u 件の既読メッセージ"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1271
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1276
 msgid "This message was sent successfully, but could not be saved to %s."
-msgstr ""
+msgstr "このメッセージは正しく送信されましたが、%sに保存することができませんでした。"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1297
 #: ../data/ui/composer.ui:29
@@ -1774,7 +1773,7 @@ msgstr "%s - スレッド検証"
 #: ../src/client/composer/composer-widget.vala:73
 #: ../src/client/composer/composer-widget.vala:71
 msgid "Saved"
-msgstr ""
+msgstr "保存済"
 
 #: ../src/client/composer/composer-widget.vala:74
 #: ../src/client/composer/composer-widget.vala:72
@@ -1789,7 +1788,7 @@ msgstr "保存エラー"
 #: ../src/client/composer/composer-widget.vala:76
 #: ../src/client/composer/composer-widget.vala:74
 msgid "Press Backspace to delete quote"
-msgstr ""
+msgstr "引用文を削除するには Backspace キーを押してください"
 
 #: ../src/client/composer/composer-widget.vala:77
 #: ../src/client/composer/composer-widget.vala:75
@@ -1810,7 +1809,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1094
 #: ../src/client/composer/composer-widget.vala:1098
 msgid "Do you want to discard this message?"
-msgstr ""
+msgstr "このメッセージを破棄しますか？"
 
 #: ../src/client/composer/composer-widget.vala:1262
 #: ../src/client/composer/composer-widget.vala:1257
@@ -1818,7 +1817,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1223
 #: ../src/client/composer/composer-widget.vala:1220
 msgid "Send message with an empty subject and body?"
-msgstr ""
+msgstr "空の件名および本文のままメッセージを送信しますか？"
 
 #: ../src/client/composer/composer-widget.vala:1264
 #: ../src/client/composer/composer-widget.vala:1259
@@ -1826,7 +1825,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1225
 #: ../src/client/composer/composer-widget.vala:1222
 msgid "Send message with an empty subject?"
-msgstr ""
+msgstr "空の件名のままメッセージを送信しますか？"
 
 #: ../src/client/composer/composer-widget.vala:1266
 #: ../src/client/composer/composer-widget.vala:1261
@@ -1834,7 +1833,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1227
 #: ../src/client/composer/composer-widget.vala:1224
 msgid "Send message with an empty body?"
-msgstr ""
+msgstr "空の本文のままメッセージを送信しますか？"
 
 #: ../src/client/composer/composer-widget.vala:1268
 #: ../src/client/composer/composer-widget.vala:1263
@@ -1842,7 +1841,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1229
 #: ../src/client/composer/composer-widget.vala:1226
 msgid "Send message without an attachment?"
-msgstr ""
+msgstr "添付ファイルなしにメッセージを送信しますか？"
 
 #: ../src/client/composer/composer-widget.vala:1530
 #: ../src/client/composer/composer-widget.vala:1525
@@ -2055,7 +2054,7 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:259
 #: ../src/client/components/main-toolbar.vala:277
 msgid "Indexing %s account"
-msgstr ""
+msgstr "%s のアカウントをインデックスしています。"
 
 #: ../src/client/components/main-toolbar.vala:144
 #: ../src/client/composer/composer-headerbar.vala:90
@@ -2079,12 +2078,12 @@ msgstr "E メールで送信"
 #: ../src/client/application/geary-application.vala:25
 #: ../src/Translations.vala:2
 msgid "Send files using Mail"
-msgstr ""
+msgstr "Mail を使ってファイルを送信する"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
 msgid "Welcome to Mail"
-msgstr ""
+msgstr "Mail へようこそ"
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
 #: ../src/client/composer/composer-toolbar.vala:77
@@ -2167,7 +2166,7 @@ msgstr "メッセージを削除する (Shift+Delete)"
 msgid ""
 "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
 "account?</span> "
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"larger\">本当にこのアカウントを削除しますか？</span> "
 
 #: ../data/ui/remove_confirm.ui:58
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:42
@@ -2199,7 +2198,7 @@ msgstr "次の結果"
 
 #: ../data/ui/find_bar.ui:107
 msgid "_Case sensitive"
-msgstr ""
+msgstr "大文字と小文字を区別する (_C)"
 
 #: ../data/ui/find_bar.ui:127
 msgid "label"
@@ -2207,11 +2206,11 @@ msgstr "ラベル"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr ""
+msgstr "Geary のアップデートが進行しています..."
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
-msgstr ""
+msgstr "メールアドレスを削除する"
 
 #: ../data/ui/edit_alternate_emails.ui:136
 msgid ""
@@ -2225,7 +2224,7 @@ msgstr "更新 (_U)"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
-msgstr ""
+msgstr "Geary がメールアカウントを検証する間お待ちください。"
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
@@ -2277,12 +2276,12 @@ msgstr "引用テキスト解除 (Ctrl+[)"
 
 #: ../data/ui/composer.ui:93 ../src/client/composer/ComposerToolbar.vala:82
 msgid "Remove formatting (Ctrl+Space)"
-msgstr ""
+msgstr "フォーマットを削除 (Ctrl+Space)"
 
 #: ../data/ui/composer.ui:100 ../data/ui/composer.ui:97
 msgctxt "Clipboard paste with rich text"
 msgid "Paste _With Formatting"
-msgstr ""
+msgstr "フォーマットなしで貼り付け (_W)"
 
 #: ../data/ui/composer.ui:111 ../src/client/composer/ComposerToolbar.vala:36
 msgid "Bold (Ctrl+B)"
@@ -2416,11 +2415,11 @@ msgstr "添付ファイル"
 
 #: ../data/ui/composer.ui:234
 msgid "_Include Original Attachments"
-msgstr ""
+msgstr "元の添付ファイルを含む (_I)"
 
 #: ../data/ui/composer.ui:235 ../data/ui/composer.ui:236
 msgid "Include Original Attachments"
-msgstr ""
+msgstr "元の添付ファイルを含む"
 
 #: ../data/ui/composer.ui:242 ../data/ui/composer.ui:212
 msgid "Application Menu"
@@ -2467,11 +2466,11 @@ msgstr "ここにファイルをドロップして下さい"
 #: ../data/ui/composer.ui:535 ../data/ui/composer.ui:563
 #: ../data/ui/composer.ui:533
 msgid "To add them as attachments"
-msgstr ""
+msgstr "これらを添付ファイルとして追加する"
 
 #: ../data/ui/account_cannot_remove.ui:40
 msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"larger\">アカウントを削除できません</span> "
 
 #: ../data/ui/account_cannot_remove.ui:56
 msgid ""
@@ -2481,7 +2480,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr ""
+msgstr "追加のメールアドレス (_T)"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
@@ -2569,11 +2568,11 @@ msgstr "IMAP パスワード"
 
 #: ../data/ui/login.ui:593
 msgid "Encr_yption:"
-msgstr ""
+msgstr "暗号化 (_Y):"
 
 #: ../data/ui/login.ui:613
 msgid "Encrypt_ion:"
-msgstr ""
+msgstr "暗号化 (_I):"
 
 #: ../data/ui/login.ui:634 ../data/ui/login.ui:651
 msgid "SSL/TLS"
@@ -2621,7 +2620,7 @@ msgstr "アカウントの削除"
 
 #: ../data/ui/certificate_warning_dialog.ui:7
 msgid "Untrusted Connection"
-msgstr ""
+msgstr "信頼されていない接続"
 
 #: ../data/ui/certificate_warning_dialog.ui:29
 msgid "_Always Trust This Server"
@@ -2629,15 +2628,15 @@ msgstr "_常にこのサーバーを信用する"
 
 #: ../data/ui/certificate_warning_dialog.ui:43
 msgid "_Trust This Server"
-msgstr ""
+msgstr "このサーバーを信頼する (_T)"
 
 #: ../data/ui/certificate_warning_dialog.ui:57
 msgid "_Don't Trust This Server"
-msgstr ""
+msgstr "このサーバーを信頼しない (_D)"
 
 #: ../data/ui/password-dialog.ui:74
 msgid "SMTP Credentials"
-msgstr ""
+msgstr "SMTP の資格情報"
 
 #: ../data/ui/password-dialog.ui:91
 msgid "Username"
@@ -2743,41 +2742,41 @@ msgstr ""
 #: ../src/client/dialogs/preferences-dialog.vala:44
 #: ../src/client/dialogs/preferences-dialog.vala:43
 msgid "Always show remote images:"
-msgstr ""
+msgstr "常にリモートの画像を表示:"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 #: ../src/client/dialogs/PasswordDialog.vala:39
 msgid "Mail requires your email password to continue"
-msgstr ""
+msgstr "続行するには、メールのパスワードが必要です"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail not to access this "
 "server."
-msgstr ""
+msgstr "\"このサーバーを信頼しない\" を選択することにより、 Mail はこのアカウントへのアクセスを停止します。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Mail will not add or update this email account."
-msgstr ""
+msgstr "Mail はこのメールアカウントを追加または更新できません。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail to stop accessing this "
 "account."
-msgstr ""
+msgstr "\"このサーバーを信頼しない\" を選択することにより、 Mail はこのアカウントへのアクセスを停止します。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Mail will exit if you have no other open email accounts."
-msgstr ""
+msgstr "ほかに開くメールアカウントがなければ、 Mail は終了します。"
 
 #: ../data/ui/account_spinner.ui:41
 #: ../src/client/accounts/account-spinner-page.vala:22
 msgid "Please wait while Mail validates your account."
-msgstr ""
+msgstr "Mail がメールアカウントを検証する間お待ちください。"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr ""
+msgstr "Mail のアップデートが進行しています..."
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
@@ -2794,7 +2793,7 @@ msgstr ""
 
 #: ../src/client/application/geary-args.vala:10
 msgid "Show About dialog"
-msgstr ""
+msgstr "情報ダイアログを表示する"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:218
 #: ../src/client/conversation-viewer/ConversationWidget.vala:227
@@ -2853,7 +2852,7 @@ msgstr "未読としてマーク"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:274
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1153
 msgid "Mark as Read"
-msgstr ""
+msgstr "既読としてマーク"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:252
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
@@ -2888,7 +2887,7 @@ msgstr "メッセージを表示する"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:412
 #: ../src/client/conversation-viewer/ConversationWidget.vala:414
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "このメッセージは一つかそれ以上の添付ファイルを含んでいます"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:425
 #: ../src/client/conversation-viewer/ConversationWidget.vala:449
@@ -2896,7 +2895,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:455
 #: ../src/client/conversation-viewer/ConversationWidget.vala:458
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "常に送信者から表示する"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:553
 #: ../src/client/conversation-viewer/ConversationWidget.vala:577
@@ -2920,7 +2919,7 @@ msgstr "メールアドレスをコピー"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:648
 #: ../src/client/conversation-viewer/ConversationWidget.vala:651
 msgid "Hide message"
-msgstr ""
+msgstr "メッセージを隠す"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
@@ -2928,13 +2927,12 @@ msgstr "名前を付けて保存..."
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
-msgstr ""
+msgstr "大文字と小文字を区別する"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
 msgid_plural "%u matches"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u が一致"
 
 #. / TRANSLATORS: please copy the original string and append all local parts of "no reply" email addresses
 #. / (that is the part before the '@') that exist in your language (separated with a semicolon)
@@ -2977,7 +2975,7 @@ msgstr "添付ファイル"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:55
 msgid "Include original attachments"
-msgstr ""
+msgstr "元の添付ファイルを含む"
 
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
@@ -2985,13 +2983,13 @@ msgstr "引用テキスト  (Ctrl+])"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:34
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "%s を開きますか？"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:40
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
-msgstr ""
+msgstr "添付ファイルはシステムにダメージを与える恐れがあります。信頼できる送信元からのみ開くようにして下さい。"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:45
 msgid "Don't ask me again"
@@ -2999,7 +2997,7 @@ msgstr "次回から確認しない"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:48
 msgid "Open Anyway"
-msgstr ""
+msgstr "それでも開く"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:64
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:59
@@ -3009,7 +3007,7 @@ msgstr "キャンセル"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:36
 msgid "Are you sure you want to remove this account?"
-msgstr ""
+msgstr "本当にこのアカウントを削除しますか？"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:53
 msgid "Email Address:"
