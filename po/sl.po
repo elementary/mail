@@ -12,15 +12,15 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-08-02 20:42-0500\n"
-"PO-Revision-Date: 2016-07-26 18:58+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
+"PO-Revision-Date: 2016-08-13 22:10+0000\n"
+"Last-Translator: MarkoD <Unknown>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
 "n%100==4 ? 3 : 0);\n"
-"X-Launchpad-Export-Date: 2016-08-04 05:51+0000\n"
+"X-Launchpad-Export-Date: 2016-08-14 05:42+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "Language: sl_SI\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -159,14 +159,14 @@ msgstr ""
 #: ../src/engine/imap-db/imap-db-account.vala:726
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "from"
-msgstr ""
+msgstr "od"
 
 #. / Can be typed in the search box like subject:word to find the word
 #. / only if it occurs in the subject of a message.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:730
 msgid "subject"
-msgstr ""
+msgstr "zadeva"
 
 #. / Can be typed in the search box like to:johndoe@example.com to find
 #. / messages received by a particular person.  The translated
@@ -174,7 +174,7 @@ msgstr ""
 #: ../src/engine/imap-db/imap-db-account.vala:734
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "to"
-msgstr ""
+msgstr "za"
 
 #: ../src/engine/imap-db/imap-db-account.vala:754
 msgid "me"
@@ -869,6 +869,7 @@ msgstr ""
 "\n"
 "Launchpad Contributions:\n"
 "  Jernej Virag https://launchpad.net/~jernej\n"
+"  MarkoD https://launchpad.net/~markodolar\n"
 "  Matej Urbančič https://launchpad.net/~mateju\n"
 "  elementary Apps team https://launchpad.net/~elementary-apps"
 
