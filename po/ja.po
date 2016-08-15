@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2016-08-02 20:42-0500\n"
-"PO-Revision-Date: 2016-08-12 10:28+0000\n"
+"PO-Revision-Date: 2016-08-15 05:48+0000\n"
 "Last-Translator: Ryo Nakano <Unknown>\n"
 "Language-Team: Japanese (Japan) "
 "(http://www.transifex.com/projects/p/geary/language/ja_JP/)\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-08-13 06:16+0000\n"
+"X-Launchpad-Export-Date: 2016-08-15 05:48+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "Language: ja_JP\n"
 
@@ -157,7 +157,7 @@ msgstr "cc"
 #: ../src/engine/imap-db/imap-db-account.vala:726
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "from"
-msgstr "送信者"
+msgstr "差出人"
 
 #. / Can be typed in the search box like subject:word to find the word
 #. / only if it occurs in the subject of a message.  The translated
@@ -216,7 +216,7 @@ msgstr "---------- 転送されたメッセージ ----------"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:267
 msgid "From: %s\n"
-msgstr "From: %s\n"
+msgstr "差出人 : %s\n"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:268
 msgid "Subject: %s\n"
@@ -1159,13 +1159,15 @@ msgstr "%s は信頼できない接続です。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:36
 msgid "The identity of the %s mail server at %s:%u could not be verified."
-msgstr ""
+msgstr "%s のポート %u における %s メール サーバーのの身元を立証できませんでした。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:44
 msgid ""
 "Selecting \"Trust This Server\" or \"Always Trust This Server\" may cause "
 "your username and password to be transmitted insecurely."
 msgstr ""
+"\"このサーバーを信頼しない\" や\"常にこのサーバーを信頼しない\" "
+"を選択することにより、あなたのユーザー名とパスワードは安全でない方法で送信されます。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
@@ -1236,7 +1238,7 @@ msgstr "添付 (_A)"
 #. /clear widgets
 #: ../src/client/accounts/account-dialog-edit-alternate-emails-pane.vala:124
 msgid "Additional addresses for %s"
-msgstr ""
+msgstr "%s の追加のアドレス"
 
 #: ../src/client/accounts/account-dialog.vala:21
 msgid "Accounts"
@@ -1329,7 +1331,7 @@ msgstr "        &#8226; アカウントのニックネームが不正です。\n
 #: ../src/client/accounts/add-edit-page.vala:769
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Geary.\n"
-msgstr ""
+msgstr "        &#8226; メールアドレスはすでに Geary へ追加されています。\n"
 
 #: ../src/client/accounts/add-edit-page.vala:773
 #: ../src/client/accounts/add-edit-page.vala:775
@@ -1581,7 +1583,7 @@ msgstr "下書きの編集"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:148
 #: ../src/client/conversation-viewer/ConversationWidget.vala:150
 msgid "From:"
-msgstr "From:"
+msgstr "差出人:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:812
 #: ../src/client/conversation-viewer/conversation-viewer.vala:817
@@ -1698,17 +1700,17 @@ msgstr "検証 (_I)"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1556
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1561
 msgid "This link appears to go to"
-msgstr ""
+msgstr "このリンクは次のページに飛ぶように見えます。"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1557
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1562
 msgid "but actually goes to"
-msgstr ""
+msgstr "しかし実際には次のページに飛んでいます。"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1612
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1617
 msgid " (Invalid?)"
-msgstr ""
+msgstr " (無効？)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1718
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1723
@@ -1749,7 +1751,7 @@ msgstr "未読としてマーク (_M)"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1889
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1894
 msgid "Mark Unread From _Here"
-msgstr ""
+msgstr "ここから未読マークを付ける (_H)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1904
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1909
@@ -2045,7 +2047,7 @@ msgstr "保持する (_K)"
 #: ../src/client/components/main-toolbar.vala:70
 #: ../src/client/components/main-toolbar.vala:78
 msgid "Search all mail in account for keywords (Ctrl+S)"
-msgstr ""
+msgstr "キーワードでアカウント内のすべてのメールを検索する (Ctrl+S)"
 
 #: ../src/client/components/search-bar.vala:118
 #: ../src/client/components/main-toolbar.vala:300
@@ -2122,7 +2124,7 @@ msgstr "3 ペインレイアウト:"
 #: ../src/client/dialogs/preferences-dialog.vala:42 ../data/ui/login.ui:853
 #: ../src/client/dialogs/preferences-dialog.vala:48
 msgid "Composer"
-msgstr ""
+msgstr "作成者"
 
 #: ../src/client/dialogs/preferences-dialog.vala:47
 #: ../src/client/dialogs/preferences-dialog.vala:53
@@ -2217,6 +2219,8 @@ msgid ""
 "Some email services require additional addresses be configured on the "
 "server.  Contact your email provider for more information."
 msgstr ""
+"このサーバー上で設定するには追加のアドレスを必要とするメールアドレス "
+"サービスがあります。詳しい情報を知るには、メールサービスのプロバイダーに連絡してください。"
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
@@ -2456,7 +2460,7 @@ msgstr "Reply-To (_R)"
 #: ../data/ui/composer.ui:440 ../data/ui/composer.ui:468
 #: ../data/ui/composer.ui:438
 msgid "From"
-msgstr "From"
+msgstr "差出人"
 
 #: ../data/ui/composer.ui:519 ../data/ui/composer.ui:547
 #: ../data/ui/composer.ui:517
@@ -2737,7 +2741,7 @@ msgstr "この操作は Mail とメールサーバーからメールを削除し
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
-msgstr ""
+msgstr "        &#8226; メールアドレスはすでに Mail へ追加されています。\n"
 
 #: ../src/client/dialogs/preferences-dialog.vala:44
 #: ../src/client/dialogs/preferences-dialog.vala:43
@@ -3027,7 +3031,7 @@ msgstr "パスワード:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:55
 msgid "SMTP Credentials:"
-msgstr ""
+msgstr "SMTP の資格情報"
 
 #: ../src/client/dialogs/PasswordDialog.vala:62
 msgid "Remember password"

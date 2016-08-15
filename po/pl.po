@@ -19,15 +19,15 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-02 20:42-0500\n"
-"PO-Revision-Date: 2016-07-11 07:30+0000\n"
-"Last-Translator: Damian Woźniak <fiszet@gmail.com>\n"
+"PO-Revision-Date: 2016-08-14 19:50+0000\n"
+"Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-08-04 05:51+0000\n"
+"X-Launchpad-Export-Date: 2016-08-15 05:48+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "X-Poedit-Country: Poland\n"
 "Language: pl\n"
@@ -289,8 +289,9 @@ msgstr "Usuń wątki (Shift+Delete)"
 #: ../src/client/application/geary-controller.vala:2723
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Przenieś konwersację do Kosza (Delete, Backspace)"
+msgstr[1] "Przenieś konwersacje do Kosza (Delete, Backspace)"
+msgstr[2] "Przenieś konwersacje do Kosza (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
@@ -310,8 +311,9 @@ msgstr "_Archiwizuj"
 #: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Archiwizuj konwersację (A)"
+msgstr[1] "Archiwizuj konwersacje (A)"
+msgstr[2] "Archiwizuj konwersacje (A)"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
@@ -353,8 +355,9 @@ msgstr "Odznacz jako _niechciana"
 #: ../src/client/application/geary-controller.vala:2714
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Oznacz konwersację"
+msgstr[1] "Oznacz konwersacje"
+msgstr[2] "Oznacz konwersacje"
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
@@ -377,8 +380,9 @@ msgstr "Oznacz wątek"
 #: ../src/client/application/geary-controller.vala:2716
 msgid "Add label to conversation"
 msgid_plural "Add label to conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Dodaj etykietę do konwersacji"
+msgstr[1] "Dodaj etykietę do konwersacji"
+msgstr[2] "Dodaj etykietę do konwersacji"
 
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
@@ -405,8 +409,9 @@ msgstr "Nadaj etykietę wątkom"
 #: ../src/client/application/geary-controller.vala:2718
 msgid "Move conversation"
 msgid_plural "Move conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Przenieś konwersację"
+msgstr[1] "Przenieś konwersacje"
+msgstr[2] "Przenieś konwersacje"
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
@@ -2249,8 +2254,9 @@ msgstr "Usuń rozmowę"
 #: ../src/client/application/geary-controller.vala:2725
 msgid "Delete Conversation (Shift+Delete)"
 msgid_plural "Delete Conversations (Shift+Delete)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Usuń konwersację (Shift+Delete)"
+msgstr[1] "Usuń konwersacje (Shift+Delete)"
+msgstr[2] "Usuń konwersacje (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
 #: ../src/client/application/geary-controller.vala:62
@@ -3181,4 +3187,4 @@ msgstr ", "
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
-msgstr ""
+msgstr "Poczta"
