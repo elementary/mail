@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2016-08-02 20:42-0500\n"
-"PO-Revision-Date: 2016-08-15 05:48+0000\n"
+"PO-Revision-Date: 2016-08-15 06:12+0000\n"
 "Last-Translator: Ryo Nakano <Unknown>\n"
 "Language-Team: Japanese (Japan) "
 "(http://www.transifex.com/projects/p/geary/language/ja_JP/)\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-08-15 05:48+0000\n"
+"X-Launchpad-Export-Date: 2016-08-16 06:24+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "Language: ja_JP\n"
 
@@ -172,7 +172,7 @@ msgstr "件名"
 #: ../src/engine/imap-db/imap-db-account.vala:734
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "to"
-msgstr "to"
+msgstr "宛先"
 
 #: ../src/engine/imap-db/imap-db-account.vala:754
 msgid "me"
@@ -228,7 +228,7 @@ msgstr "Date: %s\n"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:272
 msgid "To: %s\n"
-msgstr "To: %s\n"
+msgstr "宛先 : %s\n"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:275
 msgid "Cc: %s\n"
@@ -279,7 +279,7 @@ msgstr[0] "メッセージをゴミ箱に移動する (Delete, Backspace)"
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 msgid "Move conversations to Trash (Delete, Backspace)"
-msgstr "メッセージをゴミ箱に移動 (Delete, Backspace)"
+msgstr "メッセージをゴミ箱に移動する (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
@@ -706,6 +706,14 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
+"このアカウントのローカル メール データーベースを開く途中でエラーが発生しました。これは、このディレクトリ内のデーターベース "
+"ファイルの欠落に起因している可能性があります。\n"
+"\n"
+"%s\n"
+"\n"
+"サーバーと接続するか、 Geary を終了することによって、 Geary はデーターベースを再読み込みし、再同期することができます。\n"
+"\n"
+"データーベースの再読み込みはローカルにあるすべてのメールと添付ファイルを削除します。<b>サーバー上のメールは影響を受けません。</b>"
 
 #: ../src/client/application/geary-controller.vala:1153
 #: ../src/client/application/geary-controller.vala:1147
@@ -2699,6 +2707,14 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
+"このアカウントのローカル メール データーベースを開く途中でエラーが発生しました。これは、このディレクトリ内のデーターベース "
+"ファイルの欠落に起因している可能性があります。\n"
+"\n"
+"%s\n"
+"\n"
+"サーバーと接続するか、 Mail を終了することによって、 Mail はデーターベースを再読み込みし、再同期することができます。\n"
+"\n"
+"データーベースの再読み込みはローカルにあるすべてのメールと添付ファイルを削除します。<b>サーバー上のメールは影響を受けません。</b>"
 
 #: ../src/client/application/geary-controller.vala:1184
 #: ../src/client/application/geary-controller.vala:1178
@@ -2942,7 +2958,7 @@ msgstr[0] "%u が一致"
 #. / (that is the part before the '@') that exist in your language (separated with a semicolon)
 #: ../src/engine/rfc822/rfc822-mailbox-address.vala:170
 msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
-msgstr ""
+msgstr "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:410
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
@@ -3045,7 +3061,7 @@ msgstr "認証"
 #: ../src/client/conversation-list/formatted-conversation-data.vala:188
 #: ../src/client/conversation-list/formatted-conversation-data.vala:190
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
