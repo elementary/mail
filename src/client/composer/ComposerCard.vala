@@ -27,8 +27,8 @@ public class ComposerCard : Gtk.ListBoxRow, ComposerContainer {
     public ComposerCard (ComposerWidget composer) {
         this.composer = composer;
         add (composer);
-        composer.editor.focus_in_event.connect(on_focus_in);
-        composer.editor.focus_out_event.connect(on_focus_out);
+        composer.editor.focus_in_event.connect (on_focus_in);
+        composer.editor.focus_out_event.connect (on_focus_out);
         show_all ();
         present ();
     }
@@ -55,26 +55,26 @@ public class ComposerCard : Gtk.ListBoxRow, ComposerContainer {
 
     // Depending on the ComposerCard having the focus, the shortcuts for the buttons in the
     // ComposerToolbar (Bold, Italic, Underline, ...) are active
-    private bool on_focus_in() {
+    private bool on_focus_in () {
         // For some reason, on_focus_in gets called a bunch upon construction.
         if (!has_accel_group)
-            top_window.add_accel_group(composer.ui.get_accel_group());
+            top_window.add_accel_group (composer.ui.get_accel_group());
         has_accel_group = true;
         return false;
     }
     
     // If there is no ComposerCard opened, the shortcuts for the buttons in the MainToolbar
     // (mark as read, mark as unread, forward email, ...) are active
-    private bool on_focus_out() {
-        top_window.remove_accel_group(composer.ui.get_accel_group());
+    private bool on_focus_out () {
+        top_window.remove_accel_group (composer.ui.get_accel_group());
         has_accel_group = false;
         return false;
     }
 
     public void vanish () {
         hide ();
-        composer.editor.focus_in_event.disconnect(on_focus_in);
-        composer.editor.focus_out_event.disconnect(on_focus_out);
+        composer.editor.focus_in_event.disconnect (on_focus_in);
+        composer.editor.focus_out_event.disconnect (on_focus_out);
         composer.state = ComposerWidget.ComposerState.DETACHED;
     }
 
@@ -88,8 +88,8 @@ public class ComposerCard : Gtk.ListBoxRow, ComposerContainer {
 
     public void remove_composer () {
         composer.parent.remove (composer);
-        composer.editor.focus_in_event.disconnect(on_focus_in);
-        composer.editor.focus_out_event.disconnect(on_focus_out);
+        composer.editor.focus_in_event.disconnect (on_focus_in);
+        composer.editor.focus_out_event.disconnect (on_focus_out);
         close_container ();
     }
 }
