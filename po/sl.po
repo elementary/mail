@@ -12,40 +12,42 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-08-02 20:42-0500\n"
-"PO-Revision-Date: 2016-08-14 22:51+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
+"PO-Revision-Date: 2016-08-17 09:20+0000\n"
+"Last-Translator: Jernej Virag <Unknown>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
 "n%100==4 ? 3 : 0);\n"
-"X-Launchpad-Export-Date: 2016-08-15 05:48+0000\n"
+"X-Launchpad-Export-Date: 2016-08-18 06:06+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 "Language: sl_SI\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
-msgstr ""
+msgstr "Osnutki | Osnutek"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:580
 msgid "Sent | Sent Mail | Sent Email | Sent E-Mail"
-msgstr ""
+msgstr "Po"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:585
 msgid ""
 "Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
 "| Bulk E-Mail"
 msgstr ""
+"Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
+"| Bulk E-Mail | Vsiljena pošta | Neželena pošta"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:590
 msgid "Trash | Rubbish | Rubbish Bin"
-msgstr ""
+msgstr "Trash | Rubbish | Rubbish Bin | Smeti | Koš"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:595
 msgid "Archive | Archives"
-msgstr ""
+msgstr "Archive | Archives | Arhiv"
 
 #: ../src/engine/api/geary-special-folder-type.vala:24
 msgid "Inbox"
@@ -128,7 +130,7 @@ msgstr "Ostalo"
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:710
 msgid "attachment"
-msgstr ""
+msgstr "priponka"
 
 #. / Can be typed in the search box like bcc:johndoe@example.com to find
 #. / messages bcc'd to a particular person.  The translated
@@ -136,14 +138,14 @@ msgstr ""
 #: ../src/engine/imap-db/imap-db-account.vala:714
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "bcc"
-msgstr ""
+msgstr "skp"
 
 #. / Can be typed in the search box like body:word to find the word only
 #. / if it occurs in the body of a message.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:718
 msgid "body"
-msgstr ""
+msgstr "telo"
 
 #. / Can be typed in the search box like cc:johndoe@example.com to find
 #. / messages cc'd to a particular person.  The translated
@@ -151,7 +153,7 @@ msgstr ""
 #: ../src/engine/imap-db/imap-db-account.vala:722
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "cc"
-msgstr ""
+msgstr "kp"
 
 #. / Can be typed in the search box like from:johndoe@example.com to
 #. / find messages from a particular sender.  The translated
@@ -178,7 +180,7 @@ msgstr "za"
 
 #: ../src/engine/imap-db/imap-db-account.vala:754
 msgid "me"
-msgstr ""
+msgstr "jaz"
 
 #: ../src/engine/rfc822/rfc822-message.vala:781
 #: ../src/client/util/util-email.vala:30
@@ -275,8 +277,10 @@ msgstr "Izbriši pogovore (Shift + Delete)"
 #: ../src/client/application/geary-controller.vala:2723
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Premakni pogovore v smeti (Delete, Backspace)"
+msgstr[1] "Premakni pogovor v smeti (Delete, Backspace)"
+msgstr[2] "Premakni pogovora v smeti (Delete, Backspace)"
+msgstr[3] "Premakni pogovore v smeti (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
@@ -296,8 +300,10 @@ msgstr "_Arhiv"
 #: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Arhiviraj pogovore (A)"
+msgstr[1] "Arhiviraj pogovor (A)"
+msgstr[2] "Arhiviraj pogovora (A)"
+msgstr[3] "Arhiviraj pogovore (A)"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
@@ -339,8 +345,10 @@ msgstr "Označi kot _želeno pošto"
 #: ../src/client/application/geary-controller.vala:2714
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Označi pogovore"
+msgstr[1] "Označi pogovor"
+msgstr[2] "Označi pogovora"
+msgstr[3] "Označi pogovore"
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
@@ -363,8 +371,10 @@ msgstr "Označi pogovore"
 #: ../src/client/application/geary-controller.vala:2716
 msgid "Add label to conversation"
 msgid_plural "Add label to conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Dodaj oznako pogovorom"
+msgstr[1] "Dodaj oznako pogovoru"
+msgstr[2] "Dodaj oznako pogovoroma"
+msgstr[3] "Dodaj oznako pogovorom"
 
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
@@ -391,8 +401,10 @@ msgstr "Dodaj oznako pogovorom"
 #: ../src/client/application/geary-controller.vala:2718
 msgid "Move conversation"
 msgid_plural "Move conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Premakni pogovore"
+msgstr[1] "Premakni pogovor"
+msgstr[2] "Premakni pogovora"
+msgstr[3] "Premakni pogovore"
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
@@ -440,7 +452,7 @@ msgstr "_O programu"
 #: ../src/client/application/geary-controller.vala:378
 #: ../src/client/application/geary-controller.vala:384
 msgid "_Quit"
-msgstr "_Zapusti"
+msgstr "I_zhod"
 
 #: ../src/client/application/geary-controller.vala:394
 #: ../src/client/application/geary-controller.vala:393
@@ -1487,14 +1499,18 @@ msgstr "Zdaj"
 #: ../src/client/util/util-date.vala:167
 msgid "%dm ago"
 msgid_plural "%dm ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "pred %dm"
+msgstr[1] "pred %dm"
+msgstr[2] "pred %dm"
+msgstr[3] "pred %dm"
 
 #: ../src/client/util/util-date.vala:171
 msgid "%dh ago"
 msgid_plural "%dh ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "pred %dh"
+msgstr[1] "pred %dh"
+msgstr[2] "pred %dh"
+msgstr[3] "pred %dh"
 
 #: ../src/client/util/util-date.vala:178
 msgid "Yesterday"
@@ -1879,6 +1895,8 @@ msgid ""
 "attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
 "closing|encloses|enclosure|enclosures"
 msgstr ""
+"pripni|pripeta|dodana|dodano|dodan|prilagam|priloženo|priložena|priložen|prip"
+"onka"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -2052,7 +2070,7 @@ msgstr "_Od:"
 #: ../src/client/components/main-window.vala:388
 #: ../src/client/components/main-window.vala:351
 msgid "%s (%d)"
-msgstr ""
+msgstr "%s (%s)"
 
 #. / Displayed in the space-limited status bar while a message is in the process of being sent.
 #: ../src/client/components/status-bar.vala:26
@@ -2238,8 +2256,10 @@ msgstr "Izbriši pogovor"
 #: ../src/client/application/geary-controller.vala:2725
 msgid "Delete Conversation (Shift+Delete)"
 msgid_plural "Delete Conversations (Shift+Delete)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Izbriši pogovore (Shift+Delete)"
+msgstr[1] "Izbriši pogovor (Shift+Delete)"
+msgstr[2] "Izbriši pogovora (Shift+Delete)"
+msgstr[3] "Izbriši pogovore (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
 #: ../src/client/application/geary-controller.vala:62
@@ -2291,7 +2311,7 @@ msgstr "_Upoštevaj velikost črk"
 
 #: ../data/ui/find_bar.ui:127
 msgid "label"
-msgstr ""
+msgstr "oznaka"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
@@ -2376,7 +2396,7 @@ msgstr "Prilepi z oblikovanje_m"
 
 #: ../data/ui/composer.ui:111 ../src/client/composer/ComposerToolbar.vala:36
 msgid "Bold (Ctrl+B)"
-msgstr "Poudarjeno (Ctrl + B)"
+msgstr "Krepko (Ctrl+B)"
 
 #: ../data/ui/composer.ui:118 ../src/client/composer/ComposerToolbar.vala:41
 msgid "Italic (Ctrl+I)"
@@ -2454,27 +2474,27 @@ msgstr "Majhno"
 
 #: ../data/ui/composer.ui:191 ../data/ui/composer.ui:173
 msgid "S_ans Serif"
-msgstr ""
+msgstr "Sans Serif"
 
 #: ../data/ui/composer.ui:192 ../data/ui/composer.ui:174
 msgid "Sans Serif"
-msgstr ""
+msgstr "Sans Serif"
 
 #: ../data/ui/composer.ui:197 ../data/ui/composer.ui:179
 msgid "S_erif"
-msgstr ""
+msgstr "Serif"
 
 #: ../data/ui/composer.ui:198 ../data/ui/composer.ui:180
 msgid "Serif"
-msgstr ""
+msgstr "Serif"
 
 #: ../data/ui/composer.ui:203 ../data/ui/composer.ui:185
 msgid "_Fixed Width"
-msgstr ""
+msgstr "Fiksna širina"
 
 #: ../data/ui/composer.ui:204 ../data/ui/composer.ui:186
 msgid "Fixed Width"
-msgstr ""
+msgstr "Fiksna širina"
 
 #: ../data/ui/composer.ui:209 ../data/ui/composer.ui:210
 msgid "Detach"
@@ -3057,6 +3077,8 @@ msgstr[3] "%u zadetki"
 #: ../src/engine/rfc822/rfc822-mailbox-address.vala:170
 msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 msgstr ""
+"no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply|ne-"
+"odgovrajaj|neodgovarjaj"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:410
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
@@ -3165,4 +3187,4 @@ msgstr ", "
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
-msgstr ""
+msgstr "Elektronska pošta"
