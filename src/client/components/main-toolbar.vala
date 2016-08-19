@@ -114,7 +114,7 @@ public class MainToolbar : Gtk.HeaderBar {
 
         var forward = new Gtk.Button();
         forward.related_action = GearyApplication.instance.actions.get_action (GearyController.ACTION_FORWARD_MESSAGE);
-        forward.tooltip_text = _("Forward (Ctrl+L, F)");
+        forward.tooltip_text = _("Forward (Ctrl+Shift+F)");
         forward.image = new Gtk.Image.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
         var mark = new Gtk.MenuButton ();

@@ -442,9 +442,8 @@ public class GearyController : Geary.BaseObject {
         entries += reply_all_message;
         add_accelerator("<Shift>R", ACTION_REPLY_ALL_MESSAGE);
 
-        Gtk.ActionEntry forward_message = { ACTION_FORWARD_MESSAGE, null, null, "<Ctrl>L", null, on_forward_message_action };
+        Gtk.ActionEntry forward_message = { ACTION_FORWARD_MESSAGE, null, null, "<Ctrl><Shift>F", null, on_forward_message_action };
         entries += forward_message;
-        add_accelerator("F", ACTION_FORWARD_MESSAGE);
 
         Gtk.ActionEntry find_in_conversation = { ACTION_FIND_IN_CONVERSATION, null, null, "<Ctrl>F",
             null, on_find_in_conversation_action };
