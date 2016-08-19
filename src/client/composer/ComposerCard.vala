@@ -54,7 +54,8 @@ public class ComposerCard : Gtk.ListBoxRow, ComposerContainer {
     }
 
     // Depending on the ComposerCard having the focus, the shortcuts for the buttons in the
-    // ComposerToolbar (Bold, Italic, Underline, ...) are active
+    // ComposerToolbar (Bold, Italic, Underline, ...) are active. This would allow the same
+    // shortcuts defined for the ComposerCard and the MainToolbar.
     private bool on_focus_in () {
         // For some reason, on_focus_in gets called a bunch upon construction.
         if (!has_accel_group)
@@ -64,7 +65,8 @@ public class ComposerCard : Gtk.ListBoxRow, ComposerContainer {
     }
     
     // If there is no ComposerCard opened, the shortcuts for the buttons in the MainToolbar
-    // (mark as read, mark as unread, forward email, ...) are active
+    // (mark as read, mark as unread, forward email, ...) are active. This would allow the same
+    // shortcuts defined for the ComposerCard and the MainToolbar.
     private bool on_focus_out () {
         top_window.remove_accel_group (composer.ui.get_accel_group());
         has_accel_group = false;
