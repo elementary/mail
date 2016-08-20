@@ -41,8 +41,7 @@ public class GearyController : Geary.BaseObject {
     public const string ACTION_PREFERENCES = "GearyPreferences";
     public const string ACTION_MARK_AS_MENU = "GearyMarkAsMenuButton";
     public const string ACTION_TOGGLE_READ_UNREAD = "GearyToggleReadUnread";
-    public const string ACTION_MARK_AS_STARRED = "GearyMarkAsStarred";
-    public const string ACTION_MARK_AS_UNSTARRED = "GearyMarkAsUnStarred";
+    public const string ACTION_TOGGLE_STARRED_UNSTARRED = "GearyToggleStarredUnstarred";
     public const string ACTION_MARK_AS_SPAM = "GearyMarkAsSpam";
     public const string ACTION_COPY_MENU = "GearyCopyMenuButton";
     public const string ACTION_MOVE_MENU = "GearyMoveMenuButton";
@@ -397,15 +396,10 @@ public class GearyController : Geary.BaseObject {
         toggle_read_unread.label = _("Toggle _Read / _Unread");
         entries += toggle_read_unread;
 
-        Gtk.ActionEntry mark_starred = { ACTION_MARK_AS_STARRED, "star-symbolic", TRANSLATABLE, "S", null,
-            on_mark_as_starred };
-        mark_starred.label = _("_Star");
-        entries += mark_starred;
-
-        Gtk.ActionEntry mark_unstarred = { ACTION_MARK_AS_UNSTARRED, "non-starred", TRANSLATABLE, "D",
-            null, on_mark_as_unstarred };
-        mark_unstarred.label = _("U_nstar");
-        entries += mark_unstarred;
+        Gtk.ActionEntry toggle_starred_unstarred = { ACTION_TOGGLE_STARRED_UNSTARRED, "star-symbolic", TRANSLATABLE, "S", null,
+            on_toggle_starred_unstarred };
+        toggle_starred_unstarred.label = _("_Star / U_nstar");
+        entries += toggle_starred_unstarred;
 
         Gtk.ActionEntry mark_spam = { ACTION_MARK_AS_SPAM, null, TRANSLATABLE, "<Ctrl>J", null,
             on_mark_as_spam };
@@ -1762,8 +1756,7 @@ public class GearyController : Geary.BaseObject {
         }
         var actions = GearyApplication.instance.actions;
         actions.get_action(ACTION_TOGGLE_READ_UNREAD).set_visible(unread_selected);
-        actions.get_action(ACTION_MARK_AS_STARRED).set_visible(unstarred_selected);
-        actions.get_action(ACTION_MARK_AS_UNSTARRED).set_visible(starred_selected);
+        actions.get_action(ACTION_TOGGLE_STARRED_UNSTARRED).set_visible(unstarred_selected);
 
         if (current_folder.special_folder_type != Geary.SpecialFolderType.DRAFTS &&
             current_folder.special_folder_type != Geary.SpecialFolderType.OUTBOX) {
@@ -1859,16 +1852,16 @@ public class GearyController : Geary.BaseObject {
         });
     }
 
-    private void on_mark_as_starred() {
-        Geary.EmailFlags flags = new Geary.EmailFlags();
+    private void on_toggle_starred_unstarred () {
+        Geary.EmailFlags flags = new Geary.EmailFlags ();
         flags.add(Geary.EmailFlags.FLAGGED);
-        mark_email(get_selected_email_ids(true), flags, null);
-    }
-
-    private void on_mark_as_unstarred() {
-        Geary.EmailFlags flags = new Geary.EmailFlags();
-        flags.add(Geary.EmailFlags.FLAGGED);
-        mark_email(get_selected_email_ids(false), null, flags);
+        foreach (Geary.App.Conversation conversation in selected_conversations) {
+            if (conversation.is_flagged ()) {
+                mark_email(get_selected_email_ids(false), null, flags);
+            } else {
+                mark_email(get_selected_email_ids(true), flags, null);
+            }
+        }
     }
 
     private async void mark_as_spam_async(Cancellable? cancellable) {

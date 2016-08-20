@@ -225,17 +225,12 @@ public class ConversationListView : Gtk.TreeView {
             return true;
         
         if (event.button == 3 && event.type == Gdk.EventType.BUTTON_PRESS) {
-            Geary.App.Conversation conversation = conversation_list_store.get_conversation_at_path(path);
-            
             string?[] action_names = {};
             action_names += GearyController.ACTION_DELETE_MESSAGE;
             
             action_names += GearyController.ACTION_TOGGLE_READ_UNREAD;
             
-            if (conversation.is_flagged())
-                action_names += GearyController.ACTION_MARK_AS_UNSTARRED;
-            else
-                action_names += GearyController.ACTION_MARK_AS_STARRED;
+            action_names += GearyController.ACTION_TOGGLE_STARRED_UNSTARRED;
 
             context_menu = new Gtk.Menu();
             foreach (string? action_name in action_names) {
