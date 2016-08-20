@@ -230,11 +230,7 @@ public class ConversationListView : Gtk.TreeView {
             string?[] action_names = {};
             action_names += GearyController.ACTION_DELETE_MESSAGE;
             
-            if (conversation.is_unread())
-                action_names += GearyController.ACTION_MARK_AS_READ;
-            
-            if (conversation.has_any_read_message())
-                action_names += GearyController.ACTION_MARK_AS_UNREAD;
+            action_names += GearyController.ACTION_MARK_AS_READ;
             
             if (conversation.is_flagged())
                 action_names += GearyController.ACTION_MARK_AS_UNSTARRED;

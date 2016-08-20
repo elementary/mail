@@ -393,11 +393,10 @@ public class GearyController : Geary.BaseObject {
         mark_menu.tooltip = MARK_MESSAGE_MENU_TOOLTIP_SINGLE;
         entries += mark_menu;
 
-        Gtk.ActionEntry mark_read = { ACTION_MARK_AS_READ, "mail-mark-read", TRANSLATABLE, "<Ctrl>I",
+        Gtk.ActionEntry mark_read = { ACTION_MARK_AS_READ, "mail-mark-read", TRANSLATABLE, "<Ctrl><Shift>U",
             null, on_mark_as_read };
-        mark_read.label = _("Mark as _Read");
+        mark_read.label = _("Toggle _Read / _Unread");
         entries += mark_read;
-        add_accelerator("<Ctrl>I", ACTION_MARK_AS_READ);
 
         Gtk.ActionEntry mark_unread = { ACTION_MARK_AS_UNREAD, "mail-mark-unread", TRANSLATABLE,
             "<Ctrl>U", null, on_mark_as_unread };
@@ -1839,11 +1838,20 @@ public class GearyController : Geary.BaseObject {
         mark_email(emails, flags_to_add, flags_to_remove);
     }
 
-    private void on_mark_as_read() {
-        Geary.EmailFlags flags = new Geary.EmailFlags();
+    private void on_mark_as_read () {
+        Geary.EmailFlags flags = new Geary.EmailFlags ();
         flags.add(Geary.EmailFlags.UNREAD);
-        Gee.ArrayList<Geary.EmailIdentifier> ids = get_selected_email_ids(false);
-        mark_email(ids, null, flags);
+        foreach (Geary.App.Conversation conversation in selected_conversations) {
+            Gee.ArrayList<Geary.EmailIdentifier> ids = new Gee.ArrayList<Geary.EmailIdentifier> ();
+            if (conversation.is_unread ()) {
+                get_conversation_email_ids(conversation, false, ids);
+                mark_email(ids, null, flags);
+            } else {
+                get_conversation_email_ids(conversation, true, ids);
+                flag_conversation_unread (ids, flags);
+                mark_email(ids, flags, null);
+            }
+        }
     }
 
     private void on_mark_as_unread() {
