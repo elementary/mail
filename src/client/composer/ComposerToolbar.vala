@@ -48,7 +48,7 @@ public class ComposerToolbar : Gtk.Box {
 
         var strikethrough = new Gtk.ToggleButton ();
         strikethrough.related_action = toolbar_action_group.get_action (ComposerWidget.ACTION_STRIKETHROUGH);
-        strikethrough.tooltip_text = _("Strikethrough (Ctrl+Shift+S)");
+        strikethrough.tooltip_text = _("Strikethrough (Ctrl+_)");
         strikethrough.image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU);
 
         formatting.add (bold);
