@@ -40,8 +40,7 @@ public class GearyController : Geary.BaseObject {
     public const string ACTION_ACCOUNTS = "GearyAccounts";
     public const string ACTION_PREFERENCES = "GearyPreferences";
     public const string ACTION_MARK_AS_MENU = "GearyMarkAsMenuButton";
-    public const string ACTION_MARK_AS_READ = "GearyMarkAsRead";
-    public const string ACTION_MARK_AS_UNREAD = "GearyMarkAsUnread";
+    public const string ACTION_TOGGLE_READ_UNREAD = "GearyToggleReadUnread";
     public const string ACTION_MARK_AS_STARRED = "GearyMarkAsStarred";
     public const string ACTION_MARK_AS_UNSTARRED = "GearyMarkAsUnStarred";
     public const string ACTION_MARK_AS_SPAM = "GearyMarkAsSpam";
@@ -393,16 +392,10 @@ public class GearyController : Geary.BaseObject {
         mark_menu.tooltip = MARK_MESSAGE_MENU_TOOLTIP_SINGLE;
         entries += mark_menu;
 
-        Gtk.ActionEntry mark_read = { ACTION_MARK_AS_READ, "mail-mark-read", TRANSLATABLE, "<Ctrl><Shift>U",
-            null, on_mark_as_read };
-        mark_read.label = _("Toggle _Read / _Unread");
-        entries += mark_read;
-
-        Gtk.ActionEntry mark_unread = { ACTION_MARK_AS_UNREAD, "mail-mark-unread", TRANSLATABLE,
-            "<Ctrl>U", null, on_mark_as_unread };
-        mark_unread.label = _("Mark as _Unread");
-        entries += mark_unread;
-        add_accelerator("<Ctrl>U", ACTION_MARK_AS_UNREAD);
+        Gtk.ActionEntry toggle_read_unread = { ACTION_TOGGLE_READ_UNREAD, "mail-toggle-read-unread", TRANSLATABLE, "<Ctrl><Shift>U",
+            null, on_toggle_read_unread };
+        toggle_read_unread.label = _("Toggle _Read / _Unread");
+        entries += toggle_read_unread;
 
         Gtk.ActionEntry mark_starred = { ACTION_MARK_AS_STARRED, "star-symbolic", TRANSLATABLE, "S", null,
             on_mark_as_starred };
@@ -1768,8 +1761,7 @@ public class GearyController : Geary.BaseObject {
             }
         }
         var actions = GearyApplication.instance.actions;
-        actions.get_action(ACTION_MARK_AS_READ).set_visible(unread_selected);
-        actions.get_action(ACTION_MARK_AS_UNREAD).set_visible(read_selected);
+        actions.get_action(ACTION_TOGGLE_READ_UNREAD).set_visible(unread_selected);
         actions.get_action(ACTION_MARK_AS_STARRED).set_visible(unstarred_selected);
         actions.get_action(ACTION_MARK_AS_UNSTARRED).set_visible(starred_selected);
 
@@ -1838,7 +1830,7 @@ public class GearyController : Geary.BaseObject {
         mark_email(emails, flags_to_add, flags_to_remove);
     }
 
-    private void on_mark_as_read () {
+    private void on_toggle_read_unread () {
         Geary.EmailFlags flags = new Geary.EmailFlags ();
         flags.add(Geary.EmailFlags.UNREAD);
         foreach (Geary.App.Conversation conversation in selected_conversations) {
@@ -1852,14 +1844,6 @@ public class GearyController : Geary.BaseObject {
                 mark_email(ids, flags, null);
             }
         }
-    }
-
-    private void on_mark_as_unread() {
-        Geary.EmailFlags flags = new Geary.EmailFlags();
-        flags.add(Geary.EmailFlags.UNREAD);
-        Gee.ArrayList<Geary.EmailIdentifier> ids = get_selected_email_ids(true);
-        flag_conversation_unread (ids, flags);
-        mark_email(ids, flags, null);
     }
 
     // Set flag_unread to prevent the conversation from getting set to read again right away
