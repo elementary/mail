@@ -393,17 +393,15 @@ public class GearyController : Geary.BaseObject {
         mark_menu.tooltip = MARK_MESSAGE_MENU_TOOLTIP_SINGLE;
         entries += mark_menu;
 
-        Gtk.ActionEntry mark_read = { ACTION_MARK_AS_READ, "mail-mark-read", TRANSLATABLE, "<Ctrl>I",
+        Gtk.ActionEntry mark_read = { ACTION_MARK_AS_READ, "mail-mark-read", TRANSLATABLE, "<Ctrl><Shift>I",
             null, on_mark_as_read };
         mark_read.label = _("Mark as _Read");
         entries += mark_read;
-        add_accelerator("<Ctrl>I", ACTION_MARK_AS_READ);
 
         Gtk.ActionEntry mark_unread = { ACTION_MARK_AS_UNREAD, "mail-mark-unread", TRANSLATABLE,
-            "<Ctrl>U", null, on_mark_as_unread };
+            "<Ctrl><Shift>U", null, on_mark_as_unread };
         mark_unread.label = _("Mark as _Unread");
         entries += mark_unread;
-        add_accelerator("<Ctrl>U", ACTION_MARK_AS_UNREAD);
 
         Gtk.ActionEntry mark_starred = { ACTION_MARK_AS_STARRED, "star-symbolic", TRANSLATABLE, "S", null,
             on_mark_as_starred };
