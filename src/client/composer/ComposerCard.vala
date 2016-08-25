@@ -59,7 +59,7 @@ public class ComposerCard : Gtk.ListBoxRow, ComposerContainer {
     private bool on_focus_in () {
         // For some reason, on_focus_in gets called a bunch upon construction.
         if (!has_accel_group)
-            top_window.add_accel_group (composer.ui.get_accel_group());
+            top_window.add_accel_group (composer.ui.get_accel_group ());
         has_accel_group = true;
         return false;
     }
@@ -68,7 +68,7 @@ public class ComposerCard : Gtk.ListBoxRow, ComposerContainer {
     // (mark as read, mark as unread, forward email, ...) are active. This would allow the same
     // shortcuts defined for the ComposerCard and the MainToolbar.
     private bool on_focus_out () {
-        top_window.remove_accel_group (composer.ui.get_accel_group());
+        top_window.remove_accel_group (composer.ui.get_accel_group ());
         has_accel_group = false;
         return false;
     }
