@@ -393,17 +393,15 @@ public class GearyController : Geary.BaseObject {
         mark_menu.tooltip = MARK_MESSAGE_MENU_TOOLTIP_SINGLE;
         entries += mark_menu;
 
-        Gtk.ActionEntry mark_read = { ACTION_MARK_AS_READ, "mail-mark-read", TRANSLATABLE, "<Ctrl>I",
+        Gtk.ActionEntry mark_read = { ACTION_MARK_AS_READ, "mail-mark-read", TRANSLATABLE, "<Ctrl><Shift>I",
             null, on_mark_as_read };
         mark_read.label = _("Mark as _Read");
         entries += mark_read;
-        add_accelerator("<Shift>I", ACTION_MARK_AS_READ);
 
         Gtk.ActionEntry mark_unread = { ACTION_MARK_AS_UNREAD, "mail-mark-unread", TRANSLATABLE,
-            "<Ctrl>U", null, on_mark_as_unread };
+            "<Ctrl><Shift>U", null, on_mark_as_unread };
         mark_unread.label = _("Mark as _Unread");
         entries += mark_unread;
-        add_accelerator("<Shift>U", ACTION_MARK_AS_UNREAD);
 
         Gtk.ActionEntry mark_starred = { ACTION_MARK_AS_STARRED, "star-symbolic", TRANSLATABLE, "S", null,
             on_mark_as_starred };
@@ -442,9 +440,8 @@ public class GearyController : Geary.BaseObject {
         entries += reply_all_message;
         add_accelerator("<Shift>R", ACTION_REPLY_ALL_MESSAGE);
 
-        Gtk.ActionEntry forward_message = { ACTION_FORWARD_MESSAGE, null, null, "<Ctrl>L", null, on_forward_message_action };
+        Gtk.ActionEntry forward_message = { ACTION_FORWARD_MESSAGE, null, null, "<Ctrl><Shift>F", null, on_forward_message_action };
         entries += forward_message;
-        add_accelerator("F", ACTION_FORWARD_MESSAGE);
 
         Gtk.ActionEntry find_in_conversation = { ACTION_FIND_IN_CONVERSATION, null, null, "<Ctrl>F",
             null, on_find_in_conversation_action };

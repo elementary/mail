@@ -48,7 +48,7 @@ public class ComposerToolbar : Gtk.Box {
 
         var strikethrough = new Gtk.ToggleButton ();
         strikethrough.related_action = toolbar_action_group.get_action (ComposerWidget.ACTION_STRIKETHROUGH);
-        strikethrough.tooltip_text = _("Strikethrough (Ctrl+K)");
+        strikethrough.tooltip_text = _("Strikethrough (Ctrl+%)");
         strikethrough.image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU);
 
         formatting.add (bold);
@@ -74,7 +74,7 @@ public class ComposerToolbar : Gtk.Box {
         // Link
         var link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU);
         link.related_action = toolbar_action_group.get_action (ComposerWidget.ACTION_INSERT_LINK);
-        link.tooltip_text = _("Link (Ctrl+L)");
+        link.tooltip_text = _("Link (Ctrl+K)");
 
         // Clear formatting.
         var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU);
