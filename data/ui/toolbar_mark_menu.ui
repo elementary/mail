@@ -1,7 +1,9 @@
 <ui>
     <popup name="ToolbarMarkMenu">
-        <menuitem name="ToggleReadUnread" action="GearyToggleReadUnread" />
-        <menuitem name="ToggleStarredUnstarred" action="GearyToggleStarredUnstarred" />
+        <menuitem name="MarkAsRead" action="GearyMarkAsRead" />
+        <menuitem name="MarkAsUnread" action="GearyMarkAsUnread" />
+        <menuitem name="MarkAsStarred" action="GearyMarkAsStarred" />
+        <menuitem name="MarkAsUnStarred" action="GearyMarkAsUnStarred" />
         <menuitem name="MarkAsSpam" action="GearyMarkAsSpam" />
     </popup>
 </ui>
