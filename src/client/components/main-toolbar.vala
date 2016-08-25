@@ -119,6 +119,7 @@ public class MainToolbar : Gtk.HeaderBar {
 
         var mark = new Gtk.MenuButton ();
         mark.image = new Gtk.Image.from_icon_name ("edit-flag", Gtk.IconSize.LARGE_TOOLBAR);
+        mark.related_action = GearyApplication.instance.actions.get_action(GearyController.ACTION_MARK_AS_MENU);
         mark.popup = mark_menu;
         mark.tooltip_text = _("Mark conversation");
 
