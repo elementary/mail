@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-08-02 20:42-0500\n"
+"POT-Creation-Date: 2016-08-25 14:51-0700\n"
 "PO-Revision-Date: 2016-08-02 06:55+0000\n"
 "Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -20,8 +20,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-08-04 05:50+0000\n"
-"X-Generator: Launchpad (build 18169)\n"
+"X-Launchpad-Export-Date: 2016-08-26 06:14+0000\n"
+"X-Generator: Launchpad (build 18179)\n"
 "Language: fi\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -339,6 +339,7 @@ msgstr "Poista _roskapostimerkintä"
 #: ../src/client/application/geary-controller.vala:2702
 #: ../src/client/application/geary-controller.vala:387
 #: ../src/client/application/geary-controller.vala:2714
+#: ../src/client/application/geary-controller.vala:390
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
 msgstr[0] "Merkitse keskustelu"
@@ -418,6 +419,7 @@ msgstr "_Tilit"
 #: ../src/client/components/stock.vala:26
 #: ../src/client/application/geary-controller.vala:374
 #: ../src/client/application/geary-controller.vala:380
+#: ../src/client/application/geary-controller.vala:381
 msgid "_Preferences"
 msgstr "_Asetukset"
 
@@ -441,6 +443,7 @@ msgstr "_Tietoja"
 #: ../src/client/components/stock.vala:28
 #: ../src/client/application/geary-controller.vala:378
 #: ../src/client/application/geary-controller.vala:384
+#: ../src/client/application/geary-controller.vala:386
 msgid "_Quit"
 msgstr "_Lopeta"
 
@@ -449,6 +452,7 @@ msgstr "_Lopeta"
 #: ../src/client/application/geary-controller.vala:388
 #: ../src/client/application/geary-controller.vala:383
 #: ../src/client/application/geary-controller.vala:389
+#: ../src/client/application/geary-controller.vala:392
 msgid "_Mark as..."
 msgstr "_Merkitse..."
 
@@ -457,6 +461,7 @@ msgstr "_Merkitse..."
 #: ../src/client/application/geary-controller.vala:394
 #: ../src/client/application/geary-controller.vala:389
 #: ../src/client/application/geary-controller.vala:395
+#: ../src/client/application/geary-controller.vala:398
 msgid "Mark as _Read"
 msgstr "Merkitse _luetuksi"
 
@@ -465,6 +470,7 @@ msgstr "Merkitse _luetuksi"
 #: ../src/client/application/geary-controller.vala:400
 #: ../src/client/application/geary-controller.vala:395
 #: ../src/client/application/geary-controller.vala:401
+#: ../src/client/application/geary-controller.vala:403
 msgid "Mark as _Unread"
 msgstr "Merkitse l_ukemattomaksi"
 
@@ -473,6 +479,7 @@ msgstr "Merkitse l_ukemattomaksi"
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:401
 #: ../src/client/application/geary-controller.vala:407
+#: ../src/client/application/geary-controller.vala:408
 msgid "_Star"
 msgstr "_Merkitse tähdellä"
 
@@ -481,6 +488,7 @@ msgstr "_Merkitse tähdellä"
 #: ../src/client/application/geary-controller.vala:411
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:412
+#: ../src/client/application/geary-controller.vala:413
 msgid "U_nstar"
 msgstr "_Poista tähti"
 
@@ -489,6 +497,7 @@ msgstr "_Poista tähti"
 #: ../src/client/application/geary-controller.vala:421
 #: ../src/client/application/geary-controller.vala:416
 #: ../src/client/application/geary-controller.vala:422
+#: ../src/client/application/geary-controller.vala:423
 msgid "Add label"
 msgstr "Lisää tunniste"
 
@@ -497,6 +506,7 @@ msgstr "Lisää tunniste"
 #: ../src/client/application/geary-controller.vala:422
 #: ../src/client/application/geary-controller.vala:417
 #: ../src/client/application/geary-controller.vala:423
+#: ../src/client/application/geary-controller.vala:424
 msgid "_Label"
 msgstr "_Tunniste"
 
@@ -505,6 +515,7 @@ msgstr "_Tunniste"
 #: ../src/client/application/geary-controller.vala:426
 #: ../src/client/application/geary-controller.vala:421
 #: ../src/client/application/geary-controller.vala:427
+#: ../src/client/application/geary-controller.vala:428
 msgid "_Move"
 msgstr "_Siirrä"
 
@@ -2117,6 +2128,7 @@ msgstr "Etsi hakusanoilla kaikista tilin sähköpostiviesteistä (Ctrl+S)"
 #: ../src/client/components/main-toolbar.vala:262
 #: ../src/client/components/main-toolbar.vala:259
 #: ../src/client/components/main-toolbar.vala:277
+#: ../src/client/components/main-toolbar.vala:278
 msgid "Indexing %s account"
 msgstr "Indeksoidaan tiliä %s"
 
@@ -2129,6 +2141,7 @@ msgstr "Indeksoidaan tiliä %s"
 #: ../src/client/components/main-toolbar.vala:150
 #: ../src/client/components/main-toolbar.vala:160
 #: ../src/client/components/main-toolbar.vala:168
+#: ../src/client/components/main-toolbar.vala:169
 msgid "Menu"
 msgstr "Valikko"
 
@@ -2160,6 +2173,7 @@ msgstr "Lisää valintoja"
 #: ../src/client/components/main-toolbar.vala:274
 #: ../src/client/components/main-toolbar.vala:271
 #: ../src/client/components/main-toolbar.vala:289
+#: ../src/client/components/main-toolbar.vala:290
 msgid "Search %s"
 msgstr "Etsi %s"
 
@@ -3131,4 +3145,16 @@ msgstr ", "
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
+msgstr ""
+
+#: ../src/client/composer/ComposerToolbar.vala:51
+msgid "Strikethrough (Ctrl+%)"
+msgstr ""
+
+#: ../src/client/composer/ComposerToolbar.vala:77
+msgid "Link (Ctrl+K)"
+msgstr ""
+
+#: ../src/client/components/main-toolbar.vala:117
+msgid "Forward (Ctrl+Shift+F)"
 msgstr ""

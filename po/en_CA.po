@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
-"POT-Creation-Date: 2016-08-02 20:42-0500\n"
+"POT-Creation-Date: 2016-08-25 14:51-0700\n"
 "PO-Revision-Date: 2016-05-08 15:16+0000\n"
 "Last-Translator: Giovanni Caligaris <giovannicaligaris@gmail.com>\n"
 "Language-Team: English (Canada) "
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-08-04 05:51+0000\n"
-"X-Generator: Launchpad (build 18169)\n"
+"X-Launchpad-Export-Date: 2016-08-26 06:15+0000\n"
+"X-Generator: Launchpad (build 18179)\n"
 "Language: en_CA\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -336,6 +336,7 @@ msgstr "Mark as not S_pam"
 #: ../src/client/application/geary-controller.vala:2702
 #: ../src/client/application/geary-controller.vala:387
 #: ../src/client/application/geary-controller.vala:2714
+#: ../src/client/application/geary-controller.vala:390
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
 msgstr[0] ""
@@ -415,6 +416,7 @@ msgstr "A_ccounts"
 #: ../src/client/components/stock.vala:26
 #: ../src/client/application/geary-controller.vala:374
 #: ../src/client/application/geary-controller.vala:380
+#: ../src/client/application/geary-controller.vala:381
 msgid "_Preferences"
 msgstr "_Preferences"
 
@@ -438,6 +440,7 @@ msgstr "_About"
 #: ../src/client/components/stock.vala:28
 #: ../src/client/application/geary-controller.vala:378
 #: ../src/client/application/geary-controller.vala:384
+#: ../src/client/application/geary-controller.vala:386
 msgid "_Quit"
 msgstr "_Quit"
 
@@ -446,6 +449,7 @@ msgstr "_Quit"
 #: ../src/client/application/geary-controller.vala:388
 #: ../src/client/application/geary-controller.vala:383
 #: ../src/client/application/geary-controller.vala:389
+#: ../src/client/application/geary-controller.vala:392
 msgid "_Mark as..."
 msgstr "_Mark as..."
 
@@ -454,6 +458,7 @@ msgstr "_Mark as..."
 #: ../src/client/application/geary-controller.vala:394
 #: ../src/client/application/geary-controller.vala:389
 #: ../src/client/application/geary-controller.vala:395
+#: ../src/client/application/geary-controller.vala:398
 msgid "Mark as _Read"
 msgstr "Mark as _Read"
 
@@ -462,6 +467,7 @@ msgstr "Mark as _Read"
 #: ../src/client/application/geary-controller.vala:400
 #: ../src/client/application/geary-controller.vala:395
 #: ../src/client/application/geary-controller.vala:401
+#: ../src/client/application/geary-controller.vala:403
 msgid "Mark as _Unread"
 msgstr "Mark as _Unread"
 
@@ -470,6 +476,7 @@ msgstr "Mark as _Unread"
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:401
 #: ../src/client/application/geary-controller.vala:407
+#: ../src/client/application/geary-controller.vala:408
 msgid "_Star"
 msgstr "_Star"
 
@@ -478,6 +485,7 @@ msgstr "_Star"
 #: ../src/client/application/geary-controller.vala:411
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:412
+#: ../src/client/application/geary-controller.vala:413
 msgid "U_nstar"
 msgstr "U_nstar"
 
@@ -486,6 +494,7 @@ msgstr "U_nstar"
 #: ../src/client/application/geary-controller.vala:421
 #: ../src/client/application/geary-controller.vala:416
 #: ../src/client/application/geary-controller.vala:422
+#: ../src/client/application/geary-controller.vala:423
 msgid "Add label"
 msgstr "Add label"
 
@@ -494,6 +503,7 @@ msgstr "Add label"
 #: ../src/client/application/geary-controller.vala:422
 #: ../src/client/application/geary-controller.vala:417
 #: ../src/client/application/geary-controller.vala:423
+#: ../src/client/application/geary-controller.vala:424
 msgid "_Label"
 msgstr "_Label"
 
@@ -502,6 +512,7 @@ msgstr "_Label"
 #: ../src/client/application/geary-controller.vala:426
 #: ../src/client/application/geary-controller.vala:421
 #: ../src/client/application/geary-controller.vala:427
+#: ../src/client/application/geary-controller.vala:428
 msgid "_Move"
 msgstr "_Move"
 
@@ -2102,6 +2113,7 @@ msgstr "Search all mail in account for keywords (Ctrl+S)"
 #: ../src/client/components/main-toolbar.vala:262
 #: ../src/client/components/main-toolbar.vala:259
 #: ../src/client/components/main-toolbar.vala:277
+#: ../src/client/components/main-toolbar.vala:278
 msgid "Indexing %s account"
 msgstr "Indexing %s account"
 
@@ -2114,6 +2126,7 @@ msgstr "Indexing %s account"
 #: ../src/client/components/main-toolbar.vala:150
 #: ../src/client/components/main-toolbar.vala:160
 #: ../src/client/components/main-toolbar.vala:168
+#: ../src/client/components/main-toolbar.vala:169
 msgid "Menu"
 msgstr "Menu"
 
@@ -2145,6 +2158,7 @@ msgstr "More options"
 #: ../src/client/components/main-toolbar.vala:274
 #: ../src/client/components/main-toolbar.vala:271
 #: ../src/client/components/main-toolbar.vala:289
+#: ../src/client/components/main-toolbar.vala:290
 msgid "Search %s"
 msgstr ""
 
@@ -3088,4 +3102,16 @@ msgstr ""
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
+msgstr ""
+
+#: ../src/client/composer/ComposerToolbar.vala:51
+msgid "Strikethrough (Ctrl+%)"
+msgstr ""
+
+#: ../src/client/composer/ComposerToolbar.vala:77
+msgid "Link (Ctrl+K)"
+msgstr ""
+
+#: ../src/client/components/main-toolbar.vala:117
+msgid "Forward (Ctrl+Shift+F)"
 msgstr ""

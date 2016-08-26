@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-08-02 20:42-0500\n"
+"POT-Creation-Date: 2016-08-25 14:51-0700\n"
 "PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
@@ -19,8 +19,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-08-04 05:51+0000\n"
-"X-Generator: Launchpad (build 18169)\n"
+"X-Launchpad-Export-Date: 2016-08-26 06:15+0000\n"
+"X-Generator: Launchpad (build 18179)\n"
 "X-Project-Style: gnome\n"
 "Language: sr\n"
 
@@ -341,6 +341,7 @@ msgstr "Označi da nije _nepoželjno"
 #: ../src/client/application/geary-controller.vala:2702
 #: ../src/client/application/geary-controller.vala:387
 #: ../src/client/application/geary-controller.vala:2714
+#: ../src/client/application/geary-controller.vala:390
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
 msgstr[0] ""
@@ -420,6 +421,7 @@ msgstr "_Nalozi"
 #: ../src/client/components/stock.vala:26
 #: ../src/client/application/geary-controller.vala:374
 #: ../src/client/application/geary-controller.vala:380
+#: ../src/client/application/geary-controller.vala:381
 msgid "_Preferences"
 msgstr "_Postavke"
 
@@ -443,6 +445,7 @@ msgstr "_O programu"
 #: ../src/client/components/stock.vala:28
 #: ../src/client/application/geary-controller.vala:378
 #: ../src/client/application/geary-controller.vala:384
+#: ../src/client/application/geary-controller.vala:386
 msgid "_Quit"
 msgstr "_Izađi"
 
@@ -451,6 +454,7 @@ msgstr "_Izađi"
 #: ../src/client/application/geary-controller.vala:388
 #: ../src/client/application/geary-controller.vala:383
 #: ../src/client/application/geary-controller.vala:389
+#: ../src/client/application/geary-controller.vala:392
 msgid "_Mark as..."
 msgstr "_Označi kao..."
 
@@ -459,6 +463,7 @@ msgstr "_Označi kao..."
 #: ../src/client/application/geary-controller.vala:394
 #: ../src/client/application/geary-controller.vala:389
 #: ../src/client/application/geary-controller.vala:395
+#: ../src/client/application/geary-controller.vala:398
 msgid "Mark as _Read"
 msgstr "Označi kao _pročitano"
 
@@ -467,6 +472,7 @@ msgstr "Označi kao _pročitano"
 #: ../src/client/application/geary-controller.vala:400
 #: ../src/client/application/geary-controller.vala:395
 #: ../src/client/application/geary-controller.vala:401
+#: ../src/client/application/geary-controller.vala:403
 msgid "Mark as _Unread"
 msgstr "Označi kao _nepročitano"
 
@@ -475,6 +481,7 @@ msgstr "Označi kao _nepročitano"
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:401
 #: ../src/client/application/geary-controller.vala:407
+#: ../src/client/application/geary-controller.vala:408
 msgid "_Star"
 msgstr "_Dodaj zvezdicu"
 
@@ -483,6 +490,7 @@ msgstr "_Dodaj zvezdicu"
 #: ../src/client/application/geary-controller.vala:411
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:412
+#: ../src/client/application/geary-controller.vala:413
 msgid "U_nstar"
 msgstr "_Ukloni zvezdicu"
 
@@ -491,6 +499,7 @@ msgstr "_Ukloni zvezdicu"
 #: ../src/client/application/geary-controller.vala:421
 #: ../src/client/application/geary-controller.vala:416
 #: ../src/client/application/geary-controller.vala:422
+#: ../src/client/application/geary-controller.vala:423
 msgid "Add label"
 msgstr "Dodajte natpis"
 
@@ -499,6 +508,7 @@ msgstr "Dodajte natpis"
 #: ../src/client/application/geary-controller.vala:422
 #: ../src/client/application/geary-controller.vala:417
 #: ../src/client/application/geary-controller.vala:423
+#: ../src/client/application/geary-controller.vala:424
 msgid "_Label"
 msgstr "_Natpis"
 
@@ -507,6 +517,7 @@ msgstr "_Natpis"
 #: ../src/client/application/geary-controller.vala:426
 #: ../src/client/application/geary-controller.vala:421
 #: ../src/client/application/geary-controller.vala:427
+#: ../src/client/application/geary-controller.vala:428
 msgid "_Move"
 msgstr "_Premesti"
 
@@ -2126,6 +2137,7 @@ msgstr "Potražite ključne reči u svim porukama u nalogu (Ktrl+S)"
 #: ../src/client/components/main-toolbar.vala:262
 #: ../src/client/components/main-toolbar.vala:259
 #: ../src/client/components/main-toolbar.vala:277
+#: ../src/client/components/main-toolbar.vala:278
 msgid "Indexing %s account"
 msgstr "Popisujem nalog „%s“"
 
@@ -2138,6 +2150,7 @@ msgstr "Popisujem nalog „%s“"
 #: ../src/client/components/main-toolbar.vala:150
 #: ../src/client/components/main-toolbar.vala:160
 #: ../src/client/components/main-toolbar.vala:168
+#: ../src/client/components/main-toolbar.vala:169
 msgid "Menu"
 msgstr ""
 
@@ -2169,6 +2182,7 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:274
 #: ../src/client/components/main-toolbar.vala:271
 #: ../src/client/components/main-toolbar.vala:289
+#: ../src/client/components/main-toolbar.vala:290
 msgid "Search %s"
 msgstr ""
 
@@ -3112,4 +3126,16 @@ msgstr ""
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
+msgstr ""
+
+#: ../src/client/composer/ComposerToolbar.vala:51
+msgid "Strikethrough (Ctrl+%)"
+msgstr ""
+
+#: ../src/client/composer/ComposerToolbar.vala:77
+msgid "Link (Ctrl+K)"
+msgstr ""
+
+#: ../src/client/components/main-toolbar.vala:117
+msgid "Forward (Ctrl+Shift+F)"
 msgstr ""

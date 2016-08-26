@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-08-02 20:42-0500\n"
+"POT-Creation-Date: 2016-08-25 14:51-0700\n"
 "PO-Revision-Date: 2016-08-11 16:46+0000\n"
 "Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
@@ -26,8 +26,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-08-12 06:23+0000\n"
-"X-Generator: Launchpad (build 18169)\n"
+"X-Launchpad-Export-Date: 2016-08-26 06:14+0000\n"
+"X-Generator: Launchpad (build 18179)\n"
 "Language: ru\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -346,6 +346,7 @@ msgstr "Отметить как _не Спам"
 #: ../src/client/application/geary-controller.vala:2702
 #: ../src/client/application/geary-controller.vala:387
 #: ../src/client/application/geary-controller.vala:2714
+#: ../src/client/application/geary-controller.vala:390
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
 msgstr[0] "Отметить беседу"
@@ -428,6 +429,7 @@ msgstr "_Учётные записи"
 #: ../src/client/components/stock.vala:26
 #: ../src/client/application/geary-controller.vala:374
 #: ../src/client/application/geary-controller.vala:380
+#: ../src/client/application/geary-controller.vala:381
 msgid "_Preferences"
 msgstr "_Параметры"
 
@@ -451,6 +453,7 @@ msgstr "_О приложении"
 #: ../src/client/components/stock.vala:28
 #: ../src/client/application/geary-controller.vala:378
 #: ../src/client/application/geary-controller.vala:384
+#: ../src/client/application/geary-controller.vala:386
 msgid "_Quit"
 msgstr "В_ыйти"
 
@@ -459,6 +462,7 @@ msgstr "В_ыйти"
 #: ../src/client/application/geary-controller.vala:388
 #: ../src/client/application/geary-controller.vala:383
 #: ../src/client/application/geary-controller.vala:389
+#: ../src/client/application/geary-controller.vala:392
 msgid "_Mark as..."
 msgstr "_Отметить как…"
 
@@ -467,6 +471,7 @@ msgstr "_Отметить как…"
 #: ../src/client/application/geary-controller.vala:394
 #: ../src/client/application/geary-controller.vala:389
 #: ../src/client/application/geary-controller.vala:395
+#: ../src/client/application/geary-controller.vala:398
 msgid "Mark as _Read"
 msgstr "Отметить как _Прочитанное"
 
@@ -475,6 +480,7 @@ msgstr "Отметить как _Прочитанное"
 #: ../src/client/application/geary-controller.vala:400
 #: ../src/client/application/geary-controller.vala:395
 #: ../src/client/application/geary-controller.vala:401
+#: ../src/client/application/geary-controller.vala:403
 msgid "Mark as _Unread"
 msgstr "Отметить как _Непрочитанное"
 
@@ -483,6 +489,7 @@ msgstr "Отметить как _Непрочитанное"
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:401
 #: ../src/client/application/geary-controller.vala:407
+#: ../src/client/application/geary-controller.vala:408
 msgid "_Star"
 msgstr "_Добавить в избранное"
 
@@ -491,6 +498,7 @@ msgstr "_Добавить в избранное"
 #: ../src/client/application/geary-controller.vala:411
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:412
+#: ../src/client/application/geary-controller.vala:413
 msgid "U_nstar"
 msgstr "_Убрать из избранных"
 
@@ -499,6 +507,7 @@ msgstr "_Убрать из избранных"
 #: ../src/client/application/geary-controller.vala:421
 #: ../src/client/application/geary-controller.vala:416
 #: ../src/client/application/geary-controller.vala:422
+#: ../src/client/application/geary-controller.vala:423
 msgid "Add label"
 msgstr "Добавить метку"
 
@@ -507,6 +516,7 @@ msgstr "Добавить метку"
 #: ../src/client/application/geary-controller.vala:422
 #: ../src/client/application/geary-controller.vala:417
 #: ../src/client/application/geary-controller.vala:423
+#: ../src/client/application/geary-controller.vala:424
 msgid "_Label"
 msgstr "_Метка"
 
@@ -515,6 +525,7 @@ msgstr "_Метка"
 #: ../src/client/application/geary-controller.vala:426
 #: ../src/client/application/geary-controller.vala:421
 #: ../src/client/application/geary-controller.vala:427
+#: ../src/client/application/geary-controller.vala:428
 msgid "_Move"
 msgstr "_Переместить"
 
@@ -2135,6 +2146,7 @@ msgstr "Поиск по всей почте учётной записи по к�
 #: ../src/client/components/main-toolbar.vala:262
 #: ../src/client/components/main-toolbar.vala:259
 #: ../src/client/components/main-toolbar.vala:277
+#: ../src/client/components/main-toolbar.vala:278
 msgid "Indexing %s account"
 msgstr "Индексируется учётная запись %s"
 
@@ -2147,6 +2159,7 @@ msgstr "Индексируется учётная запись %s"
 #: ../src/client/components/main-toolbar.vala:150
 #: ../src/client/components/main-toolbar.vala:160
 #: ../src/client/components/main-toolbar.vala:168
+#: ../src/client/components/main-toolbar.vala:169
 msgid "Menu"
 msgstr "Меню"
 
@@ -2178,6 +2191,7 @@ msgstr "Дополнительные параметры"
 #: ../src/client/components/main-toolbar.vala:274
 #: ../src/client/components/main-toolbar.vala:271
 #: ../src/client/components/main-toolbar.vala:289
+#: ../src/client/components/main-toolbar.vala:290
 msgid "Search %s"
 msgstr "Поиск %s"
 
@@ -3165,3 +3179,15 @@ msgstr ", "
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
 msgstr "Почта"
+
+#: ../src/client/composer/ComposerToolbar.vala:51
+msgid "Strikethrough (Ctrl+%)"
+msgstr ""
+
+#: ../src/client/composer/ComposerToolbar.vala:77
+msgid "Link (Ctrl+K)"
+msgstr ""
+
+#: ../src/client/components/main-toolbar.vala:117
+msgid "Forward (Ctrl+Shift+F)"
+msgstr ""
