@@ -12,16 +12,16 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2016-08-25 14:51-0700\n"
-"PO-Revision-Date: 2016-02-09 17:47+0000\n"
-"Last-Translator: Jim Nelson <jim@yorba.org>\n"
+"PO-Revision-Date: 2016-09-11 20:55+0000\n"
+"Last-Translator: Félix Brezo <felixbrezo@gmail.com>\n"
 "Language-Team: Esperanto "
 "(http://www.transifex.com/projects/p/geary/language/eo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-08-26 06:14+0000\n"
-"X-Generator: Launchpad (build 18179)\n"
+"X-Launchpad-Export-Date: 2016-09-12 06:20+0000\n"
+"X-Generator: Launchpad (build 18186)\n"
 "Language: eo\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -64,7 +64,7 @@ msgstr "Kun stelo"
 
 #: ../src/engine/api/geary-special-folder-type.vala:36
 msgid "Important"
-msgstr ""
+msgstr "Grava"
 
 #: ../src/engine/api/geary-special-folder-type.vala:39
 msgid "All Mail"
@@ -845,6 +845,7 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Eliovir https://launchpad.net/~eliovir\n"
+"  Félix Brezo https://launchpad.net/~febrezo\n"
 "  Jim Nelson https://launchpad.net/~yorba-jim"
 
 #: ../src/client/application/geary-controller.vala:1976
