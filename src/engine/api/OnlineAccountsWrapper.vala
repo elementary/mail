@@ -70,8 +70,16 @@ public class Geary.OnlineAccountsWrapper : GLib.Object {
 
 
         string real_name = Environment.get_real_name();
-        account_information.real_name = real_name == "Unknown" ? "" : real_name;
-        account_information.nickname = user_name;
+        var actual_real_name = account_information.real_name;
+        if (actual_real_name == null || actual_real_name == "") {
+            account_information.real_name = real_name == "Unknown" ? "" : real_name;
+        }
+
+        var actual_nickname = account_information.nickname;
+        if (actual_nickname == null || actual_nickname == "") {
+            account_information.nickname = user_name;
+        }
+
         account_information.imap_remember_password = true;
         account_information.smtp_remember_password = true;
         account_information.service_provider = Geary.ServiceProvider.OTHER;
