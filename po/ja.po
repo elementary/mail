@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2016-08-25 14:51-0700\n"
-"PO-Revision-Date: 2016-08-15 06:12+0000\n"
+"PO-Revision-Date: 2016-09-23 05:36+0000\n"
 "Last-Translator: Ryo Nakano <Unknown>\n"
 "Language-Team: Japanese (Japan) "
 "(http://www.transifex.com/projects/p/geary/language/ja_JP/)\n"
@@ -19,8 +19,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-08-26 06:14+0000\n"
-"X-Generator: Launchpad (build 18179)\n"
+"X-Launchpad-Export-Date: 2016-09-23 06:50+0000\n"
+"X-Generator: Launchpad (build 18204)\n"
 "Language: ja_JP\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -664,7 +664,7 @@ msgstr "メール送信エラー"
 msgid ""
 "Geary encountered an error sending an email.  If the problem persists, "
 "please manually delete the email from your Outbox folder."
-msgstr ""
+msgstr "メールの送信中に Geary にエラーが発生しました。もしこの問題が続く場合、送信トレイからメールを手動で削除してください。"
 
 #: ../src/client/application/geary-controller.vala:1068
 #: ../src/client/components/status-bar.vala:33
@@ -683,6 +683,7 @@ msgid ""
 "Geary encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
+"送信フォルダへの送信メールの保存中に Geary にエラーが発生しました。送信トレイからメールを削除するまで、メッセージは送信トレイに残ります。"
 
 #: ../src/client/application/geary-controller.vala:1138
 #: ../src/client/application/geary-controller.vala:1132
@@ -1114,7 +1115,7 @@ msgstr "プログラムのバージョンを表示"
 #: ../src/client/application/geary-args.vala:51
 #: ../src/client/application/geary-args.vala:53
 msgid "Use %s to open a new composer window"
-msgstr ""
+msgstr "新規作成ウィンドウを開くのに %s を使用する"
 
 #: ../src/client/application/geary-args.vala:52
 #: ../src/client/application/geary-args.vala:54
@@ -1266,7 +1267,7 @@ msgstr "アカウント"
 #. / Placeholder text indicating that the user should type their first name and last name
 #: ../src/client/accounts/add-edit-page.vala:10
 msgid "First Last"
-msgstr ""
+msgstr "姓名"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 msgid "Welcome to Geary."
@@ -2197,7 +2198,7 @@ msgstr "<span weight=\"bold\" size=\"larger\">本当にこのアカウントを�
 msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
-msgstr ""
+msgstr "このアカウントに関連付けられたすべてのメールがお使いのコンピューターから削除されます。サーバー上のメールは影響を受けません。"
 
 #: ../data/ui/remove_confirm.ui:80
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:47
@@ -2413,11 +2414,11 @@ msgstr "固定幅"
 
 #: ../data/ui/composer.ui:209 ../data/ui/composer.ui:210
 msgid "Detach"
-msgstr ""
+msgstr "切断"
 
 #: ../data/ui/composer.ui:211 ../src/client/composer/ComposerHeaderBar.vala:36
 msgid "Detach (Ctrl+D)"
-msgstr ""
+msgstr "切断 (Ctrl+D)"
 
 #: ../data/ui/composer.ui:218
 msgid "_Send"
@@ -2502,7 +2503,7 @@ msgstr "<span weight=\"bold\" size=\"larger\">アカウントを削除できま�
 msgid ""
 "A composer window associated with this account is currently open. Send or "
 "discard the message and try again."
-msgstr ""
+msgstr "現在、このアカウントに関連付けられた作成ウィンドウが開かれています。メッセージを送信するか破棄してもう一度お試しください。"
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
@@ -2693,7 +2694,7 @@ msgstr "Web サイト"
 msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
-msgstr ""
+msgstr "メールの送信中に Mail にエラーが発生しました。もしこの問題が続く場合、送信トレイからメールを手動で削除してください。"
 
 #: ../src/client/application/geary-controller.vala:1057
 #: ../src/client/application/geary-controller.vala:1051
@@ -2704,6 +2705,7 @@ msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
+"送信フォルダへの送信メールの保存中に Mail にエラーが発生しました。送信トレイからメールを削除するまで、メッセージは送信トレイに残ります。"
 
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
@@ -3083,11 +3085,11 @@ msgstr "メール"
 
 #: ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+%)"
-msgstr ""
+msgstr "削除 (Ctrl+%)"
 
 #: ../src/client/composer/ComposerToolbar.vala:77
 msgid "Link (Ctrl+K)"
-msgstr ""
+msgstr "リンク (Ctrl+K)"
 
 #: ../src/client/components/main-toolbar.vala:117
 msgid "Forward (Ctrl+Shift+F)"
