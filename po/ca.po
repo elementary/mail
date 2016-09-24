@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-25 14:51-0700\n"
-"PO-Revision-Date: 2016-09-22 11:27+0000\n"
+"PO-Revision-Date: 2016-09-23 09:05+0000\n"
 "Last-Translator: Davidmp <rbndavid@gmail.com>\n"
 "Language-Team: Catalan "
 "(http://www.transifex.com/projects/p/geary/language/ca/)\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-09-23 06:50+0000\n"
+"X-Launchpad-Export-Date: 2016-09-24 07:44+0000\n"
 "X-Generator: Launchpad (build 18204)\n"
 "Language: ca\n"
 
@@ -88,11 +88,11 @@ msgstr "Safata de sortida"
 #: ../src/client/components/search-bar.vala:10
 #: ../src/client/components/main-toolbar.vala:29
 msgid "Search"
-msgstr ""
+msgstr "Cerca"
 
 #: ../src/engine/api/geary-special-folder-type.vala:54
 msgid "Archive"
-msgstr ""
+msgstr "Arxiu"
 
 #: ../src/engine/api/geary-special-folder-type.vala:58 ../data/ui/login.ui:633
 #: ../data/ui/login.ui:650
@@ -101,11 +101,11 @@ msgstr "Cap"
 
 #: ../src/engine/api/geary-service.vala:20
 msgid "IMAP"
-msgstr ""
+msgstr "IMAP"
 
 #: ../src/engine/api/geary-service.vala:23
 msgid "SMTP"
-msgstr ""
+msgstr "SMTP"
 
 #: ../src/engine/api/geary-service-provider.vala:52
 msgid "Gmail"
@@ -117,7 +117,7 @@ msgstr "Correu del Yahoo!"
 
 #: ../src/engine/api/geary-service-provider.vala:58
 msgid "Outlook.com"
-msgstr ""
+msgstr "Outlook.com"
 
 #: ../src/engine/api/geary-service-provider.vala:61
 msgid "Other"
@@ -143,7 +143,7 @@ msgstr "bcc"
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:718
 msgid "body"
-msgstr ""
+msgstr "cos"
 
 #. / Can be typed in the search box like cc:johndoe@example.com to find
 #. / messages cc'd to a particular person.  The translated
@@ -262,11 +262,11 @@ msgstr "Esborra la conversa"
 
 #: ../src/client/application/geary-controller.vala:62
 msgid "Delete conversation (Shift+Delete)"
-msgstr ""
+msgstr "Esborra la conversa (Maj. + Supr.)"
 
 #: ../src/client/application/geary-controller.vala:63
 msgid "Delete conversations (Shift+Delete)"
-msgstr ""
+msgstr "Esborra les converses (Maj. + Supr.)"
 
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
@@ -282,7 +282,7 @@ msgstr[1] "Desplaça les converses a la paperera (Supr., Retrocés)"
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 msgid "Move conversations to Trash (Delete, Backspace)"
-msgstr ""
+msgstr "Desplaça les converses a la paperera (Supr., Retrocés)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
@@ -392,8 +392,8 @@ msgstr "Afegeix una etiqueta a les converses"
 #: ../src/client/application/geary-controller.vala:2718
 msgid "Move conversation"
 msgid_plural "Move conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Desplaça la conversa"
+msgstr[1] "Desplaça les converses"
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
@@ -461,7 +461,7 @@ msgstr "_Marca com a..."
 #: ../src/client/application/geary-controller.vala:395
 #: ../src/client/application/geary-controller.vala:398
 msgid "Mark as _Read"
-msgstr ""
+msgstr "Marca com a _llegit"
 
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:405
@@ -470,7 +470,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:401
 #: ../src/client/application/geary-controller.vala:403
 msgid "Mark as _Unread"
-msgstr ""
+msgstr "Marca com a _no llegit"
 
 #: ../src/client/application/geary-controller.vala:412
 #: ../src/client/application/geary-controller.vala:411
@@ -497,7 +497,7 @@ msgstr "_No destaquis"
 #: ../src/client/application/geary-controller.vala:422
 #: ../src/client/application/geary-controller.vala:423
 msgid "Add label"
-msgstr ""
+msgstr "Afegeix una etiqueta"
 
 #: ../src/client/application/geary-controller.vala:428
 #: ../src/client/application/geary-controller.vala:427
@@ -524,7 +524,7 @@ msgstr "_Mou"
 #: ../src/client/components/main-toolbar.vala:60
 #: ../src/client/components/main-toolbar.vala:64
 msgid "Compose new message (Ctrl+N, N)"
-msgstr ""
+msgstr "Escriu un missatge nou (Ctrl+N, N)"
 
 #: ../src/client/application/geary-controller.vala:440
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1857
@@ -539,11 +539,11 @@ msgstr "_Respon"
 #: ../src/client/components/main-toolbar.vala:99
 #: ../src/client/components/main-toolbar.vala:107
 msgid "Reply (Ctrl+R, R)"
-msgstr ""
+msgstr "Respon (Ctrl+R, R)"
 
 #: ../src/client/application/geary-controller.vala:445
 msgid "R_eply All"
-msgstr ""
+msgstr "R_espon a tots"
 
 #: ../src/client/application/geary-controller.vala:446
 #: ../src/client/application/geary-controller.vala:445
@@ -552,7 +552,7 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:104
 #: ../src/client/components/main-toolbar.vala:112
 msgid "Reply all (Ctrl+Shift+R, Shift+R)"
-msgstr ""
+msgstr "Respon a tots (Ctrl+Shift+R, Shift+R)"
 
 #: ../src/client/application/geary-controller.vala:451
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1867
@@ -567,14 +567,14 @@ msgstr "_Reenvia"
 #: ../src/client/components/main-toolbar.vala:109
 #: ../src/client/components/main-toolbar.vala:117
 msgid "Forward (Ctrl+L, F)"
-msgstr ""
+msgstr "Reenvia (Ctrl+L, F)"
 
 #: ../src/client/application/geary-controller.vala:491
 #: ../src/client/application/geary-controller.vala:490
 #: ../src/client/application/geary-controller.vala:485
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty"
-msgstr ""
+msgstr "Buida"
 
 #: ../src/client/application/geary-controller.vala:492
 #: ../src/client/application/geary-controller.vala:491
@@ -583,7 +583,7 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:71
 #: ../src/client/application/geary-controller.vala:481
 msgid "Empty Spam or Trash folders"
-msgstr ""
+msgstr "Buida les carpetes de correu brossa o la paperera"
 
 #: ../src/client/application/geary-controller.vala:496
 #: ../src/client/application/geary-controller.vala:495
@@ -593,7 +593,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr ""
+msgstr "Buida el correu bro_ssa"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -2842,7 +2842,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:243
 #: ../src/client/conversation-viewer/ConversationWidget.vala:245
 msgid "Forward"
-msgstr ""
+msgstr "Reenvia"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:247
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1112
@@ -2854,7 +2854,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1155
 msgid "Mark as Unread"
-msgstr ""
+msgstr "Marca com a no llegit"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:249
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1110
@@ -2880,7 +2880,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:276
 #: ../src/client/conversation-viewer/ConversationWidget.vala:278
 msgid "View Source"
-msgstr ""
+msgstr "Mostra'n el codi font"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:317
 #: ../src/client/conversation-viewer/ConversationWidget.vala:602
@@ -2901,7 +2901,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:412
 #: ../src/client/conversation-viewer/ConversationWidget.vala:414
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "Aquest missatge conté un o més adjunts"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:425
 #: ../src/client/conversation-viewer/ConversationWidget.vala:449
@@ -2909,7 +2909,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:455
 #: ../src/client/conversation-viewer/ConversationWidget.vala:458
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "Mostra sempre el remitent"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:553
 #: ../src/client/conversation-viewer/ConversationWidget.vala:577
@@ -2941,7 +2941,7 @@ msgstr ""
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
-msgstr ""
+msgstr "Diferencia les majúscules"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
@@ -2982,7 +2982,7 @@ msgstr ""
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
 msgid "Delete draft"
-msgstr ""
+msgstr "Esborra l'esborrany"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:51
 msgid "Attach file"
@@ -2990,11 +2990,11 @@ msgstr ""
 
 #: ../src/client/composer/ComposerHeaderBar.vala:55
 msgid "Include original attachments"
-msgstr ""
+msgstr "Inclou els adjunts originals"
 
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
-msgstr ""
+msgstr "Cita el text (Ctrl+])"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:34
 msgid "Are you sure you want to open %s?"
