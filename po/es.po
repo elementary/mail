@@ -19,15 +19,15 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-08-25 14:51-0700\n"
-"PO-Revision-Date: 2016-09-14 07:39+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
+"PO-Revision-Date: 2016-09-24 19:23+0000\n"
+"Last-Translator: Mario Rodrigo <capitantrueno@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-09-15 06:25+0000\n"
-"X-Generator: Launchpad (build 18186)\n"
+"X-Launchpad-Export-Date: 2016-09-25 06:53+0000\n"
+"X-Generator: Launchpad (build 18204)\n"
 "Language: es\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -2344,15 +2344,15 @@ msgstr "_Pegar"
 
 #: ../data/ui/composer.ui:43
 msgid "_Left"
-msgstr ""
+msgstr "_Izquierda"
 
 #: ../data/ui/composer.ui:48
 msgid "_Right"
-msgstr ""
+msgstr "_Derecha"
 
 #: ../data/ui/composer.ui:53
 msgid "_Center"
-msgstr ""
+msgstr "_Centro"
 
 #: ../data/ui/composer.ui:58
 msgid "_Justify"
@@ -2364,7 +2364,7 @@ msgstr "Enlace (Ctrl+L)"
 
 #: ../data/ui/composer.ui:70 ../data/ui/composer.ui:69
 msgid "C_olor"
-msgstr ""
+msgstr "_Color"
 
 #: ../data/ui/composer.ui:81
 msgid "Quote text  (Ctrl+])"
@@ -2455,7 +2455,7 @@ msgstr ""
 
 #: ../data/ui/composer.ui:185 ../data/ui/composer.ui:167
 msgid "_Small"
-msgstr ""
+msgstr "_Pequeño"
 
 #: ../data/ui/composer.ui:186 ../data/ui/composer.ui:168
 msgid "Small"
@@ -2463,7 +2463,7 @@ msgstr "Pequeño"
 
 #: ../data/ui/composer.ui:191 ../data/ui/composer.ui:173
 msgid "S_ans Serif"
-msgstr ""
+msgstr "_Sin serifa"
 
 #: ../data/ui/composer.ui:192 ../data/ui/composer.ui:174
 msgid "Sans Serif"
@@ -2471,7 +2471,7 @@ msgstr "Sin remates"
 
 #: ../data/ui/composer.ui:197 ../data/ui/composer.ui:179
 msgid "S_erif"
-msgstr ""
+msgstr "S_erifa"
 
 #: ../data/ui/composer.ui:198 ../data/ui/composer.ui:180
 msgid "Serif"
@@ -2479,7 +2479,7 @@ msgstr "Con remates"
 
 #: ../data/ui/composer.ui:203 ../data/ui/composer.ui:185
 msgid "_Fixed Width"
-msgstr ""
+msgstr "Anchura _fija"
 
 #: ../data/ui/composer.ui:204 ../data/ui/composer.ui:186
 msgid "Fixed Width"
@@ -2583,11 +2583,11 @@ msgstr ""
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr ""
+msgstr "Dire_cciones de correo adicionales..."
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
-msgstr ""
+msgstr "_Guardar correo enviado"
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
@@ -2595,11 +2595,11 @@ msgstr "Contraseña"
 
 #: ../data/ui/login.ui:97 ../data/ui/login.ui:545
 msgid "_Password:"
-msgstr ""
+msgstr "_Contraseña"
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
-msgstr ""
+msgstr "Dirección de correo electró_nico:"
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
@@ -2607,47 +2607,47 @@ msgstr "Trabajo, Hogar, etc."
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
-msgstr ""
+msgstr "Nombre de usuar_io:"
 
 #: ../data/ui/login.ui:195
 msgid "N_ame:"
-msgstr ""
+msgstr "N_ombre:"
 
 #: ../data/ui/login.ui:211
 msgid "S_ervice:"
-msgstr ""
+msgstr "S_ervicio:"
 
 #: ../data/ui/login.ui:298
 msgid "IMAP settings"
-msgstr ""
+msgstr "Ajustes de IMAP"
 
 #: ../data/ui/login.ui:315
 msgid "Se_rver:"
-msgstr ""
+msgstr "Se_rvidor:"
 
 #: ../data/ui/login.ui:347
 msgid "P_ort"
-msgstr ""
+msgstr "P_uerto"
 
 #: ../data/ui/login.ui:409
 msgid "Ser_ver:"
-msgstr ""
+msgstr "_Servidor:"
 
 #: ../data/ui/login.ui:427
 msgid "Por_t"
-msgstr ""
+msgstr "Puer_to"
 
 #: ../data/ui/login.ui:446
 msgid "SMTP settings"
-msgstr ""
+msgstr "Ajustes de SMTP"
 
 #: ../data/ui/login.ui:462
 msgid "User_name:"
-msgstr ""
+msgstr "_Nombre de usuario:"
 
 #: ../data/ui/login.ui:480
 msgid "Pass_word:"
-msgstr ""
+msgstr "_Contraseña:"
 
 #: ../data/ui/login.ui:499
 msgid "SMTP username"
@@ -2659,7 +2659,7 @@ msgstr "Contraseña de SMTP"
 
 #: ../data/ui/login.ui:527
 msgid "_Username:"
-msgstr ""
+msgstr "Nombre de _usuario:"
 
 #: ../data/ui/login.ui:564
 msgid "IMAP username"
@@ -2671,7 +2671,7 @@ msgstr "Contraseña de IMAP"
 
 #: ../data/ui/login.ui:593
 msgid "Encr_yption:"
-msgstr ""
+msgstr "C_ifrado:"
 
 #: ../data/ui/login.ui:613
 msgid "Encrypt_ion:"
@@ -2687,11 +2687,11 @@ msgstr "STARTTLS"
 
 #: ../data/ui/login.ui:663
 msgid "No authentication re_quired"
-msgstr ""
+msgstr "No requiere autenticación"
 
 #: ../data/ui/login.ui:679
 msgid "Use IMAP cre_dentials"
-msgstr ""
+msgstr "Usar cre_denciales de IMAP"
 
 #: ../data/ui/login.ui:783
 msgid "Storage"
@@ -2703,11 +2703,11 @@ msgstr "_Descargar correo"
 
 #: ../data/ui/login.ui:867
 msgid "Save dra_fts on server"
-msgstr ""
+msgstr "Guardar _borradores en el servidor"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr ""
+msgstr "_Firmar correos electrónicos (HTML permitido):"
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
@@ -2727,7 +2727,7 @@ msgstr "Conexión no confiable"
 
 #: ../data/ui/certificate_warning_dialog.ui:29
 msgid "_Always Trust This Server"
-msgstr ""
+msgstr "_Siempre confiar en este servidor"
 
 #: ../data/ui/certificate_warning_dialog.ui:43
 msgid "_Trust This Server"
@@ -2771,6 +2771,8 @@ msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
 msgstr ""
+"Se produjo un error al enviar un correo. Si el problema persiste, borra el "
+"correo manualmente de la bandeja de salida."
 
 #: ../src/client/application/geary-controller.vala:1057
 #: ../src/client/application/geary-controller.vala:1051
@@ -2781,6 +2783,9 @@ msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
+"Se produjo un error al guardar un correo enviado en la carpeta de correos "
+"enviados. El mensaje permanecerá en la bandeja de salida hasta que este sea "
+"borrado."
 
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
@@ -2831,6 +2836,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2390
 msgid "This removes the email from Mail and your email server."
 msgstr ""
+"Esta acción elimina el correo electrónico de la aplicación y del servidor."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
@@ -2839,28 +2845,32 @@ msgstr ""
 #: ../src/client/dialogs/preferences-dialog.vala:44
 #: ../src/client/dialogs/preferences-dialog.vala:43
 msgid "Always show remote images:"
-msgstr ""
+msgstr "Mostrar siempre imágenes remotas:"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 #: ../src/client/dialogs/PasswordDialog.vala:39
 msgid "Mail requires your email password to continue"
-msgstr ""
+msgstr "Se requiere la contraseña del correo electrónico para continuar"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail not to access this "
 "server."
 msgstr ""
+"Seleccionar «No confiar en este servidor» provocará que Correo no acceda a "
+"este servidor."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Mail will not add or update this email account."
-msgstr ""
+msgstr "Correo no añadirá ni actualizará esta cuenta de correo electrónico."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail to stop accessing this "
 "account."
 msgstr ""
+"Seleccionar «No confiar en este servidor» provocará que Correo deje de "
+"acceder a este servidor."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Mail will exit if you have no other open email accounts."
@@ -2869,22 +2879,24 @@ msgstr ""
 #: ../data/ui/account_spinner.ui:41
 #: ../src/client/accounts/account-spinner-page.vala:22
 msgid "Please wait while Mail validates your account."
-msgstr ""
+msgstr "Espere mientras Correo valida tu cuenta."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr ""
+msgstr "Actualización de Correo en curso..."
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
 msgid "Search Mail"
-msgstr ""
+msgstr "Buscar correo"
 
 #: ../src/client/application/geary-application.vala:18
 msgid ""
 "2011-2015 Yorba Foundation\n"
 "© 2016 elementary LLC."
 msgstr ""
+"2011-2015 Fundación Yorba\n"
+"© 2016 elementary LLC."
 
 #: ../src/client/application/geary-args.vala:10
 msgid "Show About dialog"
@@ -2902,28 +2914,28 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr ""
+msgstr "Guardar todos los adjuntos"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
 #: ../src/client/conversation-viewer/ConversationWidget.vala:241
 #: ../src/client/conversation-viewer/ConversationWidget.vala:243
 msgid "Reply"
-msgstr ""
+msgstr "Responder"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:239
 #: ../src/client/conversation-viewer/ConversationWidget.vala:242
 #: ../src/client/conversation-viewer/ConversationWidget.vala:244
 msgid "Reply to All"
-msgstr ""
+msgstr "Responder a todos"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:231
 #: ../src/client/conversation-viewer/ConversationWidget.vala:240
 #: ../src/client/conversation-viewer/ConversationWidget.vala:243
 #: ../src/client/conversation-viewer/ConversationWidget.vala:245
 msgid "Forward"
-msgstr ""
+msgstr "Reenviar"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:247
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1112
@@ -2935,7 +2947,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1155
 msgid "Mark as Unread"
-msgstr ""
+msgstr "Marcar como no leído"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:249
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1110
@@ -2947,21 +2959,21 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:274
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1153
 msgid "Mark as Read"
-msgstr ""
+msgstr "Marcar como leído"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:252
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:275
 #: ../src/client/conversation-viewer/ConversationWidget.vala:277
 msgid "Print…"
-msgstr ""
+msgstr "Imprimir…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
 #: ../src/client/conversation-viewer/ConversationWidget.vala:276
 #: ../src/client/conversation-viewer/ConversationWidget.vala:278
 msgid "View Source"
-msgstr ""
+msgstr "Ver código fuente"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:317
 #: ../src/client/conversation-viewer/ConversationWidget.vala:602
@@ -2974,7 +2986,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:345
 #: ../src/client/conversation-viewer/ConversationWidget.vala:638
 msgid "View message"
-msgstr ""
+msgstr "Ver mensaje"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:386
 #: ../src/client/conversation-viewer/ConversationWidget.vala:406
@@ -2982,7 +2994,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:412
 #: ../src/client/conversation-viewer/ConversationWidget.vala:414
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "Este mensaje contiene uno o más adjuntos"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:425
 #: ../src/client/conversation-viewer/ConversationWidget.vala:449
@@ -2990,7 +3002,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:455
 #: ../src/client/conversation-viewer/ConversationWidget.vala:458
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "Mostrar siempre el remitente"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:553
 #: ../src/client/conversation-viewer/ConversationWidget.vala:577
@@ -2998,7 +3010,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:584
 #: ../src/client/conversation-viewer/ConversationWidget.vala:587
 msgid "Compose New Message"
-msgstr ""
+msgstr "Redactar un mensaje nuevo"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:554
 #: ../src/client/conversation-viewer/ConversationWidget.vala:578
@@ -3006,7 +3018,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:585
 #: ../src/client/conversation-viewer/ConversationWidget.vala:588
 msgid "Copy Email Address"
-msgstr ""
+msgstr "Copiar dirección de correo"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:615
 #: ../src/client/conversation-viewer/ConversationWidget.vala:639
@@ -3014,27 +3026,27 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:648
 #: ../src/client/conversation-viewer/ConversationWidget.vala:651
 msgid "Hide message"
-msgstr ""
+msgstr "Ocultar mensaje"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr ""
+msgstr "Guardar como…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
-msgstr ""
+msgstr "Distinguir mayúsculas y minúsculas"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
 msgid_plural "%u matches"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u ocurrencia"
+msgstr[1] "%u ocurrencias"
 
 #. / TRANSLATORS: please copy the original string and append all local parts of "no reply" email addresses
 #. / (that is the part before the '@') that exist in your language (separated with a semicolon)
 #: ../src/engine/rfc822/rfc822-mailbox-address.vala:170
 msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
-msgstr ""
+msgstr "no-responder;no_responder;noresponder"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:410
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
@@ -3045,47 +3057,49 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:418
 #: ../src/client/conversation-viewer/ConversationWidget.vala:431
 msgid "Star message"
-msgstr ""
+msgstr "Marcar mensaje como importante"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:420
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
 #: ../src/client/conversation-viewer/ConversationWidget.vala:426
 #: ../src/client/conversation-viewer/ConversationWidget.vala:428
 msgid "Unstar message"
-msgstr ""
+msgstr "Desmarcar mensaje como importante"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:430
 #: ../src/client/conversation-viewer/ConversationWidget.vala:433
 #: ../src/client/conversation-viewer/ConversationWidget.vala:436
 #: ../src/client/conversation-viewer/ConversationWidget.vala:438
 msgid "More"
-msgstr ""
+msgstr "Más"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
 msgid "Delete draft"
-msgstr ""
+msgstr "Eliminar borrador"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:51
 msgid "Attach file"
-msgstr ""
+msgstr "Adjuntar archivo"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:55
 msgid "Include original attachments"
-msgstr ""
+msgstr "Incluir adjuntos originales"
 
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
-msgstr ""
+msgstr "Citar texto (Ctrl+])"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:34
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "¿Estás seguro de que quieres abrir %s?"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:40
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"Los adjuntos pueden causar errores en tu equipo al ser abiertos. Abre "
+"solamente archivos de fuentes confiables."
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:45
 msgid "Don't ask me again"
