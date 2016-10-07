@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2013-2015 Yorba Foundation <geary@yorba.org> 
-     Copyright 2015 elementary, LLC <contact@elementary.io> -->
+     Copyright 2015-2016 elementary, LLC <contact@elementary.io> -->
 <component type="desktop">
     <id>org.pantheon.mail.desktop</id>
     <metadata_license>CC0-1.0</metadata_license>
@@ -27,6 +27,30 @@
     <provides>
         <binary>pantheon-mail</binary>
     </provides>
+    <releases>
+      <release version="1.0.3" date="" urgency="medium">
+        <description>
+          <ul>
+            <_li>Appstream: add releases info</_li>
+            <_li>Translation updates</_li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.2" date="2016-09-15" urgency="medium">
+        <description>
+          <ul>
+            <_li>Don't overwrite custom settings not available in the POA plugin</_li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.1" date="2016-09-01" urgency="medium">
+        <description>
+          <ul>
+            <_li>Release for Loki</_li>
+          </ul>
+        </description>
+      </release>
+    </releases>
     <developer_name>elementary LLC.</developer_name>
     <url type="homepage">https://elementary.io/</url>
     <url type="bugtracker">https://bugs.launchpad.net/pantheon-mail</url>
