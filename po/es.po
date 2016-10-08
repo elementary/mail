@@ -19,15 +19,15 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-08-25 14:51-0700\n"
-"PO-Revision-Date: 2016-09-24 19:23+0000\n"
-"Last-Translator: Mario Rodrigo <capitantrueno@gmail.com>\n"
+"PO-Revision-Date: 2016-10-07 19:24+0000\n"
+"Last-Translator: Javier Antonio Nisa Avila <Unknown>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-09-25 06:53+0000\n"
-"X-Generator: Launchpad (build 18204)\n"
+"X-Launchpad-Export-Date: 2016-10-08 06:55+0000\n"
+"X-Generator: Launchpad (build 18227)\n"
 "Language: es\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -898,7 +898,9 @@ msgstr ""
 "  Dario https://launchpad.net/~ddelvas\n"
 "  Félix Brezo https://launchpad.net/~febrezo\n"
 "  Haggen https://launchpad.net/~h2gn\n"
+"  Javier Antonio Nisa Avila https://launchpad.net/~javiernisa\n"
 "  Jesus Delgado https://launchpad.net/~talpio\n"
+"  Joe https://launchpad.net/~cool-montes-u\n"
 "  Marc https://launchpad.net/~noviluni\n"
 "  Mario Rodrigo https://launchpad.net/~capitantrueno\n"
 "  elementary Apps team https://launchpad.net/~elementary-apps"
@@ -2381,7 +2383,7 @@ msgstr "Eliminar formato (Ctrl+Barra espaciadora)"
 #: ../data/ui/composer.ui:100 ../data/ui/composer.ui:97
 msgctxt "Clipboard paste with rich text"
 msgid "Paste _With Formatting"
-msgstr ""
+msgstr "Pegar _con formato"
 
 #: ../data/ui/composer.ui:111 ../src/client/composer/ComposerToolbar.vala:36
 msgid "Bold (Ctrl+B)"
@@ -2439,7 +2441,7 @@ msgstr "Cerrar y descartar"
 
 #: ../data/ui/composer.ui:173 ../data/ui/composer.ui:155
 msgid "Lar_ge"
-msgstr ""
+msgstr "_Grande"
 
 #: ../data/ui/composer.ui:174 ../data/ui/composer.ui:156
 msgid "Large"
@@ -2447,11 +2449,11 @@ msgstr "Grande"
 
 #: ../data/ui/composer.ui:179 ../data/ui/composer.ui:161
 msgid "_Medium"
-msgstr ""
+msgstr "_Mediano"
 
 #: ../data/ui/composer.ui:180 ../data/ui/composer.ui:162
 msgid "Medium"
-msgstr ""
+msgstr "Mediano"
 
 #: ../data/ui/composer.ui:185 ../data/ui/composer.ui:167
 msgid "_Small"
@@ -2803,6 +2805,18 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
+"Se ha detectado un error abriendo la base de datos asociada a esa cuenta de "
+"correo electrónico. El posible error puede venir por un archivo corrupto en "
+"el directorio de la base de datos:\n"
+"\n"
+"%s\n"
+"\n"
+"Mail puede reconstruir la base de datos y volver a sincronizarse con el "
+"servidor o salir.\n"
+"\n"
+"Reconstruir la base de datos destruirá todos los correos electrónicos "
+"locales y sus adjuntos. <b>Los correos electrónicos existentes en su "
+"servidor no se verán afectados<b>"
 
 #: ../src/client/application/geary-controller.vala:1184
 #: ../src/client/application/geary-controller.vala:1178
@@ -2816,6 +2830,11 @@ msgid ""
 "\n"
 "Please install the latest version of Mail and try again."
 msgstr ""
+"El número de versión de la base de datos local se ha formateado para una "
+"nueva versión de Mail. Desafortunadamente, la base de datos no puede ser "
+"actualizada.\n"
+"\n"
+"Instala la última versión actualizada de Mail y pruebe de nuevo."
 
 #: ../src/client/application/geary-controller.vala:1195
 #: ../src/client/application/geary-controller.vala:1189
@@ -2828,6 +2847,10 @@ msgid ""
 "\n"
 "Please check your network connection and restart Mail."
 msgstr ""
+"Ha sucedido un error al abrir la cuenta. Es probable que existan errores de "
+"conectividad.\n"
+"\n"
+"Comprueba tu acceso a internet y reinicia Mail."
 
 #: ../src/client/application/geary-controller.vala:2402
 #: ../src/client/application/geary-controller.vala:2404
