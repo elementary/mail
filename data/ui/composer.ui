@@ -146,6 +146,11 @@
       <accelerator key="w" modifiers="GDK_CONTROL_MASK"/>
     </child>
     <child>
+      <object class="GtkAction" id="close and save">
+        <property name="icon_name">document-save-symbolic</property>
+      </object>
+    </child>
+    <child>
       <object class="GtkAction" id="close and discard">
         <property name="icon_name">edit-delete-symbolic</property>
       </object>

@@ -233,9 +233,9 @@ public class ConversationViewer : Gtk.Stack {
     
     private void display_last_email () {
         var last_child = conversation_list_box.get_row_at_index ((int)conversation_list_box.get_children ().length () -1);
-        if (stay_down || last_child is ComposerCard) {
-                conversation_scrolled.vadjustment.value = conversation_scrolled.vadjustment.upper - last_child.get_allocated_height () - 18;
-            }
+        if (last_child != null && (stay_down || last_child is ComposerCard)) {
+            conversation_scrolled.vadjustment.value = conversation_scrolled.vadjustment.upper - last_child.get_allocated_height () - 18;
+        }
     }
 
     public void set_paned_composer(ComposerWidget composer) {
@@ -714,10 +714,14 @@ public class ConversationViewer : Gtk.Stack {
             show_find_bar();
         
         conversation_find_bar.find(forward);
-    }      
-    
-    public void mark_read () {        
+    }
+
+    public void mark_read () {
         var last_child = conversation_list_box.get_row_at_index ((int)conversation_list_box.get_children ().length () -1);
+        if (last_child == null) {
+            return;
+        }
+
         var min_value = conversation_scrolled.vadjustment.upper - conversation_scrolled.vadjustment.page_size - last_child.get_allocated_height ();
         stay_down = conversation_scrolled.vadjustment.value >= min_value;
         var start_y = (int) GLib.Math.trunc(conversation_scrolled.vadjustment.value) + READ_MARGIN;

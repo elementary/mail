@@ -30,7 +30,7 @@ public class MainToolbar : Gtk.HeaderBar {
 
     private Gtk.Box folder_header;
     private Gtk.Grid conversation_header;
-    private Gtk.Button archive_button;
+    private Gtk.Button archive;
     private Gtk.Button trash_delete;
     private Binding guest_header_binding;
     private Gtk.SearchEntry search_entry;
@@ -139,7 +139,7 @@ public class MainToolbar : Gtk.HeaderBar {
         trash_delete.tooltip_text = trash_delete.related_action.tooltip;
         trash_delete.image = new Gtk.Image.from_icon_name ("edit-delete", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
 
-        var archive = new Gtk.Button ();
+        archive = new Gtk.Button ();
         archive.related_action = GearyApplication.instance.actions.get_action (GearyController.ACTION_ARCHIVE_MESSAGE);
         archive.tooltip_text = archive.related_action.tooltip;
         archive.image = new Gtk.Image.from_icon_name ("mail-archive", Gtk.IconSize.LARGE_TOOLBAR); //FIXME: For some reason doing Button.from_icon_name doesn't work
@@ -193,12 +193,12 @@ public class MainToolbar : Gtk.HeaderBar {
     }
 
     /// Updates the trash button as trash or delete, and shows or hides the archive button.
-    public void update_trash_archive_buttons (bool trash, bool archive) {
+    public void update_trash_archive_buttons (bool trash, bool should_archive) {
         string action_name = (trash ? GearyController.ACTION_TRASH_MESSAGE : GearyController.ACTION_DELETE_MESSAGE);
 
         trash_delete.related_action = GearyApplication.instance.actions.get_action (action_name);
         trash_delete.tooltip_text = trash_delete.related_action.tooltip;
-        archive_button.visible = archive;
+        archive.visible = should_archive;
     }
 
     public void set_conversation_header (Gtk.HeaderBar header) {
