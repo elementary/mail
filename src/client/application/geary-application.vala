@@ -135,7 +135,6 @@ public class GearyApplication : Gtk.Application {
     public override void startup() {
         Configuration.init(is_installed(), GSETTINGS_DIR);
 
-        Environment.set_application_name(NAME);
         Environment.set_prgname(PRGNAME);
         International.init(GETTEXT_PACKAGE, bin);
 
