@@ -1413,7 +1413,7 @@ private class Geary.ImapEngine.MinimalFolder : Geary.Folder, Geary.FolderSupport
         Cancellable? cancellable = null) throws Error {
         check_open("mark_email_async");
         
-        MarkEmail mark = new MarkEmail(this, to_mark, flags_to_add, flags_to_remove, cancellable);
+        MarkEmail mark = new MarkEmail(this, (Gee.List<ImapDB.EmailIdentifier>) to_mark, flags_to_add, flags_to_remove, cancellable);
         replay_queue.schedule(mark);
         
         yield mark.wait_for_ready_async(cancellable);
