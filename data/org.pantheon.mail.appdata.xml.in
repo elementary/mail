@@ -28,6 +28,14 @@
         <binary>pantheon-mail</binary>
     </provides>
     <releases>
+      <release version="1.0.4" date="2016-11-24" urgency="medium">
+        <description>
+          <ul>
+            <_li>Minor bug fixes</_li>
+            <_li>Translation updates</_li>
+          </ul>
+        </description>
+      </release>
       <release version="1.0.3" date="2016-10-11" urgency="medium">
         <description>
           <ul>
