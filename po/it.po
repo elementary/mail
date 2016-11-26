@@ -20,15 +20,15 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-08-25 14:51-0700\n"
-"PO-Revision-Date: 2016-08-06 00:01+0000\n"
-"Last-Translator: Matteo Formenti <matteoformenti1998@gmail.com>\n"
+"PO-Revision-Date: 2016-11-25 22:51+0000\n"
+"Last-Translator: Fabio Zaramella <FFabio.96.X@Gmail.com>\n"
 "Language-Team: Italiano <gnome-it-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-08-26 06:14+0000\n"
-"X-Generator: Launchpad (build 18179)\n"
+"X-Launchpad-Export-Date: 2016-11-26 05:57+0000\n"
+"X-Generator: Launchpad (build 18282)\n"
 "Language: it\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -895,8 +895,10 @@ msgstr ""
 "Daniele Napolitano, Federico Bruni\n"
 "\n"
 "Launchpad Contributions:\n"
+"  Dylan Cardella https://launchpad.net/~dylan97ratchet\n"
 "  Fabio Zaramella https://launchpad.net/~fabiozaramella\n"
 "  Federico Bruni https://launchpad.net/~fede-f\n"
+"  Lysander Skanderaje https://launchpad.net/~skanderaje\n"
 "  Matteo Formenti https://launchpad.net/~matteoformenti1998\n"
 "  elementary Apps team https://launchpad.net/~elementary-apps"
 
@@ -3176,12 +3178,12 @@ msgstr "Posta"
 
 #: ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+%)"
-msgstr ""
+msgstr "Barrato (Ctrl+%)"
 
 #: ../src/client/composer/ComposerToolbar.vala:77
 msgid "Link (Ctrl+K)"
-msgstr ""
+msgstr "Indirizzo (Ctrl+K)"
 
 #: ../src/client/components/main-toolbar.vala:117
 msgid "Forward (Ctrl+Shift+F)"
-msgstr ""
+msgstr "Inoltra (Ctrl+Shift+F)"
