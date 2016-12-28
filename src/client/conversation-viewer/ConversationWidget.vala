@@ -466,10 +466,10 @@ public class ConversationWidget : Gtk.ListBoxRow {
         });
 
         webview = new StylishWebView ();
-        webview.can_focus = false;
         webview.expand = true;
         webview.hovering_over_link.connect (on_hovering_over_link);
         webview.context_menu.connect (context_menu);
+        webview.key_press_event.connect ((event) => webview_key_press_event(event));
         webview.resource_request_starting.connect (on_resource_request_starting);
         webview.navigation_policy_decision_requested.connect (on_navigation_policy_decision_requested);
         webview.new_window_policy_decision_requested.connect (on_navigation_policy_decision_requested);
@@ -615,6 +615,34 @@ public class ConversationWidget : Gtk.ListBoxRow {
             disable_display_last_email ();
         }
         return true;
+    }
+
+    /** Returns true if the code parameter matches the keycode of the keyval parameter for
+      * any keyboard group or level (in order to allow for non-QWERTY keyboards) **/
+    protected bool match_keycode (int keyval, uint code) {
+        Gdk.KeymapKey [] keys;
+        Gdk.Keymap keymap = Gdk.Keymap.get_default ();
+        if (keymap.get_entries_for_keyval (keyval, out keys)) {
+            foreach (var key in keys) {
+                if (code == key.keycode)
+                    return true;
+            }
+        }
+
+        return false;
+    }
+
+    private bool webview_key_press_event (Gdk.EventKey event) {
+        if ((event.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+            uint keycode = event.hardware_keycode;
+
+            if (match_keycode (Gdk.Key.c, keycode)) {
+                if (webview.can_copy_clipboard ()) {
+                    webview.copy_clipboard ();
+                }
+            }
+        }
+        return false;
     }
 
     private bool header_key_press_event (Gdk.EventKey event) {
