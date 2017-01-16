@@ -14,15 +14,15 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-08-25 14:51-0700\n"
-"PO-Revision-Date: 2015-11-24 15:46+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
+"PO-Revision-Date: 2017-01-15 15:04+0000\n"
+"Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: www.gnome.gr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-08-26 06:14+0000\n"
-"X-Generator: Launchpad (build 18179)\n"
+"X-Launchpad-Export-Date: 2017-01-16 06:14+0000\n"
+"X-Generator: Launchpad (build 18302)\n"
 "X-Project-Style: gnome\n"
 "Language: el\n"
 
@@ -258,7 +258,7 @@ msgstr "Πελάτης αλληλογραφίας"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "Copyright 2011-2015 Yorba Foundation"
-msgstr ""
+msgstr "Πνευματικά δικαιώματα 2011-2015 Yorba Foundation"
 
 #: ../src/client/application/geary-application.vala:21
 msgid "Visit the Yorba web site"
@@ -266,7 +266,7 @@ msgstr "Επισκεφθείτε την ιστοσελίδα του Yorba"
 
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete conversation"
-msgstr ""
+msgstr "Διαγραφή συνομιλίας"
 
 #: ../src/client/application/geary-controller.vala:62
 msgid "Delete conversation (Shift+Delete)"
@@ -283,14 +283,14 @@ msgstr "Διαγραφή συνομιλιών (Shift+Delete)"
 #: ../src/client/application/geary-controller.vala:2723
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Μετακίνηση συνομιλίας στα Απορρίματα (Delete, Backspace)"
+msgstr[1] "Μετακίνηση συνομιλιών στα Απορρίματα (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 msgid "Move conversations to Trash (Delete, Backspace)"
-msgstr ""
+msgstr "Μετακίνηση συνομιλιών στα Απορρίματα (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
@@ -304,8 +304,8 @@ msgstr "_Αρχείο"
 #: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Αρχειοθέτηση συνομιλίας (A)"
+msgstr[1] "Αρχειοθέτηση συνομιλιών (A)"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
@@ -348,8 +348,8 @@ msgstr "Σημείωση ως μη ανεπιθύ_μητα"
 #: ../src/client/application/geary-controller.vala:390
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Σήμανση συνομιλίας"
+msgstr[1] "Σήμανση συνομιλιών"
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
@@ -372,8 +372,8 @@ msgstr "Σήμανση συνομιλιών"
 #: ../src/client/application/geary-controller.vala:2716
 msgid "Add label to conversation"
 msgid_plural "Add label to conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Προσθήκη ετικέτας στη συνομιλία"
+msgstr[1] "Προσθήκη ετικέτας στις συνομιλίες"
 
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
@@ -400,8 +400,8 @@ msgstr "Προσθήκη ετικέτας στις συνομιλίες"
 #: ../src/client/application/geary-controller.vala:2718
 msgid "Move conversation"
 msgid_plural "Move conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Μετακίνηση συνομιλίας"
+msgstr[1] "Μετακίνηση συνομιλιών"
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
@@ -440,7 +440,7 @@ msgstr "_Βοήθεια"
 #: ../src/client/application/geary-controller.vala:384
 #: ../src/client/application/geary-controller.vala:379
 msgid "_About"
-msgstr "Σ_χετικά με"
+msgstr "_Περί"
 
 #: ../src/client/application/geary-controller.vala:389
 #: ../src/client/components/stock.vala:29
@@ -451,7 +451,7 @@ msgstr "Σ_χετικά με"
 #: ../src/client/application/geary-controller.vala:384
 #: ../src/client/application/geary-controller.vala:386
 msgid "_Quit"
-msgstr "Έ_ξοδος"
+msgstr "_Έξοδος"
 
 #: ../src/client/application/geary-controller.vala:394
 #: ../src/client/application/geary-controller.vala:393
@@ -469,7 +469,7 @@ msgstr "_Σήμανση ως..."
 #: ../src/client/application/geary-controller.vala:395
 #: ../src/client/application/geary-controller.vala:398
 msgid "Mark as _Read"
-msgstr "Σήμανση ως α_ναγνωσμένο"
+msgstr "Σήμανση ως  _Αναγνωσμένου"
 
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:405
@@ -478,7 +478,7 @@ msgstr "Σήμανση ως α_ναγνωσμένο"
 #: ../src/client/application/geary-controller.vala:401
 #: ../src/client/application/geary-controller.vala:403
 msgid "Mark as _Unread"
-msgstr "Σήμανση ως α_διάβαστο"
+msgstr "Σήμανση ως  _Μη αναγνωσμένου"
 
 #: ../src/client/application/geary-controller.vala:412
 #: ../src/client/application/geary-controller.vala:411
@@ -566,7 +566,7 @@ msgstr "Απάντηση σε όλους (Ctrl+Shift+R, Shift+R)"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1867
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1872
 msgid "_Forward"
-msgstr "_Μπροστά"
+msgstr "_Προώθηση"
 
 #: ../src/client/application/geary-controller.vala:452
 #: ../src/client/application/geary-controller.vala:451
@@ -591,7 +591,7 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:71
 #: ../src/client/application/geary-controller.vala:481
 msgid "Empty Spam or Trash folders"
-msgstr ""
+msgstr "Άδειασμα των φακέλων Ανεπιθύμητα ή Απορρίματα"
 
 #: ../src/client/application/geary-controller.vala:496
 #: ../src/client/application/geary-controller.vala:495
@@ -601,7 +601,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr ""
+msgstr "Άδειασμα _Ανεπιθύμητων..."
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -611,11 +611,11 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr ""
+msgstr "Άδειασμα _Απορριμάτων..."
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
-msgstr ""
+msgstr "Εναλλαγή γραμμής αναζήτησης"
 
 #: ../src/client/application/geary-controller.vala:746
 #: ../src/client/application/geary-controller.vala:740
@@ -695,7 +695,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1039
 #: ../src/client/application/geary-controller.vala:1033
 msgid "Error saving sent mail"
-msgstr "Σφάλμα κατά την αποθήκευση του μηνύματος"
+msgstr "Σφάλμα κατά την αποθήκευση του απεσταλμένου μηνύματος"
 
 #: ../src/client/application/geary-controller.vala:1069
 #: ../src/client/application/geary-controller.vala:1063
@@ -761,7 +761,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1124
 #: ../src/client/application/geary-controller.vala:1118
 msgid "_Rebuild"
-msgstr "Αναδόμη_ση"
+msgstr "_Αναδόμηση"
 
 #: ../src/client/application/geary-controller.vala:1153
 #: ../src/client/application/geary-controller.vala:1147
@@ -902,6 +902,7 @@ msgstr ""
 "http://gnome.gr/\n"
 "\n"
 "Launchpad Contributions:\n"
+"  Christos Iatropoulos https://launchpad.net/~ci4\n"
 "  Tom Tryfonidis https://launchpad.net/~thanostx\n"
 "  elementary Apps team https://launchpad.net/~elementary-apps"
 
@@ -913,7 +914,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1931
 #: ../src/client/application/geary-controller.vala:1937
 msgid "Undo move (Ctrl+Z)"
-msgstr ""
+msgstr "Αναίρεση μετακίνησης (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:1986
 #: ../src/client/application/geary-controller.vala:1980
@@ -1010,7 +1011,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2396
 #: ../src/client/application/geary-controller.vala:2391
 msgid "This cannot be undone."
-msgstr ""
+msgstr "Αυτή η ενέργεια δεν είναι αναστρέψιμη."
 
 #: ../src/client/application/geary-controller.vala:2442
 #: ../src/client/application/geary-controller.vala:2436
@@ -1020,7 +1021,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2397
 #: ../src/client/application/geary-controller.vala:2392
 msgid "Empty %s"
-msgstr ""
+msgstr "Άδειασμα %s"
 
 #: ../src/client/application/geary-controller.vala:2459
 #: ../src/client/application/geary-controller.vala:2453
@@ -1062,7 +1063,7 @@ msgstr "Διαγραφή"
 #: ../src/client/application/geary-controller.vala:2477
 #: ../src/client/application/geary-controller.vala:2472
 msgid "Undo archive (Ctrl+Z)"
-msgstr ""
+msgstr "Αναίρεση αρχειοθέτησης (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:2537
 #: ../src/client/application/geary-controller.vala:2531
@@ -1082,7 +1083,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2545
 #: ../src/client/application/geary-controller.vala:2540
 msgid "Undo (Ctrl+Z)"
-msgstr ""
+msgstr "Αναίρεση (Ctrl+Z)"
 
 #: ../src/client/application/geary-args.vala:10
 #: ../src/client/application/geary-args.vala:11
@@ -1387,12 +1388,12 @@ msgstr "Όλα"
 #: ../src/client/accounts/add-edit-page.vala:280
 #: ../src/client/accounts/add-edit-page.vala:281
 msgid "Edit"
-msgstr ""
+msgstr "Επεξεργασία"
 
 #: ../src/client/accounts/add-edit-page.vala:282
 #: ../src/client/accounts/add-edit-page.vala:283
 msgid "Preview"
-msgstr ""
+msgstr "Προεπισκόπηση"
 
 #: ../src/client/accounts/add-edit-page.vala:723
 #: ../src/client/accounts/add-edit-page.vala:725
@@ -1532,7 +1533,7 @@ msgstr[1] "πριν %dω"
 
 #: ../src/client/util/util-date.vala:178
 msgid "Yesterday"
-msgstr "Χθές"
+msgstr "Χθες"
 
 #. / Date format that shows the weekday (Monday, Tuesday, ...)
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
@@ -1782,7 +1783,7 @@ msgstr "Επιλογή _μηνύματος"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1190
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1200
 msgid "Select _All"
-msgstr "Ε_πιλογή όλων"
+msgstr "Επιλογή _όλων"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1330
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1335
@@ -1834,7 +1835,7 @@ msgstr[1] "Αποθή_κευση όλων των συνημμένων..."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1862
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1867
 msgid "Reply to _All"
-msgstr "Απάντηση σε ό_λους"
+msgstr "Απάντηση σε _όλους"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1879
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1884
@@ -2439,12 +2440,12 @@ msgstr ""
 #: ../data/ui/composer.ui:166
 msgctxt "Short Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Κλείσιμο και Απόρριψη"
 
 #: ../data/ui/composer.ui:167
 msgctxt "Tooltip"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Κλείσιμο και Απόρριψη"
 
 #: ../data/ui/composer.ui:173 ../data/ui/composer.ui:155
 msgid "Lar_ge"
@@ -2528,7 +2529,7 @@ msgstr ""
 
 #: ../data/ui/composer.ui:235 ../data/ui/composer.ui:236
 msgid "Include Original Attachments"
-msgstr ""
+msgstr "Συμπερίληψη πρωτότυπων συνημμένων"
 
 #: ../data/ui/composer.ui:242 ../data/ui/composer.ui:212
 msgid "Application Menu"
@@ -2609,7 +2610,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
-msgstr ""
+msgstr "Δουλειά, Σπίτι, κτλ."
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
@@ -2709,7 +2710,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:867
 msgid "Save dra_fts on server"
-msgstr ""
+msgstr "Αποθήκευση προχείρων στο διακομιστή"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
@@ -2729,7 +2730,7 @@ msgstr ""
 
 #: ../data/ui/certificate_warning_dialog.ui:7
 msgid "Untrusted Connection"
-msgstr ""
+msgstr "Μη αξιόπιστη σύνδεση"
 
 #: ../data/ui/certificate_warning_dialog.ui:29
 msgid "_Always Trust This Server"
@@ -2901,14 +2902,14 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
-msgstr ""
+msgstr "Αποθήκευση συνημμένου"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr ""
+msgstr "Αποθήκευση όλων των συνημμένων"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
@@ -2988,7 +2989,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:412
 #: ../src/client/conversation-viewer/ConversationWidget.vala:414
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "Αυτό το μήνυμα εμπεριέχει ένα ή περισσότερα συνημμένα"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:425
 #: ../src/client/conversation-viewer/ConversationWidget.vala:449
@@ -3020,11 +3021,11 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:648
 #: ../src/client/conversation-viewer/ConversationWidget.vala:651
 msgid "Hide message"
-msgstr ""
+msgstr "Απόκρυψη μηνύματος"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr ""
+msgstr "Αποθήκευση ως…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
@@ -3065,15 +3066,15 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:436
 #: ../src/client/conversation-viewer/ConversationWidget.vala:438
 msgid "More"
-msgstr ""
+msgstr "Περισσότερα"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
 msgid "Delete draft"
-msgstr ""
+msgstr "Διαγραφή προχείρου"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:51
 msgid "Attach file"
-msgstr ""
+msgstr "Επισύναψη αρχείου"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:55
 msgid "Include original attachments"
@@ -3085,17 +3086,19 @@ msgstr ""
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:34
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "Είστε σίγουροι ότι θέλετε να ανοίξετε το %s?"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:40
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"Τα συνημμένα αρχεία μπορεί να προκαλέσουν ζημιά στο σύστημα σας εάν "
+"ανοιχτούν. Ανοίγετε αρχεία μόνο από αξιόπιστες πηγές."
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:45
 msgid "Don't ask me again"
-msgstr ""
+msgstr "Να μην ξαναγίνει η ερώτηση"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:48
 msgid "Open Anyway"
@@ -3105,23 +3108,23 @@ msgstr ""
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:59
 #: ../src/client/dialogs/PasswordDialog.vala:96
 msgid "Cancel"
-msgstr ""
+msgstr "Άκυρο"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:36
 msgid "Are you sure you want to remove this account?"
-msgstr ""
+msgstr "Είστε σίγουροι πως θέλετε να αφαιρέσετε αυτό το λογαριασμό;"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:53
 msgid "Email Address:"
-msgstr ""
+msgstr "Διεύθυνση ηλεκτρονικής αλληλογραφίας:"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:61
 msgid "Remove Account"
-msgstr ""
+msgstr "Αφαίρεση λογαριασμού"
 
 #: ../src/client/dialogs/PasswordDialog.vala:45
 msgid "Username:"
-msgstr ""
+msgstr "Όνομα χρήστη:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:52
 msgid "Password:"
@@ -3133,7 +3136,7 @@ msgstr ""
 
 #: ../src/client/dialogs/PasswordDialog.vala:62
 msgid "Remember password"
-msgstr ""
+msgstr "Απομνημόνευση συνθηματικού"
 
 #: ../src/client/dialogs/PasswordDialog.vala:75
 msgid "Authenticate"
@@ -3147,7 +3150,7 @@ msgstr ""
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
-msgstr ""
+msgstr "Αλληλογραφία"
 
 #: ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+%)"
@@ -3159,4 +3162,4 @@ msgstr ""
 
 #: ../src/client/components/main-toolbar.vala:117
 msgid "Forward (Ctrl+Shift+F)"
-msgstr ""
+msgstr "Προώθηση (Ctrl+Shift+F)"
