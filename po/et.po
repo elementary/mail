@@ -11,16 +11,16 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2016-08-25 14:51-0700\n"
-"PO-Revision-Date: 2016-06-15 19:21+0000\n"
-"Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
+"PO-Revision-Date: 2017-01-30 16:57+0000\n"
+"Last-Translator: Karlis <Unknown>\n"
 "Language-Team: Estonian "
 "(http://www.transifex.com/projects/p/geary/language/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-08-26 06:14+0000\n"
-"X-Generator: Launchpad (build 18179)\n"
+"X-Launchpad-Export-Date: 2017-01-31 06:21+0000\n"
+"X-Generator: Launchpad (build 18315)\n"
 "Language: et\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -86,7 +86,7 @@ msgstr "Saadetud"
 #: ../src/client/components/search-bar.vala:10
 #: ../src/client/components/main-toolbar.vala:29
 msgid "Search"
-msgstr ""
+msgstr "Otsi"
 
 #: ../src/engine/api/geary-special-folder-type.vala:54
 msgid "Archive"
@@ -99,11 +99,11 @@ msgstr "Puudub"
 
 #: ../src/engine/api/geary-service.vala:20
 msgid "IMAP"
-msgstr ""
+msgstr "IMAP"
 
 #: ../src/engine/api/geary-service.vala:23
 msgid "SMTP"
-msgstr ""
+msgstr "SMTP"
 
 #: ../src/engine/api/geary-service-provider.vala:52
 msgid "Gmail"
@@ -115,7 +115,7 @@ msgstr "Yahoo! Mail"
 
 #: ../src/engine/api/geary-service-provider.vala:58
 msgid "Outlook.com"
-msgstr ""
+msgstr "outlook.com"
 
 #: ../src/engine/api/geary-service-provider.vala:61
 msgid "Other"
@@ -846,6 +846,7 @@ msgstr ""
 "\n"
 "Launchpad Contributions:\n"
 "  Jim Nelson https://launchpad.net/~yorba-jim\n"
+"  Karlis https://launchpad.net/~ksuvi\n"
 "  Kristjan Vool https://launchpad.net/~tictac7x"
 
 #: ../src/client/application/geary-controller.vala:1976
