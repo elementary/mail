@@ -20,15 +20,15 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
 "POT-Creation-Date: 2016-08-25 14:51-0700\n"
-"PO-Revision-Date: 2017-01-21 13:37+0000\n"
-"Last-Translator: Fabio Zaramella <FFabio.96.X@Gmail.com>\n"
+"PO-Revision-Date: 2017-02-01 16:29+0000\n"
+"Last-Translator: Matteo Formenti <matteoformenti1998@gmail.com>\n"
 "Language-Team: Italiano <gnome-it-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2017-01-22 05:53+0000\n"
-"X-Generator: Launchpad (build 18302)\n"
+"X-Launchpad-Export-Date: 2017-02-02 06:24+0000\n"
+"X-Generator: Launchpad (build 18315)\n"
 "Language: it\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -270,15 +270,15 @@ msgstr "Visita il sito web di Yorba"
 
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete conversation"
-msgstr "Elimina conversazione"
+msgstr "Elimina la conversazione"
 
 #: ../src/client/application/geary-controller.vala:62
 msgid "Delete conversation (Shift+Delete)"
-msgstr "Elimina conversazione (Maiusc+Canc)"
+msgstr "Elimina la conversazione (Maiusc+Canc)"
 
 #: ../src/client/application/geary-controller.vala:63
 msgid "Delete conversations (Shift+Delete)"
-msgstr "Elimina conversazioni (Maiusc+Canc)"
+msgstr "Elimina le conversazioni (Maiusc+Canc)"
 
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
@@ -287,8 +287,8 @@ msgstr "Elimina conversazioni (Maiusc+Canc)"
 #: ../src/client/application/geary-controller.vala:2723
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
-msgstr[0] "Sposta conversazione nel cestino"
-msgstr[1] "Sposta conversazioni nel cestino"
+msgstr[0] "Sposta la conversazione nel cestino"
+msgstr[1] "Sposta le conversazioni nel cestino"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
@@ -308,15 +308,15 @@ msgstr "_Archivia"
 #: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] "Archivia conversazione"
-msgstr[1] "Archivia conversazioni"
+msgstr[0] "Archivia la conversazione (A)"
+msgstr[1] "Archivia le conversazioni (A)"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
 #: ../src/client/application/geary-controller.vala:72
 #: ../src/client/application/geary-controller.vala:71
 msgid "Archive conversations (A)"
-msgstr "Archivia conversazioni (A)"
+msgstr "Archivia le conversazioni (A)"
 
 #: ../src/client/application/geary-controller.vala:77
 #: ../src/client/application/geary-controller.vala:76
@@ -352,15 +352,15 @@ msgstr "Segna come non i_ndesiderata"
 #: ../src/client/application/geary-controller.vala:390
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
-msgstr[0] "Segna conversazione"
-msgstr[1] "Segna conversazioni"
+msgstr[0] "Segna la conversazione"
+msgstr[1] "Segna le conversazioni"
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
 #: ../src/client/application/geary-controller.vala:79
 #: ../src/client/application/geary-controller.vala:78
 msgid "Mark conversations"
-msgstr "Segna conversazioni"
+msgstr "Segna le conversazioni"
 
 #: ../src/client/application/geary-controller.vala:82
 #: ../src/client/components/main-toolbar.vala:114
@@ -404,15 +404,15 @@ msgstr "Aggiungi etichetta alle conversazioni"
 #: ../src/client/application/geary-controller.vala:2718
 msgid "Move conversation"
 msgid_plural "Move conversations"
-msgstr[0] "Muovi conversazione"
-msgstr[1] "Muovi conversazioni"
+msgstr[0] "Sposta la conversazione"
+msgstr[1] "Sposta le conversazioni"
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
 msgid "Move conversations"
-msgstr "Sposta conversazioni"
+msgstr "Sposta le conversazioni"
 
 #: ../src/client/application/geary-controller.vala:372
 #: ../src/client/application/geary-controller.vala:371
@@ -605,7 +605,7 @@ msgstr "Cancella la posta indesiderata o svuota il cestino"
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr "Cancella la posta _indesiderata…"
+msgstr "Cancella la posta _indesiderata..."
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -615,7 +615,7 @@ msgstr "Cancella la posta _indesiderata…"
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr "Svuota il _cestino…"
+msgstr "Svuota il _cestino..."
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -654,8 +654,8 @@ msgid ""
 "you sure you want to do this?"
 msgstr ""
 "Nelle impostazioni IMAP o SMTP non è specificato SSL o TLS. Questo significa "
-"che nome utente e password potrebbero essere letti da altre persone sulla "
-"rete. Si è sicuri di volere ciò?"
+"che il nome utente e la password potrebbero essere letti da altre persone "
+"sulla rete. Vuoi davvero far questo?"
 
 #: ../src/client/application/geary-controller.vala:985
 #: ../src/client/application/geary-controller.vala:979
@@ -685,8 +685,8 @@ msgid ""
 "Geary encountered an error sending an email.  If the problem persists, "
 "please manually delete the email from your Outbox folder."
 msgstr ""
-"Geary ha trovato un errore durante l'invio dell'email. Se il problema "
-"persiste, eliminare manualmente l'email dalla cartella della posta in uscita."
+"Posta ha riscontrato un errore durante l'invio dell'email. Se il problema "
+"persiste, elimina manualmente l'email dalla cartella della posta in uscita."
 
 #: ../src/client/application/geary-controller.vala:1068
 #: ../src/client/components/status-bar.vala:33
@@ -705,8 +705,8 @@ msgid ""
 "Geary encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
-"Geary ha trovato un errore durante il salvataggio di un'email inviata. Il "
-"messaggio resterà nella cartella della posta in uscita finché non viene "
+"Posta ha riscontrato un errore durante il salvataggio di un'email inviata. "
+"Il messaggio resterà nella cartella della posta in uscita finché non viene "
 "eliminato."
 
 #: ../src/client/application/geary-controller.vala:1138
@@ -743,12 +743,12 @@ msgid ""
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
 "C'è stato un errore nella lettura del database della posta locale di questo "
-"account. Potrebbe essere dovuto al danneggiamento del file di database in "
-"questa directory:\n"
+"account. Ciò potrebbe essere dovuto al danneggiamento del file di database "
+"in questa directory:\n"
 "\n"
 "%s\n"
 "\n"
-"Geary può ricostruire il database e risincronizzarsi col server oppure "
+"Posta può ricostruire il database e risincronizzarsi col server oppure "
 "uscire.\n"
 "\n"
 "La ricostruzione del database eliminerà tutta la posta locale, compresi gli "
@@ -783,7 +783,7 @@ msgstr "_Esci"
 #: ../src/client/application/geary-controller.vala:1133
 #: ../src/client/application/geary-controller.vala:1127
 msgid "Unable to rebuild database for \"%s\""
-msgstr "Impossibile ricostruire il database per «%s»"
+msgstr "Impossibile ricostruire il database per \"%s\""
 
 #: ../src/client/application/geary-controller.vala:1163
 #: ../src/client/application/geary-controller.vala:1157
@@ -857,10 +857,10 @@ msgid ""
 "Please install the latest version of Geary and try again."
 msgstr ""
 "Il numero di versione del database della posta locale è formattato per una "
-"versione più recente di Geary.  Purtroppo non è possibile ripristinare il "
-"database in modo che funzioni con questa versione di Geary.\n"
+"versione più recente di Mail.  Purtroppo non è possibile ripristinare il "
+"database in modo che funzioni con questa versione di Mail.\n"
 "\n"
-"Si consiglia di installare l'ultima versione di Geary e riprovare."
+"Si consiglia di installare l'ultima versione di Posta e riprovare."
 
 #: ../src/client/application/geary-controller.vala:1207
 #: ../src/client/application/geary-controller.vala:1201
@@ -873,13 +873,13 @@ msgstr ""
 "C'è stato un errore nell'aprire l'account locale, probabilmente a causa di "
 "problemi di connettività.\n"
 "\n"
-"Controllare la connessione di rete e riavviare Geary."
+"Controllare la connessione di rete e riavviare Posta."
 
 #: ../src/client/application/geary-controller.vala:1715
 #: ../src/client/application/geary-controller.vala:1709
 #: ../src/client/application/geary-controller.vala:1677
 msgid "About %s"
-msgstr "Informazioni su %s"
+msgstr "Informazioni"
 
 #. / Translators: add your name and email address to receive credit in the About dialog
 #. / For example: Yamada Taro <yamada.taro@example.com>
@@ -918,7 +918,7 @@ msgstr "Annulla lo spostamento (Ctrl+Z)"
 #: ../src/client/application/geary-controller.vala:1950
 #: ../src/client/application/geary-controller.vala:1946
 msgid "Are you sure you want to open \"%s\"?"
-msgstr "Sicuro di voler aprire «%s»?"
+msgstr "Vuoi davvero aprire \"%s\"?"
 
 #: ../src/client/application/geary-controller.vala:1987
 #: ../src/client/application/geary-controller.vala:1981
@@ -929,7 +929,7 @@ msgid ""
 "Attachments may cause damage to your system if opened.  Only open files from "
 "trusted sources."
 msgstr ""
-"Gli allegati possono danneggiare il sistema se aperti. Aprire solo file "
+"Gli allegati possono danneggiare il sistema se aperti. Apri solo i file "
 "provenienti da fonti fidate."
 
 #: ../src/client/application/geary-controller.vala:1988
@@ -949,7 +949,7 @@ msgstr "_Non chiederlo più"
 #: ../src/client/application/geary-controller.vala:1957
 #: ../src/client/application/geary-controller.vala:1963
 msgid "A file named \"%s\" already exists.  Do you want to replace it?"
-msgstr "Il file «%s» esiste già. Sostituirlo?"
+msgstr "Il file \"%s\" esiste già. Sostituirlo?"
 
 #: ../src/client/application/geary-controller.vala:2008
 #: ../src/client/application/geary-controller.vala:2002
@@ -962,7 +962,7 @@ msgstr "Il file «%s» esiste già. Sostituirlo?"
 msgid ""
 "The file already exists in \"%s\".  Replacing it will overwrite its contents."
 msgstr ""
-"Il file esiste già in «%s».  Sostituendolo il suo contenuto sarà "
+"Il file esiste già in \"%s\".  Sostituendolo il suo contenuto sarà "
 "sovrascritto."
 
 #: ../src/client/application/geary-controller.vala:2011
@@ -996,7 +996,7 @@ msgstr "Svuotare tutti i messaggi dalla cartella %s?"
 #: ../src/client/application/geary-controller.vala:2440
 #: ../src/client/application/geary-controller.vala:2434
 msgid "This removes the email from Geary and your email server."
-msgstr "Saranno eliminati i messaggi sia da Geary sia dal server di posta."
+msgstr "Saranno eliminati i messaggi sia da Posta sia dal server di posta."
 
 #: ../src/client/application/geary-controller.vala:2441
 #: ../src/client/application/geary-controller.vala:2435
@@ -1083,12 +1083,12 @@ msgstr "Annulla (Ctrl+Z)"
 #: ../src/client/application/geary-args.vala:10
 #: ../src/client/application/geary-args.vala:11
 msgid "Start Geary with hidden main window"
-msgstr "Avvia Geary nascondendo la finestra principale"
+msgstr "Avvia Posta nascondendo la finestra principale"
 
 #: ../src/client/application/geary-args.vala:11
 #: ../src/client/application/geary-args.vala:12
 msgid "Output debugging information"
-msgstr "Emette informazioni di debug"
+msgstr "Fornisce informazioni di debug"
 
 #: ../src/client/application/geary-args.vala:12
 #: ../src/client/application/geary-args.vala:13
@@ -1153,7 +1153,7 @@ msgstr "Visualizza versione programma"
 #: ../src/client/application/geary-args.vala:51
 #: ../src/client/application/geary-args.vala:53
 msgid "Use %s to open a new composer window"
-msgstr "Usare %s per aprire una nuova finestra di composizione"
+msgstr "Usa %s per aprire una nuova finestra di composizione"
 
 #: ../src/client/application/geary-args.vala:52
 #: ../src/client/application/geary-args.vala:54
@@ -1230,33 +1230,33 @@ msgid ""
 "Selecting \"Trust This Server\" or \"Always Trust This Server\" may cause "
 "your username and password to be transmitted insecurely."
 msgstr ""
-"Scegliendo le opzioni «Fidati di questo server» o «Fidati sempre di questo "
-"server» nome utente e password potrebbero essere trasmessi in modo non "
-"sicuro."
+"Scegliendo le opzioni \"Fidati di questo server\" o \"Fidati sempre di "
+"questo server\" il nome utente e la password potrebbero essere trasmessi in "
+"modo non sicuro."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary not to access this "
 "server."
 msgstr ""
-"Scegliendo l'opzione «Non fidarti di questo server» Geary non accederà a "
+"Scegliendo l'opzione \"Non fidarti di questo server\" Posta non accederà a "
 "questo server."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Geary will not add or update this email account."
-msgstr "Geary non aggiungerà né aggiornerà questo account di posta."
+msgstr "Posta non aggiungerà né aggiornerà questo account di posta."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary to stop accessing "
 "this account."
 msgstr ""
-"Scegliendo l'opzione «Non fidarti di questo server» Geary smetterà di "
+"Scegliendo l'opzione \"Non fidarti di questo server\" Posta smetterà di "
 "accedere a questo account."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Geary will exit if you have no other open email accounts."
-msgstr "Geary verrà chiuso se non ci sono altri account di posta aperti."
+msgstr "Posta verrà chiuso se non ci sono altri account di posta aperti."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:66
 msgid ""
@@ -1269,7 +1269,7 @@ msgstr ""
 #: ../src/client/dialogs/certificate-warning-dialog.vala:73
 msgid "The server's certificate is not signed by a known authority"
 msgstr ""
-"Il certificato del server non è firmato da alcuna authority conosciuta."
+"Il certificato del server non è firmato da alcuna autorità conosciuta"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:76
 msgid "The server's identity does not match the identity in the certificate"
@@ -1320,11 +1320,11 @@ msgstr "Account"
 #. / Placeholder text indicating that the user should type their first name and last name
 #: ../src/client/accounts/add-edit-page.vala:10
 msgid "First Last"
-msgstr "Nome Cognome"
+msgstr "Nome e cognome"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 msgid "Welcome to Geary."
-msgstr "Benvenuto in Geary."
+msgstr "Benvenuto in Posta."
 
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
@@ -1404,7 +1404,7 @@ msgstr "        &#8226; Soprannome dell'account non valido.\n"
 #: ../src/client/accounts/add-edit-page.vala:769
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Geary.\n"
-msgstr "        &#8226; Indirizzo email già presente in Geary.\n"
+msgstr "        &#8226; Indirizzo email già presente in Posta.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:773
 #: ../src/client/accounts/add-edit-page.vala:775
@@ -2163,18 +2163,18 @@ msgstr "Menu"
 #: ../src/client/application/geary-application.vala:24
 #: ../src/Translations.vala:1
 msgid "Send by Email"
-msgstr "Invia per Email"
+msgstr "Invia per email"
 
 #: ../src/client/application/geary-application.vala:26
 #: ../src/client/application/geary-application.vala:25
 #: ../src/Translations.vala:2
 msgid "Send files using Mail"
-msgstr "Invia file utilizzando Mail"
+msgstr "Invia i file utilizzando Posta"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
 msgid "Welcome to Mail"
-msgstr "Benvenuto in Mail"
+msgstr "Benvenuto in Posta"
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
 #: ../src/client/composer/composer-toolbar.vala:77
@@ -2270,7 +2270,7 @@ msgid ""
 "This will not affect email on the server."
 msgstr ""
 "Tutte le email associate a questo account verranno rimosse dal computer. Ciò "
-"non influirà le email sul server."
+"non influenzerà le email sul server."
 
 #: ../data/ui/remove_confirm.ui:80
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:47
@@ -2771,7 +2771,7 @@ msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
 msgstr ""
-"Mail ha rilevato un errore durante l'invio di una email. Se il problema "
+"Posta ha rilevato un errore durante l'invio di una email. Se il problema "
 "persiste, elimina manualmente l'email dalla cartella Posta in uscita."
 
 #: ../src/client/application/geary-controller.vala:1057
@@ -2783,7 +2783,7 @@ msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
-"Mail ha rilevato un errore durante il salvataggio di un messaggio inviato "
+"Posta ha rilevato un errore durante il salvataggio di un messaggio inviato "
 "nella cartella Posta inviata. Il messaggio rimarrà nella cartella Posta in "
 "uscita finché non lo elimini."
 
@@ -2809,7 +2809,7 @@ msgstr ""
 "\n"
 "%s\n"
 "\n"
-"Mail può ricostruire il database e sincronizzarsi nuovamente con il server "
+"Posta può ricostruire il database e sincronizzarsi nuovamente con il server "
 "oppure terminare.\n"
 "\n"
 "La ricostruzione del database distruggerà tutte le email locali e loro "
@@ -2831,7 +2831,7 @@ msgstr ""
 "nuova versione di Mail. Purtroppo, il database non può essere "
 "\"ripristinato\" per lavorare con questa versione di Mail.\n"
 "\n"
-"Per favore, installa l'ultima versione di Mail e riprova."
+"Per favore, installa l'ultima versione di Posta e riprova."
 
 #: ../src/client/application/geary-controller.vala:1195
 #: ../src/client/application/geary-controller.vala:1189
@@ -2854,11 +2854,11 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2390
 msgid "This removes the email from Mail and your email server."
 msgstr ""
-"Ciò elimina la posta da Mail e dal vostro server di posta elettronica."
+"Ciò eliminerà la posta da Posta e dal vostro server di posta elettronica."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
-msgstr "        &#8226; indirizzo email già aggiunto a Mail.\n"
+msgstr "        &#8226; indirizzo email già aggiunto a Posta.\n"
 
 #: ../src/client/dialogs/preferences-dialog.vala:44
 #: ../src/client/dialogs/preferences-dialog.vala:43
@@ -2868,41 +2868,42 @@ msgstr "Mostra sempre immagini remote:"
 #: ../src/client/dialogs/password-dialog.vala:16
 #: ../src/client/dialogs/PasswordDialog.vala:39
 msgid "Mail requires your email password to continue"
-msgstr "Mail richiede la password di posta elettronica per continuare"
+msgstr "Posta richiede la password di posta elettronica per continuare"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail not to access this "
 "server."
 msgstr ""
-"Selezionare \"Non mi fido di questo server\" impedirà a Mail di accedere a "
+"Selezionare \"Non mi fido di questo server\" impedirà a Posta di accedere a "
 "questo server."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Mail will not add or update this email account."
 msgstr ""
-"Mail non aggiungerà o aggiornerà questo account di posta elettronica."
+"Posta non aggiungerà o aggiornerà questo account di posta elettronica."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail to stop accessing this "
 "account."
 msgstr ""
-"Selezionare \"Non mi fido di questo server\" impedirà a Mail di accedere "
+"Selezionare \"Non mi fido di questo server\" impedirà a Posta di accedere "
 "ancora a questo account."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Mail will exit if you have no other open email accounts."
-msgstr "Mail terminerà se non hai altri account di posta elettronica aperti."
+msgstr ""
+"Posta terminerà se non hai altri account di posta elettronica aperti."
 
 #: ../data/ui/account_spinner.ui:41
 #: ../src/client/accounts/account-spinner-page.vala:22
 msgid "Please wait while Mail validates your account."
-msgstr "Per favore attendi mentre Mail convalida il tuo account."
+msgstr "Per favore attendi mentre Posta convalida il tuo account."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr "Aggiornamento Mail in corso..."
+msgstr "Aggiornamento di Posta in corso..."
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
@@ -3174,7 +3175,7 @@ msgstr ", "
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
-msgstr "Mail"
+msgstr "Posta"
 
 #: ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+%)"
