@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-25 14:51-0700\n"
-"PO-Revision-Date: 2017-01-29 08:30+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
+"PO-Revision-Date: 2017-02-10 00:12+0000\n"
+"Last-Translator: Rokar <Unknown>\n"
 "Language-Team: Kurdish <ku@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2017-01-30 05:57+0000\n"
-"X-Generator: Launchpad (build 18315)\n"
+"X-Launchpad-Export-Date: 2017-02-10 06:03+0000\n"
+"X-Generator: Launchpad (build 18326)\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -42,11 +42,11 @@ msgstr ""
 
 #: ../src/engine/api/geary-special-folder-type.vala:24
 msgid "Inbox"
-msgstr "Qutîya Hatîyan"
+msgstr "Peldanka hatiyan"
 
 #: ../src/engine/api/geary-special-folder-type.vala:27
 msgid "Drafts"
-msgstr ""
+msgstr "Hilanînî"
 
 #: ../src/engine/api/geary-special-folder-type.vala:30
 msgid "Sent Mail"
@@ -66,7 +66,7 @@ msgstr ""
 
 #: ../src/engine/api/geary-special-folder-type.vala:42
 msgid "Spam"
-msgstr ""
+msgstr "Nexwastî"
 
 #: ../src/engine/api/geary-special-folder-type.vala:45
 msgid "Trash"
@@ -114,7 +114,7 @@ msgstr ""
 
 #: ../src/engine/api/geary-service-provider.vala:61
 msgid "Other"
-msgstr ""
+msgstr "Wekî Din"
 
 #. / Can be typed in the search box like attachment:file.txt to find
 #. / messages with attachments with a particular name.  The translated
@@ -144,7 +144,7 @@ msgstr ""
 #: ../src/engine/imap-db/imap-db-account.vala:722
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "cc"
-msgstr ""
+msgstr "Giravên Kokos (Keeling)"
 
 #. / Can be typed in the search box like from:johndoe@example.com to
 #. / find messages from a particular sender.  The translated
@@ -152,7 +152,7 @@ msgstr ""
 #: ../src/engine/imap-db/imap-db-account.vala:726
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "from"
-msgstr ""
+msgstr "ji"
 
 #. / Can be typed in the search box like subject:word to find the word
 #. / only if it occurs in the subject of a message.  The translated
@@ -167,18 +167,18 @@ msgstr ""
 #: ../src/engine/imap-db/imap-db-account.vala:734
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "to"
-msgstr ""
+msgstr "li"
 
 #: ../src/engine/imap-db/imap-db-account.vala:754
 msgid "me"
-msgstr ""
+msgstr "Ez"
 
 #: ../src/engine/rfc822/rfc822-message.vala:781
 #: ../src/client/util/util-email.vala:30
 #: ../src/engine/rfc822/rfc822-message.vala:783
 #: ../src/engine/rfc822/rfc822-message.vala:775
 msgid "(no subject)"
-msgstr ""
+msgstr "(bê mijar)"
 
 #. / Format for the datetime that a message being replied to was received
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
@@ -235,11 +235,11 @@ msgstr ""
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2232
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:32
 msgid "none"
-msgstr ""
+msgstr "tune"
 
 #: ../src/client/application/geary-application.vala:18
 msgid "Mail Client"
-msgstr ""
+msgstr "Daxwazkerê Posteyê"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "Copyright 2011-2015 Yorba Foundation"
@@ -401,7 +401,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:369
 #: ../src/client/application/geary-controller.vala:375
 msgid "A_ccounts"
-msgstr ""
+msgstr "Hesab"
 
 #: ../src/client/application/geary-controller.vala:377
 #: ../src/client/components/stock.vala:27
@@ -412,20 +412,20 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:380
 #: ../src/client/application/geary-controller.vala:381
 msgid "_Preferences"
-msgstr ""
+msgstr "_Vebijark"
 
 #: ../src/client/application/geary-controller.vala:381
 #: ../src/client/components/stock.vala:25
 #: ../src/client/application/geary-controller.vala:380
 msgid "_Help"
-msgstr ""
+msgstr "_Alîkarî"
 
 #: ../src/client/application/geary-controller.vala:385
 #: ../src/client/components/stock.vala:21
 #: ../src/client/application/geary-controller.vala:384
 #: ../src/client/application/geary-controller.vala:379
 msgid "_About"
-msgstr ""
+msgstr "_Der barê"
 
 #: ../src/client/application/geary-controller.vala:389
 #: ../src/client/components/stock.vala:29
@@ -436,7 +436,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:384
 #: ../src/client/application/geary-controller.vala:386
 msgid "_Quit"
-msgstr ""
+msgstr "_Kapat"
 
 #: ../src/client/application/geary-controller.vala:394
 #: ../src/client/application/geary-controller.vala:393
@@ -508,7 +508,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:427
 #: ../src/client/application/geary-controller.vala:428
 msgid "_Move"
-msgstr ""
+msgstr "_guhestin"
 
 #: ../src/client/application/geary-controller.vala:436
 #: ../src/client/application/geary-controller.vala:435
@@ -523,7 +523,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1857
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1862
 msgid "_Reply"
-msgstr ""
+msgstr "_Bersiv"
 
 #: ../src/client/application/geary-controller.vala:441
 #: ../src/client/application/geary-controller.vala:440
@@ -567,7 +567,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:485
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty"
-msgstr ""
+msgstr "Vala Bike"
 
 #: ../src/client/application/geary-controller.vala:492
 #: ../src/client/application/geary-controller.vala:491
@@ -690,7 +690,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1109
 #: ../src/client/application/geary-controller.vala:1103
 msgid "Labels"
-msgstr ""
+msgstr "Etîket"
 
 #: ../src/client/application/geary-controller.vala:1150
 #: ../src/client/application/geary-controller.vala:1144
@@ -734,7 +734,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1124
 #: ../src/client/application/geary-controller.vala:1118
 msgid "E_xit"
-msgstr ""
+msgstr "Der_keve"
 
 #: ../src/client/application/geary-controller.vala:1162
 #: ../src/client/application/geary-controller.vala:1156
@@ -821,7 +821,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1709
 #: ../src/client/application/geary-controller.vala:1677
 msgid "About %s"
-msgstr ""
+msgstr "Der barê %s de"
 
 #. / Translators: add your name and email address to receive credit in the About dialog
 #. / For example: Yamada Taro <yamada.taro@example.com>
@@ -883,7 +883,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1957
 #: ../src/client/application/geary-controller.vala:1963
 msgid "A file named \"%s\" already exists.  Do you want to replace it?"
-msgstr ""
+msgstr "Navê dosya \"%s\" ji berê ve heye. tu dixwazî biguhêrî?"
 
 #: ../src/client/application/geary-controller.vala:2008
 #: ../src/client/application/geary-controller.vala:2002
@@ -896,6 +896,8 @@ msgstr ""
 msgid ""
 "The file already exists in \"%s\".  Replacing it will overwrite its contents."
 msgstr ""
+"Navê dosya ji berê ve heye\"%s\" . Heke tu biguhêrî dê di ser naveroka dosya "
+"berê de were nivisandin."
 
 #: ../src/client/application/geary-controller.vala:2011
 #: ../src/client/application/geary-controller.vala:2005
@@ -906,7 +908,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1962
 #: ../src/client/application/geary-controller.vala:1968
 msgid "_Replace"
-msgstr ""
+msgstr "Bide _ser"
 
 #: ../src/client/application/geary-controller.vala:2309
 #: ../src/client/application/geary-controller.vala:2303
@@ -980,7 +982,7 @@ msgstr[1] ""
 #: ../src/client/application/geary-controller.vala:2446
 #: ../src/client/application/geary-controller.vala:2441
 msgid "Delete"
-msgstr ""
+msgstr "Jê bibe"
 
 #: ../src/client/application/geary-controller.vala:2522
 #: ../src/client/application/geary-controller.vala:2516
@@ -1138,7 +1140,7 @@ msgstr[1] ""
 #: ../src/client/notification/libnotify.vala:151
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:44
 msgid "Open"
-msgstr ""
+msgstr "Veke"
 
 #: ../src/client/conversation-list/formatted-conversation-data.vala:11
 msgid "Me"
@@ -1218,7 +1220,7 @@ msgstr ""
 
 #: ../src/client/dialogs/attachment-dialog.vala:18
 msgid "Choose a file"
-msgstr ""
+msgstr "Pelekî hilbijêre"
 
 #: ../src/client/dialogs/attachment-dialog.vala:23
 msgid "_Attach"
@@ -1231,7 +1233,7 @@ msgstr ""
 
 #: ../src/client/accounts/account-dialog.vala:21
 msgid "Accounts"
-msgstr ""
+msgstr "Hesab"
 
 #. / Placeholder text indicating that the user should type their first name and last name
 #: ../src/client/accounts/add-edit-page.vala:10
@@ -1285,17 +1287,17 @@ msgstr ""
 #: ../src/client/accounts/add-edit-page.vala:261
 #: ../src/client/accounts/add-edit-page.vala:262
 msgid "Everything"
-msgstr ""
+msgstr "Her tişt"
 
 #: ../src/client/accounts/add-edit-page.vala:280
 #: ../src/client/accounts/add-edit-page.vala:281
 msgid "Edit"
-msgstr ""
+msgstr "Sererast bike"
 
 #: ../src/client/accounts/add-edit-page.vala:282
 #: ../src/client/accounts/add-edit-page.vala:283
 msgid "Preview"
-msgstr ""
+msgstr "Pêş dîtin"
 
 #: ../src/client/accounts/add-edit-page.vala:723
 #: ../src/client/accounts/add-edit-page.vala:725
@@ -1356,12 +1358,12 @@ msgstr ""
 #: ../src/client/components/stock.vala:31
 #: ../src/client/components/stock.vala:30
 msgid "_Save"
-msgstr ""
+msgstr "_Tomar bike"
 
 #: ../src/client/accounts/account-dialog-add-edit-pane.vala:51
 #: ../src/client/components/stock.vala:22
 msgid "_Add"
-msgstr ""
+msgstr "_Lê zêde bike"
 
 #. / Datetime format for 12-hour time, i.e. 8:31 am
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
@@ -1373,7 +1375,7 @@ msgstr ""
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/client/util/util-date.vala:71
 msgid "%H:%M"
-msgstr ""
+msgstr "%H:%M"
 
 #. / Datetime format for the locale default, i.e. 8:31 am or 16:35,
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
@@ -1393,7 +1395,7 @@ msgstr ""
 #: ../src/client/util/util-date.vala:83
 #, no-c-format
 msgid "%x"
-msgstr ""
+msgstr "%x"
 
 #. / Verbose datetime format for 12-hour time, i.e. November 8, 2010 8:42 am
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
@@ -1416,7 +1418,7 @@ msgstr ""
 
 #: ../src/client/util/util-date.vala:164
 msgid "Now"
-msgstr ""
+msgstr "Niha"
 
 #: ../src/client/util/util-date.vala:167
 msgid "%dm ago"
@@ -1432,37 +1434,37 @@ msgstr[1] ""
 
 #: ../src/client/util/util-date.vala:178
 msgid "Yesterday"
-msgstr ""
+msgstr "Doh"
 
 #. / Date format that shows the weekday (Monday, Tuesday, ...)
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/client/util/util-date.vala:183
 msgid "%A"
-msgstr ""
+msgstr "%A"
 
 #: ../src/client/util/util-files.vala:16
 msgid "bytes"
-msgstr ""
+msgstr "bayt"
 
 #: ../src/client/util/util-files.vala:19
 msgctxt "Abbreviation for terabyte"
 msgid "TB"
-msgstr ""
+msgstr "TB"
 
 #: ../src/client/util/util-files.vala:22
 msgctxt "Abbreviation for gigabyte"
 msgid "GB"
-msgstr ""
+msgstr "GB"
 
 #: ../src/client/util/util-files.vala:25
 msgctxt "Abbreviation for megabyte"
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #: ../src/client/util/util-files.vala:28
 msgctxt "Abbreviation for kilobyte"
 msgid "KB"
-msgstr ""
+msgstr "KB"
 
 #: ../src/client/folder-list/folder-list-folder-entry.vala:32
 msgid "%d message"
@@ -1482,7 +1484,7 @@ msgstr[1] ""
 #. / combining the two, i.e. a comma (",") for English; "6 messages, 3 unread"
 #: ../src/client/folder-list/folder-list-folder-entry.vala:45
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #: ../src/client/folder-list/folder-list-inboxes-branch.vala:14
 msgid "Inboxes"
@@ -1578,7 +1580,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:148
 #: ../src/client/conversation-viewer/ConversationWidget.vala:150
 msgid "From:"
-msgstr ""
+msgstr "Ji:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:812
 #: ../src/client/conversation-viewer/conversation-viewer.vala:817
@@ -1587,7 +1589,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:161
 #: ../src/client/conversation-viewer/ConversationWidget.vala:163
 msgid "To:"
-msgstr ""
+msgstr "Ji bo:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:815
 #: ../src/client/conversation-viewer/conversation-viewer.vala:820
@@ -1614,12 +1616,12 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:176
 #: ../src/client/conversation-viewer/ConversationWidget.vala:178
 msgid "Subject:"
-msgstr ""
+msgstr "Mijar:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:824
 #: ../src/client/conversation-viewer/conversation-viewer.vala:829
 msgid "Date:"
-msgstr ""
+msgstr "Dem:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1139
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1144
@@ -1642,7 +1644,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1162
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1172
 msgid "_Copy"
-msgstr ""
+msgstr "_Kopîkirin"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1305
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1310
@@ -1652,7 +1654,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1170
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1180
 msgid "Copy _Email Address"
-msgstr ""
+msgstr "Navnîşana _E-peyamê Ji Ber Bigire"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1310
 #: ../data/ui/composer.ui:106
@@ -1681,7 +1683,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1190
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1200
 msgid "Select _All"
-msgstr ""
+msgstr "Hemûyî _hilbijêre"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1330
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1335
@@ -1711,12 +1713,12 @@ msgstr ""
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1718
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1723
 msgid "_Save Image As..."
-msgstr ""
+msgstr "Wêneyê _tomar bike wekî..."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1822
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 msgid "_Save As..."
-msgstr ""
+msgstr "_Tomar Bike Wekî..."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1832
@@ -1777,7 +1779,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:74
 #: ../src/client/composer/composer-widget.vala:72
 msgid "Saving"
-msgstr ""
+msgstr "Tê tomarkirin"
 
 #: ../src/client/composer/composer-widget.vala:75
 #: ../src/client/composer/composer-widget.vala:73
@@ -1897,7 +1899,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1541
 #: ../src/client/composer/composer-widget.vala:1538
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: ../src/client/composer/composer-widget.vala:1645
 #: ../src/client/composer/composer-widget.vala:1640
@@ -1947,7 +1949,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1841
 #: ../src/client/composer/composer-widget.vala:1844
 msgid "Select Color"
-msgstr ""
+msgstr "Rengî hilbijêre"
 
 #: ../src/client/composer/composer-widget.vala:2322
 #: ../src/client/composer/composer-widget.vala:2317
@@ -1967,17 +1969,17 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:2313
 #: ../src/client/composer/composer-widget.vala:2316
 msgid "_From:"
-msgstr ""
+msgstr "_Ji:"
 
 #: ../src/client/components/main-window.vala:388
 #: ../src/client/components/main-window.vala:351
 msgid "%s (%d)"
-msgstr ""
+msgstr "%s (%d)"
 
 #. / Displayed in the space-limited status bar while a message is in the process of being sent.
 #: ../src/client/components/status-bar.vala:26
 msgid "Sending..."
-msgstr ""
+msgstr "Tê şandin..."
 
 #: ../src/client/components/conversation-find-bar.vala:214
 msgid "%i match"
@@ -1999,44 +2001,44 @@ msgstr ""
 #: ../src/client/components/stock.vala:18
 #: ../data/ui/account_cannot_remove.ui:74
 msgid "_OK"
-msgstr ""
+msgstr "_Temam"
 
 #: ../src/client/components/stock.vala:19 ../data/ui/remove_confirm.ui:153
 #: ../data/ui/edit_alternate_emails.ui:160 ../data/ui/password-dialog.ui:196
 #: ../data/ui/remove_confirm.ui:155
 msgid "_Cancel"
-msgstr ""
+msgstr "_Betal"
 
 #: ../src/client/components/stock.vala:23
 #: ../src/client/dialogs/preferences-dialog.vala:84
 #: ../src/client/dialogs/preferences-dialog.vala:92
 #: ../src/client/dialogs/preferences-dialog.vala:79
 msgid "_Close"
-msgstr ""
+msgstr "_Bigire"
 
 #: ../src/client/components/stock.vala:24
 msgid "_Discard"
-msgstr ""
+msgstr "_Avêtin"
 
 #: ../src/client/components/stock.vala:26
 #: ../src/client/components/stock.vala:25
 msgid "_Open"
-msgstr ""
+msgstr "_Veke"
 
 #: ../src/client/components/stock.vala:28
 #: ../src/client/components/stock.vala:27
 msgid "_Print..."
-msgstr ""
+msgstr "_Çap..."
 
 #: ../src/client/components/stock.vala:30 ../data/ui/remove_confirm.ui:168
 #: ../src/client/components/stock.vala:29 ../data/ui/remove_confirm.ui:170
 msgid "_Remove"
-msgstr ""
+msgstr "_Rakirin"
 
 #: ../src/client/components/stock.vala:33
 #: ../src/client/components/stock.vala:32
 msgid "_Keep"
-msgstr ""
+msgstr "Bi_parêze"
 
 #: ../src/client/components/search-bar.vala:25
 #: ../src/client/components/main-toolbar.vala:83
@@ -2068,13 +2070,13 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:168
 #: ../src/client/components/main-toolbar.vala:169
 msgid "Menu"
-msgstr ""
+msgstr "Menû"
 
 #: ../src/client/application/geary-application.vala:25
 #: ../src/client/application/geary-application.vala:24
 #: ../src/Translations.vala:1
 msgid "Send by Email"
-msgstr ""
+msgstr "Bi Epeyamê bişîne"
 
 #: ../src/client/application/geary-application.vala:26
 #: ../src/client/application/geary-application.vala:25
@@ -2100,12 +2102,12 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:289
 #: ../src/client/components/main-toolbar.vala:290
 msgid "Search %s"
-msgstr ""
+msgstr "Li %s Bigere"
 
 #: ../src/client/dialogs/preferences-dialog.vala:23
 #: ../src/client/dialogs/preferences-dialog.vala:24
 msgid "Reading"
-msgstr ""
+msgstr "Xwendin"
 
 #: ../src/client/dialogs/preferences-dialog.vala:28
 #: ../src/client/dialogs/preferences-dialog.vala:29
@@ -2125,7 +2127,7 @@ msgstr ""
 #: ../src/client/dialogs/preferences-dialog.vala:42 ../data/ui/login.ui:853
 #: ../src/client/dialogs/preferences-dialog.vala:48
 msgid "Composer"
-msgstr ""
+msgstr "Bestekar"
 
 #: ../src/client/dialogs/preferences-dialog.vala:47
 #: ../src/client/dialogs/preferences-dialog.vala:53
@@ -2136,7 +2138,7 @@ msgstr ""
 #: ../src/client/dialogs/preferences-dialog.vala:57
 #: ../src/client/dialogs/preferences-dialog.vala:47
 msgid "Notifications"
-msgstr ""
+msgstr "Hişyarî"
 
 #: ../src/client/dialogs/preferences-dialog.vala:56
 #: ../src/client/dialogs/preferences-dialog.vala:62
@@ -2182,15 +2184,15 @@ msgstr ""
 #: ../data/ui/remove_confirm.ui:80
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:47
 msgid "Nickname:"
-msgstr ""
+msgstr "Navê kod:"
 
 #: ../data/ui/remove_confirm.ui:94
 msgid "Email address:"
-msgstr ""
+msgstr "Navnîşana E-Peyamê:"
 
 #: ../data/ui/find_bar.ui:59
 msgid "Find"
-msgstr ""
+msgstr "Bibîne"
 
 #: ../data/ui/find_bar.ui:72
 msgid "Previous Result"
@@ -2206,7 +2208,7 @@ msgstr ""
 
 #: ../data/ui/find_bar.ui:127
 msgid "label"
-msgstr ""
+msgstr "etîket"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
@@ -2224,7 +2226,7 @@ msgstr ""
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
-msgstr ""
+msgstr "_Rojanekirin"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
@@ -2232,31 +2234,31 @@ msgstr ""
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
-msgstr ""
+msgstr "_Vegerîne"
 
 #: ../data/ui/composer.ui:15
 msgid "_Redo"
-msgstr ""
+msgstr "_Dubare bike"
 
 #: ../data/ui/composer.ui:22
 msgid "Cu_t"
-msgstr ""
+msgstr "_Jêkirin"
 
 #: ../data/ui/composer.ui:36
 msgid "_Paste"
-msgstr ""
+msgstr "_Pêvekirin"
 
 #: ../data/ui/composer.ui:43
 msgid "_Left"
-msgstr ""
+msgstr "_Çep"
 
 #: ../data/ui/composer.ui:48
 msgid "_Right"
-msgstr ""
+msgstr "_Rast"
 
 #: ../data/ui/composer.ui:53
 msgid "_Center"
-msgstr ""
+msgstr "_Navîn"
 
 #: ../data/ui/composer.ui:58
 msgid "_Justify"
@@ -2268,7 +2270,7 @@ msgstr ""
 
 #: ../data/ui/composer.ui:70 ../data/ui/composer.ui:69
 msgid "C_olor"
-msgstr ""
+msgstr "_Reng"
 
 #: ../data/ui/composer.ui:81
 msgid "Quote text  (Ctrl+])"
@@ -2347,15 +2349,15 @@ msgstr ""
 
 #: ../data/ui/composer.ui:174 ../data/ui/composer.ui:156
 msgid "Large"
-msgstr ""
+msgstr "Mezin"
 
 #: ../data/ui/composer.ui:179 ../data/ui/composer.ui:161
 msgid "_Medium"
-msgstr ""
+msgstr "_Navîn"
 
 #: ../data/ui/composer.ui:180 ../data/ui/composer.ui:162
 msgid "Medium"
-msgstr ""
+msgstr "Navincî"
 
 #: ../data/ui/composer.ui:185 ../data/ui/composer.ui:167
 msgid "_Small"
@@ -2363,7 +2365,7 @@ msgstr ""
 
 #: ../data/ui/composer.ui:186 ../data/ui/composer.ui:168
 msgid "Small"
-msgstr ""
+msgstr "Biçûk"
 
 #: ../data/ui/composer.ui:191 ../data/ui/composer.ui:173
 msgid "S_ans Serif"
@@ -2371,7 +2373,7 @@ msgstr ""
 
 #: ../data/ui/composer.ui:192 ../data/ui/composer.ui:174
 msgid "Sans Serif"
-msgstr ""
+msgstr "Bê Serîf"
 
 #: ../data/ui/composer.ui:197 ../data/ui/composer.ui:179
 msgid "S_erif"
@@ -2379,7 +2381,7 @@ msgstr ""
 
 #: ../data/ui/composer.ui:198 ../data/ui/composer.ui:180
 msgid "Serif"
-msgstr ""
+msgstr "Serîf"
 
 #: ../data/ui/composer.ui:203 ../data/ui/composer.ui:185
 msgid "_Fixed Width"
@@ -2391,7 +2393,7 @@ msgstr ""
 
 #: ../data/ui/composer.ui:209 ../data/ui/composer.ui:210
 msgid "Detach"
-msgstr ""
+msgstr "Veqetandin"
 
 #: ../data/ui/composer.ui:211 ../src/client/composer/ComposerHeaderBar.vala:36
 msgid "Detach (Ctrl+D)"
@@ -2399,11 +2401,11 @@ msgstr ""
 
 #: ../data/ui/composer.ui:218
 msgid "_Send"
-msgstr ""
+msgstr "_Bişîne"
 
 #: ../data/ui/composer.ui:219 ../src/client/composer/ComposerHeaderBar.vala:46
 msgid "Send"
-msgstr ""
+msgstr "Bişîne"
 
 #: ../data/ui/composer.ui:220 ../src/client/composer/ComposerHeaderBar.vala:47
 msgid "Send (Ctrl+Enter)"
@@ -2460,7 +2462,7 @@ msgstr ""
 #: ../data/ui/composer.ui:440 ../data/ui/composer.ui:468
 #: ../data/ui/composer.ui:438
 msgid "From"
-msgstr ""
+msgstr "Ji"
 
 #: ../data/ui/composer.ui:519 ../data/ui/composer.ui:547
 #: ../data/ui/composer.ui:517
@@ -2492,11 +2494,11 @@ msgstr ""
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
-msgstr ""
+msgstr "Şîfre"
 
 #: ../data/ui/login.ui:97 ../data/ui/login.ui:545
 msgid "_Password:"
-msgstr ""
+msgstr "_Şîfre:"
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
@@ -2548,7 +2550,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:480
 msgid "Pass_word:"
-msgstr ""
+msgstr "Şîf_re:"
 
 #: ../data/ui/login.ui:499
 msgid "SMTP username"
@@ -2560,7 +2562,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:527
 msgid "_Username:"
-msgstr ""
+msgstr "_Navê bikarhêner:"
 
 #: ../data/ui/login.ui:564
 msgid "IMAP username"
@@ -2596,7 +2598,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:783
 msgid "Storage"
-msgstr ""
+msgstr "Cîhaza Tomarkirinê"
 
 #: ../data/ui/login.ui:804
 msgid "_Download mail"
@@ -2644,7 +2646,7 @@ msgstr ""
 
 #: ../data/ui/password-dialog.ui:91
 msgid "Username"
-msgstr ""
+msgstr "Navê bikarhêner"
 
 #: ../data/ui/password-dialog.ui:152
 msgid "_Remember password"
@@ -2652,7 +2654,7 @@ msgstr ""
 
 #: ../data/ui/password-dialog.ui:210
 msgid "_Authenticate"
-msgstr ""
+msgstr "_Belgekirin"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
@@ -2661,7 +2663,7 @@ msgstr ""
 #: ../src/client/application/geary-application.vala:21
 #: ../src/client/application/geary-application.vala:20
 msgid "Website"
-msgstr ""
+msgstr "Malper"
 
 #: ../src/client/application/geary-controller.vala:1052
 #: ../src/client/application/geary-controller.vala:1046
@@ -2810,7 +2812,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:241
 #: ../src/client/conversation-viewer/ConversationWidget.vala:243
 msgid "Reply"
-msgstr ""
+msgstr "Bersiv"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:239
@@ -2824,7 +2826,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:243
 #: ../src/client/conversation-viewer/ConversationWidget.vala:245
 msgid "Forward"
-msgstr ""
+msgstr "Pêşve"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:247
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1112
@@ -2855,7 +2857,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:275
 #: ../src/client/conversation-viewer/ConversationWidget.vala:277
 msgid "Print…"
-msgstr ""
+msgstr "Çapkirin…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
@@ -2899,7 +2901,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:584
 #: ../src/client/conversation-viewer/ConversationWidget.vala:587
 msgid "Compose New Message"
-msgstr ""
+msgstr "Peyamekê Nû Biafirînê"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:554
 #: ../src/client/conversation-viewer/ConversationWidget.vala:578
@@ -2907,7 +2909,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:585
 #: ../src/client/conversation-viewer/ConversationWidget.vala:588
 msgid "Copy Email Address"
-msgstr ""
+msgstr "Navnîşana E-peyamê Ji Ber Bigire"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:615
 #: ../src/client/conversation-viewer/ConversationWidget.vala:639
@@ -2919,11 +2921,11 @@ msgstr ""
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr ""
+msgstr "Tomar bike wekî..."
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
-msgstr ""
+msgstr "Ji rewşê re hestiyare"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
@@ -2960,7 +2962,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:436
 #: ../src/client/conversation-viewer/ConversationWidget.vala:438
 msgid "More"
-msgstr ""
+msgstr "Bêhtir"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
 msgid "Delete draft"
@@ -2990,7 +2992,7 @@ msgstr ""
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:45
 msgid "Don't ask me again"
-msgstr ""
+msgstr "Êdî pirs neke"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:48
 msgid "Open Anyway"
@@ -3000,7 +3002,7 @@ msgstr ""
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:59
 #: ../src/client/dialogs/PasswordDialog.vala:96
 msgid "Cancel"
-msgstr ""
+msgstr "Betal bike"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:36
 msgid "Are you sure you want to remove this account?"
@@ -3012,15 +3014,15 @@ msgstr ""
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:61
 msgid "Remove Account"
-msgstr ""
+msgstr "Hesab Jê Bibe"
 
 #: ../src/client/dialogs/PasswordDialog.vala:45
 msgid "Username:"
-msgstr ""
+msgstr "Navê bikarhêner:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:52
 msgid "Password:"
-msgstr ""
+msgstr "Şîfre:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:55
 msgid "SMTP Credentials:"
@@ -3028,21 +3030,21 @@ msgstr ""
 
 #: ../src/client/dialogs/PasswordDialog.vala:62
 msgid "Remember password"
-msgstr ""
+msgstr "Şîfreyê bi bîr bîne."
 
 #: ../src/client/dialogs/PasswordDialog.vala:75
 msgid "Authenticate"
-msgstr ""
+msgstr "Naskirina nasnamê"
 
 #. /Translators: this is the ponctuation between two names ("John, Jane")
 #: ../src/client/conversation-list/formatted-conversation-data.vala:188
 #: ../src/client/conversation-list/formatted-conversation-data.vala:190
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
-msgstr ""
+msgstr "E-Peyam"
 
 #: ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+%)"
