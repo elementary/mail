@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-25 14:51-0700\n"
+"POT-Creation-Date: 2017-03-08 13:23-0800\n"
 "PO-Revision-Date: 2017-01-25 21:02+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2017-02-20 06:05+0000\n"
-"X-Generator: Launchpad (build 18326)\n"
+"X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
+"X-Generator: Launchpad (build 18330)\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -1654,6 +1654,7 @@ msgstr "편지는 제대로 보내졌지만, %s에 저장할 수 없습니다."
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1157
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1162
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1172
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1199
 msgid "_Copy"
 msgstr "복사(_C)"
 
@@ -1664,6 +1665,7 @@ msgstr "복사(_C)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1165
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1170
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1180
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1207
 msgid "Copy _Email Address"
 msgstr "이메일 주소 복사(_E)"
 
@@ -1676,6 +1678,7 @@ msgstr "이메일 주소 복사(_E)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1174
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1179
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1189
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1216
 msgid "Copy _Link"
 msgstr "링크 복사(_L)"
 
@@ -1693,6 +1696,7 @@ msgstr "편지 선택(_M)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1185
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1190
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1200
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1227
 msgid "Select _All"
 msgstr "모두 선택(_A)"
 
@@ -1703,6 +1707,7 @@ msgstr "모두 선택(_A)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1191
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1196
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1206
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1233
 msgid "_Inspect"
 msgstr "검사(_I)"
 
@@ -1774,6 +1779,7 @@ msgstr "소스 보기(_V)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1066
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1071
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1081
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1108
 msgid "Failed to open default text editor."
 msgstr "기본 텍스트 편집기를 열지 못 했습니다."
 
@@ -2352,50 +2358,62 @@ msgid "Close and Discard"
 msgstr "닫고 버리기"
 
 #: ../data/ui/composer.ui:173 ../data/ui/composer.ui:155
+#: ../data/ui/composer.ui:160
 msgid "Lar_ge"
 msgstr "크게(_G)"
 
 #: ../data/ui/composer.ui:174 ../data/ui/composer.ui:156
+#: ../data/ui/composer.ui:161
 msgid "Large"
 msgstr "크게"
 
 #: ../data/ui/composer.ui:179 ../data/ui/composer.ui:161
+#: ../data/ui/composer.ui:166
 msgid "_Medium"
 msgstr "중간(_M)"
 
 #: ../data/ui/composer.ui:180 ../data/ui/composer.ui:162
+#: ../data/ui/composer.ui:167
 msgid "Medium"
 msgstr "중간"
 
 #: ../data/ui/composer.ui:185 ../data/ui/composer.ui:167
+#: ../data/ui/composer.ui:172
 msgid "_Small"
 msgstr "작게(_S)"
 
 #: ../data/ui/composer.ui:186 ../data/ui/composer.ui:168
+#: ../data/ui/composer.ui:173
 msgid "Small"
 msgstr "작게"
 
 #: ../data/ui/composer.ui:191 ../data/ui/composer.ui:173
+#: ../data/ui/composer.ui:178
 msgid "S_ans Serif"
 msgstr "S_ans Serif"
 
 #: ../data/ui/composer.ui:192 ../data/ui/composer.ui:174
+#: ../data/ui/composer.ui:179
 msgid "Sans Serif"
 msgstr "Sans Serif"
 
 #: ../data/ui/composer.ui:197 ../data/ui/composer.ui:179
+#: ../data/ui/composer.ui:184
 msgid "S_erif"
 msgstr "S_erif"
 
 #: ../data/ui/composer.ui:198 ../data/ui/composer.ui:180
+#: ../data/ui/composer.ui:185
 msgid "Serif"
 msgstr "Serif"
 
 #: ../data/ui/composer.ui:203 ../data/ui/composer.ui:185
+#: ../data/ui/composer.ui:190
 msgid "_Fixed Width"
 msgstr "고정 폭(_F)"
 
 #: ../data/ui/composer.ui:204 ../data/ui/composer.ui:186
+#: ../data/ui/composer.ui:191
 msgid "Fixed Width"
 msgstr "너비 고정"
 
@@ -2436,49 +2454,50 @@ msgid "Include Original Attachments"
 msgstr "첨부파일 원본 포함"
 
 #: ../data/ui/composer.ui:242 ../data/ui/composer.ui:212
+#: ../data/ui/composer.ui:217
 msgid "Application Menu"
 msgstr "애플리케이션 메뉴"
 
 #. Address(es) e-mail is to be sent to
 #: ../data/ui/composer.ui:289 ../data/ui/composer.ui:317
-#: ../data/ui/composer.ui:287
+#: ../data/ui/composer.ui:287 ../data/ui/composer.ui:292
 msgid "_To"
 msgstr "받는 사람(_T)"
 
 #: ../data/ui/composer.ui:308 ../data/ui/composer.ui:336
-#: ../data/ui/composer.ui:306
+#: ../data/ui/composer.ui:306 ../data/ui/composer.ui:311
 msgid "_Cc"
 msgstr "함께 받는 사람(_C)"
 
 #: ../data/ui/composer.ui:362 ../data/ui/composer.ui:390
-#: ../data/ui/composer.ui:360
+#: ../data/ui/composer.ui:360 ../data/ui/composer.ui:365
 msgid "_Subject"
 msgstr "제목(_S)"
 
 #: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
-#: ../data/ui/composer.ui:379
+#: ../data/ui/composer.ui:379 ../data/ui/composer.ui:384
 msgid "_Bcc"
 msgstr "숨겨 받는 사람(_B)"
 
 #: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
-#: ../data/ui/composer.ui:409
+#: ../data/ui/composer.ui:409 ../data/ui/composer.ui:414
 msgid "_Reply-To"
 msgstr "답장(_R)"
 
 #. Geary account mail will be sent from
 #. Account mail will be sent from
 #: ../data/ui/composer.ui:440 ../data/ui/composer.ui:468
-#: ../data/ui/composer.ui:438
+#: ../data/ui/composer.ui:438 ../data/ui/composer.ui:443
 msgid "From"
 msgstr "보내는 사람"
 
 #: ../data/ui/composer.ui:519 ../data/ui/composer.ui:547
-#: ../data/ui/composer.ui:517
+#: ../data/ui/composer.ui:517 ../data/ui/composer.ui:522
 msgid "Drop files here"
 msgstr "파일을 이곳에 두시오"
 
 #: ../data/ui/composer.ui:535 ../data/ui/composer.ui:563
-#: ../data/ui/composer.ui:533
+#: ../data/ui/composer.ui:533 ../data/ui/composer.ui:538
 msgid "To add them as attachments"
 msgstr "첨부 파일로 추가하기"
 
@@ -2862,6 +2881,7 @@ msgstr "전달"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1145
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1155
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1182
 msgid "Mark as Unread"
 msgstr "읽지 않음으로 표시"
 
@@ -2874,6 +2894,7 @@ msgstr "읽지 않음으로 표시"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1143
 #: ../src/client/conversation-viewer/ConversationWidget.vala:274
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1153
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1180
 msgid "Mark as Read"
 msgstr "읽음으로 표시"
 
@@ -2901,6 +2922,7 @@ msgstr "소스 보기"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:635
 #: ../src/client/conversation-viewer/ConversationWidget.vala:345
 #: ../src/client/conversation-viewer/ConversationWidget.vala:638
+#: ../src/client/conversation-viewer/ConversationWidget.vala:665
 msgid "View message"
 msgstr "편지 보기"
 
@@ -2925,6 +2947,7 @@ msgstr "보낸 사람 항상 표시"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:581
 #: ../src/client/conversation-viewer/ConversationWidget.vala:584
 #: ../src/client/conversation-viewer/ConversationWidget.vala:587
+#: ../src/client/conversation-viewer/ConversationWidget.vala:586
 msgid "Compose New Message"
 msgstr "새 편지 쓰기"
 
@@ -2933,6 +2956,7 @@ msgstr "새 편지 쓰기"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:582
 #: ../src/client/conversation-viewer/ConversationWidget.vala:585
 #: ../src/client/conversation-viewer/ConversationWidget.vala:588
+#: ../src/client/conversation-viewer/ConversationWidget.vala:587
 msgid "Copy Email Address"
 msgstr "이메일 주소 복사"
 
@@ -2941,6 +2965,7 @@ msgstr "이메일 주소 복사"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:643
 #: ../src/client/conversation-viewer/ConversationWidget.vala:648
 #: ../src/client/conversation-viewer/ConversationWidget.vala:651
+#: ../src/client/conversation-viewer/ConversationWidget.vala:678
 msgid "Hide message"
 msgstr "편지 숨김"
 

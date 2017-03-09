@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-08-25 14:51-0700\n"
+"POT-Creation-Date: 2017-03-08 13:23-0800\n"
 "PO-Revision-Date: 2016-08-26 13:30+0000\n"
 "Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
@@ -26,8 +26,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2017-02-20 06:06+0000\n"
-"X-Generator: Launchpad (build 18326)\n"
+"X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
+"X-Generator: Launchpad (build 18330)\n"
 "Language: ru\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -1729,6 +1729,7 @@ msgstr "Сообщение успешно отправлено, но не мож
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1157
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1162
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1172
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1199
 msgid "_Copy"
 msgstr "_Копировать"
 
@@ -1739,6 +1740,7 @@ msgstr "_Копировать"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1165
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1170
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1180
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1207
 msgid "Copy _Email Address"
 msgstr "Копировать эл. _адрес"
 
@@ -1751,6 +1753,7 @@ msgstr "Копировать эл. _адрес"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1174
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1179
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1189
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1216
 msgid "Copy _Link"
 msgstr "Копировать _ссылку"
 
@@ -1768,6 +1771,7 @@ msgstr "Выбрать сообщение"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1185
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1190
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1200
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1227
 msgid "Select _All"
 msgstr "Выбрать _все"
 
@@ -1778,6 +1782,7 @@ msgstr "Выбрать _все"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1191
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1196
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1206
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1233
 msgid "_Inspect"
 msgstr "_Проверить"
 
@@ -1851,6 +1856,7 @@ msgstr "_Показать исходник"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1066
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1071
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1081
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1108
 msgid "Failed to open default text editor."
 msgstr "Не удалось запустить текстовый редактор по-умолчанию."
 
@@ -2443,50 +2449,62 @@ msgid "Close and Discard"
 msgstr "Закрыть и отменить"
 
 #: ../data/ui/composer.ui:173 ../data/ui/composer.ui:155
+#: ../data/ui/composer.ui:160
 msgid "Lar_ge"
 msgstr "_Большой"
 
 #: ../data/ui/composer.ui:174 ../data/ui/composer.ui:156
+#: ../data/ui/composer.ui:161
 msgid "Large"
 msgstr "Большой"
 
 #: ../data/ui/composer.ui:179 ../data/ui/composer.ui:161
+#: ../data/ui/composer.ui:166
 msgid "_Medium"
 msgstr "_Средний"
 
 #: ../data/ui/composer.ui:180 ../data/ui/composer.ui:162
+#: ../data/ui/composer.ui:167
 msgid "Medium"
 msgstr "Средний"
 
 #: ../data/ui/composer.ui:185 ../data/ui/composer.ui:167
+#: ../data/ui/composer.ui:172
 msgid "_Small"
 msgstr "_Маленький"
 
 #: ../data/ui/composer.ui:186 ../data/ui/composer.ui:168
+#: ../data/ui/composer.ui:173
 msgid "Small"
 msgstr "Маленький"
 
 #: ../data/ui/composer.ui:191 ../data/ui/composer.ui:173
+#: ../data/ui/composer.ui:178
 msgid "S_ans Serif"
 msgstr "Без _засечек"
 
 #: ../data/ui/composer.ui:192 ../data/ui/composer.ui:174
+#: ../data/ui/composer.ui:179
 msgid "Sans Serif"
 msgstr "Без засечек"
 
 #: ../data/ui/composer.ui:197 ../data/ui/composer.ui:179
+#: ../data/ui/composer.ui:184
 msgid "S_erif"
 msgstr "С _засечками"
 
 #: ../data/ui/composer.ui:198 ../data/ui/composer.ui:180
+#: ../data/ui/composer.ui:185
 msgid "Serif"
 msgstr "С засечками"
 
 #: ../data/ui/composer.ui:203 ../data/ui/composer.ui:185
+#: ../data/ui/composer.ui:190
 msgid "_Fixed Width"
 msgstr "_Фиксированная ширина"
 
 #: ../data/ui/composer.ui:204 ../data/ui/composer.ui:186
+#: ../data/ui/composer.ui:191
 msgid "Fixed Width"
 msgstr "Фиксированная ширина"
 
@@ -2527,49 +2545,50 @@ msgid "Include Original Attachments"
 msgstr "Включить исходные вложения"
 
 #: ../data/ui/composer.ui:242 ../data/ui/composer.ui:212
+#: ../data/ui/composer.ui:217
 msgid "Application Menu"
 msgstr "Меню приложения"
 
 #. Address(es) e-mail is to be sent to
 #: ../data/ui/composer.ui:289 ../data/ui/composer.ui:317
-#: ../data/ui/composer.ui:287
+#: ../data/ui/composer.ui:287 ../data/ui/composer.ui:292
 msgid "_To"
 msgstr "_Кому"
 
 #: ../data/ui/composer.ui:308 ../data/ui/composer.ui:336
-#: ../data/ui/composer.ui:306
+#: ../data/ui/composer.ui:306 ../data/ui/composer.ui:311
 msgid "_Cc"
 msgstr "Ко_пия"
 
 #: ../data/ui/composer.ui:362 ../data/ui/composer.ui:390
-#: ../data/ui/composer.ui:360
+#: ../data/ui/composer.ui:360 ../data/ui/composer.ui:365
 msgid "_Subject"
 msgstr "_Тема"
 
 #: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
-#: ../data/ui/composer.ui:379
+#: ../data/ui/composer.ui:379 ../data/ui/composer.ui:384
 msgid "_Bcc"
 msgstr "_Скрытая копия"
 
 #: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
-#: ../data/ui/composer.ui:409
+#: ../data/ui/composer.ui:409 ../data/ui/composer.ui:414
 msgid "_Reply-To"
 msgstr "_Ответить"
 
 #. Geary account mail will be sent from
 #. Account mail will be sent from
 #: ../data/ui/composer.ui:440 ../data/ui/composer.ui:468
-#: ../data/ui/composer.ui:438
+#: ../data/ui/composer.ui:438 ../data/ui/composer.ui:443
 msgid "From"
 msgstr "От"
 
 #: ../data/ui/composer.ui:519 ../data/ui/composer.ui:547
-#: ../data/ui/composer.ui:517
+#: ../data/ui/composer.ui:517 ../data/ui/composer.ui:522
 msgid "Drop files here"
 msgstr "Перетащите файлы сюда"
 
 #: ../data/ui/composer.ui:535 ../data/ui/composer.ui:563
-#: ../data/ui/composer.ui:533
+#: ../data/ui/composer.ui:533 ../data/ui/composer.ui:538
 msgid "To add them as attachments"
 msgstr "Чтобы добавить их как вложения"
 
@@ -2968,6 +2987,7 @@ msgstr "Переслать"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1145
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1155
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1182
 msgid "Mark as Unread"
 msgstr "Отметить как непрочитанное"
 
@@ -2980,6 +3000,7 @@ msgstr "Отметить как непрочитанное"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1143
 #: ../src/client/conversation-viewer/ConversationWidget.vala:274
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1153
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1180
 msgid "Mark as Read"
 msgstr "Отметить как прочитанное"
 
@@ -3007,6 +3028,7 @@ msgstr "Просмотр исходного кода"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:635
 #: ../src/client/conversation-viewer/ConversationWidget.vala:345
 #: ../src/client/conversation-viewer/ConversationWidget.vala:638
+#: ../src/client/conversation-viewer/ConversationWidget.vala:665
 msgid "View message"
 msgstr "Показать сообщение"
 
@@ -3031,6 +3053,7 @@ msgstr "Всегда показывать от этого отправителя
 #: ../src/client/conversation-viewer/ConversationWidget.vala:581
 #: ../src/client/conversation-viewer/ConversationWidget.vala:584
 #: ../src/client/conversation-viewer/ConversationWidget.vala:587
+#: ../src/client/conversation-viewer/ConversationWidget.vala:586
 msgid "Compose New Message"
 msgstr "Написать Новое сообщение"
 
@@ -3039,6 +3062,7 @@ msgstr "Написать Новое сообщение"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:582
 #: ../src/client/conversation-viewer/ConversationWidget.vala:585
 #: ../src/client/conversation-viewer/ConversationWidget.vala:588
+#: ../src/client/conversation-viewer/ConversationWidget.vala:587
 msgid "Copy Email Address"
 msgstr "Копировать адрес эл. почты"
 
@@ -3047,6 +3071,7 @@ msgstr "Копировать адрес эл. почты"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:643
 #: ../src/client/conversation-viewer/ConversationWidget.vala:648
 #: ../src/client/conversation-viewer/ConversationWidget.vala:651
+#: ../src/client/conversation-viewer/ConversationWidget.vala:678
 msgid "Hide message"
 msgstr "Скрыть письмо"
 

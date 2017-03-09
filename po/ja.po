@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
-"POT-Creation-Date: 2016-08-25 14:51-0700\n"
+"POT-Creation-Date: 2017-03-08 13:23-0800\n"
 "PO-Revision-Date: 2016-12-15 11:11+0000\n"
 "Last-Translator: Ryo Nakano <Unknown>\n"
 "Language-Team: Japanese (Japan) "
@@ -19,8 +19,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2017-02-20 06:05+0000\n"
-"X-Generator: Launchpad (build 18326)\n"
+"X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
+"X-Generator: Launchpad (build 18330)\n"
 "Language: ja_JP\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -1665,6 +1665,7 @@ msgstr "このメッセージは正しく送信されましたが、%sに保存�
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1157
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1162
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1172
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1199
 msgid "_Copy"
 msgstr "コピー (_C)"
 
@@ -1675,6 +1676,7 @@ msgstr "コピー (_C)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1165
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1170
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1180
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1207
 msgid "Copy _Email Address"
 msgstr "アドレスをコピー (_E)"
 
@@ -1687,6 +1689,7 @@ msgstr "アドレスをコピー (_E)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1174
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1179
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1189
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1216
 msgid "Copy _Link"
 msgstr "リンクのアドレスをコピー (_L)"
 
@@ -1704,6 +1707,7 @@ msgstr "メッセージの選択 (_M)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1185
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1190
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1200
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1227
 msgid "Select _All"
 msgstr "すべて選択 (_A)"
 
@@ -1714,6 +1718,7 @@ msgstr "すべて選択 (_A)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1191
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1196
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1206
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1233
 msgid "_Inspect"
 msgstr "検証 (_I)"
 
@@ -1785,6 +1790,7 @@ msgstr "ソースを表示 (_V)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1066
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1071
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1081
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1108
 msgid "Failed to open default text editor."
 msgstr "テキストエディターの起動に失敗しました"
 
@@ -2367,50 +2373,62 @@ msgid "Close and Discard"
 msgstr "破棄して閉じる"
 
 #: ../data/ui/composer.ui:173 ../data/ui/composer.ui:155
+#: ../data/ui/composer.ui:160
 msgid "Lar_ge"
 msgstr "大 (_G)"
 
 #: ../data/ui/composer.ui:174 ../data/ui/composer.ui:156
+#: ../data/ui/composer.ui:161
 msgid "Large"
 msgstr "大"
 
 #: ../data/ui/composer.ui:179 ../data/ui/composer.ui:161
+#: ../data/ui/composer.ui:166
 msgid "_Medium"
 msgstr "中 (_M)"
 
 #: ../data/ui/composer.ui:180 ../data/ui/composer.ui:162
+#: ../data/ui/composer.ui:167
 msgid "Medium"
 msgstr "中"
 
 #: ../data/ui/composer.ui:185 ../data/ui/composer.ui:167
+#: ../data/ui/composer.ui:172
 msgid "_Small"
 msgstr "小 (_S)"
 
 #: ../data/ui/composer.ui:186 ../data/ui/composer.ui:168
+#: ../data/ui/composer.ui:173
 msgid "Small"
 msgstr "小"
 
 #: ../data/ui/composer.ui:191 ../data/ui/composer.ui:173
+#: ../data/ui/composer.ui:178
 msgid "S_ans Serif"
 msgstr "サンサリフ (_A)"
 
 #: ../data/ui/composer.ui:192 ../data/ui/composer.ui:174
+#: ../data/ui/composer.ui:179
 msgid "Sans Serif"
 msgstr "サンセリフ"
 
 #: ../data/ui/composer.ui:197 ../data/ui/composer.ui:179
+#: ../data/ui/composer.ui:184
 msgid "S_erif"
 msgstr "セリフ (_E)"
 
 #: ../data/ui/composer.ui:198 ../data/ui/composer.ui:180
+#: ../data/ui/composer.ui:185
 msgid "Serif"
 msgstr "セリフ"
 
 #: ../data/ui/composer.ui:203 ../data/ui/composer.ui:185
+#: ../data/ui/composer.ui:190
 msgid "_Fixed Width"
 msgstr "固定幅 (_F)"
 
 #: ../data/ui/composer.ui:204 ../data/ui/composer.ui:186
+#: ../data/ui/composer.ui:191
 msgid "Fixed Width"
 msgstr "固定幅"
 
@@ -2451,49 +2469,50 @@ msgid "Include Original Attachments"
 msgstr "元の添付ファイルを含む"
 
 #: ../data/ui/composer.ui:242 ../data/ui/composer.ui:212
+#: ../data/ui/composer.ui:217
 msgid "Application Menu"
 msgstr "アプリケーションメニュー"
 
 #. Address(es) e-mail is to be sent to
 #: ../data/ui/composer.ui:289 ../data/ui/composer.ui:317
-#: ../data/ui/composer.ui:287
+#: ../data/ui/composer.ui:287 ../data/ui/composer.ui:292
 msgid "_To"
 msgstr "To (_T)"
 
 #: ../data/ui/composer.ui:308 ../data/ui/composer.ui:336
-#: ../data/ui/composer.ui:306
+#: ../data/ui/composer.ui:306 ../data/ui/composer.ui:311
 msgid "_Cc"
 msgstr "Cc (_C)"
 
 #: ../data/ui/composer.ui:362 ../data/ui/composer.ui:390
-#: ../data/ui/composer.ui:360
+#: ../data/ui/composer.ui:360 ../data/ui/composer.ui:365
 msgid "_Subject"
 msgstr "件名 (_S)"
 
 #: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
-#: ../data/ui/composer.ui:379
+#: ../data/ui/composer.ui:379 ../data/ui/composer.ui:384
 msgid "_Bcc"
 msgstr "Bcc (_B)"
 
 #: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
-#: ../data/ui/composer.ui:409
+#: ../data/ui/composer.ui:409 ../data/ui/composer.ui:414
 msgid "_Reply-To"
 msgstr "Reply-To (_R)"
 
 #. Geary account mail will be sent from
 #. Account mail will be sent from
 #: ../data/ui/composer.ui:440 ../data/ui/composer.ui:468
-#: ../data/ui/composer.ui:438
+#: ../data/ui/composer.ui:438 ../data/ui/composer.ui:443
 msgid "From"
 msgstr "差出人"
 
 #: ../data/ui/composer.ui:519 ../data/ui/composer.ui:547
-#: ../data/ui/composer.ui:517
+#: ../data/ui/composer.ui:517 ../data/ui/composer.ui:522
 msgid "Drop files here"
 msgstr "ここにファイルをドロップして下さい"
 
 #: ../data/ui/composer.ui:535 ../data/ui/composer.ui:563
-#: ../data/ui/composer.ui:533
+#: ../data/ui/composer.ui:533 ../data/ui/composer.ui:538
 msgid "To add them as attachments"
 msgstr "これらを添付ファイルとして追加する"
 
@@ -2877,6 +2896,7 @@ msgstr "転送"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1145
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1155
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1182
 msgid "Mark as Unread"
 msgstr "未読としてマーク"
 
@@ -2889,6 +2909,7 @@ msgstr "未読としてマーク"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1143
 #: ../src/client/conversation-viewer/ConversationWidget.vala:274
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1153
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1180
 msgid "Mark as Read"
 msgstr "既読としてマーク"
 
@@ -2916,6 +2937,7 @@ msgstr "ソースを表示"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:635
 #: ../src/client/conversation-viewer/ConversationWidget.vala:345
 #: ../src/client/conversation-viewer/ConversationWidget.vala:638
+#: ../src/client/conversation-viewer/ConversationWidget.vala:665
 msgid "View message"
 msgstr "メッセージを表示する"
 
@@ -2940,6 +2962,7 @@ msgstr "常に送信者から表示する"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:581
 #: ../src/client/conversation-viewer/ConversationWidget.vala:584
 #: ../src/client/conversation-viewer/ConversationWidget.vala:587
+#: ../src/client/conversation-viewer/ConversationWidget.vala:586
 msgid "Compose New Message"
 msgstr "新しいメッセージの作成"
 
@@ -2948,6 +2971,7 @@ msgstr "新しいメッセージの作成"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:582
 #: ../src/client/conversation-viewer/ConversationWidget.vala:585
 #: ../src/client/conversation-viewer/ConversationWidget.vala:588
+#: ../src/client/conversation-viewer/ConversationWidget.vala:587
 msgid "Copy Email Address"
 msgstr "メールアドレスをコピー"
 
@@ -2956,6 +2980,7 @@ msgstr "メールアドレスをコピー"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:643
 #: ../src/client/conversation-viewer/ConversationWidget.vala:648
 #: ../src/client/conversation-viewer/ConversationWidget.vala:651
+#: ../src/client/conversation-viewer/ConversationWidget.vala:678
 msgid "Hide message"
 msgstr "メッセージを隠す"
 

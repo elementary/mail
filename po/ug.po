@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-25 14:51-0700\n"
+"POT-Creation-Date: 2017-03-08 13:23-0800\n"
 "PO-Revision-Date: 2016-12-24 12:48+0000\n"
 "Last-Translator: ablimet <Unknown>\n"
 "Language-Team: Uyghur <ug@li.org>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2017-02-20 06:06+0000\n"
-"X-Generator: Launchpad (build 18326)\n"
+"X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
+"X-Generator: Launchpad (build 18330)\n"
 "Language: ug\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -1658,6 +1658,7 @@ msgstr "بۇ ئېلخەت ئوڭۇشلۇق يوللاندى، لىكىن %s غا
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1157
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1162
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1172
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1199
 msgid "_Copy"
 msgstr "كۆچۈرۈش"
 
@@ -1668,6 +1669,7 @@ msgstr "كۆچۈرۈش"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1165
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1170
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1180
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1207
 msgid "Copy _Email Address"
 msgstr "ئېلخەت ئادىرىسىنى كۆچۈرۈش"
 
@@ -1680,6 +1682,7 @@ msgstr "ئېلخەت ئادىرىسىنى كۆچۈرۈش"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1174
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1179
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1189
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1216
 msgid "Copy _Link"
 msgstr "ئۇلانمىنى كۆچۈرۈش"
 
@@ -1697,6 +1700,7 @@ msgstr "ئېلخەت تاللاش"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1185
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1190
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1200
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1227
 msgid "Select _All"
 msgstr "ھەممىسىنى تاللاش"
 
@@ -1707,6 +1711,7 @@ msgstr "ھەممىسىنى تاللاش"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1191
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1196
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1206
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1233
 msgid "_Inspect"
 msgstr "تەكشۈرۈش"
 
@@ -1778,6 +1783,7 @@ msgstr "مەنبەسىنى كۆرۈش"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1066
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1071
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1081
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1108
 msgid "Failed to open default text editor."
 msgstr "نورمالدىكى تېكست تەھرىرلىگۈچىسىنى ئىچىش مەغلۇپ بولدى."
 
@@ -2364,50 +2370,62 @@ msgid "Close and Discard"
 msgstr "تاقاش ۋە تاشلىۋىتىش"
 
 #: ../data/ui/composer.ui:173 ../data/ui/composer.ui:155
+#: ../data/ui/composer.ui:160
 msgid "Lar_ge"
 msgstr "چوڭ"
 
 #: ../data/ui/composer.ui:174 ../data/ui/composer.ui:156
+#: ../data/ui/composer.ui:161
 msgid "Large"
 msgstr "چوڭ"
 
 #: ../data/ui/composer.ui:179 ../data/ui/composer.ui:161
+#: ../data/ui/composer.ui:166
 msgid "_Medium"
 msgstr "ئوتتۇراھال"
 
 #: ../data/ui/composer.ui:180 ../data/ui/composer.ui:162
+#: ../data/ui/composer.ui:167
 msgid "Medium"
 msgstr "ئوتتۇراھال"
 
 #: ../data/ui/composer.ui:185 ../data/ui/composer.ui:167
+#: ../data/ui/composer.ui:172
 msgid "_Small"
 msgstr "كىچىك"
 
 #: ../data/ui/composer.ui:186 ../data/ui/composer.ui:168
+#: ../data/ui/composer.ui:173
 msgid "Small"
 msgstr "كىچىك"
 
 #: ../data/ui/composer.ui:191 ../data/ui/composer.ui:173
+#: ../data/ui/composer.ui:178
 msgid "S_ans Serif"
 msgstr "تۈس سىزىقسىز"
 
 #: ../data/ui/composer.ui:192 ../data/ui/composer.ui:174
+#: ../data/ui/composer.ui:179
 msgid "Sans Serif"
 msgstr "تۈس سىزىقسىز"
 
 #: ../data/ui/composer.ui:197 ../data/ui/composer.ui:179
+#: ../data/ui/composer.ui:184
 msgid "S_erif"
 msgstr "تۈس سىزىقلىق"
 
 #: ../data/ui/composer.ui:198 ../data/ui/composer.ui:180
+#: ../data/ui/composer.ui:185
 msgid "Serif"
 msgstr "تۈس سىزىقلىق"
 
 #: ../data/ui/composer.ui:203 ../data/ui/composer.ui:185
+#: ../data/ui/composer.ui:190
 msgid "_Fixed Width"
 msgstr "تەڭ ئارىلىقلىق"
 
 #: ../data/ui/composer.ui:204 ../data/ui/composer.ui:186
+#: ../data/ui/composer.ui:191
 msgid "Fixed Width"
 msgstr "تەڭ ئارىلىقلىق"
 
@@ -2448,49 +2466,50 @@ msgid "Include Original Attachments"
 msgstr "ئورگىنالدىكى قوشۇمچە ھۆججەتلەرنى ئۆزئىچىگە ئىلىش"
 
 #: ../data/ui/composer.ui:242 ../data/ui/composer.ui:212
+#: ../data/ui/composer.ui:217
 msgid "Application Menu"
 msgstr "ئەپ تىزىملىكى"
 
 #. Address(es) e-mail is to be sent to
 #: ../data/ui/composer.ui:289 ../data/ui/composer.ui:317
-#: ../data/ui/composer.ui:287
+#: ../data/ui/composer.ui:287 ../data/ui/composer.ui:292
 msgid "_To"
 msgstr "تاپشۇرۇۋالغۇچى"
 
 #: ../data/ui/composer.ui:308 ../data/ui/composer.ui:336
-#: ../data/ui/composer.ui:306
+#: ../data/ui/composer.ui:306 ../data/ui/composer.ui:311
 msgid "_Cc"
 msgstr "كۆچۈرۈپ ئەۋەتىش:"
 
 #: ../data/ui/composer.ui:362 ../data/ui/composer.ui:390
-#: ../data/ui/composer.ui:360
+#: ../data/ui/composer.ui:360 ../data/ui/composer.ui:365
 msgid "_Subject"
 msgstr "تېمىسى:"
 
 #: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
-#: ../data/ui/composer.ui:379
+#: ../data/ui/composer.ui:379 ../data/ui/composer.ui:384
 msgid "_Bcc"
 msgstr "مەخپى يوللاش:"
 
 #: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
-#: ../data/ui/composer.ui:409
+#: ../data/ui/composer.ui:409 ../data/ui/composer.ui:414
 msgid "_Reply-To"
 msgstr "جاۋاب قايتۇرۇش:"
 
 #. Geary account mail will be sent from
 #. Account mail will be sent from
 #: ../data/ui/composer.ui:440 ../data/ui/composer.ui:468
-#: ../data/ui/composer.ui:438
+#: ../data/ui/composer.ui:438 ../data/ui/composer.ui:443
 msgid "From"
 msgstr "يوللىغۇچى"
 
 #: ../data/ui/composer.ui:519 ../data/ui/composer.ui:547
-#: ../data/ui/composer.ui:517
+#: ../data/ui/composer.ui:517 ../data/ui/composer.ui:522
 msgid "Drop files here"
 msgstr "ھۆججەتلەرنى بۇ يەرگە سۆرەش"
 
 #: ../data/ui/composer.ui:535 ../data/ui/composer.ui:563
-#: ../data/ui/composer.ui:533
+#: ../data/ui/composer.ui:533 ../data/ui/composer.ui:538
 msgid "To add them as attachments"
 msgstr "قوشۇمچە ھۆججەت قىلىپ قىتىش"
 
@@ -2875,6 +2894,7 @@ msgstr "يەتكۈزۈش"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1145
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1155
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1182
 msgid "Mark as Unread"
 msgstr "ئوقۇلمىغان دەپ بەلگە قىلىش"
 
@@ -2887,6 +2907,7 @@ msgstr "ئوقۇلمىغان دەپ بەلگە قىلىش"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1143
 #: ../src/client/conversation-viewer/ConversationWidget.vala:274
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1153
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1180
 msgid "Mark as Read"
 msgstr "ئوقۇلغان دەپ بەلگە قىلىش"
 
@@ -2914,6 +2935,7 @@ msgstr "مەنبەسىنى كۆرۈش"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:635
 #: ../src/client/conversation-viewer/ConversationWidget.vala:345
 #: ../src/client/conversation-viewer/ConversationWidget.vala:638
+#: ../src/client/conversation-viewer/ConversationWidget.vala:665
 msgid "View message"
 msgstr "ئۇچۇر كۆرۈش"
 
@@ -2938,6 +2960,7 @@ msgstr "يوللىغۇچىنى داۋاملىق كۆرسىتىش"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:581
 #: ../src/client/conversation-viewer/ConversationWidget.vala:584
 #: ../src/client/conversation-viewer/ConversationWidget.vala:587
+#: ../src/client/conversation-viewer/ConversationWidget.vala:586
 msgid "Compose New Message"
 msgstr "يىڭى ئېلخەت يىزىش"
 
@@ -2946,6 +2969,7 @@ msgstr "يىڭى ئېلخەت يىزىش"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:582
 #: ../src/client/conversation-viewer/ConversationWidget.vala:585
 #: ../src/client/conversation-viewer/ConversationWidget.vala:588
+#: ../src/client/conversation-viewer/ConversationWidget.vala:587
 msgid "Copy Email Address"
 msgstr "ئېلخەت ئادىرىسىنى كۆچۈرۈش"
 
@@ -2954,6 +2978,7 @@ msgstr "ئېلخەت ئادىرىسىنى كۆچۈرۈش"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:643
 #: ../src/client/conversation-viewer/ConversationWidget.vala:648
 #: ../src/client/conversation-viewer/ConversationWidget.vala:651
+#: ../src/client/conversation-viewer/ConversationWidget.vala:678
 msgid "Hide message"
 msgstr "ئېلخەتنى كۆرسەتمەسلىك"
 

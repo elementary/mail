@@ -13,16 +13,16 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
 "onent=general\n"
-"POT-Creation-Date: 2016-08-25 14:51-0700\n"
-"PO-Revision-Date: 2017-02-20 08:32+0000\n"
-"Last-Translator: Petr Dombek <dombek@oblati.cz>\n"
+"POT-Creation-Date: 2017-03-08 13:23-0800\n"
+"PO-Revision-Date: 2017-03-08 01:03+0000\n"
+"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2017-02-21 06:11+0000\n"
-"X-Generator: Launchpad (build 18326)\n"
+"X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
+"X-Generator: Launchpad (build 18330)\n"
 "Language: cs\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -255,7 +255,7 @@ msgstr "Poštovní klient"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "Copyright 2011-2015 Yorba Foundation"
-msgstr "Copyright 2011 – 2015 Yorba Foundation"
+msgstr "Copyright 2011-2015 Yorba Foundation"
 
 #: ../src/client/application/geary-application.vala:21
 msgid "Visit the Yorba web site"
@@ -280,8 +280,9 @@ msgstr "Vymazat konverzace (Shift+Delete)"
 #: ../src/client/application/geary-controller.vala:2723
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Přesunout konverzaci do koše (Delete, Backspace)"
+msgstr[1] "Přesunout konverzace do koše (Delete, Backspace)"
+msgstr[2] "Přesunout konverzace do koše (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
@@ -301,8 +302,9 @@ msgstr "_Archivovat"
 #: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Archivovat konverzaci (A)"
+msgstr[1] "Archivovat koverzace (A)"
+msgstr[2] "Archivovat koverzace (A)"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
@@ -345,8 +347,9 @@ msgstr "Označit, že není nevyžá_dané"
 #: ../src/client/application/geary-controller.vala:390
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Označit konverzaci"
+msgstr[1] "Označit konverzace"
+msgstr[2] "Označit konverzace"
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
@@ -369,8 +372,9 @@ msgstr "Označit konverzace"
 #: ../src/client/application/geary-controller.vala:2716
 msgid "Add label to conversation"
 msgid_plural "Add label to conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Přiřadit konverzaci štítek"
+msgstr[1] "Přiřadit konverzacím štítek"
+msgstr[2] "Přiřadit konverzacím štítek"
 
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
@@ -397,8 +401,9 @@ msgstr "Přiřadit konverzacím štítek"
 #: ../src/client/application/geary-controller.vala:2718
 msgid "Move conversation"
 msgid_plural "Move conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Přesunout koverzaci"
+msgstr[1] "Přesunout koverzace"
+msgstr[2] "Přesunout koverzace"
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
@@ -430,7 +435,7 @@ msgstr "_Předvolby"
 #: ../src/client/components/stock.vala:25
 #: ../src/client/application/geary-controller.vala:380
 msgid "_Help"
-msgstr "Nápo_věda"
+msgstr "_Nápověda"
 
 #: ../src/client/application/geary-controller.vala:385
 #: ../src/client/components/stock.vala:21
@@ -608,7 +613,7 @@ msgstr "Vyprázdnit _nevyžádanou…"
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr "Vyprázdnit koš…"
+msgstr "Vysypat _koš..."
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -763,7 +768,7 @@ msgstr "Znovu _sestavit"
 #: ../src/client/application/geary-controller.vala:1124
 #: ../src/client/application/geary-controller.vala:1118
 msgid "E_xit"
-msgstr "S_končit"
+msgstr "U_končit"
 
 #: ../src/client/application/geary-controller.vala:1162
 #: ../src/client/application/geary-controller.vala:1156
@@ -888,6 +893,7 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  Filip Joska https://launchpad.net/~jimmyl0l3c\n"
 "  Greenscreener https://launchpad.net/~greenscreener\n"
+"  Jan Marek https://launchpad.net/~janmarek28\n"
 "  Lukáš Papík https://launchpad.net/~stereo839\n"
 "  Marv-CZ https://launchpad.net/~marek-manet\n"
 "  Petr Dombek https://launchpad.net/~dombek"
@@ -1723,6 +1729,7 @@ msgstr "Tato zpráva byla úspěšně odeslána, ale nelze ji uložit do %s"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1157
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1162
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1172
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1199
 msgid "_Copy"
 msgstr "_Kopírovat"
 
@@ -1733,6 +1740,7 @@ msgstr "_Kopírovat"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1165
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1170
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1180
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1207
 msgid "Copy _Email Address"
 msgstr "Kopírovat _e-mailovou adresu"
 
@@ -1745,6 +1753,7 @@ msgstr "Kopírovat _e-mailovou adresu"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1174
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1179
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1189
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1216
 msgid "Copy _Link"
 msgstr "Kopírovat _odkaz"
 
@@ -1762,6 +1771,7 @@ msgstr "Vybrat _zprávu"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1185
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1190
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1200
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1227
 msgid "Select _All"
 msgstr "Vybrat _vše"
 
@@ -1772,6 +1782,7 @@ msgstr "Vybrat _vše"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1191
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1196
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1206
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1233
 msgid "_Inspect"
 msgstr "_Kontrolovat"
 
@@ -1845,6 +1856,7 @@ msgstr "_Zobrazit zdroj"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1066
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1071
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1081
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1108
 msgid "Failed to open default text editor."
 msgstr "Nepodařilo se otevřít výchozí textový editor."
 
@@ -2162,7 +2174,7 @@ msgstr "Nabídka"
 #: ../src/client/application/geary-application.vala:24
 #: ../src/Translations.vala:1
 msgid "Send by Email"
-msgstr ""
+msgstr "Odeslat e-mailem"
 
 #: ../src/client/application/geary-application.vala:26
 #: ../src/client/application/geary-application.vala:25
@@ -2179,7 +2191,7 @@ msgstr ""
 #: ../src/client/composer/composer-toolbar.vala:77
 #: ../src/client/composer/ComposerToolbar.vala:88
 msgid "More options"
-msgstr ""
+msgstr "Více možností"
 
 #: ../src/client/components/main-toolbar.vala:312
 #: ../src/client/components/main-toolbar.vala:281
@@ -2188,27 +2200,27 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:289
 #: ../src/client/components/main-toolbar.vala:290
 msgid "Search %s"
-msgstr ""
+msgstr "Hledat %s"
 
 #: ../src/client/dialogs/preferences-dialog.vala:23
 #: ../src/client/dialogs/preferences-dialog.vala:24
 msgid "Reading"
-msgstr ""
+msgstr "Čtení"
 
 #: ../src/client/dialogs/preferences-dialog.vala:28
 #: ../src/client/dialogs/preferences-dialog.vala:29
 msgid "Automatically select next message:"
-msgstr ""
+msgstr "Automaticky vybrat další správu:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:33
 #: ../src/client/dialogs/preferences-dialog.vala:34
 msgid "Conversation previews:"
-msgstr ""
+msgstr "Náhledy konverzace:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:38
 #: ../src/client/dialogs/preferences-dialog.vala:39
 msgid "Three-pane layout:"
-msgstr ""
+msgstr "Tří-panelové rozvržení:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:42 ../data/ui/login.ui:853
 #: ../src/client/dialogs/preferences-dialog.vala:48
@@ -2218,13 +2230,13 @@ msgstr ""
 #: ../src/client/dialogs/preferences-dialog.vala:47
 #: ../src/client/dialogs/preferences-dialog.vala:53
 msgid "Spell check:"
-msgstr ""
+msgstr "Kontrola pravopisu:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:51
 #: ../src/client/dialogs/preferences-dialog.vala:57
 #: ../src/client/dialogs/preferences-dialog.vala:47
 msgid "Notifications"
-msgstr ""
+msgstr "Upozornění"
 
 #: ../src/client/dialogs/preferences-dialog.vala:56
 #: ../src/client/dialogs/preferences-dialog.vala:62
@@ -2236,7 +2248,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:60
 #: ../src/client/application/geary-controller.vala:59
 msgid "Delete Conversation"
-msgstr ""
+msgstr "Odstranit konverzaci"
 
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
@@ -2245,20 +2257,23 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2725
 msgid "Delete Conversation (Shift+Delete)"
 msgid_plural "Delete Conversations (Shift+Delete)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Odstranit konverzaci (Shift+Delete)"
+msgstr[1] "Odstranit konverzace (Shift+Delete)"
+msgstr[2] "Odstranit konverzace (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete Conversations (Shift+Delete)"
-msgstr ""
+msgstr "Odstranit konverzace (Shift+Delete)"
 
 #: ../data/ui/remove_confirm.ui:43
 msgid ""
 "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
 "account?</span> "
 msgstr ""
+"<span weight=\"bold\" size=\"larger\">Jste si jisti, že chcete odstranit "
+"tento účet?</span> "
 
 #: ../data/ui/remove_confirm.ui:58
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:42
@@ -2266,15 +2281,17 @@ msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
 msgstr ""
+"Všechny e-maily spojené s tímto účtem budou odstraněny z vašeho počítače. "
+"Toto neovlivní e-maily na serveru."
 
 #: ../data/ui/remove_confirm.ui:80
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:47
 msgid "Nickname:"
-msgstr ""
+msgstr "Přezdívka:"
 
 #: ../data/ui/remove_confirm.ui:94
 msgid "Email address:"
-msgstr ""
+msgstr "E-mailová adresa:"
 
 #: ../data/ui/find_bar.ui:59
 msgid "Find"
@@ -2282,7 +2299,7 @@ msgstr ""
 
 #: ../data/ui/find_bar.ui:72
 msgid "Previous Result"
-msgstr ""
+msgstr "Předchozí výsledek"
 
 #: ../data/ui/find_bar.ui:91
 msgid "Next result"
@@ -2294,7 +2311,7 @@ msgstr ""
 
 #: ../data/ui/find_bar.ui:127
 msgid "label"
-msgstr ""
+msgstr "štítek"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
@@ -2302,7 +2319,7 @@ msgstr ""
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
-msgstr ""
+msgstr "Odstranit e-mailovou adresu"
 
 #: ../data/ui/edit_alternate_emails.ui:136
 msgid ""
@@ -2312,11 +2329,11 @@ msgstr ""
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
-msgstr ""
+msgstr "_Aktualizace"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
-msgstr ""
+msgstr "Prosím vyčkejte než vám Geary ověří účet."
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
@@ -2328,11 +2345,11 @@ msgstr ""
 
 #: ../data/ui/composer.ui:22
 msgid "Cu_t"
-msgstr ""
+msgstr "_Vyjmout"
 
 #: ../data/ui/composer.ui:36
 msgid "_Paste"
-msgstr ""
+msgstr "_Vložit"
 
 #: ../data/ui/composer.ui:43
 msgid "_Left"
@@ -2352,23 +2369,23 @@ msgstr ""
 
 #: ../data/ui/composer.ui:63 ../src/client/composer/ComposerToolbar.vala:77
 msgid "Link (Ctrl+L)"
-msgstr ""
+msgstr "Odkaz (Ctrl+L)"
 
 #: ../data/ui/composer.ui:70 ../data/ui/composer.ui:69
 msgid "C_olor"
-msgstr ""
+msgstr "_Barva"
 
 #: ../data/ui/composer.ui:81
 msgid "Quote text  (Ctrl+])"
-msgstr ""
+msgstr "Citovat text (Ctrl+])"
 
 #: ../data/ui/composer.ui:87 ../src/client/composer/ComposerToolbar.vala:69
 msgid "Unquote text (Ctrl+[)"
-msgstr ""
+msgstr "Ukončit citaci (Ctrl+[)"
 
 #: ../data/ui/composer.ui:93 ../src/client/composer/ComposerToolbar.vala:82
 msgid "Remove formatting (Ctrl+Space)"
-msgstr ""
+msgstr "Odebrat formátování (Ctrl+Mezerník)"
 
 #: ../data/ui/composer.ui:100 ../data/ui/composer.ui:97
 msgctxt "Clipboard paste with rich text"
@@ -2377,23 +2394,23 @@ msgstr ""
 
 #: ../data/ui/composer.ui:111 ../src/client/composer/ComposerToolbar.vala:36
 msgid "Bold (Ctrl+B)"
-msgstr ""
+msgstr "Tučně (Ctrl+B)"
 
 #: ../data/ui/composer.ui:118 ../src/client/composer/ComposerToolbar.vala:41
 msgid "Italic (Ctrl+I)"
-msgstr ""
+msgstr "Kurzíva (Ctrl+I)"
 
 #: ../data/ui/composer.ui:125 ../src/client/composer/ComposerToolbar.vala:46
 msgid "Underline (Ctrl+U)"
-msgstr ""
+msgstr "Podtržení (Ctrl+U)"
 
 #: ../data/ui/composer.ui:132 ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+K)"
-msgstr ""
+msgstr "Přeškrtnutí (Ctrl+K)"
 
 #: ../data/ui/composer.ui:139 ../data/ui/composer.ui:132
 msgid "_Rich Text"
-msgstr ""
+msgstr "_Formátovaný text"
 
 #: ../data/ui/composer.ui:145 ../data/ui/composer.ui:138
 msgid "Show Extended Fields"
@@ -2402,80 +2419,92 @@ msgstr ""
 #: ../data/ui/composer.ui:157
 msgctxt "Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "Uložit a zavřít"
 
 #: ../data/ui/composer.ui:158
 msgctxt "Short Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "Uložit a zavřít"
 
 #: ../data/ui/composer.ui:159
 msgctxt "Tooltip"
 msgid "Close and Save"
-msgstr ""
+msgstr "Uložit a zavřít"
 
 #: ../data/ui/composer.ui:165
 msgctxt "Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Zavřít bez uložení"
 
 #: ../data/ui/composer.ui:166
 msgctxt "Short Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Zavřít bez uložení"
 
 #: ../data/ui/composer.ui:167
 msgctxt "Tooltip"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Zavřít bez uložení"
 
 #: ../data/ui/composer.ui:173 ../data/ui/composer.ui:155
+#: ../data/ui/composer.ui:160
 msgid "Lar_ge"
 msgstr ""
 
 #: ../data/ui/composer.ui:174 ../data/ui/composer.ui:156
+#: ../data/ui/composer.ui:161
 msgid "Large"
 msgstr ""
 
 #: ../data/ui/composer.ui:179 ../data/ui/composer.ui:161
+#: ../data/ui/composer.ui:166
 msgid "_Medium"
 msgstr ""
 
 #: ../data/ui/composer.ui:180 ../data/ui/composer.ui:162
+#: ../data/ui/composer.ui:167
 msgid "Medium"
 msgstr ""
 
 #: ../data/ui/composer.ui:185 ../data/ui/composer.ui:167
+#: ../data/ui/composer.ui:172
 msgid "_Small"
 msgstr ""
 
 #: ../data/ui/composer.ui:186 ../data/ui/composer.ui:168
+#: ../data/ui/composer.ui:173
 msgid "Small"
 msgstr ""
 
 #: ../data/ui/composer.ui:191 ../data/ui/composer.ui:173
+#: ../data/ui/composer.ui:178
 msgid "S_ans Serif"
-msgstr ""
+msgstr "B_ezpatkové písmo"
 
 #: ../data/ui/composer.ui:192 ../data/ui/composer.ui:174
+#: ../data/ui/composer.ui:179
 msgid "Sans Serif"
-msgstr ""
+msgstr "Bezpatkové písmo"
 
 #: ../data/ui/composer.ui:197 ../data/ui/composer.ui:179
+#: ../data/ui/composer.ui:184
 msgid "S_erif"
-msgstr ""
+msgstr "P_atkové písmo"
 
 #: ../data/ui/composer.ui:198 ../data/ui/composer.ui:180
+#: ../data/ui/composer.ui:185
 msgid "Serif"
-msgstr ""
+msgstr "Patkové písmo"
 
 #: ../data/ui/composer.ui:203 ../data/ui/composer.ui:185
+#: ../data/ui/composer.ui:190
 msgid "_Fixed Width"
-msgstr ""
+msgstr "_Pevná šířka"
 
 #: ../data/ui/composer.ui:204 ../data/ui/composer.ui:186
+#: ../data/ui/composer.ui:191
 msgid "Fixed Width"
-msgstr ""
+msgstr "Pevná šířka"
 
 #: ../data/ui/composer.ui:209 ../data/ui/composer.ui:210
 msgid "Detach"
@@ -2487,15 +2516,15 @@ msgstr ""
 
 #: ../data/ui/composer.ui:218
 msgid "_Send"
-msgstr ""
+msgstr "_Odeslat"
 
 #: ../data/ui/composer.ui:219 ../src/client/composer/ComposerHeaderBar.vala:46
 msgid "Send"
-msgstr ""
+msgstr "Odeslat"
 
 #: ../data/ui/composer.ui:220 ../src/client/composer/ComposerHeaderBar.vala:47
 msgid "Send (Ctrl+Enter)"
-msgstr ""
+msgstr "Odeslat (Ctrl+Enter)"
 
 #: ../data/ui/composer.ui:226
 msgid "_Attach File"
@@ -2514,49 +2543,50 @@ msgid "Include Original Attachments"
 msgstr ""
 
 #: ../data/ui/composer.ui:242 ../data/ui/composer.ui:212
+#: ../data/ui/composer.ui:217
 msgid "Application Menu"
 msgstr ""
 
 #. Address(es) e-mail is to be sent to
 #: ../data/ui/composer.ui:289 ../data/ui/composer.ui:317
-#: ../data/ui/composer.ui:287
+#: ../data/ui/composer.ui:287 ../data/ui/composer.ui:292
 msgid "_To"
-msgstr ""
+msgstr "_Komu"
 
 #: ../data/ui/composer.ui:308 ../data/ui/composer.ui:336
-#: ../data/ui/composer.ui:306
+#: ../data/ui/composer.ui:306 ../data/ui/composer.ui:311
 msgid "_Cc"
-msgstr ""
+msgstr "_Kopie"
 
 #: ../data/ui/composer.ui:362 ../data/ui/composer.ui:390
-#: ../data/ui/composer.ui:360
+#: ../data/ui/composer.ui:360 ../data/ui/composer.ui:365
 msgid "_Subject"
-msgstr ""
+msgstr "_Předmět"
 
 #: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
-#: ../data/ui/composer.ui:379
+#: ../data/ui/composer.ui:379 ../data/ui/composer.ui:384
 msgid "_Bcc"
-msgstr ""
+msgstr "_Skrytá kopie"
 
 #: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
-#: ../data/ui/composer.ui:409
+#: ../data/ui/composer.ui:409 ../data/ui/composer.ui:414
 msgid "_Reply-To"
 msgstr ""
 
 #. Geary account mail will be sent from
 #. Account mail will be sent from
 #: ../data/ui/composer.ui:440 ../data/ui/composer.ui:468
-#: ../data/ui/composer.ui:438
+#: ../data/ui/composer.ui:438 ../data/ui/composer.ui:443
 msgid "From"
-msgstr ""
+msgstr "Od"
 
 #: ../data/ui/composer.ui:519 ../data/ui/composer.ui:547
-#: ../data/ui/composer.ui:517
+#: ../data/ui/composer.ui:517 ../data/ui/composer.ui:522
 msgid "Drop files here"
 msgstr ""
 
 #: ../data/ui/composer.ui:535 ../data/ui/composer.ui:563
-#: ../data/ui/composer.ui:533
+#: ../data/ui/composer.ui:533 ../data/ui/composer.ui:538
 msgid "To add them as attachments"
 msgstr ""
 
@@ -2580,15 +2610,15 @@ msgstr ""
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
-msgstr ""
+msgstr "Heslo"
 
 #: ../data/ui/login.ui:97 ../data/ui/login.ui:545
 msgid "_Password:"
-msgstr ""
+msgstr "_Heslo:"
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
-msgstr ""
+msgstr "E_-mailová adresa:"
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
@@ -2596,47 +2626,47 @@ msgstr ""
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
-msgstr ""
+msgstr "P_řezdívka:"
 
 #: ../data/ui/login.ui:195
 msgid "N_ame:"
-msgstr ""
+msgstr "J_méno:"
 
 #: ../data/ui/login.ui:211
 msgid "S_ervice:"
-msgstr ""
+msgstr "S_lužba:"
 
 #: ../data/ui/login.ui:298
 msgid "IMAP settings"
-msgstr ""
+msgstr "Nastavení IMAP"
 
 #: ../data/ui/login.ui:315
 msgid "Se_rver:"
-msgstr ""
+msgstr "Se_rver:"
 
 #: ../data/ui/login.ui:347
 msgid "P_ort"
-msgstr ""
+msgstr "P_ort"
 
 #: ../data/ui/login.ui:409
 msgid "Ser_ver:"
-msgstr ""
+msgstr "Ser_ver:"
 
 #: ../data/ui/login.ui:427
 msgid "Por_t"
-msgstr ""
+msgstr "Por_t"
 
 #: ../data/ui/login.ui:446
 msgid "SMTP settings"
-msgstr ""
+msgstr "Nastavení SMTP"
 
 #: ../data/ui/login.ui:462
 msgid "User_name:"
-msgstr ""
+msgstr "Uživatelské _jméno:"
 
 #: ../data/ui/login.ui:480
 msgid "Pass_word:"
-msgstr ""
+msgstr "He_slo:"
 
 #: ../data/ui/login.ui:499
 msgid "SMTP username"
@@ -2648,7 +2678,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:527
 msgid "_Username:"
-msgstr ""
+msgstr "_Uživatelské jméno:"
 
 #: ../data/ui/login.ui:564
 msgid "IMAP username"
@@ -2660,19 +2690,19 @@ msgstr ""
 
 #: ../data/ui/login.ui:593
 msgid "Encr_yption:"
-msgstr ""
+msgstr "Ši_frování:"
 
 #: ../data/ui/login.ui:613
 msgid "Encrypt_ion:"
-msgstr ""
+msgstr "Šifro_vání:"
 
 #: ../data/ui/login.ui:634 ../data/ui/login.ui:651
 msgid "SSL/TLS"
-msgstr ""
+msgstr "SSL/TLS"
 
 #: ../data/ui/login.ui:635 ../data/ui/login.ui:652
 msgid "STARTTLS"
-msgstr ""
+msgstr "STARTTLS"
 
 #: ../data/ui/login.ui:663
 msgid "No authentication re_quired"
@@ -2700,31 +2730,31 @@ msgstr ""
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
-msgstr ""
+msgstr "Přidat účet"
 
 #: ../data/ui/account_list.ui:82
 msgid "Edit account"
-msgstr ""
+msgstr "Upravit účet"
 
 #: ../data/ui/account_list.ui:95
 msgid "Remove account"
-msgstr ""
+msgstr "Odebrat účet"
 
 #: ../data/ui/certificate_warning_dialog.ui:7
 msgid "Untrusted Connection"
-msgstr ""
+msgstr "Nedůvěryhodné spojení"
 
 #: ../data/ui/certificate_warning_dialog.ui:29
 msgid "_Always Trust This Server"
-msgstr ""
+msgstr "_Vždy důvěřovat tomuto serveru"
 
 #: ../data/ui/certificate_warning_dialog.ui:43
 msgid "_Trust This Server"
-msgstr ""
+msgstr "_Důvěřovat tomuto serveru"
 
 #: ../data/ui/certificate_warning_dialog.ui:57
 msgid "_Don't Trust This Server"
-msgstr ""
+msgstr "_Nedůvěřovat tomuto serveru"
 
 #: ../data/ui/password-dialog.ui:74
 msgid "SMTP Credentials"
@@ -2732,11 +2762,11 @@ msgstr ""
 
 #: ../data/ui/password-dialog.ui:91
 msgid "Username"
-msgstr ""
+msgstr "Uživatelské jméno"
 
 #: ../data/ui/password-dialog.ui:152
 msgid "_Remember password"
-msgstr ""
+msgstr "_Zapamatovat heslo"
 
 #: ../data/ui/password-dialog.ui:210
 msgid "_Authenticate"
@@ -2744,12 +2774,12 @@ msgstr ""
 
 #: ../src/client/application/geary-application.vala:19
 msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
-msgstr ""
+msgstr "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
 
 #: ../src/client/application/geary-application.vala:21
 #: ../src/client/application/geary-application.vala:20
 msgid "Website"
-msgstr ""
+msgstr "Webové stránky"
 
 #: ../src/client/application/geary-controller.vala:1052
 #: ../src/client/application/geary-controller.vala:1046
@@ -2833,7 +2863,7 @@ msgstr ""
 #: ../src/client/dialogs/password-dialog.vala:16
 #: ../src/client/dialogs/PasswordDialog.vala:39
 msgid "Mail requires your email password to continue"
-msgstr ""
+msgstr "Mail požaduje vaše heslo pro pokračování"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
@@ -2858,7 +2888,7 @@ msgstr ""
 #: ../data/ui/account_spinner.ui:41
 #: ../src/client/accounts/account-spinner-page.vala:22
 msgid "Please wait while Mail validates your account."
-msgstr ""
+msgstr "Počkejte prosím než Mail ověří váš účet."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
@@ -2874,6 +2904,8 @@ msgid ""
 "2011-2015 Yorba Foundation\n"
 "© 2016 elementary LLC."
 msgstr ""
+"2011-2015 Yorba Foundation\n"
+"© 2016 elementary LLC."
 
 #: ../src/client/application/geary-args.vala:10
 msgid "Show About dialog"
@@ -2898,21 +2930,21 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:241
 #: ../src/client/conversation-viewer/ConversationWidget.vala:243
 msgid "Reply"
-msgstr ""
+msgstr "Odpovědět"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:239
 #: ../src/client/conversation-viewer/ConversationWidget.vala:242
 #: ../src/client/conversation-viewer/ConversationWidget.vala:244
 msgid "Reply to All"
-msgstr ""
+msgstr "Odpovědět všem"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:231
 #: ../src/client/conversation-viewer/ConversationWidget.vala:240
 #: ../src/client/conversation-viewer/ConversationWidget.vala:243
 #: ../src/client/conversation-viewer/ConversationWidget.vala:245
 msgid "Forward"
-msgstr ""
+msgstr "Přeposlat"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:247
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1112
@@ -2923,8 +2955,9 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1145
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1155
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1182
 msgid "Mark as Unread"
-msgstr ""
+msgstr "Označit jako nepřečtené"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:249
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1110
@@ -2935,15 +2968,16 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1143
 #: ../src/client/conversation-viewer/ConversationWidget.vala:274
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1153
+#: ../src/client/conversation-viewer/ConversationWidget.vala:1180
 msgid "Mark as Read"
-msgstr ""
+msgstr "Označit jako přečtené"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:252
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:275
 #: ../src/client/conversation-viewer/ConversationWidget.vala:277
 msgid "Print…"
-msgstr ""
+msgstr "Tisk…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
@@ -2962,8 +2996,9 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:635
 #: ../src/client/conversation-viewer/ConversationWidget.vala:345
 #: ../src/client/conversation-viewer/ConversationWidget.vala:638
+#: ../src/client/conversation-viewer/ConversationWidget.vala:665
 msgid "View message"
-msgstr ""
+msgstr "Zobrazit zprávu"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:386
 #: ../src/client/conversation-viewer/ConversationWidget.vala:406
@@ -2986,14 +3021,16 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:581
 #: ../src/client/conversation-viewer/ConversationWidget.vala:584
 #: ../src/client/conversation-viewer/ConversationWidget.vala:587
+#: ../src/client/conversation-viewer/ConversationWidget.vala:586
 msgid "Compose New Message"
-msgstr ""
+msgstr "Napsat novou zprávu"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:554
 #: ../src/client/conversation-viewer/ConversationWidget.vala:578
 #: ../src/client/conversation-viewer/ConversationWidget.vala:582
 #: ../src/client/conversation-viewer/ConversationWidget.vala:585
 #: ../src/client/conversation-viewer/ConversationWidget.vala:588
+#: ../src/client/conversation-viewer/ConversationWidget.vala:587
 msgid "Copy Email Address"
 msgstr ""
 
@@ -3002,12 +3039,13 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:643
 #: ../src/client/conversation-viewer/ConversationWidget.vala:648
 #: ../src/client/conversation-viewer/ConversationWidget.vala:651
+#: ../src/client/conversation-viewer/ConversationWidget.vala:678
 msgid "Hide message"
-msgstr ""
+msgstr "Skrýt zprávu"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr ""
+msgstr "Uložit jako…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
@@ -3016,8 +3054,9 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
 msgid_plural "%u matches"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u shoda"
+msgstr[1] "%u shody"
+msgstr[2] "%u shod"
 
 #. / TRANSLATORS: please copy the original string and append all local parts of "no reply" email addresses
 #. / (that is the part before the '@') that exist in your language (separated with a semicolon)
@@ -3048,7 +3087,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:436
 #: ../src/client/conversation-viewer/ConversationWidget.vala:438
 msgid "More"
-msgstr ""
+msgstr "Více"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
 msgid "Delete draft"
@@ -3064,11 +3103,11 @@ msgstr ""
 
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
-msgstr ""
+msgstr "Citovat text (Ctrl+])"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:34
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "Jste si jisti, že chcete otevřít %s?"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:40
 msgid ""
@@ -3082,33 +3121,33 @@ msgstr ""
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:48
 msgid "Open Anyway"
-msgstr ""
+msgstr "Přesto otevřít"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:64
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:59
 #: ../src/client/dialogs/PasswordDialog.vala:96
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušit"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:36
 msgid "Are you sure you want to remove this account?"
-msgstr ""
+msgstr "Opravdu chcete odebrat tento účet?"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:53
 msgid "Email Address:"
-msgstr ""
+msgstr "E-mailová adresa:"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:61
 msgid "Remove Account"
-msgstr ""
+msgstr "Odebrat účet"
 
 #: ../src/client/dialogs/PasswordDialog.vala:45
 msgid "Username:"
-msgstr ""
+msgstr "Uživatelské jméno:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:52
 msgid "Password:"
-msgstr ""
+msgstr "Heslo:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:55
 msgid "SMTP Credentials:"
@@ -3130,7 +3169,7 @@ msgstr ""
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
-msgstr ""
+msgstr "Mail"
 
 #: ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+%)"
