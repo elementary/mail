@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-03-20 15:12+0000\n"
+"PO-Revision-Date: 2017-03-22 17:36+0000\n"
 "Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
 "Language-Team: Danish "
 "(http://www.transifex.com/projects/p/geary/language/da/)\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2017-03-22 07:21+0000\n"
+"X-Launchpad-Export-Date: 2017-03-24 06:34+0000\n"
 "X-Generator: Launchpad (build 18334)\n"
 "Language: da\n"
 
@@ -980,7 +980,7 @@ msgstr "Tøm al e-mail fra din %s-mappe?"
 #: ../src/client/application/geary-controller.vala:2440
 #: ../src/client/application/geary-controller.vala:2434
 msgid "This removes the email from Geary and your email server."
-msgstr ""
+msgstr "Dette fjerner e-mailen fra Geary og din e-mailserver."
 
 #: ../src/client/application/geary-controller.vala:2441
 #: ../src/client/application/geary-controller.vala:2435
