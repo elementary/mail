@@ -5,18 +5,16 @@
 
 You'll need the following dependencies:
 * cmake
-* [cmake-elementary](https://code.launchpad.net/~elementary-os/+junk/cmake-modules)
-* intltool
-* libappstream-dev (>= 0.10)
-* libgee-0.8-dev
+* libaccounts-glib-dev
+* libcanberra-dev
+* libgcr-3-dev
+* libgmime-2.6-dev
 * libgranite-dev
+* libgsignon-glib-dev
 * libgtk-3-dev
-* libjson-glib-dev
-* libpackagekit-glib2-dev
-* libsoup2.4-dev
-* libunity-dev
+* libsecret-1-dev
+* libsqlite3-dev
 * libxml2-dev
-* libxml2-utils
 * valac (>= 0.26)
 
 It's recommended to create a clean build environment
