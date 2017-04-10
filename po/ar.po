@@ -9,42 +9,41 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
-"Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2015-11-24 15:48+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
-"Language-Team: Arabic "
-"(http://www.transifex.com/projects/p/geary/language/ar/)\n"
+"PO-Revision-Date: 2017-04-10 18:13+0000\n"
+"Last-Translator: HAYDER <albasimy16@gmail.com>\n"
+"Language-Team: Arabic <https://l10n.elementary.io/projects/mail/mail/ar/>\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n % 100 >= "
-"3 && n % 100 <= 10 ? 3 : n % 100 >= 11 && n % 100 <= 99 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:58+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
-"Language: ar\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
-msgstr ""
+msgstr "المسودة"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:580
 msgid "Sent | Sent Mail | Sent Email | Sent E-Mail"
-msgstr ""
+msgstr "إرسال| إرسال بريد | إرسال بريد | إرسال البريد"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:585
 msgid ""
 "Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
 "| Bulk E-Mail"
-msgstr ""
+msgstr "السبام|"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:590
 msgid "Trash | Rubbish | Rubbish Bin"
-msgstr ""
+msgstr "حذف |"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:595
 msgid "Archive | Archives"
-msgstr ""
+msgstr "أرشفة | الأرشيف"
 
 #: ../src/engine/api/geary-special-folder-type.vala:24
 msgid "Inbox"
@@ -56,11 +55,11 @@ msgstr "المسودات"
 
 #: ../src/engine/api/geary-special-folder-type.vala:30
 msgid "Sent Mail"
-msgstr "البريد المرسل"
+msgstr "إرسال بريد"
 
 #: ../src/engine/api/geary-special-folder-type.vala:33
 msgid "Starred"
-msgstr "متألقة"
+msgstr "مهمة"
 
 #: ../src/engine/api/geary-special-folder-type.vala:36
 msgid "Important"
@@ -72,7 +71,7 @@ msgstr "كل البريد"
 
 #: ../src/engine/api/geary-special-folder-type.vala:42
 msgid "Spam"
-msgstr "رسال مزعجة"
+msgstr "السبام"
 
 #: ../src/engine/api/geary-special-folder-type.vala:45
 msgid "Trash"
@@ -80,23 +79,23 @@ msgstr "سلة المهملات"
 
 #: ../src/engine/api/geary-special-folder-type.vala:48
 msgid "Outbox"
-msgstr "الصادر"
+msgstr "البريد المرسل"
 
 #: ../src/engine/api/geary-special-folder-type.vala:51
 #: ../src/client/folder-list/folder-list-search-branch.vala:38
 #: ../src/client/components/search-bar.vala:10
 #: ../src/client/components/main-toolbar.vala:29
 msgid "Search"
-msgstr ""
+msgstr "بحث"
 
 #: ../src/engine/api/geary-special-folder-type.vala:54
 msgid "Archive"
-msgstr ""
+msgstr "الأرشيف"
 
 #: ../src/engine/api/geary-special-folder-type.vala:58 ../data/ui/login.ui:633
 #: ../data/ui/login.ui:650
 msgid "None"
-msgstr "لا شئ"
+msgstr ""
 
 #: ../src/engine/api/geary-service.vala:20
 msgid "IMAP"
@@ -104,7 +103,7 @@ msgstr ""
 
 #: ../src/engine/api/geary-service.vala:23
 msgid "SMTP"
-msgstr ""
+msgstr "SMTP"
 
 #: ../src/engine/api/geary-service-provider.vala:52
 msgid "Gmail"
@@ -116,18 +115,18 @@ msgstr "بريد Yahoo!"
 
 #: ../src/engine/api/geary-service-provider.vala:58
 msgid "Outlook.com"
-msgstr ""
+msgstr "Outlook.com"
 
 #: ../src/engine/api/geary-service-provider.vala:61
 msgid "Other"
-msgstr "اخري"
+msgstr ""
 
 #. / Can be typed in the search box like attachment:file.txt to find
 #. / messages with attachments with a particular name.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:710
 msgid "attachment"
-msgstr ""
+msgstr "المرفقات"
 
 #. / Can be typed in the search box like bcc:johndoe@example.com to find
 #. / messages bcc'd to a particular person.  The translated
@@ -135,14 +134,14 @@ msgstr ""
 #: ../src/engine/imap-db/imap-db-account.vala:714
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "bcc"
-msgstr ""
+msgstr "bcc"
 
 #. / Can be typed in the search box like body:word to find the word only
 #. / if it occurs in the body of a message.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:718
 msgid "body"
-msgstr ""
+msgstr "نص الرسالة"
 
 #. / Can be typed in the search box like cc:johndoe@example.com to find
 #. / messages cc'd to a particular person.  The translated
@@ -150,7 +149,7 @@ msgstr ""
 #: ../src/engine/imap-db/imap-db-account.vala:722
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "cc"
-msgstr ""
+msgstr "cc"
 
 #. / Can be typed in the search box like from:johndoe@example.com to
 #. / find messages from a particular sender.  The translated
@@ -158,14 +157,14 @@ msgstr ""
 #: ../src/engine/imap-db/imap-db-account.vala:726
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "from"
-msgstr ""
+msgstr "من"
 
 #. / Can be typed in the search box like subject:word to find the word
 #. / only if it occurs in the subject of a message.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:730
 msgid "subject"
-msgstr ""
+msgstr "الموضوع"
 
 #. / Can be typed in the search box like to:johndoe@example.com to find
 #. / messages received by a particular person.  The translated
@@ -173,11 +172,11 @@ msgstr ""
 #: ../src/engine/imap-db/imap-db-account.vala:734
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "to"
-msgstr ""
+msgstr "الى"
 
 #: ../src/engine/imap-db/imap-db-account.vala:754
 msgid "me"
-msgstr ""
+msgstr "أنا"
 
 #: ../src/engine/rfc822/rfc822-message.vala:781
 #: ../src/client/util/util-email.vala:30
@@ -203,7 +202,7 @@ msgstr ""
 #. / %s will be replaced by the original sender.
 #: ../src/engine/rfc822/rfc822-utils.vala:228
 msgid "%s wrote:"
-msgstr "%s كتب:"
+msgstr ""
 
 #. / The quoted header for a message being replied to (in case the sender is not known).
 #. / %s will be replaced by the original date
@@ -217,7 +216,7 @@ msgstr "---------- رسالة معاد توجيهها ----------"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:267
 msgid "From: %s\n"
-msgstr "من: %s\n"
+msgstr " "
 
 #: ../src/engine/rfc822/rfc822-utils.vala:268
 msgid "Subject: %s\n"
@@ -228,8 +227,9 @@ msgid "Date: %s\n"
 msgstr "التاريخ: %s\n"
 
 #: ../src/engine/rfc822/rfc822-utils.vala:272
+#, fuzzy
 msgid "To: %s\n"
-msgstr "الي: %s\n"
+msgstr ""
 
 #: ../src/engine/rfc822/rfc822-utils.vala:275
 msgid "Cc: %s\n"
@@ -240,32 +240,33 @@ msgstr ""
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2227
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2232
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:32
+#, fuzzy
 msgid "none"
-msgstr "لا شئ"
+msgstr ""
 
 #: ../src/client/application/geary-application.vala:18
 msgid "Mail Client"
-msgstr "برنامج البريد"
+msgstr "تطبيق البريد"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "Copyright 2011-2015 Yorba Foundation"
-msgstr ""
+msgstr "جميع الحقوق محفوظة 2011-2017"
 
 #: ../src/client/application/geary-application.vala:21
 msgid "Visit the Yorba web site"
-msgstr "زيارة موقع يوربا الالكتروني"
+msgstr "زيارة موقع Yorba"
 
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete conversation"
-msgstr ""
+msgstr "حذف المحادثة"
 
 #: ../src/client/application/geary-controller.vala:62
 msgid "Delete conversation (Shift+Delete)"
-msgstr ""
+msgstr "حذف المحادثة (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
 msgid "Delete conversations (Shift+Delete)"
-msgstr ""
+msgstr "حذف المحادثة (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
@@ -274,14 +275,18 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2723
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "حذف المحادثة  (Delete, Backspace)"
+msgstr[1] "حذف المحادثة  (Delete, Backspace)"
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 msgid "Move conversations to Trash (Delete, Backspace)"
-msgstr ""
+msgstr "نقل المحادثة الى سلة المهملات  (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
@@ -1823,8 +1828,8 @@ msgstr "رسالة جديدة"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
 
 #: ../src/client/composer/composer-widget.vala:1102
