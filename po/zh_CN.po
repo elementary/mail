@@ -13,21 +13,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
-"onent=general\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-03-14 09:28+0000\n"
+"PO-Revision-Date: 2017-04-13 08:51+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
-"Language-Team: Chinese (China) "
-"(http://www.transifex.com/projects/p/geary/language/zh_CN/)\n"
+"Language-Team: Chinese (Simplified) "
+"<https://l10n.elementary.io/projects/mail/mail/zh_CN/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:54+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
-"Language: zh_CN\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -131,8 +129,6 @@ msgstr "其他"
 #. / messages with attachments with a particular name.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:710
-#| msgid "Save A_ttachment..."
-#| msgid_plural "Save All A_ttachments..."
 msgid "attachment"
 msgstr "附件"
 
@@ -267,12 +263,10 @@ msgid "Delete conversation"
 msgstr "删除会话"
 
 #: ../src/client/application/geary-controller.vala:62
-#| msgid "Delete conversation (Delete, Backspace, A)"
 msgid "Delete conversation (Shift+Delete)"
 msgstr "删除会话 (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
-#| msgid "Delete conversations (Delete, Backspace, A)"
 msgid "Delete conversations (Shift+Delete)"
 msgstr "删除多个会话 (Shift+Delete)"
 
@@ -596,7 +590,7 @@ msgstr "清空垃圾邮件或回收站"
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr "清空垃圾邮件..."
+msgstr "清空垃圾邮件…"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -606,7 +600,7 @@ msgstr "清空垃圾邮件..."
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr "清空回收站..."
+msgstr "清空回收站…"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -644,7 +638,8 @@ msgid ""
 "username and password could be read by another person on the network.  Are "
 "you sure you want to do this?"
 msgstr ""
-"您的 IMAP 和/或 SMTP 设置没有指定 SSL 或 TLS。这意味着您的用户名和密码可以被同一网络中的其他人看到。您确定要这样做吗？"
+"您的 IMAP 和/或 SMTP 设置没有指定 SSL 或 TLS。这意味着您的用户名和密码可以被"
+"同一网络中的其他人看到。您确定要这样做吗？"
 
 #: ../src/client/application/geary-controller.vala:985
 #: ../src/client/application/geary-controller.vala:979
@@ -673,7 +668,8 @@ msgstr "发送邮件出错"
 msgid ""
 "Geary encountered an error sending an email.  If the problem persists, "
 "please manually delete the email from your Outbox folder."
-msgstr "发送邮件时 Geary 遇到了错误。如果持续出错，请手动从发件箱文件夹中删除该邮件。"
+msgstr ""
+"发送邮件时 Geary 遇到了错误。如果持续出错，请手动从发件箱文件夹中删除该邮件。"
 
 #: ../src/client/application/geary-controller.vala:1068
 #: ../src/client/components/status-bar.vala:33
@@ -683,19 +679,17 @@ msgstr "发送邮件时 Geary 遇到了错误。如果持续出错，请手动�
 #: ../src/client/application/geary-controller.vala:1044
 #: ../src/client/application/geary-controller.vala:1039
 #: ../src/client/application/geary-controller.vala:1033
-#| msgid "Error sending email"
 msgid "Error saving sent mail"
 msgstr "保存已发送邮件出错"
 
 #: ../src/client/application/geary-controller.vala:1069
 #: ../src/client/application/geary-controller.vala:1063
-#| msgid ""
-#| "Geary encountered an error sending an email.  If the problem persists, "
-#| "please manually delete the email from your Outbox folder."
 msgid ""
 "Geary encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
-msgstr "将已发送的邮件保存至“已发送”时出错。此封邮件仍然会在发件箱文件夹中，直至被手动删除。"
+msgstr ""
+"将已发送的邮件保存至“已发送”时出错。此封邮件仍然会在发件箱文件夹中，直至被手"
+"动删除。"
 
 #: ../src/client/application/geary-controller.vala:1138
 #: ../src/client/application/geary-controller.vala:1132
@@ -730,13 +724,15 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
-"为该账户打开本地邮件数据库时发生错误，这可能是由该目录下的数据文件损坏引起的:\n"
+"为该账户打开本地邮件数据库时发生错误，这可能是由该目录下的数据文件损坏引起"
+"的:\n"
 "\n"
 "%s\n"
 "\n"
 "Geary 可以重建数据库并与服务器重新同步或退出。\n"
 "\n"
-"重建数据库将会删除所有本地邮件及其中包含的附件。 <b>服务器中的邮件不会受到任何影响。</b>"
+"重建数据库将会删除所有本地邮件及其中包含的附件。 <b>服务器中的邮件不会受到任"
+"何影响。</b>"
 
 #: ../src/client/application/geary-controller.vala:1153
 #: ../src/client/application/geary-controller.vala:1147
@@ -837,7 +833,8 @@ msgid ""
 "\n"
 "Please install the latest version of Geary and try again."
 msgstr ""
-"此版本的本地邮件数据库已由被新版本的 Geary 格式化。很遗憾，数据文件不能 “回滚” 以在该版本的 Geary 中正常使用。\n"
+"此版本的本地邮件数据库已由被新版本的 Geary 格式化。很遗憾，数据文件不能 “回"
+"滚” 以在该版本的 Geary 中正常使用。\n"
 "\n"
 "请安装最新版本的 Geary 后重试。"
 
@@ -1017,7 +1014,6 @@ msgstr[0] "您要永久删除这些邮件吗？"
 #: ../src/client/application/geary-controller.vala:2450
 #: ../src/client/application/geary-controller.vala:2446
 #: ../src/client/application/geary-controller.vala:2441
-#| msgid "_Delete"
 msgid "Delete"
 msgstr "删除"
 
@@ -1194,7 +1190,8 @@ msgstr "无法验证 %s 的身份地址 at %s:%u 。"
 msgid ""
 "Selecting \"Trust This Server\" or \"Always Trust This Server\" may cause "
 "your username and password to be transmitted insecurely."
-msgstr "选择 “信任此服务器” 或  “永久信任此服务器” 会用户名和密码的传输变得不安全。"
+msgstr ""
+"选择 “信任此服务器” 或  “永久信任此服务器” 会用户名和密码的传输变得不安全。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
@@ -1214,7 +1211,7 @@ msgstr "选择 “不信任此服务器”，Geary 将会停止接入此账户�
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Geary will exit if you have no other open email accounts."
-msgstr "若您没有其他邮件账户，Geary 将会自动退出"
+msgstr "若您没有其他邮件账户，Geary 将会自动退出。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:66
 msgid ""
@@ -1312,13 +1309,11 @@ msgstr "1 年前"
 
 #: ../src/client/accounts/add-edit-page.vala:258
 #: ../src/client/accounts/add-edit-page.vala:259
-#| msgid "1 year back"
 msgid "2 years back"
 msgstr "2 年前"
 
 #: ../src/client/accounts/add-edit-page.vala:259
 #: ../src/client/accounts/add-edit-page.vala:260
-#| msgid "1 year back"
 msgid "4 years back"
 msgstr "4 年前"
 
@@ -1459,13 +1454,11 @@ msgid "Now"
 msgstr "现在"
 
 #: ../src/client/util/util-date.vala:167
-#| msgid "%dm ago"
 msgid "%dm ago"
 msgid_plural "%dm ago"
 msgstr[0] "%d 分钟前"
 
 #: ../src/client/util/util-date.vala:171
-#| msgid "%dh ago"
 msgid "%dh ago"
 msgid_plural "%dh ago"
 msgstr[0] "%d 小时前"
@@ -1532,7 +1525,6 @@ msgid "Search %s account"
 msgstr "搜索帐号 %s"
 
 #: ../src/client/folder-list/folder-list-search-branch.vala:44
-#| msgid "%d results"
 msgid "%d result"
 msgid_plural "%d results"
 msgstr[0] "%d 个结果"
@@ -1552,7 +1544,6 @@ msgstr "未选中对话。"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:310
 #: ../src/client/conversation-viewer/conversation-viewer.vala:312
 #: ../src/client/conversation-viewer/conversation-viewer.vala:313
-#| msgid "%u conversations selected."
 msgid "%u conversation selected."
 msgid_plural "%u conversations selected."
 msgstr[0] "已选中 %u 个对话。"
@@ -1661,7 +1652,6 @@ msgstr "日期："
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1139
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1144
-#| msgid "%u read messages"
 msgid "%u read message"
 msgid_plural "%u read messages"
 msgstr[0] "%u 封已读邮件"
@@ -1840,8 +1830,8 @@ msgstr "新邮件"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr "附件|添加中|附件|附件|附件|已添加|封装|已封装|封装中|附入|附件|附件"
 
 #: ../src/client/composer/composer-widget.vala:1102
@@ -1899,7 +1889,7 @@ msgstr "无法添加附件"
 #: ../src/client/composer/composer-widget.vala:1497
 #: ../src/client/composer/composer-widget.vala:1494
 msgid "\"%s\" could not be found."
-msgstr "文件 \"%s\" 不存在"
+msgstr "无法找到文件 \"%s\" 。"
 
 #: ../src/client/composer/composer-widget.vala:1548
 #: ../src/client/composer/composer-widget.vala:1543
@@ -1923,7 +1913,7 @@ msgstr "\"%s\" 是一个空文件."
 #: ../src/client/composer/composer-widget.vala:1525
 #: ../src/client/composer/composer-widget.vala:1522
 msgid "\"%s\" could not be opened for reading."
-msgstr "打开文件 \"%s\" 失败"
+msgstr "文件 \"%s\" 打开失败。"
 
 #: ../src/client/composer/composer-widget.vala:1576
 #: ../src/client/composer/composer-widget.vala:1571
@@ -1931,7 +1921,7 @@ msgstr "打开文件 \"%s\" 失败"
 #: ../src/client/composer/composer-widget.vala:1532
 #: ../src/client/composer/composer-widget.vala:1529
 msgid "\"%s\" already attached for delivery."
-msgstr "文件 \"%s\" 已位于附件列表"
+msgstr "文件 \"%s\" 已位于附件列表。"
 
 #. / In the composer, the filename followed by its filesize, i.e. "notes.txt (1.12KB)"
 #: ../src/client/composer/composer-widget.vala:1585
@@ -2023,13 +2013,11 @@ msgid "Sending..."
 msgstr "正在发送..."
 
 #: ../src/client/components/conversation-find-bar.vala:214
-#| msgid "%i matches"
 msgid "%i match"
 msgid_plural "%i matches"
 msgstr[0] "%i 个匹配结果"
 
 #: ../src/client/components/conversation-find-bar.vala:216
-#| msgid "%i matches (wrapped)"
 msgid "%i match (wrapped)"
 msgid_plural "%i matches (wrapped)"
 msgstr[0] "%i 个匹配结果(已折叠)"
@@ -2252,7 +2240,7 @@ msgstr "标签"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr "Geary 正在更新..."
+msgstr "Geary 正在更新…"
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
@@ -2262,7 +2250,9 @@ msgstr "删除邮件地址"
 msgid ""
 "Some email services require additional addresses be configured on the "
 "server.  Contact your email provider for more information."
-msgstr "某些邮件服务需要提供服务器配置的额外地址。联系您的邮件服务提供商获取更多信息。"
+msgstr ""
+"某些邮件服务需要提供服务器配置的额外地址。联系您的邮件服务提供商获取更多信"
+"息。"
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
@@ -2539,7 +2529,7 @@ msgstr "当前有与此账户有关的编辑窗口还未关闭。请先处理完
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr "附加邮件地址..."
+msgstr "附加邮件地址…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
@@ -2643,7 +2633,7 @@ msgstr "STARTTLS"
 
 #: ../data/ui/login.ui:663
 msgid "No authentication re_quired"
-msgstr "无需验证："
+msgstr "无需验证"
 
 #: ../data/ui/login.ui:679
 msgid "Use IMAP cre_dentials"
@@ -2726,7 +2716,8 @@ msgstr "网站"
 msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
-msgstr "程序发送邮件时出现错误。若此问题持续出现，请手动从发件箱中将此邮件删除。"
+msgstr ""
+"程序发送邮件时出现错误。若此问题持续出现，请手动从发件箱中将此邮件删除。"
 
 #: ../src/client/application/geary-controller.vala:1057
 #: ../src/client/application/geary-controller.vala:1051
@@ -2736,7 +2727,9 @@ msgstr "程序发送邮件时出现错误。若此问题持续出现，请手动
 msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
-msgstr "程序将邮件保存至“已发送”时出现错误。此邮件将会保留在发件箱中直至您手动将其删除。"
+msgstr ""
+"程序将邮件保存至“已发送”时出现错误。此邮件将会保留在发件箱中直至您手动将其删"
+"除。"
 
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
@@ -2774,7 +2767,8 @@ msgid ""
 "\n"
 "Please install the latest version of Mail and try again."
 msgstr ""
-"本地数据文件由更新版本的 邮件 应用生成. 无法“回滚”并在旧版应用中使用，抱歉。\n"
+"本地数据文件由更新版本的 邮件 应用生成. 无法“回滚”并在旧版应用中使用，抱"
+"歉。\n"
 "\n"
 "请安装最新版本的 邮件 应用后重试。"
 
@@ -2842,7 +2836,7 @@ msgstr "正在验证您的账户，请稍候。"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr "正在更新程序..."
+msgstr "正在更新应用程序…"
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
@@ -2866,14 +2860,14 @@ msgstr "显示关于界面"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
-msgstr "保存附件..."
+msgstr "保存附件…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr "保存所有附件..."
+msgstr "保存所有附件…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
@@ -2927,7 +2921,7 @@ msgstr "标为已读"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:275
 #: ../src/client/conversation-viewer/ConversationWidget.vala:277
 msgid "Print…"
-msgstr "打印..."
+msgstr "打印…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
@@ -2995,7 +2989,7 @@ msgstr "隐藏邮件"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr "另存为..."
+msgstr "另存为…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
