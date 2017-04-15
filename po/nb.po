@@ -14,16 +14,17 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2016-10-31 13:11+0000\n"
-"Last-Translator: Åka Sikrom <Unknown>\n"
-"Language-Team: https://l10n.gnome.org/teams/no/\n"
+"PO-Revision-Date: 2017-04-15 19:13+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål "
+"<https://l10n.elementary.io/projects/mail/mail/nb/>\n"
+"Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
-"Language: nb\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -595,7 +596,7 @@ msgstr "Tøm søppelpost eller papirkurv"
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr "Tøm _søppelpost..."
+msgstr "Tøm _søppelpost…"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -605,7 +606,7 @@ msgstr "Tøm _søppelpost..."
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr "Tøm _papirkurv..."
+msgstr "Tøm _papirkurv…"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -1793,7 +1794,7 @@ msgstr "_Lagre som..."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1832
 msgid "Save All A_ttachments..."
-msgstr "Lagre alle v_edlegg"
+msgstr "Lagre alle v_edlegg…"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1847
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1852
@@ -1870,11 +1871,11 @@ msgstr "Ny melding"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
-"vedlegg|attach|attaching|attaches|attachment|attachments|attached|enclose|enc"
-"losed|enclosing|encloses|enclosure|enclosures"
+"vedlegg|attach|attaching|attaches|attachment|attachments|attached|enclose|"
+"enclosed|enclosing|encloses|enclosure|enclosures"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -2185,12 +2186,12 @@ msgstr "Leser"
 #: ../src/client/dialogs/preferences-dialog.vala:28
 #: ../src/client/dialogs/preferences-dialog.vala:29
 msgid "Automatically select next message:"
-msgstr "Automatisk velg neste melding"
+msgstr "Velg neste melding automatisk:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:33
 #: ../src/client/dialogs/preferences-dialog.vala:34
 msgid "Conversation previews:"
-msgstr "Samtale forhåndsvisning"
+msgstr "Forhåndsvisning av samtaler:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:38
 #: ../src/client/dialogs/preferences-dialog.vala:39
@@ -2205,7 +2206,7 @@ msgstr "Komponist"
 #: ../src/client/dialogs/preferences-dialog.vala:47
 #: ../src/client/dialogs/preferences-dialog.vala:53
 msgid "Spell check:"
-msgstr "Stavekontroll"
+msgstr "Stavekontroll:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:51
 #: ../src/client/dialogs/preferences-dialog.vala:57
@@ -2255,8 +2256,8 @@ msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
 msgstr ""
-"All mail tilknyttet denne kontoen vil bli slettet fra din datamaskin. Dette "
-"vil ikke berøre mail på serveren"
+"All e-post tilknyttet denne kontoen vil bli slettet fra din datamaskin. "
+"Dette vil ikke ha innvirkning på e-post lagret på tjeneren."
 
 #: ../data/ui/remove_confirm.ui:80
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:47
@@ -2289,7 +2290,7 @@ msgstr "etikett"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr "Geary oppdatering pågår..."
+msgstr "Oppdatering av Geary pågår…"
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
@@ -2309,7 +2310,7 @@ msgstr "_Oppdater"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
-msgstr "Vennlisgt vent mens Geary validerer kontoen din"
+msgstr "Vent mens Geary validerer kontoen din."
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
@@ -2440,7 +2441,7 @@ msgstr "_Middels"
 #: ../data/ui/composer.ui:180 ../data/ui/composer.ui:162
 #: ../data/ui/composer.ui:167
 msgid "Medium"
-msgstr "Medium"
+msgstr "Middels"
 
 #: ../data/ui/composer.ui:185 ../data/ui/composer.ui:167
 #: ../data/ui/composer.ui:172
@@ -2575,12 +2576,12 @@ msgid ""
 "A composer window associated with this account is currently open. Send or "
 "discard the message and try again."
 msgstr ""
-"Ett komponerings vindu tilknyttet denne kontoen er åpen. Send eller forkaste "
-"meldingen og prøve agai"
+"Ett komposisjonsvindu tilknyttet denne kontoen er åpent. Send eller forkast "
+"meldingen og prøv igjen."
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr "And_re mail adresser..."
+msgstr "And_re e-postadresser…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
@@ -2604,15 +2605,15 @@ msgstr "Jobb, Hjemme, etc."
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
-msgstr "K_allenavn"
+msgstr "K_allenavn:"
 
 #: ../data/ui/login.ui:195
 msgid "N_ame:"
-msgstr "N_avn"
+msgstr "N_avn:"
 
 #: ../data/ui/login.ui:211
 msgid "S_ervice:"
-msgstr "T_jeneste"
+msgstr "T_jeneste:"
 
 #: ../data/ui/login.ui:298
 msgid "IMAP settings"
@@ -2668,11 +2669,11 @@ msgstr "IMAP passord"
 
 #: ../data/ui/login.ui:593
 msgid "Encr_yption:"
-msgstr "Kryp_tering"
+msgstr "Kryp_tering:"
 
 #: ../data/ui/login.ui:613
 msgid "Encrypt_ion:"
-msgstr "Krypter_ing"
+msgstr "Krypter_ing:"
 
 #: ../data/ui/login.ui:634 ../data/ui/login.ui:651
 msgid "SSL/TLS"
@@ -2704,7 +2705,7 @@ msgstr "Lagre utk_ast på server"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr "Si_gner email-er (HTML lovlig)"
+msgstr "Si_gner e-poster (HTML tillates):"
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
@@ -2859,7 +2860,7 @@ msgstr "        &#8226; E-postadresse allerede lagt til Mail.\n"
 #: ../src/client/dialogs/preferences-dialog.vala:44
 #: ../src/client/dialogs/preferences-dialog.vala:43
 msgid "Always show remote images:"
-msgstr "Alltid vis eksterne bilder"
+msgstr "Alltid vis eksterne bilder:"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 #: ../src/client/dialogs/PasswordDialog.vala:39
@@ -2876,7 +2877,7 @@ msgstr ""
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Mail will not add or update this email account."
-msgstr "Mail will ikke legge til eller oppdatere denne emailkonto"
+msgstr "Mail vil ikke legge til eller oppdatere denne e-postkontoen."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
@@ -2897,7 +2898,7 @@ msgstr "Vennligst vent mens Mail validerer kontoen din."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr "Mail oppdatering pågår"
+msgstr "Oppdatering av Mail pågår…"
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
@@ -2921,14 +2922,14 @@ msgstr "Vis Om dialog"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
-msgstr "Lagre Vedlegg..."
+msgstr "Lagre vedlegg…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr "Lagre Alle Vedlegg..."
+msgstr "Lagre alle vedlegg…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
@@ -3050,7 +3051,7 @@ msgstr "Skjul melding"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr "Lagre som..."
+msgstr "Lagre som…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
