@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-04-11 09:57+0000\n"
-"Last-Translator: Michael Rodov <rodov.michael+github@gmail.com>\n"
+"PO-Revision-Date: 2017-04-15 08:56+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: he (generated) "
 "<https://l10n.elementary.io/projects/mail/mail/he/>\n"
 "Language: he\n"
@@ -1064,7 +1064,7 @@ msgstr "ביטול (Ctrl+ז)"
 #: ../src/client/application/geary-args.vala:10
 #: ../src/client/application/geary-args.vala:11
 msgid "Start Geary with hidden main window"
-msgstr "Start Geary with hidden main window"
+msgstr "להפעיל את Geary עם חלון ראשי מוסתר"
 
 #: ../src/client/application/geary-args.vala:11
 #: ../src/client/application/geary-args.vala:12
@@ -1553,7 +1553,7 @@ msgstr "חיפוש בחשבון %s"
 #: ../src/client/folder-list/folder-list-search-branch.vala:44
 msgid "%d result"
 msgid_plural "%d results"
-msgstr[0] "%d תוצאות"
+msgstr[0] "תוצאה אחת"
 msgstr[1] "%d תוצאות"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:413
@@ -3123,7 +3123,6 @@ msgid ", "
 msgstr ""
 
 #: ../src/client/application/geary-application.vala:15
-#, fuzzy
 msgid "Mail"
 msgstr "דואר"
 
