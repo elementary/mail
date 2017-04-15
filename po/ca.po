@@ -11,17 +11,16 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2016-12-02 21:33+0000\n"
-"Last-Translator: Davidmp <rbndavid@gmail.com>\n"
-"Language-Team: Catalan "
-"(http://www.transifex.com/projects/p/geary/language/ca/)\n"
+"PO-Revision-Date: 2017-04-15 20:36+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
-"Language: ca\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -603,7 +602,7 @@ msgstr "Buida el correu bro_ssa"
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr "Buida la _paperera..."
+msgstr "Buida la _paperera…"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -1231,8 +1230,7 @@ msgstr ""
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Geary will not add or update this email account."
-msgstr ""
-"El Geary no afegirà o actualitzarà aquest compte de correu electrònic."
+msgstr "El Geary no afegirà o actualitzarà aquest compte de correu electrònic."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
@@ -1257,38 +1255,35 @@ msgstr ""
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:73
 msgid "The server's certificate is not signed by a known authority"
-msgstr ""
-"El certificat del servidor no està signat per una autoritat coneguda."
+msgstr "El certificat del servidor no està signat per una autoritat coneguda"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:76
 msgid "The server's identity does not match the identity in the certificate"
-msgstr ""
-"La identitat del servidor no coincideix amb la identitat del certificat."
+msgstr "La identitat del servidor no coincideix amb la identitat del certificat"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:79
 msgid "The server's certificate has expired"
-msgstr "El certificat del servidor ha caducat."
+msgstr "El certificat del servidor ha caducat"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:82
 msgid "The server's certificate has not been activated"
-msgstr "El certificat del servidor no s'ha activat."
+msgstr "El certificat del servidor no s'ha activat"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:85
 msgid "The server's certificate has been revoked and is now invalid"
-msgstr "El certificat del servidor s'ha revocat i ara no és vàlid."
+msgstr "El certificat del servidor s'ha revocat i ara no és vàlid"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:88
 msgid "The server's certificate is considered insecure"
-msgstr "El certificat del servidor es considera insegur."
+msgstr "El certificat del servidor es considera insegur"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:91
 msgid "An error has occurred processing the server's certificate"
-msgstr "Hi ha hagut un error processant el certificat del servidor."
+msgstr "Hi ha hagut un error processant el certificat del servidor"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 msgid "Geary requires your email password to continue"
-msgstr ""
-"El Geary requereix la contrasenya de correu electrònic per continuar."
+msgstr "El Geary requereix la contrasenya de correu electrònic per continuar"
 
 #: ../src/client/dialogs/attachment-dialog.vala:18
 msgid "Choose a file"
@@ -1878,11 +1873,11 @@ msgstr "Missatge nou"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
-"adjunt|adnuntant|adjunts|adjunt|adjunts|adjuntat|adjunta|adjuntat|adjuntant|a"
-"djunta|adjunció|adjuncions"
+"adjunt|adnuntant|adjunts|adjunt|adjunts|adjuntat|adjunta|adjuntat|adjuntant|"
+"adjunta|adjunció|adjuncions"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -2254,8 +2249,8 @@ msgid ""
 "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
 "account?</span> "
 msgstr ""
-"<span weight=\"bold\" size=\"larger\">Segur que voleu eliminar aquest "
-"compte?</span> "
+"<span weight=\"bold\" size=\"larger\">Segur que voleu eliminar aquest compte?"
+"</span> "
 
 #: ../data/ui/remove_confirm.ui:58
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:42
@@ -2297,7 +2292,7 @@ msgstr "etiqueta"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr "Actualització del Geary en curs..."
+msgstr "Actualització del Geary en curs…"
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
@@ -2912,7 +2907,7 @@ msgstr "Si us plau, espereu mentre el Correu valida el compte."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr "Actualització del Correu en curs..."
+msgstr "Actualització del Correu en curs…"
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
@@ -2936,14 +2931,14 @@ msgstr "Mostra el diàleg Quant a"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
-msgstr "Desa l'adjunt..."
+msgstr "Desa l'adjunt…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr "Desa tots els adjunts..."
+msgstr "Desa tots els adjunts…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
@@ -3082,8 +3077,8 @@ msgstr[1] "%u coincidències"
 #: ../src/engine/rfc822/rfc822-mailbox-address.vala:170
 msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 msgstr ""
-"no_responguis;no_reponguis;sense_ "
-"resposta;no_responguis;no_responguis;noresponguis"
+"no_responguis;no_reponguis;sense_ resposta;no_responguis;no_responguis;"
+"noresponguis"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:410
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
