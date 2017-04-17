@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-04-15 20:37+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2017-04-17 14:11+0000\n"
+"Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <https://l10n.elementary.io/projects/mail/mail/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
@@ -599,7 +599,7 @@ msgstr "Isprazni mape neželjene pošte ili smeća"
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr "Isprazni  _neželjenu poštu"
+msgstr "Isprazni  _neželjenu poštu…"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -2217,7 +2217,7 @@ msgstr "Tropanelni raspored:"
 #: ../src/client/dialogs/preferences-dialog.vala:42 ../data/ui/login.ui:853
 #: ../src/client/dialogs/preferences-dialog.vala:48
 msgid "Composer"
-msgstr "Sastavitelj poruka:"
+msgstr "Sastavitelj poruka"
 
 #: ../src/client/dialogs/preferences-dialog.vala:47
 #: ../src/client/dialogs/preferences-dialog.vala:53
@@ -2643,7 +2643,7 @@ msgstr "Po_služitelj:"
 
 #: ../data/ui/login.ui:347
 msgid "P_ort"
-msgstr "U_laz:"
+msgstr "U_laz"
 
 #: ../data/ui/login.ui:409
 msgid "Ser_ver:"
@@ -3074,7 +3074,7 @@ msgstr "Spremi kao…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
-msgstr "Velika/Mala slova:"
+msgstr "Velika/Mala slova"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
