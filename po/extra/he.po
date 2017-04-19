@@ -8,10 +8,9 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-04-13 18:49+0000\n"
-"Last-Translator: Niv Baehr <bloop93@gmail.com>\n"
-"Language-Team: he (generated) "
-"<https://l10n.elementary.io/projects/mail/extra/he/>\n"
+"PO-Revision-Date: 2017-04-19 09:08+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/extra/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,83 +19,70 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
-#, fuzzy
 msgid "Mail"
 msgstr "דואר"
 
-#, fuzzy
 msgid "Send and receive mail"
-msgstr "שלח וקבל דואר"
+msgstr "שליחה וקבלה של דואר"
 
-#, fuzzy
 msgid "Email;E-mail;Mail;"
-msgstr "דואר;דוא״ל"
+msgstr "דואר;דוא״ל;דואר אלקטרוני;מייל;דוא\"ל;"
 
-#, fuzzy
 msgid "Compose Message"
 msgstr "הודעה חדשה"
 
-#, fuzzy
 msgid "About Mail"
-msgstr "אודות"
+msgstr "על אודות דואר"
 
 msgid "Lightweight mail client"
 msgstr "לקוח דוא״ל קליל"
 
-#, fuzzy
 msgid ""
 "Mail is designed to let you manage your email quickly and effortlessly. Its "
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
 msgstr ""
-"תוכנת דואר זאת מאפשרת לך לנהל את הדואר שלך בצורה מהירה וקלה. \n"
-"הממשק שלה מבוסס שיחות, כלומר אפשר לקרוא את כל השרשור בבת אחת, בעלות של מבלי "
-"לעבור על כל הודעה בנפרד"
+"תכנית דואר זאת מאפשרת לך לנהל את הדואר שלך בצורה מהירה וקלה. המנשק שלה מבוסס "
+"דיונים, כלומר שניתן לקרוא את כל השרשור בבת אחת, מבלי לעבור על כל הודעה בנפרד."
 
 msgid "Lightweight mail client with full IMAP support"
 msgstr ""
 "לקוח דוא״ל קליל עם תמיכה מלאה ב\n"
 "IMAP"
 
-#, fuzzy
 msgid "Mail grouped into conversations, not a tree of threads"
-msgstr "הודעות מאוגדות לתוך שיחות ולא בעץ השירשורים"
+msgstr "הודעות מאוגדות לתוך דיונים ולא כעץ של שרשורים"
 
-#, fuzzy
 msgid "As-you-type searching"
-msgstr "חיפוש עם השלמות"
+msgstr "חיפוש עם הצעות"
 
-#, fuzzy
 msgid "Desktop notifications"
-msgstr "הודעות שולחן עבודה"
+msgstr "הודעות לשולחן העבודה"
 
-#, fuzzy
 msgid "Multiple account support"
-msgstr "תמיכה בריבוי משתמשים"
+msgstr "תמיכה בריבוי חשבונות"
 
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "הודעות שטרם הושלמו נשמרות אוטומטית בשרת"
 
-#, fuzzy
 msgid ""
 "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
 "IMAP servers"
-msgstr "Gmail, Yahoo!, Mail, Outlook.com עובד עם"
+msgstr ""
+"עובד עם Gmail,‏ Yahoo! Mail,‏ Outlook.com (באופן ניסיוני) ושרתי IMAP נפוצים "
+"נוספים"
 
-#, fuzzy
 msgid "Minor bug fixes"
 msgstr "תיקוני באגים קלים"
 
 msgid "Translation updates"
 msgstr "עדכוני תרגומים"
 
-#, fuzzy
 msgid "Appstream: add releases info"
-msgstr "נוסף מידע על הגרסה"
+msgstr "Appstream: הוספת מידע על הגרסאות"
 
 msgid "Don't overwrite custom settings not available in the POA plugin"
-msgstr ""
+msgstr "לא לשכתב הגדרות בהתאמה אישית שאינן זמינות בתוסף POA"
 
-#, fuzzy
 msgid "Release for Loki"
-msgstr "Loki גרסאות"
+msgstr "גרסה ל־Loki"
