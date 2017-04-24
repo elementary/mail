@@ -54,6 +54,7 @@ public class StylishWebView : WebKit.WebView {
     public signal void interface_font_changed();
     
     public StylishWebView() {
+        can_focus = false;
         Settings system_settings = GearyApplication.instance.config.gnome_interface;
         system_settings.bind("document-font-name", this, "document-font", SettingsBindFlags.DEFAULT);
         system_settings.bind("monospace-font-name", this, "monospace-font", SettingsBindFlags.DEFAULT);
