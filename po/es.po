@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-04-10 17:58+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"PO-Revision-Date: 2017-04-24 21:52+0000\n"
+"Last-Translator: febrezo <felixbrezo@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/mail/mail/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -80,7 +80,7 @@ msgstr "Todos"
 
 #: ../src/engine/api/geary-special-folder-type.vala:42
 msgid "Spam"
-msgstr "Spam"
+msgstr "Correo basura"
 
 #: ../src/engine/api/geary-special-folder-type.vala:45
 msgid "Trash"
@@ -120,7 +120,7 @@ msgstr "Gmail"
 
 #: ../src/engine/api/geary-service-provider.vala:55
 msgid "Yahoo! Mail"
-msgstr "Correo Yahoo!"
+msgstr "Correo de Yahoo!"
 
 #: ../src/engine/api/geary-service-provider.vala:58
 msgid "Outlook.com"
@@ -2599,7 +2599,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr "Dire_cciones de correo adicionales..."
+msgstr "Dire_cciones de correo adicionales…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
@@ -2611,7 +2611,7 @@ msgstr "Contraseña"
 
 #: ../data/ui/login.ui:97 ../data/ui/login.ui:545
 msgid "_Password:"
-msgstr "_Contraseña"
+msgstr "_Contraseña:"
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
@@ -2830,7 +2830,7 @@ msgstr ""
 "\n"
 "Reconstruir la base de datos destruirá todos los correos electrónicos "
 "locales y sus adjuntos. <b>Los correos electrónicos existentes en su "
-"servidor no se verán afectados<b>"
+"servidor no se verán afectados.<b>"
 
 #: ../src/client/application/geary-controller.vala:1184
 #: ../src/client/application/geary-controller.vala:1178
@@ -2923,7 +2923,7 @@ msgstr "Espere mientras Correo valida tu cuenta."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr "Actualización de Correo en curso..."
+msgstr "Actualización de Correo en curso…"
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
@@ -2954,7 +2954,7 @@ msgstr "Guardar adjunto…"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr "Guardar todos los adjuntos"
+msgstr "Guardar todos los adjuntos…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
