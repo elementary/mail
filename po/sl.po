@@ -8,21 +8,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
-"onent=general\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2016-12-28 12:00+0000\n"
-"Last-Translator: Jernej Virag <Unknown>\n"
-"Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"PO-Revision-Date: 2017-04-15 20:29+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Slovenian <https://l10n.elementary.io/projects/mail/mail/sl/>"
+"\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
-"n%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
-"Language: sl_SI\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -605,7 +604,7 @@ msgstr "Izprazni smeti ali mapo z neželeno pošto"
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr "Izprazni neželeno _pošto..."
+msgstr "Izprazni neželeno _pošto…"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -615,7 +614,7 @@ msgstr "Izprazni neželeno _pošto..."
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr "Izprazni Sme_ti..."
+msgstr "Izprazni Sme_ti…"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -629,7 +628,7 @@ msgstr "Prikaži/Skrij iskalno vrstico"
 #: ../src/client/application/geary-controller.vala:717
 #: ../src/client/application/geary-controller.vala:711
 msgid "Unable to store server trust exception"
-msgstr "Ni bilo mogoče shraniti izjeme pri strežniški overovitvi."
+msgstr "Ni bilo mogoče shraniti izjeme pri strežniški overovitvi"
 
 #: ../src/client/application/geary-controller.vala:983
 #: ../src/client/application/geary-controller.vala:977
@@ -1043,7 +1042,6 @@ msgstr[3] "Želite trajno izbrisati ta sporočila?"
 #: ../src/client/application/geary-controller.vala:2450
 #: ../src/client/application/geary-controller.vala:2446
 #: ../src/client/application/geary-controller.vala:2441
-#| msgid "_Delete"
 msgid "Delete"
 msgstr "Izbriši"
 
@@ -1361,13 +1359,11 @@ msgstr "1 leto nazaj"
 
 #: ../src/client/accounts/add-edit-page.vala:258
 #: ../src/client/accounts/add-edit-page.vala:259
-#| msgid "1 year back"
 msgid "2 years back"
 msgstr "2 leti nazaj"
 
 #: ../src/client/accounts/add-edit-page.vala:259
 #: ../src/client/accounts/add-edit-page.vala:260
-#| msgid "1 year back"
 msgid "4 years back"
 msgstr "4 leta nazaj"
 
@@ -1734,8 +1730,7 @@ msgstr[3] "%u prebrana sporočila"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1271
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1276
 msgid "This message was sent successfully, but could not be saved to %s."
-msgstr ""
-"Sporočilo je bilo poslano uspešno, a ga ni bilo mogoče shraniti v %s."
+msgstr "Sporočilo je bilo poslano uspešno, a ga ni bilo mogoče shraniti v %s."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1297
 #: ../data/ui/composer.ui:29
@@ -1830,16 +1825,16 @@ msgstr "_Shrani kot..."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1832
 msgid "Save All A_ttachments..."
-msgstr "Shrani vse _priponke"
+msgstr "Shrani vse _priponke…"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1847
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1852
 msgid "Save A_ttachment..."
 msgid_plural "Save All A_ttachments..."
-msgstr[0] "Shrani _priponko"
-msgstr[1] "Shrani obe _priponki"
-msgstr[2] "Shrani vse _priponke"
-msgstr[3] "Shrani vse _priponke"
+msgstr[0] "Shrani _priponko…"
+msgstr[1] "Shrani obe _priponki…"
+msgstr[2] "Shrani vse _priponke…"
+msgstr[3] "Shrani vse _priponke…"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1862
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1867
@@ -1909,11 +1904,11 @@ msgstr "Novo sporočilo"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
-"pripni|pripeta|dodana|dodano|dodan|prilagam|priloženo|priložena|priložen|prip"
-"onka"
+"pripni|pripeta|dodana|dodano|dodan|prilagam|priloženo|priložena|priložen|"
+"priponka"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -2080,7 +2075,6 @@ msgstr "%1$s preko %2$s"
 #: ../src/client/composer/composer-widget.vala:2312
 #: ../src/client/composer/composer-widget.vala:2313
 #: ../src/client/composer/composer-widget.vala:2316
-#| msgid "From:"
 msgid "_From:"
 msgstr "_Od:"
 
@@ -2335,7 +2329,7 @@ msgstr "oznaka"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr "Geary se posodablja..."
+msgstr "Geary se posodablja…"
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
@@ -2615,8 +2609,8 @@ msgstr "da jih dodate kot priponke"
 #: ../data/ui/account_cannot_remove.ui:40
 msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
 msgstr ""
-"<span weight=\"bold\" size=\"larger\">Ni bilo mogoče odstraniti "
-"računa</span> "
+"<span weight=\"bold\" size=\"larger\">Ni bilo mogoče odstraniti računa</"
+"span> "
 
 #: ../data/ui/account_cannot_remove.ui:56
 msgid ""
@@ -2628,7 +2622,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr "Dodat_ni poštni naslovi..."
+msgstr "Dodat_ni poštni naslovi…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
@@ -2944,7 +2938,7 @@ msgstr "Prosimo počakajte da Pošta potrdi vaš račun."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr "Posodabljanje pošte v teku..."
+msgstr "Posodabljanje pošte v teku…"
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
@@ -2968,14 +2962,14 @@ msgstr "Prikaži informacije o programu"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
-msgstr "Shrani priponko..."
+msgstr "Shrani priponko…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr "Shrani vse priponke..."
+msgstr "Shrani vse priponke…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
@@ -3029,7 +3023,7 @@ msgstr "Označi kot prebrano"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:275
 #: ../src/client/conversation-viewer/ConversationWidget.vala:277
 msgid "Print…"
-msgstr "Natisni ..."
+msgstr "Natisni…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
@@ -3097,7 +3091,7 @@ msgstr "Skrij sporočilo"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr "Shrani kot ..."
+msgstr "Shrani kot…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
@@ -3116,8 +3110,8 @@ msgstr[3] "%u zadetki"
 #: ../src/engine/rfc822/rfc822-mailbox-address.vala:170
 msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 msgstr ""
-"no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply|ne-"
-"odgovrajaj|neodgovarjaj"
+"no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply|ne-odgovrajaj|"
+"neodgovarjaj"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:410
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423

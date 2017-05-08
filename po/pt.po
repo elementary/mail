@@ -12,23 +12,21 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
-"onent=general\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2016-09-10 15:37+0000\n"
-"Last-Translator: Pedro Monteiro <Unknown>\n"
-"Language-Team: Português <palbuquerque73@gmail.com>\n"
+"PO-Revision-Date: 2017-04-25 12:54+0000\n"
+"Last-Translator: Vlad Kourbatski <i1954@xe.am>\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/>"
+"\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
-"Language: pt\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
-#| msgid "Drafts"
 msgid "Drafts | Draft"
 msgstr "Rascunhos | Rascunho"
 
@@ -132,8 +130,6 @@ msgstr "Outro"
 #. / messages with attachments with a particular name.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:710
-#| msgid "Save A_ttachment..."
-#| msgid_plural "Save All A_ttachments..."
 msgid "attachment"
 msgstr "anexo"
 
@@ -157,7 +153,6 @@ msgstr "corpo"
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:722
 #: ../src/engine/imap-db/imap-db-account.vala:738
-#| msgid "Bcc:"
 msgid "cc"
 msgstr "cc"
 
@@ -173,7 +168,6 @@ msgstr "de"
 #. / only if it occurs in the subject of a message.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:730
-#| msgid "Subject:"
 msgid "subject"
 msgstr "assunto"
 
@@ -258,7 +252,6 @@ msgid "Mail Client"
 msgstr "Cliente de correio eletrónico"
 
 #: ../src/client/application/geary-application.vala:19
-#| msgid "Copyright 2011-2013 Yorba Foundation"
 msgid "Copyright 2011-2015 Yorba Foundation"
 msgstr "Direitos de autor 2011-2015 Fundação Yorba"
 
@@ -267,17 +260,14 @@ msgid "Visit the Yorba web site"
 msgstr "Visite a página web da Yorba"
 
 #: ../src/client/application/geary-controller.vala:61
-#| msgid "Move conversation"
 msgid "Delete conversation"
 msgstr "Eliminar conversa"
 
 #: ../src/client/application/geary-controller.vala:62
-#| msgid "Delete conversation (Delete, Backspace, A)"
 msgid "Delete conversation (Shift+Delete)"
 msgstr "Eliminar conversa (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
-#| msgid "Delete conversations (Delete, Backspace, A)"
 msgid "Delete conversations (Shift+Delete)"
 msgstr "Eliminar conversas (Shift+Delete)"
 
@@ -294,7 +284,6 @@ msgstr[1] "Mover conversas para o Lixo (Delete, Backspace)"
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
-#| msgid "Archive conversations (Delete, Backspace, A)"
 msgid "Move conversations to Trash (Delete, Backspace)"
 msgstr "Mover conversas para o lixo (Delete, Backspace)"
 
@@ -317,7 +306,6 @@ msgstr[1] "Arquivar conversas (A)"
 #: ../src/client/application/geary-controller.vala:73
 #: ../src/client/application/geary-controller.vala:72
 #: ../src/client/application/geary-controller.vala:71
-#| msgid "Move conversations"
 msgid "Archive conversations (A)"
 msgstr "Arquivar conversas (A)"
 
@@ -699,15 +687,11 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1044
 #: ../src/client/application/geary-controller.vala:1039
 #: ../src/client/application/geary-controller.vala:1033
-#| msgid "Error sending email"
 msgid "Error saving sent mail"
 msgstr "Erro ao gravar mensagem enviada"
 
 #: ../src/client/application/geary-controller.vala:1069
 #: ../src/client/application/geary-controller.vala:1063
-#| msgid ""
-#| "Geary encountered an error sending an email.  If the problem persists, "
-#| "please manually delete the email from your Outbox folder."
 msgid ""
 "Geary encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
@@ -1009,7 +993,6 @@ msgstr "Isto remove o correio do Geary e do seu servidor de correio."
 #: ../src/client/application/geary-controller.vala:2400
 #: ../src/client/application/geary-controller.vala:2396
 #: ../src/client/application/geary-controller.vala:2391
-#| msgid "\"%s\" could not be found."
 msgid "This cannot be undone."
 msgstr "Não pode ser desfeito."
 
@@ -1030,7 +1013,6 @@ msgstr "Esvaziar %s"
 #: ../src/client/application/geary-controller.vala:2418
 #: ../src/client/application/geary-controller.vala:2414
 #: ../src/client/application/geary-controller.vala:2409
-#| msgid "Error saving"
 msgid "Error emptying %s"
 msgstr "Erro ao esvaziar %s"
 
@@ -1041,7 +1023,6 @@ msgstr "Erro ao esvaziar %s"
 #: ../src/client/application/geary-controller.vala:2448
 #: ../src/client/application/geary-controller.vala:2444
 #: ../src/client/application/geary-controller.vala:2439
-#| msgid "Do you want to discard this message?"
 msgid "Do you want to permanently delete this message?"
 msgid_plural "Do you want to permanently delete these messages?"
 msgstr[0] "Quer eliminar permanentemente esta mensagem?"
@@ -1054,7 +1035,6 @@ msgstr[1] "Quer eliminar permanentemente estas mensagens?"
 #: ../src/client/application/geary-controller.vala:2450
 #: ../src/client/application/geary-controller.vala:2446
 #: ../src/client/application/geary-controller.vala:2441
-#| msgid "_Delete"
 msgid "Delete"
 msgstr "_Eliminar"
 
@@ -1304,7 +1284,6 @@ msgid "An error has occurred processing the server's certificate"
 msgstr "Ocorreu um erro ao processar o certificado do servidor"
 
 #: ../src/client/dialogs/password-dialog.vala:16
-#| msgid "Please enter your email password"
 msgid "Geary requires your email password to continue"
 msgstr "O Geary necessita da sua senha para continuar"
 
@@ -1366,13 +1345,11 @@ msgstr "1 ano atrás"
 
 #: ../src/client/accounts/add-edit-page.vala:258
 #: ../src/client/accounts/add-edit-page.vala:259
-#| msgid "1 year back"
 msgid "2 years back"
 msgstr "2 anos atrás"
 
 #: ../src/client/accounts/add-edit-page.vala:259
 #: ../src/client/accounts/add-edit-page.vala:260
-#| msgid "1 year back"
 msgid "4 years back"
 msgstr "4 anos atrás"
 
@@ -1513,14 +1490,12 @@ msgid "Now"
 msgstr "Agora"
 
 #: ../src/client/util/util-date.vala:167
-#| msgid "%dm ago"
 msgid "%dm ago"
 msgid_plural "%dm ago"
 msgstr[0] "Há %d minuto"
 msgstr[1] "Há %d minutos"
 
 #: ../src/client/util/util-date.vala:171
-#| msgid "%dh ago"
 msgid "%dh ago"
 msgid_plural "%dh ago"
 msgstr[0] "Há %d hora"
@@ -1590,7 +1565,6 @@ msgid "Search %s account"
 msgstr "Procurar na conta %s"
 
 #: ../src/client/folder-list/folder-list-search-branch.vala:44
-#| msgid "%d results"
 msgid "%d result"
 msgid_plural "%d results"
 msgstr[0] "%d resultado"
@@ -1611,7 +1585,6 @@ msgstr "Nenhuma conversa selecionada."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:310
 #: ../src/client/conversation-viewer/conversation-viewer.vala:312
 #: ../src/client/conversation-viewer/conversation-viewer.vala:313
-#| msgid "%u conversations selected."
 msgid "%u conversation selected."
 msgid_plural "%u conversations selected."
 msgstr[0] "%u conversa selecionada"
@@ -1721,7 +1694,6 @@ msgstr "Data:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1139
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1144
-#| msgid "%u read messages"
 msgid "%u read message"
 msgid_plural "%u read messages"
 msgstr[0] "%u mensagem lida"
@@ -1902,11 +1874,11 @@ msgstr "Nova mensagem"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
-"anexar|a anexar|anexa|anexo|anexos|anexado|incluir|incluído|a "
-"incluir|inclui|inclusão|inclusões"
+"anexar|a anexar|anexa|anexo|anexos|anexado|incluir|incluído|a incluir|inclui|"
+"inclusão|inclusões"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -2013,7 +1985,6 @@ msgstr "%s (%s)"
 #: ../src/client/composer/composer-widget.vala:1598
 #: ../src/client/composer/composer-widget.vala:1599
 #: ../src/client/composer/composer-widget.vala:1602
-#| msgid "To: %s\n"
 msgid "To: "
 msgstr "Para: "
 
@@ -2024,7 +1995,6 @@ msgstr "Para: "
 #: ../src/client/composer/composer-widget.vala:1601
 #: ../src/client/composer/composer-widget.vala:1602
 #: ../src/client/composer/composer-widget.vala:1605
-#| msgid "Cc: %s\n"
 msgid "Cc: "
 msgstr "Cc: "
 
@@ -2035,7 +2005,6 @@ msgstr "Cc: "
 #: ../src/client/composer/composer-widget.vala:1604
 #: ../src/client/composer/composer-widget.vala:1605
 #: ../src/client/composer/composer-widget.vala:1608
-#| msgid "Bcc:"
 msgid "Bcc: "
 msgstr "Bcc: "
 
@@ -2046,7 +2015,6 @@ msgstr "Bcc: "
 #: ../src/client/composer/composer-widget.vala:1607
 #: ../src/client/composer/composer-widget.vala:1608
 #: ../src/client/composer/composer-widget.vala:1611
-#| msgid "_Reply"
 msgid "Reply-To: "
 msgstr "Responder a: "
 
@@ -2077,13 +2045,11 @@ msgstr "%1$s via %2$s"
 #: ../src/client/composer/composer-widget.vala:2312
 #: ../src/client/composer/composer-widget.vala:2313
 #: ../src/client/composer/composer-widget.vala:2316
-#| msgid "From:"
 msgid "_From:"
 msgstr "_De:"
 
 #: ../src/client/components/main-window.vala:388
 #: ../src/client/components/main-window.vala:351
-#| msgid "%s (%s)"
 msgid "%s (%d)"
 msgstr "%s (%d)"
 
@@ -2093,14 +2059,12 @@ msgid "Sending..."
 msgstr "A enviar..."
 
 #: ../src/client/components/conversation-find-bar.vala:214
-#| msgid "%i matches"
 msgid "%i match"
 msgid_plural "%i matches"
 msgstr[0] "%i ocorrência"
 msgstr[1] "%i ocorrências"
 
 #: ../src/client/components/conversation-find-bar.vala:216
-#| msgid "%i matches"
 msgid "%i match (wrapped)"
 msgid_plural "%i matches (wrapped)"
 msgstr[0] "%i ocorrência"
@@ -2329,7 +2293,7 @@ msgstr "etiqueta"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr "Atualização do Geary em progresso..."
+msgstr "Atualização do Geary em progresso…"
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
@@ -2609,8 +2573,7 @@ msgstr "Para os adicionar como anexos"
 
 #: ../data/ui/account_cannot_remove.ui:40
 msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
-msgstr ""
-"<span weight=\"bold\" size=\"larger\">Impossível remover conta</span> "
+msgstr "<span weight=\"bold\" size=\"larger\">Impossível remover conta</span> "
 
 #: ../data/ui/account_cannot_remove.ui:56
 msgid ""
@@ -2622,7 +2585,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr "Endereços de email ad_icionais..."
+msgstr "Endereços de email ad_icionais…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
@@ -2939,7 +2902,7 @@ msgstr "Por favor espere enquante o Mail valida a sua conta."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr "Atualização do Mail em progresso..."
+msgstr "Atualização do Mail em progresso…"
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
@@ -2963,14 +2926,14 @@ msgstr "Mostrar diálogo Sobre"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
-msgstr "Guardar Anexo..."
+msgstr "Guardar Anexo…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr "Guardar Todos os Anexos..."
+msgstr "Guardar Todos os Anexos…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238

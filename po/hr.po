@@ -10,20 +10,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
-"Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-01-02 07:57+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
-"Language-Team: Croatian "
-"(http://www.transifex.com/projects/p/geary/language/hr/)\n"
+"PO-Revision-Date: 2017-04-17 14:11+0000\n"
+"Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
+"Language-Team: Croatian <https://l10n.elementary.io/projects/mail/mail/hr/>\n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
-"Language: hr\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -600,7 +599,7 @@ msgstr "Isprazni mape neželjene pošte ili smeća"
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr "Isprazni  _neželjenu poštu"
+msgstr "Isprazni  _neželjenu poštu…"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -610,7 +609,7 @@ msgstr "Isprazni  _neželjenu poštu"
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr "Isprazni _smeće..."
+msgstr "Isprazni _smeće…"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -1224,8 +1223,8 @@ msgid ""
 "Selecting \"Trust This Server\" or \"Always Trust This Server\" may cause "
 "your username and password to be transmitted insecurely."
 msgstr ""
-"Odabirom \"Vjeruj ovom poslužitelju\" ili \"Uvijek vjeruj ovom "
-"poslužitelju\" može uzrokovati nesiguran prijenos vašeg imena i lozinke."
+"Odabirom \"Vjeruj ovom poslužitelju\" ili \"Uvijek vjeruj ovom poslužitelju"
+"\" može uzrokovati nesiguran prijenos vašeg imena i lozinke."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
@@ -1261,7 +1260,7 @@ msgstr ""
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:73
 msgid "The server's certificate is not signed by a known authority"
-msgstr "Vjerodajnice sustava nisu potpisane od strane poznatih ovlaštenika."
+msgstr "Vjerodajnice sustava nisu potpisane od strane poznatih ovlaštenika"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:76
 msgid "The server's identity does not match the identity in the certificate"
@@ -1315,7 +1314,7 @@ msgstr "Prvi Zadnji"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 msgid "Welcome to Geary."
-msgstr "Dobrodošli u Geary"
+msgstr "Dobrodošli u Geary."
 
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
@@ -1852,7 +1851,7 @@ msgstr "_Pogledaj Izvor"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1081
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1108
 msgid "Failed to open default text editor."
-msgstr "Nemoguće otvaranje zadanog uređivača teksta"
+msgstr "Nemoguće otvaranje zadanog uređivača teksta."
 
 #: ../src/client/conversation-viewer/conversation-web-view.vala:322
 msgid "%s - Conversation Inspector"
@@ -1886,11 +1885,11 @@ msgstr "Nova poruka"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
-"priloži|prilaganje|prilozi|privitak|privicu|priloženo|obuhvati|obuhvaćeno|obu"
-"hvaćanje|obuhvaćanja|prilog|prilozi"
+"priloži|prilaganje|prilozi|privitak|privicu|priloženo|obuhvati|obuhvaćeno|"
+"obuhvaćanje|obuhvaćanja|prilog|prilozi"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -2218,7 +2217,7 @@ msgstr "Tropanelni raspored:"
 #: ../src/client/dialogs/preferences-dialog.vala:42 ../data/ui/login.ui:853
 #: ../src/client/dialogs/preferences-dialog.vala:48
 msgid "Composer"
-msgstr "Sastavitelj poruka:"
+msgstr "Sastavitelj poruka"
 
 #: ../src/client/dialogs/preferences-dialog.vala:47
 #: ../src/client/dialogs/preferences-dialog.vala:53
@@ -2265,8 +2264,8 @@ msgid ""
 "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
 "account?</span> "
 msgstr ""
-"<span weight=\"bold\" size=\"larger\">Sigurno želite ukloniti ovaj "
-"račun?</span> "
+"<span weight=\"bold\" size=\"larger\">Sigurno želite ukloniti ovaj račun?</"
+"span> "
 
 #: ../data/ui/remove_confirm.ui:58
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:42
@@ -2600,7 +2599,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr "Dod_atne adrese e-pošte..."
+msgstr "Dod_atne adrese e-pošte…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
@@ -2644,7 +2643,7 @@ msgstr "Po_služitelj:"
 
 #: ../data/ui/login.ui:347
 msgid "P_ort"
-msgstr "U_laz:"
+msgstr "U_laz"
 
 #: ../data/ui/login.ui:409
 msgid "Ser_ver:"
@@ -2942,14 +2941,14 @@ msgstr "Prikaži dijalog 'O programu'"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
-msgstr "Spremi privitak..."
+msgstr "Spremi privitak…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr "Spremi sve privitke..."
+msgstr "Spremi sve privitke…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
@@ -3003,7 +3002,7 @@ msgstr "Označi kao pročitano"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:275
 #: ../src/client/conversation-viewer/ConversationWidget.vala:277
 msgid "Print…"
-msgstr "Ispis..."
+msgstr "Ispis…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
@@ -3071,11 +3070,11 @@ msgstr "Sakrij poruku"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr "Spremi kao..."
+msgstr "Spremi kao…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
-msgstr "Velika/Mala slova:"
+msgstr "Velika/Mala slova"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
@@ -3089,8 +3088,8 @@ msgstr[2] "%u podudaranja"
 #: ../src/engine/rfc822/rfc822-mailbox-address.vala:170
 msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 msgstr ""
-"ne-odgovaraj;ne_odgovaraj;neodgovaraj;nemoj-"
-"odgovoriti;nemoj_odgovoriti;nemojodgovoriti"
+"ne-odgovaraj;ne_odgovaraj;neodgovaraj;nemoj-odgovoriti;nemoj_odgovoriti;"
+"nemojodgovoriti"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:410
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423

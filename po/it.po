@@ -16,20 +16,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
-"onent=general\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-02-01 16:29+0000\n"
-"Last-Translator: Matteo Formenti <matteoformenti1998@gmail.com>\n"
-"Language-Team: Italiano <gnome-it-list@gnome.org>\n"
+"PO-Revision-Date: 2017-04-15 20:27+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Italian <https://l10n.elementary.io/projects/mail/mail/it/>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
-"Language: it\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -605,7 +603,7 @@ msgstr "Cancella la posta indesiderata o svuota il cestino"
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr "Cancella la posta _indesiderata..."
+msgstr "Cancella la posta _indesiderata…"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -615,7 +613,7 @@ msgstr "Cancella la posta _indesiderata..."
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr "Svuota il _cestino..."
+msgstr "Svuota il _cestino…"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -752,8 +750,8 @@ msgstr ""
 "uscire.\n"
 "\n"
 "La ricostruzione del database eliminerà tutta la posta locale, compresi gli "
-"allegati. <b>Tale operazione non ha effetti sulla posta presente sul "
-"server.</b>"
+"allegati. <b>Tale operazione non ha effetti sulla posta presente sul server."
+"</b>"
 
 #: ../src/client/application/geary-controller.vala:1153
 #: ../src/client/application/geary-controller.vala:1147
@@ -1222,8 +1220,7 @@ msgstr "Connessione non sicura: %s"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:36
 msgid "The identity of the %s mail server at %s:%u could not be verified."
-msgstr ""
-"Impossibile verificare l'identità del server di posta %s presso %s:%u."
+msgstr "Impossibile verificare l'identità del server di posta %s presso %s:%u."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:44
 msgid ""
@@ -1268,8 +1265,7 @@ msgstr ""
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:73
 msgid "The server's certificate is not signed by a known authority"
-msgstr ""
-"Il certificato del server non è firmato da alcuna autorità conosciuta"
+msgstr "Il certificato del server non è firmato da alcuna autorità conosciuta"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:76
 msgid "The server's identity does not match the identity in the certificate"
@@ -1293,8 +1289,7 @@ msgstr "Il certificato del server è considerato non sicuro"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:91
 msgid "An error has occurred processing the server's certificate"
-msgstr ""
-"Si è verificato un errore nell'elaborazione del certificato del server"
+msgstr "Si è verificato un errore nell'elaborazione del certificato del server"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 msgid "Geary requires your email password to continue"
@@ -1889,12 +1884,12 @@ msgstr "Nuovo messaggio"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures|allegato|allegati|allego|allega|allegar"
-"e|allegando|includo"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures|allegato|allegati|allego|allega|"
+"allegare|allegando|includo"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -2309,7 +2304,7 @@ msgstr "etichetta"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr "Aggiornamento in corso..."
+msgstr "Aggiornamento in corso…"
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
@@ -2602,7 +2597,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr "Indirizzi email aggiuntivi..."
+msgstr "Indirizzi email aggiuntivi…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
@@ -2847,8 +2842,8 @@ msgid ""
 "Please install the latest version of Mail and try again."
 msgstr ""
 "Il numero di versione del database di posta locale è formattato per una "
-"nuova versione di Mail. Purtroppo, il database non può essere "
-"\"ripristinato\" per lavorare con questa versione di Mail.\n"
+"nuova versione di Mail. Purtroppo, il database non può essere \"ripristinato"
+"\" per lavorare con questa versione di Mail.\n"
 "\n"
 "Per favore, installa l'ultima versione di Posta e riprova."
 
@@ -2899,8 +2894,7 @@ msgstr ""
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Mail will not add or update this email account."
-msgstr ""
-"Posta non aggiungerà o aggiornerà questo account di posta elettronica."
+msgstr "Posta non aggiungerà o aggiornerà questo account di posta elettronica."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
@@ -2912,8 +2906,7 @@ msgstr ""
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Mail will exit if you have no other open email accounts."
-msgstr ""
-"Posta terminerà se non hai altri account di posta elettronica aperti."
+msgstr "Posta terminerà se non hai altri account di posta elettronica aperti."
 
 #: ../data/ui/account_spinner.ui:41
 #: ../src/client/accounts/account-spinner-page.vala:22
@@ -2922,7 +2915,7 @@ msgstr "Per favore attendi mentre Posta convalida il tuo account."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr "Aggiornamento di Posta in corso..."
+msgstr "Aggiornamento di Posta in corso…"
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
@@ -2946,14 +2939,14 @@ msgstr "Mostra la finestra con le informazioni"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
-msgstr "Salva allegato..."
+msgstr "Salva allegato…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr "Salva tutti gli allegati..."
+msgstr "Salva tutti gli allegati…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
@@ -3007,7 +3000,7 @@ msgstr "Segna come letto"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:275
 #: ../src/client/conversation-viewer/ConversationWidget.vala:277
 msgid "Print…"
-msgstr "Stampa..."
+msgstr "Stampa…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
@@ -3075,7 +3068,7 @@ msgstr "Nascondi messaggio"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr "Salva come..."
+msgstr "Salva come…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"

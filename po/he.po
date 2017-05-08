@@ -17,16 +17,16 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2015-11-24 15:44+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
-"Language-Team: עברית <>\n"
+"PO-Revision-Date: 2017-05-04 10:16+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n>2||n==0) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=plural=n==1 ? 0 : (n>2||n==0) ? 1 : 2;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
-"Language: he\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -196,20 +196,20 @@ msgstr "(ללא נושא)"
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/engine/rfc822/rfc822-utils.vala:215
 msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%a, %b %-e, %Y בשעה %-l:%M %p"
+msgstr "%a ,ה־%-e ב%b,‏ %Y בשעה %-l:%M %p"
 
 #. / The quoted header for a message being replied to.
 #. / %1$s will be substituted for the date, and %2$s will be substituted for
 #. / the original sender.
 #: ../src/engine/rfc822/rfc822-utils.vala:221
 msgid "On %1$s, %2$s wrote:"
-msgstr "בתאריך %1$s, %2$s כתב:"
+msgstr "בתאריך %1$s, נכתב ע״י %2$s:"
 
 #. / The quoted header for a message being replied to (in case the date is not known).
 #. / %s will be replaced by the original sender.
 #: ../src/engine/rfc822/rfc822-utils.vala:228
 msgid "%s wrote:"
-msgstr "נכתב על ידי %s:"
+msgstr "נכתב ע״י %s:"
 
 #. / The quoted header for a message being replied to (in case the sender is not known).
 #. / %s will be replaced by the original date
@@ -280,14 +280,14 @@ msgstr "מחיקת שיחות (Shift+Delete)"
 #: ../src/client/application/geary-controller.vala:2723
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "העברת דיון לאשפה (Delete, Backspace)"
+msgstr[1] "העברת דיונים לאשפה (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 msgid "Move conversations to Trash (Delete, Backspace)"
-msgstr "הזזת שיחות לאשפה (Delete, Backspace)"
+msgstr "העברת דיונים לאשפה (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
@@ -301,15 +301,15 @@ msgstr "תיוק ב_ארכיון"
 #: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "תיוק הדיון בארכיון (A)"
+msgstr[1] "תיוק הדיונים בארכיון (A)"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
 #: ../src/client/application/geary-controller.vala:72
 #: ../src/client/application/geary-controller.vala:71
 msgid "Archive conversations (A)"
-msgstr "תיוק שיחות בארכיון (A)"
+msgstr "תיוק דיונים בארכיון (A)"
 
 #: ../src/client/application/geary-controller.vala:77
 #: ../src/client/application/geary-controller.vala:76
@@ -345,15 +345,15 @@ msgstr "סימון כלא דואר ז_בל"
 #: ../src/client/application/geary-controller.vala:390
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "סימון הדיון"
+msgstr[1] "סימון הדיונים"
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
 #: ../src/client/application/geary-controller.vala:79
 #: ../src/client/application/geary-controller.vala:78
 msgid "Mark conversations"
-msgstr "סימון שיחות"
+msgstr "סימון דיונים"
 
 #: ../src/client/application/geary-controller.vala:82
 #: ../src/client/components/main-toolbar.vala:114
@@ -369,15 +369,15 @@ msgstr "סימון שיחות"
 #: ../src/client/application/geary-controller.vala:2716
 msgid "Add label to conversation"
 msgid_plural "Add label to conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "הוספת תווית לדיון"
+msgstr[1] "הוספת תווית לדיונים"
 
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
 msgid "Add label to conversations"
-msgstr "הוספת תווית לשיחות"
+msgstr "הוספת תווית לדיונים"
 
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:431
@@ -397,15 +397,15 @@ msgstr "הוספת תווית לשיחות"
 #: ../src/client/application/geary-controller.vala:2718
 msgid "Move conversation"
 msgid_plural "Move conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "העברת דיון"
+msgstr[1] "העברת דיונים"
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
 msgid "Move conversations"
-msgstr "הזזת שיחות"
+msgstr "העברת דיונים"
 
 #: ../src/client/application/geary-controller.vala:372
 #: ../src/client/application/geary-controller.vala:371
@@ -579,7 +579,7 @@ msgstr "העברה (Ctrl+ך, כ)"
 #: ../src/client/application/geary-controller.vala:485
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty"
-msgstr "ריקון"
+msgstr "פינוי"
 
 #: ../src/client/application/geary-controller.vala:492
 #: ../src/client/application/geary-controller.vala:491
@@ -588,7 +588,7 @@ msgstr "ריקון"
 #: ../src/client/components/main-toolbar.vala:71
 #: ../src/client/application/geary-controller.vala:481
 msgid "Empty Spam or Trash folders"
-msgstr "ריקון תיקיית דואר זבל או אשפה"
+msgstr "פינוי תיקיית דואר זבל או אשפה"
 
 #: ../src/client/application/geary-controller.vala:496
 #: ../src/client/application/geary-controller.vala:495
@@ -598,7 +598,7 @@ msgstr "ריקון תיקיית דואר זבל או אשפה"
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr "ריקון דואר _זבל…"
+msgstr "פינוי דואר _זבל…"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -608,7 +608,7 @@ msgstr "ריקון דואר _זבל…"
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr "ריקון א_שפה…"
+msgstr "פינוי א_שפה…"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -719,7 +719,7 @@ msgstr "תוויות"
 #: ../src/client/application/geary-controller.vala:1121
 #: ../src/client/application/geary-controller.vala:1115
 msgid "Unable to open the database for %s"
-msgstr "לא ניתן לפתוח מסד הנתונים עבור %s"
+msgstr "לא ניתן לפתוח את מסד הנתונים עבור %s"
 
 #: ../src/client/application/geary-controller.vala:1151
 #: ../src/client/application/geary-controller.vala:1145
@@ -971,12 +971,12 @@ msgstr "סגירת טיוטות פתוחות?"
 #: ../src/client/application/geary-controller.vala:2394
 #: ../src/client/application/geary-controller.vala:2389
 msgid "Empty all email from your %s folder?"
-msgstr "ריקון כל הדואר מהתיקייה %s?"
+msgstr "לפנות את כל הדואר מהתיקייה %s?"
 
 #: ../src/client/application/geary-controller.vala:2440
 #: ../src/client/application/geary-controller.vala:2434
 msgid "This removes the email from Geary and your email server."
-msgstr "פעולה זו מוחקת את הדואר מ־Geary וכן משרת הדוא״ל שלך."
+msgstr "פעולה זו מוחקת את הודעת הדוא״ל מ־Geary וכן משרת הדוא״ל שלך."
 
 #: ../src/client/application/geary-controller.vala:2441
 #: ../src/client/application/geary-controller.vala:2435
@@ -986,7 +986,7 @@ msgstr "פעולה זו מוחקת את הדואר מ־Geary וכן משרת ה�
 #: ../src/client/application/geary-controller.vala:2396
 #: ../src/client/application/geary-controller.vala:2391
 msgid "This cannot be undone."
-msgstr "פעולה זה לא ניתנת לביטול."
+msgstr "פעולה זו אינה ניתנת לביטול."
 
 #: ../src/client/application/geary-controller.vala:2442
 #: ../src/client/application/geary-controller.vala:2436
@@ -996,7 +996,7 @@ msgstr "פעולה זה לא ניתנת לביטול."
 #: ../src/client/application/geary-controller.vala:2397
 #: ../src/client/application/geary-controller.vala:2392
 msgid "Empty %s"
-msgstr "ריקון %s"
+msgstr "פינוי %s"
 
 #: ../src/client/application/geary-controller.vala:2459
 #: ../src/client/application/geary-controller.vala:2453
@@ -1006,7 +1006,7 @@ msgstr "ריקון %s"
 #: ../src/client/application/geary-controller.vala:2414
 #: ../src/client/application/geary-controller.vala:2409
 msgid "Error emptying %s"
-msgstr "שגיאה בריקון %s"
+msgstr "שגיאה בפינוי %s"
 
 #: ../src/client/application/geary-controller.vala:2489
 #: ../src/client/application/geary-controller.vala:2483
@@ -1017,8 +1017,8 @@ msgstr "שגיאה בריקון %s"
 #: ../src/client/application/geary-controller.vala:2439
 msgid "Do you want to permanently delete this message?"
 msgid_plural "Do you want to permanently delete these messages?"
-msgstr[0] "האם ברצונך למחוק הודעה זו לצמיתות?"
-msgstr[1] "האם ברצונך למחוק הודעות אלה לצמיתות?"
+msgstr[0] "למחוק הודעה זו לצמיתות?"
+msgstr[1] "למחוק הודעות אלה לצמיתות?"
 
 #: ../src/client/application/geary-controller.vala:2491
 #: ../src/client/application/geary-controller.vala:2485
@@ -1063,7 +1063,7 @@ msgstr "ביטול (Ctrl+ז)"
 #: ../src/client/application/geary-args.vala:10
 #: ../src/client/application/geary-args.vala:11
 msgid "Start Geary with hidden main window"
-msgstr "Start Geary with hidden main window"
+msgstr "להפעיל את Geary עם חלון ראשי מוסתר"
 
 #: ../src/client/application/geary-args.vala:11
 #: ../src/client/application/geary-args.vala:12
@@ -1226,7 +1226,7 @@ msgstr "‏Geary לא יוסיף או יעדכן חשבון דוא״ל זה."
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary to stop accessing "
 "this account."
-msgstr "בחירת „לא לבטוח בשרת זה” יגרום ל־Geart להפסיק לגשת לחשבון זה."
+msgstr "בחירה באפשרות „לא לבטוח בשרת זה” תגרום ל־Geart להפסיק לגשת לחשבון זה."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Geary will exit if you have no other open email accounts."
@@ -1250,7 +1250,7 @@ msgstr "מזהה השרת לא תואם את מזהה התעודה"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:79
 msgid "The server's certificate has expired"
-msgstr "פגה תקפה של תעודת השרת"
+msgstr "פג תקפה של תעודת השרת"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:82
 msgid "The server's certificate has not been activated"
@@ -1258,7 +1258,7 @@ msgstr "תעודת השרת לא הופעלה"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:85
 msgid "The server's certificate has been revoked and is now invalid"
-msgstr "תעודת השרת בוטלה ואינה תקפה כעת"
+msgstr "תעודת השרת בוטלה ואינה תקפה עוד"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:88
 msgid "The server's certificate is considered insecure"
@@ -1552,7 +1552,7 @@ msgstr "חיפוש בחשבון %s"
 #: ../src/client/folder-list/folder-list-search-branch.vala:44
 msgid "%d result"
 msgid_plural "%d results"
-msgstr[0] "%d תוצאות"
+msgstr[0] "תוצאה אחת"
 msgstr[1] "%d תוצאות"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:413
@@ -1859,8 +1859,8 @@ msgstr "הודעה חדשה"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr "לצרף|צירוף|מצורף|צרף|קובץ מצורף|צורף|נספח"
 
 #: ../src/client/composer/composer-widget.vala:1102
@@ -2130,30 +2130,30 @@ msgstr "מפתוּח חשבון %s"
 #: ../src/client/components/main-toolbar.vala:168
 #: ../src/client/components/main-toolbar.vala:169
 msgid "Menu"
-msgstr ""
+msgstr "תפריט"
 
 #: ../src/client/application/geary-application.vala:25
 #: ../src/client/application/geary-application.vala:24
 #: ../src/Translations.vala:1
 msgid "Send by Email"
-msgstr ""
+msgstr "שליחה בדוא״ל"
 
 #: ../src/client/application/geary-application.vala:26
 #: ../src/client/application/geary-application.vala:25
 #: ../src/Translations.vala:2
 msgid "Send files using Mail"
-msgstr ""
+msgstr "שליחת קבצים עם דואר"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
 msgid "Welcome to Mail"
-msgstr ""
+msgstr "ברוך בואך לדואר"
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
 #: ../src/client/composer/composer-toolbar.vala:77
 #: ../src/client/composer/ComposerToolbar.vala:88
 msgid "More options"
-msgstr ""
+msgstr "אפשרויות נוספות"
 
 #: ../src/client/components/main-toolbar.vala:312
 #: ../src/client/components/main-toolbar.vala:281
@@ -2162,55 +2162,55 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:289
 #: ../src/client/components/main-toolbar.vala:290
 msgid "Search %s"
-msgstr ""
+msgstr "חיפוש בתוך %s"
 
 #: ../src/client/dialogs/preferences-dialog.vala:23
 #: ../src/client/dialogs/preferences-dialog.vala:24
 msgid "Reading"
-msgstr ""
+msgstr "קריאה"
 
 #: ../src/client/dialogs/preferences-dialog.vala:28
 #: ../src/client/dialogs/preferences-dialog.vala:29
 msgid "Automatically select next message:"
-msgstr ""
+msgstr "בחירת ההודעה הבאה אוטומטית:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:33
 #: ../src/client/dialogs/preferences-dialog.vala:34
 msgid "Conversation previews:"
-msgstr ""
+msgstr "תצוגה מקדימה של דיונים:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:38
 #: ../src/client/dialogs/preferences-dialog.vala:39
 msgid "Three-pane layout:"
-msgstr ""
+msgstr "פריסת שלוש עמודות:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:42 ../data/ui/login.ui:853
 #: ../src/client/dialogs/preferences-dialog.vala:48
 msgid "Composer"
-msgstr ""
+msgstr "מחבר"
 
 #: ../src/client/dialogs/preferences-dialog.vala:47
 #: ../src/client/dialogs/preferences-dialog.vala:53
 msgid "Spell check:"
-msgstr ""
+msgstr "בדיקת איות:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:51
 #: ../src/client/dialogs/preferences-dialog.vala:57
 #: ../src/client/dialogs/preferences-dialog.vala:47
 msgid "Notifications"
-msgstr ""
+msgstr "התרעות"
 
 #: ../src/client/dialogs/preferences-dialog.vala:56
 #: ../src/client/dialogs/preferences-dialog.vala:62
 #: ../src/client/dialogs/preferences-dialog.vala:52
 msgid "Always watch for new mail:"
-msgstr ""
+msgstr "תמיד להמתין להודעות חדשות:"
 
 #: ../src/client/application/geary-controller.vala:61
 #: ../src/client/application/geary-controller.vala:60
 #: ../src/client/application/geary-controller.vala:59
 msgid "Delete Conversation"
-msgstr ""
+msgstr "מחיקת דיון"
 
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
@@ -2226,13 +2226,13 @@ msgstr[1] ""
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete Conversations (Shift+Delete)"
-msgstr ""
+msgstr "מחיקת דיונים (Shift+Delete)"
 
 #: ../data/ui/remove_confirm.ui:43
 msgid ""
 "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
 "account?</span> "
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"larger\">להסיר את החשבון הזה?</span> "
 
 #: ../data/ui/remove_confirm.ui:58
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:42
@@ -2240,503 +2240,509 @@ msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
 msgstr ""
+"כל ההודעות המשויכות לחשבון יוסרו מהמחשב שלך. פעולה זו לא תשפיע על ההודעות "
+"שעל השרת."
 
 #: ../data/ui/remove_confirm.ui:80
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:47
 msgid "Nickname:"
-msgstr ""
+msgstr "כינוי:"
 
 #: ../data/ui/remove_confirm.ui:94
 msgid "Email address:"
-msgstr ""
+msgstr "כתובת דוא״ל:"
 
 #: ../data/ui/find_bar.ui:59
 msgid "Find"
-msgstr ""
+msgstr "חיפוש"
 
 #: ../data/ui/find_bar.ui:72
 msgid "Previous Result"
-msgstr ""
+msgstr "התוצאה הקודמת"
 
 #: ../data/ui/find_bar.ui:91
 msgid "Next result"
-msgstr ""
+msgstr "התוצאה הבאה"
 
 #: ../data/ui/find_bar.ui:107
 msgid "_Case sensitive"
-msgstr ""
+msgstr "_תלוי רישיות"
 
 #: ../data/ui/find_bar.ui:127
 msgid "label"
-msgstr ""
+msgstr "תווית"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr ""
+msgstr "מתבצע עדכון של Geary…"
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
-msgstr ""
+msgstr "הסרת כתובת דוא״ל"
 
 #: ../data/ui/edit_alternate_emails.ui:136
 msgid ""
 "Some email services require additional addresses be configured on the "
 "server.  Contact your email provider for more information."
 msgstr ""
+"חלק משירותי הדוא״ל דורשים הגדרה של כתובות דוא״ל נוספות על השרת. נא ליצור קשר "
+"עם ספק הדוא״ל שלך למידע נוסף."
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
-msgstr ""
+msgstr "_עדכון"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
-msgstr ""
+msgstr "נא להמתין בזמן ש־Geary מאמת את החשבון שלך."
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
-msgstr ""
+msgstr "_ביטול"
 
 #: ../data/ui/composer.ui:15
 msgid "_Redo"
-msgstr ""
+msgstr "ביצוע _חוזר"
 
 #: ../data/ui/composer.ui:22
 msgid "Cu_t"
-msgstr ""
+msgstr "_גזירה"
 
 #: ../data/ui/composer.ui:36
 msgid "_Paste"
-msgstr ""
+msgstr "ה_דבקה"
 
 #: ../data/ui/composer.ui:43
 msgid "_Left"
-msgstr ""
+msgstr "_שמאל"
 
 #: ../data/ui/composer.ui:48
 msgid "_Right"
-msgstr ""
+msgstr "_ימין"
 
 #: ../data/ui/composer.ui:53
 msgid "_Center"
-msgstr ""
+msgstr "מ_רכז"
 
 #: ../data/ui/composer.ui:58
 msgid "_Justify"
-msgstr ""
+msgstr "ייש_ור"
 
 #: ../data/ui/composer.ui:63 ../src/client/composer/ComposerToolbar.vala:77
 msgid "Link (Ctrl+L)"
-msgstr ""
+msgstr "קישור (Ctrl+L)"
 
 #: ../data/ui/composer.ui:70 ../data/ui/composer.ui:69
 msgid "C_olor"
-msgstr ""
+msgstr "_צבע"
 
 #: ../data/ui/composer.ui:81
 msgid "Quote text  (Ctrl+])"
-msgstr ""
+msgstr "ציטוט טקסט (Ctrl+])"
 
 #: ../data/ui/composer.ui:87 ../src/client/composer/ComposerToolbar.vala:69
 msgid "Unquote text (Ctrl+[)"
-msgstr ""
+msgstr "ביטול ציטוט טקסט (Ctrl+[)"
 
 #: ../data/ui/composer.ui:93 ../src/client/composer/ComposerToolbar.vala:82
 msgid "Remove formatting (Ctrl+Space)"
-msgstr ""
+msgstr "הסרת עיצוב (Ctrl+רווח)"
 
 #: ../data/ui/composer.ui:100 ../data/ui/composer.ui:97
 msgctxt "Clipboard paste with rich text"
 msgid "Paste _With Formatting"
-msgstr ""
+msgstr "הדבקה עם _עיצוב"
 
 #: ../data/ui/composer.ui:111 ../src/client/composer/ComposerToolbar.vala:36
 msgid "Bold (Ctrl+B)"
-msgstr ""
+msgstr "הדגשה (Ctrl+B)"
 
 #: ../data/ui/composer.ui:118 ../src/client/composer/ComposerToolbar.vala:41
 msgid "Italic (Ctrl+I)"
-msgstr ""
+msgstr "הטיה (Ctrl+I)"
 
 #: ../data/ui/composer.ui:125 ../src/client/composer/ComposerToolbar.vala:46
 msgid "Underline (Ctrl+U)"
-msgstr ""
+msgstr "קו תחתי (Ctrl+U)"
 
 #: ../data/ui/composer.ui:132 ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+K)"
-msgstr ""
+msgstr "קו חוצה (Ctrl+K)"
 
 #: ../data/ui/composer.ui:139 ../data/ui/composer.ui:132
 msgid "_Rich Text"
-msgstr ""
+msgstr "_טקסט עשיר"
 
 #: ../data/ui/composer.ui:145 ../data/ui/composer.ui:138
 msgid "Show Extended Fields"
-msgstr ""
+msgstr "הצגת שדות מורחבים"
 
 #: ../data/ui/composer.ui:157
 msgctxt "Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "סגירה ושמירה"
 
 #: ../data/ui/composer.ui:158
 msgctxt "Short Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "סגירה ושמירה"
 
 #: ../data/ui/composer.ui:159
 msgctxt "Tooltip"
 msgid "Close and Save"
-msgstr ""
+msgstr "סגירה ושמירה"
 
 #: ../data/ui/composer.ui:165
 msgctxt "Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "סגירה והתעלמות"
 
 #: ../data/ui/composer.ui:166
 msgctxt "Short Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "סגירה והתעלמות"
 
 #: ../data/ui/composer.ui:167
 msgctxt "Tooltip"
 msgid "Close and Discard"
-msgstr ""
+msgstr "סגירה והתעלמות"
 
 #: ../data/ui/composer.ui:173 ../data/ui/composer.ui:155
 #: ../data/ui/composer.ui:160
 msgid "Lar_ge"
-msgstr ""
+msgstr "_גדול"
 
 #: ../data/ui/composer.ui:174 ../data/ui/composer.ui:156
 #: ../data/ui/composer.ui:161
 msgid "Large"
-msgstr ""
+msgstr "גדול"
 
 #: ../data/ui/composer.ui:179 ../data/ui/composer.ui:161
 #: ../data/ui/composer.ui:166
 msgid "_Medium"
-msgstr ""
+msgstr "_בינוני"
 
 #: ../data/ui/composer.ui:180 ../data/ui/composer.ui:162
 #: ../data/ui/composer.ui:167
 msgid "Medium"
-msgstr ""
+msgstr "בינוני"
 
 #: ../data/ui/composer.ui:185 ../data/ui/composer.ui:167
 #: ../data/ui/composer.ui:172
 msgid "_Small"
-msgstr ""
+msgstr "_קטן"
 
 #: ../data/ui/composer.ui:186 ../data/ui/composer.ui:168
 #: ../data/ui/composer.ui:173
 msgid "Small"
-msgstr ""
+msgstr "קטן"
 
 #: ../data/ui/composer.ui:191 ../data/ui/composer.ui:173
 #: ../data/ui/composer.ui:178
 msgid "S_ans Serif"
-msgstr ""
+msgstr "_ללא עיטור"
 
 #: ../data/ui/composer.ui:192 ../data/ui/composer.ui:174
 #: ../data/ui/composer.ui:179
 msgid "Sans Serif"
-msgstr ""
+msgstr "ללא עיטור"
 
 #: ../data/ui/composer.ui:197 ../data/ui/composer.ui:179
 #: ../data/ui/composer.ui:184
 msgid "S_erif"
-msgstr ""
+msgstr "עם עי_טור"
 
 #: ../data/ui/composer.ui:198 ../data/ui/composer.ui:180
 #: ../data/ui/composer.ui:185
 msgid "Serif"
-msgstr ""
+msgstr "עם עי_טור"
 
 #: ../data/ui/composer.ui:203 ../data/ui/composer.ui:185
 #: ../data/ui/composer.ui:190
 msgid "_Fixed Width"
-msgstr ""
+msgstr "רוחב _קבוע"
 
 #: ../data/ui/composer.ui:204 ../data/ui/composer.ui:186
 #: ../data/ui/composer.ui:191
 msgid "Fixed Width"
-msgstr ""
+msgstr "רוחב קבוע"
 
 #: ../data/ui/composer.ui:209 ../data/ui/composer.ui:210
 msgid "Detach"
-msgstr ""
+msgstr "הפרדה"
 
 #: ../data/ui/composer.ui:211 ../src/client/composer/ComposerHeaderBar.vala:36
 msgid "Detach (Ctrl+D)"
-msgstr ""
+msgstr "הפרדה (Ctrl+D)"
 
 #: ../data/ui/composer.ui:218
 msgid "_Send"
-msgstr ""
+msgstr "_שליחה"
 
 #: ../data/ui/composer.ui:219 ../src/client/composer/ComposerHeaderBar.vala:46
 msgid "Send"
-msgstr ""
+msgstr "שליחה"
 
 #: ../data/ui/composer.ui:220 ../src/client/composer/ComposerHeaderBar.vala:47
 msgid "Send (Ctrl+Enter)"
-msgstr ""
+msgstr "שליחה (Ctrl+Enter)"
 
 #: ../data/ui/composer.ui:226
 msgid "_Attach File"
-msgstr ""
+msgstr "_צירוף קובץ"
 
 #: ../data/ui/composer.ui:227 ../data/ui/composer.ui:228
 msgid "Attach File"
-msgstr ""
+msgstr "צירוף קובץ"
 
 #: ../data/ui/composer.ui:234
 msgid "_Include Original Attachments"
-msgstr ""
+msgstr "ה_שארת הקבצים שצורפו במקור"
 
 #: ../data/ui/composer.ui:235 ../data/ui/composer.ui:236
 msgid "Include Original Attachments"
-msgstr ""
+msgstr "השארת הקבצים שצורפו במקור"
 
 #: ../data/ui/composer.ui:242 ../data/ui/composer.ui:212
 #: ../data/ui/composer.ui:217
 msgid "Application Menu"
-msgstr ""
+msgstr "תפריט יישומים"
 
 #. Address(es) e-mail is to be sent to
 #: ../data/ui/composer.ui:289 ../data/ui/composer.ui:317
 #: ../data/ui/composer.ui:287 ../data/ui/composer.ui:292
 msgid "_To"
-msgstr ""
+msgstr "_אל"
 
 #: ../data/ui/composer.ui:308 ../data/ui/composer.ui:336
 #: ../data/ui/composer.ui:306 ../data/ui/composer.ui:311
 msgid "_Cc"
-msgstr ""
+msgstr "_עותק"
 
 #: ../data/ui/composer.ui:362 ../data/ui/composer.ui:390
 #: ../data/ui/composer.ui:360 ../data/ui/composer.ui:365
 msgid "_Subject"
-msgstr ""
+msgstr "_נושא"
 
 #: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
 #: ../data/ui/composer.ui:379 ../data/ui/composer.ui:384
 msgid "_Bcc"
-msgstr ""
+msgstr "עותק מו_סתר"
 
 #: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
 #: ../data/ui/composer.ui:409 ../data/ui/composer.ui:414
 msgid "_Reply-To"
-msgstr ""
+msgstr "כתובת ל_תגובה"
 
 #. Geary account mail will be sent from
 #. Account mail will be sent from
 #: ../data/ui/composer.ui:440 ../data/ui/composer.ui:468
 #: ../data/ui/composer.ui:438 ../data/ui/composer.ui:443
 msgid "From"
-msgstr ""
+msgstr "מאת"
 
 #: ../data/ui/composer.ui:519 ../data/ui/composer.ui:547
 #: ../data/ui/composer.ui:517 ../data/ui/composer.ui:522
 msgid "Drop files here"
-msgstr ""
+msgstr "יש לשחרר קבצים כאן"
 
 #: ../data/ui/composer.ui:535 ../data/ui/composer.ui:563
 #: ../data/ui/composer.ui:533 ../data/ui/composer.ui:538
 msgid "To add them as attachments"
-msgstr ""
+msgstr "כדי להוסיף אותם כקבצים מצורפים"
 
 #: ../data/ui/account_cannot_remove.ui:40
 msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"larger\">לא ניתן להסיר חשבון</span> "
 
 #: ../data/ui/account_cannot_remove.ui:56
 msgid ""
 "A composer window associated with this account is currently open. Send or "
 "discard the message and try again."
 msgstr ""
+"חלון כתיבת דוא״ל שמשוייך עם חשבון זה פתוח כרגע. יש לשלוח או להתעלם מההודעה "
+"ולנסות שוב."
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr ""
+msgstr "כתובות דוא״ל _נוספות…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
-msgstr ""
+msgstr "שמירת דוא״ל _שנשלח"
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
-msgstr ""
+msgstr "ססמה"
 
 #: ../data/ui/login.ui:97 ../data/ui/login.ui:545
 msgid "_Password:"
-msgstr ""
+msgstr "_ססמה:"
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
-msgstr ""
+msgstr "_כתובת דוא״ל:"
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
-msgstr ""
+msgstr "עבודה, בית וכו׳"
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
-msgstr ""
+msgstr "_כינוי:"
 
 #: ../data/ui/login.ui:195
 msgid "N_ame:"
-msgstr ""
+msgstr "_שם:"
 
 #: ../data/ui/login.ui:211
 msgid "S_ervice:"
-msgstr ""
+msgstr "שי_רות:"
 
 #: ../data/ui/login.ui:298
 msgid "IMAP settings"
-msgstr ""
+msgstr "הגדרות IMAP"
 
 #: ../data/ui/login.ui:315
 msgid "Se_rver:"
-msgstr ""
+msgstr "_שרת:"
 
 #: ../data/ui/login.ui:347
 msgid "P_ort"
-msgstr ""
+msgstr "_פתחה"
 
 #: ../data/ui/login.ui:409
 msgid "Ser_ver:"
-msgstr ""
+msgstr "_שרת:"
 
 #: ../data/ui/login.ui:427
 msgid "Por_t"
-msgstr ""
+msgstr "_פתחה"
 
 #: ../data/ui/login.ui:446
 msgid "SMTP settings"
-msgstr ""
+msgstr "הגדרות SMTP"
 
 #: ../data/ui/login.ui:462
 msgid "User_name:"
-msgstr ""
+msgstr "שם _משתמש:"
 
 #: ../data/ui/login.ui:480
 msgid "Pass_word:"
-msgstr ""
+msgstr "_ססמה:"
 
 #: ../data/ui/login.ui:499
 msgid "SMTP username"
-msgstr ""
+msgstr "שם משתמש ב־SMTP"
 
 #: ../data/ui/login.ui:514
 msgid "SMTP password"
-msgstr ""
+msgstr "ססמה ב־SMTP"
 
 #: ../data/ui/login.ui:527
 msgid "_Username:"
-msgstr ""
+msgstr "_שם משתמש:"
 
 #: ../data/ui/login.ui:564
 msgid "IMAP username"
-msgstr ""
+msgstr "שם משתמש ב־IMAP"
 
 #: ../data/ui/login.ui:579
 msgid "IMAP password"
-msgstr ""
+msgstr "ססמה ב־IMAP"
 
 #: ../data/ui/login.ui:593
 msgid "Encr_yption:"
-msgstr ""
+msgstr "ה_צפנה:"
 
 #: ../data/ui/login.ui:613
 msgid "Encrypt_ion:"
-msgstr ""
+msgstr "הצ_פנה:"
 
 #: ../data/ui/login.ui:634 ../data/ui/login.ui:651
 msgid "SSL/TLS"
-msgstr ""
+msgstr "SSL/TLS"
 
 #: ../data/ui/login.ui:635 ../data/ui/login.ui:652
 msgid "STARTTLS"
-msgstr ""
+msgstr "STARTTLS"
 
 #: ../data/ui/login.ui:663
 msgid "No authentication re_quired"
-msgstr ""
+msgstr "לא נדרש _אימות"
 
 #: ../data/ui/login.ui:679
 msgid "Use IMAP cre_dentials"
-msgstr ""
+msgstr "שימוש ב_פרטי ה־IMAP"
 
 #: ../data/ui/login.ui:783
 msgid "Storage"
-msgstr ""
+msgstr "אחסון"
 
 #: ../data/ui/login.ui:804
 msgid "_Download mail"
-msgstr ""
+msgstr "הורדת _דוא״ל"
 
 #: ../data/ui/login.ui:867
 msgid "Save dra_fts on server"
-msgstr ""
+msgstr "שמירת ה_טיוטות על השרת"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr ""
+msgstr "_חתימה על הדוא״ל (מותר HTML):"
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
-msgstr ""
+msgstr "הוספת חשבון"
 
 #: ../data/ui/account_list.ui:82
 msgid "Edit account"
-msgstr ""
+msgstr "עריכת חשבון"
 
 #: ../data/ui/account_list.ui:95
 msgid "Remove account"
-msgstr ""
+msgstr "הסרת חשבון"
 
 #: ../data/ui/certificate_warning_dialog.ui:7
 msgid "Untrusted Connection"
-msgstr ""
+msgstr "חיבור בלתי מהימן"
 
 #: ../data/ui/certificate_warning_dialog.ui:29
 msgid "_Always Trust This Server"
-msgstr ""
+msgstr "תמיד לתת _אמון בשרת זה"
 
 #: ../data/ui/certificate_warning_dialog.ui:43
 msgid "_Trust This Server"
-msgstr ""
+msgstr "_לתת אמון בשרת זה"
 
 #: ../data/ui/certificate_warning_dialog.ui:57
 msgid "_Don't Trust This Server"
-msgstr ""
+msgstr "_לא לתת אמון בשרת זה"
 
 #: ../data/ui/password-dialog.ui:74
 msgid "SMTP Credentials"
-msgstr ""
+msgstr "פרטי גישה SMTP"
 
 #: ../data/ui/password-dialog.ui:91
 msgid "Username"
-msgstr ""
+msgstr "שם משתמש"
 
 #: ../data/ui/password-dialog.ui:152
 msgid "_Remember password"
-msgstr ""
+msgstr "_שמירת הססמה"
 
 #: ../data/ui/password-dialog.ui:210
 msgid "_Authenticate"
-msgstr ""
+msgstr "_אימות"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
-msgstr ""
+msgstr "© 2011‏-2015 עמותת Yorba,‏ © 2016 elementary LLC."
 
 #: ../src/client/application/geary-application.vala:21
 #: ../src/client/application/geary-application.vala:20
 msgid "Website"
-msgstr ""
+msgstr "אתר"
 
 #: ../src/client/application/geary-controller.vala:1052
 #: ../src/client/application/geary-controller.vala:1046
@@ -2747,6 +2753,8 @@ msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
 msgstr ""
+"דואר נתקל בבעיה בעת שליחת דוא״ל. אם הבעיה נמשכת, נא למחוק ידנית את הודעות "
+"הדוא״ל מתיבת הדואר היוצא שלך."
 
 #: ../src/client/application/geary-controller.vala:1057
 #: ../src/client/application/geary-controller.vala:1051
@@ -2757,6 +2765,8 @@ msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
+"דואר נתקל בשגיאה בעת שמירת הודעה שנשלחה לתיבת ההודעות שנשלחו. ההודעה תישאר "
+"בתיבת הדואר היוצא עד למחיקתה."
 
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
@@ -2774,6 +2784,15 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
+"אירעה שגיאה בעת פתיחת מסד נתוני הדואר המקומי. תקלה זו נובעת כנראה משיבוש "
+"בקובץ מסד הנתונים בתיקייה הזו:\n"
+"\n"
+"%s\n"
+"\n"
+"לדואר יש אפשרות לבנות מחדש את מד הנתונים ולסנכרן אותו מחדש עם השרת או לצאת.\n"
+"\n"
+"בניית מסד הנתונים מחדש תשמיד את כל הודעות הדוא״ל לרבות הקבצים המצורפים. <b>"
+"ההודעות שעדיין על השרת לא תושפענה מהפעולה</b>"
 
 #: ../src/client/application/geary-controller.vala:1184
 #: ../src/client/application/geary-controller.vala:1178
@@ -2787,6 +2806,11 @@ msgid ""
 "\n"
 "Please install the latest version of Mail and try again."
 msgstr ""
+"מספר הגרסה של מסד נתוני הדואר המקומי בנוי לפי גרסה חדשה יותר של דואר. לרוע "
+"המזל, אי אפשר לבצע התאמות לתמיכה לאחור כדי שמסד הנתונים יעבוד עם גרסה זו של "
+"דואר.\n"
+"\n"
+"נא להתקין את הגרסה העדכנית ביותר של דואר ולנסות שוב."
 
 #: ../src/client/application/geary-controller.vala:1195
 #: ../src/client/application/geary-controller.vala:1189
@@ -2799,6 +2823,9 @@ msgid ""
 "\n"
 "Please check your network connection and restart Mail."
 msgstr ""
+"אירעה שגיאה בעת פתיחת החשבון המקומי. כפי הנראה הבעיה נובעת מתקלה בחיבור.\n"
+"\n"
+"נא לבדוק את חיבור הרשת שלך ולפתוח את דואר מחדש."
 
 #: ../src/client/application/geary-controller.vala:2402
 #: ../src/client/application/geary-controller.vala:2404
@@ -2806,100 +2833,102 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2395
 #: ../src/client/application/geary-controller.vala:2390
 msgid "This removes the email from Mail and your email server."
-msgstr ""
+msgstr "פעולה זו מסירה את הדוא״ל מדואר ומשרת הדוא״ל שלך."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
-msgstr ""
+msgstr "        &#8226; כתובת הדוא״ל כבר נוספה לדואר.\n"
 
 #: ../src/client/dialogs/preferences-dialog.vala:44
 #: ../src/client/dialogs/preferences-dialog.vala:43
 msgid "Always show remote images:"
-msgstr ""
+msgstr "תמיד להציג תמונות מרוחקות:"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 #: ../src/client/dialogs/PasswordDialog.vala:39
 msgid "Mail requires your email password to continue"
-msgstr ""
+msgstr "דואר דורש את ססמת הדוא״ל שלך כדי להמשיך"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail not to access this "
 "server."
-msgstr ""
+msgstr "בחירה ב־„לא לתת אמון בשרת זה“ תחסום את הגישה של דואר מפני שרת זה."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Mail will not add or update this email account."
-msgstr ""
+msgstr "דואר לא תוסיף או תעדכן חשבון דוא״ל זה."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail to stop accessing this "
 "account."
-msgstr ""
+msgstr "בחירה ב־„לא לתת אמון בשרת זה“ תגרום לדואר להפסיק לגשת לשרת זה."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Mail will exit if you have no other open email accounts."
-msgstr ""
+msgstr "דואר תצא אם אין לך חשבונות דוא״ל נוספים פתוחים."
 
 #: ../data/ui/account_spinner.ui:41
 #: ../src/client/accounts/account-spinner-page.vala:22
 msgid "Please wait while Mail validates your account."
-msgstr ""
+msgstr "נא להמתין בזמן האימות שדואר מאמתת את החשבון שלך."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr ""
+msgstr "העדכון של דואר מתבצע…"
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
 msgid "Search Mail"
-msgstr ""
+msgstr "חיפוש בדואר"
 
 #: ../src/client/application/geary-application.vala:18
 msgid ""
 "2011-2015 Yorba Foundation\n"
 "© 2016 elementary LLC."
 msgstr ""
+"2011‏-2015 עמותת Yorba\n"
+"© 2016 elementary LLC."
 
 #: ../src/client/application/geary-args.vala:10
 msgid "Show About dialog"
-msgstr ""
+msgstr "הצגת דו־שיח על אודות"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:218
 #: ../src/client/conversation-viewer/ConversationWidget.vala:227
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
-msgstr ""
+msgstr "שמירת הצרופה…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr ""
+msgstr "שמירת כל הצרופות…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
 #: ../src/client/conversation-viewer/ConversationWidget.vala:241
 #: ../src/client/conversation-viewer/ConversationWidget.vala:243
 msgid "Reply"
-msgstr ""
+msgstr "להשיב"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:239
 #: ../src/client/conversation-viewer/ConversationWidget.vala:242
 #: ../src/client/conversation-viewer/ConversationWidget.vala:244
 msgid "Reply to All"
-msgstr ""
+msgstr "להשיב לכולם"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:231
 #: ../src/client/conversation-viewer/ConversationWidget.vala:240
 #: ../src/client/conversation-viewer/ConversationWidget.vala:243
 #: ../src/client/conversation-viewer/ConversationWidget.vala:245
 msgid "Forward"
-msgstr ""
+msgstr "העברה"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:247
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1112
@@ -2912,7 +2941,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1155
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1182
 msgid "Mark as Unread"
-msgstr ""
+msgstr "סימון כלא נקרא"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:249
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1110
@@ -2925,21 +2954,21 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1153
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1180
 msgid "Mark as Read"
-msgstr ""
+msgstr "סימון כנקרא"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:252
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:275
 #: ../src/client/conversation-viewer/ConversationWidget.vala:277
 msgid "Print…"
-msgstr ""
+msgstr "הדפסה…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
 #: ../src/client/conversation-viewer/ConversationWidget.vala:276
 #: ../src/client/conversation-viewer/ConversationWidget.vala:278
 msgid "View Source"
-msgstr ""
+msgstr "הצגת המקור"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:317
 #: ../src/client/conversation-viewer/ConversationWidget.vala:602
@@ -2953,7 +2982,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:638
 #: ../src/client/conversation-viewer/ConversationWidget.vala:665
 msgid "View message"
-msgstr ""
+msgstr "הצגת הודעה"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:386
 #: ../src/client/conversation-viewer/ConversationWidget.vala:406
@@ -2961,7 +2990,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:412
 #: ../src/client/conversation-viewer/ConversationWidget.vala:414
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "הודעה זו מכילה צרופה אחת או יותר"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:425
 #: ../src/client/conversation-viewer/ConversationWidget.vala:449
@@ -2969,7 +2998,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:455
 #: ../src/client/conversation-viewer/ConversationWidget.vala:458
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "תמיד להציג מהשולח"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:553
 #: ../src/client/conversation-viewer/ConversationWidget.vala:577
@@ -2978,7 +3007,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:587
 #: ../src/client/conversation-viewer/ConversationWidget.vala:586
 msgid "Compose New Message"
-msgstr ""
+msgstr "כתיבת הודעה חדשה"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:554
 #: ../src/client/conversation-viewer/ConversationWidget.vala:578
@@ -2987,7 +3016,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:588
 #: ../src/client/conversation-viewer/ConversationWidget.vala:587
 msgid "Copy Email Address"
-msgstr ""
+msgstr "העתקת כתובת הדוא״ל"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:615
 #: ../src/client/conversation-viewer/ConversationWidget.vala:639
@@ -2996,15 +3025,15 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:651
 #: ../src/client/conversation-viewer/ConversationWidget.vala:678
 msgid "Hide message"
-msgstr ""
+msgstr "הסתרת הודעה"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr ""
+msgstr "שמירה בשם…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
-msgstr ""
+msgstr "תלוי רישיות"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
@@ -3016,7 +3045,7 @@ msgstr[1] ""
 #. / (that is the part before the '@') that exist in your language (separated with a semicolon)
 #: ../src/engine/rfc822/rfc822-mailbox-address.vala:170
 msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
-msgstr ""
+msgstr "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:410
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
@@ -3027,112 +3056,114 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:418
 #: ../src/client/conversation-viewer/ConversationWidget.vala:431
 msgid "Star message"
-msgstr ""
+msgstr "סימון ההודעה בכוכב"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:420
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
 #: ../src/client/conversation-viewer/ConversationWidget.vala:426
 #: ../src/client/conversation-viewer/ConversationWidget.vala:428
 msgid "Unstar message"
-msgstr ""
+msgstr "ביטול הכוכב להודעה"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:430
 #: ../src/client/conversation-viewer/ConversationWidget.vala:433
 #: ../src/client/conversation-viewer/ConversationWidget.vala:436
 #: ../src/client/conversation-viewer/ConversationWidget.vala:438
 msgid "More"
-msgstr ""
+msgstr "עוד"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
 msgid "Delete draft"
-msgstr ""
+msgstr "מחיקת טיוטה"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:51
 msgid "Attach file"
-msgstr ""
+msgstr "צירוף קובץ"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:55
 msgid "Include original attachments"
-msgstr ""
+msgstr "הוספת הצרופות המקוריות"
 
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
-msgstr ""
+msgstr "ציטוט טקסט (Ctrl+]‎)"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:34
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "לפתוח את %s?"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:40
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"צרופות עשויות לגרום נזק למערכת שלך אם הן תיפתחנה. יש לפתוח קבצים רק ממקורות "
+"מהימנים."
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:45
 msgid "Don't ask me again"
-msgstr ""
+msgstr "לא לשאול אותי שוב"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:48
 msgid "Open Anyway"
-msgstr ""
+msgstr "לפתוח בכל זאת"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:64
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:59
 #: ../src/client/dialogs/PasswordDialog.vala:96
 msgid "Cancel"
-msgstr ""
+msgstr "ביטול"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:36
 msgid "Are you sure you want to remove this account?"
-msgstr ""
+msgstr "להסיר חשבון זה?"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:53
 msgid "Email Address:"
-msgstr ""
+msgstr "כתובת דוא״ל:"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:61
 msgid "Remove Account"
-msgstr ""
+msgstr "הסרת חשבון"
 
 #: ../src/client/dialogs/PasswordDialog.vala:45
 msgid "Username:"
-msgstr ""
+msgstr "שם משתמש:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:52
 msgid "Password:"
-msgstr ""
+msgstr "ססמה:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:55
 msgid "SMTP Credentials:"
-msgstr ""
+msgstr "פרטי כניסה SMTP:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:62
 msgid "Remember password"
-msgstr ""
+msgstr "שמירת הססמה"
 
 #: ../src/client/dialogs/PasswordDialog.vala:75
 msgid "Authenticate"
-msgstr ""
+msgstr "אימות"
 
 #. /Translators: this is the ponctuation between two names ("John, Jane")
 #: ../src/client/conversation-list/formatted-conversation-data.vala:188
 #: ../src/client/conversation-list/formatted-conversation-data.vala:190
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
-msgstr ""
+msgstr "דואר"
 
 #: ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+%)"
-msgstr ""
+msgstr "קו חוצה (Ctrl+%‎)"
 
 #: ../src/client/composer/ComposerToolbar.vala:77
 msgid "Link (Ctrl+K)"
-msgstr ""
+msgstr "קישור (Ctrl+K)"
 
 #: ../src/client/components/main-toolbar.vala:117
 msgid "Forward (Ctrl+Shift+F)"
-msgstr ""
+msgstr "העברה (Ctrl+Shift+F)"

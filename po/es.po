@@ -15,20 +15,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
-"onent=general\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2016-12-28 08:21+0000\n"
-"Last-Translator: Raymundo <ray_carr_@outlook.com>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"PO-Revision-Date: 2017-04-24 21:52+0000\n"
+"Last-Translator: febrezo <felixbrezo@gmail.com>\n"
+"Language-Team: Spanish <https://l10n.elementary.io/projects/mail/mail/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
-"Language: es\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -82,7 +80,7 @@ msgstr "Todos"
 
 #: ../src/engine/api/geary-special-folder-type.vala:42
 msgid "Spam"
-msgstr "Spam"
+msgstr "Correo basura"
 
 #: ../src/engine/api/geary-special-folder-type.vala:45
 msgid "Trash"
@@ -122,7 +120,7 @@ msgstr "Gmail"
 
 #: ../src/engine/api/geary-service-provider.vala:55
 msgid "Yahoo! Mail"
-msgstr "Correo Yahoo!"
+msgstr "Correo de Yahoo!"
 
 #: ../src/engine/api/geary-service-provider.vala:58
 msgid "Outlook.com"
@@ -966,8 +964,7 @@ msgstr "Ya existe un archivo llamado «%s». ¿Quiere reemplazarlo?"
 #: ../src/client/application/geary-controller.vala:1965
 msgid ""
 "The file already exists in \"%s\".  Replacing it will overwrite its contents."
-msgstr ""
-"El archivo ya existe en «%s». Reemplazarlo sobrescribirá su contenido."
+msgstr "El archivo ya existe en «%s». Reemplazarlo sobrescribirá su contenido."
 
 #: ../src/client/application/geary-controller.vala:2011
 #: ../src/client/application/geary-controller.vala:2005
@@ -1227,8 +1224,7 @@ msgstr "Conexión no confiable: %s"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:36
 msgid "The identity of the %s mail server at %s:%u could not be verified."
-msgstr ""
-"No se pudo comprobar la identidad del servidor de correo %s en %s:%u."
+msgstr "No se pudo comprobar la identidad del servidor de correo %s en %s:%u."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:44
 msgid ""
@@ -1273,8 +1269,7 @@ msgstr ""
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:73
 msgid "The server's certificate is not signed by a known authority"
-msgstr ""
-"El certificado del servidor no está firmado por una autoridad conocida"
+msgstr "El certificado del servidor no está firmado por una autoridad conocida"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:76
 msgid "The server's identity does not match the identity in the certificate"
@@ -1409,8 +1404,7 @@ msgstr "        &#8226; Alias de cuenta no válido.\n"
 #: ../src/client/accounts/add-edit-page.vala:769
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Geary.\n"
-msgstr ""
-"        &#8226; Ya se había añadido la dirección de correo a Geary.\n"
+msgstr "        &#8226; Ya se había añadido la dirección de correo a Geary.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:773
 #: ../src/client/accounts/add-edit-page.vala:775
@@ -1430,8 +1424,7 @@ msgstr "        &#8226; Error de conexión SMTP.\n"
 #: ../src/client/accounts/add-edit-page.vala:782
 #: ../src/client/accounts/add-edit-page.vala:784
 msgid "        &#8226; SMTP username or password incorrect.\n"
-msgstr ""
-"        &#8226; El nombre de usuario o contraseña SMTP incorrectos.\n"
+msgstr "        &#8226; El nombre de usuario o contraseña SMTP incorrectos.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:786
 #: ../src/client/accounts/add-edit-page.vala:788
@@ -1894,11 +1887,11 @@ msgstr "Mensaje nuevo"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
-"adjuntar|adjuntando|adjunta|anexo|anexar|archivo|archivos|fichero|ficheros|ad"
-"junto|adjuntos|"
+"adjuntar|adjuntando|adjunta|anexo|anexar|archivo|archivos|fichero|ficheros|"
+"adjunto|adjuntos|"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -2606,7 +2599,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr "Dire_cciones de correo adicionales..."
+msgstr "Dire_cciones de correo adicionales…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
@@ -2618,7 +2611,7 @@ msgstr "Contraseña"
 
 #: ../data/ui/login.ui:97 ../data/ui/login.ui:545
 msgid "_Password:"
-msgstr "_Contraseña"
+msgstr "_Contraseña:"
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
@@ -2837,7 +2830,7 @@ msgstr ""
 "\n"
 "Reconstruir la base de datos destruirá todos los correos electrónicos "
 "locales y sus adjuntos. <b>Los correos electrónicos existentes en su "
-"servidor no se verán afectados<b>"
+"servidor no se verán afectados.<b>"
 
 #: ../src/client/application/geary-controller.vala:1184
 #: ../src/client/application/geary-controller.vala:1178
@@ -2930,7 +2923,7 @@ msgstr "Espere mientras Correo valida tu cuenta."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr "Actualización de Correo en curso..."
+msgstr "Actualización de Correo en curso…"
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
@@ -2961,7 +2954,7 @@ msgstr "Guardar adjunto…"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr "Guardar todos los adjuntos"
+msgstr "Guardar todos los adjuntos…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
@@ -3208,7 +3201,7 @@ msgstr ", "
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
-msgstr "Mail"
+msgstr "Correo"
 
 #: ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+%)"

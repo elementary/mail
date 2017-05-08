@@ -15,23 +15,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
-"onent=general\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-02-20 08:38+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
-"Language-Team: Dutch <vertaling@vrijschrift.org>\n"
+"PO-Revision-Date: 2017-04-24 21:15+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
-"Language: nl_NL\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
-#| msgid "Drafts"
 msgid "Drafts | Draft"
 msgstr "Concepten | Concept"
 
@@ -135,8 +132,6 @@ msgstr "Overige"
 #. / messages with attachments with a particular name.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:710
-#| msgid "Save A_ttachment..."
-#| msgid_plural "Save All A_ttachments..."
 msgid "attachment"
 msgstr "Bijlage"
 
@@ -160,7 +155,6 @@ msgstr "inhoud"
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:722
 #: ../src/engine/imap-db/imap-db-account.vala:738
-#| msgid "Bcc:"
 msgid "cc"
 msgstr "cc"
 
@@ -176,7 +170,6 @@ msgstr "van"
 #. / only if it occurs in the subject of a message.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:730
-#| msgid "Subject:"
 msgid "subject"
 msgstr "Onderwerp"
 
@@ -273,12 +266,10 @@ msgid "Delete conversation"
 msgstr "Gesprek verwijderen"
 
 #: ../src/client/application/geary-controller.vala:62
-#| msgid "Delete conversation (Delete, Backspace, A)"
 msgid "Delete conversation (Shift+Delete)"
 msgstr "Conversatie verwijderen (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
-#| msgid "Delete conversations (Delete, Backspace, A)"
 msgid "Delete conversations (Shift+Delete)"
 msgstr "Conversaties verwijderen (Shift+Delete)"
 
@@ -289,8 +280,8 @@ msgstr "Conversaties verwijderen (Shift+Delete)"
 #: ../src/client/application/geary-controller.vala:2723
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Verplaats gesprek naar de prullenbak (Delete, backspace)"
+msgstr[1] "Verplaats gesprekken naar de prullenbak (Delete, backspace)"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
@@ -310,14 +301,13 @@ msgstr "_Archiveren"
 #: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Archiveer gesprek (A)"
+msgstr[1] "Archiveer gesprekken (A)"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
 #: ../src/client/application/geary-controller.vala:72
 #: ../src/client/application/geary-controller.vala:71
-#| msgid "Move conversations"
 msgid "Archive conversations (A)"
 msgstr "Conversaties archiveren (A)"
 
@@ -355,8 +345,8 @@ msgstr "S_pammarkering opheffen"
 #: ../src/client/application/geary-controller.vala:390
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Markeer gesprek"
+msgstr[1] "Markeer gesprekken"
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
@@ -699,15 +689,11 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1044
 #: ../src/client/application/geary-controller.vala:1039
 #: ../src/client/application/geary-controller.vala:1033
-#| msgid "Error sending email"
 msgid "Error saving sent mail"
 msgstr "Verzonden e-mail opslaan mislukt"
 
 #: ../src/client/application/geary-controller.vala:1069
 #: ../src/client/application/geary-controller.vala:1063
-#| msgid ""
-#| "Geary encountered an error sending an email.  If the problem persists, "
-#| "please manually delete the email from your Outbox folder."
 msgid ""
 "Geary encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
@@ -863,8 +849,8 @@ msgid ""
 "Please install the latest version of Geary and try again."
 msgstr ""
 "Het versienummer van de lokale e-maildatabase is opgemaakt voor een nieuwere "
-"versie van Geary. Het is helaas niet mogelijk de database \"terug te "
-"zetten\" zodat hij met deze versie van Geary werkt.\n"
+"versie van Geary. Het is helaas niet mogelijk de database \"terug te zetten"
+"\" zodat hij met deze versie van Geary werkt.\n"
 "\n"
 "Installeer de nieuwste versie van Geary en probeer het opnieuw."
 
@@ -1040,7 +1026,6 @@ msgstr "Fout bij het legen van %s"
 #: ../src/client/application/geary-controller.vala:2448
 #: ../src/client/application/geary-controller.vala:2444
 #: ../src/client/application/geary-controller.vala:2439
-#| msgid "Do you want to discard this message?"
 msgid "Do you want to permanently delete this message?"
 msgid_plural "Do you want to permanently delete these messages?"
 msgstr[0] "Wilt u dit bericht definitief verwijderen?"
@@ -1053,7 +1038,6 @@ msgstr[1] "Wilt u deze berichten definitief verwijderen?"
 #: ../src/client/application/geary-controller.vala:2450
 #: ../src/client/application/geary-controller.vala:2446
 #: ../src/client/application/geary-controller.vala:2441
-#| msgid "_Delete"
 msgid "Delete"
 msgstr "Verwijderen"
 
@@ -1237,9 +1221,9 @@ msgid ""
 "Selecting \"Trust This Server\" or \"Always Trust This Server\" may cause "
 "your username and password to be transmitted insecurely."
 msgstr ""
-"Het selecteren van \"Vertrouw deze Server\" of \"Vertrouw deze server "
-"altijd\" kan veroorzaken dat uw gebruikersnaam en wachtwoord om onbeveiligd "
-"worden verzonden."
+"Het selecteren van \"Vertrouw deze Server\" of \"Vertrouw deze server altijd"
+"\" kan veroorzaken dat uw gebruikersnaam en wachtwoord om onbeveiligd worden "
+"verzonden."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
@@ -1364,13 +1348,11 @@ msgstr "Tot 1 jaar geleden"
 
 #: ../src/client/accounts/add-edit-page.vala:258
 #: ../src/client/accounts/add-edit-page.vala:259
-#| msgid "1 year back"
 msgid "2 years back"
 msgstr "Tot 2 jaar geleden"
 
 #: ../src/client/accounts/add-edit-page.vala:259
 #: ../src/client/accounts/add-edit-page.vala:260
-#| msgid "1 year back"
 msgid "4 years back"
 msgstr "Tot 4 jaar geleden"
 
@@ -1511,14 +1493,12 @@ msgid "Now"
 msgstr "Nu"
 
 #: ../src/client/util/util-date.vala:167
-#| msgid "%dm ago"
 msgid "%dm ago"
 msgid_plural "%dm ago"
 msgstr[0] "%dm geleden"
 msgstr[1] "%dm geleden"
 
 #: ../src/client/util/util-date.vala:171
-#| msgid "%dh ago"
 msgid "%dh ago"
 msgid_plural "%dh ago"
 msgstr[0] "%dh geleden"
@@ -1588,7 +1568,6 @@ msgid "Search %s account"
 msgstr "%s-account doorzoeken"
 
 #: ../src/client/folder-list/folder-list-search-branch.vala:44
-#| msgid "%d results"
 msgid "%d result"
 msgid_plural "%d results"
 msgstr[0] "%d resultaat"
@@ -1609,7 +1588,6 @@ msgstr "Geen conversaties geselecteerd."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:310
 #: ../src/client/conversation-viewer/conversation-viewer.vala:312
 #: ../src/client/conversation-viewer/conversation-viewer.vala:313
-#| msgid "%u conversations selected."
 msgid "%u conversation selected."
 msgid_plural "%u conversations selected."
 msgstr[0] "%u conversatie geselecteerd."
@@ -1719,7 +1697,6 @@ msgstr "Datum:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1139
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1144
-#| msgid "%u read messages"
 msgid "%u read message"
 msgid_plural "%u read messages"
 msgstr[0] "%u gelezen bericht"
@@ -1901,8 +1878,8 @@ msgstr "Nieuw bericht"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
 
 #: ../src/client/composer/composer-widget.vala:1102
@@ -2010,7 +1987,6 @@ msgstr "%s (%s)"
 #: ../src/client/composer/composer-widget.vala:1598
 #: ../src/client/composer/composer-widget.vala:1599
 #: ../src/client/composer/composer-widget.vala:1602
-#| msgid "To: %s\n"
 msgid "To: "
 msgstr "Aan: "
 
@@ -2021,7 +1997,6 @@ msgstr "Aan: "
 #: ../src/client/composer/composer-widget.vala:1601
 #: ../src/client/composer/composer-widget.vala:1602
 #: ../src/client/composer/composer-widget.vala:1605
-#| msgid "Cc: %s\n"
 msgid "Cc: "
 msgstr "Cc: "
 
@@ -2032,7 +2007,6 @@ msgstr "Cc: "
 #: ../src/client/composer/composer-widget.vala:1604
 #: ../src/client/composer/composer-widget.vala:1605
 #: ../src/client/composer/composer-widget.vala:1608
-#| msgid "Bcc:"
 msgid "Bcc: "
 msgstr "Bcc: "
 
@@ -2073,13 +2047,11 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:2312
 #: ../src/client/composer/composer-widget.vala:2313
 #: ../src/client/composer/composer-widget.vala:2316
-#| msgid "From:"
 msgid "_From:"
 msgstr "_Van:"
 
 #: ../src/client/components/main-window.vala:388
 #: ../src/client/components/main-window.vala:351
-#| msgid "%s (%s)"
 msgid "%s (%d)"
 msgstr "%s (%d)"
 
@@ -2089,14 +2061,12 @@ msgid "Sending..."
 msgstr "Verzenden…"
 
 #: ../src/client/components/conversation-find-bar.vala:214
-#| msgid "%i matches"
 msgid "%i match"
 msgid_plural "%i matches"
 msgstr[0] "%i overeenkomst"
 msgstr[1] "%i overeenkomsten"
 
 #: ../src/client/components/conversation-find-bar.vala:216
-#| msgid "%i matches (wrapped)"
 msgid "%i match (wrapped)"
 msgid_plural "%i matches (wrapped)"
 msgstr[0] "%i overeenkomst (voortgezet vanaf begin)"

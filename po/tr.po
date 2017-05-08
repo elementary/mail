@@ -15,24 +15,21 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
-"onent=general\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2016-09-13 10:02+0000\n"
-"Last-Translator: Melih Güçlü <melihguclu@hotmail.com>\n"
-"Language-Team: Türkçe <gnome-turk@gnome.org>\n"
+"PO-Revision-Date: 2017-04-15 20:39+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
-"Language: tr\n"
 "X-POOTLE-MTIME: 1423290848.000000\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
-#| msgid "Drafts"
 msgid "Drafts | Draft"
 msgstr "Taslaklar | Taslak"
 
@@ -137,8 +134,6 @@ msgstr "Diğer"
 #. / messages with attachments with a particular name.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:710
-#| msgid "Save A_ttachment..."
-#| msgid_plural "Save All A_ttachments..."
 msgid "attachment"
 msgstr "ek"
 
@@ -162,7 +157,6 @@ msgstr "gövde"
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:722
 #: ../src/engine/imap-db/imap-db-account.vala:738
-#| msgid "Bcc:"
 msgid "cc"
 msgstr "cc"
 
@@ -178,7 +172,6 @@ msgstr "kimden"
 #. / only if it occurs in the subject of a message.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:730
-#| msgid "Subject:"
 msgid "subject"
 msgstr "konu"
 
@@ -466,7 +459,7 @@ msgstr "_Çık"
 #: ../src/client/application/geary-controller.vala:389
 #: ../src/client/application/geary-controller.vala:392
 msgid "_Mark as..."
-msgstr "_... olarak işaretle"
+msgstr "_… olarak işaretle"
 
 #: ../src/client/application/geary-controller.vala:400
 #: ../src/client/application/geary-controller.vala:399
@@ -617,7 +610,7 @@ msgstr "Gereksizi_Boşalt"
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr "Çöpü _Boşalt..."
+msgstr "Çöpü _Boşalt…"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -1293,7 +1286,6 @@ msgid "An error has occurred processing the server's certificate"
 msgstr "Sunucu sertifikası işlenirken bir hata oluştu"
 
 #: ../src/client/dialogs/password-dialog.vala:16
-#| msgid "Please enter your email password"
 msgid "Geary requires your email password to continue"
 msgstr "Geary devam etmek için eposta parolanızı istiyor"
 
@@ -1802,7 +1794,7 @@ msgstr "Görüntüyü Farklı _Kaydet..."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1822
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 msgid "_Save As..."
-msgstr "_... Olarak Kaydet"
+msgstr "_… Olarak Kaydet"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1832
@@ -1884,11 +1876,11 @@ msgstr "Yeni İleti"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
-"ekle|ekleniyor|ekler|ek|ekler|eklendi|içer|içerdi|içeriyor|içerir|koruncak|ko"
-"runcaklar"
+"ekle|ekleniyor|ekler|ek|ekler|eklendi|içer|içerdi|içeriyor|içerir|koruncak|"
+"koruncaklar"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -2025,7 +2017,6 @@ msgstr "Bcc: "
 #: ../src/client/composer/composer-widget.vala:1607
 #: ../src/client/composer/composer-widget.vala:1608
 #: ../src/client/composer/composer-widget.vala:1611
-#| msgid "_Reply"
 msgid "Reply-To: "
 msgstr "Yanıtla: "
 
@@ -2304,7 +2295,7 @@ msgstr "etiket"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr "Geary güncelleniyor..."
+msgstr "Geary güncelleniyor…"
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
@@ -2595,7 +2586,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr "Ek e-posta adresleri..."
+msgstr "Ek e-posta adresleri…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
@@ -2879,7 +2870,7 @@ msgstr "Her zaman uzaktan kontrol resimlerini göster:"
 #: ../src/client/dialogs/password-dialog.vala:16
 #: ../src/client/dialogs/PasswordDialog.vala:39
 msgid "Mail requires your email password to continue"
-msgstr "Mail'e devam etmek için e-posta parolası gerekiyor."
+msgstr "Mail'e devam etmek için e-posta parolası gerekiyor"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
@@ -2911,7 +2902,7 @@ msgstr "Mail hesabınızı doğrularken lütfen bekleyin."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr "Mail güncellemesi sürüyor..."
+msgstr "Mail güncellemesi sürüyor…"
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
@@ -2935,14 +2926,14 @@ msgstr "Hakkında iletisini göster"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
-msgstr "Eki Kaydet..."
+msgstr "Eki Kaydet…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr "Tüm Ekleri Kaydet..."
+msgstr "Tüm Ekleri Kaydet…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
@@ -2996,7 +2987,7 @@ msgstr "Okunmuş olarak İşaretle"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:275
 #: ../src/client/conversation-viewer/ConversationWidget.vala:277
 msgid "Print…"
-msgstr "Yazdır..."
+msgstr "Yazdır…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
@@ -3064,7 +3055,7 @@ msgstr "Mesajı gizle"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr "Farklı Kaydet..."
+msgstr "Farklı Kaydet…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"

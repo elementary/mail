@@ -16,20 +16,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
-"onent=general\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-02-20 08:38+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
-"Language-Team: Deutsch <gnome-de@gnome.org>\n"
+"PO-Revision-Date: 2017-04-15 20:33+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
-"Language: de\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -161,7 +159,7 @@ msgstr "Nachricht"
 #: ../src/engine/imap-db/imap-db-account.vala:722
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "cc"
-msgstr "cc:"
+msgstr "cc"
 
 #. / Can be typed in the search box like from:johndoe@example.com to
 #. / find messages from a particular sender.  The translated
@@ -613,7 +611,7 @@ msgstr "_Spam leeren …"
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr "_Papierkorb leeren"
+msgstr "_Papierkorb leeren…"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -1255,7 +1253,7 @@ msgstr ""
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Geary will not add or update this email account."
-msgstr "Geary wird dieses E-Mail-Konto nicht hinzufügen oder aktualisieren"
+msgstr "Geary wird dieses E-Mail-Konto nicht hinzufügen oder aktualisieren."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
@@ -1605,7 +1603,7 @@ msgstr[1] "%d Ergebnisse"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:310
 #: ../src/client/conversation-viewer/conversation-viewer.vala:311
 msgid "No conversations selected."
-msgstr "Keine Konversation ausgewählt"
+msgstr "Keine Konversation ausgewählt."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:415
 #: ../src/client/conversation-viewer/conversation-viewer.vala:417
@@ -1625,7 +1623,7 @@ msgstr[1] "%u Konversationen ausgewählt."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:341
 #: ../src/client/conversation-viewer/conversation-viewer.vala:342
 msgid "No search results found."
-msgstr "Suche erfolglos"
+msgstr "Suche erfolglos."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:446
 #: ../src/client/conversation-viewer/conversation-viewer.vala:448
@@ -1827,14 +1825,14 @@ msgstr "_Speichern unter …"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1832
 msgid "Save All A_ttachments..."
-msgstr "Alle Anhänge speichern"
+msgstr "Alle Anhänge speichern…"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1847
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1852
 msgid "Save A_ttachment..."
 msgid_plural "Save All A_ttachments..."
-msgstr[0] "Anhang speichern"
-msgstr[1] "Alle Anhänge speichern"
+msgstr[0] "Anhang speichern…"
+msgstr[1] "Alle Anhänge speichern…"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1862
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1867
@@ -1904,11 +1902,11 @@ msgstr "Neue Nachricht"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
-"Anhang|Anhänge|angehängt|anhängen|Wiedervorlage|Beilage|beilegen|Anlage|anbei"
-"|beigefügt|anhängend"
+"Anhang|Anhänge|angehängt|anhängen|Wiedervorlage|Beilage|beilegen|Anlage|"
+"anbei|beigefügt|anhängend"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -2604,8 +2602,8 @@ msgstr "Um diese als Anhänge anzufügen"
 #: ../data/ui/account_cannot_remove.ui:40
 msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
 msgstr ""
-"<span weight=\"bold\" size=\"larger\">Konto kann nicht entfernt "
-"werden</span> "
+"<span weight=\"bold\" size=\"larger\">Konto kann nicht entfernt werden</"
+"span> "
 
 #: ../data/ui/account_cannot_remove.ui:56
 msgid ""
@@ -3110,9 +3108,8 @@ msgstr[1] "%u Treffer"
 #: ../src/engine/rfc822/rfc822-mailbox-address.vala:170
 msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 msgstr ""
-"no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply;keine-"
-"Antwort;keine-Antwort;keineAntwort;nicht-"
-"antworten;nicht_antworten;nichtantworten"
+"no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply;keine-Antwort;"
+"keine-Antwort;keineAntwort;nicht-antworten;nicht_antworten;nichtantworten"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:410
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423

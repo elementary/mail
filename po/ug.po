@@ -6,18 +6,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2016-12-24 12:48+0000\n"
-"Last-Translator: ablimet <Unknown>\n"
-"Language-Team: Uyghur <ug@li.org>\n"
+"PO-Revision-Date: 2017-04-15 20:40+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Uighur <https://l10n.elementary.io/projects/mail/mail/ug/>\n"
+"Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
-"Language: ug\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -582,7 +582,7 @@ msgstr "كىرەكسىز ئېلخەتلەرنى ياكى ئەخلەت چېلىك
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr "كىرەكسىز ئېلخەتلەرنى قۇرۇقداش...."
+msgstr "كىرەكسىز ئېلخەتلەرنى قۇرۇقداش…"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -592,7 +592,7 @@ msgstr "كىرەكسىز ئېلخەتلەرنى قۇرۇقداش...."
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr "ئەخلەت چېلىكىنى قۇرۇقداش...."
+msgstr "ئەخلەت چېلىكىنى قۇرۇقداش…"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -908,8 +908,7 @@ msgstr "\"%s\" ئىسىملىك ھۆججەت مەۋجۇت، ئۇنى ئالما�
 #: ../src/client/application/geary-controller.vala:1965
 msgid ""
 "The file already exists in \"%s\".  Replacing it will overwrite its contents."
-msgstr ""
-"بۇ ھۆججەت  \"%s\" دە مەۋجۇت، ئالماشتۇرسىڭىز مەزمۇنى قايتىدىن يىزىلىدۇ."
+msgstr "بۇ ھۆججەت  \"%s\" دە مەۋجۇت، ئالماشتۇرسىڭىز مەزمۇنى قايتىدىن يىزىلىدۇ."
 
 #: ../src/client/application/geary-controller.vala:2011
 #: ../src/client/application/geary-controller.vala:2005
@@ -1819,12 +1818,12 @@ msgstr "يىڭى ئېلخەت"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
-"قوشۇمچە ھۆججەت|قىتىلىۋاتىدۇ|قوشۇمچە ھۆججەت|قوشۇمچە ھۆججەت|قوشۇمچە "
-"ھۆججەتلەر|قىتىلغان|پىچەتلەش|پىچەتلەنگەن|پىچەتلەۋاتىدۇ|پىچەتلەش|قوشۇمچە "
-"ھۆججەت|قوشۇمچە ھۆججەت"
+"قوشۇمچە ھۆججەت|قىتىلىۋاتىدۇ|قوشۇمچە ھۆججەت|قوشۇمچە ھۆججەت|قوشۇمچە ھۆججەتلەر|"
+"قىتىلغان|پىچەتلەش|پىچەتلەنگەن|پىچەتلەۋاتىدۇ|پىچەتلەش|قوشۇمچە ھۆججەت|قوشۇمچە "
+"ھۆججەت"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -2193,8 +2192,8 @@ msgid ""
 "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
 "account?</span> "
 msgstr ""
-"<span weight=\"bold\" size=\"larger\">بۇ ھىساۋاتنى راسىتتىنلا "
-"ئۆچۈرەمسىز؟</span> "
+"<span weight=\"bold\" size=\"larger\">بۇ ھىساۋاتنى راسىتتىنلا ئۆچۈرەمسىز؟</"
+"span> "
 
 #: ../data/ui/remove_confirm.ui:58
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:42
@@ -2236,7 +2235,7 @@ msgstr "خەتكۈچ"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr "Geary يىڭىلىنىۋاتىدۇ...."
+msgstr "Geary يىڭىلىنىۋاتىدۇ…"
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
@@ -2528,7 +2527,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr "قوشۇمچە ئېلخەت ئادىرىسى...."
+msgstr "قوشۇمچە ئېلخەت ئادىرىسى…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
@@ -2833,7 +2832,7 @@ msgstr "ھىساۋاتىڭىز تەستىقلىنىۋاتىدۇ، سەل ساق�
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr "ئېلخەت پروگراممىسى يىڭىلىنىۋاتىدۇ...."
+msgstr "ئېلخەت پروگراممىسى يىڭىلىنىۋاتىدۇ…"
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
@@ -2855,14 +2854,14 @@ msgstr "ئۇچۇر دىئالوگى كۆزنىكىنى كۆرسىتىش"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
-msgstr "قوشۇمچە ھۆججەتنى ساقلاش...."
+msgstr "قوشۇمچە ھۆججەتنى ساقلاش…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr "ھەممە قوشۇمچە ھۆججەتلەرنى ساقلاش...."
+msgstr "ھەممە قوشۇمچە ھۆججەتلەرنى ساقلاش…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
@@ -2916,7 +2915,7 @@ msgstr "ئوقۇلغان دەپ بەلگە قىلىش"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:275
 #: ../src/client/conversation-viewer/ConversationWidget.vala:277
 msgid "Print…"
-msgstr "بىسىش...."
+msgstr "بىسىش…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
@@ -2984,7 +2983,7 @@ msgstr "ئېلخەتنى كۆرسەتمەسلىك"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr "بۆلەك جايغا ساقلاش...."
+msgstr "بۆلەك جايغا ساقلاش…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"

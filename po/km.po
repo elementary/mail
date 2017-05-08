@@ -8,19 +8,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
-"Report-Msgid-Bugs-To: http://redmine.yorba.org/projects/geary\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2015-11-23 11:51+0000\n"
-"Last-Translator: Jim Nelson <jim@yorba.org>\n"
-"Language-Team: Khmer (Cambodia) "
-"(http://www.transifex.com/projects/p/geary/language/km_KH/)\n"
+"PO-Revision-Date: 2017-04-15 20:37+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: km (generated) "
+"<https://l10n.elementary.io/projects/mail/mail/km/>\n"
+"Language: km\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
-"Language: km_KH\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -638,9 +638,9 @@ msgid ""
 "username and password could be read by another person on the network.  Are "
 "you sure you want to do this?"
 msgstr ""
-"ការ​កំណត់​របស់​អ្នក​សំរាប់ IMAP និង/ឬ SMTP មិន​បញ្ជាក់​លម្អិត SSL ឬ TLS ទេ ។ "
-"នេះ​មាន​ន័យ​ថា អ្នក​ដទៃ​នៅ​ក្នុង​បណ្ដាញ​នេះ​អាច​អាន​ ឈ្មោះ​អ្នក​ប្រើ "
-"និង​ពាក្យ​សម្ងាត់ របស់​អ្នក​បាន តើ​អ្នក​ប្រាកដ​ថា ចង់​ធ្វើ​នេះ​ឬ​ទេ ?"
+"ការ​កំណត់​របស់​អ្នក​សំរាប់ IMAP និង/ឬ SMTP មិន​បញ្ជាក់​លម្អិត SSL ឬ TLS ទេ ។ នេះ​មាន​ន័យ​ថា អ្នក​ដទៃ​"
+"នៅ​ក្នុង​បណ្ដាញ​នេះ​អាច​អាន​ ឈ្មោះ​អ្នក​ប្រើ និង​ពាក្យ​សម្ងាត់ របស់​អ្នក​បាន តើ​អ្នក​ប្រាកដ​ថា ចង់​ធ្វើ​នេះ​ឬ​"
+"ទេ ?"
 
 #: ../src/client/application/geary-controller.vala:985
 #: ../src/client/application/geary-controller.vala:979
@@ -873,9 +873,8 @@ msgid ""
 "Attachments may cause damage to your system if opened.  Only open files from "
 "trusted sources."
 msgstr ""
-"ឯកសារ​ភ្ជាប់​អាច​បង្ខូច​ប្រព័ន្ធ​អ្នក​បាន "
-"បើ​សិន​ជា​អ្នក​បើក​វា​ឡើង ចូរ​បើក​តែ​ឯកសារ​ដែល​មាន​ប្រភព​ "
-"ដែលអ្នក​ទុក​ចិត្ត​​បុណ្ណោះ ។"
+"ឯកសារ​ភ្ជាប់​អាច​បង្ខូច​ប្រព័ន្ធ​អ្នក​បាន បើ​សិន​ជា​អ្នក​បើក​វា​ឡើង ចូរ​បើក​តែ​ឯកសារ​ដែល​មាន​ប្រភព​ ដែលអ្នក​ទុក​"
+"ចិត្ត​​បុណ្ណោះ ។"
 
 #: ../src/client/application/geary-controller.vala:1988
 #: ../src/client/application/geary-controller.vala:1982
@@ -894,8 +893,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1957
 #: ../src/client/application/geary-controller.vala:1963
 msgid "A file named \"%s\" already exists.  Do you want to replace it?"
-msgstr ""
-"ឯកសារ​មួយ​ ឈ្មោះ​ថា \\\"%s\\\" មាន​នៅ​ហើយ ។ តើ​អ្នក​ចង់​ជំនួស​វា​ឬ​ទេ ?"
+msgstr "ឯកសារ​មួយ​ ឈ្មោះ​ថា \\\"%s\\\" មាន​នៅ​ហើយ ។ តើ​អ្នក​ចង់​ជំនួស​វា​ឬ​ទេ ?"
 
 #: ../src/client/application/geary-controller.vala:2008
 #: ../src/client/application/geary-controller.vala:2002
@@ -907,9 +905,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1965
 msgid ""
 "The file already exists in \"%s\".  Replacing it will overwrite its contents."
-msgstr ""
-"ឯកសារ​នេះ​មាន​នៅ​ហើយ​ក្នុង \"%s\" ។ បើ​សិន​ជំនួស​វា "
-"នោះ​នឹង​សរសេរ​ជាន់​លើ​មាតិកា​របស់​វា ។"
+msgstr "ឯកសារ​នេះ​មាន​នៅ​ហើយ​ក្នុង \"%s\" ។ បើ​សិន​ជំនួស​វា នោះ​នឹង​សរសេរ​ជាន់​លើ​មាតិកា​របស់​វា ។"
 
 #: ../src/client/application/geary-controller.vala:2011
 #: ../src/client/application/geary-controller.vala:2005
@@ -1253,7 +1249,7 @@ msgstr ""
 
 #: ../src/client/accounts/add-edit-page.vala:233
 msgid "Welcome to Geary."
-msgstr "សូម​ស្វាគមន៍ Geary"
+msgstr "សូម​ស្វាគមន៍ Geary."
 
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
@@ -1519,7 +1515,7 @@ msgstr[1] ""
 #: ../src/client/conversation-viewer/conversation-viewer.vala:310
 #: ../src/client/conversation-viewer/conversation-viewer.vala:311
 msgid "No conversations selected."
-msgstr "គ្មាន​ជ្រើស​ការ​សន្ទនា"
+msgstr "គ្មាន​ជ្រើស​ការ​សន្ទនា."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:415
 #: ../src/client/conversation-viewer/conversation-viewer.vala:417
@@ -1734,7 +1730,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1822
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 msgid "_Save As..."
-msgstr "_រក្សាទុក​ជា"
+msgstr "_រក្សាទុក​ជា…"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1832
@@ -1816,8 +1812,8 @@ msgstr "សារ​ថ្មី"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
 
 #: ../src/client/composer/composer-widget.vala:1102
