@@ -18,20 +18,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
-"onent=general\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
 "PO-Revision-Date: 2016-12-17 07:46+0000\n"
 "Last-Translator: Saulo De Baco <saulodebaco@hotmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Generator: Launchpad (build 18330)\n"
-"Language: pt_BR\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -1721,8 +1719,7 @@ msgstr[1] "%u mensagens lidas"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1271
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1276
 msgid "This message was sent successfully, but could not be saved to %s."
-msgstr ""
-"Essa mensagem foi enviada com sucesso, mas não pôde ser salva para %s."
+msgstr "Essa mensagem foi enviada com sucesso, mas não pôde ser salva para %s."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1297
 #: ../data/ui/composer.ui:29
@@ -1894,11 +1891,11 @@ msgstr "Nova mensagem"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
-"anexar|anexando|anexa|anexo|anexos|anexado|anexada|inserir|inserido|inserindo"
-"|insere|inserido|inserida|inseridos|inseridas"
+"anexar|anexando|anexa|anexo|anexos|anexado|anexada|inserir|inserido|"
+"inserindo|insere|inserido|inserida|inseridos|inseridas"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -2593,8 +2590,8 @@ msgstr "Para enviá-los como anexos"
 #: ../data/ui/account_cannot_remove.ui:40
 msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
 msgstr ""
-"<span weight=\"bold\" size=\"larger\">Não foi possível remover a "
-"conta</span> "
+"<span weight=\"bold\" size=\"larger\">Não foi possível remover a conta</"
+"span> "
 
 #: ../data/ui/account_cannot_remove.ui:56
 msgid ""
@@ -2878,8 +2875,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2395
 #: ../src/client/application/geary-controller.vala:2390
 msgid "This removes the email from Mail and your email server."
-msgstr ""
-"Isto removerá o e-mail do Correio Eletrônico e do servidor de e-mail."
+msgstr "Isto removerá o e-mail do Correio Eletrônico e do servidor de e-mail."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
