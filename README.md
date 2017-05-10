@@ -8,12 +8,16 @@ You'll need the following dependencies:
 * libaccounts-glib-dev
 * libcanberra-dev
 * libgcr-3-dev
+* libgirepository1.0-dev
+* libglib2.0-dev
 * libgmime-2.6-dev
 * libgranite-dev
 * libgsignon-glib-dev
 * libgtk-3-dev
 * libsecret-1-dev
 * libsqlite3-dev
+* libunity-dev
+* libwebkitgtk-3.0-dev
 * libxml2-dev
 * valac (>= 0.26)
 
@@ -31,4 +35,3 @@ To install, use `make install`, then execute with `pantheon-mail`
 
     sudo make install
     pantheon-mail
-
