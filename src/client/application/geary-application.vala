@@ -15,12 +15,12 @@ public class GearyApplication : Gtk.Application {
     public const string NAME = _("Mail");
     public const string PRGNAME = "pantheon-mail";
     public const string APP_ID = "org.pantheon.mail";
-    public const string COPYRIGHT = _("2011-2015 Yorba Foundation\n© 2016 elementary LLC.");
+    public const string COPYRIGHT = _("2011-2015 Yorba Foundation\n© 2016-2017 elementary LLC.");
     public const string WEBSITE = "https://elementary.io";
     public const string WEBSITE_LABEL = _("Website");
-    public const string BUGREPORT = "https://bugs.launchpad.net/pantheon-mail/+filebug";
+    public const string BUGREPORT = "https://github.com/elementary/mail/issues";
     public const string HELP = "https://elementary.io/help/geary";
-    public const string TRANSLATE = "https://translations.launchpad.net/pantheon-mail";
+    public const string TRANSLATE = "https://l10n.elementary.io/projects/mail";
 
     public const string CONTRACT_NAME = _("Send by Email");
     public const string CONTRACT_DESCRIPTION = _("Send files using Mail");

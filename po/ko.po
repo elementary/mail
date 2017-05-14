@@ -6,17 +6,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-01-25 21:02+0000\n"
+"PO-Revision-Date: 2017-04-11 14:01+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
-"Language-Team: Korean <ko@li.org>\n"
+"Language-Team: Korean <https://l10n.elementary.io/projects/mail/mail/ko/>\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -30,7 +31,9 @@ msgstr "보냄 | 보낸 편지 | 보낸 이메일 | 보낸-이메일"
 msgid ""
 "Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
 "| Bulk E-Mail"
-msgstr "정크 | 스팸 | 정크 메일 | 정크 이메일 | 정크-이메일 | 벌크 메일 | 벌크 이메일 | 벌크-이메일"
+msgstr ""
+"정크 | 스팸 | 정크 메일 | 정크 이메일 | 정크-이메일 | 벌크 메일 | 벌크 이메"
+"일 | 벌크-이메일"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:590
 msgid "Trash | Rubbish | Rubbish Bin"
@@ -440,7 +443,7 @@ msgstr "끝내기(_Q)"
 #: ../src/client/application/geary-controller.vala:389
 #: ../src/client/application/geary-controller.vala:392
 msgid "_Mark as..."
-msgstr "표시하기...(_M)"
+msgstr "표시하기(_M)..."
 
 #: ../src/client/application/geary-controller.vala:400
 #: ../src/client/application/geary-controller.vala:399
@@ -581,7 +584,7 @@ msgstr "스팸 편지함이나 휴지통 비우기"
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr "스팸 편지함 비우기(_S)"
+msgstr "스팸 편지함 비우기(_S)…"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -591,7 +594,7 @@ msgstr "스팸 편지함 비우기(_S)"
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr "휴지통 비우기(_T)"
+msgstr "휴지통 비우기(_T)…"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -629,8 +632,9 @@ msgid ""
 "username and password could be read by another person on the network.  Are "
 "you sure you want to do this?"
 msgstr ""
-"여러분의 IMAP 과/또는 SMTP 설정이 SSL이나 TLS에 미달합니다. 여러분의 사용자 계정이나 비밀번호를 네트워크에서 다른 사람이 "
-"읽을 수 있다는 이야기입니다. 정말 이대로 하시겠습니까?"
+"여러분의 IMAP 과/또는 SMTP 설정이 SSL이나 TLS에 미달합니다. 여러분의 사용자 "
+"계정이나 비밀번호를 네트워크에서 다른 사람이 읽을 수 있다는 이야기입니다. 정"
+"말 이대로 하시겠습니까?"
 
 #: ../src/client/application/geary-controller.vala:985
 #: ../src/client/application/geary-controller.vala:979
@@ -660,7 +664,8 @@ msgid ""
 "Geary encountered an error sending an email.  If the problem persists, "
 "please manually delete the email from your Outbox folder."
 msgstr ""
-"기어리(Geary)가 이메일을 보내는 도중 오류가 생겼습니다. 문제가 지속되면, 보낸 편지함 폴더에서 이메일을 직접 지워주세요."
+"기어리(Geary)가 이메일을 보내는 도중 오류가 생겼습니다. 문제가 지속되면, 보"
+"낸 편지함 폴더에서 이메일을 직접 지워주세요."
 
 #: ../src/client/application/geary-controller.vala:1068
 #: ../src/client/components/status-bar.vala:33
@@ -678,7 +683,9 @@ msgstr "보낸 편지 저장하기 오류"
 msgid ""
 "Geary encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
-msgstr "기어리(Geary)가 보낸 편지를 저장하는 도중 오류가 생겼습니다. 편지는 지우지 않으면 보낸 편지함 폴더에 있습니다."
+msgstr ""
+"기어리(Geary)가 보낸 편지를 저장하는 도중 오류가 생겼습니다. 편지는 지우지 않"
+"으면 보낸 편지함 폴더에 있습니다."
 
 #: ../src/client/application/geary-controller.vala:1138
 #: ../src/client/application/geary-controller.vala:1132
@@ -713,14 +720,16 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
-"이 계정의 메일 데이터 베이스를 여는 동안 오류가 생겼습니다. 이 디렉토리의 데이터 베이스 파일에 문제가 생겨서 그런 것이 아닌가 "
-"합니다:\n"
+"이 계정의 메일 데이터 베이스를 여는 동안 오류가 생겼습니다. 이 디렉토리의 데"
+"이터 베이스 파일에 문제가 생겨서 그런 것이 아닌가 합니다:\n"
 "\n"
 "%s\n"
 "\n"
-"기어리는 데이터 베이스를 재구성하고 서버와 다시 동기화 시키거나 나갈 수 있습니다.\n"
+"기어리는 데이터 베이스를 재구성하고 서버와 다시 동기화 시키거나 나갈 수 있습"
+"니다.\n"
 "\n"
-"데이터 베이스를 재구성하게 되면 로컬 메일과 첨부파일들이 모두 사라지게 됩니다. <b>서버에 있는 편지는 영향 받지 않습니다.</b>"
+"데이터 베이스를 재구성하게 되면 로컬 메일과 첨부파일들이 모두 사라지게 됩니"
+"다. <b>서버에 있는 편지는 영향 받지 않습니다.</b>"
 
 #: ../src/client/application/geary-controller.vala:1153
 #: ../src/client/application/geary-controller.vala:1147
@@ -806,7 +815,8 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"이 계정의 메일 데이터 베이스를 여는 동안 오류가 생겼습니다. 파일 퍼미션 문제가 아닌가 합니다.\n"
+"이 계정의 메일 데이터 베이스를 여는 동안 오류가 생겼습니다. 파일 퍼미션 문제"
+"가 아닌가 합니다.\n"
 "\n"
 "이 디렉토리를 읽고 쓸 수 있는 권한이 있는지 확인해보시길 바랍니다:\n"
 "\n"
@@ -821,8 +831,9 @@ msgid ""
 "\n"
 "Please install the latest version of Geary and try again."
 msgstr ""
-"로컬 메일 데이터 베이스의 버전 번호가 새 버전의 기어리를 위해서 포맷되었습니다. 안타깝게도, 현재 버전의 기어리 사용을 위해 데이터 "
-"베이스를 \"되돌릴\" 수 없습니다.\n"
+"로컬 메일 데이터 베이스의 버전 번호가 새 버전의 기어리를 위해서 포맷되었습니"
+"다. 안타깝게도, 현재 버전의 기어리 사용을 위해 데이터 베이스를 \"되돌릴\" 수 "
+"없습니다.\n"
 "\n"
 "최신 버전의 기어리를 설치하시고 다시 실행해 보세요."
 
@@ -884,7 +895,9 @@ msgstr "정말 \"%s\"를 여시겠습니까?"
 msgid ""
 "Attachments may cause damage to your system if opened.  Only open files from "
 "trusted sources."
-msgstr "열린 첨부 파일은 시스템에 손상을 입힐 수 있습니다. 믿을 만한 곳에서 온 것만 여시 길 바랍니다."
+msgstr ""
+"열린 첨부 파일은 시스템에 손상을 입힐 수 있습니다. 믿을 만한 곳에서 온 것만 "
+"여시 길 바랍니다."
 
 #: ../src/client/application/geary-controller.vala:1988
 #: ../src/client/application/geary-controller.vala:1982
@@ -915,7 +928,8 @@ msgstr "이름이 \"%s\"인 파일이 이미 있습니다.  이 파일과 바꾸
 #: ../src/client/application/geary-controller.vala:1965
 msgid ""
 "The file already exists in \"%s\".  Replacing it will overwrite its contents."
-msgstr "\"%s\" 안에 파일이 이미 있습니다.  파일을 바꾸면 그 내용을 덮어 쓰게 됩니다."
+msgstr ""
+"\"%s\" 안에 파일이 이미 있습니다.  파일을 바꾸면 그 내용을 덮어 쓰게 됩니다."
 
 #: ../src/client/application/geary-controller.vala:2011
 #: ../src/client/application/geary-controller.vala:2005
@@ -1175,14 +1189,17 @@ msgid ""
 "Selecting \"Trust This Server\" or \"Always Trust This Server\" may cause "
 "your username and password to be transmitted insecurely."
 msgstr ""
-"\"이 서버를 신뢰합니다\"를 선택하거나 \"언제나 이 서버를 신뢰합니다\"를 선택하게 되면 사용자 이름(계정)과 비밀번호를 암호화되지 "
-"않은 채로 전송할 수 있습니다."
+"\"이 서버를 신뢰합니다\"를 선택하거나 \"언제나 이 서버를 신뢰합니다\"를 선택"
+"하게 되면 사용자 이름(계정)과 비밀번호를 암호화되지 않은 채로 전송할 수 있습"
+"니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary not to access this "
 "server."
-msgstr "\"이 서버를 신뢰하지 않습니다\"를 선택하게 되면 기어리가 이 서버에 접근하지 못하게 될 수 있습니다."
+msgstr ""
+"\"이 서버를 신뢰하지 않습니다\"를 선택하게 되면 기어리가 이 서버에 접근하지 "
+"못하게 될 수 있습니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Geary will not add or update this email account."
@@ -1192,7 +1209,9 @@ msgstr "기어리는 이 이메일 계정을 업데이트하거나 추가하지 
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary to stop accessing "
 "this account."
-msgstr "\"이 서버를 신뢰하지 않습니다\"를 선택하게 되면 기어리가 이 계정의 접근을 중단할 수 있습니다."
+msgstr ""
+"\"이 서버를 신뢰하지 않습니다\"를 선택하게 되면 기어리가 이 계정의 접근을 중"
+"단할 수 있습니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Geary will exit if you have no other open email accounts."
@@ -1202,7 +1221,9 @@ msgstr "열려 있는 다른 이메일 계정이 없다면 기어리를 끝내�
 msgid ""
 "Contact your system administrator or email service provider if you have any "
 "question about these issues."
-msgstr "이 문제에 관해서 궁금한 게 있으시면 이메일 서비스 제공업체나 시스템 관리자에게 문의하세요."
+msgstr ""
+"이 문제에 관해서 궁금한 게 있으시면 이메일 서비스 제공업체나 시스템 관리자에"
+"게 문의하세요."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:73
 msgid "The server's certificate is not signed by a known authority"
@@ -1214,7 +1235,7 @@ msgstr "서버의 신원이 인증서의 신원과 일치하지 않습니다"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:79
 msgid "The server's certificate has expired"
-msgstr "서버 인증서가 만료되었습니다."
+msgstr "서버 인증서가 만료되었습니다"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:82
 msgid "The server's certificate has not been activated"
@@ -1739,13 +1760,13 @@ msgstr "다른 이름으로 저장(_S)..."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1832
 msgid "Save All A_ttachments..."
-msgstr "모든 첨부 파일 저장(_T)"
+msgstr "모든 첨부 파일 저장(_T)..."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1847
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1852
 msgid "Save A_ttachment..."
 msgid_plural "Save All A_ttachments..."
-msgstr[0] "첨부 파일 저장(_T)"
+msgstr[0] "첨부 파일 저장(_T)..."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1862
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1867
@@ -1815,9 +1836,11 @@ msgstr "새 편지"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
-msgstr "첨부|첨부하기|첨부파일|첨부|첨부파일|첨부한|동봉|동봉한|동봉|동봉|동봉함|동봉물"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
+msgstr ""
+"첨부|첨부하기|첨부파일|첨부|첨부파일|첨부한|동봉|동봉한|동봉|동봉|동봉함|동봉"
+"물"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -1985,7 +2008,7 @@ msgstr "%2$s 를 경유해서 %1$s"
 #: ../src/client/composer/composer-widget.vala:2313
 #: ../src/client/composer/composer-widget.vala:2316
 msgid "_From:"
-msgstr "보내는 사람(_F)"
+msgstr "보내는 사람(_F):"
 
 #: ../src/client/components/main-window.vala:388
 #: ../src/client/components/main-window.vala:351
@@ -2185,14 +2208,18 @@ msgstr "지우기 (Shift+Delete)"
 msgid ""
 "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
 "account?</span> "
-msgstr "<span weight=\"bold\" size=\"larger\">이 계정을 정말 제거하시겠습니까?</span> "
+msgstr ""
+"<span weight=\"bold\" size=\"larger\">이 계정을 정말 제거하시겠습니까?</"
+"span> "
 
 #: ../data/ui/remove_confirm.ui:58
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:42
 msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
-msgstr "컴퓨터에서 이 계정과 연관된 모든 이메일이 지워지게 됩니다. 서버에 있는 이메일에는 영향을 주지 않습니다."
+msgstr ""
+"컴퓨터에서 이 계정과 연관된 모든 이메일이 지워지게 됩니다. 서버에 있는 이메일"
+"에는 영향을 주지 않습니다."
 
 #: ../data/ui/remove_confirm.ui:80
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:47
@@ -2225,7 +2252,7 @@ msgstr "이름표"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr "기어리 업데이트 중..."
+msgstr "기어리 업데이트 중…"
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
@@ -2236,7 +2263,8 @@ msgid ""
 "Some email services require additional addresses be configured on the "
 "server.  Contact your email provider for more information."
 msgstr ""
-"이메일 서비스 중에 더러 서버를 확인하기 위해 추가 주소들을 요구하기도 합니다. 더 많은 정보는 이메일 서비스 제공 업체에 문의해보세요."
+"이메일 서비스 중에 더러 서버를 확인하기 위해 추가 주소들을 요구하기도 합니"
+"다. 더 많은 정보는 이메일 서비스 제공 업체에 문의해보세요."
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
@@ -2503,17 +2531,20 @@ msgstr "첨부 파일로 추가하기"
 
 #: ../data/ui/account_cannot_remove.ui:40
 msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
-msgstr "<span weight=\"bold\" size=\"larger\">계정을 제거할 수 없습니다</span> "
+msgstr ""
+"<span weight=\"bold\" size=\"larger\">계정을 제거할 수 없습니다</span> "
 
 #: ../data/ui/account_cannot_remove.ui:56
 msgid ""
 "A composer window associated with this account is currently open. Send or "
 "discard the message and try again."
-msgstr "이 계정과 연관된 새 편지 창을 지금 열었습니다. 편지를 보내거나 버리고 다시 시도해 보세요."
+msgstr ""
+"이 계정과 연관된 새 편지 창을 지금 열었습니다. 편지를 보내거나 버리고 다시 시"
+"도해 보세요."
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr "추가 이메일 주소(_T)..."
+msgstr "추가 이메일 주소(_T)…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
@@ -2577,7 +2608,7 @@ msgstr "사용자이름(_N):"
 
 #: ../data/ui/login.ui:480
 msgid "Pass_word:"
-msgstr "비밀번호(_W)"
+msgstr "비밀번호(_W):"
 
 #: ../data/ui/login.ui:499
 msgid "SMTP username"
@@ -2700,7 +2731,9 @@ msgstr "웹 사이트"
 msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
-msgstr "메일이 이메일을 보내는 도중 오류가 생겼습니다. 문제가 지속되면, 보낸 편지함 폴더에서 이메일을 직접 지워주세요."
+msgstr ""
+"메일이 이메일을 보내는 도중 오류가 생겼습니다. 문제가 지속되면, 보낸 편지함 "
+"폴더에서 이메일을 직접 지워주세요."
 
 #: ../src/client/application/geary-controller.vala:1057
 #: ../src/client/application/geary-controller.vala:1051
@@ -2710,7 +2743,9 @@ msgstr "메일이 이메일을 보내는 도중 오류가 생겼습니다. 문�
 msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
-msgstr "메일이 보낸 편지를 저장하는 도중 오류가 생겼습니다. 편지는 지우지 않으면 보낸 편지함 폴더에 있습니다."
+msgstr ""
+"메일이 보낸 편지를 저장하는 도중 오류가 생겼습니다. 편지는 지우지 않으면 보"
+"낸 편지함 폴더에 있습니다."
 
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
@@ -2728,14 +2763,16 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
-"이 계정의 메일 데이터 베이스를 여는 동안 오류가 생겼습니다.  이 디렉토리의 데이터 베이스 파일에 문제가 생겨서 그런 것이 아닌가 "
-"합니다:\n"
+"이 계정의 메일 데이터 베이스를 여는 동안 오류가 생겼습니다.  이 디렉토리의 데"
+"이터 베이스 파일에 문제가 생겨서 그런 것이 아닌가 합니다:\n"
 "\n"
 "%s\n"
 "\n"
-"기어리는 데이터 베이스를 재구성하고 서버와 다시 동기화 시키거나 나갈 수 있습니다.\n"
+"기어리는 데이터 베이스를 재구성하고 서버와 다시 동기화 시키거나 나갈 수 있습"
+"니다.\n"
 "\n"
-"데이터 베이스를 재구성하게 되면 로컬 메일과 첨부파일들이 모두 사라지게 됩니다. <b>서버에 있는 메일은 영향 받지 않습니다.</b>"
+"데이터 베이스를 재구성하게 되면 로컬 메일과 첨부파일들이 모두 사라지게 됩니"
+"다. <b>서버에 있는 메일은 영향 받지 않습니다.</b>"
 
 #: ../src/client/application/geary-controller.vala:1184
 #: ../src/client/application/geary-controller.vala:1178
@@ -2749,8 +2786,9 @@ msgid ""
 "\n"
 "Please install the latest version of Mail and try again."
 msgstr ""
-"로컬 메일 데이터 베이스의 버전 번호가 새 버전의 메일을 위해서 포맷되었습니다. 안타깝게도, 현재 버전의 메일 사용을 위해 데이터 "
-"베이스를 \"되돌릴\" 수 없습니다.\n"
+"로컬 메일 데이터 베이스의 버전 번호가 새 버전의 메일을 위해서 포맷되었습니"
+"다. 안타깝게도, 현재 버전의 메일 사용을 위해 데이터 베이스를 \"되돌릴\" 수 없"
+"습니다.\n"
 "\n"
 "최신 버전의 메일을 설치하시고 다시 실행해 보세요."
 
@@ -2795,7 +2833,9 @@ msgstr "계속하려면 메일에 여러분의 이메일 비밀번호가 필요�
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail not to access this "
 "server."
-msgstr "\"이 서버를 신뢰하지 않습니다\"를 선택하게 되면 메일이 이 서버에 접근하지 못하게 될 수 있습니다."
+msgstr ""
+"\"이 서버를 신뢰하지 않습니다\"를 선택하게 되면 메일이 이 서버에 접근하지 못"
+"하게 될 수 있습니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Mail will not add or update this email account."
@@ -2805,7 +2845,9 @@ msgstr "메일은 이메일 계정을 업데이트하거나 추가하지 않습�
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail to stop accessing this "
 "account."
-msgstr "\"이 서버를 신뢰하지 않습니다\"를 선택하게 되면 메일이 이 계정의 접근을 중단할 수 있습니다."
+msgstr ""
+"\"이 서버를 신뢰하지 않습니다\"를 선택하게 되면 메일이 이 계정의 접근을 중단"
+"할 수 있습니다."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Mail will exit if you have no other open email accounts."
@@ -2818,7 +2860,7 @@ msgstr "메일이 계정을 확인하는 동안 기다려 주세요."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr "메일 업데이트 중..."
+msgstr "메일 업데이트 중…"
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
@@ -2842,14 +2884,14 @@ msgstr "정보 대화상자 보이기"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
-msgstr "첨부 파일 저장..."
+msgstr "첨부 파일 저장…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr "모든 첨부 파일 저장..."
+msgstr "모든 첨부 파일 저장…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
@@ -2903,7 +2945,7 @@ msgstr "읽음으로 표시"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:275
 #: ../src/client/conversation-viewer/ConversationWidget.vala:277
 msgid "Print…"
-msgstr "인쇄..."
+msgstr "인쇄…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
@@ -2986,7 +3028,9 @@ msgstr[0] "%u개 일치"
 #. / (that is the part before the '@') that exist in your language (separated with a semicolon)
 #: ../src/engine/rfc822/rfc822-mailbox-address.vala:170
 msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
-msgstr "답장-하지마시오;답장_하지마시오;답장하지마시오;답장-하지-마시오;답장_하지_마시오;답장하지마시오"
+msgstr ""
+"답장-하지마시오;답장_하지마시오;답장하지마시오;답장-하지-마시오;답장_하지_마"
+"시오;답장하지마시오"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:410
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
@@ -3037,7 +3081,9 @@ msgstr "정말 %s를 여시겠습니까?"
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
-msgstr "열린 첨부 파일은 시스템에 손상을 입힐 수 있습니다. 믿을 만한 곳에서 온 것만 여시길 바랍니다."
+msgstr ""
+"열린 첨부 파일은 시스템에 손상을 입힐 수 있습니다. 믿을 만한 곳에서 온 것만 "
+"여시길 바랍니다."
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:45
 msgid "Don't ask me again"

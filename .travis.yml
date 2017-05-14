@@ -1,0 +1,16 @@
+language: generic
+
+services:
+ - docker
+
+env:
+ - DEPENDENCY_PACKAGES="cmake libaccounts-glib-dev libcanberra-dev libgcr-3-dev libgirepository1.0-dev libglib2.0-dev libgmime-2.6-dev libgranite-dev libgsignon-glib-dev libgtk-3-dev libsecret-1-dev libsqlite3-dev libunity-dev libwebkitgtk-3.0-dev libxml2-dev valac"
+
+install:
+ - docker pull elementary/docker:loki
+ - docker run -v "$PWD":/tmp/build-dir elementary/docker:loki /bin/sh -c "apt-get update && apt-get -y install $DEPENDENCY_PACKAGES && cd /tmp/build-dir && cmake -DSUPPRESS_C_WARNINGS=ON . && env CTEST_OUTPUT_ON_FAILURE=true make"
+ - docker pull elementary/docker:loki-unstable
+ - docker run -v "$PWD":/tmp/build-dir elementary/docker:loki-unstable /bin/sh -c "apt-get update && apt-get -y install $DEPENDENCY_PACKAGES && cd /tmp/build-dir && cmake -DSUPPRESS_C_WARNINGS=ON . && env CTEST_OUTPUT_ON_FAILURE=true make"
+
+script:
+ - echo BUILDS PASSED
