@@ -551,6 +551,20 @@ set(CONSOLE_PACKAGES
 
 set(GSETTINGS_DIR ${CMAKE_SOURCE_DIR}/data)
 
+if (SUPPRESS_C_WARNINGS)
+    message(STATUS "C compiler warnings: OFF")
+
+    set(EXTRA_CFLAGS
+        ${EXTRA_CFLAGS}
+        -Wno-deprecated-declarations
+        -Wno-incompatible-pointer-types
+        -Wno-discarded-qualifiers
+    )
+    
+else ()
+    message(STATUS "C compiler warnings: ON")
+endif ()
+
 set(CFLAGS 
     ${DEPS_CFLAGS}
     ${DEPS_CFLAGS_OTHER}
@@ -562,6 +576,7 @@ set(CFLAGS
     -DLANGUAGE_SUPPORT_DIRECTORY=\"${LANGUAGE_SUPPORT_DIRECTORY}\"
     -DGCR_API_SUBJECT_TO_CHANGE
     -g
+    ${EXTRA_CFLAGS}
 )
 
 # GResource
