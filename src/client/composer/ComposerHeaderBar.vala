@@ -53,7 +53,7 @@ public class ComposerHeaderbar : Gtk.HeaderBar {
         send_button.tooltip_text = _("Send (Ctrl+Enter)");
 
         var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
-        attach.set_action_name ("cmh." + ComposerWidget.ACTION_ADD_ATTACHMENT);
+        attach.set_action_name (ACTION_GROUP_PREFIX + ComposerWidget.ACTION_ADD_ATTACHMENT);
         attach.tooltip_text = _("Attach file");
 
         var attach_original = new Gtk.Button.from_icon_name ("edit-copy-symbolic", Gtk.IconSize.MENU);
