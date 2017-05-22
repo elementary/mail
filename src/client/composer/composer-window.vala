@@ -23,11 +23,11 @@ public class ComposerWindow : Gtk.ApplicationWindow, ComposerContainer {
 
         // Make sure it gets added to the GtkApplication, to get the window-specific
         // composer actions to work properly.
-        GearyApplication.instance.add_window(this);
+        GearyApplication.instance.add_window (this);
 
         add(composer);
-        focus_in_event.connect(on_focus_in);
-        focus_out_event.connect(on_focus_out);
+        focus_in_event.connect (on_focus_in);
+        focus_out_event.connect (on_focus_out);
 
         composer.header.show_close_button = true;
         composer.free_header();
@@ -45,12 +45,12 @@ public class ComposerWindow : Gtk.ApplicationWindow, ComposerContainer {
     }
 
     public void close_container() {
-        on_focus_out();
-        this.composer.editor.focus_in_event.disconnect(on_focus_in);
-        this.composer.editor.focus_out_event.disconnect(on_focus_out);
+        on_focus_out ();
+        this.composer.editor.focus_in_event.disconnect (on_focus_in);
+        this.composer.editor.focus_out_event.disconnect (on_focus_out);
 
         this.closing = true;
-        destroy();
+        destroy ();
     }
 
     public override bool delete_event(Gdk.EventAny event) {

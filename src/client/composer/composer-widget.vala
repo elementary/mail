@@ -36,7 +36,7 @@ public class ComposerWidget : Gtk.EventBox {
         }
     }
 
-    private SimpleActionGroup actions = new SimpleActionGroup();
+    private SimpleActionGroup actions = new SimpleActionGroup ();
 
     private const string ACTION_GROUP_PREFIX_NAME = "cmp";
     public static string ACTION_GROUP_PREFIX = ACTION_GROUP_PREFIX_NAME + ".";
@@ -916,7 +916,7 @@ public class ComposerWidget : Gtk.EventBox {
         
         email.attachment_files.add_all(attachment_files);
         
-        if (actions.get_action_state(ACTION_COMPOSE_AS_HTML).get_boolean () || only_html) {
+        if (actions.get_action_state (ACTION_COMPOSE_AS_HTML).get_boolean () || only_html) {
             email.body_html = get_html ();
         }
         if (!only_html)
@@ -1634,7 +1634,7 @@ public class ComposerWidget : Gtk.EventBox {
         }
 
         // We need the unprefixed name to send as a command to the editor
-        string[] prefixed_action_name = action.get_name ().split(".");
+        string[] prefixed_action_name = action.get_name ().split (".");
         string action_name = prefixed_action_name[prefixed_action_name.length - 1];
         this.editor.get_dom_document ().exec_command (action_name, false, "");
     }
