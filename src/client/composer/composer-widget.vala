@@ -35,38 +35,108 @@ public class ComposerWidget : Gtk.EventBox {
             sender = s;
         }
     }
-    
-    public const string ACTION_UNDO = "undo";
-    public const string ACTION_REDO = "redo";
-    public const string ACTION_CUT = "cut";
-    public const string ACTION_COPY = "copy";
-    public const string ACTION_COPY_LINK = "copy link";
-    public const string ACTION_PASTE = "paste";
-    public const string ACTION_PASTE_FORMAT = "paste with formatting";
+
+    private SimpleActionGroup actions = new SimpleActionGroup();
+
+    private const string ACTION_GROUP_PREFIX_NAME = "cmp";
+    public static string ACTION_GROUP_PREFIX {
+        get {
+            return ACTION_GROUP_PREFIX_NAME + ".";
+        }
+    }
+
+    private const string ACTION_UNDO = "undo";
+    private const string ACTION_REDO = "redo";
+    private const string ACTION_CUT = "cut";
+    private const string ACTION_COPY = "copy";
+    private const string ACTION_COPY_LINK = "copy-link";
+    private const string ACTION_PASTE = "paste";
+    private const string ACTION_PASTE_WITH_FORMATTING = "paste-with-formatting";
+    private const string ACTION_SELECT_ALL = "select-all";
     public const string ACTION_BOLD = "bold";
     public const string ACTION_ITALIC = "italic";
     public const string ACTION_UNDERLINE = "underline";
     public const string ACTION_STRIKETHROUGH = "strikethrough";
-    public const string ACTION_REMOVE_FORMAT = "removeformat";
+    private const string ACTION_FONT_SIZE = "font-size";
+    private const string ACTION_FONT_FAMILY = "font-family";
+    public const string ACTION_REMOVE_FORMAT = "remove-format";
     public const string ACTION_INDENT = "indent";
     public const string ACTION_OUTDENT = "outdent";
-    public const string ACTION_JUSTIFY_LEFT = "justifyleft";
-    public const string ACTION_JUSTIFY_RIGHT = "justifyright";
-    public const string ACTION_JUSTIFY_CENTER = "justifycenter";
-    public const string ACTION_JUSTIFY_FULL = "justifyfull";
-    public const string ACTION_MENU = "menu";
-    public const string ACTION_COLOR = "color";
-    public const string ACTION_INSERT_LINK = "insertlink";
-    public const string ACTION_COMPOSE_AS_HTML = "compose as html";
-    public const string ACTION_SHOW_EXTENDED = "show extended";
-    public const string ACTION_CLOSE = "close";
-    public const string ACTION_CLOSE_SAVE = "close and save";
-    public const string ACTION_CLOSE_DISCARD = "close and discard";
+    private const string ACTION_JUSTIFY = "justify";
+    private const string ACTION_COLOR = "color";
+    public const string ACTION_INSERT_LINK = "insert-link";
+    private const string ACTION_COMPOSE_AS_HTML = "compose-as-html";
+    private const string ACTION_SHOW_EXTENDED = "show-extended";
+    private const string ACTION_CLOSE = "close";
+    private const string ACTION_CLOSE_AND_SAVE = "close-and-save";
+    public const string ACTION_CLOSE_AND_DISCARD = "close-and-discard";
     public const string ACTION_DETACH = "detach";
     public const string ACTION_SEND = "send";
-    public const string ACTION_ADD_ATTACHMENT = "add attachment";
-    public const string ACTION_ADD_ORIGINAL_ATTACHMENTS = "add original attachments";
-    public const string ACTION_GEAR_MENU = "gear menu";
+    public const string ACTION_ADD_ATTACHMENT = "add-attachment";
+    public const string ACTION_ADD_ORIGINAL_ATTACHMENTS = "add-original-attachments";
+
+    private const string[] html_actions = {
+        ACTION_BOLD, ACTION_ITALIC, ACTION_UNDERLINE, ACTION_STRIKETHROUGH, ACTION_FONT_SIZE,
+        ACTION_FONT_FAMILY, ACTION_REMOVE_FORMAT, ACTION_COLOR, ACTION_JUSTIFY,
+        ACTION_INSERT_LINK, ACTION_COPY_LINK, ACTION_PASTE_WITH_FORMATTING
+    };
+
+    private const ActionEntry[] action_entries = {
+        // Editor commands
+        {ACTION_UNDO,                     on_action                                     },
+        {ACTION_REDO,                     on_action                                     },
+        {ACTION_CUT,                      on_cut                                        },
+        {ACTION_COPY,                     on_copy                                       },
+        {ACTION_COPY_LINK,                on_copy_link                                  },
+        {ACTION_PASTE,                    on_paste                                      },
+        {ACTION_PASTE_WITH_FORMATTING,    on_paste_with_formatting                      },
+        {ACTION_SELECT_ALL,               on_select_all                                 },
+        {ACTION_BOLD,                     on_action,                null,      "false"  },
+        {ACTION_ITALIC,                   on_action,                null,      "false"  },
+        {ACTION_UNDERLINE,                on_action,                null,      "false"  },
+        {ACTION_STRIKETHROUGH,            on_action,                null,      "false"  },
+        {ACTION_FONT_SIZE,                on_font_size,              "s",   "'medium'"  },
+        {ACTION_FONT_FAMILY,              on_font_family,            "s",     "'sans'"  },
+        {ACTION_REMOVE_FORMAT,            on_remove_format,         null,      "false"  },
+        {ACTION_INDENT,                   on_indent                                     },
+        {ACTION_OUTDENT,                  on_action                                     },
+        {ACTION_JUSTIFY,                  on_justify,                "s",     "'left'"  },
+        {ACTION_COLOR,                    on_select_color                               },
+        {ACTION_INSERT_LINK,              on_insert_link                                },
+        // Composer commands
+        {ACTION_COMPOSE_AS_HTML,          on_toggle_action,        null,   "true",  on_compose_as_html_toggled },
+        {ACTION_SHOW_EXTENDED,            on_toggle_action,        null,  "false",  on_show_extended_toggled   },
+        {ACTION_CLOSE,                    on_close                                                             },
+        {ACTION_CLOSE_AND_SAVE,           on_close_and_save                                                    },
+        {ACTION_CLOSE_AND_DISCARD,        on_close_and_discard                                                 },
+        {ACTION_DETACH,                   on_detach                                                            },
+        {ACTION_SEND,                     on_send                                                              },
+        {ACTION_ADD_ATTACHMENT,           on_add_attachment                                                    },
+        {ACTION_ADD_ORIGINAL_ATTACHMENTS, on_pending_attachments                                               },
+    };
+
+    public static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string>();
+    static construct {
+        action_accelerators.set(ACTION_UNDO, "<Ctrl>z");
+        action_accelerators.set(ACTION_REDO, "<Ctrl><Shift>z");
+        action_accelerators.set(ACTION_CUT, "<Ctrl>x");
+        action_accelerators.set(ACTION_COPY, "<Ctrl>c");
+        action_accelerators.set(ACTION_PASTE, "<Ctrl>v");
+        action_accelerators.set(ACTION_PASTE_WITH_FORMATTING, "<Ctrl><Shift>v");
+        action_accelerators.set(ACTION_INSERT_LINK, "<Ctrl>l");
+        action_accelerators.set(ACTION_INDENT, "<Ctrl>bracketright");
+        action_accelerators.set(ACTION_OUTDENT, "<Ctrl>bracketleft");
+        action_accelerators.set(ACTION_REMOVE_FORMAT, "<Ctrl>space");
+        action_accelerators.set(ACTION_BOLD, "<Ctrl>b");
+        action_accelerators.set(ACTION_ITALIC, "<Ctrl>i");
+        action_accelerators.set(ACTION_UNDERLINE, "<Ctrl>u");
+        action_accelerators.set(ACTION_STRIKETHROUGH, "<Ctrl>k");
+        action_accelerators.set(ACTION_CLOSE, "<Ctrl>w");
+        action_accelerators.set(ACTION_CLOSE, "Escape");
+        action_accelerators.set(ACTION_ADD_ATTACHMENT, "<Ctrl>t");
+        action_accelerators.set(ACTION_DETACH, "<Ctrl>d");
+        action_accelerators.set(ACTION_CLOSE, "Escape");
+    }
     
     private const string DRAFT_SAVED_TEXT = _("Saved");
     private const string DRAFT_SAVING_TEXT = _("Saving");
@@ -179,16 +249,6 @@ public class ComposerWidget : Gtk.EventBox {
         }
     }
     
-    public bool compose_as_html {
-        get { return ((Gtk.ToggleAction) actions.get_action(ACTION_COMPOSE_AS_HTML)).active; }
-        set { ((Gtk.ToggleAction) actions.get_action(ACTION_COMPOSE_AS_HTML)).active = value; }
-    }
-
-    public bool show_extended {
-        get { return ((Gtk.ToggleAction) actions.get_action(ACTION_SHOW_EXTENDED)).active; }
-        set { ((Gtk.ToggleAction) actions.get_action(ACTION_SHOW_EXTENDED)).active = value; }
-    }
-    
     public ComposerState state { get; set; }
     
     public ComposeType compose_type { get; private set; default = ComposeType.NEW_MESSAGE; }
@@ -236,22 +296,20 @@ public class ComposerWidget : Gtk.EventBox {
     private Gtk.Alignment visible_on_attachment_drag_over;
     private Gtk.Widget hidden_on_attachment_drag_over_child;
     private Gtk.Widget visible_on_attachment_drag_over_child;
+    private ComposerToolbar composer_toolbar;
     
     private Gtk.Menu menu = new Gtk.Menu();
-    private Gtk.RadioMenuItem font_small;
-    private Gtk.RadioMenuItem font_medium;
-    private Gtk.RadioMenuItem font_large;
-    private Gtk.RadioMenuItem font_sans;
-    private Gtk.RadioMenuItem font_serif;
-    private Gtk.RadioMenuItem font_monospace;
+    private Gtk.CheckMenuItem font_small;
+    private Gtk.CheckMenuItem font_medium;
+    private Gtk.CheckMenuItem font_large;
+    private Gtk.CheckMenuItem font_sans;
+    private Gtk.CheckMenuItem font_serif;
+    private Gtk.CheckMenuItem font_monospace;
     private Gtk.MenuItem color_item;
     private Gtk.MenuItem html_item;
-    private Gtk.MenuItem html_item2;
     private Gtk.MenuItem extended_item;
     
-    private Gtk.ActionGroup actions;
     private string? hover_url = null;
-    private bool action_flag = false;
     private bool is_attachment_overlay_visible = false;
     private Gee.List<Geary.Attachment>? pending_attachments = null;
     private Geary.RFC822.MailboxAddresses reply_to_addresses;
@@ -271,7 +329,6 @@ public class ComposerWidget : Gtk.EventBox {
     // We need to keep a reference to the edit-fixer in composer-window, so it doesn't get
     // garbage-collected.
     private WebViewEditFixer edit_fixer;
-    public Gtk.UIManager ui;
     private ComposerContainer container {
         get { return (ComposerContainer) parent; }
     }
@@ -363,11 +420,8 @@ public class ComposerWidget : Gtk.EventBox {
                 return true;
             });
         Gtk.Overlay message_overlay = builder.get_object("message overlay") as Gtk.Overlay;
-        actions = builder.get_object("compose actions") as Gtk.ActionGroup;
-        // Can only happen after actions exits
-        compose_as_html = GearyApplication.instance.config.compose_as_html;
         
-        header = new ComposerHeaderbar(actions);
+        header = new ComposerHeaderbar();
         header.hexpand = true;
         embed_header();
         bind_property("state", header, "state", BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL);
@@ -383,57 +437,10 @@ public class ComposerWidget : Gtk.EventBox {
         bcc_entry.changed.connect(validate_send_button);
         reply_to_entry.changed.connect(validate_send_button);
 
-        ComposerToolbar composer_toolbar = new ComposerToolbar(actions, menu);
+        composer_toolbar = new ComposerToolbar(menu);
         Gtk.Grid toolbar_area = (Gtk.Grid) builder.get_object("toolbar area");
         toolbar_area.add(composer_toolbar);
         bind_property("toolbar-text", composer_toolbar, "label-text", BindingFlags.SYNC_CREATE);
-        
-        actions.get_action(ACTION_UNDO).activate.connect(on_action);
-        actions.get_action(ACTION_REDO).activate.connect(on_action);
-        
-        actions.get_action(ACTION_CUT).activate.connect(on_cut);
-        actions.get_action(ACTION_COPY).activate.connect(on_copy);
-        actions.get_action(ACTION_COPY_LINK).activate.connect(on_copy_link);
-        actions.get_action(ACTION_PASTE).activate.connect(on_paste);
-        actions.get_action(ACTION_PASTE_FORMAT).activate.connect(on_paste_with_formatting);
-        
-        actions.get_action(ACTION_BOLD).activate.connect(on_formatting_action);
-        actions.get_action(ACTION_ITALIC).activate.connect(on_formatting_action);
-        actions.get_action(ACTION_UNDERLINE).activate.connect(on_formatting_action);
-        actions.get_action(ACTION_STRIKETHROUGH).activate.connect(on_formatting_action);
-        
-        actions.get_action(ACTION_REMOVE_FORMAT).activate.connect(on_remove_format);
-        actions.get_action(ACTION_COMPOSE_AS_HTML).activate.connect(on_compose_as_html);
-        actions.get_action(ACTION_SHOW_EXTENDED).activate.connect(on_show_extended);
-        
-        actions.get_action(ACTION_INDENT).activate.connect(on_indent);
-        actions.get_action(ACTION_OUTDENT).activate.connect(on_action);
-        
-        actions.get_action(ACTION_JUSTIFY_LEFT).activate.connect(on_formatting_action);
-        actions.get_action(ACTION_JUSTIFY_RIGHT).activate.connect(on_formatting_action);
-        actions.get_action(ACTION_JUSTIFY_CENTER).activate.connect(on_formatting_action);
-        actions.get_action(ACTION_JUSTIFY_FULL).activate.connect(on_formatting_action);
-        
-        actions.get_action(ACTION_COLOR).activate.connect(on_select_color);
-        actions.get_action(ACTION_INSERT_LINK).activate.connect(on_insert_link);
-        
-        actions.get_action(ACTION_CLOSE).activate.connect(on_close);
-        actions.get_action(ACTION_CLOSE_SAVE).activate.connect(on_close_and_save);
-        actions.get_action(ACTION_CLOSE_DISCARD).activate.connect(on_close_and_discard);
-        
-        actions.get_action(ACTION_DETACH).activate.connect(on_detach);
-        actions.get_action(ACTION_SEND).activate.connect(on_send);
-        actions.get_action(ACTION_ADD_ATTACHMENT).activate.connect(on_add_attachment_button_clicked);
-        actions.get_action(ACTION_ADD_ORIGINAL_ATTACHMENTS).activate.connect(on_pending_attachments_button_clicked);
-        
-        ui = new Gtk.UIManager();
-        ui.insert_action_group(actions, 0);
-        try {
-            ui.add_ui_from_resource("%s/composer_accelerators.ui".printf(GearyApplication.GRESOURCE_UI_PREFIX));
-            add_extra_accelerators();
-        } catch (Error e) {
-            critical (e.message);
-        }
         
         from = account.information.get_primary_from();
         update_from_field();
@@ -501,6 +508,9 @@ public class ComposerWidget : Gtk.EventBox {
         editor = new StylishWebView();
         edit_fixer = new WebViewEditFixer(editor);
 
+        // Add actions once every element has been initialized and added
+        initialize_actions();
+
         editor.load_finished.connect(on_load_finished);
         editor.hovering_over_link.connect(on_hovering_over_link);
         editor.context_menu.connect(on_context_menu);
@@ -521,36 +531,39 @@ public class ComposerWidget : Gtk.EventBox {
         editor.new_window_policy_decision_requested.connect(on_navigation_policy_decision_requested);
 
         // Font family menu items.
-        font_sans = new Gtk.RadioMenuItem(new SList<Gtk.RadioMenuItem>());
-        font_sans.activate.connect(on_font_sans);
-        font_sans.related_action = ui.get_action("ui/font_sans");
-        font_serif = new Gtk.RadioMenuItem.from_widget(font_sans);
-        font_serif.activate.connect(on_font_serif);
-        font_serif.related_action = ui.get_action("ui/font_serif");
-        font_monospace = new Gtk.RadioMenuItem.from_widget(font_sans);
-        font_monospace.related_action = ui.get_action("ui/font_monospace");
-        font_monospace.activate.connect(on_font_monospace);
+        font_sans = new Gtk.CheckMenuItem.with_mnemonic (_("S_ans Serif"));
+        font_sans.draw_as_radio = true;
+        font_sans.set_action_name (ACTION_GROUP_PREFIX + ACTION_FONT_FAMILY);
+        font_sans.set_action_target ("s", "sans");
+        font_serif = new Gtk.CheckMenuItem.with_mnemonic (_("S_erif"));
+        font_serif.draw_as_radio = true;
+        font_serif.set_action_name (ACTION_GROUP_PREFIX + ACTION_FONT_FAMILY);
+        font_serif.set_action_target ("s", "serif");
+        font_monospace = new Gtk.CheckMenuItem.with_mnemonic (_("_Fixed width"));
+        font_monospace.draw_as_radio = true;
+        font_monospace.set_action_name (ACTION_GROUP_PREFIX + ACTION_FONT_FAMILY);
+        font_monospace.set_action_target ("s", "monospace");
         
         // Font size menu items.
-        font_small = new Gtk.RadioMenuItem(new SList<Gtk.RadioMenuItem>());
-        font_small.related_action = ui.get_action("ui/font_small");
-        font_small.activate.connect(on_font_size_small);
-        font_medium = new Gtk.RadioMenuItem.from_widget(font_small);
-        font_medium.related_action = ui.get_action("ui/font_medium");
-        font_medium.activate.connect(on_font_size_medium);
-        font_large = new Gtk.RadioMenuItem.from_widget(font_small);
-        font_large.related_action = ui.get_action("ui/font_large");
-        font_large.activate.connect(on_font_size_large);
-        
-        color_item = new Gtk.MenuItem();
-        color_item.related_action = ui.get_action("ui/color");
-        html_item = new Gtk.CheckMenuItem();
-        html_item.related_action = ui.get_action("ui/htmlcompose");
-        extended_item = new Gtk.CheckMenuItem();
-        extended_item.related_action = ui.get_action("ui/extended");
-        
-        html_item2 = new Gtk.CheckMenuItem();
-        html_item2.related_action = ui.get_action("ui/htmlcompose");
+        font_small = new Gtk.CheckMenuItem.with_mnemonic (_("_Small"));
+        font_small.draw_as_radio = true;
+        font_small.set_action_name (ACTION_GROUP_PREFIX + ACTION_FONT_SIZE);
+        font_small.set_action_target ("s", "small");
+        font_medium = new Gtk.CheckMenuItem.with_mnemonic (_("_Medium"));
+        font_medium.draw_as_radio = true;
+        font_medium.set_action_name (ACTION_GROUP_PREFIX + ACTION_FONT_SIZE);
+        font_medium.set_action_target ("s", "medium");
+        font_large = new Gtk.CheckMenuItem.with_mnemonic (_("Lar_ge"));
+        font_large.draw_as_radio = true;
+        font_large.set_action_name (ACTION_GROUP_PREFIX + ACTION_FONT_SIZE);
+        font_large.set_action_target ("s", "large");
+
+        color_item = new Gtk.MenuItem.with_mnemonic (_("C_olor"));
+        color_item.set_action_name (ACTION_GROUP_PREFIX + ACTION_COLOR);
+        html_item = new Gtk.CheckMenuItem.with_mnemonic (_("_Rich text"));
+        html_item.set_action_name (ACTION_GROUP_PREFIX + ACTION_COMPOSE_AS_HTML);
+        extended_item = new Gtk.CheckMenuItem.with_mnemonic (_("Show Extended Fields"));
+        extended_item.set_action_name (ACTION_GROUP_PREFIX + ACTION_SHOW_EXTENDED);
         
         WebKit.WebSettings s = editor.settings;
         s.enable_spell_checking = true;
@@ -642,6 +655,13 @@ public class ComposerWidget : Gtk.EventBox {
             foreach (string attachment in headers.get("attachment"))
                 add_attachment(File.new_for_commandline_arg(attachment));
         }
+    }
+
+    private void initialize_actions () {
+        this.actions.add_action_entries (action_entries, this);
+        insert_action_group (ACTION_GROUP_PREFIX_NAME, this.actions);
+        header.insert_action_group (ComposerHeaderbar.ACTION_GROUP_PREFIX_NAME, this.actions);
+        update_actions ();
     }
     
     public async void restore_draft_state_async(Geary.Account account) {
@@ -781,22 +801,15 @@ public class ComposerWidget : Gtk.EventBox {
         protect_blockquote_styles();
         
         set_focus();  // Focus in the GTK widget hierarchy
-        
-        // Ensure the editor is in correct mode re HTML
-        on_compose_as_html();
 
         bind_event(editor,"a", "click", (Callback) on_link_clicked, this);
         update_actions();
-        on_show_extended();
+        this.actions.change_action_state(ACTION_SHOW_EXTENDED, false);
+        this.actions.change_action_state(ACTION_COMPOSE_AS_HTML,
+            GearyApplication.instance.config.compose_as_html);
         
         if (can_delete_quote)
             editor.selection_changed.connect(() => { can_delete_quote = false; });
-    }
-    
-    // Glade only allows one accelerator per-action. This method adds extra accelerators not defined
-    // in the Glade file.
-    private void add_extra_accelerators() {
-        GtkUtil.add_accelerator(ui, actions, "Escape", ACTION_CLOSE);
     }
     
     private void setup_drag_destination(Gtk.Widget destination) {
@@ -908,7 +921,7 @@ public class ComposerWidget : Gtk.EventBox {
         
         email.attachment_files.add_all(attachment_files);
         
-        if (compose_as_html || only_html)
+        if (actions.get_action_state(ACTION_COMPOSE_AS_HTML).get_boolean() || only_html)
             email.body_html = get_html();
         if (!only_html)
             email.body_text = get_text();
@@ -1453,7 +1466,7 @@ public class ComposerWidget : Gtk.EventBox {
         container.close_container();
     }
     
-    private void on_add_attachment_button_clicked() {
+    private void on_add_attachment() {
         AttachmentDialog dialog = null;
         do {
             // Transient parent of AttachmentDialog is this ComposerWindow
@@ -1466,7 +1479,7 @@ public class ComposerWidget : Gtk.EventBox {
         } while (!dialog.is_finished(add_attachment));
     }
     
-    private void on_pending_attachments_button_clicked() {
+    private void on_pending_attachments() {
         add_attachments(pending_attachments, false);
     }
     
@@ -1614,19 +1627,20 @@ public class ComposerWidget : Gtk.EventBox {
         
         reset_draft_timer();
     }
-    
-    private void on_formatting_action(Gtk.Action action) {
-        if (compose_as_html)
-            on_action(action);
+
+    private void on_justify(SimpleAction action, Variant? param) {
+        this.editor.get_dom_document().exec_command("justify" + param.get_string(), false, "");
     }
     
-    private void on_action(Gtk.Action action) {
-        if (action_flag)
+    private void on_action(SimpleAction action, Variant? param) {
+        warning ("action!");
+        if (!action.enabled)
             return;
-        
-        action_flag = true; // prevents recursion
-        editor.get_dom_document().exec_command(action.get_name(), false, "");
-        action_flag = false;
+
+        // We need the unprefixed name to send as a command to the editor
+        string[] prefixed_action_name = action.get_name().split(".");
+        string action_name = prefixed_action_name[prefixed_action_name.length - 1];
+        this.editor.get_dom_document().exec_command(action_name, false, "");
     }
     
     private void on_cut() {
@@ -1734,8 +1748,16 @@ public class ComposerWidget : Gtk.EventBox {
         editor.get_dom_document().exec_command("backcolor", false, "#ffffff");
         editor.get_dom_document().exec_command("forecolor", false, "#000000");
     }
-    
-    private void on_compose_as_html() {
+
+    // Use this for toggle actions, and use the change-state signal to respond to these state changes
+    private void on_toggle_action(SimpleAction? action, Variant? param) {
+        action.change_state(!action.state.get_boolean());
+    }
+
+    private void on_compose_as_html_toggled(SimpleAction? action, Variant? new_state) {
+        bool compose_as_html = new_state.get_boolean();
+        action.set_state(compose_as_html);
+
         WebKit.DOM.DOMTokenList body_classes = editor.get_dom_document().body.get_class_list();
         if (!compose_as_html) {
             toggle_toolbar_buttons(false);
@@ -1757,7 +1779,10 @@ public class ComposerWidget : Gtk.EventBox {
         GearyApplication.instance.config.compose_as_html = compose_as_html;
     }
 
-    private void on_show_extended() {
+
+    private void on_show_extended_toggled(SimpleAction? action, Variant? new_state) {
+        bool show_extended = new_state.get_boolean();
+        action.set_state(show_extended);
         if (!show_extended) {
             bcc_label.visible = bcc_entry.visible = reply_to_label.visible = reply_to_entry.visible = false;
         } else {
@@ -1768,18 +1793,13 @@ public class ComposerWidget : Gtk.EventBox {
     }
     
     private void toggle_toolbar_buttons(bool show) {
-        actions.get_action(ACTION_BOLD).visible =
-            actions.get_action(ACTION_ITALIC).visible =
-            actions.get_action(ACTION_UNDERLINE).visible =
-            actions.get_action(ACTION_STRIKETHROUGH).visible =
-            actions.get_action(ACTION_INSERT_LINK).visible =
-            actions.get_action(ACTION_REMOVE_FORMAT).visible = show;
+        composer_toolbar.set_html_buttons_visible (show);
     }
     
     private void build_plaintext_menu() {
         GtkUtil.clear_menu(menu);
         
-        menu.append(html_item2);
+        menu.append(html_item);
 
         menu.append(new Gtk.SeparatorMenuItem());
         menu.append(extended_item);
@@ -1809,53 +1829,41 @@ public class ComposerWidget : Gtk.EventBox {
         menu.show_all(); // Call this or only menu items associated with actions will be displayed.
     }
     
-    private void on_font_sans() {
-        if (!action_flag)
-            editor.get_dom_document().exec_command("fontname", false, "sans");
+    private void on_font_family(SimpleAction action, Variant? param) {
+        this.editor.get_dom_document().exec_command("fontname", false, param.get_string());
+        action.set_state(param.get_string());
     }
     
-    private void on_font_serif() {
-        if (!action_flag)
-            editor.get_dom_document().exec_command("fontname", false, "serif");
-    }
-    
-    private void on_font_monospace() {
-        if (!action_flag)
-            editor.get_dom_document().exec_command("fontname", false, "monospace");
-    }
-    
-    private void on_font_size_small() {
-        if (!action_flag)
-            editor.get_dom_document().exec_command("fontsize", false, "1");
-    }
-    
-    private void on_font_size_medium() {
-        if (!action_flag)
-            editor.get_dom_document().exec_command("fontsize", false, "3");
-    }
-    
-    private void on_font_size_large() {
-        if (!action_flag)
-            editor.get_dom_document().exec_command("fontsize", false, "7");
+    private void on_font_size(SimpleAction action, Variant? param) {
+        warning ((param == null).to_string ());
+        warning (param.get_string ());
+        string size = "";
+        if (param.get_string() == "small")
+            size = "1";
+        else if (param.get_string() == "medium")
+            size = "3";
+        else // Large
+            size = "7";
+
+        this.editor.get_dom_document().exec_command("fontsize", false, size);
+        action.set_state(param.get_string());
     }
     
     private void on_select_color() {
-        if (compose_as_html) {
-            Gtk.ColorChooserDialog dialog = new Gtk.ColorChooserDialog(_("Select Color"),
-                container.top_window);
-            if (dialog.run() == Gtk.ResponseType.OK)
-                editor.get_dom_document().exec_command("forecolor", false, dialog.get_rgba().to_string());
-            
-            dialog.destroy();
-        }
+        Gtk.ColorChooserDialog dialog = new Gtk.ColorChooserDialog(_("Select Color"),
+            container.top_window);
+        if (dialog.run() == Gtk.ResponseType.OK)
+            editor.get_dom_document().exec_command("forecolor", false, dialog.get_rgba().to_string());
+
+        dialog.destroy();
     }
     
-    private void on_indent(Gtk.Action action) {
-        on_action(action);
-        
+    private void on_indent(SimpleAction action, Variant? param) {
+        on_action(action, param);
+
         // Undo styling of blockquotes
         try {
-            WebKit.DOM.NodeList node_list = editor.get_dom_document().query_selector_all(
+            WebKit.DOM.NodeList node_list = this.editor.get_dom_document().query_selector_all(
                 "blockquote[style=\"margin: 0 0 0 40px; border: none; padding: 0px;\"]");
             for (int i = 0; i < node_list.length; ++i) {
                 WebKit.DOM.Element element = (WebKit.DOM.Element) node_list.item(i);
@@ -1883,8 +1891,7 @@ public class ComposerWidget : Gtk.EventBox {
     }
     
     private void on_insert_link() {
-        if (compose_as_html)
-            link_dialog("http://");
+        link_dialog("http://");
     }
     
     private static void on_link_clicked(WebKit.DOM.Element element, WebKit.DOM.Event event,
@@ -1974,13 +1981,13 @@ public class ComposerWidget : Gtk.EventBox {
         WebKit.NetworkRequest request, WebKit.WebNavigationAction navigation_action,
         WebKit.WebPolicyDecision policy_decision) {
         policy_decision.ignore();
-        if (compose_as_html)
+        if (this.actions.get_action_state(ACTION_COMPOSE_AS_HTML).get_boolean())
             link_dialog(request.uri);
         return true;
     }
     
     private void on_hovering_over_link(string? title, string? url) {
-        if (compose_as_html) {
+        if (this.actions.get_action_state(ACTION_COMPOSE_AS_HTML).get_boolean()) {
             message_overlay_label.label = url;
             hover_url = url;
             update_actions();
@@ -2032,10 +2039,14 @@ public class ComposerWidget : Gtk.EventBox {
         
         return base.key_press_event(event);
     }
-    
+
     private bool on_context_menu(Gtk.Widget default_menu, WebKit.HitTestResult hit_test_result,
         bool keyboard_triggered) {
+        string CONTEXT_ACTION_PREFIX_NAME = "cme";
+        string CONTEXT_ACTION_PREFIX = CONTEXT_ACTION_PREFIX_NAME + ".";
+
         Gtk.Menu context_menu = (Gtk.Menu) default_menu;
+        context_menu.insert_action_group (CONTEXT_ACTION_PREFIX_NAME, this.actions);
         Gtk.MenuItem? ignore_spelling = null, learn_spelling = null;
         bool suggestions = false;
         
@@ -2067,41 +2078,41 @@ public class ComposerWidget : Gtk.EventBox {
             context_menu.append(new Gtk.SeparatorMenuItem());
         
         // Undo
-        Gtk.MenuItem undo = new Gtk.ImageMenuItem();
-        undo.related_action = actions.get_action(ACTION_UNDO);
+        Gtk.MenuItem undo = new Gtk.ImageMenuItem.with_mnemonic (_("_Undo"));
+        undo.set_action_name (CONTEXT_ACTION_PREFIX + ACTION_UNDO);
         context_menu.append(undo);
         
         // Redo
-        Gtk.MenuItem redo = new Gtk.ImageMenuItem();
-        redo.related_action = actions.get_action(ACTION_REDO);
+        Gtk.MenuItem redo = new Gtk.ImageMenuItem.with_mnemonic (_("_Redo"));
+        redo.set_action_name (CONTEXT_ACTION_PREFIX + ACTION_REDO);
         context_menu.append(redo);
         
         context_menu.append(new Gtk.SeparatorMenuItem());
         
         // Cut
-        Gtk.MenuItem cut = new Gtk.ImageMenuItem();
-        cut.related_action = actions.get_action(ACTION_CUT);
+        Gtk.MenuItem cut = new Gtk.ImageMenuItem.with_mnemonic (_("Cu_t"));
+        cut.set_action_name (CONTEXT_ACTION_PREFIX + ACTION_CUT);
         context_menu.append(cut);
         
         // Copy
-        Gtk.MenuItem copy = new Gtk.ImageMenuItem();
-        copy.related_action = actions.get_action(ACTION_COPY);
+        Gtk.MenuItem copy = new Gtk.ImageMenuItem.with_mnemonic (_("_Copy"));
+        copy.set_action_name (CONTEXT_ACTION_PREFIX + ACTION_COPY);
         context_menu.append(copy);
         
         // Copy link.
-        Gtk.MenuItem copy_link = new Gtk.ImageMenuItem();
-        copy_link.related_action = actions.get_action(ACTION_COPY_LINK);
+        Gtk.MenuItem copy_link = new Gtk.ImageMenuItem.with_mnemonic (_("Copy _Link"));
+        copy_link.set_action_name (CONTEXT_ACTION_PREFIX + ACTION_COPY_LINK);
         context_menu.append(copy_link);
         
         // Paste
-        Gtk.MenuItem paste = new Gtk.ImageMenuItem();
-        paste.related_action = actions.get_action(ACTION_PASTE);
+        Gtk.MenuItem paste = new Gtk.ImageMenuItem.with_mnemonic (_("_Paste"));
+        paste.set_action_name (CONTEXT_ACTION_PREFIX + ACTION_PASTE);
         context_menu.append(paste);
         
         // Paste with formatting
-        if (compose_as_html) {
-            Gtk.MenuItem paste_format = new Gtk.ImageMenuItem();
-            paste_format.related_action = actions.get_action(ACTION_PASTE_FORMAT);
+        if (get_action(ACTION_COMPOSE_AS_HTML).state.get_boolean()) {
+            Gtk.MenuItem paste_format = new Gtk.ImageMenuItem.with_mnemonic (_("Paste _With Formatting"));
+            paste_format.set_action_name (CONTEXT_ACTION_PREFIX + ACTION_PASTE_WITH_FORMATTING);
             context_menu.append(paste_format);
         }
         
@@ -2113,9 +2124,7 @@ public class ComposerWidget : Gtk.EventBox {
         context_menu.append(select_all_item);
         
         context_menu.show_all();
-        
         update_actions();
-        
         return false;
     }
     
@@ -2182,75 +2191,76 @@ public class ComposerWidget : Gtk.EventBox {
         
         return false;
     }
+
+    /**
+     * Helper method, returns a composer action.
+     * @param action_name - The name of the action (as found in action_entries)
+     */
+    public SimpleAction? get_action(string action_name) {
+        return this.actions.lookup_action(action_name) as SimpleAction;
+    }
     
     private void update_actions() {
-        // Undo/redo.
-        actions.get_action(ACTION_UNDO).sensitive = editor.can_undo();
-        actions.get_action(ACTION_REDO).sensitive = editor.can_redo();
-        
-        // Clipboard.
-        actions.get_action(ACTION_CUT).sensitive = editor.can_cut_clipboard();
-        actions.get_action(ACTION_COPY).sensitive = editor.can_copy_clipboard();
-        actions.get_action(ACTION_COPY_LINK).sensitive = hover_url != null;
-        actions.get_action(ACTION_PASTE).sensitive = editor.can_paste_clipboard();
-        actions.get_action(ACTION_PASTE_FORMAT).sensitive = editor.can_paste_clipboard() && compose_as_html;
-        
-        // Style toggle buttons.
-        WebKit.DOM.DOMWindow window = editor.get_dom_document().get_default_view();
+        // Basic editor commands
+        get_action(ACTION_UNDO).set_enabled(this.editor.can_undo());
+        get_action(ACTION_REDO).set_enabled(this.editor.can_redo());
+        get_action(ACTION_CUT).set_enabled(this.editor.can_cut_clipboard());
+        get_action(ACTION_COPY).set_enabled(this.editor.can_copy_clipboard());
+        get_action(ACTION_COPY_LINK).set_enabled(hover_url != null);
+        get_action(ACTION_PASTE).set_enabled(this.editor.can_paste_clipboard());
+        get_action(ACTION_PASTE_WITH_FORMATTING).set_enabled(this.editor.can_paste_clipboard()
+            && get_action(ACTION_COMPOSE_AS_HTML).state.get_boolean());
+
+        // Style formatting actions.
+        WebKit.DOM.Document document = this.editor.get_dom_document();
+        WebKit.DOM.DOMWindow window = document.get_default_view();
         WebKit.DOM.DOMSelection? selection = window.get_selection();
         if (selection == null)
             return;
-        
-        actions.get_action(ACTION_REMOVE_FORMAT).sensitive = !selection.is_collapsed;
-        
+
+        get_action(ACTION_REMOVE_FORMAT).set_enabled(!selection.is_collapsed
+            && get_action(ACTION_COMPOSE_AS_HTML).state.get_boolean());
+
         WebKit.DOM.Element? active = selection.focus_node as WebKit.DOM.Element;
         if (active == null && selection.focus_node != null)
             active = selection.focus_node.get_parent_element();
-        
-        if (active != null && !action_flag) {
-            action_flag = true;
-            
+
+        if (active != null) {
             WebKit.DOM.CSSStyleDeclaration styles = window.get_computed_style(active, "");
-            
-            ((Gtk.ToggleAction) actions.get_action(ACTION_BOLD)).active = 
-                styles.get_property_value("font-weight") == "bold";
-            
-            ((Gtk.ToggleAction) actions.get_action(ACTION_ITALIC)).active = 
-                styles.get_property_value("font-style") == "italic";
-            
-            ((Gtk.ToggleAction) actions.get_action(ACTION_UNDERLINE)).active = 
-                styles.get_property_value("text-decoration") == "underline";
-            
-            ((Gtk.ToggleAction) actions.get_action(ACTION_STRIKETHROUGH)).active = 
-                styles.get_property_value("text-decoration") == "line-through";
-            
+
+            this.actions.change_action_state(ACTION_BOLD, document.query_command_state("bold"));
+            this.actions.change_action_state(ACTION_ITALIC,
+                document.query_command_state("italic"));
+            this.actions.change_action_state(ACTION_UNDERLINE,
+                document.query_command_state("underline"));
+            this.actions.change_action_state(ACTION_STRIKETHROUGH,
+                document.query_command_state("strikethrough"));
+
             // Font family.
             string font_name = styles.get_property_value("font-family").down();
-            if (font_name.contains("sans-serif") ||
+            if (font_name.contains("sans") ||
                 font_name.contains("arial") ||
                 font_name.contains("trebuchet") ||
                 font_name.contains("helvetica"))
-                font_sans.activate();
+                this.actions.change_action_state(ACTION_FONT_FAMILY, "sans");
             else if (font_name.contains("serif") ||
                 font_name.contains("georgia") ||
                 font_name.contains("times"))
-                font_serif.activate();
+                this.actions.change_action_state(ACTION_FONT_FAMILY, "serif");
             else if (font_name.contains("monospace") ||
                 font_name.contains("courier") ||
                 font_name.contains("console"))
-                font_monospace.activate();
-            
+                this.actions.change_action_state(ACTION_FONT_FAMILY, "monospace");
+
             // Font size.
             int font_size;
             styles.get_property_value("font-size").scanf("%dpx", out font_size);
             if (font_size < 11)
-                font_small.activate();
+                this.actions.change_action_state(ACTION_FONT_SIZE, "small");
             else if (font_size > 20)
-                font_large.activate();
+                this.actions.change_action_state(ACTION_FONT_SIZE, "large");
             else
-                font_medium.activate();
-            
-            action_flag = false;
+                this.actions.change_action_state(ACTION_FONT_SIZE, "medium");
         }
     }
     
