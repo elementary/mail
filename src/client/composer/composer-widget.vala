@@ -111,27 +111,27 @@ public class ComposerWidget : Gtk.EventBox {
         {ACTION_ADD_ORIGINAL_ATTACHMENTS, on_pending_attachments                                               },
     };
 
-    public static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string>();
+    public static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
     static construct {
-        action_accelerators.set(ACTION_UNDO, "<Ctrl>z");
-        action_accelerators.set(ACTION_REDO, "<Ctrl><Shift>z");
-        action_accelerators.set(ACTION_CUT, "<Ctrl>x");
-        action_accelerators.set(ACTION_COPY, "<Ctrl>c");
-        action_accelerators.set(ACTION_PASTE, "<Ctrl>v");
-        action_accelerators.set(ACTION_PASTE_WITH_FORMATTING, "<Ctrl><Shift>v");
-        action_accelerators.set(ACTION_INSERT_LINK, "<Ctrl>l");
-        action_accelerators.set(ACTION_INDENT, "<Ctrl>bracketright");
-        action_accelerators.set(ACTION_OUTDENT, "<Ctrl>bracketleft");
-        action_accelerators.set(ACTION_REMOVE_FORMAT, "<Ctrl>space");
-        action_accelerators.set(ACTION_BOLD, "<Ctrl>b");
-        action_accelerators.set(ACTION_ITALIC, "<Ctrl>i");
-        action_accelerators.set(ACTION_UNDERLINE, "<Ctrl>u");
-        action_accelerators.set(ACTION_STRIKETHROUGH, "<Ctrl>k");
-        action_accelerators.set(ACTION_CLOSE, "<Ctrl>w");
-        action_accelerators.set(ACTION_CLOSE, "Escape");
-        action_accelerators.set(ACTION_ADD_ATTACHMENT, "<Ctrl>t");
-        action_accelerators.set(ACTION_DETACH, "<Ctrl>d");
-        action_accelerators.set(ACTION_CLOSE, "Escape");
+        action_accelerators.set (ACTION_UNDO, "<Ctrl>z");
+        action_accelerators.set (ACTION_REDO, "<Ctrl><Shift>z");
+        action_accelerators.set (ACTION_CUT, "<Ctrl>x");
+        action_accelerators.set (ACTION_COPY, "<Ctrl>c");
+        action_accelerators.set (ACTION_PASTE, "<Ctrl>v");
+        action_accelerators.set (ACTION_PASTE_WITH_FORMATTING, "<Ctrl><Shift>v");
+        action_accelerators.set (ACTION_INSERT_LINK, "<Ctrl>l");
+        action_accelerators.set (ACTION_INDENT, "<Ctrl>bracketright");
+        action_accelerators.set (ACTION_OUTDENT, "<Ctrl>bracketleft");
+        action_accelerators.set (ACTION_REMOVE_FORMAT, "<Ctrl>space");
+        action_accelerators.set (ACTION_BOLD, "<Ctrl>b");
+        action_accelerators.set (ACTION_ITALIC, "<Ctrl>i");
+        action_accelerators.set (ACTION_UNDERLINE, "<Ctrl>u");
+        action_accelerators.set (ACTION_STRIKETHROUGH, "<Ctrl>k");
+        action_accelerators.set (ACTION_CLOSE, "<Ctrl>w");
+        action_accelerators.set (ACTION_CLOSE, "Escape");
+        action_accelerators.set (ACTION_ADD_ATTACHMENT, "<Ctrl>t");
+        action_accelerators.set (ACTION_DETACH, "<Ctrl>d");
+        action_accelerators.set (ACTION_CLOSE, "Escape");
     }
     
     private const string DRAFT_SAVED_TEXT = _("Saved");
@@ -417,7 +417,7 @@ public class ComposerWidget : Gtk.EventBox {
             });
         Gtk.Overlay message_overlay = builder.get_object("message overlay") as Gtk.Overlay;
         
-        header = new ComposerHeaderbar();
+        header = new ComposerHeaderbar ();
         header.hexpand = true;
         embed_header();
         bind_property("state", header, "state", BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL);
@@ -433,7 +433,7 @@ public class ComposerWidget : Gtk.EventBox {
         bcc_entry.changed.connect(validate_send_button);
         reply_to_entry.changed.connect(validate_send_button);
 
-        composer_toolbar = new ComposerToolbar(menu);
+        composer_toolbar = new ComposerToolbar (menu);
         Gtk.Grid toolbar_area = (Gtk.Grid) builder.get_object("toolbar area");
         toolbar_area.add(composer_toolbar);
         bind_property("toolbar-text", composer_toolbar, "label-text", BindingFlags.SYNC_CREATE);
@@ -504,8 +504,7 @@ public class ComposerWidget : Gtk.EventBox {
         editor = new StylishWebView();
         edit_fixer = new WebViewEditFixer(editor);
 
-        // Add actions once every element has been initialized and added
-        initialize_actions();
+        initialize_actions ();
 
         editor.load_finished.connect(on_load_finished);
         editor.hovering_over_link.connect(on_hovering_over_link);
@@ -800,10 +799,10 @@ public class ComposerWidget : Gtk.EventBox {
 
         bind_event(editor,"a", "click", (Callback) on_link_clicked, this);
         update_actions();
-        this.actions.change_action_state(ACTION_SHOW_EXTENDED, false);
-        this.actions.change_action_state(ACTION_COMPOSE_AS_HTML,
-            GearyApplication.instance.config.compose_as_html);
-        
+        this.actions.change_action_state (ACTION_SHOW_EXTENDED, false);
+        this.actions.change_action_state (ACTION_COMPOSE_AS_HTML,
+                                          GearyApplication.instance.config.compose_as_html);
+
         if (can_delete_quote)
             editor.selection_changed.connect(() => { can_delete_quote = false; });
     }
@@ -917,8 +916,9 @@ public class ComposerWidget : Gtk.EventBox {
         
         email.attachment_files.add_all(attachment_files);
         
-        if (actions.get_action_state(ACTION_COMPOSE_AS_HTML).get_boolean() || only_html)
-            email.body_html = get_html();
+        if (actions.get_action_state(ACTION_COMPOSE_AS_HTML).get_boolean () || only_html) {
+            email.body_html = get_html ();
+        }
         if (!only_html)
             email.body_text = get_text();
 
@@ -1462,7 +1462,7 @@ public class ComposerWidget : Gtk.EventBox {
         container.close_container();
     }
     
-    private void on_add_attachment() {
+    private void on_add_attachment () {
         AttachmentDialog dialog = null;
         do {
             // Transient parent of AttachmentDialog is this ComposerWindow
@@ -1475,8 +1475,8 @@ public class ComposerWidget : Gtk.EventBox {
         } while (!dialog.is_finished(add_attachment));
     }
     
-    private void on_pending_attachments() {
-        add_attachments(pending_attachments, false);
+    private void on_pending_attachments () {
+        add_attachments (pending_attachments, false);
     }
     
     private void check_pending_attachments() {
@@ -1624,18 +1624,19 @@ public class ComposerWidget : Gtk.EventBox {
         reset_draft_timer();
     }
 
-    private void on_justify(SimpleAction action, Variant? param) {
-        this.editor.get_dom_document().exec_command("justify" + param.get_string(), false, "");
+    private void on_justify (SimpleAction action, Variant? param) {
+        this.editor.get_dom_document ().exec_command ("justify" + param.get_string (), false, "");
     }
     
-    private void on_action(SimpleAction action, Variant? param) {
-        if (!action.enabled)
+    private void on_action (SimpleAction action, Variant? param) {
+        if (!action.enabled) {
             return;
+        }
 
         // We need the unprefixed name to send as a command to the editor
-        string[] prefixed_action_name = action.get_name().split(".");
+        string[] prefixed_action_name = action.get_name ().split(".");
         string action_name = prefixed_action_name[prefixed_action_name.length - 1];
-        this.editor.get_dom_document().exec_command(action_name, false, "");
+        this.editor.get_dom_document ().exec_command (action_name, false, "");
     }
     
     private void on_cut() {
@@ -1745,13 +1746,13 @@ public class ComposerWidget : Gtk.EventBox {
     }
 
     // Use this for toggle actions, and use the change-state signal to respond to these state changes
-    private void on_toggle_action(SimpleAction? action, Variant? param) {
-        action.change_state(!action.state.get_boolean());
+    private void on_toggle_action (SimpleAction? action, Variant? param) {
+        action.change_state (!action.state.get_boolean ());
     }
 
-    private void on_compose_as_html_toggled(SimpleAction? action, Variant? new_state) {
-        bool compose_as_html = new_state.get_boolean();
-        action.set_state(compose_as_html);
+    private void on_compose_as_html_toggled (SimpleAction? action, Variant? new_state) {
+        bool compose_as_html = new_state.get_boolean ();
+        action.set_state (compose_as_html);
 
         WebKit.DOM.DOMTokenList body_classes = editor.get_dom_document().body.get_class_list();
         if (!compose_as_html) {
@@ -1775,9 +1776,9 @@ public class ComposerWidget : Gtk.EventBox {
     }
 
 
-    private void on_show_extended_toggled(SimpleAction? action, Variant? new_state) {
-        bool show_extended = new_state.get_boolean();
-        action.set_state(show_extended);
+    private void on_show_extended_toggled (SimpleAction? action, Variant? new_state) {
+        bool show_extended = new_state.get_boolean ();
+        action.set_state (show_extended);
         if (!show_extended) {
             bcc_label.visible = bcc_entry.visible = reply_to_label.visible = reply_to_entry.visible = false;
         } else {
@@ -1794,7 +1795,7 @@ public class ComposerWidget : Gtk.EventBox {
     private void build_plaintext_menu() {
         GtkUtil.clear_menu(menu);
         
-        menu.append(html_item);
+        menu.append (html_item);
 
         menu.append(new Gtk.SeparatorMenuItem());
         menu.append(extended_item);
@@ -1824,47 +1825,48 @@ public class ComposerWidget : Gtk.EventBox {
         menu.show_all(); // Call this or only menu items associated with actions will be displayed.
     }
     
-    private void on_font_family(SimpleAction action, Variant? param) {
-        this.editor.get_dom_document().exec_command("fontname", false, param.get_string());
-        action.set_state(param.get_string());
+    private void on_font_family (SimpleAction action, Variant? param) {
+        this.editor.get_dom_document ().exec_command ("fontname", false, param.get_string ());
+        action.set_state (param.get_string ());
     }
     
-    private void on_font_size(SimpleAction action, Variant? param) {
+    private void on_font_size (SimpleAction action, Variant? param) {
         string size = "";
-        if (param.get_string() == "small")
+        if (param.get_string () == "small") {
             size = "1";
-        else if (param.get_string() == "medium")
+        } else if (param.get_string () == "medium") {
             size = "3";
-        else // Large
+        } else { // Large
             size = "7";
+        }
 
-        this.editor.get_dom_document().exec_command("fontsize", false, size);
-        action.set_state(param.get_string());
+        this.editor.get_dom_document ().exec_command ("fontsize", false, size);
+        action.set_state (param.get_string ());
     }
     
-    private void on_select_color() {
-        Gtk.ColorChooserDialog dialog = new Gtk.ColorChooserDialog(_("Select Color"),
-            container.top_window);
-        if (dialog.run() == Gtk.ResponseType.OK)
-            editor.get_dom_document().exec_command("forecolor", false, dialog.get_rgba().to_string());
+    private void on_select_color () {
+        Gtk.ColorChooserDialog dialog = new Gtk.ColorChooserDialog (_("Select Color"), container.top_window);
+        if (dialog.run () == Gtk.ResponseType.OK) {
+            editor.get_dom_document ().exec_command ("forecolor", false, dialog.get_rgba ().to_string ());
+        }
 
-        dialog.destroy();
+        dialog.destroy ();
     }
     
-    private void on_indent(SimpleAction action, Variant? param) {
-        on_action(action, param);
+    private void on_indent (SimpleAction action, Variant? param) {
+        on_action (action, param);
 
         // Undo styling of blockquotes
         try {
-            WebKit.DOM.NodeList node_list = this.editor.get_dom_document().query_selector_all(
+            WebKit.DOM.NodeList node_list = editor.get_dom_document ().query_selector_all (
                 "blockquote[style=\"margin: 0 0 0 40px; border: none; padding: 0px;\"]");
             for (int i = 0; i < node_list.length; ++i) {
-                WebKit.DOM.Element element = (WebKit.DOM.Element) node_list.item(i);
-                element.remove_attribute("style");
-                element.set_attribute("type", "cite");
+                WebKit.DOM.Element element = (WebKit.DOM.Element) node_list.item (i);
+                element.remove_attribute ("style");
+                element.set_attribute ("type", "cite");
             }
         } catch (Error error) {
-            debug("Error removing blockquote style: %s", error.message);
+            debug ("Error removing blockquote style: %s", error.message);
         }
     }
     
@@ -1883,8 +1885,8 @@ public class ComposerWidget : Gtk.EventBox {
         }
     }
     
-    private void on_insert_link() {
-        link_dialog("http://");
+    private void on_insert_link () {
+        link_dialog ("http://");
     }
     
     private static void on_link_clicked(WebKit.DOM.Element element, WebKit.DOM.Event event,
@@ -1970,20 +1972,24 @@ public class ComposerWidget : Gtk.EventBox {
             .get_element_by_id(BODY_ID));
     }
     
-    private bool on_navigation_policy_decision_requested(WebKit.WebFrame frame,
-        WebKit.NetworkRequest request, WebKit.WebNavigationAction navigation_action,
-        WebKit.WebPolicyDecision policy_decision) {
+    private bool on_navigation_policy_decision_requested (WebKit.WebFrame frame,
+                                                          WebKit.NetworkRequest request, 
+                                                          WebKit.WebNavigationAction navigation_action,
+                                                          WebKit.WebPolicyDecision policy_decision) {
         policy_decision.ignore();
-        if (this.actions.get_action_state(ACTION_COMPOSE_AS_HTML).get_boolean())
+
+        if (actions.get_action_state (ACTION_COMPOSE_AS_HTML).get_boolean ()) {
             link_dialog(request.uri);
+        }
+
         return true;
     }
     
-    private void on_hovering_over_link(string? title, string? url) {
-        if (this.actions.get_action_state(ACTION_COMPOSE_AS_HTML).get_boolean()) {
+    private void on_hovering_over_link (string? title, string? url) {
+        if (this.actions.get_action_state (ACTION_COMPOSE_AS_HTML).get_boolean ()) {
             message_overlay_label.label = url;
             hover_url = url;
-            update_actions();
+            update_actions ();
         }
     }
     
@@ -2103,7 +2109,7 @@ public class ComposerWidget : Gtk.EventBox {
         context_menu.append(paste);
         
         // Paste with formatting
-        if (get_action(ACTION_COMPOSE_AS_HTML).state.get_boolean()) {
+        if (get_action (ACTION_COMPOSE_AS_HTML).state.get_boolean ()) {
             Gtk.MenuItem paste_format = new Gtk.ImageMenuItem.with_mnemonic (_("Paste _With Formatting"));
             paste_format.set_action_name (CONTEXT_ACTION_PREFIX + ACTION_PASTE_WITH_FORMATTING);
             context_menu.append(paste_format);
@@ -2189,30 +2195,30 @@ public class ComposerWidget : Gtk.EventBox {
      * Helper method, returns a composer action.
      * @param action_name - The name of the action (as found in action_entries)
      */
-    public SimpleAction? get_action(string action_name) {
-        return this.actions.lookup_action(action_name) as SimpleAction;
+    public SimpleAction? get_action (string action_name) {
+        return this.actions.lookup_action (action_name) as SimpleAction;
     }
     
     private void update_actions() {
         // Basic editor commands
-        get_action(ACTION_UNDO).set_enabled(this.editor.can_undo());
-        get_action(ACTION_REDO).set_enabled(this.editor.can_redo());
-        get_action(ACTION_CUT).set_enabled(this.editor.can_cut_clipboard());
-        get_action(ACTION_COPY).set_enabled(this.editor.can_copy_clipboard());
-        get_action(ACTION_COPY_LINK).set_enabled(hover_url != null);
-        get_action(ACTION_PASTE).set_enabled(this.editor.can_paste_clipboard());
-        get_action(ACTION_PASTE_WITH_FORMATTING).set_enabled(this.editor.can_paste_clipboard()
-            && get_action(ACTION_COMPOSE_AS_HTML).state.get_boolean());
+        get_action (ACTION_UNDO).set_enabled (this.editor.can_undo ());
+        get_action (ACTION_REDO).set_enabled (this.editor.can_redo ());
+        get_action (ACTION_CUT).set_enabled (this.editor.can_cut_clipboard ());
+        get_action (ACTION_COPY).set_enabled (this.editor.can_copy_clipboard ());
+        get_action (ACTION_COPY_LINK).set_enabled (hover_url != null);
+        get_action (ACTION_PASTE).set_enabled (this.editor.can_paste_clipboard ());
+        get_action (ACTION_PASTE_WITH_FORMATTING).set_enabled (this.editor.can_paste_clipboard ()
+            && get_action (ACTION_COMPOSE_AS_HTML).state.get_boolean ());
 
         // Style formatting actions.
-        WebKit.DOM.Document document = this.editor.get_dom_document();
-        WebKit.DOM.DOMWindow window = document.get_default_view();
-        WebKit.DOM.DOMSelection? selection = window.get_selection();
+        WebKit.DOM.Document document = this.editor.get_dom_document ();
+        WebKit.DOM.DOMWindow window = document.get_default_view ();
+        WebKit.DOM.DOMSelection? selection = window.get_selection ();
         if (selection == null)
             return;
 
-        get_action(ACTION_REMOVE_FORMAT).set_enabled(!selection.is_collapsed
-            && get_action(ACTION_COMPOSE_AS_HTML).state.get_boolean());
+        get_action (ACTION_REMOVE_FORMAT).set_enabled (!selection.is_collapsed
+            && get_action (ACTION_COMPOSE_AS_HTML).state.get_boolean ());
 
         WebKit.DOM.Element? active = selection.focus_node as WebKit.DOM.Element;
         if (active == null && selection.focus_node != null)
@@ -2221,13 +2227,10 @@ public class ComposerWidget : Gtk.EventBox {
         if (active != null) {
             WebKit.DOM.CSSStyleDeclaration styles = window.get_computed_style(active, "");
 
-            this.actions.change_action_state(ACTION_BOLD, document.query_command_state("bold"));
-            this.actions.change_action_state(ACTION_ITALIC,
-                document.query_command_state("italic"));
-            this.actions.change_action_state(ACTION_UNDERLINE,
-                document.query_command_state("underline"));
-            this.actions.change_action_state(ACTION_STRIKETHROUGH,
-                document.query_command_state("strikethrough"));
+            actions.change_action_state (ACTION_BOLD, document.query_command_state ("bold"));
+            actions.change_action_state (ACTION_ITALIC, document.query_command_state ("italic"));
+            actions.change_action_state (ACTION_UNDERLINE, document.query_command_state ("underline"));
+            actions.change_action_state (ACTION_STRIKETHROUGH, document.query_command_state ("strikethrough"));
 
             // Font family.
             string font_name = styles.get_property_value("font-family").down();
@@ -2235,25 +2238,25 @@ public class ComposerWidget : Gtk.EventBox {
                 font_name.contains("arial") ||
                 font_name.contains("trebuchet") ||
                 font_name.contains("helvetica"))
-                this.actions.change_action_state(ACTION_FONT_FAMILY, "sans");
+                actions.change_action_state (ACTION_FONT_FAMILY, "sans");
             else if (font_name.contains("serif") ||
                 font_name.contains("georgia") ||
                 font_name.contains("times"))
-                this.actions.change_action_state(ACTION_FONT_FAMILY, "serif");
+                actions.change_action_state (ACTION_FONT_FAMILY, "serif");
             else if (font_name.contains("monospace") ||
                 font_name.contains("courier") ||
                 font_name.contains("console"))
-                this.actions.change_action_state(ACTION_FONT_FAMILY, "monospace");
+                actions.change_action_state (ACTION_FONT_FAMILY, "monospace");
 
             // Font size.
             int font_size;
             styles.get_property_value("font-size").scanf("%dpx", out font_size);
             if (font_size < 11)
-                this.actions.change_action_state(ACTION_FONT_SIZE, "small");
+                actions.change_action_state (ACTION_FONT_SIZE, "small");
             else if (font_size > 20)
-                this.actions.change_action_state(ACTION_FONT_SIZE, "large");
+                actions.change_action_state (ACTION_FONT_SIZE, "large");
             else
-                this.actions.change_action_state(ACTION_FONT_SIZE, "medium");
+                actions.change_action_state (ACTION_FONT_SIZE, "medium");
         }
     }
     
