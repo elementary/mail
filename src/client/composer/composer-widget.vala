@@ -39,11 +39,7 @@ public class ComposerWidget : Gtk.EventBox {
     private SimpleActionGroup actions = new SimpleActionGroup();
 
     private const string ACTION_GROUP_PREFIX_NAME = "cmp";
-    public static string ACTION_GROUP_PREFIX {
-        get {
-            return ACTION_GROUP_PREFIX_NAME + ".";
-        }
-    }
+    public static string ACTION_GROUP_PREFIX = ACTION_GROUP_PREFIX_NAME + ".";
 
     private const string ACTION_UNDO = "undo";
     private const string ACTION_REDO = "redo";

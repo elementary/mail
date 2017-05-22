@@ -21,11 +21,7 @@
 
 public class ComposerHeaderbar : Gtk.HeaderBar {
     public const string ACTION_GROUP_PREFIX_NAME = "cmh";
-    private static string ACTION_GROUP_PREFIX {
-        get {
-            return ACTION_GROUP_PREFIX_NAME + ".";
-        }
-    }
+    private static string ACTION_GROUP_PREFIX = ACTION_GROUP_PREFIX_NAME + ".";
 
     public ComposerWidget.ComposerState state { get; set; }
     public bool show_pending_attachments { get; set; default = false; }
