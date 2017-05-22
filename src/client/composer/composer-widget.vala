@@ -1629,7 +1629,6 @@ public class ComposerWidget : Gtk.EventBox {
     }
     
     private void on_action(SimpleAction action, Variant? param) {
-        warning ("action!");
         if (!action.enabled)
             return;
 
@@ -1831,8 +1830,6 @@ public class ComposerWidget : Gtk.EventBox {
     }
     
     private void on_font_size(SimpleAction action, Variant? param) {
-        warning ((param == null).to_string ());
-        warning (param.get_string ());
         string size = "";
         if (param.get_string() == "small")
             size = "1";
