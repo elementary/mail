@@ -1757,19 +1757,21 @@ public class ComposerWidget : Gtk.EventBox {
         WebKit.DOM.DOMTokenList body_classes = editor.get_dom_document().body.get_class_list();
         toggle_toolbar_buttons (compose_as_html);
         build_menu (compose_as_html);
-        if (!compose_as_html) {
-            try {
+
+        try {
+            if (!compose_as_html) {
                 body_classes.add("plain");
-            } catch (Error error) {
-                debug("Error setting composer style: %s", error.message);
-            }
-        } else {
-            try {
+            } else {
                 body_classes.remove("plain");
-            } catch (Error error) {
-                debug("Error setting composer style: %s", error.message);
             }
+        } catch (Error error) {
+            debug("Error setting composer style: %s", error.message);
         }
+
+        foreach (string html_action in html_actions) {
+            get_action (html_action).set_enabled (compose_as_html);
+        }
+
         GearyApplication.instance.config.compose_as_html = compose_as_html;
     }
 
