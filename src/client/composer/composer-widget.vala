@@ -1755,17 +1755,15 @@ public class ComposerWidget : Gtk.EventBox {
         action.set_state (compose_as_html);
 
         WebKit.DOM.DOMTokenList body_classes = editor.get_dom_document().body.get_class_list();
+        toggle_toolbar_buttons (compose_as_html);
+        build_menu (compose_as_html);
         if (!compose_as_html) {
-            toggle_toolbar_buttons(false);
-            build_plaintext_menu();
             try {
                 body_classes.add("plain");
             } catch (Error error) {
                 debug("Error setting composer style: %s", error.message);
             }
         } else {
-            toggle_toolbar_buttons(true);
-            build_html_menu();
             try {
                 body_classes.remove("plain");
             } catch (Error error) {
@@ -1791,40 +1789,31 @@ public class ComposerWidget : Gtk.EventBox {
     private void toggle_toolbar_buttons(bool show) {
         composer_toolbar.set_html_buttons_visible (show);
     }
-    
-    private void build_plaintext_menu() {
+
+    private void build_menu (bool html) {
         GtkUtil.clear_menu(menu);
-        
+        if (html) {
+            menu.append(font_sans);
+            menu.append(font_serif);
+            menu.append(font_monospace);
+            menu.append(new Gtk.SeparatorMenuItem());
+
+            menu.append(font_small);
+            menu.append(font_medium);
+            menu.append(font_large);
+            menu.append(new Gtk.SeparatorMenuItem());
+
+            menu.append(color_item);
+            menu.append(new Gtk.SeparatorMenuItem());
+        }
+
         menu.append (html_item);
 
         menu.append(new Gtk.SeparatorMenuItem());
         menu.append(extended_item);
         menu.show_all();
     }
-    
-    private void build_html_menu() {
-        GtkUtil.clear_menu(menu);
-        
-        menu.append(font_sans);
-        menu.append(font_serif);
-        menu.append(font_monospace);
-        menu.append(new Gtk.SeparatorMenuItem());
-        
-        menu.append(font_small);
-        menu.append(font_medium);
-        menu.append(font_large);
-        menu.append(new Gtk.SeparatorMenuItem());
-        
-        menu.append(color_item);
-        menu.append(new Gtk.SeparatorMenuItem());
-        
-        menu.append(html_item);
 
-        menu.append(new Gtk.SeparatorMenuItem());
-        menu.append(extended_item);
-        menu.show_all(); // Call this or only menu items associated with actions will be displayed.
-    }
-    
     private void on_font_family (SimpleAction action, Variant? param) {
         this.editor.get_dom_document ().exec_command ("fontname", false, param.get_string ());
         action.set_state (param.get_string ());
