@@ -20,6 +20,8 @@
  */
 
 public class ComposerHeaderbar : Gtk.HeaderBar {
+    public const string ACTION_GROUP_PREFIX_NAME = "cmh";
+    private static string ACTION_GROUP_PREFIX = ACTION_GROUP_PREFIX_NAME + ".";
 
     public ComposerWidget.ComposerState state { get; set; }
     public bool show_pending_attachments { get; set; default = false; }
@@ -28,30 +30,30 @@ public class ComposerHeaderbar : Gtk.HeaderBar {
     private Gtk.Button recipients;
     private Gtk.Label recipients_label;
 
-    public ComposerHeaderbar(Gtk.ActionGroup action_group) {
+    public ComposerHeaderbar() {
 
         var detach = new Gtk.Button.from_icon_name ("window-pop-out-symbolic", Gtk.IconSize.MENU);
-        detach.related_action = action_group.get_action (ComposerWidget.ACTION_DETACH);
+        detach.set_action_name (ACTION_GROUP_PREFIX + ComposerWidget.ACTION_DETACH);
         detach.margin_end = 6;
         detach.tooltip_text = _("Detach (Ctrl+D)");
 
-        var discard = new Gtk.Button.from_icon_name ("edit-delete-symolic", Gtk.IconSize.MENU);
-        discard.related_action = action_group.get_action (ComposerWidget.ACTION_CLOSE_DISCARD);
+        var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
+        discard.set_action_name (ACTION_GROUP_PREFIX + ComposerWidget.ACTION_CLOSE_AND_DISCARD);
         discard.tooltip_text = _("Delete draft");
 
         var send_button = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
-        send_button.related_action = action_group.get_action (ComposerWidget.ACTION_SEND);
+        send_button.set_action_name (ACTION_GROUP_PREFIX + ComposerWidget.ACTION_SEND);
         send_button.always_show_image = true;
         send_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         send_button.label = _("Send");
         send_button.tooltip_text = _("Send (Ctrl+Enter)");
 
         var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
-        attach.related_action = action_group.get_action (ComposerWidget.ACTION_ADD_ATTACHMENT);
+        attach.set_action_name (ACTION_GROUP_PREFIX + ComposerWidget.ACTION_ADD_ATTACHMENT);
         attach.tooltip_text = _("Attach file");
 
         var attach_original = new Gtk.Button.from_icon_name ("edit-copy-symbolic", Gtk.IconSize.MENU);
-        attach_original.related_action = action_group.get_action (ComposerWidget.ACTION_ADD_ORIGINAL_ATTACHMENTS);
+        attach_original.set_action_name (ACTION_GROUP_PREFIX + ComposerWidget.ACTION_ADD_ORIGINAL_ATTACHMENTS);
         attach_original.tooltip_text = _("Include original attachments");
 
         recipients = new Gtk.Button();
