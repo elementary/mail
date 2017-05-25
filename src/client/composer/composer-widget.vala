@@ -264,7 +264,7 @@ public class ComposerWidget : Gtk.EventBox {
     public bool blank {
         get {
             return to_entry.empty && cc_entry.empty && bcc_entry.empty && reply_to_entry.empty &&
-                subject_entry.buffer.length == 0 && !editor.can_undo() && attached_files.size == 0;
+                subject_entry.buffer.length == 0 && !editor.can_undo() && attachment_files.size == 0;
         }
     }
     
@@ -324,7 +324,7 @@ public class ComposerWidget : Gtk.EventBox {
 
     private Gee.List<Geary.Attachment>? pending_attachments = null;
     private AttachPending pending_include = AttachPending.INLINE_ONLY;
-    private Gee.Set<File> attached_files = new Gee.HashSet<File>(Geary.Files.nullable_hash,
+    private Gee.Set<File> attachment_files = new Gee.HashSet<File>(Geary.Files.nullable_hash,
         Geary.Files.nullable_equal);
     private Gee.Set<File> inline_files = new Gee.HashSet<File>(Geary.Files.nullable_hash,
         Geary.Files.nullable_equal);
@@ -952,7 +952,7 @@ public class ComposerWidget : Gtk.EventBox {
             email.body_html = get_html ();
         }
 
-        email.attached_files.add_all (attached_files);
+        email.attached_files.add_all (attachment_files);
         email.inline_files.add_all (inline_files);
         email.cid_files.set_all (cid_files);
 
@@ -1263,7 +1263,7 @@ public class ComposerWidget : Gtk.EventBox {
     private bool should_send() {
         bool has_subject = !Geary.String.is_empty(subject.strip());
         bool has_body = !Geary.String.is_empty(get_html());
-        bool has_attachment = attached_files.size > 0;
+        bool has_attachment = attachment_files.size > 0;
         bool has_body_or_attachment = has_body || has_attachment;
         
         string? confirmation = null;
@@ -1552,9 +1552,7 @@ public class ComposerWidget : Gtk.EventBox {
         }
         dialog.destroy();
     }
-    
-    // Both adds pending attachments and updates the UI if there are
-    // any that were left out, that could have been added manually.
+
     private void update_pending_attachments(AttachPending include, bool do_add) {
         bool manual_enabled = false;
         if (this.pending_attachments != null) {
@@ -1564,13 +1562,6 @@ public class ComposerWidget : Gtk.EventBox {
                     part.content_disposition.disposition_type;
                     File file = part.file;
                     if (type == Geary.Mime.DispositionType.INLINE) {
-                        // We only care about the Content Ids of
-                        // inline parts, since we need to display them
-                        // in the editor web view. However if an
-                        // inline part does not have a CID, it is not
-                        // possible to be referenced from an IMG SRC
-                        // using a cid: URL anyway, so treat it as an
-                        // attachment instead.
                         if (part.content_id != null) {
                             this.cid_files[part.content_id] = file;
                         } else {
@@ -1580,17 +1571,12 @@ public class ComposerWidget : Gtk.EventBox {
 
                     if (type == Geary.Mime.DispositionType.INLINE ||
                         include == AttachPending.ALL) {
-                        // The pending attachment should be added
-                        // automatically, so add it if asked to and it
-                        // hasn't already been added
                         if (do_add &&
-                            !(file in this.attached_files) &&
+                            !(file in this.attachment_files) &&
                             !(file in this.inline_files)) {
                             add_attachment(file, type);
                         }
                     } else {
-                        // The pending attachment should only be added
-                        // manually
                         manual_enabled = true;
                     }
                 } catch (Error err) {
@@ -1644,7 +1630,7 @@ public class ComposerWidget : Gtk.EventBox {
         }
 
         if (disposition != Geary.Mime.DispositionType.INLINE) {
-            if (!this.attached_files.add(target)) {
+            if (!this.attachment_files.add(target)) {
                 throw new AttachmentError.DUPLICATE(
                     _("“%s” already attached for delivery.").printf(target.get_path())
                 );
@@ -1673,7 +1659,7 @@ public class ComposerWidget : Gtk.EventBox {
     }
     
     private void remove_attachment(File file, Gtk.Box box) {
-        if (!attached_files.remove(file))
+        if (!attachment_files.remove(file))
             return;
         
         foreach (weak Gtk.Widget child in attachments_box.get_children()) {
@@ -1687,10 +1673,11 @@ public class ComposerWidget : Gtk.EventBox {
     }
     
     private void show_attachments() {
-        if (this.attached_files.size > 0 )
+        if (this.attachment_files.size > 0 ) {
             attachments_box.show_all();
-        else
+        } else {
             attachments_box.hide();
+        }
 
         update_pending_attachments(this.pending_include, true);
     }
