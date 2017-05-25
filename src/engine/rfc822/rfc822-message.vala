@@ -142,56 +142,121 @@ public class Geary.RFC822.Message : BaseObject {
             message.set_header(HEADER_MAILER, email.mailer);
         }
 
-        // Body: text format (optional)
-        GMime.Part? body_text = null;
-        if (email.body_text != null) {
-            GMime.StreamMem stream = new GMime.StreamMem.with_buffer(email.body_text.data);
-            GMime.DataWrapper content = new GMime.DataWrapper.with_stream(stream,
-                GMime.ContentEncoding.DEFAULT);
-            
-            body_text = new GMime.Part();
-            body_text.set_content_type(new GMime.ContentType.from_string("text/plain; charset=utf-8; format=flowed"));
-            body_text.set_content_object(content);
-            body_text.set_content_encoding(Geary.RFC822.Utils.get_best_content_encoding(stream,
-                GMime.EncodingConstraint.7BIT));
-        }
-        
-        // Body: HTML format (also optional)
-        GMime.Part? body_html = null;
-        if (email.body_html != null) {
-            GMime.StreamMem stream = new GMime.StreamMem.with_buffer(email.body_html.data);
-            GMime.DataWrapper content = new GMime.DataWrapper.with_stream(stream,
-                GMime.ContentEncoding.DEFAULT);
-            
-            body_html = new GMime.Part();
-            body_html.set_content_type(new GMime.ContentType.from_string("text/html; charset=utf-8"));
-            body_html.set_content_object(content);
-            body_html.set_content_encoding(Geary.RFC822.Utils.get_best_content_encoding(stream,
-                GMime.EncodingConstraint.7BIT));
-        }
-        
-        // Build the message's mime part.
-        Gee.List<GMime.Object> main_parts = new Gee.LinkedList<GMime.Object>();
-        
+        // Build the message's body mime parts
+
         Gee.List<GMime.Object> body_parts = new Gee.LinkedList<GMime.Object>();
-        if (body_text != null)
+
+        // Share the body charset and encoding between plain and HTML
+        // parts, so we don't need to work it out twice.
+        string? body_charset = null;
+        GMime.ContentEncoding? body_encoding = null;
+
+        // Body: text format (optional)
+        if (email.body_text != null) {
+            GMime.Part? body_text = body_data_to_part(email.body_text.data,
+                                                      ref body_charset,
+                                                      ref body_encoding,
+                                                      "text/plain",
+                                                      true);
             body_parts.add(body_text);
-        if (body_html != null)
+        }
+
+        // Body: HTML format (also optional)
+        if (email.body_html != null) {
+            const string CID_URL_PREFIX = "cid:";
+            Gee.List<GMime.Object> related_parts =
+                new Gee.LinkedList<GMime.Object>();
+
+            // The files that need to have Content IDs assigned
+            Gee.Set<File> inline_files = new Gee.HashSet<File>(
+                Geary.Files.nullable_hash, Geary.Files.nullable_equal
+            );
+            inline_files.add_all(email.inline_files);
+
+            // Create parts for inline images, if any, and updating
+            // the IMG SRC attributes as we go. An inline file is only
+            // included if it is actually referenced by the HTML - it
+            // may have been deleted by the user after being added.
+
+            // First, treat parts that already have Content Ids
+            // assigned
+            foreach (string cid in email.cid_files.keys) {
+                if (email.contains_inline_img_src(CID_URL_PREFIX + cid)) {
+                    File file = email.cid_files[cid];
+                    GMime.Object? inline_part = get_file_part(
+                        file, Geary.Mime.DispositionType.INLINE
+                    );
+                    if (inline_part != null) {
+                        inline_part.set_content_id(cid);
+                        related_parts.add(inline_part);
+                    }
+                    // Don't need to assign a CID to this file, so
+                    // don't process it below any further.
+                    inline_files.remove(file);
+                }
+            }
+
+            // Then, treat parts that need to have Content Id
+            // assigned.
+            if (!inline_files.is_empty) {
+                const string CID_TEMPLATE = "inline_%02u@geary";
+                uint cid_index = 0;
+                foreach (File file in inline_files) {
+                    string cid = "";
+                    do {
+                        cid = CID_TEMPLATE.printf(cid_index++);
+                    } while (cid in email.cid_files);
+
+                    if (email.replace_inline_img_src(file.get_uri(),
+                                                     CID_URL_PREFIX + cid)) {
+                        GMime.Object? inline_part = get_file_part(
+                            file, Geary.Mime.DispositionType.INLINE
+                        );
+                        if (inline_part != null) {
+                            inline_part.set_content_id(cid);
+                            related_parts.add(inline_part);
+                        }
+                    }
+                }
+            }
+
+            GMime.Object? body_html = body_data_to_part(email.body_html.data,
+                                                        ref body_charset,
+                                                        ref body_encoding,
+                                                        "text/html",
+                                                        false);
+
+            // Assemble the HTML and inline images into a related
+            // part, if needed
+            if (!related_parts.is_empty) {
+                related_parts.insert(0, body_html);
+                GMime.Object? related_part =
+                   coalesce_related(related_parts, "text/html");
+                if (related_part != null)
+                    body_html = related_part;
+            }
+
             body_parts.add(body_html);
+        }
+
+        // Build the message's main part.
+        Gee.List<GMime.Object> main_parts = new Gee.LinkedList<GMime.Object>();
         GMime.Object? body_part = coalesce_parts(body_parts, "alternative");
         if (body_part != null)
             main_parts.add(body_part);
-        
+
         Gee.List<GMime.Object> attachment_parts = new Gee.LinkedList<GMime.Object>();
-        foreach (File attachment_file in email.attachment_files) {
-            GMime.Object? attachment_part = get_attachment_part(attachment_file);
+        foreach (File file in email.attached_files) {
+            GMime.Object? attachment_part = get_file_part(
+                file, Geary.Mime.DispositionType.ATTACHMENT
+            );
             if (attachment_part != null)
                 attachment_parts.add(attachment_part);
         }
         GMime.Object? attachment_part = coalesce_parts(attachment_parts, "mixed");
         if (attachment_part != null)
             main_parts.add(attachment_part);
-            
+
         GMime.Object? main_part = coalesce_parts(main_parts, "mixed");
         message.set_mime_part(main_part);
     }
@@ -229,6 +294,15 @@ public class Geary.RFC822.Message : BaseObject {
         message.set_mime_part(original_mime_part);
     }
     
+    private GMime.Object? coalesce_related(Gee.List<GMime.Object> parts,
+                                           string type) {
+        GMime.Object? part = coalesce_parts(parts, "related");
+        if (parts.size > 1) {
+            part.set_header("Type", type);
+        }
+        return part;
+    }
+
     private GMime.Object? coalesce_parts(Gee.List<GMime.Object> parts, string subtype) {
         if (parts.size == 0) {
             return null;
@@ -242,7 +316,8 @@ public class Geary.RFC822.Message : BaseObject {
         }
     }
     
-    private GMime.Part? get_attachment_part(File file) {
+    private GMime.Part? get_file_part(File file,
+                                      Geary.Mime.DispositionType disposition) {
         if (!file.query_exists())
             return null;
             
@@ -255,7 +330,7 @@ public class Geary.RFC822.Message : BaseObject {
         }
         
         GMime.Part part = new GMime.Part();
-        part.set_disposition("attachment");
+        part.set_disposition(disposition.serialize());
         part.set_filename(file.get_basename());
         part.set_content_type(new GMime.ContentType.from_string(file_info.get_content_type()));
         
@@ -263,11 +338,7 @@ public class Geary.RFC822.Message : BaseObject {
         GMime.StreamGIO stream = new GMime.StreamGIO(file);
         stream.set_owner(false);
         part.set_content_object(new GMime.DataWrapper.with_stream(stream, GMime.ContentEncoding.BINARY));
-        
-        // This encoding is the "Content-Transfer-Encoding", which GMime automatically converts to.
-        part.set_content_encoding(Geary.RFC822.Utils.get_best_content_encoding(stream,
-            GMime.EncodingConstraint.7BIT));
-        
+        part.set_content_encoding(Geary.RFC822.Utils.get_best_content_encoding(stream, GMime.EncodingConstraint.7BIT));
         return part;
     }
     
@@ -438,6 +509,65 @@ public class Geary.RFC822.Message : BaseObject {
      */
     public Memory.Buffer get_network_buffer(bool dotstuffed) throws RFC822Error {
         return message_to_memory_buffer(true, dotstuffed);
+    }
+
+    /**
+     * Determines if the message has one or display HTML parts.
+     */
+    public bool has_html_body() {
+        return has_body_parts(message.get_mime_part(), "html");
+    }
+
+    /**
+     * Determines if the message has one or plain text display parts.
+     */
+    public bool has_plain_body() {
+        return has_body_parts(message.get_mime_part(), "text");
+    }
+
+    /**
+     * Determines if the message has any body text/subtype MIME parts.
+     *
+     * A body part is one that would be displayed to the user,
+     * i.e. parts returned by {@link get_html_body} or {@link
+     * get_plain_body}.
+     *
+     * The logic for selecting text nodes here must match that in
+     * construct_body_from_mime_parts.
+     */
+    private bool has_body_parts(GMime.Object node, string text_subtype) {
+        bool has_part = false;
+        Mime.ContentType? this_content_type = null;
+        if (node.get_content_type() != null)
+            this_content_type =
+                new Mime.ContentType.from_gmime(node.get_content_type());
+
+        GMime.Multipart? multipart = node as GMime.Multipart;
+        if (multipart != null) {
+            int count = multipart.get_count();
+            for (int i = 0; i < count && !has_part; ++i) {
+                has_part = has_body_parts(multipart.get_part(i), text_subtype);
+            }
+        } else {
+            GMime.Part? part = node as GMime.Part;
+            if (part != null) {
+                Mime.ContentDisposition? disposition = null;
+                if (part.get_content_disposition() != null)
+                    disposition = new Mime.ContentDisposition.from_gmime(
+                        part.get_content_disposition()
+                    );
+
+                if (disposition == null ||
+                    disposition.disposition_type != Mime.DispositionType.ATTACHMENT) {
+                    if (this_content_type != null &&
+                        this_content_type.has_media_type("text") &&
+                        this_content_type.has_media_subtype(text_subtype)) {
+                        has_part = true;
+                    }
+                }
+            }
+        }
+        return has_part;
     }
     
     /**
@@ -896,6 +1026,66 @@ public class Geary.RFC822.Message : BaseObject {
 
     public string to_string() {
         return message.to_string();
+    }
+
+    /**
+     * Returns a MIME part for some body content.
+     *
+     * Determining the appropriate body charset and encoding is
+     * unfortunately a multi-step process that involves reading it
+     * completely, several times:
+     *
+     * 1. Guess the best charset by scanning the complete body.
+     * 2. Convert the body into the preferred charset, essential
+     *    to avoid e.g. guessing Base64 encoding for ISO-8859-1
+     *    because of the 0x0's present in UTF bytes with high-bit
+     *    chars.
+     * 3. Determine, given the correctly encoded charset
+     *    what the appropriate encoding is by scanning the
+     *    complete, encoded body.
+     *
+     * This applies to both text/plain and text/html parts, but we
+     * don't need to do it repeatedly for each, since HTML is 7-bit
+     * clean ASCII. So if we have guessed both already for a plain
+     * text body, it will still apply for any HTML part.
+     */
+    private GMime.Part body_data_to_part(uint8[] content,
+                                         ref string? charset,
+                                         ref GMime.ContentEncoding? encoding,
+                                         string content_type,
+                                         bool is_flowed) {
+        GMime.Stream content_stream = new GMime.StreamMem.with_buffer(content);
+        if (charset == null) {
+            charset = Geary.RFC822.Utils.get_best_charset(content_stream);
+        }
+        GMime.StreamFilter filter_stream = new GMime.StreamFilter(content_stream);
+        filter_stream.add(new GMime.FilterCharset("UTF-8", charset));
+        if (encoding == null) {
+            encoding = Geary.RFC822.Utils.get_best_content_encoding(filter_stream, GMime.EncodingConstraint.7BIT);
+        }
+        if (is_flowed && encoding == GMime.ContentEncoding.BASE64) {
+            // Base64-encoded text needs to have CR's added after LF's
+            // before encoding, otherwise it breaks format=flowed. See
+            // Bug 753528.
+            filter_stream.add(new GMime.FilterCRLF(true, false));
+        }
+
+        GMime.ContentType complete_type =
+            new GMime.ContentType.from_string(content_type);
+        complete_type.set_parameter("charset", charset);
+        if (is_flowed) {
+            complete_type.set_parameter("format", "flowed");
+        }
+
+        GMime.DataWrapper body = new GMime.DataWrapper.with_stream(
+            filter_stream, GMime.ContentEncoding.DEFAULT
+        );
+
+        GMime.Part body_part = new GMime.Part();
+        body_part.set_content_type(complete_type);
+        body_part.set_content_object(body);
+        body_part.set_content_encoding(encoding);
+        return body_part;
     }
 }
 

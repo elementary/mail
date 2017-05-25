@@ -307,6 +307,24 @@ public bool comp_char_arr_slice(char[] array, uint start, string comp) {
     return true;
 }
 
+/**
+ * Uses a GMime.FilterBest to determine the best charset.
+ *
+ * WARNING: This call does not perform async I/O, meaning it will loop on the
+ * stream without relinquishing control to the event loop.  Use with
+ * caution.
+ */
+public string get_best_charset(GMime.Stream in_stream) {
+    GMime.FilterBest filter = new GMime.FilterBest(
+        GMime.FilterBestFlags.CHARSET
+    );
+    GMime.StreamFilter out_stream = new GMime.StreamFilter(new GMime.StreamNull());
+    out_stream.add(filter);
+    in_stream.write_to_stream(out_stream);
+    in_stream.reset();
+    return filter.charset();
+}
+
 /*
  * This function is adapted from the GMimeFilterBest source in the GMime
  * library (gmime-filter-best.c) by Jeffrey Stedfast, LGPL 2.1.
