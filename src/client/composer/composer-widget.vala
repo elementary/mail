@@ -1673,7 +1673,7 @@ public class ComposerWidget : Gtk.EventBox {
     }
     
     private void show_attachments() {
-        if (this.attachment_files.size > 0 ) {
+        if (attachment_files.size > 0 ) {
             attachments_box.show_all();
         } else {
             attachments_box.hide();

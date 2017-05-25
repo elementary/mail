@@ -160,7 +160,7 @@ public class Geary.RFC822.Message : BaseObject {
                                                       true);
             body_parts.add(body_text);
         }
-
+        
         // Body: HTML format (also optional)
         if (email.body_html != null) {
             const string CID_URL_PREFIX = "cid:";
@@ -238,13 +238,13 @@ public class Geary.RFC822.Message : BaseObject {
 
             body_parts.add(body_html);
         }
-
+        
         // Build the message's main part.
         Gee.List<GMime.Object> main_parts = new Gee.LinkedList<GMime.Object>();
         GMime.Object? body_part = coalesce_parts(body_parts, "alternative");
         if (body_part != null)
             main_parts.add(body_part);
-
+        
         Gee.List<GMime.Object> attachment_parts = new Gee.LinkedList<GMime.Object>();
         foreach (File file in email.attached_files) {
             GMime.Object? attachment_part = get_file_part(
@@ -256,7 +256,7 @@ public class Geary.RFC822.Message : BaseObject {
         GMime.Object? attachment_part = coalesce_parts(attachment_parts, "mixed");
         if (attachment_part != null)
             main_parts.add(attachment_part);
-
+            
         GMime.Object? main_part = coalesce_parts(main_parts, "mixed");
         message.set_mime_part(main_part);
     }
@@ -338,7 +338,11 @@ public class Geary.RFC822.Message : BaseObject {
         GMime.StreamGIO stream = new GMime.StreamGIO(file);
         stream.set_owner(false);
         part.set_content_object(new GMime.DataWrapper.with_stream(stream, GMime.ContentEncoding.BINARY));
-        part.set_content_encoding(Geary.RFC822.Utils.get_best_content_encoding(stream, GMime.EncodingConstraint.7BIT));
+        
+        // This encoding is the "Content-Transfer-Encoding", which GMime automatically converts to.
+        part.set_content_encoding(Geary.RFC822.Utils.get_best_content_encoding(stream,
+            GMime.EncodingConstraint.7BIT));
+        
         return part;
     }
     
