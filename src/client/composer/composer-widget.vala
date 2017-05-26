@@ -324,11 +324,9 @@ public class ComposerWidget : Gtk.EventBox {
 
     private Gee.List<Geary.Attachment>? pending_attachments = null;
     private AttachPending pending_include = AttachPending.INLINE_ONLY;
-    private Gee.Set<File> attachment_files = new Gee.HashSet<File>(Geary.Files.nullable_hash,
-        Geary.Files.nullable_equal);
-    private Gee.Set<File> inline_files = new Gee.HashSet<File>(Geary.Files.nullable_hash,
-        Geary.Files.nullable_equal);
-    private Gee.Map<string,File> cid_files = new Gee.HashMap<string,File>();
+    private Gee.Set<File> attachment_files = new Gee.HashSet<File> (Geary.Files.nullable_hash, Geary.Files.nullable_equal);
+    private Gee.Set<File> inline_files = new Gee.HashSet<File> (Geary.Files.nullable_hash, Geary.Files.nullable_equal);
+    private Gee.Map<string,File> cid_files = new Gee.HashMap<string,File> ();
     
     private Geary.App.DraftManager? draft_manager = null;
     private Geary.EmailIdentifier? editing_draft_id = null;
@@ -521,7 +519,7 @@ public class ComposerWidget : Gtk.EventBox {
         
         editor = new StylishWebView();
         edit_fixer = new WebViewEditFixer(editor);
-        editor_allow_prefix = random_string(10) + ":";
+        editor_allow_prefix = random_string (10) + ":";
 
         initialize_actions ();
 
@@ -536,7 +534,7 @@ public class ComposerWidget : Gtk.EventBox {
         editor.redo.connect(update_actions);
         editor.selection_changed.connect(update_actions);
         editor.key_press_event.connect(on_editor_key_press);
-        editor.resource_request_starting.connect(on_resource_request_starting);
+        editor.resource_request_starting.connect (on_resource_request_starting);
         editor.user_changed_contents.connect(reset_draft_timer);
         
         // only do this after setting body_html
@@ -664,14 +662,14 @@ public class ComposerWidget : Gtk.EventBox {
                 body_html = Geary.HTML.preserve_whitespace(Geary.HTML.escape_markup(
                     Geary.Collection.get_first(headers.get("body"))));
             
-            Gee.List<string> attachments = new Gee.LinkedList<string>();
-            attachments.add_all(headers.get("attach"));
-            attachments.add_all(headers.get("attachment"));
+            Gee.List<string> attachments = new Gee.LinkedList<string> ();
+            attachments.add_all (headers.get ("attach"));
+            attachments.add_all (headers.get ("attachment"));
             foreach (string attachment in attachments) {
                 try {
-                    add_attachment(File.new_for_commandline_arg(attachment));
+                    add_attachment (File.new_for_commandline_arg (attachment));
                 } catch (Error err) {
-                    attachment_failed(err.message);
+                    attachment_failed (err.message);
                 }
             }
         }
@@ -883,11 +881,10 @@ public class ComposerWidget : Gtk.EventBox {
             foreach (string uri in uris) {
                 if (!uri.has_prefix(FILE_URI_PREFIX))
                     continue;
-
                 try {
-                    add_attachment(File.new_for_uri(uri.strip()));
+                    add_attachment (File.new_for_uri (uri.strip ()));
                 } catch (Error err) {
-                    attachment_failed(err.message);
+                    attachment_failed (err.message);
                 }
             }
         }
@@ -1497,26 +1494,26 @@ public class ComposerWidget : Gtk.EventBox {
     }
     
     private void on_add_attachment () {
-        AttachmentDialog dialog = new AttachmentDialog(this.container.top_window);
-        if (dialog.run() == Gtk.ResponseType.ACCEPT) {
-            dialog.hide();
-            foreach (File file in dialog.get_files()) {
+        AttachmentDialog dialog = new AttachmentDialog (container.top_window);
+        if (dialog.run () == Gtk.ResponseType.ACCEPT) {
+            dialog.hide ();
+            foreach (File file in dialog.get_files ()) {
                 try {
-                    add_attachment(file, Geary.Mime.DispositionType.ATTACHMENT);
+                    add_attachment (file, Geary.Mime.DispositionType.ATTACHMENT);
                 } catch (Error err) {
-                    attachment_failed(err.message);
+                    attachment_failed (err.message);
                     break;
                 }
             }
         }
-        dialog.destroy();
+        dialog.destroy ();
     }
     
     private void on_pending_attachments () {
-        update_pending_attachments(AttachPending.ALL, true);
+        update_pending_attachments (AttachPending.ALL, true);
     }
 
-    private void on_insert_image(SimpleAction action, Variant? param) {
+    private void on_insert_image (SimpleAction action, Variant? param) {
         AttachmentDialog dialog = new AttachmentDialog (container.top_window);
         Gtk.FileFilter filter = new Gtk.FileFilter ();
         // Translators: This is the name of the file chooser filter
@@ -1544,7 +1541,7 @@ public class ComposerWidget : Gtk.EventBox {
         dialog.destroy ();
     }
 
-    private void update_pending_attachments(AttachPending include, bool do_add) {
+    private void update_pending_attachments (AttachPending include, bool do_add) {
         bool manual_enabled = false;
         if (pending_attachments != null) {
             foreach(Geary.Attachment part in pending_attachments) {
@@ -1587,65 +1584,52 @@ public class ComposerWidget : Gtk.EventBox {
                                  Geary.Mime.DispositionType? disposition = null) throws AttachmentError {
         FileInfo target_info;
         try {
-            target_info = target.query_info("standard::size,standard::type",
-                FileQueryInfoFlags.NONE);
+            target_info = target.query_info ("standard::size,standard::type", FileQueryInfoFlags.NONE);
         } catch (Error e) {
-            throw new AttachmentError.FILE(
-                _("“%s” could not be found.").printf(target.get_path())
-            );
+            throw new AttachmentError.FILE (_("“%s” could not be found.").printf (target.get_path ()));
         }
         
-        if (target_info.get_file_type() == FileType.DIRECTORY) {
-            throw new AttachmentError.FILE(
-                _("“%s” is a folder.").printf(target.get_path())
-            );
+        if (target_info.get_file_type () == FileType.DIRECTORY) {
+            throw new AttachmentError.FILE (_("“%s” is a folder.").printf (target.get_path ()));
         }
 
-        if (target_info.get_size() == 0){
-            throw new AttachmentError.FILE(
-                _("“%s” is an empty file.").printf(target.get_path())
-            );
+        if (target_info.get_size () == 0) {
+            throw new AttachmentError.FILE (_("“%s” is an empty file.").printf (target.get_path ()));
         }
         
         try {
-            FileInputStream? stream = target.read();
-            if (stream != null)
-                stream.close();
-        } catch(Error e) {
-            debug("File '%s' could not be opened for reading. Error: %s", target.get_path(),
-                e.message);
-            
-            throw new AttachmentError.FILE(
-                _("“%s” could not be opened for reading.").printf(target.get_path())
-            );
+            FileInputStream? stream = target.read ();
+            if (stream != null) {
+                stream.close ();
+            }
+        } catch (Error e) {
+            debug("File '%s' could not be opened for reading. Error: %s", target.get_path(), e.message);            
+            throw new AttachmentError.FILE (_("“%s” could not be opened for reading.").printf (target.get_path ()));
         }
 
         if (disposition != Geary.Mime.DispositionType.INLINE) {
-            if (!this.attachment_files.add(target)) {
-                throw new AttachmentError.DUPLICATE(
-                    _("“%s” already attached for delivery.").printf(target.get_path())
-                );
+            if (!attachment_files.add (target)) {
+                throw new AttachmentError.DUPLICATE (_("“%s” already attached").printf (target.get_path ()));
             }
 
-            Gtk.Box box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 6);
-            this.attachments_box.pack_start(box);
+            Gtk.Box box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
+            attachments_box.pack_start (box);
 
             /// In the composer, the filename followed by its filesize, i.e. "notes.txt (1.12KB)"
-            string label_text = _("%s (%s)").printf(target.get_basename(),
-                GLib.format_size(target_info.get_size()));
-            Gtk.Label label = new Gtk.Label(label_text);
-            box.pack_start(label);
+            string label_text = _("%s (%s)").printf(target.get_basename(), GLib.format_size (target_info.get_size ()));
+            Gtk.Label label = new Gtk.Label (label_text);
+            box.pack_start (label);
             label.halign = Gtk.Align.START;
             label.margin_start = 4;
             label.margin_end = 4;
 
-            Gtk.Button remove_button = new Gtk.Button.with_mnemonic(Stock._REMOVE);
-            box.pack_start(remove_button, false, false);
-            remove_button.clicked.connect(() => remove_attachment(target, box));
+            Gtk.Button remove_button = new Gtk.Button.with_mnemonic (Stock._REMOVE);
+            box.pack_start (remove_button, false, false);
+            remove_button.clicked.connect(() => remove_attachment (target, box));
         
-            show_attachments();
+            show_attachments ();
         } else {
-            this.inline_files.add(target);
+            this.inline_files.add (target);
         }
     }
     
@@ -2472,10 +2456,10 @@ public class ComposerWidget : Gtk.EventBox {
         reply_to_entry.completion = new ContactEntryCompletion(contact_list_store);
     }
 
-    private void on_resource_request_starting(WebKit.WebFrame web_frame,
-                                              WebKit.WebResource web_resource,
-                                              WebKit.NetworkRequest request,
-                                              WebKit.NetworkResponse? response) {
+    private void on_resource_request_starting (WebKit.WebFrame web_frame,
+                                               WebKit.WebResource web_resource,
+                                               WebKit.NetworkRequest request,
+                                               WebKit.NetworkResponse? response) {
         if (response != null) {
             // A request that was previously approved resulted in a redirect.
             return;
@@ -2484,18 +2468,17 @@ public class ComposerWidget : Gtk.EventBox {
         const string CID_PREFIX = "cid:";
         const string ABOUT_BLANK = "about:blank";
 
-        string? req_uri = request.get_uri();
-        debug (req_uri);
+        string? req_uri = request.get_uri ();
         string resp_url = ABOUT_BLANK;
-        if (req_uri.has_prefix(CID_PREFIX)) {
-            File? file = this.cid_files[req_uri.substring(CID_PREFIX.length)];
+        if (req_uri.has_prefix (CID_PREFIX)) {
+            File? file = this.cid_files[req_uri.substring (CID_PREFIX.length)];
             if (file != null) {
-                resp_url = file.get_uri();
+                resp_url = file.get_uri ();
             }
-        } else if (req_uri.has_prefix(this.editor_allow_prefix)) {
-            resp_url = req_uri.substring(this.editor_allow_prefix.length);
+        } else if (req_uri.has_prefix (editor_allow_prefix)) {
+            resp_url = req_uri.substring (editor_allow_prefix.length);
         }
-        request.set_uri(resp_url);
+        request.set_uri (resp_url);
     }
     
 }
