@@ -164,9 +164,7 @@ public class Geary.RFC822.Message : BaseObject {
                 new Gee.LinkedList<GMime.Object> ();
 
             // The files that need to have Content IDs assigned
-            Gee.Set<File> inline_files = new Gee.HashSet<File> (
-                Geary.Files.nullable_hash, Geary.Files.nullable_equal
-            );
+            Gee.Set<File> inline_files = new Gee.HashSet<File> (Geary.Files.nullable_hash, Geary.Files.nullable_equal);
             inline_files.add_all (email.inline_files);
 
             foreach (string cid in email.cid_files.keys) {
@@ -216,8 +214,9 @@ public class Geary.RFC822.Message : BaseObject {
             if (!related_parts.is_empty) {
                 related_parts.insert (0, body_html);
                 GMime.Object? related_part = coalesce_related (related_parts, "text/html");
-                if (related_part != null)
+                if (related_part != null) {
                     body_html = related_part;
+                }
             }
 
             body_parts.add (body_html);

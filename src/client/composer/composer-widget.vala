@@ -1544,14 +1544,13 @@ public class ComposerWidget : Gtk.EventBox {
     private void update_pending_attachments (AttachPending include, bool do_add) {
         bool manual_enabled = false;
         if (pending_attachments != null) {
-            foreach(Geary.Attachment part in pending_attachments) {
+            foreach (Geary.Attachment part in pending_attachments) {
                 try {
-                    Geary.Mime.DispositionType? type =
-                    part.content_disposition.disposition_type;
+                    Geary.Mime.DispositionType? type = part.content_disposition.disposition_type;
                     File file = part.file;
                     if (type == Geary.Mime.DispositionType.INLINE) {
                         if (part.content_id != null) {
-                            this.cid_files[part.content_id] = file;
+                            cid_files[part.content_id] = file;
                         } else {
                             type = Geary.Mime.DispositionType.ATTACHMENT;
                         }
@@ -1603,7 +1602,7 @@ public class ComposerWidget : Gtk.EventBox {
                 stream.close ();
             }
         } catch (Error e) {
-            debug("File '%s' could not be opened for reading. Error: %s", target.get_path(), e.message);            
+            debug ("File '%s' could not be opened for reading. Error: %s", target.get_path(), e.message);
             throw new AttachmentError.FILE (_("“%s” could not be opened for reading.").printf (target.get_path ()));
         }
 
@@ -1616,7 +1615,7 @@ public class ComposerWidget : Gtk.EventBox {
             attachments_box.pack_start (box);
 
             /// In the composer, the filename followed by its filesize, i.e. "notes.txt (1.12KB)"
-            string label_text = _("%s (%s)").printf(target.get_basename(), GLib.format_size (target_info.get_size ()));
+            string label_text = _("%s (%s)").printf (target.get_basename (), GLib.format_size (target_info.get_size ()));
             Gtk.Label label = new Gtk.Label (label_text);
             box.pack_start (label);
             label.halign = Gtk.Align.START;
@@ -1625,11 +1624,11 @@ public class ComposerWidget : Gtk.EventBox {
 
             Gtk.Button remove_button = new Gtk.Button.with_mnemonic (Stock._REMOVE);
             box.pack_start (remove_button, false, false);
-            remove_button.clicked.connect(() => remove_attachment (target, box));
+            remove_button.clicked.connect (() => remove_attachment (target, box));
         
             show_attachments ();
         } else {
-            this.inline_files.add (target);
+            inline_files.add (target);
         }
     }
     
@@ -1654,7 +1653,7 @@ public class ComposerWidget : Gtk.EventBox {
             attachments_box.hide();
         }
 
-        update_pending_attachments(this.pending_include, true);
+        update_pending_attachments (this.pending_include, true);
     }
     
     private void on_subject_changed() {
