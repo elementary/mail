@@ -142,44 +142,44 @@ public class Geary.RFC822.Message : BaseObject {
             message.set_header(HEADER_MAILER, email.mailer);
         }
 
-        Gee.List<GMime.Object> body_parts = new Gee.LinkedList<GMime.Object>();
+        Gee.List<GMime.Object> body_parts = new Gee.LinkedList<GMime.Object> ();
 
         string? body_charset = null;
         GMime.ContentEncoding? body_encoding = null;
 
         // Body: text format (optional)
         if (email.body_text != null) {
-            GMime.Part? body_text = body_data_to_part(email.body_text.data,
-                                                      ref body_charset,
-                                                      ref body_encoding,
-                                                      "text/plain",
-                                                      true);
-            body_parts.add(body_text);
+            GMime.Part? body_text = body_data_to_part (email.body_text.data,
+                                                       ref body_charset,
+                                                       ref body_encoding,
+                                                       "text/plain",
+                                                       true);
+            body_parts.add (body_text);
         }
         
         // Body: HTML format (also optional)
         if (email.body_html != null) {
             const string CID_URL_PREFIX = "cid:";
             Gee.List<GMime.Object> related_parts =
-                new Gee.LinkedList<GMime.Object>();
+                new Gee.LinkedList<GMime.Object> ();
 
             // The files that need to have Content IDs assigned
-            Gee.Set<File> inline_files = new Gee.HashSet<File>(
+            Gee.Set<File> inline_files = new Gee.HashSet<File> (
                 Geary.Files.nullable_hash, Geary.Files.nullable_equal
             );
-            inline_files.add_all(email.inline_files);
+            inline_files.add_all (email.inline_files);
 
             foreach (string cid in email.cid_files.keys) {
-                if (email.contains_inline_img_src(CID_URL_PREFIX + cid)) {
+                if (email.contains_inline_img_src (CID_URL_PREFIX + cid)) {
                     File file = email.cid_files[cid];
-                    GMime.Object? inline_part = get_file_part(
+                    GMime.Object? inline_part = get_file_part (
                         file, Geary.Mime.DispositionType.INLINE
                     );
                     if (inline_part != null) {
-                        inline_part.set_content_id(cid);
-                        related_parts.add(inline_part);
+                        inline_part.set_content_id (cid);
+                        related_parts.add (inline_part);
                     }
-                    inline_files.remove(file);
+                    inline_files.remove (file);
                 }
             }
 
@@ -189,39 +189,38 @@ public class Geary.RFC822.Message : BaseObject {
                 foreach (File file in inline_files) {
                     string cid = "";
                     do {
-                        cid = CID_TEMPLATE.printf(cid_index++);
+                        cid = CID_TEMPLATE.printf (cid_index++);
                     } while (cid in email.cid_files);
 
-                    if (email.replace_inline_img_src(file.get_uri(),
+                    if (email.replace_inline_img_src (file.get_uri (),
                                                      CID_URL_PREFIX + cid)) {
-                        GMime.Object? inline_part = get_file_part(
+                        GMime.Object? inline_part = get_file_part (
                             file, Geary.Mime.DispositionType.INLINE
                         );
                         if (inline_part != null) {
-                            inline_part.set_content_id(cid);
-                            related_parts.add(inline_part);
+                            inline_part.set_content_id (cid);
+                            related_parts.add (inline_part);
                         }
                     }
                 }
             }
 
-            GMime.Object? body_html = body_data_to_part(email.body_html.data,
-                                                        ref body_charset,
-                                                        ref body_encoding,
-                                                        "text/html",
-                                                        false);
+            GMime.Object? body_html = body_data_to_part (email.body_html.data,
+                                                         ref body_charset,
+                                                         ref body_encoding,
+                                                         "text/html",
+                                                         false);
 
             // Assemble the HTML and inline images into a related
             // part, if needed
             if (!related_parts.is_empty) {
-                related_parts.insert(0, body_html);
-                GMime.Object? related_part =
-                   coalesce_related(related_parts, "text/html");
+                related_parts.insert (0, body_html);
+                GMime.Object? related_part = coalesce_related (related_parts, "text/html");
                 if (related_part != null)
                     body_html = related_part;
             }
 
-            body_parts.add(body_html);
+            body_parts.add (body_html);
         }
         
         // Build the message's main part.

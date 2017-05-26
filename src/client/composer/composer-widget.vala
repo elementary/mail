@@ -1517,41 +1517,37 @@ public class ComposerWidget : Gtk.EventBox {
     }
 
     private void on_insert_image(SimpleAction action, Variant? param) {
-        AttachmentDialog dialog = new AttachmentDialog(this.container.top_window);
-        Gtk.FileFilter filter = new Gtk.FileFilter();
+        AttachmentDialog dialog = new AttachmentDialog (container.top_window);
+        Gtk.FileFilter filter = new Gtk.FileFilter ();
         // Translators: This is the name of the file chooser filter
         // when inserting an image in the composer.
-        filter.set_name(_("Images"));
-        filter.add_mime_type("image/*");
-        dialog.add_filter(filter);
-        if (dialog.run() == Gtk.ResponseType.ACCEPT) {
-            dialog.hide();
-            foreach (File file in dialog.get_files()) {
+        filter.set_name (_("Images"));
+        filter.add_mime_type ("image/*");
+        dialog.add_filter (filter);
+        if (dialog.run () == Gtk.ResponseType.ACCEPT) {
+            dialog.hide ();
+            foreach (File file in dialog.get_files ()) {
                 try {
-                    add_attachment(file, Geary.Mime.DispositionType.INLINE);
-                    // Use insertHTML instead of insertImage here so
-                    // we can specify a max width inline, preventing
-                    // large images from overflowing the view port.
-                    this.editor.get_dom_document().exec_command(
-                        "insertHTML",
+                    add_attachment (file, Geary.Mime.DispositionType.INLINE);
+                    this.editor.get_dom_document ().exec_command ("insertHTML",
                         false,
-                        "<img style=\"max-width: 100%\" src=\"%s\">".printf(
-                            this.editor_allow_prefix + file.get_uri()
+                        "<img style=\"max-width: 100%\" src=\"%s\">".printf (
+                            this.editor_allow_prefix + file.get_uri ()
                         )
                     );
                 } catch (Error err) {
-                    attachment_failed(err.message);
+                    attachment_failed (err.message);
                     break;
                 }
             }
         }
-        dialog.destroy();
+        dialog.destroy ();
     }
 
     private void update_pending_attachments(AttachPending include, bool do_add) {
         bool manual_enabled = false;
-        if (this.pending_attachments != null) {
-            foreach(Geary.Attachment part in this.pending_attachments) {
+        if (pending_attachments != null) {
+            foreach(Geary.Attachment part in pending_attachments) {
                 try {
                     Geary.Mime.DispositionType? type =
                     part.content_disposition.disposition_type;
@@ -1569,17 +1565,17 @@ public class ComposerWidget : Gtk.EventBox {
                         if (do_add &&
                             !(file in this.attachment_files) &&
                             !(file in this.inline_files)) {
-                            add_attachment(file, type);
+                            add_attachment (file, type);
                         }
                     } else {
                         manual_enabled = true;
                     }
                 } catch (Error err) {
-                    attachment_failed(err.message);
+                    attachment_failed (err.message);
                 }
             }
         }
-        this.header.show_pending_attachments = manual_enabled;
+        header.show_pending_attachments = manual_enabled;
     }
     
     private void attachment_failed(string msg) {
