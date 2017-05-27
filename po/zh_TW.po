@@ -8,21 +8,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
-"onent=general\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
 "PO-Revision-Date: 2016-10-14 20:06+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) "
-"(http://www.transifex.com/projects/p/geary/language/zh_TW/)\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/geary/"
+"language/zh_TW/)\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Generator: Launchpad (build 18330)\n"
-"Language: zh_TW\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -31,15 +29,16 @@ msgstr "草稿 | Drafts | Draft"
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:580
 msgid "Sent | Sent Mail | Sent Email | Sent E-Mail"
 msgstr ""
-"已寄送 | 已送出 | 已寄送郵件 | 已寄送電子郵件 | Sent | Sent Mail | Sent Email | Sent E-Mail"
+"已寄送 | 已送出 | 已寄送郵件 | 已寄送電子郵件 | Sent | Sent Mail | Sent "
+"Email | Sent E-Mail"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:585
 msgid ""
 "Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
 "| Bulk E-Mail"
 msgstr ""
-"垃圾郵件 | 垃圾信件 | 垃圾信 | Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | "
-"Bulk Mail | Bulk Email | Bulk E-Mail"
+"垃圾郵件 | 垃圾信件 | 垃圾信 | Junk | Spam | Junk Mail | Junk Email | Junk E-"
+"Mail | Bulk Mail | Bulk Email | Bulk E-Mail"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:590
 msgid "Trash | Rubbish | Rubbish Bin"
@@ -638,7 +637,8 @@ msgid ""
 "username and password could be read by another person on the network.  Are "
 "you sure you want to do this?"
 msgstr ""
-"您的 IMAP 與/或 SMTP 設定中沒有指定 SSL 或 TLS。這代表您的使用者名稱與密碼可能被網路上的其他人讀取。您確定要這麼做？"
+"您的 IMAP 與/或 SMTP 設定中沒有指定 SSL 或 TLS。這代表您的使用者名稱與密碼可"
+"能被網路上的其他人讀取。您確定要這麼做？"
 
 #: ../src/client/application/geary-controller.vala:985
 #: ../src/client/application/geary-controller.vala:979
@@ -667,7 +667,9 @@ msgstr "寄送電子郵件時發生錯誤"
 msgid ""
 "Geary encountered an error sending an email.  If the problem persists, "
 "please manually delete the email from your Outbox folder."
-msgstr "Geary 在寄送電子郵件時遭遇錯誤。如果問題持續發生，請從您的寄件匣資料夾中手動刪除該封電子郵件。"
+msgstr ""
+"Geary 在寄送電子郵件時遭遇錯誤。如果問題持續發生，請從您的寄件匣資料夾中手動"
+"刪除該封電子郵件。"
 
 #: ../src/client/application/geary-controller.vala:1068
 #: ../src/client/components/status-bar.vala:33
@@ -685,7 +687,9 @@ msgstr "儲存郵件時發生錯誤"
 msgid ""
 "Geary encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
-msgstr "Geary 將寄送的訊息儲存至已寄送郵件時遭遇錯誤。這封訊息會留在您的寄件匣資料夾中，直到您刪除該封電子郵件為止。"
+msgstr ""
+"Geary 將寄送的訊息儲存至已寄送郵件時遭遇錯誤。這封訊息會留在您的寄件匣資料夾"
+"中，直到您刪除該封電子郵件為止。"
 
 #: ../src/client/application/geary-controller.vala:1138
 #: ../src/client/application/geary-controller.vala:1132
@@ -720,13 +724,15 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
-"為此帳號開啟本地端郵件資料庫時發生錯誤。這可能是因為此目錄中的資料庫檔案已損毀：\n"
+"為此帳號開啟本地端郵件資料庫時發生錯誤。這可能是因為此目錄中的資料庫檔案已損"
+"毀：\n"
 "\n"
 "%s\n"
 "\n"
 "Geary 可以重建開資料庫並重新與伺服器同步，又或者直接離開。\n"
 "\n"
-"重建資料庫會銷毀所有本地端的郵件與其相關附件。<b>您在伺服器上的郵件則不會受影響。</b>"
+"重建資料庫會銷毀所有本地端的郵件與其相關附件。<b>您在伺服器上的郵件則不會受影"
+"響。</b>"
 
 #: ../src/client/application/geary-controller.vala:1153
 #: ../src/client/application/geary-controller.vala:1147
@@ -812,7 +818,8 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"開啟此帳號的本地端郵件資料庫時發生錯誤。這可能是因為檔案權限設定有問題所造成。\n"
+"開啟此帳號的本地端郵件資料庫時發生錯誤。這可能是因為檔案權限設定有問題所造"
+"成。\n"
 "\n"
 "請檢查您是否擁有此目錄中所有檔案的讀/寫權：\n"
 "\n"
@@ -827,7 +834,8 @@ msgid ""
 "\n"
 "Please install the latest version of Geary and try again."
 msgstr ""
-"本地端郵件資料庫的版本號格式為新版 Geary 所採用。不幸的是，該版本的 Geary 無法「回溯」處理資料庫。\n"
+"本地端郵件資料庫的版本號格式為新版 Geary 所採用。不幸的是，該版本的 Geary 無"
+"法「回溯」處理資料庫。\n"
 "\n"
 "請安裝最新版的 Geary 並重試。"
 
@@ -1183,7 +1191,9 @@ msgstr "%s 郵件伺服器 (位於 %s:%u) 的辨識身份無法通過核驗。"
 msgid ""
 "Selecting \"Trust This Server\" or \"Always Trust This Server\" may cause "
 "your username and password to be transmitted insecurely."
-msgstr "選取「信任這臺伺服器」或「總是信任這臺伺服器」有可能導致您的使用者名稱與密碼以不安全的方式傳送。"
+msgstr ""
+"選取「信任這臺伺服器」或「總是信任這臺伺服器」有可能導致您的使用者名稱與密碼"
+"以不安全的方式傳送。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
@@ -1822,11 +1832,11 @@ msgstr "新訊息"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures|附件|附上|附加"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures|附件|附上|附加"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -2201,7 +2211,9 @@ msgstr "<span weight=\"bold\" size=\"larger\">您確定要移除這個帳號嗎�
 msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
-msgstr "任何與此帳號相關連的電子郵件皆會從您電腦中刪除。這不會影響到伺服器上的電子郵件。"
+msgstr ""
+"任何與此帳號相關連的電子郵件皆會從您電腦中刪除。這不會影響到伺服器上的電子郵"
+"件。"
 
 #: ../data/ui/remove_confirm.ui:80
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:47
@@ -2244,7 +2256,9 @@ msgstr "移除電子郵件位址"
 msgid ""
 "Some email services require additional addresses be configured on the "
 "server.  Contact your email provider for more information."
-msgstr "部分電子郵件服務需要在伺服器上設定額外的位址。請聯絡您的電子郵件服務供應商深入瞭解相關資訊。"
+msgstr ""
+"部分電子郵件服務需要在伺服器上設定額外的位址。請聯絡您的電子郵件服務供應商深"
+"入瞭解相關資訊。"
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
@@ -2517,7 +2531,8 @@ msgstr "<span weight=\"bold\" size=\"larger\">無法移除帳號</span> "
 msgid ""
 "A composer window associated with this account is currently open. Send or "
 "discard the message and try again."
-msgstr "目前已有開啟和此帳號相關連的編撰器視窗。請寄送或丟棄該訊息，並重試一次。"
+msgstr ""
+"目前已有開啟和此帳號相關連的編撰器視窗。請寄送或丟棄該訊息，並重試一次。"
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
@@ -2708,7 +2723,9 @@ msgstr "網站"
 msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
-msgstr "《郵件》在寄送電子郵件時遭遇錯誤。若問題持續發生，請從您的「寄件匣」中手動刪除該封電子郵件。"
+msgstr ""
+"《郵件》在寄送電子郵件時遭遇錯誤。若問題持續發生，請從您的「寄件匣」中手動刪"
+"除該封電子郵件。"
 
 #: ../src/client/application/geary-controller.vala:1057
 #: ../src/client/application/geary-controller.vala:1051
@@ -2718,7 +2735,9 @@ msgstr "《郵件》在寄送電子郵件時遭遇錯誤。若問題持續發生
 msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
-msgstr "《郵件》將寄送的訊息儲存至「已寄郵件」時遭遇錯誤。這封訊息會留在您的「寄件匣」資料夾中，直到您刪除該封電子郵件為止。"
+msgstr ""
+"《郵件》將寄送的訊息儲存至「已寄郵件」時遭遇錯誤。這封訊息會留在您的「寄件"
+"匣」資料夾中，直到您刪除該封電子郵件為止。"
 
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
@@ -2736,13 +2755,15 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
-"為此帳號開啟本地端郵件資料庫時發生錯誤。這可能是因為此目錄中的資料庫檔案已損毀：\n"
+"為此帳號開啟本地端郵件資料庫時發生錯誤。這可能是因為此目錄中的資料庫檔案已損"
+"毀：\n"
 "\n"
 "%s\n"
 "\n"
 "《郵件》可以重建開資料庫並重新與伺服器同步，又或者直接離開。\n"
 "\n"
-"重建資料庫會銷毀所有本地端的郵件與其相關附件。<b>您在伺服器上的郵件則不會受影響。</b>"
+"重建資料庫會銷毀所有本地端的郵件與其相關附件。<b>您在伺服器上的郵件則不會受影"
+"響。</b>"
 
 #: ../src/client/application/geary-controller.vala:1184
 #: ../src/client/application/geary-controller.vala:1178
@@ -2756,7 +2777,8 @@ msgid ""
 "\n"
 "Please install the latest version of Mail and try again."
 msgstr ""
-"本地端郵件資料庫的版本號採用較新版的《郵件》格式。不幸的是，此版本的《郵件》無法「回溯」以處理資料庫。\n"
+"本地端郵件資料庫的版本號採用較新版的《郵件》格式。不幸的是，此版本的《郵件》"
+"無法「回溯」以處理資料庫。\n"
 "\n"
 "請安裝最新版的《郵件》並重試。"
 
