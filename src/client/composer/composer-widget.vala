@@ -1637,6 +1637,7 @@ public class ComposerWidget : Gtk.EventBox {
         string[] prefixed_action_name = action.get_name ().split (".");
         string action_name = prefixed_action_name[prefixed_action_name.length - 1];
         this.editor.get_dom_document ().exec_command (action_name, false, "");
+        update_actions ();
     }
     
     private void on_cut() {
