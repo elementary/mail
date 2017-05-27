@@ -8,21 +8,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
-"onent=general\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
 "PO-Revision-Date: 2016-03-01 18:37+0000\n"
 "Last-Translator: Ľubomír Hlavko <5lubo555@azet.sk>\n"
-"Language-Team: Slovak "
-"(http://www.transifex.com/projects/p/geary/language/sk/)\n"
+"Language-Team: Slovak (http://www.transifex.com/projects/p/geary/language/"
+"sk/)\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Generator: Launchpad (build 18330)\n"
-"Language: sk\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -30,8 +28,7 @@ msgstr "Koncepty | Koncept"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:580
 msgid "Sent | Sent Mail | Sent Email | Sent E-Mail"
-msgstr ""
-"Odoslané správy | Odoslaná poštal | Odoslané emaily | Odoslané E-Maily"
+msgstr "Odoslané správy | Odoslaná poštal | Odoslané emaily | Odoslané E-Maily"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:585
 msgid ""
@@ -641,9 +638,9 @@ msgid ""
 "username and password could be read by another person on the network.  Are "
 "you sure you want to do this?"
 msgstr ""
-"Vaše nastavenia servera IMAP a/alebo SMTP neurčujú šifrovanie SSL alebo TLS. "
-" To znamená, že vaše meno používateľa a heslo môže byť prečítané inou osobou "
-"v sieti.  Naozaj chcete toto vykonať?"
+"Vaše nastavenia servera IMAP a/alebo SMTP neurčujú šifrovanie SSL alebo "
+"TLS.  To znamená, že vaše meno používateľa a heslo môže byť prečítané inou "
+"osobou v sieti.  Naozaj chcete toto vykonať?"
 
 #: ../src/client/application/geary-controller.vala:985
 #: ../src/client/application/geary-controller.vala:979
@@ -1888,12 +1885,12 @@ msgstr "Nová správa"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
-"príloha|prílohy|priložiť|priložený|priložená|priložené|priloženému|priloženým"
-"|priložených|priloženého|prikladám|prikladanú|prikladané|prikladaný|prikladan"
-"ým|prikladanému"
+"príloha|prílohy|priložiť|priložený|priložená|priložené|priloženému|"
+"priloženým|priložených|priloženého|prikladám|prikladanú|prikladané|"
+"prikladaný|prikladaným|prikladanému"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106

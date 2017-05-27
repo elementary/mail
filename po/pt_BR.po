@@ -18,20 +18,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
-"onent=general\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2016-12-17 07:46+0000\n"
-"Last-Translator: Saulo De Baco <saulodebaco@hotmail.com>\n"
-"Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
+"PO-Revision-Date: 2017-05-17 16:42+0000\n"
+"Last-Translator: Fernando da Silva Sousa <wild.nando@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) "
+"<https://l10n.elementary.io/projects/mail/mail/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
-"Language: pt_BR\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -1330,7 +1329,7 @@ msgstr "Primeiro Último"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 msgid "Welcome to Geary."
-msgstr "Bem-vindo ao Geary"
+msgstr "Bem-vindo ao Geary."
 
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
@@ -1616,7 +1615,7 @@ msgstr[1] "%u conversas selecionadas."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:341
 #: ../src/client/conversation-viewer/conversation-viewer.vala:342
 msgid "No search results found."
-msgstr "Nenhum resultado encontrado"
+msgstr "Nenhum resultado encontrado."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:446
 #: ../src/client/conversation-viewer/conversation-viewer.vala:448
@@ -1625,7 +1624,7 @@ msgstr "Nenhum resultado encontrado"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:343
 #: ../src/client/conversation-viewer/conversation-viewer.vala:344
 msgid "No conversations in folder."
-msgstr "Não há conversas na pasta"
+msgstr "Não há conversas na pasta."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:708
 #: ../src/client/conversation-viewer/conversation-viewer.vala:713
@@ -1721,8 +1720,7 @@ msgstr[1] "%u mensagens lidas"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1271
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1276
 msgid "This message was sent successfully, but could not be saved to %s."
-msgstr ""
-"Essa mensagem foi enviada com sucesso, mas não pôde ser salva para %s."
+msgstr "Essa mensagem foi enviada com sucesso, mas não pôde ser salva para %s."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1297
 #: ../data/ui/composer.ui:29
@@ -1812,7 +1810,7 @@ msgstr "_Salvar imagem como..."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1822
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 msgid "_Save As..."
-msgstr "_Salvar como"
+msgstr "_Salvar como…"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1832
@@ -1894,11 +1892,11 @@ msgstr "Nova mensagem"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
-"anexar|anexando|anexa|anexo|anexos|anexado|anexada|inserir|inserido|inserindo"
-"|insere|inserido|inserida|inseridos|inseridas"
+"anexar|anexando|anexa|anexo|anexos|anexado|anexada|inserir|inserido|"
+"inserindo|insere|inserido|inserida|inseridos|inseridas"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -2313,7 +2311,7 @@ msgstr "rótulo"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr "Atualização do Geary em progresso..."
+msgstr "Atualização do Geary em progresso…"
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
@@ -2593,8 +2591,8 @@ msgstr "Para enviá-los como anexos"
 #: ../data/ui/account_cannot_remove.ui:40
 msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
 msgstr ""
-"<span weight=\"bold\" size=\"larger\">Não foi possível remover a "
-"conta</span> "
+"<span weight=\"bold\" size=\"larger\">Não foi possível remover a conta</"
+"span> "
 
 #: ../data/ui/account_cannot_remove.ui:56
 msgid ""
@@ -2606,7 +2604,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr "Endereços de e-mail adic_ionais..."
+msgstr "Endereços de e-mail adic_ionais…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
@@ -2878,8 +2876,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2395
 #: ../src/client/application/geary-controller.vala:2390
 msgid "This removes the email from Mail and your email server."
-msgstr ""
-"Isto removerá o e-mail do Correio Eletrônico e do servidor de e-mail."
+msgstr "Isto removerá o e-mail do Correio Eletrônico e do servidor de e-mail."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
@@ -2982,7 +2979,7 @@ msgstr "Responder a todos"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:243
 #: ../src/client/conversation-viewer/ConversationWidget.vala:245
 msgid "Forward"
-msgstr "Avançar"
+msgstr "Encaminhar"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:247
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1112
@@ -3015,7 +3012,7 @@ msgstr "Marcar como lido"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:275
 #: ../src/client/conversation-viewer/ConversationWidget.vala:277
 msgid "Print…"
-msgstr "Imprimir..."
+msgstr "Imprimir…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
@@ -3083,7 +3080,7 @@ msgstr "Esconder mensagem"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr "Salvar como..."
+msgstr "Salvar como…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"

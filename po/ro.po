@@ -10,13 +10,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=geary&keywords=I18N+L10N&comp"
-"onent=general\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
 "PO-Revision-Date: 2017-01-21 10:51+0000\n"
 "Last-Translator: Marius Albina <marius.albina@gmail.com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,7 +24,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 "X-Generator: Launchpad (build 18330)\n"
 "X-Project-Style: gnome\n"
-"Language: ro\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -1271,8 +1269,7 @@ msgstr "Certificatul serverului nu este semnat de o autoritate cunoscută"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:76
 msgid "The server's identity does not match the identity in the certificate"
-msgstr ""
-"Identitatea serveruluin nu se potrivește cu identitatea certificatului"
+msgstr "Identitatea serveruluin nu se potrivește cu identitatea certificatului"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:79
 msgid "The server's certificate has expired"
@@ -1422,8 +1419,7 @@ msgstr "        &#8226; Eroare la conexiunea SMTP.\n"
 #: ../src/client/accounts/add-edit-page.vala:782
 #: ../src/client/accounts/add-edit-page.vala:784
 msgid "        &#8226; SMTP username or password incorrect.\n"
-msgstr ""
-"        &#8226; Numele de utilizator sau parola SMTP sunt incorecte.\n"
+msgstr "        &#8226; Numele de utilizator sau parola SMTP sunt incorecte.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:786
 #: ../src/client/accounts/add-edit-page.vala:788
@@ -1894,8 +1890,8 @@ msgstr "Mesaj nou"
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
 msgid ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
-"closing|encloses|enclosure|enclosures"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
+"enclosing|encloses|enclosure|enclosures"
 msgstr ""
 "ataşare|ataşând|ataşări|ataşament|ataşamente|ataşat|include|inclus|incluzând|"
 "includeri|includere|includeri"
@@ -2005,7 +2001,6 @@ msgstr "%s (%s)"
 #: ../src/client/composer/composer-widget.vala:1598
 #: ../src/client/composer/composer-widget.vala:1599
 #: ../src/client/composer/composer-widget.vala:1602
-#| msgid "To: %s\n"
 msgid "To: "
 msgstr "Către: "
 
@@ -2016,7 +2011,6 @@ msgstr "Către: "
 #: ../src/client/composer/composer-widget.vala:1601
 #: ../src/client/composer/composer-widget.vala:1602
 #: ../src/client/composer/composer-widget.vala:1605
-#| msgid "Cc: %s\n"
 msgid "Cc: "
 msgstr "Cc: "
 
@@ -2027,7 +2021,6 @@ msgstr "Cc: "
 #: ../src/client/composer/composer-widget.vala:1604
 #: ../src/client/composer/composer-widget.vala:1605
 #: ../src/client/composer/composer-widget.vala:1608
-#| msgid "Bcc:"
 msgid "Bcc: "
 msgstr "Bcc: "
 
@@ -2073,7 +2066,6 @@ msgstr "_De la:"
 
 #: ../src/client/components/main-window.vala:388
 #: ../src/client/components/main-window.vala:351
-#| msgid "%s (%s)"
 msgid "%s (%d)"
 msgstr "%s (%d)"
 
