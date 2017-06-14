@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-08 13:23-0800\n"
+"POT-Creation-Date: 2017-06-14 08:38-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -177,6 +177,7 @@ msgstr ""
 #: ../src/client/util/util-email.vala:30
 #: ../src/engine/rfc822/rfc822-message.vala:783
 #: ../src/engine/rfc822/rfc822-message.vala:775
+#: ../src/engine/rfc822/rfc822-message.vala:833
 msgid "(no subject)"
 msgstr ""
 
@@ -234,6 +235,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2227
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2232
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:32
+#: ../src/engine/rfc822/rfc822-utils.vala:394
 msgid "none"
 msgstr ""
 
@@ -1639,6 +1641,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1162
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1172
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1199
+#: ../src/client/composer/composer-widget.vala:2153
 msgid "_Copy"
 msgstr ""
 
@@ -1663,6 +1666,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1179
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1189
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1216
+#: ../src/client/composer/composer-widget.vala:2158
 msgid "Copy _Link"
 msgstr ""
 
@@ -1774,31 +1778,37 @@ msgstr ""
 
 #: ../src/client/composer/composer-widget.vala:73
 #: ../src/client/composer/composer-widget.vala:71
+#: ../src/client/composer/composer-widget.vala:147
 msgid "Saved"
 msgstr ""
 
 #: ../src/client/composer/composer-widget.vala:74
 #: ../src/client/composer/composer-widget.vala:72
+#: ../src/client/composer/composer-widget.vala:148
 msgid "Saving"
 msgstr ""
 
 #: ../src/client/composer/composer-widget.vala:75
 #: ../src/client/composer/composer-widget.vala:73
+#: ../src/client/composer/composer-widget.vala:149
 msgid "Error saving"
 msgstr ""
 
 #: ../src/client/composer/composer-widget.vala:76
 #: ../src/client/composer/composer-widget.vala:74
+#: ../src/client/composer/composer-widget.vala:150
 msgid "Press Backspace to delete quote"
 msgstr ""
 
 #: ../src/client/composer/composer-widget.vala:77
 #: ../src/client/composer/composer-widget.vala:75
+#: ../src/client/composer/composer-widget.vala:151
 msgid "New Message"
 msgstr ""
 
 #: ../src/client/composer/composer-widget.vala:138
 #: ../src/client/composer/composer-widget.vala:136
+#: ../src/client/composer/composer-widget.vala:212
 msgid ""
 "attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
 "enclosing|encloses|enclosure|enclosures"
@@ -1818,6 +1828,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1254
 #: ../src/client/composer/composer-widget.vala:1223
 #: ../src/client/composer/composer-widget.vala:1220
+#: ../src/client/composer/composer-widget.vala:1263
 msgid "Send message with an empty subject and body?"
 msgstr ""
 
@@ -1826,6 +1837,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1256
 #: ../src/client/composer/composer-widget.vala:1225
 #: ../src/client/composer/composer-widget.vala:1222
+#: ../src/client/composer/composer-widget.vala:1265
 msgid "Send message with an empty subject?"
 msgstr ""
 
@@ -1834,6 +1846,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1258
 #: ../src/client/composer/composer-widget.vala:1227
 #: ../src/client/composer/composer-widget.vala:1224
+#: ../src/client/composer/composer-widget.vala:1267
 msgid "Send message with an empty body?"
 msgstr ""
 
@@ -1842,6 +1855,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1260
 #: ../src/client/composer/composer-widget.vala:1229
 #: ../src/client/composer/composer-widget.vala:1226
+#: ../src/client/composer/composer-widget.vala:1269
 msgid "Send message without an attachment?"
 msgstr ""
 
@@ -1850,6 +1864,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1522
 #: ../src/client/composer/composer-widget.vala:1486
 #: ../src/client/composer/composer-widget.vala:1483
+#: ../src/client/composer/composer-widget.vala:1578
 msgid "Cannot add attachment"
 msgstr ""
 
@@ -1899,6 +1914,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1577
 #: ../src/client/composer/composer-widget.vala:1541
 #: ../src/client/composer/composer-widget.vala:1538
+#: ../src/client/composer/composer-widget.vala:1618
 msgid "%s (%s)"
 msgstr ""
 
@@ -1909,6 +1925,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1598
 #: ../src/client/composer/composer-widget.vala:1599
 #: ../src/client/composer/composer-widget.vala:1602
+#: ../src/client/composer/composer-widget.vala:1675
 msgid "To: "
 msgstr ""
 
@@ -1919,6 +1936,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1601
 #: ../src/client/composer/composer-widget.vala:1602
 #: ../src/client/composer/composer-widget.vala:1605
+#: ../src/client/composer/composer-widget.vala:1678
 msgid "Cc: "
 msgstr ""
 
@@ -1929,6 +1947,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1604
 #: ../src/client/composer/composer-widget.vala:1605
 #: ../src/client/composer/composer-widget.vala:1608
+#: ../src/client/composer/composer-widget.vala:1681
 msgid "Bcc: "
 msgstr ""
 
@@ -1939,6 +1958,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1607
 #: ../src/client/composer/composer-widget.vala:1608
 #: ../src/client/composer/composer-widget.vala:1611
+#: ../src/client/composer/composer-widget.vala:1684
 msgid "Reply-To: "
 msgstr ""
 
@@ -1949,6 +1969,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:1840
 #: ../src/client/composer/composer-widget.vala:1841
 #: ../src/client/composer/composer-widget.vala:1844
+#: ../src/client/composer/composer-widget.vala:1904
 msgid "Select Color"
 msgstr ""
 
@@ -1959,6 +1980,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:2271
 #: ../src/client/composer/composer-widget.vala:2272
 #: ../src/client/composer/composer-widget.vala:2275
+#: ../src/client/composer/composer-widget.vala:2337
 msgid "%1$s via %2$s"
 msgstr ""
 
@@ -1969,6 +1991,7 @@ msgstr ""
 #: ../src/client/composer/composer-widget.vala:2312
 #: ../src/client/composer/composer-widget.vala:2313
 #: ../src/client/composer/composer-widget.vala:2316
+#: ../src/client/composer/composer-widget.vala:2378
 msgid "_From:"
 msgstr ""
 
@@ -2093,6 +2116,7 @@ msgstr ""
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
 #: ../src/client/composer/composer-toolbar.vala:77
 #: ../src/client/composer/ComposerToolbar.vala:88
+#: ../src/client/composer/ComposerToolbar.vala:100
 msgid "More options"
 msgstr ""
 
@@ -2233,19 +2257,19 @@ msgstr ""
 msgid "Please wait while Geary validates your account."
 msgstr ""
 
-#: ../data/ui/composer.ui:8
+#: ../data/ui/composer.ui:8 ../src/client/composer/composer-widget.vala:2136
 msgid "_Undo"
 msgstr ""
 
-#: ../data/ui/composer.ui:15
+#: ../data/ui/composer.ui:15 ../src/client/composer/composer-widget.vala:2141
 msgid "_Redo"
 msgstr ""
 
-#: ../data/ui/composer.ui:22
+#: ../data/ui/composer.ui:22 ../src/client/composer/composer-widget.vala:2148
 msgid "Cu_t"
 msgstr ""
 
-#: ../data/ui/composer.ui:36
+#: ../data/ui/composer.ui:36 ../src/client/composer/composer-widget.vala:2163
 msgid "_Paste"
 msgstr ""
 
@@ -2270,6 +2294,7 @@ msgid "Link (Ctrl+L)"
 msgstr ""
 
 #: ../data/ui/composer.ui:70 ../data/ui/composer.ui:69
+#: ../src/client/composer/composer-widget.vala:574
 msgid "C_olor"
 msgstr ""
 
@@ -2278,10 +2303,12 @@ msgid "Quote text  (Ctrl+])"
 msgstr ""
 
 #: ../data/ui/composer.ui:87 ../src/client/composer/ComposerToolbar.vala:69
+#: ../src/client/composer/ComposerToolbar.vala:76
 msgid "Unquote text (Ctrl+[)"
 msgstr ""
 
 #: ../data/ui/composer.ui:93 ../src/client/composer/ComposerToolbar.vala:82
+#: ../src/client/composer/ComposerToolbar.vala:94
 msgid "Remove formatting (Ctrl+Space)"
 msgstr ""
 
@@ -2291,14 +2318,17 @@ msgid "Paste _With Formatting"
 msgstr ""
 
 #: ../data/ui/composer.ui:111 ../src/client/composer/ComposerToolbar.vala:36
+#: ../src/client/composer/ComposerToolbar.vala:43
 msgid "Bold (Ctrl+B)"
 msgstr ""
 
 #: ../data/ui/composer.ui:118 ../src/client/composer/ComposerToolbar.vala:41
+#: ../src/client/composer/ComposerToolbar.vala:48
 msgid "Italic (Ctrl+I)"
 msgstr ""
 
 #: ../data/ui/composer.ui:125 ../src/client/composer/ComposerToolbar.vala:46
+#: ../src/client/composer/ComposerToolbar.vala:53
 msgid "Underline (Ctrl+U)"
 msgstr ""
 
@@ -2311,6 +2341,7 @@ msgid "_Rich Text"
 msgstr ""
 
 #: ../data/ui/composer.ui:145 ../data/ui/composer.ui:138
+#: ../src/client/composer/composer-widget.vala:578
 msgid "Show Extended Fields"
 msgstr ""
 
@@ -2345,7 +2376,7 @@ msgid "Close and Discard"
 msgstr ""
 
 #: ../data/ui/composer.ui:173 ../data/ui/composer.ui:155
-#: ../data/ui/composer.ui:160
+#: ../data/ui/composer.ui:160 ../src/client/composer/composer-widget.vala:569
 msgid "Lar_ge"
 msgstr ""
 
@@ -2355,7 +2386,7 @@ msgid "Large"
 msgstr ""
 
 #: ../data/ui/composer.ui:179 ../data/ui/composer.ui:161
-#: ../data/ui/composer.ui:166
+#: ../data/ui/composer.ui:166 ../src/client/composer/composer-widget.vala:565
 msgid "_Medium"
 msgstr ""
 
@@ -2365,7 +2396,7 @@ msgid "Medium"
 msgstr ""
 
 #: ../data/ui/composer.ui:185 ../data/ui/composer.ui:167
-#: ../data/ui/composer.ui:172
+#: ../data/ui/composer.ui:172 ../src/client/composer/composer-widget.vala:561
 msgid "_Small"
 msgstr ""
 
@@ -2375,7 +2406,7 @@ msgid "Small"
 msgstr ""
 
 #: ../data/ui/composer.ui:191 ../data/ui/composer.ui:173
-#: ../data/ui/composer.ui:178
+#: ../data/ui/composer.ui:178 ../src/client/composer/composer-widget.vala:547
 msgid "S_ans Serif"
 msgstr ""
 
@@ -2385,7 +2416,7 @@ msgid "Sans Serif"
 msgstr ""
 
 #: ../data/ui/composer.ui:197 ../data/ui/composer.ui:179
-#: ../data/ui/composer.ui:184
+#: ../data/ui/composer.ui:184 ../src/client/composer/composer-widget.vala:551
 msgid "S_erif"
 msgstr ""
 
@@ -2409,6 +2440,7 @@ msgid "Detach"
 msgstr ""
 
 #: ../data/ui/composer.ui:211 ../src/client/composer/ComposerHeaderBar.vala:36
+#: ../src/client/composer/ComposerHeaderBar.vala:38
 msgid "Detach (Ctrl+D)"
 msgstr ""
 
@@ -2417,10 +2449,12 @@ msgid "_Send"
 msgstr ""
 
 #: ../data/ui/composer.ui:219 ../src/client/composer/ComposerHeaderBar.vala:46
+#: ../src/client/composer/ComposerHeaderBar.vala:48
 msgid "Send"
 msgstr ""
 
 #: ../data/ui/composer.ui:220 ../src/client/composer/ComposerHeaderBar.vala:47
+#: ../src/client/composer/ComposerHeaderBar.vala:49
 msgid "Send (Ctrl+Enter)"
 msgstr ""
 
@@ -2448,26 +2482,31 @@ msgstr ""
 #. Address(es) e-mail is to be sent to
 #: ../data/ui/composer.ui:289 ../data/ui/composer.ui:317
 #: ../data/ui/composer.ui:287 ../data/ui/composer.ui:292
+#: ../data/ui/composer.ui:74
 msgid "_To"
 msgstr ""
 
 #: ../data/ui/composer.ui:308 ../data/ui/composer.ui:336
 #: ../data/ui/composer.ui:306 ../data/ui/composer.ui:311
+#: ../data/ui/composer.ui:93
 msgid "_Cc"
 msgstr ""
 
 #: ../data/ui/composer.ui:362 ../data/ui/composer.ui:390
 #: ../data/ui/composer.ui:360 ../data/ui/composer.ui:365
+#: ../data/ui/composer.ui:147
 msgid "_Subject"
 msgstr ""
 
 #: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
 #: ../data/ui/composer.ui:379 ../data/ui/composer.ui:384
+#: ../data/ui/composer.ui:166
 msgid "_Bcc"
 msgstr ""
 
 #: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
 #: ../data/ui/composer.ui:409 ../data/ui/composer.ui:414
+#: ../data/ui/composer.ui:196
 msgid "_Reply-To"
 msgstr ""
 
@@ -2475,16 +2514,19 @@ msgstr ""
 #. Account mail will be sent from
 #: ../data/ui/composer.ui:440 ../data/ui/composer.ui:468
 #: ../data/ui/composer.ui:438 ../data/ui/composer.ui:443
+#: ../data/ui/composer.ui:225
 msgid "From"
 msgstr ""
 
 #: ../data/ui/composer.ui:519 ../data/ui/composer.ui:547
 #: ../data/ui/composer.ui:517 ../data/ui/composer.ui:522
+#: ../data/ui/composer.ui:304
 msgid "Drop files here"
 msgstr ""
 
 #: ../data/ui/composer.ui:535 ../data/ui/composer.ui:563
 #: ../data/ui/composer.ui:533 ../data/ui/composer.ui:538
+#: ../data/ui/composer.ui:320
 msgid "To add them as attachments"
 msgstr ""
 
@@ -2985,18 +3027,22 @@ msgid "More"
 msgstr ""
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
+#: ../src/client/composer/ComposerHeaderBar.vala:42
 msgid "Delete draft"
 msgstr ""
 
 #: ../src/client/composer/ComposerHeaderBar.vala:51
+#: ../src/client/composer/ComposerHeaderBar.vala:53
 msgid "Attach file"
 msgstr ""
 
 #: ../src/client/composer/ComposerHeaderBar.vala:55
+#: ../src/client/composer/ComposerHeaderBar.vala:57
 msgid "Include original attachments"
 msgstr ""
 
 #: ../src/client/composer/ComposerToolbar.vala:65
+#: ../src/client/composer/ComposerToolbar.vala:72
 msgid "Quote text (Ctrl+])"
 msgstr ""
 
@@ -3067,13 +3113,61 @@ msgid "Mail"
 msgstr ""
 
 #: ../src/client/composer/ComposerToolbar.vala:51
+#: ../src/client/composer/ComposerToolbar.vala:58
 msgid "Strikethrough (Ctrl+%)"
 msgstr ""
 
 #: ../src/client/composer/ComposerToolbar.vala:77
+#: ../src/client/composer/ComposerToolbar.vala:84
 msgid "Link (Ctrl+K)"
 msgstr ""
 
 #: ../src/client/components/main-toolbar.vala:117
 msgid "Forward (Ctrl+Shift+F)"
+msgstr ""
+
+#: ../src/client/application/geary-application.vala:18
+msgid ""
+"2011-2015 Yorba Foundation\n"
+"© 2016-2017 elementary LLC."
+msgstr ""
+
+#: ../src/client/composer/ComposerToolbar.vala:89
+msgid "Insert image (Ctrl+G)"
+msgstr ""
+
+#: ../src/client/composer/composer-widget.vala:555
+msgid "_Fixed width"
+msgstr ""
+
+#: ../src/client/composer/composer-widget.vala:576
+msgid "_Rich text"
+msgstr ""
+
+#: ../src/client/composer/composer-widget.vala:1521
+msgid "Images"
+msgstr ""
+
+#: ../src/client/composer/composer-widget.vala:1588
+msgid "“%s” could not be found."
+msgstr ""
+
+#: ../src/client/composer/composer-widget.vala:1592
+msgid "“%s” is a folder."
+msgstr ""
+
+#: ../src/client/composer/composer-widget.vala:1596
+msgid "“%s” is an empty file."
+msgstr ""
+
+#: ../src/client/composer/composer-widget.vala:1606
+msgid "“%s” could not be opened for reading."
+msgstr ""
+
+#: ../src/client/composer/composer-widget.vala:1611
+msgid "“%s” already attached"
+msgstr ""
+
+#: ../src/client/composer/composer-widget.vala:2169
+msgid "Paste _With Formatting"
 msgstr ""
