@@ -27,6 +27,7 @@ public class ComposerToolbar : Gtk.Box {
     private Gtk.ToggleButton underline;
     private Gtk.ToggleButton strikethrough;
     private Gtk.Button link;
+    private Gtk.Button image;
     private Gtk.Button clear_format;
 
     public ComposerToolbar (Gtk.Menu menu) {
@@ -82,6 +83,11 @@ public class ComposerToolbar : Gtk.Box {
         link.set_action_name (ComposerWidget.ACTION_GROUP_PREFIX + ComposerWidget.ACTION_INSERT_LINK);
         link.tooltip_text = _("Link (Ctrl+K)");
 
+        // Image
+        image = new Gtk.Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.MENU);
+        image.set_action_name (ComposerWidget.ACTION_GROUP_PREFIX + ComposerWidget.ACTION_INSERT_IMAGE);
+        image.tooltip_text = _("Insert image (Ctrl+G)");
+
         // Clear formatting.
         clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU);
         clear_format.set_action_name (ComposerWidget.ACTION_GROUP_PREFIX + ComposerWidget.ACTION_REMOVE_FORMAT);
@@ -100,6 +106,7 @@ public class ComposerToolbar : Gtk.Box {
         add (formatting);
         add (indent);
         add (link);
+        add (image);
         add (clear_format);
         pack_end (more, false, false, 0);
         pack_end (label, false, false, 0);
@@ -111,6 +118,7 @@ public class ComposerToolbar : Gtk.Box {
             underline.visible =
             strikethrough.visible =
             link.visible =
+            image.visible =
             clear_format.visible = visible;
     }
 }
