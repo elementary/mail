@@ -6,6 +6,8 @@
 
 public class Geary.ComposedEmail : BaseObject {
     public const string MAILTO_SCHEME = "mailto:";
+
+    private const string IMG_SRC_TEMPLATE = "src=\"%s\"";
     
     public const Geary.Email.Field REQUIRED_REPLY_FIELDS =
         Geary.Email.Field.HEADER
@@ -31,8 +33,14 @@ public class Geary.ComposedEmail : BaseObject {
     public string? body_text { get; set; default = null; }
     public string? body_html { get; set; default = null; }
     public string? mailer { get; set; default = null; }
-    public Gee.Set<File> attachment_files { get; private set;
-        default = new Gee.HashSet<File>(Geary.Files.nullable_hash, Geary.Files.nullable_equal); }
+
+    public Gee.Set<File> attached_files { get; private set;
+        default = new Gee.HashSet<File> (Geary.Files.nullable_hash, Geary.Files.nullable_equal); }
+    public Gee.Set<File> inline_files { get; private set;
+        default = new Gee.HashSet<File> (Geary.Files.nullable_hash, Geary.Files.nullable_equal); }
+    public Gee.Map<string,File> cid_files = new Gee.HashMap<string,File> ();
+
+    public string img_src_prefix { get; set; default = ""; }
     
     public ComposedEmail(DateTime date, RFC822.MailboxAddresses from, 
         RFC822.MailboxAddresses? to = null, RFC822.MailboxAddresses? cc = null,
@@ -49,7 +57,24 @@ public class Geary.ComposedEmail : BaseObject {
     }
     
     public Geary.RFC822.Message to_rfc822_message(string? message_id = null) {
-        return new RFC822.Message.from_composed_email(this, message_id);
+        return new RFC822.Message.from_composed_email (this, message_id);
+    }
+
+    public bool contains_inline_img_src (string value) {
+        return body_html.contains (IMG_SRC_TEMPLATE.printf (value));
+    }
+
+    public bool replace_inline_img_src (string orig, string replacement) {
+        bool ret = false;
+        if (body_html != null) {
+            string old_body = body_html;
+            body_html = old_body.replace (
+                IMG_SRC_TEMPLATE.printf (img_src_prefix + orig),
+                IMG_SRC_TEMPLATE.printf (replacement)
+            );
+            ret = body_html.length != old_body.length;
+        }
+        return ret;
     }
 }
 
