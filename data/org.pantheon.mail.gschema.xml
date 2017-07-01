@@ -75,7 +75,7 @@
     </key>
 
     <key name="startup-notifications" type="b">
-        <default>false</default>
+        <default>true</default>
         <summary>notify of new mail at startup</summary>
         <description>True to notify of new mail at startup.</description>
     </key>
