@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-04-15 20:29+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2017-07-01 13:10+0000\n"
+"Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/mail/mail/sl/>"
 "\n"
 "Language: sl\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
@@ -276,9 +276,9 @@ msgstr "Izbriši pogovore (Shift + Delete)"
 #: ../src/client/application/geary-controller.vala:2723
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
-msgstr[0] "Premakni pogovore v smeti (Delete, Backspace)"
-msgstr[1] "Premakni pogovor v smeti (Delete, Backspace)"
-msgstr[2] "Premakni pogovora v smeti (Delete, Backspace)"
+msgstr[0] "Premakni pogovor v smeti (Delete, Backspace)"
+msgstr[1] "Premakni pogovora v smeti (Delete, Backspace)"
+msgstr[2] "Premakni pogovore v smeti (Delete, Backspace)"
 msgstr[3] "Premakni pogovore v smeti (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:68
@@ -299,9 +299,9 @@ msgstr "_Arhiv"
 #: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] "Arhiviraj pogovore (A)"
-msgstr[1] "Arhiviraj pogovor (A)"
-msgstr[2] "Arhiviraj pogovora (A)"
+msgstr[0] "Arhiviraj pogovor (A)"
+msgstr[1] "Arhiviraj pogovora (A)"
+msgstr[2] "Arhiviraj pogovore (A)"
 msgstr[3] "Arhiviraj pogovore (A)"
 
 #: ../src/client/application/geary-controller.vala:74
@@ -345,9 +345,9 @@ msgstr "Označi kot _želeno pošto"
 #: ../src/client/application/geary-controller.vala:390
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
-msgstr[0] "Označi pogovore"
-msgstr[1] "Označi pogovor"
-msgstr[2] "Označi pogovora"
+msgstr[0] "Označi pogovor"
+msgstr[1] "Označi pogovora"
+msgstr[2] "Označi pogovore"
 msgstr[3] "Označi pogovore"
 
 #: ../src/client/application/geary-controller.vala:81
@@ -371,9 +371,9 @@ msgstr "Označi pogovore"
 #: ../src/client/application/geary-controller.vala:2716
 msgid "Add label to conversation"
 msgid_plural "Add label to conversations"
-msgstr[0] "Dodaj oznako pogovorom"
-msgstr[1] "Dodaj oznako pogovoru"
-msgstr[2] "Dodaj oznako pogovoroma"
+msgstr[0] "Dodaj oznako pogovoru"
+msgstr[1] "Dodaj oznako pogovoroma"
+msgstr[2] "Dodaj oznako pogovorom"
 msgstr[3] "Dodaj oznako pogovorom"
 
 #: ../src/client/application/geary-controller.vala:83
@@ -401,9 +401,9 @@ msgstr "Dodaj oznako pogovorom"
 #: ../src/client/application/geary-controller.vala:2718
 msgid "Move conversation"
 msgid_plural "Move conversations"
-msgstr[0] "Premakni pogovore"
-msgstr[1] "Premakni pogovor"
-msgstr[2] "Premakni pogovora"
+msgstr[0] "Premakni pogovor"
+msgstr[1] "Premakni pogovora"
+msgstr[2] "Premakni pogovore"
 msgstr[3] "Premakni pogovore"
 
 #: ../src/client/application/geary-controller.vala:85
@@ -1030,9 +1030,9 @@ msgstr "Napaka pri praznjenju %s"
 #: ../src/client/application/geary-controller.vala:2439
 msgid "Do you want to permanently delete this message?"
 msgid_plural "Do you want to permanently delete these messages?"
-msgstr[0] "Želite trajno izbrisati ta sporočila?"
-msgstr[1] "Želite trajno izbrisati to sporočilo?"
-msgstr[2] "Želite trajno izbrisati ti sporočili?"
+msgstr[0] "Želite trajno izbrisati to sporočilo?"
+msgstr[1] "Želite trajno izbrisati ti sporočili?"
+msgstr[2] "Želite trajno izbrisati ta sporočila?"
 msgstr[3] "Želite trajno izbrisati ta sporočila?"
 
 #: ../src/client/application/geary-controller.vala:2491
@@ -1133,7 +1133,7 @@ msgstr "Beleži normalizacijo map"
 #: ../src/client/application/geary-args.vala:25
 #: ../src/client/application/geary-args.vala:26
 msgid "Allow inspection of WebView"
-msgstr "Allow inspection of WebView"
+msgstr "Dovoli pregled WebView-a"
 
 #: ../src/client/application/geary-args.vala:26
 #: ../src/client/application/geary-args.vala:27
@@ -1175,7 +1175,7 @@ msgstr "%s - Nova sporočila"
 msgid "%d new message"
 msgid_plural "%d new messages"
 msgstr[0] "%d novo sporočilo"
-msgstr[1] "%d nova sporočila"
+msgstr[1] "%d novi sporočili"
 msgstr[2] "%d nova sporočila"
 msgstr[3] "%d novih sporočil"
 
@@ -2270,9 +2270,9 @@ msgstr "Izbriši pogovor"
 #: ../src/client/application/geary-controller.vala:2725
 msgid "Delete Conversation (Shift+Delete)"
 msgid_plural "Delete Conversations (Shift+Delete)"
-msgstr[0] "Izbriši pogovore (Shift+Delete)"
-msgstr[1] "Izbriši pogovor (Shift+Delete)"
-msgstr[2] "Izbriši pogovora (Shift+Delete)"
+msgstr[0] "Izbriši pogovor (Shift+Delete)"
+msgstr[1] "Izbriši pogovora (Shift+Delete)"
+msgstr[2] "Izbriši pogovore (Shift+Delete)"
 msgstr[3] "Izbriši pogovore (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
@@ -2666,7 +2666,7 @@ msgstr "_Strežnik:"
 
 #: ../data/ui/login.ui:347
 msgid "P_ort"
-msgstr "Vrata:"
+msgstr "Vrata"
 
 #: ../data/ui/login.ui:409
 msgid "Ser_ver:"
@@ -2674,7 +2674,7 @@ msgstr "_Strežnik:"
 
 #: ../data/ui/login.ui:427
 msgid "Por_t"
-msgstr "_Vrata:"
+msgstr "_Vrata"
 
 #: ../data/ui/login.ui:446
 msgid "SMTP settings"
