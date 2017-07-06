@@ -1,0 +1,28 @@
+project('io.elementary.mail', 'vala', 'c')
+
+gnome = import('gnome')
+i18n = import('i18n')
+
+glib_dep = dependency('glib-2.0')
+gobject_dep = dependency('gobject-2.0')
+granite_dep = dependency('granite')
+gee_dep = dependency('gee-0.8')
+camel_dep = dependency('camel-1.2')
+libedataserver_dep = dependency('libedataserver-1.2')
+libedataserverui_dep = dependency('libedataserverui-1.2')
+webkit2_dep = dependency('webkit2gtk-4.0')
+
+dependencies =[
+    glib_dep,
+    gobject_dep,
+    granite_dep,
+    gee_dep,
+    camel_dep,
+    libedataserver_dep,
+    libedataserverui_dep,
+    webkit2_dep
+]
+
+add_global_arguments('-DGETTEXT_PACKAGE="io.elementary.mail"', language:'c')
+
+subdir('src')

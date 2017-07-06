@@ -1,9 +1,0 @@
-include(Translations)
-add_translations_directory(${GETTEXT_PACKAGE})
-add_translations_catalog(${GETTEXT_PACKAGE}
-    ../src
-    DESKTOP_FILES
-        ${CMAKE_BINARY_DIR}/data/io.elementary.mail.desktop.in
-    APPDATA_FILES
-        ../data/io.elementary.mail.appdata.xml.in
-)
