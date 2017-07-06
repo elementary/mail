@@ -4,27 +4,19 @@
 ## Building, Testing, and Installation
 
 You'll need the following dependencies:
-* libaccounts-glib-dev
-* libcanberra-dev
-* libgcr-3-dev
-* libgirepository1.0-dev
+* libcamel1.2-dev
+* libedataserver-1.2-dev
+* libedataserverui-1.2-dev
+* libgee-0.8-dev
 * libglib2.0-dev
-* libgmime-2.6-dev
 * libgranite-dev
-* libgsignon-glib-dev
-* libgtk-3-dev
-* libsecret-1-dev
-* libsqlite3-dev
-* libunity-dev
-* libwebkitgtk-3.0-dev
-* libxml2-dev
-* valac (>= 0.26)
+* libwebkit2gtk-4.0-dev
+* valac
 
 Run `meson build` to configure the build environment and then change to the build directory and run `ninja` to build
 
-    meson build
+    meson build --prefix=/usr
     cd build
-    mesonconf -Dprefix=/usr
     ninja
 
 To install, use `ninja install`, then execute with `io.elementary.mail`
