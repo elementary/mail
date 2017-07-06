@@ -1,0 +1,17 @@
+[Desktop Entry]
+_Name=@APP_NAME@
+_Comment=@RELEASE_NAME@
+Exec=@EXEC_NAME@ %U
+Icon=@DESKTOP_ICON@
+_Keywords=Email;E-mail;Mail;
+Terminal=false
+Type=Application
+MimeType=x-scheme-handler/mailto;
+StartupNotify=true
+Categories=GNOME;GTK;Network;Email;
+X-GNOME-UsesNotifications=true
+Actions=Compose;
+
+[Desktop Action Compose]
+_Name=Compose Message
+Exec=@EXEC_NAME@ mailto:

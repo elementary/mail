@@ -1,0 +1,88 @@
+# Serbian translation for pantheon-mail
+# Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
+# This file is distributed under the same license as the pantheon-mail package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pantheon-mail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-08 13:23-0800\n"
+"PO-Revision-Date: 2017-05-06 12:36+0000\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Language-Team: Serbian <https://l10n.elementary.io/projects/mail/extra/sr/>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=nplurals=3; plural=(n%10==1 && n%100!=11 ? "
+"0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);;\n"
+"X-Generator: Weblate 2.13-dev\n"
+"X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
+
+msgid "Mail"
+msgstr "Пошта"
+
+msgid "Send and receive mail"
+msgstr "Шаљите и примајте пошту"
+
+msgid "Email;E-mail;Mail;"
+msgstr "е-пошта;пошта;"
+
+msgid "Compose Message"
+msgstr "Саставите поруку"
+
+msgid "About Mail"
+msgstr "О Пошти"
+
+msgid "Lightweight mail client"
+msgstr "Лаган програм за пошту"
+
+msgid ""
+"Mail is designed to let you manage your email quickly and effortlessly. Its "
+"interface is based on conversations, so you can read an entire discussion "
+"without having to click from message to message."
+msgstr ""
+"Пошта је осмишљена како би вам омогућила да управљате својом е-поштом брзо и "
+"без напора. Њено сучеље је засновано на разговорима, тако да можете "
+"прочитати целу расправу а да не морате да кликћете са поруке на поруку."
+
+msgid "Lightweight mail client with full IMAP support"
+msgstr "Лаган програм за пошту са пуном ИМАП подршком"
+
+msgid "Mail grouped into conversations, not a tree of threads"
+msgstr "Поруке су груписане по разговорима, а не по стаблу теме"
+
+msgid "As-you-type searching"
+msgstr "Претрага у реалном времену"
+
+msgid "Desktop notifications"
+msgstr "Обавештења радне површи"
+
+msgid "Multiple account support"
+msgstr "Подршка за више налога"
+
+msgid "Inline HTML composer that saves drafts to the server"
+msgstr "Уграђени ХТМЛ састављач који чува нацрте на серверу"
+
+msgid ""
+"Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
+"IMAP servers"
+msgstr ""
+"Ради са Г-поштом, Јаху! поштом, Аутлуком (пробно), и другим популарним ИМАП "
+"серверима"
+
+msgid "Minor bug fixes"
+msgstr "Мање исправке грешака"
+
+msgid "Translation updates"
+msgstr "Освежења превода"
+
+msgid "Appstream: add releases info"
+msgstr "Програмски ток: додаје податке о издању"
+
+msgid "Don't overwrite custom settings not available in the POA plugin"
+msgstr "Не преписуј произвољна подешавања која нису доступна у ПОА прикључку"
+
+msgid "Release for Loki"
+msgstr "Издање за Локи"
