@@ -20,14 +20,14 @@ You'll need the following dependencies:
 * libxml2-dev
 * valac (>= 0.26)
 
-Run meson build to configure the build environment and then change to the build directory and run ninja to build
+Run `meson build` to configure the build environment and then change to the build directory and run `ninja` to build
 
     meson build
     cd build
     mesonconf -Dprefix=/usr
     ninja
 
-To install, use ninja install, then execute with io.elementary.mail
+To install, use `ninja install`, then execute with `io.elementary.mail`
 
     sudo ninja install
     io.elementary.mail
