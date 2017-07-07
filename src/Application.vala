@@ -25,6 +25,16 @@ public class Mail.Application : Gtk.Application {
         application_id = "io.elementary.mail";
         flags |= ApplicationFlags.HANDLES_OPEN;
         Intl.setlocale (LocaleCategory.ALL, "");
+
+        var quit_action = new SimpleAction ("quit", null);
+        quit_action.activate.connect (() => {
+            if (main_window != null) {
+                main_window.destroy ();
+            }
+        });
+
+        add_action (quit_action);
+        add_accelerator ("<Control>q", "app.quit", null);
     }
 
     public override void open (File[] files, string hint) {
