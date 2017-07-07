@@ -11,8 +11,11 @@ camel_dep = dependency('camel-1.2')
 libedataserver_dep = dependency('libedataserver-1.2')
 libedataserverui_dep = dependency('libedataserverui-1.2')
 webkit2_dep = dependency('webkit2gtk-4.0')
+webkit2_web_extension_dep = dependency('webkit2gtk-web-extension-4.0')
 
-dependencies =[
+webkit2_extension_path = join_paths(get_option('prefix'), get_option('libdir'), 'io.elementary.mail', 'webkit2')
+
+dependencies = [
     glib_dep,
     gobject_dep,
     granite_dep,
@@ -23,6 +26,14 @@ dependencies =[
     webkit2_dep
 ]
 
+extension_dependencies = [
+    glib_dep,
+    gobject_dep,
+    gee_dep,
+    webkit2_web_extension_dep
+]
+
 add_global_arguments('-DGETTEXT_PACKAGE="io.elementary.mail"', language:'c')
 
 subdir('src')
+subdir('webkit-extension')

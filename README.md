@@ -24,3 +24,4 @@ To install, use `ninja install`, then execute with `io.elementary.mail`
     sudo ninja install
     io.elementary.mail
 
+You might want to set the `WEBKIT_EXTENSION_PATH` environment variable to the `webkit-extension` build folder in order to test the application without installing it
