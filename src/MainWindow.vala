@@ -28,14 +28,21 @@ public class Mail.MainWindow : Gtk.Window {
 
         folders_list_view = new FoldersListView ();
         conversation_list_box = new ConversationListBox ();
+        var conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
+        conversation_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        conversation_list_scrolled.add (conversation_list_box);
 
         var paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         var paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_end.add1 (paned_start);
         paned_start.add1 (folders_list_view);
-        paned_start.add2 (conversation_list_box);
+        paned_start.add2 (conversation_list_scrolled);
         add (paned_end);
         destroy.connect (() => destroy ());
+
+        folders_list_view.folder_selected.connect ((account, folder_name) => {
+            conversation_list_box.set_folder.begin (account, folder_name);
+        });
 
         Backend.Session.get_default ().start.begin ();
 
