@@ -1646,32 +1646,6 @@ public class GearyController : Geary.BaseObject {
         GearyApplication.instance.exit();
     }
 
-    public static void on_about() {
-        var dialog = create_about_dialog ();
-        dialog.run ();
-        dialog.destroy ();
-    }
-
-    public static Granite.Widgets.AboutDialog create_about_dialog () {
-        var about = new Granite.Widgets.AboutDialog ();
-        about.program_name = GearyApplication.NAME;
-        about.version = GearyApplication.VERSION;
-        about.logo_icon_name = "internet-mail";
-        about.copyright = GearyApplication.COPYRIGHT;
-        about.website = GearyApplication.WEBSITE;
-        about.website_label = GearyApplication.WEBSITE_LABEL;
-        about.authors = GearyApplication.AUTHORS;
-        about.artists = GearyApplication.ARTISTS;
-        // Translators: add your name and email address to receive credit in the About dialog
-        // For example: Yamada Taro <yamada.taro@example.com>
-        about.translator_credits = _("translator-credits");
-        about.license_type = Gtk.License.LGPL_2_1;
-        about.help = GearyApplication.HELP;
-        about.translate = GearyApplication.TRANSLATE;
-        about.bug = GearyApplication.BUGREPORT;
-        return about;
-    }
-
     private void on_shift_key(bool pressed) {
         if (main_window != null && main_window.main_toolbar != null
             && current_account != null && current_folder != null) {
