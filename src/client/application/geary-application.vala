@@ -16,11 +16,7 @@ public class GearyApplication : Gtk.Application {
     public const string PRGNAME = "pantheon-mail";
     public const string APP_ID = "org.pantheon.mail";
     public const string COPYRIGHT = _("2011-2015 Yorba Foundation\n© 2016-2017 elementary LLC.");
-    public const string WEBSITE = "https://elementary.io";
-    public const string WEBSITE_LABEL = _("Website");
     public const string BUGREPORT = "https://github.com/elementary/mail/issues";
-    public const string HELP = "https://elementary.io/help/geary";
-    public const string TRANSLATE = "https://l10n.elementary.io/projects/mail";
 
     public const string CONTRACT_NAME = _("Send by Email");
     public const string CONTRACT_DESCRIPTION = _("Send files using Mail");
@@ -30,22 +26,6 @@ public class GearyApplication : Gtk.Application {
     public const string GSETTINGS_DIR = _GSETTINGS_DIR;
     public const string SOURCE_ROOT_DIR = _SOURCE_ROOT_DIR;
     public const string GRESOURCE_UI_PREFIX = "/io/elementary/pantheon-mail/ui";
-
-    public const string[] AUTHORS = {
-        "Jim Nelson <jim@yorba.org>",
-        "Eric Gregory <eric@yorba.org>",
-        "Nate Lillich <nate@yorba.org>",
-        "Matthew Pirocchi <matthew@yorba.org>",
-        "Charles Lindsay <chaz@yorba.org>",
-        "Robert Schroll <rschroll@gmail.com>",
-        null
-    };
-
-    public const string[] ARTISTS = {
-        "Daniel Foré <daniel@elementary.io>",
-        "Sam Hewitt <sam@elementary.io>",
-        null
-    };
 
     private const string ACTION_ENTRY_COMPOSE = "compose";
 
