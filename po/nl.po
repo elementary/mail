@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-07-09 10:50+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"PO-Revision-Date: 2017-07-09 11:10+0000\n"
+"Last-Translator: Pieter De Clercq <pieter.eke@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -2426,62 +2426,62 @@ msgstr ""
 #: ../data/ui/composer.ui:173 ../data/ui/composer.ui:155
 #: ../data/ui/composer.ui:160
 msgid "Lar_ge"
-msgstr ""
+msgstr "_Groot"
 
 #: ../data/ui/composer.ui:174 ../data/ui/composer.ui:156
 #: ../data/ui/composer.ui:161
 msgid "Large"
-msgstr ""
+msgstr "Groot"
 
 #: ../data/ui/composer.ui:179 ../data/ui/composer.ui:161
 #: ../data/ui/composer.ui:166
 msgid "_Medium"
-msgstr ""
+msgstr "_Gemiddeld"
 
 #: ../data/ui/composer.ui:180 ../data/ui/composer.ui:162
 #: ../data/ui/composer.ui:167
 msgid "Medium"
-msgstr ""
+msgstr "Gemiddeld"
 
 #: ../data/ui/composer.ui:185 ../data/ui/composer.ui:167
 #: ../data/ui/composer.ui:172
 msgid "_Small"
-msgstr ""
+msgstr "_Klein"
 
 #: ../data/ui/composer.ui:186 ../data/ui/composer.ui:168
 #: ../data/ui/composer.ui:173
 msgid "Small"
-msgstr ""
+msgstr "Klein"
 
 #: ../data/ui/composer.ui:191 ../data/ui/composer.ui:173
 #: ../data/ui/composer.ui:178
 msgid "S_ans Serif"
-msgstr ""
+msgstr "S_chreefloos"
 
 #: ../data/ui/composer.ui:192 ../data/ui/composer.ui:174
 #: ../data/ui/composer.ui:179
 msgid "Sans Serif"
-msgstr ""
+msgstr "Schreefloos"
 
 #: ../data/ui/composer.ui:197 ../data/ui/composer.ui:179
 #: ../data/ui/composer.ui:184
 msgid "S_erif"
-msgstr ""
+msgstr "S_chreefhebbend"
 
 #: ../data/ui/composer.ui:198 ../data/ui/composer.ui:180
 #: ../data/ui/composer.ui:185
 msgid "Serif"
-msgstr ""
+msgstr "Schreefhebbend"
 
 #: ../data/ui/composer.ui:203 ../data/ui/composer.ui:185
 #: ../data/ui/composer.ui:190
 msgid "_Fixed Width"
-msgstr ""
+msgstr "_Vaste breedte"
 
 #: ../data/ui/composer.ui:204 ../data/ui/composer.ui:186
 #: ../data/ui/composer.ui:191
 msgid "Fixed Width"
-msgstr ""
+msgstr "Vaste breedte"
 
 #: ../data/ui/composer.ui:209 ../data/ui/composer.ui:210
 msgid "Detach"
@@ -2493,23 +2493,23 @@ msgstr ""
 
 #: ../data/ui/composer.ui:218
 msgid "_Send"
-msgstr ""
+msgstr "_Verzenden"
 
 #: ../data/ui/composer.ui:219 ../src/client/composer/ComposerHeaderBar.vala:46
 msgid "Send"
-msgstr ""
+msgstr "Verzenden"
 
 #: ../data/ui/composer.ui:220 ../src/client/composer/ComposerHeaderBar.vala:47
 msgid "Send (Ctrl+Enter)"
-msgstr ""
+msgstr "Verzenden (Ctrl+Enter)"
 
 #: ../data/ui/composer.ui:226
 msgid "_Attach File"
-msgstr ""
+msgstr "_Bestand bijvoegen"
 
 #: ../data/ui/composer.ui:227 ../data/ui/composer.ui:228
 msgid "Attach File"
-msgstr ""
+msgstr "Bestand bijvoegen"
 
 #: ../data/ui/composer.ui:234
 msgid "_Include Original Attachments"
@@ -2528,34 +2528,34 @@ msgstr ""
 #: ../data/ui/composer.ui:289 ../data/ui/composer.ui:317
 #: ../data/ui/composer.ui:287 ../data/ui/composer.ui:292
 msgid "_To"
-msgstr ""
+msgstr "_Aan"
 
 #: ../data/ui/composer.ui:308 ../data/ui/composer.ui:336
 #: ../data/ui/composer.ui:306 ../data/ui/composer.ui:311
 msgid "_Cc"
-msgstr ""
+msgstr "_Cc"
 
 #: ../data/ui/composer.ui:362 ../data/ui/composer.ui:390
 #: ../data/ui/composer.ui:360 ../data/ui/composer.ui:365
 msgid "_Subject"
-msgstr ""
+msgstr "_Onderwerp"
 
 #: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
 #: ../data/ui/composer.ui:379 ../data/ui/composer.ui:384
 msgid "_Bcc"
-msgstr ""
+msgstr "_Bcc"
 
 #: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
 #: ../data/ui/composer.ui:409 ../data/ui/composer.ui:414
 msgid "_Reply-To"
-msgstr ""
+msgstr "_Antwoorden aan"
 
 #. Geary account mail will be sent from
 #. Account mail will be sent from
 #: ../data/ui/composer.ui:440 ../data/ui/composer.ui:468
 #: ../data/ui/composer.ui:438 ../data/ui/composer.ui:443
 msgid "From"
-msgstr ""
+msgstr "Van"
 
 #: ../data/ui/composer.ui:519 ../data/ui/composer.ui:547
 #: ../data/ui/composer.ui:517 ../data/ui/composer.ui:522
@@ -2587,15 +2587,15 @@ msgstr ""
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
-msgstr ""
+msgstr "Wachtwoord"
 
 #: ../data/ui/login.ui:97 ../data/ui/login.ui:545
 msgid "_Password:"
-msgstr ""
+msgstr "_Wachtwoord:"
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
-msgstr ""
+msgstr "E-mailadres:"
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
