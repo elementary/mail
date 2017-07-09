@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-07-09 10:39+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"PO-Revision-Date: 2017-07-09 10:44+0000\n"
+"Last-Translator: Pieter De Clercq <pieter.eke@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -2230,7 +2230,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:60
 #: ../src/client/application/geary-controller.vala:59
 msgid "Delete Conversation"
-msgstr ""
+msgstr "Gesprek verwijderen"
 
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
@@ -2239,14 +2239,14 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2725
 msgid "Delete Conversation (Shift+Delete)"
 msgid_plural "Delete Conversations (Shift+Delete)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Gesprek verwijderen (Shift+Delete)"
+msgstr[1] "Gesprekken verwijderen (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete Conversations (Shift+Delete)"
-msgstr ""
+msgstr "Gesprekken verwijderen (Shift+Delete)"
 
 #: ../data/ui/remove_confirm.ui:43
 msgid ""
@@ -2264,23 +2264,23 @@ msgstr ""
 #: ../data/ui/remove_confirm.ui:80
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:47
 msgid "Nickname:"
-msgstr ""
+msgstr "Bijnaam:"
 
 #: ../data/ui/remove_confirm.ui:94
 msgid "Email address:"
-msgstr ""
+msgstr "E-mailadres:"
 
 #: ../data/ui/find_bar.ui:59
 msgid "Find"
-msgstr ""
+msgstr "Zoeken"
 
 #: ../data/ui/find_bar.ui:72
 msgid "Previous Result"
-msgstr ""
+msgstr "Vorige resultaat"
 
 #: ../data/ui/find_bar.ui:91
 msgid "Next result"
-msgstr ""
+msgstr "Volgende resultaat"
 
 #: ../data/ui/find_bar.ui:107
 msgid "_Case sensitive"
@@ -2296,7 +2296,7 @@ msgstr ""
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
-msgstr ""
+msgstr "E-mailadres verwijderen"
 
 #: ../data/ui/edit_alternate_emails.ui:136
 msgid ""
@@ -2306,7 +2306,7 @@ msgstr ""
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
-msgstr ""
+msgstr "_Updaten"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
@@ -2314,7 +2314,7 @@ msgstr ""
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
-msgstr ""
+msgstr "_Ongedaan maken"
 
 #: ../data/ui/composer.ui:15
 msgid "_Redo"
@@ -2322,27 +2322,27 @@ msgstr ""
 
 #: ../data/ui/composer.ui:22
 msgid "Cu_t"
-msgstr ""
+msgstr "K_nippen"
 
 #: ../data/ui/composer.ui:36
 msgid "_Paste"
-msgstr ""
+msgstr "_Plakken"
 
 #: ../data/ui/composer.ui:43
 msgid "_Left"
-msgstr ""
+msgstr "_Links"
 
 #: ../data/ui/composer.ui:48
 msgid "_Right"
-msgstr ""
+msgstr "_Rechts"
 
 #: ../data/ui/composer.ui:53
 msgid "_Center"
-msgstr ""
+msgstr "_Centreren"
 
 #: ../data/ui/composer.ui:58
 msgid "_Justify"
-msgstr ""
+msgstr "_Uitvullen"
 
 #: ../data/ui/composer.ui:63 ../src/client/composer/ComposerToolbar.vala:77
 msgid "Link (Ctrl+L)"
