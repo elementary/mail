@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-07-09 11:15+0000\n"
-"Last-Translator: Pieter De Clercq <pieter.eke@gmail.com>\n"
+"PO-Revision-Date: 2017-07-09 11:18+0000\n"
+"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -1221,9 +1221,9 @@ msgid ""
 "Selecting \"Trust This Server\" or \"Always Trust This Server\" may cause "
 "your username and password to be transmitted insecurely."
 msgstr ""
-"Het selecteren van \"Vertrouw deze Server\" of \"Vertrouw deze server altijd"
-"\" kan veroorzaken dat uw gebruikersnaam en wachtwoord om onbeveiligd worden "
-"verzonden."
+"Het selecteren van \"Vertrouw deze server\" of \"Vertrouw deze server "
+"altijd\" kan veroorzaken dat uw gebruikersnaam en wachtwoord om onbeveiligd "
+"worden verzonden."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
@@ -2723,15 +2723,15 @@ msgstr ""
 
 #: ../data/ui/certificate_warning_dialog.ui:29
 msgid "_Always Trust This Server"
-msgstr "Deze server _altijd vertrouwen"
+msgstr "Vertrouw deze server _altijd"
 
 #: ../data/ui/certificate_warning_dialog.ui:43
 msgid "_Trust This Server"
-msgstr "Deze server _vertrouwen"
+msgstr "Ver_trouw deze server"
 
 #: ../data/ui/certificate_warning_dialog.ui:57
 msgid "_Don't Trust This Server"
-msgstr "Deze server _niet vertrouwen"
+msgstr "Vertrouw _deze server niet"
 
 #: ../data/ui/password-dialog.ui:74
 msgid "SMTP Credentials"
