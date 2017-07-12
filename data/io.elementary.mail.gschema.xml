@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema path="/io/elementary/mail/"
+  id="io.elementary.mail"
+  gettext-domain="io.elementary.mail">
+    <key name="window-x" type="i">
+      <default>-1</default>
+      <summary>Most recent x position</summary>
+      <description>Most recent x position</description>
+    </key>
+    <key name="window-y" type="i">
+      <default>-1</default>
+      <summary>Most recent y position</summary>
+      <description>Most recent y position</description>
+    </key> 
+  </schema>
+</schemalist>
+
