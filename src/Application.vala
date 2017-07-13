@@ -66,6 +66,10 @@ public class Mail.Application : Gtk.Application {
             main_window.show_all ();
             add_window (main_window);
 
+            var css_provider = new Gtk.CssProvider ();
+            css_provider.load_from_resource ("io/elementary/mail/application.css");
+            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
             main_window.delete_event.connect (() => {
                 Gtk.Allocation rect;
                 main_window.get_allocation (out rect);

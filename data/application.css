@@ -1,0 +1,7 @@
+.conversation-list-item {
+    box-shadow: 0 -1px 0 @menu_separator;
+}
+
+.unread-message {
+    font-weight: bolder;
+}
