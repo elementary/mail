@@ -22,6 +22,10 @@
 
 public class Mail.ConversationListItem : Gtk.ListBoxRow {
     private const string UNREAD_MESSAGE_CLASS_CSS = """
+        .conversation-list-item {
+            box-shadow: 0 -1px 0 @menu_separator;
+        }
+
         .unread-message {
             font-weight: bolder;
         }
@@ -36,19 +40,23 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
     public ConversationListItem (Camel.FolderThreadNode node) {
         this.node = node;
         var num_messages = count_thread_messages (node);
+
         messages.label = num_messages > 1 ? "%u".printf(num_messages) : null;
         messages.no_show_all = num_messages <= 1;
         messages.visible = num_messages > 1;
+
         topic.label = node.message.subject;
+
         var from_parts = node.message.from.split ("<");
         var from_name = GLib.Markup.escape_text (from_parts[0].strip ());
-        source.label = "<span size=\"larger\">%s</span>".printf (from_name);
+
+        source.label = from_name;
+
         if (!(Camel.MessageFlags.SEEN in (int)node.message.flags)) {
             get_style_context ().add_class ("unread-message");
         }
-        
-        var received_date = new DateTime.from_unix_utc (node.message.date_received);
-        //date.label = Date.pretty_print (received_date, GearyApplication.instance.config.clock_format);
+
+        date.label = new DateTime.from_unix_utc (node.message.date_received).format ("%b %e");
     }
 
     construct {
@@ -56,25 +64,33 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
         source.hexpand = true;
         source.ellipsize = Pango.EllipsizeMode.END;
         source.xalign = 0;
-        source.use_markup = true;
+        source.get_style_context ().add_class ("h3");
+
         messages = new Gtk.Label (null);
         messages.halign = Gtk.Align.END;
+
         var messages_style = messages.get_style_context ();
         messages_style.add_class (Granite.StyleClass.BADGE);
         messages_style.add_class ("source-list");
+
         topic = new Gtk.Label (null);
         topic.hexpand = true;
         topic.ellipsize = Pango.EllipsizeMode.END;
         topic.xalign = 0;
+
         date = new Gtk.Label (null);
+        date.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
         var grid = new Gtk.Grid ();
-        grid.margin = 6;
+        grid.margin = 12;
         grid.column_spacing = 12;
         grid.row_spacing = 6;
         grid.attach (source, 0, 0, 1, 1);
         grid.attach (date, 1, 0, 2, 1);
         grid.attach (topic, 0, 1, 2, 1);
         grid.attach (messages, 2, 1, 1, 1);
+
+        get_style_context ().add_class ("conversation-list-item");
         add (grid);
 
         var css_provider = new Gtk.CssProvider ();
