@@ -78,7 +78,6 @@ public class Mail.Application : Gtk.Application {
                 main_window.get_position (out root_x, out root_y);
                 settings.set_int ("window-x", root_x);
                 settings.set_int ("window-y", root_y);
-
             });
         }
     }
