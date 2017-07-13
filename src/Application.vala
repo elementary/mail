@@ -44,8 +44,25 @@ public class Mail.Application : Gtk.Application {
     public override void activate () {
         if (main_window == null) {
             main_window = new MainWindow ();
+
+            var settings = new GLib.Settings ("io.elementary.mail");
+
+            var window_x = settings.get_int ("window-x");
+            var window_y = settings.get_int ("window-y");
+
+            if (window_x != -1 ||  window_y != -1) {
+                main_window.move (window_x, window_y);
+            }
+
             main_window.show_all ();
             add_window (main_window);
+
+            main_window.state_changed.connect (() => {
+                int root_x, root_y;
+                main_window.get_position (out root_x, out root_y);
+                settings.set_int ("window-x", root_x);
+                settings.set_int ("window-y", root_y);
+            });
         }
     }
 }
