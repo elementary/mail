@@ -21,16 +21,6 @@
  */
 
 public class Mail.ConversationListItem : Gtk.ListBoxRow {
-    private const string UNREAD_MESSAGE_CLASS_CSS = """
-        .conversation-list-item {
-            box-shadow: 0 -1px 0 @menu_separator;
-        }
-
-        .unread-message {
-            font-weight: bolder;
-        }
-    """;
-
     public Camel.FolderThreadNode node { get; private set; }
 
     Gtk.Label source;
@@ -92,14 +82,6 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
 
         get_style_context ().add_class ("conversation-list-item");
         add (grid);
-
-        var css_provider = new Gtk.CssProvider ();
-        try {
-            css_provider.load_from_data (UNREAD_MESSAGE_CLASS_CSS);
-            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (Error e) {
-            critical (e.message);
-        }
 
         show_all ();
     }

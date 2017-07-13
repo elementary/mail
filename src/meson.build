@@ -16,6 +16,7 @@ vala_files = [
 
 executable('io.elementary.mail',
     vala_files,
+    asresources,
     dependencies: dependencies,
     c_args: '-DWEBKIT_EXTENSION_PATH="' + webkit2_extension_path + '"'
 )
