@@ -45,7 +45,7 @@ public class Mail.Application : Gtk.Application {
         if (main_window == null) {
             main_window = new MainWindow ();
 
-            var settings = new Settings ("io.elementary.mail");
+            var settings = new GLib.Settings ("io.elementary.mail");
 
             var window_x = settings.get_int ("window-x");
             var window_y = settings.get_int ("window-y");
