@@ -22,6 +22,13 @@ public class Mail.MainWindow : Gtk.Window {
     FoldersListView folders_list_view;
     ConversationListBox conversation_list_box;
 
+    public MainWindow () {
+        Object (
+            height_request: 640,
+            width_request: 910
+        );
+    }
+
     construct {
         var headerbar = new HeaderBar ();
         set_titlebar (headerbar);
