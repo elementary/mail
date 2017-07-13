@@ -3,6 +3,16 @@
   <schema path="/io/elementary/mail/"
   id="io.elementary.mail"
   gettext-domain="io.elementary.mail">
+    <key name="window-height" type="i">
+      <default>-1</default>
+      <summary>Most recent window height</summary>
+      <description>Most recent window height</description>
+    </key>
+    <key name="window-width" type="i">
+      <default>-1</default>
+      <summary>Most recent window width</summary>
+      <description>Most recent window width</description>
+    </key>
     <key name="window-x" type="i">
       <default>-1</default>
       <summary>Most recent x position</summary>
