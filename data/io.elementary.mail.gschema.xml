@@ -3,6 +3,11 @@
   <schema path="/io/elementary/mail/"
   id="io.elementary.mail"
   gettext-domain="io.elementary.mail">
+    <key name="paned-start-position" type="i">
+      <default>200</default>
+      <summary>Most recent position of the folders pane</summary>
+      <description>Most recent position of the folders pane</description>
+    </key> 
     <key name="window-x" type="i">
       <default>-1</default>
       <summary>Most recent x position</summary>
