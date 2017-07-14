@@ -19,9 +19,6 @@
  */
 
 public class Mail.MainWindow : Gtk.Window {
-    FoldersListView folders_list_view;
-    ConversationListBox conversation_list_box;
-
     public MainWindow () {
         Object (
             height_request: 640,
@@ -33,8 +30,9 @@ public class Mail.MainWindow : Gtk.Window {
         var headerbar = new HeaderBar ();
         set_titlebar (headerbar);
 
-        folders_list_view = new FoldersListView ();
-        conversation_list_box = new ConversationListBox ();
+        var folders_list_view = new FoldersListView ();
+        var conversation_list_box = new ConversationListBox ();
+        var message_list_box = new MessageListBox ();
 
         var conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
         conversation_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -46,10 +44,13 @@ public class Mail.MainWindow : Gtk.Window {
 
         var paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_end.add1 (paned_start);
+        paned_end.add2 (message_list_box);
 
         add (paned_end);
+
         var settings = new GLib.Settings ("io.elementary.mail");
         settings.bind ("paned-start-position", paned_start, "position", SettingsBindFlags.DEFAULT);
+        settings.bind ("paned-end-position", paned_end, "position", SettingsBindFlags.DEFAULT);
 
         destroy.connect (() => destroy ());
 

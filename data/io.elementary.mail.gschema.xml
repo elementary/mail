@@ -27,7 +27,12 @@
       <default>200</default>
       <summary>Most recent position of the folders pane</summary>
       <description>Most recent position of the folders pane</description>
-    </key> 
+    </key>
+    <key name="paned-end-position" type="i">
+      <default>400</default>
+      <summary>Most recent position of the conversation list pane</summary>
+      <description>Most recent position of the conversation list pane</description>
+    </key>
   </schema>
 </schemalist>
 
