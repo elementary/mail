@@ -23,6 +23,11 @@
       <summary>Most recent y position</summary>
       <description>Most recent y position</description>
     </key> 
+    <key name="paned-start-position" type="i">
+      <default>200</default>
+      <summary>Most recent position of the folders pane</summary>
+      <description>Most recent position of the folders pane</description>
+    </key> 
   </schema>
 </schemalist>
 
