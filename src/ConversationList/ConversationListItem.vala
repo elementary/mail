@@ -21,12 +21,15 @@
  */
 
 public class Mail.ConversationListItem : Gtk.ListBoxRow {
+    private Gtk.Label date;
+    private Gtk.Label messages;
+    private Gtk.Label source;
+    private Gtk.Label topic;
+    private Gtk.Revealer flagged_icon_revealer;
+    private Gtk.Revealer unread_icon_revealer;
+
     public Camel.FolderThreadNode node { get; private set; }
 
-    Gtk.Label source;
-    Gtk.Label messages;
-    Gtk.Label topic;
-    Gtk.Label date;
     public ConversationListItem (Camel.FolderThreadNode node) {
         this.node = node;
         var num_messages = count_thread_messages (node);
@@ -44,12 +47,25 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
 
         if (!(Camel.MessageFlags.SEEN in (int)node.message.flags)) {
             get_style_context ().add_class ("unread-message");
+            unread_icon_revealer.reveal_child = true;
+        }
+
+        if (Camel.MessageFlags.FLAGGED in (int)node.message.flags) {
+            flagged_icon_revealer.reveal_child = true;
         }
 
         date.label = new DateTime.from_unix_utc (node.message.date_received).format ("%b %e");
     }
 
     construct {
+        var unread_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic", Gtk.IconSize.MENU);
+        unread_icon_revealer = new Gtk.Revealer ();
+        unread_icon_revealer.add (unread_icon);
+
+        var flagged_icon = new Gtk.Image.from_icon_name ("starred-symbolic", Gtk.IconSize.MENU);
+        flagged_icon_revealer = new Gtk.Revealer ();
+        flagged_icon_revealer.add (flagged_icon);
+
         source = new Gtk.Label (null);
         source.hexpand = true;
         source.ellipsize = Pango.EllipsizeMode.END;
@@ -75,10 +91,12 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
         grid.margin = 12;
         grid.column_spacing = 12;
         grid.row_spacing = 6;
-        grid.attach (source, 0, 0, 1, 1);
-        grid.attach (date, 1, 0, 2, 1);
-        grid.attach (topic, 0, 1, 2, 1);
-        grid.attach (messages, 2, 1, 1, 1);
+        grid.attach (unread_icon_revealer, 0, 0, 1, 1);
+        grid.attach (flagged_icon_revealer, 0, 1, 1, 1);
+        grid.attach (source, 1, 0, 1, 1);
+        grid.attach (date, 2, 0, 2, 1);
+        grid.attach (topic, 1, 1, 2, 1);
+        grid.attach (messages, 3, 1, 1, 1);
 
         get_style_context ().add_class ("conversation-list-item");
         add (grid);
