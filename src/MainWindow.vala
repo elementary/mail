@@ -26,6 +26,7 @@ public class Mail.MainWindow : Gtk.Window {
     public MainWindow () {
         Object (
             height_request: 640,
+            icon_name: "internet-mail",
             width_request: 910
         );
     }
