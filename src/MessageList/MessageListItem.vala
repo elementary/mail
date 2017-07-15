@@ -19,5 +19,65 @@
  */
 
 public class Mail.MessageListItem : Gtk.ListBoxRow {
-    
+    public Camel.MessageInfo message_info { get; construct; }
+
+    public MessageListItem (Camel.MessageInfo message_info) {
+        Object (message_info: message_info);
+    }
+
+    construct {
+        get_style_context ().add_class ("card");
+        margin = 12;
+
+        var from_label = new Gtk.Label (_("From:"));
+        from_label.halign = Gtk.Align.END;
+        from_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        var to_label = new Gtk.Label (_("To:"));
+        to_label.halign = Gtk.Align.END;
+        to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        var subject_label = new Gtk.Label (_("Subject:"));
+        subject_label.halign = Gtk.Align.END;
+        subject_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        var from_val_label = new Gtk.Label (message_info.from);
+        from_val_label.halign = Gtk.Align.START;
+
+        var to_val_label = new Gtk.Label (message_info.to);
+        to_val_label.halign = Gtk.Align.START;
+        to_val_label.ellipsize = Pango.EllipsizeMode.END;
+
+        var subject_val_label = new Gtk.Label (message_info.subject);
+        subject_val_label.halign = Gtk.Align.START;
+
+        var avatar = new Granite.Widgets.Avatar.with_default_icon (64);
+
+        var header = new Gtk.Grid ();
+        header.margin = 6;
+        header.column_spacing = 12;
+        header.row_spacing = 6;
+        header.attach (avatar, 0, 0, 1, 3);
+        header.attach (from_label, 1, 0, 1, 1);
+        header.attach (to_label, 1, 1, 1, 1);
+        header.attach (subject_label, 1, 2, 1, 1);
+        header.attach (from_val_label, 2, 0, 1, 1);
+        header.attach (to_val_label, 2, 1, 1, 1);
+        header.attach (subject_val_label, 2, 2, 1, 1);
+
+        var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
+        separator.hexpand = true;
+
+        var web_view = new Mail.WebView ();
+        web_view.margin = 6;
+
+        var base_grid = new Gtk.Grid ();
+        base_grid.expand = true;
+        base_grid.orientation = Gtk.Orientation.VERTICAL;
+        base_grid.add (header);
+        base_grid.add (separator);
+        base_grid.add (web_view);
+        add (base_grid);
+        show_all ();
+    }
 }
