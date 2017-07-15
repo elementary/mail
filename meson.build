@@ -43,6 +43,7 @@ add_global_arguments('-DGETTEXT_PACKAGE="io.elementary.mail"', language:'c')
 
 meson.add_install_script('meson/post_install.py')
 
-subdir('data')
 subdir('src')
 subdir('webkit-extension')
+subdir('data')
+subdir('po')
