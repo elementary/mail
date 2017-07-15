@@ -55,8 +55,10 @@ public class Mail.MainWindow : Gtk.Window {
         paned_end.pack2 (message_list_scrolled, true, true);
 
         add (paned_end);
+
         var settings = new GLib.Settings ("io.elementary.mail");
         settings.bind ("paned-start-position", paned_start, "position", SettingsBindFlags.DEFAULT);
+        settings.bind ("paned-end-position", paned_end, "position", SettingsBindFlags.DEFAULT);
 
         destroy.connect (() => destroy ());
 
