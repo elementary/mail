@@ -54,7 +54,7 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
             flagged_icon_revealer.reveal_child = true;
         }
 
-        date.label = new DateTime.from_unix_utc (node.message.date_received).format ("%b %e");
+        date.label = get_relative_datetime (new DateTime.from_unix_local (node.message.date_received));
     }
 
     construct {
@@ -113,5 +113,27 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
         }
 
         return i;
+    }
+
+    private string get_relative_datetime (DateTime date_time) {
+        var now = new DateTime.now_local ();
+
+        if (is_same_day (date_time, now)) {
+            return date_time.format ("%l:%M %p");
+        }
+        if (is_same_day (date_time.add_days (1), now)) {
+            return _("Yesterday");
+        }
+        if (date_time.get_year () == now.get_year ()) {
+            return date_time.format ("%b %e");
+        }
+        return date_time.format ("%b %e %Y");
+    }
+
+    private bool is_same_day (DateTime day1, DateTime day2) {
+        if (day1.get_day_of_year () == day2.get_day_of_year () && day1.get_year () == day2.get_year ()) {
+            return true;
+        }
+        return false;
     }
 }
