@@ -21,6 +21,7 @@
 public class Mail.MainWindow : Gtk.Window {
     FoldersListView folders_list_view;
     ConversationListBox conversation_list_box;
+    MessageListBox message_list_box;
 
     public MainWindow () {
         Object (
@@ -35,17 +36,23 @@ public class Mail.MainWindow : Gtk.Window {
 
         folders_list_view = new FoldersListView ();
         conversation_list_box = new ConversationListBox ();
+        message_list_box = new MessageListBox ();
 
         var conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
         conversation_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         conversation_list_scrolled.add (conversation_list_box);
 
+        var message_list_scrolled = new Gtk.ScrolledWindow (null, null);
+        message_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        message_list_scrolled.add (message_list_box);
+
         var paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
-        paned_start.add1 (folders_list_view);
-        paned_start.add2 (conversation_list_scrolled);
+        paned_start.pack1 (folders_list_view, false, false);
+        paned_start.pack2 (conversation_list_scrolled, true, false);
 
         var paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
-        paned_end.add1 (paned_start);
+        paned_end.pack1 (paned_start, false, false);
+        paned_end.pack2 (message_list_scrolled, true, true);
 
         add (paned_end);
         var settings = new GLib.Settings ("io.elementary.mail");
@@ -55,6 +62,10 @@ public class Mail.MainWindow : Gtk.Window {
 
         folders_list_view.folder_selected.connect ((account, folder_name) => {
             conversation_list_box.set_folder.begin (account, folder_name);
+        });
+
+        conversation_list_box.conversation_selected.connect ((node) => {
+            message_list_box.set_conversation (node);
         });
 
         Backend.Session.get_default ().start.begin ();
