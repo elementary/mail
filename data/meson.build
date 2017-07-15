@@ -14,7 +14,7 @@ i18n.merge_file (
 )
 
 i18n.merge_file (
-    'desktop',
+    'appdata',
     input: meson.project_name() + '.appdata.xml.in',
     output: meson.project_name() + '.appdata.xml',
     install: true,
