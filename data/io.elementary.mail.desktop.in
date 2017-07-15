@@ -1,9 +1,9 @@
 [Desktop Entry]
-_Name=@APP_NAME@
-_Comment=@RELEASE_NAME@
-Exec=@EXEC_NAME@ %U
-Icon=@DESKTOP_ICON@
-_Keywords=Email;E-mail;Mail;
+Name=Mail
+Comment=Send and receive mail
+Exec=io.elementary.mail %U
+Icon=internet-mail
+Keywords=Email;E-mail;Mail;
 Terminal=false
 Type=Application
 MimeType=x-scheme-handler/mailto;
@@ -13,5 +13,5 @@ X-GNOME-UsesNotifications=true
 Actions=Compose;
 
 [Desktop Action Compose]
-_Name=Compose Message
-Exec=@EXEC_NAME@ mailto:
+Name=Compose Message
+Exec=io.elementary.mail mailto:
