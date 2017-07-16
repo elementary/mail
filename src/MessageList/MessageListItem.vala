@@ -89,28 +89,46 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         var folder = message_info.summary.folder;
         try {
             message = yield folder.get_message (message_info.uid, GLib.Priority.DEFAULT, null);
-            var content = get_mime_content (message);
-            web_view.load_plain_text (content);
+            bool is_html;
+            var content = get_mime_content (message, out is_html);
+            if (is_html) {
+                web_view.load_html (content, null);
+            } else {
+                web_view.load_plain_text (content);
+            }
         } catch (Error e) {
             debug("Could not get message. %s", e.message);
         }
     }
 
-    private static string get_mime_content (Camel.MimeMessage message) {
-        string current_content = "";
-        int content_priority = 0;
-        var content = message.content as Camel.Multipart;
-        if (content != null) {
+    private static string get_mime_content (Camel.MimeMessage message, out bool is_html) {
+        Camel.DataWrapper data_container = message.content;
+        if (data_container is Camel.Multipart) {
+            var content = message.content as Camel.Multipart;
+            int content_priority = 0;
             for (uint i = 0; i < content.get_number (); i++) {
                 var part = content.get_part (i);
                 int current_content_priority = get_content_type_priority (part.get_mime_type ());
                 if (current_content_priority > content_priority) {
-                    var byte_array = new GLib.ByteArray ();
-                    var stream = new Camel.StreamMem.with_byte_array (byte_array);
-                    part.content.decode_to_stream_sync (stream);
-                    current_content = (string)byte_array.data;
+                    data_container = part.content;
                 }
             }
+        }
+
+        string current_content;
+        try {
+            var field = data_container.get_mime_type_field ();
+            debug ("%s", field.simple ());
+
+            var byte_array = new GLib.ByteArray ();
+            var stream = new Camel.StreamMem.with_byte_array (byte_array);
+            data_container.decode_to_stream_sync (stream);
+            current_content = (string)byte_array.data;
+            
+            is_html = field.subtype == "html";
+        } catch (Error e) {
+            current_content = "Error loading the message: %s".printf (e.message);
+            is_html = false;
         }
 
         return current_content;
