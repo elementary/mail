@@ -19,6 +19,10 @@
  */
 
 public class Mail.MessageListBox : Gtk.ListBox {
+    public MessageListBox () {
+        Object (selection_mode: Gtk.SelectionMode.NONE);
+    }
+
     construct {
         get_style_context ().add_class ("deck");
     }
