@@ -117,12 +117,26 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
 
     private string get_relative_datetime (DateTime date_time) {
         var now = new DateTime.now_local ();
+        var diff = now.difference (date_time);
 
         if (is_same_day (date_time, now)) {
+            if (diff < TimeSpan.MINUTE) {
+                return _("Now");
+            }
+            if (diff < TimeSpan.HOUR) {
+                return ngettext("%dm ago", "%dm ago", (ulong) (diff / TimeSpan.MINUTE)).printf((int) (diff / TimeSpan.MINUTE));
+            }
+            if (diff < 12 * TimeSpan.HOUR) {
+                int rounded = (int) Math.round((double) diff / TimeSpan.HOUR);
+                return ngettext("%dh ago", "%dh ago", (ulong) rounded).printf(rounded);
+            }
             return date_time.format ("%l:%M %p");
         }
         if (is_same_day (date_time.add_days (1), now)) {
             return _("Yesterday");
+        }
+        if (diff < 6 * TimeSpan.DAY) {
+            return date_time.format ("%a");
         }
         if (date_time.get_year () == now.get_year ()) {
             return date_time.format ("%b %e");

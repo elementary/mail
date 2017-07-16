@@ -19,5 +19,6 @@ executable('io.elementary.mail',
     asresources,
     dependencies: dependencies,
     c_args: '-DWEBKIT_EXTENSION_PATH="' + webkit2_extension_path + '"',
+    link_args : '-lm',
     install: true
 )
