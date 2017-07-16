@@ -21,14 +21,20 @@
 public class Mail.MessageListItem : Gtk.ListBoxRow {
     public Camel.MessageInfo message_info { get; construct; }
 
+    private Mail.WebView web_view;
+    private GLib.Cancellable loading_cancellable;
+
     public MessageListItem (Camel.MessageInfo message_info) {
         Object (
             margin: 12,
             message_info: message_info
         );
+        open_message.begin ();
     }
 
     construct {
+        loading_cancellable = new GLib.Cancellable ();
+
         get_style_context ().add_class ("card");
 
         var avatar = new Granite.Widgets.Avatar.with_default_icon (48);
@@ -93,7 +99,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
         separator.hexpand = true;
 
-        var web_view = new Mail.WebView ();
+        web_view = new Mail.WebView ();
         web_view.margin = 6;
 
         var base_grid = new Gtk.Grid ();
@@ -104,5 +110,73 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         base_grid.add (web_view);
         add (base_grid);
         show_all ();
+
+        destroy.connect (() => {
+            loading_cancellable.cancel ();
+        });
+    }
+
+    private async void open_message () {
+        Camel.MimeMessage message;
+        var folder = message_info.summary.folder;
+        try {
+            message = yield folder.get_message (message_info.uid, GLib.Priority.DEFAULT, loading_cancellable);
+            bool is_html;
+            var content = yield get_mime_content (message.content, out is_html);
+            if (is_html) {
+                web_view.load_html (content, null);
+            } else {
+                web_view.load_plain_text (content);
+            }
+        } catch (Error e) {
+            debug("Could not get message. %s", e.message);
+        }
+    }
+
+    private async string get_mime_content (Camel.DataWrapper message_content, out bool is_html) {
+        Camel.DataWrapper data_container = message_content;
+        if (data_container is Camel.Multipart) {
+            var content = data_container as Camel.Multipart;
+            int content_priority = 0;
+            for (uint i = 0; i < content.get_number (); i++) {
+                var part = content.get_part (i);
+                if (part.get_mime_type_field ().type == "multipart") {
+                    return yield get_mime_content (part.content, out is_html);
+                }
+                int current_content_priority = get_content_type_priority (part.get_mime_type ());
+                if (current_content_priority > content_priority) {
+                    data_container = part.content;
+                }
+            }
+        }
+
+        string current_content;
+        try {
+            var field = data_container.get_mime_type_field ();
+            debug ("%s", field.simple ());
+
+            var os = new GLib.MemoryOutputStream.resizable ();
+            yield data_container.decode_to_output_stream (os, GLib.Priority.DEFAULT, loading_cancellable);
+            os.close ();
+            current_content = (string) os.steal_data ();
+            
+            is_html = field.subtype == "html";
+        } catch (Error e) {
+            current_content = "Error loading the message: %s".printf (e.message);
+            is_html = false;
+        }
+
+        return current_content;
+    }
+
+    public static int get_content_type_priority (string mime_type) {
+        switch (mime_type) {
+            case "text/plain":
+                return 1;
+            case "text/html":
+                return 2;
+            default:
+                return 0;
+        }
     }
 }
