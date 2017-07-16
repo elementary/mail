@@ -19,16 +19,26 @@
  */
 
 public class Mail.HeaderBar : Gtk.HeaderBar {
+    public Gtk.Grid paned_start_grid;
+    public Gtk.SearchEntry search_entry;
+
     public HeaderBar () {
         Object (show_close_button: true);
     }
 
     construct {
         var compose_button = new Gtk.Button.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR);
+        compose_button.halign = Gtk.Align.START;
         compose_button.tooltip_text = _("Compose new message (Ctrl+N, N)");
 
-        var search_entry = new Gtk.SearchEntry ();
-        pack_start (compose_button);
-        pack_end (search_entry);
+        search_entry = new Gtk.SearchEntry ();
+        search_entry.placeholder_text = _("Search Mail");
+        search_entry.valign = Gtk.Align.CENTER;
+
+        paned_start_grid = new Gtk.Grid ();
+        paned_start_grid.add (compose_button);
+
+        pack_start (paned_start_grid);
+        pack_start (search_entry);
     }
 }

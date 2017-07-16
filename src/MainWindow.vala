@@ -19,6 +19,9 @@
  */
 
 public class Mail.MainWindow : Gtk.Window {
+    private HeaderBar headerbar;
+    private Gtk.Paned paned_end;
+    private Gtk.Paned paned_start;
     FoldersListView folders_list_view;
     ConversationListBox conversation_list_box;
     MessageListBox message_list_box;
@@ -32,7 +35,7 @@ public class Mail.MainWindow : Gtk.Window {
     }
 
     construct {
-        var headerbar = new HeaderBar ();
+        headerbar = new HeaderBar ();
         set_titlebar (headerbar);
 
         folders_list_view = new FoldersListView ();
@@ -41,17 +44,18 @@ public class Mail.MainWindow : Gtk.Window {
 
         var conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
         conversation_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        conversation_list_scrolled.width_request = 158;
         conversation_list_scrolled.add (conversation_list_box);
 
         var message_list_scrolled = new Gtk.ScrolledWindow (null, null);
         message_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         message_list_scrolled.add (message_list_box);
 
-        var paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
+        paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_start.pack1 (folders_list_view, false, false);
         paned_start.pack2 (conversation_list_scrolled, true, false);
 
-        var paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
+        paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_end.pack1 (paned_start, false, false);
         paned_end.pack2 (message_list_scrolled, true, true);
 
@@ -71,6 +75,23 @@ public class Mail.MainWindow : Gtk.Window {
             message_list_box.set_conversation (node);
         });
 
+        set_paned_start_grid_width ();
+        set_search_entry_width ();
+
+        paned_end.notify["position"].connect (() => set_search_entry_width ());
+
+        paned_start.notify["position"].connect (() => {
+            set_paned_start_grid_width ();
+            set_search_entry_width ();
+        });
+
         Backend.Session.get_default ().start.begin ();
+    }
+
+    private void set_search_entry_width () {
+        headerbar.search_entry.width_request = paned_end.position - paned_start.position + 1;
+    }
+    private void set_paned_start_grid_width () {
+        headerbar.paned_start_grid.width_request = paned_start.position - 50;
     }
 }
