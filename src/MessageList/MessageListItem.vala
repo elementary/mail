@@ -22,6 +22,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     public Camel.MessageInfo message_info { get; construct; }
 
     private Mail.WebView web_view;
+    private GLib.Cancellable loading_cancellable;
 
     public MessageListItem (Camel.MessageInfo message_info) {
         Object (message_info: message_info);
@@ -29,6 +30,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     }
 
     construct {
+        loading_cancellable = new GLib.Cancellable ();
+
         get_style_context ().add_class ("card");
         margin = 12;
 
@@ -82,15 +85,19 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         base_grid.add (web_view);
         add (base_grid);
         show_all ();
+
+        destroy.connect (() => {
+            loading_cancellable.cancel ();
+        });
     }
 
     private async void open_message () {
         Camel.MimeMessage message;
         var folder = message_info.summary.folder;
         try {
-            message = yield folder.get_message (message_info.uid, GLib.Priority.DEFAULT, null);
+            message = yield folder.get_message (message_info.uid, GLib.Priority.DEFAULT, loading_cancellable);
             bool is_html;
-            var content = get_mime_content (message, out is_html);
+            var content = yield get_mime_content (message, out is_html);
             if (is_html) {
                 web_view.load_html (content, null);
             } else {
@@ -101,7 +108,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         }
     }
 
-    private static string get_mime_content (Camel.MimeMessage message, out bool is_html) {
+    private async string get_mime_content (Camel.MimeMessage message, out bool is_html) {
         Camel.DataWrapper data_container = message.content;
         if (data_container is Camel.Multipart) {
             var content = message.content as Camel.Multipart;
@@ -121,7 +128,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             debug ("%s", field.simple ());
 
             var os = new GLib.MemoryOutputStream.resizable ();
-            data_container.decode_to_output_stream_sync (os);
+            yield data_container.decode_to_output_stream (os, GLib.Priority.DEFAULT, loading_cancellable);
             os.close ();
             current_content = (string) os.steal_data ();
             
