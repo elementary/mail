@@ -21,23 +21,24 @@
  */
 
 public class Mail.ConversationListBox : Gtk.ListBox {
-    public signal void conversation_selected (Camel.FolderThreadNode node);
-    public signal void conversation_focused (Camel.FolderThreadNode node);
+    public signal void conversation_selected (Camel.FolderThreadNode node, Camel.Folder? folder);
+    public signal void conversation_focused (Camel.FolderThreadNode node, Camel.Folder? folder);
 
     private string current_folder;
     private Backend.Account current_account;
     private GLib.Cancellable? cancellable = null;
     private Camel.FolderThread thread;
+    private Camel.Folder? camel_folder;
 
     construct {
         selection_mode = Gtk.SelectionMode.MULTIPLE;
         activate_on_single_click = true;
         set_sort_func (thread_sort_function);
         row_activated.connect ((row) => {
-            conversation_focused (((ConversationListItem) row).node);
+            conversation_focused (((ConversationListItem) row).node, camel_folder);
         });
         row_selected.connect ((row) => {
-            conversation_selected (((ConversationListItem) row).node);
+            conversation_selected (((ConversationListItem) row).node, camel_folder);
         });
     }
 
@@ -54,9 +55,9 @@ public class Mail.ConversationListBox : Gtk.ListBox {
 
         cancellable = new GLib.Cancellable ();
         try {
-            Camel.Folder? folder = yield ((Camel.Store) current_account.service).get_folder (current_folder, Camel.StoreGetFolderFlags.BODY_INDEX, GLib.Priority.DEFAULT, cancellable);
+            camel_folder = yield ((Camel.Store) current_account.service).get_folder (current_folder, Camel.StoreGetFolderFlags.BODY_INDEX, GLib.Priority.DEFAULT, cancellable);
             /*yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);*/
-            thread = new Camel.FolderThread (folder, folder.get_uids (), false);
+            thread = new Camel.FolderThread (camel_folder, camel_folder.get_uids (), false);
             unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.tree;
             while (child != null) {
                 var item = new ConversationListItem (child);
