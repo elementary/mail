@@ -144,9 +144,9 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
             return date_time.format ("%a");
         }
         if (date_time.get_year () == now.get_year ()) {
-            return date_time.format ("%b %e");
+            return date_time.format ("%b %-e");
         }
-        return date_time.format ("%b %e %Y");
+        return date_time.format ("%x");
     }
 
     private bool is_same_day (DateTime day1, DateTime day2) {
