@@ -67,8 +67,8 @@ public class Mail.MainWindow : Gtk.Window {
             conversation_list_box.set_folder.begin (account, folder_name);
         });
 
-        conversation_list_box.conversation_selected.connect ((node) => {
-            message_list_box.set_conversation (node);
+        conversation_list_box.conversation_selected.connect ((node, folder) => {
+            message_list_box.set_conversation (node, folder);
         });
 
         Backend.Session.get_default ().start.begin ();

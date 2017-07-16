@@ -20,9 +20,10 @@
 
 public class Mail.MessageListItem : Gtk.ListBoxRow {
     public Camel.MessageInfo message_info { get; construct; }
+    public Camel.Folder? folder { get; construct; }
 
-    public MessageListItem (Camel.MessageInfo message_info) {
-        Object (message_info: message_info);
+    public MessageListItem (Camel.MessageInfo message_info, Camel.Folder? folder) {
+        Object (message_info: message_info, folder: folder);
     }
 
     construct {
@@ -70,6 +71,12 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         var web_view = new Mail.WebView ();
         web_view.margin = 6;
+
+        if (folder != null) {
+            var message = folder.get_message_sync (message_info.uid);
+            // We can now get mime parts of the message
+            // TODO: Parse message and display in webview
+        }
 
         var base_grid = new Gtk.Grid ();
         base_grid.expand = true;

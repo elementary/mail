@@ -19,16 +19,20 @@
  */
 
 public class Mail.MessageListBox : Gtk.ListBox {
+    private Camel.Folder? folder;
+
     construct {
         get_style_context ().add_class ("deck");
     }
 
-    public void set_conversation (Camel.FolderThreadNode node) {
+    public void set_conversation (Camel.FolderThreadNode node, Camel.Folder? folder) {
+        this.folder = folder;
+
         get_children ().foreach ((child) => {
             child.destroy ();
         });
 
-        var item = new MessageListItem (node.message);
+        var item = new MessageListItem (node.message, folder);
         add (item);
         if (node.child != null) {
             go_down ((Camel.FolderThreadNode?) node.child);
@@ -38,7 +42,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
     private void go_down (Camel.FolderThreadNode node) {
         unowned Camel.FolderThreadNode? current_node = node;
         while (current_node != null) {
-            var item = new MessageListItem (current_node.message);
+            var item = new MessageListItem (current_node.message, folder);
             add (item);
             if (current_node.next != null) {
                 go_down ((Camel.FolderThreadNode?) current_node.next);
