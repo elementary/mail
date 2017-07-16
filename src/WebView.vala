@@ -21,6 +21,9 @@
 public extern const string WEBKIT_EXTENSION_PATH;
 
 public class Mail.WebView : WebKit.WebView {
+    private int preferred_height = 0;
+    private WebViewServer view_manager;
+
     static construct {
         weak WebKit.WebContext context = WebKit.WebContext.get_default ();
         unowned string? webkit_extension_path_env = Environment.get_variable ("WEBKIT_EXTENSION_PATH");
@@ -28,7 +31,27 @@ public class Mail.WebView : WebKit.WebView {
     }
 
     construct {
-        height_request = 100;
         expand = true;
+
+        view_manager = WebViewServer.get_default ();
+        view_manager.page_height_updated.connect ((page_id) => {
+            if (page_id == get_page_id ()) {
+                preferred_height = view_manager.get_height (page_id);
+                queue_resize ();
+            }
+        });
+
+        load_changed.connect (on_load_changed);
+    }
+
+    public void on_load_changed (WebKit.LoadEvent event) {
+        if (event == WebKit.LoadEvent.FINISHED || event == WebKit.LoadEvent.COMMITTED) {
+            view_manager.page_load_changed (get_page_id ());
+        }
+    }
+
+    public override void get_preferred_height (out int minimum_height, out int natural_height) {
+        base.get_preferred_height (out minimum_height, out natural_height);
+        minimum_height = natural_height = preferred_height;
     }
 }

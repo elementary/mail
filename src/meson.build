@@ -3,6 +3,7 @@ vala_files = [
     'MainWindow.vala',
     'HeaderBar.vala',
     'WebView.vala',
+    'WebViewServer.vala',
     'Backend/Session.vala',
     'Backend/Account.vala',
     'FoldersView/AccountSourceItem.vala',
