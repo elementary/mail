@@ -28,6 +28,7 @@ public class Mail.WebView : WebKit.WebView {
     }
 
     construct {
-        
+        height_request = 100;
+        expand = true;
     }
 }

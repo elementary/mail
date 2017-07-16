@@ -21,8 +21,11 @@
 public class Mail.MessageListItem : Gtk.ListBoxRow {
     public Camel.MessageInfo message_info { get; construct; }
 
+    private Mail.WebView web_view;
+
     public MessageListItem (Camel.MessageInfo message_info) {
         Object (message_info: message_info);
+        open_message.begin ();
     }
 
     construct {
@@ -68,7 +71,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
         separator.hexpand = true;
 
-        var web_view = new Mail.WebView ();
+        web_view = new Mail.WebView ();
         web_view.margin = 6;
 
         var base_grid = new Gtk.Grid ();
@@ -79,5 +82,48 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         base_grid.add (web_view);
         add (base_grid);
         show_all ();
+    }
+
+    private async void open_message () {
+        Camel.MimeMessage message;
+        var folder = message_info.summary.folder;
+        try {
+            message = yield folder.get_message (message_info.uid, GLib.Priority.DEFAULT, null);
+            var content = get_mime_content (message);
+            web_view.load_plain_text (content);
+        } catch (Error e) {
+            debug("Could not get message. %s", e.message);
+        }
+    }
+
+    private static string get_mime_content (Camel.MimeMessage message) {
+        string current_content = "";
+        int content_priority = 0;
+        var content = message.content as Camel.Multipart;
+        if (content != null) {
+            for (uint i = 0; i < content.get_number (); i++) {
+                var part = content.get_part (i);
+                int current_content_priority = get_content_type_priority (part.get_mime_type ());
+                if (current_content_priority > content_priority) {
+                    var byte_array = new GLib.ByteArray ();
+                    var stream = new Camel.StreamMem.with_byte_array (byte_array);
+                    part.decode_to_stream_sync (stream);
+                    current_content = (string)byte_array.data;
+                }
+            }
+        }
+
+        return current_content;
+    }
+
+    public static int get_content_type_priority (string mime_type) {
+        switch (mime_type) {
+            case "text/plain":
+                return 1;
+            case "text/html":
+                return 2;
+            default:
+                return 0;
+        }
     }
 }
