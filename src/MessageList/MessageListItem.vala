@@ -157,8 +157,13 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         var field = part.get_mime_type_field ();
         if (message_content == null || (!message_is_html && field.subtype == "html")) {
             var os = new GLib.MemoryOutputStream.resizable ();
-            yield part.decode_to_output_stream (os, GLib.Priority.DEFAULT, loading_cancellable);
-            os.close ();
+            try {
+                yield part.decode_to_output_stream (os, GLib.Priority.DEFAULT, loading_cancellable);
+                os.close ();
+            } catch (Error e) {
+                warning ("Possible error decoding email message: %s", e.message);
+                return;
+            }
             message_content = (string) os.steal_data ();
             if (field.subtype == "html") {
                 message_is_html = true;
@@ -170,7 +175,12 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         var byte_array = new ByteArray ();
         var os = new Camel.StreamMem ();
         os.set_byte_array (byte_array);
-        yield part.content.decode_to_stream (os, GLib.Priority.DEFAULT, loading_cancellable);
+        try {
+            yield part.content.decode_to_stream (os, GLib.Priority.DEFAULT, loading_cancellable);
+        } catch (Error e) {
+            warning ("Error decoding inline attachment: %s", e.message);
+            return;
+        }
         Bytes bytes;
         bytes = ByteArray.free_to_bytes (byte_array);
         var inline_stream = new MemoryInputStream.from_bytes (bytes);
