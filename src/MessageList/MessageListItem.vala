@@ -22,15 +22,21 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     public Camel.MessageInfo message_info { get; construct; }
 
     public MessageListItem (Camel.MessageInfo message_info) {
-        Object (message_info: message_info);
+        Object (
+            margin: 12,
+            message_info: message_info
+        );
     }
 
     construct {
         get_style_context ().add_class ("card");
-        margin = 12;
+
+        var avatar = new Granite.Widgets.Avatar.with_default_icon (48);
+        avatar.valign = Gtk.Align.START;
 
         var from_label = new Gtk.Label (_("From:"));
         from_label.halign = Gtk.Align.END;
+        from_label.valign = Gtk.Align.START;
         from_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         var to_label = new Gtk.Label (_("To:"));
@@ -39,23 +45,40 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         var subject_label = new Gtk.Label (_("Subject:"));
         subject_label.halign = Gtk.Align.END;
+        subject_label.valign = Gtk.Align.START;
         subject_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         var from_val_label = new Gtk.Label (message_info.from);
-        from_val_label.halign = Gtk.Align.START;
+        from_val_label.wrap = true;
+        from_val_label.xalign = 0;
 
         var to_val_label = new Gtk.Label (message_info.to);
         to_val_label.halign = Gtk.Align.START;
         to_val_label.ellipsize = Pango.EllipsizeMode.END;
 
         var subject_val_label = new Gtk.Label (message_info.subject);
-        subject_val_label.halign = Gtk.Align.START;
+        subject_val_label.xalign = 0;
+        subject_val_label.wrap = true;
 
-        var avatar = new Granite.Widgets.Avatar.with_default_icon (64);
+        var datetime_label = new Gtk.Label (new DateTime.from_unix_utc (message_info.date_received).format ("%b %e, %Y"));
+        datetime_label.hexpand = true;
+        datetime_label.halign = Gtk.Align.END;
+        datetime_label.valign = Gtk.Align.START;
+        datetime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        var starred_icon = new Gtk.Image ();
+        starred_icon.icon_size = Gtk.IconSize.MENU;
+        starred_icon.valign = Gtk.Align.START;
+
+        if (Camel.MessageFlags.FLAGGED in (int)message_info.flags) {
+            starred_icon.icon_name = "starred-symbolic";
+        } else {
+            starred_icon.icon_name = "non-starred-symbolic";
+        }
 
         var header = new Gtk.Grid ();
-        header.margin = 6;
-        header.column_spacing = 12;
+        header.margin = 12;
+        header.column_spacing = 6;
         header.row_spacing = 6;
         header.attach (avatar, 0, 0, 1, 3);
         header.attach (from_label, 1, 0, 1, 1);
@@ -64,6 +87,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         header.attach (from_val_label, 2, 0, 1, 1);
         header.attach (to_val_label, 2, 1, 1, 1);
         header.attach (subject_val_label, 2, 2, 1, 1);
+        header.attach (datetime_label, 3, 0, 1, 1);
+        header.attach (starred_icon, 4, 0, 1, 1);
 
         var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
         separator.hexpand = true;
