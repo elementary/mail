@@ -130,7 +130,12 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
                 int rounded = (int) Math.round((double) diff / TimeSpan.HOUR);
                 return ngettext("%dh ago", "%dh ago", (ulong) rounded).printf(rounded);
             }
-            return date_time.format ("%l:%M %p");
+            var settings = new Settings ("org.gnome.desktop.interface");
+            if (settings.get_enum ("clock-format") == 0) {
+                return date_time.format ("%H:%M");
+            } else {
+                return date_time.format ("%l:%M %p");
+            }
         }
         if (is_same_day (date_time.add_days (1), now)) {
             return _("Yesterday");
