@@ -120,10 +120,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             var field = data_container.get_mime_type_field ();
             debug ("%s", field.simple ());
 
-            var byte_array = new GLib.ByteArray ();
-            var stream = new Camel.StreamMem.with_byte_array (byte_array);
-            data_container.decode_to_stream_sync (stream);
-            current_content = (string)byte_array.data;
+            var os = new GLib.MemoryOutputStream.resizable ();
+            data_container.decode_to_output_stream_sync (os);
+            os.close ();
+            current_content = (string) os.steal_data ();
             
             is_html = field.subtype == "html";
         } catch (Error e) {
