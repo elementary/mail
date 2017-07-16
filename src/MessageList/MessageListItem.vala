@@ -86,7 +86,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         header.attach (subject_label, 1, 2, 1, 1);
         header.attach (from_val_label, 2, 0, 1, 1);
         header.attach (to_val_label, 2, 1, 1, 1);
-        header.attach (subject_val_label, 2, 2, 1, 1);
+        header.attach (subject_val_label, 2, 2, 3, 1);
         header.attach (datetime_label, 3, 0, 1, 1);
         header.attach (starred_icon, 4, 0, 1, 1);
 
