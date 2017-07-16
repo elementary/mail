@@ -97,7 +97,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         try {
             message = yield folder.get_message (message_info.uid, GLib.Priority.DEFAULT, loading_cancellable);
             bool is_html;
-            var content = yield get_mime_content (message, out is_html);
+            var content = yield get_mime_content (message.content, out is_html);
             if (is_html) {
                 web_view.load_html (content, null);
             } else {
@@ -108,13 +108,16 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         }
     }
 
-    private async string get_mime_content (Camel.MimeMessage message, out bool is_html) {
-        Camel.DataWrapper data_container = message.content;
+    private async string get_mime_content (Camel.DataWrapper message_content, out bool is_html) {
+        Camel.DataWrapper data_container = message_content;
         if (data_container is Camel.Multipart) {
-            var content = message.content as Camel.Multipart;
+            var content = data_container as Camel.Multipart;
             int content_priority = 0;
             for (uint i = 0; i < content.get_number (); i++) {
                 var part = content.get_part (i);
+                if (part.get_mime_type_field ().type == "multipart") {
+                    return yield get_mime_content (part.content, out is_html);
+                }
                 int current_content_priority = get_content_type_priority (part.get_mime_type ());
                 if (current_content_priority > content_priority) {
                     data_container = part.content;
