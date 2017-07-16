@@ -122,31 +122,25 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
         if (is_same_day (date_time, now)) {
             if (diff < TimeSpan.MINUTE) {
                 return _("Now");
-            }
-            if (diff < TimeSpan.HOUR) {
-                return ngettext ("%dm ago", "%dm ago", (ulong) (diff / TimeSpan.MINUTE)).printf ((int) (diff / TimeSpan.MINUTE));
-            }
-            if (diff < 12 * TimeSpan.HOUR) {
+            } else if (diff < TimeSpan.HOUR) {
+                var minutes = diff / TimeSpan.MINUTE;
+                return ngettext ("%dm ago", "%dm ago", (ulong) (minutes)).printf ((int) (minutes));
+            } else if (diff < 12 * TimeSpan.HOUR) {
                 int rounded = (int) Math.round ((double) diff / TimeSpan.HOUR);
                 return ngettext ("%dh ago", "%dh ago", (ulong) rounded).printf (rounded);
-            }
-            var settings = new Settings ("org.gnome.desktop.interface");
-            if (settings.get_enum ("clock-format") == 0) {
-                return date_time.format ("%H:%M");
             } else {
-                return date_time.format ("%l:%M %p");
+                var settings = new Settings ("org.gnome.desktop.interface");
+                return Granite.DateTime.get_default_time_format (settings.get_enum ("clock-format") == 1, false);
             }
-        }
-        if (is_same_day (date_time.add_days (1), now)) {
+        } else if (is_same_day (date_time.add_days (1), now)) {
             return _("Yesterday");
-        }
-        if (diff < 6 * TimeSpan.DAY) {
+        } else if (diff < 6 * TimeSpan.DAY) {
             return date_time.format ("%a");
+        } else if (date_time.get_year () == now.get_year ()) {
+            return date_time.format (_("%b %-e"));
+        } else {
+            return date_time.format ("%x");
         }
-        if (date_time.get_year () == now.get_year ()) {
-            return date_time.format ("%b %-e");
-        }
-        return date_time.format ("%x");
     }
 
     private bool is_same_day (DateTime day1, DateTime day2) {
