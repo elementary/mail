@@ -124,11 +124,11 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
                 return _("Now");
             }
             if (diff < TimeSpan.HOUR) {
-                return ngettext("%dm ago", "%dm ago", (ulong) (diff / TimeSpan.MINUTE)).printf((int) (diff / TimeSpan.MINUTE));
+                return ngettext ("%dm ago", "%dm ago", (ulong) (diff / TimeSpan.MINUTE)).printf ((int) (diff / TimeSpan.MINUTE));
             }
             if (diff < 12 * TimeSpan.HOUR) {
-                int rounded = (int) Math.round((double) diff / TimeSpan.HOUR);
-                return ngettext("%dh ago", "%dh ago", (ulong) rounded).printf(rounded);
+                int rounded = (int) Math.round ((double) diff / TimeSpan.HOUR);
+                return ngettext ("%dh ago", "%dh ago", (ulong) rounded).printf (rounded);
             }
             var settings = new Settings ("org.gnome.desktop.interface");
             if (settings.get_enum ("clock-format") == 0) {
