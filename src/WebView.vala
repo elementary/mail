@@ -51,7 +51,6 @@ public class Mail.WebView : WebKit.WebView {
     }
 
     public override void get_preferred_height (out int minimum_height, out int natural_height) {
-        base.get_preferred_height (out minimum_height, out natural_height);
         minimum_height = natural_height = preferred_height;
     }
 }
