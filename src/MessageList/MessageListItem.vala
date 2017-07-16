@@ -107,7 +107,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 if (current_content_priority > content_priority) {
                     var byte_array = new GLib.ByteArray ();
                     var stream = new Camel.StreamMem.with_byte_array (byte_array);
-                    part.decode_to_stream_sync (stream);
+                    part.content.decode_to_stream_sync (stream);
                     current_content = (string)byte_array.data;
                 }
             }
