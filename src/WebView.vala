@@ -33,7 +33,7 @@ public class Mail.WebView : WebKit.WebView {
         context.register_uri_scheme ("cid", (req) => {
             WebView? view = req.get_web_view () as WebView;
             if (view != null) {
-                view.handle_cid_request(req);
+                view.handle_cid_request (req);
             }
         });
     }
