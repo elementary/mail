@@ -12,7 +12,10 @@ vala_files = [
     'ConversationList/ConversationListBox.vala',
     'ConversationList/ConversationListItem.vala',
     'MessageList/MessageListBox.vala',
-    'MessageList/MessageListItem.vala'
+    'MessageList/MessageListItem.vala',
+    'MessageList/AttachmentBar.vala',
+    'MessageList/AttachmentButton.vala',
+    'MessageList/AttachmentDialog.vala'
 ]
 
 executable('io.elementary.mail',
