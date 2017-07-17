@@ -81,6 +81,7 @@ public class Mail.WebView : WebKit.WebView {
             request.finish (buf, -1, null);
             return true;
         }
+
         return false;
     }
 }

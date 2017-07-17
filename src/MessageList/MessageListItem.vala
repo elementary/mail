@@ -164,6 +164,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 warning ("Possible error decoding email message: %s", e.message);
                 return;
             }
+
             message_content = (string) os.steal_data ();
             if (field.subtype == "html") {
                 message_is_html = true;
@@ -181,6 +182,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             warning ("Error decoding inline attachment: %s", e.message);
             return;
         }
+
         Bytes bytes;
         bytes = ByteArray.free_to_bytes (byte_array);
         var inline_stream = new MemoryInputStream.from_bytes (bytes);
