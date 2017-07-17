@@ -23,9 +23,15 @@ public class Mail.WebViewServer : GLib.Object {
     private static WebViewServer? _instance = null;
     private Gee.HashMap <uint64?, int> view_heights
         = new Gee.HashMap <uint64?, int> ((Gee.HashDataFunc)int64_hash, (Gee.EqualDataFunc)int64_equal);
+    private Gee.HashMap <uint64?, bool> show_images
+        = new Gee.HashMap <uint64?, bool> ((Gee.HashDataFunc)int64_hash, (Gee.EqualDataFunc)int64_equal);
 
     public signal void page_load_changed (uint64 page_id);
-    
+    public signal void image_loading_enabled (uint64 page_id);
+
+    [DBus (visible = false)]
+    public signal void image_load_blocked (uint64 page_id);
+
     [DBus (visible = false)]
     public signal void page_height_updated (uint64 page_id);
 
@@ -47,6 +53,26 @@ public class Mail.WebViewServer : GLib.Object {
         }
         view_heights [view] = height;
         page_height_updated (view);
+    }
+
+    [DBus (visible = false)]
+    public void set_load_images (uint64 view, bool load_images) {
+        show_images [view] = load_images;
+        if (load_images == true) {
+            image_loading_enabled (view);
+        }
+    }
+
+    public bool get_load_images (uint64 view) {
+        if (show_images.has_key (view)) {
+            return show_images [view];
+        } else {
+            return false;
+        }
+    }
+
+    public void fire_image_load_blocked (uint64 view) {
+        image_load_blocked (view);
     }
 
     [DBus (visible = false)]

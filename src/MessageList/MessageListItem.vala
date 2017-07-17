@@ -31,7 +31,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             margin: 12,
             message_info: message_info
         );
-        open_message.begin ();
     }
 
     construct {
@@ -101,8 +100,33 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
         separator.hexpand = true;
 
+        var settings = new GLib.Settings ("io.elementary.mail");
+
         web_view = new Mail.WebView ();
         web_view.margin = 6;
+        web_view.image_load_blocked.connect (() => {
+            // TODO: Show infobar
+        });
+
+        get_message.begin ((obj, res) => {
+            var message = get_message.end(res);
+
+            if (settings.get_boolean ("always-load-remote-images")) {
+                web_view.load_images ();
+            } else if (message != null) {
+                var allowed_emails = settings.get_strv ("remote-images-whitelist");
+                var whitelist = new Gee.ArrayList<string>.wrap (allowed_emails);
+                string from_address;
+                message.get_from ().@get (0, null, out from_address);
+                if (whitelist.contains (from_address)) {
+                    web_view.load_images ();
+                }
+            }
+
+            if (message != null) {
+                open_message.begin (message);
+            }
+        });
 
         var base_grid = new Gtk.Grid ();
         base_grid.expand = true;
@@ -118,19 +142,24 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         });
     }
 
-    private async void open_message () {
-        Camel.MimeMessage message;
+    private async Camel.MimeMessage? get_message () {
         var folder = message_info.summary.folder;
+        Camel.MimeMessage? message = null;
         try {
             message = yield folder.get_message (message_info.uid, GLib.Priority.DEFAULT, loading_cancellable);
-            yield parse_mime_content (message.content);
-            if (message_is_html) {
-                web_view.load_html (message_content, null);
-            } else {
-                web_view.load_plain_text (message_content);
-            }
         } catch (Error e) {
-            debug("Could not get message. %s", e.message);
+            warning ("Could not get message. %s", e.message);
+        }
+
+        return message;
+    }
+
+    private async void open_message (Camel.MimeMessage message) {
+        yield parse_mime_content (message.content);
+        if (message_is_html) {
+            web_view.load_html (message_content, null);
+        } else {
+            web_view.load_plain_text (message_content);
         }
     }
 
