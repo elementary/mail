@@ -55,7 +55,7 @@ public class Mail.WebView : WebKit.WebView {
     }
 
     public WebView () {
-        WebKit.Settings setts = new WebKit.Settings ();
+        var setts = new WebKit.Settings ();
         setts.allow_modal_dialogs = false;
         setts.enable_fullscreen = false;
         setts.enable_html5_database = false;
