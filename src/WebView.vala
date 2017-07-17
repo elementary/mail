@@ -55,7 +55,7 @@ public class Mail.WebView : WebKit.WebView {
     }
 
     public WebView () {
-        WebKit.Settings setts = new WebKit.Settings();
+        WebKit.Settings setts = new WebKit.Settings ();
         setts.allow_modal_dialogs = false;
         setts.enable_fullscreen = false;
         setts.enable_html5_database = false;
@@ -67,9 +67,7 @@ public class Mail.WebView : WebKit.WebView {
         setts.enable_page_cache = false;
         setts.enable_plugins = false;
 
-        Object(
-            settings: setts
-        );
+        Object (settings: setts);
     }
 
     public void on_load_changed (WebKit.LoadEvent event) {
