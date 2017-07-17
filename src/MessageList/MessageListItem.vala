@@ -25,6 +25,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private GLib.Cancellable loading_cancellable;
     private string message_content;
     private bool message_is_html = false;
+    private GLib.Settings settings;
 
     public MessageListItem (Camel.MessageInfo message_info) {
         Object (
@@ -100,7 +101,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
         separator.hexpand = true;
 
-        var settings = new GLib.Settings ("io.elementary.mail");
+        settings = new GLib.Settings ("io.elementary.mail");
 
         web_view = new Mail.WebView ();
         web_view.margin = 6;
@@ -108,25 +109,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             // TODO: Show infobar
         });
 
-        get_message.begin ((obj, res) => {
-            var message = get_message.end(res);
-
-            if (settings.get_boolean ("always-load-remote-images")) {
-                web_view.load_images ();
-            } else if (message != null) {
-                var allowed_emails = settings.get_strv ("remote-images-whitelist");
-                var whitelist = new Gee.ArrayList<string>.wrap (allowed_emails);
-                string from_address;
-                message.get_from ().@get (0, null, out from_address);
-                if (whitelist.contains (from_address)) {
-                    web_view.load_images ();
-                }
-            }
-
-            if (message != null) {
-                open_message.begin (message);
-            }
-        });
+        get_message.begin ();
 
         var base_grid = new Gtk.Grid ();
         base_grid.expand = true;
@@ -148,7 +131,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         });
     }
 
-    private async Camel.MimeMessage? get_message () {
+    private async void get_message () {
         var folder = message_info.summary.folder;
         Camel.MimeMessage? message = null;
         try {
@@ -157,7 +140,21 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             warning ("Could not get message. %s", e.message);
         }
 
-        return message;
+        if (settings.get_boolean ("always-load-remote-images")) {
+            web_view.load_images ();
+        } else if (message != null) {
+            var allowed_emails = settings.get_strv ("remote-images-whitelist");
+            var whitelist = new Gee.ArrayList<string>.wrap (allowed_emails);
+            string from_address;
+            message.get_from ().@get (0, null, out from_address);
+            if (whitelist.contains (from_address)) {
+                web_view.load_images ();
+            }
+        }
+
+        if (message != null) {
+            yield open_message (message);
+        }
     }
 
     private async void open_message (Camel.MimeMessage message) {
