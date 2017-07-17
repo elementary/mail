@@ -61,6 +61,22 @@ public class Mail.WebView : WebKit.WebView {
         load_changed.connect (on_load_changed);
     }
 
+    public WebView () {
+        var setts = new WebKit.Settings ();
+        setts.allow_modal_dialogs = false;
+        setts.enable_fullscreen = false;
+        setts.enable_html5_database = false;
+        setts.enable_html5_local_storage = false;
+        setts.enable_java = false;
+        setts.enable_javascript = false;
+        setts.enable_media_stream = false;
+        setts.enable_offline_web_application_cache = false;
+        setts.enable_page_cache = false;
+        setts.enable_plugins = false;
+
+        Object (settings: setts);
+    }
+
     public void on_load_changed (WebKit.LoadEvent event) {
         if (event == WebKit.LoadEvent.FINISHED || event == WebKit.LoadEvent.COMMITTED) {
             view_manager.page_load_changed (get_page_id ());
