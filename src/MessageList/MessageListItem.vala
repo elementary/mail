@@ -110,6 +110,12 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         base_grid.add (header);
         base_grid.add (separator);
         base_grid.add (web_view);
+
+        if (Camel.MessageFlags.ATTACHMENTS in (int)message_info.flags) {
+            var attachment_bar = new AttachmentBar (message_info, loading_cancellable);
+            base_grid.add (attachment_bar);
+        }
+
         add (base_grid);
         show_all ();
 

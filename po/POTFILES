@@ -2,6 +2,7 @@ src/Application.vala
 src/HeaderBar.vala
 src/MainWindow.vala
 src/WebView.vala
+src/WebViewServer.vala
 src/Backend/Account.vala
 src/Backend/Session.vala
 src/ConversationList/ConversationListBox.vala
@@ -11,3 +12,6 @@ src/FoldersView/FoldersListView.vala
 src/FoldersView/FolderSourceItem.vala
 src/MessageList/MessageListBox.vala
 src/MessageList/MessageListItem.vala
+src/MessageList/AttachmentBar.vala
+src/MessageList/AttachmentButton.vala
+src/MessageList/AttachmentDialog.vala
