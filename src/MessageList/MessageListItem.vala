@@ -114,6 +114,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         header_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
         header_stack.add_named (header, "large");
         header_stack.add_named (small_header, "small");
+        header_stack.get_style_context ().add_class ("collapsed");
 
         var header_event_box = new Gtk.EventBox ();
         header_event_box.events |= Gdk.EventMask.ENTER_NOTIFY_MASK;
