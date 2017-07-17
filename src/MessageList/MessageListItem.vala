@@ -188,15 +188,4 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         var inline_stream = new MemoryInputStream.from_bytes (bytes);
         web_view.add_internal_resource (part.get_content_id (), inline_stream);
     }
-
-    public static int get_content_type_priority (string mime_type) {
-        switch (mime_type) {
-            case "text/plain":
-                return 1;
-            case "text/html":
-                return 2;
-            default:
-                return 0;
-        }
-    }
 }
