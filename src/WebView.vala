@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Authored by: Corentin Noël <corentin@elementary.io>
+ * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
 public extern const string WEBKIT_EXTENSION_PATH;
@@ -23,15 +23,25 @@ public extern const string WEBKIT_EXTENSION_PATH;
 public class Mail.WebView : WebKit.WebView {
     private int preferred_height = 0;
     private WebViewServer view_manager;
+    private Gee.Map<string, InputStream> internal_resources;
 
     static construct {
         weak WebKit.WebContext context = WebKit.WebContext.get_default ();
         unowned string? webkit_extension_path_env = Environment.get_variable ("WEBKIT_EXTENSION_PATH");
         context.set_web_extensions_directory (webkit_extension_path_env ?? WEBKIT_EXTENSION_PATH);
+
+        context.register_uri_scheme ("cid", (req) => {
+            WebView? view = req.get_web_view () as WebView;
+            if (view != null) {
+                view.handle_cid_request (req);
+            }
+        });
     }
 
     construct {
         expand = true;
+
+        internal_resources = new Gee.HashMap<string, InputStream> ();
 
         view_manager = WebViewServer.get_default ();
         view_manager.page_height_updated.connect ((page_id) => {
@@ -52,5 +62,26 @@ public class Mail.WebView : WebKit.WebView {
 
     public override void get_preferred_height (out int minimum_height, out int natural_height) {
         minimum_height = natural_height = preferred_height;
+    }
+
+    public void add_internal_resource (string name, InputStream data) {
+        internal_resources[name] = data;
+    }
+
+    private void handle_cid_request (WebKit.URISchemeRequest request) {
+        if (!handle_internal_response (request)) {
+            request.finish_error (new FileError.NOENT ("Unknown CID"));
+        }
+    }
+
+    private bool handle_internal_response (WebKit.URISchemeRequest request) {
+        string name = Soup.URI.decode (request.get_path ());
+        InputStream? buf = this.internal_resources[name];
+        if (buf != null) {
+            request.finish (buf, -1, null);
+            return true;
+        }
+
+        return false;
     }
 }
