@@ -47,13 +47,27 @@ public class Mail.MainWindow : Gtk.Window {
         message_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         message_list_scrolled.add (message_list_box);
 
+        var view_overlay = new Gtk.Overlay();
+        view_overlay.add (message_list_scrolled);
+        var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
+        message_list_box.hovering_over_link.connect ((label, url) => {
+            var hover_url = url != null ? Soup.URI.decode (url) : null;
+
+            if (hover_url == null) {
+                message_overlay.hide ();
+            } else {
+                message_overlay.status = hover_url;
+                message_overlay.show_all ();
+            }
+        });
+
         var paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_start.pack1 (folders_list_view, false, false);
         paned_start.pack2 (conversation_list_scrolled, true, false);
 
         var paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_end.pack1 (paned_start, false, false);
-        paned_end.pack2 (message_list_scrolled, true, true);
+        paned_end.pack2 (view_overlay, true, true);
 
         add (paned_end);
 
