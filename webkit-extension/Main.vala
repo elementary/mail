@@ -31,7 +31,7 @@ namespace MailWebViewExtension {
 }
 
 public class DOMServer : Object {
-    private const string[] ALLOWED_SCHEMES = { "cid", "data" };
+    private const string[] ALLOWED_SCHEMES = { "cid", "data", "about" };
 
     private WebKit.WebExtension extension;
 
@@ -45,12 +45,26 @@ public class DOMServer : Object {
             warning ("WebKit extension couldn't connect to UI interface: %s", e.message);
         }
         ui_process.page_load_changed.connect (on_page_load_changed);
+        ui_process.image_loading_enabled.connect (on_image_loading_enabled);
     }
 
     private void on_page_load_changed (uint64 page_id) {
         var page = extension.get_page (page_id);
         if (page != null) {
             ui_process.set_height (page_id, (int)page.get_dom_document ().get_document_element ().get_offset_height ());
+        }
+    }
+
+    private void on_image_loading_enabled (uint64 page_id) {
+        if (ui_process.get_load_images (page_id)) {
+            var page = extension.get_page (page_id);
+            if (page != null) {
+                var images = page.get_dom_document ().get_images ();
+                for (int i = 0; i < images.length; i++) {
+                    var image = (WebKit.DOM.HTMLImageElement)images.item (i);
+                    image.set_src (image.get_src ());
+                }
+            }
         }
     }
 
