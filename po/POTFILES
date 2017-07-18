@@ -7,6 +7,7 @@ src/Backend/Account.vala
 src/Backend/Session.vala
 src/ConversationList/ConversationListBox.vala
 src/ConversationList/ConversationListItem.vala
+src/Dialogs/OpenAttachmentDialog.vala
 src/FoldersView/AccountSourceItem.vala
 src/FoldersView/FoldersListView.vala
 src/FoldersView/FolderSourceItem.vala
@@ -14,4 +15,3 @@ src/MessageList/MessageListBox.vala
 src/MessageList/MessageListItem.vala
 src/MessageList/AttachmentBar.vala
 src/MessageList/AttachmentButton.vala
-src/MessageList/AttachmentDialog.vala
