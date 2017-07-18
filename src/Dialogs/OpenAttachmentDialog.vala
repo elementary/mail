@@ -21,11 +21,12 @@
 public class Mail.OpenAttachmentDialog : Gtk.Dialog {
     public Camel.MimePart mime_part { get; construct; }
 
-    public OpenAttachmentDialog (Camel.MimePart mime_part) {
+    public OpenAttachmentDialog (Gtk.Window parent, Camel.MimePart mime_part) {
         Object (
             deletable: false,
             mime_part: mime_part,
-            resizable: false
+            resizable: false,
+            transient_for: parent
         );
     }
 
@@ -68,8 +69,6 @@ public class Mail.OpenAttachmentDialog : Gtk.Dialog {
                 show_file_anyway.begin ();
             }
         });
-
-        show_all ();
     }
 
     private async void show_file_anyway () {
