@@ -18,11 +18,16 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.AttachmentDialog : Gtk.Dialog {
+public class Mail.OpenAttachmentDialog : Gtk.Dialog {
     public Camel.MimePart mime_part { get; construct; }
 
-    public AttachmentDialog (Camel.MimePart mime_part) {
-        Object (mime_part: mime_part);
+    public OpenAttachmentDialog (Gtk.Window parent, Camel.MimePart mime_part) {
+        Object (
+            deletable: false,
+            mime_part: mime_part,
+            resizable: false,
+            transient_for: parent
+        );
     }
 
     construct {
@@ -34,6 +39,7 @@ public class Mail.AttachmentDialog : Gtk.Dialog {
         primary_label.max_width_chars = 60;
         primary_label.wrap = true;
         primary_label.xalign = 0;
+        primary_label.get_style_context ().add_class ("primary");
 
         var secondary_label = new Gtk.Label (_("Attachments may cause damage to your system if opened. Only open files from trusted sources."));
         secondary_label.max_width_chars = 60;
@@ -44,15 +50,17 @@ public class Mail.AttachmentDialog : Gtk.Dialog {
         open_button.get_style_context ().add_class ("destructive-action");
 
         var layout = new Gtk.Grid ();
-        layout.margin = 6;
+        layout.margin = 12;
+        layout.margin_top = 0;
         layout.column_spacing = 12;
         layout.row_spacing = 6;
         layout.attach (warning_image, 0, 0, 1, 2);
         layout.attach (primary_label, 1, 0, 1, 1);
         layout.attach (secondary_label, 1, 1, 1, 1);
 
-        var content = get_content_area () as Gtk.Box;
-        content.add (layout);
+        ((Gtk.Box) get_content_area ()).add (layout);
+
+        ((Gtk.Box) get_action_area ()).margin = 5;
 
         add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
         add_action_widget (open_button, Gtk.ResponseType.OK);
@@ -61,8 +69,6 @@ public class Mail.AttachmentDialog : Gtk.Dialog {
                 show_file_anyway.begin ();
             }
         });
-
-        show_all ();
     }
 
     private async void show_file_anyway () {
@@ -70,7 +76,7 @@ public class Mail.AttachmentDialog : Gtk.Dialog {
             GLib.FileIOStream iostream;
             var file = File.new_tmp ("XXXXXX-%s".printf (mime_part.get_filename ()), out iostream);
             yield mime_part.content.decode_to_output_stream (iostream.output_stream, GLib.Priority.DEFAULT, null);
-            yield GLib.AppInfo.launch_default_for_uri_async (file.get_uri (), null, null);
+            yield GLib.AppInfo.launch_default_for_uri_async (file.get_uri (), (AppLaunchContext) null, null);
         } catch (Error e) {
             critical (e.message);
         }
