@@ -69,7 +69,7 @@ public class Mail.AttachmentBar : Gtk.FlowBox {
     }
 
     private void show_attachment (Camel.MimePart attachment_part) {
-        var dialog = new Mail.AttachmentDialog (attachment_part);
+        var dialog = new Mail.OpenAttachmentDialog (attachment_part);
         dialog.transient_for = get_toplevel () as Gtk.Window;
         dialog.run ();
         dialog.destroy ();
