@@ -23,10 +23,16 @@ namespace MailWebViewExtension {
     interface Server : Object {
         public signal void page_load_changed (uint64 page_id);
         public abstract void set_height (uint64 view, int height);
+
+        public abstract void fire_image_load_blocked (uint64 page_id);
+        public signal void image_loading_enabled (uint64 page_id);
+        public abstract bool get_load_images (uint64 view);
     }
 }
 
 public class DOMServer : Object {
+    private const string[] ALLOWED_SCHEMES = { "cid", "data" };
+
     private WebKit.WebExtension extension;
 
     private MailWebViewExtension.Server? ui_process = null;
@@ -47,12 +53,34 @@ public class DOMServer : Object {
             ui_process.set_height (page_id, (int)page.get_dom_document ().get_document_element ().get_offset_height ());
         }
     }
+
+    public void on_page_created (WebKit.WebExtension extension, WebKit.WebPage page) {
+        page.send_request.connect (on_send_request);
+    }
+
+    private bool on_send_request (WebKit.WebPage page, WebKit.URIRequest request, WebKit.URIResponse? response) {
+        bool should_load = false;
+        Soup.URI? uri = new Soup.URI (request.get_uri ());
+        if (uri != null && uri.get_scheme () in ALLOWED_SCHEMES) {
+            // Always load internal resources
+            should_load = true;
+        } else {
+            if (ui_process.get_load_images (page.get_id ())) {
+                should_load = true;
+            } else {
+                ui_process.fire_image_load_blocked (page.get_id ());
+            }
+        }
+
+        return should_load ? Gdk.EVENT_PROPAGATE : Gdk.EVENT_STOP;
+    }
 }
 
 namespace WebkitWebExtension {
     [CCode (cname = "G_MODULE_EXPORT webkit_web_extension_initialize", instance_pos = -1)]
     public void initialize (WebKit.WebExtension extension) {
         DOMServer server = new DOMServer (extension);
+        extension.page_created.connect (server.on_page_created);
         server.ref ();
     }
 }
