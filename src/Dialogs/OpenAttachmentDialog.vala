@@ -76,7 +76,7 @@ public class Mail.OpenAttachmentDialog : Gtk.Dialog {
             GLib.FileIOStream iostream;
             var file = File.new_tmp ("XXXXXX-%s".printf (mime_part.get_filename ()), out iostream);
             yield mime_part.content.decode_to_output_stream (iostream.output_stream, GLib.Priority.DEFAULT, null);
-            yield GLib.AppInfo.launch_default_for_uri_async (file.get_uri (), new AppLaunchContext (), null);
+            yield GLib.AppInfo.launch_default_for_uri_async (file.get_uri (), (AppLaunchContext) null, null);
         } catch (Error e) {
             critical (e.message);
         }
