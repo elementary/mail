@@ -33,6 +33,16 @@
       <summary>Most recent position of the conversation list pane</summary>
       <description>Most recent position of the conversation list pane</description>
     </key>
+    <key name="always-load-remote-images" type="b">
+      <default>true</default>
+      <summary>Whether to always load remote images without prompting</summary>
+      <description>Whether to always load remote images without prompting</description>
+    </key>
+    <key name="remote-images-whitelist" type="as">
+      <default>[]</default>
+      <summary>A list of sender addresses for which remote images will be automatically loaded</summary>
+      <description>A list of sender addresses for which remote images will be automatically loaded</description>
+    </key>
   </schema>
 </schemalist>
 

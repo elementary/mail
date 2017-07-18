@@ -21,6 +21,8 @@
 public extern const string WEBKIT_EXTENSION_PATH;
 
 public class Mail.WebView : WebKit.WebView {
+    public signal void image_load_blocked ();
+
     private int preferred_height = 0;
     private WebViewServer view_manager;
     private Gee.Map<string, InputStream> internal_resources;
@@ -48,6 +50,11 @@ public class Mail.WebView : WebKit.WebView {
             if (page_id == get_page_id ()) {
                 preferred_height = view_manager.get_height (page_id);
                 queue_resize ();
+            }
+        });
+        view_manager.image_load_blocked.connect ((page_id) => {
+            if (page_id == get_page_id ()) {
+                image_load_blocked ();
             }
         });
 
@@ -82,6 +89,10 @@ public class Mail.WebView : WebKit.WebView {
 
     public void add_internal_resource (string name, InputStream data) {
         internal_resources[name] = data;
+    }
+
+    public void load_images () {
+        view_manager.set_load_images (get_page_id (), true);
     }
 
     private void handle_cid_request (WebKit.URISchemeRequest request) {
