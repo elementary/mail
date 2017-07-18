@@ -19,6 +19,8 @@
  */
 
 public class Mail.MessageListBox : Gtk.ListBox {
+    public signal void hovering_over_link (string? label, string? uri);
+
     public MessageListBox () {
         Object (selection_mode: Gtk.SelectionMode.NONE);
     }

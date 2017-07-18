@@ -108,6 +108,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         web_view.image_load_blocked.connect (() => {
             // TODO: Show infobar
         });
+        web_view.mouse_target_changed.connect (on_mouse_target_changed);
 
         get_message.begin ();
 
@@ -129,6 +130,15 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         destroy.connect (() => {
             loading_cancellable.cancel ();
         });
+    }
+
+    private void on_mouse_target_changed (WebKit.WebView web_view, WebKit.HitTestResult hit_test, uint mods) {
+        var list_box = this.parent as MessageListBox;
+        if (hit_test.context_is_link ()) {
+            list_box.hovering_over_link (hit_test.get_link_label (), hit_test.get_link_uri ());
+        } else {
+            list_box.hovering_over_link (null, null);
+        }
     }
 
     private async void get_message () {
