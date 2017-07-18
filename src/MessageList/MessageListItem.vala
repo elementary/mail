@@ -101,21 +101,27 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
         separator.hexpand = true;
 
+        var infobar = new Gtk.InfoBar ();
+        infobar.margin = 12;
+        infobar.message_type = Gtk.MessageType.WARNING;
+        infobar.add_button (_("Show Images"), 1);
+        infobar.add_button (_("Always Show from Sender"), 2);
+        infobar.get_content_area ().add (new Gtk.Label (_("This message contains remote images.")));
+        infobar.get_style_context ().add_class (Gtk.STYLE_CLASS_FRAME);
+
+        ((Gtk.Box) infobar.get_action_area ()).orientation = Gtk.Orientation.VERTICAL;
+
         settings = new GLib.Settings ("io.elementary.mail");
 
         web_view = new Mail.WebView ();
-        web_view.margin = 6;
-        web_view.image_load_blocked.connect (() => {
-            // TODO: Show infobar
-        });
-
-        get_message.begin ();
+        web_view.margin = 12;
 
         var base_grid = new Gtk.Grid ();
         base_grid.expand = true;
         base_grid.orientation = Gtk.Orientation.VERTICAL;
         base_grid.add (header);
         base_grid.add (separator);
+        base_grid.add (infobar);
         base_grid.add (web_view);
 
         if (Camel.MessageFlags.ATTACHMENTS in (int)message_info.flags) {
@@ -124,11 +130,33 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         }
 
         add (base_grid);
-        show_all ();
 
         destroy.connect (() => {
             loading_cancellable.cancel ();
         });
+
+        var sender = message_info.from;
+        var whitelist = settings.get_strv ("remote-images-whitelist");
+
+        infobar.response.connect ((id) => {
+            if (id == 2) {
+                if (!(sender in whitelist)) {
+                    whitelist += sender;
+                    settings.set_strv ("remote-images-whitelist", whitelist);
+                }
+            }
+            web_view.load_images ();
+            get_message.begin ();
+            infobar.hide ();
+        });
+
+        if (sender in whitelist) {
+            web_view.load_images ();
+            infobar.destroy ();
+        }
+
+        get_message.begin ();
+        show_all ();
     }
 
     private async void get_message () {
