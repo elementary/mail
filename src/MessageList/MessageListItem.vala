@@ -130,6 +130,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             infobar.destroy ();
         });
 
+        get_message.begin ();
         web_view = new Mail.WebView ();
         web_view.margin = 12;
 
@@ -147,8 +148,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         }
 
         add (base_grid);
-
-        get_message.begin ();
         show_all ();
 
         destroy.connect (() => {
