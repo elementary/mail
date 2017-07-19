@@ -46,6 +46,11 @@ public class Mail.MainWindow : Gtk.Window {
         var message_list_scrolled = new Gtk.ScrolledWindow (null, null);
         message_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         message_list_scrolled.add (message_list_box);
+        // Prevent the focus of the webview causing the ScrolledWindow to scroll
+        var scrolled_child = message_list_scrolled.get_child ();
+        if (scrolled_child is Gtk.Container) {
+            ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
+        }
 
         var view_overlay = new Gtk.Overlay();
         view_overlay.add (message_list_scrolled);
