@@ -46,6 +46,26 @@ public class Mail.MainWindow : Gtk.Window {
         var message_list_scrolled = new Gtk.ScrolledWindow (null, null);
         message_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         message_list_scrolled.add (message_list_box);
+        // Prevent the focus of the webview causing the ScrolledWindow to scroll
+        var scrolled_child = message_list_scrolled.get_child ();
+        if (scrolled_child is Gtk.Container) {
+            ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
+        }
+
+        var view_overlay = new Gtk.Overlay();
+        view_overlay.add (message_list_scrolled);
+        var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
+        message_overlay.no_show_all = true;
+        message_list_box.hovering_over_link.connect ((label, url) => {
+            var hover_url = url != null ? Soup.URI.decode (url) : null;
+
+            if (hover_url == null) {
+                message_overlay.hide ();
+            } else {
+                message_overlay.status = hover_url;
+                message_overlay.show ();
+            }
+        });
 
         var paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_start.pack1 (folders_list_view, false, false);
@@ -53,7 +73,7 @@ public class Mail.MainWindow : Gtk.Window {
 
         var paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_end.pack1 (paned_start, false, false);
-        paned_end.pack2 (message_list_scrolled, true, true);
+        paned_end.pack2 (view_overlay, true, true);
 
         add (paned_end);
 

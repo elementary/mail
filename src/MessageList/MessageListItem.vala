@@ -93,7 +93,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         starred_icon.icon_size = Gtk.IconSize.MENU;
         starred_icon.valign = Gtk.Align.START;
 
-        if (Camel.MessageFlags.FLAGGED in (int)message_info.flags) {
+        if (Camel.MessageFlags.FLAGGED in (int) message_info.flags) {
             starred_icon.icon_name = "starred-symbolic";
         } else {
             starred_icon.icon_name = "non-starred-symbolic";
@@ -109,9 +109,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         header.attach (subject_label, 1, 2, 1, 1);
         header.attach (from_val_label, 2, 0, 1, 1);
         header.attach (to_val_label, 2, 1, 1, 1);
-        header.attach (subject_val_label, 2, 2, 3, 1);
+        header.attach (subject_val_label, 2, 2, 4, 1);
         header.attach (datetime_label, 3, 0, 1, 1);
-        header.attach (starred_icon, 4, 0, 1, 1);
+        header.attach (starred_icon, 5, 0, 1, 1);
 
         var small_header = new Gtk.Grid ();
 
@@ -137,6 +137,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         web_view.image_load_blocked.connect (() => {
             // TODO: Show infobar
         });
+        web_view.mouse_target_changed.connect (on_mouse_target_changed);
 
         get_message.begin ();
 
@@ -155,7 +156,12 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         base_grid.add (header_event_box);
         base_grid.add (secondary_revealer);
 
-        if (Camel.MessageFlags.ATTACHMENTS in (int)message_info.flags) {
+        if (Camel.MessageFlags.ATTACHMENTS in (int) message_info.flags) {
+            var attachment_icon = new Gtk.Image.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
+            attachment_icon.tooltip_text = _("This message contains one or more attachments");
+            attachment_icon.valign = Gtk.Align.START;
+            header.attach (attachment_icon, 4, 0, 1, 1);
+
             var attachment_bar = new AttachmentBar (message_info, loading_cancellable);
             secondary_grid.add (attachment_bar);
         }
@@ -186,6 +192,23 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         destroy.connect (() => {
             loading_cancellable.cancel ();
         });
+
+        web_view.link_activated.connect ((uri) => {
+            try {
+                AppInfo.launch_default_for_uri (uri, null);
+            } catch (Error e) {
+                warning ("Failed to open link: %s", e.message);
+            }
+        });
+    }
+
+    private void on_mouse_target_changed (WebKit.WebView web_view, WebKit.HitTestResult hit_test, uint mods) {
+        var list_box = this.parent as MessageListBox;
+        if (hit_test.context_is_link ()) {
+            list_box.hovering_over_link (hit_test.get_link_label (), hit_test.get_link_uri ());
+        } else {
+            list_box.hovering_over_link (null, null);
+        }
     }
 
     private async void get_message () {
