@@ -26,6 +26,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     private Gtk.Revealer secondary_revealer;
     private Gtk.Stack header_stack;
+    private Gtk.StyleContext style_context;
 
     private string message_content;
     private bool message_is_html = false;
@@ -36,7 +37,13 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         }
         set {
             secondary_revealer.reveal_child = value;
+            header_stack.show_all ();
             header_stack.set_visible_child_name (value ? "large" : "small");
+            if (value) {
+                style_context.remove_class ("collapsed");
+            } else {
+                style_context.add_class ("collapsed");
+            }
         }
     }
 
@@ -52,7 +59,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     construct {
         loading_cancellable = new GLib.Cancellable ();
 
-        get_style_context ().add_class ("card");
+        style_context = get_style_context ();
+        style_context.add_class ("card");
 
         var avatar = new Granite.Widgets.Avatar.with_default_icon (48);
         avatar.valign = Gtk.Align.START;
@@ -119,7 +127,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         header_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
         header_stack.add_named (header, "large");
         header_stack.add_named (small_header, "small");
-        header_stack.get_style_context ().add_class ("collapsed");
 
         var header_event_box = new Gtk.EventBox ();
         header_event_box.events |= Gdk.EventMask.ENTER_NOTIFY_MASK;
