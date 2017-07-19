@@ -187,6 +187,9 @@ public class ConversationViewer : Gtk.Stack {
         conversation_scrolled.size_allocate.connect(mark_read);
         conversation_scrolled.vadjustment.value_changed.connect(mark_read);
         conversation_scrolled.vadjustment.changed.connect(display_last_email);
+        // Prevent the focus of the webview causing the ScrolledWindow to scroll
+        var viewport = conversation_scrolled.get_child () as Gtk.Container;
+        viewport.set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
         
         // Stops button_press_event
         conversation_list_box.button_press_event.connect ((b) => {            
