@@ -22,6 +22,9 @@ public extern const string WEBKIT_EXTENSION_PATH;
 
 public class Mail.WebView : WebKit.WebView {
     public signal void image_load_blocked ();
+    public signal void link_activated (string url);
+
+    private const string INTERNAL_URL_BODY = "elementary-mail:body";
 
     private int preferred_height = 0;
     private WebViewServer view_manager;
@@ -59,6 +62,7 @@ public class Mail.WebView : WebKit.WebView {
         });
 
         load_changed.connect (on_load_changed);
+        decide_policy.connect (on_decide_policy);
     }
 
     public WebView () {
@@ -85,6 +89,28 @@ public class Mail.WebView : WebKit.WebView {
 
     public override void get_preferred_height (out int minimum_height, out int natural_height) {
         minimum_height = natural_height = preferred_height;
+    }
+
+    public new void load_html (string? body, string? base_uri = null) {
+        base.load_html (body, base_uri ?? INTERNAL_URL_BODY);
+    }
+
+    private bool on_decide_policy (WebKit.WebView view, WebKit.PolicyDecision policy, WebKit.PolicyDecisionType type) {
+        if (type == WebKit.PolicyDecisionType.NAVIGATION_ACTION ||
+            type == WebKit.PolicyDecisionType.NEW_WINDOW_ACTION) {
+            var nav_policy = (WebKit.NavigationPolicyDecision) policy;
+            if (nav_policy.get_navigation_type () == WebKit.NavigationType.LINK_CLICKED) {
+                link_activated (nav_policy.request.uri);
+            } else if (nav_policy.get_navigation_type () == WebKit.NavigationType.OTHER) {
+                if (nav_policy.request.uri == INTERNAL_URL_BODY) {
+                    policy.use ();
+                    return Gdk.EVENT_STOP;
+                }
+            }
+        }
+
+        policy.ignore ();
+        return Gdk.EVENT_STOP;
     }
 
     public void add_internal_resource (string name, InputStream data) {
