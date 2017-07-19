@@ -140,7 +140,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             try {
                 AppInfo.launch_default_for_uri (uri, null);
             } catch (Error e) {
-                warning ("%s\n", e.message);
+                warning ("Failed to open link: %s", e.message);
             }
         });
     }
