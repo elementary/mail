@@ -50,6 +50,7 @@ public class Mail.MainWindow : Gtk.Window {
         var view_overlay = new Gtk.Overlay();
         view_overlay.add (message_list_scrolled);
         var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
+        message_overlay.no_show_all = true;
         message_list_box.hovering_over_link.connect ((label, url) => {
             var hover_url = url != null ? Soup.URI.decode (url) : null;
 
@@ -57,7 +58,7 @@ public class Mail.MainWindow : Gtk.Window {
                 message_overlay.hide ();
             } else {
                 message_overlay.status = hover_url;
-                message_overlay.show_all ();
+                message_overlay.show ();
             }
         });
 
