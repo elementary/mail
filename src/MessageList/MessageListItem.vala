@@ -98,14 +98,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         header.attach (datetime_label, 3, 0, 1, 1);
         header.attach (starred_icon, 5, 0, 1, 1);
 
-        if (Camel.MessageFlags.ATTACHMENTS in (int) message_info.flags) {
-            var attachment_icon = new Gtk.Image.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
-            attachment_icon.tooltip_text = _("This message contains one or more attachments");
-            attachment_icon.valign = Gtk.Align.START;
-
-            header.attach (attachment_icon, 4, 0, 1, 1);
-        }
-
         var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
         separator.hexpand = true;
 
@@ -127,7 +119,12 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         base_grid.add (separator);
         base_grid.add (web_view);
 
-        if (Camel.MessageFlags.ATTACHMENTS in (int)message_info.flags) {
+        if (Camel.MessageFlags.ATTACHMENTS in (int) message_info.flags) {
+            var attachment_icon = new Gtk.Image.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
+            attachment_icon.tooltip_text = _("This message contains one or more attachments");
+            attachment_icon.valign = Gtk.Align.START;
+            header.attach (attachment_icon, 4, 0, 1, 1);
+
             var attachment_bar = new AttachmentBar (message_info, loading_cancellable);
             base_grid.add (attachment_bar);
         }
