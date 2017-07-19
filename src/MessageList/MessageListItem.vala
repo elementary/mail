@@ -135,6 +135,14 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         destroy.connect (() => {
             loading_cancellable.cancel ();
         });
+
+        web_view.link_activated.connect ((uri) => {
+            try {
+                AppInfo.launch_default_for_uri (uri, null);
+            } catch (Error e) {
+                warning ("Failed to open link: %s", e.message);
+            }
+        });
     }
 
     private void on_mouse_target_changed (WebKit.WebView web_view, WebKit.HitTestResult hit_test, uint mods) {
