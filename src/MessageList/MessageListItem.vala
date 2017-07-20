@@ -37,7 +37,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         }
         set {
             secondary_revealer.reveal_child = value;
-            header_stack.show_all ();
             header_stack.set_visible_child_name (value ? "large" : "small");
             if (value) {
                 style_context.remove_class ("collapsed");
@@ -91,6 +90,30 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         subject_val_label.xalign = 0;
         subject_val_label.wrap = true;
 
+        var fields_grid = new Gtk.Grid ();
+        fields_grid.column_spacing = 6;
+        fields_grid.row_spacing = 6;
+        fields_grid.attach (from_label, 0, 0, 1, 1);
+        fields_grid.attach (to_label, 0, 1, 1, 1);
+        fields_grid.attach (subject_label, 0, 2, 1, 1);
+        fields_grid.attach (from_val_label, 1, 0, 1, 1);
+        fields_grid.attach (to_val_label, 1, 1, 1, 1);
+        fields_grid.attach (subject_val_label, 1, 2, 1, 1);
+
+        var small_from_label = new Gtk.Label (message_info.from);
+        from_val_label.ellipsize = Pango.EllipsizeMode.END;
+        from_val_label.xalign = 0;
+
+        var small_fields_grid = new Gtk.Grid ();
+        small_fields_grid.attach (small_from_label, 0, 0, 1, 1);
+
+        header_stack = new Gtk.Stack ();
+        header_stack.homogeneous = false;
+        header_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+        header_stack.add_named (fields_grid, "large");
+        header_stack.add_named (small_fields_grid, "small");
+        header_stack.show_all ();
+
         var datetime_label = new Gtk.Label (new DateTime.from_unix_utc (message_info.date_received).format ("%b %e, %Y"));
         datetime_label.hexpand = true;
         datetime_label.halign = Gtk.Align.END;
@@ -109,30 +132,17 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         var header = new Gtk.Grid ();
         header.margin = 12;
-        header.column_spacing = 6;
-        header.row_spacing = 6;
+        header.column_spacing = 12;
         header.attach (avatar, 0, 0, 1, 3);
-        header.attach (from_label, 1, 0, 1, 1);
-        header.attach (to_label, 1, 1, 1, 1);
-        header.attach (subject_label, 1, 2, 1, 1);
-        header.attach (from_val_label, 2, 0, 1, 1);
-        header.attach (to_val_label, 2, 1, 1, 1);
-        header.attach (subject_val_label, 2, 2, 4, 1);
-        header.attach (datetime_label, 3, 0, 1, 1);
-        header.attach (starred_icon, 5, 0, 1, 1);
-
-        var small_header = new Gtk.Grid ();
-
-        header_stack = new Gtk.Stack ();
-        header_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
-        header_stack.add_named (header, "large");
-        header_stack.add_named (small_header, "small");
+        header.attach (header_stack, 1, 0, 1, 3);
+        header.attach (datetime_label, 2, 0, 1, 1);
+        header.attach (starred_icon, 4, 0, 1, 1);
 
         var header_event_box = new Gtk.EventBox ();
         header_event_box.events |= Gdk.EventMask.ENTER_NOTIFY_MASK;
         header_event_box.events |= Gdk.EventMask.LEAVE_NOTIFY_MASK;
         header_event_box.events |= Gdk.EventMask.BUTTON_RELEASE_MASK;
-        header_event_box.add (header_stack);
+        header_event_box.add (header);
 
         var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
         separator.hexpand = true;
@@ -167,7 +177,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             var attachment_icon = new Gtk.Image.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
             attachment_icon.tooltip_text = _("This message contains one or more attachments");
             attachment_icon.valign = Gtk.Align.START;
-            header.attach (attachment_icon, 4, 0, 1, 1);
+            header.attach (attachment_icon, 3, 0, 1, 1);
 
             var attachment_bar = new AttachmentBar (message_info, loading_cancellable);
             secondary_grid.add (attachment_bar);
