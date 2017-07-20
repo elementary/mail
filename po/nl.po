@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-06-29 11:49+0000\n"
-"Last-Translator: Dieter Vanderfaeillie <dieter.vanderfaeillie@gmail.com>\n"
+"PO-Revision-Date: 2017-07-09 11:18+0000\n"
+"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -1221,9 +1221,9 @@ msgid ""
 "Selecting \"Trust This Server\" or \"Always Trust This Server\" may cause "
 "your username and password to be transmitted insecurely."
 msgstr ""
-"Het selecteren van \"Vertrouw deze Server\" of \"Vertrouw deze server altijd"
-"\" kan veroorzaken dat uw gebruikersnaam en wachtwoord om onbeveiligd worden "
-"verzonden."
+"Het selecteren van \"Vertrouw deze server\" of \"Vertrouw deze server "
+"altijd\" kan veroorzaken dat uw gebruikersnaam en wachtwoord om onbeveiligd "
+"worden verzonden."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
@@ -2019,7 +2019,7 @@ msgstr "Bcc: "
 #: ../src/client/composer/composer-widget.vala:1608
 #: ../src/client/composer/composer-widget.vala:1611
 msgid "Reply-To: "
-msgstr ""
+msgstr "Antwoorden aan: "
 
 #: ../src/client/composer/composer-widget.vala:1887
 #: ../src/client/composer/composer-widget.vala:1882
@@ -2167,7 +2167,7 @@ msgstr "Bestanden verzenden via Mail"
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
 msgid "Welcome to Mail"
-msgstr ""
+msgstr "Welkom bij Mail"
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
 #: ../src/client/composer/composer-toolbar.vala:77
@@ -2212,13 +2212,13 @@ msgstr ""
 #: ../src/client/dialogs/preferences-dialog.vala:47
 #: ../src/client/dialogs/preferences-dialog.vala:53
 msgid "Spell check:"
-msgstr ""
+msgstr "Spellingscontrole:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:51
 #: ../src/client/dialogs/preferences-dialog.vala:57
 #: ../src/client/dialogs/preferences-dialog.vala:47
 msgid "Notifications"
-msgstr ""
+msgstr "Meldingen"
 
 #: ../src/client/dialogs/preferences-dialog.vala:56
 #: ../src/client/dialogs/preferences-dialog.vala:62
@@ -2230,7 +2230,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:60
 #: ../src/client/application/geary-controller.vala:59
 msgid "Delete Conversation"
-msgstr ""
+msgstr "Gesprek verwijderen"
 
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
@@ -2239,14 +2239,14 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2725
 msgid "Delete Conversation (Shift+Delete)"
 msgid_plural "Delete Conversations (Shift+Delete)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Gesprek verwijderen (Shift+Delete)"
+msgstr[1] "Gesprekken verwijderen (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete Conversations (Shift+Delete)"
-msgstr ""
+msgstr "Gesprekken verwijderen (Shift+Delete)"
 
 #: ../data/ui/remove_confirm.ui:43
 msgid ""
@@ -2264,23 +2264,23 @@ msgstr ""
 #: ../data/ui/remove_confirm.ui:80
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:47
 msgid "Nickname:"
-msgstr ""
+msgstr "Bijnaam:"
 
 #: ../data/ui/remove_confirm.ui:94
 msgid "Email address:"
-msgstr ""
+msgstr "E-mailadres:"
 
 #: ../data/ui/find_bar.ui:59
 msgid "Find"
-msgstr ""
+msgstr "Zoeken"
 
 #: ../data/ui/find_bar.ui:72
 msgid "Previous Result"
-msgstr ""
+msgstr "Vorige resultaat"
 
 #: ../data/ui/find_bar.ui:91
 msgid "Next result"
-msgstr ""
+msgstr "Volgende resultaat"
 
 #: ../data/ui/find_bar.ui:107
 msgid "_Case sensitive"
@@ -2296,7 +2296,7 @@ msgstr ""
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
-msgstr ""
+msgstr "E-mailadres verwijderen"
 
 #: ../data/ui/edit_alternate_emails.ui:136
 msgid ""
@@ -2306,7 +2306,7 @@ msgstr ""
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
-msgstr ""
+msgstr "_Updaten"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
@@ -2314,7 +2314,7 @@ msgstr ""
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
-msgstr ""
+msgstr "_Ongedaan maken"
 
 #: ../data/ui/composer.ui:15
 msgid "_Redo"
@@ -2322,35 +2322,35 @@ msgstr ""
 
 #: ../data/ui/composer.ui:22
 msgid "Cu_t"
-msgstr ""
+msgstr "K_nippen"
 
 #: ../data/ui/composer.ui:36
 msgid "_Paste"
-msgstr ""
+msgstr "_Plakken"
 
 #: ../data/ui/composer.ui:43
 msgid "_Left"
-msgstr ""
+msgstr "_Links"
 
 #: ../data/ui/composer.ui:48
 msgid "_Right"
-msgstr ""
+msgstr "_Rechts"
 
 #: ../data/ui/composer.ui:53
 msgid "_Center"
-msgstr ""
+msgstr "_Centreren"
 
 #: ../data/ui/composer.ui:58
 msgid "_Justify"
-msgstr ""
+msgstr "_Uitvullen"
 
 #: ../data/ui/composer.ui:63 ../src/client/composer/ComposerToolbar.vala:77
 msgid "Link (Ctrl+L)"
-msgstr ""
+msgstr "Koppelen (Ctrl+L)"
 
 #: ../data/ui/composer.ui:70 ../data/ui/composer.ui:69
 msgid "C_olor"
-msgstr ""
+msgstr "_Kleur"
 
 #: ../data/ui/composer.ui:81
 msgid "Quote text  (Ctrl+])"
@@ -2362,28 +2362,28 @@ msgstr ""
 
 #: ../data/ui/composer.ui:93 ../src/client/composer/ComposerToolbar.vala:82
 msgid "Remove formatting (Ctrl+Space)"
-msgstr ""
+msgstr "Formattering verwijderen (Ctrl+Spatie)"
 
 #: ../data/ui/composer.ui:100 ../data/ui/composer.ui:97
 msgctxt "Clipboard paste with rich text"
 msgid "Paste _With Formatting"
-msgstr ""
+msgstr "Plakken _met opmaak"
 
 #: ../data/ui/composer.ui:111 ../src/client/composer/ComposerToolbar.vala:36
 msgid "Bold (Ctrl+B)"
-msgstr ""
+msgstr "Vet (Ctrl+B)"
 
 #: ../data/ui/composer.ui:118 ../src/client/composer/ComposerToolbar.vala:41
 msgid "Italic (Ctrl+I)"
-msgstr ""
+msgstr "Cursief (Ctrl+I)"
 
 #: ../data/ui/composer.ui:125 ../src/client/composer/ComposerToolbar.vala:46
 msgid "Underline (Ctrl+U)"
-msgstr ""
+msgstr "Onderlijnen (Ctrl+U)"
 
 #: ../data/ui/composer.ui:132 ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+K)"
-msgstr ""
+msgstr "Doorhalen (Ctrl+K)"
 
 #: ../data/ui/composer.ui:139 ../data/ui/composer.ui:132
 msgid "_Rich Text"
@@ -2396,17 +2396,17 @@ msgstr ""
 #: ../data/ui/composer.ui:157
 msgctxt "Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "Afsluiten en opslaan"
 
 #: ../data/ui/composer.ui:158
 msgctxt "Short Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "Afsluiten en opslaan"
 
 #: ../data/ui/composer.ui:159
 msgctxt "Tooltip"
 msgid "Close and Save"
-msgstr ""
+msgstr "Afsluiten en opslaan"
 
 #: ../data/ui/composer.ui:165
 msgctxt "Label"
@@ -2426,62 +2426,62 @@ msgstr ""
 #: ../data/ui/composer.ui:173 ../data/ui/composer.ui:155
 #: ../data/ui/composer.ui:160
 msgid "Lar_ge"
-msgstr ""
+msgstr "_Groot"
 
 #: ../data/ui/composer.ui:174 ../data/ui/composer.ui:156
 #: ../data/ui/composer.ui:161
 msgid "Large"
-msgstr ""
+msgstr "Groot"
 
 #: ../data/ui/composer.ui:179 ../data/ui/composer.ui:161
 #: ../data/ui/composer.ui:166
 msgid "_Medium"
-msgstr ""
+msgstr "_Gemiddeld"
 
 #: ../data/ui/composer.ui:180 ../data/ui/composer.ui:162
 #: ../data/ui/composer.ui:167
 msgid "Medium"
-msgstr ""
+msgstr "Gemiddeld"
 
 #: ../data/ui/composer.ui:185 ../data/ui/composer.ui:167
 #: ../data/ui/composer.ui:172
 msgid "_Small"
-msgstr ""
+msgstr "_Klein"
 
 #: ../data/ui/composer.ui:186 ../data/ui/composer.ui:168
 #: ../data/ui/composer.ui:173
 msgid "Small"
-msgstr ""
+msgstr "Klein"
 
 #: ../data/ui/composer.ui:191 ../data/ui/composer.ui:173
 #: ../data/ui/composer.ui:178
 msgid "S_ans Serif"
-msgstr ""
+msgstr "S_chreefloos"
 
 #: ../data/ui/composer.ui:192 ../data/ui/composer.ui:174
 #: ../data/ui/composer.ui:179
 msgid "Sans Serif"
-msgstr ""
+msgstr "Schreefloos"
 
 #: ../data/ui/composer.ui:197 ../data/ui/composer.ui:179
 #: ../data/ui/composer.ui:184
 msgid "S_erif"
-msgstr ""
+msgstr "S_chreefhebbend"
 
 #: ../data/ui/composer.ui:198 ../data/ui/composer.ui:180
 #: ../data/ui/composer.ui:185
 msgid "Serif"
-msgstr ""
+msgstr "Schreefhebbend"
 
 #: ../data/ui/composer.ui:203 ../data/ui/composer.ui:185
 #: ../data/ui/composer.ui:190
 msgid "_Fixed Width"
-msgstr ""
+msgstr "_Vaste breedte"
 
 #: ../data/ui/composer.ui:204 ../data/ui/composer.ui:186
 #: ../data/ui/composer.ui:191
 msgid "Fixed Width"
-msgstr ""
+msgstr "Vaste breedte"
 
 #: ../data/ui/composer.ui:209 ../data/ui/composer.ui:210
 msgid "Detach"
@@ -2493,23 +2493,23 @@ msgstr ""
 
 #: ../data/ui/composer.ui:218
 msgid "_Send"
-msgstr ""
+msgstr "_Verzenden"
 
 #: ../data/ui/composer.ui:219 ../src/client/composer/ComposerHeaderBar.vala:46
 msgid "Send"
-msgstr ""
+msgstr "Verzenden"
 
 #: ../data/ui/composer.ui:220 ../src/client/composer/ComposerHeaderBar.vala:47
 msgid "Send (Ctrl+Enter)"
-msgstr ""
+msgstr "Verzenden (Ctrl+Enter)"
 
 #: ../data/ui/composer.ui:226
 msgid "_Attach File"
-msgstr ""
+msgstr "_Bestand bijvoegen"
 
 #: ../data/ui/composer.ui:227 ../data/ui/composer.ui:228
 msgid "Attach File"
-msgstr ""
+msgstr "Bestand bijvoegen"
 
 #: ../data/ui/composer.ui:234
 msgid "_Include Original Attachments"
@@ -2528,34 +2528,34 @@ msgstr ""
 #: ../data/ui/composer.ui:289 ../data/ui/composer.ui:317
 #: ../data/ui/composer.ui:287 ../data/ui/composer.ui:292
 msgid "_To"
-msgstr ""
+msgstr "_Aan"
 
 #: ../data/ui/composer.ui:308 ../data/ui/composer.ui:336
 #: ../data/ui/composer.ui:306 ../data/ui/composer.ui:311
 msgid "_Cc"
-msgstr ""
+msgstr "_Cc"
 
 #: ../data/ui/composer.ui:362 ../data/ui/composer.ui:390
 #: ../data/ui/composer.ui:360 ../data/ui/composer.ui:365
 msgid "_Subject"
-msgstr ""
+msgstr "_Onderwerp"
 
 #: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
 #: ../data/ui/composer.ui:379 ../data/ui/composer.ui:384
 msgid "_Bcc"
-msgstr ""
+msgstr "_Bcc"
 
 #: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
 #: ../data/ui/composer.ui:409 ../data/ui/composer.ui:414
 msgid "_Reply-To"
-msgstr ""
+msgstr "_Antwoorden aan"
 
 #. Geary account mail will be sent from
 #. Account mail will be sent from
 #: ../data/ui/composer.ui:440 ../data/ui/composer.ui:468
 #: ../data/ui/composer.ui:438 ../data/ui/composer.ui:443
 msgid "From"
-msgstr ""
+msgstr "Van"
 
 #: ../data/ui/composer.ui:519 ../data/ui/composer.ui:547
 #: ../data/ui/composer.ui:517 ../data/ui/composer.ui:522
@@ -2587,27 +2587,27 @@ msgstr ""
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
-msgstr ""
+msgstr "Wachtwoord"
 
 #: ../data/ui/login.ui:97 ../data/ui/login.ui:545
 msgid "_Password:"
-msgstr ""
+msgstr "_Wachtwoord:"
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
-msgstr ""
+msgstr "E-_mailadres:"
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
-msgstr ""
+msgstr "Werk, Thuis, etc."
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
-msgstr ""
+msgstr "B_ijnaam:"
 
 #: ../data/ui/login.ui:195
 msgid "N_ame:"
-msgstr ""
+msgstr "N_aam:"
 
 #: ../data/ui/login.ui:211
 msgid "S_ervice:"
@@ -2615,75 +2615,75 @@ msgstr ""
 
 #: ../data/ui/login.ui:298
 msgid "IMAP settings"
-msgstr ""
+msgstr "IMAP-instellingen"
 
 #: ../data/ui/login.ui:315
 msgid "Se_rver:"
-msgstr ""
+msgstr "Se_rver:"
 
 #: ../data/ui/login.ui:347
 msgid "P_ort"
-msgstr ""
+msgstr "P_oort"
 
 #: ../data/ui/login.ui:409
 msgid "Ser_ver:"
-msgstr ""
+msgstr "Ser_ver:"
 
 #: ../data/ui/login.ui:427
 msgid "Por_t"
-msgstr ""
+msgstr "Poor_t"
 
 #: ../data/ui/login.ui:446
 msgid "SMTP settings"
-msgstr ""
+msgstr "SMTP-instellingen"
 
 #: ../data/ui/login.ui:462
 msgid "User_name:"
-msgstr ""
+msgstr "Gebruikers_naam:"
 
 #: ../data/ui/login.ui:480
 msgid "Pass_word:"
-msgstr ""
+msgstr "Wacht_woord:"
 
 #: ../data/ui/login.ui:499
 msgid "SMTP username"
-msgstr ""
+msgstr "SMTP-gebruikersnaam"
 
 #: ../data/ui/login.ui:514
 msgid "SMTP password"
-msgstr ""
+msgstr "SMTP-wachtwoord"
 
 #: ../data/ui/login.ui:527
 msgid "_Username:"
-msgstr ""
+msgstr "_Gebruikersnaam:"
 
 #: ../data/ui/login.ui:564
 msgid "IMAP username"
-msgstr ""
+msgstr "IMAP-gebruikersnaam"
 
 #: ../data/ui/login.ui:579
 msgid "IMAP password"
-msgstr ""
+msgstr "IMAP-wachtwoord"
 
 #: ../data/ui/login.ui:593
 msgid "Encr_yption:"
-msgstr ""
+msgstr "Ver_sleuteling:"
 
 #: ../data/ui/login.ui:613
 msgid "Encrypt_ion:"
-msgstr ""
+msgstr "Ver_sleuteling:"
 
 #: ../data/ui/login.ui:634 ../data/ui/login.ui:651
 msgid "SSL/TLS"
-msgstr ""
+msgstr "SSL/TLS"
 
 #: ../data/ui/login.ui:635 ../data/ui/login.ui:652
 msgid "STARTTLS"
-msgstr ""
+msgstr "STARTTLS"
 
 #: ../data/ui/login.ui:663
 msgid "No authentication re_quired"
-msgstr ""
+msgstr "Geen authenticatie ver_eist"
 
 #: ../data/ui/login.ui:679
 msgid "Use IMAP cre_dentials"
@@ -2691,31 +2691,31 @@ msgstr ""
 
 #: ../data/ui/login.ui:783
 msgid "Storage"
-msgstr ""
+msgstr "Opslag"
 
 #: ../data/ui/login.ui:804
 msgid "_Download mail"
-msgstr ""
+msgstr "E-mails _downloaden"
 
 #: ../data/ui/login.ui:867
 msgid "Save dra_fts on server"
-msgstr ""
+msgstr "_Concepten opslaan op de server"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr ""
+msgstr "E-mails onder_tekenen (HTML toegestaan):"
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
-msgstr ""
+msgstr "Account toevoegen"
 
 #: ../data/ui/account_list.ui:82
 msgid "Edit account"
-msgstr ""
+msgstr "Account bewerken"
 
 #: ../data/ui/account_list.ui:95
 msgid "Remove account"
-msgstr ""
+msgstr "Account verwijderen"
 
 #: ../data/ui/certificate_warning_dialog.ui:7
 msgid "Untrusted Connection"
@@ -2723,27 +2723,27 @@ msgstr ""
 
 #: ../data/ui/certificate_warning_dialog.ui:29
 msgid "_Always Trust This Server"
-msgstr ""
+msgstr "Vertrouw deze server _altijd"
 
 #: ../data/ui/certificate_warning_dialog.ui:43
 msgid "_Trust This Server"
-msgstr ""
+msgstr "Ver_trouw deze server"
 
 #: ../data/ui/certificate_warning_dialog.ui:57
 msgid "_Don't Trust This Server"
-msgstr ""
+msgstr "Vertrouw _deze server niet"
 
 #: ../data/ui/password-dialog.ui:74
 msgid "SMTP Credentials"
-msgstr ""
+msgstr "SMTP-gegevens"
 
 #: ../data/ui/password-dialog.ui:91
 msgid "Username"
-msgstr ""
+msgstr "Gebruikersnaam"
 
 #: ../data/ui/password-dialog.ui:152
 msgid "_Remember password"
-msgstr ""
+msgstr "_Wachtwoord onthouden"
 
 #: ../data/ui/password-dialog.ui:210
 msgid "_Authenticate"

@@ -1,7 +1,6 @@
 # Indonesian translation of geary
 # Copyright 2012-2013 Yorba Foundation
 # This file is distributed under the GNU LGPL, version 2.1.
-#
 # Translators:
 # Andika Triwidada <andika@gmail.com>, 2012-2014
 # elementary Indonesia <elementaryindo@gmail.com>, 2012, 2013
@@ -11,8 +10,8 @@ msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-06-30 10:31+0000\n"
-"Last-Translator: Miraj Fauzi <murazi.nov@gmail.com>\n"
+"PO-Revision-Date: 2017-07-11 09:37+0000\n"
+"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/mail/mail/id/>"
 "\n"
 "Language: id\n"
@@ -45,7 +44,7 @@ msgstr "Trash | Rubbish | Rubbish Bin | Sampah | Tong Sampah | Tempat Sampah"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:595
 msgid "Archive | Archives"
-msgstr ""
+msgstr "Arsip | Archive | Archives"
 
 #: ../src/engine/api/geary-special-folder-type.vala:24
 msgid "Inbox"
@@ -250,7 +249,7 @@ msgstr "Klien Surat"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "Copyright 2011-2015 Yorba Foundation"
-msgstr "Copyright 2011-2015 Yorba Foundation"
+msgstr "Hak Cipta 2011-2015 Yorba Foundation"
 
 #: ../src/client/application/geary-application.vala:21
 msgid "Visit the Yorba web site"
@@ -258,7 +257,7 @@ msgstr "Kunjungi halaman web Yorba"
 
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete conversation"
-msgstr ""
+msgstr "Hapus percakapan"
 
 #: ../src/client/application/geary-controller.vala:62
 msgid "Delete conversation (Shift+Delete)"
@@ -281,7 +280,7 @@ msgstr[0] "Pindahkan percakapan ke Sampah (Delete, Backspace)"
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 msgid "Move conversations to Trash (Delete, Backspace)"
-msgstr ""
+msgstr "Pindahkan percakapan ke Tong Sampah (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
@@ -295,8 +294,7 @@ msgstr "_Arsip"
 #: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Arsipkan percakapan (A)"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
@@ -339,8 +337,7 @@ msgstr "Tandai sebagai bukan S_pam"
 #: ../src/client/application/geary-controller.vala:390
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Tandai percakapan"
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
@@ -363,8 +360,7 @@ msgstr "Tandai percakapan"
 #: ../src/client/application/geary-controller.vala:2716
 msgid "Add label to conversation"
 msgid_plural "Add label to conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Tambahkan label ke percakapan"
 
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
@@ -391,8 +387,7 @@ msgstr "Tambahkan label ke percakapan"
 #: ../src/client/application/geary-controller.vala:2718
 msgid "Move conversation"
 msgid_plural "Move conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Pindahkan percakapan"
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
@@ -573,7 +568,7 @@ msgstr "Maju (Ctrl+L, F)"
 #: ../src/client/application/geary-controller.vala:485
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty"
-msgstr ""
+msgstr "Kosong"
 
 #: ../src/client/application/geary-controller.vala:492
 #: ../src/client/application/geary-controller.vala:491
@@ -582,7 +577,7 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:71
 #: ../src/client/application/geary-controller.vala:481
 msgid "Empty Spam or Trash folders"
-msgstr ""
+msgstr "Kosongkan folder Spam atau Tong Sampah"
 
 #: ../src/client/application/geary-controller.vala:496
 #: ../src/client/application/geary-controller.vala:495
@@ -592,7 +587,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr ""
+msgstr "Kosongkan _Spam…"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -602,11 +597,11 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr ""
+msgstr "Kosongkan _Tong Sampah…"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
-msgstr ""
+msgstr "Jungkitkan bilah pencarian"
 
 #: ../src/client/application/geary-controller.vala:746
 #: ../src/client/application/geary-controller.vala:740
@@ -890,7 +885,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1931
 #: ../src/client/application/geary-controller.vala:1937
 msgid "Undo move (Ctrl+Z)"
-msgstr ""
+msgstr "Tak jadi pindah (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:1986
 #: ../src/client/application/geary-controller.vala:1980
@@ -969,12 +964,12 @@ msgstr "Tutup draf pesan yang terbuka?"
 #: ../src/client/application/geary-controller.vala:2394
 #: ../src/client/application/geary-controller.vala:2389
 msgid "Empty all email from your %s folder?"
-msgstr ""
+msgstr "Kosongkan semua surel dari folder %s Anda?"
 
 #: ../src/client/application/geary-controller.vala:2440
 #: ../src/client/application/geary-controller.vala:2434
 msgid "This removes the email from Geary and your email server."
-msgstr ""
+msgstr "Ini menghapus surel dari Geary dan server surel Anda."
 
 #: ../src/client/application/geary-controller.vala:2441
 #: ../src/client/application/geary-controller.vala:2435
@@ -984,7 +979,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2396
 #: ../src/client/application/geary-controller.vala:2391
 msgid "This cannot be undone."
-msgstr ""
+msgstr "Ini tidak bisa dibatalkan."
 
 #: ../src/client/application/geary-controller.vala:2442
 #: ../src/client/application/geary-controller.vala:2436
@@ -994,7 +989,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2397
 #: ../src/client/application/geary-controller.vala:2392
 msgid "Empty %s"
-msgstr ""
+msgstr "Kosongkan %s"
 
 #: ../src/client/application/geary-controller.vala:2459
 #: ../src/client/application/geary-controller.vala:2453
@@ -1004,7 +999,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2414
 #: ../src/client/application/geary-controller.vala:2409
 msgid "Error emptying %s"
-msgstr ""
+msgstr "Galat saat mengosongkan %s"
 
 #: ../src/client/application/geary-controller.vala:2489
 #: ../src/client/application/geary-controller.vala:2483
@@ -1035,7 +1030,7 @@ msgstr "Hapus"
 #: ../src/client/application/geary-controller.vala:2477
 #: ../src/client/application/geary-controller.vala:2472
 msgid "Undo archive (Ctrl+Z)"
-msgstr ""
+msgstr "Tak jadi arsipkan (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:2537
 #: ../src/client/application/geary-controller.vala:2531
@@ -1045,7 +1040,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2492
 #: ../src/client/application/geary-controller.vala:2487
 msgid "Undo trash (Ctrl+Z)"
-msgstr ""
+msgstr "Tak jadi buang ke tong sampah (Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:2590
 #: ../src/client/application/geary-controller.vala:2584
@@ -1055,7 +1050,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2545
 #: ../src/client/application/geary-controller.vala:2540
 msgid "Undo (Ctrl+Z)"
-msgstr ""
+msgstr "Tak jadi (Ctrl+Z)"
 
 #: ../src/client/application/geary-args.vala:10
 #: ../src/client/application/geary-args.vala:11
@@ -1266,7 +1261,7 @@ msgstr "Terjadi galat saat memroses sertifikat server"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 msgid "Geary requires your email password to continue"
-msgstr ""
+msgstr "Geary memerlukan sandi surel Anda untuk melanjutkan"
 
 #: ../src/client/dialogs/attachment-dialog.vala:18
 msgid "Choose a file"
@@ -1279,7 +1274,7 @@ msgstr "L_ampiri"
 #. /clear widgets
 #: ../src/client/accounts/account-dialog-edit-alternate-emails-pane.vala:124
 msgid "Additional addresses for %s"
-msgstr ""
+msgstr "Alamat tambahan bagi %s"
 
 #: ../src/client/accounts/account-dialog.vala:21
 msgid "Accounts"
@@ -1342,12 +1337,12 @@ msgstr "Semua"
 #: ../src/client/accounts/add-edit-page.vala:280
 #: ../src/client/accounts/add-edit-page.vala:281
 msgid "Edit"
-msgstr ""
+msgstr "Sunting"
 
 #: ../src/client/accounts/add-edit-page.vala:282
 #: ../src/client/accounts/add-edit-page.vala:283
 msgid "Preview"
-msgstr ""
+msgstr "Pratinjau"
 
 #: ../src/client/accounts/add-edit-page.vala:723
 #: ../src/client/accounts/add-edit-page.vala:725
@@ -1837,7 +1832,7 @@ msgstr "Galat saat menyimpan"
 #: ../src/client/composer/composer-widget.vala:76
 #: ../src/client/composer/composer-widget.vala:74
 msgid "Press Backspace to delete quote"
-msgstr ""
+msgstr "Tekan Backspace untuk menghapus kutip"
 
 #: ../src/client/composer/composer-widget.vala:77
 #: ../src/client/composer/composer-widget.vala:75
@@ -1990,7 +1985,7 @@ msgstr "Bcc: "
 #: ../src/client/composer/composer-widget.vala:1608
 #: ../src/client/composer/composer-widget.vala:1611
 msgid "Reply-To: "
-msgstr ""
+msgstr "Balas-Ke: "
 
 #: ../src/client/composer/composer-widget.vala:1887
 #: ../src/client/composer/composer-widget.vala:1882
@@ -2010,7 +2005,7 @@ msgstr "Pilih Warna"
 #: ../src/client/composer/composer-widget.vala:2272
 #: ../src/client/composer/composer-widget.vala:2275
 msgid "%1$s via %2$s"
-msgstr ""
+msgstr "%1$s via %2$s"
 
 #: ../src/client/composer/composer-widget.vala:2364
 #: ../src/client/composer/composer-widget.vala:2359
@@ -2119,30 +2114,30 @@ msgstr "Mengindeks akun %s"
 #: ../src/client/components/main-toolbar.vala:168
 #: ../src/client/components/main-toolbar.vala:169
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: ../src/client/application/geary-application.vala:25
 #: ../src/client/application/geary-application.vala:24
 #: ../src/Translations.vala:1
 msgid "Send by Email"
-msgstr ""
+msgstr "Kirim Melalui Surel"
 
 #: ../src/client/application/geary-application.vala:26
 #: ../src/client/application/geary-application.vala:25
 #: ../src/Translations.vala:2
 msgid "Send files using Mail"
-msgstr ""
+msgstr "Kirim berkas melalui Surel"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
 msgid "Welcome to Mail"
-msgstr ""
+msgstr "Selamat Datang di Surel"
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
 #: ../src/client/composer/composer-toolbar.vala:77
 #: ../src/client/composer/ComposerToolbar.vala:88
 msgid "More options"
-msgstr ""
+msgstr "Lebih banyak opsi"
 
 #: ../src/client/components/main-toolbar.vala:312
 #: ../src/client/components/main-toolbar.vala:281
@@ -2151,55 +2146,55 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:289
 #: ../src/client/components/main-toolbar.vala:290
 msgid "Search %s"
-msgstr ""
+msgstr "Cari %s"
 
 #: ../src/client/dialogs/preferences-dialog.vala:23
 #: ../src/client/dialogs/preferences-dialog.vala:24
 msgid "Reading"
-msgstr ""
+msgstr "Membaca"
 
 #: ../src/client/dialogs/preferences-dialog.vala:28
 #: ../src/client/dialogs/preferences-dialog.vala:29
 msgid "Automatically select next message:"
-msgstr ""
+msgstr "Pilih pesan berikutnya secara otomatis:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:33
 #: ../src/client/dialogs/preferences-dialog.vala:34
 msgid "Conversation previews:"
-msgstr ""
+msgstr "Pratinjau percakapan:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:38
 #: ../src/client/dialogs/preferences-dialog.vala:39
 msgid "Three-pane layout:"
-msgstr ""
+msgstr "Tata letak tiga pane:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:42 ../data/ui/login.ui:853
 #: ../src/client/dialogs/preferences-dialog.vala:48
 msgid "Composer"
-msgstr ""
+msgstr "Penyusun"
 
 #: ../src/client/dialogs/preferences-dialog.vala:47
 #: ../src/client/dialogs/preferences-dialog.vala:53
 msgid "Spell check:"
-msgstr ""
+msgstr "Periksa ejaan:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:51
 #: ../src/client/dialogs/preferences-dialog.vala:57
 #: ../src/client/dialogs/preferences-dialog.vala:47
 msgid "Notifications"
-msgstr ""
+msgstr "Notifikasi"
 
 #: ../src/client/dialogs/preferences-dialog.vala:56
 #: ../src/client/dialogs/preferences-dialog.vala:62
 #: ../src/client/dialogs/preferences-dialog.vala:52
 msgid "Always watch for new mail:"
-msgstr ""
+msgstr "Selalu perhatikan surel baru:"
 
 #: ../src/client/application/geary-controller.vala:61
 #: ../src/client/application/geary-controller.vala:60
 #: ../src/client/application/geary-controller.vala:59
 msgid "Delete Conversation"
-msgstr ""
+msgstr "Hapus Percakapan"
 
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
@@ -2208,20 +2203,21 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2725
 msgid "Delete Conversation (Shift+Delete)"
 msgid_plural "Delete Conversations (Shift+Delete)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Hapus percakapan (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
 #: ../src/client/application/geary-controller.vala:62
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete Conversations (Shift+Delete)"
-msgstr ""
+msgstr "Hapus percakapan (Shift+Delete)"
 
 #: ../data/ui/remove_confirm.ui:43
 msgid ""
 "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
 "account?</span> "
 msgstr ""
+"<span weight=\"bold\" size=\"larger\">Apakah Anda yakin ingin menghapus akun "
+"ini?</span> "
 
 #: ../data/ui/remove_confirm.ui:58
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:42
@@ -2229,503 +2225,509 @@ msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
 msgstr ""
+"Semua surel yang terkait dengan akun ini akan dihapus dari komputer Anda. "
+"Ini tidak akan mempengaruhi surel di server."
 
 #: ../data/ui/remove_confirm.ui:80
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:47
 msgid "Nickname:"
-msgstr ""
+msgstr "Nama panggilan:"
 
 #: ../data/ui/remove_confirm.ui:94
 msgid "Email address:"
-msgstr ""
+msgstr "Alamat surel:"
 
 #: ../data/ui/find_bar.ui:59
 msgid "Find"
-msgstr ""
+msgstr "Cari"
 
 #: ../data/ui/find_bar.ui:72
 msgid "Previous Result"
-msgstr ""
+msgstr "Hasil Sebelumnya"
 
 #: ../data/ui/find_bar.ui:91
 msgid "Next result"
-msgstr ""
+msgstr "Hasil selanjutnya"
 
 #: ../data/ui/find_bar.ui:107
 msgid "_Case sensitive"
-msgstr ""
+msgstr "Peka huruf besar ke_cil"
 
 #: ../data/ui/find_bar.ui:127
 msgid "label"
-msgstr ""
+msgstr "label"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr ""
+msgstr "Pembaruan Geary sedang berlangsung…"
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
-msgstr ""
+msgstr "Hapus alamat surel"
 
 #: ../data/ui/edit_alternate_emails.ui:136
 msgid ""
 "Some email services require additional addresses be configured on the "
 "server.  Contact your email provider for more information."
 msgstr ""
+"Beberapa layanan surel memerlukan alamat tambahan yang dikonfigurasi di "
+"server.  Hubungi penyedia surel Anda untuk informasi lebih lanjut."
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
-msgstr ""
+msgstr "Pembar_uan"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
-msgstr ""
+msgstr "Silakan tunggu sementara Geary memvalidasi akun Anda."
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
-msgstr ""
+msgstr "Tak _Jadi"
 
 #: ../data/ui/composer.ui:15
 msgid "_Redo"
-msgstr ""
+msgstr "Jadi _Lagi"
 
 #: ../data/ui/composer.ui:22
 msgid "Cu_t"
-msgstr ""
+msgstr "Po_tong"
 
 #: ../data/ui/composer.ui:36
 msgid "_Paste"
-msgstr ""
+msgstr "Tem_pel"
 
 #: ../data/ui/composer.ui:43
 msgid "_Left"
-msgstr ""
+msgstr "K_iri"
 
 #: ../data/ui/composer.ui:48
 msgid "_Right"
-msgstr ""
+msgstr "Kan_an"
 
 #: ../data/ui/composer.ui:53
 msgid "_Center"
-msgstr ""
+msgstr "T_engah"
 
 #: ../data/ui/composer.ui:58
 msgid "_Justify"
-msgstr ""
+msgstr "Memberikan garis tep_i"
 
 #: ../data/ui/composer.ui:63 ../src/client/composer/ComposerToolbar.vala:77
 msgid "Link (Ctrl+L)"
-msgstr ""
+msgstr "Tautan (Ctrl+L)"
 
 #: ../data/ui/composer.ui:70 ../data/ui/composer.ui:69
 msgid "C_olor"
-msgstr ""
+msgstr "_Warna"
 
 #: ../data/ui/composer.ui:81
 msgid "Quote text  (Ctrl+])"
-msgstr ""
+msgstr "Kutip teks  (Ctrl+])"
 
 #: ../data/ui/composer.ui:87 ../src/client/composer/ComposerToolbar.vala:69
 msgid "Unquote text (Ctrl+[)"
-msgstr ""
+msgstr "Tidak mengutip teks  (Ctrl+[)"
 
 #: ../data/ui/composer.ui:93 ../src/client/composer/ComposerToolbar.vala:82
 msgid "Remove formatting (Ctrl+Space)"
-msgstr ""
+msgstr "Hapus format (Ctrl+Space)"
 
 #: ../data/ui/composer.ui:100 ../data/ui/composer.ui:97
 msgctxt "Clipboard paste with rich text"
 msgid "Paste _With Formatting"
-msgstr ""
+msgstr "Tempel Dengan _Format"
 
 #: ../data/ui/composer.ui:111 ../src/client/composer/ComposerToolbar.vala:36
 msgid "Bold (Ctrl+B)"
-msgstr ""
+msgstr "Tebal (Ctrl+B)"
 
 #: ../data/ui/composer.ui:118 ../src/client/composer/ComposerToolbar.vala:41
 msgid "Italic (Ctrl+I)"
-msgstr ""
+msgstr "Miring (Ctrl+I)"
 
 #: ../data/ui/composer.ui:125 ../src/client/composer/ComposerToolbar.vala:46
 msgid "Underline (Ctrl+U)"
-msgstr ""
+msgstr "Garis bawah (Ctrl+U)"
 
 #: ../data/ui/composer.ui:132 ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+K)"
-msgstr ""
+msgstr "Coret (Ctrl+K)"
 
 #: ../data/ui/composer.ui:139 ../data/ui/composer.ui:132
 msgid "_Rich Text"
-msgstr ""
+msgstr "_Rich Text"
 
 #: ../data/ui/composer.ui:145 ../data/ui/composer.ui:138
 msgid "Show Extended Fields"
-msgstr ""
+msgstr "Tampilkan Ruas Yang Diperluas"
 
 #: ../data/ui/composer.ui:157
 msgctxt "Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "Tutup dan Simpan"
 
 #: ../data/ui/composer.ui:158
 msgctxt "Short Label"
 msgid "Close and Save"
-msgstr ""
+msgstr "Tutup dan Simpan"
 
 #: ../data/ui/composer.ui:159
 msgctxt "Tooltip"
 msgid "Close and Save"
-msgstr ""
+msgstr "Tutup dan Simpan"
 
 #: ../data/ui/composer.ui:165
 msgctxt "Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Tutup dan Abaikan"
 
 #: ../data/ui/composer.ui:166
 msgctxt "Short Label"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Tutup dan Abaikan"
 
 #: ../data/ui/composer.ui:167
 msgctxt "Tooltip"
 msgid "Close and Discard"
-msgstr ""
+msgstr "Tutup dan Abaikan"
 
 #: ../data/ui/composer.ui:173 ../data/ui/composer.ui:155
 #: ../data/ui/composer.ui:160
 msgid "Lar_ge"
-msgstr ""
+msgstr "_Besar"
 
 #: ../data/ui/composer.ui:174 ../data/ui/composer.ui:156
 #: ../data/ui/composer.ui:161
 msgid "Large"
-msgstr ""
+msgstr "Besar"
 
 #: ../data/ui/composer.ui:179 ../data/ui/composer.ui:161
 #: ../data/ui/composer.ui:166
 msgid "_Medium"
-msgstr ""
+msgstr "_Sedang"
 
 #: ../data/ui/composer.ui:180 ../data/ui/composer.ui:162
 #: ../data/ui/composer.ui:167
 msgid "Medium"
-msgstr ""
+msgstr "Sedang"
 
 #: ../data/ui/composer.ui:185 ../data/ui/composer.ui:167
 #: ../data/ui/composer.ui:172
 msgid "_Small"
-msgstr ""
+msgstr "_Kecil"
 
 #: ../data/ui/composer.ui:186 ../data/ui/composer.ui:168
 #: ../data/ui/composer.ui:173
 msgid "Small"
-msgstr ""
+msgstr "Kecil"
 
 #: ../data/ui/composer.ui:191 ../data/ui/composer.ui:173
 #: ../data/ui/composer.ui:178
 msgid "S_ans Serif"
-msgstr ""
+msgstr "S_ans Serif"
 
 #: ../data/ui/composer.ui:192 ../data/ui/composer.ui:174
 #: ../data/ui/composer.ui:179
 msgid "Sans Serif"
-msgstr ""
+msgstr "Sans Serif"
 
 #: ../data/ui/composer.ui:197 ../data/ui/composer.ui:179
 #: ../data/ui/composer.ui:184
 msgid "S_erif"
-msgstr ""
+msgstr "S_erif"
 
 #: ../data/ui/composer.ui:198 ../data/ui/composer.ui:180
 #: ../data/ui/composer.ui:185
 msgid "Serif"
-msgstr ""
+msgstr "Serif"
 
 #: ../data/ui/composer.ui:203 ../data/ui/composer.ui:185
 #: ../data/ui/composer.ui:190
 msgid "_Fixed Width"
-msgstr ""
+msgstr "Lebar _Tetap"
 
 #: ../data/ui/composer.ui:204 ../data/ui/composer.ui:186
 #: ../data/ui/composer.ui:191
 msgid "Fixed Width"
-msgstr ""
+msgstr "Lebar Tetap"
 
 #: ../data/ui/composer.ui:209 ../data/ui/composer.ui:210
 msgid "Detach"
-msgstr ""
+msgstr "Lepas"
 
 #: ../data/ui/composer.ui:211 ../src/client/composer/ComposerHeaderBar.vala:36
 msgid "Detach (Ctrl+D)"
-msgstr ""
+msgstr "Lepas (Ctrl+D)"
 
 #: ../data/ui/composer.ui:218
 msgid "_Send"
-msgstr ""
+msgstr "_Kirim"
 
 #: ../data/ui/composer.ui:219 ../src/client/composer/ComposerHeaderBar.vala:46
 msgid "Send"
-msgstr ""
+msgstr "Kirim"
 
 #: ../data/ui/composer.ui:220 ../src/client/composer/ComposerHeaderBar.vala:47
 msgid "Send (Ctrl+Enter)"
-msgstr ""
+msgstr "Kirim (Ctrl+Enter)"
 
 #: ../data/ui/composer.ui:226
 msgid "_Attach File"
-msgstr ""
+msgstr "L_ampirkan Berkas"
 
 #: ../data/ui/composer.ui:227 ../data/ui/composer.ui:228
 msgid "Attach File"
-msgstr ""
+msgstr "Lampirkan Berkas"
 
 #: ../data/ui/composer.ui:234
 msgid "_Include Original Attachments"
-msgstr ""
+msgstr "Sertakan Lampiran Asl_i"
 
 #: ../data/ui/composer.ui:235 ../data/ui/composer.ui:236
 msgid "Include Original Attachments"
-msgstr ""
+msgstr "Sertakan Lampiran Asli"
 
 #: ../data/ui/composer.ui:242 ../data/ui/composer.ui:212
 #: ../data/ui/composer.ui:217
 msgid "Application Menu"
-msgstr ""
+msgstr "Menu Aplikasi"
 
 #. Address(es) e-mail is to be sent to
 #: ../data/ui/composer.ui:289 ../data/ui/composer.ui:317
 #: ../data/ui/composer.ui:287 ../data/ui/composer.ui:292
 msgid "_To"
-msgstr ""
+msgstr "_Ke"
 
 #: ../data/ui/composer.ui:308 ../data/ui/composer.ui:336
 #: ../data/ui/composer.ui:306 ../data/ui/composer.ui:311
 msgid "_Cc"
-msgstr ""
+msgstr "_Cc"
 
 #: ../data/ui/composer.ui:362 ../data/ui/composer.ui:390
 #: ../data/ui/composer.ui:360 ../data/ui/composer.ui:365
 msgid "_Subject"
-msgstr ""
+msgstr "_Perihal"
 
 #: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
 #: ../data/ui/composer.ui:379 ../data/ui/composer.ui:384
 msgid "_Bcc"
-msgstr ""
+msgstr "_Bcc"
 
 #: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
 #: ../data/ui/composer.ui:409 ../data/ui/composer.ui:414
 msgid "_Reply-To"
-msgstr ""
+msgstr "B_alas-Ke"
 
 #. Geary account mail will be sent from
 #. Account mail will be sent from
 #: ../data/ui/composer.ui:440 ../data/ui/composer.ui:468
 #: ../data/ui/composer.ui:438 ../data/ui/composer.ui:443
 msgid "From"
-msgstr ""
+msgstr "Dari"
 
 #: ../data/ui/composer.ui:519 ../data/ui/composer.ui:547
 #: ../data/ui/composer.ui:517 ../data/ui/composer.ui:522
 msgid "Drop files here"
-msgstr ""
+msgstr "Jatuhkan berkas di sini"
 
 #: ../data/ui/composer.ui:535 ../data/ui/composer.ui:563
 #: ../data/ui/composer.ui:533 ../data/ui/composer.ui:538
 msgid "To add them as attachments"
-msgstr ""
+msgstr "Untuk menambahkan mereka sebagai lampira"
 
 #: ../data/ui/account_cannot_remove.ui:40
 msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"larger\">Tak dapat menghapus akun</span> "
 
 #: ../data/ui/account_cannot_remove.ui:56
 msgid ""
 "A composer window associated with this account is currently open. Send or "
 "discard the message and try again."
 msgstr ""
+"Jendela penyusun yang terkait dengan akun ini saat ini terbuka. Kirim atau "
+"buang pesan dan coba lagi."
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr ""
+msgstr "Alamat surel _tambahan…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
-msgstr ""
+msgstr "_Simpan surat terkirim"
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
-msgstr ""
+msgstr "Kata sandi"
 
 #: ../data/ui/login.ui:97 ../data/ui/login.ui:545
 msgid "_Password:"
-msgstr ""
+msgstr "Kata _sandi:"
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
-msgstr ""
+msgstr "Ala_mat surel:"
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
-msgstr ""
+msgstr "Kantor, Rumah, dsb."
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
-msgstr ""
+msgstr "Nama pangg_ilan:"
 
 #: ../data/ui/login.ui:195
 msgid "N_ame:"
-msgstr ""
+msgstr "N_ama:"
 
 #: ../data/ui/login.ui:211
 msgid "S_ervice:"
-msgstr ""
+msgstr "La_yanan:"
 
 #: ../data/ui/login.ui:298
 msgid "IMAP settings"
-msgstr ""
+msgstr "Pengaturan IMAP"
 
 #: ../data/ui/login.ui:315
 msgid "Se_rver:"
-msgstr ""
+msgstr "Se_rver:"
 
 #: ../data/ui/login.ui:347
 msgid "P_ort"
-msgstr ""
+msgstr "P_ort"
 
 #: ../data/ui/login.ui:409
 msgid "Ser_ver:"
-msgstr ""
+msgstr "Ser_ver:"
 
 #: ../data/ui/login.ui:427
 msgid "Por_t"
-msgstr ""
+msgstr "Por_t"
 
 #: ../data/ui/login.ui:446
 msgid "SMTP settings"
-msgstr ""
+msgstr "Pengaturan SMTP"
 
 #: ../data/ui/login.ui:462
 msgid "User_name:"
-msgstr ""
+msgstr "_Nama pengguna:"
 
 #: ../data/ui/login.ui:480
 msgid "Pass_word:"
-msgstr ""
+msgstr "Kata sa_ndi:"
 
 #: ../data/ui/login.ui:499
 msgid "SMTP username"
-msgstr ""
+msgstr "Nama pengguna SMTP"
 
 #: ../data/ui/login.ui:514
 msgid "SMTP password"
-msgstr ""
+msgstr "Kata sandi SMTP"
 
 #: ../data/ui/login.ui:527
 msgid "_Username:"
-msgstr ""
+msgstr "Nama Pengg_una:"
 
 #: ../data/ui/login.ui:564
 msgid "IMAP username"
-msgstr ""
+msgstr "Nama pengguna IMAP"
 
 #: ../data/ui/login.ui:579
 msgid "IMAP password"
-msgstr ""
+msgstr "Kata sandi IMAP"
 
 #: ../data/ui/login.ui:593
 msgid "Encr_yption:"
-msgstr ""
+msgstr "Enk_ripsi:"
 
 #: ../data/ui/login.ui:613
 msgid "Encrypt_ion:"
-msgstr ""
+msgstr "Enkr_ipsi:"
 
 #: ../data/ui/login.ui:634 ../data/ui/login.ui:651
 msgid "SSL/TLS"
-msgstr ""
+msgstr "SSL/TLS"
 
 #: ../data/ui/login.ui:635 ../data/ui/login.ui:652
 msgid "STARTTLS"
-msgstr ""
+msgstr "STARTTLS"
 
 #: ../data/ui/login.ui:663
 msgid "No authentication re_quired"
-msgstr ""
+msgstr "Otenti_kasi tidak dibutuhkan"
 
 #: ../data/ui/login.ui:679
 msgid "Use IMAP cre_dentials"
-msgstr ""
+msgstr "Gunakan kre_densial IMAP"
 
 #: ../data/ui/login.ui:783
 msgid "Storage"
-msgstr ""
+msgstr "Penyimpanan"
 
 #: ../data/ui/login.ui:804
 msgid "_Download mail"
-msgstr ""
+msgstr "Un_duh surel"
 
 #: ../data/ui/login.ui:867
 msgid "Save dra_fts on server"
-msgstr ""
+msgstr "Simpan dra_f pada server"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr ""
+msgstr "Tandatan_gani surel (boleh HTML):"
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
-msgstr ""
+msgstr "Tambah akun"
 
 #: ../data/ui/account_list.ui:82
 msgid "Edit account"
-msgstr ""
+msgstr "Sunting akun"
 
 #: ../data/ui/account_list.ui:95
 msgid "Remove account"
-msgstr ""
+msgstr "Hapus aku"
 
 #: ../data/ui/certificate_warning_dialog.ui:7
 msgid "Untrusted Connection"
-msgstr ""
+msgstr "Koneksi Tak Terpercaya"
 
 #: ../data/ui/certificate_warning_dialog.ui:29
 msgid "_Always Trust This Server"
-msgstr ""
+msgstr "Sel_alu Percayai Server Ini"
 
 #: ../data/ui/certificate_warning_dialog.ui:43
 msgid "_Trust This Server"
-msgstr ""
+msgstr "_Percayai Server Ini"
 
 #: ../data/ui/certificate_warning_dialog.ui:57
 msgid "_Don't Trust This Server"
-msgstr ""
+msgstr "_Jangan Percayai Server Ini"
 
 #: ../data/ui/password-dialog.ui:74
 msgid "SMTP Credentials"
-msgstr ""
+msgstr "Kredensial SMTP"
 
 #: ../data/ui/password-dialog.ui:91
 msgid "Username"
-msgstr ""
+msgstr "Nama pengguna"
 
 #: ../data/ui/password-dialog.ui:152
 msgid "_Remember password"
-msgstr ""
+msgstr "_Ingat kata sandi"
 
 #: ../data/ui/password-dialog.ui:210
 msgid "_Authenticate"
-msgstr ""
+msgstr "Otentik_asikan"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
-msgstr ""
+msgstr "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
 
 #: ../src/client/application/geary-application.vala:21
 #: ../src/client/application/geary-application.vala:20
 msgid "Website"
-msgstr ""
+msgstr "Situs web"
 
 #: ../src/client/application/geary-controller.vala:1052
 #: ../src/client/application/geary-controller.vala:1046
@@ -2736,6 +2738,8 @@ msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
 msgstr ""
+"Surel mengalami kesalahan saat mengirim surel.  Jika masalah berlanjut, "
+"mohon hapus surel dari folder Kotak Keluar Anda secara manual."
 
 #: ../src/client/application/geary-controller.vala:1057
 #: ../src/client/application/geary-controller.vala:1051
@@ -2746,6 +2750,8 @@ msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
+"Surel mengalami kesalahan saat menyimpan pesan terkirim ke Surel Terkirim.  "
+"Pesan akan tetap berada dalam folder Kotak keluar sampai Anda menghapusnya."
 
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
@@ -2763,6 +2769,16 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
+"Terjadi kesalahan saat membuka basis data surel lokal untuk akun ini. Ini "
+"mungkin karena korupsi berkas basis data dalam direktori ini::\n"
+"\n"
+"%s\n"
+"\n"
+"Surel bisa membangun kembali basis data dan melakukan sinkronisasi ulang "
+"dengan server atau keluar.\n"
+"\n"
+"Membangun kembali basis data akan menghancurkan semua surel lokal dan "
+"lampirannya. <b>Surel pada server Anda tidak akan terpengaruh.</b>"
 
 #: ../src/client/application/geary-controller.vala:1184
 #: ../src/client/application/geary-controller.vala:1178
@@ -2776,6 +2792,11 @@ msgid ""
 "\n"
 "Please install the latest version of Mail and try again."
 msgstr ""
+"Nomor versi basis data surel lokal diformat untuk versi Surel yang lebih "
+"baru. Sayangnya, basis data tidak bisa \"digulung kembali\" untuk bekerja "
+"dengan versi Surel ini.\n"
+"\n"
+"Harap pasang versi terbaru Surel dan coba lagi."
 
 #: ../src/client/application/geary-controller.vala:1195
 #: ../src/client/application/geary-controller.vala:1189
@@ -2788,6 +2809,10 @@ msgid ""
 "\n"
 "Please check your network connection and restart Mail."
 msgstr ""
+"Terjadi kesalahan saat membuka akun lokal. Ini mungkin karena masalah "
+"konektivitas.\n"
+"\n"
+"Periksa koneksi jaringan Anda dan nyalakan ulang Surel."
 
 #: ../src/client/application/geary-controller.vala:2402
 #: ../src/client/application/geary-controller.vala:2404
@@ -2795,100 +2820,106 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2395
 #: ../src/client/application/geary-controller.vala:2390
 msgid "This removes the email from Mail and your email server."
-msgstr ""
+msgstr "Ini akan menghapus surel dari Surel dan server surel Anda."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
-msgstr ""
+msgstr "        &#8226; Alamat surel sudah ditambahkan ke Surel.\n"
 
 #: ../src/client/dialogs/preferences-dialog.vala:44
 #: ../src/client/dialogs/preferences-dialog.vala:43
 msgid "Always show remote images:"
-msgstr ""
+msgstr "Selalu tampilkan gambar jarak jauh:"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 #: ../src/client/dialogs/PasswordDialog.vala:39
 msgid "Mail requires your email password to continue"
-msgstr ""
+msgstr "Surel memerlukan kata sandi surel Anda untuk melanjutkan"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail not to access this "
 "server."
 msgstr ""
+"Memilih \"Jangan Percayai Server Ini\" akan menyebabkan Surel tidak "
+"mengakses server ini."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Mail will not add or update this email account."
-msgstr ""
+msgstr "Surel tak akan menambah atau memperbarui akun surel ini."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail to stop accessing this "
 "account."
 msgstr ""
+"Memilih \"Jangan Percayai Server Ini\" akan menyebabkan Surel berhenti "
+"mengakses akun ini."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Mail will exit if you have no other open email accounts."
-msgstr ""
+msgstr "Surel akan keluar bila Anda tak punya akun surel lain yang terbuka."
 
 #: ../data/ui/account_spinner.ui:41
 #: ../src/client/accounts/account-spinner-page.vala:22
 msgid "Please wait while Mail validates your account."
-msgstr ""
+msgstr "Silakan tunggu sementara Surel memvalidasi akun Anda."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr ""
+msgstr "Pembaruan Surel sedang berlangsung…"
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
 msgid "Search Mail"
-msgstr ""
+msgstr "Cari Surel"
 
 #: ../src/client/application/geary-application.vala:18
 msgid ""
 "2011-2015 Yorba Foundation\n"
 "© 2016 elementary LLC."
 msgstr ""
+"2011-2015 Yorba Foundation\n"
+"© 2016 elementary LLC."
 
 #: ../src/client/application/geary-args.vala:10
 msgid "Show About dialog"
-msgstr ""
+msgstr "Tampilkan dialog Tentang"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:218
 #: ../src/client/conversation-viewer/ConversationWidget.vala:227
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
-msgstr ""
+msgstr "Simpan Lampiran…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr ""
+msgstr "Simpan Semua Lampiran…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
 #: ../src/client/conversation-viewer/ConversationWidget.vala:241
 #: ../src/client/conversation-viewer/ConversationWidget.vala:243
 msgid "Reply"
-msgstr ""
+msgstr "Balas"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:239
 #: ../src/client/conversation-viewer/ConversationWidget.vala:242
 #: ../src/client/conversation-viewer/ConversationWidget.vala:244
 msgid "Reply to All"
-msgstr ""
+msgstr "Balas ke Semua"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:231
 #: ../src/client/conversation-viewer/ConversationWidget.vala:240
 #: ../src/client/conversation-viewer/ConversationWidget.vala:243
 #: ../src/client/conversation-viewer/ConversationWidget.vala:245
 msgid "Forward"
-msgstr ""
+msgstr "Teruskan"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:247
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1112
@@ -2901,7 +2932,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1155
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1182
 msgid "Mark as Unread"
-msgstr ""
+msgstr "Tandai Belum Dibaca"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:249
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1110
@@ -2914,21 +2945,21 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1153
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1180
 msgid "Mark as Read"
-msgstr ""
+msgstr "Tandai Sudah Dibaca"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:252
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:275
 #: ../src/client/conversation-viewer/ConversationWidget.vala:277
 msgid "Print…"
-msgstr ""
+msgstr "Cetak…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
 #: ../src/client/conversation-viewer/ConversationWidget.vala:276
 #: ../src/client/conversation-viewer/ConversationWidget.vala:278
 msgid "View Source"
-msgstr ""
+msgstr "Lihat Sumber"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:317
 #: ../src/client/conversation-viewer/ConversationWidget.vala:602
@@ -2942,7 +2973,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:638
 #: ../src/client/conversation-viewer/ConversationWidget.vala:665
 msgid "View message"
-msgstr ""
+msgstr "Lihat pesan"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:386
 #: ../src/client/conversation-viewer/ConversationWidget.vala:406
@@ -2950,7 +2981,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:412
 #: ../src/client/conversation-viewer/ConversationWidget.vala:414
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "Pesan ini berisi satu atau beberapa lampiran"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:425
 #: ../src/client/conversation-viewer/ConversationWidget.vala:449
@@ -2958,7 +2989,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:455
 #: ../src/client/conversation-viewer/ConversationWidget.vala:458
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "Selalu Tampilkan Dari Pengirim"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:553
 #: ../src/client/conversation-viewer/ConversationWidget.vala:577
@@ -2967,7 +2998,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:587
 #: ../src/client/conversation-viewer/ConversationWidget.vala:586
 msgid "Compose New Message"
-msgstr ""
+msgstr "Buat Pesan Baru"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:554
 #: ../src/client/conversation-viewer/ConversationWidget.vala:578
@@ -2976,7 +3007,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:588
 #: ../src/client/conversation-viewer/ConversationWidget.vala:587
 msgid "Copy Email Address"
-msgstr ""
+msgstr "Salin Alamat Surel"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:615
 #: ../src/client/conversation-viewer/ConversationWidget.vala:639
@@ -2985,27 +3016,27 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:651
 #: ../src/client/conversation-viewer/ConversationWidget.vala:678
 msgid "Hide message"
-msgstr ""
+msgstr "Sembunyikan pesan"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr ""
+msgstr "Simpan Sebagai…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
-msgstr ""
+msgstr "Peka huruf besar kecil"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
 msgid_plural "%u matches"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u cocok"
 
 #. / TRANSLATORS: please copy the original string and append all local parts of "no reply" email addresses
 #. / (that is the part before the '@') that exist in your language (separated with a semicolon)
 #: ../src/engine/rfc822/rfc822-mailbox-address.vala:170
 msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 msgstr ""
+"jangan-balas;jangan_balas;janganbalas;jangan-balas;jangan_balas;janganbalas"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:410
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
@@ -3016,112 +3047,114 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:418
 #: ../src/client/conversation-viewer/ConversationWidget.vala:431
 msgid "Star message"
-msgstr ""
+msgstr "Bintangi pesan"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:420
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
 #: ../src/client/conversation-viewer/ConversationWidget.vala:426
 #: ../src/client/conversation-viewer/ConversationWidget.vala:428
 msgid "Unstar message"
-msgstr ""
+msgstr "Hapus bintang pesan"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:430
 #: ../src/client/conversation-viewer/ConversationWidget.vala:433
 #: ../src/client/conversation-viewer/ConversationWidget.vala:436
 #: ../src/client/conversation-viewer/ConversationWidget.vala:438
 msgid "More"
-msgstr ""
+msgstr "Lebih lanjut"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
 msgid "Delete draft"
-msgstr ""
+msgstr "Hapus draf"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:51
 msgid "Attach file"
-msgstr ""
+msgstr "Lampirkan berkas"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:55
 msgid "Include original attachments"
-msgstr ""
+msgstr "Sertakan lampiran asli"
 
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
-msgstr ""
+msgstr "Kutip teks (Ctrl+])"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:34
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "Apakah Anda yakin ingin membuka %s?"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:40
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"Lampiran dapat menyebabkan kerusakan pada sistem Anda jika dibuka. Hanya "
+"buka berkas dari sumber terpercaya."
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:45
 msgid "Don't ask me again"
-msgstr ""
+msgstr "Jangan tanya saya lagi"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:48
 msgid "Open Anyway"
-msgstr ""
+msgstr "Buka Saja"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:64
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:59
 #: ../src/client/dialogs/PasswordDialog.vala:96
 msgid "Cancel"
-msgstr ""
+msgstr "Batal"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:36
 msgid "Are you sure you want to remove this account?"
-msgstr ""
+msgstr "Apakah Anda yakin ingin menghapus akun ini?"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:53
 msgid "Email Address:"
-msgstr ""
+msgstr "Alamat Surel:"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:61
 msgid "Remove Account"
-msgstr ""
+msgstr "Hapus Akun"
 
 #: ../src/client/dialogs/PasswordDialog.vala:45
 msgid "Username:"
-msgstr ""
+msgstr "Nama Pengguna:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:52
 msgid "Password:"
-msgstr ""
+msgstr "Kata Sandi:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:55
 msgid "SMTP Credentials:"
-msgstr ""
+msgstr "Kredensial SMTP:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:62
 msgid "Remember password"
-msgstr ""
+msgstr "Ingat kata sandi"
 
 #: ../src/client/dialogs/PasswordDialog.vala:75
 msgid "Authenticate"
-msgstr ""
+msgstr "Otentikasikan"
 
 #. /Translators: this is the ponctuation between two names ("John, Jane")
 #: ../src/client/conversation-list/formatted-conversation-data.vala:188
 #: ../src/client/conversation-list/formatted-conversation-data.vala:190
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
-msgstr ""
+msgstr "Surel"
 
 #: ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+%)"
-msgstr ""
+msgstr "Coret (Ctrl+%)"
 
 #: ../src/client/composer/ComposerToolbar.vala:77
 msgid "Link (Ctrl+K)"
-msgstr ""
+msgstr "Tautan (Ctrl+K)"
 
 #: ../src/client/components/main-toolbar.vala:117
 msgid "Forward (Ctrl+Shift+F)"
-msgstr ""
+msgstr "Teruskan (Ctrl+Shift+F)"
