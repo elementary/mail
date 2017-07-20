@@ -23,8 +23,29 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     private Mail.WebView web_view;
     private GLib.Cancellable loading_cancellable;
+
+    private Gtk.Revealer secondary_revealer;
+    private Gtk.Stack header_stack;
+    private Gtk.StyleContext style_context;
+
     private string message_content;
     private bool message_is_html = false;
+    
+    public bool expanded {
+        get {
+            return secondary_revealer.reveal_child;
+        }
+        set {
+            secondary_revealer.reveal_child = value;
+            header_stack.set_visible_child_name (value ? "large" : "small");
+            if (value) {
+                style_context.remove_class ("collapsed");
+            } else {
+                style_context.add_class ("collapsed");
+            }
+        }
+    }
+
     private GLib.Settings settings;
 
     public MessageListItem (Camel.MessageInfo message_info) {
@@ -37,7 +58,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     construct {
         loading_cancellable = new GLib.Cancellable ();
 
-        get_style_context ().add_class ("card");
+        style_context = get_style_context ();
+        style_context.add_class ("card");
 
         var avatar = new Granite.Widgets.Avatar.with_default_icon (48);
         avatar.valign = Gtk.Align.START;
@@ -68,6 +90,30 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         subject_val_label.xalign = 0;
         subject_val_label.wrap = true;
 
+        var fields_grid = new Gtk.Grid ();
+        fields_grid.column_spacing = 6;
+        fields_grid.row_spacing = 6;
+        fields_grid.attach (from_label, 0, 0, 1, 1);
+        fields_grid.attach (to_label, 0, 1, 1, 1);
+        fields_grid.attach (subject_label, 0, 2, 1, 1);
+        fields_grid.attach (from_val_label, 1, 0, 1, 1);
+        fields_grid.attach (to_val_label, 1, 1, 1, 1);
+        fields_grid.attach (subject_val_label, 1, 2, 1, 1);
+
+        var small_from_label = new Gtk.Label (message_info.from);
+        from_val_label.ellipsize = Pango.EllipsizeMode.END;
+        from_val_label.xalign = 0;
+
+        var small_fields_grid = new Gtk.Grid ();
+        small_fields_grid.attach (small_from_label, 0, 0, 1, 1);
+
+        header_stack = new Gtk.Stack ();
+        header_stack.homogeneous = false;
+        header_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+        header_stack.add_named (fields_grid, "large");
+        header_stack.add_named (small_fields_grid, "small");
+        header_stack.show_all ();
+
         var datetime_label = new Gtk.Label (new DateTime.from_unix_utc (message_info.date_received).format ("%b %e, %Y"));
         datetime_label.hexpand = true;
         datetime_label.halign = Gtk.Align.END;
@@ -86,17 +132,17 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         var header = new Gtk.Grid ();
         header.margin = 12;
-        header.column_spacing = 6;
-        header.row_spacing = 6;
+        header.column_spacing = 12;
         header.attach (avatar, 0, 0, 1, 3);
-        header.attach (from_label, 1, 0, 1, 1);
-        header.attach (to_label, 1, 1, 1, 1);
-        header.attach (subject_label, 1, 2, 1, 1);
-        header.attach (from_val_label, 2, 0, 1, 1);
-        header.attach (to_val_label, 2, 1, 1, 1);
-        header.attach (subject_val_label, 2, 2, 4, 1);
-        header.attach (datetime_label, 3, 0, 1, 1);
-        header.attach (starred_icon, 5, 0, 1, 1);
+        header.attach (header_stack, 1, 0, 1, 3);
+        header.attach (datetime_label, 2, 0, 1, 1);
+        header.attach (starred_icon, 4, 0, 1, 1);
+
+        var header_event_box = new Gtk.EventBox ();
+        header_event_box.events |= Gdk.EventMask.ENTER_NOTIFY_MASK;
+        header_event_box.events |= Gdk.EventMask.LEAVE_NOTIFY_MASK;
+        header_event_box.events |= Gdk.EventMask.BUTTON_RELEASE_MASK;
+        header_event_box.add (header);
 
         var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
         separator.hexpand = true;
@@ -113,25 +159,53 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         get_message.begin ();
 
+        var secondary_grid = new Gtk.Grid ();
+        secondary_grid.orientation = Gtk.Orientation.VERTICAL;
+        secondary_grid.add (separator);
+        secondary_grid.add (web_view);
+
+        secondary_revealer = new Gtk.Revealer ();
+        secondary_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_UP;
+        secondary_revealer.add (secondary_grid);
+
         var base_grid = new Gtk.Grid ();
         base_grid.expand = true;
         base_grid.orientation = Gtk.Orientation.VERTICAL;
-        base_grid.add (header);
-        base_grid.add (separator);
-        base_grid.add (web_view);
+        base_grid.add (header_event_box);
+        base_grid.add (secondary_revealer);
 
         if (Camel.MessageFlags.ATTACHMENTS in (int) message_info.flags) {
             var attachment_icon = new Gtk.Image.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
             attachment_icon.tooltip_text = _("This message contains one or more attachments");
             attachment_icon.valign = Gtk.Align.START;
-            header.attach (attachment_icon, 4, 0, 1, 1);
+            header.attach (attachment_icon, 3, 0, 1, 1);
 
             var attachment_bar = new AttachmentBar (message_info, loading_cancellable);
-            base_grid.add (attachment_bar);
+            secondary_grid.add (attachment_bar);
         }
 
         add (base_grid);
+        expanded = false;
         show_all ();
+
+        header_event_box.enter_notify_event.connect ((event) => {
+            if (event.detail != Gdk.NotifyType.INFERIOR) {
+                var window = header_event_box.get_window ();
+                var cursor = new Gdk.Cursor.from_name (window.get_display (), "pointer");
+                window.set_cursor (cursor);
+            }
+        });
+
+        header_event_box.leave_notify_event.connect ((event) => {
+            if (event.detail != Gdk.NotifyType.INFERIOR) {
+                header_event_box.get_window ().set_cursor (null);
+            }
+        });
+
+        header_event_box.button_release_event.connect ((event) => {
+            expanded = !expanded;
+            return false;
+        });
 
         destroy.connect (() => {
             loading_cancellable.cancel ();
