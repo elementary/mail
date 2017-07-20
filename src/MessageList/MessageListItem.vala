@@ -109,6 +109,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             // TODO: Show infobar
         });
         web_view.mouse_target_changed.connect (on_mouse_target_changed);
+        web_view.context_menu.connect (on_webview_context_menu);
 
         get_message.begin ();
 
@@ -152,6 +153,32 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         } else {
             list_box.hovering_over_link (null, null);
         }
+    }
+
+    private bool on_webview_context_menu (WebKit.ContextMenu menu, Gdk.Event event, WebKit.HitTestResult hit_test) {
+        WebKit.ContextMenu new_context_menu = new WebKit.ContextMenu ();
+
+        for (int i = 0; i < menu.get_n_items (); i++) {
+            var item = menu.get_item_at_position (i);
+            switch (item.get_stock_action ()) {
+                case WebKit.ContextMenuAction.COPY_LINK_TO_CLIPBOARD:
+                case WebKit.ContextMenuAction.COPY_IMAGE_URL_TO_CLIPBOARD:
+                case WebKit.ContextMenuAction.COPY:
+                    new_context_menu.append (item);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        menu.remove_all ();
+        foreach (var item in new_context_menu.get_items ()) {
+            menu.append (item);
+        }
+
+        menu.append (new WebKit.ContextMenuItem.from_stock_action (WebKit.ContextMenuAction.SELECT_ALL));
+
+        return false;
     }
 
     private async void get_message () {
