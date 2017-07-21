@@ -18,10 +18,16 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.MainWindow : Gtk.Window {
+public class Mail.MainWindow : Gtk.ApplicationWindow {
     FoldersListView folders_list_view;
     ConversationListBox conversation_list_box;
     MessageListBox message_list_box;
+
+    public const string ACTION_COMPOSE_MESSAGE = "compose_message";
+
+    private const ActionEntry[] action_entries = {
+        {ACTION_COMPOSE_MESSAGE,   on_compose_message   },
+    };
 
     public MainWindow () {
         Object (
@@ -32,6 +38,8 @@ public class Mail.MainWindow : Gtk.Window {
     }
 
     construct {
+        add_action_entries (action_entries, this);
+
         var headerbar = new HeaderBar ();
         set_titlebar (headerbar);
 
@@ -92,5 +100,9 @@ public class Mail.MainWindow : Gtk.Window {
         });
 
         Backend.Session.get_default ().start.begin ();
+    }
+
+    private void on_compose_message () {
+        new ComposerWindow ().show_all ();
     }
 }
