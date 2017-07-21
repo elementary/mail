@@ -71,6 +71,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         var to_label = new Gtk.Label (_("To:"));
         to_label.halign = Gtk.Align.END;
+        to_label.valign = Gtk.Align.START;
         to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         var subject_label = new Gtk.Label (_("Subject:"));
@@ -83,8 +84,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         from_val_label.xalign = 0;
 
         var to_val_label = new Gtk.Label (message_info.to);
-        to_val_label.halign = Gtk.Align.START;
-        to_val_label.ellipsize = Pango.EllipsizeMode.END;
+        to_val_label.wrap = true;
+        to_val_label.xalign = 0;
 
         var subject_val_label = new Gtk.Label (message_info.subject);
         subject_val_label.xalign = 0;
@@ -95,10 +96,25 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         fields_grid.row_spacing = 6;
         fields_grid.attach (from_label, 0, 0, 1, 1);
         fields_grid.attach (to_label, 0, 1, 1, 1);
-        fields_grid.attach (subject_label, 0, 2, 1, 1);
+        fields_grid.attach (subject_label, 0, 3, 1, 1);
         fields_grid.attach (from_val_label, 1, 0, 1, 1);
         fields_grid.attach (to_val_label, 1, 1, 1, 1);
-        fields_grid.attach (subject_val_label, 1, 2, 1, 1);
+        fields_grid.attach (subject_val_label, 1, 3, 1, 1);
+
+        var cc_info = message_info.cc;
+        if (cc_info != null) {
+            var cc_label = new Gtk.Label (_("Cc:"));
+            cc_label.halign = Gtk.Align.END;
+            cc_label.valign = Gtk.Align.START;
+            cc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+            var cc_val_label = new Gtk.Label (cc_info);
+            cc_val_label.xalign = 0;
+            cc_val_label.wrap = true;
+
+            fields_grid.attach (cc_label, 0, 2, 1, 1);
+            fields_grid.attach (cc_val_label, 1, 2, 1, 1);
+        }
 
         var small_from_label = new Gtk.Label (message_info.from);
         from_val_label.ellipsize = Pango.EllipsizeMode.END;
