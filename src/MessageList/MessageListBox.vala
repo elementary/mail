@@ -39,6 +39,23 @@ public class Mail.MessageListBox : Gtk.ListBox {
         if (node.child != null) {
             go_down ((Camel.FolderThreadNode?) node.child);
         }
+
+        var children = get_children ();
+
+        if (children.length () == 1) {
+            children.foreach ((child) => {
+                if (child is MessageListItem) {
+                    ((MessageListItem) child).expanded = true;
+                }
+            });
+        } else {
+            var child = get_row_at_index ((int) children.length () - 1);
+            if (child == null && !(child is MessageListItem)) {
+                return;
+            }
+            
+            ((MessageListItem) child).expanded = true;
+        }
     }
 
     private void go_down (Camel.FolderThreadNode node) {
