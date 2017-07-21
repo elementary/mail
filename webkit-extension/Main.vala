@@ -31,7 +31,7 @@ namespace MailWebViewExtension {
 }
 
 public class DOMServer : Object {
-    private const string[] ALLOWED_SCHEMES = { "cid", "data", "about" };
+    private const string[] ALLOWED_SCHEMES = { "cid", "data", "about", "elementary-mail" };
 
     private WebKit.WebExtension extension;
 
