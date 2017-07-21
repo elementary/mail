@@ -21,7 +21,7 @@
 public class Mail.Application : Gtk.Application {
     private MainWindow? main_window = null;
 
-    Application () {
+    public Application () {
         Object (
             application_id: "io.elementary.mail",
             flags: ApplicationFlags.HANDLES_OPEN
