@@ -18,13 +18,20 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.MainWindow : Gtk.Window {
+public class Mail.MainWindow : Gtk.ApplicationWindow {
     private HeaderBar headerbar;
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
+    
     FoldersListView folders_list_view;
     ConversationListBox conversation_list_box;
     MessageListBox message_list_box;
+
+    public const string ACTION_COMPOSE_MESSAGE = "compose_message";
+
+    private const ActionEntry[] action_entries = {
+        {ACTION_COMPOSE_MESSAGE,   on_compose_message   },
+    };
 
     public MainWindow () {
         Object (
@@ -35,6 +42,8 @@ public class Mail.MainWindow : Gtk.Window {
     }
 
     construct {
+        add_action_entries (action_entries, this);
+
         headerbar = new HeaderBar ();
         set_titlebar (headerbar);
 
@@ -50,6 +59,26 @@ public class Mail.MainWindow : Gtk.Window {
         var message_list_scrolled = new Gtk.ScrolledWindow (null, null);
         message_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         message_list_scrolled.add (message_list_box);
+        // Prevent the focus of the webview causing the ScrolledWindow to scroll
+        var scrolled_child = message_list_scrolled.get_child ();
+        if (scrolled_child is Gtk.Container) {
+            ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
+        }
+
+        var view_overlay = new Gtk.Overlay();
+        view_overlay.add (message_list_scrolled);
+        var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
+        message_overlay.no_show_all = true;
+        message_list_box.hovering_over_link.connect ((label, url) => {
+            var hover_url = url != null ? Soup.URI.decode (url) : null;
+
+            if (hover_url == null) {
+                message_overlay.hide ();
+            } else {
+                message_overlay.status = hover_url;
+                message_overlay.show ();
+            }
+        });
 
         paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_start.pack1 (folders_list_view, false, false);
@@ -57,7 +86,7 @@ public class Mail.MainWindow : Gtk.Window {
 
         paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_end.pack1 (paned_start, false, false);
-        paned_end.pack2 (message_list_scrolled, true, true);
+        paned_end.pack2 (view_overlay, true, true);
 
         add (paned_end);
 
@@ -88,9 +117,14 @@ public class Mail.MainWindow : Gtk.Window {
         Backend.Session.get_default ().start.begin ();
     }
 
+    private void on_compose_message () {
+        new ComposerWindow ().show_all ();
+    }
+
     private void set_search_entry_width () {
         headerbar.search_entry.width_request = paned_end.position - paned_start.position + 1;
     }
+    
     private void set_paned_start_grid_width () {
         headerbar.paned_start_grid.width_request = paned_start.position - 50;
     }

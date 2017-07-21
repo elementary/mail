@@ -2,17 +2,22 @@ vala_files = [
     'Application.vala',
     'MainWindow.vala',
     'HeaderBar.vala',
+    'Dialogs/OpenAttachmentDialog.vala',
     'WebView.vala',
     'WebViewServer.vala',
     'Backend/Session.vala',
     'Backend/Account.vala',
+    'Composer/ComposerHeaderBar.vala',
+    'Composer/ComposerWindow.vala',
     'FoldersView/AccountSourceItem.vala',
     'FoldersView/FoldersListView.vala',
     'FoldersView/FolderSourceItem.vala',
     'ConversationList/ConversationListBox.vala',
     'ConversationList/ConversationListItem.vala',
     'MessageList/MessageListBox.vala',
-    'MessageList/MessageListItem.vala'
+    'MessageList/MessageListItem.vala',
+    'MessageList/AttachmentBar.vala',
+    'MessageList/AttachmentButton.vala'
 ]
 
 executable('io.elementary.mail',

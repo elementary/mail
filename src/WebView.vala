@@ -15,23 +15,38 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Authored by: Corentin Noël <corentin@elementary.io>
+ * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
 public extern const string WEBKIT_EXTENSION_PATH;
 
 public class Mail.WebView : WebKit.WebView {
+    public signal void image_load_blocked ();
+    public signal void link_activated (string url);
+
+    private const string INTERNAL_URL_BODY = "elementary-mail:body";
+
     private int preferred_height = 0;
     private WebViewServer view_manager;
+    private Gee.Map<string, InputStream> internal_resources;
 
     static construct {
         weak WebKit.WebContext context = WebKit.WebContext.get_default ();
         unowned string? webkit_extension_path_env = Environment.get_variable ("WEBKIT_EXTENSION_PATH");
         context.set_web_extensions_directory (webkit_extension_path_env ?? WEBKIT_EXTENSION_PATH);
+
+        context.register_uri_scheme ("cid", (req) => {
+            WebView? view = req.get_web_view () as WebView;
+            if (view != null) {
+                view.handle_cid_request (req);
+            }
+        });
     }
 
     construct {
         expand = true;
+
+        internal_resources = new Gee.HashMap<string, InputStream> ();
 
         view_manager = WebViewServer.get_default ();
         view_manager.page_height_updated.connect ((page_id) => {
@@ -40,8 +55,30 @@ public class Mail.WebView : WebKit.WebView {
                 queue_resize ();
             }
         });
+        view_manager.image_load_blocked.connect ((page_id) => {
+            if (page_id == get_page_id ()) {
+                image_load_blocked ();
+            }
+        });
 
         load_changed.connect (on_load_changed);
+        decide_policy.connect (on_decide_policy);
+    }
+
+    public WebView () {
+        var setts = new WebKit.Settings ();
+        setts.allow_modal_dialogs = false;
+        setts.enable_fullscreen = false;
+        setts.enable_html5_database = false;
+        setts.enable_html5_local_storage = false;
+        setts.enable_java = false;
+        setts.enable_javascript = false;
+        setts.enable_media_stream = false;
+        setts.enable_offline_web_application_cache = false;
+        setts.enable_page_cache = false;
+        setts.enable_plugins = false;
+
+        Object (settings: setts);
     }
 
     public void on_load_changed (WebKit.LoadEvent event) {
@@ -52,5 +89,52 @@ public class Mail.WebView : WebKit.WebView {
 
     public override void get_preferred_height (out int minimum_height, out int natural_height) {
         minimum_height = natural_height = preferred_height;
+    }
+
+    public new void load_html (string? body, string? base_uri = null) {
+        base.load_html (body, base_uri ?? INTERNAL_URL_BODY);
+    }
+
+    private bool on_decide_policy (WebKit.WebView view, WebKit.PolicyDecision policy, WebKit.PolicyDecisionType type) {
+        if (type == WebKit.PolicyDecisionType.NAVIGATION_ACTION ||
+            type == WebKit.PolicyDecisionType.NEW_WINDOW_ACTION) {
+            var nav_policy = (WebKit.NavigationPolicyDecision) policy;
+            if (nav_policy.get_navigation_type () == WebKit.NavigationType.LINK_CLICKED) {
+                link_activated (nav_policy.request.uri);
+            } else if (nav_policy.get_navigation_type () == WebKit.NavigationType.OTHER) {
+                if (nav_policy.request.uri == INTERNAL_URL_BODY) {
+                    policy.use ();
+                    return Gdk.EVENT_STOP;
+                }
+            }
+        }
+
+        policy.ignore ();
+        return Gdk.EVENT_STOP;
+    }
+
+    public void add_internal_resource (string name, InputStream data) {
+        internal_resources[name] = data;
+    }
+
+    public void load_images () {
+        view_manager.set_load_images (get_page_id (), true);
+    }
+
+    private void handle_cid_request (WebKit.URISchemeRequest request) {
+        if (!handle_internal_response (request)) {
+            request.finish_error (new FileError.NOENT ("Unknown CID"));
+        }
+    }
+
+    private bool handle_internal_response (WebKit.URISchemeRequest request) {
+        string name = Soup.URI.decode (request.get_path ());
+        InputStream? buf = this.internal_resources[name];
+        if (buf != null) {
+            request.finish (buf, -1, null);
+            return true;
+        }
+
+        return false;
     }
 }

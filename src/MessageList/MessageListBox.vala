@@ -19,6 +19,8 @@
  */
 
 public class Mail.MessageListBox : Gtk.ListBox {
+    public signal void hovering_over_link (string? label, string? uri);
+
     public MessageListBox () {
         Object (selection_mode: Gtk.SelectionMode.NONE);
     }
@@ -36,6 +38,19 @@ public class Mail.MessageListBox : Gtk.ListBox {
         add (item);
         if (node.child != null) {
             go_down ((Camel.FolderThreadNode?) node.child);
+        }
+
+        var children = get_children ();
+        if (children.length () == 1) {
+            var child = get_row_at_index (0);
+            if (child is MessageListItem) {
+                ((MessageListItem) child).expanded = true;
+            }
+        } else {
+            var child = get_row_at_index ((int) children.length () - 1);
+            if (child != null && child is MessageListItem) {
+                ((MessageListItem) child).expanded = true;
+            }
         }
     }
 

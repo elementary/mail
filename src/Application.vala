@@ -21,9 +21,14 @@
 public class Mail.Application : Gtk.Application {
     private MainWindow? main_window = null;
 
+    public Application () {
+        Object (
+            application_id: "io.elementary.mail",
+            flags: ApplicationFlags.HANDLES_OPEN
+        );
+    }
+
     construct {
-        application_id = "io.elementary.mail";
-        flags |= ApplicationFlags.HANDLES_OPEN;
         Intl.setlocale (LocaleCategory.ALL, "");
 
         var quit_action = new SimpleAction ("quit", null);

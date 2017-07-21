@@ -24,18 +24,43 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private Mail.WebView web_view;
     private GLib.Cancellable loading_cancellable;
 
+    private Gtk.InfoBar blocked_images_infobar;
+    private Gtk.Revealer secondary_revealer;
+    private Gtk.Stack header_stack;
+    private Gtk.StyleContext style_context;
+
+    private string message_content;
+    private bool message_is_html = false;
+    
+    public bool expanded {
+        get {
+            return secondary_revealer.reveal_child;
+        }
+        set {
+            secondary_revealer.reveal_child = value;
+            header_stack.set_visible_child_name (value ? "large" : "small");
+            if (value) {
+                style_context.remove_class ("collapsed");
+            } else {
+                style_context.add_class ("collapsed");
+            }
+        }
+    }
+
+    private GLib.Settings settings;
+
     public MessageListItem (Camel.MessageInfo message_info) {
         Object (
             margin: 12,
             message_info: message_info
         );
-        open_message.begin ();
     }
 
     construct {
         loading_cancellable = new GLib.Cancellable ();
 
-        get_style_context ().add_class ("card");
+        style_context = get_style_context ();
+        style_context.add_class ("card");
 
         var avatar = new Granite.Widgets.Avatar.with_default_icon (48);
         avatar.valign = Gtk.Align.START;
@@ -47,6 +72,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         var to_label = new Gtk.Label (_("To:"));
         to_label.halign = Gtk.Align.END;
+        to_label.valign = Gtk.Align.START;
         to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         var subject_label = new Gtk.Label (_("Subject:"));
@@ -59,12 +85,51 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         from_val_label.xalign = 0;
 
         var to_val_label = new Gtk.Label (message_info.to);
-        to_val_label.halign = Gtk.Align.START;
-        to_val_label.ellipsize = Pango.EllipsizeMode.END;
+        to_val_label.wrap = true;
+        to_val_label.xalign = 0;
 
         var subject_val_label = new Gtk.Label (message_info.subject);
         subject_val_label.xalign = 0;
         subject_val_label.wrap = true;
+
+        var fields_grid = new Gtk.Grid ();
+        fields_grid.column_spacing = 6;
+        fields_grid.row_spacing = 6;
+        fields_grid.attach (from_label, 0, 0, 1, 1);
+        fields_grid.attach (to_label, 0, 1, 1, 1);
+        fields_grid.attach (subject_label, 0, 3, 1, 1);
+        fields_grid.attach (from_val_label, 1, 0, 1, 1);
+        fields_grid.attach (to_val_label, 1, 1, 1, 1);
+        fields_grid.attach (subject_val_label, 1, 3, 1, 1);
+
+        var cc_info = message_info.cc;
+        if (cc_info != null) {
+            var cc_label = new Gtk.Label (_("Cc:"));
+            cc_label.halign = Gtk.Align.END;
+            cc_label.valign = Gtk.Align.START;
+            cc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+            var cc_val_label = new Gtk.Label (cc_info);
+            cc_val_label.xalign = 0;
+            cc_val_label.wrap = true;
+
+            fields_grid.attach (cc_label, 0, 2, 1, 1);
+            fields_grid.attach (cc_val_label, 1, 2, 1, 1);
+        }
+
+        var small_from_label = new Gtk.Label (message_info.from);
+        from_val_label.ellipsize = Pango.EllipsizeMode.END;
+        from_val_label.xalign = 0;
+
+        var small_fields_grid = new Gtk.Grid ();
+        small_fields_grid.attach (small_from_label, 0, 0, 1, 1);
+
+        header_stack = new Gtk.Stack ();
+        header_stack.homogeneous = false;
+        header_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+        header_stack.add_named (fields_grid, "large");
+        header_stack.add_named (small_fields_grid, "small");
+        header_stack.show_all ();
 
         var datetime_label = new Gtk.Label (new DateTime.from_unix_utc (message_info.date_received).format ("%b %e, %Y"));
         datetime_label.hexpand = true;
@@ -76,7 +141,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         starred_icon.icon_size = Gtk.IconSize.MENU;
         starred_icon.valign = Gtk.Align.START;
 
-        if (Camel.MessageFlags.FLAGGED in (int)message_info.flags) {
+        if (Camel.MessageFlags.FLAGGED in (int) message_info.flags) {
             starred_icon.icon_name = "starred-symbolic";
         } else {
             starred_icon.icon_name = "non-starred-symbolic";
@@ -84,99 +149,239 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         var header = new Gtk.Grid ();
         header.margin = 12;
-        header.column_spacing = 6;
-        header.row_spacing = 6;
+        header.column_spacing = 12;
         header.attach (avatar, 0, 0, 1, 3);
-        header.attach (from_label, 1, 0, 1, 1);
-        header.attach (to_label, 1, 1, 1, 1);
-        header.attach (subject_label, 1, 2, 1, 1);
-        header.attach (from_val_label, 2, 0, 1, 1);
-        header.attach (to_val_label, 2, 1, 1, 1);
-        header.attach (subject_val_label, 2, 2, 3, 1);
-        header.attach (datetime_label, 3, 0, 1, 1);
+        header.attach (header_stack, 1, 0, 1, 3);
+        header.attach (datetime_label, 2, 0, 1, 1);
         header.attach (starred_icon, 4, 0, 1, 1);
+
+        var header_event_box = new Gtk.EventBox ();
+        header_event_box.events |= Gdk.EventMask.ENTER_NOTIFY_MASK;
+        header_event_box.events |= Gdk.EventMask.LEAVE_NOTIFY_MASK;
+        header_event_box.events |= Gdk.EventMask.BUTTON_RELEASE_MASK;
+        header_event_box.add (header);
 
         var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
         separator.hexpand = true;
 
+        settings = new GLib.Settings ("io.elementary.mail");
+
+        blocked_images_infobar = new Gtk.InfoBar ();
+        blocked_images_infobar.margin = 12;
+        blocked_images_infobar.message_type = Gtk.MessageType.WARNING;
+        blocked_images_infobar.add_button (_("Show Images"), 1);
+        blocked_images_infobar.add_button (_("Always Show from Sender"), 2);
+        blocked_images_infobar.get_style_context ().add_class (Gtk.STYLE_CLASS_FRAME);
+        blocked_images_infobar.no_show_all = true;
+
+        var infobar_content = blocked_images_infobar.get_content_area ();
+        infobar_content.add (new Gtk.Label (_("This message contains remote images.")));
+        infobar_content.show_all ();
+
+        ((Gtk.Box) blocked_images_infobar.get_action_area ()).orientation = Gtk.Orientation.VERTICAL;
+
+        get_message.begin ();
         web_view = new Mail.WebView ();
-        web_view.margin = 6;
+        web_view.margin = 12;
+        web_view.mouse_target_changed.connect (on_mouse_target_changed);
+        web_view.context_menu.connect (on_webview_context_menu);
+
+        var secondary_grid = new Gtk.Grid ();
+        secondary_grid.orientation = Gtk.Orientation.VERTICAL;
+        secondary_grid.add (separator);
+        secondary_grid.add (blocked_images_infobar);
+        secondary_grid.add (web_view);
+
+        secondary_revealer = new Gtk.Revealer ();
+        secondary_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_UP;
+        secondary_revealer.add (secondary_grid);
 
         var base_grid = new Gtk.Grid ();
         base_grid.expand = true;
         base_grid.orientation = Gtk.Orientation.VERTICAL;
-        base_grid.add (header);
-        base_grid.add (separator);
-        base_grid.add (web_view);
+        base_grid.add (header_event_box);
+        base_grid.add (secondary_revealer);
+
+        if (Camel.MessageFlags.ATTACHMENTS in (int) message_info.flags) {
+            var attachment_icon = new Gtk.Image.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
+            attachment_icon.tooltip_text = _("This message contains one or more attachments");
+            attachment_icon.valign = Gtk.Align.START;
+            header.attach (attachment_icon, 3, 0, 1, 1);
+
+            var attachment_bar = new AttachmentBar (message_info, loading_cancellable);
+            secondary_grid.add (attachment_bar);
+        }
+
         add (base_grid);
+        expanded = false;
         show_all ();
+
+        header_event_box.enter_notify_event.connect ((event) => {
+            if (event.detail != Gdk.NotifyType.INFERIOR) {
+                var window = header_event_box.get_window ();
+                var cursor = new Gdk.Cursor.from_name (window.get_display (), "pointer");
+                window.set_cursor (cursor);
+            }
+        });
+
+        header_event_box.leave_notify_event.connect ((event) => {
+            if (event.detail != Gdk.NotifyType.INFERIOR) {
+                header_event_box.get_window ().set_cursor (null);
+            }
+        });
+
+        header_event_box.button_release_event.connect ((event) => {
+            expanded = !expanded;
+            return false;
+        });
 
         destroy.connect (() => {
             loading_cancellable.cancel ();
         });
+
+        web_view.image_load_blocked.connect (() => {
+            blocked_images_infobar.show ();
+        });
+        web_view.link_activated.connect ((uri) => {
+            try {
+                AppInfo.launch_default_for_uri (uri, null);
+            } catch (Error e) {
+                warning ("Failed to open link: %s", e.message);
+            }
+        });
     }
 
-    private async void open_message () {
-        Camel.MimeMessage message;
+    private void on_mouse_target_changed (WebKit.WebView web_view, WebKit.HitTestResult hit_test, uint mods) {
+        var list_box = this.parent as MessageListBox;
+        if (hit_test.context_is_link ()) {
+            list_box.hovering_over_link (hit_test.get_link_label (), hit_test.get_link_uri ());
+        } else {
+            list_box.hovering_over_link (null, null);
+        }
+    }
+
+    private bool on_webview_context_menu (WebKit.ContextMenu menu, Gdk.Event event, WebKit.HitTestResult hit_test) {
+        WebKit.ContextMenu new_context_menu = new WebKit.ContextMenu ();
+
+        for (int i = 0; i < menu.get_n_items (); i++) {
+            var item = menu.get_item_at_position (i);
+            switch (item.get_stock_action ()) {
+                case WebKit.ContextMenuAction.COPY_LINK_TO_CLIPBOARD:
+                case WebKit.ContextMenuAction.COPY_IMAGE_URL_TO_CLIPBOARD:
+                case WebKit.ContextMenuAction.COPY:
+                    new_context_menu.append (item);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        menu.remove_all ();
+        foreach (var item in new_context_menu.get_items ()) {
+            menu.append (item);
+        }
+
+        menu.append (new WebKit.ContextMenuItem.from_stock_action (WebKit.ContextMenuAction.SELECT_ALL));
+
+        return false;
+    }
+
+    private async void get_message () {
         var folder = message_info.summary.folder;
+        Camel.MimeMessage? message = null;
         try {
             message = yield folder.get_message (message_info.uid, GLib.Priority.DEFAULT, loading_cancellable);
-            bool is_html;
-            var content = yield get_mime_content (message.content, out is_html);
-            if (is_html) {
-                web_view.load_html (content, null);
-            } else {
-                web_view.load_plain_text (content);
-            }
         } catch (Error e) {
-            debug("Could not get message. %s", e.message);
+            warning ("Could not get message. %s", e.message);
+        }
+
+        if (settings.get_boolean ("always-load-remote-images")) {
+            web_view.load_images ();
+        } else if (message != null) {
+            var whitelist = settings.get_strv ("remote-images-whitelist");
+            string sender;
+            message.get_from ().@get (0, null, out sender);
+            if (sender in whitelist) {
+                web_view.load_images ();
+            }
+            blocked_images_infobar.response.connect ((id) => {
+                if (id == 2) {
+                    if (!(sender in whitelist)) {
+                        whitelist += sender;
+                        settings.set_strv ("remote-images-whitelist", whitelist);
+                    }
+                }
+                web_view.load_images ();
+                blocked_images_infobar.destroy ();
+            });
+        }
+
+        if (message != null) {
+            yield open_message (message);
         }
     }
 
-    private async string get_mime_content (Camel.DataWrapper message_content, out bool is_html) {
-        Camel.DataWrapper data_container = message_content;
-        if (data_container is Camel.Multipart) {
-            var content = data_container as Camel.Multipart;
-            int content_priority = 0;
+    private async void open_message (Camel.MimeMessage message) {
+        yield parse_mime_content (message.content);
+        if (message_is_html) {
+            web_view.load_html (message_content, null);
+        } else {
+            web_view.load_plain_text (message_content);
+        }
+    }
+
+    private async void parse_mime_content (Camel.DataWrapper message_content) {
+        if (message_content is Camel.Multipart) {
+            var content = message_content as Camel.Multipart;
             for (uint i = 0; i < content.get_number (); i++) {
                 var part = content.get_part (i);
-                if (part.get_mime_type_field ().type == "multipart") {
-                    return yield get_mime_content (part.content, out is_html);
-                }
-                int current_content_priority = get_content_type_priority (part.get_mime_type ());
-                if (current_content_priority > content_priority) {
-                    data_container = part.content;
+                var field = part.get_mime_type_field ();
+                if (part.disposition == "inline") {
+                    yield handle_inline_mime (part);
+                } else if (field.type == "text") {
+                    yield handle_text_mime (part.content);
+                } else if (field.type == "multipart") {
+                    yield parse_mime_content (part.content);
                 }
             }
+        } else {
+            yield handle_text_mime (message_content);
         }
-
-        string current_content;
-        try {
-            var field = data_container.get_mime_type_field ();
-            debug ("%s", field.simple ());
-
-            var os = new GLib.MemoryOutputStream.resizable ();
-            yield data_container.decode_to_output_stream (os, GLib.Priority.DEFAULT, loading_cancellable);
-            os.close ();
-            current_content = (string) os.steal_data ();
-            
-            is_html = field.subtype == "html";
-        } catch (Error e) {
-            current_content = "Error loading the message: %s".printf (e.message);
-            is_html = false;
-        }
-
-        return current_content;
     }
 
-    public static int get_content_type_priority (string mime_type) {
-        switch (mime_type) {
-            case "text/plain":
-                return 1;
-            case "text/html":
-                return 2;
-            default:
-                return 0;
+    private async void handle_text_mime (Camel.DataWrapper part) {
+        var field = part.get_mime_type_field ();
+        if (message_content == null || (!message_is_html && field.subtype == "html")) {
+            var os = new GLib.MemoryOutputStream.resizable ();
+            try {
+                yield part.decode_to_output_stream (os, GLib.Priority.DEFAULT, loading_cancellable);
+                os.close ();
+            } catch (Error e) {
+                warning ("Possible error decoding email message: %s", e.message);
+                return;
+            }
+
+            message_content = (string) os.steal_data ();
+            if (field.subtype == "html") {
+                message_is_html = true;
+            }
         }
+    }
+
+    private async void handle_inline_mime (Camel.MimePart part) {
+        var byte_array = new ByteArray ();
+        var os = new Camel.StreamMem ();
+        os.set_byte_array (byte_array);
+        try {
+            yield part.content.decode_to_stream (os, GLib.Priority.DEFAULT, loading_cancellable);
+        } catch (Error e) {
+            warning ("Error decoding inline attachment: %s", e.message);
+            return;
+        }
+
+        Bytes bytes;
+        bytes = ByteArray.free_to_bytes (byte_array);
+        var inline_stream = new MemoryInputStream.from_bytes (bytes);
+        web_view.add_internal_resource (part.get_content_id (), inline_stream);
     }
 }

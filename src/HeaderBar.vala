@@ -30,6 +30,7 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         var compose_button = new Gtk.Button.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR);
         compose_button.halign = Gtk.Align.START;
         compose_button.tooltip_text = _("Compose new message (Ctrl+N, N)");
+        compose_button.action_name = "win." + MainWindow.ACTION_COMPOSE_MESSAGE;
 
         search_entry = new Gtk.SearchEntry ();
         search_entry.placeholder_text = _("Search Mail");
