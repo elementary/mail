@@ -41,20 +41,16 @@ public class Mail.MessageListBox : Gtk.ListBox {
         }
 
         var children = get_children ();
-
         if (children.length () == 1) {
-            children.foreach ((child) => {
-                if (child is MessageListItem) {
-                    ((MessageListItem) child).expanded = true;
-                }
-            });
+            var child = get_row_at_index (0);
+            if (child is MessageListItem) {
+                ((MessageListItem) child).expanded = true;
+            }
         } else {
             var child = get_row_at_index ((int) children.length () - 1);
-            if (child == null && !(child is MessageListItem)) {
-                return;
+            if (child != null && child is MessageListItem) {
+                ((MessageListItem) child).expanded = true;
             }
-            
-            ((MessageListItem) child).expanded = true;
         }
     }
 
