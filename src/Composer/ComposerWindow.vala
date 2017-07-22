@@ -107,18 +107,20 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU);
         clear_format.tooltip_text = _("Remove formatting (Ctrl+Space)");
 
-        var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
-        button_box.margin_left = 6;
-        button_box.pack_start (formatting_buttons, false, false, 0);
-        button_box.pack_start (indent_buttons, false, false, 0);
-        button_box.pack_start (link, false, false, 0);
-        button_box.pack_start (image, false, false, 0);
-        button_box.pack_start (clear_format, false, false, 0);
+        var button_row = new Gtk.Grid ();
+        button_row.column_spacing = 6;
+        button_row.margin_left = 6;
+        button_row.add (formatting_buttons);
+        button_row.add (indent_buttons);
+        button_row.add (link);
+        button_row.add (image);
+        button_row.add (clear_format);
 
-        var content_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        content_box.pack_start (recipient_grid, false, false, 0);
-        content_box.pack_start (button_box, false, false, 0);
+        var content_grid = new Gtk.Grid ();
+        content_grid.orientation = Gtk.Orientation.VERTICAL;
+        content_grid.add (recipient_grid);
+        content_grid.add (button_row);
 
-        add (content_box);
+        add (content_grid);
     }
 }
