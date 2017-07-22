@@ -107,9 +107,8 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU);
         clear_format.tooltip_text = _("Remove formatting (Ctrl+Space)");
 
-        var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+        var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
         button_box.margin_left = 6;
-        button_box.spacing = 6;
         button_box.pack_start (formatting_buttons, false, false, 0);
         button_box.pack_start (indent_buttons, false, false, 0);
         button_box.pack_start (link, false, false, 0);
