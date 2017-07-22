@@ -134,6 +134,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
                 Gtk.Allocation alloc;
                 widget.get_allocation (out alloc);
                 offset = alloc.width;
+                return;
             }
         });
 
