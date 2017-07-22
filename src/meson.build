@@ -7,7 +7,6 @@ vala_files = [
     'WebViewServer.vala',
     'Backend/Session.vala',
     'Backend/Account.vala',
-    'Composer/ComposerHeaderBar.vala',
     'Composer/ComposerWindow.vala',
     'FoldersView/AccountSourceItem.vala',
     'FoldersView/FoldersListView.vala',
