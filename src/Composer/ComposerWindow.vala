@@ -19,11 +19,12 @@
  */
 
 public class Mail.ComposerWindow : Gtk.ApplicationWindow {
-
-    public ComposerWindow () {
+    public ComposerWindow (Gtk.Window parent) {
         Object (
             height_request: 600,
-            width_request: 680
+            transient_for: parent,
+            width_request: 680,
+            window_position: Gtk.WindowPosition.CENTER_ON_PARENT
         );
     }
 
