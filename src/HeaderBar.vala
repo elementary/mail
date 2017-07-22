@@ -19,8 +19,8 @@
  */
 
 public class Mail.HeaderBar : Gtk.HeaderBar {
-    public Gtk.Grid paned_start_grid;
-    public Gtk.SearchEntry search_entry;
+    public Gtk.Grid paned_start_grid { get; construct; }
+    public Gtk.SearchEntry search_entry { get; construct; }
 
     public HeaderBar () {
         Object (show_close_button: true);
