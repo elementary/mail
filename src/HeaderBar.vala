@@ -41,10 +41,13 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
 
         var load_images_switch = new Gtk.Switch ();
 
+        var settings = new GLib.Settings ("io.elementary.mail");
+        settings.bind ("always-load-remote-images", load_images_switch, "active", SettingsBindFlags.DEFAULT);
+
         var load_images_grid = new Gtk.Grid ();
-        load_images_grid.column_spacing = 6;
+        load_images_grid.column_spacing = 12;
         load_images_grid.margin_end = 6;
-        load_images_grid.margin_start = 3;
+        load_images_grid.margin_start = 6;
         load_images_grid.add (new Gtk.Label (_("Always Show Remote Images")));
         load_images_grid.add (load_images_switch);
 
@@ -84,6 +87,10 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
             } catch (Error e) {
                 warning ("Failed to open account settings: %s", e.message);
             }     
+        });
+
+        load_images_menuitem.clicked.connect (() => {
+            load_images_switch.activate ();
         });
     }
 }
