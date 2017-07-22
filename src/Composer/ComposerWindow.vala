@@ -110,16 +110,22 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         var button_row = new Gtk.Grid ();
         button_row.column_spacing = 6;
         button_row.margin_left = 6;
+        button_row.margin_bottom = 6;
         button_row.add (formatting_buttons);
         button_row.add (indent_buttons);
         button_row.add (link);
         button_row.add (image);
         button_row.add (clear_format);
 
+        var web_view = new WebView ();
+        web_view.editable = true;
+
         var content_grid = new Gtk.Grid ();
         content_grid.orientation = Gtk.Orientation.VERTICAL;
         content_grid.add (recipient_grid);
         content_grid.add (button_row);
+        content_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        content_grid.add (web_view);
 
         add (content_grid);
     }
