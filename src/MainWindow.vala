@@ -104,14 +104,16 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
             message_list_box.set_conversation (node);
         });
 
-        set_paned_start_grid_width ();
-        set_search_entry_width ();
+        headerbar.size_allocate.connect (() => {
+            update_paned_start_grid_width ();
+            update_search_entry_width ();
+        });
 
-        paned_end.notify["position"].connect (() => set_search_entry_width ());
+        paned_end.notify["position"].connect (update_search_entry_width);
 
         paned_start.notify["position"].connect (() => {
-            set_paned_start_grid_width ();
-            set_search_entry_width ();
+            update_paned_start_grid_width ();
+            update_search_entry_width ();
         });
 
         Backend.Session.get_default ().start.begin ();
@@ -121,11 +123,23 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         new ComposerWindow ().show_all ();
     }
 
-    private void set_search_entry_width () {
+    private void update_search_entry_width () {
         headerbar.search_entry.width_request = paned_end.position - paned_start.position + 1;
     }
     
-    private void set_paned_start_grid_width () {
-        headerbar.paned_start_grid.width_request = paned_start.position - 50;
+    private void update_paned_start_grid_width () {
+        int offset = 0;
+        headerbar.forall ((widget) => {
+            if (widget.get_style_context ().has_class ("left")) {
+                Gtk.Allocation alloc;
+                widget.get_allocation (out alloc);
+                offset = alloc.width;
+            }
+        });
+
+        int padding = headerbar.get_style_context ().get_padding (Gtk.StateFlags.NORMAL).left;
+        offset += headerbar.spacing + (padding * 2);
+
+        headerbar.paned_start_grid.width_request = paned_start.position - offset;
     }
 }
