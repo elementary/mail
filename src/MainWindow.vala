@@ -131,14 +131,13 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         int offset = 0;
         headerbar.forall ((widget) => {
             if (widget.get_style_context ().has_class ("left")) {
-                Gtk.Allocation alloc;
-                widget.get_allocation (out alloc);
-                offset = alloc.width;
+                offset = widget.get_allocated_width ();
                 return;
             }
         });
 
-        int padding = headerbar.get_style_context ().get_padding (Gtk.StateFlags.NORMAL).left;
+        var style_context = headerbar.get_style_context ();
+        int padding = style_context.get_padding (style_context.get_state ()).left;
         offset += headerbar.spacing + (padding * 2);
 
         headerbar.paned_start_grid.width_request = paned_start.position - offset;
