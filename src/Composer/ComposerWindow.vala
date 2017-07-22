@@ -52,17 +52,77 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         var subject_val = new Gtk.Entry ();
         subject_val.hexpand = true;
 
-        var content_grid = new Gtk.Grid ();
-        content_grid.margin = 6;
-        content_grid.margin_top = 12;
-        content_grid.column_spacing = 6;
-        content_grid.row_spacing = 6;
-        content_grid.attach (to_label, 0, 0, 1, 1);
-        content_grid.attach (to_val, 1, 0, 1, 1);
-        content_grid.attach (cc_label, 0, 1, 1, 1);
-        content_grid.attach (cc_val, 1, 1, 1, 1);
-        content_grid.attach (subject_label, 0, 2, 1, 1);
-        content_grid.attach (subject_val, 1, 2, 1, 1);
-        add (content_grid);
+        var recipient_grid = new Gtk.Grid ();
+        recipient_grid.margin = 6;
+        recipient_grid.margin_top = 12;
+        recipient_grid.column_spacing = 6;
+        recipient_grid.row_spacing = 6;
+        recipient_grid.attach (to_label, 0, 0, 1, 1);
+        recipient_grid.attach (to_val, 1, 0, 1, 1);
+        recipient_grid.attach (cc_label, 0, 1, 1, 1);
+        recipient_grid.attach (cc_val, 1, 1, 1, 1);
+        recipient_grid.attach (subject_label, 0, 2, 1, 1);
+        recipient_grid.attach (subject_val, 1, 2, 1, 1);
+
+        var bold = new Gtk.ToggleButton ();
+        bold.tooltip_text = _("Bold (Ctrl+B)");
+        bold.image = new Gtk.Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.MENU);
+
+        var italic = new Gtk.ToggleButton ();
+        italic.tooltip_text = _("Italic (Ctrl+I)");
+        italic.image = new Gtk.Image.from_icon_name ("format-text-italic-symbolic", Gtk.IconSize.MENU);
+
+        var underline = new Gtk.ToggleButton ();
+        underline.tooltip_text = _("Underline (Ctrl+U)");
+        underline.image = new Gtk.Image.from_icon_name ("format-text-underline-symbolic", Gtk.IconSize.MENU);
+
+        var strikethrough = new Gtk.ToggleButton ();
+        strikethrough.tooltip_text = _("Strikethrough (Ctrl+%)");
+        strikethrough.image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU);
+
+        var formatting_buttons = new Gtk.Grid ();
+        formatting_buttons.margin_top = formatting_buttons.margin_left = 6;
+        formatting_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+        formatting_buttons.add (bold);
+        formatting_buttons.add (italic);
+        formatting_buttons.add (underline);
+        formatting_buttons.add (strikethrough);
+
+        var indent_more = new Gtk.Button.from_icon_name ("format-indent-more-symbolic", Gtk.IconSize.MENU);
+        indent_more.tooltip_text = _("Quote text (Ctrl+])");
+
+        var indent_less = new Gtk.Button.from_icon_name ("format-indent-less-symbolic", Gtk.IconSize.MENU);
+        indent_less.tooltip_text = _("Unquote text (Ctrl+[)");
+
+        var indent_buttons = new Gtk.Grid ();
+        indent_buttons.margin_top = indent_buttons.margin_left = 6;
+        indent_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+        indent_buttons.add (indent_more);
+        indent_buttons.add (indent_less);
+
+        var link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU);
+        link.margin_top = link.margin_left = 6;
+        link.tooltip_text = _("Link (Ctrl+K)");
+
+        var image = new Gtk.Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.MENU);
+        image.margin_top = image.margin_left = 6;
+        image.tooltip_text = _("Image (Ctrl+G)");
+
+        var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU);
+        clear_format.margin_top = clear_format.margin_left = 6;
+        clear_format.tooltip_text = _("Remove formatting (Ctrl+Space)");
+
+        var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+        button_box.pack_start (formatting_buttons, false, false, 0);
+        button_box.pack_start (indent_buttons, false, false, 0);
+        button_box.pack_start (link, false, false, 0);
+        button_box.pack_start (image, false, false, 0);
+        button_box.pack_start (clear_format, false, false, 0);
+
+        var content_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        content_box.pack_start (recipient_grid, false, false, 0);
+        content_box.pack_start (button_box, false, false, 0);
+
+        add (content_box);
     }
 }
