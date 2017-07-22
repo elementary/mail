@@ -81,7 +81,6 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         strikethrough.image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU);
 
         var formatting_buttons = new Gtk.Grid ();
-        formatting_buttons.margin_top = formatting_buttons.margin_left = 6;
         formatting_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
         formatting_buttons.add (bold);
         formatting_buttons.add (italic);
@@ -95,24 +94,22 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         indent_less.tooltip_text = _("Unquote text (Ctrl+[)");
 
         var indent_buttons = new Gtk.Grid ();
-        indent_buttons.margin_top = indent_buttons.margin_left = 6;
         indent_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
         indent_buttons.add (indent_more);
         indent_buttons.add (indent_less);
 
         var link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU);
-        link.margin_top = link.margin_left = 6;
         link.tooltip_text = _("Link (Ctrl+K)");
 
         var image = new Gtk.Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.MENU);
-        image.margin_top = image.margin_left = 6;
         image.tooltip_text = _("Image (Ctrl+G)");
 
         var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU);
-        clear_format.margin_top = clear_format.margin_left = 6;
         clear_format.tooltip_text = _("Remove formatting (Ctrl+Space)");
 
         var button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+        button_box.margin_left = 6;
+        button_box.spacing = 6;
         button_box.pack_start (formatting_buttons, false, false, 0);
         button_box.pack_start (indent_buttons, false, false, 0);
         button_box.pack_start (link, false, false, 0);
