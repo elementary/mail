@@ -23,21 +23,37 @@
 public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem {
     public Mail.Backend.Account account { get; construct; }
 
+    private GLib.Cancellable connect_cancellable;
+
     public AccountSourceItem (Mail.Backend.Account account) {
         Object (account: account);
     }
 
     construct {
+        visible = true;
+        connect_cancellable = new GLib.Cancellable ();
+
         var offlinestore = (Camel.OfflineStore) account.service;
         name = offlinestore.display_name;
         offlinestore.folder_created.connect ((folder_info) => {critical ("");});
         offlinestore.folder_deleted.connect ((folder_info) => {critical ("");});
         offlinestore.folder_info_stale.connect (() => {critical ("");});
         offlinestore.folder_renamed.connect ((old_name, folder_info) => {critical ("");});
+        var task = new GLib.Task (offlinestore, connect_cancellable, (source, task) => {
+            account_is_online.begin ((Camel.OfflineStore) source);
+        });
+
+        task.run_in_thread (set_online_store_thread);
+    }
+
+    ~AccountSourceItem () {
+        connect_cancellable.cancel ();
+    }
+
+    private async void account_is_online (Camel.OfflineStore offlinestore) {
         try {
-            offlinestore.set_online_sync (true);
-            offlinestore.connect_sync ();
-            var folderinfo = offlinestore.get_folder_info_sync (null, Camel.StoreGetFolderInfoFlags.RECURSIVE);
+            yield offlinestore.connect (GLib.Priority.DEFAULT, connect_cancellable);
+            var folderinfo = yield offlinestore.get_folder_info (null, Camel.StoreGetFolderInfoFlags.RECURSIVE, GLib.Priority.DEFAULT, connect_cancellable);
             if (folderinfo != null) {
                 show_info (folderinfo, this);
             }
@@ -45,7 +61,6 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
             critical (e.message);
         }
     }
-
 
     private static void show_info (Camel.FolderInfo? _folderinfo, Granite.Widgets.SourceList.ExpandableItem item) {
         var folderinfo = _folderinfo;
@@ -60,6 +75,14 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
 
             item.add (sub_item);
             folderinfo = (Camel.FolderInfo?) folderinfo.next;
+        }
+    }
+
+    private static void set_online_store_thread (GLib.Task task, GLib.Object source_object, void* task_data, GLib.Cancellable? cancellable) {
+        try {
+            ((Camel.OfflineStore) source_object).set_online_sync (true);
+        } catch (Error e) {
+            critical (e.message);
         }
     }
 }

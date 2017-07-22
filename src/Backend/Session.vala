@@ -71,10 +71,7 @@ public class Mail.Backend.Session : Camel.Session {
             weak E.SourceMailAccount extension = (E.SourceMailAccount)source_item.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
             var backend_name = ((E.SourceBackend) extension).get_backend_name ();
             try {
-                var service = add_service (uid, backend_name, Camel.ProviderType.STORE);
-                if (service is Camel.OfflineStore) {
-                    ((Camel.OfflineStore) service).set_online_sync (true);
-                }
+                add_service (uid, backend_name, Camel.ProviderType.STORE);
             } catch (Error e) {
                 critical (e.message);
             }
