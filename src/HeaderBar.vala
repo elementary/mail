@@ -76,6 +76,7 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         app_menu_popover.add (app_menu_grid);
         app_menu.image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
         app_menu.popover = app_menu_popover;
+        app_menu.tooltip_text = _("Menu");
 
         pack_start (paned_start_grid);
         pack_start (search_entry);
