@@ -130,7 +130,8 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
                 return ngettext ("%dh ago", "%dh ago", (ulong) rounded).printf (rounded);
             } else {
                 var settings = new Settings ("org.gnome.desktop.interface");
-                return Granite.DateTime.get_default_time_format (settings.get_enum ("clock-format") == 1, false);
+                var format = Granite.DateTime.get_default_time_format (settings.get_enum ("clock-format") == 1, false);
+                return date_time.format (format);
             }
         } else if (is_same_day (date_time.add_days (1), now)) {
             return _("Yesterday");
