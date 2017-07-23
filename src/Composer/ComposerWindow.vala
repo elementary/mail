@@ -22,6 +22,7 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
     public ComposerWindow (Gtk.Window parent) {
         Object (
             height_request: 600,
+            title: _("New Message"),
             transient_for: parent,
             width_request: 680,
             window_position: Gtk.WindowPosition.CENTER_ON_PARENT
@@ -29,9 +30,6 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
     }
 
     construct {
-        var headerbar = new ComposerHeaderBar ();
-        set_titlebar (headerbar);
-
         var to_label = new Gtk.Label (_("To:"));
         to_label.halign = Gtk.Align.END;
         to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
@@ -121,13 +119,35 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         var web_view = new WebView ();
         web_view.editable = true;
 
+        var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
+        discard.margin_start = 6;
+        discard.tooltip_text = _("Delete draft");
+
+        var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
+        attach.tooltip_text = _("Attach file");
+
+        var send_button = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
+        send_button.always_show_image = true;
+        send_button.label = _("Send");
+        send_button.margin = 6;
+        send_button.tooltip_text = _("Send (Ctrl+Enter)");
+        send_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+
+        var action_bar = new Gtk.ActionBar ();
+        action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+        action_bar.pack_start (discard);
+        action_bar.pack_start (attach);
+        action_bar.pack_end (send_button);
+
         var content_grid = new Gtk.Grid ();
         content_grid.orientation = Gtk.Orientation.VERTICAL;
         content_grid.add (recipient_grid);
         content_grid.add (button_row);
         content_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         content_grid.add (web_view);
+        content_grid.add (action_bar);
 
+        get_style_context ().add_class ("rounded");
         add (content_grid);
     }
 }
