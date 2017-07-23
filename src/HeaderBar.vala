@@ -19,11 +19,12 @@
  */
 
 public class Mail.HeaderBar : Gtk.HeaderBar {
-    public Gtk.Grid paned_start_grid { get; construct; }
     public Gtk.SearchEntry search_entry { get; construct; }
+    private Gtk.Grid spacing_widget;
 
     public HeaderBar () {
-        Object (show_close_button: true);
+        Object (show_close_button: true,
+                custom_title: new Gtk.Grid ());
     }
 
     construct {
@@ -32,12 +33,11 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         compose_button.tooltip_text = _("Compose new message (Ctrl+N, N)");
         compose_button.action_name = "win." + MainWindow.ACTION_COMPOSE_MESSAGE;
 
+        spacing_widget = new Gtk.Grid ();
+
         search_entry = new Gtk.SearchEntry ();
         search_entry.placeholder_text = _("Search Mail");
         search_entry.valign = Gtk.Align.CENTER;
-
-        paned_start_grid = new Gtk.Grid ();
-        paned_start_grid.add (compose_button);
 
         var load_images_switch = new Gtk.Switch ();
 
@@ -78,7 +78,8 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         app_menu.popover = app_menu_popover;
         app_menu.tooltip_text = _("Menu");
 
-        pack_start (paned_start_grid);
+        pack_start (compose_button);
+        pack_start (spacing_widget);
         pack_start (search_entry);
         pack_end (app_menu);
 
@@ -87,11 +88,36 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
                 AppInfo.launch_default_for_uri ("settings://accounts/online", null);
             } catch (Error e) {
                 warning ("Failed to open account settings: %s", e.message);
-            }     
+            }
         });
 
         load_images_menuitem.clicked.connect (() => {
             load_images_switch.activate ();
         });
+    }
+
+    public void set_paned_positions (int start_position, int end_position, bool start_changed = true) {
+        search_entry.width_request = end_position - start_position + 1;
+        if (start_changed) {
+            int spacing_position;
+            child_get (spacing_widget, "position", out spacing_position, null);
+            var style_context = get_style_context ();
+            // The left padding between the window and the headerbar widget
+            int offset = style_context.get_padding (style_context.get_state ()).left;
+            forall ((widget) => {
+                if (widget == custom_title || widget.get_style_context ().has_class ("right")) {
+                    return;
+                }
+
+                int widget_position;
+                child_get (widget, "position", out widget_position, null);
+                if (widget_position < spacing_position) {
+                    offset += widget.get_allocated_width () + spacing;
+                }
+            });
+
+            offset += spacing;
+            spacing_widget.width_request = start_position - int.min (offset, start_position);
+        }
     }
 }
