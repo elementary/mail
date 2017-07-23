@@ -120,7 +120,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_compose_message () {
-        new ComposerWindow ().show_all ();
+        new ComposerWindow (this).show_all ();
     }
 
     private void update_search_entry_width () {
