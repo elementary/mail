@@ -99,10 +99,10 @@ public class Mail.WebView : WebKit.WebView {
         if (type == WebKit.PolicyDecisionType.NAVIGATION_ACTION ||
             type == WebKit.PolicyDecisionType.NEW_WINDOW_ACTION) {
             var nav_policy = (WebKit.NavigationPolicyDecision) policy;
-            if (nav_policy.get_navigation_type () == WebKit.NavigationType.LINK_CLICKED) {
-                link_activated (nav_policy.request.uri);
-            } else if (nav_policy.get_navigation_type () == WebKit.NavigationType.OTHER) {
-                if (nav_policy.request.uri == INTERNAL_URL_BODY) {
+            if (nav_policy.navigation_action.get_navigation_type () == WebKit.NavigationType.LINK_CLICKED) {
+                link_activated (nav_policy.navigation_action.get_request ().uri);
+            } else if (nav_policy.navigation_action.get_navigation_type () == WebKit.NavigationType.OTHER) {
+                if (nav_policy.navigation_action.get_request ().uri == INTERNAL_URL_BODY) {
                     policy.use ();
                     return Gdk.EVENT_STOP;
                 }
