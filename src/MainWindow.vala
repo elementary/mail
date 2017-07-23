@@ -128,17 +128,18 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     }
     
     private void update_paned_start_grid_width () {
-        int offset = 0;
+        var style_context = headerbar.get_style_context ();
+        var padding = style_context.get_padding (style_context.get_state ());
+
+        int offset = padding.left;
         headerbar.forall ((widget) => {
             if (widget.get_style_context ().has_class ("left")) {
-                offset = widget.get_allocated_width ();
+                offset += widget.get_allocated_width ();
+                offset += headerbar.spacing;
                 return;
             }
         });
-
-        var style_context = headerbar.get_style_context ();
-        var padding = style_context.get_padding (style_context.get_state ());
-        offset += headerbar.spacing + padding.left + padding.right;
+        offset += headerbar.spacing;
 
         headerbar.paned_start_grid.width_request = paned_start.position - offset;
     }
