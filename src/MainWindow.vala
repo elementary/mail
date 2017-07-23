@@ -137,8 +137,8 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         });
 
         var style_context = headerbar.get_style_context ();
-        int padding = style_context.get_padding (style_context.get_state ()).left;
-        offset += headerbar.spacing + (padding * 2);
+        var padding = style_context.get_padding (style_context.get_state ());
+        offset += headerbar.spacing + padding.left + padding.right;
 
         headerbar.paned_start_grid.width_request = paned_start.position - offset;
     }
