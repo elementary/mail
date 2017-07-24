@@ -28,12 +28,20 @@ public class Mail.WebViewServer : GLib.Object {
 
     public signal void page_load_changed (uint64 page_id);
     public signal void image_loading_enabled (uint64 page_id);
+    public signal void command_executed (uint64 page_id, string command);
+    public signal void query_command_state (uint64 page_id, string command);
 
     [DBus (visible = false)]
     public signal void image_load_blocked (uint64 page_id);
 
     [DBus (visible = false)]
     public signal void page_height_updated (uint64 page_id);
+
+    [DBus (visible = false)]
+    public signal void command_state_updated (uint64 page_id, string command, bool state);
+
+    [DBus (visible = false)]
+    public signal void selection_changed (uint64 page_id);
 
     public WebViewServer () {
         Bus.own_name(BusType.SESSION, "io.elementary.mail.WebViewServer", BusNameOwnerFlags.NONE,
@@ -73,6 +81,19 @@ public class Mail.WebViewServer : GLib.Object {
 
     public void fire_image_load_blocked (uint64 view) {
         image_load_blocked (view);
+    }
+
+    [DBus (visible = false)]
+    public void exec_command (uint64 view, string command) {
+        command_executed (view, command);
+    }
+
+    public void fire_command_state_updated (uint64 view, string command, bool state) {
+        command_state_updated (view, command, state);
+    }
+
+    public void fire_selection_changed (uint64 view) {
+        selection_changed (view);
     }
 
     [DBus (visible = false)]

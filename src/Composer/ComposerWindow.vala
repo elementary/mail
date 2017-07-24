@@ -19,6 +19,23 @@
  */
 
 public class Mail.ComposerWindow : Gtk.ApplicationWindow {
+
+    private const string ACTION_PREFIX = "win.";
+
+    private const string ACTION_BOLD = "bold";
+    private const string ACTION_ITALIC = "italic";
+    private const string ACTION_UNDERLINE = "underline";
+    private const string ACTION_STRIKETHROUGH = "strikethrough";
+
+    private WebView web_view;
+
+    private const ActionEntry[] action_entries = {
+        {ACTION_BOLD,           on_edit_action,     "s",    "''" },
+        {ACTION_ITALIC,         on_edit_action,     "s",    "''" },
+        {ACTION_UNDERLINE,      on_edit_action,     "s",    "''" },
+        {ACTION_STRIKETHROUGH,  on_edit_action,     "s",    "''" }
+    };
+
     public ComposerWindow (Gtk.Window parent) {
         Object (
             height_request: 600,
@@ -30,6 +47,8 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
     }
 
     construct {
+        add_action_entries (action_entries, this);
+
         var to_label = new Gtk.Label (_("To:"));
         to_label.halign = Gtk.Align.END;
         to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
@@ -66,18 +85,26 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         var bold = new Gtk.ToggleButton ();
         bold.tooltip_text = _("Bold (Ctrl+B)");
         bold.image = new Gtk.Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.MENU);
+        bold.action_name = ACTION_PREFIX + ACTION_BOLD;
+        bold.action_target = ACTION_BOLD;
 
         var italic = new Gtk.ToggleButton ();
         italic.tooltip_text = _("Italic (Ctrl+I)");
         italic.image = new Gtk.Image.from_icon_name ("format-text-italic-symbolic", Gtk.IconSize.MENU);
+        italic.action_name = ACTION_PREFIX + ACTION_ITALIC;
+        italic.action_target = ACTION_ITALIC;
 
         var underline = new Gtk.ToggleButton ();
         underline.tooltip_text = _("Underline (Ctrl+U)");
         underline.image = new Gtk.Image.from_icon_name ("format-text-underline-symbolic", Gtk.IconSize.MENU);
+        underline.action_name = ACTION_PREFIX + ACTION_UNDERLINE;
+        underline.action_target = ACTION_UNDERLINE;
 
         var strikethrough = new Gtk.ToggleButton ();
         strikethrough.tooltip_text = _("Strikethrough (Ctrl+%)");
         strikethrough.image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU);
+        strikethrough.action_name = ACTION_PREFIX + ACTION_STRIKETHROUGH;
+        strikethrough.action_target = ACTION_STRIKETHROUGH;
 
         var formatting_buttons = new Gtk.Grid ();
         formatting_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
@@ -116,8 +143,25 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         button_row.add (image);
         button_row.add (clear_format);
 
-        var web_view = new WebView ();
+        web_view = new WebView ();
         web_view.editable = true;
+        web_view.command_state_updated.connect ((command, state) => {
+            switch (command) {
+                case "bold":
+                    change_action_state (ACTION_BOLD, new Variant.string (state ? ACTION_BOLD : ""));
+                    break;
+                case "italic":
+                    change_action_state (ACTION_ITALIC, new Variant.string (state ? ACTION_ITALIC : ""));
+                    break;
+                case "underline":
+                    change_action_state (ACTION_UNDERLINE, new Variant.string (state ? ACTION_UNDERLINE : ""));
+                    break;
+                case "strikethrough":
+                    change_action_state (ACTION_STRIKETHROUGH, new Variant.string (state ? ACTION_STRIKETHROUGH : ""));
+                    break;
+            }
+        });
+        web_view.selection_changed.connect (update_actions);
 
         var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
         discard.margin_start = 6;
@@ -149,5 +193,18 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
 
         get_style_context ().add_class ("rounded");
         add (content_grid);
+    }
+
+    private void on_edit_action (SimpleAction action, Variant? param) {
+        var command = param.get_string ();
+        web_view.execute_editor_command (command);
+        web_view.query_command_state (command);
+    }
+
+    private void update_actions () {
+        web_view.query_command_state ("bold");
+        web_view.query_command_state ("italic");
+        web_view.query_command_state ("underline");
+        web_view.query_command_state ("strikethrough");
     }
 }
