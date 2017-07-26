@@ -46,10 +46,12 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         var bcc_button = new Gtk.ToggleButton.with_label (_("Bcc"));
 
         var to_grid = new Gtk.Grid ();
-        to_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_ENTRY);
         to_grid.add (to_val);
         to_grid.add (cc_button);
         to_grid.add (bcc_button);
+
+        var to_grid_style_context = to_grid.get_style_context ();
+        to_grid_style_context.add_class (Gtk.STYLE_CLASS_ENTRY);
 
         var cc_label = new Gtk.Label (_("Cc:"));
         cc_label.xalign = 1;
@@ -164,6 +166,14 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
                 send_button.sensitive = true;
             } else {
                 send_button.sensitive = false;
+            }
+        });
+
+        to_val.notify["has-focus"].connect (() => {
+            if (to_val.has_focus) {
+                to_grid_style_context.set_state (Gtk.StateFlags.FOCUSED);
+            } else {
+                to_grid_style_context.set_state (Gtk.StateFlags.NORMAL);
             }
         });
     }
