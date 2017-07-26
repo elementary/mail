@@ -26,7 +26,7 @@
     background-color: alpha (@text_color, 0.15);
 }
 
-.entry button:checked {
+.entry button:checked label {
     color: @colorAccent;
     opacity: 1;
 }
