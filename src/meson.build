@@ -8,6 +8,7 @@ vala_files = [
     'Backend/Session.vala',
     'Backend/Account.vala',
     'Composer/ComposerWindow.vala',
+    'Composer/ComposerWidget.vala',
     'FoldersView/AccountSourceItem.vala',
     'FoldersView/FoldersListView.vala',
     'FoldersView/FolderSourceItem.vala',
