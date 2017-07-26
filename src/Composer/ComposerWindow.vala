@@ -114,6 +114,7 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         send_button.always_show_image = true;
         send_button.label = _("Send");
         send_button.margin = 6;
+        send_button.sensitive = false;
         send_button.tooltip_text = _("Send (Ctrl+Enter)");
         send_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
@@ -145,6 +146,14 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
             bcc_revealer.reveal_child = bcc_button.active;
             if (bcc_button.active == false) {
                 bcc_val.text = "";
+            }
+        });
+
+        to_val.changed.connect (() => {
+            if (to_val.text != "") {
+                send_button.sensitive = true;
+            } else {
+                send_button.sensitive = false;
             }
         });
     }
