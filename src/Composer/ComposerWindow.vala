@@ -137,15 +137,25 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
 
         cc_button.clicked.connect (() => {
             cc_revealer.reveal_child = cc_button.active;
-            if (cc_button.active == false) {
-                cc_val.text = "";
+        });
+
+        cc_val.changed.connect (() => {
+            if (cc_val.text == "") {
+                cc_button.sensitive = true;
+            } else {
+                cc_button.sensitive = false;
             }
         });
 
         bcc_button.clicked.connect (() => {
             bcc_revealer.reveal_child = bcc_button.active;
-            if (bcc_button.active == false) {
-                bcc_val.text = "";
+        });
+
+        bcc_val.changed.connect (() => {
+            if (bcc_val.text == "") {
+                bcc_button.sensitive = true;
+            } else {
+                bcc_button.sensitive = false;
             }
         });
 

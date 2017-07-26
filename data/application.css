@@ -31,6 +31,10 @@
     opacity: 1;
 }
 
+.entry button:disabled label {
+    opacity: 0.5;
+}
+
 .unread-message {
     font-weight: bolder;
 }
