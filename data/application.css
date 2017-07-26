@@ -6,6 +6,27 @@
     box-shadow: 0 -1px 0 @menu_separator;
 }
 
+.entry button,
+.entry entry {
+	border: none;
+	box-shadow: none;
+	background: none;
+	padding: 0;
+}
+
+.entry button {
+    opacity: 0.6;
+}
+
+.entry button:hover {
+    opacity: 1;
+}
+
+.entry button:checked {
+    color: @colorAccent;
+    opacity: 1;
+}
+
 .unread-message {
     font-weight: bolder;
 }
