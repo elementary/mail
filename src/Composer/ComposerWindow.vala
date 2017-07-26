@@ -169,12 +169,15 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
             }
         });
 
-        to_val.notify["has-focus"].connect (() => {
+        to_val.get_style_context ().changed.connect (() => {
+            var state = to_grid_style_context.get_state ();
             if (to_val.has_focus) {
-                to_grid_style_context.set_state (Gtk.StateFlags.FOCUSED);
+                state |= Gtk.StateFlags.FOCUSED;
             } else {
-                to_grid_style_context.set_state (Gtk.StateFlags.NORMAL);
+                state ^= Gtk.StateFlags.FOCUSED;
             }
+
+            to_grid_style_context.set_state (state);
         });
     }
 }
