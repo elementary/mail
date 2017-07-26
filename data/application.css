@@ -14,12 +14,16 @@
 	padding: 0;
 }
 
-.entry button {
+.entry button label {
     opacity: 0.6;
 }
 
-.entry button:hover {
+.entry button:hover label {
     opacity: 1;
+}
+
+.entry button:focus {
+    background-color: alpha (@text_color, 0.15);
 }
 
 .entry button:checked {
