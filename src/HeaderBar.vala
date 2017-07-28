@@ -79,7 +79,6 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         app_menu.tooltip_text = _("Menu");
 
         var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR);
-        reply_button.halign = Gtk.Align.START;
         reply_button.tooltip_text = _("Reply (Ctrl+R, R)");
         reply_button.action_name = "win." + MainWindow.ACTION_REPLY;
 
