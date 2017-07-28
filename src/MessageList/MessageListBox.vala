@@ -68,6 +68,6 @@ public class Mail.MessageListBox : Gtk.ListBox {
     }
 
     public void reply () {
-        prepend (new InlineComposer ());
+        add (new InlineComposer ());
     }
 }

@@ -134,8 +134,16 @@ public class Mail.MainWindow : Gtk.Window {
     }
 
     private void on_reply () {
+        // Adding the inline composer then trying to scroll to the bottom doesn't work as
+        // the scrolled window doesn't resize instantly. So connect a one time signal to
+        // scroll to the bottom when the inline composer is added
+        var adjustment = message_list_scrolled.get_vadjustment ();
+        ulong changed_id = 0;
+        changed_id = adjustment.changed.connect (() => {
+            adjustment.set_value (adjustment.get_upper ());
+            adjustment.disconnect (changed_id);
+        });
         message_list_box.reply ();
-        message_list_scrolled.get_vadjustment ().set_value (0);
     }
 
     private SimpleAction? get_action (string name) {
