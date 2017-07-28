@@ -25,15 +25,13 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
 
         get_style_context ().add_class ("card");
 
-        var actions = new ComposerActions ();
-        var composer = new ComposerWidget (actions);
+        var composer = new ComposerWidget ();
         composer.margin_top = 6;
         composer.has_recipients = true;
 
         var content_grid = new Gtk.Grid ();
         content_grid.orientation = Gtk.Orientation.VERTICAL;
         content_grid.add (composer);
-        content_grid.add (actions);
 
         add (content_grid);
 

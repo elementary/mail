@@ -63,14 +63,12 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         recipient_grid.attach (subject_label, 0, 2, 1, 1);
         recipient_grid.attach (subject_val, 1, 2, 1, 1);
 
-        var actions = new ComposerActions ();
-        var composer_widget = new ComposerWidget (actions);
+        var composer_widget = new ComposerWidget ();
 
         var content_grid = new Gtk.Grid ();
         content_grid.orientation = Gtk.Orientation.VERTICAL;
         content_grid.add (recipient_grid);
         content_grid.add (composer_widget);
-        content_grid.add (actions);
 
         get_style_context ().add_class ("rounded");
         add (content_grid);
