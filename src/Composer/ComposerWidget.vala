@@ -19,6 +19,27 @@
  */
 
 public class Mail.ComposerWidget : Gtk.Grid {
+    private ComposerActions composer_actions;
+
+    private bool _has_recipients;
+    public bool has_recipients {
+        get {
+            return _has_recipients;
+        }
+        set {
+            _has_recipients = value;
+            update_send_sensitivity ();
+        }
+    }
+
+    private void update_send_sensitivity () {
+        composer_actions.send.sensitive = has_recipients;
+    }
+
+    public ComposerWidget (ComposerActions composer_actions) {
+        this.composer_actions = composer_actions;
+    }
+
     construct {
         var bold = new Gtk.ToggleButton ();
         bold.tooltip_text = _("Bold (Ctrl+B)");

@@ -66,4 +66,8 @@ public class Mail.MessageListBox : Gtk.ListBox {
             current_node = (Camel.FolderThreadNode?) current_node.child;
         }
     }
+
+    public void reply () {
+        prepend (new InlineComposer ());
+    }
 }

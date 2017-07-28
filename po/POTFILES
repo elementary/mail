@@ -5,8 +5,11 @@ src/WebView.vala
 src/WebViewServer.vala
 src/Backend/Account.vala
 src/Backend/Session.vala
-src/Composer/ComposerWindow.vala
+src/Composer/AbstractComposerActions.vala
 src/Composer/ComposerWidget.vala
+src/Composer/ComposerWindow.vala
+src/Composer/ComposerWindowActions.vala
+src/Composer/InlineComposer.vala
 src/ConversationList/ConversationListBox.vala
 src/ConversationList/ConversationListItem.vala
 src/Dialogs/OpenAttachmentDialog.vala

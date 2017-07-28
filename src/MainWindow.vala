@@ -18,19 +18,24 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.MainWindow : Gtk.ApplicationWindow {
+public class Mail.MainWindow : Gtk.Window {
     private HeaderBar headerbar;
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
     
-    FoldersListView folders_list_view;
-    ConversationListBox conversation_list_box;
-    MessageListBox message_list_box;
+    private FoldersListView folders_list_view;
+    private ConversationListBox conversation_list_box;
+    private MessageListBox message_list_box;
+    private Gtk.ScrolledWindow message_list_scrolled;
+
+    private SimpleActionGroup actions;
 
     public const string ACTION_COMPOSE_MESSAGE = "compose_message";
+    public const string ACTION_REPLY = "reply";
 
     private const ActionEntry[] action_entries = {
-        {ACTION_COMPOSE_MESSAGE,   on_compose_message   },
+        {ACTION_COMPOSE_MESSAGE,    on_compose_message   },
+        {ACTION_REPLY,              on_reply             }
     };
 
     public MainWindow () {
@@ -42,7 +47,11 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     }
 
     construct {
-        add_action_entries (action_entries, this);
+        actions = new SimpleActionGroup ();
+        actions.add_action_entries (action_entries, this);
+        insert_action_group ("win", actions);
+
+        get_action (ACTION_REPLY).set_enabled (false);
 
         headerbar = new HeaderBar ();
         set_titlebar (headerbar);
@@ -56,7 +65,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         conversation_list_scrolled.width_request = 158;
         conversation_list_scrolled.add (conversation_list_box);
 
-        var message_list_scrolled = new Gtk.ScrolledWindow (null, null);
+        message_list_scrolled = new Gtk.ScrolledWindow (null, null);
         message_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         message_list_scrolled.add (message_list_box);
         // Prevent the focus of the webview causing the ScrolledWindow to scroll
@@ -102,6 +111,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
         conversation_list_box.conversation_selected.connect ((node) => {
             message_list_box.set_conversation (node);
+            get_action (ACTION_REPLY).set_enabled (true);
         });
 
         headerbar.size_allocate.connect (() => {
@@ -121,5 +131,14 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
     private void on_compose_message () {
         new ComposerWindow (this).show_all ();
+    }
+
+    private void on_reply () {
+        message_list_box.reply ();
+        message_list_scrolled.get_vadjustment ().set_value (0);
+    }
+
+    private SimpleAction? get_action (string name) {
+        return actions.lookup_action (name) as SimpleAction;
     }
 }
