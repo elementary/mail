@@ -29,11 +29,7 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
         composer.margin_top = 6;
         composer.has_recipients = true;
 
-        var content_grid = new Gtk.Grid ();
-        content_grid.orientation = Gtk.Orientation.VERTICAL;
-        content_grid.add (composer);
-
-        add (content_grid);
+        add (composer);
 
         map.connect (() => {
             var viewport = get_parent ().get_parent ();
