@@ -18,7 +18,7 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public abstract class Mail.ComposerActions : Object {
+public class Mail.ComposerActions : Object {
     public Gtk.Button send;
     public Gtk.Button attach;
     public Gtk.Button discard;
