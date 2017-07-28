@@ -18,25 +18,31 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class Mail.ComposerActions : Object {
+public class Mail.ComposerActions : Gtk.ActionBar {
     public Gtk.Button send;
     public Gtk.Button attach;
     public Gtk.Button discard;
 
-    public Gtk.Widget container;
-
     construct {
         discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
+        discard.margin_start = 6;
         discard.tooltip_text = _("Delete draft");
 
         attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
         attach.tooltip_text = _("Attach file");
 
         send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
+        send.margin = 6;
         send.sensitive = false;
         send.always_show_image = true;
         send.label = _("Send");
         send.tooltip_text = _("Send (Ctrl+Enter)");
         send.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+
+        get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+
+        pack_start (discard);
+        pack_start (attach);
+        pack_end (send);
     }
 }
