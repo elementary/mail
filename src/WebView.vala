@@ -23,6 +23,8 @@ public extern const string WEBKIT_EXTENSION_PATH;
 public class Mail.WebView : WebKit.WebView {
     public signal void image_load_blocked ();
     public signal void link_activated (string url);
+    public signal void command_state_updated (string command, bool state);
+    public signal void selection_changed ();
 
     private const string INTERNAL_URL_BODY = "elementary-mail:body";
 
@@ -58,6 +60,16 @@ public class Mail.WebView : WebKit.WebView {
         view_manager.image_load_blocked.connect ((page_id) => {
             if (page_id == get_page_id ()) {
                 image_load_blocked ();
+            }
+        });
+        view_manager.command_state_updated.connect ((page_id, command, state) => {
+            if (page_id == get_page_id ()) {
+                command_state_updated (command, state);
+            }
+        });
+        view_manager.selection_changed.connect ((page_id) => {
+            if (page_id == get_page_id ()) {
+                selection_changed ();
             }
         });
 
@@ -119,6 +131,14 @@ public class Mail.WebView : WebKit.WebView {
 
     public void load_images () {
         view_manager.set_load_images (get_page_id (), true);
+    }
+
+    public void execute_editor_command (string command) {
+        view_manager.exec_command (get_page_id (), command);
+    }
+
+    public void query_command_state (string command) {
+        view_manager.query_command_state (get_page_id (), command);
     }
 
     private void handle_cid_request (WebKit.URISchemeRequest request) {

@@ -27,6 +27,12 @@ namespace MailWebViewExtension {
         public abstract void fire_image_load_blocked (uint64 page_id);
         public signal void image_loading_enabled (uint64 page_id);
         public abstract bool get_load_images (uint64 view);
+
+        public signal void command_executed (uint64 view, string command);
+        public signal void query_command_state (uint64 view, string command);
+        public abstract void fire_command_state_updated (uint64 view, string command, bool state);
+
+        public abstract void fire_selection_changed (uint64 view);
     }
 }
 
@@ -46,6 +52,8 @@ public class DOMServer : Object {
         }
         ui_process.page_load_changed.connect (on_page_load_changed);
         ui_process.image_loading_enabled.connect (on_image_loading_enabled);
+        ui_process.command_executed.connect (on_command_executed);
+        ui_process.query_command_state.connect (on_query_command_state);
     }
 
     private void on_page_load_changed (uint64 page_id) {
@@ -70,6 +78,9 @@ public class DOMServer : Object {
 
     public void on_page_created (WebKit.WebExtension extension, WebKit.WebPage page) {
         page.send_request.connect (on_send_request);
+        page.get_editor ().selection_changed.connect (() => {
+            ui_process.fire_selection_changed (page.get_id ());
+        });
     }
 
     private bool on_send_request (WebKit.WebPage page, WebKit.URIRequest request, WebKit.URIResponse? response) {
@@ -87,6 +98,23 @@ public class DOMServer : Object {
         }
 
         return should_load ? Gdk.EVENT_PROPAGATE : Gdk.EVENT_STOP;
+    }
+
+    private void on_command_executed (uint64 view, string command) {
+        var page = extension.get_page (view);
+        if (page != null) {
+            var document = page.get_dom_document ();
+            document.exec_command (command, false, "");
+        }
+    }
+
+    private void on_query_command_state (uint64 view, string command) {
+        var page = extension.get_page (view);
+        if (page != null) {
+            var document = page.get_dom_document ();
+            var state = document.query_command_state (command);
+            ui_process.fire_command_state_updated (view, command, state);
+        }
     }
 }
 
