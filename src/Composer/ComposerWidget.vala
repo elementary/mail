@@ -29,6 +29,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
     private WebView web_view;
     private SimpleActionGroup actions;
+    private Gtk.Button send;
 
     public const ActionEntry[] action_entries = {
         {ACTION_BOLD,           on_edit_action,     "s",    "''" },
@@ -36,6 +37,21 @@ public class Mail.ComposerWidget : Gtk.Grid {
         {ACTION_UNDERLINE,      on_edit_action,     "s",    "''" },
         {ACTION_STRIKETHROUGH,  on_edit_action,     "s",    "''" }
     };
+
+    private bool _has_recipients;
+    public bool has_recipients {
+        get {
+            return _has_recipients;
+        }
+        set {
+            _has_recipients = value;
+            update_send_sensitivity ();
+        }
+    }
+
+    private void update_send_sensitivity () {
+        send.sensitive = has_recipients;
+    }
 
     construct {
         actions = new SimpleActionGroup ();
@@ -123,6 +139,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
         });
         web_view.selection_changed.connect (update_actions);
 
+        var action_bar = new Gtk.ActionBar ();
+
         var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
         discard.margin_start = 6;
         discard.tooltip_text = _("Delete draft");
@@ -130,18 +148,19 @@ public class Mail.ComposerWidget : Gtk.Grid {
         var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
         attach.tooltip_text = _("Attach file");
 
-        var send_button = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
-        send_button.always_show_image = true;
-        send_button.label = _("Send");
-        send_button.margin = 6;
-        send_button.tooltip_text = _("Send (Ctrl+Enter)");
-        send_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
+        send.margin = 6;
+        send.sensitive = false;
+        send.always_show_image = true;
+        send.label = _("Send");
+        send.tooltip_text = _("Send (Ctrl+Enter)");
+        send.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        var action_bar = new Gtk.ActionBar ();
         action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+
         action_bar.pack_start (discard);
         action_bar.pack_start (attach);
-        action_bar.pack_end (send_button);
+        action_bar.pack_end (send);
 
         orientation = Gtk.Orientation.VERTICAL;
         add (button_row);

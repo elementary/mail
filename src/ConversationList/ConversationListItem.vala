@@ -59,6 +59,7 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
 
     construct {
         var unread_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic", Gtk.IconSize.MENU);
+        unread_icon.get_style_context ().add_class ("attention");
         unread_icon_revealer = new Gtk.Revealer ();
         unread_icon_revealer.add (unread_icon);
 
