@@ -19,6 +19,23 @@
  */
 
 public class Mail.ComposerWidget : Gtk.Grid {
+    private Gtk.Button send;
+
+    private bool _has_recipients;
+    public bool has_recipients {
+        get {
+            return _has_recipients;
+        }
+        set {
+            _has_recipients = value;
+            update_send_sensitivity ();
+        }
+    }
+
+    private void update_send_sensitivity () {
+        send.sensitive = has_recipients;
+    }
+
     construct {
         var bold = new Gtk.ToggleButton ();
         bold.tooltip_text = _("Bold (Ctrl+B)");
@@ -76,9 +93,33 @@ public class Mail.ComposerWidget : Gtk.Grid {
         var web_view = new WebView ();
         web_view.editable = true;
 
+        var action_bar = new Gtk.ActionBar ();
+
+        var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
+        discard.margin_start = 6;
+        discard.tooltip_text = _("Delete draft");
+
+        var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
+        attach.tooltip_text = _("Attach file");
+
+        send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
+        send.margin = 6;
+        send.sensitive = false;
+        send.always_show_image = true;
+        send.label = _("Send");
+        send.tooltip_text = _("Send (Ctrl+Enter)");
+        send.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+
+        action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+
+        action_bar.pack_start (discard);
+        action_bar.pack_start (attach);
+        action_bar.pack_end (send);
+
         orientation = Gtk.Orientation.VERTICAL;
         add (button_row);
         add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         add (web_view);
+        add (action_bar);
     }
 }
