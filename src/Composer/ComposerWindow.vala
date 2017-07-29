@@ -19,7 +19,6 @@
  */
 
 public class Mail.ComposerWindow : Gtk.ApplicationWindow {
-
     public ComposerWindow (Gtk.Window parent) {
         Object (
             height_request: 600,
