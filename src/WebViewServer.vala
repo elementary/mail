@@ -28,7 +28,7 @@ public class Mail.WebViewServer : GLib.Object {
 
     public signal void page_load_changed (uint64 page_id);
     public signal void image_loading_enabled (uint64 page_id);
-    public signal void command_executed (uint64 page_id, string command);
+    public signal void command_executed (uint64 page_id, string command, string argument);
     public signal void query_command_state (uint64 page_id, string command);
 
     [DBus (visible = false)]
@@ -84,8 +84,8 @@ public class Mail.WebViewServer : GLib.Object {
     }
 
     [DBus (visible = false)]
-    public void exec_command (uint64 view, string command) {
-        command_executed (view, command);
+    public void exec_command (uint64 view, string command, string argument) {
+        command_executed (view, command, argument);
     }
 
     public void fire_command_state_updated (uint64 view, string command, bool state) {

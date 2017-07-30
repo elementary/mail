@@ -133,8 +133,8 @@ public class Mail.WebView : WebKit.WebView {
         view_manager.set_load_images (get_page_id (), true);
     }
 
-    public void execute_editor_command (string command) {
-        view_manager.exec_command (get_page_id (), command);
+    public void execute_editor_command (string command, string argument = "") {
+        view_manager.exec_command (get_page_id (), command, argument);
     }
 
     public void query_command_state (string command) {

@@ -28,7 +28,7 @@ namespace MailWebViewExtension {
         public signal void image_loading_enabled (uint64 page_id);
         public abstract bool get_load_images (uint64 view);
 
-        public signal void command_executed (uint64 view, string command);
+        public signal void command_executed (uint64 view, string command, string argument);
         public signal void query_command_state (uint64 view, string command);
         public abstract void fire_command_state_updated (uint64 view, string command, bool state);
 
@@ -100,11 +100,11 @@ public class DOMServer : Object {
         return should_load ? Gdk.EVENT_PROPAGATE : Gdk.EVENT_STOP;
     }
 
-    private void on_command_executed (uint64 view, string command) {
+    private void on_command_executed (uint64 view, string command, string argument) {
         var page = extension.get_page (view);
         if (page != null) {
             var document = page.get_dom_document ();
-            document.exec_command (command, false, "");
+            document.exec_command (command, false, argument);
         }
     }
 

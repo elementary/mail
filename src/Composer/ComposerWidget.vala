@@ -26,16 +26,18 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private const string ACTION_ITALIC = "italic";
     private const string ACTION_UNDERLINE = "underline";
     private const string ACTION_STRIKETHROUGH = "strikethrough";
+    private const string ACTION_REMOVE_FORMAT = "remove_formatting";
 
     private WebView web_view;
     private SimpleActionGroup actions;
     private Gtk.Button send;
 
     public const ActionEntry[] action_entries = {
-        {ACTION_BOLD,           on_edit_action,     "s",    "''" },
-        {ACTION_ITALIC,         on_edit_action,     "s",    "''" },
-        {ACTION_UNDERLINE,      on_edit_action,     "s",    "''" },
-        {ACTION_STRIKETHROUGH,  on_edit_action,     "s",    "''" }
+        {ACTION_BOLD,           on_edit_action,    "s",    "''"     },
+        {ACTION_ITALIC,         on_edit_action,    "s",    "''"     },
+        {ACTION_UNDERLINE,      on_edit_action,    "s",    "''"     },
+        {ACTION_STRIKETHROUGH,  on_edit_action,    "s",    "''"     },
+        {ACTION_REMOVE_FORMAT,  on_remove_format                    }
     };
 
     private bool _has_recipients;
@@ -108,6 +110,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU);
         clear_format.tooltip_text = _("Remove formatting (Ctrl+Space)");
+        clear_format.action_name = ACTION_PREFIX + ACTION_REMOVE_FORMAT;
 
         var button_row = new Gtk.Grid ();
         button_row.column_spacing = 6;
@@ -173,6 +176,14 @@ public class Mail.ComposerWidget : Gtk.Grid {
         var command = param.get_string ();
         web_view.execute_editor_command (command);
         web_view.query_command_state (command);
+    }
+
+    private void on_remove_format () {
+        web_view.execute_editor_command ("removeformat");
+        web_view.execute_editor_command ("removeparaformat");
+        web_view.execute_editor_command ("unlink");
+        web_view.execute_editor_command ("backcolor", "#ffffff");
+        web_view.execute_editor_command ("forecolor", "#000000");
     }
 
     private void update_actions () {
