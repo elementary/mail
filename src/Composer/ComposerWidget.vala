@@ -180,10 +180,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
     private void on_remove_format () {
         web_view.execute_editor_command ("removeformat");
-        web_view.execute_editor_command ("removeparaformat");
         web_view.execute_editor_command ("unlink");
-        web_view.execute_editor_command ("backcolor", "#ffffff");
-        web_view.execute_editor_command ("forecolor", "#000000");
     }
 
     private void update_actions () {
