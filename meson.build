@@ -12,6 +12,7 @@ libedataserver_dep = dependency('libedataserver-1.2')
 libedataserverui_dep = dependency('libedataserverui-1.2')
 webkit2_dep = dependency('webkit2gtk-4.0')
 webkit2_web_extension_dep = dependency('webkit2gtk-web-extension-4.0')
+folks_dep = dependency('folks')
 
 webkit2_extension_path = join_paths(get_option('prefix'), get_option('libdir'), 'io.elementary.mail', 'webkit2')
 
@@ -23,7 +24,8 @@ dependencies = [
     camel_dep,
     libedataserver_dep,
     libedataserverui_dep,
-    webkit2_dep
+    webkit2_dep,
+    folks_dep
 ]
 
 asresources = gnome.compile_resources(
