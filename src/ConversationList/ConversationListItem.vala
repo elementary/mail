@@ -31,30 +31,7 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
     public Camel.FolderThreadNode node { get; private set; }
 
     public ConversationListItem (Camel.FolderThreadNode node) {
-        this.node = node;
-        var num_messages = count_thread_messages (node);
-
-        messages.label = num_messages > 1 ? "%u".printf(num_messages) : null;
-        messages.no_show_all = num_messages <= 1;
-        messages.visible = num_messages > 1;
-
-        topic.label = node.message.subject;
-
-        var from_parts = node.message.from.split ("<");
-        var from_name = GLib.Markup.escape_text (from_parts[0].strip ());
-
-        source.label = from_name;
-
-        if (!(Camel.MessageFlags.SEEN in (int)node.message.flags)) {
-            get_style_context ().add_class ("unread-message");
-            unread_icon_revealer.reveal_child = true;
-        }
-
-        if (Camel.MessageFlags.FLAGGED in (int)node.message.flags) {
-            flagged_icon_revealer.reveal_child = true;
-        }
-
-        date.label = get_relative_datetime (new DateTime.from_unix_local (node.message.date_received));
+        update_node (node);
     }
 
     construct {
@@ -103,6 +80,35 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
         add (grid);
 
         show_all ();
+    }
+
+    public void update_node (Camel.FolderThreadNode node) {
+        this.node = node;
+        var num_messages = count_thread_messages (node);
+
+        messages.label = num_messages > 1 ? "%u".printf(num_messages) : null;
+        messages.no_show_all = num_messages <= 1;
+        messages.visible = num_messages > 1;
+
+        topic.label = node.message.subject;
+
+        var from_parts = node.message.from.split ("<");
+        var from_name = GLib.Markup.escape_text (from_parts[0].strip ());
+
+        source.label = from_name;
+
+        if (!(Camel.MessageFlags.SEEN in (int)node.message.flags)) {
+            get_style_context ().add_class ("unread-message");
+            unread_icon_revealer.reveal_child = true;
+        } else {
+            get_style_context ().remove_class ("unread-message");
+        }
+
+        if (Camel.MessageFlags.FLAGGED in (int)node.message.flags) {
+            flagged_icon_revealer.reveal_child = true;
+        }
+
+        date.label = get_relative_datetime (new DateTime.from_unix_local (node.message.date_received));
     }
 
     private static uint count_thread_messages (Camel.FolderThreadNode node) {
