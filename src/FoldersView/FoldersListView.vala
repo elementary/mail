@@ -34,7 +34,10 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
         source_list = new Granite.Widgets.SourceList ();
         add (source_list);
         var session = Mail.Backend.Session.get_default ();
-        session.get_accounts ().foreach ((account) => {add_account (account); return true;});
+        session.get_accounts ().foreach ((account) => {
+            add_account (account);
+            return true;
+        });
 
         session.account_added.connect (add_account);
         source_list.item_selected.connect ((item) => {
