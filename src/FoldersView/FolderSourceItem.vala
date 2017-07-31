@@ -20,42 +20,15 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.FolderSourceItem : Granite.Widgets.SourceList.Item {
+public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
+    public signal void refresh ();
+
     public string full_name;
 
-    public FolderSourceItem (Camel.FolderInfo folderinfo) {
-        name = folderinfo.display_name;
-        full_name = folderinfo.full_name;
-        if (folderinfo.unread > 0) {
-            badge = "%d".printf (folderinfo.unread);
-        }
+    private bool can_modify = true;
 
-        switch (folderinfo.flags & Camel.FOLDER_TYPE_MASK) {
-            case Camel.FolderInfoFlags.TYPE_INBOX:
-                icon = new ThemedIcon ("mail-inbox");
-                break;
-            case Camel.FolderInfoFlags.TYPE_OUTBOX:
-                icon = new ThemedIcon ("mail-outbox");
-                break;
-            case Camel.FolderInfoFlags.TYPE_TRASH:
-                icon = new ThemedIcon (folderinfo.total == 0 ? "user-trash" : "user-trash-full");
-                break;
-            case Camel.FolderInfoFlags.TYPE_JUNK:
-                icon = new ThemedIcon ("edit-flag");
-                break;
-            case Camel.FolderInfoFlags.TYPE_SENT:
-                icon = new ThemedIcon ("mail-sent");
-                break;
-            case Camel.FolderInfoFlags.TYPE_ARCHIVE:
-                icon = new ThemedIcon ("mail-archive");
-                break;
-            case Camel.FolderInfoFlags.TYPE_DRAFTS:
-                icon = new ThemedIcon ("folder-documents");
-                break;
-            default:
-                icon = new ThemedIcon ("folder");
-                break;
-        }
+    public FolderSourceItem (Camel.FolderInfo folderinfo) {
+        update_infos (folderinfo);
     }
 
     public Backend.Account? get_account () {
@@ -67,7 +40,62 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.Item {
 
             exp_parent = exp_parent.parent;
         }
-        
+
         return null;
+    }
+
+    public override Gtk.Menu? get_context_menu () {
+        var menu = new Gtk.Menu ();
+        var refresh_item = new Gtk.MenuItem.with_label (_("Refresh folder"));
+        menu.add (refresh_item);
+        menu.show_all ();
+
+        refresh_item.activate.connect (() => refresh ());
+        return menu;
+    }
+
+    public void update_infos (Camel.FolderInfo folderinfo) {
+        name = folderinfo.display_name;
+        full_name = folderinfo.full_name;
+        if (folderinfo.unread > 0) {
+            badge = "%d".printf (folderinfo.unread);
+        }
+
+        switch (folderinfo.flags & Camel.FOLDER_TYPE_MASK) {
+            case Camel.FolderInfoFlags.TYPE_INBOX:
+                icon = new ThemedIcon ("mail-inbox");
+                can_modify = false;
+                break;
+            case Camel.FolderInfoFlags.TYPE_OUTBOX:
+                icon = new ThemedIcon ("mail-outbox");
+                can_modify = false;
+                break;
+            case Camel.FolderInfoFlags.TYPE_TRASH:
+                icon = new ThemedIcon (folderinfo.total == 0 ? "user-trash" : "user-trash-full");
+                can_modify = false;
+                badge = null;
+                break;
+            case Camel.FolderInfoFlags.TYPE_JUNK:
+                icon = new ThemedIcon ("edit-flag");
+                can_modify = false;
+                break;
+            case Camel.FolderInfoFlags.TYPE_SENT:
+                icon = new ThemedIcon ("mail-sent");
+                can_modify = false;
+                break;
+            case Camel.FolderInfoFlags.TYPE_ARCHIVE:
+                icon = new ThemedIcon ("mail-archive");
+                can_modify = false;
+                badge = null;
+                break;
+            case Camel.FolderInfoFlags.TYPE_DRAFTS:
+                icon = new ThemedIcon ("folder-documents");
+                can_modify = false;
+                break;
+            default:
+                icon = new ThemedIcon ("folder");
+                can_modify = true;
+                break;
+        }
     }
 }

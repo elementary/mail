@@ -34,16 +34,12 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
         source_list = new Granite.Widgets.SourceList ();
         add (source_list);
         var session = Mail.Backend.Session.get_default ();
-        foreach (var account in session.get_accounts ()) {
-            var account_item = new Mail.AccountSourceItem (account);
-            source_list.root.add (account_item);
-        }
-
-        session.account_added.connect ((account) => {
-            var account_item = new Mail.AccountSourceItem (account);
-            source_list.root.add (account_item);
+        session.get_accounts ().foreach ((account) => {
+            add_account (account);
+            return true;
         });
 
+        session.account_added.connect (add_account);
         source_list.item_selected.connect ((item) => {
             if (item == null || !(item is FolderSourceItem)) {
                 return;
@@ -52,5 +48,10 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
             var folder_item = item as FolderSourceItem;
             folder_selected (folder_item.get_account (), folder_item.full_name);
         });
+    }
+
+    private void add_account (Mail.Backend.Account account) {
+        var account_item = new Mail.AccountSourceItem (account);
+        source_list.root.add (account_item);
     }
 }

@@ -27,11 +27,14 @@ public class Mail.ConversationListBox : Gtk.ListBox {
     private string current_folder;
     private Backend.Account current_account;
     private GLib.Cancellable? cancellable = null;
+    private Camel.Folder folder;
     private Camel.FolderThread thread;
+    private Gee.HashMap<string, ConversationListItem> conversations;
 
     construct {
         selection_mode = Gtk.SelectionMode.MULTIPLE;
         activate_on_single_click = true;
+        conversations = new Gee.HashMap<string, ConversationListItem> ();
         set_sort_func (thread_sort_function);
         row_activated.connect ((row) => {
             conversation_focused (((ConversationListItem) row).node);
@@ -48,24 +51,69 @@ public class Mail.ConversationListBox : Gtk.ListBox {
             cancellable.cancel ();
         }
 
-        get_children ().foreach ((child) => {
-            child.destroy ();
-        });
+        lock (conversations) {
+            conversations.clear ();
+            get_children ().foreach ((child) => {
+                child.destroy ();
+            });
 
-        cancellable = new GLib.Cancellable ();
-        try {
-            Camel.Folder? folder = yield ((Camel.Store) current_account.service).get_folder (current_folder, Camel.StoreGetFolderFlags.BODY_INDEX, GLib.Priority.DEFAULT, cancellable);
-            /*yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);*/
-            thread = new Camel.FolderThread (folder, folder.get_uids (), false);
+            cancellable = new GLib.Cancellable ();
+            try {
+                folder = yield ((Camel.Store) current_account.service).get_folder (current_folder, 0, GLib.Priority.DEFAULT, cancellable);
+                folder.changed.connect ((change_info) => folder_changed (change_info, cancellable));
+                thread = new Camel.FolderThread (folder, folder.get_uids (), false);
+                unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.tree;
+                while (child != null) {
+                    if (cancellable.is_cancelled ()) {
+                        break;
+                    }
+
+                    add_conversation_item (child);
+                    child = (Camel.FolderThreadNode?) child.next;
+                }
+
+                yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
+            } catch (Error e) {
+                critical (e.message);
+            }
+        }
+    }
+
+    private void folder_changed (Camel.FolderChangeInfo change_info, GLib.Cancellable cancellable) {
+        if (cancellable.is_cancelled ())
+            return;
+
+        lock (conversations) {
+            thread.apply (folder.get_uids ());
+            change_info.get_removed_uids ().foreach ((uid) => {
+                var item = conversations[uid];
+                if (item != null) {
+                    conversations.unset (uid);
+                    item.destroy ();
+                }
+            });
+
             unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.tree;
             while (child != null) {
-                var item = new ConversationListItem (child);
-                add (item);
+                if (cancellable.is_cancelled ())
+                    return;
+
+                var item = conversations[child.message.uid];
+                if (item == null) {
+                    add_conversation_item (child);
+                } else {
+                    item.update_node (child);
+                }
+
                 child = (Camel.FolderThreadNode?) child.next;
             }
-        } catch (Error e) {
-            critical (e.message);
         }
+    }
+
+    private void add_conversation_item (Camel.FolderThreadNode child) {
+        var item = new ConversationListItem (child);
+        conversations[child.message.uid] = item;
+        add (item);
     }
 
     private static int thread_sort_function (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {

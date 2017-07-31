@@ -24,6 +24,7 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
     public Mail.Backend.Account account { get; construct; }
 
     private GLib.Cancellable connect_cancellable;
+    private Gee.HashMap<string, FolderSourceItem> folder_items;
 
     public AccountSourceItem (Mail.Backend.Account account) {
         Object (account: account);
@@ -32,13 +33,14 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
     construct {
         visible = true;
         connect_cancellable = new GLib.Cancellable ();
+        folder_items = new Gee.HashMap<string, FolderSourceItem> ();
 
         var offlinestore = (Camel.OfflineStore) account.service;
         name = offlinestore.display_name;
-        offlinestore.folder_created.connect ((folder_info) => {critical ("");});
-        offlinestore.folder_deleted.connect ((folder_info) => {critical ("");});
-        offlinestore.folder_info_stale.connect (() => {critical ("");});
-        offlinestore.folder_renamed.connect ((old_name, folder_info) => {critical ("");});
+        offlinestore.folder_created.connect (folder_created);
+        offlinestore.folder_deleted.connect (folder_deleted);
+        offlinestore.folder_info_stale.connect (reload_folders);
+        offlinestore.folder_renamed.connect (folder_renamed);
         var task = new GLib.Task (offlinestore, connect_cancellable, (source, task) => {
             account_is_online.begin ((Camel.OfflineStore) source);
         });
@@ -57,24 +59,77 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
             if (folderinfo != null) {
                 show_info (folderinfo, this);
             }
+
+            yield offlinestore.synchronize (false, GLib.Priority.DEFAULT, connect_cancellable);
         } catch (Error e) {
             critical (e.message);
         }
     }
 
-    private static void show_info (Camel.FolderInfo? _folderinfo, Granite.Widgets.SourceList.ExpandableItem item) {
+    private void folder_renamed (string old_name, Camel.FolderInfo folder_info) {
+        var item = folder_items[old_name];
+        item.update_infos (folder_info);
+    }
+
+    private void folder_deleted (Camel.FolderInfo folder_info) {
+        var item = folder_items[folder_info.full_name];
+        item.parent.remove (item);
+        folder_items.unset (folder_info.full_name);
+    }
+
+    private void folder_created (Camel.FolderInfo folder_info) {
+        if (folder_info.parent == null) {
+            show_info (folder_info, this);
+        } else {
+            unowned Camel.FolderInfo parent_info = (Camel.FolderInfo) folder_info.parent;
+            var parent_item = folder_items[parent_info.full_name];
+            if (parent_item == null) {
+                // Create the parent, then retry to create the children.
+                folder_created (parent_info);
+                folder_created (folder_info);
+            } else {
+                show_info (folder_info, parent_item);
+            }
+        }
+    }
+
+    private async void reload_folders () {
+        var offlinestore = (Camel.OfflineStore) account.service;
+        foreach (var folder_item in folder_items.values) {
+            try {
+                var folder_info = yield offlinestore.get_folder_info (folder_item.full_name, 0, GLib.Priority.DEFAULT, connect_cancellable);
+                folder_item.update_infos (folder_info);
+            } catch (Error e) {
+                critical (e.message);
+            }
+        }
+    }
+
+    private void show_info (Camel.FolderInfo? _folderinfo, Granite.Widgets.SourceList.ExpandableItem item) {
         var folderinfo = _folderinfo;
         while (folderinfo != null) {
-            Granite.Widgets.SourceList.Item sub_item;
+            FolderSourceItem folder_item = new FolderSourceItem (folderinfo);
+            folder_items[folderinfo.full_name] = folder_item;
+            folder_item.refresh.connect (() => {
+                refresh_folder.begin (folder_item.full_name);
+            });
+
             if (folderinfo.child != null) {
-                sub_item = new Granite.Widgets.SourceList.ExpandableItem (folderinfo.display_name);
-                show_info ((Camel.FolderInfo?) folderinfo.child, (Granite.Widgets.SourceList.ExpandableItem) sub_item);
-            } else {
-                sub_item = new FolderSourceItem (folderinfo);
+                show_info ((Camel.FolderInfo?) folderinfo.child, folder_item);
             }
 
-            item.add (sub_item);
+            item.add (folder_item);
             folderinfo = (Camel.FolderInfo?) folderinfo.next;
+        }
+    }
+
+    private async void refresh_folder (string folder_name) {
+        var offlinestore = (Camel.Store) account.service;
+        try {
+            var folder = yield offlinestore.get_folder (folder_name, 0, GLib.Priority.DEFAULT, connect_cancellable);
+            yield folder.refresh_info (GLib.Priority.DEFAULT, connect_cancellable);
+        } catch (Error e) {
+            critical (e.message);
         }
     }
 
