@@ -115,6 +115,11 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         get_style_context ().add_class ("rounded");
         add (content_grid);
 
+        var contact_manager = ContactManager.get_default ();
+        contact_manager.setup_entry (to_val);
+        contact_manager.setup_entry (cc_val);
+        contact_manager.setup_entry (bcc_val);
+
         cc_button.clicked.connect (() => {
             cc_revealer.reveal_child = cc_button.active;
         });
