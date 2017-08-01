@@ -32,7 +32,7 @@ public class Mail.ContactManager : GLib.Object {
     public Gtk.ListStore list_store { get; private set; }
 
     construct {
-        list_store = new Gtk.ListStore (4, typeof (string), typeof (string), typeof (string), typeof (GLib.Icon));
+        list_store = new Gtk.ListStore (3, typeof (string), typeof (string), typeof (string));
         list_store.set_default_sort_func (list_store_sort_func);
         list_store.set_sort_column_id (2, Gtk.SortType.ASCENDING);
         individual_aggregator = Folks.IndividualAggregator.dup ();
@@ -41,13 +41,10 @@ public class Mail.ContactManager : GLib.Object {
 
     public void setup_entry (Gtk.Entry entry) {
         var name_cell = new Gtk.CellRendererText ();
-        var avatar_cell = new Mail.CellRendererAvatar ();
         var completion = new Gtk.EntryCompletion ();
         completion.set_model (list_store);
         completion.set_match_func (entry_completion);
-        completion.pack_start (avatar_cell, false);
         completion.pack_start (name_cell, true);
-        completion.set_cell_data_func (avatar_cell, layout_avatar);
         completion.set_cell_data_func (name_cell, layout_text);
         completion.match_selected.connect ((model, iter) => {
             string name, email;
@@ -105,16 +102,10 @@ public class Mail.ContactManager : GLib.Object {
         if (name == address) {
             new_text = address;
         } else {
-            new_text = "%s <span size=\"smaller\">%s</span>".printf (name, address);
+            new_text = "%s\n<span size=\"smaller\">%s</span>".printf (name, address);
         }
 
         ((Gtk.CellRendererText) cell).markup = new_text;
-    }
-
-    private void layout_avatar (Gtk.CellLayout cell_layout, Gtk.CellRenderer cell, Gtk.TreeModel tree_model, Gtk.TreeIter iter) {
-        GLib.Icon icon;
-        tree_model.get (iter, 3, out icon);
-        ((Mail.CellRendererAvatar) cell).gicon = icon;
     }
 
     private async void load_contact () {
@@ -138,7 +129,6 @@ public class Mail.ContactManager : GLib.Object {
     private void add_individual (Folks.Individual individual) {
         string individual_name = individual.display_name;
         string individual_collate = individual_name.collate_key ();
-        GLib.LoadableIcon? individual_avatar = individual.avatar;
         foreach (var email_object in individual.email_addresses) {
             string email = email_object.value;
             Gtk.TreeIter iter;
@@ -150,7 +140,7 @@ public class Mail.ContactManager : GLib.Object {
                 collation_key = individual_collate + email.collate_key ();
             }
 
-            list_store.set (iter, 0, individual_name, 1, email, 2, collation_key, 3, individual_avatar);
+            list_store.set (iter, 0, individual_name, 1, email, 2, collation_key);
         }
     }
 
