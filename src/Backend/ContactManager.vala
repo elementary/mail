@@ -102,7 +102,7 @@ public class Mail.ContactManager : GLib.Object {
         if (name == address) {
             new_text = address;
         } else {
-            new_text = "%s\n<span size=\"smaller\">%s</span>".printf (name, address);
+            new_text = "%s <span size=\"smaller\">%s</span>".printf (name, address);
         }
 
         ((Gtk.CellRendererText) cell).markup = new_text;
