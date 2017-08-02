@@ -212,5 +212,10 @@ public class Mail.Backend.Session : Camel.Session {
         list.add_all (accounts);
         return list;
     }
+
+    public override unowned Camel.FilterDriver get_filter_driver (string type, Camel.Folder? for_folder) throws Error {
+        var filter_driver = new Camel.FilterDriver (this);
+        return (Camel.FilterDriver)filter_driver.ref ();
+    }
 }
 

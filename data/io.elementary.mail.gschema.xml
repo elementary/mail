@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
   <schema path="/io/elementary/mail/"
-  id="io.elementary.mail"
-  gettext-domain="io.elementary.mail">
+  id="io.elementary.mail">
     <key name="window-height" type="i">
       <default>-1</default>
       <summary>Most recent window height</summary>
@@ -42,6 +41,18 @@
       <default>[]</default>
       <summary>A list of sender addresses for which remote images will be automatically loaded</summary>
       <description>A list of sender addresses for which remote images will be automatically loaded</description>
+    </key>
+  </schema>
+  <schema id="io.elementary.mail.accounts">
+    <key name="expanded-folders" type="as">
+      <default>[]</default>
+      <summary>The list of all the expanded folders</summary>
+      <description>The list of all the expanded folders</description>
+    </key>
+    <key name="expanded" type="b">
+      <default>true</default>
+      <summary>Whether the account itself is expanded</summary>
+      <description>Whether the account itself is expanded</description>
     </key>
   </schema>
 </schemalist>
