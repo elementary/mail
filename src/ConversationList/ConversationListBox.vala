@@ -119,6 +119,18 @@ public class Mail.ConversationListBox : Gtk.ListBox {
     private static int thread_sort_function (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
         var item1 = (ConversationListItem) row1;
         var item2 = (ConversationListItem) row2;
-        return (int)(item2.node.message.date_received - item1.node.message.date_received);
+
+        var item1_starred = Camel.MessageFlags.FLAGGED in (int) item1.node.message.flags;
+        var item2_starred = Camel.MessageFlags.FLAGGED in (int) item2.node.message.flags;
+
+        if (item1_starred || item2_starred) {
+            if (item1_starred && !item2_starred) {
+                return -1;
+            } else {
+                return 1;
+            }
+        } else {
+            return (int)(item2.node.message.date_received - item1.node.message.date_received);
+        }
     }
 }
