@@ -68,6 +68,10 @@ public class Mail.Application : Gtk.Application {
                 main_window.set_allocation (rect);
             }
 
+            if (settings.get_boolean ("window-maximized")) {
+                main_window.maximize ();
+            }
+
             main_window.show_all ();
             add_window (main_window);
 
@@ -76,16 +80,21 @@ public class Mail.Application : Gtk.Application {
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             main_window.delete_event.connect (() => {
-                Gtk.Allocation rect;
-                main_window.get_allocation (out rect);
-                settings.set_int ("window-height", rect.height);
-                settings.set_int ("window-width", rect.width);
+                if (main_window.is_maximized) {
+                    settings.set_boolean ("window-maximized", true);
+                } else {
+                    settings.set_boolean ("window-maximized", false);
 
-                int root_x, root_y;
-                main_window.get_position (out root_x, out root_y);
-                settings.set_int ("window-x", root_x);
-                settings.set_int ("window-y", root_y);
+                    Gtk.Allocation rect;
+                    main_window.get_allocation (out rect);
+                    settings.set_int ("window-height", rect.height);
+                    settings.set_int ("window-width", rect.width);
 
+                    int root_x, root_y;
+                    main_window.get_position (out root_x, out root_y);
+                    settings.set_int ("window-x", root_x);
+                    settings.set_int ("window-y", root_y);
+                }
                 return false;
             });
         }
