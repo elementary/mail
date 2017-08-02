@@ -7,6 +7,11 @@
       <summary>Most recent window height</summary>
       <description>Most recent window height</description>
     </key>
+    <key name="window-maximized" type="b">
+      <default>false</default>
+      <summary>Whether the window was maximized on last run</summary>
+      <description>Whether the window was maximized on last run</description>
+    </key>
     <key name="window-width" type="i">
       <default>-1</default>
       <summary>Most recent window width</summary>
