@@ -12,6 +12,7 @@ vala_files = [
     'Composer/ComposerWindow.vala',
     'Composer/ComposerWidget.vala',
     'Composer/InlineComposer.vala',
+    'FoldersView/AccountSavedState.vala',
     'FoldersView/AccountSourceItem.vala',
     'FoldersView/FoldersListView.vala',
     'FoldersView/FolderSourceItem.vala',

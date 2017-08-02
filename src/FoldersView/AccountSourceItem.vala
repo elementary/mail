@@ -25,6 +25,7 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
 
     private GLib.Cancellable connect_cancellable;
     private Gee.HashMap<string, FolderSourceItem> folder_items;
+    private AccountSavedState saved_state;
 
     public AccountSourceItem (Mail.Backend.Account account) {
         Object (account: account);
@@ -34,6 +35,8 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
         visible = true;
         connect_cancellable = new GLib.Cancellable ();
         folder_items = new Gee.HashMap<string, FolderSourceItem> ();
+        saved_state = new AccountSavedState (account);
+        saved_state.bind_with_expandable_item (this);
 
         var offlinestore = (Camel.OfflineStore) account.service;
         name = offlinestore.display_name;
@@ -108,7 +111,8 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
     private void show_info (Camel.FolderInfo? _folderinfo, Granite.Widgets.SourceList.ExpandableItem item) {
         var folderinfo = _folderinfo;
         while (folderinfo != null) {
-            FolderSourceItem folder_item = new FolderSourceItem (folderinfo);
+            var folder_item = new FolderSourceItem (folderinfo);
+            saved_state.bind_with_expandable_item (folder_item);
             folder_items[folderinfo.full_name] = folder_item;
             folder_item.refresh.connect (() => {
                 refresh_folder.begin (folder_item.full_name);
