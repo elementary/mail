@@ -2,10 +2,10 @@
 
 <schema id="org.pantheon.mail" path="/org/pantheon/mail/">
     
-    <key name="window-maximize" type="b">
+    <key name="window-maximized" type="b">
         <default>false</default>
         <summary>maximize window</summary>
-        <description>True if library application is maximized, false otherwise.</description>
+        <description>True if application is maximized, false otherwise.</description>
     </key>
     
     <key name="window-width" type="i">
