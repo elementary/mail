@@ -68,6 +68,10 @@ public class Mail.MessageListBox : Gtk.ListBox {
     }
 
     public void reply () {
-        add (new InlineComposer ());
+        var last_child = get_row_at_index ((int) get_children ().length () - 1);
+        var is_composer = (last_child != null && last_child is InlineComposer);
+        if (!is_composer) {
+            add (new InlineComposer ());
+        }
     }
 }
