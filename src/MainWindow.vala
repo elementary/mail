@@ -51,14 +51,14 @@ public class Mail.MainWindow : Gtk.Window {
         actions.add_action_entries (action_entries, this);
         insert_action_group ("win", actions);
 
-        get_action (ACTION_REPLY).set_enabled (false);
-
         headerbar = new HeaderBar ();
         set_titlebar (headerbar);
 
         folders_list_view = new FoldersListView ();
         conversation_list_box = new ConversationListBox ();
         message_list_box = new MessageListBox ();
+
+        message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY), "enabled", BindingFlags.SYNC_CREATE);
 
         var conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
         conversation_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -111,7 +111,6 @@ public class Mail.MainWindow : Gtk.Window {
 
         conversation_list_box.conversation_selected.connect ((node) => {
             message_list_box.set_conversation (node);
-            get_action (ACTION_REPLY).set_enabled (true);
         });
 
         headerbar.size_allocate.connect (() => {

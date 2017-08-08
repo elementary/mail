@@ -20,6 +20,7 @@
 
 public class Mail.MessageListBox : Gtk.ListBox {
     public signal void hovering_over_link (string? label, string? uri);
+    public bool can_reply { public get; private set; default = false; }
 
     public MessageListBox () {
         Object (selection_mode: Gtk.SelectionMode.NONE);
@@ -36,6 +37,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
 
         var item = new MessageListItem (node.message);
         add (item);
+        can_reply = true;
         if (node.child != null) {
             go_down ((Camel.FolderThreadNode?) node.child);
         }
@@ -68,6 +70,11 @@ public class Mail.MessageListBox : Gtk.ListBox {
     }
 
     public void reply () {
-        add (new InlineComposer ());
+        var last_child = get_row_at_index ((int) get_children ().length () - 1);
+        var is_composer = (last_child != null && last_child is InlineComposer);
+        if (!is_composer) {
+            add (new InlineComposer ());
+            can_reply = false;
+        }
     }
 }
