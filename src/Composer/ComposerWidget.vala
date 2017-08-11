@@ -124,22 +124,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         web_view = new WebView ();
         web_view.editable = true;
-        web_view.command_state_updated.connect ((command, state) => {
-            switch (command) {
-                case "bold":
-                    actions.change_action_state (ACTION_BOLD, new Variant.string (state ? ACTION_BOLD : ""));
-                    break;
-                case "italic":
-                    actions.change_action_state (ACTION_ITALIC, new Variant.string (state ? ACTION_ITALIC : ""));
-                    break;
-                case "underline":
-                    actions.change_action_state (ACTION_UNDERLINE, new Variant.string (state ? ACTION_UNDERLINE : ""));
-                    break;
-                case "strikethrough":
-                    actions.change_action_state (ACTION_STRIKETHROUGH, new Variant.string (state ? ACTION_STRIKETHROUGH : ""));
-                    break;
-            }
-        });
         web_view.selection_changed.connect (update_actions);
 
         var action_bar = new Gtk.ActionBar ();
@@ -175,7 +159,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private void on_edit_action (SimpleAction action, Variant? param) {
         var command = param.get_string ();
         web_view.execute_editor_command (command);
-        web_view.query_command_state (command);
+        update_actions ();
     }
 
     private void on_remove_format () {
@@ -184,9 +168,9 @@ public class Mail.ComposerWidget : Gtk.Grid {
     }
 
     private void update_actions () {
-        web_view.query_command_state ("bold");
-        web_view.query_command_state ("italic");
-        web_view.query_command_state ("underline");
-        web_view.query_command_state ("strikethrough");
+        actions.change_action_state (ACTION_BOLD, web_view.query_command_state ("bold") ? ACTION_BOLD : "");
+        actions.change_action_state (ACTION_ITALIC, web_view.query_command_state ("italic") ? ACTION_ITALIC : "");
+        actions.change_action_state (ACTION_UNDERLINE, web_view.query_command_state ("underline") ? ACTION_UNDERLINE : "");
+        actions.change_action_state (ACTION_STRIKETHROUGH, web_view.query_command_state ("strikethrough") ? ACTION_STRIKETHROUGH : "");
     }
 }

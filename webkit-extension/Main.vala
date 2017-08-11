@@ -18,53 +18,44 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-namespace MailWebViewExtension {
-    [DBus (name = "io.elementary.mail.WebViewServer")]
-    interface Server : Object {
-        public signal void page_load_changed (uint64 page_id);
-        public abstract void set_height (uint64 view, int height);
-
-        public abstract void fire_image_load_blocked (uint64 page_id);
-        public signal void image_loading_enabled (uint64 page_id);
-        public abstract bool get_load_images (uint64 view);
-
-        public signal void command_executed (uint64 view, string command, string argument);
-        public signal void query_command_state (uint64 view, string command);
-        public abstract void fire_command_state_updated (uint64 view, string command, bool state);
-
-        public abstract void fire_selection_changed (uint64 view);
-    }
-}
-
+[DBus (name = "io.elementary.mail.WebViewServer")]
 public class DOMServer : Object {
+    public signal void selection_changed (uint64 page_id);
+    public signal void image_load_blocked (uint64 page_id);
+
     private const string[] ALLOWED_SCHEMES = { "cid", "data", "about", "elementary-mail" };
+
+    private Gee.HashMap <uint64?, bool> show_images
+        = new Gee.HashMap <uint64?, bool> ((Gee.HashDataFunc)int64_hash, (Gee.EqualDataFunc)int64_equal);
 
     private WebKit.WebExtension extension;
 
-    private MailWebViewExtension.Server? ui_process = null;
-
     public DOMServer (WebKit.WebExtension extension) {
         this.extension = extension;
-        try {
-            ui_process = Bus.get_proxy_sync (BusType.SESSION, "io.elementary.mail.WebViewServer", "/io/elementary/mail/WebViewServer");
-        } catch (IOError e) {
-            warning ("WebKit extension couldn't connect to UI interface: %s", e.message);
-        }
-        ui_process.page_load_changed.connect (on_page_load_changed);
-        ui_process.image_loading_enabled.connect (on_image_loading_enabled);
-        ui_process.command_executed.connect (on_command_executed);
-        ui_process.query_command_state.connect (on_query_command_state);
+
+        Bus.own_name(BusType.SESSION, "io.elementary.mail.WebViewServer", BusNameOwnerFlags.NONE,
+            on_bus_acquired, null, () => { warning ("Could not acquire name"); });
     }
 
-    private void on_page_load_changed (uint64 page_id) {
+    private void on_bus_acquired (DBusConnection connection) {
+        try {
+            connection.register_object ("/io/elementary/mail/WebViewServer", this);
+        } catch (IOError error) {
+            warning ("Could not register webkit extension DBus object: %s", error.message);
+        }
+    }
+
+    public int get_page_height (uint64 page_id) {
         var page = extension.get_page (page_id);
         if (page != null) {
-            ui_process.set_height (page_id, (int)page.get_dom_document ().get_document_element ().get_offset_height ());
+            return (int)page.get_dom_document ().get_document_element ().get_offset_height ();
         }
+        return 0;
     }
 
-    private void on_image_loading_enabled (uint64 page_id) {
-        if (ui_process.get_load_images (page_id)) {
+    public void set_image_loading_enabled (uint64 page_id, bool enabled) {
+        show_images[page_id] = enabled;
+        if (enabled) {
             var page = extension.get_page (page_id);
             if (page != null) {
                 var images = page.get_dom_document ().get_images ();
@@ -76,10 +67,11 @@ public class DOMServer : Object {
         }
     }
 
+    [DBus (visible = false)]
     public void on_page_created (WebKit.WebExtension extension, WebKit.WebPage page) {
         page.send_request.connect (on_send_request);
         page.get_editor ().selection_changed.connect (() => {
-            ui_process.fire_selection_changed (page.get_id ());
+            selection_changed (page.get_id ());
         });
     }
 
@@ -90,17 +82,17 @@ public class DOMServer : Object {
             // Always load internal resources
             should_load = true;
         } else {
-            if (ui_process.get_load_images (page.get_id ())) {
+            if (show_images.has_key (page.get_id ()) && show_images [page.get_id ()]) {
                 should_load = true;
             } else {
-                ui_process.fire_image_load_blocked (page.get_id ());
+                image_load_blocked (page.get_id ());
             }
         }
 
         return should_load ? Gdk.EVENT_PROPAGATE : Gdk.EVENT_STOP;
     }
 
-    private void on_command_executed (uint64 view, string command, string argument) {
+    public void execute_command (uint64 view, string command, string argument) {
         var page = extension.get_page (view);
         if (page != null) {
             var document = page.get_dom_document ();
@@ -108,13 +100,14 @@ public class DOMServer : Object {
         }
     }
 
-    private void on_query_command_state (uint64 view, string command) {
+    public bool query_command_state (uint64 view, string command) {
         var page = extension.get_page (view);
         if (page != null) {
             var document = page.get_dom_document ();
             var state = document.query_command_state (command);
-            ui_process.fire_command_state_updated (view, command, state);
+            return state;
         }
+        return false;
     }
 }
 
