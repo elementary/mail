@@ -33,7 +33,7 @@ public class DOMServer : Object {
     public DOMServer (WebKit.WebExtension extension) {
         this.extension = extension;
 
-        Bus.own_name(BusType.SESSION, "io.elementary.mail.WebViewServer", BusNameOwnerFlags.NONE,
+        Bus.own_name (BusType.SESSION, "io.elementary.mail.WebViewServer", BusNameOwnerFlags.NONE,
             on_bus_acquired, null, () => { warning ("Could not acquire name"); });
     }
 
