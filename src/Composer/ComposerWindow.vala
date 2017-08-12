@@ -106,6 +106,9 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         recipient_grid.attach (subject_val, 1, 3, 1, 1);
 
         var composer_widget = new ComposerWidget ();
+        composer_widget.discarded.connect (() => {
+            close ();
+        });
 
         var content_grid = new Gtk.Grid ();
         content_grid.orientation = Gtk.Orientation.VERTICAL;

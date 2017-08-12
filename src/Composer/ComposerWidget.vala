@@ -19,6 +19,8 @@
  */
 
 public class Mail.ComposerWidget : Gtk.Grid {
+    public signal void discarded ();
+
     private const string ACTION_GROUP_PREFIX = "composer";
     private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
 
@@ -27,6 +29,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private const string ACTION_UNDERLINE = "underline";
     private const string ACTION_STRIKETHROUGH = "strikethrough";
     private const string ACTION_REMOVE_FORMAT = "remove_formatting";
+    private const string ACTION_DISCARD = "discard";
 
     private WebView web_view;
     private SimpleActionGroup actions;
@@ -37,7 +40,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
         {ACTION_ITALIC,         on_edit_action,    "s",    "''"     },
         {ACTION_UNDERLINE,      on_edit_action,    "s",    "''"     },
         {ACTION_STRIKETHROUGH,  on_edit_action,    "s",    "''"     },
-        {ACTION_REMOVE_FORMAT,  on_remove_format                    }
+        {ACTION_REMOVE_FORMAT,  on_remove_format                    },
+        {ACTION_DISCARD,        on_discard                          }
     };
 
     private bool _has_recipients;
@@ -147,6 +151,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
         discard.margin_start = 6;
         discard.tooltip_text = _("Delete draft");
+        discard.action_name = ACTION_PREFIX + ACTION_DISCARD;
 
         var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
         attach.tooltip_text = _("Attach file");
@@ -188,5 +193,9 @@ public class Mail.ComposerWidget : Gtk.Grid {
         web_view.query_command_state ("italic");
         web_view.query_command_state ("underline");
         web_view.query_command_state ("strikethrough");
+    }
+
+    private void on_discard () {
+        discarded ();
     }
 }

@@ -28,6 +28,9 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
         var composer = new ComposerWidget ();
         composer.margin_top = 6;
         composer.has_recipients = true;
+        composer.discarded.connect (() => {
+            destroy ();
+        });
 
         add (composer);
 
