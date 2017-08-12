@@ -19,6 +19,8 @@
  */
 
 public class Mail.InlineComposer : Gtk.ListBoxRow {
+    public signal void discarded ();
+
     private ComposerWidget composer;
 
     construct {
@@ -30,7 +32,7 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
         composer.margin_top = 6;
         composer.has_recipients = true;
         composer.discarded.connect (() => {
-            destroy ();
+            discarded ();
         });
 
         add (composer);
