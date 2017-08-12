@@ -123,7 +123,15 @@ public class Mail.ComposerWidget : Gtk.Grid {
         button_row.add (clear_format);
 
         web_view = new WebView ();
-        web_view.editable = true;
+
+        try {
+            var template = resources_lookup_data ("/io/elementary/mail/blank-message-template.html", ResourceLookupFlags.NONE);
+            var template_html = (string)Bytes.unref_to_data (template);
+            web_view.load_html (template_html);
+        } catch (Error e) {
+            warning ("Failed to load blank message template: %s", e.message);
+        }
+
         web_view.command_state_updated.connect ((command, state) => {
             switch (command) {
                 case "bold":
