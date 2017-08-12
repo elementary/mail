@@ -83,6 +83,11 @@ public class Mail.MessageListBox : Gtk.ListBox {
         if (!is_composer) {
             var composer = new InlineComposer ();
             composer.quote_content (message_info, content_to_quote);
+            composer.discarded.connect (() => {
+                can_reply = true;
+                remove (composer);
+                composer.destroy ();
+            });
             add (composer);
             can_reply = false;
         }
