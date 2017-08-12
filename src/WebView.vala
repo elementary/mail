@@ -27,6 +27,8 @@ namespace MailWebViewExtension {
         public abstract void execute_command (uint64 view, string command, string argument);
         public abstract bool query_command_state (uint64 view, string command);
         public abstract int get_page_height (uint64 view);
+        public abstract string get_body_html (uint64 view);
+        public abstract void set_body_html (uint64 view, string html);
 
         public signal void selection_changed (uint64 view);
         public signal void image_load_blocked (uint64 view);
@@ -48,6 +50,7 @@ public class Mail.WebView : WebKit.WebView {
     private bool ready = false;
     private bool queued_load_images = false;
     private string? queued_content = null;
+    private string? queued_body_content = null;
 
     static construct {
         weak WebKit.WebContext context = WebKit.WebContext.get_default ();
@@ -129,6 +132,16 @@ public class Mail.WebView : WebKit.WebView {
             preferred_height = extension.get_page_height (get_page_id ());
             queue_resize ();
         }
+
+        if (event == WebKit.LoadEvent.FINISHED) {
+            on_loaded ();
+        }
+    }
+
+    private void on_loaded () {
+        if (queued_body_content != null) {
+            set_body_content (queued_body_content);
+        }
     }
 
     public override void get_preferred_height (out int minimum_height, out int natural_height) {
@@ -140,6 +153,14 @@ public class Mail.WebView : WebKit.WebView {
             base.load_html (body, INTERNAL_URL_BODY);
         } else {
             queued_content = body;
+        }
+    }
+
+    public void set_body_content (string content) {
+        if (ready) {
+            extension.set_body_html (get_page_id (), content);
+        } else {
+            queued_body_content = content;
         }
     }
 
@@ -182,6 +203,13 @@ public class Mail.WebView : WebKit.WebView {
             return extension.query_command_state (get_page_id (), command);
         }
         return false;
+    }
+
+    public string? get_body_html () {
+        if (extension != null) {
+            return extension.get_body_html (get_page_id ());
+        }
+        return null;
     }
 
     private void handle_cid_request (WebKit.URISchemeRequest request) {

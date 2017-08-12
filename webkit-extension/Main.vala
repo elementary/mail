@@ -109,6 +109,30 @@ public class DOMServer : Object {
         }
         return false;
     }
+
+    public string? get_body_html (uint64 view) {
+        string? body_html = null;
+        var page = extension.get_page (view);
+        if (page != null) {
+            try {
+                body_html = page.get_dom_document ().get_document_element ().query_selector ("body").get_inner_html ();
+            } catch (Error e) {
+                warning ("Unable to get message body content: %s", e.message);
+            }
+        }
+        return body_html;
+    }
+
+    public void set_body_html (uint64 view, string html) {
+        var page = extension.get_page (view);
+        if (page != null) {
+            try {
+                page.get_dom_document ().get_document_element ().query_selector ("#message-body").set_inner_html (html);
+            } catch (Error e) {
+                warning ("Unable to set message body content: %s", e.message);
+            }
+        }
+    }
 }
 
 namespace WebkitWebExtension {

@@ -19,13 +19,14 @@
  */
 
 public class Mail.InlineComposer : Gtk.ListBoxRow {
+    private ComposerWidget composer;
 
     construct {
         margin = 12;
 
         get_style_context ().add_class ("card");
 
-        var composer = new ComposerWidget ();
+        composer = new ComposerWidget ();
         composer.margin_top = 6;
         composer.has_recipients = true;
         composer.discarded.connect (() => {
@@ -44,5 +45,9 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
         });
 
         show_all ();
+    }
+
+    public void quote_content (Camel.MessageInfo message, string? content) {
+        composer.quote_content (message, content);
     }
 }

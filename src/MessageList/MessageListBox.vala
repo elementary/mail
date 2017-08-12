@@ -72,8 +72,18 @@ public class Mail.MessageListBox : Gtk.ListBox {
     public void reply () {
         var last_child = get_row_at_index ((int) get_children ().length () - 1);
         var is_composer = (last_child != null && last_child is InlineComposer);
+        string content_to_quote = "";
+        Camel.MessageInfo? message_info = null;
+        if (last_child is MessageListItem) {
+            var message_item = last_child as MessageListItem;
+            content_to_quote = message_item.get_message_body_html ();
+            message_info = message_item.message_info;
+        }
+
         if (!is_composer) {
-            add (new InlineComposer ());
+            var composer = new InlineComposer ();
+            composer.quote_content (message_info, content_to_quote);
+            add (composer);
             can_reply = false;
         }
     }
