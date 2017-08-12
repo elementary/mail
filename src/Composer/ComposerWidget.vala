@@ -162,6 +162,19 @@ public class Mail.ComposerWidget : Gtk.Grid {
         add (web_view);
         add (action_bar);
     }
+
+    public void quote_content (Camel.MessageInfo message, string? content_to_quote) {
+        if (content_to_quote != null) {
+            string message_content = "<br/><br/>";
+            string DATE_FORMAT = _("%a, %b %-e, %Y at %-l:%M %p");
+            string when = new DateTime.from_unix_utc (message.date_received).format (DATE_FORMAT);
+            string who = message.from;
+            message_content += _("On %1$s, %2$s wrote:").printf (when, who);
+            message_content += "<br/>";
+            message_content += "<blockquote type=\"cite\">%s</blockquote>".printf (content_to_quote);
+            web_view.set_body_content (message_content);
+        }
+    }
     
     private void on_edit_action (SimpleAction action, Variant? param) {
         var command = param.get_string ();
