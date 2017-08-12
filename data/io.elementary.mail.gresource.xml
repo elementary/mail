@@ -2,5 +2,6 @@
 <gresources>
   <gresource prefix="/io/elementary/mail">
     <file alias="application.css" compressed="true">application.css</file>
+    <file alias="blank-message-template.html" compressed="true">blank-message-template.html</file>
   </gresource>
 </gresources>
