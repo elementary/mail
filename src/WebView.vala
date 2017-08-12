@@ -132,6 +132,7 @@ public class Mail.WebView : WebKit.WebView {
             preferred_height = extension.get_page_height (get_page_id ());
             queue_resize ();
         }
+
         if (event == WebKit.LoadEvent.FINISHED) {
             on_loaded ();
         }
