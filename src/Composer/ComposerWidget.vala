@@ -57,8 +57,12 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
     }
 
-    public ComposerWidget (bool show_subject_field = true) {
-        Object (has_subject_field: show_subject_field);
+    public ComposerWidget () {
+        Object (has_subject_field: false);
+    }
+
+    public ComposerWidget.with_subject () {
+        Object (has_subject_field: true);
     }
 
     construct {

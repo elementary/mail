@@ -30,7 +30,7 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
     }
 
     construct {
-        var composer_widget = new ComposerWidget ();
+        var composer_widget = new ComposerWidget.with_subject ();
         composer_widget.discarded.connect (() => {
             close ();
         });
