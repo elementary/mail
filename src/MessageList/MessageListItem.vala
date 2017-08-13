@@ -40,6 +40,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             secondary_revealer.reveal_child = value;
             header_stack.set_visible_child_name (value ? "large" : "small");
             if (value) {
+                get_message.begin ();
                 style_context.remove_class ("collapsed");
             } else {
                 style_context.add_class ("collapsed");
@@ -180,7 +181,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         ((Gtk.Box) blocked_images_infobar.get_action_area ()).orientation = Gtk.Orientation.VERTICAL;
 
-        get_message.begin ();
         web_view = new Mail.WebView ();
         web_view.margin = 12;
         web_view.mouse_target_changed.connect (on_mouse_target_changed);
