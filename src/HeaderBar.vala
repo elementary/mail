@@ -82,10 +82,15 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         reply_button.tooltip_text = _("Reply (Ctrl+R, R)");
         reply_button.action_name = "win." + MainWindow.ACTION_REPLY;
 
+        var reply_all_button = new Gtk.Button.from_icon_name ("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR);
+        reply_all_button.tooltip_text = _("Reply All (Ctrl+Shift+R, Shift+R)");
+        reply_all_button.action_name = "win." + MainWindow.ACTION_REPLY_ALL;
+
         pack_start (compose_button);
         pack_start (spacing_widget);
         pack_start (search_entry);
         pack_start (reply_button);
+        pack_start (reply_all_button);
         pack_end (app_menu);
 
         account_settings_menuitem.clicked.connect (() => {

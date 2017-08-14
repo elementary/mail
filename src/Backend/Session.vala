@@ -217,5 +217,26 @@ public class Mail.Backend.Session : Camel.Session {
         var filter_driver = new Camel.FilterDriver (this);
         return (Camel.FilterDriver)filter_driver.ref ();
     }
+
+    public Gee.ArrayList<string> get_own_addresses () {
+        var addresses = new Gee.ArrayList<string> ();
+        var sources = registry.list_enabled (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+        sources.foreach ((source_item) => {
+            weak E.SourceMailIdentity extension = (E.SourceMailIdentity)source_item.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+            var address = extension.get_address ();
+            addresses.add (address.casefold ());
+
+            var aliases = extension.get_aliases_as_hash_table ();
+            if (aliases != null) {
+                aliases.@foreach ((key, val) => {
+                    if (!addresses.contains (key.casefold ())) {
+                        addresses.add (key.casefold ());
+                    }
+                });
+            }
+        });
+
+        return addresses;
+    }
 }
 

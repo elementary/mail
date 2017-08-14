@@ -20,7 +20,7 @@
 
 public class Mail.MessageListBox : Gtk.ListBox {
     public signal void hovering_over_link (string? label, string? uri);
-    public bool can_reply { public get; private set; default = false; }
+    public bool can_reply { get; set; default = false; }
 
     public MessageListBox () {
         Object (selection_mode: Gtk.SelectionMode.NONE);
@@ -37,7 +37,6 @@ public class Mail.MessageListBox : Gtk.ListBox {
 
         var item = new MessageListItem (node.message);
         add (item);
-        can_reply = true;
         if (node.child != null) {
             go_down ((Camel.FolderThreadNode?) node.child);
         }
@@ -46,12 +45,16 @@ public class Mail.MessageListBox : Gtk.ListBox {
         if (children.length () == 1) {
             var child = get_row_at_index (0);
             if (child is MessageListItem) {
-                ((MessageListItem) child).expanded = true;
+                var list_item = (MessageListItem) child;
+                list_item.expanded = true;
+                list_item.bind_property ("loaded", this, "can-reply", BindingFlags.SYNC_CREATE);
             }
         } else {
             var child = get_row_at_index ((int) children.length () - 1);
             if (child != null && child is MessageListItem) {
-                ((MessageListItem) child).expanded = true;
+                var list_item = (MessageListItem) child;
+                list_item.expanded = true;
+                list_item.bind_property ("loaded", this, "can-reply", BindingFlags.SYNC_CREATE);
             }
         }
     }
@@ -69,20 +72,21 @@ public class Mail.MessageListBox : Gtk.ListBox {
         }
     }
 
-    public void reply () {
+    public void add_inline_composer (ComposerWidget.Type type) {
         var last_child = get_row_at_index ((int) get_children ().length () - 1);
         var is_composer = (last_child != null && last_child is InlineComposer);
         string content_to_quote = "";
+        Camel.MimeMessage? mime_message = null;
         Camel.MessageInfo? message_info = null;
         if (last_child is MessageListItem) {
             var message_item = last_child as MessageListItem;
             content_to_quote = message_item.get_message_body_html ();
+            mime_message = message_item.mime_message;
             message_info = message_item.message_info;
         }
 
         if (!is_composer) {
-            var composer = new InlineComposer ();
-            composer.quote_content (message_info, content_to_quote);
+            var composer = new InlineComposer (type, message_info, mime_message, content_to_quote);
             composer.discarded.connect (() => {
                 can_reply = true;
                 remove (composer);

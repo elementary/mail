@@ -21,6 +21,11 @@
 public class Mail.InlineComposer : Gtk.ListBoxRow {
     public signal void discarded ();
 
+    public ComposerWidget.Type construct_type { get; construct; }
+    public Camel.MessageInfo? prev_chain_info { get; construct; }
+    public Camel.MimeMessage? prev_chain_message { get; construct; }
+    public string? prev_message_content { get; construct; }
+
     private ComposerWidget composer;
 
     construct {
@@ -34,6 +39,8 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
         composer.discarded.connect (() => {
             discarded ();
         });
+
+        composer.quote_content (construct_type, prev_chain_info, prev_chain_message, prev_message_content);
 
         add (composer);
 
@@ -49,7 +56,12 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
         show_all ();
     }
 
-    public void quote_content (Camel.MessageInfo message, string? content) {
-        composer.quote_content (message, content);
+    public InlineComposer (ComposerWidget.Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content) {
+        Object (
+            construct_type: type,
+            prev_chain_info: info,
+            prev_chain_message: message,
+            prev_message_content: content
+        );
     }
 }
