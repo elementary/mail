@@ -39,6 +39,7 @@ public class Mail.WebView : WebKit.WebView {
     public signal void image_load_blocked ();
     public signal void link_activated (string url);
     public signal void selection_changed ();
+    public signal void load_finished ();
 
     private const string INTERNAL_URL_BODY = "elementary-mail:body";
     private const string SERVER_BUS_NAME = "io.elementary.mail.WebViewServer";
@@ -48,6 +49,7 @@ public class Mail.WebView : WebKit.WebView {
     private Gee.Map<string, InputStream> internal_resources;
 
     private bool ready = false;
+    private bool loaded = false;
     private bool queued_load_images = false;
     private string? queued_content = null;
     private string? queued_body_content = null;
@@ -70,7 +72,6 @@ public class Mail.WebView : WebKit.WebView {
 
         internal_resources = new Gee.HashMap<string, InputStream> ();
 
-        load_changed.connect (on_load_changed);
         decide_policy.connect (on_decide_policy);
 
         Bus.watch_name (BusType.SESSION, SERVER_BUS_NAME, BusNameWatcherFlags.NONE, on_server_appear);
@@ -135,11 +136,13 @@ public class Mail.WebView : WebKit.WebView {
 
         if (event == WebKit.LoadEvent.FINISHED) {
             on_loaded ();
+            load_finished ();
         }
     }
 
     private void on_loaded () {
-        if (queued_body_content != null) {
+        loaded = true;
+        if (queued_body_content != null && ready) {
             set_body_content (queued_body_content);
         }
     }
@@ -151,13 +154,14 @@ public class Mail.WebView : WebKit.WebView {
     public new void load_html (string? body) {
         if (ready) {
             base.load_html (body, INTERNAL_URL_BODY);
+            load_changed.connect (on_load_changed);
         } else {
             queued_content = body;
         }
     }
 
     public void set_body_content (string content) {
-        if (ready) {
+        if (loaded) {
             extension.set_body_html (get_page_id (), content);
         } else {
             queued_body_content = content;
