@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-08-14 17:42+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"PO-Revision-Date: 2017-08-14 17:43+0000\n"
+"Last-Translator: Pieter De Clercq <pieter.eke@gmail.com>\n"
 "Language-Team: Dutch <https://weblate.elementary.io/projects/mail/mail/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -2314,7 +2314,7 @@ msgstr "_Updaten"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
-msgstr ""
+msgstr "Even geduld terwijl Geary uw account valideert."
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
@@ -2322,7 +2322,7 @@ msgstr "_Ongedaan maken"
 
 #: ../data/ui/composer.ui:15
 msgid "_Redo"
-msgstr ""
+msgstr "_Opnieuw"
 
 #: ../data/ui/composer.ui:22
 msgid "Cu_t"
@@ -2358,7 +2358,7 @@ msgstr "_Kleur"
 
 #: ../data/ui/composer.ui:81
 msgid "Quote text  (Ctrl+])"
-msgstr ""
+msgstr "Tekst citeren  (Ctrl+])"
 
 #: ../data/ui/composer.ui:87 ../src/client/composer/ComposerToolbar.vala:69
 msgid "Unquote text (Ctrl+[)"
