@@ -31,6 +31,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     private string message_content;
     private bool message_is_html = false;
+    private bool message_loaded = false;
     
     public bool expanded {
         get {
@@ -40,7 +41,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             secondary_revealer.reveal_child = value;
             header_stack.set_visible_child_name (value ? "large" : "small");
             if (value) {
-                get_message.begin ();
+                if (!message_loaded) {
+                    get_message.begin ();
+                    message_loaded = true;
+                }
                 style_context.remove_class ("collapsed");
             } else {
                 style_context.add_class ("collapsed");
