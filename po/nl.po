@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-08-14 17:41+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"PO-Revision-Date: 2017-08-14 17:42+0000\n"
+"Last-Translator: Pieter De Clercq <pieter.eke@gmail.com>\n"
 "Language-Team: Dutch <https://weblate.elementary.io/projects/mail/mail/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -2039,7 +2039,7 @@ msgstr "Kleur selecteren"
 #: ../src/client/composer/composer-widget.vala:2272
 #: ../src/client/composer/composer-widget.vala:2275
 msgid "%1$s via %2$s"
-msgstr ""
+msgstr "%1$s via %2$s"
 
 #: ../src/client/composer/composer-widget.vala:2364
 #: ../src/client/composer/composer-widget.vala:2359
@@ -2187,12 +2187,12 @@ msgstr "Zoek %s"
 #: ../src/client/dialogs/preferences-dialog.vala:23
 #: ../src/client/dialogs/preferences-dialog.vala:24
 msgid "Reading"
-msgstr ""
+msgstr "Lezen"
 
 #: ../src/client/dialogs/preferences-dialog.vala:28
 #: ../src/client/dialogs/preferences-dialog.vala:29
 msgid "Automatically select next message:"
-msgstr ""
+msgstr "Volgende bericht automatisch selecteren:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:33
 #: ../src/client/dialogs/preferences-dialog.vala:34
@@ -2207,7 +2207,7 @@ msgstr ""
 #: ../src/client/dialogs/preferences-dialog.vala:42 ../data/ui/login.ui:853
 #: ../src/client/dialogs/preferences-dialog.vala:48
 msgid "Composer"
-msgstr ""
+msgstr "Bewerker"
 
 #: ../src/client/dialogs/preferences-dialog.vala:47
 #: ../src/client/dialogs/preferences-dialog.vala:53
@@ -2224,7 +2224,7 @@ msgstr "Meldingen"
 #: ../src/client/dialogs/preferences-dialog.vala:62
 #: ../src/client/dialogs/preferences-dialog.vala:52
 msgid "Always watch for new mail:"
-msgstr ""
+msgstr "Altijd zoeken naar nieuwe mails:"
 
 #: ../src/client/application/geary-controller.vala:61
 #: ../src/client/application/geary-controller.vala:60
@@ -2253,6 +2253,8 @@ msgid ""
 "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
 "account?</span> "
 msgstr ""
+"<span weight=\"bold\" size=\"larger\">Bent u zeker dat u deze account wil "
+"verwijderen?</span> "
 
 #: ../data/ui/remove_confirm.ui:58
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:42
@@ -2260,6 +2262,8 @@ msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
 msgstr ""
+"Alle e-mails horende bij deze account zullen verwijderd worden van uw "
+"computer. Dit heeft geen invloed op e-mails op de server."
 
 #: ../data/ui/remove_confirm.ui:80
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:47
@@ -2284,15 +2288,15 @@ msgstr "Volgende resultaat"
 
 #: ../data/ui/find_bar.ui:107
 msgid "_Case sensitive"
-msgstr ""
+msgstr "_Hoofdlettergevoelig"
 
 #: ../data/ui/find_bar.ui:127
 msgid "label"
-msgstr ""
+msgstr "label"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr ""
+msgstr "Geary is bezig met updaten..."
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
