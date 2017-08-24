@@ -10,16 +10,16 @@ msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-07-11 09:37+0000\n"
-"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
-"Language-Team: Indonesian <https://l10n.elementary.io/projects/mail/mail/id/>"
-"\n"
+"PO-Revision-Date: 2017-08-22 11:04+0000\n"
+"Last-Translator: Aprianto Nursetiawan <noersetiawan@gmail.com>\n"
+"Language-Team: Indonesian "
+"<https://weblate.elementary.io/projects/mail/mail/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 2.15\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -35,8 +35,6 @@ msgid ""
 "Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
 "| Bulk E-Mail"
 msgstr ""
-"Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
-"| Bulk E-Mail"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:590
 msgid "Trash | Rubbish | Rubbish Bin"
@@ -72,7 +70,7 @@ msgstr "Semua Pesan"
 
 #: ../src/engine/api/geary-special-folder-type.vala:42
 msgid "Spam"
-msgstr "Spam"
+msgstr ""
 
 #: ../src/engine/api/geary-special-folder-type.vala:45
 msgid "Trash"
@@ -108,11 +106,11 @@ msgstr "SMTP"
 
 #: ../src/engine/api/geary-service-provider.vala:52
 msgid "Gmail"
-msgstr "Gmail"
+msgstr ""
 
 #: ../src/engine/api/geary-service-provider.vala:55
 msgid "Yahoo! Mail"
-msgstr "Yahoo! Mail"
+msgstr ""
 
 #: ../src/engine/api/geary-service-provider.vala:58
 msgid "Outlook.com"
@@ -135,14 +133,14 @@ msgstr "lampiran"
 #: ../src/engine/imap-db/imap-db-account.vala:714
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "bcc"
-msgstr "bcc"
+msgstr ""
 
 #. / Can be typed in the search box like body:word to find the word only
 #. / if it occurs in the body of a message.  The translated
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:718
 msgid "body"
-msgstr "body"
+msgstr ""
 
 #. / Can be typed in the search box like cc:johndoe@example.com to find
 #. / messages cc'd to a particular person.  The translated
@@ -158,7 +156,7 @@ msgstr "cc"
 #: ../src/engine/imap-db/imap-db-account.vala:726
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "from"
-msgstr "from"
+msgstr ""
 
 #. / Can be typed in the search box like subject:word to find the word
 #. / only if it occurs in the subject of a message.  The translated
@@ -687,7 +685,7 @@ msgid ""
 "Geary encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
-"Gary menemui galat ketika menyimpan sebuah surel terkirim ke Sent Mail.  "
+"Geary menemui galat ketika menyimpan sebuah surel terkirim ke Sent Mail.  "
 "Pesan akan tetap berada di folder Kotak Keluar Anda sampai Anda menghapusnya."
 
 #: ../src/client/application/geary-controller.vala:1138
@@ -1646,7 +1644,7 @@ msgstr "Cc:"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:171
 #: ../src/client/conversation-viewer/ConversationWidget.vala:173
 msgid "Bcc:"
-msgstr "Bcc:"
+msgstr ""
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:821
 #: ../src/client/conversation-viewer/conversation-viewer.vala:826
@@ -1975,7 +1973,7 @@ msgstr "Cc: "
 #: ../src/client/composer/composer-widget.vala:1605
 #: ../src/client/composer/composer-widget.vala:1608
 msgid "Bcc: "
-msgstr "Bcc: "
+msgstr ""
 
 #: ../src/client/composer/composer-widget.vala:1654
 #: ../src/client/composer/composer-widget.vala:1649
@@ -2005,7 +2003,7 @@ msgstr "Pilih Warna"
 #: ../src/client/composer/composer-widget.vala:2272
 #: ../src/client/composer/composer-widget.vala:2275
 msgid "%1$s via %2$s"
-msgstr "%1$s via %2$s"
+msgstr "%1$s melalui %2$s"
 
 #: ../src/client/composer/composer-widget.vala:2364
 #: ../src/client/composer/composer-widget.vala:2359
@@ -2356,7 +2354,7 @@ msgstr "Coret (Ctrl+K)"
 
 #: ../data/ui/composer.ui:139 ../data/ui/composer.ui:132
 msgid "_Rich Text"
-msgstr "_Rich Text"
+msgstr ""
 
 #: ../data/ui/composer.ui:145 ../data/ui/composer.ui:138
 msgid "Show Extended Fields"
@@ -2425,22 +2423,22 @@ msgstr "Kecil"
 #: ../data/ui/composer.ui:191 ../data/ui/composer.ui:173
 #: ../data/ui/composer.ui:178
 msgid "S_ans Serif"
-msgstr "S_ans Serif"
+msgstr ""
 
 #: ../data/ui/composer.ui:192 ../data/ui/composer.ui:174
 #: ../data/ui/composer.ui:179
 msgid "Sans Serif"
-msgstr "Sans Serif"
+msgstr ""
 
 #: ../data/ui/composer.ui:197 ../data/ui/composer.ui:179
 #: ../data/ui/composer.ui:184
 msgid "S_erif"
-msgstr "S_erif"
+msgstr ""
 
 #: ../data/ui/composer.ui:198 ../data/ui/composer.ui:180
 #: ../data/ui/composer.ui:185
 msgid "Serif"
-msgstr "Serif"
+msgstr ""
 
 #: ../data/ui/composer.ui:203 ../data/ui/composer.ui:185
 #: ../data/ui/composer.ui:190
@@ -2512,7 +2510,7 @@ msgstr "_Perihal"
 #: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
 #: ../data/ui/composer.ui:379 ../data/ui/composer.ui:384
 msgid "_Bcc"
-msgstr "_Bcc"
+msgstr ""
 
 #: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
 #: ../data/ui/composer.ui:409 ../data/ui/composer.ui:414
@@ -2590,19 +2588,19 @@ msgstr "Pengaturan IMAP"
 
 #: ../data/ui/login.ui:315
 msgid "Se_rver:"
-msgstr "Se_rver:"
+msgstr ""
 
 #: ../data/ui/login.ui:347
 msgid "P_ort"
-msgstr "P_ort"
+msgstr ""
 
 #: ../data/ui/login.ui:409
 msgid "Ser_ver:"
-msgstr "Ser_ver:"
+msgstr ""
 
 #: ../data/ui/login.ui:427
 msgid "Por_t"
-msgstr "Por_t"
+msgstr ""
 
 #: ../data/ui/login.ui:446
 msgid "SMTP settings"
