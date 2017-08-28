@@ -20,17 +20,39 @@
 
 public extern const string WEBKIT_EXTENSION_PATH;
 
+namespace MailWebViewExtension {
+    [DBus (name = "io.elementary.mail.WebViewServer")]
+    public interface Server : Object {
+        public abstract void set_image_loading_enabled (uint64 view, bool enabled);
+        public abstract void execute_command (uint64 view, string command, string argument);
+        public abstract bool query_command_state (uint64 view, string command);
+        public abstract int get_page_height (uint64 view);
+        public abstract string get_body_html (uint64 view);
+        public abstract void set_body_html (uint64 view, string html);
+
+        public signal void selection_changed (uint64 view);
+        public signal void image_load_blocked (uint64 view);
+    }
+}
+
 public class Mail.WebView : WebKit.WebView {
     public signal void image_load_blocked ();
     public signal void link_activated (string url);
-    public signal void command_state_updated (string command, bool state);
     public signal void selection_changed ();
+    public signal void load_finished ();
 
     private const string INTERNAL_URL_BODY = "elementary-mail:body";
+    private const string SERVER_BUS_NAME = "io.elementary.mail.WebViewServer";
 
     private int preferred_height = 0;
-    private WebViewServer view_manager;
+    private MailWebViewExtension.Server? extension = null;
     private Gee.Map<string, InputStream> internal_resources;
+
+    private bool ready = false;
+    private bool loaded = false;
+    private bool queued_load_images = false;
+    private string? queued_content = null;
+    private string? queued_body_content = null;
 
     static construct {
         weak WebKit.WebContext context = WebKit.WebContext.get_default ();
@@ -50,31 +72,9 @@ public class Mail.WebView : WebKit.WebView {
 
         internal_resources = new Gee.HashMap<string, InputStream> ();
 
-        view_manager = WebViewServer.get_default ();
-        view_manager.page_height_updated.connect ((page_id) => {
-            if (page_id == get_page_id ()) {
-                preferred_height = view_manager.get_height (page_id);
-                queue_resize ();
-            }
-        });
-        view_manager.image_load_blocked.connect ((page_id) => {
-            if (page_id == get_page_id ()) {
-                image_load_blocked ();
-            }
-        });
-        view_manager.command_state_updated.connect ((page_id, command, state) => {
-            if (page_id == get_page_id ()) {
-                command_state_updated (command, state);
-            }
-        });
-        view_manager.selection_changed.connect ((page_id) => {
-            if (page_id == get_page_id ()) {
-                selection_changed ();
-            }
-        });
-
-        load_changed.connect (on_load_changed);
         decide_policy.connect (on_decide_policy);
+
+        Bus.watch_name (BusType.SESSION, SERVER_BUS_NAME, BusNameWatcherFlags.NONE, on_server_appear);
     }
 
     public WebView () {
@@ -93,9 +93,57 @@ public class Mail.WebView : WebKit.WebView {
         Object (settings: setts);
     }
 
+    private void on_server_appear (DBusConnection conn, string name, string owner) {
+        try {
+            extension = Bus.get_proxy_sync (BusType.SESSION, SERVER_BUS_NAME, "/io/elementary/mail/WebViewServer");
+        } catch (IOError e) {
+            warning ("Couldn't connect to WebKit extension DBus: %s", e.message);
+        }
+
+        on_ready ();
+    }
+
+    private void on_ready () {
+        ready = true;
+
+        if (extension != null) {
+            extension.image_load_blocked.connect ((page_id) => {
+                if (page_id == get_page_id ()) {
+                    image_load_blocked ();
+                }
+            });
+            extension.selection_changed.connect ((page_id) => {
+                if (page_id == get_page_id ()) {
+                    selection_changed ();
+                }
+            });
+        }
+
+        if (queued_load_images) {
+            load_images ();
+        }
+
+        if (queued_content != null) {
+            load_html (queued_content);
+        }
+    }
+
     public void on_load_changed (WebKit.LoadEvent event) {
         if (event == WebKit.LoadEvent.FINISHED || event == WebKit.LoadEvent.COMMITTED) {
-            view_manager.page_load_changed (get_page_id ());
+            preferred_height = extension.get_page_height (get_page_id ());
+            queue_resize ();
+        }
+
+        if (event == WebKit.LoadEvent.FINISHED) {
+            on_loaded ();
+            load_finished ();
+        }
+    }
+
+    private void on_loaded () {
+        loaded = true;
+        if (queued_body_content != null && ready) {
+            set_body_content (queued_body_content);
         }
     }
 
@@ -103,8 +151,21 @@ public class Mail.WebView : WebKit.WebView {
         minimum_height = natural_height = preferred_height;
     }
 
-    public new void load_html (string? body, string? base_uri = null) {
-        base.load_html (body, base_uri ?? INTERNAL_URL_BODY);
+    public new void load_html (string? body) {
+        if (ready) {
+            base.load_html (body, INTERNAL_URL_BODY);
+            load_changed.connect (on_load_changed);
+        } else {
+            queued_content = body;
+        }
+    }
+
+    public void set_body_content (string content) {
+        if (loaded) {
+            extension.set_body_html (get_page_id (), content);
+        } else {
+            queued_body_content = content;
+        }
     }
 
     private bool on_decide_policy (WebKit.WebView view, WebKit.PolicyDecision policy, WebKit.PolicyDecisionType type) {
@@ -130,15 +191,29 @@ public class Mail.WebView : WebKit.WebView {
     }
 
     public void load_images () {
-        view_manager.set_load_images (get_page_id (), true);
+        if (ready) {
+            extension.set_image_loading_enabled (get_page_id (), true);
+        } else {
+            queued_load_images = true;
+        }
     }
 
     public void execute_editor_command (string command, string argument = "") {
-        view_manager.exec_command (get_page_id (), command, argument);
+        extension.execute_command (get_page_id (), command, argument);
     }
 
-    public void query_command_state (string command) {
-        view_manager.query_command_state (get_page_id (), command);
+    public bool query_command_state (string command) {
+        if (extension != null) {
+            return extension.query_command_state (get_page_id (), command);
+        }
+        return false;
+    }
+
+    public string? get_body_html () {
+        if (extension != null) {
+            return extension.get_body_html (get_page_id ());
+        }
+        return null;
     }
 
     private void handle_cid_request (WebKit.URISchemeRequest request) {

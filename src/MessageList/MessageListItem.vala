@@ -19,7 +19,9 @@
  */
 
 public class Mail.MessageListItem : Gtk.ListBoxRow {
+    public bool loaded { get; private set; }
     public Camel.MessageInfo message_info { get; construct; }
+    public Camel.MimeMessage? mime_message { get; private set; default = null; }
 
     private Mail.WebView web_view;
     private GLib.Cancellable loading_cancellable;
@@ -185,6 +187,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         web_view.margin = 12;
         web_view.mouse_target_changed.connect (on_mouse_target_changed);
         web_view.context_menu.connect (on_webview_context_menu);
+        web_view.load_finished.connect (() => {
+            loaded = true;
+        });
 
         var secondary_grid = new Gtk.Grid ();
         secondary_grid.orientation = Gtk.Orientation.VERTICAL;
@@ -317,6 +322,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         }
 
         if (message != null) {
+            mime_message = message;
             yield open_message (message);
         }
     }
@@ -324,7 +330,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private async void open_message (Camel.MimeMessage message) {
         yield parse_mime_content (message.content);
         if (message_is_html) {
-            web_view.load_html (message_content, null);
+            web_view.load_html (message_content);
         } else {
             web_view.load_plain_text (message_content);
         }
@@ -383,5 +389,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         bytes = ByteArray.free_to_bytes (byte_array);
         var inline_stream = new MemoryInputStream.from_bytes (bytes);
         web_view.add_internal_resource (part.get_content_id (), inline_stream);
+    }
+
+    public string get_message_body_html () {
+        return web_view.get_body_html ();
     }
 }

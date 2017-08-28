@@ -19,15 +19,28 @@
  */
 
 public class Mail.InlineComposer : Gtk.ListBoxRow {
+    public signal void discarded ();
+
+    public ComposerWidget.Type construct_type { get; construct; }
+    public Camel.MessageInfo? prev_chain_info { get; construct; }
+    public Camel.MimeMessage? prev_chain_message { get; construct; }
+    public string? prev_message_content { get; construct; }
+
+    private ComposerWidget composer;
 
     construct {
         margin = 12;
 
         get_style_context ().add_class ("card");
 
-        var composer = new ComposerWidget ();
+        composer = new ComposerWidget ();
         composer.margin_top = 6;
         composer.has_recipients = true;
+        composer.discarded.connect (() => {
+            discarded ();
+        });
+
+        composer.quote_content (construct_type, prev_chain_info, prev_chain_message, prev_message_content);
 
         add (composer);
 
@@ -41,5 +54,14 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
         });
 
         show_all ();
+    }
+
+    public InlineComposer (ComposerWidget.Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content) {
+        Object (
+            construct_type: type,
+            prev_chain_info: info,
+            prev_chain_message: message,
+            prev_message_content: content
+        );
     }
 }

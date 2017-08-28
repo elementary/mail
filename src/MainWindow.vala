@@ -32,10 +32,12 @@ public class Mail.MainWindow : Gtk.Window {
 
     public const string ACTION_COMPOSE_MESSAGE = "compose_message";
     public const string ACTION_REPLY = "reply";
+    public const string ACTION_REPLY_ALL = "reply-all";
 
     private const ActionEntry[] action_entries = {
         {ACTION_COMPOSE_MESSAGE,    on_compose_message   },
-        {ACTION_REPLY,              on_reply             }
+        {ACTION_REPLY,              on_reply             },
+        {ACTION_REPLY_ALL,          on_reply_all         }
     };
 
     public MainWindow () {
@@ -51,14 +53,15 @@ public class Mail.MainWindow : Gtk.Window {
         actions.add_action_entries (action_entries, this);
         insert_action_group ("win", actions);
 
-        get_action (ACTION_REPLY).set_enabled (false);
-
         headerbar = new HeaderBar ();
         set_titlebar (headerbar);
 
         folders_list_view = new FoldersListView ();
         conversation_list_box = new ConversationListBox ();
         message_list_box = new MessageListBox ();
+
+        message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY), "enabled", BindingFlags.SYNC_CREATE);
+        message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY_ALL), "enabled", BindingFlags.SYNC_CREATE);
 
         var conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
         conversation_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -111,7 +114,6 @@ public class Mail.MainWindow : Gtk.Window {
 
         conversation_list_box.conversation_selected.connect ((node) => {
             message_list_box.set_conversation (node);
-            get_action (ACTION_REPLY).set_enabled (true);
         });
 
         headerbar.size_allocate.connect (() => {
@@ -133,7 +135,7 @@ public class Mail.MainWindow : Gtk.Window {
         new ComposerWindow (this).show_all ();
     }
 
-    private void on_reply () {
+    private void scroll_message_list_to_bottom () {
         // Adding the inline composer then trying to scroll to the bottom doesn't work as
         // the scrolled window doesn't resize instantly. So connect a one time signal to
         // scroll to the bottom when the inline composer is added
@@ -143,7 +145,16 @@ public class Mail.MainWindow : Gtk.Window {
             adjustment.set_value (adjustment.get_upper ());
             adjustment.disconnect (changed_id);
         });
-        message_list_box.reply ();
+    }
+
+    private void on_reply () {
+        scroll_message_list_to_bottom ();
+        message_list_box.add_inline_composer (ComposerWidget.Type.REPLY);
+    }
+
+    private void on_reply_all () {
+        scroll_message_list_to_bottom ();
+        message_list_box.add_inline_composer (ComposerWidget.Type.REPLY_ALL);
     }
 
     private SimpleAction? get_action (string name) {

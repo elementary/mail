@@ -5,8 +5,9 @@
 
 You'll need the following dependencies:
 * libcamel1.2-dev
-* libedataserver-1.2-dev
-* libedataserverui-1.2-dev
+* libedataserver1.2-dev
+* libedataserverui1.2-dev
+* libfolks-dev
 * libgee-0.8-dev
 * libglib2.0-dev
 * libgranite-dev

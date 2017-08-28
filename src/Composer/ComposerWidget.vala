@@ -19,6 +19,8 @@
  */
 
 public class Mail.ComposerWidget : Gtk.Grid {
+    public signal void discarded ();
+
     private const string ACTION_GROUP_PREFIX = "composer";
     private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
 
@@ -27,17 +29,30 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private const string ACTION_UNDERLINE = "underline";
     private const string ACTION_STRIKETHROUGH = "strikethrough";
     private const string ACTION_REMOVE_FORMAT = "remove_formatting";
+    private const string ACTION_DISCARD = "discard";
+
+    public bool has_subject_field { get; construct; }
 
     private WebView web_view;
     private SimpleActionGroup actions;
     private Gtk.Button send;
+    private Gtk.Entry to_val;
+    private Gtk.Entry cc_val;
+    private Gtk.Revealer cc_revealer;
+
+    public enum Type {
+        REPLY,
+        REPLY_ALL,
+        FORWARD
+    }
 
     public const ActionEntry[] action_entries = {
         {ACTION_BOLD,           on_edit_action,    "s",    "''"     },
         {ACTION_ITALIC,         on_edit_action,    "s",    "''"     },
         {ACTION_UNDERLINE,      on_edit_action,    "s",    "''"     },
         {ACTION_STRIKETHROUGH,  on_edit_action,    "s",    "''"     },
-        {ACTION_REMOVE_FORMAT,  on_remove_format                    }
+        {ACTION_REMOVE_FORMAT,  on_remove_format                    },
+        {ACTION_DISCARD,        on_discard                          }
     };
 
     private bool _has_recipients;
@@ -47,18 +62,99 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
         set {
             _has_recipients = value;
-            update_send_sensitivity ();
+            send.sensitive = has_recipients;
         }
     }
 
-    private void update_send_sensitivity () {
-        send.sensitive = has_recipients;
+    public ComposerWidget () {
+        Object (has_subject_field: false);
+    }
+
+    public ComposerWidget.with_subject () {
+        Object (has_subject_field: true);
     }
 
     construct {
         actions = new SimpleActionGroup ();
         actions.add_action_entries (action_entries, this);
         insert_action_group (ACTION_GROUP_PREFIX, actions);
+
+        var to_label = new Gtk.Label (_("To:"));
+        to_label.xalign = 1;
+        to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        var subject_label = new Gtk.Label (_("Subject:"));
+        subject_label.xalign = 1;
+        subject_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        to_val = new Gtk.Entry ();
+        to_val.hexpand = true;
+
+        var cc_button = new Gtk.ToggleButton.with_label (_("Cc"));
+
+        var bcc_button = new Gtk.ToggleButton.with_label (_("Bcc"));
+
+        var to_grid = new Gtk.Grid ();
+        to_grid.add (to_val);
+        to_grid.add (cc_button);
+        to_grid.add (bcc_button);
+
+        var to_grid_style_context = to_grid.get_style_context ();
+        to_grid_style_context.add_class (Gtk.STYLE_CLASS_ENTRY);
+
+        var cc_label = new Gtk.Label (_("Cc:"));
+        cc_label.xalign = 1;
+        cc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        cc_val = new Gtk.Entry ();
+        cc_val.hexpand = true;
+
+        var cc_grid = new Gtk.Grid ();
+        cc_grid.column_spacing = 6;
+        cc_grid.margin_top = 6;
+        cc_grid.add (cc_label);
+        cc_grid.add (cc_val);
+
+        cc_revealer = new Gtk.Revealer ();
+        cc_revealer.add (cc_grid);
+
+        var bcc_label = new Gtk.Label (_("Bcc:"));
+        bcc_label.xalign = 1;
+        bcc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        var bcc_val = new Gtk.Entry ();
+        bcc_val.hexpand = true;
+
+        var bcc_grid = new Gtk.Grid ();
+        bcc_grid.column_spacing = 6;
+        bcc_grid.margin_top = 6;
+        bcc_grid.add (bcc_label);
+        bcc_grid.add (bcc_val);
+
+        var bcc_revealer = new Gtk.Revealer ();
+        bcc_revealer.add (bcc_grid);
+
+        var subject_val = new Gtk.Entry ();
+        subject_val.margin_top = 6;
+
+        var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+        size_group.add_widget (to_label);
+        size_group.add_widget (cc_label);
+        size_group.add_widget (bcc_label);
+        size_group.add_widget (subject_label);
+
+        var recipient_grid = new Gtk.Grid ();
+        recipient_grid.margin = 6;
+        recipient_grid.margin_top = 12;
+        recipient_grid.column_spacing = 6;
+        recipient_grid.attach (to_label, 0, 0, 1, 1);
+        recipient_grid.attach (to_grid, 1, 0, 1, 1);
+        recipient_grid.attach (cc_revealer, 0, 1, 2, 1);
+        recipient_grid.attach (bcc_revealer, 0, 2, 2, 1);
+        if (has_subject_field) {
+            recipient_grid.attach (subject_label, 0, 3, 1, 1);
+            recipient_grid.attach (subject_val, 1, 3, 1, 1);
+        }
 
         var bold = new Gtk.ToggleButton ();
         bold.tooltip_text = _("Bold (Ctrl+B)");
@@ -123,23 +219,14 @@ public class Mail.ComposerWidget : Gtk.Grid {
         button_row.add (clear_format);
 
         web_view = new WebView ();
-        web_view.editable = true;
-        web_view.command_state_updated.connect ((command, state) => {
-            switch (command) {
-                case "bold":
-                    actions.change_action_state (ACTION_BOLD, new Variant.string (state ? ACTION_BOLD : ""));
-                    break;
-                case "italic":
-                    actions.change_action_state (ACTION_ITALIC, new Variant.string (state ? ACTION_ITALIC : ""));
-                    break;
-                case "underline":
-                    actions.change_action_state (ACTION_UNDERLINE, new Variant.string (state ? ACTION_UNDERLINE : ""));
-                    break;
-                case "strikethrough":
-                    actions.change_action_state (ACTION_STRIKETHROUGH, new Variant.string (state ? ACTION_STRIKETHROUGH : ""));
-                    break;
-            }
-        });
+        try {
+            var template = resources_lookup_data ("/io/elementary/mail/blank-message-template.html", ResourceLookupFlags.NONE);
+            var template_html = (string)Bytes.unref_to_data (template);
+            web_view.load_html (template_html);
+        } catch (Error e) {
+            warning ("Failed to load blank message template: %s", e.message);
+        }
+
         web_view.selection_changed.connect (update_actions);
 
         var action_bar = new Gtk.ActionBar ();
@@ -147,6 +234,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
         discard.margin_start = 6;
         discard.tooltip_text = _("Delete draft");
+        discard.action_name = ACTION_PREFIX + ACTION_DISCARD;
 
         var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
         attach.tooltip_text = _("Attach file");
@@ -166,16 +254,140 @@ public class Mail.ComposerWidget : Gtk.Grid {
         action_bar.pack_end (send);
 
         orientation = Gtk.Orientation.VERTICAL;
+        add (recipient_grid);
         add (button_row);
         add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         add (web_view);
         add (action_bar);
+
+        var contact_manager = ContactManager.get_default ();
+        contact_manager.setup_entry (to_val);
+        contact_manager.setup_entry (cc_val);
+        contact_manager.setup_entry (bcc_val);
+
+        cc_button.clicked.connect (() => {
+            cc_revealer.reveal_child = cc_button.active;
+        });
+
+        cc_val.changed.connect (() => {
+            if (cc_val.text == "") {
+                cc_button.sensitive = true;
+            } else {
+                cc_button.sensitive = false;
+            }
+        });
+
+        bcc_button.clicked.connect (() => {
+            bcc_revealer.reveal_child = bcc_button.active;
+        });
+
+        bcc_val.changed.connect (() => {
+            if (bcc_val.text == "") {
+                bcc_button.sensitive = true;
+            } else {
+                bcc_button.sensitive = false;
+            }
+        });
+
+        to_val.changed.connect (() => {
+            has_recipients = to_val.text != "";
+        });
+
+        to_val.get_style_context ().changed.connect (() => {
+            var state = to_grid_style_context.get_state ();
+            if (to_val.has_focus) {
+                state |= Gtk.StateFlags.FOCUSED;
+            } else {
+                state ^= Gtk.StateFlags.FOCUSED;
+            }
+
+            to_grid_style_context.set_state (state);
+        });
+    }
+
+    private delegate bool AcceptAddress (string address);
+    private static string get_addresses (string raw_addresses, AcceptAddress should_add) {
+        var own_addresses = Backend.Session.get_default ().get_own_addresses ();
+        var output = "";
+        var added_addresses = new Gee.ArrayList<string> ();
+
+        var addresses = new Camel.InternetAddress ();
+        addresses.decode (raw_addresses);
+        addresses.ref ();
+        for (int i = 0; i < addresses.length (); i++) {
+            string? address;
+            addresses.@get (i, null, out address);
+            if (address == null) {
+                continue;
+            }
+
+            address = address.casefold ();
+            var is_own_address = false;
+            foreach (var own_address in own_addresses) {
+                if (address.contains (own_address)) {
+                    is_own_address = true;
+                    break;
+                }
+            }
+
+            if (!is_own_address && should_add (address) && !added_addresses.contains (address)) {
+                added_addresses.add (address);
+                if (output.length > 0) {
+                    output += ", %s".printf (address);
+                } else {
+                    output += address;
+                }
+            }
+        }
+
+        return output;
+    }
+
+    public void quote_content (Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content_to_quote) {
+        if (content_to_quote != null) {
+            if (type == Type.REPLY || type == Type.REPLY_ALL) {
+                var reply_to = message.get_reply_to ();
+                if (reply_to != null) {
+                    to_val.text = reply_to.format ();
+                } else {
+                    to_val.text = message.get_from ().format ();
+                }
+
+                if (type == Type.REPLY_ALL) {
+                    var to_addresses = get_addresses (info.to, (address) => { return true; });
+                    to_val.text += ", %s".printf (to_addresses);
+
+                    if (info.cc != null) {
+                        cc_val.text = get_addresses (info.cc, (address) => {
+                            if (to_val.text.contains (address)) {
+                                return false;
+                            }
+
+                            return true;
+                        });
+
+                        if (cc_val.text.length > 0) {
+                            cc_revealer.reveal_child = true;
+                        }
+                    }
+                }
+            }
+
+            string message_content = "<br/><br/>";
+            string DATE_FORMAT = _("%a, %b %-e, %Y at %-l:%M %p");
+            string when = new DateTime.from_unix_utc (info.date_received).format (DATE_FORMAT);
+            string who = message.get_from ().format ();
+            message_content += _("On %1$s, %2$s wrote:").printf (when, who);
+            message_content += "<br/>";
+            message_content += "<blockquote type=\"cite\">%s</blockquote>".printf (content_to_quote);
+            web_view.set_body_content (message_content);
+        }
     }
     
     private void on_edit_action (SimpleAction action, Variant? param) {
         var command = param.get_string ();
         web_view.execute_editor_command (command);
-        web_view.query_command_state (command);
+        update_actions ();
     }
 
     private void on_remove_format () {
@@ -184,9 +396,13 @@ public class Mail.ComposerWidget : Gtk.Grid {
     }
 
     private void update_actions () {
-        web_view.query_command_state ("bold");
-        web_view.query_command_state ("italic");
-        web_view.query_command_state ("underline");
-        web_view.query_command_state ("strikethrough");
+        actions.change_action_state (ACTION_BOLD, web_view.query_command_state ("bold") ? ACTION_BOLD : "");
+        actions.change_action_state (ACTION_ITALIC, web_view.query_command_state ("italic") ? ACTION_ITALIC : "");
+        actions.change_action_state (ACTION_UNDERLINE, web_view.query_command_state ("underline") ? ACTION_UNDERLINE : "");
+        actions.change_action_state (ACTION_STRIKETHROUGH, web_view.query_command_state ("strikethrough") ? ACTION_STRIKETHROUGH : "");
+    }
+
+    private void on_discard () {
+        discarded ();
     }
 }
