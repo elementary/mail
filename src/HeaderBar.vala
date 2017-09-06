@@ -86,11 +86,16 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         reply_all_button.tooltip_text = _("Reply All (Ctrl+Shift+R, Shift+R)");
         reply_all_button.action_name = "win." + MainWindow.ACTION_REPLY_ALL;
 
+        var forward_button = new Gtk.Button.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR);
+        forward_button.tooltip_text = _("Forward (Ctrl+Shift+F)");
+        forward_button.action_name = "win." + MainWindow.ACTION_FORWARD;
+
         pack_start (compose_button);
         pack_start (spacing_widget);
         pack_start (search_entry);
         pack_start (reply_button);
         pack_start (reply_all_button);
+        pack_start (forward_button);
         pack_end (app_menu);
 
         account_settings_menuitem.clicked.connect (() => {

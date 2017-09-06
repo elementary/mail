@@ -3,6 +3,7 @@ vala_files = [
     'MainWindow.vala',
     'HeaderBar.vala',
     'Dialogs/OpenAttachmentDialog.vala',
+    'Utils.vala',
     'WebView.vala',
     'Backend/Session.vala',
     'Backend/Account.vala',
