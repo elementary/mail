@@ -305,46 +305,10 @@ public class Mail.ComposerWidget : Gtk.Grid {
         });
     }
 
-    private delegate bool AcceptAddress (string address);
-    private static string get_addresses (string raw_addresses, AcceptAddress should_add) {
-        var own_addresses = Backend.Session.get_default ().get_own_addresses ();
-        var output = "";
-        var added_addresses = new Gee.ArrayList<string> ();
-
-        var addresses = new Camel.InternetAddress ();
-        addresses.decode (raw_addresses);
-        addresses.ref ();
-        for (int i = 0; i < addresses.length (); i++) {
-            string? address;
-            addresses.@get (i, null, out address);
-            if (address == null) {
-                continue;
-            }
-
-            address = address.casefold ();
-            var is_own_address = false;
-            foreach (var own_address in own_addresses) {
-                if (address.contains (own_address)) {
-                    is_own_address = true;
-                    break;
-                }
-            }
-
-            if (!is_own_address && should_add (address) && !added_addresses.contains (address)) {
-                added_addresses.add (address);
-                if (output.length > 0) {
-                    output += ", %s".printf (address);
-                } else {
-                    output += address;
-                }
-            }
-        }
-
-        return output;
-    }
-
     public void quote_content (Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content_to_quote) {
         if (content_to_quote != null) {
+            string message_content = "<br/><br/>";
+            string DATE_FORMAT = _("%a, %b %-e, %Y at %-l:%M %p");
             if (type == Type.REPLY || type == Type.REPLY_ALL) {
                 var reply_to = message.get_reply_to ();
                 if (reply_to != null) {
@@ -354,11 +318,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 }
 
                 if (type == Type.REPLY_ALL) {
-                    var to_addresses = get_addresses (info.to, (address) => { return true; });
+                    var to_addresses = Utils.get_reply_addresses (info.to, (address) => { return true; });
                     to_val.text += ", %s".printf (to_addresses);
 
                     if (info.cc != null) {
-                        cc_val.text = get_addresses (info.cc, (address) => {
+                        cc_val.text = Utils.get_reply_addresses (info.cc, (address) => {
                             if (to_val.text.contains (address)) {
                                 return false;
                             }
@@ -371,15 +335,26 @@ public class Mail.ComposerWidget : Gtk.Grid {
                         }
                     }
                 }
+
+                string when = new DateTime.from_unix_utc (info.date_received).format (DATE_FORMAT);
+                string who = Utils.escape_html_tags (message.get_from ().format ());
+                message_content += _("On %1$s, %2$s wrote:").printf (when, who);
+                message_content += "<br/>";
+                message_content += "<blockquote type=\"cite\">%s</blockquote>".printf (content_to_quote);
+            } else if (type == Type.FORWARD) {
+                message_content += _("---------- Forwarded message ----------");
+                message_content += "<br/><br/>";
+                message_content += _("From: %s<br/>").printf (Utils.escape_html_tags (message.get_from ().format ()));
+                message_content += _("Subject: %s<br/>").printf (Utils.escape_html_tags (info.subject));
+                message_content += _("Date: %s<br/>").printf (new DateTime.from_unix_utc (info.date_received).format (DATE_FORMAT));
+                message_content += _("To: %s<br/>").printf (Utils.escape_html_tags (info.to));
+                if (info.cc != null && info.cc != "") {
+                    message_content += _("Cc: %s<br/>").printf (Utils.escape_html_tags (info.cc));
+                }
+                message_content += "<br/><br/>";
+                message_content += content_to_quote;
             }
 
-            string message_content = "<br/><br/>";
-            string DATE_FORMAT = _("%a, %b %-e, %Y at %-l:%M %p");
-            string when = new DateTime.from_unix_utc (info.date_received).format (DATE_FORMAT);
-            string who = message.get_from ().format ();
-            message_content += _("On %1$s, %2$s wrote:").printf (when, who);
-            message_content += "<br/>";
-            message_content += "<blockquote type=\"cite\">%s</blockquote>".printf (content_to_quote);
             web_view.set_body_content (message_content);
         }
     }
