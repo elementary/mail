@@ -13,8 +13,9 @@ libedataserverui_dep = dependency('libedataserverui-1.2')
 webkit2_dep = dependency('webkit2gtk-4.0')
 webkit2_web_extension_dep = dependency('webkit2gtk-web-extension-4.0')
 folks_dep = dependency('folks')
+m_dep = meson.get_compiler('c').find_library('m')
 
-webkit2_extension_path = join_paths(get_option('prefix'), get_option('libdir'), 'io.elementary.mail', 'webkit2')
+webkit2_extension_path = join_paths(get_option('prefix'), get_option('libdir'), meson.project_name(), 'webkit2')
 
 dependencies = [
     glib_dep,
@@ -25,7 +26,8 @@ dependencies = [
     libedataserver_dep,
     libedataserverui_dep,
     webkit2_dep,
-    folks_dep
+    folks_dep,
+    m_dep
 ]
 
 asresources = gnome.compile_resources(
@@ -41,7 +43,7 @@ extension_dependencies = [
     webkit2_web_extension_dep
 ]
 
-add_global_arguments('-DGETTEXT_PACKAGE="io.elementary.mail"', language:'c')
+add_global_arguments('-DGETTEXT_PACKAGE="' + meson.project_name() + '"', language:'c')
 
 meson.add_install_script('meson/post_install.py')
 

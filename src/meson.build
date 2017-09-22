@@ -24,11 +24,11 @@ vala_files = [
     'MessageList/AttachmentButton.vala'
 ]
 
-executable('io.elementary.mail',
+executable(
+    meson.project_name(),
     vala_files,
     asresources,
     dependencies: dependencies,
     c_args: '-DWEBKIT_EXTENSION_PATH="' + webkit2_extension_path + '"',
-    link_args : '-lm',
     install: true
 )
