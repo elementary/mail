@@ -30,6 +30,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private Gtk.Revealer secondary_revealer;
     private Gtk.Stack header_stack;
     private Gtk.StyleContext style_context;
+    private AttachmentBar attachment_bar = null;
 
     private string message_content;
     private bool message_is_html = false;
@@ -217,7 +218,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             attachment_icon.valign = Gtk.Align.START;
             header.attach (attachment_icon, 3, 0, 1, 1);
 
-            var attachment_bar = new AttachmentBar (message_info, loading_cancellable);
+            attachment_bar = new AttachmentBar (loading_cancellable);
             secondary_grid.add (attachment_bar);
         }
 
@@ -304,12 +305,21 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             warning ("Could not get message. %s", e.message);
         }
 
+        if (attachment_bar != null) {
+            yield attachment_bar.parse_mime_content (message.content);
+        }
+
         if (settings.get_boolean ("always-load-remote-images")) {
             web_view.load_images ();
         } else if (message != null) {
             var whitelist = settings.get_strv ("remote-images-whitelist");
             string sender;
-            message.get_from ().@get (0, null, out sender);
+            weak Camel.InternetAddress from = message.get_from ();
+            if (from == null) {
+                return;
+            }
+
+            from.@get (0, null, out sender);
             if (sender in whitelist) {
                 web_view.load_images ();
             }
