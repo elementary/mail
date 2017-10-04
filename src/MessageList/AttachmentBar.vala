@@ -19,15 +19,10 @@
  */
 
 public class Mail.AttachmentBar : Gtk.FlowBox {
-    public Camel.MessageInfo message_info { get; construct; }
     public unowned GLib.Cancellable loading_cancellable { get; construct; }
 
-    public AttachmentBar (Camel.MessageInfo message_info, GLib.Cancellable loading_cancellable) {
-        Object (message_info: message_info,
-            loading_cancellable: loading_cancellable
-        );
-
-        open_message.begin ();
+    public AttachmentBar (GLib.Cancellable loading_cancellable) {
+        Object (loading_cancellable: loading_cancellable);
     }
 
     construct {
@@ -38,20 +33,7 @@ public class Mail.AttachmentBar : Gtk.FlowBox {
         style_context.add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
     }
 
-    private async void open_message () {
-        Camel.MimeMessage message;
-        var folder = message_info.summary.folder;
-        try {
-            message = yield folder.get_message (message_info.uid, GLib.Priority.DEFAULT, loading_cancellable);
-            yield parse_mime_content (message.content);
-        } catch (Error e) {
-            debug("Could not get message. %s", e.message);
-        }
-
-        show_all ();
-    }
-
-    private async void parse_mime_content (Camel.DataWrapper message_content) {
+    public async void parse_mime_content (Camel.DataWrapper message_content) {
         if (message_content is Camel.Multipart) {
             var content = message_content as Camel.Multipart;
             for (uint i = 0; i < content.get_number (); i++) {
@@ -66,6 +48,8 @@ public class Mail.AttachmentBar : Gtk.FlowBox {
                 }
             }
         }
+
+        show_all ();
     }
 
     private void show_attachment (Camel.MimePart attachment_part) {
