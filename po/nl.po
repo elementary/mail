@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-10-06 19:31+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"PO-Revision-Date: 2017-10-06 19:32+0000\n"
+"Last-Translator: Bauke-Jan Davids <bauke-jandavids@hotmail.com>\n"
 "Language-Team: Dutch <https://weblate.elementary.io/projects/mail/mail/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -1268,6 +1268,8 @@ msgstr ""
 #: ../src/client/dialogs/certificate-warning-dialog.vala:76
 msgid "The server's identity does not match the identity in the certificate"
 msgstr ""
+"De identiteit van de server komt niet overeen met de identiteit van het "
+"certificaat"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:79
 msgid "The server's certificate has expired"
@@ -1288,6 +1290,7 @@ msgstr "Het certificaat van de server wordt als onveilig beschouwd"
 #: ../src/client/dialogs/certificate-warning-dialog.vala:91
 msgid "An error has occurred processing the server's certificate"
 msgstr ""
+"Er is een fout opgetreden bij het verwerken van het certificaat van de server"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 msgid "Geary requires your email password to continue"
@@ -1871,7 +1874,7 @@ msgstr "Opslaan mislukt"
 #: ../src/client/composer/composer-widget.vala:76
 #: ../src/client/composer/composer-widget.vala:74
 msgid "Press Backspace to delete quote"
-msgstr ""
+msgstr "Gebruik Backspace om een quote te verwijderen"
 
 #: ../src/client/composer/composer-widget.vala:77
 #: ../src/client/composer/composer-widget.vala:75
