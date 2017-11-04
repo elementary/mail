@@ -54,8 +54,8 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
         messages.halign = Gtk.Align.END;
 
         var messages_style = messages.get_style_context ();
-        messages_style.add_class (Granite.StyleClass.BADGE);
-        messages_style.add_class ("source-list");
+        messages_style.add_class (Granite.STYLE_CLASS_BADGE);
+        messages_style.add_class (Granite.STYLE_CLASS_SOURCE_LIST);
 
         topic = new Gtk.Label (null);
         topic.hexpand = true;

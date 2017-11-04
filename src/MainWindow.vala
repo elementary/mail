@@ -90,7 +90,7 @@ public class Mail.MainWindow : Gtk.Window {
             if (hover_url == null) {
                 message_overlay.hide ();
             } else {
-                message_overlay.status = hover_url;
+                message_overlay.label = hover_url;
                 message_overlay.show ();
             }
         });
