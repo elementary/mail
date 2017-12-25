@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-08-31 15:11+0700\n"
-"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
+"PO-Revision-Date: 2017-12-26 00:09+0000\n"
+"Last-Translator: Hani Ramadhan <hani.its.042@gmail.com>\n"
 "Language-Team: Indonesian "
 "<https://weblate.elementary.io/projects/mail/mail/id/>\n"
 "Language: id\n"
@@ -19,12 +19,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
-msgstr "Draf"
+msgstr "Konsep"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:580
 msgid "Sent | Sent Mail | Sent Email | Sent E-Mail"
@@ -142,7 +142,7 @@ msgstr "bcc"
 #. / string must match the string in Geary's help documentation.
 #: ../src/engine/imap-db/imap-db-account.vala:718
 msgid "body"
-msgstr "tubuh"
+msgstr "isi"
 
 #. / Can be typed in the search box like cc:johndoe@example.com to find
 #. / messages cc'd to a particular person.  The translated
@@ -177,7 +177,7 @@ msgstr "to"
 
 #: ../src/engine/imap-db/imap-db-account.vala:754
 msgid "me"
-msgstr "me"
+msgstr "saya"
 
 #: ../src/engine/rfc822/rfc822-message.vala:781
 #: ../src/client/util/util-email.vala:30
@@ -280,7 +280,7 @@ msgstr[0] "Pindahkan percakapan ke Sampah (Delete, Backspace)"
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 msgid "Move conversations to Trash (Delete, Backspace)"
-msgstr "Pindahkan percakapan ke Tong Sampah (Delete, Backspace)"
+msgstr "Pindahkan percakapan ke Sampah (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
