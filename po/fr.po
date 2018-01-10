@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-09-03 09:23+0000\n"
+"PO-Revision-Date: 2018-01-11 00:08+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/mail/mail/fr/>"
 "\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -199,7 +199,7 @@ msgstr "moi"
 #: ../src/engine/rfc822/rfc822-message.vala:783
 #: ../src/engine/rfc822/rfc822-message.vala:775
 msgid "(no subject)"
-msgstr "(pas d'objet)"
+msgstr "(pas d’objet)"
 
 #. / Format for the datetime that a message being replied to was received
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
@@ -268,7 +268,7 @@ msgstr "Copyright 2011-2015 Fondation Yorba"
 
 #: ../src/client/application/geary-application.vala:21
 msgid "Visit the Yorba web site"
-msgstr "Visiter le site Web de Yorba"
+msgstr "Visiter le site de Yorba"
 
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete conversation"
@@ -408,8 +408,8 @@ msgstr "Ajouter une étiquette aux conversations"
 #: ../src/client/application/geary-controller.vala:2718
 msgid "Move conversation"
 msgid_plural "Move conversations"
-msgstr[0] "Deplacer la conversation"
-msgstr[1] "Deplacer les conversations"
+msgstr[0] "Déplacer la conversation"
+msgstr[1] "Déplacer les conversations"
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
@@ -495,7 +495,7 @@ msgstr "Marquer comme _non Lu"
 #: ../src/client/application/geary-controller.vala:407
 #: ../src/client/application/geary-controller.vala:408
 msgid "_Star"
-msgstr "Ma_rquer d'une étoile"
+msgstr "Ma_rquer d’une étoile"
 
 #: ../src/client/application/geary-controller.vala:417
 #: ../src/client/application/geary-controller.vala:416
@@ -504,7 +504,7 @@ msgstr "Ma_rquer d'une étoile"
 #: ../src/client/application/geary-controller.vala:412
 #: ../src/client/application/geary-controller.vala:413
 msgid "U_nstar"
-msgstr "_Supprimer l'étoile"
+msgstr "_Supprimer l’étoile"
 
 #: ../src/client/application/geary-controller.vala:427
 #: ../src/client/application/geary-controller.vala:426
@@ -633,7 +633,7 @@ msgstr "Afficher la barre de recherche"
 #: ../src/client/application/geary-controller.vala:717
 #: ../src/client/application/geary-controller.vala:711
 msgid "Unable to store server trust exception"
-msgstr "Impossible d'enregistrer l'exception de confiance pour le serveur"
+msgstr "Impossible d’enregistrer l’exception de confiance pour le serveur"
 
 #: ../src/client/application/geary-controller.vala:983
 #: ../src/client/application/geary-controller.vala:977
