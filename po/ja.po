@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-01-27 00:07+0000\n"
+"PO-Revision-Date: 2018-01-29 00:02+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/mail/mail/ja/>\n"
@@ -895,7 +895,7 @@ msgstr "移動のやり直し (Ctrl+Z)"
 #: ../src/client/application/geary-controller.vala:1950
 #: ../src/client/application/geary-controller.vala:1946
 msgid "Are you sure you want to open \"%s\"?"
-msgstr "\"%s\" を開きますか？"
+msgstr "\"%s\" を開いてもよろしいですか？"
 
 #: ../src/client/application/geary-controller.vala:1987
 #: ../src/client/application/geary-controller.vala:1981
@@ -2217,7 +2217,7 @@ msgstr "メッセージを削除する (Shift+Delete)"
 msgid ""
 "<span weight=\"bold\" size=\"larger\">Are you sure you want to remove this "
 "account?</span> "
-msgstr "<span weight=\"bold\" size=\"larger\">このアカウントを削除しますか？</span> "
+msgstr "<span weight=\"bold\" size=\"larger\">このアカウントを削除してもよろしいですか？</span> "
 
 #: ../data/ui/remove_confirm.ui:58
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:42
@@ -3081,7 +3081,7 @@ msgstr "引用テキスト  (Ctrl+])"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:34
 msgid "Are you sure you want to open %s?"
-msgstr "%s を開きますか？"
+msgstr "%s を開いてもよろしいですか？"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:40
 msgid ""
@@ -3105,7 +3105,7 @@ msgstr "キャンセル"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:36
 msgid "Are you sure you want to remove this account?"
-msgstr "このアカウントを削除しますか？"
+msgstr "このアカウントを削除してもよろしいですか？"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:53
 msgid "Email Address:"
