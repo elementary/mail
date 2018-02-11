@@ -11,20 +11,21 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2015-12-18 16:00+0000\n"
-"Last-Translator: elementary Apps team <Unknown>\n"
-"Language-Team: gnome-l10n-gl@gnome.org\n"
+"PO-Revision-Date: 2018-02-12 00:04+0000\n"
+"Last-Translator: Iago <iago.laz@gmail.com>\n"
+"Language-Team: Galician "
+"<https://weblate.elementary.io/projects/mail/mail/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
-msgstr ""
+msgstr "Borradores | Borrador"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:580
 msgid "Sent | Sent Mail | Sent Email | Sent E-Mail"
@@ -46,7 +47,7 @@ msgstr ""
 
 #: ../src/engine/api/geary-special-folder-type.vala:24
 msgid "Inbox"
-msgstr "Bandexa de entrada"
+msgstr "Caixa de entrada"
 
 #: ../src/engine/api/geary-special-folder-type.vala:27
 msgid "Drafts"
@@ -58,7 +59,7 @@ msgstr "Correo enviado"
 
 #: ../src/engine/api/geary-special-folder-type.vala:33
 msgid "Starred"
-msgstr "Destacados"
+msgstr "Con estrela"
 
 #: ../src/engine/api/geary-special-folder-type.vala:36
 msgid "Important"
@@ -78,14 +79,14 @@ msgstr "Lixo"
 
 #: ../src/engine/api/geary-special-folder-type.vala:48
 msgid "Outbox"
-msgstr "Bandexa de saída"
+msgstr "Caixa de saída"
 
 #: ../src/engine/api/geary-special-folder-type.vala:51
 #: ../src/client/folder-list/folder-list-search-branch.vala:38
 #: ../src/client/components/search-bar.vala:10
 #: ../src/client/components/main-toolbar.vala:29
 msgid "Search"
-msgstr "Buscar"
+msgstr "Procura"
 
 #: ../src/engine/api/geary-special-folder-type.vala:54
 msgid "Archive"
@@ -175,7 +176,7 @@ msgstr "para"
 
 #: ../src/engine/imap-db/imap-db-account.vala:754
 msgid "me"
-msgstr ""
+msgstr "eu"
 
 #: ../src/engine/rfc822/rfc822-message.vala:781
 #: ../src/client/util/util-email.vala:30
@@ -1473,14 +1474,14 @@ msgstr "Agora"
 #: ../src/client/util/util-date.vala:167
 msgid "%dm ago"
 msgid_plural "%dm ago"
-msgstr[0] "Fai %dm"
-msgstr[1] "Fai %dm"
+msgstr[0] "Hai %d minuto"
+msgstr[1] "Hai %d minutos"
 
 #: ../src/client/util/util-date.vala:171
 msgid "%dh ago"
 msgid_plural "%dh ago"
-msgstr[0] "Fai %dh"
-msgstr[1] "Fai %dh"
+msgstr[0] "Hai %d hora"
+msgstr[1] "Hai %d horas"
 
 #: ../src/client/util/util-date.vala:178
 msgid "Yesterday"
@@ -3120,7 +3121,7 @@ msgstr ""
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
-msgstr ""
+msgstr "Correo"
 
 #: ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+%)"
