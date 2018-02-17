@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-02-17 20:46+0000\n"
-"Last-Translator: Novák Gábor <novakg17@gmail.com>\n"
+"PO-Revision-Date: 2018-02-21 00:07+0000\n"
+"Last-Translator: Szlatkovszky Ákos <akos@bkos.hu>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/mail/mail/hu/>\n"
 "Language: hu\n"
@@ -294,8 +294,8 @@ msgstr "_Archiválás"
 #: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Beszélgetés archíválása (A)"
+msgstr[1] "Beszélgetések archíválása (A)"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
@@ -338,8 +338,8 @@ msgstr "Megjelölés nem levél_szemétként"
 #: ../src/client/application/geary-controller.vala:390
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Beszélgetés kijelölése"
+msgstr[1] "Beszélgetések kijelölése"
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
