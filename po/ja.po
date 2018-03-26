@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-03-07 00:09+0000\n"
+"PO-Revision-Date: 2018-03-27 00:02+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/mail/mail/ja/>\n"
@@ -2292,11 +2292,11 @@ msgstr "やり直し (_R)"
 
 #: ../data/ui/composer.ui:22
 msgid "Cu_t"
-msgstr "切り取り (_T)"
+msgstr "カット (_T)"
 
 #: ../data/ui/composer.ui:36
 msgid "_Paste"
-msgstr "貼り付け (_P)"
+msgstr "ペースト (_P)"
 
 #: ../data/ui/composer.ui:43
 msgid "_Left"
@@ -2337,7 +2337,7 @@ msgstr "フォーマットを削除 (Ctrl+Space)"
 #: ../data/ui/composer.ui:100 ../data/ui/composer.ui:97
 msgctxt "Clipboard paste with rich text"
 msgid "Paste _With Formatting"
-msgstr "フォーマットなしで貼り付け (_W)"
+msgstr "書式付きでペースト (_W)"
 
 #: ../data/ui/composer.ui:111 ../src/client/composer/ComposerToolbar.vala:36
 msgid "Bold (Ctrl+B)"
