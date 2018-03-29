@@ -130,7 +130,6 @@ public class Mail.ConversationListBox : Gtk.ListBox {
     private static int thread_sort_function (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
         var item1 = (ConversationListItem) row1;
         var item2 = (ConversationListItem) row2;
-
         return (int)(item2.timestamp - item1.timestamp);
     }
 }

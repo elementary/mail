@@ -40,8 +40,9 @@ public class Mail.MessageListBox : Gtk.ListBox {
             child.destroy ();
         });
 
-        if (node == null)
+        if (node == null) {
             return;
+        }
 
         var item = new MessageListItem (node.message);
         add (item);

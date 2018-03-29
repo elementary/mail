@@ -36,6 +36,7 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
                 // Sent messages do not have a date_received timestamp.
                 return node.message.date_sent;
             }
+
             return node.message.date_received;
         }
     }
