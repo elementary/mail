@@ -139,7 +139,13 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         header_stack.add_named (small_fields_grid, "small");
         header_stack.show_all ();
 
-        var datetime_label = new Gtk.Label (new DateTime.from_unix_utc (message_info.date_received).format ("%b %e, %Y"));
+        var relevant_timestamp = message_info.date_received;
+        if (relevant_timestamp == 0) {
+            // Sent messages do not have a date_received timestamp.
+            relevant_timestamp = message_info.date_sent;
+        }
+
+        var datetime_label = new Gtk.Label (new DateTime.from_unix_utc (relevant_timestamp).format ("%b %e, %Y"));
         datetime_label.hexpand = true;
         datetime_label.halign = Gtk.Align.END;
         datetime_label.valign = Gtk.Align.START;
@@ -323,6 +329,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             if (sender in whitelist) {
                 web_view.load_images ();
             }
+
             blocked_images_infobar.response.connect ((id) => {
                 if (id == 2) {
                     if (!(sender in whitelist)) {
