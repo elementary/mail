@@ -30,10 +30,17 @@ public class Mail.MessageListBox : Gtk.ListBox {
         get_style_context ().add_class ("deck");
     }
 
-    public void set_conversation (Camel.FolderThreadNode node) {
+    public void set_conversation (Camel.FolderThreadNode? node) {
         get_children ().foreach ((child) => {
             child.destroy ();
         });
+
+        // Prevent the user from interacting with the message thread while it
+        // is being loaded. can_reply will be set to true after loading the
+        // thread (if any).
+        can_reply = false;
+        if (node == null)
+            return;
 
         var item = new MessageListItem (node.message);
         add (item);
@@ -42,14 +49,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
         }
 
         var children = get_children ();
-        if (children.length () == 1) {
-            var child = get_row_at_index (0);
-            if (child is MessageListItem) {
-                var list_item = (MessageListItem) child;
-                list_item.expanded = true;
-                list_item.bind_property ("loaded", this, "can-reply", BindingFlags.SYNC_CREATE);
-            }
-        } else {
+        if (children.length () > 0) {
             var child = get_row_at_index ((int) children.length () - 1);
             if (child != null && child is MessageListItem) {
                 var list_item = (MessageListItem) child;

@@ -21,8 +21,8 @@
  */
 
 public class Mail.ConversationListBox : Gtk.ListBox {
-    public signal void conversation_selected (Camel.FolderThreadNode node);
-    public signal void conversation_focused (Camel.FolderThreadNode node);
+    public signal void conversation_selected (Camel.FolderThreadNode? node);
+    public signal void conversation_focused (Camel.FolderThreadNode? node);
 
     private string current_folder;
     private Backend.Account current_account;
@@ -37,10 +37,18 @@ public class Mail.ConversationListBox : Gtk.ListBox {
         conversations = new Gee.HashMap<string, ConversationListItem> ();
         set_sort_func (thread_sort_function);
         row_activated.connect ((row) => {
-            conversation_focused (((ConversationListItem) row).node);
+            if (row == null) {
+                conversation_focused (null);
+            } else {
+                conversation_focused (((ConversationListItem) row).node);
+            }
         });
         row_selected.connect ((row) => {
-            conversation_selected (((ConversationListItem) row).node);
+            if (row == null) {
+                conversation_selected (null);
+            } else {
+                conversation_selected (((ConversationListItem) row).node);
+            }
         });
     }
 
@@ -50,6 +58,9 @@ public class Mail.ConversationListBox : Gtk.ListBox {
         if (cancellable != null) {
             cancellable.cancel ();
         }
+
+        conversation_focused (null);
+        conversation_selected (null);
 
         lock (conversations) {
             conversations.clear ();
