@@ -34,12 +34,14 @@ public class Mail.MainWindow : Gtk.Window {
     public const string ACTION_REPLY = "reply";
     public const string ACTION_REPLY_ALL = "reply-all";
     public const string ACTION_FORWARD = "forward";
+    public const string ACTION_TRASH = "trash";
 
     private const ActionEntry[] action_entries = {
         {ACTION_COMPOSE_MESSAGE,    on_compose_message   },
         {ACTION_REPLY,              on_reply             },
         {ACTION_REPLY_ALL,          on_reply_all         },
-        {ACTION_FORWARD,            on_forward           }
+        {ACTION_FORWARD,            on_forward           },
+        {ACTION_TRASH,              on_trash             },
     };
 
     public MainWindow () {
@@ -65,6 +67,7 @@ public class Mail.MainWindow : Gtk.Window {
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY_ALL), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-reply", get_action (ACTION_FORWARD), "enabled", BindingFlags.SYNC_CREATE);
+        message_list_box.bind_property ("can-move-thread", get_action (ACTION_TRASH), "enabled", BindingFlags.SYNC_CREATE);
 
         var conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
         conversation_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -163,6 +166,10 @@ public class Mail.MainWindow : Gtk.Window {
     private void on_forward () {
         scroll_message_list_to_bottom ();
         message_list_box.add_inline_composer (ComposerWidget.Type.FORWARD);
+    }
+
+    private void on_trash () {
+        // TODO
     }
 
     private SimpleAction? get_action (string name) {
