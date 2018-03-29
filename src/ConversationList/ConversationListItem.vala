@@ -30,6 +30,16 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
 
     public Camel.FolderThreadNode node { get; private set; }
 
+    public int64 timestamp {
+        get {
+            if (node.message.date_received == 0) {
+                // Sent messages do not have a date_received timestamp.
+                return node.message.date_sent;
+            }
+            return node.message.date_received;
+        }
+    }
+
     public ConversationListItem (Camel.FolderThreadNode node) {
         update_node (node);
     }
@@ -108,12 +118,7 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
             flagged_icon_revealer.reveal_child = true;
         }
 
-        var relevant_timestamp = node.message.date_received;
-        if (relevant_timestamp == 0) {
-            // Sent messages do not have a date_received timestamp.
-            relevant_timestamp = node.message.date_sent;
-        }
-        date.label = Granite.DateTime.get_relative_datetime (new DateTime.from_unix_local (relevant_timestamp));
+        date.label = Granite.DateTime.get_relative_datetime (new DateTime.from_unix_local (timestamp));
     }
 
     private static uint count_thread_messages (Camel.FolderThreadNode node) {
