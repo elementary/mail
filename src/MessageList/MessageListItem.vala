@@ -389,6 +389,16 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             }
 
             message_content = (string) os.steal_data ();
+
+            if (!message_content.validate ()) {
+                // If message_content is not valid UTF-8, assume that it is
+                // ISO-8859-1 encoded and convert it to UTF-8.
+                // This prevents silent rendering failures down the line because
+                // WebKit's load_plain_text can only handle valid UTF-8 strings.
+                // TODO: This should use the correct encoding from the Content-Type header.
+                message_content = GLib.convert (message_content, -1, "UTF-8", "ISO-8859-1");
+            }
+
             if (field.subtype == "html") {
                 message_is_html = true;
             }
