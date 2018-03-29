@@ -31,14 +31,15 @@ public class Mail.MessageListBox : Gtk.ListBox {
     }
 
     public void set_conversation (Camel.FolderThreadNode? node) {
+        // Prevent the user from interacting with the message thread while it
+        // is being reloaded. can_reply will be set to true after loading the
+        // thread.
+        can_reply = false;
+
         get_children ().foreach ((child) => {
             child.destroy ();
         });
 
-        // Prevent the user from interacting with the message thread while it
-        // is being loaded. can_reply will be set to true after loading the
-        // thread (if any).
-        can_reply = false;
         if (node == null)
             return;
 
