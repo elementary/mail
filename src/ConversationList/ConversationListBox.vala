@@ -129,7 +129,17 @@ public class Mail.ConversationListBox : Gtk.ListBox {
 
     private static int thread_sort_function (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
         var item1 = (ConversationListItem) row1;
+        var timestamp1 = item1.node.message.date_received;
+        if (timestamp1 == 0) {
+            timestamp1 = item1.node.message.date_sent;
+        }
+
         var item2 = (ConversationListItem) row2;
-        return (int)(item2.node.message.date_received - item1.node.message.date_received);
+        var timestamp2 = item2.node.message.date_received;
+        if (timestamp2 == 0) {
+            timestamp2 = item2.node.message.date_sent;
+        }
+
+        return (int)(timestamp2 - timestamp1);
     }
 }
