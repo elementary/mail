@@ -160,6 +160,16 @@ public class Mail.WebView : WebKit.WebView {
         }
     }
 
+    public new void load_plain_text (string plain_text) {
+        var flags = Camel.MimeFilterToHTMLFlags.CONVERT_NL |
+            Camel.MimeFilterToHTMLFlags.CONVERT_SPACES |
+            Camel.MimeFilterToHTMLFlags.CONVERT_URLS |
+            Camel.MimeFilterToHTMLFlags.CONVERT_ADDRESSES;
+        // TODO: Which color should we use instead of 0 (black)?
+        var html = Camel.text_to_html (plain_text, flags, 0);
+        load_html (html);
+    }
+
     public void set_body_content (string content) {
         if (loaded) {
             extension.set_body_html (get_page_id (), content);
