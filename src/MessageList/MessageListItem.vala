@@ -418,7 +418,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             // If message_content is not valid UTF-8 at this point, assume that
             // it is ISO-8859-1 encoded by default, and convert it to UTF-8.
             try {
-                warning ("No encoding/charset found for email; using ISO-8859-1");
                 result = GLib.convert (bytes, num_bytes, "UTF-8", "ISO-8859-1");
             } catch (ConvertError e) {
                 critical("Every string should be valid ISO-8859-1");
