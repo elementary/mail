@@ -398,33 +398,33 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     }
 
     private static string convert_to_utf8(GLib.MemoryOutputStream os, string? encoding) {
-    	var num_bytes = (int) os.get_data_size ();
-		var bytes = (string) os.steal_data ();
+        var num_bytes = (int) os.get_data_size ();
+        var bytes = (string) os.steal_data ();
 
-		string? result = null;
+        string? utf8 = null;
 
         if (encoding != null) {
             string? iconv_encoding = Camel.iconv_charset_name (encoding);
             if (iconv_encoding != null) {
                 try {
-                    result = GLib.convert (bytes, num_bytes, "UTF-8", iconv_encoding);
+                    utf8 = GLib.convert (bytes, num_bytes, "UTF-8", iconv_encoding);
                 } catch (ConvertError e) {
                     // Nothing to do - result will be assigned below.
                 }
             }
         }
 
-        if (result == null || !result.validate()) {
+        if (utf8 == null || !utf8.validate()) {
             // If message_content is not valid UTF-8 at this point, assume that
             // it is ISO-8859-1 encoded by default, and convert it to UTF-8.
             try {
-                result = GLib.convert (bytes, num_bytes, "UTF-8", "ISO-8859-1");
+                utf8 = GLib.convert (bytes, num_bytes, "UTF-8", "ISO-8859-1");
             } catch (ConvertError e) {
                 critical("Every string should be valid ISO-8859-1");
             }
         }
 
-        return result;
+        return utf8;
     }
 
     private async void handle_inline_mime (Camel.MimePart part) {
