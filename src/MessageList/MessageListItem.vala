@@ -388,21 +388,44 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 return;
             }
 
-            message_content = (string) os.steal_data ();
-
-            if (!message_content.validate ()) {
-                // If message_content is not valid UTF-8, assume that it is
-                // ISO-8859-1 encoded and convert it to UTF-8.
-                // This prevents silent rendering failures down the line because
-                // WebKit's load_plain_text can only handle valid UTF-8 strings.
-                // TODO: This should use the correct encoding from the Content-Type header.
-                message_content = GLib.convert (message_content, -1, "UTF-8", "ISO-8859-1");
-            }
+            // Convert the message to UTF-8 to ensure we have a valid GLib string.
+            message_content = convert_to_utf8(os, field.param ("charset"));
 
             if (field.subtype == "html") {
                 message_is_html = true;
             }
         }
+    }
+
+    private static string convert_to_utf8(GLib.MemoryOutputStream os, string? encoding) {
+    	var num_bytes = (int) os.get_data_size ();
+		var bytes = (string) os.steal_data ();
+
+		string? result = null;
+
+        if (encoding != null) {
+            string? iconv_encoding = Camel.iconv_charset_name (encoding);
+            if (iconv_encoding != null) {
+                try {
+                    result = GLib.convert (bytes, num_bytes, "UTF-8", iconv_encoding);
+                } catch (ConvertError e) {
+                    // Nothing to do - result will be assigned below.
+                }
+            }
+        }
+
+        if (result == null || !result.validate()) {
+            // If message_content is not valid UTF-8 at this point, assume that
+            // it is ISO-8859-1 encoded by default, and convert it to UTF-8.
+            try {
+                warning ("No encoding/charset found for email; using ISO-8859-1");
+                result = GLib.convert (bytes, num_bytes, "UTF-8", "ISO-8859-1");
+            } catch (ConvertError e) {
+                critical("Every string should be valid ISO-8859-1");
+            }
+        }
+
+        return result;
     }
 
     private async void handle_inline_mime (Camel.MimePart part) {
