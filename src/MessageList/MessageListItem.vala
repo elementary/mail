@@ -353,13 +353,26 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         if (message_is_html) {
             web_view.load_html (message_content);
         } else {
-            web_view.load_plain_text (message_content);
+            /*
+             * Instead of calling web_view.load_plain_text, use Camel's ToHTML
+             * filter to convert text to HTML. This gives us some niceties like
+             * clickable URLs and email addresses for free.
+             *
+             * Explanation of MimeFilterToHTMLFlags:
+             * https://wiki.gnome.org/Apps/Evolution/Camel.MimeFilter#Camel.MimeFilterToHtml
+             */
+            var flags = Camel.MimeFilterToHTMLFlags.CONVERT_NL |
+                Camel.MimeFilterToHTMLFlags.CONVERT_SPACES |
+                Camel.MimeFilterToHTMLFlags.CONVERT_URLS |
+                Camel.MimeFilterToHTMLFlags.CONVERT_ADDRESSES;
+            var html = Camel.text_to_html (message_content, flags, 0);
+            web_view.load_html (html);
         }
     }
 
-    private async void parse_mime_content (Camel.DataWrapper message_content) {
-        if (message_content is Camel.Multipart) {
-            var content = message_content as Camel.Multipart;
+    private async void parse_mime_content (Camel.DataWrapper mime_content) {
+        if (mime_content is Camel.Multipart) {
+            var content = mime_content as Camel.Multipart;
             for (uint i = 0; i < content.get_number (); i++) {
                 var part = content.get_part (i);
                 var field = part.get_mime_type_field ();
@@ -372,7 +385,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 }
             }
         } else {
-            yield handle_text_mime (message_content);
+            yield handle_text_mime (mime_content);
         }
     }
 
@@ -389,7 +402,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             }
 
             // Convert the message to UTF-8 to ensure we have a valid GLib string.
-            message_content = convert_to_utf8(os, field.param ("charset"));
+            message_content = convert_to_utf8 (os, field.param ("charset"));
 
             if (field.subtype == "html") {
                 message_is_html = true;
@@ -397,7 +410,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         }
     }
 
-    private static string convert_to_utf8(GLib.MemoryOutputStream os, string? encoding) {
+    private static string convert_to_utf8 (GLib.MemoryOutputStream os, string? encoding) {
         var num_bytes = (int) os.get_data_size ();
         var bytes = (string) os.steal_data ();
 
@@ -414,13 +427,16 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             }
         }
 
-        if (utf8 == null || !utf8.validate()) {
-            // If message_content is not valid UTF-8 at this point, assume that
-            // it is ISO-8859-1 encoded by default, and convert it to UTF-8.
+        if (utf8 == null || !utf8.validate ()) {
+            /*
+             * If message_content is not valid UTF-8 at this point, assume that
+             * it is ISO-8859-1 encoded by default, and convert it to UTF-8.
+             */
             try {
                 utf8 = GLib.convert (bytes, num_bytes, "UTF-8", "ISO-8859-1");
             } catch (ConvertError e) {
-                critical("Every string should be valid ISO-8859-1");
+                critical ("Every string should be valid ISO-8859-1. ConvertError: %s", e.message);
+                utf8 = "";
             }
         }
 
@@ -438,8 +454,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             return;
         }
 
-        Bytes bytes;
-        bytes = ByteArray.free_to_bytes (byte_array);
+        Bytes bytes = ByteArray.free_to_bytes (byte_array);
         var inline_stream = new MemoryInputStream.from_bytes (bytes);
         web_view.add_internal_resource (part.get_content_id (), inline_stream);
     }
