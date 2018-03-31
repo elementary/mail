@@ -32,7 +32,6 @@ public class Mail.ConversationListBox : Gtk.ListBox {
     private Gee.HashMap<string, ConversationListItem> conversations;
 
     construct {
-        selection_mode = Gtk.SelectionMode.MULTIPLE;
         activate_on_single_click = true;
         conversations = new Gee.HashMap<string, ConversationListItem> ();
         set_sort_func (thread_sort_function);
