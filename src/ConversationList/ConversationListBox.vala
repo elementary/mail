@@ -91,8 +91,9 @@ public class Mail.ConversationListBox : Gtk.ListBox {
     }
 
     private void folder_changed (Camel.FolderChangeInfo change_info, GLib.Cancellable cancellable) {
-        if (cancellable.is_cancelled ())
+        if (cancellable.is_cancelled ()) {
             return;
+        }
 
         lock (conversations) {
             thread.apply (folder.get_uids ());
@@ -106,8 +107,9 @@ public class Mail.ConversationListBox : Gtk.ListBox {
 
             unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.tree;
             while (child != null) {
-                if (cancellable.is_cancelled ())
+                if (cancellable.is_cancelled ()) {
                     return;
+                }
 
                 var item = conversations[child.message.uid];
                 if (item == null) {
