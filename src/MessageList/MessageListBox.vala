@@ -57,8 +57,9 @@ public class Mail.MessageListBox : Gtk.ListBox {
         }
 
         var children = get_children ();
-        if (children.length () > 0) {
-            var child = get_row_at_index ((int) children.length () - 1);
+        var num_children = children.length ();
+        if (num_children > 0) {
+            var child = get_row_at_index ((int) num_children - 1);
             if (child != null && child is MessageListItem) {
                 var list_item = (MessageListItem) child;
                 list_item.expanded = true;
