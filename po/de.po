@@ -18,8 +18,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-09-06 14:27+0000\n"
-"Last-Translator: Lloyd Carr <l.carr@gmx.de>\n"
+"PO-Revision-Date: 2018-04-02 00:04+0000\n"
+"Last-Translator: Jörg Arnold <j0ar@posteo.de>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/mail/mail/de/>"
 "\n"
 "Language: de\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -2096,8 +2096,8 @@ msgstr[1] "%i Treffer"
 #: ../src/client/components/conversation-find-bar.vala:216
 msgid "%i match (wrapped)"
 msgid_plural "%i matches (wrapped)"
-msgstr[0] "%i Treffer (eingewickelt)"
-msgstr[1] "%i Treffer (eingewickelt)"
+msgstr[0] "%i Treffer (verhüllt)"
+msgstr[1] "%i Treffer (verhüllt)"
 
 #: ../src/client/components/conversation-find-bar.vala:218
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:194
