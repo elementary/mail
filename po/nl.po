@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-04-01 14:17+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"PO-Revision-Date: 2018-04-01 14:19+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Dutch <https://weblate.elementary.io/projects/mail/mail/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -2597,7 +2597,7 @@ msgstr "Addi_tionele e-mailadressen…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
-msgstr ""
+msgstr "_Verzonden e-mail opslaan"
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
@@ -2625,7 +2625,7 @@ msgstr "N_aam:"
 
 #: ../data/ui/login.ui:211
 msgid "S_ervice:"
-msgstr ""
+msgstr "S_ervice:"
 
 #: ../data/ui/login.ui:298
 msgid "IMAP settings"
@@ -2701,7 +2701,7 @@ msgstr "Geen authenticatie ver_eist"
 
 #: ../data/ui/login.ui:679
 msgid "Use IMAP cre_dentials"
-msgstr ""
+msgstr "IMAP-ge_gevens gebruiken"
 
 #: ../data/ui/login.ui:783
 msgid "Storage"
@@ -2733,7 +2733,7 @@ msgstr "Account verwijderen"
 
 #: ../data/ui/certificate_warning_dialog.ui:7
 msgid "Untrusted Connection"
-msgstr ""
+msgstr "Onvertrouwde verbinding"
 
 #: ../data/ui/certificate_warning_dialog.ui:29
 msgid "_Always Trust This Server"
@@ -2761,7 +2761,7 @@ msgstr "_Wachtwoord onthouden"
 
 #: ../data/ui/password-dialog.ui:210
 msgid "_Authenticate"
-msgstr ""
+msgstr "_Authenticeren"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
@@ -2781,6 +2781,9 @@ msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
 msgstr ""
+"Mail heeft een probleem met het verzenden van een e-mail. Indien het "
+"probleem zich blijft voordoen, gelieve manueel de e-mail te verwijderen uit "
+"uw Outbox-map."
 
 #: ../src/client/application/geary-controller.vala:1057
 #: ../src/client/application/geary-controller.vala:1051
@@ -2791,6 +2794,8 @@ msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
+"Mail heeft een probleem met een verzonden bericht naar Verzonden E-mail te "
+"bewaren. Het bericht zal in uw Outbox-map blijven tot u het verwijderd."
 
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
