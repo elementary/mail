@@ -46,6 +46,7 @@ public class Mail.WebView : WebKit.WebView {
 
     private int preferred_height = 0;
     private MailWebViewExtension.Server? extension = null;
+    private uint watch_identifier = 0;
     private Gee.Map<string, InputStream> internal_resources;
 
     private bool ready = false;
@@ -74,7 +75,7 @@ public class Mail.WebView : WebKit.WebView {
 
         decide_policy.connect (on_decide_policy);
 
-        Bus.watch_name (BusType.SESSION, SERVER_BUS_NAME, BusNameWatcherFlags.NONE, on_server_appear);
+        watch_identifier = Bus.watch_name (BusType.SESSION, SERVER_BUS_NAME, BusNameWatcherFlags.NONE, on_server_appear);
     }
 
     public WebView () {
@@ -99,6 +100,12 @@ public class Mail.WebView : WebKit.WebView {
         } catch (IOError e) {
             warning ("Couldn't connect to WebKit extension DBus: %s", e.message);
         }
+
+        /*
+         * Stop waiting for the extension, to prevent this WebView from leaking
+         * via the method reference given to Bus.watch_name.
+         */
+        Bus.unwatch_name (watch_identifier);
 
         on_ready ();
     }
