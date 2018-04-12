@@ -177,9 +177,17 @@ public class Mail.MainWindow : Gtk.Window {
                 critical ("Could not find trash folder in account " + account.service.display_name);
             }
 
-            var folder = conversation_list_box.folder;
+            var source_folder = conversation_list_box.folder;
             var uids = message_list_box.uids;
-            folder.transfer_messages_to_sync (uids, trash_folder, true, null);
+
+            trash_folder.freeze ();
+            source_folder.freeze ();
+            try {
+                source_folder.transfer_messages_to_sync (uids, trash_folder, true, null);
+            } finally {
+                trash_folder.thaw ();
+                source_folder.thaw ();
+            }
         } catch (Error e) {
             critical ("Could not move messages to trash: " + e.message);
         }
