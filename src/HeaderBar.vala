@@ -90,12 +90,18 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         forward_button.tooltip_text = _("Forward (Ctrl+Shift+F)");
         forward_button.action_name = "win." + MainWindow.ACTION_FORWARD;
 
+        var trash_button = new Gtk.Button.from_icon_name ("edit-delete", Gtk.IconSize.LARGE_TOOLBAR);
+        trash_button.tooltip_text = _("Move conversations to Trash (Delete, Backspace)");
+        trash_button.action_name = "win." + MainWindow.ACTION_MOVE_TO_TRASH;
+
         pack_start (compose_button);
         pack_start (spacing_widget);
         pack_start (search_entry);
         pack_start (reply_button);
         pack_start (reply_all_button);
         pack_start (forward_button);
+        pack_start (new Gtk.Separator (Gtk.Orientation.VERTICAL));
+        pack_start (trash_button);
         pack_end (app_menu);
 
         account_settings_menuitem.clicked.connect (() => {
