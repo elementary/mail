@@ -22,6 +22,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
     public signal void hovering_over_link (string? label, string? uri);
     public bool can_reply { get; set; default = false; }
     public bool can_move_thread { get; set; default = false; }
+    public GenericArray<string> uids { get; private set; default = new GenericArray<string>(); }
 
     public MessageListBox () {
         Object (selection_mode: Gtk.SelectionMode.NONE);
@@ -43,6 +44,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
         get_children ().foreach ((child) => {
             child.destroy ();
         });
+        uids = new GenericArray<string> ();
 
         if (node == null) {
             return;
@@ -56,6 +58,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
 
         var item = new MessageListItem (node.message);
         add (item);
+        uids.add (node.message.uid);
         if (node.child != null) {
             go_down ((Camel.FolderThreadNode?) node.child);
         }
@@ -77,6 +80,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
         while (current_node != null) {
             var item = new MessageListItem (current_node.message);
             add (item);
+            uids.add (current_node.message.uid);
             if (current_node.next != null) {
                 go_down ((Camel.FolderThreadNode?) current_node.next);
             }

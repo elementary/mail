@@ -92,7 +92,7 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
 
         var trash_button = new Gtk.Button.from_icon_name ("edit-delete", Gtk.IconSize.LARGE_TOOLBAR);
         trash_button.tooltip_text = _("Move conversations to Trash (Delete, Backspace)");
-        trash_button.action_name = "win." + MainWindow.ACTION_TRASH;
+        trash_button.action_name = "win." + MainWindow.ACTION_MOVE_TO_TRASH;
 
         pack_start (compose_button);
         pack_start (spacing_widget);

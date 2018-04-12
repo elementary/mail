@@ -24,11 +24,12 @@ public class Mail.ConversationListBox : Gtk.ListBox {
     public signal void conversation_selected (Camel.FolderThreadNode? node);
     public signal void conversation_focused (Camel.FolderThreadNode? node);
 
-    private string current_folder;
-    private Backend.Account current_account;
+    public Backend.Account current_account { get; private set; }
+    public Camel.Folder folder { get; private set; }
+
     private GLib.Cancellable? cancellable = null;
-    private Camel.Folder folder;
     private Camel.FolderThread thread;
+    private string current_folder;
     private Gee.HashMap<string, ConversationListItem> conversations;
 
     construct {
@@ -51,7 +52,7 @@ public class Mail.ConversationListBox : Gtk.ListBox {
         });
     }
 
-    public async void set_folder (Backend.Account account, string next_folder) {
+    public async void load_folder (Backend.Account account, string next_folder) {
         current_folder = next_folder;
         current_account = account;
         if (cancellable != null) {
