@@ -173,6 +173,9 @@ public class Mail.MainWindow : Gtk.Window {
             var account = conversation_list_box.current_account;
             var offline_store = (Camel.OfflineStore) account.service;
             var trash_folder = offline_store.get_trash_folder_sync ();
+            if (trash_folder == null) {
+                critical ("Could not find trash folder in account " + account.service.display_name);
+            }
 
             var folder = conversation_list_box.folder;
             var uids = message_list_box.uids;
