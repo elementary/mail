@@ -21,6 +21,8 @@
 public class Mail.MessageListBox : Gtk.ListBox {
     public signal void hovering_over_link (string? label, string? uri);
     public bool can_reply { get; set; default = false; }
+    public bool can_move_thread { get; set; default = false; }
+    public GenericArray<string> uids { get; private set; default = new GenericArray<string>(); }
 
     public MessageListBox () {
         Object (selection_mode: Gtk.SelectionMode.NONE);
@@ -31,28 +33,40 @@ public class Mail.MessageListBox : Gtk.ListBox {
     }
 
     public void set_conversation (Camel.FolderThreadNode? node) {
-        // Prevent the user from interacting with the message thread while it
-        // is being reloaded. can_reply will be set to true after loading the
-        // thread.
+        /*
+         * Prevent the user from interacting with the message thread while it
+         * is being reloaded. can_reply will be set to true after loading the
+         * thread.
+         */
         can_reply = false;
+        can_move_thread = false;
 
         get_children ().foreach ((child) => {
             child.destroy ();
         });
+        uids = new GenericArray<string> ();
 
         if (node == null) {
             return;
         }
 
+        /*
+         * If there is a node, we can move the thread even without loading all
+         * individual messages.
+         */
+        can_move_thread = true;
+
         var item = new MessageListItem (node.message);
         add (item);
+        uids.add (node.message.uid);
         if (node.child != null) {
             go_down ((Camel.FolderThreadNode?) node.child);
         }
 
         var children = get_children ();
-        if (children.length () > 0) {
-            var child = get_row_at_index ((int) children.length () - 1);
+        var num_children = children.length ();
+        if (num_children > 0) {
+            var child = get_row_at_index ((int) num_children - 1);
             if (child != null && child is MessageListItem) {
                 var list_item = (MessageListItem) child;
                 list_item.expanded = true;
@@ -66,6 +80,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
         while (current_node != null) {
             var item = new MessageListItem (current_node.message);
             add (item);
+            uids.add (current_node.message.uid);
             if (current_node.next != null) {
                 go_down ((Camel.FolderThreadNode?) current_node.next);
             }
@@ -91,11 +106,13 @@ public class Mail.MessageListBox : Gtk.ListBox {
             var composer = new InlineComposer (type, message_info, mime_message, content_to_quote);
             composer.discarded.connect (() => {
                 can_reply = true;
+                can_move_thread = true;
                 remove (composer);
                 composer.destroy ();
             });
             add (composer);
             can_reply = false;
+            can_move_thread = true;
         }
     }
 }

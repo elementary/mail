@@ -34,12 +34,14 @@ public class Mail.MainWindow : Gtk.Window {
     public const string ACTION_REPLY = "reply";
     public const string ACTION_REPLY_ALL = "reply-all";
     public const string ACTION_FORWARD = "forward";
+    public const string ACTION_MOVE_TO_TRASH = "trash";
 
     private const ActionEntry[] action_entries = {
         {ACTION_COMPOSE_MESSAGE,    on_compose_message   },
         {ACTION_REPLY,              on_reply             },
         {ACTION_REPLY_ALL,          on_reply_all         },
-        {ACTION_FORWARD,            on_forward           }
+        {ACTION_FORWARD,            on_forward           },
+        {ACTION_MOVE_TO_TRASH,      on_move_to_trash     },
     };
 
     public MainWindow () {
@@ -65,6 +67,7 @@ public class Mail.MainWindow : Gtk.Window {
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY_ALL), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-reply", get_action (ACTION_FORWARD), "enabled", BindingFlags.SYNC_CREATE);
+        message_list_box.bind_property ("can-move-thread", get_action (ACTION_MOVE_TO_TRASH), "enabled", BindingFlags.SYNC_CREATE);
 
         var conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
         conversation_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -112,7 +115,7 @@ public class Mail.MainWindow : Gtk.Window {
         destroy.connect (() => destroy ());
 
         folders_list_view.folder_selected.connect ((account, folder_name) => {
-            conversation_list_box.set_folder.begin (account, folder_name);
+            conversation_list_box.load_folder.begin (account, folder_name);
         });
 
         conversation_list_box.conversation_selected.connect ((node) => {
@@ -163,6 +166,31 @@ public class Mail.MainWindow : Gtk.Window {
     private void on_forward () {
         scroll_message_list_to_bottom ();
         message_list_box.add_inline_composer (ComposerWidget.Type.FORWARD);
+    }
+
+    private void on_move_to_trash () {
+        try {
+            var account = conversation_list_box.current_account;
+            var offline_store = (Camel.OfflineStore) account.service;
+            var trash_folder = offline_store.get_trash_folder_sync ();
+            if (trash_folder == null) {
+                critical ("Could not find trash folder in account " + account.service.display_name);
+            }
+
+            var source_folder = conversation_list_box.folder;
+            var uids = message_list_box.uids;
+
+            trash_folder.freeze ();
+            source_folder.freeze ();
+            try {
+                source_folder.transfer_messages_to_sync (uids, trash_folder, true, null);
+            } finally {
+                trash_folder.thaw ();
+                source_folder.thaw ();
+            }
+        } catch (Error e) {
+            critical ("Could not move messages to trash: " + e.message);
+        }
     }
 
     private SimpleAction? get_action (string name) {

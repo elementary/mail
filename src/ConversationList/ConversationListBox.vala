@@ -24,15 +24,15 @@ public class Mail.ConversationListBox : Gtk.ListBox {
     public signal void conversation_selected (Camel.FolderThreadNode? node);
     public signal void conversation_focused (Camel.FolderThreadNode? node);
 
-    private string current_folder;
-    private Backend.Account current_account;
+    public Backend.Account current_account { get; private set; }
+    public Camel.Folder folder { get; private set; }
+
     private GLib.Cancellable? cancellable = null;
-    private Camel.Folder folder;
     private Camel.FolderThread thread;
+    private string current_folder;
     private Gee.HashMap<string, ConversationListItem> conversations;
 
     construct {
-        selection_mode = Gtk.SelectionMode.MULTIPLE;
         activate_on_single_click = true;
         conversations = new Gee.HashMap<string, ConversationListItem> ();
         set_sort_func (thread_sort_function);
@@ -52,7 +52,7 @@ public class Mail.ConversationListBox : Gtk.ListBox {
         });
     }
 
-    public async void set_folder (Backend.Account account, string next_folder) {
+    public async void load_folder (Backend.Account account, string next_folder) {
         current_folder = next_folder;
         current_account = account;
         if (cancellable != null) {
@@ -91,8 +91,9 @@ public class Mail.ConversationListBox : Gtk.ListBox {
     }
 
     private void folder_changed (Camel.FolderChangeInfo change_info, GLib.Cancellable cancellable) {
-        if (cancellable.is_cancelled ())
+        if (cancellable.is_cancelled ()) {
             return;
+        }
 
         lock (conversations) {
             thread.apply (folder.get_uids ());
@@ -106,8 +107,9 @@ public class Mail.ConversationListBox : Gtk.ListBox {
 
             unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.tree;
             while (child != null) {
-                if (cancellable.is_cancelled ())
+                if (cancellable.is_cancelled ()) {
                     return;
+                }
 
                 var item = conversations[child.message.uid];
                 if (item == null) {

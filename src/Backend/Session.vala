@@ -68,7 +68,7 @@ public class Mail.Backend.Session : Camel.Session {
                 return;
             }
 
-            weak E.SourceMailAccount extension = (E.SourceMailAccount)source_item.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
+            weak E.SourceMailAccount extension = (E.SourceMailAccount) source_item.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
             var backend_name = ((E.SourceBackend) extension).get_backend_name ();
             try {
                 add_service (uid, backend_name, Camel.ProviderType.STORE);
@@ -93,7 +93,7 @@ public class Mail.Backend.Session : Camel.Session {
             mechanism = null;
         }
 
-        if(mechanism != null) {
+        if (mechanism != null) {
             /* APOP is one case where a non-SASL mechanism name is passed, so
              * don't bail if the CamelServiceAuthType struct comes back NULL. */
             authtype = Camel.Sasl.authtype (mechanism);
@@ -137,7 +137,7 @@ public class Mail.Backend.Session : Camel.Session {
 
             var credentials_prompter = new E.CredentialsPrompter (registry);
             credentials_prompter.set_auto_prompt (true);
-             return credentials_prompter.loop_prompt_sync (source, E.CredentialsPrompterPromptFlags.ALLOW_SOURCE_SAVE, (prompter, source, credentials, out out_authenticated, cancellable) => try_credentials_sync (prompter, source, credentials, out out_authenticated, cancellable, service, mechanism));
+            return credentials_prompter.loop_prompt_sync (source, E.CredentialsPrompterPromptFlags.ALLOW_SOURCE_SAVE, (prompter, source, credentials, out out_authenticated, cancellable) => try_credentials_sync (prompter, source, credentials, out out_authenticated, cancellable, service, mechanism));
         } else {
             return (result == Camel.AuthenticationResult.ACCEPTED);
         }
