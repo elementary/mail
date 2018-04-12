@@ -32,9 +32,11 @@ public class Mail.MessageListBox : Gtk.ListBox {
     }
 
     public void set_conversation (Camel.FolderThreadNode? node) {
-        // Prevent the user from interacting with the message thread while it
-        // is being reloaded. can_reply will be set to true after loading the
-        // thread.
+        /*
+         * Prevent the user from interacting with the message thread while it
+         * is being reloaded. can_reply will be set to true after loading the
+         * thread.
+         */
         can_reply = false;
         can_move_thread = false;
 
@@ -46,8 +48,10 @@ public class Mail.MessageListBox : Gtk.ListBox {
             return;
         }
 
-        // If there is a node, we can move the thread even without loading all
-        // individual messages.
+        /*
+         * If there is a node, we can move the thread even without loading all
+         * individual messages.
+         */
         can_move_thread = true;
 
         var item = new MessageListItem (node.message);
