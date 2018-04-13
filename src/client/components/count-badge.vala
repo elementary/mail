@@ -10,11 +10,11 @@
 public class CountBadge : Geary.BaseObject {
 
     private const int FONT_SIZE_MESSAGE_COUNT = 8;
-    
+
     public int count { get; set; default = 0; }
-    
+
     private int min = 0;
-    
+
     /**
      * Creates a count badge.
      * @param min Minimum count to draw.
@@ -22,38 +22,38 @@ public class CountBadge : Geary.BaseObject {
     public CountBadge(int min) {
         this.min = min;
     }
-    
+
     public int get_width(Gtk.Widget widget) {
         int width = 0;
         render_internal(widget, null, 0, 0, false, out width, null);
-        
+
         return width;
     }
-    
+
     public int get_height(Gtk.Widget widget) {
         int height = 0;
         render_internal(widget, null, 0, 0, false, null, out height);
-        
+
         return height;
     }
-    
+
     public void render(Gtk.Widget widget, Cairo.Context? ctx, int x, int y, bool selected) {
         render_internal(widget, ctx, x, y - 2, selected, null, null);
     }
-    
+
     private void render_internal(Gtk.Widget widget, Cairo.Context? ctx, int x, int y, bool selected,
         out int? width, out int? height) {
         if (count < min) {
             width = 0;
             height = 0;
-            
+
             return;
         }
-        
-        string mails = 
+
+        string mails =
             "<span foreground='white' font='%d' weight='bold'> %d </span>"
             .printf(FONT_SIZE_MESSAGE_COUNT, count);
-        
+
         Pango.Layout layout_num = widget.create_pango_layout(null);
         layout_num.set_markup(mails, -1);
         layout_num.set_alignment(Pango.Alignment.RIGHT);
@@ -74,11 +74,11 @@ public class CountBadge : Geary.BaseObject {
             ctx.arc(x + radius, y + bg_height - radius, radius, 90 * degrees, 180 * degrees);
             ctx.arc(x + radius, y + radius, radius, 180 * degrees, 270 * degrees);
             ctx.close_path();
-            
+
             // Colorize our shape.
             ctx.set_source_rgba (0,0,0,0.4);
-            ctx.fill_preserve();
-            
+            ctx.fill();
+
             // Center the text.
             ctx.move_to(x + (bg_width / 2) - logical_rect.width / 2, y + 1);
             Pango.cairo_show_layout(ctx, layout_num);
