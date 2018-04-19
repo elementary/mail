@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-04-01 00:05+0000\n"
-"Last-Translator: Tomsgu <tomasjakll@gmail.com>\n"
+"PO-Revision-Date: 2018-04-19 17:03+0000\n"
+"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/mail/mail/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -2177,12 +2177,12 @@ msgstr "Odeslat emailem"
 #: ../src/client/application/geary-application.vala:25
 #: ../src/Translations.vala:2
 msgid "Send files using Mail"
-msgstr "Poslat soubory použitím aplikace Mail"
+msgstr "Poslat soubory pomocí Pošty"
 
 #: ../src/client/accounts/add-edit-page.vala:233
 #: ../src/client/accounts/add-edit-page.vala:234
 msgid "Welcome to Mail"
-msgstr "Vítejte v aplikaci Mail"
+msgstr "Vítejte v Poště"
 
 #: ../src/client/composer/composer-toolbar.vala:43 ../data/ui/composer.ui:75
 #: ../src/client/composer/composer-toolbar.vala:77
@@ -2239,7 +2239,7 @@ msgstr "Upozornění"
 #: ../src/client/dialogs/preferences-dialog.vala:62
 #: ../src/client/dialogs/preferences-dialog.vala:52
 msgid "Always watch for new mail:"
-msgstr "Vždy kontrolovat nové emaily"
+msgstr "Vždy kontrolovat nové emaily:"
 
 #: ../src/client/application/geary-controller.vala:61
 #: ../src/client/application/geary-controller.vala:60
@@ -3175,7 +3175,7 @@ msgstr ""
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
-msgstr "Mail"
+msgstr "Pošta"
 
 #: ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+%)"
