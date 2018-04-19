@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-04-19 17:48+0000\n"
-"Last-Translator: Libor Gabrhel <gabrhel.libor@gmail.com>\n"
+"PO-Revision-Date: 2018-04-20 00:11+0000\n"
+"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/mail/mail/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -2299,7 +2299,6 @@ msgid "Previous Result"
 msgstr "Předchozí výsledek"
 
 #: ../data/ui/find_bar.ui:91
-#, fuzzy
 msgid "Next result"
 msgstr "Další výsledek"
 
@@ -2312,22 +2311,20 @@ msgid "label"
 msgstr "štítek"
 
 #: ../data/ui/upgrade_dialog.ui:60
-#, fuzzy
 msgid "Geary update in progress…"
-msgstr "Geary aktualizace probíha"
+msgstr "Geary aktualizace probíhá…"
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
 msgstr "Odstranit e-mailovou adresu"
 
 #: ../data/ui/edit_alternate_emails.ui:136
-#, fuzzy
 msgid ""
 "Some email services require additional addresses be configured on the "
 "server.  Contact your email provider for more information."
 msgstr ""
 "Některé emailové služby vyžadují přídavnou adresu, nastavenou na serveru. "
-"Kontaktujte svého email providera pro více informací"
+"Kontaktujte svého poskytovatele emailu pro více informací."
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
@@ -2362,14 +2359,12 @@ msgid "_Right"
 msgstr "_Vpravo"
 
 #: ../data/ui/composer.ui:53
-#, fuzzy
 msgid "_Center"
-msgstr "_Ve středu"
+msgstr "_Uprostřed"
 
 #: ../data/ui/composer.ui:58
-#, fuzzy
 msgid "_Justify"
-msgstr "_Zarovnat"
+msgstr "_Do bloku"
 
 #: ../data/ui/composer.ui:63 ../src/client/composer/ComposerToolbar.vala:77
 msgid "Link (Ctrl+L)"
@@ -2418,7 +2413,7 @@ msgstr "_Formátovaný text"
 
 #: ../data/ui/composer.ui:145 ../data/ui/composer.ui:138
 msgid "Show Extended Fields"
-msgstr ""
+msgstr "Zobrazit rozšířená pole"
 
 #: ../data/ui/composer.ui:157
 msgctxt "Label"
@@ -2540,16 +2535,16 @@ msgstr "Připojit soubor"
 
 #: ../data/ui/composer.ui:234
 msgid "_Include Original Attachments"
-msgstr ""
+msgstr "_Zahrnout původní přílohy"
 
 #: ../data/ui/composer.ui:235 ../data/ui/composer.ui:236
 msgid "Include Original Attachments"
-msgstr ""
+msgstr "Zahrnout původní přílohy"
 
 #: ../data/ui/composer.ui:242 ../data/ui/composer.ui:212
 #: ../data/ui/composer.ui:217
 msgid "Application Menu"
-msgstr ""
+msgstr "Aplikační menu"
 
 #. Address(es) e-mail is to be sent to
 #: ../data/ui/composer.ui:289 ../data/ui/composer.ui:317
@@ -2587,16 +2582,16 @@ msgstr "Od"
 #: ../data/ui/composer.ui:519 ../data/ui/composer.ui:547
 #: ../data/ui/composer.ui:517 ../data/ui/composer.ui:522
 msgid "Drop files here"
-msgstr ""
+msgstr "Položte soubory sem"
 
 #: ../data/ui/composer.ui:535 ../data/ui/composer.ui:563
 #: ../data/ui/composer.ui:533 ../data/ui/composer.ui:538
 msgid "To add them as attachments"
-msgstr ""
+msgstr "Pro přidání jako přílohy"
 
 #: ../data/ui/account_cannot_remove.ui:40
 msgid "<span weight=\"bold\" size=\"larger\">Cannot remove account</span> "
-msgstr ""
+msgstr "<span weight=\"bold\" size=\"larger\">Nelze odstranit účet</span> "
 
 #: ../data/ui/account_cannot_remove.ui:56
 msgid ""
@@ -2610,7 +2605,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
-msgstr ""
+msgstr "_Ukládat odeslanou poštu"
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
@@ -2626,7 +2621,7 @@ msgstr "E_-mailová adresa:"
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
-msgstr ""
+msgstr "Práce, Doma, atd."
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
@@ -2674,11 +2669,11 @@ msgstr "He_slo:"
 
 #: ../data/ui/login.ui:499
 msgid "SMTP username"
-msgstr ""
+msgstr "SMTP uživatelské jméno"
 
 #: ../data/ui/login.ui:514
 msgid "SMTP password"
-msgstr ""
+msgstr "SMTP heslo"
 
 #: ../data/ui/login.ui:527
 msgid "_Username:"
@@ -2686,11 +2681,11 @@ msgstr "_Uživatelské jméno:"
 
 #: ../data/ui/login.ui:564
 msgid "IMAP username"
-msgstr ""
+msgstr "IMAP uživatelské jméno"
 
 #: ../data/ui/login.ui:579
 msgid "IMAP password"
-msgstr ""
+msgstr "IMAP heslo"
 
 #: ../data/ui/login.ui:593
 msgid "Encr_yption:"
@@ -2710,27 +2705,27 @@ msgstr "STARTTLS"
 
 #: ../data/ui/login.ui:663
 msgid "No authentication re_quired"
-msgstr ""
+msgstr "Není vyžadováno ov_ěření"
 
 #: ../data/ui/login.ui:679
 msgid "Use IMAP cre_dentials"
-msgstr ""
+msgstr "Použít údaje IMAP"
 
 #: ../data/ui/login.ui:783
 msgid "Storage"
-msgstr ""
+msgstr "Úložiště"
 
 #: ../data/ui/login.ui:804
 msgid "_Download mail"
-msgstr ""
+msgstr "_Stahovat poštu"
 
 #: ../data/ui/login.ui:867
 msgid "Save dra_fts on server"
-msgstr ""
+msgstr "Uložit kon_cepty na server"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr ""
+msgstr "Po_depsat emaily (HTML povoleno):"
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
@@ -2762,7 +2757,7 @@ msgstr "_Nedůvěřovat tomuto serveru"
 
 #: ../data/ui/password-dialog.ui:74
 msgid "SMTP Credentials"
-msgstr ""
+msgstr "Přihlašovací údaje SMTP"
 
 #: ../data/ui/password-dialog.ui:91
 msgid "Username"
@@ -2774,7 +2769,7 @@ msgstr "_Zapamatovat heslo"
 
 #: ../data/ui/password-dialog.ui:210
 msgid "_Authenticate"
-msgstr ""
+msgstr "_Ověřit"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
@@ -2794,6 +2789,8 @@ msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
 msgstr ""
+"Pošta zaznamenala chybu při odesílání emailu. Pokud problém přetrvává, "
+"smažte prosím email ručně z vaší Odeslané pošty."
 
 #: ../src/client/application/geary-controller.vala:1057
 #: ../src/client/application/geary-controller.vala:1051
@@ -2853,16 +2850,16 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2395
 #: ../src/client/application/geary-controller.vala:2390
 msgid "This removes the email from Mail and your email server."
-msgstr ""
+msgstr "Toto odstraní tento email z Pošty a vašeho emailového serveru."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
-msgstr ""
+msgstr "        &#8226; Emailová adresa již byla přidána do aplikace Pošta.\n"
 
 #: ../src/client/dialogs/preferences-dialog.vala:44
 #: ../src/client/dialogs/preferences-dialog.vala:43
 msgid "Always show remote images:"
-msgstr ""
+msgstr "Vždy zobrazit vzdálené obrázky:"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 #: ../src/client/dialogs/PasswordDialog.vala:39
@@ -2877,7 +2874,7 @@ msgstr ""
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Mail will not add or update this email account."
-msgstr ""
+msgstr "Pošta nepřidá ani neaktualizuje tento emailový účet."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
@@ -2896,12 +2893,12 @@ msgstr "Počkejte prosím než Mail ověří váš účet."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr ""
+msgstr "Pošta se právě aktualizuje…"
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
 msgid "Search Mail"
-msgstr ""
+msgstr "Prohledat poštu"
 
 #: ../src/client/application/geary-application.vala:18
 msgid ""
@@ -2913,21 +2910,21 @@ msgstr ""
 
 #: ../src/client/application/geary-args.vala:10
 msgid "Show About dialog"
-msgstr ""
+msgstr "Zobrazit dialog O aplikaci"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:218
 #: ../src/client/conversation-viewer/ConversationWidget.vala:227
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
-msgstr ""
+msgstr "Uložit přílohu…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr ""
+msgstr "Uložit všechny přílohy…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
@@ -2988,7 +2985,7 @@ msgstr "Tisk…"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:276
 #: ../src/client/conversation-viewer/ConversationWidget.vala:278
 msgid "View Source"
-msgstr ""
+msgstr "Zobrazit zdrojový kód"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:317
 #: ../src/client/conversation-viewer/ConversationWidget.vala:602
@@ -3010,7 +3007,7 @@ msgstr "Zobrazit zprávu"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:412
 #: ../src/client/conversation-viewer/ConversationWidget.vala:414
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "Tato zpráva obsahuje jednu, nebo více příloh"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:425
 #: ../src/client/conversation-viewer/ConversationWidget.vala:449
@@ -3036,7 +3033,7 @@ msgstr "Napsat novou zprávu"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:588
 #: ../src/client/conversation-viewer/ConversationWidget.vala:587
 msgid "Copy Email Address"
-msgstr ""
+msgstr "Kopírovat emailovou adresu"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:615
 #: ../src/client/conversation-viewer/ConversationWidget.vala:639
@@ -3053,7 +3050,7 @@ msgstr "Uložit jako…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
-msgstr ""
+msgstr "Rozpoznávat velikost písmen"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
@@ -3077,14 +3074,14 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:418
 #: ../src/client/conversation-viewer/ConversationWidget.vala:431
 msgid "Star message"
-msgstr ""
+msgstr "Označit zprávu hvězdičkou"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:420
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
 #: ../src/client/conversation-viewer/ConversationWidget.vala:426
 #: ../src/client/conversation-viewer/ConversationWidget.vala:428
 msgid "Unstar message"
-msgstr ""
+msgstr "Odebrat hvězdičku zprávě"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:430
 #: ../src/client/conversation-viewer/ConversationWidget.vala:433
@@ -3095,7 +3092,7 @@ msgstr "Více"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
 msgid "Delete draft"
-msgstr ""
+msgstr "Smazat koncept"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:51
 msgid "Attach file"
@@ -3103,7 +3100,7 @@ msgstr "Připojit soubor"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:55
 msgid "Include original attachments"
-msgstr "Zahrnout originální přílohy"
+msgstr "Zahrnout původní přílohy"
 
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
@@ -3118,6 +3115,8 @@ msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"Po otevření může příloha způsobit škodu ve vašem systému. Otvírejte jen "
+"soubory z důvěryhodných zdrojů."
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:45
 msgid "Don't ask me again"
@@ -3163,13 +3162,14 @@ msgstr "Pamatovat si heslo"
 
 #: ../src/client/dialogs/PasswordDialog.vala:75
 msgid "Authenticate"
-msgstr ""
+msgstr "Ověřit"
 
 #. /Translators: this is the ponctuation between two names ("John, Jane")
 #: ../src/client/conversation-list/formatted-conversation-data.vala:188
 #: ../src/client/conversation-list/formatted-conversation-data.vala:190
+#, fuzzy
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
@@ -3177,12 +3177,12 @@ msgstr "Pošta"
 
 #: ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+%)"
-msgstr ""
+msgstr "Přeškrtnutí (Ctrl+%)"
 
 #: ../src/client/composer/ComposerToolbar.vala:77
 msgid "Link (Ctrl+K)"
-msgstr ""
+msgstr "Odkaz (Ctrl+K)"
 
 #: ../src/client/components/main-toolbar.vala:117
 msgid "Forward (Ctrl+Shift+F)"
-msgstr ""
+msgstr "Přeposlat (Ctrl+Shift+F)"
