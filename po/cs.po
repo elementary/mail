@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-04-20 00:11+0000\n"
+"PO-Revision-Date: 2018-04-24 00:07+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/mail/mail/cs/>\n"
 "Language: cs\n"
@@ -299,7 +299,7 @@ msgstr "_Archivovat"
 #: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] "Archivovat konverzaci (A)"
+msgstr[0] "Archivovat (A) konverzaci"
 msgstr[1] "Archivovat koverzace (A)"
 msgstr[2] "Archivovat koverzace (A)"
 
@@ -3167,7 +3167,6 @@ msgstr "Ověřit"
 #. /Translators: this is the ponctuation between two names ("John, Jane")
 #: ../src/client/conversation-list/formatted-conversation-data.vala:188
 #: ../src/client/conversation-list/formatted-conversation-data.vala:190
-#, fuzzy
 msgid ", "
 msgstr ", "
 
