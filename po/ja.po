@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-03-27 00:02+0000\n"
+"PO-Revision-Date: 2018-05-03 09:02+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/mail/mail/ja/>\n"
@@ -708,7 +708,7 @@ msgstr "ラベル"
 #: ../src/client/application/geary-controller.vala:1121
 #: ../src/client/application/geary-controller.vala:1115
 msgid "Unable to open the database for %s"
-msgstr "データーベース %s を開けませんでした"
+msgstr "データベース %s を開けませんでした"
 
 #: ../src/client/application/geary-controller.vala:1151
 #: ../src/client/application/geary-controller.vala:1145
@@ -723,17 +723,14 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
-"このアカウントのローカル メール データーベースを開く途中でエラーが発生しまし"
-"た。これは、このディレクトリ内のデーターベース ファイルの欠落に起因している可"
-"能性があります。\n"
+"このアカウントのローカルメールデータベースを開く途中でエラーが発生しました。これは、このディレクトリ内のデータベースファイルの欠落に起因している可能性があ"
+"ります。\n"
 "\n"
 "%s\n"
 "\n"
-"サーバーと接続するか、 Geary を終了することによって、 Geary はデーターベース"
-"を再読み込みし、再同期することができます。\n"
+"サーバーと接続するか、Geary を終了することによって、Geary はデータベースを再構築し、再同期することができます。\n"
 "\n"
-"データーベースの再読み込みはローカルにあるすべてのメールと添付ファイルを削除"
-"します。<b>サーバー上のメールは影響を受けません。</b>"
+"データベースの再構築はローカルにあるすべてのメールと添付ファイルを削除します。<b>サーバー上のメールは影響を受けません。</b>"
 
 #: ../src/client/application/geary-controller.vala:1153
 #: ../src/client/application/geary-controller.vala:1147
@@ -743,7 +740,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1124
 #: ../src/client/application/geary-controller.vala:1118
 msgid "_Rebuild"
-msgstr "並べ替え"
+msgstr "再構築 (_R)"
 
 #: ../src/client/application/geary-controller.vala:1153
 #: ../src/client/application/geary-controller.vala:1147
@@ -763,7 +760,7 @@ msgstr "終了 (_X)"
 #: ../src/client/application/geary-controller.vala:1133
 #: ../src/client/application/geary-controller.vala:1127
 msgid "Unable to rebuild database for \"%s\""
-msgstr "%s のデーターベースの再読み込みができませんでした"
+msgstr "%s のデータベースの再構築ができませんでした"
 
 #: ../src/client/application/geary-controller.vala:1163
 #: ../src/client/application/geary-controller.vala:1157
@@ -777,7 +774,7 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"再読み込みの途中でエラーが発生しました。\n"
+"再構築の途中でエラーが発生しました。\n"
 "\n"
 "%s"
 
@@ -819,8 +816,7 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"このアカウントのローカル メール データーベースを開く途中でエラーが発生しまし"
-"た。これは、ファイルのアクセス権の問題に起因している可能性があります。\n"
+"このアカウントのローカルメールデータベースを開く途中でエラーが発生しました。これは、ファイルのアクセス権の問題に起因している可能性があります。\n"
 "\n"
 "このディレクトリにおいてファイルのアクセス権があるか確認してください。\n"
 "\n"
@@ -835,7 +831,7 @@ msgid ""
 "\n"
 "Please install the latest version of Geary and try again."
 msgstr ""
-"ローカル  データーベースのバージョン番号は新しいバージョンの Geary のものです。残念ですが、データーベースはこのバージョンの Geary "
+"ローカルデータベースのバージョン番号は新しいバージョンの Geary のものです。残念ですが、データベースはこのバージョンの Geary "
 "で動作するようにロールバックできません。\n"
 "最新のバージョンの Geary をインストールしてもう一度お試しください。"
 
@@ -1185,7 +1181,7 @@ msgstr "自分"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:33
 msgid "Untrusted Connection: %s"
-msgstr "%s は信頼できない接続です"
+msgstr "信頼されていない接続です: %s"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:36
 msgid "The identity of the %s mail server at %s:%u could not be verified."
@@ -1204,9 +1200,7 @@ msgstr ""
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary not to access this "
 "server."
-msgstr ""
-"\"このサーバーを信頼しない\" を選択することにより、 Geary はこのアカウントへ"
-"のアクセスを停止します。"
+msgstr "\"このサーバーを信頼しない\" を選択することにより、Geary はこのアカウントへのアクセスを停止します。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Geary will not add or update this email account."
@@ -1216,13 +1210,11 @@ msgstr "Geary はこのメールアカウントを追加または更新できま
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary to stop accessing "
 "this account."
-msgstr ""
-"\"このサーバーを信頼しない\" を選択することにより、 Geary はこのアカウントへ"
-"のアクセスを停止します。"
+msgstr "\"このサーバーを信頼しない\" を選択することにより、Geary はこのアカウントへのアクセスを停止します。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Geary will exit if you have no other open email accounts."
-msgstr "ほかに開くメールアカウントがなければ、 Geary は終了します。"
+msgstr "ほかに開くメールアカウントがなければ、Geary は終了します。"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:66
 msgid ""
@@ -2026,7 +2018,7 @@ msgstr "%s (%d)"
 #. / Displayed in the space-limited status bar while a message is in the process of being sent.
 #: ../src/client/components/status-bar.vala:26
 msgid "Sending..."
-msgstr "送信中..."
+msgstr "送信しています..."
 
 #: ../src/client/components/conversation-find-bar.vala:214
 msgid "%i match"
@@ -2771,17 +2763,14 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
-"このアカウントのローカル メール データーベースを開く途中でエラーが発生しまし"
-"た。これは、このディレクトリ内のデーターベース ファイルの欠落に起因している可"
-"能性があります。\n"
+"このアカウントのローカルメールデータベースを開く途中でエラーが発生しました。これは、このディレクトリ内のデータベースファイルの欠落に起因している可能性があ"
+"ります。\n"
 "\n"
 "%s\n"
 "\n"
-"サーバーと接続するか、 Mail を終了することによって、 Mail はデーターベースを"
-"再読み込みし、再同期することができます。\n"
+"サーバーと接続するか、Mail を終了することによって、Mail はデータベースを再構築し、再同期することができます。\n"
 "\n"
-"データーベースの再読み込みはローカルにあるすべてのメールと添付ファイルを削除"
-"します。<b>サーバー上のメールは影響を受けません。</b>"
+"データベースの再構築はローカルにあるすべてのメールと添付ファイルを削除します。<b>サーバー上のメールは影響を受けません。</b>"
 
 #: ../src/client/application/geary-controller.vala:1184
 #: ../src/client/application/geary-controller.vala:1178
@@ -2795,7 +2784,7 @@ msgid ""
 "\n"
 "Please install the latest version of Mail and try again."
 msgstr ""
-"ローカル  データーベースのバージョン番号は新しいバージョンの Mail のものです。残念ですが、データーベースはこのバージョンの Mail "
+"ローカルデータベースのバージョン番号は新しいバージョンの Mail のものです。残念ですが、データベースはこのバージョンの Mail "
 "で動作するようにロールバックできません。\n"
 "最新のバージョンの Mail をインストールしてもう一度お試しください。"
 
