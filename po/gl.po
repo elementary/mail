@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-02-12 00:04+0000\n"
-"Last-Translator: Iago <iago.laz@gmail.com>\n"
+"PO-Revision-Date: 2018-05-04 00:05+0000\n"
+"Last-Translator: Martin Garcia Eiras <martingarciaeiras2001@gmail.com>\n"
 "Language-Team: Galician "
 "<https://weblate.elementary.io/projects/mail/mail/gl/>\n"
 "Language: gl\n"
@@ -30,20 +30,24 @@ msgstr "Borradores | Borrador"
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:580
 msgid "Sent | Sent Mail | Sent Email | Sent E-Mail"
 msgstr ""
+"Enviar / Enviar Correo / Enviar Correo Electrónico / Enviar Correo "
+"Electrónico"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:585
 msgid ""
 "Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
 "| Bulk E-Mail"
 msgstr ""
+"Lixo / Spam / Correo Lixo / Correo Electrónico Lixo / A granel / Correos A "
+"granel / Correos electrónicos a granel"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:590
 msgid "Trash | Rubbish | Rubbish Bin"
-msgstr ""
+msgstr "Lixo / Lixo / Papeleira"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:595
 msgid "Archive | Archives"
-msgstr ""
+msgstr "Arquivo / Arquivos"
 
 #: ../src/engine/api/geary-special-folder-type.vala:24
 msgid "Inbox"
@@ -59,7 +63,7 @@ msgstr "Correo enviado"
 
 #: ../src/engine/api/geary-special-folder-type.vala:33
 msgid "Starred"
-msgstr "Con estrela"
+msgstr "Favoritos"
 
 #: ../src/engine/api/geary-special-folder-type.vala:36
 msgid "Important"
@@ -99,11 +103,11 @@ msgstr "Ningún"
 
 #: ../src/engine/api/geary-service.vala:20
 msgid "IMAP"
-msgstr ""
+msgstr "IMAP"
 
 #: ../src/engine/api/geary-service.vala:23
 msgid "SMTP"
-msgstr ""
+msgstr "SMTP"
 
 #: ../src/engine/api/geary-service-provider.vala:52
 msgid "Gmail"
@@ -248,7 +252,7 @@ msgstr "Cliente de correo"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "Copyright 2011-2015 Yorba Foundation"
-msgstr ""
+msgstr "Copyright 2011-2015 Fundación Yorba"
 
 #: ../src/client/application/geary-application.vala:21
 msgid "Visit the Yorba web site"
@@ -256,7 +260,7 @@ msgstr "Visite o sitio web de Yorba"
 
 #: ../src/client/application/geary-controller.vala:61
 msgid "Delete conversation"
-msgstr ""
+msgstr "Eliminar Conversa"
 
 #: ../src/client/application/geary-controller.vala:62
 msgid "Delete conversation (Shift+Delete)"
@@ -273,14 +277,14 @@ msgstr "Eliminar conversas (Maiús+Supr)"
 #: ../src/client/application/geary-controller.vala:2723
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Mover conversa ao lixo (Eliminar,retroceso)"
+msgstr[1] "Mover conversas ao lixo (Eliminar,retroceso)"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 msgid "Move conversations to Trash (Delete, Backspace)"
-msgstr ""
+msgstr "Mover Conversas ao Lixo (Eliminar,Retroceso)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
@@ -294,8 +298,8 @@ msgstr "_Arquivo"
 #: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Arquivo de Conversa (A)"
+msgstr[1] "Arquivo de Conversas (A)"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
@@ -338,8 +342,8 @@ msgstr "Marcar como _non é lixo"
 #: ../src/client/application/geary-controller.vala:390
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Marcar Conversa"
+msgstr[1] "Marcar Conversas"
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
@@ -362,8 +366,8 @@ msgstr "Marcar as conversas"
 #: ../src/client/application/geary-controller.vala:2716
 msgid "Add label to conversation"
 msgid_plural "Add label to conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Engadir etiqueta a conversa"
+msgstr[1] "Engadir etiqueta as conversas"
 
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
@@ -390,8 +394,8 @@ msgstr "Engadir etiqueta ás conversas"
 #: ../src/client/application/geary-controller.vala:2718
 msgid "Move conversation"
 msgid_plural "Move conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Mover Conversa"
+msgstr[1] "Mover Conversas"
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
@@ -572,7 +576,7 @@ msgstr "Avanzar (Ctrl+L, F)"
 #: ../src/client/application/geary-controller.vala:485
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty"
-msgstr ""
+msgstr "Valeiro"
 
 #: ../src/client/application/geary-controller.vala:492
 #: ../src/client/application/geary-controller.vala:491
@@ -581,7 +585,7 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:71
 #: ../src/client/application/geary-controller.vala:481
 msgid "Empty Spam or Trash folders"
-msgstr ""
+msgstr "Carpetas de Spam ou Lixo valeiras"
 
 #: ../src/client/application/geary-controller.vala:496
 #: ../src/client/application/geary-controller.vala:495
@@ -591,7 +595,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr ""
+msgstr "Spam_Valeiro…"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -601,11 +605,11 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr ""
+msgstr "Lixo_Valeiro.…"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
-msgstr ""
+msgstr "Commutar Barra de Busca"
 
 #: ../src/client/application/geary-controller.vala:746
 #: ../src/client/application/geary-controller.vala:740
@@ -615,7 +619,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:717
 #: ../src/client/application/geary-controller.vala:711
 msgid "Unable to store server trust exception"
-msgstr ""
+msgstr "Imposible de excepción de confianza del servidor de tienda"
 
 #: ../src/client/application/geary-controller.vala:983
 #: ../src/client/application/geary-controller.vala:977
