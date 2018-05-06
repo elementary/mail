@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-05-03 09:02+0000\n"
+"PO-Revision-Date: 2018-05-07 00:02+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/mail/mail/ja/>\n"
@@ -2150,12 +2150,12 @@ msgstr "メールの読み込み"
 #: ../src/client/dialogs/preferences-dialog.vala:28
 #: ../src/client/dialogs/preferences-dialog.vala:29
 msgid "Automatically select next message:"
-msgstr "新しいメッセージを自動的に選択する："
+msgstr "新しいメッセージを自動的に選択する:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:33
 #: ../src/client/dialogs/preferences-dialog.vala:34
 msgid "Conversation previews:"
-msgstr "メッセージのプレビューを表示する："
+msgstr "メッセージのプレビューを表示する:"
 
 #: ../src/client/dialogs/preferences-dialog.vala:38
 #: ../src/client/dialogs/preferences-dialog.vala:39
@@ -2182,7 +2182,7 @@ msgstr "通知"
 #: ../src/client/dialogs/preferences-dialog.vala:62
 #: ../src/client/dialogs/preferences-dialog.vala:52
 msgid "Always watch for new mail:"
-msgstr "常に新しいメールを確認する："
+msgstr "常に新しいメールを確認する:"
 
 #: ../src/client/application/geary-controller.vala:61
 #: ../src/client/application/geary-controller.vala:60
@@ -2592,7 +2592,7 @@ msgstr "ポート番号 (_O)"
 
 #: ../data/ui/login.ui:409
 msgid "Ser_ver:"
-msgstr "サーバー (_V)："
+msgstr "サーバー (_V):"
 
 #: ../data/ui/login.ui:427
 msgid "Por_t"
@@ -2668,7 +2668,7 @@ msgstr "サーバーに下書きを保存する (_F)"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr "メールに署名する (HTML も可) (_G)："
+msgstr "メールに署名する (HTML も可) (_G):"
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
@@ -3114,7 +3114,7 @@ msgstr "パスワード:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:55
 msgid "SMTP Credentials:"
-msgstr "SMTP の資格情報："
+msgstr "SMTP の資格情報:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:62
 msgid "Remember password"
