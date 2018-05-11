@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-14 08:38-0700\n"
+"POT-Creation-Date: 2018-05-11 11:41+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -268,6 +268,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:65
 #: ../src/client/application/geary-controller.vala:2711
 #: ../src/client/application/geary-controller.vala:2723
+#: ../src/client/application/geary-controller.vala:2697
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
 msgstr[0] ""
@@ -289,6 +290,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:70
 #: ../src/client/application/geary-controller.vala:2709
 #: ../src/client/application/geary-controller.vala:2721
+#: ../src/client/application/geary-controller.vala:2695
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
 msgstr[0] ""
@@ -333,6 +335,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:387
 #: ../src/client/application/geary-controller.vala:2714
 #: ../src/client/application/geary-controller.vala:390
+#: ../src/client/application/geary-controller.vala:2688
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
 msgstr[0] ""
@@ -357,6 +360,7 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:128
 #: ../src/client/application/geary-controller.vala:2704
 #: ../src/client/application/geary-controller.vala:2716
+#: ../src/client/application/geary-controller.vala:2690
 msgid "Add label to conversation"
 msgid_plural "Add label to conversations"
 msgstr[0] ""
@@ -385,6 +389,7 @@ msgstr ""
 #: ../src/client/components/main-toolbar.vala:133
 #: ../src/client/application/geary-controller.vala:2706
 #: ../src/client/application/geary-controller.vala:2718
+#: ../src/client/application/geary-controller.vala:2692
 msgid "Move conversation"
 msgid_plural "Move conversations"
 msgstr[0] ""
@@ -844,6 +849,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1936
 #: ../src/client/application/geary-controller.vala:1931
 #: ../src/client/application/geary-controller.vala:1937
+#: ../src/client/application/geary-controller.vala:1911
 msgid "Undo move (Ctrl+Z)"
 msgstr ""
 
@@ -881,6 +887,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1962
 #: ../src/client/application/geary-controller.vala:1957
 #: ../src/client/application/geary-controller.vala:1963
+#: ../src/client/application/geary-controller.vala:1937
 msgid "A file named \"%s\" already exists.  Do you want to replace it?"
 msgstr ""
 
@@ -892,6 +899,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1964
 #: ../src/client/application/geary-controller.vala:1959
 #: ../src/client/application/geary-controller.vala:1965
+#: ../src/client/application/geary-controller.vala:1939
 msgid ""
 "The file already exists in \"%s\".  Replacing it will overwrite its contents."
 msgstr ""
@@ -904,6 +912,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1967
 #: ../src/client/application/geary-controller.vala:1962
 #: ../src/client/application/geary-controller.vala:1968
+#: ../src/client/application/geary-controller.vala:1942
 msgid "_Replace"
 msgstr ""
 
@@ -921,6 +930,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2398
 #: ../src/client/application/geary-controller.vala:2394
 #: ../src/client/application/geary-controller.vala:2389
+#: ../src/client/application/geary-controller.vala:2375
 msgid "Empty all email from your %s folder?"
 msgstr ""
 
@@ -936,6 +946,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2400
 #: ../src/client/application/geary-controller.vala:2396
 #: ../src/client/application/geary-controller.vala:2391
+#: ../src/client/application/geary-controller.vala:2377
 msgid "This cannot be undone."
 msgstr ""
 
@@ -946,6 +957,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2401
 #: ../src/client/application/geary-controller.vala:2397
 #: ../src/client/application/geary-controller.vala:2392
+#: ../src/client/application/geary-controller.vala:2378
 msgid "Empty %s"
 msgstr ""
 
@@ -956,6 +968,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2418
 #: ../src/client/application/geary-controller.vala:2414
 #: ../src/client/application/geary-controller.vala:2409
+#: ../src/client/application/geary-controller.vala:2395
 msgid "Error emptying %s"
 msgstr ""
 
@@ -966,6 +979,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2448
 #: ../src/client/application/geary-controller.vala:2444
 #: ../src/client/application/geary-controller.vala:2439
+#: ../src/client/application/geary-controller.vala:2425
 msgid "Do you want to permanently delete this message?"
 msgid_plural "Do you want to permanently delete these messages?"
 msgstr[0] ""
@@ -978,6 +992,7 @@ msgstr[1] ""
 #: ../src/client/application/geary-controller.vala:2450
 #: ../src/client/application/geary-controller.vala:2446
 #: ../src/client/application/geary-controller.vala:2441
+#: ../src/client/application/geary-controller.vala:2427
 msgid "Delete"
 msgstr ""
 
@@ -988,6 +1003,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2481
 #: ../src/client/application/geary-controller.vala:2477
 #: ../src/client/application/geary-controller.vala:2472
+#: ../src/client/application/geary-controller.vala:2458
 msgid "Undo archive (Ctrl+Z)"
 msgstr ""
 
@@ -998,6 +1014,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2496
 #: ../src/client/application/geary-controller.vala:2492
 #: ../src/client/application/geary-controller.vala:2487
+#: ../src/client/application/geary-controller.vala:2473
 msgid "Undo trash (Ctrl+Z)"
 msgstr ""
 
@@ -1008,6 +1025,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2549
 #: ../src/client/application/geary-controller.vala:2545
 #: ../src/client/application/geary-controller.vala:2540
+#: ../src/client/application/geary-controller.vala:2526
 msgid "Undo (Ctrl+Z)"
 msgstr ""
 
@@ -1504,6 +1522,7 @@ msgstr[1] ""
 #: ../src/client/conversation-viewer/conversation-viewer.vala:308
 #: ../src/client/conversation-viewer/conversation-viewer.vala:310
 #: ../src/client/conversation-viewer/conversation-viewer.vala:311
+#: ../src/client/conversation-viewer/conversation-viewer.vala:316
 msgid "No conversations selected."
 msgstr ""
 
@@ -1513,6 +1532,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/conversation-viewer.vala:310
 #: ../src/client/conversation-viewer/conversation-viewer.vala:312
 #: ../src/client/conversation-viewer/conversation-viewer.vala:313
+#: ../src/client/conversation-viewer/conversation-viewer.vala:318
 msgid "%u conversation selected."
 msgid_plural "%u conversations selected."
 msgstr[0] ""
@@ -1524,6 +1544,7 @@ msgstr[1] ""
 #: ../src/client/conversation-viewer/conversation-viewer.vala:339
 #: ../src/client/conversation-viewer/conversation-viewer.vala:341
 #: ../src/client/conversation-viewer/conversation-viewer.vala:342
+#: ../src/client/conversation-viewer/conversation-viewer.vala:347
 msgid "No search results found."
 msgstr ""
 
@@ -1533,6 +1554,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/conversation-viewer.vala:341
 #: ../src/client/conversation-viewer/conversation-viewer.vala:343
 #: ../src/client/conversation-viewer/conversation-viewer.vala:344
+#: ../src/client/conversation-viewer/conversation-viewer.vala:349
 msgid "No conversations in folder."
 msgstr ""
 
@@ -2099,12 +2121,14 @@ msgstr ""
 #: ../src/client/application/geary-application.vala:25
 #: ../src/client/application/geary-application.vala:24
 #: ../src/Translations.vala:1
+#: ../src/client/application/geary-application.vala:21
 msgid "Send by Email"
 msgstr ""
 
 #: ../src/client/application/geary-application.vala:26
 #: ../src/client/application/geary-application.vala:25
 #: ../src/Translations.vala:2
+#: ../src/client/application/geary-application.vala:22
 msgid "Send files using Mail"
 msgstr ""
 
@@ -2182,6 +2206,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:60
 #: ../src/client/application/geary-controller.vala:2713
 #: ../src/client/application/geary-controller.vala:2725
+#: ../src/client/application/geary-controller.vala:2699
 msgid "Delete Conversation (Shift+Delete)"
 msgid_plural "Delete Conversations (Shift+Delete)"
 msgstr[0] ""
@@ -2788,6 +2813,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2399
 #: ../src/client/application/geary-controller.vala:2395
 #: ../src/client/application/geary-controller.vala:2390
+#: ../src/client/application/geary-controller.vala:2376
 msgid "This removes the email from Mail and your email server."
 msgstr ""
 
