@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-05-16 13:46+0000\n"
-"Last-Translator: Daniel Zvir <zvir.daniel@seznam.cz>\n"
+"PO-Revision-Date: 2018-05-17 00:04+0000\n"
+"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/mail/mail/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -71,7 +71,7 @@ msgstr "Důležité"
 
 #: ../src/engine/api/geary-special-folder-type.vala:39
 msgid "All Mail"
-msgstr "Všechny zprávy"
+msgstr "Všechna pošta"
 
 #: ../src/engine/api/geary-special-folder-type.vala:42
 msgid "Spam"
@@ -200,7 +200,7 @@ msgstr "%a, %b %-e, %Y v %-l∶%M %p"
 #. / the original sender.
 #: ../src/engine/rfc822/rfc822-utils.vala:221
 msgid "On %1$s, %2$s wrote:"
-msgstr "%2$s napsal %1$s:"
+msgstr "Koš%2$s napsal %1$s:"
 
 #. / The quoted header for a message being replied to (in case the date is not known).
 #. / %s will be replaced by the original sender.
@@ -299,7 +299,7 @@ msgstr "_Archivovat"
 #: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] "Archivovat (A) konverzaci"
+msgstr[0] "Archivovat konverzaci (A)"
 msgstr[1] "Archivovat koverzace (A)"
 msgstr[2] "Archivovat koverzace (A)"
 
@@ -315,14 +315,14 @@ msgstr "Archivovat konverzace (A)"
 #: ../src/client/application/geary-controller.vala:75
 #: ../src/client/application/geary-controller.vala:74
 msgid "Mark as S_pam"
-msgstr "Označit jako nevyžá_dané"
+msgstr "Označit jako _nevyžádané"
 
 #: ../src/client/application/geary-controller.vala:78
 #: ../src/client/application/geary-controller.vala:77
 #: ../src/client/application/geary-controller.vala:76
 #: ../src/client/application/geary-controller.vala:75
 msgid "Mark as not S_pam"
-msgstr "Označit, že není nevyžá_dané"
+msgstr "Označit, že není _nevyžádané"
 
 #: ../src/client/application/geary-controller.vala:80
 #: ../src/client/application/geary-controller.vala:392
@@ -600,7 +600,7 @@ msgstr "Vyprázdnit složku Nevyžádané nebo Koš"
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr "Vyprázdnit _nevyžádanou…"
+msgstr "Vyprázdnit _Nevyžádané…"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -672,7 +672,7 @@ msgstr "Po_kračovat"
 #: ../src/client/application/geary-controller.vala:1034
 #: ../src/client/application/geary-controller.vala:1028
 msgid "Error sending email"
-msgstr "Chyba při odesílání e-mailu"
+msgstr "Chyba při odesílání emailu"
 
 #: ../src/client/application/geary-controller.vala:1064
 #: ../src/client/application/geary-controller.vala:1058
@@ -680,8 +680,8 @@ msgid ""
 "Geary encountered an error sending an email.  If the problem persists, "
 "please manually delete the email from your Outbox folder."
 msgstr ""
-"V Geary došlo k chybě při odesílání e-mailu. Pokud problém přetrvává, "
-"odstraňte prosím e-mail ručně ze složky Pošta k odeslání."
+"V Geary došlo k chybě při odesílání emailu. Pokud problém přetrvává, "
+"odstraňte prosím email ručně ze složky K odeslání."
 
 #: ../src/client/application/geary-controller.vala:1068
 #: ../src/client/components/status-bar.vala:33
@@ -700,8 +700,8 @@ msgid ""
 "Geary encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
-"V Geary došlo k chybě při ukládání odeslané zprávy. Zpráva zůstane ve vaší "
-"složce Pošta k odeslání, dokud ji nesmažete."
+"V Geary došlo k chybě při ukládání odeslané zprávy do odeslané pošty. Zpráva "
+"zůstane ve vaší složce K odeslání, dokud ji nesmažete."
 
 #: ../src/client/application/geary-controller.vala:1138
 #: ../src/client/application/geary-controller.vala:1132
@@ -736,7 +736,7 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
-"Došlo k chybě při otevírání místní databáze e-mailů pro tento účet. Je to "
+"Došlo k chybě při otevírání místní databáze emailů pro tento účet. Je to "
 "možná kvůli poškození databázového souboru v této složce:\n"
 "\n"
 "%s\n"
@@ -744,8 +744,8 @@ msgstr ""
 "Geary může znovu sestavit databázi a synchronizovat ji se serverem nebo "
 "skončit.\n"
 "\n"
-"Opětovné sestavení databáze zničí všechny místně uložené e-maily a jejich "
-"přílohy <b>Na e-maily na vašem serveru to nebude mít vliv.</b>"
+"Opětovné sestavení databáze zničí všechny místně uložené emaily a jejich "
+"přílohy <b>Na emaily na vašem serveru to nebude mít vliv.</b>"
 
 #: ../src/client/application/geary-controller.vala:1153
 #: ../src/client/application/geary-controller.vala:1147
@@ -831,7 +831,7 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"Došlo k chybě při otevírání místní databáze e-mailů pro tento účet. Stalo se "
+"Došlo k chybě při otevírání místní databáze emailů pro tento účet. Stalo se "
 "to možná kvůli oprávněním k souboru.\n"
 "\n"
 "Zkontrolujte, zda máte práva pro čtení/zápisu pro všechny soubory v této "
@@ -1260,7 +1260,7 @@ msgid ""
 "question about these issues."
 msgstr ""
 "Pokud máte k této záležitosti nějaké dotazy, kontaktujte svého správce "
-"systému nebo poskytovatele e-mailu."
+"systému nebo poskytovatele emailu."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:73
 msgid "The server's certificate is not signed by a known authority"
@@ -1292,7 +1292,7 @@ msgstr "Při zpracování certifikátu serveru nastala chyba"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 msgid "Geary requires your email password to continue"
-msgstr "Aby se mohlo pokračovat, potřebuje Geary heslo k vašemu e-mailu"
+msgstr "Aby se mohlo pokračovat, potřebuje Geary heslo k vašemu emailu"
 
 #: ../src/client/dialogs/attachment-dialog.vala:18
 msgid "Choose a file"
@@ -1398,7 +1398,7 @@ msgstr "        &#8226; Neplatná přezdívka účtu.\n"
 #: ../src/client/accounts/add-edit-page.vala:769
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Geary.\n"
-msgstr "        &#8226; E-mailová adresa už byla do Geary přidána.\n"
+msgstr "        &#8226; Emailová adresa už byla do Geary přidána.\n"
 
 #: ../src/client/accounts/add-edit-page.vala:773
 #: ../src/client/accounts/add-edit-page.vala:775
@@ -1739,7 +1739,7 @@ msgstr "_Kopírovat"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1180
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1207
 msgid "Copy _Email Address"
-msgstr "Kopírovat _e-mailovou adresu"
+msgstr "Kopírovat _emailovou adresu"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1310
 #: ../data/ui/composer.ui:106
@@ -2142,7 +2142,7 @@ msgstr "_Zachovat"
 #: ../src/client/components/main-toolbar.vala:70
 #: ../src/client/components/main-toolbar.vala:78
 msgid "Search all mail in account for keywords (Ctrl+S)"
-msgstr "Prohledat všechny e-maily v účtu podle klíčového slova (Ctrl+S)"
+msgstr "Vyhledat všechnu poštu v účtu pro klíčová slova (Ctrl+S)"
 
 #: ../src/client/components/search-bar.vala:118
 #: ../src/client/components/main-toolbar.vala:300
@@ -2278,8 +2278,8 @@ msgid ""
 "All email associated with this account will be removed from your computer. "
 "This will not affect email on the server."
 msgstr ""
-"Všechny e-maily spojené s tímto účtem budou odstraněny z vašeho počítače. "
-"Toto neovlivní e-maily na serveru."
+"Všechny emaily spojené s tímto účtem budou odstraněny z vašeho počítače. "
+"Toto neovlivní emaily na serveru."
 
 #: ../data/ui/remove_confirm.ui:80
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:47
@@ -2288,7 +2288,7 @@ msgstr "Přezdívka:"
 
 #: ../data/ui/remove_confirm.ui:94
 msgid "Email address:"
-msgstr "E-mailová adresa:"
+msgstr "Emailová adresa:"
 
 #: ../data/ui/find_bar.ui:59
 msgid "Find"
@@ -2316,7 +2316,7 @@ msgstr "Geary aktualizace probíhá…"
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
-msgstr "Odstranit e-mailovou adresu"
+msgstr "Odstranit emailovou adresu"
 
 #: ../data/ui/edit_alternate_emails.ui:136
 msgid ""
@@ -2619,7 +2619,7 @@ msgstr "_Heslo:"
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
-msgstr "E_-mailová adresa:"
+msgstr "E_mailová adresa:"
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
@@ -2803,8 +2803,8 @@ msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
-"Aplikace Mail narazila na chybu při ukládání odeslané zprávy do Odeslaných "
-"zpráv. Zpráva zůstane uložena ve složce Odeslané dokud ji nevymažete."
+"Pošta zaznamenala chybu při ukládání odeslané zprávy do Odeslaných zpráv. "
+"Zpráva zůstane uložena ve složce Odeslané dokud ji nevymažete."
 
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
@@ -2827,8 +2827,8 @@ msgstr ""
 "\n"
 "%s\n"
 "\n"
-"Aplikace Mail dokáže sestavit novou místní databázi a synchronizovat ji se "
-"serverem, nebo aplikaci ukončit.\n"
+"Pošta může sestavit novou místní databázi a synchronizovat ji se serverem, "
+"nebo aplikaci ukončit.\n"
 "\n"
 "Sestavení nové databáze odstraní všechny místní emaily i jejich přílohy. <b>"
 "Zprávy na vašem serveru zůstanou nedotčeny.</b>"
@@ -2845,11 +2845,10 @@ msgid ""
 "\n"
 "Please install the latest version of Mail and try again."
 msgstr ""
-"Místní emailová databáze je nastavena na novější verzi aplikace Mail. "
-"Bohužel, databázi nelze \"vrátit zpět\" na vaši (starší) verzi aplikace Mail."
+"Místní emailová databáze je nastavena na novější verzi Pošty. Bohužel, "
+"databázi nelze \"vrátit zpět\" na vaši (starší) verzi Pošty.\n"
 "\n"
-"\n"
-"Prosím, nainstalujte si nejnověší verzi aplikace Mail a zkuste to znova."
+"Prosím, nainstalujte si nejnověší verzi Pošty a zkuste to znova."
 
 #: ../src/client/application/geary-controller.vala:1195
 #: ../src/client/application/geary-controller.vala:1189
@@ -2865,8 +2864,7 @@ msgstr ""
 "Nastala chyba při otevírání místního účtu, pravděpodobně kvůli potížím s "
 "připojením k internetu.\n"
 "\n"
-"Prosím, zkontrolujte si vaše internetové připojení a restartujte aplikaci "
-"Mail."
+"Prosím, zkontrolujte si vaše internetové připojení a restartujte Poštu."
 
 #: ../src/client/application/geary-controller.vala:2402
 #: ../src/client/application/geary-controller.vala:2404
@@ -2888,14 +2886,14 @@ msgstr "Vždy zobrazit vzdálené obrázky:"
 #: ../src/client/dialogs/password-dialog.vala:16
 #: ../src/client/dialogs/PasswordDialog.vala:39
 msgid "Mail requires your email password to continue"
-msgstr "Mail požaduje vaše heslo pro pokračování"
+msgstr "Pošta požaduje vaše heslo k emailu pro pokračování"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail not to access this "
 "server."
 msgstr ""
-"Vybrání \"Nevěřit tomuto serveru\" způsobí, že se Mail nepřipojí k tomuto "
+"Výběr \"Nevěřit tomuto serveru\" způsobí, že se Pošta nepřipojí k tomuto "
 "serveru."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
@@ -2907,17 +2905,17 @@ msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail to stop accessing this "
 "account."
 msgstr ""
-"Vybrání \"Nevěřit tomuto serveru\" způsobí, že Mail přestane přistupovat k "
+"Výběr \"Nevěřit tomuto serveru\" způsobí, že Pošta přestane přistupovat k "
 "tomuto účtu."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Mail will exit if you have no other open email accounts."
-msgstr "Mail bude ukončen, pokud nemáte žádné další otevřené emailové účty."
+msgstr "Pošta bude ukončena, pokud nemáte žádné další otevřené emailové účty."
 
 #: ../data/ui/account_spinner.ui:41
 #: ../src/client/accounts/account-spinner-page.vala:22
 msgid "Please wait while Mail validates your account."
-msgstr "Počkejte prosím než Mail ověří váš účet."
+msgstr "Počkejte prosím než Pošta ověří váš účet."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
@@ -3168,7 +3166,7 @@ msgstr "Opravdu chcete odebrat tento účet?"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:53
 msgid "Email Address:"
-msgstr "E-mailová adresa:"
+msgstr "Emailová adresa:"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:61
 msgid "Remove Account"
