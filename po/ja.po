@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-05-15 00:06+0000\n"
+"PO-Revision-Date: 2018-05-24 00:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/mail/mail/ja/>\n"
@@ -1927,7 +1927,7 @@ msgstr "\"%s\" を開くことができませんでした。"
 #: ../src/client/composer/composer-widget.vala:1532
 #: ../src/client/composer/composer-widget.vala:1529
 msgid "\"%s\" already attached for delivery."
-msgstr "\"%s\" は既に添付されています。"
+msgstr "\"%s\" はすでに添付されています。"
 
 #. / In the composer, the filename followed by its filesize, i.e. "notes.txt (1.12KB)"
 #: ../src/client/composer/composer-widget.vala:1585
@@ -3073,7 +3073,7 @@ msgstr "次回から確認しない"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:48
 msgid "Open Anyway"
-msgstr "それでも開く"
+msgstr "とにかく開く"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:64
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:59
