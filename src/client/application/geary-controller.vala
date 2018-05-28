@@ -351,6 +351,7 @@ public class GearyController : Geary.BaseObject {
         }
 
         main_window.destroy();
+        GearyApplication.instance.config.settings.set_boolean("first-run", true);
 
         // Turn off the lights and lock the door behind you
         try {
