@@ -21,6 +21,7 @@ public class Configuration {
     public const string ASK_OPEN_ATTACHMENT_KEY = "ask-open-attachment";
     public const string COMPOSE_AS_HTML_KEY = "compose-as-html";
     public const string GENERALLY_SHOW_REMOTE_IMAGES_KEY = "show-images";
+    public const string FIRST_RUN_KEY = "first-run";
     
     public Settings settings { get; private set; }
     
@@ -82,6 +83,10 @@ public class Configuration {
         get { return settings.get_boolean(GENERALLY_SHOW_REMOTE_IMAGES_KEY); }
     }
     
+    public bool first_run {
+        get { return settings.get_boolean(FIRST_RUN_KEY); }
+    }
+
     private const string CLOCK_FORMAT_KEY = "clock-format";
     private const string TIME_FORMAT_KEY = "time-format";
     public Date.ClockFormat clock_format {
