@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-05-28 10:32+0000\n"
+"PO-Revision-Date: 2018-06-02 00:05+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/mail/mail/hu/>\n"
@@ -691,9 +691,8 @@ msgid ""
 "Geary encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
-"A Geary hibára futott az elküldött levél mentésekor az Elküldött levelek "
-"mappába. Az üzenet a Kimenő levelek mappájában fog maradni, amíg ki nem "
-"törli azt."
+"A Geary a levelet nem tudta menteni az Elküldött levelek mappába. Az üzenet "
+"a Kimenő levelek mappában fog maradni, amíg le nem törli."
 
 #: ../src/client/application/geary-controller.vala:1138
 #: ../src/client/application/geary-controller.vala:1132
@@ -863,7 +862,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1709
 #: ../src/client/application/geary-controller.vala:1677
 msgid "About %s"
-msgstr "%s névjegye"
+msgstr "A(z) %s névjegye"
 
 #. / Translators: add your name and email address to receive credit in the About dialog
 #. / For example: Yamada Taro <yamada.taro@example.com>
@@ -1000,7 +999,7 @@ msgstr "Ez nem vonható vissza."
 #: ../src/client/application/geary-controller.vala:2397
 #: ../src/client/application/geary-controller.vala:2392
 msgid "Empty %s"
-msgstr "%s ürítése"
+msgstr "A(z) %s ürítése"
 
 #: ../src/client/application/geary-controller.vala:2459
 #: ../src/client/application/geary-controller.vala:2453
@@ -1137,7 +1136,7 @@ msgstr "A program verziójának megjelenítése"
 #: ../src/client/application/geary-args.vala:51
 #: ../src/client/application/geary-args.vala:53
 msgid "Use %s to open a new composer window"
-msgstr "%s használata egy új levélíró ablak megnyitásához"
+msgstr "A(z) %s használata egy új levélíró ablak megnyitásához"
 
 #: ../src/client/application/geary-args.vala:52
 #: ../src/client/application/geary-args.vala:54
@@ -1223,8 +1222,8 @@ msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary not to access this "
 "server."
 msgstr ""
-"A „Nem bízom meg a kiszolgálóban” választása azt fogja okozni, hogy a Geary "
-"nem férhet hozzá ehhez a kiszolgálóhoz."
+"A „Nem bízom meg a kiszolgálóban” választása azt fogja eredményezni, hogy a "
+"Geary nem fog hozzáférni ehhez a kiszolgálóhoz."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Geary will not add or update this email account."
@@ -1235,8 +1234,8 @@ msgid ""
 "Selecting \"Don't Trust This Server\" will cause Geary to stop accessing "
 "this account."
 msgstr ""
-"A „Nem bízom meg a kiszolgálóban” választása azt fogja okozni, hogy a Geary "
-"leállítja a hozzáférést ehhez a fiókhoz."
+"A „Nem bízom meg a kiszolgálóban” választása azt fogja eredményezni, hogy a "
+"Geary leállítja a hozzáférést ehhez a fiókhoz."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Geary will exit if you have no other open email accounts."
@@ -1560,7 +1559,7 @@ msgstr "Beérkezett üzenetek"
 #: ../src/client/folder-list/folder-list-search-branch.vala:39
 #: ../src/client/components/search-bar.vala:129
 msgid "Search %s account"
-msgstr "%s fiók keresése"
+msgstr "A(z) %s fiók keresése"
 
 #: ../src/client/folder-list/folder-list-search-branch.vala:44
 msgid "%d result"
@@ -1700,8 +1699,7 @@ msgstr[1] "%u olvasott levél"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1271
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1276
 msgid "This message was sent successfully, but could not be saved to %s."
-msgstr ""
-"Ez a levél sikeresen el lett küldve, de nem sikerült elmenteni ide: %s."
+msgstr "A levelet sikeresen elküldtük, de nem sikerült menteni ide: %s."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1297
 #: ../data/ui/composer.ui:29
@@ -1848,7 +1846,7 @@ msgstr "%s - Beszélgetés felügyelő"
 #: ../src/client/composer/composer-widget.vala:73
 #: ../src/client/composer/composer-widget.vala:71
 msgid "Saved"
-msgstr "Elmentve"
+msgstr "Mentve"
 
 #: ../src/client/composer/composer-widget.vala:74
 #: ../src/client/composer/composer-widget.vala:72
@@ -1941,7 +1939,7 @@ msgstr "Nem sikerült mellékletet hozzáadni"
 #: ../src/client/composer/composer-widget.vala:1497
 #: ../src/client/composer/composer-widget.vala:1494
 msgid "\"%s\" could not be found."
-msgstr "„%s” nem található."
+msgstr "A(z) \"%s\" nem található."
 
 #: ../src/client/composer/composer-widget.vala:1548
 #: ../src/client/composer/composer-widget.vala:1543
@@ -1949,7 +1947,7 @@ msgstr "„%s” nem található."
 #: ../src/client/composer/composer-widget.vala:1504
 #: ../src/client/composer/composer-widget.vala:1501
 msgid "\"%s\" is a folder."
-msgstr "„%s” egy mappa."
+msgstr "A(z) \"%s\" egy mappa."
 
 #: ../src/client/composer/composer-widget.vala:1555
 #: ../src/client/composer/composer-widget.vala:1550
@@ -1957,7 +1955,7 @@ msgstr "„%s” egy mappa."
 #: ../src/client/composer/composer-widget.vala:1511
 #: ../src/client/composer/composer-widget.vala:1508
 msgid "\"%s\" is an empty file."
-msgstr "„%s” egy üres fájl."
+msgstr "A(z) \"%s\" egy üres fájl."
 
 #: ../src/client/composer/composer-widget.vala:1569
 #: ../src/client/composer/composer-widget.vala:1564
@@ -1965,7 +1963,7 @@ msgstr "„%s” egy üres fájl."
 #: ../src/client/composer/composer-widget.vala:1525
 #: ../src/client/composer/composer-widget.vala:1522
 msgid "\"%s\" could not be opened for reading."
-msgstr "„%s” nem nyitható meg olvasásra."
+msgstr "A(z) \"%s\" nem nyitható meg olvasásra."
 
 #: ../src/client/composer/composer-widget.vala:1576
 #: ../src/client/composer/composer-widget.vala:1571
@@ -1973,7 +1971,7 @@ msgstr "„%s” nem nyitható meg olvasásra."
 #: ../src/client/composer/composer-widget.vala:1532
 #: ../src/client/composer/composer-widget.vala:1529
 msgid "\"%s\" already attached for delivery."
-msgstr "„%s” már csatolva van a küldeményhez."
+msgstr "A(z) \"%s\" már csatolva van a küldeményhez."
 
 #. / In the composer, the filename followed by its filesize, i.e. "notes.txt (1.12KB)"
 #: ../src/client/composer/composer-widget.vala:1585
@@ -2140,7 +2138,7 @@ msgstr "A fiók minden levélének keresése kulcsszavakra (Ctrl+S)"
 #: ../src/client/components/main-toolbar.vala:277
 #: ../src/client/components/main-toolbar.vala:278
 msgid "Indexing %s account"
-msgstr "%s fiók indexelése"
+msgstr "A(z) %s fiók indexelése"
 
 #: ../src/client/components/main-toolbar.vala:144
 #: ../src/client/composer/composer-headerbar.vala:90
@@ -2355,7 +2353,7 @@ msgstr "_Igazítás"
 
 #: ../data/ui/composer.ui:63 ../src/client/composer/ComposerToolbar.vala:77
 msgid "Link (Ctrl+L)"
-msgstr "Link (Ctrl+L)"
+msgstr "Hivatkozás (Ctrl+L)"
 
 #: ../data/ui/composer.ui:70 ../data/ui/composer.ui:69
 msgid "C_olor"
@@ -2861,11 +2859,11 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2395
 #: ../src/client/application/geary-controller.vala:2390
 msgid "This removes the email from Mail and your email server."
-msgstr "Ez eltávolítja az e-mailt a Levelezőből és az e-mail kiszolgálóról."
+msgstr "Ez eltávolítja az e-mailt a Levelezőből és a kiszolgálóról."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
-msgstr "        &#8226;Ez az e-mail cím már hozzá van adva a Levelezőhöz.\n"
+msgstr "        A(z) &#8226; e-mail cím már hozzá van adva a Levelezőhöz.\n"
 
 #: ../src/client/dialogs/preferences-dialog.vala:44
 #: ../src/client/dialogs/preferences-dialog.vala:43
@@ -3123,7 +3121,7 @@ msgstr "Szöveg idézése (Ctrl+])"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:34
 msgid "Are you sure you want to open %s?"
-msgstr "Biztosan meg akarja nyitni %s-t?"
+msgstr "Biztosan meg akarja nyitni ezt: %s?"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:40
 msgid ""
@@ -3195,7 +3193,7 @@ msgstr "Áthúzott (Ctrl+%)"
 
 #: ../src/client/composer/ComposerToolbar.vala:77
 msgid "Link (Ctrl+K)"
-msgstr "Link (Ctrl+K)"
+msgstr "Hivatkozás (Ctrl+K)"
 
 #: ../src/client/components/main-toolbar.vala:117
 msgid "Forward (Ctrl+Shift+F)"
