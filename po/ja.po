@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-05-24 00:10+0000\n"
+"PO-Revision-Date: 2018-06-05 08:50+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/mail/mail/ja/>\n"
@@ -295,28 +295,28 @@ msgstr "アーカイブ(_A)"
 #: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] "メッセージをアーカイブする (A)"
+msgstr[0] "メッセージをアーカイブ(_A)"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
 #: ../src/client/application/geary-controller.vala:72
 #: ../src/client/application/geary-controller.vala:71
 msgid "Archive conversations (A)"
-msgstr "メッセージをアーカイブ (_A)"
+msgstr "メッセージをアーカイブ(_A)"
 
 #: ../src/client/application/geary-controller.vala:77
 #: ../src/client/application/geary-controller.vala:76
 #: ../src/client/application/geary-controller.vala:75
 #: ../src/client/application/geary-controller.vala:74
 msgid "Mark as S_pam"
-msgstr "迷惑メッセージとしてマーク (_P)"
+msgstr "迷惑メッセージとしてマーク(_P)"
 
 #: ../src/client/application/geary-controller.vala:78
 #: ../src/client/application/geary-controller.vala:77
 #: ../src/client/application/geary-controller.vala:76
 #: ../src/client/application/geary-controller.vala:75
 msgid "Mark as not S_pam"
-msgstr "迷惑マークをはずす (_P)"
+msgstr "迷惑マークをはずす(_P)"
 
 #: ../src/client/application/geary-controller.vala:80
 #: ../src/client/application/geary-controller.vala:392
@@ -403,7 +403,7 @@ msgstr "メッセージを移動"
 #: ../src/client/application/geary-controller.vala:369
 #: ../src/client/application/geary-controller.vala:375
 msgid "A_ccounts"
-msgstr "アカウント (_C)"
+msgstr "アカウント(_C)"
 
 #: ../src/client/application/geary-controller.vala:377
 #: ../src/client/components/stock.vala:27
@@ -414,20 +414,20 @@ msgstr "アカウント (_C)"
 #: ../src/client/application/geary-controller.vala:380
 #: ../src/client/application/geary-controller.vala:381
 msgid "_Preferences"
-msgstr "設定 (_P)"
+msgstr "設定(_P)"
 
 #: ../src/client/application/geary-controller.vala:381
 #: ../src/client/components/stock.vala:25
 #: ../src/client/application/geary-controller.vala:380
 msgid "_Help"
-msgstr "ヘルプ (_H)"
+msgstr "ヘルプ(_H)"
 
 #: ../src/client/application/geary-controller.vala:385
 #: ../src/client/components/stock.vala:21
 #: ../src/client/application/geary-controller.vala:384
 #: ../src/client/application/geary-controller.vala:379
 msgid "_About"
-msgstr "\"メール\" について (_A)"
+msgstr "\"メール\" について(_A)"
 
 #: ../src/client/application/geary-controller.vala:389
 #: ../src/client/components/stock.vala:29
@@ -438,7 +438,7 @@ msgstr "\"メール\" について (_A)"
 #: ../src/client/application/geary-controller.vala:384
 #: ../src/client/application/geary-controller.vala:386
 msgid "_Quit"
-msgstr "終了 (_Q)"
+msgstr "終了(_Q)"
 
 #: ../src/client/application/geary-controller.vala:394
 #: ../src/client/application/geary-controller.vala:393
@@ -447,7 +447,7 @@ msgstr "終了 (_Q)"
 #: ../src/client/application/geary-controller.vala:389
 #: ../src/client/application/geary-controller.vala:392
 msgid "_Mark as..."
-msgstr "名前を付けてマーク (_M) …"
+msgstr "名前を付けてマーク(_M)..."
 
 #: ../src/client/application/geary-controller.vala:400
 #: ../src/client/application/geary-controller.vala:399
@@ -456,7 +456,7 @@ msgstr "名前を付けてマーク (_M) …"
 #: ../src/client/application/geary-controller.vala:395
 #: ../src/client/application/geary-controller.vala:398
 msgid "Mark as _Read"
-msgstr "既読にする (_R)"
+msgstr "既読にする(_R)"
 
 #: ../src/client/application/geary-controller.vala:406
 #: ../src/client/application/geary-controller.vala:405
@@ -465,7 +465,7 @@ msgstr "既読にする (_R)"
 #: ../src/client/application/geary-controller.vala:401
 #: ../src/client/application/geary-controller.vala:403
 msgid "Mark as _Unread"
-msgstr "未読にする (_U)"
+msgstr "未読にする(_U)"
 
 #: ../src/client/application/geary-controller.vala:412
 #: ../src/client/application/geary-controller.vala:411
@@ -474,7 +474,7 @@ msgstr "未読にする (_U)"
 #: ../src/client/application/geary-controller.vala:407
 #: ../src/client/application/geary-controller.vala:408
 msgid "_Star"
-msgstr "スター (_S)"
+msgstr "スター(_S)"
 
 #: ../src/client/application/geary-controller.vala:417
 #: ../src/client/application/geary-controller.vala:416
@@ -483,7 +483,7 @@ msgstr "スター (_S)"
 #: ../src/client/application/geary-controller.vala:412
 #: ../src/client/application/geary-controller.vala:413
 msgid "U_nstar"
-msgstr "スターをはずす (_N)"
+msgstr "スターをはずす(_N)"
 
 #: ../src/client/application/geary-controller.vala:427
 #: ../src/client/application/geary-controller.vala:426
@@ -501,7 +501,7 @@ msgstr "ラベルを追加"
 #: ../src/client/application/geary-controller.vala:423
 #: ../src/client/application/geary-controller.vala:424
 msgid "_Label"
-msgstr "ラベル (_L)"
+msgstr "ラベル(_L)"
 
 #: ../src/client/application/geary-controller.vala:432
 #: ../src/client/application/geary-controller.vala:431
@@ -510,7 +510,7 @@ msgstr "ラベル (_L)"
 #: ../src/client/application/geary-controller.vala:427
 #: ../src/client/application/geary-controller.vala:428
 msgid "_Move"
-msgstr "移動 (_M)"
+msgstr "移動(_M)"
 
 #: ../src/client/application/geary-controller.vala:436
 #: ../src/client/application/geary-controller.vala:435
@@ -525,7 +525,7 @@ msgstr "新しいメッセージを作成 (Ctrl+N, N)"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1857
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1862
 msgid "_Reply"
-msgstr "返信 (_R)"
+msgstr "返信(_R)"
 
 #: ../src/client/application/geary-controller.vala:441
 #: ../src/client/application/geary-controller.vala:440
@@ -538,7 +538,7 @@ msgstr "返信 (Ctrl+R, R)"
 
 #: ../src/client/application/geary-controller.vala:445
 msgid "R_eply All"
-msgstr "全員に返信 (_E)"
+msgstr "全員に返信(_E)"
 
 #: ../src/client/application/geary-controller.vala:446
 #: ../src/client/application/geary-controller.vala:445
@@ -553,7 +553,7 @@ msgstr "全員に返信 (Ctrl+Shift+R, Shift+R)"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1867
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1872
 msgid "_Forward"
-msgstr "転送 (_F)"
+msgstr "転送(_F)"
 
 #: ../src/client/application/geary-controller.vala:452
 #: ../src/client/application/geary-controller.vala:451
@@ -588,7 +588,7 @@ msgstr "迷惑メールフォルダとゴミ箱を空にする"
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr "迷惑メールフォルダを空にする (_S) …"
+msgstr "迷惑メールフォルダを空にする(_S)…"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -598,7 +598,7 @@ msgstr "迷惑メールフォルダを空にする (_S) …"
 #: ../src/client/application/geary-controller.vala:478
 #: ../src/client/application/geary-controller.vala:484
 msgid "Empty _Trash…"
-msgstr "ゴミ箱を空にする (_T) …"
+msgstr "ゴミ箱を空にする(_T)…"
 
 #: ../src/client/application/geary-controller.vala:533
 msgid "Toggle search bar"
@@ -647,7 +647,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:956
 #: ../src/client/application/geary-controller.vala:950
 msgid "Co_ntinue"
-msgstr "続行する (_N)"
+msgstr "続行する(_N)"
 
 #. / Displayed in the space-limited status bar when a message fails to be sent due to error.
 #: ../src/client/application/geary-controller.vala:1063
@@ -740,7 +740,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1124
 #: ../src/client/application/geary-controller.vala:1118
 msgid "_Rebuild"
-msgstr "再構築 (_R)"
+msgstr "再構築(_R)"
 
 #: ../src/client/application/geary-controller.vala:1153
 #: ../src/client/application/geary-controller.vala:1147
@@ -750,7 +750,7 @@ msgstr "再構築 (_R)"
 #: ../src/client/application/geary-controller.vala:1124
 #: ../src/client/application/geary-controller.vala:1118
 msgid "E_xit"
-msgstr "終了 (_X)"
+msgstr "終了(_X)"
 
 #: ../src/client/application/geary-controller.vala:1162
 #: ../src/client/application/geary-controller.vala:1156
@@ -883,7 +883,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:1931
 #: ../src/client/application/geary-controller.vala:1937
 msgid "Undo move (Ctrl+Z)"
-msgstr "移動のやり直し (Ctrl+Z)"
+msgstr "移動のやり直し(Ctrl+Z)"
 
 #: ../src/client/application/geary-controller.vala:1986
 #: ../src/client/application/geary-controller.vala:1980
@@ -909,7 +909,7 @@ msgstr "添付ファイルはシステムにダメージを与える恐れがあ
 #: ../src/client/application/geary-controller.vala:1952
 #: ../src/client/application/geary-controller.vala:1948
 msgid "Don't _ask me again"
-msgstr "次回から表示しない (_A)"
+msgstr "次回から表示しない(_A)"
 
 #: ../src/client/application/geary-controller.vala:2006
 #: ../src/client/application/geary-controller.vala:2000
@@ -943,7 +943,7 @@ msgstr "ファイル \"%s\" はすでに存在します。置き換えると内�
 #: ../src/client/application/geary-controller.vala:1962
 #: ../src/client/application/geary-controller.vala:1968
 msgid "_Replace"
-msgstr "上書きする (_R)"
+msgstr "上書きする(_R)"
 
 #: ../src/client/application/geary-controller.vala:2309
 #: ../src/client/application/geary-controller.vala:2303
@@ -1261,7 +1261,7 @@ msgstr "ファイルを選択"
 
 #: ../src/client/dialogs/attachment-dialog.vala:23
 msgid "_Attach"
-msgstr "添付 (_A)"
+msgstr "添付(_A)"
 
 #. /clear widgets
 #: ../src/client/accounts/account-dialog-edit-alternate-emails-pane.vala:124
@@ -1339,12 +1339,12 @@ msgstr "プレビュー"
 #: ../src/client/accounts/add-edit-page.vala:723
 #: ../src/client/accounts/add-edit-page.vala:725
 msgid "Remem_ber passwords"
-msgstr "パスワードを記憶する (_B)"
+msgstr "パスワードを記憶する(_B)"
 
 #: ../src/client/accounts/add-edit-page.vala:730
 #: ../src/client/accounts/add-edit-page.vala:732 ../data/ui/login.ui:62
 msgid "Remem_ber password"
-msgstr "パスワードを記憶する (_B)"
+msgstr "パスワードを記憶する(_B)"
 
 #: ../src/client/accounts/add-edit-page.vala:764
 #: ../src/client/accounts/add-edit-page.vala:766
@@ -1395,12 +1395,12 @@ msgstr "        &#8226; ユーザー名またはパスワードが不正です�
 #: ../src/client/components/stock.vala:31
 #: ../src/client/components/stock.vala:30
 msgid "_Save"
-msgstr "保存 (_S)"
+msgstr "保存(_S)"
 
 #: ../src/client/accounts/account-dialog-add-edit-pane.vala:51
 #: ../src/client/components/stock.vala:22
 msgid "_Add"
-msgstr "追加 (_A)"
+msgstr "追加(_A)"
 
 #. / Datetime format for 12-hour time, i.e. 8:31 am
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
@@ -1425,7 +1425,7 @@ msgstr "%P %l:%M"
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/client/util/util-date.vala:78
 msgid "%b %-e"
-msgstr "%b%e日"
+msgstr "%b%-e日"
 
 #. / Date format for dates within a different year, i.e. 02/04/10
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
@@ -1675,7 +1675,7 @@ msgstr "このメッセージは正しく送信されましたが、%s に保存
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1172
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1199
 msgid "_Copy"
-msgstr "コピー (_C)"
+msgstr "コピー(_C)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1305
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1310
@@ -1686,7 +1686,7 @@ msgstr "コピー (_C)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1180
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1207
 msgid "Copy _Email Address"
-msgstr "アドレスをコピー (_E)"
+msgstr "アドレスをコピー(_E)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1310
 #: ../data/ui/composer.ui:106
@@ -1699,12 +1699,12 @@ msgstr "アドレスをコピー (_E)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1189
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1216
 msgid "Copy _Link"
-msgstr "リンクのアドレスをコピー (_L)"
+msgstr "リンクのアドレスをコピー(_L)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1318
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1323
 msgid "Select _Message"
-msgstr "メッセージの選択 (_M)"
+msgstr "メッセージの選択(_M)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1324
 #: ../src/client/components/stock.vala:32
@@ -1717,7 +1717,7 @@ msgstr "メッセージの選択 (_M)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1200
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1227
 msgid "Select _All"
-msgstr "すべて選択 (_A)"
+msgstr "すべて選択(_A)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1330
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1335
@@ -1728,7 +1728,7 @@ msgstr "すべて選択 (_A)"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1206
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1233
 msgid "_Inspect"
-msgstr "検証 (_I)"
+msgstr "検証(_I)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1556
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1561
@@ -1748,48 +1748,48 @@ msgstr " (無効？)"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1718
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1723
 msgid "_Save Image As..."
-msgstr "名前を付けて画像を保存 (_S) …"
+msgstr "名前を付けて画像を保存(_S)..."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1822
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 msgid "_Save As..."
-msgstr "名前を付けて保存 (_S) …"
+msgstr "名前を付けて保存(_S)..."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1832
 msgid "Save All A_ttachments..."
-msgstr "すべての添付ファイルを保存 (_T) …"
+msgstr "すべての添付ファイルを保存(_T)..."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1847
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1852
 msgid "Save A_ttachment..."
 msgid_plural "Save All A_ttachments..."
-msgstr[0] "すべての添付ファイルを保存 (_T) …"
+msgstr[0] "すべての添付ファイルを保存(_T)..."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1862
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1867
 msgid "Reply to _All"
-msgstr "全員へ返信 (_A)"
+msgstr "全員へ返信(_A)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1879
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1884
 msgid "_Mark as Read"
-msgstr "既読としてマーク (_M)"
+msgstr "既読としてマーク(_M)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1883
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1888
 msgid "_Mark as Unread"
-msgstr "未読としてマーク (_M)"
+msgstr "未読としてマーク(_M)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1889
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1894
 msgid "Mark Unread From _Here"
-msgstr "ここから未読マークを付ける (_H)"
+msgstr "ここから未読マークを付ける(_H)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1904
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1909
 msgid "_View Source"
-msgstr "ソースを表示 (_V)"
+msgstr "ソースを表示(_V)"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2362
 #: ../src/client/conversation-viewer/conversation-viewer.vala:2367
@@ -2037,44 +2037,44 @@ msgstr "見つかりません"
 #: ../src/client/components/stock.vala:18
 #: ../data/ui/account_cannot_remove.ui:74
 msgid "_OK"
-msgstr "OK (_O)"
+msgstr "OK(_O)"
 
 #: ../src/client/components/stock.vala:19 ../data/ui/remove_confirm.ui:153
 #: ../data/ui/edit_alternate_emails.ui:160 ../data/ui/password-dialog.ui:196
 #: ../data/ui/remove_confirm.ui:155
 msgid "_Cancel"
-msgstr "キャンセル (_C)"
+msgstr "キャンセル(_C)"
 
 #: ../src/client/components/stock.vala:23
 #: ../src/client/dialogs/preferences-dialog.vala:84
 #: ../src/client/dialogs/preferences-dialog.vala:92
 #: ../src/client/dialogs/preferences-dialog.vala:79
 msgid "_Close"
-msgstr "閉じる (_C)"
+msgstr "閉じる(_C)"
 
 #: ../src/client/components/stock.vala:24
 msgid "_Discard"
-msgstr "破棄 (_D)"
+msgstr "破棄(_D)"
 
 #: ../src/client/components/stock.vala:26
 #: ../src/client/components/stock.vala:25
 msgid "_Open"
-msgstr "開く (_O)"
+msgstr "開く(_O)"
 
 #: ../src/client/components/stock.vala:28
 #: ../src/client/components/stock.vala:27
 msgid "_Print..."
-msgstr "印刷 (_P) …"
+msgstr "印刷(_P)..."
 
 #: ../src/client/components/stock.vala:30 ../data/ui/remove_confirm.ui:168
 #: ../src/client/components/stock.vala:29 ../data/ui/remove_confirm.ui:170
 msgid "_Remove"
-msgstr "削除 (_R)"
+msgstr "削除(_R)"
 
 #: ../src/client/components/stock.vala:33
 #: ../src/client/components/stock.vala:32
 msgid "_Keep"
-msgstr "保持する (_K)"
+msgstr "保持(_K)"
 
 #: ../src/client/components/search-bar.vala:25
 #: ../src/client/components/main-toolbar.vala:83
@@ -2241,7 +2241,7 @@ msgstr "次の結果"
 
 #: ../data/ui/find_bar.ui:107
 msgid "_Case sensitive"
-msgstr "大文字と小文字を区別する (_C)"
+msgstr "大文字と小文字を区別する(_C)"
 
 #: ../data/ui/find_bar.ui:127
 msgid "label"
@@ -2266,7 +2266,7 @@ msgstr ""
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
-msgstr "更新 (_U)"
+msgstr "更新(_U)"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
@@ -2274,35 +2274,35 @@ msgstr "Geary がメールアカウントを検証する間お待ちください
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
-msgstr "元に戻す (_U)"
+msgstr "元に戻す(_U)"
 
 #: ../data/ui/composer.ui:15
 msgid "_Redo"
-msgstr "やり直し (_R)"
+msgstr "やり直し(_R)"
 
 #: ../data/ui/composer.ui:22
 msgid "Cu_t"
-msgstr "カット (_T)"
+msgstr "カット(_T)"
 
 #: ../data/ui/composer.ui:36
 msgid "_Paste"
-msgstr "ペースト (_P)"
+msgstr "ペースト(_P)"
 
 #: ../data/ui/composer.ui:43
 msgid "_Left"
-msgstr "左寄せ (_L)"
+msgstr "左寄せ(_L)"
 
 #: ../data/ui/composer.ui:48
 msgid "_Right"
-msgstr "右寄せ (_R)"
+msgstr "右寄せ(_R)"
 
 #: ../data/ui/composer.ui:53
 msgid "_Center"
-msgstr "中央寄せ (_C)"
+msgstr "中央寄せ(_C)"
 
 #: ../data/ui/composer.ui:58
 msgid "_Justify"
-msgstr "両端揃え (_J)"
+msgstr "両端揃え(_J)"
 
 #: ../data/ui/composer.ui:63 ../src/client/composer/ComposerToolbar.vala:77
 msgid "Link (Ctrl+L)"
@@ -2310,7 +2310,7 @@ msgstr "リンク (Ctrl+L)"
 
 #: ../data/ui/composer.ui:70 ../data/ui/composer.ui:69
 msgid "C_olor"
-msgstr "カラー (_O)"
+msgstr "カラー(_O)"
 
 #: ../data/ui/composer.ui:81
 msgid "Quote text  (Ctrl+])"
@@ -2327,7 +2327,7 @@ msgstr "フォーマットを削除 (Ctrl+Space)"
 #: ../data/ui/composer.ui:100 ../data/ui/composer.ui:97
 msgctxt "Clipboard paste with rich text"
 msgid "Paste _With Formatting"
-msgstr "書式付きでペースト (_W)"
+msgstr "書式付きでペースト(_W)"
 
 #: ../data/ui/composer.ui:111 ../src/client/composer/ComposerToolbar.vala:36
 msgid "Bold (Ctrl+B)"
@@ -2347,7 +2347,7 @@ msgstr "取り消し線 (Ctrl+K)"
 
 #: ../data/ui/composer.ui:139 ../data/ui/composer.ui:132
 msgid "_Rich Text"
-msgstr "リッチテキスト (_R)"
+msgstr "リッチテキスト(_R)"
 
 #: ../data/ui/composer.ui:145 ../data/ui/composer.ui:138
 msgid "Show Extended Fields"
@@ -2386,7 +2386,7 @@ msgstr "破棄して閉じる"
 #: ../data/ui/composer.ui:173 ../data/ui/composer.ui:155
 #: ../data/ui/composer.ui:160
 msgid "Lar_ge"
-msgstr "大 (_G)"
+msgstr "大(_G)"
 
 #: ../data/ui/composer.ui:174 ../data/ui/composer.ui:156
 #: ../data/ui/composer.ui:161
@@ -2396,7 +2396,7 @@ msgstr "大"
 #: ../data/ui/composer.ui:179 ../data/ui/composer.ui:161
 #: ../data/ui/composer.ui:166
 msgid "_Medium"
-msgstr "中 (_M)"
+msgstr "中(_M)"
 
 #: ../data/ui/composer.ui:180 ../data/ui/composer.ui:162
 #: ../data/ui/composer.ui:167
@@ -2406,7 +2406,7 @@ msgstr "中"
 #: ../data/ui/composer.ui:185 ../data/ui/composer.ui:167
 #: ../data/ui/composer.ui:172
 msgid "_Small"
-msgstr "小 (_S)"
+msgstr "小(_S)"
 
 #: ../data/ui/composer.ui:186 ../data/ui/composer.ui:168
 #: ../data/ui/composer.ui:173
@@ -2416,7 +2416,7 @@ msgstr "小"
 #: ../data/ui/composer.ui:191 ../data/ui/composer.ui:173
 #: ../data/ui/composer.ui:178
 msgid "S_ans Serif"
-msgstr "サンサリフ (_A)"
+msgstr "サンサリフ(_A)"
 
 #: ../data/ui/composer.ui:192 ../data/ui/composer.ui:174
 #: ../data/ui/composer.ui:179
@@ -2426,7 +2426,7 @@ msgstr "サンセリフ"
 #: ../data/ui/composer.ui:197 ../data/ui/composer.ui:179
 #: ../data/ui/composer.ui:184
 msgid "S_erif"
-msgstr "セリフ (_E)"
+msgstr "セリフ(_E)"
 
 #: ../data/ui/composer.ui:198 ../data/ui/composer.ui:180
 #: ../data/ui/composer.ui:185
@@ -2436,7 +2436,7 @@ msgstr "セリフ"
 #: ../data/ui/composer.ui:203 ../data/ui/composer.ui:185
 #: ../data/ui/composer.ui:190
 msgid "_Fixed Width"
-msgstr "固定幅 (_F)"
+msgstr "固定幅(_F)"
 
 #: ../data/ui/composer.ui:204 ../data/ui/composer.ui:186
 #: ../data/ui/composer.ui:191
@@ -2453,7 +2453,7 @@ msgstr "切断 (Ctrl+D)"
 
 #: ../data/ui/composer.ui:218
 msgid "_Send"
-msgstr "送信 (_S)"
+msgstr "送信(_S)"
 
 #: ../data/ui/composer.ui:219 ../src/client/composer/ComposerHeaderBar.vala:46
 msgid "Send"
@@ -2465,7 +2465,7 @@ msgstr "送信 (Ctrl+Enter)"
 
 #: ../data/ui/composer.ui:226
 msgid "_Attach File"
-msgstr "添付ファイル (_A)"
+msgstr "添付ファイル(_A)"
 
 #: ../data/ui/composer.ui:227 ../data/ui/composer.ui:228
 msgid "Attach File"
@@ -2473,7 +2473,7 @@ msgstr "添付ファイル"
 
 #: ../data/ui/composer.ui:234
 msgid "_Include Original Attachments"
-msgstr "元の添付ファイルを含む (_I)"
+msgstr "元の添付ファイルを含む(_I)"
 
 #: ../data/ui/composer.ui:235 ../data/ui/composer.ui:236
 msgid "Include Original Attachments"
@@ -2488,27 +2488,27 @@ msgstr "アプリケーションメニュー"
 #: ../data/ui/composer.ui:289 ../data/ui/composer.ui:317
 #: ../data/ui/composer.ui:287 ../data/ui/composer.ui:292
 msgid "_To"
-msgstr "宛先 (_T)"
+msgstr "宛先(_T)"
 
 #: ../data/ui/composer.ui:308 ../data/ui/composer.ui:336
 #: ../data/ui/composer.ui:306 ../data/ui/composer.ui:311
 msgid "_Cc"
-msgstr "Cc (_C)"
+msgstr "Cc(_C)"
 
 #: ../data/ui/composer.ui:362 ../data/ui/composer.ui:390
 #: ../data/ui/composer.ui:360 ../data/ui/composer.ui:365
 msgid "_Subject"
-msgstr "件名 (_S)"
+msgstr "件名(_S)"
 
 #: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
 #: ../data/ui/composer.ui:379 ../data/ui/composer.ui:384
 msgid "_Bcc"
-msgstr "Bcc (_B)"
+msgstr "Bcc(_B)"
 
 #: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
 #: ../data/ui/composer.ui:409 ../data/ui/composer.ui:414
 msgid "_Reply-To"
-msgstr "Reply-To (_R)"
+msgstr "Reply-To(_R)"
 
 #. Geary account mail will be sent from
 #. Account mail will be sent from
@@ -2542,11 +2542,11 @@ msgstr ""
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr "追加のメールアドレス (_T) …"
+msgstr "追加のメールアドレス(_T)…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
-msgstr "送信したメールを保存する (_S)"
+msgstr "送信したメールを保存する(_S)"
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
@@ -2554,11 +2554,11 @@ msgstr "パスワード"
 
 #: ../data/ui/login.ui:97 ../data/ui/login.ui:545
 msgid "_Password:"
-msgstr "パスワード (_P):"
+msgstr "パスワード(_P):"
 
 #: ../data/ui/login.ui:130
 msgid "E_mail address:"
-msgstr "メールアドレス (_M):"
+msgstr "メールアドレス(_M):"
 
 #: ../data/ui/login.ui:152
 msgid "Work, Home, etc."
@@ -2566,15 +2566,15 @@ msgstr "仕事用、自宅用など"
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
-msgstr "ニックネーム (_I):"
+msgstr "ニックネーム(_I):"
 
 #: ../data/ui/login.ui:195
 msgid "N_ame:"
-msgstr "名前 (_A):"
+msgstr "名前(_A):"
 
 #: ../data/ui/login.ui:211
 msgid "S_ervice:"
-msgstr "サービス (_E):"
+msgstr "サービス(_E):"
 
 #: ../data/ui/login.ui:298
 msgid "IMAP settings"
@@ -2582,19 +2582,19 @@ msgstr "IMAP 設定"
 
 #: ../data/ui/login.ui:315
 msgid "Se_rver:"
-msgstr "サーバー (_R):"
+msgstr "サーバー(_R):"
 
 #: ../data/ui/login.ui:347
 msgid "P_ort"
-msgstr "ポート番号 (_O)"
+msgstr "ポート番号(_O)"
 
 #: ../data/ui/login.ui:409
 msgid "Ser_ver:"
-msgstr "サーバー (_V):"
+msgstr "サーバー(_V):"
 
 #: ../data/ui/login.ui:427
 msgid "Por_t"
-msgstr "ポート番号 (_T)"
+msgstr "ポート番号(_T)"
 
 #: ../data/ui/login.ui:446
 msgid "SMTP settings"
@@ -2602,11 +2602,11 @@ msgstr "SMTP 設定"
 
 #: ../data/ui/login.ui:462
 msgid "User_name:"
-msgstr "ユーザー名 (_N):"
+msgstr "ユーザー名(_N):"
 
 #: ../data/ui/login.ui:480
 msgid "Pass_word:"
-msgstr "パスワード (_W):"
+msgstr "パスワード(_W):"
 
 #: ../data/ui/login.ui:499
 msgid "SMTP username"
@@ -2618,7 +2618,7 @@ msgstr "SMTP パスワード"
 
 #: ../data/ui/login.ui:527
 msgid "_Username:"
-msgstr "ユーザー名 (_U):"
+msgstr "ユーザー名(_U):"
 
 #: ../data/ui/login.ui:564
 msgid "IMAP username"
@@ -2630,11 +2630,11 @@ msgstr "IMAP パスワード"
 
 #: ../data/ui/login.ui:593
 msgid "Encr_yption:"
-msgstr "暗号化 (_Y):"
+msgstr "暗号化(_Y):"
 
 #: ../data/ui/login.ui:613
 msgid "Encrypt_ion:"
-msgstr "暗号化 (_I):"
+msgstr "暗号化(_I):"
 
 #: ../data/ui/login.ui:634 ../data/ui/login.ui:651
 msgid "SSL/TLS"
@@ -2646,11 +2646,11 @@ msgstr "STARTTLS"
 
 #: ../data/ui/login.ui:663
 msgid "No authentication re_quired"
-msgstr "認証は不要 (_Q)"
+msgstr "認証は不要(_Q)"
 
 #: ../data/ui/login.ui:679
 msgid "Use IMAP cre_dentials"
-msgstr "IMAP の資格情報を使用する (_D)"
+msgstr "IMAP の資格情報を使用する(_D)"
 
 #: ../data/ui/login.ui:783
 msgid "Storage"
@@ -2658,15 +2658,15 @@ msgstr "ストレージ"
 
 #: ../data/ui/login.ui:804
 msgid "_Download mail"
-msgstr "次の日時より後のメールをダウンロード (_D)"
+msgstr "次の日時より後のメールをダウンロード(_D)"
 
 #: ../data/ui/login.ui:867
 msgid "Save dra_fts on server"
-msgstr "サーバーに下書きを保存する (_F)"
+msgstr "サーバーに下書きを保存する(_F)"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr "メールに署名する (HTML も可) (_G):"
+msgstr "メールに署名する (HTML も可)(_G):"
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
@@ -2686,15 +2686,15 @@ msgstr "信頼されていない接続"
 
 #: ../data/ui/certificate_warning_dialog.ui:29
 msgid "_Always Trust This Server"
-msgstr "常にこのサーバーを信用する (_A)"
+msgstr "常にこのサーバーを信頼する(_A)"
 
 #: ../data/ui/certificate_warning_dialog.ui:43
 msgid "_Trust This Server"
-msgstr "このサーバーを信頼する (_T)"
+msgstr "このサーバーを信頼する(_T)"
 
 #: ../data/ui/certificate_warning_dialog.ui:57
 msgid "_Don't Trust This Server"
-msgstr "このサーバーを信頼しない (_D)"
+msgstr "このサーバーを信頼しない(_D)"
 
 #: ../data/ui/password-dialog.ui:74
 msgid "SMTP Credentials"
@@ -2706,11 +2706,11 @@ msgstr "ユーザー名"
 
 #: ../data/ui/password-dialog.ui:152
 msgid "_Remember password"
-msgstr "パスワードを記憶する (_R)"
+msgstr "パスワードを記憶する(_R)"
 
 #: ../data/ui/password-dialog.ui:210
 msgid "_Authenticate"
-msgstr "認証する (_A)"
+msgstr "認証する(_A)"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
