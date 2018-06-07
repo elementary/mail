@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-06-07 00:09+0000\n"
+"PO-Revision-Date: 2018-06-08 00:11+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/mail/mail/ja/>\n"
@@ -275,13 +275,13 @@ msgstr "メッセージを削除 (Shift+Delete)"
 #: ../src/client/application/geary-controller.vala:2723
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
-msgstr[0] "メッセージをゴミ箱に移動する (Delete, Backspace)"
+msgstr[0] "メッセージをゴミ箱に移動 (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
 #: ../src/client/application/geary-controller.vala:66
 msgid "Move conversations to Trash (Delete, Backspace)"
-msgstr "メッセージをゴミ箱に移動する (Delete, Backspace)"
+msgstr "メッセージをゴミ箱に移動 (Delete, Backspace)"
 
 #: ../src/client/application/geary-controller.vala:72
 msgid "_Archive"
@@ -578,7 +578,7 @@ msgstr "空"
 #: ../src/client/components/main-toolbar.vala:71
 #: ../src/client/application/geary-controller.vala:481
 msgid "Empty Spam or Trash folders"
-msgstr "迷惑メールフォルダとゴミ箱を空にする"
+msgstr "迷惑メールフォルダーあるいはゴミ箱を空にする"
 
 #: ../src/client/application/geary-controller.vala:496
 #: ../src/client/application/geary-controller.vala:495
@@ -588,7 +588,7 @@ msgstr "迷惑メールフォルダとゴミ箱を空にする"
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr "迷惑メールフォルダを空にする(_S)…"
+msgstr "迷惑メールフォルダーを空にする(_S)…"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -687,8 +687,7 @@ msgid ""
 "Geary encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
-"送信フォルダへの送信メールの保存中に Geary にエラーが発生しました。送信トレイ"
-"からメールを削除するまで、メッセージは送信トレイに残ります。"
+"送信フォルダーへの送信メールの保存中に Geary にエラーが発生しました。送信トレイからメールを削除するまで、メッセージは送信トレイに残ります。"
 
 #: ../src/client/application/geary-controller.vala:1138
 #: ../src/client/application/geary-controller.vala:1132
@@ -960,7 +959,7 @@ msgstr "開いている下書きを閉じますか？"
 #: ../src/client/application/geary-controller.vala:2394
 #: ../src/client/application/geary-controller.vala:2389
 msgid "Empty all email from your %s folder?"
-msgstr "フォルダ %s のメールをすべて空にしてよろしいですか？"
+msgstr "フォルダー \"%s\" のメールをすべて空にしますか？"
 
 #: ../src/client/application/geary-controller.vala:2440
 #: ../src/client/application/geary-controller.vala:2434
@@ -1101,7 +1100,7 @@ msgstr "データベースクエリを記録 (多くのメッセージを生成�
 #: ../src/client/application/geary-args.vala:24
 #: ../src/client/application/geary-args.vala:25
 msgid "Log folder normalization"
-msgstr "フォルダの同期を記録"
+msgstr "フォルダーの同期を記録"
 
 #: ../src/client/application/geary-args.vala:25
 #: ../src/client/application/geary-args.vala:26
@@ -1526,12 +1525,12 @@ msgstr "受信トレイ"
 #: ../src/client/folder-list/folder-list-search-branch.vala:39
 #: ../src/client/components/search-bar.vala:129
 msgid "Search %s account"
-msgstr "%s アカウント検索"
+msgstr "%s アカウントを検索"
 
 #: ../src/client/folder-list/folder-list-search-branch.vala:44
 msgid "%d result"
 msgid_plural "%d results"
-msgstr[0] "結果 %d"
+msgstr[0] "%d 件の結果"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:413
 #: ../src/client/conversation-viewer/conversation-viewer.vala:415
@@ -1568,7 +1567,7 @@ msgstr "検索結果はありませんでした。"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:343
 #: ../src/client/conversation-viewer/conversation-viewer.vala:344
 msgid "No conversations in folder."
-msgstr "フォルダにメッセージがありません。"
+msgstr "フォルダーにメッセージがありません。"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:708
 #: ../src/client/conversation-viewer/conversation-viewer.vala:713
@@ -1903,7 +1902,7 @@ msgstr "\"%s\" は見つかりませんでした。"
 #: ../src/client/composer/composer-widget.vala:1504
 #: ../src/client/composer/composer-widget.vala:1501
 msgid "\"%s\" is a folder."
-msgstr "\"%s\" はフォルダです。"
+msgstr "\"%s\" はフォルダーです。"
 
 #: ../src/client/composer/composer-widget.vala:1555
 #: ../src/client/composer/composer-widget.vala:1550
@@ -2739,7 +2738,7 @@ msgstr "メールの送信中にエラーが発生しました。もしこの問
 msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
-msgstr "送信フォルダへの送信メールの保存中にエラーが発生しました。送信トレイからメールを削除するまで、メッセージは送信トレイに残ります。"
+msgstr "送信フォルダーへの送信メールの保存中にエラーが発生しました。送信トレイからメールを削除するまで、メッセージは送信トレイに残ります。"
 
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
