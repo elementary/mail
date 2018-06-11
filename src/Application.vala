@@ -39,7 +39,7 @@ public class Mail.Application : Gtk.Application {
         });
 
         add_action (quit_action);
-        add_accelerator ("<Control>q", "app.quit", null);
+        set_accels_for_action ("app.quit", {"<Control>q"});
     }
 
     public override void open (File[] files, string hint) {
