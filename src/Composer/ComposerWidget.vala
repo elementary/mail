@@ -210,7 +210,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         var button_row = new Gtk.Grid ();
         button_row.column_spacing = 6;
-        button_row.margin_left = 6;
+        button_row.margin_start = 6;
         button_row.margin_bottom = 6;
         button_row.add (formatting_buttons);
         button_row.add (indent_buttons);
