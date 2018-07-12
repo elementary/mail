@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-07-02 00:06+0000\n"
+"PO-Revision-Date: 2018-07-13 00:03+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/mail/mail/ja/"
 ">\n"
@@ -647,7 +647,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:956
 #: ../src/client/application/geary-controller.vala:950
 msgid "Co_ntinue"
-msgstr "続行する(_N)"
+msgstr "続行(_N)"
 
 #. / Displayed in the space-limited status bar when a message fails to be sent due to error.
 #: ../src/client/application/geary-controller.vala:1063
@@ -2258,10 +2258,7 @@ msgstr "メールアドレスを削除"
 msgid ""
 "Some email services require additional addresses be configured on the "
 "server.  Contact your email provider for more information."
-msgstr ""
-"このサーバー上で設定するには追加のアドレスを必要とするメールアドレス サービス"
-"があります。詳しい情報を知るには、メールサービスのプロバイダーに連絡してくだ"
-"さい。"
+msgstr "メールサービスがサーバー上で設定された追加のアドレスを要求しています。詳しい情報を知るには、メールサービスのプロバイダーに連絡してください。"
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
@@ -3002,7 +2999,7 @@ msgstr "名前を付けて保存…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
-msgstr "大文字と小文字を区別する"
+msgstr "大文字と小文字を区別"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
