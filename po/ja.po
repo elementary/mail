@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-07-18 00:05+0000\n"
+"PO-Revision-Date: 2018-08-04 00:00+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/mail/mail/ja/"
 ">\n"
@@ -2461,11 +2461,11 @@ msgstr "送信 (Ctrl+Enter)"
 
 #: ../data/ui/composer.ui:226
 msgid "_Attach File"
-msgstr "添付ファイル(_A)"
+msgstr "ファイルを添付(_A)"
 
 #: ../data/ui/composer.ui:227 ../data/ui/composer.ui:228
 msgid "Attach File"
-msgstr "添付ファイル"
+msgstr "ファイルを添付"
 
 #: ../data/ui/composer.ui:234
 msgid "_Include Original Attachments"
@@ -3021,14 +3021,14 @@ msgstr "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:418
 #: ../src/client/conversation-viewer/ConversationWidget.vala:431
 msgid "Star message"
-msgstr "スター付きメッセージ"
+msgstr "メッセージにスターをつける"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:420
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
 #: ../src/client/conversation-viewer/ConversationWidget.vala:426
 #: ../src/client/conversation-viewer/ConversationWidget.vala:428
 msgid "Unstar message"
-msgstr "スターなしメッセージ"
+msgstr "メッセージからスターを外す"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:430
 #: ../src/client/conversation-viewer/ConversationWidget.vala:433
