@@ -44,7 +44,7 @@ public class Mail.Backend.Session : Camel.Session {
     private Session () {
         Object (user_data_dir: Path.build_filename (E.get_user_data_dir (), "mail"), user_cache_dir: Path.build_filename (E.get_user_cache_dir (), "mail"));
     }
-    
+
     construct {
         Camel.init (E.get_user_data_dir (), false);
         accounts = new Gee.LinkedList<Account> ();
@@ -52,7 +52,7 @@ public class Mail.Backend.Session : Camel.Session {
         set_online (true);
         user_alert.connect ((service, type, message) => { warning (message); });
     }
-    
+
     public async void start () {
         try {
             registry = yield new E.SourceRegistry (null);
@@ -104,10 +104,12 @@ public class Mail.Backend.Session : Camel.Session {
                 result = service.authenticate_sync (mechanism); //@TODO make async?
 
                 if (result == Camel.AuthenticationResult.REJECTED) {
-                    /* @TODO g_set_error (
-                        error, CAMEL_SERVICE_ERROR,
-                        CAMEL_SERVICE_ERROR_CANT_AUTHENTICATE,
-                        _("%s authentication failed"), mechanism);*/
+                    throw new GLib.Error (
+                        Camel.Service.error_quark (),
+                        Camel.ServiceError.CANT_AUTHENTICATE,
+                        "%s authentication failed",
+                        mechanism
+                    );
                 }
 
                 return (result == Camel.AuthenticationResult.ACCEPTED);
@@ -143,7 +145,50 @@ public class Mail.Backend.Session : Camel.Session {
         }
     }
 
-    
+    public override bool get_oauth2_access_token_sync (Camel.Service service, out string? access_token, out int expires_in, Cancellable? cancellable = null) throws GLib.Error {
+        GLib.Error? local_error = null;
+
+        var source = registry.ref_source (service.get_uid ());
+        if (source == null) {
+            throw new GLib.IOError.NOT_FOUND ("Corresponding source for service with UID “%s” not found", service.get_uid ());
+        }
+
+        var cred_source = registry.find_extension (source, E.SOURCE_EXTENSION_COLLECTION);
+        if (cred_source != null && !E.util_can_use_collection_as_credential_source (cred_source, source)) {
+            cred_source = source;
+        }
+
+        bool success = false;
+
+        try {
+            success = source.get_oauth2_access_token_sync (cancellable, out access_token, out expires_in);
+        } catch (Error e) {
+            local_error = e;
+
+            if (e is GLib.IOError.CONNECTION_REFUSED || e is GLib.IOError.NOT_FOUND) {
+                local_error = new GLib.Error (
+                    Camel.Service.error_quark (),
+                    Camel.ServiceError.CANT_AUTHENTICATE,
+                    e.message
+                );
+
+                try {
+                    if (source.invoke_credentials_required_sync (E.SourceCredentialsReason.REJECTED, "", 0, e)) {
+                        local_error = null;
+                    }
+                } catch (Error invoke_error) {
+                    local_error = invoke_error;
+                }
+            }
+        }
+
+        if (local_error != null) {
+            throw local_error;
+        }
+
+        return success;
+    }
+
     public bool try_credentials_sync (E.CredentialsPrompter prompter, E.Source source, E.NamedParameters credentials, out bool out_authenticated, GLib.Cancellable? cancellable, Camel.Service service, string? mechanism) throws GLib.Error {
         string credential_name = null;
 
@@ -160,7 +205,7 @@ public class Mail.Backend.Session : Camel.Session {
         service.set_password (credentials.get (credential_name ?? E.SOURCE_CREDENTIAL_PASSWORD));
 
         Camel.AuthenticationResult result = service.authenticate_sync (mechanism); //@TODO catch error
-        
+
         out_authenticated = (result == Camel.AuthenticationResult.ACCEPTED);
 
         if (out_authenticated) {
@@ -178,7 +223,7 @@ public class Mail.Backend.Session : Camel.Session {
         var account_source = registry.ref_source (service.get_uid ());
         var account_extension = (E.SourceMailAccount) account_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
         var identity_uid = account_extension.get_identity_uid ();
-        
+
         return registry.ref_source (identity_uid);
     }
 
