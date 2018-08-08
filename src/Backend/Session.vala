@@ -154,14 +154,14 @@ public class Mail.Backend.Session : Camel.Session {
         }
 
         var cred_source = registry.find_extension (source, E.SOURCE_EXTENSION_COLLECTION);
-        if (cred_source != null && !E.util_can_use_collection_as_credential_source (cred_source, source)) {
+        if (cred_source == null || !E.util_can_use_collection_as_credential_source (cred_source, source)) {
             cred_source = source;
         }
 
         bool success = false;
 
         try {
-            success = source.get_oauth2_access_token_sync (cancellable, out access_token, out expires_in);
+            success = cred_source.get_oauth2_access_token_sync (cancellable, out access_token, out expires_in);
         } catch (Error e) {
             local_error = e;
 
@@ -173,7 +173,7 @@ public class Mail.Backend.Session : Camel.Session {
                 );
 
                 try {
-                    if (source.invoke_credentials_required_sync (E.SourceCredentialsReason.REJECTED, "", 0, e)) {
+                    if (cred_source.invoke_credentials_required_sync (E.SourceCredentialsReason.REJECTED, "", 0, e)) {
                         local_error = null;
                     }
                 } catch (Error invoke_error) {
