@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-08-04 00:00+0000\n"
+"PO-Revision-Date: 2018-08-21 00:02+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/mail/mail/ja/"
 ">\n"
@@ -1153,8 +1153,7 @@ msgstr[0] "%d 件の新着メッセージ"
 #: ../src/client/notification/libnotify.vala:48
 msgid "%s, %d new message total"
 msgid_plural "%s, %d new messages total"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s、合計 %d 件の新着メッセージ"
 
 #: ../src/client/notification/libnotify.vala:107
 #: ../src/client/notification/libnotify.vala:105
@@ -1165,7 +1164,8 @@ msgid_plural ""
 "%s\n"
 "(%d other new messages for %s)"
 msgstr[0] ""
-msgstr[1] ""
+"%s\n"
+"(他に %s 宛に %d 件の新着メッセージ)"
 
 #: ../src/client/notification/libnotify.vala:160
 #: ../src/client/notification/libnotify.vala:158
@@ -2020,7 +2020,7 @@ msgstr "送信しています..."
 #: ../src/client/components/conversation-find-bar.vala:214
 msgid "%i match"
 msgid_plural "%i matches"
-msgstr[0] "%i 件一致"
+msgstr[0] "%i 件の一致"
 
 #: ../src/client/components/conversation-find-bar.vala:216
 msgid "%i match (wrapped)"
