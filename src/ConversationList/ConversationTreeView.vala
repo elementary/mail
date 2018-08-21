@@ -17,38 +17,37 @@
  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
  * Boston, MA 02111-1307, USA.
  *
- * Authored by: Corentin Noël <corentin@elementary.io>
+ * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class Mail.ConversationListBox : Gtk.ListBox {
+public class Mail.ConversationTreeView : Gtk.TreeView {
     public signal void conversation_selected (Camel.FolderThreadNode? node);
     public signal void conversation_focused (Camel.FolderThreadNode? node);
 
     public Backend.Account current_account { get; private set; }
     public Camel.Folder folder { get; private set; }
 
+    private Gtk.TreeStore tree_store;
     private GLib.Cancellable? cancellable = null;
     private Camel.FolderThread thread;
     private string current_folder;
-    private Gee.HashMap<string, ConversationListItem> conversations;
+    private Gee.HashMap<string, ConversationItemModel> conversations;
 
     construct {
+        tree_store = new Gtk.TreeStore (1, typeof (ConversationItemModel));
+        conversations = new Gee.HashMap<string, ConversationItemModel> ();
+
+        model = tree_store;
+
+        headers_visible = false;
         activate_on_single_click = true;
-        conversations = new Gee.HashMap<string, ConversationListItem> ();
-        set_sort_func (thread_sort_function);
-        row_activated.connect ((row) => {
-            if (row == null) {
-                conversation_focused (null);
-            } else {
-                conversation_focused (((ConversationListItem) row).node);
-            }
-        });
-        row_selected.connect ((row) => {
-            if (row == null) {
-                conversation_selected (null);
-            } else {
-                conversation_selected (((ConversationListItem) row).node);
-            }
+        enable_grid_lines = Gtk.TreeViewGridLines.HORIZONTAL;
+
+        var renderer = new ConversationItemRenderer ();
+        insert_column_with_attributes (-1, null, renderer, "conversation", 0);
+
+        row_activated.connect ((path, column) => {
+            // TODO
         });
     }
 
@@ -64,9 +63,7 @@ public class Mail.ConversationListBox : Gtk.ListBox {
 
         lock (conversations) {
             conversations.clear ();
-            get_children ().foreach ((child) => {
-                child.destroy ();
-            });
+            (model as Gtk.TreeStore).clear ();
 
             cancellable = new GLib.Cancellable ();
             try {
@@ -101,7 +98,16 @@ public class Mail.ConversationListBox : Gtk.ListBox {
                 var item = conversations[uid];
                 if (item != null) {
                     conversations.unset (uid);
-                    item.destroy ();
+                    model.@foreach ((model, path, iter) => {
+                        ConversationItemModel conversation;
+                        model.@get (iter, out conversation);
+                        if (conversation.node.message.uid == uid) {
+                            (model as Gtk.TreeStore).remove (ref iter);
+                            return true;
+                        }
+
+                        return false;
+                    });
                 }
             });
 
@@ -124,14 +130,14 @@ public class Mail.ConversationListBox : Gtk.ListBox {
     }
 
     private void add_conversation_item (Camel.FolderThreadNode child) {
-        var item = new ConversationListItem (child);
+        var item = new ConversationItemModel (child);
         conversations[child.message.uid] = item;
-        add (item);
+        (model as Gtk.TreeStore).insert_with_values (null, null, -1, 0, item, -1);
     }
 
-    private static int thread_sort_function (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
-        var item1 = (ConversationListItem) row1;
-        var item2 = (ConversationListItem) row2;
-        return (int)(item2.timestamp - item1.timestamp);
-    }
+    // private static int thread_sort_function (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
+    //     var item1 = (ConversationListItem) row1;
+    //     var item2 = (ConversationListItem) row2;
+    //     return (int)(item2.timestamp - item1.timestamp);
+    // }
 }

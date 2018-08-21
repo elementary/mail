@@ -22,9 +22,9 @@ public class Mail.MainWindow : Gtk.Window {
     private HeaderBar headerbar;
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
-    
+
     private FoldersListView folders_list_view;
-    private ConversationListBox conversation_list_box;
+    private ConversationTreeView conversation_list_box;
     private MessageListBox message_list_box;
     private Gtk.ScrolledWindow message_list_scrolled;
 
@@ -61,7 +61,7 @@ public class Mail.MainWindow : Gtk.Window {
         set_titlebar (headerbar);
 
         folders_list_view = new FoldersListView ();
-        conversation_list_box = new ConversationListBox ();
+        conversation_list_box = new ConversationTreeView ();
         message_list_box = new MessageListBox ();
 
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY), "enabled", BindingFlags.SYNC_CREATE);
