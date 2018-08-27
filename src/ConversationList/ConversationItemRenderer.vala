@@ -129,38 +129,41 @@ public class Mail.ConversationItemRenderer : Gtk.CellRenderer {
 
     private Pango.Rectangle render_date (Gtk.Widget widget, Gdk.Rectangle? cell_area, Cairo.Context? ctx, int y) {
         Pango.Rectangle? ink_rect;
-        var layout_date = widget.create_pango_layout(null);
+        var layout_date = widget.create_pango_layout (null);
         var font_date = layout_date.get_context ().get_font_description ();
-        font_date.set_size(FONT_SIZE_DATE * Pango.SCALE);
+        font_date.set_size (FONT_SIZE_DATE * Pango.SCALE);
         if (is_unread) {
             font_date.set_weight (Pango.Weight.BOLD);
         }
-        layout_date.set_font_description(font_date);
-        layout_date.set_markup(is_dummy ? STYLE_EXAMPLE : date, -1);
-        if (widget.get_direction() == Gtk.TextDirection.RTL) {
-            layout_date.set_alignment(Pango.Alignment.LEFT);
+
+        layout_date.set_font_description (font_date);
+        layout_date.set_markup (is_dummy ? STYLE_EXAMPLE : date, -1);
+        if (widget.get_direction () == Gtk.TextDirection.RTL) {
+            layout_date.set_alignment (Pango.Alignment.LEFT);
         } else {
-            layout_date.set_alignment(Pango.Alignment.RIGHT);
+            layout_date.set_alignment (Pango.Alignment.RIGHT);
         }
 
-        layout_date.get_pixel_extents(out ink_rect, null);
+        layout_date.get_pixel_extents (out ink_rect, null);
         if (ctx != null && cell_area != null) {
-            if (widget.get_direction() == Gtk.TextDirection.RTL) {
+            if (widget.get_direction () == Gtk.TextDirection.RTL) {
                 widget.get_style_context ().render_layout (ctx, cell_area.x + LINE_SPACING, y, layout_date);
             } else {
                 widget.get_style_context ().render_layout (ctx, cell_area.width - ink_rect.width, y, layout_date);
             }
         }
+
         return ink_rect;
     }
 
     private Pango.Rectangle render_from(Gtk.Widget widget, Gdk.Rectangle? cell_area, Cairo.Context? ctx, int y, Pango.Rectangle ink_rect) {
-        var font_from = new Pango.FontDescription();
-        font_from.set_size(FONT_SIZE_FROM * Pango.SCALE);
+        var font_from = new Pango.FontDescription ();
+        font_from.set_size (FONT_SIZE_FROM * Pango.SCALE);
         if (is_unread) {
-            font_from.set_weight(Pango.Weight.BOLD);
+            font_from.set_weight (Pango.Weight.BOLD);
         }
-        Pango.Layout layout_from = widget.create_pango_layout(null);
+
+        Pango.Layout layout_from = widget.create_pango_layout (null);
         layout_from.set_font_description(font_from);
         layout_from.set_markup(is_dummy ? STYLE_EXAMPLE : from, -1);
         if (widget.get_direction() == Gtk.TextDirection.RTL) {
