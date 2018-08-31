@@ -20,7 +20,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.ConversationListBox : Gtk.ListBox {
+public class Mail.ConversationListBox : VirtualizingListBox<ConversationItemModel> {
     public signal void conversation_selected (Camel.FolderThreadNode? node);
     public signal void conversation_focused (Camel.FolderThreadNode? node);
 
@@ -30,24 +30,42 @@ public class Mail.ConversationListBox : Gtk.ListBox {
     private GLib.Cancellable? cancellable = null;
     private Camel.FolderThread thread;
     private string current_folder;
-    private Gee.HashMap<string, ConversationListItem> conversations;
+    private Gee.HashMap<string, ConversationItemModel> conversations;
+    private ConversationListStore list_store;
 
     construct {
         activate_on_single_click = true;
-        conversations = new Gee.HashMap<string, ConversationListItem> ();
-        set_sort_func (thread_sort_function);
+        conversations = new Gee.HashMap<string, ConversationItemModel> ();
+        list_store = new ConversationListStore ();
+        list_store.set_sort_func (thread_sort_function);
+        model = list_store;
+
+        factory_func = (item, old_widget) => {
+		    ConversationListItem? row = null;
+		    if (old_widget != null) {
+		        row = old_widget as ConversationListItem;
+	        } else {
+	            row = new ConversationListItem ();
+            }
+
+		    row.assign (item);
+		    row.show_all ();
+		    return row;
+	    };
+
         row_activated.connect ((row) => {
             if (row == null) {
                 conversation_focused (null);
             } else {
-                conversation_focused (((ConversationListItem) row).node);
+                conversation_focused (((ConversationItemModel) row).node);
             }
         });
+
         row_selected.connect ((row) => {
             if (row == null) {
                 conversation_selected (null);
             } else {
-                conversation_selected (((ConversationListItem) row).node);
+                conversation_selected (((ConversationItemModel) row).node);
             }
         });
     }
@@ -62,11 +80,12 @@ public class Mail.ConversationListBox : Gtk.ListBox {
         conversation_focused (null);
         conversation_selected (null);
 
+        uint previous_items = list_store.get_n_items ();
+
         lock (conversations) {
             conversations.clear ();
-            get_children ().foreach ((child) => {
-                child.destroy ();
-            });
+            list_store.remove_all ();
+            list_store.items_changed (0, previous_items, 0);
 
             cancellable = new GLib.Cancellable ();
             try {
@@ -88,6 +107,8 @@ public class Mail.ConversationListBox : Gtk.ListBox {
                 critical (e.message);
             }
         }
+
+        list_store.items_changed (0, 0, list_store.get_n_items ());
     }
 
     private void folder_changed (Camel.FolderChangeInfo change_info, GLib.Cancellable cancellable) {
@@ -97,11 +118,14 @@ public class Mail.ConversationListBox : Gtk.ListBox {
 
         lock (conversations) {
             thread.apply (folder.get_uids ());
+            var removed = 0;
             change_info.get_removed_uids ().foreach ((uid) => {
                 var item = conversations[uid];
                 if (item != null) {
-                    conversations.unset (uid);
                     item.destroy ();
+                    conversations.unset (uid);
+                    list_store.remove (item);
+                    removed++;
                 }
             });
 
@@ -120,18 +144,18 @@ public class Mail.ConversationListBox : Gtk.ListBox {
 
                 child = (Camel.FolderThreadNode?) child.next;
             }
+
+            list_store.items_changed (0, removed, list_store.get_n_items ());
         }
     }
 
     private void add_conversation_item (Camel.FolderThreadNode child) {
-        var item = new ConversationListItem (child);
+        var item = new ConversationItemModel (child);
         conversations[child.message.uid] = item;
-        add (item);
+        list_store.add (item);
     }
 
-    private static int thread_sort_function (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
-        var item1 = (ConversationListItem) row1;
-        var item2 = (ConversationListItem) row2;
+    private static int thread_sort_function (ConversationItemModel item1, ConversationItemModel item2) {
         return (int)(item2.timestamp - item1.timestamp);
     }
 }
