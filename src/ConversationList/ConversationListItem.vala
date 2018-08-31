@@ -32,12 +32,36 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
 
     public int64 timestamp {
         get {
+            int64 timestamp = 0;
             if (node.message.date_received == 0) {
                 // Sent messages do not have a date_received timestamp.
                 return node.message.date_sent;
+                timestamp = node.message.date_sent;
+
+                unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) node.child;
+                while (child != null) {
+                    if (child.message.date_sent > timestamp) {
+                        timestamp = child.message.date_sent;
+                    }
+
+                    child = (Camel.FolderThreadNode?) child.next;
+                }
+
+                return timestamp;
             }
 
             return node.message.date_received;
+            timestamp = node.message.date_received;
+            unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) node.child;
+            while (child != null) {
+                if (child.message.date_received > timestamp) {
+                    timestamp = child.message.date_received;
+                }
+
+                child = (Camel.FolderThreadNode?) child.next;
+            }
+
+            return timestamp;
         }
     }
 
