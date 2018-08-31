@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-08-30 00:07+0000\n"
+"PO-Revision-Date: 2018-08-31 12:49+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "mail/mail/pt_BR/>\n"
@@ -44,11 +44,13 @@ msgstr "Enviados | Correios enviados | E-mails enviados"
 msgid ""
 "Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
 "| Bulk E-Mail"
-msgstr "Spam | Lixo eletrônico"
+msgstr ""
+"Indesejado | Spam | Correio não solicitado | Lixo Eletrônico | Lixo "
+"Eletrônico | Correio em Massa | Email em massa | E-mail em massa"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:590
 msgid "Trash | Rubbish | Rubbish Bin"
-msgstr "Lixeira | Lixo"
+msgstr "Lixeira | Lixo | Lata de Lixo"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:595
 msgid "Archive | Archives"
@@ -590,7 +592,7 @@ msgstr "Vazio"
 #: ../src/client/components/main-toolbar.vala:71
 #: ../src/client/application/geary-controller.vala:481
 msgid "Empty Spam or Trash folders"
-msgstr "esvaziar pasta de spam ou lixeira"
+msgstr "Esvaziar pasta de Spam ou Lixeira"
 
 #: ../src/client/application/geary-controller.vala:496
 #: ../src/client/application/geary-controller.vala:495
