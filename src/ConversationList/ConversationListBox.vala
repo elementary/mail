@@ -122,7 +122,6 @@ public class Mail.ConversationListBox : VirtualizingListBox<ConversationItemMode
             change_info.get_removed_uids ().foreach ((uid) => {
                 var item = conversations[uid];
                 if (item != null) {
-                    item.destroy ();
                     conversations.unset (uid);
                     list_store.remove (item);
                     removed++;

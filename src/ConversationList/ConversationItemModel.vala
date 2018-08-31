@@ -22,61 +22,74 @@
 
 public class Mail.ConversationItemModel : GLib.Object {
     public Camel.FolderThreadNode node { get; private set; }
-    private bool active = true;
 
     public string formatted_date {
         owned get {
-            if (active) {
-                return Granite.DateTime.get_relative_datetime (new DateTime.from_unix_local (timestamp));
-            } else {
-                return "";
-            }
+            return Granite.DateTime.get_relative_datetime (new DateTime.from_unix_local (timestamp));
         }
     }
 
     public uint num_messages {
         get {
-            return active ? count_thread_messages (node) : 0;
+            return count_thread_messages (node);
         }
     }
 
     public string from {
         owned get {
-            if (active) {
-                var from_parts = node.message.from.split ("<");
-                return GLib.Markup.escape_text (from_parts[0].strip ());
-            } else {
-                return "";
-            }
+            var from_parts = node.message.from.split ("<");
+            return GLib.Markup.escape_text (from_parts[0].strip ());
         }
     }
 
     public string subject {
         get {
-            return active? node.message.subject : "";
+            return node.message.subject;
         }
     }
 
     public bool flagged {
         get {
-            return active ? Camel.MessageFlags.FLAGGED in (int)node.message.flags : false;
+            return Camel.MessageFlags.FLAGGED in (int)node.message.flags;
         }
     }
 
     public bool unread {
         get {
-            return active ? !(Camel.MessageFlags.SEEN in (int)node.message.flags) : false;
+            return !(Camel.MessageFlags.SEEN in (int)node.message.flags);
         }
     }
 
     public int64 timestamp {
         get {
+            int64 timestamp = 0;
             if (node.message.date_received == 0) {
                 // Sent messages do not have a date_received timestamp.
-                return node.message.date_sent;
+                timestamp = node.message.date_sent;
+
+                unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) node.child;
+                while (child != null) {
+                    if (child.message.date_sent > timestamp) {
+                        timestamp = child.message.date_sent;
+                    }
+
+                    child = (Camel.FolderThreadNode?) child.next;
+                }
+
+                return timestamp;
             }
 
-            return node.message.date_received;
+            timestamp = node.message.date_received;
+            unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) node.child;
+            while (child != null) {
+                if (child.message.date_received > timestamp) {
+                    timestamp = child.message.date_received;
+                }
+
+                child = (Camel.FolderThreadNode?) child.next;
+            }
+
+            return timestamp;
         }
     }
 
@@ -97,9 +110,5 @@ public class Mail.ConversationItemModel : GLib.Object {
         }
 
         return i;
-    }
-
-    public void destroy () {
-        active = false;
     }
 }
