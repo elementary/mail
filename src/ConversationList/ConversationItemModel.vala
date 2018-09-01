@@ -62,34 +62,20 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public int64 timestamp {
         get {
-            int64 timestamp = 0;
+            bool use_date_sent = false;
             if (node.message.date_received == 0) {
                 // Sent messages do not have a date_received timestamp.
-                timestamp = node.message.date_sent;
-
-                unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) node.child;
-                while (child != null) {
-                    if (child.message.date_sent > timestamp) {
-                        timestamp = child.message.date_sent;
-                    }
-
-                    child = (Camel.FolderThreadNode?) child.next;
-                }
-
-                return timestamp;
+                use_date_sent = true;
             }
 
-            timestamp = node.message.date_received;
+            int64 time = use_date_sent ? node.message.date_sent : node.message.date_received;
             unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) node.child;
             while (child != null) {
-                if (child.message.date_received > timestamp) {
-                    timestamp = child.message.date_received;
-                }
-
+                time = int64.max (use_date_sent ? child.message.date_sent : child.message.date_received, time);
                 child = (Camel.FolderThreadNode?) child.next;
             }
 
-            return timestamp;
+            return time;
         }
     }
 
