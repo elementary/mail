@@ -32,12 +32,7 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
 
     public int64 timestamp {
         get {
-            if (node.message.date_received == 0) {
-                // Sent messages do not have a date_received timestamp.
-                return node.message.date_sent;
-            }
-
-            return node.message.date_received;
+            return get_newest_timestamp (node);
         }
     }
 
@@ -131,5 +126,19 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
         }
 
         return i;
+    }
+
+    private static int64 get_newest_timestamp (Camel.FolderThreadNode node, int64 highest = -1) {
+        int64 time = highest;
+        time = int64.max (time, node.message.date_received);
+        time = int64.max (time, node.message.date_sent);
+
+        unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) node.child;
+        while (child != null) {
+            time = get_newest_timestamp (child, time);
+            child = (Camel.FolderThreadNode?) child.next;
+        }
+
+        return time;
     }
 }
