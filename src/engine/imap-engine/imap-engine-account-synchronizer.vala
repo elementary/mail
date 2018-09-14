@@ -311,7 +311,7 @@ private class Geary.ImapEngine.AccountSynchronizer : Geary.BaseObject {
                     // Local earliest email is after epoch, but there's nothing before it
                     return true;
                 } else {
-                    debug("Oldest local email in %s not old enough (%s vs. %s), email_total=%d vs. local_count=%d, synchronizing...",
+                    debug("Oldest local email in %s not old enough (%s vs. %s), email_total=%d vs. local_count=%d, synchronizing…",
                         folder.to_string(), oldest_local.to_string(), epoch.to_string(),
                         folder.properties.email_total, local_count);
                 }
@@ -320,10 +320,10 @@ private class Geary.ImapEngine.AccountSynchronizer : Geary.BaseObject {
                 // to the epoch
                 return true;
             } else {
-                debug("No oldest message found for %s, synchronizing...", folder.to_string());
+                debug("No oldest message found for %s, synchronizing…", folder.to_string());
             }
         } else {
-            debug("Folder %s changed, synchronizing...", folder.to_string());
+            debug("Folder %s changed, synchronizing…", folder.to_string());
         }
         
         try {
@@ -410,7 +410,7 @@ private class Geary.ImapEngine.AccountSynchronizer : Geary.BaseObject {
                     Geary.EmailIdentifier? earliest_span_id = yield folder.find_earliest_email_async(current_epoch,
                         oldest_local_id, bg_cancellable);
                     if (earliest_span_id == null && current_epoch.compare(epoch) <= 0) {
-                        debug("Unable to locate epoch messages on remote folder %s%s, fetching one past oldest...",
+                        debug("Unable to locate epoch messages on remote folder %s%s, fetching one past oldest…",
                             folder.to_string(),
                             (oldest_local_id != null) ? " earlier than oldest local" : "");
                         
@@ -436,7 +436,7 @@ private class Geary.ImapEngine.AccountSynchronizer : Geary.BaseObject {
         }
         
         // always give email prefetcher time to finish its work
-        debug("Waiting for email prefetcher to complete %s...", folder.to_string());
+        debug("Waiting for email prefetcher to complete %s…", folder.to_string());
         try {
             yield folder.email_prefetcher.active_sem.wait_async(bg_cancellable);
         } catch (Error err) {

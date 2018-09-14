@@ -221,7 +221,7 @@ private class Geary.SmtpOutboxFolder : Geary.AbstractLocalFolder, Geary.FolderSu
                 // only try if (a) no TLS issues or (b) user has acknowledged them and says to
                 // continue
                 if (_account.information.get_smtp_endpoint().is_trusted_or_never_connected) {
-                    debug("Outbox postman: Sending \"%s\" (ID:%s)...", message_subject(message),
+                    debug("Outbox postman: Sending \"%s\" (ID:%s)…", message_subject(message),
                         row.outbox_id.to_string());
                     yield send_email_async(message, null);
                     mail_sent = true;
@@ -264,8 +264,8 @@ private class Geary.SmtpOutboxFolder : Geary.AbstractLocalFolder, Geary.FolderSu
             }
             
             if (should_nap) {
-                debug("Outbox napping for %u seconds...", send_retry_seconds);
                 
+                debug("Outbox napping for %u seconds…", send_retry_seconds);
                 // Take a brief nap before continuing to allow connection problems to resolve.
                 yield Geary.Scheduler.sleep_async(send_retry_seconds);
                 send_retry_seconds = Geary.Numeric.uint_ceiling(send_retry_seconds * 2, MAX_SEND_RETRY_INTERVAL_SEC);

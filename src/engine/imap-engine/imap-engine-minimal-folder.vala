@@ -331,7 +331,7 @@ private class Geary.ImapEngine.MinimalFolder : Geary.Folder, Geary.FolderSupport
         
         check_open("normalize_folders (list remote)");
         
-        debug("%s: Loaded local (%d) and remote (%d) UIDs, normalizing...", to_string(),
+        debug("%s: Loaded local (%d) and remote (%d) UIDs, normalizing…", to_string(),
             local_uids.size, remote_uids.size);
         
         Gee.HashSet<Imap.UID> removed_uids = new Gee.HashSet<Imap.UID>();
@@ -519,8 +519,8 @@ private class Geary.ImapEngine.MinimalFolder : Geary.Folder, Geary.FolderSupport
         // if remote has not yet been opened, do it now ... this bool can go true only once after
         // an open_async, it's reset at close time
         if (!remote_opened) {
-            debug("wait_for_open_async %s: opening remote on demand...", to_string());
             
+            debug("wait_for_open_async %s: opening remote on demand…", to_string());
             start_remote_open_now();
         }
         

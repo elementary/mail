@@ -43,7 +43,7 @@ public bool revoke_certs = false;
 public bool version = false;
 
 public bool parse(string[] args) {
-    var context = new OptionContext("[%s...]".printf(Geary.ComposedEmail.MAILTO_SCHEME));
+    var context = new OptionContext("[%s…]".printf(Geary.ComposedEmail.MAILTO_SCHEME));
     context.set_help_enabled(true);
     context.add_main_entries(options, null);
     context.set_description("%s\n\n%s\n\n%s\n\t%s\n".printf(

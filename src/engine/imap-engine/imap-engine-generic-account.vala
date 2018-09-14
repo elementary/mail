@@ -224,12 +224,12 @@ private abstract class Geary.ImapEngine.GenericAccount : Geary.Account {
             out attachments_dir);
         
         if (yield Files.query_exists_async(db_file, cancellable)) {
-            message("%s: Deleting database file %s...", to_string(), db_file.get_path());
+            message("%s: Deleting database file %s…", to_string(), db_file.get_path());
             yield db_file.delete_async(Priority.DEFAULT, cancellable);
         }
         
         if (yield Files.query_exists_async(attachments_dir, cancellable)) {
-            message("%s: Deleting attachments directory %s...", to_string(), attachments_dir.get_path());
+            message("%s: Deleting attachments directory %s…", to_string(), attachments_dir.get_path());
             yield Files.recursive_delete_async(attachments_dir, cancellable);
         }
         

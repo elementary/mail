@@ -295,7 +295,7 @@ public class GearyApplication : Gtk.Application {
 
             int64 delta_usec = get_monotonic_time() - start_usec;
             if (delta_usec >= FORCE_SHUTDOWN_USEC) {
-                debug("Forcing shutdown of Mail, %ss passed...", (delta_usec / USEC_PER_SEC).to_string());
+                debug("Forcing shutdown of Mail, %ss passed…", (delta_usec / USEC_PER_SEC).to_string());
 
                 break;
             }

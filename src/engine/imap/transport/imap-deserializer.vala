@@ -247,7 +247,7 @@ public class Geary.Imap.Deserializer : BaseObject {
         cancellable.cancel();
         
         // wait for outstanding I/O to exit
-        debug("[%s] Waiting for deserializer to close...", to_string());
+        debug("[%s] Waiting for deserializer to close…", to_string());
         yield closed_semaphore.wait_async();
         debug("[%s] Deserializer closed", to_string());
     }

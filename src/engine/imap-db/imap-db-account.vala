@@ -1364,7 +1364,7 @@ private class Geary.ImapDB.Account : BaseObject {
     
     private async bool populate_search_table_batch_async(int limit, Cancellable? cancellable)
         throws Error {
-        debug("%s: Searching for up to %d missing indexed messages...", account_information.email,
+        debug("%s: Searching for up to %d missing indexed messages…", account_information.email,
             limit);
         
         int count = 0, total_unindexed = 0;
@@ -1434,7 +1434,7 @@ private class Geary.ImapDB.Account : BaseObject {
         }, cancellable);
         
         if (count > 0) {
-            debug("%s: Found %d/%d missing indexed messages, %d remaining...",
+            debug("%s: Found %d/%d missing indexed messages, %d remaining…",
                 account_information.email, count, limit, total_unindexed);
             
             if (!search_index_monitor.is_in_progress) {

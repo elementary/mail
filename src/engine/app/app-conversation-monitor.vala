@@ -619,14 +619,14 @@ public class Geary.App.ConversationMonitor : BaseObject {
     }
     
     internal async void append_emails_async(Gee.Collection<Geary.EmailIdentifier> appended_ids) {
-        debug("%d message(s) appended to %s, fetching to add to conversations...", appended_ids.size,
+        debug("%d message(s) appended to %s, fetching to add to conversations…", appended_ids.size,
             folder.to_string());
         
         yield load_by_sparse_id(appended_ids, Geary.Folder.ListFlags.NONE, null);
     }
     
     internal async void remove_emails_async(Gee.Collection<Geary.EmailIdentifier> removed_ids) {
-        debug("%d messages(s) removed from %s, trimming/removing conversations...", removed_ids.size,
+        debug("%d messages(s) removed from %s, trimming/removing conversations…", removed_ids.size,
             folder.to_string());
         
         Gee.Collection<Geary.App.Conversation> removed;
@@ -659,7 +659,7 @@ public class Geary.App.ConversationMonitor : BaseObject {
         if (conversations.is_empty)
             return;
         
-        debug("%d out of folder message(s) appended to %s, fetching to add to conversations...", appended_ids.size,
+        debug("%d out of folder message(s) appended to %s, fetching to add to conversations…", appended_ids.size,
             folder.to_string());
         
         yield external_load_by_sparse_id(folder, appended_ids, Geary.Folder.ListFlags.NONE, null);

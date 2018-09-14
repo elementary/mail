@@ -302,13 +302,13 @@ public class GearyController : Geary.BaseObject {
         // close the ConversationMonitor
         try {
             if (current_conversations != null) {
-                debug("Stopping conversation monitor for %s...", current_conversations.folder.to_string());
+                debug("Stopping conversation monitor for %s…", current_conversations.folder.to_string());
 
                 bool closing = yield current_conversations.stop_monitoring_async(null);
 
                 // If not an Inbox, wait for it to close so all pending operations are flushed
                 if (closing) {
-                    debug("Waiting for %s to close...", current_conversations.folder.to_string());
+                    debug("Waiting for %s to close…", current_conversations.folder.to_string());
                     yield current_conversations.folder.wait_for_close_async(null);
                 }
 
@@ -324,12 +324,12 @@ public class GearyController : Geary.BaseObject {
         // close all Inboxes
         foreach (Geary.Folder inbox in inboxes.values) {
             try {
-                debug("Closing %s...", inbox.to_string());
+                debug("Closing %s…", inbox.to_string());
 
                 // close and wait for all pending operations to be flushed
                 yield inbox.close_async(null);
 
-                debug("Waiting for %s to close completely...", inbox.to_string());
+                debug("Waiting for %s to close completely…", inbox.to_string());
 
                 yield inbox.wait_for_close_async(null);
 
@@ -354,7 +354,7 @@ public class GearyController : Geary.BaseObject {
 
         // Turn off the lights and lock the door behind you
         try {
-            debug("Closing Engine...");
+            debug("Closing Engine…");
             yield Geary.Engine.instance.close_async(null);
             debug("Closed Engine");
         } catch (Error err) {
@@ -389,7 +389,7 @@ public class GearyController : Geary.BaseObject {
 
         Gtk.ActionEntry mark_menu = { ACTION_MARK_AS_MENU, null, TRANSLATABLE, null, _("Mark conversation"),
             on_show_mark_menu };
-        mark_menu.label = _("_Mark as...");
+        mark_menu.label = _("_Mark as…");
         mark_menu.tooltip = MARK_MESSAGE_MENU_TOOLTIP_SINGLE;
         entries += mark_menu;
 
@@ -657,7 +657,7 @@ public class GearyController : Geary.BaseObject {
         // Geary allows for user to auto-revoke all questionable server certificates without
         // digging around in a keyring/pk manager
         if (Args.revoke_certs) {
-            debug("Auto-revoking certificate for %s...", peer);
+            debug("Auto-revoking certificate for %s…", peer);
 
             try {
                 gcr_trust_remove_pinned_certificate(cert, GCR_PURPOSE_SERVER_AUTH, peer, null);
@@ -673,7 +673,7 @@ public class GearyController : Geary.BaseObject {
         // so go ahead w/o asking
         try {
             if (gcr_trust_is_certificate_pinned(cert, GCR_PURPOSE_SERVER_AUTH, peer, null)) {
-                debug("Certificate for %s is pinned, accepting connection...", peer);
+                debug("Certificate for %s is pinned, accepting connection…", peer);
 
                 endpoint.trust_untrusted_host = Geary.Trillian.TRUE;
 
@@ -709,7 +709,7 @@ public class GearyController : Geary.BaseObject {
 
                 // pinning the certificate creates an exception for the next time a connection
                 // is attempted
-                debug("Pinning certificate for %s...", peer);
+                debug("Pinning certificate for %s…", peer);
                 try {
                     gcr_trust_add_pinned_certificate(cert, GCR_PURPOSE_SERVER_AUTH, peer, null);
                 } catch (Error err) {
@@ -939,7 +939,7 @@ public class GearyController : Geary.BaseObject {
         for (;;) {
             login_dialog.show_spinner(false);
             if (login_dialog.run() != Gtk.ResponseType.OK) {
-                debug("User refused to enter account information. Exiting...");
+                debug("User refused to enter account information. Exiting…");
                 GearyApplication.instance.exit(1);
 
                 return null;
@@ -1336,7 +1336,7 @@ public class GearyController : Geary.BaseObject {
         if (folder == current_folder)
             return;
 
-        debug("Switching to %s...", folder.to_string());
+        debug("Switching to %s…", folder.to_string());
 
         closed_folder();
 
@@ -1994,7 +1994,7 @@ public class GearyController : Geary.BaseObject {
             if (attachments.size > 1 && dest_file.query_exists() && !do_overwrite_confirmation(dest_file))
                 return;
 
-            debug("Copying %s to %s...", source_file.get_path(), dest_file.get_path());
+            debug("Copying %s to %s…", source_file.get_path(), dest_file.get_path());
 
             source_file.copy_async.begin(dest_file, FileCopyFlags.OVERWRITE, Priority.DEFAULT, null,
                 null, on_save_completed);

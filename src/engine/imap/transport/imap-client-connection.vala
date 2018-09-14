@@ -420,7 +420,7 @@ public class Geary.Imap.ClientConnection : BaseObject {
         // close the actual streams and the connection itself
         Error? close_err = null;
         try {
-            debug("[%s] Disconnecting...", to_string());
+            debug("[%s] Disconnecting…", to_string());
             yield close_cx.close_async(Priority.DEFAULT, cancellable);
             debug("[%s] Disconnected", to_string());
         } catch (Error err) {
@@ -676,13 +676,13 @@ public class Geary.Imap.ClientConnection : BaseObject {
                 // has not been received from the server yet, so wait now ... even possible the
                 // connection is still in the IDLING state, so wait for IDLING -> IDLE -> SYNCHRONIZING
                 while (is_in_idle(true)) {
-                    debug("[%s] Waiting to exit IDLE for synchronization...", to_string());
+                    debug("[%s] Waiting to exit IDLE for synchronization…", to_string());
                     yield idle_notifier.wait_async();
                     debug("[%s] Finished waiting to exit IDLE for synchronization", to_string());
                 }
                 
                 // wait for synchronization point to be reached
-                debug("[%s] Synchronizing...", to_string());
+                debug("[%s] Synchronizing…", to_string());
                 yield synchronized_notifier.wait_async();
                 
                 // since can be set before reaching wait_async() (due to waiting for IDLE to

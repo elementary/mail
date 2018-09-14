@@ -161,8 +161,8 @@ private class Geary.App.ConversationSet : BaseObject {
                 //
                 // By doing this first, it prevents ConversationSet getting itself into a bad state
                 // where more than one Conversation thinks it "owns" a Message-ID
-                debug("Merging %d conversations due new email associating with all...", associated.size);
                 
+                debug("Merging %d conversations due new email associating with all…", associated.size);
                 // Note that this call will modify the List so it only holds the to-be-axed
                 // Conversations
                 Gee.Set<Geary.Email> moved_email = new Gee.HashSet<Geary.Email>();

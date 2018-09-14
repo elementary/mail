@@ -191,7 +191,7 @@ public class ConversationListStore : Gtk.ListStore {
         if (emails.size < 1)
             return;
         
-        debug("Displaying %d previews for %s...", emails.size, conversation_monitor.folder.to_string());
+        debug("Displaying %d previews for %s…", emails.size, conversation_monitor.folder.to_string());
         foreach (Geary.Email email in emails) {
             Geary.App.Conversation? conversation = conversation_monitor.get_conversation_for_email(email.id);
             if (conversation != null)
@@ -208,10 +208,10 @@ public class ConversationListStore : Gtk.ListStore {
             : Geary.Folder.ListFlags.NONE;
         Gee.Collection<Geary.Email>? emails = null;
         try {
-            debug("Loading %d previews...", emails_needing_previews.size);
+            debug("Loading %d previews…", emails_needing_previews.size);
             emails = yield email_store.list_email_by_sparse_id_async(emails_needing_previews,
                 ConversationListStore.WITH_PREVIEW_FIELDS, flags, cancellable);
-            debug("Loaded %d previews...", emails_needing_previews.size);
+            debug("Loaded %d previews…", emails_needing_previews.size);
         } catch (Error err) {
             // Ignore NOT_FOUND, as that's entirely possible when waiting for the remote to open
             if (!(err is Geary.EngineError.NOT_FOUND))

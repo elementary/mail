@@ -319,7 +319,7 @@ class ImapConsole : Gtk.Window {
         cx.received_server_data.connect(on_received_server_data);
         cx.received_bad_response.connect(on_received_bad_response);
         
-        status("Connecting to %s...".printf(args[0]));
+        status("Connecting to %s…".printf(args[0]));
         cx.connect_async.begin(null, on_connected);
     }
     
@@ -337,7 +337,7 @@ class ImapConsole : Gtk.Window {
     private void disconnect_cmd(string cmd, string[] args) throws Error {
         check_connected(cmd, args, 0, null);
         
-        status("Disconnecting...");
+        status("Disconnecting…");
         cx.disconnect_async.begin(null, on_disconnected);
     }
     
@@ -360,7 +360,7 @@ class ImapConsole : Gtk.Window {
     private void starttls(string cmd, string[] args) throws Error {
         check_connected(cmd, args, 0, "");
         
-        status("Starting TLS...");
+        status("Starting TLS…");
         do_starttls_async.begin(on_do_starttls_async_completed);
     }
     
@@ -388,7 +388,7 @@ class ImapConsole : Gtk.Window {
     private void login(string cmd, string[] args) throws Error {
         check_connected(cmd, args, 2, "user pass");
         
-        status("Logging in...");
+        status("Logging in…");
         cx.send_async.begin(new Geary.Imap.LoginCommand(args[0], args[1]), null, on_logged_in);
     }
     
@@ -404,7 +404,7 @@ class ImapConsole : Gtk.Window {
     private void logout(string cmd, string[] args) throws Error {
         check_connected(cmd, args, 0, null);
         
-        status("Logging out...");
+        status("Logging out…");
         cx.send_async.begin(new Geary.Imap.LogoutCommand(), null, on_logout);
     }
     
@@ -420,8 +420,8 @@ class ImapConsole : Gtk.Window {
     private void id(string cmd, string[] args) throws Error {
         check_connected(cmd, args, 0, null);
         
-        status("Retrieving ID...");
         
+        status("Retrieving ID…");
         Gee.HashMap<string, string> fields = new Gee.HashMap<string, string>();
         fields.set("name", "geary-console");
         fields.set("version", VERSION);
@@ -441,7 +441,7 @@ class ImapConsole : Gtk.Window {
     private void list(string cmd, string[] args) throws Error {
         check_connected(cmd, args, 2, "<reference> <mailbox>");
         
-        status("Listing...");
+        status("Listing…");
         cx.send_async.begin(new Geary.Imap.ListCommand.wildcarded(args[0],
             new Geary.Imap.MailboxSpecifier(args[1]), (cmd.down() == "xlist"), null), null, on_list);
     }

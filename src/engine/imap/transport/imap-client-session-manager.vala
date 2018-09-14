@@ -131,7 +131,7 @@ public class Geary.Imap.ClientSessionManager : BaseObject {
         // for now
         int attempts = 0;
         while (sessions.size > 0) {
-            debug("Waiting for ClientSessions to disconnect from ClientSessionManager...");
+            debug("Waiting for ClientSessions to disconnect from ClientSessionManager…");
             Timeout.add(250, close_async.callback);
             yield;
             
@@ -522,8 +522,8 @@ public class Geary.Imap.ClientSessionManager : BaseObject {
         if (checking_reachable)
             return;
         
-        debug("Checking if IMAP host %s reachable...", endpoint.to_string());
         
+        debug("Checking if IMAP host %s reachable…", endpoint.to_string());
         checking_reachable = true;
         check_endpoint_reachable_async.begin(cancellable);
     }

@@ -155,8 +155,8 @@ private class Geary.Imap.Account : BaseObject {
     }
     
     private async void drop_session_async(Cancellable? cancellable) {
-        debug("[%s] Dropping account session...", to_string());
         
+        debug("[%s] Dropping account session…", to_string());
         int token;
         try {
             token = yield account_session_mutex.claim_async(cancellable);

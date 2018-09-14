@@ -719,7 +719,7 @@ public class Geary.Imap.ClientSession : BaseObject {
             imap_endpoint.is_ssl.to_string(), caps.has_capability(Capabilities.STARTTLS).to_string());
         switch (imap_endpoint.attempt_starttls(caps.has_capability(Capabilities.STARTTLS))) {
             case Endpoint.AttemptStarttls.YES:
-                debug("[%s] Attempting STARTTLS...", to_string());
+                debug("[%s] Attempting STARTTLS…", to_string());
                 StatusResponse resp;
                 try {
                     resp = yield send_command_async(new StarttlsCommand());
@@ -913,8 +913,8 @@ public class Geary.Imap.ClientSession : BaseObject {
         keepalive_id = 0;
         
         send_command_async.begin(new NoopCommand(), null, on_keepalive_completed);
-        Logging.debug(Logging.Flag.PERIODIC, "[%s] Sending keepalive...", to_string());
         
+        Logging.debug(Logging.Flag.PERIODIC, "[%s] Sending keepalive…", to_string());
         // No need to reschedule keepalive, as the notification that the command was sent should
         // do that automatically
         
