@@ -26,7 +26,7 @@ public class ConversationListView : Gtk.TreeView {
     
     // Signal for when a conversation has been double-clicked, or selected and enter is pressed.
     public signal void conversation_activated(Geary.App.Conversation activated);
-
+    
     public virtual signal void load_more() {
         enable_load_more = false;
     }
@@ -103,7 +103,7 @@ public class ConversationListView : Gtk.TreeView {
     private void on_scan_started() {
         enable_load_more = false;
     }
-
+    
     private void on_scan_completed() {
         enable_load_more = true;
 
