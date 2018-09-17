@@ -11,15 +11,16 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-04-18 15:06+0000\n"
+"PO-Revision-Date: 2018-07-05 00:07+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
-"Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
+"Language-Team: Catalan <https://weblate.elementary.io/projects/mail/mail/ca/>"
+"\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -135,7 +136,7 @@ msgstr "adjunt"
 #: ../src/engine/imap-db/imap-db-account.vala:714
 #: ../src/engine/imap-db/imap-db-account.vala:738
 msgid "bcc"
-msgstr "bcc"
+msgstr "c/o"
 
 #. / Can be typed in the search box like body:word to find the word only
 #. / if it occurs in the body of a message.  The translated
@@ -1674,7 +1675,7 @@ msgstr "CC:"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:171
 #: ../src/client/conversation-viewer/ConversationWidget.vala:173
 msgid "Bcc:"
-msgstr "CCO:"
+msgstr "C/o:"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:821
 #: ../src/client/conversation-viewer/conversation-viewer.vala:826
@@ -2005,7 +2006,7 @@ msgstr "Cc: "
 #: ../src/client/composer/composer-widget.vala:1605
 #: ../src/client/composer/composer-widget.vala:1608
 msgid "Bcc: "
-msgstr "Bcc: "
+msgstr "C/o: "
 
 #: ../src/client/composer/composer-widget.vala:1654
 #: ../src/client/composer/composer-widget.vala:1649
@@ -2546,7 +2547,7 @@ msgstr "A_ssumpte"
 #: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
 #: ../data/ui/composer.ui:379 ../data/ui/composer.ui:384
 msgid "_Bcc"
-msgstr "_Bcc"
+msgstr "C/_o"
 
 #: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
 #: ../data/ui/composer.ui:409 ../data/ui/composer.ui:414

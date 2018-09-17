@@ -14,16 +14,16 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-04-25 12:54+0000\n"
-"Last-Translator: Vlad Kourbatski <i1954@xe.am>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/>"
-"\n"
+"PO-Revision-Date: 2018-09-17 15:14+0000\n"
+"Last-Translator: Nuno Alexandre MS ribeiro <nuno.anarresti@gmail.com>\n"
+"Language-Team: Portuguese <https://weblate.elementary.io/projects/mail/mail/"
+"pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -732,8 +732,8 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
-"Ocorreu um erro ao abrir a base de dados local desta conta. Podem existir "
-"problemas com este ficheiro da base de dados:\n"
+"Ocorreu um erro ao abrir a base de dados local desta conta. O ficheiro da "
+"base de dados nesta diretoria poderá estar corrompido:\n"
 "\n"
 "%s\n"
 "\n"
@@ -741,7 +741,7 @@ msgstr ""
 "servidor ou sair.\n"
 "\n"
 "A reconstrução da base de dados destruirá todas as mensagens locais e os "
-"seus anexos. <b>As mensagens no servidor não serão afetadas.</b>."
+"seus anexos. <b>As mensagens no servidor não serão afetadas.</b>"
 
 #: ../src/client/application/geary-controller.vala:1153
 #: ../src/client/application/geary-controller.vala:1147
@@ -1587,7 +1587,7 @@ msgstr "Nenhuma conversa selecionada."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:313
 msgid "%u conversation selected."
 msgid_plural "%u conversations selected."
-msgstr[0] "%u conversa selecionada"
+msgstr[0] "%u conversa selecionada."
 msgstr[1] "%u conversas selecionadas."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:444
@@ -2609,11 +2609,11 @@ msgstr "Trabalho, Pessoal, etc."
 
 #: ../data/ui/login.ui:163
 msgid "N_ickname:"
-msgstr "Alcun_ha"
+msgstr "Alcunh_a:"
 
 #: ../data/ui/login.ui:195
 msgid "N_ame:"
-msgstr "N_ome"
+msgstr "N_ome:"
 
 #: ../data/ui/login.ui:211
 msgid "S_ervice:"
@@ -2709,7 +2709,7 @@ msgstr "Guardar _rascunhos no servidor"
 
 #: ../data/ui/login.ui:884
 msgid "Si_gn emails (HTML allowed):"
-msgstr "Assinar emails (permitido HTML)"
+msgstr "A_ssinar emails (HTML permitido):"
 
 #: ../data/ui/account_list.ui:69
 msgid "Add account"
@@ -2773,8 +2773,8 @@ msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
 msgstr ""
-"Mail encontrou um erro a enviar um email. Se o problema persisir, por favor "
-"apague manualmente o email da pasta de Saída"
+"O Mail encontrou um erro ao enviar um email.  Se o problema persisir, por "
+"favor apague manualmente o email da pasta de Saída."
 
 #: ../src/client/application/geary-controller.vala:1057
 #: ../src/client/application/geary-controller.vala:1051
@@ -2877,7 +2877,7 @@ msgid ""
 "server."
 msgstr ""
 "Selecionar \"Não Confiar neste Servidor\" fará com que o Mail não contacte "
-"este servidor"
+"este servidor."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Mail will not add or update this email account."
@@ -3180,7 +3180,7 @@ msgstr ", "
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
-msgstr "Email"
+msgstr "Mail"
 
 #: ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+%)"

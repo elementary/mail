@@ -14,41 +14,41 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-04-15 19:13+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål "
-"<https://l10n.elementary.io/projects/mail/mail/nb/>\n"
+"PO-Revision-Date: 2018-07-20 19:51+0000\n"
+"Last-Translator: Nils K <slx@nilsk.net>\n"
+"Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/mail/"
+"mail/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
-msgstr "Utkast | Drafts | Draft"
+msgstr "Utkast | Utkast"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:580
 msgid "Sent | Sent Mail | Sent Email | Sent E-Mail"
-msgstr "Sendt | Sendt e-post | Sent| Sent Mail | Sent Email | Sent E-Mail"
+msgstr "Sendt | Sendt e-post | Sendt e-post | Sendt e-post"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:585
 msgid ""
 "Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
 "| Bulk E-Mail"
 msgstr ""
-"Søppelpost | Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail "
-"| Bulk Email | Bulk E-Mail"
+"Søppelpost | Søppel | Spam | Søppelpost | Søppelpost | Søppelpost | "
+"Masseutsendelse | Masseutsendelse"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:590
 msgid "Trash | Rubbish | Rubbish Bin"
-msgstr "Papirkurv | Søppelkurv | Trash | Rubbish | Rubbish Bin"
+msgstr "Papirkurv | Søppel | Søppelkurv"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:595
 msgid "Archive | Archives"
-msgstr "Arkiv | Arkiv"
+msgstr "Arkiv | Arkiver"
 
 #: ../src/engine/api/geary-special-folder-type.vala:24
 msgid "Inbox"

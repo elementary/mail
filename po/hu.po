@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-06-02 00:05+0000\n"
+"PO-Revision-Date: 2018-06-18 00:05+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/mail/mail/hu/>\n"
@@ -189,7 +189,7 @@ msgstr "(nincs tárgy)"
 #. / See http://developer.gnome.org/glib/2.32/glib-GDateTime.html#g-date-time-format
 #: ../src/engine/rfc822/rfc822-utils.vala:215
 msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%Y. %b. %-e., %a %-k.%M-kor"
+msgstr "%Y. %b. %-e. %a %-k.%M-kor"
 
 #. / The quoted header for a message being replied to.
 #. / %1$s will be substituted for the date, and %2$s will be substituted for
@@ -1874,15 +1874,9 @@ msgid ""
 "attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
 "enclosing|encloses|enclosure|enclosures"
 msgstr ""
-"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|"
-"enclosing|encloses|enclosure|enclosures|CV|cover|letter|csatol|csatolás|"
-"csatolást|csatolásokat|csatolmány|csatolmányt|csatolmányok|csatolmányokat|"
-"csatolva|csatolom|csatoltam|mellékel|melléklet|mellékletet|mellékletek|"
-"mellékleteket|mellékelve|mellékelem|mellékeltem|küldöm|elküldöm|átküldöm|"
-"postázom|fájl|fájlt|fájlok|fájlokat|állomány|állományt|állományok|"
-"állományokat|életrajz|életrajzot|életrajzom|életrajzomat|önéletrajz|"
-"önéletrajzot|önéletrajzom|önéletrajzomat|.doc|.docx|.pdf|.xls|.xlsx|.ppt|."
-"pptx|.rtf|.pps|.odt|.ods|.odp|.odg|.odb"
+"attach|attaching|attaches|attachment|attachments|attached|enclose|enclosed|en"
+"closing|encloses|enclosure|enclosures|csatolni|csatolva|csatolmány|csatolmány"
+"ok|csatolt|mellékel|mellékelten"
 
 #: ../src/client/composer/composer-widget.vala:1102
 #: ../src/client/composer/composer-widget.vala:1106
@@ -2088,7 +2082,7 @@ msgstr "_OK"
 #: ../data/ui/edit_alternate_emails.ui:160 ../data/ui/password-dialog.ui:196
 #: ../data/ui/remove_confirm.ui:155
 msgid "_Cancel"
-msgstr "Mé_gse"
+msgstr "_Mégsem"
 
 #: ../src/client/components/stock.vala:23
 #: ../src/client/dialogs/preferences-dialog.vala:84

@@ -18,15 +18,16 @@ msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-04-15 20:27+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Italian <https://l10n.elementary.io/projects/mail/mail/it/>\n"
+"PO-Revision-Date: 2018-09-07 00:05+0000\n"
+"Last-Translator: strozzascotte <marco.depaolini@gmail.com>\n"
+"Language-Team: Italian <https://weblate.elementary.io/projects/mail/mail/it/>"
+"\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -1500,14 +1501,14 @@ msgstr "Adesso"
 #: ../src/client/util/util-date.vala:167
 msgid "%dm ago"
 msgid_plural "%dm ago"
-msgstr[0] "%dm fa"
-msgstr[1] "%dm fa"
+msgstr[0] "%d minuto fa"
+msgstr[1] "%d minuti fa"
 
 #: ../src/client/util/util-date.vala:171
 msgid "%dh ago"
 msgid_plural "%dh ago"
-msgstr[0] "%dh fa"
-msgstr[1] "%dh fa"
+msgstr[0] "%d ora fa"
+msgstr[1] "%d ore fa"
 
 #: ../src/client/util/util-date.vala:178
 msgid "Yesterday"
@@ -2047,7 +2048,7 @@ msgstr "Seleziona colore"
 #: ../src/client/composer/composer-widget.vala:2272
 #: ../src/client/composer/composer-widget.vala:2275
 msgid "%1$s via %2$s"
-msgstr "%1$s via %2$s"
+msgstr "%1$s tramite %2$s"
 
 #: ../src/client/composer/composer-widget.vala:2364
 #: ../src/client/composer/composer-widget.vala:2359
@@ -2558,7 +2559,7 @@ msgstr "_Oggetto"
 #: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
 #: ../data/ui/composer.ui:379 ../data/ui/composer.ui:384
 msgid "_Bcc"
-msgstr "_Bcc"
+msgstr "Cc_n"
 
 #: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
 #: ../data/ui/composer.ui:409 ../data/ui/composer.ui:414
@@ -3084,7 +3085,9 @@ msgstr[1] "%u corrispondenze"
 #. / (that is the part before the '@') that exist in your language (separated with a semicolon)
 #: ../src/engine/rfc822/rfc822-mailbox-address.vala:170
 msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
-msgstr "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
+msgstr ""
+"no-reply;no_reply;noreply;do-not-"
+"reply;do_not_reply;donotreply;nonrispondere;non_rispondere;non-rispondere"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:410
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423

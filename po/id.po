@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-12-26 00:09+0000\n"
-"Last-Translator: Hani Ramadhan <hani.its.042@gmail.com>\n"
+"PO-Revision-Date: 2018-06-13 00:07+0000\n"
+"Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian "
 "<https://weblate.elementary.io/projects/mail/mail/id/>\n"
 "Language: id\n"
@@ -35,16 +35,16 @@ msgid ""
 "Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email "
 "| Bulk E-Mail"
 msgstr ""
-"Junk | Spam | Junk Mail | Junk Email | Junk E-Mail | Bulk Mail | Bulk Email |"
-" Bulk E-Mail"
+"Sampah | Spam | Surat sampah | Surel Sampah | Surel Sampah | Surat Besar| "
+"Surel Besar | Surel Besar"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:590
 msgid "Trash | Rubbish | Rubbish Bin"
-msgstr "Trash | Rubbish | Rubbish Bin | Sampah | Tong Sampah | Tempat Sampah"
+msgstr "Sampah | Tong Sampah | Tempat Sampah"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:595
 msgid "Archive | Archives"
-msgstr "Arsip | Archive | Archives"
+msgstr "Arsip | Arsip-arsip"
 
 #: ../src/engine/api/geary-special-folder-type.vala:24
 msgid "Inbox"

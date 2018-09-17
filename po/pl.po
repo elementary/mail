@@ -19,16 +19,17 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-05-06 01:53+0000\n"
-"Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
-"Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
+"PO-Revision-Date: 2018-09-06 00:09+0000\n"
+"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
+"Language-Team: Polish <https://weblate.elementary.io/projects/mail/mail/pl/>"
+"\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 "X-Poedit-Country: Poland\n"
 "X-Poedit-Language: Polish\n"
@@ -2331,7 +2332,7 @@ msgstr "etykieta"
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Geary update in progress…"
-msgstr "Aktualizowanie Geary w trakcie..."
+msgstr "Aktualizowanie Geary w toku…"
 
 #: ../data/ui/edit_alternate_emails.ui:112
 msgid "Remove email address"
@@ -2623,7 +2624,7 @@ msgstr ""
 
 #: ../data/ui/login.ui:34
 msgid "Addi_tional email addresses…"
-msgstr "Doda_tkowe adresy e-mail..."
+msgstr "Doda_tkowe adresy e-mail…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
@@ -2655,7 +2656,7 @@ msgstr "N_azwa:"
 
 #: ../data/ui/login.ui:211
 msgid "S_ervice:"
-msgstr "_Usługa"
+msgstr "_Usługa:"
 
 #: ../data/ui/login.ui:298
 msgid "IMAP settings"
@@ -2910,7 +2911,7 @@ msgstr "Zawsze wyświetlaj zdalne obrazy:"
 #: ../src/client/dialogs/password-dialog.vala:16
 #: ../src/client/dialogs/PasswordDialog.vala:39
 msgid "Mail requires your email password to continue"
-msgstr "Mail, aby kontynuować, wymaga hasła do konta e-mail."
+msgstr "Mail, aby kontynuować, wymaga hasła do konta e-mail"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
@@ -2943,7 +2944,7 @@ msgstr "Proszę poczekać, Mail weryfikuje Twoje konto."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr "Aktualizacja poczty w toku..."
+msgstr "Aktualizacja poczty w toku…"
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
@@ -2967,14 +2968,14 @@ msgstr "Pokaż okno z informacjami o programie"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
-msgstr "Zapisz załącznik..."
+msgstr "Zapisz załącznik…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr "Zapisz wszystkie załączniki..."
+msgstr "Zapisz wszystkie załączniki…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238

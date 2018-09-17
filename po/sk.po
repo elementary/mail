@@ -10,17 +10,17 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2016-03-01 18:37+0000\n"
-"Last-Translator: Ľubomír Hlavko <5lubo555@azet.sk>\n"
-"Language-Team: Slovak (http://www.transifex.com/projects/p/geary/language/"
-"sk/)\n"
+"PO-Revision-Date: 2018-06-04 00:09+0000\n"
+"Last-Translator: Andrej Gálet <andrejgalet@gmail.com>\n"
+"Language-Team: Slovak <https://weblate.elementary.io/projects/mail/mail/sk/>"
+"\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
 msgid "Drafts | Draft"
@@ -272,8 +272,9 @@ msgstr "Odstráni rozhovory (Shift+Delete)"
 #: ../src/client/application/geary-controller.vala:2723
 msgid "Move conversation to Trash (Delete, Backspace)"
 msgid_plural "Move conversations to Trash (Delete, Backspace)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Presuň konverzáciu do koša (Delete, Backspace)"
+msgstr[1] "Presuň konverzácie do koša (Delete, Backspace)"
+msgstr[2] ""
 
 #: ../src/client/application/geary-controller.vala:68
 #: ../src/client/application/geary-controller.vala:67
@@ -293,8 +294,9 @@ msgstr "_Archivovať"
 #: ../src/client/application/geary-controller.vala:2721
 msgid "Archive conversation (A)"
 msgid_plural "Archive conversations (A)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Archivuj konverzáciu (A)"
+msgstr[1] "Archivuj konverzácie (A)"
+msgstr[2] "Archivuj konverzácie (A)"
 
 #: ../src/client/application/geary-controller.vala:74
 #: ../src/client/application/geary-controller.vala:73
@@ -337,8 +339,9 @@ msgstr "Označiť ako _vyžiadanú poštu"
 #: ../src/client/application/geary-controller.vala:390
 msgid "Mark conversation"
 msgid_plural "Mark conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Označ konverzáciu"
+msgstr[1] "Označ konverzácie"
+msgstr[2] ""
 
 #: ../src/client/application/geary-controller.vala:81
 #: ../src/client/application/geary-controller.vala:80
@@ -361,8 +364,9 @@ msgstr "Označí rozhovory"
 #: ../src/client/application/geary-controller.vala:2716
 msgid "Add label to conversation"
 msgid_plural "Add label to conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Pridaj názov konverzácii"
+msgstr[1] "Pridaj názov konverzáciám"
+msgstr[2] "Pridaj názov konverzáciám"
 
 #: ../src/client/application/geary-controller.vala:83
 #: ../src/client/application/geary-controller.vala:82
@@ -389,8 +393,9 @@ msgstr "Pridá menovku rozhovorom"
 #: ../src/client/application/geary-controller.vala:2718
 msgid "Move conversation"
 msgid_plural "Move conversations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Presunúť konverzáciu"
+msgstr[1] "Presunúť konverzácie"
+msgstr[2] ""
 
 #: ../src/client/application/geary-controller.vala:85
 #: ../src/client/application/geary-controller.vala:84
@@ -2250,8 +2255,9 @@ msgstr "Odstraniť konverzáciu"
 #: ../src/client/application/geary-controller.vala:2725
 msgid "Delete Conversation (Shift+Delete)"
 msgid_plural "Delete Conversations (Shift+Delete)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Zmaž konverzáciu (Shift+Delete)"
+msgstr[1] "Zmaž konverzácie (Shift+Delete)"
+msgstr[2] "Zmaž konverzácie (Shift+Delete)"
 
 #: ../src/client/application/geary-controller.vala:63
 #: ../src/client/application/geary-controller.vala:62
@@ -2786,6 +2792,8 @@ msgid ""
 "Mail encountered an error sending an email.  If the problem persists, please "
 "manually delete the email from your Outbox folder."
 msgstr ""
+"Počas posielania mailu nastala chyba. Ak problém pretrváva skúste zmazať "
+"mail z pošty na odoslanie."
 
 #: ../src/client/application/geary-controller.vala:1057
 #: ../src/client/application/geary-controller.vala:1051
@@ -2796,6 +2804,8 @@ msgid ""
 "Mail encountered an error saving a sent message to Sent Mail.  The message "
 "will stay in your Outbox folder until you delete it."
 msgstr ""
+"Nastala chyba pri ukladaní správy do odoslaných správ. Správa ostane v "
+"priečinku na odoslanie kým  ju nezmažete."
 
 #: ../src/client/application/geary-controller.vala:1139
 #: ../src/client/application/geary-controller.vala:1133
@@ -2813,6 +2823,15 @@ msgid ""
 "Rebuilding the database will destroy all local email and its attachments. "
 "<b>The mail on the your server will not be affected.</b>"
 msgstr ""
+"Nastala chyba pri otváraní lokálnej databázy mailov priradenej k tomuto "
+"účtu. Je možné, že databáza je poškodená.:\n"
+"\n"
+"%s\n"
+"\n"
+"Program obnový a resynchronizuje databázu zo servera alebo sa ukončí.\n"
+"\n"
+"Obnova databázy spôsobí zmazanie pôvodných správ. <b>Správy na serveri "
+"ostanú nedotknuté.</b>"
 
 #: ../src/client/application/geary-controller.vala:1184
 #: ../src/client/application/geary-controller.vala:1178
@@ -2826,6 +2845,10 @@ msgid ""
 "\n"
 "Please install the latest version of Mail and try again."
 msgstr ""
+"Verzia lokálnej databázy  je vyššej verzie ako súčasná verzia programu. "
+"Nieje možné spätné prerobenie databázy.\n"
+"\n"
+"Nainštalujte si najnovšiu verziu programu mail."
 
 #: ../src/client/application/geary-controller.vala:1195
 #: ../src/client/application/geary-controller.vala:1189
@@ -2838,6 +2861,10 @@ msgid ""
 "\n"
 "Please check your network connection and restart Mail."
 msgstr ""
+"Nastala chyba pri otváraní lokálneho účtu. Môže to spôsobovať problémy so "
+"sieťou.\n"
+"\n"
+"Skontrolujte pripojenie k sieti a reštartuje Mail."
 
 #: ../src/client/application/geary-controller.vala:2402
 #: ../src/client/application/geary-controller.vala:2404
@@ -2849,96 +2876,101 @@ msgstr "Toto odstráni e-mail z aplikácie Mail a z vášho e-mail serveru."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
-msgstr ""
+msgstr "        &#8226; Adresa už bola pridaná.\n"
 
 #: ../src/client/dialogs/preferences-dialog.vala:44
 #: ../src/client/dialogs/preferences-dialog.vala:43
 msgid "Always show remote images:"
-msgstr ""
+msgstr "Stále povoliť zobrazenie vzdialených obrázkov:"
 
 #: ../src/client/dialogs/password-dialog.vala:16
 #: ../src/client/dialogs/PasswordDialog.vala:39
 msgid "Mail requires your email password to continue"
-msgstr ""
+msgstr "Zadajte  heslo k Vášmu mailovému účtu"
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:52
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail not to access this "
 "server."
-msgstr ""
+msgstr "Zvolením \"Nedôverovať tomuto serveru\" sa zakáže prístup k serveru."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:54
 msgid "Mail will not add or update this email account."
-msgstr ""
+msgstr "Mail nepridá alebo neaktualizuje tento účet."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:59
 msgid ""
 "Selecting \"Don't Trust This Server\" will cause Mail to stop accessing this "
 "account."
 msgstr ""
+"Zvolením \"Nedôverovať tomuto serveru\" spôsobí zakázanie prístupu k tomutu "
+"účtu."
 
 #: ../src/client/dialogs/certificate-warning-dialog.vala:61
 msgid "Mail will exit if you have no other open email accounts."
-msgstr ""
+msgstr "Mail sa ukončí ak nebude otvorený e-mailový účet."
 
 #: ../data/ui/account_spinner.ui:41
 #: ../src/client/accounts/account-spinner-page.vala:22
 msgid "Please wait while Mail validates your account."
-msgstr ""
+msgstr "Prosím počkajte pokiaľ Mail neoverí mailový účet."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
-msgstr ""
+msgstr "Aktualizácia správ …"
 
 #: ../src/client/components/main-toolbar.vala:26
 #: ../src/client/components/main-toolbar.vala:41
 msgid "Search Mail"
-msgstr ""
+msgstr "Hľadajte v mailoch"
 
 #: ../src/client/application/geary-application.vala:18
+#, fuzzy
 msgid ""
 "2011-2015 Yorba Foundation\n"
 "© 2016 elementary LLC."
 msgstr ""
+"2011-2015 Yorba Foundation\n"
+"© 2016 elementary LLC."
 
 #: ../src/client/application/geary-args.vala:10
 msgid "Show About dialog"
-msgstr ""
+msgstr "Otvorí okno o programe"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:218
 #: ../src/client/conversation-viewer/ConversationWidget.vala:227
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 msgid "Save Attachment…"
-msgstr ""
+msgstr "Uloženie prílohy…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:220
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:232
 #: ../src/client/conversation-viewer/ConversationWidget.vala:234
 msgid "Save All Attachments…"
-msgstr ""
+msgstr "Ulož všetky prílohy …"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:229
 #: ../src/client/conversation-viewer/ConversationWidget.vala:238
 #: ../src/client/conversation-viewer/ConversationWidget.vala:241
 #: ../src/client/conversation-viewer/ConversationWidget.vala:243
 msgid "Reply"
-msgstr ""
+msgstr "Odpovedať"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:230
 #: ../src/client/conversation-viewer/ConversationWidget.vala:239
 #: ../src/client/conversation-viewer/ConversationWidget.vala:242
 #: ../src/client/conversation-viewer/ConversationWidget.vala:244
 msgid "Reply to All"
-msgstr ""
+msgstr "Odpovedať všetkým"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:231
 #: ../src/client/conversation-viewer/ConversationWidget.vala:240
 #: ../src/client/conversation-viewer/ConversationWidget.vala:243
 #: ../src/client/conversation-viewer/ConversationWidget.vala:245
 msgid "Forward"
-msgstr ""
+msgstr "Preposlať"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:247
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1112
@@ -2951,7 +2983,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1155
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1182
 msgid "Mark as Unread"
-msgstr ""
+msgstr "Označ ako neprečítané"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:249
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1110
@@ -2964,21 +2996,21 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1153
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1180
 msgid "Mark as Read"
-msgstr ""
+msgstr "Označ ako prečítané"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:252
 #: ../src/client/conversation-viewer/ConversationWidget.vala:272
 #: ../src/client/conversation-viewer/ConversationWidget.vala:275
 #: ../src/client/conversation-viewer/ConversationWidget.vala:277
 msgid "Print…"
-msgstr ""
+msgstr "Tlač…"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:253
 #: ../src/client/conversation-viewer/ConversationWidget.vala:273
 #: ../src/client/conversation-viewer/ConversationWidget.vala:276
 #: ../src/client/conversation-viewer/ConversationWidget.vala:278
 msgid "View Source"
-msgstr ""
+msgstr "Zobraz zdrojový kód"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:317
 #: ../src/client/conversation-viewer/ConversationWidget.vala:602
@@ -2992,7 +3024,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:638
 #: ../src/client/conversation-viewer/ConversationWidget.vala:665
 msgid "View message"
-msgstr ""
+msgstr "Pozri správu"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:386
 #: ../src/client/conversation-viewer/ConversationWidget.vala:406
@@ -3000,7 +3032,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:412
 #: ../src/client/conversation-viewer/ConversationWidget.vala:414
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "Táto správa obsahuje jednu alebo viac príloh"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:425
 #: ../src/client/conversation-viewer/ConversationWidget.vala:449
@@ -3008,7 +3040,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:455
 #: ../src/client/conversation-viewer/ConversationWidget.vala:458
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "Stále ukáž od odosielateľa"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:553
 #: ../src/client/conversation-viewer/ConversationWidget.vala:577
@@ -3017,7 +3049,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:587
 #: ../src/client/conversation-viewer/ConversationWidget.vala:586
 msgid "Compose New Message"
-msgstr ""
+msgstr "Nová správa"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:554
 #: ../src/client/conversation-viewer/ConversationWidget.vala:578
@@ -3026,7 +3058,7 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:588
 #: ../src/client/conversation-viewer/ConversationWidget.vala:587
 msgid "Copy Email Address"
-msgstr ""
+msgstr "Skopíruj e-mailovú adresu"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:615
 #: ../src/client/conversation-viewer/ConversationWidget.vala:639
@@ -3035,15 +3067,15 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:651
 #: ../src/client/conversation-viewer/ConversationWidget.vala:678
 msgid "Hide message"
-msgstr ""
+msgstr "Skryť správu"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
-msgstr ""
+msgstr "Uložiť ako…"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:69
 msgid "Case sensitive"
-msgstr ""
+msgstr "Citlivé na malé a veľké písmená"
 
 #: ../src/client/conversation-viewer/ConversationFindBar.vala:198
 msgid "%u match"
@@ -3066,33 +3098,33 @@ msgstr ""
 #: ../src/client/conversation-viewer/ConversationWidget.vala:418
 #: ../src/client/conversation-viewer/ConversationWidget.vala:431
 msgid "Star message"
-msgstr ""
+msgstr "Označ správu"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:420
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
 #: ../src/client/conversation-viewer/ConversationWidget.vala:426
 #: ../src/client/conversation-viewer/ConversationWidget.vala:428
 msgid "Unstar message"
-msgstr ""
+msgstr "Odznač správu"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:430
 #: ../src/client/conversation-viewer/ConversationWidget.vala:433
 #: ../src/client/conversation-viewer/ConversationWidget.vala:436
 #: ../src/client/conversation-viewer/ConversationWidget.vala:438
 msgid "More"
-msgstr ""
+msgstr "Viac"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:40
 msgid "Delete draft"
-msgstr ""
+msgstr "Zmaž koncept"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:51
 msgid "Attach file"
-msgstr ""
+msgstr "Pripoj prílohu"
 
 #: ../src/client/composer/ComposerHeaderBar.vala:55
 msgid "Include original attachments"
-msgstr ""
+msgstr "Pripoj pôvodnú prílohu"
 
 #: ../src/client/composer/ComposerToolbar.vala:65
 msgid "Quote text (Ctrl+])"
@@ -3107,48 +3139,50 @@ msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"Prílohy môžu spôsobiť hrozbu pre Váš počítač. Otvárajte prílohy iba z "
+"dôveryhodných zdrojov."
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:45
 msgid "Don't ask me again"
-msgstr ""
+msgstr "Viac sa nepýtať"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:48
 msgid "Open Anyway"
-msgstr ""
+msgstr "Otvoriť aj tak"
 
 #: ../src/client/dialogs/OpenAttachmentDialog.vala:64
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:59
 #: ../src/client/dialogs/PasswordDialog.vala:96
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušiť"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:36
 msgid "Are you sure you want to remove this account?"
-msgstr ""
+msgstr "Naozaj chcete odstrániť účet?"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:53
 msgid "Email Address:"
-msgstr ""
+msgstr "E.mailová adresa:"
 
 #: ../src/client/accounts/AccountDialogRemoveConfirmPane.vala:61
 msgid "Remove Account"
-msgstr ""
+msgstr "Odstrániť účet"
 
 #: ../src/client/dialogs/PasswordDialog.vala:45
 msgid "Username:"
-msgstr ""
+msgstr "Prihlasovacie meno:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:52
 msgid "Password:"
-msgstr ""
+msgstr "Heslo:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:55
 msgid "SMTP Credentials:"
-msgstr ""
+msgstr "SMTP prihlasovacie údaje:"
 
 #: ../src/client/dialogs/PasswordDialog.vala:62
 msgid "Remember password"
-msgstr ""
+msgstr "Zapamätať heslo"
 
 #: ../src/client/dialogs/PasswordDialog.vala:75
 msgid "Authenticate"
@@ -3162,7 +3196,7 @@ msgstr ""
 
 #: ../src/client/application/geary-application.vala:15
 msgid "Mail"
-msgstr ""
+msgstr "Mail"
 
 #: ../src/client/composer/ComposerToolbar.vala:51
 msgid "Strikethrough (Ctrl+%)"
