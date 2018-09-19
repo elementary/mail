@@ -1,4 +1,5 @@
 /* Copyright 2011-2015 Yorba Foundation
+ *           2018 elementary, Inc. (https://elementary.io)
  *
  * This software is licensed under the GNU Lesser General Public License
  * (version 2.1 or later).  See the COPYING file in this distribution.
@@ -351,6 +352,7 @@ public class GearyController : Geary.BaseObject {
         }
 
         main_window.destroy();
+        GearyApplication.instance.config.settings.set_boolean ("first-run", false);
 
         // Turn off the lights and lock the door behind you
         try {

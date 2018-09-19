@@ -1,4 +1,5 @@
 /* Copyright 2011-2015 Yorba Foundation
+ *           2018 elementary, Inc. (https://elementary.io)
  *
  * This software is licensed under the GNU Lesser General Public License
  * (version 2.1 or later).  See the COPYING file in this distribution.
@@ -105,12 +106,12 @@ public class ConversationListView : Gtk.TreeView {
     
     private void on_scan_completed() {
         enable_load_more = true;
-        
-        // Select first conversation.
-        if (GearyApplication.instance.config.autoselect)
+
+        // Select first conversation, but not on the first run (so users can change this setting)
+        if (GearyApplication.instance.config.autoselect && !GearyApplication.instance.config.first_run)
             select_first_conversation();
     }
-    
+
     private void on_conversation_removed(Geary.App.Conversation conversation) {
         if (!GearyApplication.instance.config.autoselect)
             get_selection().unselect_all();
