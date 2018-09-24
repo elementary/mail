@@ -22,8 +22,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-04-07 00:08+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"PO-Revision-Date: 2018-09-24 07:05+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/mail/mail/fr/>"
 "\n"
 "Language: fr\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: ../src/engine/imap-engine/imap-engine-generic-account.vala:575
@@ -441,7 +441,7 @@ msgstr "_Préférences"
 #: ../src/client/components/stock.vala:25
 #: ../src/client/application/geary-controller.vala:380
 msgid "_Help"
-msgstr "Aid_e"
+msgstr "_Aide"
 
 #: ../src/client/application/geary-controller.vala:385
 #: ../src/client/components/stock.vala:21
@@ -495,7 +495,7 @@ msgstr "Marquer comme _non Lu"
 #: ../src/client/application/geary-controller.vala:407
 #: ../src/client/application/geary-controller.vala:408
 msgid "_Star"
-msgstr "Ma_rquer d’une étoile"
+msgstr "Marquer d’une _étoile"
 
 #: ../src/client/application/geary-controller.vala:417
 #: ../src/client/application/geary-controller.vala:416
@@ -522,7 +522,7 @@ msgstr "Ajouter une étiquette"
 #: ../src/client/application/geary-controller.vala:423
 #: ../src/client/application/geary-controller.vala:424
 msgid "_Label"
-msgstr "É_tiqueter"
+msgstr "_Étiqueter"
 
 #: ../src/client/application/geary-controller.vala:432
 #: ../src/client/application/geary-controller.vala:431
@@ -609,7 +609,7 @@ msgstr "Vider les répertoires pourriels ou corbeille"
 #: ../src/client/application/geary-controller.vala:474
 #: ../src/client/application/geary-controller.vala:480
 msgid "Empty _Spam…"
-msgstr "Vider les pourriel_s…"
+msgstr "Vider les _pourriels…"
 
 #: ../src/client/application/geary-controller.vala:500
 #: ../src/client/application/geary-controller.vala:499
@@ -1795,7 +1795,7 @@ msgstr "Sélectionner le _message"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1200
 #: ../src/client/conversation-viewer/ConversationWidget.vala:1227
 msgid "Select _All"
-msgstr "T_out sélectionner"
+msgstr "_Tout sélectionner"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1330
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1335
@@ -1831,7 +1831,7 @@ msgstr "_Enregistrer l'image sous..."
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1822
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 msgid "_Save As..."
-msgstr "Enregi_strer sous..."
+msgstr "_Enregistrer sous..."
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1832
@@ -1853,12 +1853,12 @@ msgstr "Répondre à _tous"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1879
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1884
 msgid "_Mark as Read"
-msgstr "Marquer comme l_u"
+msgstr "_Marquer comme lu"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1883
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1888
 msgid "_Mark as Unread"
-msgstr "Marquer comme non l_u"
+msgstr "_Marquer comme non lu"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1889
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1894
@@ -2132,7 +2132,7 @@ msgstr "_Fermer"
 
 #: ../src/client/components/stock.vala:24
 msgid "_Discard"
-msgstr "A_bandonner"
+msgstr "_Abandonner"
 
 #: ../src/client/components/stock.vala:26
 #: ../src/client/components/stock.vala:25
@@ -2142,7 +2142,7 @@ msgstr "_Ouvrir"
 #: ../src/client/components/stock.vala:28
 #: ../src/client/components/stock.vala:27
 msgid "_Print..."
-msgstr "Im_primer..."
+msgstr "_Imprimer..."
 
 #: ../src/client/components/stock.vala:30 ../data/ui/remove_confirm.ui:168
 #: ../src/client/components/stock.vala:29 ../data/ui/remove_confirm.ui:170
@@ -2190,7 +2190,7 @@ msgstr "Menu"
 #: ../src/client/application/geary-application.vala:24
 #: ../src/Translations.vala:1
 msgid "Send by Email"
-msgstr "Envoyer par email"
+msgstr "Envoyer par e-mail"
 
 #: ../src/client/application/geary-application.vala:26
 #: ../src/client/application/geary-application.vala:25
@@ -2347,7 +2347,7 @@ msgstr ""
 
 #: ../data/ui/edit_alternate_emails.ui:175
 msgid "_Update"
-msgstr "Mettre à jo_ur"
+msgstr "_Mettre à jour"
 
 #: ../data/ui/account_spinner.ui:41
 msgid "Please wait while Geary validates your account."
@@ -2355,7 +2355,7 @@ msgstr "Veuillez patienter pendant que Geary valide votre compte."
 
 #: ../data/ui/composer.ui:8
 msgid "_Undo"
-msgstr "Ann_uler"
+msgstr "_Annuler"
 
 #: ../data/ui/composer.ui:15
 msgid "_Redo"
@@ -2375,7 +2375,7 @@ msgstr "_Gauche"
 
 #: ../data/ui/composer.ui:48
 msgid "_Right"
-msgstr "D_roite"
+msgstr "_Droite"
 
 #: ../data/ui/composer.ui:53
 msgid "_Center"
@@ -2497,22 +2497,22 @@ msgstr "Petit"
 #: ../data/ui/composer.ui:191 ../data/ui/composer.ui:173
 #: ../data/ui/composer.ui:178
 msgid "S_ans Serif"
-msgstr "S_ans sérif"
+msgstr "S_ans serif"
 
 #: ../data/ui/composer.ui:192 ../data/ui/composer.ui:174
 #: ../data/ui/composer.ui:179
 msgid "Sans Serif"
-msgstr "Sans sérif"
+msgstr "Sans serif"
 
 #: ../data/ui/composer.ui:197 ../data/ui/composer.ui:179
 #: ../data/ui/composer.ui:184
 msgid "S_erif"
-msgstr "S_érif"
+msgstr "S_erif"
 
 #: ../data/ui/composer.ui:198 ../data/ui/composer.ui:180
 #: ../data/ui/composer.ui:185
 msgid "Serif"
-msgstr "Sérif"
+msgstr "Serif"
 
 #: ../data/ui/composer.ui:203 ../data/ui/composer.ui:185
 #: ../data/ui/composer.ui:190
@@ -2584,7 +2584,7 @@ msgstr "_Sujet"
 #: ../data/ui/composer.ui:381 ../data/ui/composer.ui:409
 #: ../data/ui/composer.ui:379 ../data/ui/composer.ui:384
 msgid "_Bcc"
-msgstr "Cci"
+msgstr "_Cci"
 
 #: ../data/ui/composer.ui:411 ../data/ui/composer.ui:439
 #: ../data/ui/composer.ui:409 ../data/ui/composer.ui:414
@@ -2628,7 +2628,7 @@ msgstr "Adresses électroniques supplémen_taires…"
 
 #: ../data/ui/login.ui:46
 msgid "_Save sent mail"
-msgstr "Enregi_strer le message envoyé"
+msgstr "_Enregistrer le message envoyé"
 
 #: ../data/ui/login.ui:86 ../data/ui/password-dialog.ui:108
 msgid "Password"
@@ -2764,7 +2764,7 @@ msgstr "Supprimer le compte"
 
 #: ../data/ui/certificate_warning_dialog.ui:7
 msgid "Untrusted Connection"
-msgstr "Connexion non-sécurisée"
+msgstr "Connexion non vérifiée"
 
 #: ../data/ui/certificate_warning_dialog.ui:29
 msgid "_Always Trust This Server"
@@ -2788,7 +2788,7 @@ msgstr "Nom d'utilisateur"
 
 #: ../data/ui/password-dialog.ui:152
 msgid "_Remember password"
-msgstr "Se souveni_r du mot de passe"
+msgstr "Se _souvenir du mot de passe"
 
 #: ../data/ui/password-dialog.ui:210
 msgid "_Authenticate"
@@ -2796,7 +2796,7 @@ msgstr "_Authentification"
 
 #: ../src/client/application/geary-application.vala:19
 msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
-msgstr "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
+msgstr "© 2011-2015 Fondation Yorba, © 2016 elementary LLC."
 
 #: ../src/client/application/geary-application.vala:21
 #: ../src/client/application/geary-application.vala:20
@@ -2897,7 +2897,7 @@ msgstr ""
 #: ../src/client/application/geary-controller.vala:2395
 #: ../src/client/application/geary-controller.vala:2390
 msgid "This removes the email from Mail and your email server."
-msgstr "Ceci supprime l'email de E-Mail et de votre serveur de messagerie."
+msgstr "Ceci supprime l'e-mail de E-Mail et de votre serveur de messagerie."
 
 #: ../src/client/accounts/add-edit-page.vala:771
 msgid "        &#8226; Email address already added to Mail.\n"
@@ -2941,7 +2941,7 @@ msgstr "E-Mail se fermera si vous n'avez pas d'autres comptes ouverts."
 #: ../data/ui/account_spinner.ui:41
 #: ../src/client/accounts/account-spinner-page.vala:22
 msgid "Please wait while Mail validates your account."
-msgstr "Veulliez patienter pendant que Mail valide votre compte."
+msgstr "Veuillez patienter pendant que Mail valide votre compte."
 
 #: ../data/ui/upgrade_dialog.ui:60
 msgid "Mail update in progress…"
@@ -2957,7 +2957,7 @@ msgid ""
 "2011-2015 Yorba Foundation\n"
 "© 2016 elementary LLC."
 msgstr ""
-"2011-2015 Yorba Foundation\n"
+"2011-2015 Fondation Yorba\n"
 "© 2016 elementary LLC."
 
 #: ../src/client/application/geary-args.vala:10
