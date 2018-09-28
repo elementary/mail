@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-09-24 07:05+0000\n"
+"PO-Revision-Date: 2018-09-29 00:09+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/mail/mail/ja/"
 ">\n"
@@ -959,7 +959,7 @@ msgstr "開いている下書きを閉じますか？"
 #: ../src/client/application/geary-controller.vala:2394
 #: ../src/client/application/geary-controller.vala:2389
 msgid "Empty all email from your %s folder?"
-msgstr "フォルダー \"%s\" のメールをすべて空にしますか？"
+msgstr "フォルダー %s のメールをすべて空にしますか？"
 
 #: ../src/client/application/geary-controller.vala:2440
 #: ../src/client/application/geary-controller.vala:2434
@@ -984,7 +984,7 @@ msgstr "この操作は元に戻せません。"
 #: ../src/client/application/geary-controller.vala:2397
 #: ../src/client/application/geary-controller.vala:2392
 msgid "Empty %s"
-msgstr "%s を空にする"
+msgstr "%sを空にする"
 
 #: ../src/client/application/geary-controller.vala:2459
 #: ../src/client/application/geary-controller.vala:2453
@@ -994,7 +994,7 @@ msgstr "%s を空にする"
 #: ../src/client/application/geary-controller.vala:2414
 #: ../src/client/application/geary-controller.vala:2409
 msgid "Error emptying %s"
-msgstr "%s を空にする時にエラーが発生しました"
+msgstr "%sを空にする時にエラーが発生しました"
 
 #: ../src/client/application/geary-controller.vala:2489
 #: ../src/client/application/geary-controller.vala:2483
@@ -1050,82 +1050,82 @@ msgstr "元に戻す (Ctrl+Z)"
 #: ../src/client/application/geary-args.vala:10
 #: ../src/client/application/geary-args.vala:11
 msgid "Start Geary with hidden main window"
-msgstr "メインウィンドウを隠して Geary を起動"
+msgstr "メインウィンドウを隠して Geary を起動します"
 
 #: ../src/client/application/geary-args.vala:11
 #: ../src/client/application/geary-args.vala:12
 msgid "Output debugging information"
-msgstr "デバッグ情報を出力"
+msgstr "デバッグ情報を出力します"
 
 #: ../src/client/application/geary-args.vala:12
 #: ../src/client/application/geary-args.vala:13
 msgid "Log conversation monitoring"
-msgstr "会話の監視を記録"
+msgstr "会話の監視を記録します"
 
 #: ../src/client/application/geary-args.vala:13
 #: ../src/client/application/geary-args.vala:14
 msgid "Log network deserialization"
-msgstr "ネットワークのデシリアライゼーションを記録"
+msgstr "ネットワークのデシリアライゼーションを記録します"
 
 #: ../src/client/application/geary-args.vala:14
 #: ../src/client/application/geary-args.vala:15
 msgid "Log network activity"
-msgstr "ネットワーク情報を記録"
+msgstr "ネットワーク活動を記録します"
 
 #. / The IMAP replay queue is how changes on the server are replicated on the client.
 #. / It could also be called the IMAP events queue.
 #: ../src/client/application/geary-args.vala:17
 #: ../src/client/application/geary-args.vala:18
 msgid "Log IMAP replay queue"
-msgstr "IMAP のイベントキューを記録"
+msgstr "IMAP のイベントキューを記録します"
 
 #. / Serialization is how commands and responses are converted into a stream of bytes for
 #. / network transmission
 #: ../src/client/application/geary-args.vala:20
 #: ../src/client/application/geary-args.vala:21
 msgid "Log network serialization"
-msgstr "ネットワークのストリームを記録"
+msgstr "ネットワークのシリアライゼーションを記録します"
 
 #: ../src/client/application/geary-args.vala:21
 #: ../src/client/application/geary-args.vala:22
 msgid "Log periodic activity"
-msgstr "定期的な行動を記録"
+msgstr "定期的な活動を記録します"
 
 #: ../src/client/application/geary-args.vala:22
 #: ../src/client/application/geary-args.vala:23
 msgid "Log database queries (generates lots of messages)"
-msgstr "データベースクエリを記録 (多くのメッセージを生成します)"
+msgstr "データベースクエリを記録します (多くのメッセージを生成します)"
 
 #. / "Normalization" can also be called "synchronization"
 #: ../src/client/application/geary-args.vala:24
 #: ../src/client/application/geary-args.vala:25
 msgid "Log folder normalization"
-msgstr "フォルダーの同期を記録"
+msgstr "フォルダーの同期を記録します"
 
 #: ../src/client/application/geary-args.vala:25
 #: ../src/client/application/geary-args.vala:26
 msgid "Allow inspection of WebView"
-msgstr "WebView での検証を有効にする"
+msgstr "WebView での検証を許可します"
 
 #: ../src/client/application/geary-args.vala:26
 #: ../src/client/application/geary-args.vala:27
 msgid "Revoke all server certificates with TLS warnings"
-msgstr "すべてのサーバー証明書の TLS 警告を取り消す"
+msgstr "すべてのサーバー証明書の TLS 警告を取り消します"
 
 #: ../src/client/application/geary-args.vala:27
 #: ../src/client/application/geary-args.vala:28
 msgid "Display program version"
-msgstr "プログラムのバージョンを表示"
+msgstr "プログラムのバージョンを表示します"
 
 #: ../src/client/application/geary-args.vala:51
 #: ../src/client/application/geary-args.vala:53
 msgid "Use %s to open a new composer window"
-msgstr "新規作成ウィンドウを開くのに %s を使用"
+msgstr "新規作成ウィンドウを開くには %s を使用してください"
 
 #: ../src/client/application/geary-args.vala:52
 #: ../src/client/application/geary-args.vala:54
 msgid "Please report comments, suggestions and bugs to:"
-msgstr "コメント、提案、バグ報告はこちらへ:"
+msgstr "コメント・提案・バグ報告はこちらへ:"
 
 #: ../src/client/application/geary-args.vala:59
 #: ../src/client/application/geary-args.vala:61
@@ -3021,7 +3021,7 @@ msgstr "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:418
 #: ../src/client/conversation-viewer/ConversationWidget.vala:431
 msgid "Star message"
-msgstr "メッセージにスターをつける"
+msgstr "メッセージにスターを付ける"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:420
 #: ../src/client/conversation-viewer/ConversationWidget.vala:423
