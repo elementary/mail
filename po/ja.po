@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-10-02 00:03+0000\n"
+"PO-Revision-Date: 2018-10-05 00:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/mail/mail/ja/"
 ">\n"
@@ -2956,7 +2956,7 @@ msgstr "メッセージを表示"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:412
 #: ../src/client/conversation-viewer/ConversationWidget.vala:414
 msgid "This message contains one or more attachments"
-msgstr "このメッセージは一つかそれ以上の添付ファイルを含んでいます"
+msgstr "このメッセージは何らかの添付ファイルを含んでいます"
 
 #: ../src/client/conversation-viewer/ConversationWidget.vala:425
 #: ../src/client/conversation-viewer/ConversationWidget.vala:449
@@ -2991,7 +2991,7 @@ msgstr "メールアドレスをコピー"
 #: ../src/client/conversation-viewer/ConversationWidget.vala:651
 #: ../src/client/conversation-viewer/ConversationWidget.vala:678
 msgid "Hide message"
-msgstr "メッセージを隠す"
+msgstr "メッセージを表示しない"
 
 #: ../src/client/conversation-viewer/AttachmentWidget.vala:46
 msgid "Save As…"
