@@ -49,7 +49,7 @@ public class Geary.OnlineAccountsWrapper : GLib.Object {
         try {
             var identity = new Signon.Identity.from_db (auth_data.get_credentials_id ());
             var session = identity.create_session (auth_data.get_method ());
-            var result = yield session.process_async (session_data, auth_data.get_mechanism (), null);
+            var result = yield session.process (session_data, auth_data.get_mechanism (), null);
             var secret = result.lookup_value ("Secret", null).dup_string ();
             account_information = Geary.Engine.instance.get_accounts ().get (user_name);
             if (account_information == null) {

@@ -12,7 +12,7 @@ You'll need the following dependencies:
 * libglib2.0-dev
 * libgmime-2.6-dev
 * libgranite-dev
-* libgsignon-glib-dev
+* libsignon-glib-dev
 * libgtk-3-dev
 * libsecret-1-dev
 * libsqlite3-dev

@@ -530,12 +530,12 @@ pkg_check_modules(DEPS REQUIRED
     gcr-3>=3.10.1
     gobject-introspection-1.0
     libaccounts-glib
-    libgsignon-glib
+    libsignon-glib>=2.0
     ${EXTRA_CLIENT_PKG_CONFIG}
 )
 
 set(ENGINE_PACKAGES
-    glib-2.0 granite gee-0.8 gio-2.0 gmime-2.6 posix sqlite3 libxml-2.0 libaccounts-glib libgsignon-glib
+    glib-2.0 granite gee-0.8 gio-2.0 gmime-2.6 posix sqlite3 libxml-2.0 libaccounts-glib libsignon-glib
 )
 
 # webkitgtk-3.0 is listed as a custom VAPI (below) to ensure it's treated as a dependency and
