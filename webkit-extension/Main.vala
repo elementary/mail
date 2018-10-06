@@ -45,7 +45,7 @@ public class DOMServer : Object {
         }
     }
 
-    public int get_page_height (uint64 page_id) {
+    public int get_page_height (uint64 page_id) throws Error {
         var page = extension.get_page (page_id);
         if (page != null) {
             return (int)page.get_dom_document ().get_document_element ().get_offset_height ();
@@ -53,7 +53,7 @@ public class DOMServer : Object {
         return 0;
     }
 
-    public void set_image_loading_enabled (uint64 page_id, bool enabled) {
+    public void set_image_loading_enabled (uint64 page_id, bool enabled) throws Error {
         show_images[page_id] = enabled;
         if (enabled) {
             var page = extension.get_page (page_id);
@@ -92,7 +92,7 @@ public class DOMServer : Object {
         return should_load ? Gdk.EVENT_PROPAGATE : Gdk.EVENT_STOP;
     }
 
-    public void execute_command (uint64 view, string command, string argument) {
+    public void execute_command (uint64 view, string command, string argument) throws Error {
         var page = extension.get_page (view);
         if (page != null) {
             var document = page.get_dom_document ();
@@ -100,7 +100,7 @@ public class DOMServer : Object {
         }
     }
 
-    public bool query_command_state (uint64 view, string command) {
+    public bool query_command_state (uint64 view, string command) throws Error {
         var page = extension.get_page (view);
         if (page != null) {
             var document = page.get_dom_document ();
@@ -110,7 +110,7 @@ public class DOMServer : Object {
         return false;
     }
 
-    public string? get_body_html (uint64 view) {
+    public string? get_body_html (uint64 view) throws Error {
         string? body_html = null;
         var page = extension.get_page (view);
         if (page != null) {
@@ -123,7 +123,7 @@ public class DOMServer : Object {
         return body_html;
     }
 
-    public void set_body_html (uint64 view, string html) {
+    public void set_body_html (uint64 view, string html) throws Error {
         var page = extension.get_page (view);
         if (page != null) {
             try {
