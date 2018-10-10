@@ -14,8 +14,8 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-07-20 19:51+0000\n"
-"Last-Translator: Nils K <slx@nilsk.net>\n"
+"PO-Revision-Date: 2018-09-19 07:45+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/mail/"
 "mail/nb/>\n"
 "Language: nb\n"
@@ -454,8 +454,9 @@ msgstr "_Avslutt"
 #: ../src/client/application/geary-controller.vala:383
 #: ../src/client/application/geary-controller.vala:389
 #: ../src/client/application/geary-controller.vala:392
+#, fuzzy
 msgid "_Mark as..."
-msgstr "_Merk som..."
+msgstr "_Merk som…"
 
 #: ../src/client/application/geary-controller.vala:400
 #: ../src/client/application/geary-controller.vala:399
@@ -1784,24 +1785,26 @@ msgstr " (Ugyldig?)"
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1718
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1723
 msgid "_Save Image As..."
-msgstr "_Lagre bilde som..."
+msgstr "_Lagre bilde som…"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1822
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 msgid "_Save As..."
-msgstr "_Lagre som..."
+msgstr "_Lagre som…"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1827
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1832
+#, fuzzy
 msgid "Save All A_ttachments..."
 msgstr "Lagre alle v_edlegg…"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1847
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1852
+#, fuzzy
 msgid "Save A_ttachment..."
 msgid_plural "Save All A_ttachments..."
-msgstr[0] "Lagre v_edlegg..."
-msgstr[1] "Lagre alle v_edlegg..."
+msgstr[0] "Lagre v_edlegg…"
+msgstr[1] "Lagre alle v_edlegg…"
 
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1862
 #: ../src/client/conversation-viewer/conversation-viewer.vala:1867
@@ -2052,8 +2055,9 @@ msgstr "%s (%d)"
 
 #. / Displayed in the space-limited status bar while a message is in the process of being sent.
 #: ../src/client/components/status-bar.vala:26
+#, fuzzy
 msgid "Sending..."
-msgstr "Sender..."
+msgstr "Sender…"
 
 #: ../src/client/components/conversation-find-bar.vala:214
 msgid "%i match"
@@ -2101,8 +2105,9 @@ msgstr "_Åpne"
 
 #: ../src/client/components/stock.vala:28
 #: ../src/client/components/stock.vala:27
+#, fuzzy
 msgid "_Print..."
-msgstr "Skriv _ut..."
+msgstr "Skriv _ut…"
 
 #: ../src/client/components/stock.vala:30 ../data/ui/remove_confirm.ui:168
 #: ../src/client/components/stock.vala:29 ../data/ui/remove_confirm.ui:170

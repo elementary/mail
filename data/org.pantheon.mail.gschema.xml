@@ -95,7 +95,13 @@
         <summary>Advisory strategy for full-text searching</summary>
         <description>Acceptable values are EXACT, CONSERVATIVE, AGGRESSIVE, and HORIZON.</description>
     </key>
-    
+
+    <key name="first-run" type="b">
+       <default>true</default>
+        <summary>Whether this is the first run of the app</summary>
+        <description>i.e. to prevent mail auto-loading on the first run.</description>
+    </key>
+
 </schema>
 
 </schemalist>
