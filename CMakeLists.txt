@@ -18,7 +18,7 @@ set(EXEC_NAME ${CMAKE_PROJECT_NAME})
 set(APP_NAME "Mail")
 set(RELEASE_NAME "Send and receive mail")
 set(DESKTOP_ICON "internet-mail")
-set(VERSION "1.0.7")
+set(VERSION "1.0.8")
 set(VERSION_INFO "Release")
 set(LANGUAGE_SUPPORT_DIRECTORY ${CMAKE_INSTALL_PREFIX}/share/locale)
 
