@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2018-10-05 00:08+0000\n"
+"PO-Revision-Date: 2018-10-17 00:07+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/mail/mail/ja/"
 ">\n"
@@ -474,7 +474,7 @@ msgstr "未読にする(_U)"
 #: ../src/client/application/geary-controller.vala:407
 #: ../src/client/application/geary-controller.vala:408
 msgid "_Star"
-msgstr "スター(_S)"
+msgstr "スターを付ける(_S)"
 
 #: ../src/client/application/geary-controller.vala:417
 #: ../src/client/application/geary-controller.vala:416
@@ -483,7 +483,7 @@ msgstr "スター(_S)"
 #: ../src/client/application/geary-controller.vala:412
 #: ../src/client/application/geary-controller.vala:413
 msgid "U_nstar"
-msgstr "スターをはずす(_N)"
+msgstr "スターを外す(_N)"
 
 #: ../src/client/application/geary-controller.vala:427
 #: ../src/client/application/geary-controller.vala:426
@@ -2082,7 +2082,7 @@ msgstr "保持(_K)"
 #: ../src/client/components/main-toolbar.vala:70
 #: ../src/client/components/main-toolbar.vala:78
 msgid "Search all mail in account for keywords (Ctrl+S)"
-msgstr "キーワードでアカウント内のすべてのメールを検索する (Ctrl+S)"
+msgstr "キーワードでアカウント内のすべてのメールを検索 (Ctrl+S)"
 
 #: ../src/client/components/search-bar.vala:118
 #: ../src/client/components/main-toolbar.vala:300
