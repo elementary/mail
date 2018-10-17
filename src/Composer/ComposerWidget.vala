@@ -303,6 +303,12 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
             to_grid_style_context.set_state (state);
         });
+
+        link.clicked.connect (() => {
+            var insert_link_dialog = new InsertLinkDialog ();
+            insert_link_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            insert_link_dialog.run ();
+        });
     }
 
     public void quote_content (Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content_to_quote) {

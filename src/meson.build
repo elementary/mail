@@ -2,6 +2,7 @@ vala_files = [
     'Application.vala',
     'MainWindow.vala',
     'HeaderBar.vala',
+    'Dialogs/InsertLinkDialog.vala',
     'Dialogs/OpenAttachmentDialog.vala',
     'Utils.vala',
     'WebView.vala',
