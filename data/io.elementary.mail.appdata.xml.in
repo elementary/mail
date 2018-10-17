@@ -1,45 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2017 elementary, LLC <contact@elementary.io> -->
-<component type="desktop">
-    <id>io.elementary.mail.desktop</id>
-    <metadata_license>CC0-1.0</metadata_license>
-    <project_group>elementary</project_group>
-    <project_license>GPL-3.0</project_license>
-    <_name>Mail</_name>
-    <_summary>Send and receive mail</_summary>
-    <description>
-        <_p>
-        Mail is designed to let you manage your email quickly and effortlessly. 
-        Its interface is based on conversations, so you can read an entire 
-        discussion without having to click from message to message.
-        </_p>
+<!-- Copyright 2017-2018 elementary, Inc. <contact@elementary.io> -->
+<component type="desktop-application">
+  <id>io.elementary.mail</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_group>elementary</project_group>
+  <project_license>GPL-3.0</project_license>
+  <name>Mail</name>
+  <summary>Send and receive mail</summary>
+  <description>
+    <p>Mail is designed to let you manage your email quickly and effortlessly. Its interface is based on conversations, so you can read an entire discussion without having to click from message to message.</p>
+    <ul>
+      <li>Lightweight mail client with full IMAP support</li>
+      <li>Mail grouped into conversations, not a tree of threads</li>
+      <li>As-you-type searching</li>
+      <li>Desktop notifications</li>
+      <li>Multiple account support</li>
+      <li>Inline HTML composer that saves drafts to the server</li>
+      <li>Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular IMAP servers</li>
+    </ul>
+  </description>
+  <provides>
+      <binary>io.elementary.mail</binary>
+  </provides>
+  <releases>
+    <release version="1.0.0" date="2016-11-24" urgency="medium">
+      <description>
         <ul>
-            <_li>Lightweight mail client with full IMAP support</_li>
-            <_li>Mail grouped into conversations, not a tree of threads</_li>
-            <_li>As-you-type searching</_li>
-            <_li>Desktop notifications</_li>
-            <_li>Multiple account support</_li>
-            <_li>Inline HTML composer that saves drafts to the server</_li>
-            <_li>Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular IMAP servers</_li>
+          <li>Minor bug fixes</li>
+          <li>Translation updates</li>
         </ul>
-    </description>
-    <provides>
-        <binary>io.elementary.mail</binary>
-    </provides>
-    <releases>
-      <release version="1.0.0" date="2016-11-24" urgency="medium">
-        <description>
-          <ul>
-            <_li>Minor bug fixes</_li>
-            <_li>Translation updates</_li>
-          </ul>
-        </description>
-      </release>
-    </releases>
-    <developer_name>elementary LLC.</developer_name>
-    <url type="homepage">https://elementary.io/</url>
-    <url type="bugtracker">https://github.com/elementary/mail/issues</url>
-    <url type="donation">https://elementary.io/get-involved#funding</url>
-    <url type="help">https://elementaryos.stackexchange.com/questions/tagged/geary</url>
-    <update_contact>contact_at_elementary.io</update_contact>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="violence-desecration">none</content_attribute>
+    <content_attribute id="violence-slavery">none</content_attribute>
+    <content_attribute id="violence-worship">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="sex-homosexuality">none</content_attribute>
+    <content_attribute id="sex-prostitution">none</content_attribute>
+    <content_attribute id="sex-adultery">none</content_attribute>
+    <content_attribute id="sex-appearance">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">intense</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+  <developer_name>elementary LLC.</developer_name>
+  <url type="homepage">https://elementary.io/</url>
+  <url type="bugtracker">https://github.com/elementary/mail/issues</url>
+  <url type="donation">https://elementary.io/get-involved#funding</url>
+  <url type="help">https://elementaryos.stackexchange.com/questions/tagged/mail</url>
+  <update_contact>contact_at_elementary.io</update_contact>
 </component>
