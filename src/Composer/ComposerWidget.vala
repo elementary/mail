@@ -71,6 +71,22 @@ public class Mail.ComposerWidget : Gtk.Grid {
         actions.add_action_entries (action_entries, this);
         insert_action_group (ACTION_GROUP_PREFIX, actions);
 
+        var from_label = new Gtk.Label (_("From:"));
+        from_label.xalign = 1;
+        from_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        var from_combo = new Gtk.ComboBoxText ();
+        from_combo.hexpand = true;
+
+        var from_grid = new Gtk.Grid ();
+        from_grid.column_spacing = 6;
+        from_grid.margin_bottom = 6;
+        from_grid.add (from_label);
+        from_grid.add (from_combo);
+
+        var from_revealer = new Gtk.Revealer ();
+        from_revealer.add (from_grid);
+
         var to_label = new Gtk.Label (_("To:"));
         to_label.xalign = 1;
         to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
@@ -130,6 +146,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         subject_val.margin_top = 6;
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+        size_group.add_widget (from_label);
         size_group.add_widget (to_label);
         size_group.add_widget (cc_label);
         size_group.add_widget (bcc_label);
@@ -137,15 +154,15 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         var recipient_grid = new Gtk.Grid ();
         recipient_grid.margin = 6;
-        recipient_grid.margin_top = 12;
         recipient_grid.column_spacing = 6;
-        recipient_grid.attach (to_label, 0, 0, 1, 1);
-        recipient_grid.attach (to_grid, 1, 0, 1, 1);
-        recipient_grid.attach (cc_revealer, 0, 1, 2, 1);
-        recipient_grid.attach (bcc_revealer, 0, 2, 2, 1);
+        recipient_grid.attach (from_revealer, 0, 0, 2, 1);
+        recipient_grid.attach (to_label, 0, 1);
+        recipient_grid.attach (to_grid, 1, 1);
+        recipient_grid.attach (cc_revealer, 0, 2, 2, 1);
+        recipient_grid.attach (bcc_revealer, 0, 3, 2, 1);
         if (has_subject_field) {
-            recipient_grid.attach (subject_label, 0, 3, 1, 1);
-            recipient_grid.attach (subject_val, 1, 3, 1, 1);
+            recipient_grid.attach (subject_label, 0, 4);
+            recipient_grid.attach (subject_val, 1, 4);
         }
 
         var bold = new Gtk.ToggleButton ();
@@ -288,6 +305,10 @@ public class Mail.ComposerWidget : Gtk.Grid {
             } else {
                 bcc_button.sensitive = false;
             }
+        });
+
+        from_combo.changed.connect (() => {
+            // from_revealer.reveal_child = 
         });
 
         to_val.changed.connect (() => {
