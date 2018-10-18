@@ -35,7 +35,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
     private WebView web_view;
     private SimpleActionGroup actions;
-    private Gtk.Button send;
     private Gtk.Entry to_val;
     private Gtk.Entry cc_val;
     private Gtk.Revealer cc_revealer;
@@ -230,7 +229,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
         attach.tooltip_text = _("Attach file");
 
-        send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
+        var send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
         send.margin = 6;
         send.sensitive = false;
         send.always_show_image = true;
