@@ -55,16 +55,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         {ACTION_DISCARD,        on_discard                          }
     };
 
-    private bool _has_recipients;
-    public bool has_recipients {
-        get {
-            return _has_recipients;
-        }
-        set {
-            _has_recipients = value;
-            send.sensitive = has_recipients;
-        }
-    }
+    public bool has_recipients { get; set; }
 
     public ComposerWidget () {
         Object (has_subject_field: false);
@@ -264,6 +255,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
         contact_manager.setup_entry (to_val);
         contact_manager.setup_entry (cc_val);
         contact_manager.setup_entry (bcc_val);
+
+        bind_property ("has-recipients", send, "sensitive");
 
         cc_button.clicked.connect (() => {
             cc_revealer.reveal_child = cc_button.active;
