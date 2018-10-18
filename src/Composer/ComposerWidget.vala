@@ -31,6 +31,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private const string ACTION_REMOVE_FORMAT = "remove_formatting";
     private const string ACTION_DISCARD = "discard";
 
+    public bool has_recipients { get; set; }
     public bool has_subject_field { get; construct; }
 
     private WebView web_view;
@@ -53,8 +54,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
         {ACTION_REMOVE_FORMAT,  on_remove_format                    },
         {ACTION_DISCARD,        on_discard                          }
     };
-
-    public bool has_recipients { get; set; }
 
     public ComposerWidget () {
         Object (has_subject_field: false);
