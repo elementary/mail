@@ -20,9 +20,9 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class VirtualizingListBoxRow<T> : Gtk.Bin {
+public class VirtualizingListBoxRow : Gtk.Bin {
     public bool selectable { get; set; default = true; }
-    public weak T model_item { get; set; }
+    public weak GLib.Object model_item { get; set; }
 
     static construct {
         set_css_name ("row");

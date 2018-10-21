@@ -20,7 +20,7 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class Mail.ConversationListStore : VirtualizingListBoxModel<ConversationItemModel> {
+public class Mail.ConversationListStore : VirtualizingListBoxModel {
     private GLib.Sequence<ConversationItemModel> data = new GLib.Sequence<ConversationItemModel> ();
     private uint last_position = -1u;
     private GLib.SequenceIter<ConversationItemModel>? last_iter;

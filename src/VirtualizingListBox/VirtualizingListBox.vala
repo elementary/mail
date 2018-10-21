@@ -20,17 +20,17 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class VirtualizingListBox<T> : Gtk.Container, Gtk.Scrollable {
-    public delegate VirtualizingListBoxRow RowFactoryMethod<T> (T item, VirtualizingListBoxRow? old_widget);
+public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
+    public delegate VirtualizingListBoxRow RowFactoryMethod (GLib.Object item, VirtualizingListBoxRow? old_widget);
 
-    public RowFactoryMethod<T> factory_func;
+    public RowFactoryMethod factory_func;
 
-    public signal void row_activated (T row);
-    public signal void row_selected (T? row);
+    public signal void row_activated (GLib.Object row);
+    public signal void row_selected (GLib.Object row);
     public signal void selected_rows_changed ();
 
-    private VirtualizingListBoxModel<T>? _model;
-    public VirtualizingListBoxModel<T>? model {
+    private VirtualizingListBoxModel? _model;
+    public VirtualizingListBoxModel? model {
         get {
            return _model;
         }
@@ -94,7 +94,7 @@ public class VirtualizingListBox<T> : Gtk.Container, Gtk.Scrollable {
     public bool activate_on_single_click { get; set; }
     public Gtk.SelectionMode selection_mode { get; set; default = Gtk.SelectionMode.SINGLE; }
     private double bin_y_diff { get; private set; }
-    public T selected_row { get; private set; }
+    public GLib.Object selected_row { get; private set; }
 
     private Gee.ArrayList<VirtualizingListBoxRow> current_widgets = new Gee.ArrayList<VirtualizingListBoxRow> ();
     private Gee.ArrayList<VirtualizingListBoxRow> recycled_widgets = new Gee.ArrayList<VirtualizingListBoxRow> ();
@@ -199,7 +199,7 @@ public class VirtualizingListBox<T> : Gtk.Container, Gtk.Scrollable {
             recycled_widgets.remove (old_widget);
         }
 
-        VirtualizingListBoxRow<T> new_widget = factory_func (item, old_widget);
+        VirtualizingListBoxRow new_widget = factory_func (item, old_widget);
         if (model.get_item_selected (item)) {
             new_widget.set_state_flags (Gtk.StateFlags.SELECTED, false);
         }
@@ -558,7 +558,7 @@ public class VirtualizingListBox<T> : Gtk.Container, Gtk.Scrollable {
         return h;
     }
 
-	public unowned VirtualizingListBoxRow<T>? get_row_at_y (int y) {
+	public unowned VirtualizingListBoxRow? get_row_at_y (int y) {
 	    Gtk.Allocation alloc;
 	    foreach (var row in current_widgets) {
 	        row.get_allocation (out alloc);
@@ -627,7 +627,7 @@ public class VirtualizingListBox<T> : Gtk.Container, Gtk.Scrollable {
         }
     }
 
-    private void update_selection (VirtualizingListBoxRow<T> row, bool modify, bool extend, bool grab_cursor = true) {
+    private void update_selection (VirtualizingListBoxRow row, bool modify, bool extend, bool grab_cursor = true) {
         update_cursor (row.model_item, grab_cursor);
 
         if (selection_mode == Gtk.SelectionMode.NONE || !row.selectable) {
@@ -676,33 +676,33 @@ public class VirtualizingListBox<T> : Gtk.Container, Gtk.Scrollable {
         }
     }
 
-    private void select_all_between (T from, T to, bool modify) {
+    private void select_all_between (GLib.Object from, GLib.Object to, bool modify) {
         var items = model.get_items_between (from, to);
         foreach (var item in items) {
             model.set_item_selected (item, true);
         }
 
-        foreach (VirtualizingListBoxRow<T> row in current_widgets) {
+        foreach (VirtualizingListBoxRow row in current_widgets) {
             if (row.model_item in items) {
                 row.set_state_flags (Gtk.StateFlags.SELECTED, false);
             }
         }
     }
 
-    private void select_and_activate (VirtualizingListBoxRow<T> row, bool grab_focus = true) {
+    private void select_and_activate (VirtualizingListBoxRow row, bool grab_focus = true) {
         select_row_internal (row);
         update_cursor (row.model_item, grab_focus);
         row_activated (row.model_item);
     }
 
-    public void update_cursor (T item, bool grab_focus) {
+    public void update_cursor (GLib.Object item, bool grab_focus) {
         var row = ensure_index_visible (model.get_index_of (item));
         if (row != null && grab_focus) {
             row.grab_focus ();
         }
     }
 
-    private VirtualizingListBoxRow<T>? ensure_index_visible (int index) {
+    private VirtualizingListBoxRow? ensure_index_visible (int index) {
         if (index < 0) {
             return null;
         }
@@ -710,7 +710,7 @@ public class VirtualizingListBox<T> : Gtk.Container, Gtk.Scrollable {
         if (index == 0) {
             set_value (0.0);
             ensure_visible_widgets ();
-            foreach (VirtualizingListBoxRow<T> row in current_widgets) {
+            foreach (VirtualizingListBoxRow row in current_widgets) {
                 if (index == model.get_index_of (row.model_item)) {
                     return row;
                 }
@@ -720,7 +720,7 @@ public class VirtualizingListBox<T> : Gtk.Container, Gtk.Scrollable {
         if (index == model.get_n_items () - 1) {
             set_value (vadjustment.upper);
             ensure_visible_widgets ();
-            foreach (VirtualizingListBoxRow<T> row in current_widgets) {
+            foreach (VirtualizingListBoxRow row in current_widgets) {
                 if (index == model.get_index_of (row.model_item)) {
                     return row;
                 }
@@ -737,7 +737,7 @@ public class VirtualizingListBox<T> : Gtk.Container, Gtk.Scrollable {
             ensure_visible_widgets ();
         }
 
-        foreach (VirtualizingListBoxRow<T> row in current_widgets) {
+        foreach (VirtualizingListBoxRow row in current_widgets) {
             if (index == model.get_index_of (row.model_item)) {
                 return row;
             }
@@ -746,7 +746,7 @@ public class VirtualizingListBox<T> : Gtk.Container, Gtk.Scrollable {
         return null;
     }
 
-    private void select_row_internal (VirtualizingListBoxRow<T> row) {
+    private void select_row_internal (VirtualizingListBoxRow row) {
         if (model.get_item_selected (row) || selection_mode == Gtk.SelectionMode.NONE) {
             return;
         }
@@ -779,7 +779,7 @@ public class VirtualizingListBox<T> : Gtk.Container, Gtk.Scrollable {
     }
 
     public override bool focus (Gtk.DirectionType direction) {
-        var focus_child = get_focus_child () as VirtualizingListBoxRow<T>;
+        var focus_child = get_focus_child () as VirtualizingListBoxRow;
         int next_focus_index = -1;
 
         if (focus_child != null && focus_child.model_item != null) {

@@ -20,11 +20,11 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public abstract class VirtualizingListBoxModel<T> : GLib.ListModel, GLib.Object {
-    private Gee.HashSet<weak T> selected_rows = new Gee.HashSet<weak T> ();
+public abstract class VirtualizingListBoxModel : GLib.ListModel, GLib.Object {
+    private Gee.HashSet<weak GLib.Object> selected_rows = new Gee.HashSet<weak GLib.Object> ();
 
 	public GLib.Type get_item_type () {
-		return typeof (T);
+		return typeof (GLib.Object);
 	}
 
 	public abstract uint get_n_items ();
@@ -34,7 +34,7 @@ public abstract class VirtualizingListBoxModel<T> : GLib.ListModel, GLib.Object 
 	    selected_rows.clear ();
 	}
 
-	public void set_item_selected (T item, bool selected) {
+	public void set_item_selected (GLib.Object item, bool selected) {
         if (!selected) {
             selected_rows.remove (item);
         } else {
@@ -42,12 +42,12 @@ public abstract class VirtualizingListBoxModel<T> : GLib.ListModel, GLib.Object 
         }
 	}
 
-	public bool get_item_selected (T item) {
+	public bool get_item_selected (GLib.Object item) {
 	    return selected_rows.contains (item);
 	}
 
-	public Gee.ArrayList<T> get_items_between (T from, T to) {
-	    var items = new Gee.ArrayList<T> ();
+	public Gee.ArrayList<GLib.Object> get_items_between (GLib.Object from, GLib.Object to) {
+	    var items = new Gee.ArrayList<GLib.Object> ();
         var start_found = false;
         var ignore_next_break = false;
         var length = get_n_items ();
@@ -72,7 +72,7 @@ public abstract class VirtualizingListBoxModel<T> : GLib.ListModel, GLib.Object 
 	    return items;
 	}
 
-	public int get_index_of (T? item) {
+	public int get_index_of (GLib.Object? item) {
 	    if (item == null) {
 	        return -1;
 	    }
@@ -87,7 +87,7 @@ public abstract class VirtualizingListBoxModel<T> : GLib.ListModel, GLib.Object 
 	    return -1;
 	}
 
-	public int get_index_of_item_before (T item) {
+	public int get_index_of_item_before (GLib.Object item) {
 	    if (item == get_item(0)) {
 	        return -1;
 	    }
@@ -102,7 +102,7 @@ public abstract class VirtualizingListBoxModel<T> : GLib.ListModel, GLib.Object 
 	    return -1;
 	}
 
-	public int get_index_of_item_after (T item) {
+	public int get_index_of_item_after (GLib.Object item) {
 	    if (item == get_item (get_n_items () - 1)) {
 	        return -1;
 	    }

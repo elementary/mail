@@ -20,7 +20,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.ConversationListBox : VirtualizingListBox<ConversationItemModel> {
+public class Mail.ConversationListBox : VirtualizingListBox {
     public signal void conversation_selected (Camel.FolderThreadNode? node);
     public signal void conversation_focused (Camel.FolderThreadNode? node);
 
@@ -48,7 +48,7 @@ public class Mail.ConversationListBox : VirtualizingListBox<ConversationItemMode
 	            row = new ConversationListItem ();
             }
 
-		    row.assign (item);
+		    row.assign ((ConversationItemModel)item);
 		    row.show_all ();
 		    return row;
 	    };

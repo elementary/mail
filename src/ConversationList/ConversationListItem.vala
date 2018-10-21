@@ -20,7 +20,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.ConversationListItem : VirtualizingListBoxRow<ConversationItemModel> {
+public class Mail.ConversationListItem : VirtualizingListBoxRow {
     private Gtk.Label date;
     private Gtk.Label messages;
     private Gtk.Label source;
