@@ -94,4 +94,18 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow<ConversationItem
 
         flagged_icon_revealer.reveal_child = data.flagged;
     }
+
+    private static int64 get_newest_timestamp (Camel.FolderThreadNode node, int64 highest = -1) {
+        int64 time = highest;
+        time = int64.max (time, node.message.date_received);
+        time = int64.max (time, node.message.date_sent);
+
+        unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) node.child;
+        while (child != null) {
+            time = get_newest_timestamp (child, time);
+            child = (Camel.FolderThreadNode?) child.next;
+        }
+
+        return time;
+    }
 }

@@ -81,7 +81,6 @@ public class Mail.ConversationListBox : VirtualizingListBox<ConversationItemMode
         conversation_selected (null);
 
         uint previous_items = list_store.get_n_items ();
-
         lock (conversations) {
             conversations.clear ();
             list_store.remove_all ();

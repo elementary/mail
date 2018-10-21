@@ -23,12 +23,12 @@ public extern const string WEBKIT_EXTENSION_PATH;
 namespace MailWebViewExtension {
     [DBus (name = "io.elementary.mail.WebViewServer")]
     public interface Server : Object {
-        public abstract void set_image_loading_enabled (uint64 view, bool enabled);
-        public abstract void execute_command (uint64 view, string command, string argument);
-        public abstract bool query_command_state (uint64 view, string command);
-        public abstract int get_page_height (uint64 view);
-        public abstract string get_body_html (uint64 view);
-        public abstract void set_body_html (uint64 view, string html);
+        public abstract void set_image_loading_enabled (uint64 view, bool enabled) throws GLib.DBusError, GLib.IOError;
+        public abstract void execute_command (uint64 view, string command, string argument) throws GLib.DBusError, GLib.IOError;
+        public abstract bool query_command_state (uint64 view, string command) throws GLib.DBusError, GLib.IOError;
+        public abstract int get_page_height (uint64 view) throws GLib.DBusError, GLib.IOError;
+        public abstract string get_body_html (uint64 view) throws GLib.DBusError, GLib.IOError;
+        public abstract void set_body_html (uint64 view, string html) throws GLib.DBusError, GLib.IOError;
 
         public signal void selection_changed (uint64 view);
         public signal void image_load_blocked (uint64 view);
@@ -137,8 +137,12 @@ public class Mail.WebView : WebKit.WebView {
 
     public void on_load_changed (WebKit.LoadEvent event) {
         if (event == WebKit.LoadEvent.FINISHED || event == WebKit.LoadEvent.COMMITTED) {
-            preferred_height = extension.get_page_height (get_page_id ());
-            queue_resize ();
+            try {
+                preferred_height = extension.get_page_height (get_page_id ());
+                queue_resize ();
+            } catch (Error e) {
+                critical (e.message);
+            }
         }
 
         if (event == WebKit.LoadEvent.FINISHED) {
@@ -169,7 +173,11 @@ public class Mail.WebView : WebKit.WebView {
 
     public void set_body_content (string content) {
         if (loaded) {
-            extension.set_body_html (get_page_id (), content);
+            try {
+                extension.set_body_html (get_page_id (), content);
+            } catch (Error e) {
+                critical (e.message);
+            }
         } else {
             queued_body_content = content;
         }
@@ -199,27 +207,45 @@ public class Mail.WebView : WebKit.WebView {
 
     public void load_images () {
         if (ready) {
-            extension.set_image_loading_enabled (get_page_id (), true);
+            try {
+                extension.set_image_loading_enabled (get_page_id (), true);
+            } catch (Error e) {
+                critical (e.message);
+            }
         } else {
             queued_load_images = true;
         }
     }
 
     public void execute_editor_command (string command, string argument = "") {
-        extension.execute_command (get_page_id (), command, argument);
+        try {
+            extension.execute_command (get_page_id (), command, argument);
+        } catch (Error e) {
+            critical (e.message);
+        }
     }
 
     public bool query_command_state (string command) {
         if (extension != null) {
-            return extension.query_command_state (get_page_id (), command);
+            try {
+                return extension.query_command_state (get_page_id (), command);
+            } catch (Error e) {
+                critical (e.message);
+            }
         }
+
         return false;
     }
 
     public string? get_body_html () {
         if (extension != null) {
-            return extension.get_body_html (get_page_id ());
+            try {
+                return extension.get_body_html (get_page_id ());
+            } catch (Error e) {
+                critical (e.message);
+            }
         }
+
         return null;
     }
 
