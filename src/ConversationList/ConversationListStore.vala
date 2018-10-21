@@ -24,7 +24,7 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
     private GLib.Sequence<ConversationItemModel> data = new GLib.Sequence<ConversationItemModel> ();
     private uint last_position = -1u;
     private GLib.SequenceIter<ConversationItemModel>? last_iter;
-    private GLib.CompareDataFunc<ConversationItemModel> compare_func;
+    private unowned GLib.CompareDataFunc<ConversationItemModel> compare_func;
 
 	public override uint get_n_items () {
 		return data.get_length ();

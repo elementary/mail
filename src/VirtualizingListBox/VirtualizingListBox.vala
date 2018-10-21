@@ -824,6 +824,7 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
     }
 
     public bool get_border (out Gtk.Border border) {
+        border = Gtk.Border ();
         return false;
     }
 }
