@@ -69,9 +69,8 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
 	}
 
 	public void remove (ConversationItemModel data) {
-	    var index = get_index_of (data);
 	    var iter = this.data.get_iter_at_pos (get_index_of (data));
-	    this.data.remove (iter);
+	    iter.remove ();
 
 	    last_iter = null;
 	    last_position = -1u;
