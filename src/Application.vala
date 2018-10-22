@@ -62,12 +62,10 @@ public class Mail.Application : Gtk.Application {
                 main_window.move (window_x, window_y);
             }
 
-            if (window_height != -1 ||  window_width != -1) {
-                var rect = Gtk.Allocation ();
-                rect.height = window_height;
-                rect.width = window_width;
-                main_window.set_allocation (rect);
-            }
+            var rect = Gtk.Allocation ();
+            rect.height = window_height;
+            rect.width = window_width;
+            main_window.set_allocation (rect);
 
             if (settings.get_boolean ("window-maximized")) {
                 main_window.maximize ();
@@ -86,7 +84,6 @@ public class Mail.Application : Gtk.Application {
                 } else {
                     settings.set_boolean ("window-maximized", false);
 
-                    Gtk.Allocation rect;
                     main_window.get_allocation (out rect);
                     settings.set_int ("window-height", rect.height);
                     settings.set_int ("window-width", rect.width);
