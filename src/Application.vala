@@ -52,10 +52,11 @@ public class Mail.Application : Gtk.Application {
 
             var settings = new GLib.Settings ("io.elementary.mail");
 
+            var window_position = settings.get_value ("window-position");
             var window_height = settings.get_int ("window-height");
             var window_width = settings.get_int ("window-width");
-            var window_x = settings.get_int ("window-x");
-            var window_y = settings.get_int ("window-y");
+            var window_x = (int32) window_position.get_child_value (0);
+            var window_y = (int32) window_position.get_child_value (1);
 
             if (window_x != -1 ||  window_y != -1) {
                 main_window.move (window_x, window_y);
@@ -89,8 +90,7 @@ public class Mail.Application : Gtk.Application {
 
                     int root_x, root_y;
                     main_window.get_position (out root_x, out root_y);
-                    settings.set_int ("window-x", root_x);
-                    settings.set_int ("window-y", root_y);
+                    settings.set_value ("window-position", new int[] { root_x, root_y });
                 }
                 return false;
             });
