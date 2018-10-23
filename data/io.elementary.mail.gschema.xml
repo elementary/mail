@@ -7,13 +7,13 @@
       <summary>Whether the window was maximized on last run</summary>
       <description>Whether the window was maximized on last run</description>
     </key>
-    <key name="window-position" type="ai">
-      <default>[-1, -1]</default>
+    <key name="window-position" type="(ii)">
+      <default>(-1, -1)</default>
       <summary>Window position</summary>
       <description>Most recent window position (x, y)</description>
     </key>
-    <key name="window-size" type="ai">
-      <default>[1024, 750]</default>
+    <key name="window-size" type="(ii)">
+      <default>(1024, 750)</default>
       <summary>Most recent window size</summary>
       <description>Most recent window size (width, height)</description>
     </key>
