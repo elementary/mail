@@ -10,10 +10,4 @@
 #export DH_VERBOSE=1
 
 %:
-	dh $@ --parallel
-
-override_dh_strip:
-	dh_strip --dbg-package=pantheon-mail-dbg
-
-override_dh_auto_install:
-	dh_auto_install --destdir=debian/pantheon-mail --parallel
+	dh $@ --buildsystem=meson
