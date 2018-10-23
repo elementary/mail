@@ -22,7 +22,7 @@ public class Mail.MainWindow : Gtk.Window {
     private HeaderBar headerbar;
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
-    
+
     private FoldersListView folders_list_view;
     private ConversationListBox conversation_list_box;
     private MessageListBox message_list_box;
@@ -120,7 +120,7 @@ public class Mail.MainWindow : Gtk.Window {
         welcome_overlay.add (welcome_icon);
         welcome_overlay.add_overlay (welcome_badge);
 
-        var welcome_title = new Gtk.Label (_("Connect An Email Account"));
+        var welcome_title = new Gtk.Label (_("Connect an Account"));
         welcome_title.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
 
         var welcome_description = new Gtk.Label (_("Mail uses email accounts configured in System Settings."));
