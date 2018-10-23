@@ -146,25 +146,25 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
 
         var bold = new Gtk.ToggleButton ();
-        bold.tooltip_text = _("Bold (Ctrl+B)");
+        bold.tooltip_markup = Granite.markup_accel_tooltip (_("Bold"), {"<Ctrl>B"});
         bold.image = new Gtk.Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.MENU);
         bold.action_name = ACTION_PREFIX + ACTION_BOLD;
         bold.action_target = ACTION_BOLD;
 
         var italic = new Gtk.ToggleButton ();
-        italic.tooltip_text = _("Italic (Ctrl+I)");
+        italic.tooltip_markup = Granite.markup_accel_tooltip (_("Italic"), {"<Ctrl>I"});
         italic.image = new Gtk.Image.from_icon_name ("format-text-italic-symbolic", Gtk.IconSize.MENU);
         italic.action_name = ACTION_PREFIX + ACTION_ITALIC;
         italic.action_target = ACTION_ITALIC;
 
         var underline = new Gtk.ToggleButton ();
-        underline.tooltip_text = _("Underline (Ctrl+U)");
+        underline.tooltip_markup = Granite.markup_accel_tooltip (_("Underline"), {"<Ctrl>U"});
         underline.image = new Gtk.Image.from_icon_name ("format-text-underline-symbolic", Gtk.IconSize.MENU);
         underline.action_name = ACTION_PREFIX + ACTION_UNDERLINE;
         underline.action_target = ACTION_UNDERLINE;
 
         var strikethrough = new Gtk.ToggleButton ();
-        strikethrough.tooltip_text = _("Strikethrough (Ctrl+%)");
+        strikethrough.tooltip_markup = Granite.markup_accel_tooltip (_("Strikethrough"), {"<Ctrl>percent"});
         strikethrough.image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU);
         strikethrough.action_name = ACTION_PREFIX + ACTION_STRIKETHROUGH;
         strikethrough.action_target = ACTION_STRIKETHROUGH;
@@ -177,10 +177,10 @@ public class Mail.ComposerWidget : Gtk.Grid {
         formatting_buttons.add (strikethrough);
 
         var indent_more = new Gtk.Button.from_icon_name ("format-indent-more-symbolic", Gtk.IconSize.MENU);
-        indent_more.tooltip_text = _("Quote text (Ctrl+])");
+        indent_more.tooltip_markup = Granite.markup_accel_tooltip (_("Quote text"), {"<Ctrl>bracketright"});
 
         var indent_less = new Gtk.Button.from_icon_name ("format-indent-less-symbolic", Gtk.IconSize.MENU);
-        indent_less.tooltip_text = _("Unquote text (Ctrl+[)");
+        indent_less.tooltip_markup = Granite.markup_accel_tooltip (_("Unquote text"), {"<Ctrl>bracketleft"});
 
         var indent_buttons = new Gtk.Grid ();
         indent_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
@@ -188,13 +188,13 @@ public class Mail.ComposerWidget : Gtk.Grid {
         indent_buttons.add (indent_less);
 
         var link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU);
-        link.tooltip_text = _("Link (Ctrl+K)");
+        link.tooltip_markup = Granite.markup_accel_tooltip (_("Insert Link"), {"<Ctrl>K"});
 
         var image = new Gtk.Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.MENU);
-        image.tooltip_text = _("Image (Ctrl+G)");
+        image.tooltip_markup = Granite.markup_accel_tooltip (_("Insert Image"), {"<Ctrl>G"});
 
         var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU);
-        clear_format.tooltip_text = _("Remove formatting (Ctrl+Space)");
+        clear_format.tooltip_markup = Granite.markup_accel_tooltip (_("Remove formatting"), {"<Ctrl>space"});
         clear_format.action_name = ACTION_PREFIX + ACTION_REMOVE_FORMAT;
 
         var button_row = new Gtk.Grid ();
@@ -233,7 +233,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         send.sensitive = false;
         send.always_show_image = true;
         send.label = _("Send");
-        send.tooltip_text = _("Send (Ctrl+Enter)");
+        send.tooltip_markup = Granite.markup_accel_tooltip (_("Send"), {"<Ctrl>ISO_Enter"});
         send.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
