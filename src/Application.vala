@@ -52,21 +52,20 @@ public class Mail.Application : Gtk.Application {
 
             var settings = new GLib.Settings ("io.elementary.mail");
 
+            var window_position = settings.get_value ("window-position");
             var window_height = settings.get_int ("window-height");
             var window_width = settings.get_int ("window-width");
-            var window_x = settings.get_int ("window-x");
-            var window_y = settings.get_int ("window-y");
+            var window_x = (int32) window_position.get_child_value (0);
+            var window_y = (int32) window_position.get_child_value (1);
 
             if (window_x != -1 ||  window_y != -1) {
                 main_window.move (window_x, window_y);
             }
 
-            if (window_height != -1 ||  window_width != -1) {
-                var rect = Gtk.Allocation ();
-                rect.height = window_height;
-                rect.width = window_width;
-                main_window.set_allocation (rect);
-            }
+            var rect = Gtk.Allocation ();
+            rect.height = window_height;
+            rect.width = window_width;
+            main_window.set_allocation (rect);
 
             if (settings.get_boolean ("window-maximized")) {
                 main_window.maximize ();
@@ -85,15 +84,13 @@ public class Mail.Application : Gtk.Application {
                 } else {
                     settings.set_boolean ("window-maximized", false);
 
-                    Gtk.Allocation rect;
                     main_window.get_allocation (out rect);
                     settings.set_int ("window-height", rect.height);
                     settings.set_int ("window-width", rect.width);
 
                     int root_x, root_y;
                     main_window.get_position (out root_x, out root_y);
-                    settings.set_int ("window-x", root_x);
-                    settings.set_int ("window-y", root_y);
+                    settings.set_value ("window-position", new int[] { root_x, root_y });
                 }
                 return false;
             });
