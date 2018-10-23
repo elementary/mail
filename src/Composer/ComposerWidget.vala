@@ -31,11 +31,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private const string ACTION_REMOVE_FORMAT = "remove_formatting";
     private const string ACTION_DISCARD = "discard";
 
+    public bool has_recipients { get; set; }
     public bool has_subject_field { get; construct; }
 
     private WebView web_view;
     private SimpleActionGroup actions;
-    private Gtk.Button send;
     private Gtk.Entry to_val;
     private Gtk.Entry cc_val;
     private Gtk.Revealer cc_revealer;
@@ -54,17 +54,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
         {ACTION_REMOVE_FORMAT,  on_remove_format                    },
         {ACTION_DISCARD,        on_discard                          }
     };
-
-    private bool _has_recipients;
-    public bool has_recipients {
-        get {
-            return _has_recipients;
-        }
-        set {
-            _has_recipients = value;
-            send.sensitive = has_recipients;
-        }
-    }
 
     public ComposerWidget () {
         Object (has_subject_field: false);
@@ -239,7 +228,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
         attach.tooltip_text = _("Attach file");
 
-        send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
+        var send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
         send.margin = 6;
         send.sensitive = false;
         send.always_show_image = true;
@@ -264,6 +253,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
         contact_manager.setup_entry (to_val);
         contact_manager.setup_entry (cc_val);
         contact_manager.setup_entry (bcc_val);
+
+        bind_property ("has-recipients", send, "sensitive");
 
         cc_button.clicked.connect (() => {
             cc_revealer.reveal_child = cc_button.active;
