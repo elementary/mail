@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.MainWindow : Gtk.Window {
+public class Mail.MainWindow : Gtk.ApplicationWindow {
     private HeaderBar headerbar;
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
@@ -28,7 +28,6 @@ public class Mail.MainWindow : Gtk.Window {
     private MessageListBox message_list_box;
     private Gtk.ScrolledWindow message_list_scrolled;
 
-    private SimpleActionGroup actions;
     private uint configure_id;
 
     public const string ACTION_COMPOSE_MESSAGE = "compose_message";
@@ -45,8 +44,9 @@ public class Mail.MainWindow : Gtk.Window {
         {ACTION_MOVE_TO_TRASH,      on_move_to_trash     },
     };
 
-    public MainWindow () {
+    public MainWindow (Gtk.Application application) {
         Object (
+            application: application,
             height_request: 600,
             icon_name: "internet-mail",
             width_request: 800
@@ -54,9 +54,7 @@ public class Mail.MainWindow : Gtk.Window {
     }
 
     construct {
-        actions = new SimpleActionGroup ();
-        actions.add_action_entries (action_entries, this);
-        insert_action_group ("win", actions);
+        add_action_entries (action_entries, this);
 
         headerbar = new HeaderBar ();
         set_titlebar (headerbar);
@@ -195,7 +193,7 @@ public class Mail.MainWindow : Gtk.Window {
     }
 
     private SimpleAction? get_action (string name) {
-        return actions.lookup_action (name) as SimpleAction;
+        return lookup_action (name) as SimpleAction;
     }
 
     public override bool configure_event (Gdk.EventConfigure event) {
