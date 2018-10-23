@@ -30,7 +30,7 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
     construct {
         var compose_button = new Gtk.Button.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR);
         compose_button.halign = Gtk.Align.START;
-        compose_button.tooltip_text = _("Compose new message (Ctrl+N, N)");
+        compose_button.tooltip_markup = markup_accel_tooltip (_("Compose new message"), "Ctrl + N");
         compose_button.action_name = "win." + MainWindow.ACTION_COMPOSE_MESSAGE;
 
         spacing_widget = new Gtk.Grid ();
@@ -79,19 +79,19 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         app_menu.tooltip_text = _("Menu");
 
         var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR);
-        reply_button.tooltip_text = _("Reply (Ctrl+R, R)");
+        reply_button.tooltip_markup = markup_accel_tooltip (_("Reply"), "Ctrl + R");
         reply_button.action_name = "win." + MainWindow.ACTION_REPLY;
 
         var reply_all_button = new Gtk.Button.from_icon_name ("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR);
-        reply_all_button.tooltip_text = _("Reply All (Ctrl+Shift+R, Shift+R)");
+        reply_all_button.tooltip_markup = markup_accel_tooltip (_("Reply All"), "Ctrl + Shift + R");
         reply_all_button.action_name = "win." + MainWindow.ACTION_REPLY_ALL;
 
         var forward_button = new Gtk.Button.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR);
-        forward_button.tooltip_text = _("Forward (Ctrl+Shift+F)");
+        forward_button.tooltip_markup = markup_accel_tooltip (_("Forward"), "Ctrl + Shift + F");
         forward_button.action_name = "win." + MainWindow.ACTION_FORWARD;
 
         var trash_button = new Gtk.Button.from_icon_name ("edit-delete", Gtk.IconSize.LARGE_TOOLBAR);
-        trash_button.tooltip_text = _("Move conversations to Trash (Delete, Backspace)");
+        trash_button.tooltip_markup = markup_accel_tooltip (_("Move conversations to Trash"), "Delete, Backspace");
         trash_button.action_name = "win." + MainWindow.ACTION_MOVE_TO_TRASH;
 
         pack_start (compose_button);
@@ -115,6 +115,10 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         load_images_menuitem.clicked.connect (() => {
             load_images_switch.activate ();
         });
+    }
+
+    private string markup_accel_tooltip (string tooltip_text, string accel) {
+        return "%s\n<span weight=\"600\" size=\"smaller\" alpha=\"75%\">%s</span>".printf (tooltip_text, accel);
     }
 
     public void set_paned_positions (int start_position, int end_position, bool start_changed = true) {
