@@ -52,18 +52,18 @@ public class Mail.Application : Gtk.Application {
 
             var settings = new GLib.Settings ("io.elementary.mail");
 
-            var window_position = settings.get_value ("window-position");
-            var window_x = (int32) window_position.get_child_value (0);
-            var window_y = (int32) window_position.get_child_value (1);
+            int window_x, window_y;
+            settings.get ("window-position", "(ii)", out window_x, out window_y);
 
             if (window_x != -1 ||  window_y != -1) {
                 main_window.move (window_x, window_y);
             }
 
-            var window_size = settings.get_value ("window-size");
+            int window_width, window_height;
+            settings.get ("window-size", "(ii)", out window_width, out window_height);
             var rect = Gtk.Allocation ();
-            rect.height = (int32) window_size.get_child_value (1);
-            rect.width = (int32) window_size.get_child_value (0);
+            rect.width = window_width;
+            rect.height = window_height;
             main_window.set_allocation (rect);
 
             if (settings.get_boolean ("window-maximized")) {
@@ -84,11 +84,11 @@ public class Mail.Application : Gtk.Application {
                     settings.set_boolean ("window-maximized", false);
 
                     main_window.get_allocation (out rect);
-                    settings.set_value ("window-size", new int[] { rect.width, rect.height });
+                    settings.set ("window-size", "(ii)", rect.width, rect.height);
 
                     int root_x, root_y;
                     main_window.get_position (out root_x, out root_y);
-                    settings.set_value ("window-position", new int[] { root_x, root_y });
+                    settings.set ("window-position", "(ii)", root_x, root_y);
                 }
                 return false;
             });
