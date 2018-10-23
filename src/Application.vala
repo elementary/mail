@@ -62,7 +62,7 @@ public class Mail.Application : Gtk.Application {
 
             var window_size = settings.get_value ("window-size");
             var rect = Gtk.Allocation ();
-            rect.height = (int32) window_size.get_child_value (1);;
+            rect.height = (int32) window_size.get_child_value (1);
             rect.width = (int32) window_size.get_child_value (0);
             main_window.set_allocation (rect);
 
