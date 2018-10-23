@@ -19,6 +19,8 @@
  */
 
 public class Mail.Application : Gtk.Application {
+    public static GLib.Settings settings;
+
     private MainWindow? main_window = null;
 
     public Application () {
@@ -26,6 +28,10 @@ public class Mail.Application : Gtk.Application {
             application_id: "io.elementary.mail",
             flags: ApplicationFlags.HANDLES_OPEN
         );
+    }
+
+    static construct {
+        settings = new GLib.Settings ("io.elementary.mail");
     }
 
     construct {
@@ -49,8 +55,6 @@ public class Mail.Application : Gtk.Application {
     public override void activate () {
         if (main_window == null) {
             main_window = new MainWindow ();
-
-            var settings = new GLib.Settings ("io.elementary.mail");
 
             int window_x, window_y;
             settings.get ("window-position", "(ii)", out window_x, out window_y);
@@ -76,22 +80,6 @@ public class Mail.Application : Gtk.Application {
             var css_provider = new Gtk.CssProvider ();
             css_provider.load_from_resource ("io/elementary/mail/application.css");
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-            main_window.delete_event.connect (() => {
-                if (main_window.is_maximized) {
-                    settings.set_boolean ("window-maximized", true);
-                } else {
-                    settings.set_boolean ("window-maximized", false);
-
-                    main_window.get_allocation (out rect);
-                    settings.set ("window-size", "(ii)", rect.width, rect.height);
-
-                    int root_x, root_y;
-                    main_window.get_position (out root_x, out root_y);
-                    settings.set ("window-position", "(ii)", root_x, root_y);
-                }
-                return false;
-            });
         }
     }
 }
