@@ -30,11 +30,14 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
     private uint configure_id;
 
+    public const string ACTION_PREFIX = "win.";
     public const string ACTION_COMPOSE_MESSAGE = "compose_message";
     public const string ACTION_REPLY = "reply";
     public const string ACTION_REPLY_ALL = "reply-all";
     public const string ACTION_FORWARD = "forward";
     public const string ACTION_MOVE_TO_TRASH = "trash";
+
+    private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
     private const ActionEntry[] action_entries = {
         {ACTION_COMPOSE_MESSAGE,    on_compose_message   },
@@ -53,8 +56,21 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         );
     }
 
+    static construct {
+        action_accelerators[ACTION_COMPOSE_MESSAGE] = "<Control>N";
+        action_accelerators[ACTION_REPLY] = "<Control>N";
+        action_accelerators[ACTION_REPLY_ALL] = "<Control>R";
+        action_accelerators[ACTION_FORWARD] = "<Control><Shift>R";
+        action_accelerators[ACTION_MOVE_TO_TRASH] = "<Delete>";
+        action_accelerators[ACTION_MOVE_TO_TRASH] = "<BackSpace>";
+    }
+
     construct {
         add_action_entries (action_entries, this);
+
+        foreach (var action in action_accelerators.get_keys ()) {
+            application.set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
+        }
 
         headerbar = new HeaderBar ();
         set_titlebar (headerbar);
