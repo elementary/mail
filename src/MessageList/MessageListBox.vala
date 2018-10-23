@@ -29,7 +29,15 @@ public class Mail.MessageListBox : Gtk.ListBox {
     }
 
     construct {
+        var placeholder = new Gtk.Label (_("No Message Selected"));
+        placeholder.visible = true;
+
+        var placeholder_style_context = placeholder.get_style_context ();
+        placeholder_style_context.add_class (Granite.STYLE_CLASS_H2_LABEL);
+        placeholder_style_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
         get_style_context ().add_class ("deck");
+        set_placeholder (placeholder);
     }
 
     public void set_conversation (Camel.FolderThreadNode? node) {
