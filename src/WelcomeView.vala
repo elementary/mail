@@ -38,9 +38,13 @@ public class Mail.WelcomeView : Gtk.Grid {
         welcome_overlay.add_overlay (welcome_badge);
 
         var welcome_title = new Gtk.Label (_("Connect an Account"));
+        welcome_title.wrap = true;
+        welcome_title.max_width_chars = 70;
         welcome_title.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
 
         var welcome_description = new Gtk.Label (_("Mail uses email accounts configured in System Settings."));
+        welcome_description.wrap = true;
+        welcome_description.max_width_chars = 70;
         welcome_description.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var welcome_button = new Gtk.Button.with_label (_("Online Accounts…"));
