@@ -106,44 +106,12 @@ public class Mail.MainWindow : Gtk.Window {
         paned_end.pack1 (paned_start, false, false);
         paned_end.pack2 (view_overlay, true, true);
 
-        var welcome_icon = new Gtk.Image ();
-        welcome_icon.icon_name = "internet-mail";
-        welcome_icon.margin_bottom = 6;
-        welcome_icon.margin_end = 12;
-        welcome_icon.pixel_size = 64;
-
-        var welcome_badge = new Gtk.Image.from_icon_name ("preferences-desktop-online-accounts", Gtk.IconSize.DIALOG);
-        welcome_badge.halign = welcome_badge.valign = Gtk.Align.END;
-
-        var welcome_overlay = new Gtk.Overlay ();
-        welcome_overlay.halign = Gtk.Align.CENTER;
-        welcome_overlay.add (welcome_icon);
-        welcome_overlay.add_overlay (welcome_badge);
-
-        var welcome_title = new Gtk.Label (_("Connect an Account"));
-        welcome_title.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
-
-        var welcome_description = new Gtk.Label (_("Mail uses email accounts configured in System Settings."));
-        welcome_description.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-
-        var welcome_button = new Gtk.Button.with_label (_("Online Accounts…"));
-        welcome_button.halign = Gtk.Align.CENTER;
-        welcome_button.margin_top = 24;
-        welcome_button.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-        welcome_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-
-        var welcome_grid = new Gtk.Grid ();
-        welcome_grid.halign = welcome_grid.valign = Gtk.Align.CENTER;
-        welcome_grid.orientation = Gtk.Orientation.VERTICAL;
-        welcome_grid.add (welcome_overlay);
-        welcome_grid.add (welcome_title);
-        welcome_grid.add (welcome_description);
-        welcome_grid.add (welcome_button);
+        var welcome_view = new Mail.WelcomeView ();
 
         var placeholder_stack = new Gtk.Stack ();
         placeholder_stack.transition_type = Gtk.StackTransitionType.OVER_DOWN_UP;
         placeholder_stack.add_named (paned_end, "mail");
-        placeholder_stack.add_named (welcome_grid, "welcome");
+        placeholder_stack.add_named (welcome_view, "welcome");
 
         add (placeholder_stack);
 
@@ -173,15 +141,12 @@ public class Mail.MainWindow : Gtk.Window {
             headerbar.set_paned_positions (paned_start.position, paned_end.position);
         });
 
-        welcome_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("settings://accounts/online", null);
-            } catch (Error e) {
-                warning (e.message);
-            }
+        unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+        session.account_added.connect (() => {
+            placeholder_stack.visible_child = paned_end;
         });
 
-        Backend.Session.get_default ().start.begin ();
+        session.start.begin ();
     }
 
     private void on_compose_message () {
