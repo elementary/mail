@@ -47,7 +47,7 @@ public class AttachmentButton : Gtk.FlowBoxChild {
                 menu.add (item_save);
                 menu.attach_widget = this;
                 menu.show_all ();
-                menu.popup (null, null, null, event.button, event.time);
+                menu.popup_at_pointer (event);
             } else {
                 activate ();
             }
