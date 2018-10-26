@@ -62,6 +62,7 @@ public class Mail.Utils {
         return input.replace ("<", "&lt;").replace (">", "&gt;");
     }
 
+    //FIXME: Remove this util when Granite 5.2 is released.
     private static string accel_to_string (string accel) {
         uint accel_key;
         Gdk.ModifierType accel_mods;
@@ -105,6 +106,7 @@ public class Mail.Utils {
         return string.joinv (" + ", arr);
     }
 
+    //FIXME: Remove this util when Granite 5.2 is released.
     public static string markup_accel_tooltip (string[] accels, string? description = null) {
         for (int i = 0; i < accels.length; i++) {
             accels[i] = accel_to_string (accels[i]); 
