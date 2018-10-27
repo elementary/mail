@@ -296,10 +296,15 @@ public class Mail.ComposerWidget : Gtk.Grid {
         });
 
         link.clicked.connect (() => {
-            var insert_link_dialog = new InsertLinkDialog ();
+            var insert_link_dialog = new InsertLinkDialog (web_view.get_selected_text ());
+            insert_link_dialog.insert_link.connect (on_insert_link);
             insert_link_dialog.transient_for = (Gtk.Window) get_toplevel ();
             insert_link_dialog.run ();
         });
+    }
+
+    private void on_insert_link (string url, string title) {
+        warning ("insert_link: %s, %s", url, title);
     }
 
     public void quote_content (Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content_to_quote) {

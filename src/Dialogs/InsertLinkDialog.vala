@@ -17,6 +17,14 @@
 
 
 public class InsertLinkDialog : Gtk.Dialog {
+    public signal void insert_link (string url, string title);
+
+    public string? selected_text { get; construct; }
+
+    public InsertLinkDialog (string? text) {
+        Object (selected_text: text);
+    }
+
     construct {
         var url_label = new Gtk.Label (_("URL:"));
         url_label.halign = Gtk.Align.END;
@@ -32,6 +40,9 @@ public class InsertLinkDialog : Gtk.Dialog {
         var title_entry = new Gtk.Entry ();
         title_entry.activates_default = true;
         title_entry.placeholder_text = _("Example Website");
+        if (selected_text != null) {
+            title_entry.text = selected_text;
+        }
 
         var grid = new Gtk.Grid ();
         grid.column_spacing = 6;
@@ -68,6 +79,9 @@ public class InsertLinkDialog : Gtk.Dialog {
         response.connect ((response_id) => {
             switch (response_id) {
                 case Gtk.ResponseType.APPLY:
+                    insert_link (url_entry.text, title_entry.text);
+                    destroy ();
+                    break;
                 case Gtk.ResponseType.CANCEL:
                     destroy ();
                     break;

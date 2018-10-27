@@ -29,6 +29,7 @@ namespace MailWebViewExtension {
         public abstract int get_page_height (uint64 view) throws GLib.DBusError, GLib.IOError;
         public abstract string get_body_html (uint64 view) throws GLib.DBusError, GLib.IOError;
         public abstract void set_body_html (uint64 view, string html) throws GLib.DBusError, GLib.IOError;
+        public abstract string get_selected_text (uint64 view) throws GLib.DBusError, GLib.IOError;
 
         public signal void selection_changed (uint64 view);
         public signal void image_load_blocked (uint64 view);
@@ -180,6 +181,18 @@ public class Mail.WebView : WebKit.WebView {
             }
         } else {
             queued_body_content = content;
+        }
+    }
+
+    public string? get_selected_text () {
+        if (loaded) {
+            try {
+                return extension.get_selected_text (get_page_id ());
+            } catch (Error e) {
+                return null;
+            }
+        } else {
+            return null;
         }
     }
 
