@@ -41,6 +41,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         source = new Gtk.Label (null);
         source.hexpand = true;
         source.ellipsize = Pango.EllipsizeMode.END;
+        source.use_markup = true;
         source.xalign = 0;
         source.get_style_context ().add_class ("h3");
 
