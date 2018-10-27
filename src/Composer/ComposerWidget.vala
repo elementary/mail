@@ -31,11 +31,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private const string ACTION_REMOVE_FORMAT = "remove_formatting";
     private const string ACTION_DISCARD = "discard";
 
+    public bool has_recipients { get; set; }
     public bool has_subject_field { get; construct; }
 
     private WebView web_view;
     private SimpleActionGroup actions;
-    private Gtk.Button send;
     private Gtk.Entry to_val;
     private Gtk.Entry cc_val;
     private Gtk.Revealer cc_revealer;
@@ -54,17 +54,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
         {ACTION_REMOVE_FORMAT,  on_remove_format                    },
         {ACTION_DISCARD,        on_discard                          }
     };
-
-    private bool _has_recipients;
-    public bool has_recipients {
-        get {
-            return _has_recipients;
-        }
-        set {
-            _has_recipients = value;
-            send.sensitive = has_recipients;
-        }
-    }
 
     public ComposerWidget () {
         Object (has_subject_field: false);
@@ -157,25 +146,25 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
 
         var bold = new Gtk.ToggleButton ();
-        bold.tooltip_text = _("Bold (Ctrl+B)");
+        bold.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>B"}, _("Bold"));
         bold.image = new Gtk.Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.MENU);
         bold.action_name = ACTION_PREFIX + ACTION_BOLD;
         bold.action_target = ACTION_BOLD;
 
         var italic = new Gtk.ToggleButton ();
-        italic.tooltip_text = _("Italic (Ctrl+I)");
+        italic.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>I"}, _("Italic"));
         italic.image = new Gtk.Image.from_icon_name ("format-text-italic-symbolic", Gtk.IconSize.MENU);
         italic.action_name = ACTION_PREFIX + ACTION_ITALIC;
         italic.action_target = ACTION_ITALIC;
 
         var underline = new Gtk.ToggleButton ();
-        underline.tooltip_text = _("Underline (Ctrl+U)");
+        underline.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>U"}, _("Underline"));
         underline.image = new Gtk.Image.from_icon_name ("format-text-underline-symbolic", Gtk.IconSize.MENU);
         underline.action_name = ACTION_PREFIX + ACTION_UNDERLINE;
         underline.action_target = ACTION_UNDERLINE;
 
         var strikethrough = new Gtk.ToggleButton ();
-        strikethrough.tooltip_text = _("Strikethrough (Ctrl+%)");
+        strikethrough.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>percent"}, _("Strikethrough"));
         strikethrough.image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU);
         strikethrough.action_name = ACTION_PREFIX + ACTION_STRIKETHROUGH;
         strikethrough.action_target = ACTION_STRIKETHROUGH;
@@ -188,10 +177,10 @@ public class Mail.ComposerWidget : Gtk.Grid {
         formatting_buttons.add (strikethrough);
 
         var indent_more = new Gtk.Button.from_icon_name ("format-indent-more-symbolic", Gtk.IconSize.MENU);
-        indent_more.tooltip_text = _("Quote text (Ctrl+])");
+        indent_more.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>bracketright"}, _("Quote text"));
 
         var indent_less = new Gtk.Button.from_icon_name ("format-indent-less-symbolic", Gtk.IconSize.MENU);
-        indent_less.tooltip_text = _("Unquote text (Ctrl+[)");
+        indent_less.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>bracketleft"}, _("Unquote text"));
 
         var indent_buttons = new Gtk.Grid ();
         indent_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
@@ -199,13 +188,13 @@ public class Mail.ComposerWidget : Gtk.Grid {
         indent_buttons.add (indent_less);
 
         var link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU);
-        link.tooltip_text = _("Link (Ctrl+K)");
+        link.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>K"}, _("Insert Link"));
 
         var image = new Gtk.Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.MENU);
-        image.tooltip_text = _("Image (Ctrl+G)");
+        image.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>G"}, _("Insert Image"));
 
         var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU);
-        clear_format.tooltip_text = _("Remove formatting (Ctrl+Space)");
+        clear_format.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>space"}, _("Remove formatting"));
         clear_format.action_name = ACTION_PREFIX + ACTION_REMOVE_FORMAT;
 
         var button_row = new Gtk.Grid ();
@@ -239,12 +228,12 @@ public class Mail.ComposerWidget : Gtk.Grid {
         var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
         attach.tooltip_text = _("Attach file");
 
-        send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
+        var send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
         send.margin = 6;
         send.sensitive = false;
         send.always_show_image = true;
         send.label = _("Send");
-        send.tooltip_text = _("Send (Ctrl+Enter)");
+        send.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>ISO_Enter"});
         send.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
@@ -264,6 +253,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
         contact_manager.setup_entry (to_val);
         contact_manager.setup_entry (cc_val);
         contact_manager.setup_entry (bcc_val);
+
+        bind_property ("has-recipients", send, "sensitive");
 
         cc_button.clicked.connect (() => {
             cc_revealer.reveal_child = cc_button.active;
