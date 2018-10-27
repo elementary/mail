@@ -308,7 +308,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
         if (selected_text != null && title == selected_text) {
             web_view.execute_editor_command ("createLink", url);
         } else {
-            warning ("insert_link: %s, %s", url, title);
+            if (title != null && title.length > 0) {
+                web_view.execute_editor_command ("insertHTML", """<a href="%s">%s</a>""".printf (url, title));
+            } else {
+                web_view.execute_editor_command ("insertHTML", """<a href="%s">%s</a>""".printf (url, url));
+            }
         }
     }
 
