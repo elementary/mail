@@ -304,7 +304,12 @@ public class Mail.ComposerWidget : Gtk.Grid {
     }
 
     private void on_insert_link (string url, string title) {
-        warning ("insert_link: %s, %s", url, title);
+        var selected_text = web_view.get_selected_text ();
+        if (selected_text != null && title == selected_text) {
+            web_view.execute_editor_command ("createLink", url);
+        } else {
+            warning ("insert_link: %s, %s", url, title);
+        }
     }
 
     public void quote_content (Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content_to_quote) {
