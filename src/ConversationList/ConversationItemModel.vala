@@ -62,15 +62,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public int64 timestamp {
         get {
-            int64 time = int64.max (node.message.date_received, node.message.date_sent);
-            unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) node.child;
-            while (child != null) {
-                time = int64.max (time, child.message.date_received);
-                time = int64.max (time, child.message.date_sent);
-                child = (Camel.FolderThreadNode?) child.next;
-            }
-
-            return time;
+            return get_newest_timestamp (node);
         }
     }
 
@@ -91,5 +83,19 @@ public class Mail.ConversationItemModel : GLib.Object {
         }
 
         return i;
+    }
+
+    private static int64 get_newest_timestamp (Camel.FolderThreadNode node, int64 highest = -1) {
+        int64 time = highest;
+        time = int64.max (time, node.message.date_received);
+        time = int64.max (time, node.message.date_sent);
+
+        unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) node.child;
+        while (child != null) {
+            time = get_newest_timestamp (child, time);
+            child = (Camel.FolderThreadNode?) child.next;
+        }
+
+        return time;
     }
 }
