@@ -41,17 +41,17 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         model = list_store;
 
         factory_func = (item, old_widget) => {
-		    ConversationListItem? row = null;
-		    if (old_widget != null) {
-		        row = old_widget as ConversationListItem;
-	        } else {
-	            row = new ConversationListItem ();
+            ConversationListItem? row = null;
+            if (old_widget != null) {
+                row = old_widget as ConversationListItem;
+            } else {
+                row = new ConversationListItem ();
             }
 
-		    row.assign ((ConversationItemModel)item);
-		    row.show_all ();
-		    return row;
-	    };
+            row.assign ((ConversationItemModel)item);
+            row.show_all ();
+            return row;
+        };
 
         row_activated.connect ((row) => {
             if (row == null) {

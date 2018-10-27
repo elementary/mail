@@ -26,65 +26,65 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
     private GLib.SequenceIter<ConversationItemModel>? last_iter;
     private unowned GLib.CompareDataFunc<ConversationItemModel> compare_func;
 
-	public override uint get_n_items () {
-		return data.get_length ();
-	}
+    public override uint get_n_items () {
+        return data.get_length ();
+    }
 
-	public override GLib.Object? get_item (uint index) {
-	    GLib.SequenceIter<ConversationItemModel>? iter = null;
+    public override GLib.Object? get_item (uint index) {
+        GLib.SequenceIter<ConversationItemModel>? iter = null;
 
-	    if (last_position != -1u) {
-	        if (last_position == index + 1) {
-	            iter = last_iter.prev ();
-	        } else if (last_position == index - 1) {
-	            iter = last_iter.next ();
-	        } else if (last_position == index) {
-	            iter = last_iter;
-	        }
-	    }
+        if (last_position != -1u) {
+            if (last_position == index + 1) {
+                iter = last_iter.prev ();
+            } else if (last_position == index - 1) {
+                iter = last_iter.next ();
+            } else if (last_position == index) {
+                iter = last_iter;
+            }
+        }
 
-	    if (iter == null) {
-	        iter = data.get_iter_at_pos ((int)index);
-	    }
+        if (iter == null) {
+            iter = data.get_iter_at_pos ((int)index);
+        }
 
-	    last_iter = iter;
-	    last_position = index;
+        last_iter = iter;
+        last_position = index;
 
-	    if (iter.is_end ()) {
-	        return null;
-	    }
+        if (iter.is_end ()) {
+            return null;
+        }
 
-	    return iter.get ();
-	}
+        return iter.get ();
+    }
 
-	public void add (ConversationItemModel data) {
-	    if (compare_func != null) {
-	        this.data.insert_sorted (data, compare_func);
-	    } else {
-    	    this.data.append (data);
-	    }
+    public void add (ConversationItemModel data) {
+        if (compare_func != null) {
+            this.data.insert_sorted (data, compare_func);
+        } else {
+            this.data.append (data);
+        }
 
-	    last_iter = null;
-	    last_position = -1u;
-	}
-
-	public void remove (ConversationItemModel data) {
-	    var iter = this.data.get_iter_at_pos (get_index_of (data));
-	    iter.remove ();
-
-	    last_iter = null;
-	    last_position = -1u;
-	}
-
-	public void remove_all () {
-	    data.get_begin_iter ().remove_range (data.get_end_iter ());
-	    unselect_all ();
-
-	    last_iter = null;
+        last_iter = null;
         last_position = -1u;
-	}
+    }
 
-	public void set_sort_func (GLib.CompareDataFunc<ConversationItemModel> function) {
-	    this.compare_func = function;
-	}
+    public void remove (ConversationItemModel data) {
+        var iter = this.data.get_iter_at_pos (get_index_of (data));
+        iter.remove ();
+
+        last_iter = null;
+        last_position = -1u;
+    }
+
+    public void remove_all () {
+        data.get_begin_iter ().remove_range (data.get_end_iter ());
+        unselect_all ();
+
+        last_iter = null;
+        last_position = -1u;
+    }
+
+    public void set_sort_func (GLib.CompareDataFunc<ConversationItemModel> function) {
+        this.compare_func = function;
+    }
 }

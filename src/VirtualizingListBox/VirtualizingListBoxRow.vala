@@ -37,11 +37,11 @@ public class VirtualizingListBoxRow : Gtk.Bin {
 
     public override bool draw (Cairo.Context ct) {
         var sc = this.get_style_context ();
-		Gtk.Allocation alloc;
-		this.get_allocation (out alloc);
+        Gtk.Allocation alloc;
+        this.get_allocation (out alloc);
 
-		sc.render_background (ct, 0, 0, alloc.width, alloc.height);
-		sc.render_frame      (ct, 0, 0, alloc.width, alloc.height);
+        sc.render_background (ct, 0, 0, alloc.width, alloc.height);
+        sc.render_frame (ct, 0, 0, alloc.width, alloc.height);
 
         return base.draw (ct);
     }

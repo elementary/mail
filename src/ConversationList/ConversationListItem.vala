@@ -82,7 +82,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         topic.label = data.subject;
         source.label = data.from;
 
-        messages.label = data.num_messages > 1 ? "%u".printf(data.num_messages) : null;
+        messages.label = data.num_messages > 1 ? "%u".printf (data.num_messages) : null;
         messages.visible = data.num_messages > 1;
         messages.no_show_all = data.num_messages <= 1;
 

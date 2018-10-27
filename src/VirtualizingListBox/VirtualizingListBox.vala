@@ -186,9 +186,9 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
         }
     }
 
-	public override GLib.Type child_type () {
-		return typeof (VirtualizingListBoxRow);
-	}
+    public override GLib.Type child_type () {
+        return typeof (VirtualizingListBoxRow);
+    }
 
     private VirtualizingListBoxRow get_widget (uint index) {
         var item = model.get_object (index);
@@ -318,17 +318,17 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
     }
 
     private void on_adjustment_page_size_changed () {
-		if (!get_mapped ()) {
-		    return;
-		}
+        if (!get_mapped ()) {
+            return;
+        }
 
-		double max_value = vadjustment.upper - vadjustment.page_size;
+        double max_value = vadjustment.upper - vadjustment.page_size;
 
-		if (vadjustment.value > max_value) {
-			set_value (max_value);
-		}
+        if (vadjustment.value > max_value) {
+            set_value (max_value);
+        }
 
-		configure_adjustment ();
+        configure_adjustment ();
     }
 
     private void insert_child_internal (VirtualizingListBoxRow widget, int index) {
@@ -541,7 +541,7 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
         }
 
         int widget_height = estimated_widget_height ();
-        uint top_widgets    = shown_from;
+        uint top_widgets = shown_from;
         uint bottom_widgets = model.get_n_items () - shown_to;
 
         int exact_height = 0;
@@ -558,18 +558,18 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
         return h;
     }
 
-	public unowned VirtualizingListBoxRow? get_row_at_y (int y) {
-	    Gtk.Allocation alloc;
-	    foreach (var row in current_widgets) {
-	        row.get_allocation (out alloc);
+    public unowned VirtualizingListBoxRow? get_row_at_y (int y) {
+        Gtk.Allocation alloc;
+        foreach (var row in current_widgets) {
+            row.get_allocation (out alloc);
             if (y >= alloc.y + bin_y && y <= alloc.y + bin_y + alloc.height) {
                 unowned VirtualizingListBoxRow return_value = row;
                 return return_value;
             }
-	    }
+        }
 
         return null;
-	}
+    }
 
     private void on_multipress_pressed (int n_press, double x, double y) {
         active_row = null;
