@@ -21,7 +21,7 @@ public class InsertLinkDialog : Gtk.Dialog {
 
     public string? selected_text { get; construct; }
 
-    public InsertLinkDialog (string? text) {
+    public InsertLinkDialog (string text) {
         Object (selected_text: text);
     }
 
@@ -40,7 +40,7 @@ public class InsertLinkDialog : Gtk.Dialog {
         var title_entry = new Gtk.Entry ();
         title_entry.activates_default = true;
         title_entry.placeholder_text = _("Example Website");
-        if (selected_text != null) {
+        if (selected_text != "") {
             title_entry.text = selected_text;
         }
 

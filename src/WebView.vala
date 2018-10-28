@@ -184,15 +184,15 @@ public class Mail.WebView : WebKit.WebView {
         }
     }
 
-    public string? get_selected_text () {
+    public string get_selected_text () {
         if (loaded) {
             try {
                 return extension.get_selected_text (get_page_id ());
             } catch (Error e) {
-                return null;
+                return "";
             }
         } else {
-            return null;
+            return "";
         }
     }
 
