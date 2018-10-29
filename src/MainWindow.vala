@@ -22,7 +22,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     private HeaderBar headerbar;
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
-    
+
     private FoldersListView folders_list_view;
     private ConversationListBox conversation_list_box;
     private MessageListBox message_list_box;
@@ -105,7 +105,14 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         paned_end.pack1 (paned_start, false, false);
         paned_end.pack2 (view_overlay, true, true);
 
-        add (paned_end);
+        var welcome_view = new Mail.WelcomeView ();
+
+        var placeholder_stack = new Gtk.Stack ();
+        placeholder_stack.transition_type = Gtk.StackTransitionType.OVER_DOWN_UP;
+        placeholder_stack.add_named (paned_end, "mail");
+        placeholder_stack.add_named (welcome_view, "welcome");
+
+        add (placeholder_stack);
 
         var settings = new GLib.Settings ("io.elementary.mail");
         settings.bind ("paned-start-position", paned_start, "position", SettingsBindFlags.DEFAULT);
@@ -133,7 +140,12 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
             headerbar.set_paned_positions (paned_start.position, paned_end.position);
         });
 
-        Backend.Session.get_default ().start.begin ();
+        unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+        session.account_added.connect (() => {
+            placeholder_stack.visible_child = paned_end;
+        });
+
+        session.start.begin ();
     }
 
     private void on_compose_message () {
