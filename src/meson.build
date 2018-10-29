@@ -5,6 +5,7 @@ vala_files = files(
     'Dialogs/OpenAttachmentDialog.vala',
     'Utils.vala',
     'WebView.vala',
+    'WelcomeView.vala',
     'Backend/Session.vala',
     'Backend/Account.vala',
     'Backend/ContactManager.vala',
