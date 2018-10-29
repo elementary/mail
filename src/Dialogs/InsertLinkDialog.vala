@@ -73,7 +73,19 @@ public class InsertLinkDialog : Gtk.Dialog {
         skip_taskbar_hint = true;
 
         url_entry.changed.connect (() => {
-            insert_button.sensitive = url_entry.text_length > 0;
+            bool is_valid = false;
+            string url_entry_text = url_entry.text;
+
+            if (url_entry_text == "") {
+                url_entry.secondary_icon_name = null;
+            } else if (validate_url (url_entry_text)) {
+                is_valid = true;
+                url_entry.secondary_icon_name = "process-completed-symbolic";
+            } else {
+                url_entry.secondary_icon_name = "process-error-symbolic";
+            }
+
+            insert_button.sensitive = is_valid;
         });
 
         response.connect ((response_id) => {
@@ -87,5 +99,15 @@ public class InsertLinkDialog : Gtk.Dialog {
                     break;
             }
         });
+    }
+
+    private bool validate_url (string url) {
+        try {
+            var regex = new Regex ("""^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$""");
+            return regex.match (url);
+        } catch (Error e) {
+            critical ("Could not create URL Regex %s", e.message);
+            return true;
+        }
     }
 }
