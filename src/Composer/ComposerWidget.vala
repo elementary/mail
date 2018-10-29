@@ -259,6 +259,12 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         bind_property ("has-recipients", send, "sensitive");
 
+        web_view.bind_property ("has-focus", actions.lookup_action (ACTION_BOLD), "enabled", BindingFlags.SYNC_CREATE);
+        web_view.bind_property ("has-focus", actions.lookup_action (ACTION_ITALIC), "enabled", BindingFlags.SYNC_CREATE);
+        web_view.bind_property ("has-focus", actions.lookup_action (ACTION_UNDERLINE), "enabled", BindingFlags.SYNC_CREATE);
+        web_view.bind_property ("has-focus", actions.lookup_action (ACTION_STRIKETHROUGH), "enabled", BindingFlags.SYNC_CREATE);
+        web_view.bind_property ("has-focus", actions.lookup_action (ACTION_REMOVE_FORMAT), "enabled", BindingFlags.SYNC_CREATE);
+
         cc_button.clicked.connect (() => {
             cc_revealer.reveal_child = cc_button.active;
         });
