@@ -40,6 +40,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private Gtk.Entry to_val;
     private Gtk.Entry cc_val;
     private Gtk.Revealer cc_revealer;
+    private Granite.Widgets.OverlayBar message_url_overlay;
 
     public enum Type {
         REPLY,
@@ -220,6 +221,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
 
         web_view.selection_changed.connect (update_actions);
+        web_view.mouse_target_changed.connect (on_mouse_target_changed);
 
         var action_bar = new Gtk.ActionBar ();
 
@@ -245,11 +247,16 @@ public class Mail.ComposerWidget : Gtk.Grid {
         action_bar.pack_start (attach);
         action_bar.pack_end (send);
 
+        var view_overlay = new Gtk.Overlay();
+        view_overlay.add (web_view);
+        message_url_overlay = new Granite.Widgets.OverlayBar (view_overlay);
+        message_url_overlay.no_show_all = true;
+
         orientation = Gtk.Orientation.VERTICAL;
         add (recipient_grid);
         add (button_row);
         add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        add (web_view);
+        add (view_overlay);
         add (action_bar);
 
         var contact_manager = ContactManager.get_default ();
@@ -258,13 +265,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
         contact_manager.setup_entry (bcc_val);
 
         bind_property ("has-recipients", send, "sensitive");
-
-        web_view.bind_property ("has-focus", actions.lookup_action (ACTION_BOLD), "enabled", BindingFlags.SYNC_CREATE);
-        web_view.bind_property ("has-focus", actions.lookup_action (ACTION_ITALIC), "enabled", BindingFlags.SYNC_CREATE);
-        web_view.bind_property ("has-focus", actions.lookup_action (ACTION_UNDERLINE), "enabled", BindingFlags.SYNC_CREATE);
-        web_view.bind_property ("has-focus", actions.lookup_action (ACTION_STRIKETHROUGH), "enabled", BindingFlags.SYNC_CREATE);
-        web_view.bind_property ("has-focus", actions.lookup_action (ACTION_INSERT_LINK), "enabled", BindingFlags.SYNC_CREATE);
-        web_view.bind_property ("has-focus", actions.lookup_action (ACTION_REMOVE_FORMAT), "enabled", BindingFlags.SYNC_CREATE);
 
         cc_button.clicked.connect (() => {
             cc_revealer.reveal_child = cc_button.active;
@@ -323,6 +323,23 @@ public class Mail.ComposerWidget : Gtk.Grid {
             } else {
                 web_view.execute_editor_command ("insertHTML", """<a href="%s">%s</a>""".printf (url, url));
             }
+        }
+    }
+
+    private void on_mouse_target_changed (WebKit.WebView web_view, WebKit.HitTestResult hit_test, uint mods) {
+        if (hit_test.context_is_link ()) {
+            var url = hit_test.get_link_uri ();
+            var hover_url = url != null ? Soup.URI.decode (url) : null;
+
+            if (hover_url == null) {
+                message_url_overlay.hide ();
+            } else {
+                message_url_overlay.label = hover_url;
+                message_url_overlay.no_show_all = false;
+                message_url_overlay.show_all ();
+            }
+        } else {
+            message_url_overlay.hide ();
         }
     }
 
