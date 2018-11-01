@@ -5,7 +5,7 @@ i18n = import('i18n')
 
 glib_dep = dependency('glib-2.0')
 gobject_dep = dependency('gobject-2.0')
-granite_dep = dependency('granite')
+granite_dep = dependency('granite', version: '>= 5.2.0')
 gee_dep = dependency('gee-0.8')
 camel_dep = dependency('camel-1.2')
 libedataserver_dep = dependency('libedataserver-1.2', version: '>= 3.25.2')
