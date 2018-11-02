@@ -54,20 +54,18 @@ public class Mail.Application : Gtk.Application {
 
     public override void activate () {
         if (main_window == null) {
-            main_window = new MainWindow ();
+            main_window = new MainWindow (this);
 
             int window_x, window_y;
+            var rect = Gtk.Allocation ();
+
             settings.get ("window-position", "(ii)", out window_x, out window_y);
+            settings.get ("window-size", "(ii)", out rect.width, out rect.height);
 
             if (window_x != -1 ||  window_y != -1) {
                 main_window.move (window_x, window_y);
             }
 
-            int window_width, window_height;
-            settings.get ("window-size", "(ii)", out window_width, out window_height);
-            var rect = Gtk.Allocation ();
-            rect.width = window_width;
-            rect.height = window_height;
             main_window.set_allocation (rect);
 
             if (settings.get_boolean ("window-maximized")) {
@@ -75,7 +73,6 @@ public class Mail.Application : Gtk.Application {
             }
 
             main_window.show_all ();
-            add_window (main_window);
 
             var css_provider = new Gtk.CssProvider ();
             css_provider.load_from_resource ("io/elementary/mail/application.css");
