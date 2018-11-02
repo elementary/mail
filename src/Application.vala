@@ -54,7 +54,7 @@ public class Mail.Application : Gtk.Application {
 
     public override void activate () {
         if (main_window == null) {
-            main_window = new MainWindow ();
+            main_window = new MainWindow (this);
 
             int window_x, window_y;
             var rect = Gtk.Allocation ();
@@ -73,7 +73,6 @@ public class Mail.Application : Gtk.Application {
             }
 
             main_window.show_all ();
-            add_window (main_window);
 
             var css_provider = new Gtk.CssProvider ();
             css_provider.load_from_resource ("io/elementary/mail/application.css");
