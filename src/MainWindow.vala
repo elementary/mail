@@ -58,9 +58,9 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
     static construct {
         action_accelerators[ACTION_COMPOSE_MESSAGE] = "<Control>N";
-        action_accelerators[ACTION_REPLY] = "<Control>N";
-        action_accelerators[ACTION_REPLY_ALL] = "<Control>R";
-        action_accelerators[ACTION_FORWARD] = "<Control><Shift>R";
+        action_accelerators[ACTION_REPLY] = "<Control>R";
+        action_accelerators[ACTION_REPLY_ALL] = "<Control><Shift>R";
+        action_accelerators[ACTION_FORWARD] = "<Ctrl><Shift>F";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "Delete";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "BackSpace";
     }
