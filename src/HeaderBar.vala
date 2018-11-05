@@ -28,10 +28,15 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
     }
 
     construct {
+        var application_instance = (Gtk.Application) GLib.Application.get_default ();
+
         var compose_button = new Gtk.Button.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR);
-        compose_button.halign = Gtk.Align.START;
-        compose_button.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>N"}, _("Compose new message"));
         compose_button.action_name = "win." + MainWindow.ACTION_COMPOSE_MESSAGE;
+        compose_button.halign = Gtk.Align.START;
+        compose_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (compose_button.action_name),
+            _("Compose new message")
+        );
 
         spacing_widget = new Gtk.Grid ();
 
@@ -79,20 +84,32 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         app_menu.tooltip_text = _("Menu");
 
         var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR);
-        reply_button.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>R"}, _("Reply"));
         reply_button.action_name = "win." + MainWindow.ACTION_REPLY;
+        reply_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (reply_button.action_name),
+            _("Reply")
+        );
 
         var reply_all_button = new Gtk.Button.from_icon_name ("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR);
-        reply_all_button.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl><Shift>R"}, _("Reply All"));
         reply_all_button.action_name = "win." + MainWindow.ACTION_REPLY_ALL;
+        reply_all_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (reply_all_button.action_name),
+            _("Reply All")
+        );
 
         var forward_button = new Gtk.Button.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR);
-        forward_button.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl><Shift>F"}, _("Forward"));
         forward_button.action_name = "win." + MainWindow.ACTION_FORWARD;
+        forward_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (forward_button.action_name),
+            _("Forward")
+        );
 
         var trash_button = new Gtk.Button.from_icon_name ("edit-delete", Gtk.IconSize.LARGE_TOOLBAR);
-        trash_button.tooltip_markup = Granite.markup_accel_tooltip ({"Delete", "BackSpace"}, _("Move conversations to Trash"));
         trash_button.action_name = "win." + MainWindow.ACTION_MOVE_TO_TRASH;
+        trash_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (trash_button.action_name),
+            _("Move conversations to Trash")
+        );
 
         pack_start (compose_button);
         pack_start (spacing_widget);

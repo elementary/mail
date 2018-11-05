@@ -61,15 +61,15 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         action_accelerators[ACTION_REPLY] = "<Control>N";
         action_accelerators[ACTION_REPLY_ALL] = "<Control>R";
         action_accelerators[ACTION_FORWARD] = "<Control><Shift>R";
-        action_accelerators[ACTION_MOVE_TO_TRASH] = "<Delete>";
-        action_accelerators[ACTION_MOVE_TO_TRASH] = "<BackSpace>";
+        action_accelerators[ACTION_MOVE_TO_TRASH] = "Delete";
+        action_accelerators[ACTION_MOVE_TO_TRASH] = "BackSpace";
     }
 
     construct {
         add_action_entries (action_entries, this);
 
         foreach (var action in action_accelerators.get_keys ()) {
-            application.set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
+            ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
         }
 
         headerbar = new HeaderBar ();
