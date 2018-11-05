@@ -147,25 +147,25 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
 
         var bold = new Gtk.ToggleButton ();
-        bold.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>B"}, _("Bold"));
+        bold.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>B"}, _("Bold"));
         bold.image = new Gtk.Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.MENU);
         bold.action_name = ACTION_PREFIX + ACTION_BOLD;
         bold.action_target = ACTION_BOLD;
 
         var italic = new Gtk.ToggleButton ();
-        italic.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>I"}, _("Italic"));
+        italic.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>I"}, _("Italic"));
         italic.image = new Gtk.Image.from_icon_name ("format-text-italic-symbolic", Gtk.IconSize.MENU);
         italic.action_name = ACTION_PREFIX + ACTION_ITALIC;
         italic.action_target = ACTION_ITALIC;
 
         var underline = new Gtk.ToggleButton ();
-        underline.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>U"}, _("Underline"));
+        underline.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>U"}, _("Underline"));
         underline.image = new Gtk.Image.from_icon_name ("format-text-underline-symbolic", Gtk.IconSize.MENU);
         underline.action_name = ACTION_PREFIX + ACTION_UNDERLINE;
         underline.action_target = ACTION_UNDERLINE;
 
         var strikethrough = new Gtk.ToggleButton ();
-        strikethrough.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>percent"}, _("Strikethrough"));
+        strikethrough.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>percent"}, _("Strikethrough"));
         strikethrough.image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU);
         strikethrough.action_name = ACTION_PREFIX + ACTION_STRIKETHROUGH;
         strikethrough.action_target = ACTION_STRIKETHROUGH;
@@ -178,10 +178,10 @@ public class Mail.ComposerWidget : Gtk.Grid {
         formatting_buttons.add (strikethrough);
 
         var indent_more = new Gtk.Button.from_icon_name ("format-indent-more-symbolic", Gtk.IconSize.MENU);
-        indent_more.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>bracketright"}, _("Quote text"));
+        indent_more.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>bracketright"}, _("Quote text"));
 
         var indent_less = new Gtk.Button.from_icon_name ("format-indent-less-symbolic", Gtk.IconSize.MENU);
-        indent_less.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>bracketleft"}, _("Unquote text"));
+        indent_less.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>bracketleft"}, _("Unquote text"));
 
         var indent_buttons = new Gtk.Grid ();
         indent_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
@@ -189,13 +189,13 @@ public class Mail.ComposerWidget : Gtk.Grid {
         indent_buttons.add (indent_less);
 
         var link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU);
-        link.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>K"}, _("Insert Link"));
+        link.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>K"}, _("Insert Link"));
 
         var image = new Gtk.Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.MENU);
-        image.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>G"}, _("Insert Image"));
+        image.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>G"}, _("Insert Image"));
 
         var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU);
-        clear_format.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>space"}, _("Remove formatting"));
+        clear_format.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>space"}, _("Remove formatting"));
         clear_format.action_name = ACTION_PREFIX + ACTION_REMOVE_FORMAT;
 
         var button_row = new Gtk.Grid ();
@@ -235,7 +235,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         send.sensitive = false;
         send.always_show_image = true;
         send.label = _("Send");
-        send.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>ISO_Enter"});
+        send.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>ISO_Enter"});
         send.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
