@@ -1,4 +1,4 @@
-vala_files = [
+vala_files = files(
     'Application.vala',
     'MainWindow.vala',
     'HeaderBar.vala',
@@ -11,7 +11,6 @@ vala_files = [
     'Backend/ContactManager.vala',
     'Composer/ComposerWidget.vala',
     'Composer/ComposerWindow.vala',
-    'Composer/ComposerWidget.vala',
     'Composer/InlineComposer.vala',
     'FoldersView/AccountSavedState.vala',
     'FoldersView/AccountSourceItem.vala',
@@ -23,7 +22,7 @@ vala_files = [
     'MessageList/MessageListItem.vala',
     'MessageList/AttachmentBar.vala',
     'MessageList/AttachmentButton.vala'
-]
+)
 
 executable(
     meson.project_name(),
