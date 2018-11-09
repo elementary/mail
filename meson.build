@@ -51,3 +51,6 @@ subdir('src')
 subdir('webkit-extension')
 subdir('data')
 subdir('po')
+if get_option('documentation')
+    subdir('docs')
+endif
