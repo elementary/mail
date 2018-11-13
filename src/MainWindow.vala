@@ -69,7 +69,10 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         add_action_entries (action_entries, this);
 
         foreach (var action in action_accelerators.get_keys ()) {
-            ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
+            ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
+                ACTION_PREFIX + action, 
+                action_accelerators[action].to_array ()
+            );
         }
 
         headerbar = new HeaderBar ();
