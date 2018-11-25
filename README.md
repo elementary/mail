@@ -12,7 +12,7 @@ You'll need the following dependencies:
 * libfolks-dev
 * libgee-0.8-dev
 * libglib2.0-dev
-* libgranite-dev
+* libgranite-dev >= 5.2.0
 * libwebkit2gtk-4.0-dev
 * valac
 
@@ -28,3 +28,7 @@ To install, use `ninja install`, then execute with `io.elementary.mail`
     io.elementary.mail
 
 You might want to set the `WEBKIT_EXTENSION_PATH` environment variable to the `webkit-extension` build folder in order to test the application without installing it
+
+## Connecting Your Account
+
+Mail uses Evolution Data Server and Camel to display your emails. Currently, the easiset way to test Mail with your accounts is to set up them up in Evolution first. Ultimately, setting up an account in Online Accounts will connect it to EDS/Camel but that has not yet been implemented.
