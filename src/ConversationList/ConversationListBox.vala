@@ -35,6 +35,7 @@ public class Mail.ConversationListBox : Gtk.ListBox {
     construct {
         activate_on_single_click = true;
         conversations = new Gee.HashMap<string, ConversationListItem> ();
+        set_header_func (thread_header_function);
         set_sort_func (thread_sort_function);
         row_activated.connect ((row) => {
             if (row == null) {
@@ -133,5 +134,42 @@ public class Mail.ConversationListBox : Gtk.ListBox {
         var item1 = (ConversationListItem) row1;
         var item2 = (ConversationListItem) row2;
         return (int)(item2.timestamp - item1.timestamp);
+    }
+
+    private static void thread_header_function (Gtk.ListBoxRow row1, Gtk.ListBoxRow? row2) {
+        var item1 = (ConversationListItem) row1;
+        var item2 = (ConversationListItem) row2;
+
+        int64 item2_timestamp;
+        if (item2 != null) {
+            item2_timestamp = item2.timestamp;
+        } else {
+            item2_timestamp = 0;
+        }
+
+        if (item2_timestamp - item1.timestamp < 0) {
+            var loading_label = new Gtk.Label (_("Updating…"));
+            loading_label.halign = Gtk.Align.START;
+            loading_label.valign = Gtk.Align.CENTER;
+            loading_label.hexpand = loading_label.vexpand = true;
+
+            var spinner = new Gtk.Spinner ();
+            spinner.active = true;
+            spinner.halign = Gtk.Align.END;
+            spinner.valign = Gtk.Align.CENTER;
+            spinner.hexpand = spinner.vexpand = true;
+
+            var pull_to_refresh = new Gtk.Grid ();
+            pull_to_refresh.column_spacing = 6;
+            pull_to_refresh.height_request = 64;
+            pull_to_refresh.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
+            pull_to_refresh.add (spinner);
+            pull_to_refresh.add (loading_label);
+            pull_to_refresh.show_all ();
+
+            row1.set_header (pull_to_refresh);
+        } else {
+            row1.set_header (null); 
+        }
     }
 }

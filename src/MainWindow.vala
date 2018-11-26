@@ -147,6 +147,23 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
             message_list_box.set_conversation (node);
         });
 
+        conversation_list_scrolled.size_allocate.connect (() => {
+            var adjustment = conversation_list_scrolled.vadjustment;
+
+            var val1 = adjustment.value;
+            double val2;
+            GLib.Timeout.add (8, () => {
+                val2 = adjustment.value;
+                if (val1 == val2 && val2 < 64){
+                    if (val2 < 8) {
+                        adjustment.set_value (val2 + 1);
+                    } else {
+                        adjustment.set_value (val2 + 8);
+                    }
+                }
+            });
+        });
+
         headerbar.size_allocate.connect (() => {
             headerbar.set_paned_positions (paned_start.position, paned_end.position);
         });
