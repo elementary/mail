@@ -1,13 +1,13 @@
-vala_files = [
+vala_files = files(
     'Application.vala',
     'MainWindow.vala',
     'HeaderBar.vala',
     'Utils.vala',
     'WebView.vala',
+    'WelcomeView.vala',
     'Backend/Account.vala',
     'Backend/ContactManager.vala',
     'Backend/Session.vala',
-    'Composer/ComposerWidget.vala',
     'Composer/ComposerWidget.vala',
     'Composer/ComposerWindow.vala',
     'Composer/InlineComposer.vala',
@@ -27,7 +27,7 @@ vala_files = [
     'VirtualizingListBox/VirtualizingListBoxModel.vala',
     'VirtualizingListBox/VirtualizingListBoxRow.vala',
     'VirtualizingListBox/VirtualizingListBox.vala'
-]
+)
 
 executable(
     meson.project_name(),

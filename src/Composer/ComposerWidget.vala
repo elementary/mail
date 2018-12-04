@@ -39,6 +39,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private Gtk.Entry to_val;
     private Gtk.Entry cc_val;
     private Gtk.Revealer cc_revealer;
+    private Granite.Widgets.OverlayBar message_url_overlay;
 
     public enum Type {
         REPLY,
@@ -146,25 +147,25 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
 
         var bold = new Gtk.ToggleButton ();
-        bold.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>B"}, _("Bold"));
+        bold.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>B"}, _("Bold"));
         bold.image = new Gtk.Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.MENU);
         bold.action_name = ACTION_PREFIX + ACTION_BOLD;
         bold.action_target = ACTION_BOLD;
 
         var italic = new Gtk.ToggleButton ();
-        italic.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>I"}, _("Italic"));
+        italic.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>I"}, _("Italic"));
         italic.image = new Gtk.Image.from_icon_name ("format-text-italic-symbolic", Gtk.IconSize.MENU);
         italic.action_name = ACTION_PREFIX + ACTION_ITALIC;
         italic.action_target = ACTION_ITALIC;
 
         var underline = new Gtk.ToggleButton ();
-        underline.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>U"}, _("Underline"));
+        underline.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>U"}, _("Underline"));
         underline.image = new Gtk.Image.from_icon_name ("format-text-underline-symbolic", Gtk.IconSize.MENU);
         underline.action_name = ACTION_PREFIX + ACTION_UNDERLINE;
         underline.action_target = ACTION_UNDERLINE;
 
         var strikethrough = new Gtk.ToggleButton ();
-        strikethrough.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>percent"}, _("Strikethrough"));
+        strikethrough.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>percent"}, _("Strikethrough"));
         strikethrough.image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU);
         strikethrough.action_name = ACTION_PREFIX + ACTION_STRIKETHROUGH;
         strikethrough.action_target = ACTION_STRIKETHROUGH;
@@ -177,10 +178,10 @@ public class Mail.ComposerWidget : Gtk.Grid {
         formatting_buttons.add (strikethrough);
 
         var indent_more = new Gtk.Button.from_icon_name ("format-indent-more-symbolic", Gtk.IconSize.MENU);
-        indent_more.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>bracketright"}, _("Quote text"));
+        indent_more.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>bracketright"}, _("Quote text"));
 
         var indent_less = new Gtk.Button.from_icon_name ("format-indent-less-symbolic", Gtk.IconSize.MENU);
-        indent_less.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>bracketleft"}, _("Unquote text"));
+        indent_less.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>bracketleft"}, _("Unquote text"));
 
         var indent_buttons = new Gtk.Grid ();
         indent_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
@@ -188,13 +189,13 @@ public class Mail.ComposerWidget : Gtk.Grid {
         indent_buttons.add (indent_less);
 
         var link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU);
-        link.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>K"}, _("Insert Link"));
+        link.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>K"}, _("Insert Link"));
 
         var image = new Gtk.Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.MENU);
-        image.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>G"}, _("Insert Image"));
+        image.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>G"}, _("Insert Image"));
 
         var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU);
-        clear_format.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>space"}, _("Remove formatting"));
+        clear_format.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>space"}, _("Remove formatting"));
         clear_format.action_name = ACTION_PREFIX + ACTION_REMOVE_FORMAT;
 
         var button_row = new Gtk.Grid ();
@@ -217,6 +218,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
 
         web_view.selection_changed.connect (update_actions);
+        web_view.mouse_target_changed.connect (on_mouse_target_changed);
 
         var action_bar = new Gtk.ActionBar ();
 
@@ -233,7 +235,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         send.sensitive = false;
         send.always_show_image = true;
         send.label = _("Send");
-        send.tooltip_markup = Mail.Utils.markup_accel_tooltip ({"<Ctrl>ISO_Enter"});
+        send.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>ISO_Enter"});
         send.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
@@ -242,11 +244,16 @@ public class Mail.ComposerWidget : Gtk.Grid {
         action_bar.pack_start (attach);
         action_bar.pack_end (send);
 
+        var view_overlay = new Gtk.Overlay();
+        view_overlay.add (web_view);
+        message_url_overlay = new Granite.Widgets.OverlayBar (view_overlay);
+        message_url_overlay.no_show_all = true;
+
         orientation = Gtk.Orientation.VERTICAL;
         add (recipient_grid);
         add (button_row);
         add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        add (web_view);
+        add (view_overlay);
         add (action_bar);
 
         var contact_manager = ContactManager.get_default ();
@@ -255,12 +262,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
         contact_manager.setup_entry (bcc_val);
 
         bind_property ("has-recipients", send, "sensitive");
-
-        web_view.bind_property ("has-focus", actions.lookup_action (ACTION_BOLD), "enabled", BindingFlags.SYNC_CREATE);
-        web_view.bind_property ("has-focus", actions.lookup_action (ACTION_ITALIC), "enabled", BindingFlags.SYNC_CREATE);
-        web_view.bind_property ("has-focus", actions.lookup_action (ACTION_UNDERLINE), "enabled", BindingFlags.SYNC_CREATE);
-        web_view.bind_property ("has-focus", actions.lookup_action (ACTION_STRIKETHROUGH), "enabled", BindingFlags.SYNC_CREATE);
-        web_view.bind_property ("has-focus", actions.lookup_action (ACTION_REMOVE_FORMAT), "enabled", BindingFlags.SYNC_CREATE);
 
         cc_button.clicked.connect (() => {
             cc_revealer.reveal_child = cc_button.active;
@@ -300,6 +301,23 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
             to_grid_style_context.set_state (state);
         });
+    }
+
+    private void on_mouse_target_changed (WebKit.WebView web_view, WebKit.HitTestResult hit_test, uint mods) {
+        if (hit_test.context_is_link ()) {
+            var url = hit_test.get_link_uri ();
+            var hover_url = url != null ? Soup.URI.decode (url) : null;
+
+            if (hover_url == null) {
+                message_url_overlay.hide ();
+            } else {
+                message_url_overlay.label = hover_url;
+                message_url_overlay.no_show_all = false;
+                message_url_overlay.show_all ();
+            }
+        } else {
+            message_url_overlay.hide ();
+        }
     }
 
     public void quote_content (Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content_to_quote) {
