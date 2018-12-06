@@ -20,25 +20,13 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.ConversationListItem : Gtk.ListBoxRow {
+public class Mail.ConversationListItem : VirtualizingListBoxRow {
     private Gtk.Label date;
     private Gtk.Label messages;
     private Gtk.Label source;
     private Gtk.Label topic;
     private Gtk.Revealer flagged_icon_revealer;
     private Gtk.Revealer unread_icon_revealer;
-
-    public Camel.FolderThreadNode node { get; private set; }
-
-    public int64 timestamp {
-        get {
-            return get_newest_timestamp (node);
-        }
-    }
-
-    public ConversationListItem (Camel.FolderThreadNode node) {
-        update_node (node);
-    }
 
     construct {
         var unread_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic", Gtk.IconSize.MENU);
@@ -89,44 +77,23 @@ public class Mail.ConversationListItem : Gtk.ListBoxRow {
         show_all ();
     }
 
-    public void update_node (Camel.FolderThreadNode node) {
-        this.node = node;
-        var num_messages = count_thread_messages (node);
+    public void assign (ConversationItemModel data) {
+        date.label = data.formatted_date;
+        topic.label = data.subject;
+        source.label = data.from;
 
-        messages.label = num_messages > 1 ? "%u".printf(num_messages) : null;
-        messages.no_show_all = num_messages <= 1;
-        messages.visible = num_messages > 1;
+        messages.label = data.num_messages > 1 ? "%u".printf (data.num_messages) : null;
+        messages.visible = data.num_messages > 1;
+        messages.no_show_all = data.num_messages <= 1;
 
-        topic.label = node.message.subject;
-
-        var from_parts = node.message.from.split ("<");
-        var from_name = GLib.Markup.escape_text (from_parts[0].strip ());
-
-        source.label = from_name;
-
-        if (!(Camel.MessageFlags.SEEN in (int)node.message.flags)) {
+        unread_icon_revealer.reveal_child = data.unread;
+        if (data.unread) {
             get_style_context ().add_class ("unread-message");
-            unread_icon_revealer.reveal_child = true;
         } else {
             get_style_context ().remove_class ("unread-message");
         }
 
-        if (Camel.MessageFlags.FLAGGED in (int)node.message.flags) {
-            flagged_icon_revealer.reveal_child = true;
-        }
-
-        date.label = Granite.DateTime.get_relative_datetime (new DateTime.from_unix_local (timestamp));
-    }
-
-    private static uint count_thread_messages (Camel.FolderThreadNode node) {
-        unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) node.child;
-        uint i = 1;
-        while (child != null) {
-            i += count_thread_messages (child);
-            child = (Camel.FolderThreadNode?) child.next;
-        }
-
-        return i;
+        flagged_icon_revealer.reveal_child = data.flagged;
     }
 
     private static int64 get_newest_timestamp (Camel.FolderThreadNode node, int64 highest = -1) {
