@@ -116,4 +116,8 @@ public abstract class VirtualizingListBoxModel : GLib.ListModel, GLib.Object {
 
         return -1;
     }
+
+    public Gee.HashSet<weak GLib.Object> get_selected_rows () {
+        return selected_rows;
+    }
 }

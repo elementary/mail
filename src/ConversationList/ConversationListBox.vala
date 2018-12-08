@@ -32,6 +32,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     private string current_folder;
     private Gee.HashMap<string, ConversationItemModel> conversations;
     private ConversationListStore list_store;
+    private TrashHandler trash_handler;
 
     construct {
         activate_on_single_click = true;
@@ -39,6 +40,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         list_store = new ConversationListStore ();
         list_store.set_sort_func (thread_sort_function);
         model = list_store;
+        trash_handler = new TrashHandler ();
 
         factory_func = (item, old_widget) => {
             ConversationListItem? row = null;
@@ -155,5 +157,15 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
     private static int thread_sort_function (ConversationItemModel item1, ConversationItemModel item2) {
         return (int)(item2.timestamp - item1.timestamp);
+    }
+
+    public void trash_selected_messages () {
+        var threads = new Gee.ArrayList<Camel.FolderThreadNode?> ();
+        var selected_rows = get_selected_rows ();
+        foreach (var row in selected_rows) {
+            threads.add (((ConversationItemModel)row).node);
+        }
+
+        trash_handler.delete_threads.begin (current_account, folder, threads);
     }
 }

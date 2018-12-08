@@ -827,4 +827,8 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
         border = Gtk.Border ();
         return false;
     }
+
+    public Gee.HashSet<weak GLib.Object> get_selected_rows () {
+        return model.get_selected_rows ();
+    }
 }

@@ -70,7 +70,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
         foreach (var action in action_accelerators.get_keys ()) {
             ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
-                ACTION_PREFIX + action, 
+                ACTION_PREFIX + action,
                 action_accelerators[action].to_array ()
             );
         }
@@ -199,28 +199,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_move_to_trash () {
-        try {
-            var account = conversation_list_box.current_account;
-            var offline_store = (Camel.OfflineStore) account.service;
-            var trash_folder = offline_store.get_trash_folder_sync ();
-            if (trash_folder == null) {
-                critical ("Could not find trash folder in account " + account.service.display_name);
-            }
-
-            var source_folder = conversation_list_box.folder;
-            var uids = message_list_box.uids;
-
-            trash_folder.freeze ();
-            source_folder.freeze ();
-            try {
-                source_folder.transfer_messages_to_sync (uids, trash_folder, true, null);
-            } finally {
-                trash_folder.thaw ();
-                source_folder.thaw ();
-            }
-        } catch (Error e) {
-            critical ("Could not move messages to trash: " + e.message);
-        }
+        conversation_list_box.trash_selected_messages ();
     }
 
     private SimpleAction? get_action (string name) {
