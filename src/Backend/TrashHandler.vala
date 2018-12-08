@@ -22,7 +22,7 @@ public class Mail.TrashHandler {
     private Camel.Folder previous_folder;
     private GenericArray<string> deleted_uids;
 
-    public async bool delete_threads (Backend.Account account, Camel.Folder folder, Gee.ArrayList<Camel.FolderThreadNode?> threads) {
+    public async int delete_threads (Backend.Account account, Camel.Folder folder, Gee.ArrayList<Camel.FolderThreadNode?> threads) {
         previous_folder = folder;
 
         GenericArray<string> uids = new GenericArray<string> ();
@@ -36,7 +36,7 @@ public class Mail.TrashHandler {
             var trash_folder = offline_store.get_trash_folder_sync ();
             if (trash_folder == null) {
                 critical ("Could not find trash folder in account " + account.service.display_name);
-                return false;
+                return 0;
             }
 
             trash_folder.freeze ();
@@ -49,10 +49,10 @@ public class Mail.TrashHandler {
             }
         } catch (Error e) {
             critical ("Could not move messages to trash: " + e.message);
-            return false;
+            return 0;
         }
 
-        return true;
+        return uids.length;
     }
 
     private void add_thread_uids (ref GenericArray<string> uids, Camel.FolderThreadNode thread) {

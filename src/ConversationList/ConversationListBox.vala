@@ -159,13 +159,13 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         return (int)(item2.timestamp - item1.timestamp);
     }
 
-    public void trash_selected_messages () {
+    public async int trash_selected_messages () {
         var threads = new Gee.ArrayList<Camel.FolderThreadNode?> ();
         var selected_rows = get_selected_rows ();
         foreach (var row in selected_rows) {
             threads.add (((ConversationItemModel)row).node);
         }
 
-        trash_handler.delete_threads.begin (current_account, folder, threads);
+        return yield trash_handler.delete_threads (current_account, folder, threads);
     }
 }

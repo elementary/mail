@@ -24,7 +24,9 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     private Gtk.Paned paned_start;
 
     private FoldersListView folders_list_view;
+    private Gtk.Overlay conversation_list_overlay;
     private ConversationListBox conversation_list_box;
+    private Gtk.ScrolledWindow conversation_list_scrolled;
     private MessageListBox message_list_box;
     private Gtk.ScrolledWindow message_list_scrolled;
 
@@ -87,10 +89,13 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         message_list_box.bind_property ("can-reply", get_action (ACTION_FORWARD), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-move-thread", get_action (ACTION_MOVE_TO_TRASH), "enabled", BindingFlags.SYNC_CREATE);
 
-        var conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
+        conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
         conversation_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         conversation_list_scrolled.width_request = 158;
         conversation_list_scrolled.add (conversation_list_box);
+
+        conversation_list_overlay = new Gtk.Overlay ();
+        conversation_list_overlay.add (conversation_list_scrolled);
 
         message_list_scrolled = new Gtk.ScrolledWindow (null, null);
         message_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -118,7 +123,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
         paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_start.pack1 (folders_list_view, false, false);
-        paned_start.pack2 (conversation_list_scrolled, true, false);
+        paned_start.pack2 (conversation_list_overlay, true, false);
 
         paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_end.pack1 (paned_start, false, false);
@@ -199,7 +204,23 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_move_to_trash () {
-        conversation_list_box.trash_selected_messages ();
+        conversation_list_box.trash_selected_messages.begin ((obj, res) => {
+            var result = conversation_list_box.trash_selected_messages.end (res);
+            if (result > 0) {
+                foreach (weak Gtk.Widget child in conversation_list_overlay.get_children ()) {
+                    if (child != conversation_list_scrolled) {
+                        child.destroy ();
+                    }
+                }
+
+                var toast = new Granite.Widgets.Toast (ngettext("Message Deleted", "Messages Deleted", result));
+                toast.set_default_action (_("Undo"));
+                toast.show_all ();
+
+                conversation_list_overlay.add_overlay (toast);
+                toast.send_notification ();
+            }
+        });
     }
 
     private SimpleAction? get_action (string name) {
