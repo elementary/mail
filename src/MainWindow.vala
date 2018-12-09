@@ -204,23 +204,31 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_move_to_trash () {
-        conversation_list_box.trash_selected_messages.begin ((obj, res) => {
-            var result = conversation_list_box.trash_selected_messages.end (res);
-            if (result > 0) {
-                foreach (weak Gtk.Widget child in conversation_list_overlay.get_children ()) {
-                    if (child != conversation_list_scrolled) {
-                        child.destroy ();
-                    }
+        var result = conversation_list_box.trash_selected_messages ();
+        if (result > 0) {
+            foreach (weak Gtk.Widget child in conversation_list_overlay.get_children ()) {
+                if (child != conversation_list_scrolled) {
+                    child.destroy ();
                 }
-
-                var toast = new Granite.Widgets.Toast (ngettext("Message Deleted", "Messages Deleted", result));
-                toast.set_default_action (_("Undo"));
-                toast.show_all ();
-
-                conversation_list_overlay.add_overlay (toast);
-                toast.send_notification ();
             }
-        });
+
+            var toast = new Granite.Widgets.Toast (ngettext("Message Deleted", "Messages Deleted", result));
+            toast.set_default_action (_("Undo"));
+            toast.show_all ();
+
+            toast.default_action.connect (() => {
+                conversation_list_box.undo_trash ();
+            });
+
+            toast.notify["child-revealed"].connect (() => {
+                if (!toast.child_revealed) {
+                    conversation_list_box.undo_expired ();
+                }
+            });
+
+            conversation_list_overlay.add_overlay (toast);
+            toast.send_notification ();
+        }
     }
 
     private SimpleAction? get_action (string name) {

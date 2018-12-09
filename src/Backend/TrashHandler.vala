@@ -22,7 +22,7 @@ public class Mail.TrashHandler {
     private Camel.Folder previous_folder;
     private GenericArray<string> deleted_uids;
 
-    public async int delete_threads (Backend.Account account, Camel.Folder folder, Gee.ArrayList<Camel.FolderThreadNode?> threads) {
+    public int delete_threads (Backend.Account account, Camel.Folder folder, Gee.ArrayList<Camel.FolderThreadNode?> threads) {
         previous_folder = folder;
 
         GenericArray<string> uids = new GenericArray<string> ();
@@ -31,28 +31,34 @@ public class Mail.TrashHandler {
             add_thread_uids (ref uids, thread);
         }
 
-        try {
-            var offline_store = (Camel.OfflineStore) account.service;
-            var trash_folder = offline_store.get_trash_folder_sync ();
-            if (trash_folder == null) {
-                critical ("Could not find trash folder in account " + account.service.display_name);
-                return 0;
-            }
+        deleted_uids = new GenericArray<string> ();
+        for (int i = 0; i < uids.length; i++) {
+            deleted_uids.add (uids[i]);
+        }
 
-            trash_folder.freeze ();
-            folder.freeze ();
-            try {
-                yield folder.transfer_messages_to (uids, trash_folder, true, GLib.Priority.DEFAULT, null, out deleted_uids);
-            } finally {
-                trash_folder.thaw ();
-                folder.thaw ();
-            }
-        } catch (Error e) {
-            critical ("Could not move messages to trash: " + e.message);
-            return 0;
+        folder.freeze ();
+
+        for (int i = 0; i < uids.length; i++) {
+            folder.set_message_flags (uids[i], Camel.MessageFlags.DELETED, ~0);
         }
 
         return uids.length;
+    }
+
+    public void undo_last_delete () {
+        previous_folder.freeze ();
+
+        for (int i = 0; i < deleted_uids.length; i++) {
+            warning (deleted_uids[i]);
+            warning (previous_folder.get_message_flags (deleted_uids[i]).to_string ());
+            previous_folder.set_message_flags (deleted_uids[i], Camel.MessageFlags.DELETED, 0);
+        }
+
+        previous_folder.thaw ();
+    }
+
+    public void expire_undo () {
+        previous_folder.thaw ();
     }
 
     private void add_thread_uids (ref GenericArray<string> uids, Camel.FolderThreadNode thread) {
