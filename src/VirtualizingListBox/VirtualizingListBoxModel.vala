@@ -60,7 +60,9 @@ public abstract class VirtualizingListBoxModel : GLib.ListModel, GLib.Object {
                 continue;
             }
 
-            items.add (item);
+            if (item != null) {
+                items.add (item);
+            }
 
             if ((item == to || item == from) && !ignore_next_break) {
                 break;
@@ -95,7 +97,9 @@ public abstract class VirtualizingListBoxModel : GLib.ListModel, GLib.Object {
         var length = get_n_items ();
         for (int i = 1; i < length; i++) {
             if (get_item (i) == item) {
-                return i - 1;
+                if (get_item (i - 1) != null) {
+                    return i - 1;
+                }
             }
         }
 
@@ -110,7 +114,9 @@ public abstract class VirtualizingListBoxModel : GLib.ListModel, GLib.Object {
         var length = get_n_items ();
         for (int i = 0; i < length - 1; i++) {
             if (get_item (i) == item) {
-                return i + 1;
+                if (get_item (i + 1) != null) {
+                    return i + 1;
+                }
             }
         }
 

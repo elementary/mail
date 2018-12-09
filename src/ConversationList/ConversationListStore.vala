@@ -21,10 +21,13 @@
  */
 
 public class Mail.ConversationListStore : VirtualizingListBoxModel {
+    public delegate bool RowVisibilityFunc (GLib.Object row);
+
     private GLib.Sequence<ConversationItemModel> data = new GLib.Sequence<ConversationItemModel> ();
     private uint last_position = -1u;
     private GLib.SequenceIter<ConversationItemModel>? last_iter;
     private unowned GLib.CompareDataFunc<ConversationItemModel> compare_func;
+    private unowned RowVisibilityFunc filter_func;
 
     public override uint get_n_items () {
         return data.get_length ();
@@ -54,7 +57,13 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
             return null;
         }
 
-        return iter.get ();
+        if (filter_func == null) {
+            return iter.get ();
+        } else if (filter_func (iter.get ())) {
+            return iter.get ();
+        } else {
+            return null;
+        }
     }
 
     public void add (ConversationItemModel data) {
@@ -86,5 +95,9 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
 
     public void set_sort_func (GLib.CompareDataFunc<ConversationItemModel> function) {
         this.compare_func = function;
+    }
+
+    public void set_filter_func (RowVisibilityFunc function) {
+        filter_func = function;
     }
 }
