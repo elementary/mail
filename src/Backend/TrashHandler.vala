@@ -21,6 +21,8 @@
 public class Mail.TrashHandler {
     private Camel.Folder previous_folder;
     private Gee.ArrayList<weak Camel.MessageInfo> deleted_messages;
+    private bool frozen = false;
+    private uint timeout_id = -1;
 
     public int delete_threads (Camel.Folder folder, Gee.ArrayList<Camel.FolderThreadNode?> threads) {
         previous_folder = folder;
@@ -32,6 +34,13 @@ public class Mail.TrashHandler {
         }
 
         folder.freeze ();
+        frozen = true;
+
+        timeout_id = Timeout.add_seconds (10, () => {
+            expire_undo ();
+            timeout_id = -1;
+            return Source.REMOVE;
+        });
 
         foreach (var info in deleted_messages) {
             info.set_flags (Camel.MessageFlags.DELETED, ~0);
@@ -47,7 +56,15 @@ public class Mail.TrashHandler {
     }
 
     public void expire_undo () {
-        previous_folder.thaw ();
+        if (timeout_id != -1) {
+            Source.remove (timeout_id);
+            timeout_id = -1;
+        }
+
+        if (frozen) {
+            frozen = false;
+            previous_folder.thaw ();
+        }
     }
 
     private void collect_thread_messages (Camel.FolderThreadNode thread) {
