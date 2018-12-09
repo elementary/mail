@@ -39,6 +39,9 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         conversations = new Gee.HashMap<string, ConversationItemModel> ();
         list_store = new ConversationListStore ();
         list_store.set_sort_func (thread_sort_function);
+        list_store.set_filter_func ((obj) => {
+            return !((ConversationItemModel)obj).deleted;
+        });
 
         model = list_store;
         trash_handler = new TrashHandler ();

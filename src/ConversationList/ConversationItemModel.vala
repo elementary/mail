@@ -60,6 +60,12 @@ public class Mail.ConversationItemModel : GLib.Object {
         }
     }
 
+    public bool deleted {
+        get {
+            return Camel.MessageFlags.DELETED in (int)node.message.flags;
+        }
+    }
+
     public int64 timestamp {
         get {
             return get_newest_timestamp (node);

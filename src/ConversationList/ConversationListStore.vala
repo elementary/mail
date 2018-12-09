@@ -34,6 +34,14 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
     }
 
     public override GLib.Object? get_item (uint index) {
+        return get_item_internal (index);
+    }
+
+    public override GLib.Object? get_item_unfiltered (uint index) {
+        return get_item_internal (index, true);
+    }
+
+    private GLib.Object? get_item_internal (uint index, bool unfiltered = false) {
         GLib.SequenceIter<ConversationItemModel>? iter = null;
 
         if (last_position != -1u) {
@@ -61,6 +69,8 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
             return iter.get ();
         } else if (filter_func (iter.get ())) {
             return iter.get ();
+        } else if (unfiltered) {
+            return iter.get ();
         } else {
             return null;
         }
@@ -78,7 +88,7 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
     }
 
     public void remove (ConversationItemModel data) {
-        var iter = this.data.get_iter_at_pos (get_index_of (data));
+        var iter = this.data.get_iter_at_pos (get_index_of_unfiltered (data));
         iter.remove ();
 
         last_iter = null;

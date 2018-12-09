@@ -29,6 +29,7 @@ public abstract class VirtualizingListBoxModel : GLib.ListModel, GLib.Object {
 
     public abstract uint get_n_items ();
     public abstract GLib.Object? get_item (uint index);
+    public abstract GLib.Object? get_item_unfiltered (uint index);
 
     public void unselect_all () {
         selected_rows.clear ();
@@ -82,6 +83,21 @@ public abstract class VirtualizingListBoxModel : GLib.ListModel, GLib.Object {
         var length = get_n_items ();
         for (int i = 0; i < length; i++) {
             if (item == get_item (i)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public int get_index_of_unfiltered (GLib.Object? item) {
+        if (item == null) {
+            return -1;
+        }
+
+        var length = get_n_items ();
+        for (int i = 0; i < length; i++) {
+            if (item == get_item_unfiltered (i)) {
                 return i;
             }
         }
