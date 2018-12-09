@@ -170,11 +170,14 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             threads.add (((ConversationItemModel)row).node);
         }
 
-        return trash_handler.delete_threads (folder, threads);
+        var deleted = trash_handler.delete_threads (folder, threads);
+        list_store.items_changed (0, 0, list_store.get_n_items ());
+        return deleted;
     }
 
     public void undo_trash () {
         trash_handler.undo_last_delete ();
+        list_store.items_changed (0, 0, list_store.get_n_items ());
     }
 
     public void undo_expired () {
