@@ -20,52 +20,41 @@
 
 public class Mail.TrashHandler {
     private Camel.Folder previous_folder;
-    private GenericArray<string> deleted_uids;
+    private Gee.ArrayList<weak Camel.MessageInfo> deleted_messages;
 
-    public int delete_threads (Backend.Account account, Camel.Folder folder, Gee.ArrayList<Camel.FolderThreadNode?> threads) {
+    public int delete_threads (Camel.Folder folder, Gee.ArrayList<Camel.FolderThreadNode?> threads) {
         previous_folder = folder;
 
-        GenericArray<string> uids = new GenericArray<string> ();
+        deleted_messages = new Gee.ArrayList<weak Camel.MessageInfo> ();
 
         foreach (var thread in threads) {
-            add_thread_uids (ref uids, thread);
-        }
-
-        deleted_uids = new GenericArray<string> ();
-        for (int i = 0; i < uids.length; i++) {
-            deleted_uids.add (uids[i]);
+            collect_thread_messages (thread);
         }
 
         folder.freeze ();
 
-        for (int i = 0; i < uids.length; i++) {
-            folder.set_message_flags (uids[i], Camel.MessageFlags.DELETED, ~0);
+        foreach (var info in deleted_messages) {
+            info.set_flags (Camel.MessageFlags.DELETED, ~0);
         }
 
-        return uids.length;
+        return deleted_messages.size;
     }
 
     public void undo_last_delete () {
-        previous_folder.freeze ();
-
-        for (int i = 0; i < deleted_uids.length; i++) {
-            warning (deleted_uids[i]);
-            warning (previous_folder.get_message_flags (deleted_uids[i]).to_string ());
-            previous_folder.set_message_flags (deleted_uids[i], Camel.MessageFlags.DELETED, 0);
+        foreach (var info in deleted_messages) {
+            info.set_flags (Camel.MessageFlags.DELETED, 0);
         }
-
-        previous_folder.thaw ();
     }
 
     public void expire_undo () {
         previous_folder.thaw ();
     }
 
-    private void add_thread_uids (ref GenericArray<string> uids, Camel.FolderThreadNode thread) {
-        uids.add (thread.message.uid);
+    private void collect_thread_messages (Camel.FolderThreadNode thread) {
+        deleted_messages.add (thread.message);
         unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.child;
         while (child != null) {
-            add_thread_uids (ref uids, child);
+            collect_thread_messages (child);
             child = (Camel.FolderThreadNode?) child.next;
         }
     }

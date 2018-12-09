@@ -166,7 +166,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             threads.add (((ConversationItemModel)row).node);
         }
 
-        return trash_handler.delete_threads (current_account, folder, threads);
+        return trash_handler.delete_threads (folder, threads);
     }
 
     public void undo_trash () {
