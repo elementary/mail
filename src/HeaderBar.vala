@@ -28,9 +28,18 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
     }
 
     construct {
+        var xdg_current_desktop = GLib.Environment.get_variable(
+            "XDG_CURRENT_DESKTOP"
+        );
+
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
-        var compose_button = new Gtk.Button.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR);
+        //();
+        var compose_button = new Gtk.Button.from_icon_name (
+            xdg_current_desktop == "Pantheon" ?
+                "mail-message-new" : "mail-message-new-symbolic",
+            Gtk.IconSize.LARGE_TOOLBAR
+        );
         compose_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_COMPOSE_MESSAGE;
         compose_button.halign = Gtk.Align.START;
         compose_button.tooltip_markup = Granite.markup_accel_tooltip (
@@ -79,32 +88,52 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         var app_menu = new Gtk.MenuButton ();
         var app_menu_popover = new Gtk.Popover (app_menu);
         app_menu_popover.add (app_menu_grid);
-        app_menu.image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
+        app_menu.image = new Gtk.Image.from_icon_name (
+            xdg_current_desktop == "Pantheon" ?
+                "open-menu" : "open-menu-symbolic",
+            Gtk.IconSize.LARGE_TOOLBAR
+        );
         app_menu.popover = app_menu_popover;
         app_menu.tooltip_text = _("Menu");
 
-        var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR);
+        var reply_button = new Gtk.Button.from_icon_name (
+            xdg_current_desktop == "Pantheon" ?
+                "mail-reply-sender" : "mail-reply-sender-symbolic",
+            Gtk.IconSize.LARGE_TOOLBAR
+        );
         reply_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY;
         reply_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (reply_button.action_name),
             _("Reply")
         );
 
-        var reply_all_button = new Gtk.Button.from_icon_name ("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR);
+        var reply_all_button = new Gtk.Button.from_icon_name (
+            xdg_current_desktop == "Pantheon" ?
+                "mail-reply-all" : "mail-reply-all-symbolic",
+            Gtk.IconSize.LARGE_TOOLBAR
+        );
         reply_all_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL;
         reply_all_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (reply_all_button.action_name),
             _("Reply All")
         );
 
-        var forward_button = new Gtk.Button.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR);
+        var forward_button = new Gtk.Button.from_icon_name (
+            xdg_current_desktop == "Pantheon" ?
+                "mail-forward-symbolic" : "mail-forward-symbolic",
+            Gtk.IconSize.LARGE_TOOLBAR
+        );
         forward_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD;
         forward_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (forward_button.action_name),
             _("Forward")
         );
 
-        var trash_button = new Gtk.Button.from_icon_name ("edit-delete", Gtk.IconSize.LARGE_TOOLBAR);
+        var trash_button = new Gtk.Button.from_icon_name (
+            xdg_current_desktop == "Pantheon" ?
+                "edit-delete" : "edit-delete-symbolic",
+            Gtk.IconSize.LARGE_TOOLBAR
+        );
         trash_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH;
         trash_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (trash_button.action_name),
