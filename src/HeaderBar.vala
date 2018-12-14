@@ -34,7 +34,6 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
 
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
-        //();
         var compose_button = new Gtk.Button.from_icon_name (
             xdg_current_desktop == "Pantheon" ?
                 "mail-message-new" : "mail-message-new-symbolic",
