@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-08 13:23-0800\n"
+"POT-Creation-Date: 2018-12-17 07:10+0100\n"
 "PO-Revision-Date: 2017-05-23 08:11+0000\n"
 "Last-Translator: Fernando da Silva Sousa <wild.nando@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) "
-"<https://l10n.elementary.io/projects/mail/extra/pt_BR/>\n"
+"Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/mail/"
+"extra/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,24 +20,17 @@ msgstr ""
 "X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
+#: data/io.elementary.mail.appdata.xml.in:8
+#: data/io.elementary.mail.desktop.in:3
 msgid "Mail"
 msgstr "Correio"
 
+#: data/io.elementary.mail.appdata.xml.in:9
+#: data/io.elementary.mail.desktop.in:4
 msgid "Send and receive mail"
 msgstr "Enviei e receba emails"
 
-msgid "Email;E-mail;Mail;"
-msgstr "Email;E-mail;Correio;"
-
-msgid "Compose Message"
-msgstr "Escrever mensagem"
-
-msgid "About Mail"
-msgstr "Sobre Correio"
-
-msgid "Lightweight mail client"
-msgstr "Gerenciador de e-mails leve"
-
+#: data/io.elementary.mail.appdata.xml.in:11
 msgid ""
 "Mail is designed to let you manage your email quickly and effortlessly. Its "
 "interface is based on conversations, so you can read an entire discussion "
@@ -47,24 +40,31 @@ msgstr ""
 "nenhum esforço. Sua interface é baseada em conversas, então você pode ler "
 "todas as respostas sem precisar clicar em cada mensagem."
 
+#: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
 msgstr "Gerenciador de e-mails leve com suporte total ao protocolo IMAP"
 
+#: data/io.elementary.mail.appdata.xml.in:14
 msgid "Mail grouped into conversations, not a tree of threads"
 msgstr "E-mails agrupados em conversas, não em uma árvore de assuntos."
 
+#: data/io.elementary.mail.appdata.xml.in:15
 msgid "As-you-type searching"
 msgstr "Busca dinâmica"
 
+#: data/io.elementary.mail.appdata.xml.in:16
 msgid "Desktop notifications"
 msgstr "Notificações da área de trabalho"
 
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "Suporte a contas múltiplas"
 
+#: data/io.elementary.mail.appdata.xml.in:18
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "Compositor HTML em linha que salva rascunhos no servidor"
 
+#: data/io.elementary.mail.appdata.xml.in:19
 msgid ""
 "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
 "IMAP servers"
@@ -72,17 +72,40 @@ msgstr ""
 "Funciona com Gmail, Yahoo! Mail, Outlook.com (beta) e outros servidores IMAP "
 "populares."
 
-msgid "Minor bug fixes"
-msgstr "Pequenas correções de bugs"
+#: data/io.elementary.mail.appdata.xml.in:69
+msgid "elementary, Inc."
+msgstr ""
 
-msgid "Translation updates"
-msgstr "Atualizações de tradução"
+#: data/io.elementary.mail.desktop.in:6
+msgid "internet-mail"
+msgstr ""
 
-msgid "Appstream: add releases info"
-msgstr "Appstream: adicionar informações de lançamento"
+#: data/io.elementary.mail.desktop.in:7
+msgid "Email;E-mail;Mail;"
+msgstr "Email;E-mail;Correio;"
 
-msgid "Don't overwrite custom settings not available in the POA plugin"
-msgstr "Não sobrescreva configurações padrão não disponíveis em um plugin POA"
+#: data/io.elementary.mail.desktop.in:17
+msgid "Compose Message"
+msgstr "Escrever mensagem"
 
-msgid "Release for Loki"
-msgstr "Lançamento para Loki"
+#~ msgid "About Mail"
+#~ msgstr "Sobre Correio"
+
+#~ msgid "Lightweight mail client"
+#~ msgstr "Gerenciador de e-mails leve"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "Pequenas correções de bugs"
+
+#~ msgid "Translation updates"
+#~ msgstr "Atualizações de tradução"
+
+#~ msgid "Appstream: add releases info"
+#~ msgstr "Appstream: adicionar informações de lançamento"
+
+#~ msgid "Don't overwrite custom settings not available in the POA plugin"
+#~ msgstr ""
+#~ "Não sobrescreva configurações padrão não disponíveis em um plugin POA"
+
+#~ msgid "Release for Loki"
+#~ msgstr "Lançamento para Loki"

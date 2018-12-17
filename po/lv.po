@@ -1,5 +1,233 @@
 msgid ""
 msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-17 07:10+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
+
+#: src/HeaderBar.vala:38
+msgid "Compose new message"
+msgstr ""
+
+#: src/HeaderBar.vala:44
+msgid "Search Mail"
+msgstr ""
+
+#: src/HeaderBar.vala:56
+msgid "Always Show Remote Images"
+msgstr ""
+
+#: src/HeaderBar.vala:64
+msgid "Account Settings…"
+msgstr ""
+
+#: src/HeaderBar.vala:84
+msgid "Menu"
+msgstr ""
+
+#: src/HeaderBar.vala:90
+msgid "Reply"
+msgstr ""
+
+#: src/HeaderBar.vala:97
+msgid "Reply All"
+msgstr ""
+
+#: src/HeaderBar.vala:104
+msgid "Forward"
+msgstr ""
+
+#: src/HeaderBar.vala:111
+msgid "Move conversations to Trash"
+msgstr ""
+
+#: src/WelcomeView.vala:40
+msgid "Connect an Account"
+msgstr ""
+
+#: src/WelcomeView.vala:45
+msgid "Mail uses email accounts configured in System Settings."
+msgstr ""
+
+#: src/WelcomeView.vala:50
+msgid "Online Accounts…"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:72 src/MessageList/MessageListItem.vala:81
+msgid "To:"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:76 src/MessageList/MessageListItem.vala:86
+msgid "Subject:"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:83
+msgid "Cc"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:85
+msgid "Bcc"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:115
+msgid "Cc:"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:111
+msgid "Bcc:"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:150
+msgid "Bold"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:156
+msgid "Italic"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:162
+msgid "Underline"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:168
+msgid "Strikethrough"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:181
+msgid "Quote text"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:184
+msgid "Unquote text"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:192
+msgid "Insert Link"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:195
+msgid "Insert Image"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:198
+msgid "Remove formatting"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:227
+msgid "Delete draft"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:231
+msgid "Attach file"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:237
+msgid "Send"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:326
+msgid "%a, %b %-e, %Y at %-l:%M %p"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:356
+#, c-format
+msgid "On %1$s, %2$s wrote:"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:360
+msgid "---------- Forwarded message ----------"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:362
+#, c-format
+msgid "From: %s<br/>"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:363
+#, c-format
+msgid "Subject: %s<br/>"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:364
+#, c-format
+msgid "Date: %s<br/>"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:365
+#, c-format
+msgid "To: %s<br/>"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:367
+#, c-format
+msgid "Cc: %s<br/>"
+msgstr ""
+
+#: src/Composer/ComposerWindow.vala:25
+msgid "New Message"
+msgstr ""
+
+#: src/Dialogs/OpenAttachmentDialog.vala:37
+#, c-format
+msgid "Are you sure you want to open %s?"
+msgstr ""
+
+#: src/Dialogs/OpenAttachmentDialog.vala:44
+msgid ""
+"Attachments may cause damage to your system if opened. Only open files from "
+"trusted sources."
+msgstr ""
+
+#: src/Dialogs/OpenAttachmentDialog.vala:49
+msgid "Open Anyway"
+msgstr ""
+
+#: src/Dialogs/OpenAttachmentDialog.vala:65
+#: src/MessageList/AttachmentButton.vala:111
+msgid "Cancel"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:49
+msgid "Refresh folder"
+msgstr ""
+
+#: src/MessageList/MessageListBox.vala:32
+msgid "No Message Selected"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:76
+msgid "From:"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:186
+msgid "Show Images"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:187
+msgid "Always Show from Sender"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:192
+msgid "This message contains remote images."
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:223
+msgid "This message contains one or more attachments"
+msgstr ""
+
+#: src/MessageList/AttachmentButton.vala:41
+msgid "Open"
+msgstr ""
+
+#: src/MessageList/AttachmentButton.vala:43
+msgid "Save As…"
+msgstr ""
+
+#: src/MessageList/AttachmentButton.vala:89
+msgid "Unknown"
+msgstr ""
+
+#: src/MessageList/AttachmentButton.vala:113
+msgid "Save"
+msgstr ""

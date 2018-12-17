@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-08 13:23-0800\n"
+"POT-Creation-Date: 2018-12-17 07:10+0100\n"
 "PO-Revision-Date: 2017-05-18 14:08+0000\n"
 "Last-Translator: Ryo Nakano <nscnskichiro0911@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/>"
-"\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/"
+">\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,24 +20,17 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-19 06:51+0000\n"
 
+#: data/io.elementary.mail.appdata.xml.in:8
+#: data/io.elementary.mail.desktop.in:3
 msgid "Mail"
 msgstr "メール"
 
+#: data/io.elementary.mail.appdata.xml.in:9
+#: data/io.elementary.mail.desktop.in:4
 msgid "Send and receive mail"
 msgstr "メールを送信し受信します"
 
-msgid "Email;E-mail;Mail;"
-msgstr "Email;E-mail;Mail;"
-
-msgid "Compose Message"
-msgstr "メッセージを作成"
-
-msgid "About Mail"
-msgstr "メールについて"
-
-msgid "Lightweight mail client"
-msgstr "軽量なメールクライアントです"
-
+#: data/io.elementary.mail.appdata.xml.in:11
 msgid ""
 "Mail is designed to let you manage your email quickly and effortlessly. Its "
 "interface is based on conversations, so you can read an entire discussion "
@@ -47,41 +40,73 @@ msgstr ""
 "そのインターフェースは会話に元づいているので、全体の会話をメッセージからメッ"
 "セージへとクリックすることなしに読むことができます。"
 
+#: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
 msgstr "IMAP のフルサポート付きの軽量なメールクライアント"
 
+#: data/io.elementary.mail.appdata.xml.in:14
 msgid "Mail grouped into conversations, not a tree of threads"
 msgstr "Mail はスレッドのツリーによってではなく会話によって分類"
 
+#: data/io.elementary.mail.appdata.xml.in:15
 msgid "As-you-type searching"
 msgstr "自動検索候補"
 
+#: data/io.elementary.mail.appdata.xml.in:16
 msgid "Desktop notifications"
 msgstr "デスクトップ通知"
 
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "複数アカウント対応"
 
+#: data/io.elementary.mail.appdata.xml.in:18
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "サーバーへ下書きを保存するインライン HTML コンポーザー"
 
+#: data/io.elementary.mail.appdata.xml.in:19
 msgid ""
 "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
 "IMAP servers"
-msgstr "Gmail 、 Yahoo! Mail 、 Outlook.com （実験的）、そしてそのほかの著名な IMAP サーバーで動作"
+msgstr ""
+"Gmail 、 Yahoo! Mail 、 Outlook.com （実験的）、そしてそのほかの著名な IMAP "
+"サーバーで動作"
 
-msgid "Minor bug fixes"
-msgstr "マイナーなバグ修正"
+#: data/io.elementary.mail.appdata.xml.in:69
+msgid "elementary, Inc."
+msgstr ""
 
-msgid "Translation updates"
-msgstr "翻訳のアップデート"
+#: data/io.elementary.mail.desktop.in:6
+msgid "internet-mail"
+msgstr ""
 
-msgid "Appstream: add releases info"
-msgstr "Appstream: リリース情報を追加"
+#: data/io.elementary.mail.desktop.in:7
+msgid "Email;E-mail;Mail;"
+msgstr "Email;E-mail;Mail;"
+
+#: data/io.elementary.mail.desktop.in:17
+msgid "Compose Message"
+msgstr "メッセージを作成"
+
+#~ msgid "About Mail"
+#~ msgstr "メールについて"
+
+#~ msgid "Lightweight mail client"
+#~ msgstr "軽量なメールクライアントです"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "マイナーなバグ修正"
+
+#~ msgid "Translation updates"
+#~ msgstr "翻訳のアップデート"
+
+#~ msgid "Appstream: add releases info"
+#~ msgstr "Appstream: リリース情報を追加"
 
 #, fuzzy
-msgid "Don't overwrite custom settings not available in the POA plugin"
-msgstr "POA プラグインで利用可能ではないカスタム設定を上書きしないでください"
+#~ msgid "Don't overwrite custom settings not available in the POA plugin"
+#~ msgstr ""
+#~ "POA プラグインで利用可能ではないカスタム設定を上書きしないでください"
 
-msgid "Release for Loki"
-msgstr "Loki 用のリリース"
+#~ msgid "Release for Loki"
+#~ msgstr "Loki 用のリリース"
