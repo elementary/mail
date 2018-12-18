@@ -2,175 +2,183 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"PO-Revision-Date: 2018-12-18 16:30+0000\n"
+"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
+"Language-Team: Marathi <https://weblate.elementary.io/projects/mail/mail/mr/>"
+"\n"
+"Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #: src/HeaderBar.vala:38
 msgid "Compose new message"
-msgstr ""
+msgstr "नवीन मेल तयार करा"
 
 #: src/HeaderBar.vala:44
 msgid "Search Mail"
-msgstr ""
+msgstr "मेल शोधा"
 
 #: src/HeaderBar.vala:56
 msgid "Always Show Remote Images"
-msgstr ""
+msgstr "नेहमी रिमोट चित्रे दाखवा"
 
 #: src/HeaderBar.vala:64
 msgid "Account Settings…"
-msgstr ""
+msgstr "खाते सेटिंग्ज ..."
 
 #: src/HeaderBar.vala:84
 msgid "Menu"
-msgstr ""
+msgstr "मेनू"
 
 #: src/HeaderBar.vala:90
 msgid "Reply"
-msgstr ""
+msgstr "उत्तर द्या"
 
 #: src/HeaderBar.vala:97
 msgid "Reply All"
-msgstr ""
+msgstr "सर्वांना उत्तर द्या"
 
 #: src/HeaderBar.vala:104
 msgid "Forward"
-msgstr ""
+msgstr "पुढे पाठवा"
 
 #: src/HeaderBar.vala:111
 msgid "Move conversations to Trash"
-msgstr ""
+msgstr "संभाषणांना कचरापेटीत हलवा"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
-msgstr ""
+msgstr "एक खाते जोडा"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
-msgstr ""
+msgstr "मेल सिस्टम सेटिंग्जमध्ये कॉन्फिगर केलेल्या ईमेल खात्यांचा वापर करते."
 
 #: src/WelcomeView.vala:50
 msgid "Online Accounts…"
-msgstr ""
+msgstr "ऑनलाइन खाती ..."
 
 #: src/Composer/ComposerWidget.vala:72 src/MessageList/MessageListItem.vala:81
 msgid "To:"
-msgstr ""
+msgstr "प्राप्तकर्ता:"
 
 #: src/Composer/ComposerWidget.vala:76 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
-msgstr ""
+msgstr "विषय:"
 
 #: src/Composer/ComposerWidget.vala:83
 msgid "Cc"
-msgstr ""
+msgstr "सीसी"
 
 #: src/Composer/ComposerWidget.vala:85
 msgid "Bcc"
-msgstr ""
+msgstr "बीसीसी"
 
 #: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
-msgstr ""
+msgstr "सीसी:"
 
 #: src/Composer/ComposerWidget.vala:111
 msgid "Bcc:"
-msgstr ""
+msgstr "बीसीसी:"
 
 #: src/Composer/ComposerWidget.vala:150
 msgid "Bold"
-msgstr ""
+msgstr "ठळक"
 
 #: src/Composer/ComposerWidget.vala:156
 msgid "Italic"
-msgstr ""
+msgstr "इटॅलिक"
 
 #: src/Composer/ComposerWidget.vala:162
 msgid "Underline"
-msgstr ""
+msgstr "अधोरेखित"
 
 #: src/Composer/ComposerWidget.vala:168
 msgid "Strikethrough"
-msgstr ""
+msgstr "खोडलेले"
 
 #: src/Composer/ComposerWidget.vala:181
 msgid "Quote text"
-msgstr ""
+msgstr "मजकूर अवतरण चिन्हांत लिहा"
 
 #: src/Composer/ComposerWidget.vala:184
 msgid "Unquote text"
-msgstr ""
+msgstr "मजकूराचे अवतरण चिन्ह काढा"
 
 #: src/Composer/ComposerWidget.vala:192
 msgid "Insert Link"
-msgstr ""
+msgstr "दुवा टाका"
 
 #: src/Composer/ComposerWidget.vala:195
 msgid "Insert Image"
-msgstr ""
+msgstr "चित्र टाका"
 
 #: src/Composer/ComposerWidget.vala:198
 msgid "Remove formatting"
-msgstr ""
+msgstr "स्वरूपन(फॉरमॅटिंग) काढा"
 
 #: src/Composer/ComposerWidget.vala:227
 msgid "Delete draft"
-msgstr ""
+msgstr "लिहून ठेवलेला मसुदा हटवा"
 
 #: src/Composer/ComposerWidget.vala:231
 msgid "Attach file"
-msgstr ""
+msgstr "फाईल जोडा"
 
 #: src/Composer/ComposerWidget.vala:237
 msgid "Send"
-msgstr ""
+msgstr "पाठवा"
 
 #: src/Composer/ComposerWidget.vala:326
 msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr ""
+msgstr "%a, %b %-e, %Y at %-l:%M %p"
 
 #: src/Composer/ComposerWidget.vala:356
 #, c-format
 msgid "On %1$s, %2$s wrote:"
-msgstr ""
+msgstr "%1$s ला, %2$s यांनी लिहीले"
 
 #: src/Composer/ComposerWidget.vala:360
 msgid "---------- Forwarded message ----------"
-msgstr ""
+msgstr "---------- अग्रेषित संदेश ----------"
 
 #: src/Composer/ComposerWidget.vala:362
 #, c-format
 msgid "From: %s<br/>"
-msgstr ""
+msgstr "प्रेषक: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:363
 #, c-format
 msgid "Subject: %s<br/>"
-msgstr ""
+msgstr "विषय: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:364
 #, c-format
 msgid "Date: %s<br/>"
-msgstr ""
+msgstr "दिनांक: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:365
 #, c-format
 msgid "To: %s<br/>"
-msgstr ""
+msgstr "प्राप्तकर्ता: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:367
 #, c-format
 msgid "Cc: %s<br/>"
-msgstr ""
+msgstr "सीसी: %s<br/>"
 
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
-msgstr ""
+msgstr "नवीन संदेश"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:37
 #, c-format
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "आपणास खात्री आहे की आपण %s उघडण्यास इच्छुक आहात?"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:44
 msgid ""
@@ -180,53 +188,53 @@ msgstr ""
 
 #: src/Dialogs/OpenAttachmentDialog.vala:49
 msgid "Open Anyway"
-msgstr ""
+msgstr "तरीही उघडा"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:65
 #: src/MessageList/AttachmentButton.vala:111
 msgid "Cancel"
-msgstr ""
+msgstr "रद्द करा"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
-msgstr ""
+msgstr "फोल्डर रीफ्रेश करा"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
-msgstr ""
+msgstr "कोणताही संदेश निवडलेला नाही"
 
 #: src/MessageList/MessageListItem.vala:76
 msgid "From:"
-msgstr ""
+msgstr "प्रेषक:"
 
 #: src/MessageList/MessageListItem.vala:186
 msgid "Show Images"
-msgstr ""
+msgstr "चित्रे दाखवा"
 
 #: src/MessageList/MessageListItem.vala:187
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "या प्रेषकांकडून येणारे नेहमी दाखवा"
 
 #: src/MessageList/MessageListItem.vala:192
 msgid "This message contains remote images."
-msgstr ""
+msgstr "या संदेशात रिमोट चित्रे आहेत."
 
 #: src/MessageList/MessageListItem.vala:223
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "या संदेशात एक किंवा अधिक संलग्नक आहेत"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
-msgstr ""
+msgstr "उघडा"
 
 #: src/MessageList/AttachmentButton.vala:43
 msgid "Save As…"
-msgstr ""
+msgstr "म्हणून जतन करा…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "अज्ञात"
 
 #: src/MessageList/AttachmentButton.vala:113
 msgid "Save"
-msgstr ""
+msgstr "जतन करा"
