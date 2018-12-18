@@ -10,26 +10,24 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-17 07:10+0100\n"
-"PO-Revision-Date: 2016-02-27 17:04+0000\n"
-"Last-Translator: Bhavin Dave <bhavindave88@yahoo.com>\n"
-"Language-Team: Hindi (India) (http://www.transifex.com/projects/p/geary/"
-"language/hi_IN/)\n"
-"Language: hi_IN\n"
+"PO-Revision-Date: 2018-12-18 11:04+0000\n"
+"Last-Translator: Mayank Arya <mmaismma@hotmail.com>\n"
+"Language-Team: Hindi <https://weblate.elementary.io/projects/mail/mail/hi/>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
 
 #: src/HeaderBar.vala:38
-#, fuzzy
 msgid "Compose new message"
-msgstr "नया पत्र लिखे (Ctrl+N, N)"
+msgstr "नया पत्र लिखे"
 
 #: src/HeaderBar.vala:44
 msgid "Search Mail"
-msgstr ""
+msgstr "पत्र ढूंदे।"
 
 #: src/HeaderBar.vala:56
 msgid "Always Show Remote Images"
@@ -37,42 +35,39 @@ msgstr ""
 
 #: src/HeaderBar.vala:64
 msgid "Account Settings…"
-msgstr ""
+msgstr "खाता सेटिंग्स…"
 
 #: src/HeaderBar.vala:84
 msgid "Menu"
-msgstr ""
+msgstr "मेनू"
 
 #: src/HeaderBar.vala:90
 msgid "Reply"
-msgstr ""
+msgstr "जवाब दें"
 
 #: src/HeaderBar.vala:97
-#, fuzzy
 msgid "Reply All"
-msgstr "सबको जवाब दे (_e)"
+msgstr "सबको जवाब दे"
 
 #: src/HeaderBar.vala:104
 msgid "Forward"
-msgstr ""
+msgstr "फॉरवर्ड"
 
 #: src/HeaderBar.vala:111
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "अधिक संवाद का स्थान परिवर्तन करें"
+msgstr "संवाद तो ट्रैश में डाले"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
-msgstr ""
+msgstr "खाता जोड़े"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
-msgstr ""
+msgstr "मेल सेटिंग्स में कन्फिगर किए गए ईमेल खाते का उपयोग करता है।"
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "खाते"
+msgstr "ऑनलाइन खाते…"
 
 #: src/Composer/ComposerWidget.vala:72 src/MessageList/MessageListItem.vala:81
 msgid "To:"
