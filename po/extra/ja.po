@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-17 07:10+0100\n"
-"PO-Revision-Date: 2017-05-18 14:08+0000\n"
-"Last-Translator: Ryo Nakano <nscnskichiro0911@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/"
-">\n"
+"PO-Revision-Date: 2018-12-18 01:22+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"Language-Team: Japanese <https://weblate.elementary.io/projects/mail/extra/"
+"ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-19 06:51+0000\n"
 
 #: data/io.elementary.mail.appdata.xml.in:8
@@ -36,9 +36,8 @@ msgid ""
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
 msgstr ""
-"Mail はメールを素早く、楽々と管理することができるようにデザインされています。"
-"そのインターフェースは会話に元づいているので、全体の会話をメッセージからメッ"
-"セージへとクリックすることなしに読むことができます。"
+"\"メール\" はメールを素早く、楽々と管理できるようにデザインされています。インターフェースが会話に基づいているので、会話全体をメッセージからメッセージ"
+"へとクリックせずに読むことができます。"
 
 #: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
@@ -46,7 +45,7 @@ msgstr "IMAP のフルサポート付きの軽量なメールクライアント"
 
 #: data/io.elementary.mail.appdata.xml.in:14
 msgid "Mail grouped into conversations, not a tree of threads"
-msgstr "Mail はスレッドのツリーによってではなく会話によって分類"
+msgstr "メールはスレッドのツリーではなく、会話ごとに分類されます"
 
 #: data/io.elementary.mail.appdata.xml.in:15
 msgid "As-you-type searching"
@@ -58,7 +57,7 @@ msgstr "デスクトップ通知"
 
 #: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
-msgstr "複数アカウント対応"
+msgstr "複数アカウントのサポート"
 
 #: data/io.elementary.mail.appdata.xml.in:18
 msgid "Inline HTML composer that saves drafts to the server"
@@ -68,17 +67,15 @@ msgstr "サーバーへ下書きを保存するインライン HTML コンポー
 msgid ""
 "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
 "IMAP servers"
-msgstr ""
-"Gmail 、 Yahoo! Mail 、 Outlook.com （実験的）、そしてそのほかの著名な IMAP "
-"サーバーで動作"
+msgstr "Gmail・Yahoo! メール・Outlook.com (実験的)・その他よく利用される IMAP サーバーで動作します"
 
 #: data/io.elementary.mail.appdata.xml.in:69
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/io.elementary.mail.desktop.in:6
 msgid "internet-mail"
-msgstr ""
+msgstr "internet-mail"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
