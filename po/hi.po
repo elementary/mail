@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-17 07:10+0100\n"
-"PO-Revision-Date: 2018-12-18 12:41+0000\n"
+"PO-Revision-Date: 2018-12-19 00:07+0000\n"
 "Last-Translator: Mayank Arya <mmaismma@hotmail.com>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/mail/mail/hi/>\n"
 "Language: hi\n"
@@ -75,11 +75,11 @@ msgstr "किसे:"
 
 #: src/Composer/ComposerWidget.vala:76 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
-msgstr ""
+msgstr "विषय:"
 
 #: src/Composer/ComposerWidget.vala:83
 msgid "Cc"
-msgstr ""
+msgstr "सीसी"
 
 #: src/Composer/ComposerWidget.vala:85
 #, fuzzy
@@ -96,19 +96,19 @@ msgstr ""
 
 #: src/Composer/ComposerWidget.vala:150
 msgid "Bold"
-msgstr ""
+msgstr "मोटा"
 
 #: src/Composer/ComposerWidget.vala:156
 msgid "Italic"
-msgstr ""
+msgstr "टेढ़ा"
 
 #: src/Composer/ComposerWidget.vala:162
 msgid "Underline"
-msgstr ""
+msgstr "घेरें"
 
 #: src/Composer/ComposerWidget.vala:168
 msgid "Strikethrough"
-msgstr ""
+msgstr "काटे"
 
 #: src/Composer/ComposerWidget.vala:181
 msgid "Quote text"
@@ -120,11 +120,11 @@ msgstr ""
 
 #: src/Composer/ComposerWidget.vala:192
 msgid "Insert Link"
-msgstr ""
+msgstr "लिंक डाले"
 
 #: src/Composer/ComposerWidget.vala:195
 msgid "Insert Image"
-msgstr ""
+msgstr "तस्वीर डाले"
 
 #: src/Composer/ComposerWidget.vala:198
 msgid "Remove formatting"
@@ -156,33 +156,33 @@ msgid "---------- Forwarded message ----------"
 msgstr "---------- प्रस्तुत पत्र ----------"
 
 #: src/Composer/ComposerWidget.vala:362
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "किससे: %s\n"
+msgstr "किससे: %s<br/>\n"
 
 #: src/Composer/ComposerWidget.vala:363
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "विषय: %s\n"
+msgstr "विषय: %s<br/>\n"
 
 #: src/Composer/ComposerWidget.vala:364
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "दिनाक: %s\n"
+msgstr "दिनाक: %s<br/>\n"
 
 #: src/Composer/ComposerWidget.vala:365
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "किसको: %s\n"
+msgstr "किसको: %s<br/>\n"
 
 #: src/Composer/ComposerWidget.vala:367
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "सहभागी: %s\n"
+msgstr "सहभागी: %s<br/>\n"
 
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
-msgstr ""
+msgstr "नया पत्र"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:37
 #, c-format
@@ -218,7 +218,7 @@ msgstr ""
 
 #: src/MessageList/MessageListItem.vala:186
 msgid "Show Images"
-msgstr ""
+msgstr "तस्वीरें दिखाए"
 
 #: src/MessageList/MessageListItem.vala:187
 msgid "Always Show from Sender"
