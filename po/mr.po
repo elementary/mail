@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-17 07:10+0100\n"
-"PO-Revision-Date: 2018-12-18 16:33+0000\n"
+"PO-Revision-Date: 2018-12-19 00:07+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/mail/mail/mr/>"
 "\n"
@@ -27,7 +27,7 @@ msgstr "नेहमी रिमोट चित्रे दाखवा"
 
 #: src/HeaderBar.vala:64
 msgid "Account Settings…"
-msgstr "खाते सेटिंग्ज ..."
+msgstr "खाते सेटिंग्ज …"
 
 #: src/HeaderBar.vala:84
 msgid "Menu"
@@ -59,7 +59,7 @@ msgstr "मेल सिस्टम सेटिंग्जमध्ये क
 
 #: src/WelcomeView.vala:50
 msgid "Online Accounts…"
-msgstr "ऑनलाइन खाती ..."
+msgstr "ऑनलाइन खाती …"
 
 #: src/Composer/ComposerWidget.vala:72 src/MessageList/MessageListItem.vala:81
 msgid "To:"
@@ -140,7 +140,7 @@ msgstr "%a, %b %-e, %Y at %-l:%M %p"
 #: src/Composer/ComposerWidget.vala:356
 #, c-format
 msgid "On %1$s, %2$s wrote:"
-msgstr "%1$s ला, %2$s यांनी लिहीले"
+msgstr "%1$s ला, %2$s यांनी लिहीले:"
 
 #: src/Composer/ComposerWidget.vala:360
 msgid "---------- Forwarded message ----------"
