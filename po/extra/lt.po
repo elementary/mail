@@ -8,15 +8,19 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-17 07:10+0100\n"
-"PO-Revision-Date: 2017-03-08 23:10+0000\n"
+"PO-Revision-Date: 2018-12-19 12:01+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
-"Language-Team: Lithuanian <lt@li.org>\n"
+"Language-Team: Lithuanian <https://weblate.elementary.io/projects/mail/extra/"
+"lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && (n % 100 < 11 || n % 100 > "
+"19)) ? 0 : ((n % 10 >= 2 && n % 10 <= 9 && (n % 100 < 11 || n % 100 > 19)) ? "
+"1 : 2);\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
 
 #: data/io.elementary.mail.appdata.xml.in:8
 #: data/io.elementary.mail.desktop.in:3
@@ -72,11 +76,11 @@ msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:69
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/io.elementary.mail.desktop.in:6
 msgid "internet-mail"
-msgstr ""
+msgstr "internet-mail"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
