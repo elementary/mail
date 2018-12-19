@@ -13,21 +13,21 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-17 07:10+0100\n"
-"PO-Revision-Date: 2017-04-18 21:22+0000\n"
+"PO-Revision-Date: 2018-12-19 12:08+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
-"Language-Team: Lithuanian <https://l10n.elementary.io/projects/mail/mail/lt/"
-">\n"
+"Language-Team: Lithuanian <https://weblate.elementary.io/projects/mail/mail/"
+"lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && (n % 100 < 11 || n % 100 > "
+"19)) ? 0 : ((n % 10 >= 2 && n % 10 <= 9 && (n % 100 < 11 || n % 100 > 19)) ? "
+"1 : 2);\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:38
-#, fuzzy
 msgid "Compose new message"
 msgstr "Rašyti naują laišką"
 
@@ -36,13 +36,12 @@ msgid "Search Mail"
 msgstr "Ieškoti pašte"
 
 #: src/HeaderBar.vala:56
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "Visada rodyti nuotolinius paveikslus:"
+msgstr "Visada rodyti nuotolinius paveikslus"
 
 #: src/HeaderBar.vala:64
 msgid "Account Settings…"
-msgstr ""
+msgstr "Paskyros nustatymai…"
 
 #: src/HeaderBar.vala:84
 msgid "Menu"
@@ -53,32 +52,28 @@ msgid "Reply"
 msgstr "Atsakyti"
 
 #: src/HeaderBar.vala:97
-#, fuzzy
 msgid "Reply All"
-msgstr "At_sakyti visiems"
+msgstr "Atsakyti visiems"
 
 #: src/HeaderBar.vala:104
 msgid "Forward"
 msgstr "Persiųsti"
 
 #: src/HeaderBar.vala:111
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "Perkelti pokalbius"
+msgstr "Perkelti pokalbius į šiukšlinę"
 
 #: src/WelcomeView.vala:40
-#, fuzzy
 msgid "Connect an Account"
-msgstr "Šalinti paskyrą"
+msgstr "Prijungti paskyrą"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
-msgstr ""
+msgstr "Paštas naudoja sistemos nustatymuose sukonfigūruotas pašto paskyras."
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "Paskyros"
+msgstr "Internetinės paskyros…"
 
 #: src/Composer/ComposerWidget.vala:72 src/MessageList/MessageListItem.vala:81
 msgid "To:"
@@ -89,14 +84,12 @@ msgid "Subject:"
 msgstr "Tema:"
 
 #: src/Composer/ComposerWidget.vala:83
-#, fuzzy
 msgid "Cc"
-msgstr "Kopija:"
+msgstr "Kopija"
 
 #: src/Composer/ComposerWidget.vala:85
-#, fuzzy
 msgid "Bcc"
-msgstr "Nematoma kopija:"
+msgstr "Nematoma kopija"
 
 #: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
@@ -108,44 +101,39 @@ msgstr "Nematoma kopija:"
 
 #: src/Composer/ComposerWidget.vala:150
 msgid "Bold"
-msgstr ""
+msgstr "Pusjuodis"
 
 #: src/Composer/ComposerWidget.vala:156
 msgid "Italic"
-msgstr ""
+msgstr "Kursyvas"
 
 #: src/Composer/ComposerWidget.vala:162
-#, fuzzy
 msgid "Underline"
-msgstr "Pabrauktas (Ctrl+U (Vald+U))"
+msgstr "Pabrauktas"
 
 #: src/Composer/ComposerWidget.vala:168
-#, fuzzy
 msgid "Strikethrough"
-msgstr "Perbraukimas (Ctrl+K (Vald+K))"
+msgstr "Perbrauktas"
 
 #: src/Composer/ComposerWidget.vala:181
-#, fuzzy
 msgid "Quote text"
-msgstr "Cituoti tekstą (Ctrl+] (Vald+]))"
+msgstr "Cituoti tekstą"
 
 #: src/Composer/ComposerWidget.vala:184
-#, fuzzy
 msgid "Unquote text"
-msgstr "Necituoti teksto (Ctrl+[ (Vald+[))"
+msgstr "Necituoti teksto"
 
 #: src/Composer/ComposerWidget.vala:192
 msgid "Insert Link"
-msgstr ""
+msgstr "Įterpti nuorodą"
 
 #: src/Composer/ComposerWidget.vala:195
 msgid "Insert Image"
-msgstr ""
+msgstr "Įterpti paveikslą"
 
 #: src/Composer/ComposerWidget.vala:198
-#, fuzzy
 msgid "Remove formatting"
-msgstr "Šalinti formatavimą (Ctrl+Space (Vald+tarpas))"
+msgstr "Šalinti formatavimą"
 
 #: src/Composer/ComposerWidget.vala:227
 msgid "Delete draft"
@@ -173,29 +161,29 @@ msgid "---------- Forwarded message ----------"
 msgstr "---------- Persiųstas laiškas ----------"
 
 #: src/Composer/ComposerWidget.vala:362
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "Nuo: %s\n"
+msgstr "Nuo: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:363
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "Tema: %s\n"
+msgstr "Tema: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:364
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Data: %s\n"
+msgstr "Data: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:365
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "Kam: %s\n"
+msgstr "Kam: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:367
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "Kopija: %s\n"
+msgstr "Kopija: %s<br/>"
 
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
@@ -225,12 +213,11 @@ msgstr "Atsisakyti"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
-msgstr ""
+msgstr "Įkelti aplanką iš naujo"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "Nepasirinkta jokių pokalbių."
+msgstr "Nepasirinkta jokių laiškų"
 
 #: src/MessageList/MessageListItem.vala:76
 msgid "From:"
@@ -262,12 +249,11 @@ msgstr "Įrašyti kaip…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "Nežinoma"
 
 #: src/MessageList/AttachmentButton.vala:113
-#, fuzzy
 msgid "Save"
-msgstr "Į_rašyti"
+msgstr "Įrašyti"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "Juodraščiai | Juodraštis"
