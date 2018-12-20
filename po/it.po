@@ -18,19 +18,19 @@ msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-17 07:10+0100\n"
-"PO-Revision-Date: 2017-04-15 20:27+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Italian <https://l10n.elementary.io/projects/mail/mail/it/>\n"
+"PO-Revision-Date: 2018-12-20 21:46+0000\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"Language-Team: Italian <https://weblate.elementary.io/projects/mail/mail/it/>"
+"\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:38
-#, fuzzy
 msgid "Compose new message"
 msgstr "Componi un nuovo messaggio"
 
@@ -39,13 +39,12 @@ msgid "Search Mail"
 msgstr "Cerca email"
 
 #: src/HeaderBar.vala:56
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "Mostra sempre immagini remote:"
+msgstr "Mostra sempre immagini remote"
 
 #: src/HeaderBar.vala:64
 msgid "Account Settings…"
-msgstr ""
+msgstr "Impostazioni dell'account…"
 
 #: src/HeaderBar.vala:84
 msgid "Menu"
@@ -56,32 +55,29 @@ msgid "Reply"
 msgstr "Rispondi"
 
 #: src/HeaderBar.vala:97
-#, fuzzy
 msgid "Reply All"
-msgstr "R_ispondi a tutti"
+msgstr "Rispondi a tutti"
 
 #: src/HeaderBar.vala:104
 msgid "Forward"
 msgstr "Inoltra"
 
 #: src/HeaderBar.vala:111
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "Sposta le conversazioni"
+msgstr "Sposta le conversazioni nel cestino"
 
 #: src/WelcomeView.vala:40
-#, fuzzy
 msgid "Connect an Account"
-msgstr "Rimuovi account"
+msgstr "Connetti un account"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
+"Posta utilizza gli account mail configurati nelle impostazioni di sistema."
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "Account"
+msgstr "Account online…"
 
 #: src/Composer/ComposerWidget.vala:72 src/MessageList/MessageListItem.vala:81
 msgid "To:"
@@ -92,14 +88,12 @@ msgid "Subject:"
 msgstr "Oggetto:"
 
 #: src/Composer/ComposerWidget.vala:83
-#, fuzzy
 msgid "Cc"
-msgstr "Cc:"
+msgstr "Cc"
 
 #: src/Composer/ComposerWidget.vala:85
-#, fuzzy
 msgid "Bcc"
-msgstr "Ccn:"
+msgstr "Ccn"
 
 #: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
@@ -111,44 +105,39 @@ msgstr "Ccn:"
 
 #: src/Composer/ComposerWidget.vala:150
 msgid "Bold"
-msgstr ""
+msgstr "Grassetto"
 
 #: src/Composer/ComposerWidget.vala:156
 msgid "Italic"
-msgstr ""
+msgstr "Corsivo"
 
 #: src/Composer/ComposerWidget.vala:162
-#, fuzzy
 msgid "Underline"
-msgstr "Sottolineato (Ctrl+U)"
+msgstr "Sottolineato"
 
 #: src/Composer/ComposerWidget.vala:168
-#, fuzzy
 msgid "Strikethrough"
-msgstr "Barrato (Ctrl+K)"
+msgstr "Barrato"
 
 #: src/Composer/ComposerWidget.vala:181
-#, fuzzy
 msgid "Quote text"
-msgstr "Cita testo (Ctrl+])"
+msgstr "Cita testo"
 
 #: src/Composer/ComposerWidget.vala:184
-#, fuzzy
 msgid "Unquote text"
-msgstr "Rimuovi citazione al testo (Ctrl+[)"
+msgstr "Rimuovi citazione al testo"
 
 #: src/Composer/ComposerWidget.vala:192
 msgid "Insert Link"
-msgstr ""
+msgstr "Inserisci collegamento"
 
 #: src/Composer/ComposerWidget.vala:195
 msgid "Insert Image"
-msgstr ""
+msgstr "Inserisci immagine"
 
 #: src/Composer/ComposerWidget.vala:198
-#, fuzzy
 msgid "Remove formatting"
-msgstr "Rimuovi formattazione (Ctrl+Spazio)"
+msgstr "Rimuovi formattazione"
 
 #: src/Composer/ComposerWidget.vala:227
 msgid "Delete draft"
@@ -176,29 +165,29 @@ msgid "---------- Forwarded message ----------"
 msgstr "---------- Messaggio inoltrato ----------"
 
 #: src/Composer/ComposerWidget.vala:362
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "Da: %s\n"
+msgstr "Da: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:363
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "Oggetto: %s\n"
+msgstr "Oggetto: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:364
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Data: %s\n"
+msgstr "Data: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:365
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "A: %s\n"
+msgstr "A: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:367
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "Cc: %s\n"
+msgstr "Cc: %s<br/>"
 
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
@@ -228,12 +217,11 @@ msgstr "Annulla"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
-msgstr ""
+msgstr "Ricarica cartella"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "Nessuna conversazione selezionata."
+msgstr "Nessuna conversazione selezionata"
 
 #: src/MessageList/MessageListItem.vala:76
 msgid "From:"
@@ -265,12 +253,11 @@ msgstr "Salva come…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "Sconosciuto"
 
 #: src/MessageList/AttachmentButton.vala:113
-#, fuzzy
 msgid "Save"
-msgstr "_Salva"
+msgstr "Salva"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "Bozze | Bozza | Drafts | Draft"
