@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-17 07:10+0100\n"
-"PO-Revision-Date: 2017-04-11 14:01+0000\n"
+"PO-Revision-Date: 2018-12-22 10:56+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
-"Language-Team: Korean <https://l10n.elementary.io/projects/mail/mail/ko/>\n"
+"Language-Team: Korean <https://weblate.elementary.io/projects/mail/mail/ko/>"
+"\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:38
-#, fuzzy
 msgid "Compose new message"
 msgstr "새 편지 쓰기"
 
@@ -29,13 +29,12 @@ msgid "Search Mail"
 msgstr "편지 검색"
 
 #: src/HeaderBar.vala:56
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "원격 이미지 항상 표시:"
+msgstr "원격 이미지 항상 표시"
 
 #: src/HeaderBar.vala:64
 msgid "Account Settings…"
-msgstr ""
+msgstr "계정 설정…"
 
 #: src/HeaderBar.vala:84
 msgid "Menu"
@@ -46,32 +45,28 @@ msgid "Reply"
 msgstr "답장"
 
 #: src/HeaderBar.vala:97
-#, fuzzy
 msgid "Reply All"
-msgstr "전체 답장(_E)"
+msgstr "전체 답장"
 
 #: src/HeaderBar.vala:104
 msgid "Forward"
 msgstr "전달"
 
 #: src/HeaderBar.vala:111
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "편지 이동"
+msgstr "휴지통으로 보내기"
 
 #: src/WelcomeView.vala:40
-#, fuzzy
 msgid "Connect an Account"
-msgstr "계정 제거"
+msgstr "계정 연결"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
-msgstr ""
+msgstr "메일은 시스템 설정에 있는 이메일 계정을 사용합니다."
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "계정"
+msgstr "온라인 계정…"
 
 #: src/Composer/ComposerWidget.vala:72 src/MessageList/MessageListItem.vala:81
 msgid "To:"
@@ -82,14 +77,12 @@ msgid "Subject:"
 msgstr "제목:"
 
 #: src/Composer/ComposerWidget.vala:83
-#, fuzzy
 msgid "Cc"
-msgstr "함께 받는 사람:"
+msgstr "함께 받는 사람"
 
 #: src/Composer/ComposerWidget.vala:85
-#, fuzzy
 msgid "Bcc"
-msgstr "숨겨 받는 사람:"
+msgstr "숨겨 받는 사람"
 
 #: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
@@ -101,44 +94,39 @@ msgstr "숨겨 받는 사람:"
 
 #: src/Composer/ComposerWidget.vala:150
 msgid "Bold"
-msgstr ""
+msgstr "볼드"
 
 #: src/Composer/ComposerWidget.vala:156
 msgid "Italic"
-msgstr ""
+msgstr "이탤릭"
 
 #: src/Composer/ComposerWidget.vala:162
-#, fuzzy
 msgid "Underline"
-msgstr "밑줄 (Ctrl+U)"
+msgstr "밑줄"
 
 #: src/Composer/ComposerWidget.vala:168
-#, fuzzy
 msgid "Strikethrough"
-msgstr "가운데 줄긋기 (Ctrl+K)"
+msgstr "가운데 줄긋기"
 
 #: src/Composer/ComposerWidget.vala:181
-#, fuzzy
 msgid "Quote text"
-msgstr "들여 쓰기 (Ctrl+])"
+msgstr "텍스트 인용"
 
 #: src/Composer/ComposerWidget.vala:184
-#, fuzzy
 msgid "Unquote text"
-msgstr "내어 쓰기 (Ctrl+[)"
+msgstr "텍스트 인용 끝"
 
 #: src/Composer/ComposerWidget.vala:192
 msgid "Insert Link"
-msgstr ""
+msgstr "링크 삽입"
 
 #: src/Composer/ComposerWidget.vala:195
 msgid "Insert Image"
-msgstr ""
+msgstr "이미지 삽입"
 
 #: src/Composer/ComposerWidget.vala:198
-#, fuzzy
 msgid "Remove formatting"
-msgstr "서식 제거 (Ctrl+Space)"
+msgstr "서식 제거"
 
 #: src/Composer/ComposerWidget.vala:227
 msgid "Delete draft"
@@ -166,29 +154,29 @@ msgid "---------- Forwarded message ----------"
 msgstr "전달 내용"
 
 #: src/Composer/ComposerWidget.vala:362
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "보내는 사람: %s\n"
+msgstr "보내는 사람: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:363
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "제목: %s\n"
+msgstr "제목: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:364
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "날짜: %s\n"
+msgstr "날짜: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:365
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "받는 사람: %s\n"
+msgstr "받는 사람: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:367
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "함께 받는 사람: %s\n"
+msgstr "함께 받는 사람: %s<br/>"
 
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
@@ -218,12 +206,11 @@ msgstr "취소"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
-msgstr ""
+msgstr "폴더 새로 고침"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "연관된 내용이 없습니다."
+msgstr "선택한 메시지 없음"
 
 #: src/MessageList/MessageListItem.vala:76
 msgid "From:"
@@ -255,12 +242,11 @@ msgstr "다른 이름으로 저장…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "모름"
 
 #: src/MessageList/AttachmentButton.vala:113
-#, fuzzy
 msgid "Save"
-msgstr "저장(_S)"
+msgstr "저장"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "임시 보관함 | 임시 보관함"
