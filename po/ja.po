@@ -1,44 +1,35 @@
-# po/geary.pot
-# PO message string template file for Geary email client
-# Copyright 2012-2013 Yorba Foundation
-# This file is distributed under the GNU LGPL, version 2.1.
-#
-# Translators:
-# masami chikahiro <cmasa.z321@gmail.com>, 2013
-# pikatenor <pikatenor@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: geary-0.4.1\n"
+"Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
-"PO-Revision-Date: 2017-05-07 03:38+0000\n"
-"Last-Translator: Ryo Nakano <nscnskichiro0911@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
+"POT-Creation-Date: 2018-12-18 01:39+0000\n"
+"PO-Revision-Date: 2019-01-04 00:55+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"Language-Team: Japanese <https://weblate.elementary.io/projects/mail/mail/ja/"
+">\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:38
-#, fuzzy
 msgid "Compose new message"
-msgstr "新しいメッセージの作成"
+msgstr "新しいメッセージを作成します"
 
 #: src/HeaderBar.vala:44
 msgid "Search Mail"
-msgstr "メールの検索"
+msgstr "メールを検索"
 
 #: src/HeaderBar.vala:56
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "常にリモートの画像を表示:"
+msgstr "常にリモートの画像を表示"
 
 #: src/HeaderBar.vala:64
 msgid "Account Settings…"
-msgstr ""
+msgstr "アカウントの設定…"
 
 #: src/HeaderBar.vala:84
 msgid "Menu"
@@ -49,32 +40,28 @@ msgid "Reply"
 msgstr "返信"
 
 #: src/HeaderBar.vala:97
-#, fuzzy
 msgid "Reply All"
-msgstr "全員に返信 (_E)"
+msgstr "全員に返信"
 
 #: src/HeaderBar.vala:104
 msgid "Forward"
 msgstr "転送"
 
 #: src/HeaderBar.vala:111
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "メッセージを移動"
+msgstr "メッセージをゴミ箱に移動します"
 
 #: src/WelcomeView.vala:40
-#, fuzzy
 msgid "Connect an Account"
-msgstr "アカウントの削除"
+msgstr "アカウントを接続しましょう"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
-msgstr ""
+msgstr "\"メール\" は、システム設定で設定されたメールアカウントを使用します。"
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "アカウント"
+msgstr "オンラインアカウント…"
 
 #: src/Composer/ComposerWidget.vala:72 src/MessageList/MessageListItem.vala:81
 msgid "To:"
@@ -85,14 +72,12 @@ msgid "Subject:"
 msgstr "件名:"
 
 #: src/Composer/ComposerWidget.vala:83
-#, fuzzy
 msgid "Cc"
-msgstr "Cc:"
+msgstr "Cc"
 
 #: src/Composer/ComposerWidget.vala:85
-#, fuzzy
 msgid "Bcc"
-msgstr "Bcc:"
+msgstr "Bcc"
 
 #: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
@@ -104,52 +89,47 @@ msgstr "Bcc:"
 
 #: src/Composer/ComposerWidget.vala:150
 msgid "Bold"
-msgstr ""
+msgstr "太字"
 
 #: src/Composer/ComposerWidget.vala:156
 msgid "Italic"
-msgstr ""
+msgstr "斜体"
 
 #: src/Composer/ComposerWidget.vala:162
-#, fuzzy
 msgid "Underline"
-msgstr "下線 (Ctrl+U)"
+msgstr "下線"
 
 #: src/Composer/ComposerWidget.vala:168
-#, fuzzy
 msgid "Strikethrough"
-msgstr "取り消し線 (Ctrl+K)"
+msgstr "取り消し線"
 
 #: src/Composer/ComposerWidget.vala:181
-#, fuzzy
 msgid "Quote text"
-msgstr "引用テキスト  (Ctrl+])"
+msgstr "テキストを引用します"
 
 #: src/Composer/ComposerWidget.vala:184
-#, fuzzy
 msgid "Unquote text"
-msgstr "引用テキスト解除 (Ctrl+[)"
+msgstr "テキストの引用を解除します"
 
 #: src/Composer/ComposerWidget.vala:192
 msgid "Insert Link"
-msgstr ""
+msgstr "リンクを挿入します"
 
 #: src/Composer/ComposerWidget.vala:195
 msgid "Insert Image"
-msgstr ""
+msgstr "画像を挿入します"
 
 #: src/Composer/ComposerWidget.vala:198
-#, fuzzy
 msgid "Remove formatting"
-msgstr "フォーマットを削除 (Ctrl+Space)"
+msgstr "書式を解除します"
 
 #: src/Composer/ComposerWidget.vala:227
 msgid "Delete draft"
-msgstr "下書きを削除"
+msgstr "下書きを削除します"
 
 #: src/Composer/ComposerWidget.vala:231
 msgid "Attach file"
-msgstr "添付ファイル"
+msgstr "ファイルを添付します"
 
 #: src/Composer/ComposerWidget.vala:237
 msgid "Send"
@@ -157,41 +137,41 @@ msgstr "送信"
 
 #: src/Composer/ComposerWidget.vala:326
 msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%Y年%b%-e日 %a %p %l:%M"
+msgstr "%Y年%b%-e日 %a %p %-l:%M"
 
 #: src/Composer/ComposerWidget.vala:356
 #, c-format
 msgid "On %1$s, %2$s wrote:"
-msgstr "%1$s 、 %2$s さんより:"
+msgstr "%1$s、%2$s さんのメッセージ:"
 
 #: src/Composer/ComposerWidget.vala:360
 msgid "---------- Forwarded message ----------"
 msgstr "---------- 転送されたメッセージ ----------"
 
 #: src/Composer/ComposerWidget.vala:362
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "差出人 : %s\n"
+msgstr "差出人: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:363
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "件名: %s\n"
+msgstr "件名: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:364
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Date: %s\n"
+msgstr "日付: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:365
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "宛先 : %s\n"
+msgstr "宛先: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:367
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "Cc: %s\n"
+msgstr "Cc: %s<br/>"
 
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
@@ -200,19 +180,17 @@ msgstr "新しいメッセージ"
 #: src/Dialogs/OpenAttachmentDialog.vala:37
 #, c-format
 msgid "Are you sure you want to open %s?"
-msgstr "%s を開きますか？"
+msgstr "%s を開いてもよろしいですか？"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:44
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
-msgstr ""
-"添付ファイルはシステムにダメージを与える恐れがあります。信頼できる送信元から"
-"のみ開くようにして下さい。"
+msgstr "添付ファイルは、システムにダメージを与える恐れがあります。信頼できる送信元のファイルのみを開くようにしてください。"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:49
 msgid "Open Anyway"
-msgstr "それでも開く"
+msgstr "了解して開く"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:65
 #: src/MessageList/AttachmentButton.vala:111
@@ -221,12 +199,11 @@ msgstr "キャンセル"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
-msgstr ""
+msgstr "フォルダーを更新"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "メッセージが選択されていません。"
+msgstr "メッセージが選択されていません"
 
 #: src/MessageList/MessageListItem.vala:76
 msgid "From:"
@@ -238,15 +215,15 @@ msgstr "画像を表示"
 
 #: src/MessageList/MessageListItem.vala:187
 msgid "Always Show from Sender"
-msgstr "常に送信者から表示する"
+msgstr "常に送信者から表示"
 
 #: src/MessageList/MessageListItem.vala:192
 msgid "This message contains remote images."
-msgstr "このメッセージはリモートイメージを含んでいます。"
+msgstr "このメッセージは、リモートイメージを含んでいます。"
 
 #: src/MessageList/MessageListItem.vala:223
 msgid "This message contains one or more attachments"
-msgstr "このメッセージは一つかそれ以上の添付ファイルを含んでいます"
+msgstr "このメッセージは、何らかの添付ファイルを含んでいます"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
@@ -258,12 +235,11 @@ msgstr "名前を付けて保存…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "不明"
 
 #: src/MessageList/AttachmentButton.vala:113
-#, fuzzy
 msgid "Save"
-msgstr "保存 (_S)"
+msgstr "保存"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "下書き | 下書き"
