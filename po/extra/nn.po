@@ -2,19 +2,26 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"PO-Revision-Date: 2019-01-05 02:50+0000\n"
+"Last-Translator: Simon Dagfinrud <semonje@gmail.com>\n"
+"Language-Team: Norwegian Nynorsk <https://weblate.elementary.io/projects/"
+"mail/extra/nn/>\n"
+"Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #: data/io.elementary.mail.appdata.xml.in:8
 #: data/io.elementary.mail.desktop.in:3
 msgid "Mail"
-msgstr ""
+msgstr "E-post"
 
 #: data/io.elementary.mail.appdata.xml.in:9
 #: data/io.elementary.mail.desktop.in:4
 msgid "Send and receive mail"
-msgstr ""
+msgstr "Send og motta e-post"
 
 #: data/io.elementary.mail.appdata.xml.in:11
 msgid ""
@@ -22,49 +29,54 @@ msgid ""
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
 msgstr ""
+"Mail er laga for å la deg handsame e-post raskt og enkelt. Grensesnittet er "
+"samtaleorientert, og lèt deg lese heile emnetrådar utan å måtte trykke deg "
+"fram og tilbake mellom enkeltmeldingar."
 
 #: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
-msgstr ""
+msgstr "Lettdriven e-postklient med full IMAP-støtte"
 
 #: data/io.elementary.mail.appdata.xml.in:14
 msgid "Mail grouped into conversations, not a tree of threads"
-msgstr ""
+msgstr "E-post vert gruppert som samtalar, ikkje som eit tre av trådar"
 
 #: data/io.elementary.mail.appdata.xml.in:15
 msgid "As-you-type searching"
-msgstr ""
+msgstr "Sanntidssøk"
 
 #: data/io.elementary.mail.appdata.xml.in:16
 msgid "Desktop notifications"
-msgstr ""
+msgstr "Skrivebordsvarsel"
 
 #: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
-msgstr ""
+msgstr "Støttar fleire kontoar"
 
 #: data/io.elementary.mail.appdata.xml.in:18
 msgid "Inline HTML composer that saves drafts to the server"
-msgstr ""
+msgstr "Inline HTML-assistent som lagrar utkasta hos tenaren"
 
 #: data/io.elementary.mail.appdata.xml.in:19
 msgid ""
 "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
 "IMAP servers"
 msgstr ""
+"Fungerer med Gmail, Yahoo! Mail, Outlook.com (ufullstendig) og andre "
+"populære IMAP-tenarar"
 
 #: data/io.elementary.mail.appdata.xml.in:69
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/io.elementary.mail.desktop.in:6
 msgid "internet-mail"
-msgstr ""
+msgstr "internet-mail"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
-msgstr ""
+msgstr "Epost;E-post;Post;"
 
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
-msgstr ""
+msgstr "Skriv ny melding"
