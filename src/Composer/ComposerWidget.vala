@@ -28,6 +28,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private const string ACTION_ITALIC = "italic";
     private const string ACTION_UNDERLINE = "underline";
     private const string ACTION_STRIKETHROUGH = "strikethrough";
+    private const string ACTION_INSERT_LINK = "insert_link";
     private const string ACTION_REMOVE_FORMAT = "remove_formatting";
     private const string ACTION_DISCARD = "discard";
 
@@ -52,6 +53,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         {ACTION_ITALIC,         on_edit_action,    "s",    "''"     },
         {ACTION_UNDERLINE,      on_edit_action,    "s",    "''"     },
         {ACTION_STRIKETHROUGH,  on_edit_action,    "s",    "''"     },
+        {ACTION_INSERT_LINK,    on_insert_link_clicked,             },
         {ACTION_REMOVE_FORMAT,  on_remove_format                    },
         {ACTION_DISCARD,        on_discard                          }
     };
@@ -189,6 +191,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         indent_buttons.add (indent_less);
 
         var link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU);
+        link.action_name = ACTION_PREFIX + ACTION_INSERT_LINK;
         link.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>K"}, _("Insert Link"));
 
         var image = new Gtk.Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.MENU);
@@ -301,6 +304,26 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
             to_grid_style_context.set_state (state);
         });
+    }
+
+    private void on_insert_link_clicked () {
+        var insert_link_dialog = new InsertLinkDialog (web_view.get_selected_text ());
+        insert_link_dialog.insert_link.connect (on_link_inserted);
+        insert_link_dialog.transient_for = (Gtk.Window) get_toplevel ();
+        insert_link_dialog.run ();
+    }
+
+    private void on_link_inserted (string url, string title) {
+        var selected_text = web_view.get_selected_text ();
+        if (selected_text != null && title == selected_text) {
+            web_view.execute_editor_command ("createLink", url);
+        } else {
+            if (title != null && title.length > 0) {
+                web_view.execute_editor_command ("insertHTML", """<a href="%s">%s</a>""".printf (url, title));
+            } else {
+                web_view.execute_editor_command ("insertHTML", """<a href="%s">%s</a>""".printf (url, url));
+            }
+        }
     }
 
     private void on_mouse_target_changed (WebKit.WebView web_view, WebKit.HitTestResult hit_test, uint mods) {

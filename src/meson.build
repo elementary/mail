@@ -15,6 +15,7 @@ vala_files = files(
     'ConversationList/ConversationListBox.vala',
     'ConversationList/ConversationListItem.vala',
     'ConversationList/ConversationListStore.vala',
+    'Dialogs/InsertLinkDialog.vala',
     'Dialogs/OpenAttachmentDialog.vala',
     'FoldersView/AccountSavedState.vala',
     'FoldersView/AccountSourceItem.vala',
