@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"POT-Creation-Date: 2019-01-09 10:33+0100\n"
 "PO-Revision-Date: 2018-12-19 12:08+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/mail/mail/"
@@ -75,112 +75,112 @@ msgstr "Paštas naudoja sistemos nustatymuose sukonfigūruotas pašto paskyras."
 msgid "Online Accounts…"
 msgstr "Internetinės paskyros…"
 
-#: src/Composer/ComposerWidget.vala:72 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr "Kam:"
 
-#: src/Composer/ComposerWidget.vala:76 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "Tema:"
 
-#: src/Composer/ComposerWidget.vala:83
+#: src/Composer/ComposerWidget.vala:85
 msgid "Cc"
 msgstr "Kopija"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:87
 msgid "Bcc"
 msgstr "Nematoma kopija"
 
-#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr "Kopija:"
 
-#: src/Composer/ComposerWidget.vala:111
+#: src/Composer/ComposerWidget.vala:113
 msgid "Bcc:"
 msgstr "Nematoma kopija:"
 
-#: src/Composer/ComposerWidget.vala:150
+#: src/Composer/ComposerWidget.vala:152
 msgid "Bold"
 msgstr "Pusjuodis"
 
-#: src/Composer/ComposerWidget.vala:156
+#: src/Composer/ComposerWidget.vala:158
 msgid "Italic"
 msgstr "Kursyvas"
 
-#: src/Composer/ComposerWidget.vala:162
+#: src/Composer/ComposerWidget.vala:164
 msgid "Underline"
 msgstr "Pabrauktas"
 
-#: src/Composer/ComposerWidget.vala:168
+#: src/Composer/ComposerWidget.vala:170
 msgid "Strikethrough"
 msgstr "Perbrauktas"
 
-#: src/Composer/ComposerWidget.vala:181
+#: src/Composer/ComposerWidget.vala:183
 msgid "Quote text"
 msgstr "Cituoti tekstą"
 
-#: src/Composer/ComposerWidget.vala:184
+#: src/Composer/ComposerWidget.vala:186
 msgid "Unquote text"
 msgstr "Necituoti teksto"
 
-#: src/Composer/ComposerWidget.vala:192
+#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
 msgstr "Įterpti nuorodą"
 
-#: src/Composer/ComposerWidget.vala:195
+#: src/Composer/ComposerWidget.vala:198
 msgid "Insert Image"
 msgstr "Įterpti paveikslą"
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:201
 msgid "Remove formatting"
 msgstr "Šalinti formatavimą"
 
-#: src/Composer/ComposerWidget.vala:227
+#: src/Composer/ComposerWidget.vala:230
 msgid "Delete draft"
 msgstr "Ištrinti juodraštį"
 
-#: src/Composer/ComposerWidget.vala:231
+#: src/Composer/ComposerWidget.vala:234
 msgid "Attach file"
 msgstr "Pridėti failą"
 
-#: src/Composer/ComposerWidget.vala:237
+#: src/Composer/ComposerWidget.vala:240
 msgid "Send"
 msgstr "Siųsti"
 
-#: src/Composer/ComposerWidget.vala:326
+#: src/Composer/ComposerWidget.vala:349
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%Y %b %-e, %a, %-k:%M"
 
-#: src/Composer/ComposerWidget.vala:356
+#: src/Composer/ComposerWidget.vala:379
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s, %2$s rašė:"
 
-#: src/Composer/ComposerWidget.vala:360
+#: src/Composer/ComposerWidget.vala:383
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Persiųstas laiškas ----------"
 
-#: src/Composer/ComposerWidget.vala:362
+#: src/Composer/ComposerWidget.vala:385
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Nuo: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:363
+#: src/Composer/ComposerWidget.vala:386
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Tema: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:364
+#: src/Composer/ComposerWidget.vala:387
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Data: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:365
+#: src/Composer/ComposerWidget.vala:388
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Kam: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:367
+#: src/Composer/ComposerWidget.vala:390
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Kopija: %s<br/>"
@@ -188,6 +188,30 @@ msgstr "Kopija: %s<br/>"
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
 msgstr "Naujas laiškas"
+
+#: src/Dialogs/InsertLinkDialog.vala:29
+msgid "URL:"
+msgstr ""
+
+#: src/Dialogs/InsertLinkDialog.vala:35
+msgid "https://example.com"
+msgstr ""
+
+#: src/Dialogs/InsertLinkDialog.vala:37
+#, fuzzy
+msgid "Link Text:"
+msgstr "_Raiškusis tekstas"
+
+#: src/Dialogs/InsertLinkDialog.vala:42
+#, fuzzy
+msgid "Example Website"
+msgstr "Tinklalapis"
+
+#: src/Dialogs/InsertLinkDialog.vala:63
+#: src/Dialogs/OpenAttachmentDialog.vala:65
+#: src/MessageList/AttachmentButton.vala:111
+msgid "Cancel"
+msgstr "Atsisakyti"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:37
 #, c-format
@@ -205,11 +229,6 @@ msgstr ""
 #: src/Dialogs/OpenAttachmentDialog.vala:49
 msgid "Open Anyway"
 msgstr "Vis tiek atverti"
-
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
-msgid "Cancel"
-msgstr "Atsisakyti"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
@@ -1410,9 +1429,6 @@ msgstr "Įrašyti"
 #~ msgid "Italic (Ctrl+I)"
 #~ msgstr "Kursyvas (Ctrl+I (Vald+I))"
 
-#~ msgid "_Rich Text"
-#~ msgstr "_Raiškusis tekstas"
-
 #~ msgid "Show Extended Fields"
 #~ msgstr "Rodyti išplėstinius laukus"
 
@@ -1670,9 +1686,6 @@ msgstr "Įrašyti"
 
 #~ msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
 #~ msgstr "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
-
-#~ msgid "Website"
-#~ msgstr "Tinklalapis"
 
 #~ msgid ""
 #~ "Mail encountered an error sending an email.  If the problem persists, "

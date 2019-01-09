@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"POT-Creation-Date: 2019-01-09 10:33+0100\n"
 "PO-Revision-Date: 2018-12-21 02:11+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
@@ -80,112 +80,112 @@ msgstr "O email usa contas de email configuradas nas Configurações do Sistema.
 msgid "Online Accounts…"
 msgstr "Contas Online…"
 
-#: src/Composer/ComposerWidget.vala:72 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr "Para:"
 
-#: src/Composer/ComposerWidget.vala:76 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "Assunto:"
 
-#: src/Composer/ComposerWidget.vala:83
+#: src/Composer/ComposerWidget.vala:85
 msgid "Cc"
 msgstr "Cc"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:87
 msgid "Bcc"
 msgstr "Cco"
 
-#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:111
+#: src/Composer/ComposerWidget.vala:113
 msgid "Bcc:"
 msgstr "Cco:"
 
-#: src/Composer/ComposerWidget.vala:150
+#: src/Composer/ComposerWidget.vala:152
 msgid "Bold"
 msgstr "Negrito"
 
-#: src/Composer/ComposerWidget.vala:156
+#: src/Composer/ComposerWidget.vala:158
 msgid "Italic"
 msgstr "Itálico"
 
-#: src/Composer/ComposerWidget.vala:162
+#: src/Composer/ComposerWidget.vala:164
 msgid "Underline"
 msgstr "Sublinhado"
 
-#: src/Composer/ComposerWidget.vala:168
+#: src/Composer/ComposerWidget.vala:170
 msgid "Strikethrough"
 msgstr "Tachado"
 
-#: src/Composer/ComposerWidget.vala:181
+#: src/Composer/ComposerWidget.vala:183
 msgid "Quote text"
 msgstr "Citar texto"
 
-#: src/Composer/ComposerWidget.vala:184
+#: src/Composer/ComposerWidget.vala:186
 msgid "Unquote text"
 msgstr "Remover citação"
 
-#: src/Composer/ComposerWidget.vala:192
+#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
 msgstr "Inserir link"
 
-#: src/Composer/ComposerWidget.vala:195
+#: src/Composer/ComposerWidget.vala:198
 msgid "Insert Image"
 msgstr "Inserir Imagem"
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:201
 msgid "Remove formatting"
 msgstr "Remover formatação"
 
-#: src/Composer/ComposerWidget.vala:227
+#: src/Composer/ComposerWidget.vala:230
 msgid "Delete draft"
 msgstr "Deletar o rascunho"
 
-#: src/Composer/ComposerWidget.vala:231
+#: src/Composer/ComposerWidget.vala:234
 msgid "Attach file"
 msgstr "Anexar arquivo"
 
-#: src/Composer/ComposerWidget.vala:237
+#: src/Composer/ComposerWidget.vala:240
 msgid "Send"
 msgstr "Enviar"
 
-#: src/Composer/ComposerWidget.vala:326
+#: src/Composer/ComposerWidget.vala:349
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %b %-e, %Y em %-l:%M %p"
 
-#: src/Composer/ComposerWidget.vala:356
+#: src/Composer/ComposerWidget.vala:379
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Em %1$s, %2$s escreveu:"
 
-#: src/Composer/ComposerWidget.vala:360
+#: src/Composer/ComposerWidget.vala:383
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Mensagem encaminhada ----------"
 
-#: src/Composer/ComposerWidget.vala:362
+#: src/Composer/ComposerWidget.vala:385
 #, c-format
 msgid "From: %s<br/>"
 msgstr "De: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:363
+#: src/Composer/ComposerWidget.vala:386
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Assunto: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:364
+#: src/Composer/ComposerWidget.vala:387
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Data: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:365
+#: src/Composer/ComposerWidget.vala:388
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Para: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:367
+#: src/Composer/ComposerWidget.vala:390
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
@@ -193,6 +193,30 @@ msgstr "Cc: %s<br/>"
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
 msgstr "Nova mensagem"
+
+#: src/Dialogs/InsertLinkDialog.vala:29
+msgid "URL:"
+msgstr ""
+
+#: src/Dialogs/InsertLinkDialog.vala:35
+msgid "https://example.com"
+msgstr ""
+
+#: src/Dialogs/InsertLinkDialog.vala:37
+#, fuzzy
+msgid "Link Text:"
+msgstr "_Texto formatado"
+
+#: src/Dialogs/InsertLinkDialog.vala:42
+#, fuzzy
+msgid "Example Website"
+msgstr "Website"
+
+#: src/Dialogs/InsertLinkDialog.vala:63
+#: src/Dialogs/OpenAttachmentDialog.vala:65
+#: src/MessageList/AttachmentButton.vala:111
+msgid "Cancel"
+msgstr "Cancelar"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:37
 #, c-format
@@ -210,11 +234,6 @@ msgstr ""
 #: src/Dialogs/OpenAttachmentDialog.vala:49
 msgid "Open Anyway"
 msgstr "Abrir de qualquer maneira"
-
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
-msgid "Cancel"
-msgstr "Cancelar"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
@@ -1412,9 +1431,6 @@ msgstr "Salvar"
 #~ msgid "Italic (Ctrl+I)"
 #~ msgstr "Itálico (Ctrl+I)"
 
-#~ msgid "_Rich Text"
-#~ msgstr "_Texto formatado"
-
 #~ msgid "Show Extended Fields"
 #~ msgstr "Mostrar campos extendidos"
 
@@ -1672,9 +1688,6 @@ msgstr "Salvar"
 
 #~ msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
 #~ msgstr "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
-
-#~ msgid "Website"
-#~ msgstr "Website"
 
 #~ msgid ""
 #~ "Mail encountered an error sending an email.  If the problem persists, "

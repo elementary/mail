@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"POT-Creation-Date: 2019-01-09 10:33+0100\n"
 "PO-Revision-Date: 2016-03-01 18:37+0000\n"
 "Last-Translator: Ľubomír Hlavko <5lubo555@azet.sk>\n"
 "Language-Team: Slovak (http://www.transifex.com/projects/p/geary/language/"
@@ -76,119 +76,119 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Účty"
 
-#: src/Composer/ComposerWidget.vala:72 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr "Pre:"
 
-#: src/Composer/ComposerWidget.vala:76 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "Predmet:"
 
-#: src/Composer/ComposerWidget.vala:83
+#: src/Composer/ComposerWidget.vala:85
 #, fuzzy
 msgid "Cc"
 msgstr "Kópia:"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:87
 #, fuzzy
 msgid "Bcc"
 msgstr "Skrytá kópia:"
 
-#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr "Kópia:"
 
-#: src/Composer/ComposerWidget.vala:111
+#: src/Composer/ComposerWidget.vala:113
 msgid "Bcc:"
 msgstr "Skrytá kópia:"
 
-#: src/Composer/ComposerWidget.vala:150
+#: src/Composer/ComposerWidget.vala:152
 msgid "Bold"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:156
+#: src/Composer/ComposerWidget.vala:158
 msgid "Italic"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:162
+#: src/Composer/ComposerWidget.vala:164
 #, fuzzy
 msgid "Underline"
 msgstr "Podtrhnuté (Ctrl+U)"
 
-#: src/Composer/ComposerWidget.vala:168
+#: src/Composer/ComposerWidget.vala:170
 #, fuzzy
 msgid "Strikethrough"
 msgstr "Prečiarknuté (Ctrl+K)"
 
-#: src/Composer/ComposerWidget.vala:181
+#: src/Composer/ComposerWidget.vala:183
 #, fuzzy
 msgid "Quote text"
 msgstr "Citácia textu (Ctrl+])"
 
-#: src/Composer/ComposerWidget.vala:184
+#: src/Composer/ComposerWidget.vala:186
 #, fuzzy
 msgid "Unquote text"
 msgstr "Koniec citácie textu (Ctrl+[)"
 
-#: src/Composer/ComposerWidget.vala:192
+#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:195
+#: src/Composer/ComposerWidget.vala:198
 msgid "Insert Image"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:201
 #, fuzzy
 msgid "Remove formatting"
 msgstr "Odstrániť formátovanie (Ctrl+Mezerník)"
 
-#: src/Composer/ComposerWidget.vala:227
+#: src/Composer/ComposerWidget.vala:230
 msgid "Delete draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:231
+#: src/Composer/ComposerWidget.vala:234
 msgid "Attach file"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:237
+#: src/Composer/ComposerWidget.vala:240
 msgid "Send"
 msgstr "Odošli"
 
-#: src/Composer/ComposerWidget.vala:326
+#: src/Composer/ComposerWidget.vala:349
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%A, %-e. %B %Y o %H:%M"
 
-#: src/Composer/ComposerWidget.vala:356
+#: src/Composer/ComposerWidget.vala:379
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Dňa %1$s, %2$s napísal(a):"
 
-#: src/Composer/ComposerWidget.vala:360
+#: src/Composer/ComposerWidget.vala:383
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Preposlaná správa ----------"
 
-#: src/Composer/ComposerWidget.vala:362
+#: src/Composer/ComposerWidget.vala:385
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "Od: %s\n"
 
-#: src/Composer/ComposerWidget.vala:363
+#: src/Composer/ComposerWidget.vala:386
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "Predmet: %s\n"
 
-#: src/Composer/ComposerWidget.vala:364
+#: src/Composer/ComposerWidget.vala:387
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "Dátum: %s\n"
 
-#: src/Composer/ComposerWidget.vala:365
+#: src/Composer/ComposerWidget.vala:388
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "Pre: %s\n"
 
-#: src/Composer/ComposerWidget.vala:367
+#: src/Composer/ComposerWidget.vala:390
 #, fuzzy, c-format
 msgid "Cc: %s<br/>"
 msgstr "Kópia: %s\n"
@@ -196,6 +196,30 @@ msgstr "Kópia: %s\n"
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
 msgstr "Nová správa"
+
+#: src/Dialogs/InsertLinkDialog.vala:29
+msgid "URL:"
+msgstr ""
+
+#: src/Dialogs/InsertLinkDialog.vala:35
+msgid "https://example.com"
+msgstr ""
+
+#: src/Dialogs/InsertLinkDialog.vala:37
+#, fuzzy
+msgid "Link Text:"
+msgstr "Tučný text"
+
+#: src/Dialogs/InsertLinkDialog.vala:42
+#, fuzzy
+msgid "Example Website"
+msgstr "Webová stránka"
+
+#: src/Dialogs/InsertLinkDialog.vala:63
+#: src/Dialogs/OpenAttachmentDialog.vala:65
+#: src/MessageList/AttachmentButton.vala:111
+msgid "Cancel"
+msgstr ""
 
 #: src/Dialogs/OpenAttachmentDialog.vala:37
 #, c-format
@@ -210,11 +234,6 @@ msgstr ""
 
 #: src/Dialogs/OpenAttachmentDialog.vala:49
 msgid "Open Anyway"
-msgstr ""
-
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
-msgid "Cancel"
 msgstr ""
 
 #: src/FoldersView/FolderSourceItem.vala:49
@@ -1381,9 +1400,6 @@ msgstr "_Uložiť"
 #~ msgid "Italic (Ctrl+I)"
 #~ msgstr "Kurzíva (Ctrl+I)"
 
-#~ msgid "_Rich Text"
-#~ msgstr "Tučný text"
-
 #~ msgid "Show Extended Fields"
 #~ msgstr "Zobraziť rozšírené poľa"
 
@@ -1637,9 +1653,6 @@ msgstr "_Uložiť"
 
 #~ msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
 #~ msgstr "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
-
-#~ msgid "Website"
-#~ msgstr "Webová stránka"
 
 #~ msgid "This removes the email from Mail and your email server."
 #~ msgstr "Toto odstráni e-mail z aplikácie Mail a z vášho e-mail serveru."

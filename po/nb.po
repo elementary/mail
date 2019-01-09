@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"POT-Creation-Date: 2019-01-09 10:33+0100\n"
 "PO-Revision-Date: 2019-01-04 00:08+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/mail/"
@@ -80,119 +80,119 @@ msgstr "Mail bruker e-postkontoer satt opp i systeminnstillingene."
 msgid "Online Accounts…"
 msgstr "Kontoer"
 
-#: src/Composer/ComposerWidget.vala:72 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr "Til:"
 
-#: src/Composer/ComposerWidget.vala:76 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "Emne:"
 
-#: src/Composer/ComposerWidget.vala:83
+#: src/Composer/ComposerWidget.vala:85
 #, fuzzy
 msgid "Cc"
 msgstr "Kopi:"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:87
 #, fuzzy
 msgid "Bcc"
 msgstr "Blindkopi:"
 
-#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr "Kopi:"
 
-#: src/Composer/ComposerWidget.vala:111
+#: src/Composer/ComposerWidget.vala:113
 msgid "Bcc:"
 msgstr "Blindkopi:"
 
-#: src/Composer/ComposerWidget.vala:150
+#: src/Composer/ComposerWidget.vala:152
 msgid "Bold"
 msgstr "Fet"
 
-#: src/Composer/ComposerWidget.vala:156
+#: src/Composer/ComposerWidget.vala:158
 msgid "Italic"
 msgstr "Kursiv"
 
-#: src/Composer/ComposerWidget.vala:162
+#: src/Composer/ComposerWidget.vala:164
 #, fuzzy
 msgid "Underline"
 msgstr "Understrek (Ctrl+U)"
 
-#: src/Composer/ComposerWidget.vala:168
+#: src/Composer/ComposerWidget.vala:170
 #, fuzzy
 msgid "Strikethrough"
 msgstr "Gjennomstrek (Ctrl+K)"
 
-#: src/Composer/ComposerWidget.vala:181
+#: src/Composer/ComposerWidget.vala:183
 #, fuzzy
 msgid "Quote text"
 msgstr "Siter tekst (Ctrl+])"
 
-#: src/Composer/ComposerWidget.vala:184
+#: src/Composer/ComposerWidget.vala:186
 #, fuzzy
 msgid "Unquote text"
 msgstr "Ikke siter tekst (Ctrl+[)"
 
-#: src/Composer/ComposerWidget.vala:192
+#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
 msgstr "Sett inn lenke"
 
-#: src/Composer/ComposerWidget.vala:195
+#: src/Composer/ComposerWidget.vala:198
 msgid "Insert Image"
 msgstr "Sett inn bilde"
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:201
 #, fuzzy
 msgid "Remove formatting"
 msgstr "Fjern formatering (Ctrl+Space)"
 
-#: src/Composer/ComposerWidget.vala:227
+#: src/Composer/ComposerWidget.vala:230
 msgid "Delete draft"
 msgstr "Forkast utkast"
 
-#: src/Composer/ComposerWidget.vala:231
+#: src/Composer/ComposerWidget.vala:234
 msgid "Attach file"
 msgstr "Legg ved fil"
 
-#: src/Composer/ComposerWidget.vala:237
+#: src/Composer/ComposerWidget.vala:240
 msgid "Send"
 msgstr "Send"
 
-#: src/Composer/ComposerWidget.vala:326
+#: src/Composer/ComposerWidget.vala:349
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a. %e. %b, %Y, kl %-k:%M"
 
-#: src/Composer/ComposerWidget.vala:356
+#: src/Composer/ComposerWidget.vala:379
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Den %1$s, %2$s skrev:"
 
-#: src/Composer/ComposerWidget.vala:360
+#: src/Composer/ComposerWidget.vala:383
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Videresendt melding ----------"
 
-#: src/Composer/ComposerWidget.vala:362
+#: src/Composer/ComposerWidget.vala:385
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "Fra: %s\n"
 
-#: src/Composer/ComposerWidget.vala:363
+#: src/Composer/ComposerWidget.vala:386
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "Emne: %s\n"
 
-#: src/Composer/ComposerWidget.vala:364
+#: src/Composer/ComposerWidget.vala:387
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "Dato: %s\n"
 
-#: src/Composer/ComposerWidget.vala:365
+#: src/Composer/ComposerWidget.vala:388
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "Til: %s\n"
 
-#: src/Composer/ComposerWidget.vala:367
+#: src/Composer/ComposerWidget.vala:390
 #, fuzzy, c-format
 msgid "Cc: %s<br/>"
 msgstr "Kopier: %s\n"
@@ -200,6 +200,30 @@ msgstr "Kopier: %s\n"
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
 msgstr "Ny melding"
+
+#: src/Dialogs/InsertLinkDialog.vala:29
+msgid "URL:"
+msgstr ""
+
+#: src/Dialogs/InsertLinkDialog.vala:35
+msgid "https://example.com"
+msgstr ""
+
+#: src/Dialogs/InsertLinkDialog.vala:37
+#, fuzzy
+msgid "Link Text:"
+msgstr "_Rik Tekst"
+
+#: src/Dialogs/InsertLinkDialog.vala:42
+#, fuzzy
+msgid "Example Website"
+msgstr "Nettsted"
+
+#: src/Dialogs/InsertLinkDialog.vala:63
+#: src/Dialogs/OpenAttachmentDialog.vala:65
+#: src/MessageList/AttachmentButton.vala:111
+msgid "Cancel"
+msgstr "Avbryt"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:37
 #, c-format
@@ -217,11 +241,6 @@ msgstr ""
 #: src/Dialogs/OpenAttachmentDialog.vala:49
 msgid "Open Anyway"
 msgstr "Åpne likevel"
-
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
-msgid "Cancel"
-msgstr "Avbryt"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
@@ -1400,9 +1419,6 @@ msgstr "_Lagre"
 #~ msgid "Italic (Ctrl+I)"
 #~ msgstr "Kursiv (Ctrl+I)"
 
-#~ msgid "_Rich Text"
-#~ msgstr "_Rik Tekst"
-
 #~ msgid "Show Extended Fields"
 #~ msgstr "Vis Utvidede Felter"
 
@@ -1658,9 +1674,6 @@ msgstr "_Lagre"
 
 #~ msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
 #~ msgstr "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
-
-#~ msgid "Website"
-#~ msgstr "Nettsted"
 
 #~ msgid ""
 #~ "Mail encountered an error sending an email.  If the problem persists, "

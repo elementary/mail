@@ -10,11 +10,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"POT-Creation-Date: 2019-01-09 10:33+0100\n"
 "PO-Revision-Date: 2018-12-24 10:54+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://weblate.elementary.io/projects/mail/mail/fi/>"
-"\n"
+"Language-Team: Finnish <https://weblate.elementary.io/projects/mail/mail/fi/"
+">\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -73,112 +73,112 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Verkkotilit…"
 
-#: src/Composer/ComposerWidget.vala:72 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr "Vastaanottaja:"
 
-#: src/Composer/ComposerWidget.vala:76 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "Aihe:"
 
-#: src/Composer/ComposerWidget.vala:83
+#: src/Composer/ComposerWidget.vala:85
 msgid "Cc"
 msgstr "Kopio"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:87
 msgid "Bcc"
 msgstr "Piilokopio"
 
-#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr "Kopio:"
 
-#: src/Composer/ComposerWidget.vala:111
+#: src/Composer/ComposerWidget.vala:113
 msgid "Bcc:"
 msgstr "Piilokopio:"
 
-#: src/Composer/ComposerWidget.vala:150
+#: src/Composer/ComposerWidget.vala:152
 msgid "Bold"
 msgstr "Lihavointi"
 
-#: src/Composer/ComposerWidget.vala:156
+#: src/Composer/ComposerWidget.vala:158
 msgid "Italic"
 msgstr "Kursivointi"
 
-#: src/Composer/ComposerWidget.vala:162
+#: src/Composer/ComposerWidget.vala:164
 msgid "Underline"
 msgstr "Alleviivaus"
 
-#: src/Composer/ComposerWidget.vala:168
+#: src/Composer/ComposerWidget.vala:170
 msgid "Strikethrough"
 msgstr "Yliviivaus"
 
-#: src/Composer/ComposerWidget.vala:181
+#: src/Composer/ComposerWidget.vala:183
 msgid "Quote text"
 msgstr "Lainaa tekstiä"
 
-#: src/Composer/ComposerWidget.vala:184
+#: src/Composer/ComposerWidget.vala:186
 msgid "Unquote text"
 msgstr "Lopeta tekstin lainaaminen"
 
-#: src/Composer/ComposerWidget.vala:192
+#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
 msgstr "Sisällytä linkki"
 
-#: src/Composer/ComposerWidget.vala:195
+#: src/Composer/ComposerWidget.vala:198
 msgid "Insert Image"
 msgstr "Sisällytä kuva"
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:201
 msgid "Remove formatting"
 msgstr "Poista muotoilu"
 
-#: src/Composer/ComposerWidget.vala:227
+#: src/Composer/ComposerWidget.vala:230
 msgid "Delete draft"
 msgstr "Poista luonnos"
 
-#: src/Composer/ComposerWidget.vala:231
+#: src/Composer/ComposerWidget.vala:234
 msgid "Attach file"
 msgstr "Liitä tiedosto"
 
-#: src/Composer/ComposerWidget.vala:237
+#: src/Composer/ComposerWidget.vala:240
 msgid "Send"
 msgstr "Lähetä"
 
-#: src/Composer/ComposerWidget.vala:326
+#: src/Composer/ComposerWidget.vala:349
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %e. %b %Y klo %H.%M"
 
-#: src/Composer/ComposerWidget.vala:356
+#: src/Composer/ComposerWidget.vala:379
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s %2$s kirjoitti:"
 
-#: src/Composer/ComposerWidget.vala:360
+#: src/Composer/ComposerWidget.vala:383
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Edelleenlähetetty viesti ----------"
 
-#: src/Composer/ComposerWidget.vala:362
+#: src/Composer/ComposerWidget.vala:385
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Lähettäjä: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:363
+#: src/Composer/ComposerWidget.vala:386
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Aihe: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:364
+#: src/Composer/ComposerWidget.vala:387
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Päiväys: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:365
+#: src/Composer/ComposerWidget.vala:388
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Vastaanottaja: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:367
+#: src/Composer/ComposerWidget.vala:390
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Kopio: %s<br/>"
@@ -186,6 +186,30 @@ msgstr "Kopio: %s<br/>"
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
 msgstr "Uusi viesti"
+
+#: src/Dialogs/InsertLinkDialog.vala:29
+msgid "URL:"
+msgstr ""
+
+#: src/Dialogs/InsertLinkDialog.vala:35
+msgid "https://example.com"
+msgstr ""
+
+#: src/Dialogs/InsertLinkDialog.vala:37
+#, fuzzy
+msgid "Link Text:"
+msgstr "_Rikastettu teksti"
+
+#: src/Dialogs/InsertLinkDialog.vala:42
+#, fuzzy
+msgid "Example Website"
+msgstr "Verkkosivusto"
+
+#: src/Dialogs/InsertLinkDialog.vala:63
+#: src/Dialogs/OpenAttachmentDialog.vala:65
+#: src/MessageList/AttachmentButton.vala:111
+msgid "Cancel"
+msgstr "Peru"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:37
 #, c-format
@@ -203,11 +227,6 @@ msgstr ""
 #: src/Dialogs/OpenAttachmentDialog.vala:49
 msgid "Open Anyway"
 msgstr "Avaa silti"
-
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
-msgid "Cancel"
-msgstr "Peru"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
@@ -1372,9 +1391,6 @@ msgstr "Tallenna"
 #~ msgid "Italic (Ctrl+I)"
 #~ msgstr "Kursiivi (Ctrl+I)"
 
-#~ msgid "_Rich Text"
-#~ msgstr "_Rikastettu teksti"
-
 #~ msgid "Show Extended Fields"
 #~ msgstr "Näytä laajennetut kentät"
 
@@ -1631,9 +1647,6 @@ msgstr "Tallenna"
 
 #~ msgid "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
 #~ msgstr "© 2011-2015 Yorba Foundation, © 2016 elementary LLC."
-
-#~ msgid "Website"
-#~ msgstr "Verkkosivusto"
 
 #~ msgid ""
 #~ "Mail encountered an error sending an email.  If the problem persists, "
