@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-08 13:23-0800\n"
+"POT-Creation-Date: 2018-12-17 07:10+0100\n"
 "PO-Revision-Date: 2017-05-04 19:07+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/mail/extra/it/>\n"
@@ -19,24 +19,17 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-20 06:35+0000\n"
 
+#: data/io.elementary.mail.appdata.xml.in:8
+#: data/io.elementary.mail.desktop.in:3
 msgid "Mail"
 msgstr "Posta"
 
+#: data/io.elementary.mail.appdata.xml.in:9
+#: data/io.elementary.mail.desktop.in:4
 msgid "Send and receive mail"
 msgstr "Invia e ricevi email"
 
-msgid "Email;E-mail;Mail;"
-msgstr "Email;E-mail;Mail;Posta;Posta elettronica;"
-
-msgid "Compose Message"
-msgstr "Componi un messaggio"
-
-msgid "About Mail"
-msgstr "Informazioni"
-
-msgid "Lightweight mail client"
-msgstr "Un leggero client di posta elettronica"
-
+#: data/io.elementary.mail.appdata.xml.in:11
 msgid ""
 "Mail is designed to let you manage your email quickly and effortlessly. Its "
 "interface is based on conversations, so you can read an entire discussion "
@@ -47,24 +40,31 @@ msgstr ""
 "conversazioni, in modo da poter leggere un'intera discussione senza dover "
 "fare click da un messaggio all'altro."
 
+#: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
 msgstr "Un leggero client di posta elettronica con completo supporto IMAP"
 
+#: data/io.elementary.mail.appdata.xml.in:14
 msgid "Mail grouped into conversations, not a tree of threads"
 msgstr "Mail raggruppate in conversazioni"
 
+#: data/io.elementary.mail.appdata.xml.in:15
 msgid "As-you-type searching"
 msgstr "Ricerca in tempo reale"
 
+#: data/io.elementary.mail.appdata.xml.in:16
 msgid "Desktop notifications"
 msgstr "Notifiche desktop"
 
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "Supporto ad account multipli"
 
+#: data/io.elementary.mail.appdata.xml.in:18
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "Compositore HTML in linea che salva le bozze al server"
 
+#: data/io.elementary.mail.appdata.xml.in:19
 msgid ""
 "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
 "IMAP servers"
@@ -72,19 +72,41 @@ msgstr ""
 "Funziona con Gmail, Yahoo! Mail, Outlook.com (in maniera ancora "
 "sperimentale) e altri popolari server IMAP"
 
-msgid "Minor bug fixes"
-msgstr "Correzione di bug minori"
-
-msgid "Translation updates"
-msgstr "Aggiornamento delle traduzioni"
-
-msgid "Appstream: add releases info"
-msgstr "Appstream: aggiunge informazioni sui rilasci"
-
-msgid "Don't overwrite custom settings not available in the POA plugin"
+#: data/io.elementary.mail.appdata.xml.in:69
+msgid "elementary, Inc."
 msgstr ""
-"Non sovrascrivere le impostazioni personalizzate non disponibili nel plug-in "
-"POA"
 
-msgid "Release for Loki"
-msgstr "Rilascio per Loki"
+#: data/io.elementary.mail.desktop.in:6
+msgid "internet-mail"
+msgstr ""
+
+#: data/io.elementary.mail.desktop.in:7
+msgid "Email;E-mail;Mail;"
+msgstr "Email;E-mail;Mail;Posta;Posta elettronica;"
+
+#: data/io.elementary.mail.desktop.in:17
+msgid "Compose Message"
+msgstr "Componi un messaggio"
+
+#~ msgid "About Mail"
+#~ msgstr "Informazioni"
+
+#~ msgid "Lightweight mail client"
+#~ msgstr "Un leggero client di posta elettronica"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "Correzione di bug minori"
+
+#~ msgid "Translation updates"
+#~ msgstr "Aggiornamento delle traduzioni"
+
+#~ msgid "Appstream: add releases info"
+#~ msgstr "Appstream: aggiunge informazioni sui rilasci"
+
+#~ msgid "Don't overwrite custom settings not available in the POA plugin"
+#~ msgstr ""
+#~ "Non sovrascrivere le impostazioni personalizzate non disponibili nel plug-"
+#~ "in POA"
+
+#~ msgid "Release for Loki"
+#~ msgstr "Rilascio per Loki"

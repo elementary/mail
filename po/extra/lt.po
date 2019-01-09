@@ -7,35 +7,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-03-08 23:10+0000\n"
+"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"PO-Revision-Date: 2018-12-19 12:01+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
-"Language-Team: Lithuanian <lt@li.org>\n"
+"Language-Team: Lithuanian <https://weblate.elementary.io/projects/mail/extra/"
+"lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && (n % 100 < 11 || n % 100 > "
+"19)) ? 0 : ((n % 10 >= 2 && n % 10 <= 9 && (n % 100 < 11 || n % 100 > 19)) ? "
+"1 : 2);\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
 
+#: data/io.elementary.mail.appdata.xml.in:8
+#: data/io.elementary.mail.desktop.in:3
 msgid "Mail"
 msgstr "Paštas"
 
+#: data/io.elementary.mail.appdata.xml.in:9
+#: data/io.elementary.mail.desktop.in:4
 msgid "Send and receive mail"
 msgstr "Siųsti ir gauti paštą"
 
-msgid "Email;E-mail;Mail;"
-msgstr "El.paštas;El. paštas;Paštas;El.pastas;"
-
-msgid "Compose Message"
-msgstr "Rašyti laišką"
-
-msgid "About Mail"
-msgstr "Apie Paštą"
-
-msgid "Lightweight mail client"
-msgstr "Supaprastintas pašto klientas"
-
+#: data/io.elementary.mail.appdata.xml.in:11
 msgid ""
 "Mail is designed to let you manage your email quickly and effortlessly. Its "
 "interface is based on conversations, so you can read an entire discussion "
@@ -45,24 +42,31 @@ msgstr ""
 "savo el. paštą. Jo sąsaja yra pagrįsta pokalbių principu, taigi, galite "
 "skaityti visą diskusiją, be būtinybės spaudinėti per laiškus."
 
+#: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
 msgstr "Supaprastintas pašto klientas su pilnu IMAP palaikymu"
 
+#: data/io.elementary.mail.appdata.xml.in:14
 msgid "Mail grouped into conversations, not a tree of threads"
 msgstr "Paštas yra grupuojamas į pokalbius, o ne gijų medį"
 
+#: data/io.elementary.mail.appdata.xml.in:15
 msgid "As-you-type searching"
 msgstr "Paieška renkant tekstą"
 
+#: data/io.elementary.mail.appdata.xml.in:16
 msgid "Desktop notifications"
 msgstr "Darbalaukio pranešimai"
 
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "Kelių paskyrų palaikymas"
 
+#: data/io.elementary.mail.appdata.xml.in:18
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "Įterpta HTML rašyklė, kuri įrašo juodraščius į serverį"
 
+#: data/io.elementary.mail.appdata.xml.in:19
 msgid ""
 "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
 "IMAP servers"
@@ -70,17 +74,39 @@ msgstr ""
 "Veikia su Gmail, Yahoo! Mail, Outlook.com (eksperimentinis), ir kitais "
 "populiariais IMAP serveriais"
 
-msgid "Minor bug fixes"
-msgstr "Smulkių klaidų pataisymai"
+#: data/io.elementary.mail.appdata.xml.in:69
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
-msgid "Translation updates"
-msgstr "Vertimų atnaujinimai"
+#: data/io.elementary.mail.desktop.in:6
+msgid "internet-mail"
+msgstr "internet-mail"
 
-msgid "Appstream: add releases info"
-msgstr "Appstream: pridėti laidų informaciją"
+#: data/io.elementary.mail.desktop.in:7
+msgid "Email;E-mail;Mail;"
+msgstr "El.paštas;El. paštas;Paštas;El.pastas;"
 
-msgid "Don't overwrite custom settings not available in the POA plugin"
-msgstr "Neperrašyti tinkintų nustatymų, kurie neprieinami POA įskiepyje"
+#: data/io.elementary.mail.desktop.in:17
+msgid "Compose Message"
+msgstr "Rašyti laišką"
 
-msgid "Release for Loki"
-msgstr "Laida, skirta Loki"
+#~ msgid "About Mail"
+#~ msgstr "Apie Paštą"
+
+#~ msgid "Lightweight mail client"
+#~ msgstr "Supaprastintas pašto klientas"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "Smulkių klaidų pataisymai"
+
+#~ msgid "Translation updates"
+#~ msgstr "Vertimų atnaujinimai"
+
+#~ msgid "Appstream: add releases info"
+#~ msgstr "Appstream: pridėti laidų informaciją"
+
+#~ msgid "Don't overwrite custom settings not available in the POA plugin"
+#~ msgstr "Neperrašyti tinkintų nustatymų, kurie neprieinami POA įskiepyje"
+
+#~ msgid "Release for Loki"
+#~ msgstr "Laida, skirta Loki"

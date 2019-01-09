@@ -7,35 +7,30 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-03-18 14:05+0000\n"
-"Last-Translator: Jiri Grönroos <Unknown>\n"
-"Language-Team: Finnish <fi@li.org>\n"
+"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"PO-Revision-Date: 2018-12-24 10:54+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"Language-Team: Finnish <https://weblate.elementary.io/projects/mail/extra/fi/"
+">\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-19 06:51+0000\n"
-"X-Generator: Launchpad (build 18332)\n"
 
+#: data/io.elementary.mail.appdata.xml.in:8
+#: data/io.elementary.mail.desktop.in:3
 msgid "Mail"
 msgstr "Sähköposti"
 
+#: data/io.elementary.mail.appdata.xml.in:9
+#: data/io.elementary.mail.desktop.in:4
 msgid "Send and receive mail"
 msgstr "Lähetä ja vastaanota sähköpostia"
 
-msgid "Email;E-mail;Mail;"
-msgstr "Email;E-mail;Mail;posti;sähköposti;maili;"
-
-msgid "Compose Message"
-msgstr "Uusi viesti"
-
-msgid "About Mail"
-msgstr "Tietoja - Sähköposti"
-
-msgid "Lightweight mail client"
-msgstr "Kevyt sähköpostisovellus"
-
+#: data/io.elementary.mail.appdata.xml.in:11
 msgid ""
 "Mail is designed to let you manage your email quickly and effortlessly. Its "
 "interface is based on conversations, so you can read an entire discussion "
@@ -45,24 +40,31 @@ msgstr ""
 "perustuu keskusteluihin, joten voit lukea koko keskustelun napsauttamatta "
 "eri viestien välillä."
 
+#: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
 msgstr "Kevyt sähköpostisovellus täydellä IMAP-tuella"
 
+#: data/io.elementary.mail.appdata.xml.in:14
 msgid "Mail grouped into conversations, not a tree of threads"
 msgstr "Viestit ryhmiteltynä keskusteluiksi, ei ketjuiksi"
 
+#: data/io.elementary.mail.appdata.xml.in:15
 msgid "As-you-type searching"
 msgstr "Välitön hakutoiminto"
 
+#: data/io.elementary.mail.appdata.xml.in:16
 msgid "Desktop notifications"
 msgstr "Työpöytäilmoitukset"
 
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "Tuki useille tileille"
 
+#: data/io.elementary.mail.appdata.xml.in:18
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "HTML-viestinmuodostaja, joka tallentaa luonnokset palvelimelle"
 
+#: data/io.elementary.mail.appdata.xml.in:19
 msgid ""
 "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
 "IMAP servers"
@@ -70,17 +72,33 @@ msgstr ""
 "Toimii Gmailin, Yahoo! Mailin, Outlook.comin (kokeellinen tuki) ja muiden "
 "suosittujen IMAP-palvelimien kanssa"
 
-msgid "Minor bug fixes"
-msgstr "Muita pieniä korjauksia"
+#: data/io.elementary.mail.appdata.xml.in:69
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
-msgid "Translation updates"
-msgstr "Päivityksiä kielikäännöksiin"
+#: data/io.elementary.mail.desktop.in:6
+msgid "internet-mail"
+msgstr "internet-mail"
 
-msgid "Appstream: add releases info"
-msgstr ""
+#: data/io.elementary.mail.desktop.in:7
+msgid "Email;E-mail;Mail;"
+msgstr "Email;E-mail;Mail;posti;sähköposti;maili;"
 
-msgid "Don't overwrite custom settings not available in the POA plugin"
-msgstr ""
+#: data/io.elementary.mail.desktop.in:17
+msgid "Compose Message"
+msgstr "Uusi viesti"
 
-msgid "Release for Loki"
-msgstr "Julkaisu Lokille"
+#~ msgid "About Mail"
+#~ msgstr "Tietoja - Sähköposti"
+
+#~ msgid "Lightweight mail client"
+#~ msgstr "Kevyt sähköpostisovellus"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "Muita pieniä korjauksia"
+
+#~ msgid "Translation updates"
+#~ msgstr "Päivityksiä kielikäännöksiin"
+
+#~ msgid "Release for Loki"
+#~ msgstr "Julkaisu Lokille"
