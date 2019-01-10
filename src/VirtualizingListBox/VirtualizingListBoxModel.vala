@@ -29,6 +29,7 @@ public abstract class VirtualizingListBoxModel : GLib.ListModel, GLib.Object {
 
     public abstract uint get_n_items ();
     public abstract GLib.Object? get_item (uint index);
+    public abstract GLib.Object? get_item_unfiltered (uint index);
 
     public void unselect_all () {
         selected_rows.clear ();
@@ -60,7 +61,9 @@ public abstract class VirtualizingListBoxModel : GLib.ListModel, GLib.Object {
                 continue;
             }
 
-            items.add (item);
+            if (item != null) {
+                items.add (item);
+            }
 
             if ((item == to || item == from) && !ignore_next_break) {
                 break;
@@ -87,6 +90,21 @@ public abstract class VirtualizingListBoxModel : GLib.ListModel, GLib.Object {
         return -1;
     }
 
+    public int get_index_of_unfiltered (GLib.Object? item) {
+        if (item == null) {
+            return -1;
+        }
+
+        var length = get_n_items ();
+        for (int i = 0; i < length; i++) {
+            if (item == get_item_unfiltered (i)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
     public int get_index_of_item_before (GLib.Object item) {
         if (item == get_item (0)) {
             return -1;
@@ -95,7 +113,9 @@ public abstract class VirtualizingListBoxModel : GLib.ListModel, GLib.Object {
         var length = get_n_items ();
         for (int i = 1; i < length; i++) {
             if (get_item (i) == item) {
-                return i - 1;
+                if (get_item (i - 1) != null) {
+                    return i - 1;
+                }
             }
         }
 
@@ -110,10 +130,16 @@ public abstract class VirtualizingListBoxModel : GLib.ListModel, GLib.Object {
         var length = get_n_items ();
         for (int i = 0; i < length - 1; i++) {
             if (get_item (i) == item) {
-                return i + 1;
+                if (get_item (i + 1) != null) {
+                    return i + 1;
+                }
             }
         }
 
         return -1;
+    }
+
+    public Gee.HashSet<weak GLib.Object> get_selected_rows () {
+        return selected_rows;
     }
 }

@@ -8,6 +8,7 @@ vala_files = files(
     'Backend/Account.vala',
     'Backend/ContactManager.vala',
     'Backend/Session.vala',
+    'Backend/TrashHandler.vala',
     'Composer/ComposerWidget.vala',
     'Composer/ComposerWindow.vala',
     'Composer/InlineComposer.vala',
