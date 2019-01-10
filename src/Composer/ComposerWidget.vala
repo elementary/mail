@@ -41,6 +41,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private Gtk.Entry cc_val;
     private Gtk.Revealer cc_revealer;
     private Granite.Widgets.OverlayBar message_url_overlay;
+    private Gtk.ComboBoxText from_combo;
 
     public enum Type {
         REPLY,
@@ -75,7 +76,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         from_label.xalign = 1;
         from_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        var from_combo = new Gtk.ComboBoxText ();
+        from_combo = new Gtk.ComboBoxText ();
         from_combo.hexpand = true;
 
         var from_grid = new Gtk.Grid ();
@@ -281,6 +282,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
         contact_manager.setup_entry (cc_val);
         contact_manager.setup_entry (bcc_val);
 
+        load_from_combobox ();
+        if (from_combo.model.iter_n_children (null) > 1) {
+            from_revealer.reveal_child = true;
+        }
+
         bind_property ("has-recipients", send, "sensitive");
 
         cc_button.clicked.connect (() => {
@@ -438,5 +444,14 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
     private void on_discard () {
         discarded ();
+    }
+
+    private void load_from_combobox () {
+        unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+        foreach (var address in session.get_own_addresses ()) {
+            from_combo.append_text (address);
+        }
+
+        from_combo.active = 0;
     }
 }
