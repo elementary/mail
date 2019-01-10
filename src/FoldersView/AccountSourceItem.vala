@@ -38,7 +38,7 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
         saved_state = new AccountSavedState (account);
         saved_state.bind_with_expandable_item (this);
 
-        var offlinestore = (Camel.OfflineStore) account.service;
+        unowned Camel.OfflineStore offlinestore = (Camel.OfflineStore) account.service;
         name = offlinestore.display_name;
         offlinestore.folder_created.connect (folder_created);
         offlinestore.folder_deleted.connect (folder_deleted);
@@ -75,9 +75,11 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
     }
 
     private void folder_deleted (Camel.FolderInfo folder_info) {
-        var item = folder_items[folder_info.full_name];
-        item.parent.remove (item);
-        folder_items.unset (folder_info.full_name);
+        Mail.FolderSourceItem? item = folder_items[folder_info.full_name];
+        if (item != null) {
+            item.parent.remove (item);
+            folder_items.unset (folder_info.full_name);
+        }
     }
 
     private void folder_created (Camel.FolderInfo folder_info) {

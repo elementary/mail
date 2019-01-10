@@ -40,7 +40,11 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         list_store = new ConversationListStore ();
         list_store.set_sort_func (thread_sort_function);
         list_store.set_filter_func ((obj) => {
-            return !((ConversationItemModel)obj).deleted;
+            if (obj is ConversationItemModel) {
+                return !((ConversationItemModel)obj).deleted;
+            } else {
+                return false;
+            }
         });
 
         model = list_store;
