@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2018 elementary LLC. (https://elementary.io)
+ * Copyright 2018-2019 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +21,7 @@ public class Mail.TrashHandler {
     private Camel.Folder previous_folder;
     private Gee.ArrayList<weak Camel.MessageInfo> deleted_messages;
     private bool frozen = false;
-    private uint timeout_id = -1;
+    private uint timeout_id = 0;
 
     public int delete_threads (Camel.Folder folder, Gee.ArrayList<Camel.FolderThreadNode?> threads) {
         previous_folder = folder;
@@ -38,7 +37,7 @@ public class Mail.TrashHandler {
 
         timeout_id = Timeout.add_seconds (10, () => {
             expire_undo ();
-            timeout_id = -1;
+            timeout_id = 0;
             return Source.REMOVE;
         });
 
@@ -56,9 +55,9 @@ public class Mail.TrashHandler {
     }
 
     public void expire_undo () {
-        if (timeout_id != -1) {
+        if (timeout_id != 0) {
             Source.remove (timeout_id);
-            timeout_id = -1;
+            timeout_id = 0;
         }
 
         if (frozen) {
