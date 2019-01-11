@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2018-12-19 12:08+0000\n"
+"PO-Revision-Date: 2019-01-11 20:53+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/mail/mail/"
 "lt/>\n"
@@ -191,21 +191,19 @@ msgstr "Naujas laiškas"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://example.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
-#, fuzzy
 msgid "Link Text:"
-msgstr "_Raiškusis tekstas"
+msgstr "Nuorodos tekstas:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
-#, fuzzy
 msgid "Example Website"
-msgstr "Tinklalapis"
+msgstr "Pavyzdinė svetainė"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
 #: src/Dialogs/OpenAttachmentDialog.vala:65
