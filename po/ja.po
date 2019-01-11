@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2019-01-04 00:55+0000\n"
+"PO-Revision-Date: 2019-01-11 00:39+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/mail/mail/ja/"
 ">\n"
@@ -179,21 +179,19 @@ msgstr "新しいメッセージ"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://example.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
-#, fuzzy
 msgid "Link Text:"
-msgstr "リッチテキスト (_R)"
+msgstr "リンクテキスト:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
-#, fuzzy
 msgid "Example Website"
-msgstr "Web サイト"
+msgstr "Web サイト名を入力"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
 #: src/Dialogs/OpenAttachmentDialog.vala:65
