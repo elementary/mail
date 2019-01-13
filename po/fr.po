@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2019-01-11 08:54+0000\n"
+"PO-Revision-Date: 2019-01-14 00:02+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/mail/mail/fr/>"
 "\n"
@@ -48,7 +48,7 @@ msgstr "Toujours afficher les images distantes"
 
 #: src/HeaderBar.vala:64
 msgid "Account Settings…"
-msgstr "Paramètres des comptes…"
+msgstr "Paramètres de compte…"
 
 #: src/HeaderBar.vala:84
 msgid "Menu"
@@ -81,7 +81,7 @@ msgstr ""
 
 #: src/WelcomeView.vala:50
 msgid "Online Accounts…"
-msgstr "Comptes en-ligne…"
+msgstr "Comptes en ligne…"
 
 #: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
 msgid "To:"
@@ -141,7 +141,7 @@ msgstr "Insérer une image"
 
 #: src/Composer/ComposerWidget.vala:201
 msgid "Remove formatting"
-msgstr "Supprimer la mise en page"
+msgstr "Supprimer la mise en forme"
 
 #: src/Composer/ComposerWidget.vala:230
 msgid "Delete draft"
@@ -229,12 +229,12 @@ msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
-"Ouvrir des pièces-jointes peut causer des dommages à votre système. Veuillez "
+"Ouvrir des pièces jointes peut causer des dommages à votre système. Veuillez "
 "ouvrir uniquement les fichiers provenant de sources sûres."
 
 #: src/Dialogs/OpenAttachmentDialog.vala:49
 msgid "Open Anyway"
-msgstr "Ouvrir quand-même"
+msgstr "Ouvrir quand même"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
