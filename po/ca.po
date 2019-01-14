@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2019-01-11 13:13+0000\n"
+"PO-Revision-Date: 2019-01-15 00:05+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.elementary.io/projects/mail/mail/ca/>"
 "\n"
@@ -146,7 +146,7 @@ msgstr "Envia"
 
 #: src/Composer/ComposerWidget.vala:349
 msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%a, %-e de %b %Y a les %-l:%M %p"
+msgstr "%a, %-e %b de %Y a les %-H.%M"
 
 #: src/Composer/ComposerWidget.vala:379
 #, c-format
