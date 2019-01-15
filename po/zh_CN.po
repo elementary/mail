@@ -15,20 +15,19 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2017-04-13 08:51+0000\n"
+"PO-Revision-Date: 2019-01-15 13:01+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
-"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
-"mail/mail/zh_CN/>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
+"mail/mail/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:54+0000\n"
 
 #: src/HeaderBar.vala:38
-#, fuzzy
 msgid "Compose new message"
 msgstr "撰写新邮件"
 
@@ -37,13 +36,12 @@ msgid "Search Mail"
 msgstr "搜索邮件"
 
 #: src/HeaderBar.vala:56
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "总是显示远程图片："
+msgstr "总是显示远程图片"
 
 #: src/HeaderBar.vala:64
 msgid "Account Settings…"
-msgstr ""
+msgstr "账户设置…"
 
 #: src/HeaderBar.vala:84
 msgid "Menu"
@@ -54,7 +52,6 @@ msgid "Reply"
 msgstr "回复"
 
 #: src/HeaderBar.vala:97
-#, fuzzy
 msgid "Reply All"
 msgstr "回复全部"
 
@@ -63,23 +60,20 @@ msgid "Forward"
 msgstr "转发"
 
 #: src/HeaderBar.vala:111
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "移动已选会话"
+msgstr "移动会话至回收站"
 
 #: src/WelcomeView.vala:40
-#, fuzzy
 msgid "Connect an Account"
-msgstr "删除账号"
+msgstr "连接账户"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
-msgstr ""
+msgstr "邮件应用使用系统设置中配置的邮箱账户。"
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "帐号"
+msgstr "在线账户…"
 
 #: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
 msgid "To:"
@@ -90,14 +84,12 @@ msgid "Subject:"
 msgstr "主题："
 
 #: src/Composer/ComposerWidget.vala:85
-#, fuzzy
 msgid "Cc"
-msgstr "抄送："
+msgstr "抄送"
 
 #: src/Composer/ComposerWidget.vala:87
-#, fuzzy
 msgid "Bcc"
-msgstr "密送："
+msgstr "密送"
 
 #: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
@@ -109,42 +101,37 @@ msgstr "密送："
 
 #: src/Composer/ComposerWidget.vala:152
 msgid "Bold"
-msgstr ""
+msgstr "粗体"
 
 #: src/Composer/ComposerWidget.vala:158
 msgid "Italic"
-msgstr ""
+msgstr "斜体"
 
 #: src/Composer/ComposerWidget.vala:164
-#, fuzzy
 msgid "Underline"
 msgstr "下划线"
 
 #: src/Composer/ComposerWidget.vala:170
-#, fuzzy
 msgid "Strikethrough"
 msgstr "删除线"
 
 #: src/Composer/ComposerWidget.vala:183
-#, fuzzy
 msgid "Quote text"
 msgstr "引用文本"
 
 #: src/Composer/ComposerWidget.vala:186
-#, fuzzy
 msgid "Unquote text"
 msgstr "取消引用"
 
 #: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
-msgstr ""
+msgstr "插入链接"
 
 #: src/Composer/ComposerWidget.vala:198
 msgid "Insert Image"
-msgstr ""
+msgstr "插入图像"
 
 #: src/Composer/ComposerWidget.vala:201
-#, fuzzy
 msgid "Remove formatting"
 msgstr "删除格式"
 
@@ -174,29 +161,29 @@ msgid "---------- Forwarded message ----------"
 msgstr "---------- 转发邮件 ----------"
 
 #: src/Composer/ComposerWidget.vala:385
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "发件人：%s\n"
+msgstr "发件人： %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:386
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "主题 : %s\n"
+msgstr "主题：%s<br/>"
 
 #: src/Composer/ComposerWidget.vala:387
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "日期：%s\n"
+msgstr "日期：%s<br/>"
 
 #: src/Composer/ComposerWidget.vala:388
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "收件人：%s\n"
+msgstr "收件人： %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:390
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "抄送：%s\n"
+msgstr "抄送：%s<br/>"
 
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
@@ -204,21 +191,19 @@ msgstr "新邮件"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "网址："
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://example.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
-#, fuzzy
 msgid "Link Text:"
-msgstr "富文本"
+msgstr "超链接文本："
 
 #: src/Dialogs/InsertLinkDialog.vala:42
-#, fuzzy
 msgid "Example Website"
-msgstr "网站"
+msgstr "网站示例"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
 #: src/Dialogs/OpenAttachmentDialog.vala:65
@@ -243,12 +228,11 @@ msgstr "仍然打开"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
-msgstr ""
+msgstr "更新文件夹"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "未选中对话。"
+msgstr "未选中任何消息"
 
 #: src/MessageList/MessageListItem.vala:76
 msgid "From:"
@@ -280,10 +264,9 @@ msgstr "另存为…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "未知"
 
 #: src/MessageList/AttachmentButton.vala:113
-#, fuzzy
 msgid "Save"
 msgstr "保存"
 
