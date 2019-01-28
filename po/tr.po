@@ -17,20 +17,20 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2017-04-15 20:39+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
+"PO-Revision-Date: 2019-01-28 15:17+0000\n"
+"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
+"Language-Team: Turkish <https://weblate.elementary.io/projects/mail/mail/tr/>"
+"\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-POOTLE-MTIME: 1423290848.000000\n"
 
 #: src/HeaderBar.vala:38
-#, fuzzy
 msgid "Compose new message"
 msgstr "Yeni İleti Oluştur"
 
@@ -39,13 +39,12 @@ msgid "Search Mail"
 msgstr "Posta Ara"
 
 #: src/HeaderBar.vala:56
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "Her zaman uzaktan kontrol resimlerini göster:"
+msgstr "Her zaman uzaktaki resimlerini göster"
 
 #: src/HeaderBar.vala:64
 msgid "Account Settings…"
-msgstr ""
+msgstr "Hesap Ayarları…"
 
 #: src/HeaderBar.vala:84
 msgid "Menu"
@@ -56,32 +55,28 @@ msgid "Reply"
 msgstr "Yanıtla"
 
 #: src/HeaderBar.vala:97
-#, fuzzy
 msgid "Reply All"
-msgstr "Tümüne Yanıt_Ver"
+msgstr "Tümüne Yanıt Ver"
 
 #: src/HeaderBar.vala:104
 msgid "Forward"
 msgstr "İlet"
 
 #: src/HeaderBar.vala:111
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "Konuşmaları taşı"
+msgstr "Konuşmaları Çöpe taşı"
 
 #: src/WelcomeView.vala:40
-#, fuzzy
 msgid "Connect an Account"
-msgstr "Hesabı Sil"
+msgstr "Hesap bağla"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
-msgstr ""
+msgstr "Mail Sistem Ayarları'nda belirtilen posta hesaplarını kullanır."
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "Hesaplar"
+msgstr "Çevrimiçi hesaplar…"
 
 #: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
 msgid "To:"
@@ -92,14 +87,12 @@ msgid "Subject:"
 msgstr "Konu:"
 
 #: src/Composer/ComposerWidget.vala:85
-#, fuzzy
 msgid "Cc"
-msgstr "Cc:"
+msgstr "Cc"
 
 #: src/Composer/ComposerWidget.vala:87
-#, fuzzy
 msgid "Bcc"
-msgstr "Bcc:"
+msgstr "Bcc"
 
 #: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
@@ -111,44 +104,39 @@ msgstr "Bcc:"
 
 #: src/Composer/ComposerWidget.vala:152
 msgid "Bold"
-msgstr ""
+msgstr "Kalın"
 
 #: src/Composer/ComposerWidget.vala:158
 msgid "Italic"
-msgstr ""
+msgstr "İtalik"
 
 #: src/Composer/ComposerWidget.vala:164
-#, fuzzy
 msgid "Underline"
-msgstr "Altı Çizili (Ctrl-U)"
+msgstr "Altı Çizili"
 
 #: src/Composer/ComposerWidget.vala:170
-#, fuzzy
 msgid "Strikethrough"
-msgstr "Çizgili (Ctrl-K)"
+msgstr "Üstü Çizili"
 
 #: src/Composer/ComposerWidget.vala:183
-#, fuzzy
 msgid "Quote text"
-msgstr "Metni alıntıla (Ctrl+])"
+msgstr "Metni alıntıla"
 
 #: src/Composer/ComposerWidget.vala:186
-#, fuzzy
 msgid "Unquote text"
-msgstr "Metni alıntılamaktan vazgeç (Ctrl+[)"
+msgstr "Metni alıntılamaktan vazgeç"
 
 #: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
-msgstr ""
+msgstr "Bağlantı ekle"
 
 #: src/Composer/ComposerWidget.vala:198
 msgid "Insert Image"
-msgstr ""
+msgstr "Resim ekle"
 
 #: src/Composer/ComposerWidget.vala:201
-#, fuzzy
 msgid "Remove formatting"
-msgstr "Biçimlendirmeyi kaldır (Ctrl+Space)"
+msgstr "Biçimlendirmeyi kaldır"
 
 #: src/Composer/ComposerWidget.vala:230
 msgid "Delete draft"
@@ -176,29 +164,29 @@ msgid "---------- Forwarded message ----------"
 msgstr "---------- Yönlendirilen ileti ----------"
 
 #: src/Composer/ComposerWidget.vala:385
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "Gönderen: %s\n"
+msgstr "Gönderen: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:386
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "Konu: %s\n"
+msgstr "Konu: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:387
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Tarih: %s\n"
+msgstr "Tarih: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:388
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "Kime: %s\n"
+msgstr "Kime: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:390
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "Cc: %s\n"
+msgstr "Cc: %s<br/>"
 
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
@@ -206,21 +194,19 @@ msgstr "Yeni İleti"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://example.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
-#, fuzzy
 msgid "Link Text:"
-msgstr "_Zengin Metin"
+msgstr "Metne bağlantı ekle:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
-#, fuzzy
 msgid "Example Website"
-msgstr "Web Sitesi"
+msgstr "Örnek Web Sitesi"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
 #: src/Dialogs/OpenAttachmentDialog.vala:65
@@ -247,12 +233,11 @@ msgstr "Yine de Aç"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
-msgstr ""
+msgstr "Klasörü Yenile"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "Hiçbir görüşme seçilmedi."
+msgstr "Hiçbir ileti seçilmedi."
 
 #: src/MessageList/MessageListItem.vala:76
 msgid "From:"
@@ -284,12 +269,11 @@ msgstr "Farklı Kaydet…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "Bilinmeyen"
 
 #: src/MessageList/AttachmentButton.vala:113
-#, fuzzy
 msgid "Save"
-msgstr "_Kaydet"
+msgstr "Kaydet"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "Taslaklar | Taslak"
