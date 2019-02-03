@@ -33,7 +33,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private const string ACTION_DISCARD = "discard";
 
     public bool has_recipients { get; set; }
-    public bool has_subject_field { get; construct; }
+    public bool has_subject_field { get; construct; default = false; }
+    public bool can_change_sender { get; construct; default = true; }
 
     private WebView web_view;
     private SimpleActionGroup actions;
@@ -60,7 +61,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
     };
 
     public ComposerWidget () {
-        Object (has_subject_field: false);
+        
+    }
+
+    public ComposerWidget.inline () {
+        Object (can_change_sender: false);
     }
 
     public ComposerWidget.with_subject () {
@@ -232,8 +237,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         web_view = new WebView ();
         try {
             var template = resources_lookup_data ("/io/elementary/mail/blank-message-template.html", ResourceLookupFlags.NONE);
-            var template_html = (string)Bytes.unref_to_data (template);
-            web_view.load_html (template_html);
+            web_view.load_html ((string)template.get_data ());
         } catch (Error e) {
             warning ("Failed to load blank message template: %s", e.message);
         }
@@ -284,7 +288,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         load_from_combobox ();
         if (from_combo.model.iter_n_children (null) > 1) {
-            from_revealer.reveal_child = true;
+            from_revealer.reveal_child = true && can_change_sender;
         }
 
         bind_property ("has-recipients", send, "sensitive");
