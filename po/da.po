@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2019-01-28 21:45+0000\n"
+"PO-Revision-Date: 2019-02-03 12:09+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://weblate.elementary.io/projects/mail/mail/da/>"
 "\n"
@@ -32,9 +32,8 @@ msgid "Search Mail"
 msgstr "Søger i Mail"
 
 #: src/HeaderBar.vala:56
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "Vis altid fjern-billeder:"
+msgstr "Vis altid fjern-billeder"
 
 #: src/HeaderBar.vala:64
 msgid "Account Settings…"
