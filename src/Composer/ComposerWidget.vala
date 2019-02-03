@@ -33,7 +33,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private const string ACTION_DISCARD = "discard";
 
     public bool has_recipients { get; set; }
-    public bool has_subject_field { get; construct; }
+    public bool has_subject_field { get; construct; default = false; }
+    public bool can_change_sender { get; construct; default = true; }
 
     private WebView web_view;
     private SimpleActionGroup actions;
@@ -41,6 +42,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private Gtk.Entry cc_val;
     private Gtk.Revealer cc_revealer;
     private Granite.Widgets.OverlayBar message_url_overlay;
+    private Gtk.ComboBoxText from_combo;
 
     public enum Type {
         REPLY,
@@ -59,7 +61,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
     };
 
     public ComposerWidget () {
-        Object (has_subject_field: false);
+        
+    }
+
+    public ComposerWidget.inline () {
+        Object (can_change_sender: false);
     }
 
     public ComposerWidget.with_subject () {
@@ -70,6 +76,22 @@ public class Mail.ComposerWidget : Gtk.Grid {
         actions = new SimpleActionGroup ();
         actions.add_action_entries (action_entries, this);
         insert_action_group (ACTION_GROUP_PREFIX, actions);
+
+        var from_label = new Gtk.Label (_("From:"));
+        from_label.xalign = 1;
+        from_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        from_combo = new Gtk.ComboBoxText ();
+        from_combo.hexpand = true;
+
+        var from_grid = new Gtk.Grid ();
+        from_grid.column_spacing = 6;
+        from_grid.margin_bottom = 6;
+        from_grid.add (from_label);
+        from_grid.add (from_combo);
+
+        var from_revealer = new Gtk.Revealer ();
+        from_revealer.add (from_grid);
 
         var to_label = new Gtk.Label (_("To:"));
         to_label.xalign = 1;
@@ -130,6 +152,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         subject_val.margin_top = 6;
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+        size_group.add_widget (from_label);
         size_group.add_widget (to_label);
         size_group.add_widget (cc_label);
         size_group.add_widget (bcc_label);
@@ -137,15 +160,15 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         var recipient_grid = new Gtk.Grid ();
         recipient_grid.margin = 6;
-        recipient_grid.margin_top = 12;
         recipient_grid.column_spacing = 6;
-        recipient_grid.attach (to_label, 0, 0, 1, 1);
-        recipient_grid.attach (to_grid, 1, 0, 1, 1);
-        recipient_grid.attach (cc_revealer, 0, 1, 2, 1);
-        recipient_grid.attach (bcc_revealer, 0, 2, 2, 1);
+        recipient_grid.attach (from_revealer, 0, 0, 2, 1);
+        recipient_grid.attach (to_label, 0, 1);
+        recipient_grid.attach (to_grid, 1, 1);
+        recipient_grid.attach (cc_revealer, 0, 2, 2, 1);
+        recipient_grid.attach (bcc_revealer, 0, 3, 2, 1);
         if (has_subject_field) {
-            recipient_grid.attach (subject_label, 0, 3, 1, 1);
-            recipient_grid.attach (subject_val, 1, 3, 1, 1);
+            recipient_grid.attach (subject_label, 0, 4);
+            recipient_grid.attach (subject_val, 1, 4);
         }
 
         var bold = new Gtk.ToggleButton ();
@@ -214,8 +237,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         web_view = new WebView ();
         try {
             var template = resources_lookup_data ("/io/elementary/mail/blank-message-template.html", ResourceLookupFlags.NONE);
-            var template_html = (string)Bytes.unref_to_data (template);
-            web_view.load_html (template_html);
+            web_view.load_html ((string)template.get_data ());
         } catch (Error e) {
             warning ("Failed to load blank message template: %s", e.message);
         }
@@ -264,6 +286,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
         contact_manager.setup_entry (cc_val);
         contact_manager.setup_entry (bcc_val);
 
+        load_from_combobox ();
+        if (from_combo.model.iter_n_children (null) > 1) {
+            from_revealer.reveal_child = true && can_change_sender;
+        }
+
         bind_property ("has-recipients", send, "sensitive");
 
         cc_button.clicked.connect (() => {
@@ -288,6 +315,10 @@ public class Mail.ComposerWidget : Gtk.Grid {
             } else {
                 bcc_button.sensitive = false;
             }
+        });
+
+        from_combo.changed.connect (() => {
+            // from_revealer.reveal_child = 
         });
 
         to_val.changed.connect (() => {
@@ -417,5 +448,14 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
     private void on_discard () {
         discarded ();
+    }
+
+    private void load_from_combobox () {
+        unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+        foreach (var address in session.get_own_addresses ()) {
+            from_combo.append_text (address);
+        }
+
+        from_combo.active = 0;
     }
 }

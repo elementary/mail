@@ -33,7 +33,7 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
 
         get_style_context ().add_class ("card");
 
-        composer = new ComposerWidget ();
+        composer = new ComposerWidget.inline ();
         composer.margin_top = 6;
         composer.has_recipients = true;
         composer.discarded.connect (() => {
