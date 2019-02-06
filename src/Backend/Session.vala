@@ -268,6 +268,9 @@ public class Mail.Backend.Session : Camel.Session {
         var sources = registry.list_enabled (E.SOURCE_EXTENSION_MAIL_IDENTITY);
         sources.foreach ((source_item) => {
             weak E.SourceMailIdentity extension = (E.SourceMailIdentity)source_item.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+            if (extension == null)
+                return;
+
             var address = extension.get_address ();
             addresses.add (address.casefold ());
 
@@ -282,6 +285,60 @@ public class Mail.Backend.Session : Camel.Session {
         });
 
         return addresses;
+    }
+
+    private Camel.Transport? get_camel_transport_from_email (Camel.InternetAddress from) throws GLib.Error {
+        var sources = registry.list_enabled (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+        foreach (unowned E.Source source_item in sources) {
+            weak E.SourceMailIdentity mail_identity = (E.SourceMailIdentity)source_item.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+            if (source_item.has_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION)) {
+                weak E.SourceMailSubmission mail_submission = (E.SourceMailSubmission)source_item.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
+                var address = mail_identity.get_address ();
+                if (from.find_address (address, null) == 0) {
+                    var transport_source = registry.ref_source (mail_submission.transport_uid);
+                    weak E.SourceMailTransport mail_transport = (E.SourceMailTransport)transport_source.get_extension (E.SOURCE_EXTENSION_MAIL_TRANSPORT);
+                    return add_service (transport_source.uid, mail_transport.backend_name, Camel.ProviderType.TRANSPORT) as Camel.Transport;
+                }
+
+                GLib.HashTable<string,string>? aliases = mail_identity.get_aliases_as_hash_table ();
+                if (aliases != null) {
+                    GLib.List<weak string> aliases_mails = aliases.get_keys ();
+                    foreach (weak string key in aliases_mails) {
+                        if (from.find_address (key, null) == 0) {
+                            var transport_source = registry.ref_source (mail_submission.transport_uid);
+                            weak E.SourceMailTransport mail_transport = (E.SourceMailTransport)transport_source.get_extension (E.SOURCE_EXTENSION_MAIL_TRANSPORT);
+                            return add_service (transport_source.uid, mail_transport.backend_name, Camel.ProviderType.TRANSPORT) as Camel.Transport;
+                        }
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public async void send_email (Camel.MimeMessage message, Camel.InternetAddress from, Camel.Address recipients) {
+        Camel.Transport? transport = null;
+        try {
+            transport = get_camel_transport_from_email (from);
+        } catch (Error e) {
+            critical (e.message);
+            return;
+        }
+
+        if (transport == null)
+            return;
+
+        try {
+            bool sent_message_saved;
+            yield transport.connect (GLib.Priority.LOW, null);
+            yield transport.send_to (message, from, recipients, GLib.Priority.LOW, null, out sent_message_saved);
+            yield transport.disconnect (true, GLib.Priority.LOW, null);
+        } catch (Error e) {
+            critical (e.message);
+        }
+
+        remove_service (transport);
     }
 }
 
