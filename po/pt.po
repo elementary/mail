@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2019-01-14 16:40+0000\n"
+"PO-Revision-Date: 2019-02-07 00:00+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://weblate.elementary.io/projects/mail/mail/"
 "pt/>\n"
@@ -32,11 +32,11 @@ msgstr "Criar nova mensagem"
 
 #: src/HeaderBar.vala:44
 msgid "Search Mail"
-msgstr "Procurar email"
+msgstr "Procurar E-Mail"
 
 #: src/HeaderBar.vala:56
 msgid "Always Show Remote Images"
-msgstr "Mostar Sempre Imagens Remotas"
+msgstr "Mostrar Sempre Imagens Remotas"
 
 #: src/HeaderBar.vala:64
 msgid "Account Settings…"
@@ -69,8 +69,7 @@ msgstr "Ligar uma Conta"
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
-"O Correio Eletrónico utiliza contas de email configuradas nas Definições do "
-"Sistema."
+"O E-Mail utiliza contas de e-mail configuradas nas Definições do Sistema."
 
 #: src/WelcomeView.vala:50
 msgid "Online Accounts…"
