@@ -41,6 +41,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private SimpleActionGroup actions;
     private Gtk.Entry to_val;
     private Gtk.Entry cc_val;
+    private Gtk.FlowBox attachment_box;
     private Gtk.Revealer cc_revealer;
     private Granite.Widgets.OverlayBar message_url_overlay;
     private Gtk.ComboBoxText from_combo;
@@ -247,6 +248,10 @@ public class Mail.ComposerWidget : Gtk.Grid {
         web_view.selection_changed.connect (update_actions);
         web_view.mouse_target_changed.connect (on_mouse_target_changed);
 
+        attachment_box = new Gtk.FlowBox ();
+        attachment_box.homogeneous = true;
+        attachment_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+
         var action_bar = new Gtk.ActionBar ();
 
         var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
@@ -282,6 +287,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         add (button_row);
         add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         add (view_overlay);
+        add (attachment_box);
         add (action_bar);
 
         var contact_manager = ContactManager.get_default ();
@@ -352,8 +358,33 @@ public class Mail.ComposerWidget : Gtk.Grid {
         if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
             filechooser.hide ();
             foreach (File file in filechooser.get_files ()) {
-                critical ("Do stuff");
+                try {
+                    var info = file.query_info ("standard::*", 0);
+
+                    var image = new Gtk.Image ();
+                    image.gicon = info.get_icon ();
+                    image.pixel_size = 24;
+
+                    var name_label = new Gtk.Label (info.get_name ());
+                    name_label.hexpand = true;
+                    name_label.xalign = 0;
+
+                    var size_label = new Gtk.Label ("(%s)".printf (GLib.format_size (info.get_size ())));
+                    size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+                    var grid = new Gtk.Grid ();
+                    grid.column_spacing = 3;
+                    grid.margin = 6;
+                    grid.add (image);
+                    grid.add (name_label);
+                    grid.add (size_label);
+
+                    attachment_box.add (grid);
+                } catch (Error e) {
+                    critical ("Couldn't add attachment: %s", e.message);
+                }
             }
+            attachment_box.show_all ();
         }
         filechooser.destroy ();
     }
