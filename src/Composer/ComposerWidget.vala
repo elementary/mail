@@ -24,6 +24,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private const string ACTION_GROUP_PREFIX = "composer";
     private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
 
+    private const string ACTION_ADD_ATTACHMENT= "add-attachment";
     private const string ACTION_BOLD = "bold";
     private const string ACTION_ITALIC = "italic";
     private const string ACTION_UNDERLINE = "underline";
@@ -51,6 +52,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     }
 
     public const ActionEntry[] action_entries = {
+        {ACTION_ADD_ATTACHMENT, on_add_attachment },
         {ACTION_BOLD,           on_edit_action,    "s",    "''"     },
         {ACTION_ITALIC,         on_edit_action,    "s",    "''"     },
         {ACTION_UNDERLINE,      on_edit_action,    "s",    "''"     },
@@ -253,7 +255,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
         discard.action_name = ACTION_PREFIX + ACTION_DISCARD;
 
         var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
-        attach.tooltip_text = _("Attach file");
+        attach.action_name = ACTION_PREFIX + ACTION_ADD_ATTACHMENT;
+        attach.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>t"}, _("Attach file"));
 
         var send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
         send.margin = 6;
@@ -335,6 +338,17 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
             to_grid_style_context.set_state (state);
         });
+    }
+
+    private void on_add_attachment () {
+        var filechooser = new Gtk.FileChooserNative (
+            _("Choose a file"),
+            (Gtk.Window) get_toplevel (),
+            Gtk.FileChooserAction.OPEN,
+            _("Attach"),
+            _("Cancel")
+        );
+        filechooser.run ();
     }
 
     private void on_insert_link_clicked () {
