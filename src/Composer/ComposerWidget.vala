@@ -348,7 +348,14 @@ public class Mail.ComposerWidget : Gtk.Grid {
             _("Attach"),
             _("Cancel")
         );
-        filechooser.run ();
+
+        if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
+            filechooser.hide ();
+            foreach (File file in filechooser.get_files ()) {
+                critical ("Do stuff");
+            }
+        }
+        filechooser.destroy ();
     }
 
     private void on_insert_link_clicked () {
