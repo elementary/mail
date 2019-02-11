@@ -40,6 +40,10 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
             discarded ();
         });
 
+        composer.sent.connect (() => {
+            discarded ();
+        });
+
         composer.quote_content (construct_type, prev_chain_info, prev_chain_message, prev_message_content);
 
         add (composer);

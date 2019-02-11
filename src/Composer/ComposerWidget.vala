@@ -20,6 +20,7 @@
 
 public class Mail.ComposerWidget : Gtk.Grid {
     public signal void discarded ();
+    public signal void sent ();
 
     private const string ACTION_GROUP_PREFIX = "composer";
     private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
@@ -32,6 +33,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private const string ACTION_INSERT_LINK = "insert_link";
     private const string ACTION_REMOVE_FORMAT = "remove_formatting";
     private const string ACTION_DISCARD = "discard";
+    private const string ACTION_SEND = "send";
 
     public bool has_recipients { get; set; }
     public bool has_subject_field { get; construct; default = false; }
@@ -41,10 +43,12 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private SimpleActionGroup actions;
     private Gtk.Entry to_val;
     private Gtk.Entry cc_val;
+    private Gtk.Entry bcc_val;
     private Gtk.FlowBox attachment_box;
     private Gtk.Revealer cc_revealer;
     private Granite.Widgets.OverlayBar message_url_overlay;
     private Gtk.ComboBoxText from_combo;
+    private Gtk.Entry subject_val;
 
     public enum Type {
         REPLY,
@@ -60,7 +64,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
         {ACTION_STRIKETHROUGH,  on_edit_action,    "s",    "''"     },
         {ACTION_INSERT_LINK,    on_insert_link_clicked,             },
         {ACTION_REMOVE_FORMAT,  on_remove_format                    },
-        {ACTION_DISCARD,        on_discard                          }
+        {ACTION_DISCARD,        on_discard                          },
+        {ACTION_SEND,           on_send                             }
     };
 
     public ComposerWidget () {
@@ -139,7 +144,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         bcc_label.xalign = 1;
         bcc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        var bcc_val = new Gtk.Entry ();
+        bcc_val = new Gtk.Entry ();
         bcc_val.hexpand = true;
 
         var bcc_grid = new Gtk.Grid ();
@@ -151,7 +156,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         var bcc_revealer = new Gtk.Revealer ();
         bcc_revealer.add (bcc_grid);
 
-        var subject_val = new Gtk.Entry ();
+        subject_val = new Gtk.Entry ();
         subject_val.margin_top = 6;
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
@@ -271,6 +276,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         send.label = _("Send");
         send.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>ISO_Enter"});
         send.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        send.action_name = ACTION_PREFIX + ACTION_SEND;
 
         action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
 
@@ -486,6 +492,56 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
     private void on_discard () {
         discarded ();
+    }
+
+    private void on_send () {
+        unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+
+        var from = new Camel.InternetAddress ();
+        from.unformat (from_combo.get_active_text ());
+
+        var to_addresses = new Camel.InternetAddress ();
+        to_addresses.unformat (to_val.text);
+
+        var cc_addresses = new Camel.InternetAddress ();
+        cc_addresses.unformat (cc_val.text);
+
+        var bcc_addresses = new Camel.InternetAddress ();
+        bcc_addresses.unformat (bcc_val.text);
+
+        var recipients = new Camel.InternetAddress ();
+        recipients.cat (to_addresses);
+        recipients.cat (cc_addresses);
+        recipients.cat (bcc_addresses);
+
+        var body_html = web_view.get_body_html ();
+        var message = new Camel.MimeMessage ();
+        message.set_from (from);
+        message.set_recipients (Camel.RECIPIENT_TYPE_TO, to_addresses);
+        message.set_recipients (Camel.RECIPIENT_TYPE_CC, cc_addresses);
+        message.set_recipients (Camel.RECIPIENT_TYPE_BCC, bcc_addresses);
+        message.set_subject (subject_val.text);
+        message.set_date (Camel.MESSAGE_DATE_CURRENT, 0);
+
+        var stream_mem = new Camel.StreamMem.with_buffer (body_html.data);
+        var stream_filter = new Camel.StreamFilter (stream_mem);
+
+        var html = new Camel.DataWrapper ();
+        html.construct_from_stream_sync (stream_filter);
+        html.set_mime_type ("text/html; charset=utf-8");
+
+        var body = new Camel.Multipart ();
+        body.set_mime_type ("multipart/alternative");
+        body.set_boundary (null);
+
+        var part = new Camel.MimePart ();
+        part.content = html;
+        part.set_encoding (Camel.TransferEncoding.ENCODING_QUOTEDPRINTABLE);
+        body.add_part (part);
+        message.content = body;
+
+        session.send_email.begin (message, from, recipients);
+        sent ();
     }
 
     private void load_from_combobox () {
