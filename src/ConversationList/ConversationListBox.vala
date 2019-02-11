@@ -167,6 +167,30 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         return (int)(item2.timestamp - item1.timestamp);
     }
 
+    public void mark_spam_selected_messages () {
+        var threads = new Gee.ArrayList<Camel.FolderThreadNode?> ();
+        var selected_rows = get_selected_rows ();
+        foreach (var row in selected_rows) {
+            threads.add (((ConversationItemModel)row).node);
+        }
+    }
+
+    public void mark_starred_selected_messages () {
+        var threads = new Gee.ArrayList<Camel.FolderThreadNode?> ();
+        var selected_rows = get_selected_rows ();
+        foreach (var row in selected_rows) {
+            threads.add (((ConversationItemModel)row).node);
+        }
+    }
+
+    public void mark_unread_selected_messages () {
+        var threads = new Gee.ArrayList<Camel.FolderThreadNode?> ();
+        var selected_rows = get_selected_rows ();
+        foreach (var row in selected_rows) {
+            threads.add (((ConversationItemModel)row).node);
+        }
+    }
+
     public int trash_selected_messages () {
         var threads = new Gee.ArrayList<Camel.FolderThreadNode?> ();
         var selected_rows = get_selected_rows ();

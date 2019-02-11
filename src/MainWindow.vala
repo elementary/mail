@@ -37,6 +37,9 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     public const string ACTION_REPLY = "reply";
     public const string ACTION_REPLY_ALL = "reply-all";
     public const string ACTION_FORWARD = "forward";
+    public const string ACTION_MARK_SPAM = "mark-spam";
+    public const string ACTION_MARK_STARRED = "mark-starred";
+    public const string ACTION_MARK_UNREAD = "mark-unread";
     public const string ACTION_MOVE_TO_TRASH = "trash";
 
     private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
@@ -46,7 +49,10 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         {ACTION_REPLY,              on_reply             },
         {ACTION_REPLY_ALL,          on_reply_all         },
         {ACTION_FORWARD,            on_forward           },
-        {ACTION_MOVE_TO_TRASH,      on_move_to_trash     },
+        {ACTION_MARK_SPAM, on_mark_spam },
+        {ACTION_MARK_STARRED, on_mark_starred },
+        {ACTION_MARK_UNREAD, on_mark_unread },
+        {ACTION_MOVE_TO_TRASH,      on_move_to_trash     }
     };
 
     public MainWindow (Gtk.Application application) {
@@ -63,6 +69,8 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         action_accelerators[ACTION_REPLY] = "<Control>R";
         action_accelerators[ACTION_REPLY_ALL] = "<Control><Shift>R";
         action_accelerators[ACTION_FORWARD] = "<Ctrl><Shift>F";
+        action_accelerators[ACTION_MARK_SPAM] = "<Ctrl>j";
+        action_accelerators[ACTION_MARK_UNREAD] = "<Ctrl><Shift>u";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "Delete";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "BackSpace";
     }
@@ -88,6 +96,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY_ALL), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-reply", get_action (ACTION_FORWARD), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-move-thread", get_action (ACTION_MOVE_TO_TRASH), "enabled", BindingFlags.SYNC_CREATE);
+        message_list_box.bind_property ("can-move-thread", get_action (ACTION_MARK_SPAM), "enabled", BindingFlags.SYNC_CREATE);
 
         conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
         conversation_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -186,6 +195,18 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
             adjustment.set_value (adjustment.get_upper ());
             adjustment.disconnect (changed_id);
         });
+    }
+
+    private void on_mark_spam () {
+        conversation_list_box.mark_spam_selected_messages ();
+    }
+
+    private void on_mark_starred () {
+        conversation_list_box.mark_starred_selected_messages ();
+    }
+
+    private void on_mark_unread () {
+        conversation_list_box.mark_unread_selected_messages ();
     }
 
     private void on_reply () {
