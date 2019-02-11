@@ -12,34 +12,32 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2017-04-15 20:26+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Czech <https://l10n.elementary.io/projects/mail/mail/cs/>\n"
+"PO-Revision-Date: 2019-02-06 17:45+0000\n"
+"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
+"Language-Team: Czech <https://weblate.elementary.io/projects/mail/mail/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 07:52+0000\n"
 
 #: src/HeaderBar.vala:38
-#, fuzzy
 msgid "Compose new message"
 msgstr "Napsat novou zprávu"
 
 #: src/HeaderBar.vala:44
 msgid "Search Mail"
-msgstr ""
+msgstr "Hledat poštu"
 
 #: src/HeaderBar.vala:56
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "Vždy zobrazovat Od odesílatele"
+msgstr "Vždy zobrazovat externí obrázky"
 
 #: src/HeaderBar.vala:64
 msgid "Account Settings…"
-msgstr ""
+msgstr "Nastavení účtu…"
 
 #: src/HeaderBar.vala:84
 msgid "Menu"
@@ -50,32 +48,28 @@ msgid "Reply"
 msgstr "Odpovědět"
 
 #: src/HeaderBar.vala:97
-#, fuzzy
 msgid "Reply All"
-msgstr "O_dpovědět všem"
+msgstr "Odpovědět všem"
 
 #: src/HeaderBar.vala:104
 msgid "Forward"
 msgstr "Přeposlat"
 
 #: src/HeaderBar.vala:111
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "Přesunout konverzace"
+msgstr "Přesunout konverzace do koše"
 
 #: src/WelcomeView.vala:40
-#, fuzzy
 msgid "Connect an Account"
-msgstr "Odebrat účet"
+msgstr "Připojit účet"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
-msgstr ""
+msgstr "Pošta používá emailové účty přidané v Nastavení systému."
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "Účty"
+msgstr "Online účty…"
 
 #: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
 msgid "To:"
@@ -86,14 +80,12 @@ msgid "Subject:"
 msgstr "Předmět:"
 
 #: src/Composer/ComposerWidget.vala:85
-#, fuzzy
 msgid "Cc"
-msgstr "Kopie:"
+msgstr "Cc"
 
 #: src/Composer/ComposerWidget.vala:87
-#, fuzzy
 msgid "Bcc"
-msgstr "Skrytá kopie:"
+msgstr "Bcc"
 
 #: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
@@ -105,52 +97,47 @@ msgstr "Skrytá kopie:"
 
 #: src/Composer/ComposerWidget.vala:152
 msgid "Bold"
-msgstr ""
+msgstr "Tučně"
 
 #: src/Composer/ComposerWidget.vala:158
 msgid "Italic"
-msgstr ""
+msgstr "Kurzíva"
 
 #: src/Composer/ComposerWidget.vala:164
-#, fuzzy
 msgid "Underline"
-msgstr "Podtržení (Ctrl+U)"
+msgstr "Podtržení"
 
 #: src/Composer/ComposerWidget.vala:170
-#, fuzzy
 msgid "Strikethrough"
-msgstr "Přeškrtnutí (Ctrl+K)"
+msgstr "Přeškrtnutí"
 
 #: src/Composer/ComposerWidget.vala:183
-#, fuzzy
 msgid "Quote text"
-msgstr "Citovat text (Ctrl+])"
+msgstr "Citovat text"
 
 #: src/Composer/ComposerWidget.vala:186
-#, fuzzy
 msgid "Unquote text"
-msgstr "Ukončit citaci (Ctrl+[)"
+msgstr "Ukončit citaci"
 
 #: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
-msgstr ""
+msgstr "Přidat odkaz"
 
 #: src/Composer/ComposerWidget.vala:198
 msgid "Insert Image"
-msgstr ""
+msgstr "Přidat obrázek"
 
 #: src/Composer/ComposerWidget.vala:201
-#, fuzzy
 msgid "Remove formatting"
-msgstr "Odebrat formátování (Ctrl+Mezerník)"
+msgstr "Odebrat formátování"
 
 #: src/Composer/ComposerWidget.vala:230
 msgid "Delete draft"
-msgstr ""
+msgstr "Smazat koncept"
 
 #: src/Composer/ComposerWidget.vala:234
 msgid "Attach file"
-msgstr ""
+msgstr "Připojit soubor"
 
 #: src/Composer/ComposerWidget.vala:240
 msgid "Send"
@@ -170,29 +157,29 @@ msgid "---------- Forwarded message ----------"
 msgstr "---------- Přeposlaná zpráva ----------"
 
 #: src/Composer/ComposerWidget.vala:385
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "Od: %s\n"
+msgstr "Od: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:386
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "Předmět: %s\n"
+msgstr "Předmět: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:387
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Datum: %s\n"
+msgstr "Datum: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:388
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "Komu: %s\n"
+msgstr "Příjemce: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:390
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "Kopie: %s\n"
+msgstr "Kopie: %s<br/>"
 
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
@@ -200,21 +187,19 @@ msgstr "Nová zpráva"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://example.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
-#, fuzzy
 msgid "Link Text:"
-msgstr "_Formátovaný text"
+msgstr "Text odkazu:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
-#, fuzzy
 msgid "Example Website"
-msgstr "Webové stránky"
+msgstr "Příklad webové stránky"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
 #: src/Dialogs/OpenAttachmentDialog.vala:65
@@ -232,6 +217,8 @@ msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"Přílohy mohou po otevření poškodit váš systém. Otevírejte pouze soubory z "
+"důvěryhodných zdrojů."
 
 #: src/Dialogs/OpenAttachmentDialog.vala:49
 msgid "Open Anyway"
@@ -239,12 +226,11 @@ msgstr "Přesto otevřít"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
-msgstr ""
+msgstr "Obnovit složku"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "Nebyla vybrána žádná konverzace."
+msgstr "Žádná vybraná zpráva"
 
 #: src/MessageList/MessageListItem.vala:76
 msgid "From:"
@@ -256,15 +242,15 @@ msgstr "Zobrazit obrázky"
 
 #: src/MessageList/MessageListItem.vala:187
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "Zobrazit vždy od odesílatele"
 
 #: src/MessageList/MessageListItem.vala:192
 msgid "This message contains remote images."
-msgstr "Tato zpráva obsahuje vzdálené obrázky."
+msgstr "Tato zpráva obsahuje externí obrázky."
 
 #: src/MessageList/MessageListItem.vala:223
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "Tato zpráva obsahuje jednu nebo více příloh"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
@@ -276,12 +262,11 @@ msgstr "Uložit jako…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "Neznámý"
 
 #: src/MessageList/AttachmentButton.vala:113
-#, fuzzy
 msgid "Save"
-msgstr "_Uložit"
+msgstr "Uložit"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr ""
