@@ -161,7 +161,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         var starred_button = new Gtk.Button ();
         starred_button.image = starred_icon;
-        starred_button.valign = Gtk.Align.START;
         starred_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var action_grid = new Gtk.Grid ();
