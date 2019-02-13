@@ -87,29 +87,25 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         messages.visible = data.num_messages > 1;
         messages.no_show_all = data.num_messages <= 1;
 
-        bool reveal_status = false;
-
         if (data.unread) {
             get_style_context ().add_class ("unread-message");
 
             status_icon.icon_name = "mail-unread-symbolic";
             status_icon.get_style_context ().add_class ("attention");
 
-            reveal_status = true;
+            status_revealer.reveal_child = true;
         } else {
             get_style_context ().remove_class ("unread-message");
             status_icon.get_style_context ().remove_class ("attention");
 
             if (data.replied_all || data.replied) {
                 status_icon.icon_name = "mail-replied-symbolic";
-                reveal_status = true;
+                status_revealer.reveal_child = true;
             } else if (data.forwarded) {
                 status_icon.icon_name = "go-next-symbolic";
-                reveal_status = true;
+                status_revealer.reveal_child = true;
             }
         }
-
-        status_revealer.reveal_child = reveal_status;
 
         flagged_icon_revealer.reveal_child = data.flagged;
     }
