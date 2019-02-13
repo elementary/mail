@@ -41,6 +41,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     public const string ACTION_MARK_SPAM = "mark-spam";
     public const string ACTION_MARK_STARRED = "mark-starred";
     public const string ACTION_MARK_UNREAD = "mark-unread";
+    public const string ACTION_MARK_UNSTARRED = "mark-unstarred";
     public const string ACTION_MOVE_TO_TRASH = "trash";
 
     private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
@@ -54,6 +55,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         {ACTION_MARK_SPAM, on_mark_spam },
         {ACTION_MARK_STARRED, on_mark_starred },
         {ACTION_MARK_UNREAD, on_mark_unread },
+        {ACTION_MARK_UNSTARRED, on_mark_unstarred },
         {ACTION_MOVE_TO_TRASH,      on_move_to_trash     }
     };
 
@@ -73,7 +75,9 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         action_accelerators[ACTION_FORWARD] = "<Ctrl><Shift>F";
         action_accelerators[ACTION_MARK_READ] = "<Ctrl><Shift>i";
         action_accelerators[ACTION_MARK_SPAM] = "<Ctrl>j";
+        action_accelerators[ACTION_MARK_STARRED] = "<Ctrl>l";
         action_accelerators[ACTION_MARK_UNREAD] = "<Ctrl><Shift>u";
+        action_accelerators[ACTION_MARK_UNSTARRED] = "<Ctrl><Shift>l";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "Delete";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "BackSpace";
     }
@@ -214,6 +218,10 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
     private void on_mark_unread () {
         conversation_list_box.mark_unread_selected_messages ();
+    }
+
+    private void on_mark_unstarred () {
+        conversation_list_box.mark_unstarred_selected_messages ();
     }
 
     private void on_reply () {
