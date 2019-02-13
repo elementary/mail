@@ -169,7 +169,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         action_grid.halign = Gtk.Align.END;
         action_grid.valign = Gtk.Align.START;
         action_grid.add (datetime_label);
-        action_grid.add (starred_button);
+        action_grid.attach (starred_button, 2, 0);
 
         var header = new Gtk.Grid ();
         header.margin = 12;
@@ -229,9 +229,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         if (Camel.MessageFlags.ATTACHMENTS in (int) message_info.flags) {
             var attachment_icon = new Gtk.Image.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
+            attachment_icon.margin_start = 6;
             attachment_icon.tooltip_text = _("This message contains one or more attachments");
-            attachment_icon.valign = Gtk.Align.START;
-            header.attach (attachment_icon, 3, 0, 1, 1);
+            action_grid.attach (attachment_icon, 1, 0);
 
             attachment_bar = new AttachmentBar (loading_cancellable);
             secondary_grid.add (attachment_bar);
