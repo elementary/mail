@@ -37,6 +37,8 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     public const string ACTION_REPLY = "reply";
     public const string ACTION_REPLY_ALL = "reply-all";
     public const string ACTION_FORWARD = "forward";
+    public const string ACTION_MARK_READ = "mark-read";
+    public const string ACTION_MARK_UNREAD = "mark-unread";
     public const string ACTION_MOVE_TO_TRASH = "trash";
 
     private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
@@ -46,6 +48,8 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         {ACTION_REPLY,              on_reply             },
         {ACTION_REPLY_ALL,          on_reply_all         },
         {ACTION_FORWARD,            on_forward           },
+        {ACTION_MARK_READ, on_mark_read },
+        {ACTION_MARK_UNREAD, on_mark_unread },
         {ACTION_MOVE_TO_TRASH,      on_move_to_trash     },
     };
 
@@ -63,6 +67,8 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         action_accelerators[ACTION_REPLY] = "<Control>R";
         action_accelerators[ACTION_REPLY_ALL] = "<Control><Shift>R";
         action_accelerators[ACTION_FORWARD] = "<Ctrl><Shift>F";
+        action_accelerators[ACTION_MARK_READ] = "<Ctrl><Shift>i";
+        action_accelerators[ACTION_MARK_UNREAD] = "<Ctrl><Shift>u";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "Delete";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "BackSpace";
     }
@@ -186,6 +192,14 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
             adjustment.set_value (adjustment.get_upper ());
             adjustment.disconnect (changed_id);
         });
+    }
+
+    private void on_mark_read () {
+        conversation_list_box.mark_read_selected_messages ();
+    }
+
+    private void on_mark_unread () {
+        conversation_list_box.mark_unread_selected_messages ();
     }
 
     private void on_reply () {
