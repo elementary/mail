@@ -65,7 +65,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         grid.margin = 12;
         grid.column_spacing = 12;
         grid.row_spacing = 6;
-        grid.attach (status_revealer, 0, 0, 1, 1);
+        grid.attach (status_revealer, 0, 0);
         grid.attach (flagged_icon_revealer, 0, 1, 1, 1);
         grid.attach (source, 1, 0, 1, 1);
         grid.attach (date, 2, 0, 2, 1);
