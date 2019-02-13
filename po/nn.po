@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2019-02-09 11:37+0000\n"
+"PO-Revision-Date: 2019-02-12 00:04+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://weblate.elementary.io/projects/"
 "mail/mail/nn/>\n"
@@ -200,7 +200,7 @@ msgstr "Avbryt"
 #: src/Dialogs/OpenAttachmentDialog.vala:37
 #, c-format
 msgid "Are you sure you want to open %s?"
-msgstr "Er du sikker på at du vil opne %s?"
+msgstr "Er du sikker på at du vil opna %s?"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:44
 msgid ""
@@ -212,7 +212,7 @@ msgstr ""
 
 #: src/Dialogs/OpenAttachmentDialog.vala:49
 msgid "Open Anyway"
-msgstr "Opne likevel"
+msgstr "Opna likevel"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
@@ -220,7 +220,7 @@ msgstr "Last inn mappa på nytt"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
-msgstr "Inga melding vald"
+msgstr "Ingen melding er vald"
 
 #: src/MessageList/MessageListItem.vala:76
 msgid "From:"
@@ -228,15 +228,15 @@ msgstr "Frå:"
 
 #: src/MessageList/MessageListItem.vala:186
 msgid "Show Images"
-msgstr "Vis bilder"
+msgstr "Vis bileter"
 
 #: src/MessageList/MessageListItem.vala:187
 msgid "Always Show from Sender"
-msgstr "Alltid vis frå avsendar"
+msgstr "Vis alltid frå denne avsendaren"
 
 #: src/MessageList/MessageListItem.vala:192
 msgid "This message contains remote images."
-msgstr "Denne meldinga inneheld fjernlasta bilder."
+msgstr "Denne meldinga inneheld fjernlasta bilete."
 
 #: src/MessageList/MessageListItem.vala:223
 msgid "This message contains one or more attachments"
