@@ -264,6 +264,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             loading_cancellable.cancel ();
         });
 
+        /* Connecting to clicked () doesn't allow us to prevent the event from propagating to header_event_box */
         starred_button.button_release_event.connect (() => {
             if (Camel.MessageFlags.FLAGGED in (int) message_info.flags) {
                 message_info.set_flags (Camel.MessageFlags.FLAGGED, 0);
