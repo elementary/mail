@@ -24,13 +24,24 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
     public signal void folder_selected (Backend.Account account, string folder_name);
 
     private Granite.Widgets.SourceList source_list;
+    private static GLib.Settings settings;
+
+    private string selected_folder_uid;
+    private string selected_folder_name;
 
     public FoldersListView () {
         
     }
 
+    static construct {
+        settings = new GLib.Settings ("io.elementary.mail");
+    }
+
     construct {
         width_request = 100;
+
+        settings.get ("selected-folder", "(ss)", out selected_folder_uid, out selected_folder_name);
+
         source_list = new Granite.Widgets.SourceList ();
         add (source_list);
         var session = Mail.Backend.Session.get_default ();
@@ -47,11 +58,17 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
 
             var folder_item = item as FolderSourceItem;
             folder_selected (folder_item.get_account (), folder_item.full_name);
+
+            settings.set ("selected-folder", "(ss)", folder_item.get_account ().service.uid, folder_item.full_name);
         });
     }
 
     private void add_account (Mail.Backend.Account account) {
         var account_item = new Mail.AccountSourceItem (account);
         source_list.root.add (account_item);
+
+        if (account.service.uid == selected_folder_uid) {
+            folder_selected (account, selected_folder_name);
+        }
     }
 }
