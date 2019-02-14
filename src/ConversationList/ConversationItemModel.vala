@@ -54,6 +54,24 @@ public class Mail.ConversationItemModel : GLib.Object {
         }
     }
 
+    public bool forwarded {
+        get {
+            return Camel.MessageFlags.FORWARDED in (int)node.message.flags;
+        }
+    }
+
+    public bool replied {
+        get {
+            return Camel.MessageFlags.ANSWERED in (int)node.message.flags;
+        }
+    }
+
+    public bool replied_all {
+        get {
+            return Camel.MessageFlags.ANSWERED_ALL in (int)node.message.flags;
+        }
+    }
+
     public bool unread {
         get {
             return !(Camel.MessageFlags.SEEN in (int)node.message.flags);
