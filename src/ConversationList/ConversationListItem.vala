@@ -104,6 +104,8 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
             } else if (data.forwarded) {
                 status_icon.icon_name = "go-next-symbolic";
                 status_revealer.reveal_child = true;
+            } else {
+                status_revealer.reveal_child = false;
             }
         }
 
