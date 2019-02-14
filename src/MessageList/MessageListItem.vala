@@ -472,6 +472,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             var display_name_label = new Gtk.Label (parsed_from[0]);
             display_name_label.wrap = true;
             display_name_label.tooltip_text = parsed_from[1];
+            display_name_label.xalign = 0;
 
             halign = Gtk.Align.START;
             add (display_name_label);
