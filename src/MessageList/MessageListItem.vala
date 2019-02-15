@@ -70,6 +70,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         style_context = get_style_context ();
         style_context.add_class ("card");
 
+        string[] parsed_from = message_info.from.replace (">", "").split ("<");
+
         var avatar = new Granite.Widgets.Avatar.with_default_icon (48);
         avatar.valign = Gtk.Align.START;
 
@@ -88,7 +90,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         subject_label.valign = Gtk.Align.START;
         subject_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        var from_individualitem = new IndividualItem (message_info.from);
+        var from_individualitem = new IndividualItem (parsed_from[0], parsed_from [1]);
 
         var to_val_label = new Gtk.Label (message_info.to);
         to_val_label.wrap = true;
@@ -123,7 +125,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             fields_grid.attach (cc_val_label, 1, 2, 1, 1);
         }
 
-        var small_from_label = new IndividualItem (message_info.from);
+        var small_from_label = new IndividualItem (parsed_from[0], parsed_from [1]);
 
         var small_fields_grid = new Gtk.Grid ();
         small_fields_grid.attach (small_from_label, 0, 0, 1, 1);
@@ -460,18 +462,20 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     }
 
     private class IndividualItem : Gtk.Button {
-        public string message_info_from { get; construct; }
+        public string display_name { get; construct; }
+        public string email_address { get; construct; }
 
-        public IndividualItem (string message_info_from) {
-            Object (message_info_from: message_info_from);
+        public IndividualItem (string display_name, string email_address) {
+            Object (
+                display_name: display_name,
+                email_address: email_address
+            );
         }
 
         construct {
-            string[] parsed_from = message_info_from.replace (">", "").split ("<");
-
-            var display_name_label = new Gtk.Label (parsed_from[0]);
+            var display_name_label = new Gtk.Label (display_name);
             display_name_label.wrap = true;
-            display_name_label.tooltip_text = parsed_from[1];
+            display_name_label.tooltip_text = email_address;
             display_name_label.xalign = 0;
 
             halign = Gtk.Align.START;
@@ -484,7 +488,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             /* Connecting to clicked () doesn't allow us to prevent the event from propagating to header_event_box */
             button_release_event.connect (() => {
                 try {
-                    AppInfo.launch_default_for_uri ("mailto:" + parsed_from[1], null);
+                    AppInfo.launch_default_for_uri ("mailto:" + email_address, null);
                 } catch (Error e) {
                     warning ("Failed to open mailto link: %s", e.message);
                 }
