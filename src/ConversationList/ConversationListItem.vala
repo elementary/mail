@@ -107,6 +107,8 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
                 status_icon.icon_name = "go-next-symbolic";
                 status_icon.tooltip_text = _("Forwarded");
                 status_revealer.reveal_child = true;
+            } else {
+                status_revealer.reveal_child = false;
             }
         }
 
