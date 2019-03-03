@@ -609,7 +609,7 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
                 modify = true;
             }
 
-            mask = get_modifier_mask (Gdk.ModifierType.EXTEND_SELECTION);
+            mask = get_modifier_mask (Gdk.ModifierIntent.EXTEND_SELECTION);
             if ((state & mask) == mask) {
                 extend = true;
             }
