@@ -104,7 +104,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
                 status_icon.tooltip_text = _("Replied");
                 status_revealer.reveal_child = true;
             } else if (data.forwarded) {
-                status_icon.icon_name = "go-next-symbolic";
+                status_icon.icon_name = "mail-forwarded-symbolic";
                 status_icon.tooltip_text = _("Forwarded");
                 status_revealer.reveal_child = true;
             } else {
