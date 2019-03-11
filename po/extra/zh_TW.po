@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-08 13:23-0800\n"
+"POT-Creation-Date: 2018-12-17 07:10+0100\n"
 "PO-Revision-Date: 2016-08-06 15:00+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
@@ -18,24 +18,17 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Generator: Launchpad (build 18330)\n"
 
+#: data/io.elementary.mail.appdata.xml.in:8
+#: data/io.elementary.mail.desktop.in:3
 msgid "Mail"
 msgstr "郵件"
 
+#: data/io.elementary.mail.appdata.xml.in:9
+#: data/io.elementary.mail.desktop.in:4
 msgid "Send and receive mail"
 msgstr ""
 
-msgid "Email;E-mail;Mail;"
-msgstr "Email;E-mail;Mail;電子郵件;郵件;電郵;"
-
-msgid "Compose Message"
-msgstr "編寫訊息"
-
-msgid "About Mail"
-msgstr "關於《郵件》"
-
-msgid "Lightweight mail client"
-msgstr "輕量級郵件客戶端"
-
+#: data/io.elementary.mail.appdata.xml.in:11
 msgid ""
 "Mail is designed to let you manage your email quickly and effortlessly. Its "
 "interface is based on conversations, so you can read an entire discussion "
@@ -44,24 +37,31 @@ msgstr ""
 "《郵件》的設計是要讓您以迅雷不及掩耳之速且不費吹灰之力地管理郵件。其介面依據"
 "對話分門別類，所以您可以一次閱讀整串前後討論內容而不必一封一封訊息點按。"
 
+#: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
 msgstr "輕量級郵件客戶端具備完整 IMAP 支援"
 
+#: data/io.elementary.mail.appdata.xml.in:14
 msgid "Mail grouped into conversations, not a tree of threads"
 msgstr "郵件會依照對話分門別類，而不是樹狀條目"
 
+#: data/io.elementary.mail.appdata.xml.in:15
 msgid "As-you-type searching"
 msgstr "隨打即搜"
 
+#: data/io.elementary.mail.appdata.xml.in:16
 msgid "Desktop notifications"
 msgstr "桌面通知"
 
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "多帳號支援"
 
+#: data/io.elementary.mail.appdata.xml.in:18
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "行內 HTML 編寫器，可將草稿存至伺服器"
 
+#: data/io.elementary.mail.appdata.xml.in:19
 msgid ""
 "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
 "IMAP servers"
@@ -69,17 +69,24 @@ msgstr ""
 "能搭配 Gmail、Yahoo! 信箱、Outlook.com（實驗中），以及其他熱門 IMAP 伺服器使"
 "用"
 
-msgid "Minor bug fixes"
+#: data/io.elementary.mail.appdata.xml.in:69
+msgid "elementary, Inc."
 msgstr ""
 
-msgid "Translation updates"
+#: data/io.elementary.mail.desktop.in:6
+msgid "internet-mail"
 msgstr ""
 
-msgid "Appstream: add releases info"
-msgstr ""
+#: data/io.elementary.mail.desktop.in:7
+msgid "Email;E-mail;Mail;"
+msgstr "Email;E-mail;Mail;電子郵件;郵件;電郵;"
 
-msgid "Don't overwrite custom settings not available in the POA plugin"
-msgstr ""
+#: data/io.elementary.mail.desktop.in:17
+msgid "Compose Message"
+msgstr "編寫訊息"
 
-msgid "Release for Loki"
-msgstr ""
+#~ msgid "About Mail"
+#~ msgstr "關於《郵件》"
+
+#~ msgid "Lightweight mail client"
+#~ msgstr "輕量級郵件客戶端"

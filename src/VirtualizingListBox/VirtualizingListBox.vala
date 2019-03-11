@@ -190,8 +190,11 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
         return typeof (VirtualizingListBoxRow);
     }
 
-    private VirtualizingListBoxRow get_widget (uint index) {
+    private VirtualizingListBoxRow? get_widget (uint index) {
         var item = model.get_object (index);
+        if (item == null) {
+            return null;
+        }
 
         VirtualizingListBoxRow? old_widget = null;
         if (recycled_widgets.size > 0) {
@@ -361,6 +364,10 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
         while (shown_from > 0 && bin_y >= 0) {
             shown_from--;
             var new_widget = get_widget (shown_from);
+            if (new_widget == null) {
+                continue;
+            }
+
             insert_child_internal (new_widget, 0);
             var min = get_widget_height (new_widget);
 
@@ -401,6 +408,11 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
         bool added = false;
         while (bin_y + bin_height <= get_allocated_height () && shown_to < model.get_n_items ()) {
             var new_widget = get_widget (shown_to);
+            if (new_widget == null) {
+                shown_to++;
+                continue;
+            }
+
             insert_child_internal (new_widget, current_widgets.size);
 
             int min = get_widget_height (new_widget);
@@ -597,7 +609,7 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
                 modify = true;
             }
 
-            mask = get_modifier_mask (Gdk.ModifierType.EXTEND_SELECTION);
+            mask = get_modifier_mask (Gdk.ModifierIntent.EXTEND_SELECTION);
             if ((state & mask) == mask) {
                 extend = true;
             }
@@ -826,5 +838,9 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
     public bool get_border (out Gtk.Border border) {
         border = Gtk.Border ();
         return false;
+    }
+
+    public Gee.HashSet<weak GLib.Object> get_selected_rows () {
+        return model.get_selected_rows ();
     }
 }

@@ -32,13 +32,23 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     private string current_folder;
     private Gee.HashMap<string, ConversationItemModel> conversations;
     private ConversationListStore list_store;
+    private TrashHandler trash_handler;
 
     construct {
         activate_on_single_click = true;
         conversations = new Gee.HashMap<string, ConversationItemModel> ();
         list_store = new ConversationListStore ();
         list_store.set_sort_func (thread_sort_function);
+        list_store.set_filter_func ((obj) => {
+            if (obj is ConversationItemModel) {
+                return !((ConversationItemModel)obj).deleted;
+            } else {
+                return false;
+            }
+        });
+
         model = list_store;
+        trash_handler = new TrashHandler ();
 
         factory_func = (item, old_widget) => {
             ConversationListItem? row = null;
@@ -155,5 +165,40 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
     private static int thread_sort_function (ConversationItemModel item1, ConversationItemModel item2) {
         return (int)(item2.timestamp - item1.timestamp);
+    }
+
+    public void mark_read_selected_messages () {
+        var selected_rows = get_selected_rows ();
+        foreach (var row in selected_rows) {
+            (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.SEEN, ~0);
+        }
+    }
+
+    public void mark_unread_selected_messages () {
+        var selected_rows = get_selected_rows ();
+        foreach (var row in selected_rows) {
+            (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.SEEN, 0);
+        }
+    }
+
+    public int trash_selected_messages () {
+        var threads = new Gee.ArrayList<Camel.FolderThreadNode?> ();
+        var selected_rows = get_selected_rows ();
+        foreach (var row in selected_rows) {
+            threads.add (((ConversationItemModel)row).node);
+        }
+
+        var deleted = trash_handler.delete_threads (folder, threads);
+        list_store.items_changed (0, 0, list_store.get_n_items ());
+        return deleted;
+    }
+
+    public void undo_trash () {
+        trash_handler.undo_last_delete ();
+        list_store.items_changed (0, 0, list_store.get_n_items ());
+    }
+
+    public void undo_expired () {
+        trash_handler.expire_undo ();
     }
 }

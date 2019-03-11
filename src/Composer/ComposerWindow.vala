@@ -34,6 +34,9 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         composer_widget.discarded.connect (() => {
             close ();
         });
+        composer_widget.sent.connect (() => {
+            close ();
+        });
 
         var content_grid = new Gtk.Grid ();
         content_grid.orientation = Gtk.Orientation.VERTICAL;

@@ -3,6 +3,8 @@ project('io.elementary.mail', 'vala', 'c')
 gnome = import('gnome')
 i18n = import('i18n')
 
+add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi')], language: 'vala')
+
 glib_dep = dependency('glib-2.0')
 gobject_dep = dependency('gobject-2.0')
 granite_dep = dependency('granite', version: '>= 5.2.0')

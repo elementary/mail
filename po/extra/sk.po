@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-08 13:23-0800\n"
+"POT-Creation-Date: 2018-12-17 07:10+0100\n"
 "PO-Revision-Date: 2016-12-11 20:57+0000\n"
 "Last-Translator: Martin Korpala <Unknown>\n"
 "Language-Team: Slovak <>\n"
@@ -19,24 +19,17 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Generator: Launchpad (build 18330)\n"
 
+#: data/io.elementary.mail.appdata.xml.in:8
+#: data/io.elementary.mail.desktop.in:3
 msgid "Mail"
 msgstr "Pošta"
 
+#: data/io.elementary.mail.appdata.xml.in:9
+#: data/io.elementary.mail.desktop.in:4
 msgid "Send and receive mail"
 msgstr ""
 
-msgid "Email;E-mail;Mail;"
-msgstr "Email;E-mail;Pošta"
-
-msgid "Compose Message"
-msgstr "Vytvor Správu"
-
-msgid "About Mail"
-msgstr "O Pošte"
-
-msgid "Lightweight mail client"
-msgstr "Jednoduchý poštpvý klient"
-
+#: data/io.elementary.mail.appdata.xml.in:11
 msgid ""
 "Mail is designed to let you manage your email quickly and effortlessly. Its "
 "interface is based on conversations, so you can read an entire discussion "
@@ -46,24 +39,31 @@ msgstr ""
 "prostredie je založené na konverzáciách, takže môžete čítať celú diskusiu "
 "bez toho, aby ste museli klikať zo správy na správu."
 
+#: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
 msgstr "jednoduchý poštový klient s plnou podporou IMAP."
 
+#: data/io.elementary.mail.appdata.xml.in:14
 msgid "Mail grouped into conversations, not a tree of threads"
 msgstr "Pošta zoskupená do konverzácií, nie do stromu vlákien."
 
+#: data/io.elementary.mail.appdata.xml.in:15
 msgid "As-you-type searching"
 msgstr "Hľadanie ako-píšeš"
 
+#: data/io.elementary.mail.appdata.xml.in:16
 msgid "Desktop notifications"
 msgstr "Upozornenia na ploche"
 
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "Podpora viacerých účtov"
 
+#: data/io.elementary.mail.appdata.xml.in:18
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "Integrovaný HTML editor, ktorý ukladá koncepty na server"
 
+#: data/io.elementary.mail.appdata.xml.in:19
 msgid ""
 "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
 "IMAP servers"
@@ -71,17 +71,24 @@ msgstr ""
 "Pracuje s Gmail, Yahoo! Mail, Outlook.com (experimentálne) a inými "
 "populárnymi IMAP servermi"
 
-msgid "Minor bug fixes"
+#: data/io.elementary.mail.appdata.xml.in:69
+msgid "elementary, Inc."
 msgstr ""
 
-msgid "Translation updates"
+#: data/io.elementary.mail.desktop.in:6
+msgid "internet-mail"
 msgstr ""
 
-msgid "Appstream: add releases info"
-msgstr ""
+#: data/io.elementary.mail.desktop.in:7
+msgid "Email;E-mail;Mail;"
+msgstr "Email;E-mail;Pošta"
 
-msgid "Don't overwrite custom settings not available in the POA plugin"
-msgstr ""
+#: data/io.elementary.mail.desktop.in:17
+msgid "Compose Message"
+msgstr "Vytvor Správu"
 
-msgid "Release for Loki"
-msgstr ""
+#~ msgid "About Mail"
+#~ msgstr "O Pošte"
+
+#~ msgid "Lightweight mail client"
+#~ msgstr "Jednoduchý poštpvý klient"

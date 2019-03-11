@@ -7,36 +7,30 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-08 13:23-0800\n"
-"PO-Revision-Date: 2017-04-19 09:08+0000\n"
+"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"PO-Revision-Date: 2018-12-19 11:04+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/extra/he/>\n"
+"Language-Team: Hebrew <https://weblate.elementary.io/projects/mail/extra/he/>"
+"\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
+#: data/io.elementary.mail.appdata.xml.in:8
+#: data/io.elementary.mail.desktop.in:3
 msgid "Mail"
 msgstr "דואר"
 
+#: data/io.elementary.mail.appdata.xml.in:9
+#: data/io.elementary.mail.desktop.in:4
 msgid "Send and receive mail"
 msgstr "שליחה וקבלה של דואר"
 
-msgid "Email;E-mail;Mail;"
-msgstr "דואר;דוא״ל;דואר אלקטרוני;מייל;דוא\"ל;"
-
-msgid "Compose Message"
-msgstr "הודעה חדשה"
-
-msgid "About Mail"
-msgstr "על אודות דואר"
-
-msgid "Lightweight mail client"
-msgstr "לקוח דוא״ל קליל"
-
+#: data/io.elementary.mail.appdata.xml.in:11
 msgid ""
 "Mail is designed to let you manage your email quickly and effortlessly. Its "
 "interface is based on conversations, so you can read an entire discussion "
@@ -45,26 +39,33 @@ msgstr ""
 "תכנית דואר זאת מאפשרת לך לנהל את הדואר שלך בצורה מהירה וקלה. המנשק שלה מבוסס "
 "דיונים, כלומר שניתן לקרוא את כל השרשור בבת אחת, מבלי לעבור על כל הודעה בנפרד."
 
+#: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
 msgstr ""
 "לקוח דוא״ל קליל עם תמיכה מלאה ב\n"
 "IMAP"
 
+#: data/io.elementary.mail.appdata.xml.in:14
 msgid "Mail grouped into conversations, not a tree of threads"
 msgstr "הודעות מאוגדות לתוך דיונים ולא כעץ של שרשורים"
 
+#: data/io.elementary.mail.appdata.xml.in:15
 msgid "As-you-type searching"
 msgstr "חיפוש עם הצעות"
 
+#: data/io.elementary.mail.appdata.xml.in:16
 msgid "Desktop notifications"
 msgstr "הודעות לשולחן העבודה"
 
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "תמיכה בריבוי חשבונות"
 
+#: data/io.elementary.mail.appdata.xml.in:18
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "הודעות שטרם הושלמו נשמרות אוטומטית בשרת"
 
+#: data/io.elementary.mail.appdata.xml.in:19
 msgid ""
 "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
 "IMAP servers"
@@ -72,17 +73,39 @@ msgstr ""
 "עובד עם Gmail,‏ Yahoo! Mail,‏ Outlook.com (באופן ניסיוני) ושרתי IMAP נפוצים "
 "נוספים"
 
-msgid "Minor bug fixes"
-msgstr "תיקוני באגים קלים"
+#: data/io.elementary.mail.appdata.xml.in:69
+msgid "elementary, Inc."
+msgstr "elementary בע״מ"
 
-msgid "Translation updates"
-msgstr "עדכוני תרגומים"
+#: data/io.elementary.mail.desktop.in:6
+msgid "internet-mail"
+msgstr "internet-mail"
 
-msgid "Appstream: add releases info"
-msgstr "Appstream: הוספת מידע על הגרסאות"
+#: data/io.elementary.mail.desktop.in:7
+msgid "Email;E-mail;Mail;"
+msgstr "דואר;דוא״ל;דואר אלקטרוני;מייל;דוא\"ל;"
 
-msgid "Don't overwrite custom settings not available in the POA plugin"
-msgstr "לא לשכתב הגדרות בהתאמה אישית שאינן זמינות בתוסף POA"
+#: data/io.elementary.mail.desktop.in:17
+msgid "Compose Message"
+msgstr "הודעה חדשה"
 
-msgid "Release for Loki"
-msgstr "גרסה ל־Loki"
+#~ msgid "About Mail"
+#~ msgstr "על אודות דואר"
+
+#~ msgid "Lightweight mail client"
+#~ msgstr "לקוח דוא״ל קליל"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "תיקוני באגים קלים"
+
+#~ msgid "Translation updates"
+#~ msgstr "עדכוני תרגומים"
+
+#~ msgid "Appstream: add releases info"
+#~ msgstr "Appstream: הוספת מידע על הגרסאות"
+
+#~ msgid "Don't overwrite custom settings not available in the POA plugin"
+#~ msgstr "לא לשכתב הגדרות בהתאמה אישית שאינן זמינות בתוסף POA"
+
+#~ msgid "Release for Loki"
+#~ msgstr "גרסה ל־Loki"

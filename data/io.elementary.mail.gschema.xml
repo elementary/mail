@@ -27,6 +27,11 @@
       <summary>Most recent position of the conversation list pane</summary>
       <description>Most recent position of the conversation list pane</description>
     </key>
+    <key name="selected-folder" type="(ss)">
+      <default>("", "")</default>
+      <summary>The account UID and folder name of the last selected folder</summary>
+      <description>The account UID and folder name of the last selected folder</description>
+    </key>
     <key name="always-load-remote-images" type="b">
       <default>true</default>
       <summary>Whether to always load remote images without prompting</summary>

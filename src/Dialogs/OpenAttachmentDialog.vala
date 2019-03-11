@@ -18,52 +18,26 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.OpenAttachmentDialog : Gtk.Dialog {
+public class Mail.OpenAttachmentDialog : Granite.MessageDialog {
     public Camel.MimePart mime_part { get; construct; }
 
     public OpenAttachmentDialog (Gtk.Window parent, Camel.MimePart mime_part) {
         Object (
-            deletable: false,
+            image_icon: new ThemedIcon ("dialog-warning"),
             mime_part: mime_part,
-            resizable: false,
-            transient_for: parent
+            primary_text: _("Are you sure you want to open %s?").printf (mime_part.get_filename ()),
+            secondary_text: _("Attachments may cause damage to your system if opened. Only open files from trusted sources."),
+            transient_for: parent,
+            buttons: Gtk.ButtonsType.CANCEL
         );
     }
 
     construct {
-        var warning_image = new Gtk.Image.from_icon_name ("dialog-warning", Gtk.IconSize.DIALOG);
-        warning_image.valign = Gtk.Align.START;
-
-        var primary_text = _("Are you sure you want to open %s?").printf (mime_part.get_filename ());
-        var primary_label = new Gtk.Label (primary_text);
-        primary_label.max_width_chars = 60;
-        primary_label.wrap = true;
-        primary_label.xalign = 0;
-        primary_label.get_style_context ().add_class ("primary");
-
-        var secondary_label = new Gtk.Label (_("Attachments may cause damage to your system if opened. Only open files from trusted sources."));
-        secondary_label.max_width_chars = 60;
-        secondary_label.wrap = true;
-        secondary_label.xalign = 0;
-
         var open_button = new Gtk.Button.with_label (_("Open Anyway"));
-        open_button.get_style_context ().add_class ("destructive-action");
+        open_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
-        var layout = new Gtk.Grid ();
-        layout.margin = 12;
-        layout.margin_top = 0;
-        layout.column_spacing = 12;
-        layout.row_spacing = 6;
-        layout.attach (warning_image, 0, 0, 1, 2);
-        layout.attach (primary_label, 1, 0, 1, 1);
-        layout.attach (secondary_label, 1, 1, 1, 1);
-
-        ((Gtk.Box) get_content_area ()).add (layout);
-
-        ((Gtk.Box) get_action_area ()).margin = 5;
-
-        add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
         add_action_widget (open_button, Gtk.ResponseType.OK);
+
         response.connect ((response_id) => {
             if (response_id == Gtk.ResponseType.OK) {
                 show_file_anyway.begin ();

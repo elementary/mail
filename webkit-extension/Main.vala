@@ -133,6 +133,22 @@ public class DOMServer : Object {
             }
         }
     }
+
+    public string get_selected_text (uint64 view) throws Error {
+        var page = extension.get_page (view);
+        WebKit.DOM.Range? selection_range;
+        try {
+            selection_range = page.get_dom_document ().default_view.get_selection ().get_range_at (0);
+        } catch (Error e) {
+            return "";
+        }
+
+        if (selection_range != null) {
+            return selection_range.text;
+        }
+
+        return "";
+    }
 }
 
 namespace WebkitWebExtension {

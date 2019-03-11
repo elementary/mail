@@ -146,28 +146,37 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         }
 
         var datetime_label = new Gtk.Label (new DateTime.from_unix_utc (relevant_timestamp).format ("%b %e, %Y"));
-        datetime_label.hexpand = true;
-        datetime_label.halign = Gtk.Align.END;
-        datetime_label.valign = Gtk.Align.START;
         datetime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         var starred_icon = new Gtk.Image ();
         starred_icon.icon_size = Gtk.IconSize.MENU;
-        starred_icon.valign = Gtk.Align.START;
 
         if (Camel.MessageFlags.FLAGGED in (int) message_info.flags) {
             starred_icon.icon_name = "starred-symbolic";
+            starred_icon.tooltip_text = _("Unstar message");
         } else {
             starred_icon.icon_name = "non-starred-symbolic";
+            starred_icon.tooltip_text = _("Star message");
         }
+
+        var starred_button = new Gtk.Button ();
+        starred_button.image = starred_icon;
+        starred_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+        var action_grid = new Gtk.Grid ();
+        action_grid.column_spacing = 3;
+        action_grid.hexpand = true;
+        action_grid.halign = Gtk.Align.END;
+        action_grid.valign = Gtk.Align.START;
+        action_grid.add (datetime_label);
+        action_grid.attach (starred_button, 2, 0);
 
         var header = new Gtk.Grid ();
         header.margin = 12;
         header.column_spacing = 12;
         header.attach (avatar, 0, 0, 1, 3);
         header.attach (header_stack, 1, 0, 1, 3);
-        header.attach (datetime_label, 2, 0, 1, 1);
-        header.attach (starred_icon, 4, 0, 1, 1);
+        header.attach (action_grid, 2, 0);
 
         var header_event_box = new Gtk.EventBox ();
         header_event_box.events |= Gdk.EventMask.ENTER_NOTIFY_MASK;
@@ -220,9 +229,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         if (Camel.MessageFlags.ATTACHMENTS in (int) message_info.flags) {
             var attachment_icon = new Gtk.Image.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
+            attachment_icon.margin_start = 6;
             attachment_icon.tooltip_text = _("This message contains one or more attachments");
-            attachment_icon.valign = Gtk.Align.START;
-            header.attach (attachment_icon, 3, 0, 1, 1);
+            action_grid.attach (attachment_icon, 1, 0);
 
             attachment_bar = new AttachmentBar (loading_cancellable);
             secondary_grid.add (attachment_bar);
@@ -248,11 +257,25 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         header_event_box.button_release_event.connect ((event) => {
             expanded = !expanded;
-            return false;
+            return Gdk.EVENT_STOP;
         });
 
         destroy.connect (() => {
             loading_cancellable.cancel ();
+        });
+
+        /* Connecting to clicked () doesn't allow us to prevent the event from propagating to header_event_box */
+        starred_button.button_release_event.connect (() => {
+            if (Camel.MessageFlags.FLAGGED in (int) message_info.flags) {
+                message_info.set_flags (Camel.MessageFlags.FLAGGED, 0);
+                starred_icon.icon_name = "non-starred-symbolic";
+                starred_icon.tooltip_text = _("Star message");
+            } else {
+                message_info.set_flags (Camel.MessageFlags.FLAGGED, ~0);
+                starred_icon.icon_name = "starred-symbolic";
+                starred_icon.tooltip_text = _("Unstar message");
+            }
+            return Gdk.EVENT_STOP;
         });
 
         web_view.image_load_blocked.connect (() => {

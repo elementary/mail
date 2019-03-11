@@ -24,7 +24,9 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     private Gtk.Paned paned_start;
 
     private FoldersListView folders_list_view;
+    private Gtk.Overlay conversation_list_overlay;
     private ConversationListBox conversation_list_box;
+    private Gtk.ScrolledWindow conversation_list_scrolled;
     private MessageListBox message_list_box;
     private Gtk.ScrolledWindow message_list_scrolled;
 
@@ -35,6 +37,8 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     public const string ACTION_REPLY = "reply";
     public const string ACTION_REPLY_ALL = "reply-all";
     public const string ACTION_FORWARD = "forward";
+    public const string ACTION_MARK_READ = "mark-read";
+    public const string ACTION_MARK_UNREAD = "mark-unread";
     public const string ACTION_MOVE_TO_TRASH = "trash";
 
     private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
@@ -44,6 +48,8 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         {ACTION_REPLY,              on_reply             },
         {ACTION_REPLY_ALL,          on_reply_all         },
         {ACTION_FORWARD,            on_forward           },
+        {ACTION_MARK_READ,          on_mark_read         },
+        {ACTION_MARK_UNREAD,        on_mark_unread       },
         {ACTION_MOVE_TO_TRASH,      on_move_to_trash     },
     };
 
@@ -61,6 +67,8 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         action_accelerators[ACTION_REPLY] = "<Control>R";
         action_accelerators[ACTION_REPLY_ALL] = "<Control><Shift>R";
         action_accelerators[ACTION_FORWARD] = "<Ctrl><Shift>F";
+        action_accelerators[ACTION_MARK_READ] = "<Ctrl><Shift>i";
+        action_accelerators[ACTION_MARK_UNREAD] = "<Ctrl><Shift>u";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "Delete";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "BackSpace";
     }
@@ -70,7 +78,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
         foreach (var action in action_accelerators.get_keys ()) {
             ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
-                ACTION_PREFIX + action, 
+                ACTION_PREFIX + action,
                 action_accelerators[action].to_array ()
             );
         }
@@ -87,10 +95,13 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         message_list_box.bind_property ("can-reply", get_action (ACTION_FORWARD), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-move-thread", get_action (ACTION_MOVE_TO_TRASH), "enabled", BindingFlags.SYNC_CREATE);
 
-        var conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
+        conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
         conversation_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         conversation_list_scrolled.width_request = 158;
         conversation_list_scrolled.add (conversation_list_box);
+
+        conversation_list_overlay = new Gtk.Overlay ();
+        conversation_list_overlay.add (conversation_list_scrolled);
 
         message_list_scrolled = new Gtk.ScrolledWindow (null, null);
         message_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -118,7 +129,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
         paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_start.pack1 (folders_list_view, false, false);
-        paned_start.pack2 (conversation_list_scrolled, true, false);
+        paned_start.pack2 (conversation_list_overlay, true, false);
 
         paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_end.pack1 (paned_start, false, false);
@@ -183,6 +194,14 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         });
     }
 
+    private void on_mark_read () {
+        conversation_list_box.mark_read_selected_messages ();
+    }
+
+    private void on_mark_unread () {
+        conversation_list_box.mark_unread_selected_messages ();
+    }
+
     private void on_reply () {
         scroll_message_list_to_bottom ();
         message_list_box.add_inline_composer (ComposerWidget.Type.REPLY);
@@ -199,27 +218,30 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_move_to_trash () {
-        try {
-            var account = conversation_list_box.current_account;
-            var offline_store = (Camel.OfflineStore) account.service;
-            var trash_folder = offline_store.get_trash_folder_sync ();
-            if (trash_folder == null) {
-                critical ("Could not find trash folder in account " + account.service.display_name);
+        var result = conversation_list_box.trash_selected_messages ();
+        if (result > 0) {
+            foreach (weak Gtk.Widget child in conversation_list_overlay.get_children ()) {
+                if (child != conversation_list_scrolled) {
+                    child.destroy ();
+                }
             }
 
-            var source_folder = conversation_list_box.folder;
-            var uids = message_list_box.uids;
+            var toast = new Granite.Widgets.Toast (ngettext("Message Deleted", "Messages Deleted", result));
+            toast.set_default_action (_("Undo"));
+            toast.show_all ();
 
-            trash_folder.freeze ();
-            source_folder.freeze ();
-            try {
-                source_folder.transfer_messages_to_sync (uids, trash_folder, true, null);
-            } finally {
-                trash_folder.thaw ();
-                source_folder.thaw ();
-            }
-        } catch (Error e) {
-            critical ("Could not move messages to trash: " + e.message);
+            toast.default_action.connect (() => {
+                conversation_list_box.undo_trash ();
+            });
+
+            toast.notify["child-revealed"].connect (() => {
+                if (!toast.child_revealed) {
+                    conversation_list_box.undo_expired ();
+                }
+            });
+
+            conversation_list_overlay.add_overlay (toast);
+            toast.send_notification ();
         }
     }
 
