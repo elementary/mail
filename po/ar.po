@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2019-03-13 16:27+0000\n"
-"Last-Translator: Mohamad Alchehabi <alchehabi@protonmail.com>\n"
+"PO-Revision-Date: 2019-03-16 21:27+0000\n"
+"Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/mail/mail/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -29,11 +29,11 @@ msgstr "رسالة جديدة"
 
 #: src/HeaderBar.vala:44
 msgid "Search Mail"
-msgstr ""
+msgstr "بحث في البريد"
 
 #: src/HeaderBar.vala:56
 msgid "Always Show Remote Images"
-msgstr ""
+msgstr "دائماً اعرض الصور عن بعد"
 
 #: src/HeaderBar.vala:64
 msgid "Account Settings…"
@@ -66,6 +66,7 @@ msgstr "اربط حساب"
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
+"يستخدم البريد حسابات البريد الإلكتروني التي تم اعدادها في إعدادات النظام."
 
 #: src/WelcomeView.vala:50
 msgid "Online Accounts…"
@@ -81,19 +82,19 @@ msgstr "الموضوع:"
 
 #: src/Composer/ComposerWidget.vala:85
 msgid "Cc"
-msgstr "Cc"
+msgstr "نسخة"
 
 #: src/Composer/ComposerWidget.vala:87
 msgid "Bcc"
-msgstr "Bcc"
+msgstr "مخفية"
 
 #: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
-msgstr "Cc:"
+msgstr "نسخة:"
 
 #: src/Composer/ComposerWidget.vala:113
 msgid "Bcc:"
-msgstr "Bcc:"
+msgstr "مخفية:"
 
 #: src/Composer/ComposerWidget.vala:152
 msgid "Bold"
@@ -179,7 +180,7 @@ msgstr "إلى: %s<br/>"
 #: src/Composer/ComposerWidget.vala:390
 #, c-format
 msgid "Cc: %s<br/>"
-msgstr ""
+msgstr "نسخة: %s<br/>"
 
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
@@ -187,19 +188,19 @@ msgstr "رسالة جديدة"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "الرابط:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://example.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
 msgid "Link Text:"
-msgstr ""
+msgstr "نص الرابط:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
-msgstr ""
+msgstr "مثال الموقع"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
 #: src/Dialogs/OpenAttachmentDialog.vala:65
@@ -210,13 +211,15 @@ msgstr "إلغاء"
 #: src/Dialogs/OpenAttachmentDialog.vala:37
 #, c-format
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "هل أنت متأكد من أنك تريد فتح %s؟"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:44
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"قد تتسبب المرفقات في تلف النظام الخاص بك في حالة فتحه. افتح الملفات التي من "
+"مصادر موثوقة فقط."
 
 #: src/Dialogs/OpenAttachmentDialog.vala:49
 msgid "Open Anyway"
@@ -236,19 +239,19 @@ msgstr "من:"
 
 #: src/MessageList/MessageListItem.vala:186
 msgid "Show Images"
-msgstr ""
+msgstr "عرض الصور"
 
 #: src/MessageList/MessageListItem.vala:187
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "اعرض دائما من المرسل"
 
 #: src/MessageList/MessageListItem.vala:192
 msgid "This message contains remote images."
-msgstr ""
+msgstr "تحتوي هذه الرسالة على صور عن بعد."
 
 #: src/MessageList/MessageListItem.vala:223
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "تحتوي هذه الرسالة على مرفق واحد أو أكثر"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
@@ -256,15 +259,15 @@ msgstr "فتح"
 
 #: src/MessageList/AttachmentButton.vala:43
 msgid "Save As…"
-msgstr ""
+msgstr "حفظ بإسم …"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "غير معروف"
 
 #: src/MessageList/AttachmentButton.vala:113
 msgid "Save"
-msgstr ""
+msgstr "حفظ"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "المسودة"
