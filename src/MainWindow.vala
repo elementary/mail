@@ -252,7 +252,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_fullscreen () {
-		if ((get_window ().get_state () & Gdk.WindowState.FULLSCREEN) != 0) {
+		if (Gdk.WindowState.FULLSCREEN in get_window ().get_state ()) {
             container_grid.remove (headerbar);
             set_titlebar (headerbar);
             headerbar.show_close_button = true;
