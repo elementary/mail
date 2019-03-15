@@ -91,6 +91,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
             get_style_context ().add_class ("unread-message");
 
             status_icon.icon_name = "mail-unread-symbolic";
+            status_icon.tooltip_text = _("Unread");
             status_icon.get_style_context ().add_class ("attention");
 
             status_revealer.reveal_child = true;
@@ -100,10 +101,14 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
 
             if (data.replied_all || data.replied) {
                 status_icon.icon_name = "mail-replied-symbolic";
+                status_icon.tooltip_text = _("Replied");
                 status_revealer.reveal_child = true;
             } else if (data.forwarded) {
-                status_icon.icon_name = "go-next-symbolic";
+                status_icon.icon_name = "mail-forwarded-symbolic";
+                status_icon.tooltip_text = _("Forwarded");
                 status_revealer.reveal_child = true;
+            } else {
+                status_revealer.reveal_child = false;
             }
         }
 

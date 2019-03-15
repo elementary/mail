@@ -106,23 +106,21 @@ public class AttachmentButton : Gtk.FlowBoxChild {
 
     private void save_as_activated () {
         Gtk.Window? parent_window = get_toplevel () as Gtk.Window;
-        var chooser = new Gtk.FileChooserDialog (null, parent_window,
+        var chooser = new Gtk.FileChooserNative (
+            null,
+            parent_window,
             Gtk.FileChooserAction.SAVE,
-            _("Cancel"),
-            Gtk.ResponseType.CANCEL,
             _("Save"),
-            Gtk.ResponseType.ACCEPT
+            _("Cancel")
         );
 
         chooser.set_current_name (mime_part.get_filename ());
         chooser.do_overwrite_confirmation = true;
-        chooser.response.connect ((response_id) => {
-            if (response_id == Gtk.ResponseType.ACCEPT) {
-                write_to_file.begin (chooser.get_file ());
-            }
-        });
 
-        chooser.run ();
+        if (chooser.run () == Gtk.ResponseType.ACCEPT) {
+            write_to_file.begin (chooser.get_file ());
+        }
+
         chooser.destroy ();
     }
 
