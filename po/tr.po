@@ -17,22 +17,21 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2019-01-28 15:17+0000\n"
-"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
-"Language-Team: Turkish <https://weblate.elementary.io/projects/mail/mail/tr/>"
-"\n"
+"PO-Revision-Date: 2019-04-21 20:59+0000\n"
+"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.5.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-POOTLE-MTIME: 1423290848.000000\n"
 
 #: src/HeaderBar.vala:38
 msgid "Compose new message"
-msgstr "Yeni İleti Oluştur"
+msgstr "Yeni ileti oluştur"
 
 #: src/HeaderBar.vala:44
 msgid "Search Mail"
@@ -40,7 +39,7 @@ msgstr "Posta Ara"
 
 #: src/HeaderBar.vala:56
 msgid "Always Show Remote Images"
-msgstr "Her zaman uzaktaki resimlerini göster"
+msgstr "Uzak Resimleri Her Zaman Göster"
 
 #: src/HeaderBar.vala:64
 msgid "Account Settings…"
@@ -56,27 +55,29 @@ msgstr "Yanıtla"
 
 #: src/HeaderBar.vala:97
 msgid "Reply All"
-msgstr "Tümüne Yanıt Ver"
+msgstr "Tümünü Yanıtla"
 
 #: src/HeaderBar.vala:104
 msgid "Forward"
-msgstr "İlet"
+msgstr "Yönlendir"
 
 #: src/HeaderBar.vala:111
 msgid "Move conversations to Trash"
-msgstr "Konuşmaları Çöpe taşı"
+msgstr "Konuşmaları Çöpe Taşı"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
-msgstr "Hesap bağla"
+msgstr "Bir Hesaba Bağlan"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
-msgstr "Mail Sistem Ayarları'nda belirtilen posta hesaplarını kullanır."
+msgstr ""
+"Posta uygulaması, Sistem Ayarlarında yapılandırılmış e-posta hesaplarını "
+"kullanır."
 
 #: src/WelcomeView.vala:50
 msgid "Online Accounts…"
-msgstr "Çevrimiçi hesaplar…"
+msgstr "Çevrimiçi Hesaplar…"
 
 #: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
 msgid "To:"
@@ -128,11 +129,11 @@ msgstr "Metni alıntılamaktan vazgeç"
 
 #: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
-msgstr "Bağlantı ekle"
+msgstr "Bağlantı Ekle"
 
 #: src/Composer/ComposerWidget.vala:198
 msgid "Insert Image"
-msgstr "Resim ekle"
+msgstr "Resim Ekle"
 
 #: src/Composer/ComposerWidget.vala:201
 msgid "Remove formatting"
@@ -148,16 +149,16 @@ msgstr "Dosya ekle"
 
 #: src/Composer/ComposerWidget.vala:240
 msgid "Send"
-msgstr "İlet"
+msgstr "Gönder"
 
 #: src/Composer/ComposerWidget.vala:349
 msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%a, %b %-e, %Y at %-l:%M %p"
+msgstr "%-e %B %Y %A, %-k:%M"
 
 #: src/Composer/ComposerWidget.vala:379
 #, c-format
 msgid "On %1$s, %2$s wrote:"
-msgstr "%1$s tarihinde, %2$s yazdı:"
+msgstr "%2$s, %1$s tarihinde şunu yazdı:"
 
 #: src/Composer/ComposerWidget.vala:383
 msgid "---------- Forwarded message ----------"
@@ -202,7 +203,7 @@ msgstr "https://example.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
 msgid "Link Text:"
-msgstr "Metne bağlantı ekle:"
+msgstr "Bağlantı Metni:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
@@ -224,7 +225,7 @@ msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
-"Ekler eğer açılırsa sisteminize zarar verebilir. Sadece güvenilir "
+"Ekler açıldığında sisteminize zarar verebilir. Yalnızca güvenilir "
 "kaynaklardan gelen dosyaları açın."
 
 #: src/Dialogs/OpenAttachmentDialog.vala:49
@@ -233,11 +234,11 @@ msgstr "Yine de Aç"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
-msgstr "Klasörü Yenile"
+msgstr "Klasörü yenile"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
-msgstr "Hiçbir ileti seçilmedi."
+msgstr "Hiçbir İleti Seçilmedi"
 
 #: src/MessageList/MessageListItem.vala:76
 msgid "From:"
