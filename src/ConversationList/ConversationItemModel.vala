@@ -21,7 +21,7 @@
  */
 
 public class Mail.ConversationItemModel : GLib.Object {
-    public Camel.FolderThreadNode node { get; private set; }
+    public Camel.FolderThreadNode? node { get; private set; }
 
     public string formatted_date {
         owned get {
@@ -111,8 +111,11 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     private static int64 get_newest_timestamp (Camel.FolderThreadNode node, int64 highest = -1) {
         int64 time = highest;
-        time = int64.max (time, node.message.date_received);
-        time = int64.max (time, node.message.date_sent);
+        weak Camel.MessageInfo message = node.message;
+        if (message != null) {
+            time = int64.max (time, message.date_received);
+            time = int64.max (time, message.date_sent);
+        }
 
         unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) node.child;
         while (child != null) {
