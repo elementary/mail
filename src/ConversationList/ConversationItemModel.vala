@@ -37,8 +37,12 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public string from {
         owned get {
-            var from_parts = node.message.from.split ("<");
-            return GLib.Markup.escape_text (from_parts[0].strip ());
+            var header_address = Camel.HeaderAddress.decode (node.message.from, null);
+            if (header_address.name != null && header_address.name != "") {
+                return header_address.name;
+            } else {
+                return header_address.v_addr;
+            }
         }
     }
 
