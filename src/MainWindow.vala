@@ -22,6 +22,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     private HeaderBar headerbar;
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
+    private Gtk.Grid container_grid;
 
     private FoldersListView folders_list_view;
     private Gtk.Overlay conversation_list_overlay;
@@ -43,6 +44,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     public const string ACTION_MARK_UNREAD = "mark-unread";
     public const string ACTION_MARK_UNSTARRED = "mark-unstarred";
     public const string ACTION_MOVE_TO_TRASH = "trash";
+    public const string ACTION_FULLSCREEN = "full-screen";
 
     private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -57,6 +59,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         {ACTION_MARK_UNREAD,        on_mark_unread       },
         {ACTION_MARK_UNSTARRED,     on_mark_unstarred    },
         {ACTION_MOVE_TO_TRASH,      on_move_to_trash     },
+        {ACTION_FULLSCREEN,         on_fullscreen        },
     };
 
     public MainWindow (Gtk.Application application) {
@@ -80,6 +83,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         action_accelerators[ACTION_MARK_UNSTARRED] = "<Ctrl><Shift>l";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "Delete";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "BackSpace";
+        action_accelerators[ACTION_FULLSCREEN] = "F11";
     }
 
     construct {
@@ -152,7 +156,9 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         placeholder_stack.add_named (paned_end, "mail");
         placeholder_stack.add_named (welcome_view, "welcome");
 
-        add (placeholder_stack);
+        container_grid = new Gtk.Grid ();
+        container_grid.attach (placeholder_stack, 0, 1, 1, 1);
+        add (container_grid);
 
         var settings = new GLib.Settings ("io.elementary.mail");
         settings.bind ("paned-start-position", paned_start, "position", SettingsBindFlags.DEFAULT);
@@ -264,6 +270,20 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
             conversation_list_overlay.add_overlay (toast);
             toast.send_notification ();
+        }
+    }
+
+    private void on_fullscreen () {
+		if (Gdk.WindowState.FULLSCREEN in get_window ().get_state ()) {
+            container_grid.remove (headerbar);
+            set_titlebar (headerbar);
+            headerbar.show_close_button = true;
+            unfullscreen ();
+        } else {
+            remove (headerbar);
+            container_grid.attach (headerbar, 0, 0, 1, 1);
+            headerbar.show_close_button = false;
+            fullscreen ();
         }
     }
 

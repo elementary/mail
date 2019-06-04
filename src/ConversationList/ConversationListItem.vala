@@ -81,7 +81,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     public void assign (ConversationItemModel data) {
         date.label = data.formatted_date;
         topic.label = data.subject;
-        source.label = data.from;
+        source.label = GLib.Markup.escape_text (data.from);
 
         messages.label = data.num_messages > 1 ? "%u".printf (data.num_messages) : null;
         messages.visible = data.num_messages > 1;

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-17 07:10+0100\n"
-"PO-Revision-Date: 2019-03-13 17:27+0000\n"
+"PO-Revision-Date: 2019-04-10 09:53+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/mail/extra/ar/>\n"
 "Language: ar\n"
@@ -11,17 +11,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 3.4\n"
+"X-Generator: Weblate 3.5.1\n"
 
 #: data/io.elementary.mail.appdata.xml.in:8
 #: data/io.elementary.mail.desktop.in:3
 msgid "Mail"
-msgstr ""
+msgstr "البريد الالكتروني"
 
 #: data/io.elementary.mail.appdata.xml.in:9
 #: data/io.elementary.mail.desktop.in:4
 msgid "Send and receive mail"
-msgstr ""
+msgstr "أرسل و استقبل الرسائل"
 
 #: data/io.elementary.mail.appdata.xml.in:11
 msgid ""
@@ -29,6 +29,9 @@ msgid ""
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
 msgstr ""
+"تم تصميم Mail لتتيح لك إدارة بريدك الإلكتروني بسرعة ودون عناء. تعتمد الواجهة "
+"على المحادثات ، بحيث يمكنك قراءة مناقشة كاملة دون الحاجة إلى النقر من رسالة "
+"إلى رسالة."
 
 #: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
