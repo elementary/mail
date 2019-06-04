@@ -464,7 +464,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 "mail-send",
                 Gtk.ButtonsType.NONE
             );
-            no_subject_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            no_subject_dialog.transient_for = get_toplevel () as Gtk.Window;
 
             no_subject_dialog.add_button (_("Don't Send"), Gtk.ResponseType.CANCEL);
 
