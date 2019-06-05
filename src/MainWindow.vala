@@ -91,7 +91,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         set_titlebar (headerbar);
 
         folders_list_view = new FoldersListView ();
-        conversation_list_box = new ConversationListBox ();
+        conversation_list_box = new ConversationListBox (this);
         message_list_box = new MessageListBox ();
 
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY), "enabled", BindingFlags.SYNC_CREATE);

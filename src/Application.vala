@@ -21,7 +21,7 @@
 public class Mail.Application : Gtk.Application {
     public static GLib.Settings settings;
 
-    public MainWindow? main_window = null;
+    private MainWindow? main_window = null;
 
     public Application () {
         Object (

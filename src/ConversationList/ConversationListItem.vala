@@ -21,8 +21,6 @@
  */
 
 public class Mail.ConversationListItem : VirtualizingListBoxRow {
-    private static Gtk.ApplicationWindow main_window;
-
     private Gtk.Image status_icon;
     private Gtk.Label date;
     private Gtk.Label messages;
@@ -30,10 +28,6 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     private Gtk.Label topic;
     private Gtk.Revealer flagged_icon_revealer;
     private Gtk.Revealer status_revealer;
-
-    static construct {
-        main_window = ((Mail.Application) GLib.Application.get_default ()).main_window;
-    }
 
     construct {
         status_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic", Gtk.IconSize.MENU);
@@ -93,13 +87,6 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         messages.visible = data.num_messages > 1;
         messages.no_show_all = data.num_messages <= 1;
 
-        if (main_window == null) {
-            critical ("it's null!");
-        }
-
-        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MARK_READ)).set_enabled (data.unread);
-        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MARK_UNREAD)).set_enabled (!data.unread);
-
         if (data.unread) {
             get_style_context ().add_class ("unread-message");
 
@@ -108,7 +95,6 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
             status_icon.get_style_context ().add_class ("attention");
 
             status_revealer.reveal_child = true;
-
         } else {
             get_style_context ().remove_class ("unread-message");
             status_icon.get_style_context ().remove_class ("attention");

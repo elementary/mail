@@ -106,9 +106,11 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
 
         var mark_unread_item = new Gtk.MenuItem.with_label (_("Mark as Unread"));
         mark_unread_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD;
+        mark_unread_item.bind_property ("sensitive", mark_unread_item, "visible");
 
         var mark_read_item = new Gtk.MenuItem.with_label (_("Mark as Read"));
         mark_read_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ;
+        mark_read_item.bind_property ("sensitive", mark_read_item, "visible");
 
         var mark_menu = new Gtk.Menu ();
         mark_menu.add (mark_unread_item);
