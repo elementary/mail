@@ -18,6 +18,9 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
+using Soup;
+using Gee;
+
 public class Mail.Application : Gtk.Application {
     public static GLib.Settings settings;
 
@@ -26,7 +29,7 @@ public class Mail.Application : Gtk.Application {
     public Application () {
         Object (
             application_id: "io.elementary.mail",
-            flags: ApplicationFlags.HANDLES_OPEN
+            flags: ApplicationFlags.HANDLES_COMMAND_LINE
         );
     }
 
@@ -48,8 +51,63 @@ public class Mail.Application : Gtk.Application {
         set_accels_for_action ("app.quit", {"<Control>q"});
     }
 
-    public override void open (File[] files, string hint) {
-        activate ();
+    public override int command_line (ApplicationCommandLine command_line) {
+        activate();
+
+        string[] argv = command_line.get_arguments ();
+
+        // The only arguments we support are mailto: URLs passed in by the OS. See RFC 2368 for
+        // details. We handle the most commonly used fields.
+        foreach (var mailtoUri in argv[1:argv.length]) {
+            string to = null, cc = null, subject = null;
+
+            try {
+                URI mailto = new URI(mailtoUri);
+                if (mailto == null) {
+                    throw new OptionError.BAD_VALUE ("Argument is not a URL.");
+                }
+                if (mailto.scheme != "mailto") {
+                    throw new OptionError.BAD_VALUE ("Cannot open non-mailto: URL");
+                }
+
+                to = URI.decode(mailto.path);
+                if (to == null || to == "") {
+                    throw new OptionError.BAD_VALUE ("mailto: URL does not specify a recipent");
+                }
+                if (mailto.query != null) {
+                    var params = parse_mailto_query (mailto.query);
+                    if (params["cc"] != null) {
+                        cc = params["cc"];
+                    }
+                    if (params["subject"] != null) {
+                        subject = params["subject"];
+                    }
+                }
+
+                new ComposerWindow.with_headers (main_window, to, cc, subject).show_all ();
+            }
+            catch (OptionError e) {
+                warning("Argument parsing error. %s", e.message);
+            }
+        }
+
+        return 0;
+    }
+
+    private HashMap<string, string> parse_mailto_query (string query) throws OptionError {
+        var result = new HashMap<string, string> ();
+        var params = query.split ("&");
+
+        foreach (string param in params) {
+            var terms = param.split ("=");
+            if (terms.length != 2) {
+                throw new OptionError.BAD_VALUE ("Invalid mailto URL");
+            }
+
+            result[terms[0]] = URI.decode (terms[1]);
+        }
+
+        return result;
     }
 
     public override void activate () {

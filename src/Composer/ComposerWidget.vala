@@ -41,6 +41,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private WebView web_view;
     private SimpleActionGroup actions;
     private Gtk.Entry to_val;
+    private Gtk.ToggleButton cc_button;
     private Gtk.Entry cc_val;
     private Gtk.Entry bcc_val;
     private Gtk.Revealer cc_revealer;
@@ -77,6 +78,20 @@ public class Mail.ComposerWidget : Gtk.Grid {
         Object (has_subject_field: true);
     }
 
+    public ComposerWidget.with_headers ( string? to, string? cc, string? subject ) {
+        Object (has_subject_field: true);
+
+        // Set header fields, now that signal handlers are established
+        if (to != null)
+            to_val.text = to;
+        if (cc != null) {
+            cc_button.clicked();
+            cc_val.text = cc;
+        }
+        if (subject != null)
+            subject_val.text = subject;
+    }
+
     construct {
         actions = new SimpleActionGroup ();
         actions.add_action_entries (action_entries, this);
@@ -109,7 +124,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         to_val = new Gtk.Entry ();
         to_val.hexpand = true;
 
-        var cc_button = new Gtk.ToggleButton.with_label (_("Cc"));
+        cc_button = new Gtk.ToggleButton.with_label (_("Cc"));
 
         var bcc_button = new Gtk.ToggleButton.with_label (_("Bcc"));
 

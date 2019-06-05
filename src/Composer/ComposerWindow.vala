@@ -19,7 +19,12 @@
  */
 
 public class Mail.ComposerWindow : Gtk.ApplicationWindow {
+
     public ComposerWindow (Gtk.Window parent) {
+        this.with_headers (parent, null, null, null);
+    }
+
+    public ComposerWindow.with_headers (Gtk.Window parent, string? to, string? cc, string? subject) {
         Object (
             height_request: 600,
             title: _("New Message"),
@@ -27,10 +32,8 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
             width_request: 680,
             window_position: Gtk.WindowPosition.CENTER_ON_PARENT
         );
-    }
 
-    construct {
-        var composer_widget = new ComposerWidget.with_subject ();
+        ComposerWidget composer_widget = new ComposerWidget.with_headers (to, cc, subject);
         composer_widget.discarded.connect (() => {
             close ();
         });
