@@ -19,6 +19,7 @@
  */
 
 public class Mail.HeaderBar : Gtk.HeaderBar {
+    public bool can_mark { get; set; }
     public Gtk.SearchEntry search_entry { get; construct; }
     private Gtk.Grid spacing_widget;
 
@@ -139,6 +140,8 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         pack_start (mark_button);
         pack_start (trash_button);
         pack_end (app_menu);
+
+        bind_property ("can-mark", mark_button, "sensitive");
 
         account_settings_menuitem.clicked.connect (() => {
             try {
