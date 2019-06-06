@@ -24,7 +24,7 @@ namespace Camel {
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_block_file_get_type ()")]
 	public class BlockFile : GLib.Object {
 		[CCode (has_construct_function = false)]
-		public BlockFile (string path, int flags, char version, size_t block_size);
+		public BlockFile (string path, int flags, string version, size_t block_size);
 		public void attach_block (Camel.Block bl);
 		public int @delete ();
 		public void detach_block (Camel.Block bl);
@@ -818,7 +818,7 @@ namespace Camel {
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_key_file_get_type ()")]
 	public class KeyFile : GLib.Object {
 		[CCode (has_construct_function = false)]
-		public KeyFile (string path, int flags, char version);
+		public KeyFile (string path, int flags, string version);
 		public int @delete ();
 		public int read (Camel._block_t start, [CCode (array_length_cname = "len", array_length_pos = 1.5, array_length_type = "gsize")] Camel._key_t[]? records);
 		public int rename (string path);

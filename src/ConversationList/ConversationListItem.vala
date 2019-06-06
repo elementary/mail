@@ -21,18 +21,19 @@
  */
 
 public class Mail.ConversationListItem : VirtualizingListBoxRow {
+    private Gtk.Image status_icon;
     private Gtk.Label date;
     private Gtk.Label messages;
     private Gtk.Label source;
     private Gtk.Label topic;
     private Gtk.Revealer flagged_icon_revealer;
-    private Gtk.Revealer unread_icon_revealer;
+    private Gtk.Revealer status_revealer;
 
     construct {
-        var unread_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic", Gtk.IconSize.MENU);
-        unread_icon.get_style_context ().add_class ("attention");
-        unread_icon_revealer = new Gtk.Revealer ();
-        unread_icon_revealer.add (unread_icon);
+        status_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic", Gtk.IconSize.MENU);
+
+        status_revealer = new Gtk.Revealer ();
+        status_revealer.add (status_icon);
 
         var flagged_icon = new Gtk.Image.from_icon_name ("starred-symbolic", Gtk.IconSize.MENU);
         flagged_icon_revealer = new Gtk.Revealer ();
@@ -64,7 +65,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         grid.margin = 12;
         grid.column_spacing = 12;
         grid.row_spacing = 6;
-        grid.attach (unread_icon_revealer, 0, 0, 1, 1);
+        grid.attach (status_revealer, 0, 0);
         grid.attach (flagged_icon_revealer, 0, 1, 1, 1);
         grid.attach (source, 1, 0, 1, 1);
         grid.attach (date, 2, 0, 2, 1);
@@ -80,17 +81,35 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     public void assign (ConversationItemModel data) {
         date.label = data.formatted_date;
         topic.label = data.subject;
-        source.label = data.from;
+        source.label = GLib.Markup.escape_text (data.from);
 
         messages.label = data.num_messages > 1 ? "%u".printf (data.num_messages) : null;
         messages.visible = data.num_messages > 1;
         messages.no_show_all = data.num_messages <= 1;
 
-        unread_icon_revealer.reveal_child = data.unread;
         if (data.unread) {
             get_style_context ().add_class ("unread-message");
+
+            status_icon.icon_name = "mail-unread-symbolic";
+            status_icon.tooltip_text = _("Unread");
+            status_icon.get_style_context ().add_class ("attention");
+
+            status_revealer.reveal_child = true;
         } else {
             get_style_context ().remove_class ("unread-message");
+            status_icon.get_style_context ().remove_class ("attention");
+
+            if (data.replied_all || data.replied) {
+                status_icon.icon_name = "mail-replied-symbolic";
+                status_icon.tooltip_text = _("Replied");
+                status_revealer.reveal_child = true;
+            } else if (data.forwarded) {
+                status_icon.icon_name = "mail-forwarded-symbolic";
+                status_icon.tooltip_text = _("Forwarded");
+                status_revealer.reveal_child = true;
+            } else {
+                status_revealer.reveal_child = false;
+            }
         }
 
         flagged_icon_revealer.reveal_child = data.flagged;

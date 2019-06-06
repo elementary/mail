@@ -495,6 +495,27 @@ public class Mail.ComposerWidget : Gtk.Grid {
     }
 
     private void on_send () {
+        if (subject_val.text == "") {
+            var no_subject_dialog = new Granite.MessageDialog.with_image_from_icon_name (
+                _("Send Message With an Empty Subject?"),
+                _("This message has an empty subject field. The recipient may not be able to infer the scope or importance of the message."),
+                "mail-send",
+                Gtk.ButtonsType.NONE
+            );
+            no_subject_dialog.transient_for = get_toplevel () as Gtk.Window;
+
+            no_subject_dialog.add_button (_("Don't Send"), Gtk.ResponseType.CANCEL);
+
+            var send_anyway = no_subject_dialog.add_button (_("Send Anyway"), Gtk.ResponseType.ACCEPT);
+            send_anyway.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+
+            if (no_subject_dialog.run () == Gtk.ResponseType.CANCEL) {
+                no_subject_dialog.destroy ();
+                return;
+            }
+            no_subject_dialog.destroy ();
+        }
+
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
 
         var from = new Camel.InternetAddress ();
