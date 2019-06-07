@@ -21,6 +21,7 @@
 public class Mail.ComposerWindow : Gtk.ApplicationWindow {
     public ComposerWindow (Gtk.Window parent) {
         Object (
+            application: ((Gtk.Application) GLib.Application.get_default ()),
             height_request: 600,
             title: _("New Message"),
             transient_for: parent,
@@ -30,7 +31,7 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
     }
 
     construct {
-        var composer_widget = new ComposerWidget.with_subject ();
+        var composer_widget = new ComposerWidget.with_subject (this);
         composer_widget.discarded.connect (() => {
             close ();
         });

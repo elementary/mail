@@ -38,8 +38,9 @@ public class Mail.ComposerWidget : Gtk.Grid {
     public bool has_subject_field { get; construct; default = false; }
     public bool can_change_sender { get; construct; default = true; }
 
+    public Gtk.ApplicationWindow app_window { get; construct; }
+
     private WebView web_view;
-    private SimpleActionGroup actions;
     private Gtk.Entry to_val;
     private Gtk.Entry cc_val;
     private Gtk.Entry bcc_val;
@@ -54,6 +55,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
         FORWARD
     }
 
+    private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
+
     public const ActionEntry[] action_entries = {
         {ACTION_BOLD,           on_edit_action,    "s",    "''"     },
         {ACTION_ITALIC,         on_edit_action,    "s",    "''"     },
@@ -65,22 +68,41 @@ public class Mail.ComposerWidget : Gtk.Grid {
         {ACTION_SEND,           on_send                             }
     };
 
-    public ComposerWidget () {
-        
+    static construct {
+        action_accelerators[ACTION_BOLD] = "<Control>B";
+        action_accelerators[ACTION_ITALIC] = "<Control>I";
+        action_accelerators[ACTION_UNDERLINE] = "<Control>U";
+        action_accelerators[ACTION_STRIKETHROUGH] = "<Control>percent";
+        action_accelerators[ACTION_INSERT_LINK] = "<Control>K";
+        action_accelerators[ACTION_REMOVE_FORMAT] = "<Control>space";
+        action_accelerators[ACTION_DISCARD] = "<Control>Delete";
+        action_accelerators[ACTION_SEND] = "<Control>Return";
     }
 
     public ComposerWidget.inline () {
-        Object (can_change_sender: false);
+        Object (
+            app_window: ((Mail.Application) GLib.Application.get_default ()).main_window,
+            can_change_sender: false
+        );
     }
 
-    public ComposerWidget.with_subject () {
-        Object (has_subject_field: true);
+    public ComposerWidget.with_subject (Gtk.ApplicationWindow app_window) {
+        Object (
+            app_window: app_window,
+            has_subject_field: true
+        );
     }
 
     construct {
-        actions = new SimpleActionGroup ();
-        actions.add_action_entries (action_entries, this);
-        insert_action_group (ACTION_GROUP_PREFIX, actions);
+        app_window.add_action_entries (action_entries, this);
+        insert_action_group (ACTION_GROUP_PREFIX, app_window);
+
+        foreach (var action in action_accelerators.get_keys ()) {
+            ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
+                ACTION_PREFIX + action,
+                action_accelerators[action].to_array ()
+            );
+        }
 
         var from_label = new Gtk.Label (_("From:"));
         from_label.xalign = 1;
@@ -254,7 +276,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
         discard.margin_start = 6;
-        discard.tooltip_text = _("Delete draft");
+        discard.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>ISO_Enter"}, _("Delete draft"));
         discard.action_name = ACTION_PREFIX + ACTION_DISCARD;
 
         var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
@@ -446,10 +468,10 @@ public class Mail.ComposerWidget : Gtk.Grid {
     }
 
     private void update_actions () {
-        actions.change_action_state (ACTION_BOLD, web_view.query_command_state ("bold") ? ACTION_BOLD : "");
-        actions.change_action_state (ACTION_ITALIC, web_view.query_command_state ("italic") ? ACTION_ITALIC : "");
-        actions.change_action_state (ACTION_UNDERLINE, web_view.query_command_state ("underline") ? ACTION_UNDERLINE : "");
-        actions.change_action_state (ACTION_STRIKETHROUGH, web_view.query_command_state ("strikethrough") ? ACTION_STRIKETHROUGH : "");
+        app_window.change_action_state (ACTION_BOLD, web_view.query_command_state ("bold") ? ACTION_BOLD : "");
+        app_window.change_action_state (ACTION_ITALIC, web_view.query_command_state ("italic") ? ACTION_ITALIC : "");
+        app_window.change_action_state (ACTION_UNDERLINE, web_view.query_command_state ("underline") ? ACTION_UNDERLINE : "");
+        app_window.change_action_state (ACTION_STRIKETHROUGH, web_view.query_command_state ("strikethrough") ? ACTION_STRIKETHROUGH : "");
     }
 
     private void on_discard () {
