@@ -26,7 +26,6 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
     public Backend.Account current_account { get; private set; }
     public Camel.Folder folder { get; private set; }
-    public Gtk.ApplicationWindow main_window { get; construct; }
 
     private GLib.Cancellable? cancellable = null;
     private Camel.FolderThread thread;
@@ -34,10 +33,6 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     private Gee.HashMap<string, ConversationItemModel> conversations;
     private ConversationListStore list_store;
     private TrashHandler trash_handler;
-
-    public ConversationListBox (Gtk.ApplicationWindow main_window) {
-        Object (main_window: main_window);
-    }
 
     construct {
         activate_on_single_click = true;
@@ -80,8 +75,9 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             if (row == null) {
                 conversation_selected (null);
             } else {
-                ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MARK_READ)).set_enabled (((ConversationItemModel) row).unread);
-	            ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MARK_UNREAD)).set_enabled (!((ConversationItemModel) row).unread);
+                weak GLib.ActionMap win_action_map = (GLib.ActionMap) get_action_group (MainWindow.ACTION_GROUP_PREFIX);
+                ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_READ)).set_enabled (((ConversationItemModel) row).unread);
+                ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_UNREAD)).set_enabled (!((ConversationItemModel) row).unread);
                 conversation_selected (((ConversationItemModel) row).node);
             }
         });

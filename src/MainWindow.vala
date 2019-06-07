@@ -33,7 +33,8 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
     private uint configure_id;
 
-    public const string ACTION_PREFIX = "win.";
+    public const string ACTION_GROUP_PREFIX = "win";
+    public const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
     public const string ACTION_COMPOSE_MESSAGE = "compose_message";
     public const string ACTION_REPLY = "reply";
     public const string ACTION_REPLY_ALL = "reply-all";
@@ -91,7 +92,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         set_titlebar (headerbar);
 
         folders_list_view = new FoldersListView ();
-        conversation_list_box = new ConversationListBox (this);
+        conversation_list_box = new ConversationListBox ();
 
         message_list_box = new MessageListBox ();
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY), "enabled", BindingFlags.SYNC_CREATE);
