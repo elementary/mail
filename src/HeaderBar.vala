@@ -183,10 +183,9 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
     }
 
     private void show_menuitem_accel_labels (Gtk.Widget widget) {
-        Gtk.MenuItem? item = widget as Gtk.MenuItem;
+        var item = (Gtk.MenuItem) widget;
 
-        var application_instance = (Gtk.Application) GLib.Application.get_default ();
-        var accelerator = application_instance.get_accels_for_action (item.action_name);
+        var accelerator = ((Gtk.Application) GLib.Application.get_default ()).get_accels_for_action (item.action_name);
 
         uint accelerator_key;
         uint[] accelerator_codes;
@@ -196,6 +195,5 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
 
         var label = (Gtk.AccelLabel) item.get_child ();
         label.set_accel (accelerator_key, accelerator_mods);
-        label.refetch();
     }
 }
