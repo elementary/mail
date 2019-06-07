@@ -56,7 +56,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         {ACTION_MARK_READ,          on_mark_read         },
         {ACTION_MARK_STAR,          on_mark_star         },
         {ACTION_MARK_UNREAD,        on_mark_unread       },
-        {ACTION_MARK_UNSTAR,        on_mark_unstar         },
+        {ACTION_MARK_UNSTAR,        on_mark_unstar       },
         {ACTION_MOVE_TO_TRASH,      on_move_to_trash     },
         {ACTION_FULLSCREEN,         on_fullscreen        },
     };
