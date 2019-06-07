@@ -69,10 +69,10 @@ public class Mail.ComposerWidget : Gtk.Grid {
     };
 
     static construct {
-        action_accelerators[ACTION_BOLD] = "<Control>B";
-        action_accelerators[ACTION_ITALIC] = "<Control>I";
-        action_accelerators[ACTION_UNDERLINE] = "<Control>U";
-        action_accelerators[ACTION_STRIKETHROUGH] = "<Control>percent";
+        action_accelerators[GLib.Action.print_detailed_name (ACTION_BOLD, ACTION_BOLD)] = "<Control>B";
+        action_accelerators[GLib.Action.print_detailed_name (ACTION_ITALIC, ACTION_ITALIC)] = "<Control>I";
+        action_accelerators[GLib.Action.print_detailed_name (ACTION_UNDERLINE, ACTION_UNDERLINE)] = "<Control>U";
+        action_accelerators[GLib.Action.print_detailed_name (ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH)] = "<Control>percent";
         action_accelerators[ACTION_INSERT_LINK] = "<Control>K";
         action_accelerators[ACTION_REMOVE_FORMAT] = "<Control>space";
         action_accelerators[ACTION_DISCARD] = "<Control>BackSpace";
