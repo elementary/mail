@@ -21,7 +21,6 @@
 public class Mail.MessageListBox : Gtk.ListBox {
     public signal void hovering_over_link (string? label, string? uri);
     public bool can_reply { get; set; default = false; }
-    public bool can_move_thread { get; set; default = false; }
     public GenericArray<string> uids { get; private set; default = new GenericArray<string>(); }
 
     public MessageListBox () {
@@ -47,7 +46,6 @@ public class Mail.MessageListBox : Gtk.ListBox {
          * thread.
          */
         can_reply = false;
-        can_move_thread = false;
 
         get_children ().foreach ((child) => {
             child.destroy ();
@@ -57,12 +55,6 @@ public class Mail.MessageListBox : Gtk.ListBox {
         if (node == null) {
             return;
         }
-
-        /*
-         * If there is a node, we can move the thread even without loading all
-         * individual messages.
-         */
-        can_move_thread = true;
 
         var item = new MessageListItem (node.message);
         add (item);
@@ -114,13 +106,11 @@ public class Mail.MessageListBox : Gtk.ListBox {
             var composer = new InlineComposer (type, message_info, mime_message, content_to_quote);
             composer.discarded.connect (() => {
                 can_reply = true;
-                can_move_thread = true;
                 remove (composer);
                 composer.destroy ();
             });
             add (composer);
             can_reply = false;
-            can_move_thread = true;
         }
     }
 }

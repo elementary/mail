@@ -26,6 +26,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
     public Backend.Account current_account { get; private set; }
     public Camel.Folder folder { get; private set; }
+    public bool can_delete_thread { get; private set; }
 
     private GLib.Cancellable? cancellable = null;
     private Camel.FolderThread thread;
@@ -78,6 +79,18 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 conversation_selected (((ConversationItemModel) row).node);
             }
         });
+    }
+
+    public override bool focus_in_event (Gdk.EventFocus event) {
+        can_delete_thread = true;
+        warning("can delete = true");
+        return true;
+    }
+
+    public override bool focus_out_event (Gdk.EventFocus event) {
+        can_delete_thread = false;
+        warning("can delete = false");
+        return true;
     }
 
     public async void load_folder (Backend.Account account, string next_folder) {

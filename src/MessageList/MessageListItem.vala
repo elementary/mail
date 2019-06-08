@@ -224,7 +224,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         var base_grid = new Gtk.Grid ();
         base_grid.expand = true;
         base_grid.orientation = Gtk.Orientation.VERTICAL;
-        base_grid.add (header_event_box);
+        //base_grid.add (header_event_box);
         base_grid.add (secondary_revealer);
 
         if (Camel.MessageFlags.ATTACHMENTS in (int) message_info.flags) {

@@ -790,6 +790,16 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
         return true;
     }
 
+    public override bool focus_in_event (Gdk.EventFocus event) {
+        warning("focus in");
+        return true;
+    }
+
+    public override bool focus_out_event (Gdk.EventFocus event) {
+        warning("focus out");
+        return true;
+    }
+
     public override bool focus (Gtk.DirectionType direction) {
         var focus_child = get_focus_child () as VirtualizingListBoxRow;
         int next_focus_index = -1;
