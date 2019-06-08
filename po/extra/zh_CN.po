@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"POT-Creation-Date: 2019-06-08 16:08-0400\n"
 "PO-Revision-Date: 2019-04-05 11:52+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -69,6 +69,14 @@ msgid ""
 "IMAP servers"
 msgstr "支持 Gmail、Yahoo! Mail、Outlook.com 和其他主流 IMAP 服务"
 
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Minor bug fixes"
+msgstr "细节修复"
+
+#: data/io.elementary.mail.appdata.xml.in:30
+msgid "Translation updates"
+msgstr "翻译更新"
+
 #: data/io.elementary.mail.appdata.xml.in:69
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
@@ -90,12 +98,6 @@ msgstr "撰写邮件"
 
 #~ msgid "Lightweight mail client"
 #~ msgstr "轻量级邮件客户端"
-
-#~ msgid "Minor bug fixes"
-#~ msgstr "细节修复"
-
-#~ msgid "Translation updates"
-#~ msgstr "翻译更新"
 
 #~ msgid "Appstream: add releases info"
 #~ msgstr "增加版本信息"

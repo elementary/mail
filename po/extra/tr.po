@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"POT-Creation-Date: 2019-06-08 16:08-0400\n"
 "PO-Revision-Date: 2019-04-22 18:31+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/extra/tr/>\n"
@@ -71,6 +71,14 @@ msgstr ""
 "Gmail, Yahoo! Posta, Outlook.com (deneysel), ve diğer popüler IMAP "
 "sunucuları ile çalışır"
 
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Minor bug fixes"
+msgstr "Küçük hata düzeltmeleri"
+
+#: data/io.elementary.mail.appdata.xml.in:30
+msgid "Translation updates"
+msgstr "Çeviri güncellemeleri"
+
 #: data/io.elementary.mail.appdata.xml.in:69
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
@@ -92,12 +100,6 @@ msgstr "İleti Oluştur"
 
 #~ msgid "Lightweight mail client"
 #~ msgstr "Hafif e-posta istemcisi"
-
-#~ msgid "Minor bug fixes"
-#~ msgstr "Küçük hata düzeltmeleri"
-
-#~ msgid "Translation updates"
-#~ msgstr "Çeviri güncellemeleri"
 
 #~ msgid "Appstream: add releases info"
 #~ msgstr "Appstream: bülten bilgileri ekle"

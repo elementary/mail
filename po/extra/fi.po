@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"POT-Creation-Date: 2019-06-08 16:08-0400\n"
 "PO-Revision-Date: 2018-12-24 10:54+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://weblate.elementary.io/projects/mail/extra/fi/"
@@ -72,6 +72,14 @@ msgstr ""
 "Toimii Gmailin, Yahoo! Mailin, Outlook.comin (kokeellinen tuki) ja muiden "
 "suosittujen IMAP-palvelimien kanssa"
 
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Minor bug fixes"
+msgstr "Muita pieniä korjauksia"
+
+#: data/io.elementary.mail.appdata.xml.in:30
+msgid "Translation updates"
+msgstr "Päivityksiä kielikäännöksiin"
+
 #: data/io.elementary.mail.appdata.xml.in:69
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
@@ -93,12 +101,6 @@ msgstr "Uusi viesti"
 
 #~ msgid "Lightweight mail client"
 #~ msgstr "Kevyt sähköpostisovellus"
-
-#~ msgid "Minor bug fixes"
-#~ msgstr "Muita pieniä korjauksia"
-
-#~ msgid "Translation updates"
-#~ msgstr "Päivityksiä kielikäännöksiin"
 
 #~ msgid "Release for Loki"
 #~ msgstr "Julkaisu Lokille"

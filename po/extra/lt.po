@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"POT-Creation-Date: 2019-06-08 16:08-0400\n"
 "PO-Revision-Date: 2018-12-19 12:01+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/mail/extra/"
@@ -74,6 +74,14 @@ msgstr ""
 "Veikia su Gmail, Yahoo! Mail, Outlook.com (eksperimentinis), ir kitais "
 "populiariais IMAP serveriais"
 
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Minor bug fixes"
+msgstr "Smulkių klaidų pataisymai"
+
+#: data/io.elementary.mail.appdata.xml.in:30
+msgid "Translation updates"
+msgstr "Vertimų atnaujinimai"
+
 #: data/io.elementary.mail.appdata.xml.in:69
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
@@ -95,12 +103,6 @@ msgstr "Rašyti laišką"
 
 #~ msgid "Lightweight mail client"
 #~ msgstr "Supaprastintas pašto klientas"
-
-#~ msgid "Minor bug fixes"
-#~ msgstr "Smulkių klaidų pataisymai"
-
-#~ msgid "Translation updates"
-#~ msgstr "Vertimų atnaujinimai"
 
 #~ msgid "Appstream: add releases info"
 #~ msgstr "Appstream: pridėti laidų informaciją"

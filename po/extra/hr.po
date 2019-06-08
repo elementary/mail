@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"POT-Creation-Date: 2019-06-08 16:08-0400\n"
 "PO-Revision-Date: 2017-04-17 14:06+0000\n"
 "Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <https://l10n.elementary.io/projects/mail/extra/hr/"
@@ -73,6 +73,14 @@ msgstr ""
 "Radi s Gmailom, Yahoo! poštom, Outlook.com (eksperimentalno), i drugim "
 "popularnim IMAP poslužiteljima"
 
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Minor bug fixes"
+msgstr "Manji popravci grešaka"
+
+#: data/io.elementary.mail.appdata.xml.in:30
+msgid "Translation updates"
+msgstr "Nadopune prijevoda"
+
 #: data/io.elementary.mail.appdata.xml.in:69
 msgid "elementary, Inc."
 msgstr ""
@@ -94,12 +102,6 @@ msgstr "Sastavi poruku"
 
 #~ msgid "Lightweight mail client"
 #~ msgstr "Jednostavan klijent pošte"
-
-#~ msgid "Minor bug fixes"
-#~ msgstr "Manji popravci grešaka"
-
-#~ msgid "Translation updates"
-#~ msgstr "Nadopune prijevoda"
 
 #~ msgid "Appstream: add releases info"
 #~ msgstr "Appstream: dodane informacije izdanja"

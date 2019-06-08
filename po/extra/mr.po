@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"POT-Creation-Date: 2019-06-08 16:08-0400\n"
 "PO-Revision-Date: 2018-12-20 14:13+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/mail/extra/mr/"
@@ -29,9 +29,9 @@ msgid ""
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
 msgstr ""
-"मेल आपल्याला आपला ईमेल द्रुतगतीने आणि सहजतेने व्यवस्थापित करण्यास मदत "
-"करण्यासाठी डिझाइन केलेले आहे. त्याचे इंटरफेस संभाषणांवर आधारित आहे, जेणेकरुन "
-"आपण संदेशावरून संदेश क्लिक केल्याशिवाय संपूर्ण चर्चा वाचू शकता."
+"मेल आपल्याला आपला ईमेल द्रुतगतीने आणि सहजतेने व्यवस्थापित करण्यास मदत करण्यासाठी डिझाइन "
+"केलेले आहे. त्याचे इंटरफेस संभाषणांवर आधारित आहे, जेणेकरुन आपण संदेशावरून संदेश क्लिक केल्याशिवाय "
+"संपूर्ण चर्चा वाचू शकता."
 
 #: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
@@ -62,8 +62,15 @@ msgid ""
 "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
 "IMAP servers"
 msgstr ""
-"जीमेल, याहू! मेल, Outlook.com (प्रायोगिक) आणि इतर लोकप्रिय IMAP सर्व्हर सह का"
-"म करते"
+"जीमेल, याहू! मेल, Outlook.com (प्रायोगिक) आणि इतर लोकप्रिय IMAP सर्व्हर सह काम करते"
+
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Minor bug fixes"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:30
+msgid "Translation updates"
+msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:69
 msgid "elementary, Inc."
