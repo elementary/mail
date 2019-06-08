@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 10:33+0100\n"
+"POT-Creation-Date: 2019-06-08 16:35-0400\n"
 "PO-Revision-Date: 2017-01-27 17:54+0000\n"
 "Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: www.gnome.gr\n"
@@ -24,45 +24,72 @@ msgstr ""
 "X-Generator: Launchpad (build 18330)\n"
 "X-Project-Style: gnome\n"
 
-#: src/HeaderBar.vala:38
+#: src/HeaderBar.vala:39
 #, fuzzy
 msgid "Compose new message"
 msgstr "Σύνταξη νέου μηνύματος"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:45
 msgid "Search Mail"
 msgstr ""
 
-#: src/HeaderBar.vala:56
+#: src/HeaderBar.vala:57
 #, fuzzy
 msgid "Always Show Remote Images"
 msgstr "Να εμφανίζεται πάντοτε ο αποστολέας"
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:85
 msgid "Menu"
 msgstr "Μενού"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:91
 msgid "Reply"
 msgstr "Απάντηση"
 
-#: src/HeaderBar.vala:97
+#: src/HeaderBar.vala:98
 #, fuzzy
 msgid "Reply All"
 msgstr "Α_πάντηση σε όλους"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:105
 msgid "Forward"
 msgstr ""
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:108
+#, fuzzy
+msgid "Mark as Unread"
+msgstr "_Σήμανση ως μη αναγνωσμένα"
+
+#: src/HeaderBar.vala:112
+#, fuzzy
+msgid "Mark as Read"
+msgstr "_Σήμανση ως αναγνωσμένα"
+
+#: src/HeaderBar.vala:124
+#, fuzzy
+msgid "Mark Conversation"
+msgstr "Σήμανση συνομιλίας"
+
+#: src/HeaderBar.vala:130
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Μετακίνηση συνομιλιών"
+
+#: src/MainWindow.vala:237
+#, fuzzy
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "Δεν επιλέχθηκαν συνομιλίες."
+msgstr[1] "Δεν επιλέχθηκαν συνομιλίες."
+
+#: src/MainWindow.vala:238
+#, fuzzy
+msgid "Undo"
+msgstr "_Αναίρεση"
 
 #: src/WelcomeView.vala:40
 #, fuzzy
@@ -78,121 +105,160 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Λογαριασμοί"
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:85 src/MessageList/MessageListItem.vala:76
+msgid "From:"
+msgstr "Από:"
+
+#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr "Προς:"
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:105 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "Θέμα:"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:112
 #, fuzzy
 msgid "Cc"
 msgstr "Κοινοποίηση:"
 
-#: src/Composer/ComposerWidget.vala:87
+#: src/Composer/ComposerWidget.vala:114
 #, fuzzy
 msgid "Bcc"
 msgstr "Κρυφή κοιν.:"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:124
+#: src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr "Κοινοποίηση:"
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:140
 msgid "Bcc:"
 msgstr "Κρυφή κοιν.:"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:180
 msgid "Bold"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:186
 msgid "Italic"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:192
 msgid "Underline"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:198
 msgid "Strikethrough"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:211
 msgid "Quote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:214
 msgid "Unquote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:223 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:226
 msgid "Insert Image"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:229
 msgid "Remove formatting"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:257
 msgid "Delete draft"
 msgstr "Διαγραφή προχείρου"
 
-#: src/Composer/ComposerWidget.vala:234
+#: src/Composer/ComposerWidget.vala:261
 msgid "Attach file"
 msgstr "Επισύναψη αρχείου"
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:267
 msgid "Send"
 msgstr "Αποστολή"
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:386
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e %b, %Y at %-l:%M %p"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:416
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Στις %1$s, ο/η %2$s έγραψε:"
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:420
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Προωθημένο μήνυμα ----------"
 
-#: src/Composer/ComposerWidget.vala:385
+#: src/Composer/ComposerWidget.vala:422
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "Από: %s\n"
 
-#: src/Composer/ComposerWidget.vala:386
+#: src/Composer/ComposerWidget.vala:423
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "Θέμα %s\n"
 
-#: src/Composer/ComposerWidget.vala:387
+#: src/Composer/ComposerWidget.vala:424
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "Ημερομηνία:%s\n"
 
-#: src/Composer/ComposerWidget.vala:388
+#: src/Composer/ComposerWidget.vala:425
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "Προς: %s\n"
 
-#: src/Composer/ComposerWidget.vala:390
+#: src/Composer/ComposerWidget.vala:427
 #, fuzzy, c-format
 msgid "Cc: %s<br/>"
 msgstr "Κοινοποίηση: %s\n"
 
+#: src/Composer/ComposerWidget.vala:462
+#, fuzzy
+msgid "Send Message With an Empty Subject?"
+msgstr "Να αποσταλεί το μήνυμα με κενό θέμα;"
+
+#: src/Composer/ComposerWidget.vala:463
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:469
+msgid "Don't Send"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:471
+msgid "Send Anyway"
+msgstr ""
+
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
 msgstr "Νέο μήνυμα"
+
+#: src/ConversationList/ConversationListItem.vala:94
+#, fuzzy
+msgid "Unread"
+msgstr "%d μη αναγνωσμένο"
+
+#: src/ConversationList/ConversationListItem.vala:104
+#, fuzzy
+msgid "Replied"
+msgstr "Απάντηση"
+
+#: src/ConversationList/ConversationListItem.vala:108
+#, fuzzy
+msgid "Forwarded"
+msgstr "_Προώθηση"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -212,17 +278,16 @@ msgid "Example Website"
 msgstr "Ιστοσελίδα"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
+#: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Άκυρο"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
 msgstr "Είστε σίγουροι ότι θέλετε να ανοίξετε το %s?"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -230,7 +295,7 @@ msgstr ""
 "Τα συνημμένα αρχεία μπορεί να προκαλέσουν ζημιά στο σύστημα σας εάν "
 "ανοιχτούν. Ανοίγετε αρχεία μόνο από αξιόπιστες πηγές."
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr ""
 
@@ -243,23 +308,31 @@ msgstr ""
 msgid "No Message Selected"
 msgstr "Δεν επιλέχθηκαν συνομιλίες."
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "Από:"
+#: src/MessageList/MessageListItem.vala:156
+#: src/MessageList/MessageListItem.vala:276
+#, fuzzy
+msgid "Unstar message"
+msgstr "%d μήνυμα"
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:159
+#: src/MessageList/MessageListItem.vala:272
+#, fuzzy
+msgid "Star message"
+msgstr "%d μήνυμα"
+
+#: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
 msgstr "Προβολή εικόνων"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
 msgstr "Αυτό το μήνυμα περιέχει απομακρυσμένες εικόνες."
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
 msgstr "Αυτό το μήνυμα εμπεριέχει ένα ή περισσότερα συνημμένα"
 
@@ -434,11 +507,6 @@ msgstr "_Αποθήκευση"
 #~ msgid "Mark as not S_pam"
 #~ msgstr "Σημείωση ως μη ανεπιθύ_μητα"
 
-#~ msgid "Mark conversation"
-#~ msgid_plural "Mark conversations"
-#~ msgstr[0] "Σήμανση συνομιλίας"
-#~ msgstr[1] "Σήμανση συνομιλιών"
-
 #~ msgid "Mark conversations"
 #~ msgstr "Σήμανση συνομιλιών"
 
@@ -505,9 +573,6 @@ msgstr "_Αποθήκευση"
 
 #~ msgid "Reply all (Ctrl+Shift+R, Shift+R)"
 #~ msgstr "Απάντηση σε όλους (Ctrl+Shift+R, Shift+R)"
-
-#~ msgid "_Forward"
-#~ msgstr "_Προώθηση"
 
 #~ msgid "Forward (Ctrl+L, F)"
 #~ msgstr "Προώθηση (Ctrl+F, F)"
@@ -1041,16 +1106,6 @@ msgstr "_Αποθήκευση"
 #~ msgid "KB"
 #~ msgstr "KB"
 
-#~ msgid "%d message"
-#~ msgid_plural "%d messages"
-#~ msgstr[0] "%d μήνυμα"
-#~ msgstr[1] "%d μηνύματα"
-
-#~ msgid "%d unread"
-#~ msgid_plural "%d unread"
-#~ msgstr[0] "%d μη αναγνωσμένο"
-#~ msgstr[1] "%d μη αναγνωσμένα"
-
 #~ msgid "%s, %s"
 #~ msgstr "%s, %s"
 
@@ -1136,12 +1191,6 @@ msgstr "_Αποθήκευση"
 #~ msgid "Reply to _All"
 #~ msgstr "Απάντηση σε _όλους"
 
-#~ msgid "_Mark as Read"
-#~ msgstr "_Σήμανση ως αναγνωσμένα"
-
-#~ msgid "_Mark as Unread"
-#~ msgstr "_Σήμανση ως μη αναγνωσμένα"
-
 #~ msgid "Mark Unread From _Here"
 #~ msgstr "Σημειώστε αδιάβαστα από ε_δώ"
 
@@ -1176,9 +1225,6 @@ msgstr "_Αποθήκευση"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "Να αποσταλεί το μήνυμα με κενό θέμα και περιεχόμενο;"
-
-#~ msgid "Send message with an empty subject?"
-#~ msgstr "Να αποσταλεί το μήνυμα με κενό θέμα;"
 
 #~ msgid "Send message with an empty body?"
 #~ msgstr "Να αποσταλεί το μήνυμα με κενό περιεχόμενο;"
@@ -1316,9 +1362,6 @@ msgstr "_Αποθήκευση"
 
 #~ msgid "_Update"
 #~ msgstr "_Ενημέρωση"
-
-#~ msgid "_Undo"
-#~ msgstr "_Αναίρεση"
 
 #~ msgid "_Paste"
 #~ msgstr "_Επικόλληση"

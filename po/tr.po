@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 10:33+0100\n"
+"POT-Creation-Date: 2019-06-08 16:35-0400\n"
 "PO-Revision-Date: 2019-04-23 11:31+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
@@ -29,41 +29,66 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-POOTLE-MTIME: 1423290848.000000\n"
 
-#: src/HeaderBar.vala:38
+#: src/HeaderBar.vala:39
 msgid "Compose new message"
 msgstr "Yeni ileti oluştur"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:45
 msgid "Search Mail"
 msgstr "Posta Ara"
 
-#: src/HeaderBar.vala:56
+#: src/HeaderBar.vala:57
 msgid "Always Show Remote Images"
 msgstr "Uzak Resimleri Her Zaman Göster"
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
 msgstr "Hesap Ayarları…"
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:85
 msgid "Menu"
 msgstr "Menü"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:91
 msgid "Reply"
 msgstr "Yanıtla"
 
-#: src/HeaderBar.vala:97
+#: src/HeaderBar.vala:98
 msgid "Reply All"
 msgstr "Tümünü Yanıtla"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:105
 msgid "Forward"
 msgstr "Yönlendir"
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:108
+msgid "Mark as Unread"
+msgstr "Okunmamış olarak İşaretle"
+
+#: src/HeaderBar.vala:112
+msgid "Mark as Read"
+msgstr "Okunmuş olarak İşaretle"
+
+#: src/HeaderBar.vala:124
+#, fuzzy
+msgid "Mark Conversation"
+msgstr "Konuşmayı işaretle"
+
+#: src/HeaderBar.vala:130
 msgid "Move conversations to Trash"
 msgstr "Konuşmaları Çöpe Taşı"
+
+#: src/MainWindow.vala:237
+#, fuzzy
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "Hiçbir İleti Seçilmedi"
+msgstr[1] "Hiçbir İleti Seçilmedi"
+
+#: src/MainWindow.vala:238
+#, fuzzy
+msgid "Undo"
+msgstr "_Geri Al"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -79,119 +104,159 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Çevrimiçi Hesaplar…"
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:85 src/MessageList/MessageListItem.vala:76
+msgid "From:"
+msgstr "Gönderen:"
+
+#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr "Kime:"
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:105 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "Konu:"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:112
 msgid "Cc"
 msgstr "Cc"
 
-#: src/Composer/ComposerWidget.vala:87
+#: src/Composer/ComposerWidget.vala:114
 msgid "Bcc"
 msgstr "Bcc"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:124
+#: src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:140
 msgid "Bcc:"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:180
 msgid "Bold"
 msgstr "Kalın"
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:186
 msgid "Italic"
 msgstr "İtalik"
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:192
 msgid "Underline"
 msgstr "Altı Çizili"
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:198
 msgid "Strikethrough"
 msgstr "Üstü Çizili"
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:211
 msgid "Quote text"
 msgstr "Metni alıntıla"
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:214
 msgid "Unquote text"
 msgstr "Metni alıntılamaktan vazgeç"
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:223 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
 msgstr "Bağlantı Ekle"
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:226
 msgid "Insert Image"
 msgstr "Resim Ekle"
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:229
 msgid "Remove formatting"
 msgstr "Biçimlendirmeyi kaldır"
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:257
 msgid "Delete draft"
 msgstr "Taslağı sil"
 
-#: src/Composer/ComposerWidget.vala:234
+#: src/Composer/ComposerWidget.vala:261
 msgid "Attach file"
 msgstr "Dosya ekle"
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:267
 msgid "Send"
 msgstr "Gönder"
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:386
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%-e %B %Y %A, %-k:%M"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:416
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%2$s, %1$s tarihinde şunu yazdı:"
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:420
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Yönlendirilen ileti ----------"
 
-#: src/Composer/ComposerWidget.vala:385
+#: src/Composer/ComposerWidget.vala:422
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Gönderen: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:386
+#: src/Composer/ComposerWidget.vala:423
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Konu: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:387
+#: src/Composer/ComposerWidget.vala:424
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Tarih: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:388
+#: src/Composer/ComposerWidget.vala:425
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Kime: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:390
+#: src/Composer/ComposerWidget.vala:427
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
+#: src/Composer/ComposerWidget.vala:462
+#, fuzzy
+msgid "Send Message With an Empty Subject?"
+msgstr "İleti konusu olmadan gönderilsin mi?"
+
+#: src/Composer/ComposerWidget.vala:463
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:469
+msgid "Don't Send"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:471
+#, fuzzy
+msgid "Send Anyway"
+msgstr "Yine de Aç"
+
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
 msgstr "Yeni İleti"
+
+#: src/ConversationList/ConversationListItem.vala:94
+#, fuzzy
+msgid "Unread"
+msgstr "%d okunmamış"
+
+#: src/ConversationList/ConversationListItem.vala:104
+#, fuzzy
+msgid "Replied"
+msgstr "Yanıtla"
+
+#: src/ConversationList/ConversationListItem.vala:108
+#, fuzzy
+msgid "Forwarded"
+msgstr "Yönlendir"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -210,17 +275,16 @@ msgid "Example Website"
 msgstr "Örnek Web Sitesi"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
+#: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "İptal"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
 msgstr "%s adlı eki açmak istediğinizden emin misiniz?"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -228,7 +292,7 @@ msgstr ""
 "Ekler açıldığında sisteminize zarar verebilir. Yalnızca güvenilir "
 "kaynaklardan gelen dosyaları açın."
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr "Yine de Aç"
 
@@ -240,23 +304,29 @@ msgstr "Klasörü yenile"
 msgid "No Message Selected"
 msgstr "Hiçbir İleti Seçilmedi"
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "Gönderen:"
+#: src/MessageList/MessageListItem.vala:156
+#: src/MessageList/MessageListItem.vala:276
+msgid "Unstar message"
+msgstr "Mesajdan yıldızı kaldır"
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:159
+#: src/MessageList/MessageListItem.vala:272
+msgid "Star message"
+msgstr "Mesaja yıldız koy"
+
+#: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
 msgstr "Resimleri Göster"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
 msgstr "Bu Gönderenin Resimlerini Her Zaman Göster"
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
 msgstr "Bu iletide uzak resimler bulunuyor."
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
 msgstr "Bu mesaj, bir veya daha fazla ek içeriyor"
 
@@ -428,11 +498,6 @@ msgstr "Kaydet"
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "İstenen olarak İşaretle"
-
-#~ msgid "Mark conversation"
-#~ msgid_plural "Mark conversations"
-#~ msgstr[0] "Konuşmayı işaretle"
-#~ msgstr[1] "Konuşmaları işaretle"
 
 #~ msgid "Mark conversations"
 #~ msgstr "Konuşmaları işaretle"
@@ -1028,11 +1093,6 @@ msgstr "Kaydet"
 #~ msgstr[0] "%d ileti"
 #~ msgstr[1] "%d ileti"
 
-#~ msgid "%d unread"
-#~ msgid_plural "%d unread"
-#~ msgstr[0] "%d okunmamış"
-#~ msgstr[1] "%d okunmamış"
-
 #~ msgid "%s, %s"
 #~ msgstr "%s, %s"
 
@@ -1161,9 +1221,6 @@ msgstr "Kaydet"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "İleti konusu ve gövdesi olmadan gönderilsin mi?"
-
-#~ msgid "Send message with an empty subject?"
-#~ msgstr "İleti konusu olmadan gönderilsin mi?"
 
 #~ msgid "Send message with an empty body?"
 #~ msgstr "İleti, ileti gövdesi olmadan gönderilsin mi?"
@@ -1366,9 +1423,6 @@ msgstr "Kaydet"
 
 #~ msgid "Please wait while Geary validates your account."
 #~ msgstr "Geary hesabınızı onaylıyor, lütfen bekleyin."
-
-#~ msgid "_Undo"
-#~ msgstr "_Geri Al"
 
 #~ msgid "_Redo"
 #~ msgstr "_Yinele"
@@ -1781,12 +1835,6 @@ msgstr "Kaydet"
 #~ msgid "Reply to All"
 #~ msgstr "Tümünü Yanıtla"
 
-#~ msgid "Mark as Unread"
-#~ msgstr "Okunmamış olarak İşaretle"
-
-#~ msgid "Mark as Read"
-#~ msgstr "Okunmuş olarak İşaretle"
-
 #~ msgid "Print…"
 #~ msgstr "Yazdır…"
 
@@ -1809,12 +1857,6 @@ msgstr "Kaydet"
 #~ msgid_plural "%u matches"
 #~ msgstr[0] "%u eşleşme"
 #~ msgstr[1] "%u eşleşme"
-
-#~ msgid "Star message"
-#~ msgstr "Mesaja yıldız koy"
-
-#~ msgid "Unstar message"
-#~ msgstr "Mesajdan yıldızı kaldır"
 
 #~ msgid "More"
 #~ msgstr "Daha fazla"

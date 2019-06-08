@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 10:33+0100\n"
+"POT-Creation-Date: 2019-06-08 16:35-0400\n"
 "PO-Revision-Date: 2015-12-25 15:48+0000\n"
 "Last-Translator: Rockworld <sumoisrock@gmail.com>\n"
 "Language-Team: Thai <th@li.org>\n"
@@ -19,42 +19,66 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Generator: Launchpad (build 18330)\n"
 
-#: src/HeaderBar.vala:38
+#: src/HeaderBar.vala:39
 msgid "Compose new message"
 msgstr ""
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:45
 msgid "Search Mail"
 msgstr ""
 
-#: src/HeaderBar.vala:56
+#: src/HeaderBar.vala:57
 msgid "Always Show Remote Images"
 msgstr ""
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:85
 msgid "Menu"
 msgstr ""
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:91
 msgid "Reply"
 msgstr ""
 
-#: src/HeaderBar.vala:97
+#: src/HeaderBar.vala:98
 msgid "Reply All"
 msgstr ""
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:105
 msgid "Forward"
 msgstr ""
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:108
+#, fuzzy
+msgid "Mark as Unread"
+msgstr "ทำเครื่องหมายว่าเป็นส_แปม"
+
+#: src/HeaderBar.vala:112
+#, fuzzy
+msgid "Mark as Read"
+msgstr "ทำเครื่องหมายว่าเป็นส_แปม"
+
+#: src/HeaderBar.vala:124
+#, fuzzy
+msgid "Mark Conversation"
+msgstr "ทำเครื่องหมายคู่สนทนา"
+
+#: src/HeaderBar.vala:130
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "ย้ายคู่สนทนา"
+
+#: src/MainWindow.vala:237
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] ""
+
+#: src/MainWindow.vala:238
+msgid "Undo"
+msgstr ""
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -68,119 +92,154 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:85 src/MessageList/MessageListItem.vala:76
+msgid "From:"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:105 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:112
 msgid "Cc"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:87
+#: src/Composer/ComposerWidget.vala:114
 #, fuzzy
 msgid "Bcc"
 msgstr "cc"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:124
+#: src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:140
 msgid "Bcc:"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:180
 msgid "Bold"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:186
 msgid "Italic"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:192
 msgid "Underline"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:198
 msgid "Strikethrough"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:211
 msgid "Quote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:214
 msgid "Unquote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:223 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:226
 msgid "Insert Image"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:229
 msgid "Remove formatting"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:257
 msgid "Delete draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:234
+#: src/Composer/ComposerWidget.vala:261
 msgid "Attach file"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:267
 msgid "Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:386
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %b %-e, %Y เมื่อเวลา %-l.%M น. %p"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:416
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "บน %1$s, %2$s เขียนว่า:"
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:420
 msgid "---------- Forwarded message ----------"
 msgstr "---------- ข้อความที่ส่งแล้ว ----------"
 
-#: src/Composer/ComposerWidget.vala:385
+#: src/Composer/ComposerWidget.vala:422
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "จาก: %s\n"
 
-#: src/Composer/ComposerWidget.vala:386
+#: src/Composer/ComposerWidget.vala:423
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "หัวข้อ: %s\n"
 
-#: src/Composer/ComposerWidget.vala:387
+#: src/Composer/ComposerWidget.vala:424
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "วันที่: %s\n"
 
-#: src/Composer/ComposerWidget.vala:388
+#: src/Composer/ComposerWidget.vala:425
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "To: %s\n"
 
-#: src/Composer/ComposerWidget.vala:390
+#: src/Composer/ComposerWidget.vala:427
 #, fuzzy, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s\n"
 
+#: src/Composer/ComposerWidget.vala:462
+msgid "Send Message With an Empty Subject?"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:463
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:469
+msgid "Don't Send"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:471
+msgid "Send Anyway"
+msgstr ""
+
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:94
+msgid "Unread"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:104
+msgid "Replied"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:108
+msgid "Forwarded"
 msgstr ""
 
 #: src/Dialogs/InsertLinkDialog.vala:29
@@ -200,23 +259,22 @@ msgid "Example Website"
 msgstr ""
 
 #: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
+#: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr ""
 
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
 msgstr ""
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr ""
 
@@ -228,23 +286,29 @@ msgstr ""
 msgid "No Message Selected"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
+#: src/MessageList/MessageListItem.vala:156
+#: src/MessageList/MessageListItem.vala:276
+msgid "Unstar message"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:159
+#: src/MessageList/MessageListItem.vala:272
+msgid "Star message"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
 msgstr ""
 
@@ -395,14 +459,8 @@ msgstr ""
 #~ msgid "Archive conversations (A)"
 #~ msgstr "คู่สนทนาที่เก็บ (A)"
 
-#~ msgid "Mark as S_pam"
-#~ msgstr "ทำเครื่องหมายว่าเป็นส_แปม"
-
 #~ msgid "Mark as not S_pam"
 #~ msgstr "ทำเครื่องหมายว่าไม่เป็นส_แปม"
-
-#~ msgid "Mark conversations"
-#~ msgstr "ทำเครื่องหมายคู่สนทนา"
 
 #~ msgid "Add label to conversations"
 #~ msgstr "เพิ่มป้ายชื่อไปยังการสนทนา"

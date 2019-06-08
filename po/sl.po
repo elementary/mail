@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 10:33+0100\n"
+"POT-Creation-Date: 2019-06-08 16:35-0400\n"
 "PO-Revision-Date: 2017-04-15 20:29+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/mail/mail/sl/"
@@ -24,45 +24,72 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: src/HeaderBar.vala:38
+#: src/HeaderBar.vala:39
 #, fuzzy
 msgid "Compose new message"
 msgstr "Sestavi novo sporočilo"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:45
 msgid "Search Mail"
 msgstr "Išči pošto"
 
-#: src/HeaderBar.vala:56
+#: src/HeaderBar.vala:57
 #, fuzzy
 msgid "Always Show Remote Images"
 msgstr "Vedno prikaži slike z interneta:"
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:85
 msgid "Menu"
 msgstr "Meni"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:91
 msgid "Reply"
 msgstr "Odgovori"
 
-#: src/HeaderBar.vala:97
+#: src/HeaderBar.vala:98
 #, fuzzy
 msgid "Reply All"
 msgstr "O_dgovori na vse"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:105
 msgid "Forward"
 msgstr "Posreduj"
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:108
+msgid "Mark as Unread"
+msgstr "Označi kot neprebrano"
+
+#: src/HeaderBar.vala:112
+msgid "Mark as Read"
+msgstr "Označi kot prebrano"
+
+#: src/HeaderBar.vala:124
+#, fuzzy
+msgid "Mark Conversation"
+msgstr "Označi pogovore"
+
+#: src/HeaderBar.vala:130
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Premakni pogovore"
+
+#: src/MainWindow.vala:237
+#, fuzzy
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "Ni izbranih pogovorov."
+msgstr[1] "Ni izbranih pogovorov."
+msgstr[2] "Ni izbranih pogovorov."
+msgstr[3] "Ni izbranih pogovorov."
+
+#: src/MainWindow.vala:238
+#, fuzzy
+msgid "Undo"
+msgstr "_Razveljavi"
 
 #: src/WelcomeView.vala:40
 #, fuzzy
@@ -78,126 +105,166 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Računi"
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:85 src/MessageList/MessageListItem.vala:76
+msgid "From:"
+msgstr "Od:"
+
+#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr "Za:"
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:105 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "Zadeva:"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:112
 #, fuzzy
 msgid "Cc"
 msgstr "Kp:"
 
-#: src/Composer/ComposerWidget.vala:87
+#: src/Composer/ComposerWidget.vala:114
 #, fuzzy
 msgid "Bcc"
 msgstr "Skp:"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:124
+#: src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr "Kp:"
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:140
 msgid "Bcc:"
 msgstr "Skp:"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:180
 msgid "Bold"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:186
 msgid "Italic"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:192
 #, fuzzy
 msgid "Underline"
 msgstr "Podčrtano (Ctrl + U)"
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:198
 #, fuzzy
 msgid "Strikethrough"
 msgstr "Prečrtano (Ctrl + K)"
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:211
 #, fuzzy
 msgid "Quote text"
 msgstr "Citiraj besedilo (Ctrl + J)"
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:214
 #, fuzzy
 msgid "Unquote text"
 msgstr "Odstrani citat (Ctrl+[)"
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:223 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:226
 msgid "Insert Image"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:229
 #, fuzzy
 msgid "Remove formatting"
 msgstr "Odstrani oblikovanje (Ctrl + Space)"
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:257
 msgid "Delete draft"
 msgstr "Izbriši osnutek"
 
-#: src/Composer/ComposerWidget.vala:234
+#: src/Composer/ComposerWidget.vala:261
 msgid "Attach file"
 msgstr "Pripni datoteko"
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:267
 msgid "Send"
 msgstr "Pošlji"
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:386
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e. %b, %Y ob %-l:%M %p"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:416
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s, je %2$s napisal:"
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:420
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Posredovano sporočilo ----------"
 
-#: src/Composer/ComposerWidget.vala:385
+#: src/Composer/ComposerWidget.vala:422
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "Od: %s\n"
 
-#: src/Composer/ComposerWidget.vala:386
+#: src/Composer/ComposerWidget.vala:423
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "Zadeva: %s\n"
 
-#: src/Composer/ComposerWidget.vala:387
+#: src/Composer/ComposerWidget.vala:424
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "Datum: %s\n"
 
-#: src/Composer/ComposerWidget.vala:388
+#: src/Composer/ComposerWidget.vala:425
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "Za: %s\n"
 
-#: src/Composer/ComposerWidget.vala:390
+#: src/Composer/ComposerWidget.vala:427
 #, fuzzy, c-format
 msgid "Cc: %s<br/>"
 msgstr "Kp: %s\n"
 
+#: src/Composer/ComposerWidget.vala:462
+#, fuzzy
+msgid "Send Message With an Empty Subject?"
+msgstr "Želite poslati sporočilo brez zadeve?"
+
+#: src/Composer/ComposerWidget.vala:463
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:469
+msgid "Don't Send"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:471
+#, fuzzy
+msgid "Send Anyway"
+msgstr "Vseeno odpri"
+
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
 msgstr "Novo sporočilo"
+
+#: src/ConversationList/ConversationListItem.vala:94
+#, fuzzy
+msgid "Unread"
+msgstr "%d neprebrano"
+
+#: src/ConversationList/ConversationListItem.vala:104
+#, fuzzy
+msgid "Replied"
+msgstr "Odgovori"
+
+#: src/ConversationList/ConversationListItem.vala:108
+#, fuzzy
+msgid "Forwarded"
+msgstr "Posreduj"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -218,17 +285,16 @@ msgid "Example Website"
 msgstr "Spletna stran"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
+#: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
 msgstr "Ali ste prepričani da želite odpreti %s?"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -236,7 +302,7 @@ msgstr ""
 "Odpiranje priponk lahko škodi vašemu sistemu. Odpirajte samo datoteke, ki "
 "prihajajo z zaupanja vrednih virov."
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr "Vseeno odpri"
 
@@ -249,23 +315,29 @@ msgstr ""
 msgid "No Message Selected"
 msgstr "Ni izbranih pogovorov."
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "Od:"
+#: src/MessageList/MessageListItem.vala:156
+#: src/MessageList/MessageListItem.vala:276
+msgid "Unstar message"
+msgstr "Odstrani zvezdico s sporočila"
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:159
+#: src/MessageList/MessageListItem.vala:272
+msgid "Star message"
+msgstr "Označi sporočilo z zvezdico"
+
+#: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
 msgstr "Prikaži slike"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
 msgstr "Vedno pokaži od pošiljatelja"
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
 msgstr "To sporočilo vsebuje oddaljene slike."
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
 msgstr "To sporočilo vključuje eno ali več priponk"
 
@@ -441,13 +513,6 @@ msgstr "_Shrani"
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "Označi kot _želeno pošto"
-
-#~ msgid "Mark conversation"
-#~ msgid_plural "Mark conversations"
-#~ msgstr[0] "Označi pogovore"
-#~ msgstr[1] "Označi pogovor"
-#~ msgstr[2] "Označi pogovora"
-#~ msgstr[3] "Označi pogovore"
 
 #~ msgid "Mark conversations"
 #~ msgstr "Označi pogovore"
@@ -1061,13 +1126,6 @@ msgstr "_Shrani"
 #~ msgstr[2] "%d sporočila"
 #~ msgstr[3] "%d sporočil"
 
-#~ msgid "%d unread"
-#~ msgid_plural "%d unread"
-#~ msgstr[0] "%d neprebrano"
-#~ msgstr[1] "%d neprebrani"
-#~ msgstr[2] "%d neprebrana"
-#~ msgstr[3] "%d neprebranih"
-
 #~ msgid "%s, %s"
 #~ msgstr "%s, %s"
 
@@ -1205,9 +1263,6 @@ msgstr "_Shrani"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "Želite poslati sporočilo brez zadeve in vsebine?"
-
-#~ msgid "Send message with an empty subject?"
-#~ msgstr "Želite poslati sporočilo brez zadeve?"
 
 #~ msgid "Send message with an empty body?"
 #~ msgstr "Želite poslati sporočilo brez vsebine?"
@@ -1415,9 +1470,6 @@ msgstr "_Shrani"
 
 #~ msgid "Please wait while Geary validates your account."
 #~ msgstr "Prosimo počakajte da Geary potrdi vaš račun."
-
-#~ msgid "_Undo"
-#~ msgstr "_Razveljavi"
 
 #~ msgid "_Redo"
 #~ msgstr "_Uveljavi"
@@ -1831,12 +1883,6 @@ msgstr "_Shrani"
 #~ msgid "Reply to All"
 #~ msgstr "Odgovori vsem"
 
-#~ msgid "Mark as Unread"
-#~ msgstr "Označi kot neprebrano"
-
-#~ msgid "Mark as Read"
-#~ msgstr "Označi kot prebrano"
-
 #~ msgid "Print…"
 #~ msgstr "Natisni…"
 
@@ -1866,12 +1912,6 @@ msgstr "_Shrani"
 #~ msgstr ""
 #~ "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply|ne-"
 #~ "odgovrajaj|neodgovarjaj"
-
-#~ msgid "Star message"
-#~ msgstr "Označi sporočilo z zvezdico"
-
-#~ msgid "Unstar message"
-#~ msgstr "Odstrani zvezdico s sporočila"
 
 #~ msgid "More"
 #~ msgstr "Več"

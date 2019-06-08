@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 10:33+0100\n"
+"POT-Creation-Date: 2019-06-08 16:35-0400\n"
 "PO-Revision-Date: 2019-01-11 00:39+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/mail/mail/ja/"
@@ -15,41 +15,65 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:38
+#: src/HeaderBar.vala:39
 msgid "Compose new message"
 msgstr "新しいメッセージを作成します"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:45
 msgid "Search Mail"
 msgstr "メールを検索"
 
-#: src/HeaderBar.vala:56
+#: src/HeaderBar.vala:57
 msgid "Always Show Remote Images"
 msgstr "常にリモートの画像を表示"
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
 msgstr "アカウントの設定…"
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:85
 msgid "Menu"
 msgstr "メニュー"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:91
 msgid "Reply"
 msgstr "返信"
 
-#: src/HeaderBar.vala:97
+#: src/HeaderBar.vala:98
 msgid "Reply All"
 msgstr "全員に返信"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:105
 msgid "Forward"
 msgstr "転送"
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:108
+msgid "Mark as Unread"
+msgstr "未読としてマーク"
+
+#: src/HeaderBar.vala:112
+msgid "Mark as Read"
+msgstr "既読としてマーク"
+
+#: src/HeaderBar.vala:124
+#, fuzzy
+msgid "Mark Conversation"
+msgstr "メッセージをマークする"
+
+#: src/HeaderBar.vala:130
 msgid "Move conversations to Trash"
 msgstr "メッセージをゴミ箱に移動します"
+
+#: src/MainWindow.vala:237
+#, fuzzy
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "メッセージが選択されていません"
+
+#: src/MainWindow.vala:238
+#, fuzzy
+msgid "Undo"
+msgstr "元に戻す (_U)"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -63,119 +87,159 @@ msgstr "\"メール\" は、システム設定で設定されたメールアカ�
 msgid "Online Accounts…"
 msgstr "オンラインアカウント…"
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:85 src/MessageList/MessageListItem.vala:76
+msgid "From:"
+msgstr "差出人:"
+
+#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr "To:"
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:105 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "件名:"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:112
 msgid "Cc"
 msgstr "Cc"
 
-#: src/Composer/ComposerWidget.vala:87
+#: src/Composer/ComposerWidget.vala:114
 msgid "Bcc"
 msgstr "Bcc"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:124
+#: src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:140
 msgid "Bcc:"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:180
 msgid "Bold"
 msgstr "太字"
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:186
 msgid "Italic"
 msgstr "斜体"
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:192
 msgid "Underline"
 msgstr "下線"
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:198
 msgid "Strikethrough"
 msgstr "取り消し線"
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:211
 msgid "Quote text"
 msgstr "テキストを引用します"
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:214
 msgid "Unquote text"
 msgstr "テキストの引用を解除します"
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:223 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
 msgstr "リンクを挿入します"
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:226
 msgid "Insert Image"
 msgstr "画像を挿入します"
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:229
 msgid "Remove formatting"
 msgstr "書式を解除します"
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:257
 msgid "Delete draft"
 msgstr "下書きを削除します"
 
-#: src/Composer/ComposerWidget.vala:234
+#: src/Composer/ComposerWidget.vala:261
 msgid "Attach file"
 msgstr "ファイルを添付します"
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:267
 msgid "Send"
 msgstr "送信"
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:386
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%Y年%b%-e日 %a %p %-l:%M"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:416
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s、%2$s さんのメッセージ:"
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:420
 msgid "---------- Forwarded message ----------"
 msgstr "---------- 転送されたメッセージ ----------"
 
-#: src/Composer/ComposerWidget.vala:385
+#: src/Composer/ComposerWidget.vala:422
 #, c-format
 msgid "From: %s<br/>"
 msgstr "差出人: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:386
+#: src/Composer/ComposerWidget.vala:423
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "件名: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:387
+#: src/Composer/ComposerWidget.vala:424
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "日付: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:388
+#: src/Composer/ComposerWidget.vala:425
 #, c-format
 msgid "To: %s<br/>"
 msgstr "宛先: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:390
+#: src/Composer/ComposerWidget.vala:427
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
+#: src/Composer/ComposerWidget.vala:462
+#, fuzzy
+msgid "Send Message With an Empty Subject?"
+msgstr "空の件名のままメッセージを送信しますか？"
+
+#: src/Composer/ComposerWidget.vala:463
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:469
+msgid "Don't Send"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:471
+#, fuzzy
+msgid "Send Anyway"
+msgstr "了解して開く"
+
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
 msgstr "新しいメッセージ"
+
+#: src/ConversationList/ConversationListItem.vala:94
+#, fuzzy
+msgid "Unread"
+msgstr "%d 件が未読"
+
+#: src/ConversationList/ConversationListItem.vala:104
+#, fuzzy
+msgid "Replied"
+msgstr "返信"
+
+#: src/ConversationList/ConversationListItem.vala:108
+#, fuzzy
+msgid "Forwarded"
+msgstr "転送"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -194,17 +258,16 @@ msgid "Example Website"
 msgstr "Web サイト名を入力"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
+#: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
 msgstr "%s を開いてもよろしいですか？"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -212,7 +275,7 @@ msgstr ""
 "添付ファイルは、システムにダメージを与える恐れがあります。信頼できる送信元の"
 "ファイルのみを開くようにしてください。"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr "了解して開く"
 
@@ -224,23 +287,29 @@ msgstr "フォルダーを更新"
 msgid "No Message Selected"
 msgstr "メッセージが選択されていません"
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "差出人:"
+#: src/MessageList/MessageListItem.vala:156
+#: src/MessageList/MessageListItem.vala:276
+msgid "Unstar message"
+msgstr "スターなしメッセージ"
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:159
+#: src/MessageList/MessageListItem.vala:272
+msgid "Star message"
+msgstr "スター付きメッセージ"
+
+#: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
 msgstr "画像を表示"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
 msgstr "常に送信者から表示"
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
 msgstr "このメッセージは、リモートイメージを含んでいます。"
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
 msgstr "このメッセージは、何らかの添付ファイルを含んでいます"
 
@@ -409,10 +478,6 @@ msgstr "保存"
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "迷惑マークをはずす (_P)"
-
-#~ msgid "Mark conversation"
-#~ msgid_plural "Mark conversations"
-#~ msgstr[0] "メッセージをマークする"
 
 #~ msgid "Mark conversations"
 #~ msgstr "スレッドをマーク"
@@ -980,10 +1045,6 @@ msgstr "保存"
 #~ msgid_plural "%d messages"
 #~ msgstr[0] "%d 件のメッセージ"
 
-#~ msgid "%d unread"
-#~ msgid_plural "%d unread"
-#~ msgstr[0] "%d 件が未読"
-
 #~ msgid "%s, %s"
 #~ msgstr "%s %s"
 
@@ -1110,9 +1171,6 @@ msgstr "保存"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "空の件名および本文のままメッセージを送信しますか？"
-
-#~ msgid "Send message with an empty subject?"
-#~ msgstr "空の件名のままメッセージを送信しますか？"
 
 #~ msgid "Send message with an empty body?"
 #~ msgstr "空の本文のままメッセージを送信しますか？"
@@ -1308,9 +1366,6 @@ msgstr "保存"
 
 #~ msgid "Please wait while Geary validates your account."
 #~ msgstr "Geary がメールアカウントを検証する間お待ちください。"
-
-#~ msgid "_Undo"
-#~ msgstr "元に戻す (_U)"
 
 #~ msgid "_Redo"
 #~ msgstr "やり直し (_R)"
@@ -1724,12 +1779,6 @@ msgstr "保存"
 #~ msgid "Reply to All"
 #~ msgstr "全員へ返信"
 
-#~ msgid "Mark as Unread"
-#~ msgstr "未読としてマーク"
-
-#~ msgid "Mark as Read"
-#~ msgstr "既読としてマーク"
-
 #~ msgid "Print…"
 #~ msgstr "印刷…"
 
@@ -1754,12 +1803,6 @@ msgstr "保存"
 
 #~ msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 #~ msgstr "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
-
-#~ msgid "Star message"
-#~ msgstr "スター付きメッセージ"
-
-#~ msgid "Unstar message"
-#~ msgstr "スターなしメッセージ"
 
 #~ msgid "More"
 #~ msgstr "詳細"

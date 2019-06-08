@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 10:33+0100\n"
+"POT-Creation-Date: 2019-06-08 16:35-0400\n"
 "PO-Revision-Date: 2017-04-15 20:37+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: km (generated) <https://l10n.elementary.io/projects/mail/mail/"
@@ -22,44 +22,69 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:38
+#: src/HeaderBar.vala:39
 #, fuzzy
 msgid "Compose new message"
 msgstr "%d សារ​ថ្មី"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:45
 msgid "Search Mail"
 msgstr ""
 
-#: src/HeaderBar.vala:56
+#: src/HeaderBar.vala:57
 msgid "Always Show Remote Images"
 msgstr ""
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:85
 msgid "Menu"
 msgstr ""
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:91
 msgid "Reply"
 msgstr ""
 
-#: src/HeaderBar.vala:97
+#: src/HeaderBar.vala:98
 #, fuzzy
 msgid "Reply All"
 msgstr "_ឆ្លើយ​តប"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:105
 msgid "Forward"
 msgstr ""
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:108
+#, fuzzy
+msgid "Mark as Unread"
+msgstr "_សម្គាល់​ជា​មិន​ទាន់​អាន"
+
+#: src/HeaderBar.vala:112
+#, fuzzy
+msgid "Mark as Read"
+msgstr "_សម្គាល់​ជា​បាន​អាន​ហើយ"
+
+#: src/HeaderBar.vala:124
+msgid "Mark Conversation"
+msgstr ""
+
+#: src/HeaderBar.vala:130
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "ចុះ​កំណត់​ហេតុ​ការ​ត្រួត​ពិនិត្យ​របស់​ការ​សន្ទនា"
+
+#: src/MainWindow.vala:237
+#, fuzzy
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "គ្មាន​ជ្រើស​ការ​សន្ទនា."
+msgstr[1] "គ្មាន​ជ្រើស​ការ​សន្ទនា."
+
+#: src/MainWindow.vala:238
+msgid "Undo"
+msgstr ""
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -73,121 +98,158 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:85 src/MessageList/MessageListItem.vala:76
+msgid "From:"
+msgstr "មក​ពី ៖"
+
+#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr "ផ្ញើ​ទៅ ៖"
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:105 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "ប្រធាន​បទ ៖"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:112
 #, fuzzy
 msgid "Cc"
 msgstr "ចម្លង ៖"
 
-#: src/Composer/ComposerWidget.vala:87
+#: src/Composer/ComposerWidget.vala:114
 #, fuzzy
 msgid "Bcc"
 msgstr "លាក់ ៖"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:124
+#: src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr "ចម្លង ៖"
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:140
 msgid "Bcc:"
 msgstr "លាក់ ៖"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:180
 msgid "Bold"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:186
 msgid "Italic"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:192
 msgid "Underline"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:198
 msgid "Strikethrough"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:211
 msgid "Quote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:214
 msgid "Unquote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:223 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:226
 msgid "Insert Image"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:229
 msgid "Remove formatting"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:257
 msgid "Delete draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:234
+#: src/Composer/ComposerWidget.vala:261
 msgid "Attach file"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:267
 msgid "Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:386
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e %b, %Y នៅ​ម៉ោង %-l:%M %p"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:416
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:420
 msgid "---------- Forwarded message ----------"
 msgstr "---------- សារ​ដែល​បាន​បញ្ជូន​បន្ត ----------"
 
-#: src/Composer/ComposerWidget.vala:385
+#: src/Composer/ComposerWidget.vala:422
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "មក​ពី ៖ %s\n"
 
-#: src/Composer/ComposerWidget.vala:386
+#: src/Composer/ComposerWidget.vala:423
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "ប្រធាន​បទ ៖"
 
-#: src/Composer/ComposerWidget.vala:387
+#: src/Composer/ComposerWidget.vala:424
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "កាលបរិច្ឆេទ ៖ %s\n"
 
-#: src/Composer/ComposerWidget.vala:388
+#: src/Composer/ComposerWidget.vala:425
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "ផ្ញើ​ទៅ ៖ %s\n"
 
-#: src/Composer/ComposerWidget.vala:390
+#: src/Composer/ComposerWidget.vala:427
 #, c-format
 msgid "Cc: %s<br/>"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:462
+msgid "Send Message With an Empty Subject?"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:463
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:469
+msgid "Don't Send"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:471
+msgid "Send Anyway"
 msgstr ""
 
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
 msgstr "សារ​ថ្មី"
+
+#: src/ConversationList/ConversationListItem.vala:94
+msgid "Unread"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:104
+#, fuzzy
+msgid "Replied"
+msgstr "_ជំនួស"
+
+#: src/ConversationList/ConversationListItem.vala:108
+#, fuzzy
+msgid "Forwarded"
+msgstr "_បញ្ចូន​បន្ត"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -206,23 +268,22 @@ msgid "Example Website"
 msgstr ""
 
 #: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
+#: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr ""
 
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
 msgstr ""
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr ""
 
@@ -235,23 +296,30 @@ msgstr ""
 msgid "No Message Selected"
 msgstr "គ្មាន​ជ្រើស​ការ​សន្ទនា."
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "មក​ពី ៖"
+#: src/MessageList/MessageListItem.vala:156
+#: src/MessageList/MessageListItem.vala:276
+msgid "Unstar message"
+msgstr ""
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:159
+#: src/MessageList/MessageListItem.vala:272
+#, fuzzy
+msgid "Star message"
+msgstr "សារ​ថ្មី"
+
+#: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
 msgstr ""
 
@@ -349,9 +417,6 @@ msgstr ""
 #~ msgid "_Move"
 #~ msgstr "_ផ្លាស់​ទី"
 
-#~ msgid "_Forward"
-#~ msgstr "_បញ្ចូន​បន្ត"
-
 #~ msgid "Your settings are insecure"
 #~ msgstr "ការ​កំណត់​របស់​អ្នក​គ្មាន​សុវត្ថិភាព​ទេ"
 
@@ -394,9 +459,6 @@ msgstr ""
 #~ "The file already exists in \"%s\".  Replacing it will overwrite its "
 #~ "contents."
 #~ msgstr "ឯកសារ​នេះ​មាន​នៅ​ហើយ​ក្នុង \"%s\" ។ បើ​សិន​ជំនួស​វា នោះ​នឹង​សរសេរ​ជាន់​លើ​មាតិកា​របស់​វា ។"
-
-#~ msgid "_Replace"
-#~ msgstr "_ជំនួស"
 
 #~ msgid "Output debugging information"
 #~ msgstr "ចេញ​ពត៌មាន​ពី​ការ​បំបាត់​កំហុស"
@@ -499,12 +561,6 @@ msgstr ""
 
 #~ msgid "_Save As..."
 #~ msgstr "_រក្សាទុក​ជា…"
-
-#~ msgid "_Mark as Read"
-#~ msgstr "_សម្គាល់​ជា​បាន​អាន​ហើយ"
-
-#~ msgid "_Mark as Unread"
-#~ msgstr "_សម្គាល់​ជា​មិន​ទាន់​អាន"
 
 #~ msgid "_View Source"
 #~ msgstr "_មើល​ប្រភព"
