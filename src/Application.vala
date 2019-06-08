@@ -18,9 +18,6 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-using Soup;
-using Gee;
-
 public class Mail.Application : Gtk.Application {
     public static GLib.Settings settings;
 
@@ -58,11 +55,11 @@ public class Mail.Application : Gtk.Application {
 
         // The only arguments we support are mailto: URLs passed in by the OS. See RFC 2368 for
         // details. We handle the most commonly used fields.
-        foreach (var mailtoUri in argv[1:argv.length]) {
+        foreach (var mailto_uri in argv[1:argv.length]) {
             string to = null, cc = null, subject = null;
 
             try {
-                URI mailto = new URI(mailtoUri);
+                Soup.URI mailto = new Soup.URI(mailto_uri);
                 if (mailto == null) {
                     throw new OptionError.BAD_VALUE ("Argument is not a URL.");
                 }
@@ -70,7 +67,7 @@ public class Mail.Application : Gtk.Application {
                     throw new OptionError.BAD_VALUE ("Cannot open non-mailto: URL");
                 }
 
-                to = URI.decode(mailto.path);
+                to = Soup.URI.decode(mailto.path);
                 if (to == null || to == "") {
                     throw new OptionError.BAD_VALUE ("mailto: URL does not specify a recipent");
                 }
@@ -87,15 +84,15 @@ public class Mail.Application : Gtk.Application {
                 new ComposerWindow.with_headers (main_window, to, cc, subject).show_all ();
             }
             catch (OptionError e) {
-                warning("Argument parsing error. %s", e.message);
+                warning ("Argument parsing error. %s", e.message);
             }
         }
 
         return 0;
     }
 
-    private HashMap<string, string> parse_mailto_query (string query) throws OptionError {
-        var result = new HashMap<string, string> ();
+    private Gee.HashMap<string, string> parse_mailto_query (string query) throws OptionError {
+        var result = new Gee.HashMap<string, string> ();
         var params = query.split ("&");
 
         foreach (string param in params) {
@@ -104,7 +101,7 @@ public class Mail.Application : Gtk.Application {
                 throw new OptionError.BAD_VALUE ("Invalid mailto URL");
             }
 
-            result[terms[0]] = URI.decode (terms[1]);
+            result[terms[0]] = Soup.URI.decode (terms[1]);
         }
 
         return result;
