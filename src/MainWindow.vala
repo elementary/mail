@@ -156,12 +156,12 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
         destroy.connect (() => destroy ());
 
-        folders_list_view.folder_selected.connect ((account, folder_name) => {
-            conversation_list_box.load_folder.begin (account, folder_name);
+        folders_list_view.folder_selected.connect ((account, folder_name, folder_type) => {
+            conversation_list_box.load_folder.begin (account, folder_name, folder_type);
         });
 
-        conversation_list_box.conversation_selected.connect ((node) => {
-            message_list_box.set_conversation (node);
+        conversation_list_box.conversation_selected.connect ((node, folder_type) => {
+            message_list_box.set_conversation (node, folder_type);
         });
 
         headerbar.size_allocate.connect (() => {

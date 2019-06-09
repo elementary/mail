@@ -22,6 +22,7 @@
 
 public class Mail.ConversationItemModel : GLib.Object {
     public Camel.FolderThreadNode? node { get; private set; }
+    public int folder_type {get; private set;}
 
     public string formatted_date {
         owned get {
@@ -94,8 +95,9 @@ public class Mail.ConversationItemModel : GLib.Object {
         }
     }
 
-    public ConversationItemModel (Camel.FolderThreadNode node) {
+    public ConversationItemModel (Camel.FolderThreadNode node, int folder_type) {
         update_node (node);
+        this.folder_type = folder_type;
     }
 
     public void update_node (Camel.FolderThreadNode new_node) {

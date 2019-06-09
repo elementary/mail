@@ -21,7 +21,7 @@
  */
 
 public class Mail.FoldersListView : Gtk.ScrolledWindow {
-    public signal void folder_selected (Backend.Account account, string folder_name);
+    public signal void folder_selected (Backend.Account account, string folder_name, int folder_type);
 
     private Granite.Widgets.SourceList source_list;
     private static GLib.Settings settings;
@@ -57,7 +57,7 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
             }
 
             var folder_item = item as FolderSourceItem;
-            folder_selected (folder_item.get_account (), folder_item.full_name);
+            folder_selected (folder_item.get_account (), folder_item.full_name, folder_item.folder_type);
 
             settings.set ("selected-folder", "(ss)", folder_item.get_account ().service.uid, folder_item.full_name);
         });
@@ -68,7 +68,7 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
         source_list.root.add (account_item);
 
         if (account.service.uid == selected_folder_uid) {
-            folder_selected (account, selected_folder_name);
+            folder_selected (account, selected_folder_name, 0 /* FIXME: get flags */);
         }
     }
 }

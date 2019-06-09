@@ -23,7 +23,8 @@
 public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
     public signal void refresh ();
 
-    public string full_name;
+    public string full_name {get; private set;}
+    public int folder_type {get; private set;}
 
     private bool can_modify = true;
 
@@ -61,7 +62,8 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
             badge = "%d".printf (folderinfo.unread);
         }
 
-        switch (folderinfo.flags & Camel.FOLDER_TYPE_MASK) {
+        folder_type = folderinfo.flags & Camel.FOLDER_TYPE_MASK;
+        switch (folder_type) {
             case Camel.FolderInfoFlags.TYPE_INBOX:
                 icon = new ThemedIcon ("mail-inbox");
                 can_modify = false;

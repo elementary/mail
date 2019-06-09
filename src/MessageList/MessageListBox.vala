@@ -24,6 +24,8 @@ public class Mail.MessageListBox : Gtk.ListBox {
     public bool can_move_thread { get; set; default = false; }
     public GenericArray<string> uids { get; private set; default = new GenericArray<string>(); }
 
+    private bool is_junk = false;
+
     public MessageListBox () {
         Object (selection_mode: Gtk.SelectionMode.NONE);
     }
@@ -40,7 +42,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
         set_placeholder (placeholder);
     }
 
-    public void set_conversation (Camel.FolderThreadNode? node) {
+    public void set_conversation (Camel.FolderThreadNode? node, int folder_type) {
         /*
          * Prevent the user from interacting with the message thread while it
          * is being reloaded. can_reply will be set to true after loading the
@@ -64,7 +66,8 @@ public class Mail.MessageListBox : Gtk.ListBox {
          */
         can_move_thread = true;
 
-        var item = new MessageListItem (node.message);
+        is_junk = (folder_type == Camel.FolderInfoFlags.TYPE_JUNK);
+        var item = new MessageListItem (node.message, is_junk);
         add (item);
         uids.add (node.message.uid);
         if (node.child != null) {
@@ -86,7 +89,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
     private void go_down (Camel.FolderThreadNode node) {
         unowned Camel.FolderThreadNode? current_node = node;
         while (current_node != null) {
-            var item = new MessageListItem (current_node.message);
+            var item = new MessageListItem (current_node.message, is_junk);
             add (item);
             uids.add (current_node.message.uid);
             if (current_node.next != null) {

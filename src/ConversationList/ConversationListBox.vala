@@ -21,12 +21,13 @@
  */
 
 public class Mail.ConversationListBox : VirtualizingListBox {
-    public signal void conversation_selected (Camel.FolderThreadNode? node);
+    public signal void conversation_selected (Camel.FolderThreadNode? node, int folder_type);
     public signal void conversation_focused (Camel.FolderThreadNode? node);
 
     public Backend.Account current_account { get; private set; }
     public Camel.Folder folder { get; private set; }
 
+    private int? folder_type;
     private GLib.Cancellable? cancellable = null;
     private Camel.FolderThread thread;
     private string current_folder;
@@ -73,22 +74,25 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
         row_selected.connect ((row) => {
             if (row == null) {
-                conversation_selected (null);
+                conversation_selected (null, 0);
             } else {
-                conversation_selected (((ConversationItemModel) row).node);
+                var conversation_item = (ConversationItemModel) row;
+                conversation_selected (conversation_item.node, conversation_item.folder_type);
             }
         });
     }
 
-    public async void load_folder (Backend.Account account, string next_folder) {
-        current_folder = next_folder;
+    public async void load_folder (Backend.Account account, string folder_name, int folder_type) {
+        current_folder = folder_name;
+        this.folder_type = folder_type;
+
         current_account = account;
         if (cancellable != null) {
             cancellable.cancel ();
         }
 
         conversation_focused (null);
-        conversation_selected (null);
+        conversation_selected (null, 0);
 
         uint previous_items = list_store.get_n_items ();
         lock (conversations) {
@@ -107,7 +111,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                         break;
                     }
 
-                    add_conversation_item (child);
+                    add_conversation_item (child, folder_type);
                     child = (Camel.FolderThreadNode?) child.next;
                 }
 
@@ -145,7 +149,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
                 var item = conversations[child.message.uid];
                 if (item == null) {
-                    add_conversation_item (child);
+                    add_conversation_item (child, folder_type);
                 } else {
                     item.update_node (child);
                 }
@@ -157,8 +161,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
     }
 
-    private void add_conversation_item (Camel.FolderThreadNode child) {
-        var item = new ConversationItemModel (child);
+    private void add_conversation_item (Camel.FolderThreadNode child, int folder_type) {
+        var item = new ConversationItemModel (child, folder_type);
         conversations[child.message.uid] = item;
         list_store.add (item);
     }

@@ -35,6 +35,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private string message_content;
     private bool message_is_html = false;
     private bool message_loaded = false;
+    public bool is_junk {get; construct;}
     
     public bool expanded {
         get {
@@ -57,10 +58,11 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     private GLib.Settings settings;
 
-    public MessageListItem (Camel.MessageInfo message_info) {
+    public MessageListItem (Camel.MessageInfo message_info, bool is_junk) {
         Object (
             margin: 12,
-            message_info: message_info
+            message_info: message_info,
+            is_junk: is_junk
         );
     }
 
@@ -338,7 +340,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             yield attachment_bar.parse_mime_content (message.content);
         }
 
-        if (settings.get_boolean ("always-load-remote-images")) {
+        if (!is_junk && settings.get_boolean ("always-load-remote-images")) {
             web_view.load_images ();
         } else if (message != null) {
             var whitelist = settings.get_strv ("remote-images-whitelist");
