@@ -75,6 +75,9 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             if (row == null) {
                 conversation_selected (null);
             } else {
+                weak GLib.ActionMap win_action_map = (GLib.ActionMap) get_action_group (MainWindow.ACTION_GROUP_PREFIX);
+                ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_READ)).set_enabled (((ConversationItemModel) row).unread);
+                ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_UNREAD)).set_enabled (!((ConversationItemModel) row).unread);
                 conversation_selected (((ConversationItemModel) row).node);
             }
         });
