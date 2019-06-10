@@ -78,18 +78,20 @@ public class Mail.ComposerWidget : Gtk.Grid {
         Object (has_subject_field: true);
     }
 
-    public ComposerWidget.with_headers ( string? to, string? cc, string? subject ) {
+    public ComposerWidget.with_headers (string? to, string? cc, string? subject) {
         Object (has_subject_field: true);
 
         // Set header fields, now that signal handlers are established
-        if (to != null)
+        if (to != null) {
             to_val.text = to;
+        }
         if (cc != null) {
-            cc_button.clicked();
+            cc_button.clicked ();
             cc_val.text = cc;
         }
-        if (subject != null)
+        if (subject != null) {
             subject_val.text = subject;
+        }
     }
 
     construct {

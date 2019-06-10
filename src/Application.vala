@@ -49,7 +49,7 @@ public class Mail.Application : Gtk.Application {
     }
 
     public override int command_line (ApplicationCommandLine command_line) {
-        activate();
+        activate ();
 
         string[] argv = command_line.get_arguments ();
 
@@ -59,7 +59,7 @@ public class Mail.Application : Gtk.Application {
             string to = null, cc = null, subject = null;
 
             try {
-                Soup.URI mailto = new Soup.URI(mailto_uri);
+                Soup.URI mailto = new Soup.URI (mailto_uri);
                 if (mailto == null) {
                     throw new OptionError.BAD_VALUE ("Argument is not a URL.");
                 }
@@ -80,7 +80,6 @@ public class Mail.Application : Gtk.Application {
                         subject = params["subject"];
                     }
                 }
-
                 new ComposerWindow.with_headers (main_window, to, cc, subject).show_all ();
             }
             catch (OptionError e) {
@@ -95,7 +94,7 @@ public class Mail.Application : Gtk.Application {
         var result = new Gee.HashMap<string, string> ();
         var params = query.split ("&");
 
-        foreach (string param in params) {
+        foreach (unowned string param in params) {
             var terms = param.split ("=");
             if (terms.length != 2) {
                 throw new OptionError.BAD_VALUE ("Invalid mailto URL");
