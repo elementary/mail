@@ -37,7 +37,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     public bool has_subject_field { get; construct; default = false; }
     public bool can_change_sender { get; construct; default = true; }
 
-    public Gtk.ApplicationWindow app_window { get; construct; }
+    public GLib.ActionGroup action_group { get; construct; }
 
     private WebView web_view;
     private Gtk.Entry to_val;
@@ -81,23 +81,26 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
     public ComposerWidget.inline () {
         Object (
-            app_window: ((Mail.Application) GLib.Application.get_default ()).main_window,
             can_change_sender: false
         );
     }
 
     public ComposerWidget.with_subject (Gtk.ApplicationWindow app_window) {
         Object (
-            app_window: app_window,
+            action_group: app_window,
             has_subject_field: true
         );
     }
 
     construct {
+        if (action_group == null) {
+            action_group = get_action_group (MainWindow.ACTION_GROUP_PREFIX);
+        }
+
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
-        app_window.add_action_entries (action_entries, this);
-        insert_action_group (ACTION_GROUP_PREFIX, app_window);
+        ((GLib.ActionMap) action_group).add_action_entries (action_entries, this);
+        insert_action_group (ACTION_GROUP_PREFIX, action_group);
 
         foreach (var action in action_accelerators.get_keys ()) {
             application_instance.set_accels_for_action (
@@ -493,10 +496,10 @@ public class Mail.ComposerWidget : Gtk.Grid {
     }
 
     private void update_actions () {
-        app_window.change_action_state (ACTION_BOLD, web_view.query_command_state ("bold") ? ACTION_BOLD : "");
-        app_window.change_action_state (ACTION_ITALIC, web_view.query_command_state ("italic") ? ACTION_ITALIC : "");
-        app_window.change_action_state (ACTION_UNDERLINE, web_view.query_command_state ("underline") ? ACTION_UNDERLINE : "");
-        app_window.change_action_state (ACTION_STRIKETHROUGH, web_view.query_command_state ("strikethrough") ? ACTION_STRIKETHROUGH : "");
+        action_group.change_action_state (ACTION_BOLD, web_view.query_command_state ("bold") ? ACTION_BOLD : "");
+        action_group.change_action_state (ACTION_ITALIC, web_view.query_command_state ("italic") ? ACTION_ITALIC : "");
+        action_group.change_action_state (ACTION_UNDERLINE, web_view.query_command_state ("underline") ? ACTION_UNDERLINE : "");
+        action_group.change_action_state (ACTION_STRIKETHROUGH, web_view.query_command_state ("strikethrough") ? ACTION_STRIKETHROUGH : "");
     }
 
     private void on_discard () {
