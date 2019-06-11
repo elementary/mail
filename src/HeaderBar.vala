@@ -115,13 +115,15 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         mark_read_item.bind_property ("sensitive", mark_read_item, "visible");
         mark_read_item.add (new AccelMenuLabel (_("Mark as Read"), mark_read_item.action_name));
 
-        var mark_star_item = new Gtk.MenuItem.with_label (_("Star"));
+        var mark_star_item = new Gtk.MenuItem ();
         mark_star_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR;
         mark_star_item.bind_property ("sensitive", mark_star_item, "visible");
+        mark_star_item.add (new AccelMenuLabel (_("Star"), mark_star_item.action_name));
 
-        var mark_unstar_item = new Gtk.MenuItem.with_label (_("Unstar"));
+        var mark_unstar_item = new Gtk.MenuItem ();
         mark_unstar_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR;
         mark_unstar_item.bind_property ("sensitive", mark_unstar_item, "visible");
+        mark_unstar_item.add (new AccelMenuLabel (_("Unstar"), mark_unstar_item.action_name));
 
         var mark_menu = new Gtk.Menu ();
         mark_menu.add (mark_unread_item);
