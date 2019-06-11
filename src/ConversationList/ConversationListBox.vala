@@ -78,6 +78,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 weak GLib.ActionMap win_action_map = (GLib.ActionMap) get_action_group (MainWindow.ACTION_GROUP_PREFIX);
                 ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_READ)).set_enabled (((ConversationItemModel) row).unread);
                 ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_UNREAD)).set_enabled (!((ConversationItemModel) row).unread);
+                ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_STAR)).set_enabled (!((ConversationItemModel) row).flagged);
+                ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_UNSTAR)).set_enabled (((ConversationItemModel) row).flagged);
                 conversation_selected (((ConversationItemModel) row).node);
             }
         });
@@ -177,10 +179,24 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
     }
 
+    public void mark_star_selected_messages () {
+        var selected_rows = get_selected_rows ();
+        foreach (var row in selected_rows) {
+            (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.FLAGGED, ~0);
+        }
+    }
+
     public void mark_unread_selected_messages () {
         var selected_rows = get_selected_rows ();
         foreach (var row in selected_rows) {
             (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.SEEN, 0);
+        }
+    }
+
+    public void mark_unstar_selected_messages () {
+        var selected_rows = get_selected_rows ();
+        foreach (var row in selected_rows) {
+            (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.FLAGGED, 0);
         }
     }
 
