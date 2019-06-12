@@ -363,11 +363,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
             foreach (unowned string param in params) {
                 var terms = param.split ("=");
-                if (terms.length != 2) {
+                if (terms.length == 2) {
+                    result[terms[0]] = Soup.URI.decode (terms[1]);
+                } else {
                     critical ("Invalid mailto URL");
                 }
-
-                result[terms[0]] = Soup.URI.decode (terms[1]);
             }
 
             if (result["bcc"] != null) {
