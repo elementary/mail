@@ -67,7 +67,7 @@ public class Mail.Application : Gtk.Application {
                     throw new OptionError.BAD_VALUE ("Cannot open non-mailto: URL");
                 }
 
-                to = Soup.URI.decode(mailto.path);
+                to = Soup.URI.decode (mailto.path);
                 if (to == null || to == "") {
                     throw new OptionError.BAD_VALUE ("mailto: URL does not specify a recipent");
                 }
@@ -81,8 +81,7 @@ public class Mail.Application : Gtk.Application {
                     }
                 }
                 new ComposerWindow.with_headers (main_window, to, cc, subject).show_all ();
-            }
-            catch (OptionError e) {
+            } catch (OptionError e) {
                 warning ("Argument parsing error. %s", e.message);
             }
         }
