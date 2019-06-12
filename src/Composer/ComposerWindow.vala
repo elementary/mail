@@ -19,18 +19,25 @@
  */
 
 public class Mail.ComposerWindow : Gtk.ApplicationWindow {
+    public string? to { get; construct; default = null; }
+    public string? cc { get; construct; default = null; }
+    public string? subject { get; construct; default = null; }
+
     public ComposerWindow (Gtk.Window parent) {
+        Object (transient_for: parent);
+    }
+
+    public ComposerWindow.with_headers (Gtk.Window parent, string? to, string? cc, string? subject) {
         Object (
-            height_request: 600,
-            title: _("New Message"),
             transient_for: parent,
-            width_request: 680,
-            window_position: Gtk.WindowPosition.CENTER_ON_PARENT
+            to: to,
+            cc: cc,
+            subject: subject
         );
     }
 
     construct {
-        var composer_widget = new ComposerWidget.with_subject ();
+        var composer_widget = new ComposerWidget.with_headers (to, cc, subject);
         composer_widget.discarded.connect (() => {
             close ();
         });
@@ -42,6 +49,10 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         content_grid.orientation = Gtk.Orientation.VERTICAL;
         content_grid.add (composer_widget);
 
+        height_request = 600;
+        width_request = 680;
+        window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
+        title = _("New Message");
         get_style_context ().add_class ("rounded");
         add (content_grid);
     }
