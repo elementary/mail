@@ -46,7 +46,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private Gtk.Entry cc_val;
     private Gtk.Entry bcc_val;
     private Gtk.Revealer cc_revealer;
-    private Gtk.ToggleButton bcc_button;
     private Gtk.ToggleButton cc_button;
     private Granite.Widgets.OverlayBar message_url_overlay;
     private Gtk.ComboBoxText from_combo;
@@ -123,7 +122,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         cc_button = new Gtk.ToggleButton.with_label (_("Cc"));
 
-        bcc_button = new Gtk.ToggleButton.with_label (_("Bcc"));
+        var bcc_button = new Gtk.ToggleButton.with_label (_("Bcc"));
 
         var to_grid = new Gtk.Grid ();
         to_grid.add (to_val);
