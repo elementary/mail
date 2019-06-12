@@ -56,7 +56,7 @@ public class Mail.Application : Gtk.Application {
         // The only arguments we support are mailto: URLs passed in by the OS. See RFC 2368 for
         // details. We handle the most commonly used fields.
         foreach (var mailto_uri in argv[1:argv.length]) {
-            string to = null, cc = null, subject = null;
+            string to = null, bcc = null, cc = null, subject = null;
 
             try {
                 Soup.URI mailto = new Soup.URI (mailto_uri);
@@ -73,6 +73,9 @@ public class Mail.Application : Gtk.Application {
                 }
                 if (mailto.query != null) {
                     var params = parse_mailto_query (mailto.query);
+                    if (params["bcc"] != null) {
+                        bcc = params["bcc"];
+                    }
                     if (params["cc"] != null) {
                         cc = params["cc"];
                     }
@@ -80,7 +83,7 @@ public class Mail.Application : Gtk.Application {
                         subject = params["subject"];
                     }
                 }
-                new ComposerWindow.with_headers (main_window, to, cc, subject).show_all ();
+                new ComposerWindow.with_headers (main_window, to, bcc, cc, subject).show_all ();
             } catch (OptionError e) {
                 warning ("Argument parsing error. %s", e.message);
             }

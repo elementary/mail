@@ -41,10 +41,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private WebView web_view;
     private SimpleActionGroup actions;
     private Gtk.Entry to_val;
-    private Gtk.ToggleButton cc_button;
     private Gtk.Entry cc_val;
     private Gtk.Entry bcc_val;
     private Gtk.Revealer cc_revealer;
+    private Gtk.ToggleButton bcc_button;
+    private Gtk.ToggleButton cc_button;
     private Granite.Widgets.OverlayBar message_url_overlay;
     private Gtk.ComboBoxText from_combo;
     private Gtk.Entry subject_val;
@@ -78,12 +79,16 @@ public class Mail.ComposerWidget : Gtk.Grid {
         Object (has_subject_field: true);
     }
 
-    public ComposerWidget.with_headers (string? to, string? cc, string? subject) {
+    public ComposerWidget.with_headers (string? to, string? bcc, string? cc, string? subject) {
         Object (has_subject_field: true);
 
         // Set header fields, now that signal handlers are established
         if (to != null) {
             to_val.text = to;
+        }
+        if (bcc != null) {
+            bcc_button.clicked ();
+            bcc_val.text = bcc;
         }
         if (cc != null) {
             cc_button.clicked ();
@@ -128,7 +133,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         cc_button = new Gtk.ToggleButton.with_label (_("Cc"));
 
-        var bcc_button = new Gtk.ToggleButton.with_label (_("Bcc"));
+        bcc_button = new Gtk.ToggleButton.with_label (_("Bcc"));
 
         var to_grid = new Gtk.Grid ();
         to_grid.add (to_val);

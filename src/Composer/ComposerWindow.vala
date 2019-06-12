@@ -20,6 +20,7 @@
 
 public class Mail.ComposerWindow : Gtk.ApplicationWindow {
     public string? to { get; construct; default = null; }
+    public string? bcc { get; construct; default = null; }
     public string? cc { get; construct; default = null; }
     public string? subject { get; construct; default = null; }
 
@@ -27,17 +28,18 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         Object (transient_for: parent);
     }
 
-    public ComposerWindow.with_headers (Gtk.Window parent, string? to, string? cc, string? subject) {
+    public ComposerWindow.with_headers (Gtk.Window parent, string? to, string? bcc, string? cc, string? subject) {
         Object (
             transient_for: parent,
             to: to,
+            bcc: bcc,
             cc: cc,
             subject: subject
         );
     }
 
     construct {
-        var composer_widget = new ComposerWidget.with_headers (to, cc, subject);
+        var composer_widget = new ComposerWidget.with_headers (to, bcc, cc, subject);
         composer_widget.discarded.connect (() => {
             close ();
         });
