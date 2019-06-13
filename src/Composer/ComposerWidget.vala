@@ -37,14 +37,16 @@ public class Mail.ComposerWidget : Gtk.Grid {
     public bool has_recipients { get; set; }
     public bool has_subject_field { get; construct; default = false; }
     public bool can_change_sender { get; construct; default = true; }
+    public string? to { get; construct; }
+    public string? mailto_query { get; construct; }
 
     private WebView web_view;
     private SimpleActionGroup actions;
     private Gtk.Entry to_val;
-    private Gtk.ToggleButton cc_button;
     private Gtk.Entry cc_val;
     private Gtk.Entry bcc_val;
     private Gtk.Revealer cc_revealer;
+    private Gtk.ToggleButton cc_button;
     private Granite.Widgets.OverlayBar message_url_overlay;
     private Gtk.ComboBoxText from_combo;
     private Gtk.Entry subject_val;
@@ -78,20 +80,12 @@ public class Mail.ComposerWidget : Gtk.Grid {
         Object (has_subject_field: true);
     }
 
-    public ComposerWidget.with_headers (string? to, string? cc, string? subject) {
-        Object (has_subject_field: true);
-
-        // Set header fields, now that signal handlers are established
-        if (to != null) {
-            to_val.text = to;
-        }
-        if (cc != null) {
-            cc_button.clicked ();
-            cc_val.text = cc;
-        }
-        if (subject != null) {
-            subject_val.text = subject;
-        }
+    public ComposerWidget.with_headers (string to, string? mailto_query) {
+        Object (
+            has_subject_field: true,
+            to: to,
+            mailto_query: mailto_query
+        );
     }
 
     construct {
@@ -358,6 +352,36 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
             to_grid_style_context.set_state (state);
         });
+
+        if (to != null) {
+            to_val.text = to;
+        }
+
+        if (mailto_query != null) {
+            var result = new Gee.HashMap<string, string> ();
+            var params = mailto_query.split ("&");
+
+            foreach (unowned string param in params) {
+                var terms = param.split ("=");
+                if (terms.length == 2) {
+                    result[terms[0]] = Soup.URI.decode (terms[1]);
+                } else {
+                    critical ("Invalid mailto URL");
+                }
+            }
+
+            if (result["bcc"] != null) {
+                bcc_button.clicked ();
+                bcc_val.text = result["bcc"];
+            }
+            if (result["cc"] != null) {
+                cc_button.clicked ();
+                cc_val.text = result["cc"];
+            }
+            if (result["subject"] != null) {
+                subject_val.text = result["subject"];
+            }
+        }
     }
 
     private void on_insert_link_clicked () {
