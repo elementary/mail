@@ -56,7 +56,7 @@ public class Mail.Application : Gtk.Application {
         // The only arguments we support are mailto: URLs passed in by the OS. See RFC 2368 for
         // details. We handle the most commonly used fields.
         foreach (var mailto_uri in argv[1:argv.length]) {
-            string to = null, cc = null, subject = null;
+            string to = null;
 
             try {
                 Soup.URI mailto = new Soup.URI (mailto_uri);
@@ -71,38 +71,13 @@ public class Mail.Application : Gtk.Application {
                 if (to == null || to == "") {
                     throw new OptionError.BAD_VALUE ("mailto: URL does not specify a recipent");
                 }
-                if (mailto.query != null) {
-                    var params = parse_mailto_query (mailto.query);
-                    if (params["cc"] != null) {
-                        cc = params["cc"];
-                    }
-                    if (params["subject"] != null) {
-                        subject = params["subject"];
-                    }
-                }
-                new ComposerWindow.with_headers (main_window, to, cc, subject).show_all ();
+                new ComposerWindow (main_window, to, mailto.query).show_all ();
             } catch (OptionError e) {
                 warning ("Argument parsing error. %s", e.message);
             }
         }
 
         return 0;
-    }
-
-    private Gee.HashMap<string, string> parse_mailto_query (string query) throws OptionError {
-        var result = new Gee.HashMap<string, string> ();
-        var params = query.split ("&");
-
-        foreach (unowned string param in params) {
-            var terms = param.split ("=");
-            if (terms.length != 2) {
-                throw new OptionError.BAD_VALUE ("Invalid mailto URL");
-            }
-
-            result[terms[0]] = Soup.URI.decode (terms[1]);
-        }
-
-        return result;
     }
 
     public override void activate () {
