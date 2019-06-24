@@ -170,6 +170,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         action_grid.valign = Gtk.Align.START;
         action_grid.add (datetime_label);
         action_grid.attach (starred_button, 2, 0);
+        action_grid.attach (actions_menu_button (), 2, 1);
 
         var header = new Gtk.Grid ();
         header.margin = 12;
@@ -288,6 +289,85 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 warning ("Failed to open link: %s", e.message);
             }
         });
+    }
+
+    private Gtk.MenuButton actions_menu_button () {
+        var menu = new Gtk.Menu ();
+
+        var reply_item = new Gtk.MenuItem.with_label (_("Reply"));
+        reply_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.REPLY));
+        menu.add (reply_item);
+
+        var reply_all_item = new Gtk.MenuItem.with_label (_("Reply to All"));
+        reply_all_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.REPLY_ALL));
+        menu.add (reply_all_item);
+
+        var forward_item = new Gtk.MenuItem.with_label (_("Forward"));
+        forward_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.FORWARD));
+        menu.add (forward_item);
+
+        menu.add (new Gtk.SeparatorMenuItem ());
+
+        var print_item = new Gtk.MenuItem.with_label (_("Print…"));
+        print_item.activate.connect (on_print);
+        menu.add (print_item);
+
+        menu.show_all ();
+
+        var menu_button = new Gtk.MenuButton ();
+        menu_button.image = new Gtk.Image.from_icon_name ("view-more-symbolic", Gtk.IconSize.MENU);
+        menu_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        menu_button.tooltip_text = _("More");
+        menu_button.margin_top = 6;
+        menu_button.valign = Gtk.Align.START;
+        menu_button.halign = Gtk.Align.END;
+        menu_button.popup = menu;
+        /* Override default handler to stop event propagation. Otherwise clicking the menu will
+           expand or collapse the MessageListItem. */
+        menu_button.button_release_event.connect ((event) => {
+            menu_button.set_active (true);
+            return Gdk.EVENT_STOP;
+        });
+
+        menu_button.show ();
+        return menu_button;
+    }
+
+    private void add_inline_composer (ComposerWidget.Type composer_type) {
+        var message_list_box = (MessageListBox) get_parent();
+        message_list_box.add_inline_composer (composer_type, this);
+    }
+
+    private void on_print () {
+        try {
+            Gtk.PrintSettings settings = new Gtk.PrintSettings ();
+            string filename = _("Email Message");
+
+            string subject = message_info.subject;
+            if (subject != null && subject != "") {
+                filename = safe_filename (subject, 64);
+            }
+
+            settings.set(Gtk.PRINT_SETTINGS_OUTPUT_BASENAME, filename);
+
+            /* @TODO: include header fields in printed output */
+            var print_operation = new WebKit.PrintOperation (web_view);
+            print_operation.set_print_settings (settings);
+            print_operation.run_dialog ((Gtk.ApplicationWindow) get_toplevel ());
+        } catch (Error e) {
+            critical ("Print operation failed. %s".printf (e.message));
+        }
+    }
+
+    /* Replace any runs of whitespace, non-printing characters or slashes with a
+       single space and remove and leading or trailing spaces. */
+    private string safe_filename (string str, ssize_t max_length) throws Error {
+        var s = new Regex ("[[:space:][:cntrl:]/]+").replace (str, -1, 0, " ").strip ();
+        if (s.length < max_length) {
+            return s;
+        } else {
+            return "%s…".printf (s.substring (0, s.char_count (max_length-1)));
+        }
     }
 
     private void on_mouse_target_changed (WebKit.WebView web_view, WebKit.HitTestResult hit_test, uint mods) {
