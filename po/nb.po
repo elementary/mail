@@ -14,16 +14,16 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2019-01-12 00:09+0000\n"
+"PO-Revision-Date: 2019-06-27 20:52+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/mail/"
+"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
 "mail/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:38
@@ -36,9 +36,8 @@ msgid "Search Mail"
 msgstr "Søk Mail"
 
 #: src/HeaderBar.vala:56
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "Alltid vis eksterne bilder:"
+msgstr "Alltid vis eksterne bilder"
 
 #: src/HeaderBar.vala:64
 msgid "Account Settings…"
@@ -53,9 +52,8 @@ msgid "Reply"
 msgstr "Svar"
 
 #: src/HeaderBar.vala:97
-#, fuzzy
 msgid "Reply All"
-msgstr "Sv_ar alle"
+msgstr "Svar alle"
 
 #: src/HeaderBar.vala:104
 msgid "Forward"
@@ -64,12 +62,11 @@ msgstr "Fremover"
 #: src/HeaderBar.vala:111
 #, fuzzy
 msgid "Move conversations to Trash"
-msgstr "Flytt samtaler"
+msgstr "Flytt samtaler til papirkurv"
 
 #: src/WelcomeView.vala:40
-#, fuzzy
 msgid "Connect an Account"
-msgstr "Fjern konto"
+msgstr "Koble til en konto"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
@@ -78,7 +75,7 @@ msgstr "Mail bruker e-postkontoer satt opp i systeminnstillingene."
 #: src/WelcomeView.vala:50
 #, fuzzy
 msgid "Online Accounts…"
-msgstr "Kontoer"
+msgstr "Nettkontoer…"
 
 #: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
 msgid "To:"
@@ -89,14 +86,13 @@ msgid "Subject:"
 msgstr "Emne:"
 
 #: src/Composer/ComposerWidget.vala:85
-#, fuzzy
 msgid "Cc"
-msgstr "Kopi:"
+msgstr "Kopi"
 
 #: src/Composer/ComposerWidget.vala:87
 #, fuzzy
 msgid "Bcc"
-msgstr "Blindkopi:"
+msgstr "Blindkopi"
 
 #: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
@@ -115,24 +111,20 @@ msgid "Italic"
 msgstr "Kursiv"
 
 #: src/Composer/ComposerWidget.vala:164
-#, fuzzy
 msgid "Underline"
-msgstr "Understrek (Ctrl+U)"
+msgstr "Understrek"
 
 #: src/Composer/ComposerWidget.vala:170
-#, fuzzy
 msgid "Strikethrough"
-msgstr "Gjennomstrek (Ctrl+K)"
+msgstr "Gjennomstrek"
 
 #: src/Composer/ComposerWidget.vala:183
-#, fuzzy
 msgid "Quote text"
-msgstr "Siter tekst (Ctrl+])"
+msgstr "Siter tekst"
 
 #: src/Composer/ComposerWidget.vala:186
-#, fuzzy
 msgid "Unquote text"
-msgstr "Ikke siter tekst (Ctrl+[)"
+msgstr "Ikke siter tekst"
 
 #: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
@@ -143,9 +135,8 @@ msgid "Insert Image"
 msgstr "Sett inn bilde"
 
 #: src/Composer/ComposerWidget.vala:201
-#, fuzzy
 msgid "Remove formatting"
-msgstr "Fjern formatering (Ctrl+Space)"
+msgstr "Fjern formatering"
 
 #: src/Composer/ComposerWidget.vala:230
 msgid "Delete draft"
@@ -173,29 +164,29 @@ msgid "---------- Forwarded message ----------"
 msgstr "---------- Videresendt melding ----------"
 
 #: src/Composer/ComposerWidget.vala:385
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "Fra: %s\n"
+msgstr "Fra: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:386
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "Emne: %s\n"
+msgstr "Emne: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:387
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Dato: %s\n"
+msgstr "Dato: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:388
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "Til: %s\n"
+msgstr "Til: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:390
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "Kopier: %s\n"
+msgstr "Kopi: %sz</br>"
 
 #: src/Composer/ComposerWindow.vala:25
 msgid "New Message"
@@ -210,14 +201,12 @@ msgid "https://example.com"
 msgstr "https://eksempel.no"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
-#, fuzzy
 msgid "Link Text:"
-msgstr "_Rik Tekst"
+msgstr "Lenketekst"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
-#, fuzzy
 msgid "Example Website"
-msgstr "Nettsted"
+msgstr "Eksempelnettside"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
 #: src/Dialogs/OpenAttachmentDialog.vala:65
@@ -247,9 +236,8 @@ msgid "Refresh folder"
 msgstr "Gjenoppfrisk mappe"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "Ingen samtaler valgt."
+msgstr "Ingen melding valgt"
 
 #: src/MessageList/MessageListItem.vala:76
 msgid "From:"
@@ -284,9 +272,8 @@ msgid "Unknown"
 msgstr "Ukjent"
 
 #: src/MessageList/AttachmentButton.vala:113
-#, fuzzy
 msgid "Save"
-msgstr "_Lagre"
+msgstr "Lagre"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "Utkast | Drafts | Draft"
