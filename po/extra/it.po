@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"POT-Creation-Date: 2019-06-26 22:43+0200\n"
 "PO-Revision-Date: 2019-01-27 00:01+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/mail/extra/it/"
@@ -73,6 +73,14 @@ msgstr ""
 "Funziona con Gmail, Yahoo! Mail, Outlook.com (in maniera ancora "
 "sperimentale) e altri popolari server IMAP"
 
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Minor bug fixes"
+msgstr "Correzione di bug minori"
+
+#: data/io.elementary.mail.appdata.xml.in:30
+msgid "Translation updates"
+msgstr "Aggiornamento delle traduzioni"
+
 #: data/io.elementary.mail.appdata.xml.in:69
 #, fuzzy
 msgid "elementary, Inc."
@@ -96,12 +104,6 @@ msgstr "Componi un messaggio"
 
 #~ msgid "Lightweight mail client"
 #~ msgstr "Un leggero client di posta elettronica"
-
-#~ msgid "Minor bug fixes"
-#~ msgstr "Correzione di bug minori"
-
-#~ msgid "Translation updates"
-#~ msgstr "Aggiornamento delle traduzioni"
 
 #~ msgid "Appstream: add releases info"
 #~ msgstr "Appstream: aggiunge informazioni sui rilasci"

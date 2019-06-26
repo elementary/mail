@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"POT-Creation-Date: 2019-06-26 22:43+0200\n"
 "PO-Revision-Date: 2018-12-18 06:05+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/mail/extra/"
@@ -36,8 +36,9 @@ msgid ""
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
 msgstr ""
-"\"メール\" はメールを素早く、楽々と管理できるようにデザインされています。インターフェースが会話に基づいているので、会話全体をメッセージからメッセージ"
-"へとクリックせずに読むことができます。"
+"\"メール\" はメールを素早く、楽々と管理できるようにデザインされています。イン"
+"ターフェースが会話に基づいているので、会話全体をメッセージからメッセージへと"
+"クリックせずに読むことができます。"
 
 #: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
@@ -67,7 +68,17 @@ msgstr "サーバーへ下書きを保存するインライン HTML コンポー
 msgid ""
 "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
 "IMAP servers"
-msgstr "Gmail・Yahoo! メール・Outlook.com (実験的)・その他よく利用される IMAP サーバーで動作します"
+msgstr ""
+"Gmail・Yahoo! メール・Outlook.com (実験的)・その他よく利用される IMAP サー"
+"バーで動作します"
+
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Minor bug fixes"
+msgstr "マイナーなバグ修正"
+
+#: data/io.elementary.mail.appdata.xml.in:30
+msgid "Translation updates"
+msgstr "翻訳のアップデート"
 
 #: data/io.elementary.mail.appdata.xml.in:69
 msgid "elementary, Inc."
@@ -90,12 +101,6 @@ msgstr "メッセージを作成"
 
 #~ msgid "Lightweight mail client"
 #~ msgstr "軽量なメールクライアントです"
-
-#~ msgid "Minor bug fixes"
-#~ msgstr "マイナーなバグ修正"
-
-#~ msgid "Translation updates"
-#~ msgstr "翻訳のアップデート"
 
 #~ msgid "Appstream: add releases info"
 #~ msgstr "Appstream: リリース情報を追加"

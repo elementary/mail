@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"POT-Creation-Date: 2019-06-26 22:43+0200\n"
 "PO-Revision-Date: 2017-05-06 12:36+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/mail/extra/sr/>\n"
@@ -72,6 +72,14 @@ msgstr ""
 "Ради са Г-поштом, Јаху! поштом, Аутлуком (пробно), и другим популарним ИМАП "
 "серверима"
 
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Minor bug fixes"
+msgstr "Мање исправке грешака"
+
+#: data/io.elementary.mail.appdata.xml.in:30
+msgid "Translation updates"
+msgstr "Освежења превода"
+
 #: data/io.elementary.mail.appdata.xml.in:69
 msgid "elementary, Inc."
 msgstr ""
@@ -93,12 +101,6 @@ msgstr "Саставите поруку"
 
 #~ msgid "Lightweight mail client"
 #~ msgstr "Лаган програм за пошту"
-
-#~ msgid "Minor bug fixes"
-#~ msgstr "Мање исправке грешака"
-
-#~ msgid "Translation updates"
-#~ msgstr "Освежења превода"
 
 #~ msgid "Appstream: add releases info"
 #~ msgstr "Програмски ток: додаје податке о издању"
