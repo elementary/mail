@@ -80,7 +80,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         Object (has_subject_field: true);
     }
 
-    public ComposerWidget.with_headers (string to, string? mailto_query) {
+    public ComposerWidget.with_headers (string? to, string? mailto_query) {
         Object (
             has_subject_field: true,
             to: to,
