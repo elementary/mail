@@ -68,9 +68,6 @@ public class Mail.Application : Gtk.Application {
                 }
 
                 to = Soup.URI.decode (mailto.path);
-                if (to == null || to == "") {
-                    throw new OptionError.BAD_VALUE ("mailto: URL does not specify a recipent");
-                }
                 new ComposerWindow (main_window, to, mailto.query).show_all ();
             } catch (OptionError e) {
                 warning ("Argument parsing error. %s", e.message);
