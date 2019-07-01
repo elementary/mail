@@ -126,6 +126,7 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         mark_menu.add (mark_read_item);
         mark_menu.add (mark_star_item);
         mark_menu.add (mark_unstar_item);
+        mark_menu.foreach (show_menuitem_accel_labels);
         mark_menu.show_all ();
 
         var mark_button = new Gtk.MenuButton ();
@@ -189,5 +190,20 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
             offset += spacing;
             spacing_widget.width_request = start_position - int.min (offset, start_position);
         }
+    }
+
+    private void show_menuitem_accel_labels (Gtk.Widget widget) {
+        var item = (Gtk.MenuItem) widget;
+
+        var accelerator = ((Gtk.Application) GLib.Application.get_default ()).get_accels_for_action (item.action_name);
+
+        uint accelerator_key;
+        uint[] accelerator_codes;
+        Gdk.ModifierType accelerator_mods;
+ 
+        Gtk.accelerator_parse_with_keycode (accelerator[0], out accelerator_key, out accelerator_codes, out accelerator_mods);
+
+        var label = (Gtk.AccelLabel) item.get_child ();
+        label.set_accel (accelerator_key, accelerator_mods);
     }
 }

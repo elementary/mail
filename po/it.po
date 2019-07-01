@@ -17,11 +17,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 10:33+0100\n"
+"POT-Creation-Date: 2019-06-26 22:43+0200\n"
 "PO-Revision-Date: 2019-01-27 00:01+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
-"Language-Team: Italian <https://weblate.elementary.io/projects/mail/mail/it/>"
-"\n"
+"Language-Team: Italian <https://weblate.elementary.io/projects/mail/mail/it/"
+">\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,41 +30,76 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:38
+#: src/HeaderBar.vala:39
 msgid "Compose new message"
 msgstr "Componi un nuovo messaggio"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:45
 msgid "Search Mail"
 msgstr "Cerca email"
 
-#: src/HeaderBar.vala:56
+#: src/HeaderBar.vala:57
 msgid "Always Show Remote Images"
 msgstr "Mostra sempre immagini remote"
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
 msgstr "Impostazioni dell'account…"
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:85
 msgid "Menu"
 msgstr "Menu"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:91
 msgid "Reply"
 msgstr "Rispondi"
 
-#: src/HeaderBar.vala:97
+#: src/HeaderBar.vala:98
 msgid "Reply All"
 msgstr "Rispondi a tutti"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:105
 msgid "Forward"
 msgstr "Inoltra"
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:108
+msgid "Mark as Unread"
+msgstr "Segna come non letto"
+
+#: src/HeaderBar.vala:112
+msgid "Mark as Read"
+msgstr "Segna come letto"
+
+#: src/HeaderBar.vala:116
+#, fuzzy
+msgid "Star"
+msgstr "_Speciale"
+
+#: src/HeaderBar.vala:120
+#, fuzzy
+msgid "Unstar"
+msgstr "_Non speciale"
+
+#: src/HeaderBar.vala:135
+#, fuzzy
+msgid "Mark Conversation"
+msgstr "Segna la conversazione"
+
+#: src/HeaderBar.vala:141
 msgid "Move conversations to Trash"
 msgstr "Sposta le conversazioni nel cestino"
+
+#: src/MainWindow.vala:251
+#, fuzzy
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "Nessuna conversazione selezionata"
+msgstr[1] "Nessuna conversazione selezionata"
+
+#: src/MainWindow.vala:252
+#, fuzzy
+msgid "Undo"
+msgstr "_Annulla"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -79,119 +114,159 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Account online…"
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:96 src/MessageList/MessageListItem.vala:76
+msgid "From:"
+msgstr "Da:"
+
+#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr "A:"
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:116 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "Oggetto:"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:123
 msgid "Cc"
 msgstr "Cc"
 
-#: src/Composer/ComposerWidget.vala:87
+#: src/Composer/ComposerWidget.vala:125
 msgid "Bcc"
 msgstr "Ccn"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:135
+#: src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:151
 msgid "Bcc:"
 msgstr "Ccn:"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:191
 msgid "Bold"
 msgstr "Grassetto"
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
 msgstr "Corsivo"
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:203
 msgid "Underline"
 msgstr "Sottolineato"
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:209
 msgid "Strikethrough"
 msgstr "Barrato"
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:222
 msgid "Quote text"
 msgstr "Cita testo"
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:225
 msgid "Unquote text"
 msgstr "Rimuovi citazione al testo"
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
 msgstr "Inserisci collegamento"
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:237
 msgid "Insert Image"
 msgstr "Inserisci immagine"
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:240
 msgid "Remove formatting"
 msgstr "Rimuovi formattazione"
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:268
 msgid "Delete draft"
 msgstr "Elimina bozza"
 
-#: src/Composer/ComposerWidget.vala:234
+#: src/Composer/ComposerWidget.vala:272
 msgid "Attach file"
 msgstr "Allega file"
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:278
 msgid "Send"
 msgstr "Invia"
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:427
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a %-e %b %Y alle %-k:%M"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:457
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Il giorno %1$s, %2$s ha scritto:"
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:461
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Messaggio inoltrato ----------"
 
-#: src/Composer/ComposerWidget.vala:385
+#: src/Composer/ComposerWidget.vala:463
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Da: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:386
+#: src/Composer/ComposerWidget.vala:464
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Oggetto: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:387
+#: src/Composer/ComposerWidget.vala:465
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Data: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:388
+#: src/Composer/ComposerWidget.vala:466
 #, c-format
 msgid "To: %s<br/>"
 msgstr "A: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:390
+#: src/Composer/ComposerWidget.vala:468
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
-#: src/Composer/ComposerWindow.vala:25
+#: src/Composer/ComposerWidget.vala:503
+#, fuzzy
+msgid "Send Message With an Empty Subject?"
+msgstr "Inviare il messaggio senza un oggetto?"
+
+#: src/Composer/ComposerWidget.vala:504
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:510
+msgid "Don't Send"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:512
+#, fuzzy
+msgid "Send Anyway"
+msgstr "Apri comunque"
+
+#: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Nuovo messaggio"
+
+#: src/ConversationList/ConversationListItem.vala:94
+#, fuzzy
+msgid "Unread"
+msgstr "%d non letto"
+
+#: src/ConversationList/ConversationListItem.vala:104
+#, fuzzy
+msgid "Replied"
+msgstr "Rispondi"
+
+#: src/ConversationList/ConversationListItem.vala:108
+#, fuzzy
+msgid "Forwarded"
+msgstr "Inoltra"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 #, fuzzy
@@ -212,17 +287,16 @@ msgid "Example Website"
 msgstr "Sito web d'esempio"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
+#: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Annulla"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
 msgstr "Sei sicuro di voler aprire %s?"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -230,7 +304,7 @@ msgstr ""
 "Gli allegati possono causare danni al sistema in caso di apertura. Apri solo "
 "i file provenienti da fonti attendibili."
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr "Apri comunque"
 
@@ -242,23 +316,29 @@ msgstr "Ricarica cartella"
 msgid "No Message Selected"
 msgstr "Nessuna conversazione selezionata"
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "Da:"
+#: src/MessageList/MessageListItem.vala:156
+#: src/MessageList/MessageListItem.vala:276
+msgid "Unstar message"
+msgstr "Togli stella dal messaggio"
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:159
+#: src/MessageList/MessageListItem.vala:272
+msgid "Star message"
+msgstr "Marca il messaggio con una stella"
+
+#: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
 msgstr "Mostra immagini"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
 msgstr "Mostra sempre dal mittente"
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
 msgstr "Questo messaggio contiene immagini remote."
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
 msgstr "Questo messaggio contiene uno o più allegati"
 
@@ -434,11 +514,6 @@ msgstr "Salva"
 #~ msgid "Mark as not S_pam"
 #~ msgstr "Segna come non i_ndesiderata"
 
-#~ msgid "Mark conversation"
-#~ msgid_plural "Mark conversations"
-#~ msgstr[0] "Segna la conversazione"
-#~ msgstr[1] "Segna le conversazioni"
-
 #~ msgid "Mark conversations"
 #~ msgstr "Segna le conversazioni"
 
@@ -478,12 +553,6 @@ msgstr "Salva"
 
 #~ msgid "Mark as _Unread"
 #~ msgstr "Segna come _non letto"
-
-#~ msgid "_Star"
-#~ msgstr "_Speciale"
-
-#~ msgid "U_nstar"
-#~ msgstr "_Non speciale"
 
 #~ msgid "Add label"
 #~ msgstr "Aggiungi etichetta"
@@ -1041,11 +1110,6 @@ msgstr "Salva"
 #~ msgstr[0] "%d messaggio"
 #~ msgstr[1] "%d messaggi"
 
-#~ msgid "%d unread"
-#~ msgid_plural "%d unread"
-#~ msgstr[0] "%d non letto"
-#~ msgstr[1] "%d non letti"
-
 #~ msgid "%s, %s"
 #~ msgstr "%s, %s"
 
@@ -1177,9 +1241,6 @@ msgstr "Salva"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "Inviare il messaggio senza l'oggetto e il testo?"
-
-#~ msgid "Send message with an empty subject?"
-#~ msgstr "Inviare il messaggio senza un oggetto?"
 
 #~ msgid "Send message with an empty body?"
 #~ msgstr "Inviare il messaggio senza il testo?"
@@ -1382,9 +1443,6 @@ msgstr "Salva"
 
 #~ msgid "Please wait while Geary validates your account."
 #~ msgstr "Per favore attendi mentre il tuo account viene convalidato."
-
-#~ msgid "_Undo"
-#~ msgstr "_Annulla"
 
 #~ msgid "_Redo"
 #~ msgstr "_Ripeti"
@@ -1802,12 +1860,6 @@ msgstr "Salva"
 #~ msgid "Reply to All"
 #~ msgstr "Rispondi a tutti"
 
-#~ msgid "Mark as Unread"
-#~ msgstr "Segna come non letto"
-
-#~ msgid "Mark as Read"
-#~ msgstr "Segna come letto"
-
 #~ msgid "Print…"
 #~ msgstr "Stampa…"
 
@@ -1833,12 +1885,6 @@ msgstr "Salva"
 
 #~ msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 #~ msgstr "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
-
-#~ msgid "Star message"
-#~ msgstr "Marca il messaggio con una stella"
-
-#~ msgid "Unstar message"
-#~ msgstr "Togli stella dal messaggio"
 
 #~ msgid "More"
 #~ msgstr "Altro"
