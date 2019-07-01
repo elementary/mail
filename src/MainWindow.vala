@@ -40,7 +40,9 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     public const string ACTION_REPLY_ALL = "reply-all";
     public const string ACTION_FORWARD = "forward";
     public const string ACTION_MARK_READ = "mark-read";
+    public const string ACTION_MARK_STAR = "mark-star";
     public const string ACTION_MARK_UNREAD = "mark-unread";
+    public const string ACTION_MARK_UNSTAR = "mark-unstar";
     public const string ACTION_MOVE_TO_TRASH = "trash";
     public const string ACTION_FULLSCREEN = "full-screen";
 
@@ -52,7 +54,9 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         {ACTION_REPLY_ALL,          on_reply_all         },
         {ACTION_FORWARD,            on_forward           },
         {ACTION_MARK_READ,          on_mark_read         },
+        {ACTION_MARK_STAR,          on_mark_star         },
         {ACTION_MARK_UNREAD,        on_mark_unread       },
+        {ACTION_MARK_UNSTAR,        on_mark_unstar       },
         {ACTION_MOVE_TO_TRASH,      on_move_to_trash     },
         {ACTION_FULLSCREEN,         on_fullscreen        },
     };
@@ -72,7 +76,9 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         action_accelerators[ACTION_REPLY_ALL] = "<Control><Shift>R";
         action_accelerators[ACTION_FORWARD] = "<Ctrl><Shift>F";
         action_accelerators[ACTION_MARK_READ] = "<Ctrl><Shift>i";
+        action_accelerators[ACTION_MARK_STAR] = "<Ctrl>l";
         action_accelerators[ACTION_MARK_UNREAD] = "<Ctrl><Shift>u";
+        action_accelerators[ACTION_MARK_UNSTAR] = "<Ctrl><Shift>l";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "Delete";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "BackSpace";
         action_accelerators[ACTION_FULLSCREEN] = "F11";
@@ -206,8 +212,16 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         conversation_list_box.mark_read_selected_messages ();
     }
 
+    private void on_mark_star () {
+        conversation_list_box.mark_star_selected_messages ();
+    }
+
     private void on_mark_unread () {
         conversation_list_box.mark_unread_selected_messages ();
+    }
+
+    private void on_mark_unstar () {
+        conversation_list_box.mark_unstar_selected_messages ();
     }
 
     private void on_reply () {

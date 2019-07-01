@@ -113,9 +113,20 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         mark_read_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ;
         mark_read_item.bind_property ("sensitive", mark_read_item, "visible");
 
+        var mark_star_item = new Gtk.MenuItem.with_label (_("Star"));
+        mark_star_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR;
+        mark_star_item.bind_property ("sensitive", mark_star_item, "visible");
+
+        var mark_unstar_item = new Gtk.MenuItem.with_label (_("Unstar"));
+        mark_unstar_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR;
+        mark_unstar_item.bind_property ("sensitive", mark_unstar_item, "visible");
+
         var mark_menu = new Gtk.Menu ();
         mark_menu.add (mark_unread_item);
         mark_menu.add (mark_read_item);
+        mark_menu.add (mark_star_item);
+        mark_menu.add (mark_unstar_item);
+        mark_menu.foreach (show_menuitem_accel_labels);
         mark_menu.show_all ();
 
         var mark_button = new Gtk.MenuButton ();
@@ -179,5 +190,20 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
             offset += spacing;
             spacing_widget.width_request = start_position - int.min (offset, start_position);
         }
+    }
+
+    private void show_menuitem_accel_labels (Gtk.Widget widget) {
+        var item = (Gtk.MenuItem) widget;
+
+        var accelerator = ((Gtk.Application) GLib.Application.get_default ()).get_accels_for_action (item.action_name);
+
+        uint accelerator_key;
+        uint[] accelerator_codes;
+        Gdk.ModifierType accelerator_mods;
+ 
+        Gtk.accelerator_parse_with_keycode (accelerator[0], out accelerator_key, out accelerator_codes, out accelerator_mods);
+
+        var label = (Gtk.AccelLabel) item.get_child ();
+        label.set_accel (accelerator_key, accelerator_mods);
     }
 }

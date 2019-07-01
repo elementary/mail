@@ -19,18 +19,19 @@
  */
 
 public class Mail.ComposerWindow : Gtk.ApplicationWindow {
-    public ComposerWindow (Gtk.Window parent) {
+    public string? mailto_query { get; construct; }
+    public string? to { get; construct; }
+
+    public ComposerWindow (Gtk.Window parent, string? to = null, string? mailto_query = null) {
         Object (
-            height_request: 600,
-            title: _("New Message"),
             transient_for: parent,
-            width_request: 680,
-            window_position: Gtk.WindowPosition.CENTER_ON_PARENT
+            mailto_query: mailto_query,
+            to: to
         );
     }
 
     construct {
-        var composer_widget = new ComposerWidget.with_subject ();
+        var composer_widget = new ComposerWidget.with_headers (to, mailto_query);
         composer_widget.discarded.connect (() => {
             close ();
         });
@@ -42,6 +43,10 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         content_grid.orientation = Gtk.Orientation.VERTICAL;
         content_grid.add (composer_widget);
 
+        height_request = 600;
+        width_request = 680;
+        window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
+        title = _("New Message");
         get_style_context ().add_class ("rounded");
         add (content_grid);
     }
