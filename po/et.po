@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 10:33+0100\n"
+"POT-Creation-Date: 2019-06-26 22:43+0200\n"
 "PO-Revision-Date: 2017-02-02 09:29+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/geary/language/"
@@ -23,44 +23,80 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 "X-Generator: Launchpad (build 18330)\n"
 
-#: src/HeaderBar.vala:38
+#: src/HeaderBar.vala:39
 #, fuzzy
 msgid "Compose new message"
 msgstr "%d uus kiri"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:45
 msgid "Search Mail"
 msgstr "Otsi kirjadest..."
 
-#: src/HeaderBar.vala:56
+#: src/HeaderBar.vala:57
 msgid "Always Show Remote Images"
 msgstr ""
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:85
 msgid "Menu"
 msgstr ""
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:91
 msgid "Reply"
 msgstr ""
 
-#: src/HeaderBar.vala:97
+#: src/HeaderBar.vala:98
 #, fuzzy
 msgid "Reply All"
 msgstr "Vasta _kõigile..."
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:105
 msgid "Forward"
 msgstr ""
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:108
+#, fuzzy
+msgid "Mark as Unread"
+msgstr "_Lugemata"
+
+#: src/HeaderBar.vala:112
+#, fuzzy
+msgid "Mark as Read"
+msgstr "_Loetud"
+
+#: src/HeaderBar.vala:116
+#, fuzzy
+msgid "Star"
+msgstr "_Lemmik"
+
+#: src/HeaderBar.vala:120
+#, fuzzy
+msgid "Unstar"
+msgstr "Eemalda _lemmikutest"
+
+#: src/HeaderBar.vala:135
+#, fuzzy
+msgid "Mark Conversation"
+msgstr "Märgi kui..."
+
+#: src/HeaderBar.vala:141
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Liiguta asukohta..."
+
+#: src/MainWindow.vala:251
+#, fuzzy
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "Kirjad puuduvad"
+msgstr[1] "Kirjad puuduvad"
+
+#: src/MainWindow.vala:252
+msgid "Undo"
+msgstr ""
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -75,121 +111,158 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Kontod"
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:96 src/MessageList/MessageListItem.vala:76
+msgid "From:"
+msgstr "Saatja:"
+
+#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr "Saaja:"
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:116 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "Teema:"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:123
 #, fuzzy
 msgid "Cc"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:87
+#: src/Composer/ComposerWidget.vala:125
 #, fuzzy
 msgid "Bcc"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:135
+#: src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:151
 msgid "Bcc:"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:191
 msgid "Bold"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:203
 msgid "Underline"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:209
 msgid "Strikethrough"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:222
 msgid "Quote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:225
 msgid "Unquote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:237
 msgid "Insert Image"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:240
 msgid "Remove formatting"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:268
 msgid "Delete draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:234
+#: src/Composer/ComposerWidget.vala:272
 msgid "Attach file"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:278
 msgid "Send"
 msgstr "Saada"
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:427
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%A, %e. %B, %Y - %-H:%M"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:457
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:461
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Edasisuunatud kiri ----------"
 
-#: src/Composer/ComposerWidget.vala:385
+#: src/Composer/ComposerWidget.vala:463
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "Kellelt: %s\n"
 
-#: src/Composer/ComposerWidget.vala:386
+#: src/Composer/ComposerWidget.vala:464
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "Teema: %s\n"
 
-#: src/Composer/ComposerWidget.vala:387
+#: src/Composer/ComposerWidget.vala:465
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "Kuupäev: %s\n"
 
-#: src/Composer/ComposerWidget.vala:388
+#: src/Composer/ComposerWidget.vala:466
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "Saaja: %s\n"
 
-#: src/Composer/ComposerWidget.vala:390
+#: src/Composer/ComposerWidget.vala:468
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr ""
 
-#: src/Composer/ComposerWindow.vala:25
+#: src/Composer/ComposerWidget.vala:503
+msgid "Send Message With an Empty Subject?"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:504
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:510
+msgid "Don't Send"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:512
+msgid "Send Anyway"
+msgstr ""
+
+#: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Uus kiri"
+
+#: src/ConversationList/ConversationListItem.vala:94
+msgid "Unread"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:104
+#, fuzzy
+msgid "Replied"
+msgstr "_Asenda"
+
+#: src/ConversationList/ConversationListItem.vala:108
+#, fuzzy
+msgid "Forwarded"
+msgstr "_Suuna edasi..."
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -208,23 +281,22 @@ msgid "Example Website"
 msgstr ""
 
 #: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
+#: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr ""
 
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
 msgstr ""
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr ""
 
@@ -237,23 +309,30 @@ msgstr ""
 msgid "No Message Selected"
 msgstr "Kirjad puuduvad"
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "Saatja:"
+#: src/MessageList/MessageListItem.vala:156
+#: src/MessageList/MessageListItem.vala:276
+msgid "Unstar message"
+msgstr ""
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:159
+#: src/MessageList/MessageListItem.vala:272
+#, fuzzy
+msgid "Star message"
+msgstr "Uus kiri"
+
+#: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
 msgstr ""
 
@@ -363,9 +442,6 @@ msgstr "_Salvesta"
 #~ msgid "_Archive"
 #~ msgstr "_Arhiveeri"
 
-#~ msgid "Mark conversations"
-#~ msgstr "Märgi kui..."
-
 #~ msgid "Add label to conversations"
 #~ msgstr "Sildista kui..."
 
@@ -387,12 +463,6 @@ msgstr "_Salvesta"
 #~ msgid "_Mark as..."
 #~ msgstr "_Märgi kui..."
 
-#~ msgid "_Star"
-#~ msgstr "_Lemmik"
-
-#~ msgid "U_nstar"
-#~ msgstr "Eemalda _lemmikutest"
-
 #~ msgid "_Label"
 #~ msgstr "_Silt"
 
@@ -401,9 +471,6 @@ msgstr "_Salvesta"
 
 #~ msgid "_Reply"
 #~ msgstr "_Vasta..."
-
-#~ msgid "_Forward"
-#~ msgstr "_Suuna edasi..."
 
 #~ msgid "Your settings are insecure"
 #~ msgstr "Sinu eelistused on ebaturvalised"
@@ -459,9 +526,6 @@ msgstr "_Salvesta"
 #~ msgstr ""
 #~ "Sellenimeline fail on asukohas \"%s\" juba olemas. Selle asendamine "
 #~ "kirjutab selle sisu üle."
-
-#~ msgid "_Replace"
-#~ msgstr "_Asenda"
 
 #~ msgid "Output debugging information"
 #~ msgstr "Väljundi vigade analüüsimise teave"
@@ -641,12 +705,6 @@ msgstr "_Salvesta"
 #~ msgid_plural "Save All A_ttachments..."
 #~ msgstr[0] "Save A_ttachment..."
 #~ msgstr[1] "Save All A_ttachments..."
-
-#~ msgid "_Mark as Read"
-#~ msgstr "_Loetud"
-
-#~ msgid "_Mark as Unread"
-#~ msgstr "_Lugemata"
 
 #~ msgid "_View Source"
 #~ msgstr "_Vaata allikat..."

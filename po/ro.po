@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 10:33+0100\n"
+"POT-Creation-Date: 2019-06-26 22:43+0200\n"
 "PO-Revision-Date: 2017-01-21 10:51+0000\n"
 "Last-Translator: Marius Albina <marius.albina@gmail.com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
@@ -25,45 +25,81 @@ msgstr ""
 "X-Generator: Launchpad (build 18330)\n"
 "X-Project-Style: gnome\n"
 
-#: src/HeaderBar.vala:38
+#: src/HeaderBar.vala:39
 #, fuzzy
 msgid "Compose new message"
 msgstr "Compune mesaj nou"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:45
 msgid "Search Mail"
 msgstr "Caută mesaj"
 
-#: src/HeaderBar.vala:56
+#: src/HeaderBar.vala:57
 #, fuzzy
 msgid "Always Show Remote Images"
 msgstr "Arată întotdeauna imaginile la distanţă:"
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:85
 msgid "Menu"
 msgstr "Meniu"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:91
 msgid "Reply"
 msgstr "Răspunde"
 
-#: src/HeaderBar.vala:97
+#: src/HeaderBar.vala:98
 #, fuzzy
 msgid "Reply All"
 msgstr "Răspund_e tuturor"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:105
 msgid "Forward"
 msgstr "Redirecţionează"
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:108
+msgid "Mark as Unread"
+msgstr "Marchează ca necitit"
+
+#: src/HeaderBar.vala:112
+msgid "Mark as Read"
+msgstr "Marchează ca citit"
+
+#: src/HeaderBar.vala:116
+#, fuzzy
+msgid "Star"
+msgstr "Marchează cu o _stea"
+
+#: src/HeaderBar.vala:120
+#, fuzzy
+msgid "Unstar"
+msgstr "Eliminați _steaua"
+
+#: src/HeaderBar.vala:135
+#, fuzzy
+msgid "Mark Conversation"
+msgstr "Marchează conversaţia"
+
+#: src/HeaderBar.vala:141
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Mută conversațiile"
+
+#: src/MainWindow.vala:251
+#, fuzzy
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "Nici o conversație selectată."
+msgstr[1] "Nici o conversație selectată."
+msgstr[2] "Nici o conversație selectată."
+
+#: src/MainWindow.vala:252
+#, fuzzy
+msgid "Undo"
+msgstr "_Anulează"
 
 #: src/WelcomeView.vala:40
 #, fuzzy
@@ -79,126 +115,166 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Conturi"
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:96 src/MessageList/MessageListItem.vala:76
+msgid "From:"
+msgstr "De la:"
+
+#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr "Către:"
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:116 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "Subiect:"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:123
 #, fuzzy
 msgid "Cc"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:87
+#: src/Composer/ComposerWidget.vala:125
 #, fuzzy
 msgid "Bcc"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:135
+#: src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:151
 msgid "Bcc:"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:191
 msgid "Bold"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:203
 #, fuzzy
 msgid "Underline"
 msgstr "Subliniat (Ctrl+U)"
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:209
 #, fuzzy
 msgid "Strikethrough"
 msgstr "Tăiat (Ctrl+K)"
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:222
 #, fuzzy
 msgid "Quote text"
 msgstr "Citează text (Ctrl+])"
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:225
 #, fuzzy
 msgid "Unquote text"
 msgstr "Anulează citarea textului (Ctrl+[)"
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:237
 msgid "Insert Image"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:240
 #, fuzzy
 msgid "Remove formatting"
 msgstr "Înlătură formatarea (Ctrl+Space)"
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:268
 msgid "Delete draft"
 msgstr "Șterge schiţa"
 
-#: src/Composer/ComposerWidget.vala:234
+#: src/Composer/ComposerWidget.vala:272
 msgid "Attach file"
 msgstr "Ataşează fişier"
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:278
 msgid "Send"
 msgstr "Trimite"
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:427
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e %b %Y la %-l:%M %p"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:457
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "La %1$s, %2$s a scris:"
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:461
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Mesaj înaintat ----------"
 
-#: src/Composer/ComposerWidget.vala:385
+#: src/Composer/ComposerWidget.vala:463
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "De la: %s\n"
 
-#: src/Composer/ComposerWidget.vala:386
+#: src/Composer/ComposerWidget.vala:464
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "Subiect: %s\n"
 
-#: src/Composer/ComposerWidget.vala:387
+#: src/Composer/ComposerWidget.vala:465
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "Data: %s\n"
 
-#: src/Composer/ComposerWidget.vala:388
+#: src/Composer/ComposerWidget.vala:466
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "Către: %s\n"
 
-#: src/Composer/ComposerWidget.vala:390
+#: src/Composer/ComposerWidget.vala:468
 #, fuzzy, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s\n"
 
-#: src/Composer/ComposerWindow.vala:25
+#: src/Composer/ComposerWidget.vala:503
+#, fuzzy
+msgid "Send Message With an Empty Subject?"
+msgstr "Trimiteți mesajul fără subiect?"
+
+#: src/Composer/ComposerWidget.vala:504
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:510
+msgid "Don't Send"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:512
+#, fuzzy
+msgid "Send Anyway"
+msgstr "Deschide oricum"
+
+#: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Mesaj nou"
+
+#: src/ConversationList/ConversationListItem.vala:94
+#, fuzzy
+msgid "Unread"
+msgstr "%d necitit"
+
+#: src/ConversationList/ConversationListItem.vala:104
+#, fuzzy
+msgid "Replied"
+msgstr "Răspunde"
+
+#: src/ConversationList/ConversationListItem.vala:108
+#, fuzzy
+msgid "Forwarded"
+msgstr "Redirecţionează"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -219,17 +295,16 @@ msgid "Example Website"
 msgstr "Pagină web"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
+#: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Anulează"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
 msgstr "Sigur vrei să deschizi  %s?"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -237,7 +312,7 @@ msgstr ""
 "Atașamentele pot cauza probleme sistemului dacă sunt deschise. Deschide doar "
 "fișierele din surse sigure."
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr "Deschide oricum"
 
@@ -250,23 +325,29 @@ msgstr ""
 msgid "No Message Selected"
 msgstr "Nici o conversație selectată."
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "De la:"
+#: src/MessageList/MessageListItem.vala:156
+#: src/MessageList/MessageListItem.vala:276
+msgid "Unstar message"
+msgstr "Mesaj fără stea"
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:159
+#: src/MessageList/MessageListItem.vala:272
+msgid "Star message"
+msgstr "Mesaj cu stea"
+
+#: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
 msgstr "Arată imagini"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
 msgstr "Arată întotdeauna de la expeditor"
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
 msgstr "Acest mesaj conține imagini de pe un alt server."
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
 msgstr "Acest mesaj conține unul sau mai multe ataşamente"
 
@@ -442,12 +523,6 @@ msgstr "_Salvează"
 #~ msgid "Mark as not S_pam"
 #~ msgstr "Marchează ca non-s_pam"
 
-#~ msgid "Mark conversation"
-#~ msgid_plural "Mark conversations"
-#~ msgstr[0] "Marchează conversaţia"
-#~ msgstr[1] "Marchează conversaţiile"
-#~ msgstr[2] "Marchează conversaţia"
-
 #~ msgid "Mark conversations"
 #~ msgstr "Marchează conversațiile"
 
@@ -489,12 +564,6 @@ msgstr "_Salvează"
 
 #~ msgid "Mark as _Unread"
 #~ msgstr "Marchează ca _necitit"
-
-#~ msgid "_Star"
-#~ msgstr "Marchează cu o _stea"
-
-#~ msgid "U_nstar"
-#~ msgstr "Eliminați _steaua"
 
 #~ msgid "Add label"
 #~ msgstr "Adaugă etichetă"
@@ -1056,12 +1125,6 @@ msgstr "_Salvează"
 #~ msgstr[1] "%d mesaje"
 #~ msgstr[2] "%d de mesaje"
 
-#~ msgid "%d unread"
-#~ msgid_plural "%d unread"
-#~ msgstr[0] "%d necitit"
-#~ msgstr[1] "%d necitite"
-#~ msgstr[2] "%d necitite"
-
 #~ msgid "%s, %s"
 #~ msgstr "%s, %s"
 
@@ -1195,9 +1258,6 @@ msgstr "_Salvează"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "Trimiteți mesajul fără subiect și conținut?"
-
-#~ msgid "Send message with an empty subject?"
-#~ msgstr "Trimiteți mesajul fără subiect?"
 
 #~ msgid "Send message with an empty body?"
 #~ msgstr "Trimiteți mesajul fără conținut?"
@@ -1402,9 +1462,6 @@ msgstr "_Salvează"
 
 #~ msgid "Please wait while Geary validates your account."
 #~ msgstr "Aşteaptă validarea contului."
-
-#~ msgid "_Undo"
-#~ msgstr "_Anulează"
 
 #~ msgid "_Redo"
 #~ msgstr "_Refă"
@@ -1819,12 +1876,6 @@ msgstr "_Salvează"
 #~ msgid "Reply to All"
 #~ msgstr "Răspunde tuturor"
 
-#~ msgid "Mark as Unread"
-#~ msgstr "Marchează ca necitit"
-
-#~ msgid "Mark as Read"
-#~ msgstr "Marchează ca citit"
-
 #~ msgid "Print…"
 #~ msgstr "Tipărește…"
 
@@ -1851,12 +1902,6 @@ msgstr "_Salvează"
 
 #~ msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 #~ msgstr "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
-
-#~ msgid "Star message"
-#~ msgstr "Mesaj cu stea"
-
-#~ msgid "Unstar message"
-#~ msgstr "Mesaj fără stea"
 
 #~ msgid "More"
 #~ msgstr "Mai mult(e)"

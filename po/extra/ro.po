@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"POT-Creation-Date: 2019-06-26 22:43+0200\n"
 "PO-Revision-Date: 2017-01-19 13:36+0000\n"
 "Last-Translator: Marius Albina <marius.albina@gmail.com>\n"
 "Language-Team: Romanian <ro@li.org>\n"
@@ -69,6 +69,14 @@ msgid ""
 msgstr ""
 "Funcţioneaza cu Gmail, Yahoo! Mail, Outlook.com (experimental) şi alte "
 "servere populare IMAP"
+
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Minor bug fixes"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:30
+msgid "Translation updates"
+msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:69
 msgid "elementary, Inc."
