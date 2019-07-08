@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2019-07-03 03:46+0000\n"
+"PO-Revision-Date: 2019-07-09 20:28+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/mail/mail/eo/>"
 "\n"
@@ -25,9 +25,8 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:38
-#, fuzzy
 msgid "Compose new message"
-msgstr "%d nova mesaĝo"
+msgstr "Redakti novan mesaĝon"
 
 #: src/HeaderBar.vala:44
 msgid "Search Mail"
@@ -58,9 +57,8 @@ msgid "Forward"
 msgstr ""
 
 #: src/HeaderBar.vala:111
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "Neniu konversacio elektita."
+msgstr "Rubujigi la konversaciojn"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -83,14 +81,12 @@ msgid "Subject:"
 msgstr "Temo:"
 
 #: src/Composer/ComposerWidget.vala:85
-#, fuzzy
 msgid "Cc"
-msgstr "Kopio:"
+msgstr "Kopie al"
 
 #: src/Composer/ComposerWidget.vala:87
-#, fuzzy
 msgid "Bcc"
-msgstr "Kaŝkopio:"
+msgstr "Kaŝkopie al"
 
 #: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
@@ -162,24 +158,24 @@ msgid "---------- Forwarded message ----------"
 msgstr "---------- Plusendita mesaĝo ----------"
 
 #: src/Composer/ComposerWidget.vala:385
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "El: %s\n"
+msgstr "El: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:386
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "Temo:"
+msgstr "Temo: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:387
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Dato: %s\n"
+msgstr "Dato: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:388
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "Al: %s\n"
+msgstr "Al: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:390
 #, c-format
@@ -232,9 +228,8 @@ msgid "Refresh folder"
 msgstr ""
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "Neniu konversacio elektita."
+msgstr "Neniu mesaĝo elektita"
 
 #: src/MessageList/MessageListItem.vala:76
 msgid "From:"
