@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 10:33+0100\n"
+"POT-Creation-Date: 2019-06-26 22:43+0200\n"
 "PO-Revision-Date: 2019-01-15 13:01+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
@@ -27,41 +27,75 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:54+0000\n"
 
-#: src/HeaderBar.vala:38
+#: src/HeaderBar.vala:39
 msgid "Compose new message"
 msgstr "撰写新邮件"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:45
 msgid "Search Mail"
 msgstr "搜索邮件"
 
-#: src/HeaderBar.vala:56
+#: src/HeaderBar.vala:57
 msgid "Always Show Remote Images"
 msgstr "总是显示远程图片"
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
 msgstr "账户设置…"
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:85
 msgid "Menu"
 msgstr "菜单"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:91
 msgid "Reply"
 msgstr "回复"
 
-#: src/HeaderBar.vala:97
+#: src/HeaderBar.vala:98
 msgid "Reply All"
 msgstr "回复全部"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:105
 msgid "Forward"
 msgstr "转发"
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:108
+msgid "Mark as Unread"
+msgstr "标为未读"
+
+#: src/HeaderBar.vala:112
+msgid "Mark as Read"
+msgstr "标为已读"
+
+#: src/HeaderBar.vala:116
+#, fuzzy
+msgid "Star"
+msgstr "添加星标"
+
+#: src/HeaderBar.vala:120
+#, fuzzy
+msgid "Unstar"
+msgstr "取消星标"
+
+#: src/HeaderBar.vala:135
+#, fuzzy
+msgid "Mark Conversation"
+msgstr "标记会话"
+
+#: src/HeaderBar.vala:141
 msgid "Move conversations to Trash"
 msgstr "移动会话至回收站"
+
+#: src/MainWindow.vala:251
+#, fuzzy
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "未选中任何消息"
+
+#: src/MainWindow.vala:252
+#, fuzzy
+msgid "Undo"
+msgstr "撤消"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -75,119 +109,159 @@ msgstr "邮件应用使用系统设置中配置的邮箱账户。"
 msgid "Online Accounts…"
 msgstr "在线账户…"
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:96 src/MessageList/MessageListItem.vala:76
+msgid "From:"
+msgstr "发件人："
+
+#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr "收件人："
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:116 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "主题："
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:123
 msgid "Cc"
 msgstr "抄送"
 
-#: src/Composer/ComposerWidget.vala:87
+#: src/Composer/ComposerWidget.vala:125
 msgid "Bcc"
 msgstr "密送"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:135
+#: src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr "抄送："
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:151
 msgid "Bcc:"
 msgstr "密送："
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:191
 msgid "Bold"
 msgstr "粗体"
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
 msgstr "斜体"
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:203
 msgid "Underline"
 msgstr "下划线"
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:209
 msgid "Strikethrough"
 msgstr "删除线"
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:222
 msgid "Quote text"
 msgstr "引用文本"
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:225
 msgid "Unquote text"
 msgstr "取消引用"
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
 msgstr "插入链接"
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:237
 msgid "Insert Image"
 msgstr "插入图像"
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:240
 msgid "Remove formatting"
 msgstr "删除格式"
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:268
 msgid "Delete draft"
 msgstr "删除草稿"
 
-#: src/Composer/ComposerWidget.vala:234
+#: src/Composer/ComposerWidget.vala:272
 msgid "Attach file"
 msgstr "添加附件"
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:278
 msgid "Send"
 msgstr "发送"
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:427
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%Y年%b%e日，%p %-l:%M"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:457
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "在 %1$s 中，%2$s 写道："
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:461
 msgid "---------- Forwarded message ----------"
 msgstr "---------- 转发邮件 ----------"
 
-#: src/Composer/ComposerWidget.vala:385
+#: src/Composer/ComposerWidget.vala:463
 #, c-format
 msgid "From: %s<br/>"
 msgstr "发件人： %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:386
+#: src/Composer/ComposerWidget.vala:464
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "主题：%s<br/>"
 
-#: src/Composer/ComposerWidget.vala:387
+#: src/Composer/ComposerWidget.vala:465
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "日期：%s<br/>"
 
-#: src/Composer/ComposerWidget.vala:388
+#: src/Composer/ComposerWidget.vala:466
 #, c-format
 msgid "To: %s<br/>"
 msgstr "收件人： %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:390
+#: src/Composer/ComposerWidget.vala:468
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "抄送：%s<br/>"
 
-#: src/Composer/ComposerWindow.vala:25
+#: src/Composer/ComposerWidget.vala:503
+#, fuzzy
+msgid "Send Message With an Empty Subject?"
+msgstr "确认发送无主题的邮件吗？"
+
+#: src/Composer/ComposerWidget.vala:504
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:510
+msgid "Don't Send"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:512
+#, fuzzy
+msgid "Send Anyway"
+msgstr "仍然打开"
+
+#: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "新邮件"
+
+#: src/ConversationList/ConversationListItem.vala:94
+#, fuzzy
+msgid "Unread"
+msgstr "%d 封未读"
+
+#: src/ConversationList/ConversationListItem.vala:104
+#, fuzzy
+msgid "Replied"
+msgstr "回复"
+
+#: src/ConversationList/ConversationListItem.vala:108
+#, fuzzy
+msgid "Forwarded"
+msgstr "转发"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -206,23 +280,22 @@ msgid "Example Website"
 msgstr "网站示例"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
+#: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "取消"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
 msgstr "您确定要打开 “%s”？"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr "打开的附件可能会破坏您的系统。请只打开来自可信任源的文件。"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr "仍然打开"
 
@@ -234,23 +307,29 @@ msgstr "更新文件夹"
 msgid "No Message Selected"
 msgstr "未选中任何消息"
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "发件人："
+#: src/MessageList/MessageListItem.vala:156
+#: src/MessageList/MessageListItem.vala:276
+msgid "Unstar message"
+msgstr "取消星标"
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:159
+#: src/MessageList/MessageListItem.vala:272
+msgid "Star message"
+msgstr "添加星标"
+
+#: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
 msgstr "显示图片"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
 msgstr "总是在收件箱中显示"
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
 msgstr "该邮件包含远程图像。"
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
 msgstr "此邮件包含至少一个附件"
 
@@ -418,10 +497,6 @@ msgstr "保存"
 #~ msgid "Mark as not S_pam"
 #~ msgstr "取消标记为垃圾邮件"
 
-#~ msgid "Mark conversation"
-#~ msgid_plural "Mark conversations"
-#~ msgstr[0] "标记会话"
-
 #~ msgid "Mark conversations"
 #~ msgstr "添加标签"
 
@@ -459,12 +534,6 @@ msgstr "保存"
 
 #~ msgid "Mark as _Unread"
 #~ msgstr "标记为未读"
-
-#~ msgid "_Star"
-#~ msgstr "添加星标"
-
-#~ msgid "U_nstar"
-#~ msgstr "取消星标"
 
 #~ msgid "Add label"
 #~ msgstr "添加标签"
@@ -985,10 +1054,6 @@ msgstr "保存"
 #~ msgid_plural "%d messages"
 #~ msgstr[0] "%d 条邮件"
 
-#~ msgid "%d unread"
-#~ msgid_plural "%d unread"
-#~ msgstr[0] "%d 封未读"
-
 #~ msgid "%s, %s"
 #~ msgstr "%s，%s"
 
@@ -1111,9 +1176,6 @@ msgstr "保存"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "确认发送无主题无正文的邮件吗？"
-
-#~ msgid "Send message with an empty subject?"
-#~ msgstr "确认发送无主题的邮件吗？"
 
 #~ msgid "Send message with an empty body?"
 #~ msgstr "确认发送无正文的邮件吗？"
@@ -1310,9 +1372,6 @@ msgstr "保存"
 
 #~ msgid "Please wait while Geary validates your account."
 #~ msgstr "请稍等，Geary 正在验证您的账户。"
-
-#~ msgid "_Undo"
-#~ msgstr "撤消"
 
 #~ msgid "_Redo"
 #~ msgstr "恢复"
@@ -1713,12 +1772,6 @@ msgstr "保存"
 #~ msgid "Reply to All"
 #~ msgstr "全部回复"
 
-#~ msgid "Mark as Unread"
-#~ msgstr "标为未读"
-
-#~ msgid "Mark as Read"
-#~ msgstr "标为已读"
-
 #~ msgid "Print…"
 #~ msgstr "打印…"
 
@@ -1743,12 +1796,6 @@ msgstr "保存"
 
 #~ msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 #~ msgstr "请勿回复;请勿回复;请勿回复;请勿回复;请勿回复;请勿回复"
-
-#~ msgid "Star message"
-#~ msgstr "添加星标"
-
-#~ msgid "Unstar message"
-#~ msgstr "取消星标"
 
 #~ msgid "More"
 #~ msgstr "更多"
