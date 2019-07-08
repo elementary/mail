@@ -18,16 +18,15 @@ msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-01-27 00:01+0000\n"
+"PO-Revision-Date: 2019-07-03 03:46+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
-"Language-Team: Italian <https://weblate.elementary.io/projects/mail/mail/it/"
-">\n"
+"Language-Team: Italian <https://l10n.elementary.io/projects/mail/mail/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:39
@@ -269,7 +268,6 @@ msgid "Forwarded"
 msgstr "Inoltra"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
-#, fuzzy
 msgid "URL:"
 msgstr "URL:"
 
@@ -278,9 +276,8 @@ msgid "https://example.com"
 msgstr "https://esempio.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
-#, fuzzy
 msgid "Link Text:"
-msgstr "Testo _formattato"
+msgstr "Testo del link:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
