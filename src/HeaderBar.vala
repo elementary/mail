@@ -108,22 +108,22 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         var mark_unread_item = new Gtk.MenuItem ();
         mark_unread_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD;
         mark_unread_item.bind_property ("sensitive", mark_unread_item, "visible");
-        mark_unread_item.add (new AccelMenuLabel (_("Mark as Unread"), mark_unread_item.action_name));
+        mark_unread_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Unread"), mark_unread_item.action_name));
 
         var mark_read_item = new Gtk.MenuItem ();
         mark_read_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ;
         mark_read_item.bind_property ("sensitive", mark_read_item, "visible");
-        mark_read_item.add (new AccelMenuLabel (_("Mark as Read"), mark_read_item.action_name));
+        mark_read_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Read"), mark_read_item.action_name));
 
         var mark_star_item = new Gtk.MenuItem ();
         mark_star_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR;
         mark_star_item.bind_property ("sensitive", mark_star_item, "visible");
-        mark_star_item.add (new AccelMenuLabel (_("Star"), mark_star_item.action_name));
+        mark_star_item.add (new Granite.AccelLabel.from_action_name (_("Star"), mark_star_item.action_name));
 
         var mark_unstar_item = new Gtk.MenuItem ();
         mark_unstar_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR;
         mark_unstar_item.bind_property ("sensitive", mark_unstar_item, "visible");
-        mark_unstar_item.add (new AccelMenuLabel (_("Unstar"), mark_unstar_item.action_name));
+        mark_unstar_item.add (new Granite.AccelLabel.from_action_name (_("Unstar"), mark_unstar_item.action_name));
 
         var mark_menu = new Gtk.Menu ();
         mark_menu.add (mark_unread_item);
@@ -192,35 +192,6 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
 
             offset += spacing;
             spacing_widget.width_request = start_position - int.min (offset, start_position);
-        }
-    }
-
-    private class AccelMenuLabel : Gtk.Grid {
-        public string action_name { get; construct; }
-        public string label { get; construct; }
-
-        public AccelMenuLabel (string label, string action_name) {
-            Object (
-                label: label,
-                action_name: action_name
-            );
-        }
-
-        construct {
-            var label = new Gtk.Label (label);
-            label.hexpand = true;
-            label.xalign = 0;
-
-            var accel_label = new Gtk.Label (
-                Granite.accel_to_string (
-                    ((Gtk.Application) GLib.Application.get_default ()).get_accels_for_action (action_name)[0]
-                )
-            );
-            accel_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ACCELERATOR);
-
-            column_spacing = 3;
-            add (label);
-            add (accel_label);
         }
     }
 }
