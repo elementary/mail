@@ -56,7 +56,6 @@ msgstr "Respondi al ĉiuj"
 msgid "Forward"
 msgstr "Plusendi"
 
-<<<<<<< HEAD
 #: src/HeaderBar.vala:108
 msgid "Mark as Unread"
 msgstr ""
@@ -80,10 +79,6 @@ msgid "Mark Conversation"
 msgstr ""
 
 #: src/HeaderBar.vala:141
-#, fuzzy
-=======
-#: src/HeaderBar.vala:111
->>>>>>> weblate/master
 msgid "Move conversations to Trash"
 msgstr "Rubujigi la konversaciojn"
 
@@ -122,21 +117,11 @@ msgstr "Al:"
 msgid "Subject:"
 msgstr "Temo:"
 
-<<<<<<< HEAD
 #: src/Composer/ComposerWidget.vala:123
-#, fuzzy
-=======
-#: src/Composer/ComposerWidget.vala:85
->>>>>>> weblate/master
 msgid "Cc"
 msgstr "Kopie al"
 
-<<<<<<< HEAD
 #: src/Composer/ComposerWidget.vala:125
-#, fuzzy
-=======
-#: src/Composer/ComposerWidget.vala:87
->>>>>>> weblate/master
 msgid "Bcc"
 msgstr "Kaŝkopie al"
 
@@ -210,43 +195,23 @@ msgstr "Je %1$s,%2$s skribis:"
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Plusendita mesaĝo ----------"
 
-<<<<<<< HEAD
 #: src/Composer/ComposerWidget.vala:463
-#, fuzzy, c-format
-=======
-#: src/Composer/ComposerWidget.vala:385
 #, c-format
->>>>>>> weblate/master
 msgid "From: %s<br/>"
 msgstr "El: %s<br/>"
 
-<<<<<<< HEAD
 #: src/Composer/ComposerWidget.vala:464
-#, fuzzy, c-format
-=======
-#: src/Composer/ComposerWidget.vala:386
 #, c-format
->>>>>>> weblate/master
 msgid "Subject: %s<br/>"
 msgstr "Temo: %s<br/>"
 
-<<<<<<< HEAD
 #: src/Composer/ComposerWidget.vala:465
-#, fuzzy, c-format
-=======
-#: src/Composer/ComposerWidget.vala:387
 #, c-format
->>>>>>> weblate/master
 msgid "Date: %s<br/>"
 msgstr "Dato: %s<br/>"
 
-<<<<<<< HEAD
 #: src/Composer/ComposerWidget.vala:466
-#, fuzzy, c-format
-=======
-#: src/Composer/ComposerWidget.vala:388
 #, c-format
->>>>>>> weblate/master
 msgid "To: %s<br/>"
 msgstr "Al: %s<br/>"
 
