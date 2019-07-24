@@ -22,16 +22,15 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-01-14 00:02+0000\n"
+"PO-Revision-Date: 2019-08-27 22:23+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
-"Language-Team: French <https://weblate.elementary.io/projects/mail/mail/fr/"
-">\n"
+"Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:39
@@ -75,17 +74,14 @@ msgid "Mark as Read"
 msgstr "Marquer comme lu"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
-msgstr "Ma_rquer d'une étoile"
+msgstr "Marquer d'une étoile"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
-msgstr "_Supprimer l'étoile"
+msgstr "Supprimer l'étoile"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
 msgstr "Marquer la conversation"
 
@@ -94,16 +90,14 @@ msgid "Move conversations to Trash"
 msgstr "Déplacer les conversations dans la corbeille"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Aucun message sélectionné"
-msgstr[1] "Aucun message sélectionné"
+msgstr[0] "Message supprimé"
+msgstr[1] "Messages supprimés"
 
 #: src/MainWindow.vala:252
-#, fuzzy
 msgid "Undo"
-msgstr "Ann_uler"
+msgstr "Annuler"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -234,7 +228,6 @@ msgid "Cc: %s<br/>"
 msgstr "Cc : %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
 msgstr "Envoyer le message avec un objet vide ?"
 
@@ -243,34 +236,32 @@ msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"Le champ objet de ce message est vide. Le destinataire pourrait ne pas être "
+"en mesure de connaître l'importance de celui-ci."
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "Ne pas envoyer"
 
 #: src/Composer/ComposerWidget.vala:512
-#, fuzzy
 msgid "Send Anyway"
-msgstr "Ouvrir quand même"
+msgstr "Envoyer quand même"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Nouveau message"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#, fuzzy
 msgid "Unread"
-msgstr "%d non lu"
+msgstr "Non lu"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "Répondre"
+msgstr "Répondu"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "Transférer"
+msgstr "Transféré"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
