@@ -67,7 +67,7 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
         // preserved if libcamel is ever updated to address this issue.
         var masked_flag = folderinfo.flags & Camel.FOLDER_TYPE_MASK;
         var lowercase_full_name = full_name.down ();
-        
+
         if (masked_flag == Camel.FolderInfoFlags.TYPE_INBOX ||
         lowercase_full_name.contains ("inbox")) {
             icon = new ThemedIcon ("mail-inbox");
@@ -82,7 +82,8 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
             can_modify = false;
             badge = null;
         } else if (masked_flag == Camel.FolderInfoFlags.TYPE_JUNK ||
-        lowercase_full_name.contains ("junk")) {
+        lowercase_full_name.contains ("junk") ||
+        lowercase_full_name.contains ("spam")) {
             icon = new ThemedIcon ("edit-flag");
             can_modify = false;
         } else if (masked_flag == Camel.FolderInfoFlags.TYPE_SENT ||
