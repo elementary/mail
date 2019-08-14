@@ -61,41 +61,46 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
             badge = "%d".printf (folderinfo.unread);
         }
 
-        switch (folderinfo.flags & Camel.FOLDER_TYPE_MASK) {
-            case Camel.FolderInfoFlags.TYPE_INBOX:
-                icon = new ThemedIcon ("mail-inbox");
-                can_modify = false;
-                break;
-            case Camel.FolderInfoFlags.TYPE_OUTBOX:
-                icon = new ThemedIcon ("mail-outbox");
-                can_modify = false;
-                break;
-            case Camel.FolderInfoFlags.TYPE_TRASH:
-                icon = new ThemedIcon (folderinfo.total == 0 ? "user-trash" : "user-trash-full");
-                can_modify = false;
-                badge = null;
-                break;
-            case Camel.FolderInfoFlags.TYPE_JUNK:
-                icon = new ThemedIcon ("edit-flag");
-                can_modify = false;
-                break;
-            case Camel.FolderInfoFlags.TYPE_SENT:
-                icon = new ThemedIcon ("mail-sent");
-                can_modify = false;
-                break;
-            case Camel.FolderInfoFlags.TYPE_ARCHIVE:
-                icon = new ThemedIcon ("mail-archive");
-                can_modify = false;
-                badge = null;
-                break;
-            case Camel.FolderInfoFlags.TYPE_DRAFTS:
-                icon = new ThemedIcon ("folder-documents");
-                can_modify = false;
-                break;
-            default:
-                icon = new ThemedIcon ("folder");
-                can_modify = true;
-                break;
+        
+        // Camel.FolderInfo.Flags does not return expected values for multiple types of mail folders
+        // after being processed by bitwise AND the Camel.FOLDER_TYPE_MASK. Original comparisons are
+        // preserved if libcamel is ever updated to address this issue.
+        var masked_flag = folderinfo.flags & Camel.FOLDER_TYPE_MASK;
+        var lowercase_full_name = full_name.down ();
+        
+        if (masked_flag == Camel.FolderInfoFlags.TYPE_INBOX ||
+        lowercase_full_name.contains ("inbox")) {
+            icon = new ThemedIcon ("mail-inbox");
+            can_modify = false; 
+        } else if (masked_flag == Camel.FolderInfoFlags.TYPE_OUTBOX ||
+        lowercase_full_name.contains ("outbox")) {
+            icon = new ThemedIcon ("mail-outbox");
+            can_modify = false;
+        } else if (masked_flag == Camel.FolderInfoFlags.TYPE_TRASH ||
+        lowercase_full_name.contains ("trash")) {
+            icon = new ThemedIcon (folderinfo.total == 0 ? "user-trash" : "user-trash-full");
+            can_modify = false;
+            badge = null;
+        } else if (masked_flag == Camel.FolderInfoFlags.TYPE_JUNK ||
+        lowercase_full_name.contains ("junk")) {
+            icon = new ThemedIcon ("edit-flag");
+            can_modify = false;
+        } else if (masked_flag == Camel.FolderInfoFlags.TYPE_SENT ||
+        lowercase_full_name.contains ("sent")) {
+            icon = new ThemedIcon ("mail-sent");
+            can_modify = false;
+        } else if (masked_flag == Camel.FolderInfoFlags.TYPE_ARCHIVE ||
+        lowercase_full_name.contains ("archive")) {
+            icon = new ThemedIcon ("mail-archive");
+            can_modify = false;
+            badge = null;
+        } else if (masked_flag == Camel.FolderInfoFlags.TYPE_DRAFTS ||
+        lowercase_full_name.contains ("draft")) {
+            icon = new ThemedIcon ("folder-documents");
+            can_modify = false;
+        } else {
+            icon = new ThemedIcon ("folder");
+            can_modify = true;
         }
     }
 }
