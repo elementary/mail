@@ -62,9 +62,8 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
         }
 
         
-        // Camel.FolderInfo.Flags does not return expected values for multiple types of mail folders
-        // after being processed by bitwise AND the Camel.FOLDER_TYPE_MASK. Original comparisons are
-        // preserved if libcamel is ever updated to address this issue.
+        // (Camel.FolderInfo.Flags & Camel.FOLDER_TYPE_MASK) does not return expected values for multiple types of folders.
+        // Original comparisons are preserved if/when this bug is fixed in libcamel.
         var masked_flag = folderinfo.flags & Camel.FOLDER_TYPE_MASK;
         var lowercase_full_name = full_name.down ();
 
