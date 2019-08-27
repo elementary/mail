@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-04-23 11:31+0000\n"
+"PO-Revision-Date: 2019-08-27 22:23+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
 "Language: tr\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-POOTLE-MTIME: 1423290848.000000\n"
 
@@ -70,35 +70,30 @@ msgid "Mark as Read"
 msgstr "Okunmuş olarak İşaretle"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
-msgstr "_Yıldızla"
+msgstr "Yıldızla"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
-msgstr "Y_ıldızı Kaldır"
+msgstr "Yıldızı Kaldır"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
-msgstr "Konuşmayı işaretle"
+msgstr "Konuşmayı İşaretle"
 
 #: src/HeaderBar.vala:141
 msgid "Move conversations to Trash"
 msgstr "Konuşmaları Çöpe Taşı"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Hiçbir İleti Seçilmedi"
-msgstr[1] "Hiçbir İleti Seçilmedi"
+msgstr[0] "İleti Silindi"
+msgstr[1] "İletiler Silindi"
 
 #: src/MainWindow.vala:252
-#, fuzzy
 msgid "Undo"
-msgstr "_Geri Al"
+msgstr "Geri Al"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
