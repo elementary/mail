@@ -17,19 +17,18 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2017-04-24 21:52+0000\n"
-"Last-Translator: febrezo <felixbrezo@gmail.com>\n"
+"PO-Revision-Date: 2019-09-09 11:23+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/mail/mail/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: src/HeaderBar.vala:39
-#, fuzzy
 msgid "Compose new message"
 msgstr "Redactar un mensaje nuevo"
 
@@ -38,13 +37,12 @@ msgid "Search Mail"
 msgstr "Buscar correo"
 
 #: src/HeaderBar.vala:57
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "Mostrar siempre imágenes remotas:"
+msgstr "Mostrar siempre imágenes remotas"
 
 #: src/HeaderBar.vala:65
 msgid "Account Settings…"
-msgstr ""
+msgstr "Configuración de cuenta…"
 
 #: src/HeaderBar.vala:85
 msgid "Menu"
@@ -55,9 +53,8 @@ msgid "Reply"
 msgstr "Responder"
 
 #: src/HeaderBar.vala:98
-#, fuzzy
 msgid "Reply All"
-msgstr "R_esponder a todos"
+msgstr "Responder a todos"
 
 #: src/HeaderBar.vala:105
 msgid "Forward"
@@ -72,50 +69,42 @@ msgid "Mark as Read"
 msgstr "Marcar como leído"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
-msgstr "_Destacar"
+msgstr "Destacar"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
-msgstr "_No destacar"
+msgstr "No destacar"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
 msgstr "Marcar conversación"
 
 #: src/HeaderBar.vala:141
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "Mover conversaciones"
+msgstr "Enviar conversaciones a la papelera"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "No hay ninguna conversación seleccionada."
-msgstr[1] "No hay ninguna conversación seleccionada."
+msgstr[0] "Mensaje eliminado"
+msgstr[1] "Mensajes eliminados"
 
 #: src/MainWindow.vala:252
-#, fuzzy
 msgid "Undo"
-msgstr "_Deshacer"
+msgstr "Deshacer"
 
 #: src/WelcomeView.vala:40
-#, fuzzy
 msgid "Connect an Account"
-msgstr "Eliminar cuenta"
+msgstr "Conectar una cuenta"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
-msgstr ""
+msgstr "Correo utiliza las cuentas definidas en Configuración del sistema."
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "Cuentas"
+msgstr "Cuentas en línea…"
 
 #: src/Composer/ComposerWidget.vala:96 src/MessageList/MessageListItem.vala:76
 msgid "From:"
@@ -130,14 +119,12 @@ msgid "Subject:"
 msgstr "Asunto:"
 
 #: src/Composer/ComposerWidget.vala:123
-#, fuzzy
 msgid "Cc"
-msgstr "Cc:"
+msgstr "Cc"
 
 #: src/Composer/ComposerWidget.vala:125
-#, fuzzy
 msgid "Bcc"
-msgstr "Cco:"
+msgstr "Cco"
 
 #: src/Composer/ComposerWidget.vala:135
 #: src/MessageList/MessageListItem.vala:115
@@ -150,44 +137,39 @@ msgstr "Cco:"
 
 #: src/Composer/ComposerWidget.vala:191
 msgid "Bold"
-msgstr ""
+msgstr "Negrita"
 
 #: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
-msgstr ""
+msgstr "Itálica"
 
 #: src/Composer/ComposerWidget.vala:203
-#, fuzzy
 msgid "Underline"
-msgstr "Subrayado (Ctrl+U)"
+msgstr "Subrayado"
 
 #: src/Composer/ComposerWidget.vala:209
-#, fuzzy
 msgid "Strikethrough"
-msgstr "Tachado (Ctrl+K)"
+msgstr "Tachado"
 
 #: src/Composer/ComposerWidget.vala:222
-#, fuzzy
 msgid "Quote text"
-msgstr "Citar texto (Ctrl+])"
+msgstr "Citar texto"
 
 #: src/Composer/ComposerWidget.vala:225
-#, fuzzy
 msgid "Unquote text"
-msgstr "Dejar de citar texto (Ctrl+[)"
+msgstr "Dejar de citar texto"
 
 #: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
-msgstr ""
+msgstr "Insertar enlace"
 
 #: src/Composer/ComposerWidget.vala:237
 msgid "Insert Image"
-msgstr ""
+msgstr "Insertar imagen"
 
 #: src/Composer/ComposerWidget.vala:240
-#, fuzzy
 msgid "Remove formatting"
-msgstr "Eliminar formato (Ctrl+Barra espaciadora)"
+msgstr "Quitar formato"
 
 #: src/Composer/ComposerWidget.vala:268
 msgid "Delete draft"
@@ -215,32 +197,31 @@ msgid "---------- Forwarded message ----------"
 msgstr "---------- Mensaje reenviado ----------"
 
 #: src/Composer/ComposerWidget.vala:463
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "De: %s\n"
+msgstr "De: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:464
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "Asunto: %s\n"
+msgstr "Asunto: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:465
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Fecha: %s\n"
+msgstr "Fecha: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:466
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "Para: %s\n"
+msgstr "Para: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:468
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "Cc: %s\n"
+msgstr "Cc: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
 msgstr "¿Quiere enviar el mensaje sin asunto?"
 
@@ -249,52 +230,48 @@ msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"El campo de asunto del mensaje está vacío. El destinatario podría no inferir "
+"el ámbito o la importancia del mensaje."
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "No enviar"
 
 #: src/Composer/ComposerWidget.vala:512
-#, fuzzy
 msgid "Send Anyway"
-msgstr "Abrir de todos modos"
+msgstr "Enviar de todos modos"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Mensaje nuevo"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#, fuzzy
 msgid "Unread"
-msgstr "%d sin leer"
+msgstr "Sin leer"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "Responder"
+msgstr "Respondido"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "Reenviar"
+msgstr "Reenviado"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://ejemplo.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
-#, fuzzy
 msgid "Link Text:"
-msgstr "Texto en_riquecido"
+msgstr "Texto de enlace:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
-#, fuzzy
 msgid "Example Website"
-msgstr "Sitio web"
+msgstr "Sitio web de ejemplo"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
 #: src/MessageList/AttachmentButton.vala:114
@@ -320,12 +297,11 @@ msgstr "Abrir de todos modos"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
-msgstr ""
+msgstr "Actualizar carpeta"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "No hay ninguna conversación seleccionada."
+msgstr "No se seleccionó ningún mensaje"
 
 #: src/MessageList/MessageListItem.vala:156
 #: src/MessageList/MessageListItem.vala:276
@@ -363,12 +339,11 @@ msgstr "Guardar como…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "Desconocido"
 
 #: src/MessageList/AttachmentButton.vala:113
-#, fuzzy
 msgid "Save"
-msgstr "_Guardar"
+msgstr "Guardar"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "Borradores | Borrador | Drafts | Draft"
