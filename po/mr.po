@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-09-20 18:23+0000\n"
+"PO-Revision-Date: 2019-09-22 17:23+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/mail/mail/mr/>\n"
 "Language: mr\n"
@@ -69,15 +69,14 @@ msgid "Move conversations to Trash"
 msgstr "संभाषणांना कचरापेटीत हलवा"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "कोणताही संदेश निवडलेला नाही"
-msgstr[1] "कोणताही संदेश निवडलेला नाही"
+msgstr[0] "संदेश हटविला"
+msgstr[1] "संदेश हटवले"
 
 #: src/MainWindow.vala:252
 msgid "Undo"
-msgstr ""
+msgstr "पूर्ववत करा"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -208,22 +207,23 @@ msgstr "सीसी: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
 msgid "Send Message With an Empty Subject?"
-msgstr ""
+msgstr "रिक्त विषयासह संदेश पाठवायचा?"
 
 #: src/Composer/ComposerWidget.vala:504
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"या संदेशामध्ये विषय फील्ड रिक्त आहे. त्यामुळे प्राप्तकर्त्यास संदेशाची "
+"व्याप्ती किंवा महत्त्व सांगण्यात सक्षम नाही."
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "पाठवू नका"
 
 #: src/Composer/ComposerWidget.vala:512
-#, fuzzy
 msgid "Send Anyway"
-msgstr "तरीही उघडा"
+msgstr "तरीही पाठवा"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
@@ -231,17 +231,15 @@ msgstr "नवीन संदेश"
 
 #: src/ConversationList/ConversationListItem.vala:94
 msgid "Unread"
-msgstr ""
+msgstr "न वाचलेले"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "उत्तर द्या"
+msgstr "प्रत्युत्तर दिले"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "पुढे पाठवा"
+msgstr "पुढे पाठविले (अग्रेषित)"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -292,13 +290,12 @@ msgstr "कोणताही संदेश निवडलेला नाह
 #: src/MessageList/MessageListItem.vala:156
 #: src/MessageList/MessageListItem.vala:276
 msgid "Unstar message"
-msgstr ""
+msgstr "संदेश अतारांकित करा"
 
 #: src/MessageList/MessageListItem.vala:159
 #: src/MessageList/MessageListItem.vala:272
-#, fuzzy
 msgid "Star message"
-msgstr "नवीन संदेश"
+msgstr "संदेश तारांकित करा"
 
 #: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
