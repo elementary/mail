@@ -131,6 +131,5 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         } catch (Error e) {
             critical (e.message);
         }
-        
     }
 }

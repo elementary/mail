@@ -57,20 +57,16 @@ public class Mail.ComposerWidget : Gtk.Grid {
         FORWARD
     }
 
-    public const ActionEntry[] action_entries = {
-        {ACTION_BOLD,           on_edit_action,    "s",    "''"     },
-        {ACTION_ITALIC,         on_edit_action,    "s",    "''"     },
-        {ACTION_UNDERLINE,      on_edit_action,    "s",    "''"     },
-        {ACTION_STRIKETHROUGH,  on_edit_action,    "s",    "''"     },
-        {ACTION_INSERT_LINK,    on_insert_link_clicked,             },
-        {ACTION_REMOVE_FORMAT,  on_remove_format                    },
-        {ACTION_DISCARD,        on_discard                          },
-        {ACTION_SEND,           on_send                             }
+    public const ActionEntry[] ACTION_ENTRIES = {
+        {ACTION_BOLD, on_edit_action, "s", "''" },
+        {ACTION_ITALIC, on_edit_action, "s", "''" },
+        {ACTION_UNDERLINE, on_edit_action, "s", "''" },
+        {ACTION_STRIKETHROUGH, on_edit_action, "s", "''" },
+        {ACTION_INSERT_LINK, on_insert_link_clicked, },
+        {ACTION_REMOVE_FORMAT, on_remove_format },
+        {ACTION_DISCARD, on_discard },
+        {ACTION_SEND, on_send }
     };
-
-    public ComposerWidget () {
-        
-    }
 
     public ComposerWidget.inline () {
         Object (can_change_sender: false);
@@ -90,7 +86,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
     construct {
         actions = new SimpleActionGroup ();
-        actions.add_action_entries (action_entries, this);
+        actions.add_action_entries (ACTION_ENTRIES, this);
         insert_action_group (ACTION_GROUP_PREFIX, actions);
 
         var from_label = new Gtk.Label (_("From:"));
@@ -286,7 +282,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         action_bar.pack_start (attach);
         action_bar.pack_end (send);
 
-        var view_overlay = new Gtk.Overlay();
+        var view_overlay = new Gtk.Overlay ();
         view_overlay.add (web_view);
         message_url_overlay = new Granite.Widgets.OverlayBar (view_overlay);
         message_url_overlay.no_show_all = true;
@@ -424,7 +420,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     public void quote_content (Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content_to_quote) {
         if (content_to_quote != null) {
             string message_content = "<br/><br/>";
-            string DATE_FORMAT = _("%a, %b %-e, %Y at %-l:%M %p");
+            string date_format = _("%a, %b %-e, %Y at %-l:%M %p");
             if (type == Type.REPLY || type == Type.REPLY_ALL) {
                 var reply_to = message.get_reply_to ();
                 if (reply_to != null) {
@@ -452,7 +448,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
                     }
                 }
 
-                string when = new DateTime.from_unix_utc (info.date_received).format (DATE_FORMAT);
+                string when = new DateTime.from_unix_utc (info.date_received).format (date_format);
                 string who = Utils.escape_html_tags (message.get_from ().format ());
                 message_content += _("On %1$s, %2$s wrote:").printf (when, who);
                 message_content += "<br/>";
@@ -462,7 +458,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 message_content += "<br/><br/>";
                 message_content += _("From: %s<br/>").printf (Utils.escape_html_tags (message.get_from ().format ()));
                 message_content += _("Subject: %s<br/>").printf (Utils.escape_html_tags (info.subject));
-                message_content += _("Date: %s<br/>").printf (new DateTime.from_unix_utc (info.date_received).format (DATE_FORMAT));
+                message_content += _("Date: %s<br/>").printf (new DateTime.from_unix_utc (info.date_received).format (date_format));
                 message_content += _("To: %s<br/>").printf (Utils.escape_html_tags (info.to));
                 if (info.cc != null && info.cc != "") {
                     message_content += _("Cc: %s<br/>").printf (Utils.escape_html_tags (info.cc));
@@ -474,7 +470,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
             web_view.set_body_content (message_content);
         }
     }
-    
+
     private void on_edit_action (SimpleAction action, Variant? param) {
         var command = param.get_string ();
         web_view.execute_editor_command (command);

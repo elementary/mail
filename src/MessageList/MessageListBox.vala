@@ -22,7 +22,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
     public signal void hovering_over_link (string? label, string? uri);
     public bool can_reply { get; set; default = false; }
     public bool can_move_thread { get; set; default = false; }
-    public GenericArray<string> uids { get; private set; default = new GenericArray<string>(); }
+    public GenericArray<string> uids { get; private set; default = new GenericArray<string> (); }
 
     public MessageListBox () {
         Object (selection_mode: Gtk.SelectionMode.NONE);

@@ -200,7 +200,7 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         uint accelerator_key;
         uint[] accelerator_codes;
         Gdk.ModifierType accelerator_mods;
- 
+
         Gtk.accelerator_parse_with_keycode (accelerator[0], out accelerator_key, out accelerator_codes, out accelerator_mods);
 
         var label = (Gtk.AccelLabel) item.get_child ();

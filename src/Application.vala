@@ -87,7 +87,7 @@ public class Mail.Application : Gtk.Application {
             settings.get ("window-position", "(ii)", out window_x, out window_y);
             settings.get ("window-size", "(ii)", out rect.width, out rect.height);
 
-            if (window_x != -1 ||  window_y != -1) {
+            if (window_x != -1 || window_y != -1) {
                 main_window.move (window_x, window_y);
             }
 
