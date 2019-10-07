@@ -60,7 +60,6 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
         if (folderinfo.unread > 0) {
             badge = "%d".printf (folderinfo.unread);
         }
-
         
         // (Camel.FolderInfo.Flags & Camel.FOLDER_TYPE_MASK) does not return expected values for multiple types of folders.
         // Original comparisons are preserved if/when this bug is fixed in libcamel.
@@ -68,34 +67,34 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
         var lowercase_full_name = full_name.down ();
 
         if (masked_flag == Camel.FolderInfoFlags.TYPE_INBOX ||
-        lowercase_full_name.contains ("inbox")) {
+                lowercase_full_name.contains ("inbox")) {
             icon = new ThemedIcon ("mail-inbox");
             can_modify = false; 
         } else if (masked_flag == Camel.FolderInfoFlags.TYPE_OUTBOX ||
-        lowercase_full_name.contains ("outbox")) {
+                lowercase_full_name.contains ("outbox")) {
             icon = new ThemedIcon ("mail-outbox");
             can_modify = false;
         } else if (masked_flag == Camel.FolderInfoFlags.TYPE_TRASH ||
-        lowercase_full_name.contains ("trash")) {
+                lowercase_full_name.contains ("trash")) {
             icon = new ThemedIcon (folderinfo.total == 0 ? "user-trash" : "user-trash-full");
             can_modify = false;
             badge = null;
         } else if (masked_flag == Camel.FolderInfoFlags.TYPE_JUNK ||
-        lowercase_full_name.contains ("junk") ||
+                lowercase_full_name.contains ("junk") ||
         lowercase_full_name.contains ("spam")) {
             icon = new ThemedIcon ("edit-flag");
             can_modify = false;
         } else if (masked_flag == Camel.FolderInfoFlags.TYPE_SENT ||
-        lowercase_full_name.contains ("sent")) {
+                lowercase_full_name.contains ("sent")) {
             icon = new ThemedIcon ("mail-sent");
             can_modify = false;
         } else if (masked_flag == Camel.FolderInfoFlags.TYPE_ARCHIVE ||
-        lowercase_full_name.contains ("archive")) {
+                lowercase_full_name.contains ("archive")) {
             icon = new ThemedIcon ("mail-archive");
             can_modify = false;
             badge = null;
         } else if (masked_flag == Camel.FolderInfoFlags.TYPE_DRAFTS ||
-        lowercase_full_name.contains ("draft")) {
+                lowercase_full_name.contains ("draft")) {
             icon = new ThemedIcon ("folder-documents");
             can_modify = false;
         } else {
