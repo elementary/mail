@@ -125,7 +125,7 @@ public class Mail.Backend.Session : Camel.Session {
         }
 
         /* Find a matching ESource for this CamelService. */
-        var source = registry.ref_source(service.get_uid());
+        var source = registry.ref_source (service.get_uid ());
 
         result = Camel.AuthenticationResult.REJECTED;
 
@@ -193,7 +193,7 @@ public class Mail.Backend.Session : Camel.Session {
         string credential_name = null;
 
         if (source.has_extension (E.SOURCE_EXTENSION_AUTHENTICATION)) {
-            var auth_extension = (E.SourceAuthentication) source.get_extension(E.SOURCE_EXTENSION_AUTHENTICATION);
+            var auth_extension = (E.SourceAuthentication) source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
 
             credential_name = auth_extension.dup_credential_name ();
 
@@ -341,4 +341,3 @@ public class Mail.Backend.Session : Camel.Session {
         remove_service (transport);
     }
 }
-

@@ -29,10 +29,6 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
     private string selected_folder_uid;
     private string selected_folder_name;
 
-    public FoldersListView () {
-        
-    }
-
     static construct {
         settings = new GLib.Settings ("io.elementary.mail");
     }
