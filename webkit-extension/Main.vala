@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright 2017-2019 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,146 +15,52 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
+ *              Corentin Noël <corentin@elementary.io>
  */
 
-[DBus (name = "io.elementary.mail.WebViewServer")]
-public class DOMServer : Object {
-    public signal void selection_changed (uint64 page_id);
-    public signal void image_load_blocked (uint64 page_id);
-
-    private const string[] ALLOWED_SCHEMES = { "cid", "data", "about", "elementary-mail" };
-
-    private Gee.HashMap <uint64?, bool> show_images
-        = new Gee.HashMap <uint64?, bool> ((Gee.HashDataFunc)int64_hash, (Gee.EqualDataFunc)int64_equal);
-
-    private WebKit.WebExtension extension;
-
-    public DOMServer (WebKit.WebExtension extension) {
-        this.extension = extension;
-
-        Bus.own_name (BusType.SESSION, "io.elementary.mail.WebViewServer", BusNameOwnerFlags.NONE,
-            on_bus_acquired, null, () => { warning ("Could not acquire name"); });
+public class Mail.WebExtension : Object {
+    static Mail.WebExtension instance;
+    [CCode (cname = "G_MODULE_EXPORT webkit_web_extension_initialize")]
+    public static void initialize (WebKit.WebExtension extension) {
+        instance = new WebExtension (extension);
     }
 
-    private void on_bus_acquired (DBusConnection connection) {
-        try {
-            connection.register_object ("/io/elementary/mail/WebViewServer", this);
-        } catch (IOError error) {
-            warning ("Could not register webkit extension DBus object: %s", error.message);
-        }
+    public WebKit.WebExtension extension { get; construct; }
+    public WebExtension (WebKit.WebExtension extension) {
+        Object (extension: extension);
     }
 
-    public int get_page_height (uint64 page_id) throws Error {
-        var page = extension.get_page (page_id);
-        if (page != null) {
-            return (int)page.get_dom_document ().get_document_element ().get_offset_height ();
-        }
-        return 0;
+    construct {
+        extension.page_created.connect (on_page_created);
     }
 
-    public void set_image_loading_enabled (uint64 page_id, bool enabled) throws Error {
-        show_images[page_id] = enabled;
-        if (enabled) {
-            var page = extension.get_page (page_id);
-            if (page != null) {
-                var images = page.get_dom_document ().get_images ();
-                for (int i = 0; i < images.length; i++) {
-                    var image = (WebKit.DOM.HTMLImageElement)images.item (i);
-                    image.set_src (image.get_src ());
-                }
-            }
-        }
+    [CCode (instance_pos = 1.9)]
+    private Mail.WebExtensionHandler create_handler (GLib.GenericArray<JSC.Value> values) {
+        return new Mail.WebExtensionHandler ();
     }
 
-    [DBus (visible = false)]
-    public void on_page_created (WebKit.WebExtension extension, WebKit.WebPage page) {
-        page.send_request.connect (on_send_request);
-        page.get_editor ().selection_changed.connect (() => {
-            selection_changed (page.get_id ());
+    [CCode (instance_pos = 2.9)]
+    private int get_height (Mail.WebExtensionHandler handler, GLib.GenericArray<JSC.Value> values) {
+        critical ("HERE");
+        return handler.get_height ();
+    }
+
+    private void on_page_created (WebKit.WebPage web_page) {
+        JSC.Context js_context = web_page.get_main_frame ().get_js_context ();
+        js_context.push_exception_handler ((context, exception) => {
+            critical ("%s", exception.report ());
         });
-    }
-
-    private bool on_send_request (WebKit.WebPage page, WebKit.URIRequest request, WebKit.URIResponse? response) {
-        bool should_load = false;
-        Soup.URI? uri = new Soup.URI (request.get_uri ());
-        if (uri != null && uri.get_scheme () in ALLOWED_SCHEMES) {
-            // Always load internal resources
-            should_load = true;
-        } else {
-            if (show_images.has_key (page.get_id ()) && show_images [page.get_id ()]) {
-                should_load = true;
-            } else {
-                image_load_blocked (page.get_id ());
-            }
-        }
-
-        return should_load ? Gdk.EVENT_PROPAGATE : Gdk.EVENT_STOP;
-    }
-
-    public void execute_command (uint64 view, string command, string argument) throws Error {
-        var page = extension.get_page (view);
-        if (page != null) {
-            var document = page.get_dom_document ();
-            document.exec_command (command, false, argument);
-        }
-    }
-
-    public bool query_command_state (uint64 view, string command) throws Error {
-        var page = extension.get_page (view);
-        if (page != null) {
-            var document = page.get_dom_document ();
-            var state = document.query_command_state (command);
-            return state;
-        }
-        return false;
-    }
-
-    public string? get_body_html (uint64 view) throws Error {
-        string? body_html = null;
-        var page = extension.get_page (view);
-        if (page != null) {
-            try {
-                body_html = page.get_dom_document ().get_document_element ().query_selector ("body").get_inner_html ();
-            } catch (Error e) {
-                warning ("Unable to get message body content: %s", e.message);
-            }
-        }
-        return body_html;
-    }
-
-    public void set_body_html (uint64 view, string html) throws Error {
-        var page = extension.get_page (view);
-        if (page != null) {
-            try {
-                page.get_dom_document ().get_document_element ().query_selector ("#message-body").set_inner_html (html);
-            } catch (Error e) {
-                warning ("Unable to set message body content: %s", e.message);
-            }
-        }
-    }
-
-    public string get_selected_text (uint64 view) throws Error {
-        var page = extension.get_page (view);
-        WebKit.DOM.Range? selection_range;
-        try {
-            selection_range = page.get_dom_document ().default_view.get_selection ().get_range_at (0);
-        } catch (Error e) {
-            return "";
-        }
-
-        if (selection_range != null) {
-            return selection_range.text;
-        }
-
-        return "";
-    }
-}
-
-namespace WebkitWebExtension {
-    [CCode (cname = "G_MODULE_EXPORT webkit_web_extension_initialize", instance_pos = -1)]
-    public void initialize (WebKit.WebExtension extension) {
-        DOMServer server = new DOMServer (extension);
-        extension.page_created.connect (server.on_page_created);
-        server.ref ();
+        const JSC.ClassVTable vtable = {
+            (JSC.ClassGetPropertyFunction) Mail.WebExtensionHandler.class_get_property_function,
+            (JSC.ClassSetPropertyFunction) Mail.WebExtensionHandler.class_set_property_function,
+            (JSC.ClassHasPropertyFunction) Mail.WebExtensionHandler.class_has_property_function,
+            (JSC.ClassDeletePropertyFunction) Mail.WebExtensionHandler.class_delete_property_function,
+            (JSC.ClassEnumeratePropertiesFunction) Mail.WebExtensionHandler.class_enumerate_properties_function
+        };
+        unowned JSC.Class handler_class = js_context.register_class ("MailWebExtensionHandler", null, vtable, (GLib.DestroyNotify) GLib.Object.unref);
+        var constructor = handler_class.add_constructor_variadic (null, (GLib.Callback) create_handler, this, null, typeof (Mail.WebExtensionHandler));
+        js_context.set_value (handler_class.name, constructor);
+        handler_class.add_method_variadic ("getHeight", (GLib.Callback) get_height, this, null, typeof(int));
+        critical ("Page created");
     }
 }

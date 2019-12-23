@@ -74,9 +74,8 @@ public class Mail.WebView : WebKit.WebView {
 
         internal_resources = new Gee.HashMap<string, InputStream> ();
 
-        decide_policy.connect (on_decide_policy);
-
         watch_identifier = Bus.watch_name (BusType.SESSION, SERVER_BUS_NAME, BusNameWatcherFlags.NONE, on_server_appear);
+        on_ready ();
     }
 
     public WebView () {
@@ -86,11 +85,12 @@ public class Mail.WebView : WebKit.WebView {
         setts.enable_html5_database = false;
         setts.enable_html5_local_storage = false;
         setts.enable_java = false;
-        setts.enable_javascript = false;
+        setts.enable_javascript = true;
         setts.enable_media_stream = false;
         setts.enable_offline_web_application_cache = false;
         setts.enable_page_cache = false;
         setts.enable_plugins = false;
+        setts.enable_developer_extras = true;
 
         Object (settings: setts);
     }
@@ -108,7 +108,6 @@ public class Mail.WebView : WebKit.WebView {
          */
         Bus.unwatch_name (watch_identifier);
 
-        on_ready ();
     }
 
     private void on_ready () {
@@ -136,19 +135,47 @@ public class Mail.WebView : WebKit.WebView {
         }
     }
 
-    public void on_load_changed (WebKit.LoadEvent event) {
+    public override void load_changed (WebKit.LoadEvent event) {
         if (event == WebKit.LoadEvent.FINISHED || event == WebKit.LoadEvent.COMMITTED) {
-            try {
-                preferred_height = extension.get_page_height (get_page_id ());
-                queue_resize ();
-            } catch (Error e) {
-                critical (e.message);
-            }
+            run_javascript.begin ("document.documentElement.scrollHeight", null, (obj, res) => {
+                try {
+                    var r = run_javascript.end (res);
+                    var val = r.get_js_value ();
+                    if (val.is_number ()) {
+                        preferred_height = val.to_int32 ();
+                        queue_resize ();
+                    }
+
+                    unowned JSC.Exception? exception = val.get_context ().get_exception ();
+                    if (exception != null) {
+                        critical ("Failed to call: %s", exception.report ());
+                    }
+                } catch (Error e) {
+                    critical ("%s", e.message);
+                }
+            });
+
+            run_javascript.begin ("var tt = new MailWebExtensionHandler();", null, (obj, res) => {
+                try {
+                    var r = run_javascript.end (res);
+                    var val = r.get_js_value ();
+
+                    unowned JSC.Exception? exception = val.get_context ().get_exception ();
+                    if (exception != null) {
+                        critical ("Failed to call: %s", exception.report ());
+                    } else {
+                        critical (val.to_string ());
+                    }
+                } catch (Error e) {
+                    critical ("%s", e.message);
+                }
+            });
         }
 
         if (event == WebKit.LoadEvent.FINISHED) {
             on_loaded ();
             load_finished ();
+            get_inspector ().show ();
         }
     }
 
@@ -166,7 +193,6 @@ public class Mail.WebView : WebKit.WebView {
     public new void load_html (string? body) {
         if (ready) {
             base.load_html (body, INTERNAL_URL_BODY);
-            load_changed.connect (on_load_changed);
         } else {
             queued_content = body;
         }
@@ -196,21 +222,28 @@ public class Mail.WebView : WebKit.WebView {
         }
     }
 
-    private bool on_decide_policy (WebKit.WebView view, WebKit.PolicyDecision policy, WebKit.PolicyDecisionType type) {
-        if (type == WebKit.PolicyDecisionType.NAVIGATION_ACTION ||
-            type == WebKit.PolicyDecisionType.NEW_WINDOW_ACTION) {
-            var nav_policy = (WebKit.NavigationPolicyDecision) policy;
-            if (nav_policy.navigation_action.get_navigation_type () == WebKit.NavigationType.LINK_CLICKED) {
-                link_activated (nav_policy.navigation_action.get_request ().uri);
-            } else if (nav_policy.navigation_action.get_navigation_type () == WebKit.NavigationType.OTHER) {
-                if (nav_policy.navigation_action.get_request ().uri == INTERNAL_URL_BODY) {
-                    policy.use ();
-                    return Gdk.EVENT_STOP;
+    public override bool decide_policy (WebKit.PolicyDecision decision, WebKit.PolicyDecisionType type) {
+        switch (type) {
+            case WebKit.PolicyDecisionType.NAVIGATION_ACTION:
+            case WebKit.PolicyDecisionType.NEW_WINDOW_ACTION:
+                unowned WebKit.NavigationAction action = ((WebKit.NavigationPolicyDecision) decision).navigation_action;
+                var nav_type = action.get_navigation_type ();
+                switch (nav_type) {
+                    case WebKit.NavigationType.LINK_CLICKED:
+                        link_activated (action.get_request ().uri);
+                        break;
+                    case WebKit.NavigationType.OTHER:
+                        if (action.get_request ().uri == INTERNAL_URL_BODY) {
+                            decision.use ();
+                            return Gdk.EVENT_STOP;
+                        }
+
+                        break;
                 }
-            }
+            break;
         }
 
-        policy.ignore ();
+        decision.ignore ();
         return Gdk.EVENT_STOP;
     }
 

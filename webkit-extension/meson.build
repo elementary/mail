@@ -1,5 +1,6 @@
 extension_files = [
-    'Main.vala'
+    'Main.vala',
+    'Handler.vala'
 ]
 
 shared_module('io.elementary.mail-webkit-extension',
