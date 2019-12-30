@@ -17,105 +17,95 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2017-05-29 22:03+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"PO-Revision-Date: 2019-12-30 20:31+0000\n"
+"Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:39
-#, fuzzy
 msgid "Compose new message"
-msgstr "Nieuw bericht opstellen (Ctrl+N, N)"
+msgstr "Nieuw bericht opstellen"
 
 #: src/HeaderBar.vala:45
 msgid "Search Mail"
-msgstr ""
+msgstr "Mail doorzoeken"
 
 #: src/HeaderBar.vala:57
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "Laat altijd \"Van verzender\" zien"
+msgstr "Laat altijd externe afbeeldingen zien"
 
 #: src/HeaderBar.vala:65
 msgid "Account Settings…"
-msgstr ""
+msgstr "Account Instellingen…"
 
 #: src/HeaderBar.vala:85
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: src/HeaderBar.vala:91
 msgid "Reply"
-msgstr ""
+msgstr "Beantwoorden"
 
 #: src/HeaderBar.vala:98
-#, fuzzy
 msgid "Reply All"
-msgstr "_Allen beantwoorden"
+msgstr "Allen beantwoorden"
 
 #: src/HeaderBar.vala:105
 msgid "Forward"
-msgstr ""
+msgstr "Doorsturen"
 
 #: src/HeaderBar.vala:108
-#, fuzzy
 msgid "Mark as Unread"
-msgstr "Als ongelezen _markeren"
+msgstr "Als ongelezen markeren"
 
 #: src/HeaderBar.vala:112
-#, fuzzy
 msgid "Mark as Read"
-msgstr "Als gelezen _markeren"
+msgstr "Als gelezen markeren"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
-msgstr "_Ster toevoegen"
+msgstr "Ster toevoegen"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
-msgstr "Ster _verwijderen"
+msgstr "Ster verwijderen"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
-msgstr "Markeer gesprek"
+msgstr "Markeer conversatie"
 
 #: src/HeaderBar.vala:141
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "Conversaties verplaatsen"
+msgstr "Verplaats conversaties naar de prullenbak"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Geen conversaties geselecteerd."
-msgstr[1] "Geen conversaties geselecteerd."
+msgstr[0] "Bericht verwijderd"
+msgstr[1] "Berichten verwijderd"
 
 #: src/MainWindow.vala:252
 msgid "Undo"
-msgstr ""
+msgstr "Ongedaan maken"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
-msgstr ""
+msgstr "Account verbinden"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
+"Mail gebruikt email accounts die via Systeeminstellingen geconfigureerd zijn."
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "Accounts"
+msgstr "Online Accounts…"
 
 #: src/Composer/ComposerWidget.vala:96 src/MessageList/MessageListItem.vala:76
 msgid "From:"
@@ -130,14 +120,12 @@ msgid "Subject:"
 msgstr "Onderwerp:"
 
 #: src/Composer/ComposerWidget.vala:123
-#, fuzzy
 msgid "Cc"
-msgstr "Cc:"
+msgstr "Cc"
 
 #: src/Composer/ComposerWidget.vala:125
-#, fuzzy
 msgid "Bcc"
-msgstr "Bcc:"
+msgstr "Bcc"
 
 #: src/Composer/ComposerWidget.vala:135
 #: src/MessageList/MessageListItem.vala:115
@@ -150,51 +138,51 @@ msgstr "Bcc:"
 
 #: src/Composer/ComposerWidget.vala:191
 msgid "Bold"
-msgstr ""
+msgstr "Vetgedrukt"
 
 #: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
-msgstr ""
+msgstr "Cursief"
 
 #: src/Composer/ComposerWidget.vala:203
 msgid "Underline"
-msgstr ""
+msgstr "Onderstrepen"
 
 #: src/Composer/ComposerWidget.vala:209
 msgid "Strikethrough"
-msgstr ""
+msgstr "Doorhalen"
 
 #: src/Composer/ComposerWidget.vala:222
 msgid "Quote text"
-msgstr ""
+msgstr "Citeren"
 
 #: src/Composer/ComposerWidget.vala:225
 msgid "Unquote text"
-msgstr ""
+msgstr "Citeren van tekst beëindigen"
 
 #: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
-msgstr ""
+msgstr "Koppeling invoegen"
 
 #: src/Composer/ComposerWidget.vala:237
 msgid "Insert Image"
-msgstr ""
+msgstr "Afbeelding invoegen"
 
 #: src/Composer/ComposerWidget.vala:240
 msgid "Remove formatting"
-msgstr ""
+msgstr "Opmaak verwijderen"
 
 #: src/Composer/ComposerWidget.vala:268
 msgid "Delete draft"
-msgstr ""
+msgstr "Verwijder concept"
 
 #: src/Composer/ComposerWidget.vala:272
 msgid "Attach file"
-msgstr ""
+msgstr "Bijlage toevoegen"
 
 #: src/Composer/ComposerWidget.vala:278
 msgid "Send"
-msgstr ""
+msgstr "Verzenden"
 
 #: src/Composer/ComposerWidget.vala:427
 msgid "%a, %b %-e, %Y at %-l:%M %p"
@@ -210,32 +198,31 @@ msgid "---------- Forwarded message ----------"
 msgstr "---------- Doorgestuurd bericht ----------"
 
 #: src/Composer/ComposerWidget.vala:463
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "Van: %s\n"
+msgstr "Van: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:464
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "Onderwerp: %s\n"
+msgstr "Onderwerp: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:465
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Datum: %s\n"
+msgstr "Datum: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:466
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "Aan: %s\n"
+msgstr "Aan: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:468
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "Cc: %s\n"
+msgstr "Cc: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
 msgstr "Bericht zonder onderwerp verzenden?"
 
@@ -244,90 +231,88 @@ msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"Dit bericht heeft geen onderwerp. De ontvanger kan daardoor mogelijk niet de "
+"scope of de urgentie van het bericht bepalen."
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "Niet verzenden"
 
 #: src/Composer/ComposerWidget.vala:512
 msgid "Send Anyway"
-msgstr ""
+msgstr "Toch verzenden"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Nieuw bericht"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#, fuzzy
 msgid "Unread"
-msgstr "%d ongelezen"
+msgstr "Ongelezen"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "_Vervangen"
+msgstr "Beantwoord"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "_Doorsturen"
+msgstr "Doorgestuurd"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://voorbeeld.nl"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
 msgid "Link Text:"
-msgstr ""
+msgstr "Link tekst:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
-msgstr ""
+msgstr "Voorbeeld website"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleren"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "Weet je zeker dat je %s wilt openen?"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"Het openen van bijlagen kan uw systeem beschadigen. Open enkel bijlagen van "
+"vertrouwde afzenders."
 
 #: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
-msgstr ""
+msgstr "Toch openen"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
-msgstr ""
+msgstr "Map vernieuwen"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "Geen conversaties geselecteerd."
+msgstr "Geen bericht geselecteerd"
 
 #: src/MessageList/MessageListItem.vala:156
 #: src/MessageList/MessageListItem.vala:276
-#, fuzzy
 msgid "Unstar message"
-msgstr "%d bericht"
+msgstr "Ster bij bericht verwijderen"
 
 #: src/MessageList/MessageListItem.vala:159
 #: src/MessageList/MessageListItem.vala:272
-#, fuzzy
 msgid "Star message"
-msgstr "%d bericht"
+msgstr "Ster bij bericht toevoegen"
 
 #: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
@@ -335,7 +320,7 @@ msgstr "Afbeeldingen tonen"
 
 #: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "Altijd tonen van afzender"
 
 #: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
@@ -343,7 +328,7 @@ msgstr "Dit bericht bevat externe afbeeldingen."
 
 #: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "Dit bericht bevat één of meer bijlagen"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
@@ -351,16 +336,15 @@ msgstr "Openen"
 
 #: src/MessageList/AttachmentButton.vala:43
 msgid "Save As…"
-msgstr ""
+msgstr "Opslaan als…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "Onbekend"
 
 #: src/MessageList/AttachmentButton.vala:113
-#, fuzzy
 msgid "Save"
-msgstr "_Opslaan"
+msgstr "Opslaan"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "Concepten | Concept"
