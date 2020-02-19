@@ -3,6 +3,25 @@ name: CI
 on: [push, pull_request]
 
 jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: elementary/docker:unstable
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Dependencies
+      run: |
+        apt update
+        apt install -y libcamel1.2-dev libedataserver1.2-dev libedataserverui1.2-dev libfolks-dev libgee-0.8-dev libglib2.0-dev libgranite-dev libwebkit2gtk-4.0-dev meson valac
+    - name: Build
+      run: |
+        meson build
+        ninja -C build
+        ninja -C build install
+
   lint:
 
     runs-on: ubuntu-latest
