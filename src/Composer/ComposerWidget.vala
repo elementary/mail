@@ -490,7 +490,26 @@ public class Mail.ComposerWidget : Gtk.Grid {
     }
 
     private void on_discard () {
-        discarded ();
+        var discard_dialog = new Granite.MessageDialog.with_image_from_icon_name (
+            _("Delete This Draft?"), // choice of 'Delete' over 'Discard' for clarity
+            _("Are you sure you want to delete this draft permanently?"),
+            "dialog-error",
+            Gtk.ButtonsType.NONE
+        );
+        discard_dialog.transient_for = get_toplevel () as Gtk.Window;
+
+        discard_dialog.add_button (_("No"), Gtk.ResponseType.CANCEL);
+
+        var discard_anyway = discard_dialog.add_button (_("Yes"), Gtk.ResponseType.ACCEPT);
+        discard_anyway.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+
+        if (discard_dialog.run () == Gtk.ResponseType.CANCEL) { // User does NOT want to discard draft
+            discard_dialog.destroy ();
+            return;
+        }
+        discard_dialog.destroy ();
+
+        discarded (); // Raise signal
     }
 
     private void on_send () {
