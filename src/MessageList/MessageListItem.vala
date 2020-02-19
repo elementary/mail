@@ -328,7 +328,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     }
 
     private void add_inline_composer (ComposerWidget.Type composer_type) {
-        var message_list_box = (MessageListBox) get_parent();
+        var message_list_box = (MessageListBox) get_parent ();
         message_list_box.add_inline_composer (composer_type, this);
     }
 
@@ -343,7 +343,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 filename = safe_filename (subject, 64);
             }
 
-            settings.set(Gtk.PRINT_SETTINGS_OUTPUT_BASENAME, filename);
+            settings.set (Gtk.PRINT_SETTINGS_OUTPUT_BASENAME, filename);
 
             /* @TODO: include header fields in printed output */
             var print_operation = new WebKit.PrintOperation (web_view);
@@ -370,7 +370,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         if (s.length < max_length) {
             return s;
         } else {
-            return "%s…".printf (s.substring (0, s.char_count (max_length-1)));
+            return "%s…".printf (s.substring (0, s.char_count (max_length - 1)));
         }
     }
 
