@@ -18,16 +18,15 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-01-02 18:38+0000\n"
+"PO-Revision-Date: 2019-12-26 19:36+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
-"Language-Team: German <https://weblate.elementary.io/projects/mail/mail/de/"
-">\n"
+"Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:39
@@ -44,7 +43,7 @@ msgstr "Externe Bilder immer anzeigen"
 
 #: src/HeaderBar.vala:65
 msgid "Account Settings…"
-msgstr "Kontoeinstellungen…"
+msgstr "Konten-Einstellungen…"
 
 #: src/HeaderBar.vala:85
 msgid "Menu"
@@ -71,39 +70,34 @@ msgid "Mark as Read"
 msgstr "Als gelesen markieren"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
-msgstr "_Stern"
+msgstr "Kennzeichnen"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
-msgstr "_Stern entfernen"
+msgstr "Kennzeichnung entfernen"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
-msgstr "Konversation markieren"
+msgstr "Unterhaltung markieren"
 
 #: src/HeaderBar.vala:141
 msgid "Move conversations to Trash"
-msgstr "Konversationen in den Papierkorb verschieben"
+msgstr "Unterhaltung in den Papierkorb verschieben"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Keine Nachricht ausgewählt"
-msgstr[1] "Keine Nachricht ausgewählt"
+msgstr[0] "Nachricht gelöscht"
+msgstr[1] "Nachrichten gelöscht"
 
 #: src/MainWindow.vala:252
-#, fuzzy
 msgid "Undo"
-msgstr "_Rückgängig"
+msgstr "Rückgängig"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
-msgstr "Ein Konto verbinden"
+msgstr "Konto hinzufügen"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
@@ -186,7 +180,7 @@ msgstr "Entwurf löschen"
 
 #: src/Composer/ComposerWidget.vala:272
 msgid "Attach file"
-msgstr "Datei anhängen"
+msgstr "Anhang hinzufügen"
 
 #: src/Composer/ComposerWidget.vala:278
 msgid "Send"
@@ -194,7 +188,7 @@ msgstr "Senden"
 
 #: src/Composer/ComposerWidget.vala:427
 msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%a, %-e. %b, %Y um %-l:%M %p"
+msgstr "%a, %-e.%b %Y um %-k:%M"
 
 #: src/Composer/ComposerWidget.vala:457
 #, c-format
@@ -231,61 +225,57 @@ msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
-msgstr "Nachricht ohne Betreff senden?"
+msgstr "Nachricht mit leerem Betreff senden?"
 
 #: src/Composer/ComposerWidget.vala:504
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"Diese Nachricht hat eine leere Betreffzeile. Der Empfänger kann "
+"möglicherweise nicht auf den Inhalt oder die Priorität der Nachricht "
+"schließen."
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "Nicht Senden"
 
 #: src/Composer/ComposerWidget.vala:512
-#, fuzzy
 msgid "Send Anyway"
-msgstr "Trotzdem öffnen"
+msgstr "Trotzdem senden"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Neue Nachricht"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#, fuzzy
 msgid "Unread"
-msgstr "%d ungelesen"
+msgstr "Ungelesen"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "Antworten"
+msgstr "Beantwortet"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "Weiterleiten"
+msgstr "Weitergeleitet"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://beispiel.de"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
-#, fuzzy
 msgid "Link Text:"
-msgstr "_Rich Text"
+msgstr "Link-Text:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
-#, fuzzy
 msgid "Example Website"
-msgstr "Webseite"
+msgstr "Beispiel-Webseite"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
 #: src/MessageList/AttachmentButton.vala:114
@@ -295,15 +285,15 @@ msgstr "Abbrechen"
 #: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
-msgstr "Sind Sie sicher, %s öffnen zu wollen?"
+msgstr "Sind Sie sicher, dass Sie %s öffnen wollen?"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
-"Das Öffnen von Anhängen kann Ihr System beschädigen. Öffnen Sie nur Dateien "
-"von vertrauenswürdigen Quellen!"
+"Das Öffnen von Anhängen kann Ihr Betriebssystem beschädigen. Öffnen Sie "
+"daher grundsätzlich nur Dateien aus vertrauenswürdigen Quellen."
 
 #: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
@@ -320,12 +310,12 @@ msgstr "Keine Nachricht ausgewählt"
 #: src/MessageList/MessageListItem.vala:156
 #: src/MessageList/MessageListItem.vala:276
 msgid "Unstar message"
-msgstr "Stern von Nachricht entfernen"
+msgstr "Kennzeichnung der Nachricht entfernen"
 
 #: src/MessageList/MessageListItem.vala:159
 #: src/MessageList/MessageListItem.vala:272
 msgid "Star message"
-msgstr "Nachricht mit Stern markieren"
+msgstr "Nachricht kennzeichnen"
 
 #: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
@@ -333,11 +323,11 @@ msgstr "Bilder anzeigen"
 
 #: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
-msgstr "Immer den Absender anzeigen"
+msgstr "Von diesem Absender immer anzeigen"
 
 #: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
-msgstr "Diese Nachricht enthält Bilder, die im Internet liegen."
+msgstr "Diese Nachricht enthält externe Bilder."
 
 #: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
@@ -349,7 +339,7 @@ msgstr "Öffnen"
 
 #: src/MessageList/AttachmentButton.vala:43
 msgid "Save As…"
-msgstr "Speichern unter …"
+msgstr "Speichern unter…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"

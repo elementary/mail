@@ -17,16 +17,15 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-01-13 09:00+0000\n"
+"PO-Revision-Date: 2019-10-27 15:24+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://weblate.elementary.io/projects/mail/mail/he/"
-">\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:39
@@ -70,17 +69,14 @@ msgid "Mark as Read"
 msgstr "סימון כנקרא"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
-msgstr "הוספת _כוכב"
+msgstr "כוכב"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
-msgstr "ה_סרת כוכב"
+msgstr "הסרת כוכב"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
 msgstr "סימון הדיון"
 
@@ -89,16 +85,14 @@ msgid "Move conversations to Trash"
 msgstr "העברת דיונים לאשפה"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "לא נבחרה הודעה"
-msgstr[1] "לא נבחרה הודעה"
+msgstr[0] "הודעה נמחקה"
+msgstr[1] "הודעות נמחקו"
 
 #: src/MainWindow.vala:252
-#, fuzzy
 msgid "Undo"
-msgstr "_ביטול"
+msgstr "ביטול"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -228,43 +222,40 @@ msgid "Cc: %s<br/>"
 msgstr "עותק: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
-msgstr "האם לשלוח את ההודעה ללא כותרת?"
+msgstr "לשלוח הודעה ללא נושא?"
 
 #: src/Composer/ComposerWidget.vala:504
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"שדה הנושא של ההודעה הזו ריק. יתכן שהנמען לא יוכל להבין במה מדובר או להעריך "
+"את חשיבות ההודעה."
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "לא לשלוח"
 
 #: src/Composer/ComposerWidget.vala:512
-#, fuzzy
 msgid "Send Anyway"
-msgstr "לפתוח בכל זאת"
+msgstr "לשלוח בכל זאת"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "הודעה חדשה"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#, fuzzy
 msgid "Unread"
-msgstr "אחת לא נקראה"
+msgstr "לא נקראה"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "להשיב"
+msgstr "נשלח מענה"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "העברה"
+msgstr "הועברה"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
