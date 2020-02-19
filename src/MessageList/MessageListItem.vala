@@ -163,6 +163,35 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         starred_button.image = starred_icon;
         starred_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
+        var reply_item = new Gtk.MenuItem.with_label (_("Reply"));
+        reply_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.REPLY));
+
+        var reply_all_item = new Gtk.MenuItem.with_label (_("Reply to All"));
+        reply_all_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.REPLY_ALL));
+
+        var forward_item = new Gtk.MenuItem.with_label (_("Forward"));
+        forward_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.FORWARD));
+
+        var print_item = new Gtk.MenuItem.with_label (_("Print…"));
+        print_item.activate.connect (on_print);
+
+        var actions_menu = new Gtk.Menu ();
+        actions_menu.add (reply_item);
+        actions_menu.add (reply_all_item);
+        actions_menu.add (forward_item);
+        actions_menu.add (new Gtk.SeparatorMenuItem ());
+        actions_menu.add (print_item);
+        actions_menu.show_all ();
+
+        var actions_menu_button = new Gtk.MenuButton ();
+        actions_menu_button.image = new Gtk.Image.from_icon_name ("view-more-symbolic", Gtk.IconSize.MENU);
+        actions_menu_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        actions_menu_button.tooltip_text = _("More");
+        actions_menu_button.margin_top = 6;
+        actions_menu_button.valign = Gtk.Align.START;
+        actions_menu_button.halign = Gtk.Align.END;
+        actions_menu_button.popup = actions_menu;
+
         var action_grid = new Gtk.Grid ();
         action_grid.column_spacing = 3;
         action_grid.hexpand = true;
@@ -170,7 +199,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         action_grid.valign = Gtk.Align.START;
         action_grid.add (datetime_label);
         action_grid.attach (starred_button, 2, 0);
-        action_grid.attach (actions_menu_button (), 2, 1);
+        action_grid.attach (actions_menu_button, 2, 1);
 
         var header = new Gtk.Grid ();
         header.margin = 12;
@@ -242,6 +271,13 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         expanded = false;
         show_all ();
 
+        /* Override default handler to stop event propagation. Otherwise clicking the menu will
+           expand or collapse the MessageListItem. */
+        actions_menu_button.button_release_event.connect ((event) => {
+            actions_menu_button.set_active (true);
+            return Gdk.EVENT_STOP;
+        });
+
         header_event_box.enter_notify_event.connect ((event) => {
             if (event.detail != Gdk.NotifyType.INFERIOR) {
                 var window = header_event_box.get_window ();
@@ -291,48 +327,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         });
     }
 
-    private Gtk.MenuButton actions_menu_button () {
-        var menu = new Gtk.Menu ();
-
-        var reply_item = new Gtk.MenuItem.with_label (_("Reply"));
-        reply_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.REPLY));
-        menu.add (reply_item);
-
-        var reply_all_item = new Gtk.MenuItem.with_label (_("Reply to All"));
-        reply_all_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.REPLY_ALL));
-        menu.add (reply_all_item);
-
-        var forward_item = new Gtk.MenuItem.with_label (_("Forward"));
-        forward_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.FORWARD));
-        menu.add (forward_item);
-
-        menu.add (new Gtk.SeparatorMenuItem ());
-
-        var print_item = new Gtk.MenuItem.with_label (_("Print…"));
-        print_item.activate.connect (on_print);
-        menu.add (print_item);
-
-        menu.show_all ();
-
-        var menu_button = new Gtk.MenuButton ();
-        menu_button.image = new Gtk.Image.from_icon_name ("view-more-symbolic", Gtk.IconSize.MENU);
-        menu_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-        menu_button.tooltip_text = _("More");
-        menu_button.margin_top = 6;
-        menu_button.valign = Gtk.Align.START;
-        menu_button.halign = Gtk.Align.END;
-        menu_button.popup = menu;
-        /* Override default handler to stop event propagation. Otherwise clicking the menu will
-           expand or collapse the MessageListItem. */
-        menu_button.button_release_event.connect ((event) => {
-            menu_button.set_active (true);
-            return Gdk.EVENT_STOP;
-        });
-
-        menu_button.show ();
-        return menu_button;
-    }
-
     private void add_inline_composer (ComposerWidget.Type composer_type) {
         var message_list_box = (MessageListBox) get_parent();
         message_list_box.add_inline_composer (composer_type, this);
@@ -340,7 +334,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     private void on_print () {
         try {
-            Gtk.PrintSettings settings = new Gtk.PrintSettings ();
+            var settings = new Gtk.PrintSettings ();
+            /// Translators: This is the default file name of a printed email
             string filename = _("Email Message");
 
             string subject = message_info.subject;
@@ -355,7 +350,16 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             print_operation.set_print_settings (settings);
             print_operation.run_dialog ((Gtk.ApplicationWindow) get_toplevel ());
         } catch (Error e) {
-            critical ("Print operation failed. %s".printf (e.message));
+            var print_error_dialog = new Granite.MessageDialog.with_image_from_icon_name (
+                _("Unable to print email"),
+                _(""),
+                "printer"
+            );
+            print_error_dialog.badge_icon = new ThemedIcon ("dialog-error");
+            print_error_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            print_error_dialog.show_error_details (e.message);
+            print_error_dialog.run ();
+            print_error_dialog.destroy ();
         }
     }
 
