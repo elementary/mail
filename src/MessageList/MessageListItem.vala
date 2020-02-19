@@ -340,7 +340,14 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
             string subject = message_info.subject;
             if (subject != null && subject != "") {
-                filename = safe_filename (subject, 64);
+                /* Replace any runs of whitespace, non-printing characters or slashes with a
+                   single space and remove and leading or trailing spaces. */
+                var sanitized_subject = new Regex ("[[:space:][:cntrl:]/]+").replace (subject, -1, 0, " ").strip ();
+                if (sanitized_subject.length < 64) {
+                    filename = sanitized_subject;
+                } else {
+                    filename = "%s…".printf (sanitized_subject.substring (0, sanitized_subject.char_count (64 - 1)));
+                }
             }
 
             settings.set (Gtk.PRINT_SETTINGS_OUTPUT_BASENAME, filename);
@@ -360,17 +367,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             print_error_dialog.show_error_details (e.message);
             print_error_dialog.run ();
             print_error_dialog.destroy ();
-        }
-    }
-
-    /* Replace any runs of whitespace, non-printing characters or slashes with a
-       single space and remove and leading or trailing spaces. */
-    private string safe_filename (string str, ssize_t max_length) throws Error {
-        var s = new Regex ("[[:space:][:cntrl:]/]+").replace (str, -1, 0, " ").strip ();
-        if (s.length < max_length) {
-            return s;
-        } else {
-            return "%s…".printf (s.substring (0, s.char_count (max_length - 1)));
         }
     }
 
