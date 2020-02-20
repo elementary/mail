@@ -498,7 +498,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         );
         discard_dialog.transient_for = get_toplevel () as Gtk.Window;
 
-        discard_dialog.add_button (_("No"), Gtk.ResponseType.CANCEL);
+        discard_dialog.add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
 
         var discard_anyway = discard_dialog.add_button (_("Yes"), Gtk.ResponseType.ACCEPT);
         discard_anyway.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
