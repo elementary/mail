@@ -493,7 +493,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         var discard_dialog = new Granite.MessageDialog.with_image_from_icon_name (
             _("Delete This Draft?"), // choice of 'Delete' over 'Discard' for clarity
             _("Are you sure you want to delete this draft permanently?"),
-            "dialog-error",
+            "dialog-warning",
             Gtk.ButtonsType.NONE
         );
         discard_dialog.transient_for = get_toplevel () as Gtk.Window;
