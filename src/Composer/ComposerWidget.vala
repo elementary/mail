@@ -503,13 +503,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
         var discard_anyway = discard_dialog.add_button (_("Yes"), Gtk.ResponseType.ACCEPT);
         discard_anyway.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
-        if (discard_dialog.run () == Gtk.ResponseType.CANCEL) { // User does NOT want to discard draft
-            discard_dialog.destroy ();
-            return;
+        if (discard_dialog.run () == Gtk.ResponseType.ACCEPT) {
+            discarded ();
         }
-        discard_dialog.destroy ();
 
-        discarded (); // Raise signal
+        discard_dialog.destroy ();
     }
 
     private void on_send () {
