@@ -492,7 +492,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private void on_discard () {
         var discard_dialog = new Granite.MessageDialog.with_image_from_icon_name (
             _("Delete This Draft?"), // choice of 'Delete' over 'Discard' for clarity
-            _("Are you sure you want to delete this draft permanently?"),
+            _("You cannot undo this action, nor recover your draft once it has been deleted."),
             "dialog-error",
             Gtk.ButtonsType.NONE
         );
