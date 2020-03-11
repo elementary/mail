@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2018-12-18 06:05+0000\n"
+"PO-Revision-Date: 2020-01-25 15:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://weblate.elementary.io/projects/mail/extra/"
-"ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/>"
+"\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-19 06:51+0000\n"
 
 #: data/io.elementary.mail.appdata.xml.in:8
@@ -68,17 +68,15 @@ msgstr "サーバーへ下書きを保存するインライン HTML コンポー
 msgid ""
 "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
 "IMAP servers"
-msgstr ""
-"Gmail・Yahoo! メール・Outlook.com (実験的)・その他よく利用される IMAP サー"
-"バーで動作します"
+msgstr "Gmail・Yahoo! メール・Outlook.com (実験的)・そのほかのよく利用される IMAP サーバーで動作します"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Minor bug fixes"
-msgstr "マイナーなバグ修正"
+msgstr "軽微なバグの修正"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Translation updates"
-msgstr "翻訳のアップデート"
+msgstr "翻訳の更新"
 
 #: data/io.elementary.mail.appdata.xml.in:69
 msgid "elementary, Inc."

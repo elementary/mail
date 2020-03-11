@@ -10,17 +10,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-01-15 00:05+0000\n"
+"POT-Creation-Date: 2019-01-09 10:33+0100\n"
+"PO-Revision-Date: 2019-09-12 19:23+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
-"Language-Team: Catalan <https://weblate.elementary.io/projects/mail/mail/ca/"
-">\n"
+"Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:39
@@ -37,7 +36,7 @@ msgstr "Mostra sempre les imatges remotes"
 
 #: src/HeaderBar.vala:65
 msgid "Account Settings…"
-msgstr "Configuració del compte…"
+msgstr "Paràmetres del compte…"
 
 #: src/HeaderBar.vala:85
 msgid "Menu"
@@ -64,17 +63,14 @@ msgid "Mark as Read"
 msgstr "Marca com a llegit"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
-msgstr "_Destaca"
+msgstr "Destaca"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
-msgstr "_No destaquis"
+msgstr "No ho destaquis"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
 msgstr "Marca la conversa"
 
@@ -83,16 +79,14 @@ msgid "Move conversations to Trash"
 msgstr "Mou les converses a la paperera"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "No hi ha cap missatge seleccionat."
-msgstr[1] "No hi ha cap missatge seleccionat."
+msgstr[0] "Missatge suprimit"
+msgstr[1] "Missatges suprimits"
 
 #: src/MainWindow.vala:252
-#, fuzzy
 msgid "Undo"
-msgstr "_Desfés"
+msgstr "Desfés-ho"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -170,11 +164,11 @@ msgstr "Insereix una imatge"
 
 #: src/Composer/ComposerWidget.vala:240
 msgid "Remove formatting"
-msgstr "Elimina'n el format"
+msgstr "Suprimeix-ne el format"
 
 #: src/Composer/ComposerWidget.vala:268
 msgid "Delete draft"
-msgstr "Esborra l'esborrany"
+msgstr "Suprimeix l'esborrany"
 
 #: src/Composer/ComposerWidget.vala:272
 msgid "Attach file"
@@ -223,7 +217,6 @@ msgid "Cc: %s<br/>"
 msgstr "A/c: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
 msgstr "Voleu enviar el missatge amb l'assumpte en blanc?"
 
@@ -232,34 +225,32 @@ msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"Aquest missatge té el camp de l'assumpte en blanc. El destinatari potser no "
+"en podrà copsar l'abast o la importància."
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "No l'enviïs"
 
 #: src/Composer/ComposerWidget.vala:512
-#, fuzzy
 msgid "Send Anyway"
-msgstr "Obre-ho de tota manera"
+msgstr "Envia'l tanmateix"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Missatge nou"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#, fuzzy
 msgid "Unread"
-msgstr "%d de no llegit"
+msgstr "Sense llegir"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "Respon"
+msgstr "Respost"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "Reenvia"
+msgstr "Reenviat"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"

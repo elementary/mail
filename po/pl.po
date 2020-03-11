@@ -19,17 +19,16 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-02-09 11:14+0000\n"
-"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
-"Language-Team: Polish <https://weblate.elementary.io/projects/mail/mail/pl/"
-">\n"
+"PO-Revision-Date: 2019-11-17 20:25+0000\n"
+"Last-Translator: Danie Wachna <ravqe@outlook.com>\n"
+"Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 "X-Poedit-Country: Poland\n"
 "X-Poedit-Language: Polish\n"
@@ -75,17 +74,14 @@ msgid "Mark as Read"
 msgstr "Oznacz jako przeczytane"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
-msgstr "_Wyróżnij"
+msgstr "Wyróżnij"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
-msgstr "Usuń wy_różnienie"
+msgstr "Usuń wyróżnienie"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
 msgstr "Oznacz konwersację"
 
@@ -94,17 +90,15 @@ msgid "Move conversations to Trash"
 msgstr "Przenieś rozmowy do kosza"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Brak zaznaczonych wiadomości"
-msgstr[1] "Brak zaznaczonych wiadomości"
-msgstr[2] "Brak zaznaczonych wiadomości"
+msgstr[0] "Wiadomość usunięta"
+msgstr[1] "Wiadomości usunięte"
+msgstr[2] "Wiadomości usuniętych"
 
 #: src/MainWindow.vala:252
-#, fuzzy
 msgid "Undo"
-msgstr "_Cofnij"
+msgstr "Cofnij"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -234,47 +228,44 @@ msgid "Cc: %s<br/>"
 msgstr "Dw: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
-msgstr "Wysłać wiadomość niezawierającą tematu?"
+msgstr "Wysłać wiadomość nie zawierającą tematu?"
 
 #: src/Composer/ComposerWidget.vala:504
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"Ta wiadomość ma puste pole tematu.  Odbiorca może nie być w stanie określić "
+"zakresu lub ważności wiadomości."
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "Nie wysyłaj"
 
 #: src/Composer/ComposerWidget.vala:512
-#, fuzzy
 msgid "Send Anyway"
-msgstr "Otwórz mimo to"
+msgstr "Wyślij mimo to"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Nowa wiadomość"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#, fuzzy
 msgid "Unread"
-msgstr "%d nieprzeczytana"
+msgstr "Nieprzeczytana"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "Odpowiedz"
+msgstr "Odpowiedziana"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "Przekaż"
+msgstr "Przekazana"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr "Adres URL:"
+msgstr "URL:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"

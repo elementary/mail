@@ -3,16 +3,15 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-01-11 00:39+0000\n"
+"PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://weblate.elementary.io/projects/mail/mail/ja/"
-">\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:39
@@ -56,17 +55,14 @@ msgid "Mark as Read"
 msgstr "既読としてマーク"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
-msgstr "スター (_S)"
+msgstr "スターを付ける"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
-msgstr "スターをはずす (_N)"
+msgstr "スターを外す"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
 msgstr "メッセージをマークする"
 
@@ -75,15 +71,13 @@ msgid "Move conversations to Trash"
 msgstr "メッセージをゴミ箱に移動します"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "メッセージが選択されていません"
+msgstr[0] "メッセージを削除しました"
 
 #: src/MainWindow.vala:252
-#, fuzzy
 msgid "Undo"
-msgstr "元に戻す (_U)"
+msgstr "元に戻す"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -213,7 +207,6 @@ msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
 msgstr "空の件名のままメッセージを送信しますか？"
 
@@ -221,35 +214,31 @@ msgstr "空の件名のままメッセージを送信しますか？"
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
-msgstr ""
+msgstr "このメッセージには件名がありません。受信者がメッセージの話題や重要性を推測できない可能性があります。"
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "送信しない"
 
 #: src/Composer/ComposerWidget.vala:512
-#, fuzzy
 msgid "Send Anyway"
-msgstr "了解して開く"
+msgstr "了解して送信"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "新しいメッセージ"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#, fuzzy
 msgid "Unread"
-msgstr "%d 件が未読"
+msgstr "未読"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "返信"
+msgstr "返信済み"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "転送"
+msgstr "転送済み"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"

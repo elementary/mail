@@ -35,7 +35,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private string message_content;
     private bool message_is_html = false;
     private bool message_loaded = false;
-    
+
     public bool expanded {
         get {
             return secondary_revealer.reveal_child;

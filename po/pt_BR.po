@@ -20,16 +20,16 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-01-18 04:59+0000\n"
+"PO-Revision-Date: 2019-08-27 22:23+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
-"mail/mail/pt_BR/>\n"
+"Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/mail/"
+"mail/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: src/HeaderBar.vala:39
@@ -73,17 +73,14 @@ msgid "Mark as Read"
 msgstr "Marcar como lido"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
-msgstr "_Marcar estrela"
+msgstr "Estrela"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
-msgstr "_Tirar estrela"
+msgstr "Remover estrela"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
 msgstr "Marcar conversa"
 
@@ -92,16 +89,14 @@ msgid "Move conversations to Trash"
 msgstr "Mover conversas para o Lixo"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Nenhuma mensagem selecionada"
-msgstr[1] "Nenhuma mensagem selecionada"
+msgstr[0] "Mensagem eliminada"
+msgstr[1] "Mensagens eliminadas"
 
 #: src/MainWindow.vala:252
-#, fuzzy
 msgid "Undo"
-msgstr "_Desfazer"
+msgstr "Desfazer"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -231,43 +226,40 @@ msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
-msgstr "Enviar mensagem com o assunto vazio?"
+msgstr "Enviar mensagem com o Assunto vazio?"
 
 #: src/Composer/ComposerWidget.vala:504
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"Esta mensagem tem um campo de assunto vazio. O destinatário pode não "
+"conseguir inferir o escopo ou a importância da mensagem."
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "Não enviar"
 
 #: src/Composer/ComposerWidget.vala:512
-#, fuzzy
 msgid "Send Anyway"
-msgstr "Abrir de qualquer maneira"
+msgstr "Enviar desta forma"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Nova mensagem"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#, fuzzy
 msgid "Unread"
-msgstr "%d não lida"
+msgstr "Não lida"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "Responder"
+msgstr "Respondido"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "Encaminhar"
+msgstr "Encaminhado"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"

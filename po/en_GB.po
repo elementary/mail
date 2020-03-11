@@ -12,16 +12,16 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-01-28 08:09+0000\n"
+"PO-Revision-Date: 2019-08-27 22:23+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@posteo.net>\n"
-"Language-Team: English (United Kingdom) <https://weblate.elementary.io/"
-"projects/mail/mail/en_GB/>\n"
+"Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
+"mail/mail/en_GB/>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: src/HeaderBar.vala:39
@@ -65,35 +65,30 @@ msgid "Mark as Read"
 msgstr "Mark as Read"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
-msgstr "_Star"
+msgstr "Star"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
-msgstr "U_nstar"
+msgstr "Unstar"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
-msgstr "Mark conversation"
+msgstr "Mark Conversation"
 
 #: src/HeaderBar.vala:141
 msgid "Move conversations to Trash"
 msgstr "Move conversations to Rubbish"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "No Message Selected"
-msgstr[1] "No Message Selected"
+msgstr[0] "Message Deleted"
+msgstr[1] "Messages Deleted"
 
 #: src/MainWindow.vala:252
-#, fuzzy
 msgid "Undo"
-msgstr "_Undo"
+msgstr "Undo"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -223,43 +218,40 @@ msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
-msgstr "Send message with an empty subject?"
+msgstr "Send Message With an Empty Subject?"
 
 #: src/Composer/ComposerWidget.vala:504
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "Don't Send"
 
 #: src/Composer/ComposerWidget.vala:512
-#, fuzzy
 msgid "Send Anyway"
-msgstr "Open Anyway"
+msgstr "Send Anyway"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "New Message"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#, fuzzy
 msgid "Unread"
-msgstr "%d unread"
+msgstr "Unread"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "Reply"
+msgstr "Replied"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "Forward"
+msgstr "Forwarded"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"

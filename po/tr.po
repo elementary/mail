@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-04-23 11:31+0000\n"
+"PO-Revision-Date: 2019-08-30 20:22+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
 "Language: tr\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-POOTLE-MTIME: 1423290848.000000\n"
 
@@ -70,35 +70,30 @@ msgid "Mark as Read"
 msgstr "Okunmuş olarak İşaretle"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
-msgstr "_Yıldızla"
+msgstr "Yıldız Ekle"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
-msgstr "Y_ıldızı Kaldır"
+msgstr "Yıldızı Kaldır"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
-msgstr "Konuşmayı işaretle"
+msgstr "Konuşmayı İşaretle"
 
 #: src/HeaderBar.vala:141
 msgid "Move conversations to Trash"
 msgstr "Konuşmaları Çöpe Taşı"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Hiçbir İleti Seçilmedi"
-msgstr[1] "Hiçbir İleti Seçilmedi"
+msgstr[0] "İleti Silindi"
+msgstr[1] "İletiler Silindi"
 
 #: src/MainWindow.vala:252
-#, fuzzy
 msgid "Undo"
-msgstr "_Geri Al"
+msgstr "Geri Al"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -230,43 +225,40 @@ msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
-msgstr "İleti konusu olmadan gönderilsin mi?"
+msgstr "İleti Konusu Olmadan Gönderilsin mi?"
 
 #: src/Composer/ComposerWidget.vala:504
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"Bu iletide konu alanı bulunmamaktadır. Alıcı, mesajın kapsamını veya önemini "
+"kavrayamayabilir."
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "Gönderme"
 
 #: src/Composer/ComposerWidget.vala:512
-#, fuzzy
 msgid "Send Anyway"
-msgstr "Yine de Aç"
+msgstr "Yine de Gönder"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Yeni İleti"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#, fuzzy
 msgid "Unread"
-msgstr "%d okunmamış"
+msgstr "Okunmamış"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "Yanıtla"
+msgstr "Yanıtlandı"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "Yönlendir"
+msgstr "Yönlendirildi"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -317,12 +309,12 @@ msgstr "Hiçbir İleti Seçilmedi"
 #: src/MessageList/MessageListItem.vala:156
 #: src/MessageList/MessageListItem.vala:276
 msgid "Unstar message"
-msgstr "Mesajdan yıldızı kaldır"
+msgstr "İletiden yıldızı kaldır"
 
 #: src/MessageList/MessageListItem.vala:159
 #: src/MessageList/MessageListItem.vala:272
 msgid "Star message"
-msgstr "Mesaja yıldız koy"
+msgstr "İletiye yıldız ekle"
 
 #: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
@@ -338,7 +330,7 @@ msgstr "Bu iletide uzak resimler bulunuyor."
 
 #: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
-msgstr "Bu mesaj, bir veya daha fazla ek içeriyor"
+msgstr "Bu ileti, bir veya daha fazla ek içeriyor"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"

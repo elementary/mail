@@ -13,10 +13,10 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-01-11 20:53+0000\n"
+"PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
-"Language-Team: Lithuanian <https://weblate.elementary.io/projects/mail/mail/"
-"lt/>\n"
+"Language-Team: Lithuanian <https://l10n.elementary.io/projects/mail/mail/lt/>"
+"\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n % 10 == 1 && (n % 100 < 11 || n % 100 > "
 "19)) ? 0 : ((n % 10 >= 2 && n % 10 <= 9 && (n % 100 < 11 || n % 100 > 19)) ? "
 "1 : 2);\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:39
@@ -68,17 +68,14 @@ msgid "Mark as Read"
 msgstr "Žymėti skaitytu"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
-msgstr "_Žymėti žvaigždute"
+msgstr "Žymėti žvaigždute"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
-msgstr "N_ežymėti žvaigždute"
+msgstr "Nežymėti žvaigždute"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
 msgstr "Žymėti pokalbį"
 
@@ -87,17 +84,15 @@ msgid "Move conversations to Trash"
 msgstr "Perkelti pokalbius į šiukšlinę"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Nepasirinkta jokių laiškų"
-msgstr[1] "Nepasirinkta jokių laiškų"
-msgstr[2] "Nepasirinkta jokių laiškų"
+msgstr[0] "Laiškas ištrintas"
+msgstr[1] "Laiškai ištrinti"
+msgstr[2] "Laiškai ištrinti"
 
 #: src/MainWindow.vala:252
-#, fuzzy
 msgid "Undo"
-msgstr "_Atšaukti"
+msgstr "Atšaukti"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -227,7 +222,6 @@ msgid "Cc: %s<br/>"
 msgstr "Kopija: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
 msgstr "Ar siųsti laišką be temos?"
 
@@ -236,34 +230,32 @@ msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"Šiame laiške yra tuščias temos laukas. Gavėjas gali neįvertinti laiško "
+"svarbumo ar turinio."
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "Nesiųsti"
 
 #: src/Composer/ComposerWidget.vala:512
-#, fuzzy
 msgid "Send Anyway"
-msgstr "Vis tiek atverti"
+msgstr "Vis tiek siųsti"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Naujas laiškas"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#, fuzzy
 msgid "Unread"
-msgstr "%d neskaitytas"
+msgstr "Neskaitytas"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "Atsakyti"
+msgstr "Atsakytas"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "Persiųsti"
+msgstr "Persiųstas"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"

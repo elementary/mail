@@ -24,4 +24,3 @@ public class Mail.Backend.Account : GLib.Object {
         Object (service: service);
     }
 }
-
