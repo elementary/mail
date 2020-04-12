@@ -18,11 +18,7 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-[DBus (name = "io.elementary.mail.WebViewServer")]
 public class DOMServer : Object {
-    public signal void selection_changed (uint64 page_id);
-    public signal void image_load_blocked (uint64 page_id);
-
     private const string[] ALLOWED_SCHEMES = { "cid", "data", "about", "elementary-mail" };
 
     private Gee.HashMap <uint64?, bool> show_images
@@ -32,47 +28,87 @@ public class DOMServer : Object {
 
     public DOMServer (WebKit.WebExtension extension) {
         this.extension = extension;
-
-        Bus.own_name (BusType.SESSION, "io.elementary.mail.WebViewServer", BusNameOwnerFlags.NONE,
-            on_bus_acquired, null, () => { warning ("Could not acquire name"); });
+        extension.page_created.connect (on_page_created);
     }
 
-    private void on_bus_acquired (DBusConnection connection) {
-        try {
-            connection.register_object ("/io/elementary/mail/WebViewServer", this);
-        } catch (IOError error) {
-            warning ("Could not register webkit extension DBus object: %s", error.message);
-        }
-    }
-
-    public int get_page_height (uint64 page_id) throws Error {
-        var page = extension.get_page (page_id);
-        if (page != null) {
-            return (int)page.get_dom_document ().get_document_element ().get_offset_height ();
-        }
-        return 0;
-    }
-
-    public void set_image_loading_enabled (uint64 page_id, bool enabled) throws Error {
-        show_images[page_id] = enabled;
-        if (enabled) {
-            var page = extension.get_page (page_id);
-            if (page != null) {
-                var images = page.get_dom_document ().get_images ();
-                for (int i = 0; i < images.length; i++) {
-                    var image = (WebKit.DOM.HTMLImageElement)images.item (i);
-                    image.set_src (image.get_src ());
-                }
-            }
-        }
-    }
-
-    [DBus (visible = false)]
-    public void on_page_created (WebKit.WebExtension extension, WebKit.WebPage page) {
+    private void on_page_created (WebKit.WebPage page) {
         page.send_request.connect (on_send_request);
+        page.user_message_received.connect (on_page_user_message_received);
         page.get_editor ().selection_changed.connect (() => {
-            selection_changed (page.get_id ());
+            page.send_message_to_view.begin (new WebKit.UserMessage ("selection-changed", null), null);
         });
+    }
+
+    private bool on_page_user_message_received (WebKit.WebPage page, WebKit.UserMessage message) {
+        switch (message.name) {
+            case "set-body-html":
+                unowned string body = message.parameters.get_string ();
+                try {
+                    page.get_dom_document ().get_document_element ().query_selector ("#message-body").set_inner_html (body);
+                    return true;
+                } catch (Error e) {
+                    warning ("Unable to set message body content: %s", e.message);
+                }
+
+                return false;
+            case "get-body-html":
+                try {
+                    var body_html = page.get_dom_document ().get_document_element ().query_selector ("body").get_inner_html ();
+                    message.send_reply (new WebKit.UserMessage ("get-body-html", new Variant.take_string ((owned) body_html)));
+                    return true;
+                } catch (Error e) {
+                    warning ("Unable to get message body content: %s", e.message);
+                }
+
+                return false;
+            case "get-page-height":
+                var height = (int32)page.get_dom_document ().get_document_element ().get_offset_height ();
+                message.send_reply (new WebKit.UserMessage ("get-page-height", new Variant.int32 (height)));
+                return true;
+            case "set-image-loading-enabled":
+                var enabled = message.parameters.get_boolean ();
+                show_images[page.get_id ()] = enabled;
+                if (enabled) {
+                    var images = page.get_dom_document ().get_images ();
+                    for (int i = 0; i < images.length; i++) {
+                        var image = (WebKit.DOM.HTMLImageElement)images.item (i);
+                        image.set_src (image.get_src ());
+                    }
+                }
+
+                return true;
+            case "execute-editor-command":
+                string command, argument;
+                message.parameters.get ("(ss)", out command, out argument);
+                var document = page.get_dom_document ();
+                document.exec_command (command, false, argument);
+                return true;
+            case "query-command-state":
+                unowned string command = message.parameters.get_string ();
+                var document = page.get_dom_document ();
+                var state = document.query_command_state (command);
+                message.send_reply (new WebKit.UserMessage ("query-command-state", new Variant.boolean (state)));
+                return true;
+            case "get-selected-text":
+                try {
+                    var selection_range = page.get_dom_document ().default_view.get_selection ().get_range_at (0);
+                    if (selection_range != null) {
+                        message.send_reply (new WebKit.UserMessage ("get-selected-text", new Variant.string (selection_range.text)));
+                        return true;
+                    } else {
+                        GLib.message ("no selection range");
+                    }
+                } catch (Error e) {
+                    GLib.message (e.message);
+                }
+
+                break;
+            default:
+                critical ("Unhandled message name: %s", message.name);
+                break;
+        }
+
+        return false;
     }
 
     private bool on_send_request (WebKit.WebPage page, WebKit.URIRequest request, WebKit.URIResponse? response) {
@@ -85,69 +121,11 @@ public class DOMServer : Object {
             if (show_images.has_key (page.get_id ()) && show_images [page.get_id ()]) {
                 should_load = true;
             } else {
-                image_load_blocked (page.get_id ());
+                page.send_message_to_view.begin (new WebKit.UserMessage ("image-load-blocked", null), null);
             }
         }
 
         return should_load ? Gdk.EVENT_PROPAGATE : Gdk.EVENT_STOP;
-    }
-
-    public void execute_command (uint64 view, string command, string argument) throws Error {
-        var page = extension.get_page (view);
-        if (page != null) {
-            var document = page.get_dom_document ();
-            document.exec_command (command, false, argument);
-        }
-    }
-
-    public bool query_command_state (uint64 view, string command) throws Error {
-        var page = extension.get_page (view);
-        if (page != null) {
-            var document = page.get_dom_document ();
-            var state = document.query_command_state (command);
-            return state;
-        }
-        return false;
-    }
-
-    public string? get_body_html (uint64 view) throws Error {
-        string? body_html = null;
-        var page = extension.get_page (view);
-        if (page != null) {
-            try {
-                body_html = page.get_dom_document ().get_document_element ().query_selector ("body").get_inner_html ();
-            } catch (Error e) {
-                warning ("Unable to get message body content: %s", e.message);
-            }
-        }
-        return body_html;
-    }
-
-    public void set_body_html (uint64 view, string html) throws Error {
-        var page = extension.get_page (view);
-        if (page != null) {
-            try {
-                page.get_dom_document ().get_document_element ().query_selector ("#message-body").set_inner_html (html);
-            } catch (Error e) {
-                warning ("Unable to set message body content: %s", e.message);
-            }
-        }
-    }
-
-    public string get_selected_text (uint64 view) throws Error {
-        var page = extension.get_page (view);
-        WebKit.DOM.Range? selection_range;
-        try {
-            selection_range = page.get_dom_document ().default_view.get_selection ().get_range_at (0);
-        } catch (Error e) {
-            return "";
-        }
-
-        if (selection_range != null) {
-            return selection_range.text;
-        }
-
-        return "";
     }
 }
 
@@ -155,7 +133,6 @@ namespace WebkitWebExtension {
     [CCode (cname = "G_MODULE_EXPORT webkit_web_extension_initialize", instance_pos = -1)]
     public void initialize (WebKit.WebExtension extension) {
         DOMServer server = new DOMServer (extension);
-        extension.page_created.connect (server.on_page_created);
         server.ref ();
     }
 }

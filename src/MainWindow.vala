@@ -226,17 +226,17 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
     private void on_reply () {
         scroll_message_list_to_bottom ();
-        message_list_box.add_inline_composer (ComposerWidget.Type.REPLY);
+        message_list_box.add_inline_composer.begin (ComposerWidget.Type.REPLY);
     }
 
     private void on_reply_all () {
         scroll_message_list_to_bottom ();
-        message_list_box.add_inline_composer (ComposerWidget.Type.REPLY_ALL);
+        message_list_box.add_inline_composer.begin (ComposerWidget.Type.REPLY_ALL);
     }
 
     private void on_forward () {
         scroll_message_list_to_bottom ();
-        message_list_box.add_inline_composer (ComposerWidget.Type.FORWARD);
+        message_list_box.add_inline_composer.begin (ComposerWidget.Type.FORWARD);
     }
 
     private void on_move_to_trash () {

@@ -482,7 +482,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         web_view.add_internal_resource (part.get_content_id (), inline_stream);
     }
 
-    public string get_message_body_html () {
-        return web_view.get_body_html ();
+    public async string get_message_body_html () {
+        return yield web_view.get_body_html ();
     }
 }
