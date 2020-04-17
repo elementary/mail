@@ -97,7 +97,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
         }
     }
 
-    public void add_inline_composer (ComposerWidget.Type type) {
+    public async void add_inline_composer (ComposerWidget.Type type) {
         var last_child = get_row_at_index ((int) get_children ().length () - 1);
         var is_composer = (last_child != null && last_child is InlineComposer);
         string content_to_quote = "";
@@ -105,7 +105,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
         Camel.MessageInfo? message_info = null;
         if (last_child is MessageListItem) {
             var message_item = last_child as MessageListItem;
-            content_to_quote = message_item.get_message_body_html ();
+            content_to_quote = yield message_item.get_message_body_html ();
             mime_message = message_item.mime_message;
             message_info = message_item.message_info;
         }

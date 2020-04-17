@@ -20,22 +20,6 @@
 
 public extern const string WEBKIT_EXTENSION_PATH;
 
-namespace MailWebViewExtension {
-    [DBus (name = "io.elementary.mail.WebViewServer")]
-    public interface Server : Object {
-        public abstract void set_image_loading_enabled (uint64 view, bool enabled) throws GLib.DBusError, GLib.IOError;
-        public abstract void execute_command (uint64 view, string command, string argument) throws GLib.DBusError, GLib.IOError;
-        public abstract bool query_command_state (uint64 view, string command) throws GLib.DBusError, GLib.IOError;
-        public abstract int get_page_height (uint64 view) throws GLib.DBusError, GLib.IOError;
-        public abstract string get_body_html (uint64 view) throws GLib.DBusError, GLib.IOError;
-        public abstract void set_body_html (uint64 view, string html) throws GLib.DBusError, GLib.IOError;
-        public abstract string get_selected_text (uint64 view) throws GLib.DBusError, GLib.IOError;
-
-        public signal void selection_changed (uint64 view);
-        public signal void image_load_blocked (uint64 view);
-    }
-}
-
 public class Mail.WebView : WebKit.WebView {
     public signal void image_load_blocked ();
     public signal void link_activated (string url);
@@ -46,20 +30,17 @@ public class Mail.WebView : WebKit.WebView {
     private const string SERVER_BUS_NAME = "io.elementary.mail.WebViewServer";
 
     private int preferred_height = 0;
-    private MailWebViewExtension.Server? extension = null;
-    private uint watch_identifier = 0;
     private Gee.Map<string, InputStream> internal_resources;
 
-    private bool ready = false;
     private bool loaded = false;
     private bool queued_load_images = false;
-    private string? queued_content = null;
     private string? queued_body_content = null;
 
     static construct {
-        weak WebKit.WebContext context = WebKit.WebContext.get_default ();
+        unowned WebKit.WebContext context = WebKit.WebContext.get_default ();
         unowned string? webkit_extension_path_env = Environment.get_variable ("WEBKIT_EXTENSION_PATH");
         context.set_web_extensions_directory (webkit_extension_path_env ?? WEBKIT_EXTENSION_PATH);
+        context.set_sandbox_enabled (true);
 
         context.register_uri_scheme ("cid", (req) => {
             WebView? view = req.get_web_view () as WebView;
@@ -75,8 +56,7 @@ public class Mail.WebView : WebKit.WebView {
         internal_resources = new Gee.HashMap<string, InputStream> ();
 
         decide_policy.connect (on_decide_policy);
-
-        watch_identifier = Bus.watch_name (BusType.SESSION, SERVER_BUS_NAME, BusNameWatcherFlags.NONE, on_server_appear);
+        load_changed.connect (on_load_changed);
     }
 
     public WebView () {
@@ -95,67 +75,31 @@ public class Mail.WebView : WebKit.WebView {
         Object (settings: setts);
     }
 
-    private void on_server_appear (DBusConnection conn, string name, string owner) {
-        try {
-            extension = Bus.get_proxy_sync (BusType.SESSION, SERVER_BUS_NAME, "/io/elementary/mail/WebViewServer");
-        } catch (IOError e) {
-            warning ("Couldn't connect to WebKit extension DBus: %s", e.message);
-        }
-
-        /*
-         * Stop waiting for the extension, to prevent this WebView from leaking
-         * via the method reference given to Bus.watch_name.
-         */
-        Bus.unwatch_name (watch_identifier);
-
-        on_ready ();
-    }
-
-    private void on_ready () {
-        ready = true;
-
-        if (extension != null) {
-            extension.image_load_blocked.connect ((page_id) => {
-                if (page_id == get_page_id ()) {
-                    image_load_blocked ();
-                }
-            });
-            extension.selection_changed.connect ((page_id) => {
-                if (page_id == get_page_id ()) {
-                    selection_changed ();
-                }
-            });
-        }
-
-        if (queued_load_images) {
-            load_images ();
-        }
-
-        if (queued_content != null) {
-            load_html (queued_content);
-        }
-    }
-
     public void on_load_changed (WebKit.LoadEvent event) {
         if (event == WebKit.LoadEvent.FINISHED || event == WebKit.LoadEvent.COMMITTED) {
-            try {
-                preferred_height = extension.get_page_height (get_page_id ());
-                queue_resize ();
-            } catch (Error e) {
-                critical (e.message);
-            }
+            var message = new WebKit.UserMessage ("get-page-height", null);
+            send_message_to_page.begin (message, null, (obj, res) => {
+                try {
+                    var response = send_message_to_page.end (res);
+                    preferred_height = response.parameters.get_int32 ();
+                    queue_resize ();
+                } catch (Error e) {
+                    critical (e.message);
+                }
+            });
         }
 
         if (event == WebKit.LoadEvent.FINISHED) {
-            on_loaded ();
-            load_finished ();
-        }
-    }
+            loaded = true;
+            if (queued_body_content != null) {
+                set_body_content ((owned) queued_body_content);
+            }
 
-    private void on_loaded () {
-        loaded = true;
-        if (queued_body_content != null && ready) {
-            set_body_content (queued_body_content);
+            if (queued_load_images) {
+                load_images ();
+            }
+
+            load_finished ();
         }
     }
 
@@ -164,36 +108,28 @@ public class Mail.WebView : WebKit.WebView {
     }
 
     public new void load_html (string? body) {
-        if (ready) {
-            base.load_html (body, INTERNAL_URL_BODY);
-            load_changed.connect (on_load_changed);
+        base.load_html (body, INTERNAL_URL_BODY);
+    }
+
+    public void set_body_content (owned string content) {
+        if (loaded) {
+            var message = new WebKit.UserMessage ("set-body-html", new Variant.take_string ((owned) content));
+            send_message_to_page.begin (message);
         } else {
-            queued_content = body;
+            queued_body_content = (owned) content;
         }
     }
 
-    public void set_body_content (string content) {
-        if (loaded) {
-            try {
-                extension.set_body_html (get_page_id (), content);
-            } catch (Error e) {
-                critical (e.message);
-            }
-        } else {
-            queued_body_content = content;
+    public async string get_selected_text () {
+        try {
+            var message = new WebKit.UserMessage ("get-selected-text", null);
+            var response = yield send_message_to_page (message);
+            return response.parameters.get_string ();
+        } catch (Error e) {
+            critical (e.message);
         }
-    }
 
-    public string get_selected_text () {
-        if (loaded) {
-            try {
-                return extension.get_selected_text (get_page_id ());
-            } catch (Error e) {
-                return "";
-            }
-        } else {
-            return "";
-        }
+        return null;
     }
 
     private bool on_decide_policy (WebKit.WebView view, WebKit.PolicyDecision policy, WebKit.PolicyDecisionType type) {
@@ -219,44 +155,38 @@ public class Mail.WebView : WebKit.WebView {
     }
 
     public void load_images () {
-        if (ready) {
-            try {
-                extension.set_image_loading_enabled (get_page_id (), true);
-            } catch (Error e) {
-                critical (e.message);
-            }
+        if (loaded) {
+            var message = new WebKit.UserMessage ("set-image-loading-enabled", new Variant.boolean (true));
+            send_message_to_page.begin (message);
         } else {
             queued_load_images = true;
         }
     }
 
     public void execute_editor_command (string command, string argument = "") {
-        try {
-            extension.execute_command (get_page_id (), command, argument);
-        } catch (Error e) {
-            critical (e.message);
-        }
+        var message = new WebKit.UserMessage ("execute-editor-command", new Variant ("(ss)", command, argument));
+        send_message_to_page.begin (message);
     }
 
-    public bool query_command_state (string command) {
-        if (extension != null) {
-            try {
-                return extension.query_command_state (get_page_id (), command);
-            } catch (Error e) {
-                critical (e.message);
-            }
+    public async bool query_command_state (string command) {
+        try {
+            var message = new WebKit.UserMessage ("query-command-state", new Variant.string (command));
+            var response = yield send_message_to_page (message);
+            return response.parameters.get_boolean ();
+        } catch (Error e) {
+            critical (e.message);
         }
 
         return false;
     }
 
-    public string? get_body_html () {
-        if (extension != null) {
-            try {
-                return extension.get_body_html (get_page_id ());
-            } catch (Error e) {
-                critical (e.message);
-            }
+    public async string? get_body_html () {
+        try {
+            var message = new WebKit.UserMessage ("get-body-html", new Variant.boolean (true));
+            var response = yield send_message_to_page (message);
+            return response.parameters.get_string ();
+        } catch (Error e) {
+            critical (e.message);
         }
 
         return null;
@@ -274,6 +204,25 @@ public class Mail.WebView : WebKit.WebView {
         if (buf != null) {
             request.finish (buf, -1, null);
             return true;
+        }
+
+        return false;
+    }
+
+    public override bool user_message_received (WebKit.UserMessage message) {
+        switch (message.name) {
+            case "image-load-blocked":
+                if (!queued_load_images) {
+                    image_load_blocked ();
+                }
+
+                return true;
+            case "selection-changed":
+                selection_changed ();
+                return true;
+            default:
+                critical ("Unhandled message: %s", message.name);
+                break;
         }
 
         return false;
