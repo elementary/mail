@@ -34,69 +34,73 @@ public class Mail.Page : Object {
     }
 
     private bool on_page_user_message_received (WebKit.WebPage page, WebKit.UserMessage message) {
+        var js_context = page.get_main_frame ().get_js_context ();
         switch (message.name) {
             case "set-body-html":
-                unowned string body = message.parameters.get_string ();
-                try {
-                    page.get_dom_document ().get_document_element ().query_selector ("#message-body").set_inner_html (body);
-                    return true;
-                } catch (Error e) {
-                    warning ("Unable to set message body content: %s", e.message);
-                }
-
-                return false;
+                unowned string body_html = message.parameters.get_string ();
+                var body = js_context.evaluate ("document.querySelector('#message-body')", -1);
+                body.object_set_property ("innerHTML", new JSC.Value.string (js_context, body_html));
+                return true;
             case "get-body-html":
-                try {
-                    var body_html = page.get_dom_document ().get_document_element ().query_selector ("body").get_inner_html ();
-                    message.send_reply (new WebKit.UserMessage ("get-body-html", new Variant.take_string ((owned) body_html)));
-                    return true;
-                } catch (Error e) {
-                    warning ("Unable to get message body content: %s", e.message);
-                }
-
-                return false;
+                JSC.Value val = js_context.evaluate ("document.querySelector('body').innerHTML;", -1);
+                message.send_reply (new WebKit.UserMessage ("get-body-html", new Variant.take_string (val.to_string ())));
+                return true;
             case "get-page-height":
-                var height = (int32)page.get_dom_document ().get_document_element ().get_offset_height ();
-                message.send_reply (new WebKit.UserMessage ("get-page-height", new Variant.int32 (height)));
+                JSC.Value val = js_context.evaluate ("document.documentElement.offsetHeight;", -1);
+                message.send_reply (new WebKit.UserMessage ("get-page-height", new Variant.int32 (val.to_int32 ())));
                 return true;
             case "set-image-loading-enabled":
                 var enabled = message.parameters.get_boolean ();
                 show_images = enabled;
                 if (enabled) {
-                    var images = page.get_dom_document ().get_images ();
-                    for (int i = 0; i < images.length; i++) {
-                        var image = (WebKit.DOM.HTMLImageElement)images.item (i);
-                        image.set_src (image.get_src ());
-                    }
+                    js_context.evaluate (
+                        """var images = document.images;
+                        for(var i = 0; i < images.length; i++) {
+                            images[i].src = images[i].src
+                        }""",
+                        -1
+                    );
                 }
 
                 return true;
             case "execute-editor-command":
                 string command, argument;
                 message.parameters.get ("(ss)", out command, out argument);
-                var document = page.get_dom_document ();
-                document.exec_command (command, false, argument);
+                var document = js_context.evaluate ("document", -1);
+                JSC.Value[] parameters = {
+                    new JSC.Value.string (js_context, command),
+                    new JSC.Value.boolean (js_context, false),
+                    new JSC.Value.string (js_context, argument)
+                };
+                var ret = document.object_invoke_methodv ("execCommand", parameters);
+                if (!ret.is_boolean () || ret.to_boolean () == false) {
+                    critical (ret.to_string ());
+                }
+
                 return true;
             case "query-command-state":
                 unowned string command = message.parameters.get_string ();
-                var document = page.get_dom_document ();
-                var state = document.query_command_state (command);
-                message.send_reply (new WebKit.UserMessage ("query-command-state", new Variant.boolean (state)));
-                return true;
-            case "get-selected-text":
-                try {
-                    var selection_range = page.get_dom_document ().default_view.get_selection ().get_range_at (0);
-                    if (selection_range != null) {
-                        message.send_reply (new WebKit.UserMessage ("get-selected-text", new Variant.string (selection_range.text)));
-                        return true;
-                    } else {
-                        debug ("no selection range");
-                    }
-                } catch (Error e) {
-                    warning (e.message);
+                var document = js_context.evaluate ("document", -1);
+                JSC.Value[] parameters = {
+                    new JSC.Value.string (js_context, command),
+                };
+                var ret = document.object_invoke_methodv ("queryCommandState", parameters);
+                if (ret.is_boolean ()) {
+                    message.send_reply (new WebKit.UserMessage ("query-command-state", new Variant.boolean (ret.to_boolean ())));
+                } else {
+                    critical (ret.to_string ());
                 }
 
-                break;
+                return true;
+            case "get-selected-text":
+                JSC.Value val = js_context.evaluate ("document.defaultView.getSelection().getRangeAt(0).toString();", -1);
+                if (val.is_string ()) {
+                    message.send_reply (new WebKit.UserMessage ("get-selected-text", new Variant.string (val.to_string ())));
+                } else {
+                    critical ("no selection range: %s", val.to_string ());
+                }
+
+                return true;
             default:
                 critical ("Unhandled message name: %s", message.name);
                 break;
