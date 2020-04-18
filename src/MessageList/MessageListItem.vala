@@ -70,6 +70,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         style_context = get_style_context ();
         style_context.add_class ("card");
 
+        string[] parsed_from = message_info.from.replace (">", "").split ("<");
+
         var avatar = new Granite.Widgets.Avatar.with_default_icon (48);
         avatar.valign = Gtk.Align.START;
 
@@ -88,9 +90,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         subject_label.valign = Gtk.Align.START;
         subject_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        var from_val_label = new Gtk.Label (message_info.from);
-        from_val_label.wrap = true;
-        from_val_label.xalign = 0;
+        var from_individualitem = new IndividualItem (parsed_from[0], parsed_from [1]);
 
         var to_val_label = new Gtk.Label (message_info.to);
         to_val_label.wrap = true;
@@ -106,7 +106,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         fields_grid.attach (from_label, 0, 0, 1, 1);
         fields_grid.attach (to_label, 0, 1, 1, 1);
         fields_grid.attach (subject_label, 0, 3, 1, 1);
-        fields_grid.attach (from_val_label, 1, 0, 1, 1);
+        fields_grid.attach (from_individualitem, 1, 0);
         fields_grid.attach (to_val_label, 1, 1, 1, 1);
         fields_grid.attach (subject_val_label, 1, 3, 1, 1);
 
@@ -125,9 +125,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             fields_grid.attach (cc_val_label, 1, 2, 1, 1);
         }
 
-        var small_from_label = new Gtk.Label (message_info.from);
-        from_val_label.ellipsize = Pango.EllipsizeMode.END;
-        from_val_label.xalign = 0;
+        var small_from_label = new IndividualItem (parsed_from[0], parsed_from [1]);
 
         var small_fields_grid = new Gtk.Grid ();
         small_fields_grid.attach (small_from_label, 0, 0, 1, 1);
@@ -484,5 +482,42 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     public async string get_message_body_html () {
         return yield web_view.get_body_html ();
+    }
+
+    private class IndividualItem : Gtk.Button {
+        public string display_name { get; construct; }
+        public string email_address { get; construct; }
+
+        public IndividualItem (string display_name, string email_address) {
+            Object (
+                display_name: display_name,
+                email_address: email_address
+            );
+        }
+
+        construct {
+            var display_name_label = new Gtk.Label (display_name);
+            display_name_label.wrap = true;
+            display_name_label.tooltip_text = email_address;
+            display_name_label.xalign = 0;
+
+            halign = Gtk.Align.START;
+            add (display_name_label);
+
+            var style_context = get_style_context ();
+            style_context.add_class (Gtk.STYLE_CLASS_FLAT);
+            style_context.add_class ("link");
+
+            /* Connecting to clicked () doesn't allow us to prevent the event from propagating to header_event_box */
+            button_release_event.connect (() => {
+                try {
+                    AppInfo.launch_default_for_uri ("mailto:" + email_address, null);
+                } catch (Error e) {
+                    warning ("Failed to open mailto link: %s", e.message);
+                }
+
+                return Gdk.EVENT_STOP;
+            });
+        }
     }
 }
