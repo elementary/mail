@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
-"PO-Revision-Date: 2017-05-17 23:09+0000\n"
+"POT-Creation-Date: 2019-06-26 22:43+0200\n"
+"PO-Revision-Date: 2019-04-22 18:31+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/extra/cs/>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.5.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: data/io.elementary.mail.appdata.xml.in:8
@@ -35,6 +35,9 @@ msgid ""
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
 msgstr ""
+"Pošta je navržena tak, aby vám pomohla spravovat vaše emaily rychle a bez "
+"námahy. Její prostředí je založené na konverzacích, můžete si tedy přečíst "
+"celou diskuzi bez toho, abyste překlikávali mezi jednotlivými zprávami."
 
 #: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
@@ -68,13 +71,21 @@ msgstr ""
 "Funguje s Gmail, Yahoo! Mail, Outlook.com (experimentální) a dalšími "
 "oblíbenými IMAP servery"
 
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Minor bug fixes"
+msgstr "Menší opravy chyb"
+
+#: data/io.elementary.mail.appdata.xml.in:30
+msgid "Translation updates"
+msgstr "Aktualizace překladů"
+
 #: data/io.elementary.mail.appdata.xml.in:69
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/io.elementary.mail.desktop.in:6
 msgid "internet-mail"
-msgstr ""
+msgstr "internet-mail"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -89,9 +100,3 @@ msgstr "Napsat zprávu"
 
 #~ msgid "Lightweight mail client"
 #~ msgstr "Jednoduchý e-mailový klient"
-
-#~ msgid "Minor bug fixes"
-#~ msgstr "Menší opravy chyb"
-
-#~ msgid "Translation updates"
-#~ msgstr "Aktualizace překladů"

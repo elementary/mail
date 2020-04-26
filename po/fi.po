@@ -10,54 +10,83 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2019-01-23 18:07+0000\n"
+"POT-Creation-Date: 2019-06-26 22:43+0200\n"
+"PO-Revision-Date: 2019-09-16 16:23+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://weblate.elementary.io/projects/mail/mail/fi/>"
-"\n"
+"Language-Team: Finnish <https://l10n.elementary.io/projects/mail/mail/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:38
+#: src/HeaderBar.vala:39
 msgid "Compose new message"
 msgstr "Luo uusi viesti"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:45
 msgid "Search Mail"
 msgstr "Etsi sähköposteista"
 
-#: src/HeaderBar.vala:56
+#: src/HeaderBar.vala:57
 msgid "Always Show Remote Images"
 msgstr "Näytä aina etäkuvat"
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
 msgstr "Tilin asetukset…"
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:85
 msgid "Menu"
 msgstr "Valikko"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:91
 msgid "Reply"
 msgstr "Vastaa"
 
-#: src/HeaderBar.vala:97
+#: src/HeaderBar.vala:98
 msgid "Reply All"
 msgstr "Vastaa kaikille"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:105
 msgid "Forward"
 msgstr "Lähetä edelleen"
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:108
+msgid "Mark as Unread"
+msgstr "Merkitse lukemattomaksi"
+
+#: src/HeaderBar.vala:112
+msgid "Mark as Read"
+msgstr "Merkitse luetuksi"
+
+#: src/HeaderBar.vala:116
+msgid "Star"
+msgstr "Merkitse tähdellä"
+
+#: src/HeaderBar.vala:120
+msgid "Unstar"
+msgstr "Poista tähti"
+
+#: src/HeaderBar.vala:135
+msgid "Mark Conversation"
+msgstr "Merkitse keskustelu"
+
+#: src/HeaderBar.vala:141
 msgid "Move conversations to Trash"
 msgstr "Siirrä keskustelu roskakoriin"
+
+#: src/MainWindow.vala:251
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "Viesti poistettu"
+msgstr[1] "Viestit poistettu"
+
+#: src/MainWindow.vala:252
+msgid "Undo"
+msgstr "Kumoa"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -73,119 +102,156 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Verkkotilit…"
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:96 src/MessageList/MessageListItem.vala:76
+msgid "From:"
+msgstr "Lähettäjä:"
+
+#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr "Vastaanottaja:"
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:116 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "Aihe:"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:123
 msgid "Cc"
 msgstr "Kopio"
 
-#: src/Composer/ComposerWidget.vala:87
+#: src/Composer/ComposerWidget.vala:125
 msgid "Bcc"
 msgstr "Piilokopio"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:135
+#: src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr "Kopio:"
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:151
 msgid "Bcc:"
 msgstr "Piilokopio:"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:191
 msgid "Bold"
 msgstr "Lihavointi"
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
 msgstr "Kursivointi"
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:203
 msgid "Underline"
 msgstr "Alleviivaus"
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:209
 msgid "Strikethrough"
 msgstr "Yliviivaus"
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:222
 msgid "Quote text"
 msgstr "Lainaa tekstiä"
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:225
 msgid "Unquote text"
 msgstr "Lopeta tekstin lainaaminen"
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
 msgstr "Sisällytä linkki"
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:237
 msgid "Insert Image"
 msgstr "Sisällytä kuva"
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:240
 msgid "Remove formatting"
 msgstr "Poista muotoilu"
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:268
 msgid "Delete draft"
 msgstr "Poista luonnos"
 
-#: src/Composer/ComposerWidget.vala:234
+#: src/Composer/ComposerWidget.vala:272
 msgid "Attach file"
 msgstr "Liitä tiedosto"
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:278
 msgid "Send"
 msgstr "Lähetä"
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:427
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %e. %b %Y klo %H.%M"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:457
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s %2$s kirjoitti:"
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:461
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Edelleenlähetetty viesti ----------"
 
-#: src/Composer/ComposerWidget.vala:385
+#: src/Composer/ComposerWidget.vala:463
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Lähettäjä: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:386
+#: src/Composer/ComposerWidget.vala:464
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Aihe: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:387
+#: src/Composer/ComposerWidget.vala:465
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Päiväys: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:388
+#: src/Composer/ComposerWidget.vala:466
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Vastaanottaja: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:390
+#: src/Composer/ComposerWidget.vala:468
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Kopio: %s<br/>"
 
-#: src/Composer/ComposerWindow.vala:25
+#: src/Composer/ComposerWidget.vala:503
+msgid "Send Message With an Empty Subject?"
+msgstr "Lähetetäänkö viesti ilman aihetta?"
+
+#: src/Composer/ComposerWidget.vala:504
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+"Viestin aihekenttä on tyhjä. Vastaanottaja ei välttämättä pysty päätellä "
+"viestin tärkeyttä ilman aihetta."
+
+#: src/Composer/ComposerWidget.vala:510
+msgid "Don't Send"
+msgstr "Älä lähetä"
+
+#: src/Composer/ComposerWidget.vala:512
+msgid "Send Anyway"
+msgstr "Lähetä silti"
+
+#: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Uusi viesti"
+
+#: src/ConversationList/ConversationListItem.vala:94
+msgid "Unread"
+msgstr "Lukematon"
+
+#: src/ConversationList/ConversationListItem.vala:104
+msgid "Replied"
+msgstr "Vastattu"
+
+#: src/ConversationList/ConversationListItem.vala:108
+msgid "Forwarded"
+msgstr "Lähetetty edelleen"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -204,17 +270,16 @@ msgid "Example Website"
 msgstr "Esimerkkisivusto"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
+#: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Peru"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
 msgstr "Haluatko varmasti avata liitteen %s?"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -222,7 +287,7 @@ msgstr ""
 "Avattavat tiitteet voivat uhata tietoturvaa. Avaa vain luotetuista lähteistä "
 "tulevat liitteet."
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr "Avaa silti"
 
@@ -234,23 +299,29 @@ msgstr "Päivitä kansio"
 msgid "No Message Selected"
 msgstr "Viestiä ei ole valittu"
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "Lähettäjä:"
+#: src/MessageList/MessageListItem.vala:156
+#: src/MessageList/MessageListItem.vala:276
+msgid "Unstar message"
+msgstr "Poista viestin tähtimerkintä"
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:159
+#: src/MessageList/MessageListItem.vala:272
+msgid "Star message"
+msgstr "Merkitse viesti tähdellä"
+
+#: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
 msgstr "Näytä kuvat"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
 msgstr "Näytä aina lähettäjältä"
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
 msgstr "Tämä viesti sisältää etäkuvia."
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
 msgstr "Tämä viesti sisältää yhden tai useamman liitteen"
 
@@ -422,11 +493,6 @@ msgstr "Tallenna"
 #~ msgid "Mark as not S_pam"
 #~ msgstr "Poista _roskapostimerkintä"
 
-#~ msgid "Mark conversation"
-#~ msgid_plural "Mark conversations"
-#~ msgstr[0] "Merkitse keskustelu"
-#~ msgstr[1] "Merkitse keskustelut"
-
 #~ msgid "Mark conversations"
 #~ msgstr "Merkitse keskustelut"
 
@@ -466,12 +532,6 @@ msgstr "Tallenna"
 
 #~ msgid "Mark as _Unread"
 #~ msgstr "Merkitse l_ukemattomaksi"
-
-#~ msgid "_Star"
-#~ msgstr "_Merkitse tähdellä"
-
-#~ msgid "U_nstar"
-#~ msgstr "_Poista tähti"
 
 #~ msgid "Add label"
 #~ msgstr "Lisää tunniste"
@@ -1007,11 +1067,6 @@ msgstr "Tallenna"
 #~ msgstr[0] "%d viesti"
 #~ msgstr[1] "%d viestiä"
 
-#~ msgid "%d unread"
-#~ msgid_plural "%d unread"
-#~ msgstr[0] "%d lukematon"
-#~ msgstr[1] "%d lukematonta"
-
 #~ msgid "%s, %s"
 #~ msgstr "%s, %s"
 
@@ -1143,9 +1198,6 @@ msgstr "Tallenna"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "Lähetetäänkö viesti ilman aihetta ja sisältöä?"
-
-#~ msgid "Send message with an empty subject?"
-#~ msgstr "Lähetetäänkö viesti ilman aihetta?"
 
 #~ msgid "Send message with an empty body?"
 #~ msgstr "Lähetetäänkö viesti ilman sisältöä?"
@@ -1345,9 +1397,6 @@ msgstr "Tallenna"
 
 #~ msgid "Please wait while Geary validates your account."
 #~ msgstr "Odota, että Geary vahvistaa tilisi tiedot."
-
-#~ msgid "_Undo"
-#~ msgstr "_Kumoa"
 
 #~ msgid "_Redo"
 #~ msgstr "_Tee uudelleen"
@@ -1730,12 +1779,6 @@ msgstr "Tallenna"
 #~ msgid "Reply to All"
 #~ msgstr "Vastaa kaikille"
 
-#~ msgid "Mark as Unread"
-#~ msgstr "Merkitse lukemattomaksi"
-
-#~ msgid "Mark as Read"
-#~ msgstr "Merkitse luetuksi"
-
 #~ msgid "Print…"
 #~ msgstr "Tulosta…"
 
@@ -1758,12 +1801,6 @@ msgstr "Tallenna"
 #~ msgid_plural "%u matches"
 #~ msgstr[0] "%u osuma"
 #~ msgstr[1] "%u osumaa"
-
-#~ msgid "Star message"
-#~ msgstr "Merkitse viesti tähdellä"
-
-#~ msgid "Unstar message"
-#~ msgstr "Poista viestin tähtimerkintä"
 
 #~ msgid "More"
 #~ msgstr "Lisää"

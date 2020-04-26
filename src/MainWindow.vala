@@ -22,6 +22,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     private HeaderBar headerbar;
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
+    private Gtk.Grid container_grid;
 
     private FoldersListView folders_list_view;
     private Gtk.Overlay conversation_list_overlay;
@@ -32,25 +33,32 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
     private uint configure_id;
 
-    public const string ACTION_PREFIX = "win.";
+    public const string ACTION_GROUP_PREFIX = "win";
+    public const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
     public const string ACTION_COMPOSE_MESSAGE = "compose_message";
     public const string ACTION_REPLY = "reply";
     public const string ACTION_REPLY_ALL = "reply-all";
     public const string ACTION_FORWARD = "forward";
     public const string ACTION_MARK_READ = "mark-read";
+    public const string ACTION_MARK_STAR = "mark-star";
     public const string ACTION_MARK_UNREAD = "mark-unread";
+    public const string ACTION_MARK_UNSTAR = "mark-unstar";
     public const string ACTION_MOVE_TO_TRASH = "trash";
+    public const string ACTION_FULLSCREEN = "full-screen";
 
     private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
-    private const ActionEntry[] action_entries = {
-        {ACTION_COMPOSE_MESSAGE,    on_compose_message   },
-        {ACTION_REPLY,              on_reply             },
-        {ACTION_REPLY_ALL,          on_reply_all         },
-        {ACTION_FORWARD,            on_forward           },
-        {ACTION_MARK_READ,          on_mark_read         },
-        {ACTION_MARK_UNREAD,        on_mark_unread       },
-        {ACTION_MOVE_TO_TRASH,      on_move_to_trash     },
+    private const ActionEntry[] ACTION_ENTRIES = {
+        {ACTION_COMPOSE_MESSAGE, on_compose_message },
+        {ACTION_REPLY, on_reply },
+        {ACTION_REPLY_ALL, on_reply_all },
+        {ACTION_FORWARD, on_forward },
+        {ACTION_MARK_READ, on_mark_read },
+        {ACTION_MARK_STAR, on_mark_star },
+        {ACTION_MARK_UNREAD, on_mark_unread },
+        {ACTION_MARK_UNSTAR, on_mark_unstar },
+        {ACTION_MOVE_TO_TRASH, on_move_to_trash },
+        {ACTION_FULLSCREEN, on_fullscreen },
     };
 
     public MainWindow (Gtk.Application application) {
@@ -68,13 +76,16 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         action_accelerators[ACTION_REPLY_ALL] = "<Control><Shift>R";
         action_accelerators[ACTION_FORWARD] = "<Ctrl><Shift>F";
         action_accelerators[ACTION_MARK_READ] = "<Ctrl><Shift>i";
+        action_accelerators[ACTION_MARK_STAR] = "<Ctrl>l";
         action_accelerators[ACTION_MARK_UNREAD] = "<Ctrl><Shift>u";
+        action_accelerators[ACTION_MARK_UNSTAR] = "<Ctrl><Shift>l";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "Delete";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "BackSpace";
+        action_accelerators[ACTION_FULLSCREEN] = "F11";
     }
 
     construct {
-        add_action_entries (action_entries, this);
+        add_action_entries (ACTION_ENTRIES, this);
 
         foreach (var action in action_accelerators.get_keys ()) {
             ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
@@ -88,12 +99,13 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
         folders_list_view = new FoldersListView ();
         conversation_list_box = new ConversationListBox ();
-        message_list_box = new MessageListBox ();
 
+        message_list_box = new MessageListBox ();
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY_ALL), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-reply", get_action (ACTION_FORWARD), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-move-thread", get_action (ACTION_MOVE_TO_TRASH), "enabled", BindingFlags.SYNC_CREATE);
+        message_list_box.bind_property ("can-move-thread", headerbar, "can-mark", BindingFlags.SYNC_CREATE);
 
         conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
         conversation_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -112,7 +124,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
             ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
         }
 
-        var view_overlay = new Gtk.Overlay();
+        var view_overlay = new Gtk.Overlay ();
         view_overlay.add (message_list_scrolled);
         var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
         message_overlay.no_show_all = true;
@@ -142,7 +154,9 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         placeholder_stack.add_named (paned_end, "mail");
         placeholder_stack.add_named (welcome_view, "welcome");
 
-        add (placeholder_stack);
+        container_grid = new Gtk.Grid ();
+        container_grid.attach (placeholder_stack, 0, 1, 1, 1);
+        add (container_grid);
 
         var settings = new GLib.Settings ("io.elementary.mail");
         settings.bind ("paned-start-position", paned_start, "position", SettingsBindFlags.DEFAULT);
@@ -198,23 +212,31 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         conversation_list_box.mark_read_selected_messages ();
     }
 
+    private void on_mark_star () {
+        conversation_list_box.mark_star_selected_messages ();
+    }
+
     private void on_mark_unread () {
         conversation_list_box.mark_unread_selected_messages ();
     }
 
+    private void on_mark_unstar () {
+        conversation_list_box.mark_unstar_selected_messages ();
+    }
+
     private void on_reply () {
         scroll_message_list_to_bottom ();
-        message_list_box.add_inline_composer (ComposerWidget.Type.REPLY);
+        message_list_box.add_inline_composer.begin (ComposerWidget.Type.REPLY);
     }
 
     private void on_reply_all () {
         scroll_message_list_to_bottom ();
-        message_list_box.add_inline_composer (ComposerWidget.Type.REPLY_ALL);
+        message_list_box.add_inline_composer.begin (ComposerWidget.Type.REPLY_ALL);
     }
 
     private void on_forward () {
         scroll_message_list_to_bottom ();
-        message_list_box.add_inline_composer (ComposerWidget.Type.FORWARD);
+        message_list_box.add_inline_composer.begin (ComposerWidget.Type.FORWARD);
     }
 
     private void on_move_to_trash () {
@@ -226,7 +248,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
                 }
             }
 
-            var toast = new Granite.Widgets.Toast (ngettext("Message Deleted", "Messages Deleted", result));
+            var toast = new Granite.Widgets.Toast (ngettext ("Message Deleted", "Messages Deleted", result));
             toast.set_default_action (_("Undo"));
             toast.show_all ();
 
@@ -242,6 +264,20 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
             conversation_list_overlay.add_overlay (toast);
             toast.send_notification ();
+        }
+    }
+
+    private void on_fullscreen () {
+        if (Gdk.WindowState.FULLSCREEN in get_window ().get_state ()) {
+            container_grid.remove (headerbar);
+            set_titlebar (headerbar);
+            headerbar.show_close_button = true;
+            unfullscreen ();
+        } else {
+            remove (headerbar);
+            container_grid.attach (headerbar, 0, 0, 1, 1);
+            headerbar.show_close_button = false;
+            fullscreen ();
         }
     }
 

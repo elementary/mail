@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2017-04-10 18:13+0000\n"
-"Last-Translator: HAYDER <albasimy16@gmail.com>\n"
+"POT-Creation-Date: 2019-06-26 22:43+0200\n"
+"PO-Revision-Date: 2019-03-16 21:27+0000\n"
+"Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/mail/mail/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -20,242 +20,322 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.4\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:58+0000\n"
 
-#: src/HeaderBar.vala:38
-#, fuzzy
+#: src/HeaderBar.vala:39
 msgid "Compose new message"
-msgstr "%d صفر رسالة جديدة"
+msgstr "رسالة جديدة"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:45
 msgid "Search Mail"
-msgstr ""
+msgstr "بحث في البريد"
 
-#: src/HeaderBar.vala:56
+#: src/HeaderBar.vala:57
 msgid "Always Show Remote Images"
-msgstr ""
+msgstr "دائماً اعرض الصور عن بعد"
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
-msgstr ""
+msgstr "إعدادات الحساب…"
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:85
 msgid "Menu"
-msgstr ""
+msgstr "القائمة"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:91
 msgid "Reply"
-msgstr ""
+msgstr "رد"
 
-#: src/HeaderBar.vala:97
-#, fuzzy
+#: src/HeaderBar.vala:98
 msgid "Reply All"
-msgstr "الرد علي الجميع"
+msgstr "الرد على الجميع"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:105
 msgid "Forward"
-msgstr ""
+msgstr "إعادة التوجيه"
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:108
 #, fuzzy
+msgid "Mark as Unread"
+msgstr "_علم كغير مقرؤة"
+
+#: src/HeaderBar.vala:112
+#, fuzzy
+msgid "Mark as Read"
+msgstr "_علم كمقرؤة"
+
+#: src/HeaderBar.vala:116
+#, fuzzy
+msgid "Star"
+msgstr "_نجمة"
+
+#: src/HeaderBar.vala:120
+#, fuzzy
+msgid "Unstar"
+msgstr "الغاء التميز بنجمة"
+
+#: src/HeaderBar.vala:135
+#, fuzzy
+msgid "Mark Conversation"
+msgstr "تأشير المحادثات"
+
+#: src/HeaderBar.vala:141
 msgid "Move conversations to Trash"
-msgstr "نقل المحادثة الى سلة المهملات  (Delete, Backspace)"
+msgstr "نقل المحادثة الى سلة المهملات"
+
+#: src/MainWindow.vala:251
+#, fuzzy
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "لا توجد رسائل مختارة"
+msgstr[1] "لا توجد رسائل مختارة"
+msgstr[2] "لا توجد رسائل مختارة"
+msgstr[3] "لا توجد رسائل مختارة"
+msgstr[4] "لا توجد رسائل مختارة"
+msgstr[5] "لا توجد رسائل مختارة"
+
+#: src/MainWindow.vala:252
+msgid "Undo"
+msgstr ""
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
-msgstr ""
+msgstr "اربط حساب"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
+"يستخدم البريد حسابات البريد الإلكتروني التي تم اعدادها في إعدادات النظام."
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "الحسابات"
+msgstr "حسابات الانترنت…"
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:96 src/MessageList/MessageListItem.vala:76
+msgid "From:"
+msgstr "من:"
+
+#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:81
 msgid "To:"
-msgstr "الي:"
+msgstr "إلى:"
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:116 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "الموضوع:"
 
-#: src/Composer/ComposerWidget.vala:85
-#, fuzzy
+#: src/Composer/ComposerWidget.vala:123
 msgid "Cc"
-msgstr "Cc:"
+msgstr "نسخة"
 
-#: src/Composer/ComposerWidget.vala:87
-#, fuzzy
+#: src/Composer/ComposerWidget.vala:125
 msgid "Bcc"
-msgstr "Bcc:"
+msgstr "مخفية"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:135
+#: src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
-msgstr "Cc:"
+msgstr "نسخة:"
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:151
 msgid "Bcc:"
-msgstr "Bcc:"
+msgstr "مخفية:"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:191
 msgid "Bold"
-msgstr ""
+msgstr "عريض"
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
-msgstr ""
+msgstr "مائل"
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:203
 msgid "Underline"
-msgstr ""
+msgstr "تحته خط"
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:209
 msgid "Strikethrough"
-msgstr ""
+msgstr "مشطوب"
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:222
 msgid "Quote text"
-msgstr ""
+msgstr "اقتباس نصي"
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:225
 msgid "Unquote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
-msgstr ""
+msgstr "إدراج رابط"
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:237
 msgid "Insert Image"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:201
-msgid "Remove formatting"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:230
-msgid "Delete draft"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:234
-msgid "Attach file"
-msgstr ""
+msgstr "إدراج صورة"
 
 #: src/Composer/ComposerWidget.vala:240
+msgid "Remove formatting"
+msgstr "إزالة التنسيق"
+
+#: src/Composer/ComposerWidget.vala:268
+msgid "Delete draft"
+msgstr "حذف المسودة"
+
+#: src/Composer/ComposerWidget.vala:272
+msgid "Attach file"
+msgstr "إرفاق ملف"
+
+#: src/Composer/ComposerWidget.vala:278
 msgid "Send"
-msgstr ""
+msgstr "إرسال"
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:427
 msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%a, %b %-e, %Y at %-l:%M %p"
+msgstr "a, %b %-e, %Y at %-l:%M %p%"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:457
 #, c-format
 msgid "On %1$s, %2$s wrote:"
-msgstr ""
+msgstr "في %1$s, %2$s كتب:"
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:461
 msgid "---------- Forwarded message ----------"
 msgstr "---------- رسالة معاد توجيهها ----------"
 
-#: src/Composer/ComposerWidget.vala:385
+#: src/Composer/ComposerWidget.vala:463
 #, c-format
 msgid "From: %s<br/>"
-msgstr ""
+msgstr "من: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:386
-#, fuzzy, c-format
+#: src/Composer/ComposerWidget.vala:464
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "الموضوع:"
+msgstr "العنوان: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:387
-#, fuzzy, c-format
+#: src/Composer/ComposerWidget.vala:465
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "التاريخ: %s\n"
+msgstr "التاريخ: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:388
+#: src/Composer/ComposerWidget.vala:466
 #, c-format
 msgid "To: %s<br/>"
-msgstr ""
+msgstr "إلى: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:390
+#: src/Composer/ComposerWidget.vala:468
 #, c-format
 msgid "Cc: %s<br/>"
+msgstr "نسخة: %s<br/>"
+
+#: src/Composer/ComposerWidget.vala:503
+msgid "Send Message With an Empty Subject?"
 msgstr ""
 
-#: src/Composer/ComposerWindow.vala:25
+#: src/Composer/ComposerWidget.vala:504
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:510
+msgid "Don't Send"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:512
+#, fuzzy
+msgid "Send Anyway"
+msgstr "افتح على أي حال"
+
+#: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "رسالة جديدة"
 
+#: src/ConversationList/ConversationListItem.vala:94
+msgid "Unread"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:104
+#, fuzzy
+msgid "Replied"
+msgstr "رد"
+
+#: src/ConversationList/ConversationListItem.vala:108
+#, fuzzy
+msgid "Forwarded"
+msgstr "إعادة التوجيه"
+
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "الرابط:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://example.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
 msgid "Link Text:"
-msgstr ""
+msgstr "نص الرابط:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
-msgstr ""
+msgstr "مثال الموقع"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
+#: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
-msgstr ""
+msgstr "إلغاء"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "هل أنت متأكد من أنك تريد فتح %s؟"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"قد تتسبب المرفقات في تلف النظام الخاص بك في حالة فتحه. افتح الملفات التي من "
+"مصادر موثوقة فقط."
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
-msgstr ""
+msgstr "افتح على أي حال"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
-msgstr ""
+msgstr "حدث المجلد"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "لا توجد محادثات مختارة"
+msgstr "لا توجد رسائل مختارة"
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "من:"
+#: src/MessageList/MessageListItem.vala:156
+#: src/MessageList/MessageListItem.vala:276
+msgid "Unstar message"
+msgstr ""
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:159
+#: src/MessageList/MessageListItem.vala:272
+#, fuzzy
+msgid "Star message"
+msgstr "رسالة جديدة"
+
+#: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
-msgstr ""
+msgstr "عرض الصور"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "اعرض دائما من المرسل"
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
-msgstr ""
+msgstr "تحتوي هذه الرسالة على صور عن بعد."
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "تحتوي هذه الرسالة على مرفق واحد أو أكثر"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
@@ -263,15 +343,15 @@ msgstr "فتح"
 
 #: src/MessageList/AttachmentButton.vala:43
 msgid "Save As…"
-msgstr ""
+msgstr "حفظ بإسم …"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "غير معروف"
 
 #: src/MessageList/AttachmentButton.vala:113
 msgid "Save"
-msgstr ""
+msgstr "حفظ"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "المسودة"
@@ -392,9 +472,6 @@ msgstr ""
 #~ msgid "_Archive"
 #~ msgstr "_أرشيف"
 
-#~ msgid "Mark conversations"
-#~ msgstr "تأشير المحادثات"
-
 #~ msgid "Add label to conversations"
 #~ msgstr "إضافة وسم للمحادثات"
 
@@ -415,12 +492,6 @@ msgstr ""
 
 #~ msgid "_Mark as..."
 #~ msgstr "_علم كـ"
-
-#~ msgid "_Star"
-#~ msgstr "_نجمة"
-
-#~ msgid "U_nstar"
-#~ msgstr "الغاء التميز بنجمة"
 
 #~ msgid "_Label"
 #~ msgstr "_وسم"
@@ -636,12 +707,6 @@ msgstr ""
 #~ msgstr[3] "حفظ المرفقات"
 #~ msgstr[4] "حفظ المرفقات"
 #~ msgstr[5] "حفظ المرفقات"
-
-#~ msgid "_Mark as Read"
-#~ msgstr "_علم كمقرؤة"
-
-#~ msgid "_Mark as Unread"
-#~ msgstr "_علم كغير مقرؤة"
 
 #~ msgid "_View Source"
 #~ msgstr "_عرض المصدر"

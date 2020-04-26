@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
+"POT-Creation-Date: 2019-06-26 22:43+0200\n"
 "PO-Revision-Date: 2019-01-08 18:05+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/mail/"
@@ -72,6 +72,14 @@ msgstr ""
 "Fungerer med Gmail, Yahoo! Mail, Outlook.com (ufullstendig) og andre "
 "populære IMAP-tjenere"
 
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Minor bug fixes"
+msgstr "Retting av småfeil"
+
+#: data/io.elementary.mail.appdata.xml.in:30
+msgid "Translation updates"
+msgstr "Oversettelsesoppdateringer"
+
 #: data/io.elementary.mail.appdata.xml.in:69
 msgid "elementary, Inc."
 msgstr "elementary LLC. (selskap med begrenset ansvar)"
@@ -93,12 +101,6 @@ msgstr "Skriv ny melding"
 
 #~ msgid "Lightweight mail client"
 #~ msgstr "Lettdreven e-postklient"
-
-#~ msgid "Minor bug fixes"
-#~ msgstr "Retting av småfeil"
-
-#~ msgid "Translation updates"
-#~ msgstr "Oversettelsesoppdateringer"
 
 #~ msgid "Appstream: add releases info"
 #~ msgstr "Appstream: Legg til utgivelsesinfo"

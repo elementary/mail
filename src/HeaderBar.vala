@@ -19,6 +19,7 @@
  */
 
 public class Mail.HeaderBar : Gtk.HeaderBar {
+    public bool can_mark { get; set; }
     public Gtk.SearchEntry search_entry { get; construct; }
     private Gtk.Grid spacing_widget;
 
@@ -104,6 +105,38 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
             _("Forward")
         );
 
+        var mark_unread_item = new Gtk.MenuItem ();
+        mark_unread_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD;
+        mark_unread_item.bind_property ("sensitive", mark_unread_item, "visible");
+        mark_unread_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Unread"), mark_unread_item.action_name));
+
+        var mark_read_item = new Gtk.MenuItem ();
+        mark_read_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ;
+        mark_read_item.bind_property ("sensitive", mark_read_item, "visible");
+        mark_read_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Read"), mark_read_item.action_name));
+
+        var mark_star_item = new Gtk.MenuItem ();
+        mark_star_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR;
+        mark_star_item.bind_property ("sensitive", mark_star_item, "visible");
+        mark_star_item.add (new Granite.AccelLabel.from_action_name (_("Star"), mark_star_item.action_name));
+
+        var mark_unstar_item = new Gtk.MenuItem ();
+        mark_unstar_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR;
+        mark_unstar_item.bind_property ("sensitive", mark_unstar_item, "visible");
+        mark_unstar_item.add (new Granite.AccelLabel.from_action_name (_("Unstar"), mark_unstar_item.action_name));
+
+        var mark_menu = new Gtk.Menu ();
+        mark_menu.add (mark_unread_item);
+        mark_menu.add (mark_read_item);
+        mark_menu.add (mark_star_item);
+        mark_menu.add (mark_unstar_item);
+        mark_menu.show_all ();
+
+        var mark_button = new Gtk.MenuButton ();
+        mark_button.image = new Gtk.Image.from_icon_name ("edit-mark", Gtk.IconSize.LARGE_TOOLBAR);
+        mark_button.popup = mark_menu;
+        mark_button.tooltip_text = _("Mark Conversation");
+
         var trash_button = new Gtk.Button.from_icon_name ("edit-delete", Gtk.IconSize.LARGE_TOOLBAR);
         trash_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH;
         trash_button.tooltip_markup = Granite.markup_accel_tooltip (
@@ -118,8 +151,11 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         pack_start (reply_all_button);
         pack_start (forward_button);
         pack_start (new Gtk.Separator (Gtk.Orientation.VERTICAL));
+        pack_start (mark_button);
         pack_start (trash_button);
         pack_end (app_menu);
+
+        bind_property ("can-mark", mark_button, "sensitive");
 
         account_settings_menuitem.clicked.connect (() => {
             try {
