@@ -121,7 +121,10 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
                 yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
             } catch (Error e) {
-                critical (e.message);
+                // We can cancel the operation
+                if (!(e is GLib.IOError.CANCELLED)) {
+                    critical (e.message);
+                }
             }
         }
 
