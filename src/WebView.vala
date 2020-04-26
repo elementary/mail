@@ -35,6 +35,7 @@ public class Mail.WebView : WebKit.WebView {
     private bool loaded = false;
     private bool queued_load_images = false;
     private string? queued_body_content = null;
+    private GLib.Cancellable cancellable;
 
     static construct {
         unowned WebKit.WebContext context = WebKit.WebContext.get_default ();
@@ -51,6 +52,7 @@ public class Mail.WebView : WebKit.WebView {
     }
 
     construct {
+        cancellable = new GLib.Cancellable ();
         expand = true;
 
         internal_resources = new Gee.HashMap<string, InputStream> ();
@@ -75,16 +77,23 @@ public class Mail.WebView : WebKit.WebView {
         Object (settings: setts);
     }
 
+    ~WebView () {
+        cancellable.cancel ();
+    }
+
     public void on_load_changed (WebKit.LoadEvent event) {
         if (event == WebKit.LoadEvent.FINISHED || event == WebKit.LoadEvent.COMMITTED) {
             var message = new WebKit.UserMessage ("get-page-height", null);
-            send_message_to_page.begin (message, null, (obj, res) => {
+            send_message_to_page.begin (message, cancellable, (obj, res) => {
                 try {
                     var response = send_message_to_page.end (res);
                     preferred_height = response.parameters.get_int32 ();
                     queue_resize ();
                 } catch (Error e) {
-                    critical (e.message);
+                    // We can cancel the operation
+                    if (!(e is GLib.IOError.CANCELLED)) {
+                        critical (e.message);
+                    }
                 }
             });
         }
@@ -114,7 +123,7 @@ public class Mail.WebView : WebKit.WebView {
     public void set_body_content (owned string content) {
         if (loaded) {
             var message = new WebKit.UserMessage ("set-body-html", new Variant.take_string ((owned) content));
-            send_message_to_page.begin (message);
+            send_message_to_page.begin (message, cancellable);
         } else {
             queued_body_content = (owned) content;
         }
@@ -123,10 +132,13 @@ public class Mail.WebView : WebKit.WebView {
     public async string get_selected_text () {
         try {
             var message = new WebKit.UserMessage ("get-selected-text", null);
-            var response = yield send_message_to_page (message);
+            var response = yield send_message_to_page (message, cancellable);
             return response.parameters.get_string ();
         } catch (Error e) {
-            critical (e.message);
+            // We can cancel the operation
+            if (!(e is GLib.IOError.CANCELLED)) {
+                critical (e.message);
+            }
         }
 
         return null;
@@ -157,7 +169,7 @@ public class Mail.WebView : WebKit.WebView {
     public void load_images () {
         if (loaded) {
             var message = new WebKit.UserMessage ("set-image-loading-enabled", new Variant.boolean (true));
-            send_message_to_page.begin (message);
+            send_message_to_page.begin (message, cancellable);
         } else {
             queued_load_images = true;
         }
@@ -165,16 +177,19 @@ public class Mail.WebView : WebKit.WebView {
 
     public void execute_editor_command (string command, string argument = "") {
         var message = new WebKit.UserMessage ("execute-editor-command", new Variant ("(ss)", command, argument));
-        send_message_to_page.begin (message);
+        send_message_to_page.begin (message, cancellable);
     }
 
     public async bool query_command_state (string command) {
         try {
             var message = new WebKit.UserMessage ("query-command-state", new Variant.string (command));
-            var response = yield send_message_to_page (message);
+            var response = yield send_message_to_page (message, cancellable);
             return response.parameters.get_boolean ();
         } catch (Error e) {
-            critical (e.message);
+            // We can cancel the operation
+            if (!(e is GLib.IOError.CANCELLED)) {
+                critical (e.message);
+            }
         }
 
         return false;
@@ -183,10 +198,13 @@ public class Mail.WebView : WebKit.WebView {
     public async string? get_body_html () {
         try {
             var message = new WebKit.UserMessage ("get-body-html", new Variant.boolean (true));
-            var response = yield send_message_to_page (message);
+            var response = yield send_message_to_page (message, cancellable);
             return response.parameters.get_string ();
         } catch (Error e) {
-            critical (e.message);
+            // We can cancel the operation
+            if (!(e is GLib.IOError.CANCELLED)) {
+                critical (e.message);
+            }
         }
 
         return null;
