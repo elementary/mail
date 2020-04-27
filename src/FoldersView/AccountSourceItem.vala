@@ -23,6 +23,8 @@
 public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem {
     public Mail.Backend.Account account { get; construct; }
 
+    public signal void loaded ();
+
     private GLib.Cancellable connect_cancellable;
     private Gee.HashMap<string, FolderSourceItem> folder_items;
     private AccountSavedState saved_state;
@@ -45,28 +47,28 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
         offlinestore.folder_deleted.connect (folder_deleted);
         offlinestore.folder_info_stale.connect (reload_folders);
         offlinestore.folder_renamed.connect (folder_renamed);
-        get_info.begin ();
         unowned GLib.NetworkMonitor network_monitor = GLib.NetworkMonitor.get_default ();
         network_monitor.network_changed.connect (() =>{
             connect_to_account.begin ();
         });
-
-        connect_to_account.begin ();
     }
 
     ~AccountSourceItem () {
         connect_cancellable.cancel ();
     }
 
-    private async void get_info () {
+    public async void load () {
         try {
             var folderinfo = yield offlinestore.get_folder_info (null, Camel.StoreGetFolderInfoFlags.RECURSIVE, GLib.Priority.DEFAULT, connect_cancellable);
             if (folderinfo != null) {
                 show_info (folderinfo, this);
             }
+
         } catch (Error e) {
             critical (e.message);
         }
+
+        connect_to_account.begin ();
     }
 
     private async void connect_to_account () {
