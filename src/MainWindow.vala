@@ -100,6 +100,22 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         folders_list_view = new FoldersListView ();
         conversation_list_box = new ConversationListBox ();
 
+        // Disable delete accelerators when the conversation list box loses keyboard focus,
+        // restore them when it returns
+        conversation_list_box.set_focus_child.connect ((widget) => {
+            if (widget == null) {
+                ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
+                    ACTION_PREFIX + ACTION_MOVE_TO_TRASH,
+                    {}
+                );
+            } else {
+                ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
+                    ACTION_PREFIX + ACTION_MOVE_TO_TRASH,
+                    action_accelerators[ACTION_MOVE_TO_TRASH].to_array ()
+                );
+            }
+        });
+
         message_list_box = new MessageListBox ();
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY_ALL), "enabled", BindingFlags.SYNC_CREATE);
