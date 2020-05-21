@@ -24,8 +24,7 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
     public bool can_search {
         get {return _can_search;}
         set {
-            debug("setting can_search");
-            this.search_entry.set_sensitive(value);
+            this.search_entry.set_sensitive (value);
             this._can_search = value;
         }
         default = false;
@@ -56,7 +55,7 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         search_entry = new Gtk.SearchEntry ();
         search_entry.placeholder_text = _("Search Mail");
         search_entry.valign = Gtk.Align.CENTER;
-        search_entry.set_sensitive(can_search);
+        search_entry.set_sensitive (can_search);
 
 
         var load_images_switch = new Gtk.Switch ();
