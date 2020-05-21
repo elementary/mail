@@ -41,6 +41,8 @@ public class Mail.Backend.Session : Camel.Session {
 
     public signal void account_added (Mail.Backend.Account account);
 
+    public signal void account_removed (Mail.Backend.Account account);
+
     private Session () {
         Object (user_data_dir: Path.build_filename (E.get_user_data_dir (), "mail"), user_cache_dir: Path.build_filename (E.get_user_cache_dir (), "mail"));
     }
@@ -250,6 +252,12 @@ public class Mail.Backend.Session : Camel.Session {
         }
 
         return service;
+    }
+
+    public override void remove_service (Camel.Service service) {
+        var account = new Account (service);
+        base.remove_service (service);
+        account_removed (account);
     }
 
     public Gee.LinkedList<Backend.Account> get_accounts () {

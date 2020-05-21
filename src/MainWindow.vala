@@ -190,6 +190,13 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
             headerbar.can_search = true;
         });
 
+        session.account_removed.connect (() => {
+            var accounts_left = session.get_accounts ();
+            if (accounts_left.size == 0) {
+                headerbar.can_search = false;
+            }
+        });
+
         session.start.begin ();
     }
 

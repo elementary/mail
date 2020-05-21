@@ -20,15 +20,7 @@
 
 public class Mail.HeaderBar : Gtk.HeaderBar {
     public bool can_mark { get; set; }
-    private bool _can_search;
-    public bool can_search {
-        get {return _can_search;}
-        set {
-            this.search_entry.set_sensitive (value);
-            this._can_search = value;
-        }
-        default = false;
-    }
+    public bool can_search { get; set; }
     public Gtk.SearchEntry search_entry { get; set; }
     private Gtk.Grid spacing_widget;
 
@@ -55,7 +47,7 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         search_entry = new Gtk.SearchEntry ();
         search_entry.placeholder_text = _("Search Mail");
         search_entry.valign = Gtk.Align.CENTER;
-        search_entry.set_sensitive (can_search);
+         bind_property ("can-search", search_entry, "sensitive", BindingFlags.SYNC_CREATE);
 
 
         var load_images_switch = new Gtk.Switch ();
