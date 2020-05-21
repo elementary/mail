@@ -32,7 +32,6 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
 
     construct {
         width_request = 100;
-
         source_list = new Granite.Widgets.SourceList ();
         add (source_list);
         var session = Mail.Backend.Session.get_default ();

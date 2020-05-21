@@ -187,6 +187,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
         session.account_added.connect (() => {
             placeholder_stack.visible_child = paned_end;
+            headerbar.can_search = true;
         });
 
         session.start.begin ();
