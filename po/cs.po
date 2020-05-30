@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2020-05-11 14:10+0000\n"
+"PO-Revision-Date: 2020-05-30 13:11+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/mail/cs/>\n"
 "Language: cs\n"
@@ -65,7 +65,7 @@ msgstr "Označit jako přečtené"
 
 #: src/HeaderBar.vala:116
 msgid "Star"
-msgstr "Hvězdička"
+msgstr "Označit hvězdičkou"
 
 #: src/HeaderBar.vala:120
 msgid "Unstar"
@@ -116,11 +116,11 @@ msgstr "Předmět:"
 
 #: src/Composer/ComposerWidget.vala:123
 msgid "Cc"
-msgstr "Cc"
+msgstr "Kopie"
 
 #: src/Composer/ComposerWidget.vala:125
 msgid "Bcc"
-msgstr "Bcc"
+msgstr "Slepá kopie"
 
 #: src/Composer/ComposerWidget.vala:135
 #: src/MessageList/MessageListItem.vala:115
@@ -272,12 +272,12 @@ msgstr "Příklad webové stránky"
 #: src/Dialogs/InsertLinkDialog.vala:63
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
-msgstr "Zrušit"
+msgstr "Storno"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
-msgstr "Jste si jisti, že chcete otevřít %s?"
+msgstr "Opravdu chcete %s otevřít?"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
