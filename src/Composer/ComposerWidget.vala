@@ -360,7 +360,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
             foreach (unowned string param in params) {
                 var terms = param.split ("=");
                 if (terms.length == 2) {
-                    result[terms[0]] = Soup.URI.decode (terms[1]);
+                    result[terms[0].down ()] = Soup.URI.decode (terms[1]);
                 } else {
                     critical ("Invalid mailto URL");
                 }
@@ -370,12 +370,24 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 bcc_button.clicked ();
                 bcc_val.text = result["bcc"];
             }
+
             if (result["cc"] != null) {
                 cc_button.clicked ();
                 cc_val.text = result["cc"];
             }
+
             if (result["subject"] != null) {
                 subject_val.text = result["subject"];
+            }
+
+            if (result["body"] != null) {
+                var flags =
+                    Camel.MimeFilterToHTMLFlags.CONVERT_ADDRESSES |
+                    Camel.MimeFilterToHTMLFlags.CONVERT_NL |
+                    Camel.MimeFilterToHTMLFlags.CONVERT_SPACES |
+                    Camel.MimeFilterToHTMLFlags.CONVERT_URLS;
+
+                web_view.set_body_content (Camel.text_to_html (result["body"], flags, 0));
             }
         }
     }
