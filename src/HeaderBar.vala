@@ -40,14 +40,12 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
             _("Compose new message")
         );
 
-
-
         spacing_widget = new Gtk.Grid ();
 
         search_entry = new Gtk.SearchEntry ();
         search_entry.placeholder_text = _("Search Mail");
         search_entry.valign = Gtk.Align.CENTER;
-         bind_property ("can-search", search_entry, "sensitive", BindingFlags.SYNC_CREATE);
+        bind_property ("can-search", search_entry, "sensitive", BindingFlags.SYNC_CREATE);
 
 
         var load_images_switch = new Gtk.Switch ();
