@@ -21,7 +21,7 @@
 public class Mail.HeaderBar : Gtk.HeaderBar {
     public bool can_mark { get; set; }
     public bool can_search { get; set; }
-    public Gtk.SearchEntry search_entry { get; set; }
+    public Gtk.SearchEntry search_entry { get; construct; }
     private Gtk.Grid spacing_widget;
 
     public HeaderBar () {
