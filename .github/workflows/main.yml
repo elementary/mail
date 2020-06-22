@@ -15,7 +15,7 @@ jobs:
     - name: Install Dependencies
       run: |
         apt update
-        apt install -y libcamel1.2-dev libedataserver1.2-dev libedataserverui1.2-dev libfolks-dev libgee-0.8-dev libglib2.0-dev libgranite-dev libwebkit2gtk-4.0-dev meson valac
+        apt install -y libcamel1.2-dev libedataserver1.2-dev libedataserverui1.2-dev libfolks-dev libgee-0.8-dev libglib2.0-dev libgranite-dev libhandy-1-dev libwebkit2gtk-4.0-dev meson valac
     - name: Build
       run: |
         meson build
