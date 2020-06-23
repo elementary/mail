@@ -141,7 +141,7 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
             image = new Gtk.Image.from_icon_name ("edit-mark", Gtk.IconSize.LARGE_TOOLBAR),
             popup = mark_menu,
             tooltip_text = _("Mark Conversation")
-        }
+        };
 
         var trash_button = new Gtk.Button.from_icon_name ("edit-delete", Gtk.IconSize.LARGE_TOOLBAR);
         trash_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH;
