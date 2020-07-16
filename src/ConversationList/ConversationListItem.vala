@@ -92,12 +92,12 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
 
             status_icon.icon_name = "mail-unread-symbolic";
             status_icon.tooltip_text = _("Unread");
-            status_icon.get_style_context ().add_class ("attention");
+            status_icon.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
 
             status_revealer.reveal_child = true;
         } else {
             get_style_context ().remove_class ("unread-message");
-            status_icon.get_style_context ().remove_class ("attention");
+            status_icon.get_style_context ().remove_class (Granite.STYLE_CLASS_ACCENT);
 
             if (data.replied_all || data.replied) {
                 status_icon.icon_name = "mail-replied-symbolic";
