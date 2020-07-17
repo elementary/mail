@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-03-16 21:27+0000\n"
+"PO-Revision-Date: 2020-05-16 11:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/mail/mail/ar/>\n"
 "Language: ar\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 3.4\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:58+0000\n"
 
 #: src/HeaderBar.vala:39
@@ -56,48 +56,42 @@ msgid "Forward"
 msgstr "إعادة التوجيه"
 
 #: src/HeaderBar.vala:108
-#, fuzzy
 msgid "Mark as Unread"
-msgstr "_علم كغير مقرؤة"
+msgstr "علم كغير مقروء"
 
 #: src/HeaderBar.vala:112
-#, fuzzy
 msgid "Mark as Read"
-msgstr "_علم كمقرؤة"
+msgstr "علم كمقروء"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
-msgstr "_نجمة"
+msgstr "نجمة"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
-msgstr "الغاء التميز بنجمة"
+msgstr "الغاء النجمة"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
-msgstr "تأشير المحادثات"
+msgstr "تعليم كمحادثة"
 
 #: src/HeaderBar.vala:141
 msgid "Move conversations to Trash"
 msgstr "نقل المحادثة الى سلة المهملات"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "لا توجد رسائل مختارة"
-msgstr[1] "لا توجد رسائل مختارة"
-msgstr[2] "لا توجد رسائل مختارة"
-msgstr[3] "لا توجد رسائل مختارة"
-msgstr[4] "لا توجد رسائل مختارة"
-msgstr[5] "لا توجد رسائل مختارة"
+msgstr[1] "رسالة محذوفة"
+msgstr[2] "رسالتان محذوفتان"
+msgstr[3] "رسائل محذوفة"
+msgstr[4] "رسالة محذوفة"
+msgstr[5] "رسائل محذوفة"
 
 #: src/MainWindow.vala:252
 msgid "Undo"
-msgstr ""
+msgstr "تراجع"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -126,20 +120,20 @@ msgstr "الموضوع:"
 
 #: src/Composer/ComposerWidget.vala:123
 msgid "Cc"
-msgstr "نسخة"
+msgstr "نسخة كربونية"
 
 #: src/Composer/ComposerWidget.vala:125
 msgid "Bcc"
-msgstr "مخفية"
+msgstr "نسخة كربونية غير مرئية"
 
 #: src/Composer/ComposerWidget.vala:135
 #: src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
-msgstr "نسخة:"
+msgstr "نسخة كربونية:"
 
 #: src/Composer/ComposerWidget.vala:151
 msgid "Bcc:"
-msgstr "مخفية:"
+msgstr "نسخة كربونية غير مرئية:"
 
 #: src/Composer/ComposerWidget.vala:191
 msgid "Bold"
@@ -163,7 +157,7 @@ msgstr "اقتباس نصي"
 
 #: src/Composer/ComposerWidget.vala:225
 msgid "Unquote text"
-msgstr ""
+msgstr "الغاء اقتباس النص"
 
 #: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
@@ -229,22 +223,23 @@ msgstr "نسخة: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
 msgid "Send Message With an Empty Subject?"
-msgstr ""
+msgstr "ارسال الرسالة من دون عنوان ؟"
 
 #: src/Composer/ComposerWidget.vala:504
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"هذه الرسالة لم يتم وضع عنوان لها، مستقبل الرسالة قد لا يستطيع معرفة مجال "
+"المرسل او قد لا يستطيع وضعها مع الرسائل المهمة."
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "لا ترسل"
 
 #: src/Composer/ComposerWidget.vala:512
-#, fuzzy
 msgid "Send Anyway"
-msgstr "افتح على أي حال"
+msgstr "ارسل على أي حال"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
@@ -252,17 +247,15 @@ msgstr "رسالة جديدة"
 
 #: src/ConversationList/ConversationListItem.vala:94
 msgid "Unread"
-msgstr ""
+msgstr "علم كغير مقروء"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
 msgstr "رد"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "إعادة التوجيه"
+msgstr "إعادة توجيه"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -313,13 +306,12 @@ msgstr "لا توجد رسائل مختارة"
 #: src/MessageList/MessageListItem.vala:156
 #: src/MessageList/MessageListItem.vala:276
 msgid "Unstar message"
-msgstr ""
+msgstr "ازالة النجمة من الرسالة"
 
 #: src/MessageList/MessageListItem.vala:159
 #: src/MessageList/MessageListItem.vala:272
-#, fuzzy
 msgid "Star message"
-msgstr "رسالة جديدة"
+msgstr "تمييز الرسالة بنجمة"
 
 #: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
@@ -343,7 +335,7 @@ msgstr "فتح"
 
 #: src/MessageList/AttachmentButton.vala:43
 msgid "Save As…"
-msgstr "حفظ بإسم …"
+msgstr "حفظ باسم …"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"

@@ -363,7 +363,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
             foreach (unowned string param in params) {
                 var terms = param.split ("=");
                 if (terms.length == 2) {
-                    result[terms[0]] = Soup.URI.decode (terms[1]);
+                    result[terms[0].down ()] = Soup.URI.decode (terms[1]);
                 } else {
                     critical ("Invalid mailto URL");
                 }
@@ -373,12 +373,24 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 bcc_button.clicked ();
                 bcc_val.text = result["bcc"];
             }
+
             if (result["cc"] != null) {
                 cc_button.clicked ();
                 cc_val.text = result["cc"];
             }
+
             if (result["subject"] != null) {
                 subject_val.text = result["subject"];
+            }
+
+            if (result["body"] != null) {
+                var flags =
+                    Camel.MimeFilterToHTMLFlags.CONVERT_ADDRESSES |
+                    Camel.MimeFilterToHTMLFlags.CONVERT_NL |
+                    Camel.MimeFilterToHTMLFlags.CONVERT_SPACES |
+                    Camel.MimeFilterToHTMLFlags.CONVERT_URLS;
+
+                web_view.set_body_content (Camel.text_to_html (result["body"], flags, 0));
             }
         }
     }
@@ -396,14 +408,18 @@ public class Mail.ComposerWidget : Gtk.Grid {
     }
 
     private void on_insert_link_clicked () {
-        var insert_link_dialog = new InsertLinkDialog (web_view.get_selected_text ());
-        insert_link_dialog.insert_link.connect (on_link_inserted);
+        ask_insert_link.begin ();
+    }
+
+    private async void ask_insert_link () {
+        string selected_text = yield web_view.get_selected_text ();
+        var insert_link_dialog = new InsertLinkDialog (selected_text);
+        insert_link_dialog.insert_link.connect ((url, title) => on_link_inserted (url, title, selected_text));
         insert_link_dialog.transient_for = (Gtk.Window) get_toplevel ();
         insert_link_dialog.run ();
     }
 
-    private void on_link_inserted (string url, string title) {
-        var selected_text = web_view.get_selected_text ();
+    private void on_link_inserted (string url, string title, string selected_text) {
         if (selected_text != null && title == selected_text) {
             web_view.execute_editor_command ("createLink", url);
         } else {
@@ -498,17 +514,46 @@ public class Mail.ComposerWidget : Gtk.Grid {
     }
 
     private void update_actions () {
-        actions.change_action_state (ACTION_BOLD, web_view.query_command_state ("bold") ? ACTION_BOLD : "");
-        actions.change_action_state (ACTION_ITALIC, web_view.query_command_state ("italic") ? ACTION_ITALIC : "");
-        actions.change_action_state (ACTION_UNDERLINE, web_view.query_command_state ("underline") ? ACTION_UNDERLINE : "");
-        actions.change_action_state (ACTION_STRIKETHROUGH, web_view.query_command_state ("strikethrough") ? ACTION_STRIKETHROUGH : "");
+        web_view.query_command_state.begin ("bold", (obj, res) => {
+            actions.change_action_state (ACTION_BOLD, web_view.query_command_state.end (res) ? ACTION_BOLD : "");
+        });
+        web_view.query_command_state.begin ("italic", (obj, res) => {
+            actions.change_action_state (ACTION_ITALIC, web_view.query_command_state.end (res) ? ACTION_ITALIC : "");
+        });
+        web_view.query_command_state.begin ("underline", (obj, res) => {
+            actions.change_action_state (ACTION_UNDERLINE, web_view.query_command_state.end (res) ? ACTION_UNDERLINE : "");
+        });
+        web_view.query_command_state.begin ("strikethrough", (obj, res) => {
+            actions.change_action_state (ACTION_STRIKETHROUGH, web_view.query_command_state.end (res) ? ACTION_STRIKETHROUGH : "");
+        });
     }
 
     private void on_discard () {
-        discarded ();
+        var discard_dialog = new Granite.MessageDialog.with_image_from_icon_name (
+            _("Permanently delete this draft?"),
+            _("You cannot undo this action, nor recover your draft once it has been deleted."),
+            "dialog-warning",
+            Gtk.ButtonsType.NONE
+        );
+        discard_dialog.transient_for = get_toplevel () as Gtk.Window;
+
+        discard_dialog.add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
+
+        var discard_anyway = discard_dialog.add_button (_("Delete Draft"), Gtk.ResponseType.ACCEPT);
+        discard_anyway.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+
+        if (discard_dialog.run () == Gtk.ResponseType.ACCEPT) {
+            discarded ();
+        }
+
+        discard_dialog.destroy ();
     }
 
     private void on_send () {
+        send_message.begin ();
+    }
+
+    private async void send_message () {
         if (subject_val.text == "") {
             var no_subject_dialog = new Granite.MessageDialog.with_image_from_icon_name (
                 _("Send Message With an Empty Subject?"),
@@ -549,7 +594,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         recipients.cat (cc_addresses);
         recipients.cat (bcc_addresses);
 
-        var body_html = web_view.get_body_html ();
+        var body_html = yield web_view.get_body_html ();
         var message = new Camel.MimeMessage ();
         message.set_from (from);
         message.set_recipients (Camel.RECIPIENT_TYPE_TO, to_addresses);

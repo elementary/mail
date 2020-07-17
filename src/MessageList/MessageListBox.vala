@@ -97,30 +97,33 @@ public class Mail.MessageListBox : Gtk.ListBox {
         }
     }
 
-    public void add_inline_composer (ComposerWidget.Type type) {
+    public async void add_inline_composer (ComposerWidget.Type type, MessageListItem? message_item = null) {
+        /* Can't open a new composer if thread is empty or currently has a composer open */
         var last_child = get_row_at_index ((int) get_children ().length () - 1);
-        var is_composer = (last_child != null && last_child is InlineComposer);
+        if (last_child == null || last_child is InlineComposer) {
+            return;
+        }
+
+        if (message_item == null) {
+            message_item = (MessageListItem) last_child;
+        }
+
         string content_to_quote = "";
         Camel.MimeMessage? mime_message = null;
         Camel.MessageInfo? message_info = null;
-        if (last_child is MessageListItem) {
-            var message_item = last_child as MessageListItem;
-            content_to_quote = message_item.get_message_body_html ();
-            mime_message = message_item.mime_message;
-            message_info = message_item.message_info;
-        }
+        content_to_quote = yield message_item.get_message_body_html ();
+        mime_message = message_item.mime_message;
+        message_info = message_item.message_info;
 
-        if (!is_composer) {
-            var composer = new InlineComposer (type, message_info, mime_message, content_to_quote);
-            composer.discarded.connect (() => {
-                can_reply = true;
-                can_move_thread = true;
-                remove (composer);
-                composer.destroy ();
-            });
-            add (composer);
-            can_reply = false;
+        var composer = new InlineComposer (type, message_info, mime_message, content_to_quote);
+        composer.discarded.connect (() => {
+            can_reply = true;
             can_move_thread = true;
-        }
+            remove (composer);
+            composer.destroy ();
+        });
+        add (composer);
+        can_reply = false;
+        can_move_thread = true;
     }
 }

@@ -11,15 +11,15 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2019-09-12 19:23+0000\n"
-"Last-Translator: David M <rbndavid@gmail.com>\n"
+"PO-Revision-Date: 2020-04-30 05:10+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:39
@@ -164,7 +164,7 @@ msgstr "Insereix una imatge"
 
 #: src/Composer/ComposerWidget.vala:240
 msgid "Remove formatting"
-msgstr "Suprimeix-ne el format"
+msgstr "Suprimeix-ne la formatació"
 
 #: src/Composer/ComposerWidget.vala:268
 msgid "Delete draft"

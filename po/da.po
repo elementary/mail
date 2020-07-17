@@ -11,16 +11,15 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-02-03 12:09+0000\n"
-"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
-"Language-Team: Danish <https://weblate.elementary.io/projects/mail/mail/da/"
-">\n"
+"PO-Revision-Date: 2020-05-27 12:11+0000\n"
+"Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
+"Language-Team: Danish <https://l10n.elementary.io/projects/mail/mail/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-24 06:34+0000\n"
 
 #: src/HeaderBar.vala:39
@@ -64,17 +63,14 @@ msgid "Mark as Read"
 msgstr "Mærk som læst"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
-msgstr "St_jern"
+msgstr "Stjerne"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
 msgstr "Stjern ikke"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
 msgstr "Mærk samtale"
 
@@ -83,16 +79,14 @@ msgid "Move conversations to Trash"
 msgstr "Flyt samtaler til udsmidningskurv"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Ingen Besked Valgt"
-msgstr[1] "Ingen Besked Valgt"
+msgstr[0] "Besked Slettet"
+msgstr[1] "Beskeder Slettet"
 
 #: src/MainWindow.vala:252
-#, fuzzy
 msgid "Undo"
-msgstr "_Fortryd"
+msgstr "Fortryd"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -222,43 +216,40 @@ msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
-msgstr "Send beskeden uden emne?"
+msgstr "Send beskeden med tomt emne felt?"
 
 #: src/Composer/ComposerWidget.vala:504
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"Denne besked har et tomt emnefelt. Modtageren er måske ude af stand til, at "
+"udlede størrelssen eller vigtigheden af beskeden."
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "Send Ikke"
 
 #: src/Composer/ComposerWidget.vala:512
-#, fuzzy
 msgid "Send Anyway"
-msgstr "Åbn alligevel"
+msgstr "Send Alligevel"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Ny besked"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#, fuzzy
 msgid "Unread"
-msgstr "%d ulæst"
+msgstr "Ulæst"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "Svar"
+msgstr "Svaret"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "Fremad"
+msgstr "Videresendt"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"

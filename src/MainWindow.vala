@@ -100,6 +100,22 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         folders_list_view = new FoldersListView ();
         conversation_list_box = new ConversationListBox ();
 
+        // Disable delete accelerators when the conversation list box loses keyboard focus,
+        // restore them when it returns
+        conversation_list_box.set_focus_child.connect ((widget) => {
+            if (widget == null) {
+                ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
+                    ACTION_PREFIX + ACTION_MOVE_TO_TRASH,
+                    {}
+                );
+            } else {
+                ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
+                    ACTION_PREFIX + ACTION_MOVE_TO_TRASH,
+                    action_accelerators[ACTION_MOVE_TO_TRASH].to_array ()
+                );
+            }
+        });
+
         message_list_box = new MessageListBox ();
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY_ALL), "enabled", BindingFlags.SYNC_CREATE);
@@ -226,17 +242,17 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
     private void on_reply () {
         scroll_message_list_to_bottom ();
-        message_list_box.add_inline_composer (ComposerWidget.Type.REPLY);
+        message_list_box.add_inline_composer.begin (ComposerWidget.Type.REPLY);
     }
 
     private void on_reply_all () {
         scroll_message_list_to_bottom ();
-        message_list_box.add_inline_composer (ComposerWidget.Type.REPLY_ALL);
+        message_list_box.add_inline_composer.begin (ComposerWidget.Type.REPLY_ALL);
     }
 
     private void on_forward () {
         scroll_message_list_to_bottom ();
-        message_list_box.add_inline_composer (ComposerWidget.Type.FORWARD);
+        message_list_box.add_inline_composer.begin (ComposerWidget.Type.FORWARD);
     }
 
     private void on_move_to_trash () {
