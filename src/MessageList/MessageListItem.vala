@@ -338,12 +338,12 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             /// Translators: This is the default file name of a printed email
             string filename = _("Email Message");
 
-            string subject = message_info.subject;
+            unowned string subject = message_info.subject;
             if (subject != null && subject != "") {
                 /* Replace any runs of whitespace, non-printing characters or slashes with a
                    single space and remove and leading or trailing spaces. */
                 var sanitized_subject = new Regex ("[[:space:][:cntrl:]/]+").replace (subject, -1, 0, " ").strip ();
-                if (sanitized_subject.length < 64) {
+                if (sanitized_subject.length <= 64) {
                     filename = sanitized_subject;
                 } else {
                     filename = "%s…".printf (sanitized_subject.substring (0, sanitized_subject.char_count (64 - 1)));
