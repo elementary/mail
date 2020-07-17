@@ -203,6 +203,14 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
         session.account_added.connect (() => {
             placeholder_stack.visible_child = paned_end;
+            headerbar.can_search = true;
+        });
+
+        session.account_removed.connect (() => {
+            var accounts_left = session.get_accounts ();
+            if (accounts_left.size == 0) {
+                headerbar.can_search = false;
+            }
         });
 
         session.start.begin ();
