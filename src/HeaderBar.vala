@@ -53,13 +53,11 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
 
         var load_images_grid = new Gtk.Grid ();
         load_images_grid.column_spacing = 12;
-        load_images_grid.margin_end = 6;
-        load_images_grid.margin_start = 6;
         load_images_grid.add (new Gtk.Label (_("Always Show Remote Images")));
         load_images_grid.add (load_images_switch);
 
-        var load_images_menuitem = new Gtk.Button ();
-        load_images_menuitem.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
+        var load_images_menuitem = new Gtk.ModelButton ();
+        load_images_menuitem.get_child ().destroy ();
         load_images_menuitem.add (load_images_grid);
 
         var account_settings_menuitem = new Gtk.ModelButton ();
@@ -171,8 +169,9 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
             }
         });
 
-        load_images_menuitem.clicked.connect (() => {
+        load_images_menuitem.button_release_event.connect (() => {
             load_images_switch.activate ();
+            return Gdk.EVENT_STOP;
         });
     }
 
