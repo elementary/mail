@@ -14,62 +14,94 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2019-01-12 00:09+0000\n"
+"PO-Revision-Date: 2019-06-27 20:52+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/mail/"
+"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
 "mail/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:38
+#: src/HeaderBar.vala:39
 #, fuzzy
 msgid "Compose new message"
 msgstr "Skriv ny melding"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:45
 msgid "Search Mail"
 msgstr "Søk Mail"
 
-#: src/HeaderBar.vala:56
-#, fuzzy
+#: src/HeaderBar.vala:57
 msgid "Always Show Remote Images"
-msgstr "Alltid vis eksterne bilder:"
+msgstr "Alltid vis eksterne bilder"
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
 msgstr "Kontoinnstillinger"
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:85
 msgid "Menu"
 msgstr "Meny"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:91
 msgid "Reply"
 msgstr "Svar"
 
-#: src/HeaderBar.vala:97
-#, fuzzy
+#: src/HeaderBar.vala:98
 msgid "Reply All"
-msgstr "Sv_ar alle"
+msgstr "Svar alle"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:105
 msgid "Forward"
 msgstr "Fremover"
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:108
+msgid "Mark as Unread"
+msgstr "Merk som ulest"
+
+#: src/HeaderBar.vala:112
+msgid "Mark as Read"
+msgstr "Merk som lest"
+
+#: src/HeaderBar.vala:116
+#, fuzzy
+msgid "Star"
+msgstr "_Stjerne"
+
+#: src/HeaderBar.vala:120
+#, fuzzy
+msgid "Unstar"
+msgstr "F_jern stjerne"
+
+#: src/HeaderBar.vala:135
+#, fuzzy
+msgid "Mark Conversation"
+msgstr "Merk samtale"
+
+#: src/HeaderBar.vala:141
 #, fuzzy
 msgid "Move conversations to Trash"
-msgstr "Flytt samtaler"
+msgstr "Flytt samtaler til papirkurv"
+
+#: src/MainWindow.vala:251
+#, fuzzy
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "Ingen samtaler valgt."
+msgstr[1] "Ingen samtaler valgt."
+
+#: src/MainWindow.vala:252
+#, fuzzy
+msgid "Undo"
+msgstr "_Angre"
 
 #: src/WelcomeView.vala:40
-#, fuzzy
 msgid "Connect an Account"
-msgstr "Fjern konto"
+msgstr "Koble til en konto"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
@@ -78,128 +110,162 @@ msgstr "Mail bruker e-postkontoer satt opp i systeminnstillingene."
 #: src/WelcomeView.vala:50
 #, fuzzy
 msgid "Online Accounts…"
-msgstr "Kontoer"
+msgstr "Nettkontoer…"
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:96 src/MessageList/MessageListItem.vala:76
+msgid "From:"
+msgstr "Fra:"
+
+#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr "Til:"
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:116 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "Emne:"
 
-#: src/Composer/ComposerWidget.vala:85
-#, fuzzy
+#: src/Composer/ComposerWidget.vala:123
 msgid "Cc"
-msgstr "Kopi:"
+msgstr "Kopi"
 
-#: src/Composer/ComposerWidget.vala:87
+#: src/Composer/ComposerWidget.vala:125
 #, fuzzy
 msgid "Bcc"
-msgstr "Blindkopi:"
+msgstr "Blindkopi"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:135
+#: src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr "Kopi:"
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:151
 msgid "Bcc:"
 msgstr "Blindkopi:"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:191
 msgid "Bold"
 msgstr "Fet"
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
 msgstr "Kursiv"
 
-#: src/Composer/ComposerWidget.vala:164
-#, fuzzy
+#: src/Composer/ComposerWidget.vala:203
 msgid "Underline"
-msgstr "Understrek (Ctrl+U)"
+msgstr "Understrek"
 
-#: src/Composer/ComposerWidget.vala:170
-#, fuzzy
+#: src/Composer/ComposerWidget.vala:209
 msgid "Strikethrough"
-msgstr "Gjennomstrek (Ctrl+K)"
+msgstr "Gjennomstrek"
 
-#: src/Composer/ComposerWidget.vala:183
-#, fuzzy
+#: src/Composer/ComposerWidget.vala:222
 msgid "Quote text"
-msgstr "Siter tekst (Ctrl+])"
+msgstr "Siter tekst"
 
-#: src/Composer/ComposerWidget.vala:186
-#, fuzzy
+#: src/Composer/ComposerWidget.vala:225
 msgid "Unquote text"
-msgstr "Ikke siter tekst (Ctrl+[)"
+msgstr "Ikke siter tekst"
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
 msgstr "Sett inn lenke"
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:237
 msgid "Insert Image"
 msgstr "Sett inn bilde"
 
-#: src/Composer/ComposerWidget.vala:201
-#, fuzzy
+#: src/Composer/ComposerWidget.vala:240
 msgid "Remove formatting"
-msgstr "Fjern formatering (Ctrl+Space)"
+msgstr "Fjern formatering"
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:268
 msgid "Delete draft"
 msgstr "Forkast utkast"
 
-#: src/Composer/ComposerWidget.vala:234
+#: src/Composer/ComposerWidget.vala:272
 msgid "Attach file"
 msgstr "Legg ved fil"
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:278
 msgid "Send"
 msgstr "Send"
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:427
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a. %e. %b, %Y, kl %-k:%M"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:457
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Den %1$s, %2$s skrev:"
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:461
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Videresendt melding ----------"
 
-#: src/Composer/ComposerWidget.vala:385
-#, fuzzy, c-format
+#: src/Composer/ComposerWidget.vala:463
+#, c-format
 msgid "From: %s<br/>"
-msgstr "Fra: %s\n"
+msgstr "Fra: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:386
-#, fuzzy, c-format
+#: src/Composer/ComposerWidget.vala:464
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "Emne: %s\n"
+msgstr "Emne: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:387
-#, fuzzy, c-format
+#: src/Composer/ComposerWidget.vala:465
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Dato: %s\n"
+msgstr "Dato: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:388
-#, fuzzy, c-format
+#: src/Composer/ComposerWidget.vala:466
+#, c-format
 msgid "To: %s<br/>"
-msgstr "Til: %s\n"
+msgstr "Til: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:390
-#, fuzzy, c-format
+#: src/Composer/ComposerWidget.vala:468
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "Kopier: %s\n"
+msgstr "Kopi: %sz</br>"
 
-#: src/Composer/ComposerWindow.vala:25
+#: src/Composer/ComposerWidget.vala:503
+#, fuzzy
+msgid "Send Message With an Empty Subject?"
+msgstr "Sende melding med tom tittel?"
+
+#: src/Composer/ComposerWidget.vala:504
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:510
+msgid "Don't Send"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:512
+#, fuzzy
+msgid "Send Anyway"
+msgstr "Åpne likevel"
+
+#: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Ny melding"
+
+#: src/ConversationList/ConversationListItem.vala:94
+#, fuzzy
+msgid "Unread"
+msgstr "%d ulest"
+
+#: src/ConversationList/ConversationListItem.vala:104
+#, fuzzy
+msgid "Replied"
+msgstr "Svar"
+
+#: src/ConversationList/ConversationListItem.vala:108
+#, fuzzy
+msgid "Forwarded"
+msgstr "Fremover"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -210,27 +276,24 @@ msgid "https://example.com"
 msgstr "https://eksempel.no"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
-#, fuzzy
 msgid "Link Text:"
-msgstr "_Rik Tekst"
+msgstr "Lenketekst"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
-#, fuzzy
 msgid "Example Website"
-msgstr "Nettsted"
+msgstr "Eksempelnettside"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
+#: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
 msgstr "Er du sikker på at du vil åpne %s?"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -238,7 +301,7 @@ msgstr ""
 "Vedlegg kan skade systemet hvis du åpner dem. Bare åpne filer fra kilder du "
 "stoler på."
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr "Åpne likevel"
 
@@ -247,27 +310,32 @@ msgid "Refresh folder"
 msgstr "Gjenoppfrisk mappe"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "Ingen samtaler valgt."
+msgstr "Ingen melding valgt"
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "Fra:"
+#: src/MessageList/MessageListItem.vala:156
+#: src/MessageList/MessageListItem.vala:276
+msgid "Unstar message"
+msgstr "Ta vekk denne meldingen fra favoritter"
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:159
+#: src/MessageList/MessageListItem.vala:272
+msgid "Star message"
+msgstr "Sett melding som favoritt"
+
+#: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
 msgstr "Vis bilder"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
 msgstr "Alltid Vis fra Avsender"
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
 msgstr "Denne meldingen inneholder eksterne bilder."
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
 msgstr "Denne meldingen inneholder en eller flere vedlegg"
 
@@ -284,9 +352,8 @@ msgid "Unknown"
 msgstr "Ukjent"
 
 #: src/MessageList/AttachmentButton.vala:113
-#, fuzzy
 msgid "Save"
-msgstr "_Lagre"
+msgstr "Lagre"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "Utkast | Drafts | Draft"
@@ -440,11 +507,6 @@ msgstr "_Lagre"
 #~ msgid "Mark as not S_pam"
 #~ msgstr "Marker som ikke sø_ppelpost"
 
-#~ msgid "Mark conversation"
-#~ msgid_plural "Mark conversations"
-#~ msgstr[0] "Merk samtale"
-#~ msgstr[1] "Merk samtaler"
-
 #~ msgid "Mark conversations"
 #~ msgstr "Marker samtaler"
 
@@ -484,12 +546,6 @@ msgstr "_Lagre"
 
 #~ msgid "Mark as _Unread"
 #~ msgstr "Marker som _ulest"
-
-#~ msgid "_Star"
-#~ msgstr "_Stjerne"
-
-#~ msgid "U_nstar"
-#~ msgstr "F_jern stjerne"
 
 #~ msgid "Add label"
 #~ msgstr "Legg til merkelapp"
@@ -1038,11 +1094,6 @@ msgstr "_Lagre"
 #~ msgstr[0] "%d melding"
 #~ msgstr[1] "%d meldinger"
 
-#~ msgid "%d unread"
-#~ msgid_plural "%d unread"
-#~ msgstr[0] "%d ulest"
-#~ msgstr[1] "%d uleste"
-
 #~ msgid "%s, %s"
 #~ msgstr "%s, %s"
 
@@ -1171,9 +1222,6 @@ msgstr "_Lagre"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "Sende melding med tom tittel og innhold?"
-
-#~ msgid "Send message with an empty subject?"
-#~ msgstr "Sende melding med tom tittel?"
 
 #~ msgid "Send message with an empty body?"
 #~ msgstr "Sende melding med tomt innhold?"
@@ -1375,9 +1423,6 @@ msgstr "_Lagre"
 
 #~ msgid "Please wait while Geary validates your account."
 #~ msgstr "Vent mens Geary validerer kontoen din."
-
-#~ msgid "_Undo"
-#~ msgstr "_Angre"
 
 #~ msgid "_Redo"
 #~ msgstr "_Gjør om"
@@ -1790,12 +1835,6 @@ msgstr "_Lagre"
 #~ msgid "Reply to All"
 #~ msgstr "Svar til alle"
 
-#~ msgid "Mark as Unread"
-#~ msgstr "Merk som ulest"
-
-#~ msgid "Mark as Read"
-#~ msgstr "Merk som lest"
-
 #~ msgid "Print…"
 #~ msgstr "Skriv ut…"
 
@@ -1822,12 +1861,6 @@ msgstr "_Lagre"
 #~ msgid "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply"
 #~ msgstr ""
 #~ "no-reply;no_reply;noreply;do-not-reply;do_not_reply;donotreply;ikke_svar"
-
-#~ msgid "Star message"
-#~ msgstr "Sett melding som favoritt"
-
-#~ msgid "Unstar message"
-#~ msgstr "Ta vekk denne meldingen fra favoritter"
 
 #~ msgid "More"
 #~ msgstr "Mer"

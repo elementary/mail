@@ -26,21 +26,12 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
     private Granite.Widgets.SourceList source_list;
     private static GLib.Settings settings;
 
-    private string selected_folder_uid;
-    private string selected_folder_name;
-
-    public FoldersListView () {
-        
-    }
-
     static construct {
         settings = new GLib.Settings ("io.elementary.mail");
     }
 
     construct {
         width_request = 100;
-
-        settings.get ("selected-folder", "(ss)", out selected_folder_uid, out selected_folder_name);
 
         source_list = new Granite.Widgets.SourceList ();
         add (source_list);
@@ -56,7 +47,7 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
                 return;
             }
 
-            var folder_item = item as FolderSourceItem;
+            unowned FolderSourceItem folder_item = (FolderSourceItem) item;
             folder_selected (folder_item.get_account (), folder_item.full_name);
 
             settings.set ("selected-folder", "(ss)", folder_item.get_account ().service.uid, folder_item.full_name);
@@ -66,9 +57,32 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
     private void add_account (Mail.Backend.Account account) {
         var account_item = new Mail.AccountSourceItem (account);
         source_list.root.add (account_item);
+        account_item.load.begin ((obj, res) => {
+            account_item.load.end (res);
+            string selected_folder_uid, selected_folder_name;
+            settings.get ("selected-folder", "(ss)", out selected_folder_uid, out selected_folder_name);
+            if (account.service.uid == selected_folder_uid) {
+                select_saved_folder (account_item, selected_folder_name);
+            }
+        });
+    }
 
-        if (account.service.uid == selected_folder_uid) {
-            folder_selected (account, selected_folder_name);
+    private bool select_saved_folder (Granite.Widgets.SourceList.ExpandableItem item, string selected_folder_name) {
+        foreach (var child in item.children) {
+            if (child is FolderSourceItem) {
+                if (select_saved_folder ((Granite.Widgets.SourceList.ExpandableItem) child, selected_folder_name)) {
+                    return true;
+                }
+
+                unowned FolderSourceItem folder_item = (FolderSourceItem) child;
+                if (folder_item.full_name == selected_folder_name) {
+                    source_list.selected = child;
+                    folder_selected (folder_item.get_account (), selected_folder_name);
+                    return true;
+                }
+            }
         }
+
+        return false;
     }
 }

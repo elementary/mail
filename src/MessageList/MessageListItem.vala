@@ -35,7 +35,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private string message_content;
     private bool message_is_html = false;
     private bool message_loaded = false;
-    
+
     public bool expanded {
         get {
             return secondary_revealer.reveal_child;
@@ -163,6 +163,35 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         starred_button.image = starred_icon;
         starred_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
+        var reply_item = new Gtk.MenuItem.with_label (_("Reply"));
+        reply_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.REPLY));
+
+        var reply_all_item = new Gtk.MenuItem.with_label (_("Reply to All"));
+        reply_all_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.REPLY_ALL));
+
+        var forward_item = new Gtk.MenuItem.with_label (_("Forward"));
+        forward_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.FORWARD));
+
+        var print_item = new Gtk.MenuItem.with_label (_("Print…"));
+        print_item.activate.connect (on_print);
+
+        var actions_menu = new Gtk.Menu ();
+        actions_menu.add (reply_item);
+        actions_menu.add (reply_all_item);
+        actions_menu.add (forward_item);
+        actions_menu.add (new Gtk.SeparatorMenuItem ());
+        actions_menu.add (print_item);
+        actions_menu.show_all ();
+
+        var actions_menu_button = new Gtk.MenuButton ();
+        actions_menu_button.image = new Gtk.Image.from_icon_name ("view-more-symbolic", Gtk.IconSize.MENU);
+        actions_menu_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        actions_menu_button.tooltip_text = _("More");
+        actions_menu_button.margin_top = 6;
+        actions_menu_button.valign = Gtk.Align.START;
+        actions_menu_button.halign = Gtk.Align.END;
+        actions_menu_button.popup = actions_menu;
+
         var action_grid = new Gtk.Grid ();
         action_grid.column_spacing = 3;
         action_grid.hexpand = true;
@@ -170,6 +199,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         action_grid.valign = Gtk.Align.START;
         action_grid.add (datetime_label);
         action_grid.attach (starred_button, 2, 0);
+        action_grid.attach (actions_menu_button, 2, 1);
 
         var header = new Gtk.Grid ();
         header.margin = 12;
@@ -241,6 +271,13 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         expanded = false;
         show_all ();
 
+        /* Override default handler to stop event propagation. Otherwise clicking the menu will
+           expand or collapse the MessageListItem. */
+        actions_menu_button.button_release_event.connect ((event) => {
+            actions_menu_button.set_active (true);
+            return Gdk.EVENT_STOP;
+        });
+
         header_event_box.enter_notify_event.connect ((event) => {
             if (event.detail != Gdk.NotifyType.INFERIOR) {
                 var window = header_event_box.get_window ();
@@ -288,6 +325,49 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 warning ("Failed to open link: %s", e.message);
             }
         });
+    }
+
+    private void add_inline_composer (ComposerWidget.Type composer_type) {
+        var message_list_box = (MessageListBox) get_parent ();
+        message_list_box.add_inline_composer (composer_type, this);
+    }
+
+    private void on_print () {
+        try {
+            var settings = new Gtk.PrintSettings ();
+            /// Translators: This is the default file name of a printed email
+            string filename = _("Email Message");
+
+            unowned string subject = message_info.subject;
+            if (subject != null && subject != "") {
+                /* Replace any runs of whitespace, non-printing characters or slashes with a
+                   single space and remove and leading or trailing spaces. */
+                var sanitized_subject = new Regex ("[[:space:][:cntrl:]/]+").replace (subject, -1, 0, " ").strip ();
+                if (sanitized_subject.length <= 64) {
+                    filename = sanitized_subject;
+                } else {
+                    filename = "%s…".printf (sanitized_subject.substring (0, sanitized_subject.char_count (64 - 1)));
+                }
+            }
+
+            settings.set (Gtk.PRINT_SETTINGS_OUTPUT_BASENAME, filename);
+
+            /* @TODO: include header fields in printed output */
+            var print_operation = new WebKit.PrintOperation (web_view);
+            print_operation.set_print_settings (settings);
+            print_operation.run_dialog ((Gtk.ApplicationWindow) get_toplevel ());
+        } catch (Error e) {
+            var print_error_dialog = new Granite.MessageDialog.with_image_from_icon_name (
+                _("Unable to print email"),
+                _(""),
+                "printer"
+            );
+            print_error_dialog.badge_icon = new ThemedIcon ("dialog-error");
+            print_error_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            print_error_dialog.show_error_details (e.message);
+            print_error_dialog.run ();
+            print_error_dialog.destroy ();
+        }
     }
 
     private void on_mouse_target_changed (WebKit.WebView web_view, WebKit.HitTestResult hit_test, uint mods) {
@@ -482,7 +562,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         web_view.add_internal_resource (part.get_content_id (), inline_stream);
     }
 
-    public string get_message_body_html () {
-        return web_view.get_body_html ();
+    public async string get_message_body_html () {
+        return yield web_view.get_body_html ();
     }
 }

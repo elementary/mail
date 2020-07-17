@@ -26,7 +26,7 @@ public class Mail.Application : Gtk.Application {
     public Application () {
         Object (
             application_id: "io.elementary.mail",
-            flags: ApplicationFlags.HANDLES_OPEN
+            flags: ApplicationFlags.HANDLES_COMMAND_LINE
         );
     }
 
@@ -48,8 +48,33 @@ public class Mail.Application : Gtk.Application {
         set_accels_for_action ("app.quit", {"<Control>q"});
     }
 
-    public override void open (File[] files, string hint) {
+    public override int command_line (ApplicationCommandLine command_line) {
         activate ();
+
+        string[] argv = command_line.get_arguments ();
+
+        // The only arguments we support are mailto: URLs passed in by the OS. See RFC 2368 for
+        // details. We handle the most commonly used fields.
+        foreach (var mailto_uri in argv[1:argv.length]) {
+            string to = null;
+
+            try {
+                Soup.URI mailto = new Soup.URI (mailto_uri);
+                if (mailto == null) {
+                    throw new OptionError.BAD_VALUE ("Argument is not a URL.");
+                }
+                if (mailto.scheme != "mailto") {
+                    throw new OptionError.BAD_VALUE ("Cannot open non-mailto: URL");
+                }
+
+                to = Soup.URI.decode (mailto.path);
+                new ComposerWindow (main_window, to, mailto.query).show_all ();
+            } catch (OptionError e) {
+                warning ("Argument parsing error. %s", e.message);
+            }
+        }
+
+        return 0;
     }
 
     public override void activate () {
@@ -62,7 +87,7 @@ public class Mail.Application : Gtk.Application {
             settings.get ("window-position", "(ii)", out window_x, out window_y);
             settings.get ("window-size", "(ii)", out rect.width, out rect.height);
 
-            if (window_x != -1 ||  window_y != -1) {
+            if (window_x != -1 || window_y != -1) {
                 main_window.move (window_x, window_y);
             }
 

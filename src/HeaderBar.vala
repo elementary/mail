@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright 2017-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,6 +19,7 @@
 
 public class Mail.HeaderBar : Gtk.HeaderBar {
     public bool can_mark { get; set; }
+    public bool can_search { get; set; }
     public Gtk.SearchEntry search_entry { get; construct; }
     private Gtk.Grid spacing_widget;
 
@@ -31,9 +31,10 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
     construct {
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
-        var compose_button = new Gtk.Button.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR);
-        compose_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_COMPOSE_MESSAGE;
-        compose_button.halign = Gtk.Align.START;
+        var compose_button = new Gtk.Button.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_COMPOSE_MESSAGE,
+            halign = Gtk.Align.START
+        };
         compose_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (compose_button.action_name),
             _("Compose new message")
@@ -41,9 +42,10 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
 
         spacing_widget = new Gtk.Grid ();
 
-        search_entry = new Gtk.SearchEntry ();
-        search_entry.placeholder_text = _("Search Mail");
-        search_entry.valign = Gtk.Align.CENTER;
+        search_entry = new Gtk.SearchEntry () {
+            placeholder_text = _("Search Mail"),
+            valign = Gtk.Align.CENTER
+        };
 
         var load_images_switch = new Gtk.Switch ();
 
@@ -52,37 +54,39 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
 
         var load_images_grid = new Gtk.Grid ();
         load_images_grid.column_spacing = 12;
-        load_images_grid.margin_end = 6;
-        load_images_grid.margin_start = 6;
         load_images_grid.add (new Gtk.Label (_("Always Show Remote Images")));
         load_images_grid.add (load_images_switch);
 
-        var load_images_menuitem = new Gtk.Button ();
-        load_images_menuitem.get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
+        var load_images_menuitem = new Gtk.ModelButton ();
+        load_images_menuitem.get_child ().destroy ();
         load_images_menuitem.add (load_images_grid);
 
         var account_settings_menuitem = new Gtk.ModelButton ();
         account_settings_menuitem.text = _("Account Settings…");
 
-        var app_menu_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-        app_menu_separator.margin_bottom = 3;
-        app_menu_separator.margin_top = 3;
+        var app_menu_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+            margin_bottom = 3,
+            margin_top = 3
+        };
 
-        var app_menu_grid = new Gtk.Grid ();
-        app_menu_grid.margin_bottom = 3;
-        app_menu_grid.margin_top = 3;
-        app_menu_grid.orientation = Gtk.Orientation.VERTICAL;
+        var app_menu_grid = new Gtk.Grid () {
+            margin_bottom = 3,
+            margin_top = 3,
+            orientation = Gtk.Orientation.VERTICAL
+        };
         app_menu_grid.add (load_images_menuitem);
         app_menu_grid.add (app_menu_separator);
         app_menu_grid.add (account_settings_menuitem);
         app_menu_grid.show_all ();
 
-        var app_menu = new Gtk.MenuButton ();
-        var app_menu_popover = new Gtk.Popover (app_menu);
+        var app_menu_popover = new Gtk.Popover (null);
         app_menu_popover.add (app_menu_grid);
-        app_menu.image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
-        app_menu.popover = app_menu_popover;
-        app_menu.tooltip_text = _("Menu");
+
+        var app_menu = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
+            popover = app_menu_popover,
+            tooltip_text = _("Menu")
+        };
 
         var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR);
         reply_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY;
@@ -105,21 +109,25 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
             _("Forward")
         );
 
-        var mark_unread_item = new Gtk.MenuItem.with_label (_("Mark as Unread"));
+        var mark_unread_item = new Gtk.MenuItem ();
         mark_unread_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD;
         mark_unread_item.bind_property ("sensitive", mark_unread_item, "visible");
+        mark_unread_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Unread"), mark_unread_item.action_name));
 
-        var mark_read_item = new Gtk.MenuItem.with_label (_("Mark as Read"));
+        var mark_read_item = new Gtk.MenuItem ();
         mark_read_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ;
         mark_read_item.bind_property ("sensitive", mark_read_item, "visible");
+        mark_read_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Read"), mark_read_item.action_name));
 
-        var mark_star_item = new Gtk.MenuItem.with_label (_("Star"));
+        var mark_star_item = new Gtk.MenuItem ();
         mark_star_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR;
         mark_star_item.bind_property ("sensitive", mark_star_item, "visible");
+        mark_star_item.add (new Granite.AccelLabel.from_action_name (_("Star"), mark_star_item.action_name));
 
-        var mark_unstar_item = new Gtk.MenuItem.with_label (_("Unstar"));
+        var mark_unstar_item = new Gtk.MenuItem ();
         mark_unstar_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR;
         mark_unstar_item.bind_property ("sensitive", mark_unstar_item, "visible");
+        mark_unstar_item.add (new Granite.AccelLabel.from_action_name (_("Unstar"), mark_unstar_item.action_name));
 
         var mark_menu = new Gtk.Menu ();
         mark_menu.add (mark_unread_item);
@@ -128,10 +136,11 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         mark_menu.add (mark_unstar_item);
         mark_menu.show_all ();
 
-        var mark_button = new Gtk.MenuButton ();
-        mark_button.image = new Gtk.Image.from_icon_name ("edit-mark", Gtk.IconSize.LARGE_TOOLBAR);
-        mark_button.popup = mark_menu;
-        mark_button.tooltip_text = _("Mark Conversation");
+        var mark_button = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("edit-mark", Gtk.IconSize.LARGE_TOOLBAR),
+            popup = mark_menu,
+            tooltip_text = _("Mark Conversation")
+        };
 
         var trash_button = new Gtk.Button.from_icon_name ("edit-delete", Gtk.IconSize.LARGE_TOOLBAR);
         trash_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH;
@@ -152,6 +161,7 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         pack_end (app_menu);
 
         bind_property ("can-mark", mark_button, "sensitive");
+        bind_property ("can-search", search_entry, "sensitive", BindingFlags.SYNC_CREATE);
 
         account_settings_menuitem.clicked.connect (() => {
             try {
@@ -161,8 +171,9 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
             }
         });
 
-        load_images_menuitem.clicked.connect (() => {
+        load_images_menuitem.button_release_event.connect (() => {
             load_images_switch.activate ();
+            return Gdk.EVENT_STOP;
         });
     }
 

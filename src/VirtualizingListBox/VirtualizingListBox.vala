@@ -69,7 +69,7 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
         get {
             int y = 0;
             if (vadjustment != null) {
-                y = -(int)vadjustment.value;
+                y = -(int)vadjustment.value; //vala-lint=space-before-paren
             }
 
             return y + (int)bin_y_diff;

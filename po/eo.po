@@ -12,249 +12,318 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2016-09-12 07:57+0000\n"
-"Last-Translator: Félix Brezo <felixbrezo@gmail.com>\n"
-"Language-Team: Esperanto (http://www.transifex.com/projects/p/geary/language/"
-"eo/)\n"
+"PO-Revision-Date: 2019-08-27 22:23+0000\n"
+"Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
+"Language-Team: Esperanto <https://l10n.elementary.io/projects/mail/mail/eo/>"
+"\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
 
-#: src/HeaderBar.vala:38
-#, fuzzy
+#: src/HeaderBar.vala:39
 msgid "Compose new message"
-msgstr "%d nova mesaĝo"
+msgstr "Redakti novan mesaĝon"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:45
 msgid "Search Mail"
-msgstr ""
+msgstr "Serĉi Retmesaĝo"
 
-#: src/HeaderBar.vala:56
+#: src/HeaderBar.vala:57
 msgid "Always Show Remote Images"
-msgstr ""
+msgstr "Ĉiam montri interretajn bildojn"
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
-msgstr ""
+msgstr "Kontaj agordoj…"
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:85
 msgid "Menu"
-msgstr ""
+msgstr "Menuo"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:91
 msgid "Reply"
-msgstr ""
+msgstr "Respondi"
 
-#: src/HeaderBar.vala:97
+#: src/HeaderBar.vala:98
 msgid "Reply All"
-msgstr ""
+msgstr "Respondi al ĉiuj"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:105
 msgid "Forward"
-msgstr ""
+msgstr "Plusendi"
 
-#: src/HeaderBar.vala:111
-#, fuzzy
+#: src/HeaderBar.vala:108
+msgid "Mark as Unread"
+msgstr "Marki kiel nelegitan"
+
+#: src/HeaderBar.vala:112
+msgid "Mark as Read"
+msgstr "Marki kiel legitan"
+
+#: src/HeaderBar.vala:116
+msgid "Star"
+msgstr "Stelo"
+
+#: src/HeaderBar.vala:120
+msgid "Unstar"
+msgstr "Forigi stelon"
+
+#: src/HeaderBar.vala:135
+msgid "Mark Conversation"
+msgstr "Marki konversacion"
+
+#: src/HeaderBar.vala:141
 msgid "Move conversations to Trash"
-msgstr "Neniu konversacio elektita."
+msgstr "Rubujigi la konversaciojn"
+
+#: src/MainWindow.vala:251
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "Konversacio forigita"
+msgstr[1] "Konversacioj forigitaj"
+
+#: src/MainWindow.vala:252
+msgid "Undo"
+msgstr "Malfari"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
-msgstr ""
+msgstr "Konekti al konto"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
-msgstr ""
+msgstr "Retmesaĝo uzas la retpoŝtajn kontojn agorditaj en Sistemaj Agordoj."
 
 #: src/WelcomeView.vala:50
 msgid "Online Accounts…"
-msgstr ""
+msgstr "Retaj kontoj…"
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:96 src/MessageList/MessageListItem.vala:76
+msgid "From:"
+msgstr "El:"
+
+#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:81
 msgid "To:"
 msgstr "Al:"
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:116 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
 msgstr "Temo:"
 
-#: src/Composer/ComposerWidget.vala:85
-#, fuzzy
+#: src/Composer/ComposerWidget.vala:123
 msgid "Cc"
-msgstr "Kopio:"
+msgstr "Kopie al"
 
-#: src/Composer/ComposerWidget.vala:87
-#, fuzzy
+#: src/Composer/ComposerWidget.vala:125
 msgid "Bcc"
-msgstr "Kaŝkopio:"
+msgstr "Kaŝkopie al"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:135
+#: src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
 msgstr "Kopio:"
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:151
 msgid "Bcc:"
 msgstr "Kaŝkopio:"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:191
 msgid "Bold"
-msgstr ""
+msgstr "Grasa"
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
-msgstr ""
+msgstr "Kursiva"
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:203
 msgid "Underline"
-msgstr ""
+msgstr "Substrekita"
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:209
 msgid "Strikethrough"
-msgstr ""
+msgstr "Trastrekita"
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:222
 msgid "Quote text"
-msgstr ""
+msgstr "Citi tekston"
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:225
 msgid "Unquote text"
-msgstr ""
+msgstr "Malciti tekston"
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
-msgstr ""
+msgstr "Enigi ligon"
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:237
 msgid "Insert Image"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:201
-msgid "Remove formatting"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:230
-msgid "Delete draft"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:234
-msgid "Attach file"
-msgstr ""
+msgstr "Enigi bildon"
 
 #: src/Composer/ComposerWidget.vala:240
-msgid "Send"
-msgstr ""
+msgid "Remove formatting"
+msgstr "Forigi formatojn"
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:268
+msgid "Delete draft"
+msgstr "Forigi malnetaĵon"
+
+#: src/Composer/ComposerWidget.vala:272
+msgid "Attach file"
+msgstr "Alkroĉi dosieron"
+
+#: src/Composer/ComposerWidget.vala:278
+msgid "Send"
+msgstr "Sendi"
+
+#: src/Composer/ComposerWidget.vala:427
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %b %-e, %Y at %-l:%M %p"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:457
 #, c-format
 msgid "On %1$s, %2$s wrote:"
-msgstr ""
+msgstr "Je %1$s,%2$s skribis:"
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:461
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Plusendita mesaĝo ----------"
 
-#: src/Composer/ComposerWidget.vala:385
-#, fuzzy, c-format
+#: src/Composer/ComposerWidget.vala:463
+#, c-format
 msgid "From: %s<br/>"
-msgstr "El: %s\n"
+msgstr "El: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:386
-#, fuzzy, c-format
+#: src/Composer/ComposerWidget.vala:464
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "Temo:"
+msgstr "Temo: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:387
-#, fuzzy, c-format
+#: src/Composer/ComposerWidget.vala:465
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Dato: %s\n"
+msgstr "Dato: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:388
-#, fuzzy, c-format
+#: src/Composer/ComposerWidget.vala:466
+#, c-format
 msgid "To: %s<br/>"
-msgstr "Al: %s\n"
+msgstr "Al: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:390
+#: src/Composer/ComposerWidget.vala:468
 #, c-format
 msgid "Cc: %s<br/>"
-msgstr ""
+msgstr "Kopie: %s<br/>"
 
-#: src/Composer/ComposerWindow.vala:25
+#: src/Composer/ComposerWidget.vala:503
+msgid "Send Message With an Empty Subject?"
+msgstr "Ĉu sendi mesaĝon senteman?"
+
+#: src/Composer/ComposerWidget.vala:504
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+"La mesaĝo ne havas teman tekston. La ricevonto eble ne divenos la objekton "
+"aŭ gravecon de la mesaĝo."
+
+#: src/Composer/ComposerWidget.vala:510
+msgid "Don't Send"
+msgstr "Ne sendi"
+
+#: src/Composer/ComposerWidget.vala:512
+msgid "Send Anyway"
+msgstr "Sendi tamen"
+
+#: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Nova mesaĝo"
 
+#: src/ConversationList/ConversationListItem.vala:94
+msgid "Unread"
+msgstr "Nelegita"
+
+#: src/ConversationList/ConversationListItem.vala:104
+msgid "Replied"
+msgstr "Respondita"
+
+#: src/ConversationList/ConversationListItem.vala:108
+msgid "Forwarded"
+msgstr "Plusendita"
+
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "URL-adreso:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://example.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
 msgid "Link Text:"
-msgstr ""
+msgstr "Ligi tekston:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
-msgstr ""
+msgstr "Ekzempla retejo"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
+#: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
-msgstr ""
+msgstr "Rezigni"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "Ĉu vi certas pri malfermo de %s?"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"Alkroĉaĵoj povas damaĝi vian sistemon ĉe malfermo. Malfermu dosierojn nur de "
+"fidaj fontoj."
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
-msgstr ""
+msgstr "Malfermi tamen"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
-msgstr ""
+msgstr "Refreŝigi la dosierujon"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "Neniu konversacio elektita."
+msgstr "Neniu mesaĝo elektita"
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "El:"
+#: src/MessageList/MessageListItem.vala:156
+#: src/MessageList/MessageListItem.vala:276
+msgid "Unstar message"
+msgstr "Sensteli mesaĝon"
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:159
+#: src/MessageList/MessageListItem.vala:272
+msgid "Star message"
+msgstr "Steli mesaĝon"
+
+#: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
-msgstr ""
+msgstr "Montri bildojn"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "Ĉiam montri por ĉi sendanto"
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
-msgstr ""
+msgstr "La mesaĝo entenas deforajn bildojn."
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "La mesaĝo entenas unu aŭ plurajn alkroĉaĵojn"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
@@ -262,15 +331,15 @@ msgstr "Malfermi"
 
 #: src/MessageList/AttachmentButton.vala:43
 msgid "Save As…"
-msgstr ""
+msgstr "Registri kiel…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "Nekonata"
 
 #: src/MessageList/AttachmentButton.vala:113
 msgid "Save"
-msgstr ""
+msgstr "Registri"
 
 #~ msgid "Inbox"
 #~ msgstr "Enirkesto"
@@ -280,9 +349,6 @@ msgstr ""
 
 #~ msgid "Sent Mail"
 #~ msgstr "Mesaĝo sendita"
-
-#~ msgid "Starred"
-#~ msgstr "Kun stelo"
 
 #~ msgid "Important"
 #~ msgstr "Grava"
@@ -325,9 +391,6 @@ msgstr ""
 
 #~ msgid "_About"
 #~ msgstr "Pri"
-
-#~ msgid "U_nstar"
-#~ msgstr "Forigi stelo_n"
 
 #~ msgid "_Label"
 #~ msgstr "Etikedi"

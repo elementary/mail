@@ -75,7 +75,10 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             if (row == null) {
                 conversation_selected (null);
             } else {
-                weak GLib.ActionMap win_action_map = (GLib.ActionMap) get_action_group (MainWindow.ACTION_GROUP_PREFIX);
+                // We call get_action_group() on the parent window, instead of on `this` directly, due to a
+                // bug with Gtk.Widget.get_action_group(). See https://gitlab.gnome.org/GNOME/gtk/issues/1396
+                var window = (Gtk.ApplicationWindow) get_toplevel ();
+                weak GLib.ActionMap win_action_map = (GLib.ActionMap) window.get_action_group (MainWindow.ACTION_GROUP_PREFIX);
                 ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_READ)).set_enabled (((ConversationItemModel) row).unread);
                 ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_UNREAD)).set_enabled (!((ConversationItemModel) row).unread);
                 ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_STAR)).set_enabled (!((ConversationItemModel) row).flagged);
@@ -118,7 +121,10 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
                 yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
             } catch (Error e) {
-                critical (e.message);
+                // We can cancel the operation
+                if (!(e is GLib.IOError.CANCELLED)) {
+                    critical (e.message);
+                }
             }
         }
 
