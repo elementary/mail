@@ -71,6 +71,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     static construct {
+        Hdy.init ();
+
         action_accelerators[ACTION_COMPOSE_MESSAGE] = "<Control>N";
         action_accelerators[ACTION_REPLY] = "<Control>R";
         action_accelerators[ACTION_REPLY_ALL] = "<Control><Shift>R";
