@@ -40,7 +40,6 @@ public class Mail.Backend.Session : Camel.Session {
     //Camel.Store vfolder_store;
 
     public signal void account_added (Mail.Backend.Account account);
-
     public signal void account_removed ();
 
     private Session () {
