@@ -1,4 +1,3 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
  * Copyright (c) 2017 elementary LLC. (https://elementary.io)
  *
@@ -44,14 +43,14 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         source.ellipsize = Pango.EllipsizeMode.END;
         source.use_markup = true;
         source.xalign = 0;
-        source.get_style_context ().add_class ("h3");
+        source.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
         messages = new Gtk.Label (null);
         messages.halign = Gtk.Align.END;
 
         var messages_style = messages.get_style_context ();
         messages_style.add_class (Granite.STYLE_CLASS_BADGE);
-        messages_style.add_class (Granite.STYLE_CLASS_SOURCE_LIST);
+        messages_style.add_class (Gtk.STYLE_CLASS_SIDEBAR);
 
         topic = new Gtk.Label (null);
         topic.hexpand = true;
