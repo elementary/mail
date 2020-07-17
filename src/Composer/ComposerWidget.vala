@@ -308,6 +308,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         });
 
         cc_val.changed.connect (() => {
+            on_sanitize_recipient_entry (cc_val);
             if (cc_val.text == "") {
                 cc_button.sensitive = true;
             } else {
@@ -320,6 +321,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         });
 
         bcc_val.changed.connect (() => {
+            on_sanitize_recipient_entry (bcc_val);
             if (bcc_val.text == "") {
                 bcc_button.sensitive = true;
             } else {
@@ -332,6 +334,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         });
 
         to_val.changed.connect (() => {
+            on_sanitize_recipient_entry (to_val);
             has_recipients = to_val.text != "";
         });
 
@@ -387,6 +390,18 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
                 web_view.set_body_content (Camel.text_to_html (result["body"], flags, 0));
             }
+        }
+    }
+
+    private void on_sanitize_recipient_entry (Gtk.Entry entry) {
+        if (entry.text == "") {
+            return;
+        }
+        if (entry.text.contains ("\n") ) {
+            entry.text = entry.text.replace ("\n", ", ");
+        }
+        if (entry.text.contains ("\r") ) {
+            entry.text = entry.text.replace ("\r", ", ");
         }
     }
 
