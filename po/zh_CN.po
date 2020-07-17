@@ -15,16 +15,16 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-01-15 13:01+0000\n"
+"PO-Revision-Date: 2020-05-16 11:11+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
-"Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
+"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "mail/mail/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:54+0000\n"
 
 #: src/HeaderBar.vala:39
@@ -68,17 +68,14 @@ msgid "Mark as Read"
 msgstr "标为已读"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
 msgstr "添加星标"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
 msgstr "取消星标"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
 msgstr "标记会话"
 
@@ -87,13 +84,11 @@ msgid "Move conversations to Trash"
 msgstr "移动会话至回收站"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "未选中任何消息"
+msgstr[0] "邮件已删除"
 
 #: src/MainWindow.vala:252
-#, fuzzy
 msgid "Undo"
 msgstr "撤消"
 
@@ -225,7 +220,6 @@ msgid "Cc: %s<br/>"
 msgstr "抄送：%s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
 msgstr "确认发送无主题的邮件吗？"
 
@@ -233,35 +227,31 @@ msgstr "确认发送无主题的邮件吗？"
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
-msgstr ""
+msgstr "此邮件主题为空。收件人可能会无法判断此邮件的重要性。"
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "不发送"
 
 #: src/Composer/ComposerWidget.vala:512
-#, fuzzy
 msgid "Send Anyway"
-msgstr "仍然打开"
+msgstr "仍然发送"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "新邮件"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#, fuzzy
 msgid "Unread"
-msgstr "%d 封未读"
+msgstr "未读"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "回复"
+msgstr "已回复"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "转发"
+msgstr "已转发"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
