@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright 2017-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,9 +30,10 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
     construct {
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
-        var compose_button = new Gtk.Button.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR);
-        compose_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_COMPOSE_MESSAGE;
-        compose_button.halign = Gtk.Align.START;
+        var compose_button = new Gtk.Button.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_COMPOSE_MESSAGE,
+            halign = Gtk.Align.START
+        };
         compose_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (compose_button.action_name),
             _("Compose new message")
@@ -41,9 +41,10 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
 
         spacing_widget = new Gtk.Grid ();
 
-        search_entry = new Gtk.SearchEntry ();
-        search_entry.placeholder_text = _("Search Mail");
-        search_entry.valign = Gtk.Align.CENTER;
+        search_entry = new Gtk.SearchEntry () {
+            placeholder_text = _("Search Mail"),
+            valign = Gtk.Align.CENTER
+        };
 
         var load_images_switch = new Gtk.Switch ();
 
@@ -64,25 +65,29 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         var account_settings_menuitem = new Gtk.ModelButton ();
         account_settings_menuitem.text = _("Account Settings…");
 
-        var app_menu_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-        app_menu_separator.margin_bottom = 3;
-        app_menu_separator.margin_top = 3;
+        var app_menu_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+            margin_bottom = 3,
+            margin_top = 3
+        };
 
-        var app_menu_grid = new Gtk.Grid ();
-        app_menu_grid.margin_bottom = 3;
-        app_menu_grid.margin_top = 3;
-        app_menu_grid.orientation = Gtk.Orientation.VERTICAL;
+        var app_menu_grid = new Gtk.Grid () {
+            margin_bottom = 3,
+            margin_top = 3,
+            orientation = Gtk.Orientation.VERTICAL
+        };
         app_menu_grid.add (load_images_menuitem);
         app_menu_grid.add (app_menu_separator);
         app_menu_grid.add (account_settings_menuitem);
         app_menu_grid.show_all ();
 
-        var app_menu = new Gtk.MenuButton ();
-        var app_menu_popover = new Gtk.Popover (app_menu);
+        var app_menu_popover = new Gtk.Popover (null);
         app_menu_popover.add (app_menu_grid);
-        app_menu.image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
-        app_menu.popover = app_menu_popover;
-        app_menu.tooltip_text = _("Menu");
+
+        var app_menu = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
+            popover = app_menu_popover,
+            tooltip_text = _("Menu")
+        };
 
         var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR);
         reply_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY;
@@ -132,10 +137,11 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         mark_menu.add (mark_unstar_item);
         mark_menu.show_all ();
 
-        var mark_button = new Gtk.MenuButton ();
-        mark_button.image = new Gtk.Image.from_icon_name ("edit-mark", Gtk.IconSize.LARGE_TOOLBAR);
-        mark_button.popup = mark_menu;
-        mark_button.tooltip_text = _("Mark Conversation");
+        var mark_button = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("edit-mark", Gtk.IconSize.LARGE_TOOLBAR),
+            popup = mark_menu,
+            tooltip_text = _("Mark Conversation")
+        };
 
         var trash_button = new Gtk.Button.from_icon_name ("edit-delete", Gtk.IconSize.LARGE_TOOLBAR);
         trash_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH;
