@@ -648,6 +648,16 @@ public class Mail.ComposerWidget : Gtk.Grid {
         body.set_boundary (null);
         body.add_part (part);
 
+        if (attachment_box.get_children ().length () > 0) {
+            foreach (unowned Gtk.Widget attachment in attachment_box.get_children ()) {
+                var mimepart = new Camel.MimePart ();
+
+                //Construct the actual attachment here
+
+                body.add_part (mimepart);
+            }
+        }
+
         var message = new Camel.MimeMessage ();
         message.set_from (from);
         message.set_recipients (Camel.RECIPIENT_TYPE_TO, to_addresses);
