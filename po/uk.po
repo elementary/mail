@@ -12,37 +12,35 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2017-04-24 13:08+0000\n"
-"Last-Translator: Oleksandr Kozin <kozin-o-y@ukr.net>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/"
-">\n"
+"PO-Revision-Date: 2020-09-13 18:14+0000\n"
+"Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/>"
+"\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Project-Style: gnome\n"
 
 #: src/HeaderBar.vala:39
-#, fuzzy
 msgid "Compose new message"
-msgstr "Скласти новий лист (Ctrl+N, N)"
+msgstr "Створити нове повідомлення"
 
 #: src/HeaderBar.vala:45
 msgid "Search Mail"
-msgstr ""
+msgstr "Шукати листа"
 
 #: src/HeaderBar.vala:57
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "Завжди показувати від відправника"
+msgstr "Завжди показувати зовнішні зображення"
 
 #: src/HeaderBar.vala:65
 msgid "Account Settings…"
-msgstr ""
+msgstr "Налаштування облікового запису…"
 
 #: src/HeaderBar.vala:85
 msgid "Menu"
@@ -50,72 +48,64 @@ msgstr "Меню"
 
 #: src/HeaderBar.vala:91
 msgid "Reply"
-msgstr ""
+msgstr "Відповісти"
 
 #: src/HeaderBar.vala:98
-#, fuzzy
 msgid "Reply All"
-msgstr "В_ідповісти всім"
+msgstr "Відповісти всім"
 
 #: src/HeaderBar.vala:105
 msgid "Forward"
-msgstr ""
+msgstr "Переслати"
 
 #: src/HeaderBar.vala:108
-#, fuzzy
 msgid "Mark as Unread"
-msgstr "_Зазначити як непрочитане"
+msgstr "Позначити як непрочитане"
 
 #: src/HeaderBar.vala:112
-#, fuzzy
 msgid "Mark as Read"
-msgstr "_Зазначити як прочитане"
+msgstr "Позначити як прочитане"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
-msgstr "_Із зіркою"
+msgstr "Позначити зірочкою"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
-msgstr "_Без зірки"
+msgstr "Прибрати позначення зірочкою"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
 msgstr "Позначити розмову"
 
 #: src/HeaderBar.vala:141
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "Перенести розмови"
+msgstr "Перемістити розмови до смітника"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Жодну розмову не вибрано."
-msgstr[1] "Жодну розмову не вибрано."
-msgstr[2] "Жодну розмову не вибрано."
+msgstr[0] "Повідомлення видалено"
+msgstr[1] "Повідомлення видалено"
+msgstr[2] "Повідомлення видалено"
 
 #: src/MainWindow.vala:252
-#, fuzzy
 msgid "Undo"
-msgstr "Скасувати"
+msgstr "Повернути"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
-msgstr ""
+msgstr "Додати обліковий запис"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
+"Пошта використовує облікові записи електронної пошти, налаштовані в "
+"системних параметрах."
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "Облікові записи"
+msgstr "Облікові записи…"
 
 #: src/Composer/ComposerWidget.vala:96 src/MessageList/MessageListItem.vala:76
 msgid "From:"
@@ -130,14 +120,12 @@ msgid "Subject:"
 msgstr "Тема:"
 
 #: src/Composer/ComposerWidget.vala:123
-#, fuzzy
 msgid "Cc"
-msgstr "Копія:"
+msgstr "Копія"
 
 #: src/Composer/ComposerWidget.vala:125
-#, fuzzy
 msgid "Bcc"
-msgstr "Потайна копія:"
+msgstr "Таємна копія"
 
 #: src/Composer/ComposerWidget.vala:135
 #: src/MessageList/MessageListItem.vala:115
@@ -146,59 +134,55 @@ msgstr "Копія:"
 
 #: src/Composer/ComposerWidget.vala:151
 msgid "Bcc:"
-msgstr "Потайна копія:"
+msgstr "Таємна копія:"
 
 #: src/Composer/ComposerWidget.vala:191
 msgid "Bold"
-msgstr ""
+msgstr "Жирний"
 
 #: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
-msgstr ""
+msgstr "Курсив"
 
 #: src/Composer/ComposerWidget.vala:203
-#, fuzzy
 msgid "Underline"
-msgstr "Підкреслення"
+msgstr "Підкреслений"
 
 #: src/Composer/ComposerWidget.vala:209
 msgid "Strikethrough"
-msgstr ""
+msgstr "Перекреслений"
 
 #: src/Composer/ComposerWidget.vala:222
-#, fuzzy
 msgid "Quote text"
-msgstr "Цитата тексту (Ctrl + ])"
+msgstr "Цитувати текст"
 
 #: src/Composer/ComposerWidget.vala:225
-#, fuzzy
 msgid "Unquote text"
-msgstr "Зняти цитату тексту (Ctrl + [)"
+msgstr "Скасувати цитування тексту"
 
 #: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
-msgstr ""
+msgstr "Вставити посилання"
 
 #: src/Composer/ComposerWidget.vala:237
 msgid "Insert Image"
-msgstr ""
+msgstr "Вставити зображення"
 
 #: src/Composer/ComposerWidget.vala:240
-#, fuzzy
 msgid "Remove formatting"
-msgstr "Видалити форматування (Ctrl + Space)"
+msgstr "Прибрати форматування"
 
 #: src/Composer/ComposerWidget.vala:268
 msgid "Delete draft"
-msgstr ""
+msgstr "Видалити чернетку"
 
 #: src/Composer/ComposerWidget.vala:272
 msgid "Attach file"
-msgstr ""
+msgstr "Вкласти файл"
 
 #: src/Composer/ComposerWidget.vala:278
 msgid "Send"
-msgstr "Відправити"
+msgstr "Надіслати"
 
 #: src/Composer/ComposerWidget.vala:427
 msgid "%a, %b %-e, %Y at %-l:%M %p"
@@ -211,127 +195,124 @@ msgstr "Написано %1$s, %2$s:"
 
 #: src/Composer/ComposerWidget.vala:461
 msgid "---------- Forwarded message ----------"
-msgstr "---------- Пересланий лист ----------"
+msgstr "---------- Переслане повідомлення ----------"
 
 #: src/Composer/ComposerWidget.vala:463
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "Від: %s\n"
+msgstr "Від: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:464
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "Тема: %s\n"
+msgstr "Тема: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:465
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Дата: %s\n"
+msgstr "Дата: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:466
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "Кому: %s\n"
+msgstr "Кому: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:468
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "Копія: %s\n"
+msgstr "Копія: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
-msgstr "Надіслати лист без теми?"
+msgstr "Надіслати повідомлення без теми?"
 
 #: src/Composer/ComposerWidget.vala:504
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"У цьому повідомленні поле теми порожнє. Одержувач може не змогти зробити "
+"висновок про зміст або важливість повідомлення."
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "Не надсилати"
 
 #: src/Composer/ComposerWidget.vala:512
 msgid "Send Anyway"
-msgstr ""
+msgstr "Все одно надіслати"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
-msgstr "Створити лист"
+msgstr "Створити повідомлення"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#, fuzzy
 msgid "Unread"
-msgstr "%d непрочитаний"
+msgstr "Непрочитане"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "_Замінити"
+msgstr "З відповіддю"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "_Переслати"
+msgstr "Переслане"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://pryklad.ua"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
 msgid "Link Text:"
-msgstr ""
+msgstr "Текст посилання:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
-msgstr ""
+msgstr "Приклад вебсайту"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
-msgstr ""
+msgstr "Скасувати"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "Ви впевнені, що хочете відкрити %s?"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"Вкладення можуть зашкодити вашій системі, якщо їх відкрити. Відкривайте "
+"файли лише з довірених джерел."
 
 #: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
-msgstr ""
+msgstr "Все одно відкрити"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
-msgstr ""
+msgstr "Оновити теку"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "Жодну розмову не вибрано."
+msgstr "Повідомлення не вибрано"
 
 #: src/MessageList/MessageListItem.vala:156
 #: src/MessageList/MessageListItem.vala:276
-#, fuzzy
 msgid "Unstar message"
-msgstr "%d лист"
+msgstr "Прибрати позначення зірочкою з повідомлення"
 
 #: src/MessageList/MessageListItem.vala:159
 #: src/MessageList/MessageListItem.vala:272
-#, fuzzy
 msgid "Star message"
-msgstr "%d лист"
+msgstr "Позначити повідомлення зірочкою"
 
 #: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
@@ -339,15 +320,15 @@ msgstr "Показати зображення"
 
 #: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "Завжди показувати від відправника"
 
 #: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
-msgstr "Цей лист містить віддалені зображення."
+msgstr "Цей лист містить зовнішні зображення."
 
 #: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "Це повідомлення містить одне або більше вкладень"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
@@ -355,16 +336,15 @@ msgstr "Відкрити"
 
 #: src/MessageList/AttachmentButton.vala:43
 msgid "Save As…"
-msgstr ""
+msgstr "Зберегти як…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "Невідомий"
 
 #: src/MessageList/AttachmentButton.vala:113
-#, fuzzy
 msgid "Save"
-msgstr "З_берегти"
+msgstr "Зберегти"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "Чернетки | Чернетка | Draft | Drafts"
