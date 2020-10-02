@@ -11,6 +11,7 @@ Build-Depends: debhelper (>= 10.5.1),
                libgranite-dev,
                libgtk-3-dev (>= 3.10.0),
                libglib2.0-dev (>= 2.34.0),
+               libhandy-1-dev,
                libwebkit2gtk-4.0-dev,
                meson,
                valac
