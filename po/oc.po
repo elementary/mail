@@ -2,8 +2,15 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
+"PO-Revision-Date: 2020-08-29 21:13+0000\n"
+"Last-Translator: Mejans <farga@mejans.fr>\n"
+"Language-Team: Occitan <https://l10n.elementary.io/projects/mail/mail/oc/>\n"
+"Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.9.1\n"
 
 #: src/HeaderBar.vala:39
 msgid "Compose new message"
@@ -11,7 +18,7 @@ msgstr ""
 
 #: src/HeaderBar.vala:45
 msgid "Search Mail"
-msgstr ""
+msgstr "Recercar"
 
 #: src/HeaderBar.vala:57
 msgid "Always Show Remote Images"
@@ -23,11 +30,11 @@ msgstr ""
 
 #: src/HeaderBar.vala:85
 msgid "Menu"
-msgstr ""
+msgstr "Menú"
 
 #: src/HeaderBar.vala:91
 msgid "Reply"
-msgstr ""
+msgstr "Respondre"
 
 #: src/HeaderBar.vala:98
 msgid "Reply All"
@@ -35,7 +42,7 @@ msgstr ""
 
 #: src/HeaderBar.vala:105
 msgid "Forward"
-msgstr ""
+msgstr "Far seguir"
 
 #: src/HeaderBar.vala:108
 msgid "Mark as Unread"
@@ -47,11 +54,11 @@ msgstr ""
 
 #: src/HeaderBar.vala:116
 msgid "Star"
-msgstr ""
+msgstr "Favorit"
 
 #: src/HeaderBar.vala:120
 msgid "Unstar"
-msgstr ""
+msgstr "Demarcar"
 
 #: src/HeaderBar.vala:135
 msgid "Mark Conversation"
@@ -69,7 +76,7 @@ msgstr[1] ""
 
 #: src/MainWindow.vala:252
 msgid "Undo"
-msgstr ""
+msgstr "Anullar"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -85,7 +92,7 @@ msgstr ""
 
 #: src/Composer/ComposerWidget.vala:96 src/MessageList/MessageListItem.vala:76
 msgid "From:"
-msgstr ""
+msgstr "A partir de :"
 
 #: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:81
 msgid "To:"
@@ -93,15 +100,15 @@ msgstr ""
 
 #: src/Composer/ComposerWidget.vala:116 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
-msgstr ""
+msgstr "Objècte :"
 
 #: src/Composer/ComposerWidget.vala:123
 msgid "Cc"
-msgstr ""
+msgstr "Cc"
 
 #: src/Composer/ComposerWidget.vala:125
 msgid "Bcc"
-msgstr ""
+msgstr "Cci"
 
 #: src/Composer/ComposerWidget.vala:135
 #: src/MessageList/MessageListItem.vala:115
@@ -114,19 +121,19 @@ msgstr ""
 
 #: src/Composer/ComposerWidget.vala:191
 msgid "Bold"
-msgstr ""
+msgstr "En gras"
 
 #: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
-msgstr ""
+msgstr "En italica"
 
 #: src/Composer/ComposerWidget.vala:203
 msgid "Underline"
-msgstr ""
+msgstr "Soslinhar"
 
 #: src/Composer/ComposerWidget.vala:209
 msgid "Strikethrough"
-msgstr ""
+msgstr "Raiat"
 
 #: src/Composer/ComposerWidget.vala:222
 msgid "Quote text"
@@ -138,11 +145,11 @@ msgstr ""
 
 #: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
-msgstr ""
+msgstr "Inserís un ligam"
 
 #: src/Composer/ComposerWidget.vala:237
 msgid "Insert Image"
-msgstr ""
+msgstr "Inserir un imatge"
 
 #: src/Composer/ComposerWidget.vala:240
 msgid "Remove formatting"
@@ -154,11 +161,11 @@ msgstr ""
 
 #: src/Composer/ComposerWidget.vala:272
 msgid "Attach file"
-msgstr ""
+msgstr "Estacar un fichièr"
 
 #: src/Composer/ComposerWidget.vala:278
 msgid "Send"
-msgstr ""
+msgstr "Mandar"
 
 #: src/Composer/ComposerWidget.vala:427
 msgid "%a, %b %-e, %Y at %-l:%M %p"
@@ -167,36 +174,36 @@ msgstr ""
 #: src/Composer/ComposerWidget.vala:457
 #, c-format
 msgid "On %1$s, %2$s wrote:"
-msgstr ""
+msgstr "Lo %1$s, %2$s escriguèt :"
 
 #: src/Composer/ComposerWidget.vala:461
 msgid "---------- Forwarded message ----------"
-msgstr ""
+msgstr "---------- Messatge transferit ----------"
 
 #: src/Composer/ComposerWidget.vala:463
 #, c-format
 msgid "From: %s<br/>"
-msgstr ""
+msgstr "De : %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:464
 #, c-format
 msgid "Subject: %s<br/>"
-msgstr ""
+msgstr "Subjècte : %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:465
 #, c-format
 msgid "Date: %s<br/>"
-msgstr ""
+msgstr "Data %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:466
 #, c-format
 msgid "To: %s<br/>"
-msgstr ""
+msgstr "Per %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:468
 #, c-format
 msgid "Cc: %s<br/>"
-msgstr ""
+msgstr "Cc %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
 msgid "Send Message With an Empty Subject?"
@@ -210,11 +217,11 @@ msgstr ""
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "Mandar pas"
 
 #: src/Composer/ComposerWidget.vala:512
 msgid "Send Anyway"
-msgstr ""
+msgstr "Mandar malgrat tot"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
@@ -222,19 +229,19 @@ msgstr ""
 
 #: src/ConversationList/ConversationListItem.vala:94
 msgid "Unread"
-msgstr ""
+msgstr "Pas legit"
 
 #: src/ConversationList/ConversationListItem.vala:104
 msgid "Replied"
-msgstr ""
+msgstr "Respondut"
 
 #: src/ConversationList/ConversationListItem.vala:108
 msgid "Forwarded"
-msgstr ""
+msgstr "Transmés"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "URL :"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
@@ -251,7 +258,7 @@ msgstr ""
 #: src/Dialogs/InsertLinkDialog.vala:63
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
-msgstr ""
+msgstr "Anullar"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
@@ -266,7 +273,7 @@ msgstr ""
 
 #: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
-msgstr ""
+msgstr "Dobrir malgrat tot"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
@@ -304,16 +311,16 @@ msgstr ""
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
-msgstr ""
+msgstr "Dobrir"
 
 #: src/MessageList/AttachmentButton.vala:43
 msgid "Save As…"
-msgstr ""
+msgstr "Enregistrar jos…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "Desconegut"
 
 #: src/MessageList/AttachmentButton.vala:113
 msgid "Save"
-msgstr ""
+msgstr "Enregistrar"
