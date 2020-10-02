@@ -9,6 +9,7 @@ glib_dep = dependency('glib-2.0')
 gobject_dep = dependency('gobject-2.0')
 granite_dep = dependency('granite', version: '>= 5.2.0')
 gee_dep = dependency('gee-0.8')
+handy_dep = dependency('libhandy-1', version: '>=0.83.0')
 camel_dep = dependency('camel-1.2', version: '>= 3.28')
 libedataserver_dep = dependency('libedataserver-1.2', version: '>= 3.28')
 libedataserverui_dep = dependency('libedataserverui-1.2', version: '>= 3.28')
@@ -24,6 +25,7 @@ dependencies = [
     gobject_dep,
     granite_dep,
     gee_dep,
+    handy_dep,
     camel_dep,
     libedataserver_dep,
     libedataserverui_dep,
@@ -45,7 +47,12 @@ extension_dependencies = [
     webkit2_web_extension_dep
 ]
 
-add_global_arguments('-DGETTEXT_PACKAGE="' + meson.project_name() + '"', language:'c')
+add_global_arguments([
+        '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
+        '-DHANDY_USE_UNSTABLE_API'
+    ],
+    language:'c'
+)
 
 meson.add_install_script('meson/post_install.py')
 

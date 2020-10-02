@@ -18,7 +18,7 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class Mail.ComposerWindow : Gtk.ApplicationWindow {
+public class Mail.ComposerWindow : Hdy.ApplicationWindow {
     public string? mailto_query { get; construct; }
     public string? to { get; construct; }
 
@@ -39,15 +39,23 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
             close ();
         });
 
+        var titlebar = new Hdy.HeaderBar () {
+            has_subtitle = false,
+            show_close_button = true,
+            title = _("New Message")
+        };
+        titlebar.get_style_context ().add_class ("default-decoration");
+
         var content_grid = new Gtk.Grid ();
         content_grid.orientation = Gtk.Orientation.VERTICAL;
+        content_grid.add (titlebar);
         content_grid.add (composer_widget);
 
         height_request = 600;
         width_request = 680;
-        window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
         title = _("New Message");
-        get_style_context ().add_class ("rounded");
+        window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
+
         add (content_grid);
     }
 }
