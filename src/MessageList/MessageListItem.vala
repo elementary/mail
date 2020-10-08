@@ -70,8 +70,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         style_context = get_style_context ();
         style_context.add_class (Granite.STYLE_CLASS_CARD);
 
-        string parsed_address;
-        string parsed_name;
+        string? parsed_address;
+        string? parsed_name;
 
         var camel_address = new Camel.InternetAddress ();
         camel_address.unformat (message_info.from);
