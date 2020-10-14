@@ -30,13 +30,13 @@ public class Mail.Utils {
         addresses.decode (raw_addresses);
         addresses.ref ();
         for (int i = 0; i < addresses.length (); i++) {
-            string? address;
-            addresses.@get (i, null, out address);
-            if (address == null) {
+            unowned string? _address;
+            addresses.@get (i, null, out _address);
+            if (_address == null) {
                 continue;
             }
 
-            address = address.casefold ();
+            var address = _address.casefold ();
             var is_own_address = false;
             foreach (var own_address in own_addresses) {
                 if (address.contains (own_address)) {
