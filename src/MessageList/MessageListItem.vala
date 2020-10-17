@@ -68,10 +68,22 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         loading_cancellable = new GLib.Cancellable ();
 
         style_context = get_style_context ();
-        style_context.add_class ("card");
+        style_context.add_class (Granite.STYLE_CLASS_CARD);
 
-        var avatar = new Granite.Widgets.Avatar.with_default_icon (48);
-        avatar.valign = Gtk.Align.START;
+        unowned string? parsed_address;
+        unowned string? parsed_name;
+
+        var camel_address = new Camel.InternetAddress ();
+        camel_address.unformat (message_info.from);
+        camel_address.get (0, out parsed_name, out parsed_address);
+
+        if (parsed_name == null) {
+            parsed_name = parsed_address;
+        }
+
+        var avatar = new Hdy.Avatar (48, parsed_name, true) {
+            valign = Gtk.Align.START
+        };
 
         var from_label = new Gtk.Label (_("From:"));
         from_label.halign = Gtk.Align.END;
@@ -422,7 +434,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             web_view.load_images ();
         } else if (message != null) {
             var whitelist = settings.get_strv ("remote-images-whitelist");
-            string sender;
+            unowned string? sender;
             weak Camel.InternetAddress from = message.get_from ();
             if (from == null) {
                 return;
