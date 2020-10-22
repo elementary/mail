@@ -8,16 +8,15 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-01-27 00:01+0000\n"
+"PO-Revision-Date: 2020-10-23 07:18+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
-"Language-Team: Italian <https://weblate.elementary.io/projects/mail/extra/it/"
-">\n"
+"Language-Team: Italian <https://l10n.elementary.io/projects/mail/extra/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-20 06:35+0000\n"
 
 #: data/io.elementary.mail.appdata.xml.in:8
@@ -38,12 +37,12 @@ msgid ""
 msgstr ""
 "Posta è progettato per permetterti di gestire la posta elettronica in modo "
 "rapido e senza sforzi. La sua interfaccia è basata su una vista a "
-"conversazioni, in modo da poter leggere un'intera discussione senza dover "
-"fare click da un messaggio all'altro."
+"conversazioni in modo da poter leggere un'intera discussione senza dover "
+"fare clic da un messaggio all'altro."
 
 #: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
-msgstr "Un leggero client di posta elettronica con completo supporto IMAP"
+msgstr "Un client di posta elettronica leggero e con completo supporto IMAP"
 
 #: data/io.elementary.mail.appdata.xml.in:14
 msgid "Mail grouped into conversations, not a tree of threads"
@@ -63,7 +62,7 @@ msgstr "Supporto ad account multipli"
 
 #: data/io.elementary.mail.appdata.xml.in:18
 msgid "Inline HTML composer that saves drafts to the server"
-msgstr "Compositore HTML in linea che salva le bozze al server"
+msgstr "Compositore HTML in linea che salva le bozze sul server"
 
 #: data/io.elementary.mail.appdata.xml.in:19
 msgid ""
@@ -79,7 +78,7 @@ msgstr "Correzione di bug minori"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Translation updates"
-msgstr "Aggiornamento delle traduzioni"
+msgstr "Traduzioni aggiornate"
 
 #: data/io.elementary.mail.appdata.xml.in:69
 #, fuzzy
