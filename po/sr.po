@@ -11,107 +11,95 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2017-05-06 12:36+0000\n"
+"PO-Revision-Date: 2020-12-19 14:16+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/mail/mail/sr/>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=nplurals=3; plural=(n%10==1 && n%100!=11 ? "
-"0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"Plural-Forms: nplurals=2; plural=n;\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 "X-Project-Style: gnome\n"
 
 #: src/HeaderBar.vala:39
-#, fuzzy
 msgid "Compose new message"
-msgstr "Саставите нову поруку (Ctrl+N, N)"
+msgstr "Саставите нову поруку"
 
 #: src/HeaderBar.vala:45
 msgid "Search Mail"
-msgstr ""
+msgstr "Потражи пошту"
 
 #: src/HeaderBar.vala:57
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "Увек прикажи од овог пошиљаоца"
+msgstr "Увек прикажи удаљене слике"
 
 #: src/HeaderBar.vala:65
 msgid "Account Settings…"
-msgstr ""
+msgstr "Подешавања налога…"
 
 #: src/HeaderBar.vala:85
 msgid "Menu"
-msgstr ""
+msgstr "Изборник"
 
 #: src/HeaderBar.vala:91
 msgid "Reply"
-msgstr ""
+msgstr "Одговори"
 
 #: src/HeaderBar.vala:98
-#, fuzzy
 msgid "Reply All"
-msgstr "Одговори _свима"
+msgstr "Одговори свима"
 
 #: src/HeaderBar.vala:105
 msgid "Forward"
-msgstr ""
+msgstr "Напред"
 
 #: src/HeaderBar.vala:108
-#, fuzzy
 msgid "Mark as Unread"
-msgstr "_Означи као непрочитано"
+msgstr "Означи непрочитаном"
 
 #: src/HeaderBar.vala:112
-#, fuzzy
 msgid "Mark as Read"
-msgstr "_Означи као прочитано"
+msgstr "Означи прочитаном"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
-msgstr "_Додај звездицу"
+msgstr "Додај звездицу"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
-msgstr "_Уклони звездицу"
+msgstr "Уклони звездицу"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
-msgstr "Означи разговоре"
+msgstr "Означи разговор"
 
 #: src/HeaderBar.vala:141
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "Премести разговоре"
+msgstr "Премести разговоре у смеће"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Није изабран разговор."
-msgstr[1] "Није изабран разговор."
+msgstr[0] "Порука је обрисана"
+msgstr[1] "Поруке су обрисане"
 
 #: src/MainWindow.vala:252
 msgid "Undo"
-msgstr ""
+msgstr "Поништи"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
-msgstr ""
+msgstr "Повежи налог"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
-msgstr ""
+msgstr "Пошта користи налоге е-поште пстављене у подешавањима система."
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "Налози"
+msgstr "Налози на мрежи…"
 
 #: src/Composer/ComposerWidget.vala:96 src/MessageList/MessageListItem.vala:76
 msgid "From:"
@@ -123,74 +111,72 @@ msgstr "Прима:"
 
 #: src/Composer/ComposerWidget.vala:116 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
-msgstr "Наслов:"
+msgstr "Тема:"
 
 #: src/Composer/ComposerWidget.vala:123
-#, fuzzy
 msgid "Cc"
-msgstr "Цц:"
+msgstr "Уу"
 
 #: src/Composer/ComposerWidget.vala:125
-#, fuzzy
 msgid "Bcc"
-msgstr "Бцц:"
+msgstr "Суу"
 
 #: src/Composer/ComposerWidget.vala:135
 #: src/MessageList/MessageListItem.vala:115
 msgid "Cc:"
-msgstr "Цц:"
+msgstr "Уу:"
 
 #: src/Composer/ComposerWidget.vala:151
 msgid "Bcc:"
-msgstr "Бцц:"
+msgstr "Суу:"
 
 #: src/Composer/ComposerWidget.vala:191
 msgid "Bold"
-msgstr ""
+msgstr "Подебљано"
 
 #: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
-msgstr ""
+msgstr "Искошено"
 
 #: src/Composer/ComposerWidget.vala:203
 msgid "Underline"
-msgstr ""
+msgstr "Подвучено"
 
 #: src/Composer/ComposerWidget.vala:209
 msgid "Strikethrough"
-msgstr ""
+msgstr "Прецртано"
 
 #: src/Composer/ComposerWidget.vala:222
 msgid "Quote text"
-msgstr ""
+msgstr "Постави наводе текста"
 
 #: src/Composer/ComposerWidget.vala:225
 msgid "Unquote text"
-msgstr ""
+msgstr "Уклони наводе текста"
 
 #: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
-msgstr ""
+msgstr "Уметни везу"
 
 #: src/Composer/ComposerWidget.vala:237
 msgid "Insert Image"
-msgstr ""
+msgstr "Уметни слику"
 
 #: src/Composer/ComposerWidget.vala:240
 msgid "Remove formatting"
-msgstr ""
+msgstr "Уклони форматирање"
 
 #: src/Composer/ComposerWidget.vala:268
 msgid "Delete draft"
-msgstr ""
+msgstr "Обриши нацрт"
 
 #: src/Composer/ComposerWidget.vala:272
 msgid "Attach file"
-msgstr ""
+msgstr "Приложи датотеку"
 
 #: src/Composer/ComposerWidget.vala:278
 msgid "Send"
-msgstr ""
+msgstr "Пошаљи"
 
 #: src/Composer/ComposerWidget.vala:427
 msgid "%a, %b %-e, %Y at %-l:%M %p"
@@ -206,124 +192,121 @@ msgid "---------- Forwarded message ----------"
 msgstr "---------- Прослеђена порука ----------"
 
 #: src/Composer/ComposerWidget.vala:463
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "Шаље: %s\n"
+msgstr "Шаље: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:464
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "Наслов: %s\n"
+msgstr "Наслов: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:465
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Датум: %s\n"
+msgstr "Датум: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:466
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "Прима: %s\n"
+msgstr "Прима: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:468
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "Цц: %s\n"
+msgstr "Уу: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
-msgstr "Да пошаљем поруку са празним насловом?"
+msgstr "Да пошаљем поруку са празном темом?"
 
 #: src/Composer/ComposerWidget.vala:504
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"Ова порука садржи празно поље теме. Прималац можда неће моћи да закључи о "
+"опсегу или важности поруке."
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "Не шаљи"
 
 #: src/Composer/ComposerWidget.vala:512
 msgid "Send Anyway"
-msgstr ""
+msgstr "Ипак пошаљи"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Нова порука"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#, fuzzy
 msgid "Unread"
-msgstr "%d непрочитана"
+msgstr "Непрочитана"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "_Замени"
+msgstr "Одговорена"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "_Проследи"
+msgstr "Прослеђена"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "Адреса:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://example.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
 msgid "Link Text:"
-msgstr ""
+msgstr "Текст везе:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
-msgstr ""
+msgstr "Веб сајт примера"
 
 #: src/Dialogs/InsertLinkDialog.vala:63
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
-msgstr ""
+msgstr "Откажи"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "Да ли сигурни желите да отворите „%s“?"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"Прилози могу оштетити ваш систем ако их отворите. Отворите само датотеке са "
+"поверљивих извора."
 
 #: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
-msgstr ""
+msgstr "Ипак отвори"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
-msgstr ""
+msgstr "Освежите фасциклу"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "Није изабран разговор."
+msgstr "Није изабрана ниједна порука"
 
 #: src/MessageList/MessageListItem.vala:156
 #: src/MessageList/MessageListItem.vala:276
-#, fuzzy
 msgid "Unstar message"
-msgstr "%d порука"
+msgstr "Развездите поруку"
 
 #: src/MessageList/MessageListItem.vala:159
 #: src/MessageList/MessageListItem.vala:272
-#, fuzzy
 msgid "Star message"
-msgstr "%d порука"
+msgstr "Озвездите поруку"
 
 #: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"
@@ -331,15 +314,15 @@ msgstr "Прикажи слике"
 
 #: src/MessageList/MessageListItem.vala:196
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "Увек прикажи од пошиљаоца"
 
 #: src/MessageList/MessageListItem.vala:201
 msgid "This message contains remote images."
-msgstr "Ова порука садржи непреузете слике."
+msgstr "Ова порука садржи удаљене слике."
 
 #: src/MessageList/MessageListItem.vala:233
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "Ова порука садржи један или више прилога"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
@@ -347,16 +330,15 @@ msgstr "Отвори"
 
 #: src/MessageList/AttachmentButton.vala:43
 msgid "Save As…"
-msgstr ""
+msgstr "Сачувај као…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "Непознато"
 
 #: src/MessageList/AttachmentButton.vala:113
-#, fuzzy
 msgid "Save"
-msgstr "_Сачувај"
+msgstr "Сачувај"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "Нацрти | Нацрт | Drafts | Draft"
