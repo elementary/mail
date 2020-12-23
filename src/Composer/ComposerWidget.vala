@@ -691,14 +691,14 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
 
         construct {
-            const string query_string =
+            const string QUERY_STRING =
                 GLib.FileAttribute.STANDARD_CONTENT_TYPE + "," +
                 GLib.FileAttribute.STANDARD_DISPLAY_NAME + "," +
                 GLib.FileAttribute.STANDARD_ICON + "," +
                 GLib.FileAttribute.STANDARD_SIZE;
 
             try {
-                info = file.query_info (query_string, GLib.FileQueryInfoFlags.NONE);
+                info = file.query_info (QUERY_STRING, GLib.FileQueryInfoFlags.NONE);
             } catch (Error e) {
                 warning ("Error querying attachment file attributes: %s", e.message);
             }
