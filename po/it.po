@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2019-07-03 03:46+0000\n"
+"PO-Revision-Date: 2020-10-23 07:18+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/mail/mail/it/>\n"
 "Language: it\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:39
@@ -70,17 +70,14 @@ msgid "Mark as Read"
 msgstr "Segna come letto"
 
 #: src/HeaderBar.vala:116
-#, fuzzy
 msgid "Star"
 msgstr "_Speciale"
 
 #: src/HeaderBar.vala:120
-#, fuzzy
 msgid "Unstar"
 msgstr "_Non speciale"
 
 #: src/HeaderBar.vala:135
-#, fuzzy
 msgid "Mark Conversation"
 msgstr "Segna la conversazione"
 
@@ -89,14 +86,12 @@ msgid "Move conversations to Trash"
 msgstr "Sposta le conversazioni nel cestino"
 
 #: src/MainWindow.vala:251
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Nessuna conversazione selezionata"
-msgstr[1] "Nessuna conversazione selezionata"
+msgstr[0] "Messaggio eliminato"
+msgstr[1] "Messaggi eliminati"
 
 #: src/MainWindow.vala:252
-#, fuzzy
 msgid "Undo"
 msgstr "_Annulla"
 
@@ -119,7 +114,7 @@ msgstr "Da:"
 
 #: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:81
 msgid "To:"
-msgstr "A:"
+msgstr "Per:"
 
 #: src/Composer/ComposerWidget.vala:116 src/MessageList/MessageListItem.vala:86
 msgid "Subject:"
@@ -221,7 +216,7 @@ msgstr "Data: %s<br/>"
 #: src/Composer/ComposerWidget.vala:466
 #, c-format
 msgid "To: %s<br/>"
-msgstr "A: %s<br/>"
+msgstr "Per: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:468
 #, c-format
@@ -229,7 +224,6 @@ msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:503
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
 msgstr "Inviare il messaggio senza un oggetto?"
 
@@ -238,34 +232,32 @@ msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"Questo messaggio non contiene un oggetto. Il destinatario potrebbe non "
+"comprendere correttamente il contenuto o l'importanza del messaggio."
 
 #: src/Composer/ComposerWidget.vala:510
 msgid "Don't Send"
-msgstr ""
+msgstr "Non inviare"
 
 #: src/Composer/ComposerWidget.vala:512
-#, fuzzy
 msgid "Send Anyway"
-msgstr "Apri comunque"
+msgstr "Invia comunque"
 
 #: src/Composer/ComposerWindow.vala:49
 msgid "New Message"
 msgstr "Nuovo messaggio"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#, fuzzy
 msgid "Unread"
-msgstr "%d non letto"
+msgstr "Non letto"
 
 #: src/ConversationList/ConversationListItem.vala:104
-#, fuzzy
 msgid "Replied"
-msgstr "Rispondi"
+msgstr "Risposta inviata"
 
 #: src/ConversationList/ConversationListItem.vala:108
-#, fuzzy
 msgid "Forwarded"
-msgstr "Inoltra"
+msgstr "Inoltrato"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -291,7 +283,7 @@ msgstr "Annulla"
 #: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
-msgstr "Sei sicuro di voler aprire %s?"
+msgstr "Vuoi davvero aprire %s?"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
@@ -316,12 +308,12 @@ msgstr "Nessuna conversazione selezionata"
 #: src/MessageList/MessageListItem.vala:156
 #: src/MessageList/MessageListItem.vala:276
 msgid "Unstar message"
-msgstr "Togli stella dal messaggio"
+msgstr "Togli tag \"speciale\" dal messaggio"
 
 #: src/MessageList/MessageListItem.vala:159
 #: src/MessageList/MessageListItem.vala:272
 msgid "Star message"
-msgstr "Marca il messaggio con una stella"
+msgstr "Marca il messaggio come speciale"
 
 #: src/MessageList/MessageListItem.vala:195
 msgid "Show Images"

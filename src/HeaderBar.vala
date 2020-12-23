@@ -17,7 +17,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.HeaderBar : Gtk.HeaderBar {
+public class Mail.HeaderBar : Hdy.HeaderBar {
     public bool can_mark { get; set; }
     public bool can_search { get; set; }
     public Gtk.SearchEntry search_entry { get; construct; }

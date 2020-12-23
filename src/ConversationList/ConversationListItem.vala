@@ -38,32 +38,40 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         flagged_icon_revealer = new Gtk.Revealer ();
         flagged_icon_revealer.add (flagged_icon);
 
-        source = new Gtk.Label (null);
-        source.hexpand = true;
-        source.ellipsize = Pango.EllipsizeMode.END;
-        source.use_markup = true;
-        source.xalign = 0;
+        source = new Gtk.Label (null) {
+            hexpand = true,
+            ellipsize = Pango.EllipsizeMode.END,
+            use_markup = true,
+            xalign = 0
+        };
         source.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        messages = new Gtk.Label (null);
-        messages.halign = Gtk.Align.END;
+        messages = new Gtk.Label (null) {
+            halign = Gtk.Align.END
+        };
 
-        var messages_style = messages.get_style_context ();
+        weak Gtk.StyleContext messages_style = messages.get_style_context ();
         messages_style.add_class (Granite.STYLE_CLASS_BADGE);
         messages_style.add_class (Gtk.STYLE_CLASS_SIDEBAR);
 
-        topic = new Gtk.Label (null);
-        topic.hexpand = true;
-        topic.ellipsize = Pango.EllipsizeMode.END;
-        topic.xalign = 0;
+        topic = new Gtk.Label (null) {
+            hexpand = true,
+            ellipsize = Pango.EllipsizeMode.END,
+            xalign = 0
+        };
 
-        date = new Gtk.Label (null);
+        date = new Gtk.Label (null) {
+            halign = Gtk.Align.END
+        };
+
         date.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        var grid = new Gtk.Grid ();
-        grid.margin = 12;
-        grid.column_spacing = 12;
-        grid.row_spacing = 6;
+        var grid = new Gtk.Grid () {
+            margin = 12,
+            column_spacing = 12,
+            row_spacing = 6
+        };
+
         grid.attach (status_revealer, 0, 0);
         grid.attach (flagged_icon_revealer, 0, 1, 1, 1);
         grid.attach (source, 1, 0, 1, 1);
@@ -91,12 +99,12 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
 
             status_icon.icon_name = "mail-unread-symbolic";
             status_icon.tooltip_text = _("Unread");
-            status_icon.get_style_context ().add_class ("attention");
+            status_icon.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
 
             status_revealer.reveal_child = true;
         } else {
             get_style_context ().remove_class ("unread-message");
-            status_icon.get_style_context ().remove_class ("attention");
+            status_icon.get_style_context ().remove_class (Granite.STYLE_CLASS_ACCENT);
 
             if (data.replied_all || data.replied) {
                 status_icon.icon_name = "mail-replied-symbolic";

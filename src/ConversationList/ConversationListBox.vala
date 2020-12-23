@@ -24,6 +24,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     public signal void conversation_selected (Camel.FolderThreadNode? node);
     public signal void conversation_focused (Camel.FolderThreadNode? node);
 
+    private const int MARK_READ_TIMEOUT_SECONDS = 5;
+
     public Backend.Account current_account { get; private set; }
     public Camel.Folder folder { get; private set; }
 
@@ -33,6 +35,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     private Gee.HashMap<string, ConversationItemModel> conversations;
     private ConversationListStore list_store;
     private TrashHandler trash_handler;
+
+    private uint mark_read_timeout_id = 0;
 
     construct {
         activate_on_single_click = true;
@@ -64,10 +68,23 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         };
 
         row_activated.connect ((row) => {
+            if (mark_read_timeout_id != 0) {
+                GLib.Source.remove (mark_read_timeout_id);
+                mark_read_timeout_id = 0;
+            }
+
             if (row == null) {
                 conversation_focused (null);
             } else {
                 conversation_focused (((ConversationItemModel) row).node);
+
+                if (((ConversationItemModel) row).unread) {
+                    mark_read_timeout_id = GLib.Timeout.add_seconds (MARK_READ_TIMEOUT_SECONDS, () => {
+                        ((ConversationItemModel) row).node.message.set_flags (Camel.MessageFlags.SEEN, ~0);
+                        mark_read_timeout_id = 0;
+                        return false;
+                    });
+                }
             }
         });
 

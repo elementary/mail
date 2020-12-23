@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.MainWindow : Gtk.ApplicationWindow {
+public class Mail.MainWindow : Hdy.ApplicationWindow {
     private HeaderBar headerbar;
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
@@ -65,12 +65,14 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         Object (
             application: application,
             height_request: 600,
-            icon_name: "internet-mail",
+            icon_name: "io.elementary.mail",
             width_request: 800
         );
     }
 
     static construct {
+        Hdy.init ();
+
         action_accelerators[ACTION_COMPOSE_MESSAGE] = "<Control>N";
         action_accelerators[ACTION_REPLY] = "<Control>R";
         action_accelerators[ACTION_REPLY_ALL] = "<Control><Shift>R";
@@ -95,7 +97,6 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         }
 
         headerbar = new HeaderBar ();
-        set_titlebar (headerbar);
 
         folders_list_view = new FoldersListView ();
         conversation_list_box = new ConversationListBox ();
@@ -171,7 +172,9 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         placeholder_stack.add_named (welcome_view, "welcome");
 
         container_grid = new Gtk.Grid ();
-        container_grid.attach (placeholder_stack, 0, 1, 1, 1);
+        container_grid.attach (headerbar, 0, 0);
+        container_grid.attach (placeholder_stack, 0, 1);
+
         add (container_grid);
 
         var settings = new GLib.Settings ("io.elementary.mail");
@@ -293,13 +296,9 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
     private void on_fullscreen () {
         if (Gdk.WindowState.FULLSCREEN in get_window ().get_state ()) {
-            container_grid.remove (headerbar);
-            set_titlebar (headerbar);
             headerbar.show_close_button = true;
             unfullscreen ();
         } else {
-            remove (headerbar);
-            container_grid.attach (headerbar, 0, 0, 1, 1);
             headerbar.show_close_button = false;
             fullscreen ();
         }
