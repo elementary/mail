@@ -426,11 +426,9 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
             filechooser.hide ();
-            foreach (File file in filechooser.get_files ()) {
+            foreach (unowned File file in filechooser.get_files ()) {
                 try {
-                    var info = file.query_info ("standard::*", 0);
-
-                    var attachment = new Attachment (file.get_uri (), info);
+                    var attachment = new Attachment (file);
                     attachment.margin = 3;
 
                     attachment_box.add (attachment);
@@ -650,40 +648,13 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         if (attachment_box.get_children ().length () > 0) {
             foreach (unowned Gtk.Widget attachment in attachment_box.get_children ()) {
-                if (attachment is Attachment) {
-                    var attachment_obj = (Attachment)attachment;
-                    var file = File.new_for_uri (attachment_obj.uri);
-
-                    var content_type = attachment_obj.info.get_content_type ();
-                    var mime_type = GLib.ContentType.get_mime_type (content_type);
-
-                    var wrapper = new Camel.DataWrapper ();
-                    wrapper.construct_from_input_stream_sync (file.read ());
-                    wrapper.set_mime_type (mime_type);
-
-                    var mimepart = new Camel.MimePart ();
-                    mimepart.set_disposition ("attachment");
-                    mimepart.set_filename (attachment_obj.info.get_display_name ());
-                    ((Camel.Medium)mimepart).set_content (wrapper);
-
-                    if (mimepart.get_content_type ().is ("text", "*")) {
-                        // Run text files through a stream filter to get the best transfer encoding
-                        var stream = new Camel.StreamNull ();
-                        var filtered_stream = new Camel.StreamFilter (stream);
-                        var filter = new Camel.MimeFilterBestenc (Camel.BestencRequired.GET_ENCODING);
-                        filtered_stream.add (filter);
-
-                        wrapper.decode_to_stream_sync (filtered_stream);
-
-                        var encoding = filter.get_best_encoding (Camel.BestencEncoding.@8BIT);
-                        mimepart.set_encoding (encoding);
-                    } else {
-                        // Otherwise use Base64
-                        mimepart.set_encoding (Camel.TransferEncoding.ENCODING_BASE64);
-                    }
-
-                    body.add_part (mimepart);
+                if (!(attachment is Attachment)) {
+                    continue;
                 }
+
+                unowned var attachment_obj = (Attachment)attachment;
+
+                body.add_part (attachment_obj.get_mime_part ());
             }
         }
 
@@ -710,23 +681,34 @@ public class Mail.ComposerWidget : Gtk.Grid {
     }
 
     private class Attachment : Gtk.FlowBoxChild {
-        public GLib.FileInfo info { get; construct; }
-        public string uri { get; construct; }
+        public GLib.FileInfo? info { private get; construct; }
+        public GLib.File file { get; construct; }
 
-        public Attachment (string uri, GLib.FileInfo info) {
+        public Attachment (GLib.File file) {
             Object (
-                uri: uri,
-                info: info
+                file: file
             );
         }
 
         construct {
+            const string query_string =
+                GLib.FileAttribute.STANDARD_CONTENT_TYPE + "," +
+                GLib.FileAttribute.STANDARD_DISPLAY_NAME + "," +
+                GLib.FileAttribute.STANDARD_ICON + "," +
+                GLib.FileAttribute.STANDARD_SIZE;
+
+            try {
+                info = file.query_info (query_string, GLib.FileQueryInfoFlags.NONE);
+            } catch (Error e) {
+                warning ("Error querying attachment file attributes: %s", e.message);
+            }
+
             var image = new Gtk.Image () {
                 gicon = info.get_icon (),
                 pixel_size = 24
             };
 
-            var name_label = new Gtk.Label (info.get_name ()) {
+            var name_label = new Gtk.Label (info.get_display_name ()) {
                 hexpand = true,
                 xalign = 0
             };
@@ -754,6 +736,52 @@ public class Mail.ComposerWidget : Gtk.Grid {
             remove_button.clicked.connect (() => {
                 destroy ();
             });
+        }
+
+        public Camel.MimePart? get_mime_part () {
+            if (info == null) {
+                return null;
+            }
+
+            unowned string? content_type = info.get_content_type ();
+            var mime_type = GLib.ContentType.get_mime_type (content_type);
+
+            var wrapper = new Camel.DataWrapper ();
+            try {
+                wrapper.construct_from_input_stream_sync (file.read ());
+            } catch (Error e) {
+                warning ("Error constructing wrapper for attachment: %s", e.message);
+                return null;
+            }
+
+            wrapper.set_mime_type (mime_type);
+
+            var mimepart = new Camel.MimePart ();
+            mimepart.set_disposition ("attachment");
+            mimepart.set_filename (info.get_display_name ());
+            ((Camel.Medium)mimepart).set_content (wrapper);
+
+            if (mimepart.get_content_type ().is ("text", "*")) {
+                // Run text files through a stream filter to get the best transfer encoding
+                var stream = new Camel.StreamNull ();
+                var filtered_stream = new Camel.StreamFilter (stream);
+                var filter = new Camel.MimeFilterBestenc (Camel.BestencRequired.GET_ENCODING);
+                filtered_stream.add (filter);
+
+                try {
+                    wrapper.decode_to_stream_sync (filtered_stream);
+
+                    var encoding = filter.get_best_encoding (Camel.BestencEncoding.@8BIT);
+                    mimepart.set_encoding (encoding);
+                } catch (Error e) {
+                    warning ("Unable to determine best encoding for attachment: %s", e.message);
+                }
+            } else {
+                // Otherwise use Base64
+                mimepart.set_encoding (Camel.TransferEncoding.ENCODING_BASE64);
+            }
+
+            return mimepart;
         }
     }
 
