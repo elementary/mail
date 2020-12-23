@@ -340,7 +340,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         });
 
         from_combo.changed.connect (() => {
-            // from_revealer.reveal_child = 
+            // from_revealer.reveal_child =
         });
 
         to_val.changed.connect (() => {
@@ -430,7 +430,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 try {
                     var info = file.query_info ("standard::*", 0);
 
-                    var attachment = new Attachment (info);
+                    var attachment = new Attachment (file.get_uri (), info);
                     attachment.margin = 3;
 
                     attachment_box.add (attachment);
@@ -650,11 +650,40 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         if (attachment_box.get_children ().length () > 0) {
             foreach (unowned Gtk.Widget attachment in attachment_box.get_children ()) {
-                var mimepart = new Camel.MimePart ();
+                if (attachment is Attachment) {
+                    var attachment_obj = (Attachment)attachment;
+                    var file = File.new_for_uri (attachment_obj.uri);
 
-                //Construct the actual attachment here
+                    var content_type = attachment_obj.info.get_content_type ();
+                    var mime_type = GLib.ContentType.get_mime_type (content_type);
 
-                body.add_part (mimepart);
+                    var wrapper = new Camel.DataWrapper ();
+                    wrapper.construct_from_input_stream_sync (file.read ());
+                    wrapper.set_mime_type (mime_type);
+
+                    var mimepart = new Camel.MimePart ();
+                    mimepart.set_disposition ("attachment");
+                    mimepart.set_filename (attachment_obj.info.get_display_name ());
+                    ((Camel.Medium)mimepart).set_content (wrapper);
+
+                    if (mimepart.get_content_type ().is ("text", "*")) {
+                        // Run text files through a stream filter to get the best transfer encoding
+                        var stream = new Camel.StreamNull ();
+                        var filtered_stream = new Camel.StreamFilter (stream);
+                        var filter = new Camel.MimeFilterBestenc (Camel.BestencRequired.GET_ENCODING);
+                        filtered_stream.add (filter);
+
+                        wrapper.decode_to_stream_sync (filtered_stream);
+
+                        var encoding = filter.get_best_encoding (Camel.BestencEncoding.@8BIT);
+                        mimepart.set_encoding (encoding);
+                    } else {
+                        // Otherwise use Base64
+                        mimepart.set_encoding (Camel.TransferEncoding.ENCODING_BASE64);
+                    }
+
+                    body.add_part (mimepart);
+                }
             }
         }
 
@@ -682,9 +711,13 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
     private class Attachment : Gtk.FlowBoxChild {
         public GLib.FileInfo info { get; construct; }
+        public string uri { get; construct; }
 
-        public Attachment (GLib.FileInfo info) {
-            Object (info: info);
+        public Attachment (string uri, GLib.FileInfo info) {
+            Object (
+                uri: uri,
+                info: info
+            );
         }
 
         construct {
