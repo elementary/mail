@@ -203,6 +203,10 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             headerbar.set_paned_positions (paned_start.position, paned_end.position);
         });
 
+        headerbar.search_entry.search_changed.connect (() => {
+            conversation_list_box.search (headerbar.search_entry.text);
+        });
+
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
         session.account_added.connect (() => {
             placeholder_stack.visible_child = paned_end;
