@@ -430,7 +430,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             yield attachment_bar.parse_mime_content (message.content);
         }
 
-        if (settings.get_boolean ("always-load-remote-images")) {
+        var flags = (Camel.FolderFlags)folder.get_flags ();
+
+        if (!(Camel.FolderFlags.IS_JUNK in flags) && settings.get_boolean ("always-load-remote-images")) {
             web_view.load_images ();
         } else if (message != null) {
             var whitelist = settings.get_strv ("remote-images-whitelist");
