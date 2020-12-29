@@ -21,7 +21,7 @@
  */
 
 public class Mail.ConversationItemModel : GLib.Object {
-    public Camel.FolderThreadNode? node { get; private set; }
+    public Camel.FolderThreadNode? node;
 
     public string formatted_date {
         owned get {
@@ -103,11 +103,9 @@ public class Mail.ConversationItemModel : GLib.Object {
     }
 
     private static uint count_thread_messages (Camel.FolderThreadNode node) {
-        unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) node.child;
         uint i = 1;
-        while (child != null) {
+        for (unowned Camel.FolderThreadNode? child = node.child; child != null; child = child.next) {
             i += count_thread_messages (child);
-            child = (Camel.FolderThreadNode?) child.next;
         }
 
         return i;
@@ -115,16 +113,14 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     private static int64 get_newest_timestamp (Camel.FolderThreadNode node, int64 highest = -1) {
         int64 time = highest;
-        weak Camel.MessageInfo message = node.message;
+        weak Camel.MessageInfo? message = node.message;
         if (message != null) {
             time = int64.max (time, message.date_received);
             time = int64.max (time, message.date_sent);
         }
 
-        unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) node.child;
-        while (child != null) {
+        for (unowned Camel.FolderThreadNode? child = node.child; child != null; child = child.next) {
             time = get_newest_timestamp (child, time);
-            child = (Camel.FolderThreadNode?) child.next;
         }
 
         return time;
