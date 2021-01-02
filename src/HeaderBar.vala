@@ -18,6 +18,7 @@
  */
 
 public class Mail.HeaderBar : Hdy.HeaderBar {
+    public bool can_compose { get; set; }
     public bool can_mark { get; set; }
     public bool can_search { get; set; }
     public Gtk.SearchEntry search_entry { get; construct; }
@@ -160,6 +161,7 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
         pack_start (trash_button);
         pack_end (app_menu);
 
+        bind_property ("can-compose", compose_button, "sensitive", BindingFlags.SYNC_CREATE);
         bind_property ("can-mark", mark_button, "sensitive");
         bind_property ("can-search", search_entry, "sensitive", BindingFlags.SYNC_CREATE);
 
