@@ -37,54 +37,102 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public string from {
         owned get {
-            var header_address = Camel.HeaderAddress.decode (node.message.from, null);
-            if (header_address.name != null && header_address.name != "") {
-                return header_address.name;
-            } else {
-                return header_address.v_addr;
+            weak Camel.MessageInfo? message = node.message;
+            if (message == null) {
+                return _("Unknown");
             }
+
+            var address = new Camel.InternetAddress ();
+            if (address.decode (message.from) > 0) {
+                unowned string? ia_name;
+                unowned string? ia_address;
+
+                address.get (0, out ia_name, out ia_address);
+                if (ia_name != null && ia_name != "") {
+                    return ia_name;
+                } else {
+                    return ia_address;
+                }
+            }
+
+            return _("Unknown");
         }
     }
 
     public string subject {
         get {
-            return node.message.subject;
+            weak Camel.MessageInfo? message = node.message;
+            if (message == null) {
+                return _("Unknown");
+            }
+
+            return message.subject;
         }
     }
 
     public bool flagged {
         get {
-            return Camel.MessageFlags.FLAGGED in (int)node.message.flags;
+            weak Camel.MessageInfo? message = node.message;
+            if (message == null) {
+                return false;
+            }
+
+            return Camel.MessageFlags.FLAGGED in (int)message.flags;
         }
     }
 
     public bool forwarded {
         get {
-            return Camel.MessageFlags.FORWARDED in (int)node.message.flags;
+            weak Camel.MessageInfo? message = node.message;
+            if (message == null) {
+                return false;
+            }
+
+            return Camel.MessageFlags.FORWARDED in (int)message.flags;
         }
     }
 
     public bool replied {
         get {
-            return Camel.MessageFlags.ANSWERED in (int)node.message.flags;
+            weak Camel.MessageInfo? message = node.message;
+            if (message == null) {
+                return false;
+            }
+
+            return Camel.MessageFlags.ANSWERED in (int)message.flags;
         }
     }
 
     public bool replied_all {
         get {
-            return Camel.MessageFlags.ANSWERED_ALL in (int)node.message.flags;
+            weak Camel.MessageInfo? message = node.message;
+            if (message == null) {
+                return false;
+            }
+
+            return Camel.MessageFlags.ANSWERED_ALL in (int)message.flags;
         }
     }
 
     public bool unread {
         get {
-            return !(Camel.MessageFlags.SEEN in (int)node.message.flags);
+            weak Camel.MessageInfo? message = node.message;
+            if (message == null) {
+                return false;
+            }
+
+            return !(Camel.MessageFlags.SEEN in (int)message.flags);
         }
     }
 
     public bool deleted {
         get {
-            return Camel.MessageFlags.DELETED in (int)node.message.flags;
+            weak Camel.MessageInfo? message = node.message;
+            if (message == null) {
+                return false;
+            }
+
+            return Camel.MessageFlags.DELETED in (int)message.flags;
         }
     }
 
