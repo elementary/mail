@@ -97,6 +97,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         }
 
         headerbar = new HeaderBar ();
+        headerbar.bind_property ("can-compose", get_action (ACTION_COMPOSE_MESSAGE), "enabled", BindingFlags.SYNC_CREATE);
 
         folders_list_view = new FoldersListView ();
         conversation_list_box = new ConversationListBox ();

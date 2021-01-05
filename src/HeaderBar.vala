@@ -33,6 +33,7 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
         var compose_button = new Gtk.Button.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_COMPOSE_MESSAGE,
             sensitive = false,
             halign = Gtk.Align.START
         };
@@ -164,8 +165,7 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
         bind_property ("can-mark", mark_button, "sensitive");
         bind_property ("can-search", search_entry, "sensitive", BindingFlags.SYNC_CREATE);
 
-        notify ["can-compose"].connect (() => {
-            compose_button.action_name = can_compose ? MainWindow.ACTION_PREFIX + MainWindow.ACTION_COMPOSE_MESSAGE : null;
+        notify["can-compose"].connect (() => {
             compose_button.sensitive = can_compose;
         });
 
