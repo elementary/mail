@@ -1,0 +1,4 @@
+namespace Mail {
+    private const string GETTEXT_PACKAGE = "@GETTEXT_PACKAGE@";
+    private const string LOCALEDIR = "@LOCALEDIR@";
+}

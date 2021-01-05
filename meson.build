@@ -56,6 +56,16 @@ add_global_arguments([
 
 meson.add_install_script('meson/post_install.py')
 
+config_data = configuration_data()
+config_data.set('GETTEXT_PACKAGE', meson.project_name())
+config_data.set('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
+
+config_file = configure_file(
+    input: 'Config.vala.in',
+    output: '@BASENAME@',
+    configuration: config_data
+)
+
 subdir('src')
 subdir('webkit-extension')
 subdir('data')

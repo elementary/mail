@@ -34,6 +34,7 @@ vala_files = files(
 executable(
     meson.project_name(),
     vala_files,
+    config_file,
     asresources,
     dependencies: dependencies,
     c_args: '-DWEBKIT_EXTENSION_PATH="' + webkit2_extension_path + '"',
