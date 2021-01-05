@@ -279,7 +279,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                 }
             }
 
-            var toast = new Granite.Widgets.Toast (ngettext ("Message Deleted", "Messages Deleted", result));
+            var toast = new Granite.Widgets.Toast (dngettext ("io.elementary.mail", "Message Deleted", "Messages Deleted", result));
             toast.set_default_action (_("Undo"));
             toast.show_all ();
 
