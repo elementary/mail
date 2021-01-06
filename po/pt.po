@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 17:43+0000\n"
-"PO-Revision-Date: 2021-01-05 18:08+0000\n"
+"PO-Revision-Date: 2021-01-05 20:07+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/>"
 "\n"
@@ -33,15 +33,15 @@ msgstr "Criar nova mensagem"
 
 #: src/HeaderBar.vala:46
 msgid "Search Mail"
-msgstr "Procurar E-Mail"
+msgstr "Procurar correio"
 
 #: src/HeaderBar.vala:57
 msgid "Always Show Remote Images"
-msgstr "Mostrar Sempre Imagens Remotas"
+msgstr "Mostrar sempre imagens remotas"
 
 #: src/HeaderBar.vala:65
 msgid "Account Settings…"
-msgstr "Definições da Conta…"
+msgstr "Definições de Conta…"
 
 #: src/HeaderBar.vala:88
 msgid "Menu"
@@ -53,7 +53,7 @@ msgstr "Responder"
 
 #: src/HeaderBar.vala:102
 msgid "Reply All"
-msgstr "Responder a Todos"
+msgstr "Responder a todos"
 
 #: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:184
 msgid "Forward"
@@ -61,7 +61,7 @@ msgstr "Reencaminhar"
 
 #: src/HeaderBar.vala:115
 msgid "Mark as Unread"
-msgstr "Marcar Como Não Lido"
+msgstr "Marcar como não lido"
 
 #: src/HeaderBar.vala:120
 msgid "Mark as Read"
@@ -69,11 +69,11 @@ msgstr "Marcar como Lido"
 
 #: src/HeaderBar.vala:125
 msgid "Star"
-msgstr "Estrela"
+msgstr "Favorito"
 
 #: src/HeaderBar.vala:130
 msgid "Unstar"
-msgstr "Remover estrela"
+msgstr "Remover favorito"
 
 #: src/HeaderBar.vala:142
 msgid "Mark Conversation"
@@ -100,7 +100,7 @@ msgstr "Ligar uma Conta"
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
-"O E-Mail utiliza contas de e-mail configuradas nas Definições do Sistema."
+"O Correio utiliza contas de email configuradas nas Definições do Sistema."
 
 #: src/WelcomeView.vala:50
 msgid "Online Accounts…"
@@ -149,7 +149,7 @@ msgstr "Sublinhar"
 
 #: src/Composer/ComposerWidget.vala:202
 msgid "Strikethrough"
-msgstr "Rasurar"
+msgstr "Riscar"
 
 #: src/Composer/ComposerWidget.vala:215
 msgid "Quote text"
@@ -161,7 +161,7 @@ msgstr "Remover citação"
 
 #: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
 msgid "Insert Link"
-msgstr "Inserir Hiperligação"
+msgstr "Inserir ligação"
 
 #: src/Composer/ComposerWidget.vala:230
 msgid "Insert Image"
@@ -173,7 +173,7 @@ msgstr "Remover formatação"
 
 #: src/Composer/ComposerWidget.vala:261
 msgid "Delete draft"
-msgstr "Apagar rascunho"
+msgstr "Eliminar rascunho"
 
 #: src/Composer/ComposerWidget.vala:265
 msgid "Attach file"
@@ -229,7 +229,7 @@ msgstr "Eliminar permanentemente este rascunho?"
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
-"Não pode desfazer esta acção, nem recuperar o seu rascunho uma vez que tenha "
+"Não pode anular esta ação, nem recuperar o seu rascunho uma vez que tenha "
 "sido eliminado."
 
 #: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
@@ -251,7 +251,7 @@ msgid ""
 "infer the scope or importance of the message."
 msgstr ""
 "Esta mensagem tem um campo de assunto vazio. O destinatário pode não "
-"conseguir inferir o escopo ou a importância da mensagem."
+"conseguir perceber o âmbito ou a importância da mensagem."
 
 #: src/Composer/ComposerWidget.vala:564
 msgid "Don't Send"
@@ -259,7 +259,7 @@ msgstr "Não enviar"
 
 #: src/Composer/ComposerWidget.vala:566
 msgid "Send Anyway"
-msgstr "Enviar Mesmo Assim"
+msgstr "Mesmo assim enviar"
 
 #: src/Composer/ComposerWindow.vala:45 src/Composer/ComposerWindow.vala:56
 msgid "New Message"
@@ -287,11 +287,11 @@ msgstr "https://exemplo.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
 msgid "Link Text:"
-msgstr "Link Text:"
+msgstr "Texto de ligação:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
-msgstr "Exemplo de site"
+msgstr "Exemplo de website"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
@@ -308,7 +308,7 @@ msgstr ""
 
 #: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
-msgstr "Abrir Mesmo Assim"
+msgstr "Mesmo assim abrir"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
@@ -316,21 +316,21 @@ msgstr "Atualizar pasta"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
-msgstr "Nenhuma Mensagem selecionada"
+msgstr "Nenhuma mensagem selecionada"
 
 #: src/MessageList/MessageListItem.vala:168
 #: src/MessageList/MessageListItem.vala:325
 msgid "Unstar message"
-msgstr "Remover Estrela"
+msgstr "Remover mensagem dos favoritos"
 
 #: src/MessageList/MessageListItem.vala:171
 #: src/MessageList/MessageListItem.vala:321
 msgid "Star message"
-msgstr "Estrela"
+msgstr "Adicionar mensagem aos favoritos"
 
 #: src/MessageList/MessageListItem.vala:181
 msgid "Reply to All"
-msgstr "Responder a Todos"
+msgstr "Responder a todos"
 
 #: src/MessageList/MessageListItem.vala:187
 msgid "Print…"
@@ -346,7 +346,7 @@ msgstr "Mostrar imagens"
 
 #: src/MessageList/MessageListItem.vala:238
 msgid "Always Show from Sender"
-msgstr "Mostrar Sempre do Remetente"
+msgstr "Mostrar sempre do remetente"
 
 #: src/MessageList/MessageListItem.vala:243
 msgid "This message contains remote images."
@@ -371,7 +371,7 @@ msgstr "Abrir"
 
 #: src/MessageList/AttachmentButton.vala:43
 msgid "Save As…"
-msgstr "Guardar Como…"
+msgstr "Guardar como…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
