@@ -52,7 +52,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
 
         weak Gtk.StyleContext messages_style = messages.get_style_context ();
         messages_style.add_class (Granite.STYLE_CLASS_BADGE);
-        messages_style.add_class (Gtk.STYLE_CLASS_SIDEBAR);
+        messages_style.add_class (Gtk.STYLE_CLASS_FLAT);
 
         topic = new Gtk.Label (null) {
             hexpand = true,
