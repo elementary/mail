@@ -218,7 +218,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         session.account_removed.connect (() => {
             var accounts_left = session.get_accounts ();
             if (accounts_left.size == 0) {
-                headerbar.can_compose = false;
+                get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
                 headerbar.can_search = false;
             }
         });
