@@ -211,7 +211,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
         session.account_added.connect (() => {
             placeholder_stack.visible_child = paned_end;
-            headerbar.can_compose = true;
+            get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
             headerbar.can_search = true;
         });
 
