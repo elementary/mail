@@ -34,7 +34,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     private string current_folder;
     private Gee.HashMap<string, ConversationItemModel> conversations;
     private ConversationListStore list_store;
-    private TrashHandler trash_handler;
+    private MoveHandler move_handler;
 
     private uint mark_read_timeout_id = 0;
 
@@ -52,7 +52,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         });
 
         model = list_store;
-        trash_handler = new TrashHandler ();
+        move_handler = new MoveHandler ();
 
         factory_func = (item, old_widget) => {
             ConversationListItem? row = null;
@@ -223,6 +223,29 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
     }
 
+    public async int archive_selected_messages () {
+        var threads = new Gee.ArrayList<Camel.FolderThreadNode?> ();
+        var selected_rows = get_selected_rows ();
+        foreach (unowned GLib.Object row in selected_rows) {
+            threads.add (((ConversationItemModel)row).node);
+        }
+
+        var archived = yield move_handler.archive_threads (folder, threads);
+        if (archived > 0) {
+            foreach (var thread in threads) {
+                var uid = thread.message.uid;
+                var item = conversations[uid];
+                if (item != null) {
+                    conversations.unset (uid);
+                    list_store.remove (item);
+                }
+            }
+        }
+
+        list_store.items_changed (0, archived, list_store.get_n_items ());
+        return archived;
+    }
+
     public int trash_selected_messages () {
         var threads = new Gee.ArrayList<Camel.FolderThreadNode?> ();
         var selected_rows = get_selected_rows ();
@@ -230,17 +253,19 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             threads.add (((ConversationItemModel)row).node);
         }
 
-        var deleted = trash_handler.delete_threads (folder, threads);
+        var deleted = move_handler.delete_threads (folder, threads);
         list_store.items_changed (0, 0, list_store.get_n_items ());
         return deleted;
     }
 
-    public void undo_trash () {
-        trash_handler.undo_last_delete ();
-        list_store.items_changed (0, 0, list_store.get_n_items ());
+    public void undo_move () {
+        move_handler.undo_last_move.begin ((obj, res) => {
+            move_handler.undo_last_move.end (res);
+            list_store.items_changed (0, 0, list_store.get_n_items ());
+        });
     }
 
     public void undo_expired () {
-        trash_handler.expire_undo ();
+        move_handler.expire_undo ();
     }
 }
