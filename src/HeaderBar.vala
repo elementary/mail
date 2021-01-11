@@ -18,7 +18,6 @@
  */
 
 public class Mail.HeaderBar : Hdy.HeaderBar {
-    public bool can_compose { get; set; }
     public bool can_mark { get; set; }
     public bool can_search { get; set; }
     public Gtk.SearchEntry search_entry { get; construct; }
@@ -34,7 +33,6 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
 
         var compose_button = new Gtk.Button.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR) {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_COMPOSE_MESSAGE,
-            sensitive = false,
             halign = Gtk.Align.START
         };
         compose_button.tooltip_markup = Granite.markup_accel_tooltip (
@@ -164,10 +162,6 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
 
         bind_property ("can-mark", mark_button, "sensitive");
         bind_property ("can-search", search_entry, "sensitive", BindingFlags.SYNC_CREATE);
-
-        notify["can-compose"].connect (() => {
-            compose_button.sensitive = can_compose;
-        });
 
         account_settings_menuitem.clicked.connect (() => {
             try {
