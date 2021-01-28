@@ -2388,10 +2388,10 @@ namespace Camel {
 	}
 	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
 	public struct FolderThreadNode {
-		public void* next;
-		public void* parent;
-		public void* child;
-		public weak Camel.MessageInfo message;
+		public weak Camel.FolderThreadNode? next;
+		public weak Camel.FolderThreadNode? parent;
+		public weak Camel.FolderThreadNode? child;
+		public weak Camel.MessageInfo? message;
 		public weak string root_subject;
 		public uint32 order;
 		public uint32 re;

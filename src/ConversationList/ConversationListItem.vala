@@ -52,7 +52,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
 
         weak Gtk.StyleContext messages_style = messages.get_style_context ();
         messages_style.add_class (Granite.STYLE_CLASS_BADGE);
-        messages_style.add_class (Gtk.STYLE_CLASS_SIDEBAR);
+        messages_style.add_class (Gtk.STYLE_CLASS_FLAT);
 
         topic = new Gtk.Label (null) {
             hexpand = true,
@@ -90,9 +90,10 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         topic.label = data.subject;
         source.label = GLib.Markup.escape_text (data.from);
 
-        messages.label = data.num_messages > 1 ? "%u".printf (data.num_messages) : null;
-        messages.visible = data.num_messages > 1;
-        messages.no_show_all = data.num_messages <= 1;
+        uint num_messages = data.num_messages;
+        messages.label = num_messages > 1 ? "%u".printf (num_messages) : null;
+        messages.visible = num_messages > 1;
+        messages.no_show_all = num_messages <= 1;
 
         if (data.unread) {
             get_style_context ().add_class ("unread-message");
@@ -120,19 +121,5 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         }
 
         flagged_icon_revealer.reveal_child = data.flagged;
-    }
-
-    private static int64 get_newest_timestamp (Camel.FolderThreadNode node, int64 highest = -1) {
-        int64 time = highest;
-        time = int64.max (time, node.message.date_received);
-        time = int64.max (time, node.message.date_sent);
-
-        unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) node.child;
-        while (child != null) {
-            time = get_newest_timestamp (child, time);
-            child = (Camel.FolderThreadNode?) child.next;
-        }
-
-        return time;
     }
 }

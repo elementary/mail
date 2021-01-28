@@ -205,7 +205,10 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
         VirtualizingListBoxRow new_widget = factory_func (item, old_widget);
         if (model.get_item_selected (item)) {
             new_widget.set_state_flags (Gtk.StateFlags.SELECTED, false);
+        } else {
+            new_widget.unset_state_flags (Gtk.StateFlags.SELECTED);
         }
+
         new_widget.model_item = item;
         new_widget.show ();
 

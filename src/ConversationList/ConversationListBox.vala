@@ -32,6 +32,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     private GLib.Cancellable? cancellable = null;
     private Camel.FolderThread thread;
     private string current_folder;
+    private string? current_search_query = null;
     private Gee.HashMap<string, ConversationItemModel> conversations;
     private ConversationListStore list_store;
     private MoveHandler move_handler;
@@ -125,7 +126,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             try {
                 folder = yield ((Camel.Store) current_account.service).get_folder (current_folder, 0, GLib.Priority.DEFAULT, cancellable);
                 folder.changed.connect ((change_info) => folder_changed (change_info, cancellable));
-                thread = new Camel.FolderThread (folder, folder.get_uids (), false);
+                thread = new Camel.FolderThread (folder, get_search_result_uids (), false);
                 unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.tree;
                 while (child != null) {
                     if (cancellable.is_cancelled ()) {
@@ -154,7 +155,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
 
         lock (conversations) {
-            thread.apply (folder.get_uids ());
+            thread.apply (get_search_result_uids ());
             var removed = 0;
             change_info.get_removed_uids ().foreach ((uid) => {
                 var item = conversations[uid];
@@ -183,6 +184,34 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
             list_store.items_changed (0, removed, list_store.get_n_items ());
         }
+    }
+
+    private GenericArray<string> get_search_result_uids () {
+        if (current_search_query == null) {
+            return folder.get_uids ();
+        }
+
+        var sb = new StringBuilder ();
+        Camel.SExp.encode_string (sb, current_search_query);
+        var encoded_query = sb.str;
+
+        string search_query = """(match-all (or (header-contains "From" %s)(header-contains "Subject" %s)(body-contains %s)))"""
+            .printf (encoded_query, encoded_query, encoded_query);
+
+        try {
+            return folder.search_by_expression (search_query, cancellable);
+        } catch (Error e) {
+            if (!(e is GLib.IOError.CANCELLED)) {
+                warning ("Error while searching: %s", e.message);
+            }
+
+            return folder.get_uids ();
+        }
+    }
+
+    public void search (string? query) {
+        current_search_query = query;
+        load_folder (current_account, current_folder);
     }
 
     private void add_conversation_item (Camel.FolderThreadNode child) {

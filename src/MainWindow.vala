@@ -91,6 +91,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
     construct {
         add_action_entries (ACTION_ENTRIES, this);
+        get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
 
         foreach (var action in action_accelerators.get_keys ()) {
             ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
@@ -207,15 +208,21 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             headerbar.set_paned_positions (paned_start.position, paned_end.position);
         });
 
+        headerbar.search_entry.search_changed.connect (() => {
+            conversation_list_box.search (headerbar.search_entry.text);
+        });
+
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
         session.account_added.connect (() => {
             placeholder_stack.visible_child = paned_end;
+            get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
             headerbar.can_search = true;
         });
 
         session.account_removed.connect (() => {
             var accounts_left = session.get_accounts ();
             if (accounts_left.size == 0) {
+                get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
                 headerbar.can_search = false;
             }
         });
