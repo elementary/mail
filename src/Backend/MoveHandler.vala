@@ -134,7 +134,7 @@ public class Mail.MoveHandler {
                 service = Backend.Session.get_default ().ref_service (uid);
             }
 
-            if (url.path != null && url.path.has_prefix("/")) {
+            if (url.path != null && url.path.has_prefix ("/")) {
                 parsed_folder_name = Camel.URL.decode_path (url.path.substring (1));
             }
         }
