@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 17:43+0000\n"
-"PO-Revision-Date: 2021-01-28 02:24+0000\n"
+"PO-Revision-Date: 2021-02-03 02:13+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "mail/mail/zh_Hans/>\n"
@@ -38,7 +38,7 @@ msgstr "搜索邮件"
 
 #: src/HeaderBar.vala:57
 msgid "Always Show Remote Images"
-msgstr "总是显示远程图片"
+msgstr "显示网络图片"
 
 #: src/HeaderBar.vala:65
 msgid "Account Settings…"
@@ -82,7 +82,7 @@ msgstr "标记会话"
 
 #: src/HeaderBar.vala:149
 msgid "Move conversations to Trash"
-msgstr "移动会话至回收站"
+msgstr "将会话移至回收站"
 
 #: src/MainWindow.vala:282
 msgid "Message Deleted"
@@ -339,7 +339,7 @@ msgstr "显示图片"
 
 #: src/MessageList/MessageListItem.vala:238
 msgid "Always Show from Sender"
-msgstr "总是在收件箱中显示"
+msgstr "将此收件人设置为总是显示"
 
 #: src/MessageList/MessageListItem.vala:243
 msgid "This message contains remote images."
