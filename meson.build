@@ -7,7 +7,7 @@ add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi
 
 glib_dep = dependency('glib-2.0')
 gobject_dep = dependency('gobject-2.0')
-granite_dep = dependency('granite', version: '>= 5.2.0')
+granite_dep = dependency('granite', version: '>= 6.0.0')
 gee_dep = dependency('gee-0.8')
 handy_dep = dependency('libhandy-1', version: '>=0.83.0')
 camel_dep = dependency('camel-1.2', version: '>= 3.28')
