@@ -97,16 +97,14 @@ public class Mail.Application : Gtk.Application {
                 main_window.maximize ();
             }
 
-            const string DESKTOP_SCHEMA = "io.elementary.desktop";
-            const string DARK_KEY = "prefer-dark";
+            var granite_settings = Granite.Settings.get_default ();
+            var gtk_settings = Gtk.Settings.get_default ();
 
-            var lookup = SettingsSchemaSource.get_default ().lookup (DESKTOP_SCHEMA, false);
+            gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
 
-            if (lookup != null) {
-                var desktop_settings = new Settings (DESKTOP_SCHEMA);
-                var gtk_settings = Gtk.Settings.get_default ();
-                desktop_settings.bind (DARK_KEY, gtk_settings, "gtk_application_prefer_dark_theme", SettingsBindFlags.DEFAULT);
-            }
+            granite_settings.notify["prefers-color-scheme"].connect (() => {
+                gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
+            });
 
             main_window.show_all ();
 
