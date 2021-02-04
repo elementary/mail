@@ -3,13 +3,26 @@
 <head>
     <title></title>
     <style>
+        :root {
+            --bg-color: white;
+            --fg-color: black;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #3A3A3A;
+                --fg-color: white;
+            }
+        }
+
         html {
             height: 100%;
         }
         body {
             margin: 0px !important;
             padding: 0 !important;
-            background-color: white !important;
+            background-color: var(--bg-color) !important;
+            color: var(--fg-color);
             font-size: medium !important;
             height: 100% !important;
         }
@@ -18,7 +31,7 @@
             font-weight: normal;
             font-style: normal;
             font-size: medium !important;
-            color: black;
+            color: var(--fg-color);
             text-decoration: none;
         }
         body.plain a {
@@ -37,9 +50,10 @@
             margin-right: 12px;
             padding-left: 6px;
             padding-right: 6px;
-            background-color: white;
+            background-color: var(--bg-color);
             border: 0;
             border-left: 3px #aaa solid;
+            color: var(--fg-color);
         }
         pre {
             white-space: pre-wrap;
