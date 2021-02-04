@@ -6,32 +6,33 @@
     box-shadow: 0 -1px 0 @menu_separator;
 }
 
-.entry button,
-.entry entry {
+entry button,
+entry entry {
 	border: none;
 	box-shadow: none;
 	background: none;
 	padding: 0;
 }
 
-.entry button label {
+entry button label {
     opacity: 0.6;
+    padding: 0 3px;
 }
 
-.entry button:hover label {
+entry button:hover label {
     opacity: 1;
 }
 
-.entry button:focus {
+entry button:focus {
     background-color: alpha (@text_color, 0.15);
 }
 
-.entry button:checked label {
-    color: @colorAccent;
+entry button:checked label {
+    color: @accent_color;
     opacity: 1;
 }
 
-.entry button:disabled label {
+entry button:disabled label {
     opacity: 0.5;
 }
 

@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.MainWindow : Gtk.ApplicationWindow {
+public class Mail.MainWindow : Hdy.ApplicationWindow {
     private HeaderBar headerbar;
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
@@ -65,12 +65,14 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         Object (
             application: application,
             height_request: 600,
-            icon_name: "internet-mail",
+            icon_name: "io.elementary.mail",
             width_request: 800
         );
     }
 
     static construct {
+        Hdy.init ();
+
         action_accelerators[ACTION_COMPOSE_MESSAGE] = "<Control>N";
         action_accelerators[ACTION_REPLY] = "<Control>R";
         action_accelerators[ACTION_REPLY_ALL] = "<Control><Shift>R";
@@ -86,6 +88,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
     construct {
         add_action_entries (ACTION_ENTRIES, this);
+        get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
 
         foreach (var action in action_accelerators.get_keys ()) {
             ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
@@ -95,10 +98,25 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         }
 
         headerbar = new HeaderBar ();
-        set_titlebar (headerbar);
 
         folders_list_view = new FoldersListView ();
         conversation_list_box = new ConversationListBox ();
+
+        // Disable delete accelerators when the conversation list box loses keyboard focus,
+        // restore them when it returns
+        conversation_list_box.set_focus_child.connect ((widget) => {
+            if (widget == null) {
+                ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
+                    ACTION_PREFIX + ACTION_MOVE_TO_TRASH,
+                    {}
+                );
+            } else {
+                ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
+                    ACTION_PREFIX + ACTION_MOVE_TO_TRASH,
+                    action_accelerators[ACTION_MOVE_TO_TRASH].to_array ()
+                );
+            }
+        });
 
         message_list_box = new MessageListBox ();
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY), "enabled", BindingFlags.SYNC_CREATE);
@@ -155,7 +173,9 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         placeholder_stack.add_named (welcome_view, "welcome");
 
         container_grid = new Gtk.Grid ();
-        container_grid.attach (placeholder_stack, 0, 1, 1, 1);
+        container_grid.attach (headerbar, 0, 0);
+        container_grid.attach (placeholder_stack, 0, 1);
+
         add (container_grid);
 
         var settings = new GLib.Settings ("io.elementary.mail");
@@ -184,9 +204,23 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
             headerbar.set_paned_positions (paned_start.position, paned_end.position);
         });
 
+        headerbar.search_entry.search_changed.connect (() => {
+            conversation_list_box.search (headerbar.search_entry.text);
+        });
+
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
         session.account_added.connect (() => {
             placeholder_stack.visible_child = paned_end;
+            get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
+            headerbar.can_search = true;
+        });
+
+        session.account_removed.connect (() => {
+            var accounts_left = session.get_accounts ();
+            if (accounts_left.size == 0) {
+                get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
+                headerbar.can_search = false;
+            }
         });
 
         session.start.begin ();
@@ -269,13 +303,9 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
     private void on_fullscreen () {
         if (Gdk.WindowState.FULLSCREEN in get_window ().get_state ()) {
-            container_grid.remove (headerbar);
-            set_titlebar (headerbar);
             headerbar.show_close_button = true;
             unfullscreen ();
         } else {
-            remove (headerbar);
-            container_grid.attach (headerbar, 0, 0, 1, 1);
             headerbar.show_close_button = false;
             fullscreen ();
         }

@@ -120,13 +120,10 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         var bcc_button = new Gtk.ToggleButton.with_label (_("Bcc"));
 
-        var to_grid = new Gtk.Grid ();
+        var to_grid = new EntryGrid ();
         to_grid.add (to_val);
         to_grid.add (cc_button);
         to_grid.add (bcc_button);
-
-        var to_grid_style_context = to_grid.get_style_context ();
-        to_grid_style_context.add_class (Gtk.STYLE_CLASS_ENTRY);
 
         var cc_label = new Gtk.Label (_("Cc:"));
         cc_label.xalign = 1;
@@ -311,6 +308,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         });
 
         cc_val.changed.connect (() => {
+            on_sanitize_recipient_entry (cc_val);
             if (cc_val.text == "") {
                 cc_button.sensitive = true;
             } else {
@@ -323,6 +321,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         });
 
         bcc_val.changed.connect (() => {
+            on_sanitize_recipient_entry (bcc_val);
             if (bcc_val.text == "") {
                 bcc_button.sensitive = true;
             } else {
@@ -335,10 +334,12 @@ public class Mail.ComposerWidget : Gtk.Grid {
         });
 
         to_val.changed.connect (() => {
+            on_sanitize_recipient_entry (to_val);
             has_recipients = to_val.text != "";
         });
 
         to_val.get_style_context ().changed.connect (() => {
+            unowned Gtk.StyleContext to_grid_style_context = to_grid.get_style_context ();
             var state = to_grid_style_context.get_state ();
             if (to_val.has_focus) {
                 state |= Gtk.StateFlags.FOCUSED;
@@ -360,7 +361,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
             foreach (unowned string param in params) {
                 var terms = param.split ("=");
                 if (terms.length == 2) {
-                    result[terms[0]] = Soup.URI.decode (terms[1]);
+                    result[terms[0].down ()] = Soup.URI.decode (terms[1]);
                 } else {
                     critical ("Invalid mailto URL");
                 }
@@ -370,13 +371,37 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 bcc_button.clicked ();
                 bcc_val.text = result["bcc"];
             }
+
             if (result["cc"] != null) {
                 cc_button.clicked ();
                 cc_val.text = result["cc"];
             }
+
             if (result["subject"] != null) {
                 subject_val.text = result["subject"];
             }
+
+            if (result["body"] != null) {
+                var flags =
+                    Camel.MimeFilterToHTMLFlags.CONVERT_ADDRESSES |
+                    Camel.MimeFilterToHTMLFlags.CONVERT_NL |
+                    Camel.MimeFilterToHTMLFlags.CONVERT_SPACES |
+                    Camel.MimeFilterToHTMLFlags.CONVERT_URLS;
+
+                web_view.set_body_content (Camel.text_to_html (result["body"], flags, 0));
+            }
+        }
+    }
+
+    private void on_sanitize_recipient_entry (Gtk.Entry entry) {
+        if (entry.text == "") {
+            return;
+        }
+        if (entry.text.contains ("\n") ) {
+            entry.text = entry.text.replace ("\n", ", ");
+        }
+        if (entry.text.contains ("\r") ) {
+            entry.text = entry.text.replace ("\r", ", ");
         }
     }
 
@@ -604,5 +629,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
 
         from_combo.active = 0;
+    }
+
+    private class EntryGrid : Gtk.Grid {
+        static construct {
+            set_css_name (Gtk.STYLE_CLASS_ENTRY);
+        }
     }
 }

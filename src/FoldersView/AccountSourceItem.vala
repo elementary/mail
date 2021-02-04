@@ -23,9 +23,12 @@
 public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem {
     public Mail.Backend.Account account { get; construct; }
 
+    public signal void loaded ();
+
     private GLib.Cancellable connect_cancellable;
     private Gee.HashMap<string, FolderSourceItem> folder_items;
     private AccountSavedState saved_state;
+    private unowned Camel.OfflineStore offlinestore;
 
     public AccountSourceItem (Mail.Backend.Account account) {
         Object (account: account);
@@ -38,30 +41,45 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
         saved_state = new AccountSavedState (account);
         saved_state.bind_with_expandable_item (this);
 
-        unowned Camel.OfflineStore offlinestore = (Camel.OfflineStore) account.service;
+        offlinestore = (Camel.OfflineStore) account.service;
         name = offlinestore.display_name;
         offlinestore.folder_created.connect (folder_created);
         offlinestore.folder_deleted.connect (folder_deleted);
         offlinestore.folder_info_stale.connect (reload_folders);
         offlinestore.folder_renamed.connect (folder_renamed);
-        var task = new GLib.Task (offlinestore, connect_cancellable, (source, task) => {
-            account_is_online.begin ((Camel.OfflineStore) source);
+        unowned GLib.NetworkMonitor network_monitor = GLib.NetworkMonitor.get_default ();
+        network_monitor.network_changed.connect (() =>{
+            connect_to_account.begin ();
         });
-
-        task.run_in_thread (set_online_store_thread);
     }
 
     ~AccountSourceItem () {
         connect_cancellable.cancel ();
     }
 
-    private async void account_is_online (Camel.OfflineStore offlinestore) {
+    public async void load () {
         try {
-            yield offlinestore.connect (GLib.Priority.DEFAULT, connect_cancellable);
             var folderinfo = yield offlinestore.get_folder_info (null, Camel.StoreGetFolderInfoFlags.RECURSIVE, GLib.Priority.DEFAULT, connect_cancellable);
             if (folderinfo != null) {
                 show_info (folderinfo, this);
             }
+
+        } catch (Error e) {
+            critical (e.message);
+        }
+
+        connect_to_account.begin ();
+    }
+
+    private async void connect_to_account () {
+        unowned GLib.NetworkMonitor network_monitor = GLib.NetworkMonitor.get_default ();
+        if (network_monitor.network_available == false) {
+            return;
+        }
+
+        try {
+            yield offlinestore.set_online (true, GLib.Priority.DEFAULT, connect_cancellable);
+            yield offlinestore.connect (GLib.Priority.DEFAULT, connect_cancellable);
 
             yield offlinestore.synchronize (false, GLib.Priority.DEFAULT, connect_cancellable);
         } catch (Error e) {
@@ -105,7 +123,10 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
                 var folder_info = yield offlinestore.get_folder_info (folder_item.full_name, 0, GLib.Priority.DEFAULT, connect_cancellable);
                 folder_item.update_infos (folder_info);
             } catch (Error e) {
-                critical (e.message);
+                // We can cancel the operation
+                if (!(e is GLib.IOError.CANCELLED)) {
+                    critical (e.message);
+                }
             }
         }
     }
@@ -134,14 +155,6 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
         try {
             var folder = yield offlinestore.get_folder (folder_name, 0, GLib.Priority.DEFAULT, connect_cancellable);
             yield folder.refresh_info (GLib.Priority.DEFAULT, connect_cancellable);
-        } catch (Error e) {
-            critical (e.message);
-        }
-    }
-
-    private static void set_online_store_thread (GLib.Task task, GLib.Object source_object, void* task_data, GLib.Cancellable? cancellable) {
-        try {
-            ((Camel.OfflineStore) source_object).set_online_sync (true);
         } catch (Error e) {
             critical (e.message);
         }

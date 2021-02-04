@@ -1,4 +1,3 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
  * Copyright (c) 2017 elementary LLC. (https://elementary.io)
  *
@@ -39,32 +38,40 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         flagged_icon_revealer = new Gtk.Revealer ();
         flagged_icon_revealer.add (flagged_icon);
 
-        source = new Gtk.Label (null);
-        source.hexpand = true;
-        source.ellipsize = Pango.EllipsizeMode.END;
-        source.use_markup = true;
-        source.xalign = 0;
-        source.get_style_context ().add_class ("h3");
+        source = new Gtk.Label (null) {
+            hexpand = true,
+            ellipsize = Pango.EllipsizeMode.END,
+            use_markup = true,
+            xalign = 0
+        };
+        source.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        messages = new Gtk.Label (null);
-        messages.halign = Gtk.Align.END;
+        messages = new Gtk.Label (null) {
+            halign = Gtk.Align.END
+        };
 
-        var messages_style = messages.get_style_context ();
+        weak Gtk.StyleContext messages_style = messages.get_style_context ();
         messages_style.add_class (Granite.STYLE_CLASS_BADGE);
-        messages_style.add_class (Granite.STYLE_CLASS_SOURCE_LIST);
+        messages_style.add_class (Gtk.STYLE_CLASS_FLAT);
 
-        topic = new Gtk.Label (null);
-        topic.hexpand = true;
-        topic.ellipsize = Pango.EllipsizeMode.END;
-        topic.xalign = 0;
+        topic = new Gtk.Label (null) {
+            hexpand = true,
+            ellipsize = Pango.EllipsizeMode.END,
+            xalign = 0
+        };
 
-        date = new Gtk.Label (null);
+        date = new Gtk.Label (null) {
+            halign = Gtk.Align.END
+        };
+
         date.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        var grid = new Gtk.Grid ();
-        grid.margin = 12;
-        grid.column_spacing = 12;
-        grid.row_spacing = 6;
+        var grid = new Gtk.Grid () {
+            margin = 12,
+            column_spacing = 12,
+            row_spacing = 6
+        };
+
         grid.attach (status_revealer, 0, 0);
         grid.attach (flagged_icon_revealer, 0, 1, 1, 1);
         grid.attach (source, 1, 0, 1, 1);
@@ -83,21 +90,22 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         topic.label = data.subject;
         source.label = GLib.Markup.escape_text (data.from);
 
-        messages.label = data.num_messages > 1 ? "%u".printf (data.num_messages) : null;
-        messages.visible = data.num_messages > 1;
-        messages.no_show_all = data.num_messages <= 1;
+        uint num_messages = data.num_messages;
+        messages.label = num_messages > 1 ? "%u".printf (num_messages) : null;
+        messages.visible = num_messages > 1;
+        messages.no_show_all = num_messages <= 1;
 
         if (data.unread) {
             get_style_context ().add_class ("unread-message");
 
             status_icon.icon_name = "mail-unread-symbolic";
             status_icon.tooltip_text = _("Unread");
-            status_icon.get_style_context ().add_class ("attention");
+            status_icon.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
 
             status_revealer.reveal_child = true;
         } else {
             get_style_context ().remove_class ("unread-message");
-            status_icon.get_style_context ().remove_class ("attention");
+            status_icon.get_style_context ().remove_class (Granite.STYLE_CLASS_ACCENT);
 
             if (data.replied_all || data.replied) {
                 status_icon.icon_name = "mail-replied-symbolic";
@@ -113,19 +121,5 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         }
 
         flagged_icon_revealer.reveal_child = data.flagged;
-    }
-
-    private static int64 get_newest_timestamp (Camel.FolderThreadNode node, int64 highest = -1) {
-        int64 time = highest;
-        time = int64.max (time, node.message.date_received);
-        time = int64.max (time, node.message.date_sent);
-
-        unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) node.child;
-        while (child != null) {
-            time = get_newest_timestamp (child, time);
-            child = (Camel.FolderThreadNode?) child.next;
-        }
-
-        return time;
     }
 }
