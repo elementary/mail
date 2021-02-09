@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 17:43+0000\n"
-"PO-Revision-Date: 2021-02-09 10:07+0000\n"
+"PO-Revision-Date: 2021-02-09 12:40+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/mail/fi/>\n"
 "Language: fi\n"
@@ -226,6 +226,8 @@ msgstr "Haluatko poistaa tämän luonnoksen pysyvästi?"
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
+"Et voi kumota tätä toimintoa, etkä voi palauttaa luonnosta kun se on "
+"poistettu."
 
 #: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
 #: src/MessageList/AttachmentButton.vala:114
