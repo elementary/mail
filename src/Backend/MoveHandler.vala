@@ -91,6 +91,7 @@ public class Mail.MoveHandler {
         }
 
         archive_folder = dest_folder;
+        archive_folder.freeze ();
 
         folder.freeze ();
         frozen = true;
