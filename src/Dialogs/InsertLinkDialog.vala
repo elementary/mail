@@ -16,7 +16,7 @@
 */
 
 
-public class InsertLinkDialog : Gtk.Dialog {
+public class InsertLinkDialog : Granite.Dialog {
     public signal void insert_link (string url, string title);
 
     public string? selected_text { get; construct; }
@@ -44,10 +44,12 @@ public class InsertLinkDialog : Gtk.Dialog {
             title_entry.text = selected_text;
         }
 
-        var grid = new Gtk.Grid ();
+        var grid = new Gtk.Grid () {
+            margin = 12,
+            margin_top = 0
+        };
         grid.column_spacing = 6;
         grid.row_spacing = 6;
-        grid.margin_start = grid.margin_end = 12;
         grid.attach (url_label, 0, 0);
         grid.attach (url_entry, 1, 0);
         grid.attach (title_label, 0, 1);
@@ -55,10 +57,6 @@ public class InsertLinkDialog : Gtk.Dialog {
         grid.show_all ();
 
         get_content_area ().add (grid);
-
-        var action_area = get_action_area ();
-        action_area.margin = 6;
-        action_area.margin_top = 14;
 
         add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
 
