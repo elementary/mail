@@ -243,7 +243,7 @@ public class Mail.Backend.Session : Camel.Session {
             //TODO: mail_session_configure_proxy_resolver (registry, service);
             source.bind_property ("display-name", service, "display-name", BindingFlags.SYNC_CREATE);
             if (service is Camel.OfflineStore) {
-                var account = new Account (service, source.dup_uid ());
+                var account = new Account (service);
                 accounts.add (account);
                 account_added (account);
             }

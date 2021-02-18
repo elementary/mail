@@ -92,23 +92,18 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
     private Camel.FolderInfoFlags get_full_folder_info_flags (Camel.FolderInfo folderinfo) {
         Camel.FolderInfoFlags full_flags = folderinfo.flags;
 
-        var folder_uri = build_folder_uri (account.service.get_uid (), folderinfo.full_name);
+        var folder_uri = build_folder_uri (account.service.uid, folderinfo.full_name);
         var session = Mail.Backend.Session.get_default ();
+        var service_source = session.ref_source (account.service.uid);
 
-        var account_source = session.ref_source (account.source_uid);
-        if (account_source != null) {
-            var mail_account_extension = (E.SourceMailAccount?) account_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
+        if (service_source != null && service_source.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
+            var mail_account_extension = (E.SourceMailAccount) service_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
 
-            if (mail_account_extension != null && mail_account_extension.dup_archive_folder () == folder_uri) {
+            if (mail_account_extension.dup_archive_folder () == folder_uri) {
                 full_flags = full_flags | Camel.FolderInfoFlags.TYPE_ARCHIVE;
             }
-        }
 
-        var service_source = session.ref_source (account.service.uid);
-        var service_mail_account_extension = (E.SourceMailAccount?) service_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
-
-        if (service_mail_account_extension != null) {
-            var identity_uid = service_mail_account_extension.dup_identity_uid ();
+            var identity_uid = mail_account_extension.dup_identity_uid ();
             var identity_source = session.ref_source (identity_uid);
 
             if (identity_source != null) {
