@@ -24,7 +24,7 @@ public class Mail.MoveHandler {
     }
 
     private Camel.Folder previous_folder;
-    private Camel.Folder archive_folder;
+    private Camel.Folder? archive_folder;
     private Gee.ArrayList<weak Camel.MessageInfo> moved_messages;
     private bool frozen = false;
     private uint timeout_id = 0;
@@ -204,6 +204,10 @@ public class Mail.MoveHandler {
         if (frozen) {
             frozen = false;
             previous_folder.thaw ();
+
+            if (archive_folder != null && archive_folder.is_frozen ()) {
+                archive_folder.thaw ();
+            }
         }
     }
 
