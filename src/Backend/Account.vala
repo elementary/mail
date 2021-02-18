@@ -20,7 +20,8 @@
 
 public class Mail.Backend.Account : GLib.Object {
     public Camel.Service service { get; construct; }
-    public Account (Camel.Service service) {
-        Object (service: service);
+    public string source_uid { get; construct; }
+    public Account (Camel.Service service, string source_uid) {
+        Object (service: service, source_uid: source_uid);
     }
 }

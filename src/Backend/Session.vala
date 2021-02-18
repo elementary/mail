@@ -243,7 +243,7 @@ public class Mail.Backend.Session : Camel.Session {
             //TODO: mail_session_configure_proxy_resolver (registry, service);
             source.bind_property ("display-name", service, "display-name", BindingFlags.SYNC_CREATE);
             if (service is Camel.OfflineStore) {
-                var account = new Account (service);
+                var account = new Account (service, source.dup_uid ());
                 accounts.add (account);
                 account_added (account);
             }
@@ -344,5 +344,9 @@ public class Mail.Backend.Session : Camel.Session {
         }
 
         remove_service (transport);
+    }
+
+    public E.Source? ref_source (string source_uid) {
+        return registry.ref_source (source_uid);
     }
 }
