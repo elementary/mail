@@ -98,7 +98,7 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
         var account_source = session.ref_source (account.source_uid);
         if (account_source != null) {
             var mail_account_extension = (E.SourceMailAccount?) account_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
-            
+
             if (mail_account_extension != null && mail_account_extension.dup_archive_folder () == folder_uri) {
                 full_flags = full_flags | Camel.FolderInfoFlags.TYPE_ARCHIVE;
             }
