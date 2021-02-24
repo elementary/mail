@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 17:43+0000\n"
-"PO-Revision-Date: 2021-01-30 01:07+0000\n"
+"PO-Revision-Date: 2021-02-24 19:56+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
 "Language: de\n"
@@ -44,7 +44,7 @@ msgstr "Externe Bilder immer anzeigen"
 
 #: src/HeaderBar.vala:65
 msgid "Account Settings…"
-msgstr "Konten-Einstellungen…"
+msgstr "Konteneinstellungen …"
 
 #: src/HeaderBar.vala:88
 msgid "Menu"
@@ -108,7 +108,7 @@ msgstr ""
 
 #: src/WelcomeView.vala:50
 msgid "Online Accounts…"
-msgstr "Online-Konten…"
+msgstr "Online-Konten …"
 
 #: src/Composer/ComposerWidget.vala:92 src/MessageList/MessageListItem.vala:88
 msgid "From:"
@@ -260,7 +260,7 @@ msgstr ""
 
 #: src/Composer/ComposerWidget.vala:564
 msgid "Don't Send"
-msgstr "Nicht Senden"
+msgstr "Nicht senden"
 
 #: src/Composer/ComposerWidget.vala:566
 msgid "Send Anyway"
@@ -288,15 +288,15 @@ msgstr "URL:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr "https://beispiel.de"
+msgstr "https://example.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
 msgid "Link Text:"
-msgstr "Link-Text:"
+msgstr "Verweistext:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
-msgstr "Beispiel-Webseite"
+msgstr "Beispiel-Internet-Seite"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
@@ -376,7 +376,7 @@ msgstr "Öffnen"
 
 #: src/MessageList/AttachmentButton.vala:43
 msgid "Save As…"
-msgstr "Speichern unter…"
+msgstr "Speichern unter …"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
