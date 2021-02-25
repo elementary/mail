@@ -30,7 +30,7 @@ public class Mail.Utils {
         addresses.decode (raw_addresses);
         addresses.ref ();
         for (int i = 0; i < addresses.length (); i++) {
-            unowned string? _address;
+            string? _address;
             addresses.@get (i, null, out _address);
             if (_address == null) {
                 continue;

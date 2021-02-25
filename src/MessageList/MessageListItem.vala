@@ -70,8 +70,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         style_context = get_style_context ();
         style_context.add_class (Granite.STYLE_CLASS_CARD);
 
-        unowned string? parsed_address;
-        unowned string? parsed_name;
+        string? parsed_address;
+        string? parsed_name;
 
         var camel_address = new Camel.InternetAddress ();
         camel_address.unformat (message_info.from);
@@ -436,7 +436,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             web_view.load_images ();
         } else if (message != null) {
             var whitelist = settings.get_strv ("remote-images-whitelist");
-            unowned string? sender;
+            string? sender;
             weak Camel.InternetAddress from = message.get_from ();
             if (from == null) {
                 return;

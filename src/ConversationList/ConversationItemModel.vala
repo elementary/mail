@@ -44,8 +44,8 @@ public class Mail.ConversationItemModel : GLib.Object {
 
             var address = new Camel.InternetAddress ();
             if (address.decode (message.from) > 0) {
-                unowned string? ia_name;
-                unowned string? ia_address;
+                string? ia_name;
+                string? ia_address;
 
                 address.get (0, out ia_name, out ia_address);
                 if (ia_name != null && ia_name != "") {
