@@ -471,9 +471,9 @@ namespace Camel {
 		public virtual void thaw ();
 		public static int threaded_messages_dump (Camel.FolderThreadNode c);
 		[Version (since = "3.0")]
-		public async bool transfer_messages_to (GLib.GenericArray<string> message_uids, Camel.Folder destination, bool delete_originals, int io_priority, GLib.Cancellable? cancellable, out GLib.GenericArray<string> transferred_uids) throws GLib.Error;
+		public async bool transfer_messages_to (GLib.GenericArray<string> message_uids, Camel.Folder destination, bool delete_originals, int io_priority, GLib.Cancellable? cancellable, out GLib.GenericArray<string>? transferred_uids) throws GLib.Error;
 		[Version (since = "3.0")]
-		public virtual bool transfer_messages_to_sync (GLib.GenericArray<string> message_uids, Camel.Folder destination, bool delete_originals, out GLib.GenericArray<string> transferred_uids, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		public virtual bool transfer_messages_to_sync (GLib.GenericArray<string> message_uids, Camel.Folder destination, bool delete_originals, out GLib.GenericArray<string>? transferred_uids, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "2.32")]
 		public void @unlock ();
 		public string description { get; set construct; }

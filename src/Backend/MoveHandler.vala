@@ -96,10 +96,14 @@ public class Mail.MoveHandler {
         folder.freeze ();
         frozen = true;
 
-        GenericArray<string> transferred_uids;
+        GenericArray<string>? transferred_uids;
         if (folder.transfer_messages_to_sync (uids, dest_folder, true, out transferred_uids, null)) {
-            // TODO: Figure out why uids aren't being returned here
-            warning (transferred_uids.length.to_string ());
+            if (transferred_uids != null) {
+                // TODO: Figure out why uids aren't being returned here
+                warning (transferred_uids.length.to_string ());
+            } else {
+                warning ("Undo not possible: transferred_uids is null.");
+            }
 
             timeout_id = Timeout.add_seconds (10, () => {
                 expire_undo ();
