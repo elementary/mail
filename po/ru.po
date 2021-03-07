@@ -18,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 17:43+0000\n"
 "PO-Revision-Date: 2021-03-08 12:54+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"Last-Translator: IT-Tool <it.solution4u@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -259,26 +259,23 @@ msgstr ""
 
 #: src/Composer/ComposerWidget.vala:564
 msgid "Don't Send"
-msgstr ""
+msgstr "Не отправлять"
 
 #: src/Composer/ComposerWidget.vala:566
-#, fuzzy
 msgid "Send Anyway"
-msgstr "Всё равно открыть"
+msgstr "Всё равно отправить"
 
 #: src/Composer/ComposerWindow.vala:45 src/Composer/ComposerWindow.vala:56
 msgid "New Message"
 msgstr "Новое сообщение"
 
 #: src/ConversationList/ConversationListItem.vala:102
-#, fuzzy
 msgid "Unread"
-msgstr "%d непрочитанное"
+msgstr "Непрочитанное"
 
 #: src/ConversationList/ConversationListItem.vala:112
-#, fuzzy
 msgid "Replied"
-msgstr "Ответить"
+msgstr "Отвеченное"
 
 #: src/ConversationList/ConversationListItem.vala:116
 msgid "Forwarded"
@@ -293,14 +290,12 @@ msgid "https://example.com"
 msgstr "https://example.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
-#, fuzzy
 msgid "Link Text:"
-msgstr "_Форматированный текст"
+msgstr "Текст ссылки:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
-#, fuzzy
 msgid "Example Website"
-msgstr "Веб-сайт"
+msgstr "Пример веб-сайта"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
