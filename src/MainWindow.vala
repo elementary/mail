@@ -87,6 +87,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     construct {
+        title = _("Mail");
+
         add_action_entries (ACTION_ENTRIES, this);
         get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
 
