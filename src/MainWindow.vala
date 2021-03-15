@@ -66,7 +66,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             application: application,
             height_request: 600,
             icon_name: "io.elementary.mail",
-            width_request: 800
+            width_request: 800,
+            title: _("Mail")
         );
     }
 
@@ -87,8 +88,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     construct {
-        title = _("Mail");
-
         add_action_entries (ACTION_ENTRIES, this);
         get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
 
