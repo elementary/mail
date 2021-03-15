@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 17:43+0000\n"
+"POT-Creation-Date: 2021-03-15 17:39+0000\n"
 "PO-Revision-Date: 2020-04-10 14:01+0000\n"
 "Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <https://l10n.elementary.io/projects/mail/mail/hr/>\n"
@@ -81,14 +81,18 @@ msgstr "Označi razgovor"
 msgid "Move conversations to Trash"
 msgstr "Premjesti razgovore u smeće"
 
-#: src/MainWindow.vala:282
+#: src/MainWindow.vala:70
+msgid "Mail"
+msgstr "Pošta"
+
+#: src/MainWindow.vala:286
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Poruka obrisana"
 msgstr[1] "Poruka obrisane"
 msgstr[2] "Poruka obrisane"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:287
 msgid "Undo"
 msgstr "Vrati"
 
@@ -157,7 +161,7 @@ msgstr "Citiraj tekst"
 msgid "Unquote text"
 msgstr "Ukloni citat teksta"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "Umetanje poveznice"
 
@@ -231,7 +235,7 @@ msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Odustani"
@@ -1931,9 +1935,6 @@ msgstr "Spremi"
 
 #~ msgid ", "
 #~ msgstr ", "
-
-#~ msgid "Mail"
-#~ msgstr "Pošta"
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "Precrtati (Ctrl+%)"

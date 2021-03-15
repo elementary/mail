@@ -14,11 +14,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 17:43+0000\n"
+"POT-Creation-Date: 2021-03-15 17:39+0000\n"
 "PO-Revision-Date: 2021-01-05 20:07+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/>"
-"\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/"
+">\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -83,13 +83,17 @@ msgstr "Sinalizar conversação"
 msgid "Move conversations to Trash"
 msgstr "Mover conversas para o Lixo"
 
-#: src/MainWindow.vala:282
+#: src/MainWindow.vala:70
+msgid "Mail"
+msgstr "Email"
+
+#: src/MainWindow.vala:286
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Mensagem eliminada"
 msgstr[1] "Mensagens eliminadas"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:287
 msgid "Undo"
 msgstr "Anular"
 
@@ -159,7 +163,7 @@ msgstr "Citação"
 msgid "Unquote text"
 msgstr "Remover citação"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "Inserir ligação"
 
@@ -232,7 +236,7 @@ msgstr ""
 "Não pode anular esta ação, nem recuperar o seu rascunho uma vez que tenha "
 "sido eliminado."
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Cancelar"
@@ -1910,9 +1914,6 @@ msgstr "Guardar"
 
 #~ msgid ", "
 #~ msgstr ", "
-
-#~ msgid "Mail"
-#~ msgstr "Email"
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "Rasurado"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 17:43+0000\n"
+"POT-Creation-Date: 2021-03-15 17:39+0000\n"
 "PO-Revision-Date: 2021-02-09 12:40+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/mail/fi/>\n"
@@ -79,13 +79,17 @@ msgstr "Merkitse keskustelu"
 msgid "Move conversations to Trash"
 msgstr "Siirrä keskustelu roskakoriin"
 
-#: src/MainWindow.vala:282
+#: src/MainWindow.vala:70
+msgid "Mail"
+msgstr "Sähköposti"
+
+#: src/MainWindow.vala:286
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Viesti poistettu"
 msgstr[1] "Viestit poistettu"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:287
 msgid "Undo"
 msgstr "Kumoa"
 
@@ -156,7 +160,7 @@ msgstr "Lainaa tekstiä"
 msgid "Unquote text"
 msgstr "Lopeta tekstin lainaaminen"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "Sisällytä linkki"
 
@@ -229,7 +233,7 @@ msgstr ""
 "Et voi kumota tätä toimintoa, etkä voi palauttaa luonnosta kun se on "
 "poistettu."
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Peru"
@@ -1854,9 +1858,6 @@ msgstr "Tallenna"
 
 #~ msgid ", "
 #~ msgstr ", "
-
-#~ msgid "Mail"
-#~ msgstr "Sähköposti"
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "Yliviivaus (Ctrl+%)"

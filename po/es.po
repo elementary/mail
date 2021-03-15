@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 17:43+0000\n"
+"POT-Creation-Date: 2021-03-15 17:39+0000\n"
 "PO-Revision-Date: 2021-02-18 19:32+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/mail/mail/es/>\n"
@@ -85,13 +85,17 @@ msgstr "Marcar conversación"
 msgid "Move conversations to Trash"
 msgstr "Enviar conversaciones a la papelera"
 
-#: src/MainWindow.vala:282
+#: src/MainWindow.vala:70
+msgid "Mail"
+msgstr "Correo"
+
+#: src/MainWindow.vala:286
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Mensaje eliminado"
 msgstr[1] "Mensajes eliminados"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:287
 msgid "Undo"
 msgstr "Deshacer"
 
@@ -160,7 +164,7 @@ msgstr "Citar texto"
 msgid "Unquote text"
 msgstr "Dejar de citar texto"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "Insertar enlace"
 
@@ -233,7 +237,7 @@ msgstr ""
 "No podrá deshacer esta acción ni será capaz de recuperar el borrador una vez "
 "que se elimine."
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Cancelar"
@@ -1933,9 +1937,6 @@ msgstr "Guardar"
 
 #~ msgid ", "
 #~ msgstr ", "
-
-#~ msgid "Mail"
-#~ msgstr "Correo"
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "tachado (Ctrl+%)"

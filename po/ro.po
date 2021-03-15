@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 17:43+0000\n"
+"POT-Creation-Date: 2021-03-15 17:39+0000\n"
 "PO-Revision-Date: 2017-01-21 10:51+0000\n"
 "Last-Translator: Marius Albina <marius.albina@gmail.com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
@@ -89,7 +89,11 @@ msgstr "Marchează conversaţia"
 msgid "Move conversations to Trash"
 msgstr "Mută conversațiile"
 
-#: src/MainWindow.vala:282
+#: src/MainWindow.vala:70
+msgid "Mail"
+msgstr "Poştă electronică"
+
+#: src/MainWindow.vala:286
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -97,7 +101,7 @@ msgstr[0] "Nici o conversație selectată."
 msgstr[1] "Nici o conversație selectată."
 msgstr[2] "Nici o conversație selectată."
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:287
 #, fuzzy
 msgid "Undo"
 msgstr "_Anulează"
@@ -175,7 +179,7 @@ msgstr "Citează text (Ctrl+])"
 msgid "Unquote text"
 msgstr "Anulează citarea textului (Ctrl+[)"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr ""
 
@@ -250,7 +254,7 @@ msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Anulează"
@@ -1961,9 +1965,6 @@ msgstr "_Salvează"
 
 #~ msgid ", "
 #~ msgstr ", "
-
-#~ msgid "Mail"
-#~ msgstr "Poştă electronică"
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "Întretăiat (Ctrl+%)"
