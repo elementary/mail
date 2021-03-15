@@ -66,7 +66,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             application: application,
             height_request: 600,
             icon_name: "io.elementary.mail",
-            width_request: 800
+            width_request: 800,
+            title: _("Mail")
         );
     }
 
