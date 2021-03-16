@@ -13,10 +13,10 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-15 17:39+0000\n"
-"PO-Revision-Date: 2021-03-07 17:06+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/"
-">\n"
+"PO-Revision-Date: 2021-03-16 02:02+0000\n"
+"Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/>"
+"\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -84,10 +84,8 @@ msgid "Move conversations to Trash"
 msgstr "Перемістити розмови до смітника"
 
 #: src/MainWindow.vala:70
-#, fuzzy
-#| msgid "All Mail"
 msgid "Mail"
-msgstr "Уся пошта"
+msgstr "Пошта"
 
 #: src/MainWindow.vala:286
 msgid "Message Deleted"
