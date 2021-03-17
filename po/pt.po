@@ -15,16 +15,16 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-15 17:39+0000\n"
-"PO-Revision-Date: 2021-01-05 20:07+0000\n"
+"PO-Revision-Date: 2021-03-18 00:39+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/"
-">\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/>"
+"\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:40
@@ -85,7 +85,7 @@ msgstr "Mover conversas para o Lixo"
 
 #: src/MainWindow.vala:70
 msgid "Mail"
-msgstr "Email"
+msgstr "Correio"
 
 #: src/MainWindow.vala:286
 msgid "Message Deleted"
@@ -104,7 +104,7 @@ msgstr "Ligar uma Conta"
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
-"O Correio utiliza contas de email configuradas nas Definições do Sistema."
+"O Correio utiliza contas de e-mail configuradas nas Definições do Sistema."
 
 #: src/WelcomeView.vala:50
 msgid "Online Accounts…"
@@ -363,11 +363,11 @@ msgstr "Esta mensagem contém pelo menos um anexo"
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:351
 msgid "Email Message"
-msgstr "Mensagem de email"
+msgstr "Mensagem de e-mail"
 
 #: src/MessageList/MessageListItem.vala:373
 msgid "Unable to print email"
-msgstr "Incapaz de imprimir email"
+msgstr "Incapaz de imprimir e-mail"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
