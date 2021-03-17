@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2021-01-05 20:07+0000\n"
+"PO-Revision-Date: 2021-03-18 00:39+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/extra/pt/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: data/io.elementary.mail.appdata.xml.in:8
@@ -36,13 +36,13 @@ msgid ""
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
 msgstr ""
-"O E-Mail foi desenvolvido para o ajudar a gerir o seu e-mail de forma "
+"O Correio foi desenvolvido para o ajudar a gerir o seu e-mail de forma "
 "eficiente e sem esforço. A sua interface é baseada em conversação, para que "
 "possa ler uma discussão sem ter de clicar de mensagem em mensagem."
 
 #: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
-msgstr "Gestor leve de email com total suporte a IMAP"
+msgstr "Cliente de correio eletrónico com total suporte a IMAP"
 
 #: data/io.elementary.mail.appdata.xml.in:14
 msgid "Mail grouped into conversations, not a tree of threads"
