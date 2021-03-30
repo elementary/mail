@@ -6,20 +6,20 @@ base-version: juno-20.08
 sdk: org.gnome.Sdk
 command: io.elementary.mail
 finish-args:
-  - '--filesystem=home'
+  - '--filesystem=/tmp/io.elementary.mail:create'
+  - '--env=TMPDIR=/tmp/io.elementary.mail'
 
   - '--share=ipc'
   - '--share=network'
   - '--socket=fallback-x11'
   - '--socket=wayland'
 
+  # needed for perfers-color-scheme
+  - '--system-talk-name=org.freedesktop.Accounts'
+
   # EDS DBus interfaces
   - '--talk-name=org.gnome.evolution.dataserver.AddressBook10'
-  - '--talk-name=org.gnome.evolution.dataserver.Calendar8'
   - '--talk-name=org.gnome.evolution.dataserver.Sources5'
-  - '--talk-name=org.gnome.evolution.dataserver.Subprocess.Backend.*'
-
-  - '--talk-name=org.freedesktop.Notifications'
 
   - '--metadata=X-DConf=migrate-path=/io/elementary/mail/'
 cleanup:
@@ -52,7 +52,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/evolution-data-server.git
-        tag: '3.38.1'
+        tag: '3.40.0'
     modules:
       - name: intltool
         cleanup:
@@ -85,7 +85,7 @@ modules:
         sources:
           - type: git
             url: https://github.com/libical/libical.git
-            tag: v3.0.8
+            tag: v3.0.9
 
   - name: folks
     buildsystem: meson
@@ -108,7 +108,13 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/libhandy.git
-        tag: '1.0.1'
+        tag: '1.2.0'
+
+  - name: granite
+    buildsystem: meson
+    sources:
+     - type: git
+       url: https://github.com/elementary/granite.git
 
   - name: mail
     buildsystem: meson
