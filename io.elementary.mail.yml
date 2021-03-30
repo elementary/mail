@@ -32,23 +32,23 @@ modules:
   - name: evolution-data-server
     buildsystem: cmake-ninja
     cleanup:
+      - /etc
       - /lib/evolution-data-server/*-backends
       - /libexec
-      - /share/dbus-1/services
+      - /share/dbus-1
+      - /share/GConf
+      - /share/pixmaps
     config-opts:
       - '-DCMAKE_BUILD_TYPE=RelWithDebInfo'
-      - '-DENABLE_GTK=ON'
-      - '-DENABLE_CANBERRA=OFF'
-      - '-DENABLE_GOA=OFF'
-      - '-DENABLE_GOOGLE=ON'
-      - '-DENABLE_VALA_BINDINGS=ON'
-      - '-DENABLE_WEATHER=OFF'
-      - '-DWITH_OPENLDAP=OFF'
-      - '-DWITH_LIBDB=OFF'
-      - '-DENABLE_INTROSPECTION=ON'
-      - '-DENABLE_INSTALLED_TESTS=OFF'
-      - '-DENABLE_GTK_DOC=OFF'
       - '-DENABLE_EXAMPLES=OFF'
+      - '-DENABLE_GOA=OFF'
+      - '-DWITH_LIBDB=OFF'
+      - '-DENABLE_WEATHER=OFF'
+      - '-DENABLE_CANBERRA=OFF'
+      - '-DENABLE_VALA_BINDINGS=ON'
+      - '-DWITH_KRB5=OFF'
+      - '-DWITH_OPENLDAP=OFF'
+      - '-DENABLE_INTROSPECTION=ON'
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/evolution-data-server.git
@@ -69,19 +69,21 @@ modules:
         sources:
           - type: git
             url: https://gitlab.gnome.org/GNOME/libgdata.git
-            tag: '0.17.13'
+            tag: '0.18.0'
       - name: libical
         cleanup:
           - '/lib/cmake'
+          - '/libexec'
         buildsystem: cmake-ninja
         config-opts:
           - '-DCMAKE_BUILD_TYPE=RelWithDebInfo'
           - '-DCMAKE_INSTALL_LIBDIR=/app/lib'
-          - '-DBUILD_SHARED_LIBS=ON'
-          - '-DICAL_GLIB=true'
-          - '-DICAL_GLIB_VAPI=true'
+          - '-DWITH_CXX_BINDINGS=false'
+          - '-DSHARED_ONLY=true'
           - '-DGOBJECT_INTROSPECTION=true'
           - '-DICAL_BUILD_DOCS=false'
+          - '-DICAL_GLIB_VAPI=true'
+          - '-DLIBICAL_BUILD_TESTING=false'
         sources:
           - type: git
             url: https://github.com/libical/libical.git
@@ -98,7 +100,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/folks.git
-        tag: '0.14'
+        tag: '0.15.2'
 
   - name: handy
     buildsystem: meson
