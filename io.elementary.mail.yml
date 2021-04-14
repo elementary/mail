@@ -1,9 +1,7 @@
 app-id: io.elementary.mail
-runtime: org.gnome.Platform
-runtime-version: '3.38'
-base: io.elementary.BaseApp
-base-version: juno-20.08
-sdk: org.gnome.Sdk
+runtime: io.elementary.Platform
+runtime-version: '0.1.0'
+sdk: io.elementary.Sdk
 command: io.elementary.mail
 finish-args:
   - '--filesystem=/tmp/io.elementary.mail:create'
@@ -101,23 +99,6 @@ modules:
       - type: git
         url: https://gitlab.gnome.org/GNOME/folks.git
         tag: '0.15.2'
-
-  - name: handy
-    buildsystem: meson
-    config-opts:
-      - '-Dexamples=false'
-      - '-Dtests=false'
-    sources:
-      - type: git
-        url: https://gitlab.gnome.org/GNOME/libhandy.git
-        tag: '1.2.0'
-
-  - name: granite
-    buildsystem: meson
-    sources:
-      - type: git
-        url: https://github.com/elementary/granite.git
-        tag: '6.0.0'
 
   - name: mail
     buildsystem: meson
