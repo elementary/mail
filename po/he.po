@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 17:43+0000\n"
+"POT-Creation-Date: 2021-03-15 17:39+0000\n"
 "PO-Revision-Date: 2021-01-18 23:34+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
@@ -85,13 +85,17 @@ msgstr "סימון הדיון"
 msgid "Move conversations to Trash"
 msgstr "העברת דיונים לאשפה"
 
-#: src/MainWindow.vala:282
+#: src/MainWindow.vala:70
+msgid "Mail"
+msgstr "דואר"
+
+#: src/MainWindow.vala:286
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "הודעה נמחקה"
 msgstr[1] "הודעות נמחקו"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:287
 msgid "Undo"
 msgstr "ביטול"
 
@@ -160,7 +164,7 @@ msgstr "ציטוט טקסט"
 msgid "Unquote text"
 msgstr "ביטול ציטוט טקסט"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "הוספת קישור"
 
@@ -231,7 +235,7 @@ msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr "פעולה זו אינה הפיכה, שחזור הטיוטה שלך אינו אפשרי לאחר מחיקה."
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "ביטול"
@@ -1879,9 +1883,6 @@ msgstr "שמירה"
 
 #~ msgid ", "
 #~ msgstr ", "
-
-#~ msgid "Mail"
-#~ msgstr "דואר"
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "קו חוצה (Ctrl+%‎)"

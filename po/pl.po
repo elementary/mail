@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 17:43+0000\n"
+"POT-Creation-Date: 2021-03-15 17:39+0000\n"
 "PO-Revision-Date: 2019-11-17 20:25+0000\n"
 "Last-Translator: Danie Wachna <ravqe@outlook.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
@@ -90,14 +90,18 @@ msgstr "Oznacz konwersację"
 msgid "Move conversations to Trash"
 msgstr "Przenieś rozmowy do kosza"
 
-#: src/MainWindow.vala:282
+#: src/MainWindow.vala:70
+msgid "Mail"
+msgstr "Poczta"
+
+#: src/MainWindow.vala:286
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Wiadomość usunięta"
 msgstr[1] "Wiadomości usunięte"
 msgstr[2] "Wiadomości usuniętych"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:287
 msgid "Undo"
 msgstr "Cofnij"
 
@@ -166,7 +170,7 @@ msgstr "Cytuj tekst"
 msgid "Unquote text"
 msgstr "Usuń cytat"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "Wstaw odnośnik"
 
@@ -240,7 +244,7 @@ msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Anuluj"
@@ -1964,9 +1968,6 @@ msgstr "Zapisz"
 
 #~ msgid ", "
 #~ msgstr ", "
-
-#~ msgid "Mail"
-#~ msgstr "Poczta"
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "Przekreślenie (Ctrl+%)"

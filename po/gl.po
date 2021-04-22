@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 17:43+0000\n"
+"POT-Creation-Date: 2021-03-15 17:39+0000\n"
 "PO-Revision-Date: 2019-09-14 09:23+0000\n"
 "Last-Translator: Daniel <riesp@protonmail.com>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/mail/mail/gl/>\n"
@@ -79,13 +79,19 @@ msgstr "Marcar conversa"
 msgid "Move conversations to Trash"
 msgstr "Mover as conversas ao lixo"
 
-#: src/MainWindow.vala:282
+#: src/MainWindow.vala:70
+#, fuzzy
+#| msgid "All Mail"
+msgid "Mail"
+msgstr "Todo o correo"
+
+#: src/MainWindow.vala:286
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Mensaxe eliminada"
 msgstr[1] "Mensaxes eliminadas"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:287
 msgid "Undo"
 msgstr "Desfacer"
 
@@ -154,7 +160,7 @@ msgstr "Citar texto"
 msgid "Unquote text"
 msgstr "Deixar de citar texto"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "Inserir ligazón"
 
@@ -225,7 +231,7 @@ msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Cancelar"
@@ -396,9 +402,6 @@ msgstr "Gardar"
 
 #~ msgid "Important"
 #~ msgstr "Importante"
-
-#~ msgid "All Mail"
-#~ msgstr "Todo o correo"
 
 #~ msgid "Spam"
 #~ msgstr "Correo lixo"

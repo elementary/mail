@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 17:43+0000\n"
+"POT-Creation-Date: 2021-03-15 17:39+0000\n"
 "PO-Revision-Date: 2017-02-20 08:31+0000\n"
 "Last-Translator: aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <ak@li.org>\n"
@@ -78,13 +78,19 @@ msgstr ""
 msgid "Move conversations to Trash"
 msgstr "Yi nkɔmodie no"
 
-#: src/MainWindow.vala:282
+#: src/MainWindow.vala:70
+#, fuzzy
+#| msgid "All Mail"
+msgid "Mail"
+msgstr "Nsɛm a wanya nyinaa"
+
+#: src/MainWindow.vala:286
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:287
 msgid "Undo"
 msgstr ""
 
@@ -153,7 +159,7 @@ msgstr ""
 msgid "Unquote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr ""
 
@@ -224,7 +230,7 @@ msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr ""
@@ -380,9 +386,6 @@ msgstr ""
 
 #~ msgid "Important"
 #~ msgstr "Nea ɛhia paa"
-
-#~ msgid "All Mail"
-#~ msgstr "Nsɛm a wanya nyinaa"
 
 #~ msgid "Spam"
 #~ msgstr "Adaadaa nsɛm"

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 17:43+0000\n"
+"POT-Creation-Date: 2021-03-15 17:39+0000\n"
 "PO-Revision-Date: 2021-02-24 19:56+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
@@ -86,13 +86,17 @@ msgstr "Unterhaltung markieren"
 msgid "Move conversations to Trash"
 msgstr "Unterhaltung in den Papierkorb verschieben"
 
-#: src/MainWindow.vala:282
+#: src/MainWindow.vala:70
+msgid "Mail"
+msgstr "Mail"
+
+#: src/MainWindow.vala:286
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Nachricht gelöscht"
 msgstr[1] "Nachrichten gelöscht"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:287
 msgid "Undo"
 msgstr "Rückgängig"
 
@@ -163,7 +167,7 @@ msgstr "Text zitieren"
 msgid "Unquote text"
 msgstr "Zitat aufheben"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "Link einfügen"
 
@@ -236,7 +240,7 @@ msgstr ""
 "Sie können diesen Vorgang weder nicht rückgängig machen noch Ihren Entwurf "
 "wiederherstellen, nachdem er gelöscht wurde."
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Abbrechen"
@@ -1951,9 +1955,6 @@ msgstr "Speichern"
 
 #~ msgid ", "
 #~ msgstr ", "
-
-#~ msgid "Mail"
-#~ msgstr "Mail"
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "Durchstreichen (Strg+%)"
