@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 17:43+0000\n"
+"POT-Creation-Date: 2021-03-15 17:39+0000\n"
 "PO-Revision-Date: 2017-04-15 20:40+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Uighur <https://l10n.elementary.io/projects/mail/mail/ug/>\n"
@@ -83,13 +83,17 @@ msgstr "دىئالوگقا بەلگە قىلىش"
 msgid "Move conversations to Trash"
 msgstr "دىئالوگلارنى يۆتكەش"
 
-#: src/MainWindow.vala:282
+#: src/MainWindow.vala:70
+msgid "Mail"
+msgstr "ئېلخەت"
+
+#: src/MainWindow.vala:286
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "ھىچقانداق دىئالوگ تاللانمىدى."
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:287
 #, fuzzy
 msgid "Undo"
 msgstr "بىكار قىلىش"
@@ -167,7 +171,7 @@ msgstr "تېكستنى يۆتكەپ ئىشلىتىش (Ctrl+])"
 msgid "Unquote text"
 msgstr "تېكستنى يۆتكەپ ئىشلىتىشنى ئەمەلدىن قالدۇرۇش (Ctrl+[)"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr ""
 
@@ -242,7 +246,7 @@ msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "ياق"
@@ -1875,9 +1879,6 @@ msgstr "ساقلاش"
 
 #~ msgid ", "
 #~ msgstr "، "
-
-#~ msgid "Mail"
-#~ msgstr "ئېلخەت"
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "سىزىۋىتىش (Ctrl+K)"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 17:43+0000\n"
+"POT-Creation-Date: 2021-03-15 17:39+0000\n"
 "PO-Revision-Date: 2016-03-01 18:37+0000\n"
 "Last-Translator: Ľubomír Hlavko <5lubo555@azet.sk>\n"
 "Language-Team: Slovak (http://www.transifex.com/projects/p/geary/language/"
@@ -88,7 +88,13 @@ msgstr "Označí rozhovory"
 msgid "Move conversations to Trash"
 msgstr "Presunie rozhovory"
 
-#: src/MainWindow.vala:282
+#: src/MainWindow.vala:70
+#, fuzzy
+#| msgid "All Mail"
+msgid "Mail"
+msgstr "Všetka pošta"
+
+#: src/MainWindow.vala:286
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -96,7 +102,7 @@ msgstr[0] "Žiadne vybraté rozhovory."
 msgstr[1] "Žiadne vybraté rozhovory."
 msgstr[2] "Žiadne vybraté rozhovory."
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:287
 #, fuzzy
 msgid "Undo"
 msgstr "_Späť"
@@ -174,7 +180,7 @@ msgstr "Citácia textu (Ctrl+])"
 msgid "Unquote text"
 msgstr "Koniec citácie textu (Ctrl+[)"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr ""
 
@@ -249,7 +255,7 @@ msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr ""
@@ -444,9 +450,6 @@ msgstr "_Uložiť"
 
 #~ msgid "Important"
 #~ msgstr "Dôležité"
-
-#~ msgid "All Mail"
-#~ msgstr "Všetka pošta"
 
 #~ msgid "Spam"
 #~ msgstr "Nevyžiadaná pošta"

@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 17:43+0000\n"
-"PO-Revision-Date: 2021-01-05 20:07+0000\n"
+"POT-Creation-Date: 2021-03-15 17:39+0000\n"
+"PO-Revision-Date: 2021-03-18 00:39+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/>"
 "\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:40
@@ -83,13 +83,17 @@ msgstr "Sinalizar conversação"
 msgid "Move conversations to Trash"
 msgstr "Mover conversas para o Lixo"
 
-#: src/MainWindow.vala:282
+#: src/MainWindow.vala:70
+msgid "Mail"
+msgstr "Correio"
+
+#: src/MainWindow.vala:286
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Mensagem eliminada"
 msgstr[1] "Mensagens eliminadas"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:287
 msgid "Undo"
 msgstr "Anular"
 
@@ -100,7 +104,7 @@ msgstr "Ligar uma Conta"
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
-"O Correio utiliza contas de email configuradas nas Definições do Sistema."
+"O Correio utiliza contas de e-mail configuradas nas Definições do Sistema."
 
 #: src/WelcomeView.vala:50
 msgid "Online Accounts…"
@@ -159,7 +163,7 @@ msgstr "Citação"
 msgid "Unquote text"
 msgstr "Remover citação"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "Inserir ligação"
 
@@ -232,7 +236,7 @@ msgstr ""
 "Não pode anular esta ação, nem recuperar o seu rascunho uma vez que tenha "
 "sido eliminado."
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Cancelar"
@@ -359,11 +363,11 @@ msgstr "Esta mensagem contém pelo menos um anexo"
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:351
 msgid "Email Message"
-msgstr "Mensagem de email"
+msgstr "Mensagem de e-mail"
 
 #: src/MessageList/MessageListItem.vala:373
 msgid "Unable to print email"
-msgstr "Incapaz de imprimir email"
+msgstr "Incapaz de imprimir e-mail"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
@@ -1910,9 +1914,6 @@ msgstr "Guardar"
 
 #~ msgid ", "
 #~ msgstr ", "
-
-#~ msgid "Mail"
-#~ msgstr "Email"
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "Rasurado"

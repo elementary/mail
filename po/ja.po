@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 17:43+0000\n"
+"POT-Creation-Date: 2021-03-15 17:39+0000\n"
 "PO-Revision-Date: 2021-01-05 04:40+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
@@ -71,12 +71,16 @@ msgstr "メッセージにマークをつける"
 msgid "Move conversations to Trash"
 msgstr "メッセージをゴミ箱に移動します"
 
-#: src/MainWindow.vala:282
+#: src/MainWindow.vala:70
+msgid "Mail"
+msgstr "メール"
+
+#: src/MainWindow.vala:286
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "メッセージを削除しました"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:287
 msgid "Undo"
 msgstr "元に戻す"
 
@@ -145,7 +149,7 @@ msgstr "テキストを引用します"
 msgid "Unquote text"
 msgstr "テキストの引用を解除します"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "リンクを挿入します"
 
@@ -216,7 +220,7 @@ msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr "この操作はやり直せません。下書きを削除すると復元できなくなります。"
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "キャンセル"
@@ -1850,9 +1854,6 @@ msgstr "保存"
 
 #~ msgid ", "
 #~ msgstr ", "
-
-#~ msgid "Mail"
-#~ msgstr "メール"
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "削除 (Ctrl+%)"

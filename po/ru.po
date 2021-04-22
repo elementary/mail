@@ -16,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 17:43+0000\n"
-"PO-Revision-Date: 2017-04-10 23:14+0000\n"
-"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
+"POT-Creation-Date: 2021-03-15 17:39+0000\n"
+"PO-Revision-Date: 2021-03-08 12:54+0000\n"
+"Last-Translator: IT-Tool <it.solution4u@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -26,26 +26,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:40
-#, fuzzy
 msgid "Compose new message"
-msgstr "Написать Новое сообщение"
+msgstr "Создать новое сообщение"
 
 #: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr "Поиск писем"
 
 #: src/HeaderBar.vala:57
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "Всегда показывать изображения:"
+msgstr "Всегда показывать удаленные изображения"
 
 #: src/HeaderBar.vala:65
 msgid "Account Settings…"
-msgstr ""
+msgstr "Параметры учетной записи…"
 
 #: src/HeaderBar.vala:88
 msgid "Menu"
@@ -56,9 +54,8 @@ msgid "Reply"
 msgstr "Ответить"
 
 #: src/HeaderBar.vala:102
-#, fuzzy
 msgid "Reply All"
-msgstr "О_тветить всем"
+msgstr "Ответить всем"
 
 #: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:184
 msgid "Forward"
@@ -73,51 +70,49 @@ msgid "Mark as Read"
 msgstr "Отметить как прочитанное"
 
 #: src/HeaderBar.vala:125
-#, fuzzy
 msgid "Star"
-msgstr "_Добавить в избранное"
+msgstr "Добавить в избранное"
 
 #: src/HeaderBar.vala:130
-#, fuzzy
 msgid "Unstar"
-msgstr "_Убрать из избранных"
+msgstr "Удалить из избранных"
 
 #: src/HeaderBar.vala:142
-#, fuzzy
 msgid "Mark Conversation"
 msgstr "Отметить беседу"
 
 #: src/HeaderBar.vala:149
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "Переместить беседы"
+msgstr "Переместить беседы в корзину"
 
-#: src/MainWindow.vala:282
-#, fuzzy
+#: src/MainWindow.vala:70
+msgid "Mail"
+msgstr "Почта"
+
+#: src/MainWindow.vala:286
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Беседы не выбраны."
-msgstr[1] "Беседы не выбраны."
-msgstr[2] "Беседы не выбраны."
+msgstr[0] "Сообщение удалено"
+msgstr[1] "Сообщений удалено"
+msgstr[2] "Сообщений удалено"
 
-#: src/MainWindow.vala:283
-#, fuzzy
+#: src/MainWindow.vala:287
 msgid "Undo"
-msgstr "_Отменить"
+msgstr "Отменить"
 
 #: src/WelcomeView.vala:40
-#, fuzzy
 msgid "Connect an Account"
-msgstr "Удалить аккаунт"
+msgstr "Подключить учетную запись"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
+"Почта использует учетные записи электронной почты, настроенные в Параметрах "
+"системы."
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "Учётные записи"
+msgstr "Учетные записи…"
 
 #: src/Composer/ComposerWidget.vala:92 src/MessageList/MessageListItem.vala:88
 msgid "From:"
@@ -132,14 +127,12 @@ msgid "Subject:"
 msgstr "Тема:"
 
 #: src/Composer/ComposerWidget.vala:119
-#, fuzzy
 msgid "Cc"
-msgstr "Копия:"
+msgstr "Копия"
 
 #: src/Composer/ComposerWidget.vala:121
-#, fuzzy
 msgid "Bcc"
-msgstr "Скрытая копия:"
+msgstr "Скрытая копия"
 
 #: src/Composer/ComposerWidget.vala:128
 #: src/MessageList/MessageListItem.vala:127
@@ -152,44 +145,39 @@ msgstr "Скрытая копия:"
 
 #: src/Composer/ComposerWidget.vala:184
 msgid "Bold"
-msgstr ""
+msgstr "Жирный"
 
 #: src/Composer/ComposerWidget.vala:190
 msgid "Italic"
-msgstr ""
+msgstr "Курсив"
 
 #: src/Composer/ComposerWidget.vala:196
-#, fuzzy
 msgid "Underline"
-msgstr "Подчёркнутый (Ctrl+U)"
+msgstr "Подчёркнутый"
 
 #: src/Composer/ComposerWidget.vala:202
-#, fuzzy
 msgid "Strikethrough"
-msgstr "Зачёркнутый (Ctrl+K)"
+msgstr "Зачёркнутый"
 
 #: src/Composer/ComposerWidget.vala:215
-#, fuzzy
 msgid "Quote text"
-msgstr "Цитировать текст (Ctrl+])"
+msgstr "Цитировать текст"
 
 #: src/Composer/ComposerWidget.vala:218
-#, fuzzy
 msgid "Unquote text"
-msgstr "Убрать цитирование текста (Ctrl+[)"
+msgstr "Убрать цитирование текста"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
-msgstr ""
+msgstr "Вставить ссылку"
 
 #: src/Composer/ComposerWidget.vala:230
 msgid "Insert Image"
-msgstr ""
+msgstr "Вставить изображение"
 
 #: src/Composer/ComposerWidget.vala:233
-#, fuzzy
 msgid "Remove formatting"
-msgstr "Удалить форматирование (Ctrl+Space)"
+msgstr "Удалить форматирование"
 
 #: src/Composer/ComposerWidget.vala:261
 msgid "Delete draft"
@@ -217,109 +205,101 @@ msgid "---------- Forwarded message ----------"
 msgstr "---------- Пересылаемое сообщение ----------"
 
 #: src/Composer/ComposerWidget.vala:488
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "От: %s\n"
+msgstr "От: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:489
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "Тема: %s\n"
+msgstr "Тема: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:490
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Дата: %s\n"
+msgstr "Дата: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:491
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "Кому: %s\n"
+msgstr "Кому: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:493
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "Копия: %s\n"
+msgstr "Копия: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:531
-#, fuzzy
-#| msgid "Do you want to permanently delete this message?"
-#| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
-msgstr "Безвозвратно удалить это сообщение?"
+msgstr "Навсегда удалить черновик?"
 
 #: src/Composer/ComposerWidget.vala:532
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
+"Вы не можете отменить это действие и восстановить черновик после его "
+"удаления."
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Отменить"
 
 #: src/Composer/ComposerWidget.vala:540
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Delete Draft"
 msgstr "Удалить черновик"
 
 #: src/Composer/ComposerWidget.vala:557
-#, fuzzy
 msgid "Send Message With an Empty Subject?"
-msgstr "Отправить сообщение с пустой темой?"
+msgstr "Отправить сообщение без темы?"
 
 #: src/Composer/ComposerWidget.vala:558
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
+"В этом сообщении поле темы пустое. Получатель может быть не в состоянии "
+"сделать вывод о содержании или важности сообщения."
 
 #: src/Composer/ComposerWidget.vala:564
 msgid "Don't Send"
-msgstr ""
+msgstr "Не отправлять"
 
 #: src/Composer/ComposerWidget.vala:566
-#, fuzzy
 msgid "Send Anyway"
-msgstr "Всё равно открыть"
+msgstr "Всё равно отправить"
 
 #: src/Composer/ComposerWindow.vala:45 src/Composer/ComposerWindow.vala:56
 msgid "New Message"
 msgstr "Новое сообщение"
 
 #: src/ConversationList/ConversationListItem.vala:102
-#, fuzzy
 msgid "Unread"
-msgstr "%d непрочитанное"
+msgstr "Непрочитанное"
 
 #: src/ConversationList/ConversationListItem.vala:112
-#, fuzzy
 msgid "Replied"
-msgstr "Ответить"
+msgstr "Отвеченное"
 
 #: src/ConversationList/ConversationListItem.vala:116
-#, fuzzy
 msgid "Forwarded"
-msgstr "Переслать"
+msgstr "Пересланное"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "URL-адрес:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://example.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
-#, fuzzy
 msgid "Link Text:"
-msgstr "_Форматированный текст"
+msgstr "Текст ссылки:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
-#, fuzzy
 msgid "Example Website"
-msgstr "Веб-сайт"
+msgstr "Пример веб-сайта"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
@@ -340,12 +320,11 @@ msgstr "Всё равно открыть"
 
 #: src/FoldersView/FolderSourceItem.vala:49
 msgid "Refresh folder"
-msgstr ""
+msgstr "Обновить папку"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "Беседы не выбраны."
+msgstr "Сообщение не выбрано"
 
 #: src/MessageList/MessageListItem.vala:168
 #: src/MessageList/MessageListItem.vala:325
@@ -387,16 +366,12 @@ msgstr "Это письмо содержит одно или больше вло
 
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:351
-#, fuzzy
-#| msgid "New Message"
 msgid "Email Message"
-msgstr "Новое сообщение"
+msgstr "Сообщения электронной почты"
 
 #: src/MessageList/MessageListItem.vala:373
-#, fuzzy
-#| msgid "Unable to validate:\n"
 msgid "Unable to print email"
-msgstr "Не удалось подтвердить:\n"
+msgstr "Не удалось напечатать электронное письмо"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
@@ -408,12 +383,11 @@ msgstr "Сохранить как…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "Неизвестный"
 
 #: src/MessageList/AttachmentButton.vala:113
-#, fuzzy
 msgid "Save"
-msgstr "_Сохранить"
+msgstr "Сохранить"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "Черновики | Drafts | Draft"
@@ -1963,9 +1937,6 @@ msgstr "_Сохранить"
 
 #~ msgid ", "
 #~ msgstr ", "
-
-#~ msgid "Mail"
-#~ msgstr "Почта"
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "Зачёркнутый (Ctrl+%)"

@@ -1,25 +1,23 @@
 app-id: io.elementary.mail
-runtime: org.gnome.Platform
-runtime-version: '3.38'
-base: io.elementary.BaseApp
-base-version: juno-20.08
-sdk: org.gnome.Sdk
+runtime: io.elementary.Platform
+runtime-version: '0.1.0'
+sdk: io.elementary.Sdk
 command: io.elementary.mail
 finish-args:
-  - '--filesystem=home'
+  - '--filesystem=/tmp/io.elementary.mail:create'
+  - '--env=TMPDIR=/tmp/io.elementary.mail'
 
   - '--share=ipc'
   - '--share=network'
   - '--socket=fallback-x11'
   - '--socket=wayland'
 
+  # needed for perfers-color-scheme
+  - '--system-talk-name=org.freedesktop.Accounts'
+
   # EDS DBus interfaces
   - '--talk-name=org.gnome.evolution.dataserver.AddressBook10'
-  - '--talk-name=org.gnome.evolution.dataserver.Calendar8'
   - '--talk-name=org.gnome.evolution.dataserver.Sources5'
-  - '--talk-name=org.gnome.evolution.dataserver.Subprocess.Backend.*'
-
-  - '--talk-name=org.freedesktop.Notifications'
 
   - '--metadata=X-DConf=migrate-path=/io/elementary/mail/'
 cleanup:
@@ -32,27 +30,27 @@ modules:
   - name: evolution-data-server
     buildsystem: cmake-ninja
     cleanup:
+      - /etc
       - /lib/evolution-data-server/*-backends
       - /libexec
-      - /share/dbus-1/services
+      - /share/dbus-1
+      - /share/GConf
+      - /share/pixmaps
     config-opts:
       - '-DCMAKE_BUILD_TYPE=RelWithDebInfo'
-      - '-DENABLE_GTK=ON'
-      - '-DENABLE_CANBERRA=OFF'
-      - '-DENABLE_GOA=OFF'
-      - '-DENABLE_GOOGLE=ON'
-      - '-DENABLE_VALA_BINDINGS=ON'
-      - '-DENABLE_WEATHER=OFF'
-      - '-DWITH_OPENLDAP=OFF'
-      - '-DWITH_LIBDB=OFF'
-      - '-DENABLE_INTROSPECTION=ON'
-      - '-DENABLE_INSTALLED_TESTS=OFF'
-      - '-DENABLE_GTK_DOC=OFF'
       - '-DENABLE_EXAMPLES=OFF'
+      - '-DENABLE_GOA=OFF'
+      - '-DWITH_LIBDB=OFF'
+      - '-DENABLE_WEATHER=OFF'
+      - '-DENABLE_CANBERRA=OFF'
+      - '-DENABLE_VALA_BINDINGS=ON'
+      - '-DWITH_KRB5=OFF'
+      - '-DWITH_OPENLDAP=OFF'
+      - '-DENABLE_INTROSPECTION=ON'
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/evolution-data-server.git
-        tag: '3.38.1'
+        tag: '3.40.0'
     modules:
       - name: intltool
         cleanup:
@@ -69,23 +67,25 @@ modules:
         sources:
           - type: git
             url: https://gitlab.gnome.org/GNOME/libgdata.git
-            tag: '0.17.13'
+            tag: '0.18.0'
       - name: libical
         cleanup:
           - '/lib/cmake'
+          - '/libexec'
         buildsystem: cmake-ninja
         config-opts:
           - '-DCMAKE_BUILD_TYPE=RelWithDebInfo'
           - '-DCMAKE_INSTALL_LIBDIR=/app/lib'
-          - '-DBUILD_SHARED_LIBS=ON'
-          - '-DICAL_GLIB=true'
-          - '-DICAL_GLIB_VAPI=true'
+          - '-DWITH_CXX_BINDINGS=false'
+          - '-DSHARED_ONLY=true'
           - '-DGOBJECT_INTROSPECTION=true'
           - '-DICAL_BUILD_DOCS=false'
+          - '-DICAL_GLIB_VAPI=true'
+          - '-DLIBICAL_BUILD_TESTING=false'
         sources:
           - type: git
             url: https://github.com/libical/libical.git
-            tag: v3.0.8
+            tag: v3.0.9
 
   - name: folks
     buildsystem: meson
@@ -98,17 +98,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/folks.git
-        tag: '0.14'
-
-  - name: handy
-    buildsystem: meson
-    config-opts:
-      - '-Dexamples=false'
-      - '-Dtests=false'
-    sources:
-      - type: git
-        url: https://gitlab.gnome.org/GNOME/libhandy.git
-        tag: '1.0.1'
+        tag: '0.15.2'
 
   - name: mail
     buildsystem: meson

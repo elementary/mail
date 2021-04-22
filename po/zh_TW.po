@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 17:43+0000\n"
+"POT-Creation-Date: 2021-03-15 17:39+0000\n"
 "PO-Revision-Date: 2016-10-14 20:06+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/geary/"
@@ -86,13 +86,17 @@ msgstr "標記對話"
 msgid "Move conversations to Trash"
 msgstr "搬移對話"
 
-#: src/MainWindow.vala:282
+#: src/MainWindow.vala:70
+msgid "Mail"
+msgstr "郵件"
+
+#: src/MainWindow.vala:286
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "未選取對話。"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:287
 #, fuzzy
 msgid "Undo"
 msgstr "復原(_U)"
@@ -170,7 +174,7 @@ msgstr "引用文字 (Ctrl+])"
 msgid "Unquote text"
 msgstr "取消文字引用 (Ctrl+[)"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr ""
 
@@ -245,7 +249,7 @@ msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "取消"
@@ -1881,9 +1885,6 @@ msgstr "儲存(_S)"
 
 #~ msgid ", "
 #~ msgstr "、 "
-
-#~ msgid "Mail"
-#~ msgstr "郵件"
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "刪劃線 (Ctrl+%)"

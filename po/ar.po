@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 17:43+0000\n"
-"PO-Revision-Date: 2020-05-16 11:10+0000\n"
-"Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
+"POT-Creation-Date: 2021-03-15 17:39+0000\n"
+"PO-Revision-Date: 2021-03-01 05:16+0000\n"
+"Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/mail/mail/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:58+0000\n"
 
 #: src/HeaderBar.vala:40
@@ -80,7 +80,13 @@ msgstr "تعليم كمحادثة"
 msgid "Move conversations to Trash"
 msgstr "نقل المحادثة الى سلة المهملات"
 
-#: src/MainWindow.vala:282
+#: src/MainWindow.vala:70
+#, fuzzy
+#| msgid "All Mail"
+msgid "Mail"
+msgstr "كل البريد"
+
+#: src/MainWindow.vala:286
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "لا توجد رسائل مختارة"
@@ -90,7 +96,7 @@ msgstr[3] "رسائل محذوفة"
 msgstr[4] "رسالة محذوفة"
 msgstr[5] "رسائل محذوفة"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:287
 msgid "Undo"
 msgstr "تراجع"
 
@@ -160,7 +166,7 @@ msgstr "اقتباس نصي"
 msgid "Unquote text"
 msgstr "الغاء اقتباس النص"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "إدراج رابط"
 
@@ -224,21 +230,19 @@ msgstr "نسخة: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:531
 msgid "Permanently delete this draft?"
-msgstr ""
+msgstr "حذف المسودّة بشكل نهائي؟"
 
 #: src/Composer/ComposerWidget.vala:532
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "إلغاء"
 
 #: src/Composer/ComposerWidget.vala:540
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Delete Draft"
 msgstr "حذف المسودة"
 
@@ -417,9 +421,6 @@ msgstr "حفظ"
 
 #~ msgid "Important"
 #~ msgstr "هام"
-
-#~ msgid "All Mail"
-#~ msgstr "كل البريد"
 
 #~ msgid "Spam"
 #~ msgstr "السبام"
