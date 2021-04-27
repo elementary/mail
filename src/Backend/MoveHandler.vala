@@ -23,15 +23,15 @@ public class Mail.MoveHandler {
         ARCHIVE
     }
 
-    private Camel.Folder previous_folder;
-    private Camel.Folder? archive_folder;
+    private Camel.Folder src_folder;
+    private Camel.Folder? dst_folder;
     private Gee.ArrayList<weak Camel.MessageInfo> moved_messages;
     private bool frozen = false;
     private uint timeout_id = 0;
     private MoveType move_type;
 
     public int delete_threads (Camel.Folder folder, Gee.ArrayList<Camel.FolderThreadNode?> threads) {
-        previous_folder = folder;
+        src_folder = folder;
         move_type = MoveType.TRASH;
 
         moved_messages = new Gee.ArrayList<weak Camel.MessageInfo> ();
@@ -40,7 +40,7 @@ public class Mail.MoveHandler {
             collect_thread_messages (thread);
         }
 
-        folder.freeze ();
+        src_folder.freeze ();
         frozen = true;
 
         timeout_id = Timeout.add_seconds (10, () => {
@@ -57,7 +57,7 @@ public class Mail.MoveHandler {
     }
 
     public async int archive_threads (Camel.Folder folder, Gee.ArrayList<Camel.FolderThreadNode?> threads) {
-        previous_folder = folder;
+        src_folder = folder;
         move_type = MoveType.ARCHIVE;
 
         moved_messages = new Gee.ArrayList<weak Camel.MessageInfo> ();
@@ -69,19 +69,24 @@ public class Mail.MoveHandler {
         var archive_folder_uri = get_archive_folder_uri_from_folder (folder);
         Camel.Store dest_store;
         string dest_folder_name;
-        if (!get_folder_from_uri (archive_folder_uri, out dest_store, out dest_folder_name)) {
+        try {
+            if (!get_folder_from_uri (archive_folder_uri, out dest_store, out dest_folder_name)) {
+                return 0;
+            }
+        } catch (Error e) {
+            warning ("Unable to get archive folder from uri: %s", e.message);
             return 0;
         }
 
-        Camel.Folder? dest_folder = null;
+        dst_folder = null;
         try {
-            dest_folder = yield dest_store.get_folder (dest_folder_name, Camel.StoreGetFolderFlags.NONE, Priority.DEFAULT, null);
+            dst_folder = yield dest_store.get_folder (dest_folder_name, Camel.StoreGetFolderFlags.NONE, Priority.DEFAULT, null);
         } catch (Error e) {
             warning ("Unable to get destination folder for archive: %s", e.message);
             return 0;
         }
 
-        if (dest_folder == null) {
+        if (dst_folder == null) {
             return 0;
         }
 
@@ -90,26 +95,35 @@ public class Mail.MoveHandler {
             uids.add (info.uid);
         }
 
-        archive_folder = dest_folder;
-        archive_folder.freeze ();
-
-        folder.freeze ();
+        dst_folder.freeze ();
+        src_folder.freeze ();
         frozen = true;
 
-        if (yield folder.transfer_messages_to (uids, dest_folder, true, Priority.DEFAULT, null, null)) {
-            timeout_id = Timeout.add_seconds (10, () => {
-                expire_undo ();
-                timeout_id = 0;
-                return Source.REMOVE;
-            });
+        try {
+            if (yield folder.transfer_messages_to (uids, dst_folder, true, Priority.DEFAULT, null, null)) {
+                timeout_id = Timeout.add_seconds (10, () => {
+                    expire_undo ();
+                    timeout_id = 0;
+                    return Source.REMOVE;
+                });
 
-            return moved_messages.size;
+                return moved_messages.size;
+            }
+
+        } catch (Error e) {
+            warning ("Unable to archive messages due to an unexpected error: %s", e.message);
+
+            frozen = false;
+            src_folder.thaw ();
+            dst_folder.thaw ();
         }
-
         return 0;
     }
 
-    private bool get_folder_from_uri (string uri, out Camel.Store store, out string folder_name) throws GLib.Error {
+    private bool get_folder_from_uri (string uri, out Camel.Store? store, out string? folder_name) throws GLib.Error {
+        store = null;
+        folder_name = null;
+
         Camel.URL? url = null;
         url = new Camel.URL (uri);
         if (url == null) {
@@ -181,13 +195,6 @@ public class Mail.MoveHandler {
             foreach (var info in moved_messages) {
                 info.set_flags (Camel.MessageFlags.DELETED, 0);
             }
-        } else if (move_type == MoveType.ARCHIVE) {
-            var uids = new GenericArray<string> ();
-            foreach (var info in moved_messages) {
-                uids.add (info.uid);
-            }
-
-            yield archive_folder.transfer_messages_to (uids, previous_folder, true, Priority.DEFAULT, null, null);
         }
     }
 
@@ -199,10 +206,10 @@ public class Mail.MoveHandler {
 
         if (frozen) {
             frozen = false;
-            previous_folder.thaw ();
+            src_folder.thaw ();
 
-            if (archive_folder != null && archive_folder.is_frozen ()) {
-                archive_folder.thaw ();
+            if (dst_folder != null && dst_folder.is_frozen ()) {
+                dst_folder.thaw ();
             }
         }
     }

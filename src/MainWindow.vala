@@ -280,10 +280,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
     private void on_archive () {
         conversation_list_box.archive_selected_messages.begin ((obj, res) => {
-            var result = conversation_list_box.archive_selected_messages.end (res);
-            if (result > 0) {
-                send_move_toast (ngettext ("Message Archived", "Messages Archived", result));
-            }
+            conversation_list_box.archive_selected_messages.end (res);
         });
     }
 
