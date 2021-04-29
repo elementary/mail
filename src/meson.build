@@ -22,6 +22,7 @@ vala_files = files(
     'FoldersView/AccountSourceItem.vala',
     'FoldersView/FoldersListView.vala',
     'FoldersView/FolderSourceItem.vala',
+    'FoldersView/GroupedFolderSourceItem.vala',
     'MessageList/AttachmentBar.vala',
     'MessageList/AttachmentButton.vala',
     'MessageList/MessageListBox.vala',

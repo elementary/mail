@@ -26,7 +26,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
     private const int MARK_READ_TIMEOUT_SECONDS = 5;
 
-    public Backend.Account current_account { get; private set; }
+    public Backend.Account[] current_accounts { get; private set; }
     public Camel.Folder folder { get; private set; }
 
     private GLib.Cancellable? cancellable = null;
@@ -106,9 +106,9 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         });
     }
 
-    public async void load_folder (Backend.Account account, string next_folder) {
+    public async void load_folder (Backend.Account[] accounts, string next_folder) {
         current_folder = next_folder;
-        current_account = account;
+        current_accounts = accounts;
         if (cancellable != null) {
             cancellable.cancel ();
         }
@@ -123,25 +123,27 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             list_store.items_changed (0, previous_items, 0);
 
             cancellable = new GLib.Cancellable ();
-            try {
-                folder = yield ((Camel.Store) current_account.service).get_folder (current_folder, 0, GLib.Priority.DEFAULT, cancellable);
-                folder.changed.connect ((change_info) => folder_changed (change_info, cancellable));
-                thread = new Camel.FolderThread (folder, get_search_result_uids (), false);
-                unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.tree;
-                while (child != null) {
-                    if (cancellable.is_cancelled ()) {
-                        break;
+            foreach (var current_account in current_accounts) {
+                try {
+                    folder = yield ((Camel.Store) current_account.service).get_folder (current_folder, 0, GLib.Priority.DEFAULT, cancellable);
+                    folder.changed.connect ((change_info) => folder_changed (change_info, cancellable));
+                    thread = new Camel.FolderThread (folder, get_search_result_uids (), false);
+                    unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.tree;
+                    while (child != null) {
+                        if (cancellable.is_cancelled ()) {
+                            break;
+                        }
+
+                        add_conversation_item (child);
+                        child = (Camel.FolderThreadNode?) child.next;
                     }
 
-                    add_conversation_item (child);
-                    child = (Camel.FolderThreadNode?) child.next;
-                }
-
-                yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
-            } catch (Error e) {
-                // We can cancel the operation
-                if (!(e is GLib.IOError.CANCELLED)) {
-                    critical (e.message);
+                    yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
+                } catch (Error e) {
+                    // We can cancel the operation
+                    if (!(e is GLib.IOError.CANCELLED)) {
+                        critical (e.message);
+                    }
                 }
             }
         }
@@ -211,7 +213,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
     public void search (string? query) {
         current_search_query = query;
-        load_folder (current_account, current_folder);
+        load_folder (current_accounts, current_folder);
     }
 
     private void add_conversation_item (Camel.FolderThreadNode child) {
