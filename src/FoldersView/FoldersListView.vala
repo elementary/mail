@@ -48,9 +48,9 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
             }
 
             unowned FolderSourceItem folder_item = (FolderSourceItem) item;
-            folder_selected (folder_item.get_account (), folder_item.full_name);
+            folder_selected (folder_item.account, folder_item.full_name);
 
-            settings.set ("selected-folder", "(ss)", folder_item.get_account ().service.uid, folder_item.full_name);
+            settings.set ("selected-folder", "(ss)", folder_item.account.service.uid, folder_item.full_name);
         });
     }
 
@@ -77,7 +77,7 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
                 unowned FolderSourceItem folder_item = (FolderSourceItem) child;
                 if (folder_item.full_name == selected_folder_name) {
                     source_list.selected = child;
-                    folder_selected (folder_item.get_account (), selected_folder_name);
+                    folder_selected (folder_item.account, selected_folder_name);
                     return true;
                 }
             }
