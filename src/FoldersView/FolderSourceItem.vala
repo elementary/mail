@@ -24,24 +24,13 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
     public signal void refresh ();
 
     public string full_name;
+    public Backend.Account account { get; construct; }
 
     private bool can_modify = true;
 
-    public FolderSourceItem (Camel.FolderInfo folderinfo) {
+    public FolderSourceItem (Backend.Account account, Camel.FolderInfo folderinfo) {
+        Object (account: account);
         update_infos (folderinfo);
-    }
-
-    public Backend.Account? get_account () {
-        var exp_parent = parent;
-        while (exp_parent != null) {
-            if (exp_parent is AccountSourceItem) {
-                return ((AccountSourceItem) exp_parent).account;
-            }
-
-            exp_parent = exp_parent.parent;
-        }
-
-        return null;
     }
 
     public override Gtk.Menu? get_context_menu () {
@@ -61,7 +50,8 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
             badge = "%d".printf (folderinfo.unread);
         }
 
-        switch (folderinfo.flags & Camel.FOLDER_TYPE_MASK) {
+        var full_folder_info_flags = get_full_folder_info_flags (folderinfo);
+        switch (full_folder_info_flags & Camel.FOLDER_TYPE_MASK) {
             case Camel.FolderInfoFlags.TYPE_INBOX:
                 icon = new ThemedIcon ("mail-inbox");
                 can_modify = false;
@@ -97,5 +87,52 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
                 can_modify = true;
                 break;
         }
+    }
+
+    private Camel.FolderInfoFlags get_full_folder_info_flags (Camel.FolderInfo folderinfo) {
+        Camel.FolderInfoFlags full_flags = folderinfo.flags;
+
+        var folder_uri = build_folder_uri (account.service.uid, folderinfo.full_name);
+        var session = Mail.Backend.Session.get_default ();
+        var service_source = session.ref_source (account.service.uid);
+
+        if (service_source != null && service_source.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
+            var mail_account_extension = (E.SourceMailAccount) service_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
+
+            if (mail_account_extension.dup_archive_folder () == folder_uri) {
+                full_flags = full_flags | Camel.FolderInfoFlags.TYPE_ARCHIVE;
+            }
+
+            var identity_uid = mail_account_extension.dup_identity_uid ();
+            var identity_source = session.ref_source (identity_uid);
+
+            if (identity_source != null) {
+                var mail_composition_extension = (E.SourceMailComposition?) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_COMPOSITION);
+                var mail_submission_extension = (E.SourceMailSubmission?) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
+
+                if (mail_composition_extension != null && mail_composition_extension.dup_drafts_folder () == folder_uri) {
+                    full_flags = full_flags | Camel.FolderInfoFlags.TYPE_DRAFTS;
+
+                } else if (mail_submission_extension != null && mail_submission_extension.dup_sent_folder () == folder_uri) {
+                    full_flags = full_flags | Camel.FolderInfoFlags.TYPE_SENT;
+                }
+            }
+        }
+
+        return full_flags;
+    }
+
+    private string build_folder_uri (string service_uid, string folder_name) {
+        var normed_folder_name = folder_name;
+
+        // Skip the leading slash, if present.
+        if (normed_folder_name.has_prefix ("/") ) {
+            normed_folder_name = normed_folder_name.substring (1);
+        }
+
+        var encoded_service_uid = Camel.URL.encode (service_uid, ":;@/");
+        var encoded_normed_folder_name = Camel.URL.encode (normed_folder_name, ":;@?#");
+
+        return "folder://%s/%s".printf (encoded_service_uid, encoded_normed_folder_name);
     }
 }
