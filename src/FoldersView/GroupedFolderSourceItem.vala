@@ -53,7 +53,7 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
                 icon = new ThemedIcon ("mail-archive");
                 break;
             default:
-                name = "%d".printf(folder_type & Camel.FOLDER_TYPE_MASK);
+                name = "%d".printf (folder_type & Camel.FOLDER_TYPE_MASK);
                 icon = new ThemedIcon ("folder");
                 warning ("Unsupported group folder type: %d", folder_type & Camel.FOLDER_TYPE_MASK);
                 break;
