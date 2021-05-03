@@ -29,7 +29,7 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
     }
 
     construct {
-        visible = false;
+        visible = true;
         connect_cancellable = new GLib.Cancellable ();
         accounts = new GLib.SList<Backend.Account> ();
 
@@ -61,9 +61,6 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
 
     private void add_account (Mail.Backend.Account account) {
         accounts.append (account);
-        if (accounts.length () > 1) {
-            visible = true;
-        }
     }
 
     private void removed_account () {
@@ -76,10 +73,6 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
                 accounts.remove (account);
                 i = 0;
             }
-        }
-
-        if (accounts.length () < 2) {
-            visible = false;
         }
     }
 }

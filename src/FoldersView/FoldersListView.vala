@@ -37,8 +37,8 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
         add (source_list);
         var session = Mail.Backend.Session.get_default ();
 
-        var grouped_inbox_item = new Mail.GroupedFolderSourceItem (session);
-        source_list.root.add (grouped_inbox_item);
+        var session_source_item = new Mail.SessionSourceItem (session);
+        source_list.root.add (session_source_item);
 
         session.get_accounts ().foreach ((account) => {
             add_account (account);
