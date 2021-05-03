@@ -30,14 +30,16 @@
         expanded = true;
         collapsible = false;
 
-        add (new GroupedFolderSourceItem (session));
+        add (new GroupedFolderSourceItem (session, Camel.FolderInfoFlags.TYPE_INBOX));
+        add (new GroupedFolderSourceItem (session, Camel.FolderInfoFlags.TYPE_ARCHIVE));
+        add (new GroupedFolderSourceItem (session, Camel.FolderInfoFlags.TYPE_DRAFTS));
+        add (new GroupedFolderSourceItem (session, Camel.FolderInfoFlags.TYPE_SENT));
 
         session.account_added.connect (added_account);
         session.account_removed.connect (removed_account);
     }
 
     private void added_account (Mail.Backend.Account account) {
-        var accounts = session.get_accounts ();
         if (session.get_accounts ().size > 1) {
             visible = true;
         }

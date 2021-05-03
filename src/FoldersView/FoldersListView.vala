@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2021 elementary LLC. (https://elementary.io)
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -21,7 +21,7 @@
  */
 
 public class Mail.FoldersListView : Gtk.ScrolledWindow {
-    public signal void folder_selected (Backend.Account[] accounts, string folder_name);
+    public signal void folders_selected (Backend.Account[] accounts, string?[] folder_names);
 
     private Granite.Widgets.SourceList source_list;
     private static GLib.Settings settings;
@@ -53,15 +53,16 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
 
             if (item is FolderSourceItem) {
                 unowned FolderSourceItem folder_item = (FolderSourceItem) item;
-                folder_selected ({ folder_item.account }, folder_item.full_name);
+                folders_selected ({ folder_item.account }, { folder_item.full_name });
 
                 settings.set ("selected-folder", "(ss)", folder_item.account.service.uid, folder_item.full_name);
 
             } else if (item is GroupedFolderSourceItem) {
                 unowned GroupedFolderSourceItem grouped_folder_item = (GroupedFolderSourceItem) item;
-                folder_selected (grouped_folder_item.get_accounts (), grouped_folder_item.full_name);
+                var folder_full_names = grouped_folder_item.get_folder_full_names ();
 
-                settings.set ("selected-folder", "(ss)", "GROUPED", grouped_folder_item.full_name);
+                folders_selected (grouped_folder_item.get_accounts (), folder_full_names);
+                settings.set ("selected-folder", "(ss)", "GROUPED", folder_full_names[0]);
             }
         });
     }
@@ -89,7 +90,7 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
                 unowned FolderSourceItem folder_item = (FolderSourceItem) child;
                 if (folder_item.full_name == selected_folder_name) {
                     source_list.selected = child;
-                    folder_selected ({ folder_item.account }, selected_folder_name);
+                    folders_selected ({ folder_item.account }, { selected_folder_name });
                     return true;
                 }
             }

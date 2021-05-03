@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2021 elementary LLC. (https://elementary.io)
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -92,7 +92,7 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
     private Camel.FolderInfoFlags get_full_folder_info_flags (Camel.FolderInfo folderinfo) {
         Camel.FolderInfoFlags full_flags = folderinfo.flags;
 
-        var folder_uri = build_folder_uri (account.service.uid, folderinfo.full_name);
+        var folder_uri = Mail.Utils.build_folder_uri (account.service.uid, folderinfo.full_name);
         var session = Mail.Backend.Session.get_default ();
         var service_source = session.ref_source (account.service.uid);
 
@@ -120,19 +120,5 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
         }
 
         return full_flags;
-    }
-
-    private string build_folder_uri (string service_uid, string folder_name) {
-        var normed_folder_name = folder_name;
-
-        // Skip the leading slash, if present.
-        if (normed_folder_name.has_prefix ("/") ) {
-            normed_folder_name = normed_folder_name.substring (1);
-        }
-
-        var encoded_service_uid = Camel.URL.encode (service_uid, ":;@/");
-        var encoded_normed_folder_name = Camel.URL.encode (normed_folder_name, ":;@?#");
-
-        return "folder://%s/%s".printf (encoded_service_uid, encoded_normed_folder_name);
     }
 }

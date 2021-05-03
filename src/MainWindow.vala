@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2021 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -185,8 +185,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         destroy.connect (() => destroy ());
 
-        folders_list_view.folder_selected.connect ((accounts, folder_name) => {
-            conversation_list_box.load_folder.begin (accounts, folder_name);
+        folders_list_view.folders_selected.connect ((accounts, folder_names) => {
+            conversation_list_box.load_folders.begin (accounts, folder_names);
         });
 
         conversation_list_box.conversation_selected.connect ((node) => {

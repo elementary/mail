@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2021 elementary LLC. (https://elementary.io)
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -31,7 +31,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
     private GLib.Cancellable? cancellable = null;
     private Gee.HashMap<string, Camel.FolderThread> threads;
-    private string current_folder;
+    private string?[] current_folders;
     private string? current_search_query = null;
     private Gee.HashMap<string, ConversationItemModel> conversations;
     private ConversationListStore list_store;
@@ -108,8 +108,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         });
     }
 
-    public async void load_folder (Backend.Account[] accounts, string next_folder) {
-        current_folder = next_folder;
+    public async void load_folders (Backend.Account[] accounts, string?[] next_folders) {
+        current_folders = next_folders;
         current_accounts = accounts;
         if (cancellable != null) {
             cancellable.cancel ();
@@ -132,31 +132,36 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                     cancellable = new GLib.Cancellable ();
                     for (var i = 0; i < current_accounts.length; i++) {
                         var current_account = current_accounts[i];
+                        var current_folder = current_folders[i];
 
-                        try {
-                            var folder = yield ((Camel.Store) current_account.service).get_folder (current_folder, 0, GLib.Priority.DEFAULT, cancellable);
-                            folder.changed.connect ((change_info) => folder_changed (change_info, current_account.service.uid, cancellable));
-                            folders[current_account.service.uid] = folder;
+                        if (current_folder != null) {
+                            var service_uid = current_account.service.uid;
 
-                            var thread = new Camel.FolderThread (folder, get_search_result_uids (current_account.service.uid), false);
-                            threads[current_account.service.uid] = thread;
+                            try {
+                                var folder = yield ((Camel.Store) current_account.service).get_folder (current_folder, 0, GLib.Priority.DEFAULT, cancellable);
+                                folder.changed.connect ((change_info) => folder_changed (change_info, service_uid, cancellable));
+                                folders[service_uid] = folder;
 
-                            unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.tree;
-                            while (child != null) {
-                                if (cancellable.is_cancelled ()) {
-                                    break;
+                                var thread = new Camel.FolderThread (folder, get_search_result_uids (service_uid), false);
+                                threads[service_uid] = thread;
+
+                                unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.tree;
+                                while (child != null) {
+                                    if (cancellable.is_cancelled ()) {
+                                        break;
+                                    }
+
+                                    add_conversation_item (child, service_uid);
+                                    child = (Camel.FolderThreadNode?) child.next;
                                 }
 
-                                add_conversation_item (child, current_account.service.uid);
-                                child = (Camel.FolderThreadNode?) child.next;
-                            }
+                                yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
 
-                            yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
-
-                        } catch (Error e) {
-                            // We can cancel the operation
-                            if (!(e is GLib.IOError.CANCELLED)) {
-                                critical (e.message);
+                            } catch (Error e) {
+                                // We can cancel the operation
+                                if (!(e is GLib.IOError.CANCELLED)) {
+                                    critical (e.message);
+                                }
                             }
                         }
                     }
@@ -229,7 +234,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
     public void search (string? query) {
         current_search_query = query;
-        load_folder.begin (current_accounts, current_folder);
+        load_folders.begin (current_accounts, current_folders);
     }
 
     private void add_conversation_item (Camel.FolderThreadNode child, string service_uid) {
