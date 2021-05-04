@@ -554,8 +554,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private async void send_message () {
         if (subject_val.text == "") {
             var no_subject_dialog = new Granite.MessageDialog.with_image_from_icon_name (
-                _("Send Message With an Empty Subject?"),
-                _("This message has an empty subject field. The recipient may not be able to infer the scope or importance of the message."),
+                _("Send without subject?"),
+                _("This message has an empty subject field. The recipient may be unable to infer its scope or importance."),
                 "mail-send",
                 Gtk.ButtonsType.NONE
             );
