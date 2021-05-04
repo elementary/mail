@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-04 20:21+0000\n"
-"PO-Revision-Date: 2021-02-13 12:18+0000\n"
+"PO-Revision-Date: 2021-05-04 21:39+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
 "mail/nb/>\n"
@@ -71,12 +71,11 @@ msgstr "Merk som lest"
 #: src/HeaderBar.vala:125
 #, fuzzy
 msgid "Star"
-msgstr "_Stjerne"
+msgstr "Stjerne"
 
 #: src/HeaderBar.vala:130
-#, fuzzy
 msgid "Unstar"
-msgstr "F_jern stjerne"
+msgstr "Fjern stjerne"
 
 #: src/HeaderBar.vala:142
 #, fuzzy
@@ -84,10 +83,8 @@ msgid "Mark Conversation"
 msgstr "Merk samtale"
 
 #: src/HeaderBar.vala:149
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
-msgstr "Flytt samtaler til papirkurven"
+msgstr "Flytt samtaler til arkiv"
 
 #: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
@@ -98,16 +95,14 @@ msgid "Mail"
 msgstr "E-post"
 
 #: src/MainWindow.vala:290
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Ingen samtaler valgt."
-msgstr[1] "Ingen samtaler valgt."
+msgstr[0] "Melding slettet"
+msgstr[1] "Meldinger slettet"
 
 #: src/MainWindow.vala:302
-#, fuzzy
 msgid "Undo"
-msgstr "_Angre"
+msgstr "Angre"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -239,11 +234,8 @@ msgid "Cc: %s<br/>"
 msgstr "Kopi: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:531
-#, fuzzy
-#| msgid "Do you want to permanently delete this message?"
-#| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
-msgstr "Ønsker du å slette denne meldingen permanent?"
+msgstr "Ønsker du å slette denne kladden?"
 
 #: src/Composer/ComposerWidget.vala:532
 msgid ""
@@ -290,19 +282,16 @@ msgid "New Message"
 msgstr "Ny melding"
 
 #: src/ConversationList/ConversationListItem.vala:102
-#, fuzzy
 msgid "Unread"
-msgstr "%d ulest"
+msgstr "Ulest"
 
 #: src/ConversationList/ConversationListItem.vala:112
-#, fuzzy
 msgid "Replied"
-msgstr "Svar"
+msgstr "Besvart"
 
 #: src/ConversationList/ConversationListItem.vala:116
-#, fuzzy
 msgid "Forwarded"
-msgstr "Fremover"
+msgstr "Videresendt"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -385,16 +374,12 @@ msgstr "Denne meldingen inneholder en eller flere vedlegg"
 
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:351
-#, fuzzy
-#| msgid "New Message"
 msgid "Email Message"
-msgstr "Ny melding"
+msgstr "E-postmelding"
 
 #: src/MessageList/MessageListItem.vala:373
-#, fuzzy
-#| msgid "Unable to validate:\n"
 msgid "Unable to print email"
-msgstr "Kan ikke validere:\n"
+msgstr "Kunne ikke skrive ut e-post"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
