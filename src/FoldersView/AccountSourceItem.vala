@@ -134,7 +134,7 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
     private void show_info (Camel.FolderInfo? _folderinfo, Granite.Widgets.SourceList.ExpandableItem item) {
         var folderinfo = _folderinfo;
         while (folderinfo != null) {
-            var folder_item = new FolderSourceItem (folderinfo);
+            var folder_item = new FolderSourceItem (account, folderinfo);
             saved_state.bind_with_expandable_item (folder_item);
             folder_items[folderinfo.full_name] = folder_item;
             folder_item.refresh.connect (() => {

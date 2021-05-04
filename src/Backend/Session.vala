@@ -359,4 +359,8 @@ public class Mail.Backend.Session : Camel.Session {
 
         remove_service (transport);
     }
+
+    public E.Source? ref_source (string source_uid) {
+        return registry.ref_source (source_uid);
+    }
 }
