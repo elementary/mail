@@ -15,10 +15,10 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-04 20:21+0000\n"
-"PO-Revision-Date: 2021-03-18 00:39+0000\n"
+"PO-Revision-Date: 2021-05-04 21:39+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/"
-">\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/>"
+"\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -80,10 +80,8 @@ msgid "Mark Conversation"
 msgstr "Sinalizar conversação"
 
 #: src/HeaderBar.vala:149
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
-msgstr "Mover conversas para o Lixo"
+msgstr "Mover conversas para o arquivo"
 
 #: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
