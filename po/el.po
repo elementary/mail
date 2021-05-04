@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 17:39+0000\n"
+"POT-Creation-Date: 2021-05-04 20:21+0000\n"
 "PO-Revision-Date: 2017-01-27 17:54+0000\n"
 "Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: www.gnome.gr\n"
@@ -87,21 +87,26 @@ msgstr "Σήμανση συνομιλίας"
 
 #: src/HeaderBar.vala:149
 #, fuzzy
+msgid "Move conversations to archive"
+msgstr "Μετακίνηση συνομιλιών"
+
+#: src/HeaderBar.vala:156
+#, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Μετακίνηση συνομιλιών"
 
-#: src/MainWindow.vala:70
+#: src/MainWindow.vala:72
 msgid "Mail"
 msgstr "Αλληλογραφία"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Δεν επιλέχθηκαν συνομιλίες."
 msgstr[1] "Δεν επιλέχθηκαν συνομιλίες."
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:302
 #, fuzzy
 msgid "Undo"
 msgstr "_Αναίρεση"
@@ -332,7 +337,7 @@ msgstr ""
 msgid "Open Anyway"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr ""
 

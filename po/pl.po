@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 17:39+0000\n"
+"POT-Creation-Date: 2021-05-04 20:21+0000\n"
 "PO-Revision-Date: 2019-11-17 20:25+0000\n"
 "Last-Translator: Danie Wachna <ravqe@outlook.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
@@ -87,21 +87,27 @@ msgid "Mark Conversation"
 msgstr "Oznacz konwersację"
 
 #: src/HeaderBar.vala:149
+#, fuzzy
+#| msgid "Move conversations to Trash"
+msgid "Move conversations to archive"
+msgstr "Przenieś rozmowy do kosza"
+
+#: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
 msgstr "Przenieś rozmowy do kosza"
 
-#: src/MainWindow.vala:70
+#: src/MainWindow.vala:72
 msgid "Mail"
 msgstr "Poczta"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Wiadomość usunięta"
 msgstr[1] "Wiadomości usunięte"
 msgstr[2] "Wiadomości usuniętych"
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:302
 msgid "Undo"
 msgstr "Cofnij"
 
@@ -324,7 +330,7 @@ msgstr ""
 msgid "Open Anyway"
 msgstr "Otwórz mimo to"
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "Odśwież katalog"
 

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 17:39+0000\n"
+"POT-Creation-Date: 2021-05-04 20:21+0000\n"
 "PO-Revision-Date: 2021-03-21 10:03+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/mail/mail/mr/>\n"
@@ -66,20 +66,26 @@ msgid "Mark Conversation"
 msgstr "संभाषण चिन्हांकित करा"
 
 #: src/HeaderBar.vala:149
+#, fuzzy
+#| msgid "Move conversations to Trash"
+msgid "Move conversations to archive"
+msgstr "संभाषणांना कचरापेटीत हलवा"
+
+#: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
 msgstr "संभाषणांना कचरापेटीत हलवा"
 
-#: src/MainWindow.vala:70
+#: src/MainWindow.vala:72
 msgid "Mail"
 msgstr "मेल"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "संदेश हटविला"
 msgstr[1] "संदेश हटवले"
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:302
 msgid "Undo"
 msgstr "पूर्ववत करा"
 
@@ -218,8 +224,8 @@ msgstr "हा मसुदा कायमचा हटवायचा?"
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
-"आपण ही क्रिया पूर्ववत करू शकत नाही किंवा आपला मसुदा हटविला गेल्यानंतर "
-"पुनर्प्राप्त करू शकत नाही."
+"आपण ही क्रिया पूर्ववत करू शकत नाही किंवा आपला मसुदा हटविला गेल्यानंतर पुनर्प्राप्त करू शकत "
+"नाही."
 
 #: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
@@ -299,7 +305,7 @@ msgstr ""
 msgid "Open Anyway"
 msgstr "तरीही उघडा"
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "फोल्डर रीफ्रेश करा"
 

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 17:39+0000\n"
+"POT-Creation-Date: 2021-05-04 20:21+0000\n"
 "PO-Revision-Date: 2021-02-03 02:13+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -81,19 +81,25 @@ msgid "Mark Conversation"
 msgstr "标记会话"
 
 #: src/HeaderBar.vala:149
+#, fuzzy
+#| msgid "Move conversations to Trash"
+msgid "Move conversations to archive"
+msgstr "将会话移至回收站"
+
+#: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
 msgstr "将会话移至回收站"
 
-#: src/MainWindow.vala:70
+#: src/MainWindow.vala:72
 msgid "Mail"
 msgstr "邮件"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "消息已删除"
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:302
 msgid "Undo"
 msgstr "撤消"
 
@@ -307,7 +313,7 @@ msgstr "打开的附件可能会破坏您的系统。请只打开来自可信任
 msgid "Open Anyway"
 msgstr "仍然打开"
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "更新文件夹"
 

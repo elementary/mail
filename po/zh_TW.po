@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 17:39+0000\n"
+"POT-Creation-Date: 2021-05-04 20:21+0000\n"
 "PO-Revision-Date: 2016-10-14 20:06+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/geary/"
@@ -83,20 +83,25 @@ msgstr "標記對話"
 
 #: src/HeaderBar.vala:149
 #, fuzzy
+msgid "Move conversations to archive"
+msgstr "搬移對話"
+
+#: src/HeaderBar.vala:156
+#, fuzzy
 msgid "Move conversations to Trash"
 msgstr "搬移對話"
 
-#: src/MainWindow.vala:70
+#: src/MainWindow.vala:72
 msgid "Mail"
 msgstr "郵件"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "未選取對話。"
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:302
 #, fuzzy
 msgid "Undo"
 msgstr "復原(_U)"
@@ -332,7 +337,7 @@ msgstr "開啟附件可能有機會損害您的系統。請僅只開啟源自受
 msgid "Open Anyway"
 msgstr "無論如何都開啟"
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr ""
 

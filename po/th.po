@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 17:39+0000\n"
+"POT-Creation-Date: 2021-05-04 20:21+0000\n"
 "PO-Revision-Date: 2015-12-25 15:48+0000\n"
 "Last-Translator: Rockworld <sumoisrock@gmail.com>\n"
 "Language-Team: Thai <th@li.org>\n"
@@ -78,21 +78,26 @@ msgstr "ทำเครื่องหมายคู่สนทนา"
 
 #: src/HeaderBar.vala:149
 #, fuzzy
+msgid "Move conversations to archive"
+msgstr "ย้ายคู่สนทนา"
+
+#: src/HeaderBar.vala:156
+#, fuzzy
 msgid "Move conversations to Trash"
 msgstr "ย้ายคู่สนทนา"
 
-#: src/MainWindow.vala:70
+#: src/MainWindow.vala:72
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "จดหมายทั้งหมด"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:302
 msgid "Undo"
 msgstr ""
 
@@ -309,7 +314,7 @@ msgstr ""
 msgid "Open Anyway"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr ""
 

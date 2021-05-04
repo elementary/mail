@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 17:39+0000\n"
+"POT-Creation-Date: 2021-05-04 20:21+0000\n"
 "PO-Revision-Date: 2019-08-27 22:23+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/mail/"
@@ -86,20 +86,26 @@ msgid "Mark Conversation"
 msgstr "Marcar conversa"
 
 #: src/HeaderBar.vala:149
+#, fuzzy
+#| msgid "Move conversations to Trash"
+msgid "Move conversations to archive"
+msgstr "Mover conversas para o Lixo"
+
+#: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
 msgstr "Mover conversas para o Lixo"
 
-#: src/MainWindow.vala:70
+#: src/MainWindow.vala:72
 msgid "Mail"
 msgstr "Correio"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Mensagem eliminada"
 msgstr[1] "Mensagens eliminadas"
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:302
 msgid "Undo"
 msgstr "Desfazer"
 
@@ -322,7 +328,7 @@ msgstr ""
 msgid "Open Anyway"
 msgstr "Abrir de qualquer maneira"
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "Atualizar pasta"
 

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 17:39+0000\n"
+"POT-Creation-Date: 2021-05-04 20:21+0000\n"
 "PO-Revision-Date: 2021-02-13 12:18+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
@@ -84,21 +84,27 @@ msgid "Mark Conversation"
 msgstr "Merk samtale"
 
 #: src/HeaderBar.vala:149
+#, fuzzy
+#| msgid "Move conversations to Trash"
+msgid "Move conversations to archive"
+msgstr "Flytt samtaler til papirkurven"
+
+#: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
 msgstr "Flytt samtaler til papirkurven"
 
-#: src/MainWindow.vala:70
+#: src/MainWindow.vala:72
 msgid "Mail"
 msgstr "E-post"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Ingen samtaler valgt."
 msgstr[1] "Ingen samtaler valgt."
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:302
 #, fuzzy
 msgid "Undo"
 msgstr "_Angre"
@@ -331,7 +337,7 @@ msgstr ""
 msgid "Open Anyway"
 msgstr "Åpne likevel"
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "Gjenoppfrisk mappe"
 

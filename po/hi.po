@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 17:39+0000\n"
+"POT-Creation-Date: 2021-05-04 20:21+0000\n"
 "PO-Revision-Date: 2018-12-19 00:07+0000\n"
 "Last-Translator: Mayank Arya <mmaismma@hotmail.com>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/mail/mail/hi/>\n"
@@ -80,22 +80,28 @@ msgid "Mark Conversation"
 msgstr "अधिक संवाद संकेत"
 
 #: src/HeaderBar.vala:149
+#, fuzzy
+#| msgid "Move conversations to Trash"
+msgid "Move conversations to archive"
+msgstr "संवाद तो ट्रैश में डाले"
+
+#: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
 msgstr "संवाद तो ट्रैश में डाले"
 
-#: src/MainWindow.vala:70
+#: src/MainWindow.vala:72
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "सब पत्र"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:302
 msgid "Undo"
 msgstr ""
 
@@ -314,7 +320,7 @@ msgstr ""
 msgid "Open Anyway"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr ""
 

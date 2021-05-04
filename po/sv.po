@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 17:39+0000\n"
+"POT-Creation-Date: 2021-05-04 20:21+0000\n"
 "PO-Revision-Date: 2017-04-15 20:42+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Swedish <https://l10n.elementary.io/projects/mail/mail/sv/>\n"
@@ -91,23 +91,28 @@ msgstr "Markera konversationer"
 
 #: src/HeaderBar.vala:149
 #, fuzzy
+msgid "Move conversations to archive"
+msgstr "Flytta konversationerna"
+
+#: src/HeaderBar.vala:156
+#, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Flytta konversationerna"
 
-#: src/MainWindow.vala:70
+#: src/MainWindow.vala:72
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Alla brev"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Inga valda konversationer."
 msgstr[1] "Inga valda konversationer."
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:302
 msgid "Undo"
 msgstr ""
 
@@ -333,7 +338,7 @@ msgstr ""
 msgid "Open Anyway"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr ""
 
