@@ -64,6 +64,16 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
                 settings.set ("selected-folder", "(ss)", "GROUPED", grouped_folder_item.full_name);
             }
         });
+
+        string selected_folder_uid, selected_folder_name;
+        settings.get ("selected-folder", "(ss)", out selected_folder_uid, out selected_folder_name);
+
+        if (selected_folder_uid == "GROUPED") {
+            GLib.Idle.add (() => {
+                select_saved_folder (session_source_item, selected_folder_name);
+                return GLib.Source.REMOVE;
+            });
+        }
     }
 
     private void add_account (Mail.Backend.Account account) {
@@ -90,6 +100,13 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
                 if (folder_item.full_name == selected_folder_name) {
                     source_list.selected = child;
                     folder_selected ({ folder_item.account }, selected_folder_name);
+                    return true;
+                }
+
+            } else if (child is GroupedFolderSourceItem) {
+                unowned GroupedFolderSourceItem grouped_folder_item = (GroupedFolderSourceItem) child;
+                if (grouped_folder_item.full_name == selected_folder_name) {
+                    source_list.selected = child;
                     return true;
                 }
             }

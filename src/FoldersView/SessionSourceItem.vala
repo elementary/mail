@@ -37,7 +37,6 @@
     }
 
     private void added_account (Mail.Backend.Account account) {
-        var accounts = session.get_accounts ();
         if (session.get_accounts ().size > 1) {
             visible = true;
         }
