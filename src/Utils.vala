@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2021 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2017 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,19 +60,5 @@ public class Mail.Utils {
 
     public static string escape_html_tags (string input) {
         return input.replace ("<", "&lt;").replace (">", "&gt;");
-    }
-
-    public static string build_folder_uri (string service_uid, string folder_name) {
-        var normed_folder_name = folder_name;
-
-        // Skip the leading slash, if present.
-        if (normed_folder_name.has_prefix ("/") ) {
-            normed_folder_name = normed_folder_name.substring (1);
-        }
-
-        var encoded_service_uid = Camel.URL.encode (service_uid, ":;@/");
-        var encoded_normed_folder_name = Camel.URL.encode (normed_folder_name, ":;@?#");
-
-        return "folder://%s/%s".printf (encoded_service_uid, encoded_normed_folder_name);
     }
 }
