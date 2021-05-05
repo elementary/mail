@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 17:39+0000\n"
+"POT-Creation-Date: 2021-05-04 20:21+0000\n"
 "PO-Revision-Date: 2015-11-23 11:52+0000\n"
 "Last-Translator: Jim Nelson <jim@yorba.org>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/projects/p/geary/"
@@ -80,22 +80,27 @@ msgstr ""
 
 #: src/HeaderBar.vala:149
 #, fuzzy
+msgid "Move conversations to archive"
+msgstr "Nhật trình giám sát cuộc trò chuyện"
+
+#: src/HeaderBar.vala:156
+#, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Nhật trình giám sát cuộc trò chuyện"
 
-#: src/MainWindow.vala:70
+#: src/MainWindow.vala:72
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Tất cả thư"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Chưa chọn cuộc đối thoại nào."
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:302
 msgid "Undo"
 msgstr ""
 
@@ -311,7 +316,7 @@ msgstr ""
 msgid "Open Anyway"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr ""
 

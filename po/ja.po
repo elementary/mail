@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 17:39+0000\n"
-"PO-Revision-Date: 2021-01-05 04:40+0000\n"
+"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"PO-Revision-Date: 2021-05-05 00:41+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:40
@@ -68,19 +68,23 @@ msgid "Mark Conversation"
 msgstr "メッセージにマークをつける"
 
 #: src/HeaderBar.vala:149
+msgid "Move conversations to archive"
+msgstr "メッセージをアーカイブします"
+
+#: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
 msgstr "メッセージをゴミ箱に移動します"
 
-#: src/MainWindow.vala:70
+#: src/MainWindow.vala:72
 msgid "Mail"
 msgstr "メール"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "メッセージを削除しました"
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:302
 msgid "Undo"
 msgstr "元に戻す"
 
@@ -298,7 +302,7 @@ msgstr ""
 msgid "Open Anyway"
 msgstr "了解して開く"
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "フォルダーを更新"
 

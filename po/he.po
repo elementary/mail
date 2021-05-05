@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 17:39+0000\n"
-"PO-Revision-Date: 2021-01-18 23:34+0000\n"
+"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"PO-Revision-Date: 2021-05-04 21:39+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
 "Language: he\n"
@@ -82,20 +82,24 @@ msgid "Mark Conversation"
 msgstr "סימון הדיון"
 
 #: src/HeaderBar.vala:149
+msgid "Move conversations to archive"
+msgstr "העברת דיונים לארכיון"
+
+#: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
 msgstr "העברת דיונים לאשפה"
 
-#: src/MainWindow.vala:70
+#: src/MainWindow.vala:72
 msgid "Mail"
 msgstr "דואר"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "הודעה נמחקה"
 msgstr[1] "הודעות נמחקו"
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:302
 msgid "Undo"
 msgstr "ביטול"
 
@@ -313,7 +317,7 @@ msgstr ""
 msgid "Open Anyway"
 msgstr "לפתוח בכל זאת"
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "רענון התיקייה"
 

@@ -35,7 +35,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     private string? current_search_query = null;
     private Gee.HashMap<string, ConversationItemModel> conversations;
     private ConversationListStore list_store;
-    private TrashHandler trash_handler;
+    private MoveHandler move_handler;
 
     private uint mark_read_timeout_id = 0;
 
@@ -55,7 +55,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         });
 
         model = list_store;
-        trash_handler = new TrashHandler ();
+        move_handler = new MoveHandler ();
 
         factory_func = (item, old_widget) => {
             ConversationListItem? row = null;
@@ -270,6 +270,42 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
     }
 
+    public async int archive_selected_messages () {
+        var archive_threads = new Gee.HashMap<string, Gee.ArrayList<Camel.FolderThreadNode?>> ();
+        var selected_rows = get_selected_rows ();
+        foreach (var selected_row in selected_rows) {
+            var selected_item_model = (ConversationItemModel) selected_row;
+
+            if (archive_threads[selected_item_model.service_uid] == null) {
+                archive_threads[selected_item_model.service_uid] = new Gee.ArrayList<Camel.FolderThreadNode?> ();
+            }
+            archive_threads[selected_item_model.service_uid].add (selected_item_model.node);
+        }
+
+        var archived = 0;
+        foreach (var service_uid in archive_threads.keys) {
+            archived += yield move_handler.archive_threads (folders[service_uid], archive_threads[service_uid]);
+        }
+
+        if (archived > 0) {
+            foreach (var service_uid in archive_threads.keys) {
+                var threads = archive_threads[service_uid];
+
+                foreach (var thread in threads) {
+                    var uid = thread.message.uid;
+                    var item = conversations[uid];
+                    if (item != null) {
+                        conversations.unset (uid);
+                        list_store.remove (item);
+                    }
+                }
+            }
+        }
+
+        list_store.items_changed (0, archived, list_store.get_n_items ());
+        return archived;
+    }
+
     public int trash_selected_messages () {
         var trash_threads = new Gee.HashMap<string, Gee.ArrayList<Camel.FolderThreadNode?>> ();
 
@@ -285,18 +321,20 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
         var deleted = 0;
         foreach (var service_uid in trash_threads.keys) {
-            deleted += trash_handler.delete_threads (folders[service_uid], trash_threads[service_uid]);
+            deleted += move_handler.delete_threads (folders[service_uid], trash_threads[service_uid]);
         }
         list_store.items_changed (0, 0, list_store.get_n_items ());
         return deleted;
     }
 
-    public void undo_trash () {
-        trash_handler.undo_last_delete ();
-        list_store.items_changed (0, 0, list_store.get_n_items ());
+    public void undo_move () {
+        move_handler.undo_last_move.begin ((obj, res) => {
+            move_handler.undo_last_move.end (res);
+            list_store.items_changed (0, 0, list_store.get_n_items ());
+        });
     }
 
     public void undo_expired () {
-        trash_handler.expire_undo ();
+        move_handler.expire_undo ();
     }
 }

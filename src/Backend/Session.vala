@@ -227,6 +227,20 @@ public class Mail.Backend.Session : Camel.Session {
         return registry.ref_source (identity_uid);
     }
 
+    public string? get_archive_folder_uri_for_service (Camel.Service service) {
+        E.Source? source = registry.ref_source (service.get_uid ());
+        if (source == null) {
+            return null;
+        }
+
+        if (source.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
+            var account_extension = (E.SourceMailAccount) source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
+            return account_extension.dup_archive_folder ();
+        }
+
+        return null;
+    }
+
     public override Camel.Service add_service (string uid, string protocol, Camel.ProviderType type) throws GLib.Error {
         var service = base.add_service (uid, protocol, type);
         if (service is Camel.Service) {

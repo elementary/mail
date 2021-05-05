@@ -142,6 +142,13 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
             tooltip_text = _("Mark Conversation")
         };
 
+        var archive_button = new Gtk.Button.from_icon_name ("mail-archive", Gtk.IconSize.LARGE_TOOLBAR);
+        archive_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_ARCHIVE;
+        archive_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (archive_button.action_name),
+            _("Move conversations to archive")
+        );
+
         var trash_button = new Gtk.Button.from_icon_name ("edit-delete", Gtk.IconSize.LARGE_TOOLBAR);
         trash_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH;
         trash_button.tooltip_markup = Granite.markup_accel_tooltip (
@@ -157,6 +164,7 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
         pack_start (forward_button);
         pack_start (new Gtk.Separator (Gtk.Orientation.VERTICAL));
         pack_start (mark_button);
+        pack_start (archive_button);
         pack_start (trash_button);
         pack_end (app_menu);
 

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 17:39+0000\n"
+"POT-Creation-Date: 2021-05-04 20:21+0000\n"
 "PO-Revision-Date: 2020-12-15 16:16+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/mail/mail/id/"
@@ -77,21 +77,27 @@ msgid "Mark Conversation"
 msgstr "Tandai Percakapan"
 
 #: src/HeaderBar.vala:149
+#, fuzzy
+#| msgid "Move conversations to Trash"
+msgid "Move conversations to archive"
+msgstr "Pindahkan percakapan ke Sampah"
+
+#: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
 msgstr "Pindahkan percakapan ke Sampah"
 
-#: src/MainWindow.vala:70
+#: src/MainWindow.vala:72
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Semua Pesan"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Pesan-pesan Dihapus"
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:302
 msgid "Undo"
 msgstr "Batalkan"
 
@@ -315,7 +321,7 @@ msgstr ""
 msgid "Open Anyway"
 msgstr "Buka Saja"
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "Segarkan folder"
 
