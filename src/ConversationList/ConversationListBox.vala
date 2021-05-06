@@ -310,7 +310,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         var trash_threads = new Gee.HashMap<string, Gee.ArrayList<Camel.FolderThreadNode?>> ();
 
         var selected_rows = get_selected_rows ();
-        foreach (var selected_row in selected_rows) {
+        foreach (unowned var selected_row in selected_rows) {
             var selected_item_model = (ConversationItemModel) selected_row;
 
             if (trash_threads[selected_item_model.service_uid] == null) {
