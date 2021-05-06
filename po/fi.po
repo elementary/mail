@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-04 20:21+0000\n"
-"PO-Revision-Date: 2021-02-09 12:40+0000\n"
+"PO-Revision-Date: 2021-05-05 11:34+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/mail/fi/>\n"
 "Language: fi\n"
@@ -76,10 +76,8 @@ msgid "Mark Conversation"
 msgstr "Merkitse keskustelu"
 
 #: src/HeaderBar.vala:149
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
-msgstr "Siirrä keskustelu roskakoriin"
+msgstr "Siirrä keskustelut arkistoon"
 
 #: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"

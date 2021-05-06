@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-04 20:21+0000\n"
-"PO-Revision-Date: 2021-01-18 12:13+0000\n"
+"PO-Revision-Date: 2021-05-05 21:57+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -76,10 +76,8 @@ msgid "Mark Conversation"
 msgstr "Marca la conversa"
 
 #: src/HeaderBar.vala:149
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
-msgstr "Mou les converses a la paperera"
+msgstr "Mou les converses a l'arxiu"
 
 #: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
