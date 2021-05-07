@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2021-01-30 01:07+0000\n"
 "Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/mail/mail/it/>\n"
@@ -327,6 +327,16 @@ msgstr "Apri comunque"
 msgid "Refresh folder"
 msgstr "Ricarica cartella"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "Posta in arrivo"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "Tutta la posta"
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr "Nessuna conversazione selezionata"
@@ -421,9 +431,6 @@ msgstr "Salva"
 #~ msgid "Archive | Archives"
 #~ msgstr "Archivio | Archivi | Archive | Archives"
 
-#~ msgid "Inbox"
-#~ msgstr "Posta in arrivo"
-
 #~ msgid "Drafts"
 #~ msgstr "Bozze"
 
@@ -435,9 +442,6 @@ msgstr "Salva"
 
 #~ msgid "Important"
 #~ msgstr "Importante"
-
-#~ msgid "All Mail"
-#~ msgstr "Tutta la posta"
 
 #~ msgid "Spam"
 #~ msgstr "Indesiderata"

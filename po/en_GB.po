@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2021-02-14 14:47+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -320,6 +320,16 @@ msgstr "Open Anyway"
 msgid "Refresh folder"
 msgstr "Refresh folder"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "Inbox"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "All Mail"
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr "No Message Selected"
@@ -406,9 +416,6 @@ msgstr "Save"
 #~ msgid "Archive | Archives"
 #~ msgstr "Archive | Archives"
 
-#~ msgid "Inbox"
-#~ msgstr "Inbox"
-
 #~ msgid "Drafts"
 #~ msgstr "Drafts"
 
@@ -420,9 +427,6 @@ msgstr "Save"
 
 #~ msgid "Important"
 #~ msgstr "Important"
-
-#~ msgid "All Mail"
-#~ msgstr "All Mail"
 
 #~ msgid "Spam"
 #~ msgstr "Spam"

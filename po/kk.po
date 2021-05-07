@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2015-11-24 15:45+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
@@ -333,6 +333,14 @@ msgstr ""
 msgid "Refresh folder"
 msgstr ""
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "Кіріс"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
+msgstr ""
+
 #: src/MessageList/MessageListBox.vala:32
 #, fuzzy
 msgid "No Message Selected"
@@ -426,9 +434,6 @@ msgstr "_Сақтау"
 
 #~ msgid "Trash | Rubbish | Rubbish Bin"
 #~ msgstr "Қоқыс | Қоқыс шелегі | Корзина | Trash | Rubbish | Rubbish Bin"
-
-#~ msgid "Inbox"
-#~ msgstr "Кіріс"
 
 #~ msgid "Drafts"
 #~ msgstr "Шимайлар"

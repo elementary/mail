@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2015-12-25 15:48+0000\n"
 "Last-Translator: Rockworld <sumoisrock@gmail.com>\n"
 "Language-Team: Thai <th@li.org>\n"
@@ -318,6 +318,14 @@ msgstr ""
 msgid "Refresh folder"
 msgstr ""
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "กล่องขาเข้า"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
+msgstr ""
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr ""
@@ -401,9 +409,6 @@ msgstr ""
 
 #~ msgid "Archive | Archives"
 #~ msgstr "ที่จัดเก็บถาวร"
-
-#~ msgid "Inbox"
-#~ msgstr "กล่องขาเข้า"
 
 #~ msgid "Drafts"
 #~ msgstr "กล่องจดหมายร่าง"

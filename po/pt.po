@@ -14,11 +14,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2021-05-04 21:39+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/>"
-"\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/"
+">\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -322,6 +322,16 @@ msgstr "Mesmo assim abrir"
 msgid "Refresh folder"
 msgstr "Atualizar pasta"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "Entrada"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "Todo o correio"
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr "Nenhuma mensagem selecionada"
@@ -408,9 +418,6 @@ msgstr "Guardar"
 #~ msgid "Archive | Archives"
 #~ msgstr "Arquivos | Arquivos"
 
-#~ msgid "Inbox"
-#~ msgstr "Entrada"
-
 #~ msgid "Drafts"
 #~ msgstr "Rascunhos"
 
@@ -422,9 +429,6 @@ msgstr "Guardar"
 
 #~ msgid "Important"
 #~ msgstr "Importante"
-
-#~ msgid "All Mail"
-#~ msgstr "Todo o correio"
 
 #~ msgid "Spam"
 #~ msgstr "Não solicitado"

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2021-05-04 21:39+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
@@ -330,6 +330,16 @@ msgstr "Åpne likevel"
 msgid "Refresh folder"
 msgstr "Gjenoppfrisk mappe"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "Innboks"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "All e-post"
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr "Ingen melding valgt"
@@ -416,9 +426,6 @@ msgstr "Lagre"
 #~ msgid "Archive | Archives"
 #~ msgstr "Arkiv | Arkiv"
 
-#~ msgid "Inbox"
-#~ msgstr "Innboks"
-
 #~ msgid "Drafts"
 #~ msgstr "Utkast"
 
@@ -430,9 +437,6 @@ msgstr "Lagre"
 
 #~ msgid "Important"
 #~ msgstr "Viktig"
-
-#~ msgid "All Mail"
-#~ msgstr "All e-post"
 
 #~ msgid "Spam"
 #~ msgstr "Søppelpost"

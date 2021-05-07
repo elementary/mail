@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2017-02-20 08:31+0000\n"
 "Last-Translator: aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <ak@li.org>\n"
@@ -313,6 +313,14 @@ msgstr ""
 msgid "Refresh folder"
 msgstr ""
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "Asɛm a w'asoma ama wo"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
+msgstr ""
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr ""
@@ -382,9 +390,6 @@ msgstr ""
 
 #~ msgid "Sent | Sent Mail | Sent Email | Sent E-Mail"
 #~ msgstr "Soma | Soma Asɛm | Asɛm a W'asoma Dedaw | Asɛm a W'asoma Dedaw"
-
-#~ msgid "Inbox"
-#~ msgstr "Asɛm a w'asoma ama wo"
 
 #~ msgid "Sent Mail"
 #~ msgstr "Asɛm a W'asoma Dedaw"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2016-05-08 15:16+0000\n"
 "Last-Translator: Giovanni Caligaris <giovannicaligaris@gmail.com>\n"
 "Language-Team: English (Canada) (http://www.transifex.com/projects/p/geary/"
@@ -336,6 +336,14 @@ msgstr ""
 msgid "Refresh folder"
 msgstr ""
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "Inbox"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
+msgstr ""
+
 #: src/MessageList/MessageListBox.vala:32
 #, fuzzy
 msgid "No Message Selected"
@@ -431,9 +439,6 @@ msgstr "_Save"
 
 #~ msgid "Archive | Archives"
 #~ msgstr "Archive | Archives"
-
-#~ msgid "Inbox"
-#~ msgstr "Inbox"
 
 #~ msgid "Drafts"
 #~ msgstr "Drafts"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2017-04-15 20:37+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: km (generated) <https://l10n.elementary.io/projects/mail/mail/"
@@ -325,6 +325,14 @@ msgstr ""
 msgid "Refresh folder"
 msgstr ""
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "ប្រអប់​ទទួល"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
+msgstr ""
+
 #: src/MessageList/MessageListBox.vala:32
 #, fuzzy
 msgid "No Message Selected"
@@ -396,9 +404,6 @@ msgstr ""
 #: src/MessageList/AttachmentButton.vala:113
 msgid "Save"
 msgstr ""
-
-#~ msgid "Inbox"
-#~ msgstr "ប្រអប់​ទទួល"
 
 #~ msgid "Drafts"
 #~ msgstr "សេចក្ដី​ព្រាង"

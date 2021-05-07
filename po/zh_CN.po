@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2021-02-03 02:13+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -317,6 +317,16 @@ msgstr "仍然打开"
 msgid "Refresh folder"
 msgstr "更新文件夹"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "收件箱"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "全部邮件"
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr "未选中任何消息"
@@ -401,9 +411,6 @@ msgstr "保存"
 #~ msgid "Archive | Archives"
 #~ msgstr "归档邮件"
 
-#~ msgid "Inbox"
-#~ msgstr "收件箱"
-
 #~ msgid "Drafts"
 #~ msgstr "草稿箱"
 
@@ -415,9 +422,6 @@ msgstr "保存"
 
 #~ msgid "Important"
 #~ msgstr "重要邮件"
-
-#~ msgid "All Mail"
-#~ msgstr "全部邮件"
 
 #~ msgid "Spam"
 #~ msgstr "垃圾邮件"

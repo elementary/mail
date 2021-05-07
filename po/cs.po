@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2020-05-30 13:11+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/mail/cs/>\n"
@@ -324,6 +324,16 @@ msgstr "Přesto otevřít"
 msgid "Refresh folder"
 msgstr "Obnovit složku"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "Doručená pošta"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "Všechny zprávy"
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr "Žádná vybraná zpráva"
@@ -417,9 +427,6 @@ msgstr "Uložit"
 #~ msgid "Archive | Archives"
 #~ msgstr "Archiv | Archív | Archivy | Archívy | Archive | Archives"
 
-#~ msgid "Inbox"
-#~ msgstr "Doručená pošta"
-
 #~ msgid "Drafts"
 #~ msgstr "Koncepty"
 
@@ -431,9 +438,6 @@ msgstr "Uložit"
 
 #~ msgid "Important"
 #~ msgstr "Důležité"
-
-#~ msgid "All Mail"
-#~ msgstr "Všechny zprávy"
 
 #~ msgid "Spam"
 #~ msgstr "Nevyžádaná"

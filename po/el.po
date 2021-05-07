@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2017-01-27 17:54+0000\n"
 "Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: www.gnome.gr\n"
@@ -341,6 +341,16 @@ msgstr ""
 msgid "Refresh folder"
 msgstr ""
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "Εισερχόμενα"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "Όλο το ταχυδρομείο"
+
 #: src/MessageList/MessageListBox.vala:32
 #, fuzzy
 msgid "No Message Selected"
@@ -439,9 +449,6 @@ msgstr "_Αποθήκευση"
 #~ "Απορρίμματα | Κάδος απορριμμάτων | Κάδος Ανακύκλωσης | Trash | Rubbish | "
 #~ "Rubbish Bin"
 
-#~ msgid "Inbox"
-#~ msgstr "Εισερχόμενα"
-
 #~ msgid "Drafts"
 #~ msgstr "Πρόχειρα"
 
@@ -453,9 +460,6 @@ msgstr "_Αποθήκευση"
 
 #~ msgid "Important"
 #~ msgstr "Σημαντικό"
-
-#~ msgid "All Mail"
-#~ msgstr "Όλο το ταχυδρομείο"
 
 #~ msgid "Spam"
 #~ msgstr "Ανεπιθύμητα"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2021-05-05 11:34+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
@@ -325,6 +325,16 @@ msgstr "Yine de Aç"
 msgid "Refresh folder"
 msgstr "Klasörü yenile"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "Gelen Kutusu"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "Tüm Postalar"
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr "Hiçbir İleti Seçilmedi"
@@ -412,9 +422,6 @@ msgstr "Kaydet"
 #~ msgid "Archive | Archives"
 #~ msgstr "Arşiv  | Arşivler"
 
-#~ msgid "Inbox"
-#~ msgstr "Gelen Kutusu"
-
 #~ msgid "Drafts"
 #~ msgstr "Taslaklar"
 
@@ -426,9 +433,6 @@ msgstr "Kaydet"
 
 #~ msgid "Important"
 #~ msgstr "Önemli"
-
-#~ msgid "All Mail"
-#~ msgstr "Tüm Postalar"
 
 #~ msgid "Spam"
 #~ msgstr "Gereksiz"

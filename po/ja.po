@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2021-05-05 00:41+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
@@ -306,6 +306,16 @@ msgstr "了解して開く"
 msgid "Refresh folder"
 msgstr "フォルダーを更新"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "受信トレイ"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "すべてのメール"
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr "メッセージが選択されていません"
@@ -392,9 +402,6 @@ msgstr "保存"
 #~ msgid "Archive | Archives"
 #~ msgstr "アーカイブ | アーカイブ"
 
-#~ msgid "Inbox"
-#~ msgstr "受信トレイ"
-
 #~ msgid "Drafts"
 #~ msgstr "下書き"
 
@@ -406,9 +413,6 @@ msgstr "保存"
 
 #~ msgid "Important"
 #~ msgstr "重要"
-
-#~ msgid "All Mail"
-#~ msgstr "すべてのメール"
 
 #~ msgid "Spam"
 #~ msgstr "迷惑メール"

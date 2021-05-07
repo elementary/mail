@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2020-08-29 21:13+0000\n"
 "Last-Translator: Mejans <farga@mejans.fr>\n"
 "Language-Team: Occitan <https://l10n.elementary.io/projects/mail/mail/oc/>\n"
@@ -299,6 +299,14 @@ msgstr "Dobrir malgrat tot"
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
+msgstr ""
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr ""
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
 msgstr ""
 
 #: src/MessageList/MessageListBox.vala:32

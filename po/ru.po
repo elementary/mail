@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2021-05-06 13:10+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
@@ -326,6 +326,16 @@ msgstr "Всё равно открыть"
 msgid "Refresh folder"
 msgstr "Обновить папку"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "Входящие"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "Вся почта"
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr "Сообщение не выбрано"
@@ -412,9 +422,6 @@ msgstr "Сохранить"
 #~ msgid "Archive | Archives"
 #~ msgstr "Архив | Архивы | Archive | Archives"
 
-#~ msgid "Inbox"
-#~ msgstr "Входящие"
-
 #~ msgid "Drafts"
 #~ msgstr "Черновики"
 
@@ -426,9 +433,6 @@ msgstr "Сохранить"
 
 #~ msgid "Important"
 #~ msgstr "Важное"
-
-#~ msgid "All Mail"
-#~ msgstr "Вся почта"
 
 #~ msgid "Spam"
 #~ msgstr "Спам"

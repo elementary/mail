@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2016-03-01 18:37+0000\n"
 "Last-Translator: Ľubomír Hlavko <5lubo555@azet.sk>\n"
 "Language-Team: Slovak (http://www.transifex.com/projects/p/geary/language/"
@@ -346,6 +346,14 @@ msgstr ""
 msgid "Refresh folder"
 msgstr ""
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "Doručená pošta"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
+msgstr ""
+
 #: src/MessageList/MessageListBox.vala:32
 #, fuzzy
 msgid "No Message Selected"
@@ -440,9 +448,6 @@ msgstr "_Uložiť"
 
 #~ msgid "Archive | Archives"
 #~ msgstr "Archív | Archívy | Archivované"
-
-#~ msgid "Inbox"
-#~ msgstr "Doručená pošta"
 
 #~ msgid "Drafts"
 #~ msgstr "Koncepty"

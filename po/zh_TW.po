@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2016-10-14 20:06+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/geary/"
@@ -341,6 +341,16 @@ msgstr "無論如何都開啟"
 msgid "Refresh folder"
 msgstr ""
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "收信匣"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "所有郵件"
+
 #: src/MessageList/MessageListBox.vala:32
 #, fuzzy
 msgid "No Message Selected"
@@ -435,9 +445,6 @@ msgstr "儲存(_S)"
 #~ msgid "Archive | Archives"
 #~ msgstr "封存 | 封存檔 | Archive | Archives"
 
-#~ msgid "Inbox"
-#~ msgstr "收信匣"
-
 #~ msgid "Drafts"
 #~ msgstr "草稿"
 
@@ -449,9 +456,6 @@ msgstr "儲存(_S)"
 
 #~ msgid "Important"
 #~ msgstr "重要"
-
-#~ msgid "All Mail"
-#~ msgstr "所有郵件"
 
 #~ msgid "Spam"
 #~ msgstr "垃圾郵件"

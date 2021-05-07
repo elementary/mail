@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2021-05-05 11:34+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/mail/fi/>\n"
@@ -319,6 +319,16 @@ msgstr "Avaa silti"
 msgid "Refresh folder"
 msgstr "Päivitä kansio"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "Saapuneet"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "Kaikki"
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr "Viestiä ei ole valittu"
@@ -405,9 +415,6 @@ msgstr "Tallenna"
 #~ msgid "Archive | Archives"
 #~ msgstr "Arkisto | Arkistot | Archive | Archives"
 
-#~ msgid "Inbox"
-#~ msgstr "Saapuneet"
-
 #~ msgid "Drafts"
 #~ msgstr "Luonnokset"
 
@@ -419,9 +426,6 @@ msgstr "Tallenna"
 
 #~ msgid "Important"
 #~ msgstr "Tärkeä"
-
-#~ msgid "All Mail"
-#~ msgstr "Kaikki"
 
 #~ msgid "Spam"
 #~ msgstr "Roskaposti"

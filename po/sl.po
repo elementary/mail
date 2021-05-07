@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2020-01-06 00:07+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/mail/mail/sl/"
@@ -326,6 +326,16 @@ msgstr "Vseeno odpri"
 msgid "Refresh folder"
 msgstr "Osveži mapo"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "Prejeto"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "Vsa pošta"
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr "Nobeno sporočilo ni izbrano"
@@ -416,9 +426,6 @@ msgstr "Shrani"
 #~ msgid "Archive | Archives"
 #~ msgstr "Archive | Archives | Arhiv"
 
-#~ msgid "Inbox"
-#~ msgstr "Prejeto"
-
 #~ msgid "Drafts"
 #~ msgstr "Osnutki"
 
@@ -430,9 +437,6 @@ msgstr "Shrani"
 
 #~ msgid "Important"
 #~ msgstr "Pomembno"
-
-#~ msgid "All Mail"
-#~ msgstr "Vsa pošta"
 
 #~ msgid "Spam"
 #~ msgstr "Neželena pošta"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2016-12-10 14:51+0000\n"
 "Last-Translator: Waqar Ahmed <waqar.17a@gmail.com>\n"
 "Language-Team: Urdu <ur@li.org>\n"
@@ -313,6 +313,14 @@ msgstr ""
 msgid "Refresh folder"
 msgstr ""
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "اِن باکس"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
+msgstr ""
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr ""
@@ -394,9 +402,6 @@ msgstr ""
 
 #~ msgid "Archive | Archives"
 #~ msgstr "آرکائیو | آرکائیوز"
-
-#~ msgid "Inbox"
-#~ msgstr "اِن باکس"
 
 #~ msgid "Drafts"
 #~ msgstr "ڈرافٹس"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2021-03-01 05:16+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/mail/mail/ar/>\n"
@@ -325,6 +325,14 @@ msgstr "افتح على أي حال"
 msgid "Refresh folder"
 msgstr "حدث المجلد"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "صندوق الوارد"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
+msgstr ""
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr "لا توجد رسائل مختارة"
@@ -412,9 +420,6 @@ msgstr "حفظ"
 
 #~ msgid "Archive | Archives"
 #~ msgstr "أرشفة | الأرشيف"
-
-#~ msgid "Inbox"
-#~ msgstr "صندوق الوارد"
 
 #~ msgid "Drafts"
 #~ msgstr "المسودات"

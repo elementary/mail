@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/mail/mail/ko/>\n"
@@ -318,6 +318,16 @@ msgstr "그래도 열기"
 msgid "Refresh folder"
 msgstr "폴더 새로 고침"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "받은 편지함"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "모든 편지함"
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr "선택한 메시지 없음"
@@ -408,9 +418,6 @@ msgstr "저장"
 #~ msgid "Archive | Archives"
 #~ msgstr "편지 보관함 | 편지 보관함"
 
-#~ msgid "Inbox"
-#~ msgstr "받은 편지함"
-
 #~ msgid "Drafts"
 #~ msgstr "임시 보관함"
 
@@ -422,9 +429,6 @@ msgstr "저장"
 
 #~ msgid "Important"
 #~ msgstr "중요 편지함"
-
-#~ msgid "All Mail"
-#~ msgstr "모든 편지함"
 
 #~ msgid "Spam"
 #~ msgstr "스팸 메일함"

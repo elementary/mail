@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2020-04-10 14:01+0000\n"
 "Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <https://l10n.elementary.io/projects/mail/mail/hr/>\n"
@@ -325,6 +325,16 @@ msgstr "Svejedno otvori"
 msgid "Refresh folder"
 msgstr "Osvježi mapu"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "Pristigla pošta"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "Sva pošta"
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr "Nema odabrane poruke"
@@ -415,9 +425,6 @@ msgstr "Spremi"
 #~ msgid "Archive | Archives"
 #~ msgstr "Arhiva | Arhive"
 
-#~ msgid "Inbox"
-#~ msgstr "Pristigla pošta"
-
 #~ msgid "Drafts"
 #~ msgstr "Skice"
 
@@ -429,9 +436,6 @@ msgstr "Spremi"
 
 #~ msgid "Important"
 #~ msgstr "Važno"
-
-#~ msgid "All Mail"
-#~ msgstr "Sva pošta"
 
 #~ msgid "Spam"
 #~ msgstr "Neželjena pošta"

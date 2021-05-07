@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2019-11-17 20:25+0000\n"
 "Last-Translator: Danie Wachna <ravqe@outlook.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
@@ -334,6 +334,16 @@ msgstr "Otwórz mimo to"
 msgid "Refresh folder"
 msgstr "Odśwież katalog"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "Odebrane"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "Wszystkie"
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr "Brak zaznaczonych wiadomości"
@@ -429,9 +439,6 @@ msgstr "Zapisz"
 #~ msgid "Archive | Archives"
 #~ msgstr "Archiwum | Archiwa | Archive | Archives"
 
-#~ msgid "Inbox"
-#~ msgstr "Odebrane"
-
 #~ msgid "Drafts"
 #~ msgstr "Szkice"
 
@@ -443,9 +450,6 @@ msgstr "Zapisz"
 
 #~ msgid "Important"
 #~ msgstr "Ważne"
-
-#~ msgid "All Mail"
-#~ msgstr "Wszystkie"
 
 #~ msgid "Spam"
 #~ msgstr "Niechciane"

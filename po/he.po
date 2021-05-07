@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-05-07 18:46+0000\n"
 "PO-Revision-Date: 2021-05-04 21:39+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
@@ -321,6 +321,16 @@ msgstr "לפתוח בכל זאת"
 msgid "Refresh folder"
 msgstr "רענון התיקייה"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:36
+msgid "Inbox"
+msgstr "דואר נכנס"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "כל ההודעות"
+
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr "לא נבחרה הודעה"
@@ -407,9 +417,6 @@ msgstr "שמירה"
 #~ msgid "Archive | Archives"
 #~ msgstr "ארכיון | ארכיב | ארכיונים | ארכיבים | Archive | Archives"
 
-#~ msgid "Inbox"
-#~ msgstr "דואר נכנס"
-
 #~ msgid "Drafts"
 #~ msgstr "טיוטות"
 
@@ -421,9 +428,6 @@ msgstr "שמירה"
 
 #~ msgid "Important"
 #~ msgstr "חשוב"
-
-#~ msgid "All Mail"
-#~ msgstr "כל ההודעות"
 
 #~ msgid "Spam"
 #~ msgstr "דואר זבל"
