@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-07 18:46+0000\n"
-"PO-Revision-Date: 2021-02-24 19:56+0000\n"
+"PO-Revision-Date: 2021-05-09 00:06+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
 "Language: de\n"
@@ -83,10 +83,8 @@ msgid "Mark Conversation"
 msgstr "Unterhaltung markieren"
 
 #: src/HeaderBar.vala:149
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
-msgstr "Unterhaltung in den Papierkorb verschieben"
+msgstr "Unterhaltungen ins Archiv verschieben"
 
 #: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
@@ -334,10 +332,8 @@ msgid "Inbox"
 msgstr "Posteingang"
 
 #: src/FoldersView/SessionSourceItem.vala:28
-#, fuzzy
-#| msgid "All Mail"
 msgid "All Mailboxes"
-msgstr "Alle E-Mails"
+msgstr "Alle Postfächer"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
