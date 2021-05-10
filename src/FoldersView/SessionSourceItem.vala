@@ -30,7 +30,7 @@
         expanded = true;
         collapsible = false;
 
-        add (new GroupedFolderSourceItem (session));
+        add (new GroupedFolderSourceItem (session, Camel.FolderInfoFlags.TYPE_INBOX));
 
         session.account_added.connect (added_account);
         session.account_removed.connect (removed_account);

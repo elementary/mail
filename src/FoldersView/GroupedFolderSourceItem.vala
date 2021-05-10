@@ -19,13 +19,13 @@
 
 public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
     public Mail.Backend.Session session { get; construct; }
-    public string full_name;
+    public Camel.FolderInfoFlags folder_type { get; construct; }
 
     private GLib.Cancellable connect_cancellable;
     private Gee.HashMap<Backend.Account, Camel.FolderInfo?> account_folderinfo;
 
-    public GroupedFolderSourceItem (Mail.Backend.Session session) {
-        Object (session: session);
+    public GroupedFolderSourceItem (Mail.Backend.Session session, Camel.FolderInfoFlags folder_type) {
+        Object (session: session, folder_type: folder_type);
     }
 
     construct {
@@ -33,9 +33,17 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
         connect_cancellable = new GLib.Cancellable ();
         account_folderinfo = new Gee.HashMap<Backend.Account, Camel.FolderInfo?> ();
 
-        name = _("Inbox");
-        full_name = "INBOX";
-        icon = new ThemedIcon ("mail-inbox");
+        switch (folder_type & Camel.FOLDER_TYPE_MASK) {
+            case Camel.FolderInfoFlags.TYPE_INBOX:
+                name = _("Inbox");
+                icon = new ThemedIcon ("mail-inbox");
+                break;
+            default:
+                name = "%i".printf (folder_type & Camel.FOLDER_TYPE_MASK);
+                icon = new ThemedIcon ("folder");
+                warning ("Unknown grouped folder type: %s", name);
+                break;
+        }
 
         session.get_accounts ().foreach ((account) => {
             add_account (account);
@@ -50,8 +58,18 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
         connect_cancellable.cancel ();
     }
 
-    public Backend.Account[] get_accounts () {
-        return account_folderinfo.keys.read_only_view.to_array ();
+    public Gee.Map<Mail.Backend.Account, string?> get_folder_full_name_per_account () {
+        var folder_full_name_per_account = new Gee.HashMap<Mail.Backend.Account, string?> ();
+        lock (account_folderinfo) {
+            foreach (var entry in account_folderinfo) {
+                if (entry.value != null) {
+                    folder_full_name_per_account.set (entry.key, entry.value.full_name);
+                } else {
+                    folder_full_name_per_account.set (entry.key, null);
+                }
+            }
+        }
+        return folder_full_name_per_account.read_only_view;
     }
 
     private void add_account (Mail.Backend.Account account) {
@@ -63,15 +81,18 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
 
     private async void load_folder_info (Mail.Backend.Account account) {
         var offlinestore = (Camel.OfflineStore) account.service;
+        var full_name = build_folder_full_name (account);
         Camel.FolderInfo? folderinfo = null;
 
-        try {
-            folderinfo = yield offlinestore.get_folder_info (full_name, 0, GLib.Priority.DEFAULT, connect_cancellable);
+        if (full_name != null) {
+            try {
+                folderinfo = yield offlinestore.get_folder_info (full_name, 0, GLib.Priority.DEFAULT, connect_cancellable);
 
-        } catch (Error e) {
-            // We can cancel the operation
-            if (!(e is GLib.IOError.CANCELLED)) {
-                warning ("Unable to fetch %s of account '%s': %s", full_name, account.service.display_name, e.message);
+            } catch (Error e) {
+                // We can cancel the operation
+                if (!(e is GLib.IOError.CANCELLED)) {
+                    warning ("Unable to fetch %s of account '%s': %s", full_name, account.service.display_name, e.message);
+                }
             }
         }
 
@@ -107,5 +128,12 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
         if (total_unread > 0) {
             badge = "%d".printf (total_unread);
         }
+    }
+
+    private string? build_folder_full_name (Backend.Account account) {
+        if (Camel.FolderInfoFlags.TYPE_INBOX == (folder_type & Camel.FOLDER_TYPE_MASK)) {
+            return "INBOX";
+        }
+        return null;
     }
 }
