@@ -3,6 +3,7 @@ runtime: io.elementary.Platform
 runtime-version: '0.1.0'
 sdk: io.elementary.Sdk
 command: io.elementary.mail
+branch: daily
 finish-args:
   - '--filesystem=/tmp/io.elementary.mail:create'
   - '--env=TMPDIR=/tmp/io.elementary.mail'
