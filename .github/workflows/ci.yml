@@ -1,6 +1,11 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
 
 jobs:
 
@@ -23,31 +28,34 @@ jobs:
         ninja -C build install
 
   flatpak:
-
+    name: Flatpak
     runs-on: ubuntu-latest
 
     container:
-      image: docker.io/bilelmoussaoui/flatpak-github-actions
+      image: bilelmoussaoui/flatpak-github-actions:elementary-juno
       options: --privileged
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: bilelmoussaoui/flatpak-github-actions@master
-      with:
-        bundle: "io.elementary.mail.flatpak"
-        manifest-path: "io.elementary.mail.yml"
-        repository-name: "elementary"
-        repository-url: "https://flatpak.elementary.io/elementary.flatpakrepo"
-        cache-key: "flatpak-builder-${{ github.sha }}"
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build
+        uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v3
+        with:
+          bundle: mail.flatpak
+          manifest-path: io.elementary.mail.yml
+          run-tests: true
+          repository-name: appcenter
+          repository-url: https://flatpak.elementary.io/repo.flatpakrepo
+          cache-key: "flatpak-builder-${{ github.sha }}"
 
   lint:
-
     runs-on: ubuntu-latest
 
     container:
       image: valalang/lint
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Lint
       run: io.elementary.vala-lint -d .
