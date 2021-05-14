@@ -22,7 +22,7 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
     public string full_name;
 
     private GLib.Cancellable connect_cancellable;
-    private GLib.SList<Backend.Account> accounts;
+    private Gee.HashMap<Backend.Account, Camel.FolderInfo?> account_folderinfo;
 
     public GroupedFolderSourceItem (Mail.Backend.Session session) {
         Object (session: session);
@@ -31,7 +31,7 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
     construct {
         visible = true;
         connect_cancellable = new GLib.Cancellable ();
-        accounts = new GLib.SList<Backend.Account> ();
+        account_folderinfo = new Gee.HashMap<Backend.Account, Camel.FolderInfo?> ();
 
         name = _("Inbox");
         full_name = "INBOX";
@@ -51,28 +51,61 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
     }
 
     public Backend.Account[] get_accounts () {
-        var accounts = new Backend.Account[this.accounts.length ()];
-
-        for (var i = 0; i < this.accounts.length (); i++) {
-            accounts[i] = this.accounts.nth_data (i);
-        }
-        return accounts;
+        return account_folderinfo.keys.read_only_view.to_array ();
     }
 
     private void add_account (Mail.Backend.Account account) {
-        accounts.append (account);
+        lock (account_folderinfo) {
+            account_folderinfo.set (account, null);
+        }
+        load_folder_info.begin (account);
+    }
+
+    private async void load_folder_info (Mail.Backend.Account account) {
+        var offlinestore = (Camel.OfflineStore) account.service;
+        Camel.FolderInfo? folderinfo = null;
+
+        try {
+            folderinfo = yield offlinestore.get_folder_info (full_name, 0, GLib.Priority.DEFAULT, connect_cancellable);
+
+        } catch (Error e) {
+            // We can cancel the operation
+            if (!(e is GLib.IOError.CANCELLED)) {
+                warning ("Unable to fetch %s of account '%s': %s", full_name, account.service.display_name, e.message);
+            }
+        }
+
+        lock (account_folderinfo) {
+            account_folderinfo.set (account, folderinfo);
+        }
+        update_infos ();
     }
 
     private void removed_account () {
         var accounts_left = session.get_accounts ();
 
-        for (var i = 0; i < accounts.length (); i++) {
-            var account = accounts.nth_data (i);
-
-            if (accounts_left.index_of (account) == -1) {
-                accounts.remove (account);
-                i = 0;
+        foreach (var account in account_folderinfo.keys) {
+            if (!accounts_left.contains (account)) {
+                lock (account_folderinfo) {
+                    account_folderinfo.unset (account);
+                }
             }
+        }
+    }
+
+    private void update_infos () {
+        badge = null;
+        var total_unread = 0;
+        lock (account_folderinfo) {
+            foreach (var entry in account_folderinfo) {
+                if (entry.value == null) {
+                    continue;
+                }
+                total_unread += entry.value.unread;
+            }
+        }
+        if (total_unread > 0) {
+            badge = "%d".printf (total_unread);
         }
     }
 }
