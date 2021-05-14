@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: bilelmoussaoui/flatpak-github-actions:elementary-juno
+      image: ghcr.io/elementary/flatpak-platform/runtime:daily
       options: --privileged
 
     steps:
