@@ -94,7 +94,6 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
     private async void load_folder_info (Mail.Backend.Account account) {
         var offlinestore = (Camel.OfflineStore) account.service;
         var full_name = build_folder_full_name (account);
-        debug (">>>>>>>>>>>>> load_folder_info: full_name: %s", full_name);
         Camel.FolderInfo? folderinfo = null;
 
         if (full_name != null) {
