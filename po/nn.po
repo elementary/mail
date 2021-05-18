@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-07 18:46+0000\n"
+"POT-Creation-Date: 2021-05-18 19:29+0000\n"
 "PO-Revision-Date: 2020-07-17 07:12+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/mail/"
@@ -310,8 +310,12 @@ msgstr "Opna likevel"
 msgid "Refresh folder"
 msgstr "Last inn mappa på nytt"
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:36
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
+msgstr ""
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
 msgstr ""
 
 #: src/FoldersView/SessionSourceItem.vala:28

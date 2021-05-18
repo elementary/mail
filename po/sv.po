@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-07 18:46+0000\n"
+"POT-Creation-Date: 2021-05-18 19:29+0000\n"
 "PO-Revision-Date: 2017-04-15 20:42+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Swedish <https://l10n.elementary.io/projects/mail/mail/sv/>\n"
@@ -342,9 +342,13 @@ msgstr ""
 msgid "Refresh folder"
 msgstr ""
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:36
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "Inkorg"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Arkiv"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
@@ -470,9 +474,6 @@ msgstr "_Spara"
 
 #~ msgid "Search"
 #~ msgstr "Sök"
-
-#~ msgid "Archive"
-#~ msgstr "Arkiv"
 
 #~ msgid "None"
 #~ msgstr "Ingen"

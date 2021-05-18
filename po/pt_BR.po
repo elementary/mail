@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-07 18:46+0000\n"
+"POT-Creation-Date: 2021-05-18 19:29+0000\n"
 "PO-Revision-Date: 2019-08-27 22:23+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/mail/"
@@ -332,9 +332,13 @@ msgstr "Abrir de qualquer maneira"
 msgid "Refresh folder"
 msgstr "Atualizar pasta"
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:36
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "Caixa de entrada"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Arquivar"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 #, fuzzy
@@ -453,9 +457,6 @@ msgstr "Salvar"
 
 #~ msgid "Search"
 #~ msgstr "Pesquisar"
-
-#~ msgid "Archive"
-#~ msgstr "Arquivar"
 
 #~ msgid "None"
 #~ msgstr "Nenhum"

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-07 18:46+0000\n"
+"POT-Creation-Date: 2021-05-18 19:29+0000\n"
 "PO-Revision-Date: 2021-05-09 00:06+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
@@ -327,9 +327,13 @@ msgstr "Trotzdem öffnen"
 msgid "Refresh folder"
 msgstr "Ordner aktualisieren"
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:36
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "Posteingang"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Archivieren"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
@@ -446,9 +450,6 @@ msgstr "Speichern"
 
 #~ msgid "Search"
 #~ msgstr "Suchen"
-
-#~ msgid "Archive"
-#~ msgstr "Archivieren"
 
 #~ msgid "None"
 #~ msgstr "Nichts"

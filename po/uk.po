@@ -12,11 +12,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-07 18:46+0000\n"
+"POT-Creation-Date: 2021-05-18 19:29+0000\n"
 "PO-Revision-Date: 2021-05-08 00:38+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/>"
-"\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/"
+">\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -323,9 +323,13 @@ msgstr "Все одно відкрити"
 msgid "Refresh folder"
 msgstr "Оновити теку"
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:36
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "Вхідні"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Архів"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
@@ -442,9 +446,6 @@ msgstr "Зберегти"
 
 #~ msgid "Search"
 #~ msgstr "Пошук"
-
-#~ msgid "Archive"
-#~ msgstr "Архів"
 
 #~ msgid "None"
 #~ msgstr "Немає"

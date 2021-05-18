@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-07 18:46+0000\n"
+"POT-Creation-Date: 2021-05-18 19:29+0000\n"
 "PO-Revision-Date: 2021-05-09 16:59+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
@@ -325,9 +325,13 @@ msgstr "Yine de Aç"
 msgid "Refresh folder"
 msgstr "Klasörü yenile"
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:36
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "Gelen Kutusu"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Arşiv"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
@@ -443,9 +447,6 @@ msgstr "Kaydet"
 
 #~ msgid "Search"
 #~ msgstr "Ara"
-
-#~ msgid "Archive"
-#~ msgstr "Arşiv"
 
 #~ msgid "None"
 #~ msgstr "Hiç"

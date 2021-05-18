@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-07 18:46+0000\n"
+"POT-Creation-Date: 2021-05-18 19:29+0000\n"
 "PO-Revision-Date: 2021-02-03 02:13+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -317,9 +317,13 @@ msgstr "仍然打开"
 msgid "Refresh folder"
 msgstr "更新文件夹"
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:36
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "收件箱"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "归档邮件"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 #, fuzzy
@@ -434,9 +438,6 @@ msgstr "保存"
 
 #~ msgid "Search"
 #~ msgstr "搜索"
-
-#~ msgid "Archive"
-#~ msgstr "归档邮件"
 
 #~ msgid "None"
 #~ msgstr "无"

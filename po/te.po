@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-07 18:46+0000\n"
+"POT-Creation-Date: 2021-05-18 19:29+0000\n"
 "PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Jim Nelson <jim@yorba.org>\n"
 "Language-Team: Telugu (http://www.transifex.com/projects/p/geary/language/"
@@ -321,9 +321,15 @@ msgstr ""
 msgid "Refresh folder"
 msgstr ""
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:36
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "వేగుపెట్టె"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+#, fuzzy
+#| msgid "_Archive"
+msgid "Archive"
+msgstr "కవిలె (_A)"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
@@ -424,9 +430,6 @@ msgstr ""
 
 #~ msgid "Visit the Yorba web site"
 #~ msgstr "యోర్బ జాల స్థలిని సందర్శించండి"
-
-#~ msgid "_Archive"
-#~ msgstr "కవిలె (_A)"
 
 #~ msgid "_Preferences"
 #~ msgstr "ప్రాధాన్యతలు (_P)"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-07 18:46+0000\n"
+"POT-Creation-Date: 2021-05-18 19:29+0000\n"
 "PO-Revision-Date: 2016-10-14 20:06+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/geary/"
@@ -341,9 +341,13 @@ msgstr "無論如何都開啟"
 msgid "Refresh folder"
 msgstr ""
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:36
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "收信匣"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "封存"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 #, fuzzy
@@ -468,9 +472,6 @@ msgstr "儲存(_S)"
 
 #~ msgid "Search"
 #~ msgstr "搜尋"
-
-#~ msgid "Archive"
-#~ msgstr "封存"
 
 #~ msgid "None"
 #~ msgstr "無"
