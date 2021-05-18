@@ -182,34 +182,36 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
 
         lock (conversations) {
-            threads[service_uid].apply (get_search_result_uids (service_uid));
-            var removed = 0;
-            change_info.get_removed_uids ().foreach ((uid) => {
-                var item = conversations[uid];
-                if (item != null) {
-                    conversations.unset (uid);
-                    list_store.remove (item);
-                    removed++;
-                }
-            });
+            lock (threads) {
+                threads[service_uid].apply (get_search_result_uids (service_uid));
+                var removed = 0;
+                change_info.get_removed_uids ().foreach ((uid) => {
+                    var item = conversations[uid];
+                    if (item != null) {
+                        conversations.unset (uid);
+                        list_store.remove (item);
+                        removed++;
+                    }
+                });
 
-            unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) threads[service_uid].tree;
-            while (child != null) {
-                if (cancellable.is_cancelled ()) {
-                    return;
+                unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) threads[service_uid].tree;
+                while (child != null) {
+                    if (cancellable.is_cancelled ()) {
+                        return;
+                    }
+
+                    var item = conversations[child.message.uid];
+                    if (item == null) {
+                        add_conversation_item (child, service_uid);
+                    } else {
+                        item.update_node (child);
+                    }
+
+                    child = (Camel.FolderThreadNode?) child.next;
                 }
 
-                var item = conversations[child.message.uid];
-                if (item == null) {
-                    add_conversation_item (child, service_uid);
-                } else {
-                    item.update_node (child);
-                }
-
-                child = (Camel.FolderThreadNode?) child.next;
+                list_store.items_changed (0, removed, list_store.get_n_items ());
             }
-
-            list_store.items_changed (0, removed, list_store.get_n_items ());
         }
     }
 
