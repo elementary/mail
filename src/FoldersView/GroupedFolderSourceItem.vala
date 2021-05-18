@@ -42,14 +42,6 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
                 name = _("Archive");
                 icon = new ThemedIcon ("mail-archive");
                 break;
-            case Camel.FolderInfoFlags.TYPE_DRAFTS:
-                name = _("Drafts");
-                icon = new ThemedIcon ("folder-documents");
-                break;
-            case Camel.FolderInfoFlags.TYPE_SENT:
-                name = _("Sent");
-                icon = new ThemedIcon ("mail-sent");
-                break;
             default:
                 name = "%i".printf (folder_type & Camel.FOLDER_TYPE_MASK);
                 icon = new ThemedIcon ("folder");
@@ -152,27 +144,7 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
             var mail_account_extension = (E.SourceMailAccount) service_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
 
             if (Camel.FolderInfoFlags.TYPE_ARCHIVE == (folder_type & Camel.FOLDER_TYPE_MASK)) {
-
                 return strip_folder_full_name (account.service.uid, mail_account_extension.dup_archive_folder ());
-            }
-
-            var identity_uid = mail_account_extension.dup_identity_uid ();
-            var identity_source = session.ref_source (identity_uid);
-
-            switch (folder_type & Camel.FOLDER_TYPE_MASK) {
-                case Camel.FolderInfoFlags.TYPE_DRAFTS:
-                    if (identity_source.has_extension (E.SOURCE_EXTENSION_MAIL_COMPOSITION)) {
-                        var mail_composition_extension = (E.SourceMailComposition) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_COMPOSITION);
-                        return strip_folder_full_name (account.service.uid, mail_composition_extension.dup_drafts_folder ());
-                    }
-                    break;
-
-                case Camel.FolderInfoFlags.TYPE_SENT:
-                    if (identity_source.has_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION)) {
-                        var mail_submission_extension = (E.SourceMailSubmission) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
-                        return strip_folder_full_name (account.service.uid, mail_submission_extension.dup_sent_folder ());
-                    }
-                    break;
             }
         }
         return null;
