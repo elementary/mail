@@ -31,6 +31,7 @@
         collapsible = false;
 
         add (new GroupedFolderSourceItem (session, Camel.FolderInfoFlags.TYPE_INBOX));
+        add (new GroupedFolderSourceItem (session, Camel.FolderInfoFlags.TYPE_ARCHIVE));
 
         session.account_added.connect (added_account);
         session.account_removed.connect (removed_account);

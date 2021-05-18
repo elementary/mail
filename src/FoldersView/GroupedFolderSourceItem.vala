@@ -38,6 +38,10 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
                 name = _("Inbox");
                 icon = new ThemedIcon ("mail-inbox");
                 break;
+            case Camel.FolderInfoFlags.TYPE_ARCHIVE:
+                name = _("Archive");
+                icon = new ThemedIcon ("mail-archive");
+                break;
             default:
                 name = "%i".printf (folder_type & Camel.FOLDER_TYPE_MASK);
                 icon = new ThemedIcon ("folder");
@@ -134,6 +138,19 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
         if (Camel.FolderInfoFlags.TYPE_INBOX == (folder_type & Camel.FOLDER_TYPE_MASK)) {
             return "INBOX";
         }
+        var service_source = session.ref_source (account.service.uid);
+
+        if (service_source != null && service_source.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
+            var mail_account_extension = (E.SourceMailAccount) service_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
+
+            if (Camel.FolderInfoFlags.TYPE_ARCHIVE == (folder_type & Camel.FOLDER_TYPE_MASK)) {
+                return strip_folder_full_name (account.service.uid, mail_account_extension.dup_archive_folder ());
+            }
+        }
         return null;
+    }
+
+    private string strip_folder_full_name (string service_uid, string folder_uri) {
+        return folder_uri.replace ("folder://%s/".printf (service_uid), "");
     }
 }
