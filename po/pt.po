@@ -15,10 +15,10 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-21 17:05+0000\n"
-"PO-Revision-Date: 2021-05-08 00:38+0000\n"
+"PO-Revision-Date: 2021-05-21 20:49+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/"
-">\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/>"
+"\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -153,19 +153,19 @@ msgstr "Itálico"
 
 #: src/Composer/ComposerWidget.vala:196
 msgid "Underline"
-msgstr "Sublinhar"
+msgstr "Sublinhado"
 
 #: src/Composer/ComposerWidget.vala:202
 msgid "Strikethrough"
-msgstr "Riscar"
+msgstr "Riscado"
 
 #: src/Composer/ComposerWidget.vala:215
 msgid "Quote text"
-msgstr "Citação"
+msgstr "Citar texto"
 
 #: src/Composer/ComposerWidget.vala:218
 msgid "Unquote text"
-msgstr "Remover citação"
+msgstr "Fim de citação"
 
 #: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
@@ -173,7 +173,7 @@ msgstr "Inserir ligação"
 
 #: src/Composer/ComposerWidget.vala:230
 msgid "Insert Image"
-msgstr "Inserir Imagem"
+msgstr "Inserir imagem"
 
 #: src/Composer/ComposerWidget.vala:233
 msgid "Remove formatting"
@@ -236,9 +236,7 @@ msgstr "Eliminar permanentemente este rascunho?"
 #: src/Composer/ComposerWidget.vala:532
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
-msgstr ""
-"Não pode anular esta ação, nem recuperar o seu rascunho uma vez que tenha "
-"sido eliminado."
+msgstr "Não pode anular esta ação, nem recuperar o rascunho uma vez eliminado."
 
 #: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
@@ -324,17 +322,15 @@ msgstr "Atualizar pasta"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
-msgstr "Entrada"
+msgstr "Caixa de entrada"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:42
 msgid "Archive"
 msgstr "Arquivo"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent Mail"
 msgid "Sent"
-msgstr "Enviadas"
+msgstr "Enviado"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
