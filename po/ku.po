@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2017-05-04 20:01+0000\n"
 "Last-Translator: Rokar <rokartv10@gmail.com>\n"
 "Language-Team: ku (generated) <https://l10n.elementary.io/projects/mail/mail/"
@@ -327,6 +327,10 @@ msgstr "Peldanka hatiyan"
 #: src/FoldersView/GroupedFolderSourceItem.vala:42
 msgid "Archive"
 msgstr "Arşîv"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+msgid "Sent"
+msgstr ""
 
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"

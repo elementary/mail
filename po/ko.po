@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/mail/mail/ko/>\n"
@@ -326,6 +326,12 @@ msgstr "받은 편지함"
 msgid "Archive"
 msgstr "편지 보관함"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "보낸 편지함"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 #, fuzzy
 #| msgid "All Mail"
@@ -424,9 +430,6 @@ msgstr "저장"
 
 #~ msgid "Drafts"
 #~ msgstr "임시 보관함"
-
-#~ msgid "Sent Mail"
-#~ msgstr "보낸 편지함"
 
 #~ msgid "Starred"
 #~ msgstr "별표 편지함"

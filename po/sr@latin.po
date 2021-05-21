@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
@@ -364,6 +364,12 @@ msgstr "Sanduče"
 msgid "Archive"
 msgstr "Arhiva"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Poslata pošta"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
 msgstr ""
@@ -464,9 +470,6 @@ msgstr "_Sačuvaj"
 
 #~ msgid "Drafts"
 #~ msgstr "Nacrti"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Poslata pošta"
 
 #~ msgid "Starred"
 #~ msgstr "Omiljena"

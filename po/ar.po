@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2021-03-01 05:16+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/mail/mail/ar/>\n"
@@ -333,6 +333,12 @@ msgstr "صندوق الوارد"
 msgid "Archive"
 msgstr "الأرشيف"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "إرسال بريد"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
 msgstr ""
@@ -427,9 +433,6 @@ msgstr "حفظ"
 
 #~ msgid "Drafts"
 #~ msgstr "المسودات"
-
-#~ msgid "Sent Mail"
-#~ msgstr "إرسال بريد"
 
 #~ msgid "Starred"
 #~ msgstr "مهمة"

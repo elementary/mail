@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2020-08-29 21:13+0000\n"
 "Last-Translator: Mejans <farga@mejans.fr>\n"
 "Language-Team: Occitan <https://l10n.elementary.io/projects/mail/mail/oc/>\n"
@@ -307,6 +307,10 @@ msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:42
 msgid "Archive"
+msgstr ""
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+msgid "Sent"
 msgstr ""
 
 #: src/FoldersView/SessionSourceItem.vala:28

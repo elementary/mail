@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2018-12-19 00:07+0000\n"
 "Last-Translator: Mayank Arya <mmaismma@hotmail.com>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/mail/mail/hi/>\n"
@@ -332,6 +332,12 @@ msgstr "आए पत्र"
 msgid "Archive"
 msgstr "पुरालेख"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "भेजे पत्र"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
 msgstr ""
@@ -430,9 +436,6 @@ msgstr ""
 
 #~ msgid "Drafts"
 #~ msgstr "प्रारूप"
-
-#~ msgid "Sent Mail"
-#~ msgstr "भेजे पत्र"
 
 #~ msgid "Starred"
 #~ msgstr "अंकित"

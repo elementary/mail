@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2021-05-10 09:48+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
@@ -337,6 +337,12 @@ msgstr "Boîte de réception"
 msgid "Archive"
 msgstr "Archives"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Messages envoyés"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
 msgstr "Toutes les boîtes de réception"
@@ -431,9 +437,6 @@ msgstr "Enregistrer"
 
 #~ msgid "Drafts"
 #~ msgstr "Brouillons"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Messages envoyés"
 
 #~ msgid "Starred"
 #~ msgstr "Sujets favoris"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2017-02-20 08:34+0000\n"
 "Last-Translator: Úr Balázs <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
@@ -344,6 +344,12 @@ msgstr "Beérkezett üzenetek"
 msgid "Archive"
 msgstr "Archívum"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Elküldött levelek"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
 msgstr ""
@@ -444,9 +450,6 @@ msgstr "_Mentés"
 
 #~ msgid "Drafts"
 #~ msgstr "Piszkozatok"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Elküldött levelek"
 
 #~ msgid "Starred"
 #~ msgstr "Csillagozott"

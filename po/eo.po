@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2019-08-27 22:23+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/mail/mail/eo/"
@@ -333,6 +333,12 @@ msgstr "Enirkesto"
 msgid "Archive"
 msgstr "Enarkivigi"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Mesaĝo sendita"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
 msgstr ""
@@ -410,9 +416,6 @@ msgstr "Registri"
 
 #~ msgid "Drafts"
 #~ msgstr "Malnetoj"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Mesaĝo sendita"
 
 #~ msgid "Important"
 #~ msgstr "Grava"

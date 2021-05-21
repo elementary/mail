@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2016-09-29 12:13+0000\n"
 "Last-Translator: Адмирал АнимЕ <Unknown>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
@@ -327,6 +327,12 @@ msgstr "Входяща кутия"
 msgid "Archive"
 msgstr "Архив"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Изпратени"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
 msgstr ""
@@ -402,9 +408,6 @@ msgstr ""
 
 #~ msgid "Drafts"
 #~ msgstr "Чернови"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Изпратени"
 
 #~ msgid "Starred"
 #~ msgstr "Със звезда"

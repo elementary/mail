@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2015-12-25 15:48+0000\n"
 "Last-Translator: Rockworld <sumoisrock@gmail.com>\n"
 "Language-Team: Thai <th@li.org>\n"
@@ -326,6 +326,12 @@ msgstr "กล่องขาเข้า"
 msgid "Archive"
 msgstr "แฟ้มจัดเก็บ"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "ส่งจดหมาย"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
 msgstr ""
@@ -416,9 +422,6 @@ msgstr ""
 
 #~ msgid "Drafts"
 #~ msgstr "กล่องจดหมายร่าง"
-
-#~ msgid "Sent Mail"
-#~ msgstr "ส่งจดหมาย"
 
 #~ msgid "Important"
 #~ msgstr "สำคัญ"

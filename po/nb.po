@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2021-05-08 00:38+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
@@ -336,6 +336,12 @@ msgstr "Innboks"
 msgid "Archive"
 msgstr "Arkiv"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Sendt e-post"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 #, fuzzy
 #| msgid "All Mail"
@@ -430,9 +436,6 @@ msgstr "Lagre"
 
 #~ msgid "Drafts"
 #~ msgstr "Utkast"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Sendt e-post"
 
 #~ msgid "Starred"
 #~ msgstr "Stjernemerket"

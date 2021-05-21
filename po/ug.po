@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2017-04-15 20:40+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Uighur <https://l10n.elementary.io/projects/mail/mail/ug/>\n"
@@ -348,6 +348,12 @@ msgstr "تاپشۇرۇۋىلىنغانلىرى"
 msgid "Archive"
 msgstr "ئارخىپ"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "يوللانغانلىرى"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 #, fuzzy
 #| msgid "All Mail"
@@ -446,9 +452,6 @@ msgstr "ساقلاش"
 
 #~ msgid "Drafts"
 #~ msgstr "ئورىگىناللار"
-
-#~ msgid "Sent Mail"
-#~ msgstr "يوللانغانلىرى"
 
 #~ msgid "Starred"
 #~ msgstr "بەلگە قىلىنغانلىرى"

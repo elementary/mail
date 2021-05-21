@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Jim Nelson <jim@yorba.org>\n"
 "Language-Team: Telugu (http://www.transifex.com/projects/p/geary/language/"
@@ -330,6 +330,10 @@ msgstr "వేగుపెట్టె"
 #| msgid "_Archive"
 msgid "Archive"
 msgstr "కవిలె (_A)"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+msgid "Sent"
+msgstr ""
 
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"

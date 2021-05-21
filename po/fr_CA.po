@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2016-08-25 14:39+0000\n"
 "Last-Translator: Nate <natejms@outlook.com>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
@@ -325,6 +325,12 @@ msgstr "Boîte de réception"
 msgid "Archive"
 msgstr "Archiver"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Courrier Envoyé"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
 msgstr ""
@@ -415,9 +421,6 @@ msgstr ""
 
 #~ msgid "Drafts"
 #~ msgstr "Brouillons"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Courrier Envoyé"
 
 #~ msgid "Important"
 #~ msgstr "Important"

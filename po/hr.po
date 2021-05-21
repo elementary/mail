@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2020-04-10 14:01+0000\n"
 "Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <https://l10n.elementary.io/projects/mail/mail/hr/>\n"
@@ -333,6 +333,12 @@ msgstr "Pristigla pošta"
 msgid "Archive"
 msgstr "Arhiva"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Poslana pošta"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 #, fuzzy
 #| msgid "All Mail"
@@ -431,9 +437,6 @@ msgstr "Spremi"
 
 #~ msgid "Drafts"
 #~ msgstr "Skice"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Poslana pošta"
 
 #~ msgid "Starred"
 #~ msgstr "Sa zvjezdicom"

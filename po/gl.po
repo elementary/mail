@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2019-09-14 09:23+0000\n"
 "Last-Translator: Daniel <riesp@protonmail.com>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/mail/mail/gl/>\n"
@@ -329,6 +329,12 @@ msgstr "Bandexa de entrada"
 msgid "Archive"
 msgstr "Arquivo"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Correo enviado"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
 msgstr ""
@@ -408,9 +414,6 @@ msgstr "Gardar"
 
 #~ msgid "Drafts"
 #~ msgstr "Borradores"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Correo enviado"
 
 #~ msgid "Starred"
 #~ msgstr "Destacados"

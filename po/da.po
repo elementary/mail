@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2020-05-27 12:11+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/mail/mail/da/>\n"
@@ -330,6 +330,12 @@ msgstr "Indbakke"
 msgid "Archive"
 msgstr "Arkiv"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Sendt mail"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 #, fuzzy
 #| msgid "All Mail"
@@ -428,9 +434,6 @@ msgstr "Gem"
 
 #~ msgid "Drafts"
 #~ msgstr "Kladder"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Sendt mail"
 
 #~ msgid "Starred"
 #~ msgstr "Stjernet"

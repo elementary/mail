@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/mail/mail/lt/"
@@ -336,6 +336,12 @@ msgstr "Gautieji"
 msgid "Archive"
 msgstr "Archyvas"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Išsiųstieji"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 #, fuzzy
 #| msgid "All Mail"
@@ -433,9 +439,6 @@ msgstr "Įrašyti"
 
 #~ msgid "Drafts"
 #~ msgstr "Juodraščiai"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Išsiųstieji"
 
 #~ msgid "Starred"
 #~ msgstr "Pažymėti"

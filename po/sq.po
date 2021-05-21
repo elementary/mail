@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2015-11-29 22:37+0000\n"
 "Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -341,6 +341,12 @@ msgstr "Në ardhje"
 msgid "Archive"
 msgstr "Arkivi"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Të dërguar"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
 msgstr ""
@@ -442,9 +448,6 @@ msgstr "_Ruaj"
 
 #~ msgid "Drafts"
 #~ msgstr "Bocat"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Të dërguar"
 
 #~ msgid "Starred"
 #~ msgstr "Të veçantët"

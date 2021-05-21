@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2016-10-14 20:06+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/geary/"
@@ -349,6 +349,12 @@ msgstr "收信匣"
 msgid "Archive"
 msgstr "封存"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "已寄郵件"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 #, fuzzy
 #| msgid "All Mail"
@@ -451,9 +457,6 @@ msgstr "儲存(_S)"
 
 #~ msgid "Drafts"
 #~ msgstr "草稿"
-
-#~ msgid "Sent Mail"
-#~ msgstr "已寄郵件"
 
 #~ msgid "Starred"
 #~ msgstr "已標星"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2021-05-09 16:59+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
@@ -333,6 +333,12 @@ msgstr "Gelen Kutusu"
 msgid "Archive"
 msgstr "Arşiv"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Gönderilmiş Postalar"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
 msgstr "Tüm Posta Kutuları"
@@ -426,9 +432,6 @@ msgstr "Kaydet"
 
 #~ msgid "Drafts"
 #~ msgstr "Taslaklar"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Gönderilmiş Postalar"
 
 #~ msgid "Starred"
 #~ msgstr "Yıldızlı"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2021-05-08 16:20+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/mail/fi/>\n"
@@ -327,6 +327,12 @@ msgstr "Saapuneet"
 msgid "Archive"
 msgstr "Arkisto"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Lähetetyt"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
 msgstr "Kaikki postilaatikot"
@@ -419,9 +425,6 @@ msgstr "Tallenna"
 
 #~ msgid "Drafts"
 #~ msgstr "Luonnokset"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Lähetetyt"
 
 #~ msgid "Starred"
 #~ msgstr "Tähdelliset"

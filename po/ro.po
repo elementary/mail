@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2017-01-21 10:51+0000\n"
 "Last-Translator: Marius Albina <marius.albina@gmail.com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
@@ -356,6 +356,12 @@ msgstr "Mesaje primite"
 msgid "Archive"
 msgstr "Arhivă"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Mesaje trimise"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 #, fuzzy
 #| msgid "All Mail"
@@ -457,9 +463,6 @@ msgstr "_Salvează"
 
 #~ msgid "Drafts"
 #~ msgstr "Ciorne"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Mesaje trimise"
 
 #~ msgid "Starred"
 #~ msgstr "Cu stea"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 19:29+0000\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2015-11-24 15:45+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
@@ -341,6 +341,12 @@ msgstr "Кіріс"
 msgid "Archive"
 msgstr "Архив"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Жіберілген хаттар"
+
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
 msgstr ""
@@ -441,9 +447,6 @@ msgstr "_Сақтау"
 
 #~ msgid "Drafts"
 #~ msgstr "Шимайлар"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Жіберілген хаттар"
 
 #~ msgid "Starred"
 #~ msgstr "Жұлдызшалы"
