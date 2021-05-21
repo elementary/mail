@@ -166,7 +166,10 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
         return null;
     }
 
-    private string strip_folder_full_name (string service_uid, string folder_uri) {
-        return folder_uri.replace ("folder://%s/".printf (service_uid), "");
+    private string? strip_folder_full_name (string service_uid, string? folder_uri) {
+        if (folder_uri != null) {
+            return folder_uri.replace ("folder://%s/".printf (service_uid), "");
+        }
+        return null;
     }
 }
