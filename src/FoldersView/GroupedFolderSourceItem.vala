@@ -42,6 +42,10 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
                 name = _("Archive");
                 icon = new ThemedIcon ("mail-archive");
                 break;
+            case Camel.FolderInfoFlags.TYPE_SENT:
+                name = _("Sent");
+                icon = new ThemedIcon ("mail-sent");
+                break;
             default:
                 name = "%i".printf (folder_type & Camel.FOLDER_TYPE_MASK);
                 icon = new ThemedIcon ("folder");
@@ -146,11 +150,26 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
             if (Camel.FolderInfoFlags.TYPE_ARCHIVE == (folder_type & Camel.FOLDER_TYPE_MASK)) {
                 return strip_folder_full_name (account.service.uid, mail_account_extension.dup_archive_folder ());
             }
+
+            var identity_uid = mail_account_extension.dup_identity_uid ();
+            var identity_source = session.ref_source (identity_uid);
+
+            switch (folder_type & Camel.FOLDER_TYPE_MASK) {
+                case Camel.FolderInfoFlags.TYPE_SENT:
+                    if (identity_source.has_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION)) {
+                        var mail_submission_extension = (E.SourceMailSubmission) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
+                        return strip_folder_full_name (account.service.uid, mail_submission_extension.dup_sent_folder ());
+                    }
+                    break;
+            }
         }
         return null;
     }
 
-    private string strip_folder_full_name (string service_uid, string folder_uri) {
-        return folder_uri.replace ("folder://%s/".printf (service_uid), "");
+    private string? strip_folder_full_name (string service_uid, string? folder_uri) {
+        if (folder_uri != null) {
+            return folder_uri.replace ("folder://%s/".printf (service_uid), "");
+        }
+        return null;
     }
 }
