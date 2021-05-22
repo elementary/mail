@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-21 17:05+0000\n"
-"PO-Revision-Date: 2021-05-09 16:59+0000\n"
+"PO-Revision-Date: 2021-05-22 10:18+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -326,8 +326,6 @@ msgid "Archive"
 msgstr "Arxiu"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent Mail"
 msgid "Sent"
 msgstr "Enviats"
 
