@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-21 17:05+0000\n"
-"PO-Revision-Date: 2021-05-08 13:45+0000\n"
+"PO-Revision-Date: 2021-05-23 06:37+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -315,10 +315,8 @@ msgid "Archive"
 msgstr "アーカイブ"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent Mail"
 msgid "Sent"
-msgstr "送信済みメール"
+msgstr "送信済み"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
