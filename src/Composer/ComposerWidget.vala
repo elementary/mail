@@ -25,6 +25,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private const string ACTION_GROUP_PREFIX = "composer";
     private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
 
+    private const string ACTION_ADD_ATTACHMENT= "add-attachment";
     private const string ACTION_BOLD = "bold";
     private const string ACTION_ITALIC = "italic";
     private const string ACTION_UNDERLINE = "underline";
@@ -45,6 +46,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private Gtk.Entry to_val;
     private Gtk.Entry cc_val;
     private Gtk.Entry bcc_val;
+    private Gtk.FlowBox attachment_box;
     private Gtk.Revealer cc_revealer;
     private Gtk.ToggleButton cc_button;
     private Granite.Widgets.OverlayBar message_url_overlay;
@@ -58,6 +60,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     }
 
     public const ActionEntry[] ACTION_ENTRIES = {
+        {ACTION_ADD_ATTACHMENT, on_add_attachment },
         {ACTION_BOLD, on_edit_action, "s", "''" },
         {ACTION_ITALIC, on_edit_action, "s", "''" },
         {ACTION_UNDERLINE, on_edit_action, "s", "''" },
@@ -254,6 +257,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
         web_view.selection_changed.connect (update_actions);
         web_view.mouse_target_changed.connect (on_mouse_target_changed);
 
+        attachment_box = new Gtk.FlowBox ();
+        attachment_box.homogeneous = true;
+        attachment_box.selection_mode = Gtk.SelectionMode.NONE;
+        attachment_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+
         var action_bar = new Gtk.ActionBar ();
 
         var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
@@ -262,7 +270,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
         discard.action_name = ACTION_PREFIX + ACTION_DISCARD;
 
         var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
-        attach.tooltip_text = _("Attach file");
+        attach.action_name = ACTION_PREFIX + ACTION_ADD_ATTACHMENT;
+        attach.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>t"}, _("Attach file"));
 
         var send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
         send.margin = 6;
@@ -289,6 +298,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         add (button_row);
         add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         add (view_overlay);
+        add (attachment_box);
         add (action_bar);
 
         var contact_manager = ContactManager.get_default ();
@@ -330,7 +340,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         });
 
         from_combo.changed.connect (() => {
-            // from_revealer.reveal_child = 
+            // from_revealer.reveal_child =
         });
 
         to_val.changed.connect (() => {
@@ -403,6 +413,32 @@ public class Mail.ComposerWidget : Gtk.Grid {
         if (entry.text.contains ("\r") ) {
             entry.text = entry.text.replace ("\r", ", ");
         }
+    }
+
+    private void on_add_attachment () {
+        var filechooser = new Gtk.FileChooserNative (
+            _("Choose a file"),
+            (Gtk.Window) get_toplevel (),
+            Gtk.FileChooserAction.OPEN,
+            _("Attach"),
+            _("Cancel")
+        );
+
+        if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
+            filechooser.hide ();
+            foreach (unowned File file in filechooser.get_files ()) {
+                try {
+                    var attachment = new Attachment (file);
+                    attachment.margin = 3;
+
+                    attachment_box.add (attachment);
+                } catch (Error e) {
+                    critical ("Couldn't add attachment: %s", e.message);
+                }
+            }
+            attachment_box.show_all ();
+        }
+        filechooser.destroy ();
     }
 
     private void on_insert_link_clicked () {
@@ -593,13 +629,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
         recipients.cat (bcc_addresses);
 
         var body_html = yield web_view.get_body_html ();
-        var message = new Camel.MimeMessage ();
-        message.set_from (from);
-        message.set_recipients (Camel.RECIPIENT_TYPE_TO, to_addresses);
-        message.set_recipients (Camel.RECIPIENT_TYPE_CC, cc_addresses);
-        message.set_recipients (Camel.RECIPIENT_TYPE_BCC, bcc_addresses);
-        message.set_subject (subject_val.text);
-        message.set_date (Camel.MESSAGE_DATE_CURRENT, 0);
 
         var stream_mem = new Camel.StreamMem.with_buffer (body_html.data);
         var stream_filter = new Camel.StreamFilter (stream_mem);
@@ -608,14 +637,34 @@ public class Mail.ComposerWidget : Gtk.Grid {
         html.construct_from_stream_sync (stream_filter);
         html.set_mime_type ("text/html; charset=utf-8");
 
-        var body = new Camel.Multipart ();
-        body.set_mime_type ("multipart/alternative");
-        body.set_boundary (null);
-
         var part = new Camel.MimePart ();
         part.content = html;
         part.set_encoding (Camel.TransferEncoding.ENCODING_QUOTEDPRINTABLE);
+
+        var body = new Camel.Multipart ();
+        body.set_mime_type ("multipart/alternative");
+        body.set_boundary (null);
         body.add_part (part);
+
+        if (attachment_box.get_children ().length () > 0) {
+            foreach (unowned Gtk.Widget attachment in attachment_box.get_children ()) {
+                if (!(attachment is Attachment)) {
+                    continue;
+                }
+
+                unowned var attachment_obj = (Attachment)attachment;
+
+                body.add_part (attachment_obj.get_mime_part ());
+            }
+        }
+
+        var message = new Camel.MimeMessage ();
+        message.set_from (from);
+        message.set_recipients (Camel.RECIPIENT_TYPE_TO, to_addresses);
+        message.set_recipients (Camel.RECIPIENT_TYPE_CC, cc_addresses);
+        message.set_recipients (Camel.RECIPIENT_TYPE_BCC, bcc_addresses);
+        message.set_subject (subject_val.text);
+        message.set_date (Camel.MESSAGE_DATE_CURRENT, 0);
         message.content = body;
 
         session.send_email.begin (message, from, recipients);
@@ -629,6 +678,111 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
 
         from_combo.active = 0;
+    }
+
+    private class Attachment : Gtk.FlowBoxChild {
+        public GLib.FileInfo? info { private get; construct; }
+        public GLib.File file { get; construct; }
+
+        public Attachment (GLib.File file) {
+            Object (
+                file: file
+            );
+        }
+
+        construct {
+            const string QUERY_STRING =
+                GLib.FileAttribute.STANDARD_CONTENT_TYPE + "," +
+                GLib.FileAttribute.STANDARD_DISPLAY_NAME + "," +
+                GLib.FileAttribute.STANDARD_ICON + "," +
+                GLib.FileAttribute.STANDARD_SIZE;
+
+            try {
+                info = file.query_info (QUERY_STRING, GLib.FileQueryInfoFlags.NONE);
+            } catch (Error e) {
+                warning ("Error querying attachment file attributes: %s", e.message);
+            }
+
+            var image = new Gtk.Image () {
+                gicon = info.get_icon (),
+                pixel_size = 24
+            };
+
+            var name_label = new Gtk.Label (info.get_display_name ()) {
+                hexpand = true,
+                xalign = 0
+            };
+
+            var size_label = new Gtk.Label ("(%s)".printf (GLib.format_size (info.get_size ())));
+            size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+            var remove_button = new Gtk.Button.from_icon_name ("process-stop-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+
+            unowned Gtk.StyleContext remove_button_context = remove_button.get_style_context ();
+            remove_button_context.add_class (Gtk.STYLE_CLASS_FLAT);
+            remove_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+
+            var grid = new Gtk.Grid () {
+                column_spacing = 3,
+                margin = 3
+            };
+            grid.add (image);
+            grid.add (name_label);
+            grid.add (size_label);
+            grid.add (remove_button);
+
+            add (grid);
+
+            remove_button.clicked.connect (() => {
+                destroy ();
+            });
+        }
+
+        public Camel.MimePart? get_mime_part () {
+            if (info == null) {
+                return null;
+            }
+
+            unowned string? content_type = info.get_content_type ();
+            var mime_type = GLib.ContentType.get_mime_type (content_type);
+
+            var wrapper = new Camel.DataWrapper ();
+            try {
+                wrapper.construct_from_input_stream_sync (file.read ());
+            } catch (Error e) {
+                warning ("Error constructing wrapper for attachment: %s", e.message);
+                return null;
+            }
+
+            wrapper.set_mime_type (mime_type);
+
+            var mimepart = new Camel.MimePart ();
+            mimepart.set_disposition ("attachment");
+            mimepart.set_filename (info.get_display_name ());
+            ((Camel.Medium)mimepart).set_content (wrapper);
+
+            if (mimepart.get_content_type ().is ("text", "*")) {
+                // Run text files through a stream filter to get the best transfer encoding
+                var stream = new Camel.StreamNull ();
+                var filtered_stream = new Camel.StreamFilter (stream);
+                var filter = new Camel.MimeFilterBestenc (Camel.BestencRequired.GET_ENCODING);
+                filtered_stream.add (filter);
+
+                try {
+                    wrapper.decode_to_stream_sync (filtered_stream);
+
+                    var encoding = filter.get_best_encoding (Camel.BestencEncoding.@8BIT);
+                    mimepart.set_encoding (encoding);
+                } catch (Error e) {
+                    warning ("Unable to determine best encoding for attachment: %s", e.message);
+                }
+            } else {
+                // Otherwise use Base64
+                mimepart.set_encoding (Camel.TransferEncoding.ENCODING_BASE64);
+            }
+
+            return mimepart;
+        }
     }
 
     private class EntryGrid : Gtk.Grid {
