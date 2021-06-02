@@ -349,39 +349,30 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     }
 
     private async void download_gravatar (string address, int size) {
-        if (avatars[address] != null) {
-            avatar.set_image_load_func ((size) => {
-                return avatars[address];
-            });
+        if (avatars[address] == null) {
+            var md5 = Checksum.compute_for_string (ChecksumType.MD5, address.strip ().down ());
 
-            return;
+            var uri = "https://secure.gravatar.com/avatar/%s?d=404&s=%d".printf (
+                md5,
+                size * get_style_context ().get_scale ()
+            );
+
+            var server_file = File.new_for_uri (uri);
+            var path = Path.build_filename (Environment.get_tmp_dir (), server_file.get_basename ());
+            var local_file = File.new_for_path (path);
+
+            try {
+                yield server_file.copy_async (local_file, FileCopyFlags.OVERWRITE, Priority.DEFAULT, null);
+                avatars[address] = new Gdk.Pixbuf.from_file_at_scale (path, size, size, true);
+            } catch (Error e) {
+                debug ("Unable to fetch gravatar: %s", e.message);
+                return;
+            }
         }
 
-        var md5 = Checksum.compute_for_string (ChecksumType.MD5, address.strip ().down ());
-
-        var uri = "https://secure.gravatar.com/avatar/%s?d=404&s=%d".printf (
-            md5,
-            size * get_style_context ().get_scale ()
-        );
-
-        var server_file = File.new_for_uri (uri);
-        var path = Path.build_filename (Environment.get_tmp_dir (), server_file.get_basename ());
-        var local_file = File.new_for_path (path);
-
-        try {
-            yield server_file.copy_async (local_file, FileCopyFlags.OVERWRITE, Priority.DEFAULT, null);
-
-            avatar.set_image_load_func ((size) => {
-                try {
-                    avatars[address] = new Gdk.Pixbuf.from_file_at_scale (path, size, size, true);
-                    return avatars[address];
-                } catch (Error e) {
-                    return null;
-                }
-            });
-        } catch (Error e) {
-            debug ("Unable to fetch gravatar: %s", e.message);
-        }
+        avatar.set_image_load_func (() => {
+            return avatars[address];
+        });
     }
 
     private void add_inline_composer (ComposerWidget.Type composer_type) {
