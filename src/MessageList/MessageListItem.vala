@@ -357,7 +357,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             return;
         }
 
-        var md5 = Checksum.compute_for_string (ChecksumType.MD5, address.strip().down());
+        var md5 = Checksum.compute_for_string (ChecksumType.MD5, address.strip ().down ());
 
         var uri = "https://secure.gravatar.com/avatar/%s?d=404&s=%d".printf (
             md5,
