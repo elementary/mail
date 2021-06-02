@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-21 17:05+0000\n"
+"POT-Creation-Date: 2021-06-02 19:54+0000\n"
 "PO-Revision-Date: 2021-02-03 02:13+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -115,154 +115,165 @@ msgstr "邮件应用使用系统设置中配置的邮箱账户。"
 msgid "Online Accounts…"
 msgstr "在线账户…"
 
-#: src/Composer/ComposerWidget.vala:92 src/MessageList/MessageListItem.vala:88
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
 msgid "From:"
 msgstr "发件人："
 
-#: src/Composer/ComposerWidget.vala:108 src/MessageList/MessageListItem.vala:93
+#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "收件人："
 
-#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:98
+#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "主题："
 
-#: src/Composer/ComposerWidget.vala:119
+#: src/Composer/ComposerWidget.vala:122
 msgid "Cc"
 msgstr "抄送"
 
-#: src/Composer/ComposerWidget.vala:121
+#: src/Composer/ComposerWidget.vala:124
 msgid "Bcc"
 msgstr "密送"
 
-#: src/Composer/ComposerWidget.vala:128
+#: src/Composer/ComposerWidget.vala:131
 #: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr "抄送："
 
-#: src/Composer/ComposerWidget.vala:144
+#: src/Composer/ComposerWidget.vala:147
 msgid "Bcc:"
 msgstr "密送："
 
-#: src/Composer/ComposerWidget.vala:184
+#: src/Composer/ComposerWidget.vala:187
 msgid "Bold"
 msgstr "粗体"
 
-#: src/Composer/ComposerWidget.vala:190
+#: src/Composer/ComposerWidget.vala:193
 msgid "Italic"
 msgstr "斜体"
 
-#: src/Composer/ComposerWidget.vala:196
+#: src/Composer/ComposerWidget.vala:199
 msgid "Underline"
 msgstr "下划线"
 
-#: src/Composer/ComposerWidget.vala:202
+#: src/Composer/ComposerWidget.vala:205
 msgid "Strikethrough"
 msgstr "删除线"
 
-#: src/Composer/ComposerWidget.vala:215
+#: src/Composer/ComposerWidget.vala:218
 msgid "Quote text"
 msgstr "引用文本"
 
-#: src/Composer/ComposerWidget.vala:218
+#: src/Composer/ComposerWidget.vala:221
 msgid "Unquote text"
 msgstr "取消引用"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:230 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "插入链接"
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:233
 msgid "Insert Image"
 msgstr "插入图像"
 
-#: src/Composer/ComposerWidget.vala:233
+#: src/Composer/ComposerWidget.vala:236
 msgid "Remove formatting"
 msgstr "删除格式"
 
-#: src/Composer/ComposerWidget.vala:261
+#: src/Composer/ComposerWidget.vala:269
 msgid "Delete draft"
 msgstr "删除草稿"
 
-#: src/Composer/ComposerWidget.vala:265
+#: src/Composer/ComposerWidget.vala:274
 msgid "Attach file"
 msgstr "添加附件"
 
-#: src/Composer/ComposerWidget.vala:271
+#: src/Composer/ComposerWidget.vala:280
 msgid "Send"
 msgstr "发送"
 
-#: src/Composer/ComposerWidget.vala:452
-msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%Y年%b%e日，%p %-l:%M"
+#: src/Composer/ComposerWidget.vala:420
+msgid "Choose a file"
+msgstr "选择文件"
 
-#: src/Composer/ComposerWidget.vala:482
-#, c-format
-msgid "On %1$s, %2$s wrote:"
-msgstr "在 %1$s 中，%2$s 写道："
+#: src/Composer/ComposerWidget.vala:423
+#, fuzzy
+#| msgid "_Attach"
+msgid "Attach"
+msgstr "附件"
 
-#: src/Composer/ComposerWidget.vala:486
-msgid "---------- Forwarded message ----------"
-msgstr "---------- 转发邮件 ----------"
-
-#: src/Composer/ComposerWidget.vala:488
-#, c-format
-msgid "From: %s<br/>"
-msgstr "发件人： %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:489
-#, c-format
-msgid "Subject: %s<br/>"
-msgstr "主题：%s<br/>"
-
-#: src/Composer/ComposerWidget.vala:490
-#, c-format
-msgid "Date: %s<br/>"
-msgstr "日期：%s<br/>"
-
-#: src/Composer/ComposerWidget.vala:491
-#, c-format
-msgid "To: %s<br/>"
-msgstr "收件人： %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:493
-#, c-format
-msgid "Cc: %s<br/>"
-msgstr "抄送：%s<br/>"
-
-#: src/Composer/ComposerWidget.vala:531
-msgid "Permanently delete this draft?"
-msgstr "要永久删除此草稿吗？"
-
-#: src/Composer/ComposerWidget.vala:532
-msgid ""
-"You cannot undo this action, nor recover your draft once it has been deleted."
-msgstr "此操作无法撤销，您也不能恢复删除后的草稿。"
-
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
+#: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:574
+#: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "取消"
 
-#: src/Composer/ComposerWidget.vala:540
+#: src/Composer/ComposerWidget.vala:488
+msgid "%a, %b %-e, %Y at %-l:%M %p"
+msgstr "%Y年%b%e日，%p %-l:%M"
+
+#: src/Composer/ComposerWidget.vala:518
+#, c-format
+msgid "On %1$s, %2$s wrote:"
+msgstr "在 %1$s 中，%2$s 写道："
+
+#: src/Composer/ComposerWidget.vala:522
+msgid "---------- Forwarded message ----------"
+msgstr "---------- 转发邮件 ----------"
+
+#: src/Composer/ComposerWidget.vala:524
+#, c-format
+msgid "From: %s<br/>"
+msgstr "发件人： %s<br/>"
+
+#: src/Composer/ComposerWidget.vala:525
+#, c-format
+msgid "Subject: %s<br/>"
+msgstr "主题：%s<br/>"
+
+#: src/Composer/ComposerWidget.vala:526
+#, c-format
+msgid "Date: %s<br/>"
+msgstr "日期：%s<br/>"
+
+#: src/Composer/ComposerWidget.vala:527
+#, c-format
+msgid "To: %s<br/>"
+msgstr "收件人： %s<br/>"
+
+#: src/Composer/ComposerWidget.vala:529
+#, c-format
+msgid "Cc: %s<br/>"
+msgstr "抄送：%s<br/>"
+
+#: src/Composer/ComposerWidget.vala:567
+msgid "Permanently delete this draft?"
+msgstr "要永久删除此草稿吗？"
+
+#: src/Composer/ComposerWidget.vala:568
+msgid ""
+"You cannot undo this action, nor recover your draft once it has been deleted."
+msgstr "此操作无法撤销，您也不能恢复删除后的草稿。"
+
+#: src/Composer/ComposerWidget.vala:576
 msgid "Delete Draft"
 msgstr "删除草稿"
 
-#: src/Composer/ComposerWidget.vala:557
+#: src/Composer/ComposerWidget.vala:593
 msgid "Send Message With an Empty Subject?"
 msgstr "确认发送无主题的邮件吗？"
 
-#: src/Composer/ComposerWidget.vala:558
+#: src/Composer/ComposerWidget.vala:594
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr "此邮件主题为空。收件人可能会无法判断此邮件的重要性。"
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:600
 msgid "Don't Send"
 msgstr "不发送"
 
-#: src/Composer/ComposerWidget.vala:566
+#: src/Composer/ComposerWidget.vala:602
 msgid "Send Anyway"
 msgstr "仍然发送"
 
@@ -942,12 +953,6 @@ msgstr "保存"
 
 #~ msgid "Geary requires your email password to continue"
 #~ msgstr "Geary 需要您输入邮件密码来继续"
-
-#~ msgid "Choose a file"
-#~ msgstr "选择文件"
-
-#~ msgid "_Attach"
-#~ msgstr "附件"
 
 #~ msgid "Additional addresses for %s"
 #~ msgstr "%s 的附加地址"

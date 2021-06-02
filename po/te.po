@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-21 17:05+0000\n"
+"POT-Creation-Date: 2021-06-02 19:54+0000\n"
 "PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Jim Nelson <jim@yorba.org>\n"
 "Language-Team: Telugu (http://www.transifex.com/projects/p/geary/language/"
@@ -115,156 +115,167 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:92 src/MessageList/MessageListItem.vala:88
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
 msgid "From:"
 msgstr "పంపినవారు:"
 
-#: src/Composer/ComposerWidget.vala:108 src/MessageList/MessageListItem.vala:93
+#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "వీరికి:"
 
-#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:98
+#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "విషయం:"
 
-#: src/Composer/ComposerWidget.vala:119
+#: src/Composer/ComposerWidget.vala:122
 #, fuzzy
 msgid "Cc"
 msgstr "సిసి:"
 
-#: src/Composer/ComposerWidget.vala:121
+#: src/Composer/ComposerWidget.vala:124
 #, fuzzy
 msgid "Bcc"
 msgstr "బిసిసి:"
 
-#: src/Composer/ComposerWidget.vala:128
+#: src/Composer/ComposerWidget.vala:131
 #: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr "సిసి:"
 
-#: src/Composer/ComposerWidget.vala:144
+#: src/Composer/ComposerWidget.vala:147
 msgid "Bcc:"
 msgstr "బిసిసి:"
 
-#: src/Composer/ComposerWidget.vala:184
+#: src/Composer/ComposerWidget.vala:187
 msgid "Bold"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:190
+#: src/Composer/ComposerWidget.vala:193
 msgid "Italic"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:196
+#: src/Composer/ComposerWidget.vala:199
 msgid "Underline"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:202
+#: src/Composer/ComposerWidget.vala:205
 msgid "Strikethrough"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:215
+#: src/Composer/ComposerWidget.vala:218
 msgid "Quote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:218
+#: src/Composer/ComposerWidget.vala:221
 msgid "Unquote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:230 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:233
 msgid "Insert Image"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:233
+#: src/Composer/ComposerWidget.vala:236
 msgid "Remove formatting"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:261
+#: src/Composer/ComposerWidget.vala:269
 msgid "Delete draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:265
+#: src/Composer/ComposerWidget.vala:274
 msgid "Attach file"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:271
+#: src/Composer/ComposerWidget.vala:280
 msgid "Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:452
-msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%a, %b %-e, %Y at %-l:%M %p"
+#: src/Composer/ComposerWidget.vala:420
+msgid "Choose a file"
+msgstr "దస్త్రాన్ని ఎంచుకోండి"
 
-#: src/Composer/ComposerWidget.vala:482
-#, c-format
-msgid "On %1$s, %2$s wrote:"
-msgstr ""
+#: src/Composer/ComposerWidget.vala:423
+#, fuzzy
+#| msgid "_Attach"
+msgid "Attach"
+msgstr "జోడించు (_A)"
 
-#: src/Composer/ComposerWidget.vala:486
-msgid "---------- Forwarded message ----------"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:488
-#, fuzzy, c-format
-msgid "From: %s<br/>"
-msgstr "పంపినవారు: %s\n"
-
-#: src/Composer/ComposerWidget.vala:489
-#, fuzzy, c-format
-msgid "Subject: %s<br/>"
-msgstr "విషయం:"
-
-#: src/Composer/ComposerWidget.vala:490
-#, fuzzy, c-format
-msgid "Date: %s<br/>"
-msgstr "తేదీ: %s\n"
-
-#: src/Composer/ComposerWidget.vala:491
-#, fuzzy, c-format
-msgid "To: %s<br/>"
-msgstr "వీరికి: %s\n"
-
-#: src/Composer/ComposerWidget.vala:493
-#, c-format
-msgid "Cc: %s<br/>"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:531
-msgid "Permanently delete this draft?"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:532
-msgid ""
-"You cannot undo this action, nor recover your draft once it has been deleted."
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
+#: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:574
+#: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:540
+#: src/Composer/ComposerWidget.vala:488
+msgid "%a, %b %-e, %Y at %-l:%M %p"
+msgstr "%a, %b %-e, %Y at %-l:%M %p"
+
+#: src/Composer/ComposerWidget.vala:518
+#, c-format
+msgid "On %1$s, %2$s wrote:"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:522
+msgid "---------- Forwarded message ----------"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:524
+#, fuzzy, c-format
+msgid "From: %s<br/>"
+msgstr "పంపినవారు: %s\n"
+
+#: src/Composer/ComposerWidget.vala:525
+#, fuzzy, c-format
+msgid "Subject: %s<br/>"
+msgstr "విషయం:"
+
+#: src/Composer/ComposerWidget.vala:526
+#, fuzzy, c-format
+msgid "Date: %s<br/>"
+msgstr "తేదీ: %s\n"
+
+#: src/Composer/ComposerWidget.vala:527
+#, fuzzy, c-format
+msgid "To: %s<br/>"
+msgstr "వీరికి: %s\n"
+
+#: src/Composer/ComposerWidget.vala:529
+#, c-format
+msgid "Cc: %s<br/>"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:567
+msgid "Permanently delete this draft?"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:568
+msgid ""
+"You cannot undo this action, nor recover your draft once it has been deleted."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:576
 msgid "Delete Draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:557
+#: src/Composer/ComposerWidget.vala:593
 msgid "Send Message With an Empty Subject?"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:558
+#: src/Composer/ComposerWidget.vala:594
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:600
 msgid "Don't Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:566
+#: src/Composer/ComposerWidget.vala:602
 msgid "Send Anyway"
 msgstr ""
 
@@ -474,12 +485,6 @@ msgstr ""
 
 #~ msgid "Me"
 #~ msgstr "నన్ను"
-
-#~ msgid "Choose a file"
-#~ msgstr "దస్త్రాన్ని ఎంచుకోండి"
-
-#~ msgid "_Attach"
-#~ msgstr "జోడించు (_A)"
 
 #~ msgid "Welcome to Geary."
 #~ msgstr "గేరీకి స్వాగతం."
