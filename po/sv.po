@@ -12,11 +12,12 @@
 # TommyBrunn <tommy.brunn@gmail.com>, 2012
 # Mattias Eriksson <snaggen@gmail.com>, 2014, 2015.
 #
+#: src/MessageList/MessageListItem.vala:374
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:43+0200\n"
+"POT-Creation-Date: 2021-05-21 17:05+0000\n"
 "PO-Revision-Date: 2017-04-15 20:42+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Swedish <https://l10n.elementary.io/projects/mail/mail/sv/>\n"
@@ -28,12 +29,12 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
-#: src/HeaderBar.vala:39
+#: src/HeaderBar.vala:40
 #, fuzzy
 msgid "Compose new message"
 msgstr "Skriv nytt meddelande (Ctrl+N, N)"
 
-#: src/HeaderBar.vala:45
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr ""
 
@@ -46,61 +47,72 @@ msgstr "Visa alltid från avsändare"
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:85
+#: src/HeaderBar.vala:88
 msgid "Menu"
 msgstr ""
 
-#: src/HeaderBar.vala:91
+#: src/HeaderBar.vala:95 src/MessageList/MessageListItem.vala:178
 msgid "Reply"
 msgstr ""
 
-#: src/HeaderBar.vala:98
+#: src/HeaderBar.vala:102
 #, fuzzy
 msgid "Reply All"
 msgstr "Svara _alla"
 
-#: src/HeaderBar.vala:105
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:184
 msgid "Forward"
 msgstr ""
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:115
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "Markera som _oläst"
 
-#: src/HeaderBar.vala:112
+#: src/HeaderBar.vala:120
 #, fuzzy
 msgid "Mark as Read"
 msgstr "Markera som _läst"
 
-#: src/HeaderBar.vala:116
+#: src/HeaderBar.vala:125
 #, fuzzy
 msgid "Star"
 msgstr "Markera som _viktigt"
 
-#: src/HeaderBar.vala:120
+#: src/HeaderBar.vala:130
 #, fuzzy
 msgid "Unstar"
 msgstr "Markera som ov_iktigt"
 
-#: src/HeaderBar.vala:135
+#: src/HeaderBar.vala:142
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Markera konversationer"
 
-#: src/HeaderBar.vala:141
+#: src/HeaderBar.vala:149
+#, fuzzy
+msgid "Move conversations to archive"
+msgstr "Flytta konversationerna"
+
+#: src/HeaderBar.vala:156
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Flytta konversationerna"
 
-#: src/MainWindow.vala:251
+#: src/MainWindow.vala:72
+#, fuzzy
+#| msgid "All Mail"
+msgid "Mail"
+msgstr "Alla brev"
+
+#: src/MainWindow.vala:290
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Inga valda konversationer."
 msgstr[1] "Inga valda konversationer."
 
-#: src/MainWindow.vala:252
+#: src/MainWindow.vala:302
 msgid "Undo"
 msgstr ""
 
@@ -117,157 +129,180 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Konton"
 
-#: src/Composer/ComposerWidget.vala:96 src/MessageList/MessageListItem.vala:76
+#: src/Composer/ComposerWidget.vala:92 src/MessageList/MessageListItem.vala:88
 msgid "From:"
 msgstr "Från:"
 
-#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:108 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "Till:"
 
-#: src/Composer/ComposerWidget.vala:116 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "Ämne:"
 
-#: src/Composer/ComposerWidget.vala:123
+#: src/Composer/ComposerWidget.vala:119
 #, fuzzy
 msgid "Cc"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:125
+#: src/Composer/ComposerWidget.vala:121
 #, fuzzy
 msgid "Bcc"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:135
-#: src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:128
+#: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:151
+#: src/Composer/ComposerWidget.vala:144
 msgid "Bcc:"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:191
+#: src/Composer/ComposerWidget.vala:184
 msgid "Bold"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:197
+#: src/Composer/ComposerWidget.vala:190
 msgid "Italic"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:203
+#: src/Composer/ComposerWidget.vala:196
 msgid "Underline"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:209
+#: src/Composer/ComposerWidget.vala:202
 msgid "Strikethrough"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:222
+#: src/Composer/ComposerWidget.vala:215
 msgid "Quote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:225
+#: src/Composer/ComposerWidget.vala:218
 msgid "Unquote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:237
+#: src/Composer/ComposerWidget.vala:230
 msgid "Insert Image"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:233
 msgid "Remove formatting"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:268
+#: src/Composer/ComposerWidget.vala:261
 msgid "Delete draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:272
+#: src/Composer/ComposerWidget.vala:265
 msgid "Attach file"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:278
+#: src/Composer/ComposerWidget.vala:271
 msgid "Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:427
+#: src/Composer/ComposerWidget.vala:452
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a %x klockan %H:%M %z"
 
-#: src/Composer/ComposerWidget.vala:457
+#: src/Composer/ComposerWidget.vala:482
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s skrev %2$s:"
 
-#: src/Composer/ComposerWidget.vala:461
+#: src/Composer/ComposerWidget.vala:486
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Vidarebefordrat meddelande ----------"
 
-#: src/Composer/ComposerWidget.vala:463
+#: src/Composer/ComposerWidget.vala:488
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "Från: %s\n"
 
-#: src/Composer/ComposerWidget.vala:464
+#: src/Composer/ComposerWidget.vala:489
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "Ämne: %s\n"
 
-#: src/Composer/ComposerWidget.vala:465
+#: src/Composer/ComposerWidget.vala:490
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "Datum: %s\n"
 
-#: src/Composer/ComposerWidget.vala:466
+#: src/Composer/ComposerWidget.vala:491
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "Till: %s\n"
 
-#: src/Composer/ComposerWidget.vala:468
+#: src/Composer/ComposerWidget.vala:493
 #, fuzzy, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s\n"
 
-#: src/Composer/ComposerWidget.vala:503
+#: src/Composer/ComposerWidget.vala:531
+#, fuzzy
+#| msgid "Do you want to permanently delete this message?"
+#| msgid_plural "Do you want to permanently delete these messages?"
+msgid "Permanently delete this draft?"
+msgstr "Vill du radera detta meddelande permanent?"
+
+#: src/Composer/ComposerWidget.vala:532
+msgid ""
+"You cannot undo this action, nor recover your draft once it has been deleted."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Cancel"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:540
+#, fuzzy
+#| msgid "Delete"
+msgid "Delete Draft"
+msgstr "Radera"
+
+#: src/Composer/ComposerWidget.vala:557
 #, fuzzy
 msgid "Send Message With an Empty Subject?"
 msgstr "Skicka meddelande med en tom ämnesrad?"
 
-#: src/Composer/ComposerWidget.vala:504
+#: src/Composer/ComposerWidget.vala:558
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:510
+#: src/Composer/ComposerWidget.vala:564
 msgid "Don't Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:512
+#: src/Composer/ComposerWidget.vala:566
 msgid "Send Anyway"
 msgstr ""
 
-#: src/Composer/ComposerWindow.vala:49
+#: src/Composer/ComposerWindow.vala:45 src/Composer/ComposerWindow.vala:56
 msgid "New Message"
 msgstr "Nytt meddelande"
 
-#: src/ConversationList/ConversationListItem.vala:94
+#: src/ConversationList/ConversationListItem.vala:102
 #, fuzzy
 msgid "Unread"
 msgstr "%d oläst"
 
-#: src/ConversationList/ConversationListItem.vala:104
+#: src/ConversationList/ConversationListItem.vala:112
 #, fuzzy
 msgid "Replied"
 msgstr "E_rsätt"
 
-#: src/ConversationList/ConversationListItem.vala:108
+#: src/ConversationList/ConversationListItem.vala:116
 #, fuzzy
 msgid "Forwarded"
 msgstr "Vidare_befordra"
@@ -288,11 +323,6 @@ msgstr ""
 msgid "Example Website"
 msgstr ""
 
-#: src/Dialogs/InsertLinkDialog.vala:63
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Cancel"
-msgstr ""
-
 #: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
@@ -308,8 +338,26 @@ msgstr ""
 msgid "Open Anyway"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
+msgstr ""
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgid "Inbox"
+msgstr "Inkorg"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Arkiv"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Skickad e-post"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
 msgstr ""
 
 #: src/MessageList/MessageListBox.vala:32
@@ -317,33 +365,60 @@ msgstr ""
 msgid "No Message Selected"
 msgstr "Inga valda konversationer."
 
-#: src/MessageList/MessageListItem.vala:156
-#: src/MessageList/MessageListItem.vala:276
+#: src/MessageList/MessageListItem.vala:168
+#: src/MessageList/MessageListItem.vala:325
 #, fuzzy
 msgid "Unstar message"
 msgstr "%d meddelande"
 
-#: src/MessageList/MessageListItem.vala:159
-#: src/MessageList/MessageListItem.vala:272
+#: src/MessageList/MessageListItem.vala:171
+#: src/MessageList/MessageListItem.vala:321
 #, fuzzy
 msgid "Star message"
 msgstr "%d meddelande"
 
-#: src/MessageList/MessageListItem.vala:195
-msgid "Show Images"
-msgstr "Visa bilder"
+#: src/MessageList/MessageListItem.vala:181
+#, fuzzy
+#| msgid "Reply to _All"
+msgid "Reply to All"
+msgstr "Svara till _alla"
 
-#: src/MessageList/MessageListItem.vala:196
-msgid "Always Show from Sender"
+#: src/MessageList/MessageListItem.vala:187
+msgid "Print…"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:201
+msgid "More"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:237
+msgid "Show Images"
+msgstr "Visa bilder"
+
+#: src/MessageList/MessageListItem.vala:238
+msgid "Always Show from Sender"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:243
 msgid "This message contains remote images."
 msgstr "Meddelandet innehåller bilder från internet."
 
-#: src/MessageList/MessageListItem.vala:233
+#: src/MessageList/MessageListItem.vala:275
 msgid "This message contains one or more attachments"
 msgstr ""
+
+#. / Translators: This is the default file name of a printed email
+#: src/MessageList/MessageListItem.vala:351
+#, fuzzy
+#| msgid "New Message"
+msgid "Email Message"
+msgstr "Nytt meddelande"
+
+#: src/MessageList/MessageListItem.vala:373
+#, fuzzy
+#| msgid "Unable to validate:\n"
+msgid "Unable to print email"
+msgstr "Kan inte bekräfta:\n"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
@@ -382,23 +457,14 @@ msgstr "_Spara"
 #~ msgid "Archive | Archives"
 #~ msgstr "Arkiv | Archive | Archives"
 
-#~ msgid "Inbox"
-#~ msgstr "Inkorg"
-
 #~ msgid "Drafts"
 #~ msgstr "Utkast"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Skickad e-post"
 
 #~ msgid "Starred"
 #~ msgstr "Viktig"
 
 #~ msgid "Important"
 #~ msgstr "Viktigt"
-
-#~ msgid "All Mail"
-#~ msgstr "Alla brev"
 
 #~ msgid "Spam"
 #~ msgstr "Skräppost"
@@ -411,9 +477,6 @@ msgstr "_Spara"
 
 #~ msgid "Search"
 #~ msgstr "Sök"
-
-#~ msgid "Archive"
-#~ msgstr "Arkiv"
 
 #~ msgid "None"
 #~ msgstr "Ingen"
@@ -762,14 +825,6 @@ msgstr "_Spara"
 #~ msgid "Error emptying %s"
 #~ msgstr "Fel vid tömning av %s"
 
-#~ msgid "Do you want to permanently delete this message?"
-#~ msgid_plural "Do you want to permanently delete these messages?"
-#~ msgstr[0] "Vill du radera detta meddelande permanent?"
-#~ msgstr[1] "Vill du radera dessa meddelanden permanent?"
-
-#~ msgid "Delete"
-#~ msgstr "Radera"
-
 #~ msgid "Undo archive (Ctrl+Z)"
 #~ msgstr "Ångra arkivering (Ctrl+Z)"
 
@@ -978,9 +1033,6 @@ msgstr "_Spara"
 #~ msgid "Remem_ber password"
 #~ msgstr "_Kom ihåg lösenord"
 
-#~ msgid "Unable to validate:\n"
-#~ msgstr "Kan inte bekräfta:\n"
-
 #~ msgid "        &#8226; Invalid account nickname.\n"
 #~ msgstr "        &#8226; Ogiltigt konto-alias.\n"
 
@@ -1151,9 +1203,6 @@ msgstr "_Spara"
 #~ msgid_plural "Save All A_ttachments..."
 #~ msgstr[0] "Spara b_ifogad fil…"
 #~ msgstr[1] "Spara alla b_ifogade filer…"
-
-#~ msgid "Reply to _All"
-#~ msgstr "Svara till _alla"
 
 #~ msgid "Mark Unread From _Here"
 #~ msgstr "Markera olästa _härifrån"

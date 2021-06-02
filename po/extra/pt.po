@@ -8,27 +8,27 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-02-07 00:00+0000\n"
+"PO-Revision-Date: 2021-03-18 00:39+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://weblate.elementary.io/projects/mail/extra/"
-"pt/>\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/extra/pt/"
+">\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: data/io.elementary.mail.appdata.xml.in:8
 #: data/io.elementary.mail.desktop.in:3
 msgid "Mail"
-msgstr "E-Mail"
+msgstr "Correio"
 
 #: data/io.elementary.mail.appdata.xml.in:9
 #: data/io.elementary.mail.desktop.in:4
 msgid "Send and receive mail"
-msgstr "Enviar e receber e-mail"
+msgstr "Enviar e receber correio"
 
 #: data/io.elementary.mail.appdata.xml.in:11
 msgid ""
@@ -36,17 +36,17 @@ msgid ""
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
 msgstr ""
-"O E-Mail foi desenvolvido para o ajudar a gerir o seu e-mail de forma "
+"O Correio foi desenvolvido para o ajudar a gerir o seu e-mail de forma "
 "eficiente e sem esforço. A sua interface é baseada em conversação, para que "
 "possa ler uma discussão sem ter de clicar de mensagem em mensagem."
 
 #: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
-msgstr "Cliente de e-mail leve com suporte total IMAP"
+msgstr "Cliente de correio eletrónico com total suporte a IMAP"
 
 #: data/io.elementary.mail.appdata.xml.in:14
 msgid "Mail grouped into conversations, not a tree of threads"
-msgstr "O E-Mail agrupa-se por conversas, não por uma árvore de mensagens"
+msgstr "O Correio agrupa-se por conversas, não por um esquema de mensagens"
 
 #: data/io.elementary.mail.appdata.xml.in:15
 msgid "As-you-type searching"
@@ -90,11 +90,11 @@ msgstr "internet-mail"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
-msgstr "Email;E-mail;Mail;"
+msgstr "Email;E-mail;Mail;Correio;"
 
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
-msgstr "Escrever uma Mensagem"
+msgstr "Escrever uma mensagem"
 
 #~ msgid "About Mail"
 #~ msgstr "Sobre o Mail"

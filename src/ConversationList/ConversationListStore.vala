@@ -24,7 +24,7 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
     public delegate bool RowVisibilityFunc (GLib.Object row);
 
     private GLib.Sequence<ConversationItemModel> data = new GLib.Sequence<ConversationItemModel> ();
-    private uint last_position = -1u;
+    private uint last_position = uint.MAX;
     private GLib.SequenceIter<ConversationItemModel>? last_iter;
     private unowned GLib.CompareDataFunc<ConversationItemModel> compare_func;
     private unowned RowVisibilityFunc filter_func;
@@ -44,7 +44,7 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
     private GLib.Object? get_item_internal (uint index, bool unfiltered = false) {
         GLib.SequenceIter<ConversationItemModel>? iter = null;
 
-        if (last_position != -1u) {
+        if (last_position != uint.MAX) {
             if (last_position == index + 1) {
                 iter = last_iter.prev ();
             } else if (last_position == index - 1) {
@@ -84,7 +84,7 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
         }
 
         last_iter = null;
-        last_position = -1u;
+        last_position = uint.MAX;
     }
 
     public void remove (ConversationItemModel data) {
@@ -92,7 +92,7 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
         iter.remove ();
 
         last_iter = null;
-        last_position = -1u;
+        last_position = uint.MAX;
     }
 
     public void remove_all () {
@@ -100,7 +100,7 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
         unselect_all ();
 
         last_iter = null;
-        last_position = -1u;
+        last_position = uint.MAX;
     }
 
     public void set_sort_func (GLib.CompareDataFunc<ConversationItemModel> function) {

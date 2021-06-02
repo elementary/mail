@@ -43,6 +43,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     public const string ACTION_MARK_STAR = "mark-star";
     public const string ACTION_MARK_UNREAD = "mark-unread";
     public const string ACTION_MARK_UNSTAR = "mark-unstar";
+    public const string ACTION_ARCHIVE = "archive";
     public const string ACTION_MOVE_TO_TRASH = "trash";
     public const string ACTION_FULLSCREEN = "full-screen";
 
@@ -57,6 +58,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         {ACTION_MARK_STAR, on_mark_star },
         {ACTION_MARK_UNREAD, on_mark_unread },
         {ACTION_MARK_UNSTAR, on_mark_unstar },
+        {ACTION_ARCHIVE, on_archive },
         {ACTION_MOVE_TO_TRASH, on_move_to_trash },
         {ACTION_FULLSCREEN, on_fullscreen },
     };
@@ -66,7 +68,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             application: application,
             height_request: 600,
             icon_name: "io.elementary.mail",
-            width_request: 800
+            width_request: 800,
+            title: _("Mail")
         );
     }
 
@@ -81,6 +84,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         action_accelerators[ACTION_MARK_STAR] = "<Ctrl>l";
         action_accelerators[ACTION_MARK_UNREAD] = "<Ctrl><Shift>u";
         action_accelerators[ACTION_MARK_UNSTAR] = "<Ctrl><Shift>l";
+        action_accelerators[ACTION_ARCHIVE] = "<Ctrl><Shift>a";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "Delete";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "BackSpace";
         action_accelerators[ACTION_FULLSCREEN] = "F11";
@@ -88,6 +92,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
     construct {
         add_action_entries (ACTION_ENTRIES, this);
+        get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
 
         foreach (var action in action_accelerators.get_keys ()) {
             ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
@@ -122,6 +127,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY_ALL), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-reply", get_action (ACTION_FORWARD), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-move-thread", get_action (ACTION_MOVE_TO_TRASH), "enabled", BindingFlags.SYNC_CREATE);
+        message_list_box.bind_property ("can-move-thread", get_action (ACTION_ARCHIVE), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-move-thread", headerbar, "can-mark", BindingFlags.SYNC_CREATE);
 
         conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
@@ -183,8 +189,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         destroy.connect (() => destroy ());
 
-        folders_list_view.folder_selected.connect ((account, folder_name) => {
-            conversation_list_box.load_folder.begin (account, folder_name);
+        folders_list_view.folder_selected.connect ((folder_full_name_per_account) => {
+            conversation_list_box.load_folder.begin (folder_full_name_per_account);
         });
 
         conversation_list_box.conversation_selected.connect ((node) => {
@@ -203,15 +209,21 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             headerbar.set_paned_positions (paned_start.position, paned_end.position);
         });
 
+        headerbar.search_entry.search_changed.connect (() => {
+            conversation_list_box.search (headerbar.search_entry.text);
+        });
+
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
         session.account_added.connect (() => {
             placeholder_stack.visible_child = paned_end;
+            get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
             headerbar.can_search = true;
         });
 
         session.account_removed.connect (() => {
             var accounts_left = session.get_accounts ();
             if (accounts_left.size == 0) {
+                get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
                 headerbar.can_search = false;
             }
         });
@@ -266,32 +278,42 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         message_list_box.add_inline_composer.begin (ComposerWidget.Type.FORWARD);
     }
 
+    private void on_archive () {
+        conversation_list_box.archive_selected_messages.begin ((obj, res) => {
+            conversation_list_box.archive_selected_messages.end (res);
+        });
+    }
+
     private void on_move_to_trash () {
         var result = conversation_list_box.trash_selected_messages ();
         if (result > 0) {
-            foreach (weak Gtk.Widget child in conversation_list_overlay.get_children ()) {
-                if (child != conversation_list_scrolled) {
-                    child.destroy ();
-                }
-            }
-
-            var toast = new Granite.Widgets.Toast (ngettext ("Message Deleted", "Messages Deleted", result));
-            toast.set_default_action (_("Undo"));
-            toast.show_all ();
-
-            toast.default_action.connect (() => {
-                conversation_list_box.undo_trash ();
-            });
-
-            toast.notify["child-revealed"].connect (() => {
-                if (!toast.child_revealed) {
-                    conversation_list_box.undo_expired ();
-                }
-            });
-
-            conversation_list_overlay.add_overlay (toast);
-            toast.send_notification ();
+            send_move_toast (ngettext ("Message Deleted", "Messages Deleted", result));
         }
+    }
+
+    private void send_move_toast (string message) {
+        foreach (weak Gtk.Widget child in conversation_list_overlay.get_children ()) {
+            if (child != conversation_list_scrolled) {
+                child.destroy ();
+            }
+        }
+
+        var toast = new Granite.Widgets.Toast (message);
+        toast.set_default_action (_("Undo"));
+        toast.show_all ();
+
+        toast.default_action.connect (() => {
+            conversation_list_box.undo_move ();
+        });
+
+        toast.notify["child-revealed"].connect (() => {
+            if (!toast.child_revealed) {
+                conversation_list_box.undo_expired ();
+            }
+        });
+
+        conversation_list_overlay.add_overlay (toast);
+        toast.send_notification ();
     }
 
     private void on_fullscreen () {
