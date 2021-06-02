@@ -350,10 +350,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     private async void download_gravatar (string address, int size) {
         if (avatars[address] == null) {
-            var md5 = Checksum.compute_for_string (ChecksumType.MD5, address.strip ().down ());
-
             var uri = "https://secure.gravatar.com/avatar/%s?d=404&s=%d".printf (
-                md5,
+                Checksum.compute_for_string (ChecksumType.MD5, address.strip ().down ()),
                 size * get_style_context ().get_scale ()
             );
 
