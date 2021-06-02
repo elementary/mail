@@ -380,7 +380,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 }
             });
         } catch (Error e) {
-            critical (e.message);
+            debug ("Unable to fetch gravatar: %s", e.message);
         }
     }
 
