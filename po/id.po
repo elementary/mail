@@ -6,257 +6,410 @@
 # Andika Triwidada <andika@gmail.com>, 2012-2014
 # elementary Indonesia <elementaryindo@gmail.com>, 2012, 2013
 # Mohamad Hasan Al Banna, 2013
+#: src/MessageList/MessageListItem.vala:374
 msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2015-11-23 11:51+0000\n"
-"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
-"Language-Team: Indonesian (http://www.transifex.com/projects/p/geary/"
-"language/id/)\n"
+"POT-Creation-Date: 2021-06-02 19:54+0000\n"
+"PO-Revision-Date: 2020-12-15 16:16+0000\n"
+"Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
+"Language-Team: Indonesian <https://l10n.elementary.io/projects/mail/mail/id/"
+">\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
 
-#: src/HeaderBar.vala:38
-#, fuzzy
+#: src/HeaderBar.vala:40
 msgid "Compose new message"
-msgstr "Susun pesan baru (Ctrl+N, N)"
+msgstr "Tulis pesan baru"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
-msgstr ""
+msgstr "Cari Surel"
 
-#: src/HeaderBar.vala:56
-#, fuzzy
+#: src/HeaderBar.vala:57
 msgid "Always Show Remote Images"
-msgstr "Selalu Tampilkan Dari Pengirim"
+msgstr "Selalu Tampilkan Gambar Jarak Jauh"
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
-msgstr ""
+msgstr "Pengaturan Akun…"
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:88
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:95 src/MessageList/MessageListItem.vala:178
 msgid "Reply"
-msgstr ""
+msgstr "Balas"
 
-#: src/HeaderBar.vala:97
-#, fuzzy
+#: src/HeaderBar.vala:102
 msgid "Reply All"
-msgstr "Balas S_emua"
+msgstr "Balas Semua"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:184
 msgid "Forward"
-msgstr ""
+msgstr "Teruskan"
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:115
+msgid "Mark as Unread"
+msgstr "Tandai sebagai belum dibaca"
+
+#: src/HeaderBar.vala:120
+msgid "Mark as Read"
+msgstr "Tandai sebagai sudah dibaca"
+
+#: src/HeaderBar.vala:125
+msgid "Star"
+msgstr "Bintang"
+
+#: src/HeaderBar.vala:130
+msgid "Unstar"
+msgstr "Hapus Bintang"
+
+#: src/HeaderBar.vala:142
+msgid "Mark Conversation"
+msgstr "Tandai Percakapan"
+
+#: src/HeaderBar.vala:149
 #, fuzzy
+#| msgid "Move conversations to Trash"
+msgid "Move conversations to archive"
+msgstr "Pindahkan percakapan ke Sampah"
+
+#: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
-msgstr "Pindahkan percakapan"
+msgstr "Pindahkan percakapan ke Sampah"
+
+#: src/MainWindow.vala:72
+#, fuzzy
+#| msgid "All Mail"
+msgid "Mail"
+msgstr "Semua Pesan"
+
+#: src/MainWindow.vala:290
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "Pesan-pesan Dihapus"
+
+#: src/MainWindow.vala:302
+msgid "Undo"
+msgstr "Batalkan"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
-msgstr ""
+msgstr "Hubungkan sebuah Akun"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
+"Mail menggunakan akun email yang dikonfigurasi dalam Pengaturan Sistem."
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "Akun"
+msgstr "Akun Daring…"
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
+msgid "From:"
+msgstr "Dari:"
+
+#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "Ke:"
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "Perihal:"
 
-#: src/Composer/ComposerWidget.vala:85
-#, fuzzy
+#: src/Composer/ComposerWidget.vala:122
 msgid "Cc"
-msgstr "Cc:"
+msgstr "Tembusan"
 
-#: src/Composer/ComposerWidget.vala:87
-#, fuzzy
+#: src/Composer/ComposerWidget.vala:124
 msgid "Bcc"
-msgstr "Bcc:"
+msgstr "Tembusan Buta"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:131
+#: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:147
 msgid "Bcc:"
-msgstr "Bcc:"
+msgstr "Tembusan Buta:"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:187
 msgid "Bold"
-msgstr ""
+msgstr "Tebal"
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:193
 msgid "Italic"
-msgstr ""
+msgstr "Miring"
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:199
 msgid "Underline"
-msgstr ""
+msgstr "Garis bawah"
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:205
 msgid "Strikethrough"
-msgstr ""
+msgstr "Dicoret"
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:218
 msgid "Quote text"
-msgstr ""
+msgstr "Kutipan"
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:221
 msgid "Unquote text"
-msgstr ""
+msgstr "Batalkan kutipan"
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:230 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
-msgstr ""
+msgstr "Masukkan Tautan"
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:233
 msgid "Insert Image"
-msgstr ""
+msgstr "Masukkan Gambar"
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:236
 msgid "Remove formatting"
-msgstr ""
+msgstr "Hapus pemformatan"
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:269
 msgid "Delete draft"
-msgstr ""
+msgstr "Hapus Draf"
 
-#: src/Composer/ComposerWidget.vala:234
+#: src/Composer/ComposerWidget.vala:274
 msgid "Attach file"
-msgstr ""
+msgstr "Lampirkan berkas"
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:280
 msgid "Send"
-msgstr ""
+msgstr "Kirim"
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:420
+msgid "Choose a file"
+msgstr "Pilih berkas"
+
+#: src/Composer/ComposerWidget.vala:423
+#, fuzzy
+#| msgid "_Attach"
+msgid "Attach"
+msgstr "L_ampiri"
+
+#: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:574
+#: src/Dialogs/InsertLinkDialog.vala:61
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Cancel"
+msgstr "Batal"
+
+#: src/Composer/ComposerWidget.vala:488
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e %b %Y pada %-H:%M"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:518
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Pada %1$s, %2$s menulis:"
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:522
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Pesan yang diteruskan --------"
 
-#: src/Composer/ComposerWidget.vala:385
-#, fuzzy, c-format
+#: src/Composer/ComposerWidget.vala:524
+#, c-format
 msgid "From: %s<br/>"
-msgstr "Dari: %s\n"
+msgstr "Dari: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:386
-#, fuzzy, c-format
+#: src/Composer/ComposerWidget.vala:525
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "Perihal: %s\n"
+msgstr "Perihal: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:387
-#, fuzzy, c-format
+#: src/Composer/ComposerWidget.vala:526
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Tanggal: %s\n"
+msgstr "Tanggal: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:388
-#, fuzzy, c-format
+#: src/Composer/ComposerWidget.vala:527
+#, c-format
 msgid "To: %s<br/>"
-msgstr "Kepada: %s\n"
+msgstr "Kepada: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:390
-#, fuzzy, c-format
+#: src/Composer/ComposerWidget.vala:529
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "Cc: %s\n"
+msgstr "Tembusan: %s<br/>"
 
-#: src/Composer/ComposerWindow.vala:25
+#: src/Composer/ComposerWidget.vala:567
+#, fuzzy
+#| msgid "Do you want to permanently delete this message?"
+#| msgid_plural "Do you want to permanently delete these messages?"
+msgid "Permanently delete this draft?"
+msgstr "Anda mau membuang pesan ini secara permanen?"
+
+#: src/Composer/ComposerWidget.vala:568
+msgid ""
+"You cannot undo this action, nor recover your draft once it has been deleted."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:576
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete Draft"
+msgstr "Hapus Draf"
+
+#: src/Composer/ComposerWidget.vala:593
+msgid "Send Message With an Empty Subject?"
+msgstr "Kirim Pesan Dengan Perihal Kosong?"
+
+#: src/Composer/ComposerWidget.vala:594
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+"Pesan ini memiliki perihal kosong. Penerima mungkin tidak dapat menyimpulkan "
+"ruang lingkup atau kepentingan dari pesan."
+
+#: src/Composer/ComposerWidget.vala:600
+msgid "Don't Send"
+msgstr "Jangan Kirim"
+
+#: src/Composer/ComposerWidget.vala:602
+msgid "Send Anyway"
+msgstr "Kirim Saja"
+
+#: src/Composer/ComposerWindow.vala:45 src/Composer/ComposerWindow.vala:56
 msgid "New Message"
 msgstr "Pesan Baru"
 
+#: src/ConversationList/ConversationListItem.vala:102
+msgid "Unread"
+msgstr "Belum dibaca"
+
+#: src/ConversationList/ConversationListItem.vala:112
+msgid "Replied"
+msgstr "Dibalas"
+
+#: src/ConversationList/ConversationListItem.vala:116
+msgid "Forwarded"
+msgstr "Diteruskan"
+
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://example.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
 msgid "Link Text:"
-msgstr ""
+msgstr "Teks Tautan:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
-msgstr ""
+msgstr "Contoh Situs"
 
-#: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
-msgid "Cancel"
-msgstr ""
-
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "Apa Anda yakin untuk membuka %s?"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"Lampiran mungkin menyebabkan kerusakan pada sistem Anda jika dibuka. Hanya "
+"buka berkas dari sumber terpercaya."
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
-msgstr ""
+msgstr "Buka Saja"
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
+msgstr "Segarkan folder"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgid "Inbox"
+msgstr "Kotak Masuk"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Arsip"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Kirim Surat"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
 msgstr ""
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "Tidak ada percakapan yang dipilih."
+msgstr "Tidak Ada Pesan yang Dipilih"
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "Dari:"
+#: src/MessageList/MessageListItem.vala:168
+#: src/MessageList/MessageListItem.vala:325
+msgid "Unstar message"
+msgstr "Batalkan Bintang pada pesan"
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:171
+#: src/MessageList/MessageListItem.vala:321
+msgid "Star message"
+msgstr "Pesan berbintang"
+
+#: src/MessageList/MessageListItem.vala:181
+#, fuzzy
+#| msgid "Reply to _All"
+msgid "Reply to All"
+msgstr "Balas ke Semu_a"
+
+#: src/MessageList/MessageListItem.vala:187
+msgid "Print…"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:201
+msgid "More"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:237
 msgid "Show Images"
 msgstr "Tampilkan Gambar"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:238
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "Selalu Tampilkan dari Pengirim"
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:243
 msgid "This message contains remote images."
 msgstr "Pesan ini memuat gambar remote."
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:275
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "Pesan ini berisi satu atau lebih lampiran"
+
+#. / Translators: This is the default file name of a printed email
+#: src/MessageList/MessageListItem.vala:351
+#, fuzzy
+#| msgid "New Message"
+msgid "Email Message"
+msgstr "Pesan Baru"
+
+#: src/MessageList/MessageListItem.vala:373
+#, fuzzy
+#| msgid "Unable to validate:\n"
+msgid "Unable to print email"
+msgstr "Tak dapat mengesahkan:\n"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
@@ -264,16 +417,15 @@ msgstr "Buka"
 
 #: src/MessageList/AttachmentButton.vala:43
 msgid "Save As…"
-msgstr ""
+msgstr "Simpan Sebagai…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "Tidak diketahui"
 
 #: src/MessageList/AttachmentButton.vala:113
-#, fuzzy
 msgid "Save"
-msgstr "_Simpan"
+msgstr "Simpan"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "Draf"
@@ -293,23 +445,14 @@ msgstr "_Simpan"
 #~ msgstr ""
 #~ "Trash | Rubbish | Rubbish Bin | Sampah | Tong Sampah | Tempat Sampah"
 
-#~ msgid "Inbox"
-#~ msgstr "Kotak Masuk"
-
 #~ msgid "Drafts"
 #~ msgstr "Draf"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Kirim Surat"
 
 #~ msgid "Starred"
 #~ msgstr "Dibintangi"
 
 #~ msgid "Important"
 #~ msgstr "Penting"
-
-#~ msgid "All Mail"
-#~ msgstr "Semua Pesan"
 
 #~ msgid "Spam"
 #~ msgstr "Spam"
@@ -322,9 +465,6 @@ msgstr "_Simpan"
 
 #~ msgid "Search"
 #~ msgstr "Cari"
-
-#~ msgid "Archive"
-#~ msgstr "Arsip"
 
 #~ msgid "None"
 #~ msgstr "Nihil"
@@ -407,9 +547,6 @@ msgstr "_Simpan"
 #~ msgid "Mark as not S_pam"
 #~ msgstr "Tandai sebagai bukan S_pam"
 
-#~ msgid "Mark conversations"
-#~ msgstr "Tandai percakapan"
-
 #~ msgid "Add label to conversations"
 #~ msgstr "Tambahkan label ke percakapan"
 
@@ -437,12 +574,6 @@ msgstr "_Simpan"
 #~ msgid "Mark as _Unread"
 #~ msgstr "Tandai _Belum Dibaca"
 
-#~ msgid "_Star"
-#~ msgstr "_Bintangi"
-
-#~ msgid "U_nstar"
-#~ msgstr "Hapus bi_ntang"
-
 #~ msgid "Add label"
 #~ msgstr "Tambah label"
 
@@ -460,9 +591,6 @@ msgstr "_Simpan"
 
 #~ msgid "Reply all (Ctrl+Shift+R, Shift+R)"
 #~ msgstr "Balas semua (Ctrl+Shift+R, Shift+R)"
-
-#~ msgid "_Forward"
-#~ msgstr "_Teruskan"
 
 #~ msgid "Forward (Ctrl+L, F)"
 #~ msgstr "Maju (Ctrl+L, F)"
@@ -630,15 +758,8 @@ msgstr "_Simpan"
 #~ "contents."
 #~ msgstr "Berkas telah ada di \"%s\".  Kalau ditimpa isi sebelumnya hilang."
 
-#~ msgid "_Replace"
-#~ msgstr "Timp_a"
-
 #~ msgid "Close open draft messages?"
 #~ msgstr "Tutup draf pesan yang terbuka?"
-
-#~ msgid "Do you want to permanently delete this message?"
-#~ msgid_plural "Do you want to permanently delete these messages?"
-#~ msgstr[0] "Anda mau membuang pesan ini secara permanen?"
 
 #~ msgid "Delete"
 #~ msgstr "Hapus"
@@ -779,12 +900,6 @@ msgstr "_Simpan"
 #~ msgid "An error has occurred processing the server's certificate"
 #~ msgstr "Terjadi galat saat memroses sertifikat server"
 
-#~ msgid "Choose a file"
-#~ msgstr "Pilih berkas"
-
-#~ msgid "_Attach"
-#~ msgstr "L_ampiri"
-
 #~ msgid "First Last"
 #~ msgstr "NamaDepan NamaBelakang"
 
@@ -823,9 +938,6 @@ msgstr "_Simpan"
 
 #~ msgid "Remem_ber password"
 #~ msgstr "I_ngat sandi"
-
-#~ msgid "Unable to validate:\n"
-#~ msgstr "Tak dapat mengesahkan:\n"
 
 #~ msgid "        &#8226; Invalid account nickname.\n"
 #~ msgstr "        &#8226; Nama panggilan akun tidak sah.\n"
@@ -916,14 +1028,6 @@ msgstr "_Simpan"
 #~ msgid "KB"
 #~ msgstr "KB"
 
-#~ msgid "%d message"
-#~ msgid_plural "%d messages"
-#~ msgstr[0] "%d pesan"
-
-#~ msgid "%d unread"
-#~ msgid_plural "%d unread"
-#~ msgstr[0] "%d belum dibaca"
-
 #~ msgid "%s, %s"
 #~ msgstr "%s, %s"
 
@@ -1000,15 +1104,6 @@ msgstr "_Simpan"
 #~ msgid_plural "Save All A_ttachments..."
 #~ msgstr[0] "Simpan Semua _Lampiran..."
 
-#~ msgid "Reply to _All"
-#~ msgstr "Balas ke Semu_a"
-
-#~ msgid "_Mark as Read"
-#~ msgstr "Tan_dai sudah Dibaca"
-
-#~ msgid "_Mark as Unread"
-#~ msgstr "Tan_dai belum Dibaca"
-
 #~ msgid "Mark Unread From _Here"
 #~ msgstr "Tandai Belum Dibaca Dari _Sini"
 
@@ -1043,9 +1138,6 @@ msgstr "_Simpan"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "Kirim pesan dengan subjek dan isi kosong?"
-
-#~ msgid "Send message with an empty subject?"
-#~ msgstr "Kirim pesan dengan subjek kosong?"
 
 #~ msgid "Send message with an empty body?"
 #~ msgstr "Kirim pesan tanpa isi?"

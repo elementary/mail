@@ -5,11 +5,12 @@
 #
 # Translators:
 # Hessam.08 <h.shahpouri@yandex.com>, 2013
+#: src/MessageList/MessageListItem.vala:374
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 10:33+0100\n"
+"POT-Creation-Date: 2021-06-02 19:54+0000\n"
 "PO-Revision-Date: 2015-11-24 15:43+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Persian (http://www.transifex.com/projects/p/geary/language/"
@@ -22,45 +23,91 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 "X-Generator: Launchpad (build 18330)\n"
 
-#: src/HeaderBar.vala:38
+#: src/HeaderBar.vala:40
 #, fuzzy
 msgid "Compose new message"
 msgstr "ارسال ایمیل جدید (Ctrl+N, N)"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr ""
 
-#: src/HeaderBar.vala:56
+#: src/HeaderBar.vala:57
 #, fuzzy
 msgid "Always Show Remote Images"
 msgstr "همیشه ارسالی‌های این فرستنده را نشان بده"
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:88
 msgid "Menu"
 msgstr ""
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:95 src/MessageList/MessageListItem.vala:178
 msgid "Reply"
 msgstr ""
 
-#: src/HeaderBar.vala:97
+#: src/HeaderBar.vala:102
 #, fuzzy
 msgid "Reply All"
 msgstr "پاسخ به همه"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:184
 msgid "Forward"
 msgstr ""
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:115
+#, fuzzy
+msgid "Mark as Unread"
+msgstr "نشان گذاری به عنوان خوانده نشده"
+
+#: src/HeaderBar.vala:120
+#, fuzzy
+msgid "Mark as Read"
+msgstr "نشان گذاری به عنوان خوانده شده"
+
+#: src/HeaderBar.vala:125
+#, fuzzy
+msgid "Star"
+msgstr "ستاره دار کردن"
+
+#: src/HeaderBar.vala:130
+#, fuzzy
+msgid "Unstar"
+msgstr "حذف ستاره"
+
+#: src/HeaderBar.vala:142
+#, fuzzy
+msgid "Mark Conversation"
+msgstr "نشان گذاری گفتگوها"
+
+#: src/HeaderBar.vala:149
+#, fuzzy
+msgid "Move conversations to archive"
+msgstr "انتقال گفتگوها"
+
+#: src/HeaderBar.vala:156
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "انتقال گفتگوها"
+
+#: src/MainWindow.vala:72
+#, fuzzy
+#| msgid "All Mail"
+msgid "Mail"
+msgstr "همه‌ی ایمیل‌ها"
+
+#: src/MainWindow.vala:290
+#, fuzzy
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "هیچ گفتگویی انتخاب نشده است."
+
+#: src/MainWindow.vala:302
+msgid "Undo"
+msgstr ""
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -75,121 +122,191 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "حساب ها"
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
+msgid "From:"
+msgstr "از:"
+
+#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "به:"
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "موضوع:"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:122
 #, fuzzy
 msgid "Cc"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:87
+#: src/Composer/ComposerWidget.vala:124
 #, fuzzy
 msgid "Bcc"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:131
+#: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:147
 msgid "Bcc:"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:187
 msgid "Bold"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:193
 msgid "Italic"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:199
 msgid "Underline"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:205
 msgid "Strikethrough"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:218
 msgid "Quote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:221
 msgid "Unquote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:230 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:233
 msgid "Insert Image"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:236
 msgid "Remove formatting"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:269
 msgid "Delete draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:234
+#: src/Composer/ComposerWidget.vala:274
 msgid "Attach file"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:280
 msgid "Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:420
+msgid "Choose a file"
+msgstr "یک فایل را انتخاب کنید"
+
+#: src/Composer/ComposerWidget.vala:423
+#, fuzzy
+#| msgid "_Attach"
+msgid "Attach"
+msgstr "پیوست"
+
+#: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:574
+#: src/Dialogs/InsertLinkDialog.vala:61
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Cancel"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:488
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %b %-e, %Y at %-l:%M %p"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:518
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "در %1$s, %2$s نوشته بود:"
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:522
 msgid "---------- Forwarded message ----------"
 msgstr "---------- پیام ارسال مجدد شده ----------"
 
-#: src/Composer/ComposerWidget.vala:385
+#: src/Composer/ComposerWidget.vala:524
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "از: %s\n"
 
-#: src/Composer/ComposerWidget.vala:386
+#: src/Composer/ComposerWidget.vala:525
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "موضوع: %s\n"
 
-#: src/Composer/ComposerWidget.vala:387
+#: src/Composer/ComposerWidget.vala:526
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "تاریخ: %s\n"
 
-#: src/Composer/ComposerWidget.vala:388
+#: src/Composer/ComposerWidget.vala:527
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "به: %s\n"
 
-#: src/Composer/ComposerWidget.vala:390
+#: src/Composer/ComposerWidget.vala:529
 #, fuzzy, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s\n"
 
-#: src/Composer/ComposerWindow.vala:25
+#: src/Composer/ComposerWidget.vala:567
+msgid "Permanently delete this draft?"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:568
+msgid ""
+"You cannot undo this action, nor recover your draft once it has been deleted."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:576
+#, fuzzy
+#| msgid "Edit Draft"
+msgid "Delete Draft"
+msgstr "ویرایش چرک نویس"
+
+#: src/Composer/ComposerWidget.vala:593
+#, fuzzy
+msgid "Send Message With an Empty Subject?"
+msgstr "ایمیل، بدون موضوع ارسال شود؟"
+
+#: src/Composer/ComposerWidget.vala:594
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:600
+msgid "Don't Send"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:602
+msgid "Send Anyway"
+msgstr ""
+
+#: src/Composer/ComposerWindow.vala:45 src/Composer/ComposerWindow.vala:56
 msgid "New Message"
 msgstr "ارسال ایمیل جدید"
+
+#: src/ConversationList/ConversationListItem.vala:102
+#, fuzzy
+msgid "Unread"
+msgstr "%d خوانده نشده"
+
+#: src/ConversationList/ConversationListItem.vala:112
+#, fuzzy
+msgid "Replied"
+msgstr "جایگذاری"
+
+#: src/ConversationList/ConversationListItem.vala:116
+#, fuzzy
+msgid "Forwarded"
+msgstr "ارسال مجدد"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -207,29 +324,41 @@ msgstr ""
 msgid "Example Website"
 msgstr ""
 
-#: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
-msgid "Cancel"
-msgstr ""
-
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
 msgstr ""
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
+msgstr ""
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgid "Inbox"
+msgstr "صندوق ورودی"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "بایگانی"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "ایمیل‌های ارسال شده"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
 msgstr ""
 
 #: src/MessageList/MessageListBox.vala:32
@@ -237,25 +366,60 @@ msgstr ""
 msgid "No Message Selected"
 msgstr "هیچ گفتگویی انتخاب نشده است."
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "از:"
+#: src/MessageList/MessageListItem.vala:168
+#: src/MessageList/MessageListItem.vala:325
+#, fuzzy
+msgid "Unstar message"
+msgstr "%d پیام"
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:171
+#: src/MessageList/MessageListItem.vala:321
+#, fuzzy
+msgid "Star message"
+msgstr "%d پیام"
+
+#: src/MessageList/MessageListItem.vala:181
+#, fuzzy
+#| msgid "Reply to _All"
+msgid "Reply to All"
+msgstr "پاسخ به همه"
+
+#: src/MessageList/MessageListItem.vala:187
+msgid "Print…"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:201
+msgid "More"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:237
 msgid "Show Images"
 msgstr "نمایش تصاویر"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:238
 msgid "Always Show from Sender"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:243
 msgid "This message contains remote images."
 msgstr "این ایمیل حاوی عکس‌هایی در سرورهای دیگر است."
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:275
 msgid "This message contains one or more attachments"
 msgstr ""
+
+#. / Translators: This is the default file name of a printed email
+#: src/MessageList/MessageListItem.vala:351
+#, fuzzy
+#| msgid "New Message"
+msgid "Email Message"
+msgstr "ارسال ایمیل جدید"
+
+#: src/MessageList/MessageListItem.vala:373
+#, fuzzy
+#| msgid "Unable to validate:\n"
+msgid "Unable to print email"
+msgstr "قادر به اعتبار سنجی نیست:\n"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
@@ -274,23 +438,14 @@ msgstr ""
 msgid "Save"
 msgstr "ذخیره"
 
-#~ msgid "Inbox"
-#~ msgstr "صندوق ورودی"
-
 #~ msgid "Drafts"
 #~ msgstr "چرک نویس‌ها"
-
-#~ msgid "Sent Mail"
-#~ msgstr "ایمیل‌های ارسال شده"
 
 #~ msgid "Starred"
 #~ msgstr "ستاره دار"
 
 #~ msgid "Important"
 #~ msgstr "با اهمیت"
-
-#~ msgid "All Mail"
-#~ msgstr "همه‌ی ایمیل‌ها"
 
 #~ msgid "Spam"
 #~ msgstr "هرزنامه"
@@ -303,9 +458,6 @@ msgstr "ذخیره"
 
 #~ msgid "Search"
 #~ msgstr "جستجو"
-
-#~ msgid "Archive"
-#~ msgstr "بایگانی"
 
 #~ msgid "None"
 #~ msgstr "هیچکدام"
@@ -349,9 +501,6 @@ msgstr "ذخیره"
 #~ msgid "Mark as not S_pam"
 #~ msgstr "نشان گذاری به عنوان غیر هرزنامه"
 
-#~ msgid "Mark conversations"
-#~ msgstr "نشان گذاری گفتگوها"
-
 #~ msgid "Add label to conversations"
 #~ msgstr "افزودن برچسب به گفتگوها"
 
@@ -379,12 +528,6 @@ msgstr "ذخیره"
 #~ msgid "Mark as _Unread"
 #~ msgstr "نشان گذاری به عنوان خوانده نشده"
 
-#~ msgid "_Star"
-#~ msgstr "ستاره دار کردن"
-
-#~ msgid "U_nstar"
-#~ msgstr "حذف ستاره"
-
 #~ msgid "Add label"
 #~ msgstr "افزودن برچسب"
 
@@ -402,9 +545,6 @@ msgstr "ذخیره"
 
 #~ msgid "Reply all (Ctrl+Shift+R, Shift+R)"
 #~ msgstr "پاسخ دادن به همه (Ctrl+Shift+R, Shift+R)"
-
-#~ msgid "_Forward"
-#~ msgstr "ارسال مجدد"
 
 #~ msgid "Forward (Ctrl+L, F)"
 #~ msgstr "ارسال مجدد به دیگری (Ctrl+L, F)"
@@ -560,9 +700,6 @@ msgstr "ذخیره"
 #~ "این فایل در « %s » وجود دارد. نوشت بر روی آن باعث بازنویسی محتوای آن "
 #~ "خواهد شد."
 
-#~ msgid "_Replace"
-#~ msgstr "جایگذاری"
-
 #~ msgid "Output debugging information"
 #~ msgstr "اطلاعات رفع عیب خروجی"
 
@@ -629,12 +766,6 @@ msgstr "ذخیره"
 #~ msgid "Me"
 #~ msgstr "من"
 
-#~ msgid "Choose a file"
-#~ msgstr "یک فایل را انتخاب کنید"
-
-#~ msgid "_Attach"
-#~ msgstr "پیوست"
-
 #~ msgid "First Last"
 #~ msgstr "نام و نام خانوادگی"
 
@@ -667,9 +798,6 @@ msgstr "ذخیره"
 
 #~ msgid "Remem_ber password"
 #~ msgstr "یادآوری کلمه‌ی عبور"
-
-#~ msgid "Unable to validate:\n"
-#~ msgstr "قادر به اعتبار سنجی نیست:\n"
 
 #~ msgid "        &#8226; Invalid account nickname.\n"
 #~ msgstr "        &#8226; لقب (Nickname) نادرست برای حساب کاربری.\n"
@@ -752,14 +880,6 @@ msgstr "ذخیره"
 #~ msgid "KB"
 #~ msgstr "کیلوبایت"
 
-#~ msgid "%d message"
-#~ msgid_plural "%d messages"
-#~ msgstr[0] "%d پیام"
-
-#~ msgid "%d unread"
-#~ msgid_plural "%d unread"
-#~ msgstr[0] "%d خوانده نشده"
-
 #~ msgid "%s, %s"
 #~ msgstr "%s / %s"
 
@@ -774,9 +894,6 @@ msgstr "ذخیره"
 
 #~ msgid "No conversations in folder."
 #~ msgstr "هیچ گفتگویی در این پوشه نیست."
-
-#~ msgid "Edit Draft"
-#~ msgstr "ویرایش چرک نویس"
 
 #~ msgid "Date:"
 #~ msgstr "تاریخ:"
@@ -821,15 +938,6 @@ msgstr "ذخیره"
 #~ msgid_plural "Save All A_ttachments..."
 #~ msgstr[0] "ذخیره همه پیوست‌ها..."
 
-#~ msgid "Reply to _All"
-#~ msgstr "پاسخ به همه"
-
-#~ msgid "_Mark as Read"
-#~ msgstr "نشان گذاری به عنوان خوانده شده"
-
-#~ msgid "_Mark as Unread"
-#~ msgstr "نشان گذاری به عنوان خوانده نشده"
-
 #~ msgid "Mark Unread From _Here"
 #~ msgstr "نشان گذاری به عنوان خوانده نشده از اینجا"
 
@@ -856,9 +964,6 @@ msgstr "ذخیره"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "ایمیل، بدون موضوع و متن ارسال شود؟"
-
-#~ msgid "Send message with an empty subject?"
-#~ msgstr "ایمیل، بدون موضوع ارسال شود؟"
 
 #~ msgid "Send message with an empty body?"
 #~ msgstr "ایمیل، بدون متن ارسال شود؟"

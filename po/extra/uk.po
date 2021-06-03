@@ -7,16 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 07:10+0100\n"
-"PO-Revision-Date: 2016-09-18 09:12+0000\n"
-"Last-Translator: neiron13 <Unknown>\n"
-"Language-Team: Ukrainian <uk@li.org>\n"
+"POT-Creation-Date: 2019-06-26 22:43+0200\n"
+"PO-Revision-Date: 2020-09-13 18:14+0000\n"
+"Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/extra/uk/>"
+"\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
 
 #: data/io.elementary.mail.appdata.xml.in:8
 #: data/io.elementary.mail.desktop.in:3
@@ -26,7 +29,7 @@ msgstr "Пошта"
 #: data/io.elementary.mail.appdata.xml.in:9
 #: data/io.elementary.mail.desktop.in:4
 msgid "Send and receive mail"
-msgstr ""
+msgstr "Надсилайте та отримуйте пошту"
 
 #: data/io.elementary.mail.appdata.xml.in:11
 msgid ""
@@ -34,48 +37,61 @@ msgid ""
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
 msgstr ""
+"Пошта призначена для швидкого та легкого керування електронною поштою. Її "
+"інтерфейс засновано на розмовах, тому ви можете прочитати цілу дискусію, не "
+"натискаючи повідомлення за повідомленням."
 
 #: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
-msgstr ""
+msgstr "Легкий поштовий клієнт, що повністю підтримує IMAP"
 
 #: data/io.elementary.mail.appdata.xml.in:14
 msgid "Mail grouped into conversations, not a tree of threads"
-msgstr ""
+msgstr "Пошту згруповано в розмови, а не дерево ланцюжків"
 
 #: data/io.elementary.mail.appdata.xml.in:15
 msgid "As-you-type searching"
-msgstr ""
+msgstr "Пошук під час введення"
 
 #: data/io.elementary.mail.appdata.xml.in:16
 msgid "Desktop notifications"
-msgstr ""
+msgstr "Стільничні сповіщення"
 
 #: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
-msgstr ""
+msgstr "Підтримка кількох облікових записів"
 
 #: data/io.elementary.mail.appdata.xml.in:18
 msgid "Inline HTML composer that saves drafts to the server"
-msgstr ""
+msgstr "Вбудований редактор HTML, що зберігає чернетки на сервері"
 
 #: data/io.elementary.mail.appdata.xml.in:19
 msgid ""
 "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
 "IMAP servers"
 msgstr ""
+"Працює з Gmail, Yahoo! Mail, Outlook.com (експериментально) та іншими "
+"популярними серверами IMAP"
+
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Minor bug fixes"
+msgstr "Виправлено незначні помилки"
+
+#: data/io.elementary.mail.appdata.xml.in:30
+msgid "Translation updates"
+msgstr "Оновлено переклади"
 
 #: data/io.elementary.mail.appdata.xml.in:69
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/io.elementary.mail.desktop.in:6
 msgid "internet-mail"
-msgstr ""
+msgstr "internet-mail"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
-msgstr ""
+msgstr "Email;E-mail;Mail;Пошта;Лист;"
 
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"

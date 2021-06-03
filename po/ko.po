@@ -3,58 +3,97 @@
 # This file is distributed under the same license as the pantheon-mail package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
 #
+#: src/MessageList/MessageListItem.vala:374
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 10:33+0100\n"
-"PO-Revision-Date: 2019-01-12 13:44+0000\n"
+"POT-Creation-Date: 2021-06-02 19:54+0000\n"
+"PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
-"Language-Team: Korean <https://weblate.elementary.io/projects/mail/mail/ko/>"
-"\n"
+"Language-Team: Korean <https://l10n.elementary.io/projects/mail/mail/ko/>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:38
+#: src/HeaderBar.vala:40
 msgid "Compose new message"
 msgstr "새 편지 쓰기"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr "편지 검색"
 
-#: src/HeaderBar.vala:56
+#: src/HeaderBar.vala:57
 msgid "Always Show Remote Images"
 msgstr "원격 이미지 항상 표시"
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
 msgstr "계정 설정…"
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:88
 msgid "Menu"
 msgstr "메뉴"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:95 src/MessageList/MessageListItem.vala:178
 msgid "Reply"
 msgstr "답장"
 
-#: src/HeaderBar.vala:97
+#: src/HeaderBar.vala:102
 msgid "Reply All"
 msgstr "전체 답장"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:184
 msgid "Forward"
 msgstr "전달"
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:115
+msgid "Mark as Unread"
+msgstr "읽지 않음으로 표시"
+
+#: src/HeaderBar.vala:120
+msgid "Mark as Read"
+msgstr "읽음으로 표시"
+
+#: src/HeaderBar.vala:125
+msgid "Star"
+msgstr "별표 표시"
+
+#: src/HeaderBar.vala:130
+msgid "Unstar"
+msgstr "별표 취소"
+
+#: src/HeaderBar.vala:142
+msgid "Mark Conversation"
+msgstr "표시하기"
+
+#: src/HeaderBar.vala:149
+#, fuzzy
+#| msgid "Move conversations to Trash"
+msgid "Move conversations to archive"
+msgstr "휴지통으로 보내기"
+
+#: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
 msgstr "휴지통으로 보내기"
+
+#: src/MainWindow.vala:72
+msgid "Mail"
+msgstr "메일"
+
+#: src/MainWindow.vala:290
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "지워진 메시지"
+
+#: src/MainWindow.vala:302
+msgid "Undo"
+msgstr "실행 취소"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -68,119 +107,190 @@ msgstr "메일은 시스템 설정에 있는 이메일 계정을 사용합니다
 msgid "Online Accounts…"
 msgstr "온라인 계정…"
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
+msgid "From:"
+msgstr "보내는 사람:"
+
+#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "받는 사람:"
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "제목:"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:122
 msgid "Cc"
 msgstr "함께 받는 사람"
 
-#: src/Composer/ComposerWidget.vala:87
+#: src/Composer/ComposerWidget.vala:124
 msgid "Bcc"
 msgstr "숨겨 받는 사람"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:131
+#: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr "함께 받는 사람:"
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:147
 msgid "Bcc:"
 msgstr "숨겨 받는 사람:"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:187
 msgid "Bold"
 msgstr "볼드"
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:193
 msgid "Italic"
 msgstr "이탤릭"
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:199
 msgid "Underline"
 msgstr "밑줄"
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:205
 msgid "Strikethrough"
 msgstr "가운데 줄긋기"
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:218
 msgid "Quote text"
 msgstr "텍스트 인용"
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:221
 msgid "Unquote text"
 msgstr "텍스트 인용 끝"
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:230 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "링크 삽입"
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:233
 msgid "Insert Image"
 msgstr "이미지 삽입"
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:236
 msgid "Remove formatting"
 msgstr "서식 제거"
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:269
 msgid "Delete draft"
 msgstr "쓰던 편지 지우기"
 
-#: src/Composer/ComposerWidget.vala:234
+#: src/Composer/ComposerWidget.vala:274
 msgid "Attach file"
 msgstr "파일 첨부"
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:280
 msgid "Send"
 msgstr "보내기"
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:420
+msgid "Choose a file"
+msgstr "파일을 선택하세요"
+
+#: src/Composer/ComposerWidget.vala:423
+#, fuzzy
+#| msgid "_Attach"
+msgid "Attach"
+msgstr "첨부(_A)"
+
+#: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:574
+#: src/Dialogs/InsertLinkDialog.vala:61
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Cancel"
+msgstr "취소"
+
+#: src/Composer/ComposerWidget.vala:488
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%Y년 %a, %b %-e일, %p %-l:%M"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:518
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s 에, %2$s 작성:"
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:522
 msgid "---------- Forwarded message ----------"
 msgstr "전달 내용"
 
-#: src/Composer/ComposerWidget.vala:385
+#: src/Composer/ComposerWidget.vala:524
 #, c-format
 msgid "From: %s<br/>"
 msgstr "보내는 사람: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:386
+#: src/Composer/ComposerWidget.vala:525
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "제목: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:387
+#: src/Composer/ComposerWidget.vala:526
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "날짜: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:388
+#: src/Composer/ComposerWidget.vala:527
 #, c-format
 msgid "To: %s<br/>"
 msgstr "받는 사람: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:390
+#: src/Composer/ComposerWidget.vala:529
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "함께 받는 사람: %s<br/>"
 
-#: src/Composer/ComposerWindow.vala:25
+#: src/Composer/ComposerWidget.vala:567
+#, fuzzy
+#| msgid "Do you want to permanently delete this message?"
+#| msgid_plural "Do you want to permanently delete these messages?"
+msgid "Permanently delete this draft?"
+msgstr "이 편지를 완전히 지우시겠습니까?"
+
+#: src/Composer/ComposerWidget.vala:568
+msgid ""
+"You cannot undo this action, nor recover your draft once it has been deleted."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:576
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete Draft"
+msgstr "쓰던 편지 지우기"
+
+#: src/Composer/ComposerWidget.vala:593
+msgid "Send Message With an Empty Subject?"
+msgstr "제목 없이 편지를 보낼까요?"
+
+#: src/Composer/ComposerWidget.vala:594
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+"제목 없이 보내는 메일입니다. 받는 사람은 메시지의 범위 또는 중요성을 가늠할 "
+"수 없습니다."
+
+#: src/Composer/ComposerWidget.vala:600
+msgid "Don't Send"
+msgstr "보내지 마세요"
+
+#: src/Composer/ComposerWidget.vala:602
+msgid "Send Anyway"
+msgstr "그래도 보내기"
+
+#: src/Composer/ComposerWindow.vala:45 src/Composer/ComposerWindow.vala:56
 msgid "New Message"
 msgstr "새 편지"
+
+#: src/ConversationList/ConversationListItem.vala:102
+msgid "Unread"
+msgstr "읽지 않음"
+
+#: src/ConversationList/ConversationListItem.vala:112
+msgid "Replied"
+msgstr "답장함"
+
+#: src/ConversationList/ConversationListItem.vala:116
+msgid "Forwarded"
+msgstr "전달함"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -198,18 +308,12 @@ msgstr "링크 텍스트:"
 msgid "Example Website"
 msgstr "예제 웹 사이트"
 
-#: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
-msgid "Cancel"
-msgstr "취소"
-
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
 msgstr "정말 %s를 여시겠습니까?"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -217,37 +321,88 @@ msgstr ""
 "열린 첨부 파일은 시스템에 손상을 입힐 수 있습니다. 믿을 만한 곳에서 온 것만 "
 "여시길 바랍니다."
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr "그래도 열기"
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "폴더 새로 고침"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgid "Inbox"
+msgstr "받은 편지함"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "편지 보관함"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "보낸 편지함"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "모든 편지함"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr "선택한 메시지 없음"
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "보내는 사람:"
+#: src/MessageList/MessageListItem.vala:168
+#: src/MessageList/MessageListItem.vala:325
+msgid "Unstar message"
+msgstr "별표 취소"
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:171
+#: src/MessageList/MessageListItem.vala:321
+msgid "Star message"
+msgstr "별표 표시"
+
+#: src/MessageList/MessageListItem.vala:181
+msgid "Reply to All"
+msgstr "모두에게 답장"
+
+#: src/MessageList/MessageListItem.vala:187
+msgid "Print…"
+msgstr "인쇄…"
+
+#: src/MessageList/MessageListItem.vala:201
+msgid "More"
+msgstr "더 보기"
+
+#: src/MessageList/MessageListItem.vala:237
 msgid "Show Images"
 msgstr "이미지 표시"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:238
 msgid "Always Show from Sender"
 msgstr "보낸 사람 항상 표시"
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:243
 msgid "This message contains remote images."
 msgstr "이 편지는 원격 이미지를 포함하고 있습니다."
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:275
 msgid "This message contains one or more attachments"
 msgstr "이 편지에는 첨부파일이 포함되어 있습니다"
+
+#. / Translators: This is the default file name of a printed email
+#: src/MessageList/MessageListItem.vala:351
+#, fuzzy
+#| msgid "New Message"
+msgid "Email Message"
+msgstr "새 편지"
+
+#: src/MessageList/MessageListItem.vala:373
+#, fuzzy
+#| msgid "Unable to validate:\n"
+msgid "Unable to print email"
+msgstr "유효한지 확인할 수 없습니다:\n"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
@@ -284,23 +439,14 @@ msgstr "저장"
 #~ msgid "Archive | Archives"
 #~ msgstr "편지 보관함 | 편지 보관함"
 
-#~ msgid "Inbox"
-#~ msgstr "받은 편지함"
-
 #~ msgid "Drafts"
 #~ msgstr "임시 보관함"
-
-#~ msgid "Sent Mail"
-#~ msgstr "보낸 편지함"
 
 #~ msgid "Starred"
 #~ msgstr "별표 편지함"
 
 #~ msgid "Important"
 #~ msgstr "중요 편지함"
-
-#~ msgid "All Mail"
-#~ msgstr "모든 편지함"
 
 #~ msgid "Spam"
 #~ msgstr "스팸 메일함"
@@ -313,9 +459,6 @@ msgstr "저장"
 
 #~ msgid "Search"
 #~ msgstr "검색"
-
-#~ msgid "Archive"
-#~ msgstr "편지 보관함"
 
 #~ msgid "None"
 #~ msgstr "없음"
@@ -415,10 +558,6 @@ msgstr "저장"
 #~ msgid "Mark as not S_pam"
 #~ msgstr "스팸 아님으로  표시(_P)"
 
-#~ msgid "Mark conversation"
-#~ msgid_plural "Mark conversations"
-#~ msgstr[0] "표시하기"
-
 #~ msgid "Mark conversations"
 #~ msgstr "표시하기"
 
@@ -456,12 +595,6 @@ msgstr "저장"
 
 #~ msgid "Mark as _Unread"
 #~ msgstr "읽지 않음으로 표시(_R)"
-
-#~ msgid "_Star"
-#~ msgstr "별표 표시(_S)"
-
-#~ msgid "U_nstar"
-#~ msgstr "별표 취소(_N)"
 
 #~ msgid "Add label"
 #~ msgstr "라벨 추가"
@@ -688,10 +821,6 @@ msgstr "저장"
 #~ msgid "Error emptying %s"
 #~ msgstr "%s 비우기 오류 발생"
 
-#~ msgid "Do you want to permanently delete this message?"
-#~ msgid_plural "Do you want to permanently delete these messages?"
-#~ msgstr[0] "이 편지를 완전히 지우시겠습니까?"
-
 #~ msgid "Delete"
 #~ msgstr "지우기"
 
@@ -844,12 +973,6 @@ msgstr "저장"
 #~ msgid "Geary requires your email password to continue"
 #~ msgstr "계속하려면 기어리에 여러분의 이메일 비밀번호가 필요합니다"
 
-#~ msgid "Choose a file"
-#~ msgstr "파일을 선택하세요"
-
-#~ msgid "_Attach"
-#~ msgstr "첨부(_A)"
-
 #~ msgid "Additional addresses for %s"
 #~ msgstr "%s용 추가 주소"
 
@@ -897,9 +1020,6 @@ msgstr "저장"
 
 #~ msgid "Remem_ber password"
 #~ msgstr "비밀 번호 저장(_B)"
-
-#~ msgid "Unable to validate:\n"
-#~ msgstr "유효한지 확인할 수 없습니다:\n"
 
 #~ msgid "        &#8226; Invalid account nickname.\n"
 #~ msgstr "        &#8226; 사용자 계정 닉네임이 다릅니다.\n"
@@ -993,10 +1113,6 @@ msgstr "저장"
 #~ msgid "%d message"
 #~ msgid_plural "%d messages"
 #~ msgstr[0] "%d개의 편지"
-
-#~ msgid "%d unread"
-#~ msgid_plural "%d unread"
-#~ msgstr[0] "%d개 읽지 않음"
 
 #~ msgid "%s, %s"
 #~ msgstr "%s, %s"
@@ -1122,9 +1238,6 @@ msgstr "저장"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "제목과 내용 없이 편지를 보낼까요?"
-
-#~ msgid "Send message with an empty subject?"
-#~ msgstr "제목 없이 편지를 보낼까요?"
 
 #~ msgid "Send message with an empty body?"
 #~ msgstr "내용 없이 편지를 보낼까요?"
@@ -1323,9 +1436,6 @@ msgstr "저장"
 
 #~ msgid "Please wait while Geary validates your account."
 #~ msgstr "기어리가 계정을 확인하는 동안 기다려 주세요."
-
-#~ msgid "_Undo"
-#~ msgstr "실행 취소(_U)"
 
 #~ msgid "_Redo"
 #~ msgstr "다시 실행(_R)"
@@ -1736,18 +1846,6 @@ msgstr "저장"
 #~ msgid "Save All Attachments…"
 #~ msgstr "모든 첨부 파일 저장…"
 
-#~ msgid "Reply to All"
-#~ msgstr "모두에게 답장"
-
-#~ msgid "Mark as Unread"
-#~ msgstr "읽지 않음으로 표시"
-
-#~ msgid "Mark as Read"
-#~ msgstr "읽음으로 표시"
-
-#~ msgid "Print…"
-#~ msgstr "인쇄…"
-
 #~ msgid "View Source"
 #~ msgstr "소스 보기"
 
@@ -1771,15 +1869,6 @@ msgstr "저장"
 #~ msgstr ""
 #~ "답장-하지마시오;답장_하지마시오;답장하지마시오;답장-하지-마시오;답장_하지_"
 #~ "마시오;답장하지마시오"
-
-#~ msgid "Star message"
-#~ msgstr "별표 표시"
-
-#~ msgid "Unstar message"
-#~ msgstr "별표 취소"
-
-#~ msgid "More"
-#~ msgstr "더 보기"
 
 #~ msgid "Include original attachments"
 #~ msgstr "원본 파일 포함"
@@ -1810,9 +1899,6 @@ msgstr "저장"
 
 #~ msgid ", "
 #~ msgstr ", "
-
-#~ msgid "Mail"
-#~ msgstr "메일"
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "가운데 줄 긋기 (Ctrl+%)"

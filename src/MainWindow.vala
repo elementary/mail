@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.MainWindow : Gtk.ApplicationWindow {
+public class Mail.MainWindow : Hdy.ApplicationWindow {
     private HeaderBar headerbar;
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
@@ -43,34 +43,39 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
     public const string ACTION_MARK_STAR = "mark-star";
     public const string ACTION_MARK_UNREAD = "mark-unread";
     public const string ACTION_MARK_UNSTAR = "mark-unstar";
+    public const string ACTION_ARCHIVE = "archive";
     public const string ACTION_MOVE_TO_TRASH = "trash";
     public const string ACTION_FULLSCREEN = "full-screen";
 
     private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
-    private const ActionEntry[] action_entries = {
-        {ACTION_COMPOSE_MESSAGE,    on_compose_message   },
-        {ACTION_REPLY,              on_reply             },
-        {ACTION_REPLY_ALL,          on_reply_all         },
-        {ACTION_FORWARD,            on_forward           },
-        {ACTION_MARK_READ,          on_mark_read         },
-        {ACTION_MARK_STAR,          on_mark_star         },
-        {ACTION_MARK_UNREAD,        on_mark_unread       },
-        {ACTION_MARK_UNSTAR,        on_mark_unstar       },
-        {ACTION_MOVE_TO_TRASH,      on_move_to_trash     },
-        {ACTION_FULLSCREEN,         on_fullscreen        },
+    private const ActionEntry[] ACTION_ENTRIES = {
+        {ACTION_COMPOSE_MESSAGE, on_compose_message },
+        {ACTION_REPLY, on_reply },
+        {ACTION_REPLY_ALL, on_reply_all },
+        {ACTION_FORWARD, on_forward },
+        {ACTION_MARK_READ, on_mark_read },
+        {ACTION_MARK_STAR, on_mark_star },
+        {ACTION_MARK_UNREAD, on_mark_unread },
+        {ACTION_MARK_UNSTAR, on_mark_unstar },
+        {ACTION_ARCHIVE, on_archive },
+        {ACTION_MOVE_TO_TRASH, on_move_to_trash },
+        {ACTION_FULLSCREEN, on_fullscreen },
     };
 
     public MainWindow (Gtk.Application application) {
         Object (
             application: application,
             height_request: 600,
-            icon_name: "internet-mail",
-            width_request: 800
+            icon_name: "io.elementary.mail",
+            width_request: 800,
+            title: _("Mail")
         );
     }
 
     static construct {
+        Hdy.init ();
+
         action_accelerators[ACTION_COMPOSE_MESSAGE] = "<Control>N";
         action_accelerators[ACTION_REPLY] = "<Control>R";
         action_accelerators[ACTION_REPLY_ALL] = "<Control><Shift>R";
@@ -79,13 +84,15 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         action_accelerators[ACTION_MARK_STAR] = "<Ctrl>l";
         action_accelerators[ACTION_MARK_UNREAD] = "<Ctrl><Shift>u";
         action_accelerators[ACTION_MARK_UNSTAR] = "<Ctrl><Shift>l";
+        action_accelerators[ACTION_ARCHIVE] = "<Ctrl><Shift>a";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "Delete";
         action_accelerators[ACTION_MOVE_TO_TRASH] = "BackSpace";
         action_accelerators[ACTION_FULLSCREEN] = "F11";
     }
 
     construct {
-        add_action_entries (action_entries, this);
+        add_action_entries (ACTION_ENTRIES, this);
+        get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
 
         foreach (var action in action_accelerators.get_keys ()) {
             ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
@@ -95,16 +102,32 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         }
 
         headerbar = new HeaderBar ();
-        set_titlebar (headerbar);
 
         folders_list_view = new FoldersListView ();
         conversation_list_box = new ConversationListBox ();
+
+        // Disable delete accelerators when the conversation list box loses keyboard focus,
+        // restore them when it returns
+        conversation_list_box.set_focus_child.connect ((widget) => {
+            if (widget == null) {
+                ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
+                    ACTION_PREFIX + ACTION_MOVE_TO_TRASH,
+                    {}
+                );
+            } else {
+                ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
+                    ACTION_PREFIX + ACTION_MOVE_TO_TRASH,
+                    action_accelerators[ACTION_MOVE_TO_TRASH].to_array ()
+                );
+            }
+        });
 
         message_list_box = new MessageListBox ();
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY_ALL), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-reply", get_action (ACTION_FORWARD), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-move-thread", get_action (ACTION_MOVE_TO_TRASH), "enabled", BindingFlags.SYNC_CREATE);
+        message_list_box.bind_property ("can-move-thread", get_action (ACTION_ARCHIVE), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-move-thread", headerbar, "can-mark", BindingFlags.SYNC_CREATE);
 
         conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
@@ -124,7 +147,7 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
             ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
         }
 
-        var view_overlay = new Gtk.Overlay();
+        var view_overlay = new Gtk.Overlay ();
         view_overlay.add (message_list_scrolled);
         var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
         message_overlay.no_show_all = true;
@@ -155,7 +178,9 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
         placeholder_stack.add_named (welcome_view, "welcome");
 
         container_grid = new Gtk.Grid ();
-        container_grid.attach (placeholder_stack, 0, 1, 1, 1);
+        container_grid.attach (headerbar, 0, 0);
+        container_grid.attach (placeholder_stack, 0, 1);
+
         add (container_grid);
 
         var settings = new GLib.Settings ("io.elementary.mail");
@@ -164,8 +189,8 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
         destroy.connect (() => destroy ());
 
-        folders_list_view.folder_selected.connect ((account, folder_name) => {
-            conversation_list_box.load_folder.begin (account, folder_name);
+        folders_list_view.folder_selected.connect ((folder_full_name_per_account) => {
+            conversation_list_box.load_folder.begin (folder_full_name_per_account);
         });
 
         conversation_list_box.conversation_selected.connect ((node) => {
@@ -184,9 +209,23 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
             headerbar.set_paned_positions (paned_start.position, paned_end.position);
         });
 
+        headerbar.search_entry.search_changed.connect (() => {
+            conversation_list_box.search (headerbar.search_entry.text);
+        });
+
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
         session.account_added.connect (() => {
             placeholder_stack.visible_child = paned_end;
+            get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
+            headerbar.can_search = true;
+        });
+
+        session.account_removed.connect (() => {
+            var accounts_left = session.get_accounts ();
+            if (accounts_left.size == 0) {
+                get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
+                headerbar.can_search = false;
+            }
         });
 
         session.start.begin ();
@@ -226,56 +265,62 @@ public class Mail.MainWindow : Gtk.ApplicationWindow {
 
     private void on_reply () {
         scroll_message_list_to_bottom ();
-        message_list_box.add_inline_composer (ComposerWidget.Type.REPLY);
+        message_list_box.add_inline_composer.begin (ComposerWidget.Type.REPLY);
     }
 
     private void on_reply_all () {
         scroll_message_list_to_bottom ();
-        message_list_box.add_inline_composer (ComposerWidget.Type.REPLY_ALL);
+        message_list_box.add_inline_composer.begin (ComposerWidget.Type.REPLY_ALL);
     }
 
     private void on_forward () {
         scroll_message_list_to_bottom ();
-        message_list_box.add_inline_composer (ComposerWidget.Type.FORWARD);
+        message_list_box.add_inline_composer.begin (ComposerWidget.Type.FORWARD);
+    }
+
+    private void on_archive () {
+        conversation_list_box.archive_selected_messages.begin ((obj, res) => {
+            conversation_list_box.archive_selected_messages.end (res);
+        });
     }
 
     private void on_move_to_trash () {
         var result = conversation_list_box.trash_selected_messages ();
         if (result > 0) {
-            foreach (weak Gtk.Widget child in conversation_list_overlay.get_children ()) {
-                if (child != conversation_list_scrolled) {
-                    child.destroy ();
-                }
-            }
-
-            var toast = new Granite.Widgets.Toast (ngettext("Message Deleted", "Messages Deleted", result));
-            toast.set_default_action (_("Undo"));
-            toast.show_all ();
-
-            toast.default_action.connect (() => {
-                conversation_list_box.undo_trash ();
-            });
-
-            toast.notify["child-revealed"].connect (() => {
-                if (!toast.child_revealed) {
-                    conversation_list_box.undo_expired ();
-                }
-            });
-
-            conversation_list_overlay.add_overlay (toast);
-            toast.send_notification ();
+            send_move_toast (ngettext ("Message Deleted", "Messages Deleted", result));
         }
     }
 
+    private void send_move_toast (string message) {
+        foreach (weak Gtk.Widget child in conversation_list_overlay.get_children ()) {
+            if (child != conversation_list_scrolled) {
+                child.destroy ();
+            }
+        }
+
+        var toast = new Granite.Widgets.Toast (message);
+        toast.set_default_action (_("Undo"));
+        toast.show_all ();
+
+        toast.default_action.connect (() => {
+            conversation_list_box.undo_move ();
+        });
+
+        toast.notify["child-revealed"].connect (() => {
+            if (!toast.child_revealed) {
+                conversation_list_box.undo_expired ();
+            }
+        });
+
+        conversation_list_overlay.add_overlay (toast);
+        toast.send_notification ();
+    }
+
     private void on_fullscreen () {
-		if (Gdk.WindowState.FULLSCREEN in get_window ().get_state ()) {
-            container_grid.remove (headerbar);
-            set_titlebar (headerbar);
+        if (Gdk.WindowState.FULLSCREEN in get_window ().get_state ()) {
             headerbar.show_close_button = true;
             unfullscreen ();
         } else {
-            remove (headerbar);
-            container_grid.attach (headerbar, 0, 0, 1, 1);
             headerbar.show_close_button = false;
             fullscreen ();
         }

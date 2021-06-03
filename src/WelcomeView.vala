@@ -24,7 +24,7 @@ public class Mail.WelcomeView : Gtk.Grid {
         orientation = Gtk.Orientation.VERTICAL;
 
         var welcome_icon = new Gtk.Image ();
-        welcome_icon.icon_name = "internet-mail";
+        welcome_icon.icon_name = "io.elementary.mail";
         welcome_icon.margin_bottom = 6;
         welcome_icon.margin_end = 12;
         welcome_icon.pixel_size = 64;

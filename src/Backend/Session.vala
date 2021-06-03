@@ -40,6 +40,7 @@ public class Mail.Backend.Session : Camel.Session {
     //Camel.Store vfolder_store;
 
     public signal void account_added (Mail.Backend.Account account);
+    public signal void account_removed ();
 
     private Session () {
         Object (user_data_dir: Path.build_filename (E.get_user_data_dir (), "mail"), user_cache_dir: Path.build_filename (E.get_user_cache_dir (), "mail"));
@@ -63,15 +64,14 @@ public class Mail.Backend.Session : Camel.Session {
 
         var sources = registry.list_sources (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
         sources.foreach ((source_item) => {
-            var uid = source_item.get_uid ();
+            unowned string uid = source_item.get_uid ();
             if (uid == "vfolder") {
                 return;
             }
 
-            weak E.SourceMailAccount extension = (E.SourceMailAccount) source_item.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
-            var backend_name = ((E.SourceBackend) extension).get_backend_name ();
+            unowned var extension = (E.SourceMailAccount) source_item.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
             try {
-                add_service (uid, backend_name, Camel.ProviderType.STORE);
+                add_service (uid, extension.backend_name, Camel.ProviderType.STORE);
             } catch (Error e) {
                 critical (e.message);
             }
@@ -125,7 +125,7 @@ public class Mail.Backend.Session : Camel.Session {
         }
 
         /* Find a matching ESource for this CamelService. */
-        var source = registry.ref_source(service.get_uid());
+        var source = registry.ref_source (service.get_uid ());
 
         result = Camel.AuthenticationResult.REJECTED;
 
@@ -193,7 +193,7 @@ public class Mail.Backend.Session : Camel.Session {
         string credential_name = null;
 
         if (source.has_extension (E.SOURCE_EXTENSION_AUTHENTICATION)) {
-            var auth_extension = (E.SourceAuthentication) source.get_extension(E.SOURCE_EXTENSION_AUTHENTICATION);
+            unowned var auth_extension = (E.SourceAuthentication) source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
 
             credential_name = auth_extension.dup_credential_name ();
 
@@ -227,6 +227,20 @@ public class Mail.Backend.Session : Camel.Session {
         return registry.ref_source (identity_uid);
     }
 
+    public string? get_archive_folder_uri_for_service (Camel.Service service) {
+        E.Source? source = registry.ref_source (service.get_uid ());
+        if (source == null) {
+            return null;
+        }
+
+        if (source.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
+            var account_extension = (E.SourceMailAccount) source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
+            return account_extension.dup_archive_folder ();
+        }
+
+        return null;
+    }
+
     public override Camel.Service add_service (string uid, string protocol, Camel.ProviderType type) throws GLib.Error {
         var service = base.add_service (uid, protocol, type);
         if (service is Camel.Service) {
@@ -250,6 +264,11 @@ public class Mail.Backend.Session : Camel.Session {
         }
 
         return service;
+    }
+
+    public override void remove_service (Camel.Service service) {
+        base.remove_service (service);
+        account_removed ();
     }
 
     public Gee.LinkedList<Backend.Account> get_accounts () {
@@ -340,5 +359,8 @@ public class Mail.Backend.Session : Camel.Session {
 
         remove_service (transport);
     }
-}
 
+    public E.Source? ref_source (string source_uid) {
+        return registry.ref_source (source_uid);
+    }
+}

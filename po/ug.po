@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the pantheon-mail package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
 #
+#: src/MessageList/MessageListItem.vala:374
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 10:33+0100\n"
+"POT-Creation-Date: 2021-06-02 19:54+0000\n"
 "PO-Revision-Date: 2017-04-15 20:40+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Uighur <https://l10n.elementary.io/projects/mail/mail/ug/>\n"
@@ -19,45 +20,88 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
-#: src/HeaderBar.vala:38
+#: src/HeaderBar.vala:40
 #, fuzzy
 msgid "Compose new message"
 msgstr "يىڭى ئېلخەت يىزىش"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr "ئېلخەت ئىزدەش"
 
-#: src/HeaderBar.vala:56
+#: src/HeaderBar.vala:57
 #, fuzzy
 msgid "Always Show Remote Images"
 msgstr "يىراق مۇساپىلىك رەسىملەرنى داۋاملىق كۆرسىتىش:"
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:88
 msgid "Menu"
 msgstr "تىزىملىك"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:95 src/MessageList/MessageListItem.vala:178
 msgid "Reply"
 msgstr "جاۋاب قايتۇرۇش"
 
-#: src/HeaderBar.vala:97
+#: src/HeaderBar.vala:102
 #, fuzzy
 msgid "Reply All"
 msgstr "ھەممىسىگە جاۋاب قايتۇرۇش"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:184
 msgid "Forward"
 msgstr "يەتكۈزۈش"
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:115
+msgid "Mark as Unread"
+msgstr "ئوقۇلمىغان دەپ بەلگە قىلىش"
+
+#: src/HeaderBar.vala:120
+msgid "Mark as Read"
+msgstr "ئوقۇلغان دەپ بەلگە قىلىش"
+
+#: src/HeaderBar.vala:125
+#, fuzzy
+msgid "Star"
+msgstr "يۇلتۇز بەلگىسى قىتىش"
+
+#: src/HeaderBar.vala:130
+#, fuzzy
+msgid "Unstar"
+msgstr "يۇلتۇز بەلگىسىنى ئۆچۈرۈش"
+
+#: src/HeaderBar.vala:142
+#, fuzzy
+msgid "Mark Conversation"
+msgstr "دىئالوگقا بەلگە قىلىش"
+
+#: src/HeaderBar.vala:149
+#, fuzzy
+msgid "Move conversations to archive"
+msgstr "دىئالوگلارنى يۆتكەش"
+
+#: src/HeaderBar.vala:156
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "دىئالوگلارنى يۆتكەش"
+
+#: src/MainWindow.vala:72
+msgid "Mail"
+msgstr "ئېلخەت"
+
+#: src/MainWindow.vala:290
+#, fuzzy
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "ھىچقانداق دىئالوگ تاللانمىدى."
+
+#: src/MainWindow.vala:302
+#, fuzzy
+msgid "Undo"
+msgstr "بىكار قىلىش"
 
 #: src/WelcomeView.vala:40
 #, fuzzy
@@ -73,126 +117,200 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "ھىساۋاتلار"
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
+msgid "From:"
+msgstr "يوللىغۇچى:"
+
+#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "تاپشۇرۇۋالغۇچى:"
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "تېمىسى:"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:122
 #, fuzzy
 msgid "Cc"
 msgstr "كۆچۈرۈپ ئەۋەتىش:"
 
-#: src/Composer/ComposerWidget.vala:87
+#: src/Composer/ComposerWidget.vala:124
 #, fuzzy
 msgid "Bcc"
 msgstr "مەخپى يوللاش"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:131
+#: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr "كۆچۈرۈپ ئەۋەتىش:"
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:147
 msgid "Bcc:"
 msgstr "مەخپى يوللاش"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:187
 msgid "Bold"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:193
 msgid "Italic"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:199
 #, fuzzy
 msgid "Underline"
 msgstr "ئاستىغا سىزىش (Ctrl+U)"
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:205
 #, fuzzy
 msgid "Strikethrough"
 msgstr "سىزىۋىتىش (Ctrl+K)"
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:218
 #, fuzzy
 msgid "Quote text"
 msgstr "تېكستنى يۆتكەپ ئىشلىتىش (Ctrl+])"
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:221
 #, fuzzy
 msgid "Unquote text"
 msgstr "تېكستنى يۆتكەپ ئىشلىتىشنى ئەمەلدىن قالدۇرۇش (Ctrl+[)"
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:230 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:233
 msgid "Insert Image"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:236
 #, fuzzy
 msgid "Remove formatting"
 msgstr "فورماتىنى ئۆچۈرۈش (Ctrl+Space)"
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:269
 msgid "Delete draft"
 msgstr "ئورگىنالنى ئۆچۈرۈش"
 
-#: src/Composer/ComposerWidget.vala:234
+#: src/Composer/ComposerWidget.vala:274
 msgid "Attach file"
 msgstr "قوشۇمچە ھۆججەت"
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:280
 msgid "Send"
 msgstr "يوللاش"
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:420
+msgid "Choose a file"
+msgstr "ھۆججەت تاللاش"
+
+#: src/Composer/ComposerWidget.vala:423
+#, fuzzy
+#| msgid "_Attach"
+msgid "Attach"
+msgstr "قوشۇمچە ھۆججەت"
+
+#: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:574
+#: src/Dialogs/InsertLinkDialog.vala:61
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Cancel"
+msgstr "ياق"
+
+#: src/Composer/ComposerWidget.vala:488
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%Y-%b-%e日，%p %-l:%M"
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:518
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s دە، %2$s يىزىش:"
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:522
 msgid "---------- Forwarded message ----------"
 msgstr "---------- يەتكۈزۈلگەن ئۇچۇرلار ----------"
 
-#: src/Composer/ComposerWidget.vala:385
+#: src/Composer/ComposerWidget.vala:524
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "يوللىغۇچى: %s\n"
 
-#: src/Composer/ComposerWidget.vala:386
+#: src/Composer/ComposerWidget.vala:525
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "تېمىسى: %s\n"
 
-#: src/Composer/ComposerWidget.vala:387
+#: src/Composer/ComposerWidget.vala:526
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "چىسلاسى: %s\n"
 
-#: src/Composer/ComposerWidget.vala:388
+#: src/Composer/ComposerWidget.vala:527
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "تاپشۇرۇۋالغۇچى: %s\n"
 
-#: src/Composer/ComposerWidget.vala:390
+#: src/Composer/ComposerWidget.vala:529
 #, fuzzy, c-format
 msgid "Cc: %s<br/>"
 msgstr "كۆچۈرۈپ ئەۋەتىش: %s\n"
 
-#: src/Composer/ComposerWindow.vala:25
+#: src/Composer/ComposerWidget.vala:567
+#, fuzzy
+#| msgid "Do you want to permanently delete this message?"
+#| msgid_plural "Do you want to permanently delete these messages?"
+msgid "Permanently delete this draft?"
+msgstr "سىز بۇ ئۇچۇرلارنى مەڭگۈلۈك ئۆچۈرەمسىز؟"
+
+#: src/Composer/ComposerWidget.vala:568
+msgid ""
+"You cannot undo this action, nor recover your draft once it has been deleted."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:576
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete Draft"
+msgstr "ئورگىنالنى ئۆچۈرۈش"
+
+#: src/Composer/ComposerWidget.vala:593
+#, fuzzy
+msgid "Send Message With an Empty Subject?"
+msgstr "تېمىسى يوق ئېلخەتنى ئەۋەتەمسىز؟"
+
+#: src/Composer/ComposerWidget.vala:594
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:600
+msgid "Don't Send"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:602
+#, fuzzy
+msgid "Send Anyway"
+msgstr "يەنىلا ئىچىش"
+
+#: src/Composer/ComposerWindow.vala:45 src/Composer/ComposerWindow.vala:56
 msgid "New Message"
 msgstr "يىڭى ئېلخەت"
+
+#: src/ConversationList/ConversationListItem.vala:102
+#, fuzzy
+msgid "Unread"
+msgstr "%d ئوقۇلمىغان ئېلخەت"
+
+#: src/ConversationList/ConversationListItem.vala:112
+#, fuzzy
+msgid "Replied"
+msgstr "جاۋاب قايتۇرۇش"
+
+#: src/ConversationList/ConversationListItem.vala:116
+#, fuzzy
+msgid "Forwarded"
+msgstr "يەتكۈزۈش"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -212,18 +330,12 @@ msgstr "كۆپ تېكست"
 msgid "Example Website"
 msgstr "توربىكەت"
 
-#: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
-msgid "Cancel"
-msgstr "ياق"
-
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
 msgstr "\"%s\" نى راسىتتىنلا ئاچامسىز؟"
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -231,38 +343,89 @@ msgstr ""
 "قوشۇمچە ھۆججەتلەر ئىچىلسا سىستېمىڭىزغا بۇزغۇنچىلىق ئىلىپ كىلىشى مۇمكىن. "
 "پەقەت مەنبەسى ئىشەنچلىك ھۆججەتلەرنى ئىچىشىڭىزنى تەۋسىيە قىلىمىز."
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr "يەنىلا ئىچىش"
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr ""
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgid "Inbox"
+msgstr "تاپشۇرۇۋىلىنغانلىرى"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "ئارخىپ"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "يوللانغانلىرى"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "بارلىق ئېلخەتلەر"
 
 #: src/MessageList/MessageListBox.vala:32
 #, fuzzy
 msgid "No Message Selected"
 msgstr "ھىچقانداق دىئالوگ تاللانمىدى."
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "يوللىغۇچى:"
+#: src/MessageList/MessageListItem.vala:168
+#: src/MessageList/MessageListItem.vala:325
+msgid "Unstar message"
+msgstr "يۇلتۇز بەلگىسىنى ئۆچۈرۈش"
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:171
+#: src/MessageList/MessageListItem.vala:321
+msgid "Star message"
+msgstr "يۇلتۇز بەلگىسى قىتىش"
+
+#: src/MessageList/MessageListItem.vala:181
+msgid "Reply to All"
+msgstr "ھەممىسىگە جاۋاپ قايتۇرۇش"
+
+#: src/MessageList/MessageListItem.vala:187
+msgid "Print…"
+msgstr "بىسىش…"
+
+#: src/MessageList/MessageListItem.vala:201
+msgid "More"
+msgstr "تىخىمۇ كۆپ"
+
+#: src/MessageList/MessageListItem.vala:237
 msgid "Show Images"
 msgstr "رەسىملەرنى كۆرسىتىش"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:238
 msgid "Always Show from Sender"
 msgstr "يوللىغۇچىنى داۋاملىق كۆرسىتىش"
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:243
 msgid "This message contains remote images."
 msgstr "بۇ ئېلخەتتە يىراق مۇساپىلىك رەسىم بار."
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:275
 msgid "This message contains one or more attachments"
 msgstr "بۇ ئېلخەت بىر ياكى بىردىن كۆپ قوشۇمچە ھۆججەتنى ئۆزئىچىگە ئالغان"
+
+#. / Translators: This is the default file name of a printed email
+#: src/MessageList/MessageListItem.vala:351
+#, fuzzy
+#| msgid "New Message"
+msgid "Email Message"
+msgstr "يىڭى ئېلخەت"
+
+#: src/MessageList/MessageListItem.vala:373
+#, fuzzy
+#| msgid "Unable to validate:\n"
+msgid "Unable to print email"
+msgstr "دەلىللەش مەغلۇپ بولدى:\n"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
@@ -298,23 +461,14 @@ msgstr "ساقلاش"
 #~ msgid "Archive | Archives"
 #~ msgstr "ئارخىپلار"
 
-#~ msgid "Inbox"
-#~ msgstr "تاپشۇرۇۋىلىنغانلىرى"
-
 #~ msgid "Drafts"
 #~ msgstr "ئورىگىناللار"
-
-#~ msgid "Sent Mail"
-#~ msgstr "يوللانغانلىرى"
 
 #~ msgid "Starred"
 #~ msgstr "بەلگە قىلىنغانلىرى"
 
 #~ msgid "Important"
 #~ msgstr "مۇھىملىرى"
-
-#~ msgid "All Mail"
-#~ msgstr "بارلىق ئېلخەتلەر"
 
 #~ msgid "Spam"
 #~ msgstr "كىرەكسىز ئېلخەتلەر"
@@ -327,9 +481,6 @@ msgstr "ساقلاش"
 
 #~ msgid "Search"
 #~ msgstr "ئىزدەش"
-
-#~ msgid "Archive"
-#~ msgstr "ئارخىپ"
 
 #~ msgid "None"
 #~ msgstr "ھىچنىمە يوق"
@@ -429,10 +580,6 @@ msgstr "ساقلاش"
 #~ msgid "Mark as not S_pam"
 #~ msgstr "كىرەكسىز ئېلخەت بەلگىسىنى ئۆچۈرۈش"
 
-#~ msgid "Mark conversation"
-#~ msgid_plural "Mark conversations"
-#~ msgstr[0] "دىئالوگقا بەلگە قىلىش"
-
 #~ msgid "Mark conversations"
 #~ msgstr "دىئالوگلارغا بەلگە قىلىش"
 
@@ -470,12 +617,6 @@ msgstr "ساقلاش"
 
 #~ msgid "Mark as _Unread"
 #~ msgstr "ئوقۇلمىغان دەپ بەلگە قىلىش"
-
-#~ msgid "_Star"
-#~ msgstr "يۇلتۇز بەلگىسى قىتىش"
-
-#~ msgid "U_nstar"
-#~ msgstr "يۇلتۇز بەلگىسىنى ئۆچۈرۈش"
 
 #~ msgid "Add label"
 #~ msgstr "خەتكۈچ قىتىش"
@@ -685,10 +826,6 @@ msgstr "ساقلاش"
 #~ msgid "Error emptying %s"
 #~ msgstr "%s نى قۇرۇقداۋاتقاندا خاتالىق كۆرۈلدى"
 
-#~ msgid "Do you want to permanently delete this message?"
-#~ msgid_plural "Do you want to permanently delete these messages?"
-#~ msgstr[0] "سىز بۇ ئۇچۇرلارنى مەڭگۈلۈك ئۆچۈرەمسىز؟"
-
 #~ msgid "Delete"
 #~ msgstr "ئۆچۈرۈش"
 
@@ -844,12 +981,6 @@ msgstr "ساقلاش"
 #~ msgid "Geary requires your email password to continue"
 #~ msgstr "داۋاملاشتۇرۇش ئۈچۈن Geary سىزنىڭ ئېلخەت پارولىڭىزغا ئىھتىياجلىق"
 
-#~ msgid "Choose a file"
-#~ msgstr "ھۆججەت تاللاش"
-
-#~ msgid "_Attach"
-#~ msgstr "قوشۇمچە ھۆججەت"
-
 #~ msgid "Additional addresses for %s"
 #~ msgstr "%s نىڭ قوشۇمچە ئادىرىسى"
 
@@ -897,9 +1028,6 @@ msgstr "ساقلاش"
 
 #~ msgid "Remem_ber password"
 #~ msgstr "پارولنى ئىسىدە ساقلاش"
-
-#~ msgid "Unable to validate:\n"
-#~ msgstr "دەلىللەش مەغلۇپ بولدى:\n"
 
 #~ msgid "        &#8226; Invalid account nickname.\n"
 #~ msgstr "        &#8226;  ئىسمى ئىناۋەتسىز بەلگىلەرنى ئۆزئىچىگە ئالغان.\n"
@@ -993,10 +1121,6 @@ msgstr "ساقلاش"
 #~ msgid "%d message"
 #~ msgid_plural "%d messages"
 #~ msgstr[0] "%d ئېلخەت"
-
-#~ msgid "%d unread"
-#~ msgid_plural "%d unread"
-#~ msgstr[0] "%d ئوقۇلمىغان ئېلخەت"
 
 #~ msgid "%s, %s"
 #~ msgstr "%s, %s"
@@ -1123,9 +1247,6 @@ msgstr "ساقلاش"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "تېمىسى ۋە مەزمۇنى يوق ئېلخەتنى ئەۋەتەمسىز؟"
-
-#~ msgid "Send message with an empty subject?"
-#~ msgstr "تېمىسى يوق ئېلخەتنى ئەۋەتەمسىز؟"
 
 #~ msgid "Send message with an empty body?"
 #~ msgstr "مەزمۇنى يوق ئېلخەتنى ئەۋەتەمسىز؟"
@@ -1325,9 +1446,6 @@ msgstr "ساقلاش"
 
 #~ msgid "Please wait while Geary validates your account."
 #~ msgstr "Geary ھىساۋاتىڭىزنى تەستىقلاۋاتىدۇ، سەل ساقلاڭ."
-
-#~ msgid "_Undo"
-#~ msgstr "بىكار قىلىش"
 
 #~ msgid "_Redo"
 #~ msgstr "قايتا ئىشلەش"
@@ -1726,18 +1844,6 @@ msgstr "ساقلاش"
 #~ msgid "Save All Attachments…"
 #~ msgstr "ھەممە قوشۇمچە ھۆججەتلەرنى ساقلاش…"
 
-#~ msgid "Reply to All"
-#~ msgstr "ھەممىسىگە جاۋاپ قايتۇرۇش"
-
-#~ msgid "Mark as Unread"
-#~ msgstr "ئوقۇلمىغان دەپ بەلگە قىلىش"
-
-#~ msgid "Mark as Read"
-#~ msgstr "ئوقۇلغان دەپ بەلگە قىلىش"
-
-#~ msgid "Print…"
-#~ msgstr "بىسىش…"
-
 #~ msgid "View Source"
 #~ msgstr "مەنبەسىنى كۆرۈش"
 
@@ -1761,15 +1867,6 @@ msgstr "ساقلاش"
 #~ msgstr ""
 #~ "جاۋاپ قايتۇرماڭ؛ جاۋاپ قايتۇرماڭ؛ جاۋاپ قايتۇرماڭ؛ جاۋاپ قايتۇرماڭ؛ جاۋاپ "
 #~ "قايتۇرماڭ؛ جاۋاپ قايتۇرماڭ؛"
-
-#~ msgid "Star message"
-#~ msgstr "يۇلتۇز بەلگىسى قىتىش"
-
-#~ msgid "Unstar message"
-#~ msgstr "يۇلتۇز بەلگىسىنى ئۆچۈرۈش"
-
-#~ msgid "More"
-#~ msgstr "تىخىمۇ كۆپ"
 
 #~ msgid "Include original attachments"
 #~ msgstr "ئورگىنالدىكى قوشۇمچە ھۆججەتلەرنى ئۆزئىچىگە ئىلىش"
@@ -1800,9 +1897,6 @@ msgstr "ساقلاش"
 
 #~ msgid ", "
 #~ msgstr "، "
-
-#~ msgid "Mail"
-#~ msgstr "ئېلخەت"
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "سىزىۋىتىش (Ctrl+K)"

@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the pantheon-mail package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
 #
+#: src/MessageList/MessageListItem.vala:374
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 10:33+0100\n"
+"POT-Creation-Date: 2021-06-02 19:54+0000\n"
 "PO-Revision-Date: 2017-05-04 20:01+0000\n"
 "Last-Translator: Rokar <rokartv10@gmail.com>\n"
 "Language-Team: ku (generated) <https://l10n.elementary.io/projects/mail/mail/"
@@ -20,43 +21,82 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:38
+#: src/HeaderBar.vala:40
 #, fuzzy
 msgid "Compose new message"
 msgstr "Peyamekê Nû Biafirînê"
 
-#: src/HeaderBar.vala:44
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr ""
 
-#: src/HeaderBar.vala:56
+#: src/HeaderBar.vala:57
 msgid "Always Show Remote Images"
 msgstr ""
 
-#: src/HeaderBar.vala:64
+#: src/HeaderBar.vala:65
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:84
+#: src/HeaderBar.vala:88
 msgid "Menu"
 msgstr "Menû"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:95 src/MessageList/MessageListItem.vala:178
 msgid "Reply"
 msgstr "Bersiv"
 
-#: src/HeaderBar.vala:97
+#: src/HeaderBar.vala:102
 #, fuzzy
 msgid "Reply All"
 msgstr "Bersiv"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:184
 msgid "Forward"
 msgstr "Pêşve"
 
-#: src/HeaderBar.vala:111
+#: src/HeaderBar.vala:115
+msgid "Mark as Unread"
+msgstr ""
+
+#: src/HeaderBar.vala:120
+msgid "Mark as Read"
+msgstr ""
+
+#: src/HeaderBar.vala:125
+msgid "Star"
+msgstr ""
+
+#: src/HeaderBar.vala:130
+msgid "Unstar"
+msgstr ""
+
+#: src/HeaderBar.vala:142
+msgid "Mark Conversation"
+msgstr ""
+
+#: src/HeaderBar.vala:149
+msgid "Move conversations to archive"
+msgstr ""
+
+#: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
 msgstr ""
+
+#: src/MainWindow.vala:72
+msgid "Mail"
+msgstr "E-Peyam"
+
+#: src/MainWindow.vala:290
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/MainWindow.vala:302
+#, fuzzy
+msgid "Undo"
+msgstr "_Vegerîne"
 
 #: src/WelcomeView.vala:40
 #, fuzzy
@@ -72,120 +112,188 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Hesab"
 
-#: src/Composer/ComposerWidget.vala:74 src/MessageList/MessageListItem.vala:81
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
+msgid "From:"
+msgstr "Ji:"
+
+#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "Ji bo:"
 
-#: src/Composer/ComposerWidget.vala:78 src/MessageList/MessageListItem.vala:86
+#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "Mijar:"
 
-#: src/Composer/ComposerWidget.vala:85
+#: src/Composer/ComposerWidget.vala:122
 msgid "Cc"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:87
+#: src/Composer/ComposerWidget.vala:124
 #, fuzzy
 msgid "Bcc"
 msgstr "Giravên Kokos (Keeling)"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:115
+#: src/Composer/ComposerWidget.vala:131
+#: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:147
 msgid "Bcc:"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:187
 msgid "Bold"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:158
+#: src/Composer/ComposerWidget.vala:193
 msgid "Italic"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:164
+#: src/Composer/ComposerWidget.vala:199
 msgid "Underline"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:170
+#: src/Composer/ComposerWidget.vala:205
 msgid "Strikethrough"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:183
+#: src/Composer/ComposerWidget.vala:218
 msgid "Quote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:186
+#: src/Composer/ComposerWidget.vala:221
 msgid "Unquote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:195 src/Dialogs/InsertLinkDialog.vala:65
+#: src/Composer/ComposerWidget.vala:230 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:198
+#: src/Composer/ComposerWidget.vala:233
 msgid "Insert Image"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:236
 msgid "Remove formatting"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:269
 msgid "Delete draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:234
+#: src/Composer/ComposerWidget.vala:274
 msgid "Attach file"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:240
+#: src/Composer/ComposerWidget.vala:280
 msgid "Send"
 msgstr "Bişîne"
 
-#: src/Composer/ComposerWidget.vala:349
+#: src/Composer/ComposerWidget.vala:420
+msgid "Choose a file"
+msgstr "Pelekî hilbijêre"
+
+#: src/Composer/ComposerWidget.vala:423
+#, fuzzy
+#| msgid "Detach"
+msgid "Attach"
+msgstr "Veqetandin"
+
+#: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:574
+#: src/Dialogs/InsertLinkDialog.vala:61
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Cancel"
+msgstr "Betal bike"
+
+#: src/Composer/ComposerWidget.vala:488
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:379
+#: src/Composer/ComposerWidget.vala:518
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:383
+#: src/Composer/ComposerWidget.vala:522
 msgid "---------- Forwarded message ----------"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:385
+#: src/Composer/ComposerWidget.vala:524
 #, c-format
 msgid "From: %s<br/>"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:386
+#: src/Composer/ComposerWidget.vala:525
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "Mijar:"
 
-#: src/Composer/ComposerWidget.vala:387
+#: src/Composer/ComposerWidget.vala:526
 #, c-format
 msgid "Date: %s<br/>"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:388
+#: src/Composer/ComposerWidget.vala:527
 #, c-format
 msgid "To: %s<br/>"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:390
+#: src/Composer/ComposerWidget.vala:529
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr ""
 
-#: src/Composer/ComposerWindow.vala:25
+#: src/Composer/ComposerWidget.vala:567
+msgid "Permanently delete this draft?"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:568
+msgid ""
+"You cannot undo this action, nor recover your draft once it has been deleted."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:576
+#, fuzzy
+#| msgid "Delete"
+msgid "Delete Draft"
+msgstr "Jê bibe"
+
+#: src/Composer/ComposerWidget.vala:593
+msgid "Send Message With an Empty Subject?"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:594
+msgid ""
+"This message has an empty subject field. The recipient may not be able to "
+"infer the scope or importance of the message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:600
+msgid "Don't Send"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:602
+msgid "Send Anyway"
+msgstr ""
+
+#: src/Composer/ComposerWindow.vala:45 src/Composer/ComposerWindow.vala:56
 msgid "New Message"
 msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:102
+msgid "Unread"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:112
+#, fuzzy
+msgid "Replied"
+msgstr "Bersiv"
+
+#: src/ConversationList/ConversationListItem.vala:116
+#, fuzzy
+msgid "Forwarded"
+msgstr "Pêşve"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -204,53 +312,93 @@ msgstr ""
 msgid "Example Website"
 msgstr "Malper"
 
-#: src/Dialogs/InsertLinkDialog.vala:63
-#: src/Dialogs/OpenAttachmentDialog.vala:65
-#: src/MessageList/AttachmentButton.vala:111
-msgid "Cancel"
-msgstr "Betal bike"
-
-#: src/Dialogs/OpenAttachmentDialog.vala:37
+#: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
 msgstr ""
 
-#: src/Dialogs/OpenAttachmentDialog.vala:44
+#: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
 
-#: src/Dialogs/OpenAttachmentDialog.vala:49
+#: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:49
+#: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
+msgstr ""
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgid "Inbox"
+msgstr "Peldanka hatiyan"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Arşîv"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+msgid "Sent"
+msgstr ""
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
 msgstr ""
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:76
-msgid "From:"
-msgstr "Ji:"
+#: src/MessageList/MessageListItem.vala:168
+#: src/MessageList/MessageListItem.vala:325
+msgid "Unstar message"
+msgstr ""
 
-#: src/MessageList/MessageListItem.vala:186
+#: src/MessageList/MessageListItem.vala:171
+#: src/MessageList/MessageListItem.vala:321
+msgid "Star message"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:181
+#, fuzzy
+msgid "Reply to All"
+msgstr "Bersiv"
+
+#: src/MessageList/MessageListItem.vala:187
+msgid "Print…"
+msgstr "Çapkirin…"
+
+#: src/MessageList/MessageListItem.vala:201
+msgid "More"
+msgstr "Bêhtir"
+
+#: src/MessageList/MessageListItem.vala:237
 msgid "Show Images"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:238
 msgid "Always Show from Sender"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:192
+#: src/MessageList/MessageListItem.vala:243
 msgid "This message contains remote images."
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:223
+#: src/MessageList/MessageListItem.vala:275
 msgid "This message contains one or more attachments"
+msgstr ""
+
+#. / Translators: This is the default file name of a printed email
+#: src/MessageList/MessageListItem.vala:351
+#, fuzzy
+#| msgid "Email address:"
+msgid "Email Message"
+msgstr "Navnîşana E-Peyamê:"
+
+#: src/MessageList/MessageListItem.vala:373
+msgid "Unable to print email"
 msgstr ""
 
 #: src/MessageList/AttachmentButton.vala:41
@@ -270,9 +418,6 @@ msgstr ""
 msgid "Save"
 msgstr "_Tomar bike"
 
-#~ msgid "Inbox"
-#~ msgstr "Peldanka hatiyan"
-
 #~ msgid "Drafts"
 #~ msgstr "Hilanînî"
 
@@ -287,9 +432,6 @@ msgstr "_Tomar bike"
 
 #~ msgid "Search"
 #~ msgstr "Lê bigere :"
-
-#~ msgid "Archive"
-#~ msgstr "Arşîv"
 
 #~ msgid "None"
 #~ msgstr "Tu yek"
@@ -366,12 +508,6 @@ msgstr "_Tomar bike"
 
 #~ msgid "_Replace"
 #~ msgstr "Bide _ser"
-
-#~ msgid "Delete"
-#~ msgstr "Jê bibe"
-
-#~ msgid "Choose a file"
-#~ msgstr "Pelekî hilbijêre"
 
 #~ msgid "Everything"
 #~ msgstr "Her tişt"
@@ -500,9 +636,6 @@ msgstr "_Tomar bike"
 #~ msgid "Nickname:"
 #~ msgstr "Navê kod:"
 
-#~ msgid "Email address:"
-#~ msgstr "Navnîşana E-Peyamê:"
-
 #~ msgid "Find"
 #~ msgstr "Bibîne"
 
@@ -511,9 +644,6 @@ msgstr "_Tomar bike"
 
 #~ msgid "_Update"
 #~ msgstr "_Rojanekirin"
-
-#~ msgid "_Undo"
-#~ msgstr "_Vegerîne"
 
 #~ msgid "_Redo"
 #~ msgstr "_Dubare bike"
@@ -554,9 +684,6 @@ msgstr "_Tomar bike"
 #~ msgid "Serif"
 #~ msgstr "Serîf"
 
-#~ msgid "Detach"
-#~ msgstr "Veqetandin"
-
 #~ msgid "_Send"
 #~ msgstr "_Bişîne"
 
@@ -584,17 +711,11 @@ msgstr "_Tomar bike"
 #~ msgid "_Authenticate"
 #~ msgstr "_Belgekirin"
 
-#~ msgid "Print…"
-#~ msgstr "Çapkirin…"
-
 #~ msgid "Copy Email Address"
 #~ msgstr "Navnîşana E-peyamê Ji Ber Bigire"
 
 #~ msgid "Case sensitive"
 #~ msgstr "Ji rewşê re hestiyare"
-
-#~ msgid "More"
-#~ msgstr "Bêhtir"
 
 #~ msgid "Don't ask me again"
 #~ msgstr "Êdî pirs neke"
@@ -613,6 +734,3 @@ msgstr "_Tomar bike"
 
 #~ msgid ", "
 #~ msgstr ", "
-
-#~ msgid "Mail"
-#~ msgstr "E-Peyam"

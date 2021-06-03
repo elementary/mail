@@ -18,20 +18,23 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class Mail.ComposerWindow : Gtk.ApplicationWindow {
-    public ComposerWindow (Gtk.Window parent) {
+public class Mail.ComposerWindow : Hdy.ApplicationWindow {
+    public string? mailto_query { get; construct; }
+    public string? to { get; construct; }
+
+    public ComposerWindow (Gtk.Window parent, string? to = null, string? mailto_query = null) {
         Object (
             application: ((Gtk.Application) GLib.Application.get_default ()),
             height_request: 600,
             title: _("New Message"),
             transient_for: parent,
-            width_request: 680,
-            window_position: Gtk.WindowPosition.CENTER_ON_PARENT
+            mailto_query: mailto_query,
+            to: to
         );
     }
 
     construct {
-        var composer_widget = new ComposerWidget.with_subject (this);
+        var composer_widget = new ComposerWidget.with_headers (to, mailto_query);
         composer_widget.discarded.connect (() => {
             close ();
         });
@@ -39,11 +42,23 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
             close ();
         });
 
+        var titlebar = new Hdy.HeaderBar () {
+            has_subtitle = false,
+            show_close_button = true,
+            title = _("New Message")
+        };
+        titlebar.get_style_context ().add_class ("default-decoration");
+
         var content_grid = new Gtk.Grid ();
         content_grid.orientation = Gtk.Orientation.VERTICAL;
+        content_grid.add (titlebar);
         content_grid.add (composer_widget);
 
-        get_style_context ().add_class ("rounded");
+        height_request = 600;
+        width_request = 680;
+        title = _("New Message");
+        window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
+
         add (content_grid);
     }
 }

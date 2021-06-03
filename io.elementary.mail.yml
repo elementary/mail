@@ -1,0 +1,107 @@
+app-id: io.elementary.mail
+runtime: io.elementary.Platform
+runtime-version: 'daily'
+sdk: io.elementary.Sdk
+command: io.elementary.mail
+finish-args:
+  - '--filesystem=/tmp/io.elementary.mail:create'
+  - '--env=TMPDIR=/tmp/io.elementary.mail'
+
+  - '--share=ipc'
+  - '--share=network'
+  - '--socket=fallback-x11'
+  - '--socket=wayland'
+
+  # needed for perfers-color-scheme
+  - '--system-talk-name=org.freedesktop.Accounts'
+
+  # EDS DBus interfaces
+  - '--talk-name=org.gnome.evolution.dataserver.AddressBook10'
+  - '--talk-name=org.gnome.evolution.dataserver.Sources5'
+
+  - '--metadata=X-DConf=migrate-path=/io/elementary/mail/'
+cleanup:
+  - '/include'
+  - '/lib/pkgconfig'
+  - '/share/vala'
+  - '*.a'
+  - '*.la'
+modules:
+  - name: evolution-data-server
+    buildsystem: cmake-ninja
+    cleanup:
+      - /etc
+      - /lib/evolution-data-server/*-backends
+      - /libexec
+      - /share/dbus-1
+      - /share/GConf
+      - /share/pixmaps
+    config-opts:
+      - '-DCMAKE_BUILD_TYPE=RelWithDebInfo'
+      - '-DENABLE_EXAMPLES=OFF'
+      - '-DENABLE_GOA=OFF'
+      - '-DWITH_LIBDB=OFF'
+      - '-DENABLE_WEATHER=OFF'
+      - '-DENABLE_CANBERRA=OFF'
+      - '-DENABLE_VALA_BINDINGS=ON'
+      - '-DWITH_KRB5=OFF'
+      - '-DWITH_OPENLDAP=OFF'
+      - '-DENABLE_INTROSPECTION=ON'
+    sources:
+      - type: git
+        url: https://gitlab.gnome.org/GNOME/evolution-data-server.git
+        tag: '3.40.0'
+    modules:
+      - name: intltool
+        cleanup:
+          - '*'
+        sources:
+          - type: archive
+            url: https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz
+            md5: 12e517cac2b57a0121cda351570f1e63
+      - name: libgdata
+        buildsystem: meson
+        config-opts:
+          - '-Dalways_build_tests=false'
+          - '-Dgoa=disabled'
+        sources:
+          - type: git
+            url: https://gitlab.gnome.org/GNOME/libgdata.git
+            tag: '0.18.0'
+      - name: libical
+        cleanup:
+          - '/lib/cmake'
+          - '/libexec'
+        buildsystem: cmake-ninja
+        config-opts:
+          - '-DCMAKE_BUILD_TYPE=RelWithDebInfo'
+          - '-DCMAKE_INSTALL_LIBDIR=/app/lib'
+          - '-DWITH_CXX_BINDINGS=false'
+          - '-DSHARED_ONLY=true'
+          - '-DGOBJECT_INTROSPECTION=true'
+          - '-DICAL_BUILD_DOCS=false'
+          - '-DICAL_GLIB_VAPI=true'
+          - '-DLIBICAL_BUILD_TESTING=false'
+        sources:
+          - type: git
+            url: https://github.com/libical/libical.git
+            tag: v3.0.9
+
+  - name: folks
+    buildsystem: meson
+    config-opts:
+      - '-Dbluez_backend=false'
+      - '-Dofono_backend=false'
+      - '-Dtelepathy_backend=false'
+      - '-Dimport_tool=false'
+      - '-Dinspect_tool=false'
+    sources:
+      - type: git
+        url: https://gitlab.gnome.org/GNOME/folks.git
+        tag: '0.15.2'
+
+  - name: mail
+    buildsystem: meson
+    sources:
+      - type: dir
+        path: .
