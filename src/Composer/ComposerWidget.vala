@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2019 elementary, Inc. (https://elementary.io)
+ * Copyright 2017-2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,13 +34,12 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private const string ACTION_DISCARD = "discard";
     private const string ACTION_SEND = "send";
 
+    public ActionGroup action_group { get; construct; }
+    public bool can_change_sender { get; construct; default = true; }
     public bool has_recipients { get; set; }
     public bool has_subject_field { get; construct; default = false; }
-    public bool can_change_sender { get; construct; default = true; }
-    public string? to { get; construct; }
     public string? mailto_query { get; construct; }
-
-    public GLib.ActionGroup action_group { get; construct; }
+    public string? to { get; construct; }
 
     private WebView web_view;
     private Gtk.Entry to_val;
@@ -74,14 +73,12 @@ public class Mail.ComposerWidget : Gtk.Grid {
     };
 
     public ComposerWidget.inline () {
-        Object (
-            can_change_sender: false
-        );
+        Object (can_change_sender: false);
     }
 
     public ComposerWidget.with_subject (Gtk.ApplicationWindow app_window) {
         Object (
-            action_group: app_window,
+            action_group: (ActionGroup) app_window,
             has_subject_field: true
         );
     }
