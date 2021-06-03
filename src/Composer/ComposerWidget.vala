@@ -35,11 +35,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private const string ACTION_SEND = "send";
 
     public ActionGroup action_group { get; construct; }
-    public bool can_change_sender { get; construct; default = true; }
     public bool has_recipients { get; set; }
     public bool has_subject_field { get; construct; default = false; }
-    public string? mailto_query { get; construct; }
+    public bool can_change_sender { get; construct; default = true; }
     public string? to { get; construct; }
+    public string? mailto_query { get; construct; }
 
     private WebView web_view;
     private Gtk.Entry to_val;
