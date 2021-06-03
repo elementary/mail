@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-02 19:54+0000\n"
-"PO-Revision-Date: 2021-05-08 00:38+0000\n"
+"PO-Revision-Date: 2021-06-03 12:08+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
 "mail/nb/>\n"
@@ -200,10 +200,8 @@ msgid "Choose a file"
 msgstr "Velg en fil"
 
 #: src/Composer/ComposerWidget.vala:423
-#, fuzzy
-#| msgid "_Attach"
 msgid "Attach"
-msgstr "_Legg ved"
+msgstr "Legg ved"
 
 #: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:574
 #: src/Dialogs/InsertLinkDialog.vala:61
@@ -348,10 +346,8 @@ msgid "Archive"
 msgstr "Arkiv"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent Mail"
 msgid "Sent"
-msgstr "Sendt e-post"
+msgstr "Sendt"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 #, fuzzy
