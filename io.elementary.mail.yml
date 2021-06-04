@@ -18,6 +18,7 @@ finish-args:
   # EDS DBus interfaces
   - '--talk-name=org.gnome.evolution.dataserver.AddressBook10'
   - '--talk-name=org.gnome.evolution.dataserver.Sources5'
+  - '--talk-name=org.gnome.evolution.dataserver.Subprocess.Backend.*'
 
   - '--metadata=X-DConf=migrate-path=/io/elementary/mail/'
 cleanup:
