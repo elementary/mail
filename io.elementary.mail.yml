@@ -18,7 +18,6 @@ finish-args:
   # EDS DBus interfaces
   - '--talk-name=org.gnome.evolution.dataserver.AddressBook10'
   - '--talk-name=org.gnome.evolution.dataserver.Sources5'
-  - '--talk-name=org.gnome.evolution.dataserver.Subprocess.Backend.*'
 
   - '--metadata=X-DConf=migrate-path=/io/elementary/mail/'
 cleanup:
@@ -39,15 +38,19 @@ modules:
       - /share/pixmaps
     config-opts:
       - '-DCMAKE_BUILD_TYPE=RelWithDebInfo'
-      - '-DENABLE_EXAMPLES=OFF'
-      - '-DENABLE_GOA=OFF'
-      - '-DWITH_LIBDB=OFF'
-      - '-DENABLE_WEATHER=OFF'
+      - '-DENABLE_GTK=ON'
       - '-DENABLE_CANBERRA=OFF'
+      - '-DENABLE_GOA=OFF'
+      - '-DENABLE_GOOGLE=ON'
       - '-DENABLE_VALA_BINDINGS=ON'
-      - '-DWITH_KRB5=OFF'
+      - '-DENABLE_WEATHER=OFF'
       - '-DWITH_OPENLDAP=OFF'
+      - '-DWITH_LIBDB=OFF'
+      - '-DWITH_KRB5=OFF'
       - '-DENABLE_INTROSPECTION=ON'
+      - '-DENABLE_INSTALLED_TESTS=OFF'
+      - '-DENABLE_GTK_DOC=OFF'
+      - '-DENABLE_EXAMPLES=OFF'      
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/evolution-data-server.git
