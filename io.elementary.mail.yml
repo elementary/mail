@@ -38,19 +38,19 @@ modules:
       - /share/pixmaps
     config-opts:
       - '-DCMAKE_BUILD_TYPE=RelWithDebInfo'
-      - '-DENABLE_GTK=ON'
       - '-DENABLE_CANBERRA=OFF'
+      - '-DENABLE_EXAMPLES=OFF'
       - '-DENABLE_GOA=OFF'
       - '-DENABLE_GOOGLE=ON'
+      - '-DENABLE_GTK_DOC=OFF'
+      - '-DENABLE_GTK=ON'
+      - '-DENABLE_INSTALLED_TESTS=OFF'
+      - '-DENABLE_INTROSPECTION=ON'
       - '-DENABLE_VALA_BINDINGS=ON'
       - '-DENABLE_WEATHER=OFF'
-      - '-DWITH_OPENLDAP=OFF'
-      - '-DWITH_LIBDB=OFF'
       - '-DWITH_KRB5=OFF'
-      - '-DENABLE_INTROSPECTION=ON'
-      - '-DENABLE_INSTALLED_TESTS=OFF'
-      - '-DENABLE_GTK_DOC=OFF'
-      - '-DENABLE_EXAMPLES=OFF'      
+      - '-DWITH_LIBDB=OFF'
+      - '-DWITH_OPENLDAP=OFF'
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/evolution-data-server.git
