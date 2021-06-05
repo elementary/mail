@@ -15,10 +15,10 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-02 19:54+0000\n"
-"PO-Revision-Date: 2021-05-21 20:49+0000\n"
+"PO-Revision-Date: 2021-06-06 02:47+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/"
-">\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/>"
+"\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -196,10 +196,8 @@ msgid "Choose a file"
 msgstr "Escolha um ficheiro"
 
 #: src/Composer/ComposerWidget.vala:423
-#, fuzzy
-#| msgid "_Attach"
 msgid "Attach"
-msgstr "_Anexar"
+msgstr "Anexar"
 
 #: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:574
 #: src/Dialogs/InsertLinkDialog.vala:61
