@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-02 19:54+0000\n"
-"PO-Revision-Date: 2021-05-24 14:49+0000\n"
+"PO-Revision-Date: 2021-06-06 11:28+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
 "Language: ru\n"
@@ -200,10 +200,8 @@ msgid "Choose a file"
 msgstr "Выберите файл"
 
 #: src/Composer/ComposerWidget.vala:423
-#, fuzzy
-#| msgid "_Attach"
 msgid "Attach"
-msgstr "_Прикрепить"
+msgstr "Прикрепить"
 
 #: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:574
 #: src/Dialogs/InsertLinkDialog.vala:61
