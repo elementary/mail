@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+/*
+ * Copyright 2017-2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,6 +34,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private const string ACTION_DISCARD = "discard";
     private const string ACTION_SEND = "send";
 
+    public ActionGroup action_group { get; construct; }
     public bool has_recipients { get; set; }
     public bool has_subject_field { get; construct; default = false; }
     public bool can_change_sender { get; construct; default = true; }
@@ -42,7 +42,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
     public string? mailto_query { get; construct; }
 
     private WebView web_view;
-    private SimpleActionGroup actions;
     private Gtk.Entry to_val;
     private Gtk.Entry cc_val;
     private Gtk.Entry bcc_val;
@@ -58,6 +57,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
         REPLY_ALL,
         FORWARD
     }
+
+    private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
     public const ActionEntry[] ACTION_ENTRIES = {
         {ACTION_ADD_ATTACHMENT, on_add_attachment },
@@ -75,8 +76,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
         Object (can_change_sender: false);
     }
 
-    public ComposerWidget.with_subject () {
-        Object (has_subject_field: true);
+    public ComposerWidget.with_subject (Gtk.ApplicationWindow app_window) {
+        Object (
+            action_group: (ActionGroup) app_window,
+            has_subject_field: true
+        );
     }
 
     public ComposerWidget.with_headers (string? to, string? mailto_query) {
@@ -87,10 +91,34 @@ public class Mail.ComposerWidget : Gtk.Grid {
         );
     }
 
+    static construct {
+        action_accelerators[GLib.Action.print_detailed_name (ACTION_BOLD, ACTION_BOLD)] = "<Control>B";
+        action_accelerators[GLib.Action.print_detailed_name (ACTION_ITALIC, ACTION_ITALIC)] = "<Control>I";
+        action_accelerators[GLib.Action.print_detailed_name (ACTION_UNDERLINE, ACTION_UNDERLINE)] = "<Control>U";
+        action_accelerators[GLib.Action.print_detailed_name (ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH)] = "<Control>percent";
+        action_accelerators[ACTION_INSERT_LINK] = "<Control>K";
+        action_accelerators[ACTION_REMOVE_FORMAT] = "<Control>space";
+        action_accelerators[ACTION_DISCARD] = "<Control>BackSpace";
+        action_accelerators[ACTION_DISCARD] = "<Control>Delete";
+        action_accelerators[ACTION_SEND] = "<Control>Return";
+    }
+
     construct {
-        actions = new SimpleActionGroup ();
-        actions.add_action_entries (ACTION_ENTRIES, this);
-        insert_action_group (ACTION_GROUP_PREFIX, actions);
+        if (action_group == null) {
+            action_group = get_action_group (MainWindow.ACTION_GROUP_PREFIX);
+        }
+
+        var application_instance = (Gtk.Application) GLib.Application.get_default ();
+
+        ((GLib.ActionMap) action_group).add_action_entries (ACTION_ENTRIES, this);
+        insert_action_group (ACTION_GROUP_PREFIX, action_group);
+
+        foreach (var action in action_accelerators.get_keys ()) {
+            application_instance.set_accels_for_action (
+                ACTION_PREFIX + action,
+                action_accelerators[action].to_array ()
+            );
+        }
 
         var from_label = new Gtk.Label (_("From:"));
         from_label.xalign = 1;
@@ -184,28 +212,40 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
 
         var bold = new Gtk.ToggleButton ();
-        bold.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>B"}, _("Bold"));
-        bold.image = new Gtk.Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.MENU);
         bold.action_name = ACTION_PREFIX + ACTION_BOLD;
         bold.action_target = ACTION_BOLD;
+        bold.image = new Gtk.Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.MENU);
+        bold.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (bold.action_name),
+            _("Bold")
+        );
 
         var italic = new Gtk.ToggleButton ();
-        italic.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>I"}, _("Italic"));
-        italic.image = new Gtk.Image.from_icon_name ("format-text-italic-symbolic", Gtk.IconSize.MENU);
         italic.action_name = ACTION_PREFIX + ACTION_ITALIC;
         italic.action_target = ACTION_ITALIC;
+        italic.image = new Gtk.Image.from_icon_name ("format-text-italic-symbolic", Gtk.IconSize.MENU);
+        italic.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (italic.action_name),
+            _("Italic")
+        );
 
         var underline = new Gtk.ToggleButton ();
-        underline.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>U"}, _("Underline"));
-        underline.image = new Gtk.Image.from_icon_name ("format-text-underline-symbolic", Gtk.IconSize.MENU);
         underline.action_name = ACTION_PREFIX + ACTION_UNDERLINE;
         underline.action_target = ACTION_UNDERLINE;
+        underline.image = new Gtk.Image.from_icon_name ("format-text-underline-symbolic", Gtk.IconSize.MENU);
+        underline.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (underline.action_name),
+            _("Underline")
+        );
 
         var strikethrough = new Gtk.ToggleButton ();
-        strikethrough.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>percent"}, _("Strikethrough"));
-        strikethrough.image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU);
         strikethrough.action_name = ACTION_PREFIX + ACTION_STRIKETHROUGH;
         strikethrough.action_target = ACTION_STRIKETHROUGH;
+        strikethrough.image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU);
+        strikethrough.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (strikethrough.action_name),
+            _("Strikethrough")
+        );
 
         var formatting_buttons = new Gtk.Grid ();
         formatting_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
@@ -227,14 +267,20 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         var link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU);
         link.action_name = ACTION_PREFIX + ACTION_INSERT_LINK;
-        link.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>K"}, _("Insert Link"));
+        link.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (link.action_name),
+            _("Insert Link")
+        );
 
         var image = new Gtk.Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.MENU);
         image.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>G"}, _("Insert Image"));
 
         var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU);
-        clear_format.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>space"}, _("Remove formatting"));
         clear_format.action_name = ACTION_PREFIX + ACTION_REMOVE_FORMAT;
+        clear_format.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (clear_format.action_name),
+            _("Remove formatting")
+        );
 
         var button_row = new Gtk.Grid ();
         button_row.column_spacing = 6;
@@ -266,8 +312,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
         discard.margin_start = 6;
-        discard.tooltip_text = _("Delete draft");
         discard.action_name = ACTION_PREFIX + ACTION_DISCARD;
+        discard.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (discard.action_name),
+            _("Delete draft")
+        );
 
         var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
         attach.action_name = ACTION_PREFIX + ACTION_ADD_ATTACHMENT;
@@ -278,9 +327,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
         send.sensitive = false;
         send.always_show_image = true;
         send.label = _("Send");
-        send.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>ISO_Enter"});
         send.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         send.action_name = ACTION_PREFIX + ACTION_SEND;
+        send.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (send.action_name)
+        );
 
         action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
 
@@ -427,14 +478,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
         if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
             filechooser.hide ();
             foreach (unowned File file in filechooser.get_files ()) {
-                try {
-                    var attachment = new Attachment (file);
-                    attachment.margin = 3;
+                var attachment = new Attachment (file) {
+                    margin = 3
+                };
 
-                    attachment_box.add (attachment);
-                } catch (Error e) {
-                    critical ("Couldn't add attachment: %s", e.message);
-                }
+                attachment_box.add (attachment);
             }
             attachment_box.show_all ();
         }
@@ -549,16 +597,16 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
     private void update_actions () {
         web_view.query_command_state.begin ("bold", (obj, res) => {
-            actions.change_action_state (ACTION_BOLD, web_view.query_command_state.end (res) ? ACTION_BOLD : "");
+            action_group.change_action_state (ACTION_BOLD, web_view.query_command_state.end (res) ? ACTION_BOLD : "");
         });
         web_view.query_command_state.begin ("italic", (obj, res) => {
-            actions.change_action_state (ACTION_ITALIC, web_view.query_command_state.end (res) ? ACTION_ITALIC : "");
+            action_group.change_action_state (ACTION_ITALIC, web_view.query_command_state.end (res) ? ACTION_ITALIC : "");
         });
         web_view.query_command_state.begin ("underline", (obj, res) => {
-            actions.change_action_state (ACTION_UNDERLINE, web_view.query_command_state.end (res) ? ACTION_UNDERLINE : "");
+            action_group.change_action_state (ACTION_UNDERLINE, web_view.query_command_state.end (res) ? ACTION_UNDERLINE : "");
         });
         web_view.query_command_state.begin ("strikethrough", (obj, res) => {
-            actions.change_action_state (ACTION_STRIKETHROUGH, web_view.query_command_state.end (res) ? ACTION_STRIKETHROUGH : "");
+            action_group.change_action_state (ACTION_STRIKETHROUGH, web_view.query_command_state.end (res) ? ACTION_STRIKETHROUGH : "");
         });
     }
 

@@ -24,6 +24,8 @@ public class Mail.ComposerWindow : Hdy.ApplicationWindow {
 
     public ComposerWindow (Gtk.Window parent, string? to = null, string? mailto_query = null) {
         Object (
+            application: ((Gtk.Application) GLib.Application.get_default ()),
+            title: _("New Message"),
             transient_for: parent,
             mailto_query: mailto_query,
             to: to
