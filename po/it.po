@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-21 17:05+0000\n"
+"POT-Creation-Date: 2021-06-02 19:54+0000\n"
 "PO-Revision-Date: 2021-01-30 01:07+0000\n"
 "Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/mail/mail/it/>\n"
@@ -119,146 +119,157 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Account online…"
 
-#: src/Composer/ComposerWidget.vala:92 src/MessageList/MessageListItem.vala:88
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
 msgid "From:"
 msgstr "Da:"
 
-#: src/Composer/ComposerWidget.vala:108 src/MessageList/MessageListItem.vala:93
+#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "Per:"
 
-#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:98
+#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "Oggetto:"
 
-#: src/Composer/ComposerWidget.vala:119
+#: src/Composer/ComposerWidget.vala:122
 msgid "Cc"
 msgstr "Cc"
 
-#: src/Composer/ComposerWidget.vala:121
+#: src/Composer/ComposerWidget.vala:124
 msgid "Bcc"
 msgstr "Ccn"
 
-#: src/Composer/ComposerWidget.vala:128
+#: src/Composer/ComposerWidget.vala:131
 #: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:144
+#: src/Composer/ComposerWidget.vala:147
 msgid "Bcc:"
 msgstr "Ccn:"
 
-#: src/Composer/ComposerWidget.vala:184
+#: src/Composer/ComposerWidget.vala:187
 msgid "Bold"
 msgstr "Grassetto"
 
-#: src/Composer/ComposerWidget.vala:190
+#: src/Composer/ComposerWidget.vala:193
 msgid "Italic"
 msgstr "Corsivo"
 
-#: src/Composer/ComposerWidget.vala:196
+#: src/Composer/ComposerWidget.vala:199
 msgid "Underline"
 msgstr "Sottolineato"
 
-#: src/Composer/ComposerWidget.vala:202
+#: src/Composer/ComposerWidget.vala:205
 msgid "Strikethrough"
 msgstr "Barrato"
 
-#: src/Composer/ComposerWidget.vala:215
+#: src/Composer/ComposerWidget.vala:218
 msgid "Quote text"
 msgstr "Cita testo"
 
-#: src/Composer/ComposerWidget.vala:218
+#: src/Composer/ComposerWidget.vala:221
 msgid "Unquote text"
 msgstr "Rimuovi citazione al testo"
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:230 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "Inserisci collegamento"
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:233
 msgid "Insert Image"
 msgstr "Inserisci immagine"
 
-#: src/Composer/ComposerWidget.vala:233
+#: src/Composer/ComposerWidget.vala:236
 msgid "Remove formatting"
 msgstr "Rimuovi formattazione"
 
-#: src/Composer/ComposerWidget.vala:261
+#: src/Composer/ComposerWidget.vala:269
 msgid "Delete draft"
 msgstr "Elimina bozza"
 
-#: src/Composer/ComposerWidget.vala:265
+#: src/Composer/ComposerWidget.vala:274
 msgid "Attach file"
 msgstr "Allega file"
 
-#: src/Composer/ComposerWidget.vala:271
+#: src/Composer/ComposerWidget.vala:280
 msgid "Send"
 msgstr "Invia"
 
-#: src/Composer/ComposerWidget.vala:452
+#: src/Composer/ComposerWidget.vala:420
+msgid "Choose a file"
+msgstr "Scegli un file"
+
+#: src/Composer/ComposerWidget.vala:423
+#, fuzzy
+#| msgid "_Attach"
+msgid "Attach"
+msgstr "_Allega"
+
+#: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:574
+#: src/Dialogs/InsertLinkDialog.vala:61
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Cancel"
+msgstr "Annulla"
+
+#: src/Composer/ComposerWidget.vala:488
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a %-e %b %Y alle %-k:%M"
 
-#: src/Composer/ComposerWidget.vala:482
+#: src/Composer/ComposerWidget.vala:518
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Il giorno %1$s, %2$s ha scritto:"
 
-#: src/Composer/ComposerWidget.vala:486
+#: src/Composer/ComposerWidget.vala:522
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Messaggio inoltrato ----------"
 
-#: src/Composer/ComposerWidget.vala:488
+#: src/Composer/ComposerWidget.vala:524
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Da: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:489
+#: src/Composer/ComposerWidget.vala:525
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Oggetto: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:490
+#: src/Composer/ComposerWidget.vala:526
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Data: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:491
+#: src/Composer/ComposerWidget.vala:527
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Per: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:493
+#: src/Composer/ComposerWidget.vala:529
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:531
+#: src/Composer/ComposerWidget.vala:567
 msgid "Permanently delete this draft?"
 msgstr "Eliminare permanentemente questa bozza?"
 
-#: src/Composer/ComposerWidget.vala:532
+#: src/Composer/ComposerWidget.vala:568
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Non è possibile annullare questa azione né recuperare la bozza una volta "
 "eliminata."
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Cancel"
-msgstr "Annulla"
-
-#: src/Composer/ComposerWidget.vala:540
+#: src/Composer/ComposerWidget.vala:576
 msgid "Delete Draft"
 msgstr "Elimina bozza"
 
-#: src/Composer/ComposerWidget.vala:557
+#: src/Composer/ComposerWidget.vala:593
 msgid "Send Message With an Empty Subject?"
 msgstr "Inviare il messaggio senza un oggetto?"
 
-#: src/Composer/ComposerWidget.vala:558
+#: src/Composer/ComposerWidget.vala:594
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
@@ -266,11 +277,11 @@ msgstr ""
 "Questo messaggio non contiene un oggetto. Il destinatario potrebbe non "
 "comprendere correttamente il contenuto o l'importanza del messaggio."
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:600
 msgid "Don't Send"
 msgstr "Non inviare"
 
-#: src/Composer/ComposerWidget.vala:566
+#: src/Composer/ComposerWidget.vala:602
 msgid "Send Anyway"
 msgstr "Invia comunque"
 
@@ -999,12 +1010,6 @@ msgstr "Salva"
 
 #~ msgid "Geary requires your email password to continue"
 #~ msgstr "È richiesta la password dell'account email per continuare"
-
-#~ msgid "Choose a file"
-#~ msgstr "Scegli un file"
-
-#~ msgid "_Attach"
-#~ msgstr "_Allega"
 
 #~ msgid "Additional addresses for %s"
 #~ msgstr "Indirizzi aggiuntivi per %s"

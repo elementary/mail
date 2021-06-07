@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-21 17:05+0000\n"
+"POT-Creation-Date: 2021-06-02 19:54+0000\n"
 "PO-Revision-Date: 2017-01-27 17:54+0000\n"
 "Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: www.gnome.gr\n"
@@ -125,162 +125,173 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Λογαριασμοί"
 
-#: src/Composer/ComposerWidget.vala:92 src/MessageList/MessageListItem.vala:88
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
 msgid "From:"
 msgstr "Από:"
 
-#: src/Composer/ComposerWidget.vala:108 src/MessageList/MessageListItem.vala:93
+#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "Προς:"
 
-#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:98
+#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "Θέμα:"
 
-#: src/Composer/ComposerWidget.vala:119
+#: src/Composer/ComposerWidget.vala:122
 #, fuzzy
 msgid "Cc"
 msgstr "Κοινοποίηση:"
 
-#: src/Composer/ComposerWidget.vala:121
+#: src/Composer/ComposerWidget.vala:124
 #, fuzzy
 msgid "Bcc"
 msgstr "Κρυφή κοιν.:"
 
-#: src/Composer/ComposerWidget.vala:128
+#: src/Composer/ComposerWidget.vala:131
 #: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr "Κοινοποίηση:"
 
-#: src/Composer/ComposerWidget.vala:144
+#: src/Composer/ComposerWidget.vala:147
 msgid "Bcc:"
 msgstr "Κρυφή κοιν.:"
 
-#: src/Composer/ComposerWidget.vala:184
+#: src/Composer/ComposerWidget.vala:187
 msgid "Bold"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:190
+#: src/Composer/ComposerWidget.vala:193
 msgid "Italic"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:196
+#: src/Composer/ComposerWidget.vala:199
 msgid "Underline"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:202
+#: src/Composer/ComposerWidget.vala:205
 msgid "Strikethrough"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:215
+#: src/Composer/ComposerWidget.vala:218
 msgid "Quote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:218
+#: src/Composer/ComposerWidget.vala:221
 msgid "Unquote text"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:230 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:230
+#: src/Composer/ComposerWidget.vala:233
 msgid "Insert Image"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:233
+#: src/Composer/ComposerWidget.vala:236
 msgid "Remove formatting"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:261
+#: src/Composer/ComposerWidget.vala:269
 msgid "Delete draft"
 msgstr "Διαγραφή προχείρου"
 
-#: src/Composer/ComposerWidget.vala:265
+#: src/Composer/ComposerWidget.vala:274
 msgid "Attach file"
 msgstr "Επισύναψη αρχείου"
 
-#: src/Composer/ComposerWidget.vala:271
+#: src/Composer/ComposerWidget.vala:280
 msgid "Send"
 msgstr "Αποστολή"
 
-#: src/Composer/ComposerWidget.vala:452
+#: src/Composer/ComposerWidget.vala:420
+msgid "Choose a file"
+msgstr "Επιλέξτε ένα αρχείο"
+
+#: src/Composer/ComposerWidget.vala:423
+#, fuzzy
+#| msgid "_Attach"
+msgid "Attach"
+msgstr "_Επισύναψη"
+
+#: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:574
+#: src/Dialogs/InsertLinkDialog.vala:61
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Cancel"
+msgstr "Άκυρο"
+
+#: src/Composer/ComposerWidget.vala:488
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e %b, %Y at %-l:%M %p"
 
-#: src/Composer/ComposerWidget.vala:482
+#: src/Composer/ComposerWidget.vala:518
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Στις %1$s, ο/η %2$s έγραψε:"
 
-#: src/Composer/ComposerWidget.vala:486
+#: src/Composer/ComposerWidget.vala:522
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Προωθημένο μήνυμα ----------"
 
-#: src/Composer/ComposerWidget.vala:488
+#: src/Composer/ComposerWidget.vala:524
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "Από: %s\n"
 
-#: src/Composer/ComposerWidget.vala:489
+#: src/Composer/ComposerWidget.vala:525
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "Θέμα %s\n"
 
-#: src/Composer/ComposerWidget.vala:490
+#: src/Composer/ComposerWidget.vala:526
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "Ημερομηνία:%s\n"
 
-#: src/Composer/ComposerWidget.vala:491
+#: src/Composer/ComposerWidget.vala:527
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "Προς: %s\n"
 
-#: src/Composer/ComposerWidget.vala:493
+#: src/Composer/ComposerWidget.vala:529
 #, fuzzy, c-format
 msgid "Cc: %s<br/>"
 msgstr "Κοινοποίηση: %s\n"
 
-#: src/Composer/ComposerWidget.vala:531
+#: src/Composer/ComposerWidget.vala:567
 #, fuzzy
 #| msgid "Do you want to permanently delete this message?"
 #| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
 msgstr "Θέλετε να διαγράψετε οριστικά αυτό το μήνυμα;"
 
-#: src/Composer/ComposerWidget.vala:532
+#: src/Composer/ComposerWidget.vala:568
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Cancel"
-msgstr "Άκυρο"
-
-#: src/Composer/ComposerWidget.vala:540
+#: src/Composer/ComposerWidget.vala:576
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Delete Draft"
 msgstr "Διαγραφή προχείρου"
 
-#: src/Composer/ComposerWidget.vala:557
+#: src/Composer/ComposerWidget.vala:593
 #, fuzzy
 msgid "Send Message With an Empty Subject?"
 msgstr "Να αποσταλεί το μήνυμα με κενό θέμα;"
 
-#: src/Composer/ComposerWidget.vala:558
+#: src/Composer/ComposerWidget.vala:594
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:600
 msgid "Don't Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:566
+#: src/Composer/ComposerWidget.vala:602
 msgid "Send Anyway"
 msgstr ""
 
@@ -1019,12 +1030,6 @@ msgstr "_Αποθήκευση"
 #~ msgstr ""
 #~ "Το Geary απαιτεί τον κωδικό πρόσβασης του ηλεκτρονικού ταχυδρομείου σας "
 #~ "για να συνεχίσει"
-
-#~ msgid "Choose a file"
-#~ msgstr "Επιλέξτε ένα αρχείο"
-
-#~ msgid "_Attach"
-#~ msgstr "_Επισύναψη"
 
 #~ msgid "First Last"
 #~ msgstr "Όνομα επώνυμο"
