@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-02 19:54+0000\n"
+"POT-Creation-Date: 2021-06-07 19:43+0000\n"
 "PO-Revision-Date: 2020-05-30 13:11+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/mail/cs/>\n"
@@ -142,131 +142,119 @@ msgstr "Kopie:"
 msgid "Bcc:"
 msgstr "Skrytá kopie:"
 
-#: src/Composer/ComposerWidget.vala:187
+#: src/Composer/ComposerWidget.vala:190
 msgid "Bold"
 msgstr "Tučně"
 
-#: src/Composer/ComposerWidget.vala:193
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
 msgstr "Kurzíva"
 
-#: src/Composer/ComposerWidget.vala:199
+#: src/Composer/ComposerWidget.vala:204
 msgid "Underline"
 msgstr "Podtržení"
 
-#: src/Composer/ComposerWidget.vala:205
+#: src/Composer/ComposerWidget.vala:211
 msgid "Strikethrough"
 msgstr "Přeškrtnutí"
 
-#: src/Composer/ComposerWidget.vala:218
-msgid "Quote text"
-msgstr "Citovat text"
-
-#: src/Composer/ComposerWidget.vala:221
-msgid "Unquote text"
-msgstr "Ukončit citaci"
-
-#: src/Composer/ComposerWidget.vala:230 src/Dialogs/InsertLinkDialog.vala:63
-msgid "Insert Link"
-msgstr "Přidat odkaz"
-
-#: src/Composer/ComposerWidget.vala:233
-msgid "Insert Image"
-msgstr "Přidat obrázek"
-
-#: src/Composer/ComposerWidget.vala:236
+#: src/Composer/ComposerWidget.vala:216
 msgid "Remove formatting"
 msgstr "Odebrat formátování"
 
-#: src/Composer/ComposerWidget.vala:269
+#: src/Composer/ComposerWidget.vala:228 src/Dialogs/InsertLinkDialog.vala:63
+msgid "Insert Link"
+msgstr "Přidat odkaz"
+
+#: src/Composer/ComposerWidget.vala:259
 msgid "Delete draft"
 msgstr "Smazat koncept"
 
-#: src/Composer/ComposerWidget.vala:274
+#: src/Composer/ComposerWidget.vala:264
 msgid "Attach file"
 msgstr "Připojit soubor"
 
-#: src/Composer/ComposerWidget.vala:280
+#: src/Composer/ComposerWidget.vala:270
 msgid "Send"
 msgstr "Odeslat"
 
-#: src/Composer/ComposerWidget.vala:420
+#: src/Composer/ComposerWidget.vala:415
 msgid "Choose a file"
 msgstr "Vybrat soubor"
 
-#: src/Composer/ComposerWidget.vala:423
+#: src/Composer/ComposerWidget.vala:418
 #, fuzzy
 #| msgid "_Attach"
 msgid "Attach"
 msgstr "_Příloha"
 
-#: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:574
+#: src/Composer/ComposerWidget.vala:419 src/Composer/ComposerWidget.vala:569
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Storno"
 
-#: src/Composer/ComposerWidget.vala:488
+#: src/Composer/ComposerWidget.vala:483
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %b %-e, %Y v %-l∶%M %p"
 
-#: src/Composer/ComposerWidget.vala:518
+#: src/Composer/ComposerWidget.vala:513
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%2$s napsal %1$s:"
 
-#: src/Composer/ComposerWidget.vala:522
+#: src/Composer/ComposerWidget.vala:517
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Přeposlaná zpráva ----------"
 
-#: src/Composer/ComposerWidget.vala:524
+#: src/Composer/ComposerWidget.vala:519
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Od: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:525
+#: src/Composer/ComposerWidget.vala:520
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Předmět: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:526
+#: src/Composer/ComposerWidget.vala:521
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Datum: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:527
+#: src/Composer/ComposerWidget.vala:522
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Příjemce: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:529
+#: src/Composer/ComposerWidget.vala:524
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Kopie: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:567
+#: src/Composer/ComposerWidget.vala:562
 #, fuzzy
 #| msgid "Do you want to permanently delete this message?"
 #| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
 msgstr "Chcete trvale smazat tuto zprávu?"
 
-#: src/Composer/ComposerWidget.vala:568
+#: src/Composer/ComposerWidget.vala:563
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:576
+#: src/Composer/ComposerWidget.vala:571
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Delete Draft"
 msgstr "Smazat koncept"
 
-#: src/Composer/ComposerWidget.vala:593
+#: src/Composer/ComposerWidget.vala:588
 msgid "Send Message With an Empty Subject?"
 msgstr "Poslat zprávu s prázdným předmětem?"
 
-#: src/Composer/ComposerWidget.vala:594
+#: src/Composer/ComposerWidget.vala:589
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
@@ -274,11 +262,11 @@ msgstr ""
 "Tato zpráva nemá vyplněnou kolonku předmět. Příjemce možná nebude moci "
 "odhadnout rozsah nebo důležitost zprávy."
 
-#: src/Composer/ComposerWidget.vala:600
+#: src/Composer/ComposerWidget.vala:595
 msgid "Don't Send"
 msgstr "Neodesílat"
 
-#: src/Composer/ComposerWidget.vala:602
+#: src/Composer/ComposerWidget.vala:597
 msgid "Send Anyway"
 msgstr "Přesto odeslat"
 
@@ -425,6 +413,15 @@ msgstr "Neznámý"
 #: src/MessageList/AttachmentButton.vala:113
 msgid "Save"
 msgstr "Uložit"
+
+#~ msgid "Quote text"
+#~ msgstr "Citovat text"
+
+#~ msgid "Unquote text"
+#~ msgstr "Ukončit citaci"
+
+#~ msgid "Insert Image"
+#~ msgstr "Přidat obrázek"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr ""

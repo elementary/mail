@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-02 19:54+0000\n"
+"POT-Creation-Date: 2021-06-07 19:43+0000\n"
 "PO-Revision-Date: 2017-02-02 09:29+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/geary/language/"
@@ -154,138 +154,126 @@ msgstr "Cc:"
 msgid "Bcc:"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:187
+#: src/Composer/ComposerWidget.vala:190
 msgid "Bold"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:193
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:199
+#: src/Composer/ComposerWidget.vala:204
 msgid "Underline"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:205
+#: src/Composer/ComposerWidget.vala:211
 msgid "Strikethrough"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:218
-msgid "Quote text"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:221
-msgid "Unquote text"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:230 src/Dialogs/InsertLinkDialog.vala:63
-msgid "Insert Link"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:233
-msgid "Insert Image"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:236
+#: src/Composer/ComposerWidget.vala:216
 msgid "Remove formatting"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:269
+#: src/Composer/ComposerWidget.vala:228 src/Dialogs/InsertLinkDialog.vala:63
+msgid "Insert Link"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:259
 msgid "Delete draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:274
+#: src/Composer/ComposerWidget.vala:264
 msgid "Attach file"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:280
+#: src/Composer/ComposerWidget.vala:270
 msgid "Send"
 msgstr "Saada"
 
-#: src/Composer/ComposerWidget.vala:420
+#: src/Composer/ComposerWidget.vala:415
 msgid "Choose a file"
 msgstr "Manuse valimine"
 
-#: src/Composer/ComposerWidget.vala:423
+#: src/Composer/ComposerWidget.vala:418
 #, fuzzy
 #| msgid "_Attach"
 msgid "Attach"
 msgstr "_Olgu"
 
-#: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:574
+#: src/Composer/ComposerWidget.vala:419 src/Composer/ComposerWidget.vala:569
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:488
+#: src/Composer/ComposerWidget.vala:483
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%A, %e. %B, %Y - %-H:%M"
 
-#: src/Composer/ComposerWidget.vala:518
+#: src/Composer/ComposerWidget.vala:513
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:522
+#: src/Composer/ComposerWidget.vala:517
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Edasisuunatud kiri ----------"
 
-#: src/Composer/ComposerWidget.vala:524
+#: src/Composer/ComposerWidget.vala:519
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "Kellelt: %s\n"
 
-#: src/Composer/ComposerWidget.vala:525
+#: src/Composer/ComposerWidget.vala:520
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "Teema: %s\n"
 
-#: src/Composer/ComposerWidget.vala:526
+#: src/Composer/ComposerWidget.vala:521
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "Kuupäev: %s\n"
 
-#: src/Composer/ComposerWidget.vala:527
+#: src/Composer/ComposerWidget.vala:522
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "Saaja: %s\n"
 
-#: src/Composer/ComposerWidget.vala:529
+#: src/Composer/ComposerWidget.vala:524
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:567
+#: src/Composer/ComposerWidget.vala:562
 msgid "Permanently delete this draft?"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:568
+#: src/Composer/ComposerWidget.vala:563
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:576
+#: src/Composer/ComposerWidget.vala:571
 #, fuzzy
 #| msgid "Drafts | Draft"
 msgid "Delete Draft"
 msgstr "Mustandid | Mustand"
 
-#: src/Composer/ComposerWidget.vala:593
+#: src/Composer/ComposerWidget.vala:588
 msgid "Send Message With an Empty Subject?"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:594
+#: src/Composer/ComposerWidget.vala:589
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:600
+#: src/Composer/ComposerWidget.vala:595
 msgid "Don't Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:602
+#: src/Composer/ComposerWidget.vala:597
 msgid "Send Anyway"
 msgstr ""
 
