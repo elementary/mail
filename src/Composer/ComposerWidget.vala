@@ -222,7 +222,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
         formatting_buttons.add (italic);
         formatting_buttons.add (underline);
         formatting_buttons.add (strikethrough);
-        formatting_buttons.add (clear_format );
 
         var link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU) {
             action_name = ACTION_PREFIX + ACTION_INSERT_LINK,
@@ -235,6 +234,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
             margin_bottom = 6
         };
         button_row.add (formatting_buttons);
+        button_row.add (clear_format );
         button_row.add (link);
 
         web_view = new WebView ();
