@@ -183,29 +183,38 @@ public class Mail.ComposerWidget : Gtk.Grid {
             recipient_grid.attach (subject_val, 1, 4);
         }
 
-        var bold = new Gtk.ToggleButton ();
-        bold.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>B"}, _("Bold"));
-        bold.image = new Gtk.Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.MENU);
-        bold.action_name = ACTION_PREFIX + ACTION_BOLD;
-        bold.action_target = ACTION_BOLD;
+        var bold = new Gtk.ToggleButton () {
+            action_name = ACTION_PREFIX + ACTION_BOLD,
+            action_target = ACTION_BOLD,
+            image = new Gtk.Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.MENU),
+            tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>B"}, _("Bold"))
+        };
 
-        var italic = new Gtk.ToggleButton ();
-        italic.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>I"}, _("Italic"));
-        italic.image = new Gtk.Image.from_icon_name ("format-text-italic-symbolic", Gtk.IconSize.MENU);
-        italic.action_name = ACTION_PREFIX + ACTION_ITALIC;
-        italic.action_target = ACTION_ITALIC;
+        var italic = new Gtk.ToggleButton () {
+            action_name = ACTION_PREFIX + ACTION_ITALIC,
+            action_target = ACTION_ITALIC,
+            image = new Gtk.Image.from_icon_name ("format-text-italic-symbolic", Gtk.IconSize.MENU),
+            tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>I"}, _("Italic"))
+        };
 
-        var underline = new Gtk.ToggleButton ();
-        underline.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>U"}, _("Underline"));
-        underline.image = new Gtk.Image.from_icon_name ("format-text-underline-symbolic", Gtk.IconSize.MENU);
-        underline.action_name = ACTION_PREFIX + ACTION_UNDERLINE;
-        underline.action_target = ACTION_UNDERLINE;
+        var underline = new Gtk.ToggleButton () {
+            action_name = ACTION_PREFIX + ACTION_UNDERLINE,
+            action_target = ACTION_UNDERLINE,
+            image = new Gtk.Image.from_icon_name ("format-text-underline-symbolic", Gtk.IconSize.MENU),
+            tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Underline"))
+        };
 
-        var strikethrough = new Gtk.ToggleButton ();
-        strikethrough.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>percent"}, _("Strikethrough"));
-        strikethrough.image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU);
-        strikethrough.action_name = ACTION_PREFIX + ACTION_STRIKETHROUGH;
-        strikethrough.action_target = ACTION_STRIKETHROUGH;
+        var strikethrough = new Gtk.ToggleButton () {
+            action_name = ACTION_PREFIX + ACTION_STRIKETHROUGH,
+            action_target = ACTION_STRIKETHROUGH,
+            image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU),
+            tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Strikethrough"))
+        };
+
+        var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU) {
+            action_name = ACTION_PREFIX + ACTION_REMOVE_FORMAT,
+            tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Remove formatting"))
+        };
 
         var formatting_buttons = new Gtk.Grid ();
         formatting_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
@@ -214,37 +223,19 @@ public class Mail.ComposerWidget : Gtk.Grid {
         formatting_buttons.add (underline);
         formatting_buttons.add (strikethrough);
 
-        var indent_more = new Gtk.Button.from_icon_name ("format-indent-more-symbolic", Gtk.IconSize.MENU);
-        indent_more.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>bracketright"}, _("Quote text"));
+        var link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU) {
+            action_name = ACTION_PREFIX + ACTION_INSERT_LINK,
+            tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Insert Link"))
+        };
 
-        var indent_less = new Gtk.Button.from_icon_name ("format-indent-less-symbolic", Gtk.IconSize.MENU);
-        indent_less.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>bracketleft"}, _("Unquote text"));
-
-        var indent_buttons = new Gtk.Grid ();
-        indent_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-        indent_buttons.add (indent_more);
-        indent_buttons.add (indent_less);
-
-        var link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU);
-        link.action_name = ACTION_PREFIX + ACTION_INSERT_LINK;
-        link.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>K"}, _("Insert Link"));
-
-        var image = new Gtk.Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.MENU);
-        image.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>G"}, _("Insert Image"));
-
-        var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU);
-        clear_format.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>space"}, _("Remove formatting"));
-        clear_format.action_name = ACTION_PREFIX + ACTION_REMOVE_FORMAT;
-
-        var button_row = new Gtk.Grid ();
-        button_row.column_spacing = 6;
-        button_row.margin_start = 6;
-        button_row.margin_bottom = 6;
+        var button_row = new Gtk.Grid () {
+            column_spacing = 12,
+            margin_start = 6,
+            margin_bottom = 6
+        };
         button_row.add (formatting_buttons);
-        button_row.add (indent_buttons);
+        button_row.add (clear_format );
         button_row.add (link);
-        button_row.add (image);
-        button_row.add (clear_format);
 
         web_view = new WebView ();
         try {
@@ -257,33 +248,37 @@ public class Mail.ComposerWidget : Gtk.Grid {
         web_view.selection_changed.connect (update_actions);
         web_view.mouse_target_changed.connect (on_mouse_target_changed);
 
-        attachment_box = new Gtk.FlowBox ();
-        attachment_box.homogeneous = true;
-        attachment_box.selection_mode = Gtk.SelectionMode.NONE;
+        attachment_box = new Gtk.FlowBox () {
+            homogeneous = true,
+            selection_mode = Gtk.SelectionMode.NONE
+        };
         attachment_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
-        var action_bar = new Gtk.ActionBar ();
+        var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU) {
+            action_name = ACTION_PREFIX + ACTION_DISCARD,
+            tooltip_text = _("Delete draft")
+        };
 
-        var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
-        discard.margin_start = 6;
-        discard.tooltip_text = _("Delete draft");
-        discard.action_name = ACTION_PREFIX + ACTION_DISCARD;
+        var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU) {
+            action_name = ACTION_PREFIX + ACTION_ADD_ATTACHMENT,
+            tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Attach file"))
+        };
 
-        var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
-        attach.action_name = ACTION_PREFIX + ACTION_ADD_ATTACHMENT;
-        attach.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>t"}, _("Attach file"));
-
-        var send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU);
-        send.margin = 6;
-        send.sensitive = false;
-        send.always_show_image = true;
-        send.label = _("Send");
-        send.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>ISO_Enter"});
+        var send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU) {
+            action_name = ACTION_PREFIX + ACTION_SEND,
+            always_show_image = true,
+            label = _("Send"),
+            margin = 6,
+            margin_end = 0,
+            sensitive = false
+        };
         send.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-        send.action_name = ACTION_PREFIX + ACTION_SEND;
 
-        action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
-
+        var action_bar = new Gtk.ActionBar () {
+            // Workaround styling issue
+            margin_top = 1
+        };
+        action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         action_bar.pack_start (discard);
         action_bar.pack_start (attach);
         action_bar.pack_end (send);
