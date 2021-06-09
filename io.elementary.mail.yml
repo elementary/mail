@@ -21,7 +21,7 @@ finish-args:
 
   # LibSecret interfaces
   - '--talk-name=org.freedesktop.secrets'
-	- '--talk-name=org.gnome.keyring.SystemPrompter'
+  - '--talk-name=org.gnome.keyring.SystemPrompter'
 
   - '--metadata=X-DConf=migrate-path=/io/elementary/mail/'
 cleanup:
