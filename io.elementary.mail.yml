@@ -19,6 +19,9 @@ finish-args:
   - '--talk-name=org.gnome.evolution.dataserver.AddressBook10'
   - '--talk-name=org.gnome.evolution.dataserver.Sources5'
 
+  - '--talk-name=org.freedesktop.secrets'
+  - '--talk-name=org.gnome.keyring.SystemPrompter'
+
   - '--metadata=X-DConf=migrate-path=/io/elementary/mail/'
 cleanup:
   - '/include'
