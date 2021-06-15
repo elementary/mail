@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
-"PO-Revision-Date: 2021-02-13 12:18+0000\n"
+"POT-Creation-Date: 2021-06-07 19:43+0000\n"
+"PO-Revision-Date: 2021-06-03 12:08+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
 "mail/nb/>\n"
@@ -71,12 +71,11 @@ msgstr "Merk som lest"
 #: src/HeaderBar.vala:125
 #, fuzzy
 msgid "Star"
-msgstr "_Stjerne"
+msgstr "Stjerne"
 
 #: src/HeaderBar.vala:130
-#, fuzzy
 msgid "Unstar"
-msgstr "F_jern stjerne"
+msgstr "Fjern stjerne"
 
 #: src/HeaderBar.vala:142
 #, fuzzy
@@ -84,10 +83,8 @@ msgid "Mark Conversation"
 msgstr "Merk samtale"
 
 #: src/HeaderBar.vala:149
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
-msgstr "Flytt samtaler til papirkurven"
+msgstr "Flytt samtaler til arkiv"
 
 #: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
@@ -98,16 +95,14 @@ msgid "Mail"
 msgstr "E-post"
 
 #: src/MainWindow.vala:290
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Ingen samtaler valgt."
-msgstr[1] "Ingen samtaler valgt."
+msgstr[0] "Melding slettet"
+msgstr[1] "Meldinger slettet"
 
 #: src/MainWindow.vala:302
-#, fuzzy
 msgid "Undo"
-msgstr "_Angre"
+msgstr "Angre"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
@@ -122,153 +117,145 @@ msgstr "Mail bruker e-postkontoer satt opp i systeminnstillingene."
 msgid "Online Accounts…"
 msgstr "Nettkontoer…"
 
-#: src/Composer/ComposerWidget.vala:92 src/MessageList/MessageListItem.vala:88
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
 msgid "From:"
 msgstr "Fra:"
 
-#: src/Composer/ComposerWidget.vala:108 src/MessageList/MessageListItem.vala:93
+#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "Til:"
 
-#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:98
+#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "Emne:"
 
-#: src/Composer/ComposerWidget.vala:119
+#: src/Composer/ComposerWidget.vala:122
 msgid "Cc"
 msgstr "Kopi"
 
-#: src/Composer/ComposerWidget.vala:121
+#: src/Composer/ComposerWidget.vala:124
 #, fuzzy
 msgid "Bcc"
 msgstr "Blindkopi"
 
-#: src/Composer/ComposerWidget.vala:128
+#: src/Composer/ComposerWidget.vala:131
 #: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr "Kopi:"
 
-#: src/Composer/ComposerWidget.vala:144
+#: src/Composer/ComposerWidget.vala:147
 msgid "Bcc:"
 msgstr "Blindkopi:"
 
-#: src/Composer/ComposerWidget.vala:184
+#: src/Composer/ComposerWidget.vala:190
 msgid "Bold"
 msgstr "Fet"
 
-#: src/Composer/ComposerWidget.vala:190
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
 msgstr "Kursiv"
 
-#: src/Composer/ComposerWidget.vala:196
+#: src/Composer/ComposerWidget.vala:204
 msgid "Underline"
 msgstr "Understrek"
 
-#: src/Composer/ComposerWidget.vala:202
+#: src/Composer/ComposerWidget.vala:211
 msgid "Strikethrough"
 msgstr "Gjennomstrek"
 
-#: src/Composer/ComposerWidget.vala:215
-msgid "Quote text"
-msgstr "Siter tekst"
-
-#: src/Composer/ComposerWidget.vala:218
-msgid "Unquote text"
-msgstr "Ikke siter tekst"
-
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
-msgid "Insert Link"
-msgstr "Sett inn lenke"
-
-#: src/Composer/ComposerWidget.vala:230
-msgid "Insert Image"
-msgstr "Sett inn bilde"
-
-#: src/Composer/ComposerWidget.vala:233
+#: src/Composer/ComposerWidget.vala:216
 msgid "Remove formatting"
 msgstr "Fjern formatering"
 
-#: src/Composer/ComposerWidget.vala:261
+#: src/Composer/ComposerWidget.vala:228 src/Dialogs/InsertLinkDialog.vala:63
+msgid "Insert Link"
+msgstr "Sett inn lenke"
+
+#: src/Composer/ComposerWidget.vala:259
 msgid "Delete draft"
 msgstr "Forkast utkast"
 
-#: src/Composer/ComposerWidget.vala:265
+#: src/Composer/ComposerWidget.vala:264
 msgid "Attach file"
 msgstr "Legg ved fil"
 
-#: src/Composer/ComposerWidget.vala:271
+#: src/Composer/ComposerWidget.vala:270
 msgid "Send"
 msgstr "Send"
 
-#: src/Composer/ComposerWidget.vala:452
+#: src/Composer/ComposerWidget.vala:415
+msgid "Choose a file"
+msgstr "Velg en fil"
+
+#: src/Composer/ComposerWidget.vala:418
+msgid "Attach"
+msgstr "Legg ved"
+
+#: src/Composer/ComposerWidget.vala:419 src/Composer/ComposerWidget.vala:569
+#: src/Dialogs/InsertLinkDialog.vala:61
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: src/Composer/ComposerWidget.vala:483
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a. %e. %b, %Y, kl %-k:%M"
 
-#: src/Composer/ComposerWidget.vala:482
+#: src/Composer/ComposerWidget.vala:513
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Den %1$s, %2$s skrev:"
 
-#: src/Composer/ComposerWidget.vala:486
+#: src/Composer/ComposerWidget.vala:517
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Videresendt melding ----------"
 
-#: src/Composer/ComposerWidget.vala:488
+#: src/Composer/ComposerWidget.vala:519
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Fra: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:489
+#: src/Composer/ComposerWidget.vala:520
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Emne: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:490
+#: src/Composer/ComposerWidget.vala:521
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Dato: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:491
+#: src/Composer/ComposerWidget.vala:522
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Til: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:493
+#: src/Composer/ComposerWidget.vala:524
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Kopi: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:531
-#, fuzzy
-#| msgid "Do you want to permanently delete this message?"
-#| msgid_plural "Do you want to permanently delete these messages?"
+#: src/Composer/ComposerWidget.vala:562
 msgid "Permanently delete this draft?"
-msgstr "Ønsker du å slette denne meldingen permanent?"
+msgstr "Ønsker du å slette denne kladden?"
 
-#: src/Composer/ComposerWidget.vala:532
+#: src/Composer/ComposerWidget.vala:563
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Du kan ikke angre denne handlingen, ei heller gjenopprette kladden din om "
 "noe har blitt slettet."
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Cancel"
-msgstr "Avbryt"
-
-#: src/Composer/ComposerWidget.vala:540
-#, fuzzy
-#| msgid "Delete draft"
+#: src/Composer/ComposerWidget.vala:571
 msgid "Delete Draft"
 msgstr "Forkast utkast"
 
-#: src/Composer/ComposerWidget.vala:557
+#: src/Composer/ComposerWidget.vala:588
 #, fuzzy
 msgid "Send Message With an Empty Subject?"
 msgstr "Sende melding med tom tittel?"
 
-#: src/Composer/ComposerWidget.vala:558
+#: src/Composer/ComposerWidget.vala:589
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
@@ -276,11 +263,11 @@ msgstr ""
 "Denne meldingen har tomt emnefelt. Mottageren kan ikke anta hensikt eller "
 "hvor viktig den er."
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:595
 msgid "Don't Send"
 msgstr "Ikke send"
 
-#: src/Composer/ComposerWidget.vala:566
+#: src/Composer/ComposerWidget.vala:597
 #, fuzzy
 msgid "Send Anyway"
 msgstr "Åpne likevel"
@@ -290,19 +277,16 @@ msgid "New Message"
 msgstr "Ny melding"
 
 #: src/ConversationList/ConversationListItem.vala:102
-#, fuzzy
 msgid "Unread"
-msgstr "%d ulest"
+msgstr "Ulest"
 
 #: src/ConversationList/ConversationListItem.vala:112
-#, fuzzy
 msgid "Replied"
-msgstr "Svar"
+msgstr "Besvart"
 
 #: src/ConversationList/ConversationListItem.vala:116
-#, fuzzy
 msgid "Forwarded"
-msgstr "Fremover"
+msgstr "Videresendt"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -340,6 +324,24 @@ msgstr "Åpne likevel"
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "Gjenoppfrisk mappe"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgid "Inbox"
+msgstr "Innboks"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Arkiv"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+msgid "Sent"
+msgstr "Sendt"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+#, fuzzy
+#| msgid "All Mail"
+msgid "All Mailboxes"
+msgstr "All e-postbokser"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
@@ -385,16 +387,12 @@ msgstr "Denne meldingen inneholder en eller flere vedlegg"
 
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:351
-#, fuzzy
-#| msgid "New Message"
 msgid "Email Message"
-msgstr "Ny melding"
+msgstr "E-postmelding"
 
 #: src/MessageList/MessageListItem.vala:373
-#, fuzzy
-#| msgid "Unable to validate:\n"
 msgid "Unable to print email"
-msgstr "Kan ikke validere:\n"
+msgstr "Kunne ikke skrive ut e-post"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
@@ -411,6 +409,15 @@ msgstr "Ukjent"
 #: src/MessageList/AttachmentButton.vala:113
 msgid "Save"
 msgstr "Lagre"
+
+#~ msgid "Quote text"
+#~ msgstr "Siter tekst"
+
+#~ msgid "Unquote text"
+#~ msgstr "Ikke siter tekst"
+
+#~ msgid "Insert Image"
+#~ msgstr "Sett inn bilde"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "Utkast | Drafts | Draft"
@@ -431,23 +438,14 @@ msgstr "Lagre"
 #~ msgid "Archive | Archives"
 #~ msgstr "Arkiv | Arkiv"
 
-#~ msgid "Inbox"
-#~ msgstr "Innboks"
-
 #~ msgid "Drafts"
 #~ msgstr "Utkast"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Sendt e-post"
 
 #~ msgid "Starred"
 #~ msgstr "Stjernemerket"
 
 #~ msgid "Important"
 #~ msgstr "Viktig"
-
-#~ msgid "All Mail"
-#~ msgstr "All e-post"
 
 #~ msgid "Spam"
 #~ msgstr "Søppelpost"
@@ -460,9 +458,6 @@ msgstr "Lagre"
 
 #~ msgid "Search"
 #~ msgstr "Søk"
-
-#~ msgid "Archive"
-#~ msgstr "Arkiv"
 
 #~ msgid "None"
 #~ msgstr "Ingen"
@@ -992,12 +987,6 @@ msgstr "Lagre"
 
 #~ msgid "Geary requires your email password to continue"
 #~ msgstr "Geary trenger ditt e-post passord for å fortsette"
-
-#~ msgid "Choose a file"
-#~ msgstr "Velg en fil"
-
-#~ msgid "_Attach"
-#~ msgstr "_Legg ved"
 
 #~ msgid "Additional addresses for %s"
 #~ msgstr "Flere adresser for %s"

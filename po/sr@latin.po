@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-06-07 19:43+0000\n"
 "PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
@@ -131,170 +131,169 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Nalozi"
 
-#: src/Composer/ComposerWidget.vala:92 src/MessageList/MessageListItem.vala:88
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
 msgid "From:"
 msgstr "Šalje:"
 
-#: src/Composer/ComposerWidget.vala:108 src/MessageList/MessageListItem.vala:93
+#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "Prima:"
 
-#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:98
+#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "Naslov:"
 
-#: src/Composer/ComposerWidget.vala:119
+#: src/Composer/ComposerWidget.vala:122
 #, fuzzy
 #| msgid "Cc:"
 msgid "Cc"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:121
+#: src/Composer/ComposerWidget.vala:124
 #, fuzzy
 #| msgid "Bcc:"
 msgid "Bcc"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:128
+#: src/Composer/ComposerWidget.vala:131
 #: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:144
+#: src/Composer/ComposerWidget.vala:147
 msgid "Bcc:"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:184
+#: src/Composer/ComposerWidget.vala:190
 msgid "Bold"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:190
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:196
+#: src/Composer/ComposerWidget.vala:204
 msgid "Underline"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:202
+#: src/Composer/ComposerWidget.vala:211
 msgid "Strikethrough"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:215
-msgid "Quote text"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:218
-msgid "Unquote text"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
-msgid "Insert Link"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:230
-msgid "Insert Image"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:233
+#: src/Composer/ComposerWidget.vala:216
 msgid "Remove formatting"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:261
+#: src/Composer/ComposerWidget.vala:228 src/Dialogs/InsertLinkDialog.vala:63
+msgid "Insert Link"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:259
 msgid "Delete draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:265
+#: src/Composer/ComposerWidget.vala:264
 msgid "Attach file"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:271
+#: src/Composer/ComposerWidget.vala:270
 msgid "Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:452
+#: src/Composer/ComposerWidget.vala:415
+msgid "Choose a file"
+msgstr "Izaberite datoteku"
+
+#: src/Composer/ComposerWidget.vala:418
+#, fuzzy
+#| msgid "_Attach"
+msgid "Attach"
+msgstr "_Priloži"
+
+#: src/Composer/ComposerWidget.vala:419 src/Composer/ComposerWidget.vala:569
+#: src/Dialogs/InsertLinkDialog.vala:61
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Cancel"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:483
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e. %b, %Y. u %-l:%M %p"
 
-#: src/Composer/ComposerWidget.vala:482
+#: src/Composer/ComposerWidget.vala:513
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s, %2$s piše:"
 
-#: src/Composer/ComposerWidget.vala:486
+#: src/Composer/ComposerWidget.vala:517
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Prosleđena poruka ----------"
 
-#: src/Composer/ComposerWidget.vala:488
+#: src/Composer/ComposerWidget.vala:519
 #, fuzzy, c-format
 #| msgid "From: %s\n"
 msgid "From: %s<br/>"
 msgstr "Šalje: %s\n"
 
-#: src/Composer/ComposerWidget.vala:489
+#: src/Composer/ComposerWidget.vala:520
 #, fuzzy, c-format
 #| msgid "Subject: %s\n"
 msgid "Subject: %s<br/>"
 msgstr "Naslov: %s\n"
 
-#: src/Composer/ComposerWidget.vala:490
+#: src/Composer/ComposerWidget.vala:521
 #, fuzzy, c-format
 #| msgid "Date: %s\n"
 msgid "Date: %s<br/>"
 msgstr "Datum: %s\n"
 
-#: src/Composer/ComposerWidget.vala:491
+#: src/Composer/ComposerWidget.vala:522
 #, fuzzy, c-format
 #| msgid "To: %s\n"
 msgid "To: %s<br/>"
 msgstr "Prima: %s\n"
 
-#: src/Composer/ComposerWidget.vala:493
+#: src/Composer/ComposerWidget.vala:524
 #, fuzzy, c-format
 #| msgid "Cc: %s\n"
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s\n"
 
-#: src/Composer/ComposerWidget.vala:531
+#: src/Composer/ComposerWidget.vala:562
 #, fuzzy
 #| msgid "Do you want to permanently delete this message?"
 #| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
 msgstr "Da li želite trajno da obrišete ovu poruku?"
 
-#: src/Composer/ComposerWidget.vala:532
+#: src/Composer/ComposerWidget.vala:563
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Cancel"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:540
+#: src/Composer/ComposerWidget.vala:571
 #, fuzzy
 #| msgid "Delete"
 msgid "Delete Draft"
 msgstr "Obriši"
 
-#: src/Composer/ComposerWidget.vala:557
+#: src/Composer/ComposerWidget.vala:588
 #, fuzzy
 #| msgid "Send message with an empty subject?"
 msgid "Send Message With an Empty Subject?"
 msgstr "Da pošaljem poruku sa praznim naslovom?"
 
-#: src/Composer/ComposerWidget.vala:558
+#: src/Composer/ComposerWidget.vala:589
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:595
 msgid "Don't Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:566
+#: src/Composer/ComposerWidget.vala:597
 msgid "Send Anyway"
 msgstr ""
 
@@ -354,6 +353,24 @@ msgstr ""
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
+msgstr ""
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgid "Inbox"
+msgstr "Sanduče"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Arhiva"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Poslata pošta"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
 msgstr ""
 
 #: src/MessageList/MessageListBox.vala:32
@@ -450,14 +467,8 @@ msgstr "_Sačuvaj"
 #~ msgid "Trash | Rubbish | Rubbish Bin"
 #~ msgstr "Smeće | Korpa | Trash | Rubbish | Rubbish Bin"
 
-#~ msgid "Inbox"
-#~ msgstr "Sanduče"
-
 #~ msgid "Drafts"
 #~ msgstr "Nacrti"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Poslata pošta"
 
 #~ msgid "Starred"
 #~ msgstr "Omiljena"
@@ -476,9 +487,6 @@ msgstr "_Sačuvaj"
 
 #~ msgid "Search"
 #~ msgstr "Potraži"
-
-#~ msgid "Archive"
-#~ msgstr "Arhiva"
 
 #~ msgid "None"
 #~ msgstr "Ništa"
@@ -926,12 +934,6 @@ msgstr "_Sačuvaj"
 
 #~ msgid "Geary requires your email password to continue"
 #~ msgstr "Zupčinko zahteva vašu lozinku el. pošte da bi nastavio"
-
-#~ msgid "Choose a file"
-#~ msgstr "Izaberite datoteku"
-
-#~ msgid "_Attach"
-#~ msgstr "_Priloži"
 
 #~ msgid "First Last"
 #~ msgstr "Ime i prezime"

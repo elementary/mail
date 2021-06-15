@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-06-07 19:43+0000\n"
 "PO-Revision-Date: 2021-03-21 10:03+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/mail/mail/mr/>\n"
@@ -101,146 +101,145 @@ msgstr "मेल सिस्टम सेटिंग्जमध्ये क
 msgid "Online Accounts…"
 msgstr "ऑनलाइन खाती …"
 
-#: src/Composer/ComposerWidget.vala:92 src/MessageList/MessageListItem.vala:88
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
 msgid "From:"
 msgstr "प्रेषक:"
 
-#: src/Composer/ComposerWidget.vala:108 src/MessageList/MessageListItem.vala:93
+#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "प्राप्तकर्ता:"
 
-#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:98
+#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "विषय:"
 
-#: src/Composer/ComposerWidget.vala:119
+#: src/Composer/ComposerWidget.vala:122
 msgid "Cc"
 msgstr "सीसी"
 
-#: src/Composer/ComposerWidget.vala:121
+#: src/Composer/ComposerWidget.vala:124
 msgid "Bcc"
 msgstr "बीसीसी"
 
-#: src/Composer/ComposerWidget.vala:128
+#: src/Composer/ComposerWidget.vala:131
 #: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr "सीसी:"
 
-#: src/Composer/ComposerWidget.vala:144
+#: src/Composer/ComposerWidget.vala:147
 msgid "Bcc:"
 msgstr "बीसीसी:"
 
-#: src/Composer/ComposerWidget.vala:184
+#: src/Composer/ComposerWidget.vala:190
 msgid "Bold"
 msgstr "ठळक"
 
-#: src/Composer/ComposerWidget.vala:190
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
 msgstr "इटॅलिक"
 
-#: src/Composer/ComposerWidget.vala:196
+#: src/Composer/ComposerWidget.vala:204
 msgid "Underline"
 msgstr "अधोरेखित"
 
-#: src/Composer/ComposerWidget.vala:202
+#: src/Composer/ComposerWidget.vala:211
 msgid "Strikethrough"
 msgstr "खोडलेले"
 
-#: src/Composer/ComposerWidget.vala:215
-msgid "Quote text"
-msgstr "मजकूर अवतरण चिन्हांत लिहा"
-
-#: src/Composer/ComposerWidget.vala:218
-msgid "Unquote text"
-msgstr "मजकूराचे अवतरण चिन्ह काढा"
-
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
-msgid "Insert Link"
-msgstr "दुवा टाका"
-
-#: src/Composer/ComposerWidget.vala:230
-msgid "Insert Image"
-msgstr "चित्र टाका"
-
-#: src/Composer/ComposerWidget.vala:233
+#: src/Composer/ComposerWidget.vala:216
 msgid "Remove formatting"
 msgstr "स्वरूपन(फॉरमॅटिंग) काढा"
 
-#: src/Composer/ComposerWidget.vala:261
+#: src/Composer/ComposerWidget.vala:228 src/Dialogs/InsertLinkDialog.vala:63
+msgid "Insert Link"
+msgstr "दुवा टाका"
+
+#: src/Composer/ComposerWidget.vala:259
 msgid "Delete draft"
 msgstr "लिहून ठेवलेला मसुदा हटवा"
 
-#: src/Composer/ComposerWidget.vala:265
+#: src/Composer/ComposerWidget.vala:264
 msgid "Attach file"
 msgstr "फाईल जोडा"
 
-#: src/Composer/ComposerWidget.vala:271
+#: src/Composer/ComposerWidget.vala:270
 msgid "Send"
 msgstr "पाठवा"
 
-#: src/Composer/ComposerWidget.vala:452
+#: src/Composer/ComposerWidget.vala:415
+msgid "Choose a file"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:418
+#, fuzzy
+#| msgid "Attach file"
+msgid "Attach"
+msgstr "फाईल जोडा"
+
+#: src/Composer/ComposerWidget.vala:419 src/Composer/ComposerWidget.vala:569
+#: src/Dialogs/InsertLinkDialog.vala:61
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Cancel"
+msgstr "रद्द करा"
+
+#: src/Composer/ComposerWidget.vala:483
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %b %-e, %Y at %-l:%M %p"
 
-#: src/Composer/ComposerWidget.vala:482
+#: src/Composer/ComposerWidget.vala:513
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s ला, %2$s यांनी लिहीले:"
 
-#: src/Composer/ComposerWidget.vala:486
+#: src/Composer/ComposerWidget.vala:517
 msgid "---------- Forwarded message ----------"
 msgstr "---------- अग्रेषित संदेश ----------"
 
-#: src/Composer/ComposerWidget.vala:488
+#: src/Composer/ComposerWidget.vala:519
 #, c-format
 msgid "From: %s<br/>"
 msgstr "प्रेषक: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:489
+#: src/Composer/ComposerWidget.vala:520
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "विषय: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:490
+#: src/Composer/ComposerWidget.vala:521
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "दिनांक: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:491
+#: src/Composer/ComposerWidget.vala:522
 #, c-format
 msgid "To: %s<br/>"
 msgstr "प्राप्तकर्ता: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:493
+#: src/Composer/ComposerWidget.vala:524
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "सीसी: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:531
+#: src/Composer/ComposerWidget.vala:562
 msgid "Permanently delete this draft?"
 msgstr "हा मसुदा कायमचा हटवायचा?"
 
-#: src/Composer/ComposerWidget.vala:532
+#: src/Composer/ComposerWidget.vala:563
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "आपण ही क्रिया पूर्ववत करू शकत नाही किंवा आपला मसुदा हटविला गेल्यानंतर पुनर्प्राप्त करू शकत "
 "नाही."
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Cancel"
-msgstr "रद्द करा"
-
-#: src/Composer/ComposerWidget.vala:540
+#: src/Composer/ComposerWidget.vala:571
 msgid "Delete Draft"
 msgstr "लिहून ठेवलेला मसुदा हटवा"
 
-#: src/Composer/ComposerWidget.vala:557
+#: src/Composer/ComposerWidget.vala:588
 msgid "Send Message With an Empty Subject?"
 msgstr "रिक्त विषयासह संदेश पाठवायचा?"
 
-#: src/Composer/ComposerWidget.vala:558
+#: src/Composer/ComposerWidget.vala:589
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
@@ -248,11 +247,11 @@ msgstr ""
 "या संदेशामध्ये विषय फील्ड रिक्त आहे. त्यामुळे प्राप्तकर्त्यास संदेशाची व्याप्ती किंवा महत्त्व "
 "सांगण्यात सक्षम नाही."
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:595
 msgid "Don't Send"
 msgstr "पाठवू नका"
 
-#: src/Composer/ComposerWidget.vala:566
+#: src/Composer/ComposerWidget.vala:597
 msgid "Send Anyway"
 msgstr "तरीही पाठवा"
 
@@ -308,6 +307,22 @@ msgstr "तरीही उघडा"
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "फोल्डर रीफ्रेश करा"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgid "Inbox"
+msgstr ""
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr ""
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+msgid "Sent"
+msgstr ""
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
+msgstr ""
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
@@ -375,3 +390,12 @@ msgstr "अज्ञात"
 #: src/MessageList/AttachmentButton.vala:113
 msgid "Save"
 msgstr "जतन करा"
+
+#~ msgid "Quote text"
+#~ msgstr "मजकूर अवतरण चिन्हांत लिहा"
+
+#~ msgid "Unquote text"
+#~ msgstr "मजकूराचे अवतरण चिन्ह काढा"
+
+#~ msgid "Insert Image"
+#~ msgstr "चित्र टाका"

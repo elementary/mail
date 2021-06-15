@@ -16,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
-"PO-Revision-Date: 2021-03-08 12:54+0000\n"
-"Last-Translator: IT-Tool <it.solution4u@protonmail.com>\n"
+"POT-Creation-Date: 2021-06-07 19:43+0000\n"
+"PO-Revision-Date: 2021-06-12 10:11+0000\n"
+"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -82,10 +82,8 @@ msgid "Mark Conversation"
 msgstr "Отметить беседу"
 
 #: src/HeaderBar.vala:149
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
-msgstr "Переместить беседы в корзину"
+msgstr "Переместить беседы в архив"
 
 #: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
@@ -118,148 +116,145 @@ msgstr ""
 
 #: src/WelcomeView.vala:50
 msgid "Online Accounts…"
-msgstr "Учетные записи…"
+msgstr "Сетевые учетные записи…"
 
-#: src/Composer/ComposerWidget.vala:92 src/MessageList/MessageListItem.vala:88
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
 msgid "From:"
 msgstr "От:"
 
-#: src/Composer/ComposerWidget.vala:108 src/MessageList/MessageListItem.vala:93
+#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "Кому:"
 
-#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:98
+#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "Тема:"
 
-#: src/Composer/ComposerWidget.vala:119
+#: src/Composer/ComposerWidget.vala:122
 msgid "Cc"
 msgstr "Копия"
 
-#: src/Composer/ComposerWidget.vala:121
+#: src/Composer/ComposerWidget.vala:124
 msgid "Bcc"
 msgstr "Скрытая копия"
 
-#: src/Composer/ComposerWidget.vala:128
+#: src/Composer/ComposerWidget.vala:131
 #: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr "Копия:"
 
-#: src/Composer/ComposerWidget.vala:144
+#: src/Composer/ComposerWidget.vala:147
 msgid "Bcc:"
 msgstr "Скрытая копия:"
 
-#: src/Composer/ComposerWidget.vala:184
+#: src/Composer/ComposerWidget.vala:190
 msgid "Bold"
 msgstr "Жирный"
 
-#: src/Composer/ComposerWidget.vala:190
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
 msgstr "Курсив"
 
-#: src/Composer/ComposerWidget.vala:196
+#: src/Composer/ComposerWidget.vala:204
 msgid "Underline"
 msgstr "Подчёркнутый"
 
-#: src/Composer/ComposerWidget.vala:202
+#: src/Composer/ComposerWidget.vala:211
 msgid "Strikethrough"
 msgstr "Зачёркнутый"
 
-#: src/Composer/ComposerWidget.vala:215
-msgid "Quote text"
-msgstr "Цитировать текст"
-
-#: src/Composer/ComposerWidget.vala:218
-msgid "Unquote text"
-msgstr "Убрать цитирование текста"
-
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
-msgid "Insert Link"
-msgstr "Вставить ссылку"
-
-#: src/Composer/ComposerWidget.vala:230
-msgid "Insert Image"
-msgstr "Вставить изображение"
-
-#: src/Composer/ComposerWidget.vala:233
+#: src/Composer/ComposerWidget.vala:216
 msgid "Remove formatting"
 msgstr "Удалить форматирование"
 
-#: src/Composer/ComposerWidget.vala:261
+#: src/Composer/ComposerWidget.vala:228 src/Dialogs/InsertLinkDialog.vala:63
+msgid "Insert Link"
+msgstr "Вставить ссылку"
+
+#: src/Composer/ComposerWidget.vala:259
 msgid "Delete draft"
 msgstr "Удалить черновик"
 
-#: src/Composer/ComposerWidget.vala:265
+#: src/Composer/ComposerWidget.vala:264
 msgid "Attach file"
 msgstr "Прикрепить файл"
 
-#: src/Composer/ComposerWidget.vala:271
+#: src/Composer/ComposerWidget.vala:270
 msgid "Send"
 msgstr "Отправить"
 
-#: src/Composer/ComposerWidget.vala:452
+#: src/Composer/ComposerWidget.vala:415
+msgid "Choose a file"
+msgstr "Выберите файл"
+
+#: src/Composer/ComposerWidget.vala:418
+msgid "Attach"
+msgstr "Прикрепить"
+
+#: src/Composer/ComposerWidget.vala:419 src/Composer/ComposerWidget.vala:569
+#: src/Dialogs/InsertLinkDialog.vala:61
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Cancel"
+msgstr "Отменить"
+
+#: src/Composer/ComposerWidget.vala:483
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%A, %-e %b. %Y в %-k:%M"
 
-#: src/Composer/ComposerWidget.vala:482
+#: src/Composer/ComposerWidget.vala:513
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "В %1$s, %2$s написал:"
 
-#: src/Composer/ComposerWidget.vala:486
+#: src/Composer/ComposerWidget.vala:517
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Пересылаемое сообщение ----------"
 
-#: src/Composer/ComposerWidget.vala:488
+#: src/Composer/ComposerWidget.vala:519
 #, c-format
 msgid "From: %s<br/>"
 msgstr "От: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:489
+#: src/Composer/ComposerWidget.vala:520
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Тема: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:490
+#: src/Composer/ComposerWidget.vala:521
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Дата: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:491
+#: src/Composer/ComposerWidget.vala:522
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Кому: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:493
+#: src/Composer/ComposerWidget.vala:524
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Копия: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:531
+#: src/Composer/ComposerWidget.vala:562
 msgid "Permanently delete this draft?"
 msgstr "Навсегда удалить черновик?"
 
-#: src/Composer/ComposerWidget.vala:532
+#: src/Composer/ComposerWidget.vala:563
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Вы не можете отменить это действие и восстановить черновик после его "
 "удаления."
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Cancel"
-msgstr "Отменить"
-
-#: src/Composer/ComposerWidget.vala:540
+#: src/Composer/ComposerWidget.vala:571
 msgid "Delete Draft"
 msgstr "Удалить черновик"
 
-#: src/Composer/ComposerWidget.vala:557
+#: src/Composer/ComposerWidget.vala:588
 msgid "Send Message With an Empty Subject?"
 msgstr "Отправить сообщение без темы?"
 
-#: src/Composer/ComposerWidget.vala:558
+#: src/Composer/ComposerWidget.vala:589
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
@@ -267,11 +262,11 @@ msgstr ""
 "В этом сообщении поле темы пустое. Получатель может быть не в состоянии "
 "сделать вывод о содержании или важности сообщения."
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:595
 msgid "Don't Send"
 msgstr "Не отправлять"
 
-#: src/Composer/ComposerWidget.vala:566
+#: src/Composer/ComposerWidget.vala:597
 msgid "Send Anyway"
 msgstr "Всё равно отправить"
 
@@ -327,6 +322,22 @@ msgstr "Всё равно открыть"
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "Обновить папку"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgid "Inbox"
+msgstr "Входящие"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Архив"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+msgid "Sent"
+msgstr "Отправленные"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
+msgstr "Все почтовые ящики"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
@@ -395,6 +406,15 @@ msgstr "Неизвестный"
 msgid "Save"
 msgstr "Сохранить"
 
+#~ msgid "Quote text"
+#~ msgstr "Цитировать текст"
+
+#~ msgid "Unquote text"
+#~ msgstr "Убрать цитирование текста"
+
+#~ msgid "Insert Image"
+#~ msgstr "Вставить изображение"
+
 #~ msgid "Drafts | Draft"
 #~ msgstr "Черновики | Drafts | Draft"
 
@@ -414,23 +434,14 @@ msgstr "Сохранить"
 #~ msgid "Archive | Archives"
 #~ msgstr "Архив | Архивы | Archive | Archives"
 
-#~ msgid "Inbox"
-#~ msgstr "Входящие"
-
 #~ msgid "Drafts"
 #~ msgstr "Черновики"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Отправленные"
 
 #~ msgid "Starred"
 #~ msgstr "Избранные"
 
 #~ msgid "Important"
 #~ msgstr "Важное"
-
-#~ msgid "All Mail"
-#~ msgstr "Вся почта"
 
 #~ msgid "Spam"
 #~ msgstr "Спам"
@@ -443,9 +454,6 @@ msgstr "Сохранить"
 
 #~ msgid "Search"
 #~ msgstr "Поиск"
-
-#~ msgid "Archive"
-#~ msgstr "Архив"
 
 #~ msgid "None"
 #~ msgstr "Нет"
@@ -986,12 +994,6 @@ msgstr "Сохранить"
 
 #~ msgid "Geary requires your email password to continue"
 #~ msgstr "Geary требуется пароль эл. почты чтобы продолжить"
-
-#~ msgid "Choose a file"
-#~ msgstr "Выберите файл"
-
-#~ msgid "_Attach"
-#~ msgstr "_Прикрепить"
 
 #~ msgid "Additional addresses for %s"
 #~ msgstr "Дополнительные адреса для %s"

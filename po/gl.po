@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
+"POT-Creation-Date: 2021-06-07 19:43+0000\n"
 "PO-Revision-Date: 2019-09-14 09:23+0000\n"
 "Last-Translator: Daniel <riesp@protonmail.com>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/mail/mail/gl/>\n"
@@ -113,146 +113,145 @@ msgstr "Correo emprega as contas definidas en Axustes do Sistema."
 msgid "Online Accounts…"
 msgstr "Contas en liña…"
 
-#: src/Composer/ComposerWidget.vala:92 src/MessageList/MessageListItem.vala:88
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
 msgid "From:"
 msgstr "De:"
 
-#: src/Composer/ComposerWidget.vala:108 src/MessageList/MessageListItem.vala:93
+#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "Para:"
 
-#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:98
+#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "Asunto:"
 
-#: src/Composer/ComposerWidget.vala:119
+#: src/Composer/ComposerWidget.vala:122
 msgid "Cc"
 msgstr "Cc"
 
-#: src/Composer/ComposerWidget.vala:121
+#: src/Composer/ComposerWidget.vala:124
 msgid "Bcc"
 msgstr "Cco"
 
-#: src/Composer/ComposerWidget.vala:128
+#: src/Composer/ComposerWidget.vala:131
 #: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr "CC:"
 
-#: src/Composer/ComposerWidget.vala:144
+#: src/Composer/ComposerWidget.vala:147
 msgid "Bcc:"
 msgstr "CCO:"
 
-#: src/Composer/ComposerWidget.vala:184
+#: src/Composer/ComposerWidget.vala:190
 msgid "Bold"
 msgstr "Grosa"
 
-#: src/Composer/ComposerWidget.vala:190
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
 msgstr "Itálica"
 
-#: src/Composer/ComposerWidget.vala:196
+#: src/Composer/ComposerWidget.vala:204
 msgid "Underline"
 msgstr "Subliñado"
 
-#: src/Composer/ComposerWidget.vala:202
+#: src/Composer/ComposerWidget.vala:211
 msgid "Strikethrough"
 msgstr "Riscado"
 
-#: src/Composer/ComposerWidget.vala:215
-msgid "Quote text"
-msgstr "Citar texto"
-
-#: src/Composer/ComposerWidget.vala:218
-msgid "Unquote text"
-msgstr "Deixar de citar texto"
-
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
-msgid "Insert Link"
-msgstr "Inserir ligazón"
-
-#: src/Composer/ComposerWidget.vala:230
-msgid "Insert Image"
-msgstr "Inserir imaxe"
-
-#: src/Composer/ComposerWidget.vala:233
+#: src/Composer/ComposerWidget.vala:216
 msgid "Remove formatting"
 msgstr "Quitar formato"
 
-#: src/Composer/ComposerWidget.vala:261
+#: src/Composer/ComposerWidget.vala:228 src/Dialogs/InsertLinkDialog.vala:63
+msgid "Insert Link"
+msgstr "Inserir ligazón"
+
+#: src/Composer/ComposerWidget.vala:259
 msgid "Delete draft"
 msgstr "Eliminar borrador"
 
-#: src/Composer/ComposerWidget.vala:265
+#: src/Composer/ComposerWidget.vala:264
 msgid "Attach file"
 msgstr "Adxuntar arquivo"
 
-#: src/Composer/ComposerWidget.vala:271
+#: src/Composer/ComposerWidget.vala:270
 msgid "Send"
 msgstr "Enviar"
 
-#: src/Composer/ComposerWidget.vala:452
-msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%a, %-e de %b do %Y ás %-l:%M %p"
+#: src/Composer/ComposerWidget.vala:415
+msgid "Choose a file"
+msgstr "Escolla un ficheiro"
 
-#: src/Composer/ComposerWidget.vala:482
-#, c-format
-msgid "On %1$s, %2$s wrote:"
-msgstr "O %1$s, %2$s escribiu:"
+#: src/Composer/ComposerWidget.vala:418
+#, fuzzy
+#| msgid "_Attach"
+msgid "Attach"
+msgstr "_Anexar"
 
-#: src/Composer/ComposerWidget.vala:486
-msgid "---------- Forwarded message ----------"
-msgstr "---------- Mensaxe reenviada ----------"
-
-#: src/Composer/ComposerWidget.vala:488
-#, c-format
-msgid "From: %s<br/>"
-msgstr "De: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:489
-#, c-format
-msgid "Subject: %s<br/>"
-msgstr "Asunto: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:490
-#, c-format
-msgid "Date: %s<br/>"
-msgstr "Data: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:491
-#, c-format
-msgid "To: %s<br/>"
-msgstr "Para: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:493
-#, c-format
-msgid "Cc: %s<br/>"
-msgstr "Cc: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:531
-msgid "Permanently delete this draft?"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:532
-msgid ""
-"You cannot undo this action, nor recover your draft once it has been deleted."
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
+#: src/Composer/ComposerWidget.vala:419 src/Composer/ComposerWidget.vala:569
+#: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/Composer/ComposerWidget.vala:540
+#: src/Composer/ComposerWidget.vala:483
+msgid "%a, %b %-e, %Y at %-l:%M %p"
+msgstr "%a, %-e de %b do %Y ás %-l:%M %p"
+
+#: src/Composer/ComposerWidget.vala:513
+#, c-format
+msgid "On %1$s, %2$s wrote:"
+msgstr "O %1$s, %2$s escribiu:"
+
+#: src/Composer/ComposerWidget.vala:517
+msgid "---------- Forwarded message ----------"
+msgstr "---------- Mensaxe reenviada ----------"
+
+#: src/Composer/ComposerWidget.vala:519
+#, c-format
+msgid "From: %s<br/>"
+msgstr "De: %s<br/>"
+
+#: src/Composer/ComposerWidget.vala:520
+#, c-format
+msgid "Subject: %s<br/>"
+msgstr "Asunto: %s<br/>"
+
+#: src/Composer/ComposerWidget.vala:521
+#, c-format
+msgid "Date: %s<br/>"
+msgstr "Data: %s<br/>"
+
+#: src/Composer/ComposerWidget.vala:522
+#, c-format
+msgid "To: %s<br/>"
+msgstr "Para: %s<br/>"
+
+#: src/Composer/ComposerWidget.vala:524
+#, c-format
+msgid "Cc: %s<br/>"
+msgstr "Cc: %s<br/>"
+
+#: src/Composer/ComposerWidget.vala:562
+msgid "Permanently delete this draft?"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:563
+msgid ""
+"You cannot undo this action, nor recover your draft once it has been deleted."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:571
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Delete Draft"
 msgstr "Eliminar borrador"
 
-#: src/Composer/ComposerWidget.vala:557
+#: src/Composer/ComposerWidget.vala:588
 msgid "Send Message With an Empty Subject?"
 msgstr "Enviar a mensaxe sen asunto?"
 
-#: src/Composer/ComposerWidget.vala:558
+#: src/Composer/ComposerWidget.vala:589
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
@@ -260,11 +259,11 @@ msgstr ""
 "O campo de asunto da mensaxe está baleiro. O destinatario podería non "
 "inferir o ámbito ou a importancia da mensaxe."
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:595
 msgid "Don't Send"
 msgstr "Non enviar"
 
-#: src/Composer/ComposerWidget.vala:566
+#: src/Composer/ComposerWidget.vala:597
 msgid "Send Anyway"
 msgstr "Enviar de todos os xeitos"
 
@@ -320,6 +319,24 @@ msgstr "Abrir de todos os xeitos"
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "Actualizar cartafol"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgid "Inbox"
+msgstr "Bandexa de entrada"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Arquivo"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Correo enviado"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
+msgstr ""
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
@@ -394,14 +411,17 @@ msgstr "Descoñecido"
 msgid "Save"
 msgstr "Gardar"
 
-#~ msgid "Inbox"
-#~ msgstr "Bandexa de entrada"
+#~ msgid "Quote text"
+#~ msgstr "Citar texto"
+
+#~ msgid "Unquote text"
+#~ msgstr "Deixar de citar texto"
+
+#~ msgid "Insert Image"
+#~ msgstr "Inserir imaxe"
 
 #~ msgid "Drafts"
 #~ msgstr "Borradores"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Correo enviado"
 
 #~ msgid "Starred"
 #~ msgstr "Destacados"
@@ -420,9 +440,6 @@ msgstr "Gardar"
 
 #~ msgid "Search"
 #~ msgstr "Buscar"
-
-#~ msgid "Archive"
-#~ msgstr "Arquivo"
 
 #~ msgid "None"
 #~ msgstr "Ningún"
@@ -782,12 +799,6 @@ msgstr "Gardar"
 
 #~ msgid "Me"
 #~ msgstr "Eu"
-
-#~ msgid "Choose a file"
-#~ msgstr "Escolla un ficheiro"
-
-#~ msgid "_Attach"
-#~ msgstr "_Anexar"
 
 #~ msgid "First Last"
 #~ msgstr "Nome e apelido"

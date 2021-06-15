@@ -21,6 +21,7 @@
  */
 
 public class Mail.ConversationItemModel : GLib.Object {
+    public string service_uid { get; construct; }
     public Camel.FolderThreadNode? node;
 
     public string formatted_date {
@@ -142,7 +143,8 @@ public class Mail.ConversationItemModel : GLib.Object {
         }
     }
 
-    public ConversationItemModel (Camel.FolderThreadNode node) {
+    public ConversationItemModel (Camel.FolderThreadNode node, string service_uid) {
+        Object (service_uid: service_uid);
         update_node (node);
     }
 

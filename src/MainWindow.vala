@@ -189,8 +189,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         destroy.connect (() => destroy ());
 
-        folders_list_view.folder_selected.connect ((account, folder_name) => {
-            conversation_list_box.load_folder.begin (account, folder_name);
+        folders_list_view.folder_selected.connect ((folder_full_name_per_account) => {
+            conversation_list_box.load_folder.begin (folder_full_name_per_account);
         });
 
         conversation_list_box.conversation_selected.connect ((node) => {

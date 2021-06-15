@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
-"PO-Revision-Date: 2021-01-18 12:13+0000\n"
+"POT-Creation-Date: 2021-06-07 19:43+0000\n"
+"PO-Revision-Date: 2021-06-04 16:00+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -76,10 +76,8 @@ msgid "Mark Conversation"
 msgstr "Marca la conversa"
 
 #: src/HeaderBar.vala:149
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
-msgstr "Mou les converses a la paperera"
+msgstr "Mou les converses a l'arxiu"
 
 #: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
@@ -112,145 +110,142 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Comptes en línia…"
 
-#: src/Composer/ComposerWidget.vala:92 src/MessageList/MessageListItem.vala:88
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
 msgid "From:"
 msgstr "De:"
 
-#: src/Composer/ComposerWidget.vala:108 src/MessageList/MessageListItem.vala:93
+#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "Per a:"
 
-#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:98
+#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "Assumpte:"
 
-#: src/Composer/ComposerWidget.vala:119
+#: src/Composer/ComposerWidget.vala:122
 msgid "Cc"
 msgstr "A/c"
 
-#: src/Composer/ComposerWidget.vala:121
+#: src/Composer/ComposerWidget.vala:124
 msgid "Bcc"
 msgstr "C/o"
 
-#: src/Composer/ComposerWidget.vala:128
+#: src/Composer/ComposerWidget.vala:131
 #: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr "A/c:"
 
-#: src/Composer/ComposerWidget.vala:144
+#: src/Composer/ComposerWidget.vala:147
 msgid "Bcc:"
 msgstr "C/o:"
 
-#: src/Composer/ComposerWidget.vala:184
+#: src/Composer/ComposerWidget.vala:190
 msgid "Bold"
 msgstr "Negreta"
 
-#: src/Composer/ComposerWidget.vala:190
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
 msgstr "Cursiva"
 
-#: src/Composer/ComposerWidget.vala:196
+#: src/Composer/ComposerWidget.vala:204
 msgid "Underline"
 msgstr "Subratllat"
 
-#: src/Composer/ComposerWidget.vala:202
+#: src/Composer/ComposerWidget.vala:211
 msgid "Strikethrough"
 msgstr "Ratllat"
 
-#: src/Composer/ComposerWidget.vala:215
-msgid "Quote text"
-msgstr "Citació del text"
-
-#: src/Composer/ComposerWidget.vala:218
-msgid "Unquote text"
-msgstr "Sense citació del text"
-
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
-msgid "Insert Link"
-msgstr "Insereix un enllaç"
-
-#: src/Composer/ComposerWidget.vala:230
-msgid "Insert Image"
-msgstr "Insereix una imatge"
-
-#: src/Composer/ComposerWidget.vala:233
+#: src/Composer/ComposerWidget.vala:216
 msgid "Remove formatting"
 msgstr "Suprimeix-ne la formatació"
 
-#: src/Composer/ComposerWidget.vala:261
+#: src/Composer/ComposerWidget.vala:228 src/Dialogs/InsertLinkDialog.vala:63
+msgid "Insert Link"
+msgstr "Insereix un enllaç"
+
+#: src/Composer/ComposerWidget.vala:259
 msgid "Delete draft"
 msgstr "Suprimeix l'esborrany"
 
-#: src/Composer/ComposerWidget.vala:265
+#: src/Composer/ComposerWidget.vala:264
 msgid "Attach file"
 msgstr "Adjunta-hi un fitxer"
 
-#: src/Composer/ComposerWidget.vala:271
+#: src/Composer/ComposerWidget.vala:270
 msgid "Send"
 msgstr "Envia"
 
-#: src/Composer/ComposerWidget.vala:452
+#: src/Composer/ComposerWidget.vala:415
+msgid "Choose a file"
+msgstr "Escolliu un fitxer"
+
+#: src/Composer/ComposerWidget.vala:418
+msgid "Attach"
+msgstr "Adjunta"
+
+#: src/Composer/ComposerWidget.vala:419 src/Composer/ComposerWidget.vala:569
+#: src/Dialogs/InsertLinkDialog.vala:61
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Cancel"
+msgstr "Canceŀla"
+
+#: src/Composer/ComposerWidget.vala:483
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e %b de %Y a les %-H.%M"
 
-#: src/Composer/ComposerWidget.vala:482
+#: src/Composer/ComposerWidget.vala:513
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s, %2$s va escriure el següent:"
 
-#: src/Composer/ComposerWidget.vala:486
+#: src/Composer/ComposerWidget.vala:517
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Missatge reenviat ----------"
 
-#: src/Composer/ComposerWidget.vala:488
+#: src/Composer/ComposerWidget.vala:519
 #, c-format
 msgid "From: %s<br/>"
 msgstr "De: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:489
+#: src/Composer/ComposerWidget.vala:520
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Assumpte: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:490
+#: src/Composer/ComposerWidget.vala:521
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Data: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:491
+#: src/Composer/ComposerWidget.vala:522
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Per a: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:493
+#: src/Composer/ComposerWidget.vala:524
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "A/c: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:531
+#: src/Composer/ComposerWidget.vala:562
 msgid "Permanently delete this draft?"
 msgstr "Voleu suprimir permanentment aquest esborrany?"
 
-#: src/Composer/ComposerWidget.vala:532
+#: src/Composer/ComposerWidget.vala:563
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "No podreu desfer aquesta acció ni recuperar l'esborrany un cop suprimit."
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Cancel"
-msgstr "Canceŀla"
-
-#: src/Composer/ComposerWidget.vala:540
+#: src/Composer/ComposerWidget.vala:571
 msgid "Delete Draft"
 msgstr "Suprimeix l'esborrany"
 
-#: src/Composer/ComposerWidget.vala:557
+#: src/Composer/ComposerWidget.vala:588
 msgid "Send Message With an Empty Subject?"
 msgstr "Voleu enviar el missatge amb l'assumpte en blanc?"
 
-#: src/Composer/ComposerWidget.vala:558
+#: src/Composer/ComposerWidget.vala:589
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
@@ -258,11 +253,11 @@ msgstr ""
 "Aquest missatge té el camp de l'assumpte en blanc. El destinatari potser no "
 "en podrà copsar l'abast o la importància."
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:595
 msgid "Don't Send"
 msgstr "No l'enviïs"
 
-#: src/Composer/ComposerWidget.vala:566
+#: src/Composer/ComposerWidget.vala:597
 msgid "Send Anyway"
 msgstr "Envia'l tanmateix"
 
@@ -318,6 +313,22 @@ msgstr "Obre-ho de tota manera"
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "Refresca la carpeta"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgid "Inbox"
+msgstr "Safata d'entrada"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Arxiu"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+msgid "Sent"
+msgstr "Enviats"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
+msgstr "Totes les bústies"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
@@ -386,6 +397,15 @@ msgstr "No es coneix"
 msgid "Save"
 msgstr "Desa"
 
+#~ msgid "Quote text"
+#~ msgstr "Citació del text"
+
+#~ msgid "Unquote text"
+#~ msgstr "Sense citació del text"
+
+#~ msgid "Insert Image"
+#~ msgstr "Insereix una imatge"
+
 #~ msgid "Drafts | Draft"
 #~ msgstr "Esborranys | Esborrany"
 
@@ -405,23 +425,14 @@ msgstr "Desa"
 #~ msgid "Archive | Archives"
 #~ msgstr "Arxiu | Arxius"
 
-#~ msgid "Inbox"
-#~ msgstr "Safata d'entrada"
-
 #~ msgid "Drafts"
 #~ msgstr "Esborranys"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Enviats"
 
 #~ msgid "Starred"
 #~ msgstr "Destacats"
 
 #~ msgid "Important"
 #~ msgstr "Important"
-
-#~ msgid "All Mail"
-#~ msgstr "Tot"
 
 #~ msgid "Spam"
 #~ msgstr "Correu brossa"
@@ -434,9 +445,6 @@ msgstr "Desa"
 
 #~ msgid "Search"
 #~ msgstr "Cerca"
-
-#~ msgid "Archive"
-#~ msgstr "Arxiu"
 
 #~ msgid "None"
 #~ msgstr "Cap"
@@ -977,12 +985,6 @@ msgstr "Desa"
 #~ msgid "Geary requires your email password to continue"
 #~ msgstr ""
 #~ "El Geary requereix la contrasenya de correu electrònic per continuar"
-
-#~ msgid "Choose a file"
-#~ msgstr "Escolliu un fitxer"
-
-#~ msgid "_Attach"
-#~ msgstr "_Adjunta"
 
 #~ msgid "Additional addresses for %s"
 #~ msgstr "Adreces addicionals per a %s"

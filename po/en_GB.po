@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
-"PO-Revision-Date: 2021-02-14 14:47+0000\n"
+"POT-Creation-Date: 2021-06-07 19:43+0000\n"
+"PO-Revision-Date: 2021-05-12 21:09+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/mail/en_GB/>\n"
@@ -78,10 +78,8 @@ msgid "Mark Conversation"
 msgstr "Mark Conversation"
 
 #: src/HeaderBar.vala:149
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
-msgstr "Move conversations to Rubbish"
+msgstr "Move conversations to archive"
 
 #: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
@@ -113,145 +111,144 @@ msgstr "Mail uses email accounts configured in System Settings."
 msgid "Online Accounts…"
 msgstr "Online Accounts…"
 
-#: src/Composer/ComposerWidget.vala:92 src/MessageList/MessageListItem.vala:88
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
 msgid "From:"
 msgstr "From:"
 
-#: src/Composer/ComposerWidget.vala:108 src/MessageList/MessageListItem.vala:93
+#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "To:"
 
-#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:98
+#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "Subject:"
 
-#: src/Composer/ComposerWidget.vala:119
+#: src/Composer/ComposerWidget.vala:122
 msgid "Cc"
 msgstr "Cc"
 
-#: src/Composer/ComposerWidget.vala:121
+#: src/Composer/ComposerWidget.vala:124
 msgid "Bcc"
 msgstr "Bcc"
 
-#: src/Composer/ComposerWidget.vala:128
+#: src/Composer/ComposerWidget.vala:131
 #: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:144
+#: src/Composer/ComposerWidget.vala:147
 msgid "Bcc:"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:184
+#: src/Composer/ComposerWidget.vala:190
 msgid "Bold"
 msgstr "Bold"
 
-#: src/Composer/ComposerWidget.vala:190
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
 msgstr "Italic"
 
-#: src/Composer/ComposerWidget.vala:196
+#: src/Composer/ComposerWidget.vala:204
 msgid "Underline"
 msgstr "Underline"
 
-#: src/Composer/ComposerWidget.vala:202
+#: src/Composer/ComposerWidget.vala:211
 msgid "Strikethrough"
 msgstr "Strikethrough"
 
-#: src/Composer/ComposerWidget.vala:215
-msgid "Quote text"
-msgstr "Quote text"
-
-#: src/Composer/ComposerWidget.vala:218
-msgid "Unquote text"
-msgstr "Unquote text"
-
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
-msgid "Insert Link"
-msgstr "Insert Link"
-
-#: src/Composer/ComposerWidget.vala:230
-msgid "Insert Image"
-msgstr "Insert Image"
-
-#: src/Composer/ComposerWidget.vala:233
+#: src/Composer/ComposerWidget.vala:216
 msgid "Remove formatting"
 msgstr "Remove formatting"
 
-#: src/Composer/ComposerWidget.vala:261
+#: src/Composer/ComposerWidget.vala:228 src/Dialogs/InsertLinkDialog.vala:63
+msgid "Insert Link"
+msgstr "Insert Link"
+
+#: src/Composer/ComposerWidget.vala:259
 msgid "Delete draft"
 msgstr "Delete draft"
 
-#: src/Composer/ComposerWidget.vala:265
+#: src/Composer/ComposerWidget.vala:264
 msgid "Attach file"
 msgstr "Attach file"
 
-#: src/Composer/ComposerWidget.vala:271
+#: src/Composer/ComposerWidget.vala:270
 msgid "Send"
 msgstr "Send"
 
-#: src/Composer/ComposerWidget.vala:452
-msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%a, %-e %b, %Y at %-l:%M %p"
+#: src/Composer/ComposerWidget.vala:415
+msgid "Choose a file"
+msgstr "Choose a file"
 
-#: src/Composer/ComposerWidget.vala:482
-#, c-format
-msgid "On %1$s, %2$s wrote:"
-msgstr "On %1$s, %2$s wrote:"
+#: src/Composer/ComposerWidget.vala:418
+#, fuzzy
+#| msgid "_Attach"
+msgid "Attach"
+msgstr "_Attach"
 
-#: src/Composer/ComposerWidget.vala:486
-msgid "---------- Forwarded message ----------"
-msgstr "---------- Forwarded message ----------"
-
-#: src/Composer/ComposerWidget.vala:488
-#, c-format
-msgid "From: %s<br/>"
-msgstr "From: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:489
-#, c-format
-msgid "Subject: %s<br/>"
-msgstr "Subject: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:490
-#, c-format
-msgid "Date: %s<br/>"
-msgstr "Date: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:491
-#, c-format
-msgid "To: %s<br/>"
-msgstr "To: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:493
-#, c-format
-msgid "Cc: %s<br/>"
-msgstr "Cc: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:531
-msgid "Permanently delete this draft?"
-msgstr "Permanently delete this draft?"
-
-#: src/Composer/ComposerWidget.vala:532
-msgid ""
-"You cannot undo this action, nor recover your draft once it has been deleted."
-msgstr ""
-"You cannot undo this action, nor recover your draft once it has been deleted."
-
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
+#: src/Composer/ComposerWidget.vala:419 src/Composer/ComposerWidget.vala:569
+#: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Cancel"
 
-#: src/Composer/ComposerWidget.vala:540
+#: src/Composer/ComposerWidget.vala:483
+msgid "%a, %b %-e, %Y at %-l:%M %p"
+msgstr "%a, %-e %b, %Y at %-l:%M %p"
+
+#: src/Composer/ComposerWidget.vala:513
+#, c-format
+msgid "On %1$s, %2$s wrote:"
+msgstr "On %1$s, %2$s wrote:"
+
+#: src/Composer/ComposerWidget.vala:517
+msgid "---------- Forwarded message ----------"
+msgstr "---------- Forwarded message ----------"
+
+#: src/Composer/ComposerWidget.vala:519
+#, c-format
+msgid "From: %s<br/>"
+msgstr "From: %s<br/>"
+
+#: src/Composer/ComposerWidget.vala:520
+#, c-format
+msgid "Subject: %s<br/>"
+msgstr "Subject: %s<br/>"
+
+#: src/Composer/ComposerWidget.vala:521
+#, c-format
+msgid "Date: %s<br/>"
+msgstr "Date: %s<br/>"
+
+#: src/Composer/ComposerWidget.vala:522
+#, c-format
+msgid "To: %s<br/>"
+msgstr "To: %s<br/>"
+
+#: src/Composer/ComposerWidget.vala:524
+#, c-format
+msgid "Cc: %s<br/>"
+msgstr "Cc: %s<br/>"
+
+#: src/Composer/ComposerWidget.vala:562
+msgid "Permanently delete this draft?"
+msgstr "Permanently delete this draft?"
+
+#: src/Composer/ComposerWidget.vala:563
+msgid ""
+"You cannot undo this action, nor recover your draft once it has been deleted."
+msgstr ""
+"You cannot undo this action, nor recover your draft once it has been deleted."
+
+#: src/Composer/ComposerWidget.vala:571
 msgid "Delete Draft"
 msgstr "Delete Draft"
 
-#: src/Composer/ComposerWidget.vala:557
+#: src/Composer/ComposerWidget.vala:588
 msgid "Send Message With an Empty Subject?"
 msgstr "Send Message With an Empty Subject?"
 
-#: src/Composer/ComposerWidget.vala:558
+#: src/Composer/ComposerWidget.vala:589
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
@@ -259,11 +256,11 @@ msgstr ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:595
 msgid "Don't Send"
 msgstr "Don't Send"
 
-#: src/Composer/ComposerWidget.vala:566
+#: src/Composer/ComposerWidget.vala:597
 msgid "Send Anyway"
 msgstr "Send Anyway"
 
@@ -319,6 +316,24 @@ msgstr "Open Anyway"
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "Refresh folder"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgid "Inbox"
+msgstr "Inbox"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Archive"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent Mail"
+msgid "Sent"
+msgstr "Sent Mail"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
+msgstr "All Mailboxes"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
@@ -387,6 +402,15 @@ msgstr "Unknown"
 msgid "Save"
 msgstr "Save"
 
+#~ msgid "Quote text"
+#~ msgstr "Quote text"
+
+#~ msgid "Unquote text"
+#~ msgstr "Unquote text"
+
+#~ msgid "Insert Image"
+#~ msgstr "Insert Image"
+
 #~ msgid "Drafts | Draft"
 #~ msgstr "Drafts | Draft"
 
@@ -406,23 +430,14 @@ msgstr "Save"
 #~ msgid "Archive | Archives"
 #~ msgstr "Archive | Archives"
 
-#~ msgid "Inbox"
-#~ msgstr "Inbox"
-
 #~ msgid "Drafts"
 #~ msgstr "Drafts"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Sent Mail"
 
 #~ msgid "Starred"
 #~ msgstr "Starred"
 
 #~ msgid "Important"
 #~ msgstr "Important"
-
-#~ msgid "All Mail"
-#~ msgstr "All Mail"
 
 #~ msgid "Spam"
 #~ msgstr "Spam"
@@ -435,9 +450,6 @@ msgstr "Save"
 
 #~ msgid "Search"
 #~ msgstr "Search"
-
-#~ msgid "Archive"
-#~ msgstr "Archive"
 
 #~ msgid "None"
 #~ msgstr "None"
@@ -965,12 +977,6 @@ msgstr "Save"
 
 #~ msgid "Geary requires your email password to continue"
 #~ msgstr "Geary requires your email password to continue"
-
-#~ msgid "Choose a file"
-#~ msgstr "Choose a file"
-
-#~ msgid "_Attach"
-#~ msgstr "_Attach"
 
 #~ msgid "Additional addresses for %s"
 #~ msgstr "Additional addresses for %s"

@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 20:21+0000\n"
-"PO-Revision-Date: 2021-02-09 12:40+0000\n"
+"POT-Creation-Date: 2021-06-07 19:43+0000\n"
+"PO-Revision-Date: 2021-06-13 13:08+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/mail/fi/>\n"
 "Language: fi\n"
@@ -76,10 +76,8 @@ msgid "Mark Conversation"
 msgstr "Merkitse keskustelu"
 
 #: src/HeaderBar.vala:149
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
-msgstr "Siirrä keskustelu roskakoriin"
+msgstr "Siirrä keskustelut arkistoon"
 
 #: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
@@ -113,146 +111,143 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Verkkotilit…"
 
-#: src/Composer/ComposerWidget.vala:92 src/MessageList/MessageListItem.vala:88
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
 msgid "From:"
 msgstr "Lähettäjä:"
 
-#: src/Composer/ComposerWidget.vala:108 src/MessageList/MessageListItem.vala:93
+#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
 msgid "To:"
 msgstr "Vastaanottaja:"
 
-#: src/Composer/ComposerWidget.vala:112 src/MessageList/MessageListItem.vala:98
+#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
 msgid "Subject:"
 msgstr "Aihe:"
 
-#: src/Composer/ComposerWidget.vala:119
+#: src/Composer/ComposerWidget.vala:122
 msgid "Cc"
 msgstr "Kopio"
 
-#: src/Composer/ComposerWidget.vala:121
+#: src/Composer/ComposerWidget.vala:124
 msgid "Bcc"
 msgstr "Piilokopio"
 
-#: src/Composer/ComposerWidget.vala:128
+#: src/Composer/ComposerWidget.vala:131
 #: src/MessageList/MessageListItem.vala:127
 msgid "Cc:"
 msgstr "Kopio:"
 
-#: src/Composer/ComposerWidget.vala:144
+#: src/Composer/ComposerWidget.vala:147
 msgid "Bcc:"
 msgstr "Piilokopio:"
 
-#: src/Composer/ComposerWidget.vala:184
+#: src/Composer/ComposerWidget.vala:190
 msgid "Bold"
 msgstr "Lihavointi"
 
-#: src/Composer/ComposerWidget.vala:190
+#: src/Composer/ComposerWidget.vala:197
 msgid "Italic"
 msgstr "Kursivointi"
 
-#: src/Composer/ComposerWidget.vala:196
+#: src/Composer/ComposerWidget.vala:204
 msgid "Underline"
 msgstr "Alleviivaus"
 
-#: src/Composer/ComposerWidget.vala:202
+#: src/Composer/ComposerWidget.vala:211
 msgid "Strikethrough"
 msgstr "Yliviivaus"
 
-#: src/Composer/ComposerWidget.vala:215
-msgid "Quote text"
-msgstr "Lainaa tekstiä"
-
-#: src/Composer/ComposerWidget.vala:218
-msgid "Unquote text"
-msgstr "Lopeta tekstin lainaaminen"
-
-#: src/Composer/ComposerWidget.vala:227 src/Dialogs/InsertLinkDialog.vala:63
-msgid "Insert Link"
-msgstr "Sisällytä linkki"
-
-#: src/Composer/ComposerWidget.vala:230
-msgid "Insert Image"
-msgstr "Sisällytä kuva"
-
-#: src/Composer/ComposerWidget.vala:233
+#: src/Composer/ComposerWidget.vala:216
 msgid "Remove formatting"
 msgstr "Poista muotoilu"
 
-#: src/Composer/ComposerWidget.vala:261
+#: src/Composer/ComposerWidget.vala:228 src/Dialogs/InsertLinkDialog.vala:63
+msgid "Insert Link"
+msgstr "Sisällytä linkki"
+
+#: src/Composer/ComposerWidget.vala:259
 msgid "Delete draft"
 msgstr "Poista luonnos"
 
-#: src/Composer/ComposerWidget.vala:265
+#: src/Composer/ComposerWidget.vala:264
 msgid "Attach file"
 msgstr "Liitä tiedosto"
 
-#: src/Composer/ComposerWidget.vala:271
+#: src/Composer/ComposerWidget.vala:270
 msgid "Send"
 msgstr "Lähetä"
 
-#: src/Composer/ComposerWidget.vala:452
+#: src/Composer/ComposerWidget.vala:415
+msgid "Choose a file"
+msgstr "Valitse tiedosto"
+
+#: src/Composer/ComposerWidget.vala:418
+msgid "Attach"
+msgstr "Liitä"
+
+#: src/Composer/ComposerWidget.vala:419 src/Composer/ComposerWidget.vala:569
+#: src/Dialogs/InsertLinkDialog.vala:61
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Cancel"
+msgstr "Peru"
+
+#: src/Composer/ComposerWidget.vala:483
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %e. %b %Y klo %H.%M"
 
-#: src/Composer/ComposerWidget.vala:482
+#: src/Composer/ComposerWidget.vala:513
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s %2$s kirjoitti:"
 
-#: src/Composer/ComposerWidget.vala:486
+#: src/Composer/ComposerWidget.vala:517
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Edelleenlähetetty viesti ----------"
 
-#: src/Composer/ComposerWidget.vala:488
+#: src/Composer/ComposerWidget.vala:519
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Lähettäjä: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:489
+#: src/Composer/ComposerWidget.vala:520
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Aihe: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:490
+#: src/Composer/ComposerWidget.vala:521
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Päiväys: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:491
+#: src/Composer/ComposerWidget.vala:522
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Vastaanottaja: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:493
+#: src/Composer/ComposerWidget.vala:524
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Kopio: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:531
+#: src/Composer/ComposerWidget.vala:562
 msgid "Permanently delete this draft?"
 msgstr "Haluatko poistaa tämän luonnoksen pysyvästi?"
 
-#: src/Composer/ComposerWidget.vala:532
+#: src/Composer/ComposerWidget.vala:563
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Et voi kumota tätä toimintoa, etkä voi palauttaa luonnosta kun se on "
 "poistettu."
 
-#: src/Composer/ComposerWidget.vala:538 src/Dialogs/InsertLinkDialog.vala:61
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Cancel"
-msgstr "Peru"
-
-#: src/Composer/ComposerWidget.vala:540
+#: src/Composer/ComposerWidget.vala:571
 msgid "Delete Draft"
 msgstr "Poista luonnos"
 
-#: src/Composer/ComposerWidget.vala:557
+#: src/Composer/ComposerWidget.vala:588
 msgid "Send Message With an Empty Subject?"
 msgstr "Lähetetäänkö viesti ilman aihetta?"
 
-#: src/Composer/ComposerWidget.vala:558
+#: src/Composer/ComposerWidget.vala:589
 msgid ""
 "This message has an empty subject field. The recipient may not be able to "
 "infer the scope or importance of the message."
@@ -260,11 +255,11 @@ msgstr ""
 "Viestin aihekenttä on tyhjä. Vastaanottaja ei välttämättä pysty päätellä "
 "viestin tärkeyttä ilman aihetta."
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:595
 msgid "Don't Send"
 msgstr "Älä lähetä"
 
-#: src/Composer/ComposerWidget.vala:566
+#: src/Composer/ComposerWidget.vala:597
 msgid "Send Anyway"
 msgstr "Lähetä silti"
 
@@ -320,6 +315,22 @@ msgstr "Avaa silti"
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "Päivitä kansio"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgid "Inbox"
+msgstr "Saapuneet"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Arkisto"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:46
+msgid "Sent"
+msgstr "Lähetetyt"
+
+#: src/FoldersView/SessionSourceItem.vala:28
+msgid "All Mailboxes"
+msgstr "Kaikki postilaatikot"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
@@ -388,6 +399,15 @@ msgstr "Tuntematon"
 msgid "Save"
 msgstr "Tallenna"
 
+#~ msgid "Quote text"
+#~ msgstr "Lainaa tekstiä"
+
+#~ msgid "Unquote text"
+#~ msgstr "Lopeta tekstin lainaaminen"
+
+#~ msgid "Insert Image"
+#~ msgstr "Sisällytä kuva"
+
 #~ msgid "Drafts | Draft"
 #~ msgstr "Luonnokset | Luonnos | Drafts | Draft"
 
@@ -407,23 +427,14 @@ msgstr "Tallenna"
 #~ msgid "Archive | Archives"
 #~ msgstr "Arkisto | Arkistot | Archive | Archives"
 
-#~ msgid "Inbox"
-#~ msgstr "Saapuneet"
-
 #~ msgid "Drafts"
 #~ msgstr "Luonnokset"
-
-#~ msgid "Sent Mail"
-#~ msgstr "Lähetetyt"
 
 #~ msgid "Starred"
 #~ msgstr "Tähdelliset"
 
 #~ msgid "Important"
 #~ msgstr "Tärkeä"
-
-#~ msgid "All Mail"
-#~ msgstr "Kaikki"
 
 #~ msgid "Spam"
 #~ msgstr "Roskaposti"
@@ -436,9 +447,6 @@ msgstr "Tallenna"
 
 #~ msgid "Search"
 #~ msgstr "Etsi"
-
-#~ msgid "Archive"
-#~ msgstr "Arkisto"
 
 #~ msgid "None"
 #~ msgstr "Ei mitään"
@@ -955,12 +963,6 @@ msgstr "Tallenna"
 
 #~ msgid "Geary requires your email password to continue"
 #~ msgstr "Geary vaatii sähköpostisalasanasi jatkamista varten"
-
-#~ msgid "Choose a file"
-#~ msgstr "Valitse tiedosto"
-
-#~ msgid "_Attach"
-#~ msgstr "_Liitä"
 
 #~ msgid "Additional addresses for %s"
 #~ msgstr "Lisäosoitteet tilille %s"

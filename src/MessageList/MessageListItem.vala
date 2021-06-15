@@ -30,11 +30,14 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private Gtk.Revealer secondary_revealer;
     private Gtk.Stack header_stack;
     private Gtk.StyleContext style_context;
+    private Hdy.Avatar avatar;
     private AttachmentBar attachment_bar = null;
 
     private string message_content;
     private bool message_is_html = false;
     private bool message_loaded = false;
+
+    private static Gee.HashMap<string, Gdk.Pixbuf> avatars;
 
     public bool expanded {
         get {
@@ -64,6 +67,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         );
     }
 
+    static construct {
+        avatars = new Gee.HashMap<string, Gdk.Pixbuf> (null, null);
+    }
+
     construct {
         loading_cancellable = new GLib.Cancellable ();
 
@@ -81,7 +88,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             parsed_name = parsed_address;
         }
 
-        var avatar = new Hdy.Avatar (48, parsed_name, true) {
+        avatar = new Hdy.Avatar (48, parsed_name, true) {
             valign = Gtk.Align.START
         };
 
@@ -283,6 +290,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         expanded = false;
         show_all ();
 
+        download_gravatar.begin (parsed_address, avatar.size);
+
         /* Override default handler to stop event propagation. Otherwise clicking the menu will
            expand or collapse the MessageListItem. */
         actions_menu_button.button_release_event.connect ((event) => {
@@ -336,6 +345,31 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             } catch (Error e) {
                 warning ("Failed to open link: %s", e.message);
             }
+        });
+    }
+
+    private async void download_gravatar (string address, int size) {
+        if (avatars[address] == null) {
+            var uri = "https://secure.gravatar.com/avatar/%s?d=404&s=%d".printf (
+                Checksum.compute_for_string (ChecksumType.MD5, address.strip ().down ()),
+                size * get_style_context ().get_scale ()
+            );
+
+            var server_file = File.new_for_uri (uri);
+            var path = Path.build_filename (Environment.get_tmp_dir (), server_file.get_basename ());
+            var local_file = File.new_for_path (path);
+
+            try {
+                yield server_file.copy_async (local_file, FileCopyFlags.OVERWRITE, Priority.DEFAULT, null);
+                avatars[address] = new Gdk.Pixbuf.from_file_at_scale (path, size, size, true);
+            } catch (Error e) {
+                debug ("Unable to fetch gravatar: %s", e.message);
+                return;
+            }
+        }
+
+        avatar.set_image_load_func (() => {
+            return avatars[address];
         });
     }
 
