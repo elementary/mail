@@ -50,7 +50,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/evolution-data-server.git
-        tag: '3.40.0'
+        tag: '3.40.2'
     modules:
       - name: intltool
         cleanup:
