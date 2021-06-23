@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-07 19:43+0000\n"
-"PO-Revision-Date: 2021-02-03 02:13+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"PO-Revision-Date: 2021-06-20 11:00+0000\n"
+"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "mail/mail/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -81,10 +81,8 @@ msgid "Mark Conversation"
 msgstr "标记会话"
 
 #: src/HeaderBar.vala:149
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
-msgstr "将会话移至回收站"
+msgstr "将会话移至归档"
 
 #: src/HeaderBar.vala:156
 msgid "Move conversations to Trash"
@@ -185,8 +183,6 @@ msgid "Choose a file"
 msgstr "选择文件"
 
 #: src/Composer/ComposerWidget.vala:418
-#, fuzzy
-#| msgid "_Attach"
 msgid "Attach"
 msgstr "附件"
 
