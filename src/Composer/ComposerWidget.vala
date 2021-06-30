@@ -41,8 +41,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
     public string? to { get; construct; }
     public string? mailto_query { get; construct; }
     
-    private string unchanged_body_text_prefix = "";
-    private string? current_body_html = "";
+    private string first_line_of_message_without_html_on_load = "";
+    private string body_html_snapshot = "";
 
     private WebView web_view;
     private SimpleActionGroup actions;
@@ -397,44 +397,69 @@ public class Mail.ComposerWidget : Gtk.Grid {
                     Camel.MimeFilterToHTMLFlags.CONVERT_URLS;
 
                 web_view.set_body_content (Camel.text_to_html (result["body"], flags, 0));
+                update_first_line_of_message_without_html_on_load.begin ();
             }
         }
 
+        /**
+         * We can't do any async operations while
+         * this widget is beeing destroyed.
+         * Therefore we are hoping the
+         * leave_notify_event completes fast enough to
+         * retrieve the most recent message body.
+         * If not, we use a periodic snapshot as
+         * fallback... Something is better than
+         * nothing, right?
+         */
         web_view.leave_notify_event.connect (() => {
-            web_view.get_body_html.begin ((obj, res) => {
-                current_body_html = web_view.get_body_html.end (res);
-            });
+            update_body_html_snapshot ();
+        });
+        var update_body_html_snapshot_timeout_id = GLib.Timeout.add (10000, () => {
+            update_body_html_snapshot ();
+            return GLib.Source.CONTINUE;
         });
 
         unmap.connect (() => {
-            debug (">>>>>>>>>>>>>>>> unrealize");
-            if (current_body_html != null) {
-                var current_body_text_prefix = get_body_text_prefix (current_body_html);
-                if (current_body_text_prefix != unchanged_body_text_prefix) {
-                    warning ("++++++++++ create or update draft: %s", current_body_text_prefix);
+            GLib.Source.remove (update_body_html_snapshot_timeout_id);
+            
+            if (body_html_snapshot.strip () != "") {
+                var first_line_without_html = get_first_line_without_html (body_html_snapshot);
+                if (first_line_without_html != first_line_of_message_without_html_on_load) {
+                    // TODO: Create or Update Draft
+                    warning ("<<<<<<<<<<<<<<<<<<<<<<CREATE OR UPDATE DRAFT>>>>>>>>>>>>>>>>>>>>>>>>>");
                 }
             }
         });
     }
 
-    private string get_body_text_prefix (string html) {
+    private void update_body_html_snapshot () {
+        web_view.get_body_html.begin ((obj, res) => {
+            var body_html = web_view.get_body_html.end (res);
+
+            if (body_html != null) {
+                body_html_snapshot = body_html;
+            }
+        });
+    }
+
+    private async void update_first_line_of_message_without_html_on_load () {
+        if (!web_view.loaded) {
+            web_view.load_finished.connect (update_first_line_of_message_without_html_on_load);
+            return;
+        }
+        web_view.load_finished.disconnect (update_first_line_of_message_without_html_on_load);
+        
+        var body_html = yield web_view.get_body_html ();
+        first_line_of_message_without_html_on_load = "";
+        if (body_html != null) {
+            first_line_of_message_without_html_on_load = get_first_line_without_html (body_html);
+        }
+    }
+
+    private string get_first_line_without_html (string html) {
         var text = html.strip ();
         text = text.substring (0, text.index_of ("\n"));
         return Utils.strip_html_tags (text).strip ();
-    }
-
-    private async void update_unchanged_body_text_prefix () {
-        if (!web_view.loaded) {
-            web_view.load_finished.connect (update_unchanged_body_text_prefix);
-            return;
-        }
-        web_view.load_finished.disconnect (update_unchanged_body_text_prefix);
-        
-        var body_html = yield web_view.get_body_html ();
-        unchanged_body_text_prefix = "";
-        if (body_html == null) {
-            unchanged_body_text_prefix = get_body_text_prefix (body_html);
-        }
     }
 
     private void on_sanitize_recipient_entry (Gtk.Entry entry) {
@@ -567,7 +592,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
             }
 
             web_view.set_body_content (message_content);
-            update_unchanged_body_text_prefix ();
+            update_first_line_of_message_without_html_on_load.begin ();
         }
     }
 
