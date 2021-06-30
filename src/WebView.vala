@@ -32,7 +32,7 @@ public class Mail.WebView : WebKit.WebView {
     private int preferred_height = 0;
     private Gee.Map<string, InputStream> internal_resources;
 
-    private bool loaded = false;
+    public bool loaded { public get; private set; default = false; }
     private bool queued_load_images = false;
     private string? queued_body_content = null;
     private GLib.Cancellable cancellable;

@@ -61,4 +61,15 @@ public class Mail.Utils {
     public static string escape_html_tags (string input) {
         return input.replace ("<", "&lt;").replace (">", "&gt;");
     }
+
+    public static string strip_html_tags (string input) {
+        try {
+            var regex = new Regex ("<[^>]*>");
+            return regex.replace (input, input.length, 0, "");
+
+        } catch (RegexError e) {
+            warning ("Error compiling regex to strip html tags: %s", e.message);
+            return input;
+        }
+    }
 }
