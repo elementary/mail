@@ -5,12 +5,12 @@
 # anthonmanix <anthon.manix@gmail.com>, 2012-2013.
 # Matej Urbančič <mateju@svn.gnome.org>, 2014.
 #
-#: src/MessageList/MessageListItem.vala:374
+#: src/MessageList/MessageListItem.vala:408
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-07 19:43+0000\n"
+"POT-Creation-Date: 2021-06-30 08:04+0000\n"
 "PO-Revision-Date: 2020-01-06 00:07+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/mail/mail/sl/"
@@ -45,7 +45,7 @@ msgstr "Nastavitve računa…"
 msgid "Menu"
 msgstr "Meni"
 
-#: src/HeaderBar.vala:95 src/MessageList/MessageListItem.vala:178
+#: src/HeaderBar.vala:95 src/MessageList/MessageListItem.vala:185
 msgid "Reply"
 msgstr "Odgovori"
 
@@ -53,7 +53,7 @@ msgstr "Odgovori"
 msgid "Reply All"
 msgstr "Odgovori vsem"
 
-#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:184
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Forward"
 msgstr "Posreduj"
 
@@ -115,15 +115,17 @@ msgstr "Pošta uporablja e-poštne račune nastavljene v sistemskih nastavitvah.
 msgid "Online Accounts…"
 msgstr "Spletni računi…"
 
-#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:95
 msgid "From:"
 msgstr "Od:"
 
-#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
+#: src/Composer/ComposerWidget.vala:111
+#: src/MessageList/MessageListItem.vala:100
 msgid "To:"
 msgstr "Za:"
 
-#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
+#: src/Composer/ComposerWidget.vala:115
+#: src/MessageList/MessageListItem.vala:105
 msgid "Subject:"
 msgstr "Zadeva:"
 
@@ -136,7 +138,7 @@ msgid "Bcc"
 msgstr "Skp"
 
 #: src/Composer/ComposerWidget.vala:131
-#: src/MessageList/MessageListItem.vala:127
+#: src/MessageList/MessageListItem.vala:134
 msgid "Cc:"
 msgstr "Kp:"
 
@@ -253,13 +255,19 @@ msgid "Delete Draft"
 msgstr "Izbriši osnutek"
 
 #: src/Composer/ComposerWidget.vala:588
-msgid "Send Message With an Empty Subject?"
+#, fuzzy
+#| msgid "Send Message With an Empty Subject?"
+msgid "Send without subject?"
 msgstr "Želite poslati sporočilo brez zadeve?"
 
 #: src/Composer/ComposerWidget.vala:589
+#, fuzzy
+#| msgid ""
+#| "This message has an empty subject field. The recipient may not be able to "
+#| "infer the scope or importance of the message."
 msgid ""
-"This message has an empty subject field. The recipient may not be able to "
-"infer the scope or importance of the message."
+"This message has an empty subject field. The recipient may be unable to "
+"infer its scope or importance."
 msgstr ""
 "To sporočilo nima zadeve. Prejemnik morda ne bo mogel sklepati o pomembnosti "
 "sporočila."
@@ -349,52 +357,52 @@ msgstr "Vsa pošta"
 msgid "No Message Selected"
 msgstr "Nobeno sporočilo ni izbrano"
 
-#: src/MessageList/MessageListItem.vala:168
-#: src/MessageList/MessageListItem.vala:325
+#: src/MessageList/MessageListItem.vala:175
+#: src/MessageList/MessageListItem.vala:334
 msgid "Unstar message"
 msgstr "Odstrani zvezdico s sporočila"
 
-#: src/MessageList/MessageListItem.vala:171
-#: src/MessageList/MessageListItem.vala:321
+#: src/MessageList/MessageListItem.vala:178
+#: src/MessageList/MessageListItem.vala:330
 msgid "Star message"
 msgstr "Označi sporočilo z zvezdico"
 
-#: src/MessageList/MessageListItem.vala:181
+#: src/MessageList/MessageListItem.vala:188
 msgid "Reply to All"
 msgstr "Odgovori vsem"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:194
 msgid "Print…"
 msgstr "Natisni…"
 
-#: src/MessageList/MessageListItem.vala:201
+#: src/MessageList/MessageListItem.vala:208
 msgid "More"
 msgstr "Več"
 
-#: src/MessageList/MessageListItem.vala:237
+#: src/MessageList/MessageListItem.vala:244
 msgid "Show Images"
 msgstr "Prikaži slike"
 
-#: src/MessageList/MessageListItem.vala:238
+#: src/MessageList/MessageListItem.vala:245
 msgid "Always Show from Sender"
 msgstr "Vedno pokaži od pošiljatelja"
 
-#: src/MessageList/MessageListItem.vala:243
+#: src/MessageList/MessageListItem.vala:250
 msgid "This message contains remote images."
 msgstr "To sporočilo vsebuje oddaljene slike."
 
-#: src/MessageList/MessageListItem.vala:275
+#: src/MessageList/MessageListItem.vala:282
 msgid "This message contains one or more attachments"
 msgstr "To sporočilo vključuje eno ali več priponk"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:351
+#: src/MessageList/MessageListItem.vala:385
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Novo sporočilo"
 
-#: src/MessageList/MessageListItem.vala:373
+#: src/MessageList/MessageListItem.vala:407
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"

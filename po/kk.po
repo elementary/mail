@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the geary package.
 # Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2014.
 #
-#: src/MessageList/MessageListItem.vala:374
+#: src/MessageList/MessageListItem.vala:408
 msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-07 19:43+0000\n"
+"POT-Creation-Date: 2021-06-30 08:04+0000\n"
 "PO-Revision-Date: 2015-11-24 15:45+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: src/HeaderBar.vala:95 src/MessageList/MessageListItem.vala:178
+#: src/HeaderBar.vala:95 src/MessageList/MessageListItem.vala:185
 msgid "Reply"
 msgstr ""
 
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Reply All"
 msgstr "Барлығына жауап б_еру"
 
-#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:184
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Forward"
 msgstr ""
 
@@ -120,15 +120,17 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Тіркелгілер"
 
-#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:95
 msgid "From:"
 msgstr "Кімнен:"
 
-#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
+#: src/Composer/ComposerWidget.vala:111
+#: src/MessageList/MessageListItem.vala:100
 msgid "To:"
 msgstr "Кімге:"
 
-#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
+#: src/Composer/ComposerWidget.vala:115
+#: src/MessageList/MessageListItem.vala:105
 msgid "Subject:"
 msgstr "Тақырып:"
 
@@ -143,7 +145,7 @@ msgid "Bcc"
 msgstr "Жасырын көшірме:"
 
 #: src/Composer/ComposerWidget.vala:131
-#: src/MessageList/MessageListItem.vala:127
+#: src/MessageList/MessageListItem.vala:134
 msgid "Cc:"
 msgstr "Көшірмесі:"
 
@@ -261,13 +263,13 @@ msgstr "Өшіру"
 
 #: src/Composer/ComposerWidget.vala:588
 #, fuzzy
-msgid "Send Message With an Empty Subject?"
+msgid "Send without subject?"
 msgstr "Хатты бос тақырыппен жіберу керек пе?"
 
 #: src/Composer/ComposerWidget.vala:589
 msgid ""
-"This message has an empty subject field. The recipient may not be able to "
-"infer the scope or importance of the message."
+"This message has an empty subject field. The recipient may be unable to "
+"infer its scope or importance."
 msgstr ""
 
 #: src/Composer/ComposerWidget.vala:595
@@ -355,56 +357,56 @@ msgstr ""
 msgid "No Message Selected"
 msgstr "Бірде-бір сөйлесу таңдалмады."
 
-#: src/MessageList/MessageListItem.vala:168
-#: src/MessageList/MessageListItem.vala:325
+#: src/MessageList/MessageListItem.vala:175
+#: src/MessageList/MessageListItem.vala:334
 #, fuzzy
 msgid "Unstar message"
 msgstr "%d хабарлама"
 
-#: src/MessageList/MessageListItem.vala:171
-#: src/MessageList/MessageListItem.vala:321
+#: src/MessageList/MessageListItem.vala:178
+#: src/MessageList/MessageListItem.vala:330
 #, fuzzy
 msgid "Star message"
 msgstr "%d хабарлама"
 
-#: src/MessageList/MessageListItem.vala:181
+#: src/MessageList/MessageListItem.vala:188
 #, fuzzy
 #| msgid "Reply to _All"
 msgid "Reply to All"
 msgstr "Б_арлығына жауап беру"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:194
 msgid "Print…"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:201
+#: src/MessageList/MessageListItem.vala:208
 msgid "More"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:237
+#: src/MessageList/MessageListItem.vala:244
 msgid "Show Images"
 msgstr "Суреттерді көрсету"
 
-#: src/MessageList/MessageListItem.vala:238
+#: src/MessageList/MessageListItem.vala:245
 msgid "Always Show from Sender"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:243
+#: src/MessageList/MessageListItem.vala:250
 msgid "This message contains remote images."
 msgstr "Бұл хатта қашықтағы суреттер бар."
 
-#: src/MessageList/MessageListItem.vala:275
+#: src/MessageList/MessageListItem.vala:282
 msgid "This message contains one or more attachments"
 msgstr ""
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:351
+#: src/MessageList/MessageListItem.vala:385
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Жаңа хат"
 
-#: src/MessageList/MessageListItem.vala:373
+#: src/MessageList/MessageListItem.vala:407
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"

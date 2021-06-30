@@ -13,12 +13,12 @@
 # Vincenzo Cerminara <rebek994@gmail.com>, 2012
 # Federico Bruni <fede@inventati.org>, 2013, 2014, 2015.
 #
-#: src/MessageList/MessageListItem.vala:374
+#: src/MessageList/MessageListItem.vala:408
 msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-07 19:43+0000\n"
+"POT-Creation-Date: 2021-06-30 08:04+0000\n"
 "PO-Revision-Date: 2021-01-30 01:07+0000\n"
 "Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/mail/mail/it/>\n"
@@ -50,7 +50,7 @@ msgstr "Impostazioni dell'account…"
 msgid "Menu"
 msgstr "Menu"
 
-#: src/HeaderBar.vala:95 src/MessageList/MessageListItem.vala:178
+#: src/HeaderBar.vala:95 src/MessageList/MessageListItem.vala:185
 msgid "Reply"
 msgstr "Rispondi"
 
@@ -58,7 +58,7 @@ msgstr "Rispondi"
 msgid "Reply All"
 msgstr "Rispondi a tutti"
 
-#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:184
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Forward"
 msgstr "Inoltra"
 
@@ -119,15 +119,17 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Account online…"
 
-#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:95
 msgid "From:"
 msgstr "Da:"
 
-#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
+#: src/Composer/ComposerWidget.vala:111
+#: src/MessageList/MessageListItem.vala:100
 msgid "To:"
 msgstr "Per:"
 
-#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
+#: src/Composer/ComposerWidget.vala:115
+#: src/MessageList/MessageListItem.vala:105
 msgid "Subject:"
 msgstr "Oggetto:"
 
@@ -140,7 +142,7 @@ msgid "Bcc"
 msgstr "Ccn"
 
 #: src/Composer/ComposerWidget.vala:131
-#: src/MessageList/MessageListItem.vala:127
+#: src/MessageList/MessageListItem.vala:134
 msgid "Cc:"
 msgstr "Cc:"
 
@@ -254,13 +256,19 @@ msgid "Delete Draft"
 msgstr "Elimina bozza"
 
 #: src/Composer/ComposerWidget.vala:588
-msgid "Send Message With an Empty Subject?"
+#, fuzzy
+#| msgid "Send Message With an Empty Subject?"
+msgid "Send without subject?"
 msgstr "Inviare il messaggio senza un oggetto?"
 
 #: src/Composer/ComposerWidget.vala:589
+#, fuzzy
+#| msgid ""
+#| "This message has an empty subject field. The recipient may not be able to "
+#| "infer the scope or importance of the message."
 msgid ""
-"This message has an empty subject field. The recipient may not be able to "
-"infer the scope or importance of the message."
+"This message has an empty subject field. The recipient may be unable to "
+"infer its scope or importance."
 msgstr ""
 "Questo messaggio non contiene un oggetto. Il destinatario potrebbe non "
 "comprendere correttamente il contenuto o l'importanza del messaggio."
@@ -350,52 +358,52 @@ msgstr "Tutta la posta"
 msgid "No Message Selected"
 msgstr "Nessuna conversazione selezionata"
 
-#: src/MessageList/MessageListItem.vala:168
-#: src/MessageList/MessageListItem.vala:325
+#: src/MessageList/MessageListItem.vala:175
+#: src/MessageList/MessageListItem.vala:334
 msgid "Unstar message"
 msgstr "Togli tag \"speciale\" dal messaggio"
 
-#: src/MessageList/MessageListItem.vala:171
-#: src/MessageList/MessageListItem.vala:321
+#: src/MessageList/MessageListItem.vala:178
+#: src/MessageList/MessageListItem.vala:330
 msgid "Star message"
 msgstr "Marca il messaggio come speciale"
 
-#: src/MessageList/MessageListItem.vala:181
+#: src/MessageList/MessageListItem.vala:188
 msgid "Reply to All"
 msgstr "Rispondi a tutti"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:194
 msgid "Print…"
 msgstr "Stampa…"
 
-#: src/MessageList/MessageListItem.vala:201
+#: src/MessageList/MessageListItem.vala:208
 msgid "More"
 msgstr "Altro"
 
-#: src/MessageList/MessageListItem.vala:237
+#: src/MessageList/MessageListItem.vala:244
 msgid "Show Images"
 msgstr "Mostra immagini"
 
-#: src/MessageList/MessageListItem.vala:238
+#: src/MessageList/MessageListItem.vala:245
 msgid "Always Show from Sender"
 msgstr "Mostra sempre dal mittente"
 
-#: src/MessageList/MessageListItem.vala:243
+#: src/MessageList/MessageListItem.vala:250
 msgid "This message contains remote images."
 msgstr "Questo messaggio contiene immagini remote."
 
-#: src/MessageList/MessageListItem.vala:275
+#: src/MessageList/MessageListItem.vala:282
 msgid "This message contains one or more attachments"
 msgstr "Questo messaggio contiene uno o più allegati"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:351
+#: src/MessageList/MessageListItem.vala:385
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Nuovo messaggio"
 
-#: src/MessageList/MessageListItem.vala:373
+#: src/MessageList/MessageListItem.vala:407
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"

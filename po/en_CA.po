@@ -5,12 +5,12 @@
 #
 # Translators:
 # Alfredo Hernández <aldomann.designs@gmail.com>, 2012
-#: src/MessageList/MessageListItem.vala:374
+#: src/MessageList/MessageListItem.vala:408
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-07 19:43+0000\n"
+"POT-Creation-Date: 2021-06-30 08:04+0000\n"
 "PO-Revision-Date: 2016-05-08 15:16+0000\n"
 "Last-Translator: Giovanni Caligaris <giovannicaligaris@gmail.com>\n"
 "Language-Team: English (Canada) (http://www.transifex.com/projects/p/geary/"
@@ -45,7 +45,7 @@ msgstr ""
 msgid "Menu"
 msgstr "Menu"
 
-#: src/HeaderBar.vala:95 src/MessageList/MessageListItem.vala:178
+#: src/HeaderBar.vala:95 src/MessageList/MessageListItem.vala:185
 msgid "Reply"
 msgstr ""
 
@@ -54,7 +54,7 @@ msgstr ""
 msgid "Reply All"
 msgstr "R_eply All"
 
-#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:184
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Forward"
 msgstr ""
 
@@ -123,15 +123,17 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Accounts"
 
-#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:95
 msgid "From:"
 msgstr "From:"
 
-#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
+#: src/Composer/ComposerWidget.vala:111
+#: src/MessageList/MessageListItem.vala:100
 msgid "To:"
 msgstr "To:"
 
-#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
+#: src/Composer/ComposerWidget.vala:115
+#: src/MessageList/MessageListItem.vala:105
 msgid "Subject:"
 msgstr "Subject:"
 
@@ -146,7 +148,7 @@ msgid "Bcc"
 msgstr "Bcc:"
 
 #: src/Composer/ComposerWidget.vala:131
-#: src/MessageList/MessageListItem.vala:127
+#: src/MessageList/MessageListItem.vala:134
 msgid "Cc:"
 msgstr "Cc:"
 
@@ -264,13 +266,13 @@ msgstr "Delete"
 
 #: src/Composer/ComposerWidget.vala:588
 #, fuzzy
-msgid "Send Message With an Empty Subject?"
+msgid "Send without subject?"
 msgstr "Send message with an empty subject?"
 
 #: src/Composer/ComposerWidget.vala:589
 msgid ""
-"This message has an empty subject field. The recipient may not be able to "
-"infer the scope or importance of the message."
+"This message has an empty subject field. The recipient may be unable to "
+"infer its scope or importance."
 msgstr ""
 
 #: src/Composer/ComposerWidget.vala:595
@@ -358,56 +360,56 @@ msgstr ""
 msgid "No Message Selected"
 msgstr "No conversations selected."
 
-#: src/MessageList/MessageListItem.vala:168
-#: src/MessageList/MessageListItem.vala:325
+#: src/MessageList/MessageListItem.vala:175
+#: src/MessageList/MessageListItem.vala:334
 #, fuzzy
 msgid "Unstar message"
 msgstr "%d message"
 
-#: src/MessageList/MessageListItem.vala:171
-#: src/MessageList/MessageListItem.vala:321
+#: src/MessageList/MessageListItem.vala:178
+#: src/MessageList/MessageListItem.vala:330
 #, fuzzy
 msgid "Star message"
 msgstr "%d message"
 
-#: src/MessageList/MessageListItem.vala:181
+#: src/MessageList/MessageListItem.vala:188
 #, fuzzy
 #| msgid "Reply to _All"
 msgid "Reply to All"
 msgstr "Reply to _All"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:194
 msgid "Print…"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:201
+#: src/MessageList/MessageListItem.vala:208
 msgid "More"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:237
+#: src/MessageList/MessageListItem.vala:244
 msgid "Show Images"
 msgstr "Show Images"
 
-#: src/MessageList/MessageListItem.vala:238
+#: src/MessageList/MessageListItem.vala:245
 msgid "Always Show from Sender"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:243
+#: src/MessageList/MessageListItem.vala:250
 msgid "This message contains remote images."
 msgstr "This message contains remote images."
 
-#: src/MessageList/MessageListItem.vala:275
+#: src/MessageList/MessageListItem.vala:282
 msgid "This message contains one or more attachments"
 msgstr ""
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:351
+#: src/MessageList/MessageListItem.vala:385
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "New Message"
 
-#: src/MessageList/MessageListItem.vala:373
+#: src/MessageList/MessageListItem.vala:407
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"

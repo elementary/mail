@@ -5,12 +5,12 @@
 #
 # Translators:
 # preahkumpii <gospeltocambodia@gmail.com>, 2012
-#: src/MessageList/MessageListItem.vala:374
+#: src/MessageList/MessageListItem.vala:408
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-07 19:43+0000\n"
+"POT-Creation-Date: 2021-06-30 08:04+0000\n"
 "PO-Revision-Date: 2017-04-15 20:37+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: km (generated) <https://l10n.elementary.io/projects/mail/mail/"
@@ -44,7 +44,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: src/HeaderBar.vala:95 src/MessageList/MessageListItem.vala:178
+#: src/HeaderBar.vala:95 src/MessageList/MessageListItem.vala:185
 msgid "Reply"
 msgstr ""
 
@@ -53,7 +53,7 @@ msgstr ""
 msgid "Reply All"
 msgstr "_ឆ្លើយ​តប"
 
-#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:184
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Forward"
 msgstr ""
 
@@ -119,15 +119,17 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:88
+#: src/Composer/ComposerWidget.vala:95 src/MessageList/MessageListItem.vala:95
 msgid "From:"
 msgstr "មក​ពី ៖"
 
-#: src/Composer/ComposerWidget.vala:111 src/MessageList/MessageListItem.vala:93
+#: src/Composer/ComposerWidget.vala:111
+#: src/MessageList/MessageListItem.vala:100
 msgid "To:"
 msgstr "ផ្ញើ​ទៅ ៖"
 
-#: src/Composer/ComposerWidget.vala:115 src/MessageList/MessageListItem.vala:98
+#: src/Composer/ComposerWidget.vala:115
+#: src/MessageList/MessageListItem.vala:105
 msgid "Subject:"
 msgstr "ប្រធាន​បទ ៖"
 
@@ -142,7 +144,7 @@ msgid "Bcc"
 msgstr "លាក់ ៖"
 
 #: src/Composer/ComposerWidget.vala:131
-#: src/MessageList/MessageListItem.vala:127
+#: src/MessageList/MessageListItem.vala:134
 msgid "Cc:"
 msgstr "ចម្លង ៖"
 
@@ -254,13 +256,15 @@ msgid "Delete Draft"
 msgstr ""
 
 #: src/Composer/ComposerWidget.vala:588
-msgid "Send Message With an Empty Subject?"
-msgstr ""
+#, fuzzy
+#| msgid "(no subject)"
+msgid "Send without subject?"
+msgstr "(គ្មាន​ប្រធានបទ)"
 
 #: src/Composer/ComposerWidget.vala:589
 msgid ""
-"This message has an empty subject field. The recipient may not be able to "
-"infer the scope or importance of the message."
+"This message has an empty subject field. The recipient may be unable to "
+"infer its scope or importance."
 msgstr ""
 
 #: src/Composer/ComposerWidget.vala:595
@@ -349,54 +353,54 @@ msgstr ""
 msgid "No Message Selected"
 msgstr "គ្មាន​ជ្រើស​ការ​សន្ទនា."
 
-#: src/MessageList/MessageListItem.vala:168
-#: src/MessageList/MessageListItem.vala:325
+#: src/MessageList/MessageListItem.vala:175
+#: src/MessageList/MessageListItem.vala:334
 msgid "Unstar message"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:171
-#: src/MessageList/MessageListItem.vala:321
+#: src/MessageList/MessageListItem.vala:178
+#: src/MessageList/MessageListItem.vala:330
 #, fuzzy
 msgid "Star message"
 msgstr "សារ​ថ្មី"
 
-#: src/MessageList/MessageListItem.vala:181
+#: src/MessageList/MessageListItem.vala:188
 #, fuzzy
 msgid "Reply to All"
 msgstr "_ឆ្លើយ​តប"
 
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:194
 msgid "Print…"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:201
+#: src/MessageList/MessageListItem.vala:208
 msgid "More"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:237
+#: src/MessageList/MessageListItem.vala:244
 msgid "Show Images"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:238
+#: src/MessageList/MessageListItem.vala:245
 msgid "Always Show from Sender"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:243
+#: src/MessageList/MessageListItem.vala:250
 msgid "This message contains remote images."
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:275
+#: src/MessageList/MessageListItem.vala:282
 msgid "This message contains one or more attachments"
 msgstr ""
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:351
+#: src/MessageList/MessageListItem.vala:385
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "សារ​ថ្មី"
 
-#: src/MessageList/MessageListItem.vala:373
+#: src/MessageList/MessageListItem.vala:407
 msgid "Unable to print email"
 msgstr ""
 
@@ -442,9 +446,6 @@ msgstr ""
 
 #~ msgid "Other"
 #~ msgstr "ទៀត"
-
-#~ msgid "(no subject)"
-#~ msgstr "(គ្មាន​ប្រធានបទ)"
 
 #~ msgid "%s wrote:"
 #~ msgstr "%s បាន​សរសេរ​ថា ៖"
