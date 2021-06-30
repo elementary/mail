@@ -15,10 +15,10 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-30 08:04+0000\n"
-"PO-Revision-Date: 2021-06-06 02:47+0000\n"
+"PO-Revision-Date: 2021-06-30 15:08+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/"
-">\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/>"
+"\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -247,22 +247,16 @@ msgid "Delete Draft"
 msgstr "Eliminar rascunho"
 
 #: src/Composer/ComposerWidget.vala:588
-#, fuzzy
-#| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
-msgstr "Enviar mensagem sem assunto?"
+msgstr "Enviar sem assunto?"
 
 #: src/Composer/ComposerWidget.vala:589
-#, fuzzy
-#| msgid ""
-#| "This message has an empty subject field. The recipient may not be able to "
-#| "infer the scope or importance of the message."
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
-"Esta mensagem tem um campo de assunto vazio. O destinatário pode não "
-"conseguir perceber o âmbito ou a importância da mensagem."
+"Esta mensagem tem um campo de assunto vazio. O destinatário pode não ser "
+"capaz de perceber o âmbito ou a importância."
 
 #: src/Composer/ComposerWidget.vala:595
 msgid "Don't Send"
