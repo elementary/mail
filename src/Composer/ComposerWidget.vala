@@ -40,7 +40,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     public bool can_change_sender { get; construct; default = true; }
     public string? to { get; construct; }
     public string? mailto_query { get; construct; }
-    
+
     private bool discard_draft = false;
     private string first_line_of_message_without_html_on_load = "";
     private string body_html_snapshot = "";
@@ -461,7 +461,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
             return;
         }
         web_view.load_finished.disconnect (update_first_line_of_message_without_html_on_load);
-        
+
         var body_html = yield web_view.get_body_html ();
         first_line_of_message_without_html_on_load = "";
         if (body_html != null) {

@@ -428,7 +428,7 @@ public class Mail.Backend.Session : Camel.Session {
             warning ("No camel store for saving found, discarding draft.");
             return;
         }
-        
+
         var drafts_folder_uri = get_drafts_folder_uri_for_store (camel_store);
         if (drafts_folder_uri == null || drafts_folder_uri == "") {
             warning ("Unable to determine drafts folder uri, discarding draft.");
@@ -445,7 +445,7 @@ public class Mail.Backend.Session : Camel.Session {
         } catch (Error e) {
             warning ("Error retrieving drafts folder: %s", e.message);
         }
-        
+
         if (drafts_folder != null) {
             try {
                 drafts_folder.append_message_sync (message, null, null, null);
