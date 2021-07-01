@@ -13,10 +13,10 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-30 08:04+0000\n"
-"PO-Revision-Date: 2021-06-03 02:33+0000\n"
+"PO-Revision-Date: 2021-07-01 04:10+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/"
-">\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/>"
+"\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -250,22 +250,16 @@ msgid "Delete Draft"
 msgstr "Видалити чернетку"
 
 #: src/Composer/ComposerWidget.vala:588
-#, fuzzy
-#| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
-msgstr "Надіслати повідомлення без теми?"
+msgstr "Надіслати без теми?"
 
 #: src/Composer/ComposerWidget.vala:589
-#, fuzzy
-#| msgid ""
-#| "This message has an empty subject field. The recipient may not be able to "
-#| "infer the scope or importance of the message."
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
 "У цьому повідомленні поле теми порожнє. Одержувач може не змогти зробити "
-"висновок про зміст або важливість повідомлення."
+"висновок про його зміст або важливість."
 
 #: src/Composer/ComposerWidget.vala:595
 msgid "Don't Send"
