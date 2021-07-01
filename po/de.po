@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-30 08:04+0000\n"
-"PO-Revision-Date: 2021-06-03 14:19+0000\n"
+"PO-Revision-Date: 2021-07-01 15:30+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
 "Language: de\n"
@@ -253,23 +253,16 @@ msgid "Delete Draft"
 msgstr "Entwurf löschen"
 
 #: src/Composer/ComposerWidget.vala:588
-#, fuzzy
-#| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
-msgstr "Nachricht mit leerem Betreff senden?"
+msgstr "Nachricht ohne Betreff senden?"
 
 #: src/Composer/ComposerWidget.vala:589
-#, fuzzy
-#| msgid ""
-#| "This message has an empty subject field. The recipient may not be able to "
-#| "infer the scope or importance of the message."
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
-"Diese Nachricht hat eine leere Betreffzeile. Der Empfänger kann "
-"möglicherweise nicht auf den Inhalt oder die Priorität der Nachricht "
-"schließen."
+"Die Betreffzeile dieser Nachricht ist leer. Der Empfänger kann "
+"möglicherweise nicht auf ihren Inhalt oder ihre Dringlichkeit schließen."
 
 #: src/Composer/ComposerWidget.vala:595
 msgid "Don't Send"
