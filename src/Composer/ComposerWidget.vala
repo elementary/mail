@@ -425,8 +425,17 @@ public class Mail.ComposerWidget : Gtk.Grid {
             if (body_html_snapshot.strip () != "") {
                 var first_line_without_html = get_first_line_without_html (body_html_snapshot);
                 if (first_line_without_html != first_line_of_message_without_html_on_load) {
-                    // TODO: Create or Update Draft
-                    warning ("<<<<<<<<<<<<<<<<<<<<<<CREATE OR UPDATE DRAFT>>>>>>>>>>>>>>>>>>>>>>>>>");
+                    unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+
+                    var message = build_message (body_html_snapshot);
+                    var sender = build_sender (message);
+                    var recipients = build_recipients (message);
+
+                    session.save_draft_sync (
+                        message,
+                        sender,
+                        recipients
+                    );
                 }
             }
         });
@@ -670,26 +679,49 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+        var body_html = yield web_view.get_body_html ();
+        var message = build_message (body_html);
+        var sender = build_sender (message);
+        var recipients = build_recipients (message);
 
-        var from = new Camel.InternetAddress ();
-        from.unformat (from_combo.get_active_text ());
+        session.send_email.begin (
+            message,
+            sender,
+            recipients
+        );
+        sent ();
+    }
 
+    private Camel.InternetAddress build_sender (Camel.MimeMessage message) {
+        var sender = new Camel.InternetAddress ();
+        sender.unformat (from_combo.get_active_text ());
+        message.set_from (sender);
+
+        return sender;
+    }
+
+    private Camel.InternetAddress build_recipients (Camel.MimeMessage message) {
         var to_addresses = new Camel.InternetAddress ();
         to_addresses.unformat (to_val.text);
+        message.set_recipients (Camel.RECIPIENT_TYPE_TO, to_addresses);
 
         var cc_addresses = new Camel.InternetAddress ();
         cc_addresses.unformat (cc_val.text);
+        message.set_recipients (Camel.RECIPIENT_TYPE_CC, cc_addresses);
 
         var bcc_addresses = new Camel.InternetAddress ();
         bcc_addresses.unformat (bcc_val.text);
+        message.set_recipients (Camel.RECIPIENT_TYPE_BCC, bcc_addresses);
 
         var recipients = new Camel.InternetAddress ();
         recipients.cat (to_addresses);
         recipients.cat (cc_addresses);
         recipients.cat (bcc_addresses);
 
-        var body_html = yield web_view.get_body_html ();
+        return recipients;
+    }
 
+    private Camel.MimeMessage build_message (string body_html) {
         var stream_mem = new Camel.StreamMem.with_buffer (body_html.data);
         var stream_filter = new Camel.StreamFilter (stream_mem);
 
@@ -719,16 +751,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
 
         var message = new Camel.MimeMessage ();
-        message.set_from (from);
-        message.set_recipients (Camel.RECIPIENT_TYPE_TO, to_addresses);
-        message.set_recipients (Camel.RECIPIENT_TYPE_CC, cc_addresses);
-        message.set_recipients (Camel.RECIPIENT_TYPE_BCC, bcc_addresses);
         message.set_subject (subject_val.text);
         message.set_date (Camel.MESSAGE_DATE_CURRENT, 0);
         message.content = body;
 
-        session.send_email.begin (message, from, recipients);
-        sent ();
+        return message;
     }
 
     private void load_from_combobox () {

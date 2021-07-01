@@ -241,6 +241,25 @@ public class Mail.Backend.Session : Camel.Session {
         return null;
     }
 
+    public string? get_drafts_folder_uri_for_store (Camel.Store store) {
+        var source = registry.ref_source (store.uid);
+        if (source != null && source.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
+            unowned var mail_account = (E.SourceMailAccount) source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
+            var identity_uid = mail_account.identity_uid;
+
+            if (identity_uid != null && identity_uid != "") {
+                var identity_source = registry.ref_source (identity_uid);
+
+                if (identity_source != null && identity_source.has_extension (E.SOURCE_EXTENSION_MAIL_COMPOSITION)) {
+                    var composition_extension = (E.SourceMailComposition) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_COMPOSITION);
+
+                    return composition_extension.dup_drafts_folder ();
+                }
+            }
+        }
+        return null;
+    }
+
     public override Camel.Service add_service (string uid, string protocol, Camel.ProviderType type) throws GLib.Error {
         var service = base.add_service (uid, protocol, type);
         if (service is Camel.Service) {
@@ -362,5 +381,77 @@ public class Mail.Backend.Session : Camel.Session {
 
     public E.Source? ref_source (string source_uid) {
         return registry.ref_source (source_uid);
+    }
+
+    private Camel.Store? get_camel_store_from_email (Camel.InternetAddress from) {
+        var sources = registry.list_enabled (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
+        foreach (unowned E.Source source_item in sources) {
+            unowned string account_uid = source_item.uid;
+            if (account_uid == "vfolder") {
+                continue;
+            }
+            weak E.SourceMailAccount mail_account = (E.SourceMailAccount) source_item.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
+
+            var identity_uid = mail_account.identity_uid;
+            if (identity_uid == null || identity_uid == "") {
+                continue;
+            }
+
+            var identity_source = registry.ref_source (identity_uid);
+            if (identity_source == null || !identity_source.has_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY)) {
+                continue;
+            }
+
+            weak E.SourceMailIdentity mail_identity = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+            var address = mail_identity.get_address ();
+            if (from.find_address (address, null) == 0) {
+                return (Camel.Store) ref_service (account_uid);
+            }
+
+            GLib.HashTable<string,string>? aliases = mail_identity.get_aliases_as_hash_table ();
+            if (aliases != null) {
+                GLib.List<weak string> aliases_mails = aliases.get_keys ();
+                foreach (weak string key in aliases_mails) {
+                    if (from.find_address (key, null) == 0) {
+                        return (Camel.Store) ref_service (account_uid);
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public void save_draft_sync (Camel.MimeMessage message, Camel.InternetAddress from, Camel.Address recipients) {
+        var camel_store = get_camel_store_from_email (from);
+        if (camel_store == null) {
+            warning ("No camel store for saving found, discarding draft.");
+            return;
+        }
+        
+        var drafts_folder_uri = get_drafts_folder_uri_for_store (camel_store);
+        if (drafts_folder_uri == null || drafts_folder_uri == "") {
+            warning ("Unable to determine drafts folder uri, discarding draft.");
+            return;
+        }
+
+        Camel.Folder? drafts_folder = null;
+        try {
+            drafts_folder = camel_store.get_folder_sync (
+                Utils.strip_folder_full_name (camel_store.uid, drafts_folder_uri),
+                Camel.StoreGetFolderFlags.NONE,
+                null
+            );
+        } catch (Error e) {
+            warning ("Error retrieving drafts folder: %s", e.message);
+        }
+        
+        if (drafts_folder != null) {
+            try {
+                drafts_folder.append_message_sync (message, null, null, null);
+            } catch (Error e) {
+                warning ("Error saving draft: %s", e.message);
+            }
+        }
     }
 }
