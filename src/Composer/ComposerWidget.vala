@@ -41,6 +41,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     public string? to { get; construct; }
     public string? mailto_query { get; construct; }
     
+    private bool discard_draft = false;
     private string first_line_of_message_without_html_on_load = "";
     private string body_html_snapshot = "";
 
@@ -421,7 +422,10 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         unmap.connect (() => {
             GLib.Source.remove (update_body_html_snapshot_timeout_id);
-            
+            if (discard_draft) {
+                return;
+            }
+
             if (body_html_snapshot.strip () != "") {
                 var first_line_without_html = get_first_line_without_html (body_html_snapshot);
                 if (first_line_without_html != first_line_of_message_without_html_on_load) {
@@ -646,6 +650,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         discard_anyway.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
         if (discard_dialog.run () == Gtk.ResponseType.ACCEPT) {
+            discard_draft = true;
             discarded ();
         }
 
