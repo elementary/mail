@@ -422,14 +422,10 @@ public class Mail.ComposerWidget : Gtk.Grid {
         if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
             filechooser.hide ();
             foreach (unowned File file in filechooser.get_files ()) {
-                try {
-                    var attachment = new Attachment (file);
-                    attachment.margin = 3;
+                var attachment = new Attachment (file);
+                attachment.margin = 3;
 
-                    attachment_box.add (attachment);
-                } catch (Error e) {
-                    critical ("Couldn't add attachment: %s", e.message);
-                }
+                attachment_box.add (attachment);
             }
             attachment_box.show_all ();
         }
@@ -441,14 +437,14 @@ public class Mail.ComposerWidget : Gtk.Grid {
     }
 
     private async void ask_insert_link () {
-        string selected_text = yield web_view.get_selected_text ();
+        var selected_text = yield web_view.get_selected_text ();
         var insert_link_dialog = new InsertLinkDialog (selected_text);
         insert_link_dialog.insert_link.connect ((url, title) => on_link_inserted (url, title, selected_text));
         insert_link_dialog.transient_for = (Gtk.Window) get_toplevel ();
         insert_link_dialog.run ();
     }
 
-    private void on_link_inserted (string url, string title, string selected_text) {
+    private void on_link_inserted (string url, string title, string? selected_text) {
         if (selected_text != null && title == selected_text) {
             web_view.execute_editor_command ("createLink", url);
         } else {
@@ -629,8 +625,12 @@ public class Mail.ComposerWidget : Gtk.Grid {
         var stream_filter = new Camel.StreamFilter (stream_mem);
 
         var html = new Camel.DataWrapper ();
-        html.construct_from_stream_sync (stream_filter);
-        html.set_mime_type ("text/html; charset=utf-8");
+        try {
+            html.construct_from_stream_sync (stream_filter);
+            html.set_mime_type ("text/html; charset=utf-8");
+        } catch (Error e) {
+            warning ("Error constructing html from stream: %s", e.message);
+        }
 
         var part = new Camel.MimePart ();
         part.content = html;

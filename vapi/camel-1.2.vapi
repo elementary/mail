@@ -911,7 +911,7 @@ namespace Camel {
 	public abstract class MessageInfo : GLib.Object {
 		[CCode (has_construct_function = false)]
 		[Version (since = "3.24")]
-		public MessageInfo (Camel.FolderSummary? summary);
+		protected MessageInfo (Camel.FolderSummary? summary);
 		[Version (since = "3.24")]
 		public virtual Camel.MessageInfo clone (Camel.FolderSummary? assign_summary);
 		[Version (since = "3.24")]
