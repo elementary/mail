@@ -45,7 +45,13 @@ public class GravatarIcon: Object, Icon, LoadableIcon {
         );
         type = null;
         var server_file = File.new_for_uri (uri);
-        return server_file.read ();
+        var path = Path.build_filename (Environment.get_tmp_dir (), server_file.get_basename ());
+        var local_file = File.new_for_path (path);
+
+        if (!local_file.query_exists (cancellable)) {
+            server_file.copy (local_file, FileCopyFlags.OVERWRITE, cancellable, null);
+        }
+        return local_file.read ();
     }
 
     public async InputStream load_async (int size, Cancellable? cancellable = null, out string? type = null) throws Error {
