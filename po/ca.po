@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-30 08:04+0000\n"
-"PO-Revision-Date: 2021-06-04 16:00+0000\n"
+"PO-Revision-Date: 2021-07-01 19:15+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -244,22 +244,16 @@ msgid "Delete Draft"
 msgstr "Suprimeix l'esborrany"
 
 #: src/Composer/ComposerWidget.vala:588
-#, fuzzy
-#| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
-msgstr "Voleu enviar el missatge amb l'assumpte en blanc?"
+msgstr "Voleu enviar-lo sense assumpte?"
 
 #: src/Composer/ComposerWidget.vala:589
-#, fuzzy
-#| msgid ""
-#| "This message has an empty subject field. The recipient may not be able to "
-#| "infer the scope or importance of the message."
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
-"Aquest missatge té el camp de l'assumpte en blanc. El destinatari potser no "
-"en podrà copsar l'abast o la importància."
+"Aquest missatge té un camp d'assumpte buit. És possible que el destinatari "
+"no pugui inferir-ne l’abast o la importància."
 
 #: src/Composer/ComposerWidget.vala:595
 msgid "Don't Send"

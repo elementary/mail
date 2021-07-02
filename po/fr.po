@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-30 08:04+0000\n"
-"PO-Revision-Date: 2021-06-03 07:27+0000\n"
-"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
+"PO-Revision-Date: 2021-06-30 13:09+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -256,22 +256,16 @@ msgid "Delete Draft"
 msgstr "Supprimer le brouillon"
 
 #: src/Composer/ComposerWidget.vala:588
-#, fuzzy
-#| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
-msgstr "Envoyer le message avec un objet vide ?"
+msgstr "Envoyer sans objet ?"
 
 #: src/Composer/ComposerWidget.vala:589
-#, fuzzy
-#| msgid ""
-#| "This message has an empty subject field. The recipient may not be able to "
-#| "infer the scope or importance of the message."
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
 "Le champ objet de ce message est vide. Le destinataire pourrait ne pas être "
-"en mesure de connaître l'importance de celui-ci."
+"en mesure de reconnaître son importance."
 
 #: src/Composer/ComposerWidget.vala:595
 msgid "Don't Send"

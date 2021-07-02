@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-30 08:04+0000\n"
-"PO-Revision-Date: 2021-06-03 05:16+0000\n"
+"PO-Revision-Date: 2021-06-30 15:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -233,22 +233,14 @@ msgid "Delete Draft"
 msgstr "下書きを削除"
 
 #: src/Composer/ComposerWidget.vala:588
-#, fuzzy
-#| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
-msgstr "空の件名のままメッセージを送信しますか？"
+msgstr "件名なしで送信しますか？"
 
 #: src/Composer/ComposerWidget.vala:589
-#, fuzzy
-#| msgid ""
-#| "This message has an empty subject field. The recipient may not be able to "
-#| "infer the scope or importance of the message."
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
-msgstr ""
-"このメッセージには件名がありません。受信者がメッセージの話題や重要性を推測で"
-"きない可能性があります。"
+msgstr "このメッセージには件名がありません。受信者が話題や重要性を推測できない可能性があります。"
 
 #: src/Composer/ComposerWidget.vala:595
 msgid "Don't Send"
