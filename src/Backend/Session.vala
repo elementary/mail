@@ -422,7 +422,7 @@ public class Mail.Backend.Session : Camel.Session {
         return null;
     }
 
-    public void save_draft_sync (Camel.MimeMessage message, Camel.InternetAddress from, Camel.Address recipients) {
+    public async void save_draft (Camel.MimeMessage message, Camel.InternetAddress from, Camel.Address recipients) throws Error {
         var camel_store = get_camel_store_from_email (from);
         if (camel_store == null) {
             warning ("No camel store for saving found, discarding draft.");
@@ -436,22 +436,15 @@ public class Mail.Backend.Session : Camel.Session {
         }
 
         Camel.Folder? drafts_folder = null;
-        try {
-            drafts_folder = camel_store.get_folder_sync (
-                Utils.strip_folder_full_name (camel_store.uid, drafts_folder_uri),
-                Camel.StoreGetFolderFlags.NONE,
-                null
-            );
-        } catch (Error e) {
-            warning ("Error retrieving drafts folder: %s", e.message);
-        }
+        drafts_folder = yield camel_store.get_folder (
+            Utils.strip_folder_full_name (camel_store.uid, drafts_folder_uri),
+            Camel.StoreGetFolderFlags.NONE,
+            0,
+            null
+        );
 
         if (drafts_folder != null) {
-            try {
-                drafts_folder.append_message_sync (message, null, null, null);
-            } catch (Error e) {
-                warning ("Error saving draft: %s", e.message);
-            }
+            yield drafts_folder.append_message (message, null, 0, null, null);
         }
     }
 }

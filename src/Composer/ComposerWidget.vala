@@ -401,46 +401,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 update_first_line_of_message_without_html_on_load.begin ();
             }
         }
-
-        destroy.connect (() => {
-            if (discard_draft) {
-                return;
-            }
-
-            /*
-             * Copy all values we need so we still have
-             * access to those once the async function
-             * completes.
-            */
-            /*
-            ... but how...?
-
-            var from_combo = (owned) this.from_combo;
-            var to_val = (owned) this.to_val;
-            var cc_val = (owned) this.cc_val;
-            var bcc_val = (owned) this.bcc_val;
-            var web_view = (WebView) Memory.dup (&this.web_view, (uint) sizeof (WebView)); */
-            web_view.get_body_html.begin ((obj, res) => {
-                var body_html = web_view.get_body_html.end (res);
-                warning ("copy.async.end: %s", body_html);
-                if (body_html != null && body_html.strip () != "") {
-                    var first_line_without_html = get_first_line_without_html (body_html);
-                    if (first_line_without_html != first_line_of_message_without_html_on_load) {
-                        unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
-    
-                        var message = build_message (body_html);
-                        var sender = build_sender (message, from_combo.get_active_text ());
-                        var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
-    
-                        session.save_draft_sync (
-                            message,
-                            sender,
-                            recipients
-                        );
-                    }
-                }
-            });
-        });
     }
 
     private async void update_first_line_of_message_without_html_on_load () {
@@ -869,5 +829,39 @@ public class Mail.ComposerWidget : Gtk.Grid {
         static construct {
             set_css_name (Gtk.STYLE_CLASS_ENTRY);
         }
+    }
+
+    public override void destroy () {
+        if (discard_draft) {
+            return;
+        }
+
+        web_view.get_body_html.begin ((obj, res) => {
+            var body_html = web_view.get_body_html.end (res);
+
+            if (body_html != null && body_html.strip () != "") {
+                var first_line_without_html = get_first_line_without_html (body_html);
+                if (first_line_without_html != first_line_of_message_without_html_on_load) {
+                    unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+
+                    var message = build_message (body_html);
+                    var sender = build_sender (message, from_combo.get_active_text ());
+                    var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
+
+                    session.save_draft.begin (
+                        message,
+                        sender,
+                        recipients,
+                        (obj, res) => {
+                            try {
+                                session.save_draft.end (res);
+                            } catch (Error e) {
+                                critical ("Unable to safe draft: %s", e.message);
+                                // TODO: Shall we display a dialog here?
+                            }
+                    });
+                }
+            }
+        });
     }
 }
