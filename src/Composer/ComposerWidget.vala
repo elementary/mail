@@ -402,56 +402,44 @@ public class Mail.ComposerWidget : Gtk.Grid {
             }
         }
 
-        /**
-         * We can't do any async operations while
-         * this widget is beeing destroyed.
-         * Therefore we are hoping the
-         * leave_notify_event completes fast enough to
-         * retrieve the most recent message body.
-         * If not, we use a periodic snapshot as
-         * fallback... Something is better than
-         * nothing, right?
-         */
-        web_view.leave_notify_event.connect (() => {
-            update_body_html_snapshot ();
-        });
-        var update_body_html_snapshot_timeout_id = GLib.Timeout.add (10000, () => {
-            update_body_html_snapshot ();
-            return GLib.Source.CONTINUE;
-        });
-
-        unmap.connect (() => {
-            GLib.Source.remove (update_body_html_snapshot_timeout_id);
+        destroy.connect (() => {
             if (discard_draft) {
                 return;
             }
 
-            if (body_html_snapshot.strip () != "") {
-                var first_line_without_html = get_first_line_without_html (body_html_snapshot);
-                if (first_line_without_html != first_line_of_message_without_html_on_load) {
-                    unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+            /*
+             * Copy all values we need so we still have
+             * access to those once the async function
+             * completes.
+            */
+            /*
+            ... but how...?
 
-                    var message = build_message (body_html_snapshot);
-                    var sender = build_sender (message);
-                    var recipients = build_recipients (message);
-
-                    session.save_draft_sync (
-                        message,
-                        sender,
-                        recipients
-                    );
+            var from_combo = (owned) this.from_combo;
+            var to_val = (owned) this.to_val;
+            var cc_val = (owned) this.cc_val;
+            var bcc_val = (owned) this.bcc_val;
+            var web_view = (WebView) Memory.dup (&this.web_view, (uint) sizeof (WebView)); */
+            web_view.get_body_html.begin ((obj, res) => {
+                var body_html = web_view.get_body_html.end (res);
+                warning ("copy.async.end: %s", body_html);
+                if (body_html != null && body_html.strip () != "") {
+                    var first_line_without_html = get_first_line_without_html (body_html);
+                    if (first_line_without_html != first_line_of_message_without_html_on_load) {
+                        unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+    
+                        var message = build_message (body_html);
+                        var sender = build_sender (message, from_combo.get_active_text ());
+                        var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
+    
+                        session.save_draft_sync (
+                            message,
+                            sender,
+                            recipients
+                        );
+                    }
                 }
-            }
-        });
-    }
-
-    private void update_body_html_snapshot () {
-        web_view.get_body_html.begin ((obj, res) => {
-            var body_html = web_view.get_body_html.end (res);
-
-            if (body_html != null) {
-                body_html_snapshot = body_html;
-            }
+            });
         });
     }
 
@@ -686,8 +674,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
         var body_html = yield web_view.get_body_html ();
         var message = build_message (body_html);
-        var sender = build_sender (message);
-        var recipients = build_recipients (message);
+        var sender = build_sender (message, from_combo.get_active_text ());
+        var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
 
         session.send_email.begin (
             message,
@@ -697,25 +685,25 @@ public class Mail.ComposerWidget : Gtk.Grid {
         sent ();
     }
 
-    private Camel.InternetAddress build_sender (Camel.MimeMessage message) {
+    private Camel.InternetAddress build_sender (Camel.MimeMessage message, string from) {
         var sender = new Camel.InternetAddress ();
-        sender.unformat (from_combo.get_active_text ());
+        sender.unformat (from);
         message.set_from (sender);
 
         return sender;
     }
 
-    private Camel.InternetAddress build_recipients (Camel.MimeMessage message) {
+    private Camel.InternetAddress build_recipients (Camel.MimeMessage message, string to, string cc, string bcc) {
         var to_addresses = new Camel.InternetAddress ();
-        to_addresses.unformat (to_val.text);
+        to_addresses.unformat (to);
         message.set_recipients (Camel.RECIPIENT_TYPE_TO, to_addresses);
 
         var cc_addresses = new Camel.InternetAddress ();
-        cc_addresses.unformat (cc_val.text);
+        cc_addresses.unformat (cc);
         message.set_recipients (Camel.RECIPIENT_TYPE_CC, cc_addresses);
 
         var bcc_addresses = new Camel.InternetAddress ();
-        bcc_addresses.unformat (bcc_val.text);
+        bcc_addresses.unformat (bcc);
         message.set_recipients (Camel.RECIPIENT_TYPE_BCC, bcc_addresses);
 
         var recipients = new Camel.InternetAddress ();
