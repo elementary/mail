@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-30 08:04+0000\n"
-"PO-Revision-Date: 2021-05-12 21:09+0000\n"
+"PO-Revision-Date: 2021-07-05 12:22+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/mail/en_GB/>\n"
@@ -183,10 +183,8 @@ msgid "Choose a file"
 msgstr "Choose a file"
 
 #: src/Composer/ComposerWidget.vala:418
-#, fuzzy
-#| msgid "_Attach"
 msgid "Attach"
-msgstr "_Attach"
+msgstr "Attach"
 
 #: src/Composer/ComposerWidget.vala:419 src/Composer/ComposerWidget.vala:569
 #: src/Dialogs/InsertLinkDialog.vala:61
@@ -247,22 +245,16 @@ msgid "Delete Draft"
 msgstr "Delete Draft"
 
 #: src/Composer/ComposerWidget.vala:588
-#, fuzzy
-#| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
-msgstr "Send Message With an Empty Subject?"
+msgstr "Send without subject?"
 
 #: src/Composer/ComposerWidget.vala:589
-#, fuzzy
-#| msgid ""
-#| "This message has an empty subject field. The recipient may not be able to "
-#| "infer the scope or importance of the message."
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
-"This message has an empty subject field. The recipient may not be able to "
-"infer the scope or importance of the message."
+"This message has an empty subject field. The recipient may be unable to "
+"infer its scope or importance."
 
 #: src/Composer/ComposerWidget.vala:595
 msgid "Don't Send"
@@ -334,10 +326,8 @@ msgid "Archive"
 msgstr "Archive"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent Mail"
 msgid "Sent"
-msgstr "Sent Mail"
+msgstr "Sent"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"

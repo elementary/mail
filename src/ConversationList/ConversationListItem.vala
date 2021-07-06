@@ -89,6 +89,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         date.label = data.formatted_date;
         topic.label = data.subject;
         source.label = GLib.Markup.escape_text (data.from);
+        tooltip_markup = GLib.Markup.printf_escaped ("<b>%s</b>\n%s", data.from, data.subject);
 
         uint num_messages = data.num_messages;
         messages.label = num_messages > 1 ? "%u".printf (num_messages) : null;
