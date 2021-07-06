@@ -36,6 +36,9 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
         composer = new ComposerWidget.inline ();
         composer.margin_top = 6;
         composer.has_recipients = true;
+        if (prev_chain_message != null && prev_chain_message.get_subject () != null) {
+            composer.subject = _("Re: %s").printf (prev_chain_message.get_subject ());
+        }
         composer.discarded.connect (() => {
             discarded ();
         });
