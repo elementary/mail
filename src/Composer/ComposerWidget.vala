@@ -42,8 +42,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     public string? mailto_query { get; construct; }
 
     private bool discard_draft = false;
-    private string first_line_of_message_without_html_on_load = "";
-    private string body_html_snapshot = "";
+    private string? first_line_of_message_without_html_on_load = null;
 
     private WebView web_view;
     private SimpleActionGroup actions;
@@ -411,13 +410,13 @@ public class Mail.ComposerWidget : Gtk.Grid {
         web_view.load_finished.disconnect (update_first_line_of_message_without_html_on_load);
 
         var body_html = yield web_view.get_body_html ();
-        first_line_of_message_without_html_on_load = "";
-        if (body_html != null) {
-            first_line_of_message_without_html_on_load = get_first_line_without_html (body_html);
-        }
+        first_line_of_message_without_html_on_load = get_first_line_without_html (body_html);
     }
 
-    private string get_first_line_without_html (string html) {
+    private string? get_first_line_without_html (string? html) {
+        if (html == null) {
+            return null;
+        }
         var text = html.strip ();
         text = text.substring (0, text.index_of ("\n"));
         return Utils.strip_html_tags (text).strip ();
@@ -833,34 +832,37 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
     public override void destroy () {
         if (discard_draft) {
+            base.destroy ();
             return;
         }
 
         web_view.get_body_html.begin ((obj, res) => {
             var body_html = web_view.get_body_html.end (res);
 
-            if (body_html != null && body_html.strip () != "") {
-                var first_line_without_html = get_first_line_without_html (body_html);
-                if (first_line_without_html != first_line_of_message_without_html_on_load) {
-                    unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+            if (body_html == null || get_first_line_without_html (body_html) == first_line_of_message_without_html_on_load) {
+                base.destroy ();
 
-                    var message = build_message (body_html);
-                    var sender = build_sender (message, from_combo.get_active_text ());
-                    var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
+            } else {
+                unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
 
-                    session.save_draft.begin (
-                        message,
-                        sender,
-                        recipients,
-                        (obj, res) => {
-                            try {
-                                session.save_draft.end (res);
-                            } catch (Error e) {
-                                critical ("Unable to safe draft: %s", e.message);
-                                // TODO: Shall we display a dialog here?
-                            }
-                    });
-                }
+                var message = build_message (body_html);
+                var sender = build_sender (message, from_combo.get_active_text ());
+                var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
+
+                session.save_draft.begin (
+                    message,
+                    sender,
+                    recipients,
+                    (obj, res) => {
+                        try {
+                            session.save_draft.end (res);
+                        } catch (Error e) {
+                            critical ("Unable to safe draft: %s", e.message);
+                            // TODO: Shall we display a dialog here?
+                        } finally {
+                            base.destroy ();
+                        }
+                });
             }
         });
     }
