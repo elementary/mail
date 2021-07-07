@@ -36,6 +36,19 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
         composer = new ComposerWidget.inline ();
         composer.margin_top = 6;
         composer.has_recipients = true;
+
+        if (prev_chain_message != null && prev_chain_message.get_subject () != null) {
+            composer.subject = prev_chain_message.get_subject ();
+
+            // RFC 2822 makes the "Re:" string verbatim (so don't translate it)
+            // also we have to make sure that the subject doesn't already contain it
+            // before re-adding it.
+            // https://datatracker.ietf.org/doc/html/rfc2822#section-3.6.5
+            if (!composer.subject.has_prefix ("Re:")) {
+                composer.subject = "Re: %s".printf (composer.subject);
+            }
+        }
+
         composer.discarded.connect (() => {
             discarded ();
         });
