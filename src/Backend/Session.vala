@@ -252,8 +252,12 @@ public class Mail.Backend.Session : Camel.Session {
 
                 if (identity_source != null && identity_source.has_extension (E.SOURCE_EXTENSION_MAIL_COMPOSITION)) {
                     var composition_extension = (E.SourceMailComposition) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_COMPOSITION);
-
-                    return composition_extension.dup_drafts_folder ();
+                    
+                    var drafts_folder = composition_extension.dup_drafts_folder ();
+                    if (drafts_folder != null) {
+                        Camel.URL.decode (drafts_folder);
+                    }
+                    return drafts_folder;
                 }
             }
         }
