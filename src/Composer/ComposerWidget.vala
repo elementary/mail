@@ -486,7 +486,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 // also we have to make sure that the subject doesn't already contain it
                 // before re-adding it.
                 // https://datatracker.ietf.org/doc/html/rfc2822#section-3.6.5
-                if (!subject_val.text.has_prefix ("Re: ")) {
+                if (!subject_val.text.up ().contains ("RE: ")) {
                     subject_val.text = "Re: %s".printf (subject_val.text);
                 }
 
@@ -494,7 +494,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 // Although "Fwd: " is not part of the RFC standard,
                 // it is a widely used convention - therefore we stick
                 // to it here too. Do _not_ translate it!
-                if (!subject_val.text.has_prefix ("Fwd: ")) {
+                if (!subject_val.text.up ().contains ("FWD: ")) {
                     subject_val.text = "Fwd: %s".printf (subject_val.text);
                 }
             }
