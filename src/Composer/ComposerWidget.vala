@@ -835,11 +835,33 @@ public class Mail.ComposerWidget : Gtk.Grid {
                     (obj, res) => {
                         try {
                             session.save_draft.end (res);
-                        } catch (Error e) {
-                            critical ("Unable to safe draft: %s", e.message);
-                            // TODO: Shall we display a dialog here?
-                        } finally {
                             base.destroy ();
+
+                        } catch (Error e) {
+                            unowned Mail.MainWindow? main_window = null;
+                            var windows = Gtk.Window.list_toplevels ();
+                            foreach (unowned var window in windows) {
+                                if (window is Mail.MainWindow) {
+                                    main_window = (Mail.MainWindow) window;
+                                    break;
+                                }
+                            }
+
+                            if (main_window != null) {
+                                new ComposerWindow.for_widget (main_window, this).show_all ();
+                            } else {
+                                warning ("Unable to re-show composer. Draft will be lost.");
+                            }
+
+                            var error_dialog = new Granite.MessageDialog (
+                                _("Unable to safe draft"),
+                                _("There was an unexpected error while saving your draft."),
+                                new ThemedIcon ("dialog-error"),
+                                Gtk.ButtonsType.CLOSE
+                            );
+                            error_dialog.show_error_details (e.message);
+                            error_dialog.run ();
+                            error_dialog.destroy ();
                         }
                 });
             }
