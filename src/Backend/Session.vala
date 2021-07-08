@@ -425,14 +425,12 @@ public class Mail.Backend.Session : Camel.Session {
     public async void save_draft (Camel.MimeMessage message, Camel.InternetAddress from, Camel.Address recipients) throws Error {
         var camel_store = get_camel_store_from_email (from);
         if (camel_store == null) {
-            warning ("No camel store for saving found, discarding draft.");
-            return;
+            throw new Camel.ServiceError.UNAVAILABLE ("No camel service for saving draft found.");
         }
 
         var drafts_folder_uri = get_drafts_folder_uri_for_store (camel_store);
         if (drafts_folder_uri == null || drafts_folder_uri == "") {
-            warning ("Unable to determine drafts folder uri, discarding draft.");
-            return;
+            throw new Camel.FolderError.INVALID_PATH ("Unable to fetch uri for drafts folder.");
         }
 
         Camel.Folder? drafts_folder = null;
@@ -443,8 +441,10 @@ public class Mail.Backend.Session : Camel.Session {
             null
         );
 
-        if (drafts_folder != null) {
-            yield drafts_folder.append_message (message, null, 0, null, null);
+        if (drafts_folder == null) {
+            throw new Camel.StoreError.NO_FOLDER ("Unable to connect to drafts folder.");
         }
+
+        yield drafts_folder.append_message (message, null, 0, null, null);
     }
 }
