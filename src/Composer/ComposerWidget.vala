@@ -43,7 +43,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
     public string? mailto_query { get; construct; }
 
     private bool discard_draft = false;
-    private string? first_line_of_message_without_html_on_load = null;
 
     private WebView web_view;
     private SimpleActionGroup actions;
@@ -399,29 +398,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
                     Camel.MimeFilterToHTMLFlags.CONVERT_URLS;
 
                 web_view.set_body_content (Camel.text_to_html (result["body"], flags, 0));
-                update_first_line_of_message_without_html_on_load.begin ();
             }
         }
-    }
-
-    private async void update_first_line_of_message_without_html_on_load () {
-        if (!web_view.loaded) {
-            web_view.load_finished.connect (update_first_line_of_message_without_html_on_load);
-            return;
-        }
-        web_view.load_finished.disconnect (update_first_line_of_message_without_html_on_load);
-
-        var body_html = yield web_view.get_body_html ();
-        first_line_of_message_without_html_on_load = get_first_line_without_html (body_html);
-    }
-
-    private string? get_first_line_without_html (string? html) {
-        if (html == null) {
-            return null;
-        }
-        var text = html.strip ();
-        text = text.substring (0, text.index_of ("\n"));
-        return Utils.strip_html_tags (text).strip ();
     }
 
     private void on_sanitize_recipient_entry (Gtk.Entry entry) {
@@ -554,7 +532,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
             }
 
             web_view.set_body_content (message_content);
-            update_first_line_of_message_without_html_on_load.begin ();
         }
     }
 
@@ -841,7 +818,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         web_view.get_body_html.begin ((obj, res) => {
             var body_html = web_view.get_body_html.end (res);
 
-            if (body_html == null || get_first_line_without_html (body_html) == first_line_of_message_without_html_on_load) {
+            if (body_html == null) {
                 base.destroy ();
 
             } else {
