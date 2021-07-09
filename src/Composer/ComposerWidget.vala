@@ -38,6 +38,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     public bool has_recipients { get; set; }
     public bool has_subject_field { get; construct; default = false; }
     public bool can_change_sender { get; construct; default = true; }
+    public string? subject { get; set; }
     public string? to { get; construct; }
     public string? mailto_query { get; construct; }
 
@@ -72,7 +73,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     };
 
     public ComposerWidget.inline () {
-        Object (can_change_sender: false);
+        Object (can_change_sender: false, has_subject_field: true);
     }
 
     public ComposerWidget.with_subject () {
@@ -162,6 +163,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         subject_val = new Gtk.Entry ();
         subject_val.margin_top = 6;
+        bind_property ("subject", subject_val, "text", GLib.BindingFlags.BIDIRECTIONAL);
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
         size_group.add_widget (from_label);
