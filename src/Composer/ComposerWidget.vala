@@ -856,7 +856,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
                             }
 
                             var error_dialog = new Granite.MessageDialog (
-                                _("Unable to safe draft"),
+                                _("Unable to save draft"),
                                 _("There was an unexpected error while saving your draft."),
                                 new ThemedIcon ("dialog-error"),
                                 Gtk.ButtonsType.CLOSE
