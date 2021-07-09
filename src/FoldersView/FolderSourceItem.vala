@@ -79,7 +79,7 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
                 badge = null;
                 break;
             case Camel.FolderInfoFlags.TYPE_DRAFTS:
-                icon = new ThemedIcon ("folder-documents");
+                icon = new ThemedIcon ("mail-drafts");
                 can_modify = false;
                 break;
             default:
