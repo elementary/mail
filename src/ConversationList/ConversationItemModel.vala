@@ -175,8 +175,12 @@ public class Mail.ConversationItemModel : GLib.Object {
         return i;
     }
 
-    private static int64 get_newest_timestamp (Camel.FolderThreadNode node, int64 highest = -1) {
+    private static int64 get_newest_timestamp (Camel.FolderThreadNode? node, int64 highest = -1) {
         int64 time = highest;
+        if (node == null) {
+            return time;
+        }
+
         weak Camel.MessageInfo? message = node.message;
         if (message != null) {
             time = int64.max (time, message.date_received);
