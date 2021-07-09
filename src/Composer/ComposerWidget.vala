@@ -620,6 +620,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
             sender,
             recipients
         );
+
+        discard_draft = true;
         sent ();
     }
 
