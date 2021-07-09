@@ -47,19 +47,7 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
             valign = Gtk.Align.CENTER
         };
 
-        var load_images_switch = new Gtk.Switch ();
-
-        var settings = new GLib.Settings ("io.elementary.mail");
-        settings.bind ("always-load-remote-images", load_images_switch, "active", SettingsBindFlags.DEFAULT);
-
-        var load_images_grid = new Gtk.Grid ();
-        load_images_grid.column_spacing = 12;
-        load_images_grid.add (new Gtk.Label (_("Always Show Remote Images")));
-        load_images_grid.add (load_images_switch);
-
-        var load_images_menuitem = new Gtk.ModelButton ();
-        load_images_menuitem.get_child ().destroy ();
-        load_images_menuitem.add (load_images_grid);
+        var load_images_menuitem = new Granite.SwitchModelButton (_("Always Show Remote Images"));
 
         var account_settings_menuitem = new Gtk.ModelButton ();
         account_settings_menuitem.text = _("Account Settings…");
@@ -171,17 +159,15 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
         bind_property ("can-mark", mark_button, "sensitive");
         bind_property ("can-search", search_entry, "sensitive", BindingFlags.SYNC_CREATE);
 
+        var settings = new GLib.Settings ("io.elementary.mail");
+        settings.bind ("always-load-remote-images", load_images_menuitem, "active", SettingsBindFlags.DEFAULT);
+
         account_settings_menuitem.clicked.connect (() => {
             try {
                 AppInfo.launch_default_for_uri ("settings://accounts/online", null);
             } catch (Error e) {
                 warning ("Failed to open account settings: %s", e.message);
             }
-        });
-
-        load_images_menuitem.button_release_event.connect (() => {
-            load_images_switch.activate ();
-            return Gdk.EVENT_STOP;
         });
     }
 
