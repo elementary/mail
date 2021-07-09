@@ -336,25 +336,33 @@ public class Mail.Backend.Session : Camel.Session {
         return null;
     }
 
-    public async void send_email (Camel.MimeMessage message, Camel.InternetAddress from, Camel.Address recipients) {
-        Camel.Transport? transport = null;
-        try {
-            transport = get_camel_transport_from_email (from);
-        } catch (Error e) {
-            critical (e.message);
-            return;
+    public async void send_email (Camel.MimeMessage message, Camel.InternetAddress from, Camel.Address recipients) throws Error {
+        Camel.Transport? transport = get_camel_transport_from_email (from);
+
+        if (transport == null) {
+            throw new Camel.Error.ERROR_GENERIC ("TRANSPORT NULL");//Camel.ServiceError.UNAVAILABLE ("No camel service for sending email found.");
         }
 
-        if (transport == null)
-            return;
+        bool sent_message_saved;
+        yield transport.connect (GLib.Priority.LOW, null);
+        yield transport.send_to (message, from, recipients, GLib.Priority.LOW, null, out sent_message_saved);
+        yield transport.disconnect (true, GLib.Priority.LOW, null);
 
-        try {
-            bool sent_message_saved;
-            yield transport.connect (GLib.Priority.LOW, null);
-            yield transport.send_to (message, from, recipients, GLib.Priority.LOW, null, out sent_message_saved);
-            yield transport.disconnect (true, GLib.Priority.LOW, null);
-        } catch (Error e) {
-            critical (e.message);
+        if (!sent_message_saved) {
+            var provider = transport.get_provider ();
+            if (provider != null && Camel.ProviderFlags.DISABLE_SENT_FOLDER in provider.flags) {
+                debug ("Sent folder is disabled - sent message is not saved.");
+
+            } else {
+                /*
+                 * TODO: Append message to Sent folder like its done for drafts
+                 * in https://github.com/elementary/mail/pull/599
+                 * 
+                 * See Evolution's implementation as guidance:
+                 * https://gitlab.gnome.org/GNOME/evolution/-/blob/master/src/libemail-engine/mail-ops.c#L570
+                */
+                warning ("Saving sent message...");
+            }
         }
 
         remove_service (transport);

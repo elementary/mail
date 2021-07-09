@@ -664,7 +664,22 @@ public class Mail.ComposerWidget : Gtk.Grid {
         message.set_date (Camel.MESSAGE_DATE_CURRENT, 0);
         message.content = body;
 
-        session.send_email.begin (message, from, recipients);
+        session.send_email.begin (message, from, recipients, (obj, res) => {
+            try {
+                session.send_email.end (res);
+            } catch (Error e) {
+                /* TODO:
+                   Display an appropriate error to the user. We need to be able
+                   to distinguish two kinds of errors here:
+
+                   1. Sending of the email failed completely:
+                      in this case re-show the composer widget with the mail content
+                      to avoid data loss.
+                   2. Sending of the email was successfull, but it wasn't stored in the sent folder:
+                      In this case show a warning dialog, informing the user that we were unable to save a copy.
+                */
+            }
+        });
         sent ();
     }
 
