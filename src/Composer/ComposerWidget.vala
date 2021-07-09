@@ -494,7 +494,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 // Although "Fwd: " is not part of the RFC standard,
                 // it is a widely used convention - therefore we stick
                 // to it here too. Do _not_ translate it!
-                if (!subject_val.text.up ().contains ("FWD: ") && !subject_val.text.up ().contains ("FW: ")) {
+                var up_subject = subject_val.text.up ()
+                if (!up_subject.contains ("FWD: ") && !up_subject.contains ("FW: ")) {
                     subject_val.text = "Fwd: %s".printf (subject_val.text);
                 }
             }
