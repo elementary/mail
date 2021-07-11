@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-30 08:04+0000\n"
-"PO-Revision-Date: 2021-07-01 15:30+0000\n"
+"PO-Revision-Date: 2021-07-11 01:47+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
 "Language: de\n"
@@ -201,7 +201,7 @@ msgstr "Abbrechen"
 
 #: src/Composer/ComposerWidget.vala:483
 msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%a, %-e.%b %Y um %-k:%M"
+msgstr "%a, %-e.%b %Y, um %-k:%M"
 
 #: src/Composer/ComposerWidget.vala:513
 #, c-format
