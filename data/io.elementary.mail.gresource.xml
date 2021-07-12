@@ -3,5 +3,10 @@
   <gresource prefix="/io/elementary/mail">
     <file alias="application.css" compressed="true">application.css</file>
     <file alias="blank-message-template.html" compressed="true">blank-message-template.html</file>
+
+    <file alias="16x16@2/places/mail-drafts.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-drafts/16.svg</file>
+    <file alias="16x16/places/mail-drafts.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-drafts/16.svg</file>
+    <file alias="48x48@2/places/mail-drafts.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-drafts/48.svg</file>
+    <file alias="48x48/places/mail-drafts.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-drafts/48.svg</file>
   </gresource>
 </gresources>
