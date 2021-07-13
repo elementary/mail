@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-13 19:24+0000\n"
-"PO-Revision-Date: 2021-06-30 15:08+0000\n"
+"PO-Revision-Date: 2021-07-14 02:11+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -253,14 +253,12 @@ msgid "Send Anyway"
 msgstr "了解して送信"
 
 #: src/Composer/ComposerWidget.vala:861
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to save draft"
-msgstr "下書きを削除します"
+msgstr "下書きを保存できません"
 
 #: src/Composer/ComposerWidget.vala:862
 msgid "There was an unexpected error while saving your draft."
-msgstr ""
+msgstr "下書きを保存する際に予期しないエラーが発生しました。"
 
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
