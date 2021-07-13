@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:43+0200\n"
+"POT-Creation-Date: 2021-06-30 08:04+0000\n"
 "PO-Revision-Date: 2020-07-17 07:12+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/mail/"
@@ -78,8 +78,10 @@ msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
 #: data/io.elementary.mail.desktop.in:6
-msgid "internet-mail"
-msgstr "internet-mail"
+#, fuzzy
+#| msgid "elementary, Inc."
+msgid "io.elementary.mail"
+msgstr "elementary, Inc."
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -88,3 +90,6 @@ msgstr "Epost;E-post;Post;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Skriv ny melding"
+
+#~ msgid "internet-mail"
+#~ msgstr "internet-mail"
