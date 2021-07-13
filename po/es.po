@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-13 19:24+0000\n"
-"PO-Revision-Date: 2021-06-03 12:08+0000\n"
+"PO-Revision-Date: 2021-07-13 22:05+0000\n"
 "Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/mail/mail/es/>\n"
 "Language: es\n"
@@ -283,7 +283,7 @@ msgstr "Eliminar borrador"
 
 #: src/Composer/ComposerWidget.vala:862
 msgid "There was an unexpected error while saving your draft."
-msgstr ""
+msgstr "Se produjo un error inesperado al guardar el borrador."
 
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
