@@ -19,19 +19,24 @@
  */
 
 public class Mail.ComposerWindow : Hdy.ApplicationWindow {
-    public string? mailto_query { get; construct; }
-    public string? to { get; construct; }
+
+    public ComposerWidget composer_widget { get; construct; }
 
     public ComposerWindow (Gtk.Window parent, string? to = null, string? mailto_query = null) {
         Object (
             transient_for: parent,
-            mailto_query: mailto_query,
-            to: to
+            composer_widget: new ComposerWidget.with_headers (to, mailto_query)
+        );
+    }
+
+    public ComposerWindow.for_widget (Gtk.Window parent, ComposerWidget composer_widget) {
+        Object (
+            transient_for: parent,
+            composer_widget: composer_widget
         );
     }
 
     construct {
-        var composer_widget = new ComposerWidget.with_headers (to, mailto_query);
         composer_widget.discarded.connect (() => {
             close ();
         });

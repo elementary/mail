@@ -2782,7 +2782,7 @@ namespace Camel {
 	}
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_FOLDER_ERROR_", has_type_id = false)]
 	[Version (since = "2.32")]
-	public enum FolderError {
+	public errordomain FolderError {
 		INVALID,
 		INVALID_STATE,
 		NON_EMPTY,
@@ -3095,7 +3095,7 @@ namespace Camel {
 	}
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_SERVICE_ERROR_", has_type_id = false)]
 	[Version (since = "2.32")]
-	public enum ServiceError {
+	public errordomain ServiceError {
 		INVALID,
 		URL_INVALID,
 		UNAVAILABLE,
@@ -3116,7 +3116,7 @@ namespace Camel {
 	}
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_STORE_ERROR_", has_type_id = false)]
 	[Version (since = "2.32")]
-	public enum StoreError {
+	public errordomain StoreError {
 		INVALID,
 		NO_FOLDER
 	}
