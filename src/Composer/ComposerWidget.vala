@@ -617,25 +617,34 @@ public class Mail.ComposerWidget : Gtk.Grid {
         var sender = build_sender (message, from_combo.get_active_text ());
         var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
 
-        session.send_email.begin (message, sender, recipients, (obj, res) => {
-            try {
-                session.send_email.end (res);
-            } catch (Error e) {
-                /* TODO:
-                   Display an appropriate error to the user. We need to be able
-                   to distinguish two kinds of errors here:
+        try {
+            var sent_message_saved = yield session.send_email (message, sender, recipients);
 
-                   1. Sending of the email failed completely:
-                      in this case re-show the composer widget with the mail content
-                      to avoid data loss.
-                   2. Sending of the email was successfull, but it wasn't stored in the sent folder:
-                      In this case show a warning dialog, informing the user that we were unable to save a copy.
-                */
+            if (!sent_message_saved) {
+                var warning_dialog = new Granite.MessageDialog (
+                    _("Sent message not saved"),
+                    _("Your message was sent sucessfully. However, no copy was saved to your Sent message folder."),
+                    new ThemedIcon ("dialog-warning"),
+                    Gtk.ButtonsType.CLOSE
+                );
+                warning_dialog.run ();
+                warning_dialog.destroy ();
             }
-        });
 
-        discard_draft = true;
-        sent ();
+            discard_draft = true;
+            sent ();
+
+        } catch (Error e) {
+            var error_dialog = new Granite.MessageDialog (
+                _("Unable to send message"),
+                _("There was an unexpected error while sending your message."),
+                new ThemedIcon ("dialog-error"),
+                Gtk.ButtonsType.CLOSE
+            );
+            error_dialog.show_error_details (e.message);
+            error_dialog.run ();
+            error_dialog.destroy ();
+        }
     }
 
     private Camel.InternetAddress build_sender (Camel.MimeMessage message, string from) {
@@ -853,14 +862,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
                             base.destroy ();
 
                         } catch (Error e) {
-                            unowned Mail.MainWindow? main_window = null;
-                            var windows = Gtk.Window.list_toplevels ();
-                            foreach (unowned var window in windows) {
-                                if (window is Mail.MainWindow) {
-                                    main_window = (Mail.MainWindow) window;
-                                    break;
-                                }
-                            }
+                            unowned var main_window = get_main_window ();
 
                             if (main_window != null) {
                                 new ComposerWindow.for_widget (main_window, this).show_all ();
@@ -881,5 +883,16 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 });
             }
         });
+    }
+
+    private unowned Gtk.Window? get_main_window () {
+        var windows = Gtk.Window.list_toplevels ();
+
+        foreach (unowned var window in windows) {
+            if (window is Mail.MainWindow) {
+                return window;
+            }
+        }
+        return null;
     }
 }

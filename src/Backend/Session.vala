@@ -355,22 +355,27 @@ public class Mail.Backend.Session : Camel.Session {
         return null;
     }
 
-    private Camel.Transport? get_camel_transport_from_mail_submission_source (E.Source? mail_submission_source) throws GLib.Error {
-        if (mail_submission_source == null || !mail_submission_source.has_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION)) {
+    private Camel.Transport? get_camel_transport_from_mail_submission_source (E.Source mail_submission_source) throws GLib.Error {
+        if (!mail_submission_source.has_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION)) {
             return null;
         }
 
         unowned E.SourceMailSubmission mail_submission = (E.SourceMailSubmission) mail_submission_source.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
         var transport_source = registry.ref_source (mail_submission.transport_uid);
         unowned E.SourceMailTransport mail_transport = (E.SourceMailTransport) transport_source.get_extension (E.SOURCE_EXTENSION_MAIL_TRANSPORT);
+
         return add_service (transport_source.uid, mail_transport.backend_name, Camel.ProviderType.TRANSPORT) as Camel.Transport;
     }
 
-    public async void send_email (Camel.MimeMessage message, Camel.InternetAddress from, Camel.Address recipients) throws Error {
-        Camel.Transport? transport = get_camel_transport_from_mail_submission_source (get_mail_submission_source_from_email (from));
+    public async bool send_email (Camel.MimeMessage message, Camel.InternetAddress from, Camel.Address recipients) throws Error {
+        E.Source? mail_submission_source = get_mail_submission_source_from_email (from);
+        if (mail_submission_source == null) {
+            throw new Camel.Error.ERROR_GENERIC ("Unable to retrieve source for mail submission.");
+        }
 
+        Camel.Transport? transport = get_camel_transport_from_mail_submission_source (mail_submission_source);
         if (transport == null) {
-            throw new Camel.Error.ERROR_GENERIC ("TRANSPORT NULL");//Camel.ServiceError.UNAVAILABLE ("No camel service for sending email found.");
+            throw new Camel.ServiceError.UNAVAILABLE ("No camel service for sending email found.");
         }
 
         bool sent_message_saved;
@@ -384,18 +389,45 @@ public class Mail.Backend.Session : Camel.Session {
                 debug ("Sent folder is disabled - sent message is not saved.");
 
             } else {
-                /*
-                 * TODO: Append message to Sent folder like its done for drafts
-                 * in https://github.com/elementary/mail/pull/599
-                 * 
-                 * See Evolution's implementation as guidance:
-                 * https://gitlab.gnome.org/GNOME/evolution/-/blob/master/src/libemail-engine/mail-ops.c#L570
-                */
-                warning ("Saving sent message...");
+                try {
+                    var camel_store = get_camel_store_from_email (from);
+                    if (camel_store == null) {
+                        throw new Camel.ServiceError.UNAVAILABLE ("No camel service for saving sent found.");
+                    }
+
+                    unowned var mail_submission_extension = (E.SourceMailSubmission) mail_submission_source.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
+                    var sent_folder_uri = mail_submission_extension.dup_sent_folder ();
+                    if (sent_folder_uri != null) {
+                        Camel.URL.decode (sent_folder_uri);
+                    }
+
+                    if (sent_folder_uri == null || sent_folder_uri == "") {
+                        throw new Camel.FolderError.INVALID_PATH ("Unable to fetch uri for sent folder.");
+                    }
+
+                    Camel.Folder? sent_folder = null;
+                    sent_folder = yield camel_store.get_folder (
+                        Utils.strip_folder_full_name (camel_store.uid, sent_folder_uri),
+                        Camel.StoreGetFolderFlags.NONE,
+                        0,
+                        null
+                    );
+
+                    if (sent_folder == null) {
+                        throw new Camel.StoreError.NO_FOLDER ("Unable to connect to sent folder.");
+                    }
+
+                    yield sent_folder.append_message (message, null, 0, null, null);
+                    sent_message_saved = true;
+
+                } catch (Error e) {
+                    warning ("Unable to append message to Sent folder: %s", e.message);
+                }
             }
         }
-
         remove_service (transport);
+
+        return sent_message_saved;
     }
 
     public E.Source? ref_source (string source_uid) {
