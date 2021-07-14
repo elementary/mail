@@ -862,7 +862,14 @@ public class Mail.ComposerWidget : Gtk.Grid {
                             base.destroy ();
 
                         } catch (Error e) {
-                            unowned var main_window = get_main_window ();
+                            unowned Mail.MainWindow? main_window = null;
+                            var windows = Gtk.Window.list_toplevels ();
+                            foreach (unowned var window in windows) {
+                                if (window is Mail.MainWindow) {
+                                    main_window = (Mail.MainWindow) window;
+                                    break;
+                                }
+                            }
 
                             if (main_window != null) {
                                 new ComposerWindow.for_widget (main_window, this).show_all ();
@@ -883,16 +890,5 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 });
             }
         });
-    }
-
-    private unowned Gtk.Window? get_main_window () {
-        var windows = Gtk.Window.list_toplevels ();
-
-        foreach (unowned var window in windows) {
-            if (window is Mail.MainWindow) {
-                return window;
-            }
-        }
-        return null;
     }
 }
