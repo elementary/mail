@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-13 19:24+0000\n"
-"PO-Revision-Date: 2021-07-01 19:15+0000\n"
+"PO-Revision-Date: 2021-07-14 16:13+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -264,14 +264,12 @@ msgid "Send Anyway"
 msgstr "Envia'l tanmateix"
 
 #: src/Composer/ComposerWidget.vala:861
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to save draft"
-msgstr "Suprimeix l'esborrany"
+msgstr "No es pot desar l'esborrany."
 
 #: src/Composer/ComposerWidget.vala:862
 msgid "There was an unexpected error while saving your draft."
-msgstr ""
+msgstr "Hi ha hagut un error inesperat a l'hora de desar l'esborrany."
 
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
