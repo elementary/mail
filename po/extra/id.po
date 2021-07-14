@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:43+0200\n"
+"POT-Creation-Date: 2021-07-13 19:24+0000\n"
 "PO-Revision-Date: 2020-12-15 16:16+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/mail/extra/id/"
@@ -85,8 +85,10 @@ msgid "elementary, Inc."
 msgstr "elementary, PT."
 
 #: data/io.elementary.mail.desktop.in:6
-msgid "internet-mail"
-msgstr "surel-internet"
+#, fuzzy
+#| msgid "elementary, Inc."
+msgid "io.elementary.mail"
+msgstr "elementary, PT."
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -95,3 +97,6 @@ msgstr "Surel;Sur-el;Mail;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Buat Pesan"
+
+#~ msgid "internet-mail"
+#~ msgstr "surel-internet"

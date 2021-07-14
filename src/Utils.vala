@@ -61,4 +61,11 @@ public class Mail.Utils {
     public static string escape_html_tags (string input) {
         return input.replace ("<", "&lt;").replace (">", "&gt;");
     }
+
+    public static string? strip_folder_full_name (string service_uid, string? folder_uri) {
+        if (folder_uri != null) {
+            return folder_uri.replace ("folder://%s/".printf (service_uid), "");
+        }
+        return null;
+    }
 }

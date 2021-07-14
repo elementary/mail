@@ -38,22 +38,36 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public string from {
         owned get {
-            weak Camel.MessageInfo? message = node.message;
-            if (message == null) {
-                return _("Unknown");
+            string[] senders = {};
+
+            unowned Camel.FolderThreadNode? current_node = node;
+            while (current_node != null) {
+                weak Camel.MessageInfo? message = current_node.message;
+                if (message != null) {
+                    var address = new Camel.InternetAddress ();
+                    if (address.decode (message.from) > 0) {
+                        unowned string? ia_name;
+                        unowned string? ia_address;
+
+                        string sender;
+                        address.get (0, out ia_name, out ia_address);
+                        if (ia_name != null && ia_name != "") {
+                            sender = ia_name;
+                        } else {
+                            sender = ia_address;
+                        }
+
+                        if (!(sender in senders)) {
+                            senders += sender;
+                        }
+                    }
+                }
+
+                current_node = (Camel.FolderThreadNode?) current_node.child;
             }
 
-            var address = new Camel.InternetAddress ();
-            if (address.decode (message.from) > 0) {
-                unowned string? ia_name;
-                unowned string? ia_address;
-
-                address.get (0, out ia_name, out ia_address);
-                if (ia_name != null && ia_name != "") {
-                    return ia_name;
-                } else {
-                    return ia_address;
-                }
+            if (senders.length > 0) {
+                return string.joinv (_(", "), senders);
             }
 
             return _("Unknown");

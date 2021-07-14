@@ -82,6 +82,8 @@ public class Mail.Application : Gtk.Application {
 
     public override void activate () {
         if (main_window == null) {
+            Gtk.IconTheme.get_default ().add_resource_path ("/io/elementary/mail");
+
             main_window = new MainWindow (this);
 
             int window_x, window_y;
