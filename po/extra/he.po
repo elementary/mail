@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-13 19:24+0000\n"
-"PO-Revision-Date: 2021-03-02 13:14+0000\n"
+"PO-Revision-Date: 2021-07-14 07:52+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/extra/he/>\n"
 "Language: he\n"
@@ -83,10 +83,8 @@ msgid "elementary, Inc."
 msgstr "elementary בע״מ"
 
 #: data/io.elementary.mail.desktop.in:6
-#, fuzzy
-#| msgid "elementary, Inc."
 msgid "io.elementary.mail"
-msgstr "elementary בע״מ"
+msgstr "io.elementary.mail"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
