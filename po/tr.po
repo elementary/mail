@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-16 17:33+0000\n"
-"PO-Revision-Date: 2021-07-15 13:34+0000\n"
+"PO-Revision-Date: 2021-07-16 19:27+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
 "Language: tr\n"
@@ -272,28 +272,24 @@ msgid "Send Anyway"
 msgstr "Yine de Gönder"
 
 #: src/Composer/ComposerWidget.vala:625
-#, fuzzy
-#| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
-msgstr "İleti, ileti gövdesi olmadan gönderilsin mi?"
+msgstr "Gönderilen mesaj kaydedilmedi"
 
 #: src/Composer/ComposerWidget.vala:626
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
+"Mesaj gönderildi, ancak bir kopyası Gönderilmiş mesajlar klasörüne "
+"kaydedilmedi."
 
 #: src/Composer/ComposerWidget.vala:641
-#, fuzzy
-#| msgid "Unable to save draft"
 msgid "Unable to send message"
-msgstr "Taslak kaydedilemiyor"
+msgstr "Mesaj gönderilemiyor"
 
 #: src/Composer/ComposerWidget.vala:642
-#, fuzzy
-#| msgid "There was an unexpected error while saving your draft."
 msgid "There was an unexpected error while sending your message."
-msgstr "Taslağınız kaydedilirken beklenmeyen bir hata oluştu."
+msgstr "Mesajınız gönderilirken beklenmeyen bir hata oluştu."
 
 #: src/Composer/ComposerWidget.vala:885
 msgid "Unable to save draft"
