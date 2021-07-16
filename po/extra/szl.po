@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-16 17:33+0000\n"
+"POT-Creation-Date: 2021-07-16 19:27+0000\n"
 "PO-Revision-Date: 2020-06-12 22:11+0000\n"
 "Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/mail/extra/szl/"
@@ -47,34 +47,28 @@ msgid "As-you-type searching"
 msgstr "Wyszukowanie przi pisaniu"
 
 #: data/io.elementary.mail.appdata.xml.in:16
-msgid "Desktop notifications"
-msgstr "Powiadōmiynia na biōrku"
-
-#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "Sparcie wielu kōnt"
 
-#: data/io.elementary.mail.appdata.xml.in:18
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "Kōmpozytōr HTML, co spamiyntuje cechōnki na serwerze"
 
-#: data/io.elementary.mail.appdata.xml.in:19
-msgid ""
-"Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
-"IMAP servers"
+#: data/io.elementary.mail.appdata.xml.in:18
+#, fuzzy
+#| msgid ""
+#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
+#| "popular IMAP servers"
+msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 "Funguje ze Gmail, Yahoo! Mail, Outlook.com (eksperymyntalnie) i inkszymi "
 "popularnymi serwerami IMAP"
 
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Minor bug fixes"
-msgstr "Poprowki drobnych błyndōw"
+#: data/io.elementary.mail.appdata.xml.in:27
+msgid "Complete rewrite from scratch"
+msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid "Translation updates"
-msgstr "Aktualizacyje przekładu"
-
-#: data/io.elementary.mail.appdata.xml.in:69
+#: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
@@ -91,6 +85,15 @@ msgstr "Email;E-mail;Mail;Poczta;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Tworzynie wiadōmości"
+
+#~ msgid "Desktop notifications"
+#~ msgstr "Powiadōmiynia na biōrku"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "Poprowki drobnych błyndōw"
+
+#~ msgid "Translation updates"
+#~ msgstr "Aktualizacyje przekładu"
 
 #~ msgid "internet-mail"
 #~ msgstr "internet-mail"

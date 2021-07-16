@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-16 17:33+0000\n"
+"POT-Creation-Date: 2021-07-16 19:27+0000\n"
 "PO-Revision-Date: 2021-07-13 22:05+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/extra/uk/"
@@ -54,34 +54,28 @@ msgid "As-you-type searching"
 msgstr "Пошук під час введення"
 
 #: data/io.elementary.mail.appdata.xml.in:16
-msgid "Desktop notifications"
-msgstr "Стільничні сповіщення"
-
-#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "Підтримка кількох облікових записів"
 
-#: data/io.elementary.mail.appdata.xml.in:18
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "Вбудований редактор HTML, що зберігає чернетки на сервері"
 
-#: data/io.elementary.mail.appdata.xml.in:19
-msgid ""
-"Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
-"IMAP servers"
+#: data/io.elementary.mail.appdata.xml.in:18
+#, fuzzy
+#| msgid ""
+#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
+#| "popular IMAP servers"
+msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 "Працює з Gmail, Yahoo! Mail, Outlook.com (експериментально) та іншими "
 "популярними серверами IMAP"
 
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Minor bug fixes"
-msgstr "Виправлено незначні помилки"
+#: data/io.elementary.mail.appdata.xml.in:27
+msgid "Complete rewrite from scratch"
+msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid "Translation updates"
-msgstr "Оновлено переклади"
-
-#: data/io.elementary.mail.appdata.xml.in:69
+#: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
@@ -96,6 +90,15 @@ msgstr "Email;E-mail;Mail;Пошта;Лист;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Нове повідомлення"
+
+#~ msgid "Desktop notifications"
+#~ msgstr "Стільничні сповіщення"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "Виправлено незначні помилки"
+
+#~ msgid "Translation updates"
+#~ msgstr "Оновлено переклади"
 
 #~ msgid "internet-mail"
 #~ msgstr "internet-mail"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-16 17:33+0000\n"
+"POT-Creation-Date: 2021-07-16 19:27+0000\n"
 "PO-Revision-Date: 2016-08-06 15:00+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
@@ -50,34 +50,28 @@ msgid "As-you-type searching"
 msgstr "隨打即搜"
 
 #: data/io.elementary.mail.appdata.xml.in:16
-msgid "Desktop notifications"
-msgstr "桌面通知"
-
-#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "多帳號支援"
 
-#: data/io.elementary.mail.appdata.xml.in:18
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "行內 HTML 編寫器，可將草稿存至伺服器"
 
-#: data/io.elementary.mail.appdata.xml.in:19
-msgid ""
-"Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
-"IMAP servers"
+#: data/io.elementary.mail.appdata.xml.in:18
+#, fuzzy
+#| msgid ""
+#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
+#| "popular IMAP servers"
+msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 "能搭配 Gmail、Yahoo! 信箱、Outlook.com（實驗中），以及其他熱門 IMAP 伺服器使"
 "用"
 
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Minor bug fixes"
+#: data/io.elementary.mail.appdata.xml.in:27
+msgid "Complete rewrite from scratch"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid "Translation updates"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:69
+#: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
 msgstr ""
 
@@ -92,6 +86,9 @@ msgstr "Email;E-mail;Mail;電子郵件;郵件;電郵;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "編寫訊息"
+
+#~ msgid "Desktop notifications"
+#~ msgstr "桌面通知"
 
 #~ msgid "About Mail"
 #~ msgstr "關於《郵件》"

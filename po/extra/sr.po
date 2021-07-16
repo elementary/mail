@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-16 17:33+0000\n"
+"POT-Creation-Date: 2021-07-16 19:27+0000\n"
 "PO-Revision-Date: 2020-12-19 14:16+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/mail/extra/sr/>\n"
@@ -52,34 +52,28 @@ msgid "As-you-type searching"
 msgstr "Претрага у реалном времену"
 
 #: data/io.elementary.mail.appdata.xml.in:16
-msgid "Desktop notifications"
-msgstr "Обавештења радне површи"
-
-#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "Подршка за више налога"
 
-#: data/io.elementary.mail.appdata.xml.in:18
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "Уграђени ХТМЛ састављач који чува нацрте на серверу"
 
-#: data/io.elementary.mail.appdata.xml.in:19
-msgid ""
-"Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
-"IMAP servers"
+#: data/io.elementary.mail.appdata.xml.in:18
+#, fuzzy
+#| msgid ""
+#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
+#| "popular IMAP servers"
+msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 "Ради са Г-поштом, Јаху! поштом, Аутлуком (пробно), и другим популарним ИМАП "
 "серверима"
 
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Minor bug fixes"
-msgstr "Мање исправке грешака"
+#: data/io.elementary.mail.appdata.xml.in:27
+msgid "Complete rewrite from scratch"
+msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid "Translation updates"
-msgstr "Освежења превода"
-
-#: data/io.elementary.mail.appdata.xml.in:69
+#: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
@@ -96,6 +90,15 @@ msgstr "е-пошта;ел. пошта;пошта;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Саставите поруку"
+
+#~ msgid "Desktop notifications"
+#~ msgstr "Обавештења радне површи"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "Мање исправке грешака"
+
+#~ msgid "Translation updates"
+#~ msgstr "Освежења превода"
 
 #~ msgid "internet-mail"
 #~ msgstr "internet-mail"
