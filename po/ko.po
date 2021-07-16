@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-13 19:24+0000\n"
+"POT-Creation-Date: 2021-07-16 17:33+0000\n"
 "PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/mail/mail/ko/>\n"
@@ -272,13 +272,35 @@ msgstr "보내지 마세요"
 msgid "Send Anyway"
 msgstr "그래도 보내기"
 
-#: src/Composer/ComposerWidget.vala:861
+#: src/Composer/ComposerWidget.vala:625
+#, fuzzy
+#| msgid "Send message with an empty body?"
+msgid "Sent message was not saved"
+msgstr "내용 없이 편지를 보낼까요?"
+
+#: src/Composer/ComposerWidget.vala:626
+msgid ""
+"The message was sent, however a copy was not saved to the Sent message "
+"folder."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:641
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to send message"
+msgstr "쓰던 편지 지우기"
+
+#: src/Composer/ComposerWidget.vala:642
+msgid "There was an unexpected error while sending your message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:885
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to save draft"
 msgstr "쓰던 편지 지우기"
 
-#: src/Composer/ComposerWidget.vala:862
+#: src/Composer/ComposerWidget.vala:886
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -1253,9 +1275,6 @@ msgstr "저장"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "제목과 내용 없이 편지를 보낼까요?"
-
-#~ msgid "Send message with an empty body?"
-#~ msgstr "내용 없이 편지를 보낼까요?"
 
 #~ msgid "Send message without an attachment?"
 #~ msgstr "첨부 파일 없이 편지를 보낼까요?"

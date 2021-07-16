@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-13 19:24+0000\n"
+"POT-Creation-Date: 2021-07-16 17:33+0000\n"
 "PO-Revision-Date: 2021-06-20 11:00+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -269,13 +269,35 @@ msgstr "不发送"
 msgid "Send Anyway"
 msgstr "仍然发送"
 
-#: src/Composer/ComposerWidget.vala:861
+#: src/Composer/ComposerWidget.vala:625
+#, fuzzy
+#| msgid "Send message with an empty body?"
+msgid "Sent message was not saved"
+msgstr "确认发送无正文的邮件吗？"
+
+#: src/Composer/ComposerWidget.vala:626
+msgid ""
+"The message was sent, however a copy was not saved to the Sent message "
+"folder."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:641
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to send message"
+msgstr "删除草稿"
+
+#: src/Composer/ComposerWidget.vala:642
+msgid "There was an unexpected error while sending your message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:885
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to save draft"
 msgstr "删除草稿"
 
-#: src/Composer/ComposerWidget.vala:862
+#: src/Composer/ComposerWidget.vala:886
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -1228,9 +1250,6 @@ msgstr "保存"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "确认发送无主题无正文的邮件吗？"
-
-#~ msgid "Send message with an empty body?"
-#~ msgstr "确认发送无正文的邮件吗？"
 
 #~ msgid "Send message without an attachment?"
 #~ msgstr "确认发送无附件的邮件吗？"

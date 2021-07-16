@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-13 19:24+0000\n"
+"POT-Creation-Date: 2021-07-16 17:33+0000\n"
 "PO-Revision-Date: 2021-07-14 07:52+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
@@ -267,11 +267,35 @@ msgstr "לא לשלוח"
 msgid "Send Anyway"
 msgstr "לשלוח בכל זאת"
 
-#: src/Composer/ComposerWidget.vala:861
+#: src/Composer/ComposerWidget.vala:625
+#, fuzzy
+#| msgid "Send message with an empty body?"
+msgid "Sent message was not saved"
+msgstr "האם לשלוח את ההודעה ללא תוכן?"
+
+#: src/Composer/ComposerWidget.vala:626
+msgid ""
+"The message was sent, however a copy was not saved to the Sent message "
+"folder."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:641
+#, fuzzy
+#| msgid "Unable to save draft"
+msgid "Unable to send message"
+msgstr "לא ניתן לשמור טיוטה"
+
+#: src/Composer/ComposerWidget.vala:642
+#, fuzzy
+#| msgid "There was an unexpected error while saving your draft."
+msgid "There was an unexpected error while sending your message."
+msgstr "אירעה שגיאה בלתי צפויה בשמירת הטיוטה שלך."
+
+#: src/Composer/ComposerWidget.vala:885
 msgid "Unable to save draft"
 msgstr "לא ניתן לשמור טיוטה"
 
-#: src/Composer/ComposerWidget.vala:862
+#: src/Composer/ComposerWidget.vala:886
 msgid "There was an unexpected error while saving your draft."
 msgstr "אירעה שגיאה בלתי צפויה בשמירת הטיוטה שלך."
 
@@ -1246,9 +1270,6 @@ msgstr "שמירה"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "האם לשלוח את ההודעה ללא כותרת ותוכן?"
-
-#~ msgid "Send message with an empty body?"
-#~ msgstr "האם לשלוח את ההודעה ללא תוכן?"
 
 #~ msgid "Send message without an attachment?"
 #~ msgstr "האם לשלוח את ההודעה ללא קובץ מצורף?"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-13 19:24+0000\n"
+"POT-Creation-Date: 2021-07-16 17:33+0000\n"
 "PO-Revision-Date: 2021-07-14 02:11+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
@@ -252,11 +252,35 @@ msgstr "送信しない"
 msgid "Send Anyway"
 msgstr "了解して送信"
 
-#: src/Composer/ComposerWidget.vala:861
+#: src/Composer/ComposerWidget.vala:625
+#, fuzzy
+#| msgid "Send message with an empty body?"
+msgid "Sent message was not saved"
+msgstr "空の本文のままメッセージを送信しますか？"
+
+#: src/Composer/ComposerWidget.vala:626
+msgid ""
+"The message was sent, however a copy was not saved to the Sent message "
+"folder."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:641
+#, fuzzy
+#| msgid "Unable to save draft"
+msgid "Unable to send message"
+msgstr "下書きを保存できません"
+
+#: src/Composer/ComposerWidget.vala:642
+#, fuzzy
+#| msgid "There was an unexpected error while saving your draft."
+msgid "There was an unexpected error while sending your message."
+msgstr "下書きを保存する際に予期しないエラーが発生しました。"
+
+#: src/Composer/ComposerWidget.vala:885
 msgid "Unable to save draft"
 msgstr "下書きを保存できません"
 
-#: src/Composer/ComposerWidget.vala:862
+#: src/Composer/ComposerWidget.vala:886
 msgid "There was an unexpected error while saving your draft."
 msgstr "下書きを保存する際に予期しないエラーが発生しました。"
 
@@ -1216,9 +1240,6 @@ msgstr "保存"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "空の件名および本文のままメッセージを送信しますか？"
-
-#~ msgid "Send message with an empty body?"
-#~ msgstr "空の本文のままメッセージを送信しますか？"
 
 #~ msgid "Send message without an attachment?"
 #~ msgstr "添付ファイルなしにメッセージを送信しますか？"
