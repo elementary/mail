@@ -13,22 +13,18 @@
       <li>Lightweight mail client with full IMAP support</li>
       <li>Mail grouped into conversations, not a tree of threads</li>
       <li>As-you-type searching</li>
-      <li>Desktop notifications</li>
       <li>Multiple account support</li>
       <li>Inline HTML composer that saves drafts to the server</li>
-      <li>Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular IMAP servers</li>
+      <li>Works with Gmail, Yahoo! Mail, and other popular IMAP servers</li>
     </ul>
   </description>
   <provides>
       <binary>io.elementary.mail</binary>
   </provides>
   <releases>
-    <release version="1.0.0" date="2016-11-24" urgency="medium">
+    <release version="6.0.0" date="2021-07-16" urgency="medium">
       <description>
-        <ul>
-          <li>Minor bug fixes</li>
-          <li>Translation updates</li>
-        </ul>
+        <p>Complete rewrite from scratch</p>
       </description>
     </release>
   </releases>
@@ -70,6 +66,6 @@
   <url type="homepage">https://elementary.io/</url>
   <url type="bugtracker">https://github.com/elementary/mail/issues</url>
   <url type="donation">https://elementary.io/get-involved#funding</url>
-  <url type="help">https://elementaryos.stackexchange.com/questions/tagged/mail</url>
+  <url type="help">https://github.com/elementary/mail/discussions/categories/q-a</url>
   <update_contact>contact_at_elementary.io</update_contact>
 </component>
