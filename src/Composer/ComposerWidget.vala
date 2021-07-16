@@ -622,11 +622,13 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
             if (!sent_message_saved) {
                 var warning_dialog = new Granite.MessageDialog (
-                    _("Sent message not saved"),
-                    _("Your message was sent sucessfully. However, no copy was saved to your Sent message folder."),
-                    new ThemedIcon ("dialog-warning"),
+                    _("Sent message was not saved"),
+                    _("The message was sent, however a copy was not saved to the Sent message folder."),
+                    new ThemedIcon ("mail-send"),
                     Gtk.ButtonsType.CLOSE
-                );
+                ) {
+                    badge_icon = new ThemedIcon ("dialog-warning")
+                };
                 warning_dialog.run ();
                 warning_dialog.destroy ();
             }
@@ -638,9 +640,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
             var error_dialog = new Granite.MessageDialog (
                 _("Unable to send message"),
                 _("There was an unexpected error while sending your message."),
-                new ThemedIcon ("dialog-error"),
+                new ThemedIcon ("mail-send"),
                 Gtk.ButtonsType.CLOSE
-            );
+            ) {
+                badge_icon = new ThemedIcon ("dialog-error")
+            };
             error_dialog.show_error_details (e.message);
             error_dialog.run ();
             error_dialog.destroy ();
@@ -880,9 +884,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
                             var error_dialog = new Granite.MessageDialog (
                                 _("Unable to save draft"),
                                 _("There was an unexpected error while saving your draft."),
-                                new ThemedIcon ("dialog-error"),
+                                new ThemedIcon ("mail-drafts"),
                                 Gtk.ButtonsType.CLOSE
-                            );
+                            ) {
+                                badge_icon = new ThemedIcon ("dialog-error")
+                            };
                             error_dialog.show_error_details (e.message);
                             error_dialog.run ();
                             error_dialog.destroy ();
