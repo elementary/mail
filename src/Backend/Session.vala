@@ -334,7 +334,6 @@ public class Mail.Backend.Session : Camel.Session {
         foreach (unowned E.Source source_item in sources) {
             weak E.SourceMailIdentity mail_identity = (E.SourceMailIdentity)source_item.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
             if (source_item.has_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION)) {
-                weak E.SourceMailSubmission mail_submission = (E.SourceMailSubmission)source_item.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
                 var address = mail_identity.get_address ();
                 if (from.find_address (address, null) == 0) {
                     return source_item;
