@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-13 19:24+0000\n"
+"POT-Creation-Date: 2021-07-16 17:33+0000\n"
 "PO-Revision-Date: 2016-08-25 14:39+0000\n"
 "Last-Translator: Nate <natejms@outlook.com>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
@@ -267,11 +267,29 @@ msgstr ""
 msgid "Send Anyway"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:861
+#: src/Composer/ComposerWidget.vala:625
+msgid "Sent message was not saved"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:626
+msgid ""
+"The message was sent, however a copy was not saved to the Sent message "
+"folder."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:641
+msgid "Unable to send message"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:642
+msgid "There was an unexpected error while sending your message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:885
 msgid "Unable to save draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:862
+#: src/Composer/ComposerWidget.vala:886
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 

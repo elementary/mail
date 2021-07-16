@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-13 19:24+0000\n"
+"POT-Creation-Date: 2021-07-16 17:33+0000\n"
 "PO-Revision-Date: 2017-01-21 10:51+0000\n"
 "Last-Translator: Marius Albina <marius.albina@gmail.com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
@@ -289,13 +289,35 @@ msgstr ""
 msgid "Send Anyway"
 msgstr "Deschide oricum"
 
-#: src/Composer/ComposerWidget.vala:861
+#: src/Composer/ComposerWidget.vala:625
+#, fuzzy
+#| msgid "Send message with an empty body?"
+msgid "Sent message was not saved"
+msgstr "Trimiteți mesajul fără conținut?"
+
+#: src/Composer/ComposerWidget.vala:626
+msgid ""
+"The message was sent, however a copy was not saved to the Sent message "
+"folder."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:641
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to send message"
+msgstr "Șterge schiţa"
+
+#: src/Composer/ComposerWidget.vala:642
+msgid "There was an unexpected error while sending your message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:885
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to save draft"
 msgstr "Șterge schiţa"
 
-#: src/Composer/ComposerWidget.vala:862
+#: src/Composer/ComposerWidget.vala:886
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -1321,9 +1343,6 @@ msgstr "_Salvează"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "Trimiteți mesajul fără subiect și conținut?"
-
-#~ msgid "Send message with an empty body?"
-#~ msgstr "Trimiteți mesajul fără conținut?"
 
 #~ msgid "Send message without an attachment?"
 #~ msgstr "Trimiteți mesajul fără niciun fișier atașat?"

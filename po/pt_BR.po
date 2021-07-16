@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-13 19:24+0000\n"
+"POT-Creation-Date: 2021-07-16 17:33+0000\n"
 "PO-Revision-Date: 2019-08-27 22:23+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/mail/"
@@ -286,13 +286,35 @@ msgstr "Não enviar"
 msgid "Send Anyway"
 msgstr "Enviar desta forma"
 
-#: src/Composer/ComposerWidget.vala:861
+#: src/Composer/ComposerWidget.vala:625
+#, fuzzy
+#| msgid "Send message with an empty body?"
+msgid "Sent message was not saved"
+msgstr "Enviar mensagem com o corpo vazio?"
+
+#: src/Composer/ComposerWidget.vala:626
+msgid ""
+"The message was sent, however a copy was not saved to the Sent message "
+"folder."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:641
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to send message"
+msgstr "Deletar o rascunho"
+
+#: src/Composer/ComposerWidget.vala:642
+msgid "There was an unexpected error while sending your message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:885
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to save draft"
 msgstr "Deletar o rascunho"
 
-#: src/Composer/ComposerWidget.vala:862
+#: src/Composer/ComposerWidget.vala:886
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -1310,9 +1332,6 @@ msgstr "Salvar"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "Enviar mensagem com o assunto e corpo vazio?"
-
-#~ msgid "Send message with an empty body?"
-#~ msgstr "Enviar mensagem com o corpo vazio?"
 
 #~ msgid "Send message without an attachment?"
 #~ msgstr "Enviar mensagem sem anexo?"

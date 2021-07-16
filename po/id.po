@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-13 19:24+0000\n"
+"POT-Creation-Date: 2021-07-16 17:33+0000\n"
 "PO-Revision-Date: 2020-12-15 16:16+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/mail/mail/id/"
@@ -279,13 +279,35 @@ msgstr "Jangan Kirim"
 msgid "Send Anyway"
 msgstr "Kirim Saja"
 
-#: src/Composer/ComposerWidget.vala:861
+#: src/Composer/ComposerWidget.vala:625
+#, fuzzy
+#| msgid "Send message with an empty body?"
+msgid "Sent message was not saved"
+msgstr "Kirim pesan tanpa isi?"
+
+#: src/Composer/ComposerWidget.vala:626
+msgid ""
+"The message was sent, however a copy was not saved to the Sent message "
+"folder."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:641
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to send message"
+msgstr "Hapus Draf"
+
+#: src/Composer/ComposerWidget.vala:642
+msgid "There was an unexpected error while sending your message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:885
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to save draft"
 msgstr "Hapus Draf"
 
-#: src/Composer/ComposerWidget.vala:862
+#: src/Composer/ComposerWidget.vala:886
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -1153,9 +1175,6 @@ msgstr "Simpan"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "Kirim pesan dengan subjek dan isi kosong?"
-
-#~ msgid "Send message with an empty body?"
-#~ msgstr "Kirim pesan tanpa isi?"
 
 #~ msgid "Send message without an attachment?"
 #~ msgstr "Kirim pesan tanpa lampiran?"

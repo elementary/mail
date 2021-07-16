@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-13 19:24+0000\n"
+"POT-Creation-Date: 2021-07-16 17:33+0000\n"
 "PO-Revision-Date: 2016-06-07 12:58+0000\n"
 "Last-Translator: Timothy <timothy.wong@rocketmail.com>\n"
 "Language-Team: Malay (Malaysia) (http://www.transifex.com/projects/p/geary/"
@@ -280,11 +280,33 @@ msgstr ""
 msgid "Send Anyway"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:861
+#: src/Composer/ComposerWidget.vala:625
+#, fuzzy
+#| msgid "Send message with an empty body?"
+msgid "Sent message was not saved"
+msgstr "Hantar mesej dengan badan kosong?"
+
+#: src/Composer/ComposerWidget.vala:626
+msgid ""
+"The message was sent, however a copy was not saved to the Sent message "
+"folder."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:641
+#, fuzzy
+#| msgid "Unable to validate:\n"
+msgid "Unable to send message"
+msgstr "Tidak boleh sahkan:\n"
+
+#: src/Composer/ComposerWidget.vala:642
+msgid "There was an unexpected error while sending your message."
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:885
 msgid "Unable to save draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:862
+#: src/Composer/ComposerWidget.vala:886
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -979,9 +1001,6 @@ msgstr "_Simpan"
 
 #~ msgid "Send message with an empty subject and body?"
 #~ msgstr "Hantar mesej dengan subjek dan badan kosong?"
-
-#~ msgid "Send message with an empty body?"
-#~ msgstr "Hantar mesej dengan badan kosong?"
 
 #~ msgid "Send message without an attachment?"
 #~ msgstr "Hantar mesej tanpa lampiran?"
