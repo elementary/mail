@@ -329,17 +329,14 @@ public class Mail.Backend.Session : Camel.Session {
         return addresses;
     }
 
-    private Camel.Transport? get_camel_transport_from_email (Camel.InternetAddress from) throws GLib.Error {
+    private E.Source? get_mail_submission_source_from_email (Camel.InternetAddress from) throws GLib.Error {
         var sources = registry.list_enabled (E.SOURCE_EXTENSION_MAIL_IDENTITY);
         foreach (unowned E.Source source_item in sources) {
             weak E.SourceMailIdentity mail_identity = (E.SourceMailIdentity)source_item.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
             if (source_item.has_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION)) {
-                weak E.SourceMailSubmission mail_submission = (E.SourceMailSubmission)source_item.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
                 var address = mail_identity.get_address ();
                 if (from.find_address (address, null) == 0) {
-                    var transport_source = registry.ref_source (mail_submission.transport_uid);
-                    weak E.SourceMailTransport mail_transport = (E.SourceMailTransport)transport_source.get_extension (E.SOURCE_EXTENSION_MAIL_TRANSPORT);
-                    return add_service (transport_source.uid, mail_transport.backend_name, Camel.ProviderType.TRANSPORT) as Camel.Transport;
+                    return source_item;
                 }
 
                 GLib.HashTable<string,string>? aliases = mail_identity.get_aliases_as_hash_table ();
@@ -347,9 +344,7 @@ public class Mail.Backend.Session : Camel.Session {
                     GLib.List<weak string> aliases_mails = aliases.get_keys ();
                     foreach (weak string key in aliases_mails) {
                         if (from.find_address (key, null) == 0) {
-                            var transport_source = registry.ref_source (mail_submission.transport_uid);
-                            weak E.SourceMailTransport mail_transport = (E.SourceMailTransport)transport_source.get_extension (E.SOURCE_EXTENSION_MAIL_TRANSPORT);
-                            return add_service (transport_source.uid, mail_transport.backend_name, Camel.ProviderType.TRANSPORT) as Camel.Transport;
+                            return source_item;
                         }
                     }
                 }
@@ -359,28 +354,79 @@ public class Mail.Backend.Session : Camel.Session {
         return null;
     }
 
-    public async void send_email (Camel.MimeMessage message, Camel.InternetAddress from, Camel.Address recipients) {
-        Camel.Transport? transport = null;
-        try {
-            transport = get_camel_transport_from_email (from);
-        } catch (Error e) {
-            critical (e.message);
-            return;
+    private Camel.Transport? get_camel_transport_from_mail_submission_source (E.Source mail_submission_source) throws GLib.Error {
+        if (!mail_submission_source.has_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION)) {
+            return null;
         }
 
-        if (transport == null)
-            return;
+        unowned E.SourceMailSubmission mail_submission = (E.SourceMailSubmission) mail_submission_source.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
+        var transport_source = registry.ref_source (mail_submission.transport_uid);
+        unowned E.SourceMailTransport mail_transport = (E.SourceMailTransport) transport_source.get_extension (E.SOURCE_EXTENSION_MAIL_TRANSPORT);
 
-        try {
-            bool sent_message_saved;
-            yield transport.connect (GLib.Priority.LOW, null);
-            yield transport.send_to (message, from, recipients, GLib.Priority.LOW, null, out sent_message_saved);
-            yield transport.disconnect (true, GLib.Priority.LOW, null);
-        } catch (Error e) {
-            critical (e.message);
+        return add_service (transport_source.uid, mail_transport.backend_name, Camel.ProviderType.TRANSPORT) as Camel.Transport;
+    }
+
+    public async bool send_email (Camel.MimeMessage message, Camel.InternetAddress from, Camel.Address recipients) throws Error {
+        E.Source? mail_submission_source = get_mail_submission_source_from_email (from);
+        if (mail_submission_source == null) {
+            throw new Camel.Error.ERROR_GENERIC ("Unable to retrieve source for mail submission.");
         }
 
+        Camel.Transport? transport = get_camel_transport_from_mail_submission_source (mail_submission_source);
+        if (transport == null) {
+            throw new Camel.ServiceError.UNAVAILABLE ("No camel service for sending email found.");
+        }
+
+        bool sent_message_saved;
+        yield transport.connect (GLib.Priority.LOW, null);
+        yield transport.send_to (message, from, recipients, GLib.Priority.LOW, null, out sent_message_saved);
+        yield transport.disconnect (true, GLib.Priority.LOW, null);
+
+        if (!sent_message_saved) {
+            var provider = transport.get_provider ();
+            if (provider != null && Camel.ProviderFlags.DISABLE_SENT_FOLDER in provider.flags) {
+                debug ("Sent folder is disabled - sent message is not saved.");
+
+            } else {
+                try {
+                    var camel_store = get_camel_store_from_email (from);
+                    if (camel_store == null) {
+                        throw new Camel.ServiceError.UNAVAILABLE ("No camel service for saving sent found.");
+                    }
+
+                    unowned var mail_submission_extension = (E.SourceMailSubmission) mail_submission_source.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
+                    var sent_folder_uri = mail_submission_extension.dup_sent_folder ();
+                    if (sent_folder_uri != null) {
+                        Camel.URL.decode (sent_folder_uri);
+                    }
+
+                    if (sent_folder_uri == null || sent_folder_uri == "") {
+                        throw new Camel.FolderError.INVALID_PATH ("Unable to fetch uri for sent folder.");
+                    }
+
+                    Camel.Folder? sent_folder = null;
+                    sent_folder = yield camel_store.get_folder (
+                        Utils.strip_folder_full_name (camel_store.uid, sent_folder_uri),
+                        Camel.StoreGetFolderFlags.NONE,
+                        0,
+                        null
+                    );
+
+                    if (sent_folder == null) {
+                        throw new Camel.StoreError.NO_FOLDER ("Unable to connect to sent folder.");
+                    }
+
+                    yield sent_folder.append_message (message, null, 0, null, null);
+                    sent_message_saved = true;
+
+                } catch (Error e) {
+                    warning ("Unable to append message to Sent folder: %s", e.message);
+                }
+            }
+        }
         remove_service (transport);
+
+        return sent_message_saved;
     }
 
     public E.Source? ref_source (string source_uid) {

@@ -617,14 +617,38 @@ public class Mail.ComposerWidget : Gtk.Grid {
         var sender = build_sender (message, from_combo.get_active_text ());
         var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
 
-        session.send_email.begin (
-            message,
-            sender,
-            recipients
-        );
+        try {
+            var sent_message_saved = yield session.send_email (message, sender, recipients);
 
-        discard_draft = true;
-        sent ();
+            if (!sent_message_saved) {
+                var warning_dialog = new Granite.MessageDialog (
+                    _("Sent message was not saved"),
+                    _("The message was sent, however a copy was not saved to the Sent message folder."),
+                    new ThemedIcon ("mail-send"),
+                    Gtk.ButtonsType.CLOSE
+                ) {
+                    badge_icon = new ThemedIcon ("dialog-warning")
+                };
+                warning_dialog.run ();
+                warning_dialog.destroy ();
+            }
+
+            discard_draft = true;
+            sent ();
+
+        } catch (Error e) {
+            var error_dialog = new Granite.MessageDialog (
+                _("Unable to send message"),
+                _("There was an unexpected error while sending your message."),
+                new ThemedIcon ("mail-send"),
+                Gtk.ButtonsType.CLOSE
+            ) {
+                badge_icon = new ThemedIcon ("dialog-error")
+            };
+            error_dialog.show_error_details (e.message);
+            error_dialog.run ();
+            error_dialog.destroy ();
+        }
     }
 
     private Camel.InternetAddress build_sender (Camel.MimeMessage message, string from) {
@@ -860,9 +884,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
                             var error_dialog = new Granite.MessageDialog (
                                 _("Unable to save draft"),
                                 _("There was an unexpected error while saving your draft."),
-                                new ThemedIcon ("dialog-error"),
+                                new ThemedIcon ("mail-drafts"),
                                 Gtk.ButtonsType.CLOSE
-                            );
+                            ) {
+                                badge_icon = new ThemedIcon ("dialog-error")
+                            };
                             error_dialog.show_error_details (e.message);
                             error_dialog.run ();
                             error_dialog.destroy ();
