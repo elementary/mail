@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-13 19:24+0000\n"
-"PO-Revision-Date: 2021-06-30 09:49+0000\n"
+"PO-Revision-Date: 2021-07-14 07:52+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
 "Language: he\n"
@@ -268,14 +268,12 @@ msgid "Send Anyway"
 msgstr "לשלוח בכל זאת"
 
 #: src/Composer/ComposerWidget.vala:861
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to save draft"
-msgstr "מחיקת טיוטה"
+msgstr "לא ניתן לשמור טיוטה"
 
 #: src/Composer/ComposerWidget.vala:862
 msgid "There was an unexpected error while saving your draft."
-msgstr ""
+msgstr "אירעה שגיאה בלתי צפויה בשמירת הטיוטה שלך."
 
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
