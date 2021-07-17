@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-16 19:27+0000\n"
-"PO-Revision-Date: 2021-07-05 12:22+0000\n"
+"PO-Revision-Date: 2021-07-18 08:08+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/mail/en_GB/>\n"
@@ -265,36 +265,32 @@ msgid "Send Anyway"
 msgstr "Send Anyway"
 
 #: src/Composer/ComposerWidget.vala:625
-#, fuzzy
-#| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
-msgstr "Send message with an empty body?"
+msgstr "Sent message was not saved"
 
 #: src/Composer/ComposerWidget.vala:626
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
+"The message was sent, however a copy was not saved to the Sent message "
+"folder."
 
 #: src/Composer/ComposerWidget.vala:641
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to send message"
-msgstr "Delete draft"
+msgstr "Unable to send message"
 
 #: src/Composer/ComposerWidget.vala:642
 msgid "There was an unexpected error while sending your message."
-msgstr ""
+msgstr "There was an unexpected error while sending your message."
 
 #: src/Composer/ComposerWidget.vala:885
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to save draft"
-msgstr "Delete draft"
+msgstr "Unable to save draft"
 
 #: src/Composer/ComposerWidget.vala:886
 msgid "There was an unexpected error while saving your draft."
-msgstr ""
+msgstr "There was an unexpected error while saving your draft."
 
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
