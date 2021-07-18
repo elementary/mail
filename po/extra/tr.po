@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-16 19:27+0000\n"
-"PO-Revision-Date: 2021-07-15 13:34+0000\n"
+"PO-Revision-Date: 2021-07-19 03:00+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/extra/tr/>\n"
 "Language: tr\n"
@@ -60,18 +60,12 @@ msgid "Inline HTML composer that saves drafts to the server"
 msgstr "Taslakları sunucuya kaydeden satır içi HTML oluşturucu"
 
 #: data/io.elementary.mail.appdata.xml.in:18
-#, fuzzy
-#| msgid ""
-#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
-#| "popular IMAP servers"
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
-msgstr ""
-"Gmail, Yahoo! Posta, Outlook.com (deneysel), ve diğer popüler IMAP "
-"sunucuları ile çalışır"
+msgstr "Gmail, Yahoo! Mail ve diğer popüler IMAP sunucuları ile çalışır"
 
 #: data/io.elementary.mail.appdata.xml.in:27
 msgid "Complete rewrite from scratch"
-msgstr ""
+msgstr "Tamamen yeniden yazıldı"
 
 #: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
