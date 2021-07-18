@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-16 19:27+0000\n"
-"PO-Revision-Date: 2021-07-13 22:33+0000\n"
+"PO-Revision-Date: 2021-07-19 03:00+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/extra/pt/"
 ">\n"
@@ -61,18 +61,12 @@ msgid "Inline HTML composer that saves drafts to the server"
 msgstr "Compositor na linha de HTML que guarda os rascunhos no servidor"
 
 #: data/io.elementary.mail.appdata.xml.in:18
-#, fuzzy
-#| msgid ""
-#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
-#| "popular IMAP servers"
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
-msgstr ""
-"Funciona com Gmail, Yahoo! Mail, Outlook.com (experimental), e outros "
-"servidores IMAP populares"
+msgstr "Funciona com Gmail, Yahoo! Mail e outros servidores IMAP populares"
 
 #: data/io.elementary.mail.appdata.xml.in:27
 msgid "Complete rewrite from scratch"
-msgstr ""
+msgstr "Reescrita completa a partir do zero"
 
 #: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
