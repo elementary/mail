@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-30 08:04+0000\n"
+"POT-Creation-Date: 2021-07-16 19:27+0000\n"
 "PO-Revision-Date: 2018-12-22 10:45+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/mail/extra/ko/"
@@ -53,33 +53,27 @@ msgid "As-you-type searching"
 msgstr "찾는 대로 검색합니다"
 
 #: data/io.elementary.mail.appdata.xml.in:16
-msgid "Desktop notifications"
-msgstr "데스크톱 알림 기능"
-
-#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "다중 계정 지원"
 
-#: data/io.elementary.mail.appdata.xml.in:18
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "보관함을 서버에 저장하는 내장형 HTML 구성"
 
-#: data/io.elementary.mail.appdata.xml.in:19
-msgid ""
-"Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
-"IMAP servers"
+#: data/io.elementary.mail.appdata.xml.in:18
+#, fuzzy
+#| msgid ""
+#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
+#| "popular IMAP servers"
+msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 "지메일, 야후! 메일, 아웃룩 닷컴 (시험 버전)과 기타 IMAP 서버를 지원합니다"
 
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Minor bug fixes"
-msgstr "자잘한 버그 해결"
+#: data/io.elementary.mail.appdata.xml.in:27
+msgid "Complete rewrite from scratch"
+msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid "Translation updates"
-msgstr "번역 업데이트"
-
-#: data/io.elementary.mail.appdata.xml.in:69
+#: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
@@ -96,6 +90,15 @@ msgstr "이메일;E-메일;메일;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "편지 쓰기"
+
+#~ msgid "Desktop notifications"
+#~ msgstr "데스크톱 알림 기능"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "자잘한 버그 해결"
+
+#~ msgid "Translation updates"
+#~ msgstr "번역 업데이트"
 
 #~ msgid "internet-mail"
 #~ msgstr "internet-mail"

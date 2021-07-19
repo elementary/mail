@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-30 08:04+0000\n"
+"POT-Creation-Date: 2021-07-16 19:27+0000\n"
 "PO-Revision-Date: 2019-12-26 19:36+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/extra/de/>\n"
@@ -55,34 +55,28 @@ msgid "As-you-type searching"
 msgstr "Suche während der Eingabe"
 
 #: data/io.elementary.mail.appdata.xml.in:16
-msgid "Desktop notifications"
-msgstr "Desktop-Benachrichtigungen"
-
-#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "Unterstützung mehrerer Konten"
 
-#: data/io.elementary.mail.appdata.xml.in:18
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "Inline-HTML-Editor, der Entwürfe auf dem Server speichert"
 
-#: data/io.elementary.mail.appdata.xml.in:19
-msgid ""
-"Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
-"IMAP servers"
+#: data/io.elementary.mail.appdata.xml.in:18
+#, fuzzy
+#| msgid ""
+#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
+#| "popular IMAP servers"
+msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 "Mail funktioniert mit Gmail, Yahoo! Mail, Outlook.com (experimental) und "
 "anderen IMAP-Servern"
 
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Minor bug fixes"
-msgstr "Kleinere Fehlerbehebungen"
+#: data/io.elementary.mail.appdata.xml.in:27
+msgid "Complete rewrite from scratch"
+msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid "Translation updates"
-msgstr "Aktualisierte Übersetzungen"
-
-#: data/io.elementary.mail.appdata.xml.in:69
+#: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
@@ -99,6 +93,15 @@ msgstr "Email;E-Mail;Mail;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Nachricht verfassen"
+
+#~ msgid "Desktop notifications"
+#~ msgstr "Desktop-Benachrichtigungen"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "Kleinere Fehlerbehebungen"
+
+#~ msgid "Translation updates"
+#~ msgstr "Aktualisierte Übersetzungen"
 
 #~ msgid "internet-mail"
 #~ msgstr "internet-mail"

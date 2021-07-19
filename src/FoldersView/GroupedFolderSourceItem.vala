@@ -148,7 +148,7 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
             var mail_account_extension = (E.SourceMailAccount) service_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
 
             if (Camel.FolderInfoFlags.TYPE_ARCHIVE == (folder_type & Camel.FOLDER_TYPE_MASK)) {
-                return strip_folder_full_name (account.service.uid, mail_account_extension.dup_archive_folder ());
+                return Utils.strip_folder_full_name (account.service.uid, mail_account_extension.dup_archive_folder ());
             }
 
             var identity_uid = mail_account_extension.dup_identity_uid ();
@@ -160,15 +160,8 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
                 identity_source.has_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION)
             ) {
                 var mail_submission_extension = (E.SourceMailSubmission) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
-                return strip_folder_full_name (account.service.uid, mail_submission_extension.dup_sent_folder ());
+                return Utils.strip_folder_full_name (account.service.uid, mail_submission_extension.dup_sent_folder ());
             }
-        }
-        return null;
-    }
-
-    private string? strip_folder_full_name (string service_uid, string? folder_uri) {
-        if (folder_uri != null) {
-            return folder_uri.replace ("folder://%s/".printf (service_uid), "");
         }
         return null;
     }

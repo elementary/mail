@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-30 08:04+0000\n"
+"POT-Creation-Date: 2021-07-16 19:27+0000\n"
 "PO-Revision-Date: 2018-12-19 12:01+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/mail/extra/"
@@ -55,34 +55,28 @@ msgid "As-you-type searching"
 msgstr "Paieška renkant tekstą"
 
 #: data/io.elementary.mail.appdata.xml.in:16
-msgid "Desktop notifications"
-msgstr "Darbalaukio pranešimai"
-
-#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "Kelių paskyrų palaikymas"
 
-#: data/io.elementary.mail.appdata.xml.in:18
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "Įterpta HTML rašyklė, kuri įrašo juodraščius į serverį"
 
-#: data/io.elementary.mail.appdata.xml.in:19
-msgid ""
-"Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
-"IMAP servers"
+#: data/io.elementary.mail.appdata.xml.in:18
+#, fuzzy
+#| msgid ""
+#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
+#| "popular IMAP servers"
+msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 "Veikia su Gmail, Yahoo! Mail, Outlook.com (eksperimentinis), ir kitais "
 "populiariais IMAP serveriais"
 
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Minor bug fixes"
-msgstr "Smulkių klaidų pataisymai"
+#: data/io.elementary.mail.appdata.xml.in:27
+msgid "Complete rewrite from scratch"
+msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid "Translation updates"
-msgstr "Vertimų atnaujinimai"
-
-#: data/io.elementary.mail.appdata.xml.in:69
+#: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
@@ -99,6 +93,15 @@ msgstr "El.paštas;El. paštas;Paštas;El.pastas;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Rašyti laišką"
+
+#~ msgid "Desktop notifications"
+#~ msgstr "Darbalaukio pranešimai"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "Smulkių klaidų pataisymai"
+
+#~ msgid "Translation updates"
+#~ msgstr "Vertimų atnaujinimai"
 
 #~ msgid "internet-mail"
 #~ msgstr "internet-mail"

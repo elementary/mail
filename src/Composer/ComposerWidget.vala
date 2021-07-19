@@ -42,6 +42,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
     public string? to { get; construct; }
     public string? mailto_query { get; construct; }
 
+    private bool discard_draft = false;
+
     private WebView web_view;
     private SimpleActionGroup actions;
     private Gtk.Entry to_val;
@@ -572,6 +574,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         discard_anyway.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
         if (discard_dialog.run () == Gtk.ResponseType.ACCEPT) {
+            discard_draft = true;
             discarded ();
         }
 
@@ -605,26 +608,75 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+        var body_html = yield web_view.get_body_html ();
+        var message = build_message (body_html);
+        var sender = build_sender (message, from_combo.get_active_text ());
+        var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
 
-        var from = new Camel.InternetAddress ();
-        from.unformat (from_combo.get_active_text ());
+        try {
+            var sent_message_saved = yield session.send_email (message, sender, recipients);
 
+            if (!sent_message_saved) {
+                var warning_dialog = new Granite.MessageDialog (
+                    _("Sent message was not saved"),
+                    _("The message was sent, however a copy was not saved to the Sent message folder."),
+                    new ThemedIcon ("mail-send"),
+                    Gtk.ButtonsType.CLOSE
+                ) {
+                    badge_icon = new ThemedIcon ("dialog-warning")
+                };
+                warning_dialog.run ();
+                warning_dialog.destroy ();
+            }
+
+            discard_draft = true;
+            sent ();
+
+        } catch (Error e) {
+            var error_dialog = new Granite.MessageDialog (
+                _("Unable to send message"),
+                _("There was an unexpected error while sending your message."),
+                new ThemedIcon ("mail-send"),
+                Gtk.ButtonsType.CLOSE
+            ) {
+                badge_icon = new ThemedIcon ("dialog-error")
+            };
+            error_dialog.show_error_details (e.message);
+            error_dialog.run ();
+            error_dialog.destroy ();
+        }
+    }
+
+    private Camel.InternetAddress build_sender (Camel.MimeMessage message, string from) {
+        var sender = new Camel.InternetAddress ();
+        sender.unformat (from);
+        message.set_from (sender);
+
+        return sender;
+    }
+
+    private Camel.InternetAddress build_recipients (Camel.MimeMessage message, string to, string cc, string bcc) {
         var to_addresses = new Camel.InternetAddress ();
-        to_addresses.unformat (to_val.text);
+        to_addresses.unformat (to);
+        message.set_recipients (Camel.RECIPIENT_TYPE_TO, to_addresses);
 
         var cc_addresses = new Camel.InternetAddress ();
-        cc_addresses.unformat (cc_val.text);
+        cc_addresses.unformat (cc);
+        message.set_recipients (Camel.RECIPIENT_TYPE_CC, cc_addresses);
 
         var bcc_addresses = new Camel.InternetAddress ();
-        bcc_addresses.unformat (bcc_val.text);
+        bcc_addresses.unformat (bcc);
+        message.set_recipients (Camel.RECIPIENT_TYPE_BCC, bcc_addresses);
 
         var recipients = new Camel.InternetAddress ();
         recipients.cat (to_addresses);
         recipients.cat (cc_addresses);
         recipients.cat (bcc_addresses);
 
-        var body_html = yield web_view.get_body_html ();
+        return recipients;
+    }
 
+    private Camel.MimeMessage build_message (string body_html) {
         var stream_mem = new Camel.StreamMem.with_buffer (body_html.data);
         var stream_filter = new Camel.StreamFilter (stream_mem);
 
@@ -658,16 +710,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
 
         var message = new Camel.MimeMessage ();
-        message.set_from (from);
-        message.set_recipients (Camel.RECIPIENT_TYPE_TO, to_addresses);
-        message.set_recipients (Camel.RECIPIENT_TYPE_CC, cc_addresses);
-        message.set_recipients (Camel.RECIPIENT_TYPE_BCC, bcc_addresses);
         message.set_subject (subject_val.text);
         message.set_date (Camel.MESSAGE_DATE_CURRENT, 0);
         message.content = body;
 
-        session.send_email.begin (message, from, recipients);
-        sent ();
+        return message;
     }
 
     private void load_from_combobox () {
@@ -788,5 +835,66 @@ public class Mail.ComposerWidget : Gtk.Grid {
         static construct {
             set_css_name (Gtk.STYLE_CLASS_ENTRY);
         }
+    }
+
+    public override void destroy () {
+        if (discard_draft) {
+            base.destroy ();
+            return;
+        }
+
+        web_view.get_body_html.begin ((obj, res) => {
+            var body_html = web_view.get_body_html.end (res);
+
+            if (body_html == null) {
+                base.destroy ();
+
+            } else {
+                unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+
+                var message = build_message (body_html);
+                var sender = build_sender (message, from_combo.get_active_text ());
+                var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
+
+                session.save_draft.begin (
+                    message,
+                    sender,
+                    recipients,
+                    (obj, res) => {
+                        try {
+                            session.save_draft.end (res);
+                            base.destroy ();
+
+                        } catch (Error e) {
+                            unowned Mail.MainWindow? main_window = null;
+                            var windows = Gtk.Window.list_toplevels ();
+                            foreach (unowned var window in windows) {
+                                if (window is Mail.MainWindow) {
+                                    main_window = (Mail.MainWindow) window;
+                                    break;
+                                }
+                            }
+
+                            if (main_window != null) {
+                                new ComposerWindow.for_widget (main_window, this).show_all ();
+                            } else {
+                                warning ("Unable to re-show composer. Draft will be lost.");
+                            }
+
+                            var error_dialog = new Granite.MessageDialog (
+                                _("Unable to save draft"),
+                                _("There was an unexpected error while saving your draft."),
+                                new ThemedIcon ("mail-drafts"),
+                                Gtk.ButtonsType.CLOSE
+                            ) {
+                                badge_icon = new ThemedIcon ("dialog-error")
+                            };
+                            error_dialog.show_error_details (e.message);
+                            error_dialog.run ();
+                            error_dialog.destroy ();
+                        }
+                });
+            }
+        });
     }
 }

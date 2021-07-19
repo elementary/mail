@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-30 08:04+0000\n"
+"POT-Creation-Date: 2021-07-16 19:27+0000\n"
 "PO-Revision-Date: 2020-01-06 00:07+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/mail/extra/sl/"
@@ -53,34 +53,28 @@ msgid "As-you-type searching"
 msgstr "Iskanje med tipkanjem"
 
 #: data/io.elementary.mail.appdata.xml.in:16
-msgid "Desktop notifications"
-msgstr "Obvestila na namizju"
-
-#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "Podpora za več računov"
 
-#: data/io.elementary.mail.appdata.xml.in:18
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "Podpora za HTML pošto s shranjevanjem osnutkov na strežniku"
 
-#: data/io.elementary.mail.appdata.xml.in:19
-msgid ""
-"Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
-"IMAP servers"
+#: data/io.elementary.mail.appdata.xml.in:18
+#, fuzzy
+#| msgid ""
+#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
+#| "popular IMAP servers"
+msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 "Deluje z GMail, Yahoo! Mail, Outlook.com in drugimi popularnimi IMAP "
 "strežniki"
 
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Minor bug fixes"
-msgstr "Manjši popravki"
+#: data/io.elementary.mail.appdata.xml.in:27
+msgid "Complete rewrite from scratch"
+msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid "Translation updates"
-msgstr "Posodobitve prevodov"
-
-#: data/io.elementary.mail.appdata.xml.in:69
+#: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
@@ -97,6 +91,15 @@ msgstr "Email;E-mail;Mail;Pošta;Elektronska pošta;epošta;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Sestavi sporočilo"
+
+#~ msgid "Desktop notifications"
+#~ msgstr "Obvestila na namizju"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "Manjši popravki"
+
+#~ msgid "Translation updates"
+#~ msgstr "Posodobitve prevodov"
 
 #~ msgid "internet-mail"
 #~ msgstr "internet-mail"

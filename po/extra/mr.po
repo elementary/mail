@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-30 08:04+0000\n"
+"POT-Creation-Date: 2021-07-16 19:27+0000\n"
 "PO-Revision-Date: 2019-09-07 20:23+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/mail/extra/mr/>\n"
@@ -45,33 +45,27 @@ msgid "As-you-type searching"
 msgstr "जसे-आपण-टाईप कराल शोध"
 
 #: data/io.elementary.mail.appdata.xml.in:16
-msgid "Desktop notifications"
-msgstr "डेस्कटॉप अधिसूचना"
-
-#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "एकाधिक खाते समर्थन"
 
-#: data/io.elementary.mail.appdata.xml.in:18
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "इनलाइन HTML संपादक जो सर्व्हरवर मसुदे जतन करतो"
 
-#: data/io.elementary.mail.appdata.xml.in:19
-msgid ""
-"Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
-"IMAP servers"
+#: data/io.elementary.mail.appdata.xml.in:18
+#, fuzzy
+#| msgid ""
+#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
+#| "popular IMAP servers"
+msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 "जीमेल, याहू! मेल, Outlook.com (प्रायोगिक) आणि इतर लोकप्रिय IMAP सर्व्हर सह काम करते"
 
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Minor bug fixes"
-msgstr "किरकोळ दोष निराकरणे"
+#: data/io.elementary.mail.appdata.xml.in:27
+msgid "Complete rewrite from scratch"
+msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid "Translation updates"
-msgstr "भाषांतर अपडेट्स"
-
-#: data/io.elementary.mail.appdata.xml.in:69
+#: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
 msgstr "एलिमेंटरी, Inc."
 
@@ -88,6 +82,15 @@ msgstr "Email;E-mail;Mail;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "संदेश लिहा"
+
+#~ msgid "Desktop notifications"
+#~ msgstr "डेस्कटॉप अधिसूचना"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "किरकोळ दोष निराकरणे"
+
+#~ msgid "Translation updates"
+#~ msgstr "भाषांतर अपडेट्स"
 
 #~ msgid "internet-mail"
 #~ msgstr "internet-mail"
