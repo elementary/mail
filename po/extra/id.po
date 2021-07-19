@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:43+0200\n"
+"POT-Creation-Date: 2021-07-16 19:27+0000\n"
 "PO-Revision-Date: 2020-12-15 16:16+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/mail/extra/id/"
@@ -53,40 +53,36 @@ msgid "As-you-type searching"
 msgstr "Penelusuran saat Anda mengetik"
 
 #: data/io.elementary.mail.appdata.xml.in:16
-msgid "Desktop notifications"
-msgstr "Notifikasi Desktop"
-
-#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "Dukungan banyak akun"
 
-#: data/io.elementary.mail.appdata.xml.in:18
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "Penyusun HTML dalam baris yang menyimpan draft ke server"
 
-#: data/io.elementary.mail.appdata.xml.in:19
-msgid ""
-"Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
-"IMAP servers"
+#: data/io.elementary.mail.appdata.xml.in:18
+#, fuzzy
+#| msgid ""
+#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
+#| "popular IMAP servers"
+msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 "Bekerja dengan Gmail, Yahoo! Mail, Outlook.com (eksperimental), dan server "
 "IMAP populer lainnya"
 
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Minor bug fixes"
-msgstr "Perbaikan bug kecil"
+#: data/io.elementary.mail.appdata.xml.in:27
+msgid "Complete rewrite from scratch"
+msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid "Translation updates"
-msgstr "Pembaruan terjemahan"
-
-#: data/io.elementary.mail.appdata.xml.in:69
+#: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
 msgstr "elementary, PT."
 
 #: data/io.elementary.mail.desktop.in:6
-msgid "internet-mail"
-msgstr "surel-internet"
+#, fuzzy
+#| msgid "elementary, Inc."
+msgid "io.elementary.mail"
+msgstr "elementary, PT."
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -95,3 +91,15 @@ msgstr "Surel;Sur-el;Mail;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Buat Pesan"
+
+#~ msgid "Desktop notifications"
+#~ msgstr "Notifikasi Desktop"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "Perbaikan bug kecil"
+
+#~ msgid "Translation updates"
+#~ msgstr "Pembaruan terjemahan"
+
+#~ msgid "internet-mail"
+#~ msgstr "surel-internet"

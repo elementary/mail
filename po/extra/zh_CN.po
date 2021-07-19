@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:43+0200\n"
+"POT-Creation-Date: 2021-07-16 19:27+0000\n"
 "PO-Revision-Date: 2021-02-15 11:12+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -52,38 +52,34 @@ msgid "As-you-type searching"
 msgstr "任意搜索"
 
 #: data/io.elementary.mail.appdata.xml.in:16
-msgid "Desktop notifications"
-msgstr "桌面通知"
-
-#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "多账户支持"
 
-#: data/io.elementary.mail.appdata.xml.in:18
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "能保存草稿至服务器的联机 HTML 撰写器"
 
-#: data/io.elementary.mail.appdata.xml.in:19
-msgid ""
-"Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
-"IMAP servers"
+#: data/io.elementary.mail.appdata.xml.in:18
+#, fuzzy
+#| msgid ""
+#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
+#| "popular IMAP servers"
+msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr "支持 Gmail、Yahoo! Mail、Outlook.com 和其他主流 IMAP 服务"
 
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Minor bug fixes"
-msgstr "细节修复"
+#: data/io.elementary.mail.appdata.xml.in:27
+msgid "Complete rewrite from scratch"
+msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid "Translation updates"
-msgstr "翻译更新"
-
-#: data/io.elementary.mail.appdata.xml.in:69
+#: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
 #: data/io.elementary.mail.desktop.in:6
-msgid "internet-mail"
-msgstr "internet-mail"
+#, fuzzy
+#| msgid "elementary, Inc."
+msgid "io.elementary.mail"
+msgstr "elementary, Inc."
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -92,6 +88,18 @@ msgstr "消息;电子邮件;邮件;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "撰写邮件"
+
+#~ msgid "Desktop notifications"
+#~ msgstr "桌面通知"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "细节修复"
+
+#~ msgid "Translation updates"
+#~ msgstr "翻译更新"
+
+#~ msgid "internet-mail"
+#~ msgstr "internet-mail"
 
 #~ msgid "About Mail"
 #~ msgstr "关于邮件"

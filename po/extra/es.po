@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2019-09-09 11:23+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"POT-Creation-Date: 2021-07-16 19:27+0000\n"
+"PO-Revision-Date: 2021-07-13 22:05+0000\n"
+"Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/mail/extra/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: data/io.elementary.mail.appdata.xml.in:8
@@ -52,40 +52,34 @@ msgid "As-you-type searching"
 msgstr "Búsqueda en tiempo real"
 
 #: data/io.elementary.mail.appdata.xml.in:16
-msgid "Desktop notifications"
-msgstr "Notificaciones de escritorio"
-
-#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "Permite gestionar varias cuentas"
 
-#: data/io.elementary.mail.appdata.xml.in:18
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "Editor HTML que guarda sus borradores en el servidor"
 
-#: data/io.elementary.mail.appdata.xml.in:19
-msgid ""
-"Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
-"IMAP servers"
+#: data/io.elementary.mail.appdata.xml.in:18
+#, fuzzy
+#| msgid ""
+#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
+#| "popular IMAP servers"
+msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 "Funciona con Gmail, Yahoo Mail, Outlook.com (experimental) y otros "
 "servidores IMAP populares"
 
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Minor bug fixes"
-msgstr "Correcciones de errores menores"
+#: data/io.elementary.mail.appdata.xml.in:27
+msgid "Complete rewrite from scratch"
+msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid "Translation updates"
-msgstr "Actualizaciones de traducción"
-
-#: data/io.elementary.mail.appdata.xml.in:69
+#: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
 #: data/io.elementary.mail.desktop.in:6
-msgid "internet-mail"
-msgstr "internet-mail"
+msgid "io.elementary.mail"
+msgstr "io.elementary.mail"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -94,6 +88,18 @@ msgstr "Correo;Correo electrónico;Mensaje;Email;E-mail;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Redactar mensaje"
+
+#~ msgid "Desktop notifications"
+#~ msgstr "Notificaciones de escritorio"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "Correcciones de errores menores"
+
+#~ msgid "Translation updates"
+#~ msgstr "Actualizaciones de traducción"
+
+#~ msgid "internet-mail"
+#~ msgstr "internet-mail"
 
 #~ msgid "About Mail"
 #~ msgstr "Acerca de Correo"

@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:43+0200\n"
+"POT-Creation-Date: 2021-07-16 19:27+0000\n"
 "PO-Revision-Date: 2020-04-11 15:10+0000\n"
 "Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
-"Language-Team: Croatian <https://l10n.elementary.io/projects/mail/extra/hr/>"
-"\n"
+"Language-Team: Croatian <https://l10n.elementary.io/projects/mail/extra/hr/"
+">\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-04-08 06:35+0000\n"
 
@@ -54,40 +54,36 @@ msgid "As-you-type searching"
 msgstr "Kako-napišete pretragu"
 
 #: data/io.elementary.mail.appdata.xml.in:16
-msgid "Desktop notifications"
-msgstr "Obavijesti radne površine"
-
-#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "Podrška za više računa"
 
-#: data/io.elementary.mail.appdata.xml.in:18
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "Unutarnji HTML sastavitelj poruka koji sprema skice na poslužitelj"
 
-#: data/io.elementary.mail.appdata.xml.in:19
-msgid ""
-"Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
-"IMAP servers"
+#: data/io.elementary.mail.appdata.xml.in:18
+#, fuzzy
+#| msgid ""
+#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
+#| "popular IMAP servers"
+msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 "Radi s Gmailom, Yahoo! poštom, Outlook.com (eksperimentalno), i drugim "
 "popularnim IMAP poslužiteljima"
 
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Minor bug fixes"
-msgstr "Manji popravci grešaka"
+#: data/io.elementary.mail.appdata.xml.in:27
+msgid "Complete rewrite from scratch"
+msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid "Translation updates"
-msgstr "Nadopune prijevoda"
-
-#: data/io.elementary.mail.appdata.xml.in:69
+#: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
 #: data/io.elementary.mail.desktop.in:6
-msgid "internet-mail"
-msgstr ""
+#, fuzzy
+#| msgid "elementary, Inc."
+msgid "io.elementary.mail"
+msgstr "elementary, Inc."
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -96,6 +92,15 @@ msgstr "Epošta;E-pošta;Pošta;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Sastavi poruku"
+
+#~ msgid "Desktop notifications"
+#~ msgstr "Obavijesti radne površine"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "Manji popravci grešaka"
+
+#~ msgid "Translation updates"
+#~ msgstr "Nadopune prijevoda"
 
 #~ msgid "About Mail"
 #~ msgstr "O Pošta"

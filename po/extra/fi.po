@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:43+0200\n"
+"POT-Creation-Date: 2021-07-16 19:27+0000\n"
 "PO-Revision-Date: 2018-12-24 10:54+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://weblate.elementary.io/projects/mail/extra/fi/"
@@ -53,40 +53,36 @@ msgid "As-you-type searching"
 msgstr "Välitön hakutoiminto"
 
 #: data/io.elementary.mail.appdata.xml.in:16
-msgid "Desktop notifications"
-msgstr "Työpöytäilmoitukset"
-
-#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "Tuki useille tileille"
 
-#: data/io.elementary.mail.appdata.xml.in:18
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "HTML-viestinmuodostaja, joka tallentaa luonnokset palvelimelle"
 
-#: data/io.elementary.mail.appdata.xml.in:19
-msgid ""
-"Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
-"IMAP servers"
+#: data/io.elementary.mail.appdata.xml.in:18
+#, fuzzy
+#| msgid ""
+#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
+#| "popular IMAP servers"
+msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 "Toimii Gmailin, Yahoo! Mailin, Outlook.comin (kokeellinen tuki) ja muiden "
 "suosittujen IMAP-palvelimien kanssa"
 
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Minor bug fixes"
-msgstr "Muita pieniä korjauksia"
+#: data/io.elementary.mail.appdata.xml.in:27
+msgid "Complete rewrite from scratch"
+msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid "Translation updates"
-msgstr "Päivityksiä kielikäännöksiin"
-
-#: data/io.elementary.mail.appdata.xml.in:69
+#: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
 #: data/io.elementary.mail.desktop.in:6
-msgid "internet-mail"
-msgstr "internet-mail"
+#, fuzzy
+#| msgid "elementary, Inc."
+msgid "io.elementary.mail"
+msgstr "elementary, Inc."
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -95,6 +91,18 @@ msgstr "Email;E-mail;Mail;posti;sähköposti;maili;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Uusi viesti"
+
+#~ msgid "Desktop notifications"
+#~ msgstr "Työpöytäilmoitukset"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "Muita pieniä korjauksia"
+
+#~ msgid "Translation updates"
+#~ msgstr "Päivityksiä kielikäännöksiin"
+
+#~ msgid "internet-mail"
+#~ msgstr "internet-mail"
 
 #~ msgid "About Mail"
 #~ msgstr "Tietoja - Sähköposti"

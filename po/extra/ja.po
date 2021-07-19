@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:43+0200\n"
-"PO-Revision-Date: 2020-01-25 15:08+0000\n"
+"POT-Creation-Date: 2021-07-16 19:27+0000\n"
+"PO-Revision-Date: 2021-07-17 19:34+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/>"
 "\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-19 06:51+0000\n"
 
 #: data/io.elementary.mail.appdata.xml.in:8
@@ -53,38 +53,28 @@ msgid "As-you-type searching"
 msgstr "自動検索候補"
 
 #: data/io.elementary.mail.appdata.xml.in:16
-msgid "Desktop notifications"
-msgstr "デスクトップ通知"
-
-#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Multiple account support"
 msgstr "複数アカウントのサポート"
 
-#: data/io.elementary.mail.appdata.xml.in:18
+#: data/io.elementary.mail.appdata.xml.in:17
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "サーバーへ下書きを保存するインライン HTML コンポーザー"
 
-#: data/io.elementary.mail.appdata.xml.in:19
-msgid ""
-"Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other popular "
-"IMAP servers"
-msgstr "Gmail・Yahoo! メール・Outlook.com (実験的)・そのほかのよく利用される IMAP サーバーで動作します"
+#: data/io.elementary.mail.appdata.xml.in:18
+msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
+msgstr "Gmail と Yahoo! メール、そしてそのほかのよく利用される IMAP サーバーで動作します"
 
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Minor bug fixes"
-msgstr "軽微なバグの修正"
+#: data/io.elementary.mail.appdata.xml.in:27
+msgid "Complete rewrite from scratch"
+msgstr "アプリを完全にゼロから書き直し"
 
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid "Translation updates"
-msgstr "翻訳の更新"
-
-#: data/io.elementary.mail.appdata.xml.in:69
+#: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
 #: data/io.elementary.mail.desktop.in:6
-msgid "internet-mail"
-msgstr "internet-mail"
+msgid "io.elementary.mail"
+msgstr "io.elementary.mail"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -93,6 +83,18 @@ msgstr "Email;E-mail;Mail;Eメール;電子メール;メール;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "メッセージを作成"
+
+#~ msgid "Desktop notifications"
+#~ msgstr "デスクトップ通知"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "軽微なバグの修正"
+
+#~ msgid "Translation updates"
+#~ msgstr "翻訳の更新"
+
+#~ msgid "internet-mail"
+#~ msgstr "internet-mail"
 
 #~ msgid "About Mail"
 #~ msgstr "メールについて"
