@@ -129,7 +129,7 @@ public class Mail.WebView : WebKit.WebView {
         }
     }
 
-    public async string get_selected_text () {
+    public async string? get_selected_text () {
         try {
             var message = new WebKit.UserMessage ("get-selected-text", null);
             var response = yield send_message_to_page (message, cancellable);

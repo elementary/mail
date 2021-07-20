@@ -26,6 +26,7 @@ vala_files = files(
     'FoldersView/SessionSourceItem.vala',
     'MessageList/AttachmentBar.vala',
     'MessageList/AttachmentButton.vala',
+    'MessageList/GravatarIcon.vala',
     'MessageList/MessageListBox.vala',
     'MessageList/MessageListItem.vala',
     'VirtualizingListBox/VirtualizingListBoxModel.vala',
