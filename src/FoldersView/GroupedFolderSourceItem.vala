@@ -159,8 +159,8 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
                 &&
                 identity_source.has_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION)
             ) {
-                var mail_submission_extension = (E.SourceMailSubmission) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
-                return Utils.strip_folder_full_name (account.service.uid, mail_submission_extension.dup_sent_folder ());
+                unowned var mail_submission_extension = (E.SourceMailSubmission) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
+                return Utils.strip_folder_full_name (account.service.uid, mail_submission_extension.sent_folder);
             }
         }
         return null;
