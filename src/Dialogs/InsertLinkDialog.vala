@@ -21,7 +21,7 @@ public class InsertLinkDialog : Granite.Dialog {
 
     public string? selected_text { get; construct; }
 
-    public InsertLinkDialog (string text) {
+    public InsertLinkDialog (string? text) {
         Object (selected_text: text);
     }
 

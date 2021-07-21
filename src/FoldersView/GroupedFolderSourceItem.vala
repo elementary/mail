@@ -154,13 +154,13 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
             var identity_uid = mail_account_extension.dup_identity_uid ();
             var identity_source = session.ref_source (identity_uid);
 
-            switch (folder_type & Camel.FOLDER_TYPE_MASK) {
-                case Camel.FolderInfoFlags.TYPE_SENT:
-                    if (identity_source.has_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION)) {
-                        var mail_submission_extension = (E.SourceMailSubmission) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
-                        return Utils.strip_folder_full_name (account.service.uid, mail_submission_extension.dup_sent_folder ());
-                    }
-                    break;
+            if (
+                Camel.FolderInfoFlags.TYPE_SENT == (folder_type & Camel.FOLDER_TYPE_MASK)
+                &&
+                identity_source.has_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION)
+            ) {
+                unowned var mail_submission_extension = (E.SourceMailSubmission) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
+                return Utils.strip_folder_full_name (account.service.uid, mail_submission_extension.sent_folder);
             }
         }
         return null;
