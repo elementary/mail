@@ -491,15 +491,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 if (!subject_val.text.up ().contains ("RE: ")) {
                     subject_val.text = "Re: %s".printf (subject_val.text);
                 }
-
-            } else if (type == Type.FORWARD) {
-                // Although "Fwd: " is not part of the RFC standard,
-                // it is a widely used convention - therefore we stick
-                // to it here too. Do _not_ translate it!
-                var up_subject = subject_val.text.up ();
-                if (!up_subject.contains ("FWD: ") && !up_subject.contains ("FW: ")) {
-                    subject_val.text = "Fwd: %s".printf (subject_val.text);
-                }
             }
         }
 
