@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-16 19:27+0000\n"
-"PO-Revision-Date: 2021-07-04 13:46+0000\n"
+"PO-Revision-Date: 2021-07-21 19:42+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/mail/fi/>\n"
 "Language: fi\n"
@@ -266,10 +266,8 @@ msgid "Send Anyway"
 msgstr "Lähetä silti"
 
 #: src/Composer/ComposerWidget.vala:625
-#, fuzzy
-#| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
-msgstr "Lähetetäänkö viesti ilman sisältöä?"
+msgstr "Lähetettyä viestiä ei tallennettu"
 
 #: src/Composer/ComposerWidget.vala:626
 msgid ""
@@ -278,24 +276,20 @@ msgid ""
 msgstr ""
 
 #: src/Composer/ComposerWidget.vala:641
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to send message"
-msgstr "Poista luonnos"
+msgstr "Viestin lähettäminen ei onnistu"
 
 #: src/Composer/ComposerWidget.vala:642
 msgid "There was an unexpected error while sending your message."
-msgstr ""
+msgstr "Viestiäsi lähettäessä tapahtui odottamaton virhe."
 
 #: src/Composer/ComposerWidget.vala:885
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to save draft"
-msgstr "Poista luonnos"
+msgstr "Luonnoksen tallentaminen ei onnistu"
 
 #: src/Composer/ComposerWidget.vala:886
 msgid "There was an unexpected error while saving your draft."
-msgstr ""
+msgstr "Luonnosta tallentaessa tapahtui odottamaton virhe."
 
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
