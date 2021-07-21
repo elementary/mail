@@ -602,6 +602,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
     }
 
     private async void send_message () {
+        sensitive = false;
+
         if (subject_val.text == "") {
             var no_subject_dialog = new Granite.MessageDialog.with_image_from_icon_name (
                 _("Send without subject?"),
@@ -618,6 +620,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
             if (no_subject_dialog.run () == Gtk.ResponseType.CANCEL) {
                 no_subject_dialog.destroy ();
+                sensitive = true;
                 return;
             }
             no_subject_dialog.destroy ();
@@ -660,6 +663,9 @@ public class Mail.ComposerWidget : Gtk.Grid {
             error_dialog.show_error_details (e.message);
             error_dialog.run ();
             error_dialog.destroy ();
+
+        } finally {
+            sensitive = true;
         }
     }
 
