@@ -38,7 +38,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
     public bool has_recipients { get; set; }
     public bool has_subject_field { get; construct; default = false; }
     public bool can_change_sender { get; construct; default = true; }
-    public string? subject { get; set; }
     public string? to { get; construct; }
     public string? mailto_query { get; construct; }
 
@@ -165,7 +164,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         subject_val = new Gtk.Entry ();
         subject_val.margin_top = 6;
-        bind_property ("subject", subject_val, "text", GLib.BindingFlags.BIDIRECTIONAL);
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
         size_group.add_widget (from_label);
@@ -482,6 +480,20 @@ public class Mail.ComposerWidget : Gtk.Grid {
     }
 
     public void quote_content (Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content_to_quote) {
+        if (message.get_subject () != null) {
+            subject_val.text = message.get_subject ();
+
+            if (type == Type.REPLY || type == Type.REPLY_ALL) {
+                // RFC 2822 makes the "Re: " string verbatim (so don't translate it)
+                // also we have to make sure that the subject doesn't already contain it
+                // before re-adding it.
+                // https://datatracker.ietf.org/doc/html/rfc2822#section-3.6.5
+                if (!subject_val.text.up ().contains ("RE: ")) {
+                    subject_val.text = "Re: %s".printf (subject_val.text);
+                }
+            }
+        }
+
         if (content_to_quote != null) {
             string message_content = "<br/><br/>";
             string date_format = _("%a, %b %-e, %Y at %-l:%M %p");
