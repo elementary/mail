@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-16 19:27+0000\n"
-"PO-Revision-Date: 2021-07-14 16:13+0000\n"
+"PO-Revision-Date: 2021-07-19 16:48+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -264,28 +264,24 @@ msgid "Send Anyway"
 msgstr "Envia'l tanmateix"
 
 #: src/Composer/ComposerWidget.vala:625
-#, fuzzy
-#| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
-msgstr "Voleu enviar el missatge amb el cos en blanc?"
+msgstr "No s'ha desat el missatge enviat."
 
 #: src/Composer/ComposerWidget.vala:626
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
+"El missatge s'ha enviat, però no se n'ha desat una còpia a la carpeta "
+"d'enviats."
 
 #: src/Composer/ComposerWidget.vala:641
-#, fuzzy
-#| msgid "Unable to save draft"
 msgid "Unable to send message"
-msgstr "No es pot desar l'esborrany."
+msgstr "No es pot enviar el missatge."
 
 #: src/Composer/ComposerWidget.vala:642
-#, fuzzy
-#| msgid "There was an unexpected error while saving your draft."
 msgid "There was an unexpected error while sending your message."
-msgstr "Hi ha hagut un error inesperat a l'hora de desar l'esborrany."
+msgstr "Hi ha hagut un error inesperat a l'hora de d'enviar el missatge."
 
 #: src/Composer/ComposerWidget.vala:885
 msgid "Unable to save draft"
