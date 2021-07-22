@@ -232,21 +232,21 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             if (current_search_query == null) {
                 return folders[service_uid].get_uids ();
             }
-    
+
             var sb = new StringBuilder ();
             Camel.SExp.encode_string (sb, current_search_query);
             var encoded_query = sb.str;
-    
+
             string search_query = """(match-all (or (header-contains "From" %s)(header-contains "Subject" %s)(body-contains %s)))"""
                 .printf (encoded_query, encoded_query, encoded_query);
-    
+
             try {
                 return folders[service_uid].search_by_expression (search_query, cancellable);
             } catch (Error e) {
                 if (!(e is GLib.IOError.CANCELLED)) {
                     warning ("Error while searching: %s", e.message);
                 }
-    
+
                 return folders[service_uid].get_uids ();
             }
         }
