@@ -13,7 +13,7 @@ You'll need the following dependencies:
 * libgee-0.8-dev
 * libglib2.0-dev
 * libgranite-dev >= 6.0.0
-* libhandy-1-dev >= 0.83.0
+* libhandy-1-dev >= 1.1.90
 * libwebkit2gtk-4.0-dev
 * valac
 
