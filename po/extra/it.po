@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-16 19:27+0000\n"
-"PO-Revision-Date: 2021-01-30 01:07+0000\n"
-"Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
+"PO-Revision-Date: 2021-07-22 10:38+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/mail/extra/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -79,10 +79,8 @@ msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
 #: data/io.elementary.mail.desktop.in:6
-#, fuzzy
-#| msgid "elementary, Inc."
 msgid "io.elementary.mail"
-msgstr "elementary, Inc."
+msgstr "io.elementary.mail"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
