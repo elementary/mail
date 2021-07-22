@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-16 19:27+0000\n"
-"PO-Revision-Date: 2021-06-30 13:09+0000\n"
+"PO-Revision-Date: 2021-07-22 18:07+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
 "mail/nb/>\n"
@@ -279,30 +279,28 @@ msgid "Sent message was not saved"
 msgstr "Sende melding med tomt innhold?"
 
 #: src/Composer/ComposerWidget.vala:626
+#, fuzzy
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
+"Meldingen ble sendt, men ingen kopi ble lagret i «Lagret»-meldingsmappen."
 
 #: src/Composer/ComposerWidget.vala:641
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to send message"
-msgstr "Forkast utkast"
+msgstr "Kunne ikke sende melding"
 
 #: src/Composer/ComposerWidget.vala:642
 msgid "There was an unexpected error while sending your message."
-msgstr ""
+msgstr "En uventet feil inntraff under forsendelse av meldingen din."
 
 #: src/Composer/ComposerWidget.vala:885
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to save draft"
-msgstr "Forkast utkast"
+msgstr "Kunne ikke lagre utkast"
 
 #: src/Composer/ComposerWidget.vala:886
 msgid "There was an unexpected error while saving your draft."
-msgstr ""
+msgstr "En uventet feil inntraff under lagring av utkastet ditt."
 
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
