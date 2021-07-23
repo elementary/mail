@@ -42,6 +42,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     public string? mailto_query { get; construct; }
 
     private bool discard_draft = false;
+    private string? ancestor_message_info_uid = null;
 
     private WebView web_view;
     private SimpleActionGroup actions;
@@ -58,7 +59,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
     public enum Type {
         REPLY,
         REPLY_ALL,
-        FORWARD
+        FORWARD,
+        DRAFT
     }
 
     public const ActionEntry[] ACTION_ENTRIES = {
@@ -491,52 +493,60 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
 
         if (content_to_quote != null) {
-            string message_content = "<br/><br/>";
-            string date_format = _("%a, %b %-e, %Y at %-l:%M %p");
-            if (type == Type.REPLY || type == Type.REPLY_ALL) {
-                var reply_to = message.get_reply_to ();
-                if (reply_to != null) {
-                    to_val.text = reply_to.format ();
-                } else {
-                    to_val.text = message.get_from ().format ();
-                }
+            string message_content;
 
-                if (type == Type.REPLY_ALL) {
-                    var to_addresses = Utils.get_reply_addresses (info.to, (address) => { return true; });
-                    to_val.text += ", %s".printf (to_addresses);
+            if (type == Type.DRAFT) {
+                ancestor_message_info_uid = info.uid;
+                message_content = content_to_quote;
 
-                    if (info.cc != null) {
-                        cc_val.text = Utils.get_reply_addresses (info.cc, (address) => {
-                            if (to_val.text.contains (address)) {
-                                return false;
+            } else {
+                message_content = "<br/><br/>";
+                string date_format = _("%a, %b %-e, %Y at %-l:%M %p");
+                if (type == Type.REPLY || type == Type.REPLY_ALL) {
+                    var reply_to = message.get_reply_to ();
+                    if (reply_to != null) {
+                        to_val.text = reply_to.format ();
+                    } else {
+                        to_val.text = message.get_from ().format ();
+                    }
+
+                    if (type == Type.REPLY_ALL) {
+                        var to_addresses = Utils.get_reply_addresses (info.to, (address) => { return true; });
+                        to_val.text += ", %s".printf (to_addresses);
+
+                        if (info.cc != null) {
+                            cc_val.text = Utils.get_reply_addresses (info.cc, (address) => {
+                                if (to_val.text.contains (address)) {
+                                    return false;
+                                }
+
+                                return true;
+                            });
+
+                            if (cc_val.text.length > 0) {
+                                cc_revealer.reveal_child = true;
                             }
-
-                            return true;
-                        });
-
-                        if (cc_val.text.length > 0) {
-                            cc_revealer.reveal_child = true;
                         }
                     }
-                }
 
-                string when = new DateTime.from_unix_utc (info.date_received).format (date_format);
-                string who = Utils.escape_html_tags (message.get_from ().format ());
-                message_content += _("On %1$s, %2$s wrote:").printf (when, who);
-                message_content += "<br/>";
-                message_content += "<blockquote type=\"cite\">%s</blockquote>".printf (content_to_quote);
-            } else if (type == Type.FORWARD) {
-                message_content += _("---------- Forwarded message ----------");
-                message_content += "<br/><br/>";
-                message_content += _("From: %s<br/>").printf (Utils.escape_html_tags (message.get_from ().format ()));
-                message_content += _("Subject: %s<br/>").printf (Utils.escape_html_tags (info.subject));
-                message_content += _("Date: %s<br/>").printf (new DateTime.from_unix_utc (info.date_received).format (date_format));
-                message_content += _("To: %s<br/>").printf (Utils.escape_html_tags (info.to));
-                if (info.cc != null && info.cc != "") {
-                    message_content += _("Cc: %s<br/>").printf (Utils.escape_html_tags (info.cc));
+                    string when = new DateTime.from_unix_utc (info.date_received).format (date_format);
+                    string who = Utils.escape_html_tags (message.get_from ().format ());
+                    message_content += _("On %1$s, %2$s wrote:").printf (when, who);
+                    message_content += "<br/>";
+                    message_content += "<blockquote type=\"cite\">%s</blockquote>".printf (content_to_quote);
+                } else if (type == Type.FORWARD) {
+                    message_content += _("---------- Forwarded message ----------");
+                    message_content += "<br/><br/>";
+                    message_content += _("From: %s<br/>").printf (Utils.escape_html_tags (message.get_from ().format ()));
+                    message_content += _("Subject: %s<br/>").printf (Utils.escape_html_tags (info.subject));
+                    message_content += _("Date: %s<br/>").printf (new DateTime.from_unix_utc (info.date_received).format (date_format));
+                    message_content += _("To: %s<br/>").printf (Utils.escape_html_tags (info.to));
+                    if (info.cc != null && info.cc != "") {
+                        message_content += _("Cc: %s<br/>").printf (Utils.escape_html_tags (info.cc));
+                    }
+                    message_content += "<br/><br/>";
+                    message_content += content_to_quote;
                 }
-                message_content += "<br/><br/>";
-                message_content += content_to_quote;
             }
 
             web_view.set_body_content (message_content);
@@ -878,6 +888,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
                     message,
                     sender,
                     recipients,
+                    ancestor_message_info_uid,
                     (obj, res) => {
                         try {
                             session.save_draft.end (res);
