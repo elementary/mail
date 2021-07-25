@@ -1568,10 +1568,11 @@ namespace Camel {
 	}
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_sasl_get_type ()")]
 	public abstract class Sasl : GLib.Object {
+		public class weak Camel.ServiceAuthType? auth_type;
 		[CCode (has_construct_function = false)]
 		protected Sasl ();
-		public static Camel.ServiceAuthType authtype (string mechanism);
-		public static GLib.List<weak Camel.ServiceAuthType> authtype_list (bool include_plain);
+		public static unowned Camel.ServiceAuthType? authtype (string mechanism);
+		public static GLib.List<weak Camel.ServiceAuthType?> authtype_list (bool include_plain);
 		[Version (since = "3.0")]
 		public async GLib.ByteArray challenge (GLib.ByteArray token, int io_priority, GLib.Cancellable? cancellable) throws GLib.Error;
 		[Version (since = "3.0")]
@@ -1700,8 +1701,8 @@ namespace Camel {
 		[Version (since = "3.2")]
 		public Camel.URL new_camel_url ();
 		[Version (since = "3.2")]
-		public async GLib.List<weak Camel.ServiceAuthType> query_auth_types (int io_priority, GLib.Cancellable? cancellable) throws GLib.Error;
-		public virtual GLib.List<weak Camel.ServiceAuthType> query_auth_types_sync (GLib.Cancellable? cancellable = null) throws GLib.Error;
+		public async GLib.List<weak Camel.ServiceAuthType?> query_auth_types (int io_priority, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		public virtual GLib.List<weak Camel.ServiceAuthType?> query_auth_types_sync (GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "3.12")]
 		public void queue_task (GLib.Task task, [CCode (scope = "async")] GLib.TaskThreadFunc task_func);
 		[Version (since = "3.12")]
@@ -1729,18 +1730,6 @@ namespace Camel {
 		[NoAccessorMethod]
 		public Camel.Settings settings { owned get; set construct; }
 		public string uid { get; construct; }
-	}
-	[CCode (cheader_filename = "camel/camel.h", copy_function = "g_boxed_copy", free_function = "g_boxed_free", type_id = "camel_service_auth_type_get_type ()")]
-	[Compact]
-	public class ServiceAuthType {
-		public weak string authproto;
-		public weak string description;
-		public weak string name;
-		public bool need_password;
-		[Version (since = "3.24")]
-		public Camel.ServiceAuthType copy ();
-		[Version (since = "3.24")]
-		public void free ();
 	}
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_session_get_type ()")]
 	public class Session : GLib.Object {
@@ -2546,6 +2535,17 @@ namespace Camel {
 		public void*[] value_func_terms;
 		[CCode (cname = "value.func.termcount")]
 		public int value_func_termcount;
+	}
+	[CCode (cheader_filename = "camel/camel.h", copy_function = "g_boxed_copy", free_function = "g_boxed_free", type_id = "camel_service_auth_type_get_type ()")]
+	public struct ServiceAuthType {
+		public weak string name;
+		public weak string description;
+		public weak string authproto;
+		public bool need_password;
+		[Version (since = "3.24")]
+		public Camel.ServiceAuthType? copy ();
+		[Version (since = "3.24")]
+		public void free ();
 	}
 	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
 	public struct StoreInfo {

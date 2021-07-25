@@ -19,22 +19,19 @@
  */
 
 public class Mail.Backend.SimpleSasl : Camel.Sasl {
-    [CCode (cname = "auth_type")]
-    public Camel.ServiceAuthType auth_type;
+    private static Camel.ServiceAuthType simple_auth_type = {
+        N_("SimpleServiceAuthType"),
+        N_("Provides a way to fall back to passwords in SSO scenarios."),
+        "SIMPLESERVICEAUTHTYPE",
+        false
+    };
 
     public SimpleSasl (string service_name, string mechanism, Camel.Service service) {
         Object (service_name: service_name, mechanism: mechanism, service: service);
     }
 
-    construct {
-        auth_type = (Camel.ServiceAuthType) new SimpleServiceAuthType ();
-    }
-
-    private class SimpleServiceAuthType {
-        public string name = "SimpleServiceAuthType";
-        public string description = "Provides a way to fall back to passwords in SSO scenarios.";
-        public string authproto = "SIMPLESERVICEAUTHTYPE";
-        public bool need_password = false;
+    static construct {
+        auth_type = simple_auth_type;
     }
 }
 
@@ -99,7 +96,6 @@ public class Mail.Backend.Session : Camel.Session {
         /* Do not chain up.  Camel's default method is only an example for
          * subclasses to follow.  Instead we mimic most of its logic here. */
 
-        Camel.ServiceAuthType authtype;
         bool try_empty_password = false;
         var result = Camel.AuthenticationResult.REJECTED;
 
@@ -110,7 +106,7 @@ public class Mail.Backend.Session : Camel.Session {
         if (mechanism != null) {
             /* APOP is one case where a non-SASL mechanism name is passed, so
              * don't bail if the CamelServiceAuthType struct comes back NULL. */
-            authtype = Camel.Sasl.authtype (mechanism);
+            unowned var authtype = Camel.Sasl.authtype (mechanism);
 
             /* If the SASL mechanism does not involve a user
              * password, then it gets one shot to authenticate. */
