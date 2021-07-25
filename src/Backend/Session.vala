@@ -19,8 +19,22 @@
  */
 
 public class Mail.Backend.SimpleSasl : Camel.Sasl {
+    [CCode (cname = "auth_type")]
+    public Camel.ServiceAuthType auth_type;
+
     public SimpleSasl (string service_name, string mechanism, Camel.Service service) {
         Object (service_name: service_name, mechanism: mechanism, service: service);
+    }
+
+    construct {
+        auth_type = (Camel.ServiceAuthType) new SimpleServiceAuthType ();
+    }
+
+    private class SimpleServiceAuthType {
+        public string name = "SimpleServiceAuthType";
+        public string description = "Provides a way to fall back to passwords in SSO scenarios.";
+        public string authproto = "SIMPLESERVICEAUTHTYPE";
+        public bool need_password = false;
     }
 }
 
