@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-16 19:27+0000\n"
-"PO-Revision-Date: 2021-07-22 10:38+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"PO-Revision-Date: 2021-07-27 15:38+0000\n"
+"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/extra/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -62,18 +62,12 @@ msgid "Inline HTML composer that saves drafts to the server"
 msgstr "Встроенный HTML-редактор, сохраняющий черновики на сервер"
 
 #: data/io.elementary.mail.appdata.xml.in:18
-#, fuzzy
-#| msgid ""
-#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
-#| "popular IMAP servers"
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
-msgstr ""
-"Работа с Gmail, Yahoo! Mail, Outlook.com (экспериментально) и другими "
-"популярными сервисами с поддержкой IMAP"
+msgstr "Работа с Gmail, Yahoo! Mail, и другими популярными серверами IMAP"
 
 #: data/io.elementary.mail.appdata.xml.in:27
 msgid "Complete rewrite from scratch"
-msgstr ""
+msgstr "Приложение переписано с нуля"
 
 #: data/io.elementary.mail.appdata.xml.in:68
 msgid "elementary, Inc."
