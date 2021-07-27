@@ -18,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-16 19:27+0000\n"
 "PO-Revision-Date: 2021-07-27 15:38+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"Last-Translator: Deleted User <noreply+2851@weblate.org>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -257,16 +257,12 @@ msgid "Send without subject?"
 msgstr "Отправить без темы?"
 
 #: src/Composer/ComposerWidget.vala:596
-#, fuzzy
-#| msgid ""
-#| "This message has an empty subject field. The recipient may not be able to "
-#| "infer the scope or importance of the message."
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
-"В этом сообщении поле темы пустое. Получатель может быть не в состоянии "
-"сделать вывод о содержании или важности сообщения."
+"В этом сообщении пустое поле темы. Получатель может быть не в состоянии "
+"сделать вывод о его содержании или важности."
 
 #: src/Composer/ComposerWidget.vala:602
 msgid "Don't Send"
