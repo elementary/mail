@@ -5,12 +5,12 @@
 #
 # Translators:
 # abuyop <abuyop@gmail.com>, 2013
-#: src/MessageList/MessageListItem.vala:408
+#: src/MessageList/MessageListItem.vala:383
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-16 19:27+0000\n"
+"POT-Creation-Date: 2021-07-27 19:13+0000\n"
 "PO-Revision-Date: 2016-06-07 12:58+0000\n"
 "Last-Translator: Timothy <timothy.wong@rocketmail.com>\n"
 "Language-Team: Malay (Malaysia) (http://www.transifex.com/projects/p/geary/"
@@ -123,190 +123,190 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Akaun"
 
-#: src/Composer/ComposerWidget.vala:98 src/MessageList/MessageListItem.vala:95
+#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:95
 msgid "From:"
 msgstr "Daripada:"
 
-#: src/Composer/ComposerWidget.vala:114
+#: src/Composer/ComposerWidget.vala:113
 #: src/MessageList/MessageListItem.vala:100
 msgid "To:"
 msgstr "Kepada:"
 
-#: src/Composer/ComposerWidget.vala:118
+#: src/Composer/ComposerWidget.vala:117
 #: src/MessageList/MessageListItem.vala:105
 msgid "Subject:"
 msgstr "Subjek:"
 
-#: src/Composer/ComposerWidget.vala:125
+#: src/Composer/ComposerWidget.vala:124
 #, fuzzy
 msgid "Cc"
 msgstr "Sk:"
 
-#: src/Composer/ComposerWidget.vala:127
+#: src/Composer/ComposerWidget.vala:126
 #, fuzzy
 msgid "Bcc"
 msgstr "Ss:"
 
-#: src/Composer/ComposerWidget.vala:134
+#: src/Composer/ComposerWidget.vala:133
 #: src/MessageList/MessageListItem.vala:134
 msgid "Cc:"
 msgstr "Sk:"
 
-#: src/Composer/ComposerWidget.vala:150
+#: src/Composer/ComposerWidget.vala:149
 msgid "Bcc:"
 msgstr "Ss:"
 
-#: src/Composer/ComposerWidget.vala:194
+#: src/Composer/ComposerWidget.vala:192
 msgid "Bold"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:199
 msgid "Italic"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:208
+#: src/Composer/ComposerWidget.vala:206
 msgid "Underline"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:215
+#: src/Composer/ComposerWidget.vala:213
 msgid "Strikethrough"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:220
+#: src/Composer/ComposerWidget.vala:218
 msgid "Remove formatting"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:232 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:230 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:263
+#: src/Composer/ComposerWidget.vala:261
 msgid "Delete draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:268
+#: src/Composer/ComposerWidget.vala:266
 msgid "Attach file"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:274
+#: src/Composer/ComposerWidget.vala:272
 msgid "Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:419
+#: src/Composer/ComposerWidget.vala:417
 msgid "Choose a file"
 msgstr "Pilih satu fail"
 
-#: src/Composer/ComposerWidget.vala:422
+#: src/Composer/ComposerWidget.vala:420
 #, fuzzy
 #| msgid "_Attach"
 msgid "Attach"
 msgstr "L_ampir"
 
-#: src/Composer/ComposerWidget.vala:423 src/Composer/ComposerWidget.vala:575
+#: src/Composer/ComposerWidget.vala:421 src/Composer/ComposerWidget.vala:583
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:487
+#: src/Composer/ComposerWidget.vala:495
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %b %-e, %Y at %-l:%M %p"
 
-#: src/Composer/ComposerWidget.vala:517
+#: src/Composer/ComposerWidget.vala:525
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Dalam %1$s, %2$s menulis:"
 
-#: src/Composer/ComposerWidget.vala:521
+#: src/Composer/ComposerWidget.vala:529
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Mesej dimajukan ----------"
 
-#: src/Composer/ComposerWidget.vala:523
+#: src/Composer/ComposerWidget.vala:531
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "Daripada: %s\n"
 
-#: src/Composer/ComposerWidget.vala:524
+#: src/Composer/ComposerWidget.vala:532
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "Subjek: %s\n"
 
-#: src/Composer/ComposerWidget.vala:525
+#: src/Composer/ComposerWidget.vala:533
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "Tarikh: %s\n"
 
-#: src/Composer/ComposerWidget.vala:526
+#: src/Composer/ComposerWidget.vala:534
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "Kepada: %s\n"
 
-#: src/Composer/ComposerWidget.vala:528
+#: src/Composer/ComposerWidget.vala:536
 #, fuzzy, c-format
 msgid "Cc: %s<br/>"
 msgstr "Sk: %s\n"
 
-#: src/Composer/ComposerWidget.vala:566
+#: src/Composer/ComposerWidget.vala:574
 msgid "Permanently delete this draft?"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:567
+#: src/Composer/ComposerWidget.vala:575
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:577
+#: src/Composer/ComposerWidget.vala:585
 #, fuzzy
 #| msgid "Edit Draft"
 msgid "Delete Draft"
 msgstr "Sunting Draf"
 
-#: src/Composer/ComposerWidget.vala:595
+#: src/Composer/ComposerWidget.vala:605
 #, fuzzy
 msgid "Send without subject?"
 msgstr "Hantar mesej dengan subjek kosong?"
 
-#: src/Composer/ComposerWidget.vala:596
+#: src/Composer/ComposerWidget.vala:606
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:602
+#: src/Composer/ComposerWidget.vala:612
 msgid "Don't Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:604
+#: src/Composer/ComposerWidget.vala:614
 msgid "Send Anyway"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:625
+#: src/Composer/ComposerWidget.vala:636
 #, fuzzy
 #| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
 msgstr "Hantar mesej dengan badan kosong?"
 
-#: src/Composer/ComposerWidget.vala:626
+#: src/Composer/ComposerWidget.vala:637
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:641
+#: src/Composer/ComposerWidget.vala:652
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to send message"
 msgstr "Tidak boleh sahkan:\n"
 
-#: src/Composer/ComposerWidget.vala:642
+#: src/Composer/ComposerWidget.vala:653
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:885
+#: src/Composer/ComposerWidget.vala:903
 msgid "Unable to save draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:886
+#: src/Composer/ComposerWidget.vala:904
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -430,13 +430,13 @@ msgid "This message contains one or more attachments"
 msgstr ""
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:385
+#: src/MessageList/MessageListItem.vala:360
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Mesej Baru"
 
-#: src/MessageList/MessageListItem.vala:407
+#: src/MessageList/MessageListItem.vala:382
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
