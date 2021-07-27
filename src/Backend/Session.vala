@@ -472,7 +472,7 @@ public class Mail.Backend.Session : Camel.Session {
         return null;
     }
 
-    public async void save_draft (Camel.MimeMessage message, Camel.InternetAddress from, Camel.Address recipients, string? ancestor_message_info_uid = null) throws Error {
+    public async void save_draft (Camel.MimeMessage message, Camel.InternetAddress from, Camel.Address recipients, Camel.MessageInfo? ancestor_message_info = null) throws Error {
         var camel_store = get_camel_store_from_email (from);
         if (camel_store == null) {
             throw new Camel.ServiceError.UNAVAILABLE ("No camel service for saving draft found.");
@@ -498,13 +498,9 @@ public class Mail.Backend.Session : Camel.Session {
         var message_info = new MessageInfo (Camel.MessageFlags.DRAFT);
         yield drafts_folder.append_message (message, message_info, 0, null, null);
 
-        if (ancestor_message_info_uid != null) {
-            var ancestor_message_info = drafts_folder.get_message_info (ancestor_message_info_uid);
-
-            if (Camel.MessageFlags.DRAFT in (int) ancestor_message_info.flags) {
-                ancestor_message_info.set_flags (Camel.MessageFlags.DELETED, ~0);
-                yield drafts_folder.expunge (GLib.Priority.DEFAULT, null);
-            }
+        if (ancestor_message_info != null && Camel.MessageFlags.DRAFT in (int) ancestor_message_info.flags) {
+            ancestor_message_info.set_flags (Camel.MessageFlags.DELETED, ~0);
+            yield drafts_folder.expunge (GLib.Priority.DEFAULT, null);
         }
     }
 

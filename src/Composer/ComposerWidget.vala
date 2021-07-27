@@ -42,7 +42,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     public string? mailto_query { get; construct; }
 
     private bool discard_draft = false;
-    private string? ancestor_message_info_uid = null;
+    private Camel.MessageInfo? ancestor_message_info = null;
 
     private WebView web_view;
     private SimpleActionGroup actions;
@@ -496,7 +496,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
             string message_content;
 
             if (type == Type.DRAFT) {
-                ancestor_message_info_uid = info.uid;
+                ancestor_message_info = info;
                 message_content = content_to_quote;
 
             } else {
@@ -888,7 +888,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
                     message,
                     sender,
                     recipients,
-                    ancestor_message_info_uid,
+                    ancestor_message_info,
                     (obj, res) => {
                         try {
                             session.save_draft.end (res);
