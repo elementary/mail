@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-16 19:27+0000\n"
+"POT-Creation-Date: 2021-07-28 16:28+0000\n"
 "PO-Revision-Date: 2021-07-22 10:38+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Croatian <https://l10n.elementary.io/projects/mail/extra/hr/>"
-"\n"
+"Language-Team: Croatian <https://l10n.elementary.io/projects/mail/extra/hr/"
+">\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,10 +72,30 @@ msgstr ""
 "popularnim IMAP poslužiteljima"
 
 #: data/io.elementary.mail.appdata.xml.in:27
+msgid "Improvements:"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Preserve conversation subjects when replying or forwarding"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:30
+msgid "Disable the composer while messages are being sent"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:31
+msgid "Edit saved draft messages"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:32
+msgid "Updated translations"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:38
 msgid "Complete rewrite from scratch"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:68
+#: data/io.elementary.mail.appdata.xml.in:79
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
