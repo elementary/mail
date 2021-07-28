@@ -1,403 +1,416 @@
-#: src/MessageList/MessageListItem.vala:408
+#: src/MessageList/MessageListItem.vala:383
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-16 19:27+0000\n"
+"POT-Creation-Date: 2021-07-28 16:28+0000\n"
+"PO-Revision-Date: 2021-07-27 15:38+0000\n"
+"Last-Translator: elSolus <tumbleweed@tuta.io>\n"
+"Language-Team: Punjabi <https://l10n.elementary.io/projects/mail/mail/pa/>\n"
+"Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: src/HeaderBar.vala:40
 msgid "Compose new message"
-msgstr ""
+msgstr "ਨਵਾਂ ਸੁਨੇਹਾ ਬਣਾਓ"
 
 #: src/HeaderBar.vala:46
 msgid "Search Mail"
-msgstr ""
+msgstr "ਡਾਕ ਵਿੱਚ ਲੱਭੋ"
 
 #: src/HeaderBar.vala:50
 msgid "Always Show Remote Images"
-msgstr ""
+msgstr "ਰਿਮੋਟ ਤਸਵੀਰਾਂ ਹਮੇਸ਼ਾ ਵਿਖਾਓ"
 
 #: src/HeaderBar.vala:53
 msgid "Account Settings…"
-msgstr ""
+msgstr "ਖਾਤਾ ਸੈਟਿੰਗਾਂ…"
 
 #: src/HeaderBar.vala:76
 msgid "Menu"
-msgstr ""
+msgstr "ਮੈਨਿਊ"
 
 #: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:185
 msgid "Reply"
-msgstr ""
+msgstr "ਜਵਾਬ ਦਿਓ"
 
 #: src/HeaderBar.vala:90
 msgid "Reply All"
-msgstr ""
+msgstr "ਸਾਰਿਆਂ ਨੂੰ ਜਵਾਬ ਦਿਓ"
 
 #: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:191
 msgid "Forward"
-msgstr ""
+msgstr "ਅੱਗੇ ਭੇਜੋ"
 
 #: src/HeaderBar.vala:103
 msgid "Mark as Unread"
-msgstr ""
+msgstr "ਨਾ-ਪੜ੍ਹੇ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਾਓ"
 
 #: src/HeaderBar.vala:108
 msgid "Mark as Read"
-msgstr ""
+msgstr "ਪੜ੍ਹੇ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਾਓ"
 
 #: src/HeaderBar.vala:113
 msgid "Star"
-msgstr ""
+msgstr "ਸਿਤਾਰਾ ਦਿਓ"
 
 #: src/HeaderBar.vala:118
 msgid "Unstar"
-msgstr ""
+msgstr "ਸਿਤਾਰਾ ਹਟਾਓ"
 
 #: src/HeaderBar.vala:130
 msgid "Mark Conversation"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ ਨੂੰ ਨਿਸ਼ਾਨ ਲਾਓ"
 
 #: src/HeaderBar.vala:137
 msgid "Move conversations to archive"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ ਨੂੰ ਪੱਕੇ-ਚਿੱਠੇ ਵਿੱਚ ਭੇਜੋ"
 
 #: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ ਨੂੰ ਕੂੜੇਦਾਨ ਵਿੱਚ ਭੇਜੋ"
 
 #: src/MainWindow.vala:72
 msgid "Mail"
-msgstr ""
+msgstr "ਡਾਕ"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:297
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ਸੁਨੇਹਾ ਮਿਟਾ ਦਿੱਤਾ ਗਿਆ"
+msgstr[1] "ਸੁਨੇਹੇ ਮਿਟਾ ਦਿੱਤੇ ਗਏ"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:309
 msgid "Undo"
-msgstr ""
+msgstr "ਕੀਤੀ ਕਾਰਵਾਈ ਨੂੰ ਵਾਪਸ ਮੋੜੋ"
 
 #: src/WelcomeView.vala:40
 msgid "Connect an Account"
-msgstr ""
+msgstr "ਕੋਈ ਖਾਤਾ ਜੋੜੋ"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
-msgstr ""
+msgstr "ਮੇਲ, ਸਿਸਟਮ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਜੋੜੇ ਈਮੇਲ ਖਾਤੇ ਵਤਰਦੀ ਹੈ।"
 
 #: src/WelcomeView.vala:50
 msgid "Online Accounts…"
-msgstr ""
+msgstr "ਆਨਲਾਈਨ ਖਾਤੇ…"
 
-#: src/Composer/ComposerWidget.vala:98 src/MessageList/MessageListItem.vala:95
+#: src/Composer/ComposerWidget.vala:100 src/MessageList/MessageListItem.vala:95
 msgid "From:"
-msgstr ""
+msgstr "ਵੱਲੋਂ:"
 
-#: src/Composer/ComposerWidget.vala:114
+#: src/Composer/ComposerWidget.vala:116
 #: src/MessageList/MessageListItem.vala:100
 msgid "To:"
-msgstr ""
+msgstr "ਵੱਲ:"
 
-#: src/Composer/ComposerWidget.vala:118
+#: src/Composer/ComposerWidget.vala:120
 #: src/MessageList/MessageListItem.vala:105
 msgid "Subject:"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:125
-msgid "Cc"
-msgstr ""
+msgstr "ਵਿਸ਼ਾ:"
 
 #: src/Composer/ComposerWidget.vala:127
+msgid "Cc"
+msgstr ""
+"ਨਕਲ ਭੇਜੋ (ਸ਼ਰੇਆਮ: ਪ੍ਰਾਪਤ-ਕਰਤਾ ਕੋਲ਼ ਸਾਰੇ ਈਮੇਲ ਖਾਤੇ ਦਿਖਾਈ ਦੇਣਗੇ ਜੀਹਨੂੰ-ਜੀਹਨੂੰ ਵੀ ਨਕਲ ਭੇਜੀ ਗਈ ਹੈ)"
+
+#: src/Composer/ComposerWidget.vala:129
 msgid "Bcc"
 msgstr ""
+"ਨਕਲ ਭੇਜੋ (ਖ਼ੁਫ਼ੀਆ: ਪ੍ਰਾਪਤ-ਕਰਤਾ ਨੂੰ ਪਤਾ ਨਹੀਂ ਲੱਗੇਗਾ ਕਿ ਇਹ ਨਕਲ ਕਿਸੇ ਹੋਰ ਨੂੰ ਵੀ ਭੇਜੀ ਗਈ ਹੈ)"
 
-#: src/Composer/ComposerWidget.vala:134
+#: src/Composer/ComposerWidget.vala:136
 #: src/MessageList/MessageListItem.vala:134
 msgid "Cc:"
-msgstr ""
+msgstr "ਨਕਲ ਭੇਜੋ (ਸ਼ਰੇਆਮ):"
 
-#: src/Composer/ComposerWidget.vala:150
+#: src/Composer/ComposerWidget.vala:152
 msgid "Bcc:"
-msgstr ""
+msgstr "ਨਕਲ ਭੇਜੋ (ਖ਼ੁਫ਼ੀਆ):"
 
-#: src/Composer/ComposerWidget.vala:194
+#: src/Composer/ComposerWidget.vala:195
 msgid "Bold"
-msgstr ""
+msgstr "ਗੂੜ੍ਹਾ ਕਰੋ"
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:202
 msgid "Italic"
-msgstr ""
+msgstr "ਟੇਢਾ ਕਰੋ"
 
-#: src/Composer/ComposerWidget.vala:208
+#: src/Composer/ComposerWidget.vala:209
 msgid "Underline"
-msgstr ""
+msgstr "ਹੇਠਾਂ ਲਕੀਰ ਲਾਓ"
 
-#: src/Composer/ComposerWidget.vala:215
+#: src/Composer/ComposerWidget.vala:216
 msgid "Strikethrough"
-msgstr ""
+msgstr "ਚੀਰਵੀਂ ਲਕੀਰ ਲਾਓ"
 
-#: src/Composer/ComposerWidget.vala:220
+#: src/Composer/ComposerWidget.vala:221
 msgid "Remove formatting"
-msgstr ""
+msgstr "ਸਜਾਵਟ ਹਟਾਓ"
 
-#: src/Composer/ComposerWidget.vala:232 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:233 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
-msgstr ""
+msgstr "ਲਿੰਕ ਦਾਖ਼ਲ ਕਰੋ"
 
-#: src/Composer/ComposerWidget.vala:263
+#: src/Composer/ComposerWidget.vala:264
 msgid "Delete draft"
-msgstr ""
+msgstr "ਖ਼ਾਕਾ ਮਿਟਾਓ"
 
-#: src/Composer/ComposerWidget.vala:268
+#: src/Composer/ComposerWidget.vala:269
 msgid "Attach file"
-msgstr ""
+msgstr "ਫ਼ਾਇਲ ਨੱਥੀ ਕਰੋ"
 
-#: src/Composer/ComposerWidget.vala:274
+#: src/Composer/ComposerWidget.vala:275
 msgid "Send"
-msgstr ""
+msgstr "ਭੇਜੋ"
 
-#: src/Composer/ComposerWidget.vala:419
+#: src/Composer/ComposerWidget.vala:420
 msgid "Choose a file"
-msgstr ""
+msgstr "ਫ਼ਾਇਲ ਚੁਣੋ"
 
-#: src/Composer/ComposerWidget.vala:422
+#: src/Composer/ComposerWidget.vala:423
 msgid "Attach"
-msgstr ""
+msgstr "ਨੱਥੀ ਕਰੋ"
 
-#: src/Composer/ComposerWidget.vala:423 src/Composer/ComposerWidget.vala:575
+#: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:617
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
-msgstr ""
+msgstr "ਰੱਦ ਕਰੋ"
 
-#: src/Composer/ComposerWidget.vala:487
+#: src/Composer/ComposerWidget.vala:528
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:517
+#: src/Composer/ComposerWidget.vala:558
 #, c-format
 msgid "On %1$s, %2$s wrote:"
-msgstr ""
+msgstr "%1$s 'ਤੇ, %2$s ਨੇ ਲਿਖਿਆ:"
 
-#: src/Composer/ComposerWidget.vala:521
+#: src/Composer/ComposerWidget.vala:562
 msgid "---------- Forwarded message ----------"
-msgstr ""
+msgstr "---------- ਅੱਗੇ ਭੇਜਿਆ ਹੋਇਆ ਸੁਨੇਹਾ ----------"
 
-#: src/Composer/ComposerWidget.vala:523
+#: src/Composer/ComposerWidget.vala:564
 #, c-format
 msgid "From: %s<br/>"
-msgstr ""
+msgstr "ਵੱਲੋਂ: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:524
+#: src/Composer/ComposerWidget.vala:565
 #, c-format
 msgid "Subject: %s<br/>"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:525
-#, c-format
-msgid "Date: %s<br/>"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:526
-#, c-format
-msgid "To: %s<br/>"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:528
-#, c-format
-msgid "Cc: %s<br/>"
-msgstr ""
+msgstr "ਵਿਸ਼ਾ: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:566
-msgid "Permanently delete this draft?"
-msgstr ""
+#, c-format
+msgid "Date: %s<br/>"
+msgstr "ਮਿਤੀ: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:567
+#, c-format
+msgid "To: %s<br/>"
+msgstr "ਵੱਲ: %s<br/>"
+
+#: src/Composer/ComposerWidget.vala:569
+#, c-format
+msgid "Cc: %s<br/>"
+msgstr "ਨਕਲ ਭੇਜੋ (ਸ਼ਰੇਆਮ): %s<br/>"
+
+#: src/Composer/ComposerWidget.vala:608
+msgid "Permanently delete this draft?"
+msgstr "ਇਸ ਖ਼ਾਕੇ ਨੂੰ ਪੱਕੇ ਤੌਰ 'ਤੇ ਮਿਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
+
+#: src/Composer/ComposerWidget.vala:609
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
+"ਇਹ ਕਾਰਵਾਈ ਵਾਪਸ ਨਹੀਂ ਮੋੜੀ ਜਾ ਸਕਣੀ ਅਤੇ ਨਾ ਹੀ ਤੁਸੀਂ ਮਿਟਾਏ ਖ਼ਾਕੇ ਨੂੰ ਦੁਬਾਰਾ ਹਾਸਲ ਕਰ ਸਕਦੇ ਹੋ।"
 
-#: src/Composer/ComposerWidget.vala:577
+#: src/Composer/ComposerWidget.vala:619
 msgid "Delete Draft"
-msgstr ""
+msgstr "ਖ਼ਾਕਾ ਮਿਟਾਓ"
 
-#: src/Composer/ComposerWidget.vala:595
+#: src/Composer/ComposerWidget.vala:639
 msgid "Send without subject?"
-msgstr ""
+msgstr "ਬਿਨਾਂ ਵਿਸ਼ਾ ਲਿਖੇ ਭੇਜਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: src/Composer/ComposerWidget.vala:596
+#: src/Composer/ComposerWidget.vala:640
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
+"ਇਸ ਸੁਨੇਹੇ ਦੀ ਵਿਸ਼ੇ ਵਾਲ਼ੀ ਲਾਈਨ ਖ਼ਾਲੀ ਹੈ। ਪ੍ਰਾਪਤ-ਕਰਤਾ ਨੂੰ ਸ਼ਾਇਦ ਇਸਦੀ ਅਹਿਮੀਅਤ ਬਾਰੇ ਨਾ ਲੱਗੇ।"
 
-#: src/Composer/ComposerWidget.vala:602
+#: src/Composer/ComposerWidget.vala:646
 msgid "Don't Send"
-msgstr ""
+msgstr "ਨਾ ਭੇਜੋ"
 
-#: src/Composer/ComposerWidget.vala:604
+#: src/Composer/ComposerWidget.vala:648
 msgid "Send Anyway"
-msgstr ""
+msgstr "ਕੋਈ ਗੱਲ ਨਹੀਂ, ਭੇਜੋ"
 
-#: src/Composer/ComposerWidget.vala:625
+#: src/Composer/ComposerWidget.vala:670
 msgid "Sent message was not saved"
-msgstr ""
+msgstr "ਭੇਜਿਆ ਗਿਆ ਸੁਨੇਹਾ ਸਾਂਭਿਆ ਨਹੀਂ ਗਿਆ"
 
-#: src/Composer/ComposerWidget.vala:626
+#: src/Composer/ComposerWidget.vala:671
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
-msgstr ""
+msgstr "ਸੁਨੇਹਾ ਭੇਜ ਦਿੱਤਾ ਗਿਐ, ਹਾਲਾਂਕਿ ਇਸਦੀ ਇੱਕ ਨਕਲ \"ਭੇਜੇ ਗਏ\" ਫ਼ੋਲਡਰ ਵਿੱਚ ਸਾਂਭੀ ਨਹੀਂ ਗਈ।"
 
-#: src/Composer/ComposerWidget.vala:641
+#: src/Composer/ComposerWidget.vala:686
 msgid "Unable to send message"
-msgstr ""
+msgstr "ਸੁਨੇਹਾ ਭੇਜਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ"
 
-#: src/Composer/ComposerWidget.vala:642
+#: src/Composer/ComposerWidget.vala:687
 msgid "There was an unexpected error while sending your message."
-msgstr ""
+msgstr "ਤੁਹਾਡਾ ਸੁਨੇਹਾ ਭੇਜਦੇ ਵਕ਼ਤ ਇੱਕ ਖ਼ਰਾਬੀ ਆ ਗਈ ਸੀ।"
 
-#: src/Composer/ComposerWidget.vala:885
+#: src/Composer/ComposerWidget.vala:938
 msgid "Unable to save draft"
-msgstr ""
+msgstr "ਖ਼ਾਕਾ ਸਾਂਭਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ"
 
-#: src/Composer/ComposerWidget.vala:886
+#: src/Composer/ComposerWidget.vala:939
 msgid "There was an unexpected error while saving your draft."
-msgstr ""
+msgstr "ਤੁਹਾਡਾ ਖ਼ਾਕਾ ਸਾਂਭਦੇ ਵਕ਼ਤ ਇੱਕ ਖ਼ਰਾਬੀ ਆ ਗਈ ਸੀ।"
 
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
-msgstr ""
+msgstr "ਨਵਾਂ ਸੁਨੇਹਾ"
 
 #: src/ConversationList/ConversationListItem.vala:103
 msgid "Unread"
-msgstr ""
+msgstr "ਅਣਪੜ੍ਹੇ"
 
 #: src/ConversationList/ConversationListItem.vala:113
 msgid "Replied"
-msgstr ""
+msgstr "ਜਵਾਬ ਦਿੱਤੇ ਹੋਏ"
 
 #: src/ConversationList/ConversationListItem.vala:117
 msgid "Forwarded"
-msgstr ""
+msgstr "ਅੱਗੇ ਭੇਜੇ ਹੋਏ"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "ਲਿੰਕ (URL):"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "ਮਿਸਾਲ: https://example.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
 msgid "Link Text:"
-msgstr ""
+msgstr "ਲਿੰਕ ਦੀ ਲਿਖਤ:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
-msgstr ""
+msgstr "ਮਿਸਾਲ ਲਈ ਵੈੱਬਸਾਈਟ"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "ਕੀ ਤੁਸੀਂ ਵਾਕਿਆ ਹੀ %s ਨੂੰ ਖੋਲ੍ਹਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"ਨੱਥੀ ਕੀਤੀਆਂ ਫ਼ਾਇਲਾਂ ਖੋਲ੍ਹਣ ਨਾਲ਼ ਤੁਹਾਡੇ ਸਿਸਟਮ ਨੂੰ ਨੁਕਸਾਨ ਹੋ ਸਕਦੈ। ਸਿਰਫ਼ ਭਰੋਸੇਯੋਗ ਸਰੋਤਾਂ ਤੋਂ ਆਈਆਂ "
+"ਫ਼ਾਇਲਾਂ ਹੀ ਖੋਲ੍ਹੋ।"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
-msgstr ""
+msgstr "ਕੋਈ ਗੱਲ ਨਹੀਂ, ਖੋਲ੍ਹੋ"
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
-msgstr ""
+msgstr "ਫ਼ੋਲਡਰ ਤਾਜ਼ਾ ਕਰੋ"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
-msgstr ""
+msgstr "ਇਨਬਾਕਸ"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:42
 msgid "Archive"
-msgstr ""
+msgstr "ਪੱਕਾ-ਚਿੱਠਾ"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 msgid "Sent"
-msgstr ""
+msgstr "ਭੇਜੇ ਹੋਏ"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
-msgstr ""
+msgstr "ਸਾਰੇ ਡਾਕ-ਬਾਕਸ"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
-msgstr ""
+msgstr "ਕੋਈ ਸੁਨੇਹਾ ਨਹੀਂ ਚੁਣਿਆ ਹੋਇਆ"
 
 #: src/MessageList/MessageListItem.vala:175
 #: src/MessageList/MessageListItem.vala:334
 msgid "Unstar message"
-msgstr ""
+msgstr "ਸੁਨੇਹੇ ਤੋਂ ਸਿਤਾਰਾ ਹਟਾਓ"
 
 #: src/MessageList/MessageListItem.vala:178
 #: src/MessageList/MessageListItem.vala:330
 msgid "Star message"
-msgstr ""
+msgstr "ਸੁਨੇਹੇ ਨੂੰ ਸਿਤਾਰਾ ਦਿਓ"
 
 #: src/MessageList/MessageListItem.vala:188
 msgid "Reply to All"
-msgstr ""
+msgstr "ਸਾਰਿਆਂ ਨੂੰ ਜਵਾਬ ਦਿਓ"
 
 #: src/MessageList/MessageListItem.vala:194
 msgid "Print…"
-msgstr ""
+msgstr "ਪ੍ਰਿੰਟ ਕਰੋ…"
 
 #: src/MessageList/MessageListItem.vala:208
 msgid "More"
-msgstr ""
+msgstr "ਹੋਰ"
 
 #: src/MessageList/MessageListItem.vala:244
 msgid "Show Images"
-msgstr ""
+msgstr "ਤਸਵੀਰਾਂ ਵਿਖਾਓ"
 
 #: src/MessageList/MessageListItem.vala:245
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "ਭੇਜਣ ਵਾਲੇ ਵੱਲੋਂ ਹਮੇਸ਼ਾ ਵਿਖਾਓ"
 
 #: src/MessageList/MessageListItem.vala:250
 msgid "This message contains remote images."
-msgstr ""
+msgstr "ਇਸ ਸੁਨੇਹੇ ਵਿੱਚ ਰਿਮੋਟ ਤਸਵੀਰਾਂ ਹਨ।"
 
 #: src/MessageList/MessageListItem.vala:282
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "ਇਸ ਸੁਨੇਹੇ ਵਿੱਚ ਇੱਕ ਜਾਂ ਵੱਧ ਨੱਥੀ ਫ਼ਾਇਲਾਂ ਹਨ"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:385
+#: src/MessageList/MessageListItem.vala:360
 msgid "Email Message"
-msgstr ""
+msgstr "ਈਮੇਲ ਸੁਨੇਹਾ"
 
-#: src/MessageList/MessageListItem.vala:407
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unable to print email"
-msgstr ""
+msgstr "ਈਮੇਲ ਪ੍ਰਿੰਟ ਨਹੀਂ ਹੋ ਸਕੀ"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
-msgstr ""
+msgstr "ਖੋਲ੍ਹੋ"
 
 #: src/MessageList/AttachmentButton.vala:43
 msgid "Save As…"
-msgstr ""
+msgstr "ਸਾਂਭੋ ਬਤੌਰ…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "ਅਣਜਾਣ"
 
 #: src/MessageList/AttachmentButton.vala:113
 msgid "Save"
-msgstr ""
+msgstr "ਸਾਂਭੋ"

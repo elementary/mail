@@ -472,7 +472,7 @@ public class Mail.Backend.Session : Camel.Session {
         return null;
     }
 
-    public async void save_draft (Camel.MimeMessage message, Camel.InternetAddress from, Camel.Address recipients) throws Error {
+    public async void save_draft (Camel.MimeMessage message, Camel.InternetAddress from, Camel.Address recipients, Camel.MessageInfo? ancestor_message_info = null) throws Error {
         var camel_store = get_camel_store_from_email (from);
         if (camel_store == null) {
             throw new Camel.ServiceError.UNAVAILABLE ("No camel service for saving draft found.");
@@ -495,6 +495,18 @@ public class Mail.Backend.Session : Camel.Session {
             throw new Camel.StoreError.NO_FOLDER ("Unable to connect to drafts folder.");
         }
 
-        yield drafts_folder.append_message (message, null, 0, null, null);
+        var message_info = new MessageInfo (Camel.MessageFlags.DRAFT);
+        yield drafts_folder.append_message (message, message_info, 0, null, null);
+
+        if (ancestor_message_info != null && Camel.MessageFlags.DRAFT in (int) ancestor_message_info.flags) {
+            ancestor_message_info.set_flags (Camel.MessageFlags.DELETED, ~0);
+            yield drafts_folder.expunge (GLib.Priority.DEFAULT, null);
+        }
+    }
+
+    private class MessageInfo: Camel.MessageInfoBase {
+        public MessageInfo (Camel.MessageFlags flags) {
+            Object (flags: flags);
+        }
     }
 }
