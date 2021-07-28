@@ -17,12 +17,12 @@
 # Alain Lojewski <allomervan@gmail.com>, 2015.
 # Cédric Bellegarde <cedric.bellegarde@adishatz.org>, 2015.
 #
-#: src/MessageList/MessageListItem.vala:408
+#: src/MessageList/MessageListItem.vala:383
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-16 19:27+0000\n"
+"POT-Creation-Date: 2021-07-27 19:13+0000\n"
 "PO-Revision-Date: 2021-06-30 13:09+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
@@ -121,145 +121,145 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Comptes en ligne…"
 
-#: src/Composer/ComposerWidget.vala:98 src/MessageList/MessageListItem.vala:95
+#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:95
 msgid "From:"
 msgstr "De :"
 
-#: src/Composer/ComposerWidget.vala:114
+#: src/Composer/ComposerWidget.vala:113
 #: src/MessageList/MessageListItem.vala:100
 msgid "To:"
 msgstr "À :"
 
-#: src/Composer/ComposerWidget.vala:118
+#: src/Composer/ComposerWidget.vala:117
 #: src/MessageList/MessageListItem.vala:105
 msgid "Subject:"
 msgstr "Objet :"
 
-#: src/Composer/ComposerWidget.vala:125
+#: src/Composer/ComposerWidget.vala:124
 msgid "Cc"
 msgstr "Cc"
 
-#: src/Composer/ComposerWidget.vala:127
+#: src/Composer/ComposerWidget.vala:126
 msgid "Bcc"
 msgstr "Cci"
 
-#: src/Composer/ComposerWidget.vala:134
+#: src/Composer/ComposerWidget.vala:133
 #: src/MessageList/MessageListItem.vala:134
 msgid "Cc:"
 msgstr "Cc :"
 
-#: src/Composer/ComposerWidget.vala:150
+#: src/Composer/ComposerWidget.vala:149
 msgid "Bcc:"
 msgstr "Cci :"
 
-#: src/Composer/ComposerWidget.vala:194
+#: src/Composer/ComposerWidget.vala:192
 msgid "Bold"
 msgstr "Gras"
 
-#: src/Composer/ComposerWidget.vala:201
+#: src/Composer/ComposerWidget.vala:199
 msgid "Italic"
 msgstr "Italique"
 
-#: src/Composer/ComposerWidget.vala:208
+#: src/Composer/ComposerWidget.vala:206
 msgid "Underline"
 msgstr "Souligné"
 
-#: src/Composer/ComposerWidget.vala:215
+#: src/Composer/ComposerWidget.vala:213
 msgid "Strikethrough"
 msgstr "Barré"
 
-#: src/Composer/ComposerWidget.vala:220
+#: src/Composer/ComposerWidget.vala:218
 msgid "Remove formatting"
 msgstr "Supprimer la mise en forme"
 
-#: src/Composer/ComposerWidget.vala:232 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:230 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "Insérer un lien"
 
-#: src/Composer/ComposerWidget.vala:263
+#: src/Composer/ComposerWidget.vala:261
 msgid "Delete draft"
 msgstr "Supprimer le brouillon"
 
-#: src/Composer/ComposerWidget.vala:268
+#: src/Composer/ComposerWidget.vala:266
 msgid "Attach file"
 msgstr "Joindre un fichier"
 
-#: src/Composer/ComposerWidget.vala:274
+#: src/Composer/ComposerWidget.vala:272
 msgid "Send"
 msgstr "Envoyer"
 
-#: src/Composer/ComposerWidget.vala:419
+#: src/Composer/ComposerWidget.vala:417
 msgid "Choose a file"
 msgstr "Choisir un fichier"
 
-#: src/Composer/ComposerWidget.vala:422
+#: src/Composer/ComposerWidget.vala:420
 msgid "Attach"
 msgstr "Joindre"
 
-#: src/Composer/ComposerWidget.vala:423 src/Composer/ComposerWidget.vala:575
+#: src/Composer/ComposerWidget.vala:421 src/Composer/ComposerWidget.vala:583
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Annuler"
 
-#: src/Composer/ComposerWidget.vala:487
+#: src/Composer/ComposerWidget.vala:495
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a %-e %b %Y à %-H:%M"
 
-#: src/Composer/ComposerWidget.vala:517
+#: src/Composer/ComposerWidget.vala:525
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Le %1$s, %2$s a écrit :"
 
-#: src/Composer/ComposerWidget.vala:521
+#: src/Composer/ComposerWidget.vala:529
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Message transféré ----------"
 
-#: src/Composer/ComposerWidget.vala:523
+#: src/Composer/ComposerWidget.vala:531
 #, c-format
 msgid "From: %s<br/>"
 msgstr "De : %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:524
+#: src/Composer/ComposerWidget.vala:532
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Objet : %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:525
+#: src/Composer/ComposerWidget.vala:533
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Date : %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:526
+#: src/Composer/ComposerWidget.vala:534
 #, c-format
 msgid "To: %s<br/>"
 msgstr "À : %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:528
+#: src/Composer/ComposerWidget.vala:536
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc : %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:566
+#: src/Composer/ComposerWidget.vala:574
 msgid "Permanently delete this draft?"
 msgstr "Supprimer définitivement ce brouillon ?"
 
-#: src/Composer/ComposerWidget.vala:567
+#: src/Composer/ComposerWidget.vala:575
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Vous ne pouvez pas annuler cette action, ni récupérer votre brouillon une "
 "fois qu'il a été supprimé."
 
-#: src/Composer/ComposerWidget.vala:577
+#: src/Composer/ComposerWidget.vala:585
 msgid "Delete Draft"
 msgstr "Supprimer le brouillon"
 
-#: src/Composer/ComposerWidget.vala:595
+#: src/Composer/ComposerWidget.vala:605
 msgid "Send without subject?"
 msgstr "Envoyer sans objet ?"
 
-#: src/Composer/ComposerWidget.vala:596
+#: src/Composer/ComposerWidget.vala:606
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -267,43 +267,43 @@ msgstr ""
 "Le champ objet de ce message est vide. Le destinataire pourrait ne pas être "
 "en mesure de reconnaître son importance."
 
-#: src/Composer/ComposerWidget.vala:602
+#: src/Composer/ComposerWidget.vala:612
 msgid "Don't Send"
 msgstr "Ne pas envoyer"
 
-#: src/Composer/ComposerWidget.vala:604
+#: src/Composer/ComposerWidget.vala:614
 msgid "Send Anyway"
 msgstr "Envoyer quand même"
 
-#: src/Composer/ComposerWidget.vala:625
+#: src/Composer/ComposerWidget.vala:636
 #, fuzzy
 #| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
 msgstr "Envoyer le message avec un contenu vide ?"
 
-#: src/Composer/ComposerWidget.vala:626
+#: src/Composer/ComposerWidget.vala:637
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:641
+#: src/Composer/ComposerWidget.vala:652
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to send message"
 msgstr "Supprimer le brouillon"
 
-#: src/Composer/ComposerWidget.vala:642
+#: src/Composer/ComposerWidget.vala:653
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:885
+#: src/Composer/ComposerWidget.vala:903
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to save draft"
 msgstr "Supprimer le brouillon"
 
-#: src/Composer/ComposerWidget.vala:886
+#: src/Composer/ComposerWidget.vala:904
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -419,11 +419,11 @@ msgid "This message contains one or more attachments"
 msgstr "Ce message contient des pièces jointes"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:385
+#: src/MessageList/MessageListItem.vala:360
 msgid "Email Message"
 msgstr "E-mail"
 
-#: src/MessageList/MessageListItem.vala:407
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unable to print email"
 msgstr "Impossible d'imprimer l'e-mail"
 

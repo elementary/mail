@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-16 19:27+0000\n"
+"POT-Creation-Date: 2021-07-27 19:13+0000\n"
 "PO-Revision-Date: 2021-07-22 10:38+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/mail/extra/sr/>\n"
@@ -70,10 +70,26 @@ msgstr ""
 "серверима"
 
 #: data/io.elementary.mail.appdata.xml.in:27
+msgid "Improvements:"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Preserve conversation subjects when replying or forwarding"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:30
+msgid "Disable the composer while messages are being sent"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:31
+msgid "Updated translations"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:37
 msgid "Complete rewrite from scratch"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:68
+#: data/io.elementary.mail.appdata.xml.in:78
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
