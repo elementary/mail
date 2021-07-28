@@ -28,6 +28,9 @@
         <ul>
           <li>Preserve conversation subjects when replying or forwarding</li>
           <li>Disable the composer while messages are being sent</li>
+          <li>Edit saved draft messages</li>
+          <li>Make sure we don't save sent messages twice for some account types</li>
+          <li>Stability improvements</li>
           <li>Updated translations</li>
         </ul>
       </description>

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 19:13+0000\n"
-"PO-Revision-Date: 2021-07-17 19:34+0000\n"
+"POT-Creation-Date: 2021-07-28 17:42+0000\n"
+"PO-Revision-Date: 2021-07-28 07:46+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/extra/he/>\n"
 "Language: he\n"
@@ -64,25 +64,35 @@ msgstr "עובד עם Gmail,‏ Yahoo! Mail ושרתי IMAP נפוצים נוס�
 
 #: data/io.elementary.mail.appdata.xml.in:27
 msgid "Improvements:"
-msgstr ""
+msgstr "שיפורים:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Preserve conversation subjects when replying or forwarding"
-msgstr ""
+msgstr "נושאי הדיון נשמרים בעת תגובה או העברה של הודעות"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Disable the composer while messages are being sent"
-msgstr ""
+msgstr "חלונית הכתיבה מושבתת בזמן שההודעות נשלחות"
 
 #: data/io.elementary.mail.appdata.xml.in:31
-msgid "Updated translations"
+msgid "Edit saved draft messages"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:37
+#: data/io.elementary.mail.appdata.xml.in:32
+#, fuzzy
+#| msgid "Improvements:"
+msgid "Stability improvements"
+msgstr "שיפורים:"
+
+#: data/io.elementary.mail.appdata.xml.in:33
+msgid "Updated translations"
+msgstr "עודכנו תרגומים"
+
+#: data/io.elementary.mail.appdata.xml.in:39
 msgid "Complete rewrite from scratch"
 msgstr "שכתוב מאפס"
 
-#: data/io.elementary.mail.appdata.xml.in:78
+#: data/io.elementary.mail.appdata.xml.in:80
 msgid "elementary, Inc."
 msgstr "elementary בע״מ"
 

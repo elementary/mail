@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 19:13+0000\n"
-"PO-Revision-Date: 2021-07-17 19:34+0000\n"
+"POT-Creation-Date: 2021-07-28 17:42+0000\n"
+"PO-Revision-Date: 2021-07-28 07:46+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/"
 ">\n"
@@ -68,25 +68,35 @@ msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:27
 msgid "Improvements:"
-msgstr ""
+msgstr "改善点:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Preserve conversation subjects when replying or forwarding"
-msgstr ""
+msgstr "返信や転送する際に件名を維持するように修正"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Disable the composer while messages are being sent"
-msgstr ""
+msgstr "メッセージの送信中は編集ウィンドウを無効化するように修正"
 
 #: data/io.elementary.mail.appdata.xml.in:31
-msgid "Updated translations"
+msgid "Edit saved draft messages"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:37
+#: data/io.elementary.mail.appdata.xml.in:32
+#, fuzzy
+#| msgid "Improvements:"
+msgid "Stability improvements"
+msgstr "改善点:"
+
+#: data/io.elementary.mail.appdata.xml.in:33
+msgid "Updated translations"
+msgstr "翻訳の更新"
+
+#: data/io.elementary.mail.appdata.xml.in:39
 msgid "Complete rewrite from scratch"
 msgstr "アプリを完全にゼロから書き直し"
 
-#: data/io.elementary.mail.appdata.xml.in:78
+#: data/io.elementary.mail.appdata.xml.in:80
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
