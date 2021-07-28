@@ -197,7 +197,10 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             message_list_box.set_conversation (node);
 
             if (node != null && node.message != null && Camel.MessageFlags.DRAFT in (int) node.message.flags) {
-                message_list_box.add_inline_composer.begin (ComposerWidget.Type.DRAFT);
+                message_list_box.add_inline_composer.begin (ComposerWidget.Type.DRAFT, null, (obj, res) => {
+                    message_list_box.add_inline_composer.end (res);
+                    scroll_message_list_to_bottom ();
+                });
             }
         });
 
