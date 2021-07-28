@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-28 17:56+0000\n"
-"PO-Revision-Date: 2021-07-28 07:46+0000\n"
+"PO-Revision-Date: 2021-07-29 01:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/"
-">\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/>"
+"\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -80,17 +80,15 @@ msgstr "メッセージの送信中は編集ウィンドウを無効化するよ
 
 #: data/io.elementary.mail.appdata.xml.in:31
 msgid "Edit saved draft messages"
-msgstr ""
+msgstr "保存済みの下書きを編集できる機能を追加"
 
 #: data/io.elementary.mail.appdata.xml.in:32
 msgid "Make sure we don't save sent messages twice for some account types"
-msgstr ""
+msgstr "アカウントの種類によっては送信済みのメッセージが二度保存されていた不具合を修正"
 
 #: data/io.elementary.mail.appdata.xml.in:33
-#, fuzzy
-#| msgid "Improvements:"
 msgid "Stability improvements"
-msgstr "改善点:"
+msgstr "安定性の改善"
 
 #: data/io.elementary.mail.appdata.xml.in:34
 msgid "Updated translations"
