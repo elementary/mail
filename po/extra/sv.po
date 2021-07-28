@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-28 17:42+0000\n"
+"POT-Creation-Date: 2021-07-28 17:56+0000\n"
 "PO-Revision-Date: 2016-07-21 16:08+0000\n"
 "Last-Translator: Mikael Nyberg <mikanybe@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -76,18 +76,22 @@ msgid "Edit saved draft messages"
 msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:32
-msgid "Stability improvements"
+msgid "Make sure we don't save sent messages twice for some account types"
 msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:33
+msgid "Stability improvements"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:34
 msgid "Updated translations"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:39
+#: data/io.elementary.mail.appdata.xml.in:40
 msgid "Complete rewrite from scratch"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:80
+#: data/io.elementary.mail.appdata.xml.in:81
 msgid "elementary, Inc."
 msgstr ""
 
