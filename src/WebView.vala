@@ -196,18 +196,41 @@ public class Mail.WebView : WebKit.WebView {
     }
 
     public async string? get_body_html () {
-        try {
-            var message = new WebKit.UserMessage ("get-body-html", new Variant.boolean (true));
-            var response = yield send_message_to_page (message, cancellable);
-            return response.parameters.get_string ();
-        } catch (Error e) {
-            // We can cancel the operation
-            if (!(e is GLib.IOError.CANCELLED)) {
-                critical (e.message);
+        string? body_html = null;
+
+        if (!loaded && !cancellable.is_cancelled ()) {
+            load_finished.connect (() => {
+                get_body_html.begin ((obj, res) => {
+                    body_html = get_body_html.end (res);
+                    get_body_html.callback ();
+                });
+            });
+
+            // this yield forces vala to wait until
+            // get_body_html.callback () is called.
+            // This is done by the above load_finished
+            // event handler. The very same handler sets
+            // the body_html variable before the callback
+            // is called. To sum up: Once the callback is
+            // called, the code proceeds execution
+            // below this yield statement - and by this
+            // time the body_html string is set correctly.
+            yield;
+
+        } else {
+            try {
+                var message = new WebKit.UserMessage ("get-body-html", new Variant.boolean (true));
+                var response = yield send_message_to_page (message, cancellable);
+                body_html = response.parameters.get_string ();
+            } catch (Error e) {
+                // We can cancel the operation
+                if (!(e is GLib.IOError.CANCELLED)) {
+                    critical (e.message);
+                }
             }
         }
 
-        return null;
+        return body_html;
     }
 
     private void handle_cid_request (WebKit.URISchemeRequest request) {
