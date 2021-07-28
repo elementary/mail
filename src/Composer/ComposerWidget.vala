@@ -51,6 +51,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private Gtk.Entry bcc_val;
     private Gtk.FlowBox attachment_box;
     private Gtk.Revealer cc_revealer;
+    private Gtk.Revealer bcc_revealer;
     private Gtk.ToggleButton cc_button;
     private Granite.Widgets.OverlayBar message_url_overlay;
     private Gtk.ComboBoxText from_combo;
@@ -161,7 +162,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         bcc_grid.add (bcc_label);
         bcc_grid.add (bcc_val);
 
-        var bcc_revealer = new Gtk.Revealer ();
+        bcc_revealer = new Gtk.Revealer ();
         bcc_revealer.add (bcc_grid);
 
         subject_val = new Gtk.Entry ();
@@ -498,6 +499,29 @@ public class Mail.ComposerWidget : Gtk.Grid {
             if (type == Type.DRAFT) {
                 ancestor_message_info = info;
                 message_content = content_to_quote;
+
+                unowned var to = message.get_recipients (Camel.RECIPIENT_TYPE_TO);
+                if (to != null) {
+                    to_val.text = to.format ();
+                }
+
+                unowned var cc = message.get_recipients (Camel.RECIPIENT_TYPE_CC);
+                if (cc != null) {
+                    cc_val.text = cc.format ();
+
+                    if (cc_val.text.length > 0) {
+                        cc_revealer.reveal_child = true;
+                    }
+                }
+
+                unowned var bcc = message.get_recipients (Camel.RECIPIENT_TYPE_BCC);
+                if (bcc != null) {
+                    bcc_val.text = bcc.format ();
+
+                    if (bcc_val.text.length > 0) {
+                        bcc_revealer.reveal_child = true;
+                    }
+                }
 
             } else {
                 message_content = "<br/><br/>";
