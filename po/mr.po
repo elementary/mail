@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 19:13+0000\n"
+"POT-Creation-Date: 2021-07-28 16:28+0000\n"
 "PO-Revision-Date: 2021-03-21 10:03+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/mail/mail/mr/>\n"
@@ -79,13 +79,13 @@ msgstr "संभाषणांना कचरापेटीत हलवा"
 msgid "Mail"
 msgstr "मेल"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:297
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "संदेश हटविला"
 msgstr[1] "संदेश हटवले"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:309
 msgid "Undo"
 msgstr "पूर्ववत करा"
 
@@ -101,149 +101,149 @@ msgstr "मेल सिस्टम सेटिंग्जमध्ये क
 msgid "Online Accounts…"
 msgstr "ऑनलाइन खाती …"
 
-#: src/Composer/ComposerWidget.vala:97 src/MessageList/MessageListItem.vala:95
+#: src/Composer/ComposerWidget.vala:100 src/MessageList/MessageListItem.vala:95
 msgid "From:"
 msgstr "प्रेषक:"
 
-#: src/Composer/ComposerWidget.vala:113
+#: src/Composer/ComposerWidget.vala:116
 #: src/MessageList/MessageListItem.vala:100
 msgid "To:"
 msgstr "प्राप्तकर्ता:"
 
-#: src/Composer/ComposerWidget.vala:117
+#: src/Composer/ComposerWidget.vala:120
 #: src/MessageList/MessageListItem.vala:105
 msgid "Subject:"
 msgstr "विषय:"
 
-#: src/Composer/ComposerWidget.vala:124
+#: src/Composer/ComposerWidget.vala:127
 msgid "Cc"
 msgstr "सीसी"
 
-#: src/Composer/ComposerWidget.vala:126
+#: src/Composer/ComposerWidget.vala:129
 msgid "Bcc"
 msgstr "बीसीसी"
 
-#: src/Composer/ComposerWidget.vala:133
+#: src/Composer/ComposerWidget.vala:136
 #: src/MessageList/MessageListItem.vala:134
 msgid "Cc:"
 msgstr "सीसी:"
 
-#: src/Composer/ComposerWidget.vala:149
+#: src/Composer/ComposerWidget.vala:152
 msgid "Bcc:"
 msgstr "बीसीसी:"
 
-#: src/Composer/ComposerWidget.vala:192
+#: src/Composer/ComposerWidget.vala:195
 msgid "Bold"
 msgstr "ठळक"
 
-#: src/Composer/ComposerWidget.vala:199
+#: src/Composer/ComposerWidget.vala:202
 msgid "Italic"
 msgstr "इटॅलिक"
 
-#: src/Composer/ComposerWidget.vala:206
+#: src/Composer/ComposerWidget.vala:209
 msgid "Underline"
 msgstr "अधोरेखित"
 
-#: src/Composer/ComposerWidget.vala:213
+#: src/Composer/ComposerWidget.vala:216
 msgid "Strikethrough"
 msgstr "खोडलेले"
 
-#: src/Composer/ComposerWidget.vala:218
+#: src/Composer/ComposerWidget.vala:221
 msgid "Remove formatting"
 msgstr "स्वरूपन(फॉरमॅटिंग) काढा"
 
-#: src/Composer/ComposerWidget.vala:230 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:233 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "दुवा टाका"
 
-#: src/Composer/ComposerWidget.vala:261
+#: src/Composer/ComposerWidget.vala:264
 msgid "Delete draft"
 msgstr "लिहून ठेवलेला मसुदा हटवा"
 
-#: src/Composer/ComposerWidget.vala:266
+#: src/Composer/ComposerWidget.vala:269
 msgid "Attach file"
 msgstr "फाईल जोडा"
 
-#: src/Composer/ComposerWidget.vala:272
+#: src/Composer/ComposerWidget.vala:275
 msgid "Send"
 msgstr "पाठवा"
 
-#: src/Composer/ComposerWidget.vala:417
+#: src/Composer/ComposerWidget.vala:420
 msgid "Choose a file"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:420
+#: src/Composer/ComposerWidget.vala:423
 #, fuzzy
 #| msgid "Attach file"
 msgid "Attach"
 msgstr "फाईल जोडा"
 
-#: src/Composer/ComposerWidget.vala:421 src/Composer/ComposerWidget.vala:583
+#: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:617
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "रद्द करा"
 
-#: src/Composer/ComposerWidget.vala:495
+#: src/Composer/ComposerWidget.vala:528
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %b %-e, %Y at %-l:%M %p"
 
-#: src/Composer/ComposerWidget.vala:525
+#: src/Composer/ComposerWidget.vala:558
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s ला, %2$s यांनी लिहीले:"
 
-#: src/Composer/ComposerWidget.vala:529
+#: src/Composer/ComposerWidget.vala:562
 msgid "---------- Forwarded message ----------"
 msgstr "---------- अग्रेषित संदेश ----------"
 
-#: src/Composer/ComposerWidget.vala:531
+#: src/Composer/ComposerWidget.vala:564
 #, c-format
 msgid "From: %s<br/>"
 msgstr "प्रेषक: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:532
+#: src/Composer/ComposerWidget.vala:565
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "विषय: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:533
+#: src/Composer/ComposerWidget.vala:566
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "दिनांक: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:534
+#: src/Composer/ComposerWidget.vala:567
 #, c-format
 msgid "To: %s<br/>"
 msgstr "प्राप्तकर्ता: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:536
+#: src/Composer/ComposerWidget.vala:569
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "सीसी: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:574
+#: src/Composer/ComposerWidget.vala:608
 msgid "Permanently delete this draft?"
 msgstr "हा मसुदा कायमचा हटवायचा?"
 
-#: src/Composer/ComposerWidget.vala:575
+#: src/Composer/ComposerWidget.vala:609
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "आपण ही क्रिया पूर्ववत करू शकत नाही किंवा आपला मसुदा हटविला गेल्यानंतर पुनर्प्राप्त करू शकत "
 "नाही."
 
-#: src/Composer/ComposerWidget.vala:585
+#: src/Composer/ComposerWidget.vala:619
 msgid "Delete Draft"
 msgstr "लिहून ठेवलेला मसुदा हटवा"
 
-#: src/Composer/ComposerWidget.vala:605
+#: src/Composer/ComposerWidget.vala:639
 #, fuzzy
 #| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
 msgstr "रिक्त विषयासह संदेश पाठवायचा?"
 
-#: src/Composer/ComposerWidget.vala:606
+#: src/Composer/ComposerWidget.vala:640
 #, fuzzy
 #| msgid ""
 #| "This message has an empty subject field. The recipient may not be able to "
@@ -255,41 +255,41 @@ msgstr ""
 "या संदेशामध्ये विषय फील्ड रिक्त आहे. त्यामुळे प्राप्तकर्त्यास संदेशाची व्याप्ती किंवा महत्त्व "
 "सांगण्यात सक्षम नाही."
 
-#: src/Composer/ComposerWidget.vala:612
+#: src/Composer/ComposerWidget.vala:646
 msgid "Don't Send"
 msgstr "पाठवू नका"
 
-#: src/Composer/ComposerWidget.vala:614
+#: src/Composer/ComposerWidget.vala:648
 msgid "Send Anyway"
 msgstr "तरीही पाठवा"
 
-#: src/Composer/ComposerWidget.vala:636
+#: src/Composer/ComposerWidget.vala:670
 msgid "Sent message was not saved"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:637
+#: src/Composer/ComposerWidget.vala:671
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:652
+#: src/Composer/ComposerWidget.vala:686
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to send message"
 msgstr "लिहून ठेवलेला मसुदा हटवा"
 
-#: src/Composer/ComposerWidget.vala:653
+#: src/Composer/ComposerWidget.vala:687
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:903
+#: src/Composer/ComposerWidget.vala:938
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to save draft"
 msgstr "लिहून ठेवलेला मसुदा हटवा"
 
-#: src/Composer/ComposerWidget.vala:904
+#: src/Composer/ComposerWidget.vala:939
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
