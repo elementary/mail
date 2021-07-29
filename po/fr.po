@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-28 17:56+0000\n"
+"POT-Creation-Date: 2021-07-29 22:10+0000\n"
 "PO-Revision-Date: 2021-06-30 13:09+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
@@ -98,13 +98,13 @@ msgstr "Déplacer les conversations dans la corbeille"
 msgid "Mail"
 msgstr "E-Mail"
 
-#: src/MainWindow.vala:297
+#: src/MainWindow.vala:294
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Message supprimé"
 msgstr[1] "Messages supprimés"
 
-#: src/MainWindow.vala:309
+#: src/MainWindow.vala:306
 msgid "Undo"
 msgstr "Annuler"
 

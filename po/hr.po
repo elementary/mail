@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-28 17:56+0000\n"
+"POT-Creation-Date: 2021-07-29 22:10+0000\n"
 "PO-Revision-Date: 2020-04-10 14:01+0000\n"
 "Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <https://l10n.elementary.io/projects/mail/mail/hr/>\n"
@@ -91,14 +91,14 @@ msgstr "Premjesti razgovore u smeće"
 msgid "Mail"
 msgstr "Pošta"
 
-#: src/MainWindow.vala:297
+#: src/MainWindow.vala:294
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Poruka obrisana"
 msgstr[1] "Poruka obrisane"
 msgstr[2] "Poruka obrisane"
 
-#: src/MainWindow.vala:309
+#: src/MainWindow.vala:306
 msgid "Undo"
 msgstr "Vrati"
 
