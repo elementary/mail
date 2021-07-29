@@ -524,7 +524,7 @@ public class Mail.Backend.Session : Camel.Session {
             throw new Camel.StoreError.NO_FOLDER ("Unable to connect to drafts folder.");
         }
 
-        var message_info = new MessageInfo (Camel.MessageFlags.DRAFT);
+        var message_info = new MessageInfo (Camel.MessageFlags.DRAFT | Camel.MessageFlags.SEEN);
         yield drafts_folder.append_message (message, message_info, 0, null, null);
 
         if (ancestor_message_info != null && Camel.MessageFlags.DRAFT in (int) ancestor_message_info.flags) {
