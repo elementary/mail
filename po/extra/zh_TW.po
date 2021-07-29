@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-29 22:10+0000\n"
+"POT-Creation-Date: 2021-07-29 22:20+0000\n"
 "PO-Revision-Date: 2016-08-06 15:00+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
@@ -68,44 +68,48 @@ msgstr ""
 "用"
 
 #: data/io.elementary.mail.appdata.xml.in:27
-#: data/io.elementary.mail.appdata.xml.in:36
+#: data/io.elementary.mail.appdata.xml.in:37
 msgid "Improvements:"
 msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:29
-msgid "Move Undo notification to the message view"
+msgid "Only save drafts when there are new changes"
 msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:30
-#: data/io.elementary.mail.appdata.xml.in:43
+msgid "Move Undo notification to the message view"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:31
+#: data/io.elementary.mail.appdata.xml.in:44
 msgid "Updated translations"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:38
+#: data/io.elementary.mail.appdata.xml.in:39
 msgid "Preserve conversation subjects when replying or forwarding"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:39
+#: data/io.elementary.mail.appdata.xml.in:40
 msgid "Disable the composer while messages are being sent"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:40
+#: data/io.elementary.mail.appdata.xml.in:41
 msgid "Edit saved draft messages"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:41
+#: data/io.elementary.mail.appdata.xml.in:42
 msgid "Make sure we don't save sent messages twice for some account types"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:42
+#: data/io.elementary.mail.appdata.xml.in:43
 msgid "Stability improvements"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:49
+#: data/io.elementary.mail.appdata.xml.in:50
 msgid "Complete rewrite from scratch"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:90
+#: data/io.elementary.mail.appdata.xml.in:91
 msgid "elementary, Inc."
 msgstr ""
 
