@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-28 17:56+0000\n"
+"POT-Creation-Date: 2021-07-29 22:10+0000\n"
 "PO-Revision-Date: 2021-07-28 18:58+0000\n"
 "Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/extra/de/>\n"
@@ -67,40 +67,46 @@ msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr "Funktioniert mit Gmail, Yahoo! Mail, und anderen IMAP-Servern"
 
 #: data/io.elementary.mail.appdata.xml.in:27
+#: data/io.elementary.mail.appdata.xml.in:36
 msgid "Improvements:"
 msgstr "Verbesserungen:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
+msgid "Move Undo notification to the message view"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:30
+#: data/io.elementary.mail.appdata.xml.in:43
+msgid "Updated translations"
+msgstr "Aktualisierte Übersetzungen"
+
+#: data/io.elementary.mail.appdata.xml.in:38
 msgid "Preserve conversation subjects when replying or forwarding"
 msgstr "Betreffzeilen beim Beantworten oder Weiterleiten beibehalten"
 
-#: data/io.elementary.mail.appdata.xml.in:30
+#: data/io.elementary.mail.appdata.xml.in:39
 msgid "Disable the composer while messages are being sent"
 msgstr "Editor deaktivieren während Nachrichten gesendet werden"
 
-#: data/io.elementary.mail.appdata.xml.in:31
+#: data/io.elementary.mail.appdata.xml.in:40
 msgid "Edit saved draft messages"
 msgstr "Gespeicherte Entwürfe bearbeiten"
 
-#: data/io.elementary.mail.appdata.xml.in:32
+#: data/io.elementary.mail.appdata.xml.in:41
 msgid "Make sure we don't save sent messages twice for some account types"
 msgstr ""
 "Sicherstellen, dass bei manchen Kontotypen Nachrichten nicht zweimal "
 "gesendet werden"
 
-#: data/io.elementary.mail.appdata.xml.in:33
+#: data/io.elementary.mail.appdata.xml.in:42
 msgid "Stability improvements"
 msgstr "Stabilitätsverbesserungen"
 
-#: data/io.elementary.mail.appdata.xml.in:34
-msgid "Updated translations"
-msgstr "Aktualisierte Übersetzungen"
-
-#: data/io.elementary.mail.appdata.xml.in:40
+#: data/io.elementary.mail.appdata.xml.in:49
 msgid "Complete rewrite from scratch"
 msgstr "Von Grund auf neu geschrieben"
 
-#: data/io.elementary.mail.appdata.xml.in:81
+#: data/io.elementary.mail.appdata.xml.in:90
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 

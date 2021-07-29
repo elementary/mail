@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-28 17:56+0000\n"
+"POT-Creation-Date: 2021-07-29 22:10+0000\n"
 "PO-Revision-Date: 2016-07-21 03:24+0000\n"
 "Last-Translator: Nicholas Ng <nbliang@gmail.com>\n"
 "Language-Team: Malay <ms@li.org>\n"
@@ -60,38 +60,44 @@ msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:27
+#: data/io.elementary.mail.appdata.xml.in:36
 msgid "Improvements:"
 msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:29
-msgid "Preserve conversation subjects when replying or forwarding"
+msgid "Move Undo notification to the message view"
 msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:30
-msgid "Disable the composer while messages are being sent"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:31
-msgid "Edit saved draft messages"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:32
-msgid "Make sure we don't save sent messages twice for some account types"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:33
-msgid "Stability improvements"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:34
+#: data/io.elementary.mail.appdata.xml.in:43
 msgid "Updated translations"
 msgstr ""
 
+#: data/io.elementary.mail.appdata.xml.in:38
+msgid "Preserve conversation subjects when replying or forwarding"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:39
+msgid "Disable the composer while messages are being sent"
+msgstr ""
+
 #: data/io.elementary.mail.appdata.xml.in:40
+msgid "Edit saved draft messages"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:41
+msgid "Make sure we don't save sent messages twice for some account types"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:42
+msgid "Stability improvements"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:49
 msgid "Complete rewrite from scratch"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:81
+#: data/io.elementary.mail.appdata.xml.in:90
 msgid "elementary, Inc."
 msgstr ""
 
