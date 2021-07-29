@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-28 17:56+0000\n"
-"PO-Revision-Date: 2021-07-29 16:29+0000\n"
+"PO-Revision-Date: 2021-07-29 16:30+0000\n"
 "Last-Translator: Kdwk <kdwkleung@protonmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "mail/mail/zh_Hant/>\n"
@@ -247,7 +247,7 @@ msgstr "您是否想永久刪除這些訊息？"
 #: src/Composer/ComposerWidget.vala:609
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
-msgstr ""
+msgstr "你不能還原此動作，亦不能復原已刪除的草稿。"
 
 #: src/Composer/ComposerWidget.vala:619
 #, fuzzy
