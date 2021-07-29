@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-28 17:56+0000\n"
-"PO-Revision-Date: 2021-07-29 16:30+0000\n"
+"PO-Revision-Date: 2021-07-29 17:55+0000\n"
 "Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "mail/mail/zh_Hant/>\n"
@@ -33,13 +33,12 @@ msgid "Search Mail"
 msgstr "搜尋郵件"
 
 #: src/HeaderBar.vala:50
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "永遠都顯示遠端圖片："
+msgstr "永遠顯示遠端圖片"
 
 #: src/HeaderBar.vala:53
 msgid "Account Settings…"
-msgstr ""
+msgstr "帳號設定…"
 
 #: src/HeaderBar.vala:76
 msgid "Menu"
@@ -50,9 +49,8 @@ msgid "Reply"
 msgstr "回覆"
 
 #: src/HeaderBar.vala:90
-#, fuzzy
 msgid "Reply All"
-msgstr "回覆所有人(_E)"
+msgstr "回覆所有人"
 
 #: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:191
 msgid "Forward"
@@ -77,7 +75,6 @@ msgid "Unstar"
 msgstr "取消標星(_N)"
 
 #: src/HeaderBar.vala:130
-#, fuzzy
 msgid "Mark Conversation"
 msgstr "標記對話"
 
@@ -87,9 +84,8 @@ msgid "Move conversations to archive"
 msgstr "搬移對話"
 
 #: src/HeaderBar.vala:144
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "搬移對話"
+msgstr "移動對話至垃圾桶"
 
 #: src/MainWindow.vala:72
 msgid "Mail"
@@ -244,7 +240,7 @@ msgstr "永久刪除此草稿？"
 #: src/Composer/ComposerWidget.vala:609
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
-msgstr "你不能還原此動作，亦不能復原已刪除的草稿。"
+msgstr "你不能還原此動作，亦不能復原已被刪除的草稿。"
 
 #: src/Composer/ComposerWidget.vala:619
 #, fuzzy
@@ -261,22 +257,19 @@ msgstr "是否要寄送主旨空白的訊息？"
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
-msgstr ""
+msgstr "此訊息之主旨為空。收件者可能無法推斷其主題及重要性。"
 
 #: src/Composer/ComposerWidget.vala:646
 msgid "Don't Send"
 msgstr ""
 
 #: src/Composer/ComposerWidget.vala:648
-#, fuzzy
 msgid "Send Anyway"
-msgstr "無論如何都開啟"
+msgstr "無論如何都送出"
 
 #: src/Composer/ComposerWidget.vala:670
-#, fuzzy
-#| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
-msgstr "是否要寄送沒有內文的訊息？"
+msgstr "寄出的訊息未被保存"
 
 #: src/Composer/ComposerWidget.vala:671
 msgid ""
@@ -381,9 +374,8 @@ msgid "All Mailboxes"
 msgstr "所有郵件"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "未選取對話。"
+msgstr "未選取任何訊息"
 
 #: src/MessageList/MessageListItem.vala:175
 #: src/MessageList/MessageListItem.vala:334
