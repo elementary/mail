@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-28 17:56+0000\n"
 "PO-Revision-Date: 2021-07-29 16:29+0000\n"
-"Last-Translator: largecreeper <largecreeper@gmail.com>\n"
+"Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "mail/mail/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -96,29 +96,25 @@ msgid "Mail"
 msgstr "郵件"
 
 #: src/MainWindow.vala:297
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "未選取對話。"
+msgstr[0] "訊息已被刪除"
 
 #: src/MainWindow.vala:309
-#, fuzzy
 msgid "Undo"
-msgstr "復原(_U)"
+msgstr "復原"
 
 #: src/WelcomeView.vala:40
-#, fuzzy
 msgid "Connect an Account"
-msgstr "移除帳號"
+msgstr "連接帳號"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
-msgstr ""
+msgstr "「郵件」使用系統設定中的電子郵件帳號。"
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "帳號"
+msgstr "線上帳號…"
 
 #: src/Composer/ComposerWidget.vala:100 src/MessageList/MessageListItem.vala:95
 msgid "From:"
@@ -135,14 +131,12 @@ msgid "Subject:"
 msgstr "主旨："
 
 #: src/Composer/ComposerWidget.vala:127
-#, fuzzy
 msgid "Cc"
-msgstr "副本："
+msgstr "副本"
 
 #: src/Composer/ComposerWidget.vala:129
-#, fuzzy
 msgid "Bcc"
-msgstr "密件副本："
+msgstr "密件副本"
 
 #: src/Composer/ComposerWidget.vala:136
 #: src/MessageList/MessageListItem.vala:134
@@ -162,19 +156,16 @@ msgid "Italic"
 msgstr ""
 
 #: src/Composer/ComposerWidget.vala:209
-#, fuzzy
 msgid "Underline"
-msgstr "底線 (Ctrl+U)"
+msgstr "底線"
 
 #: src/Composer/ComposerWidget.vala:216
-#, fuzzy
 msgid "Strikethrough"
-msgstr "刪劃線 (Ctrl+K)"
+msgstr "刪除線"
 
 #: src/Composer/ComposerWidget.vala:221
-#, fuzzy
 msgid "Remove formatting"
-msgstr "移除文字格式 (Ctrl+Space)"
+msgstr "移除文字格式"
 
 #: src/Composer/ComposerWidget.vala:233 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
