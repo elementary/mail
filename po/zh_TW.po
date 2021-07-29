@@ -11,17 +11,17 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-28 17:56+0000\n"
-"PO-Revision-Date: 2016-10-14 20:06+0000\n"
-"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/geary/"
-"language/zh_TW/)\n"
+"PO-Revision-Date: 2021-07-29 17:55+0000\n"
+"Last-Translator: Kdwk <kdwkleung@protonmail.com>\n"
+"Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
+"mail/mail/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
 
 #: src/HeaderBar.vala:40
 #, fuzzy
@@ -33,13 +33,12 @@ msgid "Search Mail"
 msgstr "搜尋郵件"
 
 #: src/HeaderBar.vala:50
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "永遠都顯示遠端圖片："
+msgstr "永遠顯示遠端圖片"
 
 #: src/HeaderBar.vala:53
 msgid "Account Settings…"
-msgstr ""
+msgstr "帳號設定…"
 
 #: src/HeaderBar.vala:76
 msgid "Menu"
@@ -50,9 +49,8 @@ msgid "Reply"
 msgstr "回覆"
 
 #: src/HeaderBar.vala:90
-#, fuzzy
 msgid "Reply All"
-msgstr "回覆所有人(_E)"
+msgstr "回覆所有人"
 
 #: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:191
 msgid "Forward"
@@ -77,7 +75,6 @@ msgid "Unstar"
 msgstr "取消標星(_N)"
 
 #: src/HeaderBar.vala:130
-#, fuzzy
 msgid "Mark Conversation"
 msgstr "標記對話"
 
@@ -87,38 +84,33 @@ msgid "Move conversations to archive"
 msgstr "搬移對話"
 
 #: src/HeaderBar.vala:144
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "搬移對話"
+msgstr "移動對話至垃圾桶"
 
 #: src/MainWindow.vala:72
 msgid "Mail"
 msgstr "郵件"
 
 #: src/MainWindow.vala:297
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "未選取對話。"
+msgstr[0] "訊息已被刪除"
 
 #: src/MainWindow.vala:309
-#, fuzzy
 msgid "Undo"
-msgstr "復原(_U)"
+msgstr "復原"
 
 #: src/WelcomeView.vala:40
-#, fuzzy
 msgid "Connect an Account"
-msgstr "移除帳號"
+msgstr "連接帳號"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
-msgstr ""
+msgstr "「郵件」使用系統設定中的電子郵件帳號。"
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "帳號"
+msgstr "線上帳號…"
 
 #: src/Composer/ComposerWidget.vala:100 src/MessageList/MessageListItem.vala:95
 msgid "From:"
@@ -135,14 +127,12 @@ msgid "Subject:"
 msgstr "主旨："
 
 #: src/Composer/ComposerWidget.vala:127
-#, fuzzy
 msgid "Cc"
-msgstr "副本："
+msgstr "副本"
 
 #: src/Composer/ComposerWidget.vala:129
-#, fuzzy
 msgid "Bcc"
-msgstr "密件副本："
+msgstr "密件副本"
 
 #: src/Composer/ComposerWidget.vala:136
 #: src/MessageList/MessageListItem.vala:134
@@ -155,30 +145,27 @@ msgstr "密件副本："
 
 #: src/Composer/ComposerWidget.vala:195
 msgid "Bold"
-msgstr ""
+msgstr "粗體"
 
 #: src/Composer/ComposerWidget.vala:202
 msgid "Italic"
-msgstr ""
+msgstr "斜體"
 
 #: src/Composer/ComposerWidget.vala:209
-#, fuzzy
 msgid "Underline"
-msgstr "底線 (Ctrl+U)"
+msgstr "底線"
 
 #: src/Composer/ComposerWidget.vala:216
-#, fuzzy
 msgid "Strikethrough"
-msgstr "刪劃線 (Ctrl+K)"
+msgstr "刪除線"
 
 #: src/Composer/ComposerWidget.vala:221
-#, fuzzy
 msgid "Remove formatting"
-msgstr "移除文字格式 (Ctrl+Space)"
+msgstr "移除文字格式"
 
 #: src/Composer/ComposerWidget.vala:233 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
-msgstr ""
+msgstr "插入連結"
 
 #: src/Composer/ComposerWidget.vala:264
 msgid "Delete draft"
@@ -222,41 +209,38 @@ msgid "---------- Forwarded message ----------"
 msgstr "---------- 轉寄的訊息 ----------"
 
 #: src/Composer/ComposerWidget.vala:564
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "寄件者：%s\n"
+msgstr "寄件者：%s<br/>"
 
 #: src/Composer/ComposerWidget.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "主旨：%s\n"
+msgstr "主旨：%s<br/>"
 
 #: src/Composer/ComposerWidget.vala:566
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "日期：%s\n"
+msgstr "日期：%s<br/>"
 
 #: src/Composer/ComposerWidget.vala:567
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "收件者：%s\n"
+msgstr "收件者：%s<br/>"
 
 #: src/Composer/ComposerWidget.vala:569
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "副本：%s\n"
+msgstr "副本：%s<br/>"
 
 #: src/Composer/ComposerWidget.vala:608
-#, fuzzy
-#| msgid "Do you want to permanently delete this message?"
-#| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
-msgstr "您是否想永久刪除這些訊息？"
+msgstr "永久刪除此草稿？"
 
 #: src/Composer/ComposerWidget.vala:609
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
-msgstr ""
+msgstr "你不能還原此動作，亦不能復原已被刪除的草稿。"
 
 #: src/Composer/ComposerWidget.vala:619
 #, fuzzy
@@ -273,22 +257,19 @@ msgstr "是否要寄送主旨空白的訊息？"
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
-msgstr ""
+msgstr "此訊息之主旨為空。收件者可能無法推斷其主題及重要性。"
 
 #: src/Composer/ComposerWidget.vala:646
 msgid "Don't Send"
-msgstr ""
+msgstr "不要寄出"
 
 #: src/Composer/ComposerWidget.vala:648
-#, fuzzy
 msgid "Send Anyway"
-msgstr "無論如何都開啟"
+msgstr "無論如何都送出"
 
 #: src/Composer/ComposerWidget.vala:670
-#, fuzzy
-#| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
-msgstr "是否要寄送沒有內文的訊息？"
+msgstr "寄出的訊息未被保存"
 
 #: src/Composer/ComposerWidget.vala:671
 msgid ""
@@ -337,11 +318,11 @@ msgstr "轉寄"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://example.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
 #, fuzzy
@@ -393,9 +374,8 @@ msgid "All Mailboxes"
 msgstr "所有郵件"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "未選取對話。"
+msgstr "未選取任何訊息"
 
 #: src/MessageList/MessageListItem.vala:175
 #: src/MessageList/MessageListItem.vala:334
