@@ -22,6 +22,15 @@
       <binary>io.elementary.mail</binary>
   </provides>
   <releases>
+    <release version="6.1.1" date="2021-07-29" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Move Undo notification to the message view</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="6.1.0" date="2021-07-28" urgency="medium">
       <description>
         <p>Improvements:</p>
