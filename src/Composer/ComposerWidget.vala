@@ -890,7 +890,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     }
 
     public override void destroy () {
-        if (discard_draft) {
+        if (discard_draft || !web_view.body_html_changed) {
             base.destroy ();
             return;
         }
