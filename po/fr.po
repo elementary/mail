@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-29 22:20+0000\n"
-"PO-Revision-Date: 2021-06-30 13:09+0000\n"
+"PO-Revision-Date: 2021-07-30 18:53+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
 "Language: fr\n"
@@ -276,36 +276,34 @@ msgid "Send Anyway"
 msgstr "Envoyer quand même"
 
 #: src/Composer/ComposerWidget.vala:670
-#, fuzzy
-#| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
-msgstr "Envoyer le message avec un contenu vide ?"
+msgstr "Le message envoyé n'a pas été enregistré"
 
 #: src/Composer/ComposerWidget.vala:671
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
+"Le message a été envoyé, mais aucune copie n'a été enregistrée dans le "
+"dossier des messages envoyés."
 
 #: src/Composer/ComposerWidget.vala:686
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to send message"
-msgstr "Supprimer le brouillon"
+msgstr "Échec de l'envoi du message"
 
 #: src/Composer/ComposerWidget.vala:687
 msgid "There was an unexpected error while sending your message."
-msgstr ""
+msgstr "Une erreur inattendue s'est produite lors de l'envoi de votre message."
 
 #: src/Composer/ComposerWidget.vala:938
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to save draft"
-msgstr "Supprimer le brouillon"
+msgstr "Échec de l'enregistrement du brouillon"
 
 #: src/Composer/ComposerWidget.vala:939
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
+"Une erreur inattendue s'est produite lors de l'enregistrement de votre "
+"brouillon."
 
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
