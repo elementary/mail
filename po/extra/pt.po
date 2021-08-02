@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-29 22:20+0000\n"
-"PO-Revision-Date: 2021-07-19 03:00+0000\n"
+"PO-Revision-Date: 2021-08-02 15:47+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/extra/pt/"
 ">\n"
@@ -67,40 +67,42 @@ msgstr "Funciona com Gmail, Yahoo! Mail e outros servidores IMAP populares"
 #: data/io.elementary.mail.appdata.xml.in:27
 #: data/io.elementary.mail.appdata.xml.in:37
 msgid "Improvements:"
-msgstr ""
+msgstr "Melhorias:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Only save drafts when there are new changes"
-msgstr ""
+msgstr "Apenas guardar rascunhos quando há novas alterações"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Move Undo notification to the message view"
-msgstr ""
+msgstr "Mover a notificação de Anular para a vista de mensagem"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 #: data/io.elementary.mail.appdata.xml.in:44
 msgid "Updated translations"
-msgstr ""
+msgstr "Traduções atualizadas"
 
 #: data/io.elementary.mail.appdata.xml.in:39
 msgid "Preserve conversation subjects when replying or forwarding"
-msgstr ""
+msgstr "Preservar temas de conversação ao responder ou reencaminhar"
 
 #: data/io.elementary.mail.appdata.xml.in:40
 msgid "Disable the composer while messages are being sent"
-msgstr ""
+msgstr "Desativar o compositor enquanto as mensagens são enviadas"
 
 #: data/io.elementary.mail.appdata.xml.in:41
 msgid "Edit saved draft messages"
-msgstr ""
+msgstr "Editar mensagens de rascunho guardadas"
 
 #: data/io.elementary.mail.appdata.xml.in:42
 msgid "Make sure we don't save sent messages twice for some account types"
 msgstr ""
+"Certifique-se de que não guardamos duas vezes as mensagens enviadas para "
+"alguns tipos de conta"
 
 #: data/io.elementary.mail.appdata.xml.in:43
 msgid "Stability improvements"
-msgstr ""
+msgstr "Melhorias de estabilidade"
 
 #: data/io.elementary.mail.appdata.xml.in:50
 msgid "Complete rewrite from scratch"
