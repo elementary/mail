@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-29 22:20+0000\n"
-"PO-Revision-Date: 2021-07-30 18:53+0000\n"
+"PO-Revision-Date: 2021-08-12 09:20+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
 "Language: fr\n"
@@ -96,7 +96,7 @@ msgstr "Déplacer les conversations dans la corbeille"
 
 #: src/MainWindow.vala:72
 msgid "Mail"
-msgstr "E-Mail"
+msgstr "Messagerie"
 
 #: src/MainWindow.vala:294
 msgid "Message Deleted"
@@ -115,7 +115,8 @@ msgstr "Connecter un compte"
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
-"E-Mail utilise les comptes e-mail configurés dans les paramètres du système."
+"Messagerie utilise les comptes de messagerie configurés dans les paramètres "
+"du système."
 
 #: src/WelcomeView.vala:50
 msgid "Online Accounts…"
