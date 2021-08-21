@@ -1,4 +1,8 @@
-project('io.elementary.mail', 'vala', 'c')
+project(
+    'io.elementary.mail',
+    'vala', 'c',
+    version: '6.1.0'
+)
 
 gnome = import('gnome')
 i18n = import('i18n')

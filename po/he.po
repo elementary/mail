@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-28 16:28+0000\n"
+"POT-Creation-Date: 2021-07-29 22:20+0000\n"
 "PO-Revision-Date: 2021-07-16 19:27+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
@@ -93,13 +93,13 @@ msgstr "העברת דיונים לאשפה"
 msgid "Mail"
 msgstr "דואר"
 
-#: src/MainWindow.vala:297
+#: src/MainWindow.vala:294
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "הודעה נמחקה"
 msgstr[1] "הודעות נמחקו"
 
-#: src/MainWindow.vala:309
+#: src/MainWindow.vala:306
 msgid "Undo"
 msgstr "ביטול"
 

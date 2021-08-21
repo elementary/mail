@@ -25,7 +25,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Grid container_grid;
 
     private FoldersListView folders_list_view;
-    private Gtk.Overlay conversation_list_overlay;
+    private Gtk.Overlay view_overlay;
     private ConversationListBox conversation_list_box;
     private Gtk.ScrolledWindow conversation_list_scrolled;
     private MessageListBox message_list_box;
@@ -135,9 +135,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         conversation_list_scrolled.width_request = 158;
         conversation_list_scrolled.add (conversation_list_box);
 
-        conversation_list_overlay = new Gtk.Overlay ();
-        conversation_list_overlay.add (conversation_list_scrolled);
-
         message_list_scrolled = new Gtk.ScrolledWindow (null, null);
         message_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         message_list_scrolled.add (message_list_box);
@@ -147,7 +144,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
         }
 
-        var view_overlay = new Gtk.Overlay ();
+        view_overlay = new Gtk.Overlay ();
         view_overlay.add (message_list_scrolled);
         var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
         message_overlay.no_show_all = true;
@@ -164,7 +161,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_start.pack1 (folders_list_view, false, false);
-        paned_start.pack2 (conversation_list_overlay, true, false);
+        paned_start.pack2 (conversation_list_scrolled, true, false);
 
         paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_end.pack1 (paned_start, false, false);
@@ -299,8 +296,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void send_move_toast (string message) {
-        foreach (weak Gtk.Widget child in conversation_list_overlay.get_children ()) {
-            if (child != conversation_list_scrolled) {
+        foreach (weak Gtk.Widget child in view_overlay.get_children ()) {
+            if (child is Granite.Widgets.Toast) {
                 child.destroy ();
             }
         }
@@ -319,7 +316,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
-        conversation_list_overlay.add_overlay (toast);
+        view_overlay.add_overlay (toast);
         toast.send_notification ();
     }
 

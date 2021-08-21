@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-28 16:28+0000\n"
+"POT-Creation-Date: 2021-07-29 22:20+0000\n"
 "PO-Revision-Date: 2017-01-27 17:54+0000\n"
 "Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: www.gnome.gr\n"
@@ -99,14 +99,14 @@ msgstr "Μετακίνηση συνομιλιών"
 msgid "Mail"
 msgstr "Αλληλογραφία"
 
-#: src/MainWindow.vala:297
+#: src/MainWindow.vala:294
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Δεν επιλέχθηκαν συνομιλίες."
 msgstr[1] "Δεν επιλέχθηκαν συνομιλίες."
 
-#: src/MainWindow.vala:309
+#: src/MainWindow.vala:306
 #, fuzzy
 msgid "Undo"
 msgstr "_Αναίρεση"

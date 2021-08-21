@@ -26,6 +26,8 @@ public class Mail.WebView : WebKit.WebView {
     public signal void selection_changed ();
     public signal void load_finished ();
 
+    public bool body_html_changed { get; private set; default = false; }
+
     private const string INTERNAL_URL_BODY = "elementary-mail:body";
     private const string SERVER_BUS_NAME = "io.elementary.mail.WebViewServer";
 
@@ -59,6 +61,10 @@ public class Mail.WebView : WebKit.WebView {
 
         decide_policy.connect (on_decide_policy);
         load_changed.connect (on_load_changed);
+
+        key_release_event.connect (() => {
+            body_html_changed = true;
+        });
     }
 
     public WebView () {
@@ -178,6 +184,7 @@ public class Mail.WebView : WebKit.WebView {
     public void execute_editor_command (string command, string argument = "") {
         var message = new WebKit.UserMessage ("execute-editor-command", new Variant ("(ss)", command, argument));
         send_message_to_page.begin (message, cancellable);
+        body_html_changed = true;
     }
 
     public async bool query_command_state (string command) {

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-28 16:28+0000\n"
-"PO-Revision-Date: 2021-07-18 08:08+0000\n"
+"POT-Creation-Date: 2021-07-29 22:20+0000\n"
+"PO-Revision-Date: 2021-07-29 22:38+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/extra/en_GB/>\n"
@@ -65,30 +65,48 @@ msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 
 #: data/io.elementary.mail.appdata.xml.in:27
+#: data/io.elementary.mail.appdata.xml.in:37
 msgid "Improvements:"
-msgstr ""
+msgstr "Improvements:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
-msgid "Preserve conversation subjects when replying or forwarding"
-msgstr ""
+msgid "Only save drafts when there are new changes"
+msgstr "Only save drafts when there are new changes"
 
 #: data/io.elementary.mail.appdata.xml.in:30
-msgid "Disable the composer while messages are being sent"
-msgstr ""
+msgid "Move Undo notification to the message view"
+msgstr "Move Undo notification to the message view"
 
 #: data/io.elementary.mail.appdata.xml.in:31
-msgid "Edit saved draft messages"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:32
+#: data/io.elementary.mail.appdata.xml.in:44
 msgid "Updated translations"
-msgstr ""
+msgstr "Updated translations"
 
-#: data/io.elementary.mail.appdata.xml.in:38
+#: data/io.elementary.mail.appdata.xml.in:39
+msgid "Preserve conversation subjects when replying or forwarding"
+msgstr "Preserve conversation subjects when replying or forwarding"
+
+#: data/io.elementary.mail.appdata.xml.in:40
+msgid "Disable the composer while messages are being sent"
+msgstr "Disable the composer while messages are being sent"
+
+#: data/io.elementary.mail.appdata.xml.in:41
+msgid "Edit saved draft messages"
+msgstr "Edit saved draft messages"
+
+#: data/io.elementary.mail.appdata.xml.in:42
+msgid "Make sure we don't save sent messages twice for some account types"
+msgstr "Make sure we don't save sent messages twice for some account types"
+
+#: data/io.elementary.mail.appdata.xml.in:43
+msgid "Stability improvements"
+msgstr "Stability improvements"
+
+#: data/io.elementary.mail.appdata.xml.in:50
 msgid "Complete rewrite from scratch"
 msgstr "Complete rewrite from scratch"
 
-#: data/io.elementary.mail.appdata.xml.in:79
+#: data/io.elementary.mail.appdata.xml.in:91
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 

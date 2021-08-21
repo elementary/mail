@@ -364,13 +364,19 @@ public class Mail.Backend.Session : Camel.Session {
         return null;
     }
 
-    private Camel.Transport? get_camel_transport_from_mail_submission_source (E.Source mail_submission_source) throws GLib.Error {
+    private E.Source? get_transport_source_from_mail_submission_source (E.Source mail_submission_source) throws GLib.Error {
         if (!mail_submission_source.has_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION)) {
             return null;
         }
 
         unowned E.SourceMailSubmission mail_submission = (E.SourceMailSubmission) mail_submission_source.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
-        var transport_source = registry.ref_source (mail_submission.transport_uid);
+        return registry.ref_source (mail_submission.transport_uid);
+    }
+
+    private Camel.Transport? get_camel_transport_from_transport_source (E.Source transport_source) throws GLib.Error {
+        if (!transport_source.has_extension (E.SOURCE_EXTENSION_MAIL_TRANSPORT)) {
+            return null;
+        }
         unowned E.SourceMailTransport mail_transport = (E.SourceMailTransport) transport_source.get_extension (E.SOURCE_EXTENSION_MAIL_TRANSPORT);
 
         return add_service (transport_source.uid, mail_transport.backend_name, Camel.ProviderType.TRANSPORT) as Camel.Transport;
@@ -382,7 +388,12 @@ public class Mail.Backend.Session : Camel.Session {
             throw new Camel.Error.ERROR_GENERIC ("Unable to retrieve source for mail submission.");
         }
 
-        Camel.Transport? transport = get_camel_transport_from_mail_submission_source (mail_submission_source);
+        E.Source? transport_source = get_transport_source_from_mail_submission_source (mail_submission_source);
+        if (transport_source == null) {
+            throw new Camel.Error.ERROR_GENERIC ("Unable to retrieve source for transport.");
+        }
+
+        Camel.Transport? transport = get_camel_transport_from_transport_source (transport_source);
         if (transport == null) {
             throw new Camel.ServiceError.UNAVAILABLE ("No camel service for sending email found.");
         }
@@ -392,8 +403,26 @@ public class Mail.Backend.Session : Camel.Session {
         yield transport.send_to (message, from, recipients, GLib.Priority.LOW, null, out sent_message_saved);
         yield transport.disconnect (true, GLib.Priority.LOW, null);
 
+        if (transport_source.has_extension (E.SOURCE_EXTENSION_AUTHENTICATION)) {
+            unowned var transport_auth_extension = (E.SourceAuthentication) transport_source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
+
+            if (
+                E.util_utf8_strstrcase (transport_auth_extension.host, ".gmail.com") != null ||
+                E.util_utf8_strstrcase (transport_auth_extension.host, ".googlemail.com") != null ||
+                E.util_utf8_strstrcase (transport_auth_extension.host, ".office365.com") != null
+            ) {
+                /*
+                 * Skip appending to Sent folder for GMail and Office 365, because both store sent messages
+                 * automatically, thus it would make doubled copies on the server.
+                 * https://gitlab.gnome.org/GNOME/evolution-data-server/-/blob/master/src/camel/providers/imapx/camel-imapx-store.c#L2811
+                */
+                sent_message_saved = true;
+            }
+        }
+
         if (!sent_message_saved) {
             var provider = transport.get_provider ();
+
             if (provider != null && Camel.ProviderFlags.DISABLE_SENT_FOLDER in provider.flags) {
                 debug ("Sent folder is disabled - sent message is not saved.");
 
