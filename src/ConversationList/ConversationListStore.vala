@@ -30,7 +30,11 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
     private unowned RowVisibilityFunc filter_func;
 
     public override uint get_n_items () {
-        return data.get_length ();
+        uint data_length = 0;
+        lock (data) {
+            data_length = data.get_length ();
+        }
+        return data_length;
     }
 
     public override GLib.Object? get_item (uint index) {
@@ -55,7 +59,9 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
         }
 
         if (iter == null) {
-            iter = data.get_iter_at_pos ((int)index);
+            lock (data) {
+                iter = data.get_iter_at_pos ((int)index);
+            }
         }
 
         last_iter = iter;
@@ -77,10 +83,12 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
     }
 
     public void add (ConversationItemModel data) {
-        if (compare_func != null) {
-            this.data.insert_sorted (data, compare_func);
-        } else {
-            this.data.append (data);
+        lock (this.data) {
+            if (compare_func != null) {
+                this.data.insert_sorted (data, compare_func);
+            } else {
+                this.data.append (data);
+            }
         }
 
         last_iter = null;
@@ -88,15 +96,19 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
     }
 
     public void remove (ConversationItemModel data) {
-        var iter = this.data.get_iter_at_pos (get_index_of_unfiltered (data));
-        iter.remove ();
+        lock (this.data) {
+            var iter = this.data.get_iter_at_pos (get_index_of_unfiltered (data));
+            iter.remove ();
+        }
 
         last_iter = null;
         last_position = uint.MAX;
     }
 
     public void remove_all () {
-        data.get_begin_iter ().remove_range (data.get_end_iter ());
+        lock (data) {
+            data.get_begin_iter ().remove_range (data.get_end_iter ());
+        }
         unselect_all ();
 
         last_iter = null;
