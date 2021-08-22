@@ -26,12 +26,12 @@ public class Mail.MoveHandler {
     private Camel.Folder src_folder;
     private Camel.Folder? dst_folder;
     private Gee.ArrayList<weak Camel.MessageInfo> moved_messages;
-    private bool frozen = false;
     private uint timeout_id = 0;
     private MoveType move_type;
 
     public int delete_threads (Camel.Folder folder, Gee.ArrayList<Camel.FolderThreadNode?> threads) {
         src_folder = folder;
+        dst_folder = null;
         move_type = MoveType.TRASH;
 
         moved_messages = new Gee.ArrayList<weak Camel.MessageInfo> ();
@@ -41,7 +41,6 @@ public class Mail.MoveHandler {
         }
 
         src_folder.freeze ();
-        frozen = true;
 
         timeout_id = Timeout.add_seconds (10, () => {
             expire_undo ();
@@ -52,6 +51,8 @@ public class Mail.MoveHandler {
         foreach (var info in moved_messages) {
             info.set_flags (Camel.MessageFlags.DELETED, ~0);
         }
+
+        src_folder.thaw ();
 
         return moved_messages.size;
     }
@@ -97,7 +98,6 @@ public class Mail.MoveHandler {
 
         dst_folder.freeze ();
         src_folder.freeze ();
-        frozen = true;
 
         try {
             if (yield folder.transfer_messages_to (uids, dst_folder, true, Priority.DEFAULT, null, null)) {
@@ -113,7 +113,7 @@ public class Mail.MoveHandler {
         } catch (Error e) {
             warning ("Unable to archive messages due to an unexpected error: %s", e.message);
 
-            frozen = false;
+        } finally {
             src_folder.thaw ();
             dst_folder.thaw ();
         }
@@ -192,9 +192,11 @@ public class Mail.MoveHandler {
 
     public async void undo_last_move () {
         if (move_type == MoveType.TRASH) {
+            src_folder.freeze ();
             foreach (var info in moved_messages) {
                 info.set_flags (Camel.MessageFlags.DELETED, 0);
             }
+            src_folder.thaw ();
         }
     }
 
@@ -202,15 +204,6 @@ public class Mail.MoveHandler {
         if (timeout_id != 0) {
             Source.remove (timeout_id);
             timeout_id = 0;
-        }
-
-        if (frozen) {
-            frozen = false;
-            src_folder.thaw ();
-
-            if (dst_folder != null && dst_folder.is_frozen ()) {
-                dst_folder.thaw ();
-            }
         }
     }
 
