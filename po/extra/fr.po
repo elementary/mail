@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-29 22:20+0000\n"
-"PO-Revision-Date: 2021-07-30 18:53+0000\n"
+"PO-Revision-Date: 2021-08-12 09:20+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/extra/fr/>\n"
 "Language: fr\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: data/io.elementary.mail.appdata.xml.in:8
 #: data/io.elementary.mail.desktop.in:3
 msgid "Mail"
-msgstr "E-Mail"
+msgstr "Messagerie"
 
 #: data/io.elementary.mail.appdata.xml.in:9
 #: data/io.elementary.mail.desktop.in:4
@@ -35,7 +35,7 @@ msgid ""
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
 msgstr ""
-"Mail vous permet de gérer rapidement et efficacement vos e-mails. "
+"Messagerie vous permet de gérer rapidement et efficacement vos e-mails. "
 "L'interface est configurée en mode conversation vous laissant ainsi la "
 "possibilité de suivre une discussion entière sans action particulière de "
 "votre part."
@@ -127,7 +127,7 @@ msgstr "io.elementary.mail"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
-msgstr "Email;E-mail;Mail;Courriel;Courrier;électronique;Pourriel;"
+msgstr "Email;E-mail;Mail;Messagerie;Courriel;Courrier;"
 
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
