@@ -22,7 +22,16 @@
 
 public class Mail.ConversationItemModel : GLib.Object {
     public string service_uid { get; construct; }
-    public Camel.FolderThreadNode? node;
+
+    private Camel.FolderThreadNode? _node;
+    public Camel.FolderThreadNode? node {
+        get { return _node; }
+        set {
+            lock (_node) {
+                _node = value;
+            }
+        }
+    }
 
     public string formatted_date {
         owned get {
@@ -32,7 +41,14 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public uint num_messages {
         get {
-            return count_thread_messages (node);
+            uint count = 0;
+
+            lock (node) {
+                if (node != null) {
+                    count = count_thread_messages (node);
+                }
+            }
+            return count;
         }
     }
 
@@ -40,30 +56,32 @@ public class Mail.ConversationItemModel : GLib.Object {
         owned get {
             string[] senders = {};
 
-            unowned Camel.FolderThreadNode? current_node = node;
-            while (current_node != null) {
-                weak Camel.MessageInfo? message = current_node.message;
-                if (message != null) {
-                    var address = new Camel.InternetAddress ();
-                    if (address.decode (message.from) > 0) {
-                        unowned string? ia_name;
-                        unowned string? ia_address;
+            lock (node) {
+                unowned Camel.FolderThreadNode? current_node = node;
+                while (current_node != null) {
+                    weak Camel.MessageInfo? message = current_node.message;
+                    if (message != null) {
+                        var address = new Camel.InternetAddress ();
+                        if (address.decode (message.from) > 0) {
+                            unowned string? ia_name;
+                            unowned string? ia_address;
 
-                        string sender;
-                        address.get (0, out ia_name, out ia_address);
-                        if (ia_name != null && ia_name != "") {
-                            sender = ia_name;
-                        } else {
-                            sender = ia_address;
-                        }
+                            string sender;
+                            address.get (0, out ia_name, out ia_address);
+                            if (ia_name != null && ia_name != "") {
+                                sender = ia_name;
+                            } else {
+                                sender = ia_address;
+                            }
 
-                        if (!(sender in senders)) {
-                            senders += sender;
+                            if (!(sender in senders)) {
+                                senders += sender;
+                            }
                         }
                     }
-                }
 
-                current_node = (Camel.FolderThreadNode?) current_node.child;
+                    current_node = (Camel.FolderThreadNode?) current_node.child;
+                }
             }
 
             if (senders.length > 0) {
@@ -75,85 +93,106 @@ public class Mail.ConversationItemModel : GLib.Object {
     }
 
     public string subject {
-        get {
-            weak Camel.MessageInfo? message = node.message;
-            if (message == null) {
-                return _("Unknown");
-            }
+        owned get {
+            string subject = "";
 
-            return message.subject;
+            lock (node) {
+                if (node == null || node.message == null) {
+                    subject = _("Unknown");
+                } else {
+                    subject = node.message.subject;
+                }
+            }
+            return subject;
         }
     }
 
     public bool flagged {
         get {
-            weak Camel.MessageInfo? message = node.message;
-            if (message == null) {
-                return false;
-            }
+            bool flagged = false;
 
-            return Camel.MessageFlags.FLAGGED in (int)message.flags;
+            lock (node) {
+                if (node != null && node.message != null) {
+                    flagged = Camel.MessageFlags.FLAGGED in (int)node.message.flags;
+                }
+            }
+            return flagged;
         }
     }
 
     public bool forwarded {
         get {
-            weak Camel.MessageInfo? message = node.message;
-            if (message == null) {
-                return false;
-            }
+            bool forwarded = false;
 
-            return Camel.MessageFlags.FORWARDED in (int)message.flags;
+            lock (node) {
+                if (node != null && node.message != null) {
+                    forwarded = Camel.MessageFlags.FORWARDED in (int)node.message.flags;
+                }
+            }
+            return forwarded;
         }
     }
 
     public bool replied {
         get {
-            weak Camel.MessageInfo? message = node.message;
-            if (message == null) {
-                return false;
-            }
+            bool replied = false;
 
-            return Camel.MessageFlags.ANSWERED in (int)message.flags;
+            lock (node) {
+                if (node != null && node.message != null) {
+                    replied = Camel.MessageFlags.ANSWERED in (int)node.message.flags;
+                }
+            }
+            return replied;
         }
     }
 
     public bool replied_all {
         get {
-            weak Camel.MessageInfo? message = node.message;
-            if (message == null) {
-                return false;
-            }
+            bool replied_all = false;
 
-            return Camel.MessageFlags.ANSWERED_ALL in (int)message.flags;
+            lock (node) {
+                if (node != null && node.message != null) {
+                    replied_all = Camel.MessageFlags.ANSWERED_ALL in (int)node.message.flags;
+                }
+            }
+            return replied_all;
         }
     }
 
     public bool unread {
         get {
-            weak Camel.MessageInfo? message = node.message;
-            if (message == null) {
-                return false;
-            }
+            var unread = false;
 
-            return !(Camel.MessageFlags.SEEN in (int)message.flags);
+            lock (node) {
+                if (node != null && node.message == null) {
+                    unread = !(Camel.MessageFlags.SEEN in (int)node.message.flags);
+                }
+            }
+            return unread;
         }
     }
 
     public bool deleted {
         get {
-            weak Camel.MessageInfo? message = node.message;
-            if (message == null) {
-                return false;
-            }
+            var deleted = false;
 
-            return Camel.MessageFlags.DELETED in (int)message.flags;
+            lock (node) {
+                if (node != null && node.message == null) {
+                    deleted = Camel.MessageFlags.DELETED in (int)node.message.flags;
+                }
+            }
+            return deleted;;
         }
     }
 
     public int64 timestamp {
         get {
-            return get_newest_timestamp (node);
+            int64 timestamp = -1;
+
+            lock (node) {
+                timestamp = get_newest_timestamp (node);
+            }
+            return timestamp;
         }
     }
 
