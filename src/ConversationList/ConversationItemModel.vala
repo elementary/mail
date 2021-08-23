@@ -181,7 +181,7 @@ public class Mail.ConversationItemModel : GLib.Object {
                     deleted = Camel.MessageFlags.DELETED in (int)node.message.flags;
                 }
             }
-            return deleted;;
+            return deleted;
         }
     }
 
