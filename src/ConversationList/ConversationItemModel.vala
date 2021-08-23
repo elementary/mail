@@ -94,7 +94,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public string subject {
         owned get {
-            string subject = "";
+            var subject = "";
 
             lock (node) {
                 if (node == null || node.message == null) {
@@ -109,7 +109,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public bool flagged {
         get {
-            bool flagged = false;
+            var flagged = false;
 
             lock (node) {
                 if (node != null && node.message != null) {
@@ -122,7 +122,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public bool forwarded {
         get {
-            bool forwarded = false;
+            var forwarded = false;
 
             lock (node) {
                 if (node != null && node.message != null) {
@@ -135,7 +135,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public bool replied {
         get {
-            bool replied = false;
+            var replied = false;
 
             lock (node) {
                 if (node != null && node.message != null) {
@@ -148,7 +148,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public bool replied_all {
         get {
-            bool replied_all = false;
+            var replied_all = false;
 
             lock (node) {
                 if (node != null && node.message != null) {
