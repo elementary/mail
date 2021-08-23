@@ -335,8 +335,14 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         var trash_threads = new Gee.HashMap<string, Gee.ArrayList<Camel.FolderThreadNode?>> ();
 
         var selected_rows = get_selected_rows ();
+        int selected_rows_start_index = -1;
+
         foreach (unowned var selected_row in selected_rows) {
             var selected_item_model = (ConversationItemModel) selected_row;
+
+            if (selected_rows_start_index == -1) {
+                selected_rows_start_index = list_store.get_index_of (selected_row);
+            }
 
             if (trash_threads[selected_item_model.service_uid] == null) {
                 trash_threads[selected_item_model.service_uid] = new Gee.ArrayList<Camel.FolderThreadNode?> ();
@@ -348,7 +354,10 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         foreach (var service_uid in trash_threads.keys) {
             deleted += move_handler.delete_threads (folders[service_uid], trash_threads[service_uid]);
         }
+
         list_store.items_changed (0, 0, list_store.get_n_items ());
+        select_row_at_index (selected_rows_start_index);
+
         return deleted;
     }
 

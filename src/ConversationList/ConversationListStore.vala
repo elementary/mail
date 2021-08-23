@@ -33,6 +33,29 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
         return data.get_length ();
     }
 
+    public new int get_index_of (GLib.Object? item) {
+        if (item == null) {
+            return -1;
+        }
+
+        int index = -1;
+        var iter = data.get_iter_at_pos (0);
+        while (!iter.is_end ()) {
+            unowned var iter_item = iter.get ();
+
+            if (filter_func == null || filter_func (iter_item)) {
+                index += 1;
+
+                if (item == iter_item) {
+                    break;
+                }
+            }
+            iter = iter.next ();
+        }
+
+        return index;
+    }
+
     public override GLib.Object? get_item (uint index) {
         return get_item_internal (index);
     }
