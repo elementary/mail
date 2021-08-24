@@ -12,16 +12,17 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-29 22:20+0000\n"
-"PO-Revision-Date: 2017-02-20 08:34+0000\n"
-"Last-Translator: Úr Balázs <urbalazs@gmail.com>\n"
-"Language-Team: Hungarian <openscope at googlegroups dot com>\n"
-"Language: hu_HU\n"
+"PO-Revision-Date: 2021-08-24 07:06+0000\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
+"Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/>"
+"\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
 
 #: src/HeaderBar.vala:40
 #, fuzzy
@@ -222,29 +223,29 @@ msgid "---------- Forwarded message ----------"
 msgstr "---------- Továbbított levél -----------"
 
 #: src/Composer/ComposerWidget.vala:564
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "Feladó: %s\n"
+msgstr "Feladó: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "Tárgy: %s\n"
+msgstr "Tárgy: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:566
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Dátum: %s\n"
+msgstr "Dátum: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:567
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "Címzett: %s\n"
+msgstr "Címzett: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:569
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "Másolat: %s\n"
+msgstr "Másolat: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:608
 #, fuzzy
