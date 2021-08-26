@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-29 22:20+0000\n"
-"PO-Revision-Date: 2021-08-26 00:14+0000\n"
-"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
+"PO-Revision-Date: 2021-08-26 00:16+0000\n"
+"Last-Translator: zoli111 <acszoltan111@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/>"
 "\n"
 "Language: hu\n"
@@ -179,11 +179,11 @@ msgstr "Vázlat törlése"
 
 #: src/Composer/ComposerWidget.vala:269
 msgid "Attach file"
-msgstr ""
+msgstr "Fájl csatolása"
 
 #: src/Composer/ComposerWidget.vala:275
 msgid "Send"
-msgstr ""
+msgstr "Küldés"
 
 #: src/Composer/ComposerWidget.vala:420
 msgid "Choose a file"
@@ -199,7 +199,7 @@ msgstr "C_satolás"
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
-msgstr ""
+msgstr "Mégse"
 
 #: src/Composer/ComposerWidget.vala:528
 msgid "%a, %b %-e, %Y at %-l:%M %p"
@@ -270,11 +270,11 @@ msgstr ""
 
 #: src/Composer/ComposerWidget.vala:646
 msgid "Don't Send"
-msgstr ""
+msgstr "Ne küldje el"
 
 #: src/Composer/ComposerWidget.vala:648
 msgid "Send Anyway"
-msgstr ""
+msgstr "Elküldés mindenképp"
 
 #: src/Composer/ComposerWidget.vala:670
 #, fuzzy
@@ -311,9 +311,8 @@ msgid "New Message"
 msgstr "Új levél"
 
 #: src/ConversationList/ConversationListItem.vala:103
-#, fuzzy
 msgid "Unread"
-msgstr "%d olvasatlan"
+msgstr "Olvasatlan"
 
 #: src/ConversationList/ConversationListItem.vala:113
 #, fuzzy
@@ -327,11 +326,11 @@ msgstr "T_ovábbítás"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://peldaul.com"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
 msgid "Link Text:"
