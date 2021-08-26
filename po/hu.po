@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-29 22:20+0000\n"
 "PO-Revision-Date: 2021-08-26 00:12+0000\n"
-"Last-Translator: Crownless88 <crownless88@gmail.com>\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/>"
 "\n"
 "Language: hu\n"
@@ -54,7 +54,7 @@ msgstr "Válasz  mindenkinek"
 
 #: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:191
 msgid "Forward"
-msgstr ""
+msgstr "Továbbítás"
 
 #: src/HeaderBar.vala:103
 msgid "Mark as Unread"
@@ -83,9 +83,8 @@ msgid "Move conversations to archive"
 msgstr "Beszélgetések áthelyezése"
 
 #: src/HeaderBar.vala:144
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "Beszélgetések áthelyezése"
+msgstr "Beszélgetések áthelyezése a kukába"
 
 #: src/MainWindow.vala:72
 #, fuzzy
