@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-29 22:20+0000\n"
 "PO-Revision-Date: 2021-08-26 00:10+0000\n"
-"Last-Translator: zoli111 <acszoltan111@gmail.com>\n"
+"Last-Translator: Crownless88 <crownless88@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/>"
 "\n"
 "Language: hu\n"
@@ -49,9 +49,8 @@ msgid "Reply"
 msgstr ""
 
 #: src/HeaderBar.vala:90
-#, fuzzy
 msgid "Reply All"
-msgstr "Válasz _mindenkinek"
+msgstr "Válasz  mindenkinek"
 
 #: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:191
 msgid "Forward"
