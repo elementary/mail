@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-29 22:20+0000\n"
-"PO-Revision-Date: 2021-08-24 07:06+0000\n"
+"PO-Revision-Date: 2021-08-26 00:10+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/>"
 "\n"
@@ -25,22 +25,20 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:40
-#, fuzzy
 msgid "Compose new message"
-msgstr "Új levél írása (Ctrl+N, N)"
+msgstr "Új levél írása"
 
 #: src/HeaderBar.vala:46
 msgid "Search Mail"
-msgstr ""
+msgstr "Levél keresése"
 
 #: src/HeaderBar.vala:50
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "Mindig jelenítse meg a feladótól"
+msgstr "Mindig jelenítse meg a távoli képeket"
 
 #: src/HeaderBar.vala:53
 msgid "Account Settings…"
-msgstr ""
+msgstr "Fiókbeállítások"
 
 #: src/HeaderBar.vala:76
 msgid "Menu"
@@ -297,10 +295,10 @@ msgid ""
 msgstr ""
 
 #: src/Composer/ComposerWidget.vala:686
-#, fuzzy
-#| msgid "Unable to validate:\n"
 msgid "Unable to send message"
-msgstr "Nem sikerült érvényesíteni:\n"
+msgstr ""
+"Nem sikerült\n"
+"elküldeni az üzenetet"
 
 #: src/Composer/ComposerWidget.vala:687
 msgid "There was an unexpected error while sending your message."
@@ -441,10 +439,10 @@ msgid "Email Message"
 msgstr "Új levél"
 
 #: src/MessageList/MessageListItem.vala:382
-#, fuzzy
-#| msgid "Unable to validate:\n"
 msgid "Unable to print email"
-msgstr "Nem sikerült érvényesíteni:\n"
+msgstr ""
+"Nem sikerült\n"
+"kinyomtatni az e-mailt"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
