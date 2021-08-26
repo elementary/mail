@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-29 22:20+0000\n"
-"PO-Revision-Date: 2021-08-26 00:18+0000\n"
+"PO-Revision-Date: 2021-08-26 01:37+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/>"
 "\n"
@@ -73,24 +73,20 @@ msgid "Unstar"
 msgstr "Csillagozás megszüntetése"
 
 #: src/HeaderBar.vala:130
-#, fuzzy
 msgid "Mark Conversation"
-msgstr "Beszélgetések megjelölése"
+msgstr "Beszélgetés megjelölése"
 
 #: src/HeaderBar.vala:137
-#, fuzzy
 msgid "Move conversations to archive"
-msgstr "Beszélgetések áthelyezése"
+msgstr "Beszélgetések áthelyezése az archívumba"
 
 #: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
 msgstr "Beszélgetések áthelyezése a kukába"
 
 #: src/MainWindow.vala:72
-#, fuzzy
-#| msgid "All Mail"
 msgid "Mail"
-msgstr "Minden levél"
+msgstr "E-mail"
 
 #: src/MainWindow.vala:294
 msgid "Message Deleted"
@@ -114,7 +110,7 @@ msgstr ""
 
 #: src/WelcomeView.vala:50
 msgid "Online Accounts…"
-msgstr "Online fiókok.."
+msgstr "Online fiókok…"
 
 #: src/Composer/ComposerWidget.vala:100 src/MessageList/MessageListItem.vala:95
 msgid "From:"
@@ -131,14 +127,12 @@ msgid "Subject:"
 msgstr "Tárgy:"
 
 #: src/Composer/ComposerWidget.vala:127
-#, fuzzy
 msgid "Cc"
-msgstr "Másolat:"
+msgstr "Másolat"
 
 #: src/Composer/ComposerWidget.vala:129
-#, fuzzy
 msgid "Bcc"
-msgstr "Titkos másolat:"
+msgstr "Titkos másolat"
 
 #: src/Composer/ComposerWidget.vala:136
 #: src/MessageList/MessageListItem.vala:134
@@ -190,10 +184,8 @@ msgid "Choose a file"
 msgstr "Válasszon egy fájlt"
 
 #: src/Composer/ComposerWidget.vala:423
-#, fuzzy
-#| msgid "_Attach"
 msgid "Attach"
-msgstr "C_satolás"
+msgstr "Csatolás"
 
 #: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:617
 #: src/Dialogs/InsertLinkDialog.vala:61
@@ -203,12 +195,12 @@ msgstr "Mégse"
 
 #: src/Composer/ComposerWidget.vala:528
 msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%Y. %b. %-e., %a %-k.%M-kor"
+msgstr "%Y. %b. %-e., %a %-k:%M-kor"
 
 #: src/Composer/ComposerWidget.vala:558
 #, c-format
 msgid "On %1$s, %2$s wrote:"
-msgstr "%1$s-kor, %2$s írta:"
+msgstr "%1$s dátummal írta %2$s:"
 
 #: src/Composer/ComposerWidget.vala:562
 msgid "---------- Forwarded message ----------"
@@ -255,15 +247,16 @@ msgid "Delete Draft"
 msgstr "Piszkozat törlése"
 
 #: src/Composer/ComposerWidget.vala:639
-#, fuzzy
 msgid "Send without subject?"
-msgstr "Elküldi a levelet üres tárggyal?"
+msgstr "Küldés tárgy nélkül?"
 
 #: src/Composer/ComposerWidget.vala:640
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
+"Az üzenet tárgy mezője üres. A fogadó nem biztos, hogy meg tudja ítélni a "
+"besorolását vagy fontosságát."
 
 #: src/Composer/ComposerWidget.vala:646
 msgid "Don't Send"
@@ -274,26 +267,24 @@ msgid "Send Anyway"
 msgstr "Elküldés mindenképp"
 
 #: src/Composer/ComposerWidget.vala:670
-#, fuzzy
-#| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
-msgstr "Elküldi a levelet üres törzzsel?"
+msgstr "Az elküldött üzenet nem lett elmentve"
 
 #: src/Composer/ComposerWidget.vala:671
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
+"Az üzenet el lett küldve, de nem került mentésre egy másolat az Elküldött "
+"üzenetek mappába."
 
 #: src/Composer/ComposerWidget.vala:686
 msgid "Unable to send message"
-msgstr ""
-"Nem sikerült\n"
-"elküldeni az üzenetet"
+msgstr "Nem sikerült elküldeni az üzenetet"
 
 #: src/Composer/ComposerWidget.vala:687
 msgid "There was an unexpected error while sending your message."
-msgstr ""
+msgstr "Egy váratlan hiba merült fel az üzenet küldése közben."
 
 #: src/Composer/ComposerWidget.vala:938
 msgid "Unable to save draft"
@@ -312,14 +303,12 @@ msgid "Unread"
 msgstr "Olvasatlan"
 
 #: src/ConversationList/ConversationListItem.vala:113
-#, fuzzy
 msgid "Replied"
-msgstr "_Csere"
+msgstr "Válaszolva"
 
 #: src/ConversationList/ConversationListItem.vala:117
-#, fuzzy
 msgid "Forwarded"
-msgstr "T_ovábbítás"
+msgstr "Továbbítva"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -367,14 +356,12 @@ msgid "Archive"
 msgstr "Archívum"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent Mail"
 msgid "Sent"
-msgstr "Elküldött levelek"
+msgstr "Elküldve"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
-msgstr ""
+msgstr "Összes postafiók"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
@@ -391,18 +378,16 @@ msgid "Star message"
 msgstr "Üzenet csillagozása"
 
 #: src/MessageList/MessageListItem.vala:188
-#, fuzzy
-#| msgid "Reply to _All"
 msgid "Reply to All"
-msgstr "_Válasz mindenkinek"
+msgstr "Válasz mindenkinek"
 
 #: src/MessageList/MessageListItem.vala:194
 msgid "Print…"
-msgstr ""
+msgstr "Nyomtatás…"
 
 #: src/MessageList/MessageListItem.vala:208
 msgid "More"
-msgstr ""
+msgstr "Továbbiak"
 
 #: src/MessageList/MessageListItem.vala:244
 msgid "Show Images"
@@ -422,16 +407,12 @@ msgstr "Ennek az üzenetnek több csatolmánya is van"
 
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:360
-#, fuzzy
-#| msgid "New Message"
 msgid "Email Message"
-msgstr "Új levél"
+msgstr "E-mail"
 
 #: src/MessageList/MessageListItem.vala:382
 msgid "Unable to print email"
-msgstr ""
-"Nem sikerült\n"
-"kinyomtatni az e-mailt"
+msgstr "Nem sikerült kinyomtatni az e-mailt"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
