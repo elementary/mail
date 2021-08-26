@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-29 22:20+0000\n"
-"PO-Revision-Date: 2021-08-26 00:17+0000\n"
-"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
+"PO-Revision-Date: 2021-08-26 00:18+0000\n"
+"Last-Translator: zoli111 <acszoltan111@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/>"
 "\n"
 "Language: hu\n"
@@ -382,9 +382,8 @@ msgstr "Nincs üzenet kiválasztva."
 
 #: src/MessageList/MessageListItem.vala:175
 #: src/MessageList/MessageListItem.vala:334
-#, fuzzy
 msgid "Unstar message"
-msgstr "%d levél"
+msgstr "Üzenet kicsillagozása"
 
 #: src/MessageList/MessageListItem.vala:178
 #: src/MessageList/MessageListItem.vala:330
