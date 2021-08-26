@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-29 22:20+0000\n"
 "PO-Revision-Date: 2021-08-26 00:18+0000\n"
-"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
+"Last-Translator: zoli111 <acszoltan111@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/>"
 "\n"
 "Language: hu\n"
@@ -387,9 +387,8 @@ msgstr "Üzenet kicsillagozása"
 
 #: src/MessageList/MessageListItem.vala:178
 #: src/MessageList/MessageListItem.vala:330
-#, fuzzy
 msgid "Star message"
-msgstr "%d levél"
+msgstr "Üzenet csillagozása"
 
 #: src/MessageList/MessageListItem.vala:188
 #, fuzzy
@@ -411,7 +410,7 @@ msgstr "Képek megjelenítése"
 
 #: src/MessageList/MessageListItem.vala:245
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "Mindig jelenjen meg a feladótól"
 
 #: src/MessageList/MessageListItem.vala:250
 msgid "This message contains remote images."
@@ -419,7 +418,7 @@ msgstr "Ez a levél távoli képeket tartalmaz."
 
 #: src/MessageList/MessageListItem.vala:282
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "Ennek az üzenetnek több csatolmánya is van"
 
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:360
@@ -440,7 +439,7 @@ msgstr "Megnyitás"
 
 #: src/MessageList/AttachmentButton.vala:43
 msgid "Save As…"
-msgstr ""
+msgstr "Mentés másként…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
