@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-29 22:20+0000\n"
 "PO-Revision-Date: 2021-08-26 00:16+0000\n"
-"Last-Translator: zoli111 <acszoltan111@gmail.com>\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/>"
 "\n"
 "Language: hu\n"
@@ -175,7 +175,7 @@ msgstr "Link beszúrása"
 
 #: src/Composer/ComposerWidget.vala:264
 msgid "Delete draft"
-msgstr "Vázlat törlése"
+msgstr "Piszkozat törlése"
 
 #: src/Composer/ComposerWidget.vala:269
 msgid "Attach file"
@@ -240,22 +240,19 @@ msgid "Cc: %s<br/>"
 msgstr "Másolat: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:608
-#, fuzzy
-#| msgid "Do you want to permanently delete this message?"
-#| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
-msgstr "Véglegesen törölni szeretné ezt a levelet?"
+msgstr "Véglegesen törölni szeretné ezt a piszkozatot?"
 
 #: src/Composer/ComposerWidget.vala:609
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
+"Nem vonhatja vissza ezt a műveletet, nem állíthatja vissza a piszkozatot a "
+"törlés után."
 
 #: src/Composer/ComposerWidget.vala:619
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete Draft"
-msgstr "Törlés"
+msgstr "Piszkozat törlése"
 
 #: src/Composer/ComposerWidget.vala:639
 #, fuzzy
@@ -300,11 +297,11 @@ msgstr ""
 
 #: src/Composer/ComposerWidget.vala:938
 msgid "Unable to save draft"
-msgstr ""
+msgstr "Piszkozat mentése sikertelen"
 
 #: src/Composer/ComposerWidget.vala:939
 msgid "There was an unexpected error while saving your draft."
-msgstr ""
+msgstr "A piszkozat mentése közben váratlan hiba merült fel."
 
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
