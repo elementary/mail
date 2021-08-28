@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-29 22:20+0000\n"
-"PO-Revision-Date: 2021-03-01 05:16+0000\n"
+"PO-Revision-Date: 2021-08-28 13:26+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/mail/mail/ar/>\n"
 "Language: ar\n"
@@ -77,20 +77,16 @@ msgid "Mark Conversation"
 msgstr "تعليم كمحادثة"
 
 #: src/HeaderBar.vala:137
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
-msgstr "نقل المحادثة الى سلة المهملات"
+msgstr "نقل المحادثات إلى الأرشيف"
 
 #: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
 msgstr "نقل المحادثة الى سلة المهملات"
 
 #: src/MainWindow.vala:72
-#, fuzzy
-#| msgid "All Mail"
 msgid "Mail"
-msgstr "كل البريد"
+msgstr "البريد"
 
 #: src/MainWindow.vala:294
 msgid "Message Deleted"
@@ -191,10 +187,8 @@ msgid "Choose a file"
 msgstr "اختر ملف"
 
 #: src/Composer/ComposerWidget.vala:423
-#, fuzzy
-#| msgid "_Attach"
 msgid "Attach"
-msgstr "_ارفاق"
+msgstr "إرفاق"
 
 #: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:617
 #: src/Dialogs/InsertLinkDialog.vala:61
@@ -254,22 +248,15 @@ msgid "Delete Draft"
 msgstr "حذف المسودة"
 
 #: src/Composer/ComposerWidget.vala:639
-#, fuzzy
-#| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
-msgstr "ارسال الرسالة من دون عنوان ؟"
+msgstr "إرسال بدون عنوان؟"
 
 #: src/Composer/ComposerWidget.vala:640
-#, fuzzy
-#| msgid ""
-#| "This message has an empty subject field. The recipient may not be able to "
-#| "infer the scope or importance of the message."
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
-"هذه الرسالة لم يتم وضع عنوان لها، مستقبل الرسالة قد لا يستطيع معرفة مجال "
-"المرسل او قد لا يستطيع وضعها مع الرسائل المهمة."
+"حقل عنوان هذه الرسالة فارغ. المستلِم قد لا يعرف محتوى الرسالة أو أهميتها."
 
 #: src/Composer/ComposerWidget.vala:646
 msgid "Don't Send"
@@ -281,33 +268,29 @@ msgstr "ارسل على أي حال"
 
 #: src/Composer/ComposerWidget.vala:670
 msgid "Sent message was not saved"
-msgstr ""
+msgstr "الرسالة المُرسَلة لم يتم حفظها"
 
 #: src/Composer/ComposerWidget.vala:671
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
-msgstr ""
+msgstr "تم إرسال الرسالة، ولكن لم يتم حفظ نسخة منها في مجلد الرسائل المرسلة."
 
 #: src/Composer/ComposerWidget.vala:686
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to send message"
-msgstr "حذف المسودة"
+msgstr "غير قادر على إرسال الرسالة"
 
 #: src/Composer/ComposerWidget.vala:687
 msgid "There was an unexpected error while sending your message."
-msgstr ""
+msgstr "وجد خطأ غير متوقع عند إرسال الرسالة."
 
 #: src/Composer/ComposerWidget.vala:938
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to save draft"
-msgstr "حذف المسودة"
+msgstr "غير قادر على حفظ المسودة"
 
 #: src/Composer/ComposerWidget.vala:939
 msgid "There was an unexpected error while saving your draft."
-msgstr ""
+msgstr "حدث خطأ غير متوقع عند محاولة حفظ المسودة."
 
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
@@ -371,14 +354,12 @@ msgid "Archive"
 msgstr "الأرشيف"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent Mail"
 msgid "Sent"
-msgstr "إرسال بريد"
+msgstr "الرسائل المرسلة"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
-msgstr ""
+msgstr "كل صناديق البريد"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
@@ -395,18 +376,16 @@ msgid "Star message"
 msgstr "تمييز الرسالة بنجمة"
 
 #: src/MessageList/MessageListItem.vala:188
-#, fuzzy
-#| msgid "Reply All"
 msgid "Reply to All"
 msgstr "الرد على الجميع"
 
 #: src/MessageList/MessageListItem.vala:194
 msgid "Print…"
-msgstr ""
+msgstr "طباعة…"
 
 #: src/MessageList/MessageListItem.vala:208
 msgid "More"
-msgstr ""
+msgstr "أكثر"
 
 #: src/MessageList/MessageListItem.vala:244
 msgid "Show Images"
@@ -426,14 +405,12 @@ msgstr "تحتوي هذه الرسالة على مرفق واحد أو أكثر"
 
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:360
-#, fuzzy
-#| msgid "New Message"
 msgid "Email Message"
-msgstr "رسالة جديدة"
+msgstr "رسالة بريد إلكتروني"
 
 #: src/MessageList/MessageListItem.vala:382
 msgid "Unable to print email"
-msgstr ""
+msgstr "غير قادر على طباعة الرسالة"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
