@@ -47,26 +47,28 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
         });
 
         session.account_added.connect (add_account);
-        source_list.item_selected.connect ((item) => {
-            if (item == null) {
-                return;
-            }
+        source_list.item_selected.connect (on_item_selected);
+    }
 
-            if (item is FolderSourceItem) {
-                unowned FolderSourceItem folder_item = (FolderSourceItem) item;
-                var folder_name_per_account = new Gee.HashMap<Mail.Backend.Account, string?> ();
-                folder_name_per_account.set (folder_item.account, folder_item.full_name);
-                folder_selected (folder_name_per_account.read_only_view);
+    private void on_item_selected (Granite.Widgets.SourceList.Item? item) {
+        if (item == null) {
+            return;
+        }
 
-                settings.set ("selected-folder", "(ss)", folder_item.account.service.uid, folder_item.full_name);
+        if (item is FolderSourceItem) {
+            unowned FolderSourceItem folder_item = (FolderSourceItem) item;
+            var folder_name_per_account = new Gee.HashMap<Mail.Backend.Account, string?> ();
+            folder_name_per_account.set (folder_item.account, folder_item.full_name);
+            folder_selected (folder_name_per_account.read_only_view);
 
-            } else if (item is GroupedFolderSourceItem) {
-                unowned GroupedFolderSourceItem grouped_folder_item = (GroupedFolderSourceItem) item;
-                folder_selected (grouped_folder_item.get_folder_full_name_per_account ());
+            settings.set ("selected-folder", "(ss)", folder_item.account.service.uid, folder_item.full_name);
 
-                settings.set ("selected-folder", "(ss)", "GROUPED", grouped_folder_item.name);
-            }
-        });
+        } else if (item is GroupedFolderSourceItem) {
+            unowned GroupedFolderSourceItem grouped_folder_item = (GroupedFolderSourceItem) item;
+            folder_selected (grouped_folder_item.get_folder_full_name_per_account ());
+
+            settings.set ("selected-folder", "(ss)", "GROUPED", grouped_folder_item.name);
+        }
     }
 
     private void add_account (Mail.Backend.Account account) {
@@ -96,7 +98,9 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
 
                 unowned FolderSourceItem folder_item = (FolderSourceItem) child;
                 if (folder_item.full_name == selected_folder_name) {
+                    source_list.item_selected.disconnect (on_item_selected);
                     source_list.selected = child;
+                    source_list.item_selected.connect (on_item_selected);
 
                     var folder_name_per_account = new Gee.HashMap<Mail.Backend.Account, string?> ();
                     folder_name_per_account.set (folder_item.account, folder_item.full_name);
@@ -107,7 +111,9 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
             } else if (child is GroupedFolderSourceItem) {
                 unowned GroupedFolderSourceItem grouped_folder_item = (GroupedFolderSourceItem) child;
                 if (grouped_folder_item.name == selected_folder_name) {
+                    source_list.item_selected.disconnect (on_item_selected);
                     source_list.selected = child;
+                    source_list.item_selected.connect (on_item_selected);
                     folder_selected (grouped_folder_item.get_folder_full_name_per_account ());
                     return true;
                 }

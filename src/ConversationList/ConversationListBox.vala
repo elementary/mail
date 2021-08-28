@@ -36,6 +36,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     private ConversationListStore list_store;
     private MoveHandler move_handler;
 
+    private AsyncMutex folder_change_mutex = new AsyncMutex ();
+
     private uint mark_read_timeout_id = 0;
 
     construct {
@@ -108,12 +110,17 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     }
 
     public async void load_folder (Gee.Map<Backend.Account, string?> folder_full_name_per_account) {
-        lock (this.folder_full_name_per_account) {
-            this.folder_full_name_per_account = folder_full_name_per_account;
-        }
-
         if (cancellable != null) {
             cancellable.cancel ();
+        }
+
+        // As this method can be called multiple times in quick succession while searching, we lock against
+        // concurrent async executions. The `lock` keyword in vala only prevents multiple thread access.
+        // So, without this, multiple async methods can run on the same thread and relinquish control to each other
+        yield folder_change_mutex.@lock ();
+
+        lock (this.folder_full_name_per_account) {
+            this.folder_full_name_per_account = folder_full_name_per_account;
         }
 
         conversation_focused (null);
@@ -144,7 +151,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                             try {
                                 var folder = yield ((Camel.Store) current_account.service).get_folder (current_full_name, 0, GLib.Priority.DEFAULT, cancellable);
                                 folders[current_account.service.uid] = folder;
-                                folder.changed.connect ((change_info) => folder_changed (change_info, current_account.service.uid, cancellable));
+                                folder.changed.connect ((change_info) => folder_changed.begin (change_info, current_account.service.uid, cancellable));
 
                                 var search_result_uids = get_search_result_uids (current_account.service.uid);
                                 if (search_result_uids != null) {
@@ -176,10 +183,18 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             }
         }
 
-        list_store.items_changed (0, 0, list_store.get_n_items ());
+        if (!cancellable.is_cancelled ()) {
+            list_store.items_changed (0, 0, list_store.get_n_items ());
+        }
+
+        folder_change_mutex.unlock ();
     }
 
-    private void folder_changed (Camel.FolderChangeInfo change_info, string service_uid, GLib.Cancellable cancellable) {
+    private async void folder_changed (Camel.FolderChangeInfo change_info, string service_uid, GLib.Cancellable cancellable) {
+        // As the load_folder method modifies the `list_store` and may relinquish control during async execution,
+        // we share a lock with it to ensure we don't get concurrent access issues on the list store
+        yield folder_change_mutex.@lock ();
+
         if (cancellable.is_cancelled ()) {
             return;
         }
@@ -188,6 +203,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             lock (threads) {
                 var search_result_uids = get_search_result_uids (service_uid);
                 if (search_result_uids == null) {
+                    folder_change_mutex.unlock ();
                     return;
                 }
                 threads[service_uid].apply (search_result_uids);
@@ -205,6 +221,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) threads[service_uid].tree;
                 while (child != null) {
                     if (cancellable.is_cancelled ()) {
+                        folder_change_mutex.unlock ();
                         return;
                     }
 
@@ -221,6 +238,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 list_store.items_changed (0, removed, list_store.get_n_items ());
             }
         }
+
+        folder_change_mutex.unlock ();
     }
 
     private GenericArray<string>? get_search_result_uids (string service_uid) {

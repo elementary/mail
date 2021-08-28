@@ -1,5 +1,6 @@
 vala_files = files(
     'Application.vala',
+    'AsyncMutex.vala',
     'MainWindow.vala',
     'HeaderBar.vala',
     'Utils.vala',
