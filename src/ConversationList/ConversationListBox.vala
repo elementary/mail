@@ -29,7 +29,9 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     public Gee.Map<Backend.Account, string?> folder_full_name_per_account { get; private set; }
     public Gee.HashMap<string, Camel.Folder> folders { get; private set; }
 
-    private GLib.Cancellable? cancellable = null;
+    private GLib.Cancellable? switched_folder_cancellable = null;
+    private GLib.Cancellable? threads_changed_cancellable = null;
+
     private Gee.HashMap<string, Camel.FolderThread> threads;
     private string? current_search_query = null;
     private Gee.HashMap<string, ConversationItemModel> conversations;
@@ -110,14 +112,19 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     }
 
     public async void load_folder (Gee.Map<Backend.Account, string?> folder_full_name_per_account) {
-        if (cancellable != null) {
-            cancellable.cancel ();
+        warning ("load_folder");
+
+        if (switched_folder_cancellable != null) {
+            warning ("cancelling folder load");
+            switched_folder_cancellable.cancel ();
         }
 
         // As this method can be called multiple times in quick succession while searching, we lock against
         // concurrent async executions. The `lock` keyword in vala only prevents multiple thread access.
         // So, without this, multiple async methods can run on the same thread and relinquish control to each other
         yield folder_change_mutex.@lock ();
+
+        warning ("load_folder lock acquired");
 
         lock (this.folder_full_name_per_account) {
             this.folder_full_name_per_account = folder_full_name_per_account;
@@ -137,7 +144,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                     list_store.remove_all ();
                     list_store.items_changed (0, previous_items, 0);
 
-                    cancellable = new GLib.Cancellable ();
+                    switched_folder_cancellable = new GLib.Cancellable ();
 
                     lock (this.folder_full_name_per_account) {
                         foreach (var folder_full_name_entry in this.folder_full_name_per_account) {
@@ -149,9 +156,11 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                             }
 
                             try {
-                                var folder = yield ((Camel.Store) current_account.service).get_folder (current_full_name, 0, GLib.Priority.DEFAULT, cancellable);
+                                warning ("getting folder");
+                                var folder = yield ((Camel.Store) current_account.service).get_folder (current_full_name, 0, GLib.Priority.DEFAULT, switched_folder_cancellable);
                                 folders[current_account.service.uid] = folder;
-                                folder.changed.connect ((change_info) => folder_changed.begin (change_info, current_account.service.uid, cancellable));
+                                warning ("adding changed handler");
+                                folder.changed.connect ((change_info) => folder_changed.begin (change_info, current_account.service.uid));
 
                                 var search_result_uids = get_search_result_uids (current_account.service.uid);
                                 if (search_result_uids != null) {
@@ -160,7 +169,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
                                     unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.tree;
                                     while (child != null) {
-                                        if (cancellable.is_cancelled ()) {
+                                        if (switched_folder_cancellable.is_cancelled ()) {
                                             break;
                                         }
 
@@ -168,7 +177,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                                         child = (Camel.FolderThreadNode?) child.next;
                                     }
 
-                                    yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
+                                    warning ("refreshing folder info");
+                                    yield folder.refresh_info (GLib.Priority.DEFAULT, switched_folder_cancellable);
                                 }
 
                             } catch (Error e) {
@@ -183,24 +193,38 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             }
         }
 
-        if (!cancellable.is_cancelled ()) {
+        if (!switched_folder_cancellable.is_cancelled ()) {
             list_store.items_changed (0, 0, list_store.get_n_items ());
         }
 
         folder_change_mutex.unlock ();
+
+        warning ("load_folder lock released");
     }
 
-    private async void folder_changed (Camel.FolderChangeInfo change_info, string service_uid, GLib.Cancellable cancellable) {
+    private async void folder_changed (Camel.FolderChangeInfo change_info, string service_uid) {
+        warning ("folder_changed signal");
+
+        if (threads_changed_cancellable != null) {
+            warning ("cancelling folder_changed");
+            threads_changed_cancellable.cancel ();
+        }
+
         // As the load_folder method modifies the `list_store` and may relinquish control during async execution,
         // we share a lock with it to ensure we don't get concurrent access issues on the list store
         yield folder_change_mutex.@lock ();
 
-        if (cancellable.is_cancelled ()) {
+        warning ("acquired folder_changed lock");
+
+        if (switched_folder_cancellable.is_cancelled ()) {
+            folder_change_mutex.unlock ();
             return;
         }
 
         lock (conversations) {
             lock (threads) {
+                threads_changed_cancellable = new Cancellable ();
+
                 var search_result_uids = get_search_result_uids (service_uid);
                 if (search_result_uids == null) {
                     folder_change_mutex.unlock ();
@@ -220,13 +244,15 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
                 unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) threads[service_uid].tree;
                 while (child != null) {
-                    if (cancellable.is_cancelled ()) {
+                    if (switched_folder_cancellable.is_cancelled () || threads_changed_cancellable.is_cancelled ()) {
+                        warning ("bailing out of folder_changed");
                         folder_change_mutex.unlock ();
                         return;
                     }
 
                     var item = conversations[child.message.uid];
                     if (item == null) {
+                        warning ("adding changed thread");
                         add_conversation_item (child, service_uid);
                     } else {
                         item.update_node (child);
@@ -240,6 +266,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
 
         folder_change_mutex.unlock ();
+
+        warning ("folder_changed lock released");
     }
 
     private GenericArray<string>? get_search_result_uids (string service_uid) {
@@ -260,7 +288,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 .printf (encoded_query, encoded_query, encoded_query);
 
             try {
-                return folders[service_uid].search_by_expression (search_query, cancellable);
+                return folders[service_uid].search_by_expression (search_query, switched_folder_cancellable);
             } catch (Error e) {
                 if (!(e is GLib.IOError.CANCELLED)) {
                     warning ("Error while searching: %s", e.message);
