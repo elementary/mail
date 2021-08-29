@@ -24,6 +24,8 @@ public class Mail.ConversationItemModel : GLib.Object {
     public string service_uid { get; construct; }
     public Camel.FolderThreadNode? node;
 
+    private int64 _timestamp;
+
     public string formatted_date {
         owned get {
             return Granite.DateTime.get_relative_datetime (new DateTime.from_unix_local (timestamp));
@@ -153,7 +155,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public int64 timestamp {
         get {
-            return get_newest_timestamp (node);
+            return _timestamp;
         }
     }
 
@@ -164,6 +166,8 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public void update_node (Camel.FolderThreadNode new_node) {
         node = new_node;
+
+        _timestamp = get_newest_timestamp (new_node, -1);
     }
 
     private static uint count_thread_messages (Camel.FolderThreadNode node) {
