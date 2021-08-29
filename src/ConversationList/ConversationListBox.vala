@@ -234,13 +234,17 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
                 var removed = 0;
                 change_info.get_removed_uids ().foreach ((uid) => {
+                    warning (uid);
                     var item = conversations[uid];
                     if (item != null) {
+                        warning ("found and removing");
                         conversations.unset (uid);
                         list_store.remove (item);
                         removed++;
                     }
                 });
+
+                Gee.ArrayList<unowned Camel.FolderThreadNode?> added_nodes = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
 
                 unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) threads[service_uid].tree;
                 while (child != null) {
@@ -253,12 +257,16 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                     var item = conversations[child.message.uid];
                     if (item == null) {
                         warning ("adding changed thread");
-                        add_conversation_item (child, service_uid);
+                        added_nodes.add (child);
                     } else {
                         item.update_node (child);
                     }
 
                     child = (Camel.FolderThreadNode?) child.next;
+                }
+
+                foreach (unowned var node in added_nodes) {
+                    add_conversation_item (node, service_uid);
                 }
 
                 list_store.items_changed (0, removed, list_store.get_n_items ());
