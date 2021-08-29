@@ -133,12 +133,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public bool unread {
         get {
-            weak Camel.MessageInfo? message = node.message;
-            if (message == null) {
-                return false;
-            }
-
-            return !(Camel.MessageFlags.SEEN in (int)message.flags);
+            return get_all_unread (node);
         }
     }
 
@@ -199,5 +194,15 @@ public class Mail.ConversationItemModel : GLib.Object {
         }
 
         return time;
+    }
+
+    private static bool get_all_unread (Camel.FolderThreadNode? node) {
+        var is_unread = !(Camel.MessageFlags.SEEN in (int)node.message.flags);
+
+        for (unowned Camel.FolderThreadNode? child = node.child; child != null; child = child.next) {
+            is_unread = is_unread || get_all_unread (child);
+        }
+
+        return is_unread;
     }
 }
