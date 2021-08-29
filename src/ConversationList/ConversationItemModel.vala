@@ -164,10 +164,13 @@ public class Mail.ConversationItemModel : GLib.Object {
         update_node (node);
     }
 
-    public void update_node (Camel.FolderThreadNode new_node) {
+    public bool update_node (Camel.FolderThreadNode new_node) {
         node = new_node;
 
+        var old_timestamp = _timestamp;
         _timestamp = get_newest_timestamp (new_node, -1);
+
+        return (old_timestamp != _timestamp);
     }
 
     private static uint count_thread_messages (Camel.FolderThreadNode node) {

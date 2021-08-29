@@ -212,7 +212,13 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                     if (item == null) {
                         add_conversation_item (child, service_uid);
                     } else {
-                        item.update_node (child);
+                        if (item.update_node (child)) {
+                            conversations.unset (child.message.uid);
+                            list_store.remove (item);
+                            removed++;
+                            add_conversation_item (child, service_uid);
+                        };
+
                     }
 
                     child = (Camel.FolderThreadNode?) child.next;
