@@ -151,11 +151,7 @@ public class Mail.ConversationItemModel : GLib.Object {
         }
     }
 
-    public int64 timestamp {
-        get {
-            return get_newest_timestamp (node);
-        }
-    }
+    public int64 timestamp { get; private set; }
 
     public ConversationItemModel (Camel.FolderThreadNode node, string service_uid) {
         Object (service_uid: service_uid);
@@ -164,6 +160,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public void update_node (Camel.FolderThreadNode new_node) {
         node = new_node;
+        timestamp = get_newest_timestamp (new_node, -1);
     }
 
     private static uint count_thread_messages (Camel.FolderThreadNode node) {
