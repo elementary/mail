@@ -46,7 +46,12 @@ public class Mail.Page : Object {
                 message.send_reply (new WebKit.UserMessage ("get-body-html", new Variant.take_string (val.to_string ())));
                 return true;
             case "get-page-height":
-                JSC.Value val = js_context.evaluate ("document.documentElement.offsetHeight;", -1);
+                JSC.Value val = js_context.evaluate ("""
+                Math.max(
+                    document.body.scrollHeight, document.body.offsetHeight,
+                    document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight
+                );
+                """, -1);
                 message.send_reply (new WebKit.UserMessage ("get-page-height", new Variant.int32 (val.to_int32 ())));
                 return true;
             case "set-image-loading-enabled":
