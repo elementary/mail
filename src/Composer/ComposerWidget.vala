@@ -37,7 +37,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
     public bool has_recipients { get; set; }
     public bool has_subject_field { get; construct; default = false; }
-    public bool can_change_sender { get; construct; default = true; }
+    public bool can_change_sender { get; private set; default = true; }
     public string? to { get; construct; }
     public string? mailto_query { get; construct; }
 
@@ -50,6 +50,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
     private Gtk.Entry cc_val;
     private Gtk.Entry bcc_val;
     private Gtk.FlowBox attachment_box;
+    private Gtk.Revealer from_revealer;
     private Gtk.Revealer cc_revealer;
     private Gtk.Revealer bcc_revealer;
     private Gtk.ToggleButton cc_button;
@@ -110,7 +111,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         from_grid.add (from_label);
         from_grid.add (from_combo);
 
-        var from_revealer = new Gtk.Revealer ();
+        from_revealer = new Gtk.Revealer ();
         from_revealer.add (from_grid);
 
         var to_label = new Gtk.Label (_("To:"));
@@ -489,6 +490,41 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 // https://datatracker.ietf.org/doc/html/rfc2822#section-3.6.5
                 if (!subject_val.text.up ().contains ("RE: ")) {
                     subject_val.text = "Re: %s".printf (subject_val.text);
+                }
+            }
+        }
+
+        if (from_combo.model.iter_n_children (null) > 1 && (type == Type.REPLY || type == Type.REPLY_ALL || type == Type.FORWARD)) {
+            from_revealer.reveal_child = can_change_sender = true;
+
+            unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+            unowned var account_source_uid = message.get_source ();
+            var account_source = session.ref_source (account_source_uid);
+
+            if (account_source != null && account_source.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
+                unowned var account_extension = (E.SourceMailAccount) account_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
+
+                var identity_uid = account_extension.identity_uid;
+                if (identity_uid != null && identity_uid != "") {
+                    var identity_source = session.ref_source (identity_uid);
+
+                    if (identity_source != null && identity_source.has_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY)) {
+                        unowned var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+
+                        var identity_address = identity_extension.get_address ();
+                        if (identity_address != "") {
+                            from_combo.model.foreach ((model, path, iter) => {
+                                GLib.Value value;
+                                model.get_value (iter, 0, out value);
+
+                                if (value.get_string () == identity_address) {
+                                    from_combo.set_active_iter (iter);
+                                    return true;
+                                }
+                                return false;
+                            });
+                        }
+                    }
                 }
             }
         }
