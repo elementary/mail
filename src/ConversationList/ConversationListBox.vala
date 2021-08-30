@@ -83,7 +83,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 if (((ConversationItemModel) row).unread) {
                     mark_read_timeout_id = GLib.Timeout.add_seconds (MARK_READ_TIMEOUT_SECONDS, () => {
                         set_thread_seen (((ConversationItemModel) row).node);
-                        
+
                         mark_read_timeout_id = 0;
                         return false;
                     });
