@@ -109,7 +109,9 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     }
 
     private static void set_thread_seen (Camel.FolderThreadNode? node) {
-        node.message.set_flags (Camel.MessageFlags.SEEN, ~0);
+        if (!(Camel.MessageFlags.SEEN in (int)node.message.flags)) {
+            node.message.set_flags (Camel.MessageFlags.SEEN, ~0);
+        }
 
         for (unowned Camel.FolderThreadNode? child = node.child; child != null; child = child.next) {
             set_thread_seen (child);
