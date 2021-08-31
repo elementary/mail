@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-31 01:02+0000\n"
-"PO-Revision-Date: 2021-07-30 01:07+0000\n"
+"PO-Revision-Date: 2021-08-31 01:49+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/extra/uk/"
-">\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/extra/uk/>"
+"\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -67,21 +67,25 @@ msgstr "Працює з Gmail, Yahoo! Mail та іншими популярни�
 
 #: data/io.elementary.mail.appdata.xml.in:27
 msgid "Fixes:"
-msgstr ""
+msgstr "Виправлення:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Fix an issue that prevented some messaging from rendering at all"
 msgstr ""
+"Виправлено проблему, яка взагалі не давала змоги показувати деякі "
+"повідомлення"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid ""
 "Set the correct \"From\" address when replying and multiple accounts are set "
 "up"
 msgstr ""
+"Встановлення правильної адреси «Від» під час відповіді та якщо налаштовано "
+"кілька облікових записів"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 msgid "Fix a crash on startup for some conversations"
-msgstr ""
+msgstr "Виправлено збої під час запуску для деяких бесід"
 
 #: data/io.elementary.mail.appdata.xml.in:33
 #: data/io.elementary.mail.appdata.xml.in:43
