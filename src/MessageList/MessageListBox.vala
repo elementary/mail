@@ -98,10 +98,16 @@ public class Mail.MessageListBox : Gtk.ListBox {
     }
 
     public async void add_inline_composer (ComposerWidget.Type type, MessageListItem? message_item = null) {
+        var children = get_children ();
+
         /* Can't open a new composer if thread is empty or currently has a composer open */
-        var last_child = get_row_at_index ((int) get_children ().length () - 1);
+        var last_child = get_row_at_index ((int) children.length () - 1);
         if (last_child == null || last_child is InlineComposer) {
             return;
+        }
+
+        foreach (var child in children) {
+            child.hide ();
         }
 
         if (message_item == null) {
@@ -121,6 +127,10 @@ public class Mail.MessageListBox : Gtk.ListBox {
             can_move_thread = true;
             remove (composer);
             composer.destroy ();
+
+            foreach (var child in get_children ()) {
+                child.show ();
+            }
         });
         add (composer);
         can_reply = false;
