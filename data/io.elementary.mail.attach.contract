@@ -1,0 +1,7 @@
+[Contractor Entry]
+Name=Send by Email
+Icon=mail-send
+Description=Send files using Mail
+MimeType=!inode;
+Exec=io.elementary.mail.attach %F
+X-GNOME-Gettext-Domain=io.elementary.mail

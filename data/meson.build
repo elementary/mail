@@ -18,6 +18,16 @@ install_data(
     install_dir: join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
 )
 
+install_data(
+    meson.project_name() + '.attach',
+    install_dir: join_paths(get_option('prefix'), 'bin')
+)
+
+install_data(
+    meson.project_name() + '.attach.contract',
+    install_dir: join_paths(get_option('datadir'), 'contractor')
+)
+
 i18n.merge_file (
     'desktop',
     input: meson.project_name() + '.desktop.in',

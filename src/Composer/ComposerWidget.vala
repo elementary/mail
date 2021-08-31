@@ -366,40 +366,57 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
 
         if (mailto_query != null) {
-            var result = new Gee.HashMap<string, string> ();
+            var result = new Gee.HashMap<string, Gee.ArrayList<string>> ();
             var params = mailto_query.split ("&");
 
             foreach (unowned string param in params) {
                 var terms = param.split ("=");
                 if (terms.length == 2) {
-                    result[terms[0].down ()] = Soup.URI.decode (terms[1]);
+                    var param_name = terms[0].down ();
+                    if (result[param_name] == null) {
+                        result[param_name] = new Gee.ArrayList<string> ();
+                    }
+                    result[param_name].add (Soup.URI.decode (terms[1]));
+
                 } else {
                     critical ("Invalid mailto URL");
                 }
             }
 
-            if (result["bcc"] != null) {
+            if (result["bcc"] != null && result["bcc"].size > 0) {
                 bcc_button.clicked ();
-                bcc_val.text = result["bcc"];
+                bcc_val.text = result["bcc"].get (0);
             }
 
-            if (result["cc"] != null) {
+            if (result["cc"] != null && result["cc"].size > 0) {
                 cc_button.clicked ();
-                cc_val.text = result["cc"];
+                cc_val.text = result["cc"].get (0);
             }
 
-            if (result["subject"] != null) {
-                subject_val.text = result["subject"];
+            if (result["subject"] != null && result["subject"].size > 0) {
+                subject_val.text = result["subject"].get (0);
             }
 
-            if (result["body"] != null) {
+            if (result["body"] != null && result["body"].size > 0) {
                 var flags =
                     Camel.MimeFilterToHTMLFlags.CONVERT_ADDRESSES |
                     Camel.MimeFilterToHTMLFlags.CONVERT_NL |
                     Camel.MimeFilterToHTMLFlags.CONVERT_SPACES |
                     Camel.MimeFilterToHTMLFlags.CONVERT_URLS;
 
-                web_view.set_body_content (Camel.text_to_html (result["body"], flags, 0));
+                web_view.set_body_content (Camel.text_to_html (result["body"].get (0), flags, 0));
+            }
+
+            if (result["attachment"] != null && result["attachment"].size > 0) {
+                foreach (var path in result["attachment"]) {
+                    var file = File.new_for_path (path);
+
+                    var attachment = new Attachment (file);
+                    attachment.margin = 3;
+
+                    attachment_box.add (attachment);
+                }
+                attachment_box.show_all ();
             }
         }
     }
