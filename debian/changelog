@@ -1,3 +1,18 @@
+io.elementary.mail (6.1.1) focal; urgency=medium
+
+  * Release 6.1.1 (#669)
+  * Update translation files
+  * Update translation template
+  * Cache timestamp to avoid compare_func from crashing (#664)
+  * Set the correct from address on reply (#634)
+  * README: Removed Evolution account setup hint (#653)
+  * Fix #582: Calculate the page height correctly (#655)
+  * AppData: Use Banana 300 for brand banner (#648)
+  * Fix #619: Don't save draft if no changes were made (#630)
+  * Moved undo toast to message view (#629)
+
+ -- Cody Garver <cody@elementary.io>  Tue, 31 Aug 2021 02:56:59 +0000
+
 io.elementary.mail (6.1.0) focal; urgency=medium
 
   * New upstream release.
