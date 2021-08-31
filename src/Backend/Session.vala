@@ -114,9 +114,7 @@ public class Mail.Backend.Session : Camel.Session {
                 result = service.authenticate_sync (mechanism); //@TODO make async?
 
                 if (result == Camel.AuthenticationResult.REJECTED) {
-                    throw new GLib.Error (
-                        Camel.Service.error_quark (),
-                        Camel.ServiceError.CANT_AUTHENTICATE,
+                    throw new Camel.ServiceError.CANT_AUTHENTICATE (
                         "%s authentication failed",
                         mechanism
                     );
@@ -176,11 +174,7 @@ public class Mail.Backend.Session : Camel.Session {
             local_error = e;
 
             if (e is GLib.IOError.CONNECTION_REFUSED || e is GLib.IOError.NOT_FOUND) {
-                local_error = new GLib.Error (
-                    Camel.Service.error_quark (),
-                    Camel.ServiceError.CANT_AUTHENTICATE,
-                    e.message
-                );
+                local_error = new Camel.ServiceError.CANT_AUTHENTICATE (e.message);
 
                 try {
                     if (cred_source.invoke_credentials_required_sync (E.SourceCredentialsReason.REJECTED, "", 0, e)) {

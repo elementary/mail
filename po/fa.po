@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-29 22:20+0000\n"
+"POT-Creation-Date: 2021-08-31 01:02+0000\n"
 "PO-Revision-Date: 2015-11-24 15:43+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Persian (http://www.transifex.com/projects/p/geary/language/"
@@ -122,190 +122,190 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "حساب ها"
 
-#: src/Composer/ComposerWidget.vala:100 src/MessageList/MessageListItem.vala:95
+#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:95
 msgid "From:"
 msgstr "از:"
 
-#: src/Composer/ComposerWidget.vala:116
+#: src/Composer/ComposerWidget.vala:117
 #: src/MessageList/MessageListItem.vala:100
 msgid "To:"
 msgstr "به:"
 
-#: src/Composer/ComposerWidget.vala:120
+#: src/Composer/ComposerWidget.vala:121
 #: src/MessageList/MessageListItem.vala:105
 msgid "Subject:"
 msgstr "موضوع:"
 
-#: src/Composer/ComposerWidget.vala:127
+#: src/Composer/ComposerWidget.vala:128
 #, fuzzy
 msgid "Cc"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:129
+#: src/Composer/ComposerWidget.vala:130
 #, fuzzy
 msgid "Bcc"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:136
+#: src/Composer/ComposerWidget.vala:137
 #: src/MessageList/MessageListItem.vala:134
 msgid "Cc:"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:153
 msgid "Bcc:"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:195
+#: src/Composer/ComposerWidget.vala:196
 msgid "Bold"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:202
+#: src/Composer/ComposerWidget.vala:203
 msgid "Italic"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:209
+#: src/Composer/ComposerWidget.vala:210
 msgid "Underline"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:216
+#: src/Composer/ComposerWidget.vala:217
 msgid "Strikethrough"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:221
+#: src/Composer/ComposerWidget.vala:222
 msgid "Remove formatting"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:233 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:264
+#: src/Composer/ComposerWidget.vala:265
 msgid "Delete draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:269
+#: src/Composer/ComposerWidget.vala:270
 msgid "Attach file"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:275
+#: src/Composer/ComposerWidget.vala:276
 msgid "Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:420
+#: src/Composer/ComposerWidget.vala:421
 msgid "Choose a file"
 msgstr "یک فایل را انتخاب کنید"
 
-#: src/Composer/ComposerWidget.vala:423
+#: src/Composer/ComposerWidget.vala:424
 #, fuzzy
 #| msgid "_Attach"
 msgid "Attach"
 msgstr "پیوست"
 
-#: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:617
+#: src/Composer/ComposerWidget.vala:425 src/Composer/ComposerWidget.vala:653
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:528
+#: src/Composer/ComposerWidget.vala:564
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %b %-e, %Y at %-l:%M %p"
 
-#: src/Composer/ComposerWidget.vala:558
+#: src/Composer/ComposerWidget.vala:594
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "در %1$s, %2$s نوشته بود:"
 
-#: src/Composer/ComposerWidget.vala:562
+#: src/Composer/ComposerWidget.vala:598
 msgid "---------- Forwarded message ----------"
 msgstr "---------- پیام ارسال مجدد شده ----------"
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:600
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "از: %s\n"
 
-#: src/Composer/ComposerWidget.vala:565
+#: src/Composer/ComposerWidget.vala:601
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "موضوع: %s\n"
 
-#: src/Composer/ComposerWidget.vala:566
+#: src/Composer/ComposerWidget.vala:602
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "تاریخ: %s\n"
 
-#: src/Composer/ComposerWidget.vala:567
+#: src/Composer/ComposerWidget.vala:603
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "به: %s\n"
 
-#: src/Composer/ComposerWidget.vala:569
+#: src/Composer/ComposerWidget.vala:605
 #, fuzzy, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s\n"
 
-#: src/Composer/ComposerWidget.vala:608
+#: src/Composer/ComposerWidget.vala:644
 msgid "Permanently delete this draft?"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:609
+#: src/Composer/ComposerWidget.vala:645
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:619
+#: src/Composer/ComposerWidget.vala:655
 #, fuzzy
 #| msgid "Edit Draft"
 msgid "Delete Draft"
 msgstr "ویرایش چرک نویس"
 
-#: src/Composer/ComposerWidget.vala:639
+#: src/Composer/ComposerWidget.vala:675
 #, fuzzy
 msgid "Send without subject?"
 msgstr "ایمیل، بدون موضوع ارسال شود؟"
 
-#: src/Composer/ComposerWidget.vala:640
+#: src/Composer/ComposerWidget.vala:676
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:646
+#: src/Composer/ComposerWidget.vala:682
 msgid "Don't Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:648
+#: src/Composer/ComposerWidget.vala:684
 msgid "Send Anyway"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:670
+#: src/Composer/ComposerWidget.vala:706
 #, fuzzy
 #| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
 msgstr "ایمیل، بدون متن ارسال شود؟"
 
-#: src/Composer/ComposerWidget.vala:671
+#: src/Composer/ComposerWidget.vala:707
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:686
+#: src/Composer/ComposerWidget.vala:722
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to send message"
 msgstr "قادر به اعتبار سنجی نیست:\n"
 
-#: src/Composer/ComposerWidget.vala:687
+#: src/Composer/ComposerWidget.vala:723
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:938
+#: src/Composer/ComposerWidget.vala:974
 msgid "Unable to save draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:939
+#: src/Composer/ComposerWidget.vala:975
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
