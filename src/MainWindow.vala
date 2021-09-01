@@ -32,6 +32,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private Gtk.ScrolledWindow message_list_scrolled;
 
     private uint configure_id;
+    private uint search_changed_debounce_timeout_id = 0;
 
     public const string ACTION_GROUP_PREFIX = "win";
     public const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
@@ -214,7 +215,18 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         });
 
         headerbar.search_entry.search_changed.connect (() => {
-            conversation_list_box.search (headerbar.search_entry.text);
+            if (search_changed_debounce_timeout_id != 0) {
+                GLib.Source.remove (search_changed_debounce_timeout_id);
+            }
+
+            search_changed_debounce_timeout_id = GLib.Timeout.add (800, () => {
+                search_changed_debounce_timeout_id = 0;
+
+                var search_term = headerbar.search_entry.text.strip ();
+                conversation_list_box.search.begin (search_term == "" ? null : search_term);
+
+                return GLib.Source.REMOVE;
+            });
         });
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
