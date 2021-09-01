@@ -213,9 +213,9 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             headerbar.set_paned_positions (paned_start.position, paned_end.position);
         });
 
-        headerbar.search_entry.search_changed.connect (() => {
-            conversation_list_box.search (headerbar.search_entry.text);
-        });
+        headerbar.search_entry.search_changed.connect (on_search);
+        headerbar.notify["hide-read"].connect (on_search);
+        headerbar.notify["hide-unstarred"].connect (on_search);
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
         session.account_added.connect (() => {
@@ -233,6 +233,11 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         });
 
         session.start.begin ();
+    }
+
+    private void on_search () {
+        warning ("on-search: term = %s, hide-read = %s, hide-unstarred = %s", headerbar.search_entry.text, (headerbar.hide_read ? "YES" : "NO"), (headerbar.hide_unstarred ? "YES" : "NO"));
+        conversation_list_box.search (headerbar.search_entry.text, headerbar.hide_read, headerbar.hide_unstarred);
     }
 
     private void on_compose_message () {

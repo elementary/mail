@@ -32,6 +32,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     private GLib.Cancellable? cancellable = null;
     private Gee.HashMap<string, Camel.FolderThread> threads;
     private string? current_search_query = null;
+    private bool current_search_hide_read = false;
+    private bool current_search_hide_unstarred = false;
     private Gee.HashMap<string, ConversationItemModel> conversations;
     private ConversationListStore list_store;
     private MoveHandler move_handler;
@@ -229,16 +231,31 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 return null;
             }
 
-            if (current_search_query == null) {
+            var has_current_search_query = current_search_query != null && current_search_query.strip () != "";
+            if (!has_current_search_query && !current_search_hide_read && !current_search_hide_unstarred) {
                 return folders[service_uid].get_uids ();
             }
 
-            var sb = new StringBuilder ();
-            Camel.SExp.encode_string (sb, current_search_query);
-            var encoded_query = sb.str;
+            string[] current_search_expressions = {};
 
-            string search_query = """(match-all (or (header-contains "From" %s)(header-contains "Subject" %s)(body-contains %s)))"""
+            if (current_search_hide_read) {
+                current_search_expressions += """(not "read")""";
+            }
+
+            if (current_search_hide_unstarred) {
+                current_search_expressions += """(and "important")""";
+            }
+
+            if (has_current_search_query) {
+                var sb = new StringBuilder ();
+                Camel.SExp.encode_string (sb, current_search_query);
+                var encoded_query = sb.str;
+
+                current_search_expressions += """(match-all (or (header-contains "From" %s)(header-contains "Subject" %s)(body-contains %s)))"""
                 .printf (encoded_query, encoded_query, encoded_query);
+            }
+
+            string search_query = "(and " + string.joinv ("", current_search_expressions) + ")";
 
             try {
                 return folders[service_uid].search_by_expression (search_query, cancellable);
@@ -252,8 +269,11 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
     }
 
-    public void search (string? query) {
+    public void search (string? query, bool hide_read = false, bool hide_unstarred = false) {
         current_search_query = query;
+        current_search_hide_read = hide_read;
+        current_search_hide_unstarred = hide_unstarred;
+
         load_folder.begin (folder_full_name_per_account);
     }
 
