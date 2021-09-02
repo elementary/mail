@@ -75,7 +75,7 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
 
         filter_button = new Gtk.MenuButton () {
             can_focus = false,
-            image = new Gtk.Image.from_icon_name ("network-wireless-symbolic", Gtk.IconSize.LARGE_TOOLBAR),
+            image = new Gtk.Image.from_icon_name ("view-more-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
             popover = filter_popover,
             tooltip_text = _("Filter Conversations"),
             margin_end = 6
