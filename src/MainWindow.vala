@@ -236,7 +236,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void on_search () {
-        warning ("on-search: term = %s, hide-read = %s, hide-unstarred = %s", headerbar.search_entry.text, (headerbar.hide_read ? "YES" : "NO"), (headerbar.hide_unstarred ? "YES" : "NO"));
         conversation_list_box.search (headerbar.search_entry.text, headerbar.hide_read, headerbar.hide_unstarred);
     }
 
