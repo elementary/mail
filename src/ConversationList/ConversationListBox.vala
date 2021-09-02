@@ -243,7 +243,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             }
 
             if (current_search_hide_unstarred) {
-                current_search_expressions += """(and "important")""";
+                current_search_expressions += """(not (not "important"))""";
             }
 
             if (has_current_search_query) {
@@ -251,11 +251,11 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 Camel.SExp.encode_string (sb, current_search_query);
                 var encoded_query = sb.str;
 
-                current_search_expressions += """(match-all (or (header-contains "From" %s)(header-contains "Subject" %s)(body-contains %s)))"""
+                current_search_expressions += """(or (header-contains "From" %s)(header-contains "Subject" %s)(body-contains %s))"""
                 .printf (encoded_query, encoded_query, encoded_query);
             }
 
-            string search_query = "(and " + string.joinv ("", current_search_expressions) + ")";
+            string search_query = "(match-all (and " + string.joinv ("", current_search_expressions) + "))";
 
             try {
                 return folders[service_uid].search_by_expression (search_query, cancellable);
