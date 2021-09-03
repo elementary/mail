@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Mail Daemon
+Comment=Mail Notifications
+Icon=io.elementary.mail
+Exec=@EXEC_PATH@
+Terminal=false
+Type=application
+Categories=System;
+OnlyShowIn=Pantheon;
+NoDisplay=true
+X-GNOME-AutoRestart=true
+X-GNOME-Autostart-Phase=Applications
