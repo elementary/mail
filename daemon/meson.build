@@ -1,4 +1,5 @@
 daemon_files = files(
+    'CamelSession.vala',
     'Daemon.vala'
 )
 
@@ -7,7 +8,8 @@ daemon_deps = [
     gobject_dep,
     granite_dep,
     camel_dep,
-    libedataserver_dep
+    libedataserver_dep,
+    libedataserverui_dep
 ]
 
 executable(
