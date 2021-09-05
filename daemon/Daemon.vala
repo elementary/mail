@@ -21,13 +21,11 @@ public class Mail.Daemon : GLib.Application {
 
     private NetworkMonitor network_monitor;
     private Camel.Session session;
-    private HashTable<E.Source, Camel.Store> stores;
     private HashTable<E.Source, Camel.Folder> inbox_folders;
     private HashTable<E.Source, uint> synchronize_timeout_ids;
     private E.SourceRegistry registry;
 
     construct {
-        stores = new HashTable<E.Source, Camel.Store> (E.Source.hash, E.Source.equal);
         inbox_folders = new HashTable<E.Source, Camel.Folder> (E.Source.hash, E.Source.equal);
         synchronize_timeout_ids = new HashTable<E.Source, uint> (E.Source.hash, E.Source.equal);
     }
@@ -79,8 +77,6 @@ public class Mail.Daemon : GLib.Application {
         Camel.Store? store = null;
         try {
             store = (Camel.Store) session.add_service (uid, extension.backend_name, Camel.ProviderType.STORE);
-            stores.insert (source, store);
-
         } catch (Error e) {
             warning ("[%s] Error adding service: %s", display_name, e.message);
         }
@@ -91,18 +87,18 @@ public class Mail.Daemon : GLib.Application {
 
                 if (inbox_folder != null) {
                     inbox_folder.changed.connect ((change_info) => {
-                        folder_changed (source, change_info);
+                        inbox_folder_changed (source, change_info);
                     });
                     inbox_folders.insert (source, inbox_folder);
 
                     debug ("[%s] Watching inbox for new messages…", display_name);
                     var refresh_timeout_id = GLib.Timeout.add_seconds (10, () => {
-                        store_synchronize_sync.begin (source);
+                        inbox_folder_synchronize_sync.begin (source);
                         return GLib.Source.CONTINUE;
                     });
                     synchronize_timeout_ids.insert (source, refresh_timeout_id);
 
-                    store_synchronize_sync.begin (source);
+                    inbox_folder_synchronize_sync.begin (source);
 
                 } else {
                     debug ("[%s] Inbox folder not found. Can't watch for new messages.", display_name);
@@ -129,30 +125,30 @@ public class Mail.Daemon : GLib.Application {
             GLib.Source.remove (timeout_id);
         }
 
-        inbox_folders.remove (source);
-
         bool exists;
-        var store = stores.take (source, out exists);
+        var inbox_folder = inbox_folders.take (source, out exists);
         if (exists) {
-            session.remove_service (store);
+            session.remove_service (inbox_folder.parent_store);
         }
     }
 
-    private async void store_synchronize_sync (E.Source source) {
+    private async void inbox_folder_synchronize_sync (E.Source source) {
         if (!network_monitor.network_available) {
             debug ("[%s] Network is not avaible. Skipping…", source.display_name);
             return;
         }
 
-        var store = stores.get (source);
-        if (store is Camel.OfflineStore) {
+        var inbox_folder = inbox_folders.get (source);
+        if (inbox_folder != null && inbox_folder.parent_store is Camel.OfflineStore) {
             debug ("[%s] Synchronizing…", source.display_name);
 
-            var offline_store = (Camel.OfflineStore) store;
+            var offline_store = (Camel.OfflineStore) inbox_folder.parent_store;
             try {
                 offline_store.set_online_sync (true, null);
                 offline_store.connect_sync (null);
                 offline_store.synchronize_sync (false, null);
+                inbox_folder.synchronize_sync (false, null);
+                inbox_folder.refresh_info_sync (null);
 
             } catch (Error e) {
                 warning ("[%s] Error synchronizing: %s", source.display_name, e.message);
@@ -160,8 +156,8 @@ public class Mail.Daemon : GLib.Application {
         }
     }
 
-    private void folder_changed (E.Source source, Camel.FolderChangeInfo changes) {
-        warning ("....... FOLDER CHANGED .................");
+    private void inbox_folder_changed (E.Source source, Camel.FolderChangeInfo changes) {
+        warning ("....... INBOX FOLDER CHANGED .................");
         var inbox_folder = inbox_folders.get (source);
         if (inbox_folder == null) {
             return;
