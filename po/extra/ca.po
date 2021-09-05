@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-31 01:02+0000\n"
-"PO-Revision-Date: 2021-07-30 11:55+0000\n"
+"PO-Revision-Date: 2021-09-04 12:40+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/extra/ca/>\n"
 "Language: ca\n"
@@ -66,21 +66,23 @@ msgstr "Funciona amb Gmail, Yahoo! i altres servidors d'IMAP populars."
 
 #: data/io.elementary.mail.appdata.xml.in:27
 msgid "Fixes:"
-msgstr ""
+msgstr "Correccions:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Fix an issue that prevented some messaging from rendering at all"
-msgstr ""
+msgstr "Correcció del que evitava que representar alguns missatges"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid ""
 "Set the correct \"From\" address when replying and multiple accounts are set "
 "up"
 msgstr ""
+"Establiment correcte de l'adreça del remitent quan es contesta i hi ha "
+"diferents comptes configurats"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 msgid "Fix a crash on startup for some conversations"
-msgstr ""
+msgstr "Correcció de la fallada a l'inici d'algunes converses"
 
 #: data/io.elementary.mail.appdata.xml.in:33
 #: data/io.elementary.mail.appdata.xml.in:43
