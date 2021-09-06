@@ -19,19 +19,8 @@
 */
 
 public class Mail.SimpleSasl : Camel.Sasl {
-    private static Camel.ServiceAuthType simple_auth_type = {
-        N_("SimpleServiceAuthType"),
-        N_("Provides a way to fall back to passwords in SSO scenarios."),
-        "SIMPLESERVICEAUTHTYPE",
-        false
-    };
-
     public SimpleSasl (string service_name, string mechanism, Camel.Service service) {
         Object (service_name: service_name, mechanism: mechanism, service: service);
-    }
-
-    static construct {
-        auth_type = simple_auth_type;
     }
 }
 
