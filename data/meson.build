@@ -14,7 +14,6 @@ foreach i : icon_sizes
 endforeach
 
 desktop_config = configuration_data()
-desktop_config.set('EXEC_PATH', libexecdir+'-daemon')
 configure_file (
     input: meson.project_name()+'-daemon' + '.desktop.in',
     output: meson.project_name()+'-daemon' + '.desktop',

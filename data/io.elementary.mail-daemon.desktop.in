@@ -2,7 +2,7 @@
 Name=Mail
 Comment=Mail Notifications
 Icon=io.elementary.mail
-Exec=@EXEC_PATH@
+Exec=io.elementary.mail
 Terminal=false
 Type=Application
 Categories=System;
