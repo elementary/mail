@@ -13,13 +13,8 @@ foreach i : icon_sizes
     )
 endforeach
 
-desktop_config = configuration_data()
-configure_file (
-    input: meson.project_name()+'-daemon' + '.desktop.in',
-    output: meson.project_name()+'-daemon' + '.desktop',
-    configuration: desktop_config,
-    install_dir: join_paths(get_option('datadir'), 'applications')
-)
+subdir(meson.project_name()+'-daemon-autostart')
+subdir(meson.project_name()+'-daemon-notifications')
 
 install_data(
     meson.project_name() + '.gschema.xml',
