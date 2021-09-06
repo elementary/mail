@@ -83,25 +83,46 @@ public class Mail.Daemon : GLib.Application {
 
         if (store != null) {
             try {
-                var inbox_folder = store.get_inbox_folder_sync (null);
+                var folder = store.get_inbox_folder_sync (null);
 
-                if (inbox_folder != null) {
-                    inbox_folder.changed.connect ((change_info) => {
-                        inbox_folder_changed (source, change_info);
-                    });
-                    inbox_folders.insert (source, inbox_folder);
+                if (folder != null) {
+                    var inbox_folder = store.get_folder_sync (folder.full_name, Camel.StoreGetFolderFlags.NONE, null);
 
-                    debug ("[%s] Watching inbox for new messages…", display_name);
-                    var refresh_timeout_id = GLib.Timeout.add_seconds (10, () => {
-                        inbox_folder_synchronize_sync.begin (source);
-                        return GLib.Source.CONTINUE;
-                    });
-                    synchronize_timeout_ids.insert (source, refresh_timeout_id);
+                    if (inbox_folder != null) {
+                        inbox_folder.changed.connect ((change_info) => {
+                            inbox_folder_changed (source, change_info);
+                        });
+                        inbox_folders.insert (source, inbox_folder);
 
-                    inbox_folder_synchronize_sync.begin (source);
+                        uint refresh_interval_in_minutes = 15;
+                        if (source.has_extension (E.SOURCE_EXTENSION_REFRESH)) {
+                            unowned var refresh_extension = (E.SourceRefresh) source.get_extension (E.SOURCE_EXTENSION_REFRESH);
+
+                            if (!refresh_extension.enabled) {
+                                refresh_interval_in_minutes = 0;
+
+                            } else if (refresh_extension.interval_minutes > 0) {
+                                refresh_interval_in_minutes = refresh_extension.interval_minutes;
+                            }
+                        }
+
+                        if (refresh_interval_in_minutes > 0) {
+                            debug ("[%s] Checking inbox for new mail every %u minutes…", display_name, refresh_interval_in_minutes);
+                            var refresh_timeout_id = GLib.Timeout.add_seconds (refresh_interval_in_minutes * 60, () => {
+                                inbox_folder_synchronize_sync.begin (source);
+                                return GLib.Source.CONTINUE;
+                            });
+                            synchronize_timeout_ids.insert (source, refresh_timeout_id);
+
+                            inbox_folder_synchronize_sync.begin (source);
+
+                        } else {
+                            debug ("[%s] Automatically checking inbox for new mail is disabled.", display_name);
+                        }
+                    }
 
                 } else {
-                    debug ("[%s] Inbox folder not found. Can't watch for new messages.", display_name);
+                    debug ("[%s] Inbox folder not found. Can't automatically check for new messages.", display_name);
                 }
 
             } catch (Error e) {
@@ -139,25 +160,19 @@ public class Mail.Daemon : GLib.Application {
         }
 
         var inbox_folder = inbox_folders.get (source);
-        if (inbox_folder != null && inbox_folder.parent_store is Camel.OfflineStore) {
-            debug ("[%s] Synchronizing…", source.display_name);
+        if (inbox_folder != null) {
+            debug ("[%s] Refreshing…", source.display_name);
 
-            var offline_store = (Camel.OfflineStore) inbox_folder.parent_store;
             try {
-                offline_store.set_online_sync (true, null);
-                offline_store.connect_sync (null);
-                offline_store.synchronize_sync (false, null);
-                inbox_folder.synchronize_sync (false, null);
                 inbox_folder.refresh_info_sync (null);
 
             } catch (Error e) {
-                warning ("[%s] Error synchronizing: %s", source.display_name, e.message);
+                warning ("[%s] Error refreshing: %s", source.display_name, e.message);
             }
         }
     }
 
     private void inbox_folder_changed (E.Source source, Camel.FolderChangeInfo changes) {
-        warning ("....... INBOX FOLDER CHANGED .................");
         var inbox_folder = inbox_folders.get (source);
         if (inbox_folder == null) {
             return;
@@ -170,7 +185,7 @@ public class Mail.Daemon : GLib.Application {
                 if (!(Camel.MessageFlags.SEEN in message_info.flags)) {
                     debug ("[%s] New message received. Sending notification %s…", source.display_name, added_uid);
 
-                    var notification = new GLib.Notification (source.display_name);
+                    var notification = new GLib.Notification (message_info.from);
                     notification.set_body (message_info.subject);
                     send_notification (added_uid, notification);
                 }
