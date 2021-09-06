@@ -18,12 +18,6 @@
 *
 */
 
-public class Mail.SimpleSasl : Camel.Sasl {
-    public SimpleSasl (string service_name, string mechanism, Camel.Service service) {
-        Object (service_name: service_name, mechanism: mechanism, service: service);
-    }
-}
-
 public class Mail.CamelSession : Camel.Session {
 
     public E.SourceRegistry registry { get; construct; }
@@ -100,7 +94,7 @@ public class Mail.CamelSession : Camel.Session {
             /* Some SASL mechanisms can attempt to authenticate without a
              * user password being provided (e.g. single-sign-on credentials),
              * but can fall back to a user password.  Handle that case next. */
-            var sasl = new SimpleSasl (((Camel.Provider)service.provider).protocol, mechanism, service);
+            var sasl = Camel.Sasl.for_service (((Camel.Provider)service.provider).protocol, mechanism, service);
             if (sasl != null) {
                 try_empty_password = sasl.try_empty_password_sync ();
             }
