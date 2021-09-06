@@ -185,7 +185,18 @@ public class Mail.Daemon : GLib.Application {
                 if (!(Camel.MessageFlags.SEEN in message_info.flags)) {
                     debug ("[%s] New message received. Sending notification %s…", source.display_name, added_uid);
 
-                    var notification = new GLib.Notification (message_info.from);
+                    unowned string? from_address;
+                    unowned string? from_name;
+
+                    var camel_address = new Camel.InternetAddress ();
+                    camel_address.unformat (message_info.from);
+                    camel_address.get (0, out from_name, out from_address);
+
+                    if (from_name == null) {
+                        from_name = from_address;
+                    }
+
+                    var notification = new GLib.Notification (from_name);
                     notification.set_body (message_info.subject);
                     send_notification (added_uid, notification);
                 }
