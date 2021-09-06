@@ -18,12 +18,6 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.Backend.SimpleSasl : Camel.Sasl {
-    public SimpleSasl (string service_name, string mechanism, Camel.Service service) {
-        Object (service_name: service_name, mechanism: mechanism, service: service);
-    }
-}
-
 public class Mail.Backend.Session : Camel.Session {
     private static Session _session;
     public static unowned Session get_default () {
@@ -85,7 +79,7 @@ public class Mail.Backend.Session : Camel.Session {
         /* Do not chain up.  Camel's default method is only an example for
          * subclasses to follow.  Instead we mimic most of its logic here. */
 
-        Camel.ServiceAuthType authtype;
+        Camel.ServiceAuthType? authtype = null;
         bool try_empty_password = false;
         var result = Camel.AuthenticationResult.REJECTED;
 
@@ -104,9 +98,7 @@ public class Mail.Backend.Session : Camel.Session {
                 result = service.authenticate_sync (mechanism); //@TODO make async?
 
                 if (result == Camel.AuthenticationResult.REJECTED) {
-                    throw new GLib.Error (
-                        Camel.Service.error_quark (),
-                        Camel.ServiceError.CANT_AUTHENTICATE,
+                    throw new Camel.ServiceError.CANT_AUTHENTICATE (
                         "%s authentication failed",
                         mechanism
                     );
@@ -118,7 +110,7 @@ public class Mail.Backend.Session : Camel.Session {
             /* Some SASL mechanisms can attempt to authenticate without a
              * user password being provided (e.g. single-sign-on credentials),
              * but can fall back to a user password.  Handle that case next. */
-            var sasl = new SimpleSasl (((Camel.Provider)service.provider).protocol, mechanism, service);
+            var sasl = Camel.Sasl.for_service (((Camel.Provider)service.provider).protocol, mechanism, service);
             if (sasl != null) {
                 try_empty_password = sasl.try_empty_password_sync ();
             }
@@ -166,11 +158,7 @@ public class Mail.Backend.Session : Camel.Session {
             local_error = e;
 
             if (e is GLib.IOError.CONNECTION_REFUSED || e is GLib.IOError.NOT_FOUND) {
-                local_error = new GLib.Error (
-                    Camel.Service.error_quark (),
-                    Camel.ServiceError.CANT_AUTHENTICATE,
-                    e.message
-                );
+                local_error = new Camel.ServiceError.CANT_AUTHENTICATE (e.message);
 
                 try {
                     if (cred_source.invoke_credentials_required_sync (E.SourceCredentialsReason.REJECTED, "", 0, e)) {
