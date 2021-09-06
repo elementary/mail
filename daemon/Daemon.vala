@@ -25,6 +25,12 @@ public class Mail.Daemon : GLib.Application {
     private HashTable<E.Source, uint> synchronize_timeout_ids;
     private E.SourceRegistry registry;
 
+    public Daemon () {
+        Object (
+            application_id: "io.elementary.mail-daemon"
+        );
+    }
+
     construct {
         inbox_folders = new HashTable<E.Source, Camel.Folder> (E.Source.hash, E.Source.equal);
         synchronize_timeout_ids = new HashTable<E.Source, uint> (E.Source.hash, E.Source.equal);
