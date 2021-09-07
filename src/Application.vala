@@ -19,7 +19,13 @@
  */
 
 public class Mail.Application : Gtk.Application {
+    const OptionEntry[] OPTIONS = {
+        { "silent", 's', 0, OptionArg.NONE, out silent, "Run the Application in background", null},
+        { null }
+    };
+
     public static GLib.Settings settings;
+    public static bool silent;
 
     private MainWindow? main_window = null;
 
@@ -39,6 +45,8 @@ public class Mail.Application : Gtk.Application {
         Intl.bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
         Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
         Intl.textdomain (GETTEXT_PACKAGE);
+
+        add_main_option_entries (OPTIONS);
 
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (() => {
@@ -81,6 +89,13 @@ public class Mail.Application : Gtk.Application {
     }
 
     public override void activate () {
+        if (silent) {
+            silent = false;
+            new InboxMonitor().start.begin ();
+            hold ();
+            return;
+        }
+
         if (main_window == null) {
             Gtk.IconTheme.get_default ().add_resource_path ("/io/elementary/mail");
 
@@ -117,6 +132,8 @@ public class Mail.Application : Gtk.Application {
             css_provider.load_from_resource ("io/elementary/mail/application.css");
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
+
+        main_window.present ();
     }
 }
 

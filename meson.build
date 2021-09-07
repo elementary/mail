@@ -72,7 +72,6 @@ config_file = configure_file(
     configuration: config_data
 )
 
-subdir('daemon')
 subdir('src')
 subdir('webkit-extension')
 subdir('data')

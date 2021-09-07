@@ -17,34 +17,29 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class Mail.Daemon : GLib.Application {
+public class Mail.InboxMonitor : GLib.Object {
 
     private NetworkMonitor network_monitor;
-    private Camel.Session session;
+    private Mail.Backend.Session session;
     private HashTable<E.Source, Camel.Folder> inbox_folders;
     private HashTable<E.Source, uint> synchronize_timeout_ids;
     private E.SourceRegistry registry;
 
-    public Daemon () {
-        Object (
-            application_id: "io.elementary.mail-daemon"
-        );
-    }
-
     construct {
         inbox_folders = new HashTable<E.Source, Camel.Folder> (E.Source.hash, E.Source.equal);
         synchronize_timeout_ids = new HashTable<E.Source, uint> (E.Source.hash, E.Source.equal);
+
+        network_monitor = GLib.NetworkMonitor.get_default ();
+        session = Mail.Backend.Session.get_default ();
     }
 
-    private async void start () {
-        network_monitor = GLib.NetworkMonitor.get_default ();
-
+    public async void start () {
+        yield session.start ();
         try {
             registry = yield new E.SourceRegistry (null);
-            session = new CamelSession (registry);
 
         } catch (Error e) {
-            critical ("Error starting daemon: %s", e.message);
+            critical ("Error starting inbox monitor: %s", e.message);
             return;
         }
 
@@ -204,44 +199,9 @@ public class Mail.Daemon : GLib.Application {
 
                     var notification = new GLib.Notification (from_name);
                     notification.set_body (message_info.subject);
-                    send_notification (added_uid, notification);
+                    GLib.Application.get_default ().send_notification (added_uid, notification);
                 }
             });
         }
-    }
-
-    protected override void activate () {
-        start.begin ();
-        Gtk.main ();
-    }
-}
-
-namespace Mail {
-    private static bool has_debug;
-
-    const OptionEntry[] OPTIONS = {
-        { "debug", 'd', 0, OptionArg.NONE, out has_debug, N_("Print debug information"), null },
-        { null }
-    };
-
-    public static int main (string[] args) {
-        OptionContext context = new OptionContext ("");
-        context.add_main_entries (OPTIONS, null);
-
-        try {
-            context.parse (ref args);
-        } catch (OptionError e) {
-            error (e.message);
-        }
-
-        Granite.Services.Logger.initialize ("Mail");
-        Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.WARN;
-
-        if (has_debug) {
-            Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
-        }
-
-        var app = new Daemon ();
-        return app.run (args);
     }
 }
