@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-29 22:20+0000\n"
+"POT-Creation-Date: 2021-08-31 01:02+0000\n"
 "PO-Revision-Date: 2021-08-09 13:11+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
@@ -100,143 +100,143 @@ msgstr "“メール”は、“システム設定”で設定されたメール
 msgid "Online Accounts…"
 msgstr "オンラインアカウント…"
 
-#: src/Composer/ComposerWidget.vala:100 src/MessageList/MessageListItem.vala:95
+#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:95
 msgid "From:"
 msgstr "差出人:"
 
-#: src/Composer/ComposerWidget.vala:116
+#: src/Composer/ComposerWidget.vala:117
 #: src/MessageList/MessageListItem.vala:100
 msgid "To:"
 msgstr "To:"
 
-#: src/Composer/ComposerWidget.vala:120
+#: src/Composer/ComposerWidget.vala:121
 #: src/MessageList/MessageListItem.vala:105
 msgid "Subject:"
 msgstr "件名:"
 
-#: src/Composer/ComposerWidget.vala:127
+#: src/Composer/ComposerWidget.vala:128
 msgid "Cc"
 msgstr "Cc"
 
-#: src/Composer/ComposerWidget.vala:129
+#: src/Composer/ComposerWidget.vala:130
 msgid "Bcc"
 msgstr "Bcc"
 
-#: src/Composer/ComposerWidget.vala:136
+#: src/Composer/ComposerWidget.vala:137
 #: src/MessageList/MessageListItem.vala:134
 msgid "Cc:"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:152
+#: src/Composer/ComposerWidget.vala:153
 msgid "Bcc:"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:195
+#: src/Composer/ComposerWidget.vala:196
 msgid "Bold"
 msgstr "太字"
 
-#: src/Composer/ComposerWidget.vala:202
+#: src/Composer/ComposerWidget.vala:203
 msgid "Italic"
 msgstr "斜体"
 
-#: src/Composer/ComposerWidget.vala:209
+#: src/Composer/ComposerWidget.vala:210
 msgid "Underline"
 msgstr "下線"
 
-#: src/Composer/ComposerWidget.vala:216
+#: src/Composer/ComposerWidget.vala:217
 msgid "Strikethrough"
 msgstr "取り消し線"
 
-#: src/Composer/ComposerWidget.vala:221
+#: src/Composer/ComposerWidget.vala:222
 msgid "Remove formatting"
 msgstr "書式を解除します"
 
-#: src/Composer/ComposerWidget.vala:233 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "リンクを挿入します"
 
-#: src/Composer/ComposerWidget.vala:264
+#: src/Composer/ComposerWidget.vala:265
 msgid "Delete draft"
 msgstr "下書きを削除します"
 
-#: src/Composer/ComposerWidget.vala:269
+#: src/Composer/ComposerWidget.vala:270
 msgid "Attach file"
 msgstr "ファイルを添付します"
 
-#: src/Composer/ComposerWidget.vala:275
+#: src/Composer/ComposerWidget.vala:276
 msgid "Send"
 msgstr "送信"
 
-#: src/Composer/ComposerWidget.vala:420
+#: src/Composer/ComposerWidget.vala:421
 msgid "Choose a file"
 msgstr "ファイルを選択"
 
-#: src/Composer/ComposerWidget.vala:423
+#: src/Composer/ComposerWidget.vala:424
 msgid "Attach"
 msgstr "添付"
 
-#: src/Composer/ComposerWidget.vala:424 src/Composer/ComposerWidget.vala:617
+#: src/Composer/ComposerWidget.vala:425 src/Composer/ComposerWidget.vala:653
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: src/Composer/ComposerWidget.vala:528
+#: src/Composer/ComposerWidget.vala:564
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%Y年%b%-e日 %a %p %-l:%M"
 
-#: src/Composer/ComposerWidget.vala:558
+#: src/Composer/ComposerWidget.vala:594
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s、%2$s さんのメッセージ:"
 
-#: src/Composer/ComposerWidget.vala:562
+#: src/Composer/ComposerWidget.vala:598
 msgid "---------- Forwarded message ----------"
 msgstr "---------- 転送されたメッセージ ----------"
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:600
 #, c-format
 msgid "From: %s<br/>"
 msgstr "差出人: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:565
+#: src/Composer/ComposerWidget.vala:601
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "件名: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:566
+#: src/Composer/ComposerWidget.vala:602
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "日付: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:567
+#: src/Composer/ComposerWidget.vala:603
 #, c-format
 msgid "To: %s<br/>"
 msgstr "宛先: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:569
+#: src/Composer/ComposerWidget.vala:605
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:608
+#: src/Composer/ComposerWidget.vala:644
 msgid "Permanently delete this draft?"
 msgstr "この下書きを完全に削除してもよろしいですか？"
 
-#: src/Composer/ComposerWidget.vala:609
+#: src/Composer/ComposerWidget.vala:645
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr "この操作はやり直せません。下書きを削除すると復元できなくなります。"
 
-#: src/Composer/ComposerWidget.vala:619
+#: src/Composer/ComposerWidget.vala:655
 msgid "Delete Draft"
 msgstr "下書きを削除"
 
-#: src/Composer/ComposerWidget.vala:639
+#: src/Composer/ComposerWidget.vala:675
 msgid "Send without subject?"
 msgstr "件名なしで送信しますか？"
 
-#: src/Composer/ComposerWidget.vala:640
+#: src/Composer/ComposerWidget.vala:676
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -244,19 +244,19 @@ msgstr ""
 "このメッセージには件名がありません。受信者が話題や重要性を推測できない可能性"
 "があります。"
 
-#: src/Composer/ComposerWidget.vala:646
+#: src/Composer/ComposerWidget.vala:682
 msgid "Don't Send"
 msgstr "送信しない"
 
-#: src/Composer/ComposerWidget.vala:648
+#: src/Composer/ComposerWidget.vala:684
 msgid "Send Anyway"
 msgstr "了解して送信"
 
-#: src/Composer/ComposerWidget.vala:670
+#: src/Composer/ComposerWidget.vala:706
 msgid "Sent message was not saved"
 msgstr "送信したメッセージは保存されませんでした"
 
-#: src/Composer/ComposerWidget.vala:671
+#: src/Composer/ComposerWidget.vala:707
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -264,19 +264,19 @@ msgstr ""
 "メッセージは送信されましたが、そのコピーは送信済みフォルダーに保存されません"
 "でした。"
 
-#: src/Composer/ComposerWidget.vala:686
+#: src/Composer/ComposerWidget.vala:722
 msgid "Unable to send message"
 msgstr "メッセージを送信できません"
 
-#: src/Composer/ComposerWidget.vala:687
+#: src/Composer/ComposerWidget.vala:723
 msgid "There was an unexpected error while sending your message."
 msgstr "メッセージを送信する際に予期しないエラーが発生しました。"
 
-#: src/Composer/ComposerWidget.vala:938
+#: src/Composer/ComposerWidget.vala:974
 msgid "Unable to save draft"
 msgstr "下書きを保存できません"
 
-#: src/Composer/ComposerWidget.vala:939
+#: src/Composer/ComposerWidget.vala:975
 msgid "There was an unexpected error while saving your draft."
 msgstr "下書きを保存する際に予期しないエラーが発生しました。"
 

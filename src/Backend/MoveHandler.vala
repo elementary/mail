@@ -30,13 +30,13 @@ public class Mail.MoveHandler {
     private uint timeout_id = 0;
     private MoveType move_type;
 
-    public int delete_threads (Camel.Folder folder, Gee.ArrayList<Camel.FolderThreadNode?> threads) {
+    public int delete_threads (Camel.Folder folder, Gee.ArrayList<unowned Camel.FolderThreadNode?> threads) {
         src_folder = folder;
         move_type = MoveType.TRASH;
 
         moved_messages = new Gee.ArrayList<weak Camel.MessageInfo> ();
 
-        foreach (var thread in threads) {
+        foreach (unowned var thread in threads) {
             collect_thread_messages (thread);
         }
 
@@ -56,13 +56,13 @@ public class Mail.MoveHandler {
         return moved_messages.size;
     }
 
-    public async int archive_threads (Camel.Folder folder, Gee.ArrayList<Camel.FolderThreadNode?> threads) {
+    public async int archive_threads (Camel.Folder folder, Gee.ArrayList<unowned Camel.FolderThreadNode?> threads) {
         src_folder = folder;
         move_type = MoveType.ARCHIVE;
 
         moved_messages = new Gee.ArrayList<weak Camel.MessageInfo> ();
 
-        foreach (var thread in threads) {
+        foreach (unowned var thread in threads) {
             collect_thread_messages (thread);
         }
 
