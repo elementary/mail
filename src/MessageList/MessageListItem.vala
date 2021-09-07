@@ -38,6 +38,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private bool message_loaded = false;
 
     private static Gee.HashMap<string, Gdk.Pixbuf> avatars;
+    private static GLib.Settings desktop_settings;
 
     public bool expanded {
         get {
@@ -69,6 +70,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     static construct {
         avatars = new Gee.HashMap<string, Gdk.Pixbuf> (null, null);
+        desktop_settings = new GLib.Settings ("org.gnome.desktop.interface");
     }
 
     construct {
@@ -164,7 +166,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             relevant_timestamp = message_info.date_sent;
         }
 
-        var datetime_label = new Gtk.Label (new DateTime.from_unix_utc (relevant_timestamp).format ("%b %e, %Y"));
+        var date_format = Granite.DateTime.get_default_date_format (false, true, true);
+        var time_format = Granite.DateTime.get_default_time_format (desktop_settings.get_enum ("clock-format") == 1, false);
+
+        var datetime_label = new Gtk.Label (new DateTime.from_unix_utc (relevant_timestamp).format ("%s %s".printf (date_format, time_format)));
         datetime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         var starred_icon = new Gtk.Image ();
