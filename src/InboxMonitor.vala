@@ -30,7 +30,7 @@ public class Mail.InboxMonitor : GLib.Object {
         synchronize_timeout_ids = new HashTable<E.Source, uint> (E.Source.hash, E.Source.equal);
 
         network_monitor = GLib.NetworkMonitor.get_default ();
-        session = Mail.Backend.Session.get_default ();
+        session = new Mail.Backend.Session ();
     }
 
     public async void start () {
