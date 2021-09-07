@@ -91,7 +91,7 @@ public class Mail.Application : Gtk.Application {
     public override void activate () {
         if (silent) {
             silent = false;
-            new InboxMonitor().start.begin ();
+            new InboxMonitor ().start.begin ();
             hold ();
             return;
         }
