@@ -20,12 +20,12 @@
 
 public class Mail.Application : Gtk.Application {
     const OptionEntry[] OPTIONS = {
-        { "silent", 's', 0, OptionArg.NONE, out silent, "Run the Application in background", null},
+        { "background", 'b', 0, OptionArg.NONE, out run_in_background, "Run the Application in background", null},
         { null }
     };
 
     public static GLib.Settings settings;
-    public static bool silent;
+    public static bool run_in_background;
 
     private MainWindow? main_window = null;
 
@@ -89,8 +89,8 @@ public class Mail.Application : Gtk.Application {
     }
 
     public override void activate () {
-        if (silent) {
-            silent = false;
+        if (run_in_background) {
+            run_in_background = false;
             new InboxMonitor ().start.begin ();
             hold ();
             return;

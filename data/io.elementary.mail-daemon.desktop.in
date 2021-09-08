@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Mail Daemon
 Comment=Send and receive mail
-Exec=io.elementary.mail -s
+Exec=io.elementary.mail --background
 Icon=io.elementary.mail
 Keywords=Email;E-mail;Mail;
 Terminal=false
