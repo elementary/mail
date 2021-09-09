@@ -368,48 +368,44 @@ public class Mail.ComposerWidget : Gtk.Grid {
         if (mailto_query != null) {
             from_revealer.reveal_child = can_change_sender = true;
 
-            var result = new Gee.HashMap<string, Gee.ArrayList<string>> ();
+            var result = new Gee.HashMultiMap<string, string> ();
             var params = mailto_query.split ("&");
 
             foreach (unowned string param in params) {
                 var terms = param.split ("=");
                 if (terms.length == 2) {
-                    var param_name = terms[0].down ();
-                    if (result[param_name] == null) {
-                        result[param_name] = new Gee.ArrayList<string> ();
-                    }
-                    result[param_name].add (Soup.URI.decode (terms[1]));
+                    result[terms[0].down ()] = (Soup.URI.decode (terms[1]));
 
                 } else {
                     critical ("Invalid mailto URL");
                 }
             }
 
-            if (result["bcc"] != null && result["bcc"].size > 0) {
+            if ("bcc" in result) {
                 bcc_button.clicked ();
-                bcc_val.text = result["bcc"].get (0);
+                bcc_val.text = result["bcc"].to_array ()[0];
             }
 
-            if (result["cc"] != null && result["cc"].size > 0) {
+            if ("cc" in result) {
                 cc_button.clicked ();
-                cc_val.text = result["cc"].get (0);
+                cc_val.text = result["cc"].to_array ()[0];
             }
 
-            if (result["subject"] != null && result["subject"].size > 0) {
-                subject_val.text = result["subject"].get (0);
+            if ("subject" in result) {
+                subject_val.text = result["subject"].to_array ()[0];
             }
 
-            if (result["body"] != null) {
+            if ("body" in result) {
                 var flags =
                     Camel.MimeFilterToHTMLFlags.CONVERT_ADDRESSES |
                     Camel.MimeFilterToHTMLFlags.CONVERT_NL |
                     Camel.MimeFilterToHTMLFlags.CONVERT_SPACES |
                     Camel.MimeFilterToHTMLFlags.CONVERT_URLS;
 
-                web_view.set_body_content (Camel.text_to_html (result["body"].get (0), flags, 0));
+                web_view.set_body_content (Camel.text_to_html (result["body"].to_array ()[0], flags, 0));
             }
 
-            if (result["attachment"] != null && result["attachment"].size > 0) {
+            if ("attachment" in result) {
                 foreach (var path in result["attachment"]) {
                     var file = File.new_for_path (path);
 
