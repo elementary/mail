@@ -239,11 +239,11 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             string[] current_search_expressions = {};
 
             if (current_search_hide_read) {
-                current_search_expressions += """(not "read")""";
+                current_search_expressions += """(not (system-flag "Seen"))""";
             }
 
             if (current_search_hide_unstarred) {
-                current_search_expressions += """(not (not "important"))""";
+                current_search_expressions += """(system-flag "Flagged")""";
             }
 
             if (has_current_search_query) {
