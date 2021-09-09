@@ -9,8 +9,6 @@ i18n = import('i18n')
 
 add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi')], language: 'vala')
 
-libexecdir = join_paths (get_option('prefix'), get_option('libexecdir'), meson.project_name())
-
 glib_dep = dependency('glib-2.0')
 gobject_dep = dependency('gobject-2.0')
 granite_dep = dependency('granite', version: '>= 6.0.0')
