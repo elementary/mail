@@ -62,5 +62,11 @@ public class Mail.ComposerWindow : Hdy.ApplicationWindow {
         window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
 
         add (content_grid);
+
+        key_release_event.connect ((event_key) => {
+            if (event_key.keyval == Gdk.Key.Escape) {
+                close ();
+            }
+        });
     }
 }
