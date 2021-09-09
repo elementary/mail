@@ -407,7 +407,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
             if ("attachment" in result) {
                 foreach (var path in result["attachment"]) {
-                    var file = File.new_for_path (path);
+                    var file = path.has_prefix ("file://") ? File.new_for_uri (path) : File.new_for_path (path);
 
                     var attachment = new Attachment (file);
                     attachment.margin = 3;
