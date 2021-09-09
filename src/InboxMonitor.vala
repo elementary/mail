@@ -181,27 +181,49 @@ public class Mail.InboxMonitor : GLib.Object {
 
         unowned var added_uids = changes.get_added_uids ();
         if (added_uids != null) {
+            var sender_names = new GenericSet<string> (str_hash, str_equal);
+            var unseen_message_infos = new SList<Camel.MessageInfo> ();
+
             added_uids.foreach ((added_uid) => {
                 var message_info = inbox_folder.get_message_info (added_uid);
-                if (!(Camel.MessageFlags.SEEN in message_info.flags)) {
-                    debug ("[%s] New message received. Sending notification %s…", source.display_name, added_uid);
 
-                    unowned string? from_address;
-                    unowned string? from_name;
+                if (!(Camel.MessageFlags.SEEN in message_info.flags)) {
+                    unowned string? sender_address;
+                    unowned string? sender_name;
 
                     var camel_address = new Camel.InternetAddress ();
                     camel_address.unformat (message_info.from);
-                    camel_address.get (0, out from_name, out from_address);
+                    camel_address.get (0, out sender_name, out sender_address);
 
-                    if (from_name == null) {
-                        from_name = from_address;
+                    if (sender_name == null) {
+                        sender_name = sender_address;
                     }
 
-                    var notification = new GLib.Notification (from_name);
-                    notification.set_body (message_info.subject);
-                    GLib.Application.get_default ().send_notification (added_uid, notification);
+                    sender_names.add (sender_name);
+                    unseen_message_infos.append (message_info);
                 }
             });
+
+            var unseen_message_infos_length = unseen_message_infos.length ();
+            if (unseen_message_infos_length == 1) {
+                var unseen_message_info = unseen_message_infos.nth_data (0);
+
+                var notification = new GLib.Notification (sender_names.iterator ().next_value ());
+                notification.set_body (unseen_message_info.subject);
+                GLib.Application.get_default ().send_notification (unseen_message_info.uid, notification);
+
+            } else if (unseen_message_infos_length > 1) {
+                var first_unseen_message_info = unseen_message_infos.nth_data (0);
+
+                GLib.Notification notification;
+                if (sender_names.length == 1) {
+                    notification = new GLib.Notification (_("%u new messages from %s").printf (unseen_message_infos_length, sender_names.iterator ().next_value ()));
+                } else {
+                    notification = new GLib.Notification (_("%u new messages from %u senders").printf (unseen_message_infos_length, sender_names.length));
+                }
+
+                GLib.Application.get_default ().send_notification (first_unseen_message_info.uid, notification);
+            }
         }
     }
 }
