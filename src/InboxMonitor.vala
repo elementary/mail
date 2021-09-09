@@ -213,16 +213,15 @@ public class Mail.InboxMonitor : GLib.Object {
                 GLib.Application.get_default ().send_notification (unseen_message_info.uid, notification);
 
             } else if (unseen_message_infos_length > 1) {
-                var first_unseen_message_info = unseen_message_infos.nth_data (0);
-
                 GLib.Notification notification;
+
                 if (sender_names.length == 1) {
                     notification = new GLib.Notification (_("%u new messages from %s").printf (unseen_message_infos_length, sender_names.iterator ().next_value ()));
                 } else {
                     notification = new GLib.Notification (_("%u new messages from %u senders").printf (unseen_message_infos_length, sender_names.length));
                 }
 
-                GLib.Application.get_default ().send_notification (first_unseen_message_info.uid, notification);
+                GLib.Application.get_default ().send_notification (unseen_message_infos.nth_data (0).uid, notification);
             }
         }
     }
