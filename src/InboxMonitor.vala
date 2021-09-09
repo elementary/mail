@@ -208,7 +208,7 @@ public class Mail.InboxMonitor : GLib.Object {
             if (unseen_message_infos_length == 1) {
                 var unseen_message_info = unseen_message_infos.nth_data (0);
 
-                var notification = new GLib.Notification (sender_names.iterator ().next_value ());
+                var notification = new GLib.Notification (_("%s - %s").printf (sender_names.iterator ().next_value (), inbox_folder.parent_store.display_name));
                 notification.set_body (unseen_message_info.subject);
                 GLib.Application.get_default ().send_notification (unseen_message_info.uid, notification);
 
@@ -217,13 +217,18 @@ public class Mail.InboxMonitor : GLib.Object {
                 string messages_count = ngettext ("%u new message", "%u new messages", unseen_message_infos_length).printf (unseen_message_infos_length);
 
                 if (sender_names.length == 1) {
-                    ///TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
-                    ///The next %s represents the sender name
-                    notification = new GLib.Notification (_("%s from %s").printf (messages_count, sender_names.iterator ().next_value ()));
+                    var sender_name = sender_names.iterator ().next_value ();
+
+                    notification = new GLib.Notification (_("%s - %s").printf (sender_name, inbox_folder.parent_store.display_name));
+                    ///TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
+                    notification.set_body (_("%s").printf (messages_count));
+
                 } else {
+                    notification = new GLib.Notification (inbox_folder.parent_store.display_name);
+
                     ///TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
                     ///The next %s represents the number of senders
-                    notification = new GLib.Notification (ngettext ("%s from %u sender", "%s from %u senders", sender_names.length).printf (messages_count, sender_names.length));
+                    notification.set_body (ngettext ("%s from %u sender", "%s from %u senders", sender_names.length).printf (messages_count, sender_names.length));
                 }
 
                 GLib.Application.get_default ().send_notification (unseen_message_infos.nth_data (0).uid, notification);
