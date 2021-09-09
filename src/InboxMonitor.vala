@@ -214,11 +214,16 @@ public class Mail.InboxMonitor : GLib.Object {
 
             } else if (unseen_message_infos_length > 1) {
                 GLib.Notification notification;
+                string messages_count = ngettext ("%u new message", "%u new messages", unseen_message_infos_length).printf (unseen_message_infos_length);
 
                 if (sender_names.length == 1) {
-                    notification = new GLib.Notification (_("%u new messages from %s").printf (unseen_message_infos_length, sender_names.iterator ().next_value ()));
+                    ///TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
+                    ///The next %s represents the sender name
+                    notification = new GLib.Notification (_("%s from %s").printf (messages_count, sender_names.iterator ().next_value ()));
                 } else {
-                    notification = new GLib.Notification (_("%u new messages from %u senders").printf (unseen_message_infos_length, sender_names.length));
+                    ///TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
+                    ///The next %s represents the number of senders
+                    notification = new GLib.Notification (ngettext ("%s from %u sender", "%s from %u senders", sender_names.length).printf (messages_count, sender_names.length));
                 }
 
                 GLib.Application.get_default ().send_notification (unseen_message_infos.nth_data (0).uid, notification);
