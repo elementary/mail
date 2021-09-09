@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-31 01:02+0000\n"
+"POT-Creation-Date: 2021-09-09 20:55+0000\n"
 "PO-Revision-Date: 2021-07-21 19:42+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/extra/fi/>\n"
@@ -65,66 +65,72 @@ msgstr ""
 "Toimii Gmailin, Yahoo! Mailin ja muiden suosittujen IMAP-palvelimien kanssa"
 
 #: data/io.elementary.mail.appdata.xml.in:27
-msgid "Fixes:"
+#: data/io.elementary.mail.appdata.xml.in:42
+#: data/io.elementary.mail.appdata.xml.in:52
+msgid "Improvements:"
 msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:29
-msgid "Fix an issue that prevented some messaging from rendering at all"
+msgid "Send a notification when new messages arrive"
 msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:30
+#: data/io.elementary.mail.appdata.xml.in:46
+#: data/io.elementary.mail.appdata.xml.in:59
+msgid "Updated translations"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:36
+msgid "Fixes:"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:38
+msgid "Fix an issue that prevented some messaging from rendering at all"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:39
 msgid ""
 "Set the correct \"From\" address when replying and multiple accounts are set "
 "up"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:31
+#: data/io.elementary.mail.appdata.xml.in:40
 msgid "Fix a crash on startup for some conversations"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:33
-#: data/io.elementary.mail.appdata.xml.in:43
-msgid "Improvements:"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:35
+#: data/io.elementary.mail.appdata.xml.in:44
 msgid "Only save drafts when there are new changes"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:36
+#: data/io.elementary.mail.appdata.xml.in:45
 msgid "Move Undo notification to the message view"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:37
-#: data/io.elementary.mail.appdata.xml.in:50
-msgid "Updated translations"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:45
+#: data/io.elementary.mail.appdata.xml.in:54
 msgid "Preserve conversation subjects when replying or forwarding"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:46
+#: data/io.elementary.mail.appdata.xml.in:55
 msgid "Disable the composer while messages are being sent"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:47
+#: data/io.elementary.mail.appdata.xml.in:56
 msgid "Edit saved draft messages"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:48
+#: data/io.elementary.mail.appdata.xml.in:57
 msgid "Make sure we don't save sent messages twice for some account types"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:49
+#: data/io.elementary.mail.appdata.xml.in:58
 msgid "Stability improvements"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:56
+#: data/io.elementary.mail.appdata.xml.in:65
 msgid "Complete rewrite from scratch"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:97
+#: data/io.elementary.mail.appdata.xml.in:106
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
