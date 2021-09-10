@@ -255,7 +255,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private async void synchronize_accounts () {
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
         var accounts = session.get_accounts ();
-        
+
         foreach (var account in accounts) {
             if (account.service is Camel.OfflineStore) {
                 var store = (Camel.OfflineStore) account.service;
