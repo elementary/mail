@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Mail Daemon
+Comment=Send and receive mail
+Exec=io.elementary.mail --background
+Icon=io.elementary.mail
+Keywords=Email;E-mail;Mail;
+Terminal=false
+Type=Application
+NoDisplay=true
+X-GNOME-AutoRestart=true
+X-GNOME-Autostart-Delay=5
+X-GNOME-Autostart-Phase=Applications
