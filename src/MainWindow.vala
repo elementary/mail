@@ -261,9 +261,9 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                 var store = (Camel.OfflineStore) account.service;
 
                 try {
-                    var inbox_folder = store.get_inbox_folder_sync (null);
+                    var inbox_folder = yield store.get_inbox_folder (GLib.Priority.LOW, null);
                     if (inbox_folder != null) {
-                        inbox_folder.refresh_info_sync (null);
+                        yield inbox_folder.refresh_info (GLib.Priority.LOW, null);
                     }
 
                 } catch (Error e) {
