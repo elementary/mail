@@ -169,7 +169,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         var date_format = Granite.DateTime.get_default_date_format (false, true, true);
         var time_format = Granite.DateTime.get_default_time_format (desktop_settings.get_enum ("clock-format") == 1, false);
 
-        var datetime_label = new Gtk.Label (new DateTime.from_unix_utc (relevant_timestamp).format ("%s %s".printf (date_format, time_format)));
+        ///TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
+        var datetime_label = new Gtk.Label (new DateTime.from_unix_utc (relevant_timestamp).format (_("%s at %s").printf (date_format, time_format)));
         datetime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         var starred_icon = new Gtk.Image ();
