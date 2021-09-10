@@ -246,10 +246,10 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         headerbar.is_busy = true;
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
-        var services = session.list_services ();
-        foreach (var service in services) {
-            if (service is Camel.Store) {
-                var store = (Camel.Store) service;
+        var accounts = session.get_accounts ();
+        foreach (var account in accounts) {
+            if (account.service is Camel.OfflineStore) {
+                var store = (Camel.OfflineStore) account.service;
 
                 try {
                     var inbox_folder = store.get_inbox_folder_sync (null);
