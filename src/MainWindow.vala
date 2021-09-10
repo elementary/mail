@@ -245,8 +245,17 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private void on_refresh () {
         headerbar.is_busy = true;
 
+        synchronize_accounts.begin ((obj, res) => {
+            synchronize_accounts.end (res);
+
+            headerbar.is_busy = false;
+        });
+    }
+
+    private async void synchronize_accounts () {
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
         var accounts = session.get_accounts ();
+        
         foreach (var account in accounts) {
             if (account.service is Camel.OfflineStore) {
                 var store = (Camel.OfflineStore) account.service;
@@ -262,8 +271,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                 }
             }
         };
-
-        headerbar.is_busy = false;
     }
 
     private void scroll_message_list_to_bottom () {
