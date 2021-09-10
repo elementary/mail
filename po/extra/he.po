@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-31 01:02+0000\n"
-"PO-Revision-Date: 2021-08-31 12:17+0000\n"
+"POT-Creation-Date: 2021-09-09 20:55+0000\n"
+"PO-Revision-Date: 2021-09-09 21:21+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/extra/he/>\n"
 "Language: he\n"
@@ -64,66 +64,72 @@ msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr "עובד עם Gmail,‏ Yahoo! Mail ושרתי IMAP נפוצים נוספים"
 
 #: data/io.elementary.mail.appdata.xml.in:27
-msgid "Fixes:"
-msgstr "תיקונים:"
-
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Fix an issue that prevented some messaging from rendering at all"
-msgstr "תוקנה תקלה שמנעה מעיבוד חלק מההודעות באופן כללי"
-
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid ""
-"Set the correct \"From\" address when replying and multiple accounts are set "
-"up"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:31
-msgid "Fix a crash on startup for some conversations"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:33
-#: data/io.elementary.mail.appdata.xml.in:43
+#: data/io.elementary.mail.appdata.xml.in:42
+#: data/io.elementary.mail.appdata.xml.in:52
 msgid "Improvements:"
 msgstr "שיפורים:"
 
-#: data/io.elementary.mail.appdata.xml.in:35
-msgid "Only save drafts when there are new changes"
-msgstr "טיוטות נשמרות רק כשיש שינויים חדשים"
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Send a notification when new messages arrive"
+msgstr "נשלחת התראה כשמגיעה הודעה חדשה"
 
-#: data/io.elementary.mail.appdata.xml.in:36
-msgid "Move Undo notification to the message view"
-msgstr "התראת הביטול הועברה לתצוגת ההודעה"
-
-#: data/io.elementary.mail.appdata.xml.in:37
-#: data/io.elementary.mail.appdata.xml.in:50
+#: data/io.elementary.mail.appdata.xml.in:30
+#: data/io.elementary.mail.appdata.xml.in:46
+#: data/io.elementary.mail.appdata.xml.in:59
 msgid "Updated translations"
 msgstr "עודכנו תרגומים"
 
+#: data/io.elementary.mail.appdata.xml.in:36
+msgid "Fixes:"
+msgstr "תיקונים:"
+
+#: data/io.elementary.mail.appdata.xml.in:38
+msgid "Fix an issue that prevented some messaging from rendering at all"
+msgstr "תוקנה תקלה שמנעה מעיבוד חלק מההודעות באופן כללי"
+
+#: data/io.elementary.mail.appdata.xml.in:39
+msgid ""
+"Set the correct \"From\" address when replying and multiple accounts are set "
+"up"
+msgstr "כתובת „מאת” הנכונה תוגדר בעת מענה כשמוגדרים מגוון חשבונות"
+
+#: data/io.elementary.mail.appdata.xml.in:40
+msgid "Fix a crash on startup for some conversations"
+msgstr "תוקנה קריסה בעלייה בחלק מהדיונים"
+
+#: data/io.elementary.mail.appdata.xml.in:44
+msgid "Only save drafts when there are new changes"
+msgstr "טיוטות נשמרות רק כשיש שינויים חדשים"
+
 #: data/io.elementary.mail.appdata.xml.in:45
+msgid "Move Undo notification to the message view"
+msgstr "התראת הביטול הועברה לתצוגת ההודעה"
+
+#: data/io.elementary.mail.appdata.xml.in:54
 msgid "Preserve conversation subjects when replying or forwarding"
 msgstr "נושאי הדיון נשמרים בעת תגובה או העברה של הודעות"
 
-#: data/io.elementary.mail.appdata.xml.in:46
+#: data/io.elementary.mail.appdata.xml.in:55
 msgid "Disable the composer while messages are being sent"
 msgstr "חלונית הכתיבה מושבתת בזמן שההודעות נשלחות"
 
-#: data/io.elementary.mail.appdata.xml.in:47
+#: data/io.elementary.mail.appdata.xml.in:56
 msgid "Edit saved draft messages"
 msgstr "אפשר לערוך הודעות טיוטה שנשמרו"
 
-#: data/io.elementary.mail.appdata.xml.in:48
+#: data/io.elementary.mail.appdata.xml.in:57
 msgid "Make sure we don't save sent messages twice for some account types"
 msgstr "וידוא שהודעה שנשלחה לא נשמרת פעמיים לחלק מסוגי החשבונות"
 
-#: data/io.elementary.mail.appdata.xml.in:49
+#: data/io.elementary.mail.appdata.xml.in:58
 msgid "Stability improvements"
 msgstr "שיפורי יציבות"
 
-#: data/io.elementary.mail.appdata.xml.in:56
+#: data/io.elementary.mail.appdata.xml.in:65
 msgid "Complete rewrite from scratch"
 msgstr "שכתוב מאפס"
 
-#: data/io.elementary.mail.appdata.xml.in:97
+#: data/io.elementary.mail.appdata.xml.in:106
 msgid "elementary, Inc."
 msgstr "elementary בע״מ"
 
