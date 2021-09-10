@@ -245,14 +245,14 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private void on_refresh () {
         headerbar.is_busy = true;
 
-        synchronize_accounts.begin ((obj, res) => {
-            synchronize_accounts.end (res);
+        refresh_accounts.begin ((obj, res) => {
+            refresh_accounts.end (res);
 
             headerbar.is_busy = false;
         });
     }
 
-    private async void synchronize_accounts () {
+    private async void refresh_accounts () {
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
         var accounts = session.get_accounts ();
 
