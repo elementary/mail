@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-09 20:55+0000\n"
+"POT-Creation-Date: 2021-09-12 21:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,6 +78,28 @@ msgstr ""
 #: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
 msgstr ""
+
+#: src/InboxMonitor.vala:211 src/InboxMonitor.vala:224
+#, c-format
+msgid "%s to %s"
+msgstr ""
+
+#. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
+#: src/InboxMonitor.vala:219
+#, c-format
+msgid "%u new message"
+msgid_plural "%u new messages"
+msgstr[0] ""
+msgstr[1] ""
+
+#. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
+#. /The next %s represents the number of senders
+#: src/InboxMonitor.vala:232
+#, c-format
+msgid "%s from %u sender"
+msgid_plural "%s from %u senders"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/MainWindow.vala:72
 msgid "Mail"
