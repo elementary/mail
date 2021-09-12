@@ -24,9 +24,9 @@ public class Mail.Backend.Account : GLib.Object {
         Object (service: service);
     }
     public static uint hash (Mail.Backend.Account account) {
-        return GLib.str_hash(account.service.uid);
+        return GLib.str_hash (account.service.uid);
     }
     public bool equal (Mail.Backend.Account account2) {
-        return hash(this) == hash(account2);
+        return hash (this) == hash (account2);
     }
 }

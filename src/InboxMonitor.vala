@@ -39,7 +39,7 @@ public class Mail.InboxMonitor : GLib.Object {
             add_account (account);
             return true;
         });
-        
+
         session.account_added.connect (add_account);
         session.account_removed.connect (remove_account);
     }
@@ -53,9 +53,9 @@ public class Mail.InboxMonitor : GLib.Object {
                     inbox_folders.remove (account);
                 }
 
-                lock (synchronize_timeout_ids) {                                                
+                lock (synchronize_timeout_ids) {
                     if (synchronize_timeout_ids.contains (account)) {
-                        GLib.Source.remove (synchronize_timeout_ids.get (account));                            
+                        GLib.Source.remove (synchronize_timeout_ids.get (account));
                     }
 
                     synchronize_timeout_ids.remove (account);
@@ -80,7 +80,7 @@ public class Mail.InboxMonitor : GLib.Object {
                         });
                         inbox_folders.insert (account, inbox_folder);
 
-                        uint refresh_interval_in_minutes = 15;                        
+                        uint refresh_interval_in_minutes = 15;
 
                         debug ("[%s] Checking inbox for new mail every %u minutes…", folder.display_name, refresh_interval_in_minutes);
                         var refresh_timeout_id = GLib.Timeout.add_seconds (refresh_interval_in_minutes * 60, () => {
