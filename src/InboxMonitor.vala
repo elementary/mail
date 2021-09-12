@@ -21,13 +21,12 @@ public class Mail.InboxMonitor : GLib.Object {
 
     private NetworkMonitor network_monitor;
     private Mail.Backend.Session session;
-    private HashTable<E.Source, Camel.Folder> inbox_folders;
-    private HashTable<E.Source, uint> synchronize_timeout_ids;
-    private E.SourceRegistry registry;
+    private HashTable<Mail.Backend.Account, Camel.Folder> inbox_folders;
+    private HashTable<Mail.Backend.Account, uint> synchronize_timeout_ids;
 
     construct {
-        inbox_folders = new HashTable<E.Source, Camel.Folder> (E.Source.hash, E.Source.equal);
-        synchronize_timeout_ids = new HashTable<E.Source, uint> (E.Source.hash, E.Source.equal);
+        inbox_folders = new HashTable<Mail.Backend.Account, Camel.Folder> (Mail.Backend.Account.hash, Mail.Backend.Account.equal);
+        synchronize_timeout_ids = new HashTable<Mail.Backend.Account, uint> (Mail.Backend.Account.hash, Mail.Backend.Account.equal);
 
         network_monitor = GLib.NetworkMonitor.get_default ();
         session = new Mail.Backend.Session ();
@@ -35,52 +34,38 @@ public class Mail.InboxMonitor : GLib.Object {
 
     public async void start () {
         yield session.start ();
-        try {
-            registry = yield new E.SourceRegistry (null);
 
-        } catch (Error e) {
-            critical ("Error starting inbox monitor: %s", e.message);
-            return;
-        }
-
-        var sources = registry.list_sources (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
-        foreach (var source in sources) {
-            add_source (source);
-        }
-
-        registry.source_added.connect (add_source);
-        registry.source_removed.connect (remove_source);
-
-        registry.source_changed.connect ((source) => {
-            remove_source (source);
-            add_source (source);
+        session.get_accounts ().foreach ((account) => {
+            add_account (account);
+            return true;
         });
+        
+        session.account_added.connect (add_account);
+        session.account_removed.connect (remove_account);
     }
 
-    private void add_source (E.Source source) {
-        if (!source.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
-            return;
-        }
-        unowned string uid = source.get_uid ();
-        unowned string display_name = source.get_display_name ();
+    private void remove_account () {
+        var accounts = session.get_accounts ();
 
-        if (uid == "vfolder") {
-            debug ("[%s] Is a vfolder. Ignoring it…", display_name);
-            return;
-        }
+        foreach (var account in inbox_folders.get_keys ()) {
+            if (!accounts.contains (account)) {
+                lock (inbox_folders) {
+                    inbox_folders.remove (account);
+                }
 
-        unowned var extension = (E.SourceMailAccount) source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
-        if (extension.backend_name == "mbox") {
-            debug ("[%s] Is a local inbox. Ignoring it…", display_name);
-            return;
-        }
+                lock (synchronize_timeout_ids) {                                                
+                    if (synchronize_timeout_ids.contains (account)) {
+                        GLib.Source.remove (synchronize_timeout_ids.get (account));                            
+                    }
 
-        Camel.Store? store = null;
-        try {
-            store = (Camel.Store) session.add_service (uid, extension.backend_name, Camel.ProviderType.STORE);
-        } catch (Error e) {
-            warning ("[%s] Error adding service: %s", display_name, e.message);
+                    synchronize_timeout_ids.remove (account);
+                }
+            }
         }
+    }
+
+    private void add_account (Mail.Backend.Account account) {
+        Camel.Store? store = (Camel.Store) account.service;
 
         if (store != null) {
             try {
@@ -91,90 +76,55 @@ public class Mail.InboxMonitor : GLib.Object {
 
                     if (inbox_folder != null) {
                         inbox_folder.changed.connect ((change_info) => {
-                            inbox_folder_changed (source, change_info);
+                            inbox_folder_changed (account, change_info);
                         });
-                        inbox_folders.insert (source, inbox_folder);
+                        inbox_folders.insert (account, inbox_folder);
 
-                        uint refresh_interval_in_minutes = 15;
-                        if (source.has_extension (E.SOURCE_EXTENSION_REFRESH)) {
-                            unowned var refresh_extension = (E.SourceRefresh) source.get_extension (E.SOURCE_EXTENSION_REFRESH);
+                        uint refresh_interval_in_minutes = 15;                        
 
-                            if (!refresh_extension.enabled) {
-                                refresh_interval_in_minutes = 0;
+                        debug ("[%s] Checking inbox for new mail every %u minutes…", folder.display_name, refresh_interval_in_minutes);
+                        var refresh_timeout_id = GLib.Timeout.add_seconds (refresh_interval_in_minutes * 60, () => {
+                            inbox_folder_synchronize_sync.begin (account);
+                            return GLib.Source.CONTINUE;
+                        });
+                        synchronize_timeout_ids.insert (account, refresh_timeout_id);
 
-                            } else if (refresh_extension.interval_minutes > 0) {
-                                refresh_interval_in_minutes = refresh_extension.interval_minutes;
-                            }
-                        }
-
-                        if (refresh_interval_in_minutes > 0) {
-                            debug ("[%s] Checking inbox for new mail every %u minutes…", display_name, refresh_interval_in_minutes);
-                            var refresh_timeout_id = GLib.Timeout.add_seconds (refresh_interval_in_minutes * 60, () => {
-                                inbox_folder_synchronize_sync.begin (source);
-                                return GLib.Source.CONTINUE;
-                            });
-                            synchronize_timeout_ids.insert (source, refresh_timeout_id);
-
-                            inbox_folder_synchronize_sync.begin (source);
-
-                        } else {
-                            debug ("[%s] Automatically checking inbox for new mail is disabled.", display_name);
-                        }
+                        inbox_folder_synchronize_sync.begin (account);
                     }
 
                 } else {
-                    debug ("[%s] Inbox folder not found. Can't automatically check for new messages.", display_name);
+                    debug ("[%s] Inbox folder not found. Can't automatically check for new messages.", account.service.display_name);
                 }
 
             } catch (Error e) {
-                warning ("[%s] Error getting inbox folder: %s", display_name, e.message);
+                debug ("[%s] Error getting inbox folder: %s", account.service.display_name, e.message);
             }
 
         } else {
-            debug ("[%s] No store available.", display_name);
+            debug ("[%s] No store available.", account.service.display_name);
         }
     }
 
-    private void remove_source (E.Source source) {
-        if (!source.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
-            return;
-        }
-        debug ("[%s] Removing…", source.display_name);
-
-        bool timeout_id_exists;
-        var timeout_id = synchronize_timeout_ids.take (source, out timeout_id_exists);
-        if (timeout_id_exists) {
-            GLib.Source.remove (timeout_id);
-        }
-
-        bool exists;
-        var inbox_folder = inbox_folders.take (source, out exists);
-        if (exists) {
-            session.remove_service (inbox_folder.parent_store);
-        }
-    }
-
-    private async void inbox_folder_synchronize_sync (E.Source source) {
+    private async void inbox_folder_synchronize_sync (Mail.Backend.Account account) {
         if (!network_monitor.network_available) {
-            debug ("[%s] Network is not avaible. Skipping…", source.display_name);
+            debug ("[%s] Network is not avaible. Skipping…", account.service.display_name);
             return;
         }
 
-        var inbox_folder = inbox_folders.get (source);
+        var inbox_folder = inbox_folders.get (account);
         if (inbox_folder != null) {
-            debug ("[%s] Refreshing…", source.display_name);
+            debug ("[%s] Refreshing…", account.service.display_name);
 
             try {
-                inbox_folder.refresh_info_sync (null);
-
+                yield inbox_folder.refresh_info (GLib.Priority.DEFAULT, null);
             } catch (Error e) {
-                warning ("[%s] Error refreshing: %s", source.display_name, e.message);
+                debug ("[%s] Error refreshing: %s", account.service.display_name, e.message);
             }
         }
     }
 
-    private void inbox_folder_changed (E.Source source, Camel.FolderChangeInfo changes) {
-        var inbox_folder = inbox_folders.get (source);
+    private void inbox_folder_changed (Mail.Backend.Account account, Camel.FolderChangeInfo changes) {
+        var inbox_folder = inbox_folders.get (account);
         if (inbox_folder == null) {
             return;
         }
