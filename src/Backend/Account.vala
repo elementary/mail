@@ -23,4 +23,10 @@ public class Mail.Backend.Account : GLib.Object {
     public Account (Camel.Service service) {
         Object (service: service);
     }
+    public static uint hash (Mail.Backend.Account account) {
+        return GLib.str_hash(account.service.uid);
+    }
+    public bool equal (Mail.Backend.Account account2) {
+        return hash(this) == hash(account2);
+    }
 }
