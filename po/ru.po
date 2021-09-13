@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-12 21:43+0000\n"
-"PO-Revision-Date: 2021-08-27 23:06+0000\n"
+"PO-Revision-Date: 2021-09-13 13:56+0000\n"
 "Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
 "Language: ru\n"
@@ -92,29 +92,26 @@ msgstr "Переместить беседы в корзину"
 #: src/InboxMonitor.vala:211 src/InboxMonitor.vala:224
 #, c-format
 msgid "%s to %s"
-msgstr ""
+msgstr "%s в %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:219
-#, fuzzy, c-format
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
+#, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "%d новое сообщение"
-msgstr[1] "%d новых сообщения"
-msgstr[2] "%d новых сообщений"
+msgstr[0] "%u новое сообщение"
+msgstr[1] "%u новых сообщений"
+msgstr[2] "%u новых сообщений"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
 #: src/InboxMonitor.vala:232
-#, fuzzy, c-format
-#| msgid "Always Show from Sender"
+#, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] "Всегда показывать от этого отправителя"
-msgstr[1] "Всегда показывать от этого отправителя"
-msgstr[2] "Всегда показывать от этого отправителя"
+msgstr[0] "%s от %u отправителя"
+msgstr[1] "%s от %u отправителей"
+msgstr[2] "%s от %u отправителей"
 
 #: src/MainWindow.vala:72
 msgid "Mail"
