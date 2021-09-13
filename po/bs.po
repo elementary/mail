@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bosnianuniversetranslation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-31 01:02+0000\n"
+"POT-Creation-Date: 2021-09-12 21:43+0000\n"
 "PO-Revision-Date: 2015-11-24 15:43+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -90,6 +90,33 @@ msgstr "Pomjeri konverzacije"
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Pomjeri konverzacije"
+
+#: src/InboxMonitor.vala:211 src/InboxMonitor.vala:224
+#, c-format
+msgid "%s to %s"
+msgstr ""
+
+#         translations.
+#. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
+#: src/InboxMonitor.vala:219
+#, fuzzy, c-format
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "%u new message"
+msgid_plural "%u new messages"
+msgstr[0] "%d nova poruka"
+msgstr[1] "%d nove poruke"
+msgstr[2] "%d novih poruka"
+
+#. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
+#. /The next %s represents the number of senders
+#: src/InboxMonitor.vala:232
+#, c-format
+msgid "%s from %u sender"
+msgid_plural "%s from %u senders"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: src/MainWindow.vala:72
 #, fuzzy
@@ -900,13 +927,6 @@ msgstr "_Snimi"
 
 #~ msgid "%s - New Messages"
 #~ msgstr "%s - Novih poruka"
-
-#         translations.
-#~ msgid "%d new message"
-#~ msgid_plural "%d new messages"
-#~ msgstr[0] "%d nova poruka"
-#~ msgstr[1] "%d nove poruke"
-#~ msgstr[2] "%d novih poruka"
 
 #         translations.
 #~ msgid "%s, %d new message total"
