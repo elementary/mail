@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-09 20:55+0000\n"
+"POT-Creation-Date: 2021-09-12 21:43+0000\n"
 "PO-Revision-Date: 2020-04-10 14:01+0000\n"
 "Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <https://l10n.elementary.io/projects/mail/mail/hr/>\n"
@@ -86,6 +86,33 @@ msgstr "Premjesti razgovore u smeće"
 #: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
 msgstr "Premjesti razgovore u smeće"
+
+#: src/InboxMonitor.vala:211 src/InboxMonitor.vala:224
+#, c-format
+msgid "%s to %s"
+msgstr ""
+
+#. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
+#: src/InboxMonitor.vala:219
+#, fuzzy, c-format
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "%u new message"
+msgid_plural "%u new messages"
+msgstr[0] "%d nova poruka"
+msgstr[1] "%d nove poruke"
+msgstr[2] "%d novih poruka"
+
+#. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
+#. /The next %s represents the number of senders
+#: src/InboxMonitor.vala:232
+#, fuzzy, c-format
+#| msgid "Always Show from Sender"
+msgid "%s from %u sender"
+msgid_plural "%s from %u senders"
+msgstr[0] "Uvijek prikaži pošiljatelja"
+msgstr[1] "Uvijek prikaži pošiljatelja"
+msgstr[2] "Uvijek prikaži pošiljatelja"
 
 #: src/MainWindow.vala:72
 msgid "Mail"
@@ -945,12 +972,6 @@ msgstr "Spremi"
 
 #~ msgid "%s - New Messages"
 #~ msgstr "%s - Novih poruka"
-
-#~ msgid "%d new message"
-#~ msgid_plural "%d new messages"
-#~ msgstr[0] "%d nova poruka"
-#~ msgstr[1] "%d nove poruke"
-#~ msgstr[2] "%d novih poruka"
 
 #~ msgid "%s, %d new message total"
 #~ msgid_plural "%s, %d new messages total"

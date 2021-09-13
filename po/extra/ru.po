@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-09 20:55+0000\n"
-"PO-Revision-Date: 2021-09-04 16:00+0000\n"
+"POT-Creation-Date: 2021-09-12 21:43+0000\n"
+"PO-Revision-Date: 2021-09-11 16:36+0000\n"
 "Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/extra/ru/>\n"
 "Language: ru\n"
@@ -72,10 +72,8 @@ msgid "Improvements:"
 msgstr "Улучшения:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
-#, fuzzy
-#| msgid "Move Undo notification to the message view"
 msgid "Send a notification when new messages arrive"
-msgstr "Отклонение уведомлений перемещены в панель уведомлений"
+msgstr "Отправка уведомлений, когда поступают новые сообщения"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 #: data/io.elementary.mail.appdata.xml.in:46

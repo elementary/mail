@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-09 20:55+0000\n"
-"PO-Revision-Date: 2021-08-31 12:17+0000\n"
-"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"POT-Creation-Date: 2021-09-12 21:43+0000\n"
+"PO-Revision-Date: 2021-09-13 13:56+0000\n"
+"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/extra/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -77,10 +77,8 @@ msgid "Improvements:"
 msgstr "Améliorations :"
 
 #: data/io.elementary.mail.appdata.xml.in:29
-#, fuzzy
-#| msgid "Move Undo notification to the message view"
 msgid "Send a notification when new messages arrive"
-msgstr "Déplacement des notifications d'annulation dans la vue des messages"
+msgstr "Envoi d'une notification lors de l'arrivée d'un message"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 #: data/io.elementary.mail.appdata.xml.in:46
