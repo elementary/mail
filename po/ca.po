@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-12 21:43+0000\n"
-"PO-Revision-Date: 2021-07-19 16:48+0000\n"
+"PO-Revision-Date: 2021-09-14 15:41+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -86,27 +86,24 @@ msgstr "Mou les converses a la paperera"
 #: src/InboxMonitor.vala:211 src/InboxMonitor.vala:224
 #, c-format
 msgid "%s to %s"
-msgstr ""
+msgstr "%s a %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:219
-#, fuzzy, c-format
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
+#, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "%d missatge nou"
-msgstr[1] "%d missatges nous"
+msgstr[0] "%u missatge nou"
+msgstr[1] "%u missatges nous"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
 #: src/InboxMonitor.vala:232
-#, fuzzy, c-format
-#| msgid "Always Show from Sender"
+#, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] "Mostra sempre el remitent"
-msgstr[1] "Mostra sempre el remitent"
+msgstr[0] "%s d'%u remitent"
+msgstr[1] "%s de %u remitents"
 
 #: src/MainWindow.vala:72
 msgid "Mail"
