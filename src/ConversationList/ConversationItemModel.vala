@@ -131,7 +131,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public bool unread {
         get {
-            return get_all_unread (node);
+            return has_thread_flag (node, Camel.MessageFlags.SEEN);
         }
     }
 
@@ -190,13 +190,18 @@ public class Mail.ConversationItemModel : GLib.Object {
         return time;
     }
 
-    private static bool get_all_unread (Camel.FolderThreadNode? node) {
-        var is_unread = !(Camel.MessageFlags.SEEN in (int)node.message.flags);
+    private static bool has_thread_flag (Camel.FolderThreadNode? node, Camel.MessageFlags flag) {
+        var has_flag = !(flag in (int)node.message.flags);
 
+        if (!has_flag) {
         for (unowned Camel.FolderThreadNode? child = node.child; child != null; child = child.next) {
-            is_unread = is_unread || get_all_unread (child);
+                has_flag = has_thread_flag (child, flag);
+                if (has_flag) {
+                    break;
+                }
+            }            
         }
 
-        return is_unread;
+        return has_flag;
     }
 }

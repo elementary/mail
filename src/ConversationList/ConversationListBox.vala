@@ -82,7 +82,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
                 if (((ConversationItemModel) row).unread) {
                     mark_read_timeout_id = GLib.Timeout.add_seconds (MARK_READ_TIMEOUT_SECONDS, () => {
-                        set_thread_seen (((ConversationItemModel) row).node);
+                        set_thread_flag (((ConversationItemModel) row).node, Camel.MessageFlags.SEEN);
 
                         mark_read_timeout_id = 0;
                         return false;
@@ -108,13 +108,13 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         });
     }
 
-    private static void set_thread_seen (Camel.FolderThreadNode? node) {
-        if (!(Camel.MessageFlags.SEEN in (int)node.message.flags)) {
+    private static void set_thread_flag (Camel.FolderThreadNode? node, Camel.MessageFlags flag) {
+        if (!(flag in (int)node.message.flags)) {
             node.message.set_flags (Camel.MessageFlags.SEEN, ~0);
         }
 
         for (unowned Camel.FolderThreadNode? child = node.child; child != null; child = child.next) {
-            set_thread_seen (child);
+            set_thread_flag (child, flag);
         }
     }
 
