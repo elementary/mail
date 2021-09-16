@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-12 21:43+0000\n"
-"PO-Revision-Date: 2021-07-16 19:27+0000\n"
+"PO-Revision-Date: 2021-09-14 15:41+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
 "Language: tr\n"
@@ -93,27 +93,24 @@ msgstr "Konuşmaları Çöpe Taşı"
 #: src/InboxMonitor.vala:211 src/InboxMonitor.vala:224
 #, c-format
 msgid "%s to %s"
-msgstr ""
+msgstr "%s: %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:219
-#, fuzzy, c-format
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
+#, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "%d yeni mesaj"
-msgstr[1] "%d yeni mesaj"
+msgstr[0] "%u yeni mesaj"
+msgstr[1] "%u yeni mesaj"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
 #: src/InboxMonitor.vala:232
-#, fuzzy, c-format
-#| msgid "Always Show from Sender"
+#, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] "Bu Gönderenin Resimlerini Her Zaman Göster"
-msgstr[1] "Bu Gönderenin Resimlerini Her Zaman Göster"
+msgstr[0] "%u gönderenden %s"
+msgstr[1] "%u gönderenden %s"
 
 #: src/MainWindow.vala:72
 msgid "Mail"
