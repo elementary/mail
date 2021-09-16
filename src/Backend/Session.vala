@@ -36,7 +36,7 @@ public class Mail.Backend.Session : Camel.Session {
     public signal void account_added (Mail.Backend.Account account);
     public signal void account_removed ();
 
-    private Session () {
+    public Session () {
         Object (user_data_dir: Path.build_filename (E.get_user_data_dir (), "mail"), user_cache_dir: Path.build_filename (E.get_user_cache_dir (), "mail"));
     }
 
