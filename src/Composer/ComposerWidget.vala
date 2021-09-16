@@ -366,40 +366,55 @@ public class Mail.ComposerWidget : Gtk.Grid {
         }
 
         if (mailto_query != null) {
-            var result = new Gee.HashMap<string, string> ();
+            from_revealer.reveal_child = can_change_sender = true;
+
+            var result = new Gee.HashMultiMap<string, string> ();
             var params = mailto_query.split ("&");
 
             foreach (unowned string param in params) {
                 var terms = param.split ("=");
                 if (terms.length == 2) {
-                    result[terms[0].down ()] = Soup.URI.decode (terms[1]);
+                    result[terms[0].down ()] = (Soup.URI.decode (terms[1]));
+
                 } else {
                     critical ("Invalid mailto URL");
                 }
             }
 
-            if (result["bcc"] != null) {
+            if ("bcc" in result) {
                 bcc_button.clicked ();
-                bcc_val.text = result["bcc"];
+                bcc_val.text = result["bcc"].to_array ()[0];
             }
 
-            if (result["cc"] != null) {
+            if ("cc" in result) {
                 cc_button.clicked ();
-                cc_val.text = result["cc"];
+                cc_val.text = result["cc"].to_array ()[0];
             }
 
-            if (result["subject"] != null) {
-                subject_val.text = result["subject"];
+            if ("subject" in result) {
+                subject_val.text = result["subject"].to_array ()[0];
             }
 
-            if (result["body"] != null) {
+            if ("body" in result) {
                 var flags =
                     Camel.MimeFilterToHTMLFlags.CONVERT_ADDRESSES |
                     Camel.MimeFilterToHTMLFlags.CONVERT_NL |
                     Camel.MimeFilterToHTMLFlags.CONVERT_SPACES |
                     Camel.MimeFilterToHTMLFlags.CONVERT_URLS;
 
-                web_view.set_body_content (Camel.text_to_html (result["body"], flags, 0));
+                web_view.set_body_content (Camel.text_to_html (result["body"].to_array ()[0], flags, 0));
+            }
+
+            if ("attachment" in result) {
+                foreach (var path in result["attachment"]) {
+                    var file = path.has_prefix ("file://") ? File.new_for_uri (path) : File.new_for_path (path);
+
+                    var attachment = new Attachment (file);
+                    attachment.margin = 3;
+
+                    attachment_box.add (attachment);
+                }
+                attachment_box.show_all ();
             }
         }
     }

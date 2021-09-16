@@ -22,9 +22,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-31 01:02+0000\n"
-"PO-Revision-Date: 2021-08-12 09:20+0000\n"
-"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"POT-Creation-Date: 2021-09-12 21:43+0000\n"
+"PO-Revision-Date: 2021-09-13 13:56+0000\n"
+"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -93,6 +93,28 @@ msgstr "Déplacer les conversations dans les archives"
 #: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
 msgstr "Déplacer les conversations dans la corbeille"
+
+#: src/InboxMonitor.vala:211 src/InboxMonitor.vala:224
+#, c-format
+msgid "%s to %s"
+msgstr "%s à %s"
+
+#. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
+#: src/InboxMonitor.vala:219
+#, c-format
+msgid "%u new message"
+msgid_plural "%u new messages"
+msgstr[0] "%u nouveau message"
+msgstr[1] "%u nouveaux messages"
+
+#. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
+#. /The next %s represents the number of senders
+#: src/InboxMonitor.vala:232
+#, c-format
+msgid "%s from %u sender"
+msgid_plural "%s from %u senders"
+msgstr[0] "%s de %u émetteur"
+msgstr[1] "%s de %u émetteurs"
 
 #: src/MainWindow.vala:72
 msgid "Mail"
@@ -957,11 +979,6 @@ msgstr "Enregistrer"
 
 #~ msgid "%s - New Messages"
 #~ msgstr "%s - Nouveaux messages"
-
-#~ msgid "%d new message"
-#~ msgid_plural "%d new messages"
-#~ msgstr[0] "%d nouveau message"
-#~ msgstr[1] "%d nouveaux messages"
 
 #~ msgid "%s, %d new message total"
 #~ msgid_plural "%s, %d new messages total"
