@@ -199,7 +199,7 @@ public class Mail.ConversationItemModel : GLib.Object {
                 if (has_flag) {
                     break;
                 }
-            }            
+            }
         }
 
         return has_flag;
