@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-12 21:43+0000\n"
+"POT-Creation-Date: 2021-09-17 18:59+0000\n"
 "PO-Revision-Date: 2021-09-13 13:56+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
@@ -111,17 +111,17 @@ msgid_plural "%s from %u senders"
 msgstr[0] "%s ממען אחד"
 msgstr[1] "%s מ־%u מענים"
 
-#: src/MainWindow.vala:72
+#: src/MainWindow.vala:73
 msgid "Mail"
 msgstr "דוא״ל"
 
-#: src/MainWindow.vala:294
+#: src/MainWindow.vala:306
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "הודעה נמחקה"
 msgstr[1] "הודעות נמחקו"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:318
 msgid "Undo"
 msgstr "ביטול"
 
@@ -204,76 +204,76 @@ msgstr "צירוף קובץ"
 msgid "Send"
 msgstr "שליחה"
 
-#: src/Composer/ComposerWidget.vala:421
+#: src/Composer/ComposerWidget.vala:436
 msgid "Choose a file"
 msgstr "בחירת קובץ"
 
-#: src/Composer/ComposerWidget.vala:424
+#: src/Composer/ComposerWidget.vala:439
 msgid "Attach"
 msgstr "צירוף"
 
-#: src/Composer/ComposerWidget.vala:425 src/Composer/ComposerWidget.vala:653
+#: src/Composer/ComposerWidget.vala:440 src/Composer/ComposerWidget.vala:668
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "ביטול"
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:579
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a ,ה־%-e ב%b,‏ %Y בשעה %-l:%M %p"
 
-#: src/Composer/ComposerWidget.vala:594
+#: src/Composer/ComposerWidget.vala:609
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "בתאריך %1$s, נכתב ע״י %2$s:"
 
-#: src/Composer/ComposerWidget.vala:598
+#: src/Composer/ComposerWidget.vala:613
 msgid "---------- Forwarded message ----------"
 msgstr "---------- הודעה שהועברה ----------"
 
-#: src/Composer/ComposerWidget.vala:600
+#: src/Composer/ComposerWidget.vala:615
 #, c-format
 msgid "From: %s<br/>"
 msgstr "מאת: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:601
+#: src/Composer/ComposerWidget.vala:616
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "נושא: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:602
+#: src/Composer/ComposerWidget.vala:617
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "תאריך: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:603
+#: src/Composer/ComposerWidget.vala:618
 #, c-format
 msgid "To: %s<br/>"
 msgstr "אל: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:605
+#: src/Composer/ComposerWidget.vala:620
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "עותק: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:644
+#: src/Composer/ComposerWidget.vala:659
 msgid "Permanently delete this draft?"
 msgstr "למחוק את הטיוטה הזאת לצמיתות?"
 
-#: src/Composer/ComposerWidget.vala:645
+#: src/Composer/ComposerWidget.vala:660
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr "פעולה זו אינה הפיכה, שחזור הטיוטה שלך אינו אפשרי לאחר מחיקה."
 
-#: src/Composer/ComposerWidget.vala:655
+#: src/Composer/ComposerWidget.vala:670
 msgid "Delete Draft"
 msgstr "מחיקת טיוטה"
 
-#: src/Composer/ComposerWidget.vala:675
+#: src/Composer/ComposerWidget.vala:690
 msgid "Send without subject?"
 msgstr "לשלוח ללא נושא?"
 
-#: src/Composer/ComposerWidget.vala:676
+#: src/Composer/ComposerWidget.vala:691
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -281,37 +281,37 @@ msgstr ""
 "שדה הנושא של ההודעה הזו ריק. יתכן שהנמען לא יוכל להבין במה מדובר או להעריך "
 "את חשיבות ההודעה."
 
-#: src/Composer/ComposerWidget.vala:682
+#: src/Composer/ComposerWidget.vala:697
 msgid "Don't Send"
 msgstr "לא לשלוח"
 
-#: src/Composer/ComposerWidget.vala:684
+#: src/Composer/ComposerWidget.vala:699
 msgid "Send Anyway"
 msgstr "לשלוח בכל זאת"
 
-#: src/Composer/ComposerWidget.vala:706
+#: src/Composer/ComposerWidget.vala:721
 msgid "Sent message was not saved"
 msgstr "ההודעה שנשלחה לא נשמרה"
 
-#: src/Composer/ComposerWidget.vala:707
+#: src/Composer/ComposerWidget.vala:722
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr "ההודעה נשמרה, עם זאת, לא נשמע עותק ממנה בתיקיית ההודעות שנשלחו."
 
-#: src/Composer/ComposerWidget.vala:722
+#: src/Composer/ComposerWidget.vala:737
 msgid "Unable to send message"
 msgstr "לא ניתן לשלוח הודעה"
 
-#: src/Composer/ComposerWidget.vala:723
+#: src/Composer/ComposerWidget.vala:738
 msgid "There was an unexpected error while sending your message."
 msgstr "אירעה שגיאה בלתי צפויה בשליחת ההודעה שלך."
 
-#: src/Composer/ComposerWidget.vala:974
+#: src/Composer/ComposerWidget.vala:989
 msgid "Unable to save draft"
 msgstr "לא ניתן לשמור טיוטה"
 
-#: src/Composer/ComposerWidget.vala:975
+#: src/Composer/ComposerWidget.vala:990
 msgid "There was an unexpected error while saving your draft."
 msgstr "אירעה שגיאה בלתי צפויה בשמירת הטיוטה שלך."
 
