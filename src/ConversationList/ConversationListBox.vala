@@ -160,8 +160,6 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                                         add_conversation_item (child, current_account.service.uid);
                                         child = child.next;
                                     }
-
-                                    yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
                                 }
 
                             } catch (Error e) {
@@ -252,9 +250,9 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
     }
 
-    public void search (string? query) {
+    public async void search (string? query) {
         current_search_query = query;
-        load_folder.begin (folder_full_name_per_account);
+        yield load_folder (folder_full_name_per_account);
     }
 
     private void add_conversation_item (Camel.FolderThreadNode child, string service_uid) {
