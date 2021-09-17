@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-12 21:43+0000\n"
-"PO-Revision-Date: 2021-09-01 16:07+0000\n"
+"PO-Revision-Date: 2021-09-15 14:55+0000\n"
 "Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/extra/de/>\n"
 "Language: de\n"
@@ -73,10 +73,8 @@ msgid "Improvements:"
 msgstr "Verbesserungen:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
-#, fuzzy
-#| msgid "Move Undo notification to the message view"
 msgid "Send a notification when new messages arrive"
-msgstr "Rückgängig-Benachrichtigung in die Nachrichtenübersicht verschoben"
+msgstr "Benachrichtigung senden, wenn neue Nachrichten ankommen"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 #: data/io.elementary.mail.appdata.xml.in:46
