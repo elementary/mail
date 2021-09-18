@@ -194,7 +194,7 @@ public class Mail.ConversationItemModel : GLib.Object {
         var has_flag = !(flag in (int)node.message.flags);
 
         if (!has_flag) {
-        for (unowned Camel.FolderThreadNode? child = node.child; child != null; child = child.next) {
+            for (unowned Camel.FolderThreadNode? child = node.child; child != null; child = child.next) {
                 has_flag = has_thread_flag (child, flag);
                 if (has_flag) {
                     break;
