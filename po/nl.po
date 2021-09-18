@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-12 21:43+0000\n"
+"POT-Creation-Date: 2021-09-17 18:59+0000\n"
 "PO-Revision-Date: 2019-12-30 20:31+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
@@ -116,17 +116,17 @@ msgid_plural "%s from %u senders"
 msgstr[0] "Altijd tonen van afzender"
 msgstr[1] "Altijd tonen van afzender"
 
-#: src/MainWindow.vala:72
+#: src/MainWindow.vala:73
 msgid "Mail"
 msgstr "Mail"
 
-#: src/MainWindow.vala:294
+#: src/MainWindow.vala:306
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Bericht verwijderd"
 msgstr[1] "Berichten verwijderd"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:318
 msgid "Undo"
 msgstr "Ongedaan maken"
 
@@ -210,85 +210,85 @@ msgstr "Bijlage toevoegen"
 msgid "Send"
 msgstr "Verzenden"
 
-#: src/Composer/ComposerWidget.vala:421
+#: src/Composer/ComposerWidget.vala:436
 msgid "Choose a file"
 msgstr "Een bestand kiezen"
 
-#: src/Composer/ComposerWidget.vala:424
+#: src/Composer/ComposerWidget.vala:439
 #, fuzzy
 #| msgid "_Attach"
 msgid "Attach"
 msgstr "_Toevoegen"
 
-#: src/Composer/ComposerWidget.vala:425 src/Composer/ComposerWidget.vala:653
+#: src/Composer/ComposerWidget.vala:440 src/Composer/ComposerWidget.vala:668
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:579
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e %b %Y om %-l:%M %p"
 
-#: src/Composer/ComposerWidget.vala:594
+#: src/Composer/ComposerWidget.vala:609
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Op %1$s, schreef %2$s:"
 
-#: src/Composer/ComposerWidget.vala:598
+#: src/Composer/ComposerWidget.vala:613
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Doorgestuurd bericht ----------"
 
-#: src/Composer/ComposerWidget.vala:600
+#: src/Composer/ComposerWidget.vala:615
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Van: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:601
+#: src/Composer/ComposerWidget.vala:616
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Onderwerp: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:602
+#: src/Composer/ComposerWidget.vala:617
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Datum: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:603
+#: src/Composer/ComposerWidget.vala:618
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Aan: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:605
+#: src/Composer/ComposerWidget.vala:620
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:644
+#: src/Composer/ComposerWidget.vala:659
 #, fuzzy
 #| msgid "Do you want to permanently delete this message?"
 #| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
 msgstr "Wilt u dit bericht definitief verwijderen?"
 
-#: src/Composer/ComposerWidget.vala:645
+#: src/Composer/ComposerWidget.vala:660
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:655
+#: src/Composer/ComposerWidget.vala:670
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Delete Draft"
 msgstr "Verwijder concept"
 
-#: src/Composer/ComposerWidget.vala:675
+#: src/Composer/ComposerWidget.vala:690
 #, fuzzy
 #| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
 msgstr "Bericht zonder onderwerp verzenden?"
 
-#: src/Composer/ComposerWidget.vala:676
+#: src/Composer/ComposerWidget.vala:691
 #, fuzzy
 #| msgid ""
 #| "This message has an empty subject field. The recipient may not be able to "
@@ -300,43 +300,43 @@ msgstr ""
 "Dit bericht heeft geen onderwerp. De ontvanger kan daardoor mogelijk niet de "
 "scope of de urgentie van het bericht bepalen."
 
-#: src/Composer/ComposerWidget.vala:682
+#: src/Composer/ComposerWidget.vala:697
 msgid "Don't Send"
 msgstr "Niet verzenden"
 
-#: src/Composer/ComposerWidget.vala:684
+#: src/Composer/ComposerWidget.vala:699
 msgid "Send Anyway"
 msgstr "Toch verzenden"
 
-#: src/Composer/ComposerWidget.vala:706
+#: src/Composer/ComposerWidget.vala:721
 #, fuzzy
 #| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
 msgstr "Bericht zonder inhoud verzenden?"
 
-#: src/Composer/ComposerWidget.vala:707
+#: src/Composer/ComposerWidget.vala:722
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:722
+#: src/Composer/ComposerWidget.vala:737
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to send message"
 msgstr "Verwijder concept"
 
-#: src/Composer/ComposerWidget.vala:723
+#: src/Composer/ComposerWidget.vala:738
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:974
+#: src/Composer/ComposerWidget.vala:989
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to save draft"
 msgstr "Verwijder concept"
 
-#: src/Composer/ComposerWidget.vala:975
+#: src/Composer/ComposerWidget.vala:990
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
