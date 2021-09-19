@@ -78,7 +78,10 @@ public class Mail.InboxMonitor : GLib.Object {
                         inbox_folder.changed.connect ((change_info) => {
                             inbox_folder_changed (account, change_info);
                         });
-                        inbox_folders.insert (account, inbox_folder);
+
+                        lock (inbox_folders) {
+                            inbox_folders.insert (account, inbox_folder);
+                        }
 
                         uint refresh_interval_in_minutes = 15;
 
@@ -87,7 +90,10 @@ public class Mail.InboxMonitor : GLib.Object {
                             inbox_folder_synchronize_sync.begin (account);
                             return GLib.Source.CONTINUE;
                         });
-                        synchronize_timeout_ids.insert (account, refresh_timeout_id);
+
+                        lock (synchronize_timeout_ids) {
+                            synchronize_timeout_ids.insert (account, refresh_timeout_id);
+                        }
 
                         inbox_folder_synchronize_sync.begin (account);
                     }
