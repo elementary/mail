@@ -131,12 +131,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public bool unread {
         get {
-            weak Camel.MessageInfo? message = node.message;
-            if (message == null) {
-                return false;
-            }
-
-            return !(Camel.MessageFlags.SEEN in (int)message.flags);
+            return has_thread_flag (node, Camel.MessageFlags.SEEN);
         }
     }
 
@@ -158,9 +153,13 @@ public class Mail.ConversationItemModel : GLib.Object {
         update_node (node);
     }
 
-    public void update_node (Camel.FolderThreadNode new_node) {
+    public bool update_node (Camel.FolderThreadNode new_node) {
         node = new_node;
+
+        var old_timestamp = timestamp;
         timestamp = get_newest_timestamp (new_node, -1);
+
+        return (old_timestamp != timestamp);
     }
 
     private static uint count_thread_messages (Camel.FolderThreadNode node) {
@@ -189,5 +188,24 @@ public class Mail.ConversationItemModel : GLib.Object {
         }
 
         return time;
+    }
+
+    private static bool has_thread_flag (Camel.FolderThreadNode? node, Camel.MessageFlags flag) {
+        if (node == null) {
+            return false;
+        }
+
+        var has_flag = !(flag in (int)node.message.flags);
+
+        if (!has_flag) {
+            for (unowned Camel.FolderThreadNode? child = node.child; child != null; child = child.next) {
+                has_flag = has_thread_flag (child, flag);
+                if (has_flag) {
+                    break;
+                }
+            }
+        }
+
+        return has_flag;
     }
 }
