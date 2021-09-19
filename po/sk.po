@@ -11,103 +11,90 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-17 18:59+0000\n"
-"PO-Revision-Date: 2016-03-01 18:37+0000\n"
-"Last-Translator: Ľubomír Hlavko <5lubo555@azet.sk>\n"
-"Language-Team: Slovak (http://www.transifex.com/projects/p/geary/language/"
-"sk/)\n"
+"PO-Revision-Date: 2021-09-18 18:33+0000\n"
+"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
+"Language-Team: Slovak <https://l10n.elementary.io/projects/mail/mail/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
 
 #: src/HeaderBar.vala:40
-#, fuzzy
 msgid "Compose new message"
-msgstr "Vytvorí novú správu (Ctrl+N, N)"
+msgstr "Napísať novú správu"
 
 #: src/HeaderBar.vala:46
 msgid "Search Mail"
-msgstr ""
+msgstr "Hľadať poštu"
 
 #: src/HeaderBar.vala:50
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "Vždy zobraziť od odosielateľa"
+msgstr "Vždy zobrazovať externé obrázky"
 
 #: src/HeaderBar.vala:53
 msgid "Account Settings…"
-msgstr ""
+msgstr "Nastavenia účtu…"
 
 #: src/HeaderBar.vala:76
 msgid "Menu"
-msgstr "Ponuka"
+msgstr "Menu"
 
 #: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:185
 msgid "Reply"
-msgstr ""
+msgstr "Odpovedať"
 
 #: src/HeaderBar.vala:90
-#, fuzzy
 msgid "Reply All"
-msgstr "Odpov_edať všetkým"
+msgstr "Odpovedať všetkým"
 
 #: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:191
 msgid "Forward"
-msgstr ""
+msgstr "Preposlať"
 
 #: src/HeaderBar.vala:103
-#, fuzzy
 msgid "Mark as Unread"
-msgstr "_Označiť ako neprečítanú"
+msgstr "Označiť ako neprečítané"
 
 #: src/HeaderBar.vala:108
-#, fuzzy
 msgid "Mark as Read"
-msgstr "_Označiť ako prečítanú"
+msgstr "Označiť ako prečítané"
 
 #: src/HeaderBar.vala:113
-#, fuzzy
 msgid "Star"
-msgstr "Označiť _hviezdičkou"
+msgstr "Pridať hviezdičku"
 
 #: src/HeaderBar.vala:118
-#, fuzzy
 msgid "Unstar"
-msgstr "Odz_načiť hviezdičku"
+msgstr "Odobrať hviezdičku"
 
 #: src/HeaderBar.vala:130
-#, fuzzy
 msgid "Mark Conversation"
-msgstr "Označí rozhovory"
+msgstr "Označiť konverzáciu"
 
 #: src/HeaderBar.vala:137
-#, fuzzy
 msgid "Move conversations to archive"
-msgstr "Presunie rozhovory"
+msgstr "Presunúť konverzácie do archívu"
 
 #: src/HeaderBar.vala:144
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "Presunie rozhovory"
+msgstr "Presunúť konverzácie do koša"
 
 #: src/InboxMonitor.vala:211 src/InboxMonitor.vala:224
 #, c-format
 msgid "%s to %s"
-msgstr ""
+msgstr "%s do %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:219
-#, fuzzy, c-format
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
+#, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "%d nových správ"
-msgstr[1] "%d nová správa"
-msgstr[2] "%d nové správy"
+msgstr[0] "%u nových správ"
+msgstr[1] "%u nová správa"
+msgstr[2] "%u nové správy"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
@@ -115,42 +102,36 @@ msgstr[2] "%d nové správy"
 #, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%s od %u odosielateľov"
+msgstr[1] "%s od %u odosielateľa"
+msgstr[2] "%s od %u odosielateľov"
 
 #: src/MainWindow.vala:73
-#, fuzzy
-#| msgid "All Mail"
 msgid "Mail"
-msgstr "Všetka pošta"
+msgstr "Pošta"
 
 #: src/MainWindow.vala:306
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Žiadne vybraté rozhovory."
-msgstr[1] "Žiadne vybraté rozhovory."
-msgstr[2] "Žiadne vybraté rozhovory."
+msgstr[0] "Správy odstránené"
+msgstr[1] "Správa odstránená"
+msgstr[2] "Správy odstránené"
 
 #: src/MainWindow.vala:318
-#, fuzzy
 msgid "Undo"
-msgstr "_Späť"
+msgstr "Späť"
 
 #: src/WelcomeView.vala:40
-#, fuzzy
 msgid "Connect an Account"
-msgstr "Odstrániť účet"
+msgstr "Pripojenie účtu"
 
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
-msgstr ""
+msgstr "Pošta používa e-mailové účty pridané v Nastaveniach systému."
 
 #: src/WelcomeView.vala:50
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "Účty"
+msgstr "Online účty…"
 
 #: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:95
 msgid "From:"
@@ -167,14 +148,12 @@ msgid "Subject:"
 msgstr "Predmet:"
 
 #: src/Composer/ComposerWidget.vala:128
-#, fuzzy
 msgid "Cc"
-msgstr "Kópia:"
+msgstr "Kópia"
 
 #: src/Composer/ComposerWidget.vala:130
-#, fuzzy
 msgid "Bcc"
-msgstr "Skrytá kópia:"
+msgstr "Skrytá kópia"
 
 #: src/Composer/ComposerWidget.vala:137
 #: src/MessageList/MessageListItem.vala:134
@@ -187,219 +166,207 @@ msgstr "Skrytá kópia:"
 
 #: src/Composer/ComposerWidget.vala:196
 msgid "Bold"
-msgstr ""
+msgstr "Tučné"
 
 #: src/Composer/ComposerWidget.vala:203
 msgid "Italic"
-msgstr ""
+msgstr "Kurzíva"
 
 #: src/Composer/ComposerWidget.vala:210
-#, fuzzy
 msgid "Underline"
-msgstr "Podtrhnuté (Ctrl+U)"
+msgstr "Podčiarknuté"
 
 #: src/Composer/ComposerWidget.vala:217
-#, fuzzy
 msgid "Strikethrough"
-msgstr "Prečiarknuté (Ctrl+K)"
+msgstr "Prečiarknuté"
 
 #: src/Composer/ComposerWidget.vala:222
-#, fuzzy
 msgid "Remove formatting"
-msgstr "Odstrániť formátovanie (Ctrl+Mezerník)"
+msgstr "Odstrániť formátovanie"
 
 #: src/Composer/ComposerWidget.vala:234 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
-msgstr ""
+msgstr "Vložiť odkaz"
 
 #: src/Composer/ComposerWidget.vala:265
 msgid "Delete draft"
-msgstr ""
+msgstr "Odstrániť koncept"
 
 #: src/Composer/ComposerWidget.vala:270
 msgid "Attach file"
-msgstr ""
+msgstr "Priložiť súbor"
 
 #: src/Composer/ComposerWidget.vala:276
 msgid "Send"
-msgstr "Odošli"
+msgstr "Odoslať"
 
 #: src/Composer/ComposerWidget.vala:436
 msgid "Choose a file"
-msgstr "Zvoľte súbor"
+msgstr "Vybrať súbor"
 
 #: src/Composer/ComposerWidget.vala:439
-#, fuzzy
-#| msgid "_Attach"
 msgid "Attach"
-msgstr "_Priložiť"
+msgstr "Priložiť"
 
 #: src/Composer/ComposerWidget.vala:440 src/Composer/ComposerWidget.vala:668
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušiť"
 
 #: src/Composer/ComposerWidget.vala:579
+#, fuzzy
 msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%A, %-e. %B %Y o %H:%M"
+msgstr "%a, %b %-e, %Y v %-l:%M %p"
 
 #: src/Composer/ComposerWidget.vala:609
 #, c-format
 msgid "On %1$s, %2$s wrote:"
-msgstr "Dňa %1$s, %2$s napísal(a):"
+msgstr "Dňa %1$s, %2$s napísal:"
 
 #: src/Composer/ComposerWidget.vala:613
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Preposlaná správa ----------"
 
 #: src/Composer/ComposerWidget.vala:615
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "Od: %s\n"
+msgstr "Od: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:616
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "Predmet: %s\n"
+msgstr "Predmet: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:617
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Dátum: %s\n"
+msgstr "Dátum: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:618
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "Pre: %s\n"
+msgstr "Pre: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:620
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "Kópia: %s\n"
+msgstr "Kópia: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:659
-#, fuzzy
-#| msgid "Do you want to permanently delete this message?"
-#| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
-msgstr "Chcete natrvalo odstrániť tieto správy?"
+msgstr "Natrvalo odstrániť tento koncept?"
 
 #: src/Composer/ComposerWidget.vala:660
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
+"Táto akcia nemôže byť vrátená späť a váš koncept sa nedá obnoviť, keď už bol "
+"raz odstránený."
 
 #: src/Composer/ComposerWidget.vala:670
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete Draft"
-msgstr "Odstrániť"
+msgstr "Odstrániť koncept"
 
 #: src/Composer/ComposerWidget.vala:690
-#, fuzzy
 msgid "Send without subject?"
-msgstr "Odoslať správu bez predmetu?"
+msgstr "Odoslať bez predmetu?"
 
 #: src/Composer/ComposerWidget.vala:691
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
+"Táto správa má prázdne políčko predmetu. Príjemca pravdepodobne nerozozná "
+"dôležitosť či rozsah správy."
 
 #: src/Composer/ComposerWidget.vala:697
 msgid "Don't Send"
-msgstr ""
+msgstr "Neodosielať"
 
 #: src/Composer/ComposerWidget.vala:699
 msgid "Send Anyway"
-msgstr ""
+msgstr "Napriek tomu odoslať"
 
 #: src/Composer/ComposerWidget.vala:721
-#, fuzzy
-#| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
-msgstr "Odoslať správu s prázdnym telom?"
+msgstr "Odoslaná správa nebola uložená"
 
 #: src/Composer/ComposerWidget.vala:722
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
+"Správa bola odoslaná, avšak jej kópia nebola uložená do priečinka Odoslané."
 
 #: src/Composer/ComposerWidget.vala:737
-#, fuzzy
-#| msgid "Unable to validate:\n"
 msgid "Unable to send message"
-msgstr "Nie je možné overiť:\n"
+msgstr "Nepodarilo sa odoslať správu"
 
 #: src/Composer/ComposerWidget.vala:738
 msgid "There was an unexpected error while sending your message."
-msgstr ""
+msgstr "Pri odosielaní vašej správy sa vyskytla neočakávaná chyba."
 
 #: src/Composer/ComposerWidget.vala:989
 msgid "Unable to save draft"
-msgstr ""
+msgstr "Nepodarilo sa uložiť koncept"
 
 #: src/Composer/ComposerWidget.vala:990
 msgid "There was an unexpected error while saving your draft."
-msgstr ""
+msgstr "Pri ukladaní vášho konceptu sa vyskytla neočakávaná chyba."
 
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
 msgstr "Nová správa"
 
 #: src/ConversationList/ConversationListItem.vala:103
-#, fuzzy
 msgid "Unread"
-msgstr "%d neprečítaných"
+msgstr "Neprečítané"
 
 #: src/ConversationList/ConversationListItem.vala:113
-#, fuzzy
 msgid "Replied"
-msgstr "_Nahradiť"
+msgstr "Odpovedané"
 
 #: src/ConversationList/ConversationListItem.vala:117
-#, fuzzy
 msgid "Forwarded"
-msgstr "_Preposlať"
+msgstr "Preposlané"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "URL odkaz:"
 
 #: src/Dialogs/InsertLinkDialog.vala:35
 msgid "https://example.com"
-msgstr ""
+msgstr "https://priklad.sk"
 
 #: src/Dialogs/InsertLinkDialog.vala:37
-#, fuzzy
 msgid "Link Text:"
-msgstr "Tučný text"
+msgstr "Text odkazu:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
-#, fuzzy
 msgid "Example Website"
-msgstr "Webová stránka"
+msgstr "Príklad webstránky"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
-msgstr ""
+msgstr "Naozaj chcete otvoriť %s?"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
+"Prílohy môžu po otvorení spôsobiť poškodenie vášho systému. Otvárajte jedine "
+"súbory z dôveryhodných zdrojov."
 
 #: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
-msgstr ""
+msgstr "Napriek tomu otvoriť"
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
-msgstr ""
+msgstr "Obnoviť priečinok"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
@@ -410,45 +377,38 @@ msgid "Archive"
 msgstr "Archív"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent Mail"
 msgid "Sent"
-msgstr "Odoslaná pošta"
+msgstr "Odoslané"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
-msgstr ""
+msgstr "Všetky schránky"
 
 #: src/MessageList/MessageListBox.vala:32
-#, fuzzy
 msgid "No Message Selected"
-msgstr "Žiadne vybraté rozhovory."
+msgstr "Žiadna vybraná správa"
 
 #: src/MessageList/MessageListItem.vala:175
 #: src/MessageList/MessageListItem.vala:334
-#, fuzzy
 msgid "Unstar message"
-msgstr "%d správ"
+msgstr "Zrušiť označenie správy hviezdičkou"
 
 #: src/MessageList/MessageListItem.vala:178
 #: src/MessageList/MessageListItem.vala:330
-#, fuzzy
 msgid "Star message"
-msgstr "%d správ"
+msgstr "Označiť správu hviezdičkou"
 
 #: src/MessageList/MessageListItem.vala:188
-#, fuzzy
-#| msgid "Reply to _All"
 msgid "Reply to All"
-msgstr "Odpoved_ať všetkým"
+msgstr "Odpovedať všetkým"
 
 #: src/MessageList/MessageListItem.vala:194
 msgid "Print…"
-msgstr ""
+msgstr "Tlač…"
 
 #: src/MessageList/MessageListItem.vala:208
 msgid "More"
-msgstr ""
+msgstr "Viac"
 
 #: src/MessageList/MessageListItem.vala:244
 msgid "Show Images"
@@ -456,28 +416,24 @@ msgstr "Zobraziť obrázky"
 
 #: src/MessageList/MessageListItem.vala:245
 msgid "Always Show from Sender"
-msgstr ""
+msgstr "Vždy zobrazovať od odosielateľa"
 
 #: src/MessageList/MessageListItem.vala:250
 msgid "This message contains remote images."
-msgstr "Táto správa obsahuje vzdialené obrázky."
+msgstr "Táto správa obsahuje externé obrázky."
 
 #: src/MessageList/MessageListItem.vala:282
 msgid "This message contains one or more attachments"
-msgstr ""
+msgstr "Táto správa obsahuje jednu alebo viac príloh"
 
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:360
-#, fuzzy
-#| msgid "New Message"
 msgid "Email Message"
-msgstr "Nová správa"
+msgstr "E-mailová správa"
 
 #: src/MessageList/MessageListItem.vala:382
-#, fuzzy
-#| msgid "Unable to validate:\n"
 msgid "Unable to print email"
-msgstr "Nie je možné overiť:\n"
+msgstr "Nepodarilo sa vytlačiť e-mail"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
@@ -485,16 +441,15 @@ msgstr "Otvoriť"
 
 #: src/MessageList/AttachmentButton.vala:43
 msgid "Save As…"
-msgstr ""
+msgstr "Uložiť ako…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "Neznámy"
 
 #: src/MessageList/AttachmentButton.vala:113
-#, fuzzy
 msgid "Save"
-msgstr "_Uložiť"
+msgstr "Uložiť"
 
 #, fuzzy
 #~ msgid "Quote text"
