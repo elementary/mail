@@ -109,6 +109,10 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     }
 
     private static void set_thread_flag (Camel.FolderThreadNode? node, Camel.MessageFlags flag) {
+        if (node == null) {
+            return;
+        }
+
         if (!(flag in (int)node.message.flags)) {
             node.message.set_flags (flag, ~0);
         }

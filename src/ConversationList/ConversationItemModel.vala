@@ -191,6 +191,10 @@ public class Mail.ConversationItemModel : GLib.Object {
     }
 
     private static bool has_thread_flag (Camel.FolderThreadNode? node, Camel.MessageFlags flag) {
+        if (node == null) {
+            return false;
+        }
+
         var has_flag = !(flag in (int)node.message.flags);
 
         if (!has_flag) {
