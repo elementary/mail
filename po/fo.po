@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-12 21:43+0000\n"
+"POT-Creation-Date: 2021-09-17 18:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -89,17 +89,17 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:72
+#: src/MainWindow.vala:73
 msgid "Mail"
 msgstr ""
 
-#: src/MainWindow.vala:294
+#: src/MainWindow.vala:306
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:318
 msgid "Undo"
 msgstr ""
 
@@ -182,112 +182,112 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:421
+#: src/Composer/ComposerWidget.vala:436
 msgid "Choose a file"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:424
+#: src/Composer/ComposerWidget.vala:439
 msgid "Attach"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:425 src/Composer/ComposerWidget.vala:653
+#: src/Composer/ComposerWidget.vala:440 src/Composer/ComposerWidget.vala:668
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:579
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:594
+#: src/Composer/ComposerWidget.vala:609
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:598
+#: src/Composer/ComposerWidget.vala:613
 msgid "---------- Forwarded message ----------"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:600
+#: src/Composer/ComposerWidget.vala:615
 #, c-format
 msgid "From: %s<br/>"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:601
+#: src/Composer/ComposerWidget.vala:616
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:602
+#: src/Composer/ComposerWidget.vala:617
 #, c-format
 msgid "Date: %s<br/>"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:603
+#: src/Composer/ComposerWidget.vala:618
 #, c-format
 msgid "To: %s<br/>"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:605
+#: src/Composer/ComposerWidget.vala:620
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:644
+#: src/Composer/ComposerWidget.vala:659
 msgid "Permanently delete this draft?"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:645
+#: src/Composer/ComposerWidget.vala:660
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:655
+#: src/Composer/ComposerWidget.vala:670
 msgid "Delete Draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:675
+#: src/Composer/ComposerWidget.vala:690
 msgid "Send without subject?"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:676
+#: src/Composer/ComposerWidget.vala:691
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:682
+#: src/Composer/ComposerWidget.vala:697
 msgid "Don't Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:684
+#: src/Composer/ComposerWidget.vala:699
 msgid "Send Anyway"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:706
+#: src/Composer/ComposerWidget.vala:721
 msgid "Sent message was not saved"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:707
+#: src/Composer/ComposerWidget.vala:722
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:722
+#: src/Composer/ComposerWidget.vala:737
 msgid "Unable to send message"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:723
+#: src/Composer/ComposerWidget.vala:738
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:974
+#: src/Composer/ComposerWidget.vala:989
 msgid "Unable to save draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:975
+#: src/Composer/ComposerWidget.vala:990
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
