@@ -5,12 +5,12 @@
 #
 # Translators:
 # Cheng-Chia Tseng <pswo10680@gmail.com>, 2012-2013
-#: src/MessageList/MessageListItem.vala:383
+#: src/MessageList/MessageListItem.vala:389
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-17 18:59+0000\n"
+"POT-Creation-Date: 2021-09-20 08:15+0000\n"
 "PO-Revision-Date: 2021-07-29 17:55+0000\n"
 "Last-Translator: Kdwk <kdwkleung@protonmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -44,7 +44,7 @@ msgstr "帳號設定…"
 msgid "Menu"
 msgstr "選單"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:185
+#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "回覆"
 
@@ -52,7 +52,7 @@ msgstr "回覆"
 msgid "Reply All"
 msgstr "回覆所有人"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "轉寄"
 
@@ -87,13 +87,13 @@ msgstr "搬移對話"
 msgid "Move conversations to Trash"
 msgstr "移動對話至垃圾桶"
 
-#: src/InboxMonitor.vala:211 src/InboxMonitor.vala:224
+#: src/InboxMonitor.vala:167 src/InboxMonitor.vala:180
 #, c-format
 msgid "%s to %s"
 msgstr ""
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
-#: src/InboxMonitor.vala:219
+#: src/InboxMonitor.vala:175
 #, fuzzy, c-format
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
@@ -103,7 +103,7 @@ msgstr[0] "%d 封新訊息"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
-#: src/InboxMonitor.vala:232
+#: src/InboxMonitor.vala:188
 #, fuzzy, c-format
 #| msgid "Always Show from Sender"
 msgid "%s from %u sender"
@@ -135,17 +135,17 @@ msgstr "「郵件」使用系統設定中的電子郵件帳號。"
 msgid "Online Accounts…"
 msgstr "線上帳號…"
 
-#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:95
+#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:97
 msgid "From:"
 msgstr "寄件者："
 
 #: src/Composer/ComposerWidget.vala:117
-#: src/MessageList/MessageListItem.vala:100
+#: src/MessageList/MessageListItem.vala:102
 msgid "To:"
 msgstr "收件者："
 
 #: src/Composer/ComposerWidget.vala:121
-#: src/MessageList/MessageListItem.vala:105
+#: src/MessageList/MessageListItem.vala:107
 msgid "Subject:"
 msgstr "主旨："
 
@@ -158,7 +158,7 @@ msgid "Bcc"
 msgstr "密件副本"
 
 #: src/Composer/ComposerWidget.vala:137
-#: src/MessageList/MessageListItem.vala:134
+#: src/MessageList/MessageListItem.vala:136
 msgid "Cc:"
 msgstr "副本："
 
@@ -400,52 +400,58 @@ msgstr "所有郵件"
 msgid "No Message Selected"
 msgstr "未選取任何訊息"
 
-#: src/MessageList/MessageListItem.vala:175
-#: src/MessageList/MessageListItem.vala:334
+#. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
+#: src/MessageList/MessageListItem.vala:173
+#, c-format
+msgid "%s at %s"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:181
+#: src/MessageList/MessageListItem.vala:340
 msgid "Unstar message"
 msgstr "取消訊息標星"
 
-#: src/MessageList/MessageListItem.vala:178
-#: src/MessageList/MessageListItem.vala:330
+#: src/MessageList/MessageListItem.vala:184
+#: src/MessageList/MessageListItem.vala:336
 msgid "Star message"
 msgstr "將訊息標星"
 
-#: src/MessageList/MessageListItem.vala:188
+#: src/MessageList/MessageListItem.vala:194
 msgid "Reply to All"
 msgstr "回覆所有人"
 
-#: src/MessageList/MessageListItem.vala:194
+#: src/MessageList/MessageListItem.vala:200
 msgid "Print…"
 msgstr "列印..."
 
-#: src/MessageList/MessageListItem.vala:208
+#: src/MessageList/MessageListItem.vala:214
 msgid "More"
 msgstr "更多"
 
-#: src/MessageList/MessageListItem.vala:244
+#: src/MessageList/MessageListItem.vala:250
 msgid "Show Images"
 msgstr "顯示影像"
 
-#: src/MessageList/MessageListItem.vala:245
+#: src/MessageList/MessageListItem.vala:251
 msgid "Always Show from Sender"
 msgstr "總是顯示寄件者"
 
-#: src/MessageList/MessageListItem.vala:250
+#: src/MessageList/MessageListItem.vala:256
 msgid "This message contains remote images."
 msgstr "此訊息包含遠端影像。"
 
-#: src/MessageList/MessageListItem.vala:282
+#: src/MessageList/MessageListItem.vala:288
 msgid "This message contains one or more attachments"
 msgstr "這封訊息含有一項或多項附件"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:360
+#: src/MessageList/MessageListItem.vala:366
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "新訊息"
 
-#: src/MessageList/MessageListItem.vala:382
+#: src/MessageList/MessageListItem.vala:388
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
