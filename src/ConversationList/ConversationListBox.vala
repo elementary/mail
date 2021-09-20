@@ -82,7 +82,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
                 if (((ConversationItemModel) row).unread) {
                     mark_read_timeout_id = GLib.Timeout.add_seconds (MARK_READ_TIMEOUT_SECONDS, () => {
-                        ((ConversationItemModel) row).node.message.set_flags (Camel.MessageFlags.SEEN, ~0);
+                        set_thread_flag (((ConversationItemModel) row).node, Camel.MessageFlags.SEEN);
+
                         mark_read_timeout_id = 0;
                         return false;
                     });
@@ -105,6 +106,20 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 conversation_selected (((ConversationItemModel) row).node);
             }
         });
+    }
+
+    private static void set_thread_flag (Camel.FolderThreadNode? node, Camel.MessageFlags flag) {
+        if (node == null) {
+            return;
+        }
+
+        if (!(flag in (int)node.message.flags)) {
+            node.message.set_flags (flag, ~0);
+        }
+
+        for (unowned Camel.FolderThreadNode? child = node.child; child != null; child = child.next) {
+            set_thread_flag (child, flag);
+        }
     }
 
     public async void load_folder (Gee.Map<Backend.Account, string?> folder_full_name_per_account) {
@@ -151,17 +166,15 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                                     var thread = new Camel.FolderThread (folder, search_result_uids, false);
                                     threads[current_account.service.uid] = thread;
 
-                                    unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.tree;
+                                    weak Camel.FolderThreadNode? child = thread.tree;
                                     while (child != null) {
                                         if (cancellable.is_cancelled ()) {
                                             break;
                                         }
 
                                         add_conversation_item (child, current_account.service.uid);
-                                        child = (Camel.FolderThreadNode?) child.next;
+                                        child = child.next;
                                     }
-
-                                    yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
                                 }
 
                             } catch (Error e) {
@@ -202,7 +215,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                     }
                 });
 
-                unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) threads[service_uid].tree;
+                unowned Camel.FolderThreadNode? child = threads[service_uid].tree;
                 while (child != null) {
                     if (cancellable.is_cancelled ()) {
                         return;
@@ -212,10 +225,16 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                     if (item == null) {
                         add_conversation_item (child, service_uid);
                     } else {
-                        item.update_node (child);
+                        if (item.update_node (child)) {
+                            conversations.unset (child.message.uid);
+                            list_store.remove (item);
+                            removed++;
+                            add_conversation_item (child, service_uid);
+                        };
+
                     }
 
-                    child = (Camel.FolderThreadNode?) child.next;
+                    child = child.next;
                 }
 
                 list_store.items_changed (0, removed, list_store.get_n_items ());
@@ -252,9 +271,9 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
     }
 
-    public void search (string? query) {
+    public async void search (string? query) {
         current_search_query = query;
-        load_folder.begin (folder_full_name_per_account);
+        yield load_folder (folder_full_name_per_account);
     }
 
     private void add_conversation_item (Camel.FolderThreadNode child, string service_uid) {
@@ -296,13 +315,13 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     }
 
     public async int archive_selected_messages () {
-        var archive_threads = new Gee.HashMap<string, Gee.ArrayList<Camel.FolderThreadNode?>> ();
+        var archive_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
         var selected_rows = get_selected_rows ();
         foreach (unowned var selected_row in selected_rows) {
             var selected_item_model = (ConversationItemModel) selected_row;
 
             if (archive_threads[selected_item_model.service_uid] == null) {
-                archive_threads[selected_item_model.service_uid] = new Gee.ArrayList<Camel.FolderThreadNode?> ();
+                archive_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
             }
             archive_threads[selected_item_model.service_uid].add (selected_item_model.node);
         }
@@ -316,8 +335,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             foreach (var service_uid in archive_threads.keys) {
                 var threads = archive_threads[service_uid];
 
-                foreach (var thread in threads) {
-                    var uid = thread.message.uid;
+                foreach (unowned var thread in threads) {
+                    unowned var uid = thread.message.uid;
                     var item = conversations[uid];
                     if (item != null) {
                         conversations.unset (uid);
@@ -332,7 +351,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     }
 
     public int trash_selected_messages () {
-        var trash_threads = new Gee.HashMap<string, Gee.ArrayList<Camel.FolderThreadNode?>> ();
+        var trash_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
 
         var selected_rows = get_selected_rows ();
         int selected_rows_start_index = -1;
@@ -345,7 +364,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             }
 
             if (trash_threads[selected_item_model.service_uid] == null) {
-                trash_threads[selected_item_model.service_uid] = new Gee.ArrayList<Camel.FolderThreadNode?> ();
+                trash_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
             }
             trash_threads[selected_item_model.service_uid].add (selected_item_model.node);
         }
