@@ -22,9 +22,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-31 01:02+0000\n"
-"PO-Revision-Date: 2021-08-12 09:20+0000\n"
-"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"POT-Creation-Date: 2021-09-17 18:59+0000\n"
+"PO-Revision-Date: 2021-09-13 13:56+0000\n"
+"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -94,17 +94,39 @@ msgstr "Déplacer les conversations dans les archives"
 msgid "Move conversations to Trash"
 msgstr "Déplacer les conversations dans la corbeille"
 
-#: src/MainWindow.vala:72
+#: src/InboxMonitor.vala:211 src/InboxMonitor.vala:224
+#, c-format
+msgid "%s to %s"
+msgstr "%s à %s"
+
+#. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
+#: src/InboxMonitor.vala:219
+#, c-format
+msgid "%u new message"
+msgid_plural "%u new messages"
+msgstr[0] "%u nouveau message"
+msgstr[1] "%u nouveaux messages"
+
+#. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
+#. /The next %s represents the number of senders
+#: src/InboxMonitor.vala:232
+#, c-format
+msgid "%s from %u sender"
+msgid_plural "%s from %u senders"
+msgstr[0] "%s de %u émetteur"
+msgstr[1] "%s de %u émetteurs"
+
+#: src/MainWindow.vala:73
 msgid "Mail"
 msgstr "Messagerie"
 
-#: src/MainWindow.vala:294
+#: src/MainWindow.vala:306
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Message supprimé"
 msgstr[1] "Messages supprimés"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:318
 msgid "Undo"
 msgstr "Annuler"
 
@@ -189,78 +211,78 @@ msgstr "Joindre un fichier"
 msgid "Send"
 msgstr "Envoyer"
 
-#: src/Composer/ComposerWidget.vala:421
+#: src/Composer/ComposerWidget.vala:436
 msgid "Choose a file"
 msgstr "Choisir un fichier"
 
-#: src/Composer/ComposerWidget.vala:424
+#: src/Composer/ComposerWidget.vala:439
 msgid "Attach"
 msgstr "Joindre"
 
-#: src/Composer/ComposerWidget.vala:425 src/Composer/ComposerWidget.vala:653
+#: src/Composer/ComposerWidget.vala:440 src/Composer/ComposerWidget.vala:668
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Annuler"
 
-#: src/Composer/ComposerWidget.vala:564
+#: src/Composer/ComposerWidget.vala:579
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a %-e %b %Y à %-H:%M"
 
-#: src/Composer/ComposerWidget.vala:594
+#: src/Composer/ComposerWidget.vala:609
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Le %1$s, %2$s a écrit :"
 
-#: src/Composer/ComposerWidget.vala:598
+#: src/Composer/ComposerWidget.vala:613
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Message transféré ----------"
 
-#: src/Composer/ComposerWidget.vala:600
+#: src/Composer/ComposerWidget.vala:615
 #, c-format
 msgid "From: %s<br/>"
 msgstr "De : %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:601
+#: src/Composer/ComposerWidget.vala:616
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Objet : %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:602
+#: src/Composer/ComposerWidget.vala:617
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Date : %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:603
+#: src/Composer/ComposerWidget.vala:618
 #, c-format
 msgid "To: %s<br/>"
 msgstr "À : %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:605
+#: src/Composer/ComposerWidget.vala:620
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc : %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:644
+#: src/Composer/ComposerWidget.vala:659
 msgid "Permanently delete this draft?"
 msgstr "Supprimer définitivement ce brouillon ?"
 
-#: src/Composer/ComposerWidget.vala:645
+#: src/Composer/ComposerWidget.vala:660
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Vous ne pouvez pas annuler cette action, ni récupérer votre brouillon une "
 "fois qu'il a été supprimé."
 
-#: src/Composer/ComposerWidget.vala:655
+#: src/Composer/ComposerWidget.vala:670
 msgid "Delete Draft"
 msgstr "Supprimer le brouillon"
 
-#: src/Composer/ComposerWidget.vala:675
+#: src/Composer/ComposerWidget.vala:690
 msgid "Send without subject?"
 msgstr "Envoyer sans objet ?"
 
-#: src/Composer/ComposerWidget.vala:676
+#: src/Composer/ComposerWidget.vala:691
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -268,19 +290,19 @@ msgstr ""
 "Le champ objet de ce message est vide. Le destinataire pourrait ne pas être "
 "en mesure de reconnaître son importance."
 
-#: src/Composer/ComposerWidget.vala:682
+#: src/Composer/ComposerWidget.vala:697
 msgid "Don't Send"
 msgstr "Ne pas envoyer"
 
-#: src/Composer/ComposerWidget.vala:684
+#: src/Composer/ComposerWidget.vala:699
 msgid "Send Anyway"
 msgstr "Envoyer quand même"
 
-#: src/Composer/ComposerWidget.vala:706
+#: src/Composer/ComposerWidget.vala:721
 msgid "Sent message was not saved"
 msgstr "Le message envoyé n'a pas été enregistré"
 
-#: src/Composer/ComposerWidget.vala:707
+#: src/Composer/ComposerWidget.vala:722
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -288,19 +310,19 @@ msgstr ""
 "Le message a été envoyé, mais aucune copie n'a été enregistrée dans le "
 "dossier des messages envoyés."
 
-#: src/Composer/ComposerWidget.vala:722
+#: src/Composer/ComposerWidget.vala:737
 msgid "Unable to send message"
 msgstr "Échec de l'envoi du message"
 
-#: src/Composer/ComposerWidget.vala:723
+#: src/Composer/ComposerWidget.vala:738
 msgid "There was an unexpected error while sending your message."
 msgstr "Une erreur inattendue s'est produite lors de l'envoi de votre message."
 
-#: src/Composer/ComposerWidget.vala:974
+#: src/Composer/ComposerWidget.vala:989
 msgid "Unable to save draft"
 msgstr "Échec de l'enregistrement du brouillon"
 
-#: src/Composer/ComposerWidget.vala:975
+#: src/Composer/ComposerWidget.vala:990
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 "Une erreur inattendue s'est produite lors de l'enregistrement de votre "
@@ -957,11 +979,6 @@ msgstr "Enregistrer"
 
 #~ msgid "%s - New Messages"
 #~ msgstr "%s - Nouveaux messages"
-
-#~ msgid "%d new message"
-#~ msgid_plural "%d new messages"
-#~ msgstr[0] "%d nouveau message"
-#~ msgstr[1] "%d nouveaux messages"
 
 #~ msgid "%s, %d new message total"
 #~ msgid_plural "%s, %d new messages total"
