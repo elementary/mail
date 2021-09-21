@@ -45,7 +45,8 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
 
         var refresh_button = new Gtk.Button.from_icon_name ("view-refresh", Gtk.IconSize.LARGE_TOOLBAR) {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REFRESH,
-            halign = Gtk.Align.START
+            halign = Gtk.Align.START,
+            can_focus = false
         };
         refresh_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (refresh_button.action_name),
