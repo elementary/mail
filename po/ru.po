@@ -11,12 +11,12 @@
 # Aleksandr Stepanov <alex.eri@ya.ru>, 2015.
 # Stas Solovey <whats_up@tut.by>, 2015.
 #
-#: src/MessageList/MessageListItem.vala:383
+#: src/MessageList/MessageListItem.vala:389
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-17 18:59+0000\n"
+"POT-Creation-Date: 2021-09-20 08:15+0000\n"
 "PO-Revision-Date: 2021-09-13 13:56+0000\n"
 "Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
@@ -49,7 +49,7 @@ msgstr "Параметры учетной записи…"
 msgid "Menu"
 msgstr "Меню"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:185
+#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Ответить"
 
@@ -57,7 +57,7 @@ msgstr "Ответить"
 msgid "Reply All"
 msgstr "Ответить всем"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Переслать"
 
@@ -89,13 +89,13 @@ msgstr "Переместить беседы в архив"
 msgid "Move conversations to Trash"
 msgstr "Переместить беседы в корзину"
 
-#: src/InboxMonitor.vala:211 src/InboxMonitor.vala:224
+#: src/InboxMonitor.vala:167 src/InboxMonitor.vala:180
 #, c-format
 msgid "%s to %s"
 msgstr "%s в %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
-#: src/InboxMonitor.vala:219
+#: src/InboxMonitor.vala:175
 #, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
@@ -105,7 +105,7 @@ msgstr[2] "%u новых сообщений"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
-#: src/InboxMonitor.vala:232
+#: src/InboxMonitor.vala:188
 #, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
@@ -142,17 +142,17 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Сетевые учетные записи…"
 
-#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:95
+#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:97
 msgid "From:"
 msgstr "От:"
 
 #: src/Composer/ComposerWidget.vala:117
-#: src/MessageList/MessageListItem.vala:100
+#: src/MessageList/MessageListItem.vala:102
 msgid "To:"
 msgstr "Кому:"
 
 #: src/Composer/ComposerWidget.vala:121
-#: src/MessageList/MessageListItem.vala:105
+#: src/MessageList/MessageListItem.vala:107
 msgid "Subject:"
 msgstr "Тема:"
 
@@ -165,7 +165,7 @@ msgid "Bcc"
 msgstr "Скрытая копия"
 
 #: src/Composer/ComposerWidget.vala:137
-#: src/MessageList/MessageListItem.vala:134
+#: src/MessageList/MessageListItem.vala:136
 msgid "Cc:"
 msgstr "Копия:"
 
@@ -397,50 +397,56 @@ msgstr "Все почтовые ящики"
 msgid "No Message Selected"
 msgstr "Сообщение не выбрано"
 
-#: src/MessageList/MessageListItem.vala:175
-#: src/MessageList/MessageListItem.vala:334
+#. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
+#: src/MessageList/MessageListItem.vala:173
+#, c-format
+msgid "%s at %s"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:181
+#: src/MessageList/MessageListItem.vala:340
 msgid "Unstar message"
 msgstr "Убрать из избранного"
 
-#: src/MessageList/MessageListItem.vala:178
-#: src/MessageList/MessageListItem.vala:330
+#: src/MessageList/MessageListItem.vala:184
+#: src/MessageList/MessageListItem.vala:336
 msgid "Star message"
 msgstr "Добавить в избранное"
 
-#: src/MessageList/MessageListItem.vala:188
+#: src/MessageList/MessageListItem.vala:194
 msgid "Reply to All"
 msgstr "Ответить всем"
 
-#: src/MessageList/MessageListItem.vala:194
+#: src/MessageList/MessageListItem.vala:200
 msgid "Print…"
 msgstr "Печать…"
 
-#: src/MessageList/MessageListItem.vala:208
+#: src/MessageList/MessageListItem.vala:214
 msgid "More"
 msgstr "Ещё"
 
-#: src/MessageList/MessageListItem.vala:244
+#: src/MessageList/MessageListItem.vala:250
 msgid "Show Images"
 msgstr "Показать изображения"
 
-#: src/MessageList/MessageListItem.vala:245
+#: src/MessageList/MessageListItem.vala:251
 msgid "Always Show from Sender"
 msgstr "Всегда показывать от этого отправителя"
 
-#: src/MessageList/MessageListItem.vala:250
+#: src/MessageList/MessageListItem.vala:256
 msgid "This message contains remote images."
 msgstr "Данное сообщение содержит изображения."
 
-#: src/MessageList/MessageListItem.vala:282
+#: src/MessageList/MessageListItem.vala:288
 msgid "This message contains one or more attachments"
 msgstr "Это письмо содержит одно или больше вложение"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:360
+#: src/MessageList/MessageListItem.vala:366
 msgid "Email Message"
 msgstr "Сообщения электронной почты"
 
-#: src/MessageList/MessageListItem.vala:382
+#: src/MessageList/MessageListItem.vala:388
 msgid "Unable to print email"
 msgstr "Не удалось напечатать электронное письмо"
 

@@ -12,12 +12,12 @@
 # TommyBrunn <tommy.brunn@gmail.com>, 2012
 # Mattias Eriksson <snaggen@gmail.com>, 2014, 2015.
 #
-#: src/MessageList/MessageListItem.vala:383
+#: src/MessageList/MessageListItem.vala:389
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-17 18:59+0000\n"
+"POT-Creation-Date: 2021-09-20 08:15+0000\n"
 "PO-Revision-Date: 2017-04-15 20:42+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Swedish <https://l10n.elementary.io/projects/mail/mail/sv/>\n"
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:185
+#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr ""
 
@@ -60,7 +60,7 @@ msgstr ""
 msgid "Reply All"
 msgstr "Svara _alla"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr ""
 
@@ -99,13 +99,13 @@ msgstr "Flytta konversationerna"
 msgid "Move conversations to Trash"
 msgstr "Flytta konversationerna"
 
-#: src/InboxMonitor.vala:211 src/InboxMonitor.vala:224
+#: src/InboxMonitor.vala:167 src/InboxMonitor.vala:180
 #, c-format
 msgid "%s to %s"
 msgstr ""
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
-#: src/InboxMonitor.vala:219
+#: src/InboxMonitor.vala:175
 #, fuzzy, c-format
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
@@ -116,7 +116,7 @@ msgstr[1] "%d nya meddelanden"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
-#: src/InboxMonitor.vala:232
+#: src/InboxMonitor.vala:188
 #, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
@@ -153,17 +153,17 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Konton"
 
-#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:95
+#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:97
 msgid "From:"
 msgstr "Från:"
 
 #: src/Composer/ComposerWidget.vala:117
-#: src/MessageList/MessageListItem.vala:100
+#: src/MessageList/MessageListItem.vala:102
 msgid "To:"
 msgstr "Till:"
 
 #: src/Composer/ComposerWidget.vala:121
-#: src/MessageList/MessageListItem.vala:105
+#: src/MessageList/MessageListItem.vala:107
 msgid "Subject:"
 msgstr "Ämne:"
 
@@ -178,7 +178,7 @@ msgid "Bcc"
 msgstr "Bcc:"
 
 #: src/Composer/ComposerWidget.vala:137
-#: src/MessageList/MessageListItem.vala:134
+#: src/MessageList/MessageListItem.vala:136
 msgid "Cc:"
 msgstr "Cc:"
 
@@ -420,56 +420,62 @@ msgstr ""
 msgid "No Message Selected"
 msgstr "Inga valda konversationer."
 
-#: src/MessageList/MessageListItem.vala:175
-#: src/MessageList/MessageListItem.vala:334
+#. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
+#: src/MessageList/MessageListItem.vala:173
+#, c-format
+msgid "%s at %s"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:181
+#: src/MessageList/MessageListItem.vala:340
 #, fuzzy
 msgid "Unstar message"
 msgstr "%d meddelande"
 
-#: src/MessageList/MessageListItem.vala:178
-#: src/MessageList/MessageListItem.vala:330
+#: src/MessageList/MessageListItem.vala:184
+#: src/MessageList/MessageListItem.vala:336
 #, fuzzy
 msgid "Star message"
 msgstr "%d meddelande"
 
-#: src/MessageList/MessageListItem.vala:188
+#: src/MessageList/MessageListItem.vala:194
 #, fuzzy
 #| msgid "Reply to _All"
 msgid "Reply to All"
 msgstr "Svara till _alla"
 
-#: src/MessageList/MessageListItem.vala:194
+#: src/MessageList/MessageListItem.vala:200
 msgid "Print…"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:208
+#: src/MessageList/MessageListItem.vala:214
 msgid "More"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:244
+#: src/MessageList/MessageListItem.vala:250
 msgid "Show Images"
 msgstr "Visa bilder"
 
-#: src/MessageList/MessageListItem.vala:245
+#: src/MessageList/MessageListItem.vala:251
 msgid "Always Show from Sender"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:250
+#: src/MessageList/MessageListItem.vala:256
 msgid "This message contains remote images."
 msgstr "Meddelandet innehåller bilder från internet."
 
-#: src/MessageList/MessageListItem.vala:282
+#: src/MessageList/MessageListItem.vala:288
 msgid "This message contains one or more attachments"
 msgstr ""
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:360
+#: src/MessageList/MessageListItem.vala:366
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Nytt meddelande"
 
-#: src/MessageList/MessageListItem.vala:382
+#: src/MessageList/MessageListItem.vala:388
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
