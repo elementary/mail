@@ -5,12 +5,12 @@
 #
 # Translators:
 # Dušan Kazik <prescott66@gmail.com>, 2013, 2015
-#: src/MessageList/MessageListItem.vala:383
+#: src/MessageList/MessageListItem.vala:389
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-17 18:59+0000\n"
+"POT-Creation-Date: 2021-09-22 16:16+0000\n"
 "PO-Revision-Date: 2021-09-20 03:12+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/mail/mail/sk/>\n"
@@ -22,73 +22,91 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:43
 msgid "Compose new message"
 msgstr "Napísať novú správu"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:49
 msgid "Search Mail"
 msgstr "Hľadať poštu"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:53
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Hide read conversations"
+msgstr "Odstrániť rozhovor"
+
+#: src/HeaderBar.vala:55
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Hide unstarred conversations"
+msgstr "Odstrániť rozhovor"
+
+#: src/HeaderBar.vala:72
+#, fuzzy
+#| msgid "Delete Conversation"
+msgid "Filter Conversations"
+msgstr "Odstraniť konverzáciu"
+
+#: src/HeaderBar.vala:76
 msgid "Always Show Remote Images"
 msgstr "Vždy zobrazovať externé obrázky"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:79
 msgid "Account Settings…"
 msgstr "Nastavenia účtu…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:102
 msgid "Menu"
 msgstr "Menu"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:185
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Odpovedať"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:116
 msgid "Reply All"
 msgstr "Odpovedať všetkým"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Preposlať"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:129
 msgid "Mark as Unread"
 msgstr "Označiť ako neprečítané"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:134
 msgid "Mark as Read"
 msgstr "Označiť ako prečítané"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:139
 msgid "Star"
 msgstr "Pridať hviezdičku"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:144
 msgid "Unstar"
 msgstr "Odobrať hviezdičku"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:156
 msgid "Mark Conversation"
 msgstr "Označiť konverzáciu"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:163
 msgid "Move conversations to archive"
 msgstr "Presunúť konverzácie do archívu"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:170
 msgid "Move conversations to Trash"
 msgstr "Presunúť konverzácie do koša"
 
-#: src/InboxMonitor.vala:211 src/InboxMonitor.vala:224
+#: src/InboxMonitor.vala:167 src/InboxMonitor.vala:180
 #, c-format
 msgid "%s to %s"
 msgstr "%s do %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
-#: src/InboxMonitor.vala:219
+#: src/InboxMonitor.vala:175
 #, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
@@ -98,7 +116,7 @@ msgstr[2] "%u nové správy"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
-#: src/InboxMonitor.vala:232
+#: src/InboxMonitor.vala:188
 #, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
@@ -110,14 +128,14 @@ msgstr[2] "%s od %u odosielateľov"
 msgid "Mail"
 msgstr "Pošta"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:312
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Správy odstránené"
 msgstr[1] "Správa odstránená"
 msgstr[2] "Správy odstránené"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:324
 msgid "Undo"
 msgstr "Späť"
 
@@ -133,17 +151,17 @@ msgstr "Pošta používa e-mailové účty pridané v Nastaveniach systému."
 msgid "Online Accounts…"
 msgstr "Online účty…"
 
-#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:95
+#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:97
 msgid "From:"
 msgstr "Od:"
 
 #: src/Composer/ComposerWidget.vala:117
-#: src/MessageList/MessageListItem.vala:100
+#: src/MessageList/MessageListItem.vala:102
 msgid "To:"
 msgstr "Pre:"
 
 #: src/Composer/ComposerWidget.vala:121
-#: src/MessageList/MessageListItem.vala:105
+#: src/MessageList/MessageListItem.vala:107
 msgid "Subject:"
 msgstr "Predmet:"
 
@@ -156,7 +174,7 @@ msgid "Bcc"
 msgstr "Skrytá kópia"
 
 #: src/Composer/ComposerWidget.vala:137
-#: src/MessageList/MessageListItem.vala:134
+#: src/MessageList/MessageListItem.vala:136
 msgid "Cc:"
 msgstr "Kópia:"
 
@@ -387,50 +405,56 @@ msgstr "Všetky schránky"
 msgid "No Message Selected"
 msgstr "Žiadna vybraná správa"
 
-#: src/MessageList/MessageListItem.vala:175
-#: src/MessageList/MessageListItem.vala:334
+#. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
+#: src/MessageList/MessageListItem.vala:173
+#, c-format
+msgid "%s at %s"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:181
+#: src/MessageList/MessageListItem.vala:340
 msgid "Unstar message"
 msgstr "Zrušiť označenie správy hviezdičkou"
 
-#: src/MessageList/MessageListItem.vala:178
-#: src/MessageList/MessageListItem.vala:330
+#: src/MessageList/MessageListItem.vala:184
+#: src/MessageList/MessageListItem.vala:336
 msgid "Star message"
 msgstr "Označiť správu hviezdičkou"
 
-#: src/MessageList/MessageListItem.vala:188
+#: src/MessageList/MessageListItem.vala:194
 msgid "Reply to All"
 msgstr "Odpovedať všetkým"
 
-#: src/MessageList/MessageListItem.vala:194
+#: src/MessageList/MessageListItem.vala:200
 msgid "Print…"
 msgstr "Tlač…"
 
-#: src/MessageList/MessageListItem.vala:208
+#: src/MessageList/MessageListItem.vala:214
 msgid "More"
 msgstr "Viac"
 
-#: src/MessageList/MessageListItem.vala:244
+#: src/MessageList/MessageListItem.vala:250
 msgid "Show Images"
 msgstr "Zobraziť obrázky"
 
-#: src/MessageList/MessageListItem.vala:245
+#: src/MessageList/MessageListItem.vala:251
 msgid "Always Show from Sender"
 msgstr "Vždy zobrazovať od odosielateľa"
 
-#: src/MessageList/MessageListItem.vala:250
+#: src/MessageList/MessageListItem.vala:256
 msgid "This message contains remote images."
 msgstr "Táto správa obsahuje externé obrázky."
 
-#: src/MessageList/MessageListItem.vala:282
+#: src/MessageList/MessageListItem.vala:288
 msgid "This message contains one or more attachments"
 msgstr "Táto správa obsahuje jednu alebo viac príloh"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:360
+#: src/MessageList/MessageListItem.vala:366
 msgid "Email Message"
 msgstr "E-mailová správa"
 
-#: src/MessageList/MessageListItem.vala:382
+#: src/MessageList/MessageListItem.vala:388
 msgid "Unable to print email"
 msgstr "Nepodarilo sa vytlačiť e-mail"
 
@@ -562,9 +586,6 @@ msgstr "Uložiť"
 
 #~ msgid "Visit the Yorba web site"
 #~ msgstr "Navštívte webovú stránku organizácie Yorba"
-
-#~ msgid "Delete conversation"
-#~ msgstr "Odstrániť rozhovor"
 
 #~ msgid "Delete conversation (Shift+Delete)"
 #~ msgstr "Odstráni rozhovor (Shift+Delete)"
@@ -1397,9 +1418,6 @@ msgstr "Uložiť"
 
 #~ msgid "Always watch for new mail:"
 #~ msgstr "Vždy sledovať nové zprávy:"
-
-#~ msgid "Delete Conversation"
-#~ msgstr "Odstraniť konverzáciu"
 
 #~ msgid "Delete Conversations (Shift+Delete)"
 #~ msgstr "Odstraniť konverzácie (Shift+Delete)"

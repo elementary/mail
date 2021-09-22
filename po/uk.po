@@ -7,13 +7,13 @@
 # furyruf <ruffian.ua@gmail.com>, 2013
 # sp4rr0w <sasha.anpilov@gmail.com>, 2012
 # Daniel Korostil <ted.korostiled@gmail.com>, 2014.
-#: src/MessageList/MessageListItem.vala:383
+#: src/MessageList/MessageListItem.vala:389
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-17 18:59+0000\n"
-"PO-Revision-Date: 2021-09-13 13:56+0000\n"
+"POT-Creation-Date: 2021-09-22 16:16+0000\n"
+"PO-Revision-Date: 2021-09-20 18:49+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/"
 ">\n"
@@ -27,73 +27,91 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Project-Style: gnome\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:43
 msgid "Compose new message"
 msgstr "Створити нове повідомлення"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:49
 msgid "Search Mail"
 msgstr "Пошук у пошті"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:53
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide read conversations"
+msgstr "Зазначити розмови"
+
+#: src/HeaderBar.vala:55
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide unstarred conversations"
+msgstr "Зазначити розмови"
+
+#: src/HeaderBar.vala:72
+#, fuzzy
+#| msgid "Delete Conversation"
+msgid "Filter Conversations"
+msgstr "Видалити розмову:"
+
+#: src/HeaderBar.vala:76
 msgid "Always Show Remote Images"
 msgstr "Завжди показувати віддалені зображення"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:79
 msgid "Account Settings…"
 msgstr "Налаштування облікового запису…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:102
 msgid "Menu"
 msgstr "Меню"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:185
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Відповісти"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:116
 msgid "Reply All"
 msgstr "Відповісти всім"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Переслати"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:129
 msgid "Mark as Unread"
 msgstr "Позначити непрочитаним"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:134
 msgid "Mark as Read"
 msgstr "Позначити як прочитане"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:139
 msgid "Star"
 msgstr "Позначити зірочкою"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:144
 msgid "Unstar"
 msgstr "Прибрати позначення зірочкою"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:156
 msgid "Mark Conversation"
 msgstr "Позначити бесіду"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:163
 msgid "Move conversations to archive"
 msgstr "Перемістити бесіди до архіву"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:170
 msgid "Move conversations to Trash"
 msgstr "Перемістити бесіди до смітника"
 
-#: src/InboxMonitor.vala:211 src/InboxMonitor.vala:224
+#: src/InboxMonitor.vala:167 src/InboxMonitor.vala:180
 #, c-format
 msgid "%s to %s"
 msgstr "%s до %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
-#: src/InboxMonitor.vala:219
+#: src/InboxMonitor.vala:175
 #, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
@@ -103,7 +121,7 @@ msgstr[2] "%u нових повідомлень"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
-#: src/InboxMonitor.vala:232
+#: src/InboxMonitor.vala:188
 #, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
@@ -115,14 +133,14 @@ msgstr[2] "%s від %u відправників"
 msgid "Mail"
 msgstr "Пошта"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:312
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Повідомлення видалено"
 msgstr[1] "Повідомлення видалено"
 msgstr[2] "Повідомлення видалено"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:324
 msgid "Undo"
 msgstr "Повернути"
 
@@ -140,17 +158,17 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Мережні облікові записи…"
 
-#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:95
+#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:97
 msgid "From:"
 msgstr "Від:"
 
 #: src/Composer/ComposerWidget.vala:117
-#: src/MessageList/MessageListItem.vala:100
+#: src/MessageList/MessageListItem.vala:102
 msgid "To:"
 msgstr "Кому:"
 
 #: src/Composer/ComposerWidget.vala:121
-#: src/MessageList/MessageListItem.vala:105
+#: src/MessageList/MessageListItem.vala:107
 msgid "Subject:"
 msgstr "Тема:"
 
@@ -163,7 +181,7 @@ msgid "Bcc"
 msgstr "Таємна копія"
 
 #: src/Composer/ComposerWidget.vala:137
-#: src/MessageList/MessageListItem.vala:134
+#: src/MessageList/MessageListItem.vala:136
 msgid "Cc:"
 msgstr "Копія:"
 
@@ -393,50 +411,56 @@ msgstr "Вся пошта"
 msgid "No Message Selected"
 msgstr "Повідомлення не вибрано"
 
-#: src/MessageList/MessageListItem.vala:175
-#: src/MessageList/MessageListItem.vala:334
+#. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
+#: src/MessageList/MessageListItem.vala:173
+#, c-format
+msgid "%s at %s"
+msgstr "%s о %s"
+
+#: src/MessageList/MessageListItem.vala:181
+#: src/MessageList/MessageListItem.vala:340
 msgid "Unstar message"
 msgstr "Прибрати позначення зірочкою з повідомлення"
 
-#: src/MessageList/MessageListItem.vala:178
-#: src/MessageList/MessageListItem.vala:330
+#: src/MessageList/MessageListItem.vala:184
+#: src/MessageList/MessageListItem.vala:336
 msgid "Star message"
 msgstr "Позначити повідомлення зірочкою"
 
-#: src/MessageList/MessageListItem.vala:188
+#: src/MessageList/MessageListItem.vala:194
 msgid "Reply to All"
 msgstr "Відповісти всім"
 
-#: src/MessageList/MessageListItem.vala:194
+#: src/MessageList/MessageListItem.vala:200
 msgid "Print…"
 msgstr "Друк…"
 
-#: src/MessageList/MessageListItem.vala:208
+#: src/MessageList/MessageListItem.vala:214
 msgid "More"
 msgstr "Більше"
 
-#: src/MessageList/MessageListItem.vala:244
+#: src/MessageList/MessageListItem.vala:250
 msgid "Show Images"
 msgstr "Показати зображення"
 
-#: src/MessageList/MessageListItem.vala:245
+#: src/MessageList/MessageListItem.vala:251
 msgid "Always Show from Sender"
 msgstr "Завжди показувати від відправника"
 
-#: src/MessageList/MessageListItem.vala:250
+#: src/MessageList/MessageListItem.vala:256
 msgid "This message contains remote images."
 msgstr "Цей лист містить віддалені зображення."
 
-#: src/MessageList/MessageListItem.vala:282
+#: src/MessageList/MessageListItem.vala:288
 msgid "This message contains one or more attachments"
 msgstr "Це повідомлення містить одне або більше вкладень"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:360
+#: src/MessageList/MessageListItem.vala:366
 msgid "Email Message"
 msgstr "Повідомлення електронної пошти"
 
-#: src/MessageList/MessageListItem.vala:382
+#: src/MessageList/MessageListItem.vala:388
 msgid "Unable to print email"
 msgstr "Не вдається надрукувати електронний лист"
 
@@ -608,9 +632,6 @@ msgstr "Зберегти"
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "Зазначити не як _спам"
-
-#~ msgid "Mark conversations"
-#~ msgstr "Зазначити розмови"
 
 #~ msgid "Add label to conversation"
 #~ msgid_plural "Add label to conversations"
@@ -1407,9 +1428,6 @@ msgstr "Зберегти"
 
 #~ msgid "Always watch for new mail:"
 #~ msgstr "Завжди перевіряти нові листи:"
-
-#~ msgid "Delete Conversation"
-#~ msgstr "Видалити розмову:"
 
 #~ msgid "Delete Conversations (Shift+Delete)"
 #~ msgstr "Видалити розмови (Shift+Delete)"

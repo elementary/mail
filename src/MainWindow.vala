@@ -214,6 +214,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             headerbar.set_paned_positions (paned_start.position, paned_end.position);
         });
 
+        headerbar.notify["hide-read"].connect (on_search);
+        headerbar.notify["hide-unstarred"].connect (on_search);
         headerbar.search_entry.search_changed.connect (() => {
             if (search_changed_debounce_timeout_id != 0) {
                 GLib.Source.remove (search_changed_debounce_timeout_id);
@@ -245,6 +247,10 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         });
 
         session.start.begin ();
+    }
+
+    private void on_search () {
+        conversation_list_box.search.begin (headerbar.search_entry.text, headerbar.hide_read, headerbar.hide_unstarred);
     }
 
     private void on_compose_message () {

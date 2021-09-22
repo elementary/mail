@@ -5,12 +5,12 @@
 #
 # Translators:
 # grvrulz <gaurav.conetfun@gmail.com>, 2013
-#: src/MessageList/MessageListItem.vala:383
+#: src/MessageList/MessageListItem.vala:389
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-17 18:59+0000\n"
+"POT-Creation-Date: 2021-09-22 16:16+0000\n"
 "PO-Revision-Date: 2018-12-19 00:07+0000\n"
 "Last-Translator: Mayank Arya <mmaismma@hotmail.com>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/mail/mail/hi/>\n"
@@ -22,80 +22,97 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:43
 msgid "Compose new message"
 msgstr "नया पत्र लिखे"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:49
 msgid "Search Mail"
 msgstr "पत्र ढूंदे।"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:53
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide read conversations"
+msgstr "अधिक संवाद को लेबल जोड़े"
+
+#: src/HeaderBar.vala:55
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide unstarred conversations"
+msgstr "अधिक संवाद को लेबल जोड़े"
+
+#: src/HeaderBar.vala:72
+#, fuzzy
+msgid "Filter Conversations"
+msgstr "अधिक संवाद संकेत"
+
+#: src/HeaderBar.vala:76
 msgid "Always Show Remote Images"
 msgstr ""
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:79
 msgid "Account Settings…"
 msgstr "खाता सेटिंग्स…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:102
 msgid "Menu"
 msgstr "मेनू"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:185
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "जवाब दें"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:116
 msgid "Reply All"
 msgstr "सबको जवाब दे"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "फॉरवर्ड"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:129
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "पढ़ा नही संकेत करे"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:134
 #, fuzzy
 msgid "Mark as Read"
 msgstr "पढ़ लिया संकेत करे"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:139
 #, fuzzy
 msgid "Star"
 msgstr "तारा"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:144
 #, fuzzy
 msgid "Unstar"
 msgstr "तारा हटाए"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:156
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "अधिक संवाद संकेत"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:163
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
 msgstr "संवाद तो ट्रैश में डाले"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:170
 msgid "Move conversations to Trash"
 msgstr "संवाद तो ट्रैश में डाले"
 
-#: src/InboxMonitor.vala:211 src/InboxMonitor.vala:224
+#: src/InboxMonitor.vala:167 src/InboxMonitor.vala:180
 #, c-format
 msgid "%s to %s"
 msgstr ""
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
-#: src/InboxMonitor.vala:219
+#: src/InboxMonitor.vala:175
 #, fuzzy, c-format
 #| msgid "Compose new message"
 msgid "%u new message"
@@ -105,7 +122,7 @@ msgstr[1] "नया पत्र लिखे"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
-#: src/InboxMonitor.vala:232
+#: src/InboxMonitor.vala:188
 #, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
@@ -118,13 +135,13 @@ msgstr[1] ""
 msgid "Mail"
 msgstr "सब पत्र"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:312
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:324
 msgid "Undo"
 msgstr ""
 
@@ -140,17 +157,17 @@ msgstr "मेल सेटिंग्स में कन्फिगर क�
 msgid "Online Accounts…"
 msgstr "ऑनलाइन खाते…"
 
-#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:95
+#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:97
 msgid "From:"
 msgstr ""
 
 #: src/Composer/ComposerWidget.vala:117
-#: src/MessageList/MessageListItem.vala:100
+#: src/MessageList/MessageListItem.vala:102
 msgid "To:"
 msgstr "किसे:"
 
 #: src/Composer/ComposerWidget.vala:121
-#: src/MessageList/MessageListItem.vala:105
+#: src/MessageList/MessageListItem.vala:107
 msgid "Subject:"
 msgstr "विषय:"
 
@@ -164,7 +181,7 @@ msgid "Bcc"
 msgstr "प्रतिभागी"
 
 #: src/Composer/ComposerWidget.vala:137
-#: src/MessageList/MessageListItem.vala:134
+#: src/MessageList/MessageListItem.vala:136
 msgid "Cc:"
 msgstr ""
 
@@ -400,56 +417,62 @@ msgstr ""
 msgid "No Message Selected"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:175
-#: src/MessageList/MessageListItem.vala:334
+#. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
+#: src/MessageList/MessageListItem.vala:173
+#, c-format
+msgid "%s at %s"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:181
+#: src/MessageList/MessageListItem.vala:340
 #, fuzzy
 msgid "Unstar message"
 msgstr "%d नया संदेश"
 
-#: src/MessageList/MessageListItem.vala:178
-#: src/MessageList/MessageListItem.vala:330
+#: src/MessageList/MessageListItem.vala:184
+#: src/MessageList/MessageListItem.vala:336
 #, fuzzy
 msgid "Star message"
 msgstr "%d नया संदेश"
 
-#: src/MessageList/MessageListItem.vala:188
+#: src/MessageList/MessageListItem.vala:194
 #, fuzzy
 #| msgid "Reply All"
 msgid "Reply to All"
 msgstr "सबको जवाब दे"
 
-#: src/MessageList/MessageListItem.vala:194
+#: src/MessageList/MessageListItem.vala:200
 msgid "Print…"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:208
+#: src/MessageList/MessageListItem.vala:214
 msgid "More"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:244
+#: src/MessageList/MessageListItem.vala:250
 msgid "Show Images"
 msgstr "तस्वीरें दिखाए"
 
-#: src/MessageList/MessageListItem.vala:245
+#: src/MessageList/MessageListItem.vala:251
 msgid "Always Show from Sender"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:250
+#: src/MessageList/MessageListItem.vala:256
 msgid "This message contains remote images."
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:282
+#: src/MessageList/MessageListItem.vala:288
 msgid "This message contains one or more attachments"
 msgstr ""
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:360
+#: src/MessageList/MessageListItem.vala:366
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "नया पत्र"
 
-#: src/MessageList/MessageListItem.vala:382
+#: src/MessageList/MessageListItem.vala:388
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
@@ -589,9 +612,6 @@ msgstr ""
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "स्पैम नही संकेत"
-
-#~ msgid "Add label to conversations"
-#~ msgstr "अधिक संवाद को लेबल जोड़े"
 
 #~ msgid "A_ccounts"
 #~ msgstr "खाते(_c)"

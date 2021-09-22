@@ -1,8 +1,8 @@
-#: src/MessageList/MessageListItem.vala:383
+#: src/MessageList/MessageListItem.vala:389
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-17 18:59+0000\n"
+"POT-Creation-Date: 2021-09-22 16:16+0000\n"
 "PO-Revision-Date: 2021-07-27 15:38+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/mail/mail/pa/>\n"
@@ -13,73 +13,91 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:43
 msgid "Compose new message"
 msgstr "ਨਵਾਂ ਸੁਨੇਹਾ ਬਣਾਓ"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:49
 msgid "Search Mail"
 msgstr "ਡਾਕ ਵਿੱਚ ਲੱਭੋ"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:53
+#, fuzzy
+#| msgid "Mark Conversation"
+msgid "Hide read conversations"
+msgstr "ਗੱਲਬਾਤ ਨੂੰ ਨਿਸ਼ਾਨ ਲਾਓ"
+
+#: src/HeaderBar.vala:55
+#, fuzzy
+#| msgid "Mark Conversation"
+msgid "Hide unstarred conversations"
+msgstr "ਗੱਲਬਾਤ ਨੂੰ ਨਿਸ਼ਾਨ ਲਾਓ"
+
+#: src/HeaderBar.vala:72
+#, fuzzy
+#| msgid "Mark Conversation"
+msgid "Filter Conversations"
+msgstr "ਗੱਲਬਾਤ ਨੂੰ ਨਿਸ਼ਾਨ ਲਾਓ"
+
+#: src/HeaderBar.vala:76
 msgid "Always Show Remote Images"
 msgstr "ਰਿਮੋਟ ਤਸਵੀਰਾਂ ਹਮੇਸ਼ਾ ਵਿਖਾਓ"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:79
 msgid "Account Settings…"
 msgstr "ਖਾਤਾ ਸੈਟਿੰਗਾਂ…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:102
 msgid "Menu"
 msgstr "ਮੈਨਿਊ"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:185
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "ਜਵਾਬ ਦਿਓ"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:116
 msgid "Reply All"
 msgstr "ਸਾਰਿਆਂ ਨੂੰ ਜਵਾਬ ਦਿਓ"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "ਅੱਗੇ ਭੇਜੋ"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:129
 msgid "Mark as Unread"
 msgstr "ਨਾ-ਪੜ੍ਹੇ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਾਓ"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:134
 msgid "Mark as Read"
 msgstr "ਪੜ੍ਹੇ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਾਓ"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:139
 msgid "Star"
 msgstr "ਸਿਤਾਰਾ ਦਿਓ"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:144
 msgid "Unstar"
 msgstr "ਸਿਤਾਰਾ ਹਟਾਓ"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:156
 msgid "Mark Conversation"
 msgstr "ਗੱਲਬਾਤ ਨੂੰ ਨਿਸ਼ਾਨ ਲਾਓ"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:163
 msgid "Move conversations to archive"
 msgstr "ਗੱਲਬਾਤ ਨੂੰ ਪੱਕੇ-ਚਿੱਠੇ ਵਿੱਚ ਭੇਜੋ"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:170
 msgid "Move conversations to Trash"
 msgstr "ਗੱਲਬਾਤ ਨੂੰ ਕੂੜੇਦਾਨ ਵਿੱਚ ਭੇਜੋ"
 
-#: src/InboxMonitor.vala:211 src/InboxMonitor.vala:224
+#: src/InboxMonitor.vala:167 src/InboxMonitor.vala:180
 #, c-format
 msgid "%s to %s"
 msgstr ""
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
-#: src/InboxMonitor.vala:219
+#: src/InboxMonitor.vala:175
 #, fuzzy, c-format
 #| msgid "Compose new message"
 msgid "%u new message"
@@ -89,7 +107,7 @@ msgstr[1] "ਨਵਾਂ ਸੁਨੇਹਾ ਬਣਾਓ"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
-#: src/InboxMonitor.vala:232
+#: src/InboxMonitor.vala:188
 #, fuzzy, c-format
 #| msgid "Always Show from Sender"
 msgid "%s from %u sender"
@@ -101,13 +119,13 @@ msgstr[1] "ਭੇਜਣ ਵਾਲੇ ਵੱਲੋਂ ਹਮੇਸ਼ਾ ਵਿ�
 msgid "Mail"
 msgstr "ਡਾਕ"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:312
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "ਸੁਨੇਹਾ ਮਿਟਾ ਦਿੱਤਾ ਗਿਆ"
 msgstr[1] "ਸੁਨੇਹੇ ਮਿਟਾ ਦਿੱਤੇ ਗਏ"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:324
 msgid "Undo"
 msgstr "ਕੀਤੀ ਕਾਰਵਾਈ ਨੂੰ ਵਾਪਸ ਮੋੜੋ"
 
@@ -123,17 +141,17 @@ msgstr "ਮੇਲ, ਸਿਸਟਮ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਜੋ�
 msgid "Online Accounts…"
 msgstr "ਆਨਲਾਈਨ ਖਾਤੇ…"
 
-#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:95
+#: src/Composer/ComposerWidget.vala:101 src/MessageList/MessageListItem.vala:97
 msgid "From:"
 msgstr "ਵੱਲੋਂ:"
 
 #: src/Composer/ComposerWidget.vala:117
-#: src/MessageList/MessageListItem.vala:100
+#: src/MessageList/MessageListItem.vala:102
 msgid "To:"
 msgstr "ਵੱਲ:"
 
 #: src/Composer/ComposerWidget.vala:121
-#: src/MessageList/MessageListItem.vala:105
+#: src/MessageList/MessageListItem.vala:107
 msgid "Subject:"
 msgstr "ਵਿਸ਼ਾ:"
 
@@ -148,7 +166,7 @@ msgstr ""
 "ਨਕਲ ਭੇਜੋ (ਖ਼ੁਫ਼ੀਆ: ਪ੍ਰਾਪਤ-ਕਰਤਾ ਨੂੰ ਪਤਾ ਨਹੀਂ ਲੱਗੇਗਾ ਕਿ ਇਹ ਨਕਲ ਕਿਸੇ ਹੋਰ ਨੂੰ ਵੀ ਭੇਜੀ ਗਈ ਹੈ)"
 
 #: src/Composer/ComposerWidget.vala:137
-#: src/MessageList/MessageListItem.vala:134
+#: src/MessageList/MessageListItem.vala:136
 msgid "Cc:"
 msgstr "ਨਕਲ ਭੇਜੋ (ਸ਼ਰੇਆਮ):"
 
@@ -376,50 +394,56 @@ msgstr "ਸਾਰੇ ਡਾਕ-ਬਾਕਸ"
 msgid "No Message Selected"
 msgstr "ਕੋਈ ਸੁਨੇਹਾ ਨਹੀਂ ਚੁਣਿਆ ਹੋਇਆ"
 
-#: src/MessageList/MessageListItem.vala:175
-#: src/MessageList/MessageListItem.vala:334
+#. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
+#: src/MessageList/MessageListItem.vala:173
+#, c-format
+msgid "%s at %s"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:181
+#: src/MessageList/MessageListItem.vala:340
 msgid "Unstar message"
 msgstr "ਸੁਨੇਹੇ ਤੋਂ ਸਿਤਾਰਾ ਹਟਾਓ"
 
-#: src/MessageList/MessageListItem.vala:178
-#: src/MessageList/MessageListItem.vala:330
+#: src/MessageList/MessageListItem.vala:184
+#: src/MessageList/MessageListItem.vala:336
 msgid "Star message"
 msgstr "ਸੁਨੇਹੇ ਨੂੰ ਸਿਤਾਰਾ ਦਿਓ"
 
-#: src/MessageList/MessageListItem.vala:188
+#: src/MessageList/MessageListItem.vala:194
 msgid "Reply to All"
 msgstr "ਸਾਰਿਆਂ ਨੂੰ ਜਵਾਬ ਦਿਓ"
 
-#: src/MessageList/MessageListItem.vala:194
+#: src/MessageList/MessageListItem.vala:200
 msgid "Print…"
 msgstr "ਪ੍ਰਿੰਟ ਕਰੋ…"
 
-#: src/MessageList/MessageListItem.vala:208
+#: src/MessageList/MessageListItem.vala:214
 msgid "More"
 msgstr "ਹੋਰ"
 
-#: src/MessageList/MessageListItem.vala:244
+#: src/MessageList/MessageListItem.vala:250
 msgid "Show Images"
 msgstr "ਤਸਵੀਰਾਂ ਵਿਖਾਓ"
 
-#: src/MessageList/MessageListItem.vala:245
+#: src/MessageList/MessageListItem.vala:251
 msgid "Always Show from Sender"
 msgstr "ਭੇਜਣ ਵਾਲੇ ਵੱਲੋਂ ਹਮੇਸ਼ਾ ਵਿਖਾਓ"
 
-#: src/MessageList/MessageListItem.vala:250
+#: src/MessageList/MessageListItem.vala:256
 msgid "This message contains remote images."
 msgstr "ਇਸ ਸੁਨੇਹੇ ਵਿੱਚ ਰਿਮੋਟ ਤਸਵੀਰਾਂ ਹਨ।"
 
-#: src/MessageList/MessageListItem.vala:282
+#: src/MessageList/MessageListItem.vala:288
 msgid "This message contains one or more attachments"
 msgstr "ਇਸ ਸੁਨੇਹੇ ਵਿੱਚ ਇੱਕ ਜਾਂ ਵੱਧ ਨੱਥੀ ਫ਼ਾਇਲਾਂ ਹਨ"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:360
+#: src/MessageList/MessageListItem.vala:366
 msgid "Email Message"
 msgstr "ਈਮੇਲ ਸੁਨੇਹਾ"
 
-#: src/MessageList/MessageListItem.vala:382
+#: src/MessageList/MessageListItem.vala:388
 msgid "Unable to print email"
 msgstr "ਈਮੇਲ ਪ੍ਰਿੰਟ ਨਹੀਂ ਹੋ ਸਕੀ"
 
