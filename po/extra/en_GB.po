@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-22 16:16+0000\n"
-"PO-Revision-Date: 2021-07-29 22:38+0000\n"
+"PO-Revision-Date: 2021-09-23 01:30+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/extra/en_GB/>\n"
@@ -71,18 +71,16 @@ msgid "Improvements:"
 msgstr "Improvements:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
-#, fuzzy
-#| msgid "Move Undo notification to the message view"
 msgid "Send a notification when new messages arrive"
-msgstr "Move Undo notification to the message view"
+msgstr "Send a notification when new messages arrive"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Improve search performance"
-msgstr ""
+msgstr "Improve search performance"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 msgid "Filter unread or starred conversations"
-msgstr ""
+msgstr "Filter unread or starred conversations"
 
 #: data/io.elementary.mail.appdata.xml.in:32
 #: data/io.elementary.mail.appdata.xml.in:48
@@ -92,21 +90,23 @@ msgstr "Updated translations"
 
 #: data/io.elementary.mail.appdata.xml.in:38
 msgid "Fixes:"
-msgstr ""
+msgstr "Fixes:"
 
 #: data/io.elementary.mail.appdata.xml.in:40
 msgid "Fix an issue that prevented some messaging from rendering at all"
-msgstr ""
+msgstr "Fix an issue that prevented some messaging from rendering at all"
 
 #: data/io.elementary.mail.appdata.xml.in:41
 msgid ""
 "Set the correct \"From\" address when replying and multiple accounts are set "
 "up"
 msgstr ""
+"Set the correct \"From\" address when replying and multiple accounts are set "
+"up"
 
 #: data/io.elementary.mail.appdata.xml.in:42
 msgid "Fix a crash on startup for some conversations"
-msgstr ""
+msgstr "Fix a crash on startup for some conversations"
 
 #: data/io.elementary.mail.appdata.xml.in:46
 msgid "Only save drafts when there are new changes"
