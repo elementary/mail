@@ -50,22 +50,15 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
             valign = Gtk.Align.CENTER
         };
 
-        var hide_read_button = new Granite.SwitchModelButton (_("Unread")) {
-            description = _("Hides all read emails")
-        };
+        var hide_read_button = new Granite.SwitchModelButton (_("Hide read conversations"));
 
-        var hide_unstarred_button = new Granite.SwitchModelButton (_("Starred")) {
-            description = _("Hides all unstarred emails")
-        };
+        var hide_unstarred_button = new Granite.SwitchModelButton (_("Hide unstarred conversations"));
 
         var filter_menu_popover_grid = new Gtk.Grid () {
-            column_spacing = 6,
-            margin_bottom = 6,
-            margin_top = 12,
-            orientation = Gtk.Orientation.VERTICAL,
-            row_spacing = 6
+            margin_bottom = 3,
+            margin_top = 3,
+            orientation = Gtk.Orientation.VERTICAL
         };
-
         filter_menu_popover_grid.add (hide_read_button);
         filter_menu_popover_grid.add (hide_unstarred_button);
         filter_menu_popover_grid.show_all ();
@@ -74,11 +67,10 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
         filter_popover.add (filter_menu_popover_grid);
 
         filter_button = new Gtk.MenuButton () {
-            can_focus = false,
-            image = new Gtk.Image.from_icon_name ("view-more-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            image = new Gtk.Image.from_icon_name ("mail-filter", Gtk.IconSize.LARGE_TOOLBAR),
             popover = filter_popover,
             tooltip_text = _("Filter Conversations"),
-            margin_end = 6
+            margin_end = 12
         };
 
         var load_images_menuitem = new Granite.SwitchModelButton (_("Always Show Remote Images"));
@@ -214,21 +206,15 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
     }
 
     private void on_filter_button_changed () {
-        unowned var style_context = filter_button.image.get_style_context ();
-        var has_accent_class = style_context.has_class (Granite.STYLE_CLASS_ACCENT);
-
         if (hide_read || hide_unstarred) {
-            if (!has_accent_class) {
-                style_context.add_class (Granite.STYLE_CLASS_ACCENT);
-            }
-
-        } else if (has_accent_class) {
-            style_context.remove_class (Granite.STYLE_CLASS_ACCENT);
+            ((Gtk.Image) filter_button.image).icon_name = "mail-filter-active";
+        } else {
+            ((Gtk.Image) filter_button.image).icon_name = "mail-filter";
         }
     }
 
     public void set_paned_positions (int start_position, int end_position, bool start_changed = true) {
-        search_entry.width_request = end_position - start_position - filter_button.get_allocated_width () - 6;
+        search_entry.width_request = end_position - start_position - filter_button.get_allocated_width () - filter_button.margin_end;
         if (start_changed) {
             int spacing_position;
             child_get (spacing_widget, "position", out spacing_position, null);
