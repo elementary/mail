@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 16:51+0000\n"
+"POT-Creation-Date: 2021-09-23 19:12+0000\n"
 "PO-Revision-Date: 2021-09-13 13:56+0000\n"
 "Last-Translator: Corentin Noël <tintou@noel.tf>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
@@ -34,81 +34,95 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:43
+#: src/HeaderBar.vala:45
 msgid "Compose new message"
 msgstr "Rédiger un nouveau message"
 
-#: src/HeaderBar.vala:49
+#: src/HeaderBar.vala:54
+#, fuzzy
+#| msgid "%u new message"
+#| msgid_plural "%u new messages"
+msgid "Fetch new messages"
+msgstr "%u nouveau message"
+
+#: src/HeaderBar.vala:61
+#, fuzzy
+#| msgid "%u new message"
+#| msgid_plural "%u new messages"
+msgid "Fetching new messages"
+msgstr "%u nouveau message"
+
+#: src/HeaderBar.vala:74
 msgid "Search Mail"
 msgstr "Rechercher"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:78
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide read conversations"
 msgstr "Marquer les conversations"
 
-#: src/HeaderBar.vala:55
+#: src/HeaderBar.vala:80
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
 msgstr "Marquer les conversations"
 
-#: src/HeaderBar.vala:72
+#: src/HeaderBar.vala:97
 #, fuzzy
 #| msgid "Delete Conversation"
 msgid "Filter Conversations"
 msgstr "Supprimer la conversation"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:101
 msgid "Always Show Remote Images"
 msgstr "Toujours afficher les images distantes"
 
-#: src/HeaderBar.vala:79
+#: src/HeaderBar.vala:104
 msgid "Account Settings…"
 msgstr "Paramètres de compte…"
 
-#: src/HeaderBar.vala:102
+#: src/HeaderBar.vala:127
 msgid "Menu"
 msgstr "Menu"
 
-#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:134 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Répondre"
 
-#: src/HeaderBar.vala:116
+#: src/HeaderBar.vala:141
 msgid "Reply All"
 msgstr "Répondre à tous"
 
-#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:148 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Transférer"
 
-#: src/HeaderBar.vala:129
+#: src/HeaderBar.vala:154
 msgid "Mark as Unread"
 msgstr "Marquer comme non lu"
 
-#: src/HeaderBar.vala:134
+#: src/HeaderBar.vala:159
 msgid "Mark as Read"
 msgstr "Marquer comme lu"
 
-#: src/HeaderBar.vala:139
+#: src/HeaderBar.vala:164
 msgid "Star"
 msgstr "Marquer d'une étoile"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:169
 msgid "Unstar"
 msgstr "Supprimer l'étoile"
 
-#: src/HeaderBar.vala:156
+#: src/HeaderBar.vala:181
 msgid "Mark Conversation"
 msgstr "Marquer la conversation"
 
-#: src/HeaderBar.vala:163
+#: src/HeaderBar.vala:188
 msgid "Move conversations to archive"
 msgstr "Déplacer les conversations dans les archives"
 
-#: src/HeaderBar.vala:170
+#: src/HeaderBar.vala:195
 msgid "Move conversations to Trash"
 msgstr "Déplacer les conversations dans la corbeille"
 
@@ -134,17 +148,17 @@ msgid_plural "%s from %u senders"
 msgstr[0] "%s de %u émetteur"
 msgstr[1] "%s de %u émetteurs"
 
-#: src/MainWindow.vala:73
+#: src/MainWindow.vala:75
 msgid "Mail"
 msgstr "Messagerie"
 
-#: src/MainWindow.vala:312
+#: src/MainWindow.vala:346
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Message supprimé"
 msgstr[1] "Messages supprimés"
 
-#: src/MainWindow.vala:324
+#: src/MainWindow.vala:358
 msgid "Undo"
 msgstr "Annuler"
 

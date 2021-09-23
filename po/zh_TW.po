@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 16:51+0000\n"
+"POT-Creation-Date: 2021-09-23 19:12+0000\n"
 "PO-Revision-Date: 2021-07-29 17:55+0000\n"
 "Last-Translator: Kdwk <kdwkleung@protonmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -23,85 +23,99 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
-#: src/HeaderBar.vala:43
+#: src/HeaderBar.vala:45
 #, fuzzy
 msgid "Compose new message"
 msgstr "編撰新訊息"
 
-#: src/HeaderBar.vala:49
+#: src/HeaderBar.vala:54
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetch new messages"
+msgstr "%d 封新訊息"
+
+#: src/HeaderBar.vala:61
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetching new messages"
+msgstr "%d 封新訊息"
+
+#: src/HeaderBar.vala:74
 msgid "Search Mail"
 msgstr "搜尋郵件"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:78
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide read conversations"
 msgstr "標記對話"
 
-#: src/HeaderBar.vala:55
+#: src/HeaderBar.vala:80
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
 msgstr "標記對話"
 
-#: src/HeaderBar.vala:72
+#: src/HeaderBar.vala:97
 #, fuzzy
 #| msgid "Delete Conversation"
 msgid "Filter Conversations"
 msgstr "刪除對話"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:101
 msgid "Always Show Remote Images"
 msgstr "永遠顯示遠端圖片"
 
-#: src/HeaderBar.vala:79
+#: src/HeaderBar.vala:104
 msgid "Account Settings…"
 msgstr "帳號設定…"
 
-#: src/HeaderBar.vala:102
+#: src/HeaderBar.vala:127
 msgid "Menu"
 msgstr "選單"
 
-#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:134 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "回覆"
 
-#: src/HeaderBar.vala:116
+#: src/HeaderBar.vala:141
 msgid "Reply All"
 msgstr "回覆所有人"
 
-#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:148 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "轉寄"
 
-#: src/HeaderBar.vala:129
+#: src/HeaderBar.vala:154
 msgid "Mark as Unread"
 msgstr "標記為未讀"
 
-#: src/HeaderBar.vala:134
+#: src/HeaderBar.vala:159
 msgid "Mark as Read"
 msgstr "標記為已讀"
 
-#: src/HeaderBar.vala:139
+#: src/HeaderBar.vala:164
 #, fuzzy
 msgid "Star"
 msgstr "標星(_S)"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:169
 #, fuzzy
 msgid "Unstar"
 msgstr "取消標星(_N)"
 
-#: src/HeaderBar.vala:156
+#: src/HeaderBar.vala:181
 msgid "Mark Conversation"
 msgstr "標記對話"
 
-#: src/HeaderBar.vala:163
+#: src/HeaderBar.vala:188
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "搬移對話"
 
-#: src/HeaderBar.vala:170
+#: src/HeaderBar.vala:195
 msgid "Move conversations to Trash"
 msgstr "移動對話至垃圾桶"
 
@@ -128,16 +142,16 @@ msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
 msgstr[0] "總是顯示寄件者"
 
-#: src/MainWindow.vala:73
+#: src/MainWindow.vala:75
 msgid "Mail"
 msgstr "郵件"
 
-#: src/MainWindow.vala:312
+#: src/MainWindow.vala:346
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "訊息已被刪除"
 
-#: src/MainWindow.vala:324
+#: src/MainWindow.vala:358
 msgid "Undo"
 msgstr "復原"
 
