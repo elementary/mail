@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-23 07:45+0000\n"
-"PO-Revision-Date: 2021-09-23 01:30+0000\n"
+"PO-Revision-Date: 2021-09-23 10:38+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/extra/he/>\n"
 "Language: he\n"
@@ -82,10 +82,8 @@ msgid "Filter unread or starred conversations"
 msgstr "סינון דיונים שנקראו או לא סומנו בכוכב"
 
 #: data/io.elementary.mail.appdata.xml.in:32
-#, fuzzy
-#| msgid "Make sure we don't save sent messages twice for some account types"
 msgid "Make sure we don't save sent messages twice for outlook.com accounts"
-msgstr "וידוא שהודעה שנשלחה לא נשמרת פעמיים לחלק מסוגי החשבונות"
+msgstr "וידוא שהודעה שנשלחה לא נשמרת פעמיים לחשבונות outlook.com"
 
 #: data/io.elementary.mail.appdata.xml.in:33
 #: data/io.elementary.mail.appdata.xml.in:49
