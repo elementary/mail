@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-23 16:51+0000\n"
-"PO-Revision-Date: 2021-09-18 18:32+0000\n"
+"PO-Revision-Date: 2021-09-23 19:12+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/extra/tr/>\n"
 "Language: tr\n"
@@ -75,21 +75,17 @@ msgstr "  "
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Automatically select the next message after deleting"
-msgstr ""
+msgstr " "
 
 #: data/io.elementary.mail.appdata.xml.in:31
 msgid "Improve search performance"
 msgstr " "
 
 #: data/io.elementary.mail.appdata.xml.in:32
-#, fuzzy
-#| msgid "Fix a crash on startup for some conversations"
 msgid "Filter unread or starred conversations"
-msgstr " "
+msgstr "  "
 
 #: data/io.elementary.mail.appdata.xml.in:33
-#, fuzzy
-#| msgid "Make sure we don't save sent messages twice for some account types"
 msgid "Make sure we don't save sent messages twice for outlook.com accounts"
 msgstr " "
 
