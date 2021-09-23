@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-23 07:45+0000\n"
-"PO-Revision-Date: 2021-09-22 20:18+0000\n"
+"PO-Revision-Date: 2021-09-23 07:57+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/extra/uk/"
-">\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/extra/uk/>"
+"\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -84,12 +84,10 @@ msgid "Filter unread or starred conversations"
 msgstr "Фільтр прочитаних бесід та тих, з яких прибрано позначку зіркою"
 
 #: data/io.elementary.mail.appdata.xml.in:32
-#, fuzzy
-#| msgid "Make sure we don't save sent messages twice for some account types"
 msgid "Make sure we don't save sent messages twice for outlook.com accounts"
 msgstr ""
-"Виправлено ваду подвійного збереження надісланих повідомлень для деяких "
-"типів облікових записів"
+"Виправлено ваду подвійного збереження надісланих повідомлень для облікових "
+"записів outlook.com"
 
 #: data/io.elementary.mail.appdata.xml.in:33
 #: data/io.elementary.mail.appdata.xml.in:49
