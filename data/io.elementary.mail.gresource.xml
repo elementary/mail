@@ -4,8 +4,7 @@
     <file alias="application.css" compressed="true">application.css</file>
     <file alias="blank-message-template.html" compressed="true">blank-message-template.html</file>
 
-    <file compressed="true" preprocess="xml-stripblanks">icons/mail-filter.svg</file>
-    <file compressed="true" preprocess="xml-stripblanks">icons/mail-filter-active.svg</file>
+    <file compressed="true" preprocess="xml-stripblanks">icons/mail-filter-symbolic.svg</file>
 
     <file alias="16x16@2/places/mail-drafts.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-drafts/16.svg</file>
     <file alias="16x16/places/mail-drafts.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-drafts/16.svg</file>

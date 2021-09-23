@@ -187,7 +187,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         filter_popover.add (filter_menu_popover_grid);
 
         filter_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("mail-filter", Gtk.IconSize.SMALL_TOOLBAR),
+            image = new Gtk.Image.from_icon_name ("mail-filter-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
             popover = filter_popover,
             tooltip_text = _("Filter Conversations")
         };
@@ -318,10 +318,13 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void on_filter_button_changed () {
+        var style_context = filter_button.get_style_context ();
         if (hide_read_switch.active || hide_unstarred_switch.active) {
-            ((Gtk.Image) filter_button.image).icon_name = "mail-filter-active";
-        } else {
-            ((Gtk.Image) filter_button.image).icon_name = "mail-filter";
+            if (!style_context.has_class (Granite.STYLE_CLASS_ACCENT)) {
+                style_context.add_class (Granite.STYLE_CLASS_ACCENT);
+            }
+        } else if (style_context.has_class (Granite.STYLE_CLASS_ACCENT)) {
+            style_context.remove_class (Granite.STYLE_CLASS_ACCENT);
         }
 
         conversation_list_box.search.begin (headerbar.search_entry.text, hide_read_switch.active, hide_unstarred_switch.active);
