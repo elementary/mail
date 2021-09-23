@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-22 16:16+0000\n"
+"POT-Creation-Date: 2021-09-23 19:12+0000\n"
 "PO-Revision-Date: 2021-09-20 03:12+0000\n"
 "Last-Translator: Cleiton Floss <cleitonfloss@tutanota.de>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/mail/extra/sk/>\n"
@@ -66,8 +66,8 @@ msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr "Funguje s Gmail, Yahoo! Mail a s inými populárnymi IMAP servermi"
 
 #: data/io.elementary.mail.appdata.xml.in:27
-#: data/io.elementary.mail.appdata.xml.in:44
-#: data/io.elementary.mail.appdata.xml.in:54
+#: data/io.elementary.mail.appdata.xml.in:47
+#: data/io.elementary.mail.appdata.xml.in:57
 msgid "Improvements:"
 msgstr "Vylepšenia:"
 
@@ -76,30 +76,46 @@ msgid "Send a notification when new messages arrive"
 msgstr "Odoslať oznámenie o novej správe"
 
 #: data/io.elementary.mail.appdata.xml.in:30
+msgid "Add a button to manually fetch new messages"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:31
+msgid "Automatically select the next message after deleting"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:32
 msgid "Improve search performance"
 msgstr "Vylepšená rýchlosť vyhľadávania"
 
-#: data/io.elementary.mail.appdata.xml.in:31
+#: data/io.elementary.mail.appdata.xml.in:33
 #, fuzzy
 #| msgid "Fix a crash on startup for some conversations"
 msgid "Filter unread or starred conversations"
 msgstr "Opravený pád pri spustení pre niektoré konverzácie"
 
-#: data/io.elementary.mail.appdata.xml.in:32
-#: data/io.elementary.mail.appdata.xml.in:48
-#: data/io.elementary.mail.appdata.xml.in:61
+#: data/io.elementary.mail.appdata.xml.in:34
+#, fuzzy
+#| msgid "Make sure we don't save sent messages twice for some account types"
+msgid "Make sure we don't save sent messages twice for outlook.com accounts"
+msgstr ""
+"Zabezpečené, aby sa rovnaká správa neodoslala dvakrát pri niektorých typoch "
+"účtov"
+
+#: data/io.elementary.mail.appdata.xml.in:35
+#: data/io.elementary.mail.appdata.xml.in:51
+#: data/io.elementary.mail.appdata.xml.in:64
 msgid "Updated translations"
 msgstr "Aktualizované preklady"
 
-#: data/io.elementary.mail.appdata.xml.in:38
+#: data/io.elementary.mail.appdata.xml.in:41
 msgid "Fixes:"
 msgstr "Opravy:"
 
-#: data/io.elementary.mail.appdata.xml.in:40
+#: data/io.elementary.mail.appdata.xml.in:43
 msgid "Fix an issue that prevented some messaging from rendering at all"
 msgstr "Opravený problém so zobrazovaním niektorých správ"
 
-#: data/io.elementary.mail.appdata.xml.in:41
+#: data/io.elementary.mail.appdata.xml.in:44
 msgid ""
 "Set the correct \"From\" address when replying and multiple accounts are set "
 "up"
@@ -107,45 +123,45 @@ msgstr ""
 "Nastavovať správnu adresu odosielateľa pri odpovedaní a pri používaní "
 "viacerých účtov"
 
-#: data/io.elementary.mail.appdata.xml.in:42
+#: data/io.elementary.mail.appdata.xml.in:45
 msgid "Fix a crash on startup for some conversations"
 msgstr "Opravený pád pri spustení pre niektoré konverzácie"
 
-#: data/io.elementary.mail.appdata.xml.in:46
+#: data/io.elementary.mail.appdata.xml.in:49
 msgid "Only save drafts when there are new changes"
 msgstr "Koncepty ukladať iba vtedy, keď sú v nich nové neuložené zmeny"
 
-#: data/io.elementary.mail.appdata.xml.in:47
+#: data/io.elementary.mail.appdata.xml.in:50
 msgid "Move Undo notification to the message view"
 msgstr "Oznámenie Späť presunuté do zobrazenia správ"
 
-#: data/io.elementary.mail.appdata.xml.in:56
+#: data/io.elementary.mail.appdata.xml.in:59
 msgid "Preserve conversation subjects when replying or forwarding"
 msgstr "Zachovať predmety konverzácií pri odpovedaní či preposielaní"
 
-#: data/io.elementary.mail.appdata.xml.in:57
+#: data/io.elementary.mail.appdata.xml.in:60
 msgid "Disable the composer while messages are being sent"
 msgstr "Deaktivovať nástroje úpravy textu pri odosielaní správ"
 
-#: data/io.elementary.mail.appdata.xml.in:58
+#: data/io.elementary.mail.appdata.xml.in:61
 msgid "Edit saved draft messages"
 msgstr "Možnosť úpravy uložených koncepty"
 
-#: data/io.elementary.mail.appdata.xml.in:59
+#: data/io.elementary.mail.appdata.xml.in:62
 msgid "Make sure we don't save sent messages twice for some account types"
 msgstr ""
 "Zabezpečené, aby sa rovnaká správa neodoslala dvakrát pri niektorých typoch "
 "účtov"
 
-#: data/io.elementary.mail.appdata.xml.in:60
+#: data/io.elementary.mail.appdata.xml.in:63
 msgid "Stability improvements"
 msgstr "Zlepšenia stability"
 
-#: data/io.elementary.mail.appdata.xml.in:67
+#: data/io.elementary.mail.appdata.xml.in:70
 msgid "Complete rewrite from scratch"
 msgstr "Kompletne prerobený zdrojový kód"
 
-#: data/io.elementary.mail.appdata.xml.in:108
+#: data/io.elementary.mail.appdata.xml.in:111
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
