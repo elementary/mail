@@ -147,8 +147,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         conversation_list_scrolled.add (conversation_list_box);
 
         refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REFRESH,
-            halign = Gtk.Align.START
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REFRESH
         };
 
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
