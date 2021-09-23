@@ -705,8 +705,10 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
     }
 
     protected void select_row_at_index (int index) {
-        if (index > -1 && index < current_widgets.size) {
-            select_and_activate (current_widgets.get (index));
+        var row = ensure_index_visible (index);
+
+        if (row != null) {
+            select_and_activate (row);
         }
     }
 

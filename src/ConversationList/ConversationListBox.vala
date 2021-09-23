@@ -374,14 +374,10 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         var trash_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
 
         var selected_rows = get_selected_rows ();
-        int selected_rows_start_index = -1;
+        int selected_rows_start_index = list_store.get_index_of (selected_rows.to_array ()[0]);
 
         foreach (unowned var selected_row in selected_rows) {
             var selected_item_model = (ConversationItemModel) selected_row;
-
-            if (selected_rows_start_index == -1) {
-                selected_rows_start_index = list_store.get_index_of (selected_row);
-            }
 
             if (trash_threads[selected_item_model.service_uid] == null) {
                 trash_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
@@ -395,7 +391,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
 
         list_store.items_changed (0, 0, list_store.get_n_items ());
-        select_row_at_index (selected_rows_start_index);
+        select_row_at_index (selected_rows_start_index + 1);
 
         return deleted;
     }
