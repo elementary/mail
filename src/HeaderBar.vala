@@ -56,20 +56,18 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
         );
 
         var refresh_spinner = new Gtk.Spinner () {
-            active = true
-        };
-        var refresh_spinner_grid = new Gtk.Grid () {
+            active = true,
+            halign = Gtk.Align.CENTER,
             valign = Gtk.Align.CENTER,
-            halign = Gtk.Align.CENTER
+            tooltip_text = _("Fetching new messages")
         };
-        refresh_spinner_grid.add (refresh_spinner);
 
         refresh_stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.CROSSFADE
         };
         refresh_stack.add (refresh_button);
-        refresh_stack.add (refresh_spinner_grid);
-        refresh_stack.set_visible_child (refresh_button);
+        refresh_stack.add (refresh_spinner);
+        refresh_stack.visible_child = refresh_button;
 
         spacing_widget = new Gtk.Grid ();
 
@@ -224,9 +222,9 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
 
         notify["is-busy"].connect (() => {
             if (is_busy) {
-                refresh_stack.set_visible_child (refresh_spinner_grid);
+                refresh_stack.visible_child = refresh_spinner;
             } else {
-                refresh_stack.set_visible_child (refresh_button);
+                refresh_stack.visible_child = refresh_button;
             }
         });
 
