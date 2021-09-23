@@ -27,8 +27,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private FoldersListView folders_list_view;
     private Gtk.Overlay view_overlay;
     private ConversationListBox conversation_list_box;
-    private Gtk.ScrolledWindow conversation_list_scrolled;
     private MessageListBox message_list_box;
+    private Gtk.MenuButton filter_button;
     private Gtk.ScrolledWindow message_list_scrolled;
 
     private uint configure_id;
@@ -134,10 +134,68 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         message_list_box.bind_property ("can-move-thread", get_action (ACTION_ARCHIVE), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-move-thread", headerbar, "can-mark", BindingFlags.SYNC_CREATE);
 
-        conversation_list_scrolled = new Gtk.ScrolledWindow (null, null);
-        conversation_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        conversation_list_scrolled.width_request = 158;
+        var conversation_list_scrolled = new Gtk.ScrolledWindow (null, null) {
+            hscrollbar_policy = Gtk.PolicyType.NEVER,
+            width_request = 158,
+            expand = true
+        };
         conversation_list_scrolled.add (conversation_list_box);
+
+        var refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REFRESH,
+            halign = Gtk.Align.START
+        };
+
+        var application_instance = (Gtk.Application) GLib.Application.get_default ();
+        refresh_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (refresh_button.action_name),
+            _("Fetch new messages")
+        );
+
+        var refresh_spinner = new Gtk.Spinner () {
+            active = true,
+            halign = Gtk.Align.CENTER,
+            valign = Gtk.Align.CENTER,
+            tooltip_text = _("Fetching new messages")
+        };
+
+        var refresh_stack = new Gtk.Stack () {
+            transition_type = Gtk.StackTransitionType.CROSSFADE
+        };
+        refresh_stack.add (refresh_button);
+        refresh_stack.add (refresh_spinner);
+        refresh_stack.visible_child = refresh_button;
+
+        var hide_read_button = new Granite.SwitchModelButton (_("Hide read conversations"));
+
+        var hide_unstarred_button = new Granite.SwitchModelButton (_("Hide unstarred conversations"));
+
+        var filter_menu_popover_grid = new Gtk.Grid () {
+            margin_bottom = 3,
+            margin_top = 3,
+            orientation = Gtk.Orientation.VERTICAL
+        };
+        filter_menu_popover_grid.add (hide_read_button);
+        filter_menu_popover_grid.add (hide_unstarred_button);
+        filter_menu_popover_grid.show_all ();
+
+        var filter_popover = new Gtk.Popover (null);
+        filter_popover.add (filter_menu_popover_grid);
+
+        filter_button = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("mail-filter", Gtk.IconSize.SMALL_TOOLBAR),
+            popover = filter_popover,
+            tooltip_text = _("Filter Conversations")
+        };
+
+        var conversation_action_bar = new Gtk.ActionBar ();
+        conversation_action_bar.pack_start (refresh_stack);
+        conversation_action_bar.pack_end (filter_button);
+        conversation_action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+        var conversation_list_grid = new Gtk.Grid ();
+        conversation_list_grid.attach (conversation_list_scrolled, 0, 0);
+        conversation_list_grid.attach (conversation_action_bar, 0, 1);
 
         message_list_scrolled = new Gtk.ScrolledWindow (null, null);
         message_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -165,7 +223,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_start.pack1 (folders_list_view, false, false);
-        paned_start.pack2 (conversation_list_scrolled, true, false);
+        paned_start.pack2 (conversation_list_grid, true, false);
 
         paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_end.pack1 (paned_start, false, false);
@@ -202,6 +260,22 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                     message_list_box.add_inline_composer.end (res);
                     scroll_message_list_to_bottom ();
                 });
+            }
+        });
+
+        headerbar.bind_property ("can-search", filter_button, "sensitive", BindingFlags.SYNC_CREATE);
+
+        hide_read_button.bind_property ("active", headerbar, "hide-read", BindingFlags.SYNC_CREATE);
+        hide_unstarred_button.bind_property ("active", headerbar, "hide-unstarred", BindingFlags.SYNC_CREATE);
+
+        hide_read_button.notify["active"].connect (on_filter_button_changed);
+        hide_unstarred_button.notify["active"].connect (on_filter_button_changed);
+
+        headerbar.notify["is-busy"].connect (() => {
+            if (headerbar.is_busy) {
+                refresh_stack.visible_child = refresh_spinner;
+            } else {
+                refresh_stack.visible_child = refresh_button;
             }
         });
 
@@ -250,6 +324,14 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         });
 
         session.start.begin ();
+    }
+
+    private void on_filter_button_changed () {
+        if (headerbar.hide_read || headerbar.hide_unstarred) {
+            ((Gtk.Image) filter_button.image).icon_name = "mail-filter-active";
+        } else {
+            ((Gtk.Image) filter_button.image).icon_name = "mail-filter";
+        }
     }
 
     private void on_search () {
