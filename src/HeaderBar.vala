@@ -20,9 +20,6 @@
 public class Mail.HeaderBar : Hdy.HeaderBar {
     public bool can_mark { get; set; }
     public bool can_search { get; set; }
-    public bool is_busy { get; set; }
-    public bool hide_read { get; set; }
-    public bool hide_unstarred { get; set; }
     public Gtk.SearchEntry search_entry { get; construct; }
     private Gtk.Grid spacing_widget;
 

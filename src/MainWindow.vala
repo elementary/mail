@@ -28,8 +28,13 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Overlay view_overlay;
     private ConversationListBox conversation_list_box;
     private MessageListBox message_list_box;
+    private Granite.SwitchModelButton hide_read_switch;
+    private Granite.SwitchModelButton hide_unstarred_switch;
+    private Gtk.Button refresh_button;
     private Gtk.MenuButton filter_button;
     private Gtk.ScrolledWindow message_list_scrolled;
+    private Gtk.Spinner refresh_spinner;
+    private Gtk.Stack refresh_stack;
 
     private uint configure_id;
     private uint search_changed_debounce_timeout_id = 0;
@@ -141,7 +146,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         };
         conversation_list_scrolled.add (conversation_list_box);
 
-        var refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
+        refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REFRESH,
             halign = Gtk.Align.START
         };
@@ -152,31 +157,31 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             _("Fetch new messages")
         );
 
-        var refresh_spinner = new Gtk.Spinner () {
+        refresh_spinner = new Gtk.Spinner () {
             active = true,
             halign = Gtk.Align.CENTER,
             valign = Gtk.Align.CENTER,
             tooltip_text = _("Fetching new messages")
         };
 
-        var refresh_stack = new Gtk.Stack () {
+        refresh_stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.CROSSFADE
         };
         refresh_stack.add (refresh_button);
         refresh_stack.add (refresh_spinner);
         refresh_stack.visible_child = refresh_button;
 
-        var hide_read_button = new Granite.SwitchModelButton (_("Hide read conversations"));
+        hide_read_switch = new Granite.SwitchModelButton (_("Hide read conversations"));
 
-        var hide_unstarred_button = new Granite.SwitchModelButton (_("Hide unstarred conversations"));
+        hide_unstarred_switch = new Granite.SwitchModelButton (_("Hide unstarred conversations"));
 
         var filter_menu_popover_grid = new Gtk.Grid () {
             margin_bottom = 3,
             margin_top = 3,
             orientation = Gtk.Orientation.VERTICAL
         };
-        filter_menu_popover_grid.add (hide_read_button);
-        filter_menu_popover_grid.add (hide_unstarred_button);
+        filter_menu_popover_grid.add (hide_read_switch);
+        filter_menu_popover_grid.add (hide_unstarred_switch);
         filter_menu_popover_grid.show_all ();
 
         var filter_popover = new Gtk.Popover (null);
@@ -265,19 +270,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         headerbar.bind_property ("can-search", filter_button, "sensitive", BindingFlags.SYNC_CREATE);
 
-        hide_read_button.bind_property ("active", headerbar, "hide-read", BindingFlags.SYNC_CREATE);
-        hide_unstarred_button.bind_property ("active", headerbar, "hide-unstarred", BindingFlags.SYNC_CREATE);
-
-        hide_read_button.notify["active"].connect (on_filter_button_changed);
-        hide_unstarred_button.notify["active"].connect (on_filter_button_changed);
-
-        headerbar.notify["is-busy"].connect (() => {
-            if (headerbar.is_busy) {
-                refresh_stack.visible_child = refresh_spinner;
-            } else {
-                refresh_stack.visible_child = refresh_button;
-            }
-        });
+        hide_read_switch.notify["active"].connect (on_filter_button_changed);
+        hide_unstarred_switch.notify["active"].connect (on_filter_button_changed);
 
         headerbar.size_allocate.connect (() => {
             headerbar.set_paned_positions (paned_start.position, paned_end.position);
@@ -291,8 +285,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             headerbar.set_paned_positions (paned_start.position, paned_end.position);
         });
 
-        headerbar.notify["hide-read"].connect (on_search);
-        headerbar.notify["hide-unstarred"].connect (on_search);
         headerbar.search_entry.search_changed.connect (() => {
             if (search_changed_debounce_timeout_id != 0) {
                 GLib.Source.remove (search_changed_debounce_timeout_id);
@@ -327,15 +319,13 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void on_filter_button_changed () {
-        if (headerbar.hide_read || headerbar.hide_unstarred) {
+        if (hide_read_switch.active || hide_unstarred_switch.active) {
             ((Gtk.Image) filter_button.image).icon_name = "mail-filter-active";
         } else {
             ((Gtk.Image) filter_button.image).icon_name = "mail-filter";
         }
-    }
 
-    private void on_search () {
-        conversation_list_box.search.begin (headerbar.search_entry.text, headerbar.hide_read, headerbar.hide_unstarred);
+        conversation_list_box.search.begin (headerbar.search_entry.text, hide_read_switch.active, hide_unstarred_switch.active);
     }
 
     private void on_compose_message () {
@@ -343,12 +333,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void on_refresh () {
-        headerbar.is_busy = true;
+        refresh_stack.visible_child = refresh_spinner;
 
         refresh_accounts.begin ((obj, res) => {
             refresh_accounts.end (res);
 
-            headerbar.is_busy = false;
+            refresh_stack.visible_child = refresh_button;
         });
     }
 
