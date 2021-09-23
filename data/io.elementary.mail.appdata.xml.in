@@ -28,6 +28,7 @@
         <ul>
           <li>Send a notification when new messages arrive</li>
           <li>Add a button to manually fetch new messages</li>
+          <li>Automatically select the next message after deleting</li>
           <li>Improve search performance</li>
           <li>Filter unread or starred conversations</li>
           <li>Make sure we don't save sent messages twice for outlook.com accounts</li>
