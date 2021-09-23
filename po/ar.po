@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 08:15+0000\n"
+"POT-Creation-Date: 2021-09-23 07:45+0000\n"
 "PO-Revision-Date: 2021-08-28 15:29+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/mail/mail/ar/>\n"
@@ -24,63 +24,81 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:58+0000\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:43
 msgid "Compose new message"
 msgstr "رسالة جديدة"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:49
 msgid "Search Mail"
 msgstr "بحث في البريد"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:53
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Hide read conversations"
+msgstr "حذف المحادثة"
+
+#: src/HeaderBar.vala:55
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Hide unstarred conversations"
+msgstr "حذف المحادثة"
+
+#: src/HeaderBar.vala:72
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Filter Conversations"
+msgstr "حذف المحادثة"
+
+#: src/HeaderBar.vala:76
 msgid "Always Show Remote Images"
 msgstr "دائماً اعرض الصور عن بعد"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:79
 msgid "Account Settings…"
 msgstr "إعدادات الحساب…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:102
 msgid "Menu"
 msgstr "القائمة"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "رد"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:116
 msgid "Reply All"
 msgstr "الرد على الجميع"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "إعادة التوجيه"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:129
 msgid "Mark as Unread"
 msgstr "علم كغير مقروء"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:134
 msgid "Mark as Read"
 msgstr "علم كمقروء"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:139
 msgid "Star"
 msgstr "نجمة"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:144
 msgid "Unstar"
 msgstr "الغاء النجمة"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:156
 msgid "Mark Conversation"
 msgstr "تعليم كمحادثة"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:163
 msgid "Move conversations to archive"
 msgstr "نقل المحادثات إلى الأرشيف"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:170
 msgid "Move conversations to Trash"
 msgstr "نقل المحادثة الى سلة المهملات"
 
@@ -120,7 +138,7 @@ msgstr[5] "اعرض دائما من المرسل"
 msgid "Mail"
 msgstr "البريد"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:312
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "لا توجد رسائل مختارة"
@@ -130,7 +148,7 @@ msgstr[3] "رسائل محذوفة"
 msgstr[4] "رسالة محذوفة"
 msgstr[5] "رسائل محذوفة"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:324
 msgid "Undo"
 msgstr "تراجع"
 
@@ -562,9 +580,6 @@ msgstr "حفظ"
 
 #~ msgid "Visit the Yorba web site"
 #~ msgstr "زيارة موقع Yorba"
-
-#~ msgid "Delete conversation"
-#~ msgstr "حذف المحادثة"
 
 #~ msgid "Delete conversation (Shift+Delete)"
 #~ msgstr "حذف المحادثة (Shift+Delete)"

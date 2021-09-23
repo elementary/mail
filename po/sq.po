@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 08:15+0000\n"
+"POT-Creation-Date: 2021-09-23 07:45+0000\n"
 "PO-Revision-Date: 2015-11-29 22:37+0000\n"
 "Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -20,72 +20,90 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 05:58+0000\n"
 "X-Generator: Launchpad (build 18330)\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:43
 #, fuzzy
 msgid "Compose new message"
 msgstr "Shkruaj një mesazh të ri (Crtl+N, N)"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:49
 msgid "Search Mail"
 msgstr ""
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:53
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Hide read conversations"
+msgstr "Fshije bisedën"
+
+#: src/HeaderBar.vala:55
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Hide unstarred conversations"
+msgstr "Fshije bisedën"
+
+#: src/HeaderBar.vala:72
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Filter Conversations"
+msgstr "Fshije bisedën"
+
+#: src/HeaderBar.vala:76
 #, fuzzy
 msgid "Always Show Remote Images"
 msgstr "Gjithmonë shfaqi nga ky dërgues"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:79
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:102
 msgid "Menu"
 msgstr ""
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr ""
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:116
 #, fuzzy
 msgid "Reply All"
 msgstr "Pë_rgjigju të gjithëve"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr ""
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:129
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "_Shënoje si të palexuar"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:134
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Shënoje si të lexuar"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:139
 #, fuzzy
 msgid "Star"
 msgstr "_Shënoje si të veçantë"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:144
 #, fuzzy
 msgid "Unstar"
 msgstr "Shënoje si jo më të _veçantë"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:156
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Shëno bisedat"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:163
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Zhvendos bisedat"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:170
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Zhvendos bisedat"
@@ -120,14 +138,14 @@ msgstr[1] ""
 msgid "Mail"
 msgstr "E gjithë posta"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:312
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Asnjë bisedë e përzgjedhur."
 msgstr[1] "Asnjë bisedë e përzgjedhur."
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:324
 msgid "Undo"
 msgstr ""
 
@@ -584,9 +602,6 @@ msgstr "_Ruaj"
 
 #~ msgid "Mail Client"
 #~ msgstr "Klient Poste"
-
-#~ msgid "Delete conversation"
-#~ msgstr "Fshije bisedën"
 
 #~ msgid "Delete conversation (Shift+Delete)"
 #~ msgstr "Fshije bisedën (Shift+Delete)"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 08:15+0000\n"
+"POT-Creation-Date: 2021-09-23 07:45+0000\n"
 "PO-Revision-Date: 2017-04-15 20:40+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Uighur <https://l10n.elementary.io/projects/mail/mail/ug/>\n"
@@ -20,70 +20,88 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:43
 #, fuzzy
 msgid "Compose new message"
 msgstr "يىڭى ئېلخەت يىزىش"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:49
 msgid "Search Mail"
 msgstr "ئېلخەت ئىزدەش"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:53
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide read conversations"
+msgstr "دىئالوگلارغا بەلگە قىلىش"
+
+#: src/HeaderBar.vala:55
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide unstarred conversations"
+msgstr "دىئالوگلارغا بەلگە قىلىش"
+
+#: src/HeaderBar.vala:72
+#, fuzzy
+#| msgid "Delete Conversation"
+msgid "Filter Conversations"
+msgstr "دىئالوگنى ئۆچۈرۈش"
+
+#: src/HeaderBar.vala:76
 #, fuzzy
 msgid "Always Show Remote Images"
 msgstr "يىراق مۇساپىلىك رەسىملەرنى داۋاملىق كۆرسىتىش:"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:79
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:102
 msgid "Menu"
 msgstr "تىزىملىك"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "جاۋاب قايتۇرۇش"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:116
 #, fuzzy
 msgid "Reply All"
 msgstr "ھەممىسىگە جاۋاب قايتۇرۇش"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "يەتكۈزۈش"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:129
 msgid "Mark as Unread"
 msgstr "ئوقۇلمىغان دەپ بەلگە قىلىش"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:134
 msgid "Mark as Read"
 msgstr "ئوقۇلغان دەپ بەلگە قىلىش"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:139
 #, fuzzy
 msgid "Star"
 msgstr "يۇلتۇز بەلگىسى قىتىش"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:144
 #, fuzzy
 msgid "Unstar"
 msgstr "يۇلتۇز بەلگىسىنى ئۆچۈرۈش"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:156
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "دىئالوگقا بەلگە قىلىش"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:163
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "دىئالوگلارنى يۆتكەش"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:170
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "دىئالوگلارنى يۆتكەش"
@@ -115,13 +133,13 @@ msgstr[0] "يوللىغۇچىنى داۋاملىق كۆرسىتىش"
 msgid "Mail"
 msgstr "ئېلخەت"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:312
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "ھىچقانداق دىئالوگ تاللانمىدى."
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:324
 #, fuzzy
 msgid "Undo"
 msgstr "بىكار قىلىش"
@@ -636,9 +654,6 @@ msgstr "ساقلاش"
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "كىرەكسىز ئېلخەت بەلگىسىنى ئۆچۈرۈش"
-
-#~ msgid "Mark conversations"
-#~ msgstr "دىئالوگلارغا بەلگە قىلىش"
 
 #~ msgid "Add label to conversation"
 #~ msgid_plural "Add label to conversations"
@@ -1431,9 +1446,6 @@ msgstr "ساقلاش"
 
 #~ msgid "Always watch for new mail:"
 #~ msgstr "داۋاملىق يىڭى ئېلخەتلەرنى كۆزىتىش:"
-
-#~ msgid "Delete Conversation"
-#~ msgstr "دىئالوگنى ئۆچۈرۈش"
 
 #~ msgid "Delete Conversation (Shift+Delete)"
 #~ msgid_plural "Delete Conversations (Shift+Delete)"

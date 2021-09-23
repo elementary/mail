@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 08:15+0000\n"
-"PO-Revision-Date: 2021-07-18 08:08+0000\n"
+"POT-Creation-Date: 2021-09-23 07:45+0000\n"
+"PO-Revision-Date: 2021-09-23 01:30+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/mail/en_GB/>\n"
@@ -25,102 +25,111 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:43
 msgid "Compose new message"
 msgstr "Compose new message"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:49
 msgid "Search Mail"
 msgstr "Search Mail"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:53
+msgid "Hide read conversations"
+msgstr "Hide read conversations"
+
+#: src/HeaderBar.vala:55
+msgid "Hide unstarred conversations"
+msgstr "Hide unstarred conversations"
+
+#: src/HeaderBar.vala:72
+msgid "Filter Conversations"
+msgstr "Filter Conversations"
+
+#: src/HeaderBar.vala:76
 msgid "Always Show Remote Images"
 msgstr "Always Show Remote Images"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:79
 msgid "Account Settings…"
 msgstr "Account Settings…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:102
 msgid "Menu"
 msgstr "Menu"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Reply"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:116
 msgid "Reply All"
 msgstr "Reply All"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Forward"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:129
 msgid "Mark as Unread"
 msgstr "Mark as Unread"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:134
 msgid "Mark as Read"
 msgstr "Mark as Read"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:139
 msgid "Star"
 msgstr "Star"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:144
 msgid "Unstar"
 msgstr "Unstar"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:156
 msgid "Mark Conversation"
 msgstr "Mark Conversation"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:163
 msgid "Move conversations to archive"
 msgstr "Move conversations to archive"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:170
 msgid "Move conversations to Trash"
 msgstr "Move conversations to Rubbish"
 
 #: src/InboxMonitor.vala:167 src/InboxMonitor.vala:180
 #, c-format
 msgid "%s to %s"
-msgstr ""
+msgstr "%s to %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:175
-#, fuzzy, c-format
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
+#, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "%d new message"
-msgstr[1] "%d new messages"
+msgstr[0] "%u new message"
+msgstr[1] "%u new messages"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
 #: src/InboxMonitor.vala:188
-#, fuzzy, c-format
-#| msgid "Always Show from Sender"
+#, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] "Always Show from Sender"
-msgstr[1] "Always Show from Sender"
+msgstr[0] "%s from %u sender"
+msgstr[1] "%s from %u senders"
 
 #: src/MainWindow.vala:73
 msgid "Mail"
 msgstr "Mail"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:312
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Message Deleted"
 msgstr[1] "Messages Deleted"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:324
 msgid "Undo"
 msgstr "Undo"
 
@@ -394,7 +403,7 @@ msgstr "No Message Selected"
 #: src/MessageList/MessageListItem.vala:173
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s at %s"
 
 #: src/MessageList/MessageListItem.vala:181
 #: src/MessageList/MessageListItem.vala:340
@@ -607,9 +616,6 @@ msgstr "Save"
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "Mark as not S_pam"
-
-#~ msgid "Mark conversations"
-#~ msgstr "Mark conversations"
 
 #~ msgid "Add label to conversation"
 #~ msgid_plural "Add label to conversations"
@@ -1435,9 +1441,6 @@ msgstr "Save"
 
 #~ msgid "Always watch for new mail:"
 #~ msgstr "Always watch for new mail:"
-
-#~ msgid "Delete Conversation"
-#~ msgstr "Delete Conversation"
 
 #~ msgid "Delete Conversation (Shift+Delete)"
 #~ msgid_plural "Delete Conversations (Shift+Delete)"

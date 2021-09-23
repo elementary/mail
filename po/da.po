@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 08:15+0000\n"
+"POT-Creation-Date: 2021-09-23 07:45+0000\n"
 "PO-Revision-Date: 2020-05-27 12:11+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/mail/mail/da/>\n"
@@ -23,65 +23,83 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-24 06:34+0000\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:43
 msgid "Compose new message"
 msgstr "Opret ny meddelelse"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:49
 msgid "Search Mail"
 msgstr "Søger i Mail"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:53
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide read conversations"
+msgstr "Markér samtaler"
+
+#: src/HeaderBar.vala:55
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide unstarred conversations"
+msgstr "Markér samtaler"
+
+#: src/HeaderBar.vala:72
+#, fuzzy
+#| msgid "Delete Conversation"
+msgid "Filter Conversations"
+msgstr "Slet samtale"
+
+#: src/HeaderBar.vala:76
 msgid "Always Show Remote Images"
 msgstr "Vis altid fjern-billeder"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:79
 msgid "Account Settings…"
 msgstr "Bruger Indstillinger…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:102
 msgid "Menu"
 msgstr "Menu"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Svar"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:116
 msgid "Reply All"
 msgstr "Besvar Alle"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Fremad"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:129
 msgid "Mark as Unread"
 msgstr "Mærk som ulæst"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:134
 msgid "Mark as Read"
 msgstr "Mærk som læst"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:139
 msgid "Star"
 msgstr "Stjerne"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:144
 msgid "Unstar"
 msgstr "Stjern ikke"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:156
 msgid "Mark Conversation"
 msgstr "Mærk samtale"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:163
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
 msgstr "Flyt samtaler til udsmidningskurv"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:170
 msgid "Move conversations to Trash"
 msgstr "Flyt samtaler til udsmidningskurv"
 
@@ -114,13 +132,13 @@ msgstr[1] "Vis altid afsender"
 msgid "Mail"
 msgstr "Mail"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:312
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Besked Slettet"
 msgstr[1] "Beskeder Slettet"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:324
 msgid "Undo"
 msgstr "Fortryd"
 
@@ -631,9 +649,6 @@ msgstr "Gem"
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "Marker som ikke s_pam"
-
-#~ msgid "Mark conversations"
-#~ msgstr "Markér samtaler"
 
 #~ msgid "Add label to conversation"
 #~ msgid_plural "Add label to conversations"
@@ -1464,9 +1479,6 @@ msgstr "Gem"
 
 #~ msgid "Always watch for new mail:"
 #~ msgstr "Hold altid øje med nye e-mail:"
-
-#~ msgid "Delete Conversation"
-#~ msgstr "Slet samtale"
 
 #~ msgid "Delete Conversation (Shift+Delete)"
 #~ msgid_plural "Delete Conversations (Shift+Delete)"

@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 08:15+0000\n"
-"PO-Revision-Date: 2021-09-15 14:55+0000\n"
+"POT-Creation-Date: 2021-09-23 07:45+0000\n"
+"PO-Revision-Date: 2021-09-22 20:18+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/"
 ">\n"
@@ -24,63 +24,75 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:43
 msgid "Compose new message"
 msgstr "Új levél írása"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:49
 msgid "Search Mail"
 msgstr "Levél keresése"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:53
+msgid "Hide read conversations"
+msgstr "Olvasott beszélgetések elrejtése"
+
+#: src/HeaderBar.vala:55
+msgid "Hide unstarred conversations"
+msgstr "Nem csillagozott beszélgetések elrejtése"
+
+#: src/HeaderBar.vala:72
+msgid "Filter Conversations"
+msgstr "Beszélgetések szűrése"
+
+#: src/HeaderBar.vala:76
 msgid "Always Show Remote Images"
 msgstr "Mindig jelenítse meg a távoli képeket"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:79
 msgid "Account Settings…"
 msgstr "Fiókbeállítások…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:102
 msgid "Menu"
 msgstr "Menü"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Válasz"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:116
 msgid "Reply All"
 msgstr "Válasz mindenkinek"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Továbbítás"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:129
 msgid "Mark as Unread"
 msgstr "Megjelölés olvasatlanként"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:134
 msgid "Mark as Read"
 msgstr "Megjelölés olvasottként"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:139
 msgid "Star"
 msgstr "Csillagozás"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:144
 msgid "Unstar"
 msgstr "Csillagozás megszüntetése"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:156
 msgid "Mark Conversation"
 msgstr "Beszélgetés megjelölése"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:163
 msgid "Move conversations to archive"
 msgstr "Beszélgetések áthelyezése az archívumba"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:170
 msgid "Move conversations to Trash"
 msgstr "Beszélgetések áthelyezése a kukába"
 
@@ -110,13 +122,13 @@ msgstr[1] "%s %u feladótól"
 msgid "Mail"
 msgstr "E-mail"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:312
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Üzenet törölve"
 msgstr[1] "Üzenetek törölve"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:324
 msgid "Undo"
 msgstr "Visszavonás"
 
@@ -393,7 +405,7 @@ msgstr "Nincs üzenet kiválasztva"
 #: src/MessageList/MessageListItem.vala:173
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s %s"
 
 #: src/MessageList/MessageListItem.vala:181
 #: src/MessageList/MessageListItem.vala:340
@@ -561,9 +573,6 @@ msgstr "Mentés"
 
 #~ msgid "Visit the Yorba web site"
 #~ msgstr "Keresse fel a Yorba weboldalát"
-
-#~ msgid "Delete conversation"
-#~ msgstr "Beszélgetés törlése"
 
 #~ msgid "Delete conversation (Shift+Delete)"
 #~ msgstr "Beszélgetés törlése (Shift+Delete)"

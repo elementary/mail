@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 08:15+0000\n"
+"POT-Creation-Date: 2021-09-23 07:45+0000\n"
 "PO-Revision-Date: 2020-12-15 16:16+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/mail/mail/id/"
@@ -24,65 +24,83 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:43
 msgid "Compose new message"
 msgstr "Tulis pesan baru"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:49
 msgid "Search Mail"
 msgstr "Cari Surel"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:53
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide read conversations"
+msgstr "Tambahkan label ke percakapan"
+
+#: src/HeaderBar.vala:55
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide unstarred conversations"
+msgstr "Tambahkan label ke percakapan"
+
+#: src/HeaderBar.vala:72
+#, fuzzy
+#| msgid "Mark Conversation"
+msgid "Filter Conversations"
+msgstr "Tandai Percakapan"
+
+#: src/HeaderBar.vala:76
 msgid "Always Show Remote Images"
 msgstr "Selalu Tampilkan Gambar Jarak Jauh"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:79
 msgid "Account Settings…"
 msgstr "Pengaturan Akun…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:102
 msgid "Menu"
 msgstr "Menu"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Balas"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:116
 msgid "Reply All"
 msgstr "Balas Semua"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Teruskan"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:129
 msgid "Mark as Unread"
 msgstr "Tandai sebagai belum dibaca"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:134
 msgid "Mark as Read"
 msgstr "Tandai sebagai sudah dibaca"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:139
 msgid "Star"
 msgstr "Bintang"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:144
 msgid "Unstar"
 msgstr "Hapus Bintang"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:156
 msgid "Mark Conversation"
 msgstr "Tandai Percakapan"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:163
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
 msgstr "Pindahkan percakapan ke Sampah"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:170
 msgid "Move conversations to Trash"
 msgstr "Pindahkan percakapan ke Sampah"
 
@@ -115,12 +133,12 @@ msgstr[0] "Selalu Tampilkan dari Pengirim"
 msgid "Mail"
 msgstr "Semua Pesan"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:312
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Pesan-pesan Dihapus"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:324
 msgid "Undo"
 msgstr "Batalkan"
 
@@ -612,9 +630,6 @@ msgstr "Simpan"
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "Tandai sebagai bukan S_pam"
-
-#~ msgid "Add label to conversations"
-#~ msgstr "Tambahkan label ke percakapan"
 
 #~ msgid "A_ccounts"
 #~ msgstr "A_kun"

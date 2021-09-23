@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 08:15+0000\n"
+"POT-Creation-Date: 2021-09-23 07:45+0000\n"
 "PO-Revision-Date: 2021-09-20 18:49+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
@@ -30,63 +30,81 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-POOTLE-MTIME: 1423290848.000000\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:43
 msgid "Compose new message"
 msgstr "Yeni ileti oluştur"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:49
 msgid "Search Mail"
 msgstr "Posta Ara"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:53
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide read conversations"
+msgstr "Konuşmaları işaretle"
+
+#: src/HeaderBar.vala:55
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide unstarred conversations"
+msgstr "Konuşmaları işaretle"
+
+#: src/HeaderBar.vala:72
+#, fuzzy
+#| msgid "Delete Conversation"
+msgid "Filter Conversations"
+msgstr "Konuşmayı sil"
+
+#: src/HeaderBar.vala:76
 msgid "Always Show Remote Images"
 msgstr "Uzak Resimleri Her Zaman Göster"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:79
 msgid "Account Settings…"
 msgstr "Hesap Ayarları…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:102
 msgid "Menu"
 msgstr "Menü"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Yanıtla"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:116
 msgid "Reply All"
 msgstr "Tümünü Yanıtla"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Yönlendir"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:129
 msgid "Mark as Unread"
 msgstr "Okunmamış olarak İşaretle"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:134
 msgid "Mark as Read"
 msgstr "Okunmuş olarak İşaretle"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:139
 msgid "Star"
 msgstr "Yıldız Ekle"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:144
 msgid "Unstar"
 msgstr "Yıldızı Kaldır"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:156
 msgid "Mark Conversation"
 msgstr "Konuşmayı İşaretle"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:163
 msgid "Move conversations to archive"
 msgstr "Konuşmaları arşive taşı"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:170
 msgid "Move conversations to Trash"
 msgstr "Konuşmaları Çöpe Taşı"
 
@@ -116,13 +134,13 @@ msgstr[1] "%u gönderenden %s"
 msgid "Mail"
 msgstr "Posta"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:312
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "İleti Silindi"
 msgstr[1] "İletiler Silindi"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:324
 msgid "Undo"
 msgstr "Geri Al"
 
@@ -612,9 +630,6 @@ msgstr "Kaydet"
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "İstenen olarak İşaretle"
-
-#~ msgid "Mark conversations"
-#~ msgstr "Konuşmaları işaretle"
 
 #~ msgid "Add label to conversation"
 #~ msgid_plural "Add label to conversations"
@@ -1443,9 +1458,6 @@ msgstr "Kaydet"
 
 #~ msgid "Always watch for new mail:"
 #~ msgstr "Daima yeni postalar için izle:"
-
-#~ msgid "Delete Conversation"
-#~ msgstr "Konuşmayı sil"
 
 #~ msgid "Delete Conversation (Shift+Delete)"
 #~ msgid_plural "Delete Conversations (Shift+Delete)"

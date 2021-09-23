@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 08:15+0000\n"
-"PO-Revision-Date: 2021-09-20 18:49+0000\n"
+"POT-Creation-Date: 2021-09-23 07:45+0000\n"
+"PO-Revision-Date: 2021-09-22 20:18+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -23,63 +23,75 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:43
 msgid "Compose new message"
 msgstr "Redacta un missatge nou"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:49
 msgid "Search Mail"
 msgstr "Cerca correu"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:53
+msgid "Hide read conversations"
+msgstr "Amaga les converses llegides"
+
+#: src/HeaderBar.vala:55
+msgid "Hide unstarred conversations"
+msgstr "Amaga les converses no destacades"
+
+#: src/HeaderBar.vala:72
+msgid "Filter Conversations"
+msgstr "Filtra les converses"
+
+#: src/HeaderBar.vala:76
 msgid "Always Show Remote Images"
 msgstr "Mostra sempre les imatges remotes"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:79
 msgid "Account Settings…"
 msgstr "Paràmetres del compte…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:102
 msgid "Menu"
 msgstr "Menú"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Respon"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:116
 msgid "Reply All"
 msgstr "Respon a tothom"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Reenvia"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:129
 msgid "Mark as Unread"
 msgstr "Marca com a no llegit"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:134
 msgid "Mark as Read"
 msgstr "Marca com a llegit"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:139
 msgid "Star"
 msgstr "Destaca"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:144
 msgid "Unstar"
 msgstr "No ho destaquis"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:156
 msgid "Mark Conversation"
 msgstr "Marca la conversa"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:163
 msgid "Move conversations to archive"
 msgstr "Mou les converses a l'arxiu"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:170
 msgid "Move conversations to Trash"
 msgstr "Mou les converses a la paperera"
 
@@ -109,13 +121,13 @@ msgstr[1] "%s de %u remitents"
 msgid "Mail"
 msgstr "Correu"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:312
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Missatge suprimit"
 msgstr[1] "Missatges suprimits"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:324
 msgid "Undo"
 msgstr "Desfés-ho"
 
@@ -603,9 +615,6 @@ msgstr "Desa"
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "Marca com a no b_rossa"
-
-#~ msgid "Mark conversations"
-#~ msgstr "Marca les converses"
 
 #~ msgid "Add label to conversation"
 #~ msgid_plural "Add label to conversations"
@@ -1445,9 +1454,6 @@ msgstr "Desa"
 
 #~ msgid "Always watch for new mail:"
 #~ msgstr "Mira sempre si hi ha missatges nous:"
-
-#~ msgid "Delete Conversation"
-#~ msgstr "Esborra la conversa"
 
 #~ msgid "Delete Conversation (Shift+Delete)"
 #~ msgid_plural "Delete Conversations (Shift+Delete)"
