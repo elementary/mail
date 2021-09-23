@@ -18,9 +18,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-22 16:16+0000\n"
-"PO-Revision-Date: 2021-09-21 18:30+0000\n"
-"Last-Translator: Uwe S <saabisto@gmx.de>\n"
+"POT-Creation-Date: 2021-09-23 07:45+0000\n"
+"PO-Revision-Date: 2021-09-23 07:45+0000\n"
+"Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -39,22 +39,16 @@ msgid "Search Mail"
 msgstr "Mail durchsuchen"
 
 #: src/HeaderBar.vala:53
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide read conversations"
-msgstr "Konversationen markieren"
+msgstr "Gelesene Unterhaltungen verstecken"
 
 #: src/HeaderBar.vala:55
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
-msgstr "Konversationen markieren"
+msgstr "Nicht mehr markierte Unterhaltungen verstecken"
 
 #: src/HeaderBar.vala:72
-#, fuzzy
-#| msgid "Delete Conversation"
 msgid "Filter Conversations"
-msgstr "Nachrichtenverlauf löschen"
+msgstr "Unterhaltungen filtern"
 
 #: src/HeaderBar.vala:76
 msgid "Always Show Remote Images"
