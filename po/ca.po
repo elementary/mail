@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-22 16:16+0000\n"
-"PO-Revision-Date: 2021-09-20 18:49+0000\n"
+"POT-Creation-Date: 2021-09-23 07:45+0000\n"
+"PO-Revision-Date: 2021-09-22 20:18+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -32,22 +32,16 @@ msgid "Search Mail"
 msgstr "Cerca correu"
 
 #: src/HeaderBar.vala:53
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide read conversations"
-msgstr "Marca les converses"
+msgstr "Amaga les converses llegides"
 
 #: src/HeaderBar.vala:55
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
-msgstr "Marca les converses"
+msgstr "Amaga les converses no destacades"
 
 #: src/HeaderBar.vala:72
-#, fuzzy
-#| msgid "Delete Conversation"
 msgid "Filter Conversations"
-msgstr "Esborra la conversa"
+msgstr "Filtra les converses"
 
 #: src/HeaderBar.vala:76
 msgid "Always Show Remote Images"

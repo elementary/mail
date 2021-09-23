@@ -387,7 +387,8 @@ public class Mail.Backend.Session : Camel.Session {
             if (
                 E.util_utf8_strstrcase (transport_auth_extension.host, ".gmail.com") != null ||
                 E.util_utf8_strstrcase (transport_auth_extension.host, ".googlemail.com") != null ||
-                E.util_utf8_strstrcase (transport_auth_extension.host, ".office365.com") != null
+                E.util_utf8_strstrcase (transport_auth_extension.host, ".office365.com") != null ||
+                E.util_utf8_strstrcase (transport_auth_extension.host, ".outlook.com") != null
             ) {
                 /*
                  * Skip appending to Sent folder for GMail and Office 365, because both store sent messages

@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-22 16:16+0000\n"
-"PO-Revision-Date: 2021-09-15 14:55+0000\n"
+"POT-Creation-Date: 2021-09-23 07:45+0000\n"
+"PO-Revision-Date: 2021-09-22 20:18+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/"
 ">\n"
@@ -33,22 +33,16 @@ msgid "Search Mail"
 msgstr "Levél keresése"
 
 #: src/HeaderBar.vala:53
-#, fuzzy
-#| msgid "Delete conversation"
 msgid "Hide read conversations"
-msgstr "Beszélgetés törlése"
+msgstr "Olvasott beszélgetések elrejtése"
 
 #: src/HeaderBar.vala:55
-#, fuzzy
-#| msgid "Delete conversation"
 msgid "Hide unstarred conversations"
-msgstr "Beszélgetés törlése"
+msgstr "Nem csillagozott beszélgetések elrejtése"
 
 #: src/HeaderBar.vala:72
-#, fuzzy
-#| msgid "Delete conversation"
 msgid "Filter Conversations"
-msgstr "Beszélgetés törlése"
+msgstr "Beszélgetések szűrése"
 
 #: src/HeaderBar.vala:76
 msgid "Always Show Remote Images"
@@ -411,7 +405,7 @@ msgstr "Nincs üzenet kiválasztva"
 #: src/MessageList/MessageListItem.vala:173
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s %s"
 
 #: src/MessageList/MessageListItem.vala:181
 #: src/MessageList/MessageListItem.vala:340
