@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-22 16:16+0000\n"
-"PO-Revision-Date: 2021-09-15 14:55+0000\n"
+"PO-Revision-Date: 2021-09-23 07:45+0000\n"
 "Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/extra/de/>\n"
 "Language: de\n"
@@ -78,13 +78,11 @@ msgstr "Benachrichtigung senden, wenn neue Nachrichten ankommen"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Improve search performance"
-msgstr ""
+msgstr "Performance der Suchfunktion verbessert"
 
 #: data/io.elementary.mail.appdata.xml.in:31
-#, fuzzy
-#| msgid "Fix a crash on startup for some conversations"
 msgid "Filter unread or starred conversations"
-msgstr "Behebt einen Fehler beim Start, der bei manchen Konversationen auftrat"
+msgstr "Nach ungelesenen oder markierten Unterhaltungen filtern"
 
 #: data/io.elementary.mail.appdata.xml.in:32
 #: data/io.elementary.mail.appdata.xml.in:48
