@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-23 07:45+0000\n"
-"PO-Revision-Date: 2021-09-19 03:57+0000\n"
+"PO-Revision-Date: 2021-09-23 14:49+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/"
-">\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/>"
+"\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -81,18 +81,12 @@ msgid "Improve search performance"
 msgstr "検索パフォーマンスを改善"
 
 #: data/io.elementary.mail.appdata.xml.in:31
-#, fuzzy
-#| msgid "Fix a crash on startup for some conversations"
 msgid "Filter unread or starred conversations"
-msgstr "会話が原因でアプリが起動時にクラッシュすることがある不具合を修正"
+msgstr "未開封またはスターなしのスレッドだけを表示できる機能を追加"
 
 #: data/io.elementary.mail.appdata.xml.in:32
-#, fuzzy
-#| msgid "Make sure we don't save sent messages twice for some account types"
 msgid "Make sure we don't save sent messages twice for outlook.com accounts"
-msgstr ""
-"アカウントの種類によっては送信済みのメッセージが二度保存されていた不具合を修"
-"正"
+msgstr "outlook.com アカウント使用時、送信済みのメッセージが二度保存されていた不具合を修正"
 
 #: data/io.elementary.mail.appdata.xml.in:33
 #: data/io.elementary.mail.appdata.xml.in:49
