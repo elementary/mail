@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 08:15+0000\n"
+"POT-Creation-Date: 2021-09-23 19:12+0000\n"
 "PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/mail/mail/lt/"
@@ -28,65 +28,97 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:45
 msgid "Compose new message"
 msgstr "Rašyti naują laišką"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:54
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetch new messages"
+msgstr "%d naujas laiškas"
+
+#: src/HeaderBar.vala:61
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetching new messages"
+msgstr "%d naujas laiškas"
+
+#: src/HeaderBar.vala:74
 msgid "Search Mail"
 msgstr "Ieškoti pašte"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:78
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide read conversations"
+msgstr "Žymėti pokalbius"
+
+#: src/HeaderBar.vala:80
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide unstarred conversations"
+msgstr "Žymėti pokalbius"
+
+#: src/HeaderBar.vala:97
+#, fuzzy
+#| msgid "Delete Conversation"
+msgid "Filter Conversations"
+msgstr "Ištrinti pokalbį"
+
+#: src/HeaderBar.vala:101
 msgid "Always Show Remote Images"
 msgstr "Visada rodyti nuotolinius paveikslus"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:104
 msgid "Account Settings…"
 msgstr "Paskyros nustatymai…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:127
 msgid "Menu"
 msgstr "Meniu"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:134 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Atsakyti"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:141
 msgid "Reply All"
 msgstr "Atsakyti visiems"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:148 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Persiųsti"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:154
 msgid "Mark as Unread"
 msgstr "Žymėti neskaitytu"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:159
 msgid "Mark as Read"
 msgstr "Žymėti skaitytu"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:164
 msgid "Star"
 msgstr "Žymėti žvaigždute"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:169
 msgid "Unstar"
 msgstr "Nežymėti žvaigždute"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:181
 msgid "Mark Conversation"
 msgstr "Žymėti pokalbį"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:188
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
 msgstr "Perkelti pokalbius į šiukšlinę"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:195
 msgid "Move conversations to Trash"
 msgstr "Perkelti pokalbius į šiukšlinę"
 
@@ -117,18 +149,18 @@ msgstr[0] "Visada rodyti nuo siuntėjo"
 msgstr[1] "Visada rodyti nuo siuntėjo"
 msgstr[2] "Visada rodyti nuo siuntėjo"
 
-#: src/MainWindow.vala:73
+#: src/MainWindow.vala:75
 msgid "Mail"
 msgstr "Paštas"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:346
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Laiškas ištrintas"
 msgstr[1] "Laiškai ištrinti"
 msgstr[2] "Laiškai ištrinti"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:358
 msgid "Undo"
 msgstr "Atšaukti"
 
@@ -644,9 +676,6 @@ msgstr "Įrašyti"
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "Žymėti kaip ne _brukalą"
-
-#~ msgid "Mark conversations"
-#~ msgstr "Žymėti pokalbius"
 
 #~ msgid "Add label to conversation"
 #~ msgid_plural "Add label to conversations"
@@ -1487,9 +1516,6 @@ msgstr "Įrašyti"
 
 #~ msgid "Always watch for new mail:"
 #~ msgstr "Visada stebėti ar nėra naujų laiškų:"
-
-#~ msgid "Delete Conversation"
-#~ msgstr "Ištrinti pokalbį"
 
 #~ msgid "Delete Conversation (Shift+Delete)"
 #~ msgid_plural "Delete Conversations (Shift+Delete)"

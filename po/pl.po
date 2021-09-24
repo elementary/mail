@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 08:15+0000\n"
+"POT-Creation-Date: 2021-09-23 19:12+0000\n"
 "PO-Revision-Date: 2019-11-17 20:25+0000\n"
 "Last-Translator: Danie Wachna <ravqe@outlook.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
@@ -34,65 +34,97 @@ msgstr ""
 "X-Poedit-Country: Poland\n"
 "X-Poedit-Language: Polish\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:45
 msgid "Compose new message"
 msgstr "Napisz nową wiadomość"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:54
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetch new messages"
+msgstr "%d nowa wiadomość"
+
+#: src/HeaderBar.vala:61
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetching new messages"
+msgstr "%d nowa wiadomość"
+
+#: src/HeaderBar.vala:74
 msgid "Search Mail"
 msgstr "Przeszukaj pocztę"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:78
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide read conversations"
+msgstr "Oznacz wątek"
+
+#: src/HeaderBar.vala:80
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide unstarred conversations"
+msgstr "Oznacz wątek"
+
+#: src/HeaderBar.vala:97
+#, fuzzy
+#| msgid "Delete Conversation"
+msgid "Filter Conversations"
+msgstr "Usuń rozmowę"
+
+#: src/HeaderBar.vala:101
 msgid "Always Show Remote Images"
 msgstr "Zawsze wyświetlaj zdalne obrazy"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:104
 msgid "Account Settings…"
 msgstr "Ustawienia konta…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:127
 msgid "Menu"
 msgstr "Menu"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:134 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Odpowiedz"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:141
 msgid "Reply All"
 msgstr "Odpowiedz wszystkim"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:148 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Przekaż"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:154
 msgid "Mark as Unread"
 msgstr "Oznacz jako nieprzeczytane"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:159
 msgid "Mark as Read"
 msgstr "Oznacz jako przeczytane"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:164
 msgid "Star"
 msgstr "Wyróżnij"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:169
 msgid "Unstar"
 msgstr "Usuń wyróżnienie"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:181
 msgid "Mark Conversation"
 msgstr "Oznacz konwersację"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:188
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
 msgstr "Przenieś rozmowy do kosza"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:195
 msgid "Move conversations to Trash"
 msgstr "Przenieś rozmowy do kosza"
 
@@ -123,18 +155,18 @@ msgstr[0] "Zawsze pokazuj od nadawcy"
 msgstr[1] "Zawsze pokazuj od nadawcy"
 msgstr[2] "Zawsze pokazuj od nadawcy"
 
-#: src/MainWindow.vala:73
+#: src/MainWindow.vala:75
 msgid "Mail"
 msgstr "Poczta"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:346
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Wiadomość usunięta"
 msgstr[1] "Wiadomości usunięte"
 msgstr[2] "Wiadomości usuniętych"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:358
 msgid "Undo"
 msgstr "Cofnij"
 
@@ -652,9 +684,6 @@ msgstr "Zapisz"
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "Odznacz jako _niechciana"
-
-#~ msgid "Mark conversations"
-#~ msgstr "Oznacz wątek"
 
 #~ msgid "Add label to conversation"
 #~ msgid_plural "Add label to conversations"
@@ -1510,9 +1539,6 @@ msgstr "Zapisz"
 
 #~ msgid "Always watch for new mail:"
 #~ msgstr "Zawsze sprawdzaj nowe wiadomości:"
-
-#~ msgid "Delete Conversation"
-#~ msgstr "Usuń rozmowę"
 
 #~ msgid "Delete Conversation (Shift+Delete)"
 #~ msgid_plural "Delete Conversations (Shift+Delete)"

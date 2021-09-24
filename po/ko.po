@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 08:15+0000\n"
+"POT-Creation-Date: 2021-09-23 19:12+0000\n"
 "PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/mail/mail/ko/>\n"
@@ -20,65 +20,97 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:45
 msgid "Compose new message"
 msgstr "새 편지 쓰기"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:54
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetch new messages"
+msgstr "새 편지 %d개"
+
+#: src/HeaderBar.vala:61
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetching new messages"
+msgstr "새 편지 %d개"
+
+#: src/HeaderBar.vala:74
 msgid "Search Mail"
 msgstr "편지 검색"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:78
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide read conversations"
+msgstr "표시하기"
+
+#: src/HeaderBar.vala:80
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide unstarred conversations"
+msgstr "표시하기"
+
+#: src/HeaderBar.vala:97
+#, fuzzy
+#| msgid "Delete Conversation"
+msgid "Filter Conversations"
+msgstr "지우기"
+
+#: src/HeaderBar.vala:101
 msgid "Always Show Remote Images"
 msgstr "원격 이미지 항상 표시"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:104
 msgid "Account Settings…"
 msgstr "계정 설정…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:127
 msgid "Menu"
 msgstr "메뉴"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:134 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "답장"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:141
 msgid "Reply All"
 msgstr "전체 답장"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:148 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "전달"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:154
 msgid "Mark as Unread"
 msgstr "읽지 않음으로 표시"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:159
 msgid "Mark as Read"
 msgstr "읽음으로 표시"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:164
 msgid "Star"
 msgstr "별표 표시"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:169
 msgid "Unstar"
 msgstr "별표 취소"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:181
 msgid "Mark Conversation"
 msgstr "표시하기"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:188
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
 msgstr "휴지통으로 보내기"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:195
 msgid "Move conversations to Trash"
 msgstr "휴지통으로 보내기"
 
@@ -105,16 +137,16 @@ msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
 msgstr[0] "보낸 사람 항상 표시"
 
-#: src/MainWindow.vala:73
+#: src/MainWindow.vala:75
 msgid "Mail"
 msgstr "메일"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:346
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "지워진 메시지"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:358
 msgid "Undo"
 msgstr "실행 취소"
 
@@ -623,9 +655,6 @@ msgstr "저장"
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "스팸 아님으로  표시(_P)"
-
-#~ msgid "Mark conversations"
-#~ msgstr "표시하기"
 
 #~ msgid "Add label to conversation"
 #~ msgid_plural "Add label to conversations"
@@ -1431,9 +1460,6 @@ msgstr "저장"
 
 #~ msgid "Always watch for new mail:"
 #~ msgstr "항상 새 편지 확인:"
-
-#~ msgid "Delete Conversation"
-#~ msgstr "지우기"
 
 #~ msgid "Delete Conversation (Shift+Delete)"
 #~ msgid_plural "Delete Conversations (Shift+Delete)"

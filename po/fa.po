@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 08:15+0000\n"
+"POT-Creation-Date: 2021-09-23 19:12+0000\n"
 "PO-Revision-Date: 2015-11-24 15:43+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Persian (http://www.transifex.com/projects/p/geary/language/"
@@ -23,72 +23,103 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 "X-Generator: Launchpad (build 18330)\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:45
 #, fuzzy
 msgid "Compose new message"
 msgstr "ارسال ایمیل جدید (Ctrl+N, N)"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:54
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetch new messages"
+msgstr "%d پیام جدید"
+
+#: src/HeaderBar.vala:61
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetching new messages"
+msgstr "%d پیام جدید"
+
+#: src/HeaderBar.vala:74
 msgid "Search Mail"
 msgstr ""
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:78
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide read conversations"
+msgstr "افزودن برچسب به گفتگوها"
+
+#: src/HeaderBar.vala:80
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide unstarred conversations"
+msgstr "افزودن برچسب به گفتگوها"
+
+#: src/HeaderBar.vala:97
+#, fuzzy
+msgid "Filter Conversations"
+msgstr "نشان گذاری گفتگوها"
+
+#: src/HeaderBar.vala:101
 #, fuzzy
 msgid "Always Show Remote Images"
 msgstr "همیشه ارسالی‌های این فرستنده را نشان بده"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:104
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:127
 msgid "Menu"
 msgstr ""
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:134 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr ""
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:141
 #, fuzzy
 msgid "Reply All"
 msgstr "پاسخ به همه"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:148 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr ""
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:154
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "نشان گذاری به عنوان خوانده نشده"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:159
 #, fuzzy
 msgid "Mark as Read"
 msgstr "نشان گذاری به عنوان خوانده شده"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:164
 #, fuzzy
 msgid "Star"
 msgstr "ستاره دار کردن"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:169
 #, fuzzy
 msgid "Unstar"
 msgstr "حذف ستاره"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:181
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "نشان گذاری گفتگوها"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:188
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "انتقال گفتگوها"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:195
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "انتقال گفتگوها"
@@ -115,19 +146,19 @@ msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
 msgstr[0] ""
 
-#: src/MainWindow.vala:73
+#: src/MainWindow.vala:75
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "همه‌ی ایمیل‌ها"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:346
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "هیچ گفتگویی انتخاب نشده است."
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:358
 msgid "Undo"
 msgstr ""
 
@@ -548,9 +579,6 @@ msgstr "ذخیره"
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "نشان گذاری به عنوان غیر هرزنامه"
-
-#~ msgid "Add label to conversations"
-#~ msgstr "افزودن برچسب به گفتگوها"
 
 #~ msgid "A_ccounts"
 #~ msgstr "حساب ها"

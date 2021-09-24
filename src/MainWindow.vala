@@ -37,6 +37,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     public const string ACTION_GROUP_PREFIX = "win";
     public const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
     public const string ACTION_COMPOSE_MESSAGE = "compose_message";
+    public const string ACTION_REFRESH = "refresh";
     public const string ACTION_REPLY = "reply";
     public const string ACTION_REPLY_ALL = "reply-all";
     public const string ACTION_FORWARD = "forward";
@@ -52,6 +53,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
     private const ActionEntry[] ACTION_ENTRIES = {
         {ACTION_COMPOSE_MESSAGE, on_compose_message },
+        {ACTION_REFRESH, on_refresh },
         {ACTION_REPLY, on_reply },
         {ACTION_REPLY_ALL, on_reply_all },
         {ACTION_FORWARD, on_forward },
@@ -78,6 +80,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         Hdy.init ();
 
         action_accelerators[ACTION_COMPOSE_MESSAGE] = "<Control>N";
+        action_accelerators[ACTION_REFRESH] = "F12";
         action_accelerators[ACTION_REPLY] = "<Control>R";
         action_accelerators[ACTION_REPLY_ALL] = "<Control><Shift>R";
         action_accelerators[ACTION_FORWARD] = "<Ctrl><Shift>F";
@@ -255,6 +258,37 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
     private void on_compose_message () {
         new ComposerWindow (this).show_all ();
+    }
+
+    private void on_refresh () {
+        headerbar.is_busy = true;
+
+        refresh_accounts.begin ((obj, res) => {
+            refresh_accounts.end (res);
+
+            headerbar.is_busy = false;
+        });
+    }
+
+    private async void refresh_accounts () {
+        unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+        var accounts = session.get_accounts ();
+
+        foreach (var account in accounts) {
+            if (account.service is Camel.OfflineStore) {
+                var store = (Camel.OfflineStore) account.service;
+
+                try {
+                    var inbox_folder = yield store.get_inbox_folder (GLib.Priority.DEFAULT, null);
+                    if (inbox_folder != null) {
+                        yield inbox_folder.refresh_info (GLib.Priority.DEFAULT, null);
+                    }
+
+                } catch (Error e) {
+                    warning ("Error fetching messages from '%s': %s", store.display_name, e.message);
+                }
+            }
+        };
     }
 
     private void scroll_message_list_to_bottom () {

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 08:15+0000\n"
+"POT-Creation-Date: 2021-09-23 19:12+0000\n"
 "PO-Revision-Date: 2021-06-20 11:00+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -28,63 +28,95 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:54+0000\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:45
 msgid "Compose new message"
 msgstr "撰写新邮件"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:54
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetch new messages"
+msgstr "%d 封新邮件"
+
+#: src/HeaderBar.vala:61
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetching new messages"
+msgstr "%d 封新邮件"
+
+#: src/HeaderBar.vala:74
 msgid "Search Mail"
 msgstr "搜索邮件"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:78
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide read conversations"
+msgstr "添加标签"
+
+#: src/HeaderBar.vala:80
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide unstarred conversations"
+msgstr "添加标签"
+
+#: src/HeaderBar.vala:97
+#, fuzzy
+#| msgid "Delete Conversation"
+msgid "Filter Conversations"
+msgstr "删除会话"
+
+#: src/HeaderBar.vala:101
 msgid "Always Show Remote Images"
 msgstr "显示网络图片"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:104
 msgid "Account Settings…"
 msgstr "账户设置…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:127
 msgid "Menu"
 msgstr "菜单"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:134 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "回复"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:141
 msgid "Reply All"
 msgstr "回复全部"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:148 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "转发"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:154
 msgid "Mark as Unread"
 msgstr "标为未读"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:159
 msgid "Mark as Read"
 msgstr "标为已读"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:164
 msgid "Star"
 msgstr "添加星标"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:169
 msgid "Unstar"
 msgstr "取消星标"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:181
 msgid "Mark Conversation"
 msgstr "标记会话"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:188
 msgid "Move conversations to archive"
 msgstr "将会话移至归档"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:195
 msgid "Move conversations to Trash"
 msgstr "将会话移至回收站"
 
@@ -111,16 +143,16 @@ msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
 msgstr[0] "将此收件人设置为总是显示"
 
-#: src/MainWindow.vala:73
+#: src/MainWindow.vala:75
 msgid "Mail"
 msgstr "邮件"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:346
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "消息已删除"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:358
 msgid "Undo"
 msgstr "撤消"
 
@@ -612,9 +644,6 @@ msgstr "保存"
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "取消标记为垃圾邮件"
-
-#~ msgid "Mark conversations"
-#~ msgstr "添加标签"
 
 #~ msgid "Add label to conversation"
 #~ msgid_plural "Add label to conversations"
@@ -1406,9 +1435,6 @@ msgstr "保存"
 
 #~ msgid "Always watch for new mail:"
 #~ msgstr "总是监视新的邮件："
-
-#~ msgid "Delete Conversation"
-#~ msgstr "删除会话"
 
 #~ msgid "Delete Conversation (Shift+Delete)"
 #~ msgid_plural "Delete Conversations (Shift+Delete)"

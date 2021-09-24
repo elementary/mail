@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 08:15+0000\n"
-"PO-Revision-Date: 2021-09-20 18:49+0000\n"
+"POT-Creation-Date: 2021-09-23 19:12+0000\n"
+"PO-Revision-Date: 2021-09-24 01:29+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/>"
 "\n"
@@ -27,63 +27,83 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Project-Style: gnome\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:45
 msgid "Compose new message"
 msgstr "Створити нове повідомлення"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:54
+msgid "Fetch new messages"
+msgstr "Отримати нові повідомлення"
+
+#: src/HeaderBar.vala:61
+msgid "Fetching new messages"
+msgstr "Отримання нових повідомлень"
+
+#: src/HeaderBar.vala:74
 msgid "Search Mail"
 msgstr "Пошук у пошті"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:78
+msgid "Hide read conversations"
+msgstr "Сховати прочитані бесіди"
+
+#: src/HeaderBar.vala:80
+msgid "Hide unstarred conversations"
+msgstr "Сховати бесіди, з яких прибрано позначку зірки"
+
+#: src/HeaderBar.vala:97
+msgid "Filter Conversations"
+msgstr "Фільтрувати бесіди"
+
+#: src/HeaderBar.vala:101
 msgid "Always Show Remote Images"
 msgstr "Завжди показувати віддалені зображення"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:104
 msgid "Account Settings…"
 msgstr "Налаштування облікового запису…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:127
 msgid "Menu"
 msgstr "Меню"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:134 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Відповісти"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:141
 msgid "Reply All"
 msgstr "Відповісти всім"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:148 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Переслати"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:154
 msgid "Mark as Unread"
 msgstr "Позначити непрочитаним"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:159
 msgid "Mark as Read"
 msgstr "Позначити як прочитане"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:164
 msgid "Star"
 msgstr "Позначити зірочкою"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:169
 msgid "Unstar"
 msgstr "Прибрати позначення зірочкою"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:181
 msgid "Mark Conversation"
 msgstr "Позначити бесіду"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:188
 msgid "Move conversations to archive"
 msgstr "Перемістити бесіди до архіву"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:195
 msgid "Move conversations to Trash"
 msgstr "Перемістити бесіди до смітника"
 
@@ -111,18 +131,18 @@ msgstr[0] "%s від %u відправника"
 msgstr[1] "%s від %u відправників"
 msgstr[2] "%s від %u відправників"
 
-#: src/MainWindow.vala:73
+#: src/MainWindow.vala:75
 msgid "Mail"
 msgstr "Пошта"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:346
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Повідомлення видалено"
 msgstr[1] "Повідомлення видалено"
 msgstr[2] "Повідомлення видалено"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:358
 msgid "Undo"
 msgstr "Повернути"
 
@@ -614,9 +634,6 @@ msgstr "Зберегти"
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "Зазначити не як _спам"
-
-#~ msgid "Mark conversations"
-#~ msgstr "Зазначити розмови"
 
 #~ msgid "Add label to conversation"
 #~ msgid_plural "Add label to conversations"
@@ -1413,9 +1430,6 @@ msgstr "Зберегти"
 
 #~ msgid "Always watch for new mail:"
 #~ msgstr "Завжди перевіряти нові листи:"
-
-#~ msgid "Delete Conversation"
-#~ msgstr "Видалити розмову:"
 
 #~ msgid "Delete Conversations (Shift+Delete)"
 #~ msgstr "Видалити розмови (Shift+Delete)"

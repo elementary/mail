@@ -20,11 +20,13 @@
 public class Mail.HeaderBar : Hdy.HeaderBar {
     public bool can_mark { get; set; }
     public bool can_search { get; set; }
+    public bool is_busy { get; set; }
     public bool hide_read { get; set; }
     public bool hide_unstarred { get; set; }
     public Gtk.SearchEntry search_entry { get; construct; }
     public Gtk.MenuButton filter_button { get; construct; }
     private Gtk.Grid spacing_widget;
+    private Gtk.Stack refresh_stack;
 
     public HeaderBar () {
         Object (show_close_button: true,
@@ -42,6 +44,29 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
             application_instance.get_accels_for_action (compose_button.action_name),
             _("Compose new message")
         );
+
+        var refresh_button = new Gtk.Button.from_icon_name ("view-refresh", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REFRESH,
+            halign = Gtk.Align.START
+        };
+        refresh_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (refresh_button.action_name),
+            _("Fetch new messages")
+        );
+
+        var refresh_spinner = new Gtk.Spinner () {
+            active = true,
+            halign = Gtk.Align.CENTER,
+            valign = Gtk.Align.CENTER,
+            tooltip_text = _("Fetching new messages")
+        };
+
+        refresh_stack = new Gtk.Stack () {
+            transition_type = Gtk.StackTransitionType.CROSSFADE
+        };
+        refresh_stack.add (refresh_button);
+        refresh_stack.add (refresh_spinner);
+        refresh_stack.visible_child = refresh_button;
 
         spacing_widget = new Gtk.Grid ();
 
@@ -172,6 +197,7 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
 
         pack_start (compose_button);
         pack_start (spacing_widget);
+        pack_start (refresh_stack);
         pack_start (search_entry);
         pack_start (filter_button);
         pack_start (reply_button);
@@ -192,6 +218,14 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
 
         hide_read_button.notify["active"].connect (on_filter_button_changed);
         hide_unstarred_button.notify["active"].connect (on_filter_button_changed);
+
+        notify["is-busy"].connect (() => {
+            if (is_busy) {
+                refresh_stack.visible_child = refresh_spinner;
+            } else {
+                refresh_stack.visible_child = refresh_button;
+            }
+        });
 
         var settings = new GLib.Settings ("io.elementary.mail");
         settings.bind ("always-load-remote-images", load_images_menuitem, "active", SettingsBindFlags.DEFAULT);
@@ -234,7 +268,7 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
             });
 
             offset += spacing;
-            spacing_widget.width_request = start_position - int.min (offset, start_position);
+            spacing_widget.width_request = start_position - int.min (offset, start_position) - refresh_stack.get_allocated_width () - spacing;
         }
     }
 }

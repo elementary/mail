@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 08:15+0000\n"
+"POT-Creation-Date: 2021-09-23 19:12+0000\n"
 "PO-Revision-Date: 2021-09-13 13:56+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/mail/fi/>\n"
@@ -23,63 +23,95 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:40
+#: src/HeaderBar.vala:45
 msgid "Compose new message"
 msgstr "Luo uusi viesti"
 
-#: src/HeaderBar.vala:46
+#: src/HeaderBar.vala:54
+#, fuzzy
+#| msgid "%u new message"
+#| msgid_plural "%u new messages"
+msgid "Fetch new messages"
+msgstr "%u uusi viesti"
+
+#: src/HeaderBar.vala:61
+#, fuzzy
+#| msgid "%u new message"
+#| msgid_plural "%u new messages"
+msgid "Fetching new messages"
+msgstr "%u uusi viesti"
+
+#: src/HeaderBar.vala:74
 msgid "Search Mail"
 msgstr "Etsi sähköposteista"
 
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:78
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide read conversations"
+msgstr "Merkitse keskustelut"
+
+#: src/HeaderBar.vala:80
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide unstarred conversations"
+msgstr "Merkitse keskustelut"
+
+#: src/HeaderBar.vala:97
+#, fuzzy
+#| msgid "Delete Conversation"
+msgid "Filter Conversations"
+msgstr "Poista keskustelu"
+
+#: src/HeaderBar.vala:101
 msgid "Always Show Remote Images"
 msgstr "Näytä aina etäkuvat"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:104
 msgid "Account Settings…"
 msgstr "Tilin asetukset…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:127
 msgid "Menu"
 msgstr "Valikko"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:134 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Vastaa"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:141
 msgid "Reply All"
 msgstr "Vastaa kaikille"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:148 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Lähetä edelleen"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:154
 msgid "Mark as Unread"
 msgstr "Merkitse lukemattomaksi"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:159
 msgid "Mark as Read"
 msgstr "Merkitse luetuksi"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:164
 msgid "Star"
 msgstr "Merkitse tähdellä"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:169
 msgid "Unstar"
 msgstr "Poista tähti"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:181
 msgid "Mark Conversation"
 msgstr "Merkitse keskustelu"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:188
 msgid "Move conversations to archive"
 msgstr "Siirrä keskustelut arkistoon"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:195
 msgid "Move conversations to Trash"
 msgstr "Siirrä keskustelu roskakoriin"
 
@@ -106,17 +138,17 @@ msgid_plural "%s from %u senders"
 msgstr[0] "Näytä aina lähettäjältä"
 msgstr[1] "Näytä aina lähettäjältä"
 
-#: src/MainWindow.vala:73
+#: src/MainWindow.vala:75
 msgid "Mail"
 msgstr "Sähköposti"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:346
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Viesti poistettu"
 msgstr[1] "Viestit poistettu"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:358
 msgid "Undo"
 msgstr "Kumoa"
 
@@ -605,9 +637,6 @@ msgstr "Tallenna"
 
 #~ msgid "Mark as not S_pam"
 #~ msgstr "Poista _roskapostimerkintä"
-
-#~ msgid "Mark conversations"
-#~ msgstr "Merkitse keskustelut"
 
 #~ msgid "Add label to conversation"
 #~ msgid_plural "Add label to conversations"
@@ -1425,9 +1454,6 @@ msgstr "Tallenna"
 
 #~ msgid "Always watch for new mail:"
 #~ msgstr "Tarkkaile uusia viestejä:"
-
-#~ msgid "Delete Conversation"
-#~ msgstr "Poista keskustelu"
 
 #~ msgid "Delete Conversation (Shift+Delete)"
 #~ msgid_plural "Delete Conversations (Shift+Delete)"
