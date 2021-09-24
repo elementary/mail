@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-23 19:12+0000\n"
-"PO-Revision-Date: 2021-09-23 01:30+0000\n"
+"PO-Revision-Date: 2021-09-24 01:29+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
 "Language: he\n"
@@ -34,18 +34,12 @@ msgid "Compose new message"
 msgstr "כתיבת הודעה חדשה"
 
 #: src/HeaderBar.vala:54
-#, fuzzy
-#| msgid "%u new message"
-#| msgid_plural "%u new messages"
 msgid "Fetch new messages"
-msgstr "הודעה חדשה אחת"
+msgstr "משיכת הודעות חדשות"
 
 #: src/HeaderBar.vala:61
-#, fuzzy
-#| msgid "%u new message"
-#| msgid_plural "%u new messages"
 msgid "Fetching new messages"
-msgstr "הודעה חדשה אחת"
+msgstr "הודעות חדשות נמשכות"
 
 #: src/HeaderBar.vala:74
 msgid "Search Mail"
