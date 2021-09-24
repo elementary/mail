@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-23 19:12+0000\n"
-"PO-Revision-Date: 2021-09-13 13:56+0000\n"
+"PO-Revision-Date: 2021-09-24 14:28+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
 "mail/nb/>\n"
@@ -33,40 +33,33 @@ msgid "Compose new message"
 msgstr "Skriv ny melding"
 
 #: src/HeaderBar.vala:54
-#, fuzzy
-#| msgid "%u new message"
-#| msgid_plural "%u new messages"
 msgid "Fetch new messages"
-msgstr "%u ny melding"
+msgstr "Hent nye meldinger"
 
 #: src/HeaderBar.vala:61
 #, fuzzy
 #| msgid "%u new message"
 #| msgid_plural "%u new messages"
 msgid "Fetching new messages"
-msgstr "%u ny melding"
+msgstr "Henter nye meldinger"
 
 #: src/HeaderBar.vala:74
 msgid "Search Mail"
 msgstr "Søk Mail"
 
 #: src/HeaderBar.vala:78
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide read conversations"
-msgstr "Marker samtaler"
+msgstr "Skjul leste samtaler"
 
 #: src/HeaderBar.vala:80
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
-msgstr "Marker samtaler"
+msgstr "Skjul samtaler som ikke er stjernemerkede"
 
 #: src/HeaderBar.vala:97
-#, fuzzy
-#| msgid "Delete Conversation"
 msgid "Filter Conversations"
-msgstr "Slett samtale"
+msgstr "Filtrer samtaler"
 
 #: src/HeaderBar.vala:101
 msgid "Always Show Remote Images"
@@ -431,7 +424,7 @@ msgstr "Ingen melding valgt"
 #: src/MessageList/MessageListItem.vala:173
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s, klokken %s"
 
 #: src/MessageList/MessageListItem.vala:181
 #: src/MessageList/MessageListItem.vala:340
