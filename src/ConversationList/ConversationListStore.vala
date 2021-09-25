@@ -107,7 +107,7 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
         this.compare_func = function;
     }
 
-    public void set_filter_func (RowVisibilityFunc function) {
+    public void set_filter_func (RowVisibilityFunc? function) {
         filter_func = function;
     }
 }
