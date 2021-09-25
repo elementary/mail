@@ -337,32 +337,11 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private void on_refresh () {
         refresh_stack.visible_child = refresh_spinner;
 
-        refresh_accounts.begin ((obj, res) => {
-            refresh_accounts.end (res);
+        conversation_list_box.refresh_folder.begin (null, (obj, res) => {
+            conversation_list_box.refresh_folder.end (res);
 
             refresh_stack.visible_child = refresh_button;
         });
-    }
-
-    private async void refresh_accounts () {
-        unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
-        var accounts = session.get_accounts ();
-
-        foreach (var account in accounts) {
-            if (account.service is Camel.OfflineStore) {
-                var store = (Camel.OfflineStore) account.service;
-
-                try {
-                    var inbox_folder = yield store.get_inbox_folder (GLib.Priority.DEFAULT, null);
-                    if (inbox_folder != null) {
-                        yield inbox_folder.refresh_info (GLib.Priority.DEFAULT, null);
-                    }
-
-                } catch (Error e) {
-                    warning ("Error fetching messages from '%s': %s", store.display_name, e.message);
-                }
-            }
-        };
     }
 
     private void scroll_message_list_to_bottom () {
