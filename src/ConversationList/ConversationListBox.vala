@@ -188,6 +188,21 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         list_store.items_changed (0, 0, list_store.get_n_items ());
     }
 
+    public async void refresh_folder (GLib.Cancellable? cancellable = null) {
+        lock (folders) {
+            foreach (var folder in folders.values) {
+                try {
+                    yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
+                } catch (Error e) {
+                    warning ("Error fetching messages for '%s' from '%s': %s",
+                    folder.display_name,
+                    folder.parent_store.display_name,
+                    e.message);
+                }
+            }
+        }
+    }
+
     private void folder_changed (Camel.FolderChangeInfo change_info, string service_uid, GLib.Cancellable cancellable) {
         if (cancellable.is_cancelled ()) {
             return;
