@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-24 17:49+0000\n"
+"POT-Creation-Date: 2021-09-27 17:18+0000\n"
 "PO-Revision-Date: 2020-02-23 14:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/mail/mail/szl/"
@@ -15,95 +15,65 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.9.1\n"
 
-#: src/HeaderBar.vala:45
+#: src/HeaderBar.vala:40
 msgid "Compose new message"
 msgstr "Napisz nowo wiadōmość"
 
-#: src/HeaderBar.vala:54
-#, fuzzy
-#| msgid "Compose new message"
-msgid "Fetch new messages"
-msgstr "Napisz nowo wiadōmość"
-
-#: src/HeaderBar.vala:61
-#, fuzzy
-#| msgid "Compose new message"
-msgid "Fetching new messages"
-msgstr "Napisz nowo wiadōmość"
-
-#: src/HeaderBar.vala:74
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr "Przeszukej poczta"
 
-#: src/HeaderBar.vala:78
-#, fuzzy
-#| msgid "Mark Conversation"
-msgid "Hide read conversations"
-msgstr "Ôznacz dyskusyjo"
-
-#: src/HeaderBar.vala:80
-#, fuzzy
-#| msgid "Mark Conversation"
-msgid "Hide unstarred conversations"
-msgstr "Ôznacz dyskusyjo"
-
-#: src/HeaderBar.vala:97
-#, fuzzy
-#| msgid "Mark Conversation"
-msgid "Filter Conversations"
-msgstr "Ôznacz dyskusyjo"
-
-#: src/HeaderBar.vala:101
+#: src/HeaderBar.vala:50
 msgid "Always Show Remote Images"
 msgstr "Dycki pokazuj zdalne ôbrazy"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:53
 msgid "Account Settings…"
 msgstr "Sztelōnki kōnta…"
 
-#: src/HeaderBar.vala:127
+#: src/HeaderBar.vala:76
 msgid "Menu"
 msgstr "Myni"
 
-#: src/HeaderBar.vala:134 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Ôdpowiydz"
 
-#: src/HeaderBar.vala:141
+#: src/HeaderBar.vala:90
 msgid "Reply All"
 msgstr "Ôdpowiydz wszyjskim"
 
-#: src/HeaderBar.vala:148 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Dalij"
 
-#: src/HeaderBar.vala:154
+#: src/HeaderBar.vala:103
 msgid "Mark as Unread"
 msgstr "Ôznacz za niyprzeczytane"
 
-#: src/HeaderBar.vala:159
+#: src/HeaderBar.vala:108
 msgid "Mark as Read"
 msgstr "Ôznacz za przeczytane"
 
-#: src/HeaderBar.vala:164
+#: src/HeaderBar.vala:113
 msgid "Star"
 msgstr "Ôblubiōny"
 
-#: src/HeaderBar.vala:169
+#: src/HeaderBar.vala:118
 msgid "Unstar"
 msgstr "Wyciep z ôblubiōnych"
 
-#: src/HeaderBar.vala:181
+#: src/HeaderBar.vala:130
 msgid "Mark Conversation"
 msgstr "Ôznacz dyskusyjo"
 
-#: src/HeaderBar.vala:188
+#: src/HeaderBar.vala:137
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
 msgstr "Przeniyś dyskusyje do hasioka"
 
-#: src/HeaderBar.vala:195
+#: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
 msgstr "Przeniyś dyskusyje do hasioka"
 
@@ -133,18 +103,48 @@ msgstr[0] "Dycki pokazuj ôd nadowcy"
 msgstr[1] "Dycki pokazuj ôd nadowcy"
 msgstr[2] "Dycki pokazuj ôd nadowcy"
 
-#: src/MainWindow.vala:75
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr ""
 
-#: src/MainWindow.vala:346
+#: src/MainWindow.vala:156
+#, fuzzy
+#| msgid "Compose new message"
+msgid "Fetch new messages"
+msgstr "Napisz nowo wiadōmość"
+
+#: src/MainWindow.vala:163
+#, fuzzy
+#| msgid "Compose new message"
+msgid "Fetching new messages"
+msgstr "Napisz nowo wiadōmość"
+
+#: src/MainWindow.vala:173
+#, fuzzy
+#| msgid "Mark Conversation"
+msgid "Hide read conversations"
+msgstr "Ôznacz dyskusyjo"
+
+#: src/MainWindow.vala:175
+#, fuzzy
+#| msgid "Mark Conversation"
+msgid "Hide unstarred conversations"
+msgstr "Ôznacz dyskusyjo"
+
+#: src/MainWindow.vala:192
+#, fuzzy
+#| msgid "Mark Conversation"
+msgid "Filter Conversations"
+msgstr "Ôznacz dyskusyjo"
+
+#: src/MainWindow.vala:399
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Wiadōmość skasowano"
 msgstr[1] "Wiadōmości skasowane"
 msgstr[2] "Wiadōmości skasowane"
 
-#: src/MainWindow.vala:358
+#: src/MainWindow.vala:411
 msgid "Undo"
 msgstr "Cofnij"
 

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-24 17:49+0000\n"
+"POT-Creation-Date: 2021-09-27 17:18+0000\n"
 "PO-Revision-Date: 2017-04-15 20:42+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Swedish <https://l10n.elementary.io/projects/mail/mail/sv/>\n"
@@ -29,104 +29,72 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
-#: src/HeaderBar.vala:45
+#: src/HeaderBar.vala:40
 #, fuzzy
 msgid "Compose new message"
 msgstr "Skriv nytt meddelande (Ctrl+N, N)"
 
-#: src/HeaderBar.vala:54
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
-msgid "Fetch new messages"
-msgstr "%d nytt meddelande"
-
-#: src/HeaderBar.vala:61
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
-msgid "Fetching new messages"
-msgstr "%d nytt meddelande"
-
-#: src/HeaderBar.vala:74
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr ""
 
-#: src/HeaderBar.vala:78
-#, fuzzy
-#| msgid "Delete conversation"
-msgid "Hide read conversations"
-msgstr "Radera konversation"
-
-#: src/HeaderBar.vala:80
-#, fuzzy
-#| msgid "Delete conversation"
-msgid "Hide unstarred conversations"
-msgstr "Radera konversation"
-
-#: src/HeaderBar.vala:97
-#, fuzzy
-#| msgid "Delete conversation"
-msgid "Filter Conversations"
-msgstr "Radera konversation"
-
-#: src/HeaderBar.vala:101
+#: src/HeaderBar.vala:50
 #, fuzzy
 msgid "Always Show Remote Images"
 msgstr "Visa alltid från avsändare"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:53
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:127
+#: src/HeaderBar.vala:76
 msgid "Menu"
 msgstr ""
 
-#: src/HeaderBar.vala:134 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr ""
 
-#: src/HeaderBar.vala:141
+#: src/HeaderBar.vala:90
 #, fuzzy
 msgid "Reply All"
 msgstr "Svara _alla"
 
-#: src/HeaderBar.vala:148 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr ""
 
-#: src/HeaderBar.vala:154
+#: src/HeaderBar.vala:103
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "Markera som _oläst"
 
-#: src/HeaderBar.vala:159
+#: src/HeaderBar.vala:108
 #, fuzzy
 msgid "Mark as Read"
 msgstr "Markera som _läst"
 
-#: src/HeaderBar.vala:164
+#: src/HeaderBar.vala:113
 #, fuzzy
 msgid "Star"
 msgstr "Markera som _viktigt"
 
-#: src/HeaderBar.vala:169
+#: src/HeaderBar.vala:118
 #, fuzzy
 msgid "Unstar"
 msgstr "Markera som ov_iktigt"
 
-#: src/HeaderBar.vala:181
+#: src/HeaderBar.vala:130
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Markera konversationer"
 
-#: src/HeaderBar.vala:188
+#: src/HeaderBar.vala:137
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Flytta konversationerna"
 
-#: src/HeaderBar.vala:195
+#: src/HeaderBar.vala:144
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Flytta konversationerna"
@@ -155,20 +123,52 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:75
+#: src/MainWindow.vala:80
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Alla brev"
 
-#: src/MainWindow.vala:346
+#: src/MainWindow.vala:156
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetch new messages"
+msgstr "%d nytt meddelande"
+
+#: src/MainWindow.vala:163
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetching new messages"
+msgstr "%d nytt meddelande"
+
+#: src/MainWindow.vala:173
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Hide read conversations"
+msgstr "Radera konversation"
+
+#: src/MainWindow.vala:175
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Hide unstarred conversations"
+msgstr "Radera konversation"
+
+#: src/MainWindow.vala:192
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Filter Conversations"
+msgstr "Radera konversation"
+
+#: src/MainWindow.vala:399
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Inga valda konversationer."
 msgstr[1] "Inga valda konversationer."
 
-#: src/MainWindow.vala:358
+#: src/MainWindow.vala:411
 msgid "Undo"
 msgstr ""
 

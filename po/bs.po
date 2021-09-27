@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bosnianuniversetranslation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-24 17:49+0000\n"
+"POT-Creation-Date: 2021-09-27 17:18+0000\n"
 "PO-Revision-Date: 2015-11-24 15:43+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -21,105 +21,72 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 05:58+0000\n"
 "X-Generator: Launchpad (build 18330)\n"
 
-#: src/HeaderBar.vala:45
+#: src/HeaderBar.vala:40
 #, fuzzy
 msgid "Compose new message"
 msgstr "Stvori novu poruku (Ctrl+N, N)"
 
-#         translations.
-#: src/HeaderBar.vala:54
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
-msgid "Fetch new messages"
-msgstr "%d nova poruka"
-
-#         translations.
-#: src/HeaderBar.vala:61
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
-msgid "Fetching new messages"
-msgstr "%d nova poruka"
-
-#: src/HeaderBar.vala:74
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr ""
 
-#: src/HeaderBar.vala:78
-#, fuzzy
-#| msgid "Add label to conversations"
-msgid "Hide read conversations"
-msgstr "Dodaj oznaku konverzacija"
-
-#: src/HeaderBar.vala:80
-#, fuzzy
-#| msgid "Add label to conversations"
-msgid "Hide unstarred conversations"
-msgstr "Dodaj oznaku konverzacija"
-
-#: src/HeaderBar.vala:97
-#, fuzzy
-msgid "Filter Conversations"
-msgstr "Označi konverzacije"
-
-#: src/HeaderBar.vala:101
+#: src/HeaderBar.vala:50
 #, fuzzy
 msgid "Always Show Remote Images"
 msgstr "Uvijek prikaži od pošiljaoca"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:53
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:127
+#: src/HeaderBar.vala:76
 msgid "Menu"
 msgstr ""
 
-#: src/HeaderBar.vala:134 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr ""
 
-#: src/HeaderBar.vala:141
+#: src/HeaderBar.vala:90
 #, fuzzy
 msgid "Reply All"
 msgstr "O_dgovori svima"
 
-#: src/HeaderBar.vala:148 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr ""
 
-#: src/HeaderBar.vala:154
+#: src/HeaderBar.vala:103
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "_Označi kao nepročitano"
 
-#: src/HeaderBar.vala:159
+#: src/HeaderBar.vala:108
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Označi kao pročitano"
 
-#: src/HeaderBar.vala:164
+#: src/HeaderBar.vala:113
 #, fuzzy
 msgid "Star"
 msgstr "_Dodaj zvijezdu"
 
-#: src/HeaderBar.vala:169
+#: src/HeaderBar.vala:118
 #, fuzzy
 msgid "Unstar"
 msgstr "U_kloni zvijezdu"
 
-#: src/HeaderBar.vala:181
+#: src/HeaderBar.vala:130
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Označi konverzacije"
 
-#: src/HeaderBar.vala:188
+#: src/HeaderBar.vala:137
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Pomjeri konverzacije"
 
-#: src/HeaderBar.vala:195
+#: src/HeaderBar.vala:144
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Pomjeri konverzacije"
@@ -151,13 +118,46 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/MainWindow.vala:75
+#: src/MainWindow.vala:80
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Sva pošta"
 
-#: src/MainWindow.vala:346
+#         translations.
+#: src/MainWindow.vala:156
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetch new messages"
+msgstr "%d nova poruka"
+
+#         translations.
+#: src/MainWindow.vala:163
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetching new messages"
+msgstr "%d nova poruka"
+
+#: src/MainWindow.vala:173
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide read conversations"
+msgstr "Dodaj oznaku konverzacija"
+
+#: src/MainWindow.vala:175
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide unstarred conversations"
+msgstr "Dodaj oznaku konverzacija"
+
+#: src/MainWindow.vala:192
+#, fuzzy
+msgid "Filter Conversations"
+msgstr "Označi konverzacije"
+
+#: src/MainWindow.vala:399
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -165,7 +165,7 @@ msgstr[0] "Nema odabranih konverzacija."
 msgstr[1] "Nema odabranih konverzacija."
 msgstr[2] "Nema odabranih konverzacija."
 
-#: src/MainWindow.vala:358
+#: src/MainWindow.vala:411
 msgid "Undo"
 msgstr ""
 
