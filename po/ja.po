@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 19:12+0000\n"
-"PO-Revision-Date: 2021-09-23 14:49+0000\n"
+"POT-Creation-Date: 2021-09-24 17:49+0000\n"
+"PO-Revision-Date: 2021-09-27 02:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -20,18 +20,12 @@ msgid "Compose new message"
 msgstr "新しいメッセージを作成します"
 
 #: src/HeaderBar.vala:54
-#, fuzzy
-#| msgid "%u new message"
-#| msgid_plural "%u new messages"
 msgid "Fetch new messages"
-msgstr "%u件の新着メッセージ"
+msgstr "新着メッセージを取得"
 
 #: src/HeaderBar.vala:61
-#, fuzzy
-#| msgid "%u new message"
-#| msgid_plural "%u new messages"
 msgid "Fetching new messages"
-msgstr "%u件の新着メッセージ"
+msgstr "新着メッセージを取得しています"
 
 #: src/HeaderBar.vala:74
 msgid "Search Mail"

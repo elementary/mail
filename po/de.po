@@ -18,9 +18,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 19:12+0000\n"
-"PO-Revision-Date: 2021-09-23 07:45+0000\n"
-"Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
+"POT-Creation-Date: 2021-09-24 17:49+0000\n"
+"PO-Revision-Date: 2021-09-24 21:58+0000\n"
+"Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -35,18 +35,12 @@ msgid "Compose new message"
 msgstr "Neue Nachricht verfassen"
 
 #: src/HeaderBar.vala:54
-#, fuzzy
-#| msgid "%u new message"
-#| msgid_plural "%u new messages"
 msgid "Fetch new messages"
-msgstr "%u neue Nachricht"
+msgstr "Neue Nachrichten abrufen"
 
 #: src/HeaderBar.vala:61
-#, fuzzy
-#| msgid "%u new message"
-#| msgid_plural "%u new messages"
 msgid "Fetching new messages"
-msgstr "%u neue Nachricht"
+msgstr "Neue Nachrichten abrufen"
 
 #: src/HeaderBar.vala:74
 msgid "Search Mail"

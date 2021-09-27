@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 19:12+0000\n"
-"PO-Revision-Date: 2021-09-23 19:12+0000\n"
+"POT-Creation-Date: 2021-09-24 17:49+0000\n"
+"PO-Revision-Date: 2021-09-26 00:26+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
 "Language: tr\n"
@@ -35,18 +35,12 @@ msgid "Compose new message"
 msgstr "Yeni ileti oluştur"
 
 #: src/HeaderBar.vala:54
-#, fuzzy
-#| msgid "%u new message"
-#| msgid_plural "%u new messages"
 msgid "Fetch new messages"
-msgstr "%u yeni mesaj"
+msgstr "Yeni mesajları getir"
 
 #: src/HeaderBar.vala:61
-#, fuzzy
-#| msgid "%u new message"
-#| msgid_plural "%u new messages"
 msgid "Fetching new messages"
-msgstr "%u yeni mesaj"
+msgstr "Yeni mesajlar getiriliyor"
 
 #: src/HeaderBar.vala:74
 msgid "Search Mail"

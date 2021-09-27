@@ -20,13 +20,8 @@
 public class Mail.HeaderBar : Hdy.HeaderBar {
     public bool can_mark { get; set; }
     public bool can_search { get; set; }
-    public bool is_busy { get; set; }
-    public bool hide_read { get; set; }
-    public bool hide_unstarred { get; set; }
     public Gtk.SearchEntry search_entry { get; construct; }
-    public Gtk.MenuButton filter_button { get; construct; }
     private Gtk.Grid spacing_widget;
-    private Gtk.Stack refresh_stack;
 
     public HeaderBar () {
         Object (show_close_button: true,
@@ -45,57 +40,11 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
             _("Compose new message")
         );
 
-        var refresh_button = new Gtk.Button.from_icon_name ("view-refresh", Gtk.IconSize.LARGE_TOOLBAR) {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REFRESH,
-            halign = Gtk.Align.START
-        };
-        refresh_button.tooltip_markup = Granite.markup_accel_tooltip (
-            application_instance.get_accels_for_action (refresh_button.action_name),
-            _("Fetch new messages")
-        );
-
-        var refresh_spinner = new Gtk.Spinner () {
-            active = true,
-            halign = Gtk.Align.CENTER,
-            valign = Gtk.Align.CENTER,
-            tooltip_text = _("Fetching new messages")
-        };
-
-        refresh_stack = new Gtk.Stack () {
-            transition_type = Gtk.StackTransitionType.CROSSFADE
-        };
-        refresh_stack.add (refresh_button);
-        refresh_stack.add (refresh_spinner);
-        refresh_stack.visible_child = refresh_button;
-
         spacing_widget = new Gtk.Grid ();
 
         search_entry = new Gtk.SearchEntry () {
             placeholder_text = _("Search Mail"),
             valign = Gtk.Align.CENTER
-        };
-
-        var hide_read_button = new Granite.SwitchModelButton (_("Hide read conversations"));
-
-        var hide_unstarred_button = new Granite.SwitchModelButton (_("Hide unstarred conversations"));
-
-        var filter_menu_popover_grid = new Gtk.Grid () {
-            margin_bottom = 3,
-            margin_top = 3,
-            orientation = Gtk.Orientation.VERTICAL
-        };
-        filter_menu_popover_grid.add (hide_read_button);
-        filter_menu_popover_grid.add (hide_unstarred_button);
-        filter_menu_popover_grid.show_all ();
-
-        var filter_popover = new Gtk.Popover (null);
-        filter_popover.add (filter_menu_popover_grid);
-
-        filter_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("mail-filter", Gtk.IconSize.LARGE_TOOLBAR),
-            popover = filter_popover,
-            tooltip_text = _("Filter Conversations"),
-            margin_end = 12
         };
 
         var load_images_menuitem = new Granite.SwitchModelButton (_("Always Show Remote Images"));
@@ -197,9 +146,7 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
 
         pack_start (compose_button);
         pack_start (spacing_widget);
-        pack_start (refresh_stack);
         pack_start (search_entry);
-        pack_start (filter_button);
         pack_start (reply_button);
         pack_start (reply_all_button);
         pack_start (forward_button);
@@ -211,21 +158,6 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
 
         bind_property ("can-mark", mark_button, "sensitive");
         bind_property ("can-search", search_entry, "sensitive", BindingFlags.SYNC_CREATE);
-        bind_property ("can-search", filter_button, "sensitive", BindingFlags.SYNC_CREATE);
-
-        hide_read_button.bind_property ("active", this, "hide-read", BindingFlags.SYNC_CREATE);
-        hide_unstarred_button.bind_property ("active", this, "hide-unstarred", BindingFlags.SYNC_CREATE);
-
-        hide_read_button.notify["active"].connect (on_filter_button_changed);
-        hide_unstarred_button.notify["active"].connect (on_filter_button_changed);
-
-        notify["is-busy"].connect (() => {
-            if (is_busy) {
-                refresh_stack.visible_child = refresh_spinner;
-            } else {
-                refresh_stack.visible_child = refresh_button;
-            }
-        });
 
         var settings = new GLib.Settings ("io.elementary.mail");
         settings.bind ("always-load-remote-images", load_images_menuitem, "active", SettingsBindFlags.DEFAULT);
@@ -239,16 +171,9 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
         });
     }
 
-    private void on_filter_button_changed () {
-        if (hide_read || hide_unstarred) {
-            ((Gtk.Image) filter_button.image).icon_name = "mail-filter-active";
-        } else {
-            ((Gtk.Image) filter_button.image).icon_name = "mail-filter";
-        }
-    }
-
     public void set_paned_positions (int start_position, int end_position, bool start_changed = true) {
-        search_entry.width_request = end_position - start_position - filter_button.get_allocated_width () - filter_button.margin_end;
+        // Not sure where these 3px comes from, but it makes the lines line up
+        search_entry.width_request = end_position - start_position + 3;
         if (start_changed) {
             int spacing_position;
             child_get (spacing_widget, "position", out spacing_position, null);
@@ -268,7 +193,7 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
             });
 
             offset += spacing;
-            spacing_widget.width_request = start_position - int.min (offset, start_position) - refresh_stack.get_allocated_width () - spacing;
+            spacing_widget.width_request = start_position - int.min (offset, start_position) - 1;
         }
     }
 }
