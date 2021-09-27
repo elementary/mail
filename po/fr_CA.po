@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-24 17:49+0000\n"
+"POT-Creation-Date: 2021-09-27 17:18+0000\n"
 "PO-Revision-Date: 2016-08-25 14:39+0000\n"
 "Last-Translator: Nate <natejms@outlook.com>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
@@ -20,91 +20,67 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Generator: Launchpad (build 18330)\n"
 
-#: src/HeaderBar.vala:45
+#: src/HeaderBar.vala:40
 msgid "Compose new message"
 msgstr ""
 
-#: src/HeaderBar.vala:54
-msgid "Fetch new messages"
-msgstr ""
-
-#: src/HeaderBar.vala:61
-msgid "Fetching new messages"
-msgstr ""
-
-#: src/HeaderBar.vala:74
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr ""
 
-#: src/HeaderBar.vala:78
-#, fuzzy
-#| msgid "Archive conversations (A)"
-msgid "Hide read conversations"
-msgstr "Archiver les conversations (A)"
-
-#: src/HeaderBar.vala:80
-#, fuzzy
-msgid "Hide unstarred conversations"
-msgstr "Supprimer la conversation"
-
-#: src/HeaderBar.vala:97
-#, fuzzy
-msgid "Filter Conversations"
-msgstr "Supprimer la conversation"
-
-#: src/HeaderBar.vala:101
+#: src/HeaderBar.vala:50
 msgid "Always Show Remote Images"
 msgstr ""
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:53
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:127
+#: src/HeaderBar.vala:76
 msgid "Menu"
 msgstr ""
 
-#: src/HeaderBar.vala:134 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr ""
 
-#: src/HeaderBar.vala:141
+#: src/HeaderBar.vala:90
 msgid "Reply All"
 msgstr ""
 
-#: src/HeaderBar.vala:148 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr ""
 
-#: src/HeaderBar.vala:154
+#: src/HeaderBar.vala:103
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "Marquer comme S_pam"
 
-#: src/HeaderBar.vala:159
+#: src/HeaderBar.vala:108
 #, fuzzy
 msgid "Mark as Read"
 msgstr "Marquer comme S_pam"
 
-#: src/HeaderBar.vala:164
+#: src/HeaderBar.vala:113
 msgid "Star"
 msgstr ""
 
-#: src/HeaderBar.vala:169
+#: src/HeaderBar.vala:118
 msgid "Unstar"
 msgstr ""
 
-#: src/HeaderBar.vala:181
+#: src/HeaderBar.vala:130
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Supprimer la conversation"
 
-#: src/HeaderBar.vala:188
+#: src/HeaderBar.vala:137
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Bouger la conversation à la poubelle (Suppr, Retour Arrière)"
 
-#: src/HeaderBar.vala:195
+#: src/HeaderBar.vala:144
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Bouger la conversation à la poubelle (Suppr, Retour Arrière)"
@@ -131,19 +107,43 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:75
+#: src/MainWindow.vala:80
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Tout le Courrier"
 
-#: src/MainWindow.vala:346
+#: src/MainWindow.vala:156
+msgid "Fetch new messages"
+msgstr ""
+
+#: src/MainWindow.vala:163
+msgid "Fetching new messages"
+msgstr ""
+
+#: src/MainWindow.vala:173
+#, fuzzy
+#| msgid "Archive conversations (A)"
+msgid "Hide read conversations"
+msgstr "Archiver les conversations (A)"
+
+#: src/MainWindow.vala:175
+#, fuzzy
+msgid "Hide unstarred conversations"
+msgstr "Supprimer la conversation"
+
+#: src/MainWindow.vala:192
+#, fuzzy
+msgid "Filter Conversations"
+msgstr "Supprimer la conversation"
+
+#: src/MainWindow.vala:399
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:358
+#: src/MainWindow.vala:411
 msgid "Undo"
 msgstr ""
 

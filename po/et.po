@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-24 17:49+0000\n"
+"POT-Creation-Date: 2021-09-27 17:18+0000\n"
 "PO-Revision-Date: 2017-02-02 09:29+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/geary/language/"
@@ -24,98 +24,71 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 "X-Generator: Launchpad (build 18330)\n"
 
-#: src/HeaderBar.vala:45
+#: src/HeaderBar.vala:40
 #, fuzzy
 msgid "Compose new message"
 msgstr "%d uus kiri"
 
-#: src/HeaderBar.vala:54
-#, fuzzy
-msgid "Fetch new messages"
-msgstr "%d uus kiri"
-
-#: src/HeaderBar.vala:61
-#, fuzzy
-msgid "Fetching new messages"
-msgstr "%d uus kiri"
-
-#: src/HeaderBar.vala:74
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr "Otsi kirjadest..."
 
-#: src/HeaderBar.vala:78
-#, fuzzy
-#| msgid "Add label to conversations"
-msgid "Hide read conversations"
-msgstr "Sildista kui..."
-
-#: src/HeaderBar.vala:80
-#, fuzzy
-#| msgid "Add label to conversations"
-msgid "Hide unstarred conversations"
-msgstr "Sildista kui..."
-
-#: src/HeaderBar.vala:97
-#, fuzzy
-msgid "Filter Conversations"
-msgstr "Märgi kui..."
-
-#: src/HeaderBar.vala:101
+#: src/HeaderBar.vala:50
 msgid "Always Show Remote Images"
 msgstr ""
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:53
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:127
+#: src/HeaderBar.vala:76
 msgid "Menu"
 msgstr ""
 
-#: src/HeaderBar.vala:134 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr ""
 
-#: src/HeaderBar.vala:141
+#: src/HeaderBar.vala:90
 #, fuzzy
 msgid "Reply All"
 msgstr "Vasta _kõigile..."
 
-#: src/HeaderBar.vala:148 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr ""
 
-#: src/HeaderBar.vala:154
+#: src/HeaderBar.vala:103
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "_Lugemata"
 
-#: src/HeaderBar.vala:159
+#: src/HeaderBar.vala:108
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Loetud"
 
-#: src/HeaderBar.vala:164
+#: src/HeaderBar.vala:113
 #, fuzzy
 msgid "Star"
 msgstr "_Lemmik"
 
-#: src/HeaderBar.vala:169
+#: src/HeaderBar.vala:118
 #, fuzzy
 msgid "Unstar"
 msgstr "Eemalda _lemmikutest"
 
-#: src/HeaderBar.vala:181
+#: src/HeaderBar.vala:130
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Märgi kui..."
 
-#: src/HeaderBar.vala:188
+#: src/HeaderBar.vala:137
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Liiguta asukohta..."
 
-#: src/HeaderBar.vala:195
+#: src/HeaderBar.vala:144
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Liiguta asukohta..."
@@ -142,20 +115,47 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:75
+#: src/MainWindow.vala:80
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Kõik"
 
-#: src/MainWindow.vala:346
+#: src/MainWindow.vala:156
+#, fuzzy
+msgid "Fetch new messages"
+msgstr "%d uus kiri"
+
+#: src/MainWindow.vala:163
+#, fuzzy
+msgid "Fetching new messages"
+msgstr "%d uus kiri"
+
+#: src/MainWindow.vala:173
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide read conversations"
+msgstr "Sildista kui..."
+
+#: src/MainWindow.vala:175
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide unstarred conversations"
+msgstr "Sildista kui..."
+
+#: src/MainWindow.vala:192
+#, fuzzy
+msgid "Filter Conversations"
+msgstr "Märgi kui..."
+
+#: src/MainWindow.vala:399
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Kirjad puuduvad"
 msgstr[1] "Kirjad puuduvad"
 
-#: src/MainWindow.vala:358
+#: src/MainWindow.vala:411
 msgid "Undo"
 msgstr ""
 

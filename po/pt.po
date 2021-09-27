@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-24 17:49+0000\n"
+"POT-Creation-Date: 2021-09-27 17:18+0000\n"
 "PO-Revision-Date: 2021-07-19 03:00+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/"
@@ -27,95 +27,63 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:45
+#: src/HeaderBar.vala:40
 msgid "Compose new message"
 msgstr "Criar nova mensagem"
 
-#: src/HeaderBar.vala:54
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
-msgid "Fetch new messages"
-msgstr "%d nova mensagem"
-
-#: src/HeaderBar.vala:61
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
-msgid "Fetching new messages"
-msgstr "%d nova mensagem"
-
-#: src/HeaderBar.vala:74
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr "Procurar correio"
 
-#: src/HeaderBar.vala:78
-#, fuzzy
-#| msgid "Mark conversations"
-msgid "Hide read conversations"
-msgstr "Marcar conversas"
-
-#: src/HeaderBar.vala:80
-#, fuzzy
-#| msgid "Mark conversations"
-msgid "Hide unstarred conversations"
-msgstr "Marcar conversas"
-
-#: src/HeaderBar.vala:97
-#, fuzzy
-#| msgid "Delete Conversation"
-msgid "Filter Conversations"
-msgstr "Apagar Conversa"
-
-#: src/HeaderBar.vala:101
+#: src/HeaderBar.vala:50
 msgid "Always Show Remote Images"
 msgstr "Mostrar sempre imagens remotas"
 
-#: src/HeaderBar.vala:104
+#: src/HeaderBar.vala:53
 msgid "Account Settings…"
 msgstr "Definições de Conta…"
 
-#: src/HeaderBar.vala:127
+#: src/HeaderBar.vala:76
 msgid "Menu"
 msgstr "Menu"
 
-#: src/HeaderBar.vala:134 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Responder"
 
-#: src/HeaderBar.vala:141
+#: src/HeaderBar.vala:90
 msgid "Reply All"
 msgstr "Responder a todos"
 
-#: src/HeaderBar.vala:148 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Reencaminhar"
 
-#: src/HeaderBar.vala:154
+#: src/HeaderBar.vala:103
 msgid "Mark as Unread"
 msgstr "Marcar como não lido"
 
-#: src/HeaderBar.vala:159
+#: src/HeaderBar.vala:108
 msgid "Mark as Read"
 msgstr "Marcar como Lido"
 
-#: src/HeaderBar.vala:164
+#: src/HeaderBar.vala:113
 msgid "Star"
 msgstr "Favorito"
 
-#: src/HeaderBar.vala:169
+#: src/HeaderBar.vala:118
 msgid "Unstar"
 msgstr "Remover favorito"
 
-#: src/HeaderBar.vala:181
+#: src/HeaderBar.vala:130
 msgid "Mark Conversation"
 msgstr "Sinalizar conversação"
 
-#: src/HeaderBar.vala:188
+#: src/HeaderBar.vala:137
 msgid "Move conversations to archive"
 msgstr "Mover conversas para o arquivo"
 
-#: src/HeaderBar.vala:195
+#: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
 msgstr "Mover conversas para o Lixo"
 
@@ -144,17 +112,49 @@ msgid_plural "%s from %u senders"
 msgstr[0] "Mostrar sempre do remetente"
 msgstr[1] "Mostrar sempre do remetente"
 
-#: src/MainWindow.vala:75
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "Correio"
 
-#: src/MainWindow.vala:346
+#: src/MainWindow.vala:156
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetch new messages"
+msgstr "%d nova mensagem"
+
+#: src/MainWindow.vala:163
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetching new messages"
+msgstr "%d nova mensagem"
+
+#: src/MainWindow.vala:173
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide read conversations"
+msgstr "Marcar conversas"
+
+#: src/MainWindow.vala:175
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide unstarred conversations"
+msgstr "Marcar conversas"
+
+#: src/MainWindow.vala:192
+#, fuzzy
+#| msgid "Delete Conversation"
+msgid "Filter Conversations"
+msgstr "Apagar Conversa"
+
+#: src/MainWindow.vala:399
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Mensagem eliminada"
 msgstr[1] "Mensagens eliminadas"
 
-#: src/MainWindow.vala:358
+#: src/MainWindow.vala:411
 msgid "Undo"
 msgstr "Anular"
 
