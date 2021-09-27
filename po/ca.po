@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-24 17:49+0000\n"
-"PO-Revision-Date: 2021-09-22 20:18+0000\n"
+"PO-Revision-Date: 2021-09-27 15:07+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -28,18 +28,12 @@ msgid "Compose new message"
 msgstr "Redacta un missatge nou"
 
 #: src/HeaderBar.vala:54
-#, fuzzy
-#| msgid "%u new message"
-#| msgid_plural "%u new messages"
 msgid "Fetch new messages"
-msgstr "%u missatge nou"
+msgstr "Obtén missatges nous"
 
 #: src/HeaderBar.vala:61
-#, fuzzy
-#| msgid "%u new message"
-#| msgid_plural "%u new messages"
 msgid "Fetching new messages"
-msgstr "%u missatge nou"
+msgstr "S'obtenen missatges nous."
 
 #: src/HeaderBar.vala:74
 msgid "Search Mail"

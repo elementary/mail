@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-24 17:49+0000\n"
-"PO-Revision-Date: 2021-09-24 14:28+0000\n"
-"Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
+"PO-Revision-Date: 2021-09-25 12:35+0000\n"
+"Last-Translator: asdffdsdaf <asdffdsdaf@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/extra/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -67,7 +67,7 @@ msgstr "Работа с Gmail, Yahoo! Mail, и другими популярны
 
 #: data/io.elementary.mail.appdata.xml.in:27
 msgid "New features:"
-msgstr ""
+msgstr "Новые возможности:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Send a notification when new messages arrive"
@@ -79,13 +79,11 @@ msgstr "Добавлена кнопка для ручного получения
 
 #: data/io.elementary.mail.appdata.xml.in:31
 msgid "Automatically select the next message after deleting"
-msgstr ""
+msgstr "Автоматический выбор следующего сообщения после удаления"
 
 #: data/io.elementary.mail.appdata.xml.in:32
-#, fuzzy
-#| msgid "Fix a crash on startup for some conversations"
 msgid "Filter unread or starred conversations"
-msgstr "Исправлен сбой при запуске некоторых бесед"
+msgstr "Сортировка непрочитанных или бесед в избранном"
 
 #: data/io.elementary.mail.appdata.xml.in:34
 #: data/io.elementary.mail.appdata.xml.in:48
@@ -93,16 +91,12 @@ msgid "Fixes:"
 msgstr "Исправления:"
 
 #: data/io.elementary.mail.appdata.xml.in:36
-#, fuzzy
-#| msgid "Make sure we don't save sent messages twice for some account types"
 msgid "Make sure we don't save sent messages twice for outlook.com accounts"
-msgstr ""
-"Исправлен недостаток двойного сохранения отправленных сообщений для "
-"некоторых типов учетных записей"
+msgstr "Исправлена отправка сообщений для аккаунтов outlook.com"
 
 #: data/io.elementary.mail.appdata.xml.in:37
 msgid "Fix a potential crash when changing folders"
-msgstr ""
+msgstr "Исправлен вероятный сбой при смене папок"
 
 #: data/io.elementary.mail.appdata.xml.in:39
 #: data/io.elementary.mail.appdata.xml.in:54

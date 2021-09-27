@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-24 17:49+0000\n"
-"PO-Revision-Date: 2021-09-23 14:49+0000\n"
+"PO-Revision-Date: 2021-09-27 02:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/"
-">\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/>"
+"\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -68,7 +68,7 @@ msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:27
 msgid "New features:"
-msgstr ""
+msgstr "新機能:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Send a notification when new messages arrive"
@@ -76,11 +76,11 @@ msgstr "メッセージ受信時に通知を表示する機能を追加"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Add a button to manually fetch new messages"
-msgstr ""
+msgstr "手動で新規メッセージを取得するボタンを追加"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 msgid "Automatically select the next message after deleting"
-msgstr ""
+msgstr "メッセージの削除後、次のメッセージを自動的に選択するように修正"
 
 #: data/io.elementary.mail.appdata.xml.in:32
 msgid "Filter unread or starred conversations"
@@ -99,7 +99,7 @@ msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:37
 msgid "Fix a potential crash when changing folders"
-msgstr ""
+msgstr "フォルダー変更時にクラッシュする可能性のある不具合を修正"
 
 #: data/io.elementary.mail.appdata.xml.in:39
 #: data/io.elementary.mail.appdata.xml.in:54
