@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-24 17:49+0000\n"
-"PO-Revision-Date: 2021-09-23 10:38+0000\n"
+"PO-Revision-Date: 2021-09-27 15:07+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/extra/ca/>\n"
 "Language: ca\n"
@@ -66,7 +66,7 @@ msgstr "Funciona amb Gmail, Yahoo! i altres servidors d'IMAP populars."
 
 #: data/io.elementary.mail.appdata.xml.in:27
 msgid "New features:"
-msgstr ""
+msgstr "Característiques noves:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Send a notification when new messages arrive"
@@ -74,11 +74,12 @@ msgstr "S'envia una notificació quan arriben missatges nous."
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Add a button to manually fetch new messages"
-msgstr ""
+msgstr "Addicció d'un botó per obtenir els missatges nous manualment"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 msgid "Automatically select the next message after deleting"
 msgstr ""
+"Se selecciona automàticament el missatge següent després d'una supressió."
 
 #: data/io.elementary.mail.appdata.xml.in:32
 msgid "Filter unread or starred conversations"
@@ -97,7 +98,7 @@ msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:37
 msgid "Fix a potential crash when changing folders"
-msgstr ""
+msgstr "Correcció d'una fallada potencial en canviar de carpeta"
 
 #: data/io.elementary.mail.appdata.xml.in:39
 #: data/io.elementary.mail.appdata.xml.in:54
