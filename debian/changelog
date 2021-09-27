@@ -1,3 +1,30 @@
+io.elementary.mail (6.2.0) focal; urgency=medium
+
+  * Release 6.2.0 (#699)
+  * Update translation files
+  * Update translation template
+  * MainWindow: Add an actionbar to conversationlist (#703)
+  * Add aarch64 architecture support to flatpak builds (#706)
+  * Temporarily disable the filter function while batch removals are
+    made (#701)
+  * Manual Refresh (#680)
+  * Update screenshot
+  * Automatically select next message after delete. (#660)
+  * Avoid storing to "Sent" twice for outlook.com (#702)
+  * Filter conversations for "Unread" and/or "Starred" (#678)
+  * Show time in message header (#683)
+  * Reorder conversations (#665)
+  * Adjust InboxMonitor start (#691)
+  * Improve search performance (#676)
+  * Add Support for the org.freedesktop.portal.Email portal (#682)
+  * po: Add InboxMonitor.vala (#692)
+  * Meson: rename daemon and remove config (#686)
+  * Notifications (#679)
+  * Session: do not use our own Camel.Sasl subclass (#681)
+  * vapi: Use Camel vapi from latest master (#667)
+
+ -- Cody Garver <cody@elementary.io>  Mon, 27 Sep 2021 20:39:19 +0000
+
 io.elementary.mail (6.1.1) focal; urgency=medium
 
   * Release 6.1.1 (#669)
