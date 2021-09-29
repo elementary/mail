@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 07:45+0000\n"
+"POT-Creation-Date: 2021-09-27 17:18+0000\n"
 "PO-Revision-Date: 2017-05-04 20:01+0000\n"
 "Last-Translator: Rokar <rokartv10@gmail.com>\n"
 "Language-Team: ku (generated) <https://l10n.elementary.io/projects/mail/mail/"
@@ -21,77 +21,65 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:43
+#: src/HeaderBar.vala:40
 #, fuzzy
 msgid "Compose new message"
 msgstr "Peyamekê Nû Biafirînê"
 
-#: src/HeaderBar.vala:49
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr ""
 
-#: src/HeaderBar.vala:53
-msgid "Hide read conversations"
-msgstr ""
-
-#: src/HeaderBar.vala:55
-msgid "Hide unstarred conversations"
-msgstr ""
-
-#: src/HeaderBar.vala:72
-msgid "Filter Conversations"
-msgstr ""
-
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:50
 msgid "Always Show Remote Images"
 msgstr ""
 
-#: src/HeaderBar.vala:79
+#: src/HeaderBar.vala:53
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:102
+#: src/HeaderBar.vala:76
 msgid "Menu"
 msgstr "Menû"
 
-#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Bersiv"
 
-#: src/HeaderBar.vala:116
+#: src/HeaderBar.vala:90
 #, fuzzy
 msgid "Reply All"
 msgstr "Bersiv"
 
-#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Pêşve"
 
-#: src/HeaderBar.vala:129
+#: src/HeaderBar.vala:103
 msgid "Mark as Unread"
 msgstr ""
 
-#: src/HeaderBar.vala:134
+#: src/HeaderBar.vala:108
 msgid "Mark as Read"
 msgstr ""
 
-#: src/HeaderBar.vala:139
+#: src/HeaderBar.vala:113
 msgid "Star"
 msgstr ""
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:118
 msgid "Unstar"
 msgstr ""
 
-#: src/HeaderBar.vala:156
+#: src/HeaderBar.vala:130
 msgid "Mark Conversation"
 msgstr ""
 
-#: src/HeaderBar.vala:163
+#: src/HeaderBar.vala:137
 msgid "Move conversations to archive"
 msgstr ""
 
-#: src/HeaderBar.vala:170
+#: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
 msgstr ""
 
@@ -117,17 +105,39 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:73
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "E-Peyam"
 
-#: src/MainWindow.vala:312
+#: src/MainWindow.vala:156
+#, fuzzy
+msgid "Fetch new messages"
+msgstr "Peyamekê Nû Biafirînê"
+
+#: src/MainWindow.vala:163
+#, fuzzy
+msgid "Fetching new messages"
+msgstr "Peyamekê Nû Biafirînê"
+
+#: src/MainWindow.vala:173
+msgid "Hide read conversations"
+msgstr ""
+
+#: src/MainWindow.vala:175
+msgid "Hide unstarred conversations"
+msgstr ""
+
+#: src/MainWindow.vala:192
+msgid "Filter Conversations"
+msgstr ""
+
+#: src/MainWindow.vala:399
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:324
+#: src/MainWindow.vala:411
 #, fuzzy
 msgid "Undo"
 msgstr "_Vegerîne"

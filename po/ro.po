@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 07:45+0000\n"
+"POT-Creation-Date: 2021-09-27 17:18+0000\n"
 "PO-Revision-Date: 2017-01-21 10:51+0000\n"
 "Last-Translator: Marius Albina <marius.albina@gmail.com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
@@ -26,88 +26,70 @@ msgstr ""
 "X-Generator: Launchpad (build 18330)\n"
 "X-Project-Style: gnome\n"
 
-#: src/HeaderBar.vala:43
+#: src/HeaderBar.vala:40
 #, fuzzy
 msgid "Compose new message"
 msgstr "Compune mesaj nou"
 
-#: src/HeaderBar.vala:49
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr "Caută mesaj"
 
-#: src/HeaderBar.vala:53
-#, fuzzy
-#| msgid "Mark conversations"
-msgid "Hide read conversations"
-msgstr "Marchează conversațiile"
-
-#: src/HeaderBar.vala:55
-#, fuzzy
-#| msgid "Mark conversations"
-msgid "Hide unstarred conversations"
-msgstr "Marchează conversațiile"
-
-#: src/HeaderBar.vala:72
-#, fuzzy
-#| msgid "Delete Conversation"
-msgid "Filter Conversations"
-msgstr "Şterge conversaţie"
-
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:50
 #, fuzzy
 msgid "Always Show Remote Images"
 msgstr "Arată întotdeauna imaginile la distanţă:"
 
-#: src/HeaderBar.vala:79
+#: src/HeaderBar.vala:53
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:102
+#: src/HeaderBar.vala:76
 msgid "Menu"
 msgstr "Meniu"
 
-#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Răspunde"
 
-#: src/HeaderBar.vala:116
+#: src/HeaderBar.vala:90
 #, fuzzy
 msgid "Reply All"
 msgstr "Răspund_e tuturor"
 
-#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Redirecţionează"
 
-#: src/HeaderBar.vala:129
+#: src/HeaderBar.vala:103
 msgid "Mark as Unread"
 msgstr "Marchează ca necitit"
 
-#: src/HeaderBar.vala:134
+#: src/HeaderBar.vala:108
 msgid "Mark as Read"
 msgstr "Marchează ca citit"
 
-#: src/HeaderBar.vala:139
+#: src/HeaderBar.vala:113
 #, fuzzy
 msgid "Star"
 msgstr "Marchează cu o _stea"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:118
 #, fuzzy
 msgid "Unstar"
 msgstr "Eliminați _steaua"
 
-#: src/HeaderBar.vala:156
+#: src/HeaderBar.vala:130
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Marchează conversaţia"
 
-#: src/HeaderBar.vala:163
+#: src/HeaderBar.vala:137
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Mută conversațiile"
 
-#: src/HeaderBar.vala:170
+#: src/HeaderBar.vala:144
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Mută conversațiile"
@@ -139,11 +121,43 @@ msgstr[0] "Arată întotdeauna de la expeditor"
 msgstr[1] "Arată întotdeauna de la expeditor"
 msgstr[2] "Arată întotdeauna de la expeditor"
 
-#: src/MainWindow.vala:73
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "Poştă electronică"
 
-#: src/MainWindow.vala:312
+#: src/MainWindow.vala:156
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetch new messages"
+msgstr "%d mesaj nou"
+
+#: src/MainWindow.vala:163
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetching new messages"
+msgstr "%d mesaj nou"
+
+#: src/MainWindow.vala:173
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide read conversations"
+msgstr "Marchează conversațiile"
+
+#: src/MainWindow.vala:175
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide unstarred conversations"
+msgstr "Marchează conversațiile"
+
+#: src/MainWindow.vala:192
+#, fuzzy
+#| msgid "Delete Conversation"
+msgid "Filter Conversations"
+msgstr "Şterge conversaţie"
+
+#: src/MainWindow.vala:399
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -151,7 +165,7 @@ msgstr[0] "Nici o conversație selectată."
 msgstr[1] "Nici o conversație selectată."
 msgstr[2] "Nici o conversație selectată."
 
-#: src/MainWindow.vala:324
+#: src/MainWindow.vala:411
 #, fuzzy
 msgid "Undo"
 msgstr "_Anulează"

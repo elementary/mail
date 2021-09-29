@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 07:45+0000\n"
+"POT-Creation-Date: 2021-09-27 17:18+0000\n"
 "PO-Revision-Date: 2020-05-30 13:11+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/mail/cs/>\n"
@@ -24,83 +24,65 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 07:52+0000\n"
 
-#: src/HeaderBar.vala:43
+#: src/HeaderBar.vala:40
 msgid "Compose new message"
 msgstr "Napsat novou zprávu"
 
-#: src/HeaderBar.vala:49
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr "Hledat poštu"
 
-#: src/HeaderBar.vala:53
-#, fuzzy
-#| msgid "Mark conversations"
-msgid "Hide read conversations"
-msgstr "Označit konverzace"
-
-#: src/HeaderBar.vala:55
-#, fuzzy
-#| msgid "Mark conversations"
-msgid "Hide unstarred conversations"
-msgstr "Označit konverzace"
-
-#: src/HeaderBar.vala:72
-#, fuzzy
-#| msgid "Delete Conversation"
-msgid "Filter Conversations"
-msgstr "Odstranit konverzaci"
-
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:50
 msgid "Always Show Remote Images"
 msgstr "Vždy zobrazovat externí obrázky"
 
-#: src/HeaderBar.vala:79
+#: src/HeaderBar.vala:53
 msgid "Account Settings…"
 msgstr "Nastavení účtu…"
 
-#: src/HeaderBar.vala:102
+#: src/HeaderBar.vala:76
 msgid "Menu"
 msgstr "Nabídka"
 
-#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Odpovědět"
 
-#: src/HeaderBar.vala:116
+#: src/HeaderBar.vala:90
 msgid "Reply All"
 msgstr "Odpovědět všem"
 
-#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Přeposlat"
 
-#: src/HeaderBar.vala:129
+#: src/HeaderBar.vala:103
 msgid "Mark as Unread"
 msgstr "Označit jako nepřečtené"
 
-#: src/HeaderBar.vala:134
+#: src/HeaderBar.vala:108
 msgid "Mark as Read"
 msgstr "Označit jako přečtené"
 
-#: src/HeaderBar.vala:139
+#: src/HeaderBar.vala:113
 msgid "Star"
 msgstr "Označit hvězdičkou"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:118
 msgid "Unstar"
 msgstr "Odebrat hvězdičku"
 
-#: src/HeaderBar.vala:156
+#: src/HeaderBar.vala:130
 msgid "Mark Conversation"
 msgstr "Označit konverzaci"
 
-#: src/HeaderBar.vala:163
+#: src/HeaderBar.vala:137
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
 msgstr "Přesunout konverzace do koše"
 
-#: src/HeaderBar.vala:170
+#: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
 msgstr "Přesunout konverzace do koše"
 
@@ -131,18 +113,50 @@ msgstr[0] "Zobrazit vždy od odesílatele"
 msgstr[1] "Zobrazit vždy od odesílatele"
 msgstr[2] "Zobrazit vždy od odesílatele"
 
-#: src/MainWindow.vala:73
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "Mail"
 
-#: src/MainWindow.vala:312
+#: src/MainWindow.vala:156
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetch new messages"
+msgstr "%d nová zpráva"
+
+#: src/MainWindow.vala:163
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetching new messages"
+msgstr "%d nová zpráva"
+
+#: src/MainWindow.vala:173
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide read conversations"
+msgstr "Označit konverzace"
+
+#: src/MainWindow.vala:175
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide unstarred conversations"
+msgstr "Označit konverzace"
+
+#: src/MainWindow.vala:192
+#, fuzzy
+#| msgid "Delete Conversation"
+msgid "Filter Conversations"
+msgstr "Odstranit konverzaci"
+
+#: src/MainWindow.vala:399
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Žádná vybraná zpráva"
 msgstr[1] "Žádné vybrané zprávy"
 msgstr[2] "Žádné vybrané zprávy"
 
-#: src/MainWindow.vala:324
+#: src/MainWindow.vala:411
 msgid "Undo"
 msgstr "Zpět"
 

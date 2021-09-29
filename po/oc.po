@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 07:45+0000\n"
+"POT-Creation-Date: 2021-09-27 17:18+0000\n"
 "PO-Revision-Date: 2020-08-29 21:13+0000\n"
 "Last-Translator: Mejans <farga@mejans.fr>\n"
 "Language-Team: Occitan <https://l10n.elementary.io/projects/mail/mail/oc/>\n"
@@ -13,75 +13,63 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 3.9.1\n"
 
-#: src/HeaderBar.vala:43
+#: src/HeaderBar.vala:40
 msgid "Compose new message"
 msgstr ""
 
-#: src/HeaderBar.vala:49
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr "Recercar"
 
-#: src/HeaderBar.vala:53
-msgid "Hide read conversations"
-msgstr ""
-
-#: src/HeaderBar.vala:55
-msgid "Hide unstarred conversations"
-msgstr ""
-
-#: src/HeaderBar.vala:72
-msgid "Filter Conversations"
-msgstr ""
-
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:50
 msgid "Always Show Remote Images"
 msgstr ""
 
-#: src/HeaderBar.vala:79
+#: src/HeaderBar.vala:53
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:102
+#: src/HeaderBar.vala:76
 msgid "Menu"
 msgstr "Menú"
 
-#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Respondre"
 
-#: src/HeaderBar.vala:116
+#: src/HeaderBar.vala:90
 msgid "Reply All"
 msgstr ""
 
-#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Far seguir"
 
-#: src/HeaderBar.vala:129
+#: src/HeaderBar.vala:103
 msgid "Mark as Unread"
 msgstr ""
 
-#: src/HeaderBar.vala:134
+#: src/HeaderBar.vala:108
 msgid "Mark as Read"
 msgstr ""
 
-#: src/HeaderBar.vala:139
+#: src/HeaderBar.vala:113
 msgid "Star"
 msgstr "Favorit"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:118
 msgid "Unstar"
 msgstr "Demarcar"
 
-#: src/HeaderBar.vala:156
+#: src/HeaderBar.vala:130
 msgid "Mark Conversation"
 msgstr ""
 
-#: src/HeaderBar.vala:163
+#: src/HeaderBar.vala:137
 msgid "Move conversations to archive"
 msgstr ""
 
-#: src/HeaderBar.vala:170
+#: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
 msgstr ""
 
@@ -107,17 +95,37 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:73
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr ""
 
-#: src/MainWindow.vala:312
+#: src/MainWindow.vala:156
+msgid "Fetch new messages"
+msgstr ""
+
+#: src/MainWindow.vala:163
+msgid "Fetching new messages"
+msgstr ""
+
+#: src/MainWindow.vala:173
+msgid "Hide read conversations"
+msgstr ""
+
+#: src/MainWindow.vala:175
+msgid "Hide unstarred conversations"
+msgstr ""
+
+#: src/MainWindow.vala:192
+msgid "Filter Conversations"
+msgstr ""
+
+#: src/MainWindow.vala:399
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:324
+#: src/MainWindow.vala:411
 msgid "Undo"
 msgstr "Anullar"
 

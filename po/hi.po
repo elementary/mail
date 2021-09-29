@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 07:45+0000\n"
+"POT-Creation-Date: 2021-09-27 17:18+0000\n"
 "PO-Revision-Date: 2018-12-19 00:07+0000\n"
 "Last-Translator: Mayank Arya <mmaismma@hotmail.com>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/mail/mail/hi/>\n"
@@ -22,87 +22,70 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:43
+#: src/HeaderBar.vala:40
 msgid "Compose new message"
 msgstr "नया पत्र लिखे"
 
-#: src/HeaderBar.vala:49
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr "पत्र ढूंदे।"
 
-#: src/HeaderBar.vala:53
-#, fuzzy
-#| msgid "Add label to conversations"
-msgid "Hide read conversations"
-msgstr "अधिक संवाद को लेबल जोड़े"
-
-#: src/HeaderBar.vala:55
-#, fuzzy
-#| msgid "Add label to conversations"
-msgid "Hide unstarred conversations"
-msgstr "अधिक संवाद को लेबल जोड़े"
-
-#: src/HeaderBar.vala:72
-#, fuzzy
-msgid "Filter Conversations"
-msgstr "अधिक संवाद संकेत"
-
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:50
 msgid "Always Show Remote Images"
 msgstr ""
 
-#: src/HeaderBar.vala:79
+#: src/HeaderBar.vala:53
 msgid "Account Settings…"
 msgstr "खाता सेटिंग्स…"
 
-#: src/HeaderBar.vala:102
+#: src/HeaderBar.vala:76
 msgid "Menu"
 msgstr "मेनू"
 
-#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "जवाब दें"
 
-#: src/HeaderBar.vala:116
+#: src/HeaderBar.vala:90
 msgid "Reply All"
 msgstr "सबको जवाब दे"
 
-#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "फॉरवर्ड"
 
-#: src/HeaderBar.vala:129
+#: src/HeaderBar.vala:103
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "पढ़ा नही संकेत करे"
 
-#: src/HeaderBar.vala:134
+#: src/HeaderBar.vala:108
 #, fuzzy
 msgid "Mark as Read"
 msgstr "पढ़ लिया संकेत करे"
 
-#: src/HeaderBar.vala:139
+#: src/HeaderBar.vala:113
 #, fuzzy
 msgid "Star"
 msgstr "तारा"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:118
 #, fuzzy
 msgid "Unstar"
 msgstr "तारा हटाए"
 
-#: src/HeaderBar.vala:156
+#: src/HeaderBar.vala:130
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "अधिक संवाद संकेत"
 
-#: src/HeaderBar.vala:163
+#: src/HeaderBar.vala:137
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
 msgstr "संवाद तो ट्रैश में डाले"
 
-#: src/HeaderBar.vala:170
+#: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
 msgstr "संवाद तो ट्रैश में डाले"
 
@@ -129,19 +112,48 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:73
+#: src/MainWindow.vala:80
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "सब पत्र"
 
-#: src/MainWindow.vala:312
+#: src/MainWindow.vala:156
+#, fuzzy
+#| msgid "Compose new message"
+msgid "Fetch new messages"
+msgstr "नया पत्र लिखे"
+
+#: src/MainWindow.vala:163
+#, fuzzy
+#| msgid "Compose new message"
+msgid "Fetching new messages"
+msgstr "नया पत्र लिखे"
+
+#: src/MainWindow.vala:173
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide read conversations"
+msgstr "अधिक संवाद को लेबल जोड़े"
+
+#: src/MainWindow.vala:175
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide unstarred conversations"
+msgstr "अधिक संवाद को लेबल जोड़े"
+
+#: src/MainWindow.vala:192
+#, fuzzy
+msgid "Filter Conversations"
+msgstr "अधिक संवाद संकेत"
+
+#: src/MainWindow.vala:399
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:324
+#: src/MainWindow.vala:411
 msgid "Undo"
 msgstr ""
 

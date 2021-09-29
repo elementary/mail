@@ -47,13 +47,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         threads = new Gee.HashMap<string, Camel.FolderThread> ();
         list_store = new ConversationListStore ();
         list_store.set_sort_func (thread_sort_function);
-        list_store.set_filter_func ((obj) => {
-            if (obj is ConversationItemModel) {
-                return !((ConversationItemModel)obj).deleted;
-            } else {
-                return false;
-            }
-        });
+        list_store.set_filter_func (filter_function);
 
         model = list_store;
         move_handler = new MoveHandler ();
@@ -194,6 +188,21 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         list_store.items_changed (0, 0, list_store.get_n_items ());
     }
 
+    public async void refresh_folder (GLib.Cancellable? cancellable = null) {
+        lock (folders) {
+            foreach (var folder in folders.values) {
+                try {
+                    yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
+                } catch (Error e) {
+                    warning ("Error fetching messages for '%s' from '%s': %s",
+                    folder.display_name,
+                    folder.parent_store.display_name,
+                    e.message);
+                }
+            }
+        }
+    }
+
     private void folder_changed (Camel.FolderChangeInfo change_info, string service_uid, GLib.Cancellable cancellable) {
         if (cancellable.is_cancelled ()) {
             return;
@@ -201,6 +210,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
         lock (conversations) {
             lock (threads) {
+                list_store.set_filter_func (null);
                 var search_result_uids = get_search_result_uids (service_uid);
                 if (search_result_uids == null) {
                     return;
@@ -239,6 +249,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                     child = child.next;
                 }
 
+                list_store.set_filter_func (filter_function);
                 list_store.items_changed (0, removed, list_store.get_n_items ());
             }
         }
@@ -300,6 +311,14 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         var item = new ConversationItemModel (child, service_uid);
         conversations[child.message.uid] = item;
         list_store.add (item);
+    }
+
+    private static bool filter_function (GLib.Object obj) {
+        if (obj is ConversationItemModel) {
+            return !((ConversationItemModel)obj).deleted;
+        } else {
+            return false;
+        }
     }
 
     private static int thread_sort_function (ConversationItemModel item1, ConversationItemModel item2) {
@@ -374,6 +393,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         var trash_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
 
         var selected_rows = get_selected_rows ();
+        int selected_rows_start_index = list_store.get_index_of (selected_rows.to_array ()[0]);
+
         foreach (unowned var selected_row in selected_rows) {
             var selected_item_model = (ConversationItemModel) selected_row;
 
@@ -387,7 +408,10 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         foreach (var service_uid in trash_threads.keys) {
             deleted += move_handler.delete_threads (folders[service_uid], trash_threads[service_uid]);
         }
+
         list_store.items_changed (0, 0, list_store.get_n_items ());
+        select_row_at_index (selected_rows_start_index + 1);
+
         return deleted;
     }
 

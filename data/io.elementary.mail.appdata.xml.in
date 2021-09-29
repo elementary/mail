@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2017-2018 elementary, Inc. <contact@elementary.io> -->
+<!-- Copyright 2017-2021 elementary, Inc. <contact@elementary.io> -->
 <component type="desktop-application">
   <id>io.elementary.mail</id>
   <metadata_license>CC0-1.0</metadata_license>
@@ -22,14 +22,23 @@
       <binary>io.elementary.mail</binary>
   </provides>
   <releases>
-    <release version="6.2.0" date="2021-09-09" urgency="medium">
+    <release version="6.2.0" date="2021-09-27" urgency="medium">
       <description>
+        <p>New features:</p>
+          <ul>
+            <li>Send a notification when new messages arrive</li>
+            <li>Add a button to manually fetch new messages</li>
+            <li>Automatically select the next message after deleting</li>
+            <li>Filter unread or starred conversations</li>
+          </ul>
+        <p>Fixes:</p>
+          <ul>
+            <li>Make sure we don't save sent messages twice for outlook.com accounts</li>
+            <li>Fix a potential crash when changing folders</li>
+          </ul>
         <p>Improvements:</p>
         <ul>
-          <li>Send a notification when new messages arrive</li>
           <li>Improve search performance</li>
-          <li>Filter unread or starred conversations</li>
-          <li>Make sure we don't save sent messages twice for outlook.com accounts</li>
           <li>Updated translations</li>
         </ul>
       </description>

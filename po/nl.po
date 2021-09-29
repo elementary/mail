@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 07:45+0000\n"
+"POT-Creation-Date: 2021-09-27 17:18+0000\n"
 "PO-Revision-Date: 2019-12-30 20:31+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
@@ -29,83 +29,65 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:43
+#: src/HeaderBar.vala:40
 msgid "Compose new message"
 msgstr "Nieuw bericht opstellen"
 
-#: src/HeaderBar.vala:49
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr "Mail doorzoeken"
 
-#: src/HeaderBar.vala:53
-#, fuzzy
-#| msgid "Mark conversations"
-msgid "Hide read conversations"
-msgstr "Conversaties markeren"
-
-#: src/HeaderBar.vala:55
-#, fuzzy
-#| msgid "Mark conversations"
-msgid "Hide unstarred conversations"
-msgstr "Conversaties markeren"
-
-#: src/HeaderBar.vala:72
-#, fuzzy
-#| msgid "Delete conversation"
-msgid "Filter Conversations"
-msgstr "Gesprek verwijderen"
-
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:50
 msgid "Always Show Remote Images"
 msgstr "Laat altijd externe afbeeldingen zien"
 
-#: src/HeaderBar.vala:79
+#: src/HeaderBar.vala:53
 msgid "Account Settings…"
 msgstr "Account Instellingen…"
 
-#: src/HeaderBar.vala:102
+#: src/HeaderBar.vala:76
 msgid "Menu"
 msgstr "Menu"
 
-#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Beantwoorden"
 
-#: src/HeaderBar.vala:116
+#: src/HeaderBar.vala:90
 msgid "Reply All"
 msgstr "Allen beantwoorden"
 
-#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Doorsturen"
 
-#: src/HeaderBar.vala:129
+#: src/HeaderBar.vala:103
 msgid "Mark as Unread"
 msgstr "Als ongelezen markeren"
 
-#: src/HeaderBar.vala:134
+#: src/HeaderBar.vala:108
 msgid "Mark as Read"
 msgstr "Als gelezen markeren"
 
-#: src/HeaderBar.vala:139
+#: src/HeaderBar.vala:113
 msgid "Star"
 msgstr "Ster toevoegen"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:118
 msgid "Unstar"
 msgstr "Ster verwijderen"
 
-#: src/HeaderBar.vala:156
+#: src/HeaderBar.vala:130
 msgid "Mark Conversation"
 msgstr "Markeer conversatie"
 
-#: src/HeaderBar.vala:163
+#: src/HeaderBar.vala:137
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
 msgstr "Verplaats conversaties naar de prullenbak"
 
-#: src/HeaderBar.vala:170
+#: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
 msgstr "Verplaats conversaties naar de prullenbak"
 
@@ -134,17 +116,49 @@ msgid_plural "%s from %u senders"
 msgstr[0] "Altijd tonen van afzender"
 msgstr[1] "Altijd tonen van afzender"
 
-#: src/MainWindow.vala:73
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "Mail"
 
-#: src/MainWindow.vala:312
+#: src/MainWindow.vala:156
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetch new messages"
+msgstr "%d nieuw bericht"
+
+#: src/MainWindow.vala:163
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetching new messages"
+msgstr "%d nieuw bericht"
+
+#: src/MainWindow.vala:173
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide read conversations"
+msgstr "Conversaties markeren"
+
+#: src/MainWindow.vala:175
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide unstarred conversations"
+msgstr "Conversaties markeren"
+
+#: src/MainWindow.vala:192
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Filter Conversations"
+msgstr "Gesprek verwijderen"
+
+#: src/MainWindow.vala:399
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Bericht verwijderd"
 msgstr[1] "Berichten verwijderd"
 
-#: src/MainWindow.vala:324
+#: src/MainWindow.vala:411
 msgid "Undo"
 msgstr "Ongedaan maken"
 

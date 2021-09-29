@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 07:45+0000\n"
+"POT-Creation-Date: 2021-09-27 17:18+0000\n"
 "PO-Revision-Date: 2016-06-07 12:58+0000\n"
 "Last-Translator: Timothy <timothy.wong@rocketmail.com>\n"
 "Language-Team: Malay (Malaysia) (http://www.transifex.com/projects/p/geary/"
@@ -23,89 +23,72 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 "X-Generator: Launchpad (build 18330)\n"
 
-#: src/HeaderBar.vala:43
+#: src/HeaderBar.vala:40
 #, fuzzy
 msgid "Compose new message"
 msgstr "Gubah mesej baru (Ctrl+N, N)"
 
-#: src/HeaderBar.vala:49
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr ""
 
-#: src/HeaderBar.vala:53
-#, fuzzy
-#| msgid "Add label to conversations"
-msgid "Hide read conversations"
-msgstr "Tambah label ke perbualan"
-
-#: src/HeaderBar.vala:55
-#, fuzzy
-#| msgid "Add label to conversations"
-msgid "Hide unstarred conversations"
-msgstr "Tambah label ke perbualan"
-
-#: src/HeaderBar.vala:72
-#, fuzzy
-msgid "Filter Conversations"
-msgstr "Tanda perbualan"
-
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:50
 #, fuzzy
 msgid "Always Show Remote Images"
 msgstr "Sentiasa Tunjuk Dari Pengirim"
 
-#: src/HeaderBar.vala:79
+#: src/HeaderBar.vala:53
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:102
+#: src/HeaderBar.vala:76
 msgid "Menu"
 msgstr ""
 
-#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr ""
 
-#: src/HeaderBar.vala:116
+#: src/HeaderBar.vala:90
 #, fuzzy
 msgid "Reply All"
 msgstr "Ba_las Semua"
 
-#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr ""
 
-#: src/HeaderBar.vala:129
+#: src/HeaderBar.vala:103
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "_Tanda sebagai Belum Baca"
 
-#: src/HeaderBar.vala:134
+#: src/HeaderBar.vala:108
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Tanda sebagai Dibaca"
 
-#: src/HeaderBar.vala:139
+#: src/HeaderBar.vala:113
 #, fuzzy
 msgid "Star"
 msgstr "B_intang"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:118
 #, fuzzy
 msgid "Unstar"
 msgstr "N_yahbintang"
 
-#: src/HeaderBar.vala:156
+#: src/HeaderBar.vala:130
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Tanda perbualan"
 
-#: src/HeaderBar.vala:163
+#: src/HeaderBar.vala:137
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Alih perbualan"
 
-#: src/HeaderBar.vala:170
+#: src/HeaderBar.vala:144
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Alih perbualan"
@@ -133,20 +116,51 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:73
+#: src/MainWindow.vala:80
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Semua Mel"
 
-#: src/MainWindow.vala:312
+#: src/MainWindow.vala:156
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetch new messages"
+msgstr "%d mesej baru"
+
+#: src/MainWindow.vala:163
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetching new messages"
+msgstr "%d mesej baru"
+
+#: src/MainWindow.vala:173
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide read conversations"
+msgstr "Tambah label ke perbualan"
+
+#: src/MainWindow.vala:175
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide unstarred conversations"
+msgstr "Tambah label ke perbualan"
+
+#: src/MainWindow.vala:192
+#, fuzzy
+msgid "Filter Conversations"
+msgstr "Tanda perbualan"
+
+#: src/MainWindow.vala:399
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Tiada perbualan dipilih."
 msgstr[1] "Tiada perbualan dipilih."
 
-#: src/MainWindow.vala:324
+#: src/MainWindow.vala:411
 msgid "Undo"
 msgstr ""
 

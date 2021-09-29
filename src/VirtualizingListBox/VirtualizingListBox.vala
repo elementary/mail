@@ -704,6 +704,14 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
         }
     }
 
+    protected void select_row_at_index (int index) {
+        var row = ensure_index_visible (index);
+
+        if (row != null) {
+            select_and_activate (row);
+        }
+    }
+
     private void select_and_activate (VirtualizingListBoxRow row, bool grab_focus = true) {
         select_row_internal (row);
         update_cursor (row.model_item, grab_focus);

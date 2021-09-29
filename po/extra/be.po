@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 07:45+0000\n"
+"POT-Creation-Date: 2021-09-27 17:18+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
@@ -49,9 +49,7 @@ msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:27
-#: data/io.elementary.mail.appdata.xml.in:45
-#: data/io.elementary.mail.appdata.xml.in:55
-msgid "Improvements:"
+msgid "New features:"
 msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:29
@@ -59,74 +57,93 @@ msgid "Send a notification when new messages arrive"
 msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:30
-msgid "Improve search performance"
+msgid "Add a button to manually fetch new messages"
 msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:31
-msgid "Filter unread or starred conversations"
+msgid "Automatically select the next message after deleting"
 msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:32
-msgid "Make sure we don't save sent messages twice for outlook.com accounts"
+msgid "Filter unread or starred conversations"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:33
-#: data/io.elementary.mail.appdata.xml.in:49
-#: data/io.elementary.mail.appdata.xml.in:62
-msgid "Updated translations"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:39
+#: data/io.elementary.mail.appdata.xml.in:34
+#: data/io.elementary.mail.appdata.xml.in:48
 msgid "Fixes:"
 msgstr ""
 
+#: data/io.elementary.mail.appdata.xml.in:36
+msgid "Make sure we don't save sent messages twice for outlook.com accounts"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:37
+msgid "Fix a potential crash when changing folders"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:39
+#: data/io.elementary.mail.appdata.xml.in:54
+#: data/io.elementary.mail.appdata.xml.in:64
+msgid "Improvements:"
+msgstr ""
+
 #: data/io.elementary.mail.appdata.xml.in:41
-msgid "Fix an issue that prevented some messaging from rendering at all"
+msgid "Improve search performance"
 msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:42
+#: data/io.elementary.mail.appdata.xml.in:58
+#: data/io.elementary.mail.appdata.xml.in:71
+msgid "Updated translations"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:50
+msgid "Fix an issue that prevented some messaging from rendering at all"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:51
 msgid ""
 "Set the correct \"From\" address when replying and multiple accounts are set "
 "up"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:43
+#: data/io.elementary.mail.appdata.xml.in:52
 msgid "Fix a crash on startup for some conversations"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:47
+#: data/io.elementary.mail.appdata.xml.in:56
 msgid "Only save drafts when there are new changes"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:48
+#: data/io.elementary.mail.appdata.xml.in:57
 msgid "Move Undo notification to the message view"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:57
+#: data/io.elementary.mail.appdata.xml.in:66
 msgid "Preserve conversation subjects when replying or forwarding"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:58
+#: data/io.elementary.mail.appdata.xml.in:67
 msgid "Disable the composer while messages are being sent"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:59
+#: data/io.elementary.mail.appdata.xml.in:68
 msgid "Edit saved draft messages"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:60
+#: data/io.elementary.mail.appdata.xml.in:69
 msgid "Make sure we don't save sent messages twice for some account types"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:61
+#: data/io.elementary.mail.appdata.xml.in:70
 msgid "Stability improvements"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:68
+#: data/io.elementary.mail.appdata.xml.in:77
 msgid "Complete rewrite from scratch"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:109
+#: data/io.elementary.mail.appdata.xml.in:118
 msgid "elementary, Inc."
 msgstr ""
 

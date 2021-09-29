@@ -16,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 07:45+0000\n"
-"PO-Revision-Date: 2021-09-13 13:56+0000\n"
-"Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
+"POT-Creation-Date: 2021-09-27 17:18+0000\n"
+"PO-Revision-Date: 2021-09-25 12:35+0000\n"
+"Last-Translator: asdffdsdaf <asdffdsdaf@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -29,81 +29,63 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:43
+#: src/HeaderBar.vala:40
 msgid "Compose new message"
 msgstr "Создать новое сообщение"
 
-#: src/HeaderBar.vala:49
+#: src/HeaderBar.vala:46
 msgid "Search Mail"
 msgstr "Поиск писем"
 
-#: src/HeaderBar.vala:53
-#, fuzzy
-#| msgid "Mark conversations"
-msgid "Hide read conversations"
-msgstr "Отметить беседы"
-
-#: src/HeaderBar.vala:55
-#, fuzzy
-#| msgid "Mark conversations"
-msgid "Hide unstarred conversations"
-msgstr "Отметить беседы"
-
-#: src/HeaderBar.vala:72
-#, fuzzy
-#| msgid "Delete Conversation"
-msgid "Filter Conversations"
-msgstr "Удалить беседу"
-
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:50
 msgid "Always Show Remote Images"
 msgstr "Всегда показывать удаленные изображения"
 
-#: src/HeaderBar.vala:79
+#: src/HeaderBar.vala:53
 msgid "Account Settings…"
 msgstr "Параметры учетной записи…"
 
-#: src/HeaderBar.vala:102
+#: src/HeaderBar.vala:76
 msgid "Menu"
 msgstr "Меню"
 
-#: src/HeaderBar.vala:109 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Ответить"
 
-#: src/HeaderBar.vala:116
+#: src/HeaderBar.vala:90
 msgid "Reply All"
 msgstr "Ответить всем"
 
-#: src/HeaderBar.vala:123 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Переслать"
 
-#: src/HeaderBar.vala:129
+#: src/HeaderBar.vala:103
 msgid "Mark as Unread"
 msgstr "Отметить как непрочитанное"
 
-#: src/HeaderBar.vala:134
+#: src/HeaderBar.vala:108
 msgid "Mark as Read"
 msgstr "Отметить как прочитанное"
 
-#: src/HeaderBar.vala:139
+#: src/HeaderBar.vala:113
 msgid "Star"
 msgstr "Добавить в избранное"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:118
 msgid "Unstar"
 msgstr "Удалить из избранных"
 
-#: src/HeaderBar.vala:156
+#: src/HeaderBar.vala:130
 msgid "Mark Conversation"
 msgstr "Отметить беседу"
 
-#: src/HeaderBar.vala:163
+#: src/HeaderBar.vala:137
 msgid "Move conversations to archive"
 msgstr "Переместить беседы в архив"
 
-#: src/HeaderBar.vala:170
+#: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
 msgstr "Переместить беседы в корзину"
 
@@ -131,18 +113,38 @@ msgstr[0] "%s от %u отправителя"
 msgstr[1] "%s от %u отправителей"
 msgstr[2] "%s от %u отправителей"
 
-#: src/MainWindow.vala:73
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "Почта"
 
-#: src/MainWindow.vala:312
+#: src/MainWindow.vala:156
+msgid "Fetch new messages"
+msgstr "Получить новые сообщения"
+
+#: src/MainWindow.vala:163
+msgid "Fetching new messages"
+msgstr "Получение новых сообщений"
+
+#: src/MainWindow.vala:173
+msgid "Hide read conversations"
+msgstr "Скрыть прочитанные беседы"
+
+#: src/MainWindow.vala:175
+msgid "Hide unstarred conversations"
+msgstr "Скрыть беседы"
+
+#: src/MainWindow.vala:192
+msgid "Filter Conversations"
+msgstr "Сортировать беседы"
+
+#: src/MainWindow.vala:399
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Сообщение удалено"
 msgstr[1] "Сообщений удалено"
 msgstr[2] "Сообщений удалено"
 
-#: src/MainWindow.vala:324
+#: src/MainWindow.vala:411
 msgid "Undo"
 msgstr "Отменить"
 
@@ -419,7 +421,7 @@ msgstr "Сообщение не выбрано"
 #: src/MessageList/MessageListItem.vala:173
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s в %s"
 
 #: src/MessageList/MessageListItem.vala:181
 #: src/MessageList/MessageListItem.vala:340
