@@ -20,8 +20,8 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-27 17:18+0000\n"
-"PO-Revision-Date: 2019-11-17 20:25+0000\n"
-"Last-Translator: Danie Wachna <ravqe@outlook.com>\n"
+"PO-Revision-Date: 2021-09-30 11:09+0000\n"
+"Last-Translator: DarkKnightComes <darkknightcomes@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 "X-Poedit-Country: Poland\n"
 "X-Poedit-Language: Polish\n"
@@ -316,27 +316,19 @@ msgid ""
 msgstr ""
 
 #: src/Composer/ComposerWidget.vala:670
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Delete Draft"
-msgstr "Usuń szkic"
+msgstr "Usuń wersję roboczą"
 
 #: src/Composer/ComposerWidget.vala:690
-#, fuzzy
-#| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
-msgstr "Wysłać wiadomość nie zawierającą tematu?"
+msgstr "Wysłać bez tematu?"
 
 #: src/Composer/ComposerWidget.vala:691
-#, fuzzy
-#| msgid ""
-#| "This message has an empty subject field. The recipient may not be able to "
-#| "infer the scope or importance of the message."
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
-"Ta wiadomość ma puste pole tematu.  Odbiorca może nie być w stanie określić "
+"Ta wiadomość ma puste pole tematu. Odbiorca może nie być w stanie określić "
 "zakresu lub ważności wiadomości."
 
 #: src/Composer/ComposerWidget.vala:697
