@@ -20,8 +20,8 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-27 17:18+0000\n"
-"PO-Revision-Date: 2021-09-30 11:09+0000\n"
-"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
+"PO-Revision-Date: 2021-09-30 17:17+0000\n"
+"Last-Translator: DarkKnightComes <darkknightcomes@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -320,36 +320,32 @@ msgid "Send Anyway"
 msgstr "Wyślij mimo to"
 
 #: src/Composer/ComposerWidget.vala:721
-#, fuzzy
-#| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
-msgstr "Wysłać wiadomość niezawierającą treści?"
+msgstr "Wysłana wiadomość nie została zapisana"
 
 #: src/Composer/ComposerWidget.vala:722
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
+"Wiadomość została wysłana, ale jej kopia nie została zapisana do katalogu "
+"wysłanych wiadomości."
 
 #: src/Composer/ComposerWidget.vala:737
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to send message"
-msgstr "Usuń szkic"
+msgstr "Nie można wysłać wiadomości"
 
 #: src/Composer/ComposerWidget.vala:738
 msgid "There was an unexpected error while sending your message."
-msgstr ""
+msgstr "Wystąpił nieoczekiwany błąd podczas wysyłania twojej wiadomości."
 
 #: src/Composer/ComposerWidget.vala:989
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to save draft"
-msgstr "Usuń szkic"
+msgstr "Nie można zapisać wersji roboczej"
 
 #: src/Composer/ComposerWidget.vala:990
 msgid "There was an unexpected error while saving your draft."
-msgstr ""
+msgstr "Wystąpił nieoczekiwany błąd podczas zapisywania wersji roboczej."
 
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
@@ -419,10 +415,8 @@ msgid "Sent"
 msgstr "Wysłane"
 
 #: src/FoldersView/SessionSourceItem.vala:28
-#, fuzzy
-#| msgid "All Mail"
 msgid "All Mailboxes"
-msgstr "Wszystkie"
+msgstr "Wszystkie skrzynki pocztowe"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
@@ -474,16 +468,12 @@ msgstr "Ta wiadomość zawiera jeden lub więcej załączników"
 
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:366
-#, fuzzy
-#| msgid "New Message"
 msgid "Email Message"
-msgstr "Nowa wiadomość"
+msgstr "Wiadomość mailowa"
 
 #: src/MessageList/MessageListItem.vala:388
-#, fuzzy
-#| msgid "Unable to validate:\n"
 msgid "Unable to print email"
-msgstr "Nie można sprawdzić:\n"
+msgstr "Nie można wydrukować maila"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
