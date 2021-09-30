@@ -21,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-27 17:18+0000\n"
 "PO-Revision-Date: 2021-09-30 17:17+0000\n"
-"Last-Translator: DarkKnightComes <darkknightcomes@gmail.com>\n"
+"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -309,7 +309,7 @@ msgid ""
 "infer its scope or importance."
 msgstr ""
 "Ta wiadomość ma puste pole tematu. Odbiorca może nie być w stanie określić "
-"zakresu lub ważności wiadomości."
+"jej zakresu lub jak ważna jest."
 
 #: src/Composer/ComposerWidget.vala:697
 msgid "Don't Send"
@@ -409,8 +409,6 @@ msgid "Archive"
 msgstr "Archiwum"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent Mail"
 msgid "Sent"
 msgstr "Wysłane"
 
@@ -426,7 +424,7 @@ msgstr "Brak zaznaczonych wiadomości"
 #: src/MessageList/MessageListItem.vala:173
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s o %s"
 
 #: src/MessageList/MessageListItem.vala:181
 #: src/MessageList/MessageListItem.vala:340
