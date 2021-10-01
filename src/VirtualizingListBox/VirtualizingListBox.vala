@@ -93,7 +93,7 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
             var item = selected_row;
 
             foreach (var child in current_widgets) {
-                if(child.model_item == item) {
+                if (child.model_item == item) {
                     return (VirtualizingListBoxRow)child;
                 }
             }
