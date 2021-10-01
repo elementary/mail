@@ -111,7 +111,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
             var row = get_row_at_y ((int)e.y);
 
-            if (!get_selected_rows().contains (row)) {
+            if (selected_row_widget != row) {
                 select_row (row);
             }
 
