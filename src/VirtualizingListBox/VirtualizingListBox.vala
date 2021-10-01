@@ -88,6 +88,20 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
         }
     }
 
+    public VirtualizingListBoxRow? selected_row_widget {
+        get {
+            var item = selected_row;
+
+            foreach (var child in current_widgets) {
+                if(child.model_item == item) {
+                    return (VirtualizingListBoxRow)child;
+                }
+            }
+
+            return null;
+        }
+    }
+
     public Gtk.Adjustment hadjustment { get; set; }
     public Gtk.ScrollablePolicy hscroll_policy { get; set; }
     public Gtk.ScrollablePolicy vscroll_policy { get; set; }
@@ -767,6 +781,10 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
         }
 
         return null;
+    }
+
+    protected void select_row (VirtualizingListBoxRow row) {
+        select_row_internal (row);
     }
 
     private void select_row_internal (VirtualizingListBoxRow row) {

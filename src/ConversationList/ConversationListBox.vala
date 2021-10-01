@@ -102,6 +102,32 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 conversation_selected (((ConversationItemModel) row).node);
             }
         });
+
+        button_press_event.connect ((e) => {
+
+            if (e.button != Gdk.BUTTON_SECONDARY) {
+                return Gdk.EVENT_PROPAGATE;
+            }
+
+            var row = get_row_at_y ((int)e.y);
+
+            if (!get_selected_rows().contains (row)) {
+                select_row (row);
+            }
+
+            return create_context_menu (e, (ConversationListItem)row);
+        });
+
+        key_press_event.connect ((e) => {
+
+            if (e.keyval != Gdk.Key.Menu) {
+                return Gdk.EVENT_PROPAGATE;
+            }
+
+            var row = selected_row_widget;
+
+            return create_context_menu (e, (ConversationListItem)row);
+        });
     }
 
     private static void set_thread_flag (Camel.FolderThreadNode? node, Camel.MessageFlags flag) {
@@ -424,5 +450,63 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
     public void undo_expired () {
         move_handler.expire_undo ();
+    }
+
+    private bool create_context_menu (Gdk.Event e, ConversationListItem row) {
+        var item = (ConversationItemModel)row.model_item;
+
+        var menu = new Gtk.Menu ();
+
+        var delete_menu_item = new Gtk.MenuItem.with_label (_("Delete"));
+        menu.add (delete_menu_item);
+
+        delete_menu_item.activate.connect (() => {
+            trash_selected_messages ();
+        });
+
+        if (!item.unread) {
+            var mark_unread_menu_item = new Gtk.MenuItem.with_label (_("Mark As Unread"));
+            menu.add (mark_unread_menu_item);
+
+            mark_unread_menu_item.activate.connect (() => {
+                mark_unread_selected_messages ();
+            });
+
+        } else {
+            var mark_read_menu_item = new Gtk.MenuItem.with_label (_("Mark As Read"));
+            menu.add (mark_read_menu_item);
+
+            mark_read_menu_item.activate.connect (() => {
+                mark_read_selected_messages ();
+            });
+        }
+
+        if (!item.flagged) {
+            var mark_starred_menu_item = new Gtk.MenuItem.with_label (_("Mark As Starred"));
+            menu.add (mark_starred_menu_item);
+
+            mark_starred_menu_item.activate.connect (() => {
+                mark_star_selected_messages ();
+            });
+        } else {
+            var mark_unstarred_menu_item = new Gtk.MenuItem.with_label (_("Unmark As Starred"));
+            menu.add (mark_unstarred_menu_item);
+
+            mark_unstarred_menu_item.activate.connect (() => {
+                mark_unstar_selected_messages ();
+            });
+        }
+
+        menu.show_all ();
+
+        if (e.type == Gdk.EventType.BUTTON_PRESS) {
+            menu.popup_at_pointer (e);
+            return Gdk.EVENT_STOP;
+        } else if (e.type == Gdk.EventType.KEY_PRESS) {
+            menu.popup_at_widget (row, Gdk.Gravity.EAST, Gdk.Gravity.CENTER, e);
+            return Gdk.EVENT_STOP;
+        }
+
+        return Gdk.EVENT_PROPAGATE;
     }
 }
