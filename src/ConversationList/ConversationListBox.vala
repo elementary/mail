@@ -467,7 +467,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
         if (!item.unread) {
             var mark_unread_menu_item = new Gtk.MenuItem ();
-            mark_unread_menu_item.add (new Granite.AccelLabel.from_action_name(_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD));
+            mark_unread_menu_item.add (new Granite.AccelLabel.from_action_name (_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD));
             menu.add (mark_unread_menu_item);
 
             mark_unread_menu_item.activate.connect (() => {
@@ -476,7 +476,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
         } else {
             var mark_read_menu_item = new Gtk.MenuItem ();
-            mark_read_menu_item.add (new Granite.AccelLabel.from_action_name(_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ));
+            mark_read_menu_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ));
             menu.add (mark_read_menu_item);
 
             mark_read_menu_item.activate.connect (() => {
@@ -486,7 +486,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
         if (!item.flagged) {
             var mark_starred_menu_item = new Gtk.MenuItem ();
-            mark_starred_menu_item.add (new Granite.AccelLabel.from_action_name(_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR));
+            mark_starred_menu_item.add (new Granite.AccelLabel.from_action_name (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR));
             menu.add (mark_starred_menu_item);
 
             mark_starred_menu_item.activate.connect (() => {
@@ -494,7 +494,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             });
         } else {
             var mark_unstarred_menu_item = new Gtk.MenuItem ();
-            mark_unstarred_menu_item.add (new Granite.AccelLabel.from_action_name(_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR));
+            mark_unstarred_menu_item.add (new Granite.AccelLabel.from_action_name (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR));
             menu.add (mark_unstarred_menu_item);
 
             mark_unstarred_menu_item.activate.connect (() => {
