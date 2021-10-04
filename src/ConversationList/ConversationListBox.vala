@@ -103,7 +103,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             }
         });
 
-        button_press_event.connect ((e) => {
+        button_release_event.connect ((e) => {
 
             if (e.button != Gdk.BUTTON_SECONDARY) {
                 return Gdk.EVENT_PROPAGATE;
@@ -118,7 +118,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             return create_context_menu (e, (ConversationListItem)row);
         });
 
-        key_press_event.connect ((e) => {
+        key_release_event.connect ((e) => {
 
             if (e.keyval != Gdk.Key.Menu) {
                 return Gdk.EVENT_PROPAGATE;
@@ -457,15 +457,17 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
         var menu = new Gtk.Menu ();
 
-        var delete_menu_item = new Gtk.MenuItem.with_label (_("Delete"));
-        menu.add (delete_menu_item);
+        var trash_menu_item = new Gtk.MenuItem ();
+        trash_menu_item.add (new Granite.AccelLabel.from_action_name (_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH));
+        menu.add (trash_menu_item);
 
-        delete_menu_item.activate.connect (() => {
+        trash_menu_item.activate.connect (() => {
             trash_selected_messages ();
         });
 
         if (!item.unread) {
-            var mark_unread_menu_item = new Gtk.MenuItem.with_label (_("Mark As Unread"));
+            var mark_unread_menu_item = new Gtk.MenuItem ();
+            mark_unread_menu_item.add (new Granite.AccelLabel.from_action_name(_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD));
             menu.add (mark_unread_menu_item);
 
             mark_unread_menu_item.activate.connect (() => {
@@ -473,7 +475,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             });
 
         } else {
-            var mark_read_menu_item = new Gtk.MenuItem.with_label (_("Mark As Read"));
+            var mark_read_menu_item = new Gtk.MenuItem ();
+            mark_read_menu_item.add (new Granite.AccelLabel.from_action_name(_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ));
             menu.add (mark_read_menu_item);
 
             mark_read_menu_item.activate.connect (() => {
@@ -482,14 +485,16 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
 
         if (!item.flagged) {
-            var mark_starred_menu_item = new Gtk.MenuItem.with_label (_("Mark As Starred"));
+            var mark_starred_menu_item = new Gtk.MenuItem ();
+            mark_starred_menu_item.add (new Granite.AccelLabel.from_action_name(_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR));
             menu.add (mark_starred_menu_item);
 
             mark_starred_menu_item.activate.connect (() => {
                 mark_star_selected_messages ();
             });
         } else {
-            var mark_unstarred_menu_item = new Gtk.MenuItem.with_label (_("Unmark As Starred"));
+            var mark_unstarred_menu_item = new Gtk.MenuItem ();
+            mark_unstarred_menu_item.add (new Granite.AccelLabel.from_action_name(_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR));
             menu.add (mark_unstarred_menu_item);
 
             mark_unstarred_menu_item.activate.connect (() => {
@@ -499,10 +504,10 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
         menu.show_all ();
 
-        if (e.type == Gdk.EventType.BUTTON_PRESS) {
+        if (e.type == Gdk.EventType.BUTTON_RELEASE) {
             menu.popup_at_pointer (e);
             return Gdk.EVENT_STOP;
-        } else if (e.type == Gdk.EventType.KEY_PRESS) {
+        } else if (e.type == Gdk.EventType.KEY_RELEASE) {
             menu.popup_at_widget (row, Gdk.Gravity.EAST, Gdk.Gravity.CENTER, e);
             return Gdk.EVENT_STOP;
         }

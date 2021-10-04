@@ -664,7 +664,7 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
         }
 
         if (selection_mode == Gtk.SelectionMode.BROWSE) {
-            select_row_internal (row);
+            select_row (row);
         } else if (selection_mode == Gtk.SelectionMode.SINGLE) {
             var was_selected = model.get_item_selected (row.model_item);
             unselect_all_internal ();
@@ -683,7 +683,7 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
                 var selected = selected_row;
                 unselect_all_internal ();
                 if (selected == null) {
-                    select_row_internal (row);
+                    select_row (row);
                 } else {
                     select_all_between (selected, row.model_item, false);
                 }
@@ -699,7 +699,7 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
                     model.set_item_selected (row.model_item, !selected);
                 } else {
                     unselect_all_internal ();
-                    select_row_internal (row);
+                    select_row (row);
                 }
             }
         }
@@ -727,7 +727,7 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
     }
 
     private void select_and_activate (VirtualizingListBoxRow row, bool grab_focus = true) {
-        select_row_internal (row);
+        select_row (row);
         update_cursor (row.model_item, grab_focus);
         row_activated (row.model_item);
     }
@@ -784,10 +784,6 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
     }
 
     protected void select_row (VirtualizingListBoxRow row) {
-        select_row_internal (row);
-    }
-
-    private void select_row_internal (VirtualizingListBoxRow row) {
         if (model.get_item_selected (row) || selection_mode == Gtk.SelectionMode.NONE) {
             return;
         }
