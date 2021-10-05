@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-27 17:18+0000\n"
+"POT-Creation-Date: 2021-10-05 20:07+0000\n"
 "PO-Revision-Date: 2017-02-20 08:31+0000\n"
 "Last-Translator: aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <ak@li.org>\n"
@@ -56,16 +56,16 @@ msgstr ""
 msgid "Mark as Unread"
 msgstr ""
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:479
 msgid "Mark as Read"
 msgstr ""
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:489
 #, fuzzy
 msgid "Star"
 msgstr "Nea w'ani abɔso"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:497
 msgid "Unstar"
 msgstr ""
 
@@ -336,6 +336,15 @@ msgstr ""
 
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
+msgstr ""
+
+#: src/ConversationList/ConversationListBox.vala:461
+#, fuzzy
+msgid "Move To Trash"
+msgstr "Yi nkɔmodie no"
+
+#: src/ConversationList/ConversationListBox.vala:470
+msgid "Mark As Unread"
 msgstr ""
 
 #: src/ConversationList/ConversationListItem.vala:103
