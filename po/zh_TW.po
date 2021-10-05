@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-27 17:18+0000\n"
 "PO-Revision-Date: 2021-10-05 20:07+0000\n"
-"Last-Translator: largecreeper <largecreeper@gmail.com>\n"
+"Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "mail/mail/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -65,14 +65,12 @@ msgid "Mark as Read"
 msgstr "標記為已讀"
 
 #: src/HeaderBar.vala:113
-#, fuzzy
 msgid "Star"
-msgstr "標星(_S)"
+msgstr "增加星星"
 
 #: src/HeaderBar.vala:118
-#, fuzzy
 msgid "Unstar"
-msgstr "取消標星(_N)"
+msgstr "取消星星"
 
 #: src/HeaderBar.vala:130
 msgid "Mark Conversation"
@@ -90,7 +88,7 @@ msgstr "移動對話至垃圾桶"
 #: src/InboxMonitor.vala:167 src/InboxMonitor.vala:180
 #, c-format
 msgid "%s to %s"
-msgstr ""
+msgstr "%s 至 %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:175
