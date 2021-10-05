@@ -129,8 +129,8 @@ public class Mail.MessageListBox : Gtk.ListBox {
     }
 
     private static int message_sort_function (Gtk.ListBoxRow item1, Gtk.ListBoxRow item2) {
-        MessageListItem message1 = (MessageListItem)item1;
-        MessageListItem message2 = (MessageListItem)item2;
+        unowned MessageListItem message1 = (MessageListItem)item1;
+        unowned MessageListItem message2 = (MessageListItem)item2;
 
         var timestamp1 = message1.message_info.date_received;
         if (timestamp1 == 0) {
