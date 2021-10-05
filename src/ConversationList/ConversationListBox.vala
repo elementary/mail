@@ -102,6 +102,32 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 conversation_selected (((ConversationItemModel) row).node);
             }
         });
+
+        button_release_event.connect ((e) => {
+
+            if (e.button != Gdk.BUTTON_SECONDARY) {
+                return Gdk.EVENT_PROPAGATE;
+            }
+
+            var row = get_row_at_y ((int)e.y);
+
+            if (selected_row_widget != row) {
+                select_row (row);
+            }
+
+            return create_context_menu (e, (ConversationListItem)row);
+        });
+
+        key_release_event.connect ((e) => {
+
+            if (e.keyval != Gdk.Key.Menu) {
+                return Gdk.EVENT_PROPAGATE;
+            }
+
+            var row = selected_row_widget;
+
+            return create_context_menu (e, (ConversationListItem)row);
+        });
     }
 
     private static void set_thread_flag (Camel.FolderThreadNode? node, Camel.MessageFlags flag) {
@@ -424,5 +450,68 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
     public void undo_expired () {
         move_handler.expire_undo ();
+    }
+
+    private bool create_context_menu (Gdk.Event e, ConversationListItem row) {
+        var item = (ConversationItemModel)row.model_item;
+
+        var menu = new Gtk.Menu ();
+
+        var trash_menu_item = new Gtk.MenuItem ();
+        trash_menu_item.add (new Granite.AccelLabel.from_action_name (_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH));
+        menu.add (trash_menu_item);
+
+        trash_menu_item.activate.connect (() => {
+            trash_selected_messages ();
+        });
+
+        if (!item.unread) {
+            var mark_unread_menu_item = new Gtk.MenuItem ();
+            mark_unread_menu_item.add (new Granite.AccelLabel.from_action_name (_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD));
+            menu.add (mark_unread_menu_item);
+
+            mark_unread_menu_item.activate.connect (() => {
+                mark_unread_selected_messages ();
+            });
+
+        } else {
+            var mark_read_menu_item = new Gtk.MenuItem ();
+            mark_read_menu_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ));
+            menu.add (mark_read_menu_item);
+
+            mark_read_menu_item.activate.connect (() => {
+                mark_read_selected_messages ();
+            });
+        }
+
+        if (!item.flagged) {
+            var mark_starred_menu_item = new Gtk.MenuItem ();
+            mark_starred_menu_item.add (new Granite.AccelLabel.from_action_name (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR));
+            menu.add (mark_starred_menu_item);
+
+            mark_starred_menu_item.activate.connect (() => {
+                mark_star_selected_messages ();
+            });
+        } else {
+            var mark_unstarred_menu_item = new Gtk.MenuItem ();
+            mark_unstarred_menu_item.add (new Granite.AccelLabel.from_action_name (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR));
+            menu.add (mark_unstarred_menu_item);
+
+            mark_unstarred_menu_item.activate.connect (() => {
+                mark_unstar_selected_messages ();
+            });
+        }
+
+        menu.show_all ();
+
+        if (e.type == Gdk.EventType.BUTTON_RELEASE) {
+            menu.popup_at_pointer (e);
+            return Gdk.EVENT_STOP;
+        } else if (e.type == Gdk.EventType.KEY_RELEASE) {
+            menu.popup_at_widget (row, Gdk.Gravity.EAST, Gdk.Gravity.CENTER, e);
+            return Gdk.EVENT_STOP;
+        }
+
+        return Gdk.EVENT_PROPAGATE;
     }
 }
