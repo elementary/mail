@@ -38,6 +38,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
 
         get_style_context ().add_class ("deck");
         set_placeholder (placeholder);
+        set_sort_func (message_sort_function);
     }
 
     public void set_conversation (Camel.FolderThreadNode? node) {
@@ -125,5 +126,22 @@ public class Mail.MessageListBox : Gtk.ListBox {
         add (composer);
         can_reply = false;
         can_move_thread = true;
+    }
+
+    private static int message_sort_function (Gtk.ListBoxRow item1, Gtk.ListBoxRow item2) {
+        MessageListItem message1 = (MessageListItem)item1;
+        MessageListItem message2 = (MessageListItem)item2;
+
+        var timestamp1 = message1.message_info.date_received;
+        if (timestamp1 == 0) {
+            timestamp1 = message1.message_info.date_sent;
+        }
+
+        var timestamp2 = message2.message_info.date_received;
+        if (timestamp2 == 0) {
+            timestamp2 = message2.message_info.date_sent;
+        }
+
+        return (int)(timestamp1 - timestamp2);
     }
 }
