@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-27 17:18+0000\n"
+"POT-Creation-Date: 2021-10-05 20:07+0000\n"
 "PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Jim Nelson <jim@yorba.org>\n"
 "Language-Team: Telugu (http://www.transifex.com/projects/p/geary/language/"
@@ -61,17 +61,17 @@ msgstr ""
 msgid "Mark as Unread"
 msgstr ""
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:479
 #, fuzzy
 msgid "Mark as Read"
 msgstr "ఇలా గుర్తుపెట్టు...(_M)"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:489
 #, fuzzy
 msgid "Star"
 msgstr "నక్షత్రించు (_S)"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:497
 #, fuzzy
 msgid "Unstar"
 msgstr "అనక్షత్రించు"
@@ -342,6 +342,15 @@ msgstr ""
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
 msgstr "కొత్త సందేశం"
+
+#: src/ConversationList/ConversationListBox.vala:461
+msgid "Move To Trash"
+msgstr ""
+
+#: src/ConversationList/ConversationListBox.vala:470
+#, fuzzy
+msgid "Mark As Unread"
+msgstr "ఇలా గుర్తుపెట్టు...(_M)"
 
 #: src/ConversationList/ConversationListItem.vala:103
 msgid "Unread"

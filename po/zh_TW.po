@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-27 17:18+0000\n"
-"PO-Revision-Date: 2021-07-29 17:55+0000\n"
-"Last-Translator: Kdwk <kdwkleung@protonmail.com>\n"
+"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"PO-Revision-Date: 2021-10-05 20:07+0000\n"
+"Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "mail/mail/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -60,19 +60,17 @@ msgstr "轉寄"
 msgid "Mark as Unread"
 msgstr "標記為未讀"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:479
 msgid "Mark as Read"
 msgstr "標記為已讀"
 
-#: src/HeaderBar.vala:113
-#, fuzzy
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:489
 msgid "Star"
-msgstr "標星(_S)"
+msgstr "增加星星"
 
-#: src/HeaderBar.vala:118
-#, fuzzy
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:497
 msgid "Unstar"
-msgstr "取消標星(_N)"
+msgstr "取消星星"
 
 #: src/HeaderBar.vala:130
 msgid "Mark Conversation"
@@ -90,7 +88,7 @@ msgstr "移動對話至垃圾桶"
 #: src/InboxMonitor.vala:167 src/InboxMonitor.vala:180
 #, c-format
 msgid "%s to %s"
-msgstr ""
+msgstr "%s 至 %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:175
@@ -356,6 +354,18 @@ msgstr ""
 msgid "New Message"
 msgstr "新訊息"
 
+#: src/ConversationList/ConversationListBox.vala:461
+#, fuzzy
+#| msgid "Move conversations to Trash"
+msgid "Move To Trash"
+msgstr "移動對話至垃圾桶"
+
+#: src/ConversationList/ConversationListBox.vala:470
+#, fuzzy
+#| msgid "Mark as Unread"
+msgid "Mark As Unread"
+msgstr "標記為未讀"
+
 #: src/ConversationList/ConversationListItem.vala:103
 #, fuzzy
 msgid "Unread"
@@ -406,7 +416,7 @@ msgstr "無論如何都開啟"
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
-msgstr ""
+msgstr "重新整理"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
@@ -499,7 +509,7 @@ msgstr "儲存為…"
 
 #: src/MessageList/AttachmentButton.vala:89
 msgid "Unknown"
-msgstr ""
+msgstr "未知"
 
 #: src/MessageList/AttachmentButton.vala:113
 #, fuzzy
