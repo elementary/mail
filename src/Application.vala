@@ -66,24 +66,29 @@ public class Mail.Application : Gtk.Application {
 
         // The only arguments we support are mailto: URLs passed in by the OS. See RFC 2368 for
         // details. We handle the most commonly used fields.
-        foreach (var mailto_uri in argv[1:argv.length]) {
-            string to = null;
+        Idle.add (() => {
+            foreach (var mailto_uri in argv[1:argv.length]) {
+                string to = null;
 
-            try {
-                Soup.URI mailto = new Soup.URI (mailto_uri);
-                if (mailto == null) {
-                    throw new OptionError.BAD_VALUE ("Argument is not a URL.");
-                }
-                if (mailto.scheme != "mailto") {
-                    throw new OptionError.BAD_VALUE ("Cannot open non-mailto: URL");
-                }
+                try {
+                    Soup.URI mailto = new Soup.URI (mailto_uri);
+                    if (mailto == null) {
+                        throw new OptionError.BAD_VALUE ("Argument is not a URL.");
+                    }
 
-                to = Soup.URI.decode (mailto.path);
-                new ComposerWindow (main_window, to, mailto.query).show_all ();
-            } catch (OptionError e) {
-                warning ("Argument parsing error. %s", e.message);
+                    if (mailto.scheme != "mailto") {
+                        throw new OptionError.BAD_VALUE ("Cannot open non-mailto: URL");
+                    }
+
+                    to = Soup.URI.decode (mailto.path);
+                    new ComposerWindow (main_window, to, mailto.query).show_all ();
+                } catch (OptionError e) {
+                    warning ("Argument parsing error. %s", e.message);
+                }
             }
-        }
+
+            return Source.REMOVE;
+        });
 
         return 0;
     }
