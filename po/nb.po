@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-05 20:07+0000\n"
-"PO-Revision-Date: 2021-09-24 14:28+0000\n"
+"PO-Revision-Date: 2021-10-06 14:04+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
 "mail/nb/>\n"
@@ -132,8 +132,6 @@ msgid "Hide read conversations"
 msgstr "Skjul leste samtaler"
 
 #: src/MainWindow.vala:175
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
 msgstr "Skjul samtaler som ikke er stjernemerkede"
 
@@ -352,10 +350,8 @@ msgid "New Message"
 msgstr "Ny melding"
 
 #: src/ConversationList/ConversationListBox.vala:461
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move To Trash"
-msgstr "Flytt samtaler til papirkurven"
+msgstr "Flytt til papirkurven"
 
 #: src/ConversationList/ConversationListBox.vala:470
 #, fuzzy
