@@ -744,6 +744,10 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
             return null;
         }
 
+        if (index > model.get_n_items () - 1) {
+            return null;
+        }
+
         if (index == 0) {
             set_value (0.0);
             ensure_visible_widgets ();
