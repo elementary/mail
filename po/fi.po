@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-27 17:18+0000\n"
-"PO-Revision-Date: 2021-09-26 00:26+0000\n"
+"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"PO-Revision-Date: 2021-10-06 14:04+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/mail/fi/>\n"
 "Language: fi\n"
@@ -59,15 +59,15 @@ msgstr "Lähetä edelleen"
 msgid "Mark as Unread"
 msgstr "Merkitse lukemattomaksi"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:479
 msgid "Mark as Read"
 msgstr "Merkitse luetuksi"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:489
 msgid "Star"
 msgstr "Merkitse tähdellä"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:497
 msgid "Unstar"
 msgstr "Poista tähti"
 
@@ -338,6 +338,14 @@ msgstr "Luonnosta tallentaessa tapahtui odottamaton virhe."
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
 msgstr "Uusi viesti"
+
+#: src/ConversationList/ConversationListBox.vala:461
+msgid "Move To Trash"
+msgstr "Siirrä roskakoriin"
+
+#: src/ConversationList/ConversationListBox.vala:470
+msgid "Mark As Unread"
+msgstr "Merkitse lukemattomaksi"
 
 #: src/ConversationList/ConversationListItem.vala:103
 msgid "Unread"

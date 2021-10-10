@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-27 17:18+0000\n"
+"POT-Creation-Date: 2021-10-05 20:07+0000\n"
 "PO-Revision-Date: 2020-05-27 12:11+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/mail/mail/da/>\n"
@@ -59,15 +59,15 @@ msgstr "Fremad"
 msgid "Mark as Unread"
 msgstr "Mærk som ulæst"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:479
 msgid "Mark as Read"
 msgstr "Mærk som læst"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:489
 msgid "Star"
 msgstr "Stjerne"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:497
 msgid "Unstar"
 msgstr "Stjern ikke"
 
@@ -368,6 +368,18 @@ msgstr ""
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
 msgstr "Ny besked"
+
+#: src/ConversationList/ConversationListBox.vala:461
+#, fuzzy
+#| msgid "Move conversations to Trash"
+msgid "Move To Trash"
+msgstr "Flyt samtaler til udsmidningskurv"
+
+#: src/ConversationList/ConversationListBox.vala:470
+#, fuzzy
+#| msgid "Mark as Unread"
+msgid "Mark As Unread"
+msgstr "Mærk som ulæst"
 
 #: src/ConversationList/ConversationListItem.vala:103
 msgid "Unread"

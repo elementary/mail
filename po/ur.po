@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-27 17:18+0000\n"
+"POT-Creation-Date: 2021-10-05 20:07+0000\n"
 "PO-Revision-Date: 2016-12-10 14:51+0000\n"
 "Last-Translator: Waqar Ahmed <waqar.17a@gmail.com>\n"
 "Language-Team: Urdu <ur@li.org>\n"
@@ -56,16 +56,16 @@ msgstr ""
 msgid "Mark as Unread"
 msgstr ""
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:479
 msgid "Mark as Read"
 msgstr ""
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:489
 #, fuzzy
 msgid "Star"
 msgstr "ستارہ نشان زد شدہ"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:497
 msgid "Unstar"
 msgstr ""
 
@@ -331,6 +331,14 @@ msgstr ""
 
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
+msgstr ""
+
+#: src/ConversationList/ConversationListBox.vala:461
+msgid "Move To Trash"
+msgstr ""
+
+#: src/ConversationList/ConversationListBox.vala:470
+msgid "Mark As Unread"
 msgstr ""
 
 #: src/ConversationList/ConversationListItem.vala:103

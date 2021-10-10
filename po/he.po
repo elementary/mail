@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-27 17:18+0000\n"
-"PO-Revision-Date: 2021-09-24 01:29+0000\n"
+"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"PO-Revision-Date: 2021-10-06 01:02+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
 "Language: he\n"
@@ -65,15 +65,15 @@ msgstr "העברה"
 msgid "Mark as Unread"
 msgstr "סימון כלא נקרא"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:479
 msgid "Mark as Read"
 msgstr "סימון כנקרא"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:489
 msgid "Star"
 msgstr "כוכב"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:497
 msgid "Unstar"
 msgstr "הסרת כוכב"
 
@@ -338,6 +338,14 @@ msgstr "אירעה שגיאה בלתי צפויה בשמירת הטיוטה של
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
 msgstr "הודעה חדשה"
+
+#: src/ConversationList/ConversationListBox.vala:461
+msgid "Move To Trash"
+msgstr "העברה לאשפה"
+
+#: src/ConversationList/ConversationListBox.vala:470
+msgid "Mark As Unread"
+msgstr "סימון כלא נקרא"
 
 #: src/ConversationList/ConversationListItem.vala:103
 msgid "Unread"

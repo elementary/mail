@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-27 17:18+0000\n"
+"POT-Creation-Date: 2021-10-05 20:07+0000\n"
 "PO-Revision-Date: 2015-11-23 11:52+0000\n"
 "Last-Translator: Jim Nelson <jim@yorba.org>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/projects/p/geary/"
@@ -62,15 +62,15 @@ msgstr ""
 msgid "Mark as Unread"
 msgstr ""
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:479
 msgid "Mark as Read"
 msgstr ""
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:489
 msgid "Star"
 msgstr ""
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:497
 msgid "Unstar"
 msgstr ""
 
@@ -342,6 +342,15 @@ msgstr ""
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
 msgstr "Tạo mới tin nhắn"
+
+#: src/ConversationList/ConversationListBox.vala:461
+#, fuzzy
+msgid "Move To Trash"
+msgstr "Nhật trình giám sát cuộc trò chuyện"
+
+#: src/ConversationList/ConversationListBox.vala:470
+msgid "Mark As Unread"
+msgstr ""
 
 #: src/ConversationList/ConversationListItem.vala:103
 msgid "Unread"

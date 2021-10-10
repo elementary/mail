@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-27 17:18+0000\n"
-"PO-Revision-Date: 2021-07-21 19:42+0000\n"
+"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"PO-Revision-Date: 2021-10-08 10:09+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/extra/fi/>\n"
 "Language: fi\n"
@@ -66,7 +66,7 @@ msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:27
 msgid "New features:"
-msgstr ""
+msgstr "Uudet ominaisuudet:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Send a notification when new messages arrive"
@@ -87,7 +87,7 @@ msgstr ""
 #: data/io.elementary.mail.appdata.xml.in:34
 #: data/io.elementary.mail.appdata.xml.in:48
 msgid "Fixes:"
-msgstr ""
+msgstr "Korjaukset:"
 
 #: data/io.elementary.mail.appdata.xml.in:36
 msgid "Make sure we don't save sent messages twice for outlook.com accounts"
@@ -101,7 +101,7 @@ msgstr ""
 #: data/io.elementary.mail.appdata.xml.in:54
 #: data/io.elementary.mail.appdata.xml.in:64
 msgid "Improvements:"
-msgstr ""
+msgstr "Parannukset:"
 
 #: data/io.elementary.mail.appdata.xml.in:41
 msgid "Improve search performance"
@@ -111,7 +111,7 @@ msgstr ""
 #: data/io.elementary.mail.appdata.xml.in:58
 #: data/io.elementary.mail.appdata.xml.in:71
 msgid "Updated translations"
-msgstr ""
+msgstr "Päivitetyt kielikäännökset"
 
 #: data/io.elementary.mail.appdata.xml.in:50
 msgid "Fix an issue that prevented some messaging from rendering at all"

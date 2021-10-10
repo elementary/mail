@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-27 17:18+0000\n"
+"POT-Creation-Date: 2021-10-05 20:07+0000\n"
 "PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
@@ -65,17 +65,17 @@ msgstr ""
 msgid "Mark as Unread"
 msgstr ""
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:479
 msgid "Mark as Read"
 msgstr ""
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:489
 #, fuzzy
 #| msgid "_Star"
 msgid "Star"
 msgstr "_Dodaj zvezdicu"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:497
 #, fuzzy
 #| msgid "U_nstar"
 msgid "Unstar"
@@ -391,6 +391,18 @@ msgstr ""
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
 msgstr "Nova poruka"
+
+#: src/ConversationList/ConversationListBox.vala:461
+#, fuzzy
+#| msgid "Move conversations"
+msgid "Move To Trash"
+msgstr "Premestite razgovore"
+
+#: src/ConversationList/ConversationListBox.vala:470
+#, fuzzy
+#| msgid "_Mark as Unread"
+msgid "Mark As Unread"
+msgstr "_Označi kao nepročitano"
 
 #: src/ConversationList/ConversationListItem.vala:103
 #, fuzzy
@@ -1250,9 +1262,6 @@ msgstr "_Sačuvaj"
 
 #~ msgid "_Mark as Read"
 #~ msgstr "_Označi kao pročitano"
-
-#~ msgid "_Mark as Unread"
-#~ msgstr "_Označi kao nepročitano"
 
 #~ msgid "Mark Unread From _Here"
 #~ msgstr "Označi kao nepročitano _odavde"

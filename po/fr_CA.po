@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-27 17:18+0000\n"
+"POT-Creation-Date: 2021-10-05 20:07+0000\n"
 "PO-Revision-Date: 2016-08-25 14:39+0000\n"
 "Last-Translator: Nate <natejms@outlook.com>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
@@ -57,16 +57,16 @@ msgstr ""
 msgid "Mark as Unread"
 msgstr "Marquer comme S_pam"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:479
 #, fuzzy
 msgid "Mark as Read"
 msgstr "Marquer comme S_pam"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:489
 msgid "Star"
 msgstr ""
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:497
 msgid "Unstar"
 msgstr ""
 
@@ -342,6 +342,16 @@ msgstr ""
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
 msgstr ""
+
+#: src/ConversationList/ConversationListBox.vala:461
+#, fuzzy
+msgid "Move To Trash"
+msgstr "Bouger la conversation à la poubelle (Suppr, Retour Arrière)"
+
+#: src/ConversationList/ConversationListBox.vala:470
+#, fuzzy
+msgid "Mark As Unread"
+msgstr "Marquer comme S_pam"
 
 #: src/ConversationList/ConversationListItem.vala:103
 msgid "Unread"

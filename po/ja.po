@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-27 17:18+0000\n"
-"PO-Revision-Date: 2021-09-27 02:16+0000\n"
+"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"PO-Revision-Date: 2021-10-08 10:53+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -51,15 +51,15 @@ msgstr "転送"
 msgid "Mark as Unread"
 msgstr "未読としてマーク"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:479
 msgid "Mark as Read"
 msgstr "既読としてマーク"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:489
 msgid "Star"
 msgstr "スターを付ける"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:497
 msgid "Unstar"
 msgstr "スターを外す"
 
@@ -323,6 +323,14 @@ msgstr "下書きを保存する際に予期しないエラーが発生しまし
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
 msgstr "新しいメッセージ"
+
+#: src/ConversationList/ConversationListBox.vala:461
+msgid "Move To Trash"
+msgstr "ゴミ箱に移動"
+
+#: src/ConversationList/ConversationListBox.vala:470
+msgid "Mark As Unread"
+msgstr "未読としてマーク"
 
 #: src/ConversationList/ConversationListItem.vala:103
 msgid "Unread"

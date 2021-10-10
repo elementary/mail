@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-27 17:18+0000\n"
-"PO-Revision-Date: 2021-09-27 15:07+0000\n"
+"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"PO-Revision-Date: 2021-10-06 01:02+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -59,15 +59,15 @@ msgstr "Reenvia"
 msgid "Mark as Unread"
 msgstr "Marca com a no llegit"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:479
 msgid "Mark as Read"
 msgstr "Marca com a llegit"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:489
 msgid "Star"
 msgstr "Destaca"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:497
 msgid "Unstar"
 msgstr "No ho destaquis"
 
@@ -336,6 +336,14 @@ msgstr "Hi ha hagut un error inesperat a l'hora de desar l'esborrany."
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
 msgstr "Missatge nou"
+
+#: src/ConversationList/ConversationListBox.vala:461
+msgid "Move To Trash"
+msgstr "Mou a la paperera"
+
+#: src/ConversationList/ConversationListBox.vala:470
+msgid "Mark As Unread"
+msgstr "Marca com a no llegit"
 
 #: src/ConversationList/ConversationListItem.vala:103
 msgid "Unread"
