@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-05 20:07+0000\n"
-"PO-Revision-Date: 2021-09-24 21:58+0000\n"
+"PO-Revision-Date: 2021-10-06 01:15+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
 "Language: de\n"
@@ -347,14 +347,10 @@ msgid "New Message"
 msgstr "Neue Nachricht"
 
 #: src/ConversationList/ConversationListBox.vala:461
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move To Trash"
-msgstr "Unterhaltung in den Papierkorb verschieben"
+msgstr "In den Papierkorb verschieben"
 
 #: src/ConversationList/ConversationListBox.vala:470
-#, fuzzy
-#| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Als ungelesen markieren"
 

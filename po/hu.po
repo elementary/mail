@@ -12,10 +12,10 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-05 20:07+0000\n"
-"PO-Revision-Date: 2021-09-26 17:16+0000\n"
+"PO-Revision-Date: 2021-10-08 22:20+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
-"Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/"
-">\n"
+"Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/>"
+"\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -341,14 +341,10 @@ msgid "New Message"
 msgstr "Új levél"
 
 #: src/ConversationList/ConversationListBox.vala:461
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move To Trash"
-msgstr "Beszélgetések áthelyezése a kukába"
+msgstr "Áthelyezés a kukába"
 
 #: src/ConversationList/ConversationListBox.vala:470
-#, fuzzy
-#| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Megjelölés olvasatlanként"
 
