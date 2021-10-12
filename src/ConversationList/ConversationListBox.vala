@@ -381,7 +381,10 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
     public async int archive_selected_messages () {
         var archive_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
+
         var selected_rows = get_selected_rows ();
+        int selected_rows_start_index = list_store.get_index_of (selected_rows.to_array ()[0]);
+
         foreach (unowned var selected_row in selected_rows) {
             var selected_item_model = (ConversationItemModel) selected_row;
 
@@ -412,6 +415,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
 
         list_store.items_changed (0, archived, list_store.get_n_items ());
+        select_row_at_index (selected_rows_start_index);
+
         return archived;
     }
 
