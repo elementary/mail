@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class Mail.InboxMonitor : GLib.Object {
+public class Mail.StoreMonitor : GLib.Object {
 
     private NetworkMonitor network_monitor;
     private Mail.Backend.Session session;
