@@ -740,7 +740,13 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
     }
 
     private VirtualizingListBoxRow? ensure_index_visible (int index) {
+        var index_max = model.get_n_items () - 1;
+
         if (index < 0) {
+            return null;
+        }
+
+        if (index > index_max) {
             return null;
         }
 
@@ -754,7 +760,7 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
             }
         }
 
-        if (index == model.get_n_items () - 1) {
+        if (index == index_max) {
             set_value (vadjustment.upper);
             ensure_visible_widgets ();
             foreach (VirtualizingListBoxRow row in current_widgets) {
