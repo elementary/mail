@@ -117,14 +117,18 @@ public class Mail.StoreMonitor : GLib.Object {
             return;
         }
 
-        var inbox_folder = inbox_folders.get (account);
-        if (inbox_folder != null) {
-            debug ("[%s] Refreshing…", account.service.display_name);
+        if (account.service is Camel.Store) {
+            debug ("[%s] Synchronizing…", account.service.display_name);
 
+            var store = (Camel.Store) account.service;
             try {
-                yield inbox_folder.refresh_info (GLib.Priority.DEFAULT, null);
+                if (store is Camel.OfflineStore) {
+                    yield ((Camel.OfflineStore) store).set_online (true, GLib.Priority.DEFAULT, null);
+                }
+                yield store.connect (GLib.Priority.DEFAULT, null);
+                yield store.synchronize (true, GLib.Priority.DEFAULT, null);
             } catch (Error e) {
-                debug ("[%s] Error refreshing: %s", account.service.display_name, e.message);
+                debug ("[%s] Error synchronizing: %s", account.service.display_name, e.message);
             }
         }
     }
