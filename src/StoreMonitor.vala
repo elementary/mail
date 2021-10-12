@@ -87,7 +87,7 @@ public class Mail.StoreMonitor : GLib.Object {
 
                         debug ("[%s] Checking inbox for new mail every %u minutes…", folder.display_name, refresh_interval_in_minutes);
                         var refresh_timeout_id = GLib.Timeout.add_seconds (refresh_interval_in_minutes * 60, () => {
-                            inbox_folder_synchronize_sync.begin (account);
+                            account_synchronize.begin (account);
                             return GLib.Source.CONTINUE;
                         });
 
@@ -95,7 +95,7 @@ public class Mail.StoreMonitor : GLib.Object {
                             synchronize_timeout_ids.insert (account, refresh_timeout_id);
                         }
 
-                        inbox_folder_synchronize_sync.begin (account);
+                        account_synchronize.begin (account);
                     }
 
                 } else {
@@ -111,7 +111,7 @@ public class Mail.StoreMonitor : GLib.Object {
         }
     }
 
-    private async void inbox_folder_synchronize_sync (Mail.Backend.Account account) {
+    private async void account_synchronize (Mail.Backend.Account account) {
         if (!network_monitor.network_available) {
             debug ("[%s] Network is not avaible. Skipping…", account.service.display_name);
             return;
