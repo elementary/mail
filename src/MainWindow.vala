@@ -39,6 +39,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private uint configure_id;
     private uint search_changed_debounce_timeout_id = 0;
 
+    public signal void session_started ();
+
     public const string ACTION_GROUP_PREFIX = "win";
     public const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
     public const string ACTION_COMPOSE_MESSAGE = "compose_message";
@@ -314,7 +316,10 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
-        session.start.begin ();
+        session.start.begin ((obj, res) => {
+            session.start.end (res);
+            session_started ();
+        });
     }
 
     private void on_filter_button_changed () {
