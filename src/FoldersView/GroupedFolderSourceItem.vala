@@ -123,18 +123,21 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
     }
 
     private void update_infos () {
-        badge = null;
-        var total_unread = 0;
-        lock (account_folderinfo) {
-            foreach (var entry in account_folderinfo) {
-                if (entry.value == null) {
-                    continue;
+        badge = "";
+
+        if (Camel.FolderInfoFlags.TYPE_INBOX == (folder_type & Camel.FOLDER_TYPE_MASK)) {
+            var total_unread = 0;
+            lock (account_folderinfo) {
+                foreach (var entry in account_folderinfo) {
+                    if (entry.value == null) {
+                        continue;
+                    }
+                    total_unread += entry.value.unread;
                 }
-                total_unread += entry.value.unread;
             }
-        }
-        if (total_unread > 0) {
-            badge = "%d".printf (total_unread);
+            if (total_unread > 0) {
+                badge = "%d".printf (total_unread);
+            }
         }
     }
 

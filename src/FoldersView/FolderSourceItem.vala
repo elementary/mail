@@ -65,7 +65,7 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
             case Camel.FolderInfoFlags.TYPE_TRASH:
                 icon = new ThemedIcon (folderinfo.total == 0 ? "user-trash" : "user-trash-full");
                 can_modify = false;
-                badge = null;
+                badge = "";
                 break;
             case Camel.FolderInfoFlags.TYPE_JUNK:
                 icon = new ThemedIcon ("edit-flag");
@@ -74,11 +74,12 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
             case Camel.FolderInfoFlags.TYPE_SENT:
                 icon = new ThemedIcon ("mail-sent");
                 can_modify = false;
+                badge = "";
                 break;
             case Camel.FolderInfoFlags.TYPE_ARCHIVE:
                 icon = new ThemedIcon ("mail-archive");
                 can_modify = false;
-                badge = null;
+                badge = "";
                 break;
             case Camel.FolderInfoFlags.TYPE_DRAFTS:
                 icon = new ThemedIcon ("mail-drafts");
