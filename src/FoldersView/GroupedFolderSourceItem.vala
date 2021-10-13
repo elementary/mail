@@ -23,6 +23,7 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
 
     private GLib.Cancellable connect_cancellable;
     private Gee.HashMap<Backend.Account, Camel.FolderInfo?> account_folderinfo;
+    private Gee.HashMap<Backend.Account, Camel.Folder?> account_folders;
 
     public GroupedFolderSourceItem (Mail.Backend.Session session, Camel.FolderInfoFlags folder_type) {
         Object (session: session, folder_type: folder_type);
@@ -32,6 +33,7 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
         visible = true;
         connect_cancellable = new GLib.Cancellable ();
         account_folderinfo = new Gee.HashMap<Backend.Account, Camel.FolderInfo?> ();
+        account_folders = new Gee.HashMap<Backend.Account, Camel.Folder?> ();
 
         switch (folder_type & Camel.FOLDER_TYPE_MASK) {
             case Camel.FolderInfoFlags.TYPE_INBOX:
@@ -90,7 +92,9 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
     private async void load_folder_info (Mail.Backend.Account account) {
         var offlinestore = (Camel.OfflineStore) account.service;
         var full_name = build_folder_full_name (account);
+
         Camel.FolderInfo? folderinfo = null;
+        Camel.Folder? folder = null;
 
         if (full_name != null) {
             try {
@@ -102,10 +106,25 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
                     warning ("Unable to fetch %s of account '%s': %s", full_name, account.service.display_name, e.message);
                 }
             }
+
+            try {
+                folder = yield offlinestore.get_folder (full_name, Camel.StoreGetFolderFlags.NONE, GLib.Priority.DEFAULT, connect_cancellable);
+
+                folder.changed.connect ((changes) => {
+                    account_folder_changed (account, folder, changes);
+                });
+
+            } catch (Error e) {
+                warning ("Error retrieving folder '%s' from store: %s", full_name, e.message);
+            }
         }
 
         lock (account_folderinfo) {
             account_folderinfo.set (account, folderinfo);
+        }
+
+        lock (account_folders) {
+            account_folders.set (account, folder);
         }
         update_infos ();
     }
@@ -119,6 +138,26 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
                     account_folderinfo.unset (account);
                 }
             }
+        }
+    }
+
+    private void account_folder_changed (Mail.Backend.Account account, Camel.Folder folder, Camel.FolderChangeInfo changes) {
+        if (account.service is Camel.Store) {
+            var store = (Camel.Store) account.service;
+
+            store.get_folder_info.begin (folder.full_name, Camel.StoreGetFolderInfoFlags.REFRESH, GLib.Priority.DEFAULT, null, (obj, res) => {
+                try {
+                    var folder_info = store.get_folder_info.end (res);
+                    lock (account_folderinfo) {
+                        account_folderinfo.set (account, folder_info);
+                    }
+
+                    update_infos ();
+
+                } catch (Error e) {
+                    warning ("Error refreshing folder info for '%s': %s", folder.full_name, e.message);
+                }
+            });
         }
     }
 
