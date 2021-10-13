@@ -22,6 +22,14 @@
       <binary>io.elementary.mail</binary>
   </provides>
   <releases>
+    <release version="6.2.1" date="2021-10-13" urgency="medium">
+      <description>
+        <p>Fixes:</p>
+          <ul>
+            <li>Fixed a bug where the sender combobox was blank and insensitive after processing a mail query</li>
+          </ul>
+      </description>
+    </release>
     <release version="6.2.0" date="2021-09-27" urgency="medium">
       <description>
         <p>New features:</p>
