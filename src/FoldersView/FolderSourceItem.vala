@@ -46,6 +46,8 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
     public void update_infos (Camel.FolderInfo folderinfo) {
         name = folderinfo.display_name;
         full_name = folderinfo.full_name;
+
+        badge = "";
         if (folderinfo.unread > 0) {
             badge = "%d".printf (folderinfo.unread);
         }

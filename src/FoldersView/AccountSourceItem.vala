@@ -27,6 +27,7 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
 
     private GLib.Cancellable connect_cancellable;
     private Gee.HashMap<string, FolderSourceItem> folder_items;
+    private Gee.HashMap<string, Camel.Folder> folders;
     private AccountSavedState saved_state;
     private unowned Camel.OfflineStore offlinestore;
 
@@ -38,6 +39,7 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
         visible = true;
         connect_cancellable = new GLib.Cancellable ();
         folder_items = new Gee.HashMap<string, FolderSourceItem> ();
+        folders = new Gee.HashMap<string, Camel.Folder> ();
         saved_state = new AccountSavedState (account);
         saved_state.bind_with_expandable_item (this);
 
@@ -61,7 +63,7 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
         try {
             var folderinfo = yield offlinestore.get_folder_info (null, Camel.StoreGetFolderInfoFlags.RECURSIVE, GLib.Priority.DEFAULT, connect_cancellable);
             if (folderinfo != null) {
-                show_info (folderinfo, this);
+                folder_created (folderinfo);
             }
 
         } catch (Error e) {
@@ -90,6 +92,17 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
     private void folder_renamed (string old_name, Camel.FolderInfo folder_info) {
         var item = folder_items[old_name];
         item.update_infos (folder_info);
+
+        lock (folders) {
+            if (folders.has_key (old_name)) {
+                Camel.Folder folder;
+                if (folders.unset (old_name, out folder)) {
+                    folders.set (folder_info.full_name, folder);
+
+                    folder.refresh_info.begin (GLib.Priority.DEFAULT, null);
+                }
+            }
+        }
     }
 
     private void folder_deleted (Camel.FolderInfo folder_info) {
@@ -97,12 +110,18 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
         if (item != null) {
             item.parent.remove (item);
             folder_items.unset (folder_info.full_name);
+
+            lock (folders) {
+                folders.unset (folder_info.full_name);
+            }
         }
     }
 
     private void folder_created (Camel.FolderInfo folder_info) {
         if (folder_info.parent == null) {
             show_info (folder_info, this);
+            connect_folder_changed (folder_info);
+
         } else {
             unowned Camel.FolderInfo parent_info = (Camel.FolderInfo) folder_info.parent;
             var parent_item = folder_items[parent_info.full_name];
@@ -112,7 +131,47 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
                 folder_created (folder_info);
             } else {
                 show_info (folder_info, parent_item);
+                connect_folder_changed (folder_info);
             }
+        }
+    }
+
+    private void connect_folder_changed (Camel.FolderInfo folder_info) {
+        if (account.service is Camel.Store) {
+            var store = (Camel.Store) account.service;
+            store.get_folder.begin (folder_info.full_name, Camel.StoreGetFolderFlags.NONE, GLib.Priority.DEFAULT, null, (obj, res) => {
+                try {
+                    var folder = store.get_folder.end (res);
+                    folder.changed.connect ((changes) => {
+                        folder_changed (folder, changes);
+                    });
+
+                    lock (folders) {
+                        folders.set (folder_info.full_name, folder);
+                    }
+
+                } catch (Error e) {
+                    warning ("Error retrieving folder '%s' from store: %s", folder_info.full_name, e.message);
+                }
+            });
+        }
+    }
+
+    private void folder_changed (Camel.Folder folder, Camel.FolderChangeInfo changes) {
+        Mail.FolderSourceItem? item = folder_items[folder.full_name];
+
+        if (item != null && account.service is Camel.Store) {
+            var store = (Camel.Store) account.service;
+
+            store.get_folder_info.begin (folder.full_name, Camel.StoreGetFolderInfoFlags.REFRESH, GLib.Priority.DEFAULT, null, (obj, res) => {
+                try {
+                    var folder_info = store.get_folder_info.end (res);
+                    item.update_infos (folder_info);
+
+                } catch (Error e) {
+                    warning ("Error refreshing folder info for '%s': %s", folder.full_name, e.message);
+                }
+            });
         }
     }
 
