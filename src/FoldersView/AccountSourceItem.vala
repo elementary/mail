@@ -137,24 +137,21 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
     }
 
     private void connect_folder_changed (Camel.FolderInfo folder_info) {
-        if (account.service is Camel.Store) {
-            var store = (Camel.Store) account.service;
-            store.get_folder.begin (folder_info.full_name, Camel.StoreGetFolderFlags.NONE, GLib.Priority.DEFAULT, null, (obj, res) => {
-                try {
-                    var folder = store.get_folder.end (res);
-                    folder.changed.connect ((changes) => {
-                        folder_changed (folder, changes);
-                    });
+        offlinestore.get_folder.begin (folder_info.full_name, Camel.StoreGetFolderFlags.NONE, GLib.Priority.DEFAULT, null, (obj, res) => {
+            try {
+                var folder = offlinestore.get_folder.end (res);
+                folder.changed.connect ((changes) => {
+                    folder_changed (folder, changes);
+                });
 
-                    lock (folders) {
-                        folders.set (folder_info.full_name, folder);
-                    }
-
-                } catch (Error e) {
-                    warning ("Error retrieving folder '%s' from store: %s", folder_info.full_name, e.message);
+                lock (folders) {
+                    folders.set (folder_info.full_name, folder);
                 }
-            });
-        }
+
+            } catch (Error e) {
+                warning ("Error retrieving folder '%s' from store: %s", folder_info.full_name, e.message);
+            }
+        });
     }
 
     private void folder_changed (Camel.Folder folder, Camel.FolderChangeInfo changes) {
