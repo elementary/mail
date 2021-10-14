@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-14 16:42+0000\n"
-"PO-Revision-Date: 2021-09-25 12:35+0000\n"
+"PO-Revision-Date: 2021-10-14 18:11+0000\n"
 "Last-Translator: asdffdsdaf <asdffdsdaf@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/extra/ru/>\n"
 "Language: ru\n"
@@ -73,11 +73,11 @@ msgstr "Исправления:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Fixed sender combobox after opening a mailto link"
-msgstr ""
+msgstr "Исправлен выбор отправителя при открытии ссылки \"mailto\""
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Mark sent messages as read"
-msgstr ""
+msgstr "Пометка отправленных сообщений прочитанными"
 
 #: data/io.elementary.mail.appdata.xml.in:36
 msgid "New features:"
