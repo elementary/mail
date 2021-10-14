@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-14 16:42+0000\n"
-"PO-Revision-Date: 2021-09-27 15:07+0000\n"
+"PO-Revision-Date: 2021-10-15 03:21+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/extra/ca/>\n"
 "Language: ca\n"
@@ -73,10 +73,11 @@ msgstr "Correccions:"
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Fixed sender combobox after opening a mailto link"
 msgstr ""
+"Correcció del menú desplegable després d'obrir un enllaç directe de missatge"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Mark sent messages as read"
-msgstr ""
+msgstr "Marca els missatges enviats com a llegits"
 
 #: data/io.elementary.mail.appdata.xml.in:36
 msgid "New features:"
