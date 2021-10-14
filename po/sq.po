@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"POT-Creation-Date: 2021-10-14 16:42+0000\n"
 "PO-Revision-Date: 2015-11-29 22:37+0000\n"
 "Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -114,52 +114,52 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:80
+#: src/MainWindow.vala:82
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "E gjithë posta"
 
-#: src/MainWindow.vala:156
+#: src/MainWindow.vala:158
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d mesazh të ri"
 
-#: src/MainWindow.vala:163
+#: src/MainWindow.vala:165
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages"
 msgstr "%d mesazh të ri"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:175
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Hide read conversations"
 msgstr "Fshije bisedën"
 
-#: src/MainWindow.vala:175
+#: src/MainWindow.vala:177
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Hide unstarred conversations"
 msgstr "Fshije bisedën"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:194
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Filter Conversations"
 msgstr "Fshije bisedën"
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:404
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Asnjë bisedë e përzgjedhur."
 msgstr[1] "Asnjë bisedë e përzgjedhur."
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:416
 msgid "Undo"
 msgstr ""
 
@@ -385,12 +385,12 @@ msgstr "_Shënoje si të palexuar"
 msgid "Unread"
 msgstr "%d të palexuar"
 
-#: src/ConversationList/ConversationListItem.vala:113
+#: src/ConversationList/ConversationListItem.vala:117
 #, fuzzy
 msgid "Replied"
 msgstr "_Zëvendëso"
 
-#: src/ConversationList/ConversationListItem.vala:117
+#: src/ConversationList/ConversationListItem.vala:121
 #, fuzzy
 msgid "Forwarded"
 msgstr "_Përcill"

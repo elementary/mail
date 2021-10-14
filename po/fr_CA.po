@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"POT-Creation-Date: 2021-10-14 16:42+0000\n"
 "PO-Revision-Date: 2016-08-25 14:39+0000\n"
 "Last-Translator: Nate <natejms@outlook.com>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
@@ -107,43 +107,43 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:80
+#: src/MainWindow.vala:82
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Tout le Courrier"
 
-#: src/MainWindow.vala:156
+#: src/MainWindow.vala:158
 msgid "Fetch new messages"
 msgstr ""
 
-#: src/MainWindow.vala:163
+#: src/MainWindow.vala:165
 msgid "Fetching new messages"
 msgstr ""
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:175
 #, fuzzy
 #| msgid "Archive conversations (A)"
 msgid "Hide read conversations"
 msgstr "Archiver les conversations (A)"
 
-#: src/MainWindow.vala:175
+#: src/MainWindow.vala:177
 #, fuzzy
 msgid "Hide unstarred conversations"
 msgstr "Supprimer la conversation"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:194
 #, fuzzy
 msgid "Filter Conversations"
 msgstr "Supprimer la conversation"
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:404
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:416
 msgid "Undo"
 msgstr ""
 
@@ -357,11 +357,11 @@ msgstr "Marquer comme S_pam"
 msgid "Unread"
 msgstr ""
 
-#: src/ConversationList/ConversationListItem.vala:113
+#: src/ConversationList/ConversationListItem.vala:117
 msgid "Replied"
 msgstr ""
 
-#: src/ConversationList/ConversationListItem.vala:117
+#: src/ConversationList/ConversationListItem.vala:121
 msgid "Forwarded"
 msgstr ""
 

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"POT-Creation-Date: 2021-10-14 16:42+0000\n"
 "PO-Revision-Date: 2021-10-08 10:53+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
@@ -95,36 +95,36 @@ msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
 msgstr[0] "%u人から%s"
 
-#: src/MainWindow.vala:80
+#: src/MainWindow.vala:82
 msgid "Mail"
 msgstr "メール"
 
-#: src/MainWindow.vala:156
+#: src/MainWindow.vala:158
 msgid "Fetch new messages"
 msgstr "新着メッセージを取得"
 
-#: src/MainWindow.vala:163
+#: src/MainWindow.vala:165
 msgid "Fetching new messages"
 msgstr "新着メッセージを取得しています"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:175
 msgid "Hide read conversations"
 msgstr "開封済みのスレッドを表示しない"
 
-#: src/MainWindow.vala:175
+#: src/MainWindow.vala:177
 msgid "Hide unstarred conversations"
 msgstr "スターなしのスレッドを表示しない"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:194
 msgid "Filter Conversations"
 msgstr "スレッドを検索"
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:404
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "メッセージを削除しました"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:416
 msgid "Undo"
 msgstr "元に戻す"
 
@@ -336,11 +336,11 @@ msgstr "未読としてマーク"
 msgid "Unread"
 msgstr "未読"
 
-#: src/ConversationList/ConversationListItem.vala:113
+#: src/ConversationList/ConversationListItem.vala:117
 msgid "Replied"
 msgstr "返信済み"
 
-#: src/ConversationList/ConversationListItem.vala:117
+#: src/ConversationList/ConversationListItem.vala:121
 msgid "Forwarded"
 msgstr "転送済み"
 

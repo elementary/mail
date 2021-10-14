@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"POT-Creation-Date: 2021-10-14 16:42+0000\n"
 "PO-Revision-Date: 2015-11-24 15:43+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Persian (http://www.transifex.com/projects/p/geary/language/"
@@ -115,50 +115,50 @@ msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
 msgstr[0] ""
 
-#: src/MainWindow.vala:80
+#: src/MainWindow.vala:82
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "همه‌ی ایمیل‌ها"
 
-#: src/MainWindow.vala:156
+#: src/MainWindow.vala:158
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d پیام جدید"
 
-#: src/MainWindow.vala:163
+#: src/MainWindow.vala:165
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages"
 msgstr "%d پیام جدید"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:175
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide read conversations"
 msgstr "افزودن برچسب به گفتگوها"
 
-#: src/MainWindow.vala:175
+#: src/MainWindow.vala:177
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide unstarred conversations"
 msgstr "افزودن برچسب به گفتگوها"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:194
 #, fuzzy
 msgid "Filter Conversations"
 msgstr "نشان گذاری گفتگوها"
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:404
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "هیچ گفتگویی انتخاب نشده است."
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:416
 msgid "Undo"
 msgstr ""
 
@@ -381,12 +381,12 @@ msgstr "نشان گذاری به عنوان خوانده نشده"
 msgid "Unread"
 msgstr "%d خوانده نشده"
 
-#: src/ConversationList/ConversationListItem.vala:113
+#: src/ConversationList/ConversationListItem.vala:117
 #, fuzzy
 msgid "Replied"
 msgstr "جایگذاری"
 
-#: src/ConversationList/ConversationListItem.vala:117
+#: src/ConversationList/ConversationListItem.vala:121
 #, fuzzy
 msgid "Forwarded"
 msgstr "ارسال مجدد"

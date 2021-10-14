@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"POT-Creation-Date: 2021-10-14 16:42+0000\n"
 "PO-Revision-Date: 2021-09-30 17:17+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
@@ -118,38 +118,38 @@ msgstr[0] "%s od %u nadawcy"
 msgstr[1] "%s od %u nadawców"
 msgstr[2] "%s od %u nadawców"
 
-#: src/MainWindow.vala:80
+#: src/MainWindow.vala:82
 msgid "Mail"
 msgstr "Poczta"
 
-#: src/MainWindow.vala:156
+#: src/MainWindow.vala:158
 msgid "Fetch new messages"
 msgstr "Pobierz nowe wiadomości"
 
-#: src/MainWindow.vala:163
+#: src/MainWindow.vala:165
 msgid "Fetching new messages"
 msgstr "Pobieranie nowych wiadomości"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:175
 msgid "Hide read conversations"
 msgstr "Schowaj przeczytane konwersacje"
 
-#: src/MainWindow.vala:175
+#: src/MainWindow.vala:177
 msgid "Hide unstarred conversations"
 msgstr "Schowaj konwersacje bez gwiazdki"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:194
 msgid "Filter Conversations"
 msgstr "Filtruj konwersacje"
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:404
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Wiadomość usunięta"
 msgstr[1] "Wiadomości usunięte"
 msgstr[2] "Wiadomości usuniętych"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:416
 msgid "Undo"
 msgstr "Cofnij"
 
@@ -367,11 +367,11 @@ msgstr "Oznacz jako nieprzeczytane"
 msgid "Unread"
 msgstr "Nieprzeczytana"
 
-#: src/ConversationList/ConversationListItem.vala:113
+#: src/ConversationList/ConversationListItem.vala:117
 msgid "Replied"
 msgstr "Odpowiedziana"
 
-#: src/ConversationList/ConversationListItem.vala:117
+#: src/ConversationList/ConversationListItem.vala:121
 msgid "Forwarded"
 msgstr "Przekazana"
 

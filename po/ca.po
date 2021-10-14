@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"POT-Creation-Date: 2021-10-14 16:42+0000\n"
 "PO-Revision-Date: 2021-10-06 01:02+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
@@ -105,37 +105,37 @@ msgid_plural "%s from %u senders"
 msgstr[0] "%s d'%u remitent"
 msgstr[1] "%s de %u remitents"
 
-#: src/MainWindow.vala:80
+#: src/MainWindow.vala:82
 msgid "Mail"
 msgstr "Correu"
 
-#: src/MainWindow.vala:156
+#: src/MainWindow.vala:158
 msgid "Fetch new messages"
 msgstr "Obtén missatges nous"
 
-#: src/MainWindow.vala:163
+#: src/MainWindow.vala:165
 msgid "Fetching new messages"
 msgstr "S'obtenen missatges nous."
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:175
 msgid "Hide read conversations"
 msgstr "Amaga les converses llegides"
 
-#: src/MainWindow.vala:175
+#: src/MainWindow.vala:177
 msgid "Hide unstarred conversations"
 msgstr "Amaga les converses no destacades"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:194
 msgid "Filter Conversations"
 msgstr "Filtra les converses"
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:404
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Missatge suprimit"
 msgstr[1] "Missatges suprimits"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:416
 msgid "Undo"
 msgstr "Desfés-ho"
 
@@ -349,11 +349,11 @@ msgstr "Marca com a no llegit"
 msgid "Unread"
 msgstr "Sense llegir"
 
-#: src/ConversationList/ConversationListItem.vala:113
+#: src/ConversationList/ConversationListItem.vala:117
 msgid "Replied"
 msgstr "Respost"
 
-#: src/ConversationList/ConversationListItem.vala:117
+#: src/ConversationList/ConversationListItem.vala:121
 msgid "Forwarded"
 msgstr "Reenviat"
 

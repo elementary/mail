@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"POT-Creation-Date: 2021-10-14 16:42+0000\n"
 "PO-Revision-Date: 2015-11-24 15:45+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
@@ -113,51 +113,51 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:80
+#: src/MainWindow.vala:82
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Барлық пошта"
 
-#: src/MainWindow.vala:156
+#: src/MainWindow.vala:158
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d жаңа хат"
 
-#: src/MainWindow.vala:163
+#: src/MainWindow.vala:165
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages"
 msgstr "%d жаңа хат"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:175
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide read conversations"
 msgstr "Сөйлесулерге белгіні қосу"
 
-#: src/MainWindow.vala:175
+#: src/MainWindow.vala:177
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide unstarred conversations"
 msgstr "Сөйлесулерге белгіні қосу"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:194
 #, fuzzy
 msgid "Filter Conversations"
 msgstr "Сөйлесулерді белгілеу"
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:404
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Бірде-бір сөйлесу таңдалмады."
 msgstr[1] "Бірде-бір сөйлесу таңдалмады."
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:416
 msgid "Undo"
 msgstr ""
 
@@ -383,12 +383,12 @@ msgstr "Оқылмаған етіп бел_гілеу"
 msgid "Unread"
 msgstr "%d оқылмаған"
 
-#: src/ConversationList/ConversationListItem.vala:113
+#: src/ConversationList/ConversationListItem.vala:117
 #, fuzzy
 msgid "Replied"
 msgstr "А_лмастыру"
 
-#: src/ConversationList/ConversationListItem.vala:117
+#: src/ConversationList/ConversationListItem.vala:121
 #, fuzzy
 msgid "Forwarded"
 msgstr "Қа_йта бағдарлау"
