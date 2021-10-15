@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"POT-Creation-Date: 2021-10-14 16:42+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
@@ -91,38 +91,38 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/MainWindow.vala:80
+#: src/MainWindow.vala:82
 msgid "Mail"
 msgstr ""
 
-#: src/MainWindow.vala:156
+#: src/MainWindow.vala:158
 msgid "Fetch new messages"
 msgstr ""
 
-#: src/MainWindow.vala:163
+#: src/MainWindow.vala:165
 msgid "Fetching new messages"
 msgstr ""
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:175
 msgid "Hide read conversations"
 msgstr ""
 
-#: src/MainWindow.vala:175
+#: src/MainWindow.vala:177
 msgid "Hide unstarred conversations"
 msgstr ""
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:194
 msgid "Filter Conversations"
 msgstr ""
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:404
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:416
 msgid "Undo"
 msgstr ""
 
@@ -330,11 +330,11 @@ msgstr ""
 msgid "Unread"
 msgstr ""
 
-#: src/ConversationList/ConversationListItem.vala:113
+#: src/ConversationList/ConversationListItem.vala:117
 msgid "Replied"
 msgstr ""
 
-#: src/ConversationList/ConversationListItem.vala:117
+#: src/ConversationList/ConversationListItem.vala:121
 msgid "Forwarded"
 msgstr ""
 

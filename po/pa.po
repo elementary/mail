@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"POT-Creation-Date: 2021-10-14 16:42+0000\n"
 "PO-Revision-Date: 2021-07-27 15:38+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/mail/mail/pa/>\n"
@@ -97,47 +97,47 @@ msgid_plural "%s from %u senders"
 msgstr[0] "ਭੇਜਣ ਵਾਲੇ ਵੱਲੋਂ ਹਮੇਸ਼ਾ ਵਿਖਾਓ"
 msgstr[1] "ਭੇਜਣ ਵਾਲੇ ਵੱਲੋਂ ਹਮੇਸ਼ਾ ਵਿਖਾਓ"
 
-#: src/MainWindow.vala:80
+#: src/MainWindow.vala:82
 msgid "Mail"
 msgstr "ਡਾਕ"
 
-#: src/MainWindow.vala:156
+#: src/MainWindow.vala:158
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetch new messages"
 msgstr "ਨਵਾਂ ਸੁਨੇਹਾ ਬਣਾਓ"
 
-#: src/MainWindow.vala:163
+#: src/MainWindow.vala:165
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetching new messages"
 msgstr "ਨਵਾਂ ਸੁਨੇਹਾ ਬਣਾਓ"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:175
 #, fuzzy
 #| msgid "Mark Conversation"
 msgid "Hide read conversations"
 msgstr "ਗੱਲਬਾਤ ਨੂੰ ਨਿਸ਼ਾਨ ਲਾਓ"
 
-#: src/MainWindow.vala:175
+#: src/MainWindow.vala:177
 #, fuzzy
 #| msgid "Mark Conversation"
 msgid "Hide unstarred conversations"
 msgstr "ਗੱਲਬਾਤ ਨੂੰ ਨਿਸ਼ਾਨ ਲਾਓ"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:194
 #, fuzzy
 #| msgid "Mark Conversation"
 msgid "Filter Conversations"
 msgstr "ਗੱਲਬਾਤ ਨੂੰ ਨਿਸ਼ਾਨ ਲਾਓ"
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:404
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "ਸੁਨੇਹਾ ਮਿਟਾ ਦਿੱਤਾ ਗਿਆ"
 msgstr[1] "ਸੁਨੇਹੇ ਮਿਟਾ ਦਿੱਤੇ ਗਏ"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:416
 msgid "Undo"
 msgstr "ਕੀਤੀ ਕਾਰਵਾਈ ਨੂੰ ਵਾਪਸ ਮੋੜੋ"
 
@@ -353,11 +353,11 @@ msgstr "ਨਾ-ਪੜ੍ਹੇ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਾਓ"
 msgid "Unread"
 msgstr "ਅਣਪੜ੍ਹੇ"
 
-#: src/ConversationList/ConversationListItem.vala:113
+#: src/ConversationList/ConversationListItem.vala:117
 msgid "Replied"
 msgstr "ਜਵਾਬ ਦਿੱਤੇ ਹੋਏ"
 
-#: src/ConversationList/ConversationListItem.vala:117
+#: src/ConversationList/ConversationListItem.vala:121
 msgid "Forwarded"
 msgstr "ਅੱਗੇ ਭੇਜੇ ਹੋਏ"
 

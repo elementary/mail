@@ -434,7 +434,8 @@ public class Mail.Backend.Session : Camel.Session {
                         throw new Camel.StoreError.NO_FOLDER ("Unable to connect to sent folder.");
                     }
 
-                    yield sent_folder.append_message (message, null, 0, null, null);
+                    var message_info = new MessageInfo (Camel.MessageFlags.SEEN);
+                    yield sent_folder.append_message (message, message_info, 0, null, null);
                     sent_message_saved = true;
 
                 } catch (Error e) {

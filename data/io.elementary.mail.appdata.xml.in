@@ -22,6 +22,15 @@
       <binary>io.elementary.mail</binary>
   </provides>
   <releases>
+    <release version="6.2.1" date="2021-10-14" urgency="medium">
+      <description>
+        <p>Fixes:</p>
+          <ul>
+            <li>Fixed sender combobox after opening a mailto link</li>
+            <li>Mark sent messages as read</li>
+          </ul>
+      </description>
+    </release>
     <release version="6.2.0" date="2021-09-27" urgency="medium">
       <description>
         <p>New features:</p>
