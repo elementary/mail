@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-14 16:42+0000\n"
-"PO-Revision-Date: 2021-09-27 02:16+0000\n"
+"PO-Revision-Date: 2021-10-15 04:06+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/"
-">\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/>"
+"\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,11 +74,11 @@ msgstr "修正点:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Fixed sender combobox after opening a mailto link"
-msgstr ""
+msgstr "mailto リンクを開いた際に、差出人コンボボックスが正しく表示されるように修正"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Mark sent messages as read"
-msgstr ""
+msgstr "送信済みのメッセージを既読としてマークするように修正"
 
 #: data/io.elementary.mail.appdata.xml.in:36
 msgid "New features:"
