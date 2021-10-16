@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class Mail.InboxMonitor : GLib.Object {
+public class Mail.StoreMonitor : GLib.Object {
 
     private NetworkMonitor network_monitor;
     private Mail.Backend.Session session;
@@ -87,7 +87,7 @@ public class Mail.InboxMonitor : GLib.Object {
 
                         debug ("[%s] Checking inbox for new mail every %u minutes…", folder.display_name, refresh_interval_in_minutes);
                         var refresh_timeout_id = GLib.Timeout.add_seconds (refresh_interval_in_minutes * 60, () => {
-                            inbox_folder_synchronize_sync.begin (account);
+                            account_synchronize.begin (account);
                             return GLib.Source.CONTINUE;
                         });
 
@@ -95,7 +95,7 @@ public class Mail.InboxMonitor : GLib.Object {
                             synchronize_timeout_ids.insert (account, refresh_timeout_id);
                         }
 
-                        inbox_folder_synchronize_sync.begin (account);
+                        account_synchronize.begin (account);
                     }
 
                 } else {
@@ -111,20 +111,24 @@ public class Mail.InboxMonitor : GLib.Object {
         }
     }
 
-    private async void inbox_folder_synchronize_sync (Mail.Backend.Account account) {
+    private async void account_synchronize (Mail.Backend.Account account) {
         if (!network_monitor.network_available) {
             debug ("[%s] Network is not avaible. Skipping…", account.service.display_name);
             return;
         }
 
-        var inbox_folder = inbox_folders.get (account);
-        if (inbox_folder != null) {
-            debug ("[%s] Refreshing…", account.service.display_name);
+        if (account.service is Camel.Store) {
+            debug ("[%s] Synchronizing…", account.service.display_name);
 
+            var store = (Camel.Store) account.service;
             try {
-                yield inbox_folder.refresh_info (GLib.Priority.DEFAULT, null);
+                if (store is Camel.OfflineStore) {
+                    yield ((Camel.OfflineStore) store).set_online (true, GLib.Priority.DEFAULT, null);
+                }
+                yield store.connect (GLib.Priority.DEFAULT, null);
+                yield store.synchronize (true, GLib.Priority.DEFAULT, null);
             } catch (Error e) {
-                debug ("[%s] Error refreshing: %s", account.service.display_name, e.message);
+                debug ("[%s] Error synchronizing: %s", account.service.display_name, e.message);
             }
         }
     }

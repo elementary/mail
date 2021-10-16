@@ -95,7 +95,7 @@ public class Mail.Application : Gtk.Application {
     public override void activate () {
         if (run_in_background) {
             run_in_background = false;
-            new InboxMonitor ().start.begin ();
+            new StoreMonitor ().start.begin ();
             hold ();
             return;
         }
