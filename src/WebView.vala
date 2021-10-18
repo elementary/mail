@@ -223,7 +223,6 @@ public class Mail.WebView : WebKit.WebView {
             // below this yield statement - and by this
             // time the body_html string is set correctly.
             yield;
-
         } else {
             try {
                 var message = new WebKit.UserMessage ("get-body-html", new Variant.boolean (true));

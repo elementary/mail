@@ -198,7 +198,6 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                                         child = child.next;
                                     }
                                 }
-
                             } catch (Error e) {
                                 // We can cancel the operation
                                 if (!(e is GLib.IOError.CANCELLED)) {
@@ -241,6 +240,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 if (search_result_uids == null) {
                     return;
                 }
+
                 threads[service_uid].apply (search_result_uids);
 
                 var removed = 0;
@@ -269,7 +269,6 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                             removed++;
                             add_conversation_item (child, service_uid);
                         };
-
                     }
 
                     child = child.next;
@@ -391,6 +390,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             if (archive_threads[selected_item_model.service_uid] == null) {
                 archive_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
             }
+
             archive_threads[selected_item_model.service_uid].add (selected_item_model.node);
         }
 
@@ -432,6 +432,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             if (trash_threads[selected_item_model.service_uid] == null) {
                 trash_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
             }
+
             trash_threads[selected_item_model.service_uid].add (selected_item_model.node);
         }
 
@@ -478,7 +479,6 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             mark_unread_menu_item.activate.connect (() => {
                 mark_unread_selected_messages ();
             });
-
         } else {
             var mark_read_menu_item = new Gtk.MenuItem ();
             mark_read_menu_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ));

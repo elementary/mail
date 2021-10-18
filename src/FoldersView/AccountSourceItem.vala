@@ -63,7 +63,6 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
             if (folderinfo != null) {
                 show_info (folderinfo, this);
             }
-
         } catch (Error e) {
             critical (e.message);
         }
