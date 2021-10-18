@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"POT-Creation-Date: 2021-10-14 16:42+0000\n"
 "PO-Revision-Date: 2019-08-27 22:23+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/mail/mail/eo/"
@@ -111,49 +111,49 @@ msgid_plural "%s from %u senders"
 msgstr[0] "Ĉiam montri por ĉi sendanto"
 msgstr[1] "Ĉiam montri por ĉi sendanto"
 
-#: src/MainWindow.vala:80
+#: src/MainWindow.vala:82
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Ĉiuj mesaĝoj"
 
-#: src/MainWindow.vala:156
+#: src/MainWindow.vala:158
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetch new messages"
 msgstr "Redakti novan mesaĝon"
 
-#: src/MainWindow.vala:163
+#: src/MainWindow.vala:165
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetching new messages"
 msgstr "Redakti novan mesaĝon"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:175
 #, fuzzy
 #| msgid "Mark Conversation"
 msgid "Hide read conversations"
 msgstr "Marki konversacion"
 
-#: src/MainWindow.vala:175
+#: src/MainWindow.vala:177
 #, fuzzy
 #| msgid "Mark Conversation"
 msgid "Hide unstarred conversations"
 msgstr "Marki konversacion"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:194
 #, fuzzy
 #| msgid "Mark Conversation"
 msgid "Filter Conversations"
 msgstr "Marki konversacion"
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:404
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Konversacio forigita"
 msgstr[1] "Konversacioj forigitaj"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:416
 msgid "Undo"
 msgstr "Malfari"
 
@@ -381,11 +381,11 @@ msgstr "Marki kiel nelegitan"
 msgid "Unread"
 msgstr "Nelegita"
 
-#: src/ConversationList/ConversationListItem.vala:113
+#: src/ConversationList/ConversationListItem.vala:117
 msgid "Replied"
 msgstr "Respondita"
 
-#: src/ConversationList/ConversationListItem.vala:117
+#: src/ConversationList/ConversationListItem.vala:121
 msgid "Forwarded"
 msgstr "Plusendita"
 

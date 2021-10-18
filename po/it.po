@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"POT-Creation-Date: 2021-10-14 16:42+0000\n"
 "PO-Revision-Date: 2021-01-30 01:07+0000\n"
 "Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/mail/mail/it/>\n"
@@ -117,49 +117,49 @@ msgid_plural "%s from %u senders"
 msgstr[0] "Mostra sempre dal mittente"
 msgstr[1] "Mostra sempre dal mittente"
 
-#: src/MainWindow.vala:80
+#: src/MainWindow.vala:82
 msgid "Mail"
 msgstr "Posta"
 
-#: src/MainWindow.vala:156
+#: src/MainWindow.vala:158
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d nuovo messaggio"
 
-#: src/MainWindow.vala:163
+#: src/MainWindow.vala:165
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages"
 msgstr "%d nuovo messaggio"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:175
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide read conversations"
 msgstr "Segna le conversazioni"
 
-#: src/MainWindow.vala:175
+#: src/MainWindow.vala:177
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
 msgstr "Segna le conversazioni"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:194
 #, fuzzy
 #| msgid "Delete Conversation"
 msgid "Filter Conversations"
 msgstr "Cancella la conversazione"
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:404
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Messaggio eliminato"
 msgstr[1] "Messaggi eliminati"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:416
 msgid "Undo"
 msgstr "Annulla"
 
@@ -390,11 +390,11 @@ msgstr "Segna come non letto"
 msgid "Unread"
 msgstr "Non letto"
 
-#: src/ConversationList/ConversationListItem.vala:113
+#: src/ConversationList/ConversationListItem.vala:117
 msgid "Replied"
 msgstr "Risposta inviata"
 
-#: src/ConversationList/ConversationListItem.vala:117
+#: src/ConversationList/ConversationListItem.vala:121
 msgid "Forwarded"
 msgstr "Inoltrato"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"POT-Creation-Date: 2021-10-14 16:42+0000\n"
 "PO-Revision-Date: 2017-05-04 20:01+0000\n"
 "Last-Translator: Rokar <rokartv10@gmail.com>\n"
 "Language-Team: ku (generated) <https://l10n.elementary.io/projects/mail/mail/"
@@ -105,39 +105,39 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:80
+#: src/MainWindow.vala:82
 msgid "Mail"
 msgstr "E-Peyam"
 
-#: src/MainWindow.vala:156
+#: src/MainWindow.vala:158
 #, fuzzy
 msgid "Fetch new messages"
 msgstr "Peyamekê Nû Biafirînê"
 
-#: src/MainWindow.vala:163
+#: src/MainWindow.vala:165
 #, fuzzy
 msgid "Fetching new messages"
 msgstr "Peyamekê Nû Biafirînê"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:175
 msgid "Hide read conversations"
 msgstr ""
 
-#: src/MainWindow.vala:175
+#: src/MainWindow.vala:177
 msgid "Hide unstarred conversations"
 msgstr ""
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:194
 msgid "Filter Conversations"
 msgstr ""
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:404
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:416
 #, fuzzy
 msgid "Undo"
 msgstr "_Vegerîne"
@@ -355,12 +355,12 @@ msgstr ""
 msgid "Unread"
 msgstr ""
 
-#: src/ConversationList/ConversationListItem.vala:113
+#: src/ConversationList/ConversationListItem.vala:117
 #, fuzzy
 msgid "Replied"
 msgstr "Bersiv"
 
-#: src/ConversationList/ConversationListItem.vala:117
+#: src/ConversationList/ConversationListItem.vala:121
 #, fuzzy
 msgid "Forwarded"
 msgstr "Pêşve"

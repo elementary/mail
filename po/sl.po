@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-05 20:07+0000\n"
+"POT-Creation-Date: 2021-10-14 16:42+0000\n"
 "PO-Revision-Date: 2020-01-06 00:07+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/mail/mail/sl/"
@@ -116,43 +116,43 @@ msgstr[1] "Vedno pokaži od pošiljatelja"
 msgstr[2] "Vedno pokaži od pošiljatelja"
 msgstr[3] "Vedno pokaži od pošiljatelja"
 
-#: src/MainWindow.vala:80
+#: src/MainWindow.vala:82
 msgid "Mail"
 msgstr "Elektronska pošta"
 
-#: src/MainWindow.vala:156
+#: src/MainWindow.vala:158
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d novo sporočilo"
 
-#: src/MainWindow.vala:163
+#: src/MainWindow.vala:165
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages"
 msgstr "%d novo sporočilo"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:175
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide read conversations"
 msgstr "Označi pogovore"
 
-#: src/MainWindow.vala:175
+#: src/MainWindow.vala:177
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
 msgstr "Označi pogovore"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:194
 #, fuzzy
 #| msgid "Delete Conversation"
 msgid "Filter Conversations"
 msgstr "Izbriši pogovor"
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:404
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Sporočilo izbrisano"
@@ -160,7 +160,7 @@ msgstr[1] "Sporočila izbrisana"
 msgstr[2] "Sporočila izbrisana"
 msgstr[3] "Sporočila izbrisana"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:416
 msgid "Undo"
 msgstr "Razveljavi"
 
@@ -393,11 +393,11 @@ msgstr "Označi kot neprebrano"
 msgid "Unread"
 msgstr "Neprebrano"
 
-#: src/ConversationList/ConversationListItem.vala:113
+#: src/ConversationList/ConversationListItem.vala:117
 msgid "Replied"
 msgstr "Odgovorjeno"
 
-#: src/ConversationList/ConversationListItem.vala:117
+#: src/ConversationList/ConversationListItem.vala:121
 msgid "Forwarded"
 msgstr "Posredovano"
 
