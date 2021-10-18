@@ -39,6 +39,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private uint configure_id;
     private uint search_changed_debounce_timeout_id = 0;
 
+    public bool is_session_started { get; private set; default = false; }
     public signal void session_started ();
 
     public const string ACTION_GROUP_PREFIX = "win";
@@ -318,6 +319,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         session.start.begin ((obj, res) => {
             session.start.end (res);
+            is_session_started = true;
             session_started ();
         });
     }

@@ -80,9 +80,14 @@ public class Mail.Application : Gtk.Application {
 
                 to = Soup.URI.decode (mailto.path);
 
-                main_window.session_started.connect (() => {
+                if (main_window.is_session_started) {
                     new ComposerWindow (main_window, to, mailto.query).show_all ();
-                });
+
+                } else {
+                    main_window.session_started.connect (() => {
+                        new ComposerWindow (main_window, to, mailto.query).show_all ();
+                    });
+                }
 
             } catch (OptionError e) {
                 warning ("Argument parsing error. %s", e.message);
