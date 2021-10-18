@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-14 16:42+0000\n"
-"PO-Revision-Date: 2021-09-26 00:26+0000\n"
+"PO-Revision-Date: 2021-10-18 21:07+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
 "Language: tr\n"
@@ -346,16 +346,12 @@ msgid "New Message"
 msgstr "Yeni İleti"
 
 #: src/ConversationList/ConversationListBox.vala:461
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move To Trash"
-msgstr "Konuşmaları Çöpe Taşı"
+msgstr "Çöpe Taşı"
 
 #: src/ConversationList/ConversationListBox.vala:470
-#, fuzzy
-#| msgid "Mark as Unread"
 msgid "Mark As Unread"
-msgstr "Okunmamış olarak İşaretle"
+msgstr "Okunmamış Olarak İşaretle"
 
 #: src/ConversationList/ConversationListItem.vala:103
 msgid "Unread"
