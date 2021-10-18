@@ -112,7 +112,6 @@ public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
 
                 if (mail_composition_extension != null && mail_composition_extension.dup_drafts_folder () == folder_uri) {
                     full_flags = full_flags | Camel.FolderInfoFlags.TYPE_DRAFTS;
-
                 } else if (mail_submission_extension != null && mail_submission_extension.dup_sent_folder () == folder_uri) {
                     full_flags = full_flags | Camel.FolderInfoFlags.TYPE_SENT;
                 }
