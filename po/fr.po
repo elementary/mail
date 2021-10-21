@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-14 16:42+0000\n"
-"PO-Revision-Date: 2021-09-13 13:56+0000\n"
-"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
+"PO-Revision-Date: 2021-10-21 16:45+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -121,36 +121,24 @@ msgid "Mail"
 msgstr "Messagerie"
 
 #: src/MainWindow.vala:158
-#, fuzzy
-#| msgid "%u new message"
-#| msgid_plural "%u new messages"
 msgid "Fetch new messages"
-msgstr "%u nouveau message"
+msgstr "Récupérer les nouveaux messages"
 
 #: src/MainWindow.vala:165
-#, fuzzy
-#| msgid "%u new message"
-#| msgid_plural "%u new messages"
 msgid "Fetching new messages"
-msgstr "%u nouveau message"
+msgstr "Récupération des nouveaux messages"
 
 #: src/MainWindow.vala:175
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide read conversations"
-msgstr "Marquer les conversations"
+msgstr "Masquer les conversations lues"
 
 #: src/MainWindow.vala:177
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
-msgstr "Marquer les conversations"
+msgstr "Marquer les conversations non favorites"
 
 #: src/MainWindow.vala:194
-#, fuzzy
-#| msgid "Delete Conversation"
 msgid "Filter Conversations"
-msgstr "Supprimer la conversation"
+msgstr "Filtrer les conversations"
 
 #: src/MainWindow.vala:404
 msgid "Message Deleted"
@@ -365,14 +353,10 @@ msgid "New Message"
 msgstr "Nouveau message"
 
 #: src/ConversationList/ConversationListBox.vala:461
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move To Trash"
-msgstr "Déplacer les conversations dans la corbeille"
+msgstr "Déplacer vers la corbeille"
 
 #: src/ConversationList/ConversationListBox.vala:470
-#, fuzzy
-#| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Marquer comme non lu"
 
@@ -449,7 +433,7 @@ msgstr "Aucun message sélectionné"
 #: src/MessageList/MessageListItem.vala:173
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s à %s"
 
 #: src/MessageList/MessageListItem.vala:181
 #: src/MessageList/MessageListItem.vala:340
