@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-22 20:42+0000\n"
-"PO-Revision-Date: 2021-10-15 10:20+0000\n"
+"PO-Revision-Date: 2021-10-22 22:03+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/extra/uk/"
-">\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/extra/uk/>"
+"\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,7 +72,7 @@ msgstr "Нові можливості:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Seconday click menu on the conversations list"
-msgstr ""
+msgstr "Меню правої кнопки миші на списку бесід"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 #: data/io.elementary.mail.appdata.xml.in:55
@@ -91,6 +91,8 @@ msgstr "Надіслані повідомлення позначаються п�
 #: data/io.elementary.mail.appdata.xml.in:35
 msgid "Fix a hang when deleting the last message in a mailbox"
 msgstr ""
+"Виправлено зависання під час видалення останнього повідомлення в поштовій "
+"скриньці"
 
 #: data/io.elementary.mail.appdata.xml.in:37
 #: data/io.elementary.mail.appdata.xml.in:60
@@ -101,17 +103,15 @@ msgstr "Поліпшення:"
 
 #: data/io.elementary.mail.appdata.xml.in:39
 msgid "Use accent color for unread message titles"
-msgstr ""
+msgstr "Основний колір застосовується до непрочитаних повідомлень"
 
 #: data/io.elementary.mail.appdata.xml.in:40
-#, fuzzy
-#| msgid "Automatically select the next message after deleting"
 msgid "Autoselect the next message after archiving"
-msgstr "Автовибір наступного повідомлення після видалення попереднього"
+msgstr "Автовибір наступного повідомлення після архівування"
 
 #: data/io.elementary.mail.appdata.xml.in:41
 msgid "Use local time in message headers"
-msgstr ""
+msgstr "Використовувати місцевий час у заголовках повідомлень"
 
 #: data/io.elementary.mail.appdata.xml.in:42
 #: data/io.elementary.mail.appdata.xml.in:63
