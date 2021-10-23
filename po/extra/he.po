@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-22 20:42+0000\n"
-"PO-Revision-Date: 2021-10-14 18:48+0000\n"
+"PO-Revision-Date: 2021-10-23 18:02+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/extra/he/>\n"
 "Language: he\n"
@@ -70,7 +70,7 @@ msgstr "יכולות חדשות:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Seconday click menu on the conversations list"
-msgstr ""
+msgstr "תפריט כפתור ימני ברשימת הדיונים"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 #: data/io.elementary.mail.appdata.xml.in:55
@@ -88,7 +88,7 @@ msgstr "סימון הודעות שנשלחו ככאלו שנקראו"
 
 #: data/io.elementary.mail.appdata.xml.in:35
 msgid "Fix a hang when deleting the last message in a mailbox"
-msgstr ""
+msgstr "תוקנה השהיה בעת מחיקת ההודעה האחרונה בתיבת הדוא״ל"
 
 #: data/io.elementary.mail.appdata.xml.in:37
 #: data/io.elementary.mail.appdata.xml.in:60
@@ -99,17 +99,15 @@ msgstr "שיפורים:"
 
 #: data/io.elementary.mail.appdata.xml.in:39
 msgid "Use accent color for unread message titles"
-msgstr ""
+msgstr "להשתמש בצבע משני לכותרות של הודעות שלא נקראו"
 
 #: data/io.elementary.mail.appdata.xml.in:40
-#, fuzzy
-#| msgid "Automatically select the next message after deleting"
 msgid "Autoselect the next message after archiving"
-msgstr "לבחור את ההודעה הבאה אוטומטית לאחר מחיקה"
+msgstr "לבחור את ההודעה הבאה אוטומטית לאחר העברה לארכיון"
 
 #: data/io.elementary.mail.appdata.xml.in:41
 msgid "Use local time in message headers"
-msgstr ""
+msgstr "להשתמש בשעה המקומית בכותרות ההודעות"
 
 #: data/io.elementary.mail.appdata.xml.in:42
 #: data/io.elementary.mail.appdata.xml.in:63
