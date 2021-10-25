@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-25 20:04+0000\n"
-"PO-Revision-Date: 2021-10-15 04:06+0000\n"
+"PO-Revision-Date: 2021-10-25 22:44+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/"
-">\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/>"
+"\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,9 +36,8 @@ msgid ""
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
 msgstr ""
-"“メール”はメールを素早く、楽々と管理できるようにデザインされています。イン"
-"ターフェースが会話に基づいているので、会話全体をメッセージからメッセージへと"
-"クリックせずに読むことができます。"
+"“メール”はメールを素早く、楽々と管理できるようにデザインされています。スレッドに基づいたインターフェースなので、メールのやりとりをメッセージからメッセー"
+"ジへとクリックせずに読むことができます。"
 
 #: data/io.elementary.mail.appdata.xml.in:13
 msgid "Lightweight mail client with full IMAP support"
@@ -46,7 +45,7 @@ msgstr "IMAP のフルサポート付きの軽量なメールクライアント"
 
 #: data/io.elementary.mail.appdata.xml.in:14
 msgid "Mail grouped into conversations, not a tree of threads"
-msgstr "メールはスレッドのツリーではなく、会話ごとに分類されます"
+msgstr "メールはスレッドの階層表示ではなく、会話ごとの分類で表示されます"
 
 #: data/io.elementary.mail.appdata.xml.in:15
 msgid "As-you-type searching"
@@ -73,7 +72,7 @@ msgstr "新機能:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Secondary-click menu on the conversations list"
-msgstr ""
+msgstr "スレッド一覧で副クリックメニューを表示できるように修正"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 #: data/io.elementary.mail.appdata.xml.in:55
@@ -166,7 +165,7 @@ msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:73
 msgid "Fix a crash on startup for some conversations"
-msgstr "会話が原因でアプリが起動時にクラッシュすることがある不具合を修正"
+msgstr "スレッドが原因でアプリが起動時にクラッシュすることがある不具合を修正"
 
 #: data/io.elementary.mail.appdata.xml.in:77
 msgid "Only save drafts when there are new changes"
