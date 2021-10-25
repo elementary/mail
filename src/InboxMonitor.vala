@@ -44,11 +44,9 @@ public class Mail.InboxMonitor : GLib.Object {
         session.account_removed.connect (remove_account);
     }
 
-    private void remove_account () {
-        var accounts = session.get_accounts ();
-
+    private void remove_account (Mail.Backend.Account removed_account) {
         foreach (var account in inbox_folders.get_keys ()) {
-            if (!accounts.contains (account)) {
+            if (account == removed_account) {
                 lock (inbox_folders) {
                     inbox_folders.remove (account);
                 }
