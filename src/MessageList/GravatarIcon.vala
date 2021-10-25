@@ -51,6 +51,7 @@ public class GravatarIcon: Object, Icon, LoadableIcon {
         if (!local_file.query_exists (cancellable)) {
             server_file.copy (local_file, FileCopyFlags.OVERWRITE, cancellable, null);
         }
+
         return local_file.read ();
     }
 

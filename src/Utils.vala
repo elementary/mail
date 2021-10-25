@@ -66,6 +66,7 @@ public class Mail.Utils {
         if (folder_uri != null) {
             return folder_uri.replace ("folder://%s/".printf (service_uid), "");
         }
+
         return null;
     }
 }

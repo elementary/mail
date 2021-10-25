@@ -109,7 +109,6 @@ public class Mail.MoveHandler {
 
                 return moved_messages.size;
             }
-
         } catch (Error e) {
             warning ("Unable to archive messages due to an unexpected error: %s", e.message);
 
@@ -117,6 +116,7 @@ public class Mail.MoveHandler {
             src_folder.thaw ();
             dst_folder.thaw ();
         }
+
         return 0;
     }
 

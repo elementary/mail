@@ -106,7 +106,6 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
             status_revealer.reveal_child = true;
 
             source.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
-
         } else {
             get_style_context ().remove_class ("unread-message");
             status_icon.get_style_context ().remove_class (Granite.STYLE_CLASS_ACCENT);

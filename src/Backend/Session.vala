@@ -245,10 +245,12 @@ public class Mail.Backend.Session : Camel.Session {
                     if (drafts_folder != null) {
                         Camel.URL.decode (drafts_folder);
                     }
+
                     return drafts_folder;
                 }
             }
         }
+
         return null;
     }
 
@@ -298,8 +300,9 @@ public class Mail.Backend.Session : Camel.Session {
         var sources = registry.list_enabled (E.SOURCE_EXTENSION_MAIL_IDENTITY);
         sources.foreach ((source_item) => {
             weak E.SourceMailIdentity extension = (E.SourceMailIdentity)source_item.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
-            if (extension == null)
+            if (extension == null) {
                 return;
+            }
 
             var address = extension.get_address ();
             addresses.add (address.casefold ());
@@ -355,6 +358,7 @@ public class Mail.Backend.Session : Camel.Session {
         if (!transport_source.has_extension (E.SOURCE_EXTENSION_MAIL_TRANSPORT)) {
             return null;
         }
+
         unowned E.SourceMailTransport mail_transport = (E.SourceMailTransport) transport_source.get_extension (E.SOURCE_EXTENSION_MAIL_TRANSPORT);
 
         return add_service (transport_source.uid, mail_transport.backend_name, Camel.ProviderType.TRANSPORT) as Camel.Transport;
@@ -404,7 +408,6 @@ public class Mail.Backend.Session : Camel.Session {
 
             if (provider != null && Camel.ProviderFlags.DISABLE_SENT_FOLDER in provider.flags) {
                 debug ("Sent folder is disabled - sent message is not saved.");
-
             } else {
                 try {
                     var camel_store = get_camel_store_from_email (from);
@@ -434,14 +437,15 @@ public class Mail.Backend.Session : Camel.Session {
                         throw new Camel.StoreError.NO_FOLDER ("Unable to connect to sent folder.");
                     }
 
-                    yield sent_folder.append_message (message, null, 0, null, null);
+                    var message_info = new MessageInfo (Camel.MessageFlags.SEEN);
+                    yield sent_folder.append_message (message, message_info, 0, null, null);
                     sent_message_saved = true;
-
                 } catch (Error e) {
                     warning ("Unable to append message to Sent folder: %s", e.message);
                 }
             }
         }
+
         remove_service (transport);
 
         return sent_message_saved;
@@ -458,6 +462,7 @@ public class Mail.Backend.Session : Camel.Session {
             if (account_uid == "vfolder") {
                 continue;
             }
+
             weak E.SourceMailAccount mail_account = (E.SourceMailAccount) source_item.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
 
             var identity_uid = mail_account.identity_uid;
