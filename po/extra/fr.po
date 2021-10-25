@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-22 20:42+0000\n"
-"PO-Revision-Date: 2021-10-21 15:02+0000\n"
+"PO-Revision-Date: 2021-10-25 12:33+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/extra/fr/>\n"
 "Language: fr\n"
@@ -77,7 +77,7 @@ msgstr "Nouvelles fonctionnalités :"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Seconday click menu on the conversations list"
-msgstr ""
+msgstr "Menu contextuel sur la liste des conversations"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 #: data/io.elementary.mail.appdata.xml.in:55
@@ -96,6 +96,8 @@ msgstr "Les messages envoyés sont désormais marqués comme lus"
 #: data/io.elementary.mail.appdata.xml.in:35
 msgid "Fix a hang when deleting the last message in a mailbox"
 msgstr ""
+"Correction d'un blocage lors de la suppression du dernier message dans une "
+"boîte de messagerie"
 
 #: data/io.elementary.mail.appdata.xml.in:37
 #: data/io.elementary.mail.appdata.xml.in:60
@@ -107,16 +109,15 @@ msgstr "Améliorations :"
 #: data/io.elementary.mail.appdata.xml.in:39
 msgid "Use accent color for unread message titles"
 msgstr ""
+"Utilisation de la couleur d'accentuation pour l'objet des messages non lus"
 
 #: data/io.elementary.mail.appdata.xml.in:40
-#, fuzzy
-#| msgid "Automatically select the next message after deleting"
 msgid "Autoselect the next message after archiving"
-msgstr "Sélection automatique du message suivant après suppression"
+msgstr "Sélection automatique du message suivant après archivage"
 
 #: data/io.elementary.mail.appdata.xml.in:41
 msgid "Use local time in message headers"
-msgstr ""
+msgstr "Utilisation de l'heure locale dans les entêtes des messages"
 
 #: data/io.elementary.mail.appdata.xml.in:42
 #: data/io.elementary.mail.appdata.xml.in:63
