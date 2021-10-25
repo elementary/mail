@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-22 20:42+0000\n"
+"POT-Creation-Date: 2021-10-25 20:04+0000\n"
 "PO-Revision-Date: 2021-10-25 12:33+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/extra/fr/>\n"
@@ -76,7 +76,9 @@ msgid "New features:"
 msgstr "Nouvelles fonctionnalités :"
 
 #: data/io.elementary.mail.appdata.xml.in:29
-msgid "Seconday click menu on the conversations list"
+#, fuzzy
+#| msgid "Seconday click menu on the conversations list"
+msgid "Secondary-click menu on the conversations list"
 msgstr "Menu contextuel sur la liste des conversations"
 
 #: data/io.elementary.mail.appdata.xml.in:31
