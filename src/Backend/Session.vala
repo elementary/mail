@@ -283,7 +283,7 @@ public class Mail.Backend.Session : Camel.Session {
         base.remove_service (service);
 
         if (service is Camel.OfflineStore) {
-            var account_index = accounts.index_of (new Account (service);
+            var account_index = accounts.index_of (new Account (service));
 
             if (account_index >= 0) {
                 account_removed (accounts.remove_at (account_index)));
