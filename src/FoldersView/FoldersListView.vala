@@ -80,7 +80,6 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
 
             if (account.service.uid == selected_folder_uid) {
                 select_saved_folder (account_item, selected_folder_name);
-
             } else if (selected_folder_uid == "GROUPED") {
                 select_saved_folder (session_source_item, selected_folder_name);
             }
@@ -103,7 +102,6 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
                     folder_selected (folder_name_per_account.read_only_view);
                     return true;
                 }
-
             } else if (child is GroupedFolderSourceItem) {
                 unowned GroupedFolderSourceItem grouped_folder_item = (GroupedFolderSourceItem) child;
                 if (grouped_folder_item.name == selected_folder_name) {
@@ -113,6 +111,7 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
                 }
             }
         }
+
         return false;
     }
 }

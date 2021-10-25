@@ -77,6 +77,7 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
                 }
             }
         }
+
         return folder_full_name_per_account.read_only_view;
     }
 
@@ -95,7 +96,6 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
         if (full_name != null) {
             try {
                 folderinfo = yield offlinestore.get_folder_info (full_name, 0, GLib.Priority.DEFAULT, connect_cancellable);
-
             } catch (Error e) {
                 // We can cancel the operation
                 if (!(e is GLib.IOError.CANCELLED)) {
@@ -133,6 +133,7 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
                 total_unread += entry.value.unread;
             }
         }
+
         if (total_unread > 0) {
             badge = "%d".printf (total_unread);
         }
@@ -142,8 +143,8 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
         if (Camel.FolderInfoFlags.TYPE_INBOX == (folder_type & Camel.FOLDER_TYPE_MASK)) {
             return "INBOX";
         }
-        var service_source = session.ref_source (account.service.uid);
 
+        var service_source = session.ref_source (account.service.uid);
         if (service_source != null && service_source.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
             var mail_account_extension = (E.SourceMailAccount) service_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
 
@@ -163,6 +164,7 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
                 return Utils.strip_folder_full_name (account.service.uid, mail_submission_extension.sent_folder);
             }
         }
+
         return null;
     }
 }

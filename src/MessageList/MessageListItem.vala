@@ -339,6 +339,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 starred_icon.icon_name = "starred-symbolic";
                 starred_icon.tooltip_text = _("Unstar message");
             }
+
             return Gdk.EVENT_STOP;
         });
 
@@ -469,6 +470,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                         settings.set_strv ("remote-images-whitelist", whitelist);
                     }
                 }
+
                 web_view.load_images ();
                 blocked_images_infobar.destroy ();
             });

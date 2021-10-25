@@ -102,6 +102,32 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 conversation_selected (((ConversationItemModel) row).node);
             }
         });
+
+        button_release_event.connect ((e) => {
+
+            if (e.button != Gdk.BUTTON_SECONDARY) {
+                return Gdk.EVENT_PROPAGATE;
+            }
+
+            var row = get_row_at_y ((int)e.y);
+
+            if (selected_row_widget != row) {
+                select_row (row);
+            }
+
+            return create_context_menu (e, (ConversationListItem)row);
+        });
+
+        key_release_event.connect ((e) => {
+
+            if (e.keyval != Gdk.Key.Menu) {
+                return Gdk.EVENT_PROPAGATE;
+            }
+
+            var row = selected_row_widget;
+
+            return create_context_menu (e, (ConversationListItem)row);
+        });
     }
 
     private static void set_thread_flag (Camel.FolderThreadNode? node, Camel.MessageFlags flag) {
@@ -172,7 +198,6 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                                         child = child.next;
                                     }
                                 }
-
                             } catch (Error e) {
                                 // We can cancel the operation
                                 if (!(e is GLib.IOError.CANCELLED)) {
@@ -215,6 +240,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 if (search_result_uids == null) {
                     return;
                 }
+
                 threads[service_uid].apply (search_result_uids);
 
                 var removed = 0;
@@ -243,7 +269,6 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                             removed++;
                             add_conversation_item (child, service_uid);
                         };
-
                     }
 
                     child = child.next;
@@ -355,13 +380,17 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
     public async int archive_selected_messages () {
         var archive_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
+
         var selected_rows = get_selected_rows ();
+        int selected_rows_start_index = list_store.get_index_of (selected_rows.to_array ()[0]);
+
         foreach (unowned var selected_row in selected_rows) {
             var selected_item_model = (ConversationItemModel) selected_row;
 
             if (archive_threads[selected_item_model.service_uid] == null) {
                 archive_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
             }
+
             archive_threads[selected_item_model.service_uid].add (selected_item_model.node);
         }
 
@@ -386,6 +415,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
 
         list_store.items_changed (0, archived, list_store.get_n_items ());
+        select_row_at_index (selected_rows_start_index);
+
         return archived;
     }
 
@@ -401,6 +432,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             if (trash_threads[selected_item_model.service_uid] == null) {
                 trash_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
             }
+
             trash_threads[selected_item_model.service_uid].add (selected_item_model.node);
         }
 
@@ -424,5 +456,67 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
     public void undo_expired () {
         move_handler.expire_undo ();
+    }
+
+    private bool create_context_menu (Gdk.Event e, ConversationListItem row) {
+        var item = (ConversationItemModel)row.model_item;
+
+        var menu = new Gtk.Menu ();
+
+        var trash_menu_item = new Gtk.MenuItem ();
+        trash_menu_item.add (new Granite.AccelLabel.from_action_name (_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH));
+        menu.add (trash_menu_item);
+
+        trash_menu_item.activate.connect (() => {
+            trash_selected_messages ();
+        });
+
+        if (!item.unread) {
+            var mark_unread_menu_item = new Gtk.MenuItem ();
+            mark_unread_menu_item.add (new Granite.AccelLabel.from_action_name (_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD));
+            menu.add (mark_unread_menu_item);
+
+            mark_unread_menu_item.activate.connect (() => {
+                mark_unread_selected_messages ();
+            });
+        } else {
+            var mark_read_menu_item = new Gtk.MenuItem ();
+            mark_read_menu_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ));
+            menu.add (mark_read_menu_item);
+
+            mark_read_menu_item.activate.connect (() => {
+                mark_read_selected_messages ();
+            });
+        }
+
+        if (!item.flagged) {
+            var mark_starred_menu_item = new Gtk.MenuItem ();
+            mark_starred_menu_item.add (new Granite.AccelLabel.from_action_name (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR));
+            menu.add (mark_starred_menu_item);
+
+            mark_starred_menu_item.activate.connect (() => {
+                mark_star_selected_messages ();
+            });
+        } else {
+            var mark_unstarred_menu_item = new Gtk.MenuItem ();
+            mark_unstarred_menu_item.add (new Granite.AccelLabel.from_action_name (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR));
+            menu.add (mark_unstarred_menu_item);
+
+            mark_unstarred_menu_item.activate.connect (() => {
+                mark_unstar_selected_messages ();
+            });
+        }
+
+        menu.show_all ();
+
+        if (e.type == Gdk.EventType.BUTTON_RELEASE) {
+            menu.popup_at_pointer (e);
+            return Gdk.EVENT_STOP;
+        } else if (e.type == Gdk.EventType.KEY_RELEASE) {
+            menu.popup_at_widget (row, Gdk.Gravity.EAST, Gdk.Gravity.CENTER, e);
+            return Gdk.EVENT_STOP;
+        }
+
+        return Gdk.EVENT_PROPAGATE;
     }
 }

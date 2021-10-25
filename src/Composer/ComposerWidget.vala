@@ -375,7 +375,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 var terms = param.split ("=");
                 if (terms.length == 2) {
                     result[terms[0].down ()] = (Soup.URI.decode (terms[1]));
-
                 } else {
                     critical ("Invalid mailto URL");
                 }
@@ -423,9 +422,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
         if (entry.text == "") {
             return;
         }
+
         if (entry.text.contains ("\n") ) {
             entry.text = entry.text.replace ("\n", ", ");
         }
+
         if (entry.text.contains ("\r") ) {
             entry.text = entry.text.replace ("\r", ", ");
         }
@@ -450,6 +451,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
             }
             attachment_box.show_all ();
         }
+
         filechooser.destroy ();
     }
 
@@ -536,6 +538,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
                                     from_combo.set_active_iter (iter);
                                     return true;
                                 }
+
                                 return false;
                             });
                         }
@@ -573,7 +576,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
                         bcc_revealer.reveal_child = true;
                     }
                 }
-
             } else {
                 message_content = "<br/><br/>";
                 string date_format = _("%a, %b %-e, %Y at %-l:%M %p");
@@ -619,6 +621,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
                     if (info.cc != null && info.cc != "") {
                         message_content += _("Cc: %s<br/>").printf (Utils.escape_html_tags (info.cc));
                     }
+
                     message_content += "<br/><br/>";
                     message_content += content_to_quote;
                 }
@@ -704,6 +707,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 sensitive = true;
                 return;
             }
+
             no_subject_dialog.destroy ();
         }
 
@@ -731,7 +735,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
             discard_draft = true;
             sent ();
-
         } catch (Error e) {
             var error_dialog = new Granite.MessageDialog (
                 _("Unable to send message"),
@@ -744,7 +747,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
             error_dialog.show_error_details (e.message);
             error_dialog.run ();
             error_dialog.destroy ();
-
         } finally {
             sensitive = true;
         }
@@ -807,7 +809,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 }
 
                 unowned var attachment_obj = (Attachment)attachment;
-
                 body.add_part (attachment_obj.get_mime_part ());
             }
         }
@@ -951,7 +952,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
             if (body_html == null) {
                 base.destroy ();
-
             } else {
                 unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
 
@@ -968,7 +968,6 @@ public class Mail.ComposerWidget : Gtk.Grid {
                         try {
                             session.save_draft.end (res);
                             base.destroy ();
-
                         } catch (Error e) {
                             unowned Mail.MainWindow? main_window = null;
                             var windows = Gtk.Window.list_toplevels ();

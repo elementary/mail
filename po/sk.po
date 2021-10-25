@@ -5,12 +5,12 @@
 #
 # Translators:
 # Dušan Kazik <prescott66@gmail.com>, 2013, 2015
-#: src/MessageList/MessageListItem.vala:389
+#: src/MessageList/MessageListItem.vala:390
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-27 17:18+0000\n"
+"POT-Creation-Date: 2021-10-22 20:42+0000\n"
 "PO-Revision-Date: 2021-09-20 03:12+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/mail/mail/sk/>\n"
@@ -58,15 +58,15 @@ msgstr "Preposlať"
 msgid "Mark as Unread"
 msgstr "Označiť ako neprečítané"
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:484
 msgid "Mark as Read"
 msgstr "Označiť ako prečítané"
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:494
 msgid "Star"
 msgstr "Pridať hviezdičku"
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:502
 msgid "Unstar"
 msgstr "Odobrať hviezdičku"
 
@@ -82,13 +82,13 @@ msgstr "Presunúť konverzácie do archívu"
 msgid "Move conversations to Trash"
 msgstr "Presunúť konverzácie do koša"
 
-#: src/InboxMonitor.vala:167 src/InboxMonitor.vala:180
+#: src/InboxMonitor.vala:164 src/InboxMonitor.vala:176
 #, c-format
 msgid "%s to %s"
 msgstr "%s do %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
-#: src/InboxMonitor.vala:175
+#: src/InboxMonitor.vala:171
 #, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
@@ -98,7 +98,7 @@ msgstr[2] "%u nové správy"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
-#: src/InboxMonitor.vala:188
+#: src/InboxMonitor.vala:183
 #, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
@@ -106,50 +106,50 @@ msgstr[0] "%s od %u odosielateľov"
 msgstr[1] "%s od %u odosielateľa"
 msgstr[2] "%s od %u odosielateľov"
 
-#: src/MainWindow.vala:80
+#: src/MainWindow.vala:83
 msgid "Mail"
 msgstr "Pošta"
 
-#: src/MainWindow.vala:156
+#: src/MainWindow.vala:159
 #, fuzzy
 #| msgid "%u new message"
 #| msgid_plural "%u new messages"
 msgid "Fetch new messages"
 msgstr "%u nových správ"
 
-#: src/MainWindow.vala:163
+#: src/MainWindow.vala:166
 #, fuzzy
 #| msgid "%u new message"
 #| msgid_plural "%u new messages"
 msgid "Fetching new messages"
 msgstr "%u nových správ"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:176
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Hide read conversations"
 msgstr "Odstrániť rozhovor"
 
-#: src/MainWindow.vala:175
+#: src/MainWindow.vala:178
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Hide unstarred conversations"
 msgstr "Odstrániť rozhovor"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:195
 #, fuzzy
 #| msgid "Delete Conversation"
 msgid "Filter Conversations"
 msgstr "Odstraniť konverzáciu"
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:406
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Správy odstránené"
 msgstr[1] "Správa odstránená"
 msgstr[2] "Správy odstránené"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:418
 msgid "Undo"
 msgstr "Späť"
 
@@ -232,78 +232,78 @@ msgstr "Priložiť súbor"
 msgid "Send"
 msgstr "Odoslať"
 
-#: src/Composer/ComposerWidget.vala:436
+#: src/Composer/ComposerWidget.vala:437
 msgid "Choose a file"
 msgstr "Vybrať súbor"
 
-#: src/Composer/ComposerWidget.vala:439
+#: src/Composer/ComposerWidget.vala:440
 msgid "Attach"
 msgstr "Priložiť"
 
-#: src/Composer/ComposerWidget.vala:440 src/Composer/ComposerWidget.vala:668
+#: src/Composer/ComposerWidget.vala:441 src/Composer/ComposerWidget.vala:671
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Zrušiť"
 
-#: src/Composer/ComposerWidget.vala:579
+#: src/Composer/ComposerWidget.vala:581
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %b %-e, %Y v %-l:%M %p"
 
-#: src/Composer/ComposerWidget.vala:609
+#: src/Composer/ComposerWidget.vala:611
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Dňa %1$s, %2$s napísal:"
 
-#: src/Composer/ComposerWidget.vala:613
+#: src/Composer/ComposerWidget.vala:615
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Preposlaná správa ----------"
 
-#: src/Composer/ComposerWidget.vala:615
+#: src/Composer/ComposerWidget.vala:617
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Od: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:616
+#: src/Composer/ComposerWidget.vala:618
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Predmet: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:617
+#: src/Composer/ComposerWidget.vala:619
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Dátum: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:618
+#: src/Composer/ComposerWidget.vala:620
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Pre: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:620
+#: src/Composer/ComposerWidget.vala:622
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Kópia: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:659
+#: src/Composer/ComposerWidget.vala:662
 msgid "Permanently delete this draft?"
 msgstr "Natrvalo odstrániť tento koncept?"
 
-#: src/Composer/ComposerWidget.vala:660
+#: src/Composer/ComposerWidget.vala:663
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Táto akcia nemôže byť vrátená späť a váš koncept sa nedá obnoviť, keď už bol "
 "raz odstránený."
 
-#: src/Composer/ComposerWidget.vala:670
+#: src/Composer/ComposerWidget.vala:673
 msgid "Delete Draft"
 msgstr "Odstrániť koncept"
 
-#: src/Composer/ComposerWidget.vala:690
+#: src/Composer/ComposerWidget.vala:693
 msgid "Send without subject?"
 msgstr "Odoslať bez predmetu?"
 
-#: src/Composer/ComposerWidget.vala:691
+#: src/Composer/ComposerWidget.vala:694
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -311,38 +311,38 @@ msgstr ""
 "Táto správa má prázdne políčko predmetu. Príjemca pravdepodobne nerozozná "
 "dôležitosť či rozsah správy."
 
-#: src/Composer/ComposerWidget.vala:697
+#: src/Composer/ComposerWidget.vala:700
 msgid "Don't Send"
 msgstr "Neodosielať"
 
-#: src/Composer/ComposerWidget.vala:699
+#: src/Composer/ComposerWidget.vala:702
 msgid "Send Anyway"
 msgstr "Napriek tomu odoslať"
 
-#: src/Composer/ComposerWidget.vala:721
+#: src/Composer/ComposerWidget.vala:725
 msgid "Sent message was not saved"
 msgstr "Odoslaná správa nebola uložená"
 
-#: src/Composer/ComposerWidget.vala:722
+#: src/Composer/ComposerWidget.vala:726
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 "Správa bola odoslaná, avšak jej kópia nebola uložená do priečinka Odoslané."
 
-#: src/Composer/ComposerWidget.vala:737
+#: src/Composer/ComposerWidget.vala:740
 msgid "Unable to send message"
 msgstr "Nepodarilo sa odoslať správu"
 
-#: src/Composer/ComposerWidget.vala:738
+#: src/Composer/ComposerWidget.vala:741
 msgid "There was an unexpected error while sending your message."
 msgstr "Pri odosielaní vašej správy sa vyskytla neočakávaná chyba."
 
-#: src/Composer/ComposerWidget.vala:989
+#: src/Composer/ComposerWidget.vala:988
 msgid "Unable to save draft"
 msgstr "Nepodarilo sa uložiť koncept"
 
-#: src/Composer/ComposerWidget.vala:990
+#: src/Composer/ComposerWidget.vala:989
 msgid "There was an unexpected error while saving your draft."
 msgstr "Pri ukladaní vášho konceptu sa vyskytla neočakávaná chyba."
 
@@ -350,15 +350,27 @@ msgstr "Pri ukladaní vášho konceptu sa vyskytla neočakávaná chyba."
 msgid "New Message"
 msgstr "Nová správa"
 
+#: src/ConversationList/ConversationListBox.vala:467
+#, fuzzy
+#| msgid "Move conversations to Trash"
+msgid "Move To Trash"
+msgstr "Presunúť konverzácie do koša"
+
+#: src/ConversationList/ConversationListBox.vala:476
+#, fuzzy
+#| msgid "Mark as Unread"
+msgid "Mark As Unread"
+msgstr "Označiť ako neprečítané"
+
 #: src/ConversationList/ConversationListItem.vala:103
 msgid "Unread"
 msgstr "Neprečítané"
 
-#: src/ConversationList/ConversationListItem.vala:113
+#: src/ConversationList/ConversationListItem.vala:116
 msgid "Replied"
 msgstr "Odpovedané"
 
-#: src/ConversationList/ConversationListItem.vala:117
+#: src/ConversationList/ConversationListItem.vala:120
 msgid "Forwarded"
 msgstr "Preposlané"
 
@@ -464,11 +476,11 @@ msgid "This message contains one or more attachments"
 msgstr "Táto správa obsahuje jednu alebo viac príloh"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:366
+#: src/MessageList/MessageListItem.vala:367
 msgid "Email Message"
 msgstr "E-mailová správa"
 
-#: src/MessageList/MessageListItem.vala:388
+#: src/MessageList/MessageListItem.vala:389
 msgid "Unable to print email"
 msgstr "Nepodarilo sa vytlačiť e-mail"
 

@@ -1,8 +1,8 @@
-#: src/MessageList/MessageListItem.vala:389
+#: src/MessageList/MessageListItem.vala:390
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-27 17:18+0000\n"
+"POT-Creation-Date: 2021-10-22 20:42+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
@@ -44,15 +44,15 @@ msgstr ""
 msgid "Mark as Unread"
 msgstr ""
 
-#: src/HeaderBar.vala:108
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:484
 msgid "Mark as Read"
 msgstr ""
 
-#: src/HeaderBar.vala:113
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:494
 msgid "Star"
 msgstr ""
 
-#: src/HeaderBar.vala:118
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:502
 msgid "Unstar"
 msgstr ""
 
@@ -68,13 +68,13 @@ msgstr ""
 msgid "Move conversations to Trash"
 msgstr ""
 
-#: src/InboxMonitor.vala:167 src/InboxMonitor.vala:180
+#: src/InboxMonitor.vala:164 src/InboxMonitor.vala:176
 #, c-format
 msgid "%s to %s"
 msgstr ""
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
-#: src/InboxMonitor.vala:175
+#: src/InboxMonitor.vala:171
 #, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
@@ -84,7 +84,7 @@ msgstr[2] ""
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
-#: src/InboxMonitor.vala:188
+#: src/InboxMonitor.vala:183
 #, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
@@ -92,38 +92,38 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/MainWindow.vala:80
+#: src/MainWindow.vala:83
 msgid "Mail"
 msgstr ""
 
-#: src/MainWindow.vala:156
+#: src/MainWindow.vala:159
 msgid "Fetch new messages"
 msgstr ""
 
-#: src/MainWindow.vala:163
+#: src/MainWindow.vala:166
 msgid "Fetching new messages"
 msgstr ""
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:176
 msgid "Hide read conversations"
 msgstr ""
 
-#: src/MainWindow.vala:175
+#: src/MainWindow.vala:178
 msgid "Hide unstarred conversations"
 msgstr ""
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:195
 msgid "Filter Conversations"
 msgstr ""
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:406
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:418
 msgid "Undo"
 msgstr ""
 
@@ -206,112 +206,112 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:436
+#: src/Composer/ComposerWidget.vala:437
 msgid "Choose a file"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:439
+#: src/Composer/ComposerWidget.vala:440
 msgid "Attach"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:440 src/Composer/ComposerWidget.vala:668
+#: src/Composer/ComposerWidget.vala:441 src/Composer/ComposerWidget.vala:671
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:579
+#: src/Composer/ComposerWidget.vala:581
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:609
+#: src/Composer/ComposerWidget.vala:611
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:613
-msgid "---------- Forwarded message ----------"
-msgstr ""
-
 #: src/Composer/ComposerWidget.vala:615
-#, c-format
-msgid "From: %s<br/>"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:616
-#, c-format
-msgid "Subject: %s<br/>"
+msgid "---------- Forwarded message ----------"
 msgstr ""
 
 #: src/Composer/ComposerWidget.vala:617
 #, c-format
-msgid "Date: %s<br/>"
+msgid "From: %s<br/>"
 msgstr ""
 
 #: src/Composer/ComposerWidget.vala:618
 #, c-format
-msgid "To: %s<br/>"
+msgid "Subject: %s<br/>"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:619
+#, c-format
+msgid "Date: %s<br/>"
 msgstr ""
 
 #: src/Composer/ComposerWidget.vala:620
 #, c-format
+msgid "To: %s<br/>"
+msgstr ""
+
+#: src/Composer/ComposerWidget.vala:622
+#, c-format
 msgid "Cc: %s<br/>"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:659
+#: src/Composer/ComposerWidget.vala:662
 msgid "Permanently delete this draft?"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:660
+#: src/Composer/ComposerWidget.vala:663
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:670
+#: src/Composer/ComposerWidget.vala:673
 msgid "Delete Draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:690
+#: src/Composer/ComposerWidget.vala:693
 msgid "Send without subject?"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:691
+#: src/Composer/ComposerWidget.vala:694
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:697
+#: src/Composer/ComposerWidget.vala:700
 msgid "Don't Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:699
+#: src/Composer/ComposerWidget.vala:702
 msgid "Send Anyway"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:721
+#: src/Composer/ComposerWidget.vala:725
 msgid "Sent message was not saved"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:722
+#: src/Composer/ComposerWidget.vala:726
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:737
+#: src/Composer/ComposerWidget.vala:740
 msgid "Unable to send message"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:738
+#: src/Composer/ComposerWidget.vala:741
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:989
+#: src/Composer/ComposerWidget.vala:988
 msgid "Unable to save draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:990
+#: src/Composer/ComposerWidget.vala:989
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -319,15 +319,23 @@ msgstr ""
 msgid "New Message"
 msgstr ""
 
+#: src/ConversationList/ConversationListBox.vala:467
+msgid "Move To Trash"
+msgstr ""
+
+#: src/ConversationList/ConversationListBox.vala:476
+msgid "Mark As Unread"
+msgstr ""
+
 #: src/ConversationList/ConversationListItem.vala:103
 msgid "Unread"
 msgstr ""
 
-#: src/ConversationList/ConversationListItem.vala:113
+#: src/ConversationList/ConversationListItem.vala:116
 msgid "Replied"
 msgstr ""
 
-#: src/ConversationList/ConversationListItem.vala:117
+#: src/ConversationList/ConversationListItem.vala:120
 msgid "Forwarded"
 msgstr ""
 
@@ -431,11 +439,11 @@ msgid "This message contains one or more attachments"
 msgstr ""
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:366
+#: src/MessageList/MessageListItem.vala:367
 msgid "Email Message"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:388
+#: src/MessageList/MessageListItem.vala:389
 msgid "Unable to print email"
 msgstr ""
 
