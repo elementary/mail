@@ -97,15 +97,12 @@ public class Mail.InboxMonitor : GLib.Object {
 
                         inbox_folder_synchronize_sync.begin (account);
                     }
-
                 } else {
                     debug ("[%s] Inbox folder not found. Can't automatically check for new messages.", account.service.display_name);
                 }
-
             } catch (Error e) {
                 debug ("[%s] Error getting inbox folder: %s", account.service.display_name, e.message);
             }
-
         } else {
             debug ("[%s] No store available.", account.service.display_name);
         }
@@ -167,7 +164,6 @@ public class Mail.InboxMonitor : GLib.Object {
                 var notification = new GLib.Notification (_("%s to %s").printf (sender_names.iterator ().next_value (), inbox_folder.parent_store.display_name));
                 notification.set_body (unseen_message_info.subject);
                 GLib.Application.get_default ().send_notification (unseen_message_info.uid, notification);
-
             } else if (unseen_message_infos_length > 1) {
                 GLib.Notification notification;
 
@@ -179,7 +175,6 @@ public class Mail.InboxMonitor : GLib.Object {
 
                     notification = new GLib.Notification (_("%s to %s").printf (sender_name, inbox_folder.parent_store.display_name));
                     notification.set_body (messages_count);
-
                 } else {
                     notification = new GLib.Notification (inbox_folder.parent_store.display_name);
 

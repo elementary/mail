@@ -65,7 +65,6 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
             if (folderinfo != null) {
                 folder_created (folderinfo);
             }
-
         } catch (Error e) {
             critical (e.message);
         }

@@ -22,13 +22,25 @@
       <binary>io.elementary.mail</binary>
   </provides>
   <releases>
-    <release version="6.2.1" date="2021-10-14" urgency="medium">
+    <release version="6.3.0" date="2021-10-14" urgency="medium">
       <description>
+        <p>New features:</p>
+        <ul>
+          <li>Seconday click menu on the conversations list</li>
+        </ul>
         <p>Fixes:</p>
-          <ul>
-            <li>Fixed sender combobox after opening a mailto link</li>
-            <li>Mark sent messages as read</li>
-          </ul>
+        <ul>
+          <li>Fixed sender combobox after opening a mailto link</li>
+          <li>Mark sent messages as read</li>
+          <li>Fix a hang when deleting the last message in a mailbox</li>
+        </ul>
+        <p>Improvements:</p>
+        <ul>
+          <li>Use accent color for unread message titles</li>
+          <li>Autoselect the next message after archiving</li>
+          <li>Use local time in message headers</li>
+          <li>Updated translations</li>
+        </ul>
       </description>
     </release>
     <release version="6.2.0" date="2021-09-27" urgency="medium">

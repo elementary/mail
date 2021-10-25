@@ -74,16 +74,20 @@ public class Mail.Application : Gtk.Application {
                 if (mailto == null) {
                     throw new OptionError.BAD_VALUE ("Argument is not a URL.");
                 }
+
                 if (mailto.scheme != "mailto") {
                     throw new OptionError.BAD_VALUE ("Cannot open non-mailto: URL");
                 }
 
                 to = Soup.URI.decode (mailto.path);
 
-                main_window.session_started.connect (() => {
+                if (main_window.is_session_started) {
                     new ComposerWindow (main_window, to, mailto.query).show_all ();
-                });
-
+                } else {
+                    main_window.session_started.connect (() => {
+                        new ComposerWindow (main_window, to, mailto.query).show_all ();
+                    });
+                }
             } catch (OptionError e) {
                 warning ("Argument parsing error. %s", e.message);
             }
