@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-22 20:42+0000\n"
-"PO-Revision-Date: 2021-10-24 15:14+0000\n"
-"Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
+"POT-Creation-Date: 2021-10-25 20:04+0000\n"
+"PO-Revision-Date: 2021-10-25 10:20+0000\n"
+"Last-Translator: asdffdsdaf <asdffdsdaf@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/extra/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -71,8 +71,10 @@ msgid "New features:"
 msgstr "Новые возможности:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
-msgid "Seconday click menu on the conversations list"
-msgstr ""
+#, fuzzy
+#| msgid "Seconday click menu on the conversations list"
+msgid "Secondary-click menu on the conversations list"
+msgstr "Нажатие правой кнопки мыши по списку бесед"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 #: data/io.elementary.mail.appdata.xml.in:55
@@ -91,6 +93,8 @@ msgstr "Пометка отправленных сообщений прочит�
 #: data/io.elementary.mail.appdata.xml.in:35
 msgid "Fix a hang when deleting the last message in a mailbox"
 msgstr ""
+"Исправлена остановка работы приложения при удалении последнего сообщения в "
+"почте"
 
 #: data/io.elementary.mail.appdata.xml.in:37
 #: data/io.elementary.mail.appdata.xml.in:60
@@ -109,7 +113,7 @@ msgstr "Автовыбор следующего сообщения после а
 
 #: data/io.elementary.mail.appdata.xml.in:41
 msgid "Use local time in message headers"
-msgstr ""
+msgstr "Использование пользовательского часового пояса в заголовках сообщений"
 
 #: data/io.elementary.mail.appdata.xml.in:42
 #: data/io.elementary.mail.appdata.xml.in:63

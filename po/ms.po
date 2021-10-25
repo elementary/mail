@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-22 20:42+0000\n"
+"POT-Creation-Date: 2021-10-25 20:04+0000\n"
 "PO-Revision-Date: 2016-06-07 12:58+0000\n"
 "Last-Translator: Timothy <timothy.wong@rocketmail.com>\n"
 "Language-Team: Malay (Malaysia) (http://www.transifex.com/projects/p/geary/"
@@ -93,13 +93,13 @@ msgstr "Alih perbualan"
 msgid "Move conversations to Trash"
 msgstr "Alih perbualan"
 
-#: src/InboxMonitor.vala:164 src/InboxMonitor.vala:176
+#: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
 msgid "%s to %s"
 msgstr ""
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
-#: src/InboxMonitor.vala:171
+#: src/InboxMonitor.vala:165
 #, fuzzy, c-format
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
@@ -109,7 +109,7 @@ msgstr[0] "%d mesej baru"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
-#: src/InboxMonitor.vala:183
+#: src/InboxMonitor.vala:177
 #, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
