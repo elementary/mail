@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-25 20:04+0000\n"
-"PO-Revision-Date: 2021-10-25 22:44+0000\n"
+"PO-Revision-Date: 2021-10-25 22:48+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/>"
 "\n"
@@ -91,7 +91,7 @@ msgstr "送信済みのメッセージを既読としてマークするように
 
 #: data/io.elementary.mail.appdata.xml.in:35
 msgid "Fix a hang when deleting the last message in a mailbox"
-msgstr ""
+msgstr "メールボックスの最後のメッセージを削除するとハングアップする不具合を修正"
 
 #: data/io.elementary.mail.appdata.xml.in:37
 #: data/io.elementary.mail.appdata.xml.in:60
@@ -102,17 +102,15 @@ msgstr "改善点:"
 
 #: data/io.elementary.mail.appdata.xml.in:39
 msgid "Use accent color for unread message titles"
-msgstr ""
+msgstr "未読メッセージのタイトルをユーザー設定のアクセントカラーで表示するように変更"
 
 #: data/io.elementary.mail.appdata.xml.in:40
-#, fuzzy
-#| msgid "Automatically select the next message after deleting"
 msgid "Autoselect the next message after archiving"
-msgstr "メッセージの削除後、次のメッセージを自動的に選択するように修正"
+msgstr "アーカイブ後、次のメッセージを自動的に選択するように修正"
 
 #: data/io.elementary.mail.appdata.xml.in:41
 msgid "Use local time in message headers"
-msgstr ""
+msgstr "メッセージのヘッダーに地方時を使うように修正"
 
 #: data/io.elementary.mail.appdata.xml.in:42
 #: data/io.elementary.mail.appdata.xml.in:63
