@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-22 20:42+0000\n"
+"POT-Creation-Date: 2021-10-25 20:04+0000\n"
 "PO-Revision-Date: 2021-09-30 17:17+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
@@ -94,13 +94,13 @@ msgstr "Przenieś rozmowy do archiwum"
 msgid "Move conversations to Trash"
 msgstr "Przenieś rozmowy do kosza"
 
-#: src/InboxMonitor.vala:164 src/InboxMonitor.vala:176
+#: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
 msgid "%s to %s"
 msgstr "%s w %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
-#: src/InboxMonitor.vala:171
+#: src/InboxMonitor.vala:165
 #, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
@@ -110,7 +110,7 @@ msgstr[2] "%u nowych wiadomości"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
-#: src/InboxMonitor.vala:183
+#: src/InboxMonitor.vala:177
 #, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-22 20:42+0000\n"
-"PO-Revision-Date: 2021-09-23 01:30+0000\n"
+"POT-Creation-Date: 2021-10-25 20:04+0000\n"
+"PO-Revision-Date: 2021-10-25 22:44+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/extra/en_GB/>\n"
@@ -67,11 +67,11 @@ msgstr "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 #: data/io.elementary.mail.appdata.xml.in:27
 #: data/io.elementary.mail.appdata.xml.in:48
 msgid "New features:"
-msgstr ""
+msgstr "New features:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
-msgid "Seconday click menu on the conversations list"
-msgstr ""
+msgid "Secondary-click menu on the conversations list"
+msgstr "Secondary-click menu on the conversations list"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 #: data/io.elementary.mail.appdata.xml.in:55
@@ -81,15 +81,15 @@ msgstr "Fixes:"
 
 #: data/io.elementary.mail.appdata.xml.in:33
 msgid "Fixed sender combobox after opening a mailto link"
-msgstr ""
+msgstr "Fixed sender combobox after opening a mailto link"
 
 #: data/io.elementary.mail.appdata.xml.in:34
 msgid "Mark sent messages as read"
-msgstr ""
+msgstr "Mark sent messages as read"
 
 #: data/io.elementary.mail.appdata.xml.in:35
 msgid "Fix a hang when deleting the last message in a mailbox"
-msgstr ""
+msgstr "Fix a hang when deleting the last message in a mailbox"
 
 #: data/io.elementary.mail.appdata.xml.in:37
 #: data/io.elementary.mail.appdata.xml.in:60
@@ -100,15 +100,15 @@ msgstr "Improvements:"
 
 #: data/io.elementary.mail.appdata.xml.in:39
 msgid "Use accent color for unread message titles"
-msgstr ""
+msgstr "Use accent colour for unread message titles"
 
 #: data/io.elementary.mail.appdata.xml.in:40
 msgid "Autoselect the next message after archiving"
-msgstr ""
+msgstr "Autoselect the next message after archiving"
 
 #: data/io.elementary.mail.appdata.xml.in:41
 msgid "Use local time in message headers"
-msgstr ""
+msgstr "Use local time in message headers"
 
 #: data/io.elementary.mail.appdata.xml.in:42
 #: data/io.elementary.mail.appdata.xml.in:63
@@ -123,25 +123,23 @@ msgstr "Send a notification when new messages arrive"
 
 #: data/io.elementary.mail.appdata.xml.in:51
 msgid "Add a button to manually fetch new messages"
-msgstr ""
+msgstr "Add a button to manually fetch new messages"
 
 #: data/io.elementary.mail.appdata.xml.in:52
 msgid "Automatically select the next message after deleting"
-msgstr ""
+msgstr "Automatically select the next message after deleting"
 
 #: data/io.elementary.mail.appdata.xml.in:53
 msgid "Filter unread or starred conversations"
 msgstr "Filter unread or starred conversations"
 
 #: data/io.elementary.mail.appdata.xml.in:57
-#, fuzzy
-#| msgid "Make sure we don't save sent messages twice for some account types"
 msgid "Make sure we don't save sent messages twice for outlook.com accounts"
-msgstr "Make sure we don't save sent messages twice for some account types"
+msgstr "Make sure we don't save sent messages twice for outlook.com accounts"
 
 #: data/io.elementary.mail.appdata.xml.in:58
 msgid "Fix a potential crash when changing folders"
-msgstr ""
+msgstr "Fix a potential crash when changing folders"
 
 #: data/io.elementary.mail.appdata.xml.in:62
 msgid "Improve search performance"

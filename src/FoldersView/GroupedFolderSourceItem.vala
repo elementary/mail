@@ -110,15 +110,9 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
         update_infos ();
     }
 
-    private void removed_account () {
-        var accounts_left = session.get_accounts ();
-
-        foreach (var account in account_folderinfo.keys) {
-            if (!accounts_left.contains (account)) {
-                lock (account_folderinfo) {
-                    account_folderinfo.unset (account);
-                }
-            }
+    private void removed_account (Mail.Backend.Account account) {
+        lock (account_folderinfo) {
+            account_folderinfo.unset (account);
         }
     }
 

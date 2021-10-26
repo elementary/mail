@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-22 20:42+0000\n"
+"POT-Creation-Date: 2021-10-25 20:04+0000\n"
 "PO-Revision-Date: 2015-11-24 15:45+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
@@ -90,13 +90,13 @@ msgstr "Сөйлесулерді жылжыту"
 msgid "Move conversations to Trash"
 msgstr "Сөйлесулерді жылжыту"
 
-#: src/InboxMonitor.vala:164 src/InboxMonitor.vala:176
+#: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
 msgid "%s to %s"
 msgstr ""
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
-#: src/InboxMonitor.vala:171
+#: src/InboxMonitor.vala:165
 #, fuzzy, c-format
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
@@ -106,7 +106,7 @@ msgstr[0] "%d жаңа хат"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
-#: src/InboxMonitor.vala:183
+#: src/InboxMonitor.vala:177
 #, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
