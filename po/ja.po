@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-25 20:04+0000\n"
-"PO-Revision-Date: 2021-10-08 10:53+0000\n"
+"PO-Revision-Date: 2021-10-25 22:44+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -65,15 +65,15 @@ msgstr "スターを外す"
 
 #: src/HeaderBar.vala:130
 msgid "Mark Conversation"
-msgstr "メッセージにマークをつける"
+msgstr "スレッドにマークをつける"
 
 #: src/HeaderBar.vala:137
 msgid "Move conversations to archive"
-msgstr "メッセージをアーカイブします"
+msgstr "スレッドをアーカイブします"
 
 #: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
-msgstr "メッセージをゴミ箱に移動します"
+msgstr "スレッドをゴミ箱に移動します"
 
 #: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
