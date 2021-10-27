@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-14 16:42+0000\n"
-"PO-Revision-Date: 2021-10-15 10:20+0000\n"
+"POT-Creation-Date: 2021-10-25 20:04+0000\n"
+"PO-Revision-Date: 2021-10-25 22:12+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/extra/uk/>"
 "\n"
@@ -66,72 +66,97 @@ msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr "Працює з Gmail, Yahoo! Mail та іншими популярними серверами IMAP"
 
 #: data/io.elementary.mail.appdata.xml.in:27
-#: data/io.elementary.mail.appdata.xml.in:43
-#: data/io.elementary.mail.appdata.xml.in:57
-msgid "Fixes:"
-msgstr "Виправлення:"
-
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Fixed sender combobox after opening a mailto link"
-msgstr "Виправлено редактор відправника після відкриття посилання mailto"
-
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid "Mark sent messages as read"
-msgstr "Надіслані повідомлення позначаються прочитаними"
-
-#: data/io.elementary.mail.appdata.xml.in:36
+#: data/io.elementary.mail.appdata.xml.in:48
 msgid "New features:"
 msgstr "Нові можливості:"
 
-#: data/io.elementary.mail.appdata.xml.in:38
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Secondary-click menu on the conversations list"
+msgstr "Меню правої кнопки миші на списку бесід"
+
+#: data/io.elementary.mail.appdata.xml.in:31
+#: data/io.elementary.mail.appdata.xml.in:55
+#: data/io.elementary.mail.appdata.xml.in:69
+msgid "Fixes:"
+msgstr "Виправлення:"
+
+#: data/io.elementary.mail.appdata.xml.in:33
+msgid "Fixed sender combobox after opening a mailto link"
+msgstr "Виправлено редактор відправника після відкриття посилання mailto"
+
+#: data/io.elementary.mail.appdata.xml.in:34
+msgid "Mark sent messages as read"
+msgstr "Надіслані повідомлення позначаються прочитаними"
+
+#: data/io.elementary.mail.appdata.xml.in:35
+msgid "Fix a hang when deleting the last message in a mailbox"
+msgstr ""
+"Виправлено зависання під час видалення останнього повідомлення в поштовій "
+"скриньці"
+
+#: data/io.elementary.mail.appdata.xml.in:37
+#: data/io.elementary.mail.appdata.xml.in:60
+#: data/io.elementary.mail.appdata.xml.in:75
+#: data/io.elementary.mail.appdata.xml.in:85
+msgid "Improvements:"
+msgstr "Поліпшення:"
+
+#: data/io.elementary.mail.appdata.xml.in:39
+msgid "Use accent color for unread message titles"
+msgstr "Основний колір застосовується до непрочитаних повідомлень"
+
+#: data/io.elementary.mail.appdata.xml.in:40
+msgid "Autoselect the next message after archiving"
+msgstr "Автовибір наступного повідомлення після архівування"
+
+#: data/io.elementary.mail.appdata.xml.in:41
+msgid "Use local time in message headers"
+msgstr "Використовувати місцевий час у заголовках повідомлень"
+
+#: data/io.elementary.mail.appdata.xml.in:42
+#: data/io.elementary.mail.appdata.xml.in:63
+#: data/io.elementary.mail.appdata.xml.in:79
+#: data/io.elementary.mail.appdata.xml.in:92
+msgid "Updated translations"
+msgstr "Оновлено переклади"
+
+#: data/io.elementary.mail.appdata.xml.in:50
 msgid "Send a notification when new messages arrive"
 msgstr "Надсилання сповіщень, коли надходять нові повідомлення"
 
-#: data/io.elementary.mail.appdata.xml.in:39
+#: data/io.elementary.mail.appdata.xml.in:51
 msgid "Add a button to manually fetch new messages"
 msgstr "Додано кнопку отримання нових повідомлень вручну"
 
-#: data/io.elementary.mail.appdata.xml.in:40
+#: data/io.elementary.mail.appdata.xml.in:52
 msgid "Automatically select the next message after deleting"
 msgstr "Автовибір наступного повідомлення після видалення попереднього"
 
-#: data/io.elementary.mail.appdata.xml.in:41
+#: data/io.elementary.mail.appdata.xml.in:53
 msgid "Filter unread or starred conversations"
 msgstr "Фільтр прочитаних бесід та тих, з яких прибрано позначку зіркою"
 
-#: data/io.elementary.mail.appdata.xml.in:45
+#: data/io.elementary.mail.appdata.xml.in:57
 msgid "Make sure we don't save sent messages twice for outlook.com accounts"
 msgstr ""
 "Виправлено ваду подвійного збереження надісланих повідомлень для облікових "
 "записів outlook.com"
 
-#: data/io.elementary.mail.appdata.xml.in:46
+#: data/io.elementary.mail.appdata.xml.in:58
 msgid "Fix a potential crash when changing folders"
 msgstr "Усунуто ймовірність збою під час зміни тек"
 
-#: data/io.elementary.mail.appdata.xml.in:48
-#: data/io.elementary.mail.appdata.xml.in:63
-#: data/io.elementary.mail.appdata.xml.in:73
-msgid "Improvements:"
-msgstr "Поліпшення:"
-
-#: data/io.elementary.mail.appdata.xml.in:50
+#: data/io.elementary.mail.appdata.xml.in:62
 msgid "Improve search performance"
 msgstr "Пришвидшено пошук"
 
-#: data/io.elementary.mail.appdata.xml.in:51
-#: data/io.elementary.mail.appdata.xml.in:67
-#: data/io.elementary.mail.appdata.xml.in:80
-msgid "Updated translations"
-msgstr "Оновлено переклади"
-
-#: data/io.elementary.mail.appdata.xml.in:59
+#: data/io.elementary.mail.appdata.xml.in:71
 msgid "Fix an issue that prevented some messaging from rendering at all"
 msgstr ""
 "Виправлено проблему, яка взагалі не давала змоги показувати деякі "
 "повідомлення"
 
-#: data/io.elementary.mail.appdata.xml.in:60
+#: data/io.elementary.mail.appdata.xml.in:72
 msgid ""
 "Set the correct \"From\" address when replying and multiple accounts are set "
 "up"
@@ -139,45 +164,45 @@ msgstr ""
 "Встановлення правильної адреси «Від» під час відповіді та якщо налаштовано "
 "кілька облікових записів"
 
-#: data/io.elementary.mail.appdata.xml.in:61
+#: data/io.elementary.mail.appdata.xml.in:73
 msgid "Fix a crash on startup for some conversations"
 msgstr "Виправлено збої під час запуску для деяких бесід"
 
-#: data/io.elementary.mail.appdata.xml.in:65
+#: data/io.elementary.mail.appdata.xml.in:77
 msgid "Only save drafts when there are new changes"
 msgstr "Чернетки зберігаються лише за наявності змін"
 
-#: data/io.elementary.mail.appdata.xml.in:66
+#: data/io.elementary.mail.appdata.xml.in:78
 msgid "Move Undo notification to the message view"
 msgstr "Відхилення сповіщення переміщено до панелі повідомлень"
 
-#: data/io.elementary.mail.appdata.xml.in:75
+#: data/io.elementary.mail.appdata.xml.in:87
 msgid "Preserve conversation subjects when replying or forwarding"
 msgstr "Збереження теми бесіди під час відповіді або пересилання"
 
-#: data/io.elementary.mail.appdata.xml.in:76
+#: data/io.elementary.mail.appdata.xml.in:88
 msgid "Disable the composer while messages are being sent"
 msgstr "Закриття редактора написання під час надсилання повідомлень"
 
-#: data/io.elementary.mail.appdata.xml.in:77
+#: data/io.elementary.mail.appdata.xml.in:89
 msgid "Edit saved draft messages"
 msgstr "Редагування збережених чернеток"
 
-#: data/io.elementary.mail.appdata.xml.in:78
+#: data/io.elementary.mail.appdata.xml.in:90
 msgid "Make sure we don't save sent messages twice for some account types"
 msgstr ""
 "Виправлено ваду подвійного збереження надісланих повідомлень для деяких "
 "типів облікових записів"
 
-#: data/io.elementary.mail.appdata.xml.in:79
+#: data/io.elementary.mail.appdata.xml.in:91
 msgid "Stability improvements"
 msgstr "Поліпшення стабільності"
 
-#: data/io.elementary.mail.appdata.xml.in:86
+#: data/io.elementary.mail.appdata.xml.in:98
 msgid "Complete rewrite from scratch"
 msgstr "Застосунок переписано з нуля"
 
-#: data/io.elementary.mail.appdata.xml.in:127
+#: data/io.elementary.mail.appdata.xml.in:139
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 

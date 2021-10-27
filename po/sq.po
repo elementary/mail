@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the pantheon-mail package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
 #
-#: src/MessageList/MessageListItem.vala:389
+#: src/MessageList/MessageListItem.vala:390
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-14 16:42+0000\n"
+"POT-Creation-Date: 2021-10-25 20:04+0000\n"
 "PO-Revision-Date: 2015-11-29 22:37+0000\n"
 "Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -60,17 +60,17 @@ msgstr ""
 msgid "Mark as Unread"
 msgstr "_Shënoje si të palexuar"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:479
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:484
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Shënoje si të lexuar"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:489
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:494
 #, fuzzy
 msgid "Star"
 msgstr "_Shënoje si të veçantë"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:497
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:502
 #, fuzzy
 msgid "Unstar"
 msgstr "Shënoje si jo më të _veçantë"
@@ -90,13 +90,13 @@ msgstr "Zhvendos bisedat"
 msgid "Move conversations to Trash"
 msgstr "Zhvendos bisedat"
 
-#: src/InboxMonitor.vala:167 src/InboxMonitor.vala:180
+#: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
 msgid "%s to %s"
 msgstr ""
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
-#: src/InboxMonitor.vala:175
+#: src/InboxMonitor.vala:165
 #, fuzzy, c-format
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
@@ -107,59 +107,59 @@ msgstr[1] "%d mesazhe të reja"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
-#: src/InboxMonitor.vala:188
+#: src/InboxMonitor.vala:177
 #, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:82
+#: src/MainWindow.vala:83
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "E gjithë posta"
 
-#: src/MainWindow.vala:158
+#: src/MainWindow.vala:159
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d mesazh të ri"
 
-#: src/MainWindow.vala:165
+#: src/MainWindow.vala:166
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages"
 msgstr "%d mesazh të ri"
 
-#: src/MainWindow.vala:175
+#: src/MainWindow.vala:176
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Hide read conversations"
 msgstr "Fshije bisedën"
 
-#: src/MainWindow.vala:177
+#: src/MainWindow.vala:178
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Hide unstarred conversations"
 msgstr "Fshije bisedën"
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:195
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Filter Conversations"
 msgstr "Fshije bisedën"
 
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:406
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Asnjë bisedë e përzgjedhur."
 msgstr[1] "Asnjë bisedë e përzgjedhur."
 
-#: src/MainWindow.vala:416
+#: src/MainWindow.vala:418
 msgid "Undo"
 msgstr ""
 
@@ -245,124 +245,124 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:436
+#: src/Composer/ComposerWidget.vala:437
 msgid "Choose a file"
 msgstr "Zgjidh një skedar"
 
-#: src/Composer/ComposerWidget.vala:439
+#: src/Composer/ComposerWidget.vala:440
 #, fuzzy
 #| msgid "_Attach"
 msgid "Attach"
 msgstr "_Bashkëngjit"
 
-#: src/Composer/ComposerWidget.vala:440 src/Composer/ComposerWidget.vala:668
+#: src/Composer/ComposerWidget.vala:441 src/Composer/ComposerWidget.vala:671
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:579
+#: src/Composer/ComposerWidget.vala:581
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a %-e %b %Y në %-k:%M %p"
 
-#: src/Composer/ComposerWidget.vala:609
+#: src/Composer/ComposerWidget.vala:611
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Ditën %1$s, %2$s ka shkruar:"
 
-#: src/Composer/ComposerWidget.vala:613
+#: src/Composer/ComposerWidget.vala:615
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Mesazh i përcjellë ----------"
 
-#: src/Composer/ComposerWidget.vala:615
+#: src/Composer/ComposerWidget.vala:617
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "Nga: %s\\n\n"
 
-#: src/Composer/ComposerWidget.vala:616
+#: src/Composer/ComposerWidget.vala:618
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "Subjekti: %s\\n\n"
 
-#: src/Composer/ComposerWidget.vala:617
+#: src/Composer/ComposerWidget.vala:619
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "Data: %s\n"
 
-#: src/Composer/ComposerWidget.vala:618
+#: src/Composer/ComposerWidget.vala:620
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "Për: %s\\n\n"
 
-#: src/Composer/ComposerWidget.vala:620
+#: src/Composer/ComposerWidget.vala:622
 #, fuzzy, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s\n"
 
-#: src/Composer/ComposerWidget.vala:659
+#: src/Composer/ComposerWidget.vala:662
 #, fuzzy
 #| msgid "Do you want to permanently delete this message?"
 #| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
 msgstr "Dëshiron ta fshish përfundimisht këtë mesazh?"
 
-#: src/Composer/ComposerWidget.vala:660
+#: src/Composer/ComposerWidget.vala:663
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:670
+#: src/Composer/ComposerWidget.vala:673
 #, fuzzy
 #| msgid "Delete"
 msgid "Delete Draft"
 msgstr "Fshij"
 
-#: src/Composer/ComposerWidget.vala:690
+#: src/Composer/ComposerWidget.vala:693
 #, fuzzy
 msgid "Send without subject?"
 msgstr "Do të dërgosh mesazhin pa subjekt?"
 
-#: src/Composer/ComposerWidget.vala:691
+#: src/Composer/ComposerWidget.vala:694
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:697
+#: src/Composer/ComposerWidget.vala:700
 msgid "Don't Send"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:699
+#: src/Composer/ComposerWidget.vala:702
 msgid "Send Anyway"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:721
+#: src/Composer/ComposerWidget.vala:725
 #, fuzzy
 #| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
 msgstr "Do të dërgosh mesazhin pa tekst?"
 
-#: src/Composer/ComposerWidget.vala:722
+#: src/Composer/ComposerWidget.vala:726
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:737
+#: src/Composer/ComposerWidget.vala:740
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to send message"
 msgstr "Nuk mund të vërtetohet:\\n\n"
 
-#: src/Composer/ComposerWidget.vala:738
+#: src/Composer/ComposerWidget.vala:741
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:989
+#: src/Composer/ComposerWidget.vala:988
 msgid "Unable to save draft"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:990
+#: src/Composer/ComposerWidget.vala:989
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -370,12 +370,12 @@ msgstr ""
 msgid "New Message"
 msgstr "Mesazh i ri"
 
-#: src/ConversationList/ConversationListBox.vala:461
+#: src/ConversationList/ConversationListBox.vala:467
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Zhvendos bisedat"
 
-#: src/ConversationList/ConversationListBox.vala:470
+#: src/ConversationList/ConversationListBox.vala:476
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "_Shënoje si të palexuar"
@@ -385,12 +385,12 @@ msgstr "_Shënoje si të palexuar"
 msgid "Unread"
 msgstr "%d të palexuar"
 
-#: src/ConversationList/ConversationListItem.vala:117
+#: src/ConversationList/ConversationListItem.vala:116
 #, fuzzy
 msgid "Replied"
 msgstr "_Zëvendëso"
 
-#: src/ConversationList/ConversationListItem.vala:121
+#: src/ConversationList/ConversationListItem.vala:120
 #, fuzzy
 msgid "Forwarded"
 msgstr "_Përcill"
@@ -502,13 +502,13 @@ msgid "This message contains one or more attachments"
 msgstr ""
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:366
+#: src/MessageList/MessageListItem.vala:367
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Mesazh i ri"
 
-#: src/MessageList/MessageListItem.vala:388
+#: src/MessageList/MessageListItem.vala:389
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"

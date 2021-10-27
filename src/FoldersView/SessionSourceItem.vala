@@ -44,7 +44,7 @@
         }
     }
 
-    private void removed_account () {
+    private void removed_account (Mail.Backend.Account account) {
         if (session.get_accounts ().size < 2) {
             visible = false;
         }
