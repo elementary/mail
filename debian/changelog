@@ -1,3 +1,24 @@
+io.elementary.mail (6.3.0) focal; urgency=medium
+
+  * Release 6.3.0 (#726)
+  * Update translation files
+  * Update translation template
+  * Fix #674: Cannot delete emails (#656)
+  * Add sort_func to the MessageListBox (#712)
+  * Spelling: Secondary (#730)
+  * add account to account removed signal (#727)
+  * Fix some whitespace (#725)
+  * Make sure we show composer is session was already started (#724)
+  * Autoselect next message after archiving the selected one (#720)
+  * Store sent as SEEN (#723)
+  * Wait until session is started before launching ComposerWindow (#718)
+  * Avoid trying to select an item that doesn't exist (#715) (#717)
+  * Add accent color to unread message (#709)
+  * Add conversation list context menu (#710)
+  * Use local time in the message header (#711)
+
+ -- Cody Garver <cody@elementary.io>  Wed, 27 Oct 2021 20:14:38 +0000
+
 io.elementary.mail (6.2.0) focal; urgency=medium
 
   * Release 6.2.0 (#699)
