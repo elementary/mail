@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-27 18:45+0000\n"
-"PO-Revision-Date: 2021-10-26 12:33+0000\n"
+"PO-Revision-Date: 2021-10-28 13:06+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/extra/fr/>\n"
 "Language: fr\n"
@@ -88,6 +88,8 @@ msgstr "Corrections :"
 #: data/io.elementary.mail.appdata.xml.in:33
 msgid "Ensure conversations are re-sorted by date when new messages appear"
 msgstr ""
+"Nous nous sommes assurés que les conversations soit triées par date lorsque "
+"de nouveaux messages arrivent"
 
 #: data/io.elementary.mail.appdata.xml.in:34
 msgid "Fixed sender combobox after opening a mailto link"
@@ -105,7 +107,7 @@ msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:37
 msgid "Fix an issue where some mail fails to be deleted"
-msgstr ""
+msgstr "Correction d'un problème ou la suppression de certains e-mails échouait"
 
 #: data/io.elementary.mail.appdata.xml.in:39
 #: data/io.elementary.mail.appdata.xml.in:62
