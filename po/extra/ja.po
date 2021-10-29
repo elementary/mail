@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-27 18:45+0000\n"
-"PO-Revision-Date: 2021-10-25 22:48+0000\n"
+"PO-Revision-Date: 2021-10-29 23:43+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/"
-">\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/>"
+"\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -83,7 +83,7 @@ msgstr "修正点:"
 
 #: data/io.elementary.mail.appdata.xml.in:33
 msgid "Ensure conversations are re-sorted by date when new messages appear"
-msgstr ""
+msgstr "新しいメッセージを受信しても、日付順で並んだメッセージの順番が崩れないように修正"
 
 #: data/io.elementary.mail.appdata.xml.in:34
 msgid "Fixed sender combobox after opening a mailto link"
@@ -101,7 +101,7 @@ msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:37
 msgid "Fix an issue where some mail fails to be deleted"
-msgstr ""
+msgstr "メールが削除できないことがある不具合を修正"
 
 #: data/io.elementary.mail.appdata.xml.in:39
 #: data/io.elementary.mail.appdata.xml.in:62
