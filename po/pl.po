@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-27 18:45+0000\n"
-"PO-Revision-Date: 2021-09-30 17:17+0000\n"
+"PO-Revision-Date: 2021-10-30 18:40+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
 "Language: pl\n"
@@ -352,14 +352,10 @@ msgid "New Message"
 msgstr "Nowa wiadomość"
 
 #: src/ConversationList/ConversationListBox.vala:467
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move To Trash"
-msgstr "Przenieś rozmowy do kosza"
+msgstr "Przenieś do kosza"
 
 #: src/ConversationList/ConversationListBox.vala:476
-#, fuzzy
-#| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Oznacz jako nieprzeczytane"
 
