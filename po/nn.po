@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-27 18:45+0000\n"
-"PO-Revision-Date: 2020-07-17 07:12+0000\n"
+"PO-Revision-Date: 2021-11-02 17:45+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/mail/"
 "mail/nn/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: src/HeaderBar.vala:40
 msgid "Compose new message"
@@ -102,7 +102,7 @@ msgstr[1] "Vis alltid frå denne avsendaren"
 
 #: src/MainWindow.vala:83
 msgid "Mail"
-msgstr ""
+msgstr "E-post"
 
 #: src/MainWindow.vala:159
 #, fuzzy
