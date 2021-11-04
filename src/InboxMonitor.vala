@@ -44,23 +44,17 @@ public class Mail.InboxMonitor : GLib.Object {
         session.account_removed.connect (remove_account);
     }
 
-    private void remove_account () {
-        var accounts = session.get_accounts ();
+    private void remove_account (Mail.Backend.Account account) {
+        lock (inbox_folders) {
+            inbox_folders.remove (account);
+        }
 
-        foreach (var account in inbox_folders.get_keys ()) {
-            if (!accounts.contains (account)) {
-                lock (inbox_folders) {
-                    inbox_folders.remove (account);
-                }
-
-                lock (synchronize_timeout_ids) {
-                    if (synchronize_timeout_ids.contains (account)) {
-                        GLib.Source.remove (synchronize_timeout_ids.get (account));
-                    }
-
-                    synchronize_timeout_ids.remove (account);
-                }
+        lock (synchronize_timeout_ids) {
+            if (synchronize_timeout_ids.contains (account)) {
+                GLib.Source.remove (synchronize_timeout_ids.get (account));
             }
+
+            synchronize_timeout_ids.remove (account);
         }
     }
 

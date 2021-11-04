@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-22 20:42+0000\n"
+"POT-Creation-Date: 2021-10-27 18:45+0000\n"
 "PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/mail/mail/ko/>\n"
@@ -82,13 +82,13 @@ msgstr "휴지통으로 보내기"
 msgid "Move conversations to Trash"
 msgstr "휴지통으로 보내기"
 
-#: src/InboxMonitor.vala:164 src/InboxMonitor.vala:176
+#: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
 msgid "%s to %s"
 msgstr ""
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
-#: src/InboxMonitor.vala:171
+#: src/InboxMonitor.vala:165
 #, fuzzy, c-format
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
@@ -98,7 +98,7 @@ msgstr[0] "새 편지 %d개"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
-#: src/InboxMonitor.vala:183
+#: src/InboxMonitor.vala:177
 #, fuzzy, c-format
 #| msgid "Always Show from Sender"
 msgid "%s from %u sender"

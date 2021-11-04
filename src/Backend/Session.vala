@@ -34,7 +34,7 @@ public class Mail.Backend.Session : Camel.Session {
     //Camel.Store vfolder_store;
 
     public signal void account_added (Mail.Backend.Account account);
-    public signal void account_removed ();
+    public signal void account_removed (Mail.Backend.Account account);
 
     public Session () {
         Object (user_data_dir: Path.build_filename (E.get_user_data_dir (), "mail"), user_cache_dir: Path.build_filename (E.get_user_cache_dir (), "mail"));
@@ -281,7 +281,14 @@ public class Mail.Backend.Session : Camel.Session {
 
     public override void remove_service (Camel.Service service) {
         base.remove_service (service);
-        account_removed ();
+
+        if (service is Camel.OfflineStore) {
+            var account_index = accounts.index_of (new Account (service));
+
+            if (account_index >= 0) {
+                account_removed (accounts.remove_at (account_index));
+            }
+        }
     }
 
     public Gee.LinkedList<Backend.Account> get_accounts () {

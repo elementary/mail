@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-22 20:42+0000\n"
-"PO-Revision-Date: 2021-06-20 11:00+0000\n"
-"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
+"POT-Creation-Date: 2021-10-27 18:45+0000\n"
+"PO-Revision-Date: 2021-11-01 07:41+0000\n"
+"Last-Translator: Yuchen Deng <loaden@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "mail/mail/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -88,64 +88,49 @@ msgstr "将会话移至归档"
 msgid "Move conversations to Trash"
 msgstr "将会话移至回收站"
 
-#: src/InboxMonitor.vala:164 src/InboxMonitor.vala:176
+#: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
 msgid "%s to %s"
-msgstr ""
+msgstr "%s 至 %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
-#: src/InboxMonitor.vala:171
-#, fuzzy, c-format
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
+#: src/InboxMonitor.vala:165
+#, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "%d 封新邮件"
+msgstr[0] "%u 封新邮件"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
-#: src/InboxMonitor.vala:183
-#, fuzzy, c-format
-#| msgid "Always Show from Sender"
+#: src/InboxMonitor.vala:177
+#, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] "将此收件人设置为总是显示"
+msgstr[0] "来自 %u 个发件人的 %s"
 
 #: src/MainWindow.vala:83
 msgid "Mail"
 msgstr "邮件"
 
 #: src/MainWindow.vala:159
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
 msgid "Fetch new messages"
-msgstr "%d 封新邮件"
+msgstr "获取新邮件"
 
 #: src/MainWindow.vala:166
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
 msgid "Fetching new messages"
-msgstr "%d 封新邮件"
+msgstr "获取新邮件"
 
 #: src/MainWindow.vala:176
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide read conversations"
-msgstr "添加标签"
+msgstr "隐藏阅读对话"
 
 #: src/MainWindow.vala:178
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
-msgstr "添加标签"
+msgstr "隐藏未加星标的对话"
 
 #: src/MainWindow.vala:195
-#, fuzzy
-#| msgid "Delete Conversation"
 msgid "Filter Conversations"
-msgstr "删除会话"
+msgstr "过滤对话"
 
 #: src/MainWindow.vala:406
 msgid "Message Deleted"
@@ -301,20 +286,14 @@ msgid "Delete Draft"
 msgstr "删除草稿"
 
 #: src/Composer/ComposerWidget.vala:693
-#, fuzzy
-#| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
 msgstr "确认发送无主题的邮件吗？"
 
 #: src/Composer/ComposerWidget.vala:694
-#, fuzzy
-#| msgid ""
-#| "This message has an empty subject field. The recipient may not be able to "
-#| "infer the scope or importance of the message."
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
-msgstr "此邮件主题为空。收件人可能会无法判断此邮件的重要性。"
+msgstr "此邮件主题为空。收件人可能会无法判断此邮件的规格或重要性。"
 
 #: src/Composer/ComposerWidget.vala:700
 msgid "Don't Send"
@@ -325,52 +304,42 @@ msgid "Send Anyway"
 msgstr "仍然发送"
 
 #: src/Composer/ComposerWidget.vala:725
-#, fuzzy
-#| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
-msgstr "确认发送无正文的邮件吗？"
+msgstr "发送的邮件未保存"
 
 #: src/Composer/ComposerWidget.vala:726
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
-msgstr ""
+msgstr "邮件已发送，但副本未保存到已发送邮件文件夹。"
 
 #: src/Composer/ComposerWidget.vala:740
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to send message"
-msgstr "删除草稿"
+msgstr "无法发送邮件"
 
 #: src/Composer/ComposerWidget.vala:741
 msgid "There was an unexpected error while sending your message."
-msgstr ""
+msgstr "发送邮件时出现意外错误。"
 
 #: src/Composer/ComposerWidget.vala:988
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to save draft"
-msgstr "删除草稿"
+msgstr "无法保存草稿"
 
 #: src/Composer/ComposerWidget.vala:989
 msgid "There was an unexpected error while saving your draft."
-msgstr ""
+msgstr "当保存草稿时意外出错。"
 
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
 msgstr "新邮件"
 
 #: src/ConversationList/ConversationListBox.vala:467
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move To Trash"
-msgstr "将会话移至回收站"
+msgstr "移至回收站"
 
 #: src/ConversationList/ConversationListBox.vala:476
-#, fuzzy
-#| msgid "Mark as Unread"
 msgid "Mark As Unread"
-msgstr "标为未读"
+msgstr "标记未读"
 
 #: src/ConversationList/ConversationListItem.vala:103
 msgid "Unread"
@@ -428,14 +397,10 @@ msgid "Archive"
 msgstr "归档邮件"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent Mail"
 msgid "Sent"
-msgstr "已发邮件"
+msgstr "发送"
 
 #: src/FoldersView/SessionSourceItem.vala:28
-#, fuzzy
-#| msgid "All Mail"
 msgid "All Mailboxes"
 msgstr "全部邮件"
 
@@ -447,7 +412,7 @@ msgstr "未选中任何消息"
 #: src/MessageList/MessageListItem.vala:173
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s 在 %s"
 
 #: src/MessageList/MessageListItem.vala:181
 #: src/MessageList/MessageListItem.vala:340

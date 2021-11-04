@@ -22,17 +22,19 @@
       <binary>io.elementary.mail</binary>
   </provides>
   <releases>
-    <release version="6.3.0" date="2021-10-14" urgency="medium">
+    <release version="6.3.0" date="2021-10-27" urgency="medium">
       <description>
         <p>New features:</p>
         <ul>
-          <li>Seconday click menu on the conversations list</li>
+          <li>Secondary-click menu on the conversations list</li>
         </ul>
         <p>Fixes:</p>
         <ul>
+          <li>Ensure conversations are re-sorted by date when new messages appear</li>
           <li>Fixed sender combobox after opening a mailto link</li>
           <li>Mark sent messages as read</li>
           <li>Fix a hang when deleting the last message in a mailbox</li>
+          <li>Fix an issue where some mail fails to be deleted</li>
         </ul>
         <p>Improvements:</p>
         <ul>

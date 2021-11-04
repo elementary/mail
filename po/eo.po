@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-22 20:42+0000\n"
+"POT-Creation-Date: 2021-10-27 18:45+0000\n"
 "PO-Revision-Date: 2019-08-27 22:23+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/mail/mail/eo/"
@@ -87,13 +87,13 @@ msgstr "Rubujigi la konversaciojn"
 msgid "Move conversations to Trash"
 msgstr "Rubujigi la konversaciojn"
 
-#: src/InboxMonitor.vala:164 src/InboxMonitor.vala:176
+#: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
 msgid "%s to %s"
 msgstr ""
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
-#: src/InboxMonitor.vala:171
+#: src/InboxMonitor.vala:165
 #, fuzzy, c-format
 #| msgid "Compose new message"
 msgid "%u new message"
@@ -103,7 +103,7 @@ msgstr[1] "Redakti novan mesaĝon"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
-#: src/InboxMonitor.vala:183
+#: src/InboxMonitor.vala:177
 #, fuzzy, c-format
 #| msgid "Always Show from Sender"
 msgid "%s from %u sender"
