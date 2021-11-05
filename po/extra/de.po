@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-27 18:45+0000\n"
-"PO-Revision-Date: 2021-10-01 09:48+0000\n"
+"PO-Revision-Date: 2021-11-05 12:15+0000\n"
 "Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/extra/de/>\n"
 "Language: de\n"
@@ -73,7 +73,7 @@ msgstr "Neue Funktionen:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Secondary-click menu on the conversations list"
-msgstr ""
+msgstr "Sekundärklick-Menü auf der Unterhaltungsliste"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 #: data/io.elementary.mail.appdata.xml.in:57
@@ -84,6 +84,8 @@ msgstr "Fehlerbehebungen:"
 #: data/io.elementary.mail.appdata.xml.in:33
 msgid "Ensure conversations are re-sorted by date when new messages appear"
 msgstr ""
+"Sicherstellen, dass Unterhaltungen beim Eintreffen neuer Nachrichten erneut "
+"nach Datum sortiert werden"
 
 #: data/io.elementary.mail.appdata.xml.in:34
 msgid "Fixed sender combobox after opening a mailto link"
@@ -91,15 +93,18 @@ msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:35
 msgid "Mark sent messages as read"
-msgstr ""
+msgstr "Gesendete Nachrichten als gelesen markieren"
 
 #: data/io.elementary.mail.appdata.xml.in:36
 msgid "Fix a hang when deleting the last message in a mailbox"
 msgstr ""
+"Behebt eine Verzögerung, die auftrat wenn die letzte Nachricht im "
+"Posteingang gelöscht wurde"
 
 #: data/io.elementary.mail.appdata.xml.in:37
 msgid "Fix an issue where some mail fails to be deleted"
 msgstr ""
+"Behebt einen Fehler, der verhinderte gewisse Nachrichten löschen zu können"
 
 #: data/io.elementary.mail.appdata.xml.in:39
 #: data/io.elementary.mail.appdata.xml.in:62
@@ -110,17 +115,15 @@ msgstr "Verbesserungen:"
 
 #: data/io.elementary.mail.appdata.xml.in:41
 msgid "Use accent color for unread message titles"
-msgstr ""
+msgstr "Nutze Akzentfarben für ungelesene Nachrichtentitel"
 
 #: data/io.elementary.mail.appdata.xml.in:42
-#, fuzzy
-#| msgid "Automatically select the next message after deleting"
 msgid "Autoselect the next message after archiving"
-msgstr "Automatisch die nächste Nachricht nach dem Löschen auswählen"
+msgstr "Automatisch die nächste Nachricht nach dem Archivieren auswählen"
 
 #: data/io.elementary.mail.appdata.xml.in:43
 msgid "Use local time in message headers"
-msgstr ""
+msgstr "Lokalzeit in Nachrichtentiteln verwenden"
 
 #: data/io.elementary.mail.appdata.xml.in:44
 #: data/io.elementary.mail.appdata.xml.in:65
