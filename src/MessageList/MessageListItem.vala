@@ -578,19 +578,21 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     }
 
     private async void handle_inline_mime (Camel.MimePart part) {
-        var byte_array = new ByteArray ();
-        var os = new Camel.StreamMem ();
-        os.set_byte_array (byte_array);
-        try {
-            yield part.content.decode_to_stream (os, GLib.Priority.DEFAULT, loading_cancellable);
-        } catch (Error e) {
-            warning ("Error decoding inline attachment: %s", e.message);
-            return;
-        }
+        if (part.get_content_id () != null) {
+            var byte_array = new ByteArray ();
+            var os = new Camel.StreamMem ();
+            os.set_byte_array (byte_array);
+            try {
+                yield part.content.decode_to_stream (os, GLib.Priority.DEFAULT, loading_cancellable);
+            } catch (Error e) {
+                warning ("Error decoding inline attachment: %s", e.message);
+                return;
+            }
 
-        Bytes bytes = ByteArray.free_to_bytes (byte_array);
-        var inline_stream = new MemoryInputStream.from_bytes (bytes);
-        web_view.add_internal_resource (part.get_content_id (), inline_stream);
+            Bytes bytes = ByteArray.free_to_bytes (byte_array);
+            var inline_stream = new MemoryInputStream.from_bytes (bytes);
+            web_view.add_internal_resource (part.get_content_id (), inline_stream);
+        }
     }
 
     public async string get_message_body_html () {
