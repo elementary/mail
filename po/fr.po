@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-27 18:45+0000\n"
-"PO-Revision-Date: 2021-10-21 16:45+0000\n"
+"PO-Revision-Date: 2021-11-30 20:34+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
 "Language: fr\n"
@@ -97,7 +97,7 @@ msgstr "Déplacer les conversations dans la corbeille"
 #: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
 msgid "%s to %s"
-msgstr "%s à %s"
+msgstr "%s via %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:165
