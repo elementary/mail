@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-27 18:45+0000\n"
-"PO-Revision-Date: 2021-09-20 03:12+0000\n"
+"PO-Revision-Date: 2021-11-30 20:34+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/mail/mail/sk/>\n"
 "Language: sk\n"
@@ -111,36 +111,24 @@ msgid "Mail"
 msgstr "Pošta"
 
 #: src/MainWindow.vala:159
-#, fuzzy
-#| msgid "%u new message"
-#| msgid_plural "%u new messages"
 msgid "Fetch new messages"
-msgstr "%u nových správ"
+msgstr "Načítať nové správy"
 
 #: src/MainWindow.vala:166
-#, fuzzy
-#| msgid "%u new message"
-#| msgid_plural "%u new messages"
 msgid "Fetching new messages"
-msgstr "%u nových správ"
+msgstr "Načítavanie nových správ"
 
 #: src/MainWindow.vala:176
-#, fuzzy
-#| msgid "Delete conversation"
 msgid "Hide read conversations"
-msgstr "Odstrániť rozhovor"
+msgstr "Skryť prečítané konverzácie"
 
 #: src/MainWindow.vala:178
-#, fuzzy
-#| msgid "Delete conversation"
 msgid "Hide unstarred conversations"
-msgstr "Odstrániť rozhovor"
+msgstr "Skryť konverzácie bez hviezdičky"
 
 #: src/MainWindow.vala:195
-#, fuzzy
-#| msgid "Delete Conversation"
 msgid "Filter Conversations"
-msgstr "Odstraniť konverzáciu"
+msgstr "Filtrovať konverzácie"
 
 #: src/MainWindow.vala:406
 msgid "Message Deleted"
@@ -351,14 +339,10 @@ msgid "New Message"
 msgstr "Nová správa"
 
 #: src/ConversationList/ConversationListBox.vala:467
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move To Trash"
-msgstr "Presunúť konverzácie do koša"
+msgstr "Presunúť do koša"
 
 #: src/ConversationList/ConversationListBox.vala:476
-#, fuzzy
-#| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Označiť ako neprečítané"
 
@@ -435,7 +419,7 @@ msgstr "Žiadna vybraná správa"
 #: src/MessageList/MessageListItem.vala:173
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s o %s"
 
 #: src/MessageList/MessageListItem.vala:181
 #: src/MessageList/MessageListItem.vala:340
