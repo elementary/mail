@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-27 18:45+0000\n"
-"PO-Revision-Date: 2021-09-20 03:12+0000\n"
-"Last-Translator: Cleiton Floss <cleitonfloss@tutanota.de>\n"
+"PO-Revision-Date: 2021-11-30 20:34+0000\n"
+"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/mail/extra/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
@@ -68,11 +68,11 @@ msgstr "Funguje s Gmail, Yahoo! Mail a s inými populárnymi IMAP servermi"
 #: data/io.elementary.mail.appdata.xml.in:27
 #: data/io.elementary.mail.appdata.xml.in:50
 msgid "New features:"
-msgstr ""
+msgstr "Nové funkcie:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Secondary-click menu on the conversations list"
-msgstr ""
+msgstr "Menu po kliknutí sekundárnym tlačidlom myši na zoznam konverzácií"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 #: data/io.elementary.mail.appdata.xml.in:57
@@ -82,23 +82,23 @@ msgstr "Opravy:"
 
 #: data/io.elementary.mail.appdata.xml.in:33
 msgid "Ensure conversations are re-sorted by date when new messages appear"
-msgstr ""
+msgstr "Zabezpečené, že konverzácie sa znovu roztriedia po prijatí nových správ"
 
 #: data/io.elementary.mail.appdata.xml.in:34
 msgid "Fixed sender combobox after opening a mailto link"
-msgstr ""
+msgstr "Opravený kombobox odosielateľa po otvorení odkazu typu mailto"
 
 #: data/io.elementary.mail.appdata.xml.in:35
 msgid "Mark sent messages as read"
-msgstr ""
+msgstr "Označovať odoslané správy ako prečítané"
 
 #: data/io.elementary.mail.appdata.xml.in:36
 msgid "Fix a hang when deleting the last message in a mailbox"
-msgstr ""
+msgstr "Opravené zamrznutie po odstránení poslednej správy v schránke"
 
 #: data/io.elementary.mail.appdata.xml.in:37
 msgid "Fix an issue where some mail fails to be deleted"
-msgstr ""
+msgstr "Opravený problém, keď sa nepodarí odstrániť niektoré správy"
 
 #: data/io.elementary.mail.appdata.xml.in:39
 #: data/io.elementary.mail.appdata.xml.in:62
@@ -109,15 +109,15 @@ msgstr "Vylepšenia:"
 
 #: data/io.elementary.mail.appdata.xml.in:41
 msgid "Use accent color for unread message titles"
-msgstr ""
+msgstr "Používať farebný odtieň na názvoch neprečítaných správ"
 
 #: data/io.elementary.mail.appdata.xml.in:42
 msgid "Autoselect the next message after archiving"
-msgstr ""
+msgstr "Automaticky označovať nasledujúcu správu po archivovaní"
 
 #: data/io.elementary.mail.appdata.xml.in:43
 msgid "Use local time in message headers"
-msgstr ""
+msgstr "Používať miestny čas v hlavičkách správ"
 
 #: data/io.elementary.mail.appdata.xml.in:44
 #: data/io.elementary.mail.appdata.xml.in:65
@@ -132,29 +132,24 @@ msgstr "Odoslať oznámenie o novej správe"
 
 #: data/io.elementary.mail.appdata.xml.in:53
 msgid "Add a button to manually fetch new messages"
-msgstr ""
+msgstr "Pridané tlačidlo na ručné načítanie nových správ"
 
 #: data/io.elementary.mail.appdata.xml.in:54
 msgid "Automatically select the next message after deleting"
-msgstr ""
+msgstr "Automaticky vybrať nasledujúcu správu po odstránení"
 
 #: data/io.elementary.mail.appdata.xml.in:55
-#, fuzzy
-#| msgid "Fix a crash on startup for some conversations"
 msgid "Filter unread or starred conversations"
-msgstr "Opravený pád pri spustení pre niektoré konverzácie"
+msgstr "Triediť neprečítané konverzácie alebo konverzácie s hviezdičkou"
 
 #: data/io.elementary.mail.appdata.xml.in:59
-#, fuzzy
-#| msgid "Make sure we don't save sent messages twice for some account types"
 msgid "Make sure we don't save sent messages twice for outlook.com accounts"
 msgstr ""
-"Zabezpečené, aby sa rovnaká správa neodoslala dvakrát pri niektorých typoch "
-"účtov"
+"Zabezpečené, aby sa odoslaná správa neuložila dvakrát pre účty outlook.com"
 
 #: data/io.elementary.mail.appdata.xml.in:60
 msgid "Fix a potential crash when changing folders"
-msgstr ""
+msgstr "Opravený potenciálny pád pri zmene priečinkov"
 
 #: data/io.elementary.mail.appdata.xml.in:64
 msgid "Improve search performance"
