@@ -578,6 +578,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     }
 
     private async void handle_inline_mime (Camel.MimePart part) {
+        if (part.get_content_id () == null) {
+            return;
+        }
+
         var byte_array = new ByteArray ();
         var os = new Camel.StreamMem ();
         os.set_byte_array (byte_array);
