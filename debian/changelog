@@ -1,3 +1,14 @@
+io.elementary.mail (6.3.1) focal; urgency=medium
+
+  * Release 6.3.1 (#740)
+  * Update translation files
+  * Update translation template
+  * avoid assertion error in `add_internal_resource` when `content_id`
+    is… (#736)
+  * Flatpak: Remove accountsservice hole (#731)
+
+ -- Cody Garver <cody@elementary.io>  Mon, 13 Dec 2021 18:32:57 +0000
+
 io.elementary.mail (6.3.0) focal; urgency=medium
 
   * Release 6.3.0 (#726)
