@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 00:30+0000\n"
-"PO-Revision-Date: 2021-10-27 19:38+0000\n"
+"PO-Revision-Date: 2021-12-11 19:02+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/extra/he/>\n"
 "Language: he\n"
@@ -71,10 +71,8 @@ msgid "Fixes:"
 msgstr "תיקונים:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
-#, fuzzy
-#| msgid "Fix a potential crash when changing folders"
 msgid "Fix a potential crash while loading messages"
-msgstr "תוקנה קריסה שמתרחשת לפעמים בעת מעבר בין תיקיות"
+msgstr "תוקנה קריסה שמתרחשת לפעמים בעת טעינת הודעות"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 #: data/io.elementary.mail.appdata.xml.in:51
