@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 00:30+0000\n"
-"PO-Revision-Date: 2021-12-16 18:28+0000\n"
-"Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
+"PO-Revision-Date: 2021-12-22 15:39+0000\n"
+"Last-Translator: Yağızhan Burak Yakar <yagizhan49@protonmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/extra/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -68,11 +68,11 @@ msgstr "Gmail, Yahoo! Mail ve diğer popüler IMAP sunucuları ile çalışır"
 #: data/io.elementary.mail.appdata.xml.in:69
 #: data/io.elementary.mail.appdata.xml.in:83
 msgid "Fixes:"
-msgstr ""
+msgstr "Düzeltmeler:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Fix a potential crash while loading messages"
-msgstr ""
+msgstr "Mesajları yüklerken olası bir çökme düzeltildi"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 #: data/io.elementary.mail.appdata.xml.in:51
@@ -80,7 +80,7 @@ msgstr ""
 #: data/io.elementary.mail.appdata.xml.in:89
 #: data/io.elementary.mail.appdata.xml.in:99
 msgid "Improvements:"
-msgstr ""
+msgstr "İyileştirmeler:"
 
 #: data/io.elementary.mail.appdata.xml.in:33
 #: data/io.elementary.mail.appdata.xml.in:56
@@ -88,12 +88,12 @@ msgstr ""
 #: data/io.elementary.mail.appdata.xml.in:93
 #: data/io.elementary.mail.appdata.xml.in:106
 msgid "Updated translations"
-msgstr ""
+msgstr "Çeviriler güncellendi"
 
 #: data/io.elementary.mail.appdata.xml.in:39
 #: data/io.elementary.mail.appdata.xml.in:62
 msgid "New features:"
-msgstr ""
+msgstr "Yeni özellikler:"
 
 #: data/io.elementary.mail.appdata.xml.in:41
 msgid "Secondary-click menu on the conversations list"
@@ -109,7 +109,7 @@ msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:47
 msgid "Mark sent messages as read"
-msgstr ""
+msgstr "Gönderilen mesajları okundu olarak işaretleme"
 
 #: data/io.elementary.mail.appdata.xml.in:48
 msgid "Fix a hang when deleting the last message in a mailbox"
@@ -117,47 +117,49 @@ msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:49
 msgid "Fix an issue where some mail fails to be deleted"
-msgstr ""
+msgstr "Bazı postaların silinemediği bir sorunu düzeltme"
 
 #: data/io.elementary.mail.appdata.xml.in:53
 msgid "Use accent color for unread message titles"
-msgstr ""
+msgstr "Okunmamış mesaj başlıkları için vurgu rengi kullanma"
 
 #: data/io.elementary.mail.appdata.xml.in:54
 msgid "Autoselect the next message after archiving"
-msgstr ""
+msgstr "Arşivlemeden sonra sonraki mesajı otomatik seçme"
 
 #: data/io.elementary.mail.appdata.xml.in:55
 msgid "Use local time in message headers"
-msgstr ""
+msgstr "Mesaj başlıklarında yerel saati kullanma"
 
 #: data/io.elementary.mail.appdata.xml.in:64
 msgid "Send a notification when new messages arrive"
-msgstr ""
+msgstr "Yeni mesajlar geldiğinde bildirim gönderme"
 
 #: data/io.elementary.mail.appdata.xml.in:65
 msgid "Add a button to manually fetch new messages"
-msgstr ""
+msgstr "Yeni mesajları manuel olarak almak için bir düğme eklendi"
 
 #: data/io.elementary.mail.appdata.xml.in:66
 msgid "Automatically select the next message after deleting"
-msgstr ""
+msgstr "Sildikten sonra sonraki mesajı otomatik olarak seçme"
 
 #: data/io.elementary.mail.appdata.xml.in:67
 msgid "Filter unread or starred conversations"
-msgstr ""
+msgstr "Okunmamış veya yıldızlı görüşmeleri filtreleme"
 
 #: data/io.elementary.mail.appdata.xml.in:71
 msgid "Make sure we don't save sent messages twice for outlook.com accounts"
 msgstr ""
+"Outlook.com hesapları için gönderilen mesajları iki kez kaydetmediğimizden "
+"emin olma"
 
 #: data/io.elementary.mail.appdata.xml.in:72
 msgid "Fix a potential crash when changing folders"
-msgstr ""
+msgstr "Klasörleri değiştirirken olası bir çökmeyi önleme"
 
 #: data/io.elementary.mail.appdata.xml.in:76
 msgid "Improve search performance"
-msgstr ""
+msgstr "Arama performansını iyileştirme"
 
 #: data/io.elementary.mail.appdata.xml.in:85
 msgid "Fix an issue that prevented some messaging from rendering at all"
@@ -199,7 +201,7 @@ msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:105
 msgid "Stability improvements"
-msgstr ""
+msgstr "Kararlılık iyileştirmeleri"
 
 #: data/io.elementary.mail.appdata.xml.in:112
 msgid "Complete rewrite from scratch"
