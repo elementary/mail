@@ -15,10 +15,10 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 00:30+0000\n"
-"PO-Revision-Date: 2021-07-19 03:00+0000\n"
+"PO-Revision-Date: 2021-12-22 17:47+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/"
-">\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/>"
+"\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -90,63 +90,48 @@ msgstr "Mover conversas para o Lixo"
 #: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
 msgid "%s to %s"
-msgstr ""
+msgstr "%s para %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:165
-#, fuzzy, c-format
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
+#, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "%d nova mensagem"
-msgstr[1] "%d novas mensagens"
+msgstr[0] "%u nova mensagem"
+msgstr[1] "%u novas mensagens"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
 #: src/InboxMonitor.vala:177
-#, fuzzy, c-format
-#| msgid "Always Show from Sender"
+#, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] "Mostrar sempre do remetente"
-msgstr[1] "Mostrar sempre do remetente"
+msgstr[0] "%s de %u remetente"
+msgstr[1] "%s de %u remetentes"
 
 #: src/MainWindow.vala:83
 msgid "Mail"
 msgstr "Correio"
 
 #: src/MainWindow.vala:159
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
 msgid "Fetch new messages"
-msgstr "%d nova mensagem"
+msgstr "Procurar novas mensagens"
 
 #: src/MainWindow.vala:166
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
 msgid "Fetching new messages"
-msgstr "%d nova mensagem"
+msgstr "A procurar novas mensagens"
 
 #: src/MainWindow.vala:176
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide read conversations"
-msgstr "Marcar conversas"
+msgstr "Ocultar conversas lidas"
 
 #: src/MainWindow.vala:178
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
-msgstr "Marcar conversas"
+msgstr "Ocultar conversas não favoritas"
 
 #: src/MainWindow.vala:195
-#, fuzzy
-#| msgid "Delete Conversation"
 msgid "Filter Conversations"
-msgstr "Apagar Conversa"
+msgstr "Filtrar conversas"
 
 #: src/MainWindow.vala:406
 msgid "Message Deleted"
@@ -356,16 +341,12 @@ msgid "New Message"
 msgstr "Nova mensagem"
 
 #: src/ConversationList/ConversationListBox.vala:467
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move To Trash"
-msgstr "Mover conversas para o Lixo"
+msgstr "Mover para o Lixo"
 
 #: src/ConversationList/ConversationListBox.vala:476
-#, fuzzy
-#| msgid "Mark as Unread"
 msgid "Mark As Unread"
-msgstr "Marcar como não lido"
+msgstr "Marcar como não lida"
 
 #: src/ConversationList/ConversationListItem.vala:103
 msgid "Unread"
@@ -440,7 +421,7 @@ msgstr "Nenhuma mensagem selecionada"
 #: src/MessageList/MessageListItem.vala:173
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s às %s"
 
 #: src/MessageList/MessageListItem.vala:181
 #: src/MessageList/MessageListItem.vala:340
