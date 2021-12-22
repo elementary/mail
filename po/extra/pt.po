@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 00:30+0000\n"
-"PO-Revision-Date: 2021-08-02 15:47+0000\n"
+"PO-Revision-Date: 2021-12-22 17:47+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/extra/pt/"
 ">\n"
@@ -69,11 +69,11 @@ msgstr "Funciona com Gmail, Yahoo! Mail e outros servidores IMAP populares"
 #: data/io.elementary.mail.appdata.xml.in:69
 #: data/io.elementary.mail.appdata.xml.in:83
 msgid "Fixes:"
-msgstr ""
+msgstr "Correções:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Fix a potential crash while loading messages"
-msgstr ""
+msgstr "Corrige uma falha potencial durante o carregamento de mensagens"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 #: data/io.elementary.mail.appdata.xml.in:51
@@ -94,91 +94,92 @@ msgstr "Traduções atualizadas"
 #: data/io.elementary.mail.appdata.xml.in:39
 #: data/io.elementary.mail.appdata.xml.in:62
 msgid "New features:"
-msgstr ""
+msgstr "Novas funcionalidades:"
 
 #: data/io.elementary.mail.appdata.xml.in:41
 msgid "Secondary-click menu on the conversations list"
-msgstr ""
+msgstr "Menu de clique secundário na lista de conversas"
 
 #: data/io.elementary.mail.appdata.xml.in:45
 msgid "Ensure conversations are re-sorted by date when new messages appear"
 msgstr ""
+"Assegura que as conversas são reordenadas por data quando surgem novas "
+"mensagens"
 
 #: data/io.elementary.mail.appdata.xml.in:46
 msgid "Fixed sender combobox after opening a mailto link"
 msgstr ""
+"Corrige caixa de combinação do remetente depois de abrir uma ligação mailto"
 
 #: data/io.elementary.mail.appdata.xml.in:47
 msgid "Mark sent messages as read"
-msgstr ""
+msgstr "Marcar as mensagens enviadas como lidas"
 
 #: data/io.elementary.mail.appdata.xml.in:48
 msgid "Fix a hang when deleting the last message in a mailbox"
-msgstr ""
+msgstr "Corrige um bloqueio ao eliminar a última mensagem numa caixa de correio"
 
 #: data/io.elementary.mail.appdata.xml.in:49
 msgid "Fix an issue where some mail fails to be deleted"
-msgstr ""
+msgstr "Corrige um problema em que algum correio não seja eliminado"
 
 #: data/io.elementary.mail.appdata.xml.in:53
 msgid "Use accent color for unread message titles"
-msgstr ""
+msgstr "Usar a cor de destaque para títulos de mensagens não lidas"
 
 #: data/io.elementary.mail.appdata.xml.in:54
 msgid "Autoselect the next message after archiving"
-msgstr ""
+msgstr "Seleciona automaticamente a mensagem seguinte após arquivamento"
 
 #: data/io.elementary.mail.appdata.xml.in:55
 msgid "Use local time in message headers"
-msgstr ""
+msgstr "Utiliza a hora local nos cabeçalhos das mensagens"
 
 #: data/io.elementary.mail.appdata.xml.in:64
-#, fuzzy
-#| msgid "Move Undo notification to the message view"
 msgid "Send a notification when new messages arrive"
-msgstr "Mover a notificação de Anular para a vista de mensagem"
+msgstr "Envia uma notificação quando chegam novas mensagens"
 
 #: data/io.elementary.mail.appdata.xml.in:65
 msgid "Add a button to manually fetch new messages"
-msgstr ""
+msgstr "Adiciona um botão para procurar manualmente novas mensagens"
 
 #: data/io.elementary.mail.appdata.xml.in:66
 msgid "Automatically select the next message after deleting"
-msgstr ""
+msgstr "Seleciona automaticamente a mensagem seguinte depois de eliminar"
 
 #: data/io.elementary.mail.appdata.xml.in:67
 msgid "Filter unread or starred conversations"
-msgstr ""
+msgstr "Filtra conversas não lidas ou favoritas"
 
 #: data/io.elementary.mail.appdata.xml.in:71
-#, fuzzy
-#| msgid "Make sure we don't save sent messages twice for some account types"
 msgid "Make sure we don't save sent messages twice for outlook.com accounts"
 msgstr ""
-"Certifique-se de que não guardamos duas vezes as mensagens enviadas para "
-"alguns tipos de conta"
+"Certifique-se de que não guardamos duas vezes as mensagens enviadas para as "
+"contas do outlook.com"
 
 #: data/io.elementary.mail.appdata.xml.in:72
 msgid "Fix a potential crash when changing folders"
-msgstr ""
+msgstr "Corrige uma possível falha ao trocar de pastas"
 
 #: data/io.elementary.mail.appdata.xml.in:76
 msgid "Improve search performance"
-msgstr ""
+msgstr "Melhora o desempenho da pesquisa"
 
 #: data/io.elementary.mail.appdata.xml.in:85
 msgid "Fix an issue that prevented some messaging from rendering at all"
-msgstr ""
+msgstr "Corrige um problema que impedia a transmissão de algumas mensagens"
 
 #: data/io.elementary.mail.appdata.xml.in:86
 msgid ""
 "Set the correct \"From\" address when replying and multiple accounts are set "
 "up"
 msgstr ""
+"Define o correto endereço \"De\" ao responder e várias contas serem "
+"configuradas"
 
 #: data/io.elementary.mail.appdata.xml.in:87
 msgid "Fix a crash on startup for some conversations"
-msgstr ""
+msgstr "Corrige uma falha no arranque para algumas conversas"
 
 #: data/io.elementary.mail.appdata.xml.in:91
 msgid "Only save drafts when there are new changes"
