@@ -37,19 +37,24 @@ public class Mail.ComposerWindow : Hdy.ApplicationWindow {
     }
 
     construct {
-        composer_widget.discarded.connect (() => {
-            close ();
-        });
-        composer_widget.sent.connect (() => {
-            close ();
-        });
-
         var titlebar = new Hdy.HeaderBar () {
             has_subtitle = false,
             show_close_button = true,
             title = _("New Message")
         };
         titlebar.get_style_context ().add_class ("default-decoration");
+
+        composer_widget.discarded.connect (() => {
+            close ();
+        });
+        composer_widget.sent.connect (() => {
+            close ();
+        });
+        composer_widget.updated_subject.connect ((subject) => {
+            title = subject ?? _("New Message");
+            title = title.length > 0 ? title : _("New Message");
+            titlebar.title = title;
+        });
 
         var content_grid = new Gtk.Grid ();
         content_grid.orientation = Gtk.Orientation.VERTICAL;
