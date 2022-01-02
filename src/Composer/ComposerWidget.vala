@@ -21,7 +21,7 @@
 public class Mail.ComposerWidget : Gtk.Grid {
     public signal void discarded ();
     public signal void sent ();
-    public signal void updated_subject (string ?subject);
+    public signal void updated_subject (string? subject);
 
     private const string ACTION_GROUP_PREFIX = "composer";
     private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
