@@ -50,7 +50,7 @@ public class Mail.ComposerWindow : Hdy.ApplicationWindow {
         composer_widget.sent.connect (() => {
             close ();
         });
-        composer_widget.updated_subject.connect ((subject) => {
+        composer_widget.subject_changed.connect ((subject) => {
             title = subject ?? _("New Message");
             title = title.length > 0 ? title : _("New Message");
             titlebar.title = title;

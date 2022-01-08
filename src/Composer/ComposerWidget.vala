@@ -21,7 +21,7 @@
 public class Mail.ComposerWidget : Gtk.Grid {
     public signal void discarded ();
     public signal void sent ();
-    public signal void updated_subject (string? subject);
+    public signal void subject_changed (string? subject);
 
     private const string ACTION_GROUP_PREFIX = "composer";
     private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
@@ -170,7 +170,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         subject_val = new Gtk.Entry ();
         subject_val.margin_top = 6;
         subject_val.changed.connect (() => {
-            updated_subject (subject_val.text);
+            subject_changed (subject_val.text);
         });
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
