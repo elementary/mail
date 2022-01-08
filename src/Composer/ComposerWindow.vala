@@ -51,9 +51,8 @@ public class Mail.ComposerWindow : Hdy.ApplicationWindow {
             close ();
         });
         composer_widget.subject_changed.connect ((subject) => {
-            title = subject ?? _("New Message");
-            title = title.length > 0 ? title : _("New Message");
-            titlebar.title = title;
+            bool empty_subject = subject == null || subject.length == 0;
+            titlebar.title = title = empty_subject ? _("New Message") : subject;
         });
 
         var content_grid = new Gtk.Grid ();
