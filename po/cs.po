@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 00:30+0000\n"
-"PO-Revision-Date: 2020-05-30 13:11+0000\n"
+"PO-Revision-Date: 2022-01-09 20:54+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/mail/cs/>\n"
 "Language: cs\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 07:52+0000\n"
 
 #: src/HeaderBar.vala:40
@@ -93,25 +93,22 @@ msgstr ""
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:165
-#, fuzzy, c-format
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
+#, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "%d nová zpráva"
-msgstr[1] "%d nové zprávy"
-msgstr[2] "%d nových zpráv"
+msgstr[0] "%u nová zpráva"
+msgstr[1] "%u nové zprávy"
+msgstr[2] "%u nových zpráv"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
 #: src/InboxMonitor.vala:177
-#, fuzzy, c-format
-#| msgid "Always Show from Sender"
+#, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] "Zobrazit vždy od odesílatele"
-msgstr[1] "Zobrazit vždy od odesílatele"
-msgstr[2] "Zobrazit vždy od odesílatele"
+msgstr[0] "%s od %u odesilatele"
+msgstr[1] "%s od %u odesilatelů"
+msgstr[2] "%s od %u odesilatelů"
 
 #: src/MainWindow.vala:83
 msgid "Mail"
@@ -338,10 +335,8 @@ msgid "Send Anyway"
 msgstr "Přesto odeslat"
 
 #: src/Composer/ComposerWidget.vala:725
-#, fuzzy
-#| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
-msgstr "Poslat zprávu s prázdným tělem?"
+msgstr "Odeslaná zpráva nebyla uložena"
 
 #: src/Composer/ComposerWidget.vala:726
 msgid ""
@@ -510,10 +505,8 @@ msgid "Email Message"
 msgstr "Nová zpráva"
 
 #: src/MessageList/MessageListItem.vala:389
-#, fuzzy
-#| msgid "Unable to validate:\n"
 msgid "Unable to print email"
-msgstr "Nelze ověřit:\n"
+msgstr "Nedaří se vytisknout e-mail"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
