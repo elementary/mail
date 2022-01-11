@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 00:30+0000\n"
-"PO-Revision-Date: 2020-05-30 13:11+0000\n"
+"PO-Revision-Date: 2022-01-10 23:40+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/mail/cs/>\n"
 "Language: cs\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 07:52+0000\n"
 
 #: src/HeaderBar.vala:40
@@ -77,10 +77,8 @@ msgid "Mark Conversation"
 msgstr "Označit konverzaci"
 
 #: src/HeaderBar.vala:137
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
-msgstr "Přesunout konverzace do koše"
+msgstr "Přesunout konverzace do archivu"
 
 #: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
@@ -89,65 +87,50 @@ msgstr "Přesunout konverzace do koše"
 #: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
 msgid "%s to %s"
-msgstr ""
+msgstr "%s až %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:165
-#, fuzzy, c-format
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
+#, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "%d nová zpráva"
-msgstr[1] "%d nové zprávy"
-msgstr[2] "%d nových zpráv"
+msgstr[0] "%u nová zpráva"
+msgstr[1] "%u nové zprávy"
+msgstr[2] "%u nových zpráv"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
 #: src/InboxMonitor.vala:177
-#, fuzzy, c-format
-#| msgid "Always Show from Sender"
+#, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] "Zobrazit vždy od odesílatele"
-msgstr[1] "Zobrazit vždy od odesílatele"
-msgstr[2] "Zobrazit vždy od odesílatele"
+msgstr[0] "%s od %u odesilatele"
+msgstr[1] "%s od %u odesilatelů"
+msgstr[2] "%s od %u odesilatelů"
 
 #: src/MainWindow.vala:83
 msgid "Mail"
 msgstr "Mail"
 
 #: src/MainWindow.vala:159
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
 msgid "Fetch new messages"
-msgstr "%d nová zpráva"
+msgstr "Stáhnout si nové zprávy"
 
 #: src/MainWindow.vala:166
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
 msgid "Fetching new messages"
-msgstr "%d nová zpráva"
+msgstr "Stahování nových zpráv"
 
 #: src/MainWindow.vala:176
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide read conversations"
-msgstr "Označit konverzace"
+msgstr "Skrýt už přečtené konverzace"
 
 #: src/MainWindow.vala:178
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
-msgstr "Označit konverzace"
+msgstr "Skrýt konverzace bez hvězdičky"
 
 #: src/MainWindow.vala:195
-#, fuzzy
-#| msgid "Delete Conversation"
 msgid "Filter Conversations"
-msgstr "Odstranit konverzaci"
+msgstr "Filtrovat konverzace"
 
 #: src/MainWindow.vala:406
 msgid "Message Deleted"
@@ -244,10 +227,8 @@ msgid "Choose a file"
 msgstr "Vybrat soubor"
 
 #: src/Composer/ComposerWidget.vala:440
-#, fuzzy
-#| msgid "_Attach"
 msgid "Attach"
-msgstr "_Příloha"
+msgstr "Připojit"
 
 #: src/Composer/ComposerWidget.vala:441 src/Composer/ComposerWidget.vala:671
 #: src/Dialogs/InsertLinkDialog.vala:61
@@ -294,40 +275,30 @@ msgid "Cc: %s<br/>"
 msgstr "Kopie: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:662
-#, fuzzy
-#| msgid "Do you want to permanently delete this message?"
-#| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
-msgstr "Chcete trvale smazat tuto zprávu?"
+msgstr "Chcete trvale smazat tento koncept?"
 
 #: src/Composer/ComposerWidget.vala:663
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
+"Tuto akci nepůjde vzít zpět, ani obnovit vás koncept, jakmile bude smazán."
 
 #: src/Composer/ComposerWidget.vala:673
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Delete Draft"
 msgstr "Smazat koncept"
 
 #: src/Composer/ComposerWidget.vala:693
-#, fuzzy
-#| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
-msgstr "Poslat zprávu s prázdným předmětem?"
+msgstr "Poslat zprávu bez předmětu?"
 
 #: src/Composer/ComposerWidget.vala:694
-#, fuzzy
-#| msgid ""
-#| "This message has an empty subject field. The recipient may not be able to "
-#| "infer the scope or importance of the message."
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
 "Tato zpráva nemá vyplněnou kolonku předmět. Příjemce možná nebude moci "
-"odhadnout rozsah nebo důležitost zprávy."
+"odhadnout rozsah nebo důležitost."
 
 #: src/Composer/ComposerWidget.vala:700
 msgid "Don't Send"
@@ -338,50 +309,42 @@ msgid "Send Anyway"
 msgstr "Přesto odeslat"
 
 #: src/Composer/ComposerWidget.vala:725
-#, fuzzy
-#| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
-msgstr "Poslat zprávu s prázdným tělem?"
+msgstr "Odeslaná zpráva nebyla uložena"
 
 #: src/Composer/ComposerWidget.vala:726
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
+"Zpráva byla odeslána, nicméně kopie nebyla uložena do složky odeslaných "
+"zpráv."
 
 #: src/Composer/ComposerWidget.vala:740
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to send message"
-msgstr "Smazat koncept"
+msgstr "Zprávu se nedaří odeslat"
 
 #: src/Composer/ComposerWidget.vala:741
 msgid "There was an unexpected error while sending your message."
-msgstr ""
+msgstr "Došlo k neočekávané chybě při odesílání zprávy."
 
 #: src/Composer/ComposerWidget.vala:988
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to save draft"
-msgstr "Smazat koncept"
+msgstr "Koncept se nepodařilo uložit"
 
 #: src/Composer/ComposerWidget.vala:989
 msgid "There was an unexpected error while saving your draft."
-msgstr ""
+msgstr "Došlo k neočekávané chybě při ukládání konceptu."
 
 #: src/Composer/ComposerWindow.vala:50 src/Composer/ComposerWindow.vala:61
 msgid "New Message"
 msgstr "Nová zpráva"
 
 #: src/ConversationList/ConversationListBox.vala:467
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move To Trash"
-msgstr "Přesunout konverzace do koše"
+msgstr "Přesunout do koše"
 
 #: src/ConversationList/ConversationListBox.vala:476
-#, fuzzy
-#| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Označit jako nepřečtené"
 
@@ -443,16 +406,12 @@ msgid "Archive"
 msgstr "Archiv"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent Mail"
 msgid "Sent"
-msgstr "Odeslaná pošta"
+msgstr "Odeslané"
 
 #: src/FoldersView/SessionSourceItem.vala:28
-#, fuzzy
-#| msgid "All Mail"
 msgid "All Mailboxes"
-msgstr "Všechny zprávy"
+msgstr "Všechny schránky"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
@@ -462,7 +421,7 @@ msgstr "Žádná vybraná zpráva"
 #: src/MessageList/MessageListItem.vala:173
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s na %s"
 
 #: src/MessageList/MessageListItem.vala:181
 #: src/MessageList/MessageListItem.vala:340
@@ -504,16 +463,12 @@ msgstr "Tato zpráva obsahuje jednu nebo více příloh"
 
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:367
-#, fuzzy
-#| msgid "New Message"
 msgid "Email Message"
-msgstr "Nová zpráva"
+msgstr "E-mailová zpráva"
 
 #: src/MessageList/MessageListItem.vala:389
-#, fuzzy
-#| msgid "Unable to validate:\n"
 msgid "Unable to print email"
-msgstr "Nelze ověřit:\n"
+msgstr "Nedaří se vytisknout e-mail"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
