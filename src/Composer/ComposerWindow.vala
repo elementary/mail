@@ -55,7 +55,7 @@ public class Mail.ComposerWindow : Hdy.ApplicationWindow {
                 subject = _("New Message");
             }
 
-            titlebar.title = title = subject
+            titlebar.title = title = subject;
         });
 
         var content_grid = new Gtk.Grid ();
