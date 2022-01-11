@@ -22,6 +22,14 @@
       <binary>io.elementary.mail</binary>
   </provides>
   <releases>
+    <release version="6.3.2" date="2022-01-11" urgency="medium">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Added support for Unified Inbox for Office 365 accounts</li>
+        </ul>
+      </description>
+    </release>
     <release version="6.3.1" date="2021-12-13" urgency="medium">
       <description>
         <p>Fixes:</p>
