@@ -141,7 +141,7 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
 
         var mail_account_extension = (E.SourceMailAccount) service_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
         if (Camel.FolderInfoFlags.TYPE_INBOX == (folder_type & Camel.FOLDER_TYPE_MASK)) {
-            if ("ews" == mail_account_extension.backend_name ) {
+            if ("ews".ascii_casecmp (mail_account_extension.backend_name) ==  0) {
                 return "Inbox";
             }
             return "INBOX";
