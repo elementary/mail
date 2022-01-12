@@ -24,11 +24,9 @@
   <releases>
     <release version="6.3.2" date="2022-01-11" urgency="medium">
       <description>
-        <p>Fixes:</p>
-        <ul>
-          <li>Added support for Unified Inbox for Office 365 accounts</li>
         <p>Improvements:</p>
         <ul>
+          <li>Added support for Unified Inbox for Office 365 accounts</li>
           <li>Use message subject for compose window title</li>
           <li>Updated translations</li>
         </ul>
