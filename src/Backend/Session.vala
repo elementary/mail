@@ -312,7 +312,9 @@ public class Mail.Backend.Session : Camel.Session {
             }
 
             var address = extension.get_address ();
-            addresses.add (address.casefold ());
+            if (!addresses.contains (address.casefold ())) {
+              addresses.add (address.casefold ());
+            }
 
             var aliases = extension.get_aliases_as_hash_table ();
             if (aliases != null) {
