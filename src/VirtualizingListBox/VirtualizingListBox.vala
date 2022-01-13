@@ -744,8 +744,13 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
             return null;
         }
 
-        var index_max = model.get_n_items () - 1;
-        if (index_max == uint.MAX || index > index_max) {
+        var n_items = model.get_n_items ();
+        if (n_items == 0) {
+            return null;
+        }
+
+        var index_max = n_items - 1;
+        if (index > index_max) {
             return null;
         }
 
