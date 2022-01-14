@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-13 10:45+0000\n"
-"PO-Revision-Date: 2022-01-12 07:23+0000\n"
+"PO-Revision-Date: 2022-01-14 05:01+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/"
-">\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/>"
+"\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -80,11 +80,8 @@ msgid "Use message subject for compose window title"
 msgstr "メール作成ウィンドウのタイトルにメッセージの件名を使うように修正"
 
 #: data/io.elementary.mail.appdata.xml.in:30
-#, fuzzy
-#| msgid "Fix a hang when deleting the last message in a mailbox"
 msgid "Fix a freeze when archiving the last message in a folder"
-msgstr ""
-"メールボックスの最後のメッセージを削除するとハングアップする不具合を修正"
+msgstr "フォルダー内の最後のメッセージをアーカイブするとフリーズする不具合を修正"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 #: data/io.elementary.mail.appdata.xml.in:43
