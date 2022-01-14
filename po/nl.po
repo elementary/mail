@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-13 10:45+0000\n"
-"PO-Revision-Date: 2022-01-14 18:42+0000\n"
+"PO-Revision-Date: 2022-01-14 21:04+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
 "Language: nl\n"
@@ -39,11 +39,11 @@ msgstr "Mail doorzoeken"
 
 #: src/HeaderBar.vala:50
 msgid "Always Show Remote Images"
-msgstr "Laat altijd externe afbeeldingen zien"
+msgstr "Toon externe afbeeldingen altijd"
 
 #: src/HeaderBar.vala:53
 msgid "Account Settings…"
-msgstr "Account Instellingen…"
+msgstr "Accountinstellingen…"
 
 #: src/HeaderBar.vala:76
 msgid "Menu"
@@ -79,7 +79,7 @@ msgstr "Ster verwijderen"
 
 #: src/HeaderBar.vala:130
 msgid "Mark Conversation"
-msgstr "Markeer conversatie"
+msgstr "Gesprek markeren"
 
 #: src/HeaderBar.vala:137
 msgid "Move conversations to archive"
@@ -87,7 +87,7 @@ msgstr "Verplaats gesprekken naar archief"
 
 #: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
-msgstr "Verplaats conversaties naar de prullenbak"
+msgstr "Verplaats gesprekken naar de prullenbak"
 
 #: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
@@ -133,7 +133,7 @@ msgstr "Gesprekken zonder ster verbergen"
 
 #: src/MainWindow.vala:195
 msgid "Filter Conversations"
-msgstr "Gesprekken Filteren"
+msgstr "Gesprekken filteren"
 
 #: src/MainWindow.vala:406
 msgid "Message Deleted"
@@ -152,11 +152,12 @@ msgstr "Account verbinden"
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
-"Mail gebruikt email accounts die via Systeeminstellingen geconfigureerd zijn."
+"Mail gebruikt de email accounts die in de Systeeminstellingen zijn "
+"geconfigureerd."
 
 #: src/WelcomeView.vala:50
 msgid "Online Accounts…"
-msgstr "Online Accounts…"
+msgstr "Online accounts…"
 
 #: src/Composer/ComposerWidget.vala:102 src/MessageList/MessageListItem.vala:97
 msgid "From:"
@@ -290,11 +291,11 @@ msgstr ""
 
 #: src/Composer/ComposerWidget.vala:677
 msgid "Delete Draft"
-msgstr "Verwijder Concept"
+msgstr "Verwijder concept"
 
 #: src/Composer/ComposerWidget.vala:697
 msgid "Send without subject?"
-msgstr "Bericht versturen met een leeg onderwerp?"
+msgstr "Bericht versturen zonder onderwerp?"
 
 #: src/Composer/ComposerWidget.vala:698
 msgid ""
@@ -349,11 +350,11 @@ msgstr "Nieuw bericht"
 
 #: src/ConversationList/ConversationListBox.vala:467
 msgid "Move To Trash"
-msgstr "Verplaatsen Naar Prullenbak"
+msgstr "Verplaatsen naar prullenbak"
 
 #: src/ConversationList/ConversationListBox.vala:476
 msgid "Mark As Unread"
-msgstr "Markeren Als Ongelezen"
+msgstr "Markeren als ongelezen"
 
 #: src/ConversationList/ConversationListItem.vala:103
 msgid "Unread"
@@ -381,12 +382,12 @@ msgstr "Link tekst:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
-msgstr "Voorbeeld website"
+msgstr "Voorbeeldwebsite"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
-msgstr "Weet je zeker dat je %s wilt openen?"
+msgstr "Weet u zeker dat u %s wilt openen?"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
@@ -410,7 +411,7 @@ msgstr "Postvak IN"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:42
 msgid "Archive"
-msgstr "Archiveren"
+msgstr "Archief"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 msgid "Sent"
@@ -442,7 +443,7 @@ msgstr "Ster bij bericht toevoegen"
 
 #: src/MessageList/MessageListItem.vala:194
 msgid "Reply to All"
-msgstr "Allen Beantwoorden"
+msgstr "Allen beantwoorden"
 
 #: src/MessageList/MessageListItem.vala:200
 msgid "Print…"
@@ -458,7 +459,7 @@ msgstr "Afbeeldingen tonen"
 
 #: src/MessageList/MessageListItem.vala:251
 msgid "Always Show from Sender"
-msgstr "Altijd tonen van afzender"
+msgstr "Toon altijd van afzender"
 
 #: src/MessageList/MessageListItem.vala:256
 msgid "This message contains remote images."
@@ -466,7 +467,7 @@ msgstr "Dit bericht bevat externe afbeeldingen."
 
 #: src/MessageList/MessageListItem.vala:288
 msgid "This message contains one or more attachments"
-msgstr "Dit bericht bevat één of meer bijlagen"
+msgstr "Dit bericht bevat een of meer bijlagen"
 
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:367
