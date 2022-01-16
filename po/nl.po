@@ -17,16 +17,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-11 21:31+0000\n"
-"PO-Revision-Date: 2019-12-30 20:31+0000\n"
-"Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
+"POT-Creation-Date: 2022-01-13 10:45+0000\n"
+"PO-Revision-Date: 2022-01-16 03:54+0000\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:40
@@ -39,11 +39,11 @@ msgstr "Mail doorzoeken"
 
 #: src/HeaderBar.vala:50
 msgid "Always Show Remote Images"
-msgstr "Laat altijd externe afbeeldingen zien"
+msgstr "Toon externe afbeeldingen altijd"
 
 #: src/HeaderBar.vala:53
 msgid "Account Settings…"
-msgstr "Account Instellingen…"
+msgstr "Accountinstellingen…"
 
 #: src/HeaderBar.vala:76
 msgid "Menu"
@@ -79,78 +79,61 @@ msgstr "Ster verwijderen"
 
 #: src/HeaderBar.vala:130
 msgid "Mark Conversation"
-msgstr "Markeer conversatie"
+msgstr "Gesprek markeren"
 
 #: src/HeaderBar.vala:137
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
-msgstr "Verplaats conversaties naar de prullenbak"
+msgstr "Verplaats gesprekken naar archief"
 
 #: src/HeaderBar.vala:144
 msgid "Move conversations to Trash"
-msgstr "Verplaats conversaties naar de prullenbak"
+msgstr "Verplaats gesprekken naar de prullenbak"
 
 #: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
 msgid "%s to %s"
-msgstr ""
+msgstr "%s tot %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:165
-#, fuzzy, c-format
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
+#, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "%d nieuw bericht"
-msgstr[1] "%d nieuwe berichten"
+msgstr[0] "%u nieuw bericht"
+msgstr[1] "%u nieuwe berichten"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
 #: src/InboxMonitor.vala:177
-#, fuzzy, c-format
-#| msgid "Always Show from Sender"
+#, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] "Altijd tonen van afzender"
-msgstr[1] "Altijd tonen van afzender"
+msgstr[0] "%s van %u afzender"
+msgstr[1] "%s van %u afzenders"
 
 #: src/MainWindow.vala:83
 msgid "Mail"
 msgstr "Mail"
 
 #: src/MainWindow.vala:159
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
 msgid "Fetch new messages"
-msgstr "%d nieuw bericht"
+msgstr "Nieuwe berichten ophalen"
 
 #: src/MainWindow.vala:166
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
 msgid "Fetching new messages"
-msgstr "%d nieuw bericht"
+msgstr "Nieuwe berichten worden opgehaald"
 
 #: src/MainWindow.vala:176
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide read conversations"
-msgstr "Conversaties markeren"
+msgstr "Gelezen gesprekken verbergen"
 
 #: src/MainWindow.vala:178
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
-msgstr "Conversaties markeren"
+msgstr "Gesprekken zonder ster verbergen"
 
 #: src/MainWindow.vala:195
-#, fuzzy
-#| msgid "Delete conversation"
 msgid "Filter Conversations"
-msgstr "Gesprek verwijderen"
+msgstr "Gesprekken filteren"
 
 #: src/MainWindow.vala:406
 msgid "Message Deleted"
@@ -169,11 +152,12 @@ msgstr "Account verbinden"
 #: src/WelcomeView.vala:45
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
-"Mail gebruikt email accounts die via Systeeminstellingen geconfigureerd zijn."
+"Mail gebruikt de email accounts die in de Systeeminstellingen zijn "
+"geconfigureerd."
 
 #: src/WelcomeView.vala:50
 msgid "Online Accounts…"
-msgstr "Online Accounts…"
+msgstr "Online accounts…"
 
 #: src/Composer/ComposerWidget.vala:102 src/MessageList/MessageListItem.vala:97
 msgid "From:"
@@ -247,10 +231,8 @@ msgid "Choose a file"
 msgstr "Een bestand kiezen"
 
 #: src/Composer/ComposerWidget.vala:444
-#, fuzzy
-#| msgid "_Attach"
 msgid "Attach"
-msgstr "_Toevoegen"
+msgstr "Bijvoegen"
 
 #: src/Composer/ComposerWidget.vala:445 src/Composer/ComposerWidget.vala:675
 #: src/Dialogs/InsertLinkDialog.vala:61
@@ -297,40 +279,31 @@ msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
 #: src/Composer/ComposerWidget.vala:666
-#, fuzzy
-#| msgid "Do you want to permanently delete this message?"
-#| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
-msgstr "Wilt u dit bericht definitief verwijderen?"
+msgstr "Dit concept permanent verwijderen?"
 
 #: src/Composer/ComposerWidget.vala:667
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
+"U kunt deze actie niet ongedaan maken, noch uw concept terughalen nadat het "
+"is verwijderd."
 
 #: src/Composer/ComposerWidget.vala:677
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Delete Draft"
 msgstr "Verwijder concept"
 
 #: src/Composer/ComposerWidget.vala:697
-#, fuzzy
-#| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
-msgstr "Bericht zonder onderwerp verzenden?"
+msgstr "Bericht versturen zonder onderwerp?"
 
 #: src/Composer/ComposerWidget.vala:698
-#, fuzzy
-#| msgid ""
-#| "This message has an empty subject field. The recipient may not be able to "
-#| "infer the scope or importance of the message."
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
-"Dit bericht heeft geen onderwerp. De ontvanger kan daardoor mogelijk niet de "
-"scope of de urgentie van het bericht bepalen."
+"Dit bericht heeft geen onderwerp. De ontvanger kan daardoor mogelijk "
+"moeilijk het draagwijdte of belang inschatten."
 
 #: src/Composer/ComposerWidget.vala:704
 msgid "Don't Send"
@@ -341,36 +314,34 @@ msgid "Send Anyway"
 msgstr "Toch verzenden"
 
 #: src/Composer/ComposerWidget.vala:729
-#, fuzzy
-#| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
-msgstr "Bericht zonder inhoud verzenden?"
+msgstr "Verzonden bericht was niet opgeslagen"
 
 #: src/Composer/ComposerWidget.vala:730
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
+"Het bericht was verstuurd, maar er was geen kopie opgeslagen in de Verzonden "
+"berichten folder."
 
 #: src/Composer/ComposerWidget.vala:744
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to send message"
-msgstr "Verwijder concept"
+msgstr "Kon bericht niet versturen"
 
 #: src/Composer/ComposerWidget.vala:745
 msgid "There was an unexpected error while sending your message."
 msgstr ""
+"Er is een onverwachte fout opgetreden tijdens het versturen van uw bericht."
 
 #: src/Composer/ComposerWidget.vala:992
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to save draft"
-msgstr "Verwijder concept"
+msgstr "Kan concept niet opslaan"
 
 #: src/Composer/ComposerWidget.vala:993
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
+"Er is een onverwachte fout opgetreden tijdens het opslaan van uw concept."
 
 #: src/Composer/ComposerWindow.vala:43 src/Composer/ComposerWindow.vala:55
 #: src/Composer/ComposerWindow.vala:68
@@ -378,16 +349,12 @@ msgid "New Message"
 msgstr "Nieuw bericht"
 
 #: src/ConversationList/ConversationListBox.vala:467
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move To Trash"
-msgstr "Verplaats conversaties naar de prullenbak"
+msgstr "Verplaatsen naar prullenbak"
 
 #: src/ConversationList/ConversationListBox.vala:476
-#, fuzzy
-#| msgid "Mark as Unread"
 msgid "Mark As Unread"
-msgstr "Als ongelezen markeren"
+msgstr "Markeren als ongelezen"
 
 #: src/ConversationList/ConversationListItem.vala:103
 msgid "Unread"
@@ -415,12 +382,12 @@ msgstr "Link tekst:"
 
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
-msgstr "Voorbeeld website"
+msgstr "Voorbeeldwebsite"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:28
 #, c-format
 msgid "Are you sure you want to open %s?"
-msgstr "Weet je zeker dat je %s wilt openen?"
+msgstr "Weet u zeker dat u %s wilt openen?"
 
 #: src/Dialogs/OpenAttachmentDialog.vala:29
 msgid ""
@@ -436,7 +403,7 @@ msgstr "Toch openen"
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
-msgstr "Map vernieuwen"
+msgstr "Folder vernieuwen"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
@@ -444,19 +411,15 @@ msgstr "Postvak IN"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:42
 msgid "Archive"
-msgstr "Archiveren"
+msgstr "Archief"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent Mail"
 msgid "Sent"
-msgstr "Verzonden berichten"
+msgstr "Verzonden"
 
 #: src/FoldersView/SessionSourceItem.vala:28
-#, fuzzy
-#| msgid "All Mail"
 msgid "All Mailboxes"
-msgstr "Alle berichten"
+msgstr "Alle Mailboxen"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
@@ -466,7 +429,7 @@ msgstr "Geen bericht geselecteerd"
 #: src/MessageList/MessageListItem.vala:173
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s om %s"
 
 #: src/MessageList/MessageListItem.vala:181
 #: src/MessageList/MessageListItem.vala:340
@@ -479,18 +442,16 @@ msgid "Star message"
 msgstr "Ster bij bericht toevoegen"
 
 #: src/MessageList/MessageListItem.vala:194
-#, fuzzy
-#| msgid "Reply to _All"
 msgid "Reply to All"
-msgstr "_Allen beantwoorden"
+msgstr "Allen beantwoorden"
 
 #: src/MessageList/MessageListItem.vala:200
 msgid "Print…"
-msgstr ""
+msgstr "Afdrukken…"
 
 #: src/MessageList/MessageListItem.vala:214
 msgid "More"
-msgstr ""
+msgstr "Meer"
 
 #: src/MessageList/MessageListItem.vala:250
 msgid "Show Images"
@@ -498,7 +459,7 @@ msgstr "Afbeeldingen tonen"
 
 #: src/MessageList/MessageListItem.vala:251
 msgid "Always Show from Sender"
-msgstr "Altijd tonen van afzender"
+msgstr "Toon altijd van afzender"
 
 #: src/MessageList/MessageListItem.vala:256
 msgid "This message contains remote images."
@@ -506,20 +467,16 @@ msgstr "Dit bericht bevat externe afbeeldingen."
 
 #: src/MessageList/MessageListItem.vala:288
 msgid "This message contains one or more attachments"
-msgstr "Dit bericht bevat één of meer bijlagen"
+msgstr "Dit bericht bevat een of meer bijlagen"
 
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:367
-#, fuzzy
-#| msgid "New Message"
 msgid "Email Message"
-msgstr "Nieuw bericht"
+msgstr "E-mailberichten"
 
 #: src/MessageList/MessageListItem.vala:389
-#, fuzzy
-#| msgid "Unable to validate:\n"
 msgid "Unable to print email"
-msgstr "Verifiëren mislukt:\n"
+msgstr "E-mail afdrukken is mislukt"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
