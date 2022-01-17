@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-13 10:45+0000\n"
-"PO-Revision-Date: 2022-01-12 18:06+0000\n"
+"PO-Revision-Date: 2022-01-17 13:41+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/extra/cs/>\n"
 "Language: cs\n"
@@ -77,10 +77,8 @@ msgid "Use message subject for compose window title"
 msgstr "Předmět zprávy používán jako titulek okna editoru zprávy"
 
 #: data/io.elementary.mail.appdata.xml.in:30
-#, fuzzy
-#| msgid "Fix a hang when deleting the last message in a mailbox"
 msgid "Fix a freeze when archiving the last message in a folder"
-msgstr "Opraven zásek při mazání poslední zprávy ve schránce"
+msgstr "Opraveno zamrzání při archivaci poslední zprávy ve složce"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 #: data/io.elementary.mail.appdata.xml.in:43
