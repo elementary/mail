@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-18 07:35+0000\n"
+"POT-Creation-Date: 2022-01-18 08:59+0000\n"
 "PO-Revision-Date: 2022-01-18 08:59+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/extra/he/>\n"
@@ -73,7 +73,9 @@ msgid "Improvements:"
 msgstr "שיפורים:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
-msgid "Added support for Unified Inbox for Office 365 accounts"
+#, fuzzy
+#| msgid "Added support for Unified Inbox for Office 365 accounts"
+msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr "נוספה תמיכה בתיבת דואר נכנס מאוחדת לחשבונות Microsoft 365"
 
 #: data/io.elementary.mail.appdata.xml.in:30
