@@ -134,29 +134,33 @@ public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
     }
 
     private string? build_folder_full_name (Backend.Account account) {
+        var service_source = session.ref_source (account.service.uid);
+        if (service_source == null || !service_source.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
+            return null;
+        }
+
+        var mail_account_extension = (E.SourceMailAccount) service_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
         if (Camel.FolderInfoFlags.TYPE_INBOX == (folder_type & Camel.FOLDER_TYPE_MASK)) {
+            if ("ews".ascii_casecmp (mail_account_extension.backend_name) == 0) {
+                return "Inbox";
+            }
             return "INBOX";
         }
 
-        var service_source = session.ref_source (account.service.uid);
-        if (service_source != null && service_source.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
-            var mail_account_extension = (E.SourceMailAccount) service_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
+        if (Camel.FolderInfoFlags.TYPE_ARCHIVE == (folder_type & Camel.FOLDER_TYPE_MASK)) {
+            return Utils.strip_folder_full_name (account.service.uid, mail_account_extension.dup_archive_folder ());
+        }
 
-            if (Camel.FolderInfoFlags.TYPE_ARCHIVE == (folder_type & Camel.FOLDER_TYPE_MASK)) {
-                return Utils.strip_folder_full_name (account.service.uid, mail_account_extension.dup_archive_folder ());
-            }
+        var identity_uid = mail_account_extension.dup_identity_uid ();
+        var identity_source = session.ref_source (identity_uid);
 
-            var identity_uid = mail_account_extension.dup_identity_uid ();
-            var identity_source = session.ref_source (identity_uid);
-
-            if (
-                Camel.FolderInfoFlags.TYPE_SENT == (folder_type & Camel.FOLDER_TYPE_MASK)
-                &&
-                identity_source.has_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION)
-            ) {
-                unowned var mail_submission_extension = (E.SourceMailSubmission) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
-                return Utils.strip_folder_full_name (account.service.uid, mail_submission_extension.sent_folder);
-            }
+        if (
+            Camel.FolderInfoFlags.TYPE_SENT == (folder_type & Camel.FOLDER_TYPE_MASK)
+            &&
+            identity_source.has_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION)
+        ) {
+            unowned var mail_submission_extension = (E.SourceMailSubmission) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_SUBMISSION);
+            return Utils.strip_folder_full_name (account.service.uid, mail_submission_extension.sent_folder);
         }
 
         return null;
