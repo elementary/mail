@@ -139,6 +139,10 @@ public class Mail.Application : Gtk.Application {
             var css_provider = new Gtk.CssProvider ();
             css_provider.load_from_resource ("io/elementary/mail/application.css");
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            main_window.destroy.connect (() => {
+                main_window = null;
+            });
         }
 
         main_window.present ();
