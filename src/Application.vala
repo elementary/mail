@@ -27,8 +27,6 @@ public class Mail.Application : Gtk.Application {
     public static GLib.Settings settings;
     public static bool run_in_background;
 
-    private MainWindow? main_window = null;
-
     public Application () {
         Object (
             application_id: "io.elementary.mail",
@@ -50,8 +48,8 @@ public class Mail.Application : Gtk.Application {
 
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (() => {
-            if (main_window != null) {
-                main_window.destroy ();
+            if (active_window != null) {
+                active_window.destroy ();
             }
         });
 
@@ -63,6 +61,7 @@ public class Mail.Application : Gtk.Application {
         activate ();
 
         string[] argv = command_line.get_arguments ();
+        var main_window = (MainWindow) active_window;
 
         // The only arguments we support are mailto: URLs passed in by the OS. See RFC 2368 for
         // details. We handle the most commonly used fields.
@@ -104,10 +103,11 @@ public class Mail.Application : Gtk.Application {
             return;
         }
 
-        if (main_window == null) {
+        if (active_window == null) {
             Gtk.IconTheme.get_default ().add_resource_path ("/io/elementary/mail");
 
-            main_window = new MainWindow (this);
+            var main_window = new MainWindow (this);
+            add_window (main_window);
 
             int window_x, window_y;
             var rect = Gtk.Allocation ();
@@ -141,7 +141,7 @@ public class Mail.Application : Gtk.Application {
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
 
-        main_window.present ();
+        active_window.present ();
     }
 }
 

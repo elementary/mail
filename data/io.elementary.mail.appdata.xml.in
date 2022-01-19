@@ -26,6 +26,7 @@
       <description>
         <p>Improvements:</p>
         <ul>
+          <li>Fixed an error which caused the inbox monitoring in the background to crash</li>
           <li>Added support for Unified Inbox for Microsoft 365 accounts</li>
           <li>Use message subject for compose window title</li>
           <li>Fix a freeze when archiving the last message in a folder</li>
