@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-19 16:37+0000\n"
-"PO-Revision-Date: 2022-01-18 20:56+0000\n"
+"PO-Revision-Date: 2022-01-21 14:43+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/extra/cs/>\n"
 "Language: cs\n"
@@ -75,7 +75,7 @@ msgstr "Vylepšení:"
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
-msgstr ""
+msgstr "Opravena chyba která způsobovala pád zjišťování nové pošty na pozadí"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
