@@ -1,7 +1,7 @@
 project(
     'io.elementary.mail',
     'vala', 'c',
-    version: '6.3.1'
+    version: '6.4.0'
 )
 
 gnome = import('gnome')
