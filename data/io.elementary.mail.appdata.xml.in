@@ -22,14 +22,22 @@
       <binary>io.elementary.mail</binary>
   </provides>
   <releases>
-    <release version="6.3.2" date="2022-01-11" urgency="medium">
+    <release version="6.4.0" date="2022-01-22" urgency="medium">
       <description>
-        <p>Improvements:</p>
+        <p>New features:</p>
+        <ul>
+          <li>Use message subject for composer window title</li>
+          <li>Added support for Unified Inbox for Microsoft 365 accounts</li>
+        </ul>
+        <p>Fixes:</p>
         <ul>
           <li>Fixed an error which caused the inbox monitoring in the background to crash</li>
-          <li>Added support for Unified Inbox for Microsoft 365 accounts</li>
-          <li>Use message subject for compose window title</li>
+          <li>Removed duplicate sender addresses when composing a message</li>
           <li>Fix a freeze when archiving the last message in a folder</li>
+        </ul>
+        <p>Improvements:</p>
+        <ul>
+          <li>Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding</li>
           <li>Updated translations</li>
         </ul>
       </description>
