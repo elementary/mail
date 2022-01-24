@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-19 16:37+0000\n"
+"POT-Creation-Date: 2022-01-24 20:19+0000\n"
 "PO-Revision-Date: 2022-01-24 05:33+0000\n"
 "Last-Translator: asdffdsdaf <asdffdsdaf@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/extra/ru/>\n"
@@ -66,131 +66,144 @@ msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr "Работа с Gmail, Yahoo! Mail, и другими популярными серверами IMAP"
 
 #: data/io.elementary.mail.appdata.xml.in:27
-#: data/io.elementary.mail.appdata.xml.in:43
-#: data/io.elementary.mail.appdata.xml.in:63
-#: data/io.elementary.mail.appdata.xml.in:86
-#: data/io.elementary.mail.appdata.xml.in:101
-#: data/io.elementary.mail.appdata.xml.in:111
-msgid "Improvements:"
-msgstr "Улучшения:"
+#: data/io.elementary.mail.appdata.xml.in:59
+#: data/io.elementary.mail.appdata.xml.in:82
+msgid "New features:"
+msgstr "Новые возможности:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
-msgid ""
-"Fixed an error which caused the inbox monitoring in the background to crash"
-msgstr "Исправлена ошибка ломающая обновление сообщений в фоне"
+#, fuzzy
+#| msgid "Use message subject for compose window title"
+msgid "Use message subject for composer window title"
+msgstr "Использование темы сообщения для названия окна"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr "Добавлена поддержка общих почтовых ящиков для аккаунтов Microsoft 365"
 
-#: data/io.elementary.mail.appdata.xml.in:31
-msgid "Use message subject for compose window title"
-msgstr "Использование темы сообщения для названия окна"
-
 #: data/io.elementary.mail.appdata.xml.in:32
+#: data/io.elementary.mail.appdata.xml.in:47
+#: data/io.elementary.mail.appdata.xml.in:63
+#: data/io.elementary.mail.appdata.xml.in:89
+#: data/io.elementary.mail.appdata.xml.in:103
+msgid "Fixes:"
+msgstr "Исправления:"
+
+#: data/io.elementary.mail.appdata.xml.in:34
+msgid ""
+"Fixed an error which caused the inbox monitoring in the background to crash"
+msgstr "Исправлена ошибка ломающая обновление сообщений в фоне"
+
+#: data/io.elementary.mail.appdata.xml.in:35
+msgid "Removed duplicate sender addresses when composing a message"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:36
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
 "Исправлена остановка работы приложения при архивировании последнего "
 "сообщения в папке"
 
-#: data/io.elementary.mail.appdata.xml.in:33
-#: data/io.elementary.mail.appdata.xml.in:45
-#: data/io.elementary.mail.appdata.xml.in:68
-#: data/io.elementary.mail.appdata.xml.in:89
-#: data/io.elementary.mail.appdata.xml.in:105
-#: data/io.elementary.mail.appdata.xml.in:118
+#: data/io.elementary.mail.appdata.xml.in:38
+#: data/io.elementary.mail.appdata.xml.in:51
+#: data/io.elementary.mail.appdata.xml.in:71
+#: data/io.elementary.mail.appdata.xml.in:94
+#: data/io.elementary.mail.appdata.xml.in:109
+#: data/io.elementary.mail.appdata.xml.in:119
+msgid "Improvements:"
+msgstr "Улучшения:"
+
+#: data/io.elementary.mail.appdata.xml.in:40
+msgid ""
+"Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:41
+#: data/io.elementary.mail.appdata.xml.in:53
+#: data/io.elementary.mail.appdata.xml.in:76
+#: data/io.elementary.mail.appdata.xml.in:97
+#: data/io.elementary.mail.appdata.xml.in:113
+#: data/io.elementary.mail.appdata.xml.in:126
 msgid "Updated translations"
 msgstr "Обновлены переводы"
 
-#: data/io.elementary.mail.appdata.xml.in:39
-#: data/io.elementary.mail.appdata.xml.in:55
-#: data/io.elementary.mail.appdata.xml.in:81
-#: data/io.elementary.mail.appdata.xml.in:95
-msgid "Fixes:"
-msgstr "Исправления:"
-
-#: data/io.elementary.mail.appdata.xml.in:41
+#: data/io.elementary.mail.appdata.xml.in:49
 msgid "Fix a potential crash while loading messages"
 msgstr "Исправлен вероятный сбой при загрузке сообщений"
 
-#: data/io.elementary.mail.appdata.xml.in:51
-#: data/io.elementary.mail.appdata.xml.in:74
-msgid "New features:"
-msgstr "Новые возможности:"
-
-#: data/io.elementary.mail.appdata.xml.in:53
+#: data/io.elementary.mail.appdata.xml.in:61
 msgid "Secondary-click menu on the conversations list"
 msgstr "Нажатие правой кнопки мыши по списку бесед"
 
-#: data/io.elementary.mail.appdata.xml.in:57
+#: data/io.elementary.mail.appdata.xml.in:65
 msgid "Ensure conversations are re-sorted by date when new messages appear"
 msgstr ""
 "Когда появятся новые сообщения, разговоры повторно упорядочиваются по дате"
 
-#: data/io.elementary.mail.appdata.xml.in:58
+#: data/io.elementary.mail.appdata.xml.in:66
 msgid "Fixed sender combobox after opening a mailto link"
 msgstr "Исправлен выбор отправителя при открытии ссылки \"mailto\""
 
-#: data/io.elementary.mail.appdata.xml.in:59
+#: data/io.elementary.mail.appdata.xml.in:67
 msgid "Mark sent messages as read"
 msgstr "Пометка отправленных сообщений прочитанными"
 
-#: data/io.elementary.mail.appdata.xml.in:60
+#: data/io.elementary.mail.appdata.xml.in:68
 msgid "Fix a hang when deleting the last message in a mailbox"
 msgstr ""
 "Исправлена остановка работы приложения при удалении последнего сообщения в "
 "почте"
 
-#: data/io.elementary.mail.appdata.xml.in:61
+#: data/io.elementary.mail.appdata.xml.in:69
 msgid "Fix an issue where some mail fails to be deleted"
 msgstr ""
 "Исправлена проблема, из-за которой некоторая почта не могла быть удалена"
 
-#: data/io.elementary.mail.appdata.xml.in:65
+#: data/io.elementary.mail.appdata.xml.in:73
 msgid "Use accent color for unread message titles"
 msgstr "Использование цветового акцента для заголовков непрочитанных сообщений"
 
-#: data/io.elementary.mail.appdata.xml.in:66
+#: data/io.elementary.mail.appdata.xml.in:74
 msgid "Autoselect the next message after archiving"
 msgstr "Автовыбор следующего сообщения после архивации"
 
-#: data/io.elementary.mail.appdata.xml.in:67
+#: data/io.elementary.mail.appdata.xml.in:75
 msgid "Use local time in message headers"
 msgstr "Использование пользовательского часового пояса в заголовках сообщений"
 
-#: data/io.elementary.mail.appdata.xml.in:76
+#: data/io.elementary.mail.appdata.xml.in:84
 msgid "Send a notification when new messages arrive"
 msgstr "Отправка уведомлений, когда поступают новые сообщения"
 
-#: data/io.elementary.mail.appdata.xml.in:77
+#: data/io.elementary.mail.appdata.xml.in:85
 msgid "Add a button to manually fetch new messages"
 msgstr "Добавлена кнопка для ручного получения новых сообщений"
 
-#: data/io.elementary.mail.appdata.xml.in:78
+#: data/io.elementary.mail.appdata.xml.in:86
 msgid "Automatically select the next message after deleting"
 msgstr "Автоматический выбор следующего сообщения после удаления"
 
-#: data/io.elementary.mail.appdata.xml.in:79
+#: data/io.elementary.mail.appdata.xml.in:87
 msgid "Filter unread or starred conversations"
 msgstr "Сортировка непрочитанных или бесед в избранном"
 
-#: data/io.elementary.mail.appdata.xml.in:83
+#: data/io.elementary.mail.appdata.xml.in:91
 msgid "Make sure we don't save sent messages twice for outlook.com accounts"
 msgstr "Исправлена отправка сообщений для аккаунтов outlook.com"
 
-#: data/io.elementary.mail.appdata.xml.in:84
+#: data/io.elementary.mail.appdata.xml.in:92
 msgid "Fix a potential crash when changing folders"
 msgstr "Исправлен вероятный сбой при смене папок"
 
-#: data/io.elementary.mail.appdata.xml.in:88
+#: data/io.elementary.mail.appdata.xml.in:96
 msgid "Improve search performance"
 msgstr "Улучшена скорость поиска"
 
-#: data/io.elementary.mail.appdata.xml.in:97
+#: data/io.elementary.mail.appdata.xml.in:105
 msgid "Fix an issue that prevented some messaging from rendering at all"
 msgstr "Исправлена проблема, из-за которой некоторые сообщения не отображались"
 
-#: data/io.elementary.mail.appdata.xml.in:98
+#: data/io.elementary.mail.appdata.xml.in:106
 msgid ""
 "Set the correct \"From\" address when replying and multiple accounts are set "
 "up"
@@ -198,45 +211,45 @@ msgstr ""
 "Установка правильного адреса «От» при ответе, а также если настроено "
 "несколько учетных записей"
 
-#: data/io.elementary.mail.appdata.xml.in:99
+#: data/io.elementary.mail.appdata.xml.in:107
 msgid "Fix a crash on startup for some conversations"
 msgstr "Исправлен сбой при запуске некоторых бесед"
 
-#: data/io.elementary.mail.appdata.xml.in:103
+#: data/io.elementary.mail.appdata.xml.in:111
 msgid "Only save drafts when there are new changes"
 msgstr "Черновики сохраняются только при наличии изменений"
 
-#: data/io.elementary.mail.appdata.xml.in:104
+#: data/io.elementary.mail.appdata.xml.in:112
 msgid "Move Undo notification to the message view"
 msgstr "Отклонение уведомлений перемещены в панель уведомлений"
 
-#: data/io.elementary.mail.appdata.xml.in:113
+#: data/io.elementary.mail.appdata.xml.in:121
 msgid "Preserve conversation subjects when replying or forwarding"
 msgstr "Сохранение темы разговора по время ответа или переадресации"
 
-#: data/io.elementary.mail.appdata.xml.in:114
+#: data/io.elementary.mail.appdata.xml.in:122
 msgid "Disable the composer while messages are being sent"
 msgstr "Закрытие редактора написания во время отправки сообщений"
 
-#: data/io.elementary.mail.appdata.xml.in:115
+#: data/io.elementary.mail.appdata.xml.in:123
 msgid "Edit saved draft messages"
 msgstr "Редактирование сохраненных черновиков"
 
-#: data/io.elementary.mail.appdata.xml.in:116
+#: data/io.elementary.mail.appdata.xml.in:124
 msgid "Make sure we don't save sent messages twice for some account types"
 msgstr ""
 "Исправлен недостаток двойного сохранения отправленных сообщений для "
 "некоторых типов учетных записей"
 
-#: data/io.elementary.mail.appdata.xml.in:117
+#: data/io.elementary.mail.appdata.xml.in:125
 msgid "Stability improvements"
 msgstr "Улучшения стабильности"
 
-#: data/io.elementary.mail.appdata.xml.in:124
+#: data/io.elementary.mail.appdata.xml.in:132
 msgid "Complete rewrite from scratch"
 msgstr "Приложение переписано с нуля"
 
-#: data/io.elementary.mail.appdata.xml.in:165
+#: data/io.elementary.mail.appdata.xml.in:173
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
