@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-24 20:19+0000\n"
-"PO-Revision-Date: 2022-01-19 18:02+0000\n"
+"PO-Revision-Date: 2022-01-24 21:30+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/extra/he/>\n"
 "Language: he\n"
@@ -70,10 +70,8 @@ msgid "New features:"
 msgstr "יכולות חדשות:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
-#, fuzzy
-#| msgid "Use message subject for compose window title"
 msgid "Use message subject for composer window title"
-msgstr "נושא ההודעה משמש ככותרת חלון הכתיבה"
+msgstr "נושא ההודעה משמש ככותרת חלון כתיבת הודעות"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
@@ -94,7 +92,7 @@ msgstr "תוקנה שגיאה שגרמה למעקב אחר הדואר הנכנס
 
 #: data/io.elementary.mail.appdata.xml.in:35
 msgid "Removed duplicate sender addresses when composing a message"
-msgstr ""
+msgstr "הוסרה כתובת מוען כפולה בעת כתיבת הודעה"
 
 #: data/io.elementary.mail.appdata.xml.in:36
 msgid "Fix a freeze when archiving the last message in a folder"
@@ -113,6 +111,8 @@ msgstr "שיפורים:"
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
+"השם של Office 365 השתנה ל־Microsoft 365 כדי לענות על המיתוג המחודש של "
+"Microsoft"
 
 #: data/io.elementary.mail.appdata.xml.in:41
 #: data/io.elementary.mail.appdata.xml.in:53
