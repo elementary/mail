@@ -1,3 +1,19 @@
+io.elementary.mail (6.4.0) focal; urgency=medium
+
+  * Release 6.4.0 (#761)
+  * Update translation files
+  * Update translation template
+  * Fix crash of background process (#760)
+  * Rename Office 365 to Microsoft 365 (#759)
+  * Added support for Unified Inbox for Office 365 accounts (#753)
+  * Fix UI freeze because of uint underflow (#755)
+  * Session: get_own_addresses should return a unique list of email
+    addresses (#756)
+  * ComposerWindow: Use subject as title (#747)
+  * Meson: remove positional arguments from i18n.merge_file (#751)
+
+ -- Cody Garver <cody@elementary.io>  Mon, 24 Jan 2022 20:19:14 +0000
+
 io.elementary.mail (6.3.1) focal; urgency=medium
 
   * Release 6.3.1 (#740)
