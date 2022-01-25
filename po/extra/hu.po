@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-24 20:19+0000\n"
-"PO-Revision-Date: 2021-09-15 14:55+0000\n"
+"PO-Revision-Date: 2022-01-25 11:40+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
-"Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/extra/hu/"
-">\n"
+"Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/extra/hu/>"
+"\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -68,15 +68,15 @@ msgstr ""
 #: data/io.elementary.mail.appdata.xml.in:59
 #: data/io.elementary.mail.appdata.xml.in:82
 msgid "New features:"
-msgstr ""
+msgstr "Új funkciók:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Use message subject for composer window title"
-msgstr ""
+msgstr "Az üzenet tárgyának használata a szerkesztőablak címeként"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
-msgstr ""
+msgstr "Egyesített fiók támogatása Microsoft 365 fiókoknál"
 
 #: data/io.elementary.mail.appdata.xml.in:32
 #: data/io.elementary.mail.appdata.xml.in:47
@@ -84,20 +84,21 @@ msgstr ""
 #: data/io.elementary.mail.appdata.xml.in:89
 #: data/io.elementary.mail.appdata.xml.in:103
 msgid "Fixes:"
-msgstr ""
+msgstr "Javítások:"
 
 #: data/io.elementary.mail.appdata.xml.in:34
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
+"A beérkező leveleket figyelő háttérfolyamat összeomlását okozó hiba javítva"
 
 #: data/io.elementary.mail.appdata.xml.in:35
 msgid "Removed duplicate sender addresses when composing a message"
-msgstr ""
+msgstr "Többszörös küldőcím eltávolítása üzenet szerkesztésekor"
 
 #: data/io.elementary.mail.appdata.xml.in:36
 msgid "Fix a freeze when archiving the last message in a folder"
-msgstr ""
+msgstr "Egy mappán belüli utolsó üzenet archiválásakor való fagyás javítva"
 
 #: data/io.elementary.mail.appdata.xml.in:38
 #: data/io.elementary.mail.appdata.xml.in:51
@@ -106,12 +107,14 @@ msgstr ""
 #: data/io.elementary.mail.appdata.xml.in:109
 #: data/io.elementary.mail.appdata.xml.in:119
 msgid "Improvements:"
-msgstr ""
+msgstr "Javítások:"
 
 #: data/io.elementary.mail.appdata.xml.in:40
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
+"Office 365 átnevezve Microsoft 365-re a Microsoft arculatváltásának követése "
+"érdekében"
 
 #: data/io.elementary.mail.appdata.xml.in:41
 #: data/io.elementary.mail.appdata.xml.in:53
@@ -120,7 +123,7 @@ msgstr ""
 #: data/io.elementary.mail.appdata.xml.in:113
 #: data/io.elementary.mail.appdata.xml.in:126
 msgid "Updated translations"
-msgstr ""
+msgstr "Frissített fordítások"
 
 #: data/io.elementary.mail.appdata.xml.in:49
 msgid "Fix a potential crash while loading messages"
