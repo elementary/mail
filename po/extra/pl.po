@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-24 20:19+0000\n"
-"PO-Revision-Date: 2022-01-20 08:22+0000\n"
+"PO-Revision-Date: 2022-01-25 22:10+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/extra/pl/>\n"
 "Language: pl\n"
@@ -73,8 +73,6 @@ msgid "New features:"
 msgstr "Nowe funkcje:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
-#, fuzzy
-#| msgid "Use message subject for compose window title"
 msgid "Use message subject for composer window title"
 msgstr "Temat wiadomości jest teraz użyty w tytule okna kompozycji"
 
@@ -99,7 +97,7 @@ msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:35
 msgid "Removed duplicate sender addresses when composing a message"
-msgstr ""
+msgstr "Usunięto zduplikowane adresy nadawcy przy komponowaniu wiadomości"
 
 #: data/io.elementary.mail.appdata.xml.in:36
 msgid "Fix a freeze when archiving the last message in a folder"
@@ -119,6 +117,7 @@ msgstr "Ulepszenia:"
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
+"Zmieniono nazwę Office 365 na Microsoft 365 by być zgodnym z marką Microsoftu"
 
 #: data/io.elementary.mail.appdata.xml.in:41
 #: data/io.elementary.mail.appdata.xml.in:53
