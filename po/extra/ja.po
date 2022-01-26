@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-24 20:19+0000\n"
-"PO-Revision-Date: 2022-01-20 08:22+0000\n"
+"PO-Revision-Date: 2022-01-26 09:23+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/"
-">\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/>"
+"\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -73,8 +73,6 @@ msgid "New features:"
 msgstr "新機能:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
-#, fuzzy
-#| msgid "Use message subject for compose window title"
 msgid "Use message subject for composer window title"
 msgstr "メール作成ウィンドウのタイトルにメッセージの件名を使うように修正"
 
@@ -97,7 +95,7 @@ msgstr "バックグランドでの新着メールの確認がクラッシュす
 
 #: data/io.elementary.mail.appdata.xml.in:35
 msgid "Removed duplicate sender addresses when composing a message"
-msgstr ""
+msgstr "メッセージ作成時、重複する宛先を削除するように修正"
 
 #: data/io.elementary.mail.appdata.xml.in:36
 msgid "Fix a freeze when archiving the last message in a folder"
@@ -116,7 +114,7 @@ msgstr "改善点:"
 #: data/io.elementary.mail.appdata.xml.in:40
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
-msgstr ""
+msgstr "Microsoft のブランド名変更に伴い、“Office 365” という表示を “Microsoft 365” に変更"
 
 #: data/io.elementary.mail.appdata.xml.in:41
 #: data/io.elementary.mail.appdata.xml.in:53
