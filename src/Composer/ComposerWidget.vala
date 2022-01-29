@@ -66,7 +66,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         DRAFT
     }
 
-    public const ActionEntry[] ACTION_ENTRIES = {
+    private const ActionEntry[] ACTION_ENTRIES = {
         {ACTION_ADD_ATTACHMENT, on_add_attachment },
         {ACTION_BOLD, on_edit_action, "s", "''" },
         {ACTION_ITALIC, on_edit_action, "s", "''" },
