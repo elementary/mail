@@ -23,7 +23,7 @@
 public class Mail.ConversationItemModel : GLib.Object {
     public string service_uid { get; construct; }
     public unowned Camel.FolderThreadNode? node;
-    public Camel.FolderInfoFlags folder_info_flags { get; construct; } 
+    public Camel.FolderInfoFlags folder_info_flags { get; construct; }
 
     public string formatted_date {
         owned get {
