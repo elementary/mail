@@ -30,8 +30,6 @@ public class Mail.Backend.Session : Camel.Session {
 
     E.SourceRegistry registry;
     Gee.LinkedList<Account> accounts;
-    //Camel.Store local_store;
-    //Camel.Store vfolder_store;
 
     public signal void account_added (Mail.Backend.Account account);
     public signal void account_removed (Mail.Backend.Account account);
@@ -49,6 +47,11 @@ public class Mail.Backend.Session : Camel.Session {
     }
 
     public async void start () {
+        if (registry != null) {
+            debug ("Camel.Session is already started.");
+            return;
+        }
+
         try {
             registry = yield new E.SourceRegistry (null);
         } catch (Error e) {
