@@ -22,12 +22,13 @@
       <binary>io.elementary.mail</binary>
   </provides>
   <releases>
-  <release version="6.4.1" date="2022-02-06" urgency="medium">
+    <release version="6.4.1" date="2022-02-06" urgency="medium">
       <description>
         <p>Fixes:</p>
         <ul>
           <li>Display recipient in Sent folder instead of sender</li>
         </ul>
+      </description>
     </release>
     <release version="6.4.0" date="2022-01-22" urgency="medium">
       <description>
