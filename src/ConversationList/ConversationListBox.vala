@@ -28,6 +28,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
     public Gee.Map<Backend.Account, string?> folder_full_name_per_account { get; private set; }
     public Gee.HashMap<string, Camel.Folder> folders { get; private set; }
+    public Gee.HashMap<string, Camel.FolderInfoFlags> folder_info_flags { get; private set; }
 
     private GLib.Cancellable? cancellable = null;
     private Gee.HashMap<string, Camel.FolderThread> threads;
@@ -44,6 +45,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         activate_on_single_click = true;
         conversations = new Gee.HashMap<string, ConversationItemModel> ();
         folders = new Gee.HashMap<string, Camel.Folder> ();
+        folder_info_flags = new Gee.HashMap<string, Camel.FolderInfoFlags> ();
         threads = new Gee.HashMap<string, Camel.FolderThread> ();
         list_store = new ConversationListStore ();
         list_store.set_sort_func (thread_sort_function);
@@ -179,8 +181,14 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                             }
 
                             try {
-                                var folder = yield ((Camel.Store) current_account.service).get_folder (current_full_name, 0, GLib.Priority.DEFAULT, cancellable);
+                                var camel_store = (Camel.Store) current_account.service;
+
+                                var folder = yield camel_store.get_folder (current_full_name, 0, GLib.Priority.DEFAULT, cancellable);
                                 folders[current_account.service.uid] = folder;
+
+                                var info_flags = Utils.get_full_folder_info_flags (current_account.service, yield camel_store.get_folder_info (folder.full_name, 0, GLib.Priority.DEFAULT));
+                                folder_info_flags[current_account.service.uid] = info_flags;
+
                                 folder.changed.connect ((change_info) => folder_changed (change_info, current_account.service.uid, cancellable));
 
                                 var search_result_uids = get_search_result_uids (current_account.service.uid);
@@ -194,7 +202,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                                             break;
                                         }
 
-                                        add_conversation_item (child, current_account.service.uid);
+                                        add_conversation_item (child, folder_info_flags[current_account.service.uid], current_account.service.uid);
                                         child = child.next;
                                     }
                                 }
@@ -261,13 +269,13 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
                     var item = conversations[child.message.uid];
                     if (item == null) {
-                        add_conversation_item (child, service_uid);
+                        add_conversation_item (child, folder_info_flags[service_uid], service_uid);
                     } else {
                         if (item.update_node (child)) {
                             conversations.unset (child.message.uid);
                             list_store.remove (item);
                             removed++;
-                            add_conversation_item (child, service_uid);
+                            add_conversation_item (child, folder_info_flags[service_uid], service_uid);
                         };
                     }
 
@@ -332,8 +340,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         yield load_folder (folder_full_name_per_account);
     }
 
-    private void add_conversation_item (Camel.FolderThreadNode child, string service_uid) {
-        var item = new ConversationItemModel (child, service_uid);
+    private void add_conversation_item (Camel.FolderThreadNode child, Camel.FolderInfoFlags folder_info_flags, string service_uid) {
+        var item = new ConversationItemModel (child, folder_info_flags, service_uid);
         conversations[child.message.uid] = item;
         list_store.add (item);
     }
