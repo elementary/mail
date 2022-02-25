@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-24 20:19+0000\n"
-"PO-Revision-Date: 2021-11-30 20:34+0000\n"
+"PO-Revision-Date: 2022-02-26 05:42+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/mail/extra/sk/>\n"
 "Language: sk\n"
@@ -73,11 +73,12 @@ msgstr "Nové funkcie:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Use message subject for composer window title"
-msgstr ""
+msgstr "Zobrazovať predmet správy v záhlaví okna editora"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
+"Pridaná podpora zjednotenej schránky doručenej pošty pre účty Microsoft 365"
 
 #: data/io.elementary.mail.appdata.xml.in:32
 #: data/io.elementary.mail.appdata.xml.in:47
@@ -91,16 +92,15 @@ msgstr "Opravy:"
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
+"Opravená chyba, ktorá spôsobovala pád služby zisťovania novej pošty na pozadí"
 
 #: data/io.elementary.mail.appdata.xml.in:35
 msgid "Removed duplicate sender addresses when composing a message"
-msgstr ""
+msgstr "Odstránené duplicitné adresy odosielateľa pri písaní správy"
 
 #: data/io.elementary.mail.appdata.xml.in:36
-#, fuzzy
-#| msgid "Fix a hang when deleting the last message in a mailbox"
 msgid "Fix a freeze when archiving the last message in a folder"
-msgstr "Opravené zamrznutie po odstránení poslednej správy v schránke"
+msgstr "Opravené zamrznutie pri archivácii poslednej správy v priečinku"
 
 #: data/io.elementary.mail.appdata.xml.in:38
 #: data/io.elementary.mail.appdata.xml.in:51
@@ -115,6 +115,8 @@ msgstr "Vylepšenia:"
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
+"Office 365 premenované na Microsoft 365 v súlade s premenovaním služby "
+"Microsoftu"
 
 #: data/io.elementary.mail.appdata.xml.in:41
 #: data/io.elementary.mail.appdata.xml.in:53
@@ -126,10 +128,8 @@ msgid "Updated translations"
 msgstr "Aktualizované preklady"
 
 #: data/io.elementary.mail.appdata.xml.in:49
-#, fuzzy
-#| msgid "Fix a potential crash when changing folders"
 msgid "Fix a potential crash while loading messages"
-msgstr "Opravený potenciálny pád pri zmene priečinkov"
+msgstr "Opravený potenciálny pád pri načítaní správ"
 
 #: data/io.elementary.mail.appdata.xml.in:61
 msgid "Secondary-click menu on the conversations list"
