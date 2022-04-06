@@ -114,6 +114,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         }
 
         headerbar = new HeaderBar ();
+        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         folders_list_view = new FoldersListView ();
         conversation_list_box = new ConversationListBox ();
@@ -149,6 +150,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         };
 
         var search_header = new Hdy.HeaderBar ();
+        search_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         search_header.set_custom_title (search_entry);
 
         var conversation_list_scrolled = new Gtk.ScrolledWindow (null, null) {
@@ -229,6 +231,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         view_overlay.add (message_list_scrolled);
 
         var message_list_container = new Gtk.Grid ();
+        message_list_container.get_style_context ().add_class ("deck");
         message_list_container.attach (headerbar, 0, 0);
         message_list_container.attach (view_overlay, 0, 1);
 
