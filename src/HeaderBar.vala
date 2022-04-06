@@ -19,9 +19,6 @@
 
 public class Mail.HeaderBar : Hdy.HeaderBar {
     public bool can_mark { get; set; }
-    public bool can_search { get; set; }
-    public Gtk.SearchEntry search_entry { get; construct; }
-    private Gtk.Grid spacing_widget;
 
     public HeaderBar () {
         Object (show_close_button: true,
@@ -30,22 +27,6 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
 
     construct {
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
-
-        var compose_button = new Gtk.Button.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR) {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_COMPOSE_MESSAGE,
-            halign = Gtk.Align.START
-        };
-        compose_button.tooltip_markup = Granite.markup_accel_tooltip (
-            application_instance.get_accels_for_action (compose_button.action_name),
-            _("Compose new message")
-        );
-
-        spacing_widget = new Gtk.Grid ();
-
-        search_entry = new Gtk.SearchEntry () {
-            placeholder_text = _("Search Mail"),
-            valign = Gtk.Align.CENTER
-        };
 
         var load_images_menuitem = new Granite.SwitchModelButton (_("Always Show Remote Images"));
 
@@ -144,9 +125,6 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
             _("Move conversations to Trash")
         );
 
-        pack_start (compose_button);
-        pack_start (spacing_widget);
-        pack_start (search_entry);
         pack_start (reply_button);
         pack_start (reply_all_button);
         pack_start (forward_button);
@@ -157,7 +135,6 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
         pack_end (app_menu);
 
         bind_property ("can-mark", mark_button, "sensitive");
-        bind_property ("can-search", search_entry, "sensitive", BindingFlags.SYNC_CREATE);
 
         var settings = new GLib.Settings ("io.elementary.mail");
         settings.bind ("always-load-remote-images", load_images_menuitem, "active", SettingsBindFlags.DEFAULT);
@@ -169,31 +146,5 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
                 warning ("Failed to open account settings: %s", e.message);
             }
         });
-    }
-
-    public void set_paned_positions (int start_position, int end_position, bool start_changed = true) {
-        // Not sure where these 3px comes from, but it makes the lines line up
-        search_entry.width_request = end_position - start_position + 3;
-        if (start_changed) {
-            int spacing_position;
-            child_get (spacing_widget, "position", out spacing_position, null);
-            var style_context = get_style_context ();
-            // The left padding between the window and the headerbar widget
-            int offset = style_context.get_padding (style_context.get_state ()).left;
-            forall ((widget) => {
-                if (widget == custom_title || widget.get_style_context ().has_class ("right")) {
-                    return;
-                }
-
-                int widget_position;
-                child_get (widget, "position", out widget_position, null);
-                if (widget_position < spacing_position) {
-                    offset += widget.get_allocated_width () + spacing;
-                }
-            });
-
-            offset += spacing;
-            spacing_widget.width_request = start_position - int.min (offset, start_position) - 1;
-        }
     }
 }
