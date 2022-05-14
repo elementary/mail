@@ -215,6 +215,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         conversation_list_grid.attach (search_header, 0, 0);
         conversation_list_grid.attach (conversation_list_scrolled, 0, 1);
         conversation_list_grid.attach (conversation_action_bar, 0, 2);
+        conversation_list_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
         message_list_scrolled = new Gtk.ScrolledWindow (null, null);
         message_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -231,7 +232,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         view_overlay.add (message_list_scrolled);
 
         var message_list_container = new Gtk.Grid ();
-        message_list_container.get_style_context ().add_class ("deck");
+        message_list_container.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
         message_list_container.attach (headerbar, 0, 0);
         message_list_container.attach (view_overlay, 0, 1);
 
