@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 16:24+0000\n"
+"POT-Creation-Date: 2022-05-16 19:33+0000\n"
 "PO-Revision-Date: 2021-11-30 20:34+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
@@ -70,15 +70,15 @@ msgstr "Transférer"
 msgid "Mark as Unread"
 msgstr "Marquer comme non lu"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:484
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
 msgid "Mark as Read"
 msgstr "Marquer comme lu"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:494
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
 msgid "Star"
 msgstr "Marquer d'une étoile"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:502
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
 msgid "Unstar"
 msgstr "Supprimer l'étoile"
 
@@ -353,11 +353,11 @@ msgstr ""
 msgid "New Message"
 msgstr "Nouveau message"
 
-#: src/ConversationList/ConversationListBox.vala:467
+#: src/ConversationList/ConversationListBox.vala:465
 msgid "Move To Trash"
 msgstr "Déplacer vers la corbeille"
 
-#: src/ConversationList/ConversationListBox.vala:476
+#: src/ConversationList/ConversationListBox.vala:474
 msgid "Mark As Unread"
 msgstr "Marquer comme non lu"
 

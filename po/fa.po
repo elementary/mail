@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 16:24+0000\n"
+"POT-Creation-Date: 2022-05-16 19:33+0000\n"
 "PO-Revision-Date: 2015-11-24 15:43+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Persian (http://www.transifex.com/projects/p/geary/language/"
@@ -63,17 +63,17 @@ msgstr ""
 msgid "Mark as Unread"
 msgstr "نشان گذاری به عنوان خوانده نشده"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:484
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
 #, fuzzy
 msgid "Mark as Read"
 msgstr "نشان گذاری به عنوان خوانده شده"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:494
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
 #, fuzzy
 msgid "Star"
 msgstr "ستاره دار کردن"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:502
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
 #, fuzzy
 msgid "Unstar"
 msgstr "حذف ستاره"
@@ -367,12 +367,12 @@ msgstr ""
 msgid "New Message"
 msgstr "ارسال ایمیل جدید"
 
-#: src/ConversationList/ConversationListBox.vala:467
+#: src/ConversationList/ConversationListBox.vala:465
 #, fuzzy
 msgid "Move To Trash"
 msgstr "انتقال گفتگوها"
 
-#: src/ConversationList/ConversationListBox.vala:476
+#: src/ConversationList/ConversationListBox.vala:474
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "نشان گذاری به عنوان خوانده نشده"

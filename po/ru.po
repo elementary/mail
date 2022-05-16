@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 16:24+0000\n"
+"POT-Creation-Date: 2022-05-16 19:33+0000\n"
 "PO-Revision-Date: 2021-10-10 08:54+0000\n"
 "Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
@@ -65,15 +65,15 @@ msgstr "Переслать"
 msgid "Mark as Unread"
 msgstr "Отметить как непрочитанное"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:484
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
 msgid "Mark as Read"
 msgstr "Отметить как прочитанное"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:494
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
 msgid "Star"
 msgstr "Добавить в избранное"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:502
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
 msgid "Unstar"
 msgstr "Удалить из избранных"
 
@@ -349,11 +349,11 @@ msgstr "При сохранении черновика произошла неп
 msgid "New Message"
 msgstr "Новое сообщение"
 
-#: src/ConversationList/ConversationListBox.vala:467
+#: src/ConversationList/ConversationListBox.vala:465
 msgid "Move To Trash"
 msgstr "Переместить в корзину"
 
-#: src/ConversationList/ConversationListBox.vala:476
+#: src/ConversationList/ConversationListBox.vala:474
 msgid "Mark As Unread"
 msgstr "Отметить как непрочитанное"
 

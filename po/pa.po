@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 16:24+0000\n"
+"POT-Creation-Date: 2022-05-16 19:33+0000\n"
 "PO-Revision-Date: 2021-07-27 15:38+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/mail/mail/pa/>\n"
@@ -49,15 +49,15 @@ msgstr "ਅੱਗੇ ਭੇਜੋ"
 msgid "Mark as Unread"
 msgstr "ਨਾ-ਪੜ੍ਹੇ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਾਓ"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:484
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
 msgid "Mark as Read"
 msgstr "ਪੜ੍ਹੇ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਾਓ"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:494
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
 msgid "Star"
 msgstr "ਸਿਤਾਰਾ ਦਿਓ"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:502
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
 msgid "Unstar"
 msgstr "ਸਿਤਾਰਾ ਹਟਾਓ"
 
@@ -338,13 +338,13 @@ msgstr "ਤੁਹਾਡਾ ਖ਼ਾਕਾ ਸਾਂਭਦੇ ਵਕ਼ਤ ਇ�
 msgid "New Message"
 msgstr "ਨਵਾਂ ਸੁਨੇਹਾ"
 
-#: src/ConversationList/ConversationListBox.vala:467
+#: src/ConversationList/ConversationListBox.vala:465
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "ਗੱਲਬਾਤ ਨੂੰ ਕੂੜੇਦਾਨ ਵਿੱਚ ਭੇਜੋ"
 
-#: src/ConversationList/ConversationListBox.vala:476
+#: src/ConversationList/ConversationListBox.vala:474
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"

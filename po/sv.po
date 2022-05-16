@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 16:24+0000\n"
+"POT-Creation-Date: 2022-05-16 19:33+0000\n"
 "PO-Revision-Date: 2017-04-15 20:42+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Swedish <https://l10n.elementary.io/projects/mail/mail/sv/>\n"
@@ -69,17 +69,17 @@ msgstr ""
 msgid "Mark as Unread"
 msgstr "Markera som _oläst"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:484
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
 #, fuzzy
 msgid "Mark as Read"
 msgstr "Markera som _läst"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:494
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
 #, fuzzy
 msgid "Star"
 msgstr "Markera som _viktigt"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:502
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
 #, fuzzy
 msgid "Unstar"
 msgstr "Markera som ov_iktigt"
@@ -380,12 +380,12 @@ msgstr ""
 msgid "New Message"
 msgstr "Nytt meddelande"
 
-#: src/ConversationList/ConversationListBox.vala:467
+#: src/ConversationList/ConversationListBox.vala:465
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Flytta konversationerna"
 
-#: src/ConversationList/ConversationListBox.vala:476
+#: src/ConversationList/ConversationListBox.vala:474
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "Markera som _oläst"
