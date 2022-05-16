@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 16:24+0000\n"
+"POT-Creation-Date: 2022-05-16 19:33+0000\n"
 "PO-Revision-Date: 2021-07-22 10:38+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/mail/extra/id/"
@@ -71,184 +71,189 @@ msgstr ""
 "IMAP populer lainnya"
 
 #: data/io.elementary.mail.appdata.xml.in:27
-#: data/io.elementary.mail.appdata.xml.in:47
+#: data/io.elementary.mail.appdata.xml.in:45
 #: data/io.elementary.mail.appdata.xml.in:60
-#: data/io.elementary.mail.appdata.xml.in:80
-#: data/io.elementary.mail.appdata.xml.in:103
-#: data/io.elementary.mail.appdata.xml.in:118
-#: data/io.elementary.mail.appdata.xml.in:128
-msgid "Improvements:"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Updated app icon"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:30
-#: data/io.elementary.mail.appdata.xml.in:50
-#: data/io.elementary.mail.appdata.xml.in:62
-#: data/io.elementary.mail.appdata.xml.in:85
-#: data/io.elementary.mail.appdata.xml.in:106
-#: data/io.elementary.mail.appdata.xml.in:122
-#: data/io.elementary.mail.appdata.xml.in:135
-msgid "Updated translations"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:36
-#: data/io.elementary.mail.appdata.xml.in:68
-#: data/io.elementary.mail.appdata.xml.in:91
-msgid "New features:"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:38
-msgid "Use message subject for composer window title"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:39
-msgid "Added support for Unified Inbox for Microsoft 365 accounts"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:41
-#: data/io.elementary.mail.appdata.xml.in:56
-#: data/io.elementary.mail.appdata.xml.in:72
-#: data/io.elementary.mail.appdata.xml.in:98
-#: data/io.elementary.mail.appdata.xml.in:112
+#: data/io.elementary.mail.appdata.xml.in:76
+#: data/io.elementary.mail.appdata.xml.in:102
+#: data/io.elementary.mail.appdata.xml.in:116
 msgid "Fixes:"
 msgstr ""
 
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Fixed a bug which caused Mail to crash occasionally"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:31
+#: data/io.elementary.mail.appdata.xml.in:51
+#: data/io.elementary.mail.appdata.xml.in:64
+#: data/io.elementary.mail.appdata.xml.in:84
+#: data/io.elementary.mail.appdata.xml.in:107
+#: data/io.elementary.mail.appdata.xml.in:122
+#: data/io.elementary.mail.appdata.xml.in:132
+msgid "Improvements:"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:33
+msgid "Updated app icon"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:34
+#: data/io.elementary.mail.appdata.xml.in:54
+#: data/io.elementary.mail.appdata.xml.in:66
+#: data/io.elementary.mail.appdata.xml.in:89
+#: data/io.elementary.mail.appdata.xml.in:110
+#: data/io.elementary.mail.appdata.xml.in:126
+#: data/io.elementary.mail.appdata.xml.in:139
+msgid "Updated translations"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:40
+#: data/io.elementary.mail.appdata.xml.in:72
+#: data/io.elementary.mail.appdata.xml.in:95
+msgid "New features:"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:42
+msgid "Use message subject for composer window title"
+msgstr ""
+
 #: data/io.elementary.mail.appdata.xml.in:43
+msgid "Added support for Unified Inbox for Microsoft 365 accounts"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:47
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:44
+#: data/io.elementary.mail.appdata.xml.in:48
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:45
+#: data/io.elementary.mail.appdata.xml.in:49
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:49
+#: data/io.elementary.mail.appdata.xml.in:53
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:58
+#: data/io.elementary.mail.appdata.xml.in:62
 msgid "Fix a potential crash while loading messages"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:70
+#: data/io.elementary.mail.appdata.xml.in:74
 msgid "Secondary-click menu on the conversations list"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:74
+#: data/io.elementary.mail.appdata.xml.in:78
 msgid "Ensure conversations are re-sorted by date when new messages appear"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:75
+#: data/io.elementary.mail.appdata.xml.in:79
 msgid "Fixed sender combobox after opening a mailto link"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:76
+#: data/io.elementary.mail.appdata.xml.in:80
 msgid "Mark sent messages as read"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:77
+#: data/io.elementary.mail.appdata.xml.in:81
 msgid "Fix a hang when deleting the last message in a mailbox"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:78
+#: data/io.elementary.mail.appdata.xml.in:82
 msgid "Fix an issue where some mail fails to be deleted"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:82
+#: data/io.elementary.mail.appdata.xml.in:86
 msgid "Use accent color for unread message titles"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:83
+#: data/io.elementary.mail.appdata.xml.in:87
 msgid "Autoselect the next message after archiving"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:84
+#: data/io.elementary.mail.appdata.xml.in:88
 msgid "Use local time in message headers"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:93
+#: data/io.elementary.mail.appdata.xml.in:97
 msgid "Send a notification when new messages arrive"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:94
+#: data/io.elementary.mail.appdata.xml.in:98
 msgid "Add a button to manually fetch new messages"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:95
+#: data/io.elementary.mail.appdata.xml.in:99
 msgid "Automatically select the next message after deleting"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:96
+#: data/io.elementary.mail.appdata.xml.in:100
 msgid "Filter unread or starred conversations"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:100
+#: data/io.elementary.mail.appdata.xml.in:104
 msgid "Make sure we don't save sent messages twice for outlook.com accounts"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:101
+#: data/io.elementary.mail.appdata.xml.in:105
 msgid "Fix a potential crash when changing folders"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:105
+#: data/io.elementary.mail.appdata.xml.in:109
 msgid "Improve search performance"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:114
+#: data/io.elementary.mail.appdata.xml.in:118
 msgid "Fix an issue that prevented some messaging from rendering at all"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:115
+#: data/io.elementary.mail.appdata.xml.in:119
 msgid ""
 "Set the correct \"From\" address when replying and multiple accounts are set "
 "up"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:116
+#: data/io.elementary.mail.appdata.xml.in:120
 msgid "Fix a crash on startup for some conversations"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:120
+#: data/io.elementary.mail.appdata.xml.in:124
 msgid "Only save drafts when there are new changes"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:121
+#: data/io.elementary.mail.appdata.xml.in:125
 msgid "Move Undo notification to the message view"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:130
+#: data/io.elementary.mail.appdata.xml.in:134
 msgid "Preserve conversation subjects when replying or forwarding"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:131
+#: data/io.elementary.mail.appdata.xml.in:135
 msgid "Disable the composer while messages are being sent"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:132
+#: data/io.elementary.mail.appdata.xml.in:136
 msgid "Edit saved draft messages"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:133
+#: data/io.elementary.mail.appdata.xml.in:137
 msgid "Make sure we don't save sent messages twice for some account types"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:134
+#: data/io.elementary.mail.appdata.xml.in:138
 msgid "Stability improvements"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:141
+#: data/io.elementary.mail.appdata.xml.in:145
 msgid "Complete rewrite from scratch"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:182
+#: data/io.elementary.mail.appdata.xml.in:186
 msgid "elementary, Inc."
 msgstr "elementary, PT."
 
