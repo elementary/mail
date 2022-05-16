@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-24 20:19+0000\n"
+"POT-Creation-Date: 2022-05-16 19:53+0000\n"
 "PO-Revision-Date: 2017-02-02 09:29+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/geary/language/"
@@ -63,17 +63,17 @@ msgstr ""
 msgid "Mark as Unread"
 msgstr "_Lugemata"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:484
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Loetud"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:494
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
 #, fuzzy
 msgid "Star"
 msgstr "_Lemmik"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:502
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
 #, fuzzy
 msgid "Unstar"
 msgstr "Eemalda _lemmikutest"
@@ -148,14 +148,14 @@ msgstr "Sildista kui..."
 msgid "Filter Conversations"
 msgstr "Märgi kui..."
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:407
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Kirjad puuduvad"
 msgstr[1] "Kirjad puuduvad"
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:419
 msgid "Undo"
 msgstr ""
 
@@ -363,12 +363,12 @@ msgstr ""
 msgid "New Message"
 msgstr "Uus kiri"
 
-#: src/ConversationList/ConversationListBox.vala:467
+#: src/ConversationList/ConversationListBox.vala:465
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Liiguta asukohta..."
 
-#: src/ConversationList/ConversationListBox.vala:476
+#: src/ConversationList/ConversationListBox.vala:474
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "_Lugemata"

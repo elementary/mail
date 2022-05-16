@@ -22,7 +22,9 @@
 
 public class Mail.ConversationItemModel : GLib.Object {
     public string service_uid { get; construct; }
-    public unowned Camel.FolderThreadNode? node;
+    public unowned Camel.FolderThreadNode? node { get; construct; }
+    public Camel.FolderThread thread { get; construct; }
+    public int64 timestamp { get; construct; }
 
     public string formatted_date {
         owned get {
@@ -146,20 +148,18 @@ public class Mail.ConversationItemModel : GLib.Object {
         }
     }
 
-    public int64 timestamp { get; private set; }
-
-    public ConversationItemModel (Camel.FolderThreadNode node, string service_uid) {
-        Object (service_uid: service_uid);
-        update_node (node);
+    public ConversationItemModel (Camel.FolderThreadNode node, Camel.FolderThread thread, string service_uid) {
+        Object (service_uid: service_uid, node: node, thread: thread);
     }
 
-    public bool update_node (Camel.FolderThreadNode new_node) {
-        node = new_node;
+    construct {
+        timestamp = get_newest_timestamp (node, -1);
+    }
 
-        var old_timestamp = timestamp;
-        timestamp = get_newest_timestamp (new_node, -1);
+    public bool is_older_than (Camel.FolderThreadNode other_node) {
+        var other_timestamp = get_newest_timestamp (other_node, -1);
 
-        return (old_timestamp != timestamp);
+        return (timestamp < other_timestamp);
     }
 
     private static uint count_thread_messages (Camel.FolderThreadNode node) {
