@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 16:24+0000\n"
+"POT-Creation-Date: 2022-05-16 19:33+0000\n"
 "PO-Revision-Date: 2015-11-29 22:37+0000\n"
 "Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -60,17 +60,17 @@ msgstr ""
 msgid "Mark as Unread"
 msgstr "_Shënoje si të palexuar"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:484
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Shënoje si të lexuar"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:494
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
 #, fuzzy
 msgid "Star"
 msgstr "_Shënoje si të veçantë"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:502
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
 #, fuzzy
 msgid "Unstar"
 msgstr "Shënoje si jo më të _veçantë"
@@ -371,12 +371,12 @@ msgstr ""
 msgid "New Message"
 msgstr "Mesazh i ri"
 
-#: src/ConversationList/ConversationListBox.vala:467
+#: src/ConversationList/ConversationListBox.vala:465
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Zhvendos bisedat"
 
-#: src/ConversationList/ConversationListBox.vala:476
+#: src/ConversationList/ConversationListBox.vala:474
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "_Shënoje si të palexuar"
