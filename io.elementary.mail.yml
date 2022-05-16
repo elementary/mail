@@ -95,7 +95,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/folks.git
-        tag: '0.15.2'
+        tag: '0.15.5'
 
   - name: mail
     buildsystem: meson
