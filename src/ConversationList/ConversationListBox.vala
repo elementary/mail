@@ -202,7 +202,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                                             break;
                                         }
 
-                                        add_conversation_item (child, folder_info_flags[current_account.service.uid], current_account.service.uid);
+                                        add_conversation_item (folder_info_flags[current_account.service.uid], child, thread, current_account.service.uid);
                                         child = child.next;
                                     }
                                 }
@@ -243,7 +243,6 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
         lock (conversations) {
             lock (threads) {
-                list_store.set_filter_func (null);
                 var search_result_uids = get_search_result_uids (service_uid);
                 if (search_result_uids == null) {
                     return;
@@ -269,20 +268,19 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
                     var item = conversations[child.message.uid];
                     if (item == null) {
-                        add_conversation_item (child, folder_info_flags[service_uid], service_uid);
+                        add_conversation_item (folder_info_flags[service_uid], child, threads[service_uid], service_uid);
                     } else {
-                        if (item.update_node (child)) {
+                        if (item.is_older_than (child)) {
                             conversations.unset (child.message.uid);
                             list_store.remove (item);
                             removed++;
-                            add_conversation_item (child, folder_info_flags[service_uid], service_uid);
+                            add_conversation_item (folder_info_flags[service_uid], child, threads[service_uid], service_uid);
                         };
                     }
 
                     child = child.next;
                 }
 
-                list_store.set_filter_func (filter_function);
                 list_store.items_changed (0, removed, list_store.get_n_items ());
             }
         }
@@ -340,8 +338,8 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         yield load_folder (folder_full_name_per_account);
     }
 
-    private void add_conversation_item (Camel.FolderThreadNode child, Camel.FolderInfoFlags folder_info_flags, string service_uid) {
-        var item = new ConversationItemModel (child, folder_info_flags, service_uid);
+    private void add_conversation_item (Camel.FolderInfoFlags folder_info_flags, Camel.FolderThreadNode child, Camel.FolderThread thread, string service_uid) {
+        var item = new ConversationItemModel (folder_info_flags, child, thread, service_uid);
         conversations[child.message.uid] = item;
         list_store.add (item);
     }
