@@ -20,8 +20,10 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.FoldersListView : Gtk.ScrolledWindow {
+public class Mail.FoldersListView : Gtk.Grid {
     public signal void folder_selected (Gee.Map<Backend.Account, string?> folder_full_name_per_account);
+
+    public Hdy.HeaderBar header_bar { get; private set; }
 
     private Granite.Widgets.SourceList source_list;
     private Mail.SessionSourceItem session_source_item;
@@ -32,10 +34,34 @@ public class Mail.FoldersListView : Gtk.ScrolledWindow {
     }
 
     construct {
-        width_request = 100;
-
         source_list = new Granite.Widgets.SourceList ();
-        add (source_list);
+
+        var application_instance = (Gtk.Application) GLib.Application.get_default ();
+
+        var compose_button = new Gtk.Button.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_COMPOSE_MESSAGE,
+            halign = Gtk.Align.START
+        };
+        compose_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (compose_button.action_name),
+            _("Compose new message")
+        );
+
+        header_bar = new Hdy.HeaderBar () {
+            show_close_button = true
+        };
+        header_bar.pack_end (compose_button);
+        header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+        var scrolled_window = new Gtk.ScrolledWindow (null, null);
+        scrolled_window.add (source_list);
+
+        orientation = Gtk.Orientation.VERTICAL;
+        width_request = 100;
+        get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
+        add (header_bar);
+        add (scrolled_window);
+
         var session = Mail.Backend.Session.get_default ();
 
         session_source_item = new Mail.SessionSourceItem (session);

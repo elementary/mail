@@ -36,7 +36,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
         placeholder_style_context.add_class (Granite.STYLE_CLASS_H2_LABEL);
         placeholder_style_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        get_style_context ().add_class ("deck");
+        get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
         set_placeholder (placeholder);
         set_sort_func (message_sort_function);
     }

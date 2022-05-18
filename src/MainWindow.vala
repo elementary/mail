@@ -20,9 +20,9 @@
 
 public class Mail.MainWindow : Hdy.ApplicationWindow {
     private HeaderBar headerbar;
+    private Gtk.SearchEntry search_entry;
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
-    private Gtk.Grid container_grid;
 
     private FoldersListView folders_list_view;
     private Gtk.Overlay view_overlay;
@@ -114,6 +114,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         }
 
         headerbar = new HeaderBar ();
+        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         folders_list_view = new FoldersListView ();
         conversation_list_box = new ConversationListBox ();
@@ -141,6 +142,16 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         message_list_box.bind_property ("can-move-thread", get_action (ACTION_MOVE_TO_TRASH), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-move-thread", get_action (ACTION_ARCHIVE), "enabled", BindingFlags.SYNC_CREATE);
         message_list_box.bind_property ("can-move-thread", headerbar, "can-mark", BindingFlags.SYNC_CREATE);
+
+        search_entry = new Gtk.SearchEntry () {
+            hexpand = true,
+            placeholder_text = _("Search Mail"),
+            valign = Gtk.Align.CENTER
+        };
+
+        var search_header = new Hdy.HeaderBar ();
+        search_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        search_header.set_custom_title (search_entry);
 
         var conversation_list_scrolled = new Gtk.ScrolledWindow (null, null) {
             hscrollbar_policy = Gtk.PolicyType.NEVER,
@@ -201,8 +212,10 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         conversation_action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var conversation_list_grid = new Gtk.Grid ();
-        conversation_list_grid.attach (conversation_list_scrolled, 0, 0);
-        conversation_list_grid.attach (conversation_action_bar, 0, 1);
+        conversation_list_grid.attach (search_header, 0, 0);
+        conversation_list_grid.attach (conversation_list_scrolled, 0, 1);
+        conversation_list_grid.attach (conversation_action_bar, 0, 2);
+        conversation_list_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
         message_list_scrolled = new Gtk.ScrolledWindow (null, null);
         message_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -213,10 +226,19 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
         }
 
-        view_overlay = new Gtk.Overlay ();
+        view_overlay = new Gtk.Overlay () {
+            expand = true
+        };
         view_overlay.add (message_list_scrolled);
+
+        var message_list_container = new Gtk.Grid ();
+        message_list_container.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
+        message_list_container.attach (headerbar, 0, 0);
+        message_list_container.attach (view_overlay, 0, 1);
+
         var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
         message_overlay.no_show_all = true;
+
         message_list_box.hovering_over_link.connect ((label, url) => {
             var hover_url = url != null ? Soup.URI.decode (url) : null;
 
@@ -234,7 +256,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_end.pack1 (paned_start, false, false);
-        paned_end.pack2 (view_overlay, true, true);
+        paned_end.pack2 (message_list_container, true, true);
 
         var welcome_view = new Mail.WelcomeView ();
 
@@ -243,11 +265,17 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         placeholder_stack.add_named (paned_end, "mail");
         placeholder_stack.add_named (welcome_view, "welcome");
 
-        container_grid = new Gtk.Grid ();
-        container_grid.attach (headerbar, 0, 0);
-        container_grid.attach (placeholder_stack, 0, 1);
+        add (placeholder_stack);
 
-        add (container_grid);
+        var header_group = new Hdy.HeaderGroup ();
+        header_group.add_header_bar (folders_list_view.header_bar);
+        header_group.add_header_bar (search_header);
+        header_group.add_header_bar (headerbar);
+
+        var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.VERTICAL);
+        size_group.add_widget (folders_list_view.header_bar);
+        size_group.add_widget (search_header);
+        size_group.add_widget (headerbar);
 
         var settings = new GLib.Settings ("io.elementary.mail");
         settings.bind ("paned-start-position", paned_start, "position", SettingsBindFlags.DEFAULT);
@@ -270,24 +298,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
-        headerbar.bind_property ("can-search", filter_button, "sensitive", BindingFlags.SYNC_CREATE);
+        search_entry.bind_property ("sensitive", filter_button, "sensitive", BindingFlags.SYNC_CREATE);
 
         hide_read_switch.notify["active"].connect (on_filter_button_changed);
         hide_unstarred_switch.notify["active"].connect (on_filter_button_changed);
 
-        headerbar.size_allocate.connect (() => {
-            headerbar.set_paned_positions (paned_start.position, paned_end.position);
-        });
-
-        paned_end.notify["position"].connect (() => {
-            headerbar.set_paned_positions (paned_start.position, paned_end.position, false);
-        });
-
-        paned_start.notify["position"].connect (() => {
-            headerbar.set_paned_positions (paned_start.position, paned_end.position);
-        });
-
-        headerbar.search_entry.search_changed.connect (() => {
+        search_entry.search_changed.connect (() => {
             if (search_changed_debounce_timeout_id != 0) {
                 GLib.Source.remove (search_changed_debounce_timeout_id);
             }
@@ -295,7 +311,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             search_changed_debounce_timeout_id = GLib.Timeout.add (800, () => {
                 search_changed_debounce_timeout_id = 0;
 
-                var search_term = headerbar.search_entry.text.strip ();
+                var search_term = search_entry.text.strip ();
                 conversation_list_box.search.begin (search_term == "" ? null : search_term);
 
                 return GLib.Source.REMOVE;
@@ -303,11 +319,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         });
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+
         session.account_removed.connect (() => {
             var accounts_left = session.get_accounts ();
             if (accounts_left.size == 0) {
                 get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
-                headerbar.can_search = false;
+                search_entry.sensitive = false;
             }
         });
 
@@ -317,7 +334,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             if (session.get_accounts ().size > 0) {
                 placeholder_stack.visible_child = paned_end;
                 get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
-                headerbar.can_search = true;
+                search_entry.sensitive = true;
             }
 
             is_session_started = true;
@@ -335,7 +352,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             style_context.remove_class (Granite.STYLE_CLASS_ACCENT);
         }
 
-        conversation_list_box.search.begin (headerbar.search_entry.text, hide_read_switch.active, hide_unstarred_switch.active);
+        conversation_list_box.search.begin (search_entry.text, hide_read_switch.active, hide_unstarred_switch.active);
     }
 
     private void on_compose_message () {
