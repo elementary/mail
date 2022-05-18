@@ -25,6 +25,7 @@ public class Mail.ConversationItemModel : GLib.Object {
     public unowned Camel.FolderThreadNode? node { get; construct; }
     public Camel.FolderThread thread { get; construct; }
     public int64 timestamp { get; construct; }
+    public Camel.FolderInfoFlags folder_info_flags { get; construct; }
 
     public string formatted_date {
         owned get {
@@ -70,6 +71,44 @@ public class Mail.ConversationItemModel : GLib.Object {
 
             if (senders.length > 0) {
                 return string.joinv (_(", "), senders);
+            }
+
+            return _("Unknown");
+        }
+    }
+
+    public string to {
+        owned get {
+            string[] recipients = {};
+
+            unowned Camel.FolderThreadNode? current_node = node;
+            while (current_node != null) {
+                weak Camel.MessageInfo? message = current_node.message;
+                if (message != null) {
+                    var address = new Camel.InternetAddress ();
+                    if (address.decode (message.to) > 0) {
+                        unowned string? ia_name;
+                        unowned string? ia_address;
+
+                        string recipient;
+                        address.get (0, out ia_name, out ia_address);
+                        if (ia_name != null && ia_name != "") {
+                            recipient = ia_name;
+                        } else {
+                            recipient = ia_address;
+                        }
+
+                        if (!(recipient in recipients)) {
+                            recipients += recipient;
+                        }
+                    }
+                }
+
+                current_node = (Camel.FolderThreadNode?) current_node.child;
+            }
+
+            if (recipients.length > 0) {
+                return string.joinv (_(", "), recipients);
             }
 
             return _("Unknown");
@@ -148,8 +187,8 @@ public class Mail.ConversationItemModel : GLib.Object {
         }
     }
 
-    public ConversationItemModel (Camel.FolderThreadNode node, Camel.FolderThread thread, string service_uid) {
-        Object (service_uid: service_uid, node: node, thread: thread);
+    public ConversationItemModel (Camel.FolderInfoFlags folder_info_flags, Camel.FolderThreadNode node, Camel.FolderThread thread, string service_uid) {
+        Object (service_uid: service_uid, node: node, thread: thread, folder_info_flags: folder_info_flags);
     }
 
     construct {

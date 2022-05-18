@@ -88,8 +88,15 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     public void assign (ConversationItemModel data) {
         date.label = data.formatted_date;
         topic.label = data.subject;
-        source.label = GLib.Markup.escape_text (data.from);
-        tooltip_markup = GLib.Markup.printf_escaped ("<b>%s</b>\n%s", data.from, data.subject);
+
+        var source_label_text = "";
+        if (Camel.FolderInfoFlags.TYPE_SENT == (data.folder_info_flags & Camel.FOLDER_TYPE_MASK)) {
+            source_label_text = data.to;
+        } else {
+            source_label_text = data.from;
+        }
+        source.label = GLib.Markup.escape_text (source_label_text);
+        tooltip_markup = GLib.Markup.printf_escaped ("<b>%s</b>\n%s", source_label_text, data.subject);
 
         uint num_messages = data.num_messages;
         messages.label = num_messages > 1 ? "%u".printf (num_messages) : null;
