@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-18 16:54+0000\n"
+"POT-Creation-Date: 2022-05-18 18:07+0000\n"
 "PO-Revision-Date: 2020-01-06 00:07+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/mail/mail/sl/"
@@ -25,65 +25,57 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: src/HeaderBar.vala:40
-msgid "Compose new message"
-msgstr "Sestavi novo sporočilo"
-
-#: src/HeaderBar.vala:46
-msgid "Search Mail"
-msgstr "Išči pošto"
-
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:31
 msgid "Always Show Remote Images"
 msgstr "Vedno prikaži slike iz interneta"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:34
 msgid "Account Settings…"
 msgstr "Nastavitve računa…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:57
 msgid "Menu"
 msgstr "Meni"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:64 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Odgovori"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:71
 msgid "Reply All"
 msgstr "Odgovori vsem"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:78 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Posreduj"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:84
 msgid "Mark as Unread"
 msgstr "Označi kot neprebrano"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:490
+#: src/HeaderBar.vala:89 src/ConversationList/ConversationListBox.vala:490
 msgid "Mark as Read"
 msgstr "Označi kot prebrano"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:500
+#: src/HeaderBar.vala:94 src/ConversationList/ConversationListBox.vala:500
 msgid "Star"
 msgstr "Dodaj zvezdico"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:508
+#: src/HeaderBar.vala:99 src/ConversationList/ConversationListBox.vala:508
 msgid "Unstar"
 msgstr "Odstrani zvezdico"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:111
 msgid "Mark Conversation"
 msgstr "Označi pogovor"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:118
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
 msgstr "Premakni pogovore v smetnjak"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:125
 msgid "Move conversations to Trash"
 msgstr "Premakni pogovore v smetnjak"
 
@@ -120,39 +112,43 @@ msgstr[3] "Vedno pokaži od pošiljatelja"
 msgid "Mail"
 msgstr "Elektronska pošta"
 
-#: src/MainWindow.vala:159
+#: src/MainWindow.vala:148
+msgid "Search Mail"
+msgstr "Išči pošto"
+
+#: src/MainWindow.vala:170
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d novo sporočilo"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:177
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages"
 msgstr "%d novo sporočilo"
 
-#: src/MainWindow.vala:176
+#: src/MainWindow.vala:187
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide read conversations"
 msgstr "Označi pogovore"
 
-#: src/MainWindow.vala:178
+#: src/MainWindow.vala:189
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
 msgstr "Označi pogovore"
 
-#: src/MainWindow.vala:195
+#: src/MainWindow.vala:206
 #, fuzzy
 #| msgid "Delete Conversation"
 msgid "Filter Conversations"
 msgstr "Izbriši pogovor"
 
-#: src/MainWindow.vala:407
+#: src/MainWindow.vala:424
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Sporočilo izbrisano"
@@ -160,19 +156,19 @@ msgstr[1] "Sporočila izbrisana"
 msgstr[2] "Sporočila izbrisana"
 msgstr[3] "Sporočila izbrisana"
 
-#: src/MainWindow.vala:419
+#: src/MainWindow.vala:436
 msgid "Undo"
 msgstr "Razveljavi"
 
-#: src/WelcomeView.vala:40
+#: src/WelcomeView.vala:42
 msgid "Connect an Account"
 msgstr "Poveži račun"
 
-#: src/WelcomeView.vala:45
+#: src/WelcomeView.vala:49
 msgid "Mail uses email accounts configured in System Settings."
 msgstr "Pošta uporablja e-poštne račune nastavljene v sistemskih nastavitvah."
 
-#: src/WelcomeView.vala:50
+#: src/WelcomeView.vala:56
 msgid "Online Accounts…"
 msgstr "Spletni računi…"
 
@@ -434,6 +430,10 @@ msgstr ""
 #: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr "Vseeno odpri"
+
+#: src/FoldersView/FoldersListView.vala:47
+msgid "Compose new message"
+msgstr "Sestavi novo sporočilo"
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"

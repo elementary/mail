@@ -2,68 +2,60 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-18 16:54+0000\n"
+"POT-Creation-Date: 2022-05-18 18:07+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
 
-#: src/HeaderBar.vala:40
-msgid "Compose new message"
-msgstr ""
-
-#: src/HeaderBar.vala:46
-msgid "Search Mail"
-msgstr ""
-
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:31
 msgid "Always Show Remote Images"
 msgstr ""
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:34
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:57
 msgid "Menu"
 msgstr ""
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:64 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr ""
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:71
 msgid "Reply All"
 msgstr ""
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:78 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr ""
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:84
 msgid "Mark as Unread"
 msgstr ""
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:490
+#: src/HeaderBar.vala:89 src/ConversationList/ConversationListBox.vala:490
 msgid "Mark as Read"
 msgstr ""
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:500
+#: src/HeaderBar.vala:94 src/ConversationList/ConversationListBox.vala:500
 msgid "Star"
 msgstr ""
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:508
+#: src/HeaderBar.vala:99 src/ConversationList/ConversationListBox.vala:508
 msgid "Unstar"
 msgstr ""
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:111
 msgid "Mark Conversation"
 msgstr ""
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:118
 msgid "Move conversations to archive"
 msgstr ""
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:125
 msgid "Move conversations to Trash"
 msgstr ""
 
@@ -95,46 +87,50 @@ msgstr[2] ""
 msgid "Mail"
 msgstr ""
 
-#: src/MainWindow.vala:159
+#: src/MainWindow.vala:148
+msgid "Search Mail"
+msgstr ""
+
+#: src/MainWindow.vala:170
 msgid "Fetch new messages"
 msgstr ""
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:177
 msgid "Fetching new messages"
 msgstr ""
 
-#: src/MainWindow.vala:176
+#: src/MainWindow.vala:187
 msgid "Hide read conversations"
 msgstr ""
 
-#: src/MainWindow.vala:178
+#: src/MainWindow.vala:189
 msgid "Hide unstarred conversations"
 msgstr ""
 
-#: src/MainWindow.vala:195
+#: src/MainWindow.vala:206
 msgid "Filter Conversations"
 msgstr ""
 
-#: src/MainWindow.vala:407
+#: src/MainWindow.vala:424
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/MainWindow.vala:419
+#: src/MainWindow.vala:436
 msgid "Undo"
 msgstr ""
 
-#: src/WelcomeView.vala:40
+#: src/WelcomeView.vala:42
 msgid "Connect an Account"
 msgstr ""
 
-#: src/WelcomeView.vala:45
+#: src/WelcomeView.vala:49
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
 
-#: src/WelcomeView.vala:50
+#: src/WelcomeView.vala:56
 msgid "Online Accounts…"
 msgstr ""
 
@@ -368,6 +364,10 @@ msgstr ""
 
 #: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
+msgstr ""
+
+#: src/FoldersView/FoldersListView.vala:47
+msgid "Compose new message"
 msgstr ""
 
 #: src/FoldersView/FolderSourceItem.vala:38
