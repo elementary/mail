@@ -18,10 +18,12 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.WelcomeView : Gtk.Grid {
+public class Mail.WelcomeView : Gtk.Box {
     construct {
-        halign = valign = Gtk.Align.CENTER;
-        orientation = Gtk.Orientation.VERTICAL;
+        var headerbar = new Hdy.HeaderBar () {
+            show_close_button = true
+        };
+        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var welcome_icon = new Gtk.Image ();
         welcome_icon.icon_name = "io.elementary.mail";
@@ -37,36 +39,51 @@ public class Mail.WelcomeView : Gtk.Grid {
         welcome_overlay.add (welcome_icon);
         welcome_overlay.add_overlay (welcome_badge);
 
-        var welcome_title = new Gtk.Label (_("Connect an Account"));
-        welcome_title.wrap = true;
-        welcome_title.max_width_chars = 70;
+        var welcome_title = new Gtk.Label (_("Connect an Account")) {
+            max_width_chars = 70,
+            wrap = true,
+            xalign = 0
+        };
         welcome_title.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
 
-        var welcome_description = new Gtk.Label (_("Mail uses email accounts configured in System Settings."));
-        welcome_description.wrap = true;
-        welcome_description.max_width_chars = 70;
+        var welcome_description = new Gtk.Label (_("Mail uses email accounts configured in System Settings.")) {
+            max_width_chars = 70,
+            wrap = true,
+            xalign = 0
+        };
         welcome_description.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        var welcome_button = new Gtk.Button.with_label (_("Online Accounts…"));
-        weak Gtk.StyleContext welcome_button_style_context = welcome_button.get_style_context ();
-        welcome_button.halign = Gtk.Align.CENTER;
-        welcome_button.margin_top = 24;
-        welcome_button_style_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
-        welcome_button_style_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        var welcome_button = new Gtk.Button.with_label (_("Online Accounts…")) {
+            margin_top = 24
+        };
+        welcome_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        add (welcome_overlay);
-        add (welcome_title);
-        add (welcome_description);
-        add (welcome_button);
+        var grid = new Gtk.Grid () {
+            column_spacing = 12,
+            halign = valign = Gtk.Align.CENTER,
+            expand = true
+        };
+        grid.attach (welcome_overlay, 0, 0, 1, 2);
+        grid.attach (welcome_title, 1, 0);
+        grid.attach (welcome_description, 1, 1);
+        grid.attach (welcome_button, 1, 2);
+
+        var main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        main_box.add (headerbar);
+        main_box.add (grid);
+
+        var window_handle = new Hdy.WindowHandle ();
+        window_handle.add (main_box);
+
+        add (window_handle);
+        show_all ();
 
         welcome_button.clicked.connect (() => {
             try {
-                AppInfo.launch_default_for_uri ("settings://accounts/online", null);
+                Gtk.show_uri_on_window ((Gtk.Window) get_toplevel (), "settings://accounts/online", Gdk.CURRENT_TIME);
             } catch (Error e) {
                 critical (e.message);
             }
         });
-
-        show_all ();
     }
 }

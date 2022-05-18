@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-18 16:54+0000\n"
+"POT-Creation-Date: 2022-05-18 18:07+0000\n"
 "PO-Revision-Date: 2019-09-14 09:23+0000\n"
 "Last-Translator: Daniel <riesp@protonmail.com>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/mail/mail/gl/>\n"
@@ -23,65 +23,57 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:40
-msgid "Compose new message"
-msgstr "Redactar unha nova mensaxe"
-
-#: src/HeaderBar.vala:46
-msgid "Search Mail"
-msgstr "Buscar correo"
-
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:31
 msgid "Always Show Remote Images"
 msgstr "Amosar sempre imaxes remotas"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:34
 msgid "Account Settings…"
 msgstr "Configuración da conta…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:57
 msgid "Menu"
 msgstr "Menú"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:64 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Responder"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:71
 msgid "Reply All"
 msgstr "Responder a todos"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:78 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Reenviar"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:84
 msgid "Mark as Unread"
 msgstr "Marcar como sen ler"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:490
+#: src/HeaderBar.vala:89 src/ConversationList/ConversationListBox.vala:490
 msgid "Mark as Read"
 msgstr "Marcar como lido"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:500
+#: src/HeaderBar.vala:94 src/ConversationList/ConversationListBox.vala:500
 msgid "Star"
 msgstr "Destacar"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:508
+#: src/HeaderBar.vala:99 src/ConversationList/ConversationListBox.vala:508
 msgid "Unstar"
 msgstr "Non destacar"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:111
 msgid "Mark Conversation"
 msgstr "Marcar conversa"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:118
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
 msgstr "Mover as conversas ao lixo"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:125
 msgid "Move conversations to Trash"
 msgstr "Mover as conversas ao lixo"
 
@@ -116,57 +108,61 @@ msgstr[1] "Amosar sempre o remitente"
 msgid "Mail"
 msgstr "Todo o correo"
 
-#: src/MainWindow.vala:159
+#: src/MainWindow.vala:148
+msgid "Search Mail"
+msgstr "Buscar correo"
+
+#: src/MainWindow.vala:170
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d mensaxe nova"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:177
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages"
 msgstr "%d mensaxe nova"
 
-#: src/MainWindow.vala:176
+#: src/MainWindow.vala:187
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide read conversations"
 msgstr "Engadir etiqueta ás conversas"
 
-#: src/MainWindow.vala:178
+#: src/MainWindow.vala:189
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide unstarred conversations"
 msgstr "Engadir etiqueta ás conversas"
 
-#: src/MainWindow.vala:195
+#: src/MainWindow.vala:206
 #, fuzzy
 #| msgid "Mark Conversation"
 msgid "Filter Conversations"
 msgstr "Marcar conversa"
 
-#: src/MainWindow.vala:407
+#: src/MainWindow.vala:424
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Mensaxe eliminada"
 msgstr[1] "Mensaxes eliminadas"
 
-#: src/MainWindow.vala:419
+#: src/MainWindow.vala:436
 msgid "Undo"
 msgstr "Desfacer"
 
-#: src/WelcomeView.vala:40
+#: src/WelcomeView.vala:42
 msgid "Connect an Account"
 msgstr "Conectar unha conta"
 
-#: src/WelcomeView.vala:45
+#: src/WelcomeView.vala:49
 msgid "Mail uses email accounts configured in System Settings."
 msgstr "Correo emprega as contas definidas en Axustes do Sistema."
 
-#: src/WelcomeView.vala:50
+#: src/WelcomeView.vala:56
 msgid "Online Accounts…"
 msgstr "Contas en liña…"
 
@@ -425,6 +421,10 @@ msgstr ""
 #: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr "Abrir de todos os xeitos"
+
+#: src/FoldersView/FoldersListView.vala:47
+msgid "Compose new message"
+msgstr "Redactar unha nova mensaxe"
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"

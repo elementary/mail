@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-18 16:54+0000\n"
+"POT-Creation-Date: 2022-05-18 18:07+0000\n"
 "PO-Revision-Date: 2017-04-15 20:42+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Swedish <https://l10n.elementary.io/projects/mail/mail/sv/>\n"
@@ -29,72 +29,63 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
-#: src/HeaderBar.vala:40
-#, fuzzy
-msgid "Compose new message"
-msgstr "Skriv nytt meddelande (Ctrl+N, N)"
-
-#: src/HeaderBar.vala:46
-msgid "Search Mail"
-msgstr ""
-
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:31
 #, fuzzy
 msgid "Always Show Remote Images"
 msgstr "Visa alltid från avsändare"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:34
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:57
 msgid "Menu"
 msgstr ""
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:64 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr ""
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:71
 #, fuzzy
 msgid "Reply All"
 msgstr "Svara _alla"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:78 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr ""
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:84
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "Markera som _oläst"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:490
+#: src/HeaderBar.vala:89 src/ConversationList/ConversationListBox.vala:490
 #, fuzzy
 msgid "Mark as Read"
 msgstr "Markera som _läst"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:500
+#: src/HeaderBar.vala:94 src/ConversationList/ConversationListBox.vala:500
 #, fuzzy
 msgid "Star"
 msgstr "Markera som _viktigt"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:508
+#: src/HeaderBar.vala:99 src/ConversationList/ConversationListBox.vala:508
 #, fuzzy
 msgid "Unstar"
 msgstr "Markera som ov_iktigt"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:111
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Markera konversationer"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:118
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Flytta konversationerna"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:125
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Flytta konversationerna"
@@ -129,58 +120,62 @@ msgstr[1] ""
 msgid "Mail"
 msgstr "Alla brev"
 
-#: src/MainWindow.vala:159
+#: src/MainWindow.vala:148
+msgid "Search Mail"
+msgstr ""
+
+#: src/MainWindow.vala:170
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d nytt meddelande"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:177
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages"
 msgstr "%d nytt meddelande"
 
-#: src/MainWindow.vala:176
+#: src/MainWindow.vala:187
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Hide read conversations"
 msgstr "Radera konversation"
 
-#: src/MainWindow.vala:178
+#: src/MainWindow.vala:189
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Hide unstarred conversations"
 msgstr "Radera konversation"
 
-#: src/MainWindow.vala:195
+#: src/MainWindow.vala:206
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Filter Conversations"
 msgstr "Radera konversation"
 
-#: src/MainWindow.vala:407
+#: src/MainWindow.vala:424
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Inga valda konversationer."
 msgstr[1] "Inga valda konversationer."
 
-#: src/MainWindow.vala:419
+#: src/MainWindow.vala:436
 msgid "Undo"
 msgstr ""
 
-#: src/WelcomeView.vala:40
+#: src/WelcomeView.vala:42
 msgid "Connect an Account"
 msgstr ""
 
-#: src/WelcomeView.vala:45
+#: src/WelcomeView.vala:49
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
 
-#: src/WelcomeView.vala:50
+#: src/WelcomeView.vala:56
 #, fuzzy
 msgid "Online Accounts…"
 msgstr "Konton"
@@ -435,6 +430,11 @@ msgstr ""
 #: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr ""
+
+#: src/FoldersView/FoldersListView.vala:47
+#, fuzzy
+msgid "Compose new message"
+msgstr "Skriv nytt meddelande (Ctrl+N, N)"
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"

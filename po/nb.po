@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-18 16:54+0000\n"
+"POT-Creation-Date: 2022-05-18 18:07+0000\n"
 "PO-Revision-Date: 2021-10-15 10:20+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
@@ -27,66 +27,57 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:40
-#, fuzzy
-msgid "Compose new message"
-msgstr "Skriv ny melding"
-
-#: src/HeaderBar.vala:46
-msgid "Search Mail"
-msgstr "Søk Mail"
-
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:31
 msgid "Always Show Remote Images"
 msgstr "Alltid vis eksterne bilder"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:34
 msgid "Account Settings…"
 msgstr "Kontoinnstillinger"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:57
 msgid "Menu"
 msgstr "Meny"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:64 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Svar"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:71
 msgid "Reply All"
 msgstr "Svar alle"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:78 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "Fremover"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:84
 msgid "Mark as Unread"
 msgstr "Merk som ulest"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:490
+#: src/HeaderBar.vala:89 src/ConversationList/ConversationListBox.vala:490
 msgid "Mark as Read"
 msgstr "Merk som lest"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:500
+#: src/HeaderBar.vala:94 src/ConversationList/ConversationListBox.vala:500
 #, fuzzy
 msgid "Star"
 msgstr "Stjerne"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:508
+#: src/HeaderBar.vala:99 src/ConversationList/ConversationListBox.vala:508
 msgid "Unstar"
 msgstr "Fjern stjerne"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:111
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Merk samtale"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:118
 msgid "Move conversations to archive"
 msgstr "Flytt samtaler til arkiv"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:125
 msgid "Move conversations to Trash"
 msgstr "Flytt samtaler til papirkurven"
 
@@ -116,48 +107,52 @@ msgstr[1] "%s fra %u avsendere"
 msgid "Mail"
 msgstr "E-post"
 
-#: src/MainWindow.vala:159
+#: src/MainWindow.vala:148
+msgid "Search Mail"
+msgstr "Søk Mail"
+
+#: src/MainWindow.vala:170
 msgid "Fetch new messages"
 msgstr "Hent nye meldinger"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:177
 #, fuzzy
 #| msgid "%u new message"
 #| msgid_plural "%u new messages"
 msgid "Fetching new messages"
 msgstr "Henter nye meldinger …"
 
-#: src/MainWindow.vala:176
+#: src/MainWindow.vala:187
 msgid "Hide read conversations"
 msgstr "Skjul leste samtaler"
 
-#: src/MainWindow.vala:178
+#: src/MainWindow.vala:189
 msgid "Hide unstarred conversations"
 msgstr "Skjul samtaler som ikke er stjernemerkede"
 
-#: src/MainWindow.vala:195
+#: src/MainWindow.vala:206
 msgid "Filter Conversations"
 msgstr "Filtrer samtaler"
 
-#: src/MainWindow.vala:407
+#: src/MainWindow.vala:424
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Melding slettet"
 msgstr[1] "Meldinger slettet"
 
-#: src/MainWindow.vala:419
+#: src/MainWindow.vala:436
 msgid "Undo"
 msgstr "Angre"
 
-#: src/WelcomeView.vala:40
+#: src/WelcomeView.vala:42
 msgid "Connect an Account"
 msgstr "Koble til en konto"
 
-#: src/WelcomeView.vala:45
+#: src/WelcomeView.vala:49
 msgid "Mail uses email accounts configured in System Settings."
 msgstr "Mail bruker e-postkontoer satt opp i systeminnstillingene."
 
-#: src/WelcomeView.vala:50
+#: src/WelcomeView.vala:56
 #, fuzzy
 msgid "Online Accounts…"
 msgstr "Nettkontoer…"
@@ -402,6 +397,11 @@ msgstr ""
 #: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr "Åpne likevel"
+
+#: src/FoldersView/FoldersListView.vala:47
+#, fuzzy
+msgid "Compose new message"
+msgstr "Skriv ny melding"
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"

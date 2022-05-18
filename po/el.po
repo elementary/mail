@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-18 16:54+0000\n"
+"POT-Creation-Date: 2022-05-18 18:07+0000\n"
 "PO-Revision-Date: 2017-01-27 17:54+0000\n"
 "Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: www.gnome.gr\n"
@@ -25,72 +25,63 @@ msgstr ""
 "X-Generator: Launchpad (build 18330)\n"
 "X-Project-Style: gnome\n"
 
-#: src/HeaderBar.vala:40
-#, fuzzy
-msgid "Compose new message"
-msgstr "Σύνταξη νέου μηνύματος"
-
-#: src/HeaderBar.vala:46
-msgid "Search Mail"
-msgstr ""
-
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:31
 #, fuzzy
 msgid "Always Show Remote Images"
 msgstr "Να εμφανίζεται πάντοτε ο αποστολέας"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:34
 msgid "Account Settings…"
 msgstr ""
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:57
 msgid "Menu"
 msgstr "Μενού"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:64 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "Απάντηση"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:71
 #, fuzzy
 msgid "Reply All"
 msgstr "Α_πάντηση σε όλους"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:78 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr ""
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:84
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "_Σήμανση ως μη αναγνωσμένα"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:490
+#: src/HeaderBar.vala:89 src/ConversationList/ConversationListBox.vala:490
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Σήμανση ως αναγνωσμένα"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:500
+#: src/HeaderBar.vala:94 src/ConversationList/ConversationListBox.vala:500
 #, fuzzy
 msgid "Star"
 msgstr "_Αστέρι"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:508
+#: src/HeaderBar.vala:99 src/ConversationList/ConversationListBox.vala:508
 #, fuzzy
 msgid "Unstar"
 msgstr "Κα_τάργηση αστεριού"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:111
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Σήμανση συνομιλίας"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:118
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Μετακίνηση συνομιλιών"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:125
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Μετακίνηση συνομιλιών"
@@ -123,60 +114,64 @@ msgstr[1] ""
 msgid "Mail"
 msgstr "Αλληλογραφία"
 
-#: src/MainWindow.vala:159
+#: src/MainWindow.vala:148
+msgid "Search Mail"
+msgstr ""
+
+#: src/MainWindow.vala:170
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d νέο μήνυμα"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:177
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages"
 msgstr "%d νέο μήνυμα"
 
-#: src/MainWindow.vala:176
+#: src/MainWindow.vala:187
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide read conversations"
 msgstr "Σήμανση συνομιλιών"
 
-#: src/MainWindow.vala:178
+#: src/MainWindow.vala:189
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
 msgstr "Σήμανση συνομιλιών"
 
-#: src/MainWindow.vala:195
+#: src/MainWindow.vala:206
 #, fuzzy
 #| msgid "Delete Conversation"
 msgid "Filter Conversations"
 msgstr "Διαγραφή συνομιλίας"
 
-#: src/MainWindow.vala:407
+#: src/MainWindow.vala:424
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Δεν επιλέχθηκαν συνομιλίες."
 msgstr[1] "Δεν επιλέχθηκαν συνομιλίες."
 
-#: src/MainWindow.vala:419
+#: src/MainWindow.vala:436
 #, fuzzy
 msgid "Undo"
 msgstr "_Αναίρεση"
 
-#: src/WelcomeView.vala:40
+#: src/WelcomeView.vala:42
 #, fuzzy
 msgid "Connect an Account"
 msgstr "Αφαίρεση λογαριασμού"
 
-#: src/WelcomeView.vala:45
+#: src/WelcomeView.vala:49
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
 
-#: src/WelcomeView.vala:50
+#: src/WelcomeView.vala:56
 #, fuzzy
 msgid "Online Accounts…"
 msgstr "Λογαριασμοί"
@@ -436,6 +431,11 @@ msgstr ""
 #: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr ""
+
+#: src/FoldersView/FoldersListView.vala:47
+#, fuzzy
+msgid "Compose new message"
+msgstr "Σύνταξη νέου μηνύματος"
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"

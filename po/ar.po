@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-18 16:54+0000\n"
+"POT-Creation-Date: 2022-05-18 18:07+0000\n"
 "PO-Revision-Date: 2021-08-28 15:29+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/mail/mail/ar/>\n"
@@ -24,63 +24,55 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:58+0000\n"
 
-#: src/HeaderBar.vala:40
-msgid "Compose new message"
-msgstr "رسالة جديدة"
-
-#: src/HeaderBar.vala:46
-msgid "Search Mail"
-msgstr "بحث في البريد"
-
-#: src/HeaderBar.vala:50
+#: src/HeaderBar.vala:31
 msgid "Always Show Remote Images"
 msgstr "دائماً اعرض الصور عن بعد"
 
-#: src/HeaderBar.vala:53
+#: src/HeaderBar.vala:34
 msgid "Account Settings…"
 msgstr "إعدادات الحساب…"
 
-#: src/HeaderBar.vala:76
+#: src/HeaderBar.vala:57
 msgid "Menu"
 msgstr "القائمة"
 
-#: src/HeaderBar.vala:83 src/MessageList/MessageListItem.vala:191
+#: src/HeaderBar.vala:64 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
 msgstr "رد"
 
-#: src/HeaderBar.vala:90
+#: src/HeaderBar.vala:71
 msgid "Reply All"
 msgstr "الرد على الجميع"
 
-#: src/HeaderBar.vala:97 src/MessageList/MessageListItem.vala:197
+#: src/HeaderBar.vala:78 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
 msgstr "إعادة التوجيه"
 
-#: src/HeaderBar.vala:103
+#: src/HeaderBar.vala:84
 msgid "Mark as Unread"
 msgstr "علم كغير مقروء"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:490
+#: src/HeaderBar.vala:89 src/ConversationList/ConversationListBox.vala:490
 msgid "Mark as Read"
 msgstr "علم كمقروء"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:500
+#: src/HeaderBar.vala:94 src/ConversationList/ConversationListBox.vala:500
 msgid "Star"
 msgstr "نجمة"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:508
+#: src/HeaderBar.vala:99 src/ConversationList/ConversationListBox.vala:508
 msgid "Unstar"
 msgstr "الغاء النجمة"
 
-#: src/HeaderBar.vala:130
+#: src/HeaderBar.vala:111
 msgid "Mark Conversation"
 msgstr "تعليم كمحادثة"
 
-#: src/HeaderBar.vala:137
+#: src/HeaderBar.vala:118
 msgid "Move conversations to archive"
 msgstr "نقل المحادثات إلى الأرشيف"
 
-#: src/HeaderBar.vala:144
+#: src/HeaderBar.vala:125
 msgid "Move conversations to Trash"
 msgstr "نقل المحادثة الى سلة المهملات"
 
@@ -120,37 +112,41 @@ msgstr[5] "اعرض دائما من المرسل"
 msgid "Mail"
 msgstr "البريد"
 
-#: src/MainWindow.vala:159
+#: src/MainWindow.vala:148
+msgid "Search Mail"
+msgstr "بحث في البريد"
+
+#: src/MainWindow.vala:170
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetch new messages"
 msgstr "رسالة جديدة"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:177
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetching new messages"
 msgstr "رسالة جديدة"
 
-#: src/MainWindow.vala:176
+#: src/MainWindow.vala:187
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Hide read conversations"
 msgstr "حذف المحادثة"
 
-#: src/MainWindow.vala:178
+#: src/MainWindow.vala:189
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Hide unstarred conversations"
 msgstr "حذف المحادثة"
 
-#: src/MainWindow.vala:195
+#: src/MainWindow.vala:206
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Filter Conversations"
 msgstr "حذف المحادثة"
 
-#: src/MainWindow.vala:407
+#: src/MainWindow.vala:424
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "لا توجد رسائل مختارة"
@@ -160,20 +156,20 @@ msgstr[3] "رسائل محذوفة"
 msgstr[4] "رسالة محذوفة"
 msgstr[5] "رسائل محذوفة"
 
-#: src/MainWindow.vala:419
+#: src/MainWindow.vala:436
 msgid "Undo"
 msgstr "تراجع"
 
-#: src/WelcomeView.vala:40
+#: src/WelcomeView.vala:42
 msgid "Connect an Account"
 msgstr "اربط حساب"
 
-#: src/WelcomeView.vala:45
+#: src/WelcomeView.vala:49
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
 "يستخدم البريد حسابات البريد الإلكتروني التي تم اعدادها في إعدادات النظام."
 
-#: src/WelcomeView.vala:50
+#: src/WelcomeView.vala:56
 msgid "Online Accounts…"
 msgstr "حسابات الانترنت…"
 
@@ -417,6 +413,10 @@ msgstr ""
 #: src/Dialogs/OpenAttachmentDialog.vala:36
 msgid "Open Anyway"
 msgstr "افتح على أي حال"
+
+#: src/FoldersView/FoldersListView.vala:47
+msgid "Compose new message"
+msgstr "رسالة جديدة"
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
