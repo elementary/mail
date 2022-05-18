@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 16:24+0000\n"
+"POT-Creation-Date: 2022-05-16 19:53+0000\n"
 "PO-Revision-Date: 2021-03-21 10:03+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/mail/mail/mr/>\n"
@@ -49,15 +49,15 @@ msgstr "पुढे पाठवा"
 msgid "Mark as Unread"
 msgstr "वाचले नाही अशी खुण करा"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:484
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
 msgid "Mark as Read"
 msgstr "वाचले अशी खुण करा"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:494
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
 msgid "Star"
 msgstr "तारांकित करा"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:502
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
 msgid "Unstar"
 msgstr "अतारांकित करा"
 
@@ -133,13 +133,13 @@ msgstr "संभाषण चिन्हांकित करा"
 msgid "Filter Conversations"
 msgstr "संभाषण चिन्हांकित करा"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:407
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "संदेश हटविला"
 msgstr[1] "संदेश हटवले"
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:419
 msgid "Undo"
 msgstr "पूर्ववत करा"
 
@@ -352,13 +352,13 @@ msgstr ""
 msgid "New Message"
 msgstr "नवीन संदेश"
 
-#: src/ConversationList/ConversationListBox.vala:467
+#: src/ConversationList/ConversationListBox.vala:465
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "संभाषणांना कचरापेटीत हलवा"
 
-#: src/ConversationList/ConversationListBox.vala:476
+#: src/ConversationList/ConversationListBox.vala:474
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"

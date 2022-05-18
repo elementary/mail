@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 16:24+0000\n"
+"POT-Creation-Date: 2022-05-16 19:53+0000\n"
 "PO-Revision-Date: 2021-07-15 13:34+0000\n"
 "Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/mail/mail/es/>\n"
@@ -65,15 +65,15 @@ msgstr "Reenviar"
 msgid "Mark as Unread"
 msgstr "Marcar como no leído"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:484
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
 msgid "Mark as Read"
 msgstr "Marcar como leído"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:494
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
 msgid "Star"
 msgstr "Destacar"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:502
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
 msgid "Unstar"
 msgstr "No destacar"
 
@@ -150,13 +150,13 @@ msgstr "Marcar conversaciones"
 msgid "Filter Conversations"
 msgstr "Eliminar conversación"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:407
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Mensaje eliminado"
 msgstr[1] "Mensajes eliminados"
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:419
 msgid "Undo"
 msgstr "Deshacer"
 
@@ -363,13 +363,13 @@ msgstr "Se produjo un error inesperado al guardar el borrador."
 msgid "New Message"
 msgstr "Mensaje nuevo"
 
-#: src/ConversationList/ConversationListBox.vala:467
+#: src/ConversationList/ConversationListBox.vala:465
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "Enviar conversaciones a la papelera"
 
-#: src/ConversationList/ConversationListBox.vala:476
+#: src/ConversationList/ConversationListBox.vala:474
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"

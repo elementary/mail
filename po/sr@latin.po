@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 16:24+0000\n"
+"POT-Creation-Date: 2022-05-16 19:53+0000\n"
 "PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
@@ -65,17 +65,17 @@ msgstr ""
 msgid "Mark as Unread"
 msgstr ""
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:484
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
 msgid "Mark as Read"
 msgstr ""
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:494
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
 #, fuzzy
 #| msgid "_Star"
 msgid "Star"
 msgstr "_Dodaj zvezdicu"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:502
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
 #, fuzzy
 #| msgid "U_nstar"
 msgid "Unstar"
@@ -164,7 +164,7 @@ msgstr "Dodajte natpis razgovorima"
 msgid "Filter Conversations"
 msgstr "Označite razgovore"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:407
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
@@ -172,7 +172,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:419
 msgid "Undo"
 msgstr ""
 
@@ -393,13 +393,13 @@ msgstr ""
 msgid "New Message"
 msgstr "Nova poruka"
 
-#: src/ConversationList/ConversationListBox.vala:467
+#: src/ConversationList/ConversationListBox.vala:465
 #, fuzzy
 #| msgid "Move conversations"
 msgid "Move To Trash"
 msgstr "Premestite razgovore"
 
-#: src/ConversationList/ConversationListBox.vala:476
+#: src/ConversationList/ConversationListBox.vala:474
 #, fuzzy
 #| msgid "_Mark as Unread"
 msgid "Mark As Unread"

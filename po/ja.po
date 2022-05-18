@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 16:24+0000\n"
+"POT-Creation-Date: 2022-05-16 19:53+0000\n"
 "PO-Revision-Date: 2021-10-25 22:44+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
@@ -51,15 +51,15 @@ msgstr "転送"
 msgid "Mark as Unread"
 msgstr "未読としてマーク"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:484
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
 msgid "Mark as Read"
 msgstr "既読としてマーク"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:494
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
 msgid "Star"
 msgstr "スターを付ける"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:502
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
 msgid "Unstar"
 msgstr "スターを外す"
 
@@ -119,12 +119,12 @@ msgstr "スターなしのスレッドを表示しない"
 msgid "Filter Conversations"
 msgstr "スレッドを検索"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:407
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "メッセージを削除しました"
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:419
 msgid "Undo"
 msgstr "元に戻す"
 
@@ -325,11 +325,11 @@ msgstr "下書きを保存する際に予期しないエラーが発生しまし
 msgid "New Message"
 msgstr "新しいメッセージ"
 
-#: src/ConversationList/ConversationListBox.vala:467
+#: src/ConversationList/ConversationListBox.vala:465
 msgid "Move To Trash"
 msgstr "ゴミ箱に移動"
 
-#: src/ConversationList/ConversationListBox.vala:476
+#: src/ConversationList/ConversationListBox.vala:474
 msgid "Mark As Unread"
 msgstr "未読としてマーク"
 

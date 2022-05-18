@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 16:24+0000\n"
+"POT-Creation-Date: 2022-05-16 19:53+0000\n"
 "PO-Revision-Date: 2017-01-21 10:51+0000\n"
 "Last-Translator: Marius Albina <marius.albina@gmail.com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
@@ -65,16 +65,16 @@ msgstr "Redirecţionează"
 msgid "Mark as Unread"
 msgstr "Marchează ca necitit"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:484
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
 msgid "Mark as Read"
 msgstr "Marchează ca citit"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:494
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
 #, fuzzy
 msgid "Star"
 msgstr "Marchează cu o _stea"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:502
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
 #, fuzzy
 msgid "Unstar"
 msgstr "Eliminați _steaua"
@@ -157,7 +157,7 @@ msgstr "Marchează conversațiile"
 msgid "Filter Conversations"
 msgstr "Şterge conversaţie"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:407
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -165,7 +165,7 @@ msgstr[0] "Nici o conversație selectată."
 msgstr[1] "Nici o conversație selectată."
 msgstr[2] "Nici o conversație selectată."
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:419
 #, fuzzy
 msgid "Undo"
 msgstr "_Anulează"
@@ -385,12 +385,12 @@ msgstr ""
 msgid "New Message"
 msgstr "Mesaj nou"
 
-#: src/ConversationList/ConversationListBox.vala:467
+#: src/ConversationList/ConversationListBox.vala:465
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Mută conversațiile"
 
-#: src/ConversationList/ConversationListBox.vala:476
+#: src/ConversationList/ConversationListBox.vala:474
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"

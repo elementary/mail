@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 16:24+0000\n"
+"POT-Creation-Date: 2022-05-16 19:53+0000\n"
 "PO-Revision-Date: 2020-12-15 16:16+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/mail/mail/id/"
@@ -60,15 +60,15 @@ msgstr "Teruskan"
 msgid "Mark as Unread"
 msgstr "Tandai sebagai belum dibaca"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:484
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
 msgid "Mark as Read"
 msgstr "Tandai sebagai sudah dibaca"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:494
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
 msgid "Star"
 msgstr "Bintang"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:502
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
 msgid "Unstar"
 msgstr "Hapus Bintang"
 
@@ -147,12 +147,12 @@ msgstr "Tambahkan label ke percakapan"
 msgid "Filter Conversations"
 msgstr "Tandai Percakapan"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:407
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Pesan-pesan Dihapus"
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:419
 msgid "Undo"
 msgstr "Batalkan"
 
@@ -371,13 +371,13 @@ msgstr ""
 msgid "New Message"
 msgstr "Pesan Baru"
 
-#: src/ConversationList/ConversationListBox.vala:467
+#: src/ConversationList/ConversationListBox.vala:465
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "Pindahkan percakapan ke Sampah"
 
-#: src/ConversationList/ConversationListBox.vala:476
+#: src/ConversationList/ConversationListBox.vala:474
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"

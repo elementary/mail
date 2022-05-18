@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 16:24+0000\n"
+"POT-Creation-Date: 2022-05-16 19:53+0000\n"
 "PO-Revision-Date: 2022-01-26 09:23+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/"
@@ -67,154 +67,163 @@ msgstr ""
 "ます"
 
 #: data/io.elementary.mail.appdata.xml.in:27
-#: data/io.elementary.mail.appdata.xml.in:47
-#: data/io.elementary.mail.appdata.xml.in:60
-#: data/io.elementary.mail.appdata.xml.in:80
+#: data/io.elementary.mail.appdata.xml.in:46
+#: data/io.elementary.mail.appdata.xml.in:61
+#: data/io.elementary.mail.appdata.xml.in:77
 #: data/io.elementary.mail.appdata.xml.in:103
-#: data/io.elementary.mail.appdata.xml.in:118
-#: data/io.elementary.mail.appdata.xml.in:128
+#: data/io.elementary.mail.appdata.xml.in:117
+msgid "Fixes:"
+msgstr "修正点:"
+
+#: data/io.elementary.mail.appdata.xml.in:29
+msgid "Fixed an error which caused mail accounts to be loaded multiple times"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:30
+msgid "Fixed a bug which caused Mail to crash occasionally"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:32
+#: data/io.elementary.mail.appdata.xml.in:52
+#: data/io.elementary.mail.appdata.xml.in:65
+#: data/io.elementary.mail.appdata.xml.in:85
+#: data/io.elementary.mail.appdata.xml.in:108
+#: data/io.elementary.mail.appdata.xml.in:123
+#: data/io.elementary.mail.appdata.xml.in:133
 msgid "Improvements:"
 msgstr "改善点:"
 
-#: data/io.elementary.mail.appdata.xml.in:29
+#: data/io.elementary.mail.appdata.xml.in:34
 #, fuzzy
 #| msgid "Updated translations"
 msgid "Updated app icon"
 msgstr "翻訳の更新"
 
-#: data/io.elementary.mail.appdata.xml.in:30
-#: data/io.elementary.mail.appdata.xml.in:50
-#: data/io.elementary.mail.appdata.xml.in:62
-#: data/io.elementary.mail.appdata.xml.in:85
-#: data/io.elementary.mail.appdata.xml.in:106
-#: data/io.elementary.mail.appdata.xml.in:122
-#: data/io.elementary.mail.appdata.xml.in:135
+#: data/io.elementary.mail.appdata.xml.in:35
+#: data/io.elementary.mail.appdata.xml.in:55
+#: data/io.elementary.mail.appdata.xml.in:67
+#: data/io.elementary.mail.appdata.xml.in:90
+#: data/io.elementary.mail.appdata.xml.in:111
+#: data/io.elementary.mail.appdata.xml.in:127
+#: data/io.elementary.mail.appdata.xml.in:140
 msgid "Updated translations"
 msgstr "翻訳の更新"
 
-#: data/io.elementary.mail.appdata.xml.in:36
-#: data/io.elementary.mail.appdata.xml.in:68
-#: data/io.elementary.mail.appdata.xml.in:91
+#: data/io.elementary.mail.appdata.xml.in:41
+#: data/io.elementary.mail.appdata.xml.in:73
+#: data/io.elementary.mail.appdata.xml.in:96
 msgid "New features:"
 msgstr "新機能:"
 
-#: data/io.elementary.mail.appdata.xml.in:38
+#: data/io.elementary.mail.appdata.xml.in:43
 msgid "Use message subject for composer window title"
 msgstr "メール作成ウィンドウのタイトルにメッセージの件名を使うように修正"
 
-#: data/io.elementary.mail.appdata.xml.in:39
+#: data/io.elementary.mail.appdata.xml.in:44
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr "Microsoft 365 アカウントの統合受信箱に対応"
 
-#: data/io.elementary.mail.appdata.xml.in:41
-#: data/io.elementary.mail.appdata.xml.in:56
-#: data/io.elementary.mail.appdata.xml.in:72
-#: data/io.elementary.mail.appdata.xml.in:98
-#: data/io.elementary.mail.appdata.xml.in:112
-msgid "Fixes:"
-msgstr "修正点:"
-
-#: data/io.elementary.mail.appdata.xml.in:43
+#: data/io.elementary.mail.appdata.xml.in:48
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr "バックグランドでの新着メールの確認がクラッシュするエラーを修正"
 
-#: data/io.elementary.mail.appdata.xml.in:44
+#: data/io.elementary.mail.appdata.xml.in:49
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr "メッセージ作成時、重複する宛先を削除するように修正"
 
-#: data/io.elementary.mail.appdata.xml.in:45
+#: data/io.elementary.mail.appdata.xml.in:50
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
 "フォルダー内の最後のメッセージをアーカイブするとフリーズする不具合を修正"
 
-#: data/io.elementary.mail.appdata.xml.in:49
+#: data/io.elementary.mail.appdata.xml.in:54
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "Microsoft のブランド名変更に伴い、“Office 365” という表示を “Microsoft 365” "
 "に変更"
 
-#: data/io.elementary.mail.appdata.xml.in:58
+#: data/io.elementary.mail.appdata.xml.in:63
 msgid "Fix a potential crash while loading messages"
 msgstr "メッセージ読み込み中にクラッシュする可能性のある不具合を修正"
 
-#: data/io.elementary.mail.appdata.xml.in:70
+#: data/io.elementary.mail.appdata.xml.in:75
 msgid "Secondary-click menu on the conversations list"
 msgstr "スレッド一覧で副クリックメニューを表示できるように修正"
 
-#: data/io.elementary.mail.appdata.xml.in:74
+#: data/io.elementary.mail.appdata.xml.in:79
 msgid "Ensure conversations are re-sorted by date when new messages appear"
 msgstr ""
 "新しいメッセージを受信しても、日付順で並んだメッセージの順番が崩れないように"
 "修正"
 
-#: data/io.elementary.mail.appdata.xml.in:75
+#: data/io.elementary.mail.appdata.xml.in:80
 msgid "Fixed sender combobox after opening a mailto link"
 msgstr ""
 "mailto リンクを開いた際に、差出人コンボボックスが正しく表示されるように修正"
 
-#: data/io.elementary.mail.appdata.xml.in:76
+#: data/io.elementary.mail.appdata.xml.in:81
 msgid "Mark sent messages as read"
 msgstr "送信済みのメッセージを既読としてマークするように修正"
 
-#: data/io.elementary.mail.appdata.xml.in:77
+#: data/io.elementary.mail.appdata.xml.in:82
 msgid "Fix a hang when deleting the last message in a mailbox"
 msgstr ""
 "メールボックスの最後のメッセージを削除するとハングアップする不具合を修正"
 
-#: data/io.elementary.mail.appdata.xml.in:78
+#: data/io.elementary.mail.appdata.xml.in:83
 msgid "Fix an issue where some mail fails to be deleted"
 msgstr "メールが削除できないことがある不具合を修正"
 
-#: data/io.elementary.mail.appdata.xml.in:82
+#: data/io.elementary.mail.appdata.xml.in:87
 msgid "Use accent color for unread message titles"
 msgstr ""
 "未読メッセージのタイトルをユーザー設定のアクセントカラーで表示するように変更"
 
-#: data/io.elementary.mail.appdata.xml.in:83
+#: data/io.elementary.mail.appdata.xml.in:88
 msgid "Autoselect the next message after archiving"
 msgstr "アーカイブ後、次のメッセージを自動的に選択するように修正"
 
-#: data/io.elementary.mail.appdata.xml.in:84
+#: data/io.elementary.mail.appdata.xml.in:89
 msgid "Use local time in message headers"
 msgstr "メッセージのヘッダーに地方時を使うように修正"
 
-#: data/io.elementary.mail.appdata.xml.in:93
+#: data/io.elementary.mail.appdata.xml.in:98
 msgid "Send a notification when new messages arrive"
 msgstr "メッセージ受信時に通知を表示する機能を追加"
 
-#: data/io.elementary.mail.appdata.xml.in:94
+#: data/io.elementary.mail.appdata.xml.in:99
 msgid "Add a button to manually fetch new messages"
 msgstr "手動で新規メッセージを取得するボタンを追加"
 
-#: data/io.elementary.mail.appdata.xml.in:95
+#: data/io.elementary.mail.appdata.xml.in:100
 msgid "Automatically select the next message after deleting"
 msgstr "メッセージの削除後、次のメッセージを自動的に選択するように修正"
 
-#: data/io.elementary.mail.appdata.xml.in:96
+#: data/io.elementary.mail.appdata.xml.in:101
 msgid "Filter unread or starred conversations"
 msgstr "未開封またはスターなしのスレッドだけを表示できる機能を追加"
 
-#: data/io.elementary.mail.appdata.xml.in:100
+#: data/io.elementary.mail.appdata.xml.in:105
 msgid "Make sure we don't save sent messages twice for outlook.com accounts"
 msgstr ""
 "outlook.com アカウント使用時、送信済みのメッセージが二度保存されていた不具合"
 "を修正"
 
-#: data/io.elementary.mail.appdata.xml.in:101
+#: data/io.elementary.mail.appdata.xml.in:106
 msgid "Fix a potential crash when changing folders"
 msgstr "フォルダー変更時にクラッシュする可能性のある不具合を修正"
 
-#: data/io.elementary.mail.appdata.xml.in:105
+#: data/io.elementary.mail.appdata.xml.in:110
 msgid "Improve search performance"
 msgstr "検索パフォーマンスを改善"
 
-#: data/io.elementary.mail.appdata.xml.in:114
+#: data/io.elementary.mail.appdata.xml.in:119
 msgid "Fix an issue that prevented some messaging from rendering at all"
 msgstr "一部のメッセージが一切描画されない不具合を修正"
 
-#: data/io.elementary.mail.appdata.xml.in:115
+#: data/io.elementary.mail.appdata.xml.in:120
 msgid ""
 "Set the correct \"From\" address when replying and multiple accounts are set "
 "up"
@@ -222,45 +231,45 @@ msgstr ""
 "複数のアカウントが設定されている場合、適切な\"差出人\"メールアドレスを設定す"
 "るように修正"
 
-#: data/io.elementary.mail.appdata.xml.in:116
+#: data/io.elementary.mail.appdata.xml.in:121
 msgid "Fix a crash on startup for some conversations"
 msgstr "スレッドが原因でアプリが起動時にクラッシュすることがある不具合を修正"
 
-#: data/io.elementary.mail.appdata.xml.in:120
+#: data/io.elementary.mail.appdata.xml.in:125
 msgid "Only save drafts when there are new changes"
 msgstr "変更がある場合のみ下書きを保存するように修正"
 
-#: data/io.elementary.mail.appdata.xml.in:121
+#: data/io.elementary.mail.appdata.xml.in:126
 msgid "Move Undo notification to the message view"
 msgstr "“元に戻す”機能を提供する通知をメッセージビューに表示するように変更"
 
-#: data/io.elementary.mail.appdata.xml.in:130
+#: data/io.elementary.mail.appdata.xml.in:135
 msgid "Preserve conversation subjects when replying or forwarding"
 msgstr "返信や転送の際に件名を維持するように修正"
 
-#: data/io.elementary.mail.appdata.xml.in:131
+#: data/io.elementary.mail.appdata.xml.in:136
 msgid "Disable the composer while messages are being sent"
 msgstr "メッセージの送信中は編集ウィンドウを無効化するように修正"
 
-#: data/io.elementary.mail.appdata.xml.in:132
+#: data/io.elementary.mail.appdata.xml.in:137
 msgid "Edit saved draft messages"
 msgstr "保存済みの下書きを編集できる機能を追加"
 
-#: data/io.elementary.mail.appdata.xml.in:133
+#: data/io.elementary.mail.appdata.xml.in:138
 msgid "Make sure we don't save sent messages twice for some account types"
 msgstr ""
 "アカウントの種類によっては送信済みのメッセージが二度保存されていた不具合を修"
 "正"
 
-#: data/io.elementary.mail.appdata.xml.in:134
+#: data/io.elementary.mail.appdata.xml.in:139
 msgid "Stability improvements"
 msgstr "安定性の改善"
 
-#: data/io.elementary.mail.appdata.xml.in:141
+#: data/io.elementary.mail.appdata.xml.in:146
 msgid "Complete rewrite from scratch"
 msgstr "アプリを完全にゼロから書き直し"
 
-#: data/io.elementary.mail.appdata.xml.in:182
+#: data/io.elementary.mail.appdata.xml.in:187
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
