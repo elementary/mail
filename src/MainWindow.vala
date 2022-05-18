@@ -319,11 +319,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         });
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
-        session.account_added.connect (() => {
-            placeholder_stack.visible_child = paned_end;
-            get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
-            search_entry.sensitive = true;
-        });
 
         session.account_removed.connect (() => {
             var accounts_left = session.get_accounts ();
@@ -335,6 +330,13 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         session.start.begin ((obj, res) => {
             session.start.end (res);
+
+            if (session.get_accounts ().size > 0) {
+                placeholder_stack.visible_child = paned_end;
+                get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
+                search_entry.sensitive = true;
+            }
+
             is_session_started = true;
             session_started ();
         });
