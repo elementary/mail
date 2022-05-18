@@ -25,7 +25,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Paned paned_start;
 
     private FoldersListView folders_list_view;
-    private Gtk.Overlay view_overlay;
+    private Gtk.Overlay message_list_overlay;
     private ConversationListBox conversation_list_box;
     private MessageListBox message_list_box;
     private Granite.SwitchModelButton hide_read_switch;
@@ -217,8 +217,10 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         conversation_list_grid.attach (conversation_action_bar, 0, 2);
         conversation_list_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
-        message_list_scrolled = new Gtk.ScrolledWindow (null, null);
-        message_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        message_list_scrolled = new Gtk.ScrolledWindow (null, null) {
+            expand = true,
+            hscrollbar_policy = Gtk.PolicyType.NEVER
+        };
         message_list_scrolled.add (message_list_box);
         // Prevent the focus of the webview causing the ScrolledWindow to scroll
         var scrolled_child = message_list_scrolled.get_child ();
@@ -226,17 +228,15 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
         }
 
-        view_overlay = new Gtk.Overlay () {
-            expand = true
-        };
-        view_overlay.add (message_list_scrolled);
-
         var message_list_container = new Gtk.Grid ();
         message_list_container.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
         message_list_container.attach (headerbar, 0, 0);
-        message_list_container.attach (view_overlay, 0, 1);
+        message_list_container.attach (message_list_scrolled, 0, 1);
 
-        var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
+        message_list_overlay = new Gtk.Overlay ();
+        message_list_overlay.add (message_list_container);
+
+        var message_overlay = new Granite.Widgets.OverlayBar (message_list_overlay);
         message_overlay.no_show_all = true;
 
         message_list_box.hovering_over_link.connect ((label, url) => {
@@ -256,7 +256,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_end.pack1 (paned_start, false, false);
-        paned_end.pack2 (message_list_container, true, true);
+        paned_end.pack2 (message_list_overlay, true, true);
 
         var welcome_view = new Mail.WelcomeView ();
 
@@ -426,7 +426,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void send_move_toast (string message) {
-        foreach (weak Gtk.Widget child in view_overlay.get_children ()) {
+        foreach (weak Gtk.Widget child in message_list_overlay.get_children ()) {
             if (child is Granite.Widgets.Toast) {
                 child.destroy ();
             }
@@ -446,7 +446,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
-        view_overlay.add_overlay (toast);
+        message_list_overlay.add_overlay (toast);
         toast.send_notification ();
     }
 
