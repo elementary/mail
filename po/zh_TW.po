@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 19:53+0000\n"
+"POT-Creation-Date: 2022-05-18 16:54+0000\n"
 "PO-Revision-Date: 2021-10-05 20:07+0000\n"
 "Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -60,15 +60,15 @@ msgstr "轉寄"
 msgid "Mark as Unread"
 msgstr "標記為未讀"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:490
 msgid "Mark as Read"
 msgstr "標記為已讀"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:500
 msgid "Star"
 msgstr "增加星星"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:508
 msgid "Unstar"
 msgstr "取消星星"
 
@@ -355,29 +355,29 @@ msgstr ""
 msgid "New Message"
 msgstr "新訊息"
 
-#: src/ConversationList/ConversationListBox.vala:465
+#: src/ConversationList/ConversationListBox.vala:473
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "移動對話至垃圾桶"
 
-#: src/ConversationList/ConversationListBox.vala:474
+#: src/ConversationList/ConversationListBox.vala:482
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "標記為未讀"
 
-#: src/ConversationList/ConversationListItem.vala:103
+#: src/ConversationList/ConversationListItem.vala:110
 #, fuzzy
 msgid "Unread"
 msgstr "%d 封未讀"
 
-#: src/ConversationList/ConversationListItem.vala:116
+#: src/ConversationList/ConversationListItem.vala:123
 #, fuzzy
 msgid "Replied"
 msgstr "回覆"
 
-#: src/ConversationList/ConversationListItem.vala:120
+#: src/ConversationList/ConversationListItem.vala:127
 #, fuzzy
 msgid "Forwarded"
 msgstr "轉寄"

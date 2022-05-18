@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 19:53+0000\n"
+"POT-Creation-Date: 2022-05-18 16:54+0000\n"
 "PO-Revision-Date: 2016-09-29 12:13+0000\n"
 "Last-Translator: Адмирал АнимЕ <Unknown>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
@@ -57,17 +57,17 @@ msgstr ""
 msgid "Mark as Unread"
 msgstr "Отбелязване като _непрочетено"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:490
 #, fuzzy
 msgid "Mark as Read"
 msgstr "Отбелязване като _прочетено"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:500
 #, fuzzy
 msgid "Star"
 msgstr "Звезда"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:508
 #, fuzzy
 msgid "Unstar"
 msgstr "Премахване на _звездата"
@@ -349,25 +349,25 @@ msgstr ""
 msgid "New Message"
 msgstr ""
 
-#: src/ConversationList/ConversationListBox.vala:465
+#: src/ConversationList/ConversationListBox.vala:473
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Преместване на разговорите"
 
-#: src/ConversationList/ConversationListBox.vala:474
+#: src/ConversationList/ConversationListBox.vala:482
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "Отбелязване като _непрочетено"
 
-#: src/ConversationList/ConversationListItem.vala:103
+#: src/ConversationList/ConversationListItem.vala:110
 msgid "Unread"
 msgstr ""
 
-#: src/ConversationList/ConversationListItem.vala:116
+#: src/ConversationList/ConversationListItem.vala:123
 msgid "Replied"
 msgstr ""
 
-#: src/ConversationList/ConversationListItem.vala:120
+#: src/ConversationList/ConversationListItem.vala:127
 msgid "Forwarded"
 msgstr ""
 

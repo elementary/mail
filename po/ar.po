@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 19:53+0000\n"
+"POT-Creation-Date: 2022-05-18 16:54+0000\n"
 "PO-Revision-Date: 2021-08-28 15:29+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/mail/mail/ar/>\n"
@@ -60,15 +60,15 @@ msgstr "إعادة التوجيه"
 msgid "Mark as Unread"
 msgstr "علم كغير مقروء"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:490
 msgid "Mark as Read"
 msgstr "علم كمقروء"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:500
 msgid "Star"
 msgstr "نجمة"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:508
 msgid "Unstar"
 msgstr "الغاء النجمة"
 
@@ -361,27 +361,27 @@ msgstr "حدث خطأ غير متوقع عند محاولة حفظ المسود�
 msgid "New Message"
 msgstr "رسالة جديدة"
 
-#: src/ConversationList/ConversationListBox.vala:465
+#: src/ConversationList/ConversationListBox.vala:473
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "نقل المحادثة الى سلة المهملات"
 
-#: src/ConversationList/ConversationListBox.vala:474
+#: src/ConversationList/ConversationListBox.vala:482
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "علم كغير مقروء"
 
-#: src/ConversationList/ConversationListItem.vala:103
+#: src/ConversationList/ConversationListItem.vala:110
 msgid "Unread"
 msgstr "علم كغير مقروء"
 
-#: src/ConversationList/ConversationListItem.vala:116
+#: src/ConversationList/ConversationListItem.vala:123
 msgid "Replied"
 msgstr "رد"
 
-#: src/ConversationList/ConversationListItem.vala:120
+#: src/ConversationList/ConversationListItem.vala:127
 msgid "Forwarded"
 msgstr "إعادة توجيه"
 

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 19:53+0000\n"
+"POT-Creation-Date: 2022-05-18 16:54+0000\n"
 "PO-Revision-Date: 2017-01-27 17:54+0000\n"
 "Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: www.gnome.gr\n"
@@ -65,17 +65,17 @@ msgstr ""
 msgid "Mark as Unread"
 msgstr "_Σήμανση ως μη αναγνωσμένα"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:490
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Σήμανση ως αναγνωσμένα"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:500
 #, fuzzy
 msgid "Star"
 msgstr "_Αστέρι"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:508
 #, fuzzy
 msgid "Unstar"
 msgstr "Κα_τάργηση αστεριού"
@@ -378,27 +378,27 @@ msgstr ""
 msgid "New Message"
 msgstr "Νέο μήνυμα"
 
-#: src/ConversationList/ConversationListBox.vala:465
+#: src/ConversationList/ConversationListBox.vala:473
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Μετακίνηση συνομιλιών"
 
-#: src/ConversationList/ConversationListBox.vala:474
+#: src/ConversationList/ConversationListBox.vala:482
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "_Σήμανση ως μη αναγνωσμένα"
 
-#: src/ConversationList/ConversationListItem.vala:103
+#: src/ConversationList/ConversationListItem.vala:110
 #, fuzzy
 msgid "Unread"
 msgstr "%d μη αναγνωσμένο"
 
-#: src/ConversationList/ConversationListItem.vala:116
+#: src/ConversationList/ConversationListItem.vala:123
 #, fuzzy
 msgid "Replied"
 msgstr "Απάντηση"
 
-#: src/ConversationList/ConversationListItem.vala:120
+#: src/ConversationList/ConversationListItem.vala:127
 #, fuzzy
 msgid "Forwarded"
 msgstr "_Προώθηση"

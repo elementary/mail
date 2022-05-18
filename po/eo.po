@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 19:53+0000\n"
+"POT-Creation-Date: 2022-05-18 16:54+0000\n"
 "PO-Revision-Date: 2019-08-27 22:23+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/mail/mail/eo/"
@@ -61,15 +61,15 @@ msgstr "Plusendi"
 msgid "Mark as Unread"
 msgstr "Marki kiel nelegitan"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:490
 msgid "Mark as Read"
 msgstr "Marki kiel legitan"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:500
 msgid "Star"
 msgstr "Stelo"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:508
 msgid "Unstar"
 msgstr "Forigi stelon"
 
@@ -366,27 +366,27 @@ msgstr ""
 msgid "New Message"
 msgstr "Nova mesaĝo"
 
-#: src/ConversationList/ConversationListBox.vala:465
+#: src/ConversationList/ConversationListBox.vala:473
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "Rubujigi la konversaciojn"
 
-#: src/ConversationList/ConversationListBox.vala:474
+#: src/ConversationList/ConversationListBox.vala:482
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Marki kiel nelegitan"
 
-#: src/ConversationList/ConversationListItem.vala:103
+#: src/ConversationList/ConversationListItem.vala:110
 msgid "Unread"
 msgstr "Nelegita"
 
-#: src/ConversationList/ConversationListItem.vala:116
+#: src/ConversationList/ConversationListItem.vala:123
 msgid "Replied"
 msgstr "Respondita"
 
-#: src/ConversationList/ConversationListItem.vala:120
+#: src/ConversationList/ConversationListItem.vala:127
 msgid "Forwarded"
 msgstr "Plusendita"
 

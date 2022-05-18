@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 19:53+0000\n"
+"POT-Creation-Date: 2022-05-18 16:54+0000\n"
 "PO-Revision-Date: 2021-03-21 10:03+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/mail/mail/mr/>\n"
@@ -49,15 +49,15 @@ msgstr "पुढे पाठवा"
 msgid "Mark as Unread"
 msgstr "वाचले नाही अशी खुण करा"
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:490
 msgid "Mark as Read"
 msgstr "वाचले अशी खुण करा"
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:500
 msgid "Star"
 msgstr "तारांकित करा"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:508
 msgid "Unstar"
 msgstr "अतारांकित करा"
 
@@ -352,27 +352,27 @@ msgstr ""
 msgid "New Message"
 msgstr "नवीन संदेश"
 
-#: src/ConversationList/ConversationListBox.vala:465
+#: src/ConversationList/ConversationListBox.vala:473
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "संभाषणांना कचरापेटीत हलवा"
 
-#: src/ConversationList/ConversationListBox.vala:474
+#: src/ConversationList/ConversationListBox.vala:482
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "वाचले नाही अशी खुण करा"
 
-#: src/ConversationList/ConversationListItem.vala:103
+#: src/ConversationList/ConversationListItem.vala:110
 msgid "Unread"
 msgstr "न वाचलेले"
 
-#: src/ConversationList/ConversationListItem.vala:116
+#: src/ConversationList/ConversationListItem.vala:123
 msgid "Replied"
 msgstr "प्रत्युत्तर दिले"
 
-#: src/ConversationList/ConversationListItem.vala:120
+#: src/ConversationList/ConversationListItem.vala:127
 msgid "Forwarded"
 msgstr "पुढे पाठविले (अग्रेषित)"
 

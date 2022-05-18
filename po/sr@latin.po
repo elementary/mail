@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 19:53+0000\n"
+"POT-Creation-Date: 2022-05-18 16:54+0000\n"
 "PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
@@ -65,17 +65,17 @@ msgstr ""
 msgid "Mark as Unread"
 msgstr ""
 
-#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:482
+#: src/HeaderBar.vala:108 src/ConversationList/ConversationListBox.vala:490
 msgid "Mark as Read"
 msgstr ""
 
-#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:492
+#: src/HeaderBar.vala:113 src/ConversationList/ConversationListBox.vala:500
 #, fuzzy
 #| msgid "_Star"
 msgid "Star"
 msgstr "_Dodaj zvezdicu"
 
-#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:500
+#: src/HeaderBar.vala:118 src/ConversationList/ConversationListBox.vala:508
 #, fuzzy
 #| msgid "U_nstar"
 msgid "Unstar"
@@ -393,32 +393,32 @@ msgstr ""
 msgid "New Message"
 msgstr "Nova poruka"
 
-#: src/ConversationList/ConversationListBox.vala:465
+#: src/ConversationList/ConversationListBox.vala:473
 #, fuzzy
 #| msgid "Move conversations"
 msgid "Move To Trash"
 msgstr "Premestite razgovore"
 
-#: src/ConversationList/ConversationListBox.vala:474
+#: src/ConversationList/ConversationListBox.vala:482
 #, fuzzy
 #| msgid "_Mark as Unread"
 msgid "Mark As Unread"
 msgstr "_Označi kao nepročitano"
 
-#: src/ConversationList/ConversationListItem.vala:103
+#: src/ConversationList/ConversationListItem.vala:110
 #, fuzzy
 #| msgid "%d unread"
 #| msgid_plural "%d unread"
 msgid "Unread"
 msgstr "%d nepročitana"
 
-#: src/ConversationList/ConversationListItem.vala:116
+#: src/ConversationList/ConversationListItem.vala:123
 #, fuzzy
 #| msgid "_Replace"
 msgid "Replied"
 msgstr "_Zameni"
 
-#: src/ConversationList/ConversationListItem.vala:120
+#: src/ConversationList/ConversationListItem.vala:127
 #, fuzzy
 #| msgid "_Forward"
 msgid "Forwarded"
