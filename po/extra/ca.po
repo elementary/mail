@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-16 19:53+0000\n"
-"PO-Revision-Date: 2022-01-26 13:43+0000\n"
+"PO-Revision-Date: 2022-05-17 12:56+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/extra/ca/>\n"
 "Language: ca\n"
@@ -76,10 +76,14 @@ msgstr "Correccions:"
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
+"S'ha solucionat un error que provocava que els comptes de correu es "
+"carreguessin diverses vegades."
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr ""
+"S'ha solucionat un error que provocava que el Correu es bloquegés de tant en "
+"tant."
 
 #: data/io.elementary.mail.appdata.xml.in:32
 #: data/io.elementary.mail.appdata.xml.in:52
@@ -92,10 +96,8 @@ msgid "Improvements:"
 msgstr "Millores:"
 
 #: data/io.elementary.mail.appdata.xml.in:34
-#, fuzzy
-#| msgid "Updated translations"
 msgid "Updated app icon"
-msgstr "Traduccions actualitzades"
+msgstr "Icona de l'aplicació actualitzada"
 
 #: data/io.elementary.mail.appdata.xml.in:35
 #: data/io.elementary.mail.appdata.xml.in:55
