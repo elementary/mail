@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-18 18:07+0000\n"
-"PO-Revision-Date: 2022-01-26 09:23+0000\n"
+"PO-Revision-Date: 2022-05-22 05:26+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/"
-">\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/>"
+"\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -77,15 +77,15 @@ msgstr "修正点:"
 
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
-msgstr ""
+msgstr "メールアカウントが複数回読み込まれてしまうエラーを修正"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Fixed a bug which caused Mail to crash occasionally"
-msgstr ""
+msgstr "“メール”がクラッシュする原因になっていた不具合を修正"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 msgid "Display recipient in Sent folder instead of sender"
-msgstr ""
+msgstr "“送信済み”受信箱では、送信者ではなく宛先を表示するように修正"
 
 #: data/io.elementary.mail.appdata.xml.in:33
 #: data/io.elementary.mail.appdata.xml.in:53
@@ -98,10 +98,8 @@ msgid "Improvements:"
 msgstr "改善点:"
 
 #: data/io.elementary.mail.appdata.xml.in:35
-#, fuzzy
-#| msgid "Updated translations"
 msgid "Updated app icon"
-msgstr "翻訳の更新"
+msgstr "アプリのアイコンをアップデート"
 
 #: data/io.elementary.mail.appdata.xml.in:36
 #: data/io.elementary.mail.appdata.xml.in:56
