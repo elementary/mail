@@ -85,7 +85,7 @@ msgstr "Unterhaltung in den Papierkorb verschieben"
 #: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
 msgid "%s to %s"
-msgstr "%s bis %s"
+msgstr "%s an %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:165
@@ -332,11 +332,11 @@ msgstr "Unvorhergesehener Fehler beim Senden der Nachricht."
 
 #: src/Composer/ComposerWidget.vala:992
 msgid "Unable to save draft"
-msgstr "Entwurf kann nicht gespeichert werden"
+msgstr "Entwurf konnte nicht gespeichert werden"
 
 #: src/Composer/ComposerWidget.vala:993
 msgid "There was an unexpected error while saving your draft."
-msgstr "Unvorhergesehener Fehler beim Speichern des Entwurfs."
+msgstr "Beim Speichern Ihres Entwurfs ist ein unbekannter Fehler aufgetreten."
 
 #: src/Composer/ComposerWindow.vala:43 src/Composer/ComposerWindow.vala:55
 #: src/Composer/ComposerWindow.vala:68
