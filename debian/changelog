@@ -1,3 +1,20 @@
+io.elementary.mail (7.0.0) focal; urgency=medium
+
+  * Release 7.0.0 (#781)
+  * Actions: bump release to horus
+  * Update screenshot
+  * Update translation files
+  * Update translation template
+  * MainWindow: Use multiple headerbars (#776)
+  * Show recipient in Sent folder instead of sender (#771)
+  * Flatpak: update to Platform 7 (#782)
+  * Fix #764: Mail Account Duplication (#769)
+  * Fix FolderThreadNode use after free crash (#770)
+  * Round app icon (#780)
+  * ComposerWidget: Make ACTION_ENTRIES private (#765)
+
+ -- Cody Garver <cody@elementary.io>  Mon, 23 May 2022 23:44:17 +0000
+
 io.elementary.mail (6.4.0) focal; urgency=medium
 
   * Release 6.4.0 (#761)
