@@ -28,35 +28,6 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
     construct {
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
-        var load_images_menuitem = new Granite.SwitchModelButton (_("Always Show Remote Images"));
-
-        var account_settings_menuitem = new Gtk.ModelButton ();
-        account_settings_menuitem.text = _("Account Settings…");
-
-        var app_menu_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
-            margin_bottom = 3,
-            margin_top = 3
-        };
-
-        var app_menu_grid = new Gtk.Grid () {
-            margin_bottom = 3,
-            margin_top = 3,
-            orientation = Gtk.Orientation.VERTICAL
-        };
-        app_menu_grid.add (load_images_menuitem);
-        app_menu_grid.add (app_menu_separator);
-        app_menu_grid.add (account_settings_menuitem);
-        app_menu_grid.show_all ();
-
-        var app_menu_popover = new Gtk.Popover (null);
-        app_menu_popover.add (app_menu_grid);
-
-        var app_menu = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
-            popover = app_menu_popover,
-            tooltip_text = _("Menu")
-        };
-
         var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR);
         reply_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY;
         reply_button.tooltip_markup = Granite.markup_accel_tooltip (
@@ -128,23 +99,10 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
         pack_start (reply_button);
         pack_start (reply_all_button);
         pack_start (forward_button);
-        pack_start (new Gtk.Separator (Gtk.Orientation.VERTICAL));
-        pack_start (mark_button);
-        pack_start (archive_button);
-        pack_start (trash_button);
-        pack_end (app_menu);
+        pack_end (trash_button);
+        pack_end (archive_button);
+        pack_end (mark_button);
 
         bind_property ("can-mark", mark_button, "sensitive");
-
-        var settings = new GLib.Settings ("io.elementary.mail");
-        settings.bind ("always-load-remote-images", load_images_menuitem, "active", SettingsBindFlags.DEFAULT);
-
-        account_settings_menuitem.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("settings://accounts/online", null);
-            } catch (Error e) {
-                warning ("Failed to open account settings: %s", e.message);
-            }
-        });
     }
 }
