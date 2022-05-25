@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-23 23:44+0000\n"
-"PO-Revision-Date: 2022-05-24 15:46+0000\n"
+"PO-Revision-Date: 2022-05-25 13:31+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/extra/pt/"
 ">\n"
@@ -76,14 +76,16 @@ msgstr "Correções:"
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
+"Corrigido um erro que fazia com que as contas de correio fossem carregadas "
+"várias vezes"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Fixed a bug which caused Mail to crash occasionally"
-msgstr ""
+msgstr "Corrigido um bug que fazia com que o Correio falhasse ocasionalmente"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 msgid "Display recipient in Sent folder instead of sender"
-msgstr ""
+msgstr "Mostrar o destinatário na pasta Enviado em vez do remetente"
 
 #: data/io.elementary.mail.appdata.xml.in:33
 #: data/io.elementary.mail.appdata.xml.in:54
@@ -125,28 +127,31 @@ msgstr "Usar o assunto da mensagem para o título da janela do compositor"
 
 #: data/io.elementary.mail.appdata.xml.in:46
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
-msgstr ""
+msgstr "Adicionado suporte para contas Unified Inbox para Microsoft 365"
 
 #: data/io.elementary.mail.appdata.xml.in:50
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
+"Corrigido um erro que fazia com que a monitorização da caixa de entrada em "
+"segundo plano se bloqueasse"
 
 #: data/io.elementary.mail.appdata.xml.in:51
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr ""
+"Removidos endereços de remetente duplicados quando da composição de uma "
+"mensagem"
 
 #: data/io.elementary.mail.appdata.xml.in:52
-#, fuzzy
-#| msgid "Fix a hang when deleting the last message in a mailbox"
 msgid "Fix a freeze when archiving the last message in a folder"
-msgstr ""
-"Corrige um bloqueio ao eliminar a última mensagem numa caixa de correio"
+msgstr "Corrige um bloqueio ao arquivar a última mensagem numa pasta"
 
 #: data/io.elementary.mail.appdata.xml.in:56
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
+"Renomeado Office 365 para Microsoft 365 para seguir o conjunto sobre a "
+"rebranding da Microsoft"
 
 #: data/io.elementary.mail.appdata.xml.in:65
 msgid "Fix a potential crash while loading messages"
