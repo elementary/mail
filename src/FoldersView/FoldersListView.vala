@@ -51,14 +51,14 @@ public class Mail.FoldersListView : Gtk.Grid {
             show_close_button = true
         };
         header_bar.pack_end (compose_button);
-        header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        header_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         var scrolled_window = new Gtk.ScrolledWindow (null, null);
         scrolled_window.add (source_list);
 
         orientation = Gtk.Orientation.VERTICAL;
         width_request = 100;
-        get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
+        add_css_class (Granite.STYLE_CLASS_SIDEBAR);
         add (header_bar);
         add (scrolled_window);
 

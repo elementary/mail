@@ -42,7 +42,7 @@ public class Mail.ComposerWindow : Hdy.ApplicationWindow {
             show_close_button = true,
             title = _("New Message")
         };
-        titlebar.get_style_context ().add_class ("default-decoration");
+        titlebar.add_css_class (Granite.STYLE_CLASS_DEFAULT_DECORATION);
 
         composer_widget.discarded.connect (() => {
             close ();

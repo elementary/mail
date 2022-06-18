@@ -32,11 +32,10 @@ public class Mail.MessageListBox : Gtk.ListBox {
         var placeholder = new Gtk.Label (_("No Message Selected"));
         placeholder.visible = true;
 
-        var placeholder_style_context = placeholder.get_style_context ();
-        placeholder_style_context.add_class (Granite.STYLE_CLASS_H2_LABEL);
-        placeholder_style_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        placeholder.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
+        placeholder.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-        get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
+        add_css_class (Granite.STYLE_CLASS_BACKGROUND);
         set_placeholder (placeholder);
         set_sort_func (message_sort_function);
     }

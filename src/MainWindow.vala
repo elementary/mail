@@ -114,7 +114,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         }
 
         headerbar = new HeaderBar ();
-        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        headerbar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         folders_list_view = new FoldersListView ();
         conversation_list_box = new ConversationListBox ();
@@ -150,7 +150,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         };
 
         var search_header = new Hdy.HeaderBar ();
-        search_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        search_header.add_css_class (Granite.STYLE_CLASS_FLAT);
         search_header.set_custom_title (search_entry);
 
         var conversation_list_scrolled = new Gtk.ScrolledWindow (null, null) {
@@ -209,13 +209,13 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         var conversation_action_bar = new Gtk.ActionBar ();
         conversation_action_bar.pack_start (refresh_stack);
         conversation_action_bar.pack_end (filter_button);
-        conversation_action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        conversation_action_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         var conversation_list_grid = new Gtk.Grid ();
         conversation_list_grid.attach (search_header, 0, 0);
         conversation_list_grid.attach (conversation_list_scrolled, 0, 1);
         conversation_list_grid.attach (conversation_action_bar, 0, 2);
-        conversation_list_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        conversation_list_grid.add_css_class (Granite.STYLE_CLASS_VIEW);
 
         message_list_scrolled = new Gtk.ScrolledWindow (null, null);
         message_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -232,7 +232,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         view_overlay.add (message_list_scrolled);
 
         var message_list_container = new Gtk.Grid ();
-        message_list_container.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
+        message_list_container.add_css_class (Gtk.STYLE_CLASS_BACKGROUND);
         message_list_container.attach (headerbar, 0, 0);
         message_list_container.attach (view_overlay, 0, 1);
 
@@ -343,13 +343,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void on_filter_button_changed () {
-        var style_context = filter_button.get_style_context ();
         if (hide_read_switch.active || hide_unstarred_switch.active) {
-            if (!style_context.has_class (Granite.STYLE_CLASS_ACCENT)) {
-                style_context.add_class (Granite.STYLE_CLASS_ACCENT);
+            if (!filter_button.has_css_class (Granite.STYLE_CLASS_ACCENT)) {
+                filter_button.add_css_class (Granite.STYLE_CLASS_ACCENT);
             }
-        } else if (style_context.has_class (Granite.STYLE_CLASS_ACCENT)) {
-            style_context.remove_class (Granite.STYLE_CLASS_ACCENT);
+        } else if (filter_button.has_css_class (Granite.STYLE_CLASS_ACCENT)) {
+            filter_button.remove_css_class (Granite.STYLE_CLASS_ACCENT);
         }
 
         conversation_list_box.search.begin (search_entry.text, hide_read_switch.active, hide_unstarred_switch.active);

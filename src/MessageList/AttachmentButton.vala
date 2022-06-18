@@ -71,7 +71,7 @@ public class AttachmentButton : Gtk.FlowBoxChild {
 
         size_label = new Gtk.Label (null);
         size_label.xalign = 0;
-        size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        size_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         new Thread<void*> (null, () => {
             string? size_text = null;
@@ -87,7 +87,7 @@ public class AttachmentButton : Gtk.FlowBoxChild {
                     size_label.label = size_text;
                 } else {
                     size_label.label = _("Unknown");
-                    size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
+                    size_label.add_css_class (Granite.STYLE_CLASS_ERROR);
                 }
 
                 return GLib.Source.REMOVE;

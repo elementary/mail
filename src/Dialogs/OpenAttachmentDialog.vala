@@ -34,7 +34,7 @@ public class Mail.OpenAttachmentDialog : Granite.MessageDialog {
 
     construct {
         var open_button = new Gtk.Button.with_label (_("Open Anyway"));
-        open_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        open_button.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
         add_action_widget (open_button, Gtk.ResponseType.OK);
 

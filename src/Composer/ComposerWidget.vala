@@ -101,7 +101,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         var from_label = new Gtk.Label (_("From:"));
         from_label.xalign = 1;
-        from_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        from_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         from_combo = new Gtk.ComboBoxText ();
         from_combo.hexpand = true;
@@ -117,11 +117,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         var to_label = new Gtk.Label (_("To:"));
         to_label.xalign = 1;
-        to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        to_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var subject_label = new Gtk.Label (_("Subject:"));
         subject_label.xalign = 1;
-        subject_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        subject_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         to_val = new Gtk.Entry ();
         to_val.hexpand = true;
@@ -137,7 +137,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         var cc_label = new Gtk.Label (_("Cc:"));
         cc_label.xalign = 1;
-        cc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        cc_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         cc_val = new Gtk.Entry ();
         cc_val.hexpand = true;
@@ -153,7 +153,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
         var bcc_label = new Gtk.Label (_("Bcc:"));
         bcc_label.xalign = 1;
-        bcc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        bcc_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         bcc_val = new Gtk.Entry ();
         bcc_val.hexpand = true;
@@ -227,7 +227,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         };
 
         var formatting_buttons = new Gtk.Grid ();
-        formatting_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+        formatting_buttons.add_css_class (Granite.STYLE_CLASS_LINKED);
         formatting_buttons.add (bold);
         formatting_buttons.add (italic);
         formatting_buttons.add (underline);
@@ -262,7 +262,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
             homogeneous = true,
             selection_mode = Gtk.SelectionMode.NONE
         };
-        attachment_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        attachment_box.add_css_class (Granite.STYLE_CLASS_VIEW);
 
         var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU) {
             action_name = ACTION_PREFIX + ACTION_DISCARD,
@@ -282,13 +282,13 @@ public class Mail.ComposerWidget : Gtk.Grid {
             margin_end = 0,
             sensitive = false
         };
-        send.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        send.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
         var action_bar = new Gtk.ActionBar () {
             // Workaround styling issue
             margin_top = 1
         };
-        action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        action_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
         action_bar.pack_start (discard);
         action_bar.pack_start (attach);
         action_bar.pack_end (send);
@@ -675,7 +675,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
         discard_dialog.add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
 
         var discard_anyway = discard_dialog.add_button (_("Delete Draft"), Gtk.ResponseType.ACCEPT);
-        discard_anyway.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        discard_anyway.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
         if (discard_dialog.run () == Gtk.ResponseType.ACCEPT) {
             discard_draft = true;
@@ -704,7 +704,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
             no_subject_dialog.add_button (_("Don't Send"), Gtk.ResponseType.CANCEL);
 
             var send_anyway = no_subject_dialog.add_button (_("Send Anyway"), Gtk.ResponseType.ACCEPT);
-            send_anyway.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+            send_anyway.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
             if (no_subject_dialog.run () == Gtk.ResponseType.CANCEL) {
                 no_subject_dialog.destroy ();
@@ -868,13 +868,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
             };
 
             var size_label = new Gtk.Label ("(%s)".printf (GLib.format_size (info.get_size ())));
-            size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+            size_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
             var remove_button = new Gtk.Button.from_icon_name ("process-stop-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-
-            unowned Gtk.StyleContext remove_button_context = remove_button.get_style_context ();
-            remove_button_context.add_class (Gtk.STYLE_CLASS_FLAT);
-            remove_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+            remove_button.add_css_class (Granite.STYLE_CLASS_FLAT);
+            remove_button.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
             var grid = new Gtk.Grid () {
                 column_spacing = 3,

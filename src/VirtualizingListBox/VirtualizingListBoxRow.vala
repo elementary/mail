@@ -32,7 +32,7 @@ public class VirtualizingListBoxRow : Gtk.Bin {
         can_focus = true;
         set_redraw_on_allocate (true);
 
-        get_style_context ().add_class ("activatable");
+        add_css_class ("activatable");
     }
 
     public override bool draw (Cairo.Context ct) {

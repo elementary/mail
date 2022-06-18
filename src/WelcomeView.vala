@@ -23,7 +23,7 @@ public class Mail.WelcomeView : Gtk.Box {
         var headerbar = new Hdy.HeaderBar () {
             show_close_button = true
         };
-        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        headerbar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         var welcome_icon = new Gtk.Image ();
         welcome_icon.icon_name = "io.elementary.mail";
@@ -44,19 +44,19 @@ public class Mail.WelcomeView : Gtk.Box {
             wrap = true,
             xalign = 0
         };
-        welcome_title.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
+        welcome_title.add_css_class (Granite.STYLE_CLASS_H1_LABEL);
 
         var welcome_description = new Gtk.Label (_("Mail uses email accounts configured in System Settings.")) {
             max_width_chars = 70,
             wrap = true,
             xalign = 0
         };
-        welcome_description.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        welcome_description.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var welcome_button = new Gtk.Button.with_label (_("Online Accounts…")) {
             margin_top = 24
         };
-        welcome_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        welcome_button.add_css_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         var grid = new Gtk.Grid () {
             column_spacing = 12,

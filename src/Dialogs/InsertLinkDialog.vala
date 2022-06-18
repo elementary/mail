@@ -64,7 +64,7 @@ public class InsertLinkDialog : Granite.Dialog {
         insert_button.can_default = true;
         insert_button.has_default = true;
         insert_button.sensitive = false;
-        insert_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        insert_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
         deletable = false;
         modal = true;

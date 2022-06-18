@@ -29,7 +29,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private Gtk.InfoBar blocked_images_infobar;
     private Gtk.Revealer secondary_revealer;
     private Gtk.Stack header_stack;
-    private Gtk.StyleContext style_context;
     private Hdy.Avatar avatar;
     private AttachmentBar attachment_bar = null;
 
@@ -52,9 +51,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                     get_message.begin ();
                     message_loaded = true;
                 }
-                style_context.remove_class ("collapsed");
+                remove_css_class ("collapsed");
             } else {
-                style_context.add_class ("collapsed");
+                add_css_class ("collapsed");
             }
         }
     }
@@ -76,8 +75,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     construct {
         loading_cancellable = new GLib.Cancellable ();
 
-        style_context = get_style_context ();
-        style_context.add_class (Granite.STYLE_CLASS_CARD);
+        add_css_class (Granite.STYLE_CLASS_CARD);
 
         unowned string? parsed_address;
         unowned string? parsed_name;
@@ -97,17 +95,17 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         var from_label = new Gtk.Label (_("From:"));
         from_label.halign = Gtk.Align.END;
         from_label.valign = Gtk.Align.START;
-        from_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        from_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var to_label = new Gtk.Label (_("To:"));
         to_label.halign = Gtk.Align.END;
         to_label.valign = Gtk.Align.START;
-        to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        to_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var subject_label = new Gtk.Label (_("Subject:"));
         subject_label.halign = Gtk.Align.END;
         subject_label.valign = Gtk.Align.START;
-        subject_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        subject_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var from_val_label = new Gtk.Label (message_info.from);
         from_val_label.wrap = true;
@@ -136,7 +134,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             var cc_label = new Gtk.Label (_("Cc:"));
             cc_label.halign = Gtk.Align.END;
             cc_label.valign = Gtk.Align.START;
-            cc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+            cc_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
             var cc_val_label = new Gtk.Label (cc_info);
             cc_val_label.xalign = 0;
@@ -171,7 +169,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         ///TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
         var datetime_label = new Gtk.Label (new DateTime.from_unix_utc (relevant_timestamp).to_local ().format (_("%s at %s").printf (date_format, time_format)));
-        datetime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        datetime_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var starred_icon = new Gtk.Image ();
         starred_icon.icon_size = Gtk.IconSize.MENU;
@@ -186,7 +184,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         var starred_button = new Gtk.Button ();
         starred_button.image = starred_icon;
-        starred_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        starred_button.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         var reply_item = new Gtk.MenuItem.with_label (_("Reply"));
         reply_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.REPLY));
@@ -210,7 +208,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         var actions_menu_button = new Gtk.MenuButton ();
         actions_menu_button.image = new Gtk.Image.from_icon_name ("view-more-symbolic", Gtk.IconSize.MENU);
-        actions_menu_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        actions_menu_button.add_css_class (Granite.STYLE_CLASS_FLAT);
         actions_menu_button.tooltip_text = _("More");
         actions_menu_button.margin_top = 6;
         actions_menu_button.valign = Gtk.Align.START;
@@ -249,7 +247,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         blocked_images_infobar.message_type = Gtk.MessageType.WARNING;
         blocked_images_infobar.add_button (_("Show Images"), 1);
         blocked_images_infobar.add_button (_("Always Show from Sender"), 2);
-        blocked_images_infobar.get_style_context ().add_class (Gtk.STYLE_CLASS_FRAME);
+        blocked_images_infobar.add_css_class (Granite.STYLE_CLASS_FRAME);
         blocked_images_infobar.no_show_all = true;
 
         var infobar_content = blocked_images_infobar.get_content_area ();
