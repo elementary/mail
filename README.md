@@ -6,14 +6,14 @@
 ## Building, Testing, and Installation
 
 You'll need the following dependencies:
+* gtk4
 * libcamel1.2-dev
 * libedataserver1.2-dev
 * libedataserverui1.2-dev
 * libfolks-dev
 * libgee-0.8-dev
 * libglib2.0-dev
-* libgranite-dev >= 6.0.0
-* libhandy-1-dev >= 1.1.90
+* libgranite-7-dev
 * libwebkit2gtk-4.0-dev
 * valac
 

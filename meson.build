@@ -11,9 +11,9 @@ add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi
 
 glib_dep = dependency('glib-2.0')
 gobject_dep = dependency('gobject-2.0')
-granite_dep = dependency('granite', version: '>= 6.0.0')
+granite_dep = dependency('granite-7')
+gtk_dep = dependency('gtk4')
 gee_dep = dependency('gee-0.8')
-handy_dep = dependency('libhandy-1', version: '>=1.1.90')
 camel_dep = dependency('camel-1.2', version: '>= 3.28')
 libedataserver_dep = dependency('libedataserver-1.2', version: '>= 3.28')
 libedataserverui_dep = dependency('libedataserverui-1.2', version: '>= 3.28')
@@ -28,8 +28,8 @@ dependencies = [
     glib_dep,
     gobject_dep,
     granite_dep,
+    gtk_dep,
     gee_dep,
-    handy_dep,
     camel_dep,
     libedataserver_dep,
     libedataserverui_dep,
