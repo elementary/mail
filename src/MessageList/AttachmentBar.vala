@@ -28,8 +28,8 @@ public class Mail.AttachmentBar : Gtk.FlowBox {
     construct {
         hexpand = true;
         activate_on_single_click = true;
-        add_css_class (Granite.STYLE_CLASS_TOOLBAR);
-        add_css_class (Granite.STYLE_CLASS_INLINE_TOOLBAR);
+        add_css_class ("toolbar"); // TODO: Remove if not needed: https://github.com/elementary/granite/issues/617#issuecomment-1160136300
+        add_css_class (Granite.STYLE_CLASS_FLAT);
     }
 
     public async void parse_mime_content (Camel.DataWrapper message_content) {

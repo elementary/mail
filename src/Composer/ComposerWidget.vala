@@ -939,7 +939,9 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
     private class EntryGrid : Gtk.Grid {
         static construct {
-            set_css_name (Gtk.STYLE_CLASS_ENTRY);
+            // TODO: Remove if not needed: https://github.com/elementary/granite/issues/617#issuecomment-1160136300
+            // set_css_name (Gtk.STYLE_CLASS_ENTRY);
+            set_css_name ("entry");
         }
     }
 

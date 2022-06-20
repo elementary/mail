@@ -232,7 +232,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         view_overlay.add (message_list_scrolled);
 
         var message_list_container = new Gtk.Grid ();
-        message_list_container.add_css_class (Gtk.STYLE_CLASS_BACKGROUND);
+        message_list_container.add_css_class (Granite.STYLE_CLASS_BACKGROUND);
         message_list_container.attach (headerbar, 0, 0);
         message_list_container.attach (view_overlay, 0, 1);
 

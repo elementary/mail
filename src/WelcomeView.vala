@@ -56,7 +56,7 @@ public class Mail.WelcomeView : Gtk.Box {
         var welcome_button = new Gtk.Button.with_label (_("Online Accounts…")) {
             margin_top = 24
         };
-        welcome_button.add_css_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        welcome_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
         var grid = new Gtk.Grid () {
             column_spacing = 12,
