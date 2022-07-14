@@ -174,7 +174,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             active = true,
             halign = Gtk.Align.CENTER,
             valign = Gtk.Align.CENTER,
-            tooltip_text = _("Fetching new messages")
+            tooltip_text = _("Fetching new messages…")
         };
 
         refresh_stack = new Gtk.Stack () {
