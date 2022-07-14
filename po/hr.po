@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-23 23:44+0000\n"
+"POT-Creation-Date: 2022-07-14 18:28+0000\n"
 "PO-Revision-Date: 2020-04-10 14:01+0000\n"
 "Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <https://l10n.elementary.io/projects/mail/mail/hr/>\n"
@@ -125,7 +125,7 @@ msgstr "%d nova poruka"
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
-msgid "Fetching new messages"
+msgid "Fetching new messages…"
 msgstr "%d nova poruka"
 
 #: src/MainWindow.vala:187

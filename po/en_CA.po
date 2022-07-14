@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-23 23:44+0000\n"
+"POT-Creation-Date: 2022-07-14 18:28+0000\n"
 "PO-Revision-Date: 2016-05-08 15:16+0000\n"
 "Last-Translator: Giovanni Caligaris <giovannicaligaris@gmail.com>\n"
 "Language-Team: English (Canada) (http://www.transifex.com/projects/p/geary/"
@@ -129,7 +129,7 @@ msgstr "%d new message"
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
-msgid "Fetching new messages"
+msgid "Fetching new messages…"
 msgstr "%d new message"
 
 #: src/MainWindow.vala:187

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-23 23:44+0000\n"
+"POT-Creation-Date: 2022-07-14 18:28+0000\n"
 "PO-Revision-Date: 2015-11-29 22:37+0000\n"
 "Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -126,7 +126,7 @@ msgstr "%d mesazh të ri"
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
-msgid "Fetching new messages"
+msgid "Fetching new messages…"
 msgstr "%d mesazh të ri"
 
 #: src/MainWindow.vala:187

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-23 23:44+0000\n"
+"POT-Creation-Date: 2022-07-14 18:28+0000\n"
 "PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/mail/mail/lt/"
@@ -128,7 +128,7 @@ msgstr "%d naujas laiškas"
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
-msgid "Fetching new messages"
+msgid "Fetching new messages…"
 msgstr "%d naujas laiškas"
 
 #: src/MainWindow.vala:187

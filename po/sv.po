@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-23 23:44+0000\n"
+"POT-Creation-Date: 2022-07-14 18:28+0000\n"
 "PO-Revision-Date: 2017-04-15 20:42+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Swedish <https://l10n.elementary.io/projects/mail/mail/sv/>\n"
@@ -135,7 +135,7 @@ msgstr "%d nytt meddelande"
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
-msgid "Fetching new messages"
+msgid "Fetching new messages…"
 msgstr "%d nytt meddelande"
 
 #: src/MainWindow.vala:187

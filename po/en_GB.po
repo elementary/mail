@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-23 23:44+0000\n"
+"POT-Creation-Date: 2022-07-14 18:28+0000\n"
 "PO-Revision-Date: 2021-10-25 20:04+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -112,7 +112,9 @@ msgid "Fetch new messages"
 msgstr "Fetch new messages"
 
 #: src/MainWindow.vala:177
-msgid "Fetching new messages"
+#, fuzzy
+#| msgid "Fetching new messages"
+msgid "Fetching new messages…"
 msgstr "Fetching new messages"
 
 #: src/MainWindow.vala:187
