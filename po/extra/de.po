@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-14 18:28+0000\n"
-"PO-Revision-Date: 2022-07-15 19:48+0000\n"
-"Last-Translator: Melanie Farrugia <farrtranslations@gmail.com>\n"
+"PO-Revision-Date: 2022-07-16 06:00+0000\n"
+"Last-Translator: ActualDisaster2447 <1jbe1vkry@mozmail.com>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/extra/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -171,7 +171,7 @@ msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:82
 msgid "Fixed sender combobox after opening a mailto link"
-msgstr "Feste Absender-Combobox nach dem Öffnen eines \"mailto\" Links"
+msgstr "Problem mit \"mailto:\"-Links behoben"
 
 #: data/io.elementary.mail.appdata.xml.in:83
 msgid "Mark sent messages as read"
@@ -198,7 +198,7 @@ msgstr "Automatisch die nächste Nachricht nach dem Archivieren auswählen"
 
 #: data/io.elementary.mail.appdata.xml.in:91
 msgid "Use local time in message headers"
-msgstr "Lokalzeit in Nachrichtentiteln verwenden"
+msgstr "Nutze Lokalzeiten in den Nachrichtentiteln"
 
 #: data/io.elementary.mail.appdata.xml.in:100
 msgid "Send a notification when new messages arrive"
@@ -250,7 +250,7 @@ msgstr "Behebt einen Fehler beim Start, der bei manchen Konversationen auftrat"
 
 #: data/io.elementary.mail.appdata.xml.in:127
 msgid "Only save drafts when there are new changes"
-msgstr "Entwürfe nur dann speichern, wenn Änderungen vorgenommen wurden"
+msgstr "Entwürfe nur speichern, wenn Änderungen vorgenommen wurden"
 
 #: data/io.elementary.mail.appdata.xml.in:128
 msgid "Move Undo notification to the message view"
