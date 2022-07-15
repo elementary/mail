@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-14 18:28+0000\n"
-"PO-Revision-Date: 2021-10-06 01:02+0000\n"
+"PO-Revision-Date: 2022-07-16 06:00+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
 "Language: he\n"
@@ -116,10 +116,8 @@ msgid "Fetch new messages"
 msgstr "משיכת הודעות חדשות"
 
 #: src/MainWindow.vala:177
-#, fuzzy
-#| msgid "Fetching new messages"
 msgid "Fetching new messages…"
-msgstr "הודעות חדשות נמשכות"
+msgstr "הודעות חדשות נמשכות…"
 
 #: src/MainWindow.vala:187
 msgid "Hide read conversations"
