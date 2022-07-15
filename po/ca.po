@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-14 18:28+0000\n"
-"PO-Revision-Date: 2021-10-06 01:02+0000\n"
+"PO-Revision-Date: 2022-07-15 11:01+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -110,10 +110,8 @@ msgid "Fetch new messages"
 msgstr "Obtén missatges nous"
 
 #: src/MainWindow.vala:177
-#, fuzzy
-#| msgid "Fetching new messages"
 msgid "Fetching new messages…"
-msgstr "S'obtenen missatges nous."
+msgstr "S'obtenen missatges nous…"
 
 #: src/MainWindow.vala:187
 msgid "Hide read conversations"
