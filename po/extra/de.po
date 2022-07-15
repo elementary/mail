@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-14 18:28+0000\n"
 "PO-Revision-Date: 2022-07-15 19:48+0000\n"
-"Last-Translator: ActualDisaster2447 <1jbe1vkry@mozmail.com>\n"
+"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/extra/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -85,7 +85,7 @@ msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:31
 msgid "Display recipient in Sent folder instead of sender"
-msgstr ""
+msgstr "Empfänger im Gesendet-Ordner anstelle des Absenders anzeigen"
 
 #: data/io.elementary.mail.appdata.xml.in:33
 #: data/io.elementary.mail.appdata.xml.in:54
@@ -139,12 +139,10 @@ msgid "Removed duplicate sender addresses when composing a message"
 msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:52
-#, fuzzy
-#| msgid "Fix a hang when deleting the last message in a mailbox"
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
-"Behebt eine Verzögerung, die auftrat wenn die letzte Nachricht im "
-"Posteingang gelöscht wurde"
+"Behebung eines Problems, das beim Archivieren der letzten Nachricht in einem "
+"Ordner auftrat"
 
 #: data/io.elementary.mail.appdata.xml.in:56
 msgid ""
@@ -152,10 +150,8 @@ msgid ""
 msgstr ""
 
 #: data/io.elementary.mail.appdata.xml.in:65
-#, fuzzy
-#| msgid "Fix a potential crash when changing folders"
 msgid "Fix a potential crash while loading messages"
-msgstr "Mögliche Abstürze beim Wechseln von Ordnern behoben"
+msgstr "Mögliche Abstürze beim Laden von Nachrichten behoben"
 
 #: data/io.elementary.mail.appdata.xml.in:77
 msgid "Secondary-click menu on the conversations list"
