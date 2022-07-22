@@ -246,7 +246,11 @@ public class Mail.WebView : WebKit.WebView {
     }
 
     private bool handle_internal_response (WebKit.URISchemeRequest request) {
+#if HAS_SOUP_3
+        string name = GLib.Uri.unescape_string (request.get_path ());
+#else
         string name = Soup.URI.decode (request.get_path ());
+#endif
         InputStream? buf = this.internal_resources[name];
         if (buf != null) {
             request.finish (buf, -1, null);

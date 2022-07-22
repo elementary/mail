@@ -116,7 +116,11 @@ public class Mail.Page : Object {
 
     private bool on_send_request (WebKit.WebPage page, WebKit.URIRequest request, WebKit.URIResponse? response) {
         bool should_load = false;
+#if HAS_SOUP_3
+        GLib.Uri? uri = GLib.Uri.parse (request.get_uri (), GLib.UriFlags.NONE);
+#else
         Soup.URI? uri = new Soup.URI (request.get_uri ());
+#endif
         if (uri != null && uri.get_scheme () in ALLOWED_SCHEMES) {
             // Always load internal resources
             should_load = true;
