@@ -11,6 +11,7 @@ basic_command = [
     '--pkg', 'webkit2gtk-4.0',
     '--pkg', 'libedataserverui-1.2',
     '--pkg', 'libedataserver-1.2',
+    '--pkg', 'libhandy-1',
     '--pkg', 'camel-1.2',
     '--pkg', 'gee-0.8', 
     '--pkg', 'granite',
@@ -30,7 +31,7 @@ all_doc_target = custom_target(
         '@INPUT@'
     ],
     build_by_default: true,
-    input: vala_files,
+    input: [vala_files, config_file],
     output: 'full'
 )
 
