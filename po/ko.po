@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-14 18:28+0000\n"
-"PO-Revision-Date: 2019-07-20 09:24+0000\n"
+"PO-Revision-Date: 2022-08-05 16:09+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/mail/mail/ko/>\n"
 "Language: ko\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:31
@@ -81,21 +81,18 @@ msgstr ""
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:165
-#, fuzzy, c-format
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
+#, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "새 편지 %d개"
+msgstr[0] "새 메시지 %u개"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
 #: src/InboxMonitor.vala:177
-#, fuzzy, c-format
-#| msgid "Always Show from Sender"
+#, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] "보낸 사람 항상 표시"
+msgstr[0] "%u에서 보낸 %s개의 메시지"
 
 #: src/MainWindow.vala:83
 msgid "Mail"
@@ -113,11 +110,8 @@ msgid "Fetch new messages"
 msgstr "새 편지 %d개"
 
 #: src/MainWindow.vala:177
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
 msgid "Fetching new messages…"
-msgstr "새 편지 %d개"
+msgstr "새 메시지 가져오는 중…"
 
 #: src/MainWindow.vala:187
 #, fuzzy
@@ -324,10 +318,8 @@ msgid "Send Anyway"
 msgstr "그래도 보내기"
 
 #: src/Composer/ComposerWidget.vala:729
-#, fuzzy
-#| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
-msgstr "내용 없이 편지를 보낼까요?"
+msgstr "보낸 메시지가 저장되지 않았습니다"
 
 #: src/Composer/ComposerWidget.vala:730
 msgid ""
@@ -501,10 +493,8 @@ msgid "Email Message"
 msgstr "새 편지"
 
 #: src/MessageList/MessageListItem.vala:389
-#, fuzzy
-#| msgid "Unable to validate:\n"
 msgid "Unable to print email"
-msgstr "유효한지 확인할 수 없습니다:\n"
+msgstr "이메일을 인쇄할 수 없습니다"
 
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
