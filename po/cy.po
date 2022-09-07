@@ -3,44 +3,52 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-14 18:28+0000\n"
+"PO-Revision-Date: 2022-08-29 01:50+0000\n"
+"Last-Translator: Christopher Griffiths <chris@griffiths.cymru>\n"
+"Language-Team: Welsh <https://l10n.elementary.io/projects/mail/mail/cy/>\n"
+"Language: cy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0) ? 0 : (n==1) ? 1 : (n==2) ? 2 : "
+"(n==3) ? 3 :(n==6) ? 4 : 5;\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: src/HeaderBar.vala:31
 msgid "Always Show Remote Images"
-msgstr ""
+msgstr "Dangos Delweddau Pell Bob Tro"
 
 #: src/HeaderBar.vala:34
 msgid "Account Settings…"
-msgstr ""
+msgstr "Gosodiadau Cyfrif…"
 
 #: src/HeaderBar.vala:57
 msgid "Menu"
-msgstr ""
+msgstr "Dewislen"
 
 #: src/HeaderBar.vala:64 src/MessageList/MessageListItem.vala:191
 msgid "Reply"
-msgstr ""
+msgstr "Ateb"
 
 #: src/HeaderBar.vala:71
 msgid "Reply All"
-msgstr ""
+msgstr "Ateb i Bawb"
 
 #: src/HeaderBar.vala:78 src/MessageList/MessageListItem.vala:197
 msgid "Forward"
-msgstr ""
+msgstr "Anfon Ymlaen"
 
 #: src/HeaderBar.vala:84
 msgid "Mark as Unread"
-msgstr ""
+msgstr "Nodi heb ei Ddarllen"
 
 #: src/HeaderBar.vala:89 src/ConversationList/ConversationListBox.vala:490
 msgid "Mark as Read"
-msgstr ""
+msgstr "Nodi wedi'i Ddarllen"
 
 #: src/HeaderBar.vala:94 src/ConversationList/ConversationListBox.vala:500
 msgid "Star"
-msgstr ""
+msgstr "Serennu"
 
 #: src/HeaderBar.vala:99 src/ConversationList/ConversationListBox.vala:508
 msgid "Unstar"
