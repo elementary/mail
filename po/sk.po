@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-14 18:28+0000\n"
-"PO-Revision-Date: 2021-11-30 20:34+0000\n"
+"PO-Revision-Date: 2022-09-30 22:24+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/mail/mail/sk/>\n"
 "Language: sk\n"
@@ -111,10 +111,8 @@ msgid "Fetch new messages"
 msgstr "Načítať nové správy"
 
 #: src/MainWindow.vala:177
-#, fuzzy
-#| msgid "Fetching new messages"
 msgid "Fetching new messages…"
-msgstr "Načítavanie nových správ"
+msgstr "Načítavanie nových správ…"
 
 #: src/MainWindow.vala:187
 msgid "Hide read conversations"
