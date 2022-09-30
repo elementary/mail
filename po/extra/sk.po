@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-14 18:28+0000\n"
-"PO-Revision-Date: 2022-02-26 05:42+0000\n"
+"PO-Revision-Date: 2022-09-30 22:24+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/mail/extra/sk/>\n"
 "Language: sk\n"
@@ -77,14 +77,15 @@ msgstr "Opravy:"
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
+"Opravená chyba, ktorá zapríčiňovala opakované načítanie e-mailových účtov"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Fixed a bug which caused Mail to crash occasionally"
-msgstr ""
+msgstr "Opravená chyba, ktorá občas spôsobovala pád aplikácie Pošta"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 msgid "Display recipient in Sent folder instead of sender"
-msgstr ""
+msgstr "Zobrazovať príjemcu v priečinku Odoslané namiesto odosielateľa"
 
 #: data/io.elementary.mail.appdata.xml.in:33
 #: data/io.elementary.mail.appdata.xml.in:54
@@ -97,14 +98,12 @@ msgid "Improvements:"
 msgstr "Vylepšenia:"
 
 #: data/io.elementary.mail.appdata.xml.in:35
-#, fuzzy
-#| msgid "Updated translations"
 msgid "Updated app icon"
-msgstr "Aktualizované preklady"
+msgstr "Aktualizovaná ikonka aplikácie"
 
 #: data/io.elementary.mail.appdata.xml.in:36
 msgid "New design"
-msgstr ""
+msgstr "Nový vzhľad"
 
 #: data/io.elementary.mail.appdata.xml.in:37
 #: data/io.elementary.mail.appdata.xml.in:57
