@@ -15,6 +15,7 @@ You'll need the following dependencies:
 * libgranite-dev >= 6.0.0
 * libhandy-1-dev >= 1.1.90
 * libwebkit2gtk-4.0-dev
+* meson
 * valac
 
 Run `meson build` to configure the build environment and then change to the build directory and run `ninja` to build
