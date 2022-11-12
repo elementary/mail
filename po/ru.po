@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-14 18:28+0000\n"
-"PO-Revision-Date: 2022-09-30 14:03+0000\n"
-"Last-Translator: lenemter <lenemter@gmail.com>\n"
+"PO-Revision-Date: 2022-11-15 12:37+0000\n"
+"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:31
@@ -424,7 +424,7 @@ msgstr "Все почтовые ящики"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
-msgstr "Сообщение не выбрано"
+msgstr "Нет выбранных писем"
 
 #. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
 #: src/MessageList/MessageListItem.vala:173
