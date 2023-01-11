@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-14 18:28+0000\n"
+"POT-Creation-Date: 2023-01-11 17:51+0000\n"
 "PO-Revision-Date: 2021-07-22 10:38+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/mail/extra/eo/"
@@ -262,10 +262,6 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/io.elementary.mail.desktop.in:6
-msgid "io.elementary.mail"
-msgstr "io.elementary.mail"
-
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
 msgstr "retmesaĝo;retpoŝto;retletero"
@@ -273,6 +269,9 @@ msgstr "retmesaĝo;retpoŝto;retletero"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Redakti mesaĝon"
+
+#~ msgid "io.elementary.mail"
+#~ msgstr "io.elementary.mail"
 
 #~ msgid "Desktop notifications"
 #~ msgstr "Labortablaj avertoj"

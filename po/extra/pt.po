@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-14 18:28+0000\n"
+"POT-Creation-Date: 2023-01-11 17:51+0000\n"
 "PO-Revision-Date: 2022-05-25 13:31+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/extra/pt/"
@@ -281,10 +281,6 @@ msgstr "Reescrita completa a partir do zero"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/io.elementary.mail.desktop.in:6
-msgid "io.elementary.mail"
-msgstr "io.elementary.mail"
-
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
 msgstr "Email;E-mail;Mail;Correio;"
@@ -292,6 +288,9 @@ msgstr "Email;E-mail;Mail;Correio;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Escrever uma mensagem"
+
+#~ msgid "io.elementary.mail"
+#~ msgstr "io.elementary.mail"
 
 #~ msgid "Desktop notifications"
 #~ msgstr "Notificações do ambiente de trabalho"
