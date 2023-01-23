@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-14 18:28+0000\n"
-"PO-Revision-Date: 2022-07-15 12:53+0000\n"
+"POT-Creation-Date: 2023-01-11 17:51+0000\n"
+"PO-Revision-Date: 2023-01-13 20:12+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:31
@@ -105,11 +105,11 @@ msgstr "新着メッセージを取得しています…"
 
 #: src/MainWindow.vala:187
 msgid "Hide read conversations"
-msgstr "開封済みのスレッドを表示しない"
+msgstr "開封済みのスレッドを非表示"
 
 #: src/MainWindow.vala:189
 msgid "Hide unstarred conversations"
-msgstr "スターなしのスレッドを表示しない"
+msgstr "スターなしのスレッドを非表示"
 
 #: src/MainWindow.vala:206
 msgid "Filter Conversations"

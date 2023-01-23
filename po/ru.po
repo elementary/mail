@@ -16,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-14 18:28+0000\n"
-"PO-Revision-Date: 2022-07-24 12:31+0000\n"
-"Last-Translator: lenemter <lenemter@gmail.com>\n"
+"POT-Creation-Date: 2023-01-11 17:51+0000\n"
+"PO-Revision-Date: 2022-11-15 12:37+0000\n"
+"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -26,16 +26,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:31
 msgid "Always Show Remote Images"
-msgstr "Всегда показывать удаленные изображения"
+msgstr "Всегда показывать удалённые изображения"
 
 #: src/HeaderBar.vala:34
 msgid "Account Settings…"
-msgstr "Параметры учетной записи…"
+msgstr "Параметры учётной записи…"
 
 #: src/HeaderBar.vala:57
 msgid "Menu"
@@ -92,7 +92,7 @@ msgstr "%s в %s"
 msgid "%u new message"
 msgid_plural "%u new messages"
 msgstr[0] "%u новое сообщение"
-msgstr[1] "%u новых сообщений"
+msgstr[1] "%u новых сообщения"
 msgstr[2] "%u новых сообщений"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
@@ -137,8 +137,8 @@ msgstr "Сортировать беседы"
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Сообщение удалено"
-msgstr[1] "Сообщений удалено"
-msgstr[2] "Сообщений удалено"
+msgstr[1] "Сообщения удалены"
+msgstr[2] "Сообщения удалены"
 
 #: src/MainWindow.vala:436
 msgid "Undo"
@@ -146,17 +146,17 @@ msgstr "Отменить"
 
 #: src/WelcomeView.vala:42
 msgid "Connect an Account"
-msgstr "Подключить учетную запись"
+msgstr "Подключить учётную запись"
 
 #: src/WelcomeView.vala:49
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
-"Почта использует учетные записи электронной почты, настроенные в параметрах "
+"Почта использует учётные записи электронной почты, настроенные в Параметрах "
 "системы."
 
 #: src/WelcomeView.vala:56
 msgid "Online Accounts…"
-msgstr "Сетевые учетные записи…"
+msgstr "Сетевые учётные записи…"
 
 #: src/Composer/ComposerWidget.vala:102 src/MessageList/MessageListItem.vala:97
 msgid "From:"
@@ -250,7 +250,7 @@ msgstr "В %1$s, %2$s написал:"
 
 #: src/Composer/ComposerWidget.vala:619
 msgid "---------- Forwarded message ----------"
-msgstr "---------- Пересылаемое сообщение ----------"
+msgstr "---------- Пересланное сообщение ----------"
 
 #: src/Composer/ComposerWidget.vala:621
 #, c-format
@@ -424,7 +424,7 @@ msgstr "Все почтовые ящики"
 
 #: src/MessageList/MessageListBox.vala:32
 msgid "No Message Selected"
-msgstr "Сообщение не выбрано"
+msgstr "Нет выбранных писем"
 
 #. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
 #: src/MessageList/MessageListItem.vala:173
@@ -468,7 +468,7 @@ msgstr "Данное сообщение содержит изображения.
 
 #: src/MessageList/MessageListItem.vala:288
 msgid "This message contains one or more attachments"
-msgstr "Это письмо содержит одно или больше вложение"
+msgstr "Это письмо содержит одно или больше вложений"
 
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:367
