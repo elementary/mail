@@ -117,8 +117,9 @@ public class Mail.Page : Object {
     private bool on_send_request (WebKit.WebPage page, WebKit.URIRequest request, WebKit.URIResponse? response) {
         bool should_load = false;
 #if HAS_SOUP_3
+        GLib.Uri? uri = null;
         try {
-            GLib.Uri? uri = GLib.Uri.parse (request.get_uri (), GLib.UriFlags.NONE);
+            uri = GLib.Uri.parse (request.get_uri (), GLib.UriFlags.NONE);
         } catch (Error e) {
             warning ("Could not parse uri: %s", e.message);
             return should_load;
