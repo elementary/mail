@@ -70,7 +70,7 @@ public class Mail.Application : Gtk.Application {
 
             try {
 #if HAS_SOUP_3
-                GLib.Uri mailto = null;
+                GLib.Uri? mailto= null;
                 try {
                     mailto = GLib.Uri.parse (mailto_uri, GLib.UriFlags.NONE);
                 } catch (Error e) {
