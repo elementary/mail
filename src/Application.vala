@@ -70,7 +70,12 @@ public class Mail.Application : Gtk.Application {
 
             try {
 #if HAS_SOUP_3
-                GLib.Uri mailto = GLib.Uri.parse (mailto_uri, GLib.UriFlags.NONE);
+                try {
+                    GLib.Uri mailto = GLib.Uri.parse (mailto_uri, GLib.UriFlags.NONE);
+                } catch (Error e) {
+                    throw new OptionError.BAD_VALUE ("Argument is not a URL.");
+                }
+
                 if (mailto == null) {
                     throw new OptionError.BAD_VALUE ("Argument is not a URL.");
                 }
