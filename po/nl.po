@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 17:51+0000\n"
-"PO-Revision-Date: 2022-01-16 03:54+0000\n"
+"PO-Revision-Date: 2023-02-01 19:25+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
 "Language: nl\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:31
@@ -116,10 +116,8 @@ msgid "Fetch new messages"
 msgstr "Nieuwe berichten ophalen"
 
 #: src/MainWindow.vala:177
-#, fuzzy
-#| msgid "Fetching new messages"
 msgid "Fetching new messages…"
-msgstr "Nieuwe berichten worden opgehaald"
+msgstr "Nieuwe berichten worden opgehaald…"
 
 #: src/MainWindow.vala:187
 msgid "Hide read conversations"
@@ -150,8 +148,8 @@ msgstr "Account verbinden"
 #: src/WelcomeView.vala:49
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
-"Mail gebruikt de email accounts die in de Systeeminstellingen zijn "
-"geconfigureerd."
+"Mail maakt gebruik van de email accounts die zijn geconfigureerd in de "
+"Systeeminstellingen."
 
 #: src/WelcomeView.vala:56
 msgid "Online Accounts…"
