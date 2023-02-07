@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-07 00:32+0000\n"
+"POT-Creation-Date: 2023-02-07 00:51+0000\n"
 "PO-Revision-Date: 2016-08-06 15:00+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
@@ -18,17 +18,15 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Generator: Launchpad (build 18330)\n"
 
-#: data/io.elementary.mail.appdata.xml.in:8
-#: data/io.elementary.mail.desktop.in:3
+#: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
 msgid "Mail"
 msgstr "郵件"
 
-#: data/io.elementary.mail.appdata.xml.in:9
-#: data/io.elementary.mail.desktop.in:4
+#: data/mail.metainfo.xml.in:11 data/io.elementary.mail.desktop.in:4
 msgid "Send and receive mail"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:11
+#: data/mail.metainfo.xml.in:13
 msgid ""
 "Mail is designed to let you manage your email quickly and effortlessly. Its "
 "interface is based on conversations, so you can read an entire discussion "
@@ -37,27 +35,27 @@ msgstr ""
 "《郵件》的設計是要讓您以迅雷不及掩耳之速且不費吹灰之力地管理郵件。其介面依據"
 "對話分門別類，所以您可以一次閱讀整串前後討論內容而不必一封一封訊息點按。"
 
-#: data/io.elementary.mail.appdata.xml.in:13
+#: data/mail.metainfo.xml.in:15
 msgid "Lightweight mail client with full IMAP support"
 msgstr "輕量級郵件客戶端具備完整 IMAP 支援"
 
-#: data/io.elementary.mail.appdata.xml.in:14
+#: data/mail.metainfo.xml.in:16
 msgid "Mail grouped into conversations, not a tree of threads"
 msgstr "郵件會依照對話分門別類，而不是樹狀條目"
 
-#: data/io.elementary.mail.appdata.xml.in:15
+#: data/mail.metainfo.xml.in:17
 msgid "As-you-type searching"
 msgstr "隨打即搜"
 
-#: data/io.elementary.mail.appdata.xml.in:16
+#: data/mail.metainfo.xml.in:18
 msgid "Multiple account support"
 msgstr "多帳號支援"
 
-#: data/io.elementary.mail.appdata.xml.in:17
+#: data/mail.metainfo.xml.in:19
 msgid "Inline HTML composer that saves drafts to the server"
 msgstr "行內 HTML 編寫器，可將草稿存至伺服器"
 
-#: data/io.elementary.mail.appdata.xml.in:18
+#: data/mail.metainfo.xml.in:20
 #, fuzzy
 #| msgid ""
 #| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
@@ -67,122 +65,115 @@ msgstr ""
 "能搭配 Gmail、Yahoo! 信箱、Outlook.com（實驗中），以及其他熱門 IMAP 伺服器使"
 "用"
 
-#: data/io.elementary.mail.appdata.xml.in:28
-#: data/io.elementary.mail.appdata.xml.in:46
-#: data/io.elementary.mail.appdata.xml.in:68
-#: data/io.elementary.mail.appdata.xml.in:82
-#: data/io.elementary.mail.appdata.xml.in:103
+#: data/mail.metainfo.xml.in:65
+msgid "elementary, Inc."
+msgstr ""
+
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:90
+#: data/mail.metainfo.xml.in:112 data/mail.metainfo.xml.in:126
+#: data/mail.metainfo.xml.in:147
 msgid "Improvements:"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:30
-#: data/io.elementary.mail.appdata.xml.in:50
-#: data/io.elementary.mail.appdata.xml.in:71
-#: data/io.elementary.mail.appdata.xml.in:84
-#: data/io.elementary.mail.appdata.xml.in:108
+#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:115 data/mail.metainfo.xml.in:128
+#: data/mail.metainfo.xml.in:152
 msgid "Updated translations"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:40
-#: data/io.elementary.mail.appdata.xml.in:62
-#: data/io.elementary.mail.appdata.xml.in:78
-#: data/io.elementary.mail.appdata.xml.in:95
+#: data/mail.metainfo.xml.in:84 data/mail.metainfo.xml.in:106
+#: data/mail.metainfo.xml.in:122 data/mail.metainfo.xml.in:139
 msgid "Fixes:"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:42
+#: data/mail.metainfo.xml.in:86
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:43
+#: data/mail.metainfo.xml.in:87
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:44
+#: data/mail.metainfo.xml.in:88
 msgid "Display recipient in Sent folder instead of sender"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:48
+#: data/mail.metainfo.xml.in:92
 msgid "Updated app icon"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:49
+#: data/mail.metainfo.xml.in:93
 msgid "New design"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:57
-#: data/io.elementary.mail.appdata.xml.in:91
+#: data/mail.metainfo.xml.in:101 data/mail.metainfo.xml.in:135
 msgid "New features:"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:59
+#: data/mail.metainfo.xml.in:103
 msgid "Use message subject for composer window title"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:60
+#: data/mail.metainfo.xml.in:104
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:64
+#: data/mail.metainfo.xml.in:108
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:65
+#: data/mail.metainfo.xml.in:109
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:66
+#: data/mail.metainfo.xml.in:110
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:70
+#: data/mail.metainfo.xml.in:114
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:80
+#: data/mail.metainfo.xml.in:124
 msgid "Fix a potential crash while loading messages"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:93
+#: data/mail.metainfo.xml.in:137
 msgid "Secondary-click menu on the conversations list"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:97
+#: data/mail.metainfo.xml.in:141
 msgid "Ensure conversations are re-sorted by date when new messages appear"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:98
+#: data/mail.metainfo.xml.in:142
 msgid "Fixed sender combobox after opening a mailto link"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:99
+#: data/mail.metainfo.xml.in:143
 msgid "Mark sent messages as read"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:100
+#: data/mail.metainfo.xml.in:144
 msgid "Fix a hang when deleting the last message in a mailbox"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:101
+#: data/mail.metainfo.xml.in:145
 msgid "Fix an issue where some mail fails to be deleted"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:105
+#: data/mail.metainfo.xml.in:149
 msgid "Use accent color for unread message titles"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:106
+#: data/mail.metainfo.xml.in:150
 msgid "Autoselect the next message after archiving"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:107
+#: data/mail.metainfo.xml.in:151
 msgid "Use local time in message headers"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:157
-msgid "elementary, Inc."
 msgstr ""
 
 #: data/io.elementary.mail.desktop.in:7
