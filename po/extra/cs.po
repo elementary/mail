@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-11 17:51+0000\n"
+"POT-Creation-Date: 2023-02-07 00:32+0000\n"
 "PO-Revision-Date: 2022-02-02 14:45+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/extra/cs/>\n"
@@ -63,214 +63,128 @@ msgstr "Inline HTML editor, který ukládá rozepsané zprávy na server"
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr "Funguje s Gmail, Yahoo! Mail a dalšími oblíbenými IMAP servery"
 
-#: data/io.elementary.mail.appdata.xml.in:27
-#: data/io.elementary.mail.appdata.xml.in:48
-#: data/io.elementary.mail.appdata.xml.in:63
-#: data/io.elementary.mail.appdata.xml.in:79
-#: data/io.elementary.mail.appdata.xml.in:105
-#: data/io.elementary.mail.appdata.xml.in:119
-msgid "Fixes:"
-msgstr "Opravy:"
-
-#: data/io.elementary.mail.appdata.xml.in:29
-msgid "Fixed an error which caused mail accounts to be loaded multiple times"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:30
-msgid "Fixed a bug which caused Mail to crash occasionally"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:31
-msgid "Display recipient in Sent folder instead of sender"
-msgstr ""
-
-#: data/io.elementary.mail.appdata.xml.in:33
-#: data/io.elementary.mail.appdata.xml.in:54
-#: data/io.elementary.mail.appdata.xml.in:67
-#: data/io.elementary.mail.appdata.xml.in:87
-#: data/io.elementary.mail.appdata.xml.in:110
-#: data/io.elementary.mail.appdata.xml.in:125
-#: data/io.elementary.mail.appdata.xml.in:135
+#: data/io.elementary.mail.appdata.xml.in:28
+#: data/io.elementary.mail.appdata.xml.in:46
+#: data/io.elementary.mail.appdata.xml.in:68
+#: data/io.elementary.mail.appdata.xml.in:82
+#: data/io.elementary.mail.appdata.xml.in:103
 msgid "Improvements:"
 msgstr "Vylepšení:"
 
-#: data/io.elementary.mail.appdata.xml.in:35
+#: data/io.elementary.mail.appdata.xml.in:30
+#: data/io.elementary.mail.appdata.xml.in:50
+#: data/io.elementary.mail.appdata.xml.in:71
+#: data/io.elementary.mail.appdata.xml.in:84
+#: data/io.elementary.mail.appdata.xml.in:108
+msgid "Updated translations"
+msgstr "Aktualizovány překlady"
+
+#: data/io.elementary.mail.appdata.xml.in:40
+#: data/io.elementary.mail.appdata.xml.in:62
+#: data/io.elementary.mail.appdata.xml.in:78
+#: data/io.elementary.mail.appdata.xml.in:95
+msgid "Fixes:"
+msgstr "Opravy:"
+
+#: data/io.elementary.mail.appdata.xml.in:42
+msgid "Fixed an error which caused mail accounts to be loaded multiple times"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:43
+msgid "Fixed a bug which caused Mail to crash occasionally"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:44
+msgid "Display recipient in Sent folder instead of sender"
+msgstr ""
+
+#: data/io.elementary.mail.appdata.xml.in:48
 #, fuzzy
 #| msgid "Updated translations"
 msgid "Updated app icon"
 msgstr "Aktualizovány překlady"
 
-#: data/io.elementary.mail.appdata.xml.in:36
+#: data/io.elementary.mail.appdata.xml.in:49
 msgid "New design"
 msgstr ""
 
-#: data/io.elementary.mail.appdata.xml.in:37
 #: data/io.elementary.mail.appdata.xml.in:57
-#: data/io.elementary.mail.appdata.xml.in:69
-#: data/io.elementary.mail.appdata.xml.in:92
-#: data/io.elementary.mail.appdata.xml.in:113
-#: data/io.elementary.mail.appdata.xml.in:129
-#: data/io.elementary.mail.appdata.xml.in:142
-msgid "Updated translations"
-msgstr "Aktualizovány překlady"
-
-#: data/io.elementary.mail.appdata.xml.in:43
-#: data/io.elementary.mail.appdata.xml.in:75
-#: data/io.elementary.mail.appdata.xml.in:98
+#: data/io.elementary.mail.appdata.xml.in:91
 msgid "New features:"
 msgstr "Nové funkce:"
 
-#: data/io.elementary.mail.appdata.xml.in:45
+#: data/io.elementary.mail.appdata.xml.in:59
 msgid "Use message subject for composer window title"
 msgstr "Předmět zprávy používán jako titulek okna editoru zprávy"
 
-#: data/io.elementary.mail.appdata.xml.in:46
+#: data/io.elementary.mail.appdata.xml.in:60
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
 "Přidána podpora pro sjednocenou schránku příchozí pošty pro účty služby "
 "Microsoft 365"
 
-#: data/io.elementary.mail.appdata.xml.in:50
+#: data/io.elementary.mail.appdata.xml.in:64
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr "Opravena chyba která způsobovala pád zjišťování nové pošty na pozadí"
 
-#: data/io.elementary.mail.appdata.xml.in:51
+#: data/io.elementary.mail.appdata.xml.in:65
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr "Odebrány duplicitní adresy odesilatele při psaní zprávy"
 
-#: data/io.elementary.mail.appdata.xml.in:52
+#: data/io.elementary.mail.appdata.xml.in:66
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr "Opraveno zamrzání při archivaci poslední zprávy ve složce"
 
-#: data/io.elementary.mail.appdata.xml.in:56
+#: data/io.elementary.mail.appdata.xml.in:70
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "Office 365 přejmenováno na Microsoft 365 v souladu s přejmenováním služby "
 "jejím poskytovatelem"
 
-#: data/io.elementary.mail.appdata.xml.in:65
+#: data/io.elementary.mail.appdata.xml.in:80
 msgid "Fix a potential crash while loading messages"
 msgstr "Opraven potenciální pád při načítání zpráv"
 
-#: data/io.elementary.mail.appdata.xml.in:77
+#: data/io.elementary.mail.appdata.xml.in:93
 msgid "Secondary-click menu on the conversations list"
 msgstr "Kontextová nabídka (pravé tlačítko myši) v seznamu konverzací"
 
-#: data/io.elementary.mail.appdata.xml.in:81
+#: data/io.elementary.mail.appdata.xml.in:97
 msgid "Ensure conversations are re-sorted by date when new messages appear"
 msgstr ""
 "Zajištěno že konverzace jsou přetříděné podle data když se objeví nové zprávy"
 
-#: data/io.elementary.mail.appdata.xml.in:82
+#: data/io.elementary.mail.appdata.xml.in:98
 msgid "Fixed sender combobox after opening a mailto link"
 msgstr "Opraven kombobox odesilatele po otevření odkazu mailto"
 
-#: data/io.elementary.mail.appdata.xml.in:83
+#: data/io.elementary.mail.appdata.xml.in:99
 msgid "Mark sent messages as read"
 msgstr "Označit odeslané zprávy jako přečtené"
 
-#: data/io.elementary.mail.appdata.xml.in:84
+#: data/io.elementary.mail.appdata.xml.in:100
 msgid "Fix a hang when deleting the last message in a mailbox"
 msgstr "Opraven zásek při mazání poslední zprávy ve schránce"
 
-#: data/io.elementary.mail.appdata.xml.in:85
+#: data/io.elementary.mail.appdata.xml.in:101
 msgid "Fix an issue where some mail fails to be deleted"
 msgstr "Opraven problém kdy se některé e-maily nedařilo zjistit"
 
-#: data/io.elementary.mail.appdata.xml.in:89
+#: data/io.elementary.mail.appdata.xml.in:105
 msgid "Use accent color for unread message titles"
 msgstr "Použít barvu zvýraznění pro nadpisy nepřečtených zpráv"
 
-#: data/io.elementary.mail.appdata.xml.in:90
+#: data/io.elementary.mail.appdata.xml.in:106
 msgid "Autoselect the next message after archiving"
 msgstr "Po archivaci automaticky vybrat následující zprávu"
 
-#: data/io.elementary.mail.appdata.xml.in:91
+#: data/io.elementary.mail.appdata.xml.in:107
 msgid "Use local time in message headers"
 msgstr "V záhlaví zpráv používat místní čas"
 
-#: data/io.elementary.mail.appdata.xml.in:100
-msgid "Send a notification when new messages arrive"
-msgstr "Odeslat upozornění pokud dorazí nová zpráva"
-
-#: data/io.elementary.mail.appdata.xml.in:101
-msgid "Add a button to manually fetch new messages"
-msgstr "Přidáno tlačítko pro ruční stažení nových zpráv"
-
-#: data/io.elementary.mail.appdata.xml.in:102
-msgid "Automatically select the next message after deleting"
-msgstr "Automatické vybrání následující zprávy pro vymazání"
-
-#: data/io.elementary.mail.appdata.xml.in:103
-msgid "Filter unread or starred conversations"
-msgstr "Filtrovat nepřečtené nebo hvězdičko označené konverzace"
-
-#: data/io.elementary.mail.appdata.xml.in:107
-msgid "Make sure we don't save sent messages twice for outlook.com accounts"
-msgstr ""
-"Zajištěno, že odeslané zprávy nejsou ukládány dvakrát v případ účtů na "
-"outlook.com"
-
-#: data/io.elementary.mail.appdata.xml.in:108
-msgid "Fix a potential crash when changing folders"
-msgstr "Opraven potenciální pád při změně složek"
-
-#: data/io.elementary.mail.appdata.xml.in:112
-msgid "Improve search performance"
-msgstr "Zlepšena výkonnost vyhledávání"
-
-#: data/io.elementary.mail.appdata.xml.in:121
-msgid "Fix an issue that prevented some messaging from rendering at all"
-msgstr "Opraven problém který bránil některý zprávám být vůbec vykresleny"
-
-#: data/io.elementary.mail.appdata.xml.in:122
-msgid ""
-"Set the correct \"From\" address when replying and multiple accounts are set "
-"up"
-msgstr ""
-"Nastavena správná adresa Od při odpovídání za situace, že je nastaveno "
-"vícero účtů"
-
-#: data/io.elementary.mail.appdata.xml.in:123
-msgid "Fix a crash on startup for some conversations"
-msgstr "Opraven pád při spouštění v případě některých konverzací"
-
-#: data/io.elementary.mail.appdata.xml.in:127
-msgid "Only save drafts when there are new changes"
-msgstr "Koncepty ukládat pouze v případě nových změn"
-
-#: data/io.elementary.mail.appdata.xml.in:128
-msgid "Move Undo notification to the message view"
-msgstr "Upozornění na vzetí zpět přesunuty do zobrazení zprávy"
-
-#: data/io.elementary.mail.appdata.xml.in:137
-msgid "Preserve conversation subjects when replying or forwarding"
-msgstr "Zachovávány předměty konverzace při odpovídání či přeposílání"
-
-#: data/io.elementary.mail.appdata.xml.in:138
-msgid "Disable the composer while messages are being sent"
-msgstr "Vypnutí editoru při odesílání zprávy"
-
-#: data/io.elementary.mail.appdata.xml.in:139
-msgid "Edit saved draft messages"
-msgstr "Upravování uložených konceptů zpráv"
-
-#: data/io.elementary.mail.appdata.xml.in:140
-msgid "Make sure we don't save sent messages twice for some account types"
-msgstr ""
-"Zajištěno že v případě některých typů účtů nejsou zprávy ukládány dvakrát"
-
-#: data/io.elementary.mail.appdata.xml.in:141
-msgid "Stability improvements"
-msgstr "Zlepšení stability"
-
-#: data/io.elementary.mail.appdata.xml.in:148
-msgid "Complete rewrite from scratch"
-msgstr "Kompletní předělání od začátku"
-
-#: data/io.elementary.mail.appdata.xml.in:189
+#: data/io.elementary.mail.appdata.xml.in:157
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
@@ -281,6 +195,67 @@ msgstr "Email;E-mail;Pošta;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Napsat zprávu"
+
+#~ msgid "Send a notification when new messages arrive"
+#~ msgstr "Odeslat upozornění pokud dorazí nová zpráva"
+
+#~ msgid "Add a button to manually fetch new messages"
+#~ msgstr "Přidáno tlačítko pro ruční stažení nových zpráv"
+
+#~ msgid "Automatically select the next message after deleting"
+#~ msgstr "Automatické vybrání následující zprávy pro vymazání"
+
+#~ msgid "Filter unread or starred conversations"
+#~ msgstr "Filtrovat nepřečtené nebo hvězdičko označené konverzace"
+
+#~ msgid "Make sure we don't save sent messages twice for outlook.com accounts"
+#~ msgstr ""
+#~ "Zajištěno, že odeslané zprávy nejsou ukládány dvakrát v případ účtů na "
+#~ "outlook.com"
+
+#~ msgid "Fix a potential crash when changing folders"
+#~ msgstr "Opraven potenciální pád při změně složek"
+
+#~ msgid "Improve search performance"
+#~ msgstr "Zlepšena výkonnost vyhledávání"
+
+#~ msgid "Fix an issue that prevented some messaging from rendering at all"
+#~ msgstr "Opraven problém který bránil některý zprávám být vůbec vykresleny"
+
+#~ msgid ""
+#~ "Set the correct \"From\" address when replying and multiple accounts are "
+#~ "set up"
+#~ msgstr ""
+#~ "Nastavena správná adresa Od při odpovídání za situace, že je nastaveno "
+#~ "vícero účtů"
+
+#~ msgid "Fix a crash on startup for some conversations"
+#~ msgstr "Opraven pád při spouštění v případě některých konverzací"
+
+#~ msgid "Only save drafts when there are new changes"
+#~ msgstr "Koncepty ukládat pouze v případě nových změn"
+
+#~ msgid "Move Undo notification to the message view"
+#~ msgstr "Upozornění na vzetí zpět přesunuty do zobrazení zprávy"
+
+#~ msgid "Preserve conversation subjects when replying or forwarding"
+#~ msgstr "Zachovávány předměty konverzace při odpovídání či přeposílání"
+
+#~ msgid "Disable the composer while messages are being sent"
+#~ msgstr "Vypnutí editoru při odesílání zprávy"
+
+#~ msgid "Edit saved draft messages"
+#~ msgstr "Upravování uložených konceptů zpráv"
+
+#~ msgid "Make sure we don't save sent messages twice for some account types"
+#~ msgstr ""
+#~ "Zajištěno že v případě některých typů účtů nejsou zprávy ukládány dvakrát"
+
+#~ msgid "Stability improvements"
+#~ msgstr "Zlepšení stability"
+
+#~ msgid "Complete rewrite from scratch"
+#~ msgstr "Kompletní předělání od začátku"
 
 #~ msgid "io.elementary.mail"
 #~ msgstr "io.elementary.mail"
