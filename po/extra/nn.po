@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 17:51+0000\n"
-"PO-Revision-Date: 2021-11-02 17:45+0000\n"
+"PO-Revision-Date: 2023-02-04 10:25+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/mail/"
 "extra/nn/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 
 #: data/io.elementary.mail.appdata.xml.in:8
 #: data/io.elementary.mail.desktop.in:3
@@ -69,14 +69,15 @@ msgstr "Løyste feil:"
 #: data/io.elementary.mail.appdata.xml.in:29
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
+"Fiksa ein feil som førte til at e-postkontoar vart lasta inn fleire gonger"
 
 #: data/io.elementary.mail.appdata.xml.in:30
 msgid "Fixed a bug which caused Mail to crash occasionally"
-msgstr ""
+msgstr "Fiksa ein feil som gjorde at E-post krasja plutseleg"
 
 #: data/io.elementary.mail.appdata.xml.in:31
 msgid "Display recipient in Sent folder instead of sender"
-msgstr ""
+msgstr "Visar mottaker i Sendt-mappa istadenfor avsender"
 
 #: data/io.elementary.mail.appdata.xml.in:33
 #: data/io.elementary.mail.appdata.xml.in:54
@@ -89,14 +90,12 @@ msgid "Improvements:"
 msgstr "Forbetringar:"
 
 #: data/io.elementary.mail.appdata.xml.in:35
-#, fuzzy
-#| msgid "Updated translations"
 msgid "Updated app icon"
-msgstr "Oppdaterte oversetjingar"
+msgstr "Oppdatert app-ikon"
 
 #: data/io.elementary.mail.appdata.xml.in:36
 msgid "New design"
-msgstr ""
+msgstr "Nytt design"
 
 #: data/io.elementary.mail.appdata.xml.in:37
 #: data/io.elementary.mail.appdata.xml.in:57
@@ -116,20 +115,21 @@ msgstr "Nye funksjonar:"
 
 #: data/io.elementary.mail.appdata.xml.in:45
 msgid "Use message subject for composer window title"
-msgstr ""
+msgstr "Brukar emnetittel som tittel på Send melding-vindauge"
 
 #: data/io.elementary.mail.appdata.xml.in:46
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
-msgstr ""
+msgstr "Lagt til støtte for samla innboks på Microsoft 365-kontoar"
 
 #: data/io.elementary.mail.appdata.xml.in:50
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
+"Fiksa ein feil som gjorde at oppfølging av innboksen i bakgrunnen krasja"
 
 #: data/io.elementary.mail.appdata.xml.in:51
 msgid "Removed duplicate sender addresses when composing a message"
-msgstr ""
+msgstr "Fjerna dobbel avsendaradressa når du skriv ny melding"
 
 #: data/io.elementary.mail.appdata.xml.in:52
 msgid "Fix a freeze when archiving the last message in a folder"
