@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-11 17:51+0000\n"
+"POT-Creation-Date: 2023-02-07 00:32+0000\n"
 "PO-Revision-Date: 2022-09-30 22:24+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/mail/mail/sk/>\n"
@@ -126,14 +126,14 @@ msgstr "Skryť konverzácie bez hviezdičky"
 msgid "Filter Conversations"
 msgstr "Filtrovať konverzácie"
 
-#: src/MainWindow.vala:424
+#: src/MainWindow.vala:428
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Správy odstránené"
 msgstr[1] "Správa odstránená"
 msgstr[2] "Správy odstránené"
 
-#: src/MainWindow.vala:436
+#: src/MainWindow.vala:440
 msgid "Undo"
 msgstr "Späť"
 
@@ -216,78 +216,78 @@ msgstr "Priložiť súbor"
 msgid "Send"
 msgstr "Odoslať"
 
-#: src/Composer/ComposerWidget.vala:441
+#: src/Composer/ComposerWidget.vala:445
 msgid "Choose a file"
 msgstr "Vybrať súbor"
 
-#: src/Composer/ComposerWidget.vala:444
+#: src/Composer/ComposerWidget.vala:448
 msgid "Attach"
 msgstr "Priložiť"
 
-#: src/Composer/ComposerWidget.vala:445 src/Composer/ComposerWidget.vala:675
+#: src/Composer/ComposerWidget.vala:449 src/Composer/ComposerWidget.vala:683
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Zrušiť"
 
-#: src/Composer/ComposerWidget.vala:585
+#: src/Composer/ComposerWidget.vala:593
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %b %-e, %Y v %-l:%M %p"
 
-#: src/Composer/ComposerWidget.vala:615
+#: src/Composer/ComposerWidget.vala:623
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Dňa %1$s, %2$s napísal:"
 
-#: src/Composer/ComposerWidget.vala:619
+#: src/Composer/ComposerWidget.vala:627
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Preposlaná správa ----------"
 
-#: src/Composer/ComposerWidget.vala:621
+#: src/Composer/ComposerWidget.vala:629
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Od: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:622
+#: src/Composer/ComposerWidget.vala:630
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Predmet: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:623
+#: src/Composer/ComposerWidget.vala:631
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Dátum: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:624
+#: src/Composer/ComposerWidget.vala:632
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Pre: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:626
+#: src/Composer/ComposerWidget.vala:634
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Kópia: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:666
+#: src/Composer/ComposerWidget.vala:674
 msgid "Permanently delete this draft?"
 msgstr "Natrvalo odstrániť tento koncept?"
 
-#: src/Composer/ComposerWidget.vala:667
+#: src/Composer/ComposerWidget.vala:675
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Táto akcia nemôže byť vrátená späť a váš koncept sa nedá obnoviť, keď už bol "
 "raz odstránený."
 
-#: src/Composer/ComposerWidget.vala:677
+#: src/Composer/ComposerWidget.vala:685
 msgid "Delete Draft"
 msgstr "Odstrániť koncept"
 
-#: src/Composer/ComposerWidget.vala:697
+#: src/Composer/ComposerWidget.vala:705
 msgid "Send without subject?"
 msgstr "Odoslať bez predmetu?"
 
-#: src/Composer/ComposerWidget.vala:698
+#: src/Composer/ComposerWidget.vala:706
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -295,38 +295,38 @@ msgstr ""
 "Táto správa má prázdne políčko predmetu. Príjemca pravdepodobne nerozozná "
 "dôležitosť či rozsah správy."
 
-#: src/Composer/ComposerWidget.vala:704
+#: src/Composer/ComposerWidget.vala:712
 msgid "Don't Send"
 msgstr "Neodosielať"
 
-#: src/Composer/ComposerWidget.vala:706
+#: src/Composer/ComposerWidget.vala:714
 msgid "Send Anyway"
 msgstr "Napriek tomu odoslať"
 
-#: src/Composer/ComposerWidget.vala:729
+#: src/Composer/ComposerWidget.vala:737
 msgid "Sent message was not saved"
 msgstr "Odoslaná správa nebola uložená"
 
-#: src/Composer/ComposerWidget.vala:730
+#: src/Composer/ComposerWidget.vala:738
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 "Správa bola odoslaná, avšak jej kópia nebola uložená do priečinka Odoslané."
 
-#: src/Composer/ComposerWidget.vala:744
+#: src/Composer/ComposerWidget.vala:752
 msgid "Unable to send message"
 msgstr "Nepodarilo sa odoslať správu"
 
-#: src/Composer/ComposerWidget.vala:745
+#: src/Composer/ComposerWidget.vala:753
 msgid "There was an unexpected error while sending your message."
 msgstr "Pri odosielaní vašej správy sa vyskytla neočakávaná chyba."
 
-#: src/Composer/ComposerWidget.vala:992
+#: src/Composer/ComposerWidget.vala:1000
 msgid "Unable to save draft"
 msgstr "Nepodarilo sa uložiť koncept"
 
-#: src/Composer/ComposerWidget.vala:993
+#: src/Composer/ComposerWidget.vala:1001
 msgid "There was an unexpected error while saving your draft."
 msgstr "Pri ukladaní vášho konceptu sa vyskytla neočakávaná chyba."
 
