@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-07 00:51+0000\n"
-"PO-Revision-Date: 2021-08-28 15:29+0000\n"
-"Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
+"PO-Revision-Date: 2023-02-17 14:25+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/mail/mail/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:58+0000\n"
 
 #: src/HeaderBar.vala:31
@@ -83,30 +83,28 @@ msgstr ""
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:165
-#, fuzzy, c-format
-#| msgid "Compose new message"
+#, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "رسالة جديدة"
-msgstr[1] "رسالة جديدة"
-msgstr[2] "رسالة جديدة"
-msgstr[3] "رسالة جديدة"
-msgstr[4] "رسالة جديدة"
-msgstr[5] "رسالة جديدة"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
 #: src/InboxMonitor.vala:177
-#, fuzzy, c-format
-#| msgid "Always Show from Sender"
+#, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] "اعرض دائما من المرسل"
-msgstr[1] "اعرض دائما من المرسل"
-msgstr[2] "اعرض دائما من المرسل"
-msgstr[3] "اعرض دائما من المرسل"
-msgstr[4] "اعرض دائما من المرسل"
-msgstr[5] "اعرض دائما من المرسل"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 #: src/MainWindow.vala:83
 msgid "Mail"
