@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-07 00:51+0000\n"
-"PO-Revision-Date: 2021-10-25 20:04+0000\n"
-"Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
+"PO-Revision-Date: 2023-02-17 14:25+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/mail/en_GB/>\n"
 "Language: en_GB\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: src/HeaderBar.vala:31
@@ -112,10 +112,8 @@ msgid "Fetch new messages"
 msgstr "Fetch new messages"
 
 #: src/MainWindow.vala:177
-#, fuzzy
-#| msgid "Fetching new messages"
 msgid "Fetching new messages…"
-msgstr "Fetching new messages"
+msgstr "Fetching new messages…"
 
 #: src/MainWindow.vala:187
 msgid "Hide read conversations"
