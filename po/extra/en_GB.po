@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-07 00:51+0000\n"
-"PO-Revision-Date: 2021-12-09 09:04+0000\n"
-"Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
+"PO-Revision-Date: 2023-02-17 14:25+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/extra/en_GB/>\n"
 "Language: en_GB\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
@@ -85,25 +85,23 @@ msgstr "Fixes:"
 
 #: data/mail.metainfo.xml.in:86
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
-msgstr ""
+msgstr "Fixed an error which caused mail accounts to be loaded multiple times"
 
 #: data/mail.metainfo.xml.in:87
 msgid "Fixed a bug which caused Mail to crash occasionally"
-msgstr ""
+msgstr "Fixed a bug which caused Mail to crash occasionally"
 
 #: data/mail.metainfo.xml.in:88
 msgid "Display recipient in Sent folder instead of sender"
-msgstr ""
+msgstr "Display recipient in Sent folder instead of sender"
 
 #: data/mail.metainfo.xml.in:92
-#, fuzzy
-#| msgid "Updated translations"
 msgid "Updated app icon"
-msgstr "Updated translations"
+msgstr "Updated app icon"
 
 #: data/mail.metainfo.xml.in:93
 msgid "New design"
-msgstr ""
+msgstr "New design"
 
 #: data/mail.metainfo.xml.in:101 data/mail.metainfo.xml.in:135
 msgid "New features:"
@@ -111,31 +109,31 @@ msgstr "New features:"
 
 #: data/mail.metainfo.xml.in:103
 msgid "Use message subject for composer window title"
-msgstr ""
+msgstr "Use message subject for composer window title"
 
 #: data/mail.metainfo.xml.in:104
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
-msgstr ""
+msgstr "Added support for Unified Inbox for Microsoft 365 accounts"
 
 #: data/mail.metainfo.xml.in:108
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
+"Fixed an error which caused the inbox monitoring in the background to crash"
 
 #: data/mail.metainfo.xml.in:109
 msgid "Removed duplicate sender addresses when composing a message"
-msgstr ""
+msgstr "Removed duplicate sender addresses when composing a message"
 
 #: data/mail.metainfo.xml.in:110
-#, fuzzy
-#| msgid "Fix a hang when deleting the last message in a mailbox"
 msgid "Fix a freeze when archiving the last message in a folder"
-msgstr "Fix a hang when deleting the last message in a mailbox"
+msgstr "Fix a freeze when archiving the last message in a folder"
 
 #: data/mail.metainfo.xml.in:114
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
+"Renamed Office 365 to Microsoft 365 to follow suit on Microsoft's rebranding"
 
 #: data/mail.metainfo.xml.in:124
 msgid "Fix a potential crash while loading messages"
