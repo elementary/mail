@@ -2,7 +2,8 @@ Source: io.elementary.mail
 Section: x11
 Priority: extra
 Maintainer: Cody Garver <cody@elementary.io>
-Build-Depends: debhelper (>= 10.5.1),
+Build-Depends: appstream,
+               debhelper (>= 10.5.1),
                libcamel1.2-dev,
                libedataserver1.2-dev,
                libedataserverui1.2-dev,
