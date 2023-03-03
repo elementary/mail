@@ -34,7 +34,7 @@ jobs:
         uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
         with:
           bundle: mail.flatpak
-          manifest-path: io.elementary.mail.yml
+          manifest-path: io.elementary.mail.json
           repository-name: appcenter
           repository-url: https://flatpak.elementary.io/repo.flatpakrepo
           cache-key: "flatpak-builder-${{ github.sha }}"

@@ -37,7 +37,7 @@ jobs:
         uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
         with:
           bundle: mail.flatpak
-          manifest-path: io.elementary.mail.yml
+          manifest-path: io.elementary.mail.json
           run-tests: true
           repository-name: appcenter
           repository-url: https://flatpak.elementary.io/repo.flatpakrepo
