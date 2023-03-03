@@ -1,7 +1,7 @@
 {
     "app-id": "io.elementary.mail",
     "runtime": "io.elementary.Platform",
-    "runtime-version": "7",
+    "runtime-version": "7.1",
     "sdk": "io.elementary.Sdk",
     "command": "io.elementary.mail",
     "finish-args": [
@@ -12,7 +12,9 @@
         "--socket=fallback-x11",
         "--socket=wayland",
         "--talk-name=org.gnome.evolution.dataserver.AddressBook10",
+        "--talk-name=org.gnome.evolution.dataserver.Calendar8",
         "--talk-name=org.gnome.evolution.dataserver.Sources5",
+        "--talk-name=org.gnome.evolution.dataserver.UserPrompter0",
         "--metadata=X-DConf=migrate-path=/io/elementary/mail/"
     ],
     "cleanup": [
@@ -38,6 +40,7 @@
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DENABLE_EXAMPLES=OFF",
                 "-DENABLE_GOA=OFF",
+                "-DENABLE_GTK4=OFF",
                 "-DWITH_LIBDB=OFF",
                 "-DENABLE_WEATHER=OFF",
                 "-DENABLE_CANBERRA=OFF",
@@ -50,7 +53,7 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/evolution-data-server.git",
-                    "tag": "3.40.2"
+                    "branch": "3.46.4"
                 }
             ],
             "modules": [
@@ -64,21 +67,6 @@
                             "type": "archive",
                             "url": "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
                             "md5": "12e517cac2b57a0121cda351570f1e63"
-                        }
-                    ]
-                },
-                {
-                    "name": "libgdata",
-                    "buildsystem": "meson",
-                    "config-opts": [
-                        "-Dalways_build_tests=false",
-                        "-Dgoa=disabled"
-                    ],
-                    "sources": [
-                        {
-                            "type": "git",
-                            "url": "https://gitlab.gnome.org/GNOME/libgdata.git",
-                            "tag": "0.18.0"
                         }
                     ]
                 },
@@ -101,10 +89,10 @@
                     ],
                     "sources": [
                         {
-                            "type": "git",
-                            "url": "https://github.com/libical/libical.git",
-                            "tag": "v3.0.9"
-                        }
+                            "type": "archive",
+                            "url": "https://github.com/libical/libical/releases/download/v3.0.16/libical-3.0.16.tar.gz",
+                            "sha256": "b44705dd71ca4538c86fb16248483ab4b48978524fb1da5097bd76aa2e0f0c33"
+                         }
                     ]
                 }
             ]
