@@ -248,7 +248,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                     return;
                 }
 
-                threads[service_uid].apply (search_result_uids);
+                threads[service_uid] = new Camel.FolderThread (folders[service_uid], search_result_uids, false);
 
                 var removed = 0;
                 change_info.get_removed_uids ().foreach ((uid) => {
