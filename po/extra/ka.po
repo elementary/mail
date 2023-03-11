@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-07 00:51+0000\n"
-"PO-Revision-Date: 2023-03-11 10:08+0000\n"
+"PO-Revision-Date: 2023-03-12 10:25+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/mail/extra/ka/>"
 "\n"
@@ -15,11 +15,11 @@ msgstr ""
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
 msgid "Mail"
-msgstr "წერილი"
+msgstr "ელფოსტა"
 
 #: data/mail.metainfo.xml.in:11 data/io.elementary.mail.desktop.in:4
 msgid "Send and receive mail"
-msgstr ""
+msgstr "მიიღეთ და გააგზავნეთ ელფოსტა"
 
 #: data/mail.metainfo.xml.in:13
 msgid ""
@@ -38,11 +38,11 @@ msgstr ""
 
 #: data/mail.metainfo.xml.in:17
 msgid "As-you-type searching"
-msgstr ""
+msgstr "კრეფისას-ძებნის მხარდაჭერა"
 
 #: data/mail.metainfo.xml.in:18
 msgid "Multiple account support"
-msgstr ""
+msgstr "ბევრი ანგარიშის მხარდაჭერა"
 
 #: data/mail.metainfo.xml.in:19
 msgid "Inline HTML composer that saves drafts to the server"
@@ -54,24 +54,24 @@ msgstr ""
 
 #: data/mail.metainfo.xml.in:65
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:90
 #: data/mail.metainfo.xml.in:112 data/mail.metainfo.xml.in:126
 #: data/mail.metainfo.xml.in:147
 msgid "Improvements:"
-msgstr ""
+msgstr "გაუმჯობესებები:"
 
 #: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:94
 #: data/mail.metainfo.xml.in:115 data/mail.metainfo.xml.in:128
 #: data/mail.metainfo.xml.in:152
 msgid "Updated translations"
-msgstr ""
+msgstr "განახლებული თარგმანები"
 
 #: data/mail.metainfo.xml.in:84 data/mail.metainfo.xml.in:106
 #: data/mail.metainfo.xml.in:122 data/mail.metainfo.xml.in:139
 msgid "Fixes:"
-msgstr ""
+msgstr "შეცდომების გასწორებები:"
 
 #: data/mail.metainfo.xml.in:86
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
@@ -87,15 +87,15 @@ msgstr ""
 
 #: data/mail.metainfo.xml.in:92
 msgid "Updated app icon"
-msgstr ""
+msgstr "აპის ხატულის განახლება"
 
 #: data/mail.metainfo.xml.in:93
 msgid "New design"
-msgstr ""
+msgstr "ახალი დიზაინი"
 
 #: data/mail.metainfo.xml.in:101 data/mail.metainfo.xml.in:135
 msgid "New features:"
-msgstr ""
+msgstr "ახალი ფუნქციები:"
 
 #: data/mail.metainfo.xml.in:103
 msgid "Use message subject for composer window title"
@@ -161,12 +161,12 @@ msgstr ""
 
 #: data/mail.metainfo.xml.in:151
 msgid "Use local time in message headers"
-msgstr ""
+msgstr "შეტყობინების თავსართებში ლოკალური დროის გამოყენება"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
-msgstr ""
+msgstr "Email;E-mail;Mail;ელფოსტა;"
 
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
-msgstr ""
+msgstr "შეტყობინების შედგენა"
