@@ -55,14 +55,17 @@ public class Mail.WebView : WebKit.WebView {
 
     construct {
         cancellable = new GLib.Cancellable ();
-        expand = true;
+        vexpand = true;
+        hexpand = true;
 
         internal_resources = new Gee.HashMap<string, InputStream> ();
 
         decide_policy.connect (on_decide_policy);
         load_changed.connect (on_load_changed);
 
-        key_release_event.connect (() => {
+        //@TODO: check whether this works as intended
+        var key_event_controller = new Gtk.EventControllerKey ();
+        key_event_controller.key_released.connect (() => {
             body_html_changed = true;
         });
     }
@@ -116,10 +119,6 @@ public class Mail.WebView : WebKit.WebView {
 
             load_finished ();
         }
-    }
-
-    public override void get_preferred_height (out int minimum_height, out int natural_height) {
-        minimum_height = natural_height = preferred_height;
     }
 
     public new void load_html (string? body) {
@@ -246,11 +245,7 @@ public class Mail.WebView : WebKit.WebView {
     }
 
     private bool handle_internal_response (WebKit.URISchemeRequest request) {
-#if HAS_SOUP_3
         string name = GLib.Uri.unescape_string (request.get_path ());
-#else
-        string name = Soup.URI.decode (request.get_path ());
-#endif
         InputStream? buf = this.internal_resources[name];
         if (buf != null) {
             request.finish (buf, -1, null);
