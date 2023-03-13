@@ -29,9 +29,12 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
     private ComposerWidget composer;
 
     construct {
-        margin = 12;
+        margin_top = 12;
+        margin_bottom = 12;
+        margin_start = 12;
+        margin_end = 12;
 
-        get_style_context ().add_class ("card");
+        add_css_class ("card");
 
         composer = new ComposerWidget.inline ();
         composer.margin_top = 6;
@@ -47,18 +50,16 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
 
         composer.quote_content (construct_type, prev_chain_info, prev_chain_message, prev_message_content);
 
-        add (composer);
+        set_child (composer);
 
         map.connect (() => {
             var viewport = get_parent ().get_parent ();
             if (viewport is Gtk.Viewport) {
-                height_request = viewport.get_allocated_height () - (margin * 2);
+                height_request = viewport.get_allocated_height () - (margin_top * 2);
             } else {
                 height_request = 200;
             }
         });
-
-        show_all ();
     }
 
     public InlineComposer (ComposerWidget.Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content) {
