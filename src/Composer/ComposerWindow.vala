@@ -18,7 +18,7 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class Mail.ComposerWindow : Hdy.ApplicationWindow {
+public class Mail.ComposerWindow : Gtk.ApplicationWindow {
 
     public ComposerWidget composer_widget { get; construct; }
 
@@ -37,12 +37,10 @@ public class Mail.ComposerWindow : Hdy.ApplicationWindow {
     }
 
     construct {
-        var titlebar = new Hdy.HeaderBar () {
-            has_subtitle = false,
-            show_close_button = true,
-            title = _("New Message")
+        var titlebar = new Gtk.HeaderBar () {
+            title_widget = new Gtk.Label (_("New Message"))
         };
-        titlebar.get_style_context ().add_class ("default-decoration");
+        titlebar.add_css_class ("default-decoration"); //@TODO: test: works?
 
         composer_widget.discarded.connect (() => {
             close ();
@@ -55,19 +53,18 @@ public class Mail.ComposerWindow : Hdy.ApplicationWindow {
                 subject = _("New Message");
             }
 
-            titlebar.title = title = subject;
+            ((Gtk.Label) titlebar.get_title_widget ()).label = title = subject;
         });
 
-        var content_grid = new Gtk.Grid ();
-        content_grid.orientation = Gtk.Orientation.VERTICAL;
-        content_grid.add (titlebar);
-        content_grid.add (composer_widget);
+        var content_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        content_box.append (titlebar);
+        content_box.append (composer_widget);
 
         height_request = 600;
         width_request = 680;
         title = _("New Message");
-        window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
+        //window_position = Gtk.WindowPosition.CENTER_ON_PARENT; @TODO: lookup how thats gonna work
 
-        add (content_grid);
+        set_child (content_box);
     }
 }
