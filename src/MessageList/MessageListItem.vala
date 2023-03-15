@@ -482,6 +482,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     private async void open_message (Camel.MimeMessage message) {
         yield parse_mime_content (message.content);
+        if (message_content == null) {
+            return;
+        }
+
         if (message_is_html) {
             web_view.load_html (message_content);
         } else {
