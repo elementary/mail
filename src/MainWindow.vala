@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.MainWindow : Hdy.ApplicationWindow {
+public class Mail.MainWindow : Gtk.ApplicationWindow {
     private HeaderBar headerbar;
     private Gtk.SearchEntry search_entry;
     private Gtk.Paned paned_end;
@@ -222,9 +222,9 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         message_list_scrolled.add (message_list_box);
         // Prevent the focus of the webview causing the ScrolledWindow to scroll
         var scrolled_child = message_list_scrolled.get_child ();
-        if (scrolled_child is Gtk.Container) {
+        /*if (scrolled_child is Gtk.Container) {
             ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
-        }
+        }*/
 
         view_overlay = new Gtk.Overlay () {
             expand = true

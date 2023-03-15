@@ -15,16 +15,12 @@ granite_dep = dependency('granite-7')
 gtk_dep = dependency('gtk4')
 gee_dep = dependency('gee-0.8')
 camel_dep = dependency('camel-1.2', version: '>= 3.28')
+libadwaita_dep = dependency('libadwaita-1')
 libedataserver_dep = dependency('libedataserver-1.2', version: '>= 3.28')
-libedataserverui_dep = dependency('libedataserverui-1.2', version: '>= 3.28')
-if libedataserverui_dep.version().version_compare('>=3.45.1')
-    add_project_arguments('--define=HAS_SOUP_3', language: 'vala')
-    webkit2_dep = dependency('webkit2gtk-4.1')
-    webkit2_web_extension_dep = dependency('webkit2gtk-web-extension-4.1')
-else
-    webkit2_dep = dependency('webkit2gtk-4.0', version: '>=2.28')
-    webkit2_web_extension_dep = dependency('webkit2gtk-web-extension-4.0', version: '>=2.28')
-endif
+libedataserverui_dep = dependency('libedataserverui4-1.0', version: '>= 3.28')
+add_project_arguments('--define=HAS_SOUP_3', language: 'vala')
+webkit2_dep = dependency('webkit2gtk-5.0')
+webkit2_web_extension_dep = dependency('webkit2gtk-web-extension-5.0')
 folks_dep = dependency('folks')
 m_dep = meson.get_compiler('c').find_library('m')
 
@@ -35,11 +31,12 @@ dependencies = [
     gobject_dep,
     granite_dep,
     gtk_dep,
+    libadwaita_dep,
     gee_dep,
     camel_dep,
     libedataserver_dep,
-#    libedataserverui_dep,
-#    webkit2_dep, # blocked-by: https://bugs.webkit.org/show_bug.cgi?id=210100
+    libedataserverui_dep,
+    webkit2_dep,
     folks_dep,
     m_dep
 ]
@@ -54,7 +51,7 @@ extension_dependencies = [
     glib_dep,
     gobject_dep,
     gee_dep,
-#    webkit2_web_extension_dep # blocked-by: https://bugs.webkit.org/show_bug.cgi?id=210100
+    webkit2_web_extension_dep
 ]
 
 add_global_arguments([
@@ -77,7 +74,7 @@ config_file = configure_file(
 )
 
 subdir('src')
-# subdir('webkit-extension') # blocked-by: https://bugs.webkit.org/show_bug.cgi?id=210100
+subdir('webkit-extension')
 subdir('data')
 subdir('po')
 if get_option('documentation')
