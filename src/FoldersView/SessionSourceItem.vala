@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
- public class Mail.SessionSourceItem : Granite.Widgets.SourceList.ExpandableItem {
+ public class Mail.SessionSourceItem : Mail.SourceList.ExpandableItem {
     public Mail.Backend.Session session { get; construct; }
 
     public SessionSourceItem (Mail.Backend.Session session) {

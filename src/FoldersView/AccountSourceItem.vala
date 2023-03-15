@@ -20,7 +20,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem {
+public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem {
     public Mail.Backend.Account account { get; construct; }
 
     public signal void loaded ();
@@ -130,7 +130,7 @@ public class Mail.AccountSourceItem : Granite.Widgets.SourceList.ExpandableItem 
         }
     }
 
-    private void show_info (Camel.FolderInfo? _folderinfo, Granite.Widgets.SourceList.ExpandableItem item) {
+    private void show_info (Camel.FolderInfo? _folderinfo, Mail.SourceList.ExpandableItem item) {
         var folderinfo = _folderinfo;
         while (folderinfo != null) {
             var folder_item = new FolderSourceItem (account, folderinfo);

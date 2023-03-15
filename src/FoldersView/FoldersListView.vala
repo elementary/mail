@@ -25,7 +25,7 @@ public class Mail.FoldersListView : Gtk.Grid {
 
     public Hdy.HeaderBar header_bar { get; private set; }
 
-    private Granite.Widgets.SourceList source_list;
+    private Mail.SourceList source_list;
     private Mail.SessionSourceItem session_source_item;
     private static GLib.Settings settings;
 
@@ -34,7 +34,7 @@ public class Mail.FoldersListView : Gtk.Grid {
     }
 
     construct {
-        source_list = new Granite.Widgets.SourceList ();
+        source_list = new Mail.SourceList ();
 
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
@@ -112,10 +112,10 @@ public class Mail.FoldersListView : Gtk.Grid {
         });
     }
 
-    private bool select_saved_folder (Granite.Widgets.SourceList.ExpandableItem item, string selected_folder_name) {
+    private bool select_saved_folder (Mail.SourceList.ExpandableItem item, string selected_folder_name) {
         foreach (var child in item.children) {
             if (child is FolderSourceItem) {
-                if (select_saved_folder ((Granite.Widgets.SourceList.ExpandableItem) child, selected_folder_name)) {
+                if (select_saved_folder ((Mail.SourceList.ExpandableItem) child, selected_folder_name)) {
                     return true;
                 }
 
