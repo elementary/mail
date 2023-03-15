@@ -9,7 +9,7 @@
  *
  * @since 0.3
  */
-public interface Mail.SourceListSortable : Mail.SourceList.ExpandableItem {
+private interface Mail.SourceListSortable : Mail.SourceList.ExpandableItem {
     /**
      * Emitted after a user has re-ordered an item via DnD.
      *
@@ -409,7 +409,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
          * @return (transfer full) A new {@link Granite.Widgets.SourceList.Item}.
          * @since 0.2
          */
-        public Item (string name = "") {
+        private Item (string name = "") {
             this.name = name;
         }
 
@@ -523,7 +523,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
          *
          * @since 0.2
          */
-        public uint n_children {
+        private uint n_children {
             get { return children_list.size; }
         }
 
@@ -561,19 +561,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
 
         construct {
             editable = false;
-        }
-
-        /**
-         * Checks whether the item contains the specified child.
-         *
-         * This method only considers the item's immediate children.
-         *
-         * @param item Item to search.
-         * @return Whether the item was found or not.
-         * @since 0.2
-         */
-        public bool contains (Item item) {
-            return item in children_list;
         }
 
         /**
@@ -623,60 +610,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         }
 
         /**
-         * Removes all the items contained by the item. It works similarly to
-         * {@link Granite.Widgets.SourceList.ExpandableItem.remove}.
-         *
-         * @see Granite.Widgets.SourceList.ExpandableItem.remove
-         * @see Granite.Widgets.SourceList.ExpandableItem.child_removed
-         * @since 0.2
-         */
-        public void clear () {
-            foreach (var item in children)
-                remove (item);
-        }
-
-        /**
-         * Expands the item and/or its children.
-         *
-         * @param inclusive Whether to also expand this item (true), or only its children (false).
-         * @param recursive Whether to recursively expand all the children (true), or only
-         * immediate children (false).
-         * @see Granite.Widgets.SourceList.ExpandableItem.expanded
-         * @since 0.2
-         */
-        public void expand_all (bool inclusive = true, bool recursive = true) {
-            set_expansion (this, inclusive, recursive, true);
-        }
-
-        /**
-         * Collapses the item and/or its children.
-         *
-         * @param inclusive Whether to also collapse this item (true), or only its children (false).
-         * @param recursive Whether to recursively collapse all the children (true), or only
-         * immediate children (false).
-         * @see Granite.Widgets.SourceList.ExpandableItem.expanded
-         * @since 0.2
-         */
-        public void collapse_all (bool inclusive = true, bool recursive = true) {
-            set_expansion (this, inclusive, recursive, false);
-        }
-
-        private static void set_expansion (ExpandableItem item, bool inclusive, bool recursive, bool expanded) {
-            if (inclusive)
-                item.expanded = expanded;
-
-            foreach (var child_item in item.children) {
-                var child_expandable_item = child_item as ExpandableItem;
-                if (child_expandable_item != null) {
-                    if (recursive)
-                        set_expansion (child_expandable_item, true, true, expanded);
-                    else
-                        child_expandable_item.expanded = expanded;
-                }
-            }
-        }
-
-        /**
          * Recursively expands the item along with its parent(s).
          *
          * @see Granite.Widgets.SourceList.ExpandableItem.expanded
@@ -690,18 +623,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             if (parent != null)
                 parent.expand_with_parents ();
             expanded = true;
-        }
-
-        /**
-         * Recursively collapses the item along with its parent(s).
-         *
-         * @see Granite.Widgets.SourceList.ExpandableItem.expanded
-         * @since 0.2
-         */
-        public void collapse_with_parents () {
-            if (parent != null)
-                parent.collapse_with_parents ();
-            expanded = false;
         }
     }
 
@@ -762,7 +683,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
              * Whether the node is valid or not. When it is not valid, no valid references are
              * returned by the object to avoid errors (null is returned instead).
              */
-            public bool valid {
+            private bool valid {
                 get { return row_reference != null && row_reference.valid (); }
             }
 
@@ -849,10 +770,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         private Gtk.TreeStore child_tree;
         private unowned SourceList.VisibleFunc? filter_func;
 
-        public DataModel () {
-
-        }
-
         construct {
             child_tree = new Gtk.TreeStore (Column.N_COLUMNS, Column.ITEM.type ());
             child_model = child_tree;
@@ -868,7 +785,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             return items.has_key (item);
         }
 
-        public void update_item (Item item) requires (has_item (item)) {
+        private void update_item (Item item) requires (has_item (item)) {
             assert (root != null);
 
             // Emitting row_changed() for this item's row in the child model causes the filter
@@ -1069,22 +986,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         }
 
         /**
-         * Returns a newly-created iterator pointing to the item, or null in case a valid iter
-         * was not found.
-         */
-        public Gtk.TreeIter? get_item_iter (Item item) {
-            var child_iter = get_item_child_iter (item);
-
-            if (child_iter != null) {
-                Gtk.TreeIter iter;
-                if (convert_child_iter_to_iter (out iter, child_iter))
-                    return iter;
-            }
-
-            return null;
-        }
-
-        /**
          * External "extra" filter method.
          */
         public void set_filter_func (SourceList.VisibleFunc? visible_func) {
@@ -1120,7 +1021,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             return is_path_at_root_level (get_path (iter));
         }
 
-        public bool is_path_at_root_level (Gtk.TreePath path) {
+        private bool is_path_at_root_level (Gtk.TreePath path) {
             return path.get_depth () == 1;
         }
 
@@ -1201,7 +1102,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
          * TreeDragDest implementation
          */
 
-        public bool drag_data_received (Gtk.TreePath dest, Gtk.SelectionData selection_data) {
+        private bool drag_data_received (Gtk.TreePath dest, Gtk.SelectionData selection_data) {
             Gtk.TreeModel model;
             Gtk.TreePath src_path;
 
@@ -1305,7 +1206,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             items.set (item, new NodeWrapper (child_tree, dest_iter));
         }
 
-        public bool row_drop_possible (Gtk.TreePath dest, Gtk.SelectionData selection_data) {
+        private bool row_drop_possible (Gtk.TreePath dest, Gtk.SelectionData selection_data) {
             Gtk.TreeModel model;
             Gtk.TreePath src_path;
 
@@ -1416,7 +1317,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
          * does exactly what we need.
          */
 
-        public bool drag_data_get (Gtk.TreePath path, Gtk.SelectionData selection_data) {
+        private bool drag_data_get (Gtk.TreePath path, Gtk.SelectionData selection_data) {
             // If we're asked for a data about a row, just have the default implementation fill in
             // selection_data. Please note that it will provide information relative to child_model.
             if (selection_data.get_target () == Gdk.Atom.intern_static_string ("GTK_TREE_MODEL_ROW"))
@@ -1432,7 +1333,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             return false;
         }
 
-        public bool row_draggable (Gtk.TreePath path) {
+        private bool row_draggable (Gtk.TreePath path) {
             if (!base.row_draggable (path))
                 return false;
 
@@ -1465,15 +1366,9 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
     private class CellRendererIcon : Gtk.CellRendererPixbuf {
         public signal void activated (string path);
 
-        private const Gtk.IconSize ICON_SIZE = Gtk.IconSize.MENU;
-
-        public CellRendererIcon () {
-
-        }
-
         construct {
             mode = Gtk.CellRendererMode.ACTIVATABLE;
-            stock_size = ICON_SIZE;
+            stock_size = Gtk.IconSize.MENU;
         }
 
         public override bool activate (
@@ -1488,8 +1383,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             return true;
         }
     }
-
-
 
     /**
      * A cell renderer that only adds space.
@@ -1536,7 +1429,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
      * All the user interaction happens here.
      */
     private class Tree : Gtk.TreeView {
-
         public DataModel data_model { get; construct set; }
 
         public signal void item_selected (Item? item);
@@ -2169,7 +2061,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         /**
          * Updates the tree to reflect the ''expanded'' property of expandable_item.
          */
-        public void update_expansion (ExpandableItem expandable_item) {
+        private void update_expansion (ExpandableItem expandable_item) {
             var path = data_model.get_item_path (expandable_item);
 
             if (path != null) {
@@ -2629,7 +2521,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
      *
      * @since 0.2
      */
-    public Pango.EllipsizeMode ellipsize_mode {
+    private Pango.EllipsizeMode ellipsize_mode {
         get { return tree.ellipsize_mode; }
         set { tree.ellipsize_mode = value; }
     }
@@ -2640,7 +2532,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
      * @see Granite.Widgets.SourceList.start_editing_item
      * @since 0.2
      */
-    public bool editing {
+    private bool editing {
         get { return tree.editing; }
     }
 
@@ -2701,217 +2593,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
      * @see Granite.Widgets.SourceList.set_filter_func
      * @since 0.2
      */
-    public void refilter () {
+    private void refilter () {
         data_model.refilter ();
-    }
-
-    /**
-     * Queries the actual expansion state of //item//.
-     *
-     * @see Granite.Widgets.SourceList.ExpandableItem.expanded
-     * @return Whether //item// is expanded or not.
-     * @since 0.2
-     */
-    public bool is_item_expanded (Item item) requires (has_item (item)) {
-        var path = data_model.get_item_path (item);
-        return path != null && tree.is_row_expanded (path);
-    }
-
-    /**
-     * If //item// is editable, this activates the editor; otherwise, it does nothing.
-     * If an item was already being edited, this will fail.
-     *
-     * @param item Item to edit.
-     * @see Granite.Widgets.SourceList.Item.editable
-     * @see Granite.Widgets.SourceList.editing
-     * @see Granite.Widgets.SourceList.stop_editing
-     * @return true if the editing started successfully; false otherwise.
-     * @since 0.2
-     */
-    public bool start_editing_item (Item item) requires (has_item (item)) {
-        return tree.start_editing_item (item);
-    }
-
-    /**
-     * Cancels any editing operation going on.
-     *
-     * @see Granite.Widgets.SourceList.editing
-     * @see Granite.Widgets.SourceList.start_editing_item
-     * @since 0.2
-     */
-    public void stop_editing () {
-        if (editing)
-            tree.stop_editing ();
-    }
-
-    /**
-     * Turns Source List into a //drag source//.
-     *
-     * This enables items that implement {@link Granite.Widgets.SourceListDragSource}
-     * to be dragged outside the Source List and drop data into external widgets.
-     *
-     * @param src_entries an array of {@link Gtk.TargetEntry}s indicating the targets
-     * that the drag will support.
-     * @see Granite.Widgets.SourceListDragSource
-     * @see Granite.Widgets.SourceList.disable_drag_source
-     * @since 0.3
-     */
-    public void enable_drag_source (Gtk.TargetEntry[] src_entries) {
-        tree.configure_drag_source (src_entries);
-    }
-
-    /**
-     * Undoes the effect of {@link Granite.Widgets.SourceList.enable_drag_source}
-     *
-     * @see Granite.Widgets.SourceList.enable_drag_source
-     * @since 0.3
-     */
-    public void disable_drag_source () {
-        tree.configure_drag_source (null);
-    }
-
-    /**
-     * Turns Source List into a //drop destination//.
-     *
-     * This enables items that implement {@link Granite.Widgets.SourceListDragDest}
-     * to receive data from external widgets via drag-and-drop.
-     *
-     * @param dest_entries an array of {@link Gtk.TargetEntry}s indicating the drop
-     * types that Source List items will accept.
-     * @param actions a bitmask of possible actions for a drop onto Source List items.
-     * @see Granite.Widgets.SourceListDragDest
-     * @see Granite.Widgets.SourceList.disable_drag_dest
-     * @since 0.3
-     */
-    public void enable_drag_dest (Gtk.TargetEntry[] dest_entries, Gdk.DragAction actions) {
-        tree.configure_drag_dest (dest_entries, actions);
-    }
-
-    /**
-     * Undoes the effect of {@link Granite.Widgets.SourceList.enable_drag_dest}
-     *
-     * @see Granite.Widgets.SourceList.enable_drag_dest
-     * @since 0.3
-     */
-    public void disable_drag_dest () {
-        tree.configure_drag_dest (null, 0);
-    }
-
-    /**
-     * Scrolls the source list tree to make //item// visible.
-     *
-     * {@link Granite.Widgets.SourceList.ExpandableItem.expand_with_parents} is called
-     * for the item's parent if //expand_parents// is //true//, to make sure it's not
-     * hidden behind a collapsed row.
-     *
-     * If use_align is //false//, then the row_align argument is ignored, and the tree
-     * does the minimum amount of work to scroll the item onto the screen. This means that
-     * the item will be scrolled to the edge closest to its current position. If the item
-     * is currently visible on the screen, nothing is done.
-     *
-     * @param item Item to scroll to.
-     * @param expand_parents Whether to recursively expand item's parent in case they are collapsed.
-     * @param use_align Whether to use the //row_align// argument.
-     * @param row_align The vertical alignment of //item//. 0.0 means top, 0.5 center, and 1.0 bottom.
-     * @return //true// if successful; //false// otherwise.
-     * @since 0.2
-     */
-    public bool scroll_to_item (
-        Item item,
-        bool expand_parents = true,
-        bool use_align = false,
-        float row_align = 0
-    ) requires (has_item (item)) {
-        if (expand_parents && item.parent != null)
-            item.parent.expand_with_parents ();
-
-        return tree.scroll_to_item (item, use_align, row_align);
-    }
-
-    /**
-     * Gets the previous item with respect to //reference//.
-     *
-     * @param reference Item to use as reference.
-     * @return The item that appears before //reference//, or //null// if there's none.
-     * @since 0.2
-     */
-    public Item? get_previous_item (Item reference) requires (has_item (reference)) {
-        // this will return null for root, so iter_n_children() will always work fine
-        var iter = data_model.get_item_iter (reference);
-        if (iter != null) {
-            Gtk.TreeIter new_iter = iter; // workaround for valac 0.18
-            if (data_model.iter_previous (ref new_iter))
-                return data_model.get_item (new_iter);
-        }
-
-        return null;
-    }
-
-    /**
-     * Gets the next item with respect to //reference//.
-     *
-     * @param reference Item to use as reference.
-     * @return The item that appears after //reference//, or //null// if there's none.
-     * @since 0.2
-     */
-    public Item? get_next_item (Item reference) requires (has_item (reference)) {
-        // this will return null for root, so iter_n_children() will always work fine
-        var iter = data_model.get_item_iter (reference);
-        if (iter != null) {
-            Gtk.TreeIter new_iter = iter; // workaround for valac 0.18
-            if (data_model.iter_next (ref new_iter))
-                return data_model.get_item (new_iter);
-        }
-
-        return null;
-    }
-
-    /**
-     * Gets the first visible child of an expandable item.
-     *
-     * @param parent Parent of the child to look up.
-     * @return The first visible child of //parent//, or null if it was not found.
-     * @since 0.2
-     */
-    public Item? get_first_child (ExpandableItem parent) {
-        return get_nth_child (parent, 0);
-    }
-
-    /**
-     * Gets the last visible child of an expandable item.
-     *
-     * @param parent Parent of the child to look up.
-     * @return The last visible child of //parent//, or null if it was not found.
-     * @since 0.2
-     */
-    public Item? get_last_child (ExpandableItem parent) {
-        return get_nth_child (parent, (int) get_n_visible_children (parent) - 1);
-    }
-
-    /**
-     * Gets the number of visible children of an expandable item.
-     *
-     * @param parent Item to query.
-     * @return Number of visible children of //parent//.
-     * @since 0.2
-     */
-    public uint get_n_visible_children (ExpandableItem parent) {
-        // this will return null for root, so iter_n_children() will always work properly.
-        var parent_iter = data_model.get_item_iter (parent);
-        return data_model.iter_n_children (parent_iter);
-    }
-
-    private Item? get_nth_child (ExpandableItem parent, int index) {
-        if (index < 0)
-            return null;
-
-        // this will return null for root, so iter_nth_child() will always work properly.
-        var parent_iter = data_model.get_item_iter (parent);
-
-        Gtk.TreeIter child_iter;
-        if (data_model.iter_nth_child (out child_iter, parent_iter, index))
-            return data_model.get_item (child_iter);
-
-        return null;
     }
 }

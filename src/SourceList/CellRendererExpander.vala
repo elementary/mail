@@ -15,9 +15,6 @@
 public class Mail.CellRendererExpander : Gtk.CellRenderer {
     public bool is_category_expander { get; set; default = false; }
 
-    public CellRendererExpander () {
-    }
-
     public override Gtk.SizeRequestMode get_request_mode () {
         return Gtk.SizeRequestMode.HEIGHT_FOR_WIDTH;
     }

@@ -16,7 +16,6 @@
  * @since 0.2
  */
 public class Mail.CellRendererBadge : Gtk.CellRenderer {
-
     public string text { get; set; default = ""; }
 
     private Pango.Rectangle text_logical_rect;
@@ -24,9 +23,6 @@ public class Mail.CellRendererBadge : Gtk.CellRenderer {
     private Gtk.Border margin;
     private Gtk.Border padding;
     private Gtk.Border border;
-
-    public CellRendererBadge () {
-    }
 
     public override Gtk.SizeRequestMode get_request_mode () {
         return Gtk.SizeRequestMode.HEIGHT_FOR_WIDTH;
