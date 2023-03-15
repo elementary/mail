@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class Mail.GroupedFolderSourceItem : Granite.Widgets.SourceList.Item {
+public class Mail.GroupedFolderSourceItem : Mail.SourceList.Item {
     public Mail.Backend.Session session { get; construct; }
     public Camel.FolderInfoFlags folder_type { get; construct; }
 

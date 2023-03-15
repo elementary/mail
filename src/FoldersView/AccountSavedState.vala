@@ -33,7 +33,7 @@ public class Mail.AccountSavedState : GLib.Object {
         items = new Gee.HashMap<string, FolderSourceItem> ();
     }
 
-    public void bind_with_expandable_item (Granite.Widgets.SourceList.ExpandableItem item) {
+    public void bind_with_expandable_item (Mail.SourceList.ExpandableItem item) {
         if (item is AccountSourceItem) {
             settings.bind ("expanded", item, "expanded", SettingsBindFlags.DEFAULT | SettingsBindFlags.GET_NO_CHANGES);
         } else if (item is FolderSourceItem) {
