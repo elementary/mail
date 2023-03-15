@@ -15,6 +15,7 @@ You'll need the following dependencies:
 * libglib2.0-dev
 * libgranite-7-dev
 * libwebkit2gtk-4.0-dev
+* meson
 * valac
 
 Run `meson build` to configure the build environment and then change to the build directory and run `ninja` to build

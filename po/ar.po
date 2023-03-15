@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-23 23:44+0000\n"
-"PO-Revision-Date: 2021-08-28 15:29+0000\n"
-"Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
+"POT-Creation-Date: 2023-02-07 00:51+0000\n"
+"PO-Revision-Date: 2023-02-17 14:25+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/mail/mail/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:58+0000\n"
 
 #: src/HeaderBar.vala:31
@@ -83,30 +83,28 @@ msgstr ""
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:165
-#, fuzzy, c-format
-#| msgid "Compose new message"
+#, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "رسالة جديدة"
-msgstr[1] "رسالة جديدة"
-msgstr[2] "رسالة جديدة"
-msgstr[3] "رسالة جديدة"
-msgstr[4] "رسالة جديدة"
-msgstr[5] "رسالة جديدة"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
 #: src/InboxMonitor.vala:177
-#, fuzzy, c-format
-#| msgid "Always Show from Sender"
+#, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] "اعرض دائما من المرسل"
-msgstr[1] "اعرض دائما من المرسل"
-msgstr[2] "اعرض دائما من المرسل"
-msgstr[3] "اعرض دائما من المرسل"
-msgstr[4] "اعرض دائما من المرسل"
-msgstr[5] "اعرض دائما من المرسل"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 #: src/MainWindow.vala:83
 msgid "Mail"
@@ -125,7 +123,7 @@ msgstr "رسالة جديدة"
 #: src/MainWindow.vala:177
 #, fuzzy
 #| msgid "Compose new message"
-msgid "Fetching new messages"
+msgid "Fetching new messages…"
 msgstr "رسالة جديدة"
 
 #: src/MainWindow.vala:187
@@ -146,7 +144,7 @@ msgstr "حذف المحادثة"
 msgid "Filter Conversations"
 msgstr "حذف المحادثة"
 
-#: src/MainWindow.vala:424
+#: src/MainWindow.vala:428
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "لا توجد رسائل مختارة"
@@ -156,7 +154,7 @@ msgstr[3] "رسائل محذوفة"
 msgstr[4] "رسالة محذوفة"
 msgstr[5] "رسائل محذوفة"
 
-#: src/MainWindow.vala:436
+#: src/MainWindow.vala:440
 msgid "Undo"
 msgstr "تراجع"
 
@@ -240,115 +238,115 @@ msgstr "إرفاق ملف"
 msgid "Send"
 msgstr "إرسال"
 
-#: src/Composer/ComposerWidget.vala:441
+#: src/Composer/ComposerWidget.vala:445
 msgid "Choose a file"
 msgstr "اختر ملف"
 
-#: src/Composer/ComposerWidget.vala:444
+#: src/Composer/ComposerWidget.vala:448
 msgid "Attach"
 msgstr "إرفاق"
 
-#: src/Composer/ComposerWidget.vala:445 src/Composer/ComposerWidget.vala:675
+#: src/Composer/ComposerWidget.vala:449 src/Composer/ComposerWidget.vala:683
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "إلغاء"
 
-#: src/Composer/ComposerWidget.vala:585
+#: src/Composer/ComposerWidget.vala:593
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "a, %b %-e, %Y at %-l:%M %p%"
 
-#: src/Composer/ComposerWidget.vala:615
+#: src/Composer/ComposerWidget.vala:623
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "في %1$s, %2$s كتب:"
 
-#: src/Composer/ComposerWidget.vala:619
+#: src/Composer/ComposerWidget.vala:627
 msgid "---------- Forwarded message ----------"
 msgstr "---------- رسالة معاد توجيهها ----------"
 
-#: src/Composer/ComposerWidget.vala:621
+#: src/Composer/ComposerWidget.vala:629
 #, c-format
 msgid "From: %s<br/>"
 msgstr "من: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:622
+#: src/Composer/ComposerWidget.vala:630
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "العنوان: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:623
+#: src/Composer/ComposerWidget.vala:631
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "التاريخ: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:624
+#: src/Composer/ComposerWidget.vala:632
 #, c-format
 msgid "To: %s<br/>"
 msgstr "إلى: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:626
+#: src/Composer/ComposerWidget.vala:634
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "نسخة: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:666
+#: src/Composer/ComposerWidget.vala:674
 msgid "Permanently delete this draft?"
 msgstr "حذف المسودّة بشكل نهائي؟"
 
-#: src/Composer/ComposerWidget.vala:667
+#: src/Composer/ComposerWidget.vala:675
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "لا يمكنك التراجع عن هذا الإجراء، ولا يمكنك استعادة المسودة عند إتمام عملية "
 "الحذف."
 
-#: src/Composer/ComposerWidget.vala:677
+#: src/Composer/ComposerWidget.vala:685
 msgid "Delete Draft"
 msgstr "حذف المسودة"
 
-#: src/Composer/ComposerWidget.vala:697
+#: src/Composer/ComposerWidget.vala:705
 msgid "Send without subject?"
 msgstr "إرسال بدون عنوان؟"
 
-#: src/Composer/ComposerWidget.vala:698
+#: src/Composer/ComposerWidget.vala:706
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
 "حقل عنوان هذه الرسالة فارغ. المستلِم قد لا يعرف محتوى الرسالة أو أهميتها."
 
-#: src/Composer/ComposerWidget.vala:704
+#: src/Composer/ComposerWidget.vala:712
 msgid "Don't Send"
 msgstr "لا ترسل"
 
-#: src/Composer/ComposerWidget.vala:706
+#: src/Composer/ComposerWidget.vala:714
 msgid "Send Anyway"
 msgstr "ارسل على أي حال"
 
-#: src/Composer/ComposerWidget.vala:729
+#: src/Composer/ComposerWidget.vala:737
 msgid "Sent message was not saved"
 msgstr "الرسالة المُرسَلة لم يتم حفظها"
 
-#: src/Composer/ComposerWidget.vala:730
+#: src/Composer/ComposerWidget.vala:738
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr "تم إرسال الرسالة، ولكن لم يتم حفظ نسخة منها في مجلد الرسائل المرسلة."
 
-#: src/Composer/ComposerWidget.vala:744
+#: src/Composer/ComposerWidget.vala:752
 msgid "Unable to send message"
 msgstr "غير قادر على إرسال الرسالة"
 
-#: src/Composer/ComposerWidget.vala:745
+#: src/Composer/ComposerWidget.vala:753
 msgid "There was an unexpected error while sending your message."
 msgstr "وجد خطأ غير متوقع عند إرسال الرسالة."
 
-#: src/Composer/ComposerWidget.vala:992
+#: src/Composer/ComposerWidget.vala:1000
 msgid "Unable to save draft"
 msgstr "غير قادر على حفظ المسودة"
 
-#: src/Composer/ComposerWidget.vala:993
+#: src/Composer/ComposerWidget.vala:1001
 msgid "There was an unexpected error while saving your draft."
 msgstr "حدث خطأ غير متوقع عند محاولة حفظ المسودة."
 

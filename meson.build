@@ -1,7 +1,7 @@
 project(
     'io.elementary.mail',
     'vala', 'c',
-    version: '7.0.0'
+    version: '7.0.1'
 )
 
 gnome = import('gnome')
@@ -16,9 +16,15 @@ gtk_dep = dependency('gtk4')
 gee_dep = dependency('gee-0.8')
 camel_dep = dependency('camel-1.2', version: '>= 3.28')
 libedataserver_dep = dependency('libedataserver-1.2', version: '>= 3.28')
-# libedataserverui_dep = dependency('libedataserverui-1.2', version: '>= 3.28')
-# webkit2_dep = dependency('webkit2gtk-4.0', version: '>=2.28') # blocked-by: https://bugs.webkit.org/show_bug.cgi?id=210100
-# webkit2_web_extension_dep = dependency('webkit2gtk-web-extension-4.0', version: '>=2.28') # blocked-by: https://bugs.webkit.org/show_bug.cgi?id=210100
+libedataserverui_dep = dependency('libedataserverui-1.2', version: '>= 3.28')
+if libedataserverui_dep.version().version_compare('>=3.45.1')
+    add_project_arguments('--define=HAS_SOUP_3', language: 'vala')
+    webkit2_dep = dependency('webkit2gtk-4.1')
+    webkit2_web_extension_dep = dependency('webkit2gtk-web-extension-4.1')
+else
+    webkit2_dep = dependency('webkit2gtk-4.0', version: '>=2.28')
+    webkit2_web_extension_dep = dependency('webkit2gtk-web-extension-4.0', version: '>=2.28')
+endif
 folks_dep = dependency('folks')
 m_dep = meson.get_compiler('c').find_library('m')
 

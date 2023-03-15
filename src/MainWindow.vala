@@ -174,7 +174,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             active = true,
             halign = Gtk.Align.CENTER,
             valign = Gtk.Align.CENTER,
-            tooltip_text = _("Fetching new messages")
+            tooltip_text = _("Fetching new messages…")
         };
 
         refresh_stack = new Gtk.Stack () {
@@ -240,7 +240,11 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         message_overlay.no_show_all = true;
 
         message_list_box.hovering_over_link.connect ((label, url) => {
+#if HAS_SOUP_3
+            var hover_url = url != null ? GLib.Uri.unescape_string (url) : null;
+#else
             var hover_url = url != null ? Soup.URI.decode (url) : null;
+#endif
 
             if (hover_url == null) {
                 message_overlay.hide ();

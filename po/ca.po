@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-23 23:44+0000\n"
-"PO-Revision-Date: 2021-10-06 01:02+0000\n"
+"POT-Creation-Date: 2023-02-07 00:51+0000\n"
+"PO-Revision-Date: 2022-07-15 11:01+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -110,8 +110,8 @@ msgid "Fetch new messages"
 msgstr "Obtén missatges nous"
 
 #: src/MainWindow.vala:177
-msgid "Fetching new messages"
-msgstr "S'obtenen missatges nous."
+msgid "Fetching new messages…"
+msgstr "S'obtenen missatges nous…"
 
 #: src/MainWindow.vala:187
 msgid "Hide read conversations"
@@ -125,13 +125,13 @@ msgstr "Amaga les converses no destacades"
 msgid "Filter Conversations"
 msgstr "Filtra les converses"
 
-#: src/MainWindow.vala:424
+#: src/MainWindow.vala:428
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Missatge suprimit"
 msgstr[1] "Missatges suprimits"
 
-#: src/MainWindow.vala:436
+#: src/MainWindow.vala:440
 msgid "Undo"
 msgstr "Desfés-ho"
 
@@ -215,77 +215,77 @@ msgstr "Adjunta-hi un fitxer"
 msgid "Send"
 msgstr "Envia"
 
-#: src/Composer/ComposerWidget.vala:441
+#: src/Composer/ComposerWidget.vala:445
 msgid "Choose a file"
 msgstr "Escolliu un fitxer"
 
-#: src/Composer/ComposerWidget.vala:444
+#: src/Composer/ComposerWidget.vala:448
 msgid "Attach"
 msgstr "Adjunta"
 
-#: src/Composer/ComposerWidget.vala:445 src/Composer/ComposerWidget.vala:675
+#: src/Composer/ComposerWidget.vala:449 src/Composer/ComposerWidget.vala:683
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Canceŀla"
 
-#: src/Composer/ComposerWidget.vala:585
+#: src/Composer/ComposerWidget.vala:593
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e %b de %Y a les %-H.%M"
 
-#: src/Composer/ComposerWidget.vala:615
+#: src/Composer/ComposerWidget.vala:623
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s, %2$s va escriure el següent:"
 
-#: src/Composer/ComposerWidget.vala:619
+#: src/Composer/ComposerWidget.vala:627
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Missatge reenviat ----------"
 
-#: src/Composer/ComposerWidget.vala:621
+#: src/Composer/ComposerWidget.vala:629
 #, c-format
 msgid "From: %s<br/>"
 msgstr "De: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:622
+#: src/Composer/ComposerWidget.vala:630
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Assumpte: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:623
+#: src/Composer/ComposerWidget.vala:631
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Data: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:624
+#: src/Composer/ComposerWidget.vala:632
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Per a: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:626
+#: src/Composer/ComposerWidget.vala:634
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "A/c: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:666
+#: src/Composer/ComposerWidget.vala:674
 msgid "Permanently delete this draft?"
 msgstr "Voleu suprimir permanentment aquest esborrany?"
 
-#: src/Composer/ComposerWidget.vala:667
+#: src/Composer/ComposerWidget.vala:675
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "No podreu desfer aquesta acció ni recuperar l'esborrany un cop suprimit."
 
-#: src/Composer/ComposerWidget.vala:677
+#: src/Composer/ComposerWidget.vala:685
 msgid "Delete Draft"
 msgstr "Suprimeix l'esborrany"
 
-#: src/Composer/ComposerWidget.vala:697
+#: src/Composer/ComposerWidget.vala:705
 msgid "Send without subject?"
 msgstr "Voleu enviar-lo sense assumpte?"
 
-#: src/Composer/ComposerWidget.vala:698
+#: src/Composer/ComposerWidget.vala:706
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -293,19 +293,19 @@ msgstr ""
 "Aquest missatge té un camp d'assumpte buit. És possible que el destinatari "
 "no pugui inferir-ne l’abast o la importància."
 
-#: src/Composer/ComposerWidget.vala:704
+#: src/Composer/ComposerWidget.vala:712
 msgid "Don't Send"
 msgstr "No l'enviïs"
 
-#: src/Composer/ComposerWidget.vala:706
+#: src/Composer/ComposerWidget.vala:714
 msgid "Send Anyway"
 msgstr "Envia'l tanmateix"
 
-#: src/Composer/ComposerWidget.vala:729
+#: src/Composer/ComposerWidget.vala:737
 msgid "Sent message was not saved"
 msgstr "No s'ha desat el missatge enviat."
 
-#: src/Composer/ComposerWidget.vala:730
+#: src/Composer/ComposerWidget.vala:738
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -313,19 +313,19 @@ msgstr ""
 "El missatge s'ha enviat, però no se n'ha desat una còpia a la carpeta "
 "d'enviats."
 
-#: src/Composer/ComposerWidget.vala:744
+#: src/Composer/ComposerWidget.vala:752
 msgid "Unable to send message"
 msgstr "No es pot enviar el missatge."
 
-#: src/Composer/ComposerWidget.vala:745
+#: src/Composer/ComposerWidget.vala:753
 msgid "There was an unexpected error while sending your message."
 msgstr "Hi ha hagut un error inesperat a l'hora de d'enviar el missatge."
 
-#: src/Composer/ComposerWidget.vala:992
+#: src/Composer/ComposerWidget.vala:1000
 msgid "Unable to save draft"
 msgstr "No es pot desar l'esborrany."
 
-#: src/Composer/ComposerWidget.vala:993
+#: src/Composer/ComposerWidget.vala:1001
 msgid "There was an unexpected error while saving your draft."
 msgstr "Hi ha hagut un error inesperat a l'hora de desar l'esborrany."
 

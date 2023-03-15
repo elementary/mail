@@ -101,7 +101,7 @@ public class InsertLinkDialog : Granite.Dialog {
 
     private bool validate_url (string url) {
         try {
-            var regex = new Regex ("""^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$""");
+            var regex = new Regex ("""^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.%]+$""");
             return regex.match (url);
         } catch (Error e) {
             critical ("Could not create URL Regex %s", e.message);
