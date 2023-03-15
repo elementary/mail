@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-07 00:51+0000\n"
-"PO-Revision-Date: 2023-03-12 10:25+0000\n"
+"PO-Revision-Date: 2023-03-16 13:25+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/mail/extra/ka/>"
 "\n"
@@ -30,11 +30,11 @@ msgstr ""
 
 #: data/mail.metainfo.xml.in:15
 msgid "Lightweight mail client with full IMAP support"
-msgstr ""
+msgstr "მსუბუქი ელფოსტის კლიენტი IMAP-ის სრული მხარდაჭერით"
 
 #: data/mail.metainfo.xml.in:16
 msgid "Mail grouped into conversations, not a tree of threads"
-msgstr ""
+msgstr "ელფოსტების საუბრებში და არა ნაკადების ხეში დაჯგუფება"
 
 #: data/mail.metainfo.xml.in:17
 msgid "As-you-type searching"
@@ -50,7 +50,7 @@ msgstr ""
 
 #: data/mail.metainfo.xml.in:20
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
-msgstr ""
+msgstr "მუშაობს Gmail-თან, Yahoo! Mail-თან და სხვა პოპულარული IMAP სერვერებთან"
 
 #: data/mail.metainfo.xml.in:65
 msgid "elementary, Inc."
@@ -125,11 +125,11 @@ msgstr ""
 
 #: data/mail.metainfo.xml.in:124
 msgid "Fix a potential crash while loading messages"
-msgstr ""
+msgstr "შეტყობინებების ჩატვირთვისას პოტენციური ავარიის გასწორება"
 
 #: data/mail.metainfo.xml.in:137
 msgid "Secondary-click menu on the conversations list"
-msgstr ""
+msgstr "მეორადი-წკაპი საუბრების სიაზე მენიუს გახსნის"
 
 #: data/mail.metainfo.xml.in:141
 msgid "Ensure conversations are re-sorted by date when new messages appear"
@@ -141,7 +141,7 @@ msgstr ""
 
 #: data/mail.metainfo.xml.in:143
 msgid "Mark sent messages as read"
-msgstr ""
+msgstr "გაგზავნილი შეტყობინებების წაკითხულად მონიშვნა"
 
 #: data/mail.metainfo.xml.in:144
 msgid "Fix a hang when deleting the last message in a mailbox"
