@@ -52,7 +52,7 @@ jobs:
     name: Gettext
     runs-on: ubuntu-22.04
     container:
-      image: elementary/docker:next-unstable
+      image: ghcr.io/elementary/docker:next-unstable
 
     steps:
     - name: Install git
