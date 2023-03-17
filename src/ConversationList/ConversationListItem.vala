@@ -19,7 +19,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.ConversationListItem : VirtualizingListBoxRow {
+public class Mail.ConversationListItem : Gtk.Box {
     private Gtk.Image status_icon;
     private Gtk.Label date;
     private Gtk.Label messages;
@@ -29,14 +29,14 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     private Gtk.Revealer status_revealer;
 
     construct {
-        status_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic", Gtk.IconSize.MENU);
+        status_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic");
 
         status_revealer = new Gtk.Revealer ();
-        status_revealer.add (status_icon);
+        status_revealer.set_child (status_icon);
 
-        var flagged_icon = new Gtk.Image.from_icon_name ("starred-symbolic", Gtk.IconSize.MENU);
+        var flagged_icon = new Gtk.Image.from_icon_name ("starred-symbolic");
         flagged_icon_revealer = new Gtk.Revealer ();
-        flagged_icon_revealer.add (flagged_icon);
+        flagged_icon_revealer.set_child (flagged_icon);
 
         source = new Gtk.Label (null) {
             hexpand = true,
@@ -44,15 +44,14 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
             use_markup = true,
             xalign = 0
         };
-        source.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        source.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         messages = new Gtk.Label (null) {
             halign = Gtk.Align.END
         };
 
-        weak Gtk.StyleContext messages_style = messages.get_style_context ();
-        messages_style.add_class (Granite.STYLE_CLASS_BADGE);
-        messages_style.add_class (Gtk.STYLE_CLASS_FLAT);
+        messages.add_css_class (Granite.STYLE_CLASS_BADGE);
+        messages.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         topic = new Gtk.Label (null) {
             hexpand = true,
@@ -64,10 +63,13 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
             halign = Gtk.Align.END
         };
 
-        date.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        date.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var grid = new Gtk.Grid () {
-            margin = 12,
+            margin_top = 12,
+            margin_bottom = 12,
+            margin_start = 12,
+            margin_end = 12,
             column_spacing = 12,
             row_spacing = 6
         };
@@ -79,10 +81,8 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         grid.attach (topic, 1, 1, 2, 1);
         grid.attach (messages, 3, 1, 1, 1);
 
-        get_style_context ().add_class ("conversation-list-item");
-        add (grid);
-
-        show_all ();
+        add_css_class ("conversation-list-item");
+        append (grid);
     }
 
     public void assign (ConversationItemModel data) {
@@ -101,7 +101,6 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         uint num_messages = data.num_messages;
         messages.label = num_messages > 1 ? "%u".printf (num_messages) : null;
         messages.visible = num_messages > 1;
-        messages.no_show_all = num_messages <= 1;
 
         if (data.unread) {
             get_style_context ().add_class ("unread-message");

@@ -20,7 +20,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.ConversationListBox : VirtualizingListBox {
+public class Mail.ConversationListBox : Gtk.Box {
     public signal void conversation_selected (Camel.FolderThreadNode? node);
     public signal void conversation_focused (Camel.FolderThreadNode? node);
 
@@ -36,100 +36,125 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     private bool current_search_hide_read = false;
     private bool current_search_hide_unstarred = false;
     private Gee.HashMap<string, ConversationItemModel> conversations;
-    private ConversationListStore list_store;
+    private ListStore list_store;
+    private Gtk.SingleSelection selection_model;
+    private Gtk.ListView list_view;
+    private Gtk.ScrolledWindow scrolled_window;
     private MoveHandler move_handler;
 
     private uint mark_read_timeout_id = 0;
 
     construct {
-        activate_on_single_click = true;
+        orientation = Gtk.Orientation.VERTICAL;
+        spacing = 0;
+
+        var factory = new Gtk.SignalListItemFactory ();
+        factory.setup.connect ((obj) => {
+            var list_item = (Gtk.ListItem) obj;
+
+            list_item.set_child (new ConversationListItem ());
+        });
+        factory.bind.connect ((obj) => {
+            var list_item = (Gtk.ListItem) obj;
+
+            ((ConversationListItem)list_item.child).assign((ConversationItemModel) list_item.get_item ());
+        });
+
+        list_store = new ListStore (typeof(ConversationItemModel));
+        selection_model = new Gtk.SingleSelection (list_store);
+        list_view = new Gtk.ListView (selection_model, factory);
+
+        scrolled_window = new Gtk.ScrolledWindow () {
+            hscrollbar_policy = Gtk.PolicyType.NEVER,
+            width_request = 158,
+            vexpand = true,
+            hexpand = true,
+            child = list_view
+        };
+        this.append (scrolled_window);
+
+        //list_store.sort (thread_sort_function);
+
         conversations = new Gee.HashMap<string, ConversationItemModel> ();
         folders = new Gee.HashMap<string, Camel.Folder> ();
         folder_info_flags = new Gee.HashMap<string, Camel.FolderInfoFlags> ();
         threads = new Gee.HashMap<string, Camel.FolderThread> ();
-        list_store = new ConversationListStore ();
-        list_store.set_sort_func (thread_sort_function);
-        list_store.set_filter_func (filter_function);
-
-        model = list_store;
         move_handler = new MoveHandler ();
 
-        factory_func = (item, old_widget) => {
-            ConversationListItem? row = null;
-            if (old_widget != null) {
-                row = old_widget as ConversationListItem;
-            } else {
-                row = new ConversationListItem ();
-            }
+        var list_store_filter_model = new Gtk.FilterListModel (list_store, null);
 
-            row.assign ((ConversationItemModel)item);
-            row.show_all ();
-            return row;
-        };
+        // factory_func = (item, old_widget) => {
+        //     ConversationListItem? row = null;
+        //     if (old_widget != null) {
+        //         row = old_widget as ConversationListItem;
+        //     } else {
+        //         row = new ConversationListItem ();
+        //     }
 
-        row_activated.connect ((row) => {
+        //     row.assign ((ConversationItemModel)item);
+        //     row.show_all ();
+        //     return row;
+        // };
+
+        selection_model.selection_changed.connect ((position) => {
             if (mark_read_timeout_id != 0) {
                 GLib.Source.remove (mark_read_timeout_id);
                 mark_read_timeout_id = 0;
             }
 
-            if (row == null) {
-                conversation_focused (null);
-            } else {
-                conversation_focused (((ConversationItemModel) row).node);
+            var selected_items = selection_model.get_selection ();
+            uint current_item_position;
+            Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
+            bitset_iter.init_first(selected_items, out current_item_position);
+            assert(bitset_iter.is_valid());
 
-                if (((ConversationItemModel) row).unread) {
-                    mark_read_timeout_id = GLib.Timeout.add_seconds (MARK_READ_TIMEOUT_SECONDS, () => {
-                        set_thread_flag (((ConversationItemModel) row).node, Camel.MessageFlags.SEEN);
+            var conversation_item = (ConversationItemModel) list_store.get_item (current_item_position);
+            conversation_focused (conversation_item.node);
+            print(conversation_item.subject);
 
-                        mark_read_timeout_id = 0;
-                        return false;
-                    });
-                }
+            if (conversation_item.unread) {
+                mark_read_timeout_id = GLib.Timeout.add_seconds (MARK_READ_TIMEOUT_SECONDS, () => {
+                    set_thread_flag (conversation_item.node, Camel.MessageFlags.SEEN);
+
+                    mark_read_timeout_id = 0;
+                    return false;
+                });
             }
+            // We call get_action_group() on the parent window, instead of on `this` directly, due to a
+            // bug with Gtk.Widget.get_action_group(). See https://gitlab.gnome.org/GNOME/gtk/issues/1396
+            var window = (Gtk.ApplicationWindow) get_root ();
+            ((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_READ)).set_enabled (conversation_item.unread);
+            ((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_UNREAD)).set_enabled (!conversation_item.unread);
+            ((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_STAR)).set_enabled (!conversation_item.flagged);
+            ((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_UNSTAR)).set_enabled (conversation_item.flagged);
+            conversation_selected (conversation_item.node);
         });
 
-        row_selected.connect ((row) => {
-            if (row == null) {
-                conversation_selected (null);
-            } else {
-                // We call get_action_group() on the parent window, instead of on `this` directly, due to a
-                // bug with Gtk.Widget.get_action_group(). See https://gitlab.gnome.org/GNOME/gtk/issues/1396
-                var window = (Gtk.ApplicationWindow) get_toplevel ();
-                weak GLib.ActionMap win_action_map = (GLib.ActionMap) window.get_action_group (MainWindow.ACTION_GROUP_PREFIX);
-                ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_READ)).set_enabled (((ConversationItemModel) row).unread);
-                ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_UNREAD)).set_enabled (!((ConversationItemModel) row).unread);
-                ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_STAR)).set_enabled (!((ConversationItemModel) row).flagged);
-                ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_UNSTAR)).set_enabled (((ConversationItemModel) row).flagged);
-                conversation_selected (((ConversationItemModel) row).node);
-            }
-        });
+        // button_release_event.connect ((e) => {
 
-        button_release_event.connect ((e) => {
+        //     if (e.button != Gdk.BUTTON_SECONDARY) {
+        //         return Gdk.EVENT_PROPAGATE;
+        //     }
 
-            if (e.button != Gdk.BUTTON_SECONDARY) {
-                return Gdk.EVENT_PROPAGATE;
-            }
+        //     var row = get_row_at_y ((int)e.y);
 
-            var row = get_row_at_y ((int)e.y);
+        //     if (selected_row_widget != row) {
+        //         select_row (row);
+        //     }
 
-            if (selected_row_widget != row) {
-                select_row (row);
-            }
+        //     return create_context_menu (e, (ConversationListItem)row);
+        // });
 
-            return create_context_menu (e, (ConversationListItem)row);
-        });
+        // key_release_event.connect ((e) => {
 
-        key_release_event.connect ((e) => {
+        //     if (e.keyval != Gdk.Key.Menu) {
+        //         return Gdk.EVENT_PROPAGATE;
+        //     }
 
-            if (e.keyval != Gdk.Key.Menu) {
-                return Gdk.EVENT_PROPAGATE;
-            }
+        //     var row = selected_row_widget;
 
-            var row = selected_row_widget;
-
-            return create_context_menu (e, (ConversationListItem)row);
-        });
+        //     return create_context_menu (e, (ConversationListItem)row);
+        // });
     }
 
     private static void set_thread_flag (Camel.FolderThreadNode? node, Camel.MessageFlags flag) {
@@ -158,7 +183,6 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         conversation_focused (null);
         conversation_selected (null);
 
-        uint previous_items = list_store.get_n_items ();
         lock (conversations) {
             lock (folders) {
                 lock (threads) {
@@ -167,7 +191,6 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                     threads.clear ();
 
                     list_store.remove_all ();
-                    list_store.items_changed (0, previous_items, 0);
 
                     cancellable = new GLib.Cancellable ();
 
@@ -217,8 +240,6 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 }
             }
         }
-
-        list_store.items_changed (0, 0, list_store.get_n_items ());
     }
 
     public async void refresh_folder (GLib.Cancellable? cancellable = null) {
@@ -247,15 +268,17 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 if (search_result_uids == null) {
                     return;
                 }
-
-                threads[service_uid].apply (search_result_uids);
+                print("Folder chaned");
+                threads[service_uid] = new Camel.FolderThread (folders[service_uid], search_result_uids, false);
 
                 var removed = 0;
                 change_info.get_removed_uids ().foreach ((uid) => {
                     var item = conversations[uid];
                     if (item != null) {
                         conversations.unset (uid);
-                        list_store.remove (item);
+                        uint item_position;
+                        list_store.find (item, out item_position);
+                        list_store.remove (item_position);
                         removed++;
                     }
                 });
@@ -272,7 +295,9 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                     } else {
                         if (item.is_older_than (child)) {
                             conversations.unset (child.message.uid);
-                            list_store.remove (item);
+                            uint item_position;
+                            list_store.find (item, out item_position);
+                            list_store.remove (item_position);
                             removed++;
                             add_conversation_item (folder_info_flags[service_uid], child, threads[service_uid], service_uid);
                         };
@@ -280,8 +305,6 @@ public class Mail.ConversationListBox : VirtualizingListBox {
 
                     child = child.next;
                 }
-
-                list_store.items_changed (0, removed, list_store.get_n_items ());
             }
         }
     }
@@ -341,7 +364,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     private void add_conversation_item (Camel.FolderInfoFlags folder_info_flags, Camel.FolderThreadNode child, Camel.FolderThread thread, string service_uid) {
         var item = new ConversationItemModel (folder_info_flags, child, thread, service_uid);
         conversations[child.message.uid] = item;
-        list_store.add (item);
+        list_store.append (item);
     }
 
     private static bool filter_function (GLib.Object obj) {
@@ -357,106 +380,121 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     }
 
     public void mark_read_selected_messages () {
-        var selected_rows = get_selected_rows ();
-        foreach (var row in selected_rows) {
-            (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.SEEN, ~0);
-        }
+        var selected_items = list_view.model.get_selection ();
+        uint current_item_position;
+        Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
+        bitset_iter.init_first(selected_items, out current_item_position);
+        do {
+            ((ConversationItemModel)list_store.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.SEEN, ~0);
+            bitset_iter.next (out current_item_position);
+        } while (bitset_iter.is_valid());
     }
 
     public void mark_star_selected_messages () {
-        var selected_rows = get_selected_rows ();
-        foreach (var row in selected_rows) {
-            (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.FLAGGED, ~0);
-        }
+        var selected_items = list_view.model.get_selection ();
+        uint current_item_position;
+        Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
+        bitset_iter.init_first(selected_items, out current_item_position);
+        do {
+            ((ConversationItemModel)list_store.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.FLAGGED, ~0);
+            bitset_iter.next (out current_item_position);
+        } while (bitset_iter.is_valid());
     }
 
     public void mark_unread_selected_messages () {
-        var selected_rows = get_selected_rows ();
-        foreach (var row in selected_rows) {
-            (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.SEEN, 0);
-        }
+        var selected_items = list_view.model.get_selection ();
+        uint current_item_position;
+        Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
+        bitset_iter.init_first(selected_items, out current_item_position);
+        do {
+            ((ConversationItemModel)list_store.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.SEEN, 0);
+            bitset_iter.next (out current_item_position);
+        } while (bitset_iter.is_valid());
     }
 
     public void mark_unstar_selected_messages () {
-        var selected_rows = get_selected_rows ();
-        foreach (var row in selected_rows) {
-            (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.FLAGGED, 0);
-        }
+        var selected_items = list_view.model.get_selection ();
+        uint current_item_position;
+        Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
+        bitset_iter.init_first(selected_items, out current_item_position);
+        do {
+            ((ConversationItemModel)list_store.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.SEEN, 0);
+            bitset_iter.next (out current_item_position);
+        } while (bitset_iter.is_valid());
     }
 
-    public async int archive_selected_messages () {
-        var archive_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
+    // public async int archive_selected_messages () {
+    //     var archive_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
 
-        var selected_rows = get_selected_rows ();
-        int selected_rows_start_index = list_store.get_index_of (selected_rows.to_array ()[0]);
+    //     var selected_rows = get_selected_rows ();
+    //     int selected_rows_start_index = list_store.get_index_of (selected_rows.to_array ()[0]);
 
-        foreach (unowned var selected_row in selected_rows) {
-            var selected_item_model = (ConversationItemModel) selected_row;
+    //     foreach (unowned var selected_row in selected_rows) {
+    //         var selected_item_model = (ConversationItemModel) selected_row;
 
-            if (archive_threads[selected_item_model.service_uid] == null) {
-                archive_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
-            }
+    //         if (archive_threads[selected_item_model.service_uid] == null) {
+    //             archive_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
+    //         }
 
-            archive_threads[selected_item_model.service_uid].add (selected_item_model.node);
-        }
+    //         archive_threads[selected_item_model.service_uid].add (selected_item_model.node);
+    //     }
 
-        var archived = 0;
-        foreach (var service_uid in archive_threads.keys) {
-            archived += yield move_handler.archive_threads (folders[service_uid], archive_threads[service_uid]);
-        }
+    //     var archived = 0;
+    //     foreach (var service_uid in archive_threads.keys) {
+    //         archived += yield move_handler.archive_threads (folders[service_uid], archive_threads[service_uid]);
+    //     }
 
-        if (archived > 0) {
-            foreach (var service_uid in archive_threads.keys) {
-                var threads = archive_threads[service_uid];
+    //     if (archived > 0) {
+    //         foreach (var service_uid in archive_threads.keys) {
+    //             var threads = archive_threads[service_uid];
 
-                foreach (unowned var thread in threads) {
-                    unowned var uid = thread.message.uid;
-                    var item = conversations[uid];
-                    if (item != null) {
-                        conversations.unset (uid);
-                        list_store.remove (item);
-                    }
-                }
-            }
-        }
+    //             foreach (unowned var thread in threads) {
+    //                 unowned var uid = thread.message.uid;
+    //                 var item = conversations[uid];
+    //                 if (item != null) {
+    //                     conversations.unset (uid);
+    //                     list_store.remove (item);
+    //                 }
+    //             }
+    //         }
+    //     }
 
-        list_store.items_changed (0, archived, list_store.get_n_items ());
-        select_row_at_index (selected_rows_start_index);
+    //     list_store.items_changed (0, archived, list_store.get_n_items ());
+    //     select_row_at_index (selected_rows_start_index);
 
-        return archived;
-    }
+    //     return archived;
+    // }
 
-    public int trash_selected_messages () {
-        var trash_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
+    // public int trash_selected_messages () {
+    //     var trash_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
 
-        var selected_rows = get_selected_rows ();
-        int selected_rows_start_index = list_store.get_index_of (selected_rows.to_array ()[0]);
+    //     var selected_rows = get_selected_rows ();
+    //     int selected_rows_start_index = list_store.get_index_of (selected_rows.to_array ()[0]);
 
-        foreach (unowned var selected_row in selected_rows) {
-            var selected_item_model = (ConversationItemModel) selected_row;
+    //     foreach (unowned var selected_row in selected_rows) {
+    //         var selected_item_model = (ConversationItemModel) selected_row;
 
-            if (trash_threads[selected_item_model.service_uid] == null) {
-                trash_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
-            }
+    //         if (trash_threads[selected_item_model.service_uid] == null) {
+    //             trash_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
+    //         }
 
-            trash_threads[selected_item_model.service_uid].add (selected_item_model.node);
-        }
+    //         trash_threads[selected_item_model.service_uid].add (selected_item_model.node);
+    //     }
 
-        var deleted = 0;
-        foreach (var service_uid in trash_threads.keys) {
-            deleted += move_handler.delete_threads (folders[service_uid], trash_threads[service_uid]);
-        }
+    //     var deleted = 0;
+    //     foreach (var service_uid in trash_threads.keys) {
+    //         deleted += move_handler.delete_threads (folders[service_uid], trash_threads[service_uid]);
+    //     }
 
-        list_store.items_changed (0, 0, list_store.get_n_items ());
-        select_row_at_index (selected_rows_start_index + 1);
+    //     list_store.items_changed (0, 0, list_store.get_n_items ());
+    //     select_row_at_index (selected_rows_start_index + 1);
 
-        return deleted;
-    }
+    //     return deleted;
+    // }
 
     public void undo_move () {
         move_handler.undo_last_move.begin ((obj, res) => {
             move_handler.undo_last_move.end (res);
-            list_store.items_changed (0, 0, list_store.get_n_items ());
         });
     }
 
@@ -464,65 +502,65 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         move_handler.expire_undo ();
     }
 
-    private bool create_context_menu (Gdk.Event e, ConversationListItem row) {
-        var item = (ConversationItemModel)row.model_item;
+    // private bool create_context_menu (Gdk.Event e, ConversationListItem row) {
+    //     var item = (ConversationItemModel)row.model_item;
 
-        var menu = new Gtk.Menu ();
+    //     var menu = new Gtk.Menu ();
 
-        var trash_menu_item = new Gtk.MenuItem ();
-        trash_menu_item.add (new Granite.AccelLabel.from_action_name (_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH));
-        menu.add (trash_menu_item);
+    //     var trash_menu_item = new Gtk.MenuItem ();
+    //     trash_menu_item.add (new Granite.AccelLabel.from_action_name (_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH));
+    //     menu.add (trash_menu_item);
 
-        trash_menu_item.activate.connect (() => {
-            trash_selected_messages ();
-        });
+    //     trash_menu_item.activate.connect (() => {
+    //         trash_selected_messages ();
+    //     });
 
-        if (!item.unread) {
-            var mark_unread_menu_item = new Gtk.MenuItem ();
-            mark_unread_menu_item.add (new Granite.AccelLabel.from_action_name (_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD));
-            menu.add (mark_unread_menu_item);
+    //     if (!item.unread) {
+    //         var mark_unread_menu_item = new Gtk.MenuItem ();
+    //         mark_unread_menu_item.add (new Granite.AccelLabel.from_action_name (_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD));
+    //         menu.add (mark_unread_menu_item);
 
-            mark_unread_menu_item.activate.connect (() => {
-                mark_unread_selected_messages ();
-            });
-        } else {
-            var mark_read_menu_item = new Gtk.MenuItem ();
-            mark_read_menu_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ));
-            menu.add (mark_read_menu_item);
+    //         mark_unread_menu_item.activate.connect (() => {
+    //             mark_unread_selected_messages ();
+    //         });
+    //     } else {
+    //         var mark_read_menu_item = new Gtk.MenuItem ();
+    //         mark_read_menu_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ));
+    //         menu.add (mark_read_menu_item);
 
-            mark_read_menu_item.activate.connect (() => {
-                mark_read_selected_messages ();
-            });
-        }
+    //         mark_read_menu_item.activate.connect (() => {
+    //             mark_read_selected_messages ();
+    //         });
+    //     }
 
-        if (!item.flagged) {
-            var mark_starred_menu_item = new Gtk.MenuItem ();
-            mark_starred_menu_item.add (new Granite.AccelLabel.from_action_name (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR));
-            menu.add (mark_starred_menu_item);
+    //     if (!item.flagged) {
+    //         var mark_starred_menu_item = new Gtk.MenuItem ();
+    //         mark_starred_menu_item.add (new Granite.AccelLabel.from_action_name (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR));
+    //         menu.add (mark_starred_menu_item);
 
-            mark_starred_menu_item.activate.connect (() => {
-                mark_star_selected_messages ();
-            });
-        } else {
-            var mark_unstarred_menu_item = new Gtk.MenuItem ();
-            mark_unstarred_menu_item.add (new Granite.AccelLabel.from_action_name (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR));
-            menu.add (mark_unstarred_menu_item);
+    //         mark_starred_menu_item.activate.connect (() => {
+    //             mark_star_selected_messages ();
+    //         });
+    //     } else {
+    //         var mark_unstarred_menu_item = new Gtk.MenuItem ();
+    //         mark_unstarred_menu_item.add (new Granite.AccelLabel.from_action_name (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR));
+    //         menu.add (mark_unstarred_menu_item);
 
-            mark_unstarred_menu_item.activate.connect (() => {
-                mark_unstar_selected_messages ();
-            });
-        }
+    //         mark_unstarred_menu_item.activate.connect (() => {
+    //             mark_unstar_selected_messages ();
+    //         });
+    //     }
 
-        menu.show_all ();
+    //     menu.show_all ();
 
-        if (e.type == Gdk.EventType.BUTTON_RELEASE) {
-            menu.popup_at_pointer (e);
-            return Gdk.EVENT_STOP;
-        } else if (e.type == Gdk.EventType.KEY_RELEASE) {
-            menu.popup_at_widget (row, Gdk.Gravity.EAST, Gdk.Gravity.CENTER, e);
-            return Gdk.EVENT_STOP;
-        }
+    //     if (e.type == Gdk.EventType.BUTTON_RELEASE) {
+    //         menu.popup_at_pointer (e);
+    //         return Gdk.EVENT_STOP;
+    //     } else if (e.type == Gdk.EventType.KEY_RELEASE) {
+    //         menu.popup_at_widget (row, Gdk.Gravity.EAST, Gdk.Gravity.CENTER, e);
+    //         return Gdk.EVENT_STOP;
+    //     }
 
-        return Gdk.EVENT_PROPAGATE;
-    }
+    //     return Gdk.EVENT_PROPAGATE;
+    // }
 }
