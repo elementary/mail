@@ -101,9 +101,8 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
     }
 
     construct {
-        //To Do: Look at how other application handle action entries need an actionMap?
-        //append_action_entries (ACTION_ENTRIES, this);
-        //get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
+        add_action_entries (ACTION_ENTRIES, this);
+        ((SimpleAction)lookup_action (ACTION_COMPOSE_MESSAGE)).set_enabled (false);
 
         foreach (var action in action_accelerators.get_keys ()) {
             ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
@@ -117,22 +116,6 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
 
         folders_list_view = new FoldersListView ();
        conversation_list_box = new ConversationListBox ();
-
-        // Disable delete accelerators when the conversation list box loses keyboard focus,
-        // restore them when it returns
-        // conversation_list_box.set_focus_child.connect ((widget) => {
-        //     if (widget == null) {
-        //         ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
-        //             ACTION_PREFIX + ACTION_MOVE_TO_TRASH,
-        //             {}
-        //         );
-        //     } else {
-        //         ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
-        //             ACTION_PREFIX + ACTION_MOVE_TO_TRASH,
-        //             action_accelerators[ACTION_MOVE_TO_TRASH].to_array ()
-        //         );
-        //     }
-        // });
 
         // message_list_box = new MessageListBox ();
         // message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY), "enabled", BindingFlags.SYNC_CREATE);
@@ -407,10 +390,13 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
     }
 
     private void on_move_to_trash () {
+        // Only allow move to trash when focus is on the ConversationList
+        if (this.get_focus ().get_parent() is Gtk.ListView) {
        // var result = conversation_list_box.trash_selected_messages ();
        //  if (result > 0) {
        //      send_move_toast (ngettext ("Message Deleted", "Messages Deleted", result));
        //  }
+        }
     }
 
     private void send_move_toast (string message) {
