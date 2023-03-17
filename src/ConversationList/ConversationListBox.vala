@@ -56,8 +56,19 @@ public class Mail.ConversationListBox : Gtk.Box {
         });
         factory.bind.connect ((obj) => {
             var list_item = (Gtk.ListItem) obj;
-
+            var conversation_list_item = (ConversationListItem) list_item.child;
+            conversation_list_item.handler_id = conversation_list_item.secondary_click.connect ((x, y) => {
+                if (!selection_model.is_selected (list_item.get_position ())) {
+                    selection_model.select_item (list_item.get_position (), false);
+                }
+                create_context_menu (x, y, conversation_list_item);
+            });
             ((ConversationListItem)list_item.child).assign((ConversationItemModel) list_item.get_item ());
+        });
+        factory.unbind.connect ((obj) => {
+            var list_item = (Gtk.ListItem) obj;
+            var conversation_list_item = (ConversationListItem) list_item.child;
+            conversation_list_item.disconnect (conversation_list_item.handler_id);
         });
 
         list_store = new ListStore (typeof(ConversationItemModel));
@@ -82,19 +93,6 @@ public class Mail.ConversationListBox : Gtk.Box {
         move_handler = new MoveHandler ();
 
         var list_store_filter_model = new Gtk.FilterListModel (list_store, null);
-
-        // factory_func = (item, old_widget) => {
-        //     ConversationListItem? row = null;
-        //     if (old_widget != null) {
-        //         row = old_widget as ConversationListItem;
-        //     } else {
-        //         row = new ConversationListItem ();
-        //     }
-
-        //     row.assign ((ConversationItemModel)item);
-        //     row.show_all ();
-        //     return row;
-        // };
 
         selection_model.selection_changed.connect ((position) => {
             if (mark_read_timeout_id != 0) {
@@ -502,65 +500,32 @@ public class Mail.ConversationListBox : Gtk.Box {
         move_handler.expire_undo ();
     }
 
-    // private bool create_context_menu (Gdk.Event e, ConversationListItem row) {
-    //     var item = (ConversationItemModel)row.model_item;
+    private void create_context_menu (double x, double y, ConversationListItem list_item) {
+        var selected_items = list_view.model.get_selection ();
+        var menu = new Menu ();
+        if (selected_items.get_size () > 1) {
+            // mark all read etc
+        } else if (selected_items.get_size () == 1) {
+            uint current_item_position;
+            Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
+            bitset_iter.init_first(selected_items, out current_item_position);
+            var item = (ConversationItemModel) list_store.get_item (current_item_position);
 
-    //     var menu = new Gtk.Menu ();
-
-    //     var trash_menu_item = new Gtk.MenuItem ();
-    //     trash_menu_item.add (new Granite.AccelLabel.from_action_name (_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH));
-    //     menu.add (trash_menu_item);
-
-    //     trash_menu_item.activate.connect (() => {
-    //         trash_selected_messages ();
-    //     });
-
-    //     if (!item.unread) {
-    //         var mark_unread_menu_item = new Gtk.MenuItem ();
-    //         mark_unread_menu_item.add (new Granite.AccelLabel.from_action_name (_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD));
-    //         menu.add (mark_unread_menu_item);
-
-    //         mark_unread_menu_item.activate.connect (() => {
-    //             mark_unread_selected_messages ();
-    //         });
-    //     } else {
-    //         var mark_read_menu_item = new Gtk.MenuItem ();
-    //         mark_read_menu_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ));
-    //         menu.add (mark_read_menu_item);
-
-    //         mark_read_menu_item.activate.connect (() => {
-    //             mark_read_selected_messages ();
-    //         });
-    //     }
-
-    //     if (!item.flagged) {
-    //         var mark_starred_menu_item = new Gtk.MenuItem ();
-    //         mark_starred_menu_item.add (new Granite.AccelLabel.from_action_name (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR));
-    //         menu.add (mark_starred_menu_item);
-
-    //         mark_starred_menu_item.activate.connect (() => {
-    //             mark_star_selected_messages ();
-    //         });
-    //     } else {
-    //         var mark_unstarred_menu_item = new Gtk.MenuItem ();
-    //         mark_unstarred_menu_item.add (new Granite.AccelLabel.from_action_name (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR));
-    //         menu.add (mark_unstarred_menu_item);
-
-    //         mark_unstarred_menu_item.activate.connect (() => {
-    //             mark_unstar_selected_messages ();
-    //         });
-    //     }
-
-    //     menu.show_all ();
-
-    //     if (e.type == Gdk.EventType.BUTTON_RELEASE) {
-    //         menu.popup_at_pointer (e);
-    //         return Gdk.EVENT_STOP;
-    //     } else if (e.type == Gdk.EventType.KEY_RELEASE) {
-    //         menu.popup_at_widget (row, Gdk.Gravity.EAST, Gdk.Gravity.CENTER, e);
-    //         return Gdk.EVENT_STOP;
-    //     }
-
-    //     return Gdk.EVENT_PROPAGATE;
-    // }
+            menu.append(_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH);
+            if (!item.unread) {
+                menu.append (_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD);
+            } else {
+                menu.append (_("Mark As Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ);
+            }
+            if (!item.flagged) {
+                menu.append (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR);
+            } else {
+                menu.append (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR);
+            }
+        }
+        var popover_menu = new Gtk.PopoverMenu.from_model (menu) {
+            position = RIGHT
+        };
+        list_item.popup_menu (popover_menu, x, y);
+    }
 }

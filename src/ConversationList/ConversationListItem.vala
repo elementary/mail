@@ -20,6 +20,9 @@
  */
 
 public class Mail.ConversationListItem : Gtk.Box {
+    public signal void secondary_click (double x, double y);
+    public ulong handler_id;
+
     private Gtk.Image status_icon;
     private Gtk.Label date;
     private Gtk.Label messages;
@@ -83,6 +86,14 @@ public class Mail.ConversationListItem : Gtk.Box {
 
         add_css_class ("conversation-list-item");
         append (grid);
+
+        var gesture_click = new Gtk.GestureClick () {
+            button = Gdk.BUTTON_SECONDARY
+        };
+        add_controller (gesture_click);
+        gesture_click.released.connect ((n_press, x, y) => {
+            secondary_click (x, y);
+        });
     }
 
     public void assign (ConversationItemModel data) {
@@ -131,5 +142,17 @@ public class Mail.ConversationListItem : Gtk.Box {
         }
 
         flagged_icon_revealer.reveal_child = data.flagged;
+    }
+
+    public void popup_menu (Gtk.PopoverMenu menu, double x, double y) {
+        this.append (menu);
+        Gdk.Rectangle pos = Gdk.Rectangle ();
+        pos.x = (int) x;
+        pos.y = (int) y;
+        menu.set_pointing_to (pos);
+        menu.popup ();
+        menu.closed.connect (() => {
+            this.remove (menu);
+        });
     }
 }
