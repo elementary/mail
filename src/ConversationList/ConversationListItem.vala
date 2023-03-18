@@ -145,14 +145,16 @@ public class Mail.ConversationListItem : Gtk.Box {
     }
 
     public void popup_menu (Gtk.PopoverMenu menu, double x, double y) {
+        //Cleans up a menu that has previously been used with this
+        // @TODO: does this
+        if(this.get_last_child () is Gtk.PopoverMenu) {
+            this.remove (this.get_last_child());
+        }
         this.append (menu);
         Gdk.Rectangle pos = Gdk.Rectangle ();
         pos.x = (int) x;
         pos.y = (int) y;
         menu.set_pointing_to (pos);
         menu.popup ();
-        menu.closed.connect (() => {
-            this.remove (menu);
-        });
     }
 }
