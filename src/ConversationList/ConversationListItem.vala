@@ -146,7 +146,7 @@ public class Mail.ConversationListItem : Gtk.Box {
 
     public void popup_menu (Gtk.PopoverMenu menu, double x, double y) {
         //Cleans up a menu that has previously been used with this
-        // @TODO: does this
+        // @TODO: does this really free the previous menu, or will it still be stored in memory?
         if(this.get_last_child () is Gtk.PopoverMenu) {
             this.remove (this.get_last_child());
         }

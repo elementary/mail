@@ -32,10 +32,12 @@ public class Mail.ConversationListBox : Gtk.Box {
 
     private GLib.Cancellable? cancellable = null;
     private Gee.HashMap<string, Camel.FolderThread> threads;
+    private Gee.HashMap<string, ConversationItemModel> conversations;
+
     private string? current_search_query = null;
     private bool current_search_hide_read = false;
     private bool current_search_hide_unstarred = false;
-    private Gee.HashMap<string, ConversationItemModel> conversations;
+    private Gtk.EveryFilter every_filter;
     private ListStore list_store;
     private Gtk.SingleSelection selection_model;
     private Gtk.ListView list_view;
@@ -72,9 +74,19 @@ public class Mail.ConversationListBox : Gtk.Box {
         });
 
         list_store = new ListStore (typeof(ConversationItemModel));
-        selection_model = new Gtk.SingleSelection (list_store);
-        list_view = new Gtk.ListView (selection_model, factory);
 
+        every_filter = new Gtk.EveryFilter ();
+        var hide_unread_filter = new Gtk.CustomFilter (filter_unread_func);
+        var hide_unstarred_filter = new Gtk.CustomFilter (filter_unstarred_func);
+        every_filter.append (hide_unread_filter);
+        every_filter.append (hide_unstarred_filter);
+        var filter_model = new Gtk.FilterListModel (list_store, every_filter);
+
+        selection_model = new Gtk.SingleSelection (filter_model) {
+            autoselect = false
+        };
+
+        list_view = new Gtk.ListView (selection_model, factory);
         scrolled_window = new Gtk.ScrolledWindow () {
             hscrollbar_policy = Gtk.PolicyType.NEVER,
             width_request = 158,
@@ -84,15 +96,11 @@ public class Mail.ConversationListBox : Gtk.Box {
         };
         this.append (scrolled_window);
 
-        //list_store.sort (thread_sort_function);
-
         conversations = new Gee.HashMap<string, ConversationItemModel> ();
         folders = new Gee.HashMap<string, Camel.Folder> ();
         folder_info_flags = new Gee.HashMap<string, Camel.FolderInfoFlags> ();
         threads = new Gee.HashMap<string, Camel.FolderThread> ();
         move_handler = new MoveHandler ();
-
-        var list_store_filter_model = new Gtk.FilterListModel (list_store, null);
 
         selection_model.selection_changed.connect ((position) => {
             if (mark_read_timeout_id != 0) {
@@ -106,7 +114,7 @@ public class Mail.ConversationListBox : Gtk.Box {
             bitset_iter.init_first(selected_items, out current_item_position);
             assert(bitset_iter.is_valid());
 
-            var conversation_item = (ConversationItemModel) list_store.get_item (current_item_position);
+            var conversation_item = (ConversationItemModel) selection_model.get_item (current_item_position);
             conversation_focused (conversation_item.node);
 
             if (conversation_item.unread) {
@@ -127,32 +135,6 @@ public class Mail.ConversationListBox : Gtk.Box {
             //((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_UNSTAR)).set_enabled (conversation_item.flagged);
             conversation_selected (conversation_item.node);
         });
-
-        // button_release_event.connect ((e) => {
-
-        //     if (e.button != Gdk.BUTTON_SECONDARY) {
-        //         return Gdk.EVENT_PROPAGATE;
-        //     }
-
-        //     var row = get_row_at_y ((int)e.y);
-
-        //     if (selected_row_widget != row) {
-        //         select_row (row);
-        //     }
-
-        //     return create_context_menu (e, (ConversationListItem)row);
-        // });
-
-        // key_release_event.connect ((e) => {
-
-        //     if (e.keyval != Gdk.Key.Menu) {
-        //         return Gdk.EVENT_PROPAGATE;
-        //     }
-
-        //     var row = selected_row_widget;
-
-        //     return create_context_menu (e, (ConversationListItem)row);
-        // });
     }
 
     private static void set_thread_flag (Camel.FolderThreadNode? node, Camel.MessageFlags flag) {
@@ -357,14 +339,31 @@ public class Mail.ConversationListBox : Gtk.Box {
         current_search_query = query;
         current_search_hide_read = hide_read;
         current_search_hide_unstarred = hide_unstarred;
-
-        yield load_folder (folder_full_name_per_account);
+        every_filter.changed (DIFFERENT);
     }
 
     private void add_conversation_item (Camel.FolderInfoFlags folder_info_flags, Camel.FolderThreadNode child, Camel.FolderThread thread, string service_uid) {
         var item = new ConversationItemModel (folder_info_flags, child, thread, service_uid);
         conversations[child.message.uid] = item;
         list_store.append (item);
+    }
+
+    private bool filter_unread_func (Object item) {
+        var conversation_item = (ConversationItemModel) item;
+        if (current_search_hide_read) {
+            return conversation_item.unread;
+        } else {
+            return true;
+        }
+    }
+
+    private bool filter_unstarred_func (Object item) {
+        var conversation_item = (ConversationItemModel) item;
+        if (current_search_hide_unstarred) {
+            return conversation_item.flagged;
+        } else {
+            return true;
+        }
     }
 
     private static bool filter_function (GLib.Object obj) {
@@ -375,50 +374,51 @@ public class Mail.ConversationListBox : Gtk.Box {
         }
     }
 
-    private static int thread_sort_function (ConversationItemModel item1, ConversationItemModel item2) {
-        return (int)(item2.timestamp - item1.timestamp);
+    public int sort_function<ConversationItemModel> (Object? a, Object? b) {
+        return 0;
+        //return (int)(item2.timestamp - item1.timestamp);
     }
 
     public void mark_read_selected_messages () {
-        var selected_items = list_view.model.get_selection ();
+        var selected_items = selection_model.get_selection ();
         uint current_item_position;
         Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
         bitset_iter.init_first(selected_items, out current_item_position);
         do {
-            ((ConversationItemModel)list_store.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.SEEN, ~0);
+            ((ConversationItemModel)selection_model.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.SEEN, ~0);
             bitset_iter.next (out current_item_position);
         } while (bitset_iter.is_valid());
     }
 
     public void mark_star_selected_messages () {
-        var selected_items = list_view.model.get_selection ();
+        var selected_items = selection_model.get_selection ();
         uint current_item_position;
         Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
         bitset_iter.init_first(selected_items, out current_item_position);
         do {
-            ((ConversationItemModel)list_store.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.FLAGGED, ~0);
+            ((ConversationItemModel)selection_model.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.FLAGGED, ~0);
             bitset_iter.next (out current_item_position);
         } while (bitset_iter.is_valid());
     }
 
     public void mark_unread_selected_messages () {
-        var selected_items = list_view.model.get_selection ();
+        var selected_items = selection_model.get_selection ();
         uint current_item_position;
         Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
         bitset_iter.init_first(selected_items, out current_item_position);
         do {
-            ((ConversationItemModel)list_store.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.SEEN, 0);
+            ((ConversationItemModel)selection_model.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.SEEN, 0);
             bitset_iter.next (out current_item_position);
         } while (bitset_iter.is_valid());
     }
 
     public void mark_unstar_selected_messages () {
-        var selected_items = list_view.model.get_selection ();
+        var selected_items = selection_model.get_selection ();
         uint current_item_position;
         Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
         bitset_iter.init_first(selected_items, out current_item_position);
         do {
-            ((ConversationItemModel)list_store.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.FLAGGED, 0);
+            ((ConversationItemModel)selection_model.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.FLAGGED, 0);
             bitset_iter.next (out current_item_position);
         } while (bitset_iter.is_valid());
     }
@@ -503,7 +503,7 @@ public class Mail.ConversationListBox : Gtk.Box {
     }
 
     private void create_context_menu (double x, double y, ConversationListItem list_item) {
-        var selected_items = list_view.model.get_selection ();
+        var selected_items = selection_model.get_selection ();
         var menu = new Menu ();
         if (selected_items.get_size () > 1) {
             // mark all read etc
@@ -511,7 +511,7 @@ public class Mail.ConversationListBox : Gtk.Box {
             uint current_item_position;
             Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
             bitset_iter.init_first(selected_items, out current_item_position);
-            var item = (ConversationItemModel) list_store.get_item (current_item_position);
+            var item = (ConversationItemModel) selection_model.get_item (current_item_position);
 
             menu.append(_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH);
             if (!item.unread) {
