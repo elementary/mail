@@ -120,10 +120,11 @@ public class Mail.ConversationListBox : Gtk.Box {
             // We call get_action_group() on the parent window, instead of on `this` directly, due to a
             // bug with Gtk.Widget.get_action_group(). See https://gitlab.gnome.org/GNOME/gtk/issues/1396
             var window = (Gtk.ApplicationWindow) get_root ();
-            ((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_READ)).set_enabled (conversation_item.unread);
-            ((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_UNREAD)).set_enabled (!conversation_item.unread);
-            ((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_STAR)).set_enabled (!conversation_item.flagged);
-            ((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_UNSTAR)).set_enabled (conversation_item.flagged);
+            //@TODO: Is this really needed? If it is, a workaround has to be made to be able to mark read and then unread the same message without selecting another one between
+            //((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_READ)).set_enabled (conversation_item.unread);
+            //((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_UNREAD)).set_enabled (!conversation_item.unread);
+            //((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_STAR)).set_enabled (!conversation_item.flagged);
+            //((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_UNSTAR)).set_enabled (conversation_item.flagged);
             conversation_selected (conversation_item.node);
         });
 
@@ -417,7 +418,7 @@ public class Mail.ConversationListBox : Gtk.Box {
         Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
         bitset_iter.init_first(selected_items, out current_item_position);
         do {
-            ((ConversationItemModel)list_store.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.SEEN, 0);
+            ((ConversationItemModel)list_store.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.FLAGGED, 0);
             bitset_iter.next (out current_item_position);
         } while (bitset_iter.is_valid());
     }
