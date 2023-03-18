@@ -108,7 +108,6 @@ public class Mail.ConversationListBox : Gtk.Box {
 
             var conversation_item = (ConversationItemModel) list_store.get_item (current_item_position);
             conversation_focused (conversation_item.node);
-            print(conversation_item.subject);
 
             if (conversation_item.unread) {
                 mark_read_timeout_id = GLib.Timeout.add_seconds (MARK_READ_TIMEOUT_SECONDS, () => {
@@ -266,7 +265,6 @@ public class Mail.ConversationListBox : Gtk.Box {
                 if (search_result_uids == null) {
                     return;
                 }
-                print("Folder chaned");
                 threads[service_uid] = new Camel.FolderThread (folders[service_uid], search_result_uids, false);
 
                 var removed = 0;
@@ -300,7 +298,6 @@ public class Mail.ConversationListBox : Gtk.Box {
                             add_conversation_item (folder_info_flags[service_uid], child, threads[service_uid], service_uid);
                         };
                     }
-
                     child = child.next;
                 }
             }
