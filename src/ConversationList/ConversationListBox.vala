@@ -267,7 +267,8 @@ public class Mail.ConversationListBox : Gtk.Box {
                 }
                 threads[service_uid] = new Camel.FolderThread (folders[service_uid], search_result_uids, false);
 
-                var removed = 0;
+                var removed = list_store.get_n_items ();
+
                 change_info.get_removed_uids ().foreach ((uid) => {
                     var item = conversations[uid];
                     if (item != null) {
@@ -275,9 +276,10 @@ public class Mail.ConversationListBox : Gtk.Box {
                         uint item_position;
                         list_store.find (item, out item_position);
                         list_store.remove (item_position);
-                        removed++;
                     }
                 });
+
+                var added = list_store.get_n_items ();
 
                 unowned Camel.FolderThreadNode? child = threads[service_uid].tree;
                 while (child != null) {
@@ -288,6 +290,7 @@ public class Mail.ConversationListBox : Gtk.Box {
                     var item = conversations[child.message.uid];
                     if (item == null) {
                         add_conversation_item (folder_info_flags[service_uid], child, threads[service_uid], service_uid);
+                        added++;
                     } else {
                         if (item.is_older_than (child)) {
                             conversations.unset (child.message.uid);
@@ -300,6 +303,7 @@ public class Mail.ConversationListBox : Gtk.Box {
                     }
                     child = child.next;
                 }
+                list_store.items_changed (0, removed, added);
             }
         }
     }
