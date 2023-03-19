@@ -78,9 +78,11 @@ public class Mail.ConversationListBox : Gtk.Box {
         every_filter = new Gtk.EveryFilter ();
         var hide_unread_filter = new Gtk.CustomFilter (filter_unread_func);
         var hide_unstarred_filter = new Gtk.CustomFilter (filter_unstarred_func);
+        var deleted_filter = new Gtk.CustomFilter (filter_deleted_func);
         //var search_filter = new Gtk.CustomFilter (search_func); @TODO: make search local?
         every_filter.append (hide_unread_filter);
         every_filter.append (hide_unstarred_filter);
+        every_filter.append (deleted_filter);
         //every_filter.append (search_filter);
         var filter_model = new Gtk.FilterListModel (list_store, every_filter);
 
@@ -360,15 +362,15 @@ public class Mail.ConversationListBox : Gtk.Box {
         }
     }
 
-    private static bool filter_function (GLib.Object obj) {
-        if (obj is ConversationItemModel) {
-            return !((ConversationItemModel)obj).deleted;
+    private static bool filter_deleted_func (Object item) {
+        if (item is ConversationItemModel) {
+            return !((ConversationItemModel)item).deleted;
         } else {
             return false;
         }
     }
 
-    public int sort_function<ConversationItemModel> (Object? a, Object? b) {
+    public int sort_func<ConversationItemModel> (Object? a, Object? b) {
         return 0;
         //return (int)(item2.timestamp - item1.timestamp);
     }
@@ -459,32 +461,36 @@ public class Mail.ConversationListBox : Gtk.Box {
     //     return archived;
     // }
 
-    // public int trash_selected_messages () {
-    //     var trash_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
+    public int trash_selected_messages () {
+        var trash_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
 
-    //     var selected_rows = get_selected_rows ();
-    //     int selected_rows_start_index = list_store.get_index_of (selected_rows.to_array ()[0]);
+        var selected_items = selection_model.get_selection ();
+        uint current_item_position;
+        Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
+        bitset_iter.init_first(selected_items, out current_item_position);
+        var selected_rows_start_index = current_item_position;
+        do {
+            var selected_item_model = ((ConversationItemModel)selection_model.get_item (current_item_position));
 
-    //     foreach (unowned var selected_row in selected_rows) {
-    //         var selected_item_model = (ConversationItemModel) selected_row;
+            if (trash_threads[selected_item_model.service_uid] == null) {
+                trash_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
+            }
 
-    //         if (trash_threads[selected_item_model.service_uid] == null) {
-    //             trash_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
-    //         }
+            trash_threads[selected_item_model.service_uid].add (selected_item_model.node);
 
-    //         trash_threads[selected_item_model.service_uid].add (selected_item_model.node);
-    //     }
+            bitset_iter.next (out current_item_position);
+        } while (bitset_iter.is_valid());
 
-    //     var deleted = 0;
-    //     foreach (var service_uid in trash_threads.keys) {
-    //         deleted += move_handler.delete_threads (folders[service_uid], trash_threads[service_uid]);
-    //     }
+        var deleted = 0;
+        foreach (var service_uid in trash_threads.keys) {
+            deleted += move_handler.delete_threads (folders[service_uid], trash_threads[service_uid]);
+        }
 
-    //     list_store.items_changed (0, 0, list_store.get_n_items ());
-    //     select_row_at_index (selected_rows_start_index + 1);
+        list_store.items_changed (0, list_store.get_n_items (), list_store.get_n_items ());
+        selection_model.select_item (selected_rows_start_index, true);
 
-    //     return deleted;
-    // }
+        return deleted;
+    }
 
     public void undo_move () {
         move_handler.undo_last_move.begin ((obj, res) => {
