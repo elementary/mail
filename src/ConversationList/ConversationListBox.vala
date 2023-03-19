@@ -224,6 +224,7 @@ public class Mail.ConversationListBox : Gtk.Box {
                 }
             }
         }
+        list_store.sort (sort_func); //@TODO: scroll to top
     }
 
     public async void refresh_folder (GLib.Cancellable? cancellable = null) {
@@ -370,9 +371,10 @@ public class Mail.ConversationListBox : Gtk.Box {
         }
     }
 
-    public int sort_func<ConversationItemModel> (Object? a, Object? b) {
-        return 0;
-        //return (int)(item2.timestamp - item1.timestamp);
+    public int sort_func (Object a, Object b) {
+        var item1 = (ConversationItemModel) a;
+        var item2 = (ConversationItemModel) b;
+        return (int)(item2.timestamp - item1.timestamp);
     }
 
     public void mark_read_selected_messages () {
