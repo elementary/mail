@@ -78,8 +78,10 @@ public class Mail.ConversationListBox : Gtk.Box {
         every_filter = new Gtk.EveryFilter ();
         var hide_unread_filter = new Gtk.CustomFilter (filter_unread_func);
         var hide_unstarred_filter = new Gtk.CustomFilter (filter_unstarred_func);
+        //var search_filter = new Gtk.CustomFilter (search_func); @TODO: make search local?
         every_filter.append (hide_unread_filter);
         every_filter.append (hide_unstarred_filter);
+        //every_filter.append (search_filter);
         var filter_model = new Gtk.FilterListModel (list_store, every_filter);
 
         selection_model = new Gtk.SingleSelection (filter_model) {
@@ -292,34 +294,25 @@ public class Mail.ConversationListBox : Gtk.Box {
     }
 
     private GenericArray<string>? get_search_result_uids (string service_uid) {
+        //@TODO: make search local?
         lock (folders) {
             if (folders[service_uid] == null) {
                 return null;
             }
 
             var has_current_search_query = current_search_query != null && current_search_query.strip () != "";
-            if (!has_current_search_query && !current_search_hide_read && !current_search_hide_unstarred) {
+            if (!has_current_search_query) {
                 return folders[service_uid].get_uids ();
             }
 
             string[] current_search_expressions = {};
 
-            if (current_search_hide_read) {
-                current_search_expressions += """(not (system-flag "Seen"))""";
-            }
+            var sb = new StringBuilder ();
+            Camel.SExp.encode_string (sb, current_search_query);
+            var encoded_query = sb.str;
 
-            if (current_search_hide_unstarred) {
-                current_search_expressions += """(system-flag "Flagged")""";
-            }
-
-            if (has_current_search_query) {
-                var sb = new StringBuilder ();
-                Camel.SExp.encode_string (sb, current_search_query);
-                var encoded_query = sb.str;
-
-                current_search_expressions += """(or (header-contains "From" %s)(header-contains "Subject" %s)(body-contains %s))"""
-                .printf (encoded_query, encoded_query, encoded_query);
-            }
+            current_search_expressions += """(or (header-contains "From" %s)(header-contains "Subject" %s)(body-contains %s))"""
+            .printf (encoded_query, encoded_query, encoded_query);
 
             string search_query = "(match-all (and " + string.joinv ("", current_search_expressions) + "))";
 
@@ -339,6 +332,7 @@ public class Mail.ConversationListBox : Gtk.Box {
         current_search_query = query;
         current_search_hide_read = hide_read;
         current_search_hide_unstarred = hide_unstarred;
+        yield load_folder (folder_full_name_per_account);
         every_filter.changed (DIFFERENT);
     }
 
