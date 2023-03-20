@@ -30,8 +30,8 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
 
         var load_images_menuitem = new Granite.SwitchModelButton (_("Always Show Remote Images"));
 
-        var account_settings_menuitem = new Gtk.Button ();
-        account_settings_menuitem.label = _("Account Settings…");
+        var account_settings_menuitem = new Gtk.Button.with_label = _("Account Settings…");
+        account_settings_menuitem.add_css_class (Granite.STYLE_CLASS_MENUITEM);
 
         var app_menu_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
             margin_bottom = 3,
@@ -54,6 +54,7 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
             popover = app_menu_popover,
             tooltip_text = _("Menu")
         };
+        app_menu.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender");
         reply_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY;
@@ -61,6 +62,7 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
             application_instance.get_accels_for_action (reply_button.action_name),
             _("Reply")
         );
+        reply_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var reply_all_button = new Gtk.Button.from_icon_name ("mail-reply-all");
         reply_all_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL;
@@ -68,6 +70,7 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
             application_instance.get_accels_for_action (reply_all_button.action_name),
             _("Reply All")
         );
+        reply_all_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var forward_button = new Gtk.Button.from_icon_name ("mail-forward");
         forward_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD;
@@ -75,6 +78,7 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
             application_instance.get_accels_for_action (forward_button.action_name),
             _("Forward")
         );
+        forward_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         //@TODO: check whether this menu implementation works: (this is the old code, below the new one (without items))
         // var mark_unread_item = new MenuItem ();
@@ -110,6 +114,7 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
             popover = mark_menu,
             tooltip_text = _("Mark Conversation")
         };
+        mark_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var archive_button = new Gtk.Button.from_icon_name ("mail-archive");
         archive_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_ARCHIVE;
@@ -117,6 +122,7 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
             application_instance.get_accels_for_action (archive_button.action_name),
             _("Move conversations to archive")
         );
+        archive_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var trash_button = new Gtk.Button.from_icon_name ("edit-delete");
         trash_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH;

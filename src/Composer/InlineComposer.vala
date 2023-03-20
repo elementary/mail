@@ -34,7 +34,7 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
         margin_start = 12;
         margin_end = 12;
 
-        add_css_class ("card");
+        add_css_class (Granite.STYLE_CLASS_CARD);
 
         composer = new ComposerWidget.inline ();
         composer.margin_top = 6;
