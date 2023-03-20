@@ -40,7 +40,7 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         var titlebar = new Gtk.HeaderBar () {
             title_widget = new Gtk.Label (_("New Message"))
         };
-        titlebar.add_css_class ("default-decoration"); //@TODO: test: works?
+        titlebar.add_css_class (Granite.STYLE_CLASS_DEFAULT_DECORATION); //@TODO: test: works?
 
         composer_widget.discarded.connect (() => {
             close ();
