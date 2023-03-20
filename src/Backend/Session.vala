@@ -125,7 +125,7 @@ public class Mail.Backend.Session : Camel.Session {
         /* Find a matching ESource for this CamelService. */
         var source = registry.ref_source (service.get_uid ());
 
-        //result = Camel.AuthenticationResult.REJECTED;
+        result = Camel.AuthenticationResult.REJECTED;
 
         if (try_empty_password) {
             result = service.authenticate_sync (mechanism); //@TODO catch error
@@ -134,13 +134,18 @@ public class Mail.Backend.Session : Camel.Session {
         if (result == Camel.AuthenticationResult.REJECTED) {
             /* We need a password, preferrably one cached in
              * the keyring or else by interactive user prompt. */
-             print ("We are here where i still have to work (E.credentialsprompter)");
-
-            //@TODO: reimplement credentials prompter also: look further down: try_credentials_sync()
-            //var credentials_prompter = new E.CredentialsPrompter (registry);
-            //credentials_prompter.set_auto_prompt (true);
-            //return credentials_prompter.loop_prompt_sync (source, E.CredentialsPrompterPromptFlags.ALLOW_SOURCE_SAVE, (prompter, source, credentials, out out_authenticated, cancellable) => try_credentials_sync (prompter, source, credentials, out out_authenticated, cancellable, service, mechanism));
-            return false;
+            //@TODO: test thoroughly, also: user prompt might not work
+            try {
+                var credentials_provider = new E.SourceCredentialsProvider (registry);
+                E.NamedParameters out_credentials;
+                credentials_provider.lookup_sync (source, cancellable, out out_credentials);
+                bool out_authenticated;
+                try_credentials_sync (credentials_provider, source, out_credentials, out out_authenticated, cancellable, service, mechanism);
+                return out_authenticated;
+            } catch (Error e) {
+                critical (e.message);
+                return false;
+            }
         } else {
             return (result == Camel.AuthenticationResult.ACCEPTED);
         }
@@ -186,35 +191,35 @@ public class Mail.Backend.Session : Camel.Session {
         return success;
     }
 
-    // public bool try_credentials_sync (E.CredentialsPrompter prompter, E.Source source, E.NamedParameters credentials, out bool out_authenticated, GLib.Cancellable? cancellable, Camel.Service service, string? mechanism) throws GLib.Error {
-    //     string credential_name = null;
+    public bool try_credentials_sync (E.SourceCredentialsProvider provider, E.Source source, E.NamedParameters credentials, out bool out_authenticated, GLib.Cancellable? cancellable, Camel.Service service, string? mechanism) throws GLib.Error {
+        string credential_name = null;
 
-    //     if (source.has_extension (E.SOURCE_EXTENSION_AUTHENTICATION)) {
-    //         unowned var auth_extension = (E.SourceAuthentication) source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
+        if (source.has_extension (E.SOURCE_EXTENSION_AUTHENTICATION)) {
+            unowned var auth_extension = (E.SourceAuthentication) source.get_extension (E.SOURCE_EXTENSION_AUTHENTICATION);
 
-    //         credential_name = auth_extension.dup_credential_name ();
+            credential_name = auth_extension.dup_credential_name ();
 
-    //         if (credential_name != null && credential_name.length == 0) {
-    //             credential_name = null;
-    //         }
-    //     }
+            if (credential_name != null && credential_name.length == 0) {
+                credential_name = null;
+            }
+        }
 
-    //     service.set_password (credentials.get (credential_name ?? E.SOURCE_CREDENTIAL_PASSWORD));
+        service.set_password (credentials.get (credential_name ?? E.SOURCE_CREDENTIAL_PASSWORD));
 
-    //     Camel.AuthenticationResult result = service.authenticate_sync (mechanism); //@TODO catch error
+        Camel.AuthenticationResult result = service.authenticate_sync (mechanism); //@TODO catch error
 
-    //     out_authenticated = (result == Camel.AuthenticationResult.ACCEPTED);
+        out_authenticated = (result == Camel.AuthenticationResult.ACCEPTED);
 
-    //     if (out_authenticated) {
-    //         var credentials_source = prompter.get_provider ().ref_credentials_source (source);
+        if (out_authenticated) {
+            var credentials_source = provider.ref_credentials_source (source);
 
-    //         if (credentials_source != null) {
-    //             credentials_source.invoke_authenticate_sync (credentials);
-    //         }
-    //     }
+            if (credentials_source != null) {
+                credentials_source.invoke_authenticate_sync (credentials);
+            }
+        }
 
-    //     return result == Camel.AuthenticationResult.REJECTED;
-    // }
+        return result == Camel.AuthenticationResult.REJECTED;
+    }
 
     public E.Source get_identity_source_for_service (Camel.Service service) {
         var account_source = registry.ref_source (service.get_uid ());
@@ -551,3 +556,4 @@ public class Mail.Backend.Session : Camel.Session {
         }
     }
 }
+
