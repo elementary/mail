@@ -292,6 +292,10 @@ public class Mail.ConversationListBox : Gtk.Box {
                     child = child.next;
                 }
                 list_store.items_changed (0, removed, added);
+                if (added > removed) {
+                    print ("sort again");
+                    list_store.sort(sort_func);
+                }
             }
         }
     }
