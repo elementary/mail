@@ -46,8 +46,10 @@ public class Mail.HeaderBar : Gtk.HeaderBar {
         app_menu_box.append (app_menu_separator);
         app_menu_box.append (account_settings_menuitem);
 
-        var app_menu_popover = new Gtk.Popover ();
-        app_menu_popover.set_child (app_menu_box);
+        var app_menu_popover = new Gtk.Popover () {
+            child = app_menu_box
+        };
+        app_menu_popover.add_css_class (Granite.STYLE_CLASS_MENU);
 
         var app_menu = new Gtk.MenuButton () {
             icon_name = "open-menu",
