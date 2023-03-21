@@ -97,6 +97,7 @@ public class Mail.WebView : WebKit.WebView {
                 try {
                     var response = send_message_to_page.end (res);
                     preferred_height = response.parameters.get_int32 ();
+                    height_request = preferred_height;
                     queue_resize ();
                 } catch (Error e) {
                     // We can cancel the operation
