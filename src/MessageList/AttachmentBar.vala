@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.AttachmentBar : Gtk.FlowBox {
+public class Mail.AttachmentBar : Gtk.Box {
     public unowned GLib.Cancellable loading_cancellable { get; construct; }
 
     public AttachmentBar (GLib.Cancellable loading_cancellable) {
@@ -27,10 +27,10 @@ public class Mail.AttachmentBar : Gtk.FlowBox {
 
     construct {
         hexpand = true;
-        activate_on_single_click = true;
-        var style_context = get_style_context ();
-        style_context.add_class (Gtk.STYLE_CLASS_TOOLBAR);
-        style_context.add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+        //activate_on_single_click = true;
+        //var style_context = get_style_context ();
+        //style_context.add_class (Granite.STYLE_CLASS_TOOLBAR);
+        //style_context.add_class (Granite.STYLE_CLASS_INLINE_TOOLBAR);
     }
 
     public async void parse_mime_content (Camel.DataWrapper message_content) {
@@ -42,20 +42,19 @@ public class Mail.AttachmentBar : Gtk.FlowBox {
                 if (part.disposition == "attachment") {
                     var button = new AttachmentButton (part, loading_cancellable);
                     button.activate.connect (() => show_attachment (button.mime_part));
-                    add (button);
+                    append (button);
                 } else if (field.type == "multipart") {
                     yield parse_mime_content (part.content);
                 }
             }
         }
-
-        show_all ();
     }
 
     private void show_attachment (Camel.MimePart attachment_part) {
-        var dialog = new Mail.OpenAttachmentDialog (get_toplevel () as Gtk.Window, attachment_part);
-        dialog.show_all ();
-        dialog.run ();
-        dialog.destroy ();
+        var dialog = new Mail.OpenAttachmentDialog (get_root () as Gtk.Window, attachment_part);
+        dialog.response.connect (() => {
+            dialog.destroy ();
+        });
+        dialog.present ();
     }
 }

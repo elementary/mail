@@ -18,10 +18,12 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.MessageListItem : Gtk.ListBoxRow {
+public class Mail.MessageListItem : Gtk.Box {
     public bool loaded { get; private set; }
     public Camel.MessageInfo message_info { get; construct; }
     public Camel.MimeMessage? mime_message { get; private set; default = null; }
+
+    private Mail.MessageListBox parent_message_box;
 
     private Mail.WebView web_view;
     private GLib.Cancellable loading_cancellable;
@@ -30,7 +32,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private Gtk.Revealer secondary_revealer;
     private Gtk.Stack header_stack;
     private Gtk.StyleContext style_context;
-    private Hdy.Avatar avatar;
+    private Adw.Avatar avatar;
     private AttachmentBar attachment_bar = null;
 
     private string message_content;
@@ -61,11 +63,15 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     private GLib.Settings settings;
 
-    public MessageListItem (Camel.MessageInfo message_info) {
+    public MessageListItem (Camel.MessageInfo message_info, Mail.MessageListBox mbox) {
         Object (
-            margin: 12,
+            margin_start: 12,
+            margin_end: 12,
+            margin_top: 12,
+            margin_bottom: 12,
             message_info: message_info
         );
+        parent_message_box = mbox;
     }
 
     static construct {
@@ -90,24 +96,24 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             parsed_name = parsed_address;
         }
 
-        avatar = new Hdy.Avatar (48, parsed_name, true) {
+        avatar = new Adw.Avatar (48, parsed_name, true) {
             valign = Gtk.Align.START
         };
 
         var from_label = new Gtk.Label (_("From:"));
         from_label.halign = Gtk.Align.END;
         from_label.valign = Gtk.Align.START;
-        from_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        from_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var to_label = new Gtk.Label (_("To:"));
         to_label.halign = Gtk.Align.END;
         to_label.valign = Gtk.Align.START;
-        to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        to_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var subject_label = new Gtk.Label (_("Subject:"));
         subject_label.halign = Gtk.Align.END;
         subject_label.valign = Gtk.Align.START;
-        subject_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        subject_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var from_val_label = new Gtk.Label (message_info.from);
         from_val_label.wrap = true;
@@ -136,7 +142,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             var cc_label = new Gtk.Label (_("Cc:"));
             cc_label.halign = Gtk.Align.END;
             cc_label.valign = Gtk.Align.START;
-            cc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+            cc_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
             var cc_val_label = new Gtk.Label (cc_info);
             cc_val_label.xalign = 0;
@@ -154,11 +160,11 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         small_fields_grid.attach (small_from_label, 0, 0, 1, 1);
 
         header_stack = new Gtk.Stack ();
-        header_stack.homogeneous = false;
+        header_stack.hhomogeneous = false;
+        header_stack.vhomogeneous = false;
         header_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
         header_stack.add_named (fields_grid, "large");
         header_stack.add_named (small_fields_grid, "small");
-        header_stack.show_all ();
 
         var relevant_timestamp = message_info.date_received;
         if (relevant_timestamp == 0) {
@@ -171,10 +177,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         ///TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
         var datetime_label = new Gtk.Label (new DateTime.from_unix_utc (relevant_timestamp).to_local ().format (_("%s at %s").printf (date_format, time_format)));
-        datetime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        datetime_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var starred_icon = new Gtk.Image ();
-        starred_icon.icon_size = Gtk.IconSize.MENU;
+        starred_icon.add_css_class (Granite.STYLE_CLASS_MENU);
 
         if (Camel.MessageFlags.FLAGGED in (int) message_info.flags) {
             starred_icon.icon_name = "starred-symbolic";
@@ -185,59 +191,73 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         }
 
         var starred_button = new Gtk.Button ();
-        starred_button.image = starred_icon;
-        starred_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        starred_button.child = starred_icon;
+        starred_button.add_css_class (Granite.STYLE_CLASS_FLAT);
 
-        var reply_item = new Gtk.MenuItem.with_label (_("Reply"));
-        reply_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.REPLY));
+        var reply_item = new Gtk.Button.with_label (_("Reply"));
+        reply_item.add_css_class (Granite.STYLE_CLASS_MENUITEM);
+        //reply_item.clicked.connect (() => add_inline_composer (ComposerWidget.Type.REPLY));
 
-        var reply_all_item = new Gtk.MenuItem.with_label (_("Reply to All"));
-        reply_all_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.REPLY_ALL));
+        var reply_all_item = new Gtk.Button.with_label (_("Reply to All"));
+        reply_all_item.add_css_class (Granite.STYLE_CLASS_MENUITEM);
+        //reply_all_item.clicked.connect (() => add_inline_composer (ComposerWidget.Type.REPLY_ALL));
 
-        var forward_item = new Gtk.MenuItem.with_label (_("Forward"));
-        forward_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.FORWARD));
+        var forward_item = new Gtk.Button.with_label (_("Forward"));
+        forward_item.add_css_class (Granite.STYLE_CLASS_MENUITEM);
+        //forward_item.clicked.connect (() => add_inline_composer (ComposerWidget.Type.FORWARD));
 
-        var print_item = new Gtk.MenuItem.with_label (_("Print…"));
-        print_item.activate.connect (on_print);
+        var separator_item = new Gtk.Separator (HORIZONTAL);
 
-        var actions_menu = new Gtk.Menu ();
-        actions_menu.add (reply_item);
-        actions_menu.add (reply_all_item);
-        actions_menu.add (forward_item);
-        actions_menu.add (new Gtk.SeparatorMenuItem ());
-        actions_menu.add (print_item);
-        actions_menu.show_all ();
+        var print_item = new Gtk.Button.with_label (_("Print…"));
+        print_item.add_css_class (Granite.STYLE_CLASS_MENUITEM);
+        print_item.clicked.connect (on_print);
 
-        var actions_menu_button = new Gtk.MenuButton ();
-        actions_menu_button.image = new Gtk.Image.from_icon_name ("view-more-symbolic", Gtk.IconSize.MENU);
-        actions_menu_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-        actions_menu_button.tooltip_text = _("More");
-        actions_menu_button.margin_top = 6;
-        actions_menu_button.valign = Gtk.Align.START;
-        actions_menu_button.halign = Gtk.Align.END;
-        actions_menu_button.popup = actions_menu;
+        var actions_menu_box = new Gtk.Box (VERTICAL, 0);
+        actions_menu_box.append (reply_item);
+        actions_menu_box.append (reply_all_item);
+        actions_menu_box.append (forward_item);
+        actions_menu_box.append (separator_item);
+        actions_menu_box.append (print_item);
 
-        var action_grid = new Gtk.Grid ();
-        action_grid.column_spacing = 3;
-        action_grid.hexpand = true;
-        action_grid.halign = Gtk.Align.END;
-        action_grid.valign = Gtk.Align.START;
-        action_grid.add (datetime_label);
+        var actions_menu = new Gtk.Popover () {
+            child = actions_menu_box
+        };
+        actions_menu.add_css_class (Granite.STYLE_CLASS_MENU);
+
+        var actions_menu_button = new Gtk.MenuButton () {
+            icon_name = "view-more-symbolic",
+            tooltip_text = _("More"),
+            margin_top = 6,
+            valign = START,
+            halign = END,
+            popover = actions_menu
+        };
+        actions_menu_button.add_css_class (Granite.STYLE_CLASS_FLAT);
+        //actions_menu_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
+
+        var action_grid = new Gtk.Grid () {
+            column_spacing = 3,
+            hexpand = true,
+            halign = END,
+            valign = START
+        };
+        action_grid.attach (datetime_label, 0, 0);
         action_grid.attach (starred_button, 2, 0);
         action_grid.attach (actions_menu_button, 2, 1);
 
-        var header = new Gtk.Grid ();
-        header.margin = 12;
-        header.column_spacing = 12;
+        var header = new Gtk.Grid () {
+            column_spacing = 12,
+            margin_start = 12,
+            margin_end = 12,
+            margin_top = 12,
+            margin_bottom = 12
+        };
         header.attach (avatar, 0, 0, 1, 3);
         header.attach (header_stack, 1, 0, 1, 3);
         header.attach (action_grid, 2, 0);
 
-        var header_event_box = new Gtk.EventBox ();
-        header_event_box.events |= Gdk.EventMask.ENTER_NOTIFY_MASK;
-        header_event_box.events |= Gdk.EventMask.LEAVE_NOTIFY_MASK;
-        header_event_box.events |= Gdk.EventMask.BUTTON_RELEASE_MASK;
-        header_event_box.add (header);
+        var header_gesture_click = new Gtk.GestureClick ();
+        header.add_controller (header_gesture_click);
 
         var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
         separator.hexpand = true;
@@ -245,91 +265,85 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         settings = new GLib.Settings ("io.elementary.mail");
 
         blocked_images_infobar = new Gtk.InfoBar ();
-        blocked_images_infobar.margin = 12;
+        blocked_images_infobar.margin_start = 12;
+        blocked_images_infobar.margin_end = 12;
+        blocked_images_infobar.margin_top = 12;
+        blocked_images_infobar.margin_bottom = 12;
         blocked_images_infobar.message_type = Gtk.MessageType.WARNING;
         blocked_images_infobar.add_button (_("Show Images"), 1);
         blocked_images_infobar.add_button (_("Always Show from Sender"), 2);
-        blocked_images_infobar.get_style_context ().add_class (Gtk.STYLE_CLASS_FRAME);
-        blocked_images_infobar.no_show_all = true;
+        //blocked_images_infobar.add_css_class (Granite.STYLE_CLASS_FRAME);
+        blocked_images_infobar.add_child (new Gtk.Label (_("This message contains remote images.")));
 
-        var infobar_content = blocked_images_infobar.get_content_area ();
-        infobar_content.add (new Gtk.Label (_("This message contains remote images.")));
-        infobar_content.show_all ();
-
-        ((Gtk.Box) blocked_images_infobar.get_action_area ()).orientation = Gtk.Orientation.VERTICAL;
+        //((Gtk.Box) blocked_images_infobar.get_action_area ()).orientation = Gtk.Orientation.VERTICAL;
 
         web_view = new Mail.WebView ();
-        web_view.margin = 12;
+        web_view.margin_start = 12;
+        web_view.margin_end = 12;
+        web_view.margin_top = 12;
+        web_view.margin_bottom = 12;
+        web_view.hexpand = true;
+        web_view.vexpand = true;
         web_view.mouse_target_changed.connect (on_mouse_target_changed);
         web_view.context_menu.connect (on_webview_context_menu);
         web_view.load_finished.connect (() => {
             loaded = true;
         });
 
-        var secondary_grid = new Gtk.Grid ();
-        secondary_grid.orientation = Gtk.Orientation.VERTICAL;
-        secondary_grid.add (separator);
-        secondary_grid.add (blocked_images_infobar);
-        secondary_grid.add (web_view);
+        var secondary_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        secondary_box.append (separator);
+        secondary_box.append (blocked_images_infobar);
+        secondary_box.append (web_view);
 
         secondary_revealer = new Gtk.Revealer ();
         secondary_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_UP;
-        secondary_revealer.add (secondary_grid);
+        secondary_revealer.set_child (secondary_box);
 
-        var base_grid = new Gtk.Grid ();
-        base_grid.expand = true;
-        base_grid.orientation = Gtk.Orientation.VERTICAL;
-        base_grid.add (header_event_box);
-        base_grid.add (secondary_revealer);
+        var base_box = new Gtk.Box (VERTICAL, 0);
+        base_box.hexpand = true;
+        base_box.vexpand = true;
+        base_box.append (header);
+        base_box.append (secondary_revealer);
 
         if (Camel.MessageFlags.ATTACHMENTS in (int) message_info.flags) {
-            var attachment_icon = new Gtk.Image.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
+            var attachment_icon = new Gtk.Image.from_icon_name ("mail-attachment-symbolic");
+            attachment_icon.add_css_class (Granite.STYLE_CLASS_MENU);
             attachment_icon.margin_start = 6;
             attachment_icon.tooltip_text = _("This message contains one or more attachments");
             action_grid.attach (attachment_icon, 1, 0);
 
             attachment_bar = new AttachmentBar (loading_cancellable);
-            secondary_grid.add (attachment_bar);
+            secondary_box.append (attachment_bar);
         }
 
-        add (base_grid);
+        append (base_box);
         expanded = false;
-        show_all ();
 
-        avatar.set_loadable_icon (new GravatarIcon (parsed_address, get_style_context ().get_scale ()));
+        //avatar.set_loadable_icon (new GravatarIcon (parsed_address, get_style_context ().get_scale ()));
 
-        /* Override default handler to stop event propagation. Otherwise clicking the menu will
-           expand or collapse the MessageListItem. */
-        actions_menu_button.button_release_event.connect ((event) => {
-            actions_menu_button.set_active (true);
-            return Gdk.EVENT_STOP;
-        });
+        // header_event_box.enter_notify_event.connect ((event) => {
+        //     if (event.detail != Gdk.NotifyType.INFERIOR) {
+        //         var window = header_event_box.get_window ();
+        //         var cursor = new Gdk.Cursor.from_name (window.get_display (), "pointer");
+        //         window.set_cursor (cursor);
+        //     }
+        // });
 
-        header_event_box.enter_notify_event.connect ((event) => {
-            if (event.detail != Gdk.NotifyType.INFERIOR) {
-                var window = header_event_box.get_window ();
-                var cursor = new Gdk.Cursor.from_name (window.get_display (), "pointer");
-                window.set_cursor (cursor);
-            }
-        });
+        // header_event_box.leave_notify_event.connect ((event) => {
+        //     if (event.detail != Gdk.NotifyType.INFERIOR) {
+        //         header_event_box.get_window ().set_cursor (null);
+        //     }
+        // });
 
-        header_event_box.leave_notify_event.connect ((event) => {
-            if (event.detail != Gdk.NotifyType.INFERIOR) {
-                header_event_box.get_window ().set_cursor (null);
-            }
-        });
-
-        header_event_box.button_release_event.connect ((event) => {
+        header_gesture_click.released.connect (() => {
             expanded = !expanded;
-            return Gdk.EVENT_STOP;
         });
 
         destroy.connect (() => {
             loading_cancellable.cancel ();
         });
 
-        /* Connecting to clicked () doesn't allow us to prevent the event from propagating to header_event_box */
-        starred_button.button_release_event.connect (() => {
+        starred_button.clicked.connect (() => {
             if (Camel.MessageFlags.FLAGGED in (int) message_info.flags) {
                 message_info.set_flags (Camel.MessageFlags.FLAGGED, 0);
                 starred_icon.icon_name = "non-starred-symbolic";
@@ -339,8 +353,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 starred_icon.icon_name = "starred-symbolic";
                 starred_icon.tooltip_text = _("Unstar message");
             }
-
-            return Gdk.EVENT_STOP;
         });
 
         web_view.image_load_blocked.connect (() => {
@@ -355,10 +367,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         });
     }
 
-    private void add_inline_composer (ComposerWidget.Type composer_type) {
-        var message_list_box = (MessageListBox) get_parent ();
-        message_list_box.add_inline_composer.begin (composer_type, this);
-    }
+    // private void add_inline_composer (ComposerWidget.Type composer_type) {
+    //     var message_list_box = (MessageListBox) get_parent ();
+    //     message_list_box.add_inline_composer.begin (composer_type, this);
+    // }
 
     private void on_print () {
         try {
@@ -383,7 +395,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             /* @TODO: include header fields in printed output */
             var print_operation = new WebKit.PrintOperation (web_view);
             print_operation.set_print_settings (settings);
-            print_operation.run_dialog ((Gtk.ApplicationWindow) get_toplevel ());
+            print_operation.run_dialog ((Gtk.ApplicationWindow) get_root ());
         } catch (Error e) {
             var print_error_dialog = new Granite.MessageDialog.with_image_from_icon_name (
                 _("Unable to print email"),
@@ -391,19 +403,20 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 "printer"
             );
             print_error_dialog.badge_icon = new ThemedIcon ("dialog-error");
-            print_error_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            print_error_dialog.transient_for = (Gtk.Window) get_root ();
             print_error_dialog.show_error_details (e.message);
-            print_error_dialog.run ();
-            print_error_dialog.destroy ();
+            print_error_dialog.response.connect (() => {
+                print_error_dialog.destroy ();
+            });
+            print_error_dialog.present ();
         }
     }
 
     private void on_mouse_target_changed (WebKit.WebView web_view, WebKit.HitTestResult hit_test, uint mods) {
-        var list_box = this.parent as MessageListBox;
         if (hit_test.context_is_link ()) {
-            list_box.hovering_over_link (hit_test.get_link_label (), hit_test.get_link_uri ());
+            parent_message_box.hovering_over_link (hit_test.get_link_label (), hit_test.get_link_uri ());
         } else {
-            list_box.hovering_over_link (null, null);
+            parent_message_box.hovering_over_link (null, null);
         }
     }
 

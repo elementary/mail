@@ -19,7 +19,7 @@
  */
 
 public class Mail.MainWindow : Adw.ApplicationWindow {
-   // private HeaderBar headerbar;
+//   private HeaderBar headerbar;
     private Gtk.SearchEntry search_entry;
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
@@ -27,7 +27,7 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
     private FoldersListView folders_list_view;
     private Gtk.Overlay view_overlay;
     private ConversationListBox conversation_list_box;
-//    private MessageListBox message_list_box;
+    private MessageListBox message_list_box;
     private Granite.SwitchModelButton hide_read_switch;
     private Granite.SwitchModelButton hide_unstarred_switch;
     private Gtk.Button refresh_button;
@@ -111,13 +111,13 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
             );
         }
 
-        //headerbar = new HeaderBar ();
-        //headerbar.add_css_class (Granite.STYLE_CLASS_FLAT);
+//        headerbar = new HeaderBar ();
+//        headerbar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         folders_list_view = new FoldersListView ();
        conversation_list_box = new ConversationListBox ();
 
-        // message_list_box = new MessageListBox ();
+        message_list_box = new MessageListBox ();
         // message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY), "enabled", BindingFlags.SYNC_CREATE);
         // message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY_ALL), "enabled", BindingFlags.SYNC_CREATE);
         // message_list_box.bind_property ("can-reply", get_action (ACTION_FORWARD), "enabled", BindingFlags.SYNC_CREATE);
@@ -131,19 +131,20 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
             valign = Gtk.Align.CENTER
         };
 
-        var search_header = new Adw.HeaderBar ();
+        var search_header = new Gtk.HeaderBar ();
+        search_header.show_title_buttons  = false;
         search_header.add_css_class (Granite.STYLE_CLASS_FLAT);
         search_header.set_title_widget (search_entry);
 
-       //  refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic") {
-       //      action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REFRESH
-       //  };
+        refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic") {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REFRESH
+        };
 
-       //  var application_instance = (Gtk.Application) GLib.Application.get_default ();
-       //  refresh_button.tooltip_markup = Granite.markup_accel_tooltip (
-       //      application_instance.get_accels_for_action (refresh_button.action_name),
-       //      _("Fetch new messages")
-       //  );
+        var application_instance = (Gtk.Application) GLib.Application.get_default ();
+        refresh_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (refresh_button.action_name),
+            _("Fetch new messages")
+        );
 
         refresh_spinner = new Gtk.Spinner () {
             spinning = true,
@@ -190,35 +191,31 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
         conversation_list_grid.attach (conversation_action_bar, 0, 2);
         conversation_list_grid.add_css_class (Granite.STYLE_CLASS_VIEW);
 
-       //  message_list_scrolled = new Gtk.ScrolledWindow (null, null);
-       //  message_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-       //  message_list_scrolled.append (message_list_box);
-        // Prevent the focus of the webview causing the ScrolledWindow to scroll
-       //  var scrolled_child = message_list_scrolled.get_child ();
-       //  if (scrolled_child is Gtk.Box) {
-       //      ((Gtk.Box) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
-       //  }
+        //Prevent the focus of the webview causing the ScrolledWindow to scroll
+        // var scrolled_child = message_list_scrolled.get_child ();
+        // if (scrolled_child is Gtk.Box) {
+            //((Gtk.Box) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
+        // }
 
-       //  view_overlay = new Gtk.Overlay ();
-       //  view_overlay.add_overlay (message_list_scrolled);
+        view_overlay = new Gtk.Overlay ();
+        view_overlay.set_child (message_list_box);
 
-       //  var message_list_container = new Gtk.Grid ();
-       //  message_list_container.add_css_class (Granite.STYLE_CLASS_BACKGROUND);
-       //  message_list_container.attach (headerbar, 0, 0);
-       //  message_list_container.attach (view_overlay, 0, 1);
+        var message_list_container = new Gtk.Box (VERTICAL, 0);
+        //message_list_container.append (headerbar);
+        message_list_container.append (view_overlay);
 
-       //  var message_overlay = new Granite.OverlayBar (view_overlay);
-       //  message_overlay.no_present = true;
+        var message_overlay = new Granite.OverlayBar (view_overlay);
+        //message_overlay.no_present = true;
 
-       // message_list_box.hovering_over_link.connect ((label, url) => {
-       //      var hover_url = url != null ? GLib.Uri.unescape_string (url) : null;
-       //      if (hover_url == null) {
-       //          message_overlay.hide ();
-       //      } else {
-       //          message_overlay.label = hover_url;
-       //          message_overlay.show ();
-       //      }
-       //  });
+       message_list_box.hovering_over_link.connect ((label, url) => {
+            var hover_url = url != null ? GLib.Uri.unescape_string (url) : null;
+            if (hover_url == null) {
+                message_overlay.hide ();
+            } else {
+                message_overlay.label = hover_url;
+                message_overlay.show ();
+            }
+        });
 
         paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_start.set_start_child (folders_list_view);
@@ -226,7 +223,7 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
 
         paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_end.set_start_child (paned_start);
-        // paned_end.set_start_child (message_list_container);
+        paned_end.set_end_child (message_list_container);
 
         // var welcome_view = new Mail.WelcomeView ();
 
@@ -258,36 +255,36 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
            conversation_list_box.load_folder.begin (folder_full_name_per_account);
         });
 
-       // conversation_list_box.conversation_selected.connect ((node) => {
-       //     message_list_box.set_conversation (node);
+       conversation_list_box.conversation_selected.connect ((node) => {
+           message_list_box.set_conversation (node);
 
-       //     if (node != null && node.message != null && Camel.MessageFlags.DRAFT in (int) node.message.flags) {
-       //         message_list_box.append_inline_composer.begin (ComposerWidget.Type.DRAFT, null, (obj, res) => {
-       //            message_list_box.append_inline_composer.end (res);
-       //              scroll_message_list_to_bottom ();
-       //          });
-       //     }
-       // });
+           if (node != null && node.message != null && Camel.MessageFlags.DRAFT in (int) node.message.flags) {
+               // message_list_box.append_inline_composer.begin (ComposerWidget.Type.DRAFT, null, (obj, res) => {
+               //    message_list_box.append_inline_composer.end (res);
+               //      scroll_message_list_to_bottom ();
+               //  });
+           }
+       });
 
        //  search_entry.bind_property ("sensitive", filter_button, "sensitive", BindingFlags.SYNC_CREATE);
 
-       // hide_read_switch.notify["active"].connect (on_filter_button_changed);
-       // hide_unstarred_switch.notify["active"].connect (on_filter_button_changed);
+       hide_read_switch.notify["active"].connect (on_filter_button_changed);
+       hide_unstarred_switch.notify["active"].connect (on_filter_button_changed);
 
-       //  search_entry.search_changed.connect (() => {
-       //      if (search_changed_debounce_timeout_id != 0) {
-       //          GLib.Source.remove (search_changed_debounce_timeout_id);
-       //      }
+        search_entry.search_changed.connect (() => {
+            if (search_changed_debounce_timeout_id != 0) {
+                GLib.Source.remove (search_changed_debounce_timeout_id);
+            }
 
-       //      search_changed_debounce_timeout_id = GLib.Timeout.add (800, () => {
-       //          search_changed_debounce_timeout_id = 0;
+            search_changed_debounce_timeout_id = GLib.Timeout.add (800, () => {
+                search_changed_debounce_timeout_id = 0;
 
-       //          var search_term = search_entry.text.strip ();
-       //         conversation_list_box.search.begin (search_term == "" ? null : search_term);
+                var search_term = search_entry.text.strip ();
+               conversation_list_box.search.begin (search_term == "" ? null : search_term);
 
-       //          return GLib.Source.REMOVE;
-       //      });
-       //  });
+                return GLib.Source.REMOVE;
+            });
+        });
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
 
@@ -314,16 +311,15 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
      }
 
     private void on_filter_button_changed () {
-        // var style_context = filter_button.get_style_context ();
-        // if (hide_read_switch.active || hide_unstarred_switch.active) {
-        //     if (!filter_button.has_css_class (Granite.STYLE_CLASS_ACCENT)) {
-        //         filter_button.add_css_class (Granite.STYLE_CLASS_ACCENT);
-        //     }
-        // } else if (filter_button.has_css_class (Granite.STYLE_CLASS_ACCENT)) {
-        //     filter_button.remove_css_class (Granite.STYLE_CLASS_ACCENT);
-        // }
+        if (hide_read_switch.active || hide_unstarred_switch.active) {
+            if (!filter_button.has_css_class (Granite.STYLE_CLASS_ACCENT)) {
+                filter_button.add_css_class (Granite.STYLE_CLASS_ACCENT);
+            }
+        } else if (filter_button.has_css_class (Granite.STYLE_CLASS_ACCENT)) {
+            filter_button.remove_css_class (Granite.STYLE_CLASS_ACCENT);
+        }
 
-        // conversation_list_box.search.begin (search_entry.text, hide_read_switch.active, hide_unstarred_switch.active);
+        conversation_list_box.search.begin (search_entry.text, hide_read_switch.active, hide_unstarred_switch.active);
     }
 
     private void on_compose_message () {
@@ -331,13 +327,13 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
     }
 
     private void on_refresh () {
-        // refresh_stack.visible_child = refresh_spinner;
+        refresh_stack.visible_child = refresh_spinner;
 
-        // conversation_list_box.refresh_folder.begin (null, (obj, res) => {
-        //     conversation_list_box.refresh_folder.end (res);
+        conversation_list_box.refresh_folder.begin (null, (obj, res) => {
+            conversation_list_box.refresh_folder.end (res);
 
-        //     refresh_stack.visible_child = refresh_button;
-        // });
+            refresh_stack.visible_child = refresh_button;
+        });
     }
 
     private void scroll_message_list_to_bottom () {
@@ -353,19 +349,20 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
     }
 
     private void on_mark_read () {
-       //conversation_list_box.mark_read_selected_messages ();
+        print ("on mark read");
+       conversation_list_box.mark_read_selected_messages ();
     }
 
     private void on_mark_star () {
-       //conversation_list_box.mark_star_selected_messages ();
+       conversation_list_box.mark_star_selected_messages ();
     }
 
     private void on_mark_unread () {
-       //conversation_list_box.mark_unread_selected_messages ();
+       conversation_list_box.mark_unread_selected_messages ();
     }
 
     private void on_mark_unstar () {
-       //conversation_list_box.mark_unstar_selected_messages ();
+       conversation_list_box.mark_unstar_selected_messages ();
     }
 
     private void on_reply () {
@@ -391,11 +388,14 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
 
     private void on_move_to_trash () {
         // Only allow move to trash when focus is on the ConversationList
+        // @TODO: refine
+        print ("try trash");
         if (this.get_focus ().get_parent() is Gtk.ListView) {
-       // var result = conversation_list_box.trash_selected_messages ();
-       //  if (result > 0) {
-       //      send_move_toast (ngettext ("Message Deleted", "Messages Deleted", result));
-       //  }
+            print ("trash");
+            var result = conversation_list_box.trash_selected_messages ();
+            if (result > 0) {
+                send_move_toast (ngettext ("Message Deleted", "Messages Deleted", result));
+            }
         }
     }
 

@@ -18,27 +18,39 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.MessageListBox : Gtk.ListBox {
+public class Mail.MessageListBox : Gtk.Box {
     public signal void hovering_over_link (string? label, string? uri);
     public bool can_reply { get; set; default = false; }
     public bool can_move_thread { get; set; default = false; }
     public GenericArray<string> uids { get; private set; default = new GenericArray<string> (); }
+    public Gtk.ListBox list_box;
+    public Gtk.ScrolledWindow scrolled_window;
 
     public MessageListBox () {
-        Object (selection_mode: Gtk.SelectionMode.NONE);
     }
 
     construct {
+        list_box = new Gtk.ListBox () {
+            hexpand = true,
+            vexpand = true
+        };
+        list_box.selection_mode = NONE;
+        scrolled_window = new Gtk.ScrolledWindow () {
+            hexpand = true,
+            vexpand = true,
+            child = list_box,
+            hscrollbar_policy = NEVER
+        };
+        this.append (scrolled_window);
+
         var placeholder = new Gtk.Label (_("No Message Selected"));
         placeholder.visible = true;
+        placeholder.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
+        placeholder.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-        var placeholder_style_context = placeholder.get_style_context ();
-        placeholder_style_context.add_class (Granite.STYLE_CLASS_H2_LABEL);
-        placeholder_style_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-
-        get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
-        set_placeholder (placeholder);
-        set_sort_func (message_sort_function);
+        //add_css_class (Granite.STYLE_CLASS_BACKGROUND);
+        list_box.set_placeholder (placeholder);
+        list_box.set_sort_func (message_sort_function);
     }
 
     public void set_conversation (Camel.FolderThreadNode? node) {
@@ -50,9 +62,12 @@ public class Mail.MessageListBox : Gtk.ListBox {
         can_reply = false;
         can_move_thread = false;
 
-        get_children ().foreach ((child) => {
-            child.destroy ();
-        });
+        var current_child = list_box.get_row_at_index (0);
+        for (int i = 1; current_child != null; i++) {
+            list_box.remove (current_child);
+            current_child = list_box.get_row_at_index (i);
+        }
+
         uids = new GenericArray<string> ();
 
         if (node == null) {
@@ -65,30 +80,30 @@ public class Mail.MessageListBox : Gtk.ListBox {
          */
         can_move_thread = true;
 
-        var item = new MessageListItem (node.message);
-        add (item);
+        var item = new MessageListItem (node.message, this);
+        list_box.append (item);
         uids.add (node.message.uid);
         if (node.child != null) {
             go_down ((Camel.FolderThreadNode?) node.child);
         }
 
-        var children = get_children ();
-        var num_children = children.length ();
-        if (num_children > 0) {
-            var child = get_row_at_index ((int) num_children - 1);
-            if (child != null && child is MessageListItem) {
-                var list_item = (MessageListItem) child;
-                list_item.expanded = true;
-                list_item.bind_property ("loaded", this, "can-reply", BindingFlags.SYNC_CREATE);
-            }
-        }
+        // var children = get_children ();
+        // var num_children = children.length ();
+        // if (num_children > 0) {
+        //     var child = get_row_at_index ((int) num_children - 1);
+        //     if (child != null && child is MessageListItem) {
+        //         var list_item = (MessageListItem) child;
+        //         list_item.expanded = true;
+        //         list_item.bind_property ("loaded", this, "can-reply", BindingFlags.SYNC_CREATE);
+        //     }
+        // }
     }
 
     private void go_down (Camel.FolderThreadNode node) {
         unowned Camel.FolderThreadNode? current_node = node;
         while (current_node != null) {
-            var item = new MessageListItem (current_node.message);
-            add (item);
+            var item = new MessageListItem (current_node.message, this);
+            list_box.append (item);
             uids.add (current_node.message.uid);
             if (current_node.next != null) {
                 go_down ((Camel.FolderThreadNode?) current_node.next);
@@ -98,35 +113,35 @@ public class Mail.MessageListBox : Gtk.ListBox {
         }
     }
 
-    public async void add_inline_composer (ComposerWidget.Type type, MessageListItem? message_item = null) {
-        /* Can't open a new composer if thread is empty or currently has a composer open */
-        var last_child = get_row_at_index ((int) get_children ().length () - 1);
-        if (last_child == null || last_child is InlineComposer) {
-            return;
-        }
+    // public async void add_inline_composer (ComposerWidget.Type type, MessageListItem? message_item = null) {
+    //     /* Can't open a new composer if thread is empty or currently has a composer open */
+    //     var last_child = get_row_at_index ((int) get_children ().length () - 1);
+    //     if (last_child == null || last_child is InlineComposer) {
+    //         return;
+    //     }
 
-        if (message_item == null) {
-            message_item = (MessageListItem) last_child;
-        }
+    //     if (message_item == null) {
+    //         message_item = (MessageListItem) last_child;
+    //     }
 
-        string content_to_quote = "";
-        Camel.MimeMessage? mime_message = null;
-        Camel.MessageInfo? message_info = null;
-        content_to_quote = yield message_item.get_message_body_html ();
-        mime_message = message_item.mime_message;
-        message_info = message_item.message_info;
+    //     string content_to_quote = "";
+    //     Camel.MimeMessage? mime_message = null;
+    //     Camel.MessageInfo? message_info = null;
+    //     content_to_quote = yield message_item.get_message_body_html ();
+    //     mime_message = message_item.mime_message;
+    //     message_info = message_item.message_info;
 
-        var composer = new InlineComposer (type, message_info, mime_message, content_to_quote);
-        composer.discarded.connect (() => {
-            can_reply = true;
-            can_move_thread = true;
-            remove (composer);
-            composer.destroy ();
-        });
-        add (composer);
-        can_reply = false;
-        can_move_thread = true;
-    }
+    //     var composer = new InlineComposer (type, message_info, mime_message, content_to_quote);
+    //     composer.discarded.connect (() => {
+    //         can_reply = true;
+    //         can_move_thread = true;
+    //         remove (composer);
+    //         composer.destroy ();
+    //     });
+    //     add (composer);
+    //     can_reply = false;
+    //     can_move_thread = true;
+    // }
 
     private static int message_sort_function (Gtk.ListBoxRow item1, Gtk.ListBoxRow item2) {
         unowned MessageListItem message1 = (MessageListItem)item1;

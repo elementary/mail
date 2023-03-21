@@ -33,37 +33,43 @@ public class AttachmentButton : Gtk.FlowBoxChild {
     }
 
     construct {
-        margin = 6;
-        var event_box = new Gtk.EventBox ();
-        event_box.events |= Gdk.EventMask.BUTTON_PRESS_MASK;
-        event_box.button_press_event.connect ((event) => {
-            if (event.button == Gdk.BUTTON_SECONDARY) {
-                var item_open = new Gtk.MenuItem.with_label (_("Open"));
-                item_open.activate.connect (() => activate ());
-                var item_save = new Gtk.MenuItem.with_label (_("Save As…"));
-                item_save.activate.connect (() => save_as_activated ());
-                var menu = new Gtk.Menu ();
-                menu.add (item_open);
-                menu.add (item_save);
-                menu.attach_widget = this;
-                menu.show_all ();
-                menu.popup_at_pointer (event);
-            } else {
-                activate ();
-            }
-
-            return true;
+        margin_start = 6;
+        margin_end = 6;
+        margin_top = 6;
+        margin_bottom = 6;
+        var event_box = new Gtk.Box (VERTICAL, 0);
+        var gesture_secondary_click = new Gtk.GestureClick () {
+            button = Gdk.BUTTON_SECONDARY
+        };
+        //event_box.events |= Gdk.EventMask.BUTTON_PRESS_MASK;
+        gesture_secondary_click.pressed.connect (() => {
+                // var item_open = new Gtk.MenuItem.with_label (_("Open"));
+                // item_open.activate.connect (() => activate ());
+                // var item_save = new Gtk.MenuItem.with_label (_("Save As…"));
+                // item_save.activate.connect (() => save_as_activated ());
+                // var menu = new Gtk.Menu ();
+                // menu.add (item_open);
+                // menu.add (item_save);
+                // menu.attach_widget = this;
+                // menu.popup_at_pointer (event);
+        });
+        var gesture_primary_click = new Gtk.GestureClick ();
+        gesture_primary_click.pressed.connect (() => {
+            activate ();
         });
 
         var grid = new Gtk.Grid ();
-        grid.margin = 6;
+        grid.margin_start = 6;
+        grid.margin_end = 6;
+        grid.margin_top = 6;
+        grid.margin_bottom = 6;
         grid.column_spacing = 6;
 
         var mime_type = mime_part.get_content_type ().simple ();
         var glib_type = GLib.ContentType.from_mime_type (mime_type);
         var content_icon = GLib.ContentType.get_icon (glib_type);
 
-        preview_image = new Gtk.Image.from_gicon (content_icon, Gtk.IconSize.DND);
+        preview_image = new Gtk.Image.from_gicon (content_icon);
         preview_image.valign = Gtk.Align.CENTER;
 
         name_label = new Gtk.Label (mime_part.get_filename ());
@@ -71,7 +77,7 @@ public class AttachmentButton : Gtk.FlowBoxChild {
 
         size_label = new Gtk.Label (null);
         size_label.xalign = 0;
-        size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        size_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         new Thread<void*> (null, () => {
             string? size_text = null;
@@ -87,7 +93,7 @@ public class AttachmentButton : Gtk.FlowBoxChild {
                     size_label.label = size_text;
                 } else {
                     size_label.label = _("Unknown");
-                    size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
+                    size_label.add_css_class (Granite.STYLE_CLASS_ERROR);
                 }
 
                 return GLib.Source.REMOVE;
@@ -99,29 +105,28 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         grid.attach (preview_image, 0, 0, 1, 2);
         grid.attach (name_label, 1, 0, 1, 1);
         grid.attach (size_label, 1, 1, 1, 1);
-        event_box.add (grid);
-        add (event_box);
-        show_all ();
+        event_box.append (grid);
+        set_child (event_box);
     }
 
     private void save_as_activated () {
-        Gtk.Window? parent_window = get_toplevel () as Gtk.Window;
-        var chooser = new Gtk.FileChooserNative (
-            null,
-            parent_window,
-            Gtk.FileChooserAction.SAVE,
-            _("Save"),
-            _("Cancel")
-        );
+        // Gtk.Window? parent_window = get_root () as Gtk.Window;
+        // var chooser = new Gtk.FileChooserNative (
+        //     null,
+        //     parent_window,
+        //     Gtk.FileChooserAction.SAVE,
+        //     _("Save"),
+        //     _("Cancel")
+        // );
 
-        chooser.set_current_name (mime_part.get_filename ());
-        chooser.do_overwrite_confirmation = true;
+        // chooser.set_current_name (mime_part.get_filename ());
+        // chooser.do_overwrite_confirmation = true;
 
-        if (chooser.run () == Gtk.ResponseType.ACCEPT) {
-            write_to_file.begin (chooser.get_file ());
-        }
+        // if (chooser.run () == Gtk.ResponseType.ACCEPT) {
+        //     write_to_file.begin (chooser.get_file ());
+        // }
 
-        chooser.destroy ();
+        // chooser.destroy ();
     }
 
     private async void write_to_file (GLib.File file) {
