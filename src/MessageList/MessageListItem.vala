@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.MessageListItem : Gtk.Box {
+public class Mail.MessageListItem : Gtk.ListBoxRow {
     public bool loaded { get; private set; }
     public Camel.MessageInfo message_info { get; construct; }
     public Camel.MimeMessage? mime_message { get; private set; default = null; }
@@ -316,7 +316,7 @@ public class Mail.MessageListItem : Gtk.Box {
             secondary_box.append (attachment_bar);
         }
 
-        append (base_box);
+        set_child (base_box);
         expanded = false;
 
         //avatar.set_loadable_icon (new GravatarIcon (parsed_address, get_style_context ().get_scale ()));
