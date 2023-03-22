@@ -23,6 +23,7 @@ public class Mail.MessageListBox : Gtk.Box {
     public bool can_reply { get; set; default = false; }
     public bool can_move_thread { get; set; default = false; }
     public GenericArray<string> uids { get; private set; default = new GenericArray<string> (); }
+
     public Gtk.ListBox list_box;
     public Gtk.ScrolledWindow scrolled_window;
 

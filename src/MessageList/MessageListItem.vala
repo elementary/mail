@@ -33,7 +33,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private Gtk.Stack header_stack;
     private Gtk.StyleContext style_context;
     private Adw.Avatar avatar;
-    private AttachmentBar attachment_bar = null;
+    private Gtk.FlowBox attachment_bar = null;
 
     private string message_content;
     private bool message_is_html = false;
@@ -312,7 +312,11 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             attachment_icon.tooltip_text = _("This message contains one or more attachments");
             action_grid.attach (attachment_icon, 1, 0);
 
-            attachment_bar = new AttachmentBar (loading_cancellable);
+            attachment_bar = new Gtk.FlowBox () {
+                hexpand = true
+            };
+            //attachment_bar.add_css_class (Granite.STYLE_CLASS_TOOLBAR);
+            //attachment_bar.add_css_class (Granite.STYLE_CLASS_INLINE_TOOLBAR);
             secondary_box.append (attachment_bar);
         }
 
@@ -455,10 +459,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             warning ("Could not get message. %s", e.message);
         }
 
-        if (attachment_bar != null) {
-            yield attachment_bar.parse_mime_content (message.content);
-        }
-
         var flags = (Camel.FolderFlags)folder.get_flags ();
 
         if (!(Camel.FolderFlags.IS_JUNK in flags) && settings.get_boolean ("always-load-remote-images")) {
@@ -525,9 +525,16 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 var field = part.get_mime_type_field ();
                 if (part.disposition == "inline") {
                     yield handle_inline_mime (part);
-                } else if (field.type == "text") {
+                }
+                if (field.type == "text") {
                     yield handle_text_mime (part.content);
-                } else if (field.type == "multipart") {
+                }
+                if (part.disposition == "attachment") {
+                    var button = new AttachmentButton (part, loading_cancellable);
+                    button.activate.connect (() => show_attachment (button.mime_part));
+                    attachment_bar.append (button);
+                }
+                if (field.type == "multipart") {
                     yield parse_mime_content (part.content);
                 }
             }
@@ -612,5 +619,13 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     public async string get_message_body_html () {
         return yield web_view.get_body_html ();
+    }
+
+    private void show_attachment (Camel.MimePart attachment_part) {
+        var dialog = new Mail.OpenAttachmentDialog (get_root () as Gtk.Window, attachment_part);
+        dialog.response.connect (() => {
+            dialog.destroy ();
+        });
+        dialog.present ();
     }
 }
