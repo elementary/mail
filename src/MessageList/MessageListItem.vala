@@ -313,7 +313,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             action_grid.attach (attachment_icon, 1, 0);
 
             attachment_bar = new Gtk.FlowBox () {
-                hexpand = true
+                hexpand = true,
+                homogeneous = true
             };
             //attachment_bar.add_css_class (Granite.STYLE_CLASS_TOOLBAR);
             //attachment_bar.add_css_class (Granite.STYLE_CLASS_INLINE_TOOLBAR);
