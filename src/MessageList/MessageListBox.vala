@@ -88,16 +88,18 @@ public class Mail.MessageListBox : Gtk.Box {
             go_down ((Camel.FolderThreadNode?) node.child);
         }
 
-        // var children = get_children ();
-        // var num_children = children.length ();
-        // if (num_children > 0) {
-        //     var child = get_row_at_index ((int) num_children - 1);
-        //     if (child != null && child is MessageListItem) {
-        //         var list_item = (MessageListItem) child;
-        //         list_item.expanded = true;
-        //         list_item.bind_property ("loaded", this, "can-reply", BindingFlags.SYNC_CREATE);
-        //     }
-        // }
+
+        int n_children = 0;
+        while (list_box.get_row_at_index (n_children) != null) {
+            n_children++;
+        }
+
+        var child = list_box.get_row_at_index (n_children - 1);
+        if (child != null && child is MessageListItem) {
+            var list_item = (MessageListItem) child;
+            list_item.expanded = true;
+            list_item.bind_property ("loaded", this, "can-reply", BindingFlags.SYNC_CREATE);
+        }
     }
 
     private void go_down (Camel.FolderThreadNode node) {
