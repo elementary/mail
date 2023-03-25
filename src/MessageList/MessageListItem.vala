@@ -28,7 +28,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private Mail.WebView web_view;
     private GLib.Cancellable loading_cancellable;
 
-    private Gtk.InfoBar blocked_images_infobar;
+    private Gtk.Revealer blocked_images_revealer;
+    private Gtk.Button images_button_show;
+    private Gtk.Button images_button_always_show;
     private Gtk.Revealer secondary_revealer;
     private Gtk.Stack header_stack;
     private Gtk.StyleContext style_context;
@@ -264,18 +266,32 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         settings = new GLib.Settings ("io.elementary.mail");
 
-        blocked_images_infobar = new Gtk.InfoBar ();
-        blocked_images_infobar.margin_start = 12;
-        blocked_images_infobar.margin_end = 12;
-        blocked_images_infobar.margin_top = 12;
-        blocked_images_infobar.margin_bottom = 12;
-        blocked_images_infobar.message_type = Gtk.MessageType.WARNING;
-        blocked_images_infobar.add_button (_("Show Images"), 1);
-        blocked_images_infobar.add_button (_("Always Show from Sender"), 2);
-        //blocked_images_infobar.add_css_class (Granite.STYLE_CLASS_FRAME);
-        blocked_images_infobar.add_child (new Gtk.Label (_("This message contains remote images.")));
+        images_button_show = new Gtk.Button.with_label (_("Show Images"));
+        images_button_always_show = new Gtk.Button.with_label (_("Always Show from Sender"));
 
-        //((Gtk.Box) blocked_images_infobar.get_action_area ()).orientation = Gtk.Orientation.VERTICAL;
+        var images_button_box = new Gtk.Box (HORIZONTAL, 5) {
+            halign = CENTER
+        };
+        images_button_box.append (images_button_show);
+        images_button_box.append (images_button_always_show);
+
+        var blocked_images_box = new Gtk.FlowBox () {
+            margin_start = 12,
+            margin_bottom = 12,
+            margin_end = 12,
+            margin_top = 12,
+            hexpand = true,
+            homogeneous = true,
+            selection_mode = NONE
+        };
+        blocked_images_box.append (new Gtk.Label (_("This message contains remote images.")));
+        blocked_images_box.append (images_button_box);
+        //blocked_images_box.add_css_class (Granite.STYLE_CLASS_FRAME);
+        blocked_images_box.add_css_class (Granite.STYLE_CLASS_WARNING);
+
+        blocked_images_revealer = new Gtk.Revealer () {
+            child = blocked_images_box
+        };
 
         web_view = new Mail.WebView ();
         web_view.margin_start = 12;
@@ -292,7 +308,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         var secondary_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         secondary_box.append (separator);
-        secondary_box.append (blocked_images_infobar);
+        secondary_box.append (blocked_images_revealer);
         secondary_box.append (web_view);
 
         secondary_revealer = new Gtk.Revealer ();
@@ -361,7 +377,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         });
 
         web_view.image_load_blocked.connect (() => {
-            blocked_images_infobar.show ();
+            blocked_images_revealer.set_reveal_child (true);
         });
         web_view.link_activated.connect ((uri) => {
             try {
@@ -477,16 +493,19 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 web_view.load_images ();
             }
 
-            blocked_images_infobar.response.connect ((id) => {
-                if (id == 2) {
-                    if (!(sender in whitelist)) {
-                        whitelist += sender;
-                        settings.set_strv ("remote-images-whitelist", whitelist);
-                    }
+            images_button_show.clicked.connect (() => {
+                web_view.load_images ();
+                blocked_images_revealer.set_reveal_child (false);
+            });
+
+            images_button_always_show.clicked.connect (() => {
+                if (!(sender in whitelist)) {
+                    whitelist += sender;
+                    settings.set_strv ("remote-images-whitelist", whitelist);
                 }
 
                 web_view.load_images ();
-                blocked_images_infobar.destroy ();
+                blocked_images_revealer.set_reveal_child (false);
             });
         }
 
