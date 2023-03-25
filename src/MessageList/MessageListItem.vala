@@ -55,9 +55,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                     get_message.begin ();
                     message_loaded = true;
                 }
-                remove_css_class ("collapsed");
+                //remove_css_class ("collapsed");
             } else {
-                add_css_class ("collapsed");
+                //add_css_class ("collapsed");
             }
         }
     }
@@ -194,23 +194,38 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         starred_button.child = starred_icon;
         starred_button.add_css_class (Granite.STYLE_CLASS_FLAT);
 
+        var actions_menu = new Gtk.Popover ();
+        actions_menu.add_css_class (Granite.STYLE_CLASS_MENU);
+
         var reply_item = new Gtk.Button.with_label (_("Reply"));
         reply_item.add_css_class (Granite.STYLE_CLASS_MENUITEM);
-        //reply_item.clicked.connect (() => add_inline_composer (ComposerWidget.Type.REPLY));
+        reply_item.clicked.connect (() => {
+            add_inline_composer (ComposerWidget.Type.REPLY);
+            actions_menu.popdown ();
+        });
 
         var reply_all_item = new Gtk.Button.with_label (_("Reply to All"));
         reply_all_item.add_css_class (Granite.STYLE_CLASS_MENUITEM);
-        //reply_all_item.clicked.connect (() => add_inline_composer (ComposerWidget.Type.REPLY_ALL));
+        reply_all_item.clicked.connect (() => {
+            add_inline_composer (ComposerWidget.Type.REPLY_ALL);
+            actions_menu.popdown ();
+        });
 
         var forward_item = new Gtk.Button.with_label (_("Forward"));
         forward_item.add_css_class (Granite.STYLE_CLASS_MENUITEM);
-        //forward_item.clicked.connect (() => add_inline_composer (ComposerWidget.Type.FORWARD));
+        forward_item.clicked.connect (() => {
+            add_inline_composer (ComposerWidget.Type.FORWARD);
+            actions_menu.popdown ();
+        });
 
         var separator_item = new Gtk.Separator (HORIZONTAL);
 
         var print_item = new Gtk.Button.with_label (_("Print…"));
         print_item.add_css_class (Granite.STYLE_CLASS_MENUITEM);
-        print_item.clicked.connect (on_print);
+        print_item.clicked.connect (() => {
+            on_print ();
+            actions_menu.popdown ();
+        });
 
         var actions_menu_box = new Gtk.Box (VERTICAL, 0);
         actions_menu_box.append (reply_item);
@@ -219,10 +234,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         actions_menu_box.append (separator_item);
         actions_menu_box.append (print_item);
 
-        var actions_menu = new Gtk.Popover () {
-            child = actions_menu_box
-        };
-        actions_menu.add_css_class (Granite.STYLE_CLASS_MENU);
+        actions_menu.set_child (actions_menu_box);
 
         var actions_menu_button = new Gtk.MenuButton () {
             icon_name = "view-more-symbolic",
@@ -384,10 +396,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         });
     }
 
-    // private void add_inline_composer (ComposerWidget.Type composer_type) {
-    //     var message_list_box = (MessageListBox) get_parent ();
-    //     message_list_box.add_inline_composer.begin (composer_type, this);
-    // }
+    private void add_inline_composer (ComposerWidget.Type composer_type) {
+        parent_message_box.add_inline_composer.begin (composer_type, this);
+        expanded = false;
+    }
 
     private void on_print () {
         try {

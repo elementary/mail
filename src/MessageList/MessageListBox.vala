@@ -64,7 +64,7 @@ public class Mail.MessageListBox : Gtk.Box {
         can_move_thread = false;
 
         var current_child = list_box.get_row_at_index (0);
-        for (int i = 1; current_child != null; i++) {
+        for (int i = 0; current_child != null; i++) {
             list_box.remove (current_child);
             current_child.destroy ();
             current_child = list_box.get_row_at_index (i);
@@ -89,13 +89,7 @@ public class Mail.MessageListBox : Gtk.Box {
             go_down ((Camel.FolderThreadNode?) node.child);
         }
 
-
-        int n_children = 0;
-        while (list_box.get_row_at_index (n_children) != null) {
-            n_children++;
-        }
-
-        var child = list_box.get_row_at_index (n_children - 1);
+        var child = list_box.get_last_child ().get_prev_sibling (); //The last child is the placeholder
         if (child != null && child is MessageListItem) {
             var list_item = (MessageListItem) child;
             list_item.expanded = true;
@@ -117,35 +111,35 @@ public class Mail.MessageListBox : Gtk.Box {
         }
     }
 
-    // public async void add_inline_composer (ComposerWidget.Type type, MessageListItem? message_item = null) {
-    //     /* Can't open a new composer if thread is empty or currently has a composer open */
-    //     var last_child = get_row_at_index ((int) get_children ().length () - 1);
-    //     if (last_child == null || last_child is InlineComposer) {
-    //         return;
-    //     }
+    public async void add_inline_composer (ComposerWidget.Type type, MessageListItem? message_item = null) {
+        /* Can't open a new composer if thread is empty or currently has a composer open */
+        var last_child = list_box.get_last_child ().get_prev_sibling (); //The last child is the placeholder
+        if (last_child == null || last_child is InlineComposer) {
+            return;
+        }
 
-    //     if (message_item == null) {
-    //         message_item = (MessageListItem) last_child;
-    //     }
+        if (message_item == null) {
+            message_item = (MessageListItem) last_child;
+        }
 
-    //     string content_to_quote = "";
-    //     Camel.MimeMessage? mime_message = null;
-    //     Camel.MessageInfo? message_info = null;
-    //     content_to_quote = yield message_item.get_message_body_html ();
-    //     mime_message = message_item.mime_message;
-    //     message_info = message_item.message_info;
+        string content_to_quote = "";
+        Camel.MimeMessage? mime_message = null;
+        Camel.MessageInfo? message_info = null;
+        content_to_quote = yield message_item.get_message_body_html ();
+        mime_message = message_item.mime_message;
+        message_info = message_item.message_info;
 
-    //     var composer = new InlineComposer (type, message_info, mime_message, content_to_quote);
-    //     composer.discarded.connect (() => {
-    //         can_reply = true;
-    //         can_move_thread = true;
-    //         remove (composer);
-    //         composer.destroy ();
-    //     });
-    //     add (composer);
-    //     can_reply = false;
-    //     can_move_thread = true;
-    // }
+        var composer = new InlineComposer (type, message_info, mime_message, content_to_quote);
+        composer.discarded.connect (() => {
+            can_reply = true;
+            can_move_thread = true;
+            list_box.remove (composer);
+            composer.destroy ();
+        });
+        list_box.append (composer);
+        can_reply = false;
+        can_move_thread = true;
+    }
 
     private static int message_sort_function (Gtk.ListBoxRow item1, Gtk.ListBoxRow item2) {
         unowned MessageListItem message1 = (MessageListItem)item1;
