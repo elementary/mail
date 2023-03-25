@@ -33,7 +33,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private Gtk.Button images_button_always_show;
     private Gtk.Revealer secondary_revealer;
     private Gtk.Stack header_stack;
-    private Gtk.StyleContext style_context;
     private Adw.Avatar avatar;
     private Gtk.FlowBox attachment_bar = null;
 
@@ -56,9 +55,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                     get_message.begin ();
                     message_loaded = true;
                 }
-                style_context.remove_class ("collapsed");
+                remove_css_class ("collapsed");
             } else {
-                style_context.add_class ("collapsed");
+                add_css_class ("collapsed");
             }
         }
     }
@@ -84,8 +83,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     construct {
         loading_cancellable = new GLib.Cancellable ();
 
-        style_context = get_style_context ();
-        style_context.add_class (Granite.STYLE_CLASS_CARD);
+        add_css_class (Granite.STYLE_CLASS_CARD);
 
         unowned string? parsed_address;
         unowned string? parsed_name;
@@ -339,8 +337,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         set_child (base_box);
         expanded = false;
-
-        //avatar.set_loadable_icon (new GravatarIcon (parsed_address, get_style_context ().get_scale ()));
 
         // header_event_box.enter_notify_event.connect ((event) => {
         //     if (event.detail != Gdk.NotifyType.INFERIOR) {

@@ -66,6 +66,7 @@ public class Mail.MessageListBox : Gtk.Box {
         var current_child = list_box.get_row_at_index (0);
         for (int i = 1; current_child != null; i++) {
             list_box.remove (current_child);
+            current_child.destroy ();
             current_child = list_box.get_row_at_index (i);
         }
 
@@ -163,3 +164,4 @@ public class Mail.MessageListBox : Gtk.Box {
         return (int)(timestamp1 - timestamp2);
     }
 }
+
