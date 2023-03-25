@@ -37,11 +37,6 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
     }
 
     construct {
-        var titlebar = new Gtk.HeaderBar () {
-            title_widget = new Gtk.Label (_("New Message"))
-        };
-        titlebar.add_css_class (Granite.STYLE_CLASS_DEFAULT_DECORATION); //@TODO: test: works?
-
         composer_widget.discarded.connect (() => {
             close ();
         });
@@ -53,18 +48,14 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
                 subject = _("New Message");
             }
 
-            ((Gtk.Label) titlebar.get_title_widget ()).label = title = subject;
+            title = subject;
         });
-
-        var content_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        content_box.append (titlebar);
-        content_box.append (composer_widget);
 
         height_request = 600;
         width_request = 680;
         title = _("New Message");
         //window_position = Gtk.WindowPosition.CENTER_ON_PARENT; @TODO: lookup how thats gonna work
 
-        set_child (content_box);
+        set_child (composer_widget);
     }
 }
