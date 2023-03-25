@@ -958,19 +958,15 @@ public class Mail.ComposerWidget : Gtk.Box {
         }
     }
 
-    //@TODO: probably fix with destroy.connect in constructor
-    public override void destroy () {
-        if (discard_draft || !web_view.body_html_changed) {
-            base.destroy ();
+    public void save_draft () {
+        if (discard_draft) {
             return;
         }
 
         web_view.get_body_html.begin ((obj, res) => {
             var body_html = web_view.get_body_html.end (res);
 
-            if (body_html == null) {
-                base.destroy ();
-            } else {
+            if (body_html != null) {
                 unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
 
                 var message = build_message (body_html);
@@ -985,7 +981,6 @@ public class Mail.ComposerWidget : Gtk.Box {
                     (obj, res) => {
                         try {
                             session.save_draft.end (res);
-                            base.destroy ();
                         } catch (Error e) {
                             unowned Mail.MainWindow? main_window = null;
                             var windows = Gtk.Window.list_toplevels ();
@@ -996,12 +991,6 @@ public class Mail.ComposerWidget : Gtk.Box {
                                 }
                             }
 
-                            if (main_window != null) {
-                                new ComposerWindow.for_widget (main_window, this).present ();
-                            } else {
-                                warning ("Unable to re-show composer. Draft will be lost.");
-                            }
-
                             var error_dialog = new Granite.MessageDialog (
                                 _("Unable to save draft"),
                                 _("There was an unexpected error while saving your draft."),
@@ -1010,8 +999,9 @@ public class Mail.ComposerWidget : Gtk.Box {
                             ) {
                                 badge_icon = new ThemedIcon ("dialog-error")
                             };
+                            error_dialog.transient_for = (Gtk.Window) main_window;
                             error_dialog.show_error_details (e.message);
-                            error_dialog.response.connect ((response) => { //@TODO: check whether this works
+                            error_dialog.response.connect (() => {
                                 error_dialog.destroy ();
                             });
                             error_dialog.present ();;

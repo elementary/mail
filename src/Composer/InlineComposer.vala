@@ -60,6 +60,10 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
                 height_request = 200;
             }
         });
+
+        destroy.connect (() => {
+            composer.save_draft ();
+        });
     }
 
     public InlineComposer (ComposerWidget.Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content) {

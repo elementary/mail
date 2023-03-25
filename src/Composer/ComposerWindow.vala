@@ -57,5 +57,10 @@ public class Mail.ComposerWindow : Gtk.ApplicationWindow {
         //window_position = Gtk.WindowPosition.CENTER_ON_PARENT; @TODO: lookup how thats gonna work
 
         set_child (composer_widget);
+
+        close_request.connect (() => {
+            composer_widget.save_draft ();
+            close ();
+        });
     }
 }
