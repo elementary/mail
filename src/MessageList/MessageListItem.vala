@@ -264,6 +264,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             margin_top = 12,
             margin_bottom = 12
         };
+        header.set_cursor_from_name ("pointer");
         header.attach (avatar, 0, 0, 1, 3);
         header.attach (header_stack, 1, 0, 1, 3);
         header.attach (action_grid, 2, 0);
@@ -349,20 +350,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         set_child (base_box);
         expanded = false;
-
-        // header_event_box.enter_notify_event.connect ((event) => {
-        //     if (event.detail != Gdk.NotifyType.INFERIOR) {
-        //         var window = header_event_box.get_window ();
-        //         var cursor = new Gdk.Cursor.from_name (window.get_display (), "pointer");
-        //         window.set_cursor (cursor);
-        //     }
-        // });
-
-        // header_event_box.leave_notify_event.connect ((event) => {
-        //     if (event.detail != Gdk.NotifyType.INFERIOR) {
-        //         header_event_box.get_window ().set_cursor (null);
-        //     }
-        // });
 
         header_gesture_click.released.connect (() => {
             expanded = !expanded;
