@@ -19,13 +19,11 @@
  */
 
 public class Mail.MainWindow : Adw.ApplicationWindow {
-//   private HeaderBar headerbar;
     private Gtk.SearchEntry search_entry;
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
 
     private FoldersListView folders_list_view;
-    private Gtk.Overlay view_overlay;
     private ConversationListBox conversation_list_box;
     private MessageListBox message_list_box;
     private Granite.SwitchModelButton hide_read_switch;
@@ -111,19 +109,9 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
             );
         }
 
-//        headerbar = new HeaderBar ();
-//        headerbar.add_css_class (Granite.STYLE_CLASS_FLAT);
-
         folders_list_view = new FoldersListView ();
-       conversation_list_box = new ConversationListBox ();
 
-        message_list_box = new MessageListBox ();
-        // message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY), "enabled", BindingFlags.SYNC_CREATE);
-        // message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY_ALL), "enabled", BindingFlags.SYNC_CREATE);
-        // message_list_box.bind_property ("can-reply", get_action (ACTION_FORWARD), "enabled", BindingFlags.SYNC_CREATE);
-        // message_list_box.bind_property ("can-move-thread", get_action (ACTION_MOVE_TO_TRASH), "enabled", BindingFlags.SYNC_CREATE);
-        // message_list_box.bind_property ("can-move-thread", get_action (ACTION_ARCHIVE), "enabled", BindingFlags.SYNC_CREATE);
-        // message_list_box.bind_property ("can-move-thread", headerbar, "can-mark", BindingFlags.SYNC_CREATE);
+        conversation_list_box = new ConversationListBox ();
 
         search_entry = new Gtk.SearchEntry () {
             hexpand = true,
@@ -140,9 +128,8 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REFRESH
         };
 
-        var application_instance = (Gtk.Application) GLib.Application.get_default ();
         refresh_button.tooltip_markup = Granite.markup_accel_tooltip (
-            application_instance.get_accels_for_action (refresh_button.action_name),
+            ((Gtk.Application) GLib.Application.get_default ()).get_accels_for_action (refresh_button.action_name),
             _("Fetch new messages")
         );
 
@@ -197,25 +184,12 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
             //((Gtk.Box) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
         // }
 
-        view_overlay = new Gtk.Overlay ();
-        view_overlay.set_child (message_list_box);
-
-        var message_list_container = new Gtk.Box (VERTICAL, 0);
-        //message_list_container.append (headerbar);
-        message_list_container.append (view_overlay);
-
-        var message_overlay = new Granite.OverlayBar (view_overlay);
-        //message_overlay.no_present = true;
-
-       message_list_box.hovering_over_link.connect ((label, url) => {
-            var hover_url = url != null ? GLib.Uri.unescape_string (url) : null;
-            if (hover_url == null) {
-                message_overlay.hide ();
-            } else {
-                message_overlay.label = hover_url;
-                message_overlay.show ();
-            }
-        });
+        message_list_box = new MessageListBox ();
+        message_list_box.bind_property ("can-reply", lookup_action (ACTION_REPLY), "enabled", BindingFlags.SYNC_CREATE);
+        message_list_box.bind_property ("can-reply", lookup_action (ACTION_REPLY_ALL), "enabled", BindingFlags.SYNC_CREATE);
+        message_list_box.bind_property ("can-reply", lookup_action (ACTION_FORWARD), "enabled", BindingFlags.SYNC_CREATE);
+        message_list_box.bind_property ("can-move-thread", lookup_action (ACTION_MOVE_TO_TRASH), "enabled", BindingFlags.SYNC_CREATE);
+        message_list_box.bind_property ("can-move-thread", lookup_action (ACTION_ARCHIVE), "enabled", BindingFlags.SYNC_CREATE);
 
         paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_start.set_start_child (folders_list_view);
@@ -223,7 +197,7 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
 
         paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_end.set_start_child (paned_start);
-        paned_end.set_end_child (message_list_container);
+        paned_end.set_end_child (message_list_box);
 
         // var welcome_view = new Mail.WelcomeView ();
 
@@ -234,16 +208,10 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
 
         set_content (placeholder_stack);
 
-        //@TODO: lookup a new implementation for Hdy.HeaderGroup
-        // var header_group = new Adw.HeaderGroup ();
-        // header_group.append_header_bar (folders_list_view.header_bar);
-        // header_group.append_header_bar (search_header);
-        // header_group.append_header_bar (headerbar);
-
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.VERTICAL);
         size_group.add_widget (folders_list_view.header_bar);
         size_group.add_widget (search_header);
-        //size_group.add_widget (headerbar);
+        size_group.add_widget (message_list_box.header_bar);
 
         var settings = new GLib.Settings ("io.elementary.mail");
         settings.bind ("paned-start-position", paned_start, "position", SettingsBindFlags.DEFAULT);
@@ -337,6 +305,7 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
     }
 
     private void scroll_message_list_to_bottom () {
+        //@TODO: rework
         // appending the inline composer then trying to scroll to the bottom doesn't work as
         // the scrolled window doesn't resize instantly. So connect a one time signal to
         // scroll to the bottom when the inline composer is appended
@@ -349,20 +318,27 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
     }
 
     private void on_mark_read () {
-        print ("on mark read");
-       conversation_list_box.mark_read_selected_messages ();
+        conversation_list_box.mark_read_selected_messages ();
+        ((SimpleAction)lookup_action (ACTION_MARK_READ)).set_enabled (false);
+        ((SimpleAction)lookup_action (ACTION_MARK_UNREAD)).set_enabled (true);
     }
 
     private void on_mark_star () {
-       conversation_list_box.mark_star_selected_messages ();
+        conversation_list_box.mark_star_selected_messages ();
+        ((SimpleAction)lookup_action (ACTION_MARK_STAR)).set_enabled (false);
+        ((SimpleAction)lookup_action (ACTION_MARK_UNSTAR)).set_enabled (true);
     }
 
     private void on_mark_unread () {
-       conversation_list_box.mark_unread_selected_messages ();
+        conversation_list_box.mark_unread_selected_messages ();
+        ((SimpleAction)lookup_action (ACTION_MARK_UNREAD)).set_enabled (false);
+        ((SimpleAction)lookup_action (ACTION_MARK_READ)).set_enabled (true);
     }
 
     private void on_mark_unstar () {
-       conversation_list_box.mark_unstar_selected_messages ();
+        conversation_list_box.mark_unstar_selected_messages ();
+        ((SimpleAction)lookup_action (ACTION_MARK_UNSTAR)).set_enabled (false);
+        ((SimpleAction)lookup_action (ACTION_MARK_STAR)).set_enabled (true);
     }
 
     private void on_reply () {

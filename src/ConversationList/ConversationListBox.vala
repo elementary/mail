@@ -133,10 +133,10 @@ public class Mail.ConversationListBox : Gtk.Box {
             // bug with Gtk.Widget.get_action_group(). See https://gitlab.gnome.org/GNOME/gtk/issues/1396
             var window = (Gtk.ApplicationWindow) get_root ();
             //@TODO: Is this really needed? If it is, a workaround has to be made to be able to mark read and then unread the same message without selecting another one between
-            //((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_READ)).set_enabled (conversation_item.unread);
-            //((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_UNREAD)).set_enabled (!conversation_item.unread);
-            //((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_STAR)).set_enabled (!conversation_item.flagged);
-            //((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_UNSTAR)).set_enabled (conversation_item.flagged);
+            ((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_READ)).set_enabled (conversation_item.unread);
+            ((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_UNREAD)).set_enabled (!conversation_item.unread);
+            ((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_STAR)).set_enabled (!conversation_item.flagged);
+            ((SimpleAction) window.lookup_action (MainWindow.ACTION_MARK_UNSTAR)).set_enabled (conversation_item.flagged);
             conversation_selected (conversation_item.node);
         });
     }
