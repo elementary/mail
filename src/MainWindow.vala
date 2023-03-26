@@ -301,7 +301,7 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
 
             if (session.get_accounts ().size > 0) {
                 placeholder_stack.visible_child = paned_end;
-                //get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
+                ((SimpleAction)lookup_action (ACTION_COMPOSE_MESSAGE)).set_enabled (true);
                 search_entry.sensitive = true;
             }
 
@@ -323,7 +323,7 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
     }
 
     private void on_compose_message () {
-        // new ComposerWindow (this).present ();
+        new ComposerWindow (this).present ();
     }
 
     private void on_refresh () {
@@ -340,12 +340,12 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
         // appending the inline composer then trying to scroll to the bottom doesn't work as
         // the scrolled window doesn't resize instantly. So connect a one time signal to
         // scroll to the bottom when the inline composer is appended
-        // var adjustment = message_list_scrolled.get_vadjustment ();
-        // ulong changed_id = 0;
-        // changed_id = adjustment.changed.connect (() => {
-        //     adjustment.set_value (adjustment.get_upper ());
-        //     adjustment.disconnect (changed_id);
-        // });
+        var adjustment = message_list_scrolled.get_vadjustment ();
+        ulong changed_id = 0;
+        changed_id = adjustment.changed.connect (() => {
+            adjustment.set_value (adjustment.get_upper ());
+            adjustment.disconnect (changed_id);
+        });
     }
 
     private void on_mark_read () {
@@ -366,18 +366,18 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
     }
 
     private void on_reply () {
-       // scroll_message_list_to_bottom ();
-       //message_list_box.append_inline_composer.begin (ComposerWidget.Type.REPLY);
+       scroll_message_list_to_bottom ();
+       message_list_box.add_inline_composer.begin (ComposerWidget.Type.REPLY);
     }
 
     private void on_reply_all () {
-       // scroll_message_list_to_bottom ();
-       //message_list_box.append_inline_composer.begin (ComposerWidget.Type.REPLY_ALL);
+       scroll_message_list_to_bottom ();
+       message_list_box.add_inline_composer.begin (ComposerWidget.Type.REPLY_ALL);
     }
 
     private void on_forward () {
-       // scroll_message_list_to_bottom ();
-       //message_list_box.append_inline_composer.begin (ComposerWidget.Type.FORWARD);
+       scroll_message_list_to_bottom ();
+       message_list_box.add_inline_composer.begin (ComposerWidget.Type.FORWARD);
     }
 
     private void on_archive () {
