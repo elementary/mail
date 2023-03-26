@@ -63,9 +63,11 @@ public class Mail.WebView : WebKit.WebView {
         decide_policy.connect (on_decide_policy);
         load_changed.connect (on_load_changed);
 
-        //@TODO: check whether this works as intended
-        var key_event_controller = new Gtk.EventControllerKey ();
-        key_event_controller.key_released.connect (() => {
+        /* @TODO: The WebView seems to filter away key presses (at least most of them) and I couldn't find a
+         * way to connect to them so this is a temporary solution */
+        var event_controller_focus = new Gtk.EventControllerFocus ();
+        add_controller (event_controller_focus);
+        event_controller_focus.enter.connect (() => {
             body_html_changed = true;
         });
     }
