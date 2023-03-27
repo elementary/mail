@@ -111,8 +111,6 @@ public class Mail.Application : Gtk.Application {
             gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
         });
 
-        Gtk.IconTheme.get_default ().add_resource_path ("/io/elementary/mail");
-
         var css_provider = new Gtk.CssProvider ();
         css_provider.load_from_resource ("io/elementary/mail/application.css");
         Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
