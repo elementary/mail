@@ -764,7 +764,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
             };
             error_dialog.show_error_details (e.message);
             error_dialog.present ();
-            error_dialog.response.connect (() => destroy ());
+            error_dialog.response.connect (() => error_dialog.destroy ());
         } finally {
             sensitive = true;
         }
@@ -1012,7 +1012,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
                             };
                             error_dialog.show_error_details (e.message);
                             error_dialog.present ();
-                            error_dialog.response.connect (() => destroy ());
+                            error_dialog.response.connect (() => error_dialog.destroy ());
                         }
                 });
             }

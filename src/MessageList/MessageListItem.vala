@@ -395,7 +395,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             };
             print_error_dialog.show_error_details (e.message);
             print_error_dialog.present ();
-            print_error_dialog.response.connect (() => destroy ());
+            print_error_dialog.response.connect (() => print_error_dialog.destroy ());
         }
     }
 
