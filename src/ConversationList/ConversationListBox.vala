@@ -38,7 +38,7 @@ public class Mail.ConversationListBox : Gtk.Box {
     private bool current_search_hide_read = false;
     private bool current_search_hide_unstarred = false;
     private Gtk.EveryFilter every_filter;
-    private ListStore list_store;
+    private ConversationListStore list_store;
     private Gtk.SingleSelection selection_model;
     private Gtk.ListView list_view;
     private Gtk.ScrolledWindow scrolled_window;
@@ -73,7 +73,7 @@ public class Mail.ConversationListBox : Gtk.Box {
             conversation_list_item.disconnect (conversation_list_item.handler_id);
         });
 
-        list_store = new ListStore (typeof(ConversationItemModel));
+        list_store = new ConversationListStore ();
 
         every_filter = new Gtk.EveryFilter ();
         var hide_unread_filter = new Gtk.CustomFilter (filter_unread_func);
@@ -174,7 +174,9 @@ public class Mail.ConversationListBox : Gtk.Box {
                     folders.clear ();
                     threads.clear ();
 
+                    uint removed = list_store.get_n_items ();
                     list_store.remove_all ();
+                    uint added = 0;
 
                     cancellable = new GLib.Cancellable ();
 
@@ -210,6 +212,7 @@ public class Mail.ConversationListBox : Gtk.Box {
                                         }
 
                                         add_conversation_item (folder_info_flags[current_account.service.uid], child, thread, current_account.service.uid);
+                                        added++;
                                         child = child.next;
                                     }
                                 }
@@ -221,10 +224,10 @@ public class Mail.ConversationListBox : Gtk.Box {
                             }
                         }
                     }
+                    list_store.items_changed (0, removed, added);
                 }
             }
         }
-        list_store.sort (sort_func); //@TODO: scroll to top
     }
 
     public async void refresh_folder (GLib.Cancellable? cancellable = null) {
@@ -261,9 +264,7 @@ public class Mail.ConversationListBox : Gtk.Box {
                     var item = conversations[uid];
                     if (item != null) {
                         conversations.unset (uid);
-                        uint item_position;
-                        list_store.find (item, out item_position);
-                        list_store.remove (item_position);
+                        list_store.remove (item);
                     }
                 });
 
@@ -282,9 +283,7 @@ public class Mail.ConversationListBox : Gtk.Box {
                     } else {
                         if (item.is_older_than (child)) {
                             conversations.unset (child.message.uid);
-                            uint item_position;
-                            list_store.find (item, out item_position);
-                            list_store.remove (item_position);
+                            list_store.remove (item);
                             removed++;
                             add_conversation_item (folder_info_flags[service_uid], child, threads[service_uid], service_uid);
                         };
@@ -292,9 +291,6 @@ public class Mail.ConversationListBox : Gtk.Box {
                     child = child.next;
                 }
                 list_store.items_changed (0, removed, added);
-                if (added > removed) {
-                    list_store.sort(sort_func);
-                }
             }
         }
     }
@@ -345,7 +341,7 @@ public class Mail.ConversationListBox : Gtk.Box {
     private void add_conversation_item (Camel.FolderInfoFlags folder_info_flags, Camel.FolderThreadNode child, Camel.FolderThread thread, string service_uid) {
         var item = new ConversationItemModel (folder_info_flags, child, thread, service_uid);
         conversations[child.message.uid] = item;
-        list_store.append (item);
+        list_store.add (item);
     }
 
     private bool filter_unread_func (Object item) {
@@ -372,12 +368,6 @@ public class Mail.ConversationListBox : Gtk.Box {
         } else {
             return false;
         }
-    }
-
-    public int sort_func (Object a, Object b) {
-        var item1 = (ConversationItemModel) a;
-        var item2 = (ConversationItemModel) b;
-        return (int)(item2.timestamp - item1.timestamp);
     }
 
     public void mark_read_selected_messages () {

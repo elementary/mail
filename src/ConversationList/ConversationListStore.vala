@@ -20,94 +20,50 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class Mail.ConversationListStore : VirtualizingListBoxModel {
-    public delegate bool RowVisibilityFunc (GLib.Object row);
+public class Mail.ConversationListStore : ListModel, Object {
+    //The items_changed signal is note emitted automatically, the object using this has to emit it manually!!!
+    private GLib.List<ConversationItemModel> data = new GLib.List<ConversationItemModel> ();
 
-    private GLib.Sequence<ConversationItemModel> data = new GLib.Sequence<ConversationItemModel> ();
-    private uint last_position = uint.MAX;
-    private GLib.SequenceIter<ConversationItemModel>? last_iter;
-    private unowned GLib.CompareDataFunc<ConversationItemModel> compare_func;
-    private unowned RowVisibilityFunc filter_func;
-
-    public override uint get_n_items () {
-        return data.get_length ();
+    public GLib.Type get_item_type () {
+        return typeof(ConversationItemModel);
     }
 
-    public override GLib.Object? get_item (uint index) {
+    public uint get_n_items () {
+        uint n_items = 0;
+        data.foreach ((item) => {
+            n_items++;
+        });
+        return n_items;
+    }
+
+    public GLib.Object? get_item (uint index) {
         return get_item_internal (index);
     }
 
-    public override GLib.Object? get_item_unfiltered (uint index) {
-        return get_item_internal (index, true);
+    public GLib.Object? get_object (uint index) {
+        return get_item_internal (index);
     }
 
-    private GLib.Object? get_item_internal (uint index, bool unfiltered = false) {
-        GLib.SequenceIter<ConversationItemModel>? iter = null;
-
-        if (last_position != uint.MAX) {
-            if (last_position == index + 1) {
-                iter = last_iter.prev ();
-            } else if (last_position == index - 1) {
-                iter = last_iter.next ();
-            } else if (last_position == index) {
-                iter = last_iter;
-            }
-        }
-
-        if (iter == null) {
-            iter = data.get_iter_at_pos ((int)index);
-        }
-
-        last_iter = iter;
-        last_position = index;
-
-        if (iter.is_end ()) {
-            return null;
-        }
-
-        if (filter_func == null) {
-            return iter.get ();
-        } else if (filter_func (iter.get ())) {
-            return iter.get ();
-        } else if (unfiltered) {
-            return iter.get ();
-        } else {
-            return null;
-        }
+    private ConversationItemModel get_item_internal (uint index) {
+        return data.nth_data (index);
     }
 
-    public void add (ConversationItemModel data) {
-        if (compare_func != null) {
-            this.data.insert_sorted (data, compare_func);
-        } else {
-            this.data.append (data);
-        }
-
-        last_iter = null;
-        last_position = uint.MAX;
-    }
-
-    public void remove (ConversationItemModel data) {
-        var iter = this.data.get_iter_at_pos (get_index_of_unfiltered (data));
-        iter.remove ();
-
-        last_iter = null;
-        last_position = uint.MAX;
+    public void add (ConversationItemModel item) {
+        /*Adding automatically sorts according to timestamp*/
+        data.insert_sorted (item, (a,b)=> {
+            var item1 = (ConversationItemModel) a;
+            var item2 = (ConversationItemModel) b;
+            return (int)(item2.timestamp - item1.timestamp);
+        });
     }
 
     public void remove_all () {
-        data.get_begin_iter ().remove_range (data.get_end_iter ());
-        unselect_all ();
-
-        last_iter = null;
-        last_position = uint.MAX;
+        data.foreach ((item) => {
+            data.remove (item);
+        });
     }
 
-    public void set_sort_func (GLib.CompareDataFunc<ConversationItemModel> function) {
-        this.compare_func = function;
-    }
-
-    public void set_filter_func (RowVisibilityFunc? function) {
-        filter_func = function;
+    public void remove (ConversationItemModel item) {
+        data.remove (item);
     }
 }
