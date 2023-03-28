@@ -66,7 +66,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         {ACTION_REPLY, on_reply },
         {ACTION_REPLY_ALL, on_reply_all },
         {ACTION_FORWARD, on_forward },
-        {ACTION_MARK, null },// Stores enabled state only
+        {ACTION_MARK, null }, // Stores enabled state only
         {ACTION_MARK_READ, on_mark_read },
         {ACTION_MARK_STAR, on_mark_star },
         {ACTION_MARK_UNREAD, on_mark_unread },
