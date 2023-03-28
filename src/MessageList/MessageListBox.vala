@@ -137,7 +137,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
     }
 
     private void can_move_thread (bool enabled) {
-        var main_window = (Gtk.ApplicationWindow) ((Gtk.Application) GLib.Application.get_default ()).active_window;
+        unowned var main_window = (Gtk.ApplicationWindow) ((Gtk.Application) GLib.Application.get_default ()).active_window;
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_ARCHIVE)).set_enabled (enabled);
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MARK)).set_enabled (enabled);
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE_TO_TRASH)).set_enabled (enabled);
