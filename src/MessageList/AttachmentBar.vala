@@ -1,21 +1,6 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
- * Authored by: Corentin Noël <corentin@elementary.io>
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2017-2023 elementary, Inc. (https://elementary.io)
  */
 
 public class Mail.AttachmentBar : Gtk.FlowBox {
@@ -28,9 +13,10 @@ public class Mail.AttachmentBar : Gtk.FlowBox {
     construct {
         hexpand = true;
         activate_on_single_click = true;
+
         var style_context = get_style_context ();
-        style_context.add_class (Gtk.STYLE_CLASS_TOOLBAR);
-        style_context.add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+        style_context.add_class (Gtk.STYLE_CLASS_FLAT);
+        style_context.add_class ("bottom-toolbar");
     }
 
     public async void parse_mime_content (Camel.DataWrapper message_content) {
@@ -52,9 +38,37 @@ public class Mail.AttachmentBar : Gtk.FlowBox {
         show_all ();
     }
 
-    private void show_attachment (Camel.MimePart attachment_part) {
-        var dialog = new Mail.OpenAttachmentDialog (get_toplevel () as Gtk.Window, attachment_part);
+    private void show_attachment (Camel.MimePart mime_part) {
+        var dialog = new Granite.MessageDialog (
+            _("Trust and open “%s”?").printf (mime_part.get_filename ()),
+            _("Attachments may cause damage to your system if opened. Only open files from trusted sources."),
+            new ThemedIcon ("dialog-warning"),
+            Gtk.ButtonsType.CANCEL
+        ) {
+            transient_for = (Gtk.Window) get_toplevel ()
+        };
+
+        var open_button = dialog.add_button (_("Open Anyway"), Gtk.ResponseType.OK);
+        open_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+
         dialog.present ();
-        dialog.response.connect (() => dialog.destroy ());
+        dialog.response.connect ((response_id) => {
+            if (response_id == Gtk.ResponseType.OK) {
+                show_file_anyway.begin (mime_part);
+            }
+
+            dialog.destroy ();
+        });
+    }
+
+    private async void show_file_anyway (Camel.MimePart mime_part) {
+        try {
+            GLib.FileIOStream iostream;
+            var file = File.new_tmp ("XXXXXX-%s".printf (mime_part.get_filename ()), out iostream);
+            yield mime_part.content.decode_to_output_stream (iostream.output_stream, GLib.Priority.DEFAULT, null);
+            yield GLib.AppInfo.launch_default_for_uri_async (file.get_uri (), (AppLaunchContext) null, null);
+        } catch (Error e) {
+            critical (e.message);
+        }
     }
 }

@@ -18,7 +18,7 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class Mail.ComposerWidget : Gtk.Grid {
+public class Mail.ComposerWidget : Gtk.Box {
     public signal void discarded ();
     public signal void sent ();
     public signal void subject_changed (string? subject);
@@ -99,32 +99,37 @@ public class Mail.ComposerWidget : Gtk.Grid {
         actions.add_action_entries (ACTION_ENTRIES, this);
         insert_action_group (ACTION_GROUP_PREFIX, actions);
 
-        var from_label = new Gtk.Label (_("From:"));
-        from_label.xalign = 1;
+        var from_label = new Gtk.Label (_("From:")) {
+            xalign = 1
+        };
         from_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        from_combo = new Gtk.ComboBoxText ();
-        from_combo.hexpand = true;
+        from_combo = new Gtk.ComboBoxText () {
+            hexpand = true
+        };
 
-        var from_grid = new Gtk.Grid ();
-        from_grid.column_spacing = 6;
-        from_grid.margin_bottom = 6;
-        from_grid.add (from_label);
-        from_grid.add (from_combo);
+        var from_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+            margin_bottom = 6
+        };
+        from_box.add (from_label);
+        from_box.add (from_combo);
 
         from_revealer = new Gtk.Revealer ();
-        from_revealer.add (from_grid);
+        from_revealer.add (from_box);
 
-        var to_label = new Gtk.Label (_("To:"));
-        to_label.xalign = 1;
+        var to_label = new Gtk.Label (_("To:")) {
+            xalign = 1
+        };
         to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        var subject_label = new Gtk.Label (_("Subject:"));
-        subject_label.xalign = 1;
+        var subject_label = new Gtk.Label (_("Subject:")) {
+            xalign = 1
+        };
         subject_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        to_val = new Gtk.Entry ();
-        to_val.hexpand = true;
+        to_val = new Gtk.Entry () {
+            hexpand = true
+        };
 
         cc_button = new Gtk.ToggleButton.with_label (_("Cc"));
 
@@ -135,40 +140,46 @@ public class Mail.ComposerWidget : Gtk.Grid {
         to_grid.add (cc_button);
         to_grid.add (bcc_button);
 
-        var cc_label = new Gtk.Label (_("Cc:"));
-        cc_label.xalign = 1;
+        var cc_label = new Gtk.Label (_("Cc:")) {
+            xalign = 1
+        };
         cc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        cc_val = new Gtk.Entry ();
-        cc_val.hexpand = true;
+        cc_val = new Gtk.Entry () {
+            hexpand = true
+        };
 
-        var cc_grid = new Gtk.Grid ();
-        cc_grid.column_spacing = 6;
-        cc_grid.margin_top = 6;
-        cc_grid.add (cc_label);
-        cc_grid.add (cc_val);
+        var cc_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+            margin_top = 6
+        };
+        cc_box.add (cc_label);
+        cc_box.add (cc_val);
 
         cc_revealer = new Gtk.Revealer ();
-        cc_revealer.add (cc_grid);
+        cc_revealer.add (cc_box);
 
-        var bcc_label = new Gtk.Label (_("Bcc:"));
-        bcc_label.xalign = 1;
+        var bcc_label = new Gtk.Label (_("Bcc:")) {
+            xalign = 1
+        };
         bcc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        bcc_val = new Gtk.Entry ();
-        bcc_val.hexpand = true;
+        bcc_val = new Gtk.Entry () {
+            hexpand = true
+        };
 
-        var bcc_grid = new Gtk.Grid ();
-        bcc_grid.column_spacing = 6;
-        bcc_grid.margin_top = 6;
-        bcc_grid.add (bcc_label);
-        bcc_grid.add (bcc_val);
+        var bcc_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+            margin_top = 6
+        };
+        bcc_box.add (bcc_label);
+        bcc_box.add (bcc_val);
 
         bcc_revealer = new Gtk.Revealer ();
-        bcc_revealer.add (bcc_grid);
+        bcc_revealer.add (bcc_box);
 
-        subject_val = new Gtk.Entry ();
-        subject_val.margin_top = 6;
+        subject_val = new Gtk.Entry () {
+            margin_top = 6
+        };
+
         subject_val.changed.connect (() => {
             subject_changed (subject_val.text);
         });
@@ -180,14 +191,18 @@ public class Mail.ComposerWidget : Gtk.Grid {
         size_group.add_widget (bcc_label);
         size_group.add_widget (subject_label);
 
-        var recipient_grid = new Gtk.Grid ();
-        recipient_grid.margin = 6;
-        recipient_grid.column_spacing = 6;
-        recipient_grid.attach (from_revealer, 0, 0, 2, 1);
+        var recipient_grid = new Gtk.Grid () {
+            column_spacing = 6,
+            margin_top = 6,
+            margin_end = 6,
+            margin_bottom = 6,
+            margin_start = 6
+        };
+        recipient_grid.attach (from_revealer, 0, 0, 2);
         recipient_grid.attach (to_label, 0, 1);
         recipient_grid.attach (to_grid, 1, 1);
-        recipient_grid.attach (cc_revealer, 0, 2, 2, 1);
-        recipient_grid.attach (bcc_revealer, 0, 3, 2, 1);
+        recipient_grid.attach (cc_revealer, 0, 2, 2);
+        recipient_grid.attach (bcc_revealer, 0, 3, 2);
         if (has_subject_field) {
             recipient_grid.attach (subject_label, 0, 4);
             recipient_grid.attach (subject_val, 1, 4);
@@ -226,7 +241,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
             tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Remove formatting"))
         };
 
-        var formatting_buttons = new Gtk.Grid ();
+        var formatting_buttons = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
         formatting_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
         formatting_buttons.add (bold);
         formatting_buttons.add (italic);
@@ -238,8 +253,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
             tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Insert Link"))
         };
 
-        var button_row = new Gtk.Grid () {
-            column_spacing = 12,
+        var button_row = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12) {
             margin_start = 6,
             margin_bottom = 6
         };
@@ -278,8 +292,10 @@ public class Mail.ComposerWidget : Gtk.Grid {
             action_name = ACTION_PREFIX + ACTION_SEND,
             always_show_image = true,
             label = _("Send"),
-            margin = 6,
+            margin_top = 6,
             margin_end = 0,
+            margin_bottom = 6,
+            margin_start = 6,
             sensitive = false
         };
         send.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
