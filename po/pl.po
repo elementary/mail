@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-28 07:45+0000\n"
 "PO-Revision-Date: 2022-07-15 11:01+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
@@ -165,141 +165,141 @@ msgstr "Konta on-line…"
 msgid "From:"
 msgstr "Od:"
 
-#: src/Composer/ComposerWidget.vala:118
+#: src/Composer/ComposerWidget.vala:120
 #: src/MessageList/MessageListItem.vala:102
 msgid "To:"
 msgstr "Do:"
 
-#: src/Composer/ComposerWidget.vala:122
+#: src/Composer/ComposerWidget.vala:125
 #: src/MessageList/MessageListItem.vala:107
 msgid "Subject:"
 msgstr "Temat:"
 
-#: src/Composer/ComposerWidget.vala:129
+#: src/Composer/ComposerWidget.vala:134
 msgid "Cc"
 msgstr "Dw"
 
-#: src/Composer/ComposerWidget.vala:131
+#: src/Composer/ComposerWidget.vala:136
 msgid "Bcc"
 msgstr "Udw"
 
-#: src/Composer/ComposerWidget.vala:138
+#: src/Composer/ComposerWidget.vala:143
 #: src/MessageList/MessageListItem.vala:136
 msgid "Cc:"
 msgstr "Dw:"
 
-#: src/Composer/ComposerWidget.vala:154
+#: src/Composer/ComposerWidget.vala:161
 msgid "Bcc:"
 msgstr "Udw:"
 
-#: src/Composer/ComposerWidget.vala:200
+#: src/Composer/ComposerWidget.vala:215
 msgid "Bold"
 msgstr "Pogrubienie"
 
-#: src/Composer/ComposerWidget.vala:207
+#: src/Composer/ComposerWidget.vala:222
 msgid "Italic"
 msgstr "Kursywa"
 
-#: src/Composer/ComposerWidget.vala:214
+#: src/Composer/ComposerWidget.vala:229
 msgid "Underline"
 msgstr "Podkreślenie"
 
-#: src/Composer/ComposerWidget.vala:221
+#: src/Composer/ComposerWidget.vala:236
 msgid "Strikethrough"
 msgstr "Przekreślenie"
 
-#: src/Composer/ComposerWidget.vala:226
+#: src/Composer/ComposerWidget.vala:241
 msgid "Remove formatting"
 msgstr "Usuń formatowanie"
 
-#: src/Composer/ComposerWidget.vala:238 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:253 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "Wstaw odnośnik"
 
-#: src/Composer/ComposerWidget.vala:269
+#: src/Composer/ComposerWidget.vala:283
 msgid "Delete draft"
 msgstr "Usuń szkic"
 
-#: src/Composer/ComposerWidget.vala:274
+#: src/Composer/ComposerWidget.vala:288
 msgid "Attach file"
 msgstr "Dołącz plik"
 
-#: src/Composer/ComposerWidget.vala:280
+#: src/Composer/ComposerWidget.vala:294
 msgid "Send"
 msgstr "Wyślij"
 
-#: src/Composer/ComposerWidget.vala:445
+#: src/Composer/ComposerWidget.vala:461
 msgid "Choose a file"
 msgstr "Wybór pliku"
 
-#: src/Composer/ComposerWidget.vala:448
+#: src/Composer/ComposerWidget.vala:464
 msgid "Attach"
 msgstr "Załącz"
 
-#: src/Composer/ComposerWidget.vala:449 src/Composer/ComposerWidget.vala:683
+#: src/Composer/ComposerWidget.vala:465 src/Composer/ComposerWidget.vala:699
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: src/Composer/ComposerWidget.vala:593
+#: src/Composer/ComposerWidget.vala:609
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e %b %Y o %H∶%M"
 
-#: src/Composer/ComposerWidget.vala:623
+#: src/Composer/ComposerWidget.vala:639
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "W dniu %1$s użytkownik %2$s napisał:"
 
-#: src/Composer/ComposerWidget.vala:627
+#: src/Composer/ComposerWidget.vala:643
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Przekazywana wiadomość ----------"
 
-#: src/Composer/ComposerWidget.vala:629
+#: src/Composer/ComposerWidget.vala:645
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Od: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:630
+#: src/Composer/ComposerWidget.vala:646
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Temat: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:631
+#: src/Composer/ComposerWidget.vala:647
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Data: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:632
+#: src/Composer/ComposerWidget.vala:648
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Do: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:634
+#: src/Composer/ComposerWidget.vala:650
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Dw: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:674
+#: src/Composer/ComposerWidget.vala:690
 msgid "Permanently delete this draft?"
 msgstr "Trwale usunąć tę wersję roboczą?"
 
-#: src/Composer/ComposerWidget.vala:675
+#: src/Composer/ComposerWidget.vala:691
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Nie możesz cofnąć tej akcji, ani odzyskać wersji roboczej gdy zostanie "
 "usunięta."
 
-#: src/Composer/ComposerWidget.vala:685
+#: src/Composer/ComposerWidget.vala:701
 msgid "Delete Draft"
 msgstr "Usuń wersję roboczą"
 
-#: src/Composer/ComposerWidget.vala:705
+#: src/Composer/ComposerWidget.vala:721
 msgid "Send without subject?"
 msgstr "Wysłać bez tematu?"
 
-#: src/Composer/ComposerWidget.vala:706
+#: src/Composer/ComposerWidget.vala:722
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -307,19 +307,19 @@ msgstr ""
 "Ta wiadomość ma puste pole tematu. Odbiorca może nie być w stanie określić "
 "jej zakresu lub jak ważna jest."
 
-#: src/Composer/ComposerWidget.vala:712
+#: src/Composer/ComposerWidget.vala:728
 msgid "Don't Send"
 msgstr "Nie wysyłaj"
 
-#: src/Composer/ComposerWidget.vala:714
+#: src/Composer/ComposerWidget.vala:730
 msgid "Send Anyway"
 msgstr "Wyślij mimo to"
 
-#: src/Composer/ComposerWidget.vala:737
+#: src/Composer/ComposerWidget.vala:753
 msgid "Sent message was not saved"
 msgstr "Wysłana wiadomość nie została zapisana"
 
-#: src/Composer/ComposerWidget.vala:738
+#: src/Composer/ComposerWidget.vala:754
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -327,19 +327,19 @@ msgstr ""
 "Wiadomość została wysłana, ale jej kopia nie została zapisana do katalogu "
 "wysłanych wiadomości."
 
-#: src/Composer/ComposerWidget.vala:752
+#: src/Composer/ComposerWidget.vala:768
 msgid "Unable to send message"
 msgstr "Nie można wysłać wiadomości"
 
-#: src/Composer/ComposerWidget.vala:753
+#: src/Composer/ComposerWidget.vala:769
 msgid "There was an unexpected error while sending your message."
 msgstr "Wystąpił nieoczekiwany błąd podczas wysyłania twojej wiadomości."
 
-#: src/Composer/ComposerWidget.vala:1000
+#: src/Composer/ComposerWidget.vala:1016
 msgid "Unable to save draft"
 msgstr "Nie można zapisać wersji roboczej"
 
-#: src/Composer/ComposerWidget.vala:1001
+#: src/Composer/ComposerWidget.vala:1017
 msgid "There was an unexpected error while saving your draft."
 msgstr "Wystąpił nieoczekiwany błąd podczas zapisywania wersji roboczej."
 
@@ -383,23 +383,6 @@ msgstr "Tekst z odnośnikiem:"
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
 msgstr "Przykładowa strona internetowa"
-
-#: src/Dialogs/OpenAttachmentDialog.vala:28
-#, c-format
-msgid "Are you sure you want to open %s?"
-msgstr "Czy na pewno chcesz otworzyć %s?"
-
-#: src/Dialogs/OpenAttachmentDialog.vala:29
-msgid ""
-"Attachments may cause damage to your system if opened. Only open files from "
-"trusted sources."
-msgstr ""
-"Załączniki, jeśli zostaną otwarte, mogą spowodować uszkodzenie systemu. "
-"Otwieraj załączniki pochodzące tylko z zaufanych źródeł."
-
-#: src/Dialogs/OpenAttachmentDialog.vala:36
-msgid "Open Anyway"
-msgstr "Otwórz mimo to"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -482,6 +465,23 @@ msgstr "Wiadomość mailowa"
 msgid "Unable to print email"
 msgstr "Nie można wydrukować maila"
 
+#: src/MessageList/AttachmentBar.vala:43
+#, c-format
+msgid "Trust and open “%s”?"
+msgstr ""
+
+#: src/MessageList/AttachmentBar.vala:44
+msgid ""
+"Attachments may cause damage to your system if opened. Only open files from "
+"trusted sources."
+msgstr ""
+"Załączniki, jeśli zostaną otwarte, mogą spowodować uszkodzenie systemu. "
+"Otwieraj załączniki pochodzące tylko z zaufanych źródeł."
+
+#: src/MessageList/AttachmentBar.vala:51
+msgid "Open Anyway"
+msgstr "Otwórz mimo to"
+
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
 msgstr "Otwórz"
@@ -497,6 +497,10 @@ msgstr "Nieznane"
 #: src/MessageList/AttachmentButton.vala:113
 msgid "Save"
 msgstr "Zapisz"
+
+#, c-format
+#~ msgid "Are you sure you want to open %s?"
+#~ msgstr "Czy na pewno chcesz otworzyć %s?"
 
 #~ msgid "Quote text"
 #~ msgstr "Cytuj tekst"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-28 07:45+0000\n"
 "PO-Revision-Date: 2022-07-15 00:53+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/"
@@ -154,141 +154,141 @@ msgstr "Online fiókok…"
 msgid "From:"
 msgstr "Feladó:"
 
-#: src/Composer/ComposerWidget.vala:118
+#: src/Composer/ComposerWidget.vala:120
 #: src/MessageList/MessageListItem.vala:102
 msgid "To:"
 msgstr "Címzett:"
 
-#: src/Composer/ComposerWidget.vala:122
+#: src/Composer/ComposerWidget.vala:125
 #: src/MessageList/MessageListItem.vala:107
 msgid "Subject:"
 msgstr "Tárgy:"
 
-#: src/Composer/ComposerWidget.vala:129
+#: src/Composer/ComposerWidget.vala:134
 msgid "Cc"
 msgstr "Másolat"
 
-#: src/Composer/ComposerWidget.vala:131
+#: src/Composer/ComposerWidget.vala:136
 msgid "Bcc"
 msgstr "Titkos másolat"
 
-#: src/Composer/ComposerWidget.vala:138
+#: src/Composer/ComposerWidget.vala:143
 #: src/MessageList/MessageListItem.vala:136
 msgid "Cc:"
 msgstr "Másolat:"
 
-#: src/Composer/ComposerWidget.vala:154
+#: src/Composer/ComposerWidget.vala:161
 msgid "Bcc:"
 msgstr "Titkos másolat:"
 
-#: src/Composer/ComposerWidget.vala:200
+#: src/Composer/ComposerWidget.vala:215
 msgid "Bold"
 msgstr "Félkövér"
 
-#: src/Composer/ComposerWidget.vala:207
+#: src/Composer/ComposerWidget.vala:222
 msgid "Italic"
 msgstr "Dőlt"
 
-#: src/Composer/ComposerWidget.vala:214
+#: src/Composer/ComposerWidget.vala:229
 msgid "Underline"
 msgstr "Aláhúzott"
 
-#: src/Composer/ComposerWidget.vala:221
+#: src/Composer/ComposerWidget.vala:236
 msgid "Strikethrough"
 msgstr "Áthúzott"
 
-#: src/Composer/ComposerWidget.vala:226
+#: src/Composer/ComposerWidget.vala:241
 msgid "Remove formatting"
 msgstr "Formátum törlése"
 
-#: src/Composer/ComposerWidget.vala:238 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:253 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "Link beszúrása"
 
-#: src/Composer/ComposerWidget.vala:269
+#: src/Composer/ComposerWidget.vala:283
 msgid "Delete draft"
 msgstr "Piszkozat törlése"
 
-#: src/Composer/ComposerWidget.vala:274
+#: src/Composer/ComposerWidget.vala:288
 msgid "Attach file"
 msgstr "Fájl csatolása"
 
-#: src/Composer/ComposerWidget.vala:280
+#: src/Composer/ComposerWidget.vala:294
 msgid "Send"
 msgstr "Küldés"
 
-#: src/Composer/ComposerWidget.vala:445
+#: src/Composer/ComposerWidget.vala:461
 msgid "Choose a file"
 msgstr "Válasszon egy fájlt"
 
-#: src/Composer/ComposerWidget.vala:448
+#: src/Composer/ComposerWidget.vala:464
 msgid "Attach"
 msgstr "Csatolás"
 
-#: src/Composer/ComposerWidget.vala:449 src/Composer/ComposerWidget.vala:683
+#: src/Composer/ComposerWidget.vala:465 src/Composer/ComposerWidget.vala:699
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Mégse"
 
-#: src/Composer/ComposerWidget.vala:593
+#: src/Composer/ComposerWidget.vala:609
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%Y. %b. %-e., %a %-k:%M-kor"
 
-#: src/Composer/ComposerWidget.vala:623
+#: src/Composer/ComposerWidget.vala:639
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s dátummal írta %2$s:"
 
-#: src/Composer/ComposerWidget.vala:627
+#: src/Composer/ComposerWidget.vala:643
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Továbbított levél -----------"
 
-#: src/Composer/ComposerWidget.vala:629
+#: src/Composer/ComposerWidget.vala:645
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Feladó: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:630
+#: src/Composer/ComposerWidget.vala:646
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Tárgy: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:631
+#: src/Composer/ComposerWidget.vala:647
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Dátum: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:632
+#: src/Composer/ComposerWidget.vala:648
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Címzett: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:634
+#: src/Composer/ComposerWidget.vala:650
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Másolat: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:674
+#: src/Composer/ComposerWidget.vala:690
 msgid "Permanently delete this draft?"
 msgstr "Véglegesen törölni szeretné ezt a piszkozatot?"
 
-#: src/Composer/ComposerWidget.vala:675
+#: src/Composer/ComposerWidget.vala:691
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Nem vonhatja vissza ezt a műveletet, nem állíthatja vissza a piszkozatot a "
 "törlés után."
 
-#: src/Composer/ComposerWidget.vala:685
+#: src/Composer/ComposerWidget.vala:701
 msgid "Delete Draft"
 msgstr "Piszkozat törlése"
 
-#: src/Composer/ComposerWidget.vala:705
+#: src/Composer/ComposerWidget.vala:721
 msgid "Send without subject?"
 msgstr "Küldés tárgy nélkül?"
 
-#: src/Composer/ComposerWidget.vala:706
+#: src/Composer/ComposerWidget.vala:722
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -296,19 +296,19 @@ msgstr ""
 "Az üzenet tárgy mezője üres. A fogadó nem biztos, hogy meg tudja ítélni a "
 "besorolását vagy fontosságát."
 
-#: src/Composer/ComposerWidget.vala:712
+#: src/Composer/ComposerWidget.vala:728
 msgid "Don't Send"
 msgstr "Ne küldje el"
 
-#: src/Composer/ComposerWidget.vala:714
+#: src/Composer/ComposerWidget.vala:730
 msgid "Send Anyway"
 msgstr "Elküldés mindenképp"
 
-#: src/Composer/ComposerWidget.vala:737
+#: src/Composer/ComposerWidget.vala:753
 msgid "Sent message was not saved"
 msgstr "Az elküldött üzenet nem lett elmentve"
 
-#: src/Composer/ComposerWidget.vala:738
+#: src/Composer/ComposerWidget.vala:754
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -316,19 +316,19 @@ msgstr ""
 "Az üzenet el lett küldve, de nem került mentésre egy másolat az Elküldött "
 "üzenetek mappába."
 
-#: src/Composer/ComposerWidget.vala:752
+#: src/Composer/ComposerWidget.vala:768
 msgid "Unable to send message"
 msgstr "Nem sikerült elküldeni az üzenetet"
 
-#: src/Composer/ComposerWidget.vala:753
+#: src/Composer/ComposerWidget.vala:769
 msgid "There was an unexpected error while sending your message."
 msgstr "Egy váratlan hiba merült fel az üzenet küldése közben."
 
-#: src/Composer/ComposerWidget.vala:1000
+#: src/Composer/ComposerWidget.vala:1016
 msgid "Unable to save draft"
 msgstr "Piszkozat mentése sikertelen"
 
-#: src/Composer/ComposerWidget.vala:1001
+#: src/Composer/ComposerWidget.vala:1017
 msgid "There was an unexpected error while saving your draft."
 msgstr "A piszkozat mentése közben váratlan hiba merült fel."
 
@@ -372,23 +372,6 @@ msgstr "Link szövege:"
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
 msgstr "Példaoldal"
-
-#: src/Dialogs/OpenAttachmentDialog.vala:28
-#, c-format
-msgid "Are you sure you want to open %s?"
-msgstr "Biztosan meg szeretné nyitni ezt: %s?"
-
-#: src/Dialogs/OpenAttachmentDialog.vala:29
-msgid ""
-"Attachments may cause damage to your system if opened. Only open files from "
-"trusted sources."
-msgstr ""
-"A csatolt fájlok megnyitása a rendszer károsodását okozhatják. Csak "
-"megbízható forrásból származó fájlokat nyisson meg."
-
-#: src/Dialogs/OpenAttachmentDialog.vala:36
-msgid "Open Anyway"
-msgstr "Megnyitás mindenképp"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -471,6 +454,23 @@ msgstr "E-mail"
 msgid "Unable to print email"
 msgstr "Nem sikerült kinyomtatni az e-mailt"
 
+#: src/MessageList/AttachmentBar.vala:43
+#, c-format
+msgid "Trust and open “%s”?"
+msgstr ""
+
+#: src/MessageList/AttachmentBar.vala:44
+msgid ""
+"Attachments may cause damage to your system if opened. Only open files from "
+"trusted sources."
+msgstr ""
+"A csatolt fájlok megnyitása a rendszer károsodását okozhatják. Csak "
+"megbízható forrásból származó fájlokat nyisson meg."
+
+#: src/MessageList/AttachmentBar.vala:51
+msgid "Open Anyway"
+msgstr "Megnyitás mindenképp"
+
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
 msgstr "Megnyitás"
@@ -486,6 +486,10 @@ msgstr "Ismeretlen"
 #: src/MessageList/AttachmentButton.vala:113
 msgid "Save"
 msgstr "Mentés"
+
+#, c-format
+#~ msgid "Are you sure you want to open %s?"
+#~ msgstr "Biztosan meg szeretné nyitni ezt: %s?"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "Piszkozatok | Piszkozat"
