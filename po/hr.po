@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-28 07:45+0000\n"
 "PO-Revision-Date: 2020-04-10 14:01+0000\n"
 "Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <https://l10n.elementary.io/projects/mail/mail/hr/>\n"
@@ -173,148 +173,148 @@ msgstr "Mrežni računi…"
 msgid "From:"
 msgstr "Šalje:"
 
-#: src/Composer/ComposerWidget.vala:118
+#: src/Composer/ComposerWidget.vala:120
 #: src/MessageList/MessageListItem.vala:102
 msgid "To:"
 msgstr "Prima:"
 
-#: src/Composer/ComposerWidget.vala:122
+#: src/Composer/ComposerWidget.vala:125
 #: src/MessageList/MessageListItem.vala:107
 msgid "Subject:"
 msgstr "Predmet:"
 
-#: src/Composer/ComposerWidget.vala:129
+#: src/Composer/ComposerWidget.vala:134
 msgid "Cc"
 msgstr "Prima kopiju"
 
-#: src/Composer/ComposerWidget.vala:131
+#: src/Composer/ComposerWidget.vala:136
 msgid "Bcc"
 msgstr "Prima tajnu kopiju"
 
-#: src/Composer/ComposerWidget.vala:138
+#: src/Composer/ComposerWidget.vala:143
 #: src/MessageList/MessageListItem.vala:136
 msgid "Cc:"
 msgstr "Prima kopiju:"
 
-#: src/Composer/ComposerWidget.vala:154
+#: src/Composer/ComposerWidget.vala:161
 msgid "Bcc:"
 msgstr "Prima tajnu kopiju:"
 
-#: src/Composer/ComposerWidget.vala:200
+#: src/Composer/ComposerWidget.vala:215
 msgid "Bold"
 msgstr "Podebljano"
 
-#: src/Composer/ComposerWidget.vala:207
+#: src/Composer/ComposerWidget.vala:222
 msgid "Italic"
 msgstr "Ukošeno"
 
-#: src/Composer/ComposerWidget.vala:214
+#: src/Composer/ComposerWidget.vala:229
 msgid "Underline"
 msgstr "Podvučeno"
 
-#: src/Composer/ComposerWidget.vala:221
+#: src/Composer/ComposerWidget.vala:236
 msgid "Strikethrough"
 msgstr "Precrtano"
 
-#: src/Composer/ComposerWidget.vala:226
+#: src/Composer/ComposerWidget.vala:241
 msgid "Remove formatting"
 msgstr "Ukloni oblikovanje"
 
-#: src/Composer/ComposerWidget.vala:238 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:253 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "Umetanje poveznice"
 
-#: src/Composer/ComposerWidget.vala:269
+#: src/Composer/ComposerWidget.vala:283
 msgid "Delete draft"
 msgstr "Obriši skicu"
 
-#: src/Composer/ComposerWidget.vala:274
+#: src/Composer/ComposerWidget.vala:288
 msgid "Attach file"
 msgstr "Priloži datoteku"
 
-#: src/Composer/ComposerWidget.vala:280
+#: src/Composer/ComposerWidget.vala:294
 msgid "Send"
 msgstr "Pošalji"
 
-#: src/Composer/ComposerWidget.vala:445
+#: src/Composer/ComposerWidget.vala:461
 msgid "Choose a file"
 msgstr "Odaberi datoteku"
 
-#: src/Composer/ComposerWidget.vala:448
+#: src/Composer/ComposerWidget.vala:464
 #, fuzzy
 #| msgid "_Attach"
 msgid "Attach"
 msgstr "_Privitak"
 
-#: src/Composer/ComposerWidget.vala:449 src/Composer/ComposerWidget.vala:683
+#: src/Composer/ComposerWidget.vala:465 src/Composer/ComposerWidget.vala:699
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "Odustani"
 
-#: src/Composer/ComposerWidget.vala:593
+#: src/Composer/ComposerWidget.vala:609
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e. %b, %Y u %H:%M"
 
-#: src/Composer/ComposerWidget.vala:623
+#: src/Composer/ComposerWidget.vala:639
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Dana %1$s, %2$s je napisao:"
 
-#: src/Composer/ComposerWidget.vala:627
+#: src/Composer/ComposerWidget.vala:643
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Proslijeđena poruka ----------"
 
-#: src/Composer/ComposerWidget.vala:629
+#: src/Composer/ComposerWidget.vala:645
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Šalje: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:630
+#: src/Composer/ComposerWidget.vala:646
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Predmet: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:631
+#: src/Composer/ComposerWidget.vala:647
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Datum: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:632
+#: src/Composer/ComposerWidget.vala:648
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Prima: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:634
+#: src/Composer/ComposerWidget.vala:650
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Prima kopiju: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:674
+#: src/Composer/ComposerWidget.vala:690
 #, fuzzy
 #| msgid "Do you want to permanently delete this message?"
 #| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
 msgstr "Želite li trajno obrisati ovu poruku?"
 
-#: src/Composer/ComposerWidget.vala:675
+#: src/Composer/ComposerWidget.vala:691
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:685
+#: src/Composer/ComposerWidget.vala:701
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Delete Draft"
 msgstr "Obriši skicu"
 
-#: src/Composer/ComposerWidget.vala:705
+#: src/Composer/ComposerWidget.vala:721
 #, fuzzy
 #| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
 msgstr "Pošalji poruku bez predmeta?"
 
-#: src/Composer/ComposerWidget.vala:706
+#: src/Composer/ComposerWidget.vala:722
 #, fuzzy
 #| msgid ""
 #| "This message has an empty subject field. The recipient may not be able to "
@@ -326,43 +326,43 @@ msgstr ""
 "Ova poruka ima prazno polje predmeta. Primatelj možda neće moći opaziti "
 "područje ili značaj poruke."
 
-#: src/Composer/ComposerWidget.vala:712
+#: src/Composer/ComposerWidget.vala:728
 msgid "Don't Send"
 msgstr "Nemoj poslati"
 
-#: src/Composer/ComposerWidget.vala:714
+#: src/Composer/ComposerWidget.vala:730
 msgid "Send Anyway"
 msgstr "Svejedno pošalji"
 
-#: src/Composer/ComposerWidget.vala:737
+#: src/Composer/ComposerWidget.vala:753
 #, fuzzy
 #| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
 msgstr "Želite li poslati poruku s praznim sadržajem?"
 
-#: src/Composer/ComposerWidget.vala:738
+#: src/Composer/ComposerWidget.vala:754
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:752
+#: src/Composer/ComposerWidget.vala:768
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to send message"
 msgstr "Obriši skicu"
 
-#: src/Composer/ComposerWidget.vala:753
+#: src/Composer/ComposerWidget.vala:769
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:1000
+#: src/Composer/ComposerWidget.vala:1016
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to save draft"
 msgstr "Obriši skicu"
 
-#: src/Composer/ComposerWidget.vala:1001
+#: src/Composer/ComposerWidget.vala:1017
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -410,23 +410,6 @@ msgstr "Tekst poveznice:"
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
 msgstr "Primjer web stranice"
-
-#: src/Dialogs/OpenAttachmentDialog.vala:28
-#, c-format
-msgid "Are you sure you want to open %s?"
-msgstr "Sigurno želite otvoriti %s?"
-
-#: src/Dialogs/OpenAttachmentDialog.vala:29
-msgid ""
-"Attachments may cause damage to your system if opened. Only open files from "
-"trusted sources."
-msgstr ""
-"Privitci mogu oštetiti vaš sustav ako ih otvorite. Otvorite samo datoteke od "
-"pouzdanih korisnika."
-
-#: src/Dialogs/OpenAttachmentDialog.vala:36
-msgid "Open Anyway"
-msgstr "Svejedno otvori"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -517,6 +500,23 @@ msgstr "Nova poruka"
 msgid "Unable to print email"
 msgstr "Nije moguće ovjeriti:\n"
 
+#: src/MessageList/AttachmentBar.vala:43
+#, c-format
+msgid "Trust and open “%s”?"
+msgstr ""
+
+#: src/MessageList/AttachmentBar.vala:44
+msgid ""
+"Attachments may cause damage to your system if opened. Only open files from "
+"trusted sources."
+msgstr ""
+"Privitci mogu oštetiti vaš sustav ako ih otvorite. Otvorite samo datoteke od "
+"pouzdanih korisnika."
+
+#: src/MessageList/AttachmentBar.vala:51
+msgid "Open Anyway"
+msgstr "Svejedno otvori"
+
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
 msgstr "Otvori"
@@ -532,6 +532,10 @@ msgstr "Nepoznata"
 #: src/MessageList/AttachmentButton.vala:113
 msgid "Save"
 msgstr "Spremi"
+
+#, c-format
+#~ msgid "Are you sure you want to open %s?"
+#~ msgstr "Sigurno želite otvoriti %s?"
 
 #~ msgid "Quote text"
 #~ msgstr "Citiraj tekst"

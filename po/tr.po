@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-28 07:45+0000\n"
 "PO-Revision-Date: 2022-07-15 11:01+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
@@ -160,140 +160,140 @@ msgstr "Çevrimiçi Hesaplar…"
 msgid "From:"
 msgstr "Gönderen:"
 
-#: src/Composer/ComposerWidget.vala:118
+#: src/Composer/ComposerWidget.vala:120
 #: src/MessageList/MessageListItem.vala:102
 msgid "To:"
 msgstr "Kime:"
 
-#: src/Composer/ComposerWidget.vala:122
+#: src/Composer/ComposerWidget.vala:125
 #: src/MessageList/MessageListItem.vala:107
 msgid "Subject:"
 msgstr "Konu:"
 
-#: src/Composer/ComposerWidget.vala:129
+#: src/Composer/ComposerWidget.vala:134
 msgid "Cc"
 msgstr "Cc"
 
-#: src/Composer/ComposerWidget.vala:131
+#: src/Composer/ComposerWidget.vala:136
 msgid "Bcc"
 msgstr "Bcc"
 
-#: src/Composer/ComposerWidget.vala:138
+#: src/Composer/ComposerWidget.vala:143
 #: src/MessageList/MessageListItem.vala:136
 msgid "Cc:"
 msgstr "Cc:"
 
-#: src/Composer/ComposerWidget.vala:154
+#: src/Composer/ComposerWidget.vala:161
 msgid "Bcc:"
 msgstr "Bcc:"
 
-#: src/Composer/ComposerWidget.vala:200
+#: src/Composer/ComposerWidget.vala:215
 msgid "Bold"
 msgstr "Kalın"
 
-#: src/Composer/ComposerWidget.vala:207
+#: src/Composer/ComposerWidget.vala:222
 msgid "Italic"
 msgstr "İtalik"
 
-#: src/Composer/ComposerWidget.vala:214
+#: src/Composer/ComposerWidget.vala:229
 msgid "Underline"
 msgstr "Altı Çizili"
 
-#: src/Composer/ComposerWidget.vala:221
+#: src/Composer/ComposerWidget.vala:236
 msgid "Strikethrough"
 msgstr "Üstü Çizili"
 
-#: src/Composer/ComposerWidget.vala:226
+#: src/Composer/ComposerWidget.vala:241
 msgid "Remove formatting"
 msgstr "Biçimlendirmeyi kaldır"
 
-#: src/Composer/ComposerWidget.vala:238 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer/ComposerWidget.vala:253 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "Bağlantı Ekle"
 
-#: src/Composer/ComposerWidget.vala:269
+#: src/Composer/ComposerWidget.vala:283
 msgid "Delete draft"
 msgstr "Taslağı sil"
 
-#: src/Composer/ComposerWidget.vala:274
+#: src/Composer/ComposerWidget.vala:288
 msgid "Attach file"
 msgstr "Dosya ekle"
 
-#: src/Composer/ComposerWidget.vala:280
+#: src/Composer/ComposerWidget.vala:294
 msgid "Send"
 msgstr "Gönder"
 
-#: src/Composer/ComposerWidget.vala:445
+#: src/Composer/ComposerWidget.vala:461
 msgid "Choose a file"
 msgstr "Bir dosya seçin"
 
-#: src/Composer/ComposerWidget.vala:448
+#: src/Composer/ComposerWidget.vala:464
 msgid "Attach"
 msgstr "Ekle"
 
-#: src/Composer/ComposerWidget.vala:449 src/Composer/ComposerWidget.vala:683
+#: src/Composer/ComposerWidget.vala:465 src/Composer/ComposerWidget.vala:699
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:114
 msgid "Cancel"
 msgstr "İptal"
 
-#: src/Composer/ComposerWidget.vala:593
+#: src/Composer/ComposerWidget.vala:609
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%-e %B %Y %A, %-k:%M"
 
-#: src/Composer/ComposerWidget.vala:623
+#: src/Composer/ComposerWidget.vala:639
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%2$s, %1$s tarihinde şunu yazdı:"
 
-#: src/Composer/ComposerWidget.vala:627
+#: src/Composer/ComposerWidget.vala:643
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Yönlendirilen ileti ----------"
 
-#: src/Composer/ComposerWidget.vala:629
+#: src/Composer/ComposerWidget.vala:645
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Gönderen: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:630
+#: src/Composer/ComposerWidget.vala:646
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Konu: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:631
+#: src/Composer/ComposerWidget.vala:647
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Tarih: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:632
+#: src/Composer/ComposerWidget.vala:648
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Kime: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:634
+#: src/Composer/ComposerWidget.vala:650
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
-#: src/Composer/ComposerWidget.vala:674
+#: src/Composer/ComposerWidget.vala:690
 msgid "Permanently delete this draft?"
 msgstr "Bu taslak kalıcı olarak silinsin mi?"
 
-#: src/Composer/ComposerWidget.vala:675
+#: src/Composer/ComposerWidget.vala:691
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Bu eylemi geri alamaz veya taslağınızı silindikten sonra kurtaramazsınız."
 
-#: src/Composer/ComposerWidget.vala:685
+#: src/Composer/ComposerWidget.vala:701
 msgid "Delete Draft"
 msgstr "Taslağı Sil"
 
-#: src/Composer/ComposerWidget.vala:705
+#: src/Composer/ComposerWidget.vala:721
 msgid "Send without subject?"
 msgstr "İleti konusu olmadan gönderilsin mi?"
 
-#: src/Composer/ComposerWidget.vala:706
+#: src/Composer/ComposerWidget.vala:722
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -301,19 +301,19 @@ msgstr ""
 "Bu iletide konu alanı bulunmamaktadır. Alıcı, mesajın kapsamını veya önemini "
 "kavrayamayabilir."
 
-#: src/Composer/ComposerWidget.vala:712
+#: src/Composer/ComposerWidget.vala:728
 msgid "Don't Send"
 msgstr "Gönderme"
 
-#: src/Composer/ComposerWidget.vala:714
+#: src/Composer/ComposerWidget.vala:730
 msgid "Send Anyway"
 msgstr "Yine de Gönder"
 
-#: src/Composer/ComposerWidget.vala:737
+#: src/Composer/ComposerWidget.vala:753
 msgid "Sent message was not saved"
 msgstr "Gönderilen mesaj kaydedilmedi"
 
-#: src/Composer/ComposerWidget.vala:738
+#: src/Composer/ComposerWidget.vala:754
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -321,19 +321,19 @@ msgstr ""
 "Mesaj gönderildi, ancak bir kopyası Gönderilmiş mesajlar klasörüne "
 "kaydedilmedi."
 
-#: src/Composer/ComposerWidget.vala:752
+#: src/Composer/ComposerWidget.vala:768
 msgid "Unable to send message"
 msgstr "Mesaj gönderilemiyor"
 
-#: src/Composer/ComposerWidget.vala:753
+#: src/Composer/ComposerWidget.vala:769
 msgid "There was an unexpected error while sending your message."
 msgstr "Mesajınız gönderilirken beklenmeyen bir hata oluştu."
 
-#: src/Composer/ComposerWidget.vala:1000
+#: src/Composer/ComposerWidget.vala:1016
 msgid "Unable to save draft"
 msgstr "Taslak kaydedilemiyor"
 
-#: src/Composer/ComposerWidget.vala:1001
+#: src/Composer/ComposerWidget.vala:1017
 msgid "There was an unexpected error while saving your draft."
 msgstr "Taslağınız kaydedilirken beklenmeyen bir hata oluştu."
 
@@ -377,23 +377,6 @@ msgstr "Bağlantı Metni:"
 #: src/Dialogs/InsertLinkDialog.vala:42
 msgid "Example Website"
 msgstr "Örnek Web Sitesi"
-
-#: src/Dialogs/OpenAttachmentDialog.vala:28
-#, c-format
-msgid "Are you sure you want to open %s?"
-msgstr "%s adlı eki açmak istediğinizden emin misiniz?"
-
-#: src/Dialogs/OpenAttachmentDialog.vala:29
-msgid ""
-"Attachments may cause damage to your system if opened. Only open files from "
-"trusted sources."
-msgstr ""
-"Ekler açıldığında sisteminize zarar verebilir. Yalnızca güvenilir "
-"kaynaklardan gelen dosyaları açın."
-
-#: src/Dialogs/OpenAttachmentDialog.vala:36
-msgid "Open Anyway"
-msgstr "Yine de Aç"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -476,6 +459,23 @@ msgstr "E-posta İletisi"
 msgid "Unable to print email"
 msgstr "E-posta yazdırılamıyor"
 
+#: src/MessageList/AttachmentBar.vala:43
+#, c-format
+msgid "Trust and open “%s”?"
+msgstr ""
+
+#: src/MessageList/AttachmentBar.vala:44
+msgid ""
+"Attachments may cause damage to your system if opened. Only open files from "
+"trusted sources."
+msgstr ""
+"Ekler açıldığında sisteminize zarar verebilir. Yalnızca güvenilir "
+"kaynaklardan gelen dosyaları açın."
+
+#: src/MessageList/AttachmentBar.vala:51
+msgid "Open Anyway"
+msgstr "Yine de Aç"
+
 #: src/MessageList/AttachmentButton.vala:41
 msgid "Open"
 msgstr "Aç"
@@ -491,6 +491,10 @@ msgstr "Bilinmeyen"
 #: src/MessageList/AttachmentButton.vala:113
 msgid "Save"
 msgstr "Kaydet"
+
+#, c-format
+#~ msgid "Are you sure you want to open %s?"
+#~ msgstr "%s adlı eki açmak istediğinizden emin misiniz?"
 
 #~ msgid "Quote text"
 #~ msgstr "Metni alıntıla"

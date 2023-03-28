@@ -18,7 +18,7 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class Mail.ComposerWidget : Gtk.Grid {
+public class Mail.ComposerWidget : Gtk.Box {
     public signal void discarded ();
     public signal void sent ();
     public signal void subject_changed (string? subject);
@@ -99,32 +99,37 @@ public class Mail.ComposerWidget : Gtk.Grid {
         actions.add_action_entries (ACTION_ENTRIES, this);
         insert_action_group (ACTION_GROUP_PREFIX, actions);
 
-        var from_label = new Gtk.Label (_("From:"));
-        from_label.xalign = 1;
+        var from_label = new Gtk.Label (_("From:")) {
+            xalign = 1
+        };
         from_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        from_combo = new Gtk.ComboBoxText ();
-        from_combo.hexpand = true;
+        from_combo = new Gtk.ComboBoxText () {
+            hexpand = true
+        };
 
-        var from_grid = new Gtk.Grid ();
-        from_grid.column_spacing = 6;
-        from_grid.margin_bottom = 6;
-        from_grid.add (from_label);
-        from_grid.add (from_combo);
+        var from_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+            margin_bottom = 6
+        };
+        from_box.add (from_label);
+        from_box.add (from_combo);
 
         from_revealer = new Gtk.Revealer ();
-        from_revealer.add (from_grid);
+        from_revealer.add (from_box);
 
-        var to_label = new Gtk.Label (_("To:"));
-        to_label.xalign = 1;
+        var to_label = new Gtk.Label (_("To:")) {
+            xalign = 1
+        };
         to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        var subject_label = new Gtk.Label (_("Subject:"));
-        subject_label.xalign = 1;
+        var subject_label = new Gtk.Label (_("Subject:")) {
+            xalign = 1
+        };
         subject_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        to_val = new Gtk.Entry ();
-        to_val.hexpand = true;
+        to_val = new Gtk.Entry () {
+            hexpand = true
+        };
 
         cc_button = new Gtk.ToggleButton.with_label (_("Cc"));
 
@@ -135,40 +140,46 @@ public class Mail.ComposerWidget : Gtk.Grid {
         to_grid.add (cc_button);
         to_grid.add (bcc_button);
 
-        var cc_label = new Gtk.Label (_("Cc:"));
-        cc_label.xalign = 1;
+        var cc_label = new Gtk.Label (_("Cc:")) {
+            xalign = 1
+        };
         cc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        cc_val = new Gtk.Entry ();
-        cc_val.hexpand = true;
+        cc_val = new Gtk.Entry () {
+            hexpand = true
+        };
 
-        var cc_grid = new Gtk.Grid ();
-        cc_grid.column_spacing = 6;
-        cc_grid.margin_top = 6;
-        cc_grid.add (cc_label);
-        cc_grid.add (cc_val);
+        var cc_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+            margin_top = 6
+        };
+        cc_box.add (cc_label);
+        cc_box.add (cc_val);
 
         cc_revealer = new Gtk.Revealer ();
-        cc_revealer.add (cc_grid);
+        cc_revealer.add (cc_box);
 
-        var bcc_label = new Gtk.Label (_("Bcc:"));
-        bcc_label.xalign = 1;
+        var bcc_label = new Gtk.Label (_("Bcc:")) {
+            xalign = 1
+        };
         bcc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        bcc_val = new Gtk.Entry ();
-        bcc_val.hexpand = true;
+        bcc_val = new Gtk.Entry () {
+            hexpand = true
+        };
 
-        var bcc_grid = new Gtk.Grid ();
-        bcc_grid.column_spacing = 6;
-        bcc_grid.margin_top = 6;
-        bcc_grid.add (bcc_label);
-        bcc_grid.add (bcc_val);
+        var bcc_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+            margin_top = 6
+        };
+        bcc_box.add (bcc_label);
+        bcc_box.add (bcc_val);
 
         bcc_revealer = new Gtk.Revealer ();
-        bcc_revealer.add (bcc_grid);
+        bcc_revealer.add (bcc_box);
 
-        subject_val = new Gtk.Entry ();
-        subject_val.margin_top = 6;
+        subject_val = new Gtk.Entry () {
+            margin_top = 6
+        };
+
         subject_val.changed.connect (() => {
             subject_changed (subject_val.text);
         });
@@ -180,14 +191,18 @@ public class Mail.ComposerWidget : Gtk.Grid {
         size_group.add_widget (bcc_label);
         size_group.add_widget (subject_label);
 
-        var recipient_grid = new Gtk.Grid ();
-        recipient_grid.margin = 6;
-        recipient_grid.column_spacing = 6;
-        recipient_grid.attach (from_revealer, 0, 0, 2, 1);
+        var recipient_grid = new Gtk.Grid () {
+            column_spacing = 6,
+            margin_top = 6,
+            margin_end = 6,
+            margin_bottom = 6,
+            margin_start = 6
+        };
+        recipient_grid.attach (from_revealer, 0, 0, 2);
         recipient_grid.attach (to_label, 0, 1);
         recipient_grid.attach (to_grid, 1, 1);
-        recipient_grid.attach (cc_revealer, 0, 2, 2, 1);
-        recipient_grid.attach (bcc_revealer, 0, 3, 2, 1);
+        recipient_grid.attach (cc_revealer, 0, 2, 2);
+        recipient_grid.attach (bcc_revealer, 0, 3, 2);
         if (has_subject_field) {
             recipient_grid.attach (subject_label, 0, 4);
             recipient_grid.attach (subject_val, 1, 4);
@@ -226,7 +241,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
             tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Remove formatting"))
         };
 
-        var formatting_buttons = new Gtk.Grid ();
+        var formatting_buttons = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
         formatting_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
         formatting_buttons.add (bold);
         formatting_buttons.add (italic);
@@ -238,8 +253,7 @@ public class Mail.ComposerWidget : Gtk.Grid {
             tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Insert Link"))
         };
 
-        var button_row = new Gtk.Grid () {
-            column_spacing = 12,
+        var button_row = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12) {
             margin_start = 6,
             margin_bottom = 6
         };
@@ -278,8 +292,10 @@ public class Mail.ComposerWidget : Gtk.Grid {
             action_name = ACTION_PREFIX + ACTION_SEND,
             always_show_image = true,
             label = _("Send"),
-            margin = 6,
+            margin_top = 6,
             margin_end = 0,
+            margin_bottom = 6,
+            margin_start = 6,
             sensitive = false
         };
         send.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
@@ -469,10 +485,11 @@ public class Mail.ComposerWidget : Gtk.Grid {
 
     private async void ask_insert_link () {
         var selected_text = yield web_view.get_selected_text ();
-        var insert_link_dialog = new InsertLinkDialog (selected_text);
+        var insert_link_dialog = new InsertLinkDialog (selected_text) {
+            transient_for = (Gtk.Window) get_toplevel ()
+        };
+        insert_link_dialog.present ();
         insert_link_dialog.insert_link.connect ((url, title) => on_link_inserted (url, title, selected_text));
-        insert_link_dialog.transient_for = (Gtk.Window) get_toplevel ();
-        insert_link_dialog.run ();
     }
 
     private void on_link_inserted (string url, string title, string? selected_text) {
@@ -685,12 +702,15 @@ public class Mail.ComposerWidget : Gtk.Grid {
         var discard_anyway = discard_dialog.add_button (_("Delete Draft"), Gtk.ResponseType.ACCEPT);
         discard_anyway.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
-        if (discard_dialog.run () == Gtk.ResponseType.ACCEPT) {
-            discard_draft = true;
-            discarded ();
-        }
+        discard_dialog.present ();
+        discard_dialog.response.connect ((response) => {
+            if (response == Gtk.ResponseType.ACCEPT) {
+                discard_draft = true;
+                discarded ();
+            }
 
-        discard_dialog.destroy ();
+            discard_dialog.destroy ();
+        });
     }
 
     private void on_send () {
@@ -714,13 +734,15 @@ public class Mail.ComposerWidget : Gtk.Grid {
             var send_anyway = no_subject_dialog.add_button (_("Send Anyway"), Gtk.ResponseType.ACCEPT);
             send_anyway.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
-            if (no_subject_dialog.run () == Gtk.ResponseType.CANCEL) {
+            no_subject_dialog.present ();
+            no_subject_dialog.response.connect ((response) => {
                 no_subject_dialog.destroy ();
-                sensitive = true;
-                return;
-            }
 
-            no_subject_dialog.destroy ();
+                if (response == Gtk.ResponseType.CANCEL) {
+                    sensitive = true;
+                    return;
+                }
+            });
         }
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
@@ -741,8 +763,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 ) {
                     badge_icon = new ThemedIcon ("dialog-warning")
                 };
-                warning_dialog.run ();
-                warning_dialog.destroy ();
+                warning_dialog.present ();
+                warning_dialog.response.connect (() => warning_dialog.destroy ());
             }
 
             discard_draft = true;
@@ -757,8 +779,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
                 badge_icon = new ThemedIcon ("dialog-error")
             };
             error_dialog.show_error_details (e.message);
-            error_dialog.run ();
-            error_dialog.destroy ();
+            error_dialog.present ();
+            error_dialog.response.connect (() => error_dialog.destroy ());
         } finally {
             sensitive = true;
         }
@@ -1005,8 +1027,8 @@ public class Mail.ComposerWidget : Gtk.Grid {
                                 badge_icon = new ThemedIcon ("dialog-error")
                             };
                             error_dialog.show_error_details (e.message);
-                            error_dialog.run ();
-                            error_dialog.destroy ();
+                            error_dialog.present ();
+                            error_dialog.response.connect (() => error_dialog.destroy ());
                         }
                 });
             }
