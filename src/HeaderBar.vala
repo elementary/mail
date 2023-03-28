@@ -18,8 +18,6 @@
  */
 
 public class Mail.HeaderBar : Hdy.HeaderBar {
-    public bool can_mark { get; set; }
-
     public HeaderBar () {
         Object (show_close_button: true,
                 custom_title: new Gtk.Grid ());
@@ -106,6 +104,7 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
         mark_menu.show_all ();
 
         var mark_button = new Gtk.MenuButton () {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK,
             image = new Gtk.Image.from_icon_name ("edit-mark", Gtk.IconSize.LARGE_TOOLBAR),
             popup = mark_menu,
             tooltip_text = _("Mark Conversation")
@@ -133,8 +132,6 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
         pack_start (archive_button);
         pack_start (trash_button);
         pack_end (app_menu);
-
-        bind_property ("can-mark", mark_button, "sensitive");
 
         var settings = new GLib.Settings ("io.elementary.mail");
         settings.bind ("always-load-remote-images", load_images_menuitem, "active", SettingsBindFlags.DEFAULT);
