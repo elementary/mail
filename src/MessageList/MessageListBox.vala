@@ -20,8 +20,6 @@
 
 public class Mail.MessageListBox : Gtk.ListBox {
     public signal void hovering_over_link (string? label, string? uri);
-    public bool can_reply { get; set; default = false; }
-    public bool can_move_thread { get; set; default = false; }
     public GenericArray<string> uids { get; private set; default = new GenericArray<string> (); }
 
     public MessageListBox () {
@@ -47,8 +45,8 @@ public class Mail.MessageListBox : Gtk.ListBox {
          * is being reloaded. can_reply will be set to true after loading the
          * thread.
          */
-        can_reply = false;
-        can_move_thread = false;
+        can_reply (false);
+        can_move_thread (false);
 
         get_children ().foreach ((child) => {
             child.destroy ();
@@ -63,7 +61,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
          * If there is a node, we can move the thread even without loading all
          * individual messages.
          */
-        can_move_thread = true;
+        can_move_thread (true);
 
         var item = new MessageListItem (node.message);
         add (item);
@@ -79,7 +77,10 @@ public class Mail.MessageListBox : Gtk.ListBox {
             if (child != null && child is MessageListItem) {
                 var list_item = (MessageListItem) child;
                 list_item.expanded = true;
-                list_item.bind_property ("loaded", this, "can-reply", BindingFlags.SYNC_CREATE);
+                can_reply (list_item.loaded);
+                list_item.notify["loaded"].connect (() => {
+                    can_reply (list_item.loaded);
+                });
             }
         }
     }
@@ -118,14 +119,28 @@ public class Mail.MessageListBox : Gtk.ListBox {
 
         var composer = new InlineComposer (type, message_info, mime_message, content_to_quote);
         composer.discarded.connect (() => {
-            can_reply = true;
-            can_move_thread = true;
+            can_reply (true);
+            can_move_thread (true);
             remove (composer);
             composer.destroy ();
         });
         add (composer);
-        can_reply = false;
-        can_move_thread = true;
+        can_reply (false);
+        can_move_thread (true);
+    }
+
+    private void can_reply (bool enabled) {
+        unowned var main_window = (Gtk.ApplicationWindow) ((Gtk.Application) GLib.Application.get_default ()).active_window;
+        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_FORWARD)).set_enabled (enabled);
+        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_REPLY_ALL)).set_enabled (enabled);
+        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_REPLY)).set_enabled (enabled);
+    }
+
+    private void can_move_thread (bool enabled) {
+        unowned var main_window = (Gtk.ApplicationWindow) ((Gtk.Application) GLib.Application.get_default ()).active_window;
+        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_ARCHIVE)).set_enabled (enabled);
+        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MARK)).set_enabled (enabled);
+        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE_TO_TRASH)).set_enabled (enabled);
     }
 
     private static int message_sort_function (Gtk.ListBoxRow item1, Gtk.ListBoxRow item2) {
