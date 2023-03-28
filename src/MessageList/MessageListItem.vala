@@ -389,12 +389,13 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 _("Unable to print email"),
                 _(""),
                 "printer"
-            );
-            print_error_dialog.badge_icon = new ThemedIcon ("dialog-error");
-            print_error_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            ) {
+                badge_icon = new ThemedIcon ("dialog-error"),
+                transient_for = (Gtk.Window) get_toplevel ()
+            };
             print_error_dialog.show_error_details (e.message);
-            print_error_dialog.run ();
-            print_error_dialog.destroy ();
+            print_error_dialog.present ();
+            print_error_dialog.response.connect (() => print_error_dialog.destroy ());
         }
     }
 

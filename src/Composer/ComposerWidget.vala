@@ -485,10 +485,11 @@ public class Mail.ComposerWidget : Gtk.Box {
 
     private async void ask_insert_link () {
         var selected_text = yield web_view.get_selected_text ();
-        var insert_link_dialog = new InsertLinkDialog (selected_text);
+        var insert_link_dialog = new InsertLinkDialog (selected_text) {
+            transient_for = (Gtk.Window) get_toplevel ()
+        };
+        insert_link_dialog.present ();
         insert_link_dialog.insert_link.connect ((url, title) => on_link_inserted (url, title, selected_text));
-        insert_link_dialog.transient_for = (Gtk.Window) get_toplevel ();
-        insert_link_dialog.run ();
     }
 
     private void on_link_inserted (string url, string title, string? selected_text) {
@@ -701,12 +702,15 @@ public class Mail.ComposerWidget : Gtk.Box {
         var discard_anyway = discard_dialog.add_button (_("Delete Draft"), Gtk.ResponseType.ACCEPT);
         discard_anyway.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
-        if (discard_dialog.run () == Gtk.ResponseType.ACCEPT) {
-            discard_draft = true;
-            discarded ();
-        }
+        discard_dialog.present ();
+        discard_dialog.response.connect ((response) => {
+            if (response == Gtk.ResponseType.ACCEPT) {
+                discard_draft = true;
+                discarded ();
+            }
 
-        discard_dialog.destroy ();
+            discard_dialog.destroy ();
+        });
     }
 
     private void on_send () {
@@ -730,13 +734,15 @@ public class Mail.ComposerWidget : Gtk.Box {
             var send_anyway = no_subject_dialog.add_button (_("Send Anyway"), Gtk.ResponseType.ACCEPT);
             send_anyway.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
-            if (no_subject_dialog.run () == Gtk.ResponseType.CANCEL) {
+            no_subject_dialog.present ();
+            no_subject_dialog.response.connect ((response) => {
                 no_subject_dialog.destroy ();
-                sensitive = true;
-                return;
-            }
 
-            no_subject_dialog.destroy ();
+                if (response == Gtk.ResponseType.CANCEL) {
+                    sensitive = true;
+                    return;
+                }
+            });
         }
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
@@ -757,8 +763,8 @@ public class Mail.ComposerWidget : Gtk.Box {
                 ) {
                     badge_icon = new ThemedIcon ("dialog-warning")
                 };
-                warning_dialog.run ();
-                warning_dialog.destroy ();
+                warning_dialog.present ();
+                warning_dialog.response.connect (() => warning_dialog.destroy ());
             }
 
             discard_draft = true;
@@ -773,8 +779,8 @@ public class Mail.ComposerWidget : Gtk.Box {
                 badge_icon = new ThemedIcon ("dialog-error")
             };
             error_dialog.show_error_details (e.message);
-            error_dialog.run ();
-            error_dialog.destroy ();
+            error_dialog.present ();
+            error_dialog.response.connect (() => error_dialog.destroy ());
         } finally {
             sensitive = true;
         }
@@ -1021,8 +1027,8 @@ public class Mail.ComposerWidget : Gtk.Box {
                                 badge_icon = new ThemedIcon ("dialog-error")
                             };
                             error_dialog.show_error_details (e.message);
-                            error_dialog.run ();
-                            error_dialog.destroy ();
+                            error_dialog.present ();
+                            error_dialog.response.connect (() => error_dialog.destroy ());
                         }
                 });
             }
