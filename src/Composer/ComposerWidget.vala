@@ -906,16 +906,15 @@ public class Mail.ComposerWidget : Gtk.Box {
             remove_button_context.add_class (Gtk.STYLE_CLASS_FLAT);
             remove_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
-            var grid = new Gtk.Grid () {
-                column_spacing = 3,
+            var box = new Gtk.Box (HORIZONTAL, 3) {
                 margin = 3
             };
-            grid.add (image);
-            grid.add (name_label);
-            grid.add (size_label);
-            grid.add (remove_button);
+            box.add (image);
+            box.add (name_label);
+            box.add (size_label);
+            box.add (remove_button);
 
-            add (grid);
+            add (box);
 
             remove_button.clicked.connect (() => {
                 destroy ();

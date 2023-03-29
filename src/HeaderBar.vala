@@ -36,18 +36,17 @@ public class Mail.HeaderBar : Hdy.HeaderBar {
             margin_top = 3
         };
 
-        var app_menu_grid = new Gtk.Grid () {
+        var app_menu_box = new Gtk.Box (VERTICAL, 0) {
             margin_bottom = 3,
-            margin_top = 3,
-            orientation = Gtk.Orientation.VERTICAL
+            margin_top = 3
         };
-        app_menu_grid.add (load_images_menuitem);
-        app_menu_grid.add (app_menu_separator);
-        app_menu_grid.add (account_settings_menuitem);
-        app_menu_grid.show_all ();
+        app_menu_box.add (load_images_menuitem);
+        app_menu_box.add (app_menu_separator);
+        app_menu_box.add (account_settings_menuitem);
+        app_menu_box.show_all ();
 
         var app_menu_popover = new Gtk.Popover (null);
-        app_menu_popover.add (app_menu_grid);
+        app_menu_popover.add (app_menu_box);
 
         var app_menu = new Gtk.MenuButton () {
             image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
