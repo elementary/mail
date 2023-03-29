@@ -58,16 +58,15 @@ public class Mail.ComposerWindow : Hdy.ApplicationWindow {
             titlebar.title = title = subject;
         });
 
-        var content_grid = new Gtk.Grid ();
-        content_grid.orientation = Gtk.Orientation.VERTICAL;
-        content_grid.add (titlebar);
-        content_grid.add (composer_widget);
+        var content_box = new Gtk.Box (VERTICAL, 0);
+        content_box.add (titlebar);
+        content_box.add (composer_widget);
 
         height_request = 600;
         width_request = 680;
         title = _("New Message");
         window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
 
-        add (content_grid);
+        add (content_box);
     }
 }
