@@ -23,6 +23,7 @@ public class Mail.MessageListBox : Gtk.Box {
     public GenericArray<string> uids { get; private set; default = new GenericArray<string> (); }
 
     private Gtk.ListBox list_box;
+    private Gtk.ScrolledWindow scrolled_window;
 
     public MessageListBox () {
         Object (
@@ -49,7 +50,17 @@ public class Mail.MessageListBox : Gtk.Box {
         list_box.set_placeholder (placeholder);
         list_box.set_sort_func (message_sort_function);
 
-        add (list_box);
+        scrolled_window = new Gtk.ScrolledWindow (null, null) {
+            hscrollbar_policy = NEVER
+        };
+        scrolled_window.add (list_box);
+        // Prevent the focus of the webview causing the ScrolledWindow to scroll
+        var scrolled_child = scrolled_window.get_child ();
+        if (scrolled_child is Gtk.Container) {
+            ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
+        }
+
+        add (scrolled_window);
     }
 
     public void set_conversation (Camel.FolderThreadNode? node) {
@@ -140,6 +151,18 @@ public class Mail.MessageListBox : Gtk.Box {
         list_box.add (composer);
         can_reply (false);
         can_move_thread (true);
+    }
+
+    public void scroll_to_bottom () {
+        // Adding the inline composer then trying to scroll to the bottom doesn't work as
+        // the scrolled window doesn't resize instantly. So connect a one time signal to
+        // scroll to the bottom when the inline composer is added
+        var adjustment = scrolled_window.get_vadjustment ();
+        ulong changed_id = 0;
+        changed_id = adjustment.changed.connect (() => {
+            adjustment.set_value (adjustment.get_upper ());
+            adjustment.disconnect (changed_id);
+        });
     }
 
     private void can_reply (bool enabled) {

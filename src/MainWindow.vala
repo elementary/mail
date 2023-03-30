@@ -32,7 +32,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private Granite.SwitchModelButton hide_unstarred_switch;
     private Gtk.Button refresh_button;
     private Gtk.MenuButton filter_button;
-    private Gtk.ScrolledWindow message_list_scrolled;
     private Gtk.Spinner refresh_spinner;
     private Gtk.Stack refresh_stack;
 
@@ -212,19 +211,10 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         conversation_list_grid.attach (conversation_action_bar, 0, 2);
         conversation_list_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
-        message_list_scrolled = new Gtk.ScrolledWindow (null, null);
-        message_list_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        message_list_scrolled.add (message_list_box);
-        // Prevent the focus of the webview causing the ScrolledWindow to scroll
-        var scrolled_child = message_list_scrolled.get_child ();
-        if (scrolled_child is Gtk.Container) {
-            ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
-        }
-
         view_overlay = new Gtk.Overlay () {
             expand = true
         };
-        view_overlay.add (message_list_scrolled);
+        view_overlay.add (message_list_box);
 
         var message_list_container = new Gtk.Grid ();
         message_list_container.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
@@ -292,7 +282,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             if (node != null && node.message != null && Camel.MessageFlags.DRAFT in (int) node.message.flags) {
                 message_list_box.add_inline_composer.begin (ComposerWidget.Type.DRAFT, null, (obj, res) => {
                     message_list_box.add_inline_composer.end (res);
-                    scroll_message_list_to_bottom ();
+                    message_list_box.scroll_to_bottom ();
                 });
             }
         });
@@ -368,18 +358,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         });
     }
 
-    private void scroll_message_list_to_bottom () {
-        // Adding the inline composer then trying to scroll to the bottom doesn't work as
-        // the scrolled window doesn't resize instantly. So connect a one time signal to
-        // scroll to the bottom when the inline composer is added
-        var adjustment = message_list_scrolled.get_vadjustment ();
-        ulong changed_id = 0;
-        changed_id = adjustment.changed.connect (() => {
-            adjustment.set_value (adjustment.get_upper ());
-            adjustment.disconnect (changed_id);
-        });
-    }
-
     private void on_mark_read () {
         conversation_list_box.mark_read_selected_messages ();
     }
@@ -397,17 +375,17 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void on_reply () {
-        scroll_message_list_to_bottom ();
+        message_list_box.scroll_to_bottom ();
         message_list_box.add_inline_composer.begin (ComposerWidget.Type.REPLY);
     }
 
     private void on_reply_all () {
-        scroll_message_list_to_bottom ();
+        message_list_box.scroll_to_bottom ();
         message_list_box.add_inline_composer.begin (ComposerWidget.Type.REPLY_ALL);
     }
 
     private void on_forward () {
-        scroll_message_list_to_bottom ();
+        message_list_box.scroll_to_bottom ();
         message_list_box.add_inline_composer.begin (ComposerWidget.Type.FORWARD);
     }
 
