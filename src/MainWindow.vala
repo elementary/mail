@@ -184,17 +184,16 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         hide_unstarred_switch = new Granite.SwitchModelButton (_("Hide unstarred conversations"));
 
-        var filter_menu_popover_grid = new Gtk.Grid () {
+        var filter_menu_popover_box = new Gtk.Box (VERTICAL, 0) {
             margin_bottom = 3,
-            margin_top = 3,
-            orientation = Gtk.Orientation.VERTICAL
+            margin_top = 3
         };
-        filter_menu_popover_grid.add (hide_read_switch);
-        filter_menu_popover_grid.add (hide_unstarred_switch);
-        filter_menu_popover_grid.show_all ();
+        filter_menu_popover_box.add (hide_read_switch);
+        filter_menu_popover_box.add (hide_unstarred_switch);
+        filter_menu_popover_box.show_all ();
 
         var filter_popover = new Gtk.Popover (null);
-        filter_popover.add (filter_menu_popover_grid);
+        filter_popover.add (filter_menu_popover_box);
 
         filter_button = new Gtk.MenuButton () {
             image = new Gtk.Image.from_icon_name ("mail-filter-symbolic", Gtk.IconSize.SMALL_TOOLBAR),

@@ -269,21 +269,19 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             loaded = true;
         });
 
-        var secondary_grid = new Gtk.Grid ();
-        secondary_grid.orientation = Gtk.Orientation.VERTICAL;
-        secondary_grid.add (separator);
-        secondary_grid.add (blocked_images_infobar);
-        secondary_grid.add (web_view);
+        var secondary_box = new Gtk.Box (VERTICAL, 0);
+        secondary_box.add (separator);
+        secondary_box.add (blocked_images_infobar);
+        secondary_box.add (web_view);
 
         secondary_revealer = new Gtk.Revealer ();
         secondary_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_UP;
-        secondary_revealer.add (secondary_grid);
+        secondary_revealer.add (secondary_box);
 
-        var base_grid = new Gtk.Grid ();
-        base_grid.expand = true;
-        base_grid.orientation = Gtk.Orientation.VERTICAL;
-        base_grid.add (header_event_box);
-        base_grid.add (secondary_revealer);
+        var base_box = new Gtk.Box (VERTICAL, 0);
+        base_box.expand = true;
+        base_box.add (header_event_box);
+        base_box.add (secondary_revealer);
 
         if (Camel.MessageFlags.ATTACHMENTS in (int) message_info.flags) {
             var attachment_icon = new Gtk.Image.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
@@ -292,10 +290,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             action_grid.attach (attachment_icon, 1, 0);
 
             attachment_bar = new AttachmentBar (loading_cancellable);
-            secondary_grid.add (attachment_bar);
+            secondary_box.add (attachment_bar);
         }
 
-        add (base_grid);
+        add (base_box);
         expanded = false;
         show_all ();
 
