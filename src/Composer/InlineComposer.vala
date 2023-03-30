@@ -50,7 +50,7 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
         add (composer);
 
         map.connect (() => {
-            var viewport = get_parent ().get_parent ();
+            var viewport = get_parent ().get_parent ().get_parent ();
             if (viewport is Gtk.Viewport) {
                 height_request = viewport.get_allocated_height () - (margin * 2);
             } else {

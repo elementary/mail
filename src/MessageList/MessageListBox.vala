@@ -18,12 +18,17 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.MessageListBox : Gtk.ListBox {
+public class Mail.MessageListBox : Gtk.Box {
     public signal void hovering_over_link (string? label, string? uri);
     public GenericArray<string> uids { get; private set; default = new GenericArray<string> (); }
 
+    private Gtk.ListBox list_box;
+
     public MessageListBox () {
-        Object (selection_mode: Gtk.SelectionMode.NONE);
+        Object (
+            orientation: Gtk.Orientation.VERTICAL,
+            spacing: 0
+        );
     }
 
     construct {
@@ -34,9 +39,17 @@ public class Mail.MessageListBox : Gtk.ListBox {
         placeholder_style_context.add_class (Granite.STYLE_CLASS_H2_LABEL);
         placeholder_style_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
-        set_placeholder (placeholder);
-        set_sort_func (message_sort_function);
+        list_box = new Gtk.ListBox () {
+            hexpand = true,
+            vexpand = true,
+            selection_mode = NONE
+        };
+
+        list_box.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
+        list_box.set_placeholder (placeholder);
+        list_box.set_sort_func (message_sort_function);
+
+        add (list_box);
     }
 
     public void set_conversation (Camel.FolderThreadNode? node) {
@@ -48,7 +61,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
         can_reply (false);
         can_move_thread (false);
 
-        get_children ().foreach ((child) => {
+        list_box.get_children ().foreach ((child) => {
             child.destroy ();
         });
         uids = new GenericArray<string> ();
@@ -63,17 +76,17 @@ public class Mail.MessageListBox : Gtk.ListBox {
          */
         can_move_thread (true);
 
-        var item = new MessageListItem (node.message);
-        add (item);
+        var item = new MessageListItem (node.message, this);
+        list_box.add (item);
         uids.add (node.message.uid);
         if (node.child != null) {
             go_down ((Camel.FolderThreadNode?) node.child);
         }
 
-        var children = get_children ();
+        var children = list_box.get_children ();
         var num_children = children.length ();
         if (num_children > 0) {
-            var child = get_row_at_index ((int) num_children - 1);
+            var child = list_box.get_row_at_index ((int) num_children - 1);
             if (child != null && child is MessageListItem) {
                 var list_item = (MessageListItem) child;
                 list_item.expanded = true;
@@ -88,8 +101,8 @@ public class Mail.MessageListBox : Gtk.ListBox {
     private void go_down (Camel.FolderThreadNode node) {
         unowned Camel.FolderThreadNode? current_node = node;
         while (current_node != null) {
-            var item = new MessageListItem (current_node.message);
-            add (item);
+            var item = new MessageListItem (current_node.message, this);
+            list_box.add (item);
             uids.add (current_node.message.uid);
             if (current_node.next != null) {
                 go_down ((Camel.FolderThreadNode?) current_node.next);
@@ -101,7 +114,7 @@ public class Mail.MessageListBox : Gtk.ListBox {
 
     public async void add_inline_composer (ComposerWidget.Type type, MessageListItem? message_item = null) {
         /* Can't open a new composer if thread is empty or currently has a composer open */
-        var last_child = get_row_at_index ((int) get_children ().length () - 1);
+        var last_child = list_box.get_row_at_index ((int) list_box.get_children ().length () - 1);
         if (last_child == null || last_child is InlineComposer) {
             return;
         }
@@ -121,10 +134,10 @@ public class Mail.MessageListBox : Gtk.ListBox {
         composer.discarded.connect (() => {
             can_reply (true);
             can_move_thread (true);
-            remove (composer);
+            list_box.remove (composer);
             composer.destroy ();
         });
-        add (composer);
+        list_box.add (composer);
         can_reply (false);
         can_move_thread (true);
     }
