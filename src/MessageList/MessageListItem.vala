@@ -23,8 +23,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     public Camel.MessageInfo message_info { get; construct; }
     public Camel.MimeMessage? mime_message { get; private set; default = null; }
 
-    private Mail.MessageListBox parent_message_list_box;
-
     private Mail.WebView web_view;
     private GLib.Cancellable loading_cancellable;
 
@@ -63,12 +61,11 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     private GLib.Settings settings;
 
-    public MessageListItem (Camel.MessageInfo message_info, Mail.MessageListBox parent) {
+    public MessageListItem (Camel.MessageInfo message_info) {
         Object (
             margin: 12,
             message_info: message_info
         );
-        parent_message_list_box = parent;
     }
 
     static construct {
@@ -357,7 +354,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     }
 
     private void add_inline_composer (ComposerWidget.Type composer_type) {
-        parent_message_list_box.add_inline_composer.begin (composer_type, this);
+        var message_list_box = (MessageListBox) get_ancestor (typeof (MessageListBox));
+        message_list_box.add_inline_composer.begin (composer_type, this);
     }
 
     private void on_print () {
@@ -400,10 +398,11 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     }
 
     private void on_mouse_target_changed (WebKit.WebView web_view, WebKit.HitTestResult hit_test, uint mods) {
+        var message_list_box = (MessageListBox) get_ancestor (typeof (MessageListBox));
         if (hit_test.context_is_link ()) {
-            parent_message_list_box.hovering_over_link (hit_test.get_link_label (), hit_test.get_link_uri ());
+            message_list_box.hovering_over_link (hit_test.get_link_label (), hit_test.get_link_uri ());
         } else {
-            parent_message_list_box.hovering_over_link (null, null);
+            message_list_box.hovering_over_link (null, null);
         }
     }
 

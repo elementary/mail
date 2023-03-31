@@ -87,7 +87,7 @@ public class Mail.MessageListBox : Gtk.Box {
          */
         can_move_thread (true);
 
-        var item = new MessageListItem (node.message, this);
+        var item = new MessageListItem (node.message);
         list_box.add (item);
         uids.add (node.message.uid);
         if (node.child != null) {
@@ -112,7 +112,7 @@ public class Mail.MessageListBox : Gtk.Box {
     private void go_down (Camel.FolderThreadNode node) {
         unowned Camel.FolderThreadNode? current_node = node;
         while (current_node != null) {
-            var item = new MessageListItem (current_node.message, this);
+            var item = new MessageListItem (current_node.message);
             list_box.add (item);
             uids.add (current_node.message.uid);
             if (current_node.next != null) {
