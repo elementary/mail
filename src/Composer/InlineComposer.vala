@@ -29,13 +29,17 @@ public class Mail.InlineComposer : Gtk.ListBoxRow {
     private ComposerWidget composer;
 
     construct {
-        margin = 12;
+        margin_top = 12;
+        margin_bottom = 12;
+        margin_start = 12;
+        margin_end = 12;
 
-        get_style_context ().add_class ("card");
+        get_style_context ().add_class (Granite.STYLE_CLASS_CARD);
 
-        composer = new ComposerWidget.inline ();
-        composer.margin_top = 6;
-        composer.has_recipients = true;
+        composer = new ComposerWidget.inline () {
+            margin_top = 6,
+            has_recipients = true
+        };
 
         composer.discarded.connect (() => {
             discarded ();
