@@ -63,7 +63,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     public MessageListItem (Camel.MessageInfo message_info) {
         Object (
-            margin: 12,
+            margin_top: 12,
+            margin_bottom: 12,
+            margin_start: 12,
+            margin_end: 12,
             message_info: message_info
         );
     }
