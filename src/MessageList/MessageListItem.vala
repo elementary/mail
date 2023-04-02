@@ -31,7 +31,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private Gtk.Stack header_stack;
     private Gtk.StyleContext style_context;
     private Hdy.Avatar avatar;
-    private AttachmentBar attachment_bar = null;
+    private Gtk.FlowBox attachment_bar = null;
 
     private string message_content;
     private bool message_is_html = false;
@@ -286,7 +286,12 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             attachment_icon.tooltip_text = _("This message contains one or more attachments");
             action_grid.attach (attachment_icon, 1, 0);
 
-            attachment_bar = new AttachmentBar (loading_cancellable);
+            attachment_bar = new Gtk.FlowBox () {
+                hexpand = true,
+                homogeneous = true
+            };
+            attachment_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+            attachment_bar.get_style_context ().add_class ("bottom-toolbar");
             secondary_box.add (attachment_bar);
         }
 
@@ -441,10 +446,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             warning ("Could not get message. %s", e.message);
         }
 
-        if (attachment_bar != null) {
-            yield attachment_bar.parse_mime_content (message.content);
-        }
-
         var flags = (Camel.FolderFlags)folder.get_flags ();
 
         if (!(Camel.FolderFlags.IS_JUNK in flags) && settings.get_boolean ("always-load-remote-images")) {
@@ -515,7 +516,12 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 var field = part.get_mime_type_field ();
                 if (part.disposition == "inline") {
                     yield handle_inline_mime (part);
-                } else if (field.type == "text") {
+                } else if (part.disposition == "attachment") {
+                    var button = new AttachmentButton (part, loading_cancellable);
+                    button.activate.connect (() => show_attachment (button.mime_part));
+                    attachment_bar.add (button);
+                }
+                if (field.type == "text") {
                     yield handle_text_mime (part.content);
                 } else if (field.type == "multipart") {
                     yield parse_mime_content (part.content);
@@ -602,5 +608,39 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     public async string get_message_body_html () {
         return yield web_view.get_body_html ();
+    }
+
+    private void show_attachment (Camel.MimePart mime_part) {
+        var dialog = new Granite.MessageDialog (
+            _("Trust and open “%s”?").printf (mime_part.get_filename ()),
+            _("Attachments may cause damage to your system if opened. Only open files from trusted sources."),
+            new ThemedIcon ("dialog-warning"),
+            Gtk.ButtonsType.CANCEL
+        ) {
+            transient_for = (Gtk.Window) get_toplevel ()
+        };
+
+        var open_button = dialog.add_button (_("Open Anyway"), Gtk.ResponseType.OK);
+        open_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+
+        dialog.present ();
+        dialog.response.connect ((response_id) => {
+            if (response_id == Gtk.ResponseType.OK) {
+                show_file_anyway.begin (mime_part);
+            }
+
+            dialog.destroy ();
+        });
+    }
+
+    private async void show_file_anyway (Camel.MimePart mime_part) {
+        try {
+            GLib.FileIOStream iostream;
+            var file = File.new_tmp ("XXXXXX-%s".printf (mime_part.get_filename ()), out iostream);
+            yield mime_part.content.decode_to_output_stream (iostream.output_stream, GLib.Priority.DEFAULT, null);
+            yield GLib.AppInfo.launch_default_for_uri_async (file.get_uri (), (AppLaunchContext) null, null);
+        } catch (Error e) {
+            critical (e.message);
+        }
     }
 }
