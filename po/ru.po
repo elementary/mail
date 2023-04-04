@@ -17,16 +17,16 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-28 07:45+0000\n"
-"PO-Revision-Date: 2022-11-15 12:37+0000\n"
-"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
+"PO-Revision-Date: 2023-03-30 14:59+0000\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.2\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.16.4\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/HeaderBar.vala:31
@@ -35,7 +35,7 @@ msgstr "Всегда показывать удалённые изображен�
 
 #: src/HeaderBar.vala:34
 msgid "Account Settings…"
-msgstr "Параметры учётной записи…"
+msgstr "Параметры учётных записей…"
 
 #: src/HeaderBar.vala:57
 msgid "Menu"
@@ -207,7 +207,7 @@ msgstr "Зачёркнутый"
 
 #: src/Composer/ComposerWidget.vala:241
 msgid "Remove formatting"
-msgstr "Удалить форматирование"
+msgstr "Очистить форматирование"
 
 #: src/Composer/ComposerWidget.vala:253 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
@@ -383,7 +383,7 @@ msgstr "Пример веб-сайта"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
-msgstr "Создать новое сообщение"
+msgstr "Написать новое письмо"
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
@@ -465,7 +465,7 @@ msgstr "Не удалось напечатать электронное пись
 #: src/MessageList/AttachmentBar.vala:43
 #, c-format
 msgid "Trust and open “%s”?"
-msgstr ""
+msgstr "Довериться и открыть «%s»?"
 
 #: src/MessageList/AttachmentBar.vala:44
 msgid ""
