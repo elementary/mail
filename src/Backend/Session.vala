@@ -42,7 +42,7 @@ public class Mail.Backend.Session : Camel.Session {
         Camel.init (E.get_user_data_dir (), false);
         accounts = new Gee.LinkedList<Account> ();
         set_network_monitor (E.NetworkMonitor.get_default ());
-        set_online (true);
+        set_online (false);
         user_alert.connect ((service, type, message) => { warning (message); });
     }
 

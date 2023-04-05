@@ -149,6 +149,11 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         search_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         search_header.set_custom_title (search_entry);
 
+        var connection_info_bar = new Gtk.InfoBar () {
+            message_type = WARNING
+        };
+        connection_info_bar.get_content_area ().add (new Gtk.Label (_("You're offline")));
+
         var conversation_list_scrolled = new Gtk.ScrolledWindow (null, null) {
             hscrollbar_policy = Gtk.PolicyType.NEVER,
             width_request = 158,
@@ -208,8 +213,9 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         var conversation_list_grid = new Gtk.Grid ();
         conversation_list_grid.attach (search_header, 0, 0);
-        conversation_list_grid.attach (conversation_list_scrolled, 0, 1);
-        conversation_list_grid.attach (conversation_action_bar, 0, 2);
+        conversation_list_grid.attach (connection_info_bar, 0, 1);
+        conversation_list_grid.attach (conversation_list_scrolled, 0, 2);
+        conversation_list_grid.attach (conversation_action_bar, 0, 3);
         conversation_list_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
         message_list_scrolled = new Gtk.ScrolledWindow (null, null);
@@ -324,6 +330,14 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             if (accounts_left.size == 0) {
                 get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
                 search_entry.sensitive = false;
+            }
+        });
+
+        session.notify["online"].connect (() => {
+            if (session.online) {
+                connection_info_bar.set_revealed (false);
+            } else {
+                connection_info_bar.set_revealed (true);
             }
         });
 

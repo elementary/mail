@@ -71,12 +71,27 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem {
     }
 
     private async void connect_to_account () {
+        var session = Mail.Backend.Session.get_default ();
         unowned GLib.NetworkMonitor network_monitor = GLib.NetworkMonitor.get_default ();
-        if (network_monitor.network_available == false) {
-            return;
+        if (!network_monitor.network_available) {
+            try {
+                yield offlinestore.set_online (false, GLib.Priority.DEFAULT, connect_cancellable);
+
+                if (session.online) {
+                    session.set_online (false);
+                }
+                return;
+            } catch (Error e) {
+                critical (e.message);
+                return;
+            }
         }
 
         try {
+            if(!session.online) {
+                session.set_online (true);
+            }
+
             yield offlinestore.set_online (true, GLib.Priority.DEFAULT, connect_cancellable);
             yield offlinestore.connect (GLib.Priority.DEFAULT, connect_cancellable);
 
