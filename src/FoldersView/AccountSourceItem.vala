@@ -72,6 +72,7 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem {
 
     private async void connect_to_account () {
         var session = Mail.Backend.Session.get_default ();
+
         unowned GLib.NetworkMonitor network_monitor = GLib.NetworkMonitor.get_default ();
         if (!network_monitor.network_available) {
             try {
@@ -88,7 +89,7 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem {
         }
 
         try {
-            if(!session.online) {
+            if (!session.online) {
                 session.set_online (true);
             }
 
