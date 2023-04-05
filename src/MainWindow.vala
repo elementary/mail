@@ -87,8 +87,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     static construct {
-        Hdy.init ();
-
         action_accelerators[ACTION_COMPOSE_MESSAGE] = "<Control>N";
         action_accelerators[ACTION_REFRESH] = "F12";
         action_accelerators[ACTION_REPLY] = "<Control>R";
