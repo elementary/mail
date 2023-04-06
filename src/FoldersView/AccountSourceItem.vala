@@ -77,10 +77,10 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem {
         if (!network_monitor.network_available) {
             try {
                 yield offlinestore.set_online (false, GLib.Priority.DEFAULT, connect_cancellable);
-                session.set_online (false);
             } catch (Error e) {
                 critical (e.message);
             }
+            session.set_online (false);
             return;
         }
 
