@@ -1,19 +1,6 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2017-2023 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
@@ -21,31 +8,19 @@
 public class Mail.MessageList : Gtk.Box {
     public signal void hovering_over_link (string? label, string? uri);
     public GenericArray<string> uids { get; private set; default = new GenericArray<string> (); }
+    public Hdy.HeaderBar headerbar { get; private set; }
 
     private Gtk.ListBox list_box;
     private Gtk.ScrolledWindow scrolled_window;
 
-    public Hdy.HeaderBar headerbar { get; private set; }
-
-    public MessageList () {
-        Object (
-            orientation: Gtk.Orientation.VERTICAL
-        );
-    }
-
     construct {
-        headerbar = new Hdy.HeaderBar () {
-            show_close_button = true,
-            custom_title = new Gtk.Grid ()
-        };
-        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
         var load_images_menuitem = new Granite.SwitchModelButton (_("Always Show Remote Images"));
 
-        var account_settings_menuitem = new Gtk.ModelButton ();
-        account_settings_menuitem.text = _("Account Settings…");
+        var account_settings_menuitem = new Gtk.ModelButton () {
+            text = _("Account Settings…")
+        };
 
         var app_menu_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
             margin_bottom = 3,
@@ -70,44 +45,51 @@ public class Mail.MessageList : Gtk.Box {
             tooltip_text = _("Menu")
         };
 
-        var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR);
-        reply_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY;
+        var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY
+        };
         reply_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (reply_button.action_name),
             _("Reply")
         );
 
-        var reply_all_button = new Gtk.Button.from_icon_name ("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR);
-        reply_all_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL;
+        var reply_all_button = new Gtk.Button.from_icon_name ("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL
+        };
         reply_all_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (reply_all_button.action_name),
             _("Reply All")
         );
 
-        var forward_button = new Gtk.Button.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR);
-        forward_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD;
+        var forward_button = new Gtk.Button.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD
+        };
         forward_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (forward_button.action_name),
             _("Forward")
         );
 
-        var mark_unread_item = new Gtk.MenuItem ();
-        mark_unread_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD;
+        var mark_unread_item = new Gtk.MenuItem () {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD
+        };
         mark_unread_item.bind_property ("sensitive", mark_unread_item, "visible");
         mark_unread_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Unread"), mark_unread_item.action_name));
 
-        var mark_read_item = new Gtk.MenuItem ();
-        mark_read_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ;
+        var mark_read_item = new Gtk.MenuItem () {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ
+        };
         mark_read_item.bind_property ("sensitive", mark_read_item, "visible");
         mark_read_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Read"), mark_read_item.action_name));
 
-        var mark_star_item = new Gtk.MenuItem ();
-        mark_star_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR;
+        var mark_star_item = new Gtk.MenuItem () {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR
+        };
         mark_star_item.bind_property ("sensitive", mark_star_item, "visible");
         mark_star_item.add (new Granite.AccelLabel.from_action_name (_("Star"), mark_star_item.action_name));
 
-        var mark_unstar_item = new Gtk.MenuItem ();
-        mark_unstar_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR;
+        var mark_unstar_item = new Gtk.MenuItem () {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR
+        };
         mark_unstar_item.bind_property ("sensitive", mark_unstar_item, "visible");
         mark_unstar_item.add (new Granite.AccelLabel.from_action_name (_("Unstar"), mark_unstar_item.action_name));
 
@@ -125,20 +107,26 @@ public class Mail.MessageList : Gtk.Box {
             tooltip_text = _("Mark Conversation")
         };
 
-        var archive_button = new Gtk.Button.from_icon_name ("mail-archive", Gtk.IconSize.LARGE_TOOLBAR);
-        archive_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_ARCHIVE;
+        var archive_button = new Gtk.Button.from_icon_name ("mail-archive", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_ARCHIVE
+        };
         archive_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (archive_button.action_name),
             _("Move conversations to archive")
         );
 
-        var trash_button = new Gtk.Button.from_icon_name ("edit-delete", Gtk.IconSize.LARGE_TOOLBAR);
-        trash_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH;
+        var trash_button = new Gtk.Button.from_icon_name ("edit-delete", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH
+        };
         trash_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (trash_button.action_name),
             _("Move conversations to Trash")
         );
 
+        headerbar = new Hdy.HeaderBar () {
+            show_close_button = true
+        };
+        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         headerbar.pack_start (reply_button);
         headerbar.pack_start (reply_all_button);
         headerbar.pack_start (forward_button);
@@ -159,8 +147,9 @@ public class Mail.MessageList : Gtk.Box {
             }
         });
 
-        var placeholder = new Gtk.Label (_("No Message Selected"));
-        placeholder.visible = true;
+        var placeholder = new Gtk.Label (_("No Message Selected")) {
+            visible = true
+        };
 
         var placeholder_style_context = placeholder.get_style_context ();
         placeholder_style_context.add_class (Granite.STYLE_CLASS_H2_LABEL);
@@ -180,12 +169,14 @@ public class Mail.MessageList : Gtk.Box {
             hscrollbar_policy = NEVER
         };
         scrolled_window.add (list_box);
+
         // Prevent the focus of the webview causing the ScrolledWindow to scroll
         var scrolled_child = scrolled_window.get_child ();
         if (scrolled_child is Gtk.Container) {
             ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
         }
 
+        orientation = VERTICAL;
         add (headerbar);
         add (scrolled_window);
     }
@@ -233,6 +224,13 @@ public class Mail.MessageList : Gtk.Box {
                     can_reply (list_item.loaded);
                 });
             }
+        }
+
+        if (node.message != null && Camel.MessageFlags.DRAFT in (int) node.message.flags) {
+            add_inline_composer.begin (ComposerWidget.Type.DRAFT, null, (obj, res) => {
+                add_inline_composer.end (res);
+                scroll_to_bottom ();
+            });
         }
     }
 
