@@ -25,6 +25,8 @@ public class Mail.MessageListBox : Gtk.Box {
     private Gtk.ListBox list_box;
     private Gtk.ScrolledWindow scrolled_window;
 
+    public Hdy.HeaderBar headerbar;
+
     public MessageListBox () {
         Object (
             orientation: Gtk.Orientation.VERTICAL
@@ -32,6 +34,131 @@ public class Mail.MessageListBox : Gtk.Box {
     }
 
     construct {
+        headerbar = new Hdy.HeaderBar () {
+            show_close_button = true,
+            custom_title = new Gtk.Grid ()
+        };
+        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+        var application_instance = (Gtk.Application) GLib.Application.get_default ();
+
+        var load_images_menuitem = new Granite.SwitchModelButton (_("Always Show Remote Images"));
+
+        var account_settings_menuitem = new Gtk.ModelButton ();
+        account_settings_menuitem.text = _("Account Settings…");
+
+        var app_menu_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+            margin_bottom = 3,
+            margin_top = 3
+        };
+
+        var app_menu_box = new Gtk.Box (VERTICAL, 0) {
+            margin_bottom = 3,
+            margin_top = 3
+        };
+        app_menu_box.add (load_images_menuitem);
+        app_menu_box.add (app_menu_separator);
+        app_menu_box.add (account_settings_menuitem);
+        app_menu_box.show_all ();
+
+        var app_menu_popover = new Gtk.Popover (null);
+        app_menu_popover.add (app_menu_box);
+
+        var app_menu = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
+            popover = app_menu_popover,
+            tooltip_text = _("Menu")
+        };
+
+        var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR);
+        reply_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY;
+        reply_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (reply_button.action_name),
+            _("Reply")
+        );
+
+        var reply_all_button = new Gtk.Button.from_icon_name ("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR);
+        reply_all_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL;
+        reply_all_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (reply_all_button.action_name),
+            _("Reply All")
+        );
+
+        var forward_button = new Gtk.Button.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR);
+        forward_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD;
+        forward_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (forward_button.action_name),
+            _("Forward")
+        );
+
+        var mark_unread_item = new Gtk.MenuItem ();
+        mark_unread_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD;
+        mark_unread_item.bind_property ("sensitive", mark_unread_item, "visible");
+        mark_unread_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Unread"), mark_unread_item.action_name));
+
+        var mark_read_item = new Gtk.MenuItem ();
+        mark_read_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ;
+        mark_read_item.bind_property ("sensitive", mark_read_item, "visible");
+        mark_read_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Read"), mark_read_item.action_name));
+
+        var mark_star_item = new Gtk.MenuItem ();
+        mark_star_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR;
+        mark_star_item.bind_property ("sensitive", mark_star_item, "visible");
+        mark_star_item.add (new Granite.AccelLabel.from_action_name (_("Star"), mark_star_item.action_name));
+
+        var mark_unstar_item = new Gtk.MenuItem ();
+        mark_unstar_item.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR;
+        mark_unstar_item.bind_property ("sensitive", mark_unstar_item, "visible");
+        mark_unstar_item.add (new Granite.AccelLabel.from_action_name (_("Unstar"), mark_unstar_item.action_name));
+
+        var mark_menu = new Gtk.Menu ();
+        mark_menu.add (mark_unread_item);
+        mark_menu.add (mark_read_item);
+        mark_menu.add (mark_star_item);
+        mark_menu.add (mark_unstar_item);
+        mark_menu.show_all ();
+
+        var mark_button = new Gtk.MenuButton () {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK,
+            image = new Gtk.Image.from_icon_name ("edit-mark", Gtk.IconSize.LARGE_TOOLBAR),
+            popup = mark_menu,
+            tooltip_text = _("Mark Conversation")
+        };
+
+        var archive_button = new Gtk.Button.from_icon_name ("mail-archive", Gtk.IconSize.LARGE_TOOLBAR);
+        archive_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_ARCHIVE;
+        archive_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (archive_button.action_name),
+            _("Move conversations to archive")
+        );
+
+        var trash_button = new Gtk.Button.from_icon_name ("edit-delete", Gtk.IconSize.LARGE_TOOLBAR);
+        trash_button.action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH;
+        trash_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (trash_button.action_name),
+            _("Move conversations to Trash")
+        );
+
+        headerbar.pack_start (reply_button);
+        headerbar.pack_start (reply_all_button);
+        headerbar.pack_start (forward_button);
+        headerbar.pack_start (new Gtk.Separator (Gtk.Orientation.VERTICAL));
+        headerbar.pack_start (mark_button);
+        headerbar.pack_start (archive_button);
+        headerbar.pack_start (trash_button);
+        headerbar.pack_end (app_menu);
+
+        var settings = new GLib.Settings ("io.elementary.mail");
+        settings.bind ("always-load-remote-images", load_images_menuitem, "active", SettingsBindFlags.DEFAULT);
+
+        account_settings_menuitem.clicked.connect (() => {
+            try {
+                AppInfo.launch_default_for_uri ("settings://accounts/online", null);
+            } catch (Error e) {
+                warning ("Failed to open account settings: %s", e.message);
+            }
+        });
+
         var placeholder = new Gtk.Label (_("No Message Selected"));
         placeholder.visible = true;
 
@@ -59,6 +186,7 @@ public class Mail.MessageListBox : Gtk.Box {
             ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
         }
 
+        add (headerbar);
         add (scrolled_window);
     }
 

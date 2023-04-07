@@ -19,7 +19,6 @@
  */
 
 public class Mail.MainWindow : Hdy.ApplicationWindow {
-    private HeaderBar headerbar;
     private Gtk.SearchEntry search_entry;
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
@@ -112,9 +111,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             );
         }
 
-        headerbar = new HeaderBar ();
-        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
         folders_list_view = new FoldersListView ();
         conversation_list_box = new ConversationListBox ();
 
@@ -133,8 +129,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                 );
             }
         });
-
-        message_list_box = new MessageListBox ();
 
         search_entry = new Gtk.SearchEntry () {
             hexpand = true,
@@ -209,15 +203,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         conversation_list_grid.attach (conversation_action_bar, 0, 2);
         conversation_list_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
+        message_list_box = new MessageListBox ();
+
         view_overlay = new Gtk.Overlay () {
             expand = true
         };
         view_overlay.add (message_list_box);
-
-        var message_list_container = new Gtk.Grid ();
-        message_list_container.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
-        message_list_container.attach (headerbar, 0, 0);
-        message_list_container.attach (view_overlay, 0, 1);
 
         var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
         message_overlay.no_show_all = true;
@@ -243,7 +234,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_end.pack1 (paned_start, false, false);
-        paned_end.pack2 (message_list_container, true, true);
+        paned_end.pack2 (view_overlay, true, true);
 
         var welcome_view = new Mail.WelcomeView ();
 
@@ -257,12 +248,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         var header_group = new Hdy.HeaderGroup ();
         header_group.add_header_bar (folders_list_view.header_bar);
         header_group.add_header_bar (search_header);
-        header_group.add_header_bar (headerbar);
+        header_group.add_header_bar (message_list_box.headerbar);
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.VERTICAL);
         size_group.add_widget (folders_list_view.header_bar);
         size_group.add_widget (search_header);
-        size_group.add_widget (headerbar);
+        size_group.add_widget (message_list_box.headerbar);
 
         var settings = new GLib.Settings ("io.elementary.mail");
         settings.bind ("paned-start-position", paned_start, "position", SettingsBindFlags.DEFAULT);
@@ -427,10 +418,10 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
     private void on_fullscreen () {
         if (Gdk.WindowState.FULLSCREEN in get_window ().get_state ()) {
-            headerbar.show_close_button = true;
+            message_list_box.headerbar.show_close_button = true;
             unfullscreen ();
         } else {
-            headerbar.show_close_button = false;
+            message_list_box.headerbar.show_close_button = false;
             fullscreen ();
         }
     }
