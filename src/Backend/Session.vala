@@ -44,6 +44,11 @@ public class Mail.Backend.Session : Camel.Session {
         set_network_monitor (E.NetworkMonitor.get_default ());
         set_online (false);
         user_alert.connect ((service, type, message) => { warning (message); });
+
+        var network_monitor = GLib.NetworkMonitor.get_default ();
+        network_monitor.network_changed.connect (() =>{
+            manage_connection.begin ();
+        });
     }
 
     public async void start () {
@@ -73,6 +78,30 @@ public class Mail.Backend.Session : Camel.Session {
                 critical (e.message);
             }
         });
+
+        manage_connection.begin ();
+    }
+
+    public async void manage_connection () {
+        if (!GLib.NetworkMonitor.get_default ().network_available) {
+            foreach (var account in accounts) {
+                ((Camel.OfflineStore)account.service).set_online.begin (false, GLib.Priority.DEFAULT, null);
+            }
+            set_online (false);
+            return;
+        }
+
+        set_online (true);
+
+        foreach (var account in accounts) {
+            var offlinestore = (Camel.OfflineStore) account.service;
+            try {
+                yield offlinestore.set_online (true, GLib.Priority.DEFAULT, null);
+                yield offlinestore.synchronize (false, GLib.Priority.DEFAULT, null);
+            } catch (Error e) {
+                critical (e.message);
+            }
+        }
     }
 
     public override bool authenticate_sync (Camel.Service service, string? mechanism, GLib.Cancellable? cancellable = null) throws GLib.Error {

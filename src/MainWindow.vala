@@ -344,6 +344,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         session.start.begin ((obj, res) => {
             session.start.end (res);
 
+            connection_info_bar.revealed = !session.online;
+
             if (session.get_accounts ().size > 0) {
                 placeholder_stack.visible_child = paned_end;
                 get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
