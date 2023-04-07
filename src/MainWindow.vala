@@ -354,7 +354,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             session_started ();
         });
 
-        destroy.connect (() =>  {
+        destroy.connect (() => {
             session.disconnect (account_removed_handler);
             session.disconnect (connection_handler);
             destroy ();
