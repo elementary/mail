@@ -124,8 +124,7 @@ public class Mail.MessageList : Gtk.Box {
         );
 
         headerbar = new Hdy.HeaderBar () {
-            show_close_button = true,
-            custom_title = new Gtk.Grid ()
+            show_close_button = true
         };
         headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         headerbar.pack_start (reply_button);
