@@ -392,8 +392,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     }
 
     private void add_inline_composer (ComposerWidget.Type composer_type) {
-        var message_list_box = (MessageListBox) get_parent ();
-        message_list_box.add_inline_composer.begin (composer_type, this);
+        var message_list = (MessageList) get_ancestor (typeof (MessageList));
+        message_list.add_inline_composer.begin (composer_type, this);
     }
 
     private void on_print () {
@@ -436,11 +436,11 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     }
 
     private void on_mouse_target_changed (WebKit.WebView web_view, WebKit.HitTestResult hit_test, uint mods) {
-        var list_box = this.parent as MessageListBox;
+        var message_list = (MessageList) get_ancestor (typeof (MessageList));
         if (hit_test.context_is_link ()) {
-            list_box.hovering_over_link (hit_test.get_link_label (), hit_test.get_link_uri ());
+            message_list.hovering_over_link (hit_test.get_link_label (), hit_test.get_link_uri ());
         } else {
-            list_box.hovering_over_link (null, null);
+            message_list.hovering_over_link (null, null);
         }
     }
 

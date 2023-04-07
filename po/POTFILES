@@ -1,5 +1,4 @@
 src/Application.vala
-src/HeaderBar.vala
 src/InboxMonitor.vala
 src/MainWindow.vala
 src/Utils.vala
@@ -19,7 +18,7 @@ src/FoldersView/FoldersListView.vala
 src/FoldersView/FolderSourceItem.vala
 src/FoldersView/GroupedFolderSourceItem.vala
 src/FoldersView/SessionSourceItem.vala
-src/MessageList/MessageListBox.vala
+src/MessageList/MessageList.vala
 src/MessageList/MessageListItem.vala
 src/MessageList/AttachmentButton.vala
 src/SourceList/CellRendererBadge.vala

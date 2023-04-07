@@ -1,7 +1,6 @@
 vala_files = files(
     'Application.vala',
     'MainWindow.vala',
-    'HeaderBar.vala',
     'InboxMonitor.vala',
     'Utils.vala',
     'WebView.vala',
@@ -26,7 +25,7 @@ vala_files = files(
     'FoldersView/SessionSourceItem.vala',
     'MessageList/AttachmentButton.vala',
     'MessageList/GravatarIcon.vala',
-    'MessageList/MessageListBox.vala',
+    'MessageList/MessageList.vala',
     'MessageList/MessageListItem.vala',
     'SourceList/CellRendererBadge.vala',
     'SourceList/CellRendererExpander.vala',
