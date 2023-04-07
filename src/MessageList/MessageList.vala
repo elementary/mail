@@ -13,10 +13,6 @@ public class Mail.MessageList : Gtk.Box {
     private Gtk.ListBox list_box;
     private Gtk.ScrolledWindow scrolled_window;
 
-    public MessageList () {
-        Object (orientation: Gtk.Orientation.VERTICAL);
-    }
-
     construct {
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
@@ -181,6 +177,7 @@ public class Mail.MessageList : Gtk.Box {
             ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
         }
 
+        orientation = VERTICAL;
         add (headerbar);
         add (scrolled_window);
     }
