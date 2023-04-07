@@ -27,8 +27,7 @@ public class Mail.MessageListBox : Gtk.Box {
 
     public MessageListBox () {
         Object (
-            orientation: Gtk.Orientation.VERTICAL,
-            spacing: 0
+            orientation: Gtk.Orientation.VERTICAL
         );
     }
 
