@@ -1,7 +1,6 @@
 vala_files = files(
     'Application.vala',
     'MainWindow.vala',
-    'HeaderBar.vala',
     'InboxMonitor.vala',
     'Utils.vala',
     'WebView.vala',
