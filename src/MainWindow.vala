@@ -26,7 +26,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private FoldersListView folders_list_view;
     private Gtk.Overlay view_overlay;
     private ConversationListBox conversation_list_box;
-    private MessageListBox message_list_box;
+    private MessageList message_list;
     private Granite.SwitchModelButton hide_read_switch;
     private Granite.SwitchModelButton hide_unstarred_switch;
     private Gtk.Button refresh_button;
@@ -203,17 +203,17 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         conversation_list_grid.attach (conversation_action_bar, 0, 2);
         conversation_list_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
-        message_list_box = new MessageListBox ();
+        message_list = new MessageList ();
 
         view_overlay = new Gtk.Overlay () {
             expand = true
         };
-        view_overlay.add (message_list_box);
+        view_overlay.add (message_list);
 
         var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
         message_overlay.no_show_all = true;
 
-        message_list_box.hovering_over_link.connect ((label, url) => {
+        message_list.hovering_over_link.connect ((label, url) => {
 #if HAS_SOUP_3
             var hover_url = url != null ? GLib.Uri.unescape_string (url) : null;
 #else
@@ -248,12 +248,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         var header_group = new Hdy.HeaderGroup ();
         header_group.add_header_bar (folders_list_view.header_bar);
         header_group.add_header_bar (search_header);
-        header_group.add_header_bar (message_list_box.headerbar);
+        header_group.add_header_bar (message_list.headerbar);
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.VERTICAL);
         size_group.add_widget (folders_list_view.header_bar);
         size_group.add_widget (search_header);
-        size_group.add_widget (message_list_box.headerbar);
+        size_group.add_widget (message_list.headerbar);
 
         var settings = new GLib.Settings ("io.elementary.mail");
         settings.bind ("paned-start-position", paned_start, "position", SettingsBindFlags.DEFAULT);
@@ -266,12 +266,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         });
 
         conversation_list_box.conversation_selected.connect ((node) => {
-            message_list_box.set_conversation (node);
+            message_list.set_conversation (node);
 
             if (node != null && node.message != null && Camel.MessageFlags.DRAFT in (int) node.message.flags) {
-                message_list_box.add_inline_composer.begin (ComposerWidget.Type.DRAFT, null, (obj, res) => {
-                    message_list_box.add_inline_composer.end (res);
-                    message_list_box.scroll_to_bottom ();
+                message_list.add_inline_composer.begin (ComposerWidget.Type.DRAFT, null, (obj, res) => {
+                    message_list.add_inline_composer.end (res);
+                    message_list.scroll_to_bottom ();
                 });
             }
         });
@@ -364,18 +364,18 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void on_reply () {
-        message_list_box.scroll_to_bottom ();
-        message_list_box.add_inline_composer.begin (ComposerWidget.Type.REPLY);
+        message_list.scroll_to_bottom ();
+        message_list.add_inline_composer.begin (ComposerWidget.Type.REPLY);
     }
 
     private void on_reply_all () {
-        message_list_box.scroll_to_bottom ();
-        message_list_box.add_inline_composer.begin (ComposerWidget.Type.REPLY_ALL);
+        message_list.scroll_to_bottom ();
+        message_list.add_inline_composer.begin (ComposerWidget.Type.REPLY_ALL);
     }
 
     private void on_forward () {
-        message_list_box.scroll_to_bottom ();
-        message_list_box.add_inline_composer.begin (ComposerWidget.Type.FORWARD);
+        message_list.scroll_to_bottom ();
+        message_list.add_inline_composer.begin (ComposerWidget.Type.FORWARD);
     }
 
     private void on_archive () {
@@ -418,10 +418,10 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
     private void on_fullscreen () {
         if (Gdk.WindowState.FULLSCREEN in get_window ().get_state ()) {
-            message_list_box.headerbar.show_close_button = true;
+            message_list.headerbar.show_close_button = true;
             unfullscreen ();
         } else {
-            message_list_box.headerbar.show_close_button = false;
+            message_list.headerbar.show_close_button = false;
             fullscreen ();
         }
     }

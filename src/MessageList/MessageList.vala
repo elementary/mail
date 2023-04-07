@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.MessageListBox : Gtk.Box {
+public class Mail.MessageList : Gtk.Box {
     public signal void hovering_over_link (string? label, string? uri);
     public GenericArray<string> uids { get; private set; default = new GenericArray<string> (); }
 
@@ -27,7 +27,7 @@ public class Mail.MessageListBox : Gtk.Box {
 
     public Hdy.HeaderBar headerbar;
 
-    public MessageListBox () {
+    public MessageList () {
         Object (
             orientation: Gtk.Orientation.VERTICAL
         );
