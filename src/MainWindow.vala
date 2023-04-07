@@ -286,8 +286,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         settings.bind ("paned-start-position", paned_start, "position", SettingsBindFlags.DEFAULT);
         settings.bind ("paned-end-position", paned_end, "position", SettingsBindFlags.DEFAULT);
 
-        destroy.connect (() => destroy ());
-
         folders_list_view.folder_selected.connect ((folder_full_name_per_account) => {
             conversation_list_box.load_folder.begin (folder_full_name_per_account);
         });
@@ -325,7 +323,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
 
-        session.account_removed.connect (() => {
+        var account_removed_handler = session.account_removed.connect (() => {
             var accounts_left = session.get_accounts ();
             if (accounts_left.size == 0) {
                 get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
@@ -333,7 +331,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
-        session.notify["online"].connect (() => {
+        var connection_handler = session.notify["online"].connect (() => {
             if (session.online) {
                 connection_info_bar.set_revealed (false);
             } else {
@@ -354,6 +352,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
             is_session_started = true;
             session_started ();
+        });
+
+        destroy.connect (() =>  {
+            session.disconnect (account_removed_handler);
+            session.disconnect (connection_handler);
+            destroy ();
         });
     }
 
