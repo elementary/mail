@@ -25,7 +25,7 @@ public class Mail.MessageList : Gtk.Box {
     private Gtk.ListBox list_box;
     private Gtk.ScrolledWindow scrolled_window;
 
-    public Hdy.HeaderBar headerbar;
+    public Hdy.HeaderBar headerbar { get; private set; }
 
     public MessageList () {
         Object (
