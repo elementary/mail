@@ -234,7 +234,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_end.pack1 (paned_start, false, false);
-        paned_end.pack2 (view_overlay, true, true);
+        paned_end.pack2 (view_overlay, true, false);
 
         var welcome_view = new Mail.WelcomeView ();
 
