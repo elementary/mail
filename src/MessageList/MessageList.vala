@@ -229,6 +229,13 @@ public class Mail.MessageList : Gtk.Box {
                 });
             }
         }
+
+        if (node.message != null && Camel.MessageFlags.DRAFT in (int) node.message.flags) {
+            add_inline_composer.begin (ComposerWidget.Type.DRAFT, null, (obj, res) => {
+                add_inline_composer.end (res);
+                scroll_to_bottom ();
+            });
+        }
     }
 
     private void go_down (Camel.FolderThreadNode node) {

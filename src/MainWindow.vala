@@ -265,16 +265,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             conversation_list_box.load_folder.begin (folder_full_name_per_account);
         });
 
-        conversation_list_box.conversation_selected.connect ((node) => {
-            message_list.set_conversation (node);
-
-            if (node != null && node.message != null && Camel.MessageFlags.DRAFT in (int) node.message.flags) {
-                message_list.add_inline_composer.begin (ComposerWidget.Type.DRAFT, null, (obj, res) => {
-                    message_list.add_inline_composer.end (res);
-                    message_list.scroll_to_bottom ();
-                });
-            }
-        });
+        conversation_list_box.conversation_selected.connect (message_list.set_conversation);
 
         search_entry.bind_property ("sensitive", filter_button, "sensitive", BindingFlags.SYNC_CREATE);
 
