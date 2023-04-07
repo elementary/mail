@@ -20,7 +20,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.FolderSourceItem : Granite.Widgets.SourceList.ExpandableItem {
+public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
     public signal void refresh ();
 
     public string full_name;

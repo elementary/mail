@@ -19,7 +19,6 @@
  */
 
 public class Mail.MainWindow : Hdy.ApplicationWindow {
-    private HeaderBar headerbar;
     private Gtk.SearchEntry search_entry;
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
@@ -27,12 +26,11 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private FoldersListView folders_list_view;
     private Gtk.Overlay message_list_overlay;
     private ConversationListBox conversation_list_box;
-    private MessageListBox message_list_box;
+    private MessageList message_list;
     private Granite.SwitchModelButton hide_read_switch;
     private Granite.SwitchModelButton hide_unstarred_switch;
     private Gtk.Button refresh_button;
     private Gtk.MenuButton filter_button;
-    private Gtk.ScrolledWindow message_list_scrolled;
     private Gtk.Spinner refresh_spinner;
     private Gtk.Stack refresh_stack;
 
@@ -49,6 +47,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     public const string ACTION_REPLY = "reply";
     public const string ACTION_REPLY_ALL = "reply-all";
     public const string ACTION_FORWARD = "forward";
+    public const string ACTION_MARK = "mark";
     public const string ACTION_MARK_READ = "mark-read";
     public const string ACTION_MARK_STAR = "mark-star";
     public const string ACTION_MARK_UNREAD = "mark-unread";
@@ -65,6 +64,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         {ACTION_REPLY, on_reply },
         {ACTION_REPLY_ALL, on_reply_all },
         {ACTION_FORWARD, on_forward },
+        {ACTION_MARK, null }, // Stores enabled state only
         {ACTION_MARK_READ, on_mark_read },
         {ACTION_MARK_STAR, on_mark_star },
         {ACTION_MARK_UNREAD, on_mark_unread },
@@ -85,8 +85,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     static construct {
-        Hdy.init ();
-
         action_accelerators[ACTION_COMPOSE_MESSAGE] = "<Control>N";
         action_accelerators[ACTION_REFRESH] = "F12";
         action_accelerators[ACTION_REPLY] = "<Control>R";
@@ -113,9 +111,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             );
         }
 
-        headerbar = new HeaderBar ();
-        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
         folders_list_view = new FoldersListView ();
         conversation_list_box = new ConversationListBox ();
 
@@ -134,14 +129,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                 );
             }
         });
-
-        message_list_box = new MessageListBox ();
-        message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY), "enabled", BindingFlags.SYNC_CREATE);
-        message_list_box.bind_property ("can-reply", get_action (ACTION_REPLY_ALL), "enabled", BindingFlags.SYNC_CREATE);
-        message_list_box.bind_property ("can-reply", get_action (ACTION_FORWARD), "enabled", BindingFlags.SYNC_CREATE);
-        message_list_box.bind_property ("can-move-thread", get_action (ACTION_MOVE_TO_TRASH), "enabled", BindingFlags.SYNC_CREATE);
-        message_list_box.bind_property ("can-move-thread", get_action (ACTION_ARCHIVE), "enabled", BindingFlags.SYNC_CREATE);
-        message_list_box.bind_property ("can-move-thread", headerbar, "can-mark", BindingFlags.SYNC_CREATE);
 
         search_entry = new Gtk.SearchEntry () {
             hexpand = true,
@@ -174,7 +161,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             active = true,
             halign = Gtk.Align.CENTER,
             valign = Gtk.Align.CENTER,
-            tooltip_text = _("Fetching new messages")
+            tooltip_text = _("Fetching new messages…")
         };
 
         refresh_stack = new Gtk.Stack () {
@@ -188,17 +175,16 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         hide_unstarred_switch = new Granite.SwitchModelButton (_("Hide unstarred conversations"));
 
-        var filter_menu_popover_grid = new Gtk.Grid () {
+        var filter_menu_popover_box = new Gtk.Box (VERTICAL, 0) {
             margin_bottom = 3,
-            margin_top = 3,
-            orientation = Gtk.Orientation.VERTICAL
+            margin_top = 3
         };
-        filter_menu_popover_grid.add (hide_read_switch);
-        filter_menu_popover_grid.add (hide_unstarred_switch);
-        filter_menu_popover_grid.show_all ();
+        filter_menu_popover_box.add (hide_read_switch);
+        filter_menu_popover_box.add (hide_unstarred_switch);
+        filter_menu_popover_box.show_all ();
 
         var filter_popover = new Gtk.Popover (null);
-        filter_popover.add (filter_menu_popover_grid);
+        filter_popover.add (filter_menu_popover_box);
 
         filter_button = new Gtk.MenuButton () {
             image = new Gtk.Image.from_icon_name ("mail-filter-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
@@ -217,30 +203,23 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         conversation_list_grid.attach (conversation_action_bar, 0, 2);
         conversation_list_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
-        message_list_scrolled = new Gtk.ScrolledWindow (null, null) {
-            expand = true,
-            hscrollbar_policy = Gtk.PolicyType.NEVER
+        message_list = new MessageList ();
+
+        message_list_overlay = new Gtk.Overlay () {
+            expand = true
         };
-        message_list_scrolled.add (message_list_box);
-        // Prevent the focus of the webview causing the ScrolledWindow to scroll
-        var scrolled_child = message_list_scrolled.get_child ();
-        if (scrolled_child is Gtk.Container) {
-            ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
-        }
+        message_list_overlay.add (message_list);
 
-        var message_list_container = new Gtk.Grid ();
-        message_list_container.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
-        message_list_container.attach (headerbar, 0, 0);
-        message_list_container.attach (message_list_scrolled, 0, 1);
+        var message_overlay = new Granite.Widgets.OverlayBar (message_list_overlay) {
+            no_show_all = true
+        };
 
-        message_list_overlay = new Gtk.Overlay ();
-        message_list_overlay.add (message_list_container);
-
-        var message_overlay = new Granite.Widgets.OverlayBar (message_list_overlay);
-        message_overlay.no_show_all = true;
-
-        message_list_box.hovering_over_link.connect ((label, url) => {
+        message_list.hovering_over_link.connect ((label, url) => {
+#if HAS_SOUP_3
+            var hover_url = url != null ? GLib.Uri.unescape_string (url) : null;
+#else
             var hover_url = url != null ? Soup.URI.decode (url) : null;
+#endif
 
             if (hover_url == null) {
                 message_overlay.hide ();
@@ -270,12 +249,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         var header_group = new Hdy.HeaderGroup ();
         header_group.add_header_bar (folders_list_view.header_bar);
         header_group.add_header_bar (search_header);
-        header_group.add_header_bar (headerbar);
+        header_group.add_header_bar (message_list.headerbar);
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.VERTICAL);
         size_group.add_widget (folders_list_view.header_bar);
         size_group.add_widget (search_header);
-        size_group.add_widget (headerbar);
+        size_group.add_widget (message_list.headerbar);
 
         var settings = new GLib.Settings ("io.elementary.mail");
         settings.bind ("paned-start-position", paned_start, "position", SettingsBindFlags.DEFAULT);
@@ -288,12 +267,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         });
 
         conversation_list_box.conversation_selected.connect ((node) => {
-            message_list_box.set_conversation (node);
+            message_list.set_conversation (node);
 
             if (node != null && node.message != null && Camel.MessageFlags.DRAFT in (int) node.message.flags) {
-                message_list_box.add_inline_composer.begin (ComposerWidget.Type.DRAFT, null, (obj, res) => {
-                    message_list_box.add_inline_composer.end (res);
-                    scroll_message_list_to_bottom ();
+                message_list.add_inline_composer.begin (ComposerWidget.Type.DRAFT, null, (obj, res) => {
+                    message_list.add_inline_composer.end (res);
+                    message_list.scroll_to_bottom ();
                 });
             }
         });
@@ -369,18 +348,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         });
     }
 
-    private void scroll_message_list_to_bottom () {
-        // Adding the inline composer then trying to scroll to the bottom doesn't work as
-        // the scrolled window doesn't resize instantly. So connect a one time signal to
-        // scroll to the bottom when the inline composer is added
-        var adjustment = message_list_scrolled.get_vadjustment ();
-        ulong changed_id = 0;
-        changed_id = adjustment.changed.connect (() => {
-            adjustment.set_value (adjustment.get_upper ());
-            adjustment.disconnect (changed_id);
-        });
-    }
-
     private void on_mark_read () {
         conversation_list_box.mark_read_selected_messages ();
     }
@@ -398,18 +365,18 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void on_reply () {
-        scroll_message_list_to_bottom ();
-        message_list_box.add_inline_composer.begin (ComposerWidget.Type.REPLY);
+        message_list.scroll_to_bottom ();
+        message_list.add_inline_composer.begin (ComposerWidget.Type.REPLY);
     }
 
     private void on_reply_all () {
-        scroll_message_list_to_bottom ();
-        message_list_box.add_inline_composer.begin (ComposerWidget.Type.REPLY_ALL);
+        message_list.scroll_to_bottom ();
+        message_list.add_inline_composer.begin (ComposerWidget.Type.REPLY_ALL);
     }
 
     private void on_forward () {
-        scroll_message_list_to_bottom ();
-        message_list_box.add_inline_composer.begin (ComposerWidget.Type.FORWARD);
+        message_list.scroll_to_bottom ();
+        message_list.add_inline_composer.begin (ComposerWidget.Type.FORWARD);
     }
 
     private void on_archive () {
@@ -452,10 +419,10 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
     private void on_fullscreen () {
         if (Gdk.WindowState.FULLSCREEN in get_window ().get_state ()) {
-            headerbar.show_close_button = true;
+            message_list.headerbar.show_close_button = true;
             unfullscreen ();
         } else {
-            headerbar.show_close_button = false;
+            message_list.headerbar.show_close_button = false;
             fullscreen ();
         }
     }

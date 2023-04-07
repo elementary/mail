@@ -8,9 +8,9 @@ basic_command = [
     '--package-version', meson.project_version(),
     '--driver', meson.get_compiler('vala').version(),
     '--pkg', 'folks',
-    '--pkg', 'webkit2gtk-4.0',
     '--pkg', 'libedataserverui-1.2',
     '--pkg', 'libedataserver-1.2',
+    '--pkg', 'libhandy-1',
     '--pkg', 'camel-1.2',
     '--pkg', 'gee-0.8', 
     '--pkg', 'granite',
@@ -21,6 +21,17 @@ basic_command = [
     '--use-svg-images'
 ]
 
+if libedataserverui_dep.version().version_compare('>=3.45.1')
+    basic_command += [
+        '--pkg', 'webkit2gtk-4.1',
+        '--define=HAS_SOUP_3'
+    ]
+else
+    basic_command += [
+        '--pkg', 'webkit2gtk-4.0',
+    ]
+endif
+
 all_doc_target = custom_target(
     'full documentation',
     command: [
@@ -30,7 +41,7 @@ all_doc_target = custom_target(
         '@INPUT@'
     ],
     build_by_default: true,
-    input: vala_files,
+    input: [vala_files, config_file],
     output: 'full'
 )
 

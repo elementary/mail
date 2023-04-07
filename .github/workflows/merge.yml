@@ -22,19 +22,19 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up QEMU for aarch64 emulation
         if: ${{ matrix.arch != 'x86_64' }}
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: arm64
 
       - name: Build
-        uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
+        uses: flatpak/flatpak-github-actions/flatpak-builder@v6
         with:
           bundle: mail.flatpak
-          manifest-path: io.elementary.mail.yml
+          manifest-path: io.elementary.mail.json
           repository-name: appcenter
           repository-url: https://flatpak.elementary.io/repo.flatpakrepo
           cache-key: "flatpak-builder-${{ github.sha }}"
@@ -42,7 +42,7 @@ jobs:
           arch: ${{ matrix.arch }}
 
       - name: Deploy
-        uses: bilelmoussaoui/flatpak-github-actions/flat-manager@v4
+        uses: flatpak/flatpak-github-actions/flat-manager@v6
         with:
           repository: appcenter
           flat-manager-url: https://flatpak-api.elementary.io
@@ -50,15 +50,24 @@ jobs:
 
   gettext:
     name: Gettext
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
+    container:
+      image: ghcr.io/elementary/docker:next-unstable
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
+    - name: Install git
+      run: |
+        apt-get update
+        apt-get install git -y
 
-      - name: Gettext
-        uses: elementary/actions/gettext-template@master
-        env:
-          GIT_USER_TOKEN: "${{ secrets.GIT_USER_TOKEN }}"
-          GIT_USER_NAME: "elementaryBot"
-          GIT_USER_EMAIL: "builds@elementary.io"
+    - name: Clone repository
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GIT_USER_TOKEN }}
+
+    - name: Update Translation Files
+      uses: elementary/actions/gettext-template@next
+      env:
+        GIT_USER_TOKEN: ${{ secrets.GIT_USER_TOKEN }}
+        GIT_USER_NAME: "elementaryBot"
+        GIT_USER_EMAIL: "builds@elementary.io"
