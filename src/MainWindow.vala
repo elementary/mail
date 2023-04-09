@@ -296,6 +296,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
+        session.account_added.connect (() => {
+            placeholder_stack.visible_child = paned_end;
+            get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
+            search_entry.sensitive = true;
+        });
+
         session.start.begin ((obj, res) => {
             session.start.end (res);
 
