@@ -332,11 +332,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         });
 
         var connection_handler = session.notify["online"].connect (() => {
-            if (session.online) {
-                connection_info_bar.set_revealed (false);
-            } else {
-                connection_info_bar.set_revealed (true);
-            }
+            connection_info_bar.revealed = !session.online;
         });
 
         session.start.begin ((obj, res) => {
