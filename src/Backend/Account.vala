@@ -27,13 +27,9 @@ public class Mail.Backend.Account : GLib.Object {
     }
 
     public async void manage_connection (bool online) {
-        if (local_only) {
-            return;
-        }
-
         var offlinestore = (Camel.OfflineStore)service;
 
-        if (online) {
+        if (!local_only && online) {
             try {
                 yield offlinestore.set_online (true, GLib.Priority.DEFAULT, null);
                 yield offlinestore.synchronize (false, GLib.Priority.DEFAULT, null);
