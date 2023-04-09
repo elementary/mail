@@ -45,7 +45,7 @@ public class Mail.Backend.Session : Camel.Session {
         set_online (false);
         user_alert.connect ((service, type, message) => { warning (message); });
 
-        var network_monitor = GLib.NetworkMonitor.get_default ();
+        unowned var network_monitor = GLib.NetworkMonitor.get_default ();
         network_monitor.network_changed.connect (manage_connection);
     }
 
