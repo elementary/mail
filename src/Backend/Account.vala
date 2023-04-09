@@ -20,7 +20,7 @@
 
 public class Mail.Backend.Account : GLib.Object {
     public Camel.Service service { get; construct; }
-    public bool local_only = false;
+    public bool local_only { get; set; default = false; }
 
     public Account (Camel.Service service) {
         Object (service: service);
