@@ -24,7 +24,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
     private FoldersListView folders_list_view;
     private Gtk.Overlay view_overlay;
-    private ConversationListBox conversation_list_box;
+    private ConversationList conversation_list;
     private MessageList message_list;
 
     private uint configure_id;
@@ -104,11 +104,11 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         }
 
         folders_list_view = new FoldersListView ();
-        conversation_list_box = new ConversationListBox ();
+        conversation_list = new ConversationList ();
 
         // Disable delete accelerators when the conversation list box loses keyboard focus,
         // restore them when it returns
-        conversation_list_box.set_focus_child.connect ((widget) => {
+        conversation_list.set_focus_child.connect ((widget) => {
             if (widget == null) {
                 ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
                     ACTION_PREFIX + ACTION_MOVE_TO_TRASH,
@@ -149,7 +149,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_start.pack1 (folders_list_view, false, false);
-        paned_start.pack2 (conversation_list_box, true, false);
+        paned_start.pack2 (conversation_list, true, false);
 
         paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
         paned_end.pack1 (paned_start, false, false);
@@ -166,12 +166,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         var header_group = new Hdy.HeaderGroup ();
         header_group.add_header_bar (folders_list_view.header_bar);
-        header_group.add_header_bar (conversation_list_box.search_header);
+        header_group.add_header_bar (conversation_list.search_header);
         header_group.add_header_bar (message_list.headerbar);
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.VERTICAL);
         size_group.add_widget (folders_list_view.header_bar);
-        size_group.add_widget (conversation_list_box.search_header);
+        size_group.add_widget (conversation_list.search_header);
         size_group.add_widget (message_list.headerbar);
 
         var settings = new GLib.Settings ("io.elementary.mail");
@@ -180,9 +180,9 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         destroy.connect (() => destroy ());
 
-        folders_list_view.folder_selected.connect (conversation_list_box.load_folder);
+        folders_list_view.folder_selected.connect (conversation_list.load_folder);
 
-        conversation_list_box.conversation_selected.connect (message_list.set_conversation);
+        conversation_list.conversation_selected.connect (message_list.set_conversation);
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
 
@@ -211,23 +211,23 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void on_refresh () {
-        conversation_list_box.refresh_folder.begin ();
+        conversation_list.refresh_folder.begin ();
     }
 
     private void on_mark_read () {
-        conversation_list_box.mark_read_selected_messages ();
+        conversation_list.mark_read_selected_messages ();
     }
 
     private void on_mark_star () {
-        conversation_list_box.mark_star_selected_messages ();
+        conversation_list.mark_star_selected_messages ();
     }
 
     private void on_mark_unread () {
-        conversation_list_box.mark_unread_selected_messages ();
+        conversation_list.mark_unread_selected_messages ();
     }
 
     private void on_mark_unstar () {
-        conversation_list_box.mark_unstar_selected_messages ();
+        conversation_list.mark_unstar_selected_messages ();
     }
 
     private void on_reply () {
@@ -246,11 +246,11 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void on_archive () {
-        conversation_list_box.archive_selected_messages.begin ();
+        conversation_list.archive_selected_messages.begin ();
     }
 
     private void on_move_to_trash () {
-        var result = conversation_list_box.trash_selected_messages ();
+        var result = conversation_list.trash_selected_messages ();
         if (result > 0) {
             send_move_toast (ngettext ("Message Deleted", "Messages Deleted", result));
         }
@@ -268,12 +268,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         toast.show_all ();
 
         toast.default_action.connect (() => {
-            conversation_list_box.undo_move ();
+            conversation_list.undo_move ();
         });
 
         toast.notify["child-revealed"].connect (() => {
             if (!toast.child_revealed) {
-                conversation_list_box.undo_expired ();
+                conversation_list.undo_expired ();
             }
         });
 
