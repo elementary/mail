@@ -239,7 +239,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         var welcome_view = new Mail.WelcomeView ();
 
         var placeholder_stack = new Gtk.Stack ();
-        placeholder_stack.transition_type = Gtk.StackTransitionType.OVER_DOWN_UP;
         placeholder_stack.add_named (paned_end, "mail");
         placeholder_stack.add_named (welcome_view, "welcome");
 
@@ -297,6 +296,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
+        session.account_added.connect (() => {
+            placeholder_stack.visible_child = paned_end;
+            get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
+            search_entry.sensitive = true;
+        });
+
         session.start.begin ((obj, res) => {
             session.start.end (res);
 
@@ -304,6 +309,9 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                 placeholder_stack.visible_child = paned_end;
                 get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
                 search_entry.sensitive = true;
+            } else {
+                placeholder_stack.visible_child = welcome_view;
+                placeholder_stack.transition_type = Gtk.StackTransitionType.OVER_DOWN_UP;
             }
 
             is_session_started = true;

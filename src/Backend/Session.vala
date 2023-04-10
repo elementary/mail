@@ -60,17 +60,11 @@ public class Mail.Backend.Session : Camel.Session {
         }
 
         var sources = registry.list_sources (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
-        sources.foreach ((source_item) => {
-            unowned string uid = source_item.get_uid ();
-            if (uid == "vfolder") {
-                return;
-            }
+        sources.foreach (add_source);
 
-            unowned var extension = (E.SourceMailAccount) source_item.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
-            try {
-                add_service (uid, extension.backend_name, Camel.ProviderType.STORE);
-            } catch (Error e) {
-                critical (e.message);
+        registry.source_added.connect ((source_item) => {
+            if (source_item.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
+                add_source (source_item);
             }
         });
     }
@@ -255,6 +249,20 @@ public class Mail.Backend.Session : Camel.Session {
         }
 
         return null;
+    }
+
+    private void add_source (E.Source source) {
+        unowned string uid = source.get_uid ();
+        if (uid == "vfolder") {
+            return;
+        }
+
+        unowned var extension = (E.SourceMailAccount) source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
+        try {
+            add_service (uid, extension.backend_name, Camel.ProviderType.STORE);
+        } catch (Error e) {
+            critical (e.message);
+        }
     }
 
     public override Camel.Service add_service (string uid, string protocol, Camel.ProviderType type) throws GLib.Error {
