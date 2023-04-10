@@ -149,11 +149,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         search_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         search_header.set_custom_title (search_entry);
 
-        var connection_info_bar = new Gtk.InfoBar () {
-            message_type = WARNING
-        };
-        connection_info_bar.get_content_area ().add (new Gtk.Label (_("You're offline")));
-
         var conversation_list_scrolled = new Gtk.ScrolledWindow (null, null) {
             hscrollbar_policy = Gtk.PolicyType.NEVER,
             width_request = 158,
@@ -213,9 +208,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         var conversation_list_grid = new Gtk.Grid ();
         conversation_list_grid.attach (search_header, 0, 0);
-        conversation_list_grid.attach (connection_info_bar, 0, 1);
-        conversation_list_grid.attach (conversation_list_scrolled, 0, 2);
-        conversation_list_grid.attach (conversation_action_bar, 0, 3);
+        conversation_list_grid.attach (conversation_list_scrolled, 0, 1);
+        conversation_list_grid.attach (conversation_action_bar, 0, 2);
         conversation_list_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
         message_list_scrolled = new Gtk.ScrolledWindow (null, null);
@@ -331,14 +325,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
-        var connection_handler = session.notify["online"].connect (() => {
-            connection_info_bar.revealed = !session.online;
-        });
-
         session.start.begin ((obj, res) => {
             session.start.end (res);
-
-            connection_info_bar.revealed = !session.online;
 
             if (session.get_accounts ().size > 0) {
                 placeholder_stack.visible_child = paned_end;
@@ -352,7 +340,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         destroy.connect (() => {
             session.disconnect (account_removed_handler);
-            session.disconnect (connection_handler);
             destroy ();
         });
     }
