@@ -180,9 +180,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         destroy.connect (() => destroy ());
 
-        folders_list_view.folder_selected.connect ((folder_full_name_per_account) => {
-            conversation_list_box.load_folder.begin (folder_full_name_per_account);
-        });
+        folders_list_view.folder_selected.connect (conversation_list_box.load_folder);
 
         conversation_list_box.conversation_selected.connect (message_list.set_conversation);
 
@@ -248,9 +246,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void on_archive () {
-        conversation_list_box.archive_selected_messages.begin ((obj, res) => {
-            conversation_list_box.archive_selected_messages.end (res);
-        });
+        conversation_list_box.archive_selected_messages.begin ();
     }
 
     private void on_move_to_trash () {
