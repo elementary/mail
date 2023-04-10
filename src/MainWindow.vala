@@ -140,13 +140,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         search_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         search_header.set_custom_title (search_entry);
 
-        var conversation_list_scrolled = new Gtk.ScrolledWindow (null, null) {
-            hscrollbar_policy = Gtk.PolicyType.NEVER,
-            width_request = 158,
-            expand = true
-        };
-        conversation_list_scrolled.add (conversation_list_box);
-
         refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REFRESH
         };
@@ -199,7 +192,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         var conversation_list_grid = new Gtk.Grid ();
         conversation_list_grid.attach (search_header, 0, 0);
-        conversation_list_grid.attach (conversation_list_scrolled, 0, 1);
+        conversation_list_grid.attach (conversation_list_box, 0, 1);
         conversation_list_grid.attach (conversation_action_bar, 0, 2);
         conversation_list_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 

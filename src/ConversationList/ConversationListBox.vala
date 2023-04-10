@@ -20,7 +20,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.ConversationListBox : VirtualizingListBox {
+public class Mail.ConversationListBox : Gtk.Box {
     public signal void conversation_selected (Camel.FolderThreadNode? node);
     public signal void conversation_focused (Camel.FolderThreadNode? node);
 
@@ -38,11 +38,14 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     private Gee.HashMap<string, ConversationItemModel> conversations;
     private ConversationListStore list_store;
     private MoveHandler move_handler;
+    private VirtualizingListBox list_box;
 
     private uint mark_read_timeout_id = 0;
 
     construct {
-        activate_on_single_click = true;
+        list_box = new VirtualizingListBox () {
+            activate_on_single_click = true
+        };
         conversations = new Gee.HashMap<string, ConversationItemModel> ();
         folders = new Gee.HashMap<string, Camel.Folder> ();
         folder_info_flags = new Gee.HashMap<string, Camel.FolderInfoFlags> ();
@@ -51,10 +54,10 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         list_store.set_sort_func (thread_sort_function);
         list_store.set_filter_func (filter_function);
 
-        model = list_store;
+        list_box.model = list_store;
         move_handler = new MoveHandler ();
 
-        factory_func = (item, old_widget) => {
+        list_box.factory_func = (item, old_widget) => {
             ConversationListItem? row = null;
             if (old_widget != null) {
                 row = old_widget as ConversationListItem;
@@ -67,7 +70,16 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             return row;
         };
 
-        row_activated.connect ((row) => {
+        var scrolled_window = new Gtk.ScrolledWindow (null, null) {
+            hscrollbar_policy = Gtk.PolicyType.NEVER,
+            width_request = 158,
+            expand = true
+        };
+        scrolled_window.add (list_box);
+
+        add (scrolled_window);
+
+        list_box.row_activated.connect ((row) => {
             if (mark_read_timeout_id != 0) {
                 GLib.Source.remove (mark_read_timeout_id);
                 mark_read_timeout_id = 0;
@@ -89,7 +101,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             }
         });
 
-        row_selected.connect ((row) => {
+        list_box.row_selected.connect ((row) => {
             if (row == null) {
                 conversation_selected (null);
             } else {
@@ -111,10 +123,10 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 return Gdk.EVENT_PROPAGATE;
             }
 
-            var row = get_row_at_y ((int)e.y);
+            var row = list_box.get_row_at_y ((int)e.y);
 
-            if (selected_row_widget != row) {
-                select_row (row);
+            if (list_box.selected_row_widget != row) {
+                list_box.select_row (row);
             }
 
             return create_context_menu (e, (ConversationListItem)row);
@@ -126,7 +138,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 return Gdk.EVENT_PROPAGATE;
             }
 
-            var row = selected_row_widget;
+            var row = list_box.selected_row_widget;
 
             return create_context_menu (e, (ConversationListItem)row);
         });
@@ -357,28 +369,28 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     }
 
     public void mark_read_selected_messages () {
-        var selected_rows = get_selected_rows ();
+        var selected_rows = list_box.get_selected_rows ();
         foreach (var row in selected_rows) {
             (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.SEEN, ~0);
         }
     }
 
     public void mark_star_selected_messages () {
-        var selected_rows = get_selected_rows ();
+        var selected_rows = list_box.get_selected_rows ();
         foreach (var row in selected_rows) {
             (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.FLAGGED, ~0);
         }
     }
 
     public void mark_unread_selected_messages () {
-        var selected_rows = get_selected_rows ();
+        var selected_rows = list_box.get_selected_rows ();
         foreach (var row in selected_rows) {
             (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.SEEN, 0);
         }
     }
 
     public void mark_unstar_selected_messages () {
-        var selected_rows = get_selected_rows ();
+        var selected_rows = list_box.get_selected_rows ();
         foreach (var row in selected_rows) {
             (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.FLAGGED, 0);
         }
@@ -387,7 +399,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     public async int archive_selected_messages () {
         var archive_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
 
-        var selected_rows = get_selected_rows ();
+        var selected_rows = list_box.get_selected_rows ();
         int selected_rows_start_index = list_store.get_index_of (selected_rows.to_array ()[0]);
 
         foreach (unowned var selected_row in selected_rows) {
@@ -421,7 +433,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
 
         list_store.items_changed (0, archived, list_store.get_n_items ());
-        select_row_at_index (selected_rows_start_index);
+        list_box.select_row_at_index (selected_rows_start_index);
 
         return archived;
     }
@@ -429,7 +441,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     public int trash_selected_messages () {
         var trash_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
 
-        var selected_rows = get_selected_rows ();
+        var selected_rows = list_box.get_selected_rows ();
         int selected_rows_start_index = list_store.get_index_of (selected_rows.to_array ()[0]);
 
         foreach (unowned var selected_row in selected_rows) {
@@ -448,7 +460,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
 
         list_store.items_changed (0, 0, list_store.get_n_items ());
-        select_row_at_index (selected_rows_start_index + 1);
+        list_box.select_row_at_index (selected_rows_start_index + 1);
 
         return deleted;
     }
