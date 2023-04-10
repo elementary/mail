@@ -29,20 +29,26 @@ public class Mail.ConversationListBox : Gtk.Box {
     public Gee.Map<Backend.Account, string?> folder_full_name_per_account { get; private set; }
     public Gee.HashMap<string, Camel.Folder> folders { get; private set; }
     public Gee.HashMap<string, Camel.FolderInfoFlags> folder_info_flags { get; private set; }
+    public Hdy.HeaderBar search_header { get; private set; }
 
     private GLib.Cancellable? cancellable = null;
     private Gee.HashMap<string, Camel.FolderThread> threads;
-    private string? current_search_query = null;
-    private bool current_search_hide_read = false;
-    private bool current_search_hide_unstarred = false;
     private Gee.HashMap<string, ConversationItemModel> conversations;
     private ConversationListStore list_store;
     private MoveHandler move_handler;
     private VirtualizingListBox list_box;
+    private Gtk.SearchEntry search_entry;
+    private Granite.SwitchModelButton hide_read_switch;
+    private Granite.SwitchModelButton hide_unstarred_switch;
+    private Gtk.MenuButton filter_button;
+    private Gtk.Stack refresh_stack;
 
     private uint mark_read_timeout_id = 0;
 
     construct {
+        orientation = VERTICAL;
+        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+
         list_box = new VirtualizingListBox () {
             activate_on_single_click = true
         };
@@ -70,14 +76,78 @@ public class Mail.ConversationListBox : Gtk.Box {
             return row;
         };
 
+        search_entry = new Gtk.SearchEntry () {
+            hexpand = true,
+            placeholder_text = _("Search Mail"),
+            valign = Gtk.Align.CENTER
+        };
+
+        search_header = new Hdy.HeaderBar ();
+        search_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        search_header.set_custom_title (search_entry);
+
         var scrolled_window = new Gtk.ScrolledWindow (null, null) {
             hscrollbar_policy = Gtk.PolicyType.NEVER,
             width_request = 158,
-            expand = true
+            expand = true,
+            child = list_box
         };
-        scrolled_window.add (list_box);
 
+        var refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REFRESH
+        };
+
+        var application_instance = (Gtk.Application) GLib.Application.get_default ();
+        refresh_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (refresh_button.action_name),
+            _("Fetch new messages")
+        );
+
+        var refresh_spinner = new Gtk.Spinner () {
+            active = true,
+            halign = Gtk.Align.CENTER,
+            valign = Gtk.Align.CENTER,
+            tooltip_text = _("Fetching new messages…")
+        };
+
+        refresh_stack = new Gtk.Stack () {
+            transition_type = Gtk.StackTransitionType.CROSSFADE
+        };
+        refresh_stack.add_named (refresh_button, "button");
+        refresh_stack.add_named (refresh_spinner, "spinner");
+        refresh_stack.visible_child = refresh_button;
+
+        hide_read_switch = new Granite.SwitchModelButton (_("Hide read conversations"));
+
+        hide_unstarred_switch = new Granite.SwitchModelButton (_("Hide unstarred conversations"));
+
+        var filter_menu_popover_box = new Gtk.Box (VERTICAL, 0) {
+            margin_bottom = 3,
+            margin_top = 3
+        };
+        filter_menu_popover_box.add (hide_read_switch);
+        filter_menu_popover_box.add (hide_unstarred_switch);
+        filter_menu_popover_box.show_all ();
+
+        var filter_popover = new Gtk.Popover (null);
+        filter_popover.add (filter_menu_popover_box);
+
+        filter_button = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("mail-filter-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            popover = filter_popover,
+            tooltip_text = _("Filter Conversations")
+        };
+
+        var conversation_action_bar = new Gtk.ActionBar ();
+        conversation_action_bar.pack_start (refresh_stack);
+        conversation_action_bar.pack_end (filter_button);
+        conversation_action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+        add (search_header);
         add (scrolled_window);
+        add (conversation_action_bar);
+
+        search_entry.search_changed.connect (() => load_folder.begin (folder_full_name_per_account));
 
         list_box.row_activated.connect ((row) => {
             if (mark_read_timeout_id != 0) {
@@ -116,6 +186,10 @@ public class Mail.ConversationListBox : Gtk.Box {
                 conversation_selected (((ConversationItemModel) row).node);
             }
         });
+
+        hide_read_switch.toggled.connect (() => load_folder.begin (folder_full_name_per_account));
+
+        hide_unstarred_switch.toggled.connect (() => load_folder.begin (folder_full_name_per_account));
 
         button_release_event.connect ((e) => {
 
@@ -234,6 +308,7 @@ public class Mail.ConversationListBox : Gtk.Box {
     }
 
     public async void refresh_folder (GLib.Cancellable? cancellable = null) {
+        refresh_stack.set_visible_child_name ("spinner");
         lock (folders) {
             foreach (var folder in folders.values) {
                 try {
@@ -246,6 +321,7 @@ public class Mail.ConversationListBox : Gtk.Box {
                 }
             }
         }
+        refresh_stack.set_visible_child_name ("button");
     }
 
     private void folder_changed (Camel.FolderChangeInfo change_info, string service_uid, GLib.Cancellable cancellable) {
@@ -299,29 +375,38 @@ public class Mail.ConversationListBox : Gtk.Box {
     }
 
     private GenericArray<string>? get_search_result_uids (string service_uid) {
+        var style_context = filter_button.get_style_context ();
+        if (hide_read_switch.active || hide_unstarred_switch.active) {
+            if (!style_context.has_class (Granite.STYLE_CLASS_ACCENT)) {
+                style_context.add_class (Granite.STYLE_CLASS_ACCENT);
+            }
+        } else if (style_context.has_class (Granite.STYLE_CLASS_ACCENT)) {
+            style_context.remove_class (Granite.STYLE_CLASS_ACCENT);
+        }
+
         lock (folders) {
             if (folders[service_uid] == null) {
                 return null;
             }
 
-            var has_current_search_query = current_search_query != null && current_search_query.strip () != "";
-            if (!has_current_search_query && !current_search_hide_read && !current_search_hide_unstarred) {
+            var has_current_search_query = search_entry.text.strip () != "";
+            if (!has_current_search_query && !hide_read_switch.active && !hide_unstarred_switch.active) {
                 return folders[service_uid].get_uids ();
             }
 
             string[] current_search_expressions = {};
 
-            if (current_search_hide_read) {
+            if (hide_read_switch.active) {
                 current_search_expressions += """(not (system-flag "Seen"))""";
             }
 
-            if (current_search_hide_unstarred) {
+            if (hide_unstarred_switch.active) {
                 current_search_expressions += """(system-flag "Flagged")""";
             }
 
             if (has_current_search_query) {
                 var sb = new StringBuilder ();
-                Camel.SExp.encode_string (sb, current_search_query);
+                Camel.SExp.encode_string (sb, search_entry.text);
                 var encoded_query = sb.str;
 
                 current_search_expressions += """(or (header-contains "From" %s)(header-contains "Subject" %s)(body-contains %s))"""
@@ -340,14 +425,6 @@ public class Mail.ConversationListBox : Gtk.Box {
                 return folders[service_uid].get_uids ();
             }
         }
-    }
-
-    public async void search (string? query, bool hide_read = false, bool hide_unstarred = false) {
-        current_search_query = query;
-        current_search_hide_read = hide_read;
-        current_search_hide_unstarred = hide_unstarred;
-
-        yield load_folder (folder_full_name_per_account);
     }
 
     private void add_conversation_item (Camel.FolderInfoFlags folder_info_flags, Camel.FolderThreadNode child, Camel.FolderThread thread, string service_uid) {
