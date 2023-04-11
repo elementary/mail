@@ -20,7 +20,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.ConversationListBox : VirtualizingListBox {
+public class Mail.ConversationList : Gtk.Box {
     public signal void conversation_selected (Camel.FolderThreadNode? node);
     public signal void conversation_focused (Camel.FolderThreadNode? node);
 
@@ -29,20 +29,26 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     public Gee.Map<Backend.Account, string?> folder_full_name_per_account { get; private set; }
     public Gee.HashMap<string, Camel.Folder> folders { get; private set; }
     public Gee.HashMap<string, Camel.FolderInfoFlags> folder_info_flags { get; private set; }
+    public Hdy.HeaderBar search_header { get; private set; }
 
     private GLib.Cancellable? cancellable = null;
     private Gee.HashMap<string, Camel.FolderThread> threads;
-    private string? current_search_query = null;
-    private bool current_search_hide_read = false;
-    private bool current_search_hide_unstarred = false;
     private Gee.HashMap<string, ConversationItemModel> conversations;
     private ConversationListStore list_store;
     private MoveHandler move_handler;
+    private VirtualizingListBox list_box;
+    private Gtk.SearchEntry search_entry;
+    private Granite.SwitchModelButton hide_read_switch;
+    private Granite.SwitchModelButton hide_unstarred_switch;
+    private Gtk.MenuButton filter_button;
+    private Gtk.Stack refresh_stack;
 
     private uint mark_read_timeout_id = 0;
 
     construct {
-        activate_on_single_click = true;
+        orientation = VERTICAL;
+        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+
         conversations = new Gee.HashMap<string, ConversationItemModel> ();
         folders = new Gee.HashMap<string, Camel.Folder> ();
         folder_info_flags = new Gee.HashMap<string, Camel.FolderInfoFlags> ();
@@ -51,10 +57,13 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         list_store.set_sort_func (thread_sort_function);
         list_store.set_filter_func (filter_function);
 
-        model = list_store;
         move_handler = new MoveHandler ();
 
-        factory_func = (item, old_widget) => {
+        list_box = new VirtualizingListBox () {
+            activate_on_single_click = true,
+            model = list_store
+        };
+        list_box.factory_func = (item, old_widget) => {
             ConversationListItem? row = null;
             if (old_widget != null) {
                 row = old_widget as ConversationListItem;
@@ -67,7 +76,99 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             return row;
         };
 
-        row_activated.connect ((row) => {
+        var application_instance = (Gtk.Application) GLib.Application.get_default ();
+
+        search_entry = new Gtk.SearchEntry () {
+            hexpand = true,
+            placeholder_text = _("Search Mail"),
+            valign = Gtk.Align.CENTER
+        };
+
+        search_header = new Hdy.HeaderBar () {
+            custom_title = search_entry
+        };
+        search_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+        var scrolled_window = new Gtk.ScrolledWindow (null, null) {
+            hscrollbar_policy = Gtk.PolicyType.NEVER,
+            width_request = 158,
+            expand = true,
+            child = list_box
+        };
+
+        var refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REFRESH
+        };
+
+        refresh_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (refresh_button.action_name),
+            _("Fetch new messages")
+        );
+
+        var refresh_spinner = new Gtk.Spinner () {
+            active = true,
+            halign = Gtk.Align.CENTER,
+            valign = Gtk.Align.CENTER,
+            tooltip_text = _("Fetching new messages…")
+        };
+
+        refresh_stack = new Gtk.Stack () {
+            transition_type = Gtk.StackTransitionType.CROSSFADE
+        };
+        refresh_stack.add_named (refresh_button, "button");
+        refresh_stack.add_named (refresh_spinner, "spinner");
+        refresh_stack.visible_child = refresh_button;
+
+        hide_read_switch = new Granite.SwitchModelButton (_("Hide read conversations"));
+
+        hide_unstarred_switch = new Granite.SwitchModelButton (_("Hide unstarred conversations"));
+
+        var filter_menu_popover_box = new Gtk.Box (VERTICAL, 0) {
+            margin_bottom = 3,
+            margin_top = 3
+        };
+        filter_menu_popover_box.add (hide_read_switch);
+        filter_menu_popover_box.add (hide_unstarred_switch);
+        filter_menu_popover_box.show_all ();
+
+        var filter_popover = new Gtk.Popover (null) {
+            child = filter_menu_popover_box
+        };
+
+        filter_button = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("mail-filter-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            popover = filter_popover,
+            tooltip_text = _("Filter Conversations")
+        };
+
+        var conversation_action_bar = new Gtk.ActionBar ();
+        conversation_action_bar.pack_start (refresh_stack);
+        conversation_action_bar.pack_end (filter_button);
+        conversation_action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+        add (search_header);
+        add (scrolled_window);
+        add (conversation_action_bar);
+
+        search_entry.search_changed.connect (() => load_folder.begin (folder_full_name_per_account));
+
+        // Disable delete accelerators when the conversation list box loses keyboard focus,
+        // restore them when it returns (Replace with EventControllerFocus in GTK4)
+        list_box.set_focus_child.connect ((widget) => {
+            if (widget == null) {
+                application_instance.set_accels_for_action (
+                    MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH,
+                    {}
+                );
+            } else {
+                application_instance.set_accels_for_action (
+                    MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH,
+                    MainWindow.action_accelerators[MainWindow.ACTION_MOVE_TO_TRASH].to_array ()
+                );
+            }
+        });
+
+        list_box.row_activated.connect ((row) => {
             if (mark_read_timeout_id != 0) {
                 GLib.Source.remove (mark_read_timeout_id);
                 mark_read_timeout_id = 0;
@@ -89,7 +190,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             }
         });
 
-        row_selected.connect ((row) => {
+        list_box.row_selected.connect ((row) => {
             if (row == null) {
                 conversation_selected (null);
             } else {
@@ -105,16 +206,20 @@ public class Mail.ConversationListBox : VirtualizingListBox {
             }
         });
 
+        hide_read_switch.toggled.connect (() => load_folder.begin (folder_full_name_per_account));
+
+        hide_unstarred_switch.toggled.connect (() => load_folder.begin (folder_full_name_per_account));
+
         button_release_event.connect ((e) => {
 
             if (e.button != Gdk.BUTTON_SECONDARY) {
                 return Gdk.EVENT_PROPAGATE;
             }
 
-            var row = get_row_at_y ((int)e.y);
+            var row = list_box.get_row_at_y ((int)e.y);
 
-            if (selected_row_widget != row) {
-                select_row (row);
+            if (list_box.selected_row_widget != row) {
+                list_box.select_row (row);
             }
 
             return create_context_menu (e, (ConversationListItem)row);
@@ -126,7 +231,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 return Gdk.EVENT_PROPAGATE;
             }
 
-            var row = selected_row_widget;
+            var row = list_box.selected_row_widget;
 
             return create_context_menu (e, (ConversationListItem)row);
         });
@@ -222,6 +327,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     }
 
     public async void refresh_folder (GLib.Cancellable? cancellable = null) {
+        refresh_stack.set_visible_child_name ("spinner");
         lock (folders) {
             foreach (var folder in folders.values) {
                 try {
@@ -234,6 +340,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 }
             }
         }
+        refresh_stack.set_visible_child_name ("button");
     }
 
     private void folder_changed (Camel.FolderChangeInfo change_info, string service_uid, GLib.Cancellable cancellable) {
@@ -287,29 +394,38 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     }
 
     private GenericArray<string>? get_search_result_uids (string service_uid) {
+        var style_context = filter_button.get_style_context ();
+        if (hide_read_switch.active || hide_unstarred_switch.active) {
+            if (!style_context.has_class (Granite.STYLE_CLASS_ACCENT)) {
+                style_context.add_class (Granite.STYLE_CLASS_ACCENT);
+            }
+        } else if (style_context.has_class (Granite.STYLE_CLASS_ACCENT)) {
+            style_context.remove_class (Granite.STYLE_CLASS_ACCENT);
+        }
+
         lock (folders) {
             if (folders[service_uid] == null) {
                 return null;
             }
 
-            var has_current_search_query = current_search_query != null && current_search_query.strip () != "";
-            if (!has_current_search_query && !current_search_hide_read && !current_search_hide_unstarred) {
+            var has_current_search_query = search_entry.text.strip () != "";
+            if (!has_current_search_query && !hide_read_switch.active && !hide_unstarred_switch.active) {
                 return folders[service_uid].get_uids ();
             }
 
             string[] current_search_expressions = {};
 
-            if (current_search_hide_read) {
+            if (hide_read_switch.active) {
                 current_search_expressions += """(not (system-flag "Seen"))""";
             }
 
-            if (current_search_hide_unstarred) {
+            if (hide_unstarred_switch.active) {
                 current_search_expressions += """(system-flag "Flagged")""";
             }
 
             if (has_current_search_query) {
                 var sb = new StringBuilder ();
-                Camel.SExp.encode_string (sb, current_search_query);
+                Camel.SExp.encode_string (sb, search_entry.text);
                 var encoded_query = sb.str;
 
                 current_search_expressions += """(or (header-contains "From" %s)(header-contains "Subject" %s)(body-contains %s))"""
@@ -328,14 +444,6 @@ public class Mail.ConversationListBox : VirtualizingListBox {
                 return folders[service_uid].get_uids ();
             }
         }
-    }
-
-    public async void search (string? query, bool hide_read = false, bool hide_unstarred = false) {
-        current_search_query = query;
-        current_search_hide_read = hide_read;
-        current_search_hide_unstarred = hide_unstarred;
-
-        yield load_folder (folder_full_name_per_account);
     }
 
     private void add_conversation_item (Camel.FolderInfoFlags folder_info_flags, Camel.FolderThreadNode child, Camel.FolderThread thread, string service_uid) {
@@ -357,28 +465,28 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     }
 
     public void mark_read_selected_messages () {
-        var selected_rows = get_selected_rows ();
+        var selected_rows = list_box.get_selected_rows ();
         foreach (var row in selected_rows) {
             (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.SEEN, ~0);
         }
     }
 
     public void mark_star_selected_messages () {
-        var selected_rows = get_selected_rows ();
+        var selected_rows = list_box.get_selected_rows ();
         foreach (var row in selected_rows) {
             (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.FLAGGED, ~0);
         }
     }
 
     public void mark_unread_selected_messages () {
-        var selected_rows = get_selected_rows ();
+        var selected_rows = list_box.get_selected_rows ();
         foreach (var row in selected_rows) {
             (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.SEEN, 0);
         }
     }
 
     public void mark_unstar_selected_messages () {
-        var selected_rows = get_selected_rows ();
+        var selected_rows = list_box.get_selected_rows ();
         foreach (var row in selected_rows) {
             (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.FLAGGED, 0);
         }
@@ -387,7 +495,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     public async int archive_selected_messages () {
         var archive_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
 
-        var selected_rows = get_selected_rows ();
+        var selected_rows = list_box.get_selected_rows ();
         int selected_rows_start_index = list_store.get_index_of (selected_rows.to_array ()[0]);
 
         foreach (unowned var selected_row in selected_rows) {
@@ -421,7 +529,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
 
         list_store.items_changed (0, archived, list_store.get_n_items ());
-        select_row_at_index (selected_rows_start_index);
+        list_box.select_row_at_index (selected_rows_start_index);
 
         return archived;
     }
@@ -429,7 +537,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
     public int trash_selected_messages () {
         var trash_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
 
-        var selected_rows = get_selected_rows ();
+        var selected_rows = list_box.get_selected_rows ();
         int selected_rows_start_index = list_store.get_index_of (selected_rows.to_array ()[0]);
 
         foreach (unowned var selected_row in selected_rows) {
@@ -448,7 +556,7 @@ public class Mail.ConversationListBox : VirtualizingListBox {
         }
 
         list_store.items_changed (0, 0, list_store.get_n_items ());
-        select_row_at_index (selected_rows_start_index + 1);
+        list_box.select_row_at_index (selected_rows_start_index + 1);
 
         return deleted;
     }

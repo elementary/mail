@@ -14,6 +14,8 @@ public class Mail.MessageList : Gtk.Box {
     private Gtk.ScrolledWindow scrolled_window;
 
     construct {
+        get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
+
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
         var load_images_menuitem = new Granite.SwitchModelButton (_("Always Show Remote Images"));

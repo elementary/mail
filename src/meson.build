@@ -13,7 +13,7 @@ vala_files = files(
     'Composer/ComposerWindow.vala',
     'Composer/InlineComposer.vala',
     'ConversationList/ConversationItemModel.vala',
-    'ConversationList/ConversationListBox.vala',
+    'ConversationList/ConversationList.vala',
     'ConversationList/ConversationListItem.vala',
     'ConversationList/ConversationListStore.vala',
     'Dialogs/InsertLinkDialog.vala',
