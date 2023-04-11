@@ -49,9 +49,6 @@ public class Mail.ConversationList : Gtk.Box {
         orientation = VERTICAL;
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
-        list_box = new VirtualizingListBox () {
-            activate_on_single_click = true
-        };
         conversations = new Gee.HashMap<string, ConversationItemModel> ();
         folders = new Gee.HashMap<string, Camel.Folder> ();
         folder_info_flags = new Gee.HashMap<string, Camel.FolderInfoFlags> ();
@@ -60,9 +57,12 @@ public class Mail.ConversationList : Gtk.Box {
         list_store.set_sort_func (thread_sort_function);
         list_store.set_filter_func (filter_function);
 
-        list_box.model = list_store;
         move_handler = new MoveHandler ();
 
+        list_box = new VirtualizingListBox () {
+            activate_on_single_click = true,
+            model = list_store
+        };
         list_box.factory_func = (item, old_widget) => {
             ConversationListItem? row = null;
             if (old_widget != null) {
