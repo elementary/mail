@@ -48,7 +48,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     public const string ACTION_MOVE_TO_TRASH = "trash";
     public const string ACTION_FULLSCREEN = "full-screen";
 
-    private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
+    public static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
     private const ActionEntry[] ACTION_ENTRIES = {
         {ACTION_COMPOSE_MESSAGE, on_compose_message },
@@ -105,22 +105,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         folders_list_view = new FoldersListView ();
         conversation_list = new ConversationList ();
-
-        // Disable delete accelerators when the conversation list box loses keyboard focus,
-        // restore them when it returns
-        conversation_list.set_focus_child.connect ((widget) => {
-            if (widget == null) {
-                ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
-                    ACTION_PREFIX + ACTION_MOVE_TO_TRASH,
-                    {}
-                );
-            } else {
-                ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
-                    ACTION_PREFIX + ACTION_MOVE_TO_TRASH,
-                    action_accelerators[ACTION_MOVE_TO_TRASH].to_array ()
-                );
-            }
-        });
 
         message_list = new MessageList ();
 

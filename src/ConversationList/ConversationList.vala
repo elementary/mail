@@ -76,6 +76,8 @@ public class Mail.ConversationList : Gtk.Box {
             return row;
         };
 
+        var application_instance = (Gtk.Application) GLib.Application.get_default ();
+
         search_entry = new Gtk.SearchEntry () {
             hexpand = true,
             placeholder_text = _("Search Mail"),
@@ -98,7 +100,6 @@ public class Mail.ConversationList : Gtk.Box {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REFRESH
         };
 
-        var application_instance = (Gtk.Application) GLib.Application.get_default ();
         refresh_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (refresh_button.action_name),
             _("Fetch new messages")
@@ -150,6 +151,22 @@ public class Mail.ConversationList : Gtk.Box {
         add (conversation_action_bar);
 
         search_entry.search_changed.connect (() => load_folder.begin (folder_full_name_per_account));
+
+        // Disable delete accelerators when the conversation list box loses keyboard focus,
+        // restore them when it returns (Replace with EventControllerFocus in GTK4)
+        list_box.set_focus_child.connect ((widget) => {
+            if (widget == null) {
+                application_instance.set_accels_for_action (
+                    MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH,
+                    {}
+                );
+            } else {
+                application_instance.set_accels_for_action (
+                    MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH,
+                    MainWindow.action_accelerators[MainWindow.ACTION_MOVE_TO_TRASH].to_array ()
+                );
+            }
+        });
 
         list_box.row_activated.connect ((row) => {
             if (mark_read_timeout_id != 0) {
