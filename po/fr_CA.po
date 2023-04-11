@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-07 19:22+0000\n"
+"POT-Creation-Date: 2023-04-11 15:50+0000\n"
 "PO-Revision-Date: 2016-08-25 14:39+0000\n"
 "Last-Translator: Nate <natejms@outlook.com>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
@@ -42,47 +42,19 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:83
+#: src/MainWindow.vala:75
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Tout le Courrier"
 
-#: src/MainWindow.vala:135
-msgid "Search Mail"
-msgstr ""
-
-#: src/MainWindow.vala:157
-msgid "Fetch new messages"
-msgstr ""
-
-#: src/MainWindow.vala:164
-msgid "Fetching new messages…"
-msgstr ""
-
-#: src/MainWindow.vala:174
-#, fuzzy
-#| msgid "Archive conversations (A)"
-msgid "Hide read conversations"
-msgstr "Archiver les conversations (A)"
-
-#: src/MainWindow.vala:176
-#, fuzzy
-msgid "Hide unstarred conversations"
-msgstr "Supprimer la conversation"
-
-#: src/MainWindow.vala:192
-#, fuzzy
-msgid "Filter Conversations"
-msgstr "Supprimer la conversation"
-
-#: src/MainWindow.vala:390
+#: src/MainWindow.vala:246
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:258
 msgid "Undo"
 msgstr ""
 
@@ -284,29 +256,57 @@ msgstr ""
 msgid "New Message"
 msgstr ""
 
-#: src/ConversationList/ConversationListBox.vala:473
+#: src/ConversationList/ConversationList.vala:83
+msgid "Search Mail"
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:105
+msgid "Fetch new messages"
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:112
+msgid "Fetching new messages…"
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:122
+#, fuzzy
+#| msgid "Archive conversations (A)"
+msgid "Hide read conversations"
+msgstr "Archiver les conversations (A)"
+
+#: src/ConversationList/ConversationList.vala:124
+#, fuzzy
+msgid "Hide unstarred conversations"
+msgstr "Supprimer la conversation"
+
+#: src/ConversationList/ConversationList.vala:141
+#, fuzzy
+msgid "Filter Conversations"
+msgstr "Supprimer la conversation"
+
+#: src/ConversationList/ConversationList.vala:581
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Bouger la conversation à la poubelle (Suppr, Retour Arrière)"
 
-#: src/ConversationList/ConversationListBox.vala:482
+#: src/ConversationList/ConversationList.vala:590
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "Marquer comme S_pam"
 
-#: src/ConversationList/ConversationListBox.vala:490
-#: src/MessageList/MessageList.vala:102
+#: src/ConversationList/ConversationList.vala:598
+#: src/MessageList/MessageList.vala:84
 #, fuzzy
 msgid "Mark as Read"
 msgstr "Marquer comme S_pam"
 
-#: src/ConversationList/ConversationListBox.vala:500
-#: src/MessageList/MessageList.vala:107
+#: src/ConversationList/ConversationList.vala:608
+#: src/MessageList/MessageList.vala:90
 msgid "Star"
 msgstr ""
 
-#: src/ConversationList/ConversationListBox.vala:508
-#: src/MessageList/MessageList.vala:112
+#: src/ConversationList/ConversationList.vala:616
+#: src/MessageList/MessageList.vala:96
 msgid "Unstar"
 msgstr ""
 
@@ -364,51 +364,51 @@ msgstr "Courrier Envoyé"
 msgid "All Mailboxes"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:45
+#: src/MessageList/MessageList.vala:21
 msgid "Always Show Remote Images"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:48
+#: src/MessageList/MessageList.vala:24
 msgid "Account Settings…"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:70
+#: src/MessageList/MessageList.vala:47
 msgid "Menu"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:77 src/MessageList/MessageListItem.vala:206
+#: src/MessageList/MessageList.vala:55 src/MessageList/MessageListItem.vala:206
 msgid "Reply"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:63
 msgid "Reply All"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:91 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:71 src/MessageList/MessageListItem.vala:212
 msgid "Forward"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:97
+#: src/MessageList/MessageList.vala:78
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "Marquer comme S_pam"
 
-#: src/MessageList/MessageList.vala:125
+#: src/MessageList/MessageList.vala:109
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Supprimer la conversation"
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:117
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Bouger la conversation à la poubelle (Suppr, Retour Arrière)"
 
-#: src/MessageList/MessageList.vala:139
+#: src/MessageList/MessageList.vala:125
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Bouger la conversation à la poubelle (Suppr, Retour Arrière)"
 
-#: src/MessageList/MessageList.vala:162
+#: src/MessageList/MessageList.vala:152
 msgid "No Message Selected"
 msgstr ""
 

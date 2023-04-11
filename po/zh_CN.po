@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-07 19:22+0000\n"
+"POT-Creation-Date: 2023-04-11 15:50+0000\n"
 "PO-Revision-Date: 2022-07-21 17:49+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -48,40 +48,16 @@ msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
 msgstr[0] "来自 %u 个发件人的 %s"
 
-#: src/MainWindow.vala:83
+#: src/MainWindow.vala:75
 msgid "Mail"
 msgstr "邮件"
 
-#: src/MainWindow.vala:135
-msgid "Search Mail"
-msgstr "搜索邮件"
-
-#: src/MainWindow.vala:157
-msgid "Fetch new messages"
-msgstr "获取新邮件"
-
-#: src/MainWindow.vala:164
-msgid "Fetching new messages…"
-msgstr "正在获取新邮件…"
-
-#: src/MainWindow.vala:174
-msgid "Hide read conversations"
-msgstr "隐藏阅读对话"
-
-#: src/MainWindow.vala:176
-msgid "Hide unstarred conversations"
-msgstr "隐藏未加星标的对话"
-
-#: src/MainWindow.vala:192
-msgid "Filter Conversations"
-msgstr "过滤对话"
-
-#: src/MainWindow.vala:390
+#: src/MainWindow.vala:246
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "消息已删除"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:258
 msgid "Undo"
 msgstr "撤消"
 
@@ -279,26 +255,50 @@ msgstr "当保存草稿时意外出错。"
 msgid "New Message"
 msgstr "新邮件"
 
-#: src/ConversationList/ConversationListBox.vala:473
+#: src/ConversationList/ConversationList.vala:83
+msgid "Search Mail"
+msgstr "搜索邮件"
+
+#: src/ConversationList/ConversationList.vala:105
+msgid "Fetch new messages"
+msgstr "获取新邮件"
+
+#: src/ConversationList/ConversationList.vala:112
+msgid "Fetching new messages…"
+msgstr "正在获取新邮件…"
+
+#: src/ConversationList/ConversationList.vala:122
+msgid "Hide read conversations"
+msgstr "隐藏阅读对话"
+
+#: src/ConversationList/ConversationList.vala:124
+msgid "Hide unstarred conversations"
+msgstr "隐藏未加星标的对话"
+
+#: src/ConversationList/ConversationList.vala:141
+msgid "Filter Conversations"
+msgstr "过滤对话"
+
+#: src/ConversationList/ConversationList.vala:581
 msgid "Move To Trash"
 msgstr "移至回收站"
 
-#: src/ConversationList/ConversationListBox.vala:482
+#: src/ConversationList/ConversationList.vala:590
 msgid "Mark As Unread"
 msgstr "标记未读"
 
-#: src/ConversationList/ConversationListBox.vala:490
-#: src/MessageList/MessageList.vala:102
+#: src/ConversationList/ConversationList.vala:598
+#: src/MessageList/MessageList.vala:84
 msgid "Mark as Read"
 msgstr "标为已读"
 
-#: src/ConversationList/ConversationListBox.vala:500
-#: src/MessageList/MessageList.vala:107
+#: src/ConversationList/ConversationList.vala:608
+#: src/MessageList/MessageList.vala:90
 msgid "Star"
 msgstr "添加星标"
 
-#: src/ConversationList/ConversationListBox.vala:508
-#: src/MessageList/MessageList.vala:112
+#: src/ConversationList/ConversationList.vala:616
+#: src/MessageList/MessageList.vala:96
 msgid "Unstar"
 msgstr "取消星标"
 
@@ -354,47 +354,47 @@ msgstr "发送"
 msgid "All Mailboxes"
 msgstr "全部邮件"
 
-#: src/MessageList/MessageList.vala:45
+#: src/MessageList/MessageList.vala:21
 msgid "Always Show Remote Images"
 msgstr "显示网络图片"
 
-#: src/MessageList/MessageList.vala:48
+#: src/MessageList/MessageList.vala:24
 msgid "Account Settings…"
 msgstr "账户设置…"
 
-#: src/MessageList/MessageList.vala:70
+#: src/MessageList/MessageList.vala:47
 msgid "Menu"
 msgstr "菜单"
 
-#: src/MessageList/MessageList.vala:77 src/MessageList/MessageListItem.vala:206
+#: src/MessageList/MessageList.vala:55 src/MessageList/MessageListItem.vala:206
 msgid "Reply"
 msgstr "回复"
 
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:63
 msgid "Reply All"
 msgstr "回复全部"
 
-#: src/MessageList/MessageList.vala:91 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:71 src/MessageList/MessageListItem.vala:212
 msgid "Forward"
 msgstr "转发"
 
-#: src/MessageList/MessageList.vala:97
+#: src/MessageList/MessageList.vala:78
 msgid "Mark as Unread"
 msgstr "标为未读"
 
-#: src/MessageList/MessageList.vala:125
+#: src/MessageList/MessageList.vala:109
 msgid "Mark Conversation"
 msgstr "标记会话"
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:117
 msgid "Move conversations to archive"
 msgstr "将会话移至归档"
 
-#: src/MessageList/MessageList.vala:139
+#: src/MessageList/MessageList.vala:125
 msgid "Move conversations to Trash"
 msgstr "将会话移至回收站"
 
-#: src/MessageList/MessageList.vala:162
+#: src/MessageList/MessageList.vala:152
 msgid "No Message Selected"
 msgstr "未选中任何消息"
 

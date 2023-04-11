@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-07 19:22+0000\n"
+"POT-Creation-Date: 2023-04-11 15:50+0000\n"
 "PO-Revision-Date: 2023-02-04 10:25+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/mail/"
@@ -36,41 +36,17 @@ msgid_plural "%s from %u senders"
 msgstr[0] "%s frå %u-avsendar"
 msgstr[1] "%s frå %u-avsendarar"
 
-#: src/MainWindow.vala:83
+#: src/MainWindow.vala:75
 msgid "Mail"
 msgstr "E-post"
 
-#: src/MainWindow.vala:135
-msgid "Search Mail"
-msgstr "Søk i Mail"
-
-#: src/MainWindow.vala:157
-msgid "Fetch new messages"
-msgstr "Hent nye meldingar"
-
-#: src/MainWindow.vala:164
-msgid "Fetching new messages…"
-msgstr "Hentar nye meldingar…"
-
-#: src/MainWindow.vala:174
-msgid "Hide read conversations"
-msgstr "Gøym leste meldingar"
-
-#: src/MainWindow.vala:176
-msgid "Hide unstarred conversations"
-msgstr "Gøym samtalar utan stjernemarkering"
-
-#: src/MainWindow.vala:192
-msgid "Filter Conversations"
-msgstr "Filtrer samtalar"
-
-#: src/MainWindow.vala:390
+#: src/MainWindow.vala:246
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Meldinga er sletta"
 msgstr[1] "Meldingane er sletta"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:258
 msgid "Undo"
 msgstr "Angre"
 
@@ -274,26 +250,50 @@ msgstr "Det skjedde ein feil når utkastet skulle lagrast."
 msgid "New Message"
 msgstr "Ny melding"
 
-#: src/ConversationList/ConversationListBox.vala:473
+#: src/ConversationList/ConversationList.vala:83
+msgid "Search Mail"
+msgstr "Søk i Mail"
+
+#: src/ConversationList/ConversationList.vala:105
+msgid "Fetch new messages"
+msgstr "Hent nye meldingar"
+
+#: src/ConversationList/ConversationList.vala:112
+msgid "Fetching new messages…"
+msgstr "Hentar nye meldingar…"
+
+#: src/ConversationList/ConversationList.vala:122
+msgid "Hide read conversations"
+msgstr "Gøym leste meldingar"
+
+#: src/ConversationList/ConversationList.vala:124
+msgid "Hide unstarred conversations"
+msgstr "Gøym samtalar utan stjernemarkering"
+
+#: src/ConversationList/ConversationList.vala:141
+msgid "Filter Conversations"
+msgstr "Filtrer samtalar"
+
+#: src/ConversationList/ConversationList.vala:581
 msgid "Move To Trash"
 msgstr "Flytt til papirkorga"
 
-#: src/ConversationList/ConversationListBox.vala:482
+#: src/ConversationList/ConversationList.vala:590
 msgid "Mark As Unread"
 msgstr "Marker som ikkje lest"
 
-#: src/ConversationList/ConversationListBox.vala:490
-#: src/MessageList/MessageList.vala:102
+#: src/ConversationList/ConversationList.vala:598
+#: src/MessageList/MessageList.vala:84
 msgid "Mark as Read"
 msgstr "Marker som lest"
 
-#: src/ConversationList/ConversationListBox.vala:500
-#: src/MessageList/MessageList.vala:107
+#: src/ConversationList/ConversationList.vala:608
+#: src/MessageList/MessageList.vala:90
 msgid "Star"
 msgstr "Stjernemarker"
 
-#: src/ConversationList/ConversationListBox.vala:508
-#: src/MessageList/MessageList.vala:112
+#: src/ConversationList/ConversationList.vala:616
+#: src/MessageList/MessageList.vala:96
 msgid "Unstar"
 msgstr "Ta vekk stjernemarkering"
 
@@ -349,47 +349,47 @@ msgstr "Sendt"
 msgid "All Mailboxes"
 msgstr "Alle postboksar"
 
-#: src/MessageList/MessageList.vala:45
+#: src/MessageList/MessageList.vala:21
 msgid "Always Show Remote Images"
 msgstr "Vis alltid fjernlaste bilder"
 
-#: src/MessageList/MessageList.vala:48
+#: src/MessageList/MessageList.vala:24
 msgid "Account Settings…"
 msgstr "Kontoinnstillingar…"
 
-#: src/MessageList/MessageList.vala:70
+#: src/MessageList/MessageList.vala:47
 msgid "Menu"
 msgstr "Meny"
 
-#: src/MessageList/MessageList.vala:77 src/MessageList/MessageListItem.vala:206
+#: src/MessageList/MessageList.vala:55 src/MessageList/MessageListItem.vala:206
 msgid "Reply"
 msgstr "Svar"
 
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:63
 msgid "Reply All"
 msgstr "Svar alle"
 
-#: src/MessageList/MessageList.vala:91 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:71 src/MessageList/MessageListItem.vala:212
 msgid "Forward"
 msgstr "Framover"
 
-#: src/MessageList/MessageList.vala:97
+#: src/MessageList/MessageList.vala:78
 msgid "Mark as Unread"
 msgstr "Marker som ikkje lest"
 
-#: src/MessageList/MessageList.vala:125
+#: src/MessageList/MessageList.vala:109
 msgid "Mark Conversation"
 msgstr "Marker samtalen"
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:117
 msgid "Move conversations to archive"
 msgstr "Flytt samtalar til arkivet"
 
-#: src/MessageList/MessageList.vala:139
+#: src/MessageList/MessageList.vala:125
 msgid "Move conversations to Trash"
 msgstr "Flytt samtalar til papirkorga"
 
-#: src/MessageList/MessageList.vala:162
+#: src/MessageList/MessageList.vala:152
 msgid "No Message Selected"
 msgstr "Ingen melding er vald"
 

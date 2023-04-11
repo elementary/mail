@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-07 19:22+0000\n"
+"POT-Creation-Date: 2023-04-11 15:50+0000\n"
 "PO-Revision-Date: 2015-11-29 22:37+0000\n"
 "Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -44,56 +44,20 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:83
+#: src/MainWindow.vala:75
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "E gjithë posta"
 
-#: src/MainWindow.vala:135
-msgid "Search Mail"
-msgstr ""
-
-#: src/MainWindow.vala:157
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
-msgid "Fetch new messages"
-msgstr "%d mesazh të ri"
-
-#: src/MainWindow.vala:164
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
-msgid "Fetching new messages…"
-msgstr "%d mesazh të ri"
-
-#: src/MainWindow.vala:174
-#, fuzzy
-#| msgid "Delete conversation"
-msgid "Hide read conversations"
-msgstr "Fshije bisedën"
-
-#: src/MainWindow.vala:176
-#, fuzzy
-#| msgid "Delete conversation"
-msgid "Hide unstarred conversations"
-msgstr "Fshije bisedën"
-
-#: src/MainWindow.vala:192
-#, fuzzy
-#| msgid "Delete conversation"
-msgid "Filter Conversations"
-msgstr "Fshije bisedën"
-
-#: src/MainWindow.vala:390
+#: src/MainWindow.vala:246
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Asnjë bisedë e përzgjedhur."
 msgstr[1] "Asnjë bisedë e përzgjedhur."
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:258
 msgid "Undo"
 msgstr ""
 
@@ -306,30 +270,66 @@ msgstr ""
 msgid "New Message"
 msgstr "Mesazh i ri"
 
-#: src/ConversationList/ConversationListBox.vala:473
+#: src/ConversationList/ConversationList.vala:83
+msgid "Search Mail"
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:105
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetch new messages"
+msgstr "%d mesazh të ri"
+
+#: src/ConversationList/ConversationList.vala:112
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetching new messages…"
+msgstr "%d mesazh të ri"
+
+#: src/ConversationList/ConversationList.vala:122
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Hide read conversations"
+msgstr "Fshije bisedën"
+
+#: src/ConversationList/ConversationList.vala:124
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Hide unstarred conversations"
+msgstr "Fshije bisedën"
+
+#: src/ConversationList/ConversationList.vala:141
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Filter Conversations"
+msgstr "Fshije bisedën"
+
+#: src/ConversationList/ConversationList.vala:581
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Zhvendos bisedat"
 
-#: src/ConversationList/ConversationListBox.vala:482
+#: src/ConversationList/ConversationList.vala:590
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "_Shënoje si të palexuar"
 
-#: src/ConversationList/ConversationListBox.vala:490
-#: src/MessageList/MessageList.vala:102
+#: src/ConversationList/ConversationList.vala:598
+#: src/MessageList/MessageList.vala:84
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Shënoje si të lexuar"
 
-#: src/ConversationList/ConversationListBox.vala:500
-#: src/MessageList/MessageList.vala:107
+#: src/ConversationList/ConversationList.vala:608
+#: src/MessageList/MessageList.vala:90
 #, fuzzy
 msgid "Star"
 msgstr "_Shënoje si të veçantë"
 
-#: src/ConversationList/ConversationListBox.vala:508
-#: src/MessageList/MessageList.vala:112
+#: src/ConversationList/ConversationList.vala:616
+#: src/MessageList/MessageList.vala:96
 #, fuzzy
 msgid "Unstar"
 msgstr "Shënoje si jo më të _veçantë"
@@ -392,53 +392,53 @@ msgstr "Të dërguar"
 msgid "All Mailboxes"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:45
+#: src/MessageList/MessageList.vala:21
 #, fuzzy
 msgid "Always Show Remote Images"
 msgstr "Gjithmonë shfaqi nga ky dërgues"
 
-#: src/MessageList/MessageList.vala:48
+#: src/MessageList/MessageList.vala:24
 msgid "Account Settings…"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:70
+#: src/MessageList/MessageList.vala:47
 msgid "Menu"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:77 src/MessageList/MessageListItem.vala:206
+#: src/MessageList/MessageList.vala:55 src/MessageList/MessageListItem.vala:206
 msgid "Reply"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:63
 #, fuzzy
 msgid "Reply All"
 msgstr "Pë_rgjigju të gjithëve"
 
-#: src/MessageList/MessageList.vala:91 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:71 src/MessageList/MessageListItem.vala:212
 msgid "Forward"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:97
+#: src/MessageList/MessageList.vala:78
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "_Shënoje si të palexuar"
 
-#: src/MessageList/MessageList.vala:125
+#: src/MessageList/MessageList.vala:109
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Shëno bisedat"
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:117
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Zhvendos bisedat"
 
-#: src/MessageList/MessageList.vala:139
+#: src/MessageList/MessageList.vala:125
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Zhvendos bisedat"
 
-#: src/MessageList/MessageList.vala:162
+#: src/MessageList/MessageList.vala:152
 #, fuzzy
 msgid "No Message Selected"
 msgstr "Asnjë bisedë e përzgjedhur."

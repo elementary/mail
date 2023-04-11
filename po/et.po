@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-07 19:22+0000\n"
+"POT-Creation-Date: 2023-04-11 15:50+0000\n"
 "PO-Revision-Date: 2017-02-02 09:29+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/geary/language/"
@@ -46,51 +46,20 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:83
+#: src/MainWindow.vala:75
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Kõik"
 
-#: src/MainWindow.vala:135
-msgid "Search Mail"
-msgstr "Otsi kirjadest..."
-
-#: src/MainWindow.vala:157
-#, fuzzy
-msgid "Fetch new messages"
-msgstr "%d uus kiri"
-
-#: src/MainWindow.vala:164
-#, fuzzy
-msgid "Fetching new messages…"
-msgstr "%d uus kiri"
-
-#: src/MainWindow.vala:174
-#, fuzzy
-#| msgid "Add label to conversations"
-msgid "Hide read conversations"
-msgstr "Sildista kui..."
-
-#: src/MainWindow.vala:176
-#, fuzzy
-#| msgid "Add label to conversations"
-msgid "Hide unstarred conversations"
-msgstr "Sildista kui..."
-
-#: src/MainWindow.vala:192
-#, fuzzy
-msgid "Filter Conversations"
-msgstr "Märgi kui..."
-
-#: src/MainWindow.vala:390
+#: src/MainWindow.vala:246
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Kirjad puuduvad"
 msgstr[1] "Kirjad puuduvad"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:258
 msgid "Undo"
 msgstr ""
 
@@ -299,30 +268,61 @@ msgstr ""
 msgid "New Message"
 msgstr "Uus kiri"
 
-#: src/ConversationList/ConversationListBox.vala:473
+#: src/ConversationList/ConversationList.vala:83
+msgid "Search Mail"
+msgstr "Otsi kirjadest..."
+
+#: src/ConversationList/ConversationList.vala:105
+#, fuzzy
+msgid "Fetch new messages"
+msgstr "%d uus kiri"
+
+#: src/ConversationList/ConversationList.vala:112
+#, fuzzy
+msgid "Fetching new messages…"
+msgstr "%d uus kiri"
+
+#: src/ConversationList/ConversationList.vala:122
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide read conversations"
+msgstr "Sildista kui..."
+
+#: src/ConversationList/ConversationList.vala:124
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide unstarred conversations"
+msgstr "Sildista kui..."
+
+#: src/ConversationList/ConversationList.vala:141
+#, fuzzy
+msgid "Filter Conversations"
+msgstr "Märgi kui..."
+
+#: src/ConversationList/ConversationList.vala:581
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Liiguta asukohta..."
 
-#: src/ConversationList/ConversationListBox.vala:482
+#: src/ConversationList/ConversationList.vala:590
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "_Lugemata"
 
-#: src/ConversationList/ConversationListBox.vala:490
-#: src/MessageList/MessageList.vala:102
+#: src/ConversationList/ConversationList.vala:598
+#: src/MessageList/MessageList.vala:84
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Loetud"
 
-#: src/ConversationList/ConversationListBox.vala:500
-#: src/MessageList/MessageList.vala:107
+#: src/ConversationList/ConversationList.vala:608
+#: src/MessageList/MessageList.vala:90
 #, fuzzy
 msgid "Star"
 msgstr "_Lemmik"
 
-#: src/ConversationList/ConversationListBox.vala:508
-#: src/MessageList/MessageList.vala:112
+#: src/ConversationList/ConversationList.vala:616
+#: src/MessageList/MessageList.vala:96
 #, fuzzy
 msgid "Unstar"
 msgstr "Eemalda _lemmikutest"
@@ -384,52 +384,52 @@ msgstr "Saadetud"
 msgid "All Mailboxes"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:45
+#: src/MessageList/MessageList.vala:21
 msgid "Always Show Remote Images"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:48
+#: src/MessageList/MessageList.vala:24
 msgid "Account Settings…"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:70
+#: src/MessageList/MessageList.vala:47
 msgid "Menu"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:77 src/MessageList/MessageListItem.vala:206
+#: src/MessageList/MessageList.vala:55 src/MessageList/MessageListItem.vala:206
 msgid "Reply"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:63
 #, fuzzy
 msgid "Reply All"
 msgstr "Vasta _kõigile..."
 
-#: src/MessageList/MessageList.vala:91 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:71 src/MessageList/MessageListItem.vala:212
 msgid "Forward"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:97
+#: src/MessageList/MessageList.vala:78
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "_Lugemata"
 
-#: src/MessageList/MessageList.vala:125
+#: src/MessageList/MessageList.vala:109
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Märgi kui..."
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:117
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Liiguta asukohta..."
 
-#: src/MessageList/MessageList.vala:139
+#: src/MessageList/MessageList.vala:125
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Liiguta asukohta..."
 
-#: src/MessageList/MessageList.vala:162
+#: src/MessageList/MessageList.vala:152
 #, fuzzy
 msgid "No Message Selected"
 msgstr "Kirjad puuduvad"

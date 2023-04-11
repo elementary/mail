@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-07 19:22+0000\n"
+"POT-Creation-Date: 2023-04-11 15:50+0000\n"
 "PO-Revision-Date: 2017-01-27 17:54+0000\n"
 "Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: www.gnome.gr\n"
@@ -49,54 +49,18 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:83
+#: src/MainWindow.vala:75
 msgid "Mail"
 msgstr "Αλληλογραφία"
 
-#: src/MainWindow.vala:135
-msgid "Search Mail"
-msgstr ""
-
-#: src/MainWindow.vala:157
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
-msgid "Fetch new messages"
-msgstr "%d νέο μήνυμα"
-
-#: src/MainWindow.vala:164
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
-msgid "Fetching new messages…"
-msgstr "%d νέο μήνυμα"
-
-#: src/MainWindow.vala:174
-#, fuzzy
-#| msgid "Mark conversations"
-msgid "Hide read conversations"
-msgstr "Σήμανση συνομιλιών"
-
-#: src/MainWindow.vala:176
-#, fuzzy
-#| msgid "Mark conversations"
-msgid "Hide unstarred conversations"
-msgstr "Σήμανση συνομιλιών"
-
-#: src/MainWindow.vala:192
-#, fuzzy
-#| msgid "Delete Conversation"
-msgid "Filter Conversations"
-msgstr "Διαγραφή συνομιλίας"
-
-#: src/MainWindow.vala:390
+#: src/MainWindow.vala:246
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Δεν επιλέχθηκαν συνομιλίες."
 msgstr[1] "Δεν επιλέχθηκαν συνομιλίες."
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:258
 #, fuzzy
 msgid "Undo"
 msgstr "_Αναίρεση"
@@ -313,30 +277,66 @@ msgstr ""
 msgid "New Message"
 msgstr "Νέο μήνυμα"
 
-#: src/ConversationList/ConversationListBox.vala:473
+#: src/ConversationList/ConversationList.vala:83
+msgid "Search Mail"
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:105
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetch new messages"
+msgstr "%d νέο μήνυμα"
+
+#: src/ConversationList/ConversationList.vala:112
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetching new messages…"
+msgstr "%d νέο μήνυμα"
+
+#: src/ConversationList/ConversationList.vala:122
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide read conversations"
+msgstr "Σήμανση συνομιλιών"
+
+#: src/ConversationList/ConversationList.vala:124
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide unstarred conversations"
+msgstr "Σήμανση συνομιλιών"
+
+#: src/ConversationList/ConversationList.vala:141
+#, fuzzy
+#| msgid "Delete Conversation"
+msgid "Filter Conversations"
+msgstr "Διαγραφή συνομιλίας"
+
+#: src/ConversationList/ConversationList.vala:581
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Μετακίνηση συνομιλιών"
 
-#: src/ConversationList/ConversationListBox.vala:482
+#: src/ConversationList/ConversationList.vala:590
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "_Σήμανση ως μη αναγνωσμένα"
 
-#: src/ConversationList/ConversationListBox.vala:490
-#: src/MessageList/MessageList.vala:102
+#: src/ConversationList/ConversationList.vala:598
+#: src/MessageList/MessageList.vala:84
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Σήμανση ως αναγνωσμένα"
 
-#: src/ConversationList/ConversationListBox.vala:500
-#: src/MessageList/MessageList.vala:107
+#: src/ConversationList/ConversationList.vala:608
+#: src/MessageList/MessageList.vala:90
 #, fuzzy
 msgid "Star"
 msgstr "_Αστέρι"
 
-#: src/ConversationList/ConversationListBox.vala:508
-#: src/MessageList/MessageList.vala:112
+#: src/ConversationList/ConversationList.vala:616
+#: src/MessageList/MessageList.vala:96
 #, fuzzy
 msgid "Unstar"
 msgstr "Κα_τάργηση αστεριού"
@@ -402,53 +402,53 @@ msgstr "Απεσταλμένα"
 msgid "All Mailboxes"
 msgstr "Όλο το ταχυδρομείο"
 
-#: src/MessageList/MessageList.vala:45
+#: src/MessageList/MessageList.vala:21
 #, fuzzy
 msgid "Always Show Remote Images"
 msgstr "Να εμφανίζεται πάντοτε ο αποστολέας"
 
-#: src/MessageList/MessageList.vala:48
+#: src/MessageList/MessageList.vala:24
 msgid "Account Settings…"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:70
+#: src/MessageList/MessageList.vala:47
 msgid "Menu"
 msgstr "Μενού"
 
-#: src/MessageList/MessageList.vala:77 src/MessageList/MessageListItem.vala:206
+#: src/MessageList/MessageList.vala:55 src/MessageList/MessageListItem.vala:206
 msgid "Reply"
 msgstr "Απάντηση"
 
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:63
 #, fuzzy
 msgid "Reply All"
 msgstr "Α_πάντηση σε όλους"
 
-#: src/MessageList/MessageList.vala:91 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:71 src/MessageList/MessageListItem.vala:212
 msgid "Forward"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:97
+#: src/MessageList/MessageList.vala:78
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "_Σήμανση ως μη αναγνωσμένα"
 
-#: src/MessageList/MessageList.vala:125
+#: src/MessageList/MessageList.vala:109
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Σήμανση συνομιλίας"
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:117
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Μετακίνηση συνομιλιών"
 
-#: src/MessageList/MessageList.vala:139
+#: src/MessageList/MessageList.vala:125
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Μετακίνηση συνομιλιών"
 
-#: src/MessageList/MessageList.vala:162
+#: src/MessageList/MessageList.vala:152
 #, fuzzy
 msgid "No Message Selected"
 msgstr "Δεν επιλέχθηκαν συνομιλίες."

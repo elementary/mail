@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-07 19:22+0000\n"
+"POT-Creation-Date: 2023-04-11 15:50+0000\n"
 "PO-Revision-Date: 2015-12-01 22:33+0000\n"
 "Last-Translator: Félix Brezo <felixbrezo@gmail.com>\n"
 "Language-Team: Basque <librezale@librezale.org>\n"
@@ -46,56 +46,20 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:83
+#: src/MainWindow.vala:75
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Posta guztiak"
 
-#: src/MainWindow.vala:135
-msgid "Search Mail"
-msgstr ""
-
-#: src/MainWindow.vala:157
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
-msgid "Fetch new messages"
-msgstr "Mezu berri %d"
-
-#: src/MainWindow.vala:164
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
-msgid "Fetching new messages…"
-msgstr "Mezu berri %d"
-
-#: src/MainWindow.vala:174
-#, fuzzy
-#| msgid "Delete conversation"
-msgid "Hide read conversations"
-msgstr "Ezabatu berriketa"
-
-#: src/MainWindow.vala:176
-#, fuzzy
-#| msgid "Delete conversation"
-msgid "Hide unstarred conversations"
-msgstr "Ezabatu berriketa"
-
-#: src/MainWindow.vala:192
-#, fuzzy
-#| msgid "Delete conversation"
-msgid "Filter Conversations"
-msgstr "Ezabatu berriketa"
-
-#: src/MainWindow.vala:390
+#: src/MainWindow.vala:246
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Ez da berriketarik hautatu."
 msgstr[1] "Ez da berriketarik hautatu."
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:258
 msgid "Undo"
 msgstr ""
 
@@ -308,30 +272,66 @@ msgstr ""
 msgid "New Message"
 msgstr "Mezu berria"
 
-#: src/ConversationList/ConversationListBox.vala:473
+#: src/ConversationList/ConversationList.vala:83
+msgid "Search Mail"
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:105
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetch new messages"
+msgstr "Mezu berri %d"
+
+#: src/ConversationList/ConversationList.vala:112
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetching new messages…"
+msgstr "Mezu berri %d"
+
+#: src/ConversationList/ConversationList.vala:122
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Hide read conversations"
+msgstr "Ezabatu berriketa"
+
+#: src/ConversationList/ConversationList.vala:124
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Hide unstarred conversations"
+msgstr "Ezabatu berriketa"
+
+#: src/ConversationList/ConversationList.vala:141
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Filter Conversations"
+msgstr "Ezabatu berriketa"
+
+#: src/ConversationList/ConversationList.vala:581
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Aldatu berriketak lekuz"
 
-#: src/ConversationList/ConversationListBox.vala:482
+#: src/ConversationList/ConversationList.vala:590
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "_Markatu 'Irakurri gabea'"
 
-#: src/ConversationList/ConversationListBox.vala:490
-#: src/MessageList/MessageList.vala:102
+#: src/ConversationList/ConversationList.vala:598
+#: src/MessageList/MessageList.vala:84
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Markatu irakurritako gisa"
 
-#: src/ConversationList/ConversationListBox.vala:500
-#: src/MessageList/MessageList.vala:107
+#: src/ConversationList/ConversationList.vala:608
+#: src/MessageList/MessageList.vala:90
 #, fuzzy
 msgid "Star"
 msgstr "_Izarra"
 
-#: src/ConversationList/ConversationListBox.vala:508
-#: src/MessageList/MessageList.vala:112
+#: src/ConversationList/ConversationList.vala:616
+#: src/MessageList/MessageList.vala:96
 #, fuzzy
 msgid "Unstar"
 msgstr "Ke_ndu izarra"
@@ -394,53 +394,53 @@ msgstr "Bidalita"
 msgid "All Mailboxes"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:45
+#: src/MessageList/MessageList.vala:21
 #, fuzzy
 msgid "Always Show Remote Images"
 msgstr "Erakutsi beti bidaltzailetik"
 
-#: src/MessageList/MessageList.vala:48
+#: src/MessageList/MessageList.vala:24
 msgid "Account Settings…"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:70
+#: src/MessageList/MessageList.vala:47
 msgid "Menu"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:77 src/MessageList/MessageListItem.vala:206
+#: src/MessageList/MessageList.vala:55 src/MessageList/MessageListItem.vala:206
 msgid "Reply"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:63
 #, fuzzy
 msgid "Reply All"
 msgstr "Erantzun _denei"
 
-#: src/MessageList/MessageList.vala:91 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:71 src/MessageList/MessageListItem.vala:212
 msgid "Forward"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:97
+#: src/MessageList/MessageList.vala:78
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "_Markatu 'Irakurri gabea'"
 
-#: src/MessageList/MessageList.vala:125
+#: src/MessageList/MessageList.vala:109
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Markatu berriketak"
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:117
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Aldatu berriketak lekuz"
 
-#: src/MessageList/MessageList.vala:139
+#: src/MessageList/MessageList.vala:125
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Aldatu berriketak lekuz"
 
-#: src/MessageList/MessageList.vala:162
+#: src/MessageList/MessageList.vala:152
 #, fuzzy
 msgid "No Message Selected"
 msgstr "Ez da berriketarik hautatu."

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-07 19:22+0000\n"
+"POT-Creation-Date: 2023-04-11 15:50+0000\n"
 "PO-Revision-Date: 2022-09-21 00:19+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/mail/"
@@ -36,41 +36,17 @@ msgid_plural "%s from %u senders"
 msgstr[0] "%s لە %u نێرەر"
 msgstr[1] "%s لە %u نێرەرەکان"
 
-#: src/MainWindow.vala:83
+#: src/MainWindow.vala:75
 msgid "Mail"
 msgstr "نامە"
 
-#: src/MainWindow.vala:135
-msgid "Search Mail"
-msgstr "بە دوای نامەیەکدا بگەڕێ"
-
-#: src/MainWindow.vala:157
-msgid "Fetch new messages"
-msgstr "هێنانی نامە تازەکان"
-
-#: src/MainWindow.vala:164
-msgid "Fetching new messages…"
-msgstr "هێنانی نامە تازەکان…"
-
-#: src/MainWindow.vala:174
-msgid "Hide read conversations"
-msgstr "شاردنەوەی نامە خوێندراوەکان"
-
-#: src/MainWindow.vala:176
-msgid "Hide unstarred conversations"
-msgstr "شاردنەوەی نامە نیشانە-نەکراوەکان"
-
-#: src/MainWindow.vala:192
-msgid "Filter Conversations"
-msgstr "فلتەرکردنی نامەکان"
-
-#: src/MainWindow.vala:390
+#: src/MainWindow.vala:246
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "نامە ڕەشکرایەوە"
 msgstr[1] "نامەکان ڕەشکرانەوە"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:258
 msgid "Undo"
 msgstr "هەڵوەشاندنەوە"
 
@@ -275,26 +251,50 @@ msgstr "هەڵەیەکی چاوەڕواننەکراو لەکاتی پاشەکە�
 msgid "New Message"
 msgstr "نامەی نوێ"
 
-#: src/ConversationList/ConversationListBox.vala:473
+#: src/ConversationList/ConversationList.vala:83
+msgid "Search Mail"
+msgstr "بە دوای نامەیەکدا بگەڕێ"
+
+#: src/ConversationList/ConversationList.vala:105
+msgid "Fetch new messages"
+msgstr "هێنانی نامە تازەکان"
+
+#: src/ConversationList/ConversationList.vala:112
+msgid "Fetching new messages…"
+msgstr "هێنانی نامە تازەکان…"
+
+#: src/ConversationList/ConversationList.vala:122
+msgid "Hide read conversations"
+msgstr "شاردنەوەی نامە خوێندراوەکان"
+
+#: src/ConversationList/ConversationList.vala:124
+msgid "Hide unstarred conversations"
+msgstr "شاردنەوەی نامە نیشانە-نەکراوەکان"
+
+#: src/ConversationList/ConversationList.vala:141
+msgid "Filter Conversations"
+msgstr "فلتەرکردنی نامەکان"
+
+#: src/ConversationList/ConversationList.vala:581
 msgid "Move To Trash"
 msgstr "ناردنی بۆ تەنەکە"
 
-#: src/ConversationList/ConversationListBox.vala:482
+#: src/ConversationList/ConversationList.vala:590
 msgid "Mark As Unread"
 msgstr "دیاریکردنی وەکو نەخوێندراوە"
 
-#: src/ConversationList/ConversationListBox.vala:490
-#: src/MessageList/MessageList.vala:102
+#: src/ConversationList/ConversationList.vala:598
+#: src/MessageList/MessageList.vala:84
 msgid "Mark as Read"
 msgstr "دیاریکردنی وەکو خوێندراوە"
 
-#: src/ConversationList/ConversationListBox.vala:500
-#: src/MessageList/MessageList.vala:107
+#: src/ConversationList/ConversationList.vala:608
+#: src/MessageList/MessageList.vala:90
 msgid "Star"
 msgstr "نیشانکردن"
 
-#: src/ConversationList/ConversationListBox.vala:508
-#: src/MessageList/MessageList.vala:112
+#: src/ConversationList/ConversationList.vala:616
+#: src/MessageList/MessageList.vala:96
 msgid "Unstar"
 msgstr "لابردنی نیشانە"
 
@@ -350,47 +350,47 @@ msgstr "نێردراو"
 msgid "All Mailboxes"
 msgstr "هەموو نامەکان"
 
-#: src/MessageList/MessageList.vala:45
+#: src/MessageList/MessageList.vala:21
 msgid "Always Show Remote Images"
 msgstr "هەمیشە وێنەکان پشان بدە"
 
-#: src/MessageList/MessageList.vala:48
+#: src/MessageList/MessageList.vala:24
 msgid "Account Settings…"
 msgstr "ڕێکخستنەکانی هەژمار…"
 
-#: src/MessageList/MessageList.vala:70
+#: src/MessageList/MessageList.vala:47
 msgid "Menu"
 msgstr "لیست"
 
-#: src/MessageList/MessageList.vala:77 src/MessageList/MessageListItem.vala:206
+#: src/MessageList/MessageList.vala:55 src/MessageList/MessageListItem.vala:206
 msgid "Reply"
 msgstr "وەڵامدانەوە"
 
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:63
 msgid "Reply All"
 msgstr "وەڵامدانەوەی هەموویان"
 
-#: src/MessageList/MessageList.vala:91 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:71 src/MessageList/MessageListItem.vala:212
 msgid "Forward"
 msgstr "ناردنی بۆ"
 
-#: src/MessageList/MessageList.vala:97
+#: src/MessageList/MessageList.vala:78
 msgid "Mark as Unread"
 msgstr "دیاریکردنی وەکو نەخوێندراوە"
 
-#: src/MessageList/MessageList.vala:125
+#: src/MessageList/MessageList.vala:109
 msgid "Mark Conversation"
 msgstr "نیشانکردنی گفتوگۆ"
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:117
 msgid "Move conversations to archive"
 msgstr "ئەرشیفکردنی گفتوگۆ"
 
-#: src/MessageList/MessageList.vala:139
+#: src/MessageList/MessageList.vala:125
 msgid "Move conversations to Trash"
 msgstr "سڕینەوەی گفتوگۆ"
 
-#: src/MessageList/MessageList.vala:162
+#: src/MessageList/MessageList.vala:152
 msgid "No Message Selected"
 msgstr "هیچ نامەیەک دیارینەکراوە"
 

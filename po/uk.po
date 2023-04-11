@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-07 19:22+0000\n"
+"POT-Creation-Date: 2023-04-11 15:50+0000\n"
 "PO-Revision-Date: 2023-03-30 14:59+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/"
@@ -51,42 +51,18 @@ msgstr[0] "%s від %u відправника"
 msgstr[1] "%s від %u відправників"
 msgstr[2] "%s від %u відправників"
 
-#: src/MainWindow.vala:83
+#: src/MainWindow.vala:75
 msgid "Mail"
 msgstr "Пошта"
 
-#: src/MainWindow.vala:135
-msgid "Search Mail"
-msgstr "Шукати лист"
-
-#: src/MainWindow.vala:157
-msgid "Fetch new messages"
-msgstr "Отримати нові повідомлення"
-
-#: src/MainWindow.vala:164
-msgid "Fetching new messages…"
-msgstr "Отримання нових повідомлень…"
-
-#: src/MainWindow.vala:174
-msgid "Hide read conversations"
-msgstr "Сховати прочитані бесіди"
-
-#: src/MainWindow.vala:176
-msgid "Hide unstarred conversations"
-msgstr "Сховати бесіди, з яких прибрано позначку зірки"
-
-#: src/MainWindow.vala:192
-msgid "Filter Conversations"
-msgstr "Фільтрувати бесіди"
-
-#: src/MainWindow.vala:390
+#: src/MainWindow.vala:246
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Повідомлення видалено"
 msgstr[1] "Повідомлення видалено"
 msgstr[2] "Повідомлення видалено"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:258
 msgid "Undo"
 msgstr "Повернути"
 
@@ -290,26 +266,50 @@ msgstr "Сталася помилка під час збереження чер�
 msgid "New Message"
 msgstr "Створити повідомлення"
 
-#: src/ConversationList/ConversationListBox.vala:473
+#: src/ConversationList/ConversationList.vala:83
+msgid "Search Mail"
+msgstr "Шукати лист"
+
+#: src/ConversationList/ConversationList.vala:105
+msgid "Fetch new messages"
+msgstr "Отримати нові повідомлення"
+
+#: src/ConversationList/ConversationList.vala:112
+msgid "Fetching new messages…"
+msgstr "Отримання нових повідомлень…"
+
+#: src/ConversationList/ConversationList.vala:122
+msgid "Hide read conversations"
+msgstr "Сховати прочитані бесіди"
+
+#: src/ConversationList/ConversationList.vala:124
+msgid "Hide unstarred conversations"
+msgstr "Сховати бесіди, з яких прибрано позначку зірки"
+
+#: src/ConversationList/ConversationList.vala:141
+msgid "Filter Conversations"
+msgstr "Фільтрувати бесіди"
+
+#: src/ConversationList/ConversationList.vala:581
 msgid "Move To Trash"
 msgstr "Перемістити до смітника"
 
-#: src/ConversationList/ConversationListBox.vala:482
+#: src/ConversationList/ConversationList.vala:590
 msgid "Mark As Unread"
 msgstr "Позначити непрочитаним"
 
-#: src/ConversationList/ConversationListBox.vala:490
-#: src/MessageList/MessageList.vala:102
+#: src/ConversationList/ConversationList.vala:598
+#: src/MessageList/MessageList.vala:84
 msgid "Mark as Read"
 msgstr "Позначити як прочитане"
 
-#: src/ConversationList/ConversationListBox.vala:500
-#: src/MessageList/MessageList.vala:107
+#: src/ConversationList/ConversationList.vala:608
+#: src/MessageList/MessageList.vala:90
 msgid "Star"
 msgstr "Позначити зірочкою"
 
-#: src/ConversationList/ConversationListBox.vala:508
-#: src/MessageList/MessageList.vala:112
+#: src/ConversationList/ConversationList.vala:616
+#: src/MessageList/MessageList.vala:96
 msgid "Unstar"
 msgstr "Прибрати позначення зірочкою"
 
@@ -365,47 +365,47 @@ msgstr "Надіслані"
 msgid "All Mailboxes"
 msgstr "Вся пошта"
 
-#: src/MessageList/MessageList.vala:45
+#: src/MessageList/MessageList.vala:21
 msgid "Always Show Remote Images"
 msgstr "Завжди показувати віддалені зображення"
 
-#: src/MessageList/MessageList.vala:48
+#: src/MessageList/MessageList.vala:24
 msgid "Account Settings…"
 msgstr "Налаштування облікового запису…"
 
-#: src/MessageList/MessageList.vala:70
+#: src/MessageList/MessageList.vala:47
 msgid "Menu"
 msgstr "Меню"
 
-#: src/MessageList/MessageList.vala:77 src/MessageList/MessageListItem.vala:206
+#: src/MessageList/MessageList.vala:55 src/MessageList/MessageListItem.vala:206
 msgid "Reply"
 msgstr "Відповідь"
 
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:63
 msgid "Reply All"
 msgstr "Відповісти всім"
 
-#: src/MessageList/MessageList.vala:91 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:71 src/MessageList/MessageListItem.vala:212
 msgid "Forward"
 msgstr "Переслати"
 
-#: src/MessageList/MessageList.vala:97
+#: src/MessageList/MessageList.vala:78
 msgid "Mark as Unread"
 msgstr "Позначити непрочитаним"
 
-#: src/MessageList/MessageList.vala:125
+#: src/MessageList/MessageList.vala:109
 msgid "Mark Conversation"
 msgstr "Позначити бесіду"
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:117
 msgid "Move conversations to archive"
 msgstr "Перемістити бесіди до архіву"
 
-#: src/MessageList/MessageList.vala:139
+#: src/MessageList/MessageList.vala:125
 msgid "Move conversations to Trash"
 msgstr "Перемістити бесіди до смітника"
 
-#: src/MessageList/MessageList.vala:162
+#: src/MessageList/MessageList.vala:152
 msgid "No Message Selected"
 msgstr "Повідомлення не вибрано"
 
