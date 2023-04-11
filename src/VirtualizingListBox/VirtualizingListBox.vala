@@ -718,7 +718,7 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
         }
     }
 
-    protected void select_row_at_index (int index) {
+    public void select_row_at_index (int index) {
         var row = ensure_index_visible (index);
 
         if (row != null) {
@@ -793,7 +793,7 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
         return null;
     }
 
-    protected void select_row (VirtualizingListBoxRow row) {
+    public void select_row (VirtualizingListBoxRow row) {
         if (model.get_item_selected (row) || selection_mode == Gtk.SelectionMode.NONE) {
             return;
         }
