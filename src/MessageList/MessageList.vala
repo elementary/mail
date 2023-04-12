@@ -49,28 +49,28 @@ public class Mail.MessageList : Gtk.Box {
 
         var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR) {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY,
-            action_target = -1
+            action_target = ""
         };
         reply_button.tooltip_markup = Granite.markup_accel_tooltip (
-            application_instance.get_accels_for_action (reply_button.action_name),
+            application_instance.get_accels_for_action (MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_WITH_DEFAULT_VALUE),
             _("Reply")
         );
 
         var reply_all_button = new Gtk.Button.from_icon_name ("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR) {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL,
-            action_target = -1
+            action_target = ""
         };
         reply_all_button.tooltip_markup = Granite.markup_accel_tooltip (
-            application_instance.get_accels_for_action (reply_all_button.action_name),
+            application_instance.get_accels_for_action (MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL_WITH_DEFAULT_VALUE),
             _("Reply All")
         );
 
         var forward_button = new Gtk.Button.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR) {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD,
-            action_target = -1
+            action_target = ""
         };
         forward_button.tooltip_markup = Granite.markup_accel_tooltip (
-            application_instance.get_accels_for_action (forward_button.action_name),
+            application_instance.get_accels_for_action (MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD_WITH_DEFAULT_VALUE),
             _("Forward")
         );
 
@@ -232,7 +232,10 @@ public class Mail.MessageList : Gtk.Box {
         }
 
         if (node.message != null && Camel.MessageFlags.DRAFT in (int) node.message.flags) {
-            add_inline_composer.begin (ComposerWidget.Type.DRAFT, -1);
+            add_inline_composer.begin (ComposerWidget.Type.DRAFT, "", (obj, res) => {
+                add_inline_composer.end (res);
+                scroll_to_bottom ();
+            });
         }
     }
 
@@ -250,19 +253,27 @@ public class Mail.MessageList : Gtk.Box {
         }
     }
 
-    public async void add_inline_composer (ComposerWidget.Type type, Variant index) {
+    public async void add_inline_composer (ComposerWidget.Type type, Variant uid) {
         /* Can't open a new composer if thread is empty or currently has a composer open */
         var last_child = list_box.get_row_at_index ((int) list_box.get_children ().length () - 1);
         if (last_child == null || last_child is InlineComposer) {
             return;
         }
 
-        MessageListItem message_item;
+        MessageListItem message_item = null;
+        critical (uid.get_string ());
 
-        if (index.get_int32 () == -1) {
+        if (uid.get_string () == "") {
             message_item = (MessageListItem) last_child;
+            scroll_to_bottom ();
         } else {
-            message_item = (MessageListItem) list_box.get_row_at_index (index.get_int32 ());
+            var children = list_box.get_children ();
+            foreach (var child in children) {
+                var row = (MessageListItem) child;
+                if (row.message_info.uid == uid.get_string ()) {
+                    message_item = row;
+                }
+            }
         }
 
         string content_to_quote = "";
@@ -279,10 +290,19 @@ public class Mail.MessageList : Gtk.Box {
             list_box.remove (composer);
             composer.destroy ();
         });
-        scroll_to_bottom ();
         list_box.add (composer);
         can_reply (false);
         can_move_thread (true);
+    }
+
+    public void print (Variant uid) {
+        var children = list_box.get_children ();
+        foreach (var child in children) {
+            var row = (MessageListItem) child;
+            if (row.message_info.uid == uid.get_string ()) {
+                row.print ();
+            }
+        }
     }
 
     public void scroll_to_bottom () {

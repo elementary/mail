@@ -203,25 +203,20 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         };
         starred_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var reply_item = new Gtk.MenuItem.with_label (_("Reply"));
-        reply_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.REPLY));
+        var upper_section = new Menu ();
+        upper_section.append (_("Reply"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY + """("%s")""".printf (message_info.uid));
+        upper_section.append (_("Reply to All"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL + """("%s")""".printf (message_info.uid));
+        upper_section.append (_("Forward"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD + """("%s")""".printf (message_info.uid));
 
-        var reply_all_item = new Gtk.MenuItem.with_label (_("Reply to All"));
-        reply_all_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.REPLY_ALL));
+        var lower_section = new Menu ();
+        lower_section.append (_("Print…"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_PRINT + """("%s")""".printf (message_info.uid));
 
-        var forward_item = new Gtk.MenuItem.with_label (_("Forward"));
-        forward_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.FORWARD));
+        var actions_menu = new Menu ();
+        actions_menu.append_section (null, upper_section);
+        actions_menu.append_section (null, lower_section);
 
-        var print_item = new Gtk.MenuItem.with_label (_("Print…"));
-        print_item.activate.connect (on_print);
-
-        var actions_menu = new Gtk.Menu ();
-        actions_menu.add (reply_item);
-        actions_menu.add (reply_all_item);
-        actions_menu.add (forward_item);
-        actions_menu.add (new Gtk.SeparatorMenuItem ());
-        actions_menu.add (print_item);
-        actions_menu.show_all ();
+        var actions_popover = new Gtk.PopoverMenu ();
+        actions_popover.bind_model (actions_menu, null);
 
         var actions_menu_button = new Gtk.MenuButton () {
             image = new Gtk.Image.from_icon_name ("view-more-symbolic", Gtk.IconSize.MENU),
@@ -229,7 +224,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             margin_top = 6,
             valign = START,
             halign = END,
-            popup = actions_menu
+            popover = actions_popover
         };
         actions_menu_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
@@ -391,12 +386,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         });
     }
 
-    private void add_inline_composer (ComposerWidget.Type composer_type) {
-        var message_list = (MessageList) get_ancestor (typeof (MessageList));
-        message_list.add_inline_composer.begin (composer_type, this);
-    }
-
-    private void on_print () {
+    public void print () {
         try {
             var settings = new Gtk.PrintSettings ();
             /// Translators: This is the default file name of a printed email
