@@ -255,7 +255,6 @@ public class Mail.MessageList : Gtk.Box {
         }
 
         MessageListItem message_item = null;
-        critical (uid.get_string ());
 
         if (uid.get_string () == "") {
             message_item = (MessageListItem) last_child;
