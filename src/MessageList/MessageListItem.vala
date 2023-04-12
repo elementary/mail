@@ -203,25 +203,53 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         };
         starred_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var reply_item = new Gtk.MenuItem.with_label (_("Reply"));
-        reply_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.REPLY));
+        var actions_menu_box = new Gtk.Box (VERTICAL, 0) {
+            margin_bottom = 3,
+            margin_top = 3
+        };
 
-        var reply_all_item = new Gtk.MenuItem.with_label (_("Reply to All"));
-        reply_all_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.REPLY_ALL));
+        var actions_menu = new Gtk.Popover (null) {
+            child = actions_menu_box
+        };
 
-        var forward_item = new Gtk.MenuItem.with_label (_("Forward"));
-        forward_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.FORWARD));
+        var reply_item = new Gtk.ModelButton () {
+            label = _("Reply")
+        };
+        reply_item.clicked.connect (() => {
+            add_inline_composer (ComposerWidget.Type.REPLY);
+            actions_menu.popdown ();
+        });
 
-        var print_item = new Gtk.MenuItem.with_label (_("Print…"));
-        print_item.activate.connect (on_print);
+        var reply_all_item = new Gtk.ModelButton () {
+            label = _("Reply to All")
+        };
+        reply_all_item.clicked.connect (() => {
+            add_inline_composer (ComposerWidget.Type.REPLY_ALL);
+            actions_menu.popdown ();
+        });
 
-        var actions_menu = new Gtk.Menu ();
-        actions_menu.add (reply_item);
-        actions_menu.add (reply_all_item);
-        actions_menu.add (forward_item);
-        actions_menu.add (new Gtk.SeparatorMenuItem ());
-        actions_menu.add (print_item);
-        actions_menu.show_all ();
+        var forward_item = new Gtk.ModelButton () {
+            label = _("Forward")
+        };
+        forward_item.clicked.connect (() => {
+            add_inline_composer (ComposerWidget.Type.FORWARD);
+            actions_menu.popdown ();
+        });
+
+        var print_item = new Gtk.ModelButton () {
+            label = _("Print…")
+        };
+        print_item.clicked.connect (() => {
+            on_print ();
+            actions_menu.popdown ();
+        });
+
+        actions_menu_box.add (reply_item);
+        actions_menu_box.add (reply_all_item);
+        actions_menu_box.add (forward_item);
+        actions_menu_box.add (new Gtk.Separator (HORIZONTAL) { margin_top = 3, margin_bottom = 3 });
+        actions_menu_box.add (print_item);
+        actions_menu_box.show_all ();
 
         var actions_menu_button = new Gtk.MenuButton () {
             image = new Gtk.Image.from_icon_name ("view-more-symbolic", Gtk.IconSize.MENU),
@@ -229,7 +257,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             margin_top = 6,
             valign = START,
             halign = END,
-            popup = actions_menu
+            popover = actions_menu
         };
         actions_menu_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 

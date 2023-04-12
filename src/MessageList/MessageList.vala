@@ -229,10 +229,7 @@ public class Mail.MessageList : Gtk.Box {
         }
 
         if (node.message != null && Camel.MessageFlags.DRAFT in (int) node.message.flags) {
-            add_inline_composer.begin (ComposerWidget.Type.DRAFT, null, (obj, res) => {
-                add_inline_composer.end (res);
-                scroll_to_bottom ();
-            });
+            add_inline_composer.begin (ComposerWidget.Type.DRAFT, null);
         }
     }
 
@@ -275,6 +272,7 @@ public class Mail.MessageList : Gtk.Box {
             list_box.remove (composer);
             composer.destroy ();
         });
+        scroll_to_bottom ();
         list_box.add (composer);
         can_reply (false);
         can_move_thread (true);

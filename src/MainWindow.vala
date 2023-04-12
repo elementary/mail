@@ -222,17 +222,14 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void on_reply () {
-        message_list.scroll_to_bottom ();
         message_list.add_inline_composer.begin (ComposerWidget.Type.REPLY);
     }
 
     private void on_reply_all () {
-        message_list.scroll_to_bottom ();
         message_list.add_inline_composer.begin (ComposerWidget.Type.REPLY_ALL);
     }
 
     private void on_forward () {
-        message_list.scroll_to_bottom ();
         message_list.add_inline_composer.begin (ComposerWidget.Type.FORWARD);
     }
 
