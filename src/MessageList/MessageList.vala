@@ -11,7 +11,7 @@ public class Mail.MessageList : Gtk.Box {
 
     private Gtk.ListBox list_box;
     private Gtk.ScrolledWindow scrolled_window;
-    private Gee.HashMap<string, MessageListItem> uids;
+    private Gee.HashMap<string, MessageListItem> messages;
 
     construct {
         get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
@@ -192,7 +192,7 @@ public class Mail.MessageList : Gtk.Box {
         list_box.get_children ().foreach ((child) => {
             child.destroy ();
         });
-        uids = new Gee.HashMap<string, MessageListItem> (null, null);
+        messages = new Gee.HashMap<string, MessageListItem> (null, null);
 
         if (node == null) {
             return;
@@ -206,7 +206,7 @@ public class Mail.MessageList : Gtk.Box {
 
         var item = new MessageListItem (node.message);
         list_box.add (item);
-        uids.set (node.message.uid, item);
+        messages.set (node.message.uid, item);
         if (node.child != null) {
             go_down ((Camel.FolderThreadNode?) node.child);
         }
@@ -238,7 +238,7 @@ public class Mail.MessageList : Gtk.Box {
         while (current_node != null) {
             var item = new MessageListItem (current_node.message);
             list_box.add (item);
-            uids.set (current_node.message.uid, item);
+            messages.set (current_node.message.uid, item);
             if (current_node.next != null) {
                 go_down ((Camel.FolderThreadNode?) current_node.next);
             }
@@ -260,7 +260,7 @@ public class Mail.MessageList : Gtk.Box {
             message_item = (MessageListItem) last_child;
             scroll_to_bottom ();
         } else {
-            message_item = uids.get (uid.get_string ());
+            message_item = messages.get (uid.get_string ());
         }
 
         string content_to_quote = "";
@@ -283,7 +283,7 @@ public class Mail.MessageList : Gtk.Box {
     }
 
     public void print (Variant uid) {
-        uids.get (uid.get_string ()).print ();
+        messages.get (uid.get_string ()).print ();
     }
 
     public void scroll_to_bottom () {
