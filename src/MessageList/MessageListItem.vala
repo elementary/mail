@@ -213,7 +213,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         };
 
         var reply_item = new Gtk.ModelButton () {
-            label = _("Reply")
+            text = _("Reply")
         };
         reply_item.clicked.connect (() => {
             add_inline_composer (ComposerWidget.Type.REPLY);
@@ -221,7 +221,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         });
 
         var reply_all_item = new Gtk.ModelButton () {
-            label = _("Reply to All")
+            text = _("Reply to All")
         };
         reply_all_item.clicked.connect (() => {
             add_inline_composer (ComposerWidget.Type.REPLY_ALL);
@@ -229,7 +229,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         });
 
         var forward_item = new Gtk.ModelButton () {
-            label = _("Forward")
+            text = _("Forward")
         };
         forward_item.clicked.connect (() => {
             add_inline_composer (ComposerWidget.Type.FORWARD);
@@ -237,7 +237,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         });
 
         var print_item = new Gtk.ModelButton () {
-            label = _("Print…")
+            text = _("Print…")
         };
         print_item.clicked.connect (() => {
             on_print ();
