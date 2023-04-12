@@ -582,7 +582,7 @@ public class Mail.ConversationList : Gtk.Box {
         var item = (ConversationItemModel)row.model_item;
 
         var menu = new Menu ();
-        menu.append(_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH);
+        menu.append (_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH);
         if (!item.unread) {
             menu.append (_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD);
         } else {
