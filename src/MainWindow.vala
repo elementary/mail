@@ -53,9 +53,9 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private const ActionEntry[] ACTION_ENTRIES = {
         {ACTION_COMPOSE_MESSAGE, on_compose_message },
         {ACTION_REFRESH, on_refresh },
-        {ACTION_REPLY, on_reply },
-        {ACTION_REPLY_ALL, on_reply_all },
-        {ACTION_FORWARD, on_forward },
+        {ACTION_REPLY, on_reply, "i" },
+        {ACTION_REPLY_ALL, on_reply_all, "i" },
+        {ACTION_FORWARD, on_forward, "i" },
         {ACTION_MARK, null }, // Stores enabled state only
         {ACTION_MARK_READ, on_mark_read },
         {ACTION_MARK_STAR, on_mark_star },
@@ -221,19 +221,16 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         conversation_list.mark_unstar_selected_messages ();
     }
 
-    private void on_reply () {
-        message_list.scroll_to_bottom ();
-        message_list.add_inline_composer.begin (ComposerWidget.Type.REPLY);
+    private void on_reply (SimpleAction action, Variant? parameter) {
+        message_list.add_inline_composer.begin (ComposerWidget.Type.REPLY, parameter);
     }
 
-    private void on_reply_all () {
-        message_list.scroll_to_bottom ();
-        message_list.add_inline_composer.begin (ComposerWidget.Type.REPLY_ALL);
+    private void on_reply_all (SimpleAction action, Variant? parameter) {
+        message_list.add_inline_composer.begin (ComposerWidget.Type.REPLY_ALL, parameter);
     }
 
-    private void on_forward () {
-        message_list.scroll_to_bottom ();
-        message_list.add_inline_composer.begin (ComposerWidget.Type.FORWARD);
+    private void on_forward (SimpleAction action, Variant? parameter) {
+        message_list.add_inline_composer.begin (ComposerWidget.Type.FORWARD, parameter);
     }
 
     private void on_archive () {

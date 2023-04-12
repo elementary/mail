@@ -48,7 +48,8 @@ public class Mail.MessageList : Gtk.Box {
         };
 
         var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR) {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY,
+            action_target = -1
         };
         reply_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (reply_button.action_name),
@@ -56,7 +57,8 @@ public class Mail.MessageList : Gtk.Box {
         );
 
         var reply_all_button = new Gtk.Button.from_icon_name ("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR) {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL,
+            action_target = -1
         };
         reply_all_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (reply_all_button.action_name),
@@ -64,7 +66,8 @@ public class Mail.MessageList : Gtk.Box {
         );
 
         var forward_button = new Gtk.Button.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR) {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD,
+            action_target = -1
         };
         forward_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (forward_button.action_name),
@@ -229,10 +232,7 @@ public class Mail.MessageList : Gtk.Box {
         }
 
         if (node.message != null && Camel.MessageFlags.DRAFT in (int) node.message.flags) {
-            add_inline_composer.begin (ComposerWidget.Type.DRAFT, null, (obj, res) => {
-                add_inline_composer.end (res);
-                scroll_to_bottom ();
-            });
+            add_inline_composer.begin (ComposerWidget.Type.DRAFT, -1);
         }
     }
 
@@ -250,15 +250,19 @@ public class Mail.MessageList : Gtk.Box {
         }
     }
 
-    public async void add_inline_composer (ComposerWidget.Type type, MessageListItem? message_item = null) {
+    public async void add_inline_composer (ComposerWidget.Type type, Variant index) {
         /* Can't open a new composer if thread is empty or currently has a composer open */
         var last_child = list_box.get_row_at_index ((int) list_box.get_children ().length () - 1);
         if (last_child == null || last_child is InlineComposer) {
             return;
         }
 
-        if (message_item == null) {
+        MessageListItem message_item;
+
+        if (index.get_int32 () == -1) {
             message_item = (MessageListItem) last_child;
+        } else {
+            message_item = (MessageListItem) list_box.get_row_at_index (index.get_int32 ());
         }
 
         string content_to_quote = "";
@@ -275,6 +279,7 @@ public class Mail.MessageList : Gtk.Box {
             list_box.remove (composer);
             composer.destroy ();
         });
+        scroll_to_bottom ();
         list_box.add (composer);
         can_reply (false);
         can_move_thread (true);
