@@ -42,6 +42,7 @@ public class Mail.ConversationList : Gtk.Box {
     private Granite.SwitchModelButton hide_unstarred_switch;
     private Gtk.MenuButton filter_button;
     private Gtk.Stack refresh_stack;
+    private Gtk.PopoverMenu context_menu;
 
     private uint mark_read_timeout_id = 0;
 
@@ -149,6 +150,11 @@ public class Mail.ConversationList : Gtk.Box {
         add (search_header);
         add (scrolled_window);
         add (conversation_action_bar);
+
+        context_menu = new Gtk.PopoverMenu () {
+            relative_to = list_box,
+            position = RIGHT
+        };
 
         search_entry.search_changed.connect (() => load_folder.begin (folder_full_name_per_account));
 
@@ -575,59 +581,36 @@ public class Mail.ConversationList : Gtk.Box {
     private bool create_context_menu (Gdk.Event e, ConversationListItem row) {
         var item = (ConversationItemModel)row.model_item;
 
-        var menu = new Gtk.Menu ();
-
-        var trash_menu_item = new Gtk.MenuItem ();
-        trash_menu_item.add (new Granite.AccelLabel.from_action_name (_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH));
-        menu.add (trash_menu_item);
-
-        trash_menu_item.activate.connect (() => {
-            trash_selected_messages ();
-        });
-
+        var menu = new Menu ();
+        menu.append(_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH);
         if (!item.unread) {
-            var mark_unread_menu_item = new Gtk.MenuItem ();
-            mark_unread_menu_item.add (new Granite.AccelLabel.from_action_name (_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD));
-            menu.add (mark_unread_menu_item);
-
-            mark_unread_menu_item.activate.connect (() => {
-                mark_unread_selected_messages ();
-            });
+            menu.append (_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD);
         } else {
-            var mark_read_menu_item = new Gtk.MenuItem ();
-            mark_read_menu_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ));
-            menu.add (mark_read_menu_item);
-
-            mark_read_menu_item.activate.connect (() => {
-                mark_read_selected_messages ();
-            });
+            menu.append (_("Mark As Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ);
         }
-
         if (!item.flagged) {
-            var mark_starred_menu_item = new Gtk.MenuItem ();
-            mark_starred_menu_item.add (new Granite.AccelLabel.from_action_name (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR));
-            menu.add (mark_starred_menu_item);
-
-            mark_starred_menu_item.activate.connect (() => {
-                mark_star_selected_messages ();
-            });
+            menu.append (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR);
         } else {
-            var mark_unstarred_menu_item = new Gtk.MenuItem ();
-            mark_unstarred_menu_item.add (new Granite.AccelLabel.from_action_name (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR));
-            menu.add (mark_unstarred_menu_item);
-
-            mark_unstarred_menu_item.activate.connect (() => {
-                mark_unstar_selected_messages ();
-            });
+            menu.append (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR);
         }
 
-        menu.show_all ();
+        context_menu.bind_model (menu, null);
 
         if (e.type == Gdk.EventType.BUTTON_RELEASE) {
-            menu.popup_at_pointer (e);
+            context_menu.set_relative_to (list_box);
+            double out_x;
+            double out_y;
+            e.get_coords (out out_x, out out_y);
+            var rect = Gdk.Rectangle () {
+                x = (int) out_x,
+                y = (int) out_y
+            };
+            context_menu.set_pointing_to (rect);
+            context_menu.popup ();
             return Gdk.EVENT_STOP;
         } else if (e.type == Gdk.EventType.KEY_RELEASE) {
-            menu.popup_at_widget (row, Gdk.Gravity.EAST, Gdk.Gravity.CENTER, e);
+            context_menu.set_relative_to (row);
+            context_menu.popup ();
             return Gdk.EVENT_STOP;
         }
 

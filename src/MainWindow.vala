@@ -207,18 +207,26 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
     private void on_mark_read () {
         conversation_list.mark_read_selected_messages ();
+        get_action (ACTION_MARK_READ).set_enabled (false);
+        get_action (ACTION_MARK_UNREAD).set_enabled (true);
     }
 
     private void on_mark_star () {
         conversation_list.mark_star_selected_messages ();
+        get_action (ACTION_MARK_STAR).set_enabled (false);
+        get_action (ACTION_MARK_UNSTAR).set_enabled (true);
     }
 
     private void on_mark_unread () {
         conversation_list.mark_unread_selected_messages ();
+        get_action (ACTION_MARK_UNREAD).set_enabled (false);
+        get_action (ACTION_MARK_READ).set_enabled (true);
     }
 
     private void on_mark_unstar () {
         conversation_list.mark_unstar_selected_messages ();
+        get_action (ACTION_MARK_UNSTAR).set_enabled (false);
+        get_action (ACTION_MARK_STAR).set_enabled (true);
     }
 
     private void on_reply () {
