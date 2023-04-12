@@ -47,28 +47,22 @@ public class Mail.MessageList : Gtk.Box {
             tooltip_text = _("Menu")
         };
 
-        var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR) {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY,
-            action_target = ""
-        };
+        var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR);
+        reply_button.set_detailed_action_name (MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_WITH_DEFAULT_VALUE);
         reply_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_WITH_DEFAULT_VALUE),
             _("Reply")
         );
 
-        var reply_all_button = new Gtk.Button.from_icon_name ("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR) {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL,
-            action_target = ""
-        };
+        var reply_all_button = new Gtk.Button.from_icon_name ("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR);
+        reply_all_button.set_detailed_action_name (MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL_WITH_DEFAULT_VALUE);
         reply_all_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL_WITH_DEFAULT_VALUE),
             _("Reply All")
         );
 
-        var forward_button = new Gtk.Button.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR) {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD,
-            action_target = ""
-        };
+        var forward_button = new Gtk.Button.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR);
+        forward_button.set_detailed_action_name (MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD_WITH_DEFAULT_VALUE);
         forward_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD_WITH_DEFAULT_VALUE),
             _("Forward")
