@@ -568,10 +568,6 @@ public class Mail.ConversationList : Gtk.Box {
         });
     }
 
-    public void undo_expired () {
-        move_handler.expire_undo ();
-    }
-
     private bool create_context_menu (Gdk.Event e, ConversationListItem row) {
         var item = (ConversationItemModel)row.model_item;
 
