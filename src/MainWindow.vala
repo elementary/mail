@@ -250,13 +250,9 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private void on_move_to_trash () {
         var result = conversation_list.trash_selected_messages ();
         if (result > 0) {
-            send_move_toast (ngettext ("Message Deleted", "Messages Deleted", result));
+            toast.title = ngettext ("Message Deleted", "Messages Deleted", result);
+            toast.send_notification ();
         }
-    }
-
-    private void send_move_toast (string message) {
-        toast.title = message;
-        toast.send_notification ();
     }
 
     private void on_fullscreen () {
