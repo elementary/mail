@@ -203,7 +203,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void on_compose_message () {
-        new ComposerWindow (this).show_all ();
+        new Composer (this).show_all ();
     }
 
     private void on_refresh () {
@@ -227,15 +227,15 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void on_reply (SimpleAction action, Variant? parameter) {
-        message_list.add_inline_composer.begin (ComposerWidget.Type.REPLY, parameter);
+        message_list.compose.begin (Composer.Type.REPLY, parameter);
     }
 
     private void on_reply_all (SimpleAction action, Variant? parameter) {
-        message_list.add_inline_composer.begin (ComposerWidget.Type.REPLY_ALL, parameter);
+        message_list.compose.begin (Composer.Type.REPLY_ALL, parameter);
     }
 
     private void on_forward (SimpleAction action, Variant? parameter) {
-        message_list.add_inline_composer.begin (ComposerWidget.Type.FORWARD, parameter);
+        message_list.compose.begin (Composer.Type.FORWARD, parameter);
     }
 
     private void on_print (SimpleAction action, Variant? parameter) {
