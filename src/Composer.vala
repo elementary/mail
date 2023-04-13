@@ -332,7 +332,7 @@ public class Mail.Composer : Gtk.ApplicationWindow {
 
         delete_event.connect (() => {
             save_draft.begin ((obj, res) => {
-                if(!save_draft.end (res)) {
+                if (!save_draft.end (res)) {
                     finished ();
                     destroy ();
                 };
