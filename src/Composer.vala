@@ -22,7 +22,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     private const string ACTION_SEND = "send";
 
     public bool has_recipients { get; set; }
-    public bool can_change_sender { get; set; default = true; }
     public string? to { get; construct; }
     public string? mailto_query { get; construct; }
 
@@ -34,7 +33,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     private Gtk.Entry cc_val;
     private Gtk.Entry bcc_val;
     private Gtk.FlowBox attachment_box;
-    private Gtk.Revealer from_revealer;
     private Gtk.Revealer cc_revealer;
     private Gtk.Revealer bcc_revealer;
     private Gtk.ToggleButton cc_button;
@@ -72,7 +70,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     public Composer.with_quote (Gtk.Window parent, Composer.Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content) {
         Object (
             transient_for: parent,
-            can_change_sender: false,
             has_recipients: true
         );
         quote_content (type, info, message, content);
@@ -101,8 +98,9 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         from_box.add (from_label);
         from_box.add (from_combo);
 
-        from_revealer = new Gtk.Revealer ();
-        from_revealer.add (from_box);
+        var from_revealer = new Gtk.Revealer () {
+            child = from_box
+        };
 
         var to_label = new Gtk.Label (_("To:")) {
             xalign = 1
@@ -331,9 +329,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         contact_manager.setup_entry (bcc_val);
 
         load_from_combobox ();
-        if (from_combo.model.iter_n_children (null) > 1) {
-            from_revealer.reveal_child = true && can_change_sender;
-        }
+        from_revealer.reveal_child = from_combo.model.iter_n_children (null) > 1;
 
         bind_property ("has-recipients", send, "sensitive");
         bind_property ("title", headerbar, "title");
@@ -390,8 +386,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         }
 
         if (mailto_query != null) {
-            from_revealer.reveal_child = can_change_sender = true;
-
             var result = new Gee.HashMultiMap<string, string> ();
             var params = mailto_query.split ("&");
 
@@ -544,9 +538,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             }
         }
 
-        if (from_combo.model.iter_n_children (null) > 1 && (type == Type.REPLY || type == Type.REPLY_ALL || type == Type.FORWARD)) {
-            from_revealer.reveal_child = can_change_sender = true;
-
+        if (from_combo.model.iter_n_children (null) > 1) {
             unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
             unowned var account_source_uid = message.get_source ();
             var account_source = session.ref_source (account_source_uid);
