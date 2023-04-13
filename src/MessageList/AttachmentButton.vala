@@ -27,11 +27,6 @@ public class AttachmentButton : Gtk.FlowBoxChild {
     private const string ACTION_OPEN = "open";
     private const string ACTION_SAVE_AS = "save-as";
 
-    private const ActionEntry[] ACTION_ENTRIES = {
-        {ACTION_OPEN, on_open},
-        {ACTION_SAVE_AS, on_save_as}
-    };
-
     private Gtk.Image preview_image;
     private Gtk.Label name_label;
     private Gtk.Label size_label;
@@ -48,8 +43,14 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         margin_start = 6;
         margin_end = 6;
 
+        var open_action = new SimpleAction (ACTION_OPEN, null);
+        open_action.activate.connect (() => activate ());
+        var save_as_action = new SimpleAction (ACTION_SAVE_AS, null);
+        save_as_action.activate.connect (on_save_as);
+
         var actions = new SimpleActionGroup ();
-        actions.add_action_entries (ACTION_ENTRIES, this);
+        actions.add_action (open_action);
+        actions.add_action (save_as_action);
         insert_action_group (ACTION_GROUP_PREFIX, actions);
 
         var context_menu_model = new Menu ();
@@ -126,10 +127,6 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         event_box.add (grid);
         add (event_box);
         show_all ();
-    }
-
-    private void on_open () {
-        activate ();
     }
 
     private void on_save_as () {
