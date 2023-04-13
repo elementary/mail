@@ -79,12 +79,23 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     }
 
     construct {
+        cc_button = new Gtk.ToggleButton.with_label (_("Cc"));
+        cc_button.get_style_context ().remove_class ("text-button");
+        cc_button.get_style_context ().add_class ("image-button");
+        cc_button.get_style_context ().add_class ("cc-button");
+
+        var bcc_button = new Gtk.ToggleButton.with_label (_("Bcc"));
+        bcc_button.get_style_context ().remove_class ("text-button");
+        bcc_button.get_style_context ().add_class ("image-button");
+        bcc_button.get_style_context ().add_class ("cc-button");
+
         var headerbar = new Hdy.HeaderBar () {
             has_subtitle = false,
             show_close_button = true
         };
+        headerbar.pack_end (bcc_button);
+        headerbar.pack_end (cc_button);
         headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-        headerbar.get_style_context ().add_class ("default-decoration");
 
         var from_label = new Gtk.Label (_("From:")) {
             xalign = 1
@@ -117,15 +128,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         to_val = new Gtk.Entry () {
             hexpand = true
         };
-
-        cc_button = new Gtk.ToggleButton.with_label (_("Cc"));
-
-        var bcc_button = new Gtk.ToggleButton.with_label (_("Bcc"));
-
-        var to_grid = new EntryGrid ();
-        to_grid.add (to_val);
-        to_grid.add (cc_button);
-        to_grid.add (bcc_button);
 
         var cc_label = new Gtk.Label (_("Cc:")) {
             xalign = 1
@@ -187,7 +189,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         };
         recipient_grid.attach (from_revealer, 0, 0, 2);
         recipient_grid.attach (to_label, 0, 1);
-        recipient_grid.attach (to_grid, 1, 1);
+        recipient_grid.attach (to_val, 1, 1);
         recipient_grid.attach (cc_revealer, 0, 2, 2);
         recipient_grid.attach (bcc_revealer, 0, 3, 2);
         recipient_grid.attach (subject_label, 0, 4);
@@ -371,18 +373,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         to_val.changed.connect (() => {
             on_sanitize_recipient_entry (to_val);
             has_recipients = to_val.text != "";
-        });
-
-        to_val.get_style_context ().changed.connect (() => {
-            unowned Gtk.StyleContext to_grid_style_context = to_grid.get_style_context ();
-            var state = to_grid_style_context.get_state ();
-            if (to_val.has_focus) {
-                state |= Gtk.StateFlags.FOCUSED;
-            } else {
-                state ^= Gtk.StateFlags.FOCUSED;
-            }
-
-            to_grid_style_context.set_state (state);
         });
 
         if (to != null) {
@@ -971,12 +961,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             }
 
             return mimepart;
-        }
-    }
-
-    private class EntryGrid : Gtk.Grid {
-        static construct {
-            set_css_name (Gtk.STYLE_CLASS_ENTRY);
         }
     }
 
