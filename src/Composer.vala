@@ -35,7 +35,6 @@ public class Mail.Composer : Gtk.ApplicationWindow {
     private const string ACTION_SEND = "send";
 
     public bool has_recipients { get; set; }
-    public bool has_subject_field { get; construct; default = false; }
     public bool can_change_sender { get; set; default = true; }
     public string? to { get; construct; }
     public string? mailto_query { get; construct; }
@@ -78,7 +77,6 @@ public class Mail.Composer : Gtk.ApplicationWindow {
     public Composer (Gtk.Window parent, string? to = null, string? mailto_query = null) {
         Object (
             transient_for: parent,
-            has_subject_field: true,
             to: to,
             mailto_query: mailto_query
         );
@@ -87,7 +85,6 @@ public class Mail.Composer : Gtk.ApplicationWindow {
     public Composer.with_quote (Gtk.Window parent, Composer.Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content) {
         Object (
             transient_for: parent,
-            has_subject_field: true,
             can_change_sender: false,
             has_recipients: true
         );
@@ -206,10 +203,8 @@ public class Mail.Composer : Gtk.ApplicationWindow {
         recipient_grid.attach (to_grid, 1, 1);
         recipient_grid.attach (cc_revealer, 0, 2, 2);
         recipient_grid.attach (bcc_revealer, 0, 3, 2);
-        if (has_subject_field) {
-            recipient_grid.attach (subject_label, 0, 4);
-            recipient_grid.attach (subject_val, 1, 4);
-        }
+        recipient_grid.attach (subject_label, 0, 4);
+        recipient_grid.attach (subject_val, 1, 4);
 
         var bold = new Gtk.ToggleButton () {
             action_name = ACTION_PREFIX + ACTION_BOLD,
