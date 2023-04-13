@@ -279,7 +279,7 @@ public class Mail.MessageList : Gtk.Box {
     public void print (Variant uid) {
         messages.get (uid.get_string ()).print ();
     }
-    
+
     private void can_reply (bool enabled) {
         unowned var main_window = (Gtk.ApplicationWindow) ((Gtk.Application) GLib.Application.get_default ()).active_window;
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_FORWARD)).set_enabled (enabled);
