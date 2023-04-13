@@ -1,24 +1,11 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2017-2023 elementary, Inc. (https://elementary.io)
  *
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class Mail.Composer : Gtk.ApplicationWindow {
+public class Mail.Composer : Hdy.ApplicationWindow {
     public signal void finished ();
 
     private const string ACTION_GROUP_PREFIX = "win";
@@ -92,12 +79,12 @@ public class Mail.Composer : Gtk.ApplicationWindow {
     }
 
     construct {
-        height_request = 600;
-        width_request = 680;
-        title = _("New Message");
-        window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
-
-        add_action_entries (ACTION_ENTRIES, this);
+        var headerbar = new Hdy.HeaderBar () {
+            has_subtitle = false,
+            show_close_button = true
+        };
+        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        headerbar.get_style_context ().add_class ("default-decoration");
 
         var from_label = new Gtk.Label (_("From:")) {
             xalign = 1
@@ -313,6 +300,7 @@ public class Mail.Composer : Gtk.ApplicationWindow {
         message_url_overlay.no_show_all = true;
 
         var main_box = new Gtk.Box (VERTICAL, 0);
+        main_box.add (headerbar);
         main_box.add (recipient_grid);
         main_box.add (button_row);
         main_box.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
@@ -320,6 +308,11 @@ public class Mail.Composer : Gtk.ApplicationWindow {
         main_box.add (attachment_box);
         main_box.add (action_bar);
 
+        add_action_entries (ACTION_ENTRIES, this);
+
+        default_height = 500;
+        default_width = 680;
+        title = _("New Message");
         add (main_box);
 
         delete_event.connect (() => {
@@ -343,6 +336,7 @@ public class Mail.Composer : Gtk.ApplicationWindow {
         }
 
         bind_property ("has-recipients", send, "sensitive");
+        bind_property ("title", headerbar, "title");
 
         cc_button.clicked.connect (() => {
             cc_revealer.reveal_child = cc_button.active;
