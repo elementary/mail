@@ -3,15 +3,15 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-13 18:46+0000\n"
-"PO-Revision-Date: 2023-03-12 10:25+0000\n"
-"Last-Translator: Tchitchikashvili Zakro <zevilmanzaqro@gmail.com>\n"
+"PO-Revision-Date: 2023-04-14 11:53+0000\n"
+"Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/mail/mail/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.16.4\n"
 
 #: src/Composer.vala:89 src/MessageList/MessageListItem.vala:100
 msgid "From:"
@@ -443,7 +443,7 @@ msgstr "ელფოსტის დაბეჭდვის შეცდომ�
 #: src/MessageList/MessageListItem.vala:648
 #, c-format
 msgid "Trust and open “%s”?"
-msgstr ""
+msgstr "ვენდო და გავხსნა \"%s\"?"
 
 #: src/MessageList/MessageListItem.vala:649
 msgid ""
