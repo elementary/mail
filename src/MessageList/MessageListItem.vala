@@ -204,13 +204,13 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         starred_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var reply_item = new Gtk.MenuItem.with_label (_("Reply"));
-        reply_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.REPLY));
+        reply_item.activate.connect (() => add_inline_composer (Composer.Type.REPLY));
 
         var reply_all_item = new Gtk.MenuItem.with_label (_("Reply to All"));
-        reply_all_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.REPLY_ALL));
+        reply_all_item.activate.connect (() => add_inline_composer (Composer.Type.REPLY_ALL));
 
         var forward_item = new Gtk.MenuItem.with_label (_("Forward"));
-        forward_item.activate.connect (() => add_inline_composer (ComposerWidget.Type.FORWARD));
+        forward_item.activate.connect (() => add_inline_composer (Composer.Type.FORWARD));
 
         var print_item = new Gtk.MenuItem.with_label (_("Print…"));
         print_item.activate.connect (on_print);
@@ -391,9 +391,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         });
     }
 
-    private void add_inline_composer (ComposerWidget.Type composer_type) {
+    private void add_inline_composer (Composer.Type composer_type) {
         var message_list = (MessageList) get_ancestor (typeof (MessageList));
-        message_list.add_inline_composer.begin (composer_type, this);
+        message_list.compose.begin (composer_type, this);
     }
 
     private void on_print () {

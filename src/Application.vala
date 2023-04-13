@@ -63,10 +63,10 @@ public class Mail.Application : Gtk.Application {
                 to = GLib.Uri.unescape_string (mailto.get_path ());
 
                 if (main_window.is_session_started) {
-                    new ComposerWindow (main_window, to, mailto.get_query ()).show_all ();
+                    new Composer (main_window, to, mailto.get_query ()).show_all ();
                 } else {
                     main_window.session_started.connect (() => {
-                        new ComposerWindow (main_window, to, mailto.get_query ()).show_all ();
+                        new Composer (main_window, to, mailto.get_query ()).show_all ();
                     });
                 }
 #else
@@ -82,10 +82,10 @@ public class Mail.Application : Gtk.Application {
                 to = Soup.URI.decode (mailto.path);
 
                 if (main_window.is_session_started) {
-                    new ComposerWindow (main_window, to, mailto.query).show_all ();
+                    new Composer (main_window, to, mailto.query).show_all ();
                 } else {
                     main_window.session_started.connect (() => {
-                        new ComposerWindow (main_window, to, mailto.query).show_all ();
+                        new Composer (main_window, to, mailto.query).show_all ();
                     });
                 }
 #endif

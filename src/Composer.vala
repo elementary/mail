@@ -18,12 +18,10 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class Mail.ComposerWidget : Gtk.Box {
-    public signal void discarded ();
-    public signal void sent ();
-    public signal void subject_changed (string? subject);
+public class Mail.Composer : Gtk.ApplicationWindow {
+    public signal void finished ();
 
-    private const string ACTION_GROUP_PREFIX = "composer";
+    private const string ACTION_GROUP_PREFIX = "win";
     private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
 
     private const string ACTION_ADD_ATTACHMENT= "add-attachment";
@@ -38,7 +36,7 @@ public class Mail.ComposerWidget : Gtk.Box {
 
     public bool has_recipients { get; set; }
     public bool has_subject_field { get; construct; default = false; }
-    public bool can_change_sender { get; private set; default = true; }
+    public bool can_change_sender { get; set; default = true; }
     public string? to { get; construct; }
     public string? mailto_query { get; construct; }
 
@@ -46,7 +44,6 @@ public class Mail.ComposerWidget : Gtk.Box {
     private Camel.MessageInfo? ancestor_message_info = null;
 
     private WebView web_view;
-    private SimpleActionGroup actions;
     private Gtk.Entry to_val;
     private Gtk.Entry cc_val;
     private Gtk.Entry bcc_val;
@@ -78,26 +75,32 @@ public class Mail.ComposerWidget : Gtk.Box {
         {ACTION_SEND, on_send }
     };
 
-    public ComposerWidget.inline () {
-        Object (can_change_sender: false, has_subject_field: true);
-    }
-
-    public ComposerWidget.with_subject () {
-        Object (has_subject_field: true);
-    }
-
-    public ComposerWidget.with_headers (string? to, string? mailto_query) {
+    public Composer (Gtk.Window parent, string? to = null, string? mailto_query = null) {
         Object (
+            transient_for: parent,
             has_subject_field: true,
             to: to,
             mailto_query: mailto_query
         );
     }
 
+    public Composer.with_quote (Gtk.Window parent, Composer.Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content) {
+        Object (
+            transient_for: parent,
+            has_subject_field: true,
+            can_change_sender: false,
+            has_recipients: true
+        );
+        quote_content (type, info, message, content);
+    }
+
     construct {
-        actions = new SimpleActionGroup ();
-        actions.add_action_entries (ACTION_ENTRIES, this);
-        insert_action_group (ACTION_GROUP_PREFIX, actions);
+        height_request = 600;
+        width_request = 680;
+        title = _("New Message");
+        window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
+
+        add_action_entries (ACTION_ENTRIES, this);
 
         var from_label = new Gtk.Label (_("From:")) {
             xalign = 1
@@ -181,7 +184,7 @@ public class Mail.ComposerWidget : Gtk.Box {
         };
 
         subject_val.changed.connect (() => {
-            subject_changed (subject_val.text);
+            title = subject_val.text;
         });
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
@@ -314,13 +317,25 @@ public class Mail.ComposerWidget : Gtk.Box {
         message_url_overlay = new Granite.Widgets.OverlayBar (view_overlay);
         message_url_overlay.no_show_all = true;
 
-        orientation = Gtk.Orientation.VERTICAL;
-        add (recipient_grid);
-        add (button_row);
-        add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        add (view_overlay);
-        add (attachment_box);
-        add (action_bar);
+        var main_box = new Gtk.Box (VERTICAL, 0);
+        main_box.add (recipient_grid);
+        main_box.add (button_row);
+        main_box.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        main_box.add (view_overlay);
+        main_box.add (attachment_box);
+        main_box.add (action_bar);
+
+        add (main_box);
+
+        delete_event.connect (() => {
+            save_draft.begin ((obj, res) => {
+                if (!save_draft.end (res)) {
+                    finished ();
+                    destroy ();
+                };
+            });
+            return true;
+        });
 
         var contact_manager = ContactManager.get_default ();
         contact_manager.setup_entry (to_val);
@@ -673,16 +688,16 @@ public class Mail.ComposerWidget : Gtk.Box {
 
     private void update_actions () {
         web_view.query_command_state.begin ("bold", (obj, res) => {
-            actions.change_action_state (ACTION_BOLD, web_view.query_command_state.end (res) ? ACTION_BOLD : "");
+            change_action_state (ACTION_BOLD, web_view.query_command_state.end (res) ? ACTION_BOLD : "");
         });
         web_view.query_command_state.begin ("italic", (obj, res) => {
-            actions.change_action_state (ACTION_ITALIC, web_view.query_command_state.end (res) ? ACTION_ITALIC : "");
+            change_action_state (ACTION_ITALIC, web_view.query_command_state.end (res) ? ACTION_ITALIC : "");
         });
         web_view.query_command_state.begin ("underline", (obj, res) => {
-            actions.change_action_state (ACTION_UNDERLINE, web_view.query_command_state.end (res) ? ACTION_UNDERLINE : "");
+            change_action_state (ACTION_UNDERLINE, web_view.query_command_state.end (res) ? ACTION_UNDERLINE : "");
         });
         web_view.query_command_state.begin ("strikethrough", (obj, res) => {
-            actions.change_action_state (ACTION_STRIKETHROUGH, web_view.query_command_state.end (res) ? ACTION_STRIKETHROUGH : "");
+            change_action_state (ACTION_STRIKETHROUGH, web_view.query_command_state.end (res) ? ACTION_STRIKETHROUGH : "");
         });
     }
 
@@ -706,7 +721,8 @@ public class Mail.ComposerWidget : Gtk.Box {
         discard_dialog.response.connect ((response) => {
             if (response == Gtk.ResponseType.ACCEPT) {
                 discard_draft = true;
-                discarded ();
+                finished ();
+                close ();
             }
 
             discard_dialog.destroy ();
@@ -768,7 +784,8 @@ public class Mail.ComposerWidget : Gtk.Box {
             }
 
             discard_draft = true;
-            sent ();
+            finished ();
+            close ();
         } catch (Error e) {
             var error_dialog = new Granite.MessageDialog (
                 _("Unable to send message"),
@@ -974,63 +991,38 @@ public class Mail.ComposerWidget : Gtk.Box {
         }
     }
 
-    public override void destroy () {
+    public async bool save_draft () {
         if (discard_draft || !web_view.body_html_changed) {
-            base.destroy ();
-            return;
+            return false;
         }
 
-        web_view.get_body_html.begin ((obj, res) => {
-            var body_html = web_view.get_body_html.end (res);
+        var body_html = yield web_view.get_body_html ();
 
-            if (body_html == null) {
-                base.destroy ();
-            } else {
-                unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+        if (body_html != null) {
+            unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
 
-                var message = build_message (body_html);
-                var sender = build_sender (message, from_combo.get_active_text ());
-                var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
+            var message = build_message (body_html);
+            var sender = build_sender (message, from_combo.get_active_text ());
+            var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
 
-                session.save_draft.begin (
-                    message,
-                    sender,
-                    recipients,
-                    ancestor_message_info,
-                    (obj, res) => {
-                        try {
-                            session.save_draft.end (res);
-                            base.destroy ();
-                        } catch (Error e) {
-                            unowned Mail.MainWindow? main_window = null;
-                            var windows = Gtk.Window.list_toplevels ();
-                            foreach (unowned var window in windows) {
-                                if (window is Mail.MainWindow) {
-                                    main_window = (Mail.MainWindow) window;
-                                    break;
-                                }
-                            }
-
-                            if (main_window != null) {
-                                new ComposerWindow.for_widget (main_window, this).show_all ();
-                            } else {
-                                warning ("Unable to re-show composer. Draft will be lost.");
-                            }
-
-                            var error_dialog = new Granite.MessageDialog (
-                                _("Unable to save draft"),
-                                _("There was an unexpected error while saving your draft."),
-                                new ThemedIcon ("mail-drafts"),
-                                Gtk.ButtonsType.CLOSE
-                            ) {
-                                badge_icon = new ThemedIcon ("dialog-error")
-                            };
-                            error_dialog.show_error_details (e.message);
-                            error_dialog.present ();
-                            error_dialog.response.connect (() => error_dialog.destroy ());
-                        }
-                });
+            try {
+                yield session.save_draft (message, sender, recipients, ancestor_message_info);
+            } catch (Error e) {
+                var error_dialog = new Granite.MessageDialog (
+                    _("Unable to save draft"),
+                    _("There was an unexpected error while saving your draft."),
+                    new ThemedIcon ("mail-drafts"),
+                    Gtk.ButtonsType.CLOSE
+                ) {
+                    badge_icon = new ThemedIcon ("dialog-error")
+                };
+                error_dialog.show_error_details (e.message);
+                error_dialog.present ();
+                error_dialog.response.connect (() => error_dialog.destroy ());
+                return true;
             }
-        });
+        }
+
+        return false;
     }
 }
