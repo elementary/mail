@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-11 15:50+0000\n"
+"POT-Creation-Date: 2023-04-13 17:45+0000\n"
 "PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/mail/mail/lt/"
@@ -27,6 +27,204 @@ msgstr ""
 "1 : 2);\n"
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
+
+#: src/Composer.vala:100
+msgid "New Message"
+msgstr "Naujas laiškas"
+
+#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:100
+msgid "From:"
+msgstr "Nuo:"
+
+#: src/Composer.vala:123 src/MessageList/MessageListItem.vala:106
+msgid "To:"
+msgstr "Kam:"
+
+#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:112
+msgid "Subject:"
+msgstr "Tema:"
+
+#: src/Composer.vala:137
+msgid "Cc"
+msgstr "Kopija"
+
+#: src/Composer.vala:139
+msgid "Bcc"
+msgstr "Nematoma kopija"
+
+#: src/Composer.vala:146 src/MessageList/MessageListItem.vala:146
+msgid "Cc:"
+msgstr "Kopija:"
+
+#: src/Composer.vala:164
+msgid "Bcc:"
+msgstr "Nematoma kopija:"
+
+#: src/Composer.vala:218
+msgid "Bold"
+msgstr "Pusjuodis"
+
+#: src/Composer.vala:225
+msgid "Italic"
+msgstr "Kursyvas"
+
+#: src/Composer.vala:232
+msgid "Underline"
+msgstr "Pabrauktas"
+
+#: src/Composer.vala:239
+msgid "Strikethrough"
+msgstr "Perbrauktas"
+
+#: src/Composer.vala:244
+msgid "Remove formatting"
+msgstr "Šalinti formatavimą"
+
+#: src/Composer.vala:256 src/Dialogs/InsertLinkDialog.vala:63
+msgid "Insert Link"
+msgstr "Įterpti nuorodą"
+
+#: src/Composer.vala:286
+msgid "Delete draft"
+msgstr "Ištrinti juodraštį"
+
+#: src/Composer.vala:291
+msgid "Attach file"
+msgstr "Pridėti failą"
+
+#: src/Composer.vala:297
+msgid "Send"
+msgstr "Siųsti"
+
+#: src/Composer.vala:476
+msgid "Choose a file"
+msgstr "Pasirinkite failą"
+
+#: src/Composer.vala:479
+#, fuzzy
+#| msgid "_Attach"
+msgid "Attach"
+msgstr "_Pridėti"
+
+#: src/Composer.vala:480 src/Composer.vala:715
+#: src/Dialogs/InsertLinkDialog.vala:61
+#: src/MessageList/AttachmentButton.vala:139
+msgid "Cancel"
+msgstr "Atsisakyti"
+
+#: src/Composer.vala:625
+msgid "%a, %b %-e, %Y at %-l:%M %p"
+msgstr "%Y %b %-e, %a, %-k:%M"
+
+#: src/Composer.vala:655
+#, c-format
+msgid "On %1$s, %2$s wrote:"
+msgstr "%1$s, %2$s rašė:"
+
+#: src/Composer.vala:659
+msgid "---------- Forwarded message ----------"
+msgstr "---------- Persiųstas laiškas ----------"
+
+#: src/Composer.vala:661
+#, c-format
+msgid "From: %s<br/>"
+msgstr "Nuo: %s<br/>"
+
+#: src/Composer.vala:662
+#, c-format
+msgid "Subject: %s<br/>"
+msgstr "Tema: %s<br/>"
+
+#: src/Composer.vala:663
+#, c-format
+msgid "Date: %s<br/>"
+msgstr "Data: %s<br/>"
+
+#: src/Composer.vala:664
+#, c-format
+msgid "To: %s<br/>"
+msgstr "Kam: %s<br/>"
+
+#: src/Composer.vala:666
+#, c-format
+msgid "Cc: %s<br/>"
+msgstr "Kopija: %s<br/>"
+
+#: src/Composer.vala:706
+#, fuzzy
+#| msgid "Do you want to permanently delete this message?"
+#| msgid_plural "Do you want to permanently delete these messages?"
+msgid "Permanently delete this draft?"
+msgstr "Ar norite visam laikui ištrinti šį laišką?"
+
+#: src/Composer.vala:707
+msgid ""
+"You cannot undo this action, nor recover your draft once it has been deleted."
+msgstr ""
+
+#: src/Composer.vala:717
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete Draft"
+msgstr "Ištrinti juodraštį"
+
+#: src/Composer.vala:741
+#, fuzzy
+#| msgid "Send Message With an Empty Subject?"
+msgid "Send without subject?"
+msgstr "Ar siųsti laišką be temos?"
+
+#: src/Composer.vala:742
+#, fuzzy
+#| msgid ""
+#| "This message has an empty subject field. The recipient may not be able to "
+#| "infer the scope or importance of the message."
+msgid ""
+"This message has an empty subject field. The recipient may be unable to "
+"infer its scope or importance."
+msgstr ""
+"Šiame laiške yra tuščias temos laukas. Gavėjas gali neįvertinti laiško "
+"svarbumo ar turinio."
+
+#: src/Composer.vala:748
+msgid "Don't Send"
+msgstr "Nesiųsti"
+
+#: src/Composer.vala:750
+msgid "Send Anyway"
+msgstr "Vis tiek siųsti"
+
+#: src/Composer.vala:775
+#, fuzzy
+#| msgid "Send message with an empty body?"
+msgid "Sent message was not saved"
+msgstr "Ar siųsti laišką be teksto?"
+
+#: src/Composer.vala:776
+msgid ""
+"The message was sent, however a copy was not saved to the Sent message "
+"folder."
+msgstr ""
+
+#: src/Composer.vala:791
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to send message"
+msgstr "Ištrinti juodraštį"
+
+#: src/Composer.vala:792
+msgid "There was an unexpected error while sending your message."
+msgstr ""
+
+#: src/Composer.vala:1012
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to save draft"
+msgstr "Ištrinti juodraštį"
+
+#: src/Composer.vala:1013
+msgid "There was an unexpected error while saving your draft."
+msgstr ""
 
 #: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
@@ -59,14 +257,14 @@ msgstr[2] "Visada rodyti nuo siuntėjo"
 msgid "Mail"
 msgstr "Paštas"
 
-#: src/MainWindow.vala:246
+#: src/MainWindow.vala:243
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Laiškas ištrintas"
 msgstr[1] "Laiškai ištrinti"
 msgstr[2] "Laiškai ištrinti"
 
-#: src/MainWindow.vala:258
+#: src/MainWindow.vala:255
 msgid "Undo"
 msgstr "Atšaukti"
 
@@ -81,209 +279,6 @@ msgstr "Paštas naudoja sistemos nustatymuose sukonfigūruotas pašto paskyras."
 #: src/WelcomeView.vala:56
 msgid "Online Accounts…"
 msgstr "Internetinės paskyros…"
-
-#: src/Composer/ComposerWidget.vala:102
-#: src/MessageList/MessageListItem.vala:100
-msgid "From:"
-msgstr "Nuo:"
-
-#: src/Composer/ComposerWidget.vala:120
-#: src/MessageList/MessageListItem.vala:106
-msgid "To:"
-msgstr "Kam:"
-
-#: src/Composer/ComposerWidget.vala:125
-#: src/MessageList/MessageListItem.vala:112
-msgid "Subject:"
-msgstr "Tema:"
-
-#: src/Composer/ComposerWidget.vala:134
-msgid "Cc"
-msgstr "Kopija"
-
-#: src/Composer/ComposerWidget.vala:136
-msgid "Bcc"
-msgstr "Nematoma kopija"
-
-#: src/Composer/ComposerWidget.vala:143
-#: src/MessageList/MessageListItem.vala:146
-msgid "Cc:"
-msgstr "Kopija:"
-
-#: src/Composer/ComposerWidget.vala:161
-msgid "Bcc:"
-msgstr "Nematoma kopija:"
-
-#: src/Composer/ComposerWidget.vala:215
-msgid "Bold"
-msgstr "Pusjuodis"
-
-#: src/Composer/ComposerWidget.vala:222
-msgid "Italic"
-msgstr "Kursyvas"
-
-#: src/Composer/ComposerWidget.vala:229
-msgid "Underline"
-msgstr "Pabrauktas"
-
-#: src/Composer/ComposerWidget.vala:236
-msgid "Strikethrough"
-msgstr "Perbrauktas"
-
-#: src/Composer/ComposerWidget.vala:241
-msgid "Remove formatting"
-msgstr "Šalinti formatavimą"
-
-#: src/Composer/ComposerWidget.vala:253 src/Dialogs/InsertLinkDialog.vala:63
-msgid "Insert Link"
-msgstr "Įterpti nuorodą"
-
-#: src/Composer/ComposerWidget.vala:283
-msgid "Delete draft"
-msgstr "Ištrinti juodraštį"
-
-#: src/Composer/ComposerWidget.vala:288
-msgid "Attach file"
-msgstr "Pridėti failą"
-
-#: src/Composer/ComposerWidget.vala:294
-msgid "Send"
-msgstr "Siųsti"
-
-#: src/Composer/ComposerWidget.vala:461
-msgid "Choose a file"
-msgstr "Pasirinkite failą"
-
-#: src/Composer/ComposerWidget.vala:464
-#, fuzzy
-#| msgid "_Attach"
-msgid "Attach"
-msgstr "_Pridėti"
-
-#: src/Composer/ComposerWidget.vala:465 src/Composer/ComposerWidget.vala:700
-#: src/Dialogs/InsertLinkDialog.vala:61
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Cancel"
-msgstr "Atsisakyti"
-
-#: src/Composer/ComposerWidget.vala:610
-msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%Y %b %-e, %a, %-k:%M"
-
-#: src/Composer/ComposerWidget.vala:640
-#, c-format
-msgid "On %1$s, %2$s wrote:"
-msgstr "%1$s, %2$s rašė:"
-
-#: src/Composer/ComposerWidget.vala:644
-msgid "---------- Forwarded message ----------"
-msgstr "---------- Persiųstas laiškas ----------"
-
-#: src/Composer/ComposerWidget.vala:646
-#, c-format
-msgid "From: %s<br/>"
-msgstr "Nuo: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:647
-#, c-format
-msgid "Subject: %s<br/>"
-msgstr "Tema: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:648
-#, c-format
-msgid "Date: %s<br/>"
-msgstr "Data: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:649
-#, c-format
-msgid "To: %s<br/>"
-msgstr "Kam: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:651
-#, c-format
-msgid "Cc: %s<br/>"
-msgstr "Kopija: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:691
-#, fuzzy
-#| msgid "Do you want to permanently delete this message?"
-#| msgid_plural "Do you want to permanently delete these messages?"
-msgid "Permanently delete this draft?"
-msgstr "Ar norite visam laikui ištrinti šį laišką?"
-
-#: src/Composer/ComposerWidget.vala:692
-msgid ""
-"You cannot undo this action, nor recover your draft once it has been deleted."
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:702
-#, fuzzy
-#| msgid "Delete draft"
-msgid "Delete Draft"
-msgstr "Ištrinti juodraštį"
-
-#: src/Composer/ComposerWidget.vala:725
-#, fuzzy
-#| msgid "Send Message With an Empty Subject?"
-msgid "Send without subject?"
-msgstr "Ar siųsti laišką be temos?"
-
-#: src/Composer/ComposerWidget.vala:726
-#, fuzzy
-#| msgid ""
-#| "This message has an empty subject field. The recipient may not be able to "
-#| "infer the scope or importance of the message."
-msgid ""
-"This message has an empty subject field. The recipient may be unable to "
-"infer its scope or importance."
-msgstr ""
-"Šiame laiške yra tuščias temos laukas. Gavėjas gali neįvertinti laiško "
-"svarbumo ar turinio."
-
-#: src/Composer/ComposerWidget.vala:732
-msgid "Don't Send"
-msgstr "Nesiųsti"
-
-#: src/Composer/ComposerWidget.vala:734
-msgid "Send Anyway"
-msgstr "Vis tiek siųsti"
-
-#: src/Composer/ComposerWidget.vala:759
-#, fuzzy
-#| msgid "Send message with an empty body?"
-msgid "Sent message was not saved"
-msgstr "Ar siųsti laišką be teksto?"
-
-#: src/Composer/ComposerWidget.vala:760
-msgid ""
-"The message was sent, however a copy was not saved to the Sent message "
-"folder."
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:774
-#, fuzzy
-#| msgid "Delete draft"
-msgid "Unable to send message"
-msgstr "Ištrinti juodraštį"
-
-#: src/Composer/ComposerWidget.vala:775
-msgid "There was an unexpected error while sending your message."
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:1021
-#, fuzzy
-#| msgid "Delete draft"
-msgid "Unable to save draft"
-msgstr "Ištrinti juodraštį"
-
-#: src/Composer/ComposerWidget.vala:1022
-msgid "There was an unexpected error while saving your draft."
-msgstr ""
-
-#: src/Composer/ComposerWindow.vala:43 src/Composer/ComposerWindow.vala:55
-#: src/Composer/ComposerWindow.vala:67
-msgid "New Message"
-msgstr "Naujas laiškas"
 
 #: src/ConversationList/ConversationList.vala:83
 msgid "Search Mail"
@@ -348,15 +343,15 @@ msgstr "Žymėti žvaigždute"
 msgid "Unstar"
 msgstr "Nežymėti žvaigždute"
 
-#: src/ConversationList/ConversationListItem.vala:110
+#: src/ConversationList/ConversationListItem.vala:114
 msgid "Unread"
 msgstr "Neskaitytas"
 
-#: src/ConversationList/ConversationListItem.vala:123
+#: src/ConversationList/ConversationListItem.vala:127
 msgid "Replied"
 msgstr "Atsakytas"
 
-#: src/ConversationList/ConversationListItem.vala:127
+#: src/ConversationList/ConversationListItem.vala:131
 msgid "Forwarded"
 msgstr "Persiųstas"
 
@@ -524,19 +519,19 @@ msgstr ""
 msgid "Open Anyway"
 msgstr "Vis tiek atverti"
 
-#: src/MessageList/AttachmentButton.vala:41
+#: src/MessageList/AttachmentButton.vala:57
 msgid "Open"
 msgstr "Atverti"
 
-#: src/MessageList/AttachmentButton.vala:43
+#: src/MessageList/AttachmentButton.vala:58
 msgid "Save As…"
 msgstr "Įrašyti kaip…"
 
-#: src/MessageList/AttachmentButton.vala:89
+#: src/MessageList/AttachmentButton.vala:114
 msgid "Unknown"
 msgstr "Nežinoma"
 
-#: src/MessageList/AttachmentButton.vala:113
+#: src/MessageList/AttachmentButton.vala:138
 msgid "Save"
 msgstr "Įrašyti"
 
