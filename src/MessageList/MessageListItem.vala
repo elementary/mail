@@ -386,7 +386,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         });
     }
 
-    private void print () {
+    public void print () {
         try {
             var settings = new Gtk.PrintSettings ();
             /// Translators: This is the default file name of a printed email
