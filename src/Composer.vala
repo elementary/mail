@@ -78,10 +78,6 @@ public class Mail.Composer : Gtk.ApplicationWindow {
     public Composer (Gtk.Window parent, string? to = null, string? mailto_query = null) {
         Object (
             transient_for: parent,
-            height_request: 600,
-            width_request: 680,
-            title: _("New Message"),
-            window_position: Gtk.WindowPosition.CENTER_ON_PARENT,
             has_subject_field: true,
             to: to,
             mailto_query: mailto_query
@@ -91,10 +87,6 @@ public class Mail.Composer : Gtk.ApplicationWindow {
     public Composer.with_quote (Gtk.Window parent, Composer.Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content) {
         Object (
             transient_for: parent,
-            height_request: 600,
-            width_request: 680,
-            title: _("New Message"),
-            window_position: Gtk.WindowPosition.CENTER_ON_PARENT,
             has_subject_field: true,
             can_change_sender: false,
             has_recipients: true
@@ -103,6 +95,11 @@ public class Mail.Composer : Gtk.ApplicationWindow {
     }
 
     construct {
+        height_request = 600;
+        width_request = 680;
+        title = _("New Message");
+        window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
+
         add_action_entries (ACTION_ENTRIES, this);
 
         var from_label = new Gtk.Label (_("From:")) {
