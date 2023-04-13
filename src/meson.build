@@ -1,5 +1,6 @@
 vala_files = files(
     'Application.vala',
+    'Composer.vala',
     'MainWindow.vala',
     'InboxMonitor.vala',
     'Utils.vala',
@@ -9,9 +10,6 @@ vala_files = files(
     'Backend/ContactManager.vala',
     'Backend/Session.vala',
     'Backend/MoveHandler.vala',
-    'Composer/ComposerWidget.vala',
-    'Composer/ComposerWindow.vala',
-    'Composer/InlineComposer.vala',
     'ConversationList/ConversationItemModel.vala',
     'ConversationList/ConversationList.vala',
     'ConversationList/ConversationListItem.vala',
