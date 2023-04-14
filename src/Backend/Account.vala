@@ -30,7 +30,6 @@ public class Mail.Backend.Account : GLib.Object {
         network_manager.network_changed.connect (() => {
             manage_connection.begin (network_manager.network_available);
         });
-        manage_connection.begin (network_manager.network_available);
     }
 
     public async void manage_connection (bool online) {
