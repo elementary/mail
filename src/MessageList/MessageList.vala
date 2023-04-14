@@ -272,8 +272,8 @@ public class Mail.MessageList : Gtk.Box {
         mime_message = message_item.mime_message;
         message_info = message_item.message_info;
 
-        var composer = new Composer.with_quote ((Gtk.Window)get_toplevel (), type, message_info, mime_message, content_to_quote);
-        composer.show_all ();
+        var composer = new Composer.with_quote (type, message_info, mime_message, content_to_quote);
+        composer.present ();
         composer.finished.connect (() => {
             can_reply (true);
             can_move_thread (true);

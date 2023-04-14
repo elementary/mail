@@ -59,23 +59,24 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         {ACTION_SEND, on_send }
     };
 
-    public Composer (Gtk.Window parent, string? to = null, string? mailto_query = null) {
+    public Composer (string? to = null, string? mailto_query = null) {
         Object (
-            transient_for: parent,
             to: to,
             mailto_query: mailto_query
         );
     }
 
-    public Composer.with_quote (Gtk.Window parent, Composer.Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content) {
-        Object (
-            transient_for: parent,
-            has_recipients: true
-        );
+    public Composer.with_quote (Composer.Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content) {
+        Object (has_recipients: true);
         quote_content (type, info, message, content);
     }
 
     construct {
+        var main_window = ((Gtk.Application) GLib.Application.get_default ()).active_window;
+        if (main_window != null) {
+            transient_for = main_window;
+        }
+
         var headerbar = new Hdy.HeaderBar () {
             has_subtitle = false,
             show_close_button = true
@@ -312,6 +313,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         default_width = 680;
         title = _("New Message");
         add (main_box);
+        show_all ();
 
         delete_event.connect (() => {
             save_draft.begin ((obj, res) => {

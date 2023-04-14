@@ -82,10 +82,10 @@ public class Mail.Application : Gtk.Application {
                 to = Soup.URI.decode (mailto.path);
 
                 if (main_window.is_session_started) {
-                    new Composer (main_window, to, mailto.query).show_all ();
+                    new Composer (to, mailto.query).present ();
                 } else {
                     main_window.session_started.connect (() => {
-                        new Composer (main_window, to, mailto.query).show_all ();
+                        new Composer (to, mailto.query).present ();
                     });
                 }
 #endif
