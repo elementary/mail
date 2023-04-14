@@ -223,9 +223,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         actions_menu.append_section (null, upper_section);
         actions_menu.append_section (null, lower_section);
 
-        var actions_popover = new Gtk.PopoverMenu ();
-        actions_popover.bind_model (actions_menu, null);
-
         var actions_menu_button = new Gtk.MenuButton () {
             image = new Gtk.Image.from_icon_name ("view-more-symbolic", Gtk.IconSize.MENU),
             tooltip_text = _("More"),
