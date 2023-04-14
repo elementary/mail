@@ -15,12 +15,12 @@
 # Enrico Nicoletto <liverig@gmail.com>, 2014.
 # Rafael Ferreira <rafael.f.f1@gmail.com>, 2014.
 #
-#: src/MessageList/MessageListItem.vala:426
+#: src/MessageList/MessageListItem.vala:422
 msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-14 11:53+0000\n"
+"POT-Creation-Date: 2023-04-14 17:57+0000\n"
 "PO-Revision-Date: 2019-08-27 22:23+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/mail/"
@@ -256,17 +256,17 @@ msgid_plural "%s from %u senders"
 msgstr[0] "Sempre mostrar deste remetente"
 msgstr[1] "Sempre mostrar deste remetente"
 
-#: src/MainWindow.vala:75
+#: src/MainWindow.vala:77
 msgid "Mail"
 msgstr "Correio"
 
-#: src/MainWindow.vala:243
+#: src/MainWindow.vala:251
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Mensagem eliminada"
 msgstr[1] "Mensagens eliminadas"
 
-#: src/MainWindow.vala:255
+#: src/MainWindow.vala:263
 msgid "Undo"
 msgstr "Desfazer"
 
@@ -331,17 +331,17 @@ msgid "Mark As Unread"
 msgstr "Marcar como não lido"
 
 #: src/ConversationList/ConversationList.vala:599
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "Marcar como lido"
 
 #: src/ConversationList/ConversationList.vala:609
-#: src/MessageList/MessageList.vala:90
+#: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "Estrela"
 
 #: src/ConversationList/ConversationList.vala:617
-#: src/MessageList/MessageList.vala:96
+#: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "Remover estrela"
 
@@ -413,37 +413,37 @@ msgstr "Configurações da Conta…"
 msgid "Menu"
 msgstr "Menu"
 
-#: src/MessageList/MessageList.vala:55 src/MessageList/MessageListItem.vala:206
+#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Responder"
 
-#: src/MessageList/MessageList.vala:63
+#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Responder a Todos"
 
-#: src/MessageList/MessageList.vala:71 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Encaminhar"
 
-#: src/MessageList/MessageList.vala:78
+#: src/MessageList/MessageList.vala:81
 msgid "Mark as Unread"
 msgstr "Marcar como não lido"
 
-#: src/MessageList/MessageList.vala:109
+#: src/MessageList/MessageList.vala:112
 msgid "Mark Conversation"
 msgstr "Marcar conversa"
 
-#: src/MessageList/MessageList.vala:117
+#: src/MessageList/MessageList.vala:120
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
 msgstr "Mover conversas para o Lixo"
 
-#: src/MessageList/MessageList.vala:125
+#: src/MessageList/MessageList.vala:128
 msgid "Move conversations to Trash"
 msgstr "Mover conversas para o Lixo"
 
-#: src/MessageList/MessageList.vala:152
+#: src/MessageList/MessageList.vala:155
 msgid "No Message Selected"
 msgstr "Nenhuma mensagem selecionada"
 
@@ -454,20 +454,16 @@ msgid "%s at %s"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:377
 msgid "Unstar message"
 msgstr "Remover favorito da mensagem"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:372
+#: src/MessageList/MessageListItem.vala:373
 msgid "Star message"
 msgstr "Favoritar mensagem"
 
-#: src/MessageList/MessageListItem.vala:209
-msgid "Reply to All"
-msgstr "Responder a todos"
-
-#: src/MessageList/MessageListItem.vala:215
+#: src/MessageList/MessageListItem.vala:218
 msgid "Print…"
 msgstr "Imprimir…"
 
@@ -475,41 +471,41 @@ msgstr "Imprimir…"
 msgid "More"
 msgstr "Mais"
 
-#: src/MessageList/MessageListItem.vala:276
+#: src/MessageList/MessageListItem.vala:277
 msgid "Show Images"
 msgstr "Mostrar imagens"
 
-#: src/MessageList/MessageListItem.vala:277
+#: src/MessageList/MessageListItem.vala:278
 msgid "Always Show from Sender"
 msgstr "Sempre mostrar deste remetente"
 
-#: src/MessageList/MessageListItem.vala:282
+#: src/MessageList/MessageListItem.vala:283
 msgid "This message contains remote images."
 msgstr "Esta mensagem contém imagens remotas."
 
-#: src/MessageList/MessageListItem.vala:319
+#: src/MessageList/MessageListItem.vala:320
 msgid "This message contains one or more attachments"
 msgstr "Esta mensagem contém um ou mais anexos"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:403
+#: src/MessageList/MessageListItem.vala:399
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Nova mensagem"
 
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:421
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
 msgstr "Incapaz de validar:\n"
 
-#: src/MessageList/MessageListItem.vala:648
+#: src/MessageList/MessageListItem.vala:644
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:649
+#: src/MessageList/MessageListItem.vala:645
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -517,7 +513,7 @@ msgstr ""
 "Se abertos, anexos podem causar danos ao seu sistema. Abra apenas arquivos "
 "de fontes confiáveis."
 
-#: src/MessageList/MessageListItem.vala:656
+#: src/MessageList/MessageListItem.vala:652
 msgid "Open Anyway"
 msgstr "Abrir de qualquer maneira"
 
@@ -536,6 +532,9 @@ msgstr "Desconhecido"
 #: src/MessageList/AttachmentButton.vala:138
 msgid "Save"
 msgstr "Salvar"
+
+#~ msgid "Reply to All"
+#~ msgstr "Responder a todos"
 
 #, c-format
 #~ msgid "Are you sure you want to open %s?"

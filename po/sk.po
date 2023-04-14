@@ -5,12 +5,12 @@
 #
 # Translators:
 # Dušan Kazik <prescott66@gmail.com>, 2013, 2015
-#: src/MessageList/MessageListItem.vala:426
+#: src/MessageList/MessageListItem.vala:422
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-14 11:53+0000\n"
+"POT-Creation-Date: 2023-04-14 17:57+0000\n"
 "PO-Revision-Date: 2022-09-30 22:24+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/mail/mail/sk/>\n"
@@ -228,18 +228,18 @@ msgstr[0] "%s od %u odosielateľov"
 msgstr[1] "%s od %u odosielateľa"
 msgstr[2] "%s od %u odosielateľov"
 
-#: src/MainWindow.vala:75
+#: src/MainWindow.vala:77
 msgid "Mail"
 msgstr "Pošta"
 
-#: src/MainWindow.vala:243
+#: src/MainWindow.vala:251
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Správy odstránené"
 msgstr[1] "Správa odstránená"
 msgstr[2] "Správy odstránené"
 
-#: src/MainWindow.vala:255
+#: src/MainWindow.vala:263
 msgid "Undo"
 msgstr "Späť"
 
@@ -288,17 +288,17 @@ msgid "Mark As Unread"
 msgstr "Označiť ako neprečítané"
 
 #: src/ConversationList/ConversationList.vala:599
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "Označiť ako prečítané"
 
 #: src/ConversationList/ConversationList.vala:609
-#: src/MessageList/MessageList.vala:90
+#: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "Pridať hviezdičku"
 
 #: src/ConversationList/ConversationList.vala:617
-#: src/MessageList/MessageList.vala:96
+#: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "Odobrať hviezdičku"
 
@@ -366,35 +366,35 @@ msgstr "Nastavenia účtu…"
 msgid "Menu"
 msgstr "Menu"
 
-#: src/MessageList/MessageList.vala:55 src/MessageList/MessageListItem.vala:206
+#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Odpovedať"
 
-#: src/MessageList/MessageList.vala:63
+#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Odpovedať všetkým"
 
-#: src/MessageList/MessageList.vala:71 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Preposlať"
 
-#: src/MessageList/MessageList.vala:78
+#: src/MessageList/MessageList.vala:81
 msgid "Mark as Unread"
 msgstr "Označiť ako neprečítané"
 
-#: src/MessageList/MessageList.vala:109
+#: src/MessageList/MessageList.vala:112
 msgid "Mark Conversation"
 msgstr "Označiť konverzáciu"
 
-#: src/MessageList/MessageList.vala:117
+#: src/MessageList/MessageList.vala:120
 msgid "Move conversations to archive"
 msgstr "Presunúť konverzácie do archívu"
 
-#: src/MessageList/MessageList.vala:125
+#: src/MessageList/MessageList.vala:128
 msgid "Move conversations to Trash"
 msgstr "Presunúť konverzácie do koša"
 
-#: src/MessageList/MessageList.vala:152
+#: src/MessageList/MessageList.vala:155
 msgid "No Message Selected"
 msgstr "Žiadna vybraná správa"
 
@@ -405,20 +405,16 @@ msgid "%s at %s"
 msgstr "%s o %s"
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:377
 msgid "Unstar message"
 msgstr "Zrušiť označenie správy hviezdičkou"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:372
+#: src/MessageList/MessageListItem.vala:373
 msgid "Star message"
 msgstr "Označiť správu hviezdičkou"
 
-#: src/MessageList/MessageListItem.vala:209
-msgid "Reply to All"
-msgstr "Odpovedať všetkým"
-
-#: src/MessageList/MessageListItem.vala:215
+#: src/MessageList/MessageListItem.vala:218
 msgid "Print…"
 msgstr "Tlač…"
 
@@ -426,37 +422,37 @@ msgstr "Tlač…"
 msgid "More"
 msgstr "Viac"
 
-#: src/MessageList/MessageListItem.vala:276
+#: src/MessageList/MessageListItem.vala:277
 msgid "Show Images"
 msgstr "Zobraziť obrázky"
 
-#: src/MessageList/MessageListItem.vala:277
+#: src/MessageList/MessageListItem.vala:278
 msgid "Always Show from Sender"
 msgstr "Vždy zobrazovať od odosielateľa"
 
-#: src/MessageList/MessageListItem.vala:282
+#: src/MessageList/MessageListItem.vala:283
 msgid "This message contains remote images."
 msgstr "Táto správa obsahuje externé obrázky."
 
-#: src/MessageList/MessageListItem.vala:319
+#: src/MessageList/MessageListItem.vala:320
 msgid "This message contains one or more attachments"
 msgstr "Táto správa obsahuje jednu alebo viac príloh"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:403
+#: src/MessageList/MessageListItem.vala:399
 msgid "Email Message"
 msgstr "E-mailová správa"
 
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:421
 msgid "Unable to print email"
 msgstr "Nepodarilo sa vytlačiť e-mail"
 
-#: src/MessageList/MessageListItem.vala:648
+#: src/MessageList/MessageListItem.vala:644
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:649
+#: src/MessageList/MessageListItem.vala:645
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -464,7 +460,7 @@ msgstr ""
 "Prílohy môžu po otvorení spôsobiť poškodenie vášho systému. Otvárajte jedine "
 "súbory z dôveryhodných zdrojov."
 
-#: src/MessageList/MessageListItem.vala:656
+#: src/MessageList/MessageListItem.vala:652
 msgid "Open Anyway"
 msgstr "Napriek tomu otvoriť"
 
@@ -483,6 +479,9 @@ msgstr "Neznámy"
 #: src/MessageList/AttachmentButton.vala:138
 msgid "Save"
 msgstr "Uložiť"
+
+#~ msgid "Reply to All"
+#~ msgstr "Odpovedať všetkým"
 
 #, c-format
 #~ msgid "Are you sure you want to open %s?"
