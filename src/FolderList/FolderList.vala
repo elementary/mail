@@ -20,15 +20,14 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.FoldersListView : Gtk.Box {
+public class Mail.FolderList : Gtk.Box {
     public signal void folder_selected (Gee.Map<Mail.Backend.Account, string?> folder_full_name_per_account_uid);
 
-    public Adw.HeaderBar header_bar { get; private set; }
+    public Gtk.HeaderBar header_bar;
 
-    private Gtk.ListStore root_model;
+    private ListStore root_model;
     private Gtk.TreeListModel tree_list;
     private Gtk.SingleSelection selection_model;
-    private Gtk.ListView folder_list_view;
     private static GLib.Settings settings;
 
     static construct {
@@ -51,18 +50,19 @@ public class Mail.FoldersListView : Gtk.Box {
         header_bar.pack_end (compose_button);
         header_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
+        root_model = new ListStore (typeof(AccountItemModel));
         tree_list = new Gtk.TreeListModel (root_model, false, false, create_folder_list_func);
         selection_model = new Gtk.SingleSelection (tree_list);
         var list_factory = new Gtk.SignalListItemFactory ();
 
-        folder_list_view = new Gtk.ListView (selection_model, list_factory);
+        var folder_list_view = new Gtk.ListView (selection_model, list_factory);
 
         var scrolled_window = new Gtk.ScrolledWindow () {
             child = folder_list_view,
             vexpand = true
         };
 
-        orientation = Gtk.Orientation.VERTICAL;
+        orientation = VERTICAL;
         width_request = 100;
         append (header_bar);
         append (scrolled_window);
@@ -72,8 +72,8 @@ public class Mail.FoldersListView : Gtk.Box {
 
             var tree_expander = new Gtk.TreeExpander () {
                 child = new FolderListItem (),
-                indent_for_icon = false
-                //indent_for_depth = false
+                indent_for_icon = false,
+                // indent_for_depth = false
             };
 
             list_item.child = tree_expander;
@@ -85,11 +85,11 @@ public class Mail.FoldersListView : Gtk.Box {
             var expander = (Gtk.TreeExpander) list_item.child;
             expander.list_row = tree_list.get_row (list_item.get_position());
 
-            var item = list_item.item;
+            var item = expander.item;
             if (item is AccountItemModel) {
-                ((AccountItemModel)expander.child).bind_account (item);
+                ((FolderListItem)expander.child).bind_account ((AccountItemModel)item);
             } else if (item is FolderItemModel) {
-                ((FolderItemModel)expander.child).bind_folder (item);
+                ((FolderListItem)expander.child).bind_folder ((FolderItemModel)item);
             }
         });
 

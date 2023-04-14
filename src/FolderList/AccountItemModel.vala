@@ -21,15 +21,19 @@
  */
 
 public class Mail.AccountItemModel : Object {
-    public Mail.Backend.Account account { get; construct; }
-
     public signal void loaded ();
 
     public string name;
     public ListStore folder_list;
 
+    public Mail.Backend.Account account { get; construct; }
+
     private GLib.Cancellable connect_cancellable;
     private unowned Camel.OfflineStore offlinestore;
+
+    public AccountItemModel (Mail.Backend.Account account) {
+        Object (account: account);
+    }
 
     construct {
         connect_cancellable = new GLib.Cancellable ();

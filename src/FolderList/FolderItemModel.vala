@@ -39,8 +39,8 @@ public class Mail.FolderItemModel : Object {
 
     construct {
         name = folder_info.display_name;
-        full_name = folder_info.full_name;
         unread = folder_info.unread;
+        full_name = folder_info.full_name;
 
         folder_list = new ListStore (typeof(FolderItemModel));
 
