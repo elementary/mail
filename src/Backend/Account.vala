@@ -20,9 +20,32 @@
 
 public class Mail.Backend.Account : GLib.Object {
     public Camel.Service service { get; construct; }
+    public bool local_only { get; set; default = false; }
+
     public Account (Camel.Service service) {
         Object (service: service);
     }
+
+    public async void manage_connection (bool online) {
+        var offlinestore = (Camel.OfflineStore)service;
+
+        if (!local_only && online) {
+            try {
+                yield offlinestore.set_online (true, GLib.Priority.DEFAULT, null);
+                yield offlinestore.synchronize (false, GLib.Priority.DEFAULT, null);
+            } catch (Error e) {
+                critical (e.message);
+            }
+            return;
+        }
+
+        try {
+            yield offlinestore.set_online (false, GLib.Priority.DEFAULT, null);
+        } catch (Error e) {
+            critical (e.message);
+        }
+    }
+
     public static uint hash (Mail.Backend.Account account) {
         return GLib.str_hash (account.service.uid);
     }
