@@ -84,9 +84,33 @@ public class Mail.ConversationList : Gtk.Box {
             valign = Gtk.Align.CENTER
         };
 
+        hide_read_switch = new Granite.SwitchModelButton (_("Hide read conversations"));
+
+        hide_unstarred_switch = new Granite.SwitchModelButton (_("Hide unstarred conversations"));
+
+        var filter_menu_popover_box = new Gtk.Box (VERTICAL, 0) {
+            margin_bottom = 3,
+            margin_top = 3
+        };
+        filter_menu_popover_box.add (hide_read_switch);
+        filter_menu_popover_box.add (hide_unstarred_switch);
+        filter_menu_popover_box.show_all ();
+
+        var filter_popover = new Gtk.Popover (null) {
+            child = filter_menu_popover_box
+        };
+
+        filter_button = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("mail-filter-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            popover = filter_popover,
+            tooltip_text = _("Filter Conversations"),
+            valign = Gtk.Align.CENTER
+        };
+
         search_header = new Hdy.HeaderBar () {
             custom_title = search_entry
         };
+        search_header.pack_end (filter_button);
         search_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var scrolled_window = new Gtk.ScrolledWindow (null, null) {
@@ -119,31 +143,8 @@ public class Mail.ConversationList : Gtk.Box {
         refresh_stack.add_named (refresh_spinner, "spinner");
         refresh_stack.visible_child = refresh_button;
 
-        hide_read_switch = new Granite.SwitchModelButton (_("Hide read conversations"));
-
-        hide_unstarred_switch = new Granite.SwitchModelButton (_("Hide unstarred conversations"));
-
-        var filter_menu_popover_box = new Gtk.Box (VERTICAL, 0) {
-            margin_bottom = 3,
-            margin_top = 3
-        };
-        filter_menu_popover_box.add (hide_read_switch);
-        filter_menu_popover_box.add (hide_unstarred_switch);
-        filter_menu_popover_box.show_all ();
-
-        var filter_popover = new Gtk.Popover (null) {
-            child = filter_menu_popover_box
-        };
-
-        filter_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("mail-filter-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
-            popover = filter_popover,
-            tooltip_text = _("Filter Conversations")
-        };
-
         var conversation_action_bar = new Gtk.ActionBar ();
         conversation_action_bar.pack_start (refresh_stack);
-        conversation_action_bar.pack_end (filter_button);
         conversation_action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         add (search_header);
