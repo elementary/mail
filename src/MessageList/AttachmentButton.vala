@@ -22,6 +22,11 @@ public class AttachmentButton : Gtk.FlowBoxChild {
     public Camel.MimePart mime_part { get; construct; }
     public unowned GLib.Cancellable loading_cancellable { get; construct; }
 
+    private const string ACTION_GROUP_PREFIX = "attachmentbutton";
+    private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
+    private const string ACTION_OPEN = "open";
+    private const string ACTION_SAVE_AS = "save-as";
+
     private Gtk.Image preview_image;
     private Gtk.Label name_label;
     private Gtk.Label size_label;
@@ -33,18 +38,31 @@ public class AttachmentButton : Gtk.FlowBoxChild {
     }
 
     construct {
-        margin = 6;
+        margin_top = 6;
+        margin_bottom = 6;
+        margin_start = 6;
+        margin_end = 6;
+
+        var open_action = new SimpleAction (ACTION_OPEN, null);
+        open_action.activate.connect (() => activate ());
+        var save_as_action = new SimpleAction (ACTION_SAVE_AS, null);
+        save_as_action.activate.connect (on_save_as);
+
+        var actions = new SimpleActionGroup ();
+        actions.add_action (open_action);
+        actions.add_action (save_as_action);
+        insert_action_group (ACTION_GROUP_PREFIX, actions);
+
+        var context_menu_model = new Menu ();
+        context_menu_model.append (_("Open"), ACTION_PREFIX + ACTION_OPEN);
+        context_menu_model.append (_("Save As…"), ACTION_PREFIX + ACTION_SAVE_AS);
+
+        var menu = new Gtk.Menu.from_model (context_menu_model);
+
         var event_box = new Gtk.EventBox ();
         event_box.events |= Gdk.EventMask.BUTTON_PRESS_MASK;
         event_box.button_press_event.connect ((event) => {
             if (event.button == Gdk.BUTTON_SECONDARY) {
-                var item_open = new Gtk.MenuItem.with_label (_("Open"));
-                item_open.activate.connect (() => activate ());
-                var item_save = new Gtk.MenuItem.with_label (_("Save As…"));
-                item_save.activate.connect (() => save_as_activated ());
-                var menu = new Gtk.Menu ();
-                menu.add (item_open);
-                menu.add (item_save);
                 menu.attach_widget = this;
                 menu.show_all ();
                 menu.popup_at_pointer (event);
@@ -55,22 +73,29 @@ public class AttachmentButton : Gtk.FlowBoxChild {
             return true;
         });
 
-        var grid = new Gtk.Grid ();
-        grid.margin = 6;
-        grid.column_spacing = 6;
+        var grid = new Gtk.Grid () {
+            margin_top = 6,
+            margin_bottom = 6,
+            margin_start = 6,
+            margin_end = 6,
+            column_spacing = 6
+        };
 
         var mime_type = mime_part.get_content_type ().simple ();
         var glib_type = GLib.ContentType.from_mime_type (mime_type);
         var content_icon = GLib.ContentType.get_icon (glib_type);
 
-        preview_image = new Gtk.Image.from_gicon (content_icon, Gtk.IconSize.DND);
-        preview_image.valign = Gtk.Align.CENTER;
+        preview_image = new Gtk.Image.from_gicon (content_icon, Gtk.IconSize.DND) {
+            valign = Gtk.Align.CENTER
+        };
 
-        name_label = new Gtk.Label (mime_part.get_filename ());
-        name_label.xalign = 0;
+        name_label = new Gtk.Label (mime_part.get_filename ()) {
+            xalign = 0
+        };
 
-        size_label = new Gtk.Label (null);
-        size_label.xalign = 0;
+        size_label = new Gtk.Label (null) {
+            xalign = 0
+        };
         size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         new Thread<void*> (null, () => {
@@ -104,7 +129,7 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         show_all ();
     }
 
-    private void save_as_activated () {
+    private void on_save_as () {
         Gtk.Window? parent_window = get_toplevel () as Gtk.Window;
         var chooser = new Gtk.FileChooserNative (
             null,

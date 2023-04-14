@@ -1,4 +1,5 @@
 src/Application.vala
+src/Composer.vala
 src/InboxMonitor.vala
 src/MainWindow.vala
 src/Utils.vala
@@ -7,9 +8,6 @@ src/WelcomeView.vala
 src/Backend/Account.vala
 src/Backend/Session.vala
 src/Backend/ContactManager.vala
-src/Composer/ComposerWidget.vala
-src/Composer/ComposerWindow.vala
-src/Composer/InlineComposer.vala
 src/ConversationList/ConversationList.vala
 src/ConversationList/ConversationListItem.vala
 src/Dialogs/InsertLinkDialog.vala
