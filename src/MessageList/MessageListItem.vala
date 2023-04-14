@@ -204,12 +204,20 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         starred_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var upper_section = new Menu ();
-        upper_section.append (_("Reply"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY + """("%s")""".printf (message_info.uid));
-        upper_section.append (_("Reply to All"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL + """("%s")""".printf (message_info.uid));
-        upper_section.append (_("Forward"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD + """("%s")""".printf (message_info.uid));
+        upper_section.append (_("Reply"), Action.print_detailed_name (
+            MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY, new Variant.string (message_info.uid)
+        ));
+        upper_section.append (_("Reply All"), Action.print_detailed_name (
+            MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL, new Variant.string (message_info.uid)
+        ));
+        upper_section.append (_("Forward"), Action.print_detailed_name (
+            MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD, new Variant.string (message_info.uid)
+        ));
 
         var lower_section = new Menu ();
-        lower_section.append (_("Print…"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_PRINT + """("%s")""".printf (message_info.uid));
+        lower_section.append (_("Print…"), Action.print_detailed_name (
+            MainWindow.ACTION_PREFIX + MainWindow.ACTION_PRINT, new Variant.string (message_info.uid)
+        ));
 
         var actions_menu = new Menu ();
         actions_menu.append_section (null, upper_section);
@@ -224,7 +232,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             margin_top = 6,
             valign = START,
             halign = END,
-            popover = actions_popover
+            menu_model = actions_menu,
+            use_popover = false
         };
         actions_menu_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
