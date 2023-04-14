@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-13 18:46+0000\n"
+"POT-Creation-Date: 2023-04-14 11:53+0000\n"
 "PO-Revision-Date: 2023-03-30 14:59+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
@@ -23,145 +23,145 @@ msgstr ""
 "X-Generator: Weblate 4.16.4\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/Composer.vala:89 src/MessageList/MessageListItem.vala:100
+#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:100
 msgid "From:"
 msgstr "De:"
 
-#: src/Composer.vala:107 src/MessageList/MessageListItem.vala:106
+#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:106
 msgid "To:"
 msgstr "Per a:"
 
-#: src/Composer.vala:112 src/MessageList/MessageListItem.vala:112
+#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:112
 msgid "Subject:"
 msgstr "Assumpte:"
 
-#: src/Composer.vala:121
+#: src/Composer.vala:119
 msgid "Cc"
 msgstr "A/c"
 
-#: src/Composer.vala:123
+#: src/Composer.vala:121
 msgid "Bcc"
 msgstr "C/o"
 
-#: src/Composer.vala:130 src/MessageList/MessageListItem.vala:146
+#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:146
 msgid "Cc:"
 msgstr "A/c:"
 
-#: src/Composer.vala:148
+#: src/Composer.vala:146
 msgid "Bcc:"
 msgstr "C/o:"
 
-#: src/Composer.vala:200
+#: src/Composer.vala:198
 msgid "Bold"
 msgstr "Negreta"
 
-#: src/Composer.vala:207
+#: src/Composer.vala:205
 msgid "Italic"
 msgstr "Cursiva"
 
-#: src/Composer.vala:214
+#: src/Composer.vala:212
 msgid "Underline"
 msgstr "Subratllat"
 
-#: src/Composer.vala:221
+#: src/Composer.vala:219
 msgid "Strikethrough"
 msgstr "Ratllat"
 
-#: src/Composer.vala:226
+#: src/Composer.vala:224
 msgid "Remove formatting"
 msgstr "Suprimeix-ne la formatació"
 
-#: src/Composer.vala:238 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer.vala:236 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "Insereix un enllaç"
 
-#: src/Composer.vala:268
+#: src/Composer.vala:266
 msgid "Delete draft"
 msgstr "Suprimeix l'esborrany"
 
-#: src/Composer.vala:273
+#: src/Composer.vala:271
 msgid "Attach file"
 msgstr "Adjunta-hi un fitxer"
 
-#: src/Composer.vala:279
+#: src/Composer.vala:277
 msgid "Send"
 msgstr "Envia"
 
-#: src/Composer.vala:315
+#: src/Composer.vala:313
 msgid "New Message"
 msgstr "Missatge nou"
 
-#: src/Composer.vala:465
+#: src/Composer.vala:459
 msgid "Choose a file"
 msgstr "Escolliu un fitxer"
 
-#: src/Composer.vala:468
+#: src/Composer.vala:462
 msgid "Attach"
 msgstr "Adjunta"
 
-#: src/Composer.vala:469 src/Composer.vala:704
+#: src/Composer.vala:463 src/Composer.vala:696
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
 msgstr "Canceŀla"
 
-#: src/Composer.vala:614
+#: src/Composer.vala:606
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e %b de %Y a les %-H.%M"
 
-#: src/Composer.vala:644
+#: src/Composer.vala:636
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s, %2$s va escriure el següent:"
 
-#: src/Composer.vala:648
+#: src/Composer.vala:640
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Missatge reenviat ----------"
 
-#: src/Composer.vala:650
+#: src/Composer.vala:642
 #, c-format
 msgid "From: %s<br/>"
 msgstr "De: %s<br/>"
 
-#: src/Composer.vala:651
+#: src/Composer.vala:643
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Assumpte: %s<br/>"
 
-#: src/Composer.vala:652
+#: src/Composer.vala:644
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Data: %s<br/>"
 
-#: src/Composer.vala:653
+#: src/Composer.vala:645
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Per a: %s<br/>"
 
-#: src/Composer.vala:655
+#: src/Composer.vala:647
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "A/c: %s<br/>"
 
-#: src/Composer.vala:695
+#: src/Composer.vala:687
 msgid "Permanently delete this draft?"
 msgstr "Voleu suprimir permanentment aquest esborrany?"
 
-#: src/Composer.vala:696
+#: src/Composer.vala:688
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "No podreu desfer aquesta acció ni recuperar l'esborrany un cop suprimit."
 
-#: src/Composer.vala:706
+#: src/Composer.vala:698
 msgid "Delete Draft"
 msgstr "Suprimeix l'esborrany"
 
-#: src/Composer.vala:730
+#: src/Composer.vala:722
 msgid "Send without subject?"
 msgstr "Voleu enviar-lo sense assumpte?"
 
-#: src/Composer.vala:731
+#: src/Composer.vala:723
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -169,19 +169,19 @@ msgstr ""
 "Aquest missatge té un camp d'assumpte buit. És possible que el destinatari "
 "no pugui inferir-ne l’abast o la importància."
 
-#: src/Composer.vala:737
+#: src/Composer.vala:729
 msgid "Don't Send"
 msgstr "No l'enviïs"
 
-#: src/Composer.vala:739
+#: src/Composer.vala:731
 msgid "Send Anyway"
 msgstr "Envia'l tanmateix"
 
-#: src/Composer.vala:764
+#: src/Composer.vala:756
 msgid "Sent message was not saved"
 msgstr "No s'ha desat el missatge enviat."
 
-#: src/Composer.vala:765
+#: src/Composer.vala:757
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -189,19 +189,19 @@ msgstr ""
 "El missatge s'ha enviat, però no se n'ha desat una còpia a la carpeta "
 "d'enviats."
 
-#: src/Composer.vala:780
+#: src/Composer.vala:772
 msgid "Unable to send message"
 msgstr "No es pot enviar el missatge."
 
-#: src/Composer.vala:781
+#: src/Composer.vala:773
 msgid "There was an unexpected error while sending your message."
 msgstr "Hi ha hagut un error inesperat a l'hora de d'enviar el missatge."
 
-#: src/Composer.vala:1001
+#: src/Composer.vala:993
 msgid "Unable to save draft"
 msgstr "No es pot desar l'esborrany."
 
-#: src/Composer.vala:1002
+#: src/Composer.vala:994
 msgid "There was an unexpected error while saving your draft."
 msgstr "Hi ha hagut un error inesperat a l'hora de desar l'esborrany."
 
@@ -258,45 +258,45 @@ msgstr "Comptes en línia…"
 msgid "Search Mail"
 msgstr "Cerca correu"
 
-#: src/ConversationList/ConversationList.vala:105
-msgid "Fetch new messages"
-msgstr "Obtén missatges nous"
-
-#: src/ConversationList/ConversationList.vala:112
-msgid "Fetching new messages…"
-msgstr "S'obtenen missatges nous…"
-
-#: src/ConversationList/ConversationList.vala:122
+#: src/ConversationList/ConversationList.vala:87
 msgid "Hide read conversations"
 msgstr "Amaga les converses llegides"
 
-#: src/ConversationList/ConversationList.vala:124
+#: src/ConversationList/ConversationList.vala:89
 msgid "Hide unstarred conversations"
 msgstr "Amaga les converses no destacades"
 
-#: src/ConversationList/ConversationList.vala:141
+#: src/ConversationList/ConversationList.vala:106
 msgid "Filter Conversations"
 msgstr "Filtra les converses"
 
-#: src/ConversationList/ConversationList.vala:581
+#: src/ConversationList/ConversationList.vala:129
+msgid "Fetch new messages"
+msgstr "Obtén missatges nous"
+
+#: src/ConversationList/ConversationList.vala:136
+msgid "Fetching new messages…"
+msgstr "S'obtenen missatges nous…"
+
+#: src/ConversationList/ConversationList.vala:582
 msgid "Move To Trash"
 msgstr "Mou a la paperera"
 
-#: src/ConversationList/ConversationList.vala:590
+#: src/ConversationList/ConversationList.vala:591
 msgid "Mark As Unread"
 msgstr "Marca com a no llegit"
 
-#: src/ConversationList/ConversationList.vala:598
+#: src/ConversationList/ConversationList.vala:599
 #: src/MessageList/MessageList.vala:84
 msgid "Mark as Read"
 msgstr "Marca com a llegit"
 
-#: src/ConversationList/ConversationList.vala:608
+#: src/ConversationList/ConversationList.vala:609
 #: src/MessageList/MessageList.vala:90
 msgid "Star"
 msgstr "Destaca"
 
-#: src/ConversationList/ConversationList.vala:616
+#: src/ConversationList/ConversationList.vala:617
 #: src/MessageList/MessageList.vala:96
 msgid "Unstar"
 msgstr "No ho destaquis"
