@@ -1,3 +1,12 @@
+.titlebar + scrolledwindow undershoot.top {
+    background:
+        linear-gradient(
+            @borders,
+            alpha(black, 0.05) 1px,
+            alpha(black, 0.0) 0.444rem
+        );
+}
+
 .card.collapsed {
     margin-bottom: -64px;
 }
