@@ -98,6 +98,7 @@ public class Mail.FoldersListView : Gtk.Grid {
     private void add_account (Mail.Backend.Account account) {
         var account_item = new Mail.AccountSourceItem (account);
         source_list.root.add (account_item);
+        print ("add");
         account_item.load.begin ((obj, res) => {
             account_item.load.end (res);
 

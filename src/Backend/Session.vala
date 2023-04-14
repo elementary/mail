@@ -41,12 +41,13 @@ public class Mail.Backend.Session : Camel.Session {
     construct {
         Camel.init (E.get_user_data_dir (), false);
         accounts = new Gee.LinkedList<Account> ();
-        set_network_monitor (E.NetworkMonitor.get_default ());
-        set_online (false);
         user_alert.connect ((service, type, message) => { warning (message); });
 
         unowned var network_monitor = GLib.NetworkMonitor.get_default ();
-        network_monitor.network_changed.connect (manage_connection);
+        network_monitor.network_changed.connect (() => {
+            set_online (network_monitor.network_available);
+        });
+        set_online (network_monitor.network_available);
     }
 
     public async void start () {
@@ -70,23 +71,6 @@ public class Mail.Backend.Session : Camel.Session {
                 add_source (source_item);
             }
         });
-
-        manage_connection ();
-    }
-
-    public void manage_connection () {
-        if (GLib.NetworkMonitor.get_default ().network_available) {
-            set_online (true);
-            foreach (var account in accounts) {
-                account.manage_connection.begin (true);
-            }
-            return;
-        }
-
-        foreach (var account in accounts) {
-            account.manage_connection.begin (false);
-        }
-        set_online (false);
     }
 
     public override bool authenticate_sync (Camel.Service service, string? mechanism, GLib.Cancellable? cancellable = null) throws GLib.Error {

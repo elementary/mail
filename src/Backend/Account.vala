@@ -20,16 +20,23 @@
 
 public class Mail.Backend.Account : GLib.Object {
     public Camel.Service service { get; construct; }
-    public bool local_only { get; set; default = false; }
 
     public Account (Camel.Service service) {
         Object (service: service);
     }
 
+    construct {
+        unowned var network_manager = GLib.NetworkMonitor.get_default ();
+        network_manager.network_changed.connect (() => {
+            manage_connection.begin (network_manager.network_available);
+        });
+        manage_connection.begin (network_manager.network_available);
+    }
+
     public async void manage_connection (bool online) {
         var offlinestore = (Camel.OfflineStore)service;
 
-        if (!local_only && online) {
+        if (online) {
             try {
                 yield offlinestore.set_online (true, GLib.Priority.DEFAULT, null);
                 yield offlinestore.synchronize (false, GLib.Priority.DEFAULT, null);
