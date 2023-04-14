@@ -54,9 +54,9 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private const ActionEntry[] ACTION_ENTRIES = {
         {ACTION_COMPOSE_MESSAGE, on_compose_message },
         {ACTION_REFRESH, on_refresh },
-        {ACTION_REPLY, on_reply, "s" },
-        {ACTION_REPLY_ALL, on_reply_all, "s" },
-        {ACTION_FORWARD, on_forward, "s" },
+        {ACTION_REPLY, action_compose, "s" },
+        {ACTION_REPLY_ALL, action_compose, "s" },
+        {ACTION_FORWARD, action_compose, "s" },
         {ACTION_PRINT, on_print, "s" },
         {ACTION_MARK, null }, // Stores enabled state only
         {ACTION_MARK_READ, on_mark_read },
@@ -223,16 +223,18 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         conversation_list.mark_unstar_selected_messages ();
     }
 
-    private void on_reply (SimpleAction action, Variant? parameter) {
-        message_list.compose.begin (Composer.Type.REPLY, parameter);
-    }
-
-    private void on_reply_all (SimpleAction action, Variant? parameter) {
-        message_list.compose.begin (Composer.Type.REPLY_ALL, parameter);
-    }
-
-    private void on_forward (SimpleAction action, Variant? parameter) {
-        message_list.compose.begin (Composer.Type.FORWARD, parameter);
+    private void action_compose (SimpleAction action, Variant? parameter) {
+        switch (action.name) {
+            case ACTION_REPLY:
+                message_list.compose.begin (Composer.Type.REPLY, parameter);
+                break;
+            case ACTION_REPLY_ALL:
+                message_list.compose.begin (Composer.Type.REPLY_ALL, parameter);
+                break;
+            case ACTION_FORWARD:
+                message_list.compose.begin (Composer.Type.FORWARD, parameter);
+                break;
+        }
     }
 
     private void on_print (SimpleAction action, Variant? parameter) {
