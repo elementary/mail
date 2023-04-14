@@ -48,9 +48,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     public const string ACTION_ARCHIVE = "archive";
     public const string ACTION_MOVE_TO_TRASH = "trash";
     public const string ACTION_FULLSCREEN = "full-screen";
-    public const string ACTION_REPLY_WITH_DEFAULT_VALUE = """reply("")""";
-    public const string ACTION_REPLY_ALL_WITH_DEFAULT_VALUE = """reply-all("")""";
-    public const string ACTION_FORWARD_WITH_DEFAULT_VALUE = """forward("")""";
 
     public static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -84,9 +81,9 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     static construct {
         action_accelerators[ACTION_COMPOSE_MESSAGE] = "<Control>N";
         action_accelerators[ACTION_REFRESH] = "F12";
-        action_accelerators[ACTION_REPLY_WITH_DEFAULT_VALUE] = "<Control>R";
-        action_accelerators[ACTION_REPLY_ALL_WITH_DEFAULT_VALUE] = "<Control><Shift>R";
-        action_accelerators[ACTION_FORWARD_WITH_DEFAULT_VALUE] = "<Ctrl><Shift>F";
+        action_accelerators[ACTION_REPLY + "::"] = "<Control>R";
+        action_accelerators[ACTION_REPLY_ALL + "::"] = "<Control><Shift>R";
+        action_accelerators[ACTION_FORWARD + "::"] = "<Ctrl><Shift>F";
         action_accelerators[ACTION_MARK_READ] = "<Ctrl><Shift>i";
         action_accelerators[ACTION_MARK_STAR] = "<Ctrl>l";
         action_accelerators[ACTION_MARK_UNREAD] = "<Ctrl><Shift>u";
