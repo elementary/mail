@@ -174,7 +174,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
-        session.account_added.connect (() => {
+        var account_added_handler = session.account_added.connect (() => {
             placeholder_stack.visible_child = paned_end;
             get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
         });
@@ -196,6 +196,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         destroy.connect (() => {
             session.disconnect (account_removed_handler);
+            session.disconnect (account_added_handler);
             destroy ();
         });
     }
