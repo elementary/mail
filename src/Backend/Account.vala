@@ -27,8 +27,15 @@ public class Mail.Backend.Account : GLib.Object {
 
     construct {
         unowned var network_manager = GLib.NetworkMonitor.get_default ();
+        uint timeout_id = 0;
         network_manager.network_changed.connect (() => {
-            manage_connection.begin (network_manager.network_available);
+            if (timeout_id == 0) {
+                timeout_id = GLib.Timeout.add_seconds (1, () => {
+                    manage_connection.begin (network_manager.network_available);
+                    timeout_id = 0;
+                    return Source.REMOVE;
+                });
+            }
         });
     }
 
