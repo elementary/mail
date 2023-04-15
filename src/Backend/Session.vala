@@ -126,9 +126,17 @@ public class Mail.Backend.Session : Camel.Session {
             /* We need a password, preferrably one cached in
              * the keyring or else by interactive user prompt. */
 
-            var credentials_prompter = new E.CredentialsPrompter (registry);
-            credentials_prompter.set_auto_prompt (true);
-            return credentials_prompter.loop_prompt_sync (source, E.CredentialsPrompterPromptFlags.ALLOW_SOURCE_SAVE, (prompter, source, credentials, out out_authenticated, cancellable) => try_credentials_sync (prompter, source, credentials, out out_authenticated, cancellable, service, mechanism));
+            try {
+                var credentials_provider = new E.SourceCredentialsProvider (registry);
+                E.NamedParameters out_credentials;
+                credentials_provider.lookup_sync (source, cancellable, out out_credentials);
+                bool out_authenticated;
+                try_credentials_sync (credentials_provider, source, out_credentials, out out_authenticated, cancellable, service, mechanism);
+                return out_authenticated;
+            } catch (Error e) {
+                critical (e.message);
+                return false;
+            }
         } else {
             return (result == Camel.AuthenticationResult.ACCEPTED);
         }
@@ -174,7 +182,7 @@ public class Mail.Backend.Session : Camel.Session {
         return success;
     }
 
-    public bool try_credentials_sync (E.CredentialsPrompter prompter, E.Source source, E.NamedParameters credentials, out bool out_authenticated, GLib.Cancellable? cancellable, Camel.Service service, string? mechanism) throws GLib.Error {
+    public bool try_credentials_sync (E.SourceCredentialsProvider provider, E.Source source, E.NamedParameters credentials, out bool out_authenticated, GLib.Cancellable? cancellable, Camel.Service service, string? mechanism) throws GLib.Error {
         string credential_name = null;
 
         if (source.has_extension (E.SOURCE_EXTENSION_AUTHENTICATION)) {
@@ -194,7 +202,7 @@ public class Mail.Backend.Session : Camel.Session {
         out_authenticated = (result == Camel.AuthenticationResult.ACCEPTED);
 
         if (out_authenticated) {
-            var credentials_source = prompter.get_provider ().ref_credentials_source (source);
+            var credentials_source = provider.ref_credentials_source (source);
 
             if (credentials_source != null) {
                 credentials_source.invoke_authenticate_sync (credentials);
