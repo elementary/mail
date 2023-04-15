@@ -5,7 +5,7 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class Mail.Composer : Hdy.ApplicationWindow {
+public class Mail.Composer : Gtk.ApplicationWindow {
     public signal void finished ();
 
     private const string ACTION_GROUP_PREFIX = "win";
@@ -36,7 +36,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     private Gtk.Revealer cc_revealer;
     private Gtk.Revealer bcc_revealer;
     private Gtk.ToggleButton cc_button;
-    private Granite.Widgets.OverlayBar message_url_overlay;
+    private Granite.OverlayBar message_url_overlay;
     private Gtk.ComboBoxText from_combo;
     private Gtk.Entry subject_val;
 
@@ -87,17 +87,17 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         application.set_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH), {"<Control>percent"});
         application.set_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_UNDERLINE, ACTION_UNDERLINE), {"<Control>U"});
 
-        var headerbar = new Hdy.HeaderBar () {
+        var headerbar = new Gtk.HeaderBar () {
             has_subtitle = false,
             show_close_button = true
         };
-        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-        headerbar.get_style_context ().add_class ("default-decoration");
+        headerbar.add_css_class (Gtk.STYLE_CLASS_FLAT);
+        headerbar.add_css_class ("default-decoration");
 
         var from_label = new Gtk.Label (_("From:")) {
             xalign = 1
         };
-        from_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        from_label.add_css_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         from_combo = new Gtk.ComboBoxText () {
             hexpand = true
@@ -116,12 +116,12 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         var to_label = new Gtk.Label (_("To:")) {
             xalign = 1
         };
-        to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        to_label.add_css_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         var subject_label = new Gtk.Label (_("Subject:")) {
             xalign = 1
         };
-        subject_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        subject_label.add_css_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         to_val = new Gtk.Entry () {
             hexpand = true
@@ -139,7 +139,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         var cc_label = new Gtk.Label (_("Cc:")) {
             xalign = 1
         };
-        cc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        cc_label.add_css_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         cc_val = new Gtk.Entry () {
             hexpand = true
@@ -157,7 +157,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         var bcc_label = new Gtk.Label (_("Bcc:")) {
             xalign = 1
         };
-        bcc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        bcc_label.add_css_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         bcc_val = new Gtk.Entry () {
             hexpand = true
@@ -245,7 +245,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         };
 
         var formatting_buttons = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-        formatting_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+        formatting_buttons.add_css_class (Gtk.STYLE_CLASS_LINKED);
         formatting_buttons.add (bold);
         formatting_buttons.add (italic);
         formatting_buttons.add (underline);
@@ -282,7 +282,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             homogeneous = true,
             selection_mode = Gtk.SelectionMode.NONE
         };
-        attachment_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        attachment_box.add_css_class (Gtk.STYLE_CLASS_VIEW);
 
         var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU) {
             action_name = ACTION_PREFIX + ACTION_DISCARD,
@@ -313,13 +313,13 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 application.get_accels_for_action (ACTION_PREFIX + ACTION_SEND)
             )
         };
-        send.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        send.add_css_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         var action_bar = new Gtk.ActionBar () {
             // Workaround styling issue
             margin_top = 1
         };
-        action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        action_bar.add_css_class (Gtk.STYLE_CLASS_FLAT);
         action_bar.pack_start (discard);
         action_bar.pack_start (attach);
         action_bar.pack_end (send);
@@ -726,7 +726,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         discard_dialog.add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
 
         var discard_anyway = discard_dialog.add_button (_("Delete Draft"), Gtk.ResponseType.ACCEPT);
-        discard_anyway.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        discard_anyway.add_css_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
         discard_dialog.present ();
         discard_dialog.response.connect ((response) => {
@@ -759,7 +759,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             no_subject_dialog.add_button (_("Don't Send"), Gtk.ResponseType.CANCEL);
 
             var send_anyway = no_subject_dialog.add_button (_("Send Anyway"), Gtk.ResponseType.ACCEPT);
-            send_anyway.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+            send_anyway.add_css_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
             no_subject_dialog.present ();
             no_subject_dialog.response.connect ((response) => {
@@ -926,7 +926,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             };
 
             var size_label = new Gtk.Label ("(%s)".printf (GLib.format_size (info.get_size ())));
-            size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+            size_label.add_css_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
             var remove_button = new Gtk.Button.from_icon_name ("process-stop-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
 
