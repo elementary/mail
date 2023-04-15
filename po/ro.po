@@ -7,12 +7,12 @@
 # CoolGoose <melipse@gmail.com>, 2012
 # Viorel-Cătălin Răpițeanu <rapiteanu.catalin@gmail.com>, 2014.
 # Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>, 2014.
-#: src/MessageList/MessageListItem.vala:426
+#: src/MessageList/MessageListItem.vala:422
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-14 11:53+0000\n"
+"POT-Creation-Date: 2023-04-14 17:57+0000\n"
 "PO-Revision-Date: 2017-01-21 10:51+0000\n"
 "Last-Translator: Marius Albina <marius.albina@gmail.com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
@@ -250,11 +250,11 @@ msgstr[0] "Arată întotdeauna de la expeditor"
 msgstr[1] "Arată întotdeauna de la expeditor"
 msgstr[2] "Arată întotdeauna de la expeditor"
 
-#: src/MainWindow.vala:75
+#: src/MainWindow.vala:77
 msgid "Mail"
 msgstr "Poştă electronică"
 
-#: src/MainWindow.vala:243
+#: src/MainWindow.vala:251
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -262,7 +262,7 @@ msgstr[0] "Nici o conversație selectată."
 msgstr[1] "Nici o conversație selectată."
 msgstr[2] "Nici o conversație selectată."
 
-#: src/MainWindow.vala:255
+#: src/MainWindow.vala:263
 #, fuzzy
 msgid "Undo"
 msgstr "_Anulează"
@@ -329,18 +329,18 @@ msgid "Mark As Unread"
 msgstr "Marchează ca necitit"
 
 #: src/ConversationList/ConversationList.vala:599
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "Marchează ca citit"
 
 #: src/ConversationList/ConversationList.vala:609
-#: src/MessageList/MessageList.vala:90
+#: src/MessageList/MessageList.vala:93
 #, fuzzy
 msgid "Star"
 msgstr "Marchează cu o _stea"
 
 #: src/ConversationList/ConversationList.vala:617
-#: src/MessageList/MessageList.vala:96
+#: src/MessageList/MessageList.vala:99
 #, fuzzy
 msgid "Unstar"
 msgstr "Eliminați _steaua"
@@ -420,39 +420,39 @@ msgstr ""
 msgid "Menu"
 msgstr "Meniu"
 
-#: src/MessageList/MessageList.vala:55 src/MessageList/MessageListItem.vala:206
+#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Răspunde"
 
-#: src/MessageList/MessageList.vala:63
+#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
 #, fuzzy
 msgid "Reply All"
 msgstr "Răspund_e tuturor"
 
-#: src/MessageList/MessageList.vala:71 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Redirecţionează"
 
-#: src/MessageList/MessageList.vala:78
+#: src/MessageList/MessageList.vala:81
 msgid "Mark as Unread"
 msgstr "Marchează ca necitit"
 
-#: src/MessageList/MessageList.vala:109
+#: src/MessageList/MessageList.vala:112
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Marchează conversaţia"
 
-#: src/MessageList/MessageList.vala:117
+#: src/MessageList/MessageList.vala:120
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Mută conversațiile"
 
-#: src/MessageList/MessageList.vala:125
+#: src/MessageList/MessageList.vala:128
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Mută conversațiile"
 
-#: src/MessageList/MessageList.vala:152
+#: src/MessageList/MessageList.vala:155
 #, fuzzy
 msgid "No Message Selected"
 msgstr "Nici o conversație selectată."
@@ -464,20 +464,16 @@ msgid "%s at %s"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:377
 msgid "Unstar message"
 msgstr "Mesaj fără stea"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:372
+#: src/MessageList/MessageListItem.vala:373
 msgid "Star message"
 msgstr "Mesaj cu stea"
 
-#: src/MessageList/MessageListItem.vala:209
-msgid "Reply to All"
-msgstr "Răspunde tuturor"
-
-#: src/MessageList/MessageListItem.vala:215
+#: src/MessageList/MessageListItem.vala:218
 msgid "Print…"
 msgstr "Tipărește…"
 
@@ -485,41 +481,41 @@ msgstr "Tipărește…"
 msgid "More"
 msgstr "Mai mult(e)"
 
-#: src/MessageList/MessageListItem.vala:276
+#: src/MessageList/MessageListItem.vala:277
 msgid "Show Images"
 msgstr "Arată imagini"
 
-#: src/MessageList/MessageListItem.vala:277
+#: src/MessageList/MessageListItem.vala:278
 msgid "Always Show from Sender"
 msgstr "Arată întotdeauna de la expeditor"
 
-#: src/MessageList/MessageListItem.vala:282
+#: src/MessageList/MessageListItem.vala:283
 msgid "This message contains remote images."
 msgstr "Acest mesaj conține imagini de pe un alt server."
 
-#: src/MessageList/MessageListItem.vala:319
+#: src/MessageList/MessageListItem.vala:320
 msgid "This message contains one or more attachments"
 msgstr "Acest mesaj conține unul sau mai multe ataşamente"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:403
+#: src/MessageList/MessageListItem.vala:399
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Mesaj nou"
 
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:421
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
 msgstr "Nu s-a putut valida:\n"
 
-#: src/MessageList/MessageListItem.vala:648
+#: src/MessageList/MessageListItem.vala:644
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:649
+#: src/MessageList/MessageListItem.vala:645
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -527,7 +523,7 @@ msgstr ""
 "Atașamentele pot cauza probleme sistemului dacă sunt deschise. Deschide doar "
 "fișierele din surse sigure."
 
-#: src/MessageList/MessageListItem.vala:656
+#: src/MessageList/MessageListItem.vala:652
 msgid "Open Anyway"
 msgstr "Deschide oricum"
 
@@ -547,6 +543,9 @@ msgstr ""
 #, fuzzy
 msgid "Save"
 msgstr "_Salvează"
+
+#~ msgid "Reply to All"
+#~ msgstr "Răspunde tuturor"
 
 #, c-format
 #~ msgid "Are you sure you want to open %s?"
