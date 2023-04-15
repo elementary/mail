@@ -41,7 +41,7 @@ public class Mail.Backend.Account : GLib.Object {
                 /* Don't show an error when the network is unavailable as it can be thrown when trying to connect
                    although the internet connection isn't fully available yet or on a rapid change of the connection */
                 if (e is Camel.ServiceError.UNAVAILABLE || e is GLib.IOError.CANCELLED) {
-                    critical (e.message);
+                    debug (e.message);
                 } else {
                     var error_dialog = new Granite.MessageDialog.with_image_from_icon_name (
                         _("Unable to connect"),
