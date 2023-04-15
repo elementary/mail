@@ -333,7 +333,13 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         expanded = false;
         show_all ();
 
-        if (GLib.NetworkMonitor.get_default ().network_available) {
+        unowned var network_monitor = GLib.NetworkMonitor.get_default ();
+        network_monitor.network_changed.connect ((online) => {
+            if (online) {
+                avatar.set_loadable_icon (new GravatarIcon (parsed_address, get_style_context ().get_scale ()));
+            }
+        });
+        if (network_monitor.network_available) {
             avatar.set_loadable_icon (new GravatarIcon (parsed_address, get_style_context ().get_scale ()));
         }
 
