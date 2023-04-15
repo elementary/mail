@@ -6,12 +6,12 @@
 # metalsasi <metalsasi@gmail.com>, 2012.
 # Balázs Úr <urbalazs@gmail.com>, 2014, 2015.
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2014.
-#: src/MessageList/MessageListItem.vala:426
+#: src/MessageList/MessageListItem.vala:422
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-13 18:46+0000\n"
+"POT-Creation-Date: 2023-04-14 17:57+0000\n"
 "PO-Revision-Date: 2023-03-30 14:59+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/"
@@ -24,146 +24,146 @@ msgstr ""
 "X-Generator: Weblate 4.16.4\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/Composer.vala:89 src/MessageList/MessageListItem.vala:100
+#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:100
 msgid "From:"
 msgstr "Feladó:"
 
-#: src/Composer.vala:107 src/MessageList/MessageListItem.vala:106
+#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:106
 msgid "To:"
 msgstr "Címzett:"
 
-#: src/Composer.vala:112 src/MessageList/MessageListItem.vala:112
+#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:112
 msgid "Subject:"
 msgstr "Tárgy:"
 
-#: src/Composer.vala:121
+#: src/Composer.vala:119
 msgid "Cc"
 msgstr "Másolat"
 
-#: src/Composer.vala:123
+#: src/Composer.vala:121
 msgid "Bcc"
 msgstr "Titkos másolat"
 
-#: src/Composer.vala:130 src/MessageList/MessageListItem.vala:146
+#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:146
 msgid "Cc:"
 msgstr "Másolat:"
 
-#: src/Composer.vala:148
+#: src/Composer.vala:146
 msgid "Bcc:"
 msgstr "Titkos másolat:"
 
-#: src/Composer.vala:200
+#: src/Composer.vala:198
 msgid "Bold"
 msgstr "Félkövér"
 
-#: src/Composer.vala:207
+#: src/Composer.vala:205
 msgid "Italic"
 msgstr "Dőlt"
 
-#: src/Composer.vala:214
+#: src/Composer.vala:212
 msgid "Underline"
 msgstr "Aláhúzott"
 
-#: src/Composer.vala:221
+#: src/Composer.vala:219
 msgid "Strikethrough"
 msgstr "Áthúzott"
 
-#: src/Composer.vala:226
+#: src/Composer.vala:224
 msgid "Remove formatting"
 msgstr "Formátum törlése"
 
-#: src/Composer.vala:238 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer.vala:236 src/Dialogs/InsertLinkDialog.vala:63
 msgid "Insert Link"
 msgstr "Link beszúrása"
 
-#: src/Composer.vala:268
+#: src/Composer.vala:266
 msgid "Delete draft"
 msgstr "Piszkozat törlése"
 
-#: src/Composer.vala:273
+#: src/Composer.vala:271
 msgid "Attach file"
 msgstr "Fájl csatolása"
 
-#: src/Composer.vala:279
+#: src/Composer.vala:277
 msgid "Send"
 msgstr "Küldés"
 
-#: src/Composer.vala:315
+#: src/Composer.vala:313
 msgid "New Message"
 msgstr "Új levél"
 
-#: src/Composer.vala:465
+#: src/Composer.vala:459
 msgid "Choose a file"
 msgstr "Válasszon egy fájlt"
 
-#: src/Composer.vala:468
+#: src/Composer.vala:462
 msgid "Attach"
 msgstr "Csatolás"
 
-#: src/Composer.vala:469 src/Composer.vala:704
+#: src/Composer.vala:463 src/Composer.vala:696
 #: src/Dialogs/InsertLinkDialog.vala:61
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
 msgstr "Mégse"
 
-#: src/Composer.vala:614
+#: src/Composer.vala:606
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%Y. %b. %-e., %a %-k:%M-kor"
 
-#: src/Composer.vala:644
+#: src/Composer.vala:636
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s dátummal írta %2$s:"
 
-#: src/Composer.vala:648
+#: src/Composer.vala:640
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Továbbított levél -----------"
 
-#: src/Composer.vala:650
+#: src/Composer.vala:642
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Feladó: %s<br/>"
 
-#: src/Composer.vala:651
+#: src/Composer.vala:643
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Tárgy: %s<br/>"
 
-#: src/Composer.vala:652
+#: src/Composer.vala:644
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Dátum: %s<br/>"
 
-#: src/Composer.vala:653
+#: src/Composer.vala:645
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Címzett: %s<br/>"
 
-#: src/Composer.vala:655
+#: src/Composer.vala:647
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Másolat: %s<br/>"
 
-#: src/Composer.vala:695
+#: src/Composer.vala:687
 msgid "Permanently delete this draft?"
 msgstr "Véglegesen törölni szeretné ezt a piszkozatot?"
 
-#: src/Composer.vala:696
+#: src/Composer.vala:688
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Nem vonhatja vissza ezt a műveletet, nem állíthatja vissza a piszkozatot a "
 "törlés után."
 
-#: src/Composer.vala:706
+#: src/Composer.vala:698
 msgid "Delete Draft"
 msgstr "Piszkozat törlése"
 
-#: src/Composer.vala:730
+#: src/Composer.vala:722
 msgid "Send without subject?"
 msgstr "Küldés tárgy nélkül?"
 
-#: src/Composer.vala:731
+#: src/Composer.vala:723
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -171,19 +171,19 @@ msgstr ""
 "Az üzenet tárgy mezője üres. A fogadó nem biztos, hogy meg tudja ítélni a "
 "besorolását vagy fontosságát."
 
-#: src/Composer.vala:737
+#: src/Composer.vala:729
 msgid "Don't Send"
 msgstr "Ne küldje el"
 
-#: src/Composer.vala:739
+#: src/Composer.vala:731
 msgid "Send Anyway"
 msgstr "Elküldés mindenképp"
 
-#: src/Composer.vala:764
+#: src/Composer.vala:756
 msgid "Sent message was not saved"
 msgstr "Az elküldött üzenet nem lett elmentve"
 
-#: src/Composer.vala:765
+#: src/Composer.vala:757
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -191,19 +191,19 @@ msgstr ""
 "Az üzenet el lett küldve, de nem került mentésre egy másolat az Elküldött "
 "üzenetek mappába."
 
-#: src/Composer.vala:780
+#: src/Composer.vala:772
 msgid "Unable to send message"
 msgstr "Nem sikerült elküldeni az üzenetet"
 
-#: src/Composer.vala:781
+#: src/Composer.vala:773
 msgid "There was an unexpected error while sending your message."
 msgstr "Egy váratlan hiba merült fel az üzenet küldése közben."
 
-#: src/Composer.vala:1001
+#: src/Composer.vala:993
 msgid "Unable to save draft"
 msgstr "Piszkozat mentése sikertelen"
 
-#: src/Composer.vala:1002
+#: src/Composer.vala:994
 msgid "There was an unexpected error while saving your draft."
 msgstr "A piszkozat mentése közben váratlan hiba merült fel."
 
@@ -229,17 +229,17 @@ msgid_plural "%s from %u senders"
 msgstr[0] "%s %u feladótól"
 msgstr[1] "%s %u feladótól"
 
-#: src/MainWindow.vala:75
+#: src/MainWindow.vala:77
 msgid "Mail"
 msgstr "E-mail"
 
-#: src/MainWindow.vala:243
+#: src/MainWindow.vala:251
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Üzenet törölve"
 msgstr[1] "Üzenetek törölve"
 
-#: src/MainWindow.vala:255
+#: src/MainWindow.vala:263
 msgid "Undo"
 msgstr "Visszavonás"
 
@@ -261,46 +261,46 @@ msgstr "Online fiókok…"
 msgid "Search Mail"
 msgstr "Levél keresése"
 
-#: src/ConversationList/ConversationList.vala:105
-msgid "Fetch new messages"
-msgstr "Új üzenetek lekérése"
-
-#: src/ConversationList/ConversationList.vala:112
-msgid "Fetching new messages…"
-msgstr "Új üzenetek lekérése…"
-
-#: src/ConversationList/ConversationList.vala:122
+#: src/ConversationList/ConversationList.vala:87
 msgid "Hide read conversations"
 msgstr "Olvasott beszélgetések elrejtése"
 
-#: src/ConversationList/ConversationList.vala:124
+#: src/ConversationList/ConversationList.vala:89
 msgid "Hide unstarred conversations"
 msgstr "Nem csillagozott beszélgetések elrejtése"
 
-#: src/ConversationList/ConversationList.vala:141
+#: src/ConversationList/ConversationList.vala:106
 msgid "Filter Conversations"
 msgstr "Beszélgetések szűrése"
 
-#: src/ConversationList/ConversationList.vala:581
+#: src/ConversationList/ConversationList.vala:129
+msgid "Fetch new messages"
+msgstr "Új üzenetek lekérése"
+
+#: src/ConversationList/ConversationList.vala:136
+msgid "Fetching new messages…"
+msgstr "Új üzenetek lekérése…"
+
+#: src/ConversationList/ConversationList.vala:582
 msgid "Move To Trash"
 msgstr "Áthelyezés a kukába"
 
-#: src/ConversationList/ConversationList.vala:590
+#: src/ConversationList/ConversationList.vala:591
 msgid "Mark As Unread"
 msgstr "Megjelölés olvasatlanként"
 
-#: src/ConversationList/ConversationList.vala:598
-#: src/MessageList/MessageList.vala:84
+#: src/ConversationList/ConversationList.vala:599
+#: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "Megjelölés olvasottként"
 
-#: src/ConversationList/ConversationList.vala:608
-#: src/MessageList/MessageList.vala:90
+#: src/ConversationList/ConversationList.vala:609
+#: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "Csillagozás"
 
-#: src/ConversationList/ConversationList.vala:616
-#: src/MessageList/MessageList.vala:96
+#: src/ConversationList/ConversationList.vala:617
+#: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "Csillagozás megszüntetése"
 
@@ -368,35 +368,35 @@ msgstr "Fiókbeállítások…"
 msgid "Menu"
 msgstr "Menü"
 
-#: src/MessageList/MessageList.vala:55 src/MessageList/MessageListItem.vala:206
+#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Válasz"
 
-#: src/MessageList/MessageList.vala:63
+#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Válasz mindenkinek"
 
-#: src/MessageList/MessageList.vala:71 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Továbbítás"
 
-#: src/MessageList/MessageList.vala:78
+#: src/MessageList/MessageList.vala:81
 msgid "Mark as Unread"
 msgstr "Megjelölés olvasatlanként"
 
-#: src/MessageList/MessageList.vala:109
+#: src/MessageList/MessageList.vala:112
 msgid "Mark Conversation"
 msgstr "Beszélgetés megjelölése"
 
-#: src/MessageList/MessageList.vala:117
+#: src/MessageList/MessageList.vala:120
 msgid "Move conversations to archive"
 msgstr "Beszélgetések áthelyezése az archívumba"
 
-#: src/MessageList/MessageList.vala:125
+#: src/MessageList/MessageList.vala:128
 msgid "Move conversations to Trash"
 msgstr "Beszélgetések áthelyezése a kukába"
 
-#: src/MessageList/MessageList.vala:152
+#: src/MessageList/MessageList.vala:155
 msgid "No Message Selected"
 msgstr "Nincs üzenet kiválasztva"
 
@@ -407,20 +407,16 @@ msgid "%s at %s"
 msgstr "%s %s"
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:377
 msgid "Unstar message"
 msgstr "Üzenet csillagozásának megszüntetése"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:372
+#: src/MessageList/MessageListItem.vala:373
 msgid "Star message"
 msgstr "Üzenet csillagozása"
 
-#: src/MessageList/MessageListItem.vala:209
-msgid "Reply to All"
-msgstr "Válasz mindenkinek"
-
-#: src/MessageList/MessageListItem.vala:215
+#: src/MessageList/MessageListItem.vala:218
 msgid "Print…"
 msgstr "Nyomtatás…"
 
@@ -428,37 +424,37 @@ msgstr "Nyomtatás…"
 msgid "More"
 msgstr "Továbbiak"
 
-#: src/MessageList/MessageListItem.vala:276
+#: src/MessageList/MessageListItem.vala:277
 msgid "Show Images"
 msgstr "Képek megjelenítése"
 
-#: src/MessageList/MessageListItem.vala:277
+#: src/MessageList/MessageListItem.vala:278
 msgid "Always Show from Sender"
 msgstr "Mindig jelenjen meg a feladótól"
 
-#: src/MessageList/MessageListItem.vala:282
+#: src/MessageList/MessageListItem.vala:283
 msgid "This message contains remote images."
 msgstr "Ez a levél távoli képeket tartalmaz."
 
-#: src/MessageList/MessageListItem.vala:319
+#: src/MessageList/MessageListItem.vala:320
 msgid "This message contains one or more attachments"
 msgstr "Ennek az üzenetnek több csatolmánya is van"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:403
+#: src/MessageList/MessageListItem.vala:399
 msgid "Email Message"
 msgstr "E-mail"
 
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:421
 msgid "Unable to print email"
 msgstr "Nem sikerült kinyomtatni az e-mailt"
 
-#: src/MessageList/MessageListItem.vala:648
+#: src/MessageList/MessageListItem.vala:644
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr "Megbízás “%s” fájlban és megnyitás?"
 
-#: src/MessageList/MessageListItem.vala:649
+#: src/MessageList/MessageListItem.vala:645
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -466,7 +462,7 @@ msgstr ""
 "A csatolt fájlok megnyitása a rendszer károsodását okozhatják. Csak "
 "megbízható forrásból származó fájlokat nyisson meg."
 
-#: src/MessageList/MessageListItem.vala:656
+#: src/MessageList/MessageListItem.vala:652
 msgid "Open Anyway"
 msgstr "Megnyitás mindenképp"
 
@@ -485,6 +481,9 @@ msgstr "Ismeretlen"
 #: src/MessageList/AttachmentButton.vala:138
 msgid "Save"
 msgstr "Mentés"
+
+#~ msgid "Reply to All"
+#~ msgstr "Válasz mindenkinek"
 
 #, c-format
 #~ msgid "Are you sure you want to open %s?"
