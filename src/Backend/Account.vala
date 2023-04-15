@@ -59,7 +59,11 @@ public class Mail.Backend.Account : GLib.Object {
         try {
             yield offlinestore.set_online (false, GLib.Priority.DEFAULT, null);
         } catch (Error e) {
-            critical (e.message);
+            if (e is Camel.ServiceError.UNAVAILABLE || e is GLib.IOError.CANCELLED) {
+                debug (e.message);
+            } else {
+                critical (e.message);
+            }
         }
     }
 
