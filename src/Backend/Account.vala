@@ -26,17 +26,8 @@ public class Mail.Backend.Account : GLib.Object {
     }
 
     construct {
-        unowned var network_manager = GLib.NetworkMonitor.get_default ();
-        uint timeout_id = 0;
-        network_manager.network_changed.connect (() => {
-            if (timeout_id == 0) {
-                timeout_id = GLib.Timeout.add_seconds (1, () => {
-                    manage_connection.begin (network_manager.network_available);
-                    timeout_id = 0;
-                    return Source.REMOVE;
-                });
-            }
-        });
+        unowned var network_monitor = GLib.NetworkMonitor.get_default ();
+        network_monitor.network_changed.connect (manage_connection);
     }
 
     public async void manage_connection (bool online) {
@@ -47,7 +38,20 @@ public class Mail.Backend.Account : GLib.Object {
                 yield offlinestore.set_online (true, GLib.Priority.DEFAULT, null);
                 yield offlinestore.synchronize (false, GLib.Priority.DEFAULT, null);
             } catch (Error e) {
-                critical (e.message);
+                /* Don't show an error when the network is unavailable as it can be thrown when trying to connect
+                   although the internet connection isn't fully available yet or on a rapid change of the connection */
+                if (e is Camel.ServiceError.UNAVAILABLE || e is GLib.IOError.CANCELLED) {
+                    critical (e.message);
+                } else {
+                    var error_dialog = new Granite.MessageDialog.with_image_from_icon_name (
+                        _("Unable to connect"),
+                        _("There was an unexpected error while trying to connect to the server."),
+                        "network-error"
+                    );
+                    error_dialog.show_error_details (e.message);
+                    error_dialog.present ();
+                    error_dialog.response.connect (() => error_dialog.destroy ());
+                }
             }
             return;
         }
