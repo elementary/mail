@@ -36,7 +36,14 @@ public class Mail.Application : Gtk.Application {
         activate ();
 
         string[] argv = command_line.get_arguments ();
-        var main_window = (MainWindow) active_window;
+
+        MainWindow? main_window = null;
+        foreach (unowned var window in get_windows ()) {
+            if (window is MainWindow) {
+                main_window = (MainWindow) window;
+                break;
+            }
+        }
 
         // The only arguments we support are mailto: URLs passed in by the OS. See RFC 2368 for
         // details. We handle the most commonly used fields.
@@ -117,8 +124,11 @@ public class Mail.Application : Gtk.Application {
 
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (() => {
-            if (active_window != null) {
-                active_window.destroy ();
+            foreach (unowned var window in get_windows ()) {
+                if (window is MainWindow) {
+                    window.destroy ();
+                    break;
+                }
             }
         });
 
@@ -134,8 +144,16 @@ public class Mail.Application : Gtk.Application {
             return;
         }
 
-        if (active_window == null) {
-            var main_window = new MainWindow (this);
+        MainWindow? main_window = null;
+        foreach (unowned var window in get_windows ()) {
+            if (window is MainWindow) {
+                main_window = (MainWindow) window;
+                break;
+            }
+        }
+
+        if (main_window == null) {
+            main_window = new MainWindow (this);
             add_window (main_window);
 
             int window_x, window_y;
@@ -157,7 +175,7 @@ public class Mail.Application : Gtk.Application {
             main_window.show_all ();
         }
 
-        active_window.present ();
+        main_window.present ();
     }
 }
 
