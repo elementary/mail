@@ -70,10 +70,10 @@ public class Mail.Application : Gtk.Application {
                 to = GLib.Uri.unescape_string (mailto.get_path ());
 
                 if (main_window.is_session_started) {
-                    new Composer (main_window, to, mailto.get_query ()).show_all ();
+                    new Composer (to, mailto.get_query ()).present ();
                 } else {
                     main_window.session_started.connect (() => {
-                        new Composer (main_window, to, mailto.get_query ()).show_all ();
+                        new Composer (to, mailto.get_query ()).present ();
                     });
                 }
 #else
