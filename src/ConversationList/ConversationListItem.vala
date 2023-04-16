@@ -21,7 +21,6 @@
 
 public class Mail.ConversationListItem : Gtk.Box {
     public signal void secondary_click (double x, double y);
-    public ulong handler_id;
 
     private Gtk.Image status_icon;
     private Gtk.Label date;
