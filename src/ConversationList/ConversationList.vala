@@ -203,12 +203,6 @@ public class Mail.ConversationList : Gtk.Box {
             conversation_list_item.assign((ConversationItemModel) list_item.get_item ());
         });
 
-        //@TODO: Needed?
-        factory.teardown.connect ((obj) => {
-            var conversation_list_item = (ConversationListItem) ((Gtk.ListItem) obj).child;
-            conversation_list_item.disconnect (conversation_list_item.handler_id);
-        });
-
         selection_model.selection_changed.connect (() => {
             if (mark_read_timeout_id != 0) {
                 GLib.Source.remove (mark_read_timeout_id);
@@ -489,8 +483,7 @@ public class Mail.ConversationList : Gtk.Box {
     }
 
     private static bool deleted_filter_func (Object item) {
-        var conversation_item = (ConversationItemModel) item;
-        return !conversation_item.deleted;
+        return !((ConversationItemModel)item).deleted;
     }
 
     public void mark_read_selected_messages () {
@@ -579,32 +572,38 @@ public class Mail.ConversationList : Gtk.Box {
     //     return archived;
     // }
 
-    // public int trash_selected_messages () {
-    //     var trash_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
+    public int trash_selected_messages () {
+        var trash_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
 
-    //     var selected_rows = list_box.get_selected_rows ();
-    //     int selected_rows_start_index = list_store.get_index_of (selected_rows.to_array ()[0]);
+        var previous_items = list_store.get_n_items ();
 
-    //     foreach (unowned var selected_row in selected_rows) {
-    //         var selected_item_model = (ConversationItemModel) selected_row;
+        var selected_items = selection_model.get_selection ();
+        uint current_item_position;
+        Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
+        bitset_iter.init_first(selected_items, out current_item_position);
+        var selected_items_start_index = current_item_position;
 
-    //         if (trash_threads[selected_item_model.service_uid] == null) {
-    //             trash_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
-    //         }
+        while (bitset_iter.is_valid ()) {
+            var selected_item_model = (ConversationItemModel)selection_model.get_item (current_item_position);
 
-    //         trash_threads[selected_item_model.service_uid].add (selected_item_model.node);
-    //     }
+            if (trash_threads[selected_item_model.service_uid] == null) {
+                trash_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
+            }
 
-    //     var deleted = 0;
-    //     foreach (var service_uid in trash_threads.keys) {
-    //         deleted += move_handler.delete_threads (folders[service_uid], trash_threads[service_uid]);
-    //     }
+            trash_threads[selected_item_model.service_uid].add (selected_item_model.node);
+            bitset_iter.next (out current_item_position);
+        }
 
-    //     list_store.items_changed (0, 0, list_store.get_n_items ());
-    //     list_box.select_row_at_index (selected_rows_start_index + 1);
+        var deleted = 0;
+        foreach (var service_uid in trash_threads.keys) {
+            deleted += move_handler.delete_threads (folders[service_uid], trash_threads[service_uid]);
+        }
 
-    //     return deleted;
-    // }
+        list_store.items_changed (0, list_store.get_n_items (), list_store.get_n_items ());
+        selection_model.select_item (selected_items_start_index, true);
+
+        return deleted;
+    }
 
     public void undo_move () {
         move_handler.undo_last_move.begin ((obj, res) => {
