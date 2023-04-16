@@ -47,7 +47,7 @@ public class Mail.ConversationList : Gtk.Box {
 
     construct {
         orientation = VERTICAL;
-        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        add_css_class (Granite.STYLE_CLASS_VIEW);
 
         conversations = new Gee.HashMap<string, ConversationItemModel> ();
         folders = new Gee.HashMap<string, Camel.Folder> ();
@@ -92,9 +92,8 @@ public class Mail.ConversationList : Gtk.Box {
             margin_bottom = 3,
             margin_top = 3
         };
-        filter_menu_popover_box.add (hide_read_switch);
-        filter_menu_popover_box.add (hide_unstarred_switch);
-        filter_menu_popover_box.show_all ();
+        filter_menu_popover_box.append (hide_read_switch);
+        filter_menu_popover_box.append (hide_unstarred_switch);
 
         var filter_popover = new Gtk.Popover (null) {
             child = filter_menu_popover_box
@@ -111,7 +110,7 @@ public class Mail.ConversationList : Gtk.Box {
             custom_title = search_entry
         };
         search_header.pack_end (filter_button);
-        search_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        search_header.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         var scrolled_window = new Gtk.ScrolledWindow (null, null) {
             hscrollbar_policy = Gtk.PolicyType.NEVER,
@@ -120,7 +119,7 @@ public class Mail.ConversationList : Gtk.Box {
             child = list_box
         };
 
-        var refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
+        var refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic") { //Small toolbar
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REFRESH
         };
 
@@ -145,11 +144,11 @@ public class Mail.ConversationList : Gtk.Box {
 
         var conversation_action_bar = new Gtk.ActionBar ();
         conversation_action_bar.pack_start (refresh_stack);
-        conversation_action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        conversation_action_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
-        add (search_header);
-        add (scrolled_window);
-        add (conversation_action_bar);
+        append (search_header);
+        append (scrolled_window);
+        append (conversation_action_bar);
 
         search_entry.search_changed.connect (() => load_folder.begin (folder_full_name_per_account));
 
