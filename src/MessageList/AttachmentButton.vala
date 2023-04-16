@@ -53,6 +53,11 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         actions.add_action (save_as_action);
         insert_action_group (ACTION_GROUP_PREFIX, actions);
 
+        var gesture_primary_click = new Gtk.GestureClick () {
+            button = Gdk.BUTTON_PRIMARY
+        };
+        add_controller (gesture_primary_click);
+
         var gesture_secondary_click = new Gtk.GestureClick () {
             button = Gdk.BUTTON_SECONDARY
         };
@@ -62,7 +67,9 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         context_menu_model.append (_("Open"), ACTION_PREFIX + ACTION_OPEN);
         context_menu_model.append (_("Save As…"), ACTION_PREFIX + ACTION_SAVE_AS);
 
-        var menu = new Gtk.PopoverMenu.from_model (context_menu_model);
+        var menu = new Gtk.PopoverMenu.from_model (context_menu_model) {
+            has_arrow = false
+        };
         menu.set_parent (this);
 
         var grid = new Gtk.Grid () {
@@ -117,6 +124,8 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         grid.attach (name_label, 1, 0, 1, 1);
         grid.attach (size_label, 1, 1, 1, 1);
         set_child (grid);
+
+        gesture_primary_click.pressed.connect (() => activate ());
 
         gesture_secondary_click.pressed.connect ((n_press, x, y) => {
                 var rect = Gdk.Rectangle () {
