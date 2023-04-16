@@ -9,7 +9,7 @@ public class Mail.MessageList : Gtk.Box {
     public signal void hovering_over_link (string? label, string? uri);
     public Gtk.HeaderBar headerbar { get; private set; }
 
-    public GenericArray<string> uids { get; private set; default = new GenericArray<string> (); }
+    private Gtk.PopoverMenu mark_popover;
     private Gtk.ListBox list_box;
     private Gtk.ScrolledWindow scrolled_window;
     private Gee.HashMap<string, MessageListItem> messages;
@@ -75,30 +75,14 @@ public class Mail.MessageList : Gtk.Box {
             _("Forward")
         );
 
-        var mark_unread_item = new MenuItem (_("Mark as Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD);
-        mark_unread_item.bind_property ("sensitive", mark_unread_item, "visible");
-
-        var mark_read_item = new MenuItem (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ);
-        mark_read_item.bind_property ("sensitive", mark_read_item, "visible");
-
-        var mark_star_item = new MenuItem (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR);
-        mark_star_item.bind_property ("sensitive", mark_star_item, "visible");
-
-        var mark_unstar_item = new MenuItem (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR);
-        mark_unstar_item.bind_property ("sensitive", mark_unstar_item, "visible");
-
-        var mark_menu = new Menu ();
-        mark_menu.append_item (mark_unread_item);
-        mark_menu.append_item (mark_read_item);
-        mark_menu.append_item (mark_star_item);
-        mark_menu.append_item (mark_unstar_item);
-
-        var mark_button = new Gtk.MenuButton () {
-            // action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK,
+        var mark_button = new Gtk.Button () {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK,
             icon_name = "edit-mark",
-            menu_model = mark_menu,
             tooltip_text = _("Mark Conversation")
         };
+
+        mark_popover = new Gtk.PopoverMenu.from_model (null);
+        mark_popover.set_parent (mark_button);
 
         var archive_button = new Gtk.Button.from_icon_name ("mail-archive") { //Large toolbar
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_ARCHIVE
@@ -131,17 +115,6 @@ public class Mail.MessageList : Gtk.Box {
         headerbar.pack_end (new Gtk.WindowControls (END));
         headerbar.pack_end (app_menu);
 
-        var settings = new GLib.Settings ("io.elementary.mail");
-        settings.bind ("always-load-remote-images", load_images_menuitem, "active", SettingsBindFlags.DEFAULT);
-
-        account_settings_menuitem.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("settings://accounts/online", null);
-            } catch (Error e) {
-                warning ("Failed to open account settings: %s", e.message);
-            }
-        });
-
         var placeholder = new Gtk.Label (_("No Message Selected")) {
             visible = true
         };
@@ -172,6 +145,39 @@ public class Mail.MessageList : Gtk.Box {
         orientation = VERTICAL;
         append (headerbar);
         append (scrolled_window);
+
+        var settings = new GLib.Settings ("io.elementary.mail");
+        settings.bind ("always-load-remote-images", load_images_menuitem, "active", SettingsBindFlags.DEFAULT);
+
+        account_settings_menuitem.clicked.connect (() => {
+            try {
+                AppInfo.launch_default_for_uri ("settings://accounts/online", null);
+            } catch (Error e) {
+                warning ("Failed to open account settings: %s", e.message);
+            }
+        });
+
+        mark_button.clicked.connect (create_context_menu);
+    }
+
+    public void create_context_menu () {
+        unowned var main_window = (MainWindow) get_root ();
+        var mark_menu = new Menu ();
+
+        if (main_window.get_action (MainWindow.ACTION_MARK_UNREAD).enabled) {
+            mark_menu.append (_("Mark as Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD);
+        } else {
+            mark_menu.append (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ);
+        }
+
+        if (main_window.get_action (MainWindow.ACTION_MARK_STAR).enabled) {
+            mark_menu.append (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR);
+        } else {
+            mark_menu.append (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR);
+        }
+
+        mark_popover.set_menu_model (mark_menu);
+        mark_popover.popup ();
     }
 
     public void set_conversation (Camel.FolderThreadNode? node) {
