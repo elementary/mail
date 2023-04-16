@@ -65,14 +65,12 @@ public class Mail.ConversationListItem : Gtk.Grid {
         };
         date.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-        var grid = new Gtk.Grid () {
-            margin_top = 12,
-            margin_bottom = 12,
-            margin_start = 12,
-            margin_end = 12,
-            column_spacing = 12,
-            row_spacing = 6
-        };
+        margin_top = 12;
+        margin_bottom = 12;
+        margin_start = 12;
+        margin_end = 12;
+        column_spacing = 12;
+        row_spacing = 6;
 
         attach (status_revealer, 0, 0);
         attach (flagged_icon_revealer, 0, 1, 1, 1);
