@@ -117,7 +117,8 @@ public class Mail.MessageList : Gtk.Box {
         );
 
         headerbar = new Gtk.HeaderBar () {
-            // show_close_button = true
+            show_title_buttons = false,
+            title_widget = new Gtk.Label ("")
         };
         headerbar.add_css_class (Granite.STYLE_CLASS_FLAT);
         headerbar.pack_start (reply_button);
@@ -127,6 +128,7 @@ public class Mail.MessageList : Gtk.Box {
         headerbar.pack_start (mark_button);
         headerbar.pack_start (archive_button);
         headerbar.pack_start (trash_button);
+        headerbar.pack_end (new Gtk.WindowControls (END));
         headerbar.pack_end (app_menu);
 
         var settings = new GLib.Settings ("io.elementary.mail");
@@ -272,17 +274,17 @@ public class Mail.MessageList : Gtk.Box {
     }
 
     private void can_reply (bool enabled) {
-        unowned var main_window = (Gtk.ApplicationWindow) ((Gtk.Application) GLib.Application.get_default ()).active_window;
-        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_FORWARD)).set_enabled (enabled);
-        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_REPLY_ALL)).set_enabled (enabled);
-        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_REPLY)).set_enabled (enabled);
+        unowned var main_window = (MainWindow) get_root ();
+        main_window.get_action (MainWindow.ACTION_FORWARD).set_enabled (enabled);
+        main_window.get_action (MainWindow.ACTION_REPLY_ALL).set_enabled (enabled);
+        main_window.get_action (MainWindow.ACTION_REPLY).set_enabled (enabled);
     }
 
     private void can_move_thread (bool enabled) {
-        unowned var main_window = (Gtk.ApplicationWindow) ((Gtk.Application) GLib.Application.get_default ()).active_window;
-        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_ARCHIVE)).set_enabled (enabled);
-        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MARK)).set_enabled (enabled);
-        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE_TO_TRASH)).set_enabled (enabled);
+        unowned var main_window = (MainWindow) get_root ();
+        main_window.get_action (MainWindow.ACTION_ARCHIVE).set_enabled (enabled);
+        main_window.get_action (MainWindow.ACTION_MARK).set_enabled (enabled);
+        main_window.get_action (MainWindow.ACTION_MOVE_TO_TRASH).set_enabled (enabled);
     }
 
     private static int message_sort_function (Gtk.ListBoxRow item1, Gtk.ListBoxRow item2) {
