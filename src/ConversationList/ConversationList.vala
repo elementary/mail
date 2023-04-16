@@ -40,7 +40,6 @@ public class Mail.ConversationList : Gtk.Box {
     private Granite.SwitchModelButton hide_unstarred_switch;
     private Gtk.MenuButton filter_button;
     private ConversationListStore list_store;
-    private Gtk.EveryFilter every_filter;
     private Gtk.SingleSelection selection_model;
     private Gtk.ListView list_view;
     private Gtk.PopoverMenu context_menu;
@@ -115,8 +114,9 @@ public class Mail.ConversationList : Gtk.Box {
 
         list_store = new ConversationListStore ();
 
-        every_filter = new Gtk.EveryFilter ();
-        var filter_model = new Gtk.FilterListModel (list_store, every_filter);
+        var deleted_filter = new Gtk.CustomFilter (deleted_filter_func);
+
+        var filter_model = new Gtk.FilterListModel (list_store, deleted_filter);
 
         selection_model = new Gtk.SingleSelection (filter_model) {
             autoselect = false
@@ -488,16 +488,9 @@ public class Mail.ConversationList : Gtk.Box {
         list_store.add (item);
     }
 
-    private static bool filter_function (GLib.Object obj) {
-        if (obj is ConversationItemModel) {
-            return !((ConversationItemModel)obj).deleted;
-        } else {
-            return false;
-        }
-    }
-
-    private static int thread_sort_function (ConversationItemModel item1, ConversationItemModel item2) {
-        return (int)(item2.timestamp - item1.timestamp);
+    private static bool deleted_filter_func (Object item) {
+        var conversation_item = (ConversationItemModel) item;
+        return !conversation_item.deleted;
     }
 
     public void mark_read_selected_messages () {
