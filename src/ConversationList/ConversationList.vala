@@ -185,7 +185,7 @@ public class Mail.ConversationList : Gtk.Box {
         factory.setup.connect ((obj) => {
             var list_item = (Gtk.ListItem) obj;
             var conversation_list_item = new ConversationListItem ();
-            conversation_list_item.handler_id = conversation_list_item.secondary_click.connect ((x, y) => {
+            conversation_list_item.secondary_click.connect ((x, y) => {
                 if (!selection_model.is_selected (list_item.get_position ())) {
                     selection_model.select_item (list_item.get_position (), true);
                 }
