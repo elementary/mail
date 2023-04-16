@@ -19,7 +19,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.ConversationListItem : Gtk.Grid {
+public class Mail.ConversationListItem : Gtk.Box {
     private Gtk.Image status_icon;
     private Gtk.Label date;
     private Gtk.Label messages;
@@ -65,21 +65,24 @@ public class Mail.ConversationListItem : Gtk.Grid {
         };
         date.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
-        margin_top = 12;
-        margin_bottom = 12;
-        margin_start = 12;
-        margin_end = 12;
-        column_spacing = 12;
-        row_spacing = 6;
+        var grid = new Gtk.Grid () {
+            margin_top = 12,
+            margin_bottom = 12,
+            margin_start = 12,
+            margin_end = 12,
+            column_spacing = 12,
+            row_spacing = 6
+        };
 
-        attach (status_revealer, 0, 0);
-        attach (flagged_icon_revealer, 0, 1, 1, 1);
-        attach (source, 1, 0, 1, 1);
-        attach (date, 2, 0, 2, 1);
-        attach (topic, 1, 1, 2, 1);
-        attach (messages, 3, 1, 1, 1);
+        grid.attach (status_revealer, 0, 0);
+        grid.attach (flagged_icon_revealer, 0, 1, 1, 1);
+        grid.attach (source, 1, 0, 1, 1);
+        grid.attach (date, 2, 0, 2, 1);
+        grid.attach (topic, 1, 1, 2, 1);
+        grid.attach (messages, 3, 1, 1, 1);
 
         add_css_class ("conversation-list-item");
+        append (grid);
     }
 
     public void assign (ConversationItemModel data) {
@@ -101,19 +104,19 @@ public class Mail.ConversationListItem : Gtk.Grid {
         // messages.no_show_all = num_messages <= 1;
 
         if (data.unread) {
-            get_style_context ().add_class ("unread-message");
+            add_css_class ("unread-message");
 
             status_icon.icon_name = "mail-unread-symbolic";
             status_icon.tooltip_text = _("Unread");
-            status_icon.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
+            status_icon.add_css_class (Granite.STYLE_CLASS_ACCENT);
 
             status_revealer.reveal_child = true;
 
-            source.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
+            source.add_css_class (Granite.STYLE_CLASS_ACCENT);
         } else {
-            get_style_context ().remove_class ("unread-message");
-            status_icon.get_style_context ().remove_class (Granite.STYLE_CLASS_ACCENT);
-            source.get_style_context ().remove_class (Granite.STYLE_CLASS_ACCENT);
+            remove_css_class ("unread-message");
+            status_icon.remove_css_class (Granite.STYLE_CLASS_ACCENT);
+            source.remove_css_class (Granite.STYLE_CLASS_ACCENT);
 
             if (data.replied_all || data.replied) {
                 status_icon.icon_name = "mail-replied-symbolic";
