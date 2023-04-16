@@ -518,7 +518,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     private async void ask_insert_link () {
         var selected_text = yield web_view.get_selected_text ();
         var insert_link_dialog = new InsertLinkDialog (selected_text) {
-            transient_for = (Gtk.Window) get_toplevel ()
+            transient_for = this
         };
         insert_link_dialog.present ();
         insert_link_dialog.insert_link.connect ((url, title) => on_link_inserted (url, title, selected_text));
@@ -724,7 +724,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             Gtk.ButtonsType.NONE
         ) {
             badge_icon = new ThemedIcon ("edit-delete"),
-            transient_for = get_toplevel () as Gtk.Window
+            transient_for = this
         };
 
         discard_dialog.add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
@@ -758,7 +758,8 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 "mail-send",
                 Gtk.ButtonsType.NONE
             );
-            no_subject_dialog.transient_for = get_toplevel () as Gtk.Window;
+            no_subject_dialog.modal = true;
+            no_subject_dialog.transient_for = this;
 
             no_subject_dialog.add_button (_("Don't Send"), Gtk.ResponseType.CANCEL);
 
