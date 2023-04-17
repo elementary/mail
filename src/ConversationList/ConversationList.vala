@@ -510,47 +510,51 @@ public class Mail.ConversationList : Gtk.Box {
         }
     }
 
-    // public async int archive_selected_messages () {
-    //     var archive_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
+    public async int archive_selected_messages () {
+        var archive_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
 
-    //     var selected_rows = list_box.get_selected_rows ();
-    //     int selected_rows_start_index = list_store.get_index_of (selected_rows.to_array ()[0]);
+        var selected_items = selection_model.get_selection ();
+        uint current_item_position;
+        Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
+        bitset_iter.init_first(selected_items, out current_item_position);
+        var selected_items_start_index = current_item_position;
 
-    //     foreach (unowned var selected_row in selected_rows) {
-    //         var selected_item_model = (ConversationItemModel) selected_row;
+       while (bitset_iter.is_valid ()) {
+            var selected_item_model = (ConversationItemModel)selection_model.get_item (current_item_position);
 
-    //         if (archive_threads[selected_item_model.service_uid] == null) {
-    //             archive_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
-    //         }
+            if (archive_threads[selected_item_model.service_uid] == null) {
+                archive_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
+            }
 
-    //         archive_threads[selected_item_model.service_uid].add (selected_item_model.node);
-    //     }
+            archive_threads[selected_item_model.service_uid].add (selected_item_model.node);
+            bitset_iter.next (out current_item_position);
+        }
 
-    //     var archived = 0;
-    //     foreach (var service_uid in archive_threads.keys) {
-    //         archived += yield move_handler.archive_threads (folders[service_uid], archive_threads[service_uid]);
-    //     }
+        var archived = 0;
+        foreach (var service_uid in archive_threads.keys) {
+            archived += yield move_handler.archive_threads (folders[service_uid], archive_threads[service_uid]);
+        }
 
-    //     if (archived > 0) {
-    //         foreach (var service_uid in archive_threads.keys) {
-    //             var threads = archive_threads[service_uid];
+        if (archived > 0) {
+            foreach (var service_uid in archive_threads.keys) {
+                var threads = archive_threads[service_uid];
 
-    //             foreach (unowned var thread in threads) {
-    //                 unowned var uid = thread.message.uid;
-    //                 var item = conversations[uid];
-    //                 if (item != null) {
-    //                     conversations.unset (uid);
-    //                     list_store.remove (item);
-    //                 }
-    //             }
-    //         }
-    //     }
+                foreach (unowned var thread in threads) {
+                    unowned var uid = thread.message.uid;
+                    var item = conversations[uid];
+                    if (item != null) {
+                        conversations.unset (uid);
+                        list_store.remove (item);
+                    }
+                }
+            }
+        }
 
-    //     list_store.items_changed (0, archived, list_store.get_n_items ());
-    //     list_box.select_row_at_index (selected_rows_start_index);
+        list_store.items_changed (0, list_store.get_n_items (), list_store.get_n_items ());
+        selection_model.select_item (selected_items_start_index, true);
 
-    //     return archived;
-    // }
+        return archived;
+    }
 
     public int trash_selected_messages () {
         var trash_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
