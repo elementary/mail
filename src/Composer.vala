@@ -458,12 +458,8 @@ public class Mail.Composer : Gtk.ApplicationWindow {
                 foreach (var path in result["attachment"]) {
                     var file = path.has_prefix ("file://") ? File.new_for_uri (path) : File.new_for_path (path);
 
-                    var attachment = new Attachment (file) {
-                        margin_top = 3,
-                        margin_bottom = 3,
-                        margin_start = 3,
-                        margin_end = 3
-                    };
+                    var attachment = new Attachment (file);
+                    attachment.remove.connect (() => attachment_box.remove (attachment));
 
                     attachment_box.append (attachment);
                 }
@@ -494,17 +490,21 @@ public class Mail.Composer : Gtk.ApplicationWindow {
             _("Cancel")
         );
 
-        // if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
-        //     filechooser.hide ();
-        //     foreach (unowned File file in filechooser.get_files ()) {
-        //         var attachment = new Attachment (file);
-        //         attachment.margin = 3;
+        filechooser.response.connect ((response) => {
+            filechooser.hide ();
+            if (response == Gtk.ResponseType.ACCEPT) {
+                var files = filechooser.get_files ();
+                for (int i = 0; files.get_item (i) != null; i++) {
+                    var attachment = new Attachment ((File)files.get_item (i));
+                    attachment.remove.connect (() => attachment_box.remove (attachment));
 
-        //         attachment_box.append (attachment);
-        //     }
-        // }
+                    attachment_box.append (attachment);
+                }
+            }
+            filechooser.destroy ();
+        });
 
-        // filechooser.destroy ();
+        filechooser.show ();
     }
 
     private void on_insert_link_clicked () {
@@ -890,6 +890,8 @@ public class Mail.Composer : Gtk.ApplicationWindow {
     }
 
     private class Attachment : Gtk.FlowBoxChild {
+        public signal void remove ();
+
         public GLib.FileInfo? info { private get; construct; }
         public GLib.File file { get; construct; }
 
@@ -940,10 +942,15 @@ public class Mail.Composer : Gtk.ApplicationWindow {
             box.append (size_label);
             box.append (remove_button);
 
+            margin_top = 3;
+            margin_bottom = 3;
+            margin_start = 3;
+            margin_end = 3;
+
             set_child (box);
 
             remove_button.clicked.connect (() => {
-                destroy ();
+                remove ();
             });
         }
 
