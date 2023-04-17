@@ -52,7 +52,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     public static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
     private const ActionEntry[] ACTION_ENTRIES = {
-        {ACTION_COMPOSE_MESSAGE, on_compose_message },
+        {ACTION_COMPOSE_MESSAGE, action_compose },
         {ACTION_REFRESH, on_refresh },
         {ACTION_REPLY, action_compose, "s" },
         {ACTION_REPLY_ALL, action_compose, "s" },
@@ -199,10 +199,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         });
     }
 
-    private void on_compose_message () {
-        new Composer (this).show_all ();
-    }
-
     private void on_refresh () {
         conversation_list.refresh_folder.begin ();
     }
@@ -225,6 +221,9 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
     private void action_compose (SimpleAction action, Variant? parameter) {
         switch (action.name) {
+            case ACTION_COMPOSE_MESSAGE:
+                new Composer ().present ();
+                break;
             case ACTION_REPLY:
                 message_list.compose.begin (Composer.Type.REPLY, parameter);
                 break;
