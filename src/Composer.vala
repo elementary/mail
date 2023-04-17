@@ -605,12 +605,12 @@ public class Mail.Composer : Gtk.ApplicationWindow {
                 message_content = content_to_quote;
 
                 unowned var to = message.get_recipients (Camel.RECIPIENT_TYPE_TO);
-                if (to != null) {
+                if (to.format () != null) {
                     to_val.text = to.format ();
                 }
 
                 unowned var cc = message.get_recipients (Camel.RECIPIENT_TYPE_CC);
-                if (cc != null) {
+                if (cc.format () != null) {
                     cc_val.text = cc.format ();
 
                     if (cc_val.text.length > 0) {
@@ -619,7 +619,7 @@ public class Mail.Composer : Gtk.ApplicationWindow {
                 }
 
                 unowned var bcc = message.get_recipients (Camel.RECIPIENT_TYPE_BCC);
-                if (bcc != null) {
+                if (bcc.format () != null) {
                     bcc_val.text = bcc.format ();
 
                     if (bcc_val.text.length > 0) {
@@ -631,7 +631,7 @@ public class Mail.Composer : Gtk.ApplicationWindow {
                 string date_format = _("%a, %b %-e, %Y at %-l:%M %p");
                 if (type == Type.REPLY || type == Type.REPLY_ALL) {
                     var reply_to = message.get_reply_to ();
-                    if (reply_to != null) {
+                    if (reply_to.format () != null) {
                         to_val.text = reply_to.format ();
                     } else {
                         to_val.text = message.get_from ().format ();
