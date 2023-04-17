@@ -47,33 +47,12 @@ public class Mail.ConversationList : Gtk.Box {
 
     private uint mark_read_timeout_id = 0;
 
-    construct {
-        orientation = VERTICAL;
-        add_css_class (Granite.STYLE_CLASS_VIEW);
-
-        conversations = new Gee.HashMap<string, ConversationItemModel> ();
+    construct {conversations = new Gee.HashMap<string, ConversationItemModel> ();
         folders = new Gee.HashMap<string, Camel.Folder> ();
         folder_info_flags = new Gee.HashMap<string, Camel.FolderInfoFlags> ();
         threads = new Gee.HashMap<string, Camel.FolderThread> ();
 
         move_handler = new MoveHandler ();
-
-        // list_box = new VirtualizingListBox () {
-        //     activate_on_single_click = true,
-        //     model = list_store
-        // };
-        // list_box.factory_func = (item, old_widget) => {
-        //     ConversationListItem? row = null;
-        //     if (old_widget != null) {
-        //         row = old_widget as ConversationListItem;
-        //     } else {
-        //         row = new ConversationListItem ();
-        //     }
-
-        //     row.assign ((ConversationItemModel)item);
-        //     row.show_all ();
-        //     return row;
-        // };
 
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
@@ -172,6 +151,9 @@ public class Mail.ConversationList : Gtk.Box {
         conversation_action_bar.pack_start (refresh_stack);
         conversation_action_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
+        orientation = VERTICAL;
+        add_css_class (Granite.STYLE_CLASS_VIEW);
+
         append (search_header);
         append (scrolled_window);
         append (conversation_action_bar);
@@ -230,8 +212,6 @@ public class Mail.ConversationList : Gtk.Box {
                     });
                 }
 
-                // We call get_action_group() on the parent window, instead of on `this` directly, due to a
-                // bug with Gtk.Widget.get_action_group(). See https://gitlab.gnome.org/GNOME/gtk/issues/1396
                 var window = (MainWindow) get_root ();
                 window.get_action (MainWindow.ACTION_MARK_READ).set_enabled (conversation_item.unread);
                 window.get_action (MainWindow.ACTION_MARK_UNREAD).set_enabled (!conversation_item.unread);
