@@ -512,12 +512,12 @@ public class Mail.Composer : Gtk.ApplicationWindow {
     }
 
     private async void ask_insert_link () {
-        // var selected_text = yield web_view.get_selected_text ();
-        // var insert_link_dialog = new InsertLinkDialog (selected_text) {
-        //     transient_for = this
-        // };
-        // insert_link_dialog.present ();
-        // insert_link_dialog.insert_link.connect ((url, title) => on_link_inserted (url, title, selected_text));
+        var selected_text = yield web_view.get_selected_text ();
+        var insert_link_dialog = new InsertLinkDialog (selected_text) {
+            transient_for = this
+        };
+        insert_link_dialog.present ();
+        insert_link_dialog.insert_link.connect ((url, title) => on_link_inserted (url, title, selected_text));
     }
 
     private void on_link_inserted (string url, string title, string? selected_text) {

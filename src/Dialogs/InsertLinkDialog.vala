@@ -40,13 +40,14 @@ public class InsertLinkDialog : Granite.Dialog {
         var title_entry = new Gtk.Entry ();
         title_entry.activates_default = true;
         title_entry.placeholder_text = _("Example Website");
-        if (selected_text != "") {
+        if (selected_text != null && selected_text != "") {
             title_entry.text = selected_text;
         }
 
         var grid = new Gtk.Grid () {
-            margin = 12,
-            margin_top = 0
+            margin_bottom = 12,
+            margin_start = 12,
+            margin_end = 12
         };
         grid.column_spacing = 6;
         grid.row_spacing = 6;
@@ -54,21 +55,19 @@ public class InsertLinkDialog : Granite.Dialog {
         grid.attach (url_entry, 1, 0);
         grid.attach (title_label, 0, 1);
         grid.attach (title_entry, 1, 1);
-        grid.show_all ();
 
-        get_content_area ().add (grid);
+        get_content_area ().append (grid);
 
         add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
 
         var insert_button = add_button (_("Insert Link"), Gtk.ResponseType.APPLY);
-        insert_button.can_default = true;
-        insert_button.has_default = true;
+        // insert_button.can_default = true;
+        // insert_button.has_default = true;
         insert_button.sensitive = false;
-        insert_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        insert_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
         deletable = false;
         modal = true;
-        skip_taskbar_hint = true;
 
         url_entry.changed.connect (() => {
             bool is_valid = false;
