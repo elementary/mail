@@ -4,12 +4,12 @@
 # This file is distributed under the GNU LGPL, version 2.1.
 # igorpan <mazezamte@gmail.com>, 2012
 # Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2014.
-#: src/MessageList/MessageListItem.vala:426
+#: src/MessageList/MessageListItem.vala:422
 msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-14 11:53+0000\n"
+"POT-Creation-Date: 2023-04-14 17:57+0000\n"
 "PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
@@ -249,13 +249,13 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: src/MainWindow.vala:75
+#: src/MainWindow.vala:77
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Sva pošta"
 
-#: src/MainWindow.vala:243
+#: src/MainWindow.vala:251
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
@@ -263,7 +263,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: src/MainWindow.vala:255
+#: src/MainWindow.vala:263
 msgid "Undo"
 msgstr ""
 
@@ -330,19 +330,19 @@ msgid "Mark As Unread"
 msgstr "_Označi kao nepročitano"
 
 #: src/ConversationList/ConversationList.vala:599
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr ""
 
 #: src/ConversationList/ConversationList.vala:609
-#: src/MessageList/MessageList.vala:90
+#: src/MessageList/MessageList.vala:93
 #, fuzzy
 #| msgid "_Star"
 msgid "Star"
 msgstr "_Dodaj zvezdicu"
 
 #: src/ConversationList/ConversationList.vala:617
-#: src/MessageList/MessageList.vala:96
+#: src/MessageList/MessageList.vala:99
 #, fuzzy
 #| msgid "U_nstar"
 msgid "Unstar"
@@ -425,43 +425,43 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:55 src/MessageList/MessageListItem.vala:206
+#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:63
+#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
 #, fuzzy
 #| msgid "R_eply All"
 msgid "Reply All"
 msgstr "Odgovori _svima"
 
-#: src/MessageList/MessageList.vala:71 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:78
+#: src/MessageList/MessageList.vala:81
 msgid "Mark as Unread"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:109
+#: src/MessageList/MessageList.vala:112
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Mark Conversation"
 msgstr "Označite razgovore"
 
-#: src/MessageList/MessageList.vala:117
+#: src/MessageList/MessageList.vala:120
 #, fuzzy
 #| msgid "Move conversations"
 msgid "Move conversations to archive"
 msgstr "Premestite razgovore"
 
-#: src/MessageList/MessageList.vala:125
+#: src/MessageList/MessageList.vala:128
 #, fuzzy
 #| msgid "Move conversations"
 msgid "Move conversations to Trash"
 msgstr "Premestite razgovore"
 
-#: src/MessageList/MessageList.vala:152
+#: src/MessageList/MessageList.vala:155
 #, fuzzy
 #| msgid "No conversations selected."
 msgid "No Message Selected"
@@ -474,20 +474,16 @@ msgid "%s at %s"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:377
 msgid "Unstar message"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:372
+#: src/MessageList/MessageListItem.vala:373
 msgid "Star message"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:209
-msgid "Reply to All"
-msgstr ""
-
-#: src/MessageList/MessageListItem.vala:215
+#: src/MessageList/MessageListItem.vala:218
 msgid "Print…"
 msgstr ""
 
@@ -495,47 +491,47 @@ msgstr ""
 msgid "More"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:276
+#: src/MessageList/MessageListItem.vala:277
 msgid "Show Images"
 msgstr "Prikažite slike"
 
-#: src/MessageList/MessageListItem.vala:277
+#: src/MessageList/MessageListItem.vala:278
 msgid "Always Show from Sender"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:282
+#: src/MessageList/MessageListItem.vala:283
 msgid "This message contains remote images."
 msgstr "Ova poruka sadrži udaljene slike."
 
-#: src/MessageList/MessageListItem.vala:319
+#: src/MessageList/MessageListItem.vala:320
 msgid "This message contains one or more attachments"
 msgstr ""
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:403
+#: src/MessageList/MessageListItem.vala:399
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Nova poruka"
 
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:421
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
 msgstr "Ne mogu da potvrdim:\n"
 
-#: src/MessageList/MessageListItem.vala:648
+#: src/MessageList/MessageListItem.vala:644
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:649
+#: src/MessageList/MessageListItem.vala:645
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:656
+#: src/MessageList/MessageListItem.vala:652
 msgid "Open Anyway"
 msgstr ""
 
