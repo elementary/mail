@@ -314,11 +314,16 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
             attachment_bar = new Gtk.FlowBox () {
                 hexpand = true,
-                homogeneous = true
+                homogeneous = true,
+                activate_on_single_click = true
             };
             attachment_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
             attachment_bar.add_css_class ("bottom-toolbar");
             secondary_box.append (attachment_bar);
+
+            attachment_bar.child_activated.connect ((child) => {
+                show_attachment (((AttachmentButton)child).mime_part);
+            });
         }
 
         set_child (base_box);
@@ -334,7 +339,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             loading_cancellable.cancel ();
         });
 
-        /* Connecting to clicked () doesn't allow us to prevent the event from propagating to header_event_box */
         starred_button.clicked.connect (() => {
             if (Camel.MessageFlags.FLAGGED in (int) message_info.flags) {
                 message_info.set_flags (Camel.MessageFlags.FLAGGED, 0);
@@ -514,7 +518,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                     yield handle_inline_mime (part);
                 } else if (part.disposition == "attachment") {
                     var button = new AttachmentButton (part, loading_cancellable);
-                    button.activate.connect (() => show_attachment (button.mime_part));
+                    // button.activate.connect (() => show_attachment (button.mime_part));
                     attachment_bar.append (button);
                 }
                 if (field.type == "text") {
