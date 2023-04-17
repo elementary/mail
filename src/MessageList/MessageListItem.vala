@@ -261,21 +261,18 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         settings = new GLib.Settings ("io.elementary.mail");
 
-        blocked_images_infobar = new Gtk.InfoBar () {
+        blocked_images_infobar = new Gtk.InfoBar () { //@TODO replacement: new styleclass?
             margin_top = 12,
             margin_bottom = 12,
             margin_start = 12,
             margin_end = 12,
-            message_type = WARNING
+            message_type = WARNING,
+            revealed = false
         };
-        blocked_images_infobar.add_button (_("Show Images"), 1);
+        blocked_images_infobar.add_child (new Gtk.Label (_("This message contains remote images.")) { ellipsize = END }); //@TODO: Not so sure here
+        blocked_images_infobar.add_button (_("Show Images"), 1); // Vertical content area doesn't work anymore
         blocked_images_infobar.add_button (_("Always Show from Sender"), 2);
-        // blocked_images_infobar.add_css_class (Granite.STYLE_CLASS_FRAME);
-
-        // var infobar_content = blocked_images_infobar.get_content_area ();
-        // infobar_content.append (new Gtk.Label (_("This message contains remote images.")));
-
-        // ((Gtk.Box) blocked_images_infobar.get_action_area ()).orientation = Gtk.Orientation.VERTICAL;
+        blocked_images_infobar.add_css_class (Granite.STYLE_CLASS_FRAME);
 
         web_view = new Mail.WebView () {
             margin_top = 12,
@@ -352,7 +349,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         });
 
         web_view.image_load_blocked.connect (() => {
-            blocked_images_infobar.show ();
+            blocked_images_infobar.revealed = true;
         });
         web_view.link_activated.connect ((uri) => {
             try {
@@ -472,7 +469,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 }
 
                 web_view.load_images ();
-                blocked_images_infobar.destroy ();
+                blocked_images_infobar.revealed = false;
             });
         }
 
