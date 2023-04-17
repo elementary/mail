@@ -59,19 +59,15 @@ public class Mail.Composer : Gtk.ApplicationWindow {
         {ACTION_SEND, on_send }
     };
 
-    public Composer (Gtk.Window parent, string? to = null, string? mailto_query = null) {
+    public Composer (string? to = null, string? mailto_query = null) {
         Object (
-            transient_for: parent,
             to: to,
             mailto_query: mailto_query
         );
     }
 
-    public Composer.with_quote (Gtk.Window parent, Composer.Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content) {
-        Object (
-            transient_for: parent,
-            has_recipients: true
-        );
+    public Composer.with_quote (Composer.Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content) {
+        Object (has_recipients: true);
         quote_content (type, info, message, content);
     }
 
@@ -87,9 +83,14 @@ public class Mail.Composer : Gtk.ApplicationWindow {
         application.set_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH), {"<Control>percent"});
         application.set_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_UNDERLINE, ACTION_UNDERLINE), {"<Control>U"});
 
-        var headerbar = new Gtk.HeaderBar () {
-            // has_title_buttons = true
-        };
+        foreach (unowned var window in application.get_windows ()) {
+            if (window is MainWindow) {
+                transient_for = window;
+                break;
+            }
+        }
+
+        var headerbar = new Gtk.HeaderBar ();
         headerbar.add_css_class (Granite.STYLE_CLASS_FLAT);
         headerbar.add_css_class ("default-decoration");
 
@@ -513,7 +514,7 @@ public class Mail.Composer : Gtk.ApplicationWindow {
     private async void ask_insert_link () {
         // var selected_text = yield web_view.get_selected_text ();
         // var insert_link_dialog = new InsertLinkDialog (selected_text) {
-        //     transient_for = (Gtk.Window) get_toplevel ()
+        //     transient_for = this
         // };
         // insert_link_dialog.present ();
         // insert_link_dialog.insert_link.connect ((url, title) => on_link_inserted (url, title, selected_text));
@@ -748,6 +749,7 @@ public class Mail.Composer : Gtk.ApplicationWindow {
                 "mail-send",
                 Gtk.ButtonsType.NONE
             );
+            no_subject_dialog.modal = true;
             no_subject_dialog.transient_for = this;
 
             no_subject_dialog.add_button (_("Don't Send"), Gtk.ResponseType.CANCEL);
