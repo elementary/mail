@@ -44,7 +44,6 @@ public class Mail.Application : Gtk.Application {
             string to = null;
 
             try {
-#if HAS_SOUP_3
                 GLib.Uri? mailto= null;
                 try {
                     mailto = GLib.Uri.parse (mailto_uri, GLib.UriFlags.NONE);
@@ -63,32 +62,12 @@ public class Mail.Application : Gtk.Application {
                 to = GLib.Uri.unescape_string (mailto.get_path ());
 
                 if (main_window.is_session_started) {
-                    new Composer (main_window, to, mailto.get_query ()).show_all ();
+                    new Composer (main_window, to, mailto.get_query ()).present ();
                 } else {
                     main_window.session_started.connect (() => {
-                        new Composer (main_window, to, mailto.get_query ()).show_all ();
+                        new Composer (main_window, to, mailto.get_query ()).present ();
                     });
                 }
-#else
-                Soup.URI mailto = new Soup.URI (mailto_uri);
-                if (mailto == null) {
-                    throw new OptionError.BAD_VALUE ("Argument is not a URL.");
-                }
-
-                if (mailto.scheme != "mailto") {
-                    throw new OptionError.BAD_VALUE ("Cannot open non-mailto: URL");
-                }
-
-                to = Soup.URI.decode (mailto.path);
-
-                if (main_window.is_session_started) {
-                    new Composer (main_window, to, mailto.query).show_all ();
-                } else {
-                    main_window.session_started.connect (() => {
-                        new Composer (main_window, to, mailto.query).show_all ();
-                    });
-                }
-#endif
             } catch (OptionError e) {
                 warning ("Argument parsing error. %s", e.message);
             }
@@ -99,8 +78,6 @@ public class Mail.Application : Gtk.Application {
 
     protected override void startup () {
         base.startup ();
-
-        Hdy.init ();
 
         var granite_settings = Granite.Settings.get_default ();
         var gtk_settings = Gtk.Settings.get_default ();
@@ -113,7 +90,7 @@ public class Mail.Application : Gtk.Application {
 
         var css_provider = new Gtk.CssProvider ();
         css_provider.load_from_resource ("io/elementary/mail/application.css");
-        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        Gtk.StyleContext.add_provider_for_display (Gdk.Display.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (() => {
@@ -138,23 +115,21 @@ public class Mail.Application : Gtk.Application {
             var main_window = new MainWindow (this);
             add_window (main_window);
 
-            int window_x, window_y;
-            var rect = Gtk.Allocation ();
+            // int window_x, window_y;
+            // var rect = Gtk.Allocation ();
 
-            settings.get ("window-position", "(ii)", out window_x, out window_y);
-            settings.get ("window-size", "(ii)", out rect.width, out rect.height);
+            // settings.get ("window-position", "(ii)", out window_x, out window_y);
+            // settings.get ("window-size", "(ii)", out rect.width, out rect.height);
 
-            if (window_x != -1 || window_y != -1) {
-                main_window.move (window_x, window_y);
-            }
+            // if (window_x != -1 || window_y != -1) {
+            //     main_window.move (window_x, window_y);
+            // }
 
-            main_window.set_allocation (rect);
+            // main_window.set_allocation (rect);
 
             if (settings.get_boolean ("window-maximized")) {
                 main_window.maximize ();
             }
-
-            main_window.show_all ();
         }
 
         active_window.present ();
