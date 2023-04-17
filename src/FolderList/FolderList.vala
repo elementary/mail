@@ -45,6 +45,7 @@ public class Mail.FolderList : Gtk.Box {
             application_instance.get_accels_for_action (compose_button.action_name),
             _("Compose new message")
         );
+        compose_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         header_bar = new Gtk.HeaderBar ();
         header_bar.pack_end (compose_button);
@@ -64,6 +65,7 @@ public class Mail.FolderList : Gtk.Box {
 
         orientation = VERTICAL;
         width_request = 100;
+        add_css_class (Granite.STYLE_CLASS_SIDEBAR);
         append (header_bar);
         append (scrolled_window);
 

@@ -15,7 +15,7 @@ public class Mail.MessageList : Gtk.Box {
     private Gee.HashMap<string, MessageListItem> messages;
 
     construct {
-        // add_css_class (Granite.STYLE_CLASS_BACKGROUND);
+        add_css_class (Granite.STYLE_CLASS_BACKGROUND);
 
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
@@ -47,6 +47,7 @@ public class Mail.MessageList : Gtk.Box {
             popover = app_menu_popover,
             tooltip_text = _("Menu")
         };
+        app_menu.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender") { //Large toolbar
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY,
@@ -56,6 +57,7 @@ public class Mail.MessageList : Gtk.Box {
             application_instance.get_accels_for_action (reply_button.action_name + "::"),
             _("Reply")
         );
+        reply_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var reply_all_button = new Gtk.Button.from_icon_name ("mail-reply-all") { //Large toolbar
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL,
@@ -65,6 +67,7 @@ public class Mail.MessageList : Gtk.Box {
             application_instance.get_accels_for_action (reply_all_button.action_name + "::"),
             _("Reply All")
         );
+        reply_all_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var forward_button = new Gtk.Button.from_icon_name ("mail-forward") { //Large toolbar
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD,
@@ -74,12 +77,14 @@ public class Mail.MessageList : Gtk.Box {
             application_instance.get_accels_for_action (forward_button.action_name + "::"),
             _("Forward")
         );
+        forward_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var mark_button = new Gtk.Button () {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK,
             icon_name = "edit-mark",
             tooltip_text = _("Mark Conversation")
         };
+        mark_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         mark_popover = new Gtk.PopoverMenu.from_model (null);
         mark_popover.set_parent (mark_button);
@@ -91,14 +96,16 @@ public class Mail.MessageList : Gtk.Box {
             application_instance.get_accels_for_action (archive_button.action_name),
             _("Move conversations to archive")
         );
+        archive_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
-        var trash_button = new Gtk.Button.from_icon_name ("edit-delete") { //Large toolbar
+        var trash_button = new Gtk.Button.from_icon_name ("edit-delete") {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH
         };
         trash_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (trash_button.action_name),
             _("Move conversations to Trash")
         );
+        trash_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         headerbar = new Gtk.HeaderBar () {
             show_title_buttons = false,
@@ -126,8 +133,7 @@ public class Mail.MessageList : Gtk.Box {
             vexpand = true,
             selection_mode = NONE
         };
-
-        // list_box.add_css_class (Granite.STYLE_CLASS_BACKGROUND);
+        list_box.add_css_class (Granite.STYLE_CLASS_BACKGROUND);
         list_box.set_placeholder (placeholder);
         list_box.set_sort_func (message_sort_function);
 
