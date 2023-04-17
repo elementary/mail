@@ -47,7 +47,13 @@ public class Mail.FolderList : Gtk.Box {
         );
         compose_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
-        header_bar = new Gtk.HeaderBar ();
+        var window_controls = new Gtk.WindowControls (START);
+
+        header_bar = new Gtk.HeaderBar () {
+            show_title_buttons = false,
+            title_widget = new Gtk.Label ("")
+        };
+        header_bar.pack_start (window_controls);
         header_bar.pack_end (compose_button);
         header_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
