@@ -575,8 +575,6 @@ public class Mail.ConversationList : Gtk.Box {
     public int trash_selected_messages () {
         var trash_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
 
-        var previous_items = list_store.get_n_items ();
-
         var selected_items = selection_model.get_selection ();
         uint current_item_position;
         Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
