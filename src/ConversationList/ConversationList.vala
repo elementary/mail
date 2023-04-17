@@ -519,7 +519,7 @@ public class Mail.ConversationList : Gtk.Box {
         bitset_iter.init_first(selected_items, out current_item_position);
         var selected_items_start_index = current_item_position;
 
-       while (bitset_iter.is_valid ()) {
+        while (bitset_iter.is_valid ()) {
             var selected_item_model = (ConversationItemModel)selection_model.get_item (current_item_position);
 
             if (archive_threads[selected_item_model.service_uid] == null) {
