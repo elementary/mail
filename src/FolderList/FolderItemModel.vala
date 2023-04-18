@@ -20,7 +20,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.FolderItemModel : Object {
+public class Mail.FolderItemModel : ItemModel, Object {
     public string icon_name { get; construct; }
     public string name { get; construct; }
     public int unread { get; construct; }
@@ -81,6 +81,10 @@ public class Mail.FolderItemModel : Object {
                 icon_name = "folder";
                 break;
         }
+    }
+
+    public string get_account_uid () {
+        return account.service.uid;
     }
 }
 

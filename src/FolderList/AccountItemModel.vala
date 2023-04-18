@@ -20,7 +20,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.AccountItemModel : Object {
+public class Mail.AccountItemModel : ItemModel, Object {
     public signal void loaded ();
 
     public string name;
@@ -51,6 +51,10 @@ public class Mail.AccountItemModel : Object {
 
     ~AccountItemModel () {
         connect_cancellable.cancel ();
+    }
+
+    public string get_account_uid () {
+        return account.service.uid;
     }
 
     public async void load () {

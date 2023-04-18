@@ -80,8 +80,7 @@ public class Mail.FolderList : Gtk.Box {
 
             var tree_expander = new Gtk.TreeExpander () {
                 child = new FolderListItem (),
-                indent_for_icon = false,
-                // indent_for_depth = false
+                // indent_for_icon = false
             };
 
             list_item.child = tree_expander;
@@ -91,13 +90,41 @@ public class Mail.FolderList : Gtk.Box {
             var list_item = (Gtk.ListItem) obj;
 
             var expander = (Gtk.TreeExpander) list_item.child;
-            expander.list_row = tree_list.get_row (list_item.get_position());
+            var list_row = expander.list_row = tree_list.get_row (list_item.get_position());
 
-            var item = expander.item;
+            var item = (ItemModel) expander.list_row.item;
+
+            var account_settings = new GLib.Settings.with_path ("io.elementary.mail.accounts", "/io/elementary/mail/accounts/%s/".printf (item.get_account_uid ()));
+
             if (item is AccountItemModel) {
                 ((FolderListItem)expander.child).bind_account ((AccountItemModel)item);
+                account_settings.bind ("expanded", list_row, "expanded", SettingsBindFlags.DEFAULT | SettingsBindFlags.GET_NO_CHANGES);
             } else if (item is FolderItemModel) {
-                ((FolderListItem)expander.child).bind_folder ((FolderItemModel)item);
+                var folder_item = (FolderItemModel)item;
+
+                ((FolderListItem)expander.child).bind_folder (folder_item);
+
+                if (folder_item.full_name in account_settings.get_strv ("expanded-folders")) {
+                    list_row.expanded = true;
+                }
+
+                list_row.notify["expanded"].connect (() => {
+                    var folders = account_settings.get_strv ("expanded-folders");
+                    if (list_row.expanded) {
+                        folders += folder_item.full_name;
+                    } else {
+                        string[] new_folders = {};
+                        foreach (var folder in folders) {
+                            if (folder != folder_item.full_name) {
+                                new_folders += folder;
+                            }
+                        }
+
+                        folders = new_folders;
+                    }
+
+                    account_settings.set_strv ("expanded-folders", folders);
+                });
             }
         });
 
@@ -136,4 +163,8 @@ public class Mail.FolderList : Gtk.Box {
         var account_item = new AccountItemModel (account);
         root_model.append (account_item);
     }
+}
+
+public interface ItemModel : Object {
+    public abstract string get_account_uid ();
 }
