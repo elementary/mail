@@ -326,7 +326,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         set_child (base_box);
         expanded = false;
 
-        // avatar.set_loadable_icon (new GravatarIcon (parsed_address, get_style_context ().get_scale ()));
+        get_gravatar.begin (parsed_address, (obj, res) => {
+            var gravatar = get_gravatar.end (res);
+            avatar.set_custom_image (gravatar);
+        });
 
         header_gesture_click.released.connect (() => {
             expanded = !expanded;
@@ -605,6 +608,25 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     public async string get_message_body_html () {
         return yield web_view.get_body_html ();
+    }
+
+    private async Gtk.IconPaintable? get_gravatar (string address) { //@TODO: Worked once then never again; no idea :)
+        var uri = "https://www.gravatar.com/avatar/%s?d=404".printf (
+            Checksum.compute_for_string (ChecksumType.MD5, address.strip ().down ())
+        );
+        var server_file = File.new_for_uri (uri);
+        var path = Path.build_filename (Environment.get_tmp_dir (), server_file.get_basename ());
+        var local_file = File.new_for_path (path);
+
+        if (!local_file.query_exists (loading_cancellable)) {
+            try {
+                yield server_file.copy_async (local_file, FileCopyFlags.OVERWRITE, GLib.Priority.DEFAULT, loading_cancellable, null);
+            } catch (Error e) {
+                warning (e.message);
+                return null;
+            }
+        }
+        return new Gtk.IconPaintable.for_file (local_file, avatar.size, get_style_context ().get_scale ());
     }
 
     private void show_attachment (Camel.MimePart mime_part) {
