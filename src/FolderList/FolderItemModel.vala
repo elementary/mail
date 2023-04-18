@@ -84,5 +84,15 @@ public class Mail.FolderItemModel : ItemModel, Object {
                 break;
         }
     }
+
+    public async void refresh () {
+        var offlinestore = (Camel.Store) account.service;
+        try {
+            var folder = yield offlinestore.get_folder (full_name, 0, GLib.Priority.DEFAULT, null);
+            yield folder.refresh_info (GLib.Priority.DEFAULT, null);
+        } catch (Error e) {
+            critical (e.message);
+        }
+    }
 }
 
