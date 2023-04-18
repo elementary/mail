@@ -23,6 +23,7 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
     private Gtk.Paned paned_start;
 
     private ConversationList conversation_list;
+    private Granite.Toast toast;
     private MessageList message_list;
 
     public bool is_session_started { get; private set; default = false; }
@@ -112,6 +113,14 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
             hexpand = true,
             child = message_list
         };
+
+        toast = new Granite.Toast ("");
+        toast.set_default_action (_("Undo"));
+        view_overlay.add_overlay (toast);
+
+        toast.default_action.connect (() => {
+            conversation_list.undo_move ();
+        });
 
         var message_overlay = new Granite.OverlayBar (view_overlay) {
             visible = false
@@ -259,33 +268,9 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
     private void on_move_to_trash () {
         var result = conversation_list.trash_selected_messages ();
         if (result > 0) {
-            send_move_toast (ngettext ("Message Deleted", "Messages Deleted", result));
+            toast.title = ngettext ("Message Deleted", "Messages Deleted", result);
+            toast.send_notification ();
         }
-    }
-
-    private void send_move_toast (string message) {
-        // foreach (weak Gtk.Widget child in view_overlay.get_children ()) {
-        //     if (child is Granite.Widgets.Toast) {
-        //         child.destroy ();
-        //     }
-        // }
-
-        // var toast = new Granite.Widgets.Toast (message);
-        // toast.set_default_action (_("Undo"));
-        // toast.show_all ();
-
-        // toast.default_action.connect (() => {
-        //     conversation_list.undo_move ();
-        // });
-
-        // toast.notify["child-revealed"].connect (() => {
-        //     if (!toast.child_revealed) {
-        //         conversation_list.undo_expired ();
-        //     }
-        // });
-
-        // view_overlay.add_overlay (toast);
-        // toast.send_notification ();
     }
 
     private void on_fullscreen () {

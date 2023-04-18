@@ -590,7 +590,7 @@ public class Mail.ConversationList : Gtk.Box {
     public void undo_move () {
         move_handler.undo_last_move.begin ((obj, res) => {
             move_handler.undo_last_move.end (res);
-            list_store.items_changed (0, 0, list_store.get_n_items ());
+            list_store.items_changed (0, list_store.get_n_items (), list_store.get_n_items ());
         });
     }
 
