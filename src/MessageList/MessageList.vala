@@ -7,6 +7,7 @@
 
 public class Mail.MessageList : Gtk.Box {
     public signal void hovering_over_link (string? label, string? uri);
+    public Gtk.WindowControls window_controls { get; set; }
     public Gtk.HeaderBar headerbar { get; private set; }
 
     private Gtk.PopoverMenu mark_popover;
@@ -107,6 +108,8 @@ public class Mail.MessageList : Gtk.Box {
         );
         trash_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
+        window_controls = new Gtk.WindowControls (END);
+
         headerbar = new Gtk.HeaderBar () {
             show_title_buttons = false,
             title_widget = new Gtk.Label ("")
@@ -119,7 +122,7 @@ public class Mail.MessageList : Gtk.Box {
         headerbar.pack_start (mark_button);
         headerbar.pack_start (archive_button);
         headerbar.pack_start (trash_button);
-        headerbar.pack_end (new Gtk.WindowControls (END));
+        headerbar.pack_end (window_controls);
         headerbar.pack_end (app_menu);
 
         var placeholder = new Gtk.Label (_("No Message Selected")) {
