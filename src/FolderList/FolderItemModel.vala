@@ -36,12 +36,14 @@ public class Mail.FolderItemModel : ItemModel {
     construct {
         name = folder_info.display_name;
         account_uid = account.service.uid;
-        folder_list = new ListStore (typeof(FolderItemModel));
 
         unread = folder_info.unread;
         full_name = folder_info.full_name;
 
         if (folder_info.child != null) {
+            if (folder_list == null) {
+                folder_list = new ListStore (typeof(FolderItemModel));
+            }
             var current_folder_info = folder_info.child;
             while (current_folder_info != null) {
                 var folder_item = new FolderItemModel (current_folder_info, account);
