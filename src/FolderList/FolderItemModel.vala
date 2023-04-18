@@ -20,31 +20,26 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.FolderItemModel : ItemModel, Object {
-    public string icon_name { get; construct; }
-    public string name { get; construct; }
+public class Mail.FolderItemModel : ItemModel {
     public int unread { get; construct; }
 
     public Mail.Backend.Account account { get; construct; }
-    public string account_uid { get; construct; }
-    public string full_name { get; construct; }
     public Camel.FolderInfo folder_info { get; construct; }
-
-    public ListStore folder_list;
+    public string full_name { get; construct; }
 
     public FolderItemModel (Camel.FolderInfo folderinfo, Mail.Backend.Account account) {
         Object (account: account,
-            account_uid: account.service.uid,
             folder_info: folderinfo
         );
     }
 
     construct {
         name = folder_info.display_name;
+        account_uid = account.service.uid;
+        folder_list = new ListStore (typeof(FolderItemModel));
+
         unread = folder_info.unread;
         full_name = folder_info.full_name;
-
-        folder_list = new ListStore (typeof(FolderItemModel));
 
         if (folder_info.child != null) {
             var current_folder_info = folder_info.child;

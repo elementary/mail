@@ -25,11 +25,13 @@ public class Mail.FolderList : Gtk.Box {
 
     public Gtk.HeaderBar header_bar;
 
-    private ListStore root_model;
-    private Gtk.TreeListModel tree_list;
-    private Gtk.SingleSelection selection_model;
     private static GLib.Settings settings;
-    private bool already_selected;
+
+    private ListStore root_model;
+    private Mail.Backend.Session session;
+    private SessionItemModel? session_item = null;
+
+    private bool already_selected = false;
 
     static construct {
         settings = new GLib.Settings ("io.elementary.mail");
@@ -58,9 +60,9 @@ public class Mail.FolderList : Gtk.Box {
         header_bar.pack_end (compose_button);
         header_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
-        root_model = new ListStore (typeof(AccountItemModel));
-        tree_list = new Gtk.TreeListModel (root_model, false, false, create_folder_list_func);
-        selection_model = new Gtk.SingleSelection (tree_list);
+        root_model = new ListStore (typeof(ItemModel));
+        var tree_list = new Gtk.TreeListModel (root_model, false, false, create_folder_list_func);
+        var selection_model = new Gtk.SingleSelection (tree_list);
         var list_factory = new Gtk.SignalListItemFactory ();
 
         var folder_list_view = new Gtk.ListView (selection_model, list_factory);
@@ -98,12 +100,12 @@ public class Mail.FolderList : Gtk.Box {
             var account_settings = new GLib.Settings.with_path ("io.elementary.mail.accounts", "/io/elementary/mail/accounts/%s/".printf (item.account_uid));
 
             if (item is AccountItemModel) {
-                ((FolderListItem)expander.child).bind_account ((AccountItemModel)item);
+                ((FolderListItem)expander.child).bind (item);
                 account_settings.bind ("expanded", list_row, "expanded", SettingsBindFlags.DEFAULT | SettingsBindFlags.GET_NO_CHANGES);
             } else if (item is FolderItemModel) {
                 var folder_item = (FolderItemModel)item;
 
-                ((FolderListItem)expander.child).bind_folder (folder_item);
+                ((FolderListItem)expander.child).bind (folder_item);
 
                 if (!already_selected) {
                     string selected_folder_uid, selected_folder_full_name;
@@ -135,10 +137,17 @@ public class Mail.FolderList : Gtk.Box {
 
                     account_settings.set_strv ("expanded-folders", folders);
                 });
+            } else if (item is SessionItemModel) {
+                ((FolderListItem)expander.child).bind (item);
+                // list_row.expanded = true; @TODO: causes snapshot warning ?
+            } else if (item is GroupedFolderItemModel) {
+                ((FolderListItem)expander.child).bind (item);
             }
         });
 
-        var session = Mail.Backend.Session.get_default ();
+        session_item = new SessionItemModel ();
+
+        session = Mail.Backend.Session.get_default ();
 
         session.get_accounts ().foreach ((account) => {
             add_account (account);
@@ -156,6 +165,10 @@ public class Mail.FolderList : Gtk.Box {
                 folder_selected (folder_name_per_account_uid.read_only_view);
 
                 settings.set ("selected-folder", "(ss)", item.account_uid, item.full_name);
+            } else if (item is GroupedFolderItemModel) {
+                folder_selected (item.get_folder_full_name_per_account ());
+
+                settings.set ("selected-folder", "(ss)", item.account_uid, "GROUPED");
             }
         });
     }
@@ -165,16 +178,30 @@ public class Mail.FolderList : Gtk.Box {
             return item.folder_list;
         } else if (item is FolderItemModel) {
             return item.folder_list;
+        } else if (item is SessionItemModel) {
+            return item.folder_list;
+        } else if (item is GroupedFolderItemModel) {
+            return null;
         }
         return null;
     }
 
     private void add_account (Mail.Backend.Account account) {
+        if (session.get_accounts ().size > 1) {
+            if (!(root_model.get_item (0) is SessionItemModel)) {
+                root_model.insert (0, session_item);
+            }
+        }
+        session_item.add_account (account);
+
         var account_item = new AccountItemModel (account);
         root_model.append (account_item);
     }
 }
 
-public interface ItemModel : Object {
-    public abstract string account_uid  { get; construct; }
+public class ItemModel : Object {
+    public string account_uid  { get; protected set; }
+    public string icon_name { get; protected set; }
+    public string name { get; protected set; }
+    public ListStore? folder_list { get; protected set; default = null; }
 }

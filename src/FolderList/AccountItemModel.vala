@@ -20,30 +20,27 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.AccountItemModel : ItemModel, Object {
+public class Mail.AccountItemModel : ItemModel {
     public signal void loaded ();
 
-    public string name;
-    public ListStore folder_list;
-
     public Mail.Backend.Account account { get; construct; }
-    public string account_uid { get; construct; }
 
     private GLib.Cancellable connect_cancellable;
     private unowned Camel.OfflineStore offlinestore;
 
     public AccountItemModel (Mail.Backend.Account account) {
-        Object (account: account,
-            account_uid: account.service.uid
-        );
+        Object (account: account);
     }
 
     construct {
-        connect_cancellable = new GLib.Cancellable ();
+        offlinestore = (Camel.OfflineStore) account.service;
+
+        icon_name = "";
+        name = offlinestore.display_name;
+        account_uid = offlinestore.uid;
         folder_list = new ListStore (typeof(FolderItemModel));
 
-        offlinestore = (Camel.OfflineStore) account.service;
-        name = offlinestore.display_name;
+        connect_cancellable = new GLib.Cancellable ();
 
         unowned GLib.NetworkMonitor network_monitor = GLib.NetworkMonitor.get_default ();
         network_monitor.network_changed.connect (() =>{

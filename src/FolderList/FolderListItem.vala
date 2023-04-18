@@ -53,18 +53,15 @@ public class FolderListItem : Gtk.Box {
         });
     }
 
-    public void bind_account (Mail.AccountItemModel item_model) {
+    public void bind (ItemModel item_model) {
         folder_item = null;
-
-        image.set_from_icon_name ("");
-        label.label = item_model.name;
-    }
-
-    public void bind_folder (Mail.FolderItemModel item_model) {
-        folder_item = item_model;
 
         image.set_from_icon_name (item_model.icon_name);
         label.label = item_model.name;
+
+        if (item_model is Mail.FolderItemModel) {
+            folder_item = (Mail.FolderItemModel)item_model;
+        }
     }
 
     private void on_refresh () {
