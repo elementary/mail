@@ -29,6 +29,7 @@ public class Mail.FolderList : Gtk.Box {
     private Gtk.TreeListModel tree_list;
     private Gtk.SingleSelection selection_model;
     private static GLib.Settings settings;
+    private bool already_selected;
 
     static construct {
         settings = new GLib.Settings ("io.elementary.mail");
@@ -90,7 +91,7 @@ public class Mail.FolderList : Gtk.Box {
             var list_item = (Gtk.ListItem) obj;
 
             var expander = (Gtk.TreeExpander) list_item.child;
-            var list_row = expander.list_row = tree_list.get_row (list_item.get_position());
+            var list_row = expander.list_row = tree_list.get_row (list_item.position);
 
             var item = (ItemModel) expander.list_row.item;
 
@@ -103,6 +104,15 @@ public class Mail.FolderList : Gtk.Box {
                 var folder_item = (FolderItemModel)item;
 
                 ((FolderListItem)expander.child).bind_folder (folder_item);
+
+                if (!already_selected) {
+                    string selected_folder_uid, selected_folder_full_name;
+                    settings.get ("selected-folder", "(ss)", out selected_folder_uid, out selected_folder_full_name);
+                    if (folder_item.get_account_uid () == selected_folder_uid && folder_item.full_name == selected_folder_full_name) {
+                        selection_model.set_selected (list_item.position);
+                        already_selected = true;
+                    }
+                }
 
                 if (folder_item.full_name in account_settings.get_strv ("expanded-folders")) {
                     list_row.expanded = true;
@@ -145,7 +155,7 @@ public class Mail.FolderList : Gtk.Box {
                 folder_name_per_account_uid.set (item.account, item.full_name);
                 folder_selected (folder_name_per_account_uid.read_only_view);
 
-                // settings.set ("selected-folder", "(ss)", folder_info.store.uid, folder_info.folder_info.full_name);
+                settings.set ("selected-folder", "(ss)", item.get_account_uid (), item.full_name);
             }
         });
     }
