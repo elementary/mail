@@ -132,22 +132,6 @@ public class Mail.Application : Gtk.Application {
         if (main_window == null) {
             main_window = new MainWindow (this);
             add_window (main_window);
-
-            // int window_x, window_y;
-            // var rect = Gtk.Allocation ();
-
-            // settings.get ("window-position", "(ii)", out window_x, out window_y);
-            // settings.get ("window-size", "(ii)", out rect.width, out rect.height);
-
-            // if (window_x != -1 || window_y != -1) {
-            //     main_window.move (window_x, window_y);
-            // }
-
-            // main_window.set_allocation (rect);
-
-            if (settings.get_boolean ("window-maximized")) {
-                main_window.maximize ();
-            }
         }
 
         main_window.present ();
