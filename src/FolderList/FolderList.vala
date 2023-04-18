@@ -95,7 +95,7 @@ public class Mail.FolderList : Gtk.Box {
 
             var item = (ItemModel) expander.list_row.item;
 
-            var account_settings = new GLib.Settings.with_path ("io.elementary.mail.accounts", "/io/elementary/mail/accounts/%s/".printf (item.get_account_uid ()));
+            var account_settings = new GLib.Settings.with_path ("io.elementary.mail.accounts", "/io/elementary/mail/accounts/%s/".printf (item.account_uid));
 
             if (item is AccountItemModel) {
                 ((FolderListItem)expander.child).bind_account ((AccountItemModel)item);
@@ -108,7 +108,7 @@ public class Mail.FolderList : Gtk.Box {
                 if (!already_selected) {
                     string selected_folder_uid, selected_folder_full_name;
                     settings.get ("selected-folder", "(ss)", out selected_folder_uid, out selected_folder_full_name);
-                    if (folder_item.get_account_uid () == selected_folder_uid && folder_item.full_name == selected_folder_full_name) {
+                    if (folder_item.account_uid == selected_folder_uid && folder_item.full_name == selected_folder_full_name) {
                         selection_model.set_selected (list_item.position);
                         already_selected = true;
                     }
@@ -155,7 +155,7 @@ public class Mail.FolderList : Gtk.Box {
                 folder_name_per_account_uid.set (item.account, item.full_name);
                 folder_selected (folder_name_per_account_uid.read_only_view);
 
-                settings.set ("selected-folder", "(ss)", item.get_account_uid (), item.full_name);
+                settings.set ("selected-folder", "(ss)", item.account_uid, item.full_name);
             }
         });
     }
@@ -176,5 +176,5 @@ public class Mail.FolderList : Gtk.Box {
 }
 
 public interface ItemModel : Object {
-    public abstract string get_account_uid ();
+    public abstract string account_uid  { get; construct; }
 }

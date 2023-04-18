@@ -26,6 +26,7 @@ public class Mail.FolderItemModel : ItemModel, Object {
     public int unread { get; construct; }
 
     public Mail.Backend.Account account { get; construct; }
+    public string account_uid { get; construct; }
     public string full_name { get; construct; }
     public Camel.FolderInfo folder_info { get; construct; }
 
@@ -33,6 +34,7 @@ public class Mail.FolderItemModel : ItemModel, Object {
 
     public FolderItemModel (Camel.FolderInfo folderinfo, Mail.Backend.Account account) {
         Object (account: account,
+            account_uid: account.service.uid,
             folder_info: folderinfo
         );
     }
@@ -81,10 +83,6 @@ public class Mail.FolderItemModel : ItemModel, Object {
                 icon_name = "folder";
                 break;
         }
-    }
-
-    public string get_account_uid () {
-        return account.service.uid;
     }
 }
 

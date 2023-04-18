@@ -27,12 +27,15 @@ public class Mail.AccountItemModel : ItemModel, Object {
     public ListStore folder_list;
 
     public Mail.Backend.Account account { get; construct; }
+    public string account_uid { get; construct; }
 
     private GLib.Cancellable connect_cancellable;
     private unowned Camel.OfflineStore offlinestore;
 
     public AccountItemModel (Mail.Backend.Account account) {
-        Object (account: account);
+        Object (account: account,
+            account_uid: account.service.uid
+        );
     }
 
     construct {
@@ -51,10 +54,6 @@ public class Mail.AccountItemModel : ItemModel, Object {
 
     ~AccountItemModel () {
         connect_cancellable.cancel ();
-    }
-
-    public string get_account_uid () {
-        return account.service.uid;
     }
 
     public async void load () {
