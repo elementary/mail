@@ -29,7 +29,7 @@ public class Mail.FolderList : Gtk.Box {
 
     private ListStore root_model;
     private Mail.Backend.Session session;
-    private SessionItemModel? session_item = null;
+    private SessionItemModel? session_item;
 
     private bool already_selected = false;
 
@@ -82,8 +82,7 @@ public class Mail.FolderList : Gtk.Box {
             var list_item = (Gtk.ListItem) obj;
 
             var tree_expander = new Gtk.TreeExpander () {
-                child = new FolderListItem (),
-                // indent_for_icon = false
+                child = new FolderListItem ()
             };
 
             list_item.child = tree_expander;
@@ -193,10 +192,8 @@ public class Mail.FolderList : Gtk.Box {
     }
 
     private void add_account (Mail.Backend.Account account) {
-        if (session.get_accounts ().size > 1) {
-            if (!(root_model.get_item (0) is SessionItemModel)) {
-                root_model.insert (0, session_item);
-            }
+        if (session.get_accounts ().size > 1 && !(root_model.get_item (0) is SessionItemModel)) {
+            root_model.insert (0, session_item);
         }
         session_item.add_account (account);
 
