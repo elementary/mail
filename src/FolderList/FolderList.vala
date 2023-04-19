@@ -139,9 +139,21 @@ public class Mail.FolderList : Gtk.Box {
                 });
             } else if (item is SessionItemModel) {
                 ((FolderListItem)expander.child).bind (item);
-                // list_row.expanded = true; @TODO: causes snapshot warning ?
+                // list_row.expanded = true; //@TODO: causes snapshot warning ?
             } else if (item is GroupedFolderItemModel) {
-                ((FolderListItem)expander.child).bind (item);
+                var folder_item = (GroupedFolderItemModel)item;
+
+                ((FolderListItem)expander.child).bind (folder_item);
+
+                if (!already_selected) {
+                    string selected_folder_uid, selected_folder_full_name;
+                    settings.get ("selected-folder", "(ss)", out selected_folder_uid, out selected_folder_full_name);
+                    if (folder_item.account_uid == selected_folder_uid && folder_item.full_name == selected_folder_full_name) {
+                        print ("set selected");
+                        selection_model.set_selected (list_item.position);
+                        already_selected = true;
+                    }
+                }
             }
         });
 
@@ -168,20 +180,14 @@ public class Mail.FolderList : Gtk.Box {
             } else if (item is GroupedFolderItemModel) {
                 folder_selected (item.get_folder_full_name_per_account ());
 
-                settings.set ("selected-folder", "(ss)", item.account_uid, "GROUPED");
+                settings.set ("selected-folder", "(ss)", item.account_uid, item.full_name);
             }
         });
     }
 
     public ListModel? create_folder_list_func (Object item) {
-        if (item is AccountItemModel) {
+        if (item is ItemModel) {
             return item.folder_list;
-        } else if (item is FolderItemModel) {
-            return item.folder_list;
-        } else if (item is SessionItemModel) {
-            return item.folder_list;
-        } else if (item is GroupedFolderItemModel) {
-            return null;
         }
         return null;
     }

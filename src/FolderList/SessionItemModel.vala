@@ -18,10 +18,12 @@
 */
 
  public class Mail.SessionItemModel : ItemModel {
+    public const string account = "SESSION ACCOUNT";
+
     construct {
         name = _("All Mailboxes");
         icon_name = "";
-        account_uid = "UNIFIED ACCOUNT";
+        account_uid = account_uid;
 
         folder_list = new ListStore (typeof(GroupedFolderItemModel));
         folder_list.append (new GroupedFolderItemModel (Camel.FolderInfoFlags.TYPE_INBOX));
@@ -36,7 +38,7 @@
         }
     }
 
-    public void remov_account (Mail.Backend.Account account) {
+    public void remove_account (Mail.Backend.Account account) {
         for (int i = 0; folder_list.get_item (i) != null; i++) {
             var item = (GroupedFolderItemModel)folder_list.get_item (i);
             item.remove_account (account);

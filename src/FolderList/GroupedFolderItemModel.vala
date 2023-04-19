@@ -22,7 +22,9 @@
 
 public class Mail.GroupedFolderItemModel : ItemModel {
     public int unread { get; set; }
+
     public Camel.FolderInfoFlags folder_type { get; construct; }
+    public string full_name { get; construct; }
 
     private Gee.HashMap<Mail.Backend.Account, Camel.FolderInfo?> account_folderinfo;
 
@@ -31,21 +33,24 @@ public class Mail.GroupedFolderItemModel : ItemModel {
     }
 
     construct {
-        account_uid = "UNIFIED ACCOUNT";
+        account_uid = Mail.SessionItemModel.account;
         account_folderinfo = new Gee.HashMap<Mail.Backend.Account, Camel.FolderInfo?> ();
 
         switch (folder_type & Camel.FOLDER_TYPE_MASK) {
             case Camel.FolderInfoFlags.TYPE_INBOX:
                 name = _("Inbox");
                 icon_name = "mail-inbox";
+                full_name = "inbox";
                 break;
             case Camel.FolderInfoFlags.TYPE_ARCHIVE:
                 name = _("Archive");
                 icon_name = ("mail-archive");
+                full_name = "archive";
                 break;
             case Camel.FolderInfoFlags.TYPE_SENT:
                 name = _("Sent");
                 icon_name = "mail-sent";
+                full_name = "sent";
                 break;
             default:
                 name = "%i".printf (folder_type & Camel.FOLDER_TYPE_MASK);

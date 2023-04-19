@@ -21,8 +21,6 @@
  */
 
 public class Mail.AccountItemModel : ItemModel {
-    public signal void loaded ();
-
     public Mail.Backend.Account account { get; construct; }
 
     private GLib.Cancellable connect_cancellable;
