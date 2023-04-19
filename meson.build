@@ -11,7 +11,7 @@ add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi
 
 glib_dep = dependency('glib-2.0')
 gobject_dep = dependency('gobject-2.0')
-granite_dep = dependency('granite-7')
+granite_dep = dependency('granite-7', version: '>=7.1')
 gee_dep = dependency('gee-0.8')
 adw_dep = dependency('libadwaita-1')
 gtk_dep = dependency('gtk4')
