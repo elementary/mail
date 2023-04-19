@@ -29,7 +29,7 @@ public class Mail.FolderList : Gtk.Box {
 
     private ListStore root_model;
     private Mail.Backend.Session session;
-    private SessionItemModel? session_item;
+    private SessionItemModel session_item;
 
     private bool already_selected = false;
 
@@ -109,24 +109,24 @@ public class Mail.FolderList : Gtk.Box {
                 if (!already_selected) {
                     string selected_folder_uid, selected_folder_full_name;
                     settings.get ("selected-folder", "(ss)", out selected_folder_uid, out selected_folder_full_name);
-                    if (folder_item.account_uid == selected_folder_uid && folder_item.full_name == selected_folder_full_name) {
+                    if (folder_item.account_uid == selected_folder_uid && folder_item.folder_info.full_name == selected_folder_full_name) {
                         selection_model.set_selected (list_item.position);
                         already_selected = true;
                     }
                 }
 
-                if (folder_item.full_name in account_settings.get_strv ("expanded-folders")) {
+                if (folder_item.folder_info.full_name in account_settings.get_strv ("expanded-folders")) {
                     list_row.expanded = true;
                 }
 
                 list_row.notify["expanded"].connect (() => {
                     var folders = account_settings.get_strv ("expanded-folders");
                     if (list_row.expanded) {
-                        folders += folder_item.full_name;
+                        folders += folder_item.folder_info.full_name;
                     } else {
                         string[] new_folders = {};
                         foreach (var folder in folders) {
-                            if (folder != folder_item.full_name) {
+                            if (folder != folder_item.folder_info.full_name) {
                                 new_folders += folder;
                             }
                         }
@@ -171,10 +171,10 @@ public class Mail.FolderList : Gtk.Box {
 
             if (item is FolderItemModel) {
                 var folder_name_per_account_uid = new Gee.HashMap<Mail.Backend.Account, string?> ();
-                folder_name_per_account_uid.set (item.account, item.full_name);
+                folder_name_per_account_uid.set (item.account, item.folder_info.full_name);
                 folder_selected (folder_name_per_account_uid.read_only_view);
 
-                settings.set ("selected-folder", "(ss)", item.account_uid, item.full_name);
+                settings.set ("selected-folder", "(ss)", item.account_uid, item.folder_info.full_name);
             } else if (item is GroupedFolderItemModel) {
                 folder_selected (item.get_folder_full_name_per_account ());
 

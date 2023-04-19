@@ -25,7 +25,6 @@ public class Mail.FolderItemModel : ItemModel {
 
     public Mail.Backend.Account account { get; construct; }
     public Camel.FolderInfo folder_info { get; construct; }
-    public string full_name { get; construct; }
 
     public FolderItemModel (Camel.FolderInfo folderinfo, Mail.Backend.Account account) {
         Object (account: account,
@@ -38,7 +37,6 @@ public class Mail.FolderItemModel : ItemModel {
         account_uid = account.service.uid;
 
         unread = folder_info.unread;
-        full_name = folder_info.full_name;
 
         if (folder_info.child != null) {
             if (folder_list == null) {
@@ -85,7 +83,7 @@ public class Mail.FolderItemModel : ItemModel {
     public async void refresh () {
         var offlinestore = (Camel.Store) account.service;
         try {
-            var folder = yield offlinestore.get_folder (full_name, 0, GLib.Priority.DEFAULT, null);
+            var folder = yield offlinestore.get_folder (folder_info.full_name, 0, GLib.Priority.DEFAULT, null);
             yield folder.refresh_info (GLib.Priority.DEFAULT, null);
         } catch (Error e) {
             critical (e.message);
