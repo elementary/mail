@@ -131,7 +131,7 @@ public class Mail.Composer : Gtk.ApplicationWindow {
 
         var bcc_button = new Gtk.ToggleButton.with_label (_("Bcc"));
 
-        var to_box = new Gtk.Box (HORIZONTAL, 0);
+        var to_box = new EntryBox ();
         to_box.append (to_val);
         to_box.append (cc_button);
         to_box.append (bcc_button);
@@ -400,18 +400,6 @@ public class Mail.Composer : Gtk.ApplicationWindow {
             on_sanitize_recipient_entry (to_val);
             has_recipients = to_val.text != "";
         });
-
-        // to_val.get_style_context ().changed.connect (() => {
-        //     unowned Gtk.StyleContext to_grid_style_context = to_grid.get_style_context ();
-        //     var state = to_grid_style_context.get_state ();
-        //     if (to_val.has_focus) {
-        //         state |= Gtk.StateFlags.FOCUSED;
-        //     } else {
-        //         state ^= Gtk.StateFlags.FOCUSED;
-        //     }
-
-        //     to_grid_style_context.set_state (state);
-        // });
 
         if (to != null) {
             to_val.text = to;
@@ -1001,8 +989,16 @@ public class Mail.Composer : Gtk.ApplicationWindow {
         }
     }
 
+    private class EntryBox : Gtk.Box {
+        static construct {
+            set_css_name ("entry");
+        }
+    }
+
     public async bool save_draft () {
-        if (discard_draft || !web_view.body_html_changed) {
+        /* @TODO: Currently we always save (also empty drafts) maybe change that.
+         * Previously (gtk3) it only saved if the web view body html changed, but it's hard to detect that now or at least I did find an easy way */
+        if (discard_draft) {
             return false;
         }
 
