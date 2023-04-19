@@ -68,7 +68,6 @@ public class FolderListItem : Gtk.Box {
         if (item_model is Mail.FolderItemModel) {
             folder_item = (Mail.FolderItemModel)item_model;
             badge.label = "%d".printf (item_model.unread);
-            print (badge.label);
             badge.visible = item_model.unread > 0;
         } else if (item_model is Mail.GroupedFolderItemModel) {
             badge.label = "%d".printf (item_model.unread);

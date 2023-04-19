@@ -40,6 +40,11 @@ public class Mail.AccountItemModel : ItemModel {
 
         connect_cancellable = new GLib.Cancellable ();
 
+        offlinestore.folder_created.connect (load);
+        offlinestore.folder_deleted.connect (load);
+        offlinestore.folder_info_stale.connect (load);
+        offlinestore.folder_renamed.connect (load);
+
         unowned GLib.NetworkMonitor network_monitor = GLib.NetworkMonitor.get_default ();
         network_monitor.network_changed.connect (() =>{
             connect_to_account.begin ();
@@ -81,6 +86,8 @@ public class Mail.AccountItemModel : ItemModel {
     }
 
     private void show_info (Camel.FolderInfo? _folderinfo) {
+        folder_list.remove_all ();
+
         var folderinfo = _folderinfo;
         while (folderinfo != null) {
             var folder_item = new FolderItemModel (folderinfo, account);
