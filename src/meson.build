@@ -23,13 +23,7 @@ vala_files = files(
     'FolderList/GroupedFolderItemModel.vala',
     'MessageList/AttachmentButton.vala',
     'MessageList/MessageList.vala',
-    'MessageList/MessageListItem.vala',
-    # 'SourceList/CellRendererBadge.vala',
-    # 'SourceList/CellRendererExpander.vala',
-    # 'SourceList/SourceList.vala',
-    # 'VirtualizingListBox/VirtualizingListBoxModel.vala',
-    # 'VirtualizingListBox/VirtualizingListBoxRow.vala',
-    # 'VirtualizingListBox/VirtualizingListBox.vala'
+    'MessageList/MessageListItem.vala'
 )
 
 executable(
