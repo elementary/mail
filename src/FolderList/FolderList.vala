@@ -60,7 +60,7 @@ public class Mail.FolderList : Gtk.Box {
         header_bar.pack_end (compose_button);
         header_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
-        root_model = new ListStore (typeof(ItemModel));
+        root_model = new ListStore (typeof (ItemModel));
         var tree_list = new Gtk.TreeListModel (root_model, false, false, create_folder_list_func);
         var selection_model = new Gtk.SingleSelection (tree_list);
         var list_factory = new Gtk.SignalListItemFactory ();
@@ -167,7 +167,7 @@ public class Mail.FolderList : Gtk.Box {
         session.account_added.connect (add_account);
 
         selection_model.selection_changed.connect ((position) => {
-            var item = ((Gtk.TreeListRow)selection_model.get_selected_item()).get_item ();
+            var item = ((Gtk.TreeListRow)selection_model.get_selected_item ()).get_item ();
 
             if (item is FolderItemModel) {
                 var folder_name_per_account_uid = new Gee.HashMap<Mail.Backend.Account, string?> ();
@@ -202,7 +202,7 @@ public class Mail.FolderList : Gtk.Box {
 }
 
 public class ItemModel : Object {
-    public string account_uid  { get; protected set; }
+    public string account_uid { get; protected set; }
     public string icon_name { get; protected set; }
     public string name { get; protected set; }
     public ListStore? folder_list { get; protected set; default = null; }

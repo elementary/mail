@@ -33,7 +33,7 @@ public class Mail.GroupedFolderItemModel : ItemModel {
     }
 
     construct {
-        account_uid = Mail.SessionItemModel.account;
+        account_uid = Mail.SessionItemModel.SESSION_ACCOUNT_UID;
         account_folderinfo = new Gee.HashMap<Mail.Backend.Account, Camel.FolderInfo?> ();
 
         switch (folder_type & Camel.FOLDER_TYPE_MASK) {
@@ -118,7 +118,7 @@ public class Mail.GroupedFolderItemModel : ItemModel {
     }
 
     private string? build_folder_full_name (Backend.Account account) {
-        var session =  Mail.Backend.Session.get_default ();
+        var session = Mail.Backend.Session.get_default ();
         var service_source = session.ref_source (account.service.uid);
         if (service_source == null || !service_source.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
             return null;

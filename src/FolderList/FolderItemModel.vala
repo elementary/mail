@@ -40,7 +40,7 @@ public class Mail.FolderItemModel : ItemModel {
 
         if (folder_info.child != null) {
             if (folder_list == null) {
-                folder_list = new ListStore (typeof(FolderItemModel));
+                folder_list = new ListStore (typeof (FolderItemModel));
             }
             var current_folder_info = folder_info.child;
             while (current_folder_info != null) {
@@ -90,4 +90,3 @@ public class Mail.FolderItemModel : ItemModel {
         }
     }
 }
-

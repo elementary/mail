@@ -18,14 +18,14 @@
 */
 
  public class Mail.SessionItemModel : ItemModel {
-    public const string account = "SESSION ACCOUNT";
+    public const string SESSION_ACCOUNT_UID = "SESSION ACCOUNT";
 
     construct {
         name = _("All Mailboxes");
         icon_name = "go-home";
-        account_uid = account_uid;
+        account_uid = SESSION_ACCOUNT_UID;
 
-        folder_list = new ListStore (typeof(GroupedFolderItemModel));
+        folder_list = new ListStore (typeof (GroupedFolderItemModel));
         folder_list.append (new GroupedFolderItemModel (Camel.FolderInfoFlags.TYPE_INBOX));
         folder_list.append (new GroupedFolderItemModel (Camel.FolderInfoFlags.TYPE_ARCHIVE));
         folder_list.append (new GroupedFolderItemModel (Camel.FolderInfoFlags.TYPE_SENT));

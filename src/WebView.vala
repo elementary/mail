@@ -267,4 +267,3 @@ public class Mail.WebView : WebKit.WebView {
         return false;
     }
 }
-

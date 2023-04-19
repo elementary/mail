@@ -182,7 +182,7 @@ public class Mail.ConversationList : Gtk.Box {
         factory.bind.connect ((obj) => {
             var list_item = (Gtk.ListItem) obj;
             var conversation_list_item = (ConversationListItem) list_item.child;
-            conversation_list_item.assign((ConversationItemModel) list_item.get_item ());
+            conversation_list_item.assign ((ConversationItemModel) list_item.get_item ());
         });
 
         selection_model.selection_changed.connect (() => {
@@ -470,7 +470,7 @@ public class Mail.ConversationList : Gtk.Box {
         var selected_items = selection_model.get_selection ();
         uint current_item_position;
         Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
-        bitset_iter.init_first(selected_items, out current_item_position);
+        bitset_iter.init_first (selected_items, out current_item_position);
         while (bitset_iter.is_valid ()) {
             ((ConversationItemModel)selection_model.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.SEEN, ~0);
             bitset_iter.next (out current_item_position);
@@ -481,7 +481,7 @@ public class Mail.ConversationList : Gtk.Box {
         var selected_items = selection_model.get_selection ();
         uint current_item_position;
         Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
-        bitset_iter.init_first(selected_items, out current_item_position);
+        bitset_iter.init_first (selected_items, out current_item_position);
         while (bitset_iter.is_valid ()) {
             ((ConversationItemModel)selection_model.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.FLAGGED, ~0);
             bitset_iter.next (out current_item_position);
@@ -492,7 +492,7 @@ public class Mail.ConversationList : Gtk.Box {
         var selected_items = selection_model.get_selection ();
         uint current_item_position;
         Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
-        bitset_iter.init_first(selected_items, out current_item_position);
+        bitset_iter.init_first (selected_items, out current_item_position);
         while (bitset_iter.is_valid ()) {
             ((ConversationItemModel)selection_model.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.SEEN, 0);
             bitset_iter.next (out current_item_position);
@@ -503,7 +503,7 @@ public class Mail.ConversationList : Gtk.Box {
         var selected_items = selection_model.get_selection ();
         uint current_item_position;
         Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
-        bitset_iter.init_first(selected_items, out current_item_position);
+        bitset_iter.init_first (selected_items, out current_item_position);
         while (bitset_iter.is_valid ()) {
             ((ConversationItemModel)selection_model.get_item (current_item_position)).node.message.set_flags (Camel.MessageFlags.FLAGGED, 0);
             bitset_iter.next (out current_item_position);
@@ -516,7 +516,7 @@ public class Mail.ConversationList : Gtk.Box {
         var selected_items = selection_model.get_selection ();
         uint current_item_position;
         Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
-        bitset_iter.init_first(selected_items, out current_item_position);
+        bitset_iter.init_first (selected_items, out current_item_position);
         var selected_items_start_index = current_item_position;
 
         while (bitset_iter.is_valid ()) {
@@ -562,7 +562,7 @@ public class Mail.ConversationList : Gtk.Box {
         var selected_items = selection_model.get_selection ();
         uint current_item_position;
         Gtk.BitsetIter bitset_iter = Gtk.BitsetIter ();
-        bitset_iter.init_first(selected_items, out current_item_position);
+        bitset_iter.init_first (selected_items, out current_item_position);
         var selected_items_start_index = current_item_position;
 
         while (bitset_iter.is_valid ()) {
@@ -603,7 +603,7 @@ public class Mail.ConversationList : Gtk.Box {
 
         var conversation_item_model = (ConversationItemModel) selection_model.get_selected_item ();
 
-        menu.append(_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH);
+        menu.append (_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH);
 
         if (!conversation_item_model.unread) {
             menu.append (_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD);
