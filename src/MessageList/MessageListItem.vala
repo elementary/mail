@@ -269,7 +269,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             message_type = WARNING,
             revealed = false
         };
-        blocked_images_infobar.add_child (new Gtk.Label (_("This message contains remote images.")) { ellipsize = END }); //@TODO: Not so sure here
+        blocked_images_infobar.add_child (new Gtk.Label (_("This message contains remote images.")) { ellipsize = END }); //@TODO: Ellipsize: designwise not so sure here
         blocked_images_infobar.add_button (_("Show Images"), 1); // Vertical content area doesn't work anymore
         blocked_images_infobar.add_button (_("Always Show from Sender"), 2);
         blocked_images_infobar.add_css_class (Granite.STYLE_CLASS_FRAME);
