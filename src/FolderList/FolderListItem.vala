@@ -1,6 +1,7 @@
 public class FolderListItem : Gtk.Box {
     private Gtk.Image image;
     private Gtk.Label label;
+    private Gtk.Label badge;
 
     private Mail.FolderItemModel? folder_item = null;
 
@@ -30,9 +31,15 @@ public class FolderListItem : Gtk.Box {
         menu.set_parent (this);
 
         image = new Gtk.Image ();
+
         label = new Gtk.Label ("") {
             margin_start = 3
         };
+
+        badge = new Gtk.Label ("") {
+            halign = END //@TODO: Tbh no idea how to move this to the right without another widget
+        };
+        badge.add_css_class (Granite.STYLE_CLASS_BADGE);
 
         hexpand = true;
         vexpand = true;
@@ -40,6 +47,7 @@ public class FolderListItem : Gtk.Box {
 
         append (image);
         append (label);
+        append (badge);
 
         gesture_secondary_click.pressed.connect ((n_press, x, y) => {
             if (folder_item != null) {
@@ -54,13 +62,20 @@ public class FolderListItem : Gtk.Box {
     }
 
     public void bind (ItemModel item_model) {
-        folder_item = null;
-
         image.set_from_icon_name (item_model.icon_name);
         label.label = item_model.name;
 
         if (item_model is Mail.FolderItemModel) {
             folder_item = (Mail.FolderItemModel)item_model;
+            badge.label = "%d".printf (item_model.unread);
+            print (badge.label);
+            badge.visible = item_model.unread > 0;
+        } else if (item_model is Mail.GroupedFolderItemModel) {
+            badge.label = "%d".printf (item_model.unread);
+            badge.visible = item_model.unread > 0;
+        } else {
+            folder_item = null;
+            badge.visible = false;
         }
     }
 

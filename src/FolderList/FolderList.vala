@@ -148,7 +148,6 @@ public class Mail.FolderList : Gtk.Box {
                     string selected_folder_uid, selected_folder_full_name;
                     settings.get ("selected-folder", "(ss)", out selected_folder_uid, out selected_folder_full_name);
                     if (folder_item.account_uid == selected_folder_uid && folder_item.full_name == selected_folder_full_name) {
-                        print ("set selected");
                         selection_model.set_selected (list_item.position);
                         already_selected = true;
                     }

@@ -33,7 +33,7 @@ public class Mail.AccountItemModel : ItemModel {
     construct {
         offlinestore = (Camel.OfflineStore) account.service;
 
-        icon_name = "";
+        icon_name = "avatar-default";
         name = offlinestore.display_name;
         account_uid = offlinestore.uid;
         folder_list = new ListStore (typeof(FolderItemModel));

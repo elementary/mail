@@ -22,7 +22,7 @@
 
     construct {
         name = _("All Mailboxes");
-        icon_name = "";
+        icon_name = "go-home";
         account_uid = account_uid;
 
         folder_list = new ListStore (typeof(GroupedFolderItemModel));
