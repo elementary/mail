@@ -26,7 +26,7 @@ public class Mail.ConversationListStore : ListModel, Object {
     private GLib.List<ConversationItemModel> data = new GLib.List<ConversationItemModel> ();
 
     public GLib.Type get_item_type () {
-        return typeof(ConversationItemModel);
+        return typeof (ConversationItemModel);
     }
 
     public uint get_n_items () {
@@ -47,7 +47,7 @@ public class Mail.ConversationListStore : ListModel, Object {
 
     public void add (ConversationItemModel item) {
         /* Adding automatically sorts according to timestamp */
-        data.insert_sorted (item, (a,b)=> {
+        data.insert_sorted (item, (a, b)=> {
             var item1 = (ConversationItemModel) a;
             var item2 = (ConversationItemModel) b;
             return (int)(item2.timestamp - item1.timestamp);
