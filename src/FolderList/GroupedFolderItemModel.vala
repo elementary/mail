@@ -27,6 +27,7 @@ public class Mail.GroupedFolderItemModel : ItemModel {
     public string full_name { get; construct; }
 
     private Gee.HashMap<Mail.Backend.Account, Camel.FolderInfo?> account_folderinfo;
+    private GLib.Cancellable connect_cancellable;
 
     public GroupedFolderItemModel (Camel.FolderInfoFlags folder_type) {
         Object (folder_type: folder_type);
@@ -35,6 +36,8 @@ public class Mail.GroupedFolderItemModel : ItemModel {
     construct {
         account_uid = Mail.SessionItemModel.SESSION_ACCOUNT_UID;
         account_folderinfo = new Gee.HashMap<Mail.Backend.Account, Camel.FolderInfo?> ();
+
+        connect_cancellable = new GLib.Cancellable ();
 
         switch (folder_type & Camel.FOLDER_TYPE_MASK) {
             case Camel.FolderInfoFlags.TYPE_INBOX:
@@ -58,6 +61,10 @@ public class Mail.GroupedFolderItemModel : ItemModel {
                 warning ("Unknown grouped folder type: %s", name);
                 break;
         }
+    }
+
+    ~GroupedFolderItemModel () {
+        connect_cancellable.cancel ();
     }
 
     public Gee.Map<Mail.Backend.Account, string?> get_folder_full_name_per_account () {
@@ -89,7 +96,7 @@ public class Mail.GroupedFolderItemModel : ItemModel {
 
         if (full_name != null) {
             try {
-                folderinfo = yield offlinestore.get_folder_info (full_name, 0, GLib.Priority.DEFAULT, null);
+                folderinfo = yield offlinestore.get_folder_info (full_name, 0, GLib.Priority.DEFAULT, connect_cancellable);
             } catch (Error e) {
                 // We can cancel the operation
                 if (!(e is GLib.IOError.CANCELLED)) {
