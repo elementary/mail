@@ -21,7 +21,7 @@
  */
 
 public class Mail.ConversationListStore : ListModel, Object {
-    //The items_changed signal is not emitted automatically, the object using this has to emit it manually!!!
+    /* The items_changed signal is not emitted automatically, the object using this has to emit it manually */
 
     private GLib.List<ConversationItemModel> data = new GLib.List<ConversationItemModel> ();
 
@@ -46,7 +46,7 @@ public class Mail.ConversationListStore : ListModel, Object {
     }
 
     public void add (ConversationItemModel item) {
-        /*Adding automatically sorts according to timestamp*/
+        /* Adding automatically sorts according to timestamp */
         data.insert_sorted (item, (a,b)=> {
             var item1 = (ConversationItemModel) a;
             var item2 = (ConversationItemModel) b;

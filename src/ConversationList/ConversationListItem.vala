@@ -90,6 +90,7 @@ public class Mail.ConversationListItem : Gtk.Box {
             button = Gdk.BUTTON_SECONDARY
         };
         add_controller (gesture_click);
+
         gesture_click.released.connect ((n_press, x, y) => {
             secondary_click (x, y);
         });
@@ -111,7 +112,6 @@ public class Mail.ConversationListItem : Gtk.Box {
         uint num_messages = data.num_messages;
         messages.label = num_messages > 1 ? "%u".printf (num_messages) : null;
         messages.visible = num_messages > 1;
-        // messages.no_show_all = num_messages <= 1;
 
         if (data.unread) {
             add_css_class ("unread-message");

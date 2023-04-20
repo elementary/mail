@@ -22,7 +22,6 @@
 
 public class Mail.ConversationList : Gtk.Box {
     public signal void conversation_selected (Camel.FolderThreadNode? node);
-    public signal void conversation_focused (Camel.FolderThreadNode? node);
 
     private const int MARK_READ_TIMEOUT_SECONDS = 5;
 
@@ -47,7 +46,8 @@ public class Mail.ConversationList : Gtk.Box {
 
     private uint mark_read_timeout_id = 0;
 
-    construct {conversations = new Gee.HashMap<string, ConversationItemModel> ();
+    construct {
+        conversations = new Gee.HashMap<string, ConversationItemModel> ();
         folders = new Gee.HashMap<string, Camel.Folder> ();
         folder_info_flags = new Gee.HashMap<string, Camel.FolderInfoFlags> ();
         threads = new Gee.HashMap<string, Camel.FolderThread> ();
@@ -78,7 +78,7 @@ public class Mail.ConversationList : Gtk.Box {
         };
 
         filter_button = new Gtk.MenuButton () {
-            icon_name = "mail-filter-symbolic", //Small toolbar
+            icon_name = "mail-filter-symbolic",
             popover = filter_popover,
             tooltip_text = _("Filter Conversations"),
             valign = Gtk.Align.CENTER
@@ -104,7 +104,7 @@ public class Mail.ConversationList : Gtk.Box {
         var factory = new Gtk.SignalListItemFactory ();
 
         list_view = new Gtk.ListView (selection_model, factory) {
-            show_separators = false,
+            show_separators = false
         };
 
         var event_controller_focus = new Gtk.EventControllerFocus ();
@@ -124,7 +124,7 @@ public class Mail.ConversationList : Gtk.Box {
             child = list_view
         };
 
-        var refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic") { //Small toolbar
+        var refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic") {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REFRESH
         };
 
@@ -197,11 +197,9 @@ public class Mail.ConversationList : Gtk.Box {
             bitset_iter.init_first (selected_items, out current_item_position);
 
             if (!bitset_iter.is_valid ()) {
-                conversation_focused (null);
                 conversation_selected (null);
             } else {
                 var conversation_item = (ConversationItemModel) selection_model.get_item (current_item_position);
-                conversation_focused (conversation_item.node);
 
                 if (conversation_item.unread) {
                     mark_read_timeout_id = GLib.Timeout.add_seconds (MARK_READ_TIMEOUT_SECONDS, () => {
@@ -237,17 +235,6 @@ public class Mail.ConversationList : Gtk.Box {
                 {}
             );
         });
-
-        // key_release_event.connect ((e) => {
-
-        //     if (e.keyval != Gdk.Key.Menu) {
-        //         return Gdk.EVENT_PROPAGATE;
-        //     }
-
-        //     var row = list_box.selected_row_widget;
-
-        //     return create_context_menu (e, (ConversationListItem)row);
-        // });
     }
 
     private static void set_thread_flag (Camel.FolderThreadNode? node, Camel.MessageFlags flag) {
@@ -273,7 +260,6 @@ public class Mail.ConversationList : Gtk.Box {
             cancellable.cancel ();
         }
 
-        conversation_focused (null);
         conversation_selected (null);
 
         uint previous_items = list_store.get_n_items ();
@@ -404,13 +390,12 @@ public class Mail.ConversationList : Gtk.Box {
     }
 
     private GenericArray<string>? get_search_result_uids (string service_uid) {
-        var style_context = filter_button.get_style_context ();
         if (hide_read_switch.active || hide_unstarred_switch.active) {
-            if (!style_context.has_class (Granite.STYLE_CLASS_ACCENT)) {
-                style_context.add_class (Granite.STYLE_CLASS_ACCENT);
+            if (!filter_button.has_css_class (Granite.STYLE_CLASS_ACCENT)) {
+                filter_button.add_css_class (Granite.STYLE_CLASS_ACCENT);
             }
-        } else if (style_context.has_class (Granite.STYLE_CLASS_ACCENT)) {
-            style_context.remove_class (Granite.STYLE_CLASS_ACCENT);
+        } else if (filter_button.has_css_class (Granite.STYLE_CLASS_ACCENT)) {
+            filter_button.remove_css_class (Granite.STYLE_CLASS_ACCENT);
         }
 
         lock (folders) {
