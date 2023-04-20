@@ -518,7 +518,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                     yield handle_inline_mime (part);
                 } else if (part.disposition == "attachment") {
                     var button = new AttachmentButton (part, loading_cancellable);
-                    // button.activate.connect (() => show_attachment (button.mime_part));
                     attachment_bar.append (button);
                 }
                 if (field.type == "text") {

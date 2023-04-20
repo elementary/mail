@@ -772,7 +772,8 @@ public class Mail.Composer : Gtk.ApplicationWindow {
                     new ThemedIcon ("mail-send"),
                     Gtk.ButtonsType.CLOSE
                 ) {
-                    badge_icon = new ThemedIcon ("dialog-warning")
+                    badge_icon = new ThemedIcon ("dialog-warning"),
+                    transient_for = this
                 };
                 warning_dialog.present ();
                 warning_dialog.response.connect (() => warning_dialog.destroy ());
@@ -788,7 +789,8 @@ public class Mail.Composer : Gtk.ApplicationWindow {
                 new ThemedIcon ("mail-send"),
                 Gtk.ButtonsType.CLOSE
             ) {
-                badge_icon = new ThemedIcon ("dialog-error")
+                badge_icon = new ThemedIcon ("dialog-error"),
+                transient_for = this
             };
             error_dialog.show_error_details (e.message);
             error_dialog.present ();
@@ -1020,7 +1022,8 @@ public class Mail.Composer : Gtk.ApplicationWindow {
                     new ThemedIcon ("mail-drafts"),
                     Gtk.ButtonsType.CLOSE
                 ) {
-                    badge_icon = new ThemedIcon ("dialog-error")
+                    badge_icon = new ThemedIcon ("dialog-error"),
+                    transient_for = this
                 };
                 error_dialog.show_error_details (e.message);
                 error_dialog.present ();
