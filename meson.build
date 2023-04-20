@@ -22,7 +22,6 @@ webkit2_dep = dependency('webkit2gtk-5.0')
 webkit2_web_extension_dep = dependency('webkit2gtk-web-extension-5.0')
 folks_dep = dependency('folks')
 m_dep = meson.get_compiler('c').find_library('m')
-add_project_arguments('--define=HAS_SOUP_3', language: 'vala')
 
 webkit2_extension_path = join_paths(get_option('prefix'), get_option('libdir'), meson.project_name(), 'webkit2')
 

@@ -127,11 +127,7 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
         };
 
         message_list.hovering_over_link.connect ((label, url) => {
-#if HAS_SOUP_3
             var hover_url = url != null ? GLib.Uri.unescape_string (url) : null;
-#else
-            var hover_url = url != null ? Soup.URI.decode (url) : null;
-#endif
 
             if (hover_url == null) {
                 message_overlay.hide ();
