@@ -281,7 +281,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             margin_end = 12
         };
         web_view.mouse_target_changed.connect (on_mouse_target_changed);
-        // web_view.context_menu.connect (on_webview_context_menu);
+        web_view.context_menu.connect (on_webview_context_menu);
         web_view.load_finished.connect (() => {
             loaded = true;
         });
@@ -411,7 +411,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         }
     }
 
-    private bool on_webview_context_menu (WebKit.ContextMenu menu, Gdk.Event event, WebKit.HitTestResult hit_test) {
+    private bool on_webview_context_menu (WebKit.ContextMenu menu, WebKit.HitTestResult hit_test) {
         WebKit.ContextMenu new_context_menu = new WebKit.ContextMenu ();
 
         for (int i = 0; i < menu.get_n_items (); i++) {
