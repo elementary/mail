@@ -56,11 +56,11 @@ public class Mail.ConversationListStore : ListModel, Object {
 
     public void remove_all () {
         data.foreach ((item) => {
-            data.remove (item);
+            data.remove_all (item);
         });
     }
 
     public void remove (ConversationItemModel item) {
-        data.remove (item);
+        data.remove_all (item);
     }
 }
