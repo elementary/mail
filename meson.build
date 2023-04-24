@@ -17,13 +17,13 @@ adw_dep = dependency('libadwaita-1')
 gtk_dep = dependency('gtk4')
 camel_dep = dependency('camel-1.2', version: '>= 3.28')
 libedataserver_dep = dependency('libedataserver-1.2', version: '>=3.45.1')
-libedataserverui_dep = dependency('libedataserverui4-1.0', version: '>= 3.45.1')
-webkit2_dep = dependency('webkit2gtk-5.0')
-webkit2_web_extension_dep = dependency('webkit2gtk-web-extension-5.0')
+libedataserverui_dep = dependency('libedataserverui4-1.0', version: '>= 3.46.4')
+webkit_dep = dependency('webkitgtk-6.0')
+webkit_web_extension_dep = dependency('webkitgtk-web-process-extension-6.0')
 folks_dep = dependency('folks')
 m_dep = meson.get_compiler('c').find_library('m')
 
-webkit2_extension_path = join_paths(get_option('prefix'), get_option('libdir'), meson.project_name(), 'webkit2')
+webkit_extension_path = join_paths(get_option('prefix'), get_option('libdir'), meson.project_name(), 'webkit2')
 
 dependencies = [
     glib_dep,
@@ -35,7 +35,7 @@ dependencies = [
     camel_dep,
     libedataserver_dep,
     libedataserverui_dep,
-    webkit2_dep,
+    webkit_dep,
     folks_dep,
     m_dep
 ]
@@ -50,7 +50,7 @@ extension_dependencies = [
     glib_dep,
     gobject_dep,
     gee_dep,
-    webkit2_web_extension_dep
+    webkit_web_extension_dep
 ]
 
 add_global_arguments([

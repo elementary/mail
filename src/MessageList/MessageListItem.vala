@@ -281,7 +281,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             margin_end = 12
         };
         web_view.mouse_target_changed.connect (on_mouse_target_changed);
-        web_view.context_menu.connect (on_webview_context_menu);
+        // web_view.context_menu.connect (on_webview_context_menu);
         web_view.load_finished.connect (() => {
             loaded = true;
         });

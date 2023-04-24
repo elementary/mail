@@ -39,8 +39,8 @@ public class Mail.WebView : WebKit.WebView {
     static construct {
         unowned WebKit.WebContext context = WebKit.WebContext.get_default ();
         unowned string? webkit_extension_path_env = Environment.get_variable ("WEBKIT_EXTENSION_PATH");
-        context.set_web_extensions_directory (webkit_extension_path_env ?? WEBKIT_EXTENSION_PATH);
-        context.set_sandbox_enabled (true);
+        context.set_web_process_extensions_directory (webkit_extension_path_env ?? WEBKIT_EXTENSION_PATH);
+        // context.set_sandbox_enabled (true);
 
         context.register_uri_scheme ("cid", (req) => {
             WebView? view = req.get_web_view () as WebView;
@@ -67,12 +67,12 @@ public class Mail.WebView : WebKit.WebView {
         setts.enable_fullscreen = false;
         setts.enable_html5_database = false;
         setts.enable_html5_local_storage = false;
-        setts.enable_java = false;
+        // setts.enable_java = false;
         setts.enable_javascript = false;
         setts.enable_media_stream = false;
         setts.enable_offline_web_application_cache = false;
         setts.enable_page_cache = false;
-        setts.enable_plugins = false;
+        // setts.enable_plugins = false;
 
         Object (settings: setts);
     }
