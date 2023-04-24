@@ -32,6 +32,6 @@ executable(
     config_file,
     asresources,
     dependencies: dependencies,
-    c_args: '-DWEBKIT_EXTENSION_PATH="' + webkit2_extension_path + '"',
+    c_args: '-DWEBKIT_EXTENSION_PATH="' + webkit_extension_path + '"',
     install: true
 )
