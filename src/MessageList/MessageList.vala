@@ -118,7 +118,7 @@ public class Mail.MessageList : Gtk.Box {
 
         move_button = new Gtk.MenuButton () {
             image = new Gtk.Image.from_icon_name ("folder", Gtk.IconSize.LARGE_TOOLBAR),
-            tooltip_text = _("Move Conversation to..."),
+            tooltip_text = _("Move Conversation to…"),
             menu_model = move_menu
         };
 
