@@ -127,6 +127,10 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             conversation_list.undo_move ();
         });
 
+        toast.closed.connect (() => {
+            conversation_list.expire_undo ();
+        });
+
         var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
         message_overlay.no_show_all = true;
 
