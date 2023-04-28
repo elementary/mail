@@ -31,9 +31,11 @@ public class Mail.MoveHandler {
     private Gee.ArrayList<weak Camel.MessageInfo> moved_messages;
     private MoveType move_type;
 
-    private List<uint> timeout_ids = new List<uint> ();
+    private uint timeout_id = 0;
 
     public async int move_messages (Camel.Folder source_folder, MoveType _move_type, Gee.ArrayList<unowned Camel.FolderThreadNode?> threads, Variant? dest_folder = null) throws Error {
+        yield expire_undo ();
+
         src_folder = source_folder;
         move_type = _move_type;
 
@@ -76,11 +78,10 @@ public class Mail.MoveHandler {
 
         src_folder.thaw ();
 
-        var timeout_id = GLib.Timeout.add_seconds (TIMEOUT_DURATION, () => {
+        timeout_id = GLib.Timeout.add_seconds (TIMEOUT_DURATION, () => {
             expire_undo.begin ();
             return Source.REMOVE;
         });
-        timeout_ids.append (timeout_id);
 
         return moved_messages.size;
     }
@@ -156,12 +157,10 @@ public class Mail.MoveHandler {
     }
 
     public void undo_last_move () {
-        src_folder.freeze ();
+        Source.remove (timeout_id);
+        timeout_id = 0;
 
-        foreach (var timeout_id in timeout_ids) {
-            Source.remove (timeout_id);
-            timeout_ids.remove_all (timeout_id);
-        }
+        src_folder.freeze ();
 
         foreach (var info in moved_messages) {
             info.set_flags (Camel.MessageFlags.DELETED, 0);
@@ -171,14 +170,12 @@ public class Mail.MoveHandler {
     }
 
     public async void expire_undo () {
-        if (timeout_ids.is_empty ()) {
+        if (timeout_id == 0) {
             return;
         }
 
-        foreach (var timeout_id in timeout_ids) {
-            Source.remove (timeout_id);
-            timeout_ids.remove_all (timeout_id);
-        }
+        Source.remove (timeout_id);
+        timeout_id = 0;
 
         var message_uids = new GenericArray<string> ();
         foreach (unowned var message in moved_messages) {
