@@ -37,17 +37,15 @@ public class Mail.MoveHandler {
         src_folder = source_folder;
         move_type = _move_type;
 
-        Camel.Folder destination_folder = null;
-
         switch (move_type) {
             case TRASH:
                 var store = src_folder.parent_store;
-                destination_folder = yield store.get_trash_folder (GLib.Priority.DEFAULT);
+                dst_folder = yield store.get_trash_folder (GLib.Priority.DEFAULT);
                 break;
             case MOVE:
                 var dest_folder_full_name = dest_folder.get_string ();
                 var store = src_folder.parent_store;
-                destination_folder = yield store.get_folder (dest_folder_full_name, Camel.StoreGetFolderFlags.NONE, GLib.Priority.DEFAULT, null);
+                dst_folder = yield store.get_folder (dest_folder_full_name, Camel.StoreGetFolderFlags.NONE, GLib.Priority.DEFAULT, null);
                 break;
             case ARCHIVE:
                 var archive_folder_uri = get_archive_folder_uri_from_folder (source_folder);
@@ -56,15 +54,13 @@ public class Mail.MoveHandler {
                 if (!get_folder_from_uri (archive_folder_uri, out dest_store, out dest_folder_full_name)) {
                     return 0;
                 }
-                destination_folder = yield dest_store.get_folder (dest_folder_full_name, Camel.StoreGetFolderFlags.NONE, GLib.Priority.DEFAULT, null);
+                dst_folder = yield dest_store.get_folder (dest_folder_full_name, Camel.StoreGetFolderFlags.NONE, GLib.Priority.DEFAULT, null);
                 break;
         }
 
-        if (destination_folder == null) {
+        if (dst_folder == null) {
             return 0;
         }
-
-        dst_folder = destination_folder;
 
         moved_messages = new Gee.ArrayList<weak Camel.MessageInfo> ();
 
