@@ -33,7 +33,7 @@ public class Mail.MoveHandler {
 
     private uint timeout_id = 0;
 
-    public async int move_messages (Camel.Folder source_folder, MoveType _move_type, Gee.ArrayList<unowned Camel.FolderThreadNode?> threads, Variant? dest_folder = null) throws Error {
+    public async int move_messages (Camel.Folder source_folder, MoveType _move_type, Gee.ArrayList<unowned Camel.FolderThreadNode?> threads, Variant? dest_folder) throws Error {
         yield expire_undo ();
 
         src_folder = source_folder;
