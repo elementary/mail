@@ -8,12 +8,12 @@
 # Jonas Skarulskis <jonas.ska@gmail.com>, 2015.
 # Aurimas Černius <aurisc4@gmail.com>, 2015.
 #
-#: src/MessageList/MessageListItem.vala:426
+#: src/MessageList/MessageListItem.vala:422
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-14 11:53+0000\n"
+"POT-Creation-Date: 2023-04-14 17:57+0000\n"
 "PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/mail/mail/lt/"
@@ -253,18 +253,18 @@ msgstr[0] "Visada rodyti nuo siuntėjo"
 msgstr[1] "Visada rodyti nuo siuntėjo"
 msgstr[2] "Visada rodyti nuo siuntėjo"
 
-#: src/MainWindow.vala:75
+#: src/MainWindow.vala:77
 msgid "Mail"
 msgstr "Paštas"
 
-#: src/MainWindow.vala:243
+#: src/MainWindow.vala:251
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Laiškas ištrintas"
 msgstr[1] "Laiškai ištrinti"
 msgstr[2] "Laiškai ištrinti"
 
-#: src/MainWindow.vala:255
+#: src/MainWindow.vala:263
 msgid "Undo"
 msgstr "Atšaukti"
 
@@ -329,17 +329,17 @@ msgid "Mark As Unread"
 msgstr "Žymėti neskaitytu"
 
 #: src/ConversationList/ConversationList.vala:599
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "Žymėti skaitytu"
 
 #: src/ConversationList/ConversationList.vala:609
-#: src/MessageList/MessageList.vala:90
+#: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "Žymėti žvaigždute"
 
 #: src/ConversationList/ConversationList.vala:617
-#: src/MessageList/MessageList.vala:96
+#: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "Nežymėti žvaigždute"
 
@@ -411,37 +411,37 @@ msgstr "Paskyros nustatymai…"
 msgid "Menu"
 msgstr "Meniu"
 
-#: src/MessageList/MessageList.vala:55 src/MessageList/MessageListItem.vala:206
+#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Atsakyti"
 
-#: src/MessageList/MessageList.vala:63
+#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Atsakyti visiems"
 
-#: src/MessageList/MessageList.vala:71 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Persiųsti"
 
-#: src/MessageList/MessageList.vala:78
+#: src/MessageList/MessageList.vala:81
 msgid "Mark as Unread"
 msgstr "Žymėti neskaitytu"
 
-#: src/MessageList/MessageList.vala:109
+#: src/MessageList/MessageList.vala:112
 msgid "Mark Conversation"
 msgstr "Žymėti pokalbį"
 
-#: src/MessageList/MessageList.vala:117
+#: src/MessageList/MessageList.vala:120
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
 msgstr "Perkelti pokalbius į šiukšlinę"
 
-#: src/MessageList/MessageList.vala:125
+#: src/MessageList/MessageList.vala:128
 msgid "Move conversations to Trash"
 msgstr "Perkelti pokalbius į šiukšlinę"
 
-#: src/MessageList/MessageList.vala:152
+#: src/MessageList/MessageList.vala:155
 msgid "No Message Selected"
 msgstr "Nepasirinkta jokių laiškų"
 
@@ -452,20 +452,16 @@ msgid "%s at %s"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:377
 msgid "Unstar message"
 msgstr "Nežymėti žvaigždute"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:372
+#: src/MessageList/MessageListItem.vala:373
 msgid "Star message"
 msgstr "Žymėti žvaigždute"
 
-#: src/MessageList/MessageListItem.vala:209
-msgid "Reply to All"
-msgstr "Atsakyti visiems"
-
-#: src/MessageList/MessageListItem.vala:215
+#: src/MessageList/MessageListItem.vala:218
 msgid "Print…"
 msgstr "Spausdinti…"
 
@@ -473,41 +469,41 @@ msgstr "Spausdinti…"
 msgid "More"
 msgstr "Daugiau"
 
-#: src/MessageList/MessageListItem.vala:276
+#: src/MessageList/MessageListItem.vala:277
 msgid "Show Images"
 msgstr "Rodyti paveikslus"
 
-#: src/MessageList/MessageListItem.vala:277
+#: src/MessageList/MessageListItem.vala:278
 msgid "Always Show from Sender"
 msgstr "Visada rodyti nuo siuntėjo"
 
-#: src/MessageList/MessageListItem.vala:282
+#: src/MessageList/MessageListItem.vala:283
 msgid "This message contains remote images."
 msgstr "Šiame laiške yra nuotolinių paveikslų."
 
-#: src/MessageList/MessageListItem.vala:319
+#: src/MessageList/MessageListItem.vala:320
 msgid "This message contains one or more attachments"
 msgstr "Šiame laiške yra vienas ar daugiau priedų"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:403
+#: src/MessageList/MessageListItem.vala:399
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Naujas laiškas"
 
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:421
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
 msgstr "Negalima patvirtinti:\n"
 
-#: src/MessageList/MessageListItem.vala:648
+#: src/MessageList/MessageListItem.vala:644
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:649
+#: src/MessageList/MessageListItem.vala:645
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -515,7 +511,7 @@ msgstr ""
 "Atveriami priedai gali pakenkti jūsų sistemai. Atverkite failus tik nuo "
 "patikimų šaltinių."
 
-#: src/MessageList/MessageListItem.vala:656
+#: src/MessageList/MessageListItem.vala:652
 msgid "Open Anyway"
 msgstr "Vis tiek atverti"
 
@@ -534,6 +530,9 @@ msgstr "Nežinoma"
 #: src/MessageList/AttachmentButton.vala:138
 msgid "Save"
 msgstr "Įrašyti"
+
+#~ msgid "Reply to All"
+#~ msgstr "Atsakyti visiems"
 
 #, c-format
 #~ msgid "Are you sure you want to open %s?"

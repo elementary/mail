@@ -59,23 +59,37 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         {ACTION_SEND, on_send }
     };
 
-    public Composer (Gtk.Window parent, string? to = null, string? mailto_query = null) {
+    public Composer (string? to = null, string? mailto_query = null) {
         Object (
-            transient_for: parent,
             to: to,
             mailto_query: mailto_query
         );
     }
 
-    public Composer.with_quote (Gtk.Window parent, Composer.Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content) {
-        Object (
-            transient_for: parent,
-            has_recipients: true
-        );
+    public Composer.with_quote (Composer.Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content) {
+        Object (has_recipients: true);
         quote_content (type, info, message, content);
     }
 
     construct {
+        add_action_entries (ACTION_ENTRIES, this);
+
+        application = (Gtk.Application) GLib.Application.get_default ();
+        // Alt+I from Outlook, Shift+Ctrl+A from Apple Mail
+        application.set_accels_for_action (ACTION_PREFIX + ACTION_ADD_ATTACHMENT, {"<Alt>I", "<Shift><Control>A"});
+        application.set_accels_for_action (ACTION_PREFIX + ACTION_DISCARD, {"<Control>BackSpace", "<Control>Delete"});
+        application.set_accels_for_action (ACTION_PREFIX + ACTION_INSERT_LINK, {"<Control>K"});
+        application.set_accels_for_action (ACTION_PREFIX + ACTION_SEND, {"<Control>Return"});
+        application.set_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH), {"<Control>percent"});
+        application.set_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_UNDERLINE, ACTION_UNDERLINE), {"<Control>U"});
+
+        foreach (unowned var window in application.get_windows ()) {
+            if (window is MainWindow) {
+                transient_for = window;
+                break;
+            }
+        }
+
         var headerbar = new Hdy.HeaderBar () {
             has_subtitle = false,
             show_close_button = true
@@ -209,19 +223,28 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             action_name = ACTION_PREFIX + ACTION_UNDERLINE,
             action_target = ACTION_UNDERLINE,
             image = new Gtk.Image.from_icon_name ("format-text-underline-symbolic", Gtk.IconSize.MENU),
-            tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Underline"))
+            tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_UNDERLINE, ACTION_UNDERLINE)),
+                _("Underline")
+            )
         };
 
         var strikethrough = new Gtk.ToggleButton () {
             action_name = ACTION_PREFIX + ACTION_STRIKETHROUGH,
             action_target = ACTION_STRIKETHROUGH,
             image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU),
-            tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Strikethrough"))
+            tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH)),
+                _("Strikethrough")
+            )
         };
 
         var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU) {
             action_name = ACTION_PREFIX + ACTION_REMOVE_FORMAT,
-            tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Remove formatting"))
+            tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (ACTION_PREFIX + ACTION_REMOVE_FORMAT),
+                _("Remove formatting")
+            )
         };
 
         var formatting_buttons = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
@@ -233,7 +256,10 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
         var link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU) {
             action_name = ACTION_PREFIX + ACTION_INSERT_LINK,
-            tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Insert Link"))
+            tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (ACTION_PREFIX + ACTION_INSERT_LINK),
+                _("Insert Link")
+            )
         };
 
         var button_row = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12) {
@@ -263,12 +289,18 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
         var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU) {
             action_name = ACTION_PREFIX + ACTION_DISCARD,
-            tooltip_text = _("Delete draft")
+            tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (ACTION_PREFIX + ACTION_DISCARD),
+                _("Delete draft")
+            )
         };
 
         var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU) {
             action_name = ACTION_PREFIX + ACTION_ADD_ATTACHMENT,
-            tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Attach file"))
+            tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (ACTION_PREFIX + ACTION_ADD_ATTACHMENT),
+                _("Attach file")
+            )
         };
 
         var send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU) {
@@ -279,7 +311,10 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             margin_end = 0,
             margin_bottom = 6,
             margin_start = 6,
-            sensitive = false
+            sensitive = false,
+            tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (ACTION_PREFIX + ACTION_SEND)
+            )
         };
         send.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
@@ -306,12 +341,11 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         main_box.add (attachment_box);
         main_box.add (action_bar);
 
-        add_action_entries (ACTION_ENTRIES, this);
-
         default_height = 500;
         default_width = 680;
         title = _("New Message");
         add (main_box);
+        show_all ();
 
         delete_event.connect (() => {
             save_draft.begin ((obj, res) => {
@@ -484,7 +518,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     private async void ask_insert_link () {
         var selected_text = yield web_view.get_selected_text ();
         var insert_link_dialog = new InsertLinkDialog (selected_text) {
-            transient_for = (Gtk.Window) get_toplevel ()
+            transient_for = this
         };
         insert_link_dialog.present ();
         insert_link_dialog.insert_link.connect ((url, title) => on_link_inserted (url, title, selected_text));
@@ -690,7 +724,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             Gtk.ButtonsType.NONE
         ) {
             badge_icon = new ThemedIcon ("edit-delete"),
-            transient_for = get_toplevel () as Gtk.Window
+            transient_for = this
         };
 
         discard_dialog.add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
@@ -724,7 +758,8 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 "mail-send",
                 Gtk.ButtonsType.NONE
             );
-            no_subject_dialog.transient_for = get_toplevel () as Gtk.Window;
+            no_subject_dialog.modal = true;
+            no_subject_dialog.transient_for = this;
 
             no_subject_dialog.add_button (_("Don't Send"), Gtk.ResponseType.CANCEL);
 

@@ -25,18 +25,21 @@ public class Mail.WelcomeView : Gtk.Box {
         };
         headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var welcome_icon = new Gtk.Image ();
-        welcome_icon.icon_name = "io.elementary.mail";
-        welcome_icon.margin_bottom = 6;
-        welcome_icon.margin_end = 12;
-        welcome_icon.pixel_size = 64;
+        var welcome_icon = new Gtk.Image () {
+            icon_name = "io.elementary.mail",
+            margin_bottom = 6,
+            margin_end = 12,
+            pixel_size = 64
+        };
 
-        var welcome_badge = new Gtk.Image.from_icon_name ("preferences-desktop-online-accounts", Gtk.IconSize.DIALOG);
-        welcome_badge.halign = welcome_badge.valign = Gtk.Align.END;
+        var welcome_badge = new Gtk.Image.from_icon_name ("preferences-desktop-online-accounts", Gtk.IconSize.DIALOG) {
+            halign = valign = Gtk.Align.END,
+        };
 
-        var welcome_overlay = new Gtk.Overlay ();
-        welcome_overlay.halign = Gtk.Align.CENTER;
-        welcome_overlay.add (welcome_icon);
+        var welcome_overlay = new Gtk.Overlay () {
+            halign = Gtk.Align.CENTER,
+            child = welcome_icon
+        };
         welcome_overlay.add_overlay (welcome_badge);
 
         var welcome_title = new Gtk.Label (_("Connect an Account")) {
@@ -72,8 +75,9 @@ public class Mail.WelcomeView : Gtk.Box {
         main_box.add (headerbar);
         main_box.add (grid);
 
-        var window_handle = new Hdy.WindowHandle ();
-        window_handle.add (main_box);
+        var window_handle = new Hdy.WindowHandle () {
+            child = main_box
+        };
 
         add (window_handle);
         show_all ();
