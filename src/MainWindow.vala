@@ -65,8 +65,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         {ACTION_MARK_UNREAD, on_mark_unread },
         {ACTION_MARK_UNSTAR, on_mark_unstar },
         {ACTION_MOVE, action_move, "s" },
-        {ACTION_ARCHIVE, on_archive },
-        {ACTION_MOVE_TO_TRASH, on_move_to_trash },
+        {ACTION_ARCHIVE, action_move },
+        {ACTION_MOVE_TO_TRASH, action_move },
         {ACTION_FULLSCREEN, on_fullscreen },
     };
 
@@ -253,18 +253,34 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void action_move (SimpleAction action, Variant? parameter) {
-        conversation_list.move_selected_messages.begin (parameter);
-    }
-
-    private void on_archive () {
-        conversation_list.archive_selected_messages.begin ();
-    }
-
-    private void on_move_to_trash () {
-        var result = conversation_list.trash_selected_messages ();
-        if (result > 0) {
-            toast.title = ngettext ("Message Deleted", "Messages Deleted", result);
-            toast.send_notification ();
+        switch (action.name) {
+            case ACTION_MOVE:
+                conversation_list.move_selected_messages.begin (MoveHandler.MoveType.MOVE, parameter, (obj, res) => {
+                    var result = conversation_list.move_selected_messages.end (res);
+                    if (result > 0) {
+                        toast.title = ngettext ("Message Moved", "Messages Moved", result);
+                        toast.send_notification ();
+                    }
+                });
+                break;
+            case ACTION_ARCHIVE:
+                conversation_list.move_selected_messages.begin (MoveHandler.MoveType.ARCHIVE, null, (obj, res) => {
+                    var result = conversation_list.move_selected_messages.end (res);
+                    if (result > 0) {
+                        toast.title = ngettext ("Message Archived", "Messages Archived", result);
+                        toast.send_notification ();
+                    }
+                });
+                break;
+            case ACTION_MOVE_TO_TRASH:
+                conversation_list.move_selected_messages.begin (MoveHandler.MoveType.TRASH, null, (obj, res) => {
+                    var result = conversation_list.move_selected_messages.end (res);
+                    if (result > 0) {
+                        toast.title = ngettext ("Message Deleted", "Messages Deleted", result);
+                        toast.send_notification ();
+                    }
+                });
+                break;
         }
     }
 
