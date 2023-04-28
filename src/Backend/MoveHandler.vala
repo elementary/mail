@@ -24,6 +24,8 @@ public class Mail.MoveHandler {
         MOVE
     }
 
+    private const int TIMEOUT_DURATION = 5;
+
     private Camel.Folder src_folder;
     private Camel.Folder? dst_folder;
     private Gee.ArrayList<weak Camel.MessageInfo> moved_messages;
@@ -41,7 +43,6 @@ public class Mail.MoveHandler {
             case TRASH:
                 var store = src_folder.parent_store;
                 destination_folder = yield store.get_trash_folder (GLib.Priority.DEFAULT);
-                print (destination_folder.full_name);
                 break;
             case MOVE:
                 var dest_folder_full_name = dest_folder.get_string ();
@@ -79,7 +80,7 @@ public class Mail.MoveHandler {
 
         src_folder.thaw ();
 
-        var timeout_id = GLib.Timeout.add_seconds (5, () => {
+        var timeout_id = GLib.Timeout.add_seconds (TIMEOUT_DURATION, () => {
             expire_undo.begin ();
             return Source.REMOVE;
         });
