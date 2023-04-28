@@ -45,6 +45,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     public const string ACTION_MARK_STAR = "mark-star";
     public const string ACTION_MARK_UNREAD = "mark-unread";
     public const string ACTION_MARK_UNSTAR = "mark-unstar";
+    public const string ACTION_MOVE = "move";
     public const string ACTION_ARCHIVE = "archive";
     public const string ACTION_MOVE_TO_TRASH = "trash";
     public const string ACTION_FULLSCREEN = "full-screen";
@@ -63,6 +64,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         {ACTION_MARK_STAR, on_mark_star },
         {ACTION_MARK_UNREAD, on_mark_unread },
         {ACTION_MARK_UNSTAR, on_mark_unstar },
+        {ACTION_MOVE, action_move, "s" },
         {ACTION_ARCHIVE, on_archive },
         {ACTION_MOVE_TO_TRASH, on_move_to_trash },
         {ACTION_FULLSCREEN, on_fullscreen },
@@ -248,6 +250,10 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
     private void on_print (SimpleAction action, Variant? parameter) {
         message_list.print (parameter);
+    }
+
+    private void action_move (SimpleAction action, Variant? parameter) {
+        conversation_list.move_selected_messages.begin (parameter);
     }
 
     private void on_archive () {

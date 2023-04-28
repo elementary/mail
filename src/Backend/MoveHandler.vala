@@ -20,7 +20,8 @@
 public class Mail.MoveHandler {
     private enum MoveType {
         TRASH,
-        ARCHIVE
+        ARCHIVE,
+        MOVE
     }
 
     private Camel.Folder src_folder;
@@ -48,6 +49,28 @@ public class Mail.MoveHandler {
         src_folder.thaw ();
 
         return moved_messages.size;
+    }
+
+    public async void move_messages (Camel.Folder source_folder, string destination_folder_full_name, Gee.ArrayList<unowned Camel.FolderThreadNode?> threads) throws Error {
+        src_folder = source_folder;
+        move_type = MoveType.MOVE;
+
+        var store = src_folder.parent_store;
+        var destination_folder = yield store.get_folder (destination_folder_full_name, Camel.StoreGetFolderFlags.NONE, GLib.Priority.DEFAULT, null);
+
+        moved_messages = new Gee.ArrayList<weak Camel.MessageInfo> ();
+
+        var message_uids = new GenericArray<string> ();
+
+        foreach (unowned var thread in threads) {
+            collect_thread_messages (thread);
+        }
+
+        foreach (unowned var message in moved_messages) {
+            message_uids.add (message.uid);
+        }
+
+        yield source_folder.transfer_messages_to (message_uids, destination_folder, true, GLib.Priority.DEFAULT, null, null);
     }
 
     public async int archive_threads (Camel.Folder folder, Gee.ArrayList<unowned Camel.FolderThreadNode?> threads) {

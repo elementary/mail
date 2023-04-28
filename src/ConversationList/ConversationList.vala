@@ -493,6 +493,47 @@ public class Mail.ConversationList : Gtk.Box {
         }
     }
 
+    public async void move_selected_messages (Variant dest_folder) {
+        var move_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
+        var previous_items = list_store.get_n_items ();
+
+        var dest_folder_full_name = dest_folder.get_string ();
+
+        var selected_rows = list_box.get_selected_rows ();
+        int selected_rows_start_index = list_store.get_index_of (selected_rows.to_array ()[0]);
+
+        foreach (unowned var selected_row in selected_rows) {
+            var selected_item_model = (ConversationItemModel) selected_row;
+
+            if (move_threads[selected_item_model.service_uid] == null) {
+                move_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
+            }
+
+            move_threads[selected_item_model.service_uid].add (selected_item_model.node);
+        }
+
+        foreach (var service_uid in move_threads.keys) {
+            move_handler.move_messages.begin (folders[service_uid], dest_folder_full_name, move_threads[service_uid]);
+        }
+
+
+        foreach (var service_uid in move_threads.keys) {
+            var threads = move_threads[service_uid];
+
+            foreach (unowned var thread in threads) {
+                unowned var uid = thread.message.uid;
+                var item = conversations[uid];
+                if (item != null) {
+                    conversations.unset (uid);
+                    list_store.remove (item);
+                }
+            }
+        }
+
+        list_store.items_changed (0, previous_items, list_store.get_n_items ());
+        list_box.select_row_at_index (selected_rows_start_index);
+    }
+
     public async int archive_selected_messages () {
         var archive_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
 
