@@ -132,15 +132,13 @@
             "buildsystem": "meson",
             "config-opts": [
                 "-Ddocs=false",
-                "-Dbackend-gtk3=enabled",
-                "-Dbackend-gtk4=disabled",
-                "-Dbackend-qt5=disabled"
+                "-Dbackends=['gtk3']"
             ],
             "sources" : [
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/libportal.git",
-                    "branch": "main"
+                    "tag": "0.6"
                 }
             ]
         },

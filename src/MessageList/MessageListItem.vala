@@ -333,7 +333,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         expanded = false;
         show_all ();
 
-        // avatar.set_loadable_icon (new GravatarIcon (parsed_address, get_style_context ().get_scale ()));
+        avatar.set_loadable_icon (new GravatarIcon (parsed_address, get_style_context ().get_scale ()));
 
         /* Override default handler to stop event propagation. Otherwise clicking the menu will
            expand or collapse the MessageListItem. */
