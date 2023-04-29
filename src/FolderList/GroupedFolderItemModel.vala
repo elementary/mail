@@ -1,68 +1,69 @@
-/*
-* Copyright 2021 elementary, Inc. (https://elementary.io)
-*
-* This program is free software; you can redistribute it and/or
-* modify it under the terms of the GNU General Public
-* License as published by the Free Software Foundation; either
-* version 3 of the License, or (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
-*
-* You should have received a copy of the GNU General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-* Boston, MA 02110-1301 USA
-*/
+// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
+/*-
+ * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ * Boston, MA 02111-1307, USA.
+ *
+ * Authored by: Corentin Noël <corentin@elementary.io>
+ */
 
-public class Mail.GroupedFolderSourceItem : Mail.SourceList.Item {
-    public Mail.Backend.Session session { get; construct; }
+public class Mail.GroupedFolderItemModel : ItemModel {
+    public int unread { get; set; }
+
     public Camel.FolderInfoFlags folder_type { get; construct; }
+    public string full_name { get; construct; }
 
+    private Gee.HashMap<Mail.Backend.Account, Camel.FolderInfo?> account_folderinfo;
     private GLib.Cancellable connect_cancellable;
-    private Gee.HashMap<Backend.Account, Camel.FolderInfo?> account_folderinfo;
 
-    public GroupedFolderSourceItem (Mail.Backend.Session session, Camel.FolderInfoFlags folder_type) {
-        Object (session: session, folder_type: folder_type);
+    public GroupedFolderItemModel (Camel.FolderInfoFlags folder_type) {
+        Object (folder_type: folder_type);
     }
 
     construct {
-        visible = true;
+        account_uid = Mail.SessionItemModel.SESSION_ACCOUNT_UID;
+        account_folderinfo = new Gee.HashMap<Mail.Backend.Account, Camel.FolderInfo?> ();
+
         connect_cancellable = new GLib.Cancellable ();
-        account_folderinfo = new Gee.HashMap<Backend.Account, Camel.FolderInfo?> ();
 
         switch (folder_type & Camel.FOLDER_TYPE_MASK) {
             case Camel.FolderInfoFlags.TYPE_INBOX:
                 name = _("Inbox");
-                icon = new ThemedIcon ("mail-inbox");
+                icon_name = "mail-inbox";
+                full_name = "inbox";
                 break;
             case Camel.FolderInfoFlags.TYPE_ARCHIVE:
                 name = _("Archive");
-                icon = new ThemedIcon ("mail-archive");
+                icon_name = ("mail-archive");
+                full_name = "archive";
                 break;
             case Camel.FolderInfoFlags.TYPE_SENT:
                 name = _("Sent");
-                icon = new ThemedIcon ("mail-sent");
+                icon_name = "mail-sent";
+                full_name = "sent";
                 break;
             default:
                 name = "%i".printf (folder_type & Camel.FOLDER_TYPE_MASK);
-                icon = new ThemedIcon ("folder");
+                icon_name = "folder";
                 warning ("Unknown grouped folder type: %s", name);
                 break;
         }
-
-        session.get_accounts ().foreach ((account) => {
-            add_account (account);
-            return true;
-        });
-
-        session.account_added.connect (add_account);
-        session.account_removed.connect (removed_account);
     }
 
-    ~GroupedFolderSourceItem () {
+    ~GroupedFolderItemModel () {
         connect_cancellable.cancel ();
     }
 
@@ -81,7 +82,7 @@ public class Mail.GroupedFolderSourceItem : Mail.SourceList.Item {
         return folder_full_name_per_account.read_only_view;
     }
 
-    private void add_account (Mail.Backend.Account account) {
+    public void add_account (Mail.Backend.Account account) {
         lock (account_folderinfo) {
             account_folderinfo.set (account, null);
         }
@@ -110,14 +111,7 @@ public class Mail.GroupedFolderSourceItem : Mail.SourceList.Item {
         update_infos ();
     }
 
-    private void removed_account (Mail.Backend.Account account) {
-        lock (account_folderinfo) {
-            account_folderinfo.unset (account);
-        }
-    }
-
     private void update_infos () {
-        badge = null;
         var total_unread = 0;
         lock (account_folderinfo) {
             foreach (var entry in account_folderinfo) {
@@ -127,13 +121,11 @@ public class Mail.GroupedFolderSourceItem : Mail.SourceList.Item {
                 total_unread += entry.value.unread;
             }
         }
-
-        if (total_unread > 0) {
-            badge = "%d".printf (total_unread);
-        }
+        unread = total_unread;
     }
 
     private string? build_folder_full_name (Backend.Account account) {
+        var session = Mail.Backend.Session.get_default ();
         var service_source = session.ref_source (account.service.uid);
         if (service_source == null || !service_source.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
             return null;
@@ -164,5 +156,11 @@ public class Mail.GroupedFolderSourceItem : Mail.SourceList.Item {
         }
 
         return null;
+    }
+
+    public void remove_account (Mail.Backend.Account account) {
+        lock (account_folderinfo) {
+            account_folderinfo.unset (account);
+        }
     }
 }

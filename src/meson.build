@@ -15,22 +15,15 @@ vala_files = files(
     'ConversationList/ConversationListItem.vala',
     'ConversationList/ConversationListStore.vala',
     'Dialogs/InsertLinkDialog.vala',
-    'FoldersView/AccountSavedState.vala',
-    'FoldersView/AccountSourceItem.vala',
-    'FoldersView/FoldersListView.vala',
-    'FoldersView/FolderSourceItem.vala',
-    'FoldersView/GroupedFolderSourceItem.vala',
-    'FoldersView/SessionSourceItem.vala',
+    'FolderList/FolderList.vala',
+    'FolderList/FolderListItem.vala',
+    'FolderList/AccountItemModel.vala',
+    'FolderList/FolderItemModel.vala',
+    'FolderList/SessionItemModel.vala',
+    'FolderList/GroupedFolderItemModel.vala',
     'MessageList/AttachmentButton.vala',
-    'MessageList/GravatarIcon.vala',
     'MessageList/MessageList.vala',
-    'MessageList/MessageListItem.vala',
-    'SourceList/CellRendererBadge.vala',
-    'SourceList/CellRendererExpander.vala',
-    'SourceList/SourceList.vala',
-    'VirtualizingListBox/VirtualizingListBoxModel.vala',
-    'VirtualizingListBox/VirtualizingListBoxRow.vala',
-    'VirtualizingListBox/VirtualizingListBox.vala'
+    'MessageList/MessageListItem.vala'
 )
 
 executable(
@@ -39,6 +32,6 @@ executable(
     config_file,
     asresources,
     dependencies: dependencies,
-    c_args: '-DWEBKIT_EXTENSION_PATH="' + webkit2_extension_path + '"',
+    c_args: '-DWEBKIT_EXTENSION_PATH="' + webkit_extension_path + '"',
     install: true
 )

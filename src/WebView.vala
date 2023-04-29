@@ -26,12 +26,9 @@ public class Mail.WebView : WebKit.WebView {
     public signal void selection_changed ();
     public signal void load_finished ();
 
-    public bool body_html_changed { get; private set; default = false; }
-
     private const string INTERNAL_URL_BODY = "elementary-mail:body";
     private const string SERVER_BUS_NAME = "io.elementary.mail.WebViewServer";
 
-    private int preferred_height = 0;
     private Gee.Map<string, InputStream> internal_resources;
 
     private bool loaded = false;
@@ -42,8 +39,8 @@ public class Mail.WebView : WebKit.WebView {
     static construct {
         unowned WebKit.WebContext context = WebKit.WebContext.get_default ();
         unowned string? webkit_extension_path_env = Environment.get_variable ("WEBKIT_EXTENSION_PATH");
-        context.set_web_extensions_directory (webkit_extension_path_env ?? WEBKIT_EXTENSION_PATH);
-        context.set_sandbox_enabled (true);
+        context.set_web_process_extensions_directory (webkit_extension_path_env ?? WEBKIT_EXTENSION_PATH);
+        // context.set_sandbox_enabled (true);
 
         context.register_uri_scheme ("cid", (req) => {
             WebView? view = req.get_web_view () as WebView;
@@ -55,16 +52,13 @@ public class Mail.WebView : WebKit.WebView {
 
     construct {
         cancellable = new GLib.Cancellable ();
-        expand = true;
+        vexpand = true;
+        hexpand = true;
 
         internal_resources = new Gee.HashMap<string, InputStream> ();
 
         decide_policy.connect (on_decide_policy);
         load_changed.connect (on_load_changed);
-
-        key_release_event.connect (() => {
-            body_html_changed = true;
-        });
     }
 
     public WebView () {
@@ -73,12 +67,12 @@ public class Mail.WebView : WebKit.WebView {
         setts.enable_fullscreen = false;
         setts.enable_html5_database = false;
         setts.enable_html5_local_storage = false;
-        setts.enable_java = false;
+        // setts.enable_java = false;
         setts.enable_javascript = false;
         setts.enable_media_stream = false;
         setts.enable_offline_web_application_cache = false;
         setts.enable_page_cache = false;
-        setts.enable_plugins = false;
+        // setts.enable_plugins = false;
 
         Object (settings: setts);
     }
@@ -93,8 +87,7 @@ public class Mail.WebView : WebKit.WebView {
             send_message_to_page.begin (message, cancellable, (obj, res) => {
                 try {
                     var response = send_message_to_page.end (res);
-                    preferred_height = response.parameters.get_int32 ();
-                    queue_resize ();
+                    height_request = response.parameters.get_int32 (); //@TODO: Needs refinement: On a quick switch of message this doesn't update correctly
                 } catch (Error e) {
                     // We can cancel the operation
                     if (!(e is GLib.IOError.CANCELLED)) {
@@ -116,10 +109,6 @@ public class Mail.WebView : WebKit.WebView {
 
             load_finished ();
         }
-    }
-
-    public override void get_preferred_height (out int minimum_height, out int natural_height) {
-        minimum_height = natural_height = preferred_height;
     }
 
     public new void load_html (string? body) {
@@ -184,7 +173,6 @@ public class Mail.WebView : WebKit.WebView {
     public void execute_editor_command (string command, string argument = "") {
         var message = new WebKit.UserMessage ("execute-editor-command", new Variant ("(ss)", command, argument));
         send_message_to_page.begin (message, cancellable);
-        body_html_changed = true;
     }
 
     public async bool query_command_state (string command) {
@@ -246,11 +234,7 @@ public class Mail.WebView : WebKit.WebView {
     }
 
     private bool handle_internal_response (WebKit.URISchemeRequest request) {
-#if HAS_SOUP_3
         string name = GLib.Uri.unescape_string (request.get_path ());
-#else
-        string name = Soup.URI.decode (request.get_path ());
-#endif
         InputStream? buf = this.internal_resources[name];
         if (buf != null) {
             request.finish (buf, -1, null);

@@ -18,16 +18,13 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.MainWindow : Hdy.ApplicationWindow {
+public class Mail.MainWindow : Adw.ApplicationWindow {
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
 
-    private FoldersListView folders_list_view;
-    private Gtk.Overlay view_overlay;
     private ConversationList conversation_list;
+    private Granite.Toast toast;
     private MessageList message_list;
-
-    private uint configure_id;
 
     public bool is_session_started { get; private set; default = false; }
     public signal void session_started ();
@@ -105,25 +102,32 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             );
         }
 
-        folders_list_view = new FoldersListView ();
+        var folder_list = new FolderList ();
+
         conversation_list = new ConversationList ();
 
         message_list = new MessageList ();
 
-        view_overlay = new Gtk.Overlay () {
-            expand = true
+        var view_overlay = new Gtk.Overlay () {
+            vexpand = true,
+            hexpand = true,
+            child = message_list
         };
-        view_overlay.add (message_list);
 
-        var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
-        message_overlay.no_show_all = true;
+        toast = new Granite.Toast ("");
+        toast.set_default_action (_("Undo"));
+        view_overlay.add_overlay (toast);
+
+        toast.default_action.connect (() => {
+            conversation_list.undo_move ();
+        });
+
+        var message_overlay = new Granite.OverlayBar (view_overlay) {
+            visible = false
+        };
 
         message_list.hovering_over_link.connect ((label, url) => {
-#if HAS_SOUP_3
             var hover_url = url != null ? GLib.Uri.unescape_string (url) : null;
-#else
-            var hover_url = url != null ? Soup.URI.decode (url) : null;
-#endif
 
             if (hover_url == null) {
                 message_overlay.hide ();
@@ -133,13 +137,21 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
-        paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
-        paned_start.pack1 (folders_list_view, false, false);
-        paned_start.pack2 (conversation_list, true, false);
+        paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL) {
+            shrink_start_child = false,
+            shrink_end_child = false,
+            wide_handle = true
+        };
+        paned_start.set_start_child (folder_list);
+        paned_start.set_end_child (conversation_list);
 
-        paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
-        paned_end.pack1 (paned_start, false, false);
-        paned_end.pack2 (view_overlay, true, false);
+        paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL) {
+            shrink_start_child = false,
+            shrink_end_child = false,
+            wide_handle = true
+        };
+        paned_end.set_start_child (paned_start);
+        paned_end.set_end_child (view_overlay);
 
         var welcome_view = new Mail.WelcomeView ();
 
@@ -147,25 +159,22 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         placeholder_stack.add_named (paned_end, "mail");
         placeholder_stack.add_named (welcome_view, "welcome");
 
-        add (placeholder_stack);
-
-        var header_group = new Hdy.HeaderGroup ();
-        header_group.add_header_bar (folders_list_view.header_bar);
-        header_group.add_header_bar (conversation_list.search_header);
-        header_group.add_header_bar (message_list.headerbar);
+        set_content (placeholder_stack);
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.VERTICAL);
-        size_group.add_widget (folders_list_view.header_bar);
+        size_group.add_widget (folder_list.header_bar);
         size_group.add_widget (conversation_list.search_header);
         size_group.add_widget (message_list.headerbar);
 
         var settings = new GLib.Settings ("io.elementary.mail");
+        settings.bind ("window-width", this, "default-width", SettingsBindFlags.DEFAULT);
+        settings.bind ("window-height", this, "default-height", SettingsBindFlags.DEFAULT);
+        settings.bind ("window-maximized", this, "maximized", SettingsBindFlags.DEFAULT);
+
         settings.bind ("paned-start-position", paned_start, "position", SettingsBindFlags.DEFAULT);
         settings.bind ("paned-end-position", paned_end, "position", SettingsBindFlags.DEFAULT);
 
-        destroy.connect (() => destroy ());
-
-        folders_list_view.folder_selected.connect (conversation_list.load_folder);
+        folder_list.folder_selected.connect (conversation_list.load_folder);
 
         conversation_list.conversation_selected.connect (message_list.set_conversation);
 
@@ -205,18 +214,26 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
     private void on_mark_read () {
         conversation_list.mark_read_selected_messages ();
+        get_action (ACTION_MARK_READ).set_enabled (false);
+        get_action (ACTION_MARK_UNREAD).set_enabled (true);
     }
 
     private void on_mark_star () {
         conversation_list.mark_star_selected_messages ();
+        get_action (ACTION_MARK_STAR).set_enabled (false);
+        get_action (ACTION_MARK_UNSTAR).set_enabled (true);
     }
 
     private void on_mark_unread () {
         conversation_list.mark_unread_selected_messages ();
+        get_action (ACTION_MARK_UNREAD).set_enabled (false);
+        get_action (ACTION_MARK_READ).set_enabled (true);
     }
 
     private void on_mark_unstar () {
         conversation_list.mark_unstar_selected_messages ();
+        get_action (ACTION_MARK_UNSTAR).set_enabled (false);
+        get_action (ACTION_MARK_STAR).set_enabled (true);
     }
 
     private void action_compose (SimpleAction action, Variant? parameter) {
@@ -247,74 +264,22 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private void on_move_to_trash () {
         var result = conversation_list.trash_selected_messages ();
         if (result > 0) {
-            send_move_toast (ngettext ("Message Deleted", "Messages Deleted", result));
+            toast.title = ngettext ("Message Deleted", "Messages Deleted", result);
+            toast.send_notification ();
         }
-    }
-
-    private void send_move_toast (string message) {
-        foreach (weak Gtk.Widget child in view_overlay.get_children ()) {
-            if (child is Granite.Widgets.Toast) {
-                child.destroy ();
-            }
-        }
-
-        var toast = new Granite.Widgets.Toast (message);
-        toast.set_default_action (_("Undo"));
-        toast.show_all ();
-
-        toast.default_action.connect (() => {
-            conversation_list.undo_move ();
-        });
-
-        toast.notify["child-revealed"].connect (() => {
-            if (!toast.child_revealed) {
-                conversation_list.undo_expired ();
-            }
-        });
-
-        view_overlay.add_overlay (toast);
-        toast.send_notification ();
     }
 
     private void on_fullscreen () {
-        if (Gdk.WindowState.FULLSCREEN in get_window ().get_state ()) {
-            message_list.headerbar.show_close_button = true;
+        if (is_fullscreen ()) {
+            message_list.window_controls.visible = true;
             unfullscreen ();
         } else {
-            message_list.headerbar.show_close_button = false;
+            message_list.window_controls.visible = false;
             fullscreen ();
         }
     }
 
-    private SimpleAction? get_action (string name) {
-        return lookup_action (name) as SimpleAction;
-    }
-
-    public override bool configure_event (Gdk.EventConfigure event) {
-        if (configure_id != 0) {
-            GLib.Source.remove (configure_id);
-        }
-
-        configure_id = Timeout.add (100, () => {
-            configure_id = 0;
-
-            if (is_maximized) {
-                Mail.Application.settings.set_boolean ("window-maximized", true);
-            } else {
-                Mail.Application.settings.set_boolean ("window-maximized", false);
-
-                Gdk.Rectangle rect;
-                get_allocation (out rect);
-                Mail.Application.settings.set ("window-size", "(ii)", rect.width, rect.height);
-
-                int root_x, root_y;
-                get_position (out root_x, out root_y);
-                Mail.Application.settings.set ("window-position", "(ii)", root_x, root_y);
-            }
-
-            return false;
-        });
-
-        return base.configure_event (event);
+    public SimpleAction? get_action (string name) {
+        return (SimpleAction) lookup_action (name) ;
     }
 }

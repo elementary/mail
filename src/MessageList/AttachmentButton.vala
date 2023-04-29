@@ -53,25 +53,19 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         actions.add_action (save_as_action);
         insert_action_group (ACTION_GROUP_PREFIX, actions);
 
+        var gesture_secondary_click = new Gtk.GestureClick () {
+            button = Gdk.BUTTON_SECONDARY
+        };
+        add_controller (gesture_secondary_click);
+
         var context_menu_model = new Menu ();
         context_menu_model.append (_("Open"), ACTION_PREFIX + ACTION_OPEN);
         context_menu_model.append (_("Save As…"), ACTION_PREFIX + ACTION_SAVE_AS);
 
-        var menu = new Gtk.Menu.from_model (context_menu_model);
-
-        var event_box = new Gtk.EventBox ();
-        event_box.events |= Gdk.EventMask.BUTTON_PRESS_MASK;
-        event_box.button_press_event.connect ((event) => {
-            if (event.button == Gdk.BUTTON_SECONDARY) {
-                menu.attach_widget = this;
-                menu.show_all ();
-                menu.popup_at_pointer (event);
-            } else {
-                activate ();
-            }
-
-            return true;
-        });
+        var menu = new Gtk.PopoverMenu.from_model (context_menu_model) {
+            has_arrow = false
+        };
+        menu.set_parent (this);
 
         var grid = new Gtk.Grid () {
             margin_top = 6,
@@ -85,7 +79,7 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         var glib_type = GLib.ContentType.from_mime_type (mime_type);
         var content_icon = GLib.ContentType.get_icon (glib_type);
 
-        preview_image = new Gtk.Image.from_gicon (content_icon, Gtk.IconSize.DND) {
+        preview_image = new Gtk.Image.from_gicon (content_icon) {
             valign = Gtk.Align.CENTER
         };
 
@@ -96,7 +90,7 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         size_label = new Gtk.Label (null) {
             xalign = 0
         };
-        size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        size_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         new Thread<void*> (null, () => {
             string? size_text = null;
@@ -112,7 +106,7 @@ public class AttachmentButton : Gtk.FlowBoxChild {
                     size_label.label = size_text;
                 } else {
                     size_label.label = _("Unknown");
-                    size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
+                    size_label.add_css_class (Granite.STYLE_CLASS_ERROR);
                 }
 
                 return GLib.Source.REMOVE;
@@ -124,13 +118,20 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         grid.attach (preview_image, 0, 0, 1, 2);
         grid.attach (name_label, 1, 0, 1, 1);
         grid.attach (size_label, 1, 1, 1, 1);
-        event_box.add (grid);
-        add (event_box);
-        show_all ();
+        set_child (grid);
+
+        gesture_secondary_click.pressed.connect ((n_press, x, y) => {
+                var rect = Gdk.Rectangle () {
+                    x = (int) x,
+                    y = (int) y
+                };
+                menu.pointing_to = rect;
+                menu.popup ();
+        });
     }
 
     private void on_save_as () {
-        Gtk.Window? parent_window = get_toplevel () as Gtk.Window;
+        Gtk.Window? parent_window = (Gtk.Window) get_root ();
         var chooser = new Gtk.FileChooserNative (
             null,
             parent_window,
@@ -140,13 +141,15 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         );
 
         chooser.set_current_name (mime_part.get_filename ());
-        chooser.do_overwrite_confirmation = true;
 
-        if (chooser.run () == Gtk.ResponseType.ACCEPT) {
-            write_to_file.begin (chooser.get_file ());
-        }
+        chooser.response.connect ((response) => {
+            if (response == Gtk.ResponseType.ACCEPT) {
+                write_to_file.begin (chooser.get_file ());
+            }
+            chooser.destroy ();
+        });
 
-        chooser.destroy ();
+        chooser.show ();
     }
 
     private async void write_to_file (GLib.File file) {
