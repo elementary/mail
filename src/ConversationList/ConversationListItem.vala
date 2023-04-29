@@ -31,12 +31,14 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     construct {
         status_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic", Gtk.IconSize.MENU);
 
-        status_revealer = new Gtk.Revealer ();
-        status_revealer.add (status_icon);
+        status_revealer = new Gtk.Revealer () {
+            child = status_icon
+        };
 
         var flagged_icon = new Gtk.Image.from_icon_name ("starred-symbolic", Gtk.IconSize.MENU);
-        flagged_icon_revealer = new Gtk.Revealer ();
-        flagged_icon_revealer.add (flagged_icon);
+        flagged_icon_revealer = new Gtk.Revealer () {
+            child = flagged_icon
+        };
 
         source = new Gtk.Label (null) {
             hexpand = true,
@@ -63,11 +65,13 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         date = new Gtk.Label (null) {
             halign = Gtk.Align.END
         };
-
         date.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         var grid = new Gtk.Grid () {
-            margin = 12,
+            margin_top = 12,
+            margin_bottom = 12,
+            margin_start = 12,
+            margin_end = 12,
             column_spacing = 12,
             row_spacing = 6
         };

@@ -39,6 +39,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     public const string ACTION_REPLY = "reply";
     public const string ACTION_REPLY_ALL = "reply-all";
     public const string ACTION_FORWARD = "forward";
+    public const string ACTION_PRINT = "print";
     public const string ACTION_MARK = "mark";
     public const string ACTION_MARK_READ = "mark-read";
     public const string ACTION_MARK_STAR = "mark-star";
@@ -51,11 +52,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     public static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
     private const ActionEntry[] ACTION_ENTRIES = {
-        {ACTION_COMPOSE_MESSAGE, on_compose_message },
+        {ACTION_COMPOSE_MESSAGE, action_compose },
         {ACTION_REFRESH, on_refresh },
-        {ACTION_REPLY, on_reply },
-        {ACTION_REPLY_ALL, on_reply_all },
-        {ACTION_FORWARD, on_forward },
+        {ACTION_REPLY, action_compose, "s" },
+        {ACTION_REPLY_ALL, action_compose, "s" },
+        {ACTION_FORWARD, action_compose, "s" },
+        {ACTION_PRINT, on_print, "s" },
         {ACTION_MARK, null }, // Stores enabled state only
         {ACTION_MARK_READ, on_mark_read },
         {ACTION_MARK_STAR, on_mark_star },
@@ -79,9 +81,9 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     static construct {
         action_accelerators[ACTION_COMPOSE_MESSAGE] = "<Control>N";
         action_accelerators[ACTION_REFRESH] = "F12";
-        action_accelerators[ACTION_REPLY] = "<Control>R";
-        action_accelerators[ACTION_REPLY_ALL] = "<Control><Shift>R";
-        action_accelerators[ACTION_FORWARD] = "<Ctrl><Shift>F";
+        action_accelerators[ACTION_REPLY + "::"] = "<Control>R";
+        action_accelerators[ACTION_REPLY_ALL + "::"] = "<Control><Shift>R";
+        action_accelerators[ACTION_FORWARD + "::"] = "<Ctrl><Shift>F";
         action_accelerators[ACTION_MARK_READ] = "<Ctrl><Shift>i";
         action_accelerators[ACTION_MARK_STAR] = "<Ctrl>l";
         action_accelerators[ACTION_MARK_UNREAD] = "<Ctrl><Shift>u";
@@ -197,10 +199,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         });
     }
 
-    private void on_compose_message () {
-        new ComposerWindow (this).show_all ();
-    }
-
     private void on_refresh () {
         conversation_list.refresh_folder.begin ();
     }
@@ -221,19 +219,25 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         conversation_list.mark_unstar_selected_messages ();
     }
 
-    private void on_reply () {
-        message_list.scroll_to_bottom ();
-        message_list.add_inline_composer.begin (ComposerWidget.Type.REPLY);
+    private void action_compose (SimpleAction action, Variant? parameter) {
+        switch (action.name) {
+            case ACTION_COMPOSE_MESSAGE:
+                new Composer ().present ();
+                break;
+            case ACTION_REPLY:
+                message_list.compose.begin (Composer.Type.REPLY, parameter);
+                break;
+            case ACTION_REPLY_ALL:
+                message_list.compose.begin (Composer.Type.REPLY_ALL, parameter);
+                break;
+            case ACTION_FORWARD:
+                message_list.compose.begin (Composer.Type.FORWARD, parameter);
+                break;
+        }
     }
 
-    private void on_reply_all () {
-        message_list.scroll_to_bottom ();
-        message_list.add_inline_composer.begin (ComposerWidget.Type.REPLY_ALL);
-    }
-
-    private void on_forward () {
-        message_list.scroll_to_bottom ();
-        message_list.add_inline_composer.begin (ComposerWidget.Type.FORWARD);
+    private void on_print (SimpleAction action, Variant? parameter) {
+        message_list.print (parameter);
     }
 
     private void on_archive () {

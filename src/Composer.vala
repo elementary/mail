@@ -1,29 +1,14 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2017-2023 elementary, Inc. (https://elementary.io)
  *
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class Mail.ComposerWidget : Gtk.Box {
-    public signal void discarded ();
-    public signal void sent ();
-    public signal void subject_changed (string? subject);
+public class Mail.Composer : Hdy.ApplicationWindow {
+    public signal void finished ();
 
-    private const string ACTION_GROUP_PREFIX = "composer";
+    private const string ACTION_GROUP_PREFIX = "win";
     private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
 
     private const string ACTION_ADD_ATTACHMENT= "add-attachment";
@@ -37,8 +22,6 @@ public class Mail.ComposerWidget : Gtk.Box {
     private const string ACTION_SEND = "send";
 
     public bool has_recipients { get; set; }
-    public bool has_subject_field { get; construct; default = false; }
-    public bool can_change_sender { get; private set; default = true; }
     public string? to { get; construct; }
     public string? mailto_query { get; construct; }
 
@@ -46,12 +29,10 @@ public class Mail.ComposerWidget : Gtk.Box {
     private Camel.MessageInfo? ancestor_message_info = null;
 
     private WebView web_view;
-    private SimpleActionGroup actions;
     private Gtk.Entry to_val;
     private Gtk.Entry cc_val;
     private Gtk.Entry bcc_val;
     private Gtk.FlowBox attachment_box;
-    private Gtk.Revealer from_revealer;
     private Gtk.Revealer cc_revealer;
     private Gtk.Revealer bcc_revealer;
     private Gtk.ToggleButton cc_button;
@@ -78,26 +59,43 @@ public class Mail.ComposerWidget : Gtk.Box {
         {ACTION_SEND, on_send }
     };
 
-    public ComposerWidget.inline () {
-        Object (can_change_sender: false, has_subject_field: true);
-    }
-
-    public ComposerWidget.with_subject () {
-        Object (has_subject_field: true);
-    }
-
-    public ComposerWidget.with_headers (string? to, string? mailto_query) {
+    public Composer (string? to = null, string? mailto_query = null) {
         Object (
-            has_subject_field: true,
             to: to,
             mailto_query: mailto_query
         );
     }
 
+    public Composer.with_quote (Composer.Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content) {
+        Object (has_recipients: true);
+        quote_content (type, info, message, content);
+    }
+
     construct {
-        actions = new SimpleActionGroup ();
-        actions.add_action_entries (ACTION_ENTRIES, this);
-        insert_action_group (ACTION_GROUP_PREFIX, actions);
+        add_action_entries (ACTION_ENTRIES, this);
+
+        application = (Gtk.Application) GLib.Application.get_default ();
+        // Alt+I from Outlook, Shift+Ctrl+A from Apple Mail
+        application.set_accels_for_action (ACTION_PREFIX + ACTION_ADD_ATTACHMENT, {"<Alt>I", "<Shift><Control>A"});
+        application.set_accels_for_action (ACTION_PREFIX + ACTION_DISCARD, {"<Control>BackSpace", "<Control>Delete"});
+        application.set_accels_for_action (ACTION_PREFIX + ACTION_INSERT_LINK, {"<Control>K"});
+        application.set_accels_for_action (ACTION_PREFIX + ACTION_SEND, {"<Control>Return"});
+        application.set_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH), {"<Control>percent"});
+        application.set_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_UNDERLINE, ACTION_UNDERLINE), {"<Control>U"});
+
+        foreach (unowned var window in application.get_windows ()) {
+            if (window is MainWindow) {
+                transient_for = window;
+                break;
+            }
+        }
+
+        var headerbar = new Hdy.HeaderBar () {
+            has_subtitle = false,
+            show_close_button = true
+        };
+        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        headerbar.get_style_context ().add_class ("default-decoration");
 
         var from_label = new Gtk.Label (_("From:")) {
             xalign = 1
@@ -114,8 +112,9 @@ public class Mail.ComposerWidget : Gtk.Box {
         from_box.add (from_label);
         from_box.add (from_combo);
 
-        from_revealer = new Gtk.Revealer ();
-        from_revealer.add (from_box);
+        var from_revealer = new Gtk.Revealer () {
+            child = from_box
+        };
 
         var to_label = new Gtk.Label (_("To:")) {
             xalign = 1
@@ -181,7 +180,7 @@ public class Mail.ComposerWidget : Gtk.Box {
         };
 
         subject_val.changed.connect (() => {
-            subject_changed (subject_val.text);
+            title = subject_val.text;
         });
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
@@ -203,10 +202,8 @@ public class Mail.ComposerWidget : Gtk.Box {
         recipient_grid.attach (to_grid, 1, 1);
         recipient_grid.attach (cc_revealer, 0, 2, 2);
         recipient_grid.attach (bcc_revealer, 0, 3, 2);
-        if (has_subject_field) {
-            recipient_grid.attach (subject_label, 0, 4);
-            recipient_grid.attach (subject_val, 1, 4);
-        }
+        recipient_grid.attach (subject_label, 0, 4);
+        recipient_grid.attach (subject_val, 1, 4);
 
         var bold = new Gtk.ToggleButton () {
             action_name = ACTION_PREFIX + ACTION_BOLD,
@@ -226,19 +223,28 @@ public class Mail.ComposerWidget : Gtk.Box {
             action_name = ACTION_PREFIX + ACTION_UNDERLINE,
             action_target = ACTION_UNDERLINE,
             image = new Gtk.Image.from_icon_name ("format-text-underline-symbolic", Gtk.IconSize.MENU),
-            tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Underline"))
+            tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_UNDERLINE, ACTION_UNDERLINE)),
+                _("Underline")
+            )
         };
 
         var strikethrough = new Gtk.ToggleButton () {
             action_name = ACTION_PREFIX + ACTION_STRIKETHROUGH,
             action_target = ACTION_STRIKETHROUGH,
             image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU),
-            tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Strikethrough"))
+            tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH)),
+                _("Strikethrough")
+            )
         };
 
         var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU) {
             action_name = ACTION_PREFIX + ACTION_REMOVE_FORMAT,
-            tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Remove formatting"))
+            tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (ACTION_PREFIX + ACTION_REMOVE_FORMAT),
+                _("Remove formatting")
+            )
         };
 
         var formatting_buttons = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
@@ -250,7 +256,10 @@ public class Mail.ComposerWidget : Gtk.Box {
 
         var link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU) {
             action_name = ACTION_PREFIX + ACTION_INSERT_LINK,
-            tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Insert Link"))
+            tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (ACTION_PREFIX + ACTION_INSERT_LINK),
+                _("Insert Link")
+            )
         };
 
         var button_row = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12) {
@@ -280,12 +289,18 @@ public class Mail.ComposerWidget : Gtk.Box {
 
         var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU) {
             action_name = ACTION_PREFIX + ACTION_DISCARD,
-            tooltip_text = _("Delete draft")
+            tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (ACTION_PREFIX + ACTION_DISCARD),
+                _("Delete draft")
+            )
         };
 
         var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU) {
             action_name = ACTION_PREFIX + ACTION_ADD_ATTACHMENT,
-            tooltip_markup = Granite.markup_accel_tooltip ({""}, _("Attach file"))
+            tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (ACTION_PREFIX + ACTION_ADD_ATTACHMENT),
+                _("Attach file")
+            )
         };
 
         var send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU) {
@@ -296,7 +311,10 @@ public class Mail.ComposerWidget : Gtk.Box {
             margin_end = 0,
             margin_bottom = 6,
             margin_start = 6,
-            sensitive = false
+            sensitive = false,
+            tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (ACTION_PREFIX + ACTION_SEND)
+            )
         };
         send.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
@@ -314,13 +332,30 @@ public class Mail.ComposerWidget : Gtk.Box {
         message_url_overlay = new Granite.Widgets.OverlayBar (view_overlay);
         message_url_overlay.no_show_all = true;
 
-        orientation = Gtk.Orientation.VERTICAL;
-        add (recipient_grid);
-        add (button_row);
-        add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        add (view_overlay);
-        add (attachment_box);
-        add (action_bar);
+        var main_box = new Gtk.Box (VERTICAL, 0);
+        main_box.add (headerbar);
+        main_box.add (recipient_grid);
+        main_box.add (button_row);
+        main_box.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        main_box.add (view_overlay);
+        main_box.add (attachment_box);
+        main_box.add (action_bar);
+
+        default_height = 500;
+        default_width = 680;
+        title = _("New Message");
+        add (main_box);
+        show_all ();
+
+        delete_event.connect (() => {
+            save_draft.begin ((obj, res) => {
+                if (!save_draft.end (res)) {
+                    finished ();
+                    destroy ();
+                };
+            });
+            return true;
+        });
 
         var contact_manager = ContactManager.get_default ();
         contact_manager.setup_entry (to_val);
@@ -328,11 +363,10 @@ public class Mail.ComposerWidget : Gtk.Box {
         contact_manager.setup_entry (bcc_val);
 
         load_from_combobox ();
-        if (from_combo.model.iter_n_children (null) > 1) {
-            from_revealer.reveal_child = true && can_change_sender;
-        }
+        from_revealer.reveal_child = from_combo.model.iter_n_children (null) > 1;
 
         bind_property ("has-recipients", send, "sensitive");
+        bind_property ("title", headerbar, "title");
 
         cc_button.clicked.connect (() => {
             cc_revealer.reveal_child = cc_button.active;
@@ -386,8 +420,6 @@ public class Mail.ComposerWidget : Gtk.Box {
         }
 
         if (mailto_query != null) {
-            from_revealer.reveal_child = can_change_sender = true;
-
             var result = new Gee.HashMultiMap<string, string> ();
             var params = mailto_query.split ("&");
 
@@ -486,7 +518,7 @@ public class Mail.ComposerWidget : Gtk.Box {
     private async void ask_insert_link () {
         var selected_text = yield web_view.get_selected_text ();
         var insert_link_dialog = new InsertLinkDialog (selected_text) {
-            transient_for = (Gtk.Window) get_toplevel ()
+            transient_for = this
         };
         insert_link_dialog.present ();
         insert_link_dialog.insert_link.connect ((url, title) => on_link_inserted (url, title, selected_text));
@@ -540,9 +572,7 @@ public class Mail.ComposerWidget : Gtk.Box {
             }
         }
 
-        if (from_combo.model.iter_n_children (null) > 1 && (type == Type.REPLY || type == Type.REPLY_ALL || type == Type.FORWARD)) {
-            from_revealer.reveal_child = can_change_sender = true;
-
+        if (from_combo.model.iter_n_children (null) > 1) {
             unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
             unowned var account_source_uid = message.get_source ();
             var account_source = session.ref_source (account_source_uid);
@@ -673,16 +703,16 @@ public class Mail.ComposerWidget : Gtk.Box {
 
     private void update_actions () {
         web_view.query_command_state.begin ("bold", (obj, res) => {
-            actions.change_action_state (ACTION_BOLD, web_view.query_command_state.end (res) ? ACTION_BOLD : "");
+            change_action_state (ACTION_BOLD, web_view.query_command_state.end (res) ? ACTION_BOLD : "");
         });
         web_view.query_command_state.begin ("italic", (obj, res) => {
-            actions.change_action_state (ACTION_ITALIC, web_view.query_command_state.end (res) ? ACTION_ITALIC : "");
+            change_action_state (ACTION_ITALIC, web_view.query_command_state.end (res) ? ACTION_ITALIC : "");
         });
         web_view.query_command_state.begin ("underline", (obj, res) => {
-            actions.change_action_state (ACTION_UNDERLINE, web_view.query_command_state.end (res) ? ACTION_UNDERLINE : "");
+            change_action_state (ACTION_UNDERLINE, web_view.query_command_state.end (res) ? ACTION_UNDERLINE : "");
         });
         web_view.query_command_state.begin ("strikethrough", (obj, res) => {
-            actions.change_action_state (ACTION_STRIKETHROUGH, web_view.query_command_state.end (res) ? ACTION_STRIKETHROUGH : "");
+            change_action_state (ACTION_STRIKETHROUGH, web_view.query_command_state.end (res) ? ACTION_STRIKETHROUGH : "");
         });
     }
 
@@ -694,7 +724,7 @@ public class Mail.ComposerWidget : Gtk.Box {
             Gtk.ButtonsType.NONE
         ) {
             badge_icon = new ThemedIcon ("edit-delete"),
-            transient_for = get_toplevel () as Gtk.Window
+            transient_for = this
         };
 
         discard_dialog.add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
@@ -706,7 +736,8 @@ public class Mail.ComposerWidget : Gtk.Box {
         discard_dialog.response.connect ((response) => {
             if (response == Gtk.ResponseType.ACCEPT) {
                 discard_draft = true;
-                discarded ();
+                finished ();
+                close ();
             }
 
             discard_dialog.destroy ();
@@ -727,7 +758,8 @@ public class Mail.ComposerWidget : Gtk.Box {
                 "mail-send",
                 Gtk.ButtonsType.NONE
             );
-            no_subject_dialog.transient_for = get_toplevel () as Gtk.Window;
+            no_subject_dialog.modal = true;
+            no_subject_dialog.transient_for = this;
 
             no_subject_dialog.add_button (_("Don't Send"), Gtk.ResponseType.CANCEL);
 
@@ -768,7 +800,8 @@ public class Mail.ComposerWidget : Gtk.Box {
             }
 
             discard_draft = true;
-            sent ();
+            finished ();
+            close ();
         } catch (Error e) {
             var error_dialog = new Granite.MessageDialog (
                 _("Unable to send message"),
@@ -974,63 +1007,38 @@ public class Mail.ComposerWidget : Gtk.Box {
         }
     }
 
-    public override void destroy () {
+    public async bool save_draft () {
         if (discard_draft || !web_view.body_html_changed) {
-            base.destroy ();
-            return;
+            return false;
         }
 
-        web_view.get_body_html.begin ((obj, res) => {
-            var body_html = web_view.get_body_html.end (res);
+        var body_html = yield web_view.get_body_html ();
 
-            if (body_html == null) {
-                base.destroy ();
-            } else {
-                unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+        if (body_html != null) {
+            unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
 
-                var message = build_message (body_html);
-                var sender = build_sender (message, from_combo.get_active_text ());
-                var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
+            var message = build_message (body_html);
+            var sender = build_sender (message, from_combo.get_active_text ());
+            var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
 
-                session.save_draft.begin (
-                    message,
-                    sender,
-                    recipients,
-                    ancestor_message_info,
-                    (obj, res) => {
-                        try {
-                            session.save_draft.end (res);
-                            base.destroy ();
-                        } catch (Error e) {
-                            unowned Mail.MainWindow? main_window = null;
-                            var windows = Gtk.Window.list_toplevels ();
-                            foreach (unowned var window in windows) {
-                                if (window is Mail.MainWindow) {
-                                    main_window = (Mail.MainWindow) window;
-                                    break;
-                                }
-                            }
-
-                            if (main_window != null) {
-                                new ComposerWindow.for_widget (main_window, this).show_all ();
-                            } else {
-                                warning ("Unable to re-show composer. Draft will be lost.");
-                            }
-
-                            var error_dialog = new Granite.MessageDialog (
-                                _("Unable to save draft"),
-                                _("There was an unexpected error while saving your draft."),
-                                new ThemedIcon ("mail-drafts"),
-                                Gtk.ButtonsType.CLOSE
-                            ) {
-                                badge_icon = new ThemedIcon ("dialog-error")
-                            };
-                            error_dialog.show_error_details (e.message);
-                            error_dialog.present ();
-                            error_dialog.response.connect (() => error_dialog.destroy ());
-                        }
-                });
+            try {
+                yield session.save_draft (message, sender, recipients, ancestor_message_info);
+            } catch (Error e) {
+                var error_dialog = new Granite.MessageDialog (
+                    _("Unable to save draft"),
+                    _("There was an unexpected error while saving your draft."),
+                    new ThemedIcon ("mail-drafts"),
+                    Gtk.ButtonsType.CLOSE
+                ) {
+                    badge_icon = new ThemedIcon ("dialog-error")
+                };
+                error_dialog.show_error_details (e.message);
+                error_dialog.present ();
+                error_dialog.response.connect (() => error_dialog.destroy ());
+                return true;
             }
-        });
+        }
+
+        return false;
     }
 }

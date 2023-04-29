@@ -7,11 +7,11 @@
 
 public class Mail.MessageList : Gtk.Box {
     public signal void hovering_over_link (string? label, string? uri);
-    public GenericArray<string> uids { get; private set; default = new GenericArray<string> (); }
     public Hdy.HeaderBar headerbar { get; private set; }
 
     private Gtk.ListBox list_box;
     private Gtk.ScrolledWindow scrolled_window;
+    private Gee.HashMap<string, MessageListItem> messages;
 
     construct {
         get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
@@ -48,26 +48,29 @@ public class Mail.MessageList : Gtk.Box {
         };
 
         var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR) {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY,
+            action_target = ""
         };
         reply_button.tooltip_markup = Granite.markup_accel_tooltip (
-            application_instance.get_accels_for_action (reply_button.action_name),
+            application_instance.get_accels_for_action (reply_button.action_name + "::"),
             _("Reply")
         );
 
         var reply_all_button = new Gtk.Button.from_icon_name ("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR) {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL,
+            action_target = ""
         };
         reply_all_button.tooltip_markup = Granite.markup_accel_tooltip (
-            application_instance.get_accels_for_action (reply_all_button.action_name),
+            application_instance.get_accels_for_action (reply_all_button.action_name + "::"),
             _("Reply All")
         );
 
         var forward_button = new Gtk.Button.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR) {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD,
+            action_target = ""
         };
         forward_button.tooltip_markup = Granite.markup_accel_tooltip (
-            application_instance.get_accels_for_action (forward_button.action_name),
+            application_instance.get_accels_for_action (forward_button.action_name + "::"),
             _("Forward")
         );
 
@@ -195,7 +198,7 @@ public class Mail.MessageList : Gtk.Box {
         list_box.get_children ().foreach ((child) => {
             child.destroy ();
         });
-        uids = new GenericArray<string> ();
+        messages = new Gee.HashMap<string, MessageListItem> (null, null);
 
         if (node == null) {
             return;
@@ -209,7 +212,7 @@ public class Mail.MessageList : Gtk.Box {
 
         var item = new MessageListItem (node.message);
         list_box.add (item);
-        uids.add (node.message.uid);
+        messages.set (node.message.uid, item);
         if (node.child != null) {
             go_down ((Camel.FolderThreadNode?) node.child);
         }
@@ -229,10 +232,7 @@ public class Mail.MessageList : Gtk.Box {
         }
 
         if (node.message != null && Camel.MessageFlags.DRAFT in (int) node.message.flags) {
-            add_inline_composer.begin (ComposerWidget.Type.DRAFT, null, (obj, res) => {
-                add_inline_composer.end (res);
-                scroll_to_bottom ();
-            });
+            compose.begin (Composer.Type.DRAFT, "");
         }
     }
 
@@ -241,7 +241,7 @@ public class Mail.MessageList : Gtk.Box {
         while (current_node != null) {
             var item = new MessageListItem (current_node.message);
             list_box.add (item);
-            uids.add (current_node.message.uid);
+            messages.set (current_node.message.uid, item);
             if (current_node.next != null) {
                 go_down ((Camel.FolderThreadNode?) current_node.next);
             }
@@ -250,15 +250,19 @@ public class Mail.MessageList : Gtk.Box {
         }
     }
 
-    public async void add_inline_composer (ComposerWidget.Type type, MessageListItem? message_item = null) {
-        /* Can't open a new composer if thread is empty or currently has a composer open */
+    public async void compose (Composer.Type type, Variant uid) {
+        /* Can't open a new composer if thread is empty*/
         var last_child = list_box.get_row_at_index ((int) list_box.get_children ().length () - 1);
-        if (last_child == null || last_child is InlineComposer) {
+        if (last_child == null) {
             return;
         }
 
-        if (message_item == null) {
+        MessageListItem message_item = null;
+
+        if (uid.get_string () == "") {
             message_item = (MessageListItem) last_child;
+        } else {
+            message_item = messages.get (uid.get_string ());
         }
 
         string content_to_quote = "";
@@ -268,39 +272,29 @@ public class Mail.MessageList : Gtk.Box {
         mime_message = message_item.mime_message;
         message_info = message_item.message_info;
 
-        var composer = new InlineComposer (type, message_info, mime_message, content_to_quote);
-        composer.discarded.connect (() => {
+        var composer = new Composer.with_quote (type, message_info, mime_message, content_to_quote);
+        composer.present ();
+        composer.finished.connect (() => {
             can_reply (true);
             can_move_thread (true);
-            list_box.remove (composer);
-            composer.destroy ();
         });
-        list_box.add (composer);
         can_reply (false);
         can_move_thread (true);
     }
 
-    public void scroll_to_bottom () {
-        // Adding the inline composer then trying to scroll to the bottom doesn't work as
-        // the scrolled window doesn't resize instantly. So connect a one time signal to
-        // scroll to the bottom when the inline composer is added
-        var adjustment = scrolled_window.get_vadjustment ();
-        ulong changed_id = 0;
-        changed_id = adjustment.changed.connect (() => {
-            adjustment.set_value (adjustment.get_upper ());
-            adjustment.disconnect (changed_id);
-        });
+    public void print (Variant uid) {
+        messages.get (uid.get_string ()).print ();
     }
 
     private void can_reply (bool enabled) {
-        unowned var main_window = (Gtk.ApplicationWindow) ((Gtk.Application) GLib.Application.get_default ()).active_window;
+        unowned var main_window = (Gtk.ApplicationWindow) get_toplevel ();
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_FORWARD)).set_enabled (enabled);
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_REPLY_ALL)).set_enabled (enabled);
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_REPLY)).set_enabled (enabled);
     }
 
     private void can_move_thread (bool enabled) {
-        unowned var main_window = (Gtk.ApplicationWindow) ((Gtk.Application) GLib.Application.get_default ()).active_window;
+        unowned var main_window = (Gtk.ApplicationWindow) get_toplevel ();
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_ARCHIVE)).set_enabled (enabled);
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MARK)).set_enabled (enabled);
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE_TO_TRASH)).set_enabled (enabled);
