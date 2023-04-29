@@ -26,6 +26,8 @@ else
     webkit2_web_extension_dep = dependency('webkit2gtk-web-extension-4.0', version: '>=2.28')
 endif
 folks_dep = dependency('folks')
+xdp_dep = dependency('libportal')
+xdpgtk_dep = dependency('libportal-gtk3')
 m_dep = meson.get_compiler('c').find_library('m')
 
 webkit2_extension_path = join_paths(get_option('prefix'), get_option('libdir'), meson.project_name(), 'webkit2')
@@ -41,6 +43,8 @@ dependencies = [
     libedataserverui_dep,
     webkit2_dep,
     folks_dep,
+    xdp_dep,
+    xdpgtk_dep,
     m_dep
 ]
 

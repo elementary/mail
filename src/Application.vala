@@ -176,6 +176,21 @@ public class Mail.Application : Gtk.Application {
         }
 
         main_window.present ();
+
+        if (!run_in_background) {
+            var portal = new Xdp.Portal ();
+            var parent = Xdp.parent_new_gtk (main_window);
+            var args = new GenericArray<weak string> ();
+            args.add ("-b");
+            portal.request_background.begin (parent, "Try it :)", (owned) args, Xdp.BackgroundFlags.AUTOSTART, null, (obj, res) => {
+                try {
+                    var result = portal.request_background.end (res);
+                    print (result.to_string ());
+                } catch (Error e) {
+                    critical (e.message);
+                }
+            });
+        }
     }
 }
 
