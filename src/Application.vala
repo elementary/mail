@@ -146,7 +146,7 @@ public class Mail.Application : Gtk.Application {
             new InboxMonitor ().start.begin ();
             hold ();
 
-            request_background.begin ( (obj,res) => {
+            request_background.begin ((obj, res) => {
                 if (!request_background.end (res)) {
                     release ();
                 }
