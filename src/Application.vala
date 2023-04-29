@@ -12,6 +12,8 @@ public class Mail.Application : Gtk.Application {
     public static GLib.Settings settings;
     public static bool run_in_background;
 
+    private bool request_autostart = true;
+
     public Application () {
         Object (
             application_id: "io.elementary.mail",
@@ -139,8 +141,17 @@ public class Mail.Application : Gtk.Application {
     public override void activate () {
         if (run_in_background) {
             run_in_background = false;
+            request_autostart = false;
+
             new InboxMonitor ().start.begin ();
             hold ();
+
+            request_background.begin ((obj,res) => {
+                if (!request_background.end (res)) {
+                    release ();
+                }
+            });
+
             return;
         }
 
@@ -177,19 +188,25 @@ public class Mail.Application : Gtk.Application {
 
         main_window.present ();
 
-        if (!run_in_background) {
-            var portal = new Xdp.Portal ();
-            var parent = Xdp.parent_new_gtk (main_window);
-            var args = new GenericArray<weak string> ();
-            args.add ("-b");
-            portal.request_background.begin (parent, "Try it :)", (owned) args, Xdp.BackgroundFlags.AUTOSTART, null, (obj, res) => {
-                try {
-                    var result = portal.request_background.end (res);
-                    print (result.to_string ());
-                } catch (Error e) {
-                    critical (e.message);
-                }
-            });
+        if (request_autostart) {
+            request_background.begin ();
+        }
+    }
+
+    private async bool request_background () {
+        var portal = new Xdp.Portal ();
+
+        Xdp.Parent? parent = active_window != null ? Xdp.parent_new_gtk (active_window) : null;
+
+        var command = new GenericArray<weak string> ();
+        command.add ("io.elementary.mail");
+        command.add ("--background");
+
+        try {
+            return yield portal.request_background (parent, _("Mail needs to run in background in order to send notifications"), (owned) command, Xdp.BackgroundFlags.AUTOSTART, null);
+        } catch (Error e) {
+            warning ("Failed to request background and autostart permissions: %s", e.message);
+            return false;
         }
     }
 }
