@@ -26,31 +26,35 @@ public class InsertLinkDialog : Granite.Dialog {
     }
 
     construct {
-        var url_label = new Gtk.Label (_("URL:"));
-        url_label.halign = Gtk.Align.END;
+        var url_label = new Gtk.Label (_("URL:")) {
+            halign = END
+        };
 
-        var url_entry = new Gtk.Entry ();
-        url_entry.activates_default = true;
-        url_entry.input_purpose = Gtk.InputPurpose.URL;
-        url_entry.placeholder_text = _("https://example.com");
+        var url_entry = new Gtk.Entry () {
+            activates_default = true,
+            input_purpose = URL,
+            placeholder_text = _("https://example.com")
+        };
 
-        var title_label = new Gtk.Label (_("Link Text:"));
-        title_label.halign = Gtk.Align.END;
+        var title_label = new Gtk.Label (_("Link Text:")) {
+            halign = END
+        };
 
-        var title_entry = new Gtk.Entry ();
-        title_entry.activates_default = true;
-        title_entry.placeholder_text = _("Example Website");
-        if (selected_text != null && selected_text != "") {
+        var title_entry = new Gtk.Entry () {
+            activates_default = true,
+            placeholder_text = _("Example Website")
+        };
+        if (selected_text != null) {
             title_entry.text = selected_text;
         }
 
         var grid = new Gtk.Grid () {
-            margin_bottom = 12,
             margin_start = 12,
-            margin_end = 12
+            margin_end = 12,
+            margin_bottom = 12,
+            column_spacing = 6,
+            row_spacing = 6
         };
-        grid.column_spacing = 6;
-        grid.row_spacing = 6;
         grid.attach (url_label, 0, 0);
         grid.attach (url_entry, 1, 0);
         grid.attach (title_label, 0, 1);
