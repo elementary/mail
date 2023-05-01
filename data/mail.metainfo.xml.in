@@ -67,6 +67,26 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="7.1.0" date="2023-05-01" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>The welcome view is removed when an account is added in Online Accounts without having to restart Mail</li>
+          <li>The composer is always presented as a new window and includes more keyboard shortcuts</li>
+          <li>The search filter menu now appears next to the search bar</li>
+          <li>HeaderBars appear to float above content when scrolled</li>
+          <li>Fix a potential crash with empty messages</li>
+          <li>Stop resizing from cutting off the message list</li>
+          <li>Performance improvements</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/mail/issues/819">"Connect an account" interstitial briefly displayed on app launch</issue>
+        <issue url="https://github.com/elementary/mail/issues/347">Ctrl-K should create hyperlink, instead creates strikethrough</issue>
+      </issues>
+    </release>
+
     <release version="7.0.1" date="2023-03-14" urgency="medium">
       <description>
         <p>Improvements:</p>
