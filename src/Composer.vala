@@ -59,19 +59,15 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         {ACTION_SEND, on_send }
     };
 
-    public Composer (Gtk.Window parent, string? to = null, string? mailto_query = null) {
+    public Composer (string? to = null, string? mailto_query = null) {
         Object (
-            transient_for: parent,
             to: to,
             mailto_query: mailto_query
         );
     }
 
-    public Composer.with_quote (Gtk.Window parent, Composer.Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content) {
-        Object (
-            transient_for: parent,
-            has_recipients: true
-        );
+    public Composer.with_quote (Composer.Type type, Camel.MessageInfo info, Camel.MimeMessage message, string? content) {
+        Object (has_recipients: true);
         quote_content (type, info, message, content);
     }
 
@@ -86,6 +82,13 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         application.set_accels_for_action (ACTION_PREFIX + ACTION_SEND, {"<Control>Return"});
         application.set_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH), {"<Control>percent"});
         application.set_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_UNDERLINE, ACTION_UNDERLINE), {"<Control>U"});
+
+        foreach (unowned var window in application.get_windows ()) {
+            if (window is MainWindow) {
+                transient_for = window;
+                break;
+            }
+        }
 
         var headerbar = new Hdy.HeaderBar () {
             has_subtitle = false,
@@ -342,6 +345,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         default_width = 680;
         title = _("New Message");
         add (main_box);
+        show_all ();
 
         delete_event.connect (() => {
             save_draft.begin ((obj, res) => {
@@ -514,7 +518,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     private async void ask_insert_link () {
         var selected_text = yield web_view.get_selected_text ();
         var insert_link_dialog = new InsertLinkDialog (selected_text) {
-            transient_for = (Gtk.Window) get_toplevel ()
+            transient_for = this
         };
         insert_link_dialog.present ();
         insert_link_dialog.insert_link.connect ((url, title) => on_link_inserted (url, title, selected_text));
@@ -720,7 +724,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             Gtk.ButtonsType.NONE
         ) {
             badge_icon = new ThemedIcon ("edit-delete"),
-            transient_for = get_toplevel () as Gtk.Window
+            transient_for = this
         };
 
         discard_dialog.add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
@@ -754,7 +758,8 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 "mail-send",
                 Gtk.ButtonsType.NONE
             );
-            no_subject_dialog.transient_for = get_toplevel () as Gtk.Window;
+            no_subject_dialog.modal = true;
+            no_subject_dialog.transient_for = this;
 
             no_subject_dialog.add_button (_("Don't Send"), Gtk.ResponseType.CANCEL);
 
