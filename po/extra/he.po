@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-01 18:43+0000\n"
-"PO-Revision-Date: 2022-05-24 10:26+0000\n"
+"PO-Revision-Date: 2023-05-03 17:06+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/extra/he/>\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
@@ -76,36 +76,34 @@ msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
 msgstr ""
+"תצוגת קבלת הפנים הוסרה כאשר נוסף חשבון לחשבונות המקוונים מבלי צורך להפעיל את "
+"יישום הדואר מחדש"
 
 #: data/mail.metainfo.xml.in:75
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
-msgstr ""
+msgstr "חיבור הודעה חדשה תמיד מופיע כחלון חדש וכולל קיצורי דרך נוספים"
 
 #: data/mail.metainfo.xml.in:76
 msgid "The search filter menu now appears next to the search bar"
-msgstr ""
+msgstr "תפריט מסנן החיפושים מופיע מעתה ליד סרגל החיפוש"
 
 #: data/mail.metainfo.xml.in:77
 msgid "HeaderBars appear to float above content when scrolled"
-msgstr ""
+msgstr "סרגלי כותרת נראים צפים מעל תוכן כשגוללים אותם"
 
 #: data/mail.metainfo.xml.in:78
-#, fuzzy
-#| msgid "Fix a potential crash while loading messages"
 msgid "Fix a potential crash with empty messages"
-msgstr "תוקנה קריסה שמתרחשת לפעמים בעת טעינת הודעות"
+msgstr "תוקנה קריסה שמתרחשת לפעמים עם הודעות ריקות"
 
 #: data/mail.metainfo.xml.in:79
 msgid "Stop resizing from cutting off the message list"
-msgstr ""
+msgstr "שינוי גודל לא חותך עוד את רשימת ההודעות"
 
 #: data/mail.metainfo.xml.in:80
-#, fuzzy
-#| msgid "Stability improvements"
 msgid "Performance improvements"
-msgstr "שיפורי יציבות"
+msgstr "שיפורי ביצועים"
 
 #: data/mail.metainfo.xml.in:81 data/mail.metainfo.xml.in:94
 #: data/mail.metainfo.xml.in:115 data/mail.metainfo.xml.in:136
