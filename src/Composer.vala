@@ -77,7 +77,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         application = (Gtk.Application) GLib.Application.get_default ();
         // Alt+I from Outlook, Shift+Ctrl+A from Apple Mail
         application.set_accels_for_action (ACTION_PREFIX + ACTION_ADD_ATTACHMENT, {"<Alt>I", "<Shift><Control>A"});
-        application.set_accels_for_action (ACTION_PREFIX + ACTION_DISCARD, {"<Control>BackSpace", "<Control>Delete"});
         application.set_accels_for_action (ACTION_PREFIX + ACTION_INSERT_LINK, {"<Control>K"});
         application.set_accels_for_action (ACTION_PREFIX + ACTION_SEND, {"<Control>Return"});
         application.set_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH), {"<Control>percent"});
