@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-01 18:43+0000\n"
-"PO-Revision-Date: 2023-04-29 00:06+0000\n"
+"PO-Revision-Date: 2023-05-01 22:53+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/"
-">\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/>"
+"\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -78,37 +78,35 @@ msgstr "改善点:"
 msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
-msgstr ""
+msgstr "オンラインアカウントの設定でアカウントが追加された場合、“メール”を再起動しな"
+"くてもようこそ画面が消えるように修正"
 
 #: data/mail.metainfo.xml.in:75
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
-msgstr ""
+msgstr "作成画面が常に新しいウィンドウとして表示されるようになり、使用可能なキーボー"
+"ドショートカットも増加"
 
 #: data/mail.metainfo.xml.in:76
 msgid "The search filter menu now appears next to the search bar"
-msgstr ""
+msgstr "検索フィルターメニューを検索バーの隣に移動"
 
 #: data/mail.metainfo.xml.in:77
 msgid "HeaderBars appear to float above content when scrolled"
-msgstr ""
+msgstr "メール本文をスクロールすると、ヘッダーバーがその上に浮いて見える効果を追加"
 
 #: data/mail.metainfo.xml.in:78
-#, fuzzy
-#| msgid "Fix a potential crash while loading messages"
 msgid "Fix a potential crash with empty messages"
-msgstr "メッセージ読み込み中にクラッシュする可能性のある不具合を修正"
+msgstr "空のメッセージが原因でクラッシュする可能性のある不具合を修正"
 
 #: data/mail.metainfo.xml.in:79
 msgid "Stop resizing from cutting off the message list"
-msgstr ""
+msgstr "サイズの変更によってメッセージ一覧が見えなくなってしまわないように修正"
 
 #: data/mail.metainfo.xml.in:80
-#, fuzzy
-#| msgid "Stability improvements"
 msgid "Performance improvements"
-msgstr "安定性の改善"
+msgstr "パフォーマンスの改善"
 
 #: data/mail.metainfo.xml.in:81 data/mail.metainfo.xml.in:94
 #: data/mail.metainfo.xml.in:115 data/mail.metainfo.xml.in:136
