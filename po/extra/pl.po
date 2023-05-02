@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-01 18:43+0000\n"
-"PO-Revision-Date: 2022-05-24 11:07+0000\n"
+"PO-Revision-Date: 2023-05-03 17:06+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/extra/pl/>\n"
 "Language: pl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
@@ -79,36 +79,36 @@ msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
 msgstr ""
+"Widok powitalny jest usunięty po dodaniu konta w Kontach online bez potrzeby "
+"restartu aplikacji"
 
 #: data/mail.metainfo.xml.in:75
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
 msgstr ""
+"Kompozytor jest teraz zawsze prezentowany jako nowe okno i posiada więcej "
+"skrótów klawiszowych"
 
 #: data/mail.metainfo.xml.in:76
 msgid "The search filter menu now appears next to the search bar"
-msgstr ""
+msgstr "Menu filtra do wyszukiwania pojawia się teraz obok paska wyszukiwania"
 
 #: data/mail.metainfo.xml.in:77
 msgid "HeaderBars appear to float above content when scrolled"
-msgstr ""
+msgstr "Paski główne zdają się unosić nad treścią podczas przewijania"
 
 #: data/mail.metainfo.xml.in:78
-#, fuzzy
-#| msgid "Fix a potential crash while loading messages"
 msgid "Fix a potential crash with empty messages"
-msgstr "Naprawiono potencjalny błąd krytyczny przy ładowaniu wiadomości"
+msgstr "Naprawiono potencjalny błąd krytyczny przy pustych wiadomościach"
 
 #: data/mail.metainfo.xml.in:79
 msgid "Stop resizing from cutting off the message list"
-msgstr ""
+msgstr "Zmiana rozmiaru nie przycina już listy wiadomości"
 
 #: data/mail.metainfo.xml.in:80
-#, fuzzy
-#| msgid "Stability improvements"
 msgid "Performance improvements"
-msgstr "Ulepszenia stabilności"
+msgstr "Ulepszenia wydajności"
 
 #: data/mail.metainfo.xml.in:81 data/mail.metainfo.xml.in:94
 #: data/mail.metainfo.xml.in:115 data/mail.metainfo.xml.in:136
