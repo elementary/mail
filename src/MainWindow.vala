@@ -63,8 +63,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         {ACTION_MARK_STAR, on_mark_star },
         {ACTION_MARK_UNREAD, on_mark_unread },
         {ACTION_MARK_UNSTAR, on_mark_unstar },
-        {ACTION_ARCHIVE, on_archive },
-        {ACTION_MOVE_TO_TRASH, on_move_to_trash },
+        {ACTION_ARCHIVE, action_move },
+        {ACTION_MOVE_TO_TRASH, action_move },
         {ACTION_FULLSCREEN, on_fullscreen },
     };
 
@@ -125,6 +125,10 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             conversation_list.undo_move ();
         });
 
+        toast.closed.connect (() => {
+            conversation_list.expire_undo ();
+        });
+
         var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
         message_overlay.no_show_all = true;
 
@@ -178,6 +182,10 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         folders_list_view.folder_selected.connect (conversation_list.load_folder);
 
         conversation_list.conversation_selected.connect (message_list.set_conversation);
+
+        conversation_list.undo_expired.connect (() => {
+            toast.reveal_child = false;
+        });
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
 
@@ -250,15 +258,27 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         message_list.print (parameter);
     }
 
-    private void on_archive () {
-        conversation_list.archive_selected_messages.begin ();
-    }
+    private void action_move (SimpleAction action, Variant? parameter) {
+        switch (action.name) {
+            case ACTION_ARCHIVE:
+                conversation_list.move_selected_messages.begin (MoveHandler.MoveType.ARCHIVE, null, (obj, res) => {
+                    var result = conversation_list.move_selected_messages.end (res);
+                    if (result > 0) {
+                        toast.title = ngettext ("Message Archived", "Messages Archived", result);
+                        toast.send_notification ();
+                    }
+                });
+                break;
 
-    private void on_move_to_trash () {
-        var result = conversation_list.trash_selected_messages ();
-        if (result > 0) {
-            toast.title = ngettext ("Message Deleted", "Messages Deleted", result);
-            toast.send_notification ();
+            case ACTION_MOVE_TO_TRASH:
+                conversation_list.move_selected_messages.begin (MoveHandler.MoveType.TRASH, null, (obj, res) => {
+                    var result = conversation_list.move_selected_messages.end (res);
+                    if (result > 0) {
+                        toast.title = ngettext ("Message Deleted", "Messages Deleted", result);
+                        toast.send_notification ();
+                    }
+                });
+                break;
         }
     }
 
