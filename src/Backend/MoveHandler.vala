@@ -26,7 +26,6 @@ public class Mail.MoveHandler {
     private Camel.Folder src_folder;
     private Camel.Folder? dst_folder;
     private Gee.ArrayList<weak Camel.MessageInfo> moved_messages;
-    private uint timeout_id = 0;
     private MoveType move_type;
 
     public int delete_threads (Camel.Folder folder, Gee.ArrayList<unowned Camel.FolderThreadNode?> threads) {
@@ -41,12 +40,6 @@ public class Mail.MoveHandler {
         }
 
         src_folder.freeze ();
-
-        timeout_id = Timeout.add_seconds (10, () => {
-            expire_undo ();
-            timeout_id = 0;
-            return Source.REMOVE;
-        });
 
         foreach (var info in moved_messages) {
             info.set_flags (Camel.MessageFlags.DELETED, ~0);
@@ -101,12 +94,6 @@ public class Mail.MoveHandler {
 
         try {
             if (yield folder.transfer_messages_to (uids, dst_folder, true, Priority.DEFAULT, null, null)) {
-                timeout_id = Timeout.add_seconds (10, () => {
-                    expire_undo ();
-                    timeout_id = 0;
-                    return Source.REMOVE;
-                });
-
                 return moved_messages.size;
             }
         } catch (Error e) {
@@ -197,13 +184,6 @@ public class Mail.MoveHandler {
                 info.set_flags (Camel.MessageFlags.DELETED, 0);
             }
             src_folder.thaw ();
-        }
-    }
-
-    public void expire_undo () {
-        if (timeout_id != 0) {
-            Source.remove (timeout_id);
-            timeout_id = 0;
         }
     }
 
