@@ -55,17 +55,16 @@ public class Mail.MoveHandler {
                 var store = src_folder.parent_store;
                 if (Camel.StoreFlags.VTRASH in ((Camel.StoreFlags)store.get_flags ())) {
                     move_type = VTRASH;
-                    print ("vtrash");
                 } else {
                     dst_folder = yield store.get_trash_folder (GLib.Priority.DEFAULT);
                 }
                 break;
 
             case VTRASH:
-                throw new OptionError.BAD_VALUE ("MoveType: VTRASH: Invalid value"); //Correct error here?
+                throw new OptionError.BAD_VALUE ("MoveType.VTRASH: Invalid value"); //TODO: Correct error here?
         }
 
-        if (dst_folder == null && move_type != VTRASH) {
+        if ((dst_folder == null && move_type != VTRASH) || dst_folder == src_folder) {
             return 0;
         }
 
