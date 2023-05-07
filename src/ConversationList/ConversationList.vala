@@ -521,8 +521,10 @@ public class Mail.ConversationList : Gtk.Box {
             }
         }
 
-        list_store.items_changed (0, previous_items, list_store.get_n_items ());
-        list_box.select_row_at_index (selected_rows_start_index + 1);
+        if (moved > 0) {
+            list_store.items_changed (0, previous_items, list_store.get_n_items ());
+            list_box.select_row_at_index (selected_rows_start_index + 1);
+        }
 
         return moved;
     }
