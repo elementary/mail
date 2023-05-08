@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-14 17:57+0000\n"
-"PO-Revision-Date: 2022-05-24 17:08+0000\n"
+"POT-Creation-Date: 2023-05-01 18:43+0000\n"
+"PO-Revision-Date: 2023-05-03 17:06+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/extra/ca/>\n"
 "Language: ca\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-04-08 06:35+0000\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
@@ -66,127 +66,125 @@ msgstr "Funciona amb Gmail, Yahoo! i altres servidors d'IMAP populars."
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:91
-#: data/mail.metainfo.xml.in:113 data/mail.metainfo.xml.in:127
-#: data/mail.metainfo.xml.in:148
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:92
+#: data/mail.metainfo.xml.in:111 data/mail.metainfo.xml.in:133
+#: data/mail.metainfo.xml.in:147
 msgid "Improvements:"
 msgstr "Millores:"
 
-#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:95
-#: data/mail.metainfo.xml.in:116 data/mail.metainfo.xml.in:129
-#: data/mail.metainfo.xml.in:153
+#: data/mail.metainfo.xml.in:74
+msgid ""
+"The welcome view is removed when an account is added in Online Accounts "
+"without having to restart Mail"
+msgstr ""
+"La vista de la benvinguda s'elimina quan s'afegeix un compte als comptes en "
+"línia sense haver de reiniciar el Mail"
+
+#: data/mail.metainfo.xml.in:75
+msgid ""
+"The composer is always presented as a new window and includes more keyboard "
+"shortcuts"
+msgstr ""
+"El compositor sempre es presenta com una finestra nova i inclou més dreceres "
+"de teclat"
+
+#: data/mail.metainfo.xml.in:76
+msgid "The search filter menu now appears next to the search bar"
+msgstr "El menú del filtre de cerca ara apareix al costat de la barra de cerca"
+
+#: data/mail.metainfo.xml.in:77
+msgid "HeaderBars appear to float above content when scrolled"
+msgstr ""
+"Les barres de capçalera semblen flotar per sobre del contingut quan es "
+"desplacen"
+
+#: data/mail.metainfo.xml.in:78
+msgid "Fix a potential crash with empty messages"
+msgstr "Solució d'un error potencial amb missatges buits"
+
+#: data/mail.metainfo.xml.in:79
+msgid "Stop resizing from cutting off the message list"
+msgstr "Deixa de canviar la mida per tal de tallar la llista de missatges"
+
+#: data/mail.metainfo.xml.in:80
+msgid "Performance improvements"
+msgstr "Millores de rendiment"
+
+#: data/mail.metainfo.xml.in:81 data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:115 data/mail.metainfo.xml.in:136
+#: data/mail.metainfo.xml.in:149
 msgid "Updated translations"
 msgstr "Traduccions actualitzades"
 
-#: data/mail.metainfo.xml.in:85 data/mail.metainfo.xml.in:107
-#: data/mail.metainfo.xml.in:123 data/mail.metainfo.xml.in:140
+#: data/mail.metainfo.xml.in:105 data/mail.metainfo.xml.in:127
+#: data/mail.metainfo.xml.in:143
 msgid "Fixes:"
 msgstr "Correccions:"
 
-#: data/mail.metainfo.xml.in:87
+#: data/mail.metainfo.xml.in:107
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
 "S'ha solucionat un error que provocava que els comptes de correu es "
 "carreguessin diverses vegades."
 
-#: data/mail.metainfo.xml.in:88
+#: data/mail.metainfo.xml.in:108
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr ""
 "S'ha solucionat un error que provocava que el Correu es bloquegés de tant en "
 "tant."
 
-#: data/mail.metainfo.xml.in:89
+#: data/mail.metainfo.xml.in:109
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "Es mostra el destinatari a la carpeta Enviats en lloc del remitent."
 
-#: data/mail.metainfo.xml.in:93
+#: data/mail.metainfo.xml.in:113
 msgid "Updated app icon"
 msgstr "Icona de l'aplicació actualitzada"
 
-#: data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:114
 msgid "New design"
 msgstr "Disseny nou"
 
-#: data/mail.metainfo.xml.in:102 data/mail.metainfo.xml.in:136
+#: data/mail.metainfo.xml.in:122
 msgid "New features:"
 msgstr "Característiques noves:"
 
-#: data/mail.metainfo.xml.in:104
+#: data/mail.metainfo.xml.in:124
 msgid "Use message subject for composer window title"
 msgstr "Usa l'assumpte del missatge per al títol de la finestra de redacció."
 
-#: data/mail.metainfo.xml.in:105
+#: data/mail.metainfo.xml.in:125
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
 "S'ha afegit el suport per a la safata d'entrada unificada per als comptes de "
 "Microsoft 365."
 
-#: data/mail.metainfo.xml.in:109
+#: data/mail.metainfo.xml.in:129
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
 "Correcció d'un error que provocava que la supervisió de la safata d'entrada "
 "en segon pla es bloquegés"
 
-#: data/mail.metainfo.xml.in:110
+#: data/mail.metainfo.xml.in:130
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr ""
 "S'han eliminat les adreces de remitents duplicades en redactar un missatge."
 
-#: data/mail.metainfo.xml.in:111
+#: data/mail.metainfo.xml.in:131
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr "Correcció d'un bloqueig en arxivar l'últim missatge d'una carpeta"
 
-#: data/mail.metainfo.xml.in:115
+#: data/mail.metainfo.xml.in:135
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "S'ha canviat el nom d'Office 365 a Microsoft 365 per seguir el canvi de "
 "marca de Microsoft."
 
-#: data/mail.metainfo.xml.in:125
+#: data/mail.metainfo.xml.in:145
 msgid "Fix a potential crash while loading messages"
 msgstr "Correcció d'una fallada potencial en carregar missatges"
-
-#: data/mail.metainfo.xml.in:138
-msgid "Secondary-click menu on the conversations list"
-msgstr "Menú de clic secundari a la llista de converses"
-
-#: data/mail.metainfo.xml.in:142
-msgid "Ensure conversations are re-sorted by date when new messages appear"
-msgstr ""
-"S'assegura que les converses es tornin a ordenar per data quan hi ha "
-"missatges nous."
-
-#: data/mail.metainfo.xml.in:143
-msgid "Fixed sender combobox after opening a mailto link"
-msgstr ""
-"Correcció del menú desplegable després d'obrir un enllaç directe de missatge"
-
-#: data/mail.metainfo.xml.in:144
-msgid "Mark sent messages as read"
-msgstr "Marca els missatges enviats com a llegits"
-
-#: data/mail.metainfo.xml.in:145
-msgid "Fix a hang when deleting the last message in a mailbox"
-msgstr ""
-"Correcció d'un bloqueig en suprimir l'últim missatge d'una bústia de correu"
-
-#: data/mail.metainfo.xml.in:146
-msgid "Fix an issue where some mail fails to be deleted"
-msgstr "Solució d'un problema d'alguns missatges no es poden suprimir"
-
-#: data/mail.metainfo.xml.in:150
-msgid "Use accent color for unread message titles"
-msgstr "Usa el color d’accentuació per als títols de missatges no llegits."
-
-#: data/mail.metainfo.xml.in:151
-msgid "Autoselect the next message after archiving"
-msgstr "Selecció automàtica del missatge següent després de l'arxivament"
-
-#: data/mail.metainfo.xml.in:152
-msgid "Use local time in message headers"
-msgstr "Ús de l'hora local a les capçaleres dels missatges"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -195,6 +193,39 @@ msgstr "Correu electrònic;Correu electrònic;Correu;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Redacta un missatge"
+
+#~ msgid "Secondary-click menu on the conversations list"
+#~ msgstr "Menú de clic secundari a la llista de converses"
+
+#~ msgid "Ensure conversations are re-sorted by date when new messages appear"
+#~ msgstr ""
+#~ "S'assegura que les converses es tornin a ordenar per data quan hi ha "
+#~ "missatges nous."
+
+#~ msgid "Fixed sender combobox after opening a mailto link"
+#~ msgstr ""
+#~ "Correcció del menú desplegable després d'obrir un enllaç directe de "
+#~ "missatge"
+
+#~ msgid "Mark sent messages as read"
+#~ msgstr "Marca els missatges enviats com a llegits"
+
+#~ msgid "Fix a hang when deleting the last message in a mailbox"
+#~ msgstr ""
+#~ "Correcció d'un bloqueig en suprimir l'últim missatge d'una bústia de "
+#~ "correu"
+
+#~ msgid "Fix an issue where some mail fails to be deleted"
+#~ msgstr "Solució d'un problema d'alguns missatges no es poden suprimir"
+
+#~ msgid "Use accent color for unread message titles"
+#~ msgstr "Usa el color d’accentuació per als títols de missatges no llegits."
+
+#~ msgid "Autoselect the next message after archiving"
+#~ msgstr "Selecció automàtica del missatge següent després de l'arxivament"
+
+#~ msgid "Use local time in message headers"
+#~ msgstr "Ús de l'hora local a les capçaleres dels missatges"
 
 #~ msgid "Send a notification when new messages arrive"
 #~ msgstr "S'envia una notificació quan arriben missatges nous."
@@ -252,9 +283,6 @@ msgstr "Redacta un missatge"
 #~ msgstr ""
 #~ "S'assegura que no desem els missatges enviats dues vegades per a alguns "
 #~ "tipus de comptes."
-
-#~ msgid "Stability improvements"
-#~ msgstr "Millores d'estabilitat"
 
 #~ msgid "Complete rewrite from scratch"
 #~ msgstr "Reescriptura completa des de zero"

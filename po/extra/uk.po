@@ -7,18 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-14 17:57+0000\n"
-"PO-Revision-Date: 2022-05-24 03:31+0000\n"
+"POT-Creation-Date: 2023-05-01 18:43+0000\n"
+"PO-Revision-Date: 2023-05-01 22:53+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/extra/uk/"
-">\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/extra/uk/>"
+"\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
@@ -67,122 +67,119 @@ msgstr "Працює з Gmail, Yahoo! Mail та іншими популярни�
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:91
-#: data/mail.metainfo.xml.in:113 data/mail.metainfo.xml.in:127
-#: data/mail.metainfo.xml.in:148
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:92
+#: data/mail.metainfo.xml.in:111 data/mail.metainfo.xml.in:133
+#: data/mail.metainfo.xml.in:147
 msgid "Improvements:"
 msgstr "Поліпшення:"
 
-#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:95
-#: data/mail.metainfo.xml.in:116 data/mail.metainfo.xml.in:129
-#: data/mail.metainfo.xml.in:153
+#: data/mail.metainfo.xml.in:74
+msgid ""
+"The welcome view is removed when an account is added in Online Accounts "
+"without having to restart Mail"
+msgstr ""
+"Вітальне вікно прибирається, коли обліковий запис додається до Онлайнових "
+"облікових записів без необхідності перезапуску Пошти"
+
+#: data/mail.metainfo.xml.in:75
+msgid ""
+"The composer is always presented as a new window and includes more keyboard "
+"shortcuts"
+msgstr ""
+"Редактор завжди відкривається у новому вікні та містить більше комбінацій "
+"клавіш"
+
+#: data/mail.metainfo.xml.in:76
+msgid "The search filter menu now appears next to the search bar"
+msgstr "Меню фільтрів пошуку тепер з'являється поруч із панеллю пошуку"
+
+#: data/mail.metainfo.xml.in:77
+msgid "HeaderBars appear to float above content when scrolled"
+msgstr "Панелі заголовків під час гортання з'являються над вмістом"
+
+#: data/mail.metainfo.xml.in:78
+msgid "Fix a potential crash with empty messages"
+msgstr "Усунуто ймовірність збою через порожні повідомлення"
+
+#: data/mail.metainfo.xml.in:79
+msgid "Stop resizing from cutting off the message list"
+msgstr "Припинено зміну розміру від обрізання списку повідомлень"
+
+#: data/mail.metainfo.xml.in:80
+msgid "Performance improvements"
+msgstr "Поліпшення швидкодії"
+
+#: data/mail.metainfo.xml.in:81 data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:115 data/mail.metainfo.xml.in:136
+#: data/mail.metainfo.xml.in:149
 msgid "Updated translations"
 msgstr "Оновлено переклади"
 
-#: data/mail.metainfo.xml.in:85 data/mail.metainfo.xml.in:107
-#: data/mail.metainfo.xml.in:123 data/mail.metainfo.xml.in:140
+#: data/mail.metainfo.xml.in:105 data/mail.metainfo.xml.in:127
+#: data/mail.metainfo.xml.in:143
 msgid "Fixes:"
 msgstr "Виправлення:"
 
-#: data/mail.metainfo.xml.in:87
+#: data/mail.metainfo.xml.in:107
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
 "Усунута помилка, яка спричиняла завантаження облікових записів електронної "
 "пошти кілька разів"
 
-#: data/mail.metainfo.xml.in:88
+#: data/mail.metainfo.xml.in:108
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr "Виправлена помилка, яка спричиняла збої пошти"
 
-#: data/mail.metainfo.xml.in:89
+#: data/mail.metainfo.xml.in:109
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "Показ одержувача в теці Надіслані замість відправника"
 
-#: data/mail.metainfo.xml.in:93
+#: data/mail.metainfo.xml.in:113
 msgid "Updated app icon"
 msgstr "Оновлено піктограму застосунку"
 
-#: data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:114
 msgid "New design"
 msgstr "Новий дизайн"
 
-#: data/mail.metainfo.xml.in:102 data/mail.metainfo.xml.in:136
+#: data/mail.metainfo.xml.in:122
 msgid "New features:"
 msgstr "Нові можливості:"
 
-#: data/mail.metainfo.xml.in:104
+#: data/mail.metainfo.xml.in:124
 msgid "Use message subject for composer window title"
 msgstr "Тема повідомлення відтепер буде назвою вікна редактора"
 
-#: data/mail.metainfo.xml.in:105
+#: data/mail.metainfo.xml.in:125
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr "Додано підтримку Unified Inbox для облікових записів Microsoft 365"
 
-#: data/mail.metainfo.xml.in:109
+#: data/mail.metainfo.xml.in:129
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
 "Виправлена помилка, яка призводила до збою моніторингу вхідних у фоновому "
 "режимі"
 
-#: data/mail.metainfo.xml.in:110
+#: data/mail.metainfo.xml.in:130
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr "Прибрано дублювання адреси відправника під час створення повідомлення"
 
-#: data/mail.metainfo.xml.in:111
+#: data/mail.metainfo.xml.in:131
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
 "Виправлено заморожування під час архівування останнього повідомлення у теці"
 
-#: data/mail.metainfo.xml.in:115
+#: data/mail.metainfo.xml.in:135
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "Office 365 перейменовано на Microsoft 365, щоб згідно з ребрендингом "
 "Microsoft"
 
-#: data/mail.metainfo.xml.in:125
+#: data/mail.metainfo.xml.in:145
 msgid "Fix a potential crash while loading messages"
 msgstr "Усунуто ймовірність збою під час завантаження повідомлень"
-
-#: data/mail.metainfo.xml.in:138
-msgid "Secondary-click menu on the conversations list"
-msgstr "Меню правої кнопки миші на списку бесід"
-
-#: data/mail.metainfo.xml.in:142
-msgid "Ensure conversations are re-sorted by date when new messages appear"
-msgstr ""
-"Коли з’являться нові повідомлення, розмови повторно впорядковуються за датою"
-
-#: data/mail.metainfo.xml.in:143
-msgid "Fixed sender combobox after opening a mailto link"
-msgstr "Виправлено редактор відправника після відкриття посилання mailto"
-
-#: data/mail.metainfo.xml.in:144
-msgid "Mark sent messages as read"
-msgstr "Надіслані повідомлення позначаються прочитаними"
-
-#: data/mail.metainfo.xml.in:145
-msgid "Fix a hang when deleting the last message in a mailbox"
-msgstr ""
-"Виправлено зависання під час видалення останнього повідомлення в поштовій "
-"скриньці"
-
-#: data/mail.metainfo.xml.in:146
-msgid "Fix an issue where some mail fails to be deleted"
-msgstr "Виправлено проблему, через яку інколи не видалялася пошта"
-
-#: data/mail.metainfo.xml.in:150
-msgid "Use accent color for unread message titles"
-msgstr "Основний колір застосовується до непрочитаних повідомлень"
-
-#: data/mail.metainfo.xml.in:151
-msgid "Autoselect the next message after archiving"
-msgstr "Автовибір наступного повідомлення після архівування"
-
-#: data/mail.metainfo.xml.in:152
-msgid "Use local time in message headers"
-msgstr "Використовувати місцевий час у заголовках повідомлень"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -191,6 +188,37 @@ msgstr "Email;E-mail;Mail;Пошта;Лист;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Нове повідомлення"
+
+#~ msgid "Secondary-click menu on the conversations list"
+#~ msgstr "Меню правої кнопки миші на списку бесід"
+
+#~ msgid "Ensure conversations are re-sorted by date when new messages appear"
+#~ msgstr ""
+#~ "Коли з’являться нові повідомлення, розмови повторно впорядковуються за "
+#~ "датою"
+
+#~ msgid "Fixed sender combobox after opening a mailto link"
+#~ msgstr "Виправлено редактор відправника після відкриття посилання mailto"
+
+#~ msgid "Mark sent messages as read"
+#~ msgstr "Надіслані повідомлення позначаються прочитаними"
+
+#~ msgid "Fix a hang when deleting the last message in a mailbox"
+#~ msgstr ""
+#~ "Виправлено зависання під час видалення останнього повідомлення в поштовій "
+#~ "скриньці"
+
+#~ msgid "Fix an issue where some mail fails to be deleted"
+#~ msgstr "Виправлено проблему, через яку інколи не видалялася пошта"
+
+#~ msgid "Use accent color for unread message titles"
+#~ msgstr "Основний колір застосовується до непрочитаних повідомлень"
+
+#~ msgid "Autoselect the next message after archiving"
+#~ msgstr "Автовибір наступного повідомлення після архівування"
+
+#~ msgid "Use local time in message headers"
+#~ msgstr "Використовувати місцевий час у заголовках повідомлень"
 
 #~ msgid "Send a notification when new messages arrive"
 #~ msgstr "Надсилання сповіщень, коли надходять нові повідомлення"
@@ -249,9 +277,6 @@ msgstr "Нове повідомлення"
 #~ msgstr ""
 #~ "Виправлено ваду подвійного збереження надісланих повідомлень для деяких "
 #~ "типів облікових записів"
-
-#~ msgid "Stability improvements"
-#~ msgstr "Поліпшення стабільності"
 
 #~ msgid "Complete rewrite from scratch"
 #~ msgstr "Застосунок переписано з нуля"

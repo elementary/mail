@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-14 17:57+0000\n"
+"POT-Creation-Date: 2023-05-01 18:43+0000\n"
 "PO-Revision-Date: 2023-03-01 02:25+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/extra/de/>\n"
@@ -68,125 +68,120 @@ msgstr "Funktioniert mit Gmail, Yahoo! Mail, und anderen IMAP-Servern"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:91
-#: data/mail.metainfo.xml.in:113 data/mail.metainfo.xml.in:127
-#: data/mail.metainfo.xml.in:148
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:92
+#: data/mail.metainfo.xml.in:111 data/mail.metainfo.xml.in:133
+#: data/mail.metainfo.xml.in:147
 msgid "Improvements:"
 msgstr "Verbesserungen:"
 
-#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:95
-#: data/mail.metainfo.xml.in:116 data/mail.metainfo.xml.in:129
-#: data/mail.metainfo.xml.in:153
+#: data/mail.metainfo.xml.in:74
+msgid ""
+"The welcome view is removed when an account is added in Online Accounts "
+"without having to restart Mail"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:75
+msgid ""
+"The composer is always presented as a new window and includes more keyboard "
+"shortcuts"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:76
+msgid "The search filter menu now appears next to the search bar"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:77
+msgid "HeaderBars appear to float above content when scrolled"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:78
+#, fuzzy
+#| msgid "Fix a potential crash while loading messages"
+msgid "Fix a potential crash with empty messages"
+msgstr "Mögliche Abstürze beim Laden von Nachrichten behoben"
+
+#: data/mail.metainfo.xml.in:79
+msgid "Stop resizing from cutting off the message list"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:80
+#, fuzzy
+#| msgid "Stability improvements"
+msgid "Performance improvements"
+msgstr "Stabilitätsverbesserungen"
+
+#: data/mail.metainfo.xml.in:81 data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:115 data/mail.metainfo.xml.in:136
+#: data/mail.metainfo.xml.in:149
 msgid "Updated translations"
 msgstr "Aktualisierte Übersetzungen"
 
-#: data/mail.metainfo.xml.in:85 data/mail.metainfo.xml.in:107
-#: data/mail.metainfo.xml.in:123 data/mail.metainfo.xml.in:140
+#: data/mail.metainfo.xml.in:105 data/mail.metainfo.xml.in:127
+#: data/mail.metainfo.xml.in:143
 msgid "Fixes:"
 msgstr "Fehlerbehebungen:"
 
-#: data/mail.metainfo.xml.in:87
+#: data/mail.metainfo.xml.in:107
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:88
+#: data/mail.metainfo.xml.in:108
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:89
+#: data/mail.metainfo.xml.in:109
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "Empfänger im Gesendet-Ordner anstelle des Absenders anzeigen"
 
-#: data/mail.metainfo.xml.in:93
+#: data/mail.metainfo.xml.in:113
 msgid "Updated app icon"
 msgstr "Aktualisierte App-Symbole"
 
-#: data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:114
 msgid "New design"
 msgstr "Neues Design"
 
-#: data/mail.metainfo.xml.in:102 data/mail.metainfo.xml.in:136
+#: data/mail.metainfo.xml.in:122
 msgid "New features:"
 msgstr "Neue Funktionen:"
 
-#: data/mail.metainfo.xml.in:104
+#: data/mail.metainfo.xml.in:124
 msgid "Use message subject for composer window title"
 msgstr "Nachrichtenbetreff als Fenstertitel nutzen"
 
-#: data/mail.metainfo.xml.in:105
+#: data/mail.metainfo.xml.in:125
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
 "Unterstützung für die gemeinsamen Ordner von Microsoft 365 Konten hinzugefügt"
 
-#: data/mail.metainfo.xml.in:109
+#: data/mail.metainfo.xml.in:129
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
 "Ein Fehler, welcher die Eingangsüberwachung im Hintergrund zum Abstürzen "
 "brachte, wurde behoben"
 
-#: data/mail.metainfo.xml.in:110
+#: data/mail.metainfo.xml.in:130
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr ""
 "Doppelte Absenderadressen beim Schreiben einer Nachricht wurden entfernt"
 
-#: data/mail.metainfo.xml.in:111
+#: data/mail.metainfo.xml.in:131
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
 "Behebung eines Problems, das beim Archivieren der letzten Nachricht in einem "
 "Ordner auftrat"
 
-#: data/mail.metainfo.xml.in:115
+#: data/mail.metainfo.xml.in:135
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "Umbenennung von Office 365 zu Microsoft 365 um der neuen Microsoft "
 "Produktreihe zu entsprechen"
 
-#: data/mail.metainfo.xml.in:125
+#: data/mail.metainfo.xml.in:145
 msgid "Fix a potential crash while loading messages"
 msgstr "Mögliche Abstürze beim Laden von Nachrichten behoben"
-
-#: data/mail.metainfo.xml.in:138
-msgid "Secondary-click menu on the conversations list"
-msgstr "Sekundärklick-Menü auf der Unterhaltungsliste"
-
-#: data/mail.metainfo.xml.in:142
-msgid "Ensure conversations are re-sorted by date when new messages appear"
-msgstr ""
-"Sicherstellen, dass Unterhaltungen beim Eintreffen neuer Nachrichten erneut "
-"nach Datum sortiert werden"
-
-#: data/mail.metainfo.xml.in:143
-msgid "Fixed sender combobox after opening a mailto link"
-msgstr "Problem mit \"mailto:\"-Links behoben"
-
-#: data/mail.metainfo.xml.in:144
-msgid "Mark sent messages as read"
-msgstr "Gesendete Nachrichten als gelesen markieren"
-
-#: data/mail.metainfo.xml.in:145
-msgid "Fix a hang when deleting the last message in a mailbox"
-msgstr ""
-"Behebt eine Verzögerung, die auftrat wenn die letzte Nachricht im "
-"Posteingang gelöscht wurde"
-
-#: data/mail.metainfo.xml.in:146
-msgid "Fix an issue where some mail fails to be deleted"
-msgstr ""
-"Behebt einen Fehler, der verhinderte gewisse Nachrichten löschen zu können"
-
-#: data/mail.metainfo.xml.in:150
-msgid "Use accent color for unread message titles"
-msgstr "Nutze Akzentfarben für ungelesene Nachrichtentitel"
-
-#: data/mail.metainfo.xml.in:151
-msgid "Autoselect the next message after archiving"
-msgstr "Automatisch die nächste Nachricht nach dem Archivieren auswählen"
-
-#: data/mail.metainfo.xml.in:152
-msgid "Use local time in message headers"
-msgstr "Nutze Lokalzeiten in den Nachrichtentiteln"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -195,6 +190,38 @@ msgstr "Email;E-Mail;Mail;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Nachricht verfassen"
+
+#~ msgid "Secondary-click menu on the conversations list"
+#~ msgstr "Sekundärklick-Menü auf der Unterhaltungsliste"
+
+#~ msgid "Ensure conversations are re-sorted by date when new messages appear"
+#~ msgstr ""
+#~ "Sicherstellen, dass Unterhaltungen beim Eintreffen neuer Nachrichten "
+#~ "erneut nach Datum sortiert werden"
+
+#~ msgid "Fixed sender combobox after opening a mailto link"
+#~ msgstr "Problem mit \"mailto:\"-Links behoben"
+
+#~ msgid "Mark sent messages as read"
+#~ msgstr "Gesendete Nachrichten als gelesen markieren"
+
+#~ msgid "Fix a hang when deleting the last message in a mailbox"
+#~ msgstr ""
+#~ "Behebt eine Verzögerung, die auftrat wenn die letzte Nachricht im "
+#~ "Posteingang gelöscht wurde"
+
+#~ msgid "Fix an issue where some mail fails to be deleted"
+#~ msgstr ""
+#~ "Behebt einen Fehler, der verhinderte gewisse Nachrichten löschen zu können"
+
+#~ msgid "Use accent color for unread message titles"
+#~ msgstr "Nutze Akzentfarben für ungelesene Nachrichtentitel"
+
+#~ msgid "Autoselect the next message after archiving"
+#~ msgstr "Automatisch die nächste Nachricht nach dem Archivieren auswählen"
+
+#~ msgid "Use local time in message headers"
+#~ msgstr "Nutze Lokalzeiten in den Nachrichtentiteln"
 
 #~ msgid "Send a notification when new messages arrive"
 #~ msgstr "Benachrichtigung senden, wenn neue Nachrichten ankommen"
@@ -254,9 +281,6 @@ msgstr "Nachricht verfassen"
 #~ msgstr ""
 #~ "Sicherstellen, dass bei manchen Kontotypen Nachrichten nicht zweimal "
 #~ "gesendet werden"
-
-#~ msgid "Stability improvements"
-#~ msgstr "Stabilitätsverbesserungen"
 
 #~ msgid "Complete rewrite from scratch"
 #~ msgstr "Von Grund auf neu geschrieben"
