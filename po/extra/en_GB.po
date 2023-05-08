@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-01 18:43+0000\n"
-"PO-Revision-Date: 2023-02-17 14:25+0000\n"
+"PO-Revision-Date: 2023-05-05 10:06+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/extra/en_GB/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
@@ -77,36 +77,36 @@ msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
 msgstr ""
+"The welcome view is removed when an account is added in Online Accounts "
+"without having to restart Mail"
 
 #: data/mail.metainfo.xml.in:75
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
 msgstr ""
+"The composer is always presented as a new window and includes more keyboard "
+"shortcuts"
 
 #: data/mail.metainfo.xml.in:76
 msgid "The search filter menu now appears next to the search bar"
-msgstr ""
+msgstr "The search filter menu now appears next to the search bar"
 
 #: data/mail.metainfo.xml.in:77
 msgid "HeaderBars appear to float above content when scrolled"
-msgstr ""
+msgstr "HeaderBars appear to float above content when scrolled"
 
 #: data/mail.metainfo.xml.in:78
-#, fuzzy
-#| msgid "Fix a potential crash while loading messages"
 msgid "Fix a potential crash with empty messages"
-msgstr "Fix a potential crash while loading messages"
+msgstr "Fix a potential crash with empty messages"
 
 #: data/mail.metainfo.xml.in:79
 msgid "Stop resizing from cutting off the message list"
-msgstr ""
+msgstr "Stop resizing from cutting off the message list"
 
 #: data/mail.metainfo.xml.in:80
-#, fuzzy
-#| msgid "Stability improvements"
 msgid "Performance improvements"
-msgstr "Stability improvements"
+msgstr "Performance improvements"
 
 #: data/mail.metainfo.xml.in:81 data/mail.metainfo.xml.in:94
 #: data/mail.metainfo.xml.in:115 data/mail.metainfo.xml.in:136
