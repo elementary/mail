@@ -46,6 +46,8 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
     public void update_infos (Camel.FolderInfo folderinfo) {
         name = folderinfo.display_name;
         full_name = folderinfo.full_name;
+
+        badge = "";
         if (folderinfo.unread > 0) {
             badge = "%d".printf (folderinfo.unread);
         }
@@ -63,7 +65,7 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
             case Camel.FolderInfoFlags.TYPE_TRASH:
                 icon = new ThemedIcon (folderinfo.total == 0 ? "user-trash" : "user-trash-full");
                 can_modify = false;
-                badge = null;
+                badge = "";
                 break;
             case Camel.FolderInfoFlags.TYPE_JUNK:
                 icon = new ThemedIcon ("edit-flag");
@@ -72,11 +74,12 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
             case Camel.FolderInfoFlags.TYPE_SENT:
                 icon = new ThemedIcon ("mail-sent");
                 can_modify = false;
+                badge = "";
                 break;
             case Camel.FolderInfoFlags.TYPE_ARCHIVE:
                 icon = new ThemedIcon ("mail-archive");
                 can_modify = false;
-                badge = null;
+                badge = "";
                 break;
             case Camel.FolderInfoFlags.TYPE_DRAFTS:
                 icon = new ThemedIcon ("mail-drafts");
