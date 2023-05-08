@@ -61,6 +61,7 @@ public class Mail.WebView : WebKit.WebView {
 
         decide_policy.connect (on_decide_policy);
         load_changed.connect (on_load_changed);
+        resource_load_started.connect (on_resource_load);
 
         key_release_event.connect (() => {
             body_html_changed = true;
@@ -116,6 +117,23 @@ public class Mail.WebView : WebKit.WebView {
 
             load_finished ();
         }
+    }
+
+    private void on_resource_load (WebKit.WebResource resource) {
+        resource.finished.connect (() => {
+            var message = new WebKit.UserMessage ("get-page-height", null);
+            send_message_to_page.begin (message, cancellable, (obj, res) => {
+                try {
+                    var response = send_message_to_page.end (res);
+                    height_request = response.parameters.get_int32 ();
+                } catch (Error e) {
+                    // We can cancel the operation
+                    if (!(e is GLib.IOError.CANCELLED)) {
+                        critical (e.message);
+                    }
+                }
+            });
+        });
     }
 
     public new void load_html (string? body) {
