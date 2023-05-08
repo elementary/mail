@@ -31,7 +31,6 @@ public class Mail.WebView : WebKit.WebView {
     private const string INTERNAL_URL_BODY = "elementary-mail:body";
     private const string SERVER_BUS_NAME = "io.elementary.mail.WebViewServer";
 
-    private int preferred_height = 0;
     private Gee.Map<string, InputStream> internal_resources;
 
     private bool loaded = false;
@@ -55,7 +54,8 @@ public class Mail.WebView : WebKit.WebView {
 
     construct {
         cancellable = new GLib.Cancellable ();
-        expand = true;
+        vexpand = true;
+        hexpand = true;
 
         internal_resources = new Gee.HashMap<string, InputStream> ();
 
@@ -93,7 +93,7 @@ public class Mail.WebView : WebKit.WebView {
             send_message_to_page.begin (message, cancellable, (obj, res) => {
                 try {
                     var response = send_message_to_page.end (res);
-                    preferred_height = response.parameters.get_int32 ();
+                    height_request = response.parameters.get_int32 ();
                     queue_resize ();
                 } catch (Error e) {
                     // We can cancel the operation
@@ -116,10 +116,6 @@ public class Mail.WebView : WebKit.WebView {
 
             load_finished ();
         }
-    }
-
-    public override void get_preferred_height (out int minimum_height, out int natural_height) {
-        minimum_height = natural_height = preferred_height;
     }
 
     public new void load_html (string? body) {
