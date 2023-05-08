@@ -90,18 +90,7 @@ public class Mail.WebView : WebKit.WebView {
 
     private void on_load_changed (WebKit.LoadEvent event) {
         if (event == WebKit.LoadEvent.FINISHED || event == WebKit.LoadEvent.COMMITTED) {
-            var message = new WebKit.UserMessage ("get-page-height", null);
-            send_message_to_page.begin (message, cancellable, (obj, res) => {
-                try {
-                    var response = send_message_to_page.end (res);
-                    height_request = response.parameters.get_int32 ();
-                } catch (Error e) {
-                    // We can cancel the operation
-                    if (!(e is GLib.IOError.CANCELLED)) {
-                        critical (e.message);
-                    }
-                }
-            });
+            update_height ();
         }
 
         if (event == WebKit.LoadEvent.FINISHED) {
@@ -119,19 +108,21 @@ public class Mail.WebView : WebKit.WebView {
     }
 
     private void on_resource_load (WebKit.WebResource resource) {
-        resource.finished.connect (() => {
-            var message = new WebKit.UserMessage ("get-page-height", null);
-            send_message_to_page.begin (message, cancellable, (obj, res) => {
-                try {
-                    var response = send_message_to_page.end (res);
-                    height_request = response.parameters.get_int32 ();
-                } catch (Error e) {
-                    // We can cancel the operation
-                    if (!(e is GLib.IOError.CANCELLED)) {
-                        critical (e.message);
-                    }
+        resource.finished.connect (() => update_height ());
+    }
+
+    private void update_height () {
+        var message = new WebKit.UserMessage ("get-page-height", null);
+        send_message_to_page.begin (message, cancellable, (obj, res) => {
+            try {
+                var response = send_message_to_page.end (res);
+                height_request = response.parameters.get_int32 ();
+            } catch (Error e) {
+                // We can cancel the operation
+                if (!(e is GLib.IOError.CANCELLED)) {
+                    critical (e.message);
                 }
-            });
+            }
         });
     }
 
