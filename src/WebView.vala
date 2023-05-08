@@ -61,7 +61,9 @@ public class Mail.WebView : WebKit.WebView {
 
         decide_policy.connect (on_decide_policy);
         load_changed.connect (on_load_changed);
-        resource_load_started.connect (on_resource_load);
+        resource_load_started.connect ((resource) => {
+            resource.finished.connect (() => update_height ());
+        });
 
         key_release_event.connect (() => {
             body_html_changed = true;
@@ -105,10 +107,6 @@ public class Mail.WebView : WebKit.WebView {
 
             load_finished ();
         }
-    }
-
-    private void on_resource_load (WebKit.WebResource resource) {
-        resource.finished.connect (() => update_height ());
     }
 
     private void update_height () {
