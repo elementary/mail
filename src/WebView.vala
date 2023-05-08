@@ -88,14 +88,13 @@ public class Mail.WebView : WebKit.WebView {
         cancellable.cancel ();
     }
 
-    public void on_load_changed (WebKit.LoadEvent event) {
+    private void on_load_changed (WebKit.LoadEvent event) {
         if (event == WebKit.LoadEvent.FINISHED || event == WebKit.LoadEvent.COMMITTED) {
             var message = new WebKit.UserMessage ("get-page-height", null);
             send_message_to_page.begin (message, cancellable, (obj, res) => {
                 try {
                     var response = send_message_to_page.end (res);
                     height_request = response.parameters.get_int32 ();
-                    queue_resize ();
                 } catch (Error e) {
                     // We can cancel the operation
                     if (!(e is GLib.IOError.CANCELLED)) {
