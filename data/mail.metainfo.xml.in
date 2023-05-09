@@ -67,6 +67,18 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="7.1.1" date="2023-05-01" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/mail/issues/822">Mail reading view displays nested scroll views</issue>
+      </issues>
+    </release>
+
     <release version="7.1.0" date="2023-05-01" urgency="medium">
       <description>
         <p>Improvements:</p>
