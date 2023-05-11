@@ -12,7 +12,7 @@ public class Mail.Application : Gtk.Application {
     public static GLib.Settings settings;
     public static bool run_in_background;
 
-    private bool first_run = false;
+    private bool first_run = true;
 
     public Application () {
         Object (
