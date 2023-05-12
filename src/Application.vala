@@ -135,7 +135,8 @@ public class Mail.Application : Gtk.Application {
         add_action (quit_action);
         set_accels_for_action ("app.quit", {"<Control>q"});
 
-        /* Needed to ask the flatpak portal for autostart and background permissions with a parent window */
+        /* Needed to ask the flatpak portal for autostart and background permissions with a parent window
+           and to prevent issues with Session.start being called from the InboxMonitor first */
         if (!run_in_background) {
             activate ();
         }
