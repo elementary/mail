@@ -12,8 +12,6 @@ public class Mail.Application : Gtk.Application {
     public static GLib.Settings settings;
     public static bool run_in_background;
 
-    private bool first_run = true;
-
     public Application () {
         Object (
             application_id: "io.elementary.mail",
@@ -136,51 +134,54 @@ public class Mail.Application : Gtk.Application {
 
         add_action (quit_action);
         set_accels_for_action ("app.quit", {"<Control>q"});
+
+        /* Needed to ask the flatpak portal for autostart and background permissions with a parent window */
+        if (!run_in_background) {
+            activate ();
+        }
+
+        new InboxMonitor ().start.begin ();
+        hold ();
     }
 
     public override void activate () {
-        if (!run_in_background) {
-            MainWindow? main_window = null;
-            foreach (unowned var window in get_windows ()) {
-                if (window is MainWindow) {
-                    main_window = (MainWindow) window;
-                    break;
-                }
-            }
-
-            if (main_window == null) {
-                main_window = new MainWindow (this);
-                add_window (main_window);
-
-                int window_x, window_y;
-                var rect = Gtk.Allocation ();
-
-                settings.get ("window-position", "(ii)", out window_x, out window_y);
-                settings.get ("window-size", "(ii)", out rect.width, out rect.height);
-
-                if (window_x != -1 || window_y != -1) {
-                    main_window.move (window_x, window_y);
-                }
-
-                main_window.set_allocation (rect);
-
-                if (settings.get_boolean ("window-maximized")) {
-                    main_window.maximize ();
-                }
-
-                main_window.show_all ();
-            }
-
-            main_window.present ();
-        } else {
+        if (run_in_background) {
             run_in_background = false;
+            return;
         }
 
-        if (first_run) {
-            first_run = false;
-            new InboxMonitor ().start.begin ();
-            hold ();
+        MainWindow? main_window = null;
+        foreach (unowned var window in get_windows ()) {
+            if (window is MainWindow) {
+                main_window = (MainWindow) window;
+                break;
+            }
         }
+
+        if (main_window == null) {
+            main_window = new MainWindow (this);
+            add_window (main_window);
+
+            int window_x, window_y;
+            var rect = Gtk.Allocation ();
+
+            settings.get ("window-position", "(ii)", out window_x, out window_y);
+            settings.get ("window-size", "(ii)", out rect.width, out rect.height);
+
+            if (window_x != -1 || window_y != -1) {
+                main_window.move (window_x, window_y);
+            }
+
+            main_window.set_allocation (rect);
+
+            if (settings.get_boolean ("window-maximized")) {
+                main_window.maximize ();
+            }
+
+            main_window.show_all ();
+        }
+
+        main_window.present ();
     }
 }
 
