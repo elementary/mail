@@ -31,7 +31,6 @@ public class Mail.WebView : WebKit.WebView {
     private const string INTERNAL_URL_BODY = "elementary-mail:body";
     private const string SERVER_BUS_NAME = "io.elementary.mail.WebViewServer";
 
-    private int preferred_height = 0;
     private Gee.Map<string, InputStream> internal_resources;
 
     private bool loaded = false;
@@ -55,12 +54,16 @@ public class Mail.WebView : WebKit.WebView {
 
     construct {
         cancellable = new GLib.Cancellable ();
-        expand = true;
+        vexpand = true;
+        hexpand = true;
 
         internal_resources = new Gee.HashMap<string, InputStream> ();
 
         decide_policy.connect (on_decide_policy);
         load_changed.connect (on_load_changed);
+        resource_load_started.connect ((resource) => {
+            resource.finished.connect (() => update_height ());
+        });
 
         key_release_event.connect (() => {
             body_html_changed = true;
@@ -87,21 +90,9 @@ public class Mail.WebView : WebKit.WebView {
         cancellable.cancel ();
     }
 
-    public void on_load_changed (WebKit.LoadEvent event) {
+    private void on_load_changed (WebKit.LoadEvent event) {
         if (event == WebKit.LoadEvent.FINISHED || event == WebKit.LoadEvent.COMMITTED) {
-            var message = new WebKit.UserMessage ("get-page-height", null);
-            send_message_to_page.begin (message, cancellable, (obj, res) => {
-                try {
-                    var response = send_message_to_page.end (res);
-                    preferred_height = response.parameters.get_int32 ();
-                    queue_resize ();
-                } catch (Error e) {
-                    // We can cancel the operation
-                    if (!(e is GLib.IOError.CANCELLED)) {
-                        critical (e.message);
-                    }
-                }
-            });
+            update_height ();
         }
 
         if (event == WebKit.LoadEvent.FINISHED) {
@@ -118,8 +109,19 @@ public class Mail.WebView : WebKit.WebView {
         }
     }
 
-    public override void get_preferred_height (out int minimum_height, out int natural_height) {
-        minimum_height = natural_height = preferred_height;
+    private void update_height () {
+        var message = new WebKit.UserMessage ("get-page-height", null);
+        send_message_to_page.begin (message, cancellable, (obj, res) => {
+            try {
+                var response = send_message_to_page.end (res);
+                height_request = response.parameters.get_int32 ();
+            } catch (Error e) {
+                // We can cancel the operation
+                if (!(e is GLib.IOError.CANCELLED)) {
+                    critical (e.message);
+                }
+            }
+        });
     }
 
     public new void load_html (string? body) {
