@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-09 18:13+0000\n"
+"POT-Creation-Date: 2023-05-16 18:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -222,15 +222,15 @@ msgstr[1] ""
 msgid "Mail"
 msgstr ""
 
-#: src/MainWindow.vala:250
+#: src/MainWindow.vala:120
+msgid "Undo"
+msgstr ""
+
+#: src/MainWindow.vala:260
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
-
-#: src/MainWindow.vala:262
-msgid "Undo"
-msgstr ""
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -268,25 +268,25 @@ msgstr ""
 msgid "Fetching new messages…"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:582
+#: src/ConversationList/ConversationList.vala:578
 msgid "Move To Trash"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:591
+#: src/ConversationList/ConversationList.vala:587
 msgid "Mark As Unread"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:599
+#: src/ConversationList/ConversationList.vala:595
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:609
+#: src/ConversationList/ConversationList.vala:605
 #: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:617
+#: src/ConversationList/ConversationList.vala:613
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr ""
