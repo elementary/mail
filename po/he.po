@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-09 18:13+0000\n"
+"POT-Creation-Date: 2023-05-16 18:33+0000\n"
 "PO-Revision-Date: 2023-03-30 14:59+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
@@ -234,15 +234,15 @@ msgstr[1] "%s מ־%u מענים"
 msgid "Mail"
 msgstr "דוא״ל"
 
-#: src/MainWindow.vala:250
+#: src/MainWindow.vala:120
+msgid "Undo"
+msgstr "ביטול"
+
+#: src/MainWindow.vala:260
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "הודעה נמחקה"
 msgstr[1] "הודעות נמחקו"
-
-#: src/MainWindow.vala:262
-msgid "Undo"
-msgstr "ביטול"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -280,25 +280,25 @@ msgstr "משיכת הודעות חדשות"
 msgid "Fetching new messages…"
 msgstr "הודעות חדשות נמשכות…"
 
-#: src/ConversationList/ConversationList.vala:582
+#: src/ConversationList/ConversationList.vala:578
 msgid "Move To Trash"
 msgstr "העברה לאשפה"
 
-#: src/ConversationList/ConversationList.vala:591
+#: src/ConversationList/ConversationList.vala:587
 msgid "Mark As Unread"
 msgstr "סימון כלא נקרא"
 
-#: src/ConversationList/ConversationList.vala:599
+#: src/ConversationList/ConversationList.vala:595
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "סימון כנקרא"
 
-#: src/ConversationList/ConversationList.vala:609
+#: src/ConversationList/ConversationList.vala:605
 #: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "כוכב"
 
-#: src/ConversationList/ConversationList.vala:617
+#: src/ConversationList/ConversationList.vala:613
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "הסרת כוכב"

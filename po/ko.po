@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-09 18:13+0000\n"
+"POT-Creation-Date: 2023-05-16 18:33+0000\n"
 "PO-Revision-Date: 2022-08-07 12:22+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/mail/mail/ko/>\n"
@@ -223,14 +223,14 @@ msgstr[0] "%u에서 보낸 %s개의 메시지"
 msgid "Mail"
 msgstr "메일"
 
-#: src/MainWindow.vala:250
+#: src/MainWindow.vala:120
+msgid "Undo"
+msgstr "실행 취소"
+
+#: src/MainWindow.vala:260
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "지워진 메시지"
-
-#: src/MainWindow.vala:262
-msgid "Undo"
-msgstr "실행 취소"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -268,25 +268,25 @@ msgstr "새 메시지 가져오기"
 msgid "Fetching new messages…"
 msgstr "새 메시지 가져오는 중…"
 
-#: src/ConversationList/ConversationList.vala:582
+#: src/ConversationList/ConversationList.vala:578
 msgid "Move To Trash"
 msgstr "휴지통으로 보내기"
 
-#: src/ConversationList/ConversationList.vala:591
+#: src/ConversationList/ConversationList.vala:587
 msgid "Mark As Unread"
 msgstr "읽지 않음으로 표시"
 
-#: src/ConversationList/ConversationList.vala:599
+#: src/ConversationList/ConversationList.vala:595
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "읽음으로 표시"
 
-#: src/ConversationList/ConversationList.vala:609
+#: src/ConversationList/ConversationList.vala:605
 #: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "별표 표시"
 
-#: src/ConversationList/ConversationList.vala:617
+#: src/ConversationList/ConversationList.vala:613
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "별표 취소"

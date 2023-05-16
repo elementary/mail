@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-09 18:13+0000\n"
+"POT-Creation-Date: 2023-05-16 18:33+0000\n"
 "PO-Revision-Date: 2015-11-24 15:45+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
@@ -240,16 +240,16 @@ msgstr[1] ""
 msgid "Mail"
 msgstr "Барлық пошта"
 
-#: src/MainWindow.vala:250
+#: src/MainWindow.vala:120
+msgid "Undo"
+msgstr ""
+
+#: src/MainWindow.vala:260
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Бірде-бір сөйлесу таңдалмады."
 msgstr[1] "Бірде-бір сөйлесу таңдалмады."
-
-#: src/MainWindow.vala:262
-msgid "Undo"
-msgstr ""
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -299,29 +299,29 @@ msgstr "%d жаңа хат"
 msgid "Fetching new messages…"
 msgstr "%d жаңа хат"
 
-#: src/ConversationList/ConversationList.vala:582
+#: src/ConversationList/ConversationList.vala:578
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Сөйлесулерді жылжыту"
 
-#: src/ConversationList/ConversationList.vala:591
+#: src/ConversationList/ConversationList.vala:587
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "Оқылмаған етіп бел_гілеу"
 
-#: src/ConversationList/ConversationList.vala:599
+#: src/ConversationList/ConversationList.vala:595
 #: src/MessageList/MessageList.vala:87
 #, fuzzy
 msgid "Mark as Read"
 msgstr "Оқылған етіп бел_гілеу"
 
-#: src/ConversationList/ConversationList.vala:609
+#: src/ConversationList/ConversationList.vala:605
 #: src/MessageList/MessageList.vala:93
 #, fuzzy
 msgid "Star"
 msgstr "_Жұлдызшаны орнату"
 
-#: src/ConversationList/ConversationList.vala:617
+#: src/ConversationList/ConversationList.vala:613
 #: src/MessageList/MessageList.vala:99
 #, fuzzy
 msgid "Unstar"
