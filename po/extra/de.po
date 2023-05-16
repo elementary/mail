@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-01 18:43+0000\n"
+"POT-Creation-Date: 2023-05-16 18:33+0000\n"
 "PO-Revision-Date: 2023-03-01 02:25+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/extra/de/>\n"
@@ -68,118 +68,118 @@ msgstr "Funktioniert mit Gmail, Yahoo! Mail, und anderen IMAP-Servern"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:92
-#: data/mail.metainfo.xml.in:111 data/mail.metainfo.xml.in:133
-#: data/mail.metainfo.xml.in:147
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:84
+#: data/mail.metainfo.xml.in:105 data/mail.metainfo.xml.in:124
+#: data/mail.metainfo.xml.in:146 data/mail.metainfo.xml.in:160
 msgid "Improvements:"
 msgstr "Verbesserungen:"
 
-#: data/mail.metainfo.xml.in:74
+#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:93
+#: data/mail.metainfo.xml.in:107 data/mail.metainfo.xml.in:128
+#: data/mail.metainfo.xml.in:149 data/mail.metainfo.xml.in:162
+msgid "Updated translations"
+msgstr "Aktualisierte Übersetzungen"
+
+#: data/mail.metainfo.xml.in:86
 msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:75
+#: data/mail.metainfo.xml.in:87
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:76
+#: data/mail.metainfo.xml.in:88
 msgid "The search filter menu now appears next to the search bar"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:77
+#: data/mail.metainfo.xml.in:89
 msgid "HeaderBars appear to float above content when scrolled"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:78
+#: data/mail.metainfo.xml.in:90
 #, fuzzy
 #| msgid "Fix a potential crash while loading messages"
 msgid "Fix a potential crash with empty messages"
 msgstr "Mögliche Abstürze beim Laden von Nachrichten behoben"
 
-#: data/mail.metainfo.xml.in:79
+#: data/mail.metainfo.xml.in:91
 msgid "Stop resizing from cutting off the message list"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:80
+#: data/mail.metainfo.xml.in:92
 #, fuzzy
 #| msgid "Stability improvements"
 msgid "Performance improvements"
 msgstr "Stabilitätsverbesserungen"
 
-#: data/mail.metainfo.xml.in:81 data/mail.metainfo.xml.in:94
-#: data/mail.metainfo.xml.in:115 data/mail.metainfo.xml.in:136
-#: data/mail.metainfo.xml.in:149
-msgid "Updated translations"
-msgstr "Aktualisierte Übersetzungen"
-
-#: data/mail.metainfo.xml.in:105 data/mail.metainfo.xml.in:127
-#: data/mail.metainfo.xml.in:143
+#: data/mail.metainfo.xml.in:118 data/mail.metainfo.xml.in:140
+#: data/mail.metainfo.xml.in:156
 msgid "Fixes:"
 msgstr "Fehlerbehebungen:"
 
-#: data/mail.metainfo.xml.in:107
+#: data/mail.metainfo.xml.in:120
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:108
+#: data/mail.metainfo.xml.in:121
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:109
+#: data/mail.metainfo.xml.in:122
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "Empfänger im Gesendet-Ordner anstelle des Absenders anzeigen"
 
-#: data/mail.metainfo.xml.in:113
+#: data/mail.metainfo.xml.in:126
 msgid "Updated app icon"
 msgstr "Aktualisierte App-Symbole"
 
-#: data/mail.metainfo.xml.in:114
+#: data/mail.metainfo.xml.in:127
 msgid "New design"
 msgstr "Neues Design"
 
-#: data/mail.metainfo.xml.in:122
+#: data/mail.metainfo.xml.in:135
 msgid "New features:"
 msgstr "Neue Funktionen:"
 
-#: data/mail.metainfo.xml.in:124
+#: data/mail.metainfo.xml.in:137
 msgid "Use message subject for composer window title"
 msgstr "Nachrichtenbetreff als Fenstertitel nutzen"
 
-#: data/mail.metainfo.xml.in:125
+#: data/mail.metainfo.xml.in:138
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
 "Unterstützung für die gemeinsamen Ordner von Microsoft 365 Konten hinzugefügt"
 
-#: data/mail.metainfo.xml.in:129
+#: data/mail.metainfo.xml.in:142
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
 "Ein Fehler, welcher die Eingangsüberwachung im Hintergrund zum Abstürzen "
 "brachte, wurde behoben"
 
-#: data/mail.metainfo.xml.in:130
+#: data/mail.metainfo.xml.in:143
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr ""
 "Doppelte Absenderadressen beim Schreiben einer Nachricht wurden entfernt"
 
-#: data/mail.metainfo.xml.in:131
+#: data/mail.metainfo.xml.in:144
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
 "Behebung eines Problems, das beim Archivieren der letzten Nachricht in einem "
 "Ordner auftrat"
 
-#: data/mail.metainfo.xml.in:135
+#: data/mail.metainfo.xml.in:148
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "Umbenennung von Office 365 zu Microsoft 365 um der neuen Microsoft "
 "Produktreihe zu entsprechen"
 
-#: data/mail.metainfo.xml.in:145
+#: data/mail.metainfo.xml.in:158
 msgid "Fix a potential crash while loading messages"
 msgstr "Mögliche Abstürze beim Laden von Nachrichten behoben"
 
