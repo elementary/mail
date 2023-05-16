@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-09 18:13+0000\n"
+"POT-Creation-Date: 2023-05-16 18:33+0000\n"
 "PO-Revision-Date: 2023-02-17 14:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/mail/mail/ar/>\n"
@@ -238,7 +238,11 @@ msgstr[5] ""
 msgid "Mail"
 msgstr "البريد"
 
-#: src/MainWindow.vala:250
+#: src/MainWindow.vala:120
+msgid "Undo"
+msgstr "تراجع"
+
+#: src/MainWindow.vala:260
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "لا توجد رسائل مختارة"
@@ -247,10 +251,6 @@ msgstr[2] "رسالتان محذوفتان"
 msgstr[3] "رسائل محذوفة"
 msgstr[4] "رسالة محذوفة"
 msgstr[5] "رسائل محذوفة"
-
-#: src/MainWindow.vala:262
-msgid "Undo"
-msgstr "تراجع"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -299,29 +299,29 @@ msgstr "رسالة جديدة"
 msgid "Fetching new messages…"
 msgstr "رسالة جديدة"
 
-#: src/ConversationList/ConversationList.vala:582
+#: src/ConversationList/ConversationList.vala:578
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "نقل المحادثة الى سلة المهملات"
 
-#: src/ConversationList/ConversationList.vala:591
+#: src/ConversationList/ConversationList.vala:587
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "علم كغير مقروء"
 
-#: src/ConversationList/ConversationList.vala:599
+#: src/ConversationList/ConversationList.vala:595
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "علم كمقروء"
 
-#: src/ConversationList/ConversationList.vala:609
+#: src/ConversationList/ConversationList.vala:605
 #: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "نجمة"
 
-#: src/ConversationList/ConversationList.vala:617
+#: src/ConversationList/ConversationList.vala:613
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "الغاء النجمة"

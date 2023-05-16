@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-09 18:13+0000\n"
+"POT-Creation-Date: 2023-05-16 18:33+0000\n"
 "PO-Revision-Date: 2023-05-01 22:53+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/"
@@ -236,16 +236,16 @@ msgstr[2] "%s від %u відправників"
 msgid "Mail"
 msgstr "Пошта"
 
-#: src/MainWindow.vala:250
+#: src/MainWindow.vala:120
+msgid "Undo"
+msgstr "Повернути"
+
+#: src/MainWindow.vala:260
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Повідомлення видалено"
 msgstr[1] "Повідомлення видалено"
 msgstr[2] "Повідомлення видалено"
-
-#: src/MainWindow.vala:262
-msgid "Undo"
-msgstr "Повернути"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -285,25 +285,25 @@ msgstr "Отримати нові повідомлення"
 msgid "Fetching new messages…"
 msgstr "Отримання нових повідомлень…"
 
-#: src/ConversationList/ConversationList.vala:582
+#: src/ConversationList/ConversationList.vala:578
 msgid "Move To Trash"
 msgstr "Перемістити до смітника"
 
-#: src/ConversationList/ConversationList.vala:591
+#: src/ConversationList/ConversationList.vala:587
 msgid "Mark As Unread"
 msgstr "Позначити непрочитаним"
 
-#: src/ConversationList/ConversationList.vala:599
+#: src/ConversationList/ConversationList.vala:595
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "Позначити як прочитане"
 
-#: src/ConversationList/ConversationList.vala:609
+#: src/ConversationList/ConversationList.vala:605
 #: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "Позначити зірочкою"
 
-#: src/ConversationList/ConversationList.vala:617
+#: src/ConversationList/ConversationList.vala:613
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "Прибрати позначення зірочкою"

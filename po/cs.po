@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-09 18:13+0000\n"
+"POT-Creation-Date: 2023-05-16 18:33+0000\n"
 "PO-Revision-Date: 2022-01-10 23:40+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/mail/cs/>\n"
@@ -234,16 +234,16 @@ msgstr[2] "%s od %u odesilatelů"
 msgid "Mail"
 msgstr "Mail"
 
-#: src/MainWindow.vala:250
+#: src/MainWindow.vala:120
+msgid "Undo"
+msgstr "Zpět"
+
+#: src/MainWindow.vala:260
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Žádná vybraná zpráva"
 msgstr[1] "Žádné vybrané zprávy"
 msgstr[2] "Žádné vybrané zprávy"
-
-#: src/MainWindow.vala:262
-msgid "Undo"
-msgstr "Zpět"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -283,25 +283,25 @@ msgstr "Stáhnout si nové zprávy"
 msgid "Fetching new messages…"
 msgstr "Stahování nových zpráv"
 
-#: src/ConversationList/ConversationList.vala:582
+#: src/ConversationList/ConversationList.vala:578
 msgid "Move To Trash"
 msgstr "Přesunout do koše"
 
-#: src/ConversationList/ConversationList.vala:591
+#: src/ConversationList/ConversationList.vala:587
 msgid "Mark As Unread"
 msgstr "Označit jako nepřečtené"
 
-#: src/ConversationList/ConversationList.vala:599
+#: src/ConversationList/ConversationList.vala:595
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "Označit jako přečtené"
 
-#: src/ConversationList/ConversationList.vala:609
+#: src/ConversationList/ConversationList.vala:605
 #: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "Označit hvězdičkou"
 
-#: src/ConversationList/ConversationList.vala:617
+#: src/ConversationList/ConversationList.vala:613
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "Odebrat hvězdičku"

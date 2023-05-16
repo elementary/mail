@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-09 18:13+0000\n"
+"POT-Creation-Date: 2023-05-16 18:33+0000\n"
 "PO-Revision-Date: 2017-04-15 20:37+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: km (generated) <https://l10n.elementary.io/projects/mail/mail/"
@@ -234,16 +234,16 @@ msgstr[1] ""
 msgid "Mail"
 msgstr "អ៊ីមែល​ទាំង​អស់"
 
-#: src/MainWindow.vala:250
+#: src/MainWindow.vala:120
+msgid "Undo"
+msgstr ""
+
+#: src/MainWindow.vala:260
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "គ្មាន​ជ្រើស​ការ​សន្ទនា."
 msgstr[1] "គ្មាន​ជ្រើស​ការ​សន្ទនា."
-
-#: src/MainWindow.vala:262
-msgid "Undo"
-msgstr ""
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -284,29 +284,29 @@ msgstr "%d សារ​ថ្មី"
 msgid "Fetching new messages…"
 msgstr "%d សារ​ថ្មី"
 
-#: src/ConversationList/ConversationList.vala:582
+#: src/ConversationList/ConversationList.vala:578
 #, fuzzy
 msgid "Move To Trash"
 msgstr "ចុះ​កំណត់​ហេតុ​ការ​ត្រួត​ពិនិត្យ​របស់​ការ​សន្ទនា"
 
-#: src/ConversationList/ConversationList.vala:591
+#: src/ConversationList/ConversationList.vala:587
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "_សម្គាល់​ជា​មិន​ទាន់​អាន"
 
-#: src/ConversationList/ConversationList.vala:599
+#: src/ConversationList/ConversationList.vala:595
 #: src/MessageList/MessageList.vala:87
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_សម្គាល់​ជា​បាន​អាន​ហើយ"
 
-#: src/ConversationList/ConversationList.vala:609
+#: src/ConversationList/ConversationList.vala:605
 #: src/MessageList/MessageList.vala:93
 #, fuzzy
 msgid "Star"
 msgstr "_ដាក់​ផ្កាយ"
 
-#: src/ConversationList/ConversationList.vala:617
+#: src/ConversationList/ConversationList.vala:613
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr ""
