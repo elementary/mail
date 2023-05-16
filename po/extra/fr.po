@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-14 17:57+0000\n"
+"POT-Creation-Date: 2023-05-09 18:13+0000\n"
 "PO-Revision-Date: 2022-05-24 15:46+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/extra/fr/>\n"
@@ -73,131 +73,125 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:91
-#: data/mail.metainfo.xml.in:113 data/mail.metainfo.xml.in:127
-#: data/mail.metainfo.xml.in:148
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:84
+#: data/mail.metainfo.xml.in:105 data/mail.metainfo.xml.in:124
+#: data/mail.metainfo.xml.in:146 data/mail.metainfo.xml.in:160
 msgid "Improvements:"
 msgstr "Améliorations :"
 
-#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:95
-#: data/mail.metainfo.xml.in:116 data/mail.metainfo.xml.in:129
-#: data/mail.metainfo.xml.in:153
+#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:93
+#: data/mail.metainfo.xml.in:107 data/mail.metainfo.xml.in:128
+#: data/mail.metainfo.xml.in:149 data/mail.metainfo.xml.in:162
 msgid "Updated translations"
 msgstr "Mise à jour des traductions"
 
-#: data/mail.metainfo.xml.in:85 data/mail.metainfo.xml.in:107
-#: data/mail.metainfo.xml.in:123 data/mail.metainfo.xml.in:140
+#: data/mail.metainfo.xml.in:86
+msgid ""
+"The welcome view is removed when an account is added in Online Accounts "
+"without having to restart Mail"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:87
+msgid ""
+"The composer is always presented as a new window and includes more keyboard "
+"shortcuts"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:88
+msgid "The search filter menu now appears next to the search bar"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:89
+msgid "HeaderBars appear to float above content when scrolled"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:90
+#, fuzzy
+#| msgid "Fix a potential crash while loading messages"
+msgid "Fix a potential crash with empty messages"
+msgstr "Correction d'un plantage potentiel lors du chargement des messages"
+
+#: data/mail.metainfo.xml.in:91
+msgid "Stop resizing from cutting off the message list"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:92
+#, fuzzy
+#| msgid "Stability improvements"
+msgid "Performance improvements"
+msgstr "Amélioration de la stabilité"
+
+#: data/mail.metainfo.xml.in:118 data/mail.metainfo.xml.in:140
+#: data/mail.metainfo.xml.in:156
 msgid "Fixes:"
 msgstr "Corrections :"
 
-#: data/mail.metainfo.xml.in:87
+#: data/mail.metainfo.xml.in:120
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
 "Correction d'une erreur causant le chargement des comptes d'e-mail plusieurs "
 "fois"
 
-#: data/mail.metainfo.xml.in:88
+#: data/mail.metainfo.xml.in:121
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr "Correction d'un bug provoquant parfois un plantage de Messagerie"
 
-#: data/mail.metainfo.xml.in:89
+#: data/mail.metainfo.xml.in:122
 msgid "Display recipient in Sent folder instead of sender"
 msgstr ""
 "Affichage du destinataire dans le dossier Envoyés à la place de l'expéditeur"
 
-#: data/mail.metainfo.xml.in:93
+#: data/mail.metainfo.xml.in:126
 msgid "Updated app icon"
 msgstr "Mise à jour de l'icône de l'application"
 
-#: data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:127
 msgid "New design"
 msgstr "Nouveau design"
 
-#: data/mail.metainfo.xml.in:102 data/mail.metainfo.xml.in:136
+#: data/mail.metainfo.xml.in:135
 msgid "New features:"
 msgstr "Nouvelles fonctionnalités :"
 
-#: data/mail.metainfo.xml.in:104
+#: data/mail.metainfo.xml.in:137
 msgid "Use message subject for composer window title"
 msgstr ""
 "Utilisation du sujet du message pour le titre de la fenêtre de composition"
 
-#: data/mail.metainfo.xml.in:105
+#: data/mail.metainfo.xml.in:138
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
 "Ajout de la prise en charge de la boîte de réception unifiée pour les "
 "comptes Microsoft 365"
 
-#: data/mail.metainfo.xml.in:109
+#: data/mail.metainfo.xml.in:142
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
 "Correction d'une erreur qui entraînait le blocage de la surveillance des "
 "boîtes de réception en arrière-plan"
 
-#: data/mail.metainfo.xml.in:110
+#: data/mail.metainfo.xml.in:143
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr ""
 "Suppression des adresses d'expéditeur en double lors de la composition d'un "
 "message"
 
-#: data/mail.metainfo.xml.in:111
+#: data/mail.metainfo.xml.in:144
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
 "Correction d'un blocage lors de l'archivage du dernier message d'un dossier"
 
-#: data/mail.metainfo.xml.in:115
+#: data/mail.metainfo.xml.in:148
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "Changement de nom d'Office 365 en Microsoft 365 pour suivre le changement de "
 "marque de Microsoft"
 
-#: data/mail.metainfo.xml.in:125
+#: data/mail.metainfo.xml.in:158
 msgid "Fix a potential crash while loading messages"
 msgstr "Correction d'un plantage potentiel lors du chargement des messages"
-
-#: data/mail.metainfo.xml.in:138
-msgid "Secondary-click menu on the conversations list"
-msgstr "Menu contextuel sur la liste des conversations"
-
-#: data/mail.metainfo.xml.in:142
-msgid "Ensure conversations are re-sorted by date when new messages appear"
-msgstr ""
-"Nous nous sommes assurés que les conversations soit triées par date lorsque "
-"de nouveaux messages arrivent"
-
-#: data/mail.metainfo.xml.in:143
-msgid "Fixed sender combobox after opening a mailto link"
-msgstr "Correction du champ du destinateur après ouverture d'un lien mailto"
-
-#: data/mail.metainfo.xml.in:144
-msgid "Mark sent messages as read"
-msgstr "Les messages envoyés sont désormais marqués comme lus"
-
-#: data/mail.metainfo.xml.in:145
-msgid "Fix a hang when deleting the last message in a mailbox"
-msgstr ""
-"Correction d'un blocage lors de la suppression du dernier message dans une "
-"boîte de messagerie"
-
-#: data/mail.metainfo.xml.in:146
-msgid "Fix an issue where some mail fails to be deleted"
-msgstr ""
-"Correction d'un problème ou la suppression de certains e-mails échouait"
-
-#: data/mail.metainfo.xml.in:150
-msgid "Use accent color for unread message titles"
-msgstr ""
-"Utilisation de la couleur d'accentuation pour l'objet des messages non lus"
-
-#: data/mail.metainfo.xml.in:151
-msgid "Autoselect the next message after archiving"
-msgstr "Sélection automatique du message suivant après archivage"
-
-#: data/mail.metainfo.xml.in:152
-msgid "Use local time in message headers"
-msgstr "Utilisation de l'heure locale dans les entêtes des messages"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -206,6 +200,39 @@ msgstr "Email;E-mail;Mail;Messagerie;Courriel;Courrier;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Rédiger un message"
+
+#~ msgid "Secondary-click menu on the conversations list"
+#~ msgstr "Menu contextuel sur la liste des conversations"
+
+#~ msgid "Ensure conversations are re-sorted by date when new messages appear"
+#~ msgstr ""
+#~ "Nous nous sommes assurés que les conversations soit triées par date "
+#~ "lorsque de nouveaux messages arrivent"
+
+#~ msgid "Fixed sender combobox after opening a mailto link"
+#~ msgstr "Correction du champ du destinateur après ouverture d'un lien mailto"
+
+#~ msgid "Mark sent messages as read"
+#~ msgstr "Les messages envoyés sont désormais marqués comme lus"
+
+#~ msgid "Fix a hang when deleting the last message in a mailbox"
+#~ msgstr ""
+#~ "Correction d'un blocage lors de la suppression du dernier message dans "
+#~ "une boîte de messagerie"
+
+#~ msgid "Fix an issue where some mail fails to be deleted"
+#~ msgstr ""
+#~ "Correction d'un problème ou la suppression de certains e-mails échouait"
+
+#~ msgid "Use accent color for unread message titles"
+#~ msgstr ""
+#~ "Utilisation de la couleur d'accentuation pour l'objet des messages non lus"
+
+#~ msgid "Autoselect the next message after archiving"
+#~ msgstr "Sélection automatique du message suivant après archivage"
+
+#~ msgid "Use local time in message headers"
+#~ msgstr "Utilisation de l'heure locale dans les entêtes des messages"
 
 #~ msgid "Send a notification when new messages arrive"
 #~ msgstr "Envoi d'une notification lors de l'arrivée d'un message"
@@ -267,9 +294,6 @@ msgstr "Rédiger un message"
 #~ msgstr ""
 #~ "Nous nous sommes assurés que les messages ne soient pas envoyés deux fois "
 #~ "pour certains services"
-
-#~ msgid "Stability improvements"
-#~ msgstr "Amélioration de la stabilité"
 
 #~ msgid "Complete rewrite from scratch"
 #~ msgstr "Réécriture complète"

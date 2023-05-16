@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-14 17:57+0000\n"
-"PO-Revision-Date: 2022-06-04 22:49+0000\n"
+"POT-Creation-Date: 2023-05-09 18:13+0000\n"
+"PO-Revision-Date: 2023-05-01 22:53+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-19 06:51+0000\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
@@ -68,120 +68,116 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:91
-#: data/mail.metainfo.xml.in:113 data/mail.metainfo.xml.in:127
-#: data/mail.metainfo.xml.in:148
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:84
+#: data/mail.metainfo.xml.in:105 data/mail.metainfo.xml.in:124
+#: data/mail.metainfo.xml.in:146 data/mail.metainfo.xml.in:160
 msgid "Improvements:"
 msgstr "改善点:"
 
-#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:95
-#: data/mail.metainfo.xml.in:116 data/mail.metainfo.xml.in:129
-#: data/mail.metainfo.xml.in:153
+#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:93
+#: data/mail.metainfo.xml.in:107 data/mail.metainfo.xml.in:128
+#: data/mail.metainfo.xml.in:149 data/mail.metainfo.xml.in:162
 msgid "Updated translations"
 msgstr "翻訳の更新"
 
-#: data/mail.metainfo.xml.in:85 data/mail.metainfo.xml.in:107
-#: data/mail.metainfo.xml.in:123 data/mail.metainfo.xml.in:140
+#: data/mail.metainfo.xml.in:86
+msgid ""
+"The welcome view is removed when an account is added in Online Accounts "
+"without having to restart Mail"
+msgstr ""
+"オンラインアカウントの設定でアカウントが追加された場合、“メール”を再起動しな"
+"くてもようこそ画面が消えるように修正"
+
+#: data/mail.metainfo.xml.in:87
+msgid ""
+"The composer is always presented as a new window and includes more keyboard "
+"shortcuts"
+msgstr ""
+"作成画面が常に新しいウィンドウとして表示されるようになり、使用可能なキーボー"
+"ドショートカットも増加"
+
+#: data/mail.metainfo.xml.in:88
+msgid "The search filter menu now appears next to the search bar"
+msgstr "検索フィルターメニューを検索バーの隣に移動"
+
+#: data/mail.metainfo.xml.in:89
+msgid "HeaderBars appear to float above content when scrolled"
+msgstr ""
+"メール本文をスクロールすると、ヘッダーバーがその上に浮いて見える効果を追加"
+
+#: data/mail.metainfo.xml.in:90
+msgid "Fix a potential crash with empty messages"
+msgstr "空のメッセージが原因でクラッシュする可能性のある不具合を修正"
+
+#: data/mail.metainfo.xml.in:91
+msgid "Stop resizing from cutting off the message list"
+msgstr "サイズの変更によってメッセージ一覧が見えなくなってしまわないように修正"
+
+#: data/mail.metainfo.xml.in:92
+msgid "Performance improvements"
+msgstr "パフォーマンスの改善"
+
+#: data/mail.metainfo.xml.in:118 data/mail.metainfo.xml.in:140
+#: data/mail.metainfo.xml.in:156
 msgid "Fixes:"
 msgstr "修正点:"
 
-#: data/mail.metainfo.xml.in:87
+#: data/mail.metainfo.xml.in:120
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr "メールアカウントが複数回読み込まれてしまうエラーを修正"
 
-#: data/mail.metainfo.xml.in:88
+#: data/mail.metainfo.xml.in:121
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr "“メール”がクラッシュする原因になっていた不具合を修正"
 
-#: data/mail.metainfo.xml.in:89
+#: data/mail.metainfo.xml.in:122
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "“送信済み”受信箱では、送信者ではなく宛先を表示するように修正"
 
-#: data/mail.metainfo.xml.in:93
+#: data/mail.metainfo.xml.in:126
 msgid "Updated app icon"
 msgstr "アプリのアイコンをアップデート"
 
-#: data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:127
 msgid "New design"
 msgstr "新しいデザイン"
 
-#: data/mail.metainfo.xml.in:102 data/mail.metainfo.xml.in:136
+#: data/mail.metainfo.xml.in:135
 msgid "New features:"
 msgstr "新機能:"
 
-#: data/mail.metainfo.xml.in:104
+#: data/mail.metainfo.xml.in:137
 msgid "Use message subject for composer window title"
 msgstr "メール作成ウィンドウのタイトルにメッセージの件名を使うように修正"
 
-#: data/mail.metainfo.xml.in:105
+#: data/mail.metainfo.xml.in:138
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
-msgstr "Microsoft 365 アカウントの統合受信箱に対応"
+msgstr "Microsoft 365 アカウントの統合受信トレイに対応"
 
-#: data/mail.metainfo.xml.in:109
+#: data/mail.metainfo.xml.in:142
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr "バックグランドでの新着メールの確認がクラッシュするエラーを修正"
 
-#: data/mail.metainfo.xml.in:110
+#: data/mail.metainfo.xml.in:143
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr "メッセージ作成時、重複する宛先を削除するように修正"
 
-#: data/mail.metainfo.xml.in:111
+#: data/mail.metainfo.xml.in:144
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
 "フォルダー内の最後のメッセージをアーカイブするとフリーズする不具合を修正"
 
-#: data/mail.metainfo.xml.in:115
+#: data/mail.metainfo.xml.in:148
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "Microsoft のブランド名変更に伴い、“Office 365” という表示を “Microsoft 365” "
 "に変更"
 
-#: data/mail.metainfo.xml.in:125
+#: data/mail.metainfo.xml.in:158
 msgid "Fix a potential crash while loading messages"
 msgstr "メッセージ読み込み中にクラッシュする可能性のある不具合を修正"
-
-#: data/mail.metainfo.xml.in:138
-msgid "Secondary-click menu on the conversations list"
-msgstr "スレッド一覧で副クリックメニューを表示できるように修正"
-
-#: data/mail.metainfo.xml.in:142
-msgid "Ensure conversations are re-sorted by date when new messages appear"
-msgstr ""
-"新しいメッセージを受信しても、日付順で並んだメッセージの順番が崩れないように"
-"修正"
-
-#: data/mail.metainfo.xml.in:143
-msgid "Fixed sender combobox after opening a mailto link"
-msgstr ""
-"mailto リンクを開いた際に、差出人コンボボックスが正しく表示されるように修正"
-
-#: data/mail.metainfo.xml.in:144
-msgid "Mark sent messages as read"
-msgstr "送信済みのメッセージを既読としてマークするように修正"
-
-#: data/mail.metainfo.xml.in:145
-msgid "Fix a hang when deleting the last message in a mailbox"
-msgstr ""
-"メールボックスの最後のメッセージを削除するとハングアップする不具合を修正"
-
-#: data/mail.metainfo.xml.in:146
-msgid "Fix an issue where some mail fails to be deleted"
-msgstr "メールが削除できないことがある不具合を修正"
-
-#: data/mail.metainfo.xml.in:150
-msgid "Use accent color for unread message titles"
-msgstr ""
-"未読メッセージのタイトルをユーザー設定のアクセントカラーで表示するように変更"
-
-#: data/mail.metainfo.xml.in:151
-msgid "Autoselect the next message after archiving"
-msgstr "アーカイブ後、次のメッセージを自動的に選択するように修正"
-
-#: data/mail.metainfo.xml.in:152
-msgid "Use local time in message headers"
-msgstr "メッセージのヘッダーに地方時を使うように修正"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -190,6 +186,40 @@ msgstr "Email;E-mail;Mail;Eメール;電子メール;メール;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "メッセージを作成"
+
+#~ msgid "Secondary-click menu on the conversations list"
+#~ msgstr "スレッド一覧で副クリックメニューを表示できるように修正"
+
+#~ msgid "Ensure conversations are re-sorted by date when new messages appear"
+#~ msgstr ""
+#~ "新しいメッセージを受信しても、日付順で並んだメッセージの順番が崩れないよう"
+#~ "に修正"
+
+#~ msgid "Fixed sender combobox after opening a mailto link"
+#~ msgstr ""
+#~ "mailto リンクを開いた際に、差出人コンボボックスが正しく表示されるように修"
+#~ "正"
+
+#~ msgid "Mark sent messages as read"
+#~ msgstr "送信済みのメッセージを既読としてマークするように修正"
+
+#~ msgid "Fix a hang when deleting the last message in a mailbox"
+#~ msgstr ""
+#~ "メールボックスの最後のメッセージを削除するとハングアップする不具合を修正"
+
+#~ msgid "Fix an issue where some mail fails to be deleted"
+#~ msgstr "メールが削除できないことがある不具合を修正"
+
+#~ msgid "Use accent color for unread message titles"
+#~ msgstr ""
+#~ "未読メッセージのタイトルをユーザー設定のアクセントカラーで表示するように変"
+#~ "更"
+
+#~ msgid "Autoselect the next message after archiving"
+#~ msgstr "アーカイブ後、次のメッセージを自動的に選択するように修正"
+
+#~ msgid "Use local time in message headers"
+#~ msgstr "メッセージのヘッダーに地方時を使うように修正"
 
 #~ msgid "Send a notification when new messages arrive"
 #~ msgstr "メッセージ受信時に通知を表示する機能を追加"
@@ -247,9 +277,6 @@ msgstr "メッセージを作成"
 #~ msgstr ""
 #~ "アカウントの種類によっては送信済みのメッセージが二度保存されていた不具合を"
 #~ "修正"
-
-#~ msgid "Stability improvements"
-#~ msgstr "安定性の改善"
 
 #~ msgid "Complete rewrite from scratch"
 #~ msgstr "アプリを完全にゼロから書き直し"
