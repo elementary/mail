@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-09 18:13+0000\n"
+"POT-Creation-Date: 2023-05-16 18:33+0000\n"
 "PO-Revision-Date: 2016-05-08 15:16+0000\n"
 "Last-Translator: Giovanni Caligaris <giovannicaligaris@gmail.com>\n"
 "Language-Team: English (Canada) (http://www.transifex.com/projects/p/geary/"
@@ -244,16 +244,16 @@ msgstr[1] ""
 msgid "Mail"
 msgstr "All Mail"
 
-#: src/MainWindow.vala:250
+#: src/MainWindow.vala:120
+msgid "Undo"
+msgstr ""
+
+#: src/MainWindow.vala:260
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "No conversations selected."
 msgstr[1] "No conversations selected."
-
-#: src/MainWindow.vala:262
-msgid "Undo"
-msgstr ""
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -304,29 +304,29 @@ msgstr "%d new message"
 msgid "Fetching new messages…"
 msgstr "%d new message"
 
-#: src/ConversationList/ConversationList.vala:582
+#: src/ConversationList/ConversationList.vala:578
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Move conversations"
 
-#: src/ConversationList/ConversationList.vala:591
+#: src/ConversationList/ConversationList.vala:587
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "_Mark as Unread"
 
-#: src/ConversationList/ConversationList.vala:599
+#: src/ConversationList/ConversationList.vala:595
 #: src/MessageList/MessageList.vala:87
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Mark as Read"
 
-#: src/ConversationList/ConversationList.vala:609
+#: src/ConversationList/ConversationList.vala:605
 #: src/MessageList/MessageList.vala:93
 #, fuzzy
 msgid "Star"
 msgstr "_Star"
 
-#: src/ConversationList/ConversationList.vala:617
+#: src/ConversationList/ConversationList.vala:613
 #: src/MessageList/MessageList.vala:99
 #, fuzzy
 msgid "Unstar"

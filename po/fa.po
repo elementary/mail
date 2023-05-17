@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-09 18:13+0000\n"
+"POT-Creation-Date: 2023-05-16 18:33+0000\n"
 "PO-Revision-Date: 2015-11-24 15:43+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Persian (http://www.transifex.com/projects/p/geary/language/"
@@ -239,15 +239,15 @@ msgstr[0] ""
 msgid "Mail"
 msgstr "همه‌ی ایمیل‌ها"
 
-#: src/MainWindow.vala:250
+#: src/MainWindow.vala:120
+msgid "Undo"
+msgstr ""
+
+#: src/MainWindow.vala:260
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "هیچ گفتگویی انتخاب نشده است."
-
-#: src/MainWindow.vala:262
-msgid "Undo"
-msgstr ""
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -297,29 +297,29 @@ msgstr "%d پیام جدید"
 msgid "Fetching new messages…"
 msgstr "%d پیام جدید"
 
-#: src/ConversationList/ConversationList.vala:582
+#: src/ConversationList/ConversationList.vala:578
 #, fuzzy
 msgid "Move To Trash"
 msgstr "انتقال گفتگوها"
 
-#: src/ConversationList/ConversationList.vala:591
+#: src/ConversationList/ConversationList.vala:587
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "نشان گذاری به عنوان خوانده نشده"
 
-#: src/ConversationList/ConversationList.vala:599
+#: src/ConversationList/ConversationList.vala:595
 #: src/MessageList/MessageList.vala:87
 #, fuzzy
 msgid "Mark as Read"
 msgstr "نشان گذاری به عنوان خوانده شده"
 
-#: src/ConversationList/ConversationList.vala:609
+#: src/ConversationList/ConversationList.vala:605
 #: src/MessageList/MessageList.vala:93
 #, fuzzy
 msgid "Star"
 msgstr "ستاره دار کردن"
 
-#: src/ConversationList/ConversationList.vala:617
+#: src/ConversationList/ConversationList.vala:613
 #: src/MessageList/MessageList.vala:99
 #, fuzzy
 msgid "Unstar"

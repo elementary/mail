@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-09 18:13+0000\n"
+"POT-Creation-Date: 2023-05-16 18:33+0000\n"
 "PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/mail/mail/lt/"
@@ -257,16 +257,16 @@ msgstr[2] "Visada rodyti nuo siuntėjo"
 msgid "Mail"
 msgstr "Paštas"
 
-#: src/MainWindow.vala:250
+#: src/MainWindow.vala:120
+msgid "Undo"
+msgstr "Atšaukti"
+
+#: src/MainWindow.vala:260
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Laiškas ištrintas"
 msgstr[1] "Laiškai ištrinti"
 msgstr[2] "Laiškai ištrinti"
-
-#: src/MainWindow.vala:262
-msgid "Undo"
-msgstr "Atšaukti"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -316,29 +316,29 @@ msgstr "%d naujas laiškas"
 msgid "Fetching new messages…"
 msgstr "%d naujas laiškas"
 
-#: src/ConversationList/ConversationList.vala:582
+#: src/ConversationList/ConversationList.vala:578
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "Perkelti pokalbius į šiukšlinę"
 
-#: src/ConversationList/ConversationList.vala:591
+#: src/ConversationList/ConversationList.vala:587
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Žymėti neskaitytu"
 
-#: src/ConversationList/ConversationList.vala:599
+#: src/ConversationList/ConversationList.vala:595
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "Žymėti skaitytu"
 
-#: src/ConversationList/ConversationList.vala:609
+#: src/ConversationList/ConversationList.vala:605
 #: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "Žymėti žvaigždute"
 
-#: src/ConversationList/ConversationList.vala:617
+#: src/ConversationList/ConversationList.vala:613
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "Nežymėti žvaigždute"

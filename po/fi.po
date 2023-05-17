@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-09 18:13+0000\n"
+"POT-Creation-Date: 2023-05-16 18:33+0000\n"
 "PO-Revision-Date: 2022-09-08 07:19+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/mail/fi/>\n"
@@ -232,15 +232,15 @@ msgstr[1] "Näytä aina lähettäjältä"
 msgid "Mail"
 msgstr "Sähköposti"
 
-#: src/MainWindow.vala:250
+#: src/MainWindow.vala:120
+msgid "Undo"
+msgstr "Kumoa"
+
+#: src/MainWindow.vala:260
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Viesti poistettu"
 msgstr[1] "Viestit poistettu"
-
-#: src/MainWindow.vala:262
-msgid "Undo"
-msgstr "Kumoa"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -280,25 +280,25 @@ msgstr "Nouda uudet viestit"
 msgid "Fetching new messages…"
 msgstr "Noudetaan uusia viestejä…"
 
-#: src/ConversationList/ConversationList.vala:582
+#: src/ConversationList/ConversationList.vala:578
 msgid "Move To Trash"
 msgstr "Siirrä roskakoriin"
 
-#: src/ConversationList/ConversationList.vala:591
+#: src/ConversationList/ConversationList.vala:587
 msgid "Mark As Unread"
 msgstr "Merkitse lukemattomaksi"
 
-#: src/ConversationList/ConversationList.vala:599
+#: src/ConversationList/ConversationList.vala:595
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "Merkitse luetuksi"
 
-#: src/ConversationList/ConversationList.vala:609
+#: src/ConversationList/ConversationList.vala:605
 #: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "Merkitse tähdellä"
 
-#: src/ConversationList/ConversationList.vala:617
+#: src/ConversationList/ConversationList.vala:613
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "Poista tähti"

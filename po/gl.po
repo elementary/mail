@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-09 18:13+0000\n"
+"POT-Creation-Date: 2023-05-16 18:33+0000\n"
 "PO-Revision-Date: 2019-09-14 09:23+0000\n"
 "Last-Translator: Daniel <riesp@protonmail.com>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/mail/mail/gl/>\n"
@@ -249,15 +249,15 @@ msgstr[1] "Amosar sempre o remitente"
 msgid "Mail"
 msgstr "Todo o correo"
 
-#: src/MainWindow.vala:250
+#: src/MainWindow.vala:120
+msgid "Undo"
+msgstr "Desfacer"
+
+#: src/MainWindow.vala:260
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Mensaxe eliminada"
 msgstr[1] "Mensaxes eliminadas"
-
-#: src/MainWindow.vala:262
-msgid "Undo"
-msgstr "Desfacer"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -307,29 +307,29 @@ msgstr "%d mensaxe nova"
 msgid "Fetching new messages…"
 msgstr "%d mensaxe nova"
 
-#: src/ConversationList/ConversationList.vala:582
+#: src/ConversationList/ConversationList.vala:578
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "Mover as conversas ao lixo"
 
-#: src/ConversationList/ConversationList.vala:591
+#: src/ConversationList/ConversationList.vala:587
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Marcar como sen ler"
 
-#: src/ConversationList/ConversationList.vala:599
+#: src/ConversationList/ConversationList.vala:595
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "Marcar como lido"
 
-#: src/ConversationList/ConversationList.vala:609
+#: src/ConversationList/ConversationList.vala:605
 #: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "Destacar"
 
-#: src/ConversationList/ConversationList.vala:617
+#: src/ConversationList/ConversationList.vala:613
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "Non destacar"

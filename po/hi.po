@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-09 18:13+0000\n"
+"POT-Creation-Date: 2023-05-16 18:33+0000\n"
 "PO-Revision-Date: 2018-12-19 00:07+0000\n"
 "Last-Translator: Mayank Arya <mmaismma@hotmail.com>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/mail/mail/hi/>\n"
@@ -237,15 +237,15 @@ msgstr[1] ""
 msgid "Mail"
 msgstr "सब पत्र"
 
-#: src/MainWindow.vala:250
+#: src/MainWindow.vala:120
+msgid "Undo"
+msgstr ""
+
+#: src/MainWindow.vala:260
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
-
-#: src/MainWindow.vala:262
-msgid "Undo"
-msgstr ""
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -292,30 +292,30 @@ msgstr "नया पत्र लिखे"
 msgid "Fetching new messages…"
 msgstr "नया पत्र लिखे"
 
-#: src/ConversationList/ConversationList.vala:582
+#: src/ConversationList/ConversationList.vala:578
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "संवाद तो ट्रैश में डाले"
 
-#: src/ConversationList/ConversationList.vala:591
+#: src/ConversationList/ConversationList.vala:587
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "पढ़ा नही संकेत करे"
 
-#: src/ConversationList/ConversationList.vala:599
+#: src/ConversationList/ConversationList.vala:595
 #: src/MessageList/MessageList.vala:87
 #, fuzzy
 msgid "Mark as Read"
 msgstr "पढ़ लिया संकेत करे"
 
-#: src/ConversationList/ConversationList.vala:609
+#: src/ConversationList/ConversationList.vala:605
 #: src/MessageList/MessageList.vala:93
 #, fuzzy
 msgid "Star"
 msgstr "तारा"
 
-#: src/ConversationList/ConversationList.vala:617
+#: src/ConversationList/ConversationList.vala:613
 #: src/MessageList/MessageList.vala:99
 #, fuzzy
 msgid "Unstar"
