@@ -691,10 +691,10 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
     private async void get_attachments (Camel.DataWrapper message_content) {
         if (message_content is Camel.Multipart) {
-            var content = (Camel.Multipart)message_content;
+            unowned var content = (Camel.Multipart)message_content;
             for (uint i = 0; i < content.get_number (); i++) {
-                var part = content.get_part (i);
-                var field = part.get_mime_type_field ();
+                unowned var part = content.get_part (i);
+                unowned var field = part.get_mime_type_field ();
                 if (part.disposition == "attachment") {
                     try {
                         var file = File.new_for_path (Path.build_filename (Environment.get_tmp_dir (), part.get_filename ()));
