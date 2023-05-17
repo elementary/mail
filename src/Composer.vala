@@ -464,8 +464,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                     var file = path.has_prefix ("file://") ? File.new_for_uri (path) : File.new_for_path (path);
 
                     var attachment = new Attachment (file);
-                    attachment.margin = 3;
-
                     attachment_box.add (attachment);
                 }
                 attachment_box.show_all ();
@@ -500,8 +498,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             filechooser.hide ();
             foreach (unowned File file in filechooser.get_files ()) {
                 var attachment = new Attachment (file);
-                attachment.margin = 3;
-
                 attachment_box.add (attachment);
             }
             attachment_box.show_all ();
@@ -682,10 +678,42 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
                     message_content += "<br/><br/>";
                     message_content += content_to_quote;
+
+                    if (message.has_attachment ()) {
+                        parse_mime_content.begin (message.content);
+                    }
                 }
             }
 
             web_view.set_body_content (message_content);
+        }
+    }
+
+    private async void parse_mime_content (Camel.DataWrapper message_content) {
+        if (message_content is Camel.Multipart) {
+            var content = (Camel.Multipart)message_content;
+            for (uint i = 0; i < content.get_number (); i++) {
+                var part = content.get_part (i);
+                var field = part.get_mime_type_field ();
+                if (part.disposition == "attachment") {
+                    try {
+                        var file = File.new_for_path (Path.build_filename (Environment.get_tmp_dir (), part.get_filename ()));
+                        if (!file.query_exists()) {
+                            var output_stream = yield file.create_async (FileCreateFlags.NONE);
+                            yield part.content.decode_to_output_stream (output_stream, GLib.Priority.DEFAULT, null);
+                        }
+
+                        var attachment = new Attachment (file);
+                        attachment_box.add (attachment);
+
+                        attachment_box.show_all ();
+                    } catch (Error e) {
+                        critical (e.message);
+                    }
+                } else if (field.type == "multipart") {
+                    yield parse_mime_content (part.content);
+                }
+            }
         }
     }
 
@@ -947,6 +975,10 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             box.add (remove_button);
 
             add (box);
+            margin_top = 3;
+            margin_bottom = 3;
+            margin_start = 3;
+            margin_end = 3;
 
             remove_button.clicked.connect (() => {
                 destroy ();
