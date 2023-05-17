@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-14 17:57+0000\n"
-"PO-Revision-Date: 2022-05-24 10:26+0000\n"
+"POT-Creation-Date: 2023-05-17 16:14+0000\n"
+"PO-Revision-Date: 2023-05-03 17:06+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/extra/he/>\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
@@ -65,114 +65,112 @@ msgstr "עובד עם Gmail,‏ Yahoo! Mail ושרתי IMAP נפוצים נוס�
 msgid "elementary, Inc."
 msgstr "elementary בע״מ"
 
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:91
-#: data/mail.metainfo.xml.in:113 data/mail.metainfo.xml.in:127
-#: data/mail.metainfo.xml.in:148
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:84
+#: data/mail.metainfo.xml.in:105 data/mail.metainfo.xml.in:124
+#: data/mail.metainfo.xml.in:146 data/mail.metainfo.xml.in:160
 msgid "Improvements:"
 msgstr "שיפורים:"
 
-#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:95
-#: data/mail.metainfo.xml.in:116 data/mail.metainfo.xml.in:129
-#: data/mail.metainfo.xml.in:153
+#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:93
+#: data/mail.metainfo.xml.in:107 data/mail.metainfo.xml.in:128
+#: data/mail.metainfo.xml.in:149 data/mail.metainfo.xml.in:162
 msgid "Updated translations"
 msgstr "עודכנו תרגומים"
 
-#: data/mail.metainfo.xml.in:85 data/mail.metainfo.xml.in:107
-#: data/mail.metainfo.xml.in:123 data/mail.metainfo.xml.in:140
+#: data/mail.metainfo.xml.in:86
+msgid ""
+"The welcome view is removed when an account is added in Online Accounts "
+"without having to restart Mail"
+msgstr ""
+"תצוגת קבלת הפנים הוסרה כאשר נוסף חשבון לחשבונות המקוונים מבלי צורך להפעיל את "
+"יישום הדואר מחדש"
+
+#: data/mail.metainfo.xml.in:87
+msgid ""
+"The composer is always presented as a new window and includes more keyboard "
+"shortcuts"
+msgstr "חיבור הודעה חדשה תמיד מופיע כחלון חדש וכולל קיצורי דרך נוספים"
+
+#: data/mail.metainfo.xml.in:88
+msgid "The search filter menu now appears next to the search bar"
+msgstr "תפריט מסנן החיפושים מופיע מעתה ליד סרגל החיפוש"
+
+#: data/mail.metainfo.xml.in:89
+msgid "HeaderBars appear to float above content when scrolled"
+msgstr "סרגלי כותרת נראים צפים מעל תוכן כשגוללים אותם"
+
+#: data/mail.metainfo.xml.in:90
+msgid "Fix a potential crash with empty messages"
+msgstr "תוקנה קריסה שמתרחשת לפעמים עם הודעות ריקות"
+
+#: data/mail.metainfo.xml.in:91
+msgid "Stop resizing from cutting off the message list"
+msgstr "שינוי גודל לא חותך עוד את רשימת ההודעות"
+
+#: data/mail.metainfo.xml.in:92
+msgid "Performance improvements"
+msgstr "שיפורי ביצועים"
+
+#: data/mail.metainfo.xml.in:118 data/mail.metainfo.xml.in:140
+#: data/mail.metainfo.xml.in:156
 msgid "Fixes:"
 msgstr "תיקונים:"
 
-#: data/mail.metainfo.xml.in:87
+#: data/mail.metainfo.xml.in:120
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr "תוקנה שגיאה שגרמה לטעינת חשבונות דוא״ל מספר פעמים"
 
-#: data/mail.metainfo.xml.in:88
+#: data/mail.metainfo.xml.in:121
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr "תוקנה תקלה שגרמה לתוכנת הדוא״ל לקרוס לעתים קרובות"
 
-#: data/mail.metainfo.xml.in:89
+#: data/mail.metainfo.xml.in:122
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "הצגת הנמען בתיקיית ההודעות שנשלחו במקום השולח"
 
-#: data/mail.metainfo.xml.in:93
+#: data/mail.metainfo.xml.in:126
 msgid "Updated app icon"
 msgstr "סמל היישום עודכן"
 
-#: data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:127
 msgid "New design"
 msgstr "עיצוב חדש"
 
-#: data/mail.metainfo.xml.in:102 data/mail.metainfo.xml.in:136
+#: data/mail.metainfo.xml.in:135
 msgid "New features:"
 msgstr "יכולות חדשות:"
 
-#: data/mail.metainfo.xml.in:104
+#: data/mail.metainfo.xml.in:137
 msgid "Use message subject for composer window title"
 msgstr "נושא ההודעה משמש ככותרת חלון כתיבת הודעות"
 
-#: data/mail.metainfo.xml.in:105
+#: data/mail.metainfo.xml.in:138
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr "נוספה תמיכה בתיבת דואר נכנס מאוחדת לחשבונות Microsoft 365"
 
-#: data/mail.metainfo.xml.in:109
+#: data/mail.metainfo.xml.in:142
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr "תוקנה שגיאה שגרמה למעקב אחר הדואר הנכנס ברקע לקרוס"
 
-#: data/mail.metainfo.xml.in:110
+#: data/mail.metainfo.xml.in:143
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr "הוסרה כתובת מוען כפולה בעת כתיבת הודעה"
 
-#: data/mail.metainfo.xml.in:111
+#: data/mail.metainfo.xml.in:144
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr "תוקן קיפאון בעת העברת ההודעה האחרונה בתיקייה לארכיון"
 
-#: data/mail.metainfo.xml.in:115
+#: data/mail.metainfo.xml.in:148
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "השם של Office 365 השתנה ל־Microsoft 365 כדי לענות על המיתוג המחודש של "
 "Microsoft"
 
-#: data/mail.metainfo.xml.in:125
+#: data/mail.metainfo.xml.in:158
 msgid "Fix a potential crash while loading messages"
 msgstr "תוקנה קריסה שמתרחשת לפעמים בעת טעינת הודעות"
-
-#: data/mail.metainfo.xml.in:138
-msgid "Secondary-click menu on the conversations list"
-msgstr "תפריט כפתור משני ברשימת הדיונים"
-
-#: data/mail.metainfo.xml.in:142
-msgid "Ensure conversations are re-sorted by date when new messages appear"
-msgstr "מתבצע וידוא שהדיונים מסודרים מחדש לפי תאריך עם הופעת הודעה חדשה"
-
-#: data/mail.metainfo.xml.in:143
-msgid "Fixed sender combobox after opening a mailto link"
-msgstr "תוקנה תיבת בחירת השולח לאחר פתיחת קישור שנפתח ב־mailto"
-
-#: data/mail.metainfo.xml.in:144
-msgid "Mark sent messages as read"
-msgstr "סימון הודעות שנשלחו ככאלו שנקראו"
-
-#: data/mail.metainfo.xml.in:145
-msgid "Fix a hang when deleting the last message in a mailbox"
-msgstr "תוקנה השהיה בעת מחיקת ההודעה האחרונה בתיבת הדוא״ל"
-
-#: data/mail.metainfo.xml.in:146
-msgid "Fix an issue where some mail fails to be deleted"
-msgstr "תוקנה תקלה בה מחיקת ההודעות נכשלת"
-
-#: data/mail.metainfo.xml.in:150
-msgid "Use accent color for unread message titles"
-msgstr "להשתמש בצבע משני לכותרות של הודעות שלא נקראו"
-
-#: data/mail.metainfo.xml.in:151
-msgid "Autoselect the next message after archiving"
-msgstr "לבחור את ההודעה הבאה אוטומטית לאחר העברה לארכיון"
-
-#: data/mail.metainfo.xml.in:152
-msgid "Use local time in message headers"
-msgstr "להשתמש בשעה המקומית בכותרות ההודעות"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -181,6 +179,33 @@ msgstr "דואר;דוא״ל;דואר אלקטרוני;מייל;דוא\"ל;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "הודעה חדשה"
+
+#~ msgid "Secondary-click menu on the conversations list"
+#~ msgstr "תפריט כפתור משני ברשימת הדיונים"
+
+#~ msgid "Ensure conversations are re-sorted by date when new messages appear"
+#~ msgstr "מתבצע וידוא שהדיונים מסודרים מחדש לפי תאריך עם הופעת הודעה חדשה"
+
+#~ msgid "Fixed sender combobox after opening a mailto link"
+#~ msgstr "תוקנה תיבת בחירת השולח לאחר פתיחת קישור שנפתח ב־mailto"
+
+#~ msgid "Mark sent messages as read"
+#~ msgstr "סימון הודעות שנשלחו ככאלו שנקראו"
+
+#~ msgid "Fix a hang when deleting the last message in a mailbox"
+#~ msgstr "תוקנה השהיה בעת מחיקת ההודעה האחרונה בתיבת הדוא״ל"
+
+#~ msgid "Fix an issue where some mail fails to be deleted"
+#~ msgstr "תוקנה תקלה בה מחיקת ההודעות נכשלת"
+
+#~ msgid "Use accent color for unread message titles"
+#~ msgstr "להשתמש בצבע משני לכותרות של הודעות שלא נקראו"
+
+#~ msgid "Autoselect the next message after archiving"
+#~ msgstr "לבחור את ההודעה הבאה אוטומטית לאחר העברה לארכיון"
+
+#~ msgid "Use local time in message headers"
+#~ msgstr "להשתמש בשעה המקומית בכותרות ההודעות"
 
 #~ msgid "Send a notification when new messages arrive"
 #~ msgstr "נשלחת התראה כשמגיעה הודעה חדשה"
@@ -231,9 +256,6 @@ msgstr "הודעה חדשה"
 
 #~ msgid "Make sure we don't save sent messages twice for some account types"
 #~ msgstr "וידוא שהודעה שנשלחה לא נשמרת פעמיים לחלק מסוגי החשבונות"
-
-#~ msgid "Stability improvements"
-#~ msgstr "שיפורי יציבות"
 
 #~ msgid "Complete rewrite from scratch"
 #~ msgstr "שכתוב מאפס"

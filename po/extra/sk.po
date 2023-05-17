@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-14 17:57+0000\n"
+"POT-Creation-Date: 2023-05-17 16:14+0000\n"
 "PO-Revision-Date: 2022-09-30 22:24+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/mail/extra/sk/>\n"
@@ -67,118 +67,117 @@ msgstr "Funguje s Gmail, Yahoo! Mail a s inými populárnymi IMAP servermi"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:91
-#: data/mail.metainfo.xml.in:113 data/mail.metainfo.xml.in:127
-#: data/mail.metainfo.xml.in:148
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:84
+#: data/mail.metainfo.xml.in:105 data/mail.metainfo.xml.in:124
+#: data/mail.metainfo.xml.in:146 data/mail.metainfo.xml.in:160
 msgid "Improvements:"
 msgstr "Vylepšenia:"
 
-#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:95
-#: data/mail.metainfo.xml.in:116 data/mail.metainfo.xml.in:129
-#: data/mail.metainfo.xml.in:153
+#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:93
+#: data/mail.metainfo.xml.in:107 data/mail.metainfo.xml.in:128
+#: data/mail.metainfo.xml.in:149 data/mail.metainfo.xml.in:162
 msgid "Updated translations"
 msgstr "Aktualizované preklady"
 
-#: data/mail.metainfo.xml.in:85 data/mail.metainfo.xml.in:107
-#: data/mail.metainfo.xml.in:123 data/mail.metainfo.xml.in:140
+#: data/mail.metainfo.xml.in:86
+msgid ""
+"The welcome view is removed when an account is added in Online Accounts "
+"without having to restart Mail"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:87
+msgid ""
+"The composer is always presented as a new window and includes more keyboard "
+"shortcuts"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:88
+msgid "The search filter menu now appears next to the search bar"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:89
+msgid "HeaderBars appear to float above content when scrolled"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:90
+#, fuzzy
+#| msgid "Fix a potential crash while loading messages"
+msgid "Fix a potential crash with empty messages"
+msgstr "Opravený potenciálny pád pri načítaní správ"
+
+#: data/mail.metainfo.xml.in:91
+msgid "Stop resizing from cutting off the message list"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:92
+#, fuzzy
+#| msgid "Stability improvements"
+msgid "Performance improvements"
+msgstr "Zlepšenia stability"
+
+#: data/mail.metainfo.xml.in:118 data/mail.metainfo.xml.in:140
+#: data/mail.metainfo.xml.in:156
 msgid "Fixes:"
 msgstr "Opravy:"
 
-#: data/mail.metainfo.xml.in:87
+#: data/mail.metainfo.xml.in:120
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
 "Opravená chyba, ktorá zapríčiňovala opakované načítanie e-mailových účtov"
 
-#: data/mail.metainfo.xml.in:88
+#: data/mail.metainfo.xml.in:121
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr "Opravená chyba, ktorá občas spôsobovala pád aplikácie Pošta"
 
-#: data/mail.metainfo.xml.in:89
+#: data/mail.metainfo.xml.in:122
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "Zobrazovať príjemcu v priečinku Odoslané namiesto odosielateľa"
 
-#: data/mail.metainfo.xml.in:93
+#: data/mail.metainfo.xml.in:126
 msgid "Updated app icon"
 msgstr "Aktualizovaná ikonka aplikácie"
 
-#: data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:127
 msgid "New design"
 msgstr "Nový vzhľad"
 
-#: data/mail.metainfo.xml.in:102 data/mail.metainfo.xml.in:136
+#: data/mail.metainfo.xml.in:135
 msgid "New features:"
 msgstr "Nové funkcie:"
 
-#: data/mail.metainfo.xml.in:104
+#: data/mail.metainfo.xml.in:137
 msgid "Use message subject for composer window title"
 msgstr "Zobrazovať predmet správy v záhlaví okna editora"
 
-#: data/mail.metainfo.xml.in:105
+#: data/mail.metainfo.xml.in:138
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
 "Pridaná podpora zjednotenej schránky doručenej pošty pre účty Microsoft 365"
 
-#: data/mail.metainfo.xml.in:109
+#: data/mail.metainfo.xml.in:142
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
 "Opravená chyba, ktorá spôsobovala pád služby zisťovania novej pošty na pozadí"
 
-#: data/mail.metainfo.xml.in:110
+#: data/mail.metainfo.xml.in:143
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr "Odstránené duplicitné adresy odosielateľa pri písaní správy"
 
-#: data/mail.metainfo.xml.in:111
+#: data/mail.metainfo.xml.in:144
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr "Opravené zamrznutie pri archivácii poslednej správy v priečinku"
 
-#: data/mail.metainfo.xml.in:115
+#: data/mail.metainfo.xml.in:148
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "Office 365 premenované na Microsoft 365 v súlade s premenovaním služby "
 "Microsoftu"
 
-#: data/mail.metainfo.xml.in:125
+#: data/mail.metainfo.xml.in:158
 msgid "Fix a potential crash while loading messages"
 msgstr "Opravený potenciálny pád pri načítaní správ"
-
-#: data/mail.metainfo.xml.in:138
-msgid "Secondary-click menu on the conversations list"
-msgstr "Menu po kliknutí sekundárnym tlačidlom myši na zoznam konverzácií"
-
-#: data/mail.metainfo.xml.in:142
-msgid "Ensure conversations are re-sorted by date when new messages appear"
-msgstr ""
-"Zabezpečené, že konverzácie sa znovu roztriedia po prijatí nových správ"
-
-#: data/mail.metainfo.xml.in:143
-msgid "Fixed sender combobox after opening a mailto link"
-msgstr "Opravený kombobox odosielateľa po otvorení odkazu typu mailto"
-
-#: data/mail.metainfo.xml.in:144
-msgid "Mark sent messages as read"
-msgstr "Označovať odoslané správy ako prečítané"
-
-#: data/mail.metainfo.xml.in:145
-msgid "Fix a hang when deleting the last message in a mailbox"
-msgstr "Opravené zamrznutie po odstránení poslednej správy v schránke"
-
-#: data/mail.metainfo.xml.in:146
-msgid "Fix an issue where some mail fails to be deleted"
-msgstr "Opravený problém, keď sa nepodarí odstrániť niektoré správy"
-
-#: data/mail.metainfo.xml.in:150
-msgid "Use accent color for unread message titles"
-msgstr "Používať farebný odtieň na názvoch neprečítaných správ"
-
-#: data/mail.metainfo.xml.in:151
-msgid "Autoselect the next message after archiving"
-msgstr "Automaticky označovať nasledujúcu správu po archivovaní"
-
-#: data/mail.metainfo.xml.in:152
-msgid "Use local time in message headers"
-msgstr "Používať miestny čas v hlavičkách správ"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -187,6 +186,34 @@ msgstr "Email;E-mail;Pošta;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Napísať správu"
+
+#~ msgid "Secondary-click menu on the conversations list"
+#~ msgstr "Menu po kliknutí sekundárnym tlačidlom myši na zoznam konverzácií"
+
+#~ msgid "Ensure conversations are re-sorted by date when new messages appear"
+#~ msgstr ""
+#~ "Zabezpečené, že konverzácie sa znovu roztriedia po prijatí nových správ"
+
+#~ msgid "Fixed sender combobox after opening a mailto link"
+#~ msgstr "Opravený kombobox odosielateľa po otvorení odkazu typu mailto"
+
+#~ msgid "Mark sent messages as read"
+#~ msgstr "Označovať odoslané správy ako prečítané"
+
+#~ msgid "Fix a hang when deleting the last message in a mailbox"
+#~ msgstr "Opravené zamrznutie po odstránení poslednej správy v schránke"
+
+#~ msgid "Fix an issue where some mail fails to be deleted"
+#~ msgstr "Opravený problém, keď sa nepodarí odstrániť niektoré správy"
+
+#~ msgid "Use accent color for unread message titles"
+#~ msgstr "Používať farebný odtieň na názvoch neprečítaných správ"
+
+#~ msgid "Autoselect the next message after archiving"
+#~ msgstr "Automaticky označovať nasledujúcu správu po archivovaní"
+
+#~ msgid "Use local time in message headers"
+#~ msgstr "Používať miestny čas v hlavičkách správ"
 
 #~ msgid "Send a notification when new messages arrive"
 #~ msgstr "Odoslať oznámenie o novej správe"
@@ -242,9 +269,6 @@ msgstr "Napísať správu"
 #~ msgstr ""
 #~ "Zabezpečené, aby sa rovnaká správa neodoslala dvakrát pri niektorých "
 #~ "typoch účtov"
-
-#~ msgid "Stability improvements"
-#~ msgstr "Zlepšenia stability"
 
 #~ msgid "Complete rewrite from scratch"
 #~ msgstr "Kompletne prerobený zdrojový kód"

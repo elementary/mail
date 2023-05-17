@@ -7,12 +7,12 @@
 # Baptiste <baptiste+transifex@darthenay.fr>, 2012
 # elopio <yo@elopio.net>, 2013
 # R2D221 <r2d2.art2005@gmail.com>, 2012
-#: src/MessageList/MessageListItem.vala:422
+#: src/MessageList/MessageListItem.vala:425
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-14 17:57+0000\n"
+"POT-Creation-Date: 2023-05-17 16:14+0000\n"
 "PO-Revision-Date: 2019-08-27 22:23+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/mail/mail/eo/"
@@ -25,150 +25,150 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:100
+#: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
 msgid "From:"
 msgstr "El:"
 
-#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:106
+#: src/Composer.vala:118 src/MessageList/MessageListItem.vala:106
 msgid "To:"
 msgstr "Al:"
 
-#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:112
+#: src/Composer.vala:123 src/MessageList/MessageListItem.vala:112
 msgid "Subject:"
 msgstr "Temo:"
 
-#: src/Composer.vala:119
+#: src/Composer.vala:132
 msgid "Cc"
 msgstr "Kopie al"
 
-#: src/Composer.vala:121
+#: src/Composer.vala:134
 msgid "Bcc"
 msgstr "Kaŝkopie al"
 
-#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:146
+#: src/Composer.vala:141 src/MessageList/MessageListItem.vala:146
 msgid "Cc:"
 msgstr "Kopio:"
 
-#: src/Composer.vala:146
+#: src/Composer.vala:159
 msgid "Bcc:"
 msgstr "Kaŝkopio:"
 
-#: src/Composer.vala:198
+#: src/Composer.vala:211
 msgid "Bold"
 msgstr "Grasa"
 
-#: src/Composer.vala:205
+#: src/Composer.vala:218
 msgid "Italic"
 msgstr "Kursiva"
 
-#: src/Composer.vala:212
+#: src/Composer.vala:227
 msgid "Underline"
 msgstr "Substrekita"
 
-#: src/Composer.vala:219
+#: src/Composer.vala:237
 msgid "Strikethrough"
 msgstr "Trastrekita"
 
-#: src/Composer.vala:224
+#: src/Composer.vala:245
 msgid "Remove formatting"
 msgstr "Forigi formatojn"
 
-#: src/Composer.vala:236 src/Dialogs/InsertLinkDialog.vala:63
+#: src/Composer.vala:260 src/Dialogs/InsertLinkDialog.vala:68
 msgid "Insert Link"
 msgstr "Enigi ligon"
 
-#: src/Composer.vala:266
+#: src/Composer.vala:293
 msgid "Delete draft"
 msgstr "Forigi malnetaĵon"
 
-#: src/Composer.vala:271
+#: src/Composer.vala:301
 msgid "Attach file"
 msgstr "Alkroĉi dosieron"
 
-#: src/Composer.vala:277
+#: src/Composer.vala:308
 msgid "Send"
 msgstr "Sendi"
 
-#: src/Composer.vala:313
+#: src/Composer.vala:345
 msgid "New Message"
 msgstr "Nova mesaĝo"
 
-#: src/Composer.vala:459
+#: src/Composer.vala:492
 msgid "Choose a file"
 msgstr "Elektu dosieron"
 
-#: src/Composer.vala:462
+#: src/Composer.vala:495
 #, fuzzy
 #| msgid "_Attach"
 msgid "Attach"
 msgstr "Kunsendi"
 
-#: src/Composer.vala:463 src/Composer.vala:696
-#: src/Dialogs/InsertLinkDialog.vala:61
+#: src/Composer.vala:496 src/Composer.vala:729
+#: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
 msgstr "Rezigni"
 
-#: src/Composer.vala:606
+#: src/Composer.vala:639
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %b %-e, %Y at %-l:%M %p"
 
-#: src/Composer.vala:636
+#: src/Composer.vala:669
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Je %1$s,%2$s skribis:"
 
-#: src/Composer.vala:640
+#: src/Composer.vala:673
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Plusendita mesaĝo ----------"
 
-#: src/Composer.vala:642
+#: src/Composer.vala:675
 #, c-format
 msgid "From: %s<br/>"
 msgstr "El: %s<br/>"
 
-#: src/Composer.vala:643
+#: src/Composer.vala:676
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Temo: %s<br/>"
 
-#: src/Composer.vala:644
+#: src/Composer.vala:677
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Dato: %s<br/>"
 
-#: src/Composer.vala:645
+#: src/Composer.vala:678
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Al: %s<br/>"
 
-#: src/Composer.vala:647
+#: src/Composer.vala:680
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Kopie: %s<br/>"
 
-#: src/Composer.vala:687
+#: src/Composer.vala:720
 msgid "Permanently delete this draft?"
 msgstr ""
 
-#: src/Composer.vala:688
+#: src/Composer.vala:721
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer.vala:698
+#: src/Composer.vala:731
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Delete Draft"
 msgstr "Forigi malnetaĵon"
 
-#: src/Composer.vala:722
+#: src/Composer.vala:755
 #, fuzzy
 #| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
 msgstr "Ĉu sendi mesaĝon senteman?"
 
-#: src/Composer.vala:723
+#: src/Composer.vala:756
 #, fuzzy
 #| msgid ""
 #| "This message has an empty subject field. The recipient may not be able to "
@@ -180,41 +180,41 @@ msgstr ""
 "La mesaĝo ne havas teman tekston. La ricevonto eble ne divenos la objekton "
 "aŭ gravecon de la mesaĝo."
 
-#: src/Composer.vala:729
+#: src/Composer.vala:763
 msgid "Don't Send"
 msgstr "Ne sendi"
 
-#: src/Composer.vala:731
+#: src/Composer.vala:765
 msgid "Send Anyway"
 msgstr "Sendi tamen"
 
-#: src/Composer.vala:756
+#: src/Composer.vala:790
 msgid "Sent message was not saved"
 msgstr ""
 
-#: src/Composer.vala:757
+#: src/Composer.vala:791
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer.vala:772
+#: src/Composer.vala:806
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to send message"
 msgstr "Forigi malnetaĵon"
 
-#: src/Composer.vala:773
+#: src/Composer.vala:807
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer.vala:993
+#: src/Composer.vala:1027
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to save draft"
 msgstr "Forigi malnetaĵon"
 
-#: src/Composer.vala:994
+#: src/Composer.vala:1028
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -248,85 +248,94 @@ msgstr[1] "Ĉiam montri por ĉi sendanto"
 msgid "Mail"
 msgstr "Ĉiuj mesaĝoj"
 
-#: src/MainWindow.vala:251
+#: src/MainWindow.vala:120
+msgid "Undo"
+msgstr "Malfari"
+
+#: src/MainWindow.vala:267
+#, fuzzy
+#| msgid "Message Deleted"
+#| msgid_plural "Messages Deleted"
+msgid "Message Archived"
+msgid_plural "Messages Archived"
+msgstr[0] "Konversacio forigita"
+msgstr[1] "Konversacioj forigitaj"
+
+#: src/MainWindow.vala:277
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Konversacio forigita"
 msgstr[1] "Konversacioj forigitaj"
 
-#: src/MainWindow.vala:263
-msgid "Undo"
-msgstr "Malfari"
-
-#: src/WelcomeView.vala:42
+#: src/WelcomeView.vala:45
 msgid "Connect an Account"
 msgstr "Konekti al konto"
 
-#: src/WelcomeView.vala:49
+#: src/WelcomeView.vala:52
 msgid "Mail uses email accounts configured in System Settings."
 msgstr "Retmesaĝo uzas la retpoŝtajn kontojn agorditaj en Sistemaj Agordoj."
 
-#: src/WelcomeView.vala:56
+#: src/WelcomeView.vala:59
 msgid "Online Accounts…"
 msgstr "Retaj kontoj…"
 
-#: src/ConversationList/ConversationList.vala:83
+#: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
 msgstr "Serĉi Retmesaĝo"
 
-#: src/ConversationList/ConversationList.vala:87
+#: src/ConversationList/ConversationList.vala:88
 #, fuzzy
 #| msgid "Mark Conversation"
 msgid "Hide read conversations"
 msgstr "Marki konversacion"
 
-#: src/ConversationList/ConversationList.vala:89
+#: src/ConversationList/ConversationList.vala:90
 #, fuzzy
 #| msgid "Mark Conversation"
 msgid "Hide unstarred conversations"
 msgstr "Marki konversacion"
 
-#: src/ConversationList/ConversationList.vala:106
+#: src/ConversationList/ConversationList.vala:107
 #, fuzzy
 #| msgid "Mark Conversation"
 msgid "Filter Conversations"
 msgstr "Marki konversacion"
 
-#: src/ConversationList/ConversationList.vala:129
+#: src/ConversationList/ConversationList.vala:130
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetch new messages"
 msgstr "Redakti novan mesaĝon"
 
-#: src/ConversationList/ConversationList.vala:136
+#: src/ConversationList/ConversationList.vala:137
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetching new messages…"
 msgstr "Redakti novan mesaĝon"
 
-#: src/ConversationList/ConversationList.vala:582
+#: src/ConversationList/ConversationList.vala:548
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "Rubujigi la konversaciojn"
 
-#: src/ConversationList/ConversationList.vala:591
+#: src/ConversationList/ConversationList.vala:557
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Marki kiel nelegitan"
 
-#: src/ConversationList/ConversationList.vala:599
+#: src/ConversationList/ConversationList.vala:565
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "Marki kiel legitan"
 
-#: src/ConversationList/ConversationList.vala:609
+#: src/ConversationList/ConversationList.vala:575
 #: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "Stelo"
 
-#: src/ConversationList/ConversationList.vala:617
+#: src/ConversationList/ConversationList.vala:583
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "Forigi stelon"
@@ -347,15 +356,15 @@ msgstr "Plusendita"
 msgid "URL:"
 msgstr "URL-adreso:"
 
-#: src/Dialogs/InsertLinkDialog.vala:35
+#: src/Dialogs/InsertLinkDialog.vala:36
 msgid "https://example.com"
 msgstr "https://example.com"
 
-#: src/Dialogs/InsertLinkDialog.vala:37
+#: src/Dialogs/InsertLinkDialog.vala:39
 msgid "Link Text:"
 msgstr "Ligi tekston:"
 
-#: src/Dialogs/InsertLinkDialog.vala:42
+#: src/Dialogs/InsertLinkDialog.vala:45
 msgid "Example Website"
 msgstr "Ekzempla retejo"
 
@@ -440,12 +449,12 @@ msgid "%s at %s"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:377
+#: src/MessageList/MessageListItem.vala:380
 msgid "Unstar message"
 msgstr "Sensteli mesaĝon"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:373
+#: src/MessageList/MessageListItem.vala:376
 msgid "Star message"
 msgstr "Steli mesaĝon"
 
@@ -474,22 +483,22 @@ msgid "This message contains one or more attachments"
 msgstr "La mesaĝo entenas unu aŭ plurajn alkroĉaĵojn"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:399
+#: src/MessageList/MessageListItem.vala:402
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Nova mesaĝo"
 
-#: src/MessageList/MessageListItem.vala:421
+#: src/MessageList/MessageListItem.vala:424
 msgid "Unable to print email"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:644
+#: src/MessageList/MessageListItem.vala:671
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:645
+#: src/MessageList/MessageListItem.vala:672
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -497,7 +506,7 @@ msgstr ""
 "Alkroĉaĵoj povas damaĝi vian sistemon ĉe malfermo. Malfermu dosierojn nur de "
 "fidaj fontoj."
 
-#: src/MessageList/MessageListItem.vala:652
+#: src/MessageList/MessageListItem.vala:679
 msgid "Open Anyway"
 msgstr "Malfermi tamen"
 

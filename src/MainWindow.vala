@@ -23,7 +23,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Paned paned_start;
 
     private FoldersListView folders_list_view;
-    private Gtk.Overlay view_overlay;
+    private Granite.Widgets.Toast toast;
     private ConversationList conversation_list;
     private MessageList message_list;
 
@@ -63,8 +63,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         {ACTION_MARK_STAR, on_mark_star },
         {ACTION_MARK_UNREAD, on_mark_unread },
         {ACTION_MARK_UNSTAR, on_mark_unstar },
-        {ACTION_ARCHIVE, on_archive },
-        {ACTION_MOVE_TO_TRASH, on_move_to_trash },
+        {ACTION_ARCHIVE, action_move },
+        {ACTION_MOVE_TO_TRASH, action_move },
         {ACTION_FULLSCREEN, on_fullscreen },
     };
 
@@ -110,10 +110,24 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         message_list = new MessageList ();
 
-        view_overlay = new Gtk.Overlay () {
-            expand = true
+        var view_overlay = new Gtk.Overlay () {
+            hexpand = true,
+            vexpand = true,
+            child = message_list
         };
-        view_overlay.add (message_list);
+
+        toast = new Granite.Widgets.Toast ("");
+        toast.set_default_action (_("Undo"));
+        toast.show_all ();
+        view_overlay.add_overlay (toast);
+
+        toast.default_action.connect (() => {
+            conversation_list.undo_move ();
+        });
+
+        toast.closed.connect (() => {
+            conversation_list.expire_undo ();
+        });
 
         var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
         message_overlay.no_show_all = true;
@@ -168,6 +182,10 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         folders_list_view.folder_selected.connect (conversation_list.load_folder);
 
         conversation_list.conversation_selected.connect (message_list.set_conversation);
+
+        conversation_list.undo_expired.connect (() => {
+            toast.reveal_child = false;
+        });
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
 
@@ -240,40 +258,28 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         message_list.print (parameter);
     }
 
-    private void on_archive () {
-        conversation_list.archive_selected_messages.begin ();
-    }
+    private void action_move (SimpleAction action, Variant? parameter) {
+        switch (action.name) {
+            case ACTION_ARCHIVE:
+                conversation_list.move_selected_messages.begin (MoveHandler.MoveType.ARCHIVE, null, (obj, res) => {
+                    var result = conversation_list.move_selected_messages.end (res);
+                    if (result > 0) {
+                        toast.title = ngettext ("Message Archived", "Messages Archived", result);
+                        toast.send_notification ();
+                    }
+                });
+                break;
 
-    private void on_move_to_trash () {
-        var result = conversation_list.trash_selected_messages ();
-        if (result > 0) {
-            send_move_toast (ngettext ("Message Deleted", "Messages Deleted", result));
+            case ACTION_MOVE_TO_TRASH:
+                conversation_list.move_selected_messages.begin (MoveHandler.MoveType.TRASH, null, (obj, res) => {
+                    var result = conversation_list.move_selected_messages.end (res);
+                    if (result > 0) {
+                        toast.title = ngettext ("Message Deleted", "Messages Deleted", result);
+                        toast.send_notification ();
+                    }
+                });
+                break;
         }
-    }
-
-    private void send_move_toast (string message) {
-        foreach (weak Gtk.Widget child in view_overlay.get_children ()) {
-            if (child is Granite.Widgets.Toast) {
-                child.destroy ();
-            }
-        }
-
-        var toast = new Granite.Widgets.Toast (message);
-        toast.set_default_action (_("Undo"));
-        toast.show_all ();
-
-        toast.default_action.connect (() => {
-            conversation_list.undo_move ();
-        });
-
-        toast.notify["child-revealed"].connect (() => {
-            if (!toast.child_revealed) {
-                conversation_list.undo_expired ();
-            }
-        });
-
-        view_overlay.add_overlay (toast);
-        toast.send_notification ();
     }
 
     private void on_fullscreen () {
@@ -287,7 +293,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private SimpleAction? get_action (string name) {
-        return lookup_action (name) as SimpleAction;
+        return (SimpleAction) lookup_action (name);
     }
 
     public override bool configure_event (Gdk.EventConfigure event) {
