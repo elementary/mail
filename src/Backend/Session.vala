@@ -43,7 +43,10 @@ public class Mail.Backend.Session : Camel.Session {
         accounts = new Gee.LinkedList<Account> ();
         user_alert.connect ((service, type, message) => { warning (message); });
 
-        unowned var network_monitor = GLib.NetworkMonitor.get_default ();
+        unowned var network_monitor = E.NetworkMonitor.get_default ();
+
+        set_network_monitor (network_monitor);
+
         network_monitor.network_changed.connect (set_online);
         set_online (network_monitor.network_available);
     }
