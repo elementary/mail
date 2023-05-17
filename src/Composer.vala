@@ -698,7 +698,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 if (part.disposition == "attachment") {
                     try {
                         var file = File.new_for_path (Path.build_filename (Environment.get_tmp_dir (), part.get_filename ()));
-                        if (!file.query_exists()) {
+                        if (!file.query_exists ()) {
                             var output_stream = yield file.create_async (FileCreateFlags.NONE);
                             yield part.content.decode_to_output_stream (output_stream, GLib.Priority.DEFAULT, null);
                         }
