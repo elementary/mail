@@ -49,8 +49,15 @@ public class Mail.Backend.Account : GLib.Object {
                         "network-error"
                     );
                     error_dialog.show_error_details (e.message);
-                    error_dialog.present ();
                     error_dialog.response.connect (() => error_dialog.destroy ());
+                    unowned var application = (Gtk.Application) GLib.Application.get_default ();
+                    foreach (unowned var window in application.get_windows ()) {
+                        if (window is MainWindow) {
+                            error_dialog.transient_for = window;
+                            break;
+                        }
+                    }
+                    error_dialog.present ();
                 }
             }
             return;
