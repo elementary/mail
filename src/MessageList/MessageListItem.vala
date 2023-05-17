@@ -257,6 +257,18 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         secondary_box.add (blocked_images_infobar);
         secondary_box.add (web_view);
 
+        secondary_revealer = new Gtk.Revealer () {
+            transition_type = SLIDE_UP
+        };
+        secondary_revealer.add (secondary_box);
+
+        var base_box = new Gtk.Box (VERTICAL, 0) {
+            hexpand = true,
+            vexpand = true
+        };
+        base_box.add (header_event_box);
+        base_box.add (secondary_revealer);
+
         if (Camel.MessageFlags.ATTACHMENTS in (int) message_info.flags) {
             var attachment_icon = new Gtk.Image.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU) {
                 tooltip_text = _("This message contains one or more attachments")
@@ -274,18 +286,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         action_box.add (starred_button);
         action_box.add (actions_menu_button);
-
-        secondary_revealer = new Gtk.Revealer () {
-            transition_type = SLIDE_UP
-        };
-        secondary_revealer.add (secondary_box);
-
-        var base_box = new Gtk.Box (VERTICAL, 0) {
-            hexpand = true,
-            vexpand = true
-        };
-        base_box.add (header_event_box);
-        base_box.add (secondary_revealer);
 
         add (base_box);
         expanded = false;
