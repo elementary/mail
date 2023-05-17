@@ -334,7 +334,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         show_all ();
 
         if (GLib.NetworkMonitor.get_default ().network_available) {
-            avatar.set_loadable_icon (new GravatarIcon (parsed_address, get_style_context ().get_scale ()));
+            get_gravatar.begin (parsed_address, (obj, res) => {
+                FileIcon? file_icon = get_gravatar.end (res);
+                avatar.set_loadable_icon (file_icon);
+            });
         }
 
         /* Override default handler to stop event propagation. Otherwise clicking the menu will
@@ -466,6 +469,30 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         menu.append (new WebKit.ContextMenuItem.from_stock_action (WebKit.ContextMenuAction.SELECT_ALL));
 
         return false;
+    }
+
+    private async FileIcon? get_gravatar (string address) {
+        /* GLib.File.new_for_uri seemingly doesn't support https */
+        var uri = "http://www.gravatar.com/avatar/%s?d=404&s=%d".printf (
+            Checksum.compute_for_string (ChecksumType.MD5, address.strip ().down ()),
+            avatar.size * get_style_context ().get_scale ()
+        );
+        var server_file = File.new_for_uri (uri);
+        var path = Path.build_filename (Environment.get_tmp_dir (), server_file.get_basename ());
+        var local_file = File.new_for_path (path);
+
+        if (!local_file.query_exists (loading_cancellable)) {
+            try {
+                yield server_file.copy_async (local_file, FileCopyFlags.OVERWRITE, GLib.Priority.DEFAULT, loading_cancellable, null);
+            } catch (Error e) {
+                if (!(e is IOError.CANCELLED)) {
+                    warning (e.message);
+                }
+                return null;
+            }
+        }
+
+        return new FileIcon (local_file);
     }
 
     private async void get_message () {
