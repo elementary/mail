@@ -680,7 +680,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                     message_content += content_to_quote;
 
                     if (message.has_attachment ()) {
-                        parse_mime_content.begin (message.content);
+                        get_attachments.begin (message.content);
                     }
                 }
             }
@@ -689,7 +689,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         }
     }
 
-    private async void parse_mime_content (Camel.DataWrapper message_content) {
+    private async void get_attachments (Camel.DataWrapper message_content) {
         if (message_content is Camel.Multipart) {
             var content = (Camel.Multipart)message_content;
             for (uint i = 0; i < content.get_number (); i++) {
@@ -711,7 +711,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                         critical (e.message);
                     }
                 } else if (field.type == "multipart") {
-                    yield parse_mime_content (part.content);
+                    yield get_attachments (part.content);
                 }
             }
         }
