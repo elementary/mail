@@ -34,6 +34,8 @@ public class Mail.MoveHandler {
     private uint timeout_id = 0;
 
     public async int move_messages (Camel.Folder source_folder, MoveType _move_type, Gee.ArrayList<unowned Camel.FolderThreadNode?> threads, Variant? dest_folder) throws Error {
+        src_folder.freeze ();
+
         yield expire_undo ();
 
         src_folder = source_folder;
@@ -73,8 +75,6 @@ public class Mail.MoveHandler {
         foreach (unowned var thread in threads) {
             collect_thread_messages (thread);
         }
-
-        src_folder.freeze ();
 
         foreach (var info in moved_messages) {
             info.set_flags (Camel.MessageFlags.DELETED, ~0);
