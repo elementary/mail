@@ -11,6 +11,7 @@ public class Mail.Application : Gtk.Application {
 
     public static GLib.Settings settings;
     public static bool run_in_background;
+    private Gtk.Settings gtk_settings;
 
     public Application () {
         Object (
@@ -110,12 +111,11 @@ public class Mail.Application : Gtk.Application {
         Hdy.init ();
 
         var granite_settings = Granite.Settings.get_default ();
-        var gtk_settings = Gtk.Settings.get_default ();
+        gtk_settings = Gtk.Settings.get_default ();
         gtk_settings.gtk_icon_theme_name = "elementary";
 
-        if (!gtk_settings.gtk_theme_name.has_prefix ("io.elementary")) {
-            gtk_settings.gtk_theme_name = "io.elementary.stylesheet.blueberry";
-        }
+        check_theme ();
+        gtk_settings.notify["gtk-theme-name"].connect (check_theme);
 
         gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
 
@@ -188,6 +188,12 @@ public class Mail.Application : Gtk.Application {
         }
 
         main_window.present ();
+    }
+
+    private void check_theme () {
+        if (!gtk_settings.gtk_theme_name.has_prefix ("io.elementary")) {
+            gtk_settings.gtk_theme_name = "io.elementary.stylesheet.blueberry";
+        }
     }
 }
 
