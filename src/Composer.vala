@@ -967,18 +967,21 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             remove_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
             var box = new Gtk.Box (HORIZONTAL, 3) {
-                margin = 3
+                margin_top = 3,
+                margin_bottom = 3,
+                margin_start = 3,
+                margin_end = 3
             };
             box.add (image);
             box.add (name_label);
             box.add (size_label);
             box.add (remove_button);
 
-            add (box);
             margin_top = 3;
             margin_bottom = 3;
             margin_start = 3;
             margin_end = 3;
+            add (box);
 
             remove_button.clicked.connect (() => {
                 destroy ();
