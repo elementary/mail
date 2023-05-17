@@ -28,11 +28,12 @@ public class Mail.Backend.Session : Camel.Session {
         return _session;
     }
 
-    E.SourceRegistry registry;
-    Gee.LinkedList<Account> accounts;
-
     public signal void account_added (Mail.Backend.Account account);
     public signal void account_removed (Mail.Backend.Account account);
+
+    private bool started = false;
+    private E.SourceRegistry registry;
+    private Gee.LinkedList<Account> accounts;
 
     public Session () {
         Object (user_data_dir: Path.build_filename (E.get_user_data_dir (), "mail"), user_cache_dir: Path.build_filename (E.get_user_cache_dir (), "mail"));
@@ -47,10 +48,11 @@ public class Mail.Backend.Session : Camel.Session {
     }
 
     public async void start () {
-        if (registry != null) {
+        if (started) {
             debug ("Camel.Session is already started.");
             return;
         }
+        started = true;
 
         try {
             registry = yield new E.SourceRegistry (null);
