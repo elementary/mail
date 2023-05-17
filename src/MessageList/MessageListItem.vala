@@ -28,7 +28,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     private Gtk.InfoBar blocked_images_infobar;
     private Gtk.Revealer secondary_revealer;
-    private Gtk.Stack header_stack;
     private Gtk.StyleContext style_context;
     private Hdy.Avatar avatar;
     private Gtk.FlowBox attachment_bar = null;
@@ -46,7 +45,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         }
         set {
             secondary_revealer.reveal_child = value;
-            header_stack.set_visible_child_name (value ? "large" : "small");
             if (value) {
                 if (!message_loaded) {
                     get_message.begin ();
@@ -63,10 +61,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     public MessageListItem (Camel.MessageInfo message_info) {
         Object (
-            margin_top: 12,
-            margin_bottom: 12,
-            margin_start: 12,
-            margin_end: 12,
             message_info: message_info
         );
     }
@@ -81,6 +75,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         style_context = get_style_context ();
         style_context.add_class (Granite.STYLE_CLASS_CARD);
+        style_context.add_class ("message-list-item");
 
         unowned string? parsed_address;
         unowned string? parsed_name;
@@ -93,53 +88,57 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             parsed_name = parsed_address;
         }
 
-        avatar = new Hdy.Avatar (48, parsed_name, true) {
-            valign = Gtk.Align.START
-        };
-
-        var from_label = new Gtk.Label (_("From:")) {
-            halign = END,
+        avatar = new Hdy.Avatar (40, parsed_name, true) {
             valign = START
         };
-        from_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        var from_label = new Gtk.Label (message_info.from) {
+            wrap = true,
+            xalign = 0
+        };
 
         var to_label = new Gtk.Label (_("To:")) {
-            halign = END,
-            valign = START
+            halign = END
         };
         to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        var subject_label = new Gtk.Label (_("Subject:")) {
-            halign = END,
-            valign = START
-        };
-        subject_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-
-        var from_val_label = new Gtk.Label (message_info.from) {
-            wrap = true,
-            xalign = 0
-        };
-
         var to_val_label = new Gtk.Label (message_info.to) {
+            hexpand = true,
             wrap = true,
             xalign = 0
         };
 
-        var subject_val_label = new Gtk.Label (message_info.subject) {
-            wrap = true,
-            xalign = 0
+        var relevant_timestamp = message_info.date_received;
+        if (relevant_timestamp == 0) {
+            // Sent messages do not have a date_received timestamp.
+            relevant_timestamp = message_info.date_sent;
+        }
+
+        var date_format = Granite.DateTime.get_default_date_format (false, true, true);
+        var time_format = Granite.DateTime.get_default_time_format (desktop_settings.get_enum ("clock-format") == 1, false);
+
+        var datetime_label = new Gtk.Label (
+            ///TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
+            new DateTime.from_unix_utc (relevant_timestamp).to_local ().format (_("%s at %s").printf (date_format, time_format))
+        ) {
+            halign = END
+        };
+        datetime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        var action_box = new Gtk.Box (HORIZONTAL, 6) {
+            halign = END,
+            hexpand = true,
+            margin_top = 3
         };
 
         var fields_grid = new Gtk.Grid () {
-            column_spacing = 6,
-            row_spacing = 6
+            column_spacing = 3,
         };
-        fields_grid.attach (from_label, 0, 0, 1, 1);
-        fields_grid.attach (to_label, 0, 1, 1, 1);
-        fields_grid.attach (subject_label, 0, 3, 1, 1);
-        fields_grid.attach (from_val_label, 1, 0, 1, 1);
-        fields_grid.attach (to_val_label, 1, 1, 1, 1);
-        fields_grid.attach (subject_val_label, 1, 3, 1, 1);
+        fields_grid.attach (from_label, 0, 0, 2);
+        fields_grid.attach (to_label, 0, 1);
+        fields_grid.attach (to_val_label, 1, 1);
+        fields_grid.attach (datetime_label, 2, 0);
+        fields_grid.attach (action_box, 2, 1);
 
         var cc_info = message_info.cc;
         if (cc_info != null) {
@@ -154,54 +153,24 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 xalign = 0
             };
 
-            fields_grid.attach (cc_label, 0, 2, 1, 1);
-            fields_grid.attach (cc_val_label, 1, 2, 1, 1);
+            fields_grid.attach (cc_label, 0, 2);
+            fields_grid.attach (cc_val_label, 1, 2);
         }
-
-        var small_from_label = new Gtk.Label (message_info.from) {
-            ellipsize = END,
-            xalign = 0
-        };
-
-        var small_fields_grid = new Gtk.Grid ();
-        small_fields_grid.attach (small_from_label, 0, 0, 1, 1);
-
-        header_stack = new Gtk.Stack () {
-            homogeneous = false,
-            transition_type = CROSSFADE
-        };
-        header_stack.add_named (fields_grid, "large");
-        header_stack.add_named (small_fields_grid, "small");
-        header_stack.show_all ();
-
-        var relevant_timestamp = message_info.date_received;
-        if (relevant_timestamp == 0) {
-            // Sent messages do not have a date_received timestamp.
-            relevant_timestamp = message_info.date_sent;
-        }
-
-        var date_format = Granite.DateTime.get_default_date_format (false, true, true);
-        var time_format = Granite.DateTime.get_default_time_format (desktop_settings.get_enum ("clock-format") == 1, false);
-
-        ///TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
-        var datetime_label = new Gtk.Label (new DateTime.from_unix_utc (relevant_timestamp).to_local ().format (_("%s at %s").printf (date_format, time_format)));
-        datetime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         var starred_icon = new Gtk.Image ();
-        starred_icon.icon_size = Gtk.IconSize.MENU;
-
-        if (Camel.MessageFlags.FLAGGED in (int) message_info.flags) {
-            starred_icon.icon_name = "starred-symbolic";
-            starred_icon.tooltip_text = _("Unstar message");
-        } else {
-            starred_icon.icon_name = "non-starred-symbolic";
-            starred_icon.tooltip_text = _("Star message");
-        }
 
         var starred_button = new Gtk.Button () {
             child = starred_icon
         };
-        starred_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        starred_button.get_style_context ().add_class ("image-button");
+
+        if (Camel.MessageFlags.FLAGGED in (int) message_info.flags) {
+            starred_icon.icon_name = "starred-symbolic";
+            starred_button.tooltip_text = _("Unstar message");
+        } else {
+            starred_icon.icon_name = "non-starred-symbolic";
+            starred_button.tooltip_text = _("Star message");
+        }
 
         var upper_section = new Menu ();
         upper_section.append (_("Reply"), Action.print_detailed_name (
@@ -226,23 +195,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         var actions_menu_button = new Gtk.MenuButton () {
             image = new Gtk.Image.from_icon_name ("view-more-symbolic", Gtk.IconSize.MENU),
             tooltip_text = _("More"),
-            margin_top = 6,
-            valign = START,
-            halign = END,
             menu_model = actions_menu,
             use_popover = false
         };
         actions_menu_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
-        var action_grid = new Gtk.Grid () {
-            column_spacing = 3,
-            hexpand = true,
-            halign = END,
-            valign = START
-        };
-        action_grid.attach (datetime_label, 0, 0);
-        action_grid.attach (starred_button, 2, 0);
-        action_grid.attach (actions_menu_button, 2, 1);
 
         var header = new Gtk.Grid () {
             margin_top = 12,
@@ -251,9 +207,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             margin_end = 12,
             column_spacing = 12
         };
-        header.attach (avatar, 0, 0, 1, 3);
-        header.attach (header_stack, 1, 0, 1, 3);
-        header.attach (action_grid, 2, 0);
+        header.attach (avatar, 0, 0, 1);
+        header.attach (fields_grid, 1, 0, 1);
 
         var header_event_box = new Gtk.EventBox ();
         header_event_box.events |= Gdk.EventMask.ENTER_NOTIFY_MASK;
@@ -302,6 +257,24 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         secondary_box.add (blocked_images_infobar);
         secondary_box.add (web_view);
 
+        if (Camel.MessageFlags.ATTACHMENTS in (int) message_info.flags) {
+            var attachment_icon = new Gtk.Image.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU) {
+                tooltip_text = _("This message contains one or more attachments")
+            };
+            action_box.add (attachment_icon);
+
+            attachment_bar = new Gtk.FlowBox () {
+                hexpand = true,
+                homogeneous = true
+            };
+            attachment_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+            attachment_bar.get_style_context ().add_class ("bottom-toolbar");
+            secondary_box.add (attachment_bar);
+        }
+
+        action_box.add (starred_button);
+        action_box.add (actions_menu_button);
+
         secondary_revealer = new Gtk.Revealer () {
             transition_type = SLIDE_UP
         };
@@ -313,21 +286,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         };
         base_box.add (header_event_box);
         base_box.add (secondary_revealer);
-
-        if (Camel.MessageFlags.ATTACHMENTS in (int) message_info.flags) {
-            var attachment_icon = new Gtk.Image.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
-            attachment_icon.margin_start = 6;
-            attachment_icon.tooltip_text = _("This message contains one or more attachments");
-            action_grid.attach (attachment_icon, 1, 0);
-
-            attachment_bar = new Gtk.FlowBox () {
-                hexpand = true,
-                homogeneous = true
-            };
-            attachment_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-            attachment_bar.get_style_context ().add_class ("bottom-toolbar");
-            secondary_box.add (attachment_bar);
-        }
 
         add (base_box);
         expanded = false;

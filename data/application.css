@@ -7,8 +7,22 @@
         );
 }
 
-.card.collapsed {
-    margin-bottom: -64px;
+.message-list list {
+    padding: 0 1rem 0.25rem;
+}
+
+.message-list list > .h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 0.75rem 0;
+}
+
+.message-list-item {
+    margin: 0.75rem 0;
+}
+
+.message-list-item.collapsed {
+    margin: 0.5rem 0;
 }
 
 .conversation-list-item {
