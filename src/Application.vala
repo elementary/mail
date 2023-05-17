@@ -12,8 +12,6 @@ public class Mail.Application : Gtk.Application {
     public static GLib.Settings settings;
     public static bool run_in_background;
 
-    private bool request_autostart = true;
-
     public Application () {
         Object (
             application_id: "io.elementary.mail",
@@ -145,6 +143,13 @@ public class Mail.Application : Gtk.Application {
 
         new InboxMonitor ().start.begin ();
         hold ();
+
+        request_background.begin ((obj, res) => {
+            var result = request_background.end (res);
+            if (!result) {
+                release ();
+            }
+        });
     }
 
     public override void activate () {
@@ -185,18 +190,9 @@ public class Mail.Application : Gtk.Application {
         }
 
         main_window.present ();
-
-        if (request_autostart) {
-            request_background.begin ();
-            request_autostart = false;
-        }
     }
 
     private async bool request_background () {
-        if (!Xdp.Portal.running_under_sandbox ()) {
-            return true;
-        }
-
         var portal = new Xdp.Portal ();
 
         Xdp.Parent? parent = active_window != null ? Xdp.parent_new_gtk (active_window) : null;
