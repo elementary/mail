@@ -200,15 +200,14 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         };
         actions_menu_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var header = new Gtk.Grid () {
+        var header = new Gtk.Box (HORIZONTAL, 12) {
             margin_top = 12,
             margin_bottom = 12,
             margin_start = 12,
-            margin_end = 12,
-            column_spacing = 12
+            margin_end = 12
         };
-        header.attach (avatar, 0, 0, 1);
-        header.attach (fields_grid, 1, 0, 1);
+        header.add (avatar);
+        header.add (fields_grid);
 
         var header_event_box = new Gtk.EventBox ();
         header_event_box.events |= Gdk.EventMask.ENTER_NOTIFY_MASK;
