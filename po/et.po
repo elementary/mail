@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-16 18:33+0000\n"
+"POT-Creation-Date: 2023-05-17 16:14+0000\n"
 "PO-Revision-Date: 2017-02-02 09:29+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/geary/language/"
@@ -243,7 +243,14 @@ msgstr "Kõik"
 msgid "Undo"
 msgstr ""
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:267
+#, fuzzy
+msgid "Message Archived"
+msgid_plural "Messages Archived"
+msgstr[0] "Kirjad puuduvad"
+msgstr[1] "Kirjad puuduvad"
+
+#: src/MainWindow.vala:277
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -263,60 +270,60 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Kontod"
 
-#: src/ConversationList/ConversationList.vala:83
+#: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
 msgstr "Otsi kirjadest..."
 
-#: src/ConversationList/ConversationList.vala:87
+#: src/ConversationList/ConversationList.vala:88
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide read conversations"
 msgstr "Sildista kui..."
 
-#: src/ConversationList/ConversationList.vala:89
+#: src/ConversationList/ConversationList.vala:90
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide unstarred conversations"
 msgstr "Sildista kui..."
 
-#: src/ConversationList/ConversationList.vala:106
+#: src/ConversationList/ConversationList.vala:107
 #, fuzzy
 msgid "Filter Conversations"
 msgstr "Märgi kui..."
 
-#: src/ConversationList/ConversationList.vala:129
+#: src/ConversationList/ConversationList.vala:130
 #, fuzzy
 msgid "Fetch new messages"
 msgstr "%d uus kiri"
 
-#: src/ConversationList/ConversationList.vala:136
+#: src/ConversationList/ConversationList.vala:137
 #, fuzzy
 msgid "Fetching new messages…"
 msgstr "%d uus kiri"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationList.vala:548
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Liiguta asukohta..."
 
-#: src/ConversationList/ConversationList.vala:587
+#: src/ConversationList/ConversationList.vala:557
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "_Lugemata"
 
-#: src/ConversationList/ConversationList.vala:595
+#: src/ConversationList/ConversationList.vala:565
 #: src/MessageList/MessageList.vala:87
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Loetud"
 
-#: src/ConversationList/ConversationList.vala:605
+#: src/ConversationList/ConversationList.vala:575
 #: src/MessageList/MessageList.vala:93
 #, fuzzy
 msgid "Star"
 msgstr "_Lemmik"
 
-#: src/ConversationList/ConversationList.vala:613
+#: src/ConversationList/ConversationList.vala:583
 #: src/MessageList/MessageList.vala:99
 #, fuzzy
 msgid "Unstar"

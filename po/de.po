@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-16 18:33+0000\n"
+"POT-Creation-Date: 2023-05-17 16:14+0000\n"
 "PO-Revision-Date: 2023-03-30 14:59+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
@@ -243,7 +243,16 @@ msgstr "Mail"
 msgid "Undo"
 msgstr "Rückgängig"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:267
+#, fuzzy
+#| msgid "Message Deleted"
+#| msgid_plural "Messages Deleted"
+msgid "Message Archived"
+msgid_plural "Messages Archived"
+msgstr[0] "Nachricht gelöscht"
+msgstr[1] "Nachrichten gelöscht"
+
+#: src/MainWindow.vala:277
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Nachricht gelöscht"
@@ -263,49 +272,49 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Online-Konten …"
 
-#: src/ConversationList/ConversationList.vala:83
+#: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
 msgstr "Mail durchsuchen"
 
-#: src/ConversationList/ConversationList.vala:87
+#: src/ConversationList/ConversationList.vala:88
 msgid "Hide read conversations"
 msgstr "Gelesene Unterhaltungen verstecken"
 
-#: src/ConversationList/ConversationList.vala:89
+#: src/ConversationList/ConversationList.vala:90
 msgid "Hide unstarred conversations"
 msgstr "Nicht mehr markierte Unterhaltungen verstecken"
 
-#: src/ConversationList/ConversationList.vala:106
+#: src/ConversationList/ConversationList.vala:107
 msgid "Filter Conversations"
 msgstr "Unterhaltungen filtern"
 
-#: src/ConversationList/ConversationList.vala:129
+#: src/ConversationList/ConversationList.vala:130
 msgid "Fetch new messages"
 msgstr "Neue Nachrichten abrufen"
 
-#: src/ConversationList/ConversationList.vala:136
+#: src/ConversationList/ConversationList.vala:137
 msgid "Fetching new messages…"
 msgstr "Neue Nachrichten abrufen …"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationList.vala:548
 msgid "Move To Trash"
 msgstr "In den Papierkorb verschieben"
 
-#: src/ConversationList/ConversationList.vala:587
+#: src/ConversationList/ConversationList.vala:557
 msgid "Mark As Unread"
 msgstr "Als ungelesen markieren"
 
-#: src/ConversationList/ConversationList.vala:595
+#: src/ConversationList/ConversationList.vala:565
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "Als gelesen markieren"
 
-#: src/ConversationList/ConversationList.vala:605
+#: src/ConversationList/ConversationList.vala:575
 #: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "Kennzeichnen"
 
-#: src/ConversationList/ConversationList.vala:613
+#: src/ConversationList/ConversationList.vala:583
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "Kennzeichnung entfernen"

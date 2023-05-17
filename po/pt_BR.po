@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-16 18:33+0000\n"
+"POT-Creation-Date: 2023-05-17 16:14+0000\n"
 "PO-Revision-Date: 2019-08-27 22:23+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/mail/"
@@ -264,7 +264,16 @@ msgstr "Correio"
 msgid "Undo"
 msgstr "Desfazer"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:267
+#, fuzzy
+#| msgid "Message Deleted"
+#| msgid_plural "Messages Deleted"
+msgid "Message Archived"
+msgid_plural "Messages Archived"
+msgstr[0] "Mensagem eliminada"
+msgstr[1] "Mensagens eliminadas"
+
+#: src/MainWindow.vala:277
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Mensagem eliminada"
@@ -282,65 +291,65 @@ msgstr "O email usa contas de email configuradas nas Configurações do Sistema.
 msgid "Online Accounts…"
 msgstr "Contas Online…"
 
-#: src/ConversationList/ConversationList.vala:83
+#: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
 msgstr "Pesquisar e-mail"
 
-#: src/ConversationList/ConversationList.vala:87
+#: src/ConversationList/ConversationList.vala:88
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide read conversations"
 msgstr "Marcar conversas"
 
-#: src/ConversationList/ConversationList.vala:89
+#: src/ConversationList/ConversationList.vala:90
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
 msgstr "Marcar conversas"
 
-#: src/ConversationList/ConversationList.vala:106
+#: src/ConversationList/ConversationList.vala:107
 #, fuzzy
 #| msgid "Delete Conversation"
 msgid "Filter Conversations"
 msgstr "Apagar conversa"
 
-#: src/ConversationList/ConversationList.vala:129
+#: src/ConversationList/ConversationList.vala:130
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d nova mensagem"
 
-#: src/ConversationList/ConversationList.vala:136
+#: src/ConversationList/ConversationList.vala:137
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages…"
 msgstr "%d nova mensagem"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationList.vala:548
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "Mover conversas para o Lixo"
 
-#: src/ConversationList/ConversationList.vala:587
+#: src/ConversationList/ConversationList.vala:557
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Marcar como não lido"
 
-#: src/ConversationList/ConversationList.vala:595
+#: src/ConversationList/ConversationList.vala:565
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "Marcar como lido"
 
-#: src/ConversationList/ConversationList.vala:605
+#: src/ConversationList/ConversationList.vala:575
 #: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "Estrela"
 
-#: src/ConversationList/ConversationList.vala:613
+#: src/ConversationList/ConversationList.vala:583
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "Remover estrela"

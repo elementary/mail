@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-16 18:33+0000\n"
+"POT-Creation-Date: 2023-05-17 16:14+0000\n"
 "PO-Revision-Date: 2023-03-30 14:59+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
@@ -241,7 +241,16 @@ msgstr "E-post"
 msgid "Undo"
 msgstr "Angre"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:267
+#, fuzzy
+#| msgid "Message Deleted"
+#| msgid_plural "Messages Deleted"
+msgid "Message Archived"
+msgid_plural "Messages Archived"
+msgstr[0] "Melding slettet"
+msgstr[1] "Meldinger slettet"
+
+#: src/MainWindow.vala:277
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Melding slettet"
@@ -260,50 +269,50 @@ msgstr "Mail bruker e-postkontoer satt opp i systeminnstillingene."
 msgid "Online Accounts…"
 msgstr "Nettkontoer…"
 
-#: src/ConversationList/ConversationList.vala:83
+#: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
 msgstr "Søk Mail"
 
-#: src/ConversationList/ConversationList.vala:87
+#: src/ConversationList/ConversationList.vala:88
 msgid "Hide read conversations"
 msgstr "Skjul leste samtaler"
 
-#: src/ConversationList/ConversationList.vala:89
+#: src/ConversationList/ConversationList.vala:90
 msgid "Hide unstarred conversations"
 msgstr "Skjul samtaler som ikke er stjernemerkede"
 
-#: src/ConversationList/ConversationList.vala:106
+#: src/ConversationList/ConversationList.vala:107
 msgid "Filter Conversations"
 msgstr "Filtrer samtaler"
 
-#: src/ConversationList/ConversationList.vala:129
+#: src/ConversationList/ConversationList.vala:130
 msgid "Fetch new messages"
 msgstr "Hent nye meldinger"
 
-#: src/ConversationList/ConversationList.vala:136
+#: src/ConversationList/ConversationList.vala:137
 msgid "Fetching new messages…"
 msgstr "Henter nye meldinger …"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationList.vala:548
 msgid "Move To Trash"
 msgstr "Flytt til papirkurven"
 
-#: src/ConversationList/ConversationList.vala:587
+#: src/ConversationList/ConversationList.vala:557
 msgid "Mark As Unread"
 msgstr "Merk som ulest"
 
-#: src/ConversationList/ConversationList.vala:595
+#: src/ConversationList/ConversationList.vala:565
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "Merk som lest"
 
-#: src/ConversationList/ConversationList.vala:605
+#: src/ConversationList/ConversationList.vala:575
 #: src/MessageList/MessageList.vala:93
 #, fuzzy
 msgid "Star"
 msgstr "Stjerne"
 
-#: src/ConversationList/ConversationList.vala:613
+#: src/ConversationList/ConversationList.vala:583
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "Fjern stjerne"

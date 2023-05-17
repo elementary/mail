@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-16 18:33+0000\n"
+"POT-Creation-Date: 2023-05-17 16:14+0000\n"
 "PO-Revision-Date: 2023-04-14 11:53+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/mail/mail/ka/>\n"
@@ -226,7 +226,16 @@ msgstr "ელფოსტა"
 msgid "Undo"
 msgstr "დაბრუნება"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:267
+#, fuzzy
+#| msgid "Message Deleted"
+#| msgid_plural "Messages Deleted"
+msgid "Message Archived"
+msgid_plural "Messages Archived"
+msgstr[0] "შეტყობინება წაშლილია"
+msgstr[1] "შეტყობინება წაშლილია"
+
+#: src/MainWindow.vala:277
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "შეტყობინება წაშლილია"
@@ -244,49 +253,49 @@ msgstr "Mail-ი სისტემურ პარამეტრებში �
 msgid "Online Accounts…"
 msgstr "ონლაინ ანგარიშები…"
 
-#: src/ConversationList/ConversationList.vala:83
+#: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
 msgstr "ელფოსტაში ძებნა"
 
-#: src/ConversationList/ConversationList.vala:87
+#: src/ConversationList/ConversationList.vala:88
 msgid "Hide read conversations"
 msgstr "წაკითხული საუბრების დამალვა"
 
-#: src/ConversationList/ConversationList.vala:89
+#: src/ConversationList/ConversationList.vala:90
 msgid "Hide unstarred conversations"
 msgstr "უვარსკვლავო საუბრების დამალვა"
 
-#: src/ConversationList/ConversationList.vala:106
+#: src/ConversationList/ConversationList.vala:107
 msgid "Filter Conversations"
 msgstr "საუბრების გაფილტვრა"
 
-#: src/ConversationList/ConversationList.vala:129
+#: src/ConversationList/ConversationList.vala:130
 msgid "Fetch new messages"
 msgstr "ახალი შეტყობინებების გამოთხოვა"
 
-#: src/ConversationList/ConversationList.vala:136
+#: src/ConversationList/ConversationList.vala:137
 msgid "Fetching new messages…"
 msgstr "ახალი შეტყობინებების გამოთხოვა…"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationList.vala:548
 msgid "Move To Trash"
 msgstr "ნაგავში გადატანა"
 
-#: src/ConversationList/ConversationList.vala:587
+#: src/ConversationList/ConversationList.vala:557
 msgid "Mark As Unread"
 msgstr "წაუკითხავად მონიშვნა"
 
-#: src/ConversationList/ConversationList.vala:595
+#: src/ConversationList/ConversationList.vala:565
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "მონიშნე როგორც წაკითხული"
 
-#: src/ConversationList/ConversationList.vala:605
+#: src/ConversationList/ConversationList.vala:575
 #: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "ვარსკვლავი"
 
-#: src/ConversationList/ConversationList.vala:613
+#: src/ConversationList/ConversationList.vala:583
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "ვარსკვლავის მოხსნა"

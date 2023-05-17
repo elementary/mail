@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-16 18:33+0000\n"
+"POT-Creation-Date: 2023-05-17 16:14+0000\n"
 "PO-Revision-Date: 2018-12-19 00:07+0000\n"
 "Last-Translator: Mayank Arya <mmaismma@hotmail.com>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/mail/mail/hi/>\n"
@@ -241,7 +241,15 @@ msgstr "सब पत्र"
 msgid "Undo"
 msgstr ""
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:267
+#, fuzzy
+#| msgid "Archive"
+msgid "Message Archived"
+msgid_plural "Messages Archived"
+msgstr[0] "पुरालेख"
+msgstr[1] "पुरालेख"
+
+#: src/MainWindow.vala:277
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
@@ -259,63 +267,63 @@ msgstr "मेल सेटिंग्स में कन्फिगर क�
 msgid "Online Accounts…"
 msgstr "ऑनलाइन खाते…"
 
-#: src/ConversationList/ConversationList.vala:83
+#: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
 msgstr "पत्र ढूंदे।"
 
-#: src/ConversationList/ConversationList.vala:87
+#: src/ConversationList/ConversationList.vala:88
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide read conversations"
 msgstr "अधिक संवाद को लेबल जोड़े"
 
-#: src/ConversationList/ConversationList.vala:89
+#: src/ConversationList/ConversationList.vala:90
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide unstarred conversations"
 msgstr "अधिक संवाद को लेबल जोड़े"
 
-#: src/ConversationList/ConversationList.vala:106
+#: src/ConversationList/ConversationList.vala:107
 #, fuzzy
 msgid "Filter Conversations"
 msgstr "अधिक संवाद संकेत"
 
-#: src/ConversationList/ConversationList.vala:129
+#: src/ConversationList/ConversationList.vala:130
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetch new messages"
 msgstr "नया पत्र लिखे"
 
-#: src/ConversationList/ConversationList.vala:136
+#: src/ConversationList/ConversationList.vala:137
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetching new messages…"
 msgstr "नया पत्र लिखे"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationList.vala:548
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "संवाद तो ट्रैश में डाले"
 
-#: src/ConversationList/ConversationList.vala:587
+#: src/ConversationList/ConversationList.vala:557
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "पढ़ा नही संकेत करे"
 
-#: src/ConversationList/ConversationList.vala:595
+#: src/ConversationList/ConversationList.vala:565
 #: src/MessageList/MessageList.vala:87
 #, fuzzy
 msgid "Mark as Read"
 msgstr "पढ़ लिया संकेत करे"
 
-#: src/ConversationList/ConversationList.vala:605
+#: src/ConversationList/ConversationList.vala:575
 #: src/MessageList/MessageList.vala:93
 #, fuzzy
 msgid "Star"
 msgstr "तारा"
 
-#: src/ConversationList/ConversationList.vala:613
+#: src/ConversationList/ConversationList.vala:583
 #: src/MessageList/MessageList.vala:99
 #, fuzzy
 msgid "Unstar"

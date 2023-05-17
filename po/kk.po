@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-16 18:33+0000\n"
+"POT-Creation-Date: 2023-05-17 16:14+0000\n"
 "PO-Revision-Date: 2015-11-24 15:45+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
@@ -244,7 +244,14 @@ msgstr "Барлық пошта"
 msgid "Undo"
 msgstr ""
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:267
+#, fuzzy
+msgid "Message Archived"
+msgid_plural "Messages Archived"
+msgstr[0] "Бірде-бір сөйлесу таңдалмады."
+msgstr[1] "Бірде-бір сөйлесу таңдалмады."
+
+#: src/MainWindow.vala:277
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -264,64 +271,64 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Тіркелгілер"
 
-#: src/ConversationList/ConversationList.vala:83
+#: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:87
+#: src/ConversationList/ConversationList.vala:88
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide read conversations"
 msgstr "Сөйлесулерге белгіні қосу"
 
-#: src/ConversationList/ConversationList.vala:89
+#: src/ConversationList/ConversationList.vala:90
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide unstarred conversations"
 msgstr "Сөйлесулерге белгіні қосу"
 
-#: src/ConversationList/ConversationList.vala:106
+#: src/ConversationList/ConversationList.vala:107
 #, fuzzy
 msgid "Filter Conversations"
 msgstr "Сөйлесулерді белгілеу"
 
-#: src/ConversationList/ConversationList.vala:129
+#: src/ConversationList/ConversationList.vala:130
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d жаңа хат"
 
-#: src/ConversationList/ConversationList.vala:136
+#: src/ConversationList/ConversationList.vala:137
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages…"
 msgstr "%d жаңа хат"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationList.vala:548
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Сөйлесулерді жылжыту"
 
-#: src/ConversationList/ConversationList.vala:587
+#: src/ConversationList/ConversationList.vala:557
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "Оқылмаған етіп бел_гілеу"
 
-#: src/ConversationList/ConversationList.vala:595
+#: src/ConversationList/ConversationList.vala:565
 #: src/MessageList/MessageList.vala:87
 #, fuzzy
 msgid "Mark as Read"
 msgstr "Оқылған етіп бел_гілеу"
 
-#: src/ConversationList/ConversationList.vala:605
+#: src/ConversationList/ConversationList.vala:575
 #: src/MessageList/MessageList.vala:93
 #, fuzzy
 msgid "Star"
 msgstr "_Жұлдызшаны орнату"
 
-#: src/ConversationList/ConversationList.vala:613
+#: src/ConversationList/ConversationList.vala:583
 #: src/MessageList/MessageList.vala:99
 #, fuzzy
 msgid "Unstar"
