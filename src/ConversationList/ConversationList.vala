@@ -534,6 +534,11 @@ public class Mail.ConversationList : Gtk.Box {
         undo_expired ();
     }
 
+    public void undo_move () {
+        move_handler.undo_last_move ();
+        list_store.items_changed (0, list_store.get_n_items (), list_store.get_n_items ());
+    }
+
     private bool create_context_menu (Gdk.Event e, ConversationListItem row) {
         var item = (ConversationItemModel)row.model_item;
 
