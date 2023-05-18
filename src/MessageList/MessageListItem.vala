@@ -27,6 +27,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private GLib.Cancellable loading_cancellable;
 
     private Gtk.InfoBar blocked_images_infobar;
+    private Gtk.Revealer fields_revealer;
     private Gtk.Revealer secondary_revealer;
     private Gtk.StyleContext style_context;
     private Hdy.Avatar avatar;
@@ -45,6 +46,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         }
         set {
             secondary_revealer.reveal_child = value;
+            fields_revealer.reveal_child = value;
             if (value) {
                 if (!message_loaded) {
                     get_message.begin ();
@@ -127,18 +129,19 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         var action_box = new Gtk.Box (HORIZONTAL, 6) {
             halign = END,
-            hexpand = true,
-            margin_top = 3
+            hexpand = true
         };
 
         var fields_grid = new Gtk.Grid () {
             column_spacing = 3,
+            margin_top = 3
         };
-        fields_grid.attach (from_label, 0, 0, 2);
-        fields_grid.attach (to_label, 0, 1);
-        fields_grid.attach (to_val_label, 1, 1);
-        fields_grid.attach (datetime_label, 2, 0);
-        fields_grid.attach (action_box, 2, 1);
+        fields_grid.attach (to_label, 0, 0);
+        fields_grid.attach (to_val_label, 1, 0);
+        fields_grid.attach (action_box, 2, 0);
+
+        fields_revealer = new Gtk.Revealer ();
+        fields_revealer.add (fields_grid);
 
         var cc_info = message_info.cc;
         if (cc_info != null) {
@@ -153,8 +156,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 xalign = 0
             };
 
-            fields_grid.attach (cc_label, 0, 2);
-            fields_grid.attach (cc_val_label, 1, 2);
+            fields_grid.attach (cc_label, 0, 1);
+            fields_grid.attach (cc_val_label, 1, 1);
         }
 
         var starred_icon = new Gtk.Image ();
@@ -200,6 +203,13 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         };
         actions_menu_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
+        var header_vgrid = new Gtk.Grid () {
+            valign = START
+        };
+        header_vgrid.attach (from_label, 0, 0);
+        header_vgrid.attach (datetime_label, 1, 0);
+        header_vgrid.attach (fields_revealer, 0, 1, 2);
+
         var header = new Gtk.Box (HORIZONTAL, 12) {
             margin_top = 12,
             margin_bottom = 12,
@@ -207,7 +217,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             margin_end = 12
         };
         header.add (avatar);
-        header.add (fields_grid);
+        header.add (header_vgrid);
 
         var header_event_box = new Gtk.EventBox ();
         header_event_box.events |= Gdk.EventMask.ENTER_NOTIFY_MASK;
