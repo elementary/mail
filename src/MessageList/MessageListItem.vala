@@ -123,7 +123,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             ///TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
             new DateTime.from_unix_utc (relevant_timestamp).to_local ().format (_("%s at %s").printf (date_format, time_format))
         ) {
-            halign = END
+            halign = END,
+            valign = START
         };
         datetime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
