@@ -17,12 +17,17 @@
     padding: 0.75rem 0;
 }
 
+.message-list list > .h4 + .h4 {
+    margin-bottom: 2.75em;
+}
+
 .message-list-item {
     margin: 0.75rem 0;
 }
 
-.message-list-item.collapsed {
-    margin-bottom: 0.25rem;
+.message-list-item.collapsed + .message-list-item {
+    margin-top: -3.25em;
+    margin-bottom: 1em;
 }
 
 .conversation-list-item {
