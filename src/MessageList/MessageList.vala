@@ -15,6 +15,7 @@ public class Mail.MessageList : Gtk.Box {
 
     construct {
         get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
+        get_style_context ().add_class ("message-list");
 
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 

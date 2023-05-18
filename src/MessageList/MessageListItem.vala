@@ -62,13 +62,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private GLib.Settings settings;
 
     public MessageListItem (Camel.MessageInfo message_info) {
-        Object (
-            margin_top: 12,
-            margin_bottom: 12,
-            margin_start: 12,
-            margin_end: 12,
-            message_info: message_info
-        );
+        Object (message_info: message_info);
     }
 
     static construct {
@@ -81,6 +75,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         style_context = get_style_context ();
         style_context.add_class (Granite.STYLE_CLASS_CARD);
+        style_context.add_class ("message-list-item");
 
         unowned string? parsed_address;
         unowned string? parsed_name;
