@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-17 16:14+0000\n"
-"PO-Revision-Date: 2023-03-30 14:59+0000\n"
+"PO-Revision-Date: 2023-05-17 21:00+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
 "Language: he\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
@@ -239,13 +239,10 @@ msgid "Undo"
 msgstr "ביטול"
 
 #: src/MainWindow.vala:267
-#, fuzzy
-#| msgid "Message Deleted"
-#| msgid_plural "Messages Deleted"
 msgid "Message Archived"
 msgid_plural "Messages Archived"
-msgstr[0] "הודעה נמחקה"
-msgstr[1] "הודעות נמחקו"
+msgstr[0] "הודעה הועברה לארכיון"
+msgstr[1] "הודעות הועברו לארכיון"
 
 #: src/MainWindow.vala:277
 msgid "Message Deleted"
