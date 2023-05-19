@@ -361,6 +361,10 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         contact_manager.setup_entry (cc_val);
         contact_manager.setup_entry (bcc_val);
 
+        from_combo.changed.connect (() => {
+            set_signature.begin ();
+        });
+
         load_from_combobox ();
         from_revealer.reveal_child = from_combo.model.iter_n_children (null) > 1;
 
@@ -885,6 +889,15 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         message.content = body;
 
         return message;
+    }
+
+    private async void set_signature () {
+        var sender = from_combo.get_active_text ();
+
+        unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+        var signature = yield session.get_signature_for_sender (sender);
+
+        web_view.set_signature_content (signature); //TODO look at how loading is done and maybe add an set_signature method <-> set_body_content
     }
 
     private void load_from_combobox () {

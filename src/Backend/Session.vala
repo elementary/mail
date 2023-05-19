@@ -549,6 +549,36 @@ public class Mail.Backend.Session : Camel.Session {
         }
     }
 
+    public async string get_signature_for_sender (string sender) {
+        var sender_address = new Camel.InternetAddress ();
+        sender_address.unformat (sender);
+
+        var store = get_camel_store_from_email (sender_address);
+        if (store == null) {
+            return "";
+        }
+        var identity_source = get_identity_source_for_service (store);
+        var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+
+        var signature_source = ref_source (identity_extension.signature_uid);
+
+        if (signature_source == null) {
+            return "";
+        }
+
+        string signature;
+        size_t length;
+        try {
+            if (yield signature_source.mail_signature_load (GLib.Priority.DEFAULT, null, out signature, out length)) {
+                return signature;
+            }
+        } catch (Error e) {
+            warning (e.message);
+        }
+
+        return "";
+    }
+
     private class MessageInfo: Camel.MessageInfoBase {
         public MessageInfo (Camel.MessageFlags flags) {
             Object (flags: flags);
