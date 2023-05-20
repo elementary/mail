@@ -530,7 +530,7 @@ public class Mail.ConversationList : Gtk.Box {
     }
 
     public void expire_undo () {
-        move_handler.expire_undo.begin ();
+        move_handler.expire_all ();
         undo_expired ();
     }
 

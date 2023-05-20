@@ -17,7 +17,7 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class Mail.MoveHandler {
+public class Mail.MoveHandler : Object {
     public enum MoveType {
         ARCHIVE,
         TRASH,
@@ -26,39 +26,43 @@ public class Mail.MoveHandler {
 
     private const int TIMEOUT_DURATION = 5;
 
-    private Camel.Folder src_folder;
-    private Camel.Folder? dst_folder;
-    private Gee.ArrayList<weak Camel.MessageInfo> moved_messages;
-    private MoveType move_type;
+    private HashTable<uint, MoveOperation?> move_operations_by_timeout_id;
+    private uint last_move_id = 0;
 
-    private uint timeout_id = 0;
+    private struct MoveOperation {
+        Camel.Folder src_folder;
+        Camel.Folder? dst_folder;
+        MoveType move_type;
+        Gee.ArrayList<weak Camel.MessageInfo> moved_messages;
+    }
+
+    construct {
+        move_operations_by_timeout_id = new HashTable<uint, MoveOperation?> (null, null);
+    }
 
     public async int move_messages (Camel.Folder source_folder, MoveType _move_type, Gee.ArrayList<unowned Camel.FolderThreadNode?> threads, Variant? dest_folder) throws Error {
-        src_folder.freeze ();
+        MoveOperation operation = MoveOperation ();
+        operation.src_folder = source_folder;
+        operation.dst_folder = null;
+        operation.move_type = _move_type;
 
-        yield expire_undo ();
-
-        src_folder = source_folder;
-        dst_folder = null;
-        move_type = _move_type;
-
-        switch (move_type) {
+        switch (operation.move_type) {
             case ARCHIVE:
-                var archive_folder_uri = get_archive_folder_uri_from_folder (source_folder);
+                var archive_folder_uri = get_archive_folder_uri_from_folder (operation, source_folder);
                 Camel.Store dest_store;
                 string dest_folder_full_name;
                 if (!get_folder_from_uri (archive_folder_uri, out dest_store, out dest_folder_full_name)) {
                     return 0;
                 }
-                dst_folder = yield dest_store.get_folder (dest_folder_full_name, Camel.StoreGetFolderFlags.NONE, GLib.Priority.DEFAULT, null);
+                operation.dst_folder = yield dest_store.get_folder (dest_folder_full_name, Camel.StoreGetFolderFlags.NONE, GLib.Priority.DEFAULT, null);
                 break;
 
             case TRASH:
-                var store = src_folder.parent_store;
+                var store = operation.src_folder.parent_store;
                 if (Camel.StoreFlags.VTRASH in ((Camel.StoreFlags)store.get_flags ())) {
-                    move_type = VTRASH;
+                    operation.move_type = VTRASH;
                 } else {
-                    dst_folder = yield store.get_trash_folder (GLib.Priority.DEFAULT);
+                    operation.dst_folder = yield store.get_trash_folder (GLib.Priority.DEFAULT);
                 }
                 break;
 
@@ -66,28 +70,33 @@ public class Mail.MoveHandler {
                 throw new OptionError.BAD_VALUE ("MoveType.VTRASH: Invalid value"); //TODO: Correct error here?
         }
 
-        if ((dst_folder == null && move_type != VTRASH) || dst_folder == src_folder) {
+        if ((operation.dst_folder == null && operation.move_type != VTRASH) || operation.dst_folder == operation.src_folder) {
             return 0;
         }
 
-        moved_messages = new Gee.ArrayList<weak Camel.MessageInfo> ();
+        operation.moved_messages = new Gee.ArrayList<weak Camel.MessageInfo> ();
 
         foreach (unowned var thread in threads) {
-            collect_thread_messages (thread);
+            collect_thread_messages (operation, thread);
         }
 
-        foreach (var info in moved_messages) {
+        operation.src_folder.freeze ();
+
+        foreach (var info in operation.moved_messages) {
             info.set_flags (Camel.MessageFlags.DELETED, ~0);
         }
 
-        src_folder.thaw ();
-
+        operation.src_folder.thaw ();
+        uint timeout_id = 0;
         timeout_id = GLib.Timeout.add_seconds (TIMEOUT_DURATION, () => {
-            expire_undo.begin ();
+            expire_undo.begin (timeout_id);
             return Source.REMOVE;
         });
 
-        return moved_messages.size;
+        move_operations_by_timeout_id.set (timeout_id, operation);
+        last_move_id = timeout_id;
+
+        return operation.moved_messages.size;
     }
 
     private bool get_folder_from_uri (string uri, out Camel.Store? store, out string? folder_name) throws GLib.Error {
@@ -129,7 +138,7 @@ public class Mail.MoveHandler {
         return false;
     }
 
-    private string? get_archive_folder_uri_from_folder (Camel.Folder folder) {
+    private string? get_archive_folder_uri_from_folder (MoveOperation operation, Camel.Folder folder) {
         unowned Camel.Store store = (Camel.Store)folder.get_parent_store ();
 
         if (folder is Camel.VeeFolder) {
@@ -138,7 +147,7 @@ public class Mail.MoveHandler {
             store = null;
             unowned Camel.Folder? orig_folder = null;
 
-            foreach (unowned Camel.MessageInfo message in moved_messages) {
+            foreach (unowned Camel.MessageInfo message in operation.moved_messages) {
                 orig_folder = vee_folder.get_vee_uid_folder (message.uid);
                 if (orig_folder != null) {
                     if (store != null && orig_folder.get_parent_store () != store) {
@@ -161,57 +170,65 @@ public class Mail.MoveHandler {
     }
 
     public void undo_last_move () {
-        if (timeout_id == 0) {
+        if (last_move_id == 0) {
             return;
         }
 
-        Source.remove (timeout_id);
-        timeout_id = 0;
+        Source.remove (last_move_id);
+        var operation = move_operations_by_timeout_id.take (last_move_id);
+        last_move_id = 0;
 
-        src_folder.freeze ();
+        operation.src_folder.freeze ();
 
-        foreach (var info in moved_messages) {
+        foreach (var info in operation.moved_messages) {
             info.set_flags (Camel.MessageFlags.DELETED, 0);
         }
 
-        src_folder.thaw ();
+        operation.src_folder.thaw ();
     }
 
-    public async void expire_undo () {
-        if (timeout_id == 0 || move_type == VTRASH) {
+    public void expire_all () {
+        foreach (var id in move_operations_by_timeout_id.get_keys ()) {
+            expire_undo.begin (id);
+        }
+    }
+
+    public async void expire_undo (uint id) {
+        Source.remove (id);
+
+        var operation = move_operations_by_timeout_id.take (id);
+
+        if (operation.move_type == MoveHandler.MoveType.VTRASH) {
             return;
         }
 
-        Source.remove (timeout_id);
-        timeout_id = 0;
-
         var message_uids = new GenericArray<string> ();
-        foreach (unowned var message in moved_messages) {
+        foreach (unowned var message in operation.moved_messages) {
             message_uids.add (message.uid);
         }
 
-        dst_folder.freeze ();
-        src_folder.freeze ();
+        operation.dst_folder.freeze ();
+        operation.src_folder.freeze ();
 
-        foreach (var info in moved_messages) {
+        foreach (var info in operation.moved_messages) {
             info.set_flags (Camel.MessageFlags.DELETED, 0);
         }
 
         try {
-            yield src_folder.transfer_messages_to (message_uids, dst_folder, true, GLib.Priority.DEFAULT, null, null);
+            yield operation.src_folder.transfer_messages_to (message_uids, operation.dst_folder, true, GLib.Priority.DEFAULT, null, null);
         } catch (Error e) {
             critical (e.message);
         }
 
-        dst_folder.thaw ();
-        src_folder.thaw ();
+        operation.dst_folder.thaw ();
+        operation.src_folder.thaw ();
     }
 
-    private void collect_thread_messages (Camel.FolderThreadNode thread) {
-        moved_messages.add (thread.message);
+    private void collect_thread_messages (MoveOperation operation, Camel.FolderThreadNode thread) {
+        operation.moved_messages.add (thread.message);
         unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.child;
         while (child != null) {
-            collect_thread_messages (child);
+            collect_thread_messages (operation, child);
             child = (Camel.FolderThreadNode?) child.next;
         }
     }
