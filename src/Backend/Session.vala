@@ -549,6 +549,25 @@ public class Mail.Backend.Session : Camel.Session {
         }
     }
 
+    public async void set_signature_for_service (Camel.Service service, string signature) throws Error {
+        var identity_source = get_identity_source_for_service (service);
+        var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+
+        var signature_source = ref_source (identity_extension.signature_uid);
+
+        if (signature_source == null) {
+            var uid = "sdfsdaf";
+            /* We don't really need anything else here not even the SourceMailSignature extension
+               because we asume the mime type to always be html */
+            signature_source = new E.Source.with_uid (uid, null);
+            identity_extension.signature_uid = uid;
+            yield identity_source.write (null);
+            yield registry.commit_source (signature_source, null);
+        }
+
+        yield signature_source.mail_signature_replace (signature, signature.length, GLib.Priority.DEFAULT, null);
+    }
+
     public async string get_signature_for_sender (string sender) {
         var sender_address = new Camel.InternetAddress ();
         sender_address.unformat (sender);
