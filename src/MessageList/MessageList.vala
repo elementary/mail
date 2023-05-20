@@ -108,7 +108,7 @@ public class Mail.MessageList : Gtk.Box {
         mark_menu.show_all ();
 
         var mark_button = new Gtk.MenuButton () {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK,
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MODIFY,
             image = new Gtk.Image.from_icon_name ("edit-mark", Gtk.IconSize.LARGE_TOOLBAR),
             popup = mark_menu,
             tooltip_text = _("Mark Conversation")
@@ -117,6 +117,7 @@ public class Mail.MessageList : Gtk.Box {
         move_menu = new Menu ();
 
         move_button = new Gtk.MenuButton () {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MODIFY,
             image = new Gtk.Image.from_icon_name ("folder", Gtk.IconSize.LARGE_TOOLBAR),
             tooltip_text = _("Move Conversation to…"),
             menu_model = move_menu
@@ -338,9 +339,10 @@ public class Mail.MessageList : Gtk.Box {
 
     private void can_move_thread (bool enabled) {
         unowned var main_window = (Gtk.ApplicationWindow) get_toplevel ();
-        move_button.sensitive = enabled;
+        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MODIFY)).set_enabled (enabled);
+
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_ARCHIVE)).set_enabled (enabled);
-        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MARK)).set_enabled (enabled);
+        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE)).set_enabled (enabled);
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE_TO_TRASH)).set_enabled (enabled);
     }
 

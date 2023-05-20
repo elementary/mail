@@ -40,7 +40,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     public const string ACTION_REPLY_ALL = "reply-all";
     public const string ACTION_FORWARD = "forward";
     public const string ACTION_PRINT = "print";
-    public const string ACTION_MARK = "mark";
+    public const string ACTION_MODIFY = "modify";
     public const string ACTION_MARK_READ = "mark-read";
     public const string ACTION_MARK_STAR = "mark-star";
     public const string ACTION_MARK_UNREAD = "mark-unread";
@@ -59,7 +59,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         {ACTION_REPLY_ALL, action_compose, "s" },
         {ACTION_FORWARD, action_compose, "s" },
         {ACTION_PRINT, on_print, "s" },
-        {ACTION_MARK, null }, // Stores enabled state only
+        {ACTION_MODIFY, null }, // Stores enabled state only
         {ACTION_MARK_READ, on_mark_read },
         {ACTION_MARK_STAR, on_mark_star },
         {ACTION_MARK_UNREAD, on_mark_unread },
