@@ -20,7 +20,7 @@
 
 public class Mail.Page : Object {
     private const string[] ALLOWED_SCHEMES = { "cid", "data", "about", "elementary-mail" };
-    private const string EXPAND_BODY = """
+    private const string JS_EXPAND_BODY = """
         var body = document.querySelector('#elementary-message-body');
         var signature = document.querySelector('#elementary-message-signature');
         var quote = document.querySelector('#elementary-message-quote');
@@ -31,7 +31,7 @@ public class Mail.Page : Object {
         }
     """;
 
-    private const string CLEAN_HTML = """
+    private const string JS_CLEAN_HTML = """
         var body = document.querySelector('#elementary-message-body');
         body.removeAttribute ("contenteditable");
         body.removeAttribute ("class");
@@ -76,18 +76,18 @@ public class Mail.Page : Object {
                 var signature = js_context.evaluate ("document.querySelector('#elementary-message-signature')", -1);
                 signature.object_set_property ("hidden", new JSC.Value.boolean (js_context, signature_content.strip () == ""));
                 signature.object_set_property ("innerHTML", new JSC.Value.string (js_context, signature_content));
-                js_context.evaluate (EXPAND_BODY, -1);
+                js_context.evaluate (JS_EXPAND_BODY, -1);
                 return true;
             case "set-quote-content":
                 unowned string quote_content = message.parameters.get_string ();
                 var quote = js_context.evaluate ("document.querySelector('#elementary-message-quote')", -1);
                 quote.object_set_property ("hidden", new JSC.Value.boolean (js_context, quote_content.strip () == ""));
                 quote.object_set_property ("innerHTML", new JSC.Value.string (js_context, quote_content));
-                js_context.evaluate (EXPAND_BODY, -1);
+                js_context.evaluate (JS_EXPAND_BODY, -1);
                 return true;
             case "get-message-html":
                 if (message.parameters.get_boolean ()) {
-                    js_context.evaluate (CLEAN_HTML, -1);
+                    js_context.evaluate (JS_CLEAN_HTML, -1);
                 }
                 JSC.Value val = js_context.evaluate ("document.querySelector('body').innerHTML;", -1);
                 message.send_reply (new WebKit.UserMessage ("get-body-html", new Variant.take_string (val.to_string ())));
@@ -96,7 +96,7 @@ public class Mail.Page : Object {
                 unowned string message_html = message.parameters.get_string ();
                 var body = js_context.evaluate ("document.querySelector('body')", -1);
                 body.object_set_property ("innerHTML", new JSC.Value.string (js_context, message_html));
-                js_context.evaluate (EXPAND_BODY, -1);
+                js_context.evaluate (JS_EXPAND_BODY, -1);
                 return true;
             case "get-page-height":
                 JSC.Value val = js_context.evaluate ("""
