@@ -277,10 +277,10 @@ public class Mail.WebView : WebKit.WebView {
     }
 
     public void set_message_html (owned string message_html) {
-        if (!message_html.contains ("message-body")) {
+        if (!message_html.contains ("elementary-message-body")) {
             //We have to asume the message wasn't created using the elementary mail composer
             //and therefore doesn't have tags with the necessary ids
-            set_body_content (message_html);
+            set_body_content ((owned) message_html);
             return;
         }
 

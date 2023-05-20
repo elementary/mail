@@ -21,9 +21,9 @@
 public class Mail.Page : Object {
     private const string[] ALLOWED_SCHEMES = { "cid", "data", "about", "elementary-mail" };
     private const string EXPAND_BODY = """
-        var body = document.querySelector('#message-body');
-        var signature = document.querySelector('#message-signature');
-        var quote = document.querySelector('#message-quote');
+        var body = document.querySelector('#elementary-message-body');
+        var signature = document.querySelector('#elementary-message-signature');
+        var quote = document.querySelector('#elementary-message-quote');
         if (!signature.hidden || !quote.hidden) {
             body.classList.remove ('fill');
         } else {
@@ -32,18 +32,18 @@ public class Mail.Page : Object {
     """;
 
     private const string CLEAN_HTML = """
-        var body = document.querySelector('#message-body');
+        var body = document.querySelector('#elementary-message-body');
         body.removeAttribute ("contenteditable");
         body.removeAttribute ("class");
 
-        var signature = document.querySelector('#message-signature');
+        var signature = document.querySelector('#elementary-message-signature');
         if (signature.hidden) {
             signature.remove ();
         } else {
             signature.removeAttribute ("contenteditable");
         }
 
-        var quote = document.querySelector('#message-quote');
+        var quote = document.querySelector('#elementary-message-quote');
         if (quote.hidden) {
             quote.remove ();
         } else {
@@ -68,19 +68,19 @@ public class Mail.Page : Object {
         switch (message.name) {
             case "set-body-content":
                 unowned string body_content = message.parameters.get_string ();
-                var body = js_context.evaluate ("document.querySelector('#message-body')", -1);
+                var body = js_context.evaluate ("document.querySelector('#elementary-message-body')", -1);
                 body.object_set_property ("innerHTML", new JSC.Value.string (js_context, body_content));
                 return true;
             case "set-signature-content":
                 unowned string signature_content = message.parameters.get_string ();
-                var signature = js_context.evaluate ("document.querySelector('#message-signature')", -1);
+                var signature = js_context.evaluate ("document.querySelector('#elementary-message-signature')", -1);
                 signature.object_set_property ("hidden", new JSC.Value.boolean (js_context, signature_content.strip () == ""));
                 signature.object_set_property ("innerHTML", new JSC.Value.string (js_context, signature_content));
                 js_context.evaluate (EXPAND_BODY, -1);
                 return true;
             case "set-quote-content":
                 unowned string quote_content = message.parameters.get_string ();
-                var quote = js_context.evaluate ("document.querySelector('#message-quote')", -1);
+                var quote = js_context.evaluate ("document.querySelector('#elementary-message-quote')", -1);
                 quote.object_set_property ("hidden", new JSC.Value.boolean (js_context, quote_content.strip () == ""));
                 quote.object_set_property ("innerHTML", new JSC.Value.string (js_context, quote_content));
                 js_context.evaluate (EXPAND_BODY, -1);
