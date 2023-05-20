@@ -340,7 +340,6 @@ public class Mail.MessageList : Gtk.Box {
     private void can_move_thread (bool enabled) {
         unowned var main_window = (Gtk.ApplicationWindow) get_toplevel ();
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MODIFY)).set_enabled (enabled);
-
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_ARCHIVE)).set_enabled (enabled);
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE)).set_enabled (enabled);
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE_TO_TRASH)).set_enabled (enabled);
