@@ -26,7 +26,7 @@ public class Mail.MoveHandler : Object {
         VTRASH
     }
 
-    private class MoveOperation : Object {
+    private class MoveOperation {
         public Camel.Folder src_folder;
         public Camel.Folder? dst_folder;
         public MoveType move_type;
