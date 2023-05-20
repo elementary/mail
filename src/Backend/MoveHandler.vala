@@ -26,24 +26,24 @@ public class Mail.MoveHandler : Object {
         VTRASH
     }
 
-    private const int TIMEOUT_DURATION = 5;
-
-    private HashTable<uint, MoveOperation?> move_operations_by_timeout_id;
-    private uint last_move_id = 0;
-
-    private struct MoveOperation {
-        Camel.Folder src_folder;
-        Camel.Folder? dst_folder;
-        MoveType move_type;
-        Gee.ArrayList<weak Camel.MessageInfo> moved_messages;
+    private class MoveOperation : Object {
+        public Camel.Folder src_folder;
+        public Camel.Folder? dst_folder;
+        public MoveType move_type;
+        public Gee.ArrayList<weak Camel.MessageInfo> moved_messages;
     }
 
+    private const int TIMEOUT_DURATION = 5;
+
+    private HashTable<uint, MoveOperation> move_operations_by_timeout_id;
+    private uint last_move_id = 0;
+
     construct {
-        move_operations_by_timeout_id = new HashTable<uint, MoveOperation?> (null, null);
+        move_operations_by_timeout_id = new HashTable<uint, MoveOperation> (null, null);
     }
 
     public async int move_messages (Camel.Folder source_folder, MoveType _move_type, Gee.ArrayList<unowned Camel.FolderThreadNode?> threads, Variant? dest_folder) throws Error {
-        var operation = MoveOperation () {
+        var operation = new MoveOperation () {
             src_folder = source_folder,
             dst_folder = null,
             move_type = _move_type
@@ -90,6 +90,7 @@ public class Mail.MoveHandler : Object {
         }
 
         operation.src_folder.thaw ();
+
         uint timeout_id = 0;
         timeout_id = GLib.Timeout.add_seconds (TIMEOUT_DURATION, () => {
             expire_undo.begin (timeout_id);
