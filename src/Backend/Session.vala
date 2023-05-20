@@ -556,10 +556,12 @@ public class Mail.Backend.Session : Camel.Session {
         var signature_source = ref_source (identity_extension.signature_uid);
 
         if (signature_source == null) {
-            var uid = "sdfsdaf";
+            var uid = "%s-signature-source".printf (identity_source.uid);
             /* We don't really need anything else here not even the SourceMailSignature extension
                because we asume the mime type to always be html */
-            signature_source = new E.Source.with_uid (uid, null);
+            signature_source = new E.Source.with_uid (uid, null) {
+                parent = identity_source.uid
+            };
             identity_extension.signature_uid = uid;
             yield identity_source.write (null);
             yield registry.commit_source (signature_source, null);
