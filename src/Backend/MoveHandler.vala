@@ -20,6 +20,7 @@
 public class Mail.MoveHandler {
     public enum MoveType {
         ARCHIVE,
+        MOVE,
         TRASH,
         VTRASH
     }
@@ -34,8 +35,6 @@ public class Mail.MoveHandler {
     private uint timeout_id = 0;
 
     public async int move_messages (Camel.Folder source_folder, MoveType _move_type, Gee.ArrayList<unowned Camel.FolderThreadNode?> threads, Variant? dest_folder) throws Error {
-        src_folder.freeze ();
-
         yield expire_undo ();
 
         src_folder = source_folder;
@@ -53,6 +52,12 @@ public class Mail.MoveHandler {
                 dst_folder = yield dest_store.get_folder (dest_folder_full_name, Camel.StoreGetFolderFlags.NONE, GLib.Priority.DEFAULT, null);
                 break;
 
+            case MOVE:
+                var dest_folder_full_name = dest_folder.get_string ();
+                var store = src_folder.parent_store;
+                dst_folder = yield store.get_folder (dest_folder_full_name, Camel.StoreGetFolderFlags.NONE, GLib.Priority.DEFAULT, null);
+                break;
+
             case TRASH:
                 var store = src_folder.parent_store;
                 if (Camel.StoreFlags.VTRASH in ((Camel.StoreFlags)store.get_flags ())) {
@@ -63,7 +68,7 @@ public class Mail.MoveHandler {
                 break;
 
             case VTRASH:
-                throw new OptionError.BAD_VALUE ("MoveType.VTRASH: Invalid value"); //TODO: Correct error here?
+                throw new OptionError.BAD_VALUE ("MoveType.VTRASH: Invalid value");
         }
 
         if ((dst_folder == null && move_type != VTRASH) || dst_folder == src_folder) {
@@ -75,6 +80,8 @@ public class Mail.MoveHandler {
         foreach (unowned var thread in threads) {
             collect_thread_messages (thread);
         }
+
+        src_folder.freeze ();
 
         foreach (var info in moved_messages) {
             info.set_flags (Camel.MessageFlags.DELETED, ~0);
@@ -178,12 +185,16 @@ public class Mail.MoveHandler {
     }
 
     public async void expire_undo () {
-        if (timeout_id == 0 || move_type == VTRASH) {
+        if (timeout_id == 0) {
             return;
         }
 
         Source.remove (timeout_id);
         timeout_id = 0;
+
+        if (move_type == VTRASH) {
+            return;
+        }
 
         var message_uids = new GenericArray<string> ();
         foreach (unowned var message in moved_messages) {
