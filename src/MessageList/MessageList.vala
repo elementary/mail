@@ -120,7 +120,8 @@ public class Mail.MessageList : Gtk.Box {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MODIFY,
             image = new Gtk.Image.from_icon_name ("folder", Gtk.IconSize.LARGE_TOOLBAR),
             tooltip_text = _("Move Conversation to…"),
-            menu_model = move_menu
+            menu_model = move_menu,
+            use_popover = false
         };
 
         var archive_button = new Gtk.Button.from_icon_name ("mail-archive", Gtk.IconSize.LARGE_TOOLBAR) {
