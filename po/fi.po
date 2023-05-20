@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-17 16:14+0000\n"
-"PO-Revision-Date: 2022-09-08 07:19+0000\n"
+"PO-Revision-Date: 2023-05-20 04:06+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/mail/fi/>\n"
 "Language: fi\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
@@ -237,13 +237,10 @@ msgid "Undo"
 msgstr "Kumoa"
 
 #: src/MainWindow.vala:267
-#, fuzzy
-#| msgid "Message Deleted"
-#| msgid_plural "Messages Deleted"
 msgid "Message Archived"
 msgid_plural "Messages Archived"
-msgstr[0] "Viesti poistettu"
-msgstr[1] "Viestit poistettu"
+msgstr[0] "Viesti arkistoitu"
+msgstr[1] "Viestit arkistoitu"
 
 #: src/MainWindow.vala:277
 msgid "Message Deleted"
@@ -460,7 +457,7 @@ msgstr "Sähköpostin tulostaminen epäonnistui"
 #: src/MessageList/MessageListItem.vala:671
 #, c-format
 msgid "Trust and open “%s”?"
-msgstr ""
+msgstr "Luotatko ja haluatko avata “%s”?"
 
 #: src/MessageList/MessageListItem.vala:672
 msgid ""
