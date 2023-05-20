@@ -161,7 +161,7 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem {
 
     public override Gtk.Menu? get_context_menu () {
         var menu = new Gtk.Menu ();
-        var signature_item = new Gtk.MenuItem.with_label (_("Manage Signatures"));
+        var signature_item = new Gtk.MenuItem.with_label (_("Manage Signature"));
         menu.add (signature_item);
         menu.show_all ();
 

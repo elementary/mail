@@ -3,6 +3,7 @@
   <gresource prefix="/io/elementary/mail">
     <file alias="application.css" compressed="true">application.css</file>
     <file alias="blank-message-template.html" compressed="true">blank-message-template.html</file>
+    <file alias="editor-template.html" compressed="true">editor-template.html</file>
   </gresource>
   <gresource prefix="/io/elementary/mail/icons">
     <file alias="16x16/places/mail-drafts.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-drafts/16.svg</file>

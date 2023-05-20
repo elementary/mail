@@ -17,64 +17,13 @@
 
 
 public class SignatureDialog : Granite.Dialog {
-    private const string HTML = """<!DOCTYPE html>
-    <html>
-    <head>
-        <title></title>
-        <style>
-            :root {
-                --bg-color: white;
-                --fg-color: black;
-            }
-
-            @media (prefers-color-scheme: dark) {
-                :root {
-                    --bg-color: #3A3A3A;
-                    --fg-color: white;
-                }
-            }
-
-            html {
-                height: 100%;
-            }
-            body {
-                margin: 0px !important;
-                padding: 0 !important;
-                background-color: var(--bg-color) !important;
-                color: var(--fg-color);
-                font-size: medium !important;
-                height: 100% !important;
-                box-sizing: border-box;
-                padding: 6px !important;
-                outline: 0px solid transparent;
-            }
-            body.plain, body.plain * {
-                font-family: monospace !important;
-                font-weight: normal;
-                font-style: normal;
-                font-size: medium !important;
-                color: var(--fg-color);
-                text-decoration: none;
-            }
-            body.plain a {
-                cursor: text;
-            }
-        </style>
-    </head>
-    <body>
-        %s
-    </body>
-    </html>""";
-
     private Camel.Service service;
     private Mail.WebView web_view;
 
     public SignatureDialog (Camel.Service service) {
         this.service = service;
 
-        var entry_label = new Gtk.Label (_("Signature:")) {
-            halign = START
-        };
+        var entry_label = new Granite.HeaderLabel (_("Signature:"));
 
         web_view = new Mail.WebView () {
             is_composer = true,
@@ -118,9 +67,14 @@ public class SignatureDialog : Granite.Dialog {
     }
 
     private async void get_signature () {
-        unowned var session = Mail.Backend.Session.get_default ();
-        var signature = yield session.get_signature_for_service (service);
-        web_view.load_html (HTML.printf (signature));
+        try {
+            var template = resources_lookup_data ("/io/elementary/mail/editor-template.html", ResourceLookupFlags.NONE);
+            unowned var session = Mail.Backend.Session.get_default ();
+            var signature = yield session.get_signature_for_service (service);
+            web_view.load_html (((string)template.get_data ()).printf (signature));
+        } catch (Error e) {
+            warning ("Failed to load blank message template: %s", e.message);
+        }
     }
 
     private async void set_signature () {
