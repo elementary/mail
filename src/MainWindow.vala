@@ -46,6 +46,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     public const string ACTION_MARK_UNREAD = "mark-unread";
     public const string ACTION_MARK_UNSTAR = "mark-unstar";
     public const string ACTION_ARCHIVE = "archive";
+    public const string ACTION_MOVE = "move";
     public const string ACTION_MOVE_TO_TRASH = "trash";
     public const string ACTION_FULLSCREEN = "full-screen";
 
@@ -64,6 +65,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         {ACTION_MARK_UNREAD, on_mark_unread },
         {ACTION_MARK_UNSTAR, on_mark_unstar },
         {ACTION_ARCHIVE, action_move },
+        {ACTION_MOVE, action_move, "s" },
         {ACTION_MOVE_TO_TRASH, action_move },
         {ACTION_FULLSCREEN, on_fullscreen },
     };
@@ -265,6 +267,16 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                     var result = conversation_list.move_selected_messages.end (res);
                     if (result > 0) {
                         toast.title = ngettext ("Message Archived", "Messages Archived", result);
+                        toast.send_notification ();
+                    }
+                });
+                break;
+
+            case ACTION_MOVE:
+                conversation_list.move_selected_messages.begin (MoveHandler.MoveType.MOVE, parameter, (obj, res) => {
+                    var result = conversation_list.move_selected_messages.end (res);
+                    if (result > 0) {
+                        toast.title = ngettext ("Message Moved", "Messages Moved", result);
                         toast.send_notification ();
                     }
                 });

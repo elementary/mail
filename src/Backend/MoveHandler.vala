@@ -53,7 +53,7 @@ public class Mail.MoveHandler {
                 break;
 
             case MOVE:
-                var dest_folder_full_name = dest_folder.get_string ();
+                unowned var dest_folder_full_name = dest_folder.get_string ();
                 var store = src_folder.parent_store;
                 dst_folder = yield store.get_folder (dest_folder_full_name, Camel.StoreGetFolderFlags.NONE, GLib.Priority.DEFAULT, null);
                 break;
