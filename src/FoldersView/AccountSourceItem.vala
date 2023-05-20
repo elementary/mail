@@ -158,4 +158,34 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem {
             critical (e.message);
         }
     }
+
+    public override Gtk.Menu? get_context_menu () {
+        var menu = new Gtk.Menu ();
+        var signature_item = new Gtk.MenuItem.with_label (_("Manage Signatures"));
+        menu.add (signature_item);
+        menu.show_all ();
+
+        signature_item.activate.connect (() => {
+            unowned var application = (Gtk.Application) GLib.Application.get_default ();
+            MainWindow? main_window = null;
+            foreach (unowned var window in application.get_windows ()) {
+                if (window is MainWindow) {
+                    main_window = (MainWindow) window;
+                    break;
+                }
+            }
+
+            var dialog = new SignatureDialog () {
+                transient_for = main_window
+            };
+
+            dialog.set_signature.connect ((signature) => {
+                unowned var session = Mail.Backend.Session.get_default ();
+                session.set_signature_for_service.begin (account.service, signature);
+            });
+
+            dialog.present ();
+        });
+        return menu;
+    }
 }
