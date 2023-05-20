@@ -578,7 +578,12 @@ public class Mail.Backend.Session : Camel.Session {
         if (store == null) {
             return "";
         }
-        var identity_source = get_identity_source_for_service (store);
+
+        return yield get_signature_for_service (store);
+    }
+
+    public async string get_signature_for_service (Camel.Service service) {
+        var identity_source = get_identity_source_for_service (service);
         var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
 
         var signature_source = ref_source (identity_extension.signature_uid);

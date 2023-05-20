@@ -175,14 +175,9 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem {
                 }
             }
 
-            var dialog = new SignatureDialog () {
+            var dialog = new SignatureDialog (account.service) {
                 transient_for = main_window
             };
-
-            dialog.set_signature.connect ((signature) => {
-                unowned var session = Mail.Backend.Session.get_default ();
-                session.set_signature_for_service.begin (account.service, signature);
-            });
 
             dialog.present ();
         });
