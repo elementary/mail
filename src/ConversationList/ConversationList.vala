@@ -144,8 +144,16 @@ public class Mail.ConversationList : Gtk.Box {
         refresh_stack.add_named (refresh_spinner, "spinner");
         refresh_stack.visible_child = refresh_button;
 
+        var move_spinner = new Gtk.Spinner () {
+            active = true,
+            halign = Gtk.Align.CENTER,
+            valign = Gtk.Align.CENTER,
+            no_show_all = true
+        };
+
         var conversation_action_bar = new Gtk.ActionBar ();
         conversation_action_bar.pack_start (refresh_stack);
+        conversation_action_bar.pack_end (move_spinner);
         conversation_action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         add (search_header);
@@ -212,6 +220,15 @@ public class Mail.ConversationList : Gtk.Box {
 
         hide_unstarred_switch.toggled.connect (() => load_folder.begin (folder_full_name_per_account));
 
+        move_handler.queue_updated.connect ((queued_messages) => {
+            if (queued_messages == 0) {
+                move_spinner.hide ();
+            } else {
+                move_spinner.tooltip_text = _("Moving messages… (%u remaining)").printf (queued_messages);
+                move_spinner.show ();
+            }
+        });
+
         button_release_event.connect ((e) => {
 
             if (e.button != Gdk.BUTTON_SECONDARY) {
@@ -264,7 +281,6 @@ public class Mail.ConversationList : Gtk.Box {
 
         conversation_focused (null);
         conversation_selected (null);
-        expire_undo ();
 
         uint previous_items = list_store.get_n_items ();
         lock (conversations) {
@@ -527,11 +543,6 @@ public class Mail.ConversationList : Gtk.Box {
         }
 
         return moved;
-    }
-
-    public void expire_undo () {
-        move_handler.expire_all ();
-        undo_expired ();
     }
 
     public void undo_move () {

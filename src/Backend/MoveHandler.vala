@@ -18,6 +18,8 @@
  */
 
 public class Mail.MoveHandler : Object {
+    public signal void queue_updated (uint queued_messages);
+
     public enum MoveType {
         ARCHIVE,
         TRASH,
@@ -41,14 +43,15 @@ public class Mail.MoveHandler : Object {
     }
 
     public async int move_messages (Camel.Folder source_folder, MoveType _move_type, Gee.ArrayList<unowned Camel.FolderThreadNode?> threads, Variant? dest_folder) throws Error {
-        MoveOperation operation = MoveOperation ();
-        operation.src_folder = source_folder;
-        operation.dst_folder = null;
-        operation.move_type = _move_type;
+        var operation = MoveOperation () {
+            src_folder = source_folder,
+            dst_folder = null,
+            move_type = _move_type
+        };
 
         switch (operation.move_type) {
             case ARCHIVE:
-                var archive_folder_uri = get_archive_folder_uri_from_folder (operation, source_folder);
+                var archive_folder_uri = get_archive_folder_uri_from_operation (operation);
                 Camel.Store dest_store;
                 string dest_folder_full_name;
                 if (!get_folder_from_uri (archive_folder_uri, out dest_store, out dest_folder_full_name)) {
@@ -96,6 +99,8 @@ public class Mail.MoveHandler : Object {
         move_operations_by_timeout_id.set (timeout_id, operation);
         last_move_id = timeout_id;
 
+        queue_updated (move_operations_by_timeout_id.length);
+
         return operation.moved_messages.size;
     }
 
@@ -138,11 +143,11 @@ public class Mail.MoveHandler : Object {
         return false;
     }
 
-    private string? get_archive_folder_uri_from_folder (MoveOperation operation, Camel.Folder folder) {
-        unowned Camel.Store store = (Camel.Store)folder.get_parent_store ();
+    private string? get_archive_folder_uri_from_operation (MoveOperation operation) {
+        unowned Camel.Store store = (Camel.Store)operation.src_folder.get_parent_store ();
 
-        if (folder is Camel.VeeFolder) {
-            var vee_folder = (Camel.VeeFolder)folder;
+        if (operation.src_folder is Camel.VeeFolder) {
+            var vee_folder = (Camel.VeeFolder)operation.src_folder;
 
             store = null;
             unowned Camel.Folder? orig_folder = null;
@@ -185,20 +190,21 @@ public class Mail.MoveHandler : Object {
         }
 
         operation.src_folder.thaw ();
-    }
 
-    public void expire_all () {
-        foreach (var id in move_operations_by_timeout_id.get_keys ()) {
-            expire_undo.begin (id);
-        }
+        queue_updated (move_operations_by_timeout_id.length);
     }
 
     public async void expire_undo (uint id) {
         Source.remove (id);
 
+        if (id == last_move_id) {
+            last_move_id = 0;
+        }
+
         var operation = move_operations_by_timeout_id.take (id);
 
         if (operation.move_type == MoveHandler.MoveType.VTRASH) {
+            queue_updated (move_operations_by_timeout_id.length);
             return;
         }
 
@@ -222,6 +228,8 @@ public class Mail.MoveHandler : Object {
 
         operation.dst_folder.thaw ();
         operation.src_folder.thaw ();
+
+        queue_updated (move_operations_by_timeout_id.length);
     }
 
     private void collect_thread_messages (MoveOperation operation, Camel.FolderThreadNode thread) {
