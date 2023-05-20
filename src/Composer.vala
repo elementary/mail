@@ -1011,12 +1011,12 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             return false;
         }
 
-        var body_html = yield web_view.get_message_html ();
+        var message_html = yield web_view.get_message_html ();
 
-        if (body_html != null) {
+        if (message_html != null) {
             unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
 
-            var message = build_message (body_html);
+            var message = build_message (message_html);
             var sender = build_sender (message, from_combo.get_active_text ());
             var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
 
