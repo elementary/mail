@@ -530,6 +530,7 @@ public class Mail.ConversationList : Gtk.Box {
                 }
                 list_store.items_changed (0, list_store.get_n_items (), list_store.get_n_items ());
             });
+
             moved += n_messages_moved;
         }
 

@@ -112,11 +112,11 @@ public class Mail.MoveOperation : Object {
         }
 
         if (dst_folder == null && move_type != VTRASH) {
-            throw new MoveError.DST_FOLDER_NOT_FOUND ("Destination folder was not found.");
+            throw new MoveError.DST_FOLDER_NOT_FOUND (_("The destination folder was not found."));
         }
 
         if (src_folder == dst_folder) {
-            throw new MoveError.DST_FOLDER_NOT_FOUND ("Source folder is the destination folder.");
+            throw new MoveError.DST_FOLDER_NOT_FOUND (_("The source folder is the destination folder."));
         }
 
         timeout_id = GLib.Timeout.add_seconds (TIMEOUT_DURATION, () => {
