@@ -23,7 +23,6 @@
 public class Mail.ConversationList : Gtk.Box {
     public signal void conversation_selected (Camel.FolderThreadNode? node);
     public signal void conversation_focused (Camel.FolderThreadNode? node);
-    public signal void undo_expired ();
 
     private const int MARK_READ_TIMEOUT_SECONDS = 5;
 
@@ -36,7 +35,6 @@ public class Mail.ConversationList : Gtk.Box {
     private Gee.HashMap<string, Camel.FolderThread> threads;
     private Gee.HashMap<string, ConversationItemModel> conversations;
     private ConversationListStore list_store;
-    private MoveHandler move_handler;
     private VirtualizingListBox list_box;
     private Gtk.SearchEntry search_entry;
     private Granite.SwitchModelButton hide_read_switch;
@@ -57,8 +55,6 @@ public class Mail.ConversationList : Gtk.Box {
         list_store = new ConversationListStore ();
         list_store.set_sort_func (thread_sort_function);
         list_store.set_filter_func (filter_function);
-
-        move_handler = new MoveHandler ();
 
         list_box = new VirtualizingListBox () {
             activate_on_single_click = true,
@@ -150,6 +146,7 @@ public class Mail.ConversationList : Gtk.Box {
             valign = Gtk.Align.CENTER,
             no_show_all = true
         };
+        MoveOperation.bind_spinner (move_spinner);
 
         var conversation_action_bar = new Gtk.ActionBar ();
         conversation_action_bar.pack_start (refresh_stack);
@@ -219,15 +216,6 @@ public class Mail.ConversationList : Gtk.Box {
         hide_read_switch.toggled.connect (() => load_folder.begin (folder_full_name_per_account));
 
         hide_unstarred_switch.toggled.connect (() => load_folder.begin (folder_full_name_per_account));
-
-        move_handler.queue_updated.connect ((queued_messages) => {
-            if (queued_messages == 0) {
-                move_spinner.hide ();
-            } else {
-                move_spinner.tooltip_text = _("Moving messages… (%u remaining)").printf (queued_messages);
-                move_spinner.show ();
-            }
-        });
 
         button_release_event.connect ((e) => {
 
@@ -473,7 +461,8 @@ public class Mail.ConversationList : Gtk.Box {
 
     private static bool filter_function (GLib.Object obj) {
         if (obj is ConversationItemModel) {
-            return !((ConversationItemModel)obj).deleted;
+            var conversation_item = (ConversationItemModel)obj;
+            return !conversation_item.deleted && !conversation_item.hidden;
         } else {
             return false;
         }
@@ -511,7 +500,8 @@ public class Mail.ConversationList : Gtk.Box {
         }
     }
 
-    public async int move_selected_messages (MoveHandler.MoveType move_type, Variant? dest_folder = null) {
+    public async uint move_selected_messages (MoveOperation.MoveType move_type, Variant? dst_folder_full_name = null) throws Error {
+        ConversationItemModel[] moved_conversation_items = {};
         var move_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
         var previous_items = list_store.get_n_items ();
 
@@ -520,6 +510,8 @@ public class Mail.ConversationList : Gtk.Box {
 
         foreach (unowned var selected_row in selected_rows) {
             var selected_item_model = (ConversationItemModel) selected_row;
+            selected_item_model.hidden = true;
+            moved_conversation_items += selected_item_model;
 
             if (move_threads[selected_item_model.service_uid] == null) {
                 move_threads[selected_item_model.service_uid] = new Gee.ArrayList<unowned Camel.FolderThreadNode?> ();
@@ -528,13 +520,17 @@ public class Mail.ConversationList : Gtk.Box {
             move_threads[selected_item_model.service_uid].add (selected_item_model.node);
         }
 
-        var moved = 0;
+        uint moved = 0;
         foreach (var service_uid in move_threads.keys) {
-            try {
-                moved += yield move_handler.move_messages (folders[service_uid], move_type, move_threads[service_uid], dest_folder);
-            } catch (Error e) {
-                critical (e.message);
-            }
+            uint n_messages_moved;
+            var move_operation = yield new MoveOperation (folders[service_uid], move_type, move_threads[service_uid], dst_folder_full_name, out n_messages_moved);
+            move_operation.undone.connect (() => {
+                foreach (var item in moved_conversation_items) {
+                    item.hidden = false;
+                }
+                list_store.items_changed (0, list_store.get_n_items (), list_store.get_n_items ());
+            });
+            moved += n_messages_moved;
         }
 
         if (moved > 0) {
@@ -543,11 +539,6 @@ public class Mail.ConversationList : Gtk.Box {
         }
 
         return moved;
-    }
-
-    public void undo_move () {
-        move_handler.undo_last_move ();
-        list_store.items_changed (0, list_store.get_n_items (), list_store.get_n_items ());
     }
 
     private bool create_context_menu (Gdk.Event e, ConversationListItem row) {
@@ -560,7 +551,7 @@ public class Mail.ConversationList : Gtk.Box {
         menu.add (trash_menu_item);
 
         trash_menu_item.activate.connect (() => {
-            move_selected_messages.begin (MoveHandler.MoveType.TRASH);
+            move_selected_messages.begin (MoveOperation.MoveType.TRASH);
         });
 
         if (!item.unread) {

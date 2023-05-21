@@ -23,7 +23,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Paned paned_start;
 
     private FoldersListView folders_list_view;
-    private Granite.Widgets.Toast toast;
+    private Granite.Widgets.Toast move_toast;
+    private Granite.Widgets.Toast error_toast;
     private ConversationList conversation_list;
     private MessageList message_list;
 
@@ -116,14 +117,18 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             child = message_list
         };
 
-        toast = new Granite.Widgets.Toast ("");
-        toast.set_default_action (_("Undo"));
-        toast.show_all ();
-        view_overlay.add_overlay (toast);
+        move_toast = new Granite.Widgets.Toast ("");
+        move_toast.set_default_action (_("Undo"));
+        move_toast.show_all ();
+        view_overlay.add_overlay (move_toast);
 
-        toast.default_action.connect (() => {
-            conversation_list.undo_move ();
+        move_toast.default_action.connect (() => {
+            MoveOperation.undo_last_move ();
         });
+
+        error_toast = new Granite.Widgets.Toast ("");
+        error_toast.show_all ();
+        view_overlay.add_overlay (error_toast);
 
         var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
         message_overlay.no_show_all = true;
@@ -178,10 +183,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         folders_list_view.folder_selected.connect (conversation_list.load_folder);
 
         conversation_list.conversation_selected.connect (message_list.set_conversation);
-
-        conversation_list.undo_expired.connect (() => {
-            toast.reveal_child = false;
-        });
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
 
@@ -257,21 +258,31 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private void action_move (SimpleAction action, Variant? parameter) {
         switch (action.name) {
             case ACTION_ARCHIVE:
-                conversation_list.move_selected_messages.begin (MoveHandler.MoveType.ARCHIVE, null, (obj, res) => {
-                    var result = conversation_list.move_selected_messages.end (res);
-                    if (result > 0) {
-                        toast.title = ngettext ("Message Archived", "Messages Archived", result);
-                        toast.send_notification ();
+                conversation_list.move_selected_messages.begin (MoveOperation.MoveType.ARCHIVE, null, (obj, res) => {
+                    try {
+                        var result = conversation_list.move_selected_messages.end (res);
+                        if (result > 0) {
+                            move_toast.title = ngettext ("Message Archived", "Messages Archived", result);
+                            move_toast.send_notification ();
+                        }
+                    } catch (Error e) {
+                        error_toast.title = _("Failed to move messages: %s").printf (e.message);
+                        error_toast.send_notification ();
                     }
                 });
                 break;
 
             case ACTION_MOVE_TO_TRASH:
-                conversation_list.move_selected_messages.begin (MoveHandler.MoveType.TRASH, null, (obj, res) => {
-                    var result = conversation_list.move_selected_messages.end (res);
-                    if (result > 0) {
-                        toast.title = ngettext ("Message Deleted", "Messages Deleted", result);
-                        toast.send_notification ();
+                conversation_list.move_selected_messages.begin (MoveOperation.MoveType.TRASH, null, (obj, res) => {
+                    try {
+                        var result = conversation_list.move_selected_messages.end (res);
+                        if (result > 0) {
+                            move_toast.title = ngettext ("Message Deleted", "Messages Deleted", result);
+                            move_toast.send_notification ();
+                        }
+                    } catch (Error e) {
+                        error_toast.title = _("Failed to move messages: %s").printf (e.message);
+                        error_toast.send_notification ();
                     }
                 });
                 break;
