@@ -6,12 +6,12 @@
 # Translators:
 # Nikolaj64 <nikolajholmquist@gmail.com>, 2013
 # Nikolaj64 <nikolajholmquist@gmail.com>, 2013
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
 "PO-Revision-Date: 2020-05-27 12:11+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/mail/mail/da/>\n"
@@ -254,7 +254,7 @@ msgstr "Mail"
 msgid "Undo"
 msgstr "Fortryd"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:271
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -263,7 +263,7 @@ msgid_plural "Messages Archived"
 msgstr[0] "Besked Slettet"
 msgstr[1] "Beskeder Slettet"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:281
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Besked Slettet"
@@ -280,6 +280,16 @@ msgstr "Mail bruger e-mail-kontoer konfigureret i Systemindstillinger."
 #: src/WelcomeView.vala:59
 msgid "Online Accounts…"
 msgstr "Online Kontoer…"
+
+#: src/Backend/Account.vala:47
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to connect"
+msgstr "Slet kladde"
+
+#: src/Backend/Account.vala:48
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr ""
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -453,12 +463,12 @@ msgid "%s at %s"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "Fjern stjerne fra meddelelse"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "Sæt stjerne på meddelelse"
 
@@ -487,24 +497,24 @@ msgid "This message contains one or more attachments"
 msgstr "Denne meddelelse indeholder en eller flere vedhæftninger"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Ny besked"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
 msgstr "Kunne ikke validere:\n"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -512,7 +522,7 @@ msgstr ""
 "Vedhæftninger kan gøre skade på dit system hvis de åbnes. Åbn kun filer fra "
 "kilder du stoler på."
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "Åbn alligevel"
 

@@ -8,12 +8,12 @@
 # Jonas Skarulskis <jonas.ska@gmail.com>, 2015.
 # Aurimas Černius <aurisc4@gmail.com>, 2015.
 #
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
 "PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/mail/mail/lt/"
@@ -261,7 +261,7 @@ msgstr "Paštas"
 msgid "Undo"
 msgstr "Atšaukti"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:271
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -271,7 +271,7 @@ msgstr[0] "Laiškas ištrintas"
 msgstr[1] "Laiškai ištrinti"
 msgstr[2] "Laiškai ištrinti"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:281
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Laiškas ištrintas"
@@ -289,6 +289,16 @@ msgstr "Paštas naudoja sistemos nustatymuose sukonfigūruotas pašto paskyras."
 #: src/WelcomeView.vala:59
 msgid "Online Accounts…"
 msgstr "Internetinės paskyros…"
+
+#: src/Backend/Account.vala:47
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to connect"
+msgstr "Ištrinti juodraštį"
+
+#: src/Backend/Account.vala:48
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr ""
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -462,12 +472,12 @@ msgid "%s at %s"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "Nežymėti žvaigždute"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "Žymėti žvaigždute"
 
@@ -496,24 +506,24 @@ msgid "This message contains one or more attachments"
 msgstr "Šiame laiške yra vienas ar daugiau priedų"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Naujas laiškas"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
 msgstr "Negalima patvirtinti:\n"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -521,7 +531,7 @@ msgstr ""
 "Atveriami priedai gali pakenkti jūsų sistemai. Atverkite failus tik nuo "
 "patikimų šaltinių."
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "Vis tiek atverti"
 
