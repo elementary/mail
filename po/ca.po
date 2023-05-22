@@ -6,13 +6,13 @@
 # Translators:
 # Alfredo Hernández <aldomann.designs@gmail.com>, 2012
 # martin.steghoefer <martin@steghoefer.de>, 2013
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
-"PO-Revision-Date: 2023-03-30 14:59+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
+"PO-Revision-Date: 2023-05-22 15:23+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
@@ -235,16 +235,13 @@ msgstr "Correu"
 msgid "Undo"
 msgstr "Desfés-ho"
 
-#: src/MainWindow.vala:267
-#, fuzzy
-#| msgid "Message Deleted"
-#| msgid_plural "Messages Deleted"
+#: src/MainWindow.vala:271
 msgid "Message Archived"
 msgid_plural "Messages Archived"
-msgstr[0] "Missatge suprimit"
-msgstr[1] "Missatges suprimits"
+msgstr[0] "Missatge arxivat"
+msgstr[1] "Missatges arxivats"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:281
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Missatge suprimit"
@@ -262,6 +259,18 @@ msgstr ""
 #: src/WelcomeView.vala:59
 msgid "Online Accounts…"
 msgstr "Comptes en línia…"
+
+#: src/Backend/Account.vala:47
+#, fuzzy
+#| msgid "Unable to save draft"
+msgid "Unable to connect"
+msgstr "No es pot desar l'esborrany."
+
+#: src/Backend/Account.vala:48
+#, fuzzy
+#| msgid "There was an unexpected error while sending your message."
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr "Hi ha hagut un error inesperat a l'hora de d'enviar el missatge."
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -413,12 +422,12 @@ msgid "%s at %s"
 msgstr "%s a les %s"
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "Desmarca'n l'estrella"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "Marca amb una estrella"
 
@@ -447,20 +456,20 @@ msgid "This message contains one or more attachments"
 msgstr "Aquest missatge conté un o més adjunts"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 msgid "Email Message"
 msgstr "Missatge de correu"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 msgid "Unable to print email"
 msgstr "No s'ha pogut imprimir el missatge."
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr "Voleu que confiï en %s i que l'obri?"
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -468,7 +477,7 @@ msgstr ""
 "Els adjunts poden causar danys al sistema si s'obren. Obriu només els "
 "fitxers de fonts de confiança."
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "Obre-ho de tota manera"
 

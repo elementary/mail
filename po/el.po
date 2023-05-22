@@ -7,12 +7,12 @@
 # ioza1964 <izamboukas@gmail.com>, 2012
 # Petros Dias <petrosdias@gmail.com>, 2012
 # Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2014.
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
 "PO-Revision-Date: 2017-01-27 17:54+0000\n"
 "Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: www.gnome.gr\n"
@@ -251,14 +251,14 @@ msgstr "Αλληλογραφία"
 msgid "Undo"
 msgstr "_Αναίρεση"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:271
 #, fuzzy
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "Δεν επιλέχθηκαν συνομιλίες."
 msgstr[1] "Δεν επιλέχθηκαν συνομιλίες."
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:281
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -278,6 +278,16 @@ msgstr ""
 #, fuzzy
 msgid "Online Accounts…"
 msgstr "Λογαριασμοί"
+
+#: src/Backend/Account.vala:47
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to connect"
+msgstr "Διαγραφή προχείρου"
+
+#: src/Backend/Account.vala:48
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr ""
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -462,13 +472,13 @@ msgid "%s at %s"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 #, fuzzy
 msgid "Unstar message"
 msgstr "%d μήνυμα"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 #, fuzzy
 msgid "Star message"
 msgstr "%d μήνυμα"
@@ -498,24 +508,24 @@ msgid "This message contains one or more attachments"
 msgstr "Αυτό το μήνυμα εμπεριέχει ένα ή περισσότερα συνημμένα"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Νέο μήνυμα"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
 msgstr "Δεν ήταν δυνατή η επικύρωση:\n"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -523,7 +533,7 @@ msgstr ""
 "Τα συνημμένα αρχεία μπορεί να προκαλέσουν ζημιά στο σύστημα σας εάν "
 "ανοιχτούν. Ανοίγετε αρχεία μόνο από αξιόπιστες πηγές."
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr ""
 
