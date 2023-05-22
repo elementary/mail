@@ -12,12 +12,12 @@
 # Necdet Yücel <necdetyucel@gmail.com>, 2015.
 # Simge Sezgin <simgesezgin88@gmail.com>, 2015.
 #
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
 "PO-Revision-Date: 2023-05-17 21:00+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
@@ -242,13 +242,13 @@ msgstr "Posta"
 msgid "Undo"
 msgstr "Geri Al"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:271
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "İleti Arşivlendi"
 msgstr[1] "İletiler Arşivlendi"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:281
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "İleti Silindi"
@@ -267,6 +267,18 @@ msgstr ""
 #: src/WelcomeView.vala:59
 msgid "Online Accounts…"
 msgstr "Çevrimiçi Hesaplar…"
+
+#: src/Backend/Account.vala:47
+#, fuzzy
+#| msgid "Unable to save draft"
+msgid "Unable to connect"
+msgstr "Taslak kaydedilemiyor"
+
+#: src/Backend/Account.vala:48
+#, fuzzy
+#| msgid "There was an unexpected error while sending your message."
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr "Mesajınız gönderilirken beklenmeyen bir hata oluştu."
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -418,12 +430,12 @@ msgid "%s at %s"
 msgstr "%s saat %s"
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "İletiden yıldızı kaldır"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "İletiye yıldız ekle"
 
@@ -452,20 +464,20 @@ msgid "This message contains one or more attachments"
 msgstr "Bu ileti, bir veya daha fazla ek içeriyor"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 msgid "Email Message"
 msgstr "E-posta İletisi"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 msgid "Unable to print email"
 msgstr "E-posta yazdırılamıyor"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr "“%s” dosyasına güvenip açmak istiyor musunuz?"
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -473,7 +485,7 @@ msgstr ""
 "Ekler açıldığında sisteminize zarar verebilir. Yalnızca güvenilir "
 "kaynaklardan gelen dosyaları açın."
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "Yine de Aç"
 
