@@ -1,8 +1,8 @@
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
 "PO-Revision-Date: 2021-07-27 15:38+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/mail/mail/pa/>\n"
@@ -226,7 +226,7 @@ msgstr "ਡਾਕ"
 msgid "Undo"
 msgstr "ਕੀਤੀ ਕਾਰਵਾਈ ਨੂੰ ਵਾਪਸ ਮੋੜੋ"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:271
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -235,7 +235,7 @@ msgid_plural "Messages Archived"
 msgstr[0] "ਸੁਨੇਹਾ ਮਿਟਾ ਦਿੱਤਾ ਗਿਆ"
 msgstr[1] "ਸੁਨੇਹੇ ਮਿਟਾ ਦਿੱਤੇ ਗਏ"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:281
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "ਸੁਨੇਹਾ ਮਿਟਾ ਦਿੱਤਾ ਗਿਆ"
@@ -252,6 +252,18 @@ msgstr "ਮੇਲ, ਸਿਸਟਮ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਜੋ�
 #: src/WelcomeView.vala:59
 msgid "Online Accounts…"
 msgstr "ਆਨਲਾਈਨ ਖਾਤੇ…"
+
+#: src/Backend/Account.vala:47
+#, fuzzy
+#| msgid "Unable to save draft"
+msgid "Unable to connect"
+msgstr "ਖ਼ਾਕਾ ਸਾਂਭਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ"
+
+#: src/Backend/Account.vala:48
+#, fuzzy
+#| msgid "There was an unexpected error while sending your message."
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr "ਤੁਹਾਡਾ ਸੁਨੇਹਾ ਭੇਜਦੇ ਵਕ਼ਤ ਇੱਕ ਖ਼ਰਾਬੀ ਆ ਗਈ ਸੀ।"
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -417,12 +429,12 @@ msgid "%s at %s"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "ਸੁਨੇਹੇ ਤੋਂ ਸਿਤਾਰਾ ਹਟਾਓ"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "ਸੁਨੇਹੇ ਨੂੰ ਸਿਤਾਰਾ ਦਿਓ"
 
@@ -451,20 +463,20 @@ msgid "This message contains one or more attachments"
 msgstr "ਇਸ ਸੁਨੇਹੇ ਵਿੱਚ ਇੱਕ ਜਾਂ ਵੱਧ ਨੱਥੀ ਫ਼ਾਇਲਾਂ ਹਨ"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 msgid "Email Message"
 msgstr "ਈਮੇਲ ਸੁਨੇਹਾ"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 msgid "Unable to print email"
 msgstr "ਈਮੇਲ ਪ੍ਰਿੰਟ ਨਹੀਂ ਹੋ ਸਕੀ"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -472,7 +484,7 @@ msgstr ""
 "ਨੱਥੀ ਕੀਤੀਆਂ ਫ਼ਾਇਲਾਂ ਖੋਲ੍ਹਣ ਨਾਲ਼ ਤੁਹਾਡੇ ਸਿਸਟਮ ਨੂੰ ਨੁਕਸਾਨ ਹੋ ਸਕਦੈ। ਸਿਰਫ਼ ਭਰੋਸੇਯੋਗ ਸਰੋਤਾਂ ਤੋਂ ਆਈਆਂ "
 "ਫ਼ਾਇਲਾਂ ਹੀ ਖੋਲ੍ਹੋ।"
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "ਕੋਈ ਗੱਲ ਨਹੀਂ, ਖੋਲ੍ਹੋ"
 

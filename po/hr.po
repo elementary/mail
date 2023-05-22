@@ -7,12 +7,12 @@
 # bmarkovic <bmarkovic.79@gmail.com>, 2013
 # MrRajic <mr.rajic@gmail.com>, 2013
 # zladuric <zladuric@gmail.com>, 2013
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
 "PO-Revision-Date: 2020-04-10 14:01+0000\n"
 "Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <https://l10n.elementary.io/projects/mail/mail/hr/>\n"
@@ -258,7 +258,7 @@ msgstr "Pošta"
 msgid "Undo"
 msgstr "Vrati"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:271
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -268,7 +268,7 @@ msgstr[0] "Poruka obrisana"
 msgstr[1] "Poruka obrisane"
 msgstr[2] "Poruka obrisane"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:281
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Poruka obrisana"
@@ -286,6 +286,16 @@ msgstr "Pošta koristi račune e-pošte podešene u postavkama sustava."
 #: src/WelcomeView.vala:59
 msgid "Online Accounts…"
 msgstr "Mrežni računi…"
+
+#: src/Backend/Account.vala:47
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to connect"
+msgstr "Obriši skicu"
+
+#: src/Backend/Account.vala:48
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr ""
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -459,12 +469,12 @@ msgid "%s at %s"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "Ukloni oznaku poruke"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "Označi poruku"
 
@@ -493,24 +503,24 @@ msgid "This message contains one or more attachments"
 msgstr "Ova poruka sadrži jedan ili više privitaka"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Nova poruka"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
 msgstr "Nije moguće ovjeriti:\n"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -518,7 +528,7 @@ msgstr ""
 "Privitci mogu oštetiti vaš sustav ako ih otvorite. Otvorite samo datoteke od "
 "pouzdanih korisnika."
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "Svejedno otvori"
 

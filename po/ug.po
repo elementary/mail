@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the pantheon-mail package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
 #
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
 "PO-Revision-Date: 2017-04-15 20:40+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Uighur <https://l10n.elementary.io/projects/mail/mail/ug/>\n"
@@ -249,13 +249,13 @@ msgstr "ئېلخەت"
 msgid "Undo"
 msgstr "بىكار قىلىش"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:271
 #, fuzzy
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "ھىچقانداق دىئالوگ تاللانمىدى."
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:281
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -274,6 +274,16 @@ msgstr ""
 #, fuzzy
 msgid "Online Accounts…"
 msgstr "ھىساۋاتلار"
+
+#: src/Backend/Account.vala:47
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to connect"
+msgstr "ئورگىنالنى ئۆچۈرۈش"
+
+#: src/Backend/Account.vala:48
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr ""
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -458,12 +468,12 @@ msgid "%s at %s"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "يۇلتۇز بەلگىسىنى ئۆچۈرۈش"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "يۇلتۇز بەلگىسى قىتىش"
 
@@ -492,24 +502,24 @@ msgid "This message contains one or more attachments"
 msgstr "بۇ ئېلخەت بىر ياكى بىردىن كۆپ قوشۇمچە ھۆججەتنى ئۆزئىچىگە ئالغان"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "يىڭى ئېلخەت"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
 msgstr "دەلىللەش مەغلۇپ بولدى:\n"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -517,7 +527,7 @@ msgstr ""
 "قوشۇمچە ھۆججەتلەر ئىچىلسا سىستېمىڭىزغا بۇزغۇنچىلىق ئىلىپ كىلىشى مۇمكىن. "
 "پەقەت مەنبەسى ئىشەنچلىك ھۆججەتلەرنى ئىچىشىڭىزنى تەۋسىيە قىلىمىز."
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "يەنىلا ئىچىش"
 

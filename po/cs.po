@@ -7,12 +7,12 @@
 # petr.simacek <petr.simacek@gmail.com>, 2012, 2013.
 # Marek Černocký <marek@manet.cz>, 2014, 2015.
 #
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
 "PO-Revision-Date: 2022-01-10 23:40+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/mail/cs/>\n"
@@ -238,7 +238,7 @@ msgstr "Mail"
 msgid "Undo"
 msgstr "Zpět"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:271
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -248,7 +248,7 @@ msgstr[0] "Žádná vybraná zpráva"
 msgstr[1] "Žádné vybrané zprávy"
 msgstr[2] "Žádné vybrané zprávy"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:281
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Žádná vybraná zpráva"
@@ -266,6 +266,18 @@ msgstr "Pošta používá emailové účty přidané v Nastavení systému."
 #: src/WelcomeView.vala:59
 msgid "Online Accounts…"
 msgstr "Online účty…"
+
+#: src/Backend/Account.vala:47
+#, fuzzy
+#| msgid "Unable to save draft"
+msgid "Unable to connect"
+msgstr "Koncept se nepodařilo uložit"
+
+#: src/Backend/Account.vala:48
+#, fuzzy
+#| msgid "There was an unexpected error while sending your message."
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr "Došlo k neočekávané chybě při odesílání zprávy."
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -419,12 +431,12 @@ msgid "%s at %s"
 msgstr "%s na %s"
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "Zrušit označení zprávy hvězdičkou"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "Označit zprávu hvězdičkou"
 
@@ -453,20 +465,20 @@ msgid "This message contains one or more attachments"
 msgstr "Tato zpráva obsahuje jednu nebo více příloh"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 msgid "Email Message"
 msgstr "E-mailová zpráva"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 msgid "Unable to print email"
 msgstr "Nedaří se vytisknout e-mail"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -474,7 +486,7 @@ msgstr ""
 "Přílohy mohou po otevření poškodit váš systém. Otevírejte pouze soubory z "
 "důvěryhodných zdrojů."
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "Přesto otevřít"
 
