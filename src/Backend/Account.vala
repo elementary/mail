@@ -37,6 +37,7 @@ public class Mail.Backend.Account : GLib.Object {
             try {
                 yield offlinestore.set_online (true, GLib.Priority.DEFAULT, null);
                 yield offlinestore.synchronize (false, GLib.Priority.DEFAULT, null);
+                debug ("Account '%s' connected to remote server.", service.display_name);
             } catch (Error e) {
                 /* Don't show an error when the network is unavailable as it can be thrown when trying to connect
                    although the internet connection isn't fully available yet or on a rapid change of the connection */
@@ -65,6 +66,7 @@ public class Mail.Backend.Account : GLib.Object {
 
         try {
             yield offlinestore.set_online (false, GLib.Priority.DEFAULT, null);
+            debug ("Account '%s' disconnected from remote server.", service.display_name);
         } catch (Error e) {
             if (e is Camel.ServiceError.UNAVAILABLE || e is GLib.IOError.CANCELLED) {
                 debug (e.message);

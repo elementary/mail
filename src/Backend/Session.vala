@@ -49,7 +49,7 @@ public class Mail.Backend.Session : Camel.Session {
         set_network_monitor (network_monitor);
 
         network_monitor.network_changed.connect (set_online);
-        set_online (network_monitor.network_available);
+        set_online (true);
     }
 
     public async void start () {
