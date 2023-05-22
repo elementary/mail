@@ -12,8 +12,9 @@ msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-22 15:22+0000\n"
-"PO-Revision-Date: 2023-05-22 16:36+0000\n"
-"Last-Translator: Deleted User <noreply+2670@weblate.org>\n"
+"PO-Revision-Date: 2023-05-25 17:06+0000\n"
+"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
+"io>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/mail/mail/id/>"
 "\n"
 "Language: id\n"
@@ -416,7 +417,7 @@ msgstr "%s pada %s"
 #: src/MessageList/MessageListItem.vala:195
 #: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
-msgstr "Batalkan Bintang pada pesan"
+msgstr "Batal bintangkan pesan"
 
 #: src/MessageList/MessageListItem.vala:198
 #: src/MessageList/MessageListItem.vala:378
@@ -429,7 +430,7 @@ msgstr "Cetak…"
 
 #: src/MessageList/MessageListItem.vala:228
 msgid "More"
-msgstr ""
+msgstr "Lainnya"
 
 #: src/MessageList/MessageListItem.vala:277
 msgid "Show Images"
@@ -449,21 +450,17 @@ msgstr "Pesan ini berisi satu atau lebih lampiran"
 
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:404
-#, fuzzy
-#| msgid "New Message"
 msgid "Email Message"
-msgstr "Pesan Baru"
+msgstr "Pesan Surel"
 
 #: src/MessageList/MessageListItem.vala:426
-#, fuzzy
-#| msgid "Unable to validate:\n"
 msgid "Unable to print email"
-msgstr "Tak dapat mengesahkan:\n"
+msgstr "Tidak dapat mencetak surel"
 
 #: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
-msgstr ""
+msgstr "Percayai dan buka “%s”?"
 
 #: src/MessageList/MessageListItem.vala:674
 msgid ""
