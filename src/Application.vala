@@ -141,6 +141,7 @@ public class Mail.Application : Gtk.Application {
 
     public override void activate () {
         if (run_in_background) {
+            request_background.begin ();
             run_in_background = false;
             return;
         }
@@ -177,6 +178,31 @@ public class Mail.Application : Gtk.Application {
         }
 
         main_window.present ();
+    }
+
+    public async void request_background () {
+        var portal = new Xdp.Portal ();
+
+        Xdp.Parent? parent = active_window != null ? Xdp.parent_new_gtk (active_window) : null;
+
+        var command = new GenericArray<weak string> ();
+        command.add ("io.elementary.mail");
+        command.add ("--background");
+
+        try {
+            if (!yield portal.request_background (
+                parent,
+                _("Mail needs to autostart and run in background in order to send notifications even while closed."),
+                (owned) command,
+                Xdp.BackgroundFlags.AUTOSTART,
+                null
+            )) {
+                release ();
+            }
+        } catch (Error e) {
+            warning ("Failed to request autostart permissions: %s", e.message);
+            release ();
+        }
     }
 }
 
