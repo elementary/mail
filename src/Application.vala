@@ -25,6 +25,8 @@ public class Mail.Application : Gtk.Application {
     }
 
     construct {
+        Environment.set_variable ("GTK_USE_PORTAL", "1", true);
+
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
         Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
