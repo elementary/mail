@@ -87,7 +87,7 @@ public class Mail.MoveOperation : Object {
         moved_messages = new Gee.ArrayList<weak Camel.MessageInfo> ();
 
         foreach (unowned var thread in threads) {
-            collect_thread_messages (thread);
+            yield collect_thread_messages (thread);
         }
 
         switch (move_type) {
@@ -202,11 +202,11 @@ public class Mail.MoveOperation : Object {
         return null;
     }
 
-    private void collect_thread_messages (Camel.FolderThreadNode thread) {
+    private async void collect_thread_messages (Camel.FolderThreadNode thread) {
         moved_messages.add (thread.message);
         unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.child;
         while (child != null) {
-            collect_thread_messages (child);
+            yield collect_thread_messages (child);
             child = (Camel.FolderThreadNode?) child.next;
         }
     }

@@ -500,10 +500,10 @@ public class Mail.ConversationList : Gtk.Box {
         }
     }
 
-    public async uint move_selected_messages (MoveOperation.MoveType move_type, Variant? dst_folder_full_name = null) throws Error {
+    public async uint move_selected_messages (MoveOperation.MoveType move_type, Variant? dst_folder_full_name = null, out string error_message) {
+        error_message = "";
         ConversationItemModel[] moved_conversation_items = {};
         var move_threads = new Gee.HashMap<string, Gee.ArrayList<unowned Camel.FolderThreadNode?>> ();
-        var previous_items = list_store.get_n_items ();
 
         var selected_rows = list_box.get_selected_rows ();
         int selected_rows_start_index = list_store.get_index_of (selected_rows.to_array ()[0]);
@@ -520,26 +520,36 @@ public class Mail.ConversationList : Gtk.Box {
             move_threads[selected_item_model.service_uid].add (selected_item_model.node);
         }
 
+        list_store.items_changed (0, list_store.get_n_items (), list_store.get_n_items ());
+        list_box.select_row_at_index (selected_rows_start_index + 1);
+
         uint moved = 0;
         foreach (var service_uid in move_threads.keys) {
-            uint n_messages_moved;
-            var move_operation = yield new MoveOperation (folders[service_uid], move_type, move_threads[service_uid], dst_folder_full_name, out n_messages_moved);
-            move_operation.undone.connect (() => {
-                foreach (var item in moved_conversation_items) {
-                    item.hidden = false;
-                }
-                list_store.items_changed (0, list_store.get_n_items (), list_store.get_n_items ());
-            });
+            try {
+                uint n_messages_moved;
+                var move_operation = yield new MoveOperation (folders[service_uid], move_type, move_threads[service_uid], dst_folder_full_name, out n_messages_moved);
+                move_operation.undone.connect (() => unhide_conversations (moved_conversation_items));
 
-            moved += n_messages_moved;
+                moved += n_messages_moved;
+            } catch (Error e) {
+                warning ("Failed to prepare move operation: %s", e.message);
+                error_message = e.message;
+            }
         }
 
-        if (moved > 0) {
-            list_store.items_changed (0, previous_items, list_store.get_n_items ());
-            list_box.select_row_at_index (selected_rows_start_index + 1);
+        if (error_message != "") {
+            unhide_conversations (moved_conversation_items);
         }
 
         return moved;
+    }
+
+    private void unhide_conversations (ConversationItemModel[] moved_conversation_items) {
+        foreach (var item in moved_conversation_items) {
+            item.hidden = false;
+        }
+
+        list_store.items_changed (0, list_store.get_n_items (), list_store.get_n_items ());
     }
 
     private bool create_context_menu (Gdk.Event e, ConversationListItem row) {

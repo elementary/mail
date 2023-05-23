@@ -263,14 +263,13 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         switch (action.name) {
             case ACTION_ARCHIVE:
                 conversation_list.move_selected_messages.begin (MoveOperation.MoveType.ARCHIVE, null, (obj, res) => {
-                    try {
-                        var result = conversation_list.move_selected_messages.end (res);
-                        if (result > 0) {
-                            move_toast.title = ngettext ("Message Archived", "Messages Archived", result);
-                            move_toast.send_notification ();
-                        }
-                    } catch (Error e) {
-                        error_toast.title = _("Failed to move messages: %s").printf (e.message);
+                    string error_message;
+                    var result = conversation_list.move_selected_messages.end (res, out error_message);
+                    if (result > 0) {
+                        move_toast.title = ngettext ("Message Archived", "Messages Archived", result);
+                        move_toast.send_notification ();
+                    } else if (error_message != "") {
+                        error_toast.title = _("Failed to move messages: %s").printf (error_message);
                         error_toast.send_notification ();
                     }
                 });
@@ -278,14 +277,13 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
             case ACTION_MOVE_TO_TRASH:
                 conversation_list.move_selected_messages.begin (MoveOperation.MoveType.TRASH, null, (obj, res) => {
-                    try {
-                        var result = conversation_list.move_selected_messages.end (res);
-                        if (result > 0) {
-                            move_toast.title = ngettext ("Message Deleted", "Messages Deleted", result);
-                            move_toast.send_notification ();
-                        }
-                    } catch (Error e) {
-                        error_toast.title = _("Failed to move messages: %s").printf (e.message);
+                    string error_message;
+                    var result = conversation_list.move_selected_messages.end (res, out error_message);
+                    if (result > 0) {
+                        move_toast.title = ngettext ("Message Deleted", "Messages Deleted", result);
+                        move_toast.send_notification ();
+                    } else if (error_message != "") {
+                        error_toast.title = _("Failed to move messages: %s").printf (error_message);
                         error_toast.send_notification ();
                     }
                 });
