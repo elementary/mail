@@ -135,21 +135,8 @@ public class Mail.Application : Gtk.Application {
         add_action (quit_action);
         set_accels_for_action ("app.quit", {"<Control>q"});
 
-        /* Needed to ask the flatpak portal for autostart and background permissions with a parent window
-           and to prevent issues with Session.start being called from the InboxMonitor first */
-        if (!run_in_background) {
-            activate ();
-        }
-
         new InboxMonitor ().start.begin ();
         hold ();
-
-        request_background.begin ((obj, res) => {
-            var result = request_background.end (res);
-            if (!result) {
-                release ();
-            }
-        });
     }
 
     public override void activate () {
@@ -190,23 +177,6 @@ public class Mail.Application : Gtk.Application {
         }
 
         main_window.present ();
-    }
-
-    private async bool request_background () {
-        var portal = new Xdp.Portal ();
-
-        Xdp.Parent? parent = active_window != null ? Xdp.parent_new_gtk (active_window) : null;
-
-        var command = new GenericArray<weak string> ();
-        command.add ("io.elementary.mail");
-        command.add ("--background");
-
-        try {
-            return yield portal.request_background (parent, _("Mail needs to run in background in order to send notifications."), (owned) command, Xdp.BackgroundFlags.AUTOSTART, null);
-        } catch (Error e) {
-            warning ("Failed to request background and autostart permissions: %s", e.message);
-            return false;
-        }
     }
 }
 

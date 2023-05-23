@@ -202,7 +202,9 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         session.start.begin ((obj, res) => {
             session.start.end (res);
 
-            if (session.get_accounts ().size > 0) {
+            var accounts = session.get_accounts ();
+
+            if (accounts.size > 0) {
                 placeholder_stack.visible_child = paned_end;
                 get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
             } else {
@@ -212,6 +214,15 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
             is_session_started = true;
             session_started ();
+        });
+
+        delete_event.connect (() => {
+            request_autostart.begin ((obj, res) => {
+                request_autostart.end (res);
+                destroy ();
+            });
+
+            return true;
         });
 
         destroy.connect (() => {
@@ -326,5 +337,29 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         });
 
         return base.configure_event (event);
+    }
+
+    private async void request_autostart () {
+        var portal = new Xdp.Portal ();
+
+        var parent = Xdp.parent_new_gtk (this);
+
+        var command = new GenericArray<weak string> ();
+        command.add ("io.elementary.mail");
+        command.add ("--background");
+
+        try {
+            if (!yield portal.request_background (
+                parent,
+                _("Mail needs to autostart and run in background in order to send notifications even while closed."),
+                (owned) command,
+                Xdp.BackgroundFlags.AUTOSTART,
+                null
+            )) {
+                GLib.Application.get_default ().release ();
+            }
+        } catch (Error e) {
+            warning ("Failed to request autostart permissions: %s", e.message);
+        }
     }
 }
