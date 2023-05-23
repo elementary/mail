@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-22 15:22+0000\n"
-"PO-Revision-Date: 2023-05-20 04:06+0000\n"
+"PO-Revision-Date: 2023-05-25 17:06+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -186,7 +186,7 @@ msgstr "メッセージを送信できません"
 
 #: src/Composer.vala:807
 msgid "There was an unexpected error while sending your message."
-msgstr "メッセージを送信する際に予期しないエラーが発生しました。"
+msgstr "メッセージの送信中に予期しないエラーが発生しました。"
 
 #: src/Composer.vala:1027
 msgid "Unable to save draft"
@@ -194,7 +194,7 @@ msgstr "下書きを保存できません"
 
 #: src/Composer.vala:1028
 msgid "There was an unexpected error while saving your draft."
-msgstr "下書きを保存する際に予期しないエラーが発生しました。"
+msgstr "下書きの保存中に予期しないエラーが発生しました。"
 
 #: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
@@ -247,16 +247,12 @@ msgid "Online Accounts…"
 msgstr "オンラインアカウント…"
 
 #: src/Backend/Account.vala:47
-#, fuzzy
-#| msgid "Unable to save draft"
 msgid "Unable to connect"
-msgstr "下書きを保存できません"
+msgstr "接続できません"
 
 #: src/Backend/Account.vala:48
-#, fuzzy
-#| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to connect to the server."
-msgstr "メッセージを送信する際に予期しないエラーが発生しました。"
+msgstr "サーバーへの接続試行中に予期しないエラーが発生しました。"
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
