@@ -333,10 +333,12 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         expanded = false;
         show_all ();
 
-        get_gravatar.begin (parsed_address, (obj, res) => {
-            FileIcon? file_icon = get_gravatar.end (res);
-            avatar.set_loadable_icon (file_icon);
-        });
+        if (GLib.NetworkMonitor.get_default ().network_available) {
+            get_gravatar.begin (parsed_address, (obj, res) => {
+                FileIcon? file_icon = get_gravatar.end (res);
+                avatar.set_loadable_icon (file_icon);
+            });
+        }
 
         /* Override default handler to stop event propagation. Otherwise clicking the menu will
            expand or collapse the MessageListItem. */

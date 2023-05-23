@@ -12,12 +12,12 @@
 # TommyBrunn <tommy.brunn@gmail.com>, 2012
 # Mattias Eriksson <snaggen@gmail.com>, 2014, 2015.
 #
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
 "PO-Revision-Date: 2017-04-15 20:42+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Swedish <https://l10n.elementary.io/projects/mail/mail/sv/>\n"
@@ -254,14 +254,14 @@ msgstr "Alla brev"
 msgid "Undo"
 msgstr ""
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:271
 #, fuzzy
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "Inga valda konversationer."
 msgstr[1] "Inga valda konversationer."
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:281
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -280,6 +280,16 @@ msgstr ""
 #, fuzzy
 msgid "Online Accounts…"
 msgstr "Konton"
+
+#: src/Backend/Account.vala:47
+#, fuzzy
+#| msgid "Unable to validate:\n"
+msgid "Unable to connect"
+msgstr "Kan inte bekräfta:\n"
+
+#: src/Backend/Account.vala:48
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr ""
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -461,13 +471,13 @@ msgid "%s at %s"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 #, fuzzy
 msgid "Unstar message"
 msgstr "%d meddelande"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 #, fuzzy
 msgid "Star message"
 msgstr "%d meddelande"
@@ -497,30 +507,30 @@ msgid "This message contains one or more attachments"
 msgstr ""
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Nytt meddelande"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
 msgstr "Kan inte bekräfta:\n"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr ""
 

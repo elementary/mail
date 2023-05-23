@@ -9,12 +9,12 @@
 # yorbajim <jim@yorba.org>, 2014.
 # ProsjektX <https://launchpad.net/~prosjektx>, 2014
 #
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
 "PO-Revision-Date: 2023-03-30 14:59+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
@@ -241,7 +241,7 @@ msgstr "E-post"
 msgid "Undo"
 msgstr "Angre"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:271
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -250,7 +250,7 @@ msgid_plural "Messages Archived"
 msgstr[0] "Melding slettet"
 msgstr[1] "Meldinger slettet"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:281
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Melding slettet"
@@ -268,6 +268,18 @@ msgstr "Mail bruker e-postkontoer satt opp i systeminnstillingene."
 #, fuzzy
 msgid "Online Accounts…"
 msgstr "Nettkontoer…"
+
+#: src/Backend/Account.vala:47
+#, fuzzy
+#| msgid "Unable to save draft"
+msgid "Unable to connect"
+msgstr "Kunne ikke lagre utkast"
+
+#: src/Backend/Account.vala:48
+#, fuzzy
+#| msgid "There was an unexpected error while sending your message."
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr "En uventet feil inntraff under forsendelse av meldingen din."
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -422,12 +434,12 @@ msgid "%s at %s"
 msgstr "%s, klokken %s"
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "Ta vekk denne meldingen fra favoritter"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "Sett melding som favoritt"
 
@@ -456,20 +468,20 @@ msgid "This message contains one or more attachments"
 msgstr "Denne meldingen inneholder en eller flere vedlegg"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 msgid "Email Message"
 msgstr "E-postmelding"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 msgid "Unable to print email"
 msgstr "Kunne ikke skrive ut e-post"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, fuzzy, c-format
 msgid "Trust and open “%s”?"
 msgstr "Stol på og åpne «%s»?"
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -477,7 +489,7 @@ msgstr ""
 "Vedlegg kan skade systemet hvis du åpner dem. Bare åpne filer fra kilder du "
 "stoler på."
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "Åpne likevel"
 
