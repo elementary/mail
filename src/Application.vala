@@ -202,7 +202,7 @@ public class Mail.Application : Gtk.Application {
         command.add ("--background");
 
         try {
-            return yield portal.request_background (parent, _("Mail needs to run in background in order to send notifications"), (owned) command, Xdp.BackgroundFlags.AUTOSTART, null);
+            return yield portal.request_background (parent, _("Mail needs to run in background in order to send notifications."), (owned) command, Xdp.BackgroundFlags.AUTOSTART, null);
         } catch (Error e) {
             warning ("Failed to request background and autostart permissions: %s", e.message);
             return false;
