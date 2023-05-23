@@ -7,13 +7,13 @@
 # Alfredo Hernández <aldomann.designs@gmail.com>, 2012
 # ajshephard <andrew.james.shephard@gmail.com>, 2013
 # andrubuntu <andrubuntu@gmail.com>, 2013
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
-"PO-Revision-Date: 2023-03-30 14:59+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
+"PO-Revision-Date: 2023-05-20 04:06+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/mail/en_GB/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
@@ -237,16 +237,13 @@ msgstr "Mail"
 msgid "Undo"
 msgstr "Undo"
 
-#: src/MainWindow.vala:267
-#, fuzzy
-#| msgid "Message Deleted"
-#| msgid_plural "Messages Deleted"
+#: src/MainWindow.vala:271
 msgid "Message Archived"
 msgid_plural "Messages Archived"
-msgstr[0] "Message Deleted"
-msgstr[1] "Messages Deleted"
+msgstr[0] "Message Archived"
+msgstr[1] "Messages Archived"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:281
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Message Deleted"
@@ -263,6 +260,18 @@ msgstr "Mail uses email accounts configured in System Settings."
 #: src/WelcomeView.vala:59
 msgid "Online Accounts…"
 msgstr "Online Accounts…"
+
+#: src/Backend/Account.vala:47
+#, fuzzy
+#| msgid "Unable to save draft"
+msgid "Unable to connect"
+msgstr "Unable to save draft"
+
+#: src/Backend/Account.vala:48
+#, fuzzy
+#| msgid "There was an unexpected error while sending your message."
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr "There was an unexpected error while sending your message."
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -414,12 +423,12 @@ msgid "%s at %s"
 msgstr "%s at %s"
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "Unstar message"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "Star message"
 
@@ -448,20 +457,20 @@ msgid "This message contains one or more attachments"
 msgstr "This message contains one or more attachments"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 msgid "Email Message"
 msgstr "Email Message"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 msgid "Unable to print email"
 msgstr "Unable to print email"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr "Trust and open “%s”?"
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -469,7 +478,7 @@ msgstr ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "Open Anyway"
 

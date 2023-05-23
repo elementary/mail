@@ -1,8 +1,8 @@
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
 "PO-Revision-Date: 2022-09-21 00:19+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/mail/"
@@ -226,7 +226,7 @@ msgstr "نامە"
 msgid "Undo"
 msgstr "هەڵوەشاندنەوە"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:271
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -235,7 +235,7 @@ msgid_plural "Messages Archived"
 msgstr[0] "نامە ڕەشکرایەوە"
 msgstr[1] "نامەکان ڕەشکرانەوە"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:281
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "نامە ڕەشکرایەوە"
@@ -254,6 +254,18 @@ msgstr ""
 #: src/WelcomeView.vala:59
 msgid "Online Accounts…"
 msgstr "هەژمارە سەرهێڵییەکان…"
+
+#: src/Backend/Account.vala:47
+#, fuzzy
+#| msgid "Unable to save draft"
+msgid "Unable to connect"
+msgstr "نەتوانرا ڕەشنووس پاشەکەوت بکرێت"
+
+#: src/Backend/Account.vala:48
+#, fuzzy
+#| msgid "There was an unexpected error while sending your message."
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr "هەڵەیەکی چاوەڕواننەکراو ڕوویدا لەکاتی ناردنی نامەکەت."
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -405,12 +417,12 @@ msgid "%s at %s"
 msgstr "%s لە %s"
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "نیشان-نەکردنی نامە"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "نیشانەکردنی نامە"
 
@@ -439,20 +451,20 @@ msgid "This message contains one or more attachments"
 msgstr "ئەم نامەیە هاوپێچێک یان زیاتری لەگەڵدایە"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 msgid "Email Message"
 msgstr "نامەی پۆستی ئەلیکترۆنی"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 msgid "Unable to print email"
 msgstr "نەتوانرا پۆستە ئەلیکترۆنییەکە چاپ بکرێت"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -460,7 +472,7 @@ msgstr ""
 "دەکرێت پەڕگەی هاوپێچکراو زیان بە سیستەمەکەت بگەیەنێت، بۆیە تەنها کاتێک "
 "بیکەوە کە سەرچاوەکەی باوەڕپێکراو بێت."
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "ئاگادارم، بیکەوە"
 
