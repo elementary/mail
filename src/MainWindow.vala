@@ -358,6 +358,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             }
         } catch (Error e) {
             warning ("Failed to request autostart permissions: %s", e.message);
+            GLib.Application.get_default ().release ();
         }
     }
 }
