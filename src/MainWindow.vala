@@ -221,7 +221,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                 destroy ();
             });
 
-            return true;
+            return Gdk.EVENT_STOP;
         });
 
         destroy.connect (() => {
