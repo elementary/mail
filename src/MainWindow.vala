@@ -215,11 +215,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         });
 
         delete_event.connect (() => {
-            unowned var application = (Application)GLib.Application.get_default ();
-            application.request_background.begin ((obj, res) => {
-                application.request_background.end (res);
-                destroy ();
-            });
+            ((Application)application).request_background.begin (() => destroy ());
 
             return Gdk.EVENT_STOP;
         });

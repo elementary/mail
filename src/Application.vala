@@ -12,6 +12,7 @@ public class Mail.Application : Gtk.Application {
     public static GLib.Settings settings;
     public static bool run_in_background;
     private Gtk.Settings gtk_settings;
+    private bool first_activation = true;
 
     public Application () {
         Object (
@@ -141,10 +142,14 @@ public class Mail.Application : Gtk.Application {
         set_accels_for_action ("app.quit", {"<Control>q"});
 
         new InboxMonitor ().start.begin ();
-        hold ();
     }
 
     public override void activate () {
+        if (first_activation) {
+            first_activation = false;
+            hold ();
+        }
+
         if (run_in_background) {
             request_background.begin ();
             run_in_background = false;
