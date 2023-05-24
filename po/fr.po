@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-22 15:22+0000\n"
-"PO-Revision-Date: 2023-05-22 15:23+0000\n"
+"PO-Revision-Date: 2023-05-25 17:07+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
 "Language: fr\n"
@@ -276,16 +276,12 @@ msgid "Online Accounts…"
 msgstr "Comptes en ligne…"
 
 #: src/Backend/Account.vala:47
-#, fuzzy
-#| msgid "Unable to save draft"
 msgid "Unable to connect"
-msgstr "Échec de l'enregistrement du brouillon"
+msgstr "Échec de la connexion"
 
 #: src/Backend/Account.vala:48
-#, fuzzy
-#| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to connect to the server."
-msgstr "Une erreur inattendue s'est produite lors de l'envoi de votre message."
+msgstr "Une erreur inattendue s'est produite lors de la connexion au serveur."
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
