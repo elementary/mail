@@ -16,71 +16,255 @@
 */
 
 
-public class SignatureDialog : Granite.Dialog {
-    private Camel.Service service;
+public class SignatureDialog : Hdy.Window {
+    private Gtk.ListBox signature_list;
+    private Gtk.Entry title_entry;
     private Mail.WebView web_view;
+    private string html_template;
+    private Signature? current_signature;
+    private Binding current_binding;
+    private Signature? last_deleted_signature;
+    private Granite.Widgets.Toast toast;
 
-    public SignatureDialog (Camel.Service service) {
-        this.service = service;
+    construct {
+        try {
+            var template = resources_lookup_data ("/io/elementary/mail/editor-template.html", ResourceLookupFlags.NONE);
+            html_template = (string)template.get_data ();
+        } catch (Error e) {
+            warning ("Failed to load blank editor template: %s", e.message);
+        }
 
-        var entry_label = new Granite.HeaderLabel (_("Signature:"));
+        var start_header = new Hdy.HeaderBar () {
+            show_close_button = true
+        };
+        start_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+        signature_list = new Gtk.ListBox () {
+            vexpand = true
+        };
+
+        var add_box = new Gtk.Box (HORIZONTAL, 0);
+        add_box.add (new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
+        add_box.add (new Gtk.Label (_("Create Signature")));
+
+        var add_button = new Gtk.Button () {
+            child = add_box
+        };
+        add_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+        var start_actionbar = new Gtk.ActionBar ();
+        start_actionbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        start_actionbar.pack_start (add_button);
+
+        var start_box = new Gtk.Box (VERTICAL, 0);
+        start_box.get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
+        start_box.add (start_header);
+        start_box.add (signature_list);
+        start_box.add (start_actionbar);
+
+        var end_header = new Hdy.HeaderBar () {
+            show_close_button = true
+        };
+        end_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        end_header.pack_start (new Granite.HeaderLabel (_("Title")) { margin_start = 12 });
+
+        title_entry = new Gtk.Entry () {
+            margin_start = 12,
+            margin_end = 12,
+            placeholder_text = "For example “Work” or “Personal”"
+        };
 
         web_view = new Mail.WebView () {
             is_composer = true,
-            height_request = 150,
-            width_request = 350,
             editable = true
         };
-        get_signature.begin ();
+        web_view.get_style_context ().add_class (Gtk.STYLE_CLASS_FRAME);
 
-        var box = new Gtk.Box (VERTICAL, 6) {
+        var frame = new Gtk.Frame (null) {
+            margin_top = 9,
             margin_start = 12,
-            margin_end = 12
+            margin_end = 12,
+            margin_bottom = 12,
+            child = web_view
         };
-        box.add (entry_label);
-        box.add (web_view);
-        box.show_all ();
 
-        get_content_area ().add (box);
+        var delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
+            tooltip_text = "Delete"
+        };
+        delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
 
-        add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
+        var end_actionbar = new Gtk.ActionBar ();
+        end_actionbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        end_actionbar.pack_start (delete_button);
 
-        var insert_button = add_button (_("Update"), Gtk.ResponseType.APPLY);
-        insert_button.can_default = true;
-        insert_button.has_default = true;
-        insert_button.sensitive = true;
-        insert_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        var end_box = new Gtk.Box (VERTICAL, 0);
+        end_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        end_box.add (end_header);
+        end_box.add (title_entry);
+        end_box.add (new Granite.HeaderLabel (_("Signature")) { margin_start = 12 });
+        end_box.add (frame);
+        end_box.add (end_actionbar);
 
-        deletable = false;
-        modal = true;
+        var action_sizegroup = new Gtk.SizeGroup (VERTICAL);
+        action_sizegroup.add_widget (start_actionbar);
+        action_sizegroup.add_widget (end_actionbar);
 
-        response.connect ((response_id) => {
-            switch (response_id) {
-                case Gtk.ResponseType.APPLY:
-                    set_signature.begin ();
-                    break;
-                case Gtk.ResponseType.CANCEL:
-                    destroy ();
-                    break;
-            }
+        var paned = new Gtk.Paned (HORIZONTAL);
+        paned.pack1 (start_box, true, false);
+        paned.pack2 (end_box, true, false);
+
+        toast = new Granite.Widgets.Toast ("");
+        toast.set_default_action (_("Undo"));
+
+        var overlay = new Gtk.Overlay () {
+            child = paned
+        };
+        overlay.add_overlay (toast);
+
+        var header_group = new Hdy.HeaderGroup ();
+        header_group.add_header_bar (start_header);
+        header_group.add_header_bar (end_header);
+
+        default_height = 300;
+        default_width = 500;
+        add (overlay);
+        show_all ();
+        present ();
+
+        load_signatures.begin (() => {
+            signature_list.select_row (signature_list.get_row_at_index (0));
+        });
+
+        add_button.clicked.connect (() => create_new_signature.begin ());
+
+        delete_button.clicked.connect (() => delete_selected_signature.begin ());
+
+        toast.default_action.connect (() => last_deleted_signature.undo_delete ());
+
+        signature_list.row_selected.connect ((row) => set_selected_signature.begin ((Signature)row));
+
+        delete_event.connect (() => {
+            set_selected_signature.begin (null, () => {
+                destroy ();
+            });
+            return Gdk.EVENT_STOP;
         });
     }
 
-    private async void get_signature () {
-        try {
-            var template = resources_lookup_data ("/io/elementary/mail/editor-template.html", ResourceLookupFlags.NONE);
-            unowned var session = Mail.Backend.Session.get_default ();
-            var signature = yield session.get_signature_for_service (service);
-            web_view.load_html (((string)template.get_data ()).printf (signature));
-        } catch (Error e) {
-            warning ("Failed to load blank message template: %s", e.message);
+    private async void set_selected_signature (Signature? signature) {
+        if (current_signature != null) {
+            var content = yield web_view.get_message_html ();
+            yield current_signature.save (content);
+        }
+
+        if (current_binding != null) {
+            current_binding.unbind ();
+        }
+
+        if (signature == null) {
+            current_signature = null;
+            title_entry.text = "";
+            web_view.load_html (html_template.printf (""));
+            return;
+        }
+
+        current_binding = signature.bind_property ("title", title_entry, "text", BindingFlags.BIDIRECTIONAL | BindingFlags.SYNC_CREATE);
+        web_view.load_html (html_template.printf (signature.content));
+        current_signature = signature;
+    }
+
+    private async void load_signatures () {
+        foreach (var signature_source in Mail.Backend.Session.get_default ().get_all_signature_sources ()) {
+            var signature = yield new Signature (signature_source);
+            signature_list.add (signature);
         }
     }
 
-    private async void set_signature () {
-        unowned var session = Mail.Backend.Session.get_default ();
-        var signature = yield web_view.get_message_html ();
-        session.set_signature_for_service.begin (service, signature);
-        destroy ();
+    private async void create_new_signature () {
+        var new_signature_source = yield Mail.Backend.Session.get_default ().create_new_signature ();
+
+        if (new_signature_source == null) {
+            return;
+        }
+
+        var new_signature = yield new Signature (new_signature_source);
+        signature_list.add (new_signature);
+        signature_list.select_row (new_signature);
+    }
+
+    private async void delete_selected_signature () {
+        var signature = (Signature)signature_list.get_selected_row ();
+        var index = signature.get_index ();
+        last_deleted_signature = signature;
+        signature.delete_signature ();
+        signature_list.select_row (signature_list.get_row_at_index (index + 1));
+        toast.title = _("'%s' deleted".printf(signature.title));
+        toast.send_notification ();
+    }
+
+    private class Signature : Gtk.ListBoxRow {
+        public string title { get; set; }
+        public string content { get; set; }
+
+        private E.Source signature_source;
+        private uint timeout_id = 0;
+
+        public async Signature (E.Source _signature_source) {
+            signature_source = _signature_source;
+
+            title = _signature_source.display_name;
+
+            try {
+                string content;
+                size_t length;
+                yield signature_source.mail_signature_load (GLib.Priority.DEFAULT, null, out content, out length);
+                this.content = content;
+            } catch (Error e) {
+                warning ("Failed to load signature '%s': %s", title, e.message);
+            }
+
+            var label = new Gtk.Label (title) {
+                halign = Gtk.Align.START
+            };
+            this.bind_property ("title", label, "label");
+
+            add (label);
+            show_all ();
+        }
+
+        public async void save (string new_content) {
+            signature_source.display_name = title;
+            content = new_content;
+            try {
+                yield signature_source.mail_signature_replace (new_content, new_content.length, GLib.Priority.DEFAULT, null);
+                yield signature_source.write (null);
+            } catch (Error e) {
+                warning ("Failed to save signature '%s': %s", title, e.message);
+            }
+        }
+
+        public void undo_delete () {
+            if (timeout_id != 0) {
+                Source.remove (timeout_id);
+                show ();
+            }
+        }
+
+        public void delete_signature () {
+            hide ();
+            timeout_id = GLib.Timeout.add_seconds (5, () => {
+                finish_delete_signature.begin ();
+                return Source.REMOVE;
+            });
+        }
+
+        public async void finish_delete_signature () {
+            try {
+                yield signature_source.remove (null);
+                destroy ();
+            } catch (Error e) {
+                warning ("Failed to delete signature '%s': %s", title, e.message);
+            }
+        }
     }
 }

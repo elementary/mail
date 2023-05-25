@@ -549,28 +549,18 @@ public class Mail.Backend.Session : Camel.Session {
         }
     }
 
-    public async void set_signature_for_service (Camel.Service service, string signature) throws Error {
+    public async void set_signature_uid_for_service (Camel.Service service, string signature_uid) {
         var identity_source = get_identity_source_for_service (service);
         var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
-
-        var signature_source = ref_source (identity_extension.signature_uid);
-
-        if (signature_source == null) {
-            var uid = "%s-signature-source".printf (identity_source.uid);
-            /* We don't really need anything else here not even the SourceMailSignature extension
-               because we asume the mime type to always be html */
-            signature_source = new E.Source.with_uid (uid, null) {
-                parent = identity_source.uid
-            };
-            identity_extension.signature_uid = uid;
+        identity_extension.signature_uid = signature_uid;
+        try {
             yield identity_source.write (null);
-            yield registry.commit_source (signature_source, null);
+        } catch (Error e) {
+            warning ("Failed to update default signature for '%s': %s", identity_extension.address, e.message);
         }
-
-        yield signature_source.mail_signature_replace (signature, signature.length, GLib.Priority.DEFAULT, null);
     }
 
-    public async string get_signature_for_sender (string sender) {
+    public string get_signature_uid_for_sender (string sender) {
         var sender_address = new Camel.InternetAddress ();
         sender_address.unformat (sender);
 
@@ -578,17 +568,17 @@ public class Mail.Backend.Session : Camel.Session {
         if (store == null) {
             return "";
         }
-
-        return yield get_signature_for_service (store);
-    }
-
-    public async string get_signature_for_service (Camel.Service service) {
-        var identity_source = get_identity_source_for_service (service);
+        var identity_source = get_identity_source_for_service (store);
         var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
 
-        var signature_source = ref_source (identity_extension.signature_uid);
+        return identity_extension.signature_uid;
+    }
+
+    public async string get_signature_for_uid (string uid) {
+        var signature_source = registry.ref_source (uid);
 
         if (signature_source == null) {
+            warning ("Signature not found: %s", uid);
             return "";
         }
 
@@ -599,10 +589,31 @@ public class Mail.Backend.Session : Camel.Session {
                 return signature;
             }
         } catch (Error e) {
-            warning (e.message);
+            warning ("Failed to load signature: %s", e.message);
         }
 
         return "";
+    }
+
+    public async E.Source? create_new_signature () {
+        try {
+            var signature_source = new E.Source.with_uid (GLib.Uuid.string_random (), null) {
+                display_name = _("New Signature")
+            };
+            /* Create the signature extension. We don't really use it but need it to know this source is for a signature */
+            signature_source.get_extension (E.SOURCE_EXTENSION_MAIL_SIGNATURE);
+
+            yield registry.commit_source (signature_source, null);
+            yield signature_source.mail_signature_replace ("", "".length, GLib.Priority.DEFAULT, null);
+            return signature_source;
+        } catch (Error e) {
+            warning ("Failed to commit the new signature source: %s", e.message);
+            return null;
+        }
+    }
+
+    public List<E.Source> get_all_signature_sources () {
+        return registry.list_enabled (E.SOURCE_EXTENSION_MAIL_SIGNATURE);
     }
 
     private class MessageInfo: Camel.MessageInfoBase {

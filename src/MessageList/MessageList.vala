@@ -20,6 +20,10 @@ public class Mail.MessageList : Gtk.Box {
 
         var load_images_menuitem = new Granite.SwitchModelButton (_("Always Show Remote Images"));
 
+        var manage_signatures_menuitem = new Gtk.ModelButton () {
+            text = _("Manage Signatures")
+        };
+
         var account_settings_menuitem = new Gtk.ModelButton () {
             text = _("Account Settings…")
         };
@@ -35,6 +39,7 @@ public class Mail.MessageList : Gtk.Box {
         };
         app_menu_box.add (load_images_menuitem);
         app_menu_box.add (app_menu_separator);
+        app_menu_box.add (manage_signatures_menuitem);
         app_menu_box.add (account_settings_menuitem);
         app_menu_box.show_all ();
 
@@ -143,6 +148,21 @@ public class Mail.MessageList : Gtk.Box {
 
         var settings = new GLib.Settings ("io.elementary.mail");
         settings.bind ("always-load-remote-images", load_images_menuitem, "active", SettingsBindFlags.DEFAULT);
+
+        manage_signatures_menuitem.clicked.connect (() => {
+            unowned var application = (Gtk.Application) GLib.Application.get_default ();
+            MainWindow? main_window = null;
+            foreach (unowned var window in application.get_windows ()) {
+                if (window is MainWindow) {
+                    main_window = (MainWindow) window;
+                    break;
+                }
+            }
+
+            new SignatureDialog () {
+                transient_for = main_window
+            };
+        });
 
         account_settings_menuitem.clicked.connect (() => {
             try {

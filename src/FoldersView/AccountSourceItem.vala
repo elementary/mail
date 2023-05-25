@@ -161,26 +161,23 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem {
 
     public override Gtk.Menu? get_context_menu () {
         var menu = new Gtk.Menu ();
-        var signature_item = new Gtk.MenuItem.with_label (_("Manage Signature"));
-        menu.add (signature_item);
+        var sub_menu = new Gtk.Menu ();
+        unowned var session = Backend.Session.get_default ();
+        foreach (var signature_source in session.get_all_signature_sources ()) {
+            var item = new Gtk.MenuItem.with_label (signature_source.display_name);
+            item.activate.connect (() => {
+                session.set_signature_uid_for_service.begin (account.service, signature_source.uid);
+            });
+            sub_menu.add (item);
+        }
+        var no_signature_item = new Gtk.MenuItem.with_label (_("None"));
+        sub_menu.add (no_signature_item);
+        no_signature_item.activate.connect (() => session.set_signature_uid_for_service.begin (account.service, "none"));
+        var default_signature_item = new Gtk.MenuItem.with_label (_("Set default Signature")) {
+            submenu = sub_menu
+        };
+        menu.add (default_signature_item);
         menu.show_all ();
-
-        signature_item.activate.connect (() => {
-            unowned var application = (Gtk.Application) GLib.Application.get_default ();
-            MainWindow? main_window = null;
-            foreach (unowned var window in application.get_windows ()) {
-                if (window is MainWindow) {
-                    main_window = (MainWindow) window;
-                    break;
-                }
-            }
-
-            var dialog = new SignatureDialog (account.service) {
-                transient_for = main_window
-            };
-
-            dialog.present ();
-        });
         return menu;
     }
 }
