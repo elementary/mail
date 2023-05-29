@@ -38,6 +38,7 @@ public class SignatureDialog : Hdy.Window {
             show_close_button = true
         };
         start_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        start_header.get_style_context ().add_class ("default-decoration");
 
         signature_list = new Gtk.ListBox () {
             vexpand = true
@@ -62,26 +63,30 @@ public class SignatureDialog : Hdy.Window {
         start_box.add (signature_list);
         start_box.add (start_actionbar);
 
+        var title = new Granite.HeaderLabel (_("Title")) {
+            margin_start = 9,
+            no_show_all = true
+        };
+
         var end_header = new Hdy.HeaderBar () {
             show_close_button = true
         };
         end_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-        end_header.pack_start (new Granite.HeaderLabel (_("Title")) { margin_start = 12 });
+        end_header.get_style_context ().add_class ("default-decoration");
+        end_header.pack_start (title);
 
         title_entry = new Gtk.Entry () {
             margin_start = 12,
             margin_end = 12,
-            placeholder_text = "For example “Work” or “Personal”"
+            placeholder_text = _("For example “Work” or “Personal”")
         };
 
         web_view = new Mail.WebView () {
             is_composer = true,
             editable = true
         };
-        web_view.get_style_context ().add_class (Gtk.STYLE_CLASS_FRAME);
 
         var frame = new Gtk.Frame (null) {
-            margin_top = 9,
             margin_start = 12,
             margin_end = 12,
             margin_bottom = 12,
@@ -97,13 +102,24 @@ public class SignatureDialog : Hdy.Window {
         end_actionbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         end_actionbar.pack_start (delete_button);
 
+        var content_box = new Gtk.Box (VERTICAL, 0);
+        content_box.add (title_entry);
+        content_box.add (new Granite.HeaderLabel (_("Signature")) { margin_start = 12 });
+        content_box.add (frame);
+        content_box.add (end_actionbar);
+
         var end_box = new Gtk.Box (VERTICAL, 0);
         end_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         end_box.add (end_header);
-        end_box.add (title_entry);
-        end_box.add (new Granite.HeaderLabel (_("Signature")) { margin_start = 12 });
-        end_box.add (frame);
-        end_box.add (end_actionbar);
+        end_box.add (content_box);
+
+        var placeholder = new Gtk.Label (_("No Signature selected"));
+
+        var placeholder_overlay = new Gtk.Overlay () {
+            child = end_box
+        };
+        placeholder_overlay.add_overlay (placeholder);
+        placeholder_overlay.set_overlay_pass_through (placeholder, true);
 
         var action_sizegroup = new Gtk.SizeGroup (VERTICAL);
         action_sizegroup.add_widget (start_actionbar);
@@ -111,7 +127,7 @@ public class SignatureDialog : Hdy.Window {
 
         var paned = new Gtk.Paned (HORIZONTAL);
         paned.pack1 (start_box, true, false);
-        paned.pack2 (end_box, true, false);
+        paned.pack2 (placeholder_overlay, true, false);
 
         toast = new Granite.Widgets.Toast ("");
         toast.set_default_action (_("Undo"));
@@ -141,7 +157,18 @@ public class SignatureDialog : Hdy.Window {
 
         toast.default_action.connect (() => last_deleted_signature.undo_delete ());
 
-        signature_list.row_selected.connect ((row) => set_selected_signature.begin ((Signature)row));
+        signature_list.row_selected.connect ((row) => {
+            if (row == null) {
+                title.hide ();
+                content_box.hide ();
+                placeholder.show ();
+            } else {
+                title.show ();
+                content_box.show ();
+                placeholder.hide ();
+            }
+            set_selected_signature.begin ((Signature)row);
+        });
 
         delete_event.connect (() => {
             set_selected_signature.begin (null, () => {
@@ -198,7 +225,7 @@ public class SignatureDialog : Hdy.Window {
         last_deleted_signature = signature;
         signature.delete_signature ();
         signature_list.select_row (signature_list.get_row_at_index (index + 1));
-        toast.title = _("'%s' deleted".printf(signature.title));
+        toast.title = _("'%s' deleted".printf (signature.title));
         toast.send_notification ();
     }
 
