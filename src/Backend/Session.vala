@@ -551,7 +551,7 @@ public class Mail.Backend.Session : Camel.Session {
 
     public async void set_signature_uid_for_service (Camel.Service service, string signature_uid) {
         var identity_source = get_identity_source_for_service (service);
-        var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+        unowned var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
         identity_extension.signature_uid = signature_uid;
         try {
             yield identity_source.write (null);
@@ -569,7 +569,7 @@ public class Mail.Backend.Session : Camel.Session {
             return "";
         }
         var identity_source = get_identity_source_for_service (store);
-        var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+        unowned var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
 
         return identity_extension.signature_uid;
     }
@@ -611,6 +611,10 @@ public class Mail.Backend.Session : Camel.Session {
             warning ("Failed to commit the new signature source: %s", e.message);
             return null;
         }
+    }
+
+    public List<E.Source> get_all_identity_sources () {
+        return registry.list_enabled (E.SOURCE_EXTENSION_MAIL_IDENTITY);
     }
 
     public List<E.Source> get_all_signature_sources () {
