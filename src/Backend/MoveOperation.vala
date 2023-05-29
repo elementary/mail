@@ -100,9 +100,13 @@ public class Mail.MoveOperation : Object {
                 break;
 
             case MOVE:
-                unowned var dest_folder_full_name = dest_folder.get_string ();
                 var store = src_folder.parent_store;
-                dst_folder = yield store.get_folder (dest_folder_full_name, Camel.StoreGetFolderFlags.NONE, GLib.Priority.DEFAULT, null);
+                dst_folder = yield store.get_folder (
+                    dst_folder_full_name.get_string (),
+                    Camel.StoreGetFolderFlags.NONE,
+                    GLib.Priority.DEFAULT,
+                    null
+                );
                 break;
 
             case TRASH:
@@ -228,10 +232,6 @@ public class Mail.MoveOperation : Object {
                 message.set_flags (Camel.MessageFlags.DELETED, ~0);
             }
             update_queue (-moved_messages.size);
-            return;
-        }
-
-        if (move_type == VTRASH) {
             return;
         }
 

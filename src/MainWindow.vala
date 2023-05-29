@@ -278,11 +278,15 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                 break;
 
             case ACTION_MOVE:
-                conversation_list.move_selected_messages.begin (MoveHandler.MoveType.MOVE, parameter, (obj, res) => {
-                    var result = conversation_list.move_selected_messages.end (res);
+                conversation_list.move_selected_messages.begin (MoveOperation.MoveType.MOVE, parameter, (obj, res) => {
+                    string error_message;
+                    var result = conversation_list.move_selected_messages.end (res, out error_message);
                     if (result > 0) {
-                        toast.title = ngettext ("Message Moved", "Messages Moved", result);
-                        toast.send_notification ();
+                        move_toast.title = ngettext ("Message Moved", "Messages Moved", result);
+                        move_toast.send_notification ();
+                    } else if (error_message != "") {
+                        error_toast.title = _("Failed to move messages: %s").printf (error_message);
+                        error_toast.send_notification ();
                     }
                 });
                 break;
