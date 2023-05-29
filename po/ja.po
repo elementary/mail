@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-29 15:47+0000\n"
-"PO-Revision-Date: 2023-05-25 17:06+0000\n"
+"PO-Revision-Date: 2023-05-30 17:11+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -230,10 +230,9 @@ msgid_plural "Messages Archived"
 msgstr[0] "メッセージをアーカイブしました"
 
 #: src/MainWindow.vala:272 src/MainWindow.vala:286
-#, fuzzy, c-format
-#| msgid "Unable to send message"
+#, c-format
 msgid "Failed to move messages: %s"
-msgstr "メッセージを送信できません"
+msgstr "メッセージを移動できませんでした: %s"
 
 #: src/MainWindow.vala:283
 msgid "Message Deleted"
@@ -263,19 +262,19 @@ msgstr "サーバーへの接続試行中に予期しないエラーが発生し
 #: src/Backend/MoveOperation.vala:64
 #, c-format
 msgid "Moving messages… (%u remaining)"
-msgstr ""
+msgstr "メッセージを移動しています… (残り%u件)"
 
 #: src/Backend/MoveOperation.vala:97
 msgid "No Archive folder is configured."
-msgstr ""
+msgstr "アーカイブフォルダーが設定されていません。"
 
 #: src/Backend/MoveOperation.vala:115
 msgid "The destination folder was not found."
-msgstr ""
+msgstr "移動先フォルダーが見つかりませんでした。"
 
 #: src/Backend/MoveOperation.vala:119
 msgid "The source folder is the destination folder."
-msgstr ""
+msgstr "移動元フォルダーが移動先です。"
 
 #: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
