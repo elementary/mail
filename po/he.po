@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-29 15:47+0000\n"
-"PO-Revision-Date: 2023-05-25 17:07+0000\n"
+"PO-Revision-Date: 2023-05-30 17:11+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
 "Language: he\n"
@@ -245,10 +245,9 @@ msgstr[0] "הודעה הועברה לארכיון"
 msgstr[1] "הודעות הועברו לארכיון"
 
 #: src/MainWindow.vala:272 src/MainWindow.vala:286
-#, fuzzy, c-format
-#| msgid "Unable to send message"
+#, c-format
 msgid "Failed to move messages: %s"
-msgstr "לא ניתן לשלוח הודעה"
+msgstr "העברת הודעות נכשלה: %s"
 
 #: src/MainWindow.vala:283
 msgid "Message Deleted"
@@ -279,19 +278,19 @@ msgstr "אירעה שגיאה בלתי צפויה בהתחברות לשרת."
 #: src/Backend/MoveOperation.vala:64
 #, c-format
 msgid "Moving messages… (%u remaining)"
-msgstr ""
+msgstr "הודעות מועברות… (%u נותרו)"
 
 #: src/Backend/MoveOperation.vala:97
 msgid "No Archive folder is configured."
-msgstr ""
+msgstr "לא מוגדרת תיקיית ארכיון."
 
 #: src/Backend/MoveOperation.vala:115
 msgid "The destination folder was not found."
-msgstr ""
+msgstr "תיקיית היעד לא נמצאה."
 
 #: src/Backend/MoveOperation.vala:119
 msgid "The source folder is the destination folder."
-msgstr ""
+msgstr "תיקיית המקור היא תיקיית היעד."
 
 #: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
