@@ -597,7 +597,8 @@ public class Mail.Backend.Session : Camel.Session {
 
     public async E.Source? create_new_signature () {
         try {
-            var signature_source = new E.Source.with_uid (GLib.Uuid.string_random (), null) {
+            var uid = GLib.Uuid.string_random ();
+            var signature_source = new E.Source.with_uid (uid, null) {
                 display_name = _("New Signature")
             };
             /* Create the signature extension. We don't really use it but need it to know this source is for a signature */
@@ -605,7 +606,7 @@ public class Mail.Backend.Session : Camel.Session {
 
             yield registry.commit_source (signature_source, null);
             yield signature_source.mail_signature_replace ("", "".length, GLib.Priority.DEFAULT, null);
-            return signature_source;
+            return registry.ref_source (uid);
         } catch (Error e) {
             warning ("Failed to commit the new signature source: %s", e.message);
             return null;

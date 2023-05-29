@@ -223,8 +223,11 @@ public class SignatureDialog : Hdy.Window {
         var signature = (Signature)signature_list.get_selected_row ();
         var index = signature.get_index ();
         last_deleted_signature = signature;
+
         signature.delete_signature ();
+
         signature_list.select_row (signature_list.get_row_at_index (index + 1));
+
         toast.title = _("'%s' deleted".printf (signature.title));
         toast.send_notification ();
     }
@@ -285,7 +288,7 @@ public class SignatureDialog : Hdy.Window {
             });
         }
 
-        public async void finish_delete_signature () {
+        private async void finish_delete_signature () {
             try {
                 yield signature_source.remove (null);
                 destroy ();
