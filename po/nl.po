@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-22 15:22+0000\n"
-"PO-Revision-Date: 2023-05-26 21:06+0000\n"
+"PO-Revision-Date: 2023-05-29 15:47+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
 "Language: nl\n"
@@ -193,8 +193,8 @@ msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
-"Het bericht was verstuurd, maar er was geen kopie opgeslagen in de Verzonden "
-"berichten folder."
+"Het bericht was verstuurd, maar er was geen kopie opgeslagen in de map "
+"Verzonden berichten."
 
 #: src/Composer.vala:806
 msgid "Unable to send message"
@@ -360,7 +360,7 @@ msgstr "Nieuw bericht opstellen"
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
-msgstr "Folder vernieuwen"
+msgstr "Map vernieuwen"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
