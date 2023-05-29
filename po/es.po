@@ -12,12 +12,12 @@
 # Rodrigo Cares <rcares@gmail.com>, 2012-2013
 # Daniel Mustieles <daniel.mustieles@gmail.com>, 2014-2015, 2015.
 #
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
 "PO-Revision-Date: 2021-07-15 13:34+0000\n"
 "Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/mail/mail/es/>\n"
@@ -249,7 +249,7 @@ msgstr "Correo"
 msgid "Undo"
 msgstr "Deshacer"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:271
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -258,7 +258,7 @@ msgid_plural "Messages Archived"
 msgstr[0] "Mensaje eliminado"
 msgstr[1] "Mensajes eliminados"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:281
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Mensaje eliminado"
@@ -275,6 +275,18 @@ msgstr "Correo utiliza las cuentas definidas en Configuración del sistema."
 #: src/WelcomeView.vala:59
 msgid "Online Accounts…"
 msgstr "Cuentas en línea…"
+
+#: src/Backend/Account.vala:47
+#, fuzzy
+#| msgid "Unable to save draft"
+msgid "Unable to connect"
+msgstr "No se pudo guardar el borrador"
+
+#: src/Backend/Account.vala:48
+#, fuzzy
+#| msgid "There was an unexpected error while saving your draft."
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr "Se produjo un error inesperado al guardar el borrador."
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -442,12 +454,12 @@ msgid "%s at %s"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "Desmarcar mensaje como importante"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "Marcar mensaje como importante"
 
@@ -476,20 +488,20 @@ msgid "This message contains one or more attachments"
 msgstr "Este mensaje contiene uno o más adjuntos"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 msgid "Email Message"
 msgstr "Mensaje de correo electrónico"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 msgid "Unable to print email"
 msgstr "No se puede imprimir el mensaje"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -497,7 +509,7 @@ msgstr ""
 "Los adjuntos pueden causar errores en el equipo tras abrirse. Abra solamente "
 "archivos de fuentes confiables."
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "Abrir de todos modos"
 

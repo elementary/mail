@@ -10,12 +10,12 @@
 # hepin <hepin@sosia.us>, 2013
 # Kuang Chen <kchenphy@gmail.com>, 2012
 # Dianjin Wang <1132321739qq@gmail.com>, 2012
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
 "PO-Revision-Date: 2022-07-21 17:49+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -233,7 +233,7 @@ msgstr "邮件"
 msgid "Undo"
 msgstr "撤消"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:271
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -241,7 +241,7 @@ msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "消息已删除"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:281
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "消息已删除"
@@ -257,6 +257,18 @@ msgstr "邮件应用使用系统设置中配置的邮箱账户。"
 #: src/WelcomeView.vala:59
 msgid "Online Accounts…"
 msgstr "在线账户…"
+
+#: src/Backend/Account.vala:47
+#, fuzzy
+#| msgid "Unable to save draft"
+msgid "Unable to connect"
+msgstr "无法保存草稿"
+
+#: src/Backend/Account.vala:48
+#, fuzzy
+#| msgid "There was an unexpected error while sending your message."
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr "发送邮件时出现意外错误。"
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -408,12 +420,12 @@ msgid "%s at %s"
 msgstr "%s 在 %s"
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "取消星标"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "添加星标"
 
@@ -442,26 +454,26 @@ msgid "This message contains one or more attachments"
 msgstr "此邮件包含至少一个附件"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 msgid "Email Message"
 msgstr "邮件消息"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 msgid "Unable to print email"
 msgstr "无法打印邮件"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr "打开的附件可能会破坏您的系统。请只打开来自可信任源的文件。"
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "仍然打开"
 

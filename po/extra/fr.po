@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
-"PO-Revision-Date: 2022-05-24 15:46+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
+"PO-Revision-Date: 2023-05-22 15:23+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/extra/fr/>\n"
 "Language: fr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
@@ -90,36 +90,42 @@ msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
 msgstr ""
+"La page d'accueil est désormais supprimée lorsqu'un compte est ajouté dans "
+"Comptes en ligne depuis les paramètres sans qu'il soit nécessaire de "
+"redémarrer l'application"
 
 #: data/mail.metainfo.xml.in:87
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
 msgstr ""
+"La zone de saisie est toujours présentée sous la forme d'une nouvelle "
+"fenêtre et comprend davantage de raccourcis clavier"
 
 #: data/mail.metainfo.xml.in:88
 msgid "The search filter menu now appears next to the search bar"
 msgstr ""
+"Le menu du filtre de recherche apparaît désormais à côté de la barre de "
+"recherche"
 
 #: data/mail.metainfo.xml.in:89
 msgid "HeaderBars appear to float above content when scrolled"
 msgstr ""
+"Les barres de titre semblent flotter au-dessus du contenu lorsqu'on les fait "
+"défiler"
 
 #: data/mail.metainfo.xml.in:90
-#, fuzzy
-#| msgid "Fix a potential crash while loading messages"
 msgid "Fix a potential crash with empty messages"
-msgstr "Correction d'un plantage potentiel lors du chargement des messages"
+msgstr "Correction d'un plantage potentiel avec en cas de message vide"
 
 #: data/mail.metainfo.xml.in:91
 msgid "Stop resizing from cutting off the message list"
 msgstr ""
+"Nous avons empêché le redimensionnement de couper la liste des messages"
 
 #: data/mail.metainfo.xml.in:92
-#, fuzzy
-#| msgid "Stability improvements"
 msgid "Performance improvements"
-msgstr "Amélioration de la stabilité"
+msgstr "Amélioration des performances"
 
 #: data/mail.metainfo.xml.in:118 data/mail.metainfo.xml.in:140
 #: data/mail.metainfo.xml.in:156

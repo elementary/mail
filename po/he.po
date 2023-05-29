@@ -12,12 +12,12 @@
 # yoseforb <yoseforb@gmail.com>, 2013
 # Yosef Or Boczko <yoseforb@gnome.org>, 2013, 2014, 2015.
 #
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
 "PO-Revision-Date: 2023-05-17 21:00+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
@@ -238,13 +238,13 @@ msgstr "דוא״ל"
 msgid "Undo"
 msgstr "ביטול"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:271
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "הודעה הועברה לארכיון"
 msgstr[1] "הודעות הועברו לארכיון"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:281
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "הודעה נמחקה"
@@ -261,6 +261,18 @@ msgstr "התכנית Mail משתמשת בחשבונות דוא״ל שמוגדר�
 #: src/WelcomeView.vala:59
 msgid "Online Accounts…"
 msgstr "חשבונות מקוונים…"
+
+#: src/Backend/Account.vala:47
+#, fuzzy
+#| msgid "Unable to save draft"
+msgid "Unable to connect"
+msgstr "לא ניתן לשמור טיוטה"
+
+#: src/Backend/Account.vala:48
+#, fuzzy
+#| msgid "There was an unexpected error while sending your message."
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr "אירעה שגיאה בלתי צפויה בשליחת ההודעה שלך."
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -412,12 +424,12 @@ msgid "%s at %s"
 msgstr "%s ב־%s"
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "ביטול הכוכב להודעה"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "סימון ההודעה בכוכב"
 
@@ -446,20 +458,20 @@ msgid "This message contains one or more attachments"
 msgstr "הודעה זו מכילה צרופה אחת או יותר"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 msgid "Email Message"
 msgstr "הודעת דוא״ל"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 msgid "Unable to print email"
 msgstr "לא ניתן להדפיס דוא״ל"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr "לתת אמון ולפתוח את „%s”?"
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -467,7 +479,7 @@ msgstr ""
 "צרופות עשויות לגרום נזק למערכת שלך אם הן תיפתחנה. יש לפתוח קבצים רק ממקורות "
 "מהימנים."
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "לפתוח בכל זאת"
 

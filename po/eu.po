@@ -5,12 +5,12 @@
 #
 # Translators:
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2014.
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
+"POT-Creation-Date: 2023-05-22 15:22+0000\n"
 "PO-Revision-Date: 2015-12-01 22:33+0000\n"
 "Last-Translator: Félix Brezo <felixbrezo@gmail.com>\n"
 "Language-Team: Basque <librezale@librezale.org>\n"
@@ -247,14 +247,14 @@ msgstr "Posta guztiak"
 msgid "Undo"
 msgstr ""
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:271
 #, fuzzy
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "Ez da berriketarik hautatu."
 msgstr[1] "Ez da berriketarik hautatu."
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:281
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -273,6 +273,16 @@ msgstr ""
 #, fuzzy
 msgid "Online Accounts…"
 msgstr "Kontuak"
+
+#: src/Backend/Account.vala:47
+#, fuzzy
+#| msgid "Unable to validate:\n"
+msgid "Unable to connect"
+msgstr "Ezin da balidatu:\n"
+
+#: src/Backend/Account.vala:48
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr ""
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -454,13 +464,13 @@ msgid "%s at %s"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 #, fuzzy
 msgid "Unstar message"
 msgstr "mezu %d"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 #, fuzzy
 msgid "Star message"
 msgstr "mezu %d"
@@ -490,30 +500,30 @@ msgid "This message contains one or more attachments"
 msgstr ""
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Mezu berria"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
 msgstr "Ezin da balidatu:\n"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr ""
 
