@@ -12,10 +12,10 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-22 15:22+0000\n"
-"PO-Revision-Date: 2023-05-20 04:06+0000\n"
+"PO-Revision-Date: 2023-05-25 17:07+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
-"Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/"
-">\n"
+"Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/>"
+"\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -264,16 +264,12 @@ msgid "Online Accounts…"
 msgstr "Online fiókok…"
 
 #: src/Backend/Account.vala:47
-#, fuzzy
-#| msgid "Unable to save draft"
 msgid "Unable to connect"
-msgstr "Piszkozat mentése sikertelen"
+msgstr "A kapcsolódás sikertelen"
 
 #: src/Backend/Account.vala:48
-#, fuzzy
-#| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to connect to the server."
-msgstr "Egy váratlan hiba merült fel az üzenet küldése közben."
+msgstr "Egy váratlan hiba merült fel a szerverhez való kapcsolódás közben."
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"

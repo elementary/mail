@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-22 15:22+0000\n"
-"PO-Revision-Date: 2023-05-17 21:00+0000\n"
+"PO-Revision-Date: 2023-05-25 17:07+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
 "Language: he\n"
@@ -263,16 +263,12 @@ msgid "Online Accounts…"
 msgstr "חשבונות מקוונים…"
 
 #: src/Backend/Account.vala:47
-#, fuzzy
-#| msgid "Unable to save draft"
 msgid "Unable to connect"
-msgstr "לא ניתן לשמור טיוטה"
+msgstr "לא ניתן להתחבר"
 
 #: src/Backend/Account.vala:48
-#, fuzzy
-#| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to connect to the server."
-msgstr "אירעה שגיאה בלתי צפויה בשליחת ההודעה שלך."
+msgstr "אירעה שגיאה בלתי צפויה בהתחברות לשרת."
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"

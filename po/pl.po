@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-22 15:22+0000\n"
-"PO-Revision-Date: 2023-03-31 19:59+0000\n"
+"PO-Revision-Date: 2023-05-25 17:06+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
 "Language: pl\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 "X-Poedit-Country: Poland\n"
 "X-Poedit-Language: Polish\n"
@@ -250,14 +250,11 @@ msgid "Undo"
 msgstr "Cofnij"
 
 #: src/MainWindow.vala:271
-#, fuzzy
-#| msgid "Message Deleted"
-#| msgid_plural "Messages Deleted"
 msgid "Message Archived"
 msgid_plural "Messages Archived"
-msgstr[0] "Wiadomość usunięta"
-msgstr[1] "Wiadomości usunięte"
-msgstr[2] "Wiadomości usuniętych"
+msgstr[0] "Wiadomość zarchiwizowana"
+msgstr[1] "Wiadomości zarchiwizowane"
+msgstr[2] "Wiadomości zarchiwizowane"
 
 #: src/MainWindow.vala:281
 msgid "Message Deleted"
@@ -279,16 +276,12 @@ msgid "Online Accounts…"
 msgstr "Konta on-line…"
 
 #: src/Backend/Account.vala:47
-#, fuzzy
-#| msgid "Unable to save draft"
 msgid "Unable to connect"
-msgstr "Nie można zapisać wersji roboczej"
+msgstr "Nie można połączyć"
 
 #: src/Backend/Account.vala:48
-#, fuzzy
-#| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to connect to the server."
-msgstr "Wystąpił nieoczekiwany błąd podczas wysyłania twojej wiadomości."
+msgstr "Wystąpił nieoczekiwany błąd podczas łączenia się z serwerem."
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"

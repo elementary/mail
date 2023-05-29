@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-22 15:22+0000\n"
-"PO-Revision-Date: 2023-02-01 19:25+0000\n"
+"PO-Revision-Date: 2023-05-26 21:06+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
 "Language: nl\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
@@ -245,13 +245,10 @@ msgid "Undo"
 msgstr "Ongedaan maken"
 
 #: src/MainWindow.vala:271
-#, fuzzy
-#| msgid "Message Deleted"
-#| msgid_plural "Messages Deleted"
 msgid "Message Archived"
 msgid_plural "Messages Archived"
-msgstr[0] "Bericht verwijderd"
-msgstr[1] "Berichten verwijderd"
+msgstr[0] "Bericht gearchiveerd"
+msgstr[1] "Berichten gearchiveerd"
 
 #: src/MainWindow.vala:281
 msgid "Message Deleted"
@@ -274,17 +271,13 @@ msgid "Online Accounts…"
 msgstr "Online accounts…"
 
 #: src/Backend/Account.vala:47
-#, fuzzy
-#| msgid "Unable to save draft"
 msgid "Unable to connect"
-msgstr "Kan concept niet opslaan"
+msgstr "Kan niet verbinden"
 
 #: src/Backend/Account.vala:48
-#, fuzzy
-#| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to connect to the server."
 msgstr ""
-"Er is een onverwachte fout opgetreden tijdens het versturen van uw bericht."
+"Er is een onverwachte fout opgetreden tijdens het verbinden met de server."
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Search Mail"
@@ -481,7 +474,7 @@ msgstr "E-mail afdrukken is mislukt"
 #: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
-msgstr ""
+msgstr "“%s” openen en vertrouwen?"
 
 #: src/MessageList/MessageListItem.vala:674
 msgid ""
