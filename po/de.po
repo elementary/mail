@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-29 15:47+0000\n"
-"PO-Revision-Date: 2023-03-30 14:59+0000\n"
+"PO-Revision-Date: 2023-05-30 17:11+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
 "Language: de\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
@@ -244,19 +244,15 @@ msgid "Undo"
 msgstr "Rückgängig"
 
 #: src/MainWindow.vala:269
-#, fuzzy
-#| msgid "Message Deleted"
-#| msgid_plural "Messages Deleted"
 msgid "Message Archived"
 msgid_plural "Messages Archived"
-msgstr[0] "Nachricht gelöscht"
-msgstr[1] "Nachrichten gelöscht"
+msgstr[0] "Nachricht archiviert"
+msgstr[1] "Nachrichten archiviert"
 
 #: src/MainWindow.vala:272 src/MainWindow.vala:286
-#, fuzzy, c-format
-#| msgid "Unable to send message"
+#, c-format
 msgid "Failed to move messages: %s"
-msgstr "Nachricht kann nicht gesendet werden"
+msgstr "Nachrichten konnten nicht verschoben werden: %s"
 
 #: src/MainWindow.vala:283
 msgid "Message Deleted"
@@ -279,33 +275,29 @@ msgid "Online Accounts…"
 msgstr "Online-Konten …"
 
 #: src/Backend/Account.vala:48
-#, fuzzy
-#| msgid "Unable to save draft"
 msgid "Unable to connect"
-msgstr "Entwurf kann nicht gespeichert werden"
+msgstr "Verbindung nicht möglich"
 
 #: src/Backend/Account.vala:49
-#, fuzzy
-#| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to connect to the server."
-msgstr "Unvorhergesehener Fehler beim Senden der Nachricht."
+msgstr "Unvorhergesehener Fehler beim Verbindungsaufbau zum Server."
 
 #: src/Backend/MoveOperation.vala:64
 #, c-format
 msgid "Moving messages… (%u remaining)"
-msgstr ""
+msgstr "Nachrichten veschieben … (%u verbleibend)"
 
 #: src/Backend/MoveOperation.vala:97
 msgid "No Archive folder is configured."
-msgstr ""
+msgstr "Kein Archivordner eingerichtet."
 
 #: src/Backend/MoveOperation.vala:115
 msgid "The destination folder was not found."
-msgstr ""
+msgstr "Zielordner nicht gefunden."
 
 #: src/Backend/MoveOperation.vala:119
 msgid "The source folder is the destination folder."
-msgstr ""
+msgstr "Der Quellordner ist identisch mit dem Zielordner."
 
 #: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
