@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-22 15:22+0000\n"
+"POT-Creation-Date: 2023-05-29 15:47+0000\n"
 "PO-Revision-Date: 2021-03-21 10:03+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/mail/mail/mr/>\n"
@@ -230,15 +230,15 @@ msgid_plural "%s from %u senders"
 msgstr[0] "या प्रेषकांकडून येणारे नेहमी दाखवा"
 msgstr[1] "या प्रेषकांकडून येणारे नेहमी दाखवा"
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:78
 msgid "Mail"
 msgstr "मेल"
 
-#: src/MainWindow.vala:120
+#: src/MainWindow.vala:121
 msgid "Undo"
 msgstr "पूर्ववत करा"
 
-#: src/MainWindow.vala:271
+#: src/MainWindow.vala:269
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -247,7 +247,13 @@ msgid_plural "Messages Archived"
 msgstr[0] "संदेश हटविला"
 msgstr[1] "संदेश हटवले"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:272 src/MainWindow.vala:286
+#, fuzzy, c-format
+#| msgid "Delete draft"
+msgid "Failed to move messages: %s"
+msgstr "लिहून ठेवलेला मसुदा हटवा"
+
+#: src/MainWindow.vala:283
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "संदेश हटविला"
@@ -265,73 +271,90 @@ msgstr "मेल सिस्टम सेटिंग्जमध्ये क
 msgid "Online Accounts…"
 msgstr "ऑनलाइन खाती …"
 
-#: src/Backend/Account.vala:47
+#: src/Backend/Account.vala:48
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to connect"
 msgstr "लिहून ठेवलेला मसुदा हटवा"
 
-#: src/Backend/Account.vala:48
+#: src/Backend/Account.vala:49
 msgid "There was an unexpected error while trying to connect to the server."
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/Backend/MoveOperation.vala:64
+#, c-format
+msgid "Moving messages… (%u remaining)"
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:97
+msgid "No Archive folder is configured."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:115
+msgid "The destination folder was not found."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:119
+msgid "The source folder is the destination folder."
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
 msgstr "मेल शोधा"
 
-#: src/ConversationList/ConversationList.vala:88
+#: src/ConversationList/ConversationList.vala:84
 #, fuzzy
 #| msgid "Mark Conversation"
 msgid "Hide read conversations"
 msgstr "संभाषण चिन्हांकित करा"
 
-#: src/ConversationList/ConversationList.vala:90
+#: src/ConversationList/ConversationList.vala:86
 #, fuzzy
 #| msgid "Mark Conversation"
 msgid "Hide unstarred conversations"
 msgstr "संभाषण चिन्हांकित करा"
 
-#: src/ConversationList/ConversationList.vala:107
+#: src/ConversationList/ConversationList.vala:103
 #, fuzzy
 #| msgid "Mark Conversation"
 msgid "Filter Conversations"
 msgstr "संभाषण चिन्हांकित करा"
 
-#: src/ConversationList/ConversationList.vala:130
+#: src/ConversationList/ConversationList.vala:126
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetch new messages"
 msgstr "नवीन मेल तयार करा"
 
-#: src/ConversationList/ConversationList.vala:137
+#: src/ConversationList/ConversationList.vala:133
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetching new messages…"
 msgstr "नवीन मेल तयार करा"
 
-#: src/ConversationList/ConversationList.vala:548
+#: src/ConversationList/ConversationList.vala:561
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "संभाषणांना कचरापेटीत हलवा"
 
-#: src/ConversationList/ConversationList.vala:557
+#: src/ConversationList/ConversationList.vala:570
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "वाचले नाही अशी खुण करा"
 
-#: src/ConversationList/ConversationList.vala:565
+#: src/ConversationList/ConversationList.vala:578
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "वाचले अशी खुण करा"
 
-#: src/ConversationList/ConversationList.vala:575
+#: src/ConversationList/ConversationList.vala:588
 #: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "तारांकित करा"
 
-#: src/ConversationList/ConversationList.vala:583
+#: src/ConversationList/ConversationList.vala:596
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "अतारांकित करा"

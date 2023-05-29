@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-22 15:22+0000\n"
-"PO-Revision-Date: 2023-02-01 19:25+0000\n"
+"POT-Creation-Date: 2023-05-29 15:47+0000\n"
+"PO-Revision-Date: 2023-05-29 15:47+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
 "Language: nl\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
@@ -193,8 +193,8 @@ msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
-"Het bericht was verstuurd, maar er was geen kopie opgeslagen in de Verzonden "
-"berichten folder."
+"Het bericht was verstuurd, maar er was geen kopie opgeslagen in de map "
+"Verzonden berichten."
 
 #: src/Composer.vala:806
 msgid "Unable to send message"
@@ -236,24 +236,27 @@ msgid_plural "%s from %u senders"
 msgstr[0] "%s van %u afzender"
 msgstr[1] "%s van %u afzenders"
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:78
 msgid "Mail"
 msgstr "Mail"
 
-#: src/MainWindow.vala:120
+#: src/MainWindow.vala:121
 msgid "Undo"
 msgstr "Ongedaan maken"
 
-#: src/MainWindow.vala:271
-#, fuzzy
-#| msgid "Message Deleted"
-#| msgid_plural "Messages Deleted"
+#: src/MainWindow.vala:269
 msgid "Message Archived"
 msgid_plural "Messages Archived"
-msgstr[0] "Bericht verwijderd"
-msgstr[1] "Berichten verwijderd"
+msgstr[0] "Bericht gearchiveerd"
+msgstr[1] "Berichten gearchiveerd"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:272 src/MainWindow.vala:286
+#, fuzzy, c-format
+#| msgid "Unable to send message"
+msgid "Failed to move messages: %s"
+msgstr "Kon bericht niet versturen"
+
+#: src/MainWindow.vala:283
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Bericht verwijderd"
@@ -273,62 +276,75 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Online accounts…"
 
-#: src/Backend/Account.vala:47
-#, fuzzy
-#| msgid "Unable to save draft"
-msgid "Unable to connect"
-msgstr "Kan concept niet opslaan"
-
 #: src/Backend/Account.vala:48
-#, fuzzy
-#| msgid "There was an unexpected error while sending your message."
+msgid "Unable to connect"
+msgstr "Kan niet verbinden"
+
+#: src/Backend/Account.vala:49
 msgid "There was an unexpected error while trying to connect to the server."
 msgstr ""
-"Er is een onverwachte fout opgetreden tijdens het versturen van uw bericht."
+"Er is een onverwachte fout opgetreden tijdens het verbinden met de server."
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/Backend/MoveOperation.vala:64
+#, c-format
+msgid "Moving messages… (%u remaining)"
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:97
+msgid "No Archive folder is configured."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:115
+msgid "The destination folder was not found."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:119
+msgid "The source folder is the destination folder."
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
 msgstr "Mail doorzoeken"
 
-#: src/ConversationList/ConversationList.vala:88
+#: src/ConversationList/ConversationList.vala:84
 msgid "Hide read conversations"
 msgstr "Gelezen gesprekken verbergen"
 
-#: src/ConversationList/ConversationList.vala:90
+#: src/ConversationList/ConversationList.vala:86
 msgid "Hide unstarred conversations"
 msgstr "Gesprekken zonder ster verbergen"
 
-#: src/ConversationList/ConversationList.vala:107
+#: src/ConversationList/ConversationList.vala:103
 msgid "Filter Conversations"
 msgstr "Gesprekken filteren"
 
-#: src/ConversationList/ConversationList.vala:130
+#: src/ConversationList/ConversationList.vala:126
 msgid "Fetch new messages"
 msgstr "Nieuwe berichten ophalen"
 
-#: src/ConversationList/ConversationList.vala:137
+#: src/ConversationList/ConversationList.vala:133
 msgid "Fetching new messages…"
 msgstr "Nieuwe berichten worden opgehaald…"
 
-#: src/ConversationList/ConversationList.vala:548
+#: src/ConversationList/ConversationList.vala:561
 msgid "Move To Trash"
 msgstr "Verplaatsen naar prullenbak"
 
-#: src/ConversationList/ConversationList.vala:557
+#: src/ConversationList/ConversationList.vala:570
 msgid "Mark As Unread"
 msgstr "Markeren als ongelezen"
 
-#: src/ConversationList/ConversationList.vala:565
+#: src/ConversationList/ConversationList.vala:578
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "Als gelezen markeren"
 
-#: src/ConversationList/ConversationList.vala:575
+#: src/ConversationList/ConversationList.vala:588
 #: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "Ster toevoegen"
 
-#: src/ConversationList/ConversationList.vala:583
+#: src/ConversationList/ConversationList.vala:596
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "Ster verwijderen"
@@ -367,7 +383,7 @@ msgstr "Nieuw bericht opstellen"
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
-msgstr "Folder vernieuwen"
+msgstr "Map vernieuwen"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
@@ -481,7 +497,7 @@ msgstr "E-mail afdrukken is mislukt"
 #: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
-msgstr ""
+msgstr "“%s” openen en vertrouwen?"
 
 #: src/MessageList/MessageListItem.vala:674
 msgid ""

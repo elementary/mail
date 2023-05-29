@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-22 15:22+0000\n"
+"POT-Creation-Date: 2023-05-29 15:47+0000\n"
 "PO-Revision-Date: 2021-07-15 13:34+0000\n"
 "Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/mail/mail/es/>\n"
@@ -241,15 +241,15 @@ msgid_plural "%s from %u senders"
 msgstr[0] "Mostrar siempre el remitente"
 msgstr[1] "Mostrar siempre el remitente"
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:78
 msgid "Mail"
 msgstr "Correo"
 
-#: src/MainWindow.vala:120
+#: src/MainWindow.vala:121
 msgid "Undo"
 msgstr "Deshacer"
 
-#: src/MainWindow.vala:271
+#: src/MainWindow.vala:269
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -258,7 +258,13 @@ msgid_plural "Messages Archived"
 msgstr[0] "Mensaje eliminado"
 msgstr[1] "Mensajes eliminados"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:272 src/MainWindow.vala:286
+#, fuzzy, c-format
+#| msgid "Unable to save draft"
+msgid "Failed to move messages: %s"
+msgstr "No se pudo guardar el borrador"
+
+#: src/MainWindow.vala:283
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Mensaje eliminado"
@@ -276,77 +282,94 @@ msgstr "Correo utiliza las cuentas definidas en Configuración del sistema."
 msgid "Online Accounts…"
 msgstr "Cuentas en línea…"
 
-#: src/Backend/Account.vala:47
+#: src/Backend/Account.vala:48
 #, fuzzy
 #| msgid "Unable to save draft"
 msgid "Unable to connect"
 msgstr "No se pudo guardar el borrador"
 
-#: src/Backend/Account.vala:48
+#: src/Backend/Account.vala:49
 #, fuzzy
 #| msgid "There was an unexpected error while saving your draft."
 msgid "There was an unexpected error while trying to connect to the server."
 msgstr "Se produjo un error inesperado al guardar el borrador."
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/Backend/MoveOperation.vala:64
+#, c-format
+msgid "Moving messages… (%u remaining)"
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:97
+msgid "No Archive folder is configured."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:115
+msgid "The destination folder was not found."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:119
+msgid "The source folder is the destination folder."
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
 msgstr "Buscar correo"
 
-#: src/ConversationList/ConversationList.vala:88
+#: src/ConversationList/ConversationList.vala:84
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide read conversations"
 msgstr "Marcar conversaciones"
 
-#: src/ConversationList/ConversationList.vala:90
+#: src/ConversationList/ConversationList.vala:86
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
 msgstr "Marcar conversaciones"
 
-#: src/ConversationList/ConversationList.vala:107
+#: src/ConversationList/ConversationList.vala:103
 #, fuzzy
 #| msgid "Delete Conversation"
 msgid "Filter Conversations"
 msgstr "Eliminar conversación"
 
-#: src/ConversationList/ConversationList.vala:130
+#: src/ConversationList/ConversationList.vala:126
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d mensaje nuevo"
 
-#: src/ConversationList/ConversationList.vala:137
+#: src/ConversationList/ConversationList.vala:133
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages…"
 msgstr "%d mensaje nuevo"
 
-#: src/ConversationList/ConversationList.vala:548
+#: src/ConversationList/ConversationList.vala:561
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "Enviar conversaciones a la papelera"
 
-#: src/ConversationList/ConversationList.vala:557
+#: src/ConversationList/ConversationList.vala:570
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Marcar como no leído"
 
-#: src/ConversationList/ConversationList.vala:565
+#: src/ConversationList/ConversationList.vala:578
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "Marcar como leído"
 
-#: src/ConversationList/ConversationList.vala:575
+#: src/ConversationList/ConversationList.vala:588
 #: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "Destacar"
 
-#: src/ConversationList/ConversationList.vala:583
+#: src/ConversationList/ConversationList.vala:596
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "No destacar"

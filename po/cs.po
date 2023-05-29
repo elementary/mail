@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-22 15:22+0000\n"
+"POT-Creation-Date: 2023-05-29 15:47+0000\n"
 "PO-Revision-Date: 2022-01-10 23:40+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/mail/cs/>\n"
@@ -230,15 +230,15 @@ msgstr[0] "%s od %u odesilatele"
 msgstr[1] "%s od %u odesilatelů"
 msgstr[2] "%s od %u odesilatelů"
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:78
 msgid "Mail"
 msgstr "Mail"
 
-#: src/MainWindow.vala:120
+#: src/MainWindow.vala:121
 msgid "Undo"
 msgstr "Zpět"
 
-#: src/MainWindow.vala:271
+#: src/MainWindow.vala:269
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -248,7 +248,13 @@ msgstr[0] "Žádná vybraná zpráva"
 msgstr[1] "Žádné vybrané zprávy"
 msgstr[2] "Žádné vybrané zprávy"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:272 src/MainWindow.vala:286
+#, fuzzy, c-format
+#| msgid "Unable to send message"
+msgid "Failed to move messages: %s"
+msgstr "Zprávu se nedaří odeslat"
+
+#: src/MainWindow.vala:283
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Žádná vybraná zpráva"
@@ -267,63 +273,80 @@ msgstr "Pošta používá emailové účty přidané v Nastavení systému."
 msgid "Online Accounts…"
 msgstr "Online účty…"
 
-#: src/Backend/Account.vala:47
+#: src/Backend/Account.vala:48
 #, fuzzy
 #| msgid "Unable to save draft"
 msgid "Unable to connect"
 msgstr "Koncept se nepodařilo uložit"
 
-#: src/Backend/Account.vala:48
+#: src/Backend/Account.vala:49
 #, fuzzy
 #| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to connect to the server."
 msgstr "Došlo k neočekávané chybě při odesílání zprávy."
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/Backend/MoveOperation.vala:64
+#, c-format
+msgid "Moving messages… (%u remaining)"
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:97
+msgid "No Archive folder is configured."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:115
+msgid "The destination folder was not found."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:119
+msgid "The source folder is the destination folder."
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
 msgstr "Hledat poštu"
 
-#: src/ConversationList/ConversationList.vala:88
+#: src/ConversationList/ConversationList.vala:84
 msgid "Hide read conversations"
 msgstr "Skrýt už přečtené konverzace"
 
-#: src/ConversationList/ConversationList.vala:90
+#: src/ConversationList/ConversationList.vala:86
 msgid "Hide unstarred conversations"
 msgstr "Skrýt konverzace bez hvězdičky"
 
-#: src/ConversationList/ConversationList.vala:107
+#: src/ConversationList/ConversationList.vala:103
 msgid "Filter Conversations"
 msgstr "Filtrovat konverzace"
 
-#: src/ConversationList/ConversationList.vala:130
+#: src/ConversationList/ConversationList.vala:126
 msgid "Fetch new messages"
 msgstr "Stáhnout si nové zprávy"
 
-#: src/ConversationList/ConversationList.vala:137
+#: src/ConversationList/ConversationList.vala:133
 #, fuzzy
 #| msgid "Fetching new messages"
 msgid "Fetching new messages…"
 msgstr "Stahování nových zpráv"
 
-#: src/ConversationList/ConversationList.vala:548
+#: src/ConversationList/ConversationList.vala:561
 msgid "Move To Trash"
 msgstr "Přesunout do koše"
 
-#: src/ConversationList/ConversationList.vala:557
+#: src/ConversationList/ConversationList.vala:570
 msgid "Mark As Unread"
 msgstr "Označit jako nepřečtené"
 
-#: src/ConversationList/ConversationList.vala:565
+#: src/ConversationList/ConversationList.vala:578
 #: src/MessageList/MessageList.vala:87
 msgid "Mark as Read"
 msgstr "Označit jako přečtené"
 
-#: src/ConversationList/ConversationList.vala:575
+#: src/ConversationList/ConversationList.vala:588
 #: src/MessageList/MessageList.vala:93
 msgid "Star"
 msgstr "Označit hvězdičkou"
 
-#: src/ConversationList/ConversationList.vala:583
+#: src/ConversationList/ConversationList.vala:596
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr "Odebrat hvězdičku"

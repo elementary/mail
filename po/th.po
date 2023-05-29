@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-22 15:22+0000\n"
+"POT-Creation-Date: 2023-05-29 15:47+0000\n"
 "PO-Revision-Date: 2015-12-25 15:48+0000\n"
 "Last-Translator: Rockworld <sumoisrock@gmail.com>\n"
 "Language-Team: Thai <th@li.org>\n"
@@ -224,24 +224,29 @@ msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
 msgstr[0] ""
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:78
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "จดหมายทั้งหมด"
 
-#: src/MainWindow.vala:120
+#: src/MainWindow.vala:121
 msgid "Undo"
 msgstr ""
 
-#: src/MainWindow.vala:271
+#: src/MainWindow.vala:269
 #, fuzzy
 #| msgid "Archive"
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "แฟ้มจัดเก็บ"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:272 src/MainWindow.vala:286
+#, c-format
+msgid "Failed to move messages: %s"
+msgstr ""
+
+#: src/MainWindow.vala:283
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
@@ -258,66 +263,83 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr ""
 
-#: src/Backend/Account.vala:47
+#: src/Backend/Account.vala:48
 msgid "Unable to connect"
 msgstr ""
 
-#: src/Backend/Account.vala:48
+#: src/Backend/Account.vala:49
 msgid "There was an unexpected error while trying to connect to the server."
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/Backend/MoveOperation.vala:64
+#, c-format
+msgid "Moving messages… (%u remaining)"
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:97
+msgid "No Archive folder is configured."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:115
+msgid "The destination folder was not found."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:119
+msgid "The source folder is the destination folder."
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:88
+#: src/ConversationList/ConversationList.vala:84
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide read conversations"
 msgstr "เพิ่มป้ายชื่อไปยังการสนทนา"
 
-#: src/ConversationList/ConversationList.vala:90
+#: src/ConversationList/ConversationList.vala:86
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide unstarred conversations"
 msgstr "เพิ่มป้ายชื่อไปยังการสนทนา"
 
-#: src/ConversationList/ConversationList.vala:107
+#: src/ConversationList/ConversationList.vala:103
 #, fuzzy
 msgid "Filter Conversations"
 msgstr "ทำเครื่องหมายคู่สนทนา"
 
-#: src/ConversationList/ConversationList.vala:130
+#: src/ConversationList/ConversationList.vala:126
 msgid "Fetch new messages"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:137
+#: src/ConversationList/ConversationList.vala:133
 msgid "Fetching new messages…"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:548
+#: src/ConversationList/ConversationList.vala:561
 #, fuzzy
 msgid "Move To Trash"
 msgstr "ย้ายคู่สนทนา"
 
-#: src/ConversationList/ConversationList.vala:557
+#: src/ConversationList/ConversationList.vala:570
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "ทำเครื่องหมายว่าเป็นส_แปม"
 
-#: src/ConversationList/ConversationList.vala:565
+#: src/ConversationList/ConversationList.vala:578
 #: src/MessageList/MessageList.vala:87
 #, fuzzy
 msgid "Mark as Read"
 msgstr "ทำเครื่องหมายว่าเป็นส_แปม"
 
-#: src/ConversationList/ConversationList.vala:575
+#: src/ConversationList/ConversationList.vala:588
 #: src/MessageList/MessageList.vala:93
 #, fuzzy
 msgid "Star"
 msgstr "ที่ติดดาว"
 
-#: src/ConversationList/ConversationList.vala:583
+#: src/ConversationList/ConversationList.vala:596
 #: src/MessageList/MessageList.vala:99
 msgid "Unstar"
 msgstr ""
