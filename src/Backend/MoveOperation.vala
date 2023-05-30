@@ -25,6 +25,7 @@
 public class Mail.MoveOperation : Object {
     public enum MoveType {
         ARCHIVE,
+        MOVE,
         TRASH,
         VTRASH
     }
@@ -96,6 +97,16 @@ public class Mail.MoveOperation : Object {
                 if (!yield set_dst_folder_for_uri (archive_folder_uri)) {
                     throw new MoveError.DST_FOLDER_NOT_FOUND (_("No Archive folder is configured."));
                 }
+                break;
+
+            case MOVE:
+                var store = src_folder.parent_store;
+                dst_folder = yield store.get_folder (
+                    dst_folder_full_name.get_string (),
+                    Camel.StoreGetFolderFlags.NONE,
+                    GLib.Priority.DEFAULT,
+                    null
+                );
                 break;
 
             case TRASH:

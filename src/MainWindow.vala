@@ -41,12 +41,13 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     public const string ACTION_REPLY_ALL = "reply-all";
     public const string ACTION_FORWARD = "forward";
     public const string ACTION_PRINT = "print";
-    public const string ACTION_MARK = "mark";
+    public const string ACTION_MODIFY = "modify";
     public const string ACTION_MARK_READ = "mark-read";
     public const string ACTION_MARK_STAR = "mark-star";
     public const string ACTION_MARK_UNREAD = "mark-unread";
     public const string ACTION_MARK_UNSTAR = "mark-unstar";
     public const string ACTION_ARCHIVE = "archive";
+    public const string ACTION_MOVE = "move";
     public const string ACTION_MOVE_TO_TRASH = "trash";
     public const string ACTION_FULLSCREEN = "full-screen";
 
@@ -59,12 +60,13 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         {ACTION_REPLY_ALL, action_compose, "s" },
         {ACTION_FORWARD, action_compose, "s" },
         {ACTION_PRINT, on_print, "s" },
-        {ACTION_MARK, null }, // Stores enabled state only
+        {ACTION_MODIFY, null }, // Stores enabled state only
         {ACTION_MARK_READ, on_mark_read },
         {ACTION_MARK_STAR, on_mark_star },
         {ACTION_MARK_UNREAD, on_mark_unread },
         {ACTION_MARK_UNSTAR, on_mark_unstar },
         {ACTION_ARCHIVE, action_move },
+        {ACTION_MOVE, action_move, "s" },
         {ACTION_MOVE_TO_TRASH, action_move },
         {ACTION_FULLSCREEN, on_fullscreen },
     };
@@ -267,6 +269,20 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                     var result = conversation_list.move_selected_messages.end (res, out error_message);
                     if (result > 0) {
                         move_toast.title = ngettext ("Message Archived", "Messages Archived", result);
+                        move_toast.send_notification ();
+                    } else if (error_message != "") {
+                        error_toast.title = _("Failed to move messages: %s").printf (error_message);
+                        error_toast.send_notification ();
+                    }
+                });
+                break;
+
+            case ACTION_MOVE:
+                conversation_list.move_selected_messages.begin (MoveOperation.MoveType.MOVE, parameter, (obj, res) => {
+                    string error_message;
+                    var result = conversation_list.move_selected_messages.end (res, out error_message);
+                    if (result > 0) {
+                        move_toast.title = ngettext ("Message Moved", "Messages Moved", result);
                         move_toast.send_notification ();
                     } else if (error_message != "") {
                         error_toast.title = _("Failed to move messages: %s").printf (error_message);
