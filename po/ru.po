@@ -17,15 +17,15 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-29 15:47+0000\n"
-"PO-Revision-Date: 2023-05-22 16:36+0000\n"
+"PO-Revision-Date: 2023-05-30 17:11+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
@@ -252,10 +252,9 @@ msgstr[1] "Сообщения архивированы"
 msgstr[2] "Сообщения архивированы"
 
 #: src/MainWindow.vala:272 src/MainWindow.vala:286
-#, fuzzy, c-format
-#| msgid "Unable to send message"
+#, c-format
 msgid "Failed to move messages: %s"
-msgstr "Не удалось отправить сообщение"
+msgstr "Не удалось переместить сообщения: %s"
 
 #: src/MainWindow.vala:283
 msgid "Message Deleted"
@@ -289,19 +288,19 @@ msgstr "При попытке подключения к серверу прои�
 #: src/Backend/MoveOperation.vala:64
 #, c-format
 msgid "Moving messages… (%u remaining)"
-msgstr ""
+msgstr "Перемещение сообщений… (осталось: %u)"
 
 #: src/Backend/MoveOperation.vala:97
 msgid "No Archive folder is configured."
-msgstr ""
+msgstr "Архивная папка не настроена."
 
 #: src/Backend/MoveOperation.vala:115
 msgid "The destination folder was not found."
-msgstr ""
+msgstr "Папка назначения не найдена."
 
 #: src/Backend/MoveOperation.vala:119
 msgid "The source folder is the destination folder."
-msgstr ""
+msgstr "Исходная папка является папкой назначения."
 
 #: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
