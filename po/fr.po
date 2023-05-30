@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-29 15:47+0000\n"
-"PO-Revision-Date: 2023-05-25 17:07+0000\n"
+"PO-Revision-Date: 2023-05-30 17:11+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
 "Language: fr\n"
@@ -256,10 +256,9 @@ msgstr[0] "Message archivé"
 msgstr[1] "Messages archivés"
 
 #: src/MainWindow.vala:272 src/MainWindow.vala:286
-#, fuzzy, c-format
-#| msgid "Unable to send message"
+#, c-format
 msgid "Failed to move messages: %s"
-msgstr "Échec de l'envoi du message"
+msgstr "Échec du déplacement des messages : %s"
 
 #: src/MainWindow.vala:283
 msgid "Message Deleted"
@@ -292,19 +291,19 @@ msgstr "Une erreur inattendue s'est produite lors de la connexion au serveur."
 #: src/Backend/MoveOperation.vala:64
 #, c-format
 msgid "Moving messages… (%u remaining)"
-msgstr ""
+msgstr "Déplacement des messages… (%u restant(s))"
 
 #: src/Backend/MoveOperation.vala:97
 msgid "No Archive folder is configured."
-msgstr ""
+msgstr "Aucun dossier d'archive n'est configuré."
 
 #: src/Backend/MoveOperation.vala:115
 msgid "The destination folder was not found."
-msgstr ""
+msgstr "Le dossier de destination n'a pas été trouvé."
 
 #: src/Backend/MoveOperation.vala:119
 msgid "The source folder is the destination folder."
-msgstr ""
+msgstr "Le dossier source est identique au dossier de destination."
 
 #: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
