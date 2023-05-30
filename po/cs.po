@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-29 15:47+0000\n"
+"POT-Creation-Date: 2023-05-30 17:11+0000\n"
 "PO-Revision-Date: 2022-01-10 23:40+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/mail/cs/>\n"
@@ -230,15 +230,15 @@ msgstr[0] "%s od %u odesilatele"
 msgstr[1] "%s od %u odesilatelů"
 msgstr[2] "%s od %u odesilatelů"
 
-#: src/MainWindow.vala:78
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "Mail"
 
-#: src/MainWindow.vala:121
+#: src/MainWindow.vala:123
 msgid "Undo"
 msgstr "Zpět"
 
-#: src/MainWindow.vala:269
+#: src/MainWindow.vala:271
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -248,13 +248,23 @@ msgstr[0] "Žádná vybraná zpráva"
 msgstr[1] "Žádné vybrané zprávy"
 msgstr[2] "Žádné vybrané zprávy"
 
-#: src/MainWindow.vala:272 src/MainWindow.vala:286
+#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
 #, fuzzy, c-format
 #| msgid "Unable to send message"
 msgid "Failed to move messages: %s"
 msgstr "Zprávu se nedaří odeslat"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:285
+#, fuzzy
+#| msgid "Message Deleted"
+#| msgid_plural "Messages Deleted"
+msgid "Message Moved"
+msgid_plural "Messages Moved"
+msgstr[0] "Žádná vybraná zpráva"
+msgstr[1] "Žádné vybrané zprávy"
+msgstr[2] "Žádné vybrané zprávy"
+
+#: src/MainWindow.vala:299
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Žádná vybraná zpráva"
@@ -285,20 +295,20 @@ msgstr "Koncept se nepodařilo uložit"
 msgid "There was an unexpected error while trying to connect to the server."
 msgstr "Došlo k neočekávané chybě při odesílání zprávy."
 
-#: src/Backend/MoveOperation.vala:64
+#: src/Backend/MoveOperation.vala:65
 #, c-format
 msgid "Moving messages… (%u remaining)"
 msgstr ""
 
-#: src/Backend/MoveOperation.vala:97
+#: src/Backend/MoveOperation.vala:98
 msgid "No Archive folder is configured."
 msgstr ""
 
-#: src/Backend/MoveOperation.vala:115
+#: src/Backend/MoveOperation.vala:126
 msgid "The destination folder was not found."
 msgstr ""
 
-#: src/Backend/MoveOperation.vala:119
+#: src/Backend/MoveOperation.vala:130
 msgid "The source folder is the destination folder."
 msgstr ""
 
@@ -337,17 +347,17 @@ msgid "Mark As Unread"
 msgstr "Označit jako nepřečtené"
 
 #: src/ConversationList/ConversationList.vala:578
-#: src/MessageList/MessageList.vala:87
+#: src/MessageList/MessageList.vala:89
 msgid "Mark as Read"
 msgstr "Označit jako přečtené"
 
 #: src/ConversationList/ConversationList.vala:588
-#: src/MessageList/MessageList.vala:93
+#: src/MessageList/MessageList.vala:95
 msgid "Star"
 msgstr "Označit hvězdičkou"
 
 #: src/ConversationList/ConversationList.vala:596
-#: src/MessageList/MessageList.vala:99
+#: src/MessageList/MessageList.vala:101
 msgid "Unstar"
 msgstr "Odebrat hvězdičku"
 
@@ -403,47 +413,54 @@ msgstr "Odeslané"
 msgid "All Mailboxes"
 msgstr "Všechny schránky"
 
-#: src/MessageList/MessageList.vala:21
+#: src/MessageList/MessageList.vala:23
 msgid "Always Show Remote Images"
 msgstr "Vždy zobrazovat externí obrázky"
 
-#: src/MessageList/MessageList.vala:24
+#: src/MessageList/MessageList.vala:26
 msgid "Account Settings…"
 msgstr "Nastavení účtu…"
 
-#: src/MessageList/MessageList.vala:47
+#: src/MessageList/MessageList.vala:49
 msgid "Menu"
 msgstr "Nabídka"
 
-#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Odpovědět"
 
-#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Odpovědět všem"
 
-#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Přeposlat"
 
-#: src/MessageList/MessageList.vala:81
+#: src/MessageList/MessageList.vala:83
 msgid "Mark as Unread"
 msgstr "Označit jako nepřečtené"
 
-#: src/MessageList/MessageList.vala:112
+#: src/MessageList/MessageList.vala:114
 msgid "Mark Conversation"
 msgstr "Označit konverzaci"
 
-#: src/MessageList/MessageList.vala:120
+#: src/MessageList/MessageList.vala:122
+#, fuzzy
+#| msgid "Move conversation"
+#| msgid_plural "Move conversations"
+msgid "Move Conversation to…"
+msgstr "Přesunout koverzaci"
+
+#: src/MessageList/MessageList.vala:132
 msgid "Move conversations to archive"
 msgstr "Přesunout konverzace do archivu"
 
-#: src/MessageList/MessageList.vala:128
+#: src/MessageList/MessageList.vala:140
 msgid "Move conversations to Trash"
 msgstr "Přesunout konverzace do koše"
 
-#: src/MessageList/MessageList.vala:155
+#: src/MessageList/MessageList.vala:168
 msgid "No Message Selected"
 msgstr "Žádná vybraná zpráva"
 
@@ -698,12 +715,6 @@ msgstr "Uložit"
 
 #~ msgid "Add label to conversations"
 #~ msgstr "Přiřadit konverzacím štítek"
-
-#~ msgid "Move conversation"
-#~ msgid_plural "Move conversations"
-#~ msgstr[0] "Přesunout koverzaci"
-#~ msgstr[1] "Přesunout koverzace"
-#~ msgstr[2] "Přesunout koverzace"
 
 #~ msgid "A_ccounts"
 #~ msgstr "Úč_ty"

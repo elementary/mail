@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-29 15:47+0000\n"
+"POT-Creation-Date: 2023-05-30 17:11+0000\n"
 "PO-Revision-Date: 2022-07-21 17:49+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -225,15 +225,15 @@ msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
 msgstr[0] "来自 %u 个发件人的 %s"
 
-#: src/MainWindow.vala:78
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "邮件"
 
-#: src/MainWindow.vala:121
+#: src/MainWindow.vala:123
 msgid "Undo"
 msgstr "撤消"
 
-#: src/MainWindow.vala:269
+#: src/MainWindow.vala:271
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -241,13 +241,21 @@ msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "消息已删除"
 
-#: src/MainWindow.vala:272 src/MainWindow.vala:286
+#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
 #, fuzzy, c-format
 #| msgid "Unable to send message"
 msgid "Failed to move messages: %s"
 msgstr "无法发送邮件"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:285
+#, fuzzy
+#| msgid "Message Deleted"
+#| msgid_plural "Messages Deleted"
+msgid "Message Moved"
+msgid_plural "Messages Moved"
+msgstr[0] "消息已删除"
+
+#: src/MainWindow.vala:299
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "消息已删除"
@@ -276,20 +284,20 @@ msgstr "无法保存草稿"
 msgid "There was an unexpected error while trying to connect to the server."
 msgstr "发送邮件时出现意外错误。"
 
-#: src/Backend/MoveOperation.vala:64
+#: src/Backend/MoveOperation.vala:65
 #, c-format
 msgid "Moving messages… (%u remaining)"
 msgstr ""
 
-#: src/Backend/MoveOperation.vala:97
+#: src/Backend/MoveOperation.vala:98
 msgid "No Archive folder is configured."
 msgstr ""
 
-#: src/Backend/MoveOperation.vala:115
+#: src/Backend/MoveOperation.vala:126
 msgid "The destination folder was not found."
 msgstr ""
 
-#: src/Backend/MoveOperation.vala:119
+#: src/Backend/MoveOperation.vala:130
 msgid "The source folder is the destination folder."
 msgstr ""
 
@@ -326,17 +334,17 @@ msgid "Mark As Unread"
 msgstr "标记未读"
 
 #: src/ConversationList/ConversationList.vala:578
-#: src/MessageList/MessageList.vala:87
+#: src/MessageList/MessageList.vala:89
 msgid "Mark as Read"
 msgstr "标为已读"
 
 #: src/ConversationList/ConversationList.vala:588
-#: src/MessageList/MessageList.vala:93
+#: src/MessageList/MessageList.vala:95
 msgid "Star"
 msgstr "添加星标"
 
 #: src/ConversationList/ConversationList.vala:596
-#: src/MessageList/MessageList.vala:99
+#: src/MessageList/MessageList.vala:101
 msgid "Unstar"
 msgstr "取消星标"
 
@@ -392,47 +400,54 @@ msgstr "发送"
 msgid "All Mailboxes"
 msgstr "全部邮件"
 
-#: src/MessageList/MessageList.vala:21
+#: src/MessageList/MessageList.vala:23
 msgid "Always Show Remote Images"
 msgstr "显示网络图片"
 
-#: src/MessageList/MessageList.vala:24
+#: src/MessageList/MessageList.vala:26
 msgid "Account Settings…"
 msgstr "账户设置…"
 
-#: src/MessageList/MessageList.vala:47
+#: src/MessageList/MessageList.vala:49
 msgid "Menu"
 msgstr "菜单"
 
-#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "回复"
 
-#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "回复全部"
 
-#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "转发"
 
-#: src/MessageList/MessageList.vala:81
+#: src/MessageList/MessageList.vala:83
 msgid "Mark as Unread"
 msgstr "标为未读"
 
-#: src/MessageList/MessageList.vala:112
+#: src/MessageList/MessageList.vala:114
 msgid "Mark Conversation"
 msgstr "标记会话"
 
-#: src/MessageList/MessageList.vala:120
+#: src/MessageList/MessageList.vala:122
+#, fuzzy
+#| msgid "Move conversation"
+#| msgid_plural "Move conversations"
+msgid "Move Conversation to…"
+msgstr "移动会话"
+
+#: src/MessageList/MessageList.vala:132
 msgid "Move conversations to archive"
 msgstr "将会话移至归档"
 
-#: src/MessageList/MessageList.vala:128
+#: src/MessageList/MessageList.vala:140
 msgid "Move conversations to Trash"
 msgstr "将会话移至回收站"
 
-#: src/MessageList/MessageList.vala:155
+#: src/MessageList/MessageList.vala:168
 msgid "No Message Selected"
 msgstr "未选中任何消息"
 
@@ -674,10 +689,6 @@ msgstr "保存"
 
 #~ msgid "Add label to conversations"
 #~ msgstr "添加标签到已选会话"
-
-#~ msgid "Move conversation"
-#~ msgid_plural "Move conversations"
-#~ msgstr[0] "移动会话"
 
 #~ msgid "A_ccounts"
 #~ msgstr "帐号"

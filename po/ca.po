@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-29 15:47+0000\n"
+"POT-Creation-Date: 2023-05-30 17:11+0000\n"
 "PO-Revision-Date: 2023-05-25 17:06+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
@@ -227,27 +227,36 @@ msgid_plural "%s from %u senders"
 msgstr[0] "%s d'%u remitent"
 msgstr[1] "%s de %u remitents"
 
-#: src/MainWindow.vala:78
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "Correu"
 
-#: src/MainWindow.vala:121
+#: src/MainWindow.vala:123
 msgid "Undo"
 msgstr "Desfés-ho"
 
-#: src/MainWindow.vala:269
+#: src/MainWindow.vala:271
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "Missatge arxivat"
 msgstr[1] "Missatges arxivats"
 
-#: src/MainWindow.vala:272 src/MainWindow.vala:286
+#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
 #, fuzzy, c-format
 #| msgid "Unable to send message"
 msgid "Failed to move messages: %s"
 msgstr "No es pot enviar el missatge."
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:285
+#, fuzzy
+#| msgid "Message Archived"
+#| msgid_plural "Messages Archived"
+msgid "Message Moved"
+msgid_plural "Messages Moved"
+msgstr[0] "Missatge arxivat"
+msgstr[1] "Missatges arxivats"
+
+#: src/MainWindow.vala:299
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Missatge suprimit"
@@ -274,20 +283,20 @@ msgstr "No es pot connectar"
 msgid "There was an unexpected error while trying to connect to the server."
 msgstr "Hi ha hagut un error inesperat a l'hora de connectar amb el servidor."
 
-#: src/Backend/MoveOperation.vala:64
+#: src/Backend/MoveOperation.vala:65
 #, c-format
 msgid "Moving messages… (%u remaining)"
 msgstr ""
 
-#: src/Backend/MoveOperation.vala:97
+#: src/Backend/MoveOperation.vala:98
 msgid "No Archive folder is configured."
 msgstr ""
 
-#: src/Backend/MoveOperation.vala:115
+#: src/Backend/MoveOperation.vala:126
 msgid "The destination folder was not found."
 msgstr ""
 
-#: src/Backend/MoveOperation.vala:119
+#: src/Backend/MoveOperation.vala:130
 msgid "The source folder is the destination folder."
 msgstr ""
 
@@ -324,17 +333,17 @@ msgid "Mark As Unread"
 msgstr "Marca com a no llegit"
 
 #: src/ConversationList/ConversationList.vala:578
-#: src/MessageList/MessageList.vala:87
+#: src/MessageList/MessageList.vala:89
 msgid "Mark as Read"
 msgstr "Marca com a llegit"
 
 #: src/ConversationList/ConversationList.vala:588
-#: src/MessageList/MessageList.vala:93
+#: src/MessageList/MessageList.vala:95
 msgid "Star"
 msgstr "Destaca"
 
 #: src/ConversationList/ConversationList.vala:596
-#: src/MessageList/MessageList.vala:99
+#: src/MessageList/MessageList.vala:101
 msgid "Unstar"
 msgstr "No ho destaquis"
 
@@ -390,47 +399,54 @@ msgstr "Enviats"
 msgid "All Mailboxes"
 msgstr "Totes les bústies"
 
-#: src/MessageList/MessageList.vala:21
+#: src/MessageList/MessageList.vala:23
 msgid "Always Show Remote Images"
 msgstr "Mostra sempre les imatges remotes"
 
-#: src/MessageList/MessageList.vala:24
+#: src/MessageList/MessageList.vala:26
 msgid "Account Settings…"
 msgstr "Paràmetres del compte…"
 
-#: src/MessageList/MessageList.vala:47
+#: src/MessageList/MessageList.vala:49
 msgid "Menu"
 msgstr "Menú"
 
-#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Respon"
 
-#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Respon a tothom"
 
-#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Reenvia"
 
-#: src/MessageList/MessageList.vala:81
+#: src/MessageList/MessageList.vala:83
 msgid "Mark as Unread"
 msgstr "Marca com a no llegit"
 
-#: src/MessageList/MessageList.vala:112
+#: src/MessageList/MessageList.vala:114
 msgid "Mark Conversation"
 msgstr "Marca la conversa"
 
-#: src/MessageList/MessageList.vala:120
+#: src/MessageList/MessageList.vala:122
+#, fuzzy
+#| msgid "Move conversation"
+#| msgid_plural "Move conversations"
+msgid "Move Conversation to…"
+msgstr "Desplaça la conversa"
+
+#: src/MessageList/MessageList.vala:132
 msgid "Move conversations to archive"
 msgstr "Mou les converses a l'arxiu"
 
-#: src/MessageList/MessageList.vala:128
+#: src/MessageList/MessageList.vala:140
 msgid "Move conversations to Trash"
 msgstr "Mou les converses a la paperera"
 
-#: src/MessageList/MessageList.vala:155
+#: src/MessageList/MessageList.vala:168
 msgid "No Message Selected"
 msgstr "No hi ha cap missatge seleccionat."
 
@@ -679,11 +695,6 @@ msgstr "Desa"
 
 #~ msgid "Add label to conversations"
 #~ msgstr "Afegeix una etiqueta a les converses"
-
-#~ msgid "Move conversation"
-#~ msgid_plural "Move conversations"
-#~ msgstr[0] "Desplaça la conversa"
-#~ msgstr[1] "Desplaça les converses"
 
 #~ msgid "A_ccounts"
 #~ msgstr "_Comptes"

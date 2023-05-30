@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-29 15:47+0000\n"
+"POT-Creation-Date: 2023-05-30 17:11+0000\n"
 "PO-Revision-Date: 2017-02-02 09:29+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/geary/language/"
@@ -233,30 +233,37 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:78
+#: src/MainWindow.vala:80
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Kõik"
 
-#: src/MainWindow.vala:121
+#: src/MainWindow.vala:123
 msgid "Undo"
 msgstr ""
 
-#: src/MainWindow.vala:269
+#: src/MainWindow.vala:271
 #, fuzzy
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "Kirjad puuduvad"
 msgstr[1] "Kirjad puuduvad"
 
-#: src/MainWindow.vala:272 src/MainWindow.vala:286
+#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
 #, fuzzy, c-format
 #| msgid "Unable to validate:\n"
 msgid "Failed to move messages: %s"
 msgstr "Valideerimine ebaõnnestus:\n"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:285
+#, fuzzy
+msgid "Message Moved"
+msgid_plural "Messages Moved"
+msgstr[0] "Kirjad puuduvad"
+msgstr[1] "Kirjad puuduvad"
+
+#: src/MainWindow.vala:299
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -286,20 +293,20 @@ msgstr "Valideerimine ebaõnnestus:\n"
 msgid "There was an unexpected error while trying to connect to the server."
 msgstr ""
 
-#: src/Backend/MoveOperation.vala:64
+#: src/Backend/MoveOperation.vala:65
 #, c-format
 msgid "Moving messages… (%u remaining)"
 msgstr ""
 
-#: src/Backend/MoveOperation.vala:97
+#: src/Backend/MoveOperation.vala:98
 msgid "No Archive folder is configured."
 msgstr ""
 
-#: src/Backend/MoveOperation.vala:115
+#: src/Backend/MoveOperation.vala:126
 msgid "The destination folder was not found."
 msgstr ""
 
-#: src/Backend/MoveOperation.vala:119
+#: src/Backend/MoveOperation.vala:130
 msgid "The source folder is the destination folder."
 msgstr ""
 
@@ -345,19 +352,19 @@ msgid "Mark As Unread"
 msgstr "_Lugemata"
 
 #: src/ConversationList/ConversationList.vala:578
-#: src/MessageList/MessageList.vala:87
+#: src/MessageList/MessageList.vala:89
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Loetud"
 
 #: src/ConversationList/ConversationList.vala:588
-#: src/MessageList/MessageList.vala:93
+#: src/MessageList/MessageList.vala:95
 #, fuzzy
 msgid "Star"
 msgstr "_Lemmik"
 
 #: src/ConversationList/ConversationList.vala:596
-#: src/MessageList/MessageList.vala:99
+#: src/MessageList/MessageList.vala:101
 #, fuzzy
 msgid "Unstar"
 msgstr "Eemalda _lemmikutest"
@@ -419,52 +426,57 @@ msgstr "Saadetud"
 msgid "All Mailboxes"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:21
+#: src/MessageList/MessageList.vala:23
 msgid "Always Show Remote Images"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:24
+#: src/MessageList/MessageList.vala:26
 msgid "Account Settings…"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:47
+#: src/MessageList/MessageList.vala:49
 msgid "Menu"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
 #, fuzzy
 msgid "Reply All"
 msgstr "Vasta _kõigile..."
 
-#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:81
+#: src/MessageList/MessageList.vala:83
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "_Lugemata"
 
-#: src/MessageList/MessageList.vala:112
+#: src/MessageList/MessageList.vala:114
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Märgi kui..."
 
-#: src/MessageList/MessageList.vala:120
+#: src/MessageList/MessageList.vala:122
+#, fuzzy
+msgid "Move Conversation to…"
+msgstr "Liiguta asukohta..."
+
+#: src/MessageList/MessageList.vala:132
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Liiguta asukohta..."
 
-#: src/MessageList/MessageList.vala:128
+#: src/MessageList/MessageList.vala:140
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Liiguta asukohta..."
 
-#: src/MessageList/MessageList.vala:155
+#: src/MessageList/MessageList.vala:168
 #, fuzzy
 msgid "No Message Selected"
 msgstr "Kirjad puuduvad"

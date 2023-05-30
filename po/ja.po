@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-29 15:47+0000\n"
+"POT-Creation-Date: 2023-05-30 17:11+0000\n"
 "PO-Revision-Date: 2023-05-30 17:11+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
@@ -216,25 +216,33 @@ msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
 msgstr[0] "%2$u人から%1$s"
 
-#: src/MainWindow.vala:78
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "メール"
 
-#: src/MainWindow.vala:121
+#: src/MainWindow.vala:123
 msgid "Undo"
 msgstr "元に戻す"
 
-#: src/MainWindow.vala:269
+#: src/MainWindow.vala:271
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "メッセージをアーカイブしました"
 
-#: src/MainWindow.vala:272 src/MainWindow.vala:286
+#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
 #, c-format
 msgid "Failed to move messages: %s"
 msgstr "メッセージを移動できませんでした: %s"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:285
+#, fuzzy
+#| msgid "Message Archived"
+#| msgid_plural "Messages Archived"
+msgid "Message Moved"
+msgid_plural "Messages Moved"
+msgstr[0] "メッセージをアーカイブしました"
+
+#: src/MainWindow.vala:299
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "メッセージを削除しました"
@@ -259,20 +267,20 @@ msgstr "接続できません"
 msgid "There was an unexpected error while trying to connect to the server."
 msgstr "サーバーへの接続試行中に予期しないエラーが発生しました。"
 
-#: src/Backend/MoveOperation.vala:64
+#: src/Backend/MoveOperation.vala:65
 #, c-format
 msgid "Moving messages… (%u remaining)"
 msgstr "メッセージを移動しています… (残り%u件)"
 
-#: src/Backend/MoveOperation.vala:97
+#: src/Backend/MoveOperation.vala:98
 msgid "No Archive folder is configured."
 msgstr "アーカイブフォルダーが設定されていません。"
 
-#: src/Backend/MoveOperation.vala:115
+#: src/Backend/MoveOperation.vala:126
 msgid "The destination folder was not found."
 msgstr "移動先フォルダーが見つかりませんでした。"
 
-#: src/Backend/MoveOperation.vala:119
+#: src/Backend/MoveOperation.vala:130
 msgid "The source folder is the destination folder."
 msgstr "移動元フォルダーが移動先です。"
 
@@ -309,17 +317,17 @@ msgid "Mark As Unread"
 msgstr "未読としてマーク"
 
 #: src/ConversationList/ConversationList.vala:578
-#: src/MessageList/MessageList.vala:87
+#: src/MessageList/MessageList.vala:89
 msgid "Mark as Read"
 msgstr "既読としてマーク"
 
 #: src/ConversationList/ConversationList.vala:588
-#: src/MessageList/MessageList.vala:93
+#: src/MessageList/MessageList.vala:95
 msgid "Star"
 msgstr "スターを付ける"
 
 #: src/ConversationList/ConversationList.vala:596
-#: src/MessageList/MessageList.vala:99
+#: src/MessageList/MessageList.vala:101
 msgid "Unstar"
 msgstr "スターを外す"
 
@@ -375,47 +383,54 @@ msgstr "送信済み"
 msgid "All Mailboxes"
 msgstr "すべての受信箱"
 
-#: src/MessageList/MessageList.vala:21
+#: src/MessageList/MessageList.vala:23
 msgid "Always Show Remote Images"
 msgstr "常にリモートの画像を表示"
 
-#: src/MessageList/MessageList.vala:24
+#: src/MessageList/MessageList.vala:26
 msgid "Account Settings…"
 msgstr "アカウントの設定…"
 
-#: src/MessageList/MessageList.vala:47
+#: src/MessageList/MessageList.vala:49
 msgid "Menu"
 msgstr "メニュー"
 
-#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "返信"
 
-#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "全員に返信"
 
-#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "転送"
 
-#: src/MessageList/MessageList.vala:81
+#: src/MessageList/MessageList.vala:83
 msgid "Mark as Unread"
 msgstr "未読としてマーク"
 
-#: src/MessageList/MessageList.vala:112
+#: src/MessageList/MessageList.vala:114
 msgid "Mark Conversation"
 msgstr "スレッドにマークをつける"
 
-#: src/MessageList/MessageList.vala:120
+#: src/MessageList/MessageList.vala:122
+#, fuzzy
+#| msgid "Move conversation"
+#| msgid_plural "Move conversations"
+msgid "Move Conversation to…"
+msgstr "メッセージを移動"
+
+#: src/MessageList/MessageList.vala:132
 msgid "Move conversations to archive"
 msgstr "スレッドをアーカイブします"
 
-#: src/MessageList/MessageList.vala:128
+#: src/MessageList/MessageList.vala:140
 msgid "Move conversations to Trash"
 msgstr "スレッドをゴミ箱に移動します"
 
-#: src/MessageList/MessageList.vala:155
+#: src/MessageList/MessageList.vala:168
 msgid "No Message Selected"
 msgstr "メッセージが選択されていません"
 
@@ -661,10 +676,6 @@ msgstr "保存"
 
 #~ msgid "Add label to conversations"
 #~ msgstr "メッセージにラベルを付ける"
-
-#~ msgid "Move conversation"
-#~ msgid_plural "Move conversations"
-#~ msgstr[0] "メッセージを移動"
 
 #~ msgid "A_ccounts"
 #~ msgstr "アカウント(_C)"
