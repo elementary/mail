@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-30 17:11+0000\n"
-"PO-Revision-Date: 2023-05-29 15:47+0000\n"
+"PO-Revision-Date: 2023-06-01 21:56+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
 "Language: nl\n"
@@ -251,19 +251,15 @@ msgstr[0] "Bericht gearchiveerd"
 msgstr[1] "Berichten gearchiveerd"
 
 #: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
-#, fuzzy, c-format
-#| msgid "Unable to send message"
+#, c-format
 msgid "Failed to move messages: %s"
-msgstr "Kon bericht niet versturen"
+msgstr "Kon berichten niet verplaatsen: %s"
 
 #: src/MainWindow.vala:285
-#, fuzzy
-#| msgid "Message Archived"
-#| msgid_plural "Messages Archived"
 msgid "Message Moved"
 msgid_plural "Messages Moved"
-msgstr[0] "Bericht gearchiveerd"
-msgstr[1] "Berichten gearchiveerd"
+msgstr[0] "Bericht verplaatst"
+msgstr[1] "Berichten verplaatst"
 
 #: src/MainWindow.vala:299
 msgid "Message Deleted"
@@ -297,19 +293,19 @@ msgstr ""
 #: src/Backend/MoveOperation.vala:65
 #, c-format
 msgid "Moving messages… (%u remaining)"
-msgstr ""
+msgstr "Berichten verplaatsen… (%u resterend)"
 
 #: src/Backend/MoveOperation.vala:98
 msgid "No Archive folder is configured."
-msgstr ""
+msgstr "Er is geen Archiefmap geconfigureerd."
 
 #: src/Backend/MoveOperation.vala:126
 msgid "The destination folder was not found."
-msgstr ""
+msgstr "Kon de doelmap niet vinden."
 
 #: src/Backend/MoveOperation.vala:130
 msgid "The source folder is the destination folder."
-msgstr ""
+msgstr "De bronmap is hetzelfde als de doelmap."
 
 #: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
@@ -443,10 +439,8 @@ msgid "Mark Conversation"
 msgstr "Gesprek markeren"
 
 #: src/MessageList/MessageList.vala:122
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move Conversation to…"
-msgstr "Verplaats gesprekken naar de prullenbak"
+msgstr "Gesprekken verplaatsen naar…"
 
 #: src/MessageList/MessageList.vala:132
 msgid "Move conversations to archive"
