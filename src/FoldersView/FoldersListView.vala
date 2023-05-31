@@ -56,11 +56,47 @@ public class Mail.FoldersListView : Gtk.Grid {
         var scrolled_window = new Gtk.ScrolledWindow (null, null);
         scrolled_window.add (source_list);
 
+        var load_images_menuitem = new Granite.SwitchModelButton (_("Always Show Remote Images"));
+
+        var account_settings_menuitem = new Gtk.ModelButton () {
+            text = _("Account Settings…")
+        };
+
+        var app_menu_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+            margin_bottom = 3,
+            margin_top = 3
+        };
+
+        var app_menu_grid = new Gtk.Grid () {
+            margin_bottom = 3,
+            margin_top = 3,
+            orientation = Gtk.Orientation.VERTICAL
+        };
+        app_menu_grid.add (load_images_menuitem);
+        app_menu_grid.add (app_menu_separator);
+        app_menu_grid.add (account_settings_menuitem);
+        app_menu_grid.show_all ();
+
+        var app_menu_popover = new Gtk.Popover (null) {
+            child = app_menu_grid
+        };
+
+        var app_menu = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            popover = app_menu_popover,
+            tooltip_text = _("Menu")
+        };
+
+        var action_bar = new Gtk.ActionBar ();
+        action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        action_bar.pack_end (app_menu);
+
         orientation = Gtk.Orientation.VERTICAL;
         width_request = 100;
         get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
         add (header_bar);
         add (scrolled_window);
+        add (action_bar);
 
         var session = Mail.Backend.Session.get_default ();
 
@@ -91,6 +127,17 @@ public class Mail.FoldersListView : Gtk.Grid {
                 folder_selected (grouped_folder_item.get_folder_full_name_per_account ());
 
                 settings.set ("selected-folder", "(ss)", "GROUPED", grouped_folder_item.name);
+            }
+        });
+
+        var settings = new GLib.Settings ("io.elementary.mail");
+        settings.bind ("always-load-remote-images", load_images_menuitem, "active", SettingsBindFlags.DEFAULT);
+
+        account_settings_menuitem.clicked.connect (() => {
+            try {
+                AppInfo.launch_default_for_uri ("settings://accounts/online", null);
+            } catch (Error e) {
+                warning ("Failed to open account settings: %s", e.message);
             }
         });
     }
