@@ -134,9 +134,9 @@ public class Mail.FoldersListView : Gtk.Grid {
 
         account_settings_menuitem.clicked.connect (() => {
             try {
-                AppInfo.launch_default_for_uri ("settings://accounts/online", null);
+                Gtk.show_uri_on_window ((Gtk.Window) get_toplevel (), "settings://accounts/online", Gdk.CURRENT_TIME);
             } catch (Error e) {
-                warning ("Failed to open account settings: %s", e.message);
+                critical ("Failed to open account settings: %s", e.message);
             }
         });
     }
