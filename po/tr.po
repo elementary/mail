@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-22 15:22+0000\n"
+"POT-Creation-Date: 2023-05-30 17:11+0000\n"
 "PO-Revision-Date: 2023-05-17 21:00+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
@@ -234,11 +234,11 @@ msgid_plural "%s from %u senders"
 msgstr[0] "%u gönderenden %s"
 msgstr[1] "%u gönderenden %s"
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "Posta"
 
-#: src/MainWindow.vala:120
+#: src/MainWindow.vala:123
 msgid "Undo"
 msgstr "Geri Al"
 
@@ -248,7 +248,22 @@ msgid_plural "Messages Archived"
 msgstr[0] "İleti Arşivlendi"
 msgstr[1] "İletiler Arşivlendi"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#, fuzzy, c-format
+#| msgid "Unable to send message"
+msgid "Failed to move messages: %s"
+msgstr "Mesaj gönderilemiyor"
+
+#: src/MainWindow.vala:285
+#, fuzzy
+#| msgid "Message Archived"
+#| msgid_plural "Messages Archived"
+msgid "Message Moved"
+msgid_plural "Messages Moved"
+msgstr[0] "İleti Arşivlendi"
+msgstr[1] "İletiler Arşivlendi"
+
+#: src/MainWindow.vala:299
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "İleti Silindi"
@@ -268,62 +283,79 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Çevrimiçi Hesaplar…"
 
-#: src/Backend/Account.vala:47
+#: src/Backend/Account.vala:48
 #, fuzzy
 #| msgid "Unable to save draft"
 msgid "Unable to connect"
 msgstr "Taslak kaydedilemiyor"
 
-#: src/Backend/Account.vala:48
+#: src/Backend/Account.vala:49
 #, fuzzy
 #| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to connect to the server."
 msgstr "Mesajınız gönderilirken beklenmeyen bir hata oluştu."
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/Backend/MoveOperation.vala:65
+#, c-format
+msgid "Moving messages… (%u remaining)"
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:98
+msgid "No Archive folder is configured."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:126
+msgid "The destination folder was not found."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:130
+msgid "The source folder is the destination folder."
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
 msgstr "Posta Ara"
 
-#: src/ConversationList/ConversationList.vala:88
+#: src/ConversationList/ConversationList.vala:84
 msgid "Hide read conversations"
 msgstr "Okunmuş konuşmaları gizle"
 
-#: src/ConversationList/ConversationList.vala:90
+#: src/ConversationList/ConversationList.vala:86
 msgid "Hide unstarred conversations"
 msgstr "Yıldızsız konuşmaları gizle"
 
-#: src/ConversationList/ConversationList.vala:107
+#: src/ConversationList/ConversationList.vala:103
 msgid "Filter Conversations"
 msgstr "Konuşmaları Filtrele"
 
-#: src/ConversationList/ConversationList.vala:130
+#: src/ConversationList/ConversationList.vala:126
 msgid "Fetch new messages"
 msgstr "Yeni mesajları getir"
 
-#: src/ConversationList/ConversationList.vala:137
+#: src/ConversationList/ConversationList.vala:133
 msgid "Fetching new messages…"
 msgstr "Yeni mesajlar getiriliyor…"
 
-#: src/ConversationList/ConversationList.vala:548
+#: src/ConversationList/ConversationList.vala:561
 msgid "Move To Trash"
 msgstr "Çöpe Taşı"
 
-#: src/ConversationList/ConversationList.vala:557
+#: src/ConversationList/ConversationList.vala:570
 msgid "Mark As Unread"
 msgstr "Okunmamış Olarak İşaretle"
 
-#: src/ConversationList/ConversationList.vala:565
-#: src/MessageList/MessageList.vala:87
+#: src/ConversationList/ConversationList.vala:578
+#: src/MessageList/MessageList.vala:89
 msgid "Mark as Read"
 msgstr "Okunmuş olarak İşaretle"
 
-#: src/ConversationList/ConversationList.vala:575
-#: src/MessageList/MessageList.vala:93
+#: src/ConversationList/ConversationList.vala:588
+#: src/MessageList/MessageList.vala:95
 msgid "Star"
 msgstr "Yıldız Ekle"
 
-#: src/ConversationList/ConversationList.vala:583
-#: src/MessageList/MessageList.vala:99
+#: src/ConversationList/ConversationList.vala:596
+#: src/MessageList/MessageList.vala:101
 msgid "Unstar"
 msgstr "Yıldızı Kaldır"
 
@@ -379,47 +411,54 @@ msgstr "Gönder"
 msgid "All Mailboxes"
 msgstr "Tüm Posta Kutuları"
 
-#: src/MessageList/MessageList.vala:21
+#: src/MessageList/MessageList.vala:23
 msgid "Always Show Remote Images"
 msgstr "Uzak Resimleri Her Zaman Göster"
 
-#: src/MessageList/MessageList.vala:24
+#: src/MessageList/MessageList.vala:26
 msgid "Account Settings…"
 msgstr "Hesap Ayarları…"
 
-#: src/MessageList/MessageList.vala:47
+#: src/MessageList/MessageList.vala:49
 msgid "Menu"
 msgstr "Menü"
 
-#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Yanıtla"
 
-#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Tümünü Yanıtla"
 
-#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Yönlendir"
 
-#: src/MessageList/MessageList.vala:81
+#: src/MessageList/MessageList.vala:83
 msgid "Mark as Unread"
 msgstr "Okunmamış olarak İşaretle"
 
-#: src/MessageList/MessageList.vala:112
+#: src/MessageList/MessageList.vala:114
 msgid "Mark Conversation"
 msgstr "Konuşmayı İşaretle"
 
-#: src/MessageList/MessageList.vala:120
+#: src/MessageList/MessageList.vala:122
+#, fuzzy
+#| msgid "Move conversation"
+#| msgid_plural "Move conversations"
+msgid "Move Conversation to…"
+msgstr "Konuşmayı taşı"
+
+#: src/MessageList/MessageList.vala:132
 msgid "Move conversations to archive"
 msgstr "Konuşmaları arşive taşı"
 
-#: src/MessageList/MessageList.vala:128
+#: src/MessageList/MessageList.vala:140
 msgid "Move conversations to Trash"
 msgstr "Konuşmaları Çöpe Taşı"
 
-#: src/MessageList/MessageList.vala:155
+#: src/MessageList/MessageList.vala:168
 msgid "No Message Selected"
 msgstr "Hiçbir İleti Seçilmedi"
 
@@ -669,11 +708,6 @@ msgstr "Kaydet"
 
 #~ msgid "Add label to conversations"
 #~ msgstr "Konuşmaya etiket ekle"
-
-#~ msgid "Move conversation"
-#~ msgid_plural "Move conversations"
-#~ msgstr[0] "Konuşmayı taşı"
-#~ msgstr[1] "Konuşmaları taşı"
 
 #~ msgid "A_ccounts"
 #~ msgstr "_Hesaplar"
