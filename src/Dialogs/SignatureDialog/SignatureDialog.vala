@@ -193,7 +193,7 @@ public class Mail.SignatureDialog : Hdy.Window {
         add_button.clicked.connect (() => create_new_signature.begin ());
 
         title_entry.changed.connect (() => {
-            if (!selection_change_ongoing) {
+            if (!selection_change_ongoing && signature_list.get_selected_row () != null) {
                 ((Signature)signature_list.get_selected_row ()).title = title_entry.text;
             }
         });
@@ -312,12 +312,15 @@ public class Mail.SignatureDialog : Hdy.Window {
 
     private void delete_selected_signature () {
         var signature = (Signature)signature_list.get_selected_row ();
-        var index = signature.get_index ();
+        var index = signature.get_index () + 1;
         last_deleted_signature = signature;
 
         signature.delete_signature ();
 
-        signature_list.select_row (signature_list.get_row_at_index (index + 1));
+        while (signature_list.get_row_at_index (index) != null && !signature_list.get_row_at_index (index).is_visible ()) {
+            index++;
+        }
+        signature_list.select_row (signature_list.get_row_at_index (index));
 
         toast.title = _("'%s' deleted".printf (signature.title));
         toast.send_notification ();
