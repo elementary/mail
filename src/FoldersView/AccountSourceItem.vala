@@ -47,10 +47,6 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem {
         offlinestore.folder_deleted.connect (folder_deleted);
         offlinestore.folder_info_stale.connect (reload_folders);
         offlinestore.folder_renamed.connect (folder_renamed);
-        unowned GLib.NetworkMonitor network_monitor = GLib.NetworkMonitor.get_default ();
-        network_monitor.network_changed.connect (() =>{
-            connect_to_account.begin ();
-        });
     }
 
     ~AccountSourceItem () {
@@ -63,24 +59,6 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem {
             if (folderinfo != null) {
                 show_info (folderinfo, this);
             }
-        } catch (Error e) {
-            critical (e.message);
-        }
-
-        connect_to_account.begin ();
-    }
-
-    private async void connect_to_account () {
-        unowned GLib.NetworkMonitor network_monitor = GLib.NetworkMonitor.get_default ();
-        if (network_monitor.network_available == false) {
-            return;
-        }
-
-        try {
-            yield offlinestore.set_online (true, GLib.Priority.DEFAULT, connect_cancellable);
-            yield offlinestore.connect (GLib.Priority.DEFAULT, connect_cancellable);
-
-            yield offlinestore.synchronize (false, GLib.Priority.DEFAULT, connect_cancellable);
         } catch (Error e) {
             critical (e.message);
         }

@@ -9,7 +9,7 @@ vala_files = files(
     'Backend/Account.vala',
     'Backend/ContactManager.vala',
     'Backend/Session.vala',
-    'Backend/MoveHandler.vala',
+    'Backend/MoveOperation.vala',
     'ConversationList/ConversationItemModel.vala',
     'ConversationList/ConversationList.vala',
     'ConversationList/ConversationListItem.vala',

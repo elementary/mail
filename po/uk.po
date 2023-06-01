@@ -7,22 +7,22 @@
 # furyruf <ruffian.ua@gmail.com>, 2013
 # sp4rr0w <sasha.anpilov@gmail.com>, 2012
 # Daniel Korostil <ted.korostiled@gmail.com>, 2014.
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-17 16:14+0000\n"
-"PO-Revision-Date: 2023-05-17 21:00+0000\n"
-"Last-Translator: Zhenya <dayzzeka@gmail.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/>"
-"\n"
+"POT-Creation-Date: 2023-05-30 17:11+0000\n"
+"PO-Revision-Date: 2023-05-30 17:11+0000\n"
+"Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/"
+">\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Project-Style: gnome\n"
@@ -232,22 +232,37 @@ msgstr[0] "%s від %u відправника"
 msgstr[1] "%s від %u відправників"
 msgstr[2] "%s від %u відправників"
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "Пошта"
 
-#: src/MainWindow.vala:120
+#: src/MainWindow.vala:123
 msgid "Undo"
 msgstr "Повернути"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:271
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "Повідомлення архівовано"
 msgstr[1] "Повідомлення архівовано"
 msgstr[2] "Повідомлення архівовано"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#, c-format
+msgid "Failed to move messages: %s"
+msgstr "Не вдалося перемістити повідомлення: %s"
+
+#: src/MainWindow.vala:285
+#, fuzzy
+#| msgid "Message Archived"
+#| msgid_plural "Messages Archived"
+msgid "Message Moved"
+msgid_plural "Messages Moved"
+msgstr[0] "Повідомлення архівовано"
+msgstr[1] "Повідомлення архівовано"
+msgstr[2] "Повідомлення архівовано"
+
+#: src/MainWindow.vala:299
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Повідомлення видалено"
@@ -268,50 +283,75 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Онлайнові облікові записи…"
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/Backend/Account.vala:48
+msgid "Unable to connect"
+msgstr "Неможливо під'єднатись"
+
+#: src/Backend/Account.vala:49
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr "Сталася помилка під час спроби з'єднатися з сервером."
+
+#: src/Backend/MoveOperation.vala:65
+#, c-format
+msgid "Moving messages… (%u remaining)"
+msgstr "Переміщення повідомлень… (залишилось %u)"
+
+#: src/Backend/MoveOperation.vala:98
+msgid "No Archive folder is configured."
+msgstr "Теку Архів не сконфігуровано."
+
+#: src/Backend/MoveOperation.vala:126
+msgid "The destination folder was not found."
+msgstr "Теку призначення не знайдено."
+
+#: src/Backend/MoveOperation.vala:130
+msgid "The source folder is the destination folder."
+msgstr "Початкова тека є текою призначення."
+
+#: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
 msgstr "Пошук пошти"
 
-#: src/ConversationList/ConversationList.vala:88
+#: src/ConversationList/ConversationList.vala:84
 msgid "Hide read conversations"
 msgstr "Сховати прочитані бесіди"
 
-#: src/ConversationList/ConversationList.vala:90
+#: src/ConversationList/ConversationList.vala:86
 msgid "Hide unstarred conversations"
 msgstr "Сховати бесіди, з яких прибрано позначку зірки"
 
-#: src/ConversationList/ConversationList.vala:107
+#: src/ConversationList/ConversationList.vala:103
 msgid "Filter Conversations"
 msgstr "Фільтрувати бесіди"
 
-#: src/ConversationList/ConversationList.vala:130
+#: src/ConversationList/ConversationList.vala:126
 msgid "Fetch new messages"
 msgstr "Отримати нові повідомлення"
 
-#: src/ConversationList/ConversationList.vala:137
+#: src/ConversationList/ConversationList.vala:133
 msgid "Fetching new messages…"
 msgstr "Отримання нових повідомлень…"
 
-#: src/ConversationList/ConversationList.vala:548
+#: src/ConversationList/ConversationList.vala:561
 msgid "Move To Trash"
 msgstr "Перемістити до смітника"
 
-#: src/ConversationList/ConversationList.vala:557
+#: src/ConversationList/ConversationList.vala:570
 msgid "Mark As Unread"
 msgstr "Позначити непрочитаним"
 
-#: src/ConversationList/ConversationList.vala:565
-#: src/MessageList/MessageList.vala:87
+#: src/ConversationList/ConversationList.vala:578
+#: src/MessageList/MessageList.vala:89
 msgid "Mark as Read"
 msgstr "Позначити як прочитане"
 
-#: src/ConversationList/ConversationList.vala:575
-#: src/MessageList/MessageList.vala:93
+#: src/ConversationList/ConversationList.vala:588
+#: src/MessageList/MessageList.vala:95
 msgid "Star"
 msgstr "Позначити зірочкою"
 
-#: src/ConversationList/ConversationList.vala:583
-#: src/MessageList/MessageList.vala:99
+#: src/ConversationList/ConversationList.vala:596
+#: src/MessageList/MessageList.vala:101
 msgid "Unstar"
 msgstr "Прибрати позначення зірочкою"
 
@@ -345,7 +385,7 @@ msgstr "Приклад вебсайту"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
-msgstr "Написати новий лист (Ctrl+N, N)"
+msgstr "Написати нове повідомлення"
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
@@ -367,47 +407,53 @@ msgstr "Надіслані"
 msgid "All Mailboxes"
 msgstr "Вся пошта"
 
-#: src/MessageList/MessageList.vala:21
+#: src/MessageList/MessageList.vala:23
 msgid "Always Show Remote Images"
 msgstr "Завжди показувати віддалені зображення"
 
-#: src/MessageList/MessageList.vala:24
+#: src/MessageList/MessageList.vala:26
 msgid "Account Settings…"
 msgstr "Налаштування облікового запису…"
 
-#: src/MessageList/MessageList.vala:47
+#: src/MessageList/MessageList.vala:49
 msgid "Menu"
 msgstr "Меню"
 
-#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Відповідь"
 
-#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Відповісти всім"
 
-#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Переслати"
 
-#: src/MessageList/MessageList.vala:81
+#: src/MessageList/MessageList.vala:83
 msgid "Mark as Unread"
 msgstr "Позначити непрочитаним"
 
-#: src/MessageList/MessageList.vala:112
+#: src/MessageList/MessageList.vala:114
 msgid "Mark Conversation"
 msgstr "Позначити бесіду"
 
-#: src/MessageList/MessageList.vala:120
+#: src/MessageList/MessageList.vala:122
+#, fuzzy
+#| msgid "Move conversations to Trash"
+msgid "Move Conversation to…"
+msgstr "Перемістити бесіди до смітника"
+
+#: src/MessageList/MessageList.vala:132
 msgid "Move conversations to archive"
 msgstr "Перемістити бесіди до архіву"
 
-#: src/MessageList/MessageList.vala:128
+#: src/MessageList/MessageList.vala:140
 msgid "Move conversations to Trash"
 msgstr "Перемістити бесіди до смітника"
 
-#: src/MessageList/MessageList.vala:155
+#: src/MessageList/MessageList.vala:168
 msgid "No Message Selected"
 msgstr "Повідомлення не вибрано"
 
@@ -418,12 +464,12 @@ msgid "%s at %s"
 msgstr "%s о %s"
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "Прибрати позначення зірочкою з повідомлення"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "Позначити повідомлення зірочкою"
 
@@ -452,20 +498,20 @@ msgid "This message contains one or more attachments"
 msgstr "Це повідомлення містить одне або більше вкладень"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 msgid "Email Message"
 msgstr "Повідомлення електронної пошти"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 msgid "Unable to print email"
 msgstr "Не вдається надрукувати електронний лист"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr "Довіряти й відкрити «%s»?"
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -473,7 +519,7 @@ msgstr ""
 "Вкладення можуть зашкодити вашій системі, якщо їх відкрити. Відкривайте "
 "файли лише з довірених джерел."
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "Все одно відкрити"
 

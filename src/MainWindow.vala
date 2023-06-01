@@ -23,7 +23,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Paned paned_start;
 
     private FoldersListView folders_list_view;
-    private Granite.Widgets.Toast toast;
+    private Granite.Widgets.Toast move_toast;
+    private Granite.Widgets.Toast error_toast;
     private ConversationList conversation_list;
     private MessageList message_list;
 
@@ -40,12 +41,13 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     public const string ACTION_REPLY_ALL = "reply-all";
     public const string ACTION_FORWARD = "forward";
     public const string ACTION_PRINT = "print";
-    public const string ACTION_MARK = "mark";
+    public const string ACTION_MODIFY = "modify";
     public const string ACTION_MARK_READ = "mark-read";
     public const string ACTION_MARK_STAR = "mark-star";
     public const string ACTION_MARK_UNREAD = "mark-unread";
     public const string ACTION_MARK_UNSTAR = "mark-unstar";
     public const string ACTION_ARCHIVE = "archive";
+    public const string ACTION_MOVE = "move";
     public const string ACTION_MOVE_TO_TRASH = "trash";
     public const string ACTION_FULLSCREEN = "full-screen";
 
@@ -58,12 +60,13 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         {ACTION_REPLY_ALL, action_compose, "s" },
         {ACTION_FORWARD, action_compose, "s" },
         {ACTION_PRINT, on_print, "s" },
-        {ACTION_MARK, null }, // Stores enabled state only
+        {ACTION_MODIFY, null }, // Stores enabled state only
         {ACTION_MARK_READ, on_mark_read },
         {ACTION_MARK_STAR, on_mark_star },
         {ACTION_MARK_UNREAD, on_mark_unread },
         {ACTION_MARK_UNSTAR, on_mark_unstar },
         {ACTION_ARCHIVE, action_move },
+        {ACTION_MOVE, action_move, "s" },
         {ACTION_MOVE_TO_TRASH, action_move },
         {ACTION_FULLSCREEN, on_fullscreen },
     };
@@ -116,18 +119,18 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             child = message_list
         };
 
-        toast = new Granite.Widgets.Toast ("");
-        toast.set_default_action (_("Undo"));
-        toast.show_all ();
-        view_overlay.add_overlay (toast);
+        move_toast = new Granite.Widgets.Toast ("");
+        move_toast.set_default_action (_("Undo"));
+        move_toast.show_all ();
+        view_overlay.add_overlay (move_toast);
 
-        toast.default_action.connect (() => {
-            conversation_list.undo_move ();
+        move_toast.default_action.connect (() => {
+            MoveOperation.undo_last_move ();
         });
 
-        toast.closed.connect (() => {
-            conversation_list.expire_undo ();
-        });
+        error_toast = new Granite.Widgets.Toast ("");
+        error_toast.show_all ();
+        view_overlay.add_overlay (error_toast);
 
         var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
         message_overlay.no_show_all = true;
@@ -177,26 +180,20 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         settings.bind ("paned-start-position", paned_start, "position", SettingsBindFlags.DEFAULT);
         settings.bind ("paned-end-position", paned_end, "position", SettingsBindFlags.DEFAULT);
 
-        destroy.connect (() => destroy ());
-
         folders_list_view.folder_selected.connect (conversation_list.load_folder);
 
         conversation_list.conversation_selected.connect (message_list.set_conversation);
 
-        conversation_list.undo_expired.connect (() => {
-            toast.reveal_child = false;
-        });
-
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
 
-        session.account_removed.connect (() => {
+        var account_removed_handler = session.account_removed.connect (() => {
             var accounts_left = session.get_accounts ();
             if (accounts_left.size == 0) {
                 get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
             }
         });
 
-        session.account_added.connect (() => {
+        var account_added_handler = session.account_added.connect (() => {
             placeholder_stack.visible_child = paned_end;
             get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
         });
@@ -214,6 +211,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
             is_session_started = true;
             session_started ();
+        });
+
+        destroy.connect (() => {
+            session.disconnect (account_removed_handler);
+            session.disconnect (account_added_handler);
+            destroy ();
         });
     }
 
@@ -261,21 +264,43 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     private void action_move (SimpleAction action, Variant? parameter) {
         switch (action.name) {
             case ACTION_ARCHIVE:
-                conversation_list.move_selected_messages.begin (MoveHandler.MoveType.ARCHIVE, null, (obj, res) => {
-                    var result = conversation_list.move_selected_messages.end (res);
+                conversation_list.move_selected_messages.begin (MoveOperation.MoveType.ARCHIVE, null, (obj, res) => {
+                    string error_message;
+                    var result = conversation_list.move_selected_messages.end (res, out error_message);
                     if (result > 0) {
-                        toast.title = ngettext ("Message Archived", "Messages Archived", result);
-                        toast.send_notification ();
+                        move_toast.title = ngettext ("Message Archived", "Messages Archived", result);
+                        move_toast.send_notification ();
+                    } else if (error_message != "") {
+                        error_toast.title = _("Failed to move messages: %s").printf (error_message);
+                        error_toast.send_notification ();
+                    }
+                });
+                break;
+
+            case ACTION_MOVE:
+                conversation_list.move_selected_messages.begin (MoveOperation.MoveType.MOVE, parameter, (obj, res) => {
+                    string error_message;
+                    var result = conversation_list.move_selected_messages.end (res, out error_message);
+                    if (result > 0) {
+                        move_toast.title = ngettext ("Message Moved", "Messages Moved", result);
+                        move_toast.send_notification ();
+                    } else if (error_message != "") {
+                        error_toast.title = _("Failed to move messages: %s").printf (error_message);
+                        error_toast.send_notification ();
                     }
                 });
                 break;
 
             case ACTION_MOVE_TO_TRASH:
-                conversation_list.move_selected_messages.begin (MoveHandler.MoveType.TRASH, null, (obj, res) => {
-                    var result = conversation_list.move_selected_messages.end (res);
+                conversation_list.move_selected_messages.begin (MoveOperation.MoveType.TRASH, null, (obj, res) => {
+                    string error_message;
+                    var result = conversation_list.move_selected_messages.end (res, out error_message);
                     if (result > 0) {
-                        toast.title = ngettext ("Message Deleted", "Messages Deleted", result);
-                        toast.send_notification ();
+                        move_toast.title = ngettext ("Message Deleted", "Messages Deleted", result);
+                        move_toast.send_notification ();
+                    } else if (error_message != "") {
+                        error_toast.title = _("Failed to move messages: %s").printf (error_message);
+                        error_toast.send_notification ();
                     }
                 });
                 break;

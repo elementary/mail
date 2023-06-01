@@ -9,6 +9,8 @@ public class Mail.MessageList : Gtk.Box {
     public signal void hovering_over_link (string? label, string? uri);
     public Hdy.HeaderBar headerbar { get; private set; }
 
+    private Menu move_menu;
+    private Gtk.MenuButton move_button;
     private Gtk.ListBox list_box;
     private Gtk.ScrolledWindow scrolled_window;
     private Gee.HashMap<string, MessageListItem> messages;
@@ -112,10 +114,20 @@ public class Mail.MessageList : Gtk.Box {
         mark_menu.show_all ();
 
         var mark_button = new Gtk.MenuButton () {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK,
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MODIFY,
             image = new Gtk.Image.from_icon_name ("edit-mark", Gtk.IconSize.LARGE_TOOLBAR),
             popup = mark_menu,
             tooltip_text = _("Mark Conversation")
+        };
+
+        move_menu = new Menu ();
+
+        move_button = new Gtk.MenuButton () {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MODIFY,
+            image = new Gtk.Image.from_icon_name ("folder", Gtk.IconSize.LARGE_TOOLBAR),
+            tooltip_text = _("Move Conversation to…"),
+            menu_model = move_menu,
+            use_popover = false
         };
 
         var archive_button = new Gtk.Button.from_icon_name ("mail-archive", Gtk.IconSize.LARGE_TOOLBAR) {
@@ -143,6 +155,7 @@ public class Mail.MessageList : Gtk.Box {
         headerbar.pack_start (forward_button);
         headerbar.pack_start (new Gtk.Separator (Gtk.Orientation.VERTICAL));
         headerbar.pack_start (mark_button);
+        headerbar.pack_start (move_button);
         headerbar.pack_start (archive_button);
         headerbar.pack_start (trash_button);
         headerbar.pack_end (app_menu);
@@ -192,6 +205,27 @@ public class Mail.MessageList : Gtk.Box {
         add (scrolled_window);
     }
 
+    public void update_move_menu (Camel.FolderInfo top, int depth) {
+        /* Hackish way of indenting subfolders */
+        var builder = new StringBuilder ();
+        for (int i = 0; i < depth; i++) {
+            builder.append ("     ");
+        }
+
+        var folder_info = top;
+        while (folder_info != null) {
+            move_menu.append (
+                builder.str + folder_info.display_name,
+                Action.print_detailed_name (MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE, folder_info.full_name)
+            );
+
+            if (folder_info.child != null) {
+                update_move_menu (folder_info.child, depth + 1);
+            }
+            folder_info = folder_info.next;
+        }
+    }
+
     public void set_conversation (Camel.FolderThreadNode? node) {
         /*
          * Prevent the user from interacting with the message thread while it
@@ -215,6 +249,17 @@ public class Mail.MessageList : Gtk.Box {
          * individual messages.
          */
         can_move_thread (true);
+
+        var store = node.message.summary.folder.parent_store;
+        store.get_folder_info.begin (null, Camel.StoreGetFolderInfoFlags.RECURSIVE, GLib.Priority.DEFAULT, null, (obj, res) => {
+            try {
+                var folder_info = store.get_folder_info.end (res);
+                move_menu.remove_all ();
+                update_move_menu (folder_info, 0);
+            } catch (Error e) {
+                critical (e.message);
+            }
+        });
 
         var item = new MessageListItem (node.message);
         list_box.add (item);
@@ -301,8 +346,9 @@ public class Mail.MessageList : Gtk.Box {
 
     private void can_move_thread (bool enabled) {
         unowned var main_window = (Gtk.ApplicationWindow) get_toplevel ();
+        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MODIFY)).set_enabled (enabled);
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_ARCHIVE)).set_enabled (enabled);
-        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MARK)).set_enabled (enabled);
+        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE)).set_enabled (enabled);
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE_TO_TRASH)).set_enabled (enabled);
     }
 
