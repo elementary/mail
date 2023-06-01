@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-30 17:11+0000\n"
-"PO-Revision-Date: 2023-05-30 17:11+0000\n"
+"PO-Revision-Date: 2023-06-01 21:56+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
 "Language: fr\n"
@@ -261,13 +261,10 @@ msgid "Failed to move messages: %s"
 msgstr "Échec du déplacement des messages : %s"
 
 #: src/MainWindow.vala:285
-#, fuzzy
-#| msgid "Message Archived"
-#| msgid_plural "Messages Archived"
 msgid "Message Moved"
 msgid_plural "Messages Moved"
-msgstr[0] "Message archivé"
-msgstr[1] "Messages archivés"
+msgstr[0] "Message déplacé"
+msgstr[1] "Messages déplacés"
 
 #: src/MainWindow.vala:299
 msgid "Message Deleted"
@@ -446,11 +443,8 @@ msgid "Mark Conversation"
 msgstr "Marquer la conversation"
 
 #: src/MessageList/MessageList.vala:122
-#, fuzzy
-#| msgid "Move conversation"
-#| msgid_plural "Move conversations"
 msgid "Move Conversation to…"
-msgstr "Deplacer la conversation"
+msgstr "Deplacer la conversation vers…"
 
 #: src/MessageList/MessageList.vala:132
 msgid "Move conversations to archive"
