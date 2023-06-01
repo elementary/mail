@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 17:11+0000\n"
+"POT-Creation-Date: 2023-06-01 21:56+0000\n"
 "PO-Revision-Date: 2023-06-01 21:56+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
@@ -314,17 +314,17 @@ msgid "Mark As Unread"
 msgstr "未読としてマーク"
 
 #: src/ConversationList/ConversationList.vala:578
-#: src/MessageList/MessageList.vala:89
+#: src/MessageList/MessageList.vala:60
 msgid "Mark as Read"
 msgstr "既読としてマーク"
 
 #: src/ConversationList/ConversationList.vala:588
-#: src/MessageList/MessageList.vala:95
+#: src/MessageList/MessageList.vala:66
 msgid "Star"
 msgstr "スターを付ける"
 
 #: src/ConversationList/ConversationList.vala:596
-#: src/MessageList/MessageList.vala:101
+#: src/MessageList/MessageList.vala:72
 msgid "Unstar"
 msgstr "スターを外す"
 
@@ -360,6 +360,29 @@ msgstr "Web サイト名を入力"
 msgid "Compose new message"
 msgstr "新しいメッセージを作成します"
 
+#: src/FoldersView/FoldersListView.vala:59
+msgid "Always Show Remote Images"
+msgstr "常にリモートの画像を表示"
+
+#: src/FoldersView/FoldersListView.vala:62
+msgid "Account Settings…"
+msgstr "アカウントの設定…"
+
+#: src/FoldersView/FoldersListView.vala:86
+msgid "Menu"
+msgstr "メニュー"
+
+#: src/FoldersView/FoldersListView.vala:140
+#, fuzzy
+#| msgid "Unable to print email"
+msgid "Unable to open System Settings"
+msgstr "メールを印刷できません"
+
+#: src/FoldersView/FoldersListView.vala:141
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "フォルダーを更新"
@@ -380,51 +403,39 @@ msgstr "送信済み"
 msgid "All Mailboxes"
 msgstr "すべての受信箱"
 
-#: src/MessageList/MessageList.vala:23
-msgid "Always Show Remote Images"
-msgstr "常にリモートの画像を表示"
-
-#: src/MessageList/MessageList.vala:26
-msgid "Account Settings…"
-msgstr "アカウントの設定…"
-
-#: src/MessageList/MessageList.vala:49
-msgid "Menu"
-msgstr "メニュー"
-
-#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "返信"
 
-#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "全員に返信"
 
-#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "転送"
 
-#: src/MessageList/MessageList.vala:83
+#: src/MessageList/MessageList.vala:54
 msgid "Mark as Unread"
 msgstr "未読としてマーク"
 
-#: src/MessageList/MessageList.vala:114
+#: src/MessageList/MessageList.vala:85
 msgid "Mark Conversation"
 msgstr "スレッドにマークをつける"
 
-#: src/MessageList/MessageList.vala:122
+#: src/MessageList/MessageList.vala:93
 msgid "Move Conversation to…"
 msgstr "メッセージの移動先を選択…"
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:103
 msgid "Move conversations to archive"
 msgstr "スレッドをアーカイブします"
 
-#: src/MessageList/MessageList.vala:140
+#: src/MessageList/MessageList.vala:111
 msgid "Move conversations to Trash"
 msgstr "スレッドをゴミ箱に移動します"
 
-#: src/MessageList/MessageList.vala:168
+#: src/MessageList/MessageList.vala:126
 msgid "No Message Selected"
 msgstr "メッセージが選択されていません"
 

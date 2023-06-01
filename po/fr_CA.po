@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 17:11+0000\n"
+"POT-Creation-Date: 2023-06-01 21:56+0000\n"
 "PO-Revision-Date: 2016-08-25 14:39+0000\n"
 "Last-Translator: Nate <natejms@outlook.com>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
@@ -336,18 +336,18 @@ msgid "Mark As Unread"
 msgstr "Marquer comme S_pam"
 
 #: src/ConversationList/ConversationList.vala:578
-#: src/MessageList/MessageList.vala:89
+#: src/MessageList/MessageList.vala:60
 #, fuzzy
 msgid "Mark as Read"
 msgstr "Marquer comme S_pam"
 
 #: src/ConversationList/ConversationList.vala:588
-#: src/MessageList/MessageList.vala:95
+#: src/MessageList/MessageList.vala:66
 msgid "Star"
 msgstr ""
 
 #: src/ConversationList/ConversationList.vala:596
-#: src/MessageList/MessageList.vala:101
+#: src/MessageList/MessageList.vala:72
 msgid "Unstar"
 msgstr ""
 
@@ -383,6 +383,27 @@ msgstr ""
 msgid "Compose new message"
 msgstr ""
 
+#: src/FoldersView/FoldersListView.vala:59
+msgid "Always Show Remote Images"
+msgstr ""
+
+#: src/FoldersView/FoldersListView.vala:62
+msgid "Account Settings…"
+msgstr ""
+
+#: src/FoldersView/FoldersListView.vala:86
+msgid "Menu"
+msgstr ""
+
+#: src/FoldersView/FoldersListView.vala:140
+msgid "Unable to open System Settings"
+msgstr ""
+
+#: src/FoldersView/FoldersListView.vala:141
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr ""
@@ -405,56 +426,44 @@ msgstr "Courrier Envoyé"
 msgid "All Mailboxes"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:23
-msgid "Always Show Remote Images"
-msgstr ""
-
-#: src/MessageList/MessageList.vala:26
-msgid "Account Settings…"
-msgstr ""
-
-#: src/MessageList/MessageList.vala:49
-msgid "Menu"
-msgstr ""
-
-#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:83
+#: src/MessageList/MessageList.vala:54
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "Marquer comme S_pam"
 
-#: src/MessageList/MessageList.vala:114
+#: src/MessageList/MessageList.vala:85
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Supprimer la conversation"
 
-#: src/MessageList/MessageList.vala:122
+#: src/MessageList/MessageList.vala:93
 #, fuzzy
 msgid "Move Conversation to…"
 msgstr "Bouger la conversation à la poubelle (Suppr, Retour Arrière)"
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:103
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Bouger la conversation à la poubelle (Suppr, Retour Arrière)"
 
-#: src/MessageList/MessageList.vala:140
+#: src/MessageList/MessageList.vala:111
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Bouger la conversation à la poubelle (Suppr, Retour Arrière)"
 
-#: src/MessageList/MessageList.vala:168
+#: src/MessageList/MessageList.vala:126
 msgid "No Message Selected"
 msgstr ""
 

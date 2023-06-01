@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 17:11+0000\n"
+"POT-Creation-Date: 2023-06-01 21:56+0000\n"
 "PO-Revision-Date: 2023-05-25 17:06+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
@@ -349,17 +349,17 @@ msgid "Mark As Unread"
 msgstr "Oznacz jako nieprzeczytane"
 
 #: src/ConversationList/ConversationList.vala:578
-#: src/MessageList/MessageList.vala:89
+#: src/MessageList/MessageList.vala:60
 msgid "Mark as Read"
 msgstr "Oznacz jako przeczytane"
 
 #: src/ConversationList/ConversationList.vala:588
-#: src/MessageList/MessageList.vala:95
+#: src/MessageList/MessageList.vala:66
 msgid "Star"
 msgstr "Wyróżnij"
 
 #: src/ConversationList/ConversationList.vala:596
-#: src/MessageList/MessageList.vala:101
+#: src/MessageList/MessageList.vala:72
 msgid "Unstar"
 msgstr "Usuń wyróżnienie"
 
@@ -395,6 +395,29 @@ msgstr "Przykładowa strona internetowa"
 msgid "Compose new message"
 msgstr "Napisz nową wiadomość"
 
+#: src/FoldersView/FoldersListView.vala:59
+msgid "Always Show Remote Images"
+msgstr "Zawsze wyświetlaj zdalne obrazy"
+
+#: src/FoldersView/FoldersListView.vala:62
+msgid "Account Settings…"
+msgstr "Ustawienia konta…"
+
+#: src/FoldersView/FoldersListView.vala:86
+msgid "Menu"
+msgstr "Menu"
+
+#: src/FoldersView/FoldersListView.vala:140
+#, fuzzy
+#| msgid "Unable to print email"
+msgid "Unable to open System Settings"
+msgstr "Nie można wydrukować maila"
+
+#: src/FoldersView/FoldersListView.vala:141
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "Odśwież katalog"
@@ -415,54 +438,42 @@ msgstr "Wysłane"
 msgid "All Mailboxes"
 msgstr "Wszystkie skrzynki pocztowe"
 
-#: src/MessageList/MessageList.vala:23
-msgid "Always Show Remote Images"
-msgstr "Zawsze wyświetlaj zdalne obrazy"
-
-#: src/MessageList/MessageList.vala:26
-msgid "Account Settings…"
-msgstr "Ustawienia konta…"
-
-#: src/MessageList/MessageList.vala:49
-msgid "Menu"
-msgstr "Menu"
-
-#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Odpowiedz"
 
-#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Odpowiedz wszystkim"
 
-#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Przekaż"
 
-#: src/MessageList/MessageList.vala:83
+#: src/MessageList/MessageList.vala:54
 msgid "Mark as Unread"
 msgstr "Oznacz jako nieprzeczytane"
 
-#: src/MessageList/MessageList.vala:114
+#: src/MessageList/MessageList.vala:85
 msgid "Mark Conversation"
 msgstr "Oznacz konwersację"
 
-#: src/MessageList/MessageList.vala:122
+#: src/MessageList/MessageList.vala:93
 #, fuzzy
 #| msgid "Move conversation"
 #| msgid_plural "Move conversations"
 msgid "Move Conversation to…"
 msgstr "Przenieś konwersację"
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:103
 msgid "Move conversations to archive"
 msgstr "Przenieś rozmowy do archiwum"
 
-#: src/MessageList/MessageList.vala:140
+#: src/MessageList/MessageList.vala:111
 msgid "Move conversations to Trash"
 msgstr "Przenieś rozmowy do kosza"
 
-#: src/MessageList/MessageList.vala:168
+#: src/MessageList/MessageList.vala:126
 msgid "No Message Selected"
 msgstr "Brak zaznaczonych wiadomości"
 
