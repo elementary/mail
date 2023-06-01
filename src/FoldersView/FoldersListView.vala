@@ -136,7 +136,17 @@ public class Mail.FoldersListView : Gtk.Grid {
             try {
                 Gtk.show_uri_on_window ((Gtk.Window) get_toplevel (), "settings://accounts/online", Gtk.get_current_event_time ());
             } catch (Error e) {
-                critical ("Failed to open account settings: %s", e.message);
+                var dialog = new Granite.MessageDialog (
+                    _("Unable to open System Settings"),
+                    _("Open System Settings manually or install Evolution to set up online accounts."),
+                    new ThemedIcon ("preferences-system")
+                ) {
+                    badge_icon = new ThemedIcon ("dialog-warning"),
+                    modal = true,
+                    transient_for = (Gtk.Window) get_toplevel ()
+                };
+                dialog.response.connect (dialog.destroy);
+                dialog.present ();
             }
         });
     }
