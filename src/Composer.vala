@@ -610,7 +610,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         if (content_to_quote != null) {
             if (type == Type.DRAFT) {
                 ancestor_message_info = info;
-                web_view.set_message (content_to_quote);
+                web_view.load_html_message (content_to_quote);
 
                 unowned var to = message.get_recipients (Camel.RECIPIENT_TYPE_TO);
                 if (to != null) {

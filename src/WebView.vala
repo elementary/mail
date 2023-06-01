@@ -35,10 +35,10 @@ public class Mail.WebView : WebKit.WebView {
 
     private bool loaded = false;
     private bool queued_load_images = false;
+    private string? queued_html_message = null;
     private string? queued_body_content = null;
     private string? queued_signature_content = null;
     private string? queued_quote_content = null;
-    private string? queued_message_html = null;
     public bool is_composer { get; set; default = false; }
     private GLib.Cancellable cancellable;
 
@@ -101,6 +101,9 @@ public class Mail.WebView : WebKit.WebView {
 
         if (event == WebKit.LoadEvent.FINISHED) {
             loaded = true;
+            if (queued_html_message != null) {
+                load_html_message ((owned) queued_html_message);
+            }
             if (queued_body_content != null) {
                 set_body_content ((owned) queued_body_content);
             }
@@ -109,9 +112,6 @@ public class Mail.WebView : WebKit.WebView {
             }
             if (queued_quote_content != null) {
                 set_quote_content ((owned) queued_quote_content);
-            }
-            if (queued_message_html != null) {
-                set_message ((owned) queued_message_html);
             }
 
             if (queued_load_images) {
@@ -145,19 +145,19 @@ public class Mail.WebView : WebKit.WebView {
         base.load_html (body, INTERNAL_URL_BODY);
     }
 
-    public void set_message (owned string message_html) {
-        if (!message_html.contains ("elementary-message-body")) {
+    public void load_html_message (owned string html_message) {
+        if (!html_message.contains ("elementary-message-body")) {
             //We have to asume the message wasn't created using the elementary mail composer
             //and therefore doesn't have tags with the necessary ids
-            set_body_content ((owned) message_html);
+            set_body_content ((owned) html_message);
             return;
         }
 
         if (loaded) {
-            var message = new WebKit.UserMessage ("set-message", new Variant.take_string ((owned) message_html));
+            var message = new WebKit.UserMessage ("set-message", new Variant.take_string ((owned) html_message));
             send_message_to_page.begin (message, cancellable);
         } else {
-            queued_message_html = (owned) message_html;
+            queued_html_message = (owned) html_message;
         }
     }
 
