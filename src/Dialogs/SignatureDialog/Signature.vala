@@ -46,11 +46,10 @@ public class Mail.Signature : Gtk.ListBoxRow {
         show_all ();
     }
 
-    public async void save (string new_content) {
+    public async void save () {
         signature_source.display_name = title;
-        content = new_content;
         try {
-            yield signature_source.mail_signature_replace (new_content, new_content.length, GLib.Priority.DEFAULT, null);
+            yield signature_source.mail_signature_replace (content, content.length, GLib.Priority.DEFAULT, null);
             yield signature_source.write (null);
         } catch (Error e) {
             warning ("Failed to save signature '%s': %s", title, e.message);

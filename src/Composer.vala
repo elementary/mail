@@ -18,7 +18,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     private const string ACTION_STRIKETHROUGH = "strikethrough";
     private const string ACTION_INSERT_LINK = "insert_link";
     private const string ACTION_REMOVE_FORMAT = "remove_formatting";
-    private const string ACTION_INSERT_SIGNATURE= "insert-signature";
+    private const string ACTION_INSERT_SIGNATURE = "insert-signature";
     private const string ACTION_DISCARD = "discard";
     private const string ACTION_SEND = "send";
 
@@ -308,7 +308,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
         var signature_menu = new Menu ();
 
-        var signature = new Gtk.MenuButton () {
+        var signature_button = new Gtk.MenuButton () {
             image = new Gtk.Image.from_icon_name ("document-edit", Gtk.IconSize.MENU),
             menu_model = signature_menu,
             use_popover = false,
@@ -337,7 +337,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         action_bar.pack_start (discard);
         action_bar.pack_start (attach);
-        action_bar.pack_start (signature);
+        action_bar.pack_start (signature_button);
         action_bar.pack_end (send);
 
         var view_overlay = new Gtk.Overlay ();
@@ -955,8 +955,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     private void set_default_signature_for_sender () {
         var sender = from_combo.get_active_text ();
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
-        var active_id = session.get_signature_uid_for_sender (sender);
-        activate_action (ACTION_INSERT_SIGNATURE, active_id);
+        activate_action (ACTION_INSERT_SIGNATURE, session.get_signature_uid_for_sender (sender));
     }
 
     private class Attachment : Gtk.FlowBoxChild {

@@ -16,7 +16,7 @@
 */
 
 public class Mail.SignatureDialog : Hdy.Window {
-    private const string ACTION_GROUP_PREFIX = "signaturedialog";
+    private const string ACTION_GROUP_PREFIX = "default-account";
     private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
 
     private SimpleActionGroup action_group_default_account;
@@ -25,7 +25,6 @@ public class Mail.SignatureDialog : Hdy.Window {
     private Gtk.Entry title_entry;
     private Mail.WebView web_view;
     private Signature? current_signature;
-    private Binding current_binding;
     private Signature? last_deleted_signature;
     private Granite.Widgets.Toast toast;
     private bool selection_change_ongoing = false;
@@ -194,6 +193,12 @@ public class Mail.SignatureDialog : Hdy.Window {
 
         add_button.clicked.connect (() => create_new_signature.begin ());
 
+        title_entry.changed.connect (() => {
+            if (!selection_change_ongoing) {
+                ((Signature)signature_list.get_selected_row ()).title = title_entry.text;
+            }
+        });
+
         delete_button.clicked.connect (delete_selected_signature);
 
         toast.default_action.connect (() => last_deleted_signature.undo_delete ());
@@ -224,7 +229,7 @@ public class Mail.SignatureDialog : Hdy.Window {
         yield set_selected_signature (null);
 
         foreach (var child in signature_list.get_children ()) {
-            var signature = (Signature) child;
+            var signature = (Signature)child;
             if (!signature.is_visible ()) {
                 yield signature.finish_delete_signature ();
             }
@@ -233,12 +238,8 @@ public class Mail.SignatureDialog : Hdy.Window {
 
     private async void set_selected_signature (Signature? signature) {
         if (current_signature != null) {
-            var content = yield web_view.get_message_html ();
-            yield current_signature.save (content);
-        }
-
-        if (current_binding != null) {
-            current_binding.unbind ();
+            current_signature.content = yield web_view.get_message_html ();
+            yield current_signature.save ();
         }
 
         if (signature == null) {
@@ -248,11 +249,12 @@ public class Mail.SignatureDialog : Hdy.Window {
             return;
         }
 
-        current_binding = signature.bind_property ("title", title_entry, "text", BindingFlags.BIDIRECTIONAL | BindingFlags.SYNC_CREATE);
+        selection_change_ongoing = true;
+
+        title_entry.text = signature.title;
         web_view.load_html (html_template.printf (signature.content));
         current_signature = signature;
 
-        selection_change_ongoing = true;
         unowned var session = Backend.Session.get_default ();
         foreach (var account in session.get_accounts ()) {
             var identity_source = session.get_identity_source_for_account_uid (account.service.uid);
@@ -263,6 +265,7 @@ public class Mail.SignatureDialog : Hdy.Window {
                 action_group_default_account.change_action_state (account.service.uid, false);
             }
         }
+
         selection_change_ongoing = false;
     }
 

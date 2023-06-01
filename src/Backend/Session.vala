@@ -225,11 +225,7 @@ public class Mail.Backend.Session : Camel.Session {
     }
 
     public E.Source get_identity_source_for_service (Camel.Service service) {
-        var account_source = registry.ref_source (service.get_uid ());
-        var account_extension = (E.SourceMailAccount) account_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
-        var identity_uid = account_extension.get_identity_uid ();
-
-        return registry.ref_source (identity_uid);
+        return get_identity_source_for_account_uid (service.uid);
     }
 
     public string? get_archive_folder_uri_for_service (Camel.Service service) {
@@ -586,24 +582,13 @@ public class Mail.Backend.Session : Camel.Session {
         }
     }
 
-    public async void set_signature_uid_for_service (Camel.Service service, string signature_uid) {
-        var identity_source = get_identity_source_for_service (service);
-        unowned var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
-        identity_extension.signature_uid = signature_uid;
-        try {
-            yield identity_source.write (null);
-        } catch (Error e) {
-            warning ("Failed to update default signature for '%s': %s", identity_extension.address, e.message);
-        }
-    }
-
     public string get_signature_uid_for_sender (string sender) {
         var sender_address = new Camel.InternetAddress ();
         sender_address.unformat (sender);
 
         var store = get_camel_store_from_email (sender_address);
         if (store == null) {
-            return "";
+            return "none";
         }
         var identity_source = get_identity_source_for_service (store);
         unowned var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
@@ -615,7 +600,7 @@ public class Mail.Backend.Session : Camel.Session {
         var signature_source = registry.ref_source (uid);
 
         if (signature_source == null) {
-            warning ("Signature not found: %s", uid);
+            warning ("Signature with uid '%s' not found.", uid);
             return "";
         }
 
