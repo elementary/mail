@@ -26,6 +26,7 @@ public class Mail.ConversationItemModel : GLib.Object {
     public Camel.FolderThread thread { get; construct; }
     public int64 timestamp { get; construct; }
     public Camel.FolderInfoFlags folder_info_flags { get; construct; }
+    public bool hidden { get; set; default = false; }
 
     public string formatted_date {
         owned get {
