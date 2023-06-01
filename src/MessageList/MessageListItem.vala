@@ -665,7 +665,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     }
 
     public async string get_message_body_html () {
-        return yield web_view.get_message_html ();
+        return yield web_view.get_body_html ();
     }
 
     private void show_attachment (Camel.MimePart mime_part) {

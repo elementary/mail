@@ -38,7 +38,7 @@ public class Mail.WebView : WebKit.WebView {
     private string? queued_body_content = null;
     private string? queued_signature_content = null;
     private string? queued_quote_content = null;
-    private string? queued_body_html = null;
+    private string? queued_message_html = null;
     public bool is_composer { get; set; default = false; }
     private GLib.Cancellable cancellable;
 
@@ -110,8 +110,8 @@ public class Mail.WebView : WebKit.WebView {
             if (queued_quote_content != null) {
                 set_quote_content ((owned) queued_quote_content);
             }
-            if (queued_body_html != null) {
-                set_message_html ((owned) queued_body_html);
+            if (queued_message_html != null) {
+                set_message ((owned) queued_message_html);
             }
 
             if (queued_load_images) {
@@ -143,6 +143,22 @@ public class Mail.WebView : WebKit.WebView {
 
     public new void load_html (string? body) {
         base.load_html (body, INTERNAL_URL_BODY);
+    }
+
+    public void set_message (owned string message_html) {
+        if (!message_html.contains ("elementary-message-body")) {
+            //We have to asume the message wasn't created using the elementary mail composer
+            //and therefore doesn't have tags with the necessary ids
+            set_body_content ((owned) message_html);
+            return;
+        }
+
+        if (loaded) {
+            var message = new WebKit.UserMessage ("set-message", new Variant.take_string ((owned) message_html));
+            send_message_to_page.begin (message, cancellable);
+        } else {
+            queued_message_html = (owned) message_html;
+        }
     }
 
     public void set_body_content (owned string content) {
@@ -239,14 +255,14 @@ public class Mail.WebView : WebKit.WebView {
         return false;
     }
 
-    public async string? get_message_html (bool clean_for_sending = false) {
-        string? message_html = null;
+    public async string? get_body_html (bool clean_for_sending = false) {
+        string? body_html = null;
 
         if (!loaded && !cancellable.is_cancelled ()) {
             load_finished.connect (() => {
-                get_message_html.begin (clean_for_sending, (obj, res) => {
-                    message_html = get_message_html.end (res);
-                    get_message_html.callback ();
+                get_body_html.begin (clean_for_sending, (obj, res) => {
+                    body_html = get_body_html.end (res);
+                    get_body_html.callback ();
                 });
             });
 
@@ -262,9 +278,9 @@ public class Mail.WebView : WebKit.WebView {
             yield;
         } else {
             try {
-                var message = new WebKit.UserMessage ("get-message-html", new Variant.boolean (clean_for_sending));
+                var message = new WebKit.UserMessage ("get-body-html", new Variant.boolean (clean_for_sending));
                 var response = yield send_message_to_page (message, cancellable);
-                message_html = response.parameters.get_string ();
+                body_html = response.parameters.get_string ();
             } catch (Error e) {
                 // We can cancel the operation
                 if (!(e is GLib.IOError.CANCELLED)) {
@@ -273,23 +289,7 @@ public class Mail.WebView : WebKit.WebView {
             }
         }
 
-        return message_html;
-    }
-
-    public void set_message_html (owned string message_html) {
-        if (!message_html.contains ("elementary-message-body")) {
-            //We have to asume the message wasn't created using the elementary mail composer
-            //and therefore doesn't have tags with the necessary ids
-            set_body_content ((owned) message_html);
-            return;
-        }
-
-        if (loaded) {
-            var message = new WebKit.UserMessage ("set-message-html", new Variant.take_string ((owned) message_html));
-            send_message_to_page.begin (message, cancellable);
-        } else {
-            queued_body_html = (owned) message_html;
-        }
+        return body_html;
     }
 
     private void handle_cid_request (WebKit.URISchemeRequest request) {
