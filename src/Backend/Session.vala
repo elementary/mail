@@ -216,6 +216,14 @@ public class Mail.Backend.Session : Camel.Session {
         return result == Camel.AuthenticationResult.REJECTED;
     }
 
+    public E.Source get_identity_source_for_account_uid (string account_uid) {
+        var account_source = registry.ref_source (account_uid);
+        unowned var account_extension = (E.SourceMailAccount) account_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
+        unowned var identity_uid = account_extension.get_identity_uid ();
+
+        return registry.ref_source (identity_uid);
+    }
+
     public E.Source get_identity_source_for_service (Camel.Service service) {
         var account_source = registry.ref_source (service.get_uid ());
         var account_extension = (E.SourceMailAccount) account_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
@@ -562,6 +570,19 @@ public class Mail.Backend.Session : Camel.Session {
     public void check_for_signature_change (E.Source source) {
         if (source.has_extension (E.SOURCE_EXTENSION_MAIL_SIGNATURE)) {
             signature_changed ();
+        }
+    }
+
+    public async void set_signature_uid_for_account_uid (string account_uid, string signature_uid) {
+        var identity_source = get_identity_source_for_account_uid (account_uid);
+        unowned var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+
+        identity_extension.signature_uid = signature_uid;
+
+        try {
+            yield identity_source.write (null);
+        } catch (Error e) {
+            warning ("Failed to update default signature for '%s': %s", identity_extension.address, e.message);
         }
     }
 

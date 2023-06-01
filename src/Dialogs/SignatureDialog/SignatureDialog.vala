@@ -16,6 +16,10 @@
 */
 
 public class Mail.SignatureDialog : Hdy.Window {
+    private const string ACTION_GROUP_PREFIX = "signaturedialog";
+    private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
+
+    private SimpleActionGroup action_group_default_account;
     private string html_template;
     private Gtk.ListBox signature_list;
     private Gtk.Entry title_entry;
@@ -24,8 +28,12 @@ public class Mail.SignatureDialog : Hdy.Window {
     private Binding current_binding;
     private Signature? last_deleted_signature;
     private Granite.Widgets.Toast toast;
+    private bool selection_change_ongoing = false;
 
     construct {
+        action_group_default_account = new SimpleActionGroup ();
+        insert_action_group (ACTION_GROUP_PREFIX, action_group_default_account);
+
         try {
             var template = resources_lookup_data ("/io/elementary/mail/blank-editor-template.html", ResourceLookupFlags.NONE);
             html_template = (string)template.get_data ();
@@ -100,9 +108,19 @@ public class Mail.SignatureDialog : Hdy.Window {
         };
         delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
 
+        var default_menu = new Menu ();
+
+        var default_menubutton = new Gtk.MenuButton () {
+            menu_model = default_menu,
+            label = _("Set Default For…"),
+            use_popover = false,
+            direction = UP
+        };
+
         var end_actionbar = new Gtk.ActionBar ();
         end_actionbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         end_actionbar.pack_start (delete_button);
+        end_actionbar.pack_end (default_menubutton);
 
         var content_box = new Gtk.Box (VERTICAL, 0);
         content_box.add (title_entry);
@@ -170,6 +188,10 @@ public class Mail.SignatureDialog : Hdy.Window {
             signature_list.select_row (signature_list.get_row_at_index (0));
         });
 
+        populate_default_menu (default_menu);
+
+        action_group_default_account.action_state_changed.connect (update_default_signature);
+
         add_button.clicked.connect (() => create_new_signature.begin ());
 
         delete_button.clicked.connect (delete_selected_signature);
@@ -229,12 +251,48 @@ public class Mail.SignatureDialog : Hdy.Window {
         current_binding = signature.bind_property ("title", title_entry, "text", BindingFlags.BIDIRECTIONAL | BindingFlags.SYNC_CREATE);
         web_view.load_html (html_template.printf (signature.content));
         current_signature = signature;
+
+        selection_change_ongoing = true;
+        unowned var session = Backend.Session.get_default ();
+        foreach (var account in session.get_accounts ()) {
+            var identity_source = session.get_identity_source_for_account_uid (account.service.uid);
+            unowned var identity_extension = (E.SourceMailIdentity)identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+            if (identity_extension.signature_uid == signature.uid) {
+                action_group_default_account.change_action_state (account.service.uid, true);
+            } else {
+                action_group_default_account.change_action_state (account.service.uid, false);
+            }
+        }
+        selection_change_ongoing = false;
     }
 
     private async void load_signatures () {
         foreach (var signature_source in Mail.Backend.Session.get_default ().get_all_signature_sources ()) {
             var signature = yield new Signature (signature_source);
             signature_list.add (signature);
+        }
+    }
+
+    private void populate_default_menu (Menu menu) {
+        unowned var session = Backend.Session.get_default ();
+        foreach (var account in session.get_accounts ()) {
+            var action = new SimpleAction.stateful (account.service.uid, null, false);
+            action_group_default_account.add_action (action);
+            menu.append (account.service.display_name, ACTION_PREFIX + account.service.uid);
+        }
+    }
+
+    private void update_default_signature (string account_uid, Variant? set_default) {
+        if (selection_change_ongoing) {
+            return;
+        }
+
+        unowned var session = Backend.Session.get_default ();
+        if (set_default.get_boolean ()) {
+            var signature = current_signature;
+            session.set_signature_uid_for_account_uid.begin (account_uid, signature.uid);
+        } else {
+            session.set_signature_uid_for_account_uid.begin (account_uid, "none");
         }
     }
 

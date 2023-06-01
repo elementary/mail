@@ -18,6 +18,7 @@
 public class Mail.Signature : Gtk.ListBoxRow {
     public string title { get; set; }
     public string content { get; set; }
+    public string uid { get; private set; }
 
     private E.Source signature_source;
     private uint timeout_id = 0;
@@ -25,6 +26,7 @@ public class Mail.Signature : Gtk.ListBoxRow {
     public async Signature (E.Source signature_source) {
         this.signature_source = signature_source;
         title = signature_source.display_name;
+        uid = signature_source.uid;
 
         try {
             string content;
