@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>
 */
 
-public class SignatureDialog : Hdy.Window {
+public class Mail.SignatureDialog : Hdy.Window {
     private string html_template;
     private Gtk.ListBox signature_list;
     private Gtk.Entry title_entry;
@@ -56,7 +56,9 @@ public class SignatureDialog : Hdy.Window {
         start_actionbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         start_actionbar.pack_start (add_button);
 
-        var start_box = new Gtk.Box (VERTICAL, 0);
+        var start_box = new Gtk.Box (VERTICAL, 0) {
+            width_request = 200
+        };
         start_box.get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
         start_box.add (start_header);
         start_box.add (signature_list);
@@ -75,6 +77,7 @@ public class SignatureDialog : Hdy.Window {
         end_header.pack_start (title);
 
         title_entry = new Gtk.Entry () {
+            margin_top = 2, //Work around a styling issue
             margin_start = 12,
             margin_end = 12,
             placeholder_text = _("For example “Work” or “Personal”")
@@ -115,7 +118,9 @@ public class SignatureDialog : Hdy.Window {
         var placeholder = new Gtk.Label (_("No Signature selected"));
 
         var placeholder_overlay = new Gtk.Overlay () {
-            child = end_box
+            child = end_box,
+            hexpand = true,
+            vexpand = true
         };
         placeholder_overlay.add_overlay (placeholder);
         placeholder_overlay.set_overlay_pass_through (placeholder, true);
@@ -124,15 +129,15 @@ public class SignatureDialog : Hdy.Window {
         action_sizegroup.add_widget (start_actionbar);
         action_sizegroup.add_widget (end_actionbar);
 
-        var paned = new Gtk.Paned (HORIZONTAL);
-        paned.pack1 (start_box, true, false);
-        paned.pack2 (placeholder_overlay, true, false);
+        var main_box = new Gtk.Box (HORIZONTAL, 0);
+        main_box.add (start_box);
+        main_box.add (placeholder_overlay);
 
         toast = new Granite.Widgets.Toast ("");
         toast.set_default_action (_("Undo"));
 
         var overlay = new Gtk.Overlay () {
-            child = paned
+            child = main_box
         };
         overlay.add_overlay (toast);
 
@@ -140,11 +145,26 @@ public class SignatureDialog : Hdy.Window {
         header_group.add_header_bar (start_header);
         header_group.add_header_bar (end_header);
 
+        unowned var application = (Application)GLib.Application.get_default ();
+        MainWindow? main_window = null;
+        foreach (unowned var window in application.get_windows ()) {
+            if (window is MainWindow) {
+                main_window = (MainWindow) window;
+                break;
+            }
+        }
+
+        if (main_window != null) {
+            transient_for = main_window;
+        }
+
         default_height = 300;
         default_width = 500;
         add (overlay);
         show_all ();
         present ();
+
+        content_box.hide ();
 
         load_signatures.begin (() => {
             signature_list.select_row (signature_list.get_row_at_index (0));
@@ -152,7 +172,7 @@ public class SignatureDialog : Hdy.Window {
 
         add_button.clicked.connect (() => create_new_signature.begin ());
 
-        delete_button.clicked.connect (() => delete_selected_signature.begin ());
+        delete_button.clicked.connect (delete_selected_signature);
 
         toast.default_action.connect (() => last_deleted_signature.undo_delete ());
 
@@ -170,12 +190,23 @@ public class SignatureDialog : Hdy.Window {
         });
 
         delete_event.connect (() => {
-            /* Save the signature */
-            set_selected_signature.begin (null, () => {
+            finish.begin (() => {
                 destroy ();
             });
             return Gdk.EVENT_STOP;
         });
+    }
+
+    private async void finish () {
+        /* Save the current open signature */
+        yield set_selected_signature (null);
+
+        foreach (var child in signature_list.get_children ()) {
+            var signature = (Signature) child;
+            if (!signature.is_visible ()) {
+                yield signature.finish_delete_signature ();
+            }
+        }
     }
 
     private async void set_selected_signature (Signature? signature) {
@@ -219,7 +250,7 @@ public class SignatureDialog : Hdy.Window {
         signature_list.select_row (new_signature);
     }
 
-    private async void delete_selected_signature () {
+    private void delete_selected_signature () {
         var signature = (Signature)signature_list.get_selected_row ();
         var index = signature.get_index ();
         last_deleted_signature = signature;

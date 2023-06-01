@@ -30,6 +30,7 @@ public class Mail.Backend.Session : Camel.Session {
 
     public signal void account_added (Mail.Backend.Account account);
     public signal void account_removed (Mail.Backend.Account account);
+    public signal void signature_changed ();
 
     private bool started = false;
     private E.SourceRegistry registry;
@@ -68,7 +69,11 @@ public class Mail.Backend.Session : Camel.Session {
             if (source_item.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
                 add_source (source_item);
             }
+
+            check_for_signature_change (source_item);
         });
+        registry.source_removed.connect (check_for_signature_change);
+        registry.source_changed.connect (check_for_signature_change);
     }
 
     public override bool authenticate_sync (Camel.Service service, string? mechanism, GLib.Cancellable? cancellable = null) throws GLib.Error {
@@ -546,6 +551,12 @@ public class Mail.Backend.Session : Camel.Session {
         if (ancestor_message_info != null && Camel.MessageFlags.DRAFT in (int) ancestor_message_info.flags) {
             ancestor_message_info.set_flags (Camel.MessageFlags.DELETED, ~0);
             yield drafts_folder.expunge (GLib.Priority.DEFAULT, null);
+        }
+    }
+
+    public void check_for_signature_change (E.Source source) {
+        if (source.has_extension (E.SOURCE_EXTENSION_MAIL_SIGNATURE)) {
+            signature_changed ();
         }
     }
 

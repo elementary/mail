@@ -18,6 +18,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     private const string ACTION_STRIKETHROUGH = "strikethrough";
     private const string ACTION_INSERT_LINK = "insert_link";
     private const string ACTION_REMOVE_FORMAT = "remove_formatting";
+    private const string ACTION_INSERT_SIGNATURE= "insert-signature";
     private const string ACTION_DISCARD = "discard";
     private const string ACTION_SEND = "send";
 
@@ -38,7 +39,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     private Gtk.ToggleButton cc_button;
     private Granite.Widgets.OverlayBar message_url_overlay;
     private Gtk.ComboBoxText from_combo;
-    private Gtk.ComboBoxText signature_combo;
     private Gtk.Entry subject_val;
 
     public enum Type {
@@ -56,6 +56,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         {ACTION_STRIKETHROUGH, on_edit_action, "s", "''" },
         {ACTION_INSERT_LINK, on_insert_link_clicked, },
         {ACTION_REMOVE_FORMAT, on_remove_format },
+        {ACTION_INSERT_SIGNATURE, on_insert_signature, "s" },
         {ACTION_DISCARD, on_discard },
         {ACTION_SEND, on_send }
     };
@@ -106,22 +107,11 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             hexpand = true
         };
 
-        var signature_label = new Gtk.Label (_("Signature:")) {
-            xalign = 1
-        };
-        signature_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-
-        signature_combo = new Gtk.ComboBoxText () {
-            hexpand = true
-        };
-
         var from_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
             margin_bottom = 6
         };
         from_box.add (from_label);
         from_box.add (from_combo);
-        from_box.add (signature_label);
-        from_box.add (signature_combo);
 
         var from_revealer = new Gtk.Revealer () {
             child = from_box
@@ -316,6 +306,15 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             )
         };
 
+        var signature_menu = new Menu ();
+
+        var signature = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("document-edit", Gtk.IconSize.MENU),
+            menu_model = signature_menu,
+            use_popover = false,
+            direction = UP
+        };
+
         var send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU) {
             action_name = ACTION_PREFIX + ACTION_SEND,
             always_show_image = true,
@@ -338,6 +337,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         action_bar.pack_start (discard);
         action_bar.pack_start (attach);
+        action_bar.pack_start (signature);
         action_bar.pack_end (send);
 
         var view_overlay = new Gtk.Overlay ();
@@ -378,12 +378,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         from_combo.changed.connect (() => {
             set_default_signature_for_sender ();
         });
-
-        signature_combo.changed.connect (() => {
-            set_signature.begin ();
-        });
-
-        load_signature_combobox ();
 
         load_from_combobox ();
         from_revealer.reveal_child = from_combo.model.iter_n_children (null) > 1;
@@ -441,6 +435,10 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         if (to != null) {
             to_val.text = to;
         }
+
+        unowned var session = Mail.Backend.Session.get_default ();
+        session.signature_changed.connect (() => populate_signature_menu (signature_menu));
+        populate_signature_menu (signature_menu);
 
         if (mailto_query != null) {
             var result = new Gee.HashMultiMap<string, string> ();
@@ -918,35 +916,47 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         from_combo.active = 0;
     }
 
-    private void load_signature_combobox () {
-        signature_combo.append ("none", _("None"));
+    private void populate_signature_menu (Menu menu) {
+        var manage_section = new Menu ();
+        var manage_item = new MenuItem (_("Manage…"), Application.ACTION_PREFIX + Application.ACTION_MANAGE_SIGNATURES);
+        manage_section.append_item (manage_item);
+
+        var selection_section = new Menu ();
+        selection_section.append (_("None"), Action.print_detailed_name (ACTION_PREFIX + ACTION_INSERT_SIGNATURE, "none"));
+
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
         foreach (var signature_source in session.get_all_signature_sources ()) {
-            signature_combo.append (signature_source.uid, signature_source.display_name);
+            selection_section.append (
+                signature_source.display_name,
+                Action.print_detailed_name (ACTION_PREFIX + ACTION_INSERT_SIGNATURE, signature_source.uid)
+            );
         }
 
-        signature_combo.active = 0;
+        menu.remove_all ();
+        menu.append_section (null, manage_section);
+        menu.append_section (null, selection_section);
     }
 
-    private async void set_signature () {
-        var signature_uid = signature_combo.active_id;
+    private void on_insert_signature (Action action, Variant? parameter) {
+        unowned var signature_uid = parameter.get_string ();
+
         if (signature_uid == "none") {
             web_view.set_signature_content ("");
             return;
         }
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
-        var signature = yield session.get_signature_for_uid (signature_uid);
-
-        web_view.set_signature_content (signature);
+        session.get_signature_for_uid.begin (signature_uid, (obj,res) => {
+            var signature = session.get_signature_for_uid.end (res);
+            web_view.set_signature_content (signature);
+        });
     }
 
     private void set_default_signature_for_sender () {
         var sender = from_combo.get_active_text ();
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
         var active_id = session.get_signature_uid_for_sender (sender);
-        signature_combo.active_id = active_id;
-        print (active_id);
+        activate_action (ACTION_INSERT_SIGNATURE, active_id);
     }
 
     private class Attachment : Gtk.FlowBoxChild {

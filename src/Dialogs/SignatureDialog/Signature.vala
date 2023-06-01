@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>
 */
 
-public class Signature : Gtk.ListBoxRow {
+public class Mail.Signature : Gtk.ListBoxRow {
     public string title { get; set; }
     public string content { get; set; }
 
@@ -59,6 +59,7 @@ public class Signature : Gtk.ListBoxRow {
         if (timeout_id != 0) {
             Source.remove (timeout_id);
             show ();
+            timeout_id = 0;
         }
     }
 
@@ -70,7 +71,12 @@ public class Signature : Gtk.ListBoxRow {
         });
     }
 
-    private async void finish_delete_signature () {
+    public async void finish_delete_signature () {
+        if (timeout_id != 0) {
+            Source.remove (timeout_id);
+            timeout_id = 0;
+        }
+
         foreach (var identity_source in Mail.Backend.Session.get_default ().get_all_identity_sources ()) {
             unowned var identity_extension = (E.SourceMailIdentity)identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
             if (identity_extension.signature_uid == signature_source.uid) {
@@ -93,6 +99,7 @@ public class Signature : Gtk.ListBoxRow {
             destroy ();
         } catch (Error e) {
             warning ("Failed to delete signature '%s': %s", title, e.message);
+            show ();
         }
     }
 }
