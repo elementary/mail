@@ -91,7 +91,6 @@ public class Mail.SignatureDialog : Hdy.Window {
         };
 
         web_view = new Mail.WebView () {
-            is_composer = true,
             editable = true
         };
 
@@ -238,7 +237,7 @@ public class Mail.SignatureDialog : Hdy.Window {
 
     private async void set_selected_signature (Signature? signature) {
         if (current_signature != null) {
-            current_signature.content = yield web_view.get_message_html ();
+            current_signature.content = yield web_view.get_body_html ();
             yield current_signature.save ();
         }
 
