@@ -271,9 +271,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         button_row.add (clear_format );
         button_row.add (link);
 
-        web_view = new WebView () {
-            is_composer = true
-        };
+        web_view = new WebView ();
         try {
             var template = resources_lookup_data ("/io/elementary/mail/blank-message-template.html", ResourceLookupFlags.NONE);
             web_view.load_html ((string)template.get_data ());
@@ -630,7 +628,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         if (content_to_quote != null) {
             if (type == Type.DRAFT) {
                 ancestor_message_info = info;
-                web_view.set_message_html (content_to_quote);
+                web_view.load_html_message (content_to_quote);
 
                 unowned var to = message.get_recipients (Camel.RECIPIENT_TYPE_TO);
                 if (to != null) {
@@ -797,7 +795,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         }
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
-        var message_html = yield web_view.get_message_html (true);
+        var message_html = yield web_view.get_body_html (true);
         var message = build_message (message_html);
         var sender = build_sender (message, from_combo.get_active_text ());
         var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
@@ -1073,7 +1071,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             return false;
         }
 
-        var message_html = yield web_view.get_message_html ();
+        var message_html = yield web_view.get_body_html ();
 
         if (message_html != null) {
             unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
