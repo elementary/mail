@@ -56,11 +56,46 @@ public class Mail.FoldersListView : Gtk.Grid {
         var scrolled_window = new Gtk.ScrolledWindow (null, null);
         scrolled_window.add (source_list);
 
+        var load_images_menuitem = new Granite.SwitchModelButton (_("Always Show Remote Images"));
+
+        var account_settings_menuitem = new Gtk.ModelButton () {
+            text = _("Account Settings…")
+        };
+
+        var app_menu_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+            margin_bottom = 3,
+            margin_top = 3
+        };
+
+        var app_menu_box = new Gtk.Box (VERTICAL, 0) {
+            margin_bottom = 3,
+            margin_top = 3
+        };
+        app_menu_box.add (load_images_menuitem);
+        app_menu_box.add (app_menu_separator);
+        app_menu_box.add (account_settings_menuitem);
+        app_menu_box.show_all ();
+
+        var app_menu_popover = new Gtk.Popover (null) {
+            child = app_menu_box
+        };
+
+        var app_menu = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            popover = app_menu_popover,
+            tooltip_text = _("Menu")
+        };
+
+        var action_bar = new Gtk.ActionBar ();
+        action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        action_bar.pack_end (app_menu);
+
         orientation = Gtk.Orientation.VERTICAL;
         width_request = 100;
         get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
         add (header_bar);
         add (scrolled_window);
+        add (action_bar);
 
         var session = Mail.Backend.Session.get_default ();
 
@@ -91,6 +126,27 @@ public class Mail.FoldersListView : Gtk.Grid {
                 folder_selected (grouped_folder_item.get_folder_full_name_per_account ());
 
                 settings.set ("selected-folder", "(ss)", "GROUPED", grouped_folder_item.name);
+            }
+        });
+
+        var settings = new GLib.Settings ("io.elementary.mail");
+        settings.bind ("always-load-remote-images", load_images_menuitem, "active", SettingsBindFlags.DEFAULT);
+
+        account_settings_menuitem.clicked.connect (() => {
+            try {
+                Gtk.show_uri_on_window ((Gtk.Window) get_toplevel (), "settings://accounts/online", Gtk.get_current_event_time ());
+            } catch (Error e) {
+                var dialog = new Granite.MessageDialog (
+                    _("Unable to open System Settings"),
+                    _("Open System Settings manually or install Evolution to set up online accounts."),
+                    new ThemedIcon ("preferences-system")
+                ) {
+                    badge_icon = new ThemedIcon ("dialog-warning"),
+                    modal = true,
+                    transient_for = (Gtk.Window) get_toplevel ()
+                };
+                dialog.response.connect (dialog.destroy);
+                dialog.present ();
             }
         });
     }
