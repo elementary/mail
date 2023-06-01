@@ -23,7 +23,7 @@ public class Mail.MessageList : Gtk.Box {
         var load_images_menuitem = new Granite.SwitchModelButton (_("Always Show Remote Images"));
 
         var manage_signatures_menuitem = new Gtk.ModelButton () {
-            text = _("Manage Signatures"),
+            text = _("Edit Signatures…"),
             action_name = Application.ACTION_PREFIX + Application.ACTION_MANAGE_SIGNATURES,
         };
 

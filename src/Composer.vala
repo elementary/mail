@@ -916,7 +916,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
     private void populate_signature_menu (Menu menu) {
         var manage_section = new Menu ();
-        var manage_item = new MenuItem (_("Manage…"), Application.ACTION_PREFIX + Application.ACTION_MANAGE_SIGNATURES);
+        var manage_item = new MenuItem (_("Edit Signatures…"), Application.ACTION_PREFIX + Application.ACTION_MANAGE_SIGNATURES);
         manage_section.append_item (manage_item);
 
         var selection_section = new Menu ();
