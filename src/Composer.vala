@@ -946,7 +946,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         }
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
-        session.get_signature_for_uid.begin (signature_uid, (obj,res) => {
+        session.get_signature_for_uid.begin (signature_uid, (obj, res) => {
             var signature = session.get_signature_for_uid.end (res);
             web_view.set_signature_content (signature);
         });
