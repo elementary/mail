@@ -285,14 +285,13 @@ public class Mail.SignatureDialog : Hdy.Window {
     }
 
     private void update_default_signature (string account_uid, Variant? set_default) {
-        if (selection_change_ongoing) {
+        if (selection_change_ongoing || current_signature == null) {
             return;
         }
 
         unowned var session = Backend.Session.get_default ();
         if (set_default.get_boolean ()) {
-            var signature = current_signature;
-            session.set_signature_uid_for_account_uid.begin (account_uid, signature.uid);
+            session.set_signature_uid_for_account_uid.begin (account_uid, current_signature.uid);
         } else {
             session.set_signature_uid_for_account_uid.begin (account_uid, "none");
         }
