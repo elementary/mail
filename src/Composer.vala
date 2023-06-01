@@ -310,7 +310,8 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             image = new Gtk.Image.from_icon_name ("document-edit", Gtk.IconSize.MENU),
             menu_model = signature_menu,
             use_popover = false,
-            direction = UP
+            direction = UP,
+            tooltip_text = _("Insert Signature…")
         };
 
         var send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU) {
