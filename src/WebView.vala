@@ -39,7 +39,7 @@ public class Mail.WebView : WebKit.WebView {
     private string? queued_body_content = null;
     private string? queued_signature_content = null;
     private string? queued_quote_content = null;
-    public bool is_composer { get; set; default = false; }
+    public bool bind_height_to_page_height { get; set; default = false; }
     private GLib.Cancellable cancellable;
 
     static construct {
@@ -123,7 +123,7 @@ public class Mail.WebView : WebKit.WebView {
     }
 
     private void update_height () {
-        if (is_composer) {
+        if (!bind_height_to_page_height) {
             return;
         }
 

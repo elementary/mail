@@ -269,9 +269,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         button_row.add (clear_format );
         button_row.add (link);
 
-        web_view = new WebView () {
-            is_composer = true
-        };
+        web_view = new WebView ();
         try {
             var template = resources_lookup_data ("/io/elementary/mail/blank-message-template.html", ResourceLookupFlags.NONE);
             web_view.load_html ((string)template.get_data ());
