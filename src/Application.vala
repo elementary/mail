@@ -12,6 +12,7 @@ public class Mail.Application : Gtk.Application {
     public static GLib.Settings settings;
     public static bool run_in_background;
     private Gtk.Settings gtk_settings;
+    private bool first_activation = true;
 
     public Application () {
         Object (
@@ -144,7 +145,10 @@ public class Mail.Application : Gtk.Application {
     }
 
     public override void activate () {
-        hold ();
+        if (first_activation) {
+            first_activation = false;
+            hold ();
+        }
 
         if (run_in_background) {
             request_background.begin ();
