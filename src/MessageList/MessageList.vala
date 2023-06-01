@@ -1,0 +1,365 @@
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2017-2023 elementary, Inc. (https://elementary.io)
+ *
+ * Authored by: Corentin Noël <corentin@elementary.io>
+ */
+
+public class Mail.MessageList : Gtk.Box {
+    public signal void hovering_over_link (string? label, string? uri);
+    public Hdy.HeaderBar headerbar { get; private set; }
+
+    private Menu move_menu;
+    private Gtk.MenuButton move_button;
+    private Gtk.ListBox list_box;
+    private Gtk.ScrolledWindow scrolled_window;
+    private Gee.HashMap<string, MessageListItem> messages;
+
+    construct {
+        get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
+
+        var application_instance = (Gtk.Application) GLib.Application.get_default ();
+
+        var load_images_menuitem = new Granite.SwitchModelButton (_("Always Show Remote Images"));
+
+        var account_settings_menuitem = new Gtk.ModelButton () {
+            text = _("Account Settings…")
+        };
+
+        var app_menu_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+            margin_bottom = 3,
+            margin_top = 3
+        };
+
+        var app_menu_box = new Gtk.Box (VERTICAL, 0) {
+            margin_bottom = 3,
+            margin_top = 3
+        };
+        app_menu_box.add (load_images_menuitem);
+        app_menu_box.add (app_menu_separator);
+        app_menu_box.add (account_settings_menuitem);
+        app_menu_box.show_all ();
+
+        var app_menu_popover = new Gtk.Popover (null);
+        app_menu_popover.add (app_menu_box);
+
+        var app_menu = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR),
+            popover = app_menu_popover,
+            tooltip_text = _("Menu")
+        };
+
+        var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY,
+            action_target = ""
+        };
+        reply_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (reply_button.action_name + "::"),
+            _("Reply")
+        );
+
+        var reply_all_button = new Gtk.Button.from_icon_name ("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL,
+            action_target = ""
+        };
+        reply_all_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (reply_all_button.action_name + "::"),
+            _("Reply All")
+        );
+
+        var forward_button = new Gtk.Button.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD,
+            action_target = ""
+        };
+        forward_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (forward_button.action_name + "::"),
+            _("Forward")
+        );
+
+        var mark_unread_item = new Gtk.MenuItem () {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD
+        };
+        mark_unread_item.bind_property ("sensitive", mark_unread_item, "visible");
+        mark_unread_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Unread"), mark_unread_item.action_name));
+
+        var mark_read_item = new Gtk.MenuItem () {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ
+        };
+        mark_read_item.bind_property ("sensitive", mark_read_item, "visible");
+        mark_read_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Read"), mark_read_item.action_name));
+
+        var mark_star_item = new Gtk.MenuItem () {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR
+        };
+        mark_star_item.bind_property ("sensitive", mark_star_item, "visible");
+        mark_star_item.add (new Granite.AccelLabel.from_action_name (_("Star"), mark_star_item.action_name));
+
+        var mark_unstar_item = new Gtk.MenuItem () {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR
+        };
+        mark_unstar_item.bind_property ("sensitive", mark_unstar_item, "visible");
+        mark_unstar_item.add (new Granite.AccelLabel.from_action_name (_("Unstar"), mark_unstar_item.action_name));
+
+        var mark_menu = new Gtk.Menu ();
+        mark_menu.add (mark_unread_item);
+        mark_menu.add (mark_read_item);
+        mark_menu.add (mark_star_item);
+        mark_menu.add (mark_unstar_item);
+        mark_menu.show_all ();
+
+        var mark_button = new Gtk.MenuButton () {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MODIFY,
+            image = new Gtk.Image.from_icon_name ("edit-mark", Gtk.IconSize.LARGE_TOOLBAR),
+            popup = mark_menu,
+            tooltip_text = _("Mark Conversation")
+        };
+
+        move_menu = new Menu ();
+
+        move_button = new Gtk.MenuButton () {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MODIFY,
+            image = new Gtk.Image.from_icon_name ("folder", Gtk.IconSize.LARGE_TOOLBAR),
+            tooltip_text = _("Move Conversation to…"),
+            menu_model = move_menu,
+            use_popover = false
+        };
+
+        var archive_button = new Gtk.Button.from_icon_name ("mail-archive", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_ARCHIVE
+        };
+        archive_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (archive_button.action_name),
+            _("Move conversations to archive")
+        );
+
+        var trash_button = new Gtk.Button.from_icon_name ("edit-delete", Gtk.IconSize.LARGE_TOOLBAR) {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH
+        };
+        trash_button.tooltip_markup = Granite.markup_accel_tooltip (
+            application_instance.get_accels_for_action (trash_button.action_name),
+            _("Move conversations to Trash")
+        );
+
+        headerbar = new Hdy.HeaderBar () {
+            show_close_button = true
+        };
+        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        headerbar.pack_start (reply_button);
+        headerbar.pack_start (reply_all_button);
+        headerbar.pack_start (forward_button);
+        headerbar.pack_start (new Gtk.Separator (Gtk.Orientation.VERTICAL));
+        headerbar.pack_start (mark_button);
+        headerbar.pack_start (move_button);
+        headerbar.pack_start (archive_button);
+        headerbar.pack_start (trash_button);
+        headerbar.pack_end (app_menu);
+
+        var settings = new GLib.Settings ("io.elementary.mail");
+        settings.bind ("always-load-remote-images", load_images_menuitem, "active", SettingsBindFlags.DEFAULT);
+
+        account_settings_menuitem.clicked.connect (() => {
+            try {
+                AppInfo.launch_default_for_uri ("settings://accounts/online", null);
+            } catch (Error e) {
+                warning ("Failed to open account settings: %s", e.message);
+            }
+        });
+
+        var placeholder = new Gtk.Label (_("No Message Selected")) {
+            visible = true
+        };
+
+        var placeholder_style_context = placeholder.get_style_context ();
+        placeholder_style_context.add_class (Granite.STYLE_CLASS_H2_LABEL);
+        placeholder_style_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        list_box = new Gtk.ListBox () {
+            hexpand = true,
+            vexpand = true,
+            selection_mode = NONE
+        };
+
+        list_box.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
+        list_box.set_placeholder (placeholder);
+        list_box.set_sort_func (message_sort_function);
+
+        scrolled_window = new Gtk.ScrolledWindow (null, null) {
+            hscrollbar_policy = NEVER
+        };
+        scrolled_window.add (list_box);
+
+        // Prevent the focus of the webview causing the ScrolledWindow to scroll
+        var scrolled_child = scrolled_window.get_child ();
+        if (scrolled_child is Gtk.Container) {
+            ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
+        }
+
+        orientation = VERTICAL;
+        add (headerbar);
+        add (scrolled_window);
+    }
+
+    public void update_move_menu (Camel.FolderInfo top, int depth) {
+        /* Hackish way of indenting subfolders */
+        var builder = new StringBuilder ();
+        for (int i = 0; i < depth; i++) {
+            builder.append ("     ");
+        }
+
+        var folder_info = top;
+        while (folder_info != null) {
+            move_menu.append (
+                builder.str + folder_info.display_name,
+                Action.print_detailed_name (MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE, folder_info.full_name)
+            );
+
+            if (folder_info.child != null) {
+                update_move_menu (folder_info.child, depth + 1);
+            }
+            folder_info = folder_info.next;
+        }
+    }
+
+    public void set_conversation (Camel.FolderThreadNode? node) {
+        /*
+         * Prevent the user from interacting with the message thread while it
+         * is being reloaded. can_reply will be set to true after loading the
+         * thread.
+         */
+        can_reply (false);
+        can_move_thread (false);
+
+        list_box.get_children ().foreach ((child) => {
+            child.destroy ();
+        });
+        messages = new Gee.HashMap<string, MessageListItem> (null, null);
+
+        if (node == null) {
+            return;
+        }
+
+        /*
+         * If there is a node, we can move the thread even without loading all
+         * individual messages.
+         */
+        can_move_thread (true);
+
+        var store = node.message.summary.folder.parent_store;
+        store.get_folder_info.begin (null, Camel.StoreGetFolderInfoFlags.RECURSIVE, GLib.Priority.DEFAULT, null, (obj, res) => {
+            try {
+                var folder_info = store.get_folder_info.end (res);
+                move_menu.remove_all ();
+                update_move_menu (folder_info, 0);
+            } catch (Error e) {
+                critical (e.message);
+            }
+        });
+
+        var item = new MessageListItem (node.message);
+        list_box.add (item);
+        messages.set (node.message.uid, item);
+        if (node.child != null) {
+            go_down ((Camel.FolderThreadNode?) node.child);
+        }
+
+        var children = list_box.get_children ();
+        var num_children = children.length ();
+        if (num_children > 0) {
+            var child = list_box.get_row_at_index ((int) num_children - 1);
+            if (child != null && child is MessageListItem) {
+                var list_item = (MessageListItem) child;
+                list_item.expanded = true;
+                can_reply (list_item.loaded);
+                list_item.notify["loaded"].connect (() => {
+                    can_reply (list_item.loaded);
+                });
+            }
+        }
+
+        if (node.message != null && Camel.MessageFlags.DRAFT in (int) node.message.flags) {
+            compose.begin (Composer.Type.DRAFT, "");
+        }
+    }
+
+    private void go_down (Camel.FolderThreadNode node) {
+        unowned Camel.FolderThreadNode? current_node = node;
+        while (current_node != null) {
+            var item = new MessageListItem (current_node.message);
+            list_box.add (item);
+            messages.set (current_node.message.uid, item);
+            if (current_node.next != null) {
+                go_down ((Camel.FolderThreadNode?) current_node.next);
+            }
+
+            current_node = (Camel.FolderThreadNode?) current_node.child;
+        }
+    }
+
+    public async void compose (Composer.Type type, Variant uid) {
+        /* Can't open a new composer if thread is empty*/
+        var last_child = list_box.get_row_at_index ((int) list_box.get_children ().length () - 1);
+        if (last_child == null) {
+            return;
+        }
+
+        MessageListItem message_item = null;
+
+        if (uid.get_string () == "") {
+            message_item = (MessageListItem) last_child;
+        } else {
+            message_item = messages.get (uid.get_string ());
+        }
+
+        string content_to_quote = "";
+        Camel.MimeMessage? mime_message = null;
+        Camel.MessageInfo? message_info = null;
+        content_to_quote = yield message_item.get_message_body_html ();
+        mime_message = message_item.mime_message;
+        message_info = message_item.message_info;
+
+        var composer = new Composer.with_quote (type, message_info, mime_message, content_to_quote);
+        composer.present ();
+        composer.finished.connect (() => {
+            can_reply (true);
+            can_move_thread (true);
+        });
+        can_reply (false);
+        can_move_thread (true);
+    }
+
+    public void print (Variant uid) {
+        messages.get (uid.get_string ()).print ();
+    }
+
+    private void can_reply (bool enabled) {
+        unowned var main_window = (Gtk.ApplicationWindow) get_toplevel ();
+        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_FORWARD)).set_enabled (enabled);
+        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_REPLY_ALL)).set_enabled (enabled);
+        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_REPLY)).set_enabled (enabled);
+    }
+
+    private void can_move_thread (bool enabled) {
+        unowned var main_window = (Gtk.ApplicationWindow) get_toplevel ();
+        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MODIFY)).set_enabled (enabled);
+        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_ARCHIVE)).set_enabled (enabled);
+        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE)).set_enabled (enabled);
+        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE_TO_TRASH)).set_enabled (enabled);
+    }
+
+    private static int message_sort_function (Gtk.ListBoxRow item1, Gtk.ListBoxRow item2) {
+        unowned MessageListItem message1 = (MessageListItem)item1;
+        unowned MessageListItem message2 = (MessageListItem)item2;
+
+        var timestamp1 = message1.message_info.date_received;
+        if (timestamp1 == 0) {
+            timestamp1 = message1.message_info.date_sent;
+        }
+
+        var timestamp2 = message2.message_info.date_received;
+        if (timestamp2 == 0) {
+            timestamp2 = message2.message_info.date_sent;
+        }
+
+        return (int)(timestamp1 - timestamp2);
+    }
+}

@@ -28,11 +28,12 @@ public class Mail.Backend.Session : Camel.Session {
         return _session;
     }
 
-    E.SourceRegistry registry;
-    Gee.LinkedList<Account> accounts;
-
     public signal void account_added (Mail.Backend.Account account);
     public signal void account_removed (Mail.Backend.Account account);
+
+    private bool started = false;
+    private E.SourceRegistry registry;
+    private Gee.LinkedList<Account> accounts;
 
     public Session () {
         Object (user_data_dir: Path.build_filename (E.get_user_data_dir (), "mail"), user_cache_dir: Path.build_filename (E.get_user_cache_dir (), "mail"));
@@ -41,16 +42,22 @@ public class Mail.Backend.Session : Camel.Session {
     construct {
         Camel.init (E.get_user_data_dir (), false);
         accounts = new Gee.LinkedList<Account> ();
-        set_network_monitor (E.NetworkMonitor.get_default ());
-        set_online (true);
         user_alert.connect ((service, type, message) => { warning (message); });
+
+        unowned var network_monitor = E.NetworkMonitor.get_default ();
+
+        set_network_monitor (network_monitor);
+
+        network_monitor.network_changed.connect (set_online);
+        set_online (true);
     }
 
     public async void start () {
-        if (registry != null) {
+        if (started) {
             debug ("Camel.Session is already started.");
             return;
         }
+        started = true;
 
         try {
             registry = yield new E.SourceRegistry (null);
@@ -60,17 +67,11 @@ public class Mail.Backend.Session : Camel.Session {
         }
 
         var sources = registry.list_sources (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
-        sources.foreach ((source_item) => {
-            unowned string uid = source_item.get_uid ();
-            if (uid == "vfolder") {
-                return;
-            }
+        sources.foreach (add_source);
 
-            unowned var extension = (E.SourceMailAccount) source_item.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
-            try {
-                add_service (uid, extension.backend_name, Camel.ProviderType.STORE);
-            } catch (Error e) {
-                critical (e.message);
+        registry.source_added.connect ((source_item) => {
+            if (source_item.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
+                add_source (source_item);
             }
         });
     }
@@ -255,6 +256,20 @@ public class Mail.Backend.Session : Camel.Session {
         }
 
         return null;
+    }
+
+    private void add_source (E.Source source) {
+        unowned string uid = source.get_uid ();
+        if (uid == "vfolder") {
+            return;
+        }
+
+        unowned var extension = (E.SourceMailAccount) source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
+        try {
+            add_service (uid, extension.backend_name, Camel.ProviderType.STORE);
+        } catch (Error e) {
+            critical (e.message);
+        }
     }
 
     public override Camel.Service add_service (string uid, string protocol, Camel.ProviderType type) throws GLib.Error {

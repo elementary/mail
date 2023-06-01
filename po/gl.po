@@ -6,12 +6,12 @@
 # mbouzada <mbouzada@gmail.com>, 2013
 # mbouzada <mbouzada@gmail.com>, 2012-2013
 # Fran Dieguez <frandieguez@gnome.org>, 2014.
-#: src/MessageList/MessageListItem.vala:390
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-28 07:45+0000\n"
+"POT-Creation-Date: 2023-05-30 17:11+0000\n"
 "PO-Revision-Date: 2019-09-14 09:23+0000\n"
 "Last-Translator: Daniel <riesp@protonmail.com>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/mail/mail/gl/>\n"
@@ -23,59 +23,200 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:31
-msgid "Always Show Remote Images"
-msgstr "Amosar sempre imaxes remotas"
+#: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
+msgid "From:"
+msgstr "De:"
 
-#: src/HeaderBar.vala:34
-msgid "Account Settings…"
-msgstr "Configuración da conta…"
+#: src/Composer.vala:118 src/MessageList/MessageListItem.vala:106
+msgid "To:"
+msgstr "Para:"
 
-#: src/HeaderBar.vala:57
-msgid "Menu"
-msgstr "Menú"
+#: src/Composer.vala:123 src/MessageList/MessageListItem.vala:112
+msgid "Subject:"
+msgstr "Asunto:"
 
-#: src/HeaderBar.vala:64 src/MessageList/MessageListItem.vala:191
-msgid "Reply"
-msgstr "Responder"
+#: src/Composer.vala:132
+msgid "Cc"
+msgstr "Cc"
 
-#: src/HeaderBar.vala:71
-msgid "Reply All"
-msgstr "Responder a todos"
+#: src/Composer.vala:134
+msgid "Bcc"
+msgstr "Cco"
 
-#: src/HeaderBar.vala:78 src/MessageList/MessageListItem.vala:197
-msgid "Forward"
-msgstr "Reenviar"
+#: src/Composer.vala:141 src/MessageList/MessageListItem.vala:146
+msgid "Cc:"
+msgstr "CC:"
 
-#: src/HeaderBar.vala:84
-msgid "Mark as Unread"
-msgstr "Marcar como sen ler"
+#: src/Composer.vala:159
+msgid "Bcc:"
+msgstr "CCO:"
 
-#: src/HeaderBar.vala:89 src/ConversationList/ConversationListBox.vala:490
-msgid "Mark as Read"
-msgstr "Marcar como lido"
+#: src/Composer.vala:211
+msgid "Bold"
+msgstr "Grosa"
 
-#: src/HeaderBar.vala:94 src/ConversationList/ConversationListBox.vala:500
-msgid "Star"
-msgstr "Destacar"
+#: src/Composer.vala:218
+msgid "Italic"
+msgstr "Itálica"
 
-#: src/HeaderBar.vala:99 src/ConversationList/ConversationListBox.vala:508
-msgid "Unstar"
-msgstr "Non destacar"
+#: src/Composer.vala:227
+msgid "Underline"
+msgstr "Subliñado"
 
-#: src/HeaderBar.vala:111
-msgid "Mark Conversation"
-msgstr "Marcar conversa"
+#: src/Composer.vala:237
+msgid "Strikethrough"
+msgstr "Riscado"
 
-#: src/HeaderBar.vala:118
+#: src/Composer.vala:245
+msgid "Remove formatting"
+msgstr "Quitar formato"
+
+#: src/Composer.vala:260 src/Dialogs/InsertLinkDialog.vala:68
+msgid "Insert Link"
+msgstr "Inserir ligazón"
+
+#: src/Composer.vala:293
+msgid "Delete draft"
+msgstr "Eliminar borrador"
+
+#: src/Composer.vala:301
+msgid "Attach file"
+msgstr "Adxuntar arquivo"
+
+#: src/Composer.vala:308
+msgid "Send"
+msgstr "Enviar"
+
+#: src/Composer.vala:345
+msgid "New Message"
+msgstr "Mensaxe nova"
+
+#: src/Composer.vala:492
+msgid "Choose a file"
+msgstr "Escolla un ficheiro"
+
+#: src/Composer.vala:495
 #, fuzzy
-#| msgid "Move conversations to Trash"
-msgid "Move conversations to archive"
-msgstr "Mover as conversas ao lixo"
+#| msgid "_Attach"
+msgid "Attach"
+msgstr "_Anexar"
 
-#: src/HeaderBar.vala:125
-msgid "Move conversations to Trash"
-msgstr "Mover as conversas ao lixo"
+#: src/Composer.vala:496 src/Composer.vala:729
+#: src/Dialogs/InsertLinkDialog.vala:66
+#: src/MessageList/AttachmentButton.vala:139
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: src/Composer.vala:639
+msgid "%a, %b %-e, %Y at %-l:%M %p"
+msgstr "%a, %-e de %b do %Y ás %-l:%M %p"
+
+#: src/Composer.vala:669
+#, c-format
+msgid "On %1$s, %2$s wrote:"
+msgstr "O %1$s, %2$s escribiu:"
+
+#: src/Composer.vala:673
+msgid "---------- Forwarded message ----------"
+msgstr "---------- Mensaxe reenviada ----------"
+
+#: src/Composer.vala:675
+#, c-format
+msgid "From: %s<br/>"
+msgstr "De: %s<br/>"
+
+#: src/Composer.vala:676
+#, c-format
+msgid "Subject: %s<br/>"
+msgstr "Asunto: %s<br/>"
+
+#: src/Composer.vala:677
+#, c-format
+msgid "Date: %s<br/>"
+msgstr "Data: %s<br/>"
+
+#: src/Composer.vala:678
+#, c-format
+msgid "To: %s<br/>"
+msgstr "Para: %s<br/>"
+
+#: src/Composer.vala:680
+#, c-format
+msgid "Cc: %s<br/>"
+msgstr "Cc: %s<br/>"
+
+#: src/Composer.vala:720
+msgid "Permanently delete this draft?"
+msgstr ""
+
+#: src/Composer.vala:721
+msgid ""
+"You cannot undo this action, nor recover your draft once it has been deleted."
+msgstr ""
+
+#: src/Composer.vala:731
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete Draft"
+msgstr "Eliminar borrador"
+
+#: src/Composer.vala:755
+#, fuzzy
+#| msgid "Send Message With an Empty Subject?"
+msgid "Send without subject?"
+msgstr "Enviar a mensaxe sen asunto?"
+
+#: src/Composer.vala:756
+#, fuzzy
+#| msgid ""
+#| "This message has an empty subject field. The recipient may not be able to "
+#| "infer the scope or importance of the message."
+msgid ""
+"This message has an empty subject field. The recipient may be unable to "
+"infer its scope or importance."
+msgstr ""
+"O campo de asunto da mensaxe está baleiro. O destinatario podería non "
+"inferir o ámbito ou a importancia da mensaxe."
+
+#: src/Composer.vala:763
+msgid "Don't Send"
+msgstr "Non enviar"
+
+#: src/Composer.vala:765
+msgid "Send Anyway"
+msgstr "Enviar de todos os xeitos"
+
+#: src/Composer.vala:790
+#, fuzzy
+#| msgid "Send message with an empty body?"
+msgid "Sent message was not saved"
+msgstr "Enviar a mensaxe sen contido?"
+
+#: src/Composer.vala:791
+msgid ""
+"The message was sent, however a copy was not saved to the Sent message "
+"folder."
+msgstr ""
+
+#: src/Composer.vala:806
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to send message"
+msgstr "Eliminar borrador"
+
+#: src/Composer.vala:807
+msgid "There was an unexpected error while sending your message."
+msgstr ""
+
+#: src/Composer.vala:1027
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to save draft"
+msgstr "Eliminar borrador"
+
+#: src/Composer.vala:1028
+msgid "There was an unexpected error while saving your draft."
+msgstr ""
 
 #: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
@@ -102,290 +243,157 @@ msgid_plural "%s from %u senders"
 msgstr[0] "Amosar sempre o remitente"
 msgstr[1] "Amosar sempre o remitente"
 
-#: src/MainWindow.vala:83
+#: src/MainWindow.vala:80
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Todo o correo"
 
-#: src/MainWindow.vala:148
+#: src/MainWindow.vala:123
+msgid "Undo"
+msgstr "Desfacer"
+
+#: src/MainWindow.vala:271
+#, fuzzy
+#| msgid "Message Deleted"
+#| msgid_plural "Messages Deleted"
+msgid "Message Archived"
+msgid_plural "Messages Archived"
+msgstr[0] "Mensaxe eliminada"
+msgstr[1] "Mensaxes eliminadas"
+
+#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#, fuzzy, c-format
+#| msgid "Delete draft"
+msgid "Failed to move messages: %s"
+msgstr "Eliminar borrador"
+
+#: src/MainWindow.vala:285
+#, fuzzy
+#| msgid "Message Deleted"
+#| msgid_plural "Messages Deleted"
+msgid "Message Moved"
+msgid_plural "Messages Moved"
+msgstr[0] "Mensaxe eliminada"
+msgstr[1] "Mensaxes eliminadas"
+
+#: src/MainWindow.vala:299
+msgid "Message Deleted"
+msgid_plural "Messages Deleted"
+msgstr[0] "Mensaxe eliminada"
+msgstr[1] "Mensaxes eliminadas"
+
+#: src/WelcomeView.vala:45
+msgid "Connect an Account"
+msgstr "Conectar unha conta"
+
+#: src/WelcomeView.vala:52
+msgid "Mail uses email accounts configured in System Settings."
+msgstr "Correo emprega as contas definidas en Axustes do Sistema."
+
+#: src/WelcomeView.vala:59
+msgid "Online Accounts…"
+msgstr "Contas en liña…"
+
+#: src/Backend/Account.vala:48
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to connect"
+msgstr "Eliminar borrador"
+
+#: src/Backend/Account.vala:49
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:65
+#, c-format
+msgid "Moving messages… (%u remaining)"
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:98
+msgid "No Archive folder is configured."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:126
+msgid "The destination folder was not found."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:130
+msgid "The source folder is the destination folder."
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
 msgstr "Buscar correo"
 
-#: src/MainWindow.vala:170
+#: src/ConversationList/ConversationList.vala:84
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide read conversations"
+msgstr "Engadir etiqueta ás conversas"
+
+#: src/ConversationList/ConversationList.vala:86
+#, fuzzy
+#| msgid "Add label to conversations"
+msgid "Hide unstarred conversations"
+msgstr "Engadir etiqueta ás conversas"
+
+#: src/ConversationList/ConversationList.vala:103
+#, fuzzy
+#| msgid "Mark Conversation"
+msgid "Filter Conversations"
+msgstr "Marcar conversa"
+
+#: src/ConversationList/ConversationList.vala:126
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d mensaxe nova"
 
-#: src/MainWindow.vala:177
+#: src/ConversationList/ConversationList.vala:133
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages…"
 msgstr "%d mensaxe nova"
 
-#: src/MainWindow.vala:187
-#, fuzzy
-#| msgid "Add label to conversations"
-msgid "Hide read conversations"
-msgstr "Engadir etiqueta ás conversas"
-
-#: src/MainWindow.vala:189
-#, fuzzy
-#| msgid "Add label to conversations"
-msgid "Hide unstarred conversations"
-msgstr "Engadir etiqueta ás conversas"
-
-#: src/MainWindow.vala:206
-#, fuzzy
-#| msgid "Mark Conversation"
-msgid "Filter Conversations"
-msgstr "Marcar conversa"
-
-#: src/MainWindow.vala:428
-msgid "Message Deleted"
-msgid_plural "Messages Deleted"
-msgstr[0] "Mensaxe eliminada"
-msgstr[1] "Mensaxes eliminadas"
-
-#: src/MainWindow.vala:440
-msgid "Undo"
-msgstr "Desfacer"
-
-#: src/WelcomeView.vala:42
-msgid "Connect an Account"
-msgstr "Conectar unha conta"
-
-#: src/WelcomeView.vala:49
-msgid "Mail uses email accounts configured in System Settings."
-msgstr "Correo emprega as contas definidas en Axustes do Sistema."
-
-#: src/WelcomeView.vala:56
-msgid "Online Accounts…"
-msgstr "Contas en liña…"
-
-#: src/Composer/ComposerWidget.vala:102 src/MessageList/MessageListItem.vala:97
-msgid "From:"
-msgstr "De:"
-
-#: src/Composer/ComposerWidget.vala:120
-#: src/MessageList/MessageListItem.vala:102
-msgid "To:"
-msgstr "Para:"
-
-#: src/Composer/ComposerWidget.vala:125
-#: src/MessageList/MessageListItem.vala:107
-msgid "Subject:"
-msgstr "Asunto:"
-
-#: src/Composer/ComposerWidget.vala:134
-msgid "Cc"
-msgstr "Cc"
-
-#: src/Composer/ComposerWidget.vala:136
-msgid "Bcc"
-msgstr "Cco"
-
-#: src/Composer/ComposerWidget.vala:143
-#: src/MessageList/MessageListItem.vala:136
-msgid "Cc:"
-msgstr "CC:"
-
-#: src/Composer/ComposerWidget.vala:161
-msgid "Bcc:"
-msgstr "CCO:"
-
-#: src/Composer/ComposerWidget.vala:215
-msgid "Bold"
-msgstr "Grosa"
-
-#: src/Composer/ComposerWidget.vala:222
-msgid "Italic"
-msgstr "Itálica"
-
-#: src/Composer/ComposerWidget.vala:229
-msgid "Underline"
-msgstr "Subliñado"
-
-#: src/Composer/ComposerWidget.vala:236
-msgid "Strikethrough"
-msgstr "Riscado"
-
-#: src/Composer/ComposerWidget.vala:241
-msgid "Remove formatting"
-msgstr "Quitar formato"
-
-#: src/Composer/ComposerWidget.vala:253 src/Dialogs/InsertLinkDialog.vala:63
-msgid "Insert Link"
-msgstr "Inserir ligazón"
-
-#: src/Composer/ComposerWidget.vala:283
-msgid "Delete draft"
-msgstr "Eliminar borrador"
-
-#: src/Composer/ComposerWidget.vala:288
-msgid "Attach file"
-msgstr "Adxuntar arquivo"
-
-#: src/Composer/ComposerWidget.vala:294
-msgid "Send"
-msgstr "Enviar"
-
-#: src/Composer/ComposerWidget.vala:461
-msgid "Choose a file"
-msgstr "Escolla un ficheiro"
-
-#: src/Composer/ComposerWidget.vala:464
-#, fuzzy
-#| msgid "_Attach"
-msgid "Attach"
-msgstr "_Anexar"
-
-#: src/Composer/ComposerWidget.vala:465 src/Composer/ComposerWidget.vala:699
-#: src/Dialogs/InsertLinkDialog.vala:61
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: src/Composer/ComposerWidget.vala:609
-msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%a, %-e de %b do %Y ás %-l:%M %p"
-
-#: src/Composer/ComposerWidget.vala:639
-#, c-format
-msgid "On %1$s, %2$s wrote:"
-msgstr "O %1$s, %2$s escribiu:"
-
-#: src/Composer/ComposerWidget.vala:643
-msgid "---------- Forwarded message ----------"
-msgstr "---------- Mensaxe reenviada ----------"
-
-#: src/Composer/ComposerWidget.vala:645
-#, c-format
-msgid "From: %s<br/>"
-msgstr "De: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:646
-#, c-format
-msgid "Subject: %s<br/>"
-msgstr "Asunto: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:647
-#, c-format
-msgid "Date: %s<br/>"
-msgstr "Data: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:648
-#, c-format
-msgid "To: %s<br/>"
-msgstr "Para: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:650
-#, c-format
-msgid "Cc: %s<br/>"
-msgstr "Cc: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:690
-msgid "Permanently delete this draft?"
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:691
-msgid ""
-"You cannot undo this action, nor recover your draft once it has been deleted."
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:701
-#, fuzzy
-#| msgid "Delete draft"
-msgid "Delete Draft"
-msgstr "Eliminar borrador"
-
-#: src/Composer/ComposerWidget.vala:721
-#, fuzzy
-#| msgid "Send Message With an Empty Subject?"
-msgid "Send without subject?"
-msgstr "Enviar a mensaxe sen asunto?"
-
-#: src/Composer/ComposerWidget.vala:722
-#, fuzzy
-#| msgid ""
-#| "This message has an empty subject field. The recipient may not be able to "
-#| "infer the scope or importance of the message."
-msgid ""
-"This message has an empty subject field. The recipient may be unable to "
-"infer its scope or importance."
-msgstr ""
-"O campo de asunto da mensaxe está baleiro. O destinatario podería non "
-"inferir o ámbito ou a importancia da mensaxe."
-
-#: src/Composer/ComposerWidget.vala:728
-msgid "Don't Send"
-msgstr "Non enviar"
-
-#: src/Composer/ComposerWidget.vala:730
-msgid "Send Anyway"
-msgstr "Enviar de todos os xeitos"
-
-#: src/Composer/ComposerWidget.vala:753
-#, fuzzy
-#| msgid "Send message with an empty body?"
-msgid "Sent message was not saved"
-msgstr "Enviar a mensaxe sen contido?"
-
-#: src/Composer/ComposerWidget.vala:754
-msgid ""
-"The message was sent, however a copy was not saved to the Sent message "
-"folder."
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:768
-#, fuzzy
-#| msgid "Delete draft"
-msgid "Unable to send message"
-msgstr "Eliminar borrador"
-
-#: src/Composer/ComposerWidget.vala:769
-msgid "There was an unexpected error while sending your message."
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:1016
-#, fuzzy
-#| msgid "Delete draft"
-msgid "Unable to save draft"
-msgstr "Eliminar borrador"
-
-#: src/Composer/ComposerWidget.vala:1017
-msgid "There was an unexpected error while saving your draft."
-msgstr ""
-
-#: src/Composer/ComposerWindow.vala:43 src/Composer/ComposerWindow.vala:55
-#: src/Composer/ComposerWindow.vala:68
-msgid "New Message"
-msgstr "Mensaxe nova"
-
-#: src/ConversationList/ConversationListBox.vala:473
+#: src/ConversationList/ConversationList.vala:561
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "Mover as conversas ao lixo"
 
-#: src/ConversationList/ConversationListBox.vala:482
+#: src/ConversationList/ConversationList.vala:570
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Marcar como sen ler"
 
-#: src/ConversationList/ConversationListItem.vala:110
+#: src/ConversationList/ConversationList.vala:578
+#: src/MessageList/MessageList.vala:89
+msgid "Mark as Read"
+msgstr "Marcar como lido"
+
+#: src/ConversationList/ConversationList.vala:588
+#: src/MessageList/MessageList.vala:95
+msgid "Star"
+msgstr "Destacar"
+
+#: src/ConversationList/ConversationList.vala:596
+#: src/MessageList/MessageList.vala:101
+msgid "Unstar"
+msgstr "Non destacar"
+
+#: src/ConversationList/ConversationListItem.vala:114
 msgid "Unread"
 msgstr "Sen ler"
 
-#: src/ConversationList/ConversationListItem.vala:123
+#: src/ConversationList/ConversationListItem.vala:127
 msgid "Replied"
 msgstr "Respondido"
 
-#: src/ConversationList/ConversationListItem.vala:127
+#: src/ConversationList/ConversationListItem.vala:131
 msgid "Forwarded"
 msgstr "Reenviado"
 
@@ -393,15 +401,15 @@ msgstr "Reenviado"
 msgid "URL:"
 msgstr "URL:"
 
-#: src/Dialogs/InsertLinkDialog.vala:35
+#: src/Dialogs/InsertLinkDialog.vala:36
 msgid "https://example.com"
 msgstr "https://exemplo.com"
 
-#: src/Dialogs/InsertLinkDialog.vala:37
+#: src/Dialogs/InsertLinkDialog.vala:39
 msgid "Link Text:"
 msgstr "Texto da ligazón:"
 
-#: src/Dialogs/InsertLinkDialog.vala:42
+#: src/Dialogs/InsertLinkDialog.vala:45
 msgid "Example Website"
 msgstr "Sitio web de exemplo"
 
@@ -431,75 +439,117 @@ msgstr "Correo enviado"
 msgid "All Mailboxes"
 msgstr ""
 
-#: src/MessageList/MessageListBox.vala:32
+#: src/MessageList/MessageList.vala:23
+msgid "Always Show Remote Images"
+msgstr "Amosar sempre imaxes remotas"
+
+#: src/MessageList/MessageList.vala:26
+msgid "Account Settings…"
+msgstr "Configuración da conta…"
+
+#: src/MessageList/MessageList.vala:49
+msgid "Menu"
+msgstr "Menú"
+
+#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
+msgid "Reply"
+msgstr "Responder"
+
+#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
+msgid "Reply All"
+msgstr "Responder a todos"
+
+#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
+msgid "Forward"
+msgstr "Reenviar"
+
+#: src/MessageList/MessageList.vala:83
+msgid "Mark as Unread"
+msgstr "Marcar como sen ler"
+
+#: src/MessageList/MessageList.vala:114
+msgid "Mark Conversation"
+msgstr "Marcar conversa"
+
+#: src/MessageList/MessageList.vala:122
+#, fuzzy
+#| msgid "Move conversations to Trash"
+msgid "Move Conversation to…"
+msgstr "Mover as conversas ao lixo"
+
+#: src/MessageList/MessageList.vala:132
+#, fuzzy
+#| msgid "Move conversations to Trash"
+msgid "Move conversations to archive"
+msgstr "Mover as conversas ao lixo"
+
+#: src/MessageList/MessageList.vala:140
+msgid "Move conversations to Trash"
+msgstr "Mover as conversas ao lixo"
+
+#: src/MessageList/MessageList.vala:168
 msgid "No Message Selected"
 msgstr "Non se seleccionou ningunha mensaxe"
 
 #. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
-#: src/MessageList/MessageListItem.vala:173
+#: src/MessageList/MessageListItem.vala:187
 #, c-format
 msgid "%s at %s"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:181
-#: src/MessageList/MessageListItem.vala:340
+#: src/MessageList/MessageListItem.vala:195
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "Desmarcar mensaxe como importante"
 
-#: src/MessageList/MessageListItem.vala:184
-#: src/MessageList/MessageListItem.vala:336
+#: src/MessageList/MessageListItem.vala:198
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "Marcar mensaxe como importante"
 
-#: src/MessageList/MessageListItem.vala:194
-#, fuzzy
-#| msgid "Reply to _All"
-msgid "Reply to All"
-msgstr "Responder a _todos"
-
-#: src/MessageList/MessageListItem.vala:200
+#: src/MessageList/MessageListItem.vala:218
 msgid "Print…"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:214
+#: src/MessageList/MessageListItem.vala:228
 msgid "More"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:250
+#: src/MessageList/MessageListItem.vala:277
 msgid "Show Images"
 msgstr "Amosar as imaxes"
 
-#: src/MessageList/MessageListItem.vala:251
+#: src/MessageList/MessageListItem.vala:278
 msgid "Always Show from Sender"
 msgstr "Amosar sempre o remitente"
 
-#: src/MessageList/MessageListItem.vala:256
+#: src/MessageList/MessageListItem.vala:283
 msgid "This message contains remote images."
 msgstr "Esta mensaxe contén imaxes remotas."
 
-#: src/MessageList/MessageListItem.vala:288
+#: src/MessageList/MessageListItem.vala:320
 msgid "This message contains one or more attachments"
 msgstr "Esta mensaxe contén un ou máis adxuntos"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:367
+#: src/MessageList/MessageListItem.vala:404
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Mensaxe nova"
 
-#: src/MessageList/MessageListItem.vala:389
+#: src/MessageList/MessageListItem.vala:426
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
 msgstr "Non foi posíbel confirmar:\n"
 
-#: src/MessageList/AttachmentBar.vala:43
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/AttachmentBar.vala:44
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -507,25 +557,30 @@ msgstr ""
 "Os ficheiros adxuntos poden causar erros no seu equipo ao ser abertos. Abra "
 "soamente arquivos de fontes fiábeis."
 
-#: src/MessageList/AttachmentBar.vala:51
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "Abrir de todos os xeitos"
 
-#: src/MessageList/AttachmentButton.vala:41
+#: src/MessageList/AttachmentButton.vala:57
 msgid "Open"
 msgstr "Aberto"
 
-#: src/MessageList/AttachmentButton.vala:43
+#: src/MessageList/AttachmentButton.vala:58
 msgid "Save As…"
 msgstr "Gardar como…"
 
-#: src/MessageList/AttachmentButton.vala:89
+#: src/MessageList/AttachmentButton.vala:114
 msgid "Unknown"
 msgstr "Descoñecido"
 
-#: src/MessageList/AttachmentButton.vala:113
+#: src/MessageList/AttachmentButton.vala:138
 msgid "Save"
 msgstr "Gardar"
+
+#, fuzzy
+#~| msgid "Reply to _All"
+#~ msgid "Reply to All"
+#~ msgstr "Responder a _todos"
 
 #, c-format
 #~ msgid "Are you sure you want to open %s?"

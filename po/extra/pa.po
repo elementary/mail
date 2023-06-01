@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-28 07:45+0000\n"
+"POT-Creation-Date: 2023-05-30 17:11+0000\n"
 "PO-Revision-Date: 2021-07-27 15:38+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/mail/extra/pa/>\n"
@@ -55,111 +55,107 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr ""
 
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:91
-#: data/mail.metainfo.xml.in:113 data/mail.metainfo.xml.in:127
-#: data/mail.metainfo.xml.in:148
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:85
+#: data/mail.metainfo.xml.in:106 data/mail.metainfo.xml.in:125
+#: data/mail.metainfo.xml.in:147 data/mail.metainfo.xml.in:161
 msgid "Improvements:"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:95
-#: data/mail.metainfo.xml.in:116 data/mail.metainfo.xml.in:129
-#: data/mail.metainfo.xml.in:153
+#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:108 data/mail.metainfo.xml.in:129
+#: data/mail.metainfo.xml.in:150 data/mail.metainfo.xml.in:163
 msgid "Updated translations"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:85 data/mail.metainfo.xml.in:107
-#: data/mail.metainfo.xml.in:123 data/mail.metainfo.xml.in:140
-msgid "Fixes:"
-msgstr ""
-
 #: data/mail.metainfo.xml.in:87
-msgid "Fixed an error which caused mail accounts to be loaded multiple times"
+msgid ""
+"The welcome view is removed when an account is added in Online Accounts "
+"without having to restart Mail"
 msgstr ""
 
 #: data/mail.metainfo.xml.in:88
-msgid "Fixed a bug which caused Mail to crash occasionally"
+msgid ""
+"The composer is always presented as a new window and includes more keyboard "
+"shortcuts"
 msgstr ""
 
 #: data/mail.metainfo.xml.in:89
-msgid "Display recipient in Sent folder instead of sender"
+msgid "The search filter menu now appears next to the search bar"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:90
+msgid "HeaderBars appear to float above content when scrolled"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:91
+msgid "Fix a potential crash with empty messages"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:92
+msgid "Stop resizing from cutting off the message list"
 msgstr ""
 
 #: data/mail.metainfo.xml.in:93
+msgid "Performance improvements"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:119 data/mail.metainfo.xml.in:141
+#: data/mail.metainfo.xml.in:157
+msgid "Fixes:"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:121
+msgid "Fixed an error which caused mail accounts to be loaded multiple times"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:122
+msgid "Fixed a bug which caused Mail to crash occasionally"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:123
+msgid "Display recipient in Sent folder instead of sender"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:127
 msgid "Updated app icon"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:128
 msgid "New design"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:102 data/mail.metainfo.xml.in:136
+#: data/mail.metainfo.xml.in:136
 msgid "New features:"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:104
+#: data/mail.metainfo.xml.in:138
 msgid "Use message subject for composer window title"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:105
+#: data/mail.metainfo.xml.in:139
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:109
+#: data/mail.metainfo.xml.in:143
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:110
+#: data/mail.metainfo.xml.in:144
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:111
+#: data/mail.metainfo.xml.in:145
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:115
+#: data/mail.metainfo.xml.in:149
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:125
+#: data/mail.metainfo.xml.in:159
 msgid "Fix a potential crash while loading messages"
-msgstr ""
-
-#: data/mail.metainfo.xml.in:138
-msgid "Secondary-click menu on the conversations list"
-msgstr ""
-
-#: data/mail.metainfo.xml.in:142
-msgid "Ensure conversations are re-sorted by date when new messages appear"
-msgstr ""
-
-#: data/mail.metainfo.xml.in:143
-msgid "Fixed sender combobox after opening a mailto link"
-msgstr ""
-
-#: data/mail.metainfo.xml.in:144
-msgid "Mark sent messages as read"
-msgstr ""
-
-#: data/mail.metainfo.xml.in:145
-msgid "Fix a hang when deleting the last message in a mailbox"
-msgstr ""
-
-#: data/mail.metainfo.xml.in:146
-msgid "Fix an issue where some mail fails to be deleted"
-msgstr ""
-
-#: data/mail.metainfo.xml.in:150
-msgid "Use accent color for unread message titles"
-msgstr ""
-
-#: data/mail.metainfo.xml.in:151
-msgid "Autoselect the next message after archiving"
-msgstr ""
-
-#: data/mail.metainfo.xml.in:152
-msgid "Use local time in message headers"
 msgstr ""
 
 #: data/io.elementary.mail.desktop.in:7

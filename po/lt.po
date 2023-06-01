@@ -8,12 +8,12 @@
 # Jonas Skarulskis <jonas.ska@gmail.com>, 2015.
 # Aurimas Černius <aurisc4@gmail.com>, 2015.
 #
-#: src/MessageList/MessageListItem.vala:390
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-28 07:45+0000\n"
+"POT-Creation-Date: 2023-05-30 17:11+0000\n"
 "PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/mail/mail/lt/"
@@ -28,59 +28,203 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/HeaderBar.vala:31
-msgid "Always Show Remote Images"
-msgstr "Visada rodyti nuotolinius paveikslus"
+#: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
+msgid "From:"
+msgstr "Nuo:"
 
-#: src/HeaderBar.vala:34
-msgid "Account Settings…"
-msgstr "Paskyros nustatymai…"
+#: src/Composer.vala:118 src/MessageList/MessageListItem.vala:106
+msgid "To:"
+msgstr "Kam:"
 
-#: src/HeaderBar.vala:57
-msgid "Menu"
-msgstr "Meniu"
+#: src/Composer.vala:123 src/MessageList/MessageListItem.vala:112
+msgid "Subject:"
+msgstr "Tema:"
 
-#: src/HeaderBar.vala:64 src/MessageList/MessageListItem.vala:191
-msgid "Reply"
-msgstr "Atsakyti"
+#: src/Composer.vala:132
+msgid "Cc"
+msgstr "Kopija"
 
-#: src/HeaderBar.vala:71
-msgid "Reply All"
-msgstr "Atsakyti visiems"
+#: src/Composer.vala:134
+msgid "Bcc"
+msgstr "Nematoma kopija"
 
-#: src/HeaderBar.vala:78 src/MessageList/MessageListItem.vala:197
-msgid "Forward"
-msgstr "Persiųsti"
+#: src/Composer.vala:141 src/MessageList/MessageListItem.vala:146
+msgid "Cc:"
+msgstr "Kopija:"
 
-#: src/HeaderBar.vala:84
-msgid "Mark as Unread"
-msgstr "Žymėti neskaitytu"
+#: src/Composer.vala:159
+msgid "Bcc:"
+msgstr "Nematoma kopija:"
 
-#: src/HeaderBar.vala:89 src/ConversationList/ConversationListBox.vala:490
-msgid "Mark as Read"
-msgstr "Žymėti skaitytu"
+#: src/Composer.vala:211
+msgid "Bold"
+msgstr "Pusjuodis"
 
-#: src/HeaderBar.vala:94 src/ConversationList/ConversationListBox.vala:500
-msgid "Star"
-msgstr "Žymėti žvaigždute"
+#: src/Composer.vala:218
+msgid "Italic"
+msgstr "Kursyvas"
 
-#: src/HeaderBar.vala:99 src/ConversationList/ConversationListBox.vala:508
-msgid "Unstar"
-msgstr "Nežymėti žvaigždute"
+#: src/Composer.vala:227
+msgid "Underline"
+msgstr "Pabrauktas"
 
-#: src/HeaderBar.vala:111
-msgid "Mark Conversation"
-msgstr "Žymėti pokalbį"
+#: src/Composer.vala:237
+msgid "Strikethrough"
+msgstr "Perbrauktas"
 
-#: src/HeaderBar.vala:118
+#: src/Composer.vala:245
+msgid "Remove formatting"
+msgstr "Šalinti formatavimą"
+
+#: src/Composer.vala:260 src/Dialogs/InsertLinkDialog.vala:68
+msgid "Insert Link"
+msgstr "Įterpti nuorodą"
+
+#: src/Composer.vala:293
+msgid "Delete draft"
+msgstr "Ištrinti juodraštį"
+
+#: src/Composer.vala:301
+msgid "Attach file"
+msgstr "Pridėti failą"
+
+#: src/Composer.vala:308
+msgid "Send"
+msgstr "Siųsti"
+
+#: src/Composer.vala:345
+msgid "New Message"
+msgstr "Naujas laiškas"
+
+#: src/Composer.vala:492
+msgid "Choose a file"
+msgstr "Pasirinkite failą"
+
+#: src/Composer.vala:495
 #, fuzzy
-#| msgid "Move conversations to Trash"
-msgid "Move conversations to archive"
-msgstr "Perkelti pokalbius į šiukšlinę"
+#| msgid "_Attach"
+msgid "Attach"
+msgstr "_Pridėti"
 
-#: src/HeaderBar.vala:125
-msgid "Move conversations to Trash"
-msgstr "Perkelti pokalbius į šiukšlinę"
+#: src/Composer.vala:496 src/Composer.vala:729
+#: src/Dialogs/InsertLinkDialog.vala:66
+#: src/MessageList/AttachmentButton.vala:139
+msgid "Cancel"
+msgstr "Atsisakyti"
+
+#: src/Composer.vala:639
+msgid "%a, %b %-e, %Y at %-l:%M %p"
+msgstr "%Y %b %-e, %a, %-k:%M"
+
+#: src/Composer.vala:669
+#, c-format
+msgid "On %1$s, %2$s wrote:"
+msgstr "%1$s, %2$s rašė:"
+
+#: src/Composer.vala:673
+msgid "---------- Forwarded message ----------"
+msgstr "---------- Persiųstas laiškas ----------"
+
+#: src/Composer.vala:675
+#, c-format
+msgid "From: %s<br/>"
+msgstr "Nuo: %s<br/>"
+
+#: src/Composer.vala:676
+#, c-format
+msgid "Subject: %s<br/>"
+msgstr "Tema: %s<br/>"
+
+#: src/Composer.vala:677
+#, c-format
+msgid "Date: %s<br/>"
+msgstr "Data: %s<br/>"
+
+#: src/Composer.vala:678
+#, c-format
+msgid "To: %s<br/>"
+msgstr "Kam: %s<br/>"
+
+#: src/Composer.vala:680
+#, c-format
+msgid "Cc: %s<br/>"
+msgstr "Kopija: %s<br/>"
+
+#: src/Composer.vala:720
+#, fuzzy
+#| msgid "Do you want to permanently delete this message?"
+#| msgid_plural "Do you want to permanently delete these messages?"
+msgid "Permanently delete this draft?"
+msgstr "Ar norite visam laikui ištrinti šį laišką?"
+
+#: src/Composer.vala:721
+msgid ""
+"You cannot undo this action, nor recover your draft once it has been deleted."
+msgstr ""
+
+#: src/Composer.vala:731
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete Draft"
+msgstr "Ištrinti juodraštį"
+
+#: src/Composer.vala:755
+#, fuzzy
+#| msgid "Send Message With an Empty Subject?"
+msgid "Send without subject?"
+msgstr "Ar siųsti laišką be temos?"
+
+#: src/Composer.vala:756
+#, fuzzy
+#| msgid ""
+#| "This message has an empty subject field. The recipient may not be able to "
+#| "infer the scope or importance of the message."
+msgid ""
+"This message has an empty subject field. The recipient may be unable to "
+"infer its scope or importance."
+msgstr ""
+"Šiame laiške yra tuščias temos laukas. Gavėjas gali neįvertinti laiško "
+"svarbumo ar turinio."
+
+#: src/Composer.vala:763
+msgid "Don't Send"
+msgstr "Nesiųsti"
+
+#: src/Composer.vala:765
+msgid "Send Anyway"
+msgstr "Vis tiek siųsti"
+
+#: src/Composer.vala:790
+#, fuzzy
+#| msgid "Send message with an empty body?"
+msgid "Sent message was not saved"
+msgstr "Ar siųsti laišką be teksto?"
+
+#: src/Composer.vala:791
+msgid ""
+"The message was sent, however a copy was not saved to the Sent message "
+"folder."
+msgstr ""
+
+#: src/Composer.vala:806
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to send message"
+msgstr "Ištrinti juodraštį"
+
+#: src/Composer.vala:807
+msgid "There was an unexpected error while sending your message."
+msgstr ""
+
+#: src/Composer.vala:1027
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to save draft"
+msgstr "Ištrinti juodraštį"
+
+#: src/Composer.vala:1028
+msgid "There was an unexpected error while saving your draft."
+msgstr ""
 
 #: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
@@ -109,292 +253,158 @@ msgstr[0] "Visada rodyti nuo siuntėjo"
 msgstr[1] "Visada rodyti nuo siuntėjo"
 msgstr[2] "Visada rodyti nuo siuntėjo"
 
-#: src/MainWindow.vala:83
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "Paštas"
 
-#: src/MainWindow.vala:148
-msgid "Search Mail"
-msgstr "Ieškoti pašte"
+#: src/MainWindow.vala:123
+msgid "Undo"
+msgstr "Atšaukti"
 
-#: src/MainWindow.vala:170
+#: src/MainWindow.vala:271
 #, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
-msgid "Fetch new messages"
-msgstr "%d naujas laiškas"
+#| msgid "Message Deleted"
+#| msgid_plural "Messages Deleted"
+msgid "Message Archived"
+msgid_plural "Messages Archived"
+msgstr[0] "Laiškas ištrintas"
+msgstr[1] "Laiškai ištrinti"
+msgstr[2] "Laiškai ištrinti"
 
-#: src/MainWindow.vala:177
+#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#, fuzzy, c-format
+#| msgid "Delete draft"
+msgid "Failed to move messages: %s"
+msgstr "Ištrinti juodraštį"
+
+#: src/MainWindow.vala:285
 #, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
-msgid "Fetching new messages…"
-msgstr "%d naujas laiškas"
+#| msgid "Message Deleted"
+#| msgid_plural "Messages Deleted"
+msgid "Message Moved"
+msgid_plural "Messages Moved"
+msgstr[0] "Laiškas ištrintas"
+msgstr[1] "Laiškai ištrinti"
+msgstr[2] "Laiškai ištrinti"
 
-#: src/MainWindow.vala:187
-#, fuzzy
-#| msgid "Mark conversations"
-msgid "Hide read conversations"
-msgstr "Žymėti pokalbius"
-
-#: src/MainWindow.vala:189
-#, fuzzy
-#| msgid "Mark conversations"
-msgid "Hide unstarred conversations"
-msgstr "Žymėti pokalbius"
-
-#: src/MainWindow.vala:206
-#, fuzzy
-#| msgid "Delete Conversation"
-msgid "Filter Conversations"
-msgstr "Ištrinti pokalbį"
-
-#: src/MainWindow.vala:428
+#: src/MainWindow.vala:299
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Laiškas ištrintas"
 msgstr[1] "Laiškai ištrinti"
 msgstr[2] "Laiškai ištrinti"
 
-#: src/MainWindow.vala:440
-msgid "Undo"
-msgstr "Atšaukti"
-
-#: src/WelcomeView.vala:42
+#: src/WelcomeView.vala:45
 msgid "Connect an Account"
 msgstr "Prijungti paskyrą"
 
-#: src/WelcomeView.vala:49
+#: src/WelcomeView.vala:52
 msgid "Mail uses email accounts configured in System Settings."
 msgstr "Paštas naudoja sistemos nustatymuose sukonfigūruotas pašto paskyras."
 
-#: src/WelcomeView.vala:56
+#: src/WelcomeView.vala:59
 msgid "Online Accounts…"
 msgstr "Internetinės paskyros…"
 
-#: src/Composer/ComposerWidget.vala:102 src/MessageList/MessageListItem.vala:97
-msgid "From:"
-msgstr "Nuo:"
-
-#: src/Composer/ComposerWidget.vala:120
-#: src/MessageList/MessageListItem.vala:102
-msgid "To:"
-msgstr "Kam:"
-
-#: src/Composer/ComposerWidget.vala:125
-#: src/MessageList/MessageListItem.vala:107
-msgid "Subject:"
-msgstr "Tema:"
-
-#: src/Composer/ComposerWidget.vala:134
-msgid "Cc"
-msgstr "Kopija"
-
-#: src/Composer/ComposerWidget.vala:136
-msgid "Bcc"
-msgstr "Nematoma kopija"
-
-#: src/Composer/ComposerWidget.vala:143
-#: src/MessageList/MessageListItem.vala:136
-msgid "Cc:"
-msgstr "Kopija:"
-
-#: src/Composer/ComposerWidget.vala:161
-msgid "Bcc:"
-msgstr "Nematoma kopija:"
-
-#: src/Composer/ComposerWidget.vala:215
-msgid "Bold"
-msgstr "Pusjuodis"
-
-#: src/Composer/ComposerWidget.vala:222
-msgid "Italic"
-msgstr "Kursyvas"
-
-#: src/Composer/ComposerWidget.vala:229
-msgid "Underline"
-msgstr "Pabrauktas"
-
-#: src/Composer/ComposerWidget.vala:236
-msgid "Strikethrough"
-msgstr "Perbrauktas"
-
-#: src/Composer/ComposerWidget.vala:241
-msgid "Remove formatting"
-msgstr "Šalinti formatavimą"
-
-#: src/Composer/ComposerWidget.vala:253 src/Dialogs/InsertLinkDialog.vala:63
-msgid "Insert Link"
-msgstr "Įterpti nuorodą"
-
-#: src/Composer/ComposerWidget.vala:283
-msgid "Delete draft"
-msgstr "Ištrinti juodraštį"
-
-#: src/Composer/ComposerWidget.vala:288
-msgid "Attach file"
-msgstr "Pridėti failą"
-
-#: src/Composer/ComposerWidget.vala:294
-msgid "Send"
-msgstr "Siųsti"
-
-#: src/Composer/ComposerWidget.vala:461
-msgid "Choose a file"
-msgstr "Pasirinkite failą"
-
-#: src/Composer/ComposerWidget.vala:464
-#, fuzzy
-#| msgid "_Attach"
-msgid "Attach"
-msgstr "_Pridėti"
-
-#: src/Composer/ComposerWidget.vala:465 src/Composer/ComposerWidget.vala:699
-#: src/Dialogs/InsertLinkDialog.vala:61
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Cancel"
-msgstr "Atsisakyti"
-
-#: src/Composer/ComposerWidget.vala:609
-msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%Y %b %-e, %a, %-k:%M"
-
-#: src/Composer/ComposerWidget.vala:639
-#, c-format
-msgid "On %1$s, %2$s wrote:"
-msgstr "%1$s, %2$s rašė:"
-
-#: src/Composer/ComposerWidget.vala:643
-msgid "---------- Forwarded message ----------"
-msgstr "---------- Persiųstas laiškas ----------"
-
-#: src/Composer/ComposerWidget.vala:645
-#, c-format
-msgid "From: %s<br/>"
-msgstr "Nuo: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:646
-#, c-format
-msgid "Subject: %s<br/>"
-msgstr "Tema: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:647
-#, c-format
-msgid "Date: %s<br/>"
-msgstr "Data: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:648
-#, c-format
-msgid "To: %s<br/>"
-msgstr "Kam: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:650
-#, c-format
-msgid "Cc: %s<br/>"
-msgstr "Kopija: %s<br/>"
-
-#: src/Composer/ComposerWidget.vala:690
-#, fuzzy
-#| msgid "Do you want to permanently delete this message?"
-#| msgid_plural "Do you want to permanently delete these messages?"
-msgid "Permanently delete this draft?"
-msgstr "Ar norite visam laikui ištrinti šį laišką?"
-
-#: src/Composer/ComposerWidget.vala:691
-msgid ""
-"You cannot undo this action, nor recover your draft once it has been deleted."
-msgstr ""
-
-#: src/Composer/ComposerWidget.vala:701
+#: src/Backend/Account.vala:48
 #, fuzzy
 #| msgid "Delete draft"
-msgid "Delete Draft"
+msgid "Unable to connect"
 msgstr "Ištrinti juodraštį"
 
-#: src/Composer/ComposerWidget.vala:721
-#, fuzzy
-#| msgid "Send Message With an Empty Subject?"
-msgid "Send without subject?"
-msgstr "Ar siųsti laišką be temos?"
-
-#: src/Composer/ComposerWidget.vala:722
-#, fuzzy
-#| msgid ""
-#| "This message has an empty subject field. The recipient may not be able to "
-#| "infer the scope or importance of the message."
-msgid ""
-"This message has an empty subject field. The recipient may be unable to "
-"infer its scope or importance."
-msgstr ""
-"Šiame laiške yra tuščias temos laukas. Gavėjas gali neįvertinti laiško "
-"svarbumo ar turinio."
-
-#: src/Composer/ComposerWidget.vala:728
-msgid "Don't Send"
-msgstr "Nesiųsti"
-
-#: src/Composer/ComposerWidget.vala:730
-msgid "Send Anyway"
-msgstr "Vis tiek siųsti"
-
-#: src/Composer/ComposerWidget.vala:753
-#, fuzzy
-#| msgid "Send message with an empty body?"
-msgid "Sent message was not saved"
-msgstr "Ar siųsti laišką be teksto?"
-
-#: src/Composer/ComposerWidget.vala:754
-msgid ""
-"The message was sent, however a copy was not saved to the Sent message "
-"folder."
+#: src/Backend/Account.vala:49
+msgid "There was an unexpected error while trying to connect to the server."
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:768
-#, fuzzy
-#| msgid "Delete draft"
-msgid "Unable to send message"
-msgstr "Ištrinti juodraštį"
-
-#: src/Composer/ComposerWidget.vala:769
-msgid "There was an unexpected error while sending your message."
+#: src/Backend/MoveOperation.vala:65
+#, c-format
+msgid "Moving messages… (%u remaining)"
 msgstr ""
 
-#: src/Composer/ComposerWidget.vala:1016
-#, fuzzy
-#| msgid "Delete draft"
-msgid "Unable to save draft"
-msgstr "Ištrinti juodraštį"
-
-#: src/Composer/ComposerWidget.vala:1017
-msgid "There was an unexpected error while saving your draft."
+#: src/Backend/MoveOperation.vala:98
+msgid "No Archive folder is configured."
 msgstr ""
 
-#: src/Composer/ComposerWindow.vala:43 src/Composer/ComposerWindow.vala:55
-#: src/Composer/ComposerWindow.vala:68
-msgid "New Message"
-msgstr "Naujas laiškas"
+#: src/Backend/MoveOperation.vala:126
+msgid "The destination folder was not found."
+msgstr ""
 
-#: src/ConversationList/ConversationListBox.vala:473
+#: src/Backend/MoveOperation.vala:130
+msgid "The source folder is the destination folder."
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:80
+msgid "Search Mail"
+msgstr "Ieškoti pašte"
+
+#: src/ConversationList/ConversationList.vala:84
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide read conversations"
+msgstr "Žymėti pokalbius"
+
+#: src/ConversationList/ConversationList.vala:86
+#, fuzzy
+#| msgid "Mark conversations"
+msgid "Hide unstarred conversations"
+msgstr "Žymėti pokalbius"
+
+#: src/ConversationList/ConversationList.vala:103
+#, fuzzy
+#| msgid "Delete Conversation"
+msgid "Filter Conversations"
+msgstr "Ištrinti pokalbį"
+
+#: src/ConversationList/ConversationList.vala:126
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetch new messages"
+msgstr "%d naujas laiškas"
+
+#: src/ConversationList/ConversationList.vala:133
+#, fuzzy
+#| msgid "%d new message"
+#| msgid_plural "%d new messages"
+msgid "Fetching new messages…"
+msgstr "%d naujas laiškas"
+
+#: src/ConversationList/ConversationList.vala:561
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "Perkelti pokalbius į šiukšlinę"
 
-#: src/ConversationList/ConversationListBox.vala:482
+#: src/ConversationList/ConversationList.vala:570
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Žymėti neskaitytu"
 
-#: src/ConversationList/ConversationListItem.vala:110
+#: src/ConversationList/ConversationList.vala:578
+#: src/MessageList/MessageList.vala:89
+msgid "Mark as Read"
+msgstr "Žymėti skaitytu"
+
+#: src/ConversationList/ConversationList.vala:588
+#: src/MessageList/MessageList.vala:95
+msgid "Star"
+msgstr "Žymėti žvaigždute"
+
+#: src/ConversationList/ConversationList.vala:596
+#: src/MessageList/MessageList.vala:101
+msgid "Unstar"
+msgstr "Nežymėti žvaigždute"
+
+#: src/ConversationList/ConversationListItem.vala:114
 msgid "Unread"
 msgstr "Neskaitytas"
 
-#: src/ConversationList/ConversationListItem.vala:123
+#: src/ConversationList/ConversationListItem.vala:127
 msgid "Replied"
 msgstr "Atsakytas"
 
-#: src/ConversationList/ConversationListItem.vala:127
+#: src/ConversationList/ConversationListItem.vala:131
 msgid "Forwarded"
 msgstr "Persiųstas"
 
@@ -402,15 +412,15 @@ msgstr "Persiųstas"
 msgid "URL:"
 msgstr "URL:"
 
-#: src/Dialogs/InsertLinkDialog.vala:35
+#: src/Dialogs/InsertLinkDialog.vala:36
 msgid "https://example.com"
 msgstr "https://example.com"
 
-#: src/Dialogs/InsertLinkDialog.vala:37
+#: src/Dialogs/InsertLinkDialog.vala:39
 msgid "Link Text:"
 msgstr "Nuorodos tekstas:"
 
-#: src/Dialogs/InsertLinkDialog.vala:42
+#: src/Dialogs/InsertLinkDialog.vala:45
 msgid "Example Website"
 msgstr "Pavyzdinė svetainė"
 
@@ -442,73 +452,118 @@ msgstr "Išsiųstieji"
 msgid "All Mailboxes"
 msgstr "Visi laiškai"
 
-#: src/MessageList/MessageListBox.vala:32
+#: src/MessageList/MessageList.vala:23
+msgid "Always Show Remote Images"
+msgstr "Visada rodyti nuotolinius paveikslus"
+
+#: src/MessageList/MessageList.vala:26
+msgid "Account Settings…"
+msgstr "Paskyros nustatymai…"
+
+#: src/MessageList/MessageList.vala:49
+msgid "Menu"
+msgstr "Meniu"
+
+#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
+msgid "Reply"
+msgstr "Atsakyti"
+
+#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
+msgid "Reply All"
+msgstr "Atsakyti visiems"
+
+#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
+msgid "Forward"
+msgstr "Persiųsti"
+
+#: src/MessageList/MessageList.vala:83
+msgid "Mark as Unread"
+msgstr "Žymėti neskaitytu"
+
+#: src/MessageList/MessageList.vala:114
+msgid "Mark Conversation"
+msgstr "Žymėti pokalbį"
+
+#: src/MessageList/MessageList.vala:122
+#, fuzzy
+#| msgid "Move conversation"
+#| msgid_plural "Move conversations"
+msgid "Move Conversation to…"
+msgstr "Perkelti pokalbį"
+
+#: src/MessageList/MessageList.vala:132
+#, fuzzy
+#| msgid "Move conversations to Trash"
+msgid "Move conversations to archive"
+msgstr "Perkelti pokalbius į šiukšlinę"
+
+#: src/MessageList/MessageList.vala:140
+msgid "Move conversations to Trash"
+msgstr "Perkelti pokalbius į šiukšlinę"
+
+#: src/MessageList/MessageList.vala:168
 msgid "No Message Selected"
 msgstr "Nepasirinkta jokių laiškų"
 
 #. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
-#: src/MessageList/MessageListItem.vala:173
+#: src/MessageList/MessageListItem.vala:187
 #, c-format
 msgid "%s at %s"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:181
-#: src/MessageList/MessageListItem.vala:340
+#: src/MessageList/MessageListItem.vala:195
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "Nežymėti žvaigždute"
 
-#: src/MessageList/MessageListItem.vala:184
-#: src/MessageList/MessageListItem.vala:336
+#: src/MessageList/MessageListItem.vala:198
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "Žymėti žvaigždute"
 
-#: src/MessageList/MessageListItem.vala:194
-msgid "Reply to All"
-msgstr "Atsakyti visiems"
-
-#: src/MessageList/MessageListItem.vala:200
+#: src/MessageList/MessageListItem.vala:218
 msgid "Print…"
 msgstr "Spausdinti…"
 
-#: src/MessageList/MessageListItem.vala:214
+#: src/MessageList/MessageListItem.vala:228
 msgid "More"
 msgstr "Daugiau"
 
-#: src/MessageList/MessageListItem.vala:250
+#: src/MessageList/MessageListItem.vala:277
 msgid "Show Images"
 msgstr "Rodyti paveikslus"
 
-#: src/MessageList/MessageListItem.vala:251
+#: src/MessageList/MessageListItem.vala:278
 msgid "Always Show from Sender"
 msgstr "Visada rodyti nuo siuntėjo"
 
-#: src/MessageList/MessageListItem.vala:256
+#: src/MessageList/MessageListItem.vala:283
 msgid "This message contains remote images."
 msgstr "Šiame laiške yra nuotolinių paveikslų."
 
-#: src/MessageList/MessageListItem.vala:288
+#: src/MessageList/MessageListItem.vala:320
 msgid "This message contains one or more attachments"
 msgstr "Šiame laiške yra vienas ar daugiau priedų"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:367
+#: src/MessageList/MessageListItem.vala:404
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Naujas laiškas"
 
-#: src/MessageList/MessageListItem.vala:389
+#: src/MessageList/MessageListItem.vala:426
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
 msgstr "Negalima patvirtinti:\n"
 
-#: src/MessageList/AttachmentBar.vala:43
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/AttachmentBar.vala:44
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -516,25 +571,28 @@ msgstr ""
 "Atveriami priedai gali pakenkti jūsų sistemai. Atverkite failus tik nuo "
 "patikimų šaltinių."
 
-#: src/MessageList/AttachmentBar.vala:51
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "Vis tiek atverti"
 
-#: src/MessageList/AttachmentButton.vala:41
+#: src/MessageList/AttachmentButton.vala:57
 msgid "Open"
 msgstr "Atverti"
 
-#: src/MessageList/AttachmentButton.vala:43
+#: src/MessageList/AttachmentButton.vala:58
 msgid "Save As…"
 msgstr "Įrašyti kaip…"
 
-#: src/MessageList/AttachmentButton.vala:89
+#: src/MessageList/AttachmentButton.vala:114
 msgid "Unknown"
 msgstr "Nežinoma"
 
-#: src/MessageList/AttachmentButton.vala:113
+#: src/MessageList/AttachmentButton.vala:138
 msgid "Save"
 msgstr "Įrašyti"
+
+#~ msgid "Reply to All"
+#~ msgstr "Atsakyti visiems"
 
 #, c-format
 #~ msgid "Are you sure you want to open %s?"
@@ -702,12 +760,6 @@ msgstr "Įrašyti"
 
 #~ msgid "Add label to conversations"
 #~ msgstr "Pridėti pokalbiams etiketę"
-
-#~ msgid "Move conversation"
-#~ msgid_plural "Move conversations"
-#~ msgstr[0] "Perkelti pokalbį"
-#~ msgstr[1] "Perkelti pokalbius"
-#~ msgstr[2] "Perkelti pokalbius"
 
 #~ msgid "A_ccounts"
 #~ msgstr "Pa_skyros"
