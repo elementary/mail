@@ -25,6 +25,7 @@ public class Mail.Application : Gtk.Application {
     }
 
     construct {
+        // FIXME: Remove once ported to Gtk.FileDialog
         Environment.set_variable ("GTK_USE_PORTAL", "1", true);
 
         Intl.setlocale (LocaleCategory.ALL, "");
