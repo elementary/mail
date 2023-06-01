@@ -307,7 +307,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         var signature_menu = new Menu ();
 
         var signature_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("document-edit", Gtk.IconSize.MENU),
+            image = new Gtk.Image.from_icon_name ("document-edit-symbolic", Gtk.IconSize.MENU),
             menu_model = signature_menu,
             use_popover = false,
             direction = UP,
