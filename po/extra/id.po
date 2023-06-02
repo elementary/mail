@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-16 18:33+0000\n"
-"PO-Revision-Date: 2021-07-22 10:38+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"POT-Creation-Date: 2023-06-01 21:56+0000\n"
+"PO-Revision-Date: 2023-05-26 21:06+0000\n"
+"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
+"io>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/mail/extra/id/"
 ">\n"
 "Language: id\n"
@@ -17,16 +18,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
 msgid "Mail"
-msgstr "Mail"
+msgstr "Surat"
 
 #: data/mail.metainfo.xml.in:11 data/io.elementary.mail.desktop.in:4
 msgid "Send and receive mail"
-msgstr "Kirim dan terima surel"
+msgstr "Mengirim dan menerima surat"
 
 #: data/mail.metainfo.xml.in:13
 msgid ""
@@ -34,17 +35,17 @@ msgid ""
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
 msgstr ""
-"Mail dirancang memungkinkan Anda mengelola surel dengan cepat dan mudah. "
-"Antarmuka yang berdasarkan percakapan, agar Anda dapat membaca keseluruhan "
-"diskusi tanpa harus klik dari satu pesan ke pesan lainnya."
+"Surat dirancang untuk memungkinkan Anda mengelola surel dengan cepat dan "
+"mudah. Antarmuka yang berdasarkan percakapan, sehingga Anda dapat membaca "
+"keseluruhan diskusi tanpa harus klik dari satu pesan ke pesan lainnya."
 
 #: data/mail.metainfo.xml.in:15
 msgid "Lightweight mail client with full IMAP support"
-msgstr "Klien surel yang ringan dengan dukungan penuh pada IMAP"
+msgstr "Klien surat yang ringan dengan dukungan penuh IMAP"
 
 #: data/mail.metainfo.xml.in:16
 msgid "Mail grouped into conversations, not a tree of threads"
-msgstr "Mail dikelompokkan kedalam percakapan, bukan seperti pohon lembaran"
+msgstr "Surat dikelompokkan ke dalam percakapan, bukan seperti pohon lembaran"
 
 #: data/mail.metainfo.xml.in:17
 msgid "As-you-type searching"
@@ -56,132 +57,135 @@ msgstr "Dukungan banyak akun"
 
 #: data/mail.metainfo.xml.in:19
 msgid "Inline HTML composer that saves drafts to the server"
-msgstr "Penyusun HTML dalam baris yang menyimpan draft ke server"
+msgstr "Penyusun HTML dalam baris yang menyimpan konsep ke server"
 
 #: data/mail.metainfo.xml.in:20
-#, fuzzy
-#| msgid ""
-#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
-#| "popular IMAP servers"
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
-msgstr ""
-"Bekerja dengan Gmail, Yahoo! Mail, Outlook.com (eksperimental), dan server "
-"IMAP populer lainnya"
+msgstr "Bekerja dengan Gmail, Yahoo! Mail, dan server IMAP populer lainnya"
 
 #: data/mail.metainfo.xml.in:65
 msgid "elementary, Inc."
-msgstr "elementary, PT."
+msgstr "elementary, Inc."
 
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:84
-#: data/mail.metainfo.xml.in:105 data/mail.metainfo.xml.in:124
-#: data/mail.metainfo.xml.in:146 data/mail.metainfo.xml.in:160
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:85
+#: data/mail.metainfo.xml.in:106 data/mail.metainfo.xml.in:125
+#: data/mail.metainfo.xml.in:147 data/mail.metainfo.xml.in:161
 msgid "Improvements:"
-msgstr ""
+msgstr "Peningkatan:"
 
-#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:93
-#: data/mail.metainfo.xml.in:107 data/mail.metainfo.xml.in:128
-#: data/mail.metainfo.xml.in:149 data/mail.metainfo.xml.in:162
+#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:108 data/mail.metainfo.xml.in:129
+#: data/mail.metainfo.xml.in:150 data/mail.metainfo.xml.in:163
 msgid "Updated translations"
-msgstr ""
+msgstr "Pembaruan terjemahan"
 
-#: data/mail.metainfo.xml.in:86
+#: data/mail.metainfo.xml.in:87
 msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
 msgstr ""
+"Tampilan selamat datang dihapus saat akun ditambahkan di Akun Daring tanpa "
+"harus memulai ulang Surat"
 
-#: data/mail.metainfo.xml.in:87
+#: data/mail.metainfo.xml.in:88
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
 msgstr ""
-
-#: data/mail.metainfo.xml.in:88
-msgid "The search filter menu now appears next to the search bar"
-msgstr ""
+"Komposer selalu disajikan sebagai jendela baru dan menyertakan lebih banyak "
+"pintasan papan ketik"
 
 #: data/mail.metainfo.xml.in:89
-msgid "HeaderBars appear to float above content when scrolled"
-msgstr ""
+msgid "The search filter menu now appears next to the search bar"
+msgstr "Menu saring pencarian sekarang muncul di sebelah bilah pencarian"
 
 #: data/mail.metainfo.xml.in:90
-msgid "Fix a potential crash with empty messages"
-msgstr ""
+msgid "HeaderBars appear to float above content when scrolled"
+msgstr "Bilah Kepala tampak melayang di atas konten saat digulir"
 
 #: data/mail.metainfo.xml.in:91
-msgid "Stop resizing from cutting off the message list"
-msgstr ""
+msgid "Fix a potential crash with empty messages"
+msgstr "Memperbaiki potensi kesalahan dengan pesan kosong"
 
 #: data/mail.metainfo.xml.in:92
+msgid "Stop resizing from cutting off the message list"
+msgstr "Menghentikan pengubahan ukuran agar tidak memotong daftar pesan"
+
+#: data/mail.metainfo.xml.in:93
 msgid "Performance improvements"
-msgstr ""
+msgstr "Peningkatan kinerja"
 
-#: data/mail.metainfo.xml.in:118 data/mail.metainfo.xml.in:140
-#: data/mail.metainfo.xml.in:156
+#: data/mail.metainfo.xml.in:119 data/mail.metainfo.xml.in:141
+#: data/mail.metainfo.xml.in:157
 msgid "Fixes:"
-msgstr ""
-
-#: data/mail.metainfo.xml.in:120
-msgid "Fixed an error which caused mail accounts to be loaded multiple times"
-msgstr ""
+msgstr "Perbaikan:"
 
 #: data/mail.metainfo.xml.in:121
-msgid "Fixed a bug which caused Mail to crash occasionally"
-msgstr ""
+msgid "Fixed an error which caused mail accounts to be loaded multiple times"
+msgstr "Memperbaiki kesalahan yang menyebabkan akun surel dimuat beberapa kali"
 
 #: data/mail.metainfo.xml.in:122
-msgid "Display recipient in Sent folder instead of sender"
-msgstr ""
+msgid "Fixed a bug which caused Mail to crash occasionally"
+msgstr "Memperbaiki bug yang menyebabkan Surat terkadang mogok"
 
-#: data/mail.metainfo.xml.in:126
-msgid "Updated app icon"
-msgstr ""
+#: data/mail.metainfo.xml.in:123
+msgid "Display recipient in Sent folder instead of sender"
+msgstr "Menampilkan penerima di folder Terkirim, bukan pengirim"
 
 #: data/mail.metainfo.xml.in:127
+msgid "Updated app icon"
+msgstr "Pembaruan ikon aplikasi"
+
+#: data/mail.metainfo.xml.in:128
 msgid "New design"
-msgstr ""
+msgstr "Desain baru"
 
-#: data/mail.metainfo.xml.in:135
+#: data/mail.metainfo.xml.in:136
 msgid "New features:"
-msgstr ""
-
-#: data/mail.metainfo.xml.in:137
-msgid "Use message subject for composer window title"
-msgstr ""
+msgstr "Fitur baru:"
 
 #: data/mail.metainfo.xml.in:138
+msgid "Use message subject for composer window title"
+msgstr "Menggunakan subjek pesan untuk judul jendela komposer"
+
+#: data/mail.metainfo.xml.in:139
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
+"Menambahkan dukungan untuk Kotak Masuk Terpadu untuk akun Microsoft 365"
 
-#: data/mail.metainfo.xml.in:142
+#: data/mail.metainfo.xml.in:143
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
-
-#: data/mail.metainfo.xml.in:143
-msgid "Removed duplicate sender addresses when composing a message"
-msgstr ""
+"Memperbaiki kesalahan yang menyebabkan pemantauan kotak masuk di latar "
+"belakang mogok"
 
 #: data/mail.metainfo.xml.in:144
-msgid "Fix a freeze when archiving the last message in a folder"
-msgstr ""
+msgid "Removed duplicate sender addresses when composing a message"
+msgstr "Menghapus alamat pengirim duplikat saat menulis pesan"
 
-#: data/mail.metainfo.xml.in:148
+#: data/mail.metainfo.xml.in:145
+msgid "Fix a freeze when archiving the last message in a folder"
+msgstr "Memperbaiki pembekuan saat mengarsipkan pesan terakhir dalam folder"
+
+#: data/mail.metainfo.xml.in:149
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
+"Mengganti nama Office 365 menjadi Microsoft 365 untuk mengikuti rangkaian "
+"perubahan merek Microsoft"
 
-#: data/mail.metainfo.xml.in:158
+#: data/mail.metainfo.xml.in:159
 msgid "Fix a potential crash while loading messages"
-msgstr ""
+msgstr "Memperbaiki potensi kesalahan saat memuat pesan"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
-msgstr "Surel;Sur-el;Mail;"
+msgstr "Surel;Surat Elektronik;Surat;"
 
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
-msgstr "Buat Pesan"
+msgstr "Tulis Pesan"
 
 #~ msgid "io.elementary.mail"
 #~ msgstr "io.elementary.mail"

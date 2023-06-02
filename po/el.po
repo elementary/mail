@@ -7,12 +7,12 @@
 # ioza1964 <izamboukas@gmail.com>, 2012
 # Petros Dias <petrosdias@gmail.com>, 2012
 # Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2014.
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-16 18:33+0000\n"
+"POT-Creation-Date: 2023-06-01 21:56+0000\n"
 "PO-Revision-Date: 2017-01-27 17:54+0000\n"
 "Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: www.gnome.gr\n"
@@ -242,16 +242,36 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "Αλληλογραφία"
 
-#: src/MainWindow.vala:120
+#: src/MainWindow.vala:123
 #, fuzzy
 msgid "Undo"
 msgstr "_Αναίρεση"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:271
+#, fuzzy
+msgid "Message Archived"
+msgid_plural "Messages Archived"
+msgstr[0] "Δεν επιλέχθηκαν συνομιλίες."
+msgstr[1] "Δεν επιλέχθηκαν συνομιλίες."
+
+#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#, fuzzy, c-format
+#| msgid "Delete draft"
+msgid "Failed to move messages: %s"
+msgstr "Διαγραφή προχείρου"
+
+#: src/MainWindow.vala:285
+#, fuzzy
+msgid "Message Moved"
+msgid_plural "Messages Moved"
+msgstr[0] "Δεν επιλέχθηκαν συνομιλίες."
+msgstr[1] "Δεν επιλέχθηκαν συνομιλίες."
+
+#: src/MainWindow.vala:299
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -272,66 +292,93 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Λογαριασμοί"
 
-#: src/ConversationList/ConversationList.vala:83
+#: src/Backend/Account.vala:48
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Unable to connect"
+msgstr "Διαγραφή προχείρου"
+
+#: src/Backend/Account.vala:49
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:65
+#, c-format
+msgid "Moving messages… (%u remaining)"
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:98
+msgid "No Archive folder is configured."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:126
+msgid "The destination folder was not found."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:130
+msgid "The source folder is the destination folder."
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:87
+#: src/ConversationList/ConversationList.vala:84
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide read conversations"
 msgstr "Σήμανση συνομιλιών"
 
-#: src/ConversationList/ConversationList.vala:89
+#: src/ConversationList/ConversationList.vala:86
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
 msgstr "Σήμανση συνομιλιών"
 
-#: src/ConversationList/ConversationList.vala:106
+#: src/ConversationList/ConversationList.vala:103
 #, fuzzy
 #| msgid "Delete Conversation"
 msgid "Filter Conversations"
 msgstr "Διαγραφή συνομιλίας"
 
-#: src/ConversationList/ConversationList.vala:129
+#: src/ConversationList/ConversationList.vala:126
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d νέο μήνυμα"
 
-#: src/ConversationList/ConversationList.vala:136
+#: src/ConversationList/ConversationList.vala:133
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages…"
 msgstr "%d νέο μήνυμα"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationList.vala:561
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Μετακίνηση συνομιλιών"
 
-#: src/ConversationList/ConversationList.vala:587
+#: src/ConversationList/ConversationList.vala:570
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "_Σήμανση ως μη αναγνωσμένα"
 
-#: src/ConversationList/ConversationList.vala:595
-#: src/MessageList/MessageList.vala:87
+#: src/ConversationList/ConversationList.vala:578
+#: src/MessageList/MessageList.vala:60
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Σήμανση ως αναγνωσμένα"
 
-#: src/ConversationList/ConversationList.vala:605
-#: src/MessageList/MessageList.vala:93
+#: src/ConversationList/ConversationList.vala:588
+#: src/MessageList/MessageList.vala:66
 #, fuzzy
 msgid "Star"
 msgstr "_Αστέρι"
 
-#: src/ConversationList/ConversationList.vala:613
-#: src/MessageList/MessageList.vala:99
+#: src/ConversationList/ConversationList.vala:596
+#: src/MessageList/MessageList.vala:72
 #, fuzzy
 msgid "Unstar"
 msgstr "Κα_τάργηση αστεριού"
@@ -373,6 +420,30 @@ msgstr "Ιστοσελίδα"
 msgid "Compose new message"
 msgstr "Σύνταξη νέου μηνύματος"
 
+#: src/FoldersView/FoldersListView.vala:59
+#, fuzzy
+msgid "Always Show Remote Images"
+msgstr "Να εμφανίζεται πάντοτε ο αποστολέας"
+
+#: src/FoldersView/FoldersListView.vala:62
+msgid "Account Settings…"
+msgstr ""
+
+#: src/FoldersView/FoldersListView.vala:86
+msgid "Menu"
+msgstr "Μενού"
+
+#: src/FoldersView/FoldersListView.vala:140
+#, fuzzy
+#| msgid "Unable to validate:\n"
+msgid "Unable to open System Settings"
+msgstr "Δεν ήταν δυνατή η επικύρωση:\n"
+
+#: src/FoldersView/FoldersListView.vala:141
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr ""
@@ -397,53 +468,47 @@ msgstr "Απεσταλμένα"
 msgid "All Mailboxes"
 msgstr "Όλο το ταχυδρομείο"
 
-#: src/MessageList/MessageList.vala:21
-#, fuzzy
-msgid "Always Show Remote Images"
-msgstr "Να εμφανίζεται πάντοτε ο αποστολέας"
-
-#: src/MessageList/MessageList.vala:24
-msgid "Account Settings…"
-msgstr ""
-
-#: src/MessageList/MessageList.vala:47
-msgid "Menu"
-msgstr "Μενού"
-
-#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Απάντηση"
 
-#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
 #, fuzzy
 msgid "Reply All"
 msgstr "Α_πάντηση σε όλους"
 
-#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:81
+#: src/MessageList/MessageList.vala:54
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "_Σήμανση ως μη αναγνωσμένα"
 
-#: src/MessageList/MessageList.vala:112
+#: src/MessageList/MessageList.vala:85
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Σήμανση συνομιλίας"
 
-#: src/MessageList/MessageList.vala:120
+#: src/MessageList/MessageList.vala:93
+#, fuzzy
+#| msgid "Move conversation"
+#| msgid_plural "Move conversations"
+msgid "Move Conversation to…"
+msgstr "Μετακίνηση συνομιλίας"
+
+#: src/MessageList/MessageList.vala:103
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Μετακίνηση συνομιλιών"
 
-#: src/MessageList/MessageList.vala:128
+#: src/MessageList/MessageList.vala:111
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Μετακίνηση συνομιλιών"
 
-#: src/MessageList/MessageList.vala:155
+#: src/MessageList/MessageList.vala:126
 #, fuzzy
 msgid "No Message Selected"
 msgstr "Δεν επιλέχθηκαν συνομιλίες."
@@ -455,13 +520,13 @@ msgid "%s at %s"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 #, fuzzy
 msgid "Unstar message"
 msgstr "%d μήνυμα"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 #, fuzzy
 msgid "Star message"
 msgstr "%d μήνυμα"
@@ -491,24 +556,24 @@ msgid "This message contains one or more attachments"
 msgstr "Αυτό το μήνυμα εμπεριέχει ένα ή περισσότερα συνημμένα"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Νέο μήνυμα"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
 msgstr "Δεν ήταν δυνατή η επικύρωση:\n"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -516,7 +581,7 @@ msgstr ""
 "Τα συνημμένα αρχεία μπορεί να προκαλέσουν ζημιά στο σύστημα σας εάν "
 "ανοιχτούν. Ανοίγετε αρχεία μόνο από αξιόπιστες πηγές."
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr ""
 
@@ -695,11 +760,6 @@ msgstr "_Αποθήκευση"
 
 #~ msgid "Add label to conversations"
 #~ msgstr "Προσθήκη ετικέτας στις συνομιλίες"
-
-#~ msgid "Move conversation"
-#~ msgid_plural "Move conversations"
-#~ msgstr[0] "Μετακίνηση συνομιλίας"
-#~ msgstr[1] "Μετακίνηση συνομιλιών"
 
 #~ msgid "A_ccounts"
 #~ msgstr "Λ_ογαριασμοί"

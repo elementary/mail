@@ -1,9 +1,9 @@
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-16 18:33+0000\n"
-"PO-Revision-Date: 2023-04-14 11:53+0000\n"
+"POT-Creation-Date: 2023-06-01 21:56+0000\n"
+"PO-Revision-Date: 2023-05-20 04:06+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/mail/mail/ka/>\n"
 "Language: ka\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 4.17\n"
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
 msgid "From:"
@@ -218,15 +218,36 @@ msgid_plural "%s from %u senders"
 msgstr[0] "%s %u გამომგზავნისგან"
 msgstr[1] "%s %u გამომგზავნისგან"
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "ელფოსტა"
 
-#: src/MainWindow.vala:120
+#: src/MainWindow.vala:123
 msgid "Undo"
 msgstr "დაბრუნება"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:271
+msgid "Message Archived"
+msgid_plural "Messages Archived"
+msgstr[0] "შეტყობინება წაშლილია"
+msgstr[1] "შეტყობინება წაშლილია"
+
+#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#, fuzzy, c-format
+#| msgid "Unable to send message"
+msgid "Failed to move messages: %s"
+msgstr "შეტყობინების გაგზავნა შეუძლებელია"
+
+#: src/MainWindow.vala:285
+#, fuzzy
+#| msgid "Message Archived"
+#| msgid_plural "Messages Archived"
+msgid "Message Moved"
+msgid_plural "Messages Moved"
+msgstr[0] "შეტყობინება წაშლილია"
+msgstr[1] "შეტყობინება წაშლილია"
+
+#: src/MainWindow.vala:299
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "შეტყობინება წაშლილია"
@@ -244,50 +265,79 @@ msgstr "Mail-ი სისტემურ პარამეტრებში �
 msgid "Online Accounts…"
 msgstr "ონლაინ ანგარიშები…"
 
-#: src/ConversationList/ConversationList.vala:83
+#: src/Backend/Account.vala:48
+#, fuzzy
+#| msgid "Unable to save draft"
+msgid "Unable to connect"
+msgstr "მონახაზად შენახვის შეცდომა"
+
+#: src/Backend/Account.vala:49
+#, fuzzy
+#| msgid "There was an unexpected error while sending your message."
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr "თქვენი შეტყობინების გაგზავნისას აღმოჩენილია მოულოდნელი შეცდომა."
+
+#: src/Backend/MoveOperation.vala:65
+#, c-format
+msgid "Moving messages… (%u remaining)"
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:98
+msgid "No Archive folder is configured."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:126
+msgid "The destination folder was not found."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:130
+msgid "The source folder is the destination folder."
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
 msgstr "ელფოსტაში ძებნა"
 
-#: src/ConversationList/ConversationList.vala:87
+#: src/ConversationList/ConversationList.vala:84
 msgid "Hide read conversations"
 msgstr "წაკითხული საუბრების დამალვა"
 
-#: src/ConversationList/ConversationList.vala:89
+#: src/ConversationList/ConversationList.vala:86
 msgid "Hide unstarred conversations"
 msgstr "უვარსკვლავო საუბრების დამალვა"
 
-#: src/ConversationList/ConversationList.vala:106
+#: src/ConversationList/ConversationList.vala:103
 msgid "Filter Conversations"
 msgstr "საუბრების გაფილტვრა"
 
-#: src/ConversationList/ConversationList.vala:129
+#: src/ConversationList/ConversationList.vala:126
 msgid "Fetch new messages"
 msgstr "ახალი შეტყობინებების გამოთხოვა"
 
-#: src/ConversationList/ConversationList.vala:136
+#: src/ConversationList/ConversationList.vala:133
 msgid "Fetching new messages…"
 msgstr "ახალი შეტყობინებების გამოთხოვა…"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationList.vala:561
 msgid "Move To Trash"
 msgstr "ნაგავში გადატანა"
 
-#: src/ConversationList/ConversationList.vala:587
+#: src/ConversationList/ConversationList.vala:570
 msgid "Mark As Unread"
 msgstr "წაუკითხავად მონიშვნა"
 
-#: src/ConversationList/ConversationList.vala:595
-#: src/MessageList/MessageList.vala:87
+#: src/ConversationList/ConversationList.vala:578
+#: src/MessageList/MessageList.vala:60
 msgid "Mark as Read"
 msgstr "მონიშნე როგორც წაკითხული"
 
-#: src/ConversationList/ConversationList.vala:605
-#: src/MessageList/MessageList.vala:93
+#: src/ConversationList/ConversationList.vala:588
+#: src/MessageList/MessageList.vala:66
 msgid "Star"
 msgstr "ვარსკვლავი"
 
-#: src/ConversationList/ConversationList.vala:613
-#: src/MessageList/MessageList.vala:99
+#: src/ConversationList/ConversationList.vala:596
+#: src/MessageList/MessageList.vala:72
 msgid "Unstar"
 msgstr "ვარსკვლავის მოხსნა"
 
@@ -323,6 +373,29 @@ msgstr "ვებგვერდს მაგალითი"
 msgid "Compose new message"
 msgstr "ახალი შეტყობინება"
 
+#: src/FoldersView/FoldersListView.vala:59
+msgid "Always Show Remote Images"
+msgstr "დაშორებული სურათების ყოველთვის ჩვენება"
+
+#: src/FoldersView/FoldersListView.vala:62
+msgid "Account Settings…"
+msgstr "ანგარიშის მორგება…"
+
+#: src/FoldersView/FoldersListView.vala:86
+msgid "Menu"
+msgstr "მენიუ"
+
+#: src/FoldersView/FoldersListView.vala:140
+#, fuzzy
+#| msgid "Unable to print email"
+msgid "Unable to open System Settings"
+msgstr "ელფოსტის დაბეჭდვის შეცდომა"
+
+#: src/FoldersView/FoldersListView.vala:141
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "საქაღალდის განახლება"
@@ -343,47 +416,41 @@ msgstr "გაგზავნილია"
 msgid "All Mailboxes"
 msgstr "ყველა საფოსტო ყუთი"
 
-#: src/MessageList/MessageList.vala:21
-msgid "Always Show Remote Images"
-msgstr "დაშორებული სურათების ყოველთვის ჩვენება"
-
-#: src/MessageList/MessageList.vala:24
-msgid "Account Settings…"
-msgstr "ანგარიშის მორგება…"
-
-#: src/MessageList/MessageList.vala:47
-msgid "Menu"
-msgstr "მენიუ"
-
-#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "პასუხი"
 
-#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "ყველასთვის პასუხი"
 
-#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "წინ"
 
-#: src/MessageList/MessageList.vala:81
+#: src/MessageList/MessageList.vala:54
 msgid "Mark as Unread"
 msgstr "მონიშნე როგორც წაუკითხავი"
 
-#: src/MessageList/MessageList.vala:112
+#: src/MessageList/MessageList.vala:85
 msgid "Mark Conversation"
 msgstr "საუბრის მონიშვნა"
 
-#: src/MessageList/MessageList.vala:120
+#: src/MessageList/MessageList.vala:93
+#, fuzzy
+#| msgid "Move conversations to Trash"
+msgid "Move Conversation to…"
+msgstr "საუბრის ნაგავში გადატანა"
+
+#: src/MessageList/MessageList.vala:103
 msgid "Move conversations to archive"
 msgstr "საუბრის არქივში გადატანა"
 
-#: src/MessageList/MessageList.vala:128
+#: src/MessageList/MessageList.vala:111
 msgid "Move conversations to Trash"
 msgstr "საუბრის ნაგავში გადატანა"
 
-#: src/MessageList/MessageList.vala:155
+#: src/MessageList/MessageList.vala:126
 msgid "No Message Selected"
 msgstr "შეტყობინება არ აგირჩევიათ"
 
@@ -394,12 +461,12 @@ msgid "%s at %s"
 msgstr "%s %s"
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "შეტყობინებაზე ვარსკვლავის მოხსნა"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "შეტყობინებაზე ვარსკვლავის დაყენება"
 
@@ -428,20 +495,20 @@ msgid "This message contains one or more attachments"
 msgstr "ეს შეტყობინება ერთ ან მეტ დანართს შეიცავს"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 msgid "Email Message"
 msgstr "ელფოსტის სეტყობინება"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 msgid "Unable to print email"
 msgstr "ელფოსტის დაბეჭდვის შეცდომა"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr "ვენდო და გავხსნა \"%s\"?"
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -449,7 +516,7 @@ msgstr ""
 "დანართებმა შეიძლება თქვენი სისტემა დააზიანონ. გახსენით მხოლოდ სანდო "
 "წყაროებიდან მიღებული ფაილები."
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "მაინც გახსნა"
 

@@ -1,10 +1,10 @@
-#: src/MessageList/MessageListItem.vala:425
+#: src/MessageList/MessageListItem.vala:427
 msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-16 18:33+0000\n"
-"PO-Revision-Date: 2023-03-30 14:59+0000\n"
+"POT-Creation-Date: 2023-06-01 21:56+0000\n"
+"PO-Revision-Date: 2023-06-01 21:56+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
@@ -186,7 +186,7 @@ msgstr "メッセージを送信できません"
 
 #: src/Composer.vala:807
 msgid "There was an unexpected error while sending your message."
-msgstr "メッセージを送信する際に予期しないエラーが発生しました。"
+msgstr "メッセージの送信中に予期しないエラーが発生しました。"
 
 #: src/Composer.vala:1027
 msgid "Unable to save draft"
@@ -194,7 +194,7 @@ msgstr "下書きを保存できません"
 
 #: src/Composer.vala:1028
 msgid "There was an unexpected error while saving your draft."
-msgstr "下書きを保存する際に予期しないエラーが発生しました。"
+msgstr "下書きの保存中に予期しないエラーが発生しました。"
 
 #: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
@@ -216,15 +216,30 @@ msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
 msgstr[0] "%2$u人から%1$s"
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "メール"
 
-#: src/MainWindow.vala:120
+#: src/MainWindow.vala:123
 msgid "Undo"
 msgstr "元に戻す"
 
-#: src/MainWindow.vala:260
+#: src/MainWindow.vala:271
+msgid "Message Archived"
+msgid_plural "Messages Archived"
+msgstr[0] "メッセージをアーカイブしました"
+
+#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#, c-format
+msgid "Failed to move messages: %s"
+msgstr "メッセージを移動できませんでした: %s"
+
+#: src/MainWindow.vala:285
+msgid "Message Moved"
+msgid_plural "Messages Moved"
+msgstr[0] "メッセージを移動しました"
+
+#: src/MainWindow.vala:299
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "メッセージを削除しました"
@@ -241,50 +256,75 @@ msgstr "“メール”は、“システム設定”で設定されたメール
 msgid "Online Accounts…"
 msgstr "オンラインアカウント…"
 
-#: src/ConversationList/ConversationList.vala:83
+#: src/Backend/Account.vala:48
+msgid "Unable to connect"
+msgstr "接続できません"
+
+#: src/Backend/Account.vala:49
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr "サーバーへの接続試行中に予期しないエラーが発生しました。"
+
+#: src/Backend/MoveOperation.vala:65
+#, c-format
+msgid "Moving messages… (%u remaining)"
+msgstr "メッセージを移動しています… (残り%u件)"
+
+#: src/Backend/MoveOperation.vala:98
+msgid "No Archive folder is configured."
+msgstr "アーカイブフォルダーが設定されていません。"
+
+#: src/Backend/MoveOperation.vala:126
+msgid "The destination folder was not found."
+msgstr "移動先フォルダーが見つかりませんでした。"
+
+#: src/Backend/MoveOperation.vala:130
+msgid "The source folder is the destination folder."
+msgstr "移動元フォルダーが移動先です。"
+
+#: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
 msgstr "メールを検索"
 
-#: src/ConversationList/ConversationList.vala:87
+#: src/ConversationList/ConversationList.vala:84
 msgid "Hide read conversations"
 msgstr "開封済みのスレッドを非表示"
 
-#: src/ConversationList/ConversationList.vala:89
+#: src/ConversationList/ConversationList.vala:86
 msgid "Hide unstarred conversations"
 msgstr "スターなしのスレッドを非表示"
 
-#: src/ConversationList/ConversationList.vala:106
+#: src/ConversationList/ConversationList.vala:103
 msgid "Filter Conversations"
 msgstr "スレッドを検索"
 
-#: src/ConversationList/ConversationList.vala:129
+#: src/ConversationList/ConversationList.vala:126
 msgid "Fetch new messages"
 msgstr "新着メッセージを取得"
 
-#: src/ConversationList/ConversationList.vala:136
+#: src/ConversationList/ConversationList.vala:133
 msgid "Fetching new messages…"
 msgstr "新着メッセージを取得しています…"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationList.vala:561
 msgid "Move To Trash"
 msgstr "ゴミ箱に移動"
 
-#: src/ConversationList/ConversationList.vala:587
+#: src/ConversationList/ConversationList.vala:570
 msgid "Mark As Unread"
 msgstr "未読としてマーク"
 
-#: src/ConversationList/ConversationList.vala:595
-#: src/MessageList/MessageList.vala:87
+#: src/ConversationList/ConversationList.vala:578
+#: src/MessageList/MessageList.vala:60
 msgid "Mark as Read"
 msgstr "既読としてマーク"
 
-#: src/ConversationList/ConversationList.vala:605
-#: src/MessageList/MessageList.vala:93
+#: src/ConversationList/ConversationList.vala:588
+#: src/MessageList/MessageList.vala:66
 msgid "Star"
 msgstr "スターを付ける"
 
-#: src/ConversationList/ConversationList.vala:613
-#: src/MessageList/MessageList.vala:99
+#: src/ConversationList/ConversationList.vala:596
+#: src/MessageList/MessageList.vala:72
 msgid "Unstar"
 msgstr "スターを外す"
 
@@ -320,6 +360,29 @@ msgstr "Web サイト名を入力"
 msgid "Compose new message"
 msgstr "新しいメッセージを作成します"
 
+#: src/FoldersView/FoldersListView.vala:59
+msgid "Always Show Remote Images"
+msgstr "常にリモートの画像を表示"
+
+#: src/FoldersView/FoldersListView.vala:62
+msgid "Account Settings…"
+msgstr "アカウントの設定…"
+
+#: src/FoldersView/FoldersListView.vala:86
+msgid "Menu"
+msgstr "メニュー"
+
+#: src/FoldersView/FoldersListView.vala:140
+#, fuzzy
+#| msgid "Unable to print email"
+msgid "Unable to open System Settings"
+msgstr "メールを印刷できません"
+
+#: src/FoldersView/FoldersListView.vala:141
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "フォルダーを更新"
@@ -340,47 +403,39 @@ msgstr "送信済み"
 msgid "All Mailboxes"
 msgstr "すべての受信箱"
 
-#: src/MessageList/MessageList.vala:21
-msgid "Always Show Remote Images"
-msgstr "常にリモートの画像を表示"
-
-#: src/MessageList/MessageList.vala:24
-msgid "Account Settings…"
-msgstr "アカウントの設定…"
-
-#: src/MessageList/MessageList.vala:47
-msgid "Menu"
-msgstr "メニュー"
-
-#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "返信"
 
-#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "全員に返信"
 
-#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "転送"
 
-#: src/MessageList/MessageList.vala:81
+#: src/MessageList/MessageList.vala:54
 msgid "Mark as Unread"
 msgstr "未読としてマーク"
 
-#: src/MessageList/MessageList.vala:112
+#: src/MessageList/MessageList.vala:85
 msgid "Mark Conversation"
 msgstr "スレッドにマークをつける"
 
-#: src/MessageList/MessageList.vala:120
+#: src/MessageList/MessageList.vala:93
+msgid "Move Conversation to…"
+msgstr "メッセージの移動先を選択…"
+
+#: src/MessageList/MessageList.vala:103
 msgid "Move conversations to archive"
 msgstr "スレッドをアーカイブします"
 
-#: src/MessageList/MessageList.vala:128
+#: src/MessageList/MessageList.vala:111
 msgid "Move conversations to Trash"
 msgstr "スレッドをゴミ箱に移動します"
 
-#: src/MessageList/MessageList.vala:155
+#: src/MessageList/MessageList.vala:126
 msgid "No Message Selected"
 msgstr "メッセージが選択されていません"
 
@@ -391,12 +446,12 @@ msgid "%s at %s"
 msgstr "%s %s"
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:380
+#: src/MessageList/MessageListItem.vala:382
 msgid "Unstar message"
 msgstr "スターなしメッセージ"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:376
+#: src/MessageList/MessageListItem.vala:378
 msgid "Star message"
 msgstr "スター付きメッセージ"
 
@@ -425,20 +480,20 @@ msgid "This message contains one or more attachments"
 msgstr "このメッセージは、何らかの添付ファイルを含んでいます"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:404
 msgid "Email Message"
 msgstr "メールのメッセージ"
 
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:426
 msgid "Unable to print email"
 msgstr "メールを印刷できません"
 
-#: src/MessageList/MessageListItem.vala:671
+#: src/MessageList/MessageListItem.vala:673
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr "“%s”を信頼し開きますか？"
 
-#: src/MessageList/MessageListItem.vala:672
+#: src/MessageList/MessageListItem.vala:674
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -446,7 +501,7 @@ msgstr ""
 "添付ファイルは、システムにダメージを与える恐れがあります。信頼できる送信元の"
 "ファイルのみを開くようにしてください。"
 
-#: src/MessageList/MessageListItem.vala:679
+#: src/MessageList/MessageListItem.vala:681
 msgid "Open Anyway"
 msgstr "了解して開く"
 
@@ -626,10 +681,6 @@ msgstr "保存"
 
 #~ msgid "Add label to conversations"
 #~ msgstr "メッセージにラベルを付ける"
-
-#~ msgid "Move conversation"
-#~ msgid_plural "Move conversations"
-#~ msgstr[0] "メッセージを移動"
 
 #~ msgid "A_ccounts"
 #~ msgstr "アカウント(_C)"
