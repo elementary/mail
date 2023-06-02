@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-01 21:56+0000\n"
-"PO-Revision-Date: 2023-06-01 21:56+0000\n"
+"PO-Revision-Date: 2023-06-04 16:07+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -373,15 +373,14 @@ msgid "Menu"
 msgstr "メニュー"
 
 #: src/FoldersView/FoldersListView.vala:140
-#, fuzzy
-#| msgid "Unable to print email"
 msgid "Unable to open System Settings"
-msgstr "メールを印刷できません"
+msgstr "“システム設定”を開けません"
 
 #: src/FoldersView/FoldersListView.vala:141
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
-msgstr ""
+msgstr "オンラインアカウントをセットアップするには、“システム設定”を直接開くか、"
+"Evolution をインストールしてください。"
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
