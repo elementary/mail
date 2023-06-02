@@ -565,7 +565,10 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
                     var inpustream = file.read ();
                     web_view.add_internal_resource (attachment.cid, inpustream);
-                    web_view.execute_editor_command ("insertHTML", """<img src="cid:%s" alt="Inline Image">""".printf (attachment.cid));
+                    web_view.execute_editor_command (
+                        "insertHTML",
+                        """<img src="cid:%s" alt="Inline Image">""".printf (attachment.cid)
+                    );
                 } catch (Error e) {
                     warning ("Failed to load file '%s': %s", file.get_parse_name (), e.message);
                 }
