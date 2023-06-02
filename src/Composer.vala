@@ -471,10 +471,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 foreach (var path in result["attachment"]) {
                     var file = path.has_prefix ("file://") ? File.new_for_uri (path) : File.new_for_path (path);
 
-                    var attachment = new Attachment (file, Attachment.DISPOSITION_ATTACHMENT);
-                    attachment.margin = 3;
-
-                    attachment_box.add (attachment);
+                    attachment_box.add (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
                 }
                 attachment_box.show_all ();
             }
@@ -507,10 +504,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
             filechooser.hide ();
             foreach (unowned File file in filechooser.get_files ()) {
-                var attachment = new Attachment (file, Attachment.DISPOSITION_ATTACHMENT);
-                attachment.margin = 3;
-
-                attachment_box.add (attachment);
+                attachment_box.add (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
             }
             attachment_box.show_all ();
         }
@@ -559,7 +553,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 var file = filechooser.get_file ();
                 try {
                     var attachment = new Attachment (file, Attachment.DISPOSITION_INLINE);
-                    attachment.margin = 3;
                     attachment_box.add (attachment);
                     attachment_box.show_all ();
 
@@ -993,13 +986,20 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             remove_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
             var box = new Gtk.Box (HORIZONTAL, 3) {
-                margin = 3
+                margin_top = 3,
+                margin_bottom = 3,
+                margin_start = 3,
+                margin_end = 3
             };
             box.add (image);
             box.add (name_label);
             box.add (size_label);
             box.add (remove_button);
 
+            margin_top = 3;
+            margin_bottom = 3;
+            margin_start = 3;
+            margin_end = 3;
             add (box);
 
             remove_button.clicked.connect (() => {
