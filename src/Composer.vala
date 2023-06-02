@@ -265,10 +265,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
         var image = new Gtk.Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.MENU) {
             action_name = ACTION_PREFIX + ACTION_INSERT_IMAGE,
-            tooltip_markup = Granite.markup_accel_tooltip (
-                application.get_accels_for_action (ACTION_PREFIX + ACTION_INSERT_LINK),
-                _("Insert Image")
-            )
+            tooltip_text = _("Insert Image")
         };
 
         var button_row = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12) {
