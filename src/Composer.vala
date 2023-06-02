@@ -16,9 +16,9 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     private const string ACTION_ITALIC = "italic";
     private const string ACTION_UNDERLINE = "underline";
     private const string ACTION_STRIKETHROUGH = "strikethrough";
-    private const string ACTION_INSERT_LINK = "insert_link";
-    private const string ACTION_INSERT_IMAGE = "insert-link";
-    private const string ACTION_REMOVE_FORMAT = "remove_formatting";
+    private const string ACTION_INSERT_LINK = "insert-link";
+    private const string ACTION_INSERT_IMAGE = "insert-image";
+    private const string ACTION_REMOVE_FORMAT = "remove-formatting";
     private const string ACTION_DISCARD = "discard";
     private const string ACTION_SEND = "send";
 
