@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-22 15:22+0000\n"
+"POT-Creation-Date: 2023-06-01 21:56+0000\n"
 "PO-Revision-Date: 2023-05-03 17:06+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/extra/ru/>\n"
@@ -67,19 +67,19 @@ msgstr "Работа с Gmail, Yahoo! Mail, и другими популярны
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:84
-#: data/mail.metainfo.xml.in:105 data/mail.metainfo.xml.in:124
-#: data/mail.metainfo.xml.in:146 data/mail.metainfo.xml.in:160
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:85
+#: data/mail.metainfo.xml.in:106 data/mail.metainfo.xml.in:125
+#: data/mail.metainfo.xml.in:147 data/mail.metainfo.xml.in:161
 msgid "Improvements:"
 msgstr "Улучшения:"
 
-#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:93
-#: data/mail.metainfo.xml.in:107 data/mail.metainfo.xml.in:128
-#: data/mail.metainfo.xml.in:149 data/mail.metainfo.xml.in:162
+#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:108 data/mail.metainfo.xml.in:129
+#: data/mail.metainfo.xml.in:150 data/mail.metainfo.xml.in:163
 msgid "Updated translations"
 msgstr "Обновлены переводы"
 
-#: data/mail.metainfo.xml.in:86
+#: data/mail.metainfo.xml.in:87
 msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
@@ -87,7 +87,7 @@ msgstr ""
 "Приветствие автоматически убирается, когда аккаунт добавлен в онлайн-"
 "аккауньы через настройки"
 
-#: data/mail.metainfo.xml.in:87
+#: data/mail.metainfo.xml.in:88
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
@@ -95,86 +95,86 @@ msgstr ""
 "Композитор всегда представлен в виде нового окна и поддерживает больше "
 "сочетаний клавиш"
 
-#: data/mail.metainfo.xml.in:88
+#: data/mail.metainfo.xml.in:89
 msgid "The search filter menu now appears next to the search bar"
 msgstr "Фильтр поиска теперь появляется рядом со строкой поиска"
 
-#: data/mail.metainfo.xml.in:89
+#: data/mail.metainfo.xml.in:90
 msgid "HeaderBars appear to float above content when scrolled"
 msgstr "Заголовок теперь находится над контентом при скроле"
 
-#: data/mail.metainfo.xml.in:90
+#: data/mail.metainfo.xml.in:91
 msgid "Fix a potential crash with empty messages"
 msgstr "Исправлен вероятный сбой при пустом списке сообщений"
 
-#: data/mail.metainfo.xml.in:91
+#: data/mail.metainfo.xml.in:92
 msgid "Stop resizing from cutting off the message list"
 msgstr "Остановлено зменение размера от обрезания списка сообщений"
 
-#: data/mail.metainfo.xml.in:92
+#: data/mail.metainfo.xml.in:93
 msgid "Performance improvements"
 msgstr "Улучшения производительности"
 
-#: data/mail.metainfo.xml.in:118 data/mail.metainfo.xml.in:140
-#: data/mail.metainfo.xml.in:156
+#: data/mail.metainfo.xml.in:119 data/mail.metainfo.xml.in:141
+#: data/mail.metainfo.xml.in:157
 msgid "Fixes:"
 msgstr "Исправления:"
 
-#: data/mail.metainfo.xml.in:120
+#: data/mail.metainfo.xml.in:121
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr "Исправлена ошибка, из-за которой аккаунты загружались несколько раз"
 
-#: data/mail.metainfo.xml.in:121
+#: data/mail.metainfo.xml.in:122
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr "Исправлена ошибка, приводившая к периодическим падениям почты"
 
-#: data/mail.metainfo.xml.in:122
+#: data/mail.metainfo.xml.in:123
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "Отображение получателя вместо отправителя в папке «Отправленные»"
 
-#: data/mail.metainfo.xml.in:126
+#: data/mail.metainfo.xml.in:127
 msgid "Updated app icon"
 msgstr "Обновлена иконка приложения"
 
-#: data/mail.metainfo.xml.in:127
+#: data/mail.metainfo.xml.in:128
 msgid "New design"
 msgstr "Новый дизайн"
 
-#: data/mail.metainfo.xml.in:135
+#: data/mail.metainfo.xml.in:136
 msgid "New features:"
 msgstr "Новые возможности:"
 
-#: data/mail.metainfo.xml.in:137
+#: data/mail.metainfo.xml.in:138
 msgid "Use message subject for composer window title"
 msgstr "Использование темы сообщения для названия окна редактора"
 
-#: data/mail.metainfo.xml.in:138
+#: data/mail.metainfo.xml.in:139
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr "Добавлена поддержка общих почтовых ящиков для аккаунтов Microsoft 365"
 
-#: data/mail.metainfo.xml.in:142
+#: data/mail.metainfo.xml.in:143
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr "Исправлена ошибка ломающая обновление сообщений в фоне"
 
-#: data/mail.metainfo.xml.in:143
+#: data/mail.metainfo.xml.in:144
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr "Убраны повторяющиеся адреса отправителя при составлении сообщения"
 
-#: data/mail.metainfo.xml.in:144
+#: data/mail.metainfo.xml.in:145
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
 "Исправлена остановка работы приложения при архивировании последнего "
 "сообщения в папке"
 
-#: data/mail.metainfo.xml.in:148
+#: data/mail.metainfo.xml.in:149
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "Office 365 переименован в Microsoft 365 чтобы соответствовать новому "
 "названию офисного пакета"
 
-#: data/mail.metainfo.xml.in:158
+#: data/mail.metainfo.xml.in:159
 msgid "Fix a potential crash while loading messages"
 msgstr "Исправлен вероятный сбой при загрузке сообщений"
 

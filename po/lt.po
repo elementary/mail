@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-22 15:22+0000\n"
+"POT-Creation-Date: 2023-06-01 21:56+0000\n"
 "PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/mail/mail/lt/"
@@ -253,11 +253,11 @@ msgstr[0] "Visada rodyti nuo siuntėjo"
 msgstr[1] "Visada rodyti nuo siuntėjo"
 msgstr[2] "Visada rodyti nuo siuntėjo"
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "Paštas"
 
-#: src/MainWindow.vala:120
+#: src/MainWindow.vala:123
 msgid "Undo"
 msgstr "Atšaukti"
 
@@ -271,7 +271,23 @@ msgstr[0] "Laiškas ištrintas"
 msgstr[1] "Laiškai ištrinti"
 msgstr[2] "Laiškai ištrinti"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#, fuzzy, c-format
+#| msgid "Delete draft"
+msgid "Failed to move messages: %s"
+msgstr "Ištrinti juodraštį"
+
+#: src/MainWindow.vala:285
+#, fuzzy
+#| msgid "Message Deleted"
+#| msgid_plural "Messages Deleted"
+msgid "Message Moved"
+msgid_plural "Messages Moved"
+msgstr[0] "Laiškas ištrintas"
+msgstr[1] "Laiškai ištrinti"
+msgstr[2] "Laiškai ištrinti"
+
+#: src/MainWindow.vala:299
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Laiškas ištrintas"
@@ -290,76 +306,93 @@ msgstr "Paštas naudoja sistemos nustatymuose sukonfigūruotas pašto paskyras."
 msgid "Online Accounts…"
 msgstr "Internetinės paskyros…"
 
-#: src/Backend/Account.vala:47
+#: src/Backend/Account.vala:48
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to connect"
 msgstr "Ištrinti juodraštį"
 
-#: src/Backend/Account.vala:48
+#: src/Backend/Account.vala:49
 msgid "There was an unexpected error while trying to connect to the server."
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/Backend/MoveOperation.vala:65
+#, c-format
+msgid "Moving messages… (%u remaining)"
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:98
+msgid "No Archive folder is configured."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:126
+msgid "The destination folder was not found."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:130
+msgid "The source folder is the destination folder."
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
 msgstr "Ieškoti pašte"
 
-#: src/ConversationList/ConversationList.vala:88
+#: src/ConversationList/ConversationList.vala:84
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide read conversations"
 msgstr "Žymėti pokalbius"
 
-#: src/ConversationList/ConversationList.vala:90
+#: src/ConversationList/ConversationList.vala:86
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
 msgstr "Žymėti pokalbius"
 
-#: src/ConversationList/ConversationList.vala:107
+#: src/ConversationList/ConversationList.vala:103
 #, fuzzy
 #| msgid "Delete Conversation"
 msgid "Filter Conversations"
 msgstr "Ištrinti pokalbį"
 
-#: src/ConversationList/ConversationList.vala:130
+#: src/ConversationList/ConversationList.vala:126
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d naujas laiškas"
 
-#: src/ConversationList/ConversationList.vala:137
+#: src/ConversationList/ConversationList.vala:133
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages…"
 msgstr "%d naujas laiškas"
 
-#: src/ConversationList/ConversationList.vala:548
+#: src/ConversationList/ConversationList.vala:561
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "Perkelti pokalbius į šiukšlinę"
 
-#: src/ConversationList/ConversationList.vala:557
+#: src/ConversationList/ConversationList.vala:570
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Žymėti neskaitytu"
 
-#: src/ConversationList/ConversationList.vala:565
-#: src/MessageList/MessageList.vala:87
+#: src/ConversationList/ConversationList.vala:578
+#: src/MessageList/MessageList.vala:60
 msgid "Mark as Read"
 msgstr "Žymėti skaitytu"
 
-#: src/ConversationList/ConversationList.vala:575
-#: src/MessageList/MessageList.vala:93
+#: src/ConversationList/ConversationList.vala:588
+#: src/MessageList/MessageList.vala:66
 msgid "Star"
 msgstr "Žymėti žvaigždute"
 
-#: src/ConversationList/ConversationList.vala:583
-#: src/MessageList/MessageList.vala:99
+#: src/ConversationList/ConversationList.vala:596
+#: src/MessageList/MessageList.vala:72
 msgid "Unstar"
 msgstr "Nežymėti žvaigždute"
 
@@ -395,6 +428,29 @@ msgstr "Pavyzdinė svetainė"
 msgid "Compose new message"
 msgstr "Rašyti naują laišką"
 
+#: src/FoldersView/FoldersListView.vala:59
+msgid "Always Show Remote Images"
+msgstr "Visada rodyti nuotolinius paveikslus"
+
+#: src/FoldersView/FoldersListView.vala:62
+msgid "Account Settings…"
+msgstr "Paskyros nustatymai…"
+
+#: src/FoldersView/FoldersListView.vala:86
+msgid "Menu"
+msgstr "Meniu"
+
+#: src/FoldersView/FoldersListView.vala:140
+#, fuzzy
+#| msgid "Unable to validate:\n"
+msgid "Unable to open System Settings"
+msgstr "Negalima patvirtinti:\n"
+
+#: src/FoldersView/FoldersListView.vala:141
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "Įkelti aplanką iš naujo"
@@ -419,49 +475,44 @@ msgstr "Išsiųstieji"
 msgid "All Mailboxes"
 msgstr "Visi laiškai"
 
-#: src/MessageList/MessageList.vala:21
-msgid "Always Show Remote Images"
-msgstr "Visada rodyti nuotolinius paveikslus"
-
-#: src/MessageList/MessageList.vala:24
-msgid "Account Settings…"
-msgstr "Paskyros nustatymai…"
-
-#: src/MessageList/MessageList.vala:47
-msgid "Menu"
-msgstr "Meniu"
-
-#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Atsakyti"
 
-#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Atsakyti visiems"
 
-#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Persiųsti"
 
-#: src/MessageList/MessageList.vala:81
+#: src/MessageList/MessageList.vala:54
 msgid "Mark as Unread"
 msgstr "Žymėti neskaitytu"
 
-#: src/MessageList/MessageList.vala:112
+#: src/MessageList/MessageList.vala:85
 msgid "Mark Conversation"
 msgstr "Žymėti pokalbį"
 
-#: src/MessageList/MessageList.vala:120
+#: src/MessageList/MessageList.vala:93
+#, fuzzy
+#| msgid "Move conversation"
+#| msgid_plural "Move conversations"
+msgid "Move Conversation to…"
+msgstr "Perkelti pokalbį"
+
+#: src/MessageList/MessageList.vala:103
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
 msgstr "Perkelti pokalbius į šiukšlinę"
 
-#: src/MessageList/MessageList.vala:128
+#: src/MessageList/MessageList.vala:111
 msgid "Move conversations to Trash"
 msgstr "Perkelti pokalbius į šiukšlinę"
 
-#: src/MessageList/MessageList.vala:155
+#: src/MessageList/MessageList.vala:126
 msgid "No Message Selected"
 msgstr "Nepasirinkta jokių laiškų"
 
@@ -720,12 +771,6 @@ msgstr "Įrašyti"
 
 #~ msgid "Add label to conversations"
 #~ msgstr "Pridėti pokalbiams etiketę"
-
-#~ msgid "Move conversation"
-#~ msgid_plural "Move conversations"
-#~ msgstr[0] "Perkelti pokalbį"
-#~ msgstr[1] "Perkelti pokalbius"
-#~ msgstr[2] "Perkelti pokalbius"
 
 #~ msgid "A_ccounts"
 #~ msgstr "Pa_skyros"

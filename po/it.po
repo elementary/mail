@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-22 15:22+0000\n"
+"POT-Creation-Date: 2023-06-01 21:56+0000\n"
 "PO-Revision-Date: 2021-01-30 01:07+0000\n"
 "Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/mail/mail/it/>\n"
@@ -250,11 +250,11 @@ msgid_plural "%s from %u senders"
 msgstr[0] "Mostra sempre dal mittente"
 msgstr[1] "Mostra sempre dal mittente"
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "Posta"
 
-#: src/MainWindow.vala:120
+#: src/MainWindow.vala:123
 msgid "Undo"
 msgstr "Annulla"
 
@@ -267,7 +267,22 @@ msgid_plural "Messages Archived"
 msgstr[0] "Messaggio eliminato"
 msgstr[1] "Messaggi eliminati"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#, fuzzy, c-format
+#| msgid "Delete draft"
+msgid "Failed to move messages: %s"
+msgstr "Elimina bozza"
+
+#: src/MainWindow.vala:285
+#, fuzzy
+#| msgid "Message Deleted"
+#| msgid_plural "Messages Deleted"
+msgid "Message Moved"
+msgid_plural "Messages Moved"
+msgstr[0] "Messaggio eliminato"
+msgstr[1] "Messaggi eliminati"
+
+#: src/MainWindow.vala:299
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Messaggio eliminato"
@@ -286,76 +301,93 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Account online…"
 
-#: src/Backend/Account.vala:47
+#: src/Backend/Account.vala:48
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to connect"
 msgstr "Elimina bozza"
 
-#: src/Backend/Account.vala:48
+#: src/Backend/Account.vala:49
 msgid "There was an unexpected error while trying to connect to the server."
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/Backend/MoveOperation.vala:65
+#, c-format
+msgid "Moving messages… (%u remaining)"
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:98
+msgid "No Archive folder is configured."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:126
+msgid "The destination folder was not found."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:130
+msgid "The source folder is the destination folder."
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
 msgstr "Cerca email"
 
-#: src/ConversationList/ConversationList.vala:88
+#: src/ConversationList/ConversationList.vala:84
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide read conversations"
 msgstr "Segna le conversazioni"
 
-#: src/ConversationList/ConversationList.vala:90
+#: src/ConversationList/ConversationList.vala:86
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
 msgstr "Segna le conversazioni"
 
-#: src/ConversationList/ConversationList.vala:107
+#: src/ConversationList/ConversationList.vala:103
 #, fuzzy
 #| msgid "Delete Conversation"
 msgid "Filter Conversations"
 msgstr "Cancella la conversazione"
 
-#: src/ConversationList/ConversationList.vala:130
+#: src/ConversationList/ConversationList.vala:126
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d nuovo messaggio"
 
-#: src/ConversationList/ConversationList.vala:137
+#: src/ConversationList/ConversationList.vala:133
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages…"
 msgstr "%d nuovo messaggio"
 
-#: src/ConversationList/ConversationList.vala:548
+#: src/ConversationList/ConversationList.vala:561
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "Sposta le conversazioni nel cestino"
 
-#: src/ConversationList/ConversationList.vala:557
+#: src/ConversationList/ConversationList.vala:570
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Segna come non letto"
 
-#: src/ConversationList/ConversationList.vala:565
-#: src/MessageList/MessageList.vala:87
+#: src/ConversationList/ConversationList.vala:578
+#: src/MessageList/MessageList.vala:60
 msgid "Mark as Read"
 msgstr "Segna come letto"
 
-#: src/ConversationList/ConversationList.vala:575
-#: src/MessageList/MessageList.vala:93
+#: src/ConversationList/ConversationList.vala:588
+#: src/MessageList/MessageList.vala:66
 msgid "Star"
 msgstr "_Speciale"
 
-#: src/ConversationList/ConversationList.vala:583
-#: src/MessageList/MessageList.vala:99
+#: src/ConversationList/ConversationList.vala:596
+#: src/MessageList/MessageList.vala:72
 msgid "Unstar"
 msgstr "_Non speciale"
 
@@ -391,6 +423,29 @@ msgstr "Sito web d'esempio"
 msgid "Compose new message"
 msgstr "Componi un nuovo messaggio"
 
+#: src/FoldersView/FoldersListView.vala:59
+msgid "Always Show Remote Images"
+msgstr "Mostra sempre immagini remote"
+
+#: src/FoldersView/FoldersListView.vala:62
+msgid "Account Settings…"
+msgstr "Impostazioni dell'account…"
+
+#: src/FoldersView/FoldersListView.vala:86
+msgid "Menu"
+msgstr "Menu"
+
+#: src/FoldersView/FoldersListView.vala:140
+#, fuzzy
+#| msgid "Unable to validate:\n"
+msgid "Unable to open System Settings"
+msgstr "Impossibile convalidare:\n"
+
+#: src/FoldersView/FoldersListView.vala:141
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "Ricarica cartella"
@@ -415,49 +470,44 @@ msgstr "Posta inviata"
 msgid "All Mailboxes"
 msgstr "Tutta la posta"
 
-#: src/MessageList/MessageList.vala:21
-msgid "Always Show Remote Images"
-msgstr "Mostra sempre immagini remote"
-
-#: src/MessageList/MessageList.vala:24
-msgid "Account Settings…"
-msgstr "Impostazioni dell'account…"
-
-#: src/MessageList/MessageList.vala:47
-msgid "Menu"
-msgstr "Menu"
-
-#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Rispondi"
 
-#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Rispondi a tutti"
 
-#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Inoltra"
 
-#: src/MessageList/MessageList.vala:81
+#: src/MessageList/MessageList.vala:54
 msgid "Mark as Unread"
 msgstr "Segna come non letto"
 
-#: src/MessageList/MessageList.vala:112
+#: src/MessageList/MessageList.vala:85
 msgid "Mark Conversation"
 msgstr "Segna la conversazione"
 
-#: src/MessageList/MessageList.vala:120
+#: src/MessageList/MessageList.vala:93
+#, fuzzy
+#| msgid "Move conversation"
+#| msgid_plural "Move conversations"
+msgid "Move Conversation to…"
+msgstr "Sposta la conversazione"
+
+#: src/MessageList/MessageList.vala:103
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
 msgstr "Sposta le conversazioni nel cestino"
 
-#: src/MessageList/MessageList.vala:128
+#: src/MessageList/MessageList.vala:111
 msgid "Move conversations to Trash"
 msgstr "Sposta le conversazioni nel cestino"
 
-#: src/MessageList/MessageList.vala:155
+#: src/MessageList/MessageList.vala:126
 msgid "No Message Selected"
 msgstr "Nessuna conversazione selezionata"
 
@@ -714,11 +764,6 @@ msgstr "Salva"
 
 #~ msgid "Add label to conversations"
 #~ msgstr "Aggiungi etichetta alle conversazioni"
-
-#~ msgid "Move conversation"
-#~ msgid_plural "Move conversations"
-#~ msgstr[0] "Sposta la conversazione"
-#~ msgstr[1] "Sposta le conversazioni"
 
 #~ msgid "A_ccounts"
 #~ msgstr "A_ccount"

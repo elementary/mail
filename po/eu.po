@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-22 15:22+0000\n"
+"POT-Creation-Date: 2023-06-01 21:56+0000\n"
 "PO-Revision-Date: 2015-12-01 22:33+0000\n"
 "Last-Translator: Félix Brezo <felixbrezo@gmail.com>\n"
 "Language-Team: Basque <librezale@librezale.org>\n"
@@ -237,13 +237,13 @@ msgid_plural "%s from %u senders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:80
 #, fuzzy
 #| msgid "All Mail"
 msgid "Mail"
 msgstr "Posta guztiak"
 
-#: src/MainWindow.vala:120
+#: src/MainWindow.vala:123
 msgid "Undo"
 msgstr ""
 
@@ -254,7 +254,20 @@ msgid_plural "Messages Archived"
 msgstr[0] "Ez da berriketarik hautatu."
 msgstr[1] "Ez da berriketarik hautatu."
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#, fuzzy, c-format
+#| msgid "Unable to validate:\n"
+msgid "Failed to move messages: %s"
+msgstr "Ezin da balidatu:\n"
+
+#: src/MainWindow.vala:285
+#, fuzzy
+msgid "Message Moved"
+msgid_plural "Messages Moved"
+msgstr[0] "Ez da berriketarik hautatu."
+msgstr[1] "Ez da berriketarik hautatu."
+
+#: src/MainWindow.vala:299
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -274,76 +287,93 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Kontuak"
 
-#: src/Backend/Account.vala:47
+#: src/Backend/Account.vala:48
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to connect"
 msgstr "Ezin da balidatu:\n"
 
-#: src/Backend/Account.vala:48
+#: src/Backend/Account.vala:49
 msgid "There was an unexpected error while trying to connect to the server."
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/Backend/MoveOperation.vala:65
+#, c-format
+msgid "Moving messages… (%u remaining)"
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:98
+msgid "No Archive folder is configured."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:126
+msgid "The destination folder was not found."
+msgstr ""
+
+#: src/Backend/MoveOperation.vala:130
+msgid "The source folder is the destination folder."
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:88
+#: src/ConversationList/ConversationList.vala:84
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Hide read conversations"
 msgstr "Ezabatu berriketa"
 
-#: src/ConversationList/ConversationList.vala:90
+#: src/ConversationList/ConversationList.vala:86
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Hide unstarred conversations"
 msgstr "Ezabatu berriketa"
 
-#: src/ConversationList/ConversationList.vala:107
+#: src/ConversationList/ConversationList.vala:103
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Filter Conversations"
 msgstr "Ezabatu berriketa"
 
-#: src/ConversationList/ConversationList.vala:130
+#: src/ConversationList/ConversationList.vala:126
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "Mezu berri %d"
 
-#: src/ConversationList/ConversationList.vala:137
+#: src/ConversationList/ConversationList.vala:133
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages…"
 msgstr "Mezu berri %d"
 
-#: src/ConversationList/ConversationList.vala:548
+#: src/ConversationList/ConversationList.vala:561
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Aldatu berriketak lekuz"
 
-#: src/ConversationList/ConversationList.vala:557
+#: src/ConversationList/ConversationList.vala:570
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "_Markatu 'Irakurri gabea'"
 
-#: src/ConversationList/ConversationList.vala:565
-#: src/MessageList/MessageList.vala:87
+#: src/ConversationList/ConversationList.vala:578
+#: src/MessageList/MessageList.vala:60
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Markatu irakurritako gisa"
 
-#: src/ConversationList/ConversationList.vala:575
-#: src/MessageList/MessageList.vala:93
+#: src/ConversationList/ConversationList.vala:588
+#: src/MessageList/MessageList.vala:66
 #, fuzzy
 msgid "Star"
 msgstr "_Izarra"
 
-#: src/ConversationList/ConversationList.vala:583
-#: src/MessageList/MessageList.vala:99
+#: src/ConversationList/ConversationList.vala:596
+#: src/MessageList/MessageList.vala:72
 #, fuzzy
 msgid "Unstar"
 msgstr "Ke_ndu izarra"
@@ -384,6 +414,30 @@ msgstr ""
 msgid "Compose new message"
 msgstr "Prestatu mezu berria (Ktrl+N, N)"
 
+#: src/FoldersView/FoldersListView.vala:59
+#, fuzzy
+msgid "Always Show Remote Images"
+msgstr "Erakutsi beti bidaltzailetik"
+
+#: src/FoldersView/FoldersListView.vala:62
+msgid "Account Settings…"
+msgstr ""
+
+#: src/FoldersView/FoldersListView.vala:86
+msgid "Menu"
+msgstr ""
+
+#: src/FoldersView/FoldersListView.vala:140
+#, fuzzy
+#| msgid "Unable to validate:\n"
+msgid "Unable to open System Settings"
+msgstr "Ezin da balidatu:\n"
+
+#: src/FoldersView/FoldersListView.vala:141
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr ""
@@ -406,53 +460,45 @@ msgstr "Bidalita"
 msgid "All Mailboxes"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:21
-#, fuzzy
-msgid "Always Show Remote Images"
-msgstr "Erakutsi beti bidaltzailetik"
-
-#: src/MessageList/MessageList.vala:24
-msgid "Account Settings…"
-msgstr ""
-
-#: src/MessageList/MessageList.vala:47
-msgid "Menu"
-msgstr ""
-
-#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
 #, fuzzy
 msgid "Reply All"
 msgstr "Erantzun _denei"
 
-#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:81
+#: src/MessageList/MessageList.vala:54
 #, fuzzy
 msgid "Mark as Unread"
 msgstr "_Markatu 'Irakurri gabea'"
 
-#: src/MessageList/MessageList.vala:112
+#: src/MessageList/MessageList.vala:85
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "Markatu berriketak"
 
-#: src/MessageList/MessageList.vala:120
+#: src/MessageList/MessageList.vala:93
+#, fuzzy
+msgid "Move Conversation to…"
+msgstr "Aldatu berriketak lekuz"
+
+#: src/MessageList/MessageList.vala:103
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "Aldatu berriketak lekuz"
 
-#: src/MessageList/MessageList.vala:128
+#: src/MessageList/MessageList.vala:111
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "Aldatu berriketak lekuz"
 
-#: src/MessageList/MessageList.vala:155
+#: src/MessageList/MessageList.vala:126
 #, fuzzy
 msgid "No Message Selected"
 msgstr "Ez da berriketarik hautatu."

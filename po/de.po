@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-22 15:22+0000\n"
-"PO-Revision-Date: 2023-03-30 14:59+0000\n"
+"POT-Creation-Date: 2023-06-01 21:56+0000\n"
+"PO-Revision-Date: 2023-05-30 17:11+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
 "Language: de\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
@@ -235,24 +235,35 @@ msgid_plural "%s from %u senders"
 msgstr[0] "%s von %u Absender"
 msgstr[1] "%s von %u Absendern"
 
-#: src/MainWindow.vala:77
+#: src/MainWindow.vala:80
 msgid "Mail"
 msgstr "Mail"
 
-#: src/MainWindow.vala:120
+#: src/MainWindow.vala:123
 msgid "Undo"
 msgstr "Rückgängig"
 
 #: src/MainWindow.vala:271
-#, fuzzy
-#| msgid "Message Deleted"
-#| msgid_plural "Messages Deleted"
 msgid "Message Archived"
 msgid_plural "Messages Archived"
-msgstr[0] "Nachricht gelöscht"
-msgstr[1] "Nachrichten gelöscht"
+msgstr[0] "Nachricht archiviert"
+msgstr[1] "Nachrichten archiviert"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#, c-format
+msgid "Failed to move messages: %s"
+msgstr "Nachrichten konnten nicht verschoben werden: %s"
+
+#: src/MainWindow.vala:285
+#, fuzzy
+#| msgid "Message Archived"
+#| msgid_plural "Messages Archived"
+msgid "Message Moved"
+msgid_plural "Messages Moved"
+msgstr[0] "Nachricht archiviert"
+msgstr[1] "Nachrichten archiviert"
+
+#: src/MainWindow.vala:299
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Nachricht gelöscht"
@@ -272,62 +283,75 @@ msgstr ""
 msgid "Online Accounts…"
 msgstr "Online-Konten …"
 
-#: src/Backend/Account.vala:47
-#, fuzzy
-#| msgid "Unable to save draft"
-msgid "Unable to connect"
-msgstr "Entwurf kann nicht gespeichert werden"
-
 #: src/Backend/Account.vala:48
-#, fuzzy
-#| msgid "There was an unexpected error while sending your message."
-msgid "There was an unexpected error while trying to connect to the server."
-msgstr "Unvorhergesehener Fehler beim Senden der Nachricht."
+msgid "Unable to connect"
+msgstr "Verbindung nicht möglich"
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/Backend/Account.vala:49
+msgid "There was an unexpected error while trying to connect to the server."
+msgstr "Unvorhergesehener Fehler beim Verbindungsaufbau zum Server."
+
+#: src/Backend/MoveOperation.vala:65
+#, c-format
+msgid "Moving messages… (%u remaining)"
+msgstr "Nachrichten veschieben … (%u verbleibend)"
+
+#: src/Backend/MoveOperation.vala:98
+msgid "No Archive folder is configured."
+msgstr "Kein Archivordner eingerichtet."
+
+#: src/Backend/MoveOperation.vala:126
+msgid "The destination folder was not found."
+msgstr "Zielordner nicht gefunden."
+
+#: src/Backend/MoveOperation.vala:130
+msgid "The source folder is the destination folder."
+msgstr "Der Quellordner ist identisch mit dem Zielordner."
+
+#: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
 msgstr "Mail durchsuchen"
 
-#: src/ConversationList/ConversationList.vala:88
+#: src/ConversationList/ConversationList.vala:84
 msgid "Hide read conversations"
 msgstr "Gelesene Unterhaltungen verstecken"
 
-#: src/ConversationList/ConversationList.vala:90
+#: src/ConversationList/ConversationList.vala:86
 msgid "Hide unstarred conversations"
 msgstr "Nicht mehr markierte Unterhaltungen verstecken"
 
-#: src/ConversationList/ConversationList.vala:107
+#: src/ConversationList/ConversationList.vala:103
 msgid "Filter Conversations"
 msgstr "Unterhaltungen filtern"
 
-#: src/ConversationList/ConversationList.vala:130
+#: src/ConversationList/ConversationList.vala:126
 msgid "Fetch new messages"
 msgstr "Neue Nachrichten abrufen"
 
-#: src/ConversationList/ConversationList.vala:137
+#: src/ConversationList/ConversationList.vala:133
 msgid "Fetching new messages…"
 msgstr "Neue Nachrichten abrufen …"
 
-#: src/ConversationList/ConversationList.vala:548
+#: src/ConversationList/ConversationList.vala:561
 msgid "Move To Trash"
 msgstr "In den Papierkorb verschieben"
 
-#: src/ConversationList/ConversationList.vala:557
+#: src/ConversationList/ConversationList.vala:570
 msgid "Mark As Unread"
 msgstr "Als ungelesen markieren"
 
-#: src/ConversationList/ConversationList.vala:565
-#: src/MessageList/MessageList.vala:87
+#: src/ConversationList/ConversationList.vala:578
+#: src/MessageList/MessageList.vala:60
 msgid "Mark as Read"
 msgstr "Als gelesen markieren"
 
-#: src/ConversationList/ConversationList.vala:575
-#: src/MessageList/MessageList.vala:93
+#: src/ConversationList/ConversationList.vala:588
+#: src/MessageList/MessageList.vala:66
 msgid "Star"
 msgstr "Kennzeichnen"
 
-#: src/ConversationList/ConversationList.vala:583
-#: src/MessageList/MessageList.vala:99
+#: src/ConversationList/ConversationList.vala:596
+#: src/MessageList/MessageList.vala:72
 msgid "Unstar"
 msgstr "Kennzeichnung entfernen"
 
@@ -363,6 +387,29 @@ msgstr "Beispiel-Internet-Seite"
 msgid "Compose new message"
 msgstr "Neue Nachricht verfassen"
 
+#: src/FoldersView/FoldersListView.vala:59
+msgid "Always Show Remote Images"
+msgstr "Externe Bilder immer anzeigen"
+
+#: src/FoldersView/FoldersListView.vala:62
+msgid "Account Settings…"
+msgstr "Konteneinstellungen …"
+
+#: src/FoldersView/FoldersListView.vala:86
+msgid "Menu"
+msgstr "Menü"
+
+#: src/FoldersView/FoldersListView.vala:140
+#, fuzzy
+#| msgid "Unable to print email"
+msgid "Unable to open System Settings"
+msgstr "Drucken der E-Mail nicht möglich"
+
+#: src/FoldersView/FoldersListView.vala:141
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "Ordner aktualisieren"
@@ -383,47 +430,42 @@ msgstr "Gesendet"
 msgid "All Mailboxes"
 msgstr "Alle Postfächer"
 
-#: src/MessageList/MessageList.vala:21
-msgid "Always Show Remote Images"
-msgstr "Externe Bilder immer anzeigen"
-
-#: src/MessageList/MessageList.vala:24
-msgid "Account Settings…"
-msgstr "Konteneinstellungen …"
-
-#: src/MessageList/MessageList.vala:47
-msgid "Menu"
-msgstr "Menü"
-
-#: src/MessageList/MessageList.vala:56 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Antworten"
 
-#: src/MessageList/MessageList.vala:65 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Allen antworten"
 
-#: src/MessageList/MessageList.vala:74 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Weiterleiten"
 
-#: src/MessageList/MessageList.vala:81
+#: src/MessageList/MessageList.vala:54
 msgid "Mark as Unread"
 msgstr "Als ungelesen markieren"
 
-#: src/MessageList/MessageList.vala:112
+#: src/MessageList/MessageList.vala:85
 msgid "Mark Conversation"
 msgstr "Unterhaltung markieren"
 
-#: src/MessageList/MessageList.vala:120
+#: src/MessageList/MessageList.vala:93
+#, fuzzy
+#| msgid "Move conversation"
+#| msgid_plural "Move conversations"
+msgid "Move Conversation to…"
+msgstr "Konversation verschieben"
+
+#: src/MessageList/MessageList.vala:103
 msgid "Move conversations to archive"
 msgstr "Unterhaltungen ins Archiv verschieben"
 
-#: src/MessageList/MessageList.vala:128
+#: src/MessageList/MessageList.vala:111
 msgid "Move conversations to Trash"
 msgstr "Unterhaltung in den Papierkorb verschieben"
 
-#: src/MessageList/MessageList.vala:155
+#: src/MessageList/MessageList.vala:126
 msgid "No Message Selected"
 msgstr "Keine Nachricht ausgewählt"
 
@@ -674,11 +716,6 @@ msgstr "Speichern"
 
 #~ msgid "Add label to conversations"
 #~ msgstr "Konversationen ein Label zuweisen"
-
-#~ msgid "Move conversation"
-#~ msgid_plural "Move conversations"
-#~ msgstr[0] "Konversation verschieben"
-#~ msgstr[1] "Konversationen verschieben"
 
 #~ msgid "A_ccounts"
 #~ msgstr "Konten"
