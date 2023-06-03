@@ -202,7 +202,7 @@ public class Mail.Application : Gtk.Application {
         try {
             if (!yield portal.request_background (
                 parent,
-                _("Mail needs to autostart and run in background in order to send notifications even while closed."),
+                _("Mail will automatically start when this device turns on and run when its window is closed so that it can send notifications when new mail arrives."),
                 (owned) command,
                 Xdp.BackgroundFlags.AUTOSTART,
                 null
