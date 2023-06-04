@@ -213,8 +213,12 @@ public class Mail.Application : Gtk.Application {
                 release ();
             }
         } catch (Error e) {
-            warning ("Failed to request autostart permissions: %s", e.message);
-            release ();
+            if (e is IOError.CANCELLED) {
+                debug ("Request for autostart permissions denied: %s", e.message);
+                release ();
+            } else {
+                warning ("Failed to request autostart permissions: %s", e.message);
+            }
         }
     }
 
