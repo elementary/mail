@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-01 21:56+0000\n"
-"PO-Revision-Date: 2023-06-01 21:56+0000\n"
+"PO-Revision-Date: 2023-06-04 16:07+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
 "Language: he\n"
@@ -390,15 +390,15 @@ msgid "Menu"
 msgstr "תפריט"
 
 #: src/FoldersView/FoldersListView.vala:140
-#, fuzzy
-#| msgid "Unable to print email"
 msgid "Unable to open System Settings"
-msgstr "לא ניתן להדפיס דוא״ל"
+msgstr "לא ניתן לפתוח את ההגדרות המערכת"
 
 #: src/FoldersView/FoldersListView.vala:141
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
+"יש לפתוח את הגדרות המערכת ידנית או להתקין את Evolution כדי להקים חשבונות "
+"מקוונים."
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
