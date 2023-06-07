@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 21:56+0000\n"
+"POT-Creation-Date: 2023-06-07 13:55+0000\n"
 "PO-Revision-Date: 2022-09-30 22:24+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/mail/mail/sk/>\n"
@@ -21,6 +21,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
+
+#: src/Application.vala:208
+msgid ""
+"Mail will automatically start when this device turns on and run when its "
+"window is closed so that it can send notifications when new mail arrives."
+msgstr ""
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
 msgid "From:"
@@ -236,7 +242,7 @@ msgstr "Pošta"
 msgid "Undo"
 msgstr "Späť"
 
-#: src/MainWindow.vala:271
+#: src/MainWindow.vala:277
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -246,13 +252,13 @@ msgstr[0] "Správy odstránené"
 msgstr[1] "Správa odstránená"
 msgstr[2] "Správy odstránené"
 
-#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
 #, fuzzy, c-format
 #| msgid "Unable to send message"
 msgid "Failed to move messages: %s"
 msgstr "Nepodarilo sa odoslať správu"
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:291
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -262,7 +268,7 @@ msgstr[0] "Správy odstránené"
 msgstr[1] "Správa odstránená"
 msgstr[2] "Správy odstránené"
 
-#: src/MainWindow.vala:299
+#: src/MainWindow.vala:305
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Správy odstránené"
