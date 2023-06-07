@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 17:11+0000\n"
+"POT-Creation-Date: 2023-06-01 21:56+0000\n"
 "PO-Revision-Date: 2023-05-25 17:07+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/"
@@ -336,17 +336,17 @@ msgid "Mark As Unread"
 msgstr "Megjelölés olvasatlanként"
 
 #: src/ConversationList/ConversationList.vala:578
-#: src/MessageList/MessageList.vala:89
+#: src/MessageList/MessageList.vala:60
 msgid "Mark as Read"
 msgstr "Megjelölés olvasottként"
 
 #: src/ConversationList/ConversationList.vala:588
-#: src/MessageList/MessageList.vala:95
+#: src/MessageList/MessageList.vala:66
 msgid "Star"
 msgstr "Csillagozás"
 
 #: src/ConversationList/ConversationList.vala:596
-#: src/MessageList/MessageList.vala:101
+#: src/MessageList/MessageList.vala:72
 msgid "Unstar"
 msgstr "Csillagozás megszüntetése"
 
@@ -382,6 +382,29 @@ msgstr "Példaoldal"
 msgid "Compose new message"
 msgstr "Új levél írása"
 
+#: src/FoldersView/FoldersListView.vala:59
+msgid "Always Show Remote Images"
+msgstr "Mindig jelenítse meg a távoli képeket"
+
+#: src/FoldersView/FoldersListView.vala:62
+msgid "Account Settings…"
+msgstr "Fiókbeállítások…"
+
+#: src/FoldersView/FoldersListView.vala:86
+msgid "Menu"
+msgstr "Menü"
+
+#: src/FoldersView/FoldersListView.vala:140
+#, fuzzy
+#| msgid "Unable to print email"
+msgid "Unable to open System Settings"
+msgstr "Nem sikerült kinyomtatni az e-mailt"
+
+#: src/FoldersView/FoldersListView.vala:141
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "Mappa frissítése"
@@ -402,53 +425,41 @@ msgstr "Elküldve"
 msgid "All Mailboxes"
 msgstr "Összes postafiók"
 
-#: src/MessageList/MessageList.vala:23
-msgid "Always Show Remote Images"
-msgstr "Mindig jelenítse meg a távoli képeket"
-
-#: src/MessageList/MessageList.vala:26
-msgid "Account Settings…"
-msgstr "Fiókbeállítások…"
-
-#: src/MessageList/MessageList.vala:49
-msgid "Menu"
-msgstr "Menü"
-
-#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Válasz"
 
-#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Válasz mindenkinek"
 
-#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Továbbítás"
 
-#: src/MessageList/MessageList.vala:83
+#: src/MessageList/MessageList.vala:54
 msgid "Mark as Unread"
 msgstr "Megjelölés olvasatlanként"
 
-#: src/MessageList/MessageList.vala:114
+#: src/MessageList/MessageList.vala:85
 msgid "Mark Conversation"
 msgstr "Beszélgetés megjelölése"
 
-#: src/MessageList/MessageList.vala:122
+#: src/MessageList/MessageList.vala:93
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move Conversation to…"
 msgstr "Beszélgetések áthelyezése a kukába"
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:103
 msgid "Move conversations to archive"
 msgstr "Beszélgetések áthelyezése az archívumba"
 
-#: src/MessageList/MessageList.vala:140
+#: src/MessageList/MessageList.vala:111
 msgid "Move conversations to Trash"
 msgstr "Beszélgetések áthelyezése a kukába"
 
-#: src/MessageList/MessageList.vala:168
+#: src/MessageList/MessageList.vala:126
 msgid "No Message Selected"
 msgstr "Nincs üzenet kiválasztva"
 

@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 17:11+0000\n"
-"PO-Revision-Date: 2023-05-30 17:11+0000\n"
+"POT-Creation-Date: 2023-06-01 21:56+0000\n"
+"PO-Revision-Date: 2023-06-04 16:07+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
 "Language: fr\n"
@@ -261,13 +261,10 @@ msgid "Failed to move messages: %s"
 msgstr "Échec du déplacement des messages : %s"
 
 #: src/MainWindow.vala:285
-#, fuzzy
-#| msgid "Message Archived"
-#| msgid_plural "Messages Archived"
 msgid "Message Moved"
 msgid_plural "Messages Moved"
-msgstr[0] "Message archivé"
-msgstr[1] "Messages archivés"
+msgstr[0] "Message déplacé"
+msgstr[1] "Messages déplacés"
 
 #: src/MainWindow.vala:299
 msgid "Message Deleted"
@@ -347,17 +344,17 @@ msgid "Mark As Unread"
 msgstr "Marquer comme non lu"
 
 #: src/ConversationList/ConversationList.vala:578
-#: src/MessageList/MessageList.vala:89
+#: src/MessageList/MessageList.vala:60
 msgid "Mark as Read"
 msgstr "Marquer comme lu"
 
 #: src/ConversationList/ConversationList.vala:588
-#: src/MessageList/MessageList.vala:95
+#: src/MessageList/MessageList.vala:66
 msgid "Star"
 msgstr "Marquer d'une étoile"
 
 #: src/ConversationList/ConversationList.vala:596
-#: src/MessageList/MessageList.vala:101
+#: src/MessageList/MessageList.vala:72
 msgid "Unstar"
 msgstr "Supprimer l'étoile"
 
@@ -393,6 +390,29 @@ msgstr "Site Web"
 msgid "Compose new message"
 msgstr "Rédiger un nouveau message"
 
+#: src/FoldersView/FoldersListView.vala:59
+msgid "Always Show Remote Images"
+msgstr "Toujours afficher les images distantes"
+
+#: src/FoldersView/FoldersListView.vala:62
+msgid "Account Settings…"
+msgstr "Paramètres de compte…"
+
+#: src/FoldersView/FoldersListView.vala:86
+msgid "Menu"
+msgstr "Menu"
+
+#: src/FoldersView/FoldersListView.vala:140
+msgid "Unable to open System Settings"
+msgstr "Impossible d'ouvrir les paramètres du système"
+
+#: src/FoldersView/FoldersListView.vala:141
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+"Ouvrez manuellement les paramètres du système ou installez Evolution pour "
+"configurer des comptes en ligne."
+
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "Actualiser le dossier"
@@ -413,54 +433,39 @@ msgstr "Envoyés"
 msgid "All Mailboxes"
 msgstr "Toutes les boîtes de réception"
 
-#: src/MessageList/MessageList.vala:23
-msgid "Always Show Remote Images"
-msgstr "Toujours afficher les images distantes"
-
-#: src/MessageList/MessageList.vala:26
-msgid "Account Settings…"
-msgstr "Paramètres de compte…"
-
-#: src/MessageList/MessageList.vala:49
-msgid "Menu"
-msgstr "Menu"
-
-#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Répondre"
 
-#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Répondre à tous"
 
-#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Transférer"
 
-#: src/MessageList/MessageList.vala:83
+#: src/MessageList/MessageList.vala:54
 msgid "Mark as Unread"
 msgstr "Marquer comme non lu"
 
-#: src/MessageList/MessageList.vala:114
+#: src/MessageList/MessageList.vala:85
 msgid "Mark Conversation"
 msgstr "Marquer la conversation"
 
-#: src/MessageList/MessageList.vala:122
-#, fuzzy
-#| msgid "Move conversation"
-#| msgid_plural "Move conversations"
+#: src/MessageList/MessageList.vala:93
 msgid "Move Conversation to…"
-msgstr "Deplacer la conversation"
+msgstr "Deplacer la conversation vers…"
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:103
 msgid "Move conversations to archive"
 msgstr "Déplacer les conversations dans les archives"
 
-#: src/MessageList/MessageList.vala:140
+#: src/MessageList/MessageList.vala:111
 msgid "Move conversations to Trash"
 msgstr "Déplacer les conversations dans la corbeille"
 
-#: src/MessageList/MessageList.vala:168
+#: src/MessageList/MessageList.vala:126
 msgid "No Message Selected"
 msgstr "Aucun message sélectionné"
 

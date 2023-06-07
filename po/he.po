@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 17:11+0000\n"
-"PO-Revision-Date: 2023-05-30 17:11+0000\n"
+"POT-Creation-Date: 2023-06-01 21:56+0000\n"
+"PO-Revision-Date: 2023-06-04 16:07+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
 "Language: he\n"
@@ -250,13 +250,10 @@ msgid "Failed to move messages: %s"
 msgstr "העברת הודעות נכשלה: %s"
 
 #: src/MainWindow.vala:285
-#, fuzzy
-#| msgid "Message Archived"
-#| msgid_plural "Messages Archived"
 msgid "Message Moved"
 msgid_plural "Messages Moved"
-msgstr[0] "הודעה הועברה לארכיון"
-msgstr[1] "הודעות הועברו לארכיון"
+msgstr[0] "הודעה הועברה"
+msgstr[1] "הודעות הועברו"
 
 #: src/MainWindow.vala:299
 msgid "Message Deleted"
@@ -334,17 +331,17 @@ msgid "Mark As Unread"
 msgstr "סימון כלא נקרא"
 
 #: src/ConversationList/ConversationList.vala:578
-#: src/MessageList/MessageList.vala:89
+#: src/MessageList/MessageList.vala:60
 msgid "Mark as Read"
 msgstr "סימון כנקרא"
 
 #: src/ConversationList/ConversationList.vala:588
-#: src/MessageList/MessageList.vala:95
+#: src/MessageList/MessageList.vala:66
 msgid "Star"
 msgstr "כוכב"
 
 #: src/ConversationList/ConversationList.vala:596
-#: src/MessageList/MessageList.vala:101
+#: src/MessageList/MessageList.vala:72
 msgid "Unstar"
 msgstr "הסרת כוכב"
 
@@ -380,6 +377,29 @@ msgstr "אתר לדוגמה"
 msgid "Compose new message"
 msgstr "כתיבת הודעה חדשה"
 
+#: src/FoldersView/FoldersListView.vala:59
+msgid "Always Show Remote Images"
+msgstr "תמיד להציג תמונות מרוחקות"
+
+#: src/FoldersView/FoldersListView.vala:62
+msgid "Account Settings…"
+msgstr "הגדרות חשבון…"
+
+#: src/FoldersView/FoldersListView.vala:86
+msgid "Menu"
+msgstr "תפריט"
+
+#: src/FoldersView/FoldersListView.vala:140
+msgid "Unable to open System Settings"
+msgstr "לא ניתן לפתוח את ההגדרות המערכת"
+
+#: src/FoldersView/FoldersListView.vala:141
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+"יש לפתוח את הגדרות המערכת ידנית או להתקין את Evolution כדי להקים חשבונות "
+"מקוונים."
+
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "רענון התיקייה"
@@ -400,54 +420,39 @@ msgstr "נשלח"
 msgid "All Mailboxes"
 msgstr "כל תיבות הדוא״ל"
 
-#: src/MessageList/MessageList.vala:23
-msgid "Always Show Remote Images"
-msgstr "תמיד להציג תמונות מרוחקות"
-
-#: src/MessageList/MessageList.vala:26
-msgid "Account Settings…"
-msgstr "הגדרות חשבון…"
-
-#: src/MessageList/MessageList.vala:49
-msgid "Menu"
-msgstr "תפריט"
-
-#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "להשיב"
 
-#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "להשיב לכולם"
 
-#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "העברה"
 
-#: src/MessageList/MessageList.vala:83
+#: src/MessageList/MessageList.vala:54
 msgid "Mark as Unread"
 msgstr "סימון כלא נקרא"
 
-#: src/MessageList/MessageList.vala:114
+#: src/MessageList/MessageList.vala:85
 msgid "Mark Conversation"
 msgstr "סימון הדיון"
 
-#: src/MessageList/MessageList.vala:122
-#, fuzzy
-#| msgid "Move conversation"
-#| msgid_plural "Move conversations"
+#: src/MessageList/MessageList.vala:93
 msgid "Move Conversation to…"
-msgstr "העברת דיון"
+msgstr "העברת דיון אל…"
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:103
 msgid "Move conversations to archive"
 msgstr "העברת דיונים לארכיון"
 
-#: src/MessageList/MessageList.vala:140
+#: src/MessageList/MessageList.vala:111
 msgid "Move conversations to Trash"
 msgstr "העברת דיונים לאשפה"
 
-#: src/MessageList/MessageList.vala:168
+#: src/MessageList/MessageList.vala:126
 msgid "No Message Selected"
 msgstr "לא נבחרה הודעה"
 

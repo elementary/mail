@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 17:11+0000\n"
+"POT-Creation-Date: 2023-06-01 21:56+0000\n"
 "PO-Revision-Date: 2017-04-15 20:40+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Uighur <https://l10n.elementary.io/projects/mail/mail/ug/>\n"
@@ -362,18 +362,18 @@ msgid "Mark As Unread"
 msgstr "ئوقۇلمىغان دەپ بەلگە قىلىش"
 
 #: src/ConversationList/ConversationList.vala:578
-#: src/MessageList/MessageList.vala:89
+#: src/MessageList/MessageList.vala:60
 msgid "Mark as Read"
 msgstr "ئوقۇلغان دەپ بەلگە قىلىش"
 
 #: src/ConversationList/ConversationList.vala:588
-#: src/MessageList/MessageList.vala:95
+#: src/MessageList/MessageList.vala:66
 #, fuzzy
 msgid "Star"
 msgstr "يۇلتۇز بەلگىسى قىتىش"
 
 #: src/ConversationList/ConversationList.vala:596
-#: src/MessageList/MessageList.vala:101
+#: src/MessageList/MessageList.vala:72
 #, fuzzy
 msgid "Unstar"
 msgstr "يۇلتۇز بەلگىسىنى ئۆچۈرۈش"
@@ -416,6 +416,30 @@ msgstr "توربىكەت"
 msgid "Compose new message"
 msgstr "يىڭى ئېلخەت يىزىش"
 
+#: src/FoldersView/FoldersListView.vala:59
+#, fuzzy
+msgid "Always Show Remote Images"
+msgstr "يىراق مۇساپىلىك رەسىملەرنى داۋاملىق كۆرسىتىش:"
+
+#: src/FoldersView/FoldersListView.vala:62
+msgid "Account Settings…"
+msgstr ""
+
+#: src/FoldersView/FoldersListView.vala:86
+msgid "Menu"
+msgstr "تىزىملىك"
+
+#: src/FoldersView/FoldersListView.vala:140
+#, fuzzy
+#| msgid "Unable to validate:\n"
+msgid "Unable to open System Settings"
+msgstr "دەلىللەش مەغلۇپ بولدى:\n"
+
+#: src/FoldersView/FoldersListView.vala:141
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr ""
@@ -440,59 +464,46 @@ msgstr "يوللانغانلىرى"
 msgid "All Mailboxes"
 msgstr "بارلىق ئېلخەتلەر"
 
-#: src/MessageList/MessageList.vala:23
-#, fuzzy
-msgid "Always Show Remote Images"
-msgstr "يىراق مۇساپىلىك رەسىملەرنى داۋاملىق كۆرسىتىش:"
-
-#: src/MessageList/MessageList.vala:26
-msgid "Account Settings…"
-msgstr ""
-
-#: src/MessageList/MessageList.vala:49
-msgid "Menu"
-msgstr "تىزىملىك"
-
-#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "جاۋاب قايتۇرۇش"
 
-#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
 #, fuzzy
 msgid "Reply All"
 msgstr "ھەممىسىگە جاۋاب قايتۇرۇش"
 
-#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "يەتكۈزۈش"
 
-#: src/MessageList/MessageList.vala:83
+#: src/MessageList/MessageList.vala:54
 msgid "Mark as Unread"
 msgstr "ئوقۇلمىغان دەپ بەلگە قىلىش"
 
-#: src/MessageList/MessageList.vala:114
+#: src/MessageList/MessageList.vala:85
 #, fuzzy
 msgid "Mark Conversation"
 msgstr "دىئالوگقا بەلگە قىلىش"
 
-#: src/MessageList/MessageList.vala:122
+#: src/MessageList/MessageList.vala:93
 #, fuzzy
 #| msgid "Move conversation"
 #| msgid_plural "Move conversations"
 msgid "Move Conversation to…"
 msgstr "دىئالوگلارنى يۆتكەش"
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:103
 #, fuzzy
 msgid "Move conversations to archive"
 msgstr "دىئالوگلارنى يۆتكەش"
 
-#: src/MessageList/MessageList.vala:140
+#: src/MessageList/MessageList.vala:111
 #, fuzzy
 msgid "Move conversations to Trash"
 msgstr "دىئالوگلارنى يۆتكەش"
 
-#: src/MessageList/MessageList.vala:168
+#: src/MessageList/MessageList.vala:126
 #, fuzzy
 msgid "No Message Selected"
 msgstr "ھىچقانداق دىئالوگ تاللانمىدى."

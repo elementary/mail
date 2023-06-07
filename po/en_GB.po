@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 17:11+0000\n"
-"PO-Revision-Date: 2023-05-30 17:11+0000\n"
+"POT-Creation-Date: 2023-06-01 21:56+0000\n"
+"PO-Revision-Date: 2023-06-04 16:07+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/mail/en_GB/>\n"
@@ -249,13 +249,10 @@ msgid "Failed to move messages: %s"
 msgstr "Failed to move messages: %s"
 
 #: src/MainWindow.vala:285
-#, fuzzy
-#| msgid "Message Archived"
-#| msgid_plural "Messages Archived"
 msgid "Message Moved"
 msgid_plural "Messages Moved"
-msgstr[0] "Message Archived"
-msgstr[1] "Messages Archived"
+msgstr[0] "Message Moved"
+msgstr[1] "Messages Moved"
 
 #: src/MainWindow.vala:299
 msgid "Message Deleted"
@@ -333,17 +330,17 @@ msgid "Mark As Unread"
 msgstr "Mark As Unread"
 
 #: src/ConversationList/ConversationList.vala:578
-#: src/MessageList/MessageList.vala:89
+#: src/MessageList/MessageList.vala:60
 msgid "Mark as Read"
 msgstr "Mark as Read"
 
 #: src/ConversationList/ConversationList.vala:588
-#: src/MessageList/MessageList.vala:95
+#: src/MessageList/MessageList.vala:66
 msgid "Star"
 msgstr "Star"
 
 #: src/ConversationList/ConversationList.vala:596
-#: src/MessageList/MessageList.vala:101
+#: src/MessageList/MessageList.vala:72
 msgid "Unstar"
 msgstr "Unstar"
 
@@ -379,6 +376,28 @@ msgstr "Example Website"
 msgid "Compose new message"
 msgstr "Compose new message"
 
+#: src/FoldersView/FoldersListView.vala:59
+msgid "Always Show Remote Images"
+msgstr "Always Show Remote Images"
+
+#: src/FoldersView/FoldersListView.vala:62
+msgid "Account Settings…"
+msgstr "Account Settings…"
+
+#: src/FoldersView/FoldersListView.vala:86
+msgid "Menu"
+msgstr "Menu"
+
+#: src/FoldersView/FoldersListView.vala:140
+msgid "Unable to open System Settings"
+msgstr "Unable to open System Settings"
+
+#: src/FoldersView/FoldersListView.vala:141
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+"Open System Settings manually or install Evolution to set up online accounts."
+
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
 msgstr "Refresh folder"
@@ -399,54 +418,39 @@ msgstr "Sent"
 msgid "All Mailboxes"
 msgstr "All Mailboxes"
 
-#: src/MessageList/MessageList.vala:23
-msgid "Always Show Remote Images"
-msgstr "Always Show Remote Images"
-
-#: src/MessageList/MessageList.vala:26
-msgid "Account Settings…"
-msgstr "Account Settings…"
-
-#: src/MessageList/MessageList.vala:49
-msgid "Menu"
-msgstr "Menu"
-
-#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Reply"
 
-#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Reply All"
 
-#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Forward"
 
-#: src/MessageList/MessageList.vala:83
+#: src/MessageList/MessageList.vala:54
 msgid "Mark as Unread"
 msgstr "Mark as Unread"
 
-#: src/MessageList/MessageList.vala:114
+#: src/MessageList/MessageList.vala:85
 msgid "Mark Conversation"
 msgstr "Mark Conversation"
 
-#: src/MessageList/MessageList.vala:122
-#, fuzzy
-#| msgid "Move conversation"
-#| msgid_plural "Move conversations"
+#: src/MessageList/MessageList.vala:93
 msgid "Move Conversation to…"
-msgstr "Move conversation"
+msgstr "Move Conversation to…"
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:103
 msgid "Move conversations to archive"
 msgstr "Move conversations to archive"
 
-#: src/MessageList/MessageList.vala:140
+#: src/MessageList/MessageList.vala:111
 msgid "Move conversations to Trash"
 msgstr "Move conversations to Rubbish"
 
-#: src/MessageList/MessageList.vala:168
+#: src/MessageList/MessageList.vala:126
 msgid "No Message Selected"
 msgstr "No Message Selected"
 
