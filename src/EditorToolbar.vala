@@ -36,7 +36,6 @@ public class EditorToolbar : Gtk.Box {
     construct {
         action_group = new SimpleActionGroup ();
         action_group.add_action_entries (ACTION_ENTRIES, this);
-        insert_action_group (ACTION_GROUP_PREFIX, action_group);
 
         var application = (Gtk.Application) GLib.Application.get_default ();
         application.set_accels_for_action (ACTION_PREFIX + ACTION_INSERT_LINK, {"<Control>K"});
@@ -117,6 +116,10 @@ public class EditorToolbar : Gtk.Box {
         add (formatting_buttons);
         add (clear_format);
         add (link);
+
+        map.connect (() => {
+            get_toplevel ().insert_action_group (ACTION_GROUP_PREFIX, action_group);
+        });
 
         web_view.selection_changed.connect (update_actions);
     }
