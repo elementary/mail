@@ -40,8 +40,14 @@ public class EditorToolbar : Gtk.Box {
 
         var application = (Gtk.Application) GLib.Application.get_default ();
         application.set_accels_for_action (ACTION_PREFIX + ACTION_INSERT_LINK, {"<Control>K"});
-        application.set_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH), {"<Control>percent"});
-        application.set_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_UNDERLINE, ACTION_UNDERLINE), {"<Control>U"});
+        application.set_accels_for_action (
+            Action.print_detailed_name (ACTION_PREFIX + ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH),
+            {"<Control>percent"}
+        );
+        application.set_accels_for_action (
+            Action.print_detailed_name (ACTION_PREFIX + ACTION_UNDERLINE, ACTION_UNDERLINE),
+            {"<Control>U"}
+        );
 
         var bold = new Gtk.ToggleButton () {
             action_name = ACTION_PREFIX + ACTION_BOLD,
@@ -62,7 +68,9 @@ public class EditorToolbar : Gtk.Box {
             action_target = ACTION_UNDERLINE,
             image = new Gtk.Image.from_icon_name ("format-text-underline-symbolic", Gtk.IconSize.MENU),
             tooltip_markup = Granite.markup_accel_tooltip (
-                application.get_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_UNDERLINE, ACTION_UNDERLINE)),
+                application.get_accels_for_action (
+                    Action.print_detailed_name (ACTION_PREFIX + ACTION_UNDERLINE, ACTION_UNDERLINE)
+                ),
                 _("Underline")
             )
         };
@@ -72,7 +80,9 @@ public class EditorToolbar : Gtk.Box {
             action_target = ACTION_STRIKETHROUGH,
             image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU),
             tooltip_markup = Granite.markup_accel_tooltip (
-                application.get_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH)),
+                application.get_accels_for_action (
+                    Action.print_detailed_name (ACTION_PREFIX + ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH)
+                ),
                 _("Strikethrough")
             )
         };
@@ -149,16 +159,27 @@ public class EditorToolbar : Gtk.Box {
 
     private void update_actions () {
         web_view.query_command_state.begin ("bold", (obj, res) => {
-            action_group.change_action_state (ACTION_BOLD, web_view.query_command_state.end (res) ? ACTION_BOLD : "");
+            action_group.change_action_state (
+                ACTION_BOLD,
+                web_view.query_command_state.end (res) ? ACTION_BOLD : ""
+            );
         });
         web_view.query_command_state.begin ("italic", (obj, res) => {
-            action_group.change_action_state (ACTION_ITALIC, web_view.query_command_state.end (res) ? ACTION_ITALIC : "");
+            action_group.change_action_state (
+                ACTION_ITALIC,
+                web_view.query_command_state.end (res) ? ACTION_ITALIC : ""
+            );
         });
         web_view.query_command_state.begin ("underline", (obj, res) => {
-            action_group.change_action_state (ACTION_UNDERLINE, web_view.query_command_state.end (res) ? ACTION_UNDERLINE : "");
+            action_group.change_action_state (
+                ACTION_UNDERLINE, web_view.query_command_state.end (res) ? ACTION_UNDERLINE : ""
+            );
         });
         web_view.query_command_state.begin ("strikethrough", (obj, res) => {
-            action_group.change_action_state (ACTION_STRIKETHROUGH, web_view.query_command_state.end (res) ? ACTION_STRIKETHROUGH : "");
+            action_group.change_action_state (
+                ACTION_STRIKETHROUGH,
+                web_view.query_command_state.end (res) ? ACTION_STRIKETHROUGH : ""
+            );
         });
     }
 }
