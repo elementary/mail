@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-01 21:56+0000\n"
-"PO-Revision-Date: 2023-06-01 21:56+0000\n"
+"PO-Revision-Date: 2023-06-04 16:07+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
 "Language: nl\n"
@@ -399,15 +399,15 @@ msgid "Menu"
 msgstr "Menu"
 
 #: src/FoldersView/FoldersListView.vala:140
-#, fuzzy
-#| msgid "Unable to print email"
 msgid "Unable to open System Settings"
-msgstr "E-mail afdrukken is mislukt"
+msgstr "Kon Systeeminstellingen niet openen"
 
 #: src/FoldersView/FoldersListView.vala:141
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
+"Open Systeeminstellingen handmatig of installeer Evolution om online "
+"accounts op te zetten."
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
