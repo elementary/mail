@@ -37,7 +37,7 @@ public class EditorToolbar : Gtk.Box {
         action_group = new SimpleActionGroup ();
         action_group.add_action_entries (ACTION_ENTRIES, this);
 
-        var application = (Gtk.Application) GLib.Application.get_default ();
+        unowned var application = (Gtk.Application) GLib.Application.get_default ();
         application.set_accels_for_action (ACTION_PREFIX + ACTION_INSERT_LINK, {"<Control>K"});
         application.set_accels_for_action (
             Action.print_detailed_name (ACTION_PREFIX + ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH),
