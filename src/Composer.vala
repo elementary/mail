@@ -691,13 +691,18 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
     private async void get_attachments (Camel.DataWrapper message_content) {
         if (message_content is Camel.Multipart) {
+            GLib.File? tmp_dir = null;
             unowned var content = (Camel.Multipart)message_content;
             for (uint i = 0; i < content.get_number (); i++) {
                 unowned var part = content.get_part (i);
                 unowned var field = part.get_mime_type_field ();
                 if (part.disposition == "attachment") {
                     try {
-                        var file = File.new_for_path (Path.build_filename (Environment.get_tmp_dir (), part.get_filename ()));
+                        if (tmp_dir == null) {
+                            tmp_dir = yield GLib.File.new_tmp_dir_async (null, GLib.Priority.DEFAULT, null);
+                        }
+
+                        var file = tmp_dir.get_child (part.get_filename ());
                         if (!file.query_exists ()) {
                             var output_stream = yield file.create_async (FileCreateFlags.NONE);
                             yield part.content.decode_to_output_stream (output_stream, GLib.Priority.DEFAULT, null);
