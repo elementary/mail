@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-07 13:55+0000\n"
-"PO-Revision-Date: 2023-05-30 17:11+0000\n"
+"PO-Revision-Date: 2023-06-12 10:07+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
 "Language: de\n"
@@ -35,6 +35,9 @@ msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
 msgstr ""
+"Mail startet automatisch beim Einschalten dieses Geräts und läuft auch "
+"weiter, wenn sein Fenster geschlossen wird, damit es Benachrichtigungen "
+"anzeigen kann, sobald neue E-Mails eintreffen."
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
 msgid "From:"
@@ -261,13 +264,10 @@ msgid "Failed to move messages: %s"
 msgstr "Nachrichten konnten nicht verschoben werden: %s"
 
 #: src/MainWindow.vala:291
-#, fuzzy
-#| msgid "Message Archived"
-#| msgid_plural "Messages Archived"
 msgid "Message Moved"
 msgid_plural "Messages Moved"
-msgstr[0] "Nachricht archiviert"
-msgstr[1] "Nachrichten archiviert"
+msgstr[0] "Nachricht verschoben"
+msgstr[1] "Nachrichten verschoben"
 
 #: src/MainWindow.vala:305
 msgid "Message Deleted"
@@ -406,15 +406,15 @@ msgid "Menu"
 msgstr "Menü"
 
 #: src/FoldersView/FoldersListView.vala:140
-#, fuzzy
-#| msgid "Unable to print email"
 msgid "Unable to open System Settings"
-msgstr "Drucken der E-Mail nicht möglich"
+msgstr "Öffnen der Systemeinstellungen nicht möglich"
 
 #: src/FoldersView/FoldersListView.vala:141
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
+"Öffnen Sie die Systemeinstellungen manuell oder installieren Sie Evolution, "
+"um Online-Konten einzurichten."
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
@@ -457,11 +457,8 @@ msgid "Mark Conversation"
 msgstr "Unterhaltung markieren"
 
 #: src/MessageList/MessageList.vala:93
-#, fuzzy
-#| msgid "Move conversation"
-#| msgid_plural "Move conversations"
 msgid "Move Conversation to…"
-msgstr "Konversation verschieben"
+msgstr "Konversation verschieben nach …"
 
 #: src/MessageList/MessageList.vala:103
 msgid "Move conversations to archive"
