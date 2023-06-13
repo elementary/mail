@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 21:56+0000\n"
+"POT-Creation-Date: 2023-06-07 13:55+0000\n"
 "PO-Revision-Date: 2021-07-15 13:34+0000\n"
 "Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/mail/mail/es/>\n"
@@ -28,6 +28,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
+
+#: src/Application.vala:208
+msgid ""
+"Mail will automatically start when this device turns on and run when its "
+"window is closed so that it can send notifications when new mail arrives."
+msgstr ""
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
 msgid "From:"
@@ -249,7 +255,7 @@ msgstr "Correo"
 msgid "Undo"
 msgstr "Deshacer"
 
-#: src/MainWindow.vala:271
+#: src/MainWindow.vala:277
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -258,13 +264,13 @@ msgid_plural "Messages Archived"
 msgstr[0] "Mensaje eliminado"
 msgstr[1] "Mensajes eliminados"
 
-#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
 #, fuzzy, c-format
 #| msgid "Unable to save draft"
 msgid "Failed to move messages: %s"
 msgstr "No se pudo guardar el borrador"
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:291
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -273,7 +279,7 @@ msgid_plural "Messages Moved"
 msgstr[0] "Mensaje eliminado"
 msgstr[1] "Mensajes eliminados"
 
-#: src/MainWindow.vala:299
+#: src/MainWindow.vala:305
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Mensaje eliminado"

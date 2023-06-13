@@ -213,6 +213,12 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             session_started ();
         });
 
+        delete_event.connect (() => {
+            ((Application)application).request_background.begin (() => destroy ());
+
+            return Gdk.EVENT_STOP;
+        });
+
         destroy.connect (() => {
             session.disconnect (account_removed_handler);
             session.disconnect (account_added_handler);

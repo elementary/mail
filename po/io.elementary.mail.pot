@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 21:56+0000\n"
+"POT-Creation-Date: 2023-06-07 13:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: src/Application.vala:208
+msgid ""
+"Mail will automatically start when this device turns on and run when its "
+"window is closed so that it can send notifications when new mail arrives."
+msgstr ""
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
 msgid "From:"
@@ -226,24 +232,24 @@ msgstr ""
 msgid "Undo"
 msgstr ""
 
-#: src/MainWindow.vala:271
+#: src/MainWindow.vala:277
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
 #, c-format
 msgid "Failed to move messages: %s"
 msgstr ""
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:291
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:299
+#: src/MainWindow.vala:305
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""

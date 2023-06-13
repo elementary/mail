@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 21:56+0000\n"
+"POT-Creation-Date: 2023-06-07 13:55+0000\n"
 "PO-Revision-Date: 2020-01-06 00:07+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/mail/mail/sl/"
@@ -24,6 +24,12 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Poedit-SourceCharset: utf-8\n"
+
+#: src/Application.vala:208
+msgid ""
+"Mail will automatically start when this device turns on and run when its "
+"window is closed so that it can send notifications when new mail arrives."
+msgstr ""
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
 msgid "From:"
@@ -260,7 +266,7 @@ msgstr "Elektronska pošta"
 msgid "Undo"
 msgstr "Razveljavi"
 
-#: src/MainWindow.vala:271
+#: src/MainWindow.vala:277
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -271,13 +277,13 @@ msgstr[1] "Sporočila izbrisana"
 msgstr[2] "Sporočila izbrisana"
 msgstr[3] "Sporočila izbrisana"
 
-#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
 #, fuzzy, c-format
 #| msgid "Delete draft"
 msgid "Failed to move messages: %s"
 msgstr "Izbriši osnutek"
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:291
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -288,7 +294,7 @@ msgstr[1] "Sporočila izbrisana"
 msgstr[2] "Sporočila izbrisana"
 msgstr[3] "Sporočila izbrisana"
 
-#: src/MainWindow.vala:299
+#: src/MainWindow.vala:305
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Sporočilo izbrisano"
