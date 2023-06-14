@@ -22,6 +22,7 @@ public extern const string WEBKIT_EXTENSION_PATH;
 
 public class Mail.WebView : WebKit.WebView {
     public signal void image_load_blocked ();
+    public signal void image_removed (string uri);
     public signal void link_activated (string url);
     public signal void selection_changed ();
     public signal void load_finished ();
@@ -275,6 +276,9 @@ public class Mail.WebView : WebKit.WebView {
                     image_load_blocked ();
                 }
 
+                return true;
+            case "image-removed":
+                image_removed (message.parameters.get_string ());
                 return true;
             case "selection-changed":
                 selection_changed ();
