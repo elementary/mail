@@ -174,6 +174,12 @@ public class Mail.WebView : WebKit.WebView {
         internal_resources[name] = data;
     }
 
+    public void remove_internal_resource (string name) {
+        internal_resources.unset (name);
+        var message = new WebKit.UserMessage ("remove-resource", new Variant.string ("cid:%s".printf (name)));
+        send_message_to_page.begin (message, cancellable);
+    }
+
     public void load_images () {
         if (loaded) {
             var message = new WebKit.UserMessage ("set-image-loading-enabled", new Variant.boolean (true));
