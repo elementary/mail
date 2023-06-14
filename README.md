@@ -14,6 +14,8 @@ You'll need the following dependencies:
 * libglib2.0-dev
 * libgranite-dev >= 6.0.0
 * libhandy-1-dev >= 1.1.90
+* libportal-dev
+* libportal-gtk3-dev
 * libwebkit2gtk-4.0-dev
 * meson
 * valac

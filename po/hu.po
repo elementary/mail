@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 21:56+0000\n"
-"PO-Revision-Date: 2023-05-25 17:07+0000\n"
+"POT-Creation-Date: 2023-06-07 13:55+0000\n"
+"PO-Revision-Date: 2023-06-07 13:55+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/"
 ">\n"
@@ -23,6 +23,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
+
+#: src/Application.vala:208
+msgid ""
+"Mail will automatically start when this device turns on and run when its "
+"window is closed so that it can send notifications when new mail arrives."
+msgstr ""
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
 msgid "From:"
@@ -237,28 +243,24 @@ msgstr "E-mail"
 msgid "Undo"
 msgstr "Visszavonás"
 
-#: src/MainWindow.vala:271
+#: src/MainWindow.vala:277
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "Üzenet archiválva"
 msgstr[1] "Üzenetek archiválva"
 
-#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
-#, fuzzy, c-format
-#| msgid "Unable to send message"
+#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
+#, c-format
 msgid "Failed to move messages: %s"
-msgstr "Nem sikerült elküldeni az üzenetet"
+msgstr "Az üzenetek áthelyezése sikertelen: %s"
 
-#: src/MainWindow.vala:285
-#, fuzzy
-#| msgid "Message Archived"
-#| msgid_plural "Messages Archived"
+#: src/MainWindow.vala:291
 msgid "Message Moved"
 msgid_plural "Messages Moved"
-msgstr[0] "Üzenet archiválva"
-msgstr[1] "Üzenetek archiválva"
+msgstr[0] "Üzenet áthelyezve"
+msgstr[1] "Üzenetek áthelyezve"
 
-#: src/MainWindow.vala:299
+#: src/MainWindow.vala:305
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Üzenet törölve"
@@ -289,19 +291,19 @@ msgstr "Egy váratlan hiba merült fel a szerverhez való kapcsolódás közben.
 #: src/Backend/MoveOperation.vala:65
 #, c-format
 msgid "Moving messages… (%u remaining)"
-msgstr ""
+msgstr "Üzenetek áthelyezése… (fennmaradó: %u)"
 
 #: src/Backend/MoveOperation.vala:98
 msgid "No Archive folder is configured."
-msgstr ""
+msgstr "Nincs beállítva archívummappa."
 
 #: src/Backend/MoveOperation.vala:126
 msgid "The destination folder was not found."
-msgstr ""
+msgstr "A célmappa nem található."
 
 #: src/Backend/MoveOperation.vala:130
 msgid "The source folder is the destination folder."
-msgstr ""
+msgstr "A forrásmappa megegyezik a célmappával."
 
 #: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
@@ -395,15 +397,15 @@ msgid "Menu"
 msgstr "Menü"
 
 #: src/FoldersView/FoldersListView.vala:140
-#, fuzzy
-#| msgid "Unable to print email"
 msgid "Unable to open System Settings"
-msgstr "Nem sikerült kinyomtatni az e-mailt"
+msgstr "A Rendszerbeállítások megnyitása sikertelen"
 
 #: src/FoldersView/FoldersListView.vala:141
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
+"Nyissa meg a Rendszerbeállításokat vagy telepítse az Evolutiont az online "
+"fiókok beállításához."
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
@@ -446,10 +448,8 @@ msgid "Mark Conversation"
 msgstr "Beszélgetés megjelölése"
 
 #: src/MessageList/MessageList.vala:93
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move Conversation to…"
-msgstr "Beszélgetések áthelyezése a kukába"
+msgstr "Beszélgetés áthelyezése…"
 
 #: src/MessageList/MessageList.vala:103
 msgid "Move conversations to archive"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 21:56+0000\n"
+"POT-Creation-Date: 2023-06-07 13:55+0000\n"
 "PO-Revision-Date: 2023-06-04 16:07+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
@@ -28,6 +28,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
+
+#: src/Application.vala:208
+msgid ""
+"Mail will automatically start when this device turns on and run when its "
+"window is closed so that it can send notifications when new mail arrives."
+msgstr ""
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
 msgid "From:"
@@ -244,24 +250,24 @@ msgstr "Mail"
 msgid "Undo"
 msgstr "Ongedaan maken"
 
-#: src/MainWindow.vala:271
+#: src/MainWindow.vala:277
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "Bericht gearchiveerd"
 msgstr[1] "Berichten gearchiveerd"
 
-#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
 #, c-format
 msgid "Failed to move messages: %s"
 msgstr "Kon berichten niet verplaatsen: %s"
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:291
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "Bericht verplaatst"
 msgstr[1] "Berichten verplaatst"
 
-#: src/MainWindow.vala:299
+#: src/MainWindow.vala:305
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Bericht verwijderd"

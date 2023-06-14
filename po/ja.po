@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 21:56+0000\n"
-"PO-Revision-Date: 2023-06-04 16:07+0000\n"
+"POT-Creation-Date: 2023-06-07 13:55+0000\n"
+"PO-Revision-Date: 2023-06-10 08:07+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -14,6 +14,13 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
+
+#: src/Application.vala:208
+msgid ""
+"Mail will automatically start when this device turns on and run when its "
+"window is closed so that it can send notifications when new mail arrives."
+msgstr "メール受信時に通知できるよう、“メール”はデバイス起動時に自動的にバックグラウ"
+"ンドで起動し、ウィンドウを閉じても常駐します。"
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
 msgid "From:"
@@ -224,22 +231,22 @@ msgstr "メール"
 msgid "Undo"
 msgstr "元に戻す"
 
-#: src/MainWindow.vala:271
+#: src/MainWindow.vala:277
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "メッセージをアーカイブしました"
 
-#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
 #, c-format
 msgid "Failed to move messages: %s"
 msgstr "メッセージを移動できませんでした: %s"
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:291
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "メッセージを移動しました"
 
-#: src/MainWindow.vala:299
+#: src/MainWindow.vala:305
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "メッセージを削除しました"
@@ -379,7 +386,8 @@ msgstr "“システム設定”を開けません"
 #: src/FoldersView/FoldersListView.vala:141
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
-msgstr "オンラインアカウントをセットアップするには、“システム設定”を直接開くか、"
+msgstr ""
+"オンラインアカウントをセットアップするには、“システム設定”を直接開くか、"
 "Evolution をインストールしてください。"
 
 #: src/FoldersView/FolderSourceItem.vala:38

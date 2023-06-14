@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 21:56+0000\n"
-"PO-Revision-Date: 2023-06-04 16:07+0000\n"
+"POT-Creation-Date: 2023-06-07 13:55+0000\n"
+"PO-Revision-Date: 2023-06-10 08:07+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
 "Language: pl\n"
@@ -33,6 +33,14 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 "X-Poedit-Country: Poland\n"
 "X-Poedit-Language: Polish\n"
+
+#: src/Application.vala:208
+msgid ""
+"Mail will automatically start when this device turns on and run when its "
+"window is closed so that it can send notifications when new mail arrives."
+msgstr ""
+"Poczta uruchomi się automatycznie po uruchomieniu urządzenia i po zamknięciu "
+"okna aby nadal móc wysyłać powiadomienia o nowych wiadomościach."
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
 msgid "From:"
@@ -249,26 +257,26 @@ msgstr "Poczta"
 msgid "Undo"
 msgstr "Cofnij"
 
-#: src/MainWindow.vala:271
+#: src/MainWindow.vala:277
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "Wiadomość zarchiwizowana"
 msgstr[1] "Wiadomości zarchiwizowane"
 msgstr[2] "Wiadomości zarchiwizowane"
 
-#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
 #, c-format
 msgid "Failed to move messages: %s"
 msgstr "Nie udało się przenieść wiadomości: %s"
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:291
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "Wiadomość przeniesiona"
 msgstr[1] "Wiadomości przeniesione"
 msgstr[2] "Wiadomości przeniesione"
 
-#: src/MainWindow.vala:299
+#: src/MainWindow.vala:305
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Wiadomość usunięta"
