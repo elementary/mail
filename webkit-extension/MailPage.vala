@@ -40,7 +40,7 @@ public class Mail.Page : Object {
                 if (val.is_null ()) {
                     unowned List<string> entry = image_uris.find_custom (image_uri, strcmp);
                 	image_uris.remove_link (entry);
-                    page.send_message_to_view.begin (new WebKit.UserMessage ("image-removed", image_uri), null);
+                	page.send_message_to_view.begin (new WebKit.UserMessage ("image-removed", image_uri), null);
                 }
             }
         });
