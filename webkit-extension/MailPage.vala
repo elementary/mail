@@ -39,8 +39,8 @@ public class Mail.Page : Object {
                 var val = js_context.evaluate ("""document.querySelector('[src="%s"]')""".printf (image_uri), -1);
                 if (val.is_null ()) {
                     unowned List<string> entry = image_uris.find_custom (image_uri, strcmp);
-                	image_uris.remove_link (entry);
-                	page.send_message_to_view.begin (new WebKit.UserMessage ("image-removed", image_uri), null);
+                    image_uris.remove_link (entry);
+                    page.send_message_to_view.begin (new WebKit.UserMessage ("image-removed", image_uri), null);
                 }
             }
         });
