@@ -102,8 +102,8 @@ public class Mail.Page : Object {
 
                 return true;
             case "remove-resource":
-                string src = message.parameters.get_string ();
-                js_context.evaluate ("""document.querySelector('[src="%s"]').remove();""".printf (src), -1);
+                string uri = message.parameters.get_string ();
+                js_context.evaluate ("""document.querySelector('[src="%s"]').remove();""".printf (uri), -1);
                 return true;
             case "query-command-state":
                 unowned string command = message.parameters.get_string ();

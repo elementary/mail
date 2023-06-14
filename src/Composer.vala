@@ -561,12 +561,12 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                     web_view.add_internal_resource (attachment.cid, inpustream);
                     web_view.execute_editor_command (
                         "insertImage",
-                        "cid:%s".printf (attachment.cid)
+                        attachment.uri
                     );
 
                     ulong handler = 0;
                     handler = web_view.image_removed.connect ((uri) => {
-                        if (uri == "cid:%s".printf (attachment.cid)) {
+                        if (uri == attachment.uri) {
                             attachment.destroy ();
                             web_view.disconnect (handler);
                         }
@@ -952,6 +952,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         public GLib.File file { get; construct; }
         public string disposition { get; construct; }
         public string cid { get; construct; }
+        public string uri { get; construct; }
 
         private GLib.FileInfo? info;
 
@@ -970,6 +971,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 GLib.FileAttribute.STANDARD_SIZE;
 
             cid = GLib.Uuid.string_random ();
+            uri = "cid:%s".printf (cid);
 
             try {
                 info = file.query_info (QUERY_STRING, GLib.FileQueryInfoFlags.NONE);
