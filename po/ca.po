@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-07 13:55+0000\n"
-"PO-Revision-Date: 2023-05-25 17:06+0000\n"
+"PO-Revision-Date: 2023-06-15 00:07+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -28,6 +28,9 @@ msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
 msgstr ""
+"El Correu s'iniciarà automàticament quan aquest dispositiu s'engegui i "
+"s'executarà quan se'n tanqui la finestra perquè pugui enviar notificacions "
+"quan arribi correu nou."
 
 #: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
 msgid "From:"
@@ -248,19 +251,15 @@ msgstr[0] "Missatge arxivat"
 msgstr[1] "Missatges arxivats"
 
 #: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
-#, fuzzy, c-format
-#| msgid "Unable to send message"
+#, c-format
 msgid "Failed to move messages: %s"
-msgstr "No es pot enviar el missatge."
+msgstr "No s'han pogut moure els missatges: %s"
 
 #: src/MainWindow.vala:291
-#, fuzzy
-#| msgid "Message Archived"
-#| msgid_plural "Messages Archived"
 msgid "Message Moved"
 msgid_plural "Messages Moved"
-msgstr[0] "Missatge arxivat"
-msgstr[1] "Missatges arxivats"
+msgstr[0] "Missatge mogut"
+msgstr[1] "Missatges moguts"
 
 #: src/MainWindow.vala:305
 msgid "Message Deleted"
@@ -292,19 +291,19 @@ msgstr "Hi ha hagut un error inesperat a l'hora de connectar amb el servidor."
 #: src/Backend/MoveOperation.vala:65
 #, c-format
 msgid "Moving messages… (%u remaining)"
-msgstr ""
+msgstr "Es mouen missatges... (%u restant)"
 
 #: src/Backend/MoveOperation.vala:98
 msgid "No Archive folder is configured."
-msgstr ""
+msgstr "No hi ha cap carpeta d'arxiu configurada."
 
 #: src/Backend/MoveOperation.vala:126
 msgid "The destination folder was not found."
-msgstr ""
+msgstr "No s'ha trobat la carpeta de destinació."
 
 #: src/Backend/MoveOperation.vala:130
 msgid "The source folder is the destination folder."
-msgstr ""
+msgstr "La carpeta d'origen és la carpeta de destinació."
 
 #: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
@@ -398,15 +397,15 @@ msgid "Menu"
 msgstr "Menú"
 
 #: src/FoldersView/FoldersListView.vala:140
-#, fuzzy
-#| msgid "Unable to print email"
 msgid "Unable to open System Settings"
-msgstr "No s'ha pogut imprimir el missatge."
+msgstr "No es pot obrir la configuració del sistema."
 
 #: src/FoldersView/FoldersListView.vala:141
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
+"Obriu la configuració del sistema manualment o instal·leu l'Evolution per "
+"configurar comptes en línia."
 
 #: src/FoldersView/FolderSourceItem.vala:38
 msgid "Refresh folder"
@@ -449,11 +448,8 @@ msgid "Mark Conversation"
 msgstr "Marca la conversa"
 
 #: src/MessageList/MessageList.vala:93
-#, fuzzy
-#| msgid "Move conversation"
-#| msgid_plural "Move conversations"
 msgid "Move Conversation to…"
-msgstr "Desplaça la conversa"
+msgstr "Mou la conversa a…"
 
 #: src/MessageList/MessageList.vala:103
 msgid "Move conversations to archive"
