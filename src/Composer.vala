@@ -539,8 +539,8 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
     private void on_insert_image () {
         var image_filter = new Gtk.FileFilter ();
-    	image_filter.set_filter_name (_("Images"));
-    	image_filter.add_mime_type ("image/*");
+        image_filter.set_filter_name (_("Images"));
+        image_filter.add_mime_type ("image/*");
 
         var filechooser = new Gtk.FileChooserNative (
             _("Choose an image"),
