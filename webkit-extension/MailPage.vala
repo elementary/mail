@@ -25,16 +25,16 @@ public class Mail.Page : Object {
         var signature = document.querySelector('#elementary-message-signature');
         var quote = document.querySelector('#elementary-message-quote');
         if (!signature.hidden || !quote.hidden) {
-            body.classList.remove ('fill');
+            body.style.height = 100%;
         } else {
-            body.classList.add ('fill');
+            body.style.height = initial;
         }
     """;
 
     private const string JS_CLEAN_HTML = """
         var body = document.querySelector('#elementary-message-body');
         body.removeAttribute ("contenteditable");
-        body.removeAttribute ("class");
+        body.style.height = initial;
 
         var signature = document.querySelector('#elementary-message-signature');
         if (signature.hidden) {
