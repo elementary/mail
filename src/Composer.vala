@@ -613,6 +613,9 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 ancestor_message_info = info;
 
                 if (content_to_quote.contains ("elementary-message-body")) {
+                    //We can assume the message was created using the elementary mail composer
+                    //and has the necessary tags. Therefore we overwrite the blank templates
+                    //whole html body
                     web_view.set_content_of_element ("body", content_to_quote);
                 } else {
                     web_view.set_content_of_element ("#elementary-message-body", content_to_quote);
