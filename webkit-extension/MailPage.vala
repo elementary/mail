@@ -66,24 +66,18 @@ public class Mail.Page : Object {
     private bool on_page_user_message_received (WebKit.WebPage page, WebKit.UserMessage message) {
         var js_context = page.get_main_frame ().get_js_context ();
         switch (message.name) {
-            case "set-body-content":
-                unowned string body_content = message.parameters.get_string ();
-                var body = js_context.evaluate ("document.querySelector('#elementary-message-body')", -1);
-                body.object_set_property ("innerHTML", new JSC.Value.string (js_context, body_content));
-                return true;
-            case "set-signature-content":
-                unowned string signature_content = message.parameters.get_string ();
-                var signature = js_context.evaluate ("document.querySelector('#elementary-message-signature')", -1);
-                signature.object_set_property ("hidden", new JSC.Value.boolean (js_context, signature_content.strip () == ""));
-                signature.object_set_property ("innerHTML", new JSC.Value.string (js_context, signature_content));
-                js_context.evaluate (JS_EXPAND_BODY, -1);
-                return true;
-            case "set-quote-content":
-                unowned string quote_content = message.parameters.get_string ();
-                var quote = js_context.evaluate ("document.querySelector('#elementary-message-quote')", -1);
-                quote.object_set_property ("hidden", new JSC.Value.boolean (js_context, quote_content.strip () == ""));
-                quote.object_set_property ("innerHTML", new JSC.Value.string (js_context, quote_content));
-                js_context.evaluate (JS_EXPAND_BODY, -1);
+            case "set-content-of-element":
+                string element_selector, content;
+                message.parameters.get ("(ss)", out element_selector, out content);
+
+                var element = js_context.evaluate ("document.querySelector('%s')".printf (element_selector), -1);
+
+                if (element_selector == "#elementary-message-signature" ||
+                    element_selector == "#elementary-message-quote") {
+                    element.object_set_property ("hidden", new JSC.Value.boolean (js_context, content.strip () == ""));
+                }
+
+                element.object_set_property ("innerHTML", new JSC.Value.string (js_context, content));
                 return true;
             case "get-body-html":
                 if (message.parameters.get_boolean ()) {

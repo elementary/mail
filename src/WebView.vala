@@ -26,6 +26,7 @@ public class Mail.WebView : WebKit.WebView {
     public signal void selection_changed ();
     public signal void load_finished ();
 
+    public bool bind_height_to_page_height { get; set; default = false; }
     public bool body_html_changed { get; private set; default = false; }
 
     private const string INTERNAL_URL_BODY = "elementary-mail:body";
@@ -36,10 +37,7 @@ public class Mail.WebView : WebKit.WebView {
     private bool loaded = false;
     private bool queued_load_images = false;
     private string? queued_html_message = null;
-    private string? queued_body_content = null;
-    private string? queued_signature_content = null;
-    private string? queued_quote_content = null;
-    public bool bind_height_to_page_height { get; set; default = false; }
+    private Gee.HashMap<string, string> queued_elements;
     private GLib.Cancellable cancellable;
 
     static construct {
@@ -62,6 +60,7 @@ public class Mail.WebView : WebKit.WebView {
         hexpand = true;
 
         internal_resources = new Gee.HashMap<string, InputStream> ();
+        queued_elements = new Gee.HashMap<string, string> ();
 
         decide_policy.connect (on_decide_policy);
         load_changed.connect (on_load_changed);
@@ -104,14 +103,11 @@ public class Mail.WebView : WebKit.WebView {
             if (queued_html_message != null) {
                 load_html_message ((owned) queued_html_message);
             }
-            if (queued_body_content != null) {
-                set_body_content ((owned) queued_body_content);
-            }
-            if (queued_signature_content != null) {
-                set_signature_content ((owned) queued_signature_content);
-            }
-            if (queued_quote_content != null) {
-                set_quote_content ((owned) queued_quote_content);
+
+            if (queued_elements.size > 0) {
+                foreach (var element in queued_elements.keys) {
+                    set_content_of_element (element, queued_elements.get (element));
+                }
             }
 
             if (queued_load_images) {
@@ -145,11 +141,20 @@ public class Mail.WebView : WebKit.WebView {
         base.load_html (body, INTERNAL_URL_BODY);
     }
 
+    public void set_content_of_element (owned string element, owned string content) {
+        if (loaded) {
+            var message = new WebKit.UserMessage ("set-content-of-element", new Variant ("(ss)", element, content));
+            send_message_to_page.begin (message, cancellable);
+        } else {
+            queued_elements[element] = content;
+        }
+    }
+
     public void load_html_message (owned string html_message) {
         if (!html_message.contains ("elementary-message-body")) {
             //We have to asume the message wasn't created using the elementary mail composer
             //and therefore doesn't have tags with the necessary ids
-            set_body_content ((owned) html_message);
+            set_content_of_element ("#elementary-message-body", (owned) html_message);
             return;
         }
 
@@ -158,33 +163,6 @@ public class Mail.WebView : WebKit.WebView {
             send_message_to_page.begin (message, cancellable);
         } else {
             queued_html_message = (owned) html_message;
-        }
-    }
-
-    public void set_body_content (owned string content) {
-        if (loaded) {
-            var message = new WebKit.UserMessage ("set-body-content", new Variant.take_string ((owned) content));
-            send_message_to_page.begin (message, cancellable);
-        } else {
-            queued_body_content = (owned) content;
-        }
-    }
-
-    public void set_signature_content (owned string content) {
-        if (loaded) {
-            var message = new WebKit.UserMessage ("set-signature-content", new Variant.take_string ((owned) content));
-            send_message_to_page.begin (message, cancellable);
-        } else {
-            queued_signature_content = (owned) content;
-        }
-    }
-
-    public void set_quote_content (owned string content) {
-        if (loaded) {
-            var message = new WebKit.UserMessage ("set-quote-content", new Variant.take_string ((owned) content));
-            send_message_to_page.begin (message, cancellable);
-        } else {
-            queued_quote_content = (owned) content;
         }
     }
 

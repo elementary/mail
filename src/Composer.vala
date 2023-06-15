@@ -456,7 +456,10 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                     Camel.MimeFilterToHTMLFlags.CONVERT_SPACES |
                     Camel.MimeFilterToHTMLFlags.CONVERT_URLS;
 
-                web_view.set_body_content (Camel.text_to_html (result["body"].to_array ()[0], flags, 0));
+                web_view.set_content_of_element (
+                    "#elementary-message-body",
+                    Camel.text_to_html (result["body"].to_array ()[0], flags, 0)
+                );
             }
 
             if ("attachment" in result) {
@@ -682,7 +685,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                     message_content += content_to_quote;
                 }
 
-                web_view.set_quote_content (message_content);
+                web_view.set_content_of_element ("#elementary-message-quote", message_content);
             }
         }
     }
