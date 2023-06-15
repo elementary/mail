@@ -538,6 +538,10 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     }
 
     private void on_insert_image () {
+        var image_filter = new Gtk.FileFilter ();
+    	image_filter.set_filter_name ("Images");
+    	image_filter.add_mime_type ("image/*");
+
         var filechooser = new Gtk.FileChooserNative (
             _("Choose an image"),
             (Gtk.Window) get_toplevel (),
@@ -545,6 +549,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             _("Insert"),
             _("Cancel")
         ) {
+            filter = image_filter,
             select_multiple = false
         };
 
