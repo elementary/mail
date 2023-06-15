@@ -554,7 +554,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 try {
                     var attachment = new Attachment (file, Attachment.DISPOSITION_INLINE);
                     attachment_box.add (attachment);
-                    attachment_box.show_all ();
 
                     var inpustream = file.read ();
                     web_view.add_internal_resource (attachment.uri, inpustream);

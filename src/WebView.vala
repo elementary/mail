@@ -272,7 +272,9 @@ public class Mail.WebView : WebKit.WebView {
 
                 return true;
             case "image-removed":
-                image_removed (message.parameters.get_string ());
+                unowned var uri = message.parameters.get_string ();
+                internal_resources.unset (uri);
+                image_removed (uri);
                 return true;
             case "selection-changed":
                 selection_changed ();
