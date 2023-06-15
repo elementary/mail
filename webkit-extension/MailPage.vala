@@ -101,16 +101,6 @@ public class Mail.Page : Object {
                 }
 
                 return true;
-            case "remove-resource":
-                string uri = message.parameters.get_string ();
-
-                unowned List<string>? entry = image_uris.find_custom (uri, strcmp);
-                if (entry != null) {
-                    image_uris.remove_link (entry);
-                }
-
-                js_context.evaluate ("""document.querySelector('[src="%s"]').remove();""".printf (uri), -1);
-                return true;
             case "query-command-state":
                 unowned string command = message.parameters.get_string ();
                 var document = js_context.evaluate ("document", -1);

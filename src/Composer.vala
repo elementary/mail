@@ -553,7 +553,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 var file = filechooser.get_file ();
                 try {
                     var attachment = new Attachment (file, Attachment.DISPOSITION_INLINE);
-                    attachment.removed.connect (() => web_view.remove_internal_resource (attachment.uri));
                     attachment_box.add (attachment);
                     attachment_box.show_all ();
 
@@ -944,8 +943,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     }
 
     private class Attachment : Gtk.FlowBoxChild {
-        public signal void removed ();
-
         public const string DISPOSITION_ATTACHMENT = "attachment";
         public const string DISPOSITION_INLINE = "inline";
 
@@ -1009,6 +1006,9 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             box.add (size_label);
             box.add (remove_button);
 
+            if (disposition == DISPOSITION_INLINE) {
+                no_show_all = true;
+            }
             margin_top = 3;
             margin_bottom = 3;
             margin_start = 3;
@@ -1016,7 +1016,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             add (box);
 
             remove_button.clicked.connect (() => {
-                removed ();
                 destroy ();
             });
         }
