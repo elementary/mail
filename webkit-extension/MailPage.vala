@@ -25,9 +25,9 @@ public class Mail.Page : Object {
         var signature = document.querySelector('#elementary-message-signature');
         var quote = document.querySelector('#elementary-message-quote');
         if (!signature.hidden || !quote.hidden) {
-            body.style.height = 100%;
+            body.style.height = "initial";
         } else {
-            body.style.height = initial;
+            body.style.height = "100%";
         }
     """;
 
@@ -72,12 +72,20 @@ public class Mail.Page : Object {
 
                 var element = js_context.evaluate ("document.querySelector('%s')".printf (element_selector), -1);
 
+                if (element.is_null ()) {
+                    warning ("HTML element '%s' not found.", element_selector);
+                    return true;
+                }
+
                 if (element_selector == "#elementary-message-signature" ||
                     element_selector == "#elementary-message-quote") {
                     element.object_set_property ("hidden", new JSC.Value.boolean (js_context, content.strip () == ""));
                 }
 
                 element.object_set_property ("innerHTML", new JSC.Value.string (js_context, content));
+
+                js_context.evaluate (JS_EXPAND_BODY, -1);
+
                 return true;
             case "get-body-html":
                 if (message.parameters.get_boolean ()) {
@@ -85,12 +93,6 @@ public class Mail.Page : Object {
                 }
                 JSC.Value val = js_context.evaluate ("document.querySelector('body').innerHTML;", -1);
                 message.send_reply (new WebKit.UserMessage ("get-body-html", new Variant.take_string (val.to_string ())));
-                return true;
-            case "set-message":
-                unowned string message_html = message.parameters.get_string ();
-                var body = js_context.evaluate ("document.querySelector('body')", -1);
-                body.object_set_property ("innerHTML", new JSC.Value.string (js_context, message_html));
-                js_context.evaluate (JS_EXPAND_BODY, -1);
                 return true;
             case "get-page-height":
                 JSC.Value val = js_context.evaluate ("""
