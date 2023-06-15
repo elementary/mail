@@ -611,7 +611,12 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         if (content_to_quote != null) {
             if (type == Type.DRAFT) {
                 ancestor_message_info = info;
-                web_view.load_html_message (content_to_quote);
+
+                if (content_to_quote.contains ("elementary-message-body")) {
+                    web_view.set_content_of_element ("body", content_to_quote);
+                } else {
+                    web_view.set_content_of_element ("#elementary-message-body", content_to_quote);
+                }
 
                 unowned var to = message.get_recipients (Camel.RECIPIENT_TYPE_TO);
                 if (to != null) {
@@ -778,8 +783,8 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         }
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
-        var message_html = yield web_view.get_body_html (true);
-        var message = build_message (message_html);
+        var body_html = yield web_view.get_body_html (true);
+        var message = build_message (body_html);
         var sender = build_sender (message, from_combo.get_active_text ());
         var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
 
@@ -1012,12 +1017,12 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             return false;
         }
 
-        var message_html = yield web_view.get_body_html ();
+        var body_html = yield web_view.get_body_html ();
 
-        if (message_html != null) {
+        if (body_html != null) {
             unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
 
-            var message = build_message (message_html);
+            var message = build_message (body_html);
             var sender = build_sender (message, from_combo.get_active_text ());
             var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
 

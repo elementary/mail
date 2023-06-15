@@ -36,7 +36,6 @@ public class Mail.WebView : WebKit.WebView {
 
     private bool loaded = false;
     private bool queued_load_images = false;
-    private string? queued_html_message = null;
     private Gee.HashMap<string, string> queued_elements;
     private GLib.Cancellable cancellable;
 
@@ -100,9 +99,6 @@ public class Mail.WebView : WebKit.WebView {
 
         if (event == WebKit.LoadEvent.FINISHED) {
             loaded = true;
-            if (queued_html_message != null) {
-                load_html_message ((owned) queued_html_message);
-            }
 
             if (queued_elements.size > 0) {
                 foreach (var element in queued_elements.keys) {
@@ -147,22 +143,6 @@ public class Mail.WebView : WebKit.WebView {
             send_message_to_page.begin (message, cancellable);
         } else {
             queued_elements[element] = content;
-        }
-    }
-
-    public void load_html_message (owned string html_message) {
-        if (!html_message.contains ("elementary-message-body")) {
-            //We have to asume the message wasn't created using the elementary mail composer
-            //and therefore doesn't have tags with the necessary ids
-            set_content_of_element ("#elementary-message-body", (owned) html_message);
-            return;
-        }
-
-        if (loaded) {
-            var message = new WebKit.UserMessage ("set-message", new Variant.take_string ((owned) html_message));
-            send_message_to_page.begin (message, cancellable);
-        } else {
-            queued_html_message = (owned) html_message;
         }
     }
 
