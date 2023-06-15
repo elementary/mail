@@ -539,7 +539,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
     private void on_insert_image () {
         var image_filter = new Gtk.FileFilter ();
-    	image_filter.set_filter_name ("Images");
+    	image_filter.set_filter_name (_("Images"));
     	image_filter.add_mime_type ("image/*");
 
         var filechooser = new Gtk.FileChooserNative (
@@ -556,16 +556,15 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         filechooser.response.connect ((response) => {
             if (response == Gtk.ResponseType.ACCEPT) {
                 var file = filechooser.get_file ();
+
                 try {
+                    var inpustream = file.read ();
+
                     var attachment = new Attachment (file, Attachment.DISPOSITION_INLINE);
                     attachment_box.add (attachment);
 
-                    var inpustream = file.read ();
                     web_view.add_internal_resource (attachment.uri, inpustream);
-                    web_view.execute_editor_command (
-                        "insertImage",
-                        attachment.uri
-                    );
+                    web_view.execute_editor_command ("insertImage", attachment.uri);
 
                     ulong handler = 0;
                     handler = web_view.image_removed.connect ((uri) => {
@@ -575,7 +574,17 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                         }
                     });
                 } catch (Error e) {
-                    warning ("Failed to load file '%s': %s", file.get_parse_name (), e.message);
+                    var error_dialog = new Granite.MessageDialog (
+                        _("Unable to insert image"),
+                        _("There was an unexpected error while trying to insert the image."),
+                        new ThemedIcon ("insert-image"),
+                        Gtk.ButtonsType.CLOSE
+                    ) {
+                        badge_icon = new ThemedIcon ("dialog-error")
+                    };
+                    error_dialog.show_error_details (e.message);
+                    error_dialog.present ();
+                    error_dialog.response.connect (() => error_dialog.destroy ());
                 }
             }
 
