@@ -171,13 +171,13 @@ public class Mail.WebView : WebKit.WebView {
         return Gdk.EVENT_STOP;
     }
 
-    public void add_internal_resource (string name, InputStream data) {
-        internal_resources[name] = data;
+    public void add_internal_resource (string uri, InputStream data) {
+        internal_resources[uri] = data;
     }
 
-    public void remove_internal_resource (string name) {
-        internal_resources.unset (name);
-        var message = new WebKit.UserMessage ("remove-resource", new Variant.string ("cid:%s".printf (name)));
+    public void remove_internal_resource (string uri) {
+        internal_resources.unset (uri);
+        var message = new WebKit.UserMessage ("remove-resource", new Variant.string (uri));
         send_message_to_page.begin (message, cancellable);
     }
 
@@ -256,11 +256,11 @@ public class Mail.WebView : WebKit.WebView {
 
     private bool handle_internal_response (WebKit.URISchemeRequest request) {
 #if HAS_SOUP_3
-        string name = GLib.Uri.unescape_string (request.get_path ());
+        string uri = GLib.Uri.unescape_string (request.get_uri ());
 #else
-        string name = Soup.URI.decode (request.get_path ());
+        string uri = Soup.URI.decode (request.get_uri ());
 #endif
-        InputStream? buf = this.internal_resources[name];
+        InputStream? buf = this.internal_resources[uri];
         if (buf != null) {
             request.finish (buf, -1, null);
             return true;

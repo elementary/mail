@@ -553,12 +553,12 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 var file = filechooser.get_file ();
                 try {
                     var attachment = new Attachment (file, Attachment.DISPOSITION_INLINE);
-                    attachment.removed.connect (() => web_view.remove_internal_resource (attachment.cid));
+                    attachment.removed.connect (() => web_view.remove_internal_resource (attachment.uri));
                     attachment_box.add (attachment);
                     attachment_box.show_all ();
 
                     var inpustream = file.read ();
-                    web_view.add_internal_resource (attachment.cid, inpustream);
+                    web_view.add_internal_resource (attachment.uri, inpustream);
                     web_view.execute_editor_command (
                         "insertImage",
                         attachment.uri

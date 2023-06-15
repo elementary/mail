@@ -661,7 +661,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         Bytes bytes = ByteArray.free_to_bytes (byte_array);
         var inline_stream = new MemoryInputStream.from_bytes (bytes);
-        web_view.add_internal_resource (part.get_content_id (), inline_stream);
+        web_view.add_internal_resource ("cid:%s".printf (part.get_content_id ()), inline_stream);
     }
 
     public async string get_message_body_html () {
