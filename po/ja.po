@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-16 09:52+0000\n"
-"PO-Revision-Date: 2023-06-10 08:07+0000\n"
+"PO-Revision-Date: 2023-06-16 17:05+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -110,34 +110,24 @@ msgid "Cancel"
 msgstr "キャンセル"
 
 #: src/Composer.vala:542
-#, fuzzy
-#| msgid "Show Images"
 msgid "Images"
-msgstr "画像を表示"
+msgstr "画像"
 
 #: src/Composer.vala:546
-#, fuzzy
-#| msgid "Choose a file"
 msgid "Choose an image"
-msgstr "ファイルを選択"
+msgstr "画像を選択"
 
 #: src/Composer.vala:549
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert"
-msgstr "リンクを挿入します"
+msgstr "挿入"
 
 #: src/Composer.vala:578
-#, fuzzy
-#| msgid "Unable to send message"
 msgid "Unable to insert image"
-msgstr "メッセージを送信できません"
+msgstr "画像を挿入できません"
 
 #: src/Composer.vala:579
-#, fuzzy
-#| msgid "There was an unexpected error while trying to connect to the server."
 msgid "There was an unexpected error while trying to insert the image."
-msgstr "サーバーへの接続試行中に予期しないエラーが発生しました。"
+msgstr "画像の挿入試行中に予期しないエラーが発生しました。"
 
 #: src/Composer.vala:698
 msgid "%a, %b %-e, %Y at %-l:%M %p"
