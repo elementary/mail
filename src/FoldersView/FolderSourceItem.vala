@@ -39,9 +39,6 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
 
     construct {
         cancellable = new GLib.Cancellable ();
-
-        editable = true;
-        edited.connect (rename);
     }
 
     ~FolderSourceItem () {
@@ -49,17 +46,21 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
     }
 
     public override Gtk.Menu? get_context_menu () {
-        var rename_item = new Gtk.MenuItem.with_label (_("Rename folder"));
-        var refresh_item = new Gtk.MenuItem.with_label (_("Refresh folder"));
-
         var menu = new Gtk.Menu ();
-        menu.add (rename_item);
-        menu.add (new Gtk.SeparatorMenuItem ());
+
+        var refresh_item = new Gtk.MenuItem.with_label (_("Refresh folder"));
+        refresh_item.activate.connect (() => refresh.begin ());
         menu.add (refresh_item);
+
+        if (!is_special_folder) {
+            var rename_item = new Gtk.MenuItem.with_label (_("Rename folder"));
+            rename_item.activate.connect (() => start_edit ());
+            menu.add (new Gtk.SeparatorMenuItem ());
+            menu.add (rename_item);
+        }
+
         menu.show_all ();
 
-        rename_item.activate.connect (() => start_edit ());
-        refresh_item.activate.connect (() => refresh.begin ());
         return menu;
     }
 
@@ -115,6 +116,11 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
                 pos = 8;
                 is_special_folder = false;
                 break;
+        }
+
+        if (!is_special_folder) {
+            editable = true;
+            edited.connect (rename);
         }
     }
 
