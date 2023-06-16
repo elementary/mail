@@ -2585,6 +2585,10 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             this.refilter ();
     }
 
+    public void start_editing_item (Item item) {
+        tree.start_editing_item (item);
+    }
+
     /**
      * Applies the filter method set by {@link Granite.Widgets.SourceList.set_filter_func}
      * to all the items that are part of the current tree.

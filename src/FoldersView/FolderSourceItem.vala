@@ -21,11 +21,13 @@
  */
 
 public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
+    public signal void start_edit ();
+
     public string full_name;
     public Backend.Account account { get; construct; }
 
-    private Cancellable cancellable;
     private bool can_modify = true;
+    private Cancellable cancellable;
     private string old_name;
 
     public FolderSourceItem (Backend.Account account, Camel.FolderInfo folderinfo) {
@@ -45,11 +47,16 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
     }
 
     public override Gtk.Menu? get_context_menu () {
-        var menu = new Gtk.Menu ();
+        var rename_item = new Gtk.MenuItem.with_label (_("Rename folder"));
         var refresh_item = new Gtk.MenuItem.with_label (_("Refresh folder"));
+
+        var menu = new Gtk.Menu ();
+        menu.add (rename_item);
+        menu.add (new Gtk.SeparatorMenuItem ());
         menu.add (refresh_item);
         menu.show_all ();
 
+        rename_item.activate.connect (() => start_edit ());
         refresh_item.activate.connect (() => refresh.begin ());
         return menu;
     }
@@ -101,7 +108,7 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
     }
 
     private async void refresh () {
-        var offlinestore = (Camel.Store) account.service;
+        var offlinestore = (Camel.Store)account.service;
         try {
             var folder = yield offlinestore.get_folder (full_name, 0, GLib.Priority.DEFAULT, cancellable);
             yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
@@ -115,14 +122,14 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
         try {
             yield offlinestore.rename_folder (name, new_name, GLib.Priority.DEFAULT, cancellable);
         } catch (Error e) {
-            warning (e.message);
+            warning ("Unable to rename folder '%s': %s", old_name, e.message);
             name = old_name;
 
             MainWindow? main_window = null;
             foreach (unowned var window in ((Application)GLib.Application.get_default ()).get_windows ()) {
                 if (window is MainWindow) {
                     main_window = (MainWindow) window;
-                    main_window.send_error_toast (_("Unable to rename folder '%s': %s").printf (name, e.message));
+                    main_window.send_error_toast (_("Unable to rename folder '%s': %s").printf (old_name, e.message));
                     break;
                 }
             }

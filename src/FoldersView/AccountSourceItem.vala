@@ -24,6 +24,7 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem {
     public Mail.Backend.Account account { get; construct; }
 
     public signal void loaded ();
+    public signal void start_edit (Mail.SourceList.Item item);
 
     private GLib.Cancellable connect_cancellable;
     private Gee.HashMap<string, FolderSourceItem> folder_items;
@@ -114,6 +115,7 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem {
             var folder_item = new FolderSourceItem (account, folderinfo);
             saved_state.bind_with_expandable_item (folder_item);
             folder_items[folderinfo.full_name] = folder_item;
+            folder_item.start_edit.connect (() => start_edit (folder_item));
 
             if (folderinfo.child != null) {
                 show_info ((Camel.FolderInfo?) folderinfo.child, folder_item);
