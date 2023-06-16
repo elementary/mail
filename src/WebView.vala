@@ -22,6 +22,7 @@ public extern const string WEBKIT_EXTENSION_PATH;
 
 public class Mail.WebView : WebKit.WebView {
     public signal void image_load_blocked ();
+    public signal void image_removed (string uri);
     public signal void link_activated (string url);
     public signal void selection_changed ();
     public signal void load_finished ();
@@ -170,8 +171,8 @@ public class Mail.WebView : WebKit.WebView {
         return Gdk.EVENT_STOP;
     }
 
-    public void add_internal_resource (string name, InputStream data) {
-        internal_resources[name] = data;
+    public void add_internal_resource (string uri, InputStream data) {
+        internal_resources[uri] = data;
     }
 
     public void load_images () {
@@ -249,11 +250,11 @@ public class Mail.WebView : WebKit.WebView {
 
     private bool handle_internal_response (WebKit.URISchemeRequest request) {
 #if HAS_SOUP_3
-        string name = GLib.Uri.unescape_string (request.get_path ());
+        string uri = GLib.Uri.unescape_string (request.get_uri ());
 #else
-        string name = Soup.URI.decode (request.get_path ());
+        string uri = Soup.URI.decode (request.get_uri ());
 #endif
-        InputStream? buf = this.internal_resources[name];
+        InputStream? buf = this.internal_resources[uri];
         if (buf != null) {
             request.finish (buf, -1, null);
             return true;
@@ -269,6 +270,11 @@ public class Mail.WebView : WebKit.WebView {
                     image_load_blocked ();
                 }
 
+                return true;
+            case "image-removed":
+                unowned var uri = message.parameters.get_string ();
+                internal_resources.unset (uri);
+                image_removed (uri);
                 return true;
             case "selection-changed":
                 selection_changed ();

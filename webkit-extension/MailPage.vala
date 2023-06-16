@@ -22,14 +22,27 @@ public class Mail.Page : Object {
     private const string[] ALLOWED_SCHEMES = { "cid", "data", "about", "elementary-mail" };
 
     private bool show_images = false;
+    private List<string> image_uris;
     unowned WebKit.WebPage page;
 
     public Page (WebKit.WebPage page) {
         this.page = page;
+        image_uris = new List<string> ();
+
         page.send_request.connect (on_send_request);
         page.user_message_received.connect (on_page_user_message_received);
         page.get_editor ().selection_changed.connect (() => {
             page.send_message_to_view.begin (new WebKit.UserMessage ("selection-changed", null), null);
+
+            var js_context = page.get_main_frame ().get_js_context ();
+            foreach (var image_uri in image_uris) {
+                var val = js_context.evaluate ("""document.querySelector('[src="%s"]')""".printf (image_uri), -1);
+                if (val.is_null ()) {
+                    unowned List<string> entry = image_uris.find_custom (image_uri, strcmp);
+                    image_uris.remove_link (entry);
+                    page.send_message_to_view.begin (new WebKit.UserMessage ("image-removed", image_uri), null);
+                }
+            }
         });
     }
 
@@ -77,6 +90,11 @@ public class Mail.Page : Object {
                     new JSC.Value.boolean (js_context, false),
                     new JSC.Value.string (js_context, argument)
                 };
+
+                if (command == "insertImage") {
+                    image_uris.append (argument);
+                }
+
                 var ret = document.object_invoke_methodv ("execCommand", parameters);
                 if (!ret.is_boolean () || ret.to_boolean () == false) {
                     critical (ret.to_string ());
