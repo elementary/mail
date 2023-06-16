@@ -114,9 +114,6 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem {
             var folder_item = new FolderSourceItem (account, folderinfo);
             saved_state.bind_with_expandable_item (folder_item);
             folder_items[folderinfo.full_name] = folder_item;
-            folder_item.refresh.connect (() => {
-                refresh_folder.begin (folder_item.full_name);
-            });
 
             if (folderinfo.child != null) {
                 show_info ((Camel.FolderInfo?) folderinfo.child, folder_item);
@@ -124,16 +121,6 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem {
 
             item.add (folder_item);
             folderinfo = (Camel.FolderInfo?) folderinfo.next;
-        }
-    }
-
-    private async void refresh_folder (string folder_name) {
-        var offlinestore = (Camel.Store) account.service;
-        try {
-            var folder = yield offlinestore.get_folder (folder_name, 0, GLib.Priority.DEFAULT, connect_cancellable);
-            yield folder.refresh_info (GLib.Priority.DEFAULT, connect_cancellable);
-        } catch (Error e) {
-            critical (e.message);
         }
     }
 }

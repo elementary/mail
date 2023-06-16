@@ -21,16 +21,27 @@
  */
 
 public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
-    public signal void refresh ();
-
     public string full_name;
     public Backend.Account account { get; construct; }
 
+    private Cancellable cancellable;
     private bool can_modify = true;
+    private string old_name;
 
     public FolderSourceItem (Backend.Account account, Camel.FolderInfo folderinfo) {
         Object (account: account);
         update_infos (folderinfo);
+    }
+
+    construct {
+        cancellable = new GLib.Cancellable ();
+
+        editable = true;
+        edited.connect (rename);
+    }
+
+    ~FolderSourceItem () {
+        cancellable.cancel ();
     }
 
     public override Gtk.Menu? get_context_menu () {
@@ -39,12 +50,12 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
         menu.add (refresh_item);
         menu.show_all ();
 
-        refresh_item.activate.connect (() => refresh ());
+        refresh_item.activate.connect (() => refresh.begin ());
         return menu;
     }
 
     public void update_infos (Camel.FolderInfo folderinfo) {
-        name = folderinfo.display_name;
+        name = old_name = folderinfo.display_name;
         full_name = folderinfo.full_name;
         if (folderinfo.unread > 0) {
             badge = "%d".printf (folderinfo.unread);
@@ -86,6 +97,35 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
                 icon = new ThemedIcon ("folder");
                 can_modify = true;
                 break;
+        }
+    }
+
+    private async void refresh () {
+        var offlinestore = (Camel.Store) account.service;
+        try {
+            var folder = yield offlinestore.get_folder (full_name, 0, GLib.Priority.DEFAULT, cancellable);
+            yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
+        } catch (Error e) {
+            critical (e.message);
+        }
+    }
+
+    private async void rename (string new_name) {
+        var offlinestore = (Camel.Store) account.service;
+        try {
+            yield offlinestore.rename_folder (name, new_name, GLib.Priority.DEFAULT, cancellable);
+        } catch (Error e) {
+            warning (e.message);
+            name = old_name;
+
+            MainWindow? main_window = null;
+            foreach (unowned var window in ((Application)GLib.Application.get_default ()).get_windows ()) {
+                if (window is MainWindow) {
+                    main_window = (MainWindow) window;
+                    main_window.send_error_toast (_("Unable to rename folder '%s': %s").printf (name, e.message));
+                    break;
+                }
+            }
         }
     }
 }
