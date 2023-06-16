@@ -123,7 +123,7 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem, Mail.Sourc
             }
 
             if (folder_item.is_special_folder) {
-                this.add (folder_item);
+                add (folder_item);
             } else {
                 item.add (folder_item);
             }
