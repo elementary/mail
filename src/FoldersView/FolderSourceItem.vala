@@ -135,7 +135,7 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
     }
 
     private async void rename (string new_name) {
-        var offlinestore = (Camel.Store) account.service;
+        var offlinestore = (Camel.Store)account.service;
         try {
             if ("/" in new_name) {
                 if (name == old_name) {
