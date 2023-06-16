@@ -132,9 +132,11 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
         var offlinestore = (Camel.Store) account.service;
         try {
             if ("/" in new_name) {
-                notify["name"].connect (() => {
+                if (name == old_name) {
+                    notify["name"].connect (() => { name = old_name; });
+                } else {
                     name = old_name;
-                });
+                }
 
                 MainWindow.notify_error (
                     _("Unable to rename folder “%s”: Folder names cannot contain “/”").printf (name)
@@ -148,9 +150,11 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
             var new_full_name = string.joinv ("/", split_full_name);
 
             if (null != yield offlinestore.get_folder_info (new_full_name, FAST, GLib.Priority.DEFAULT, cancellable)) {
-                notify["name"].connect (() => {
+                if (name == old_name) {
+                    notify["name"].connect (() => { name = old_name; });
+                } else {
                     name = old_name;
-                });
+                }
 
                 MainWindow.notify_error (
                     _("Unable to rename folder “%s”: A folder with name “%s” already exists").printf (name, new_name)
@@ -161,9 +165,11 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
 
             yield offlinestore.rename_folder (full_name, new_full_name, GLib.Priority.DEFAULT, cancellable);
         } catch (Error e) {
-            notify["name"].connect (() => {
+            if (name == old_name) {
+                notify["name"].connect (() => { name = old_name; });
+            } else {
                 name = old_name;
-            });
+            }
 
             MainWindow.notify_error (_("Unable to rename folder “%s”': %s").printf (name, e.message));
             warning ("Unable to rename folder '%s': %s", name, e.message);
