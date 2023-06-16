@@ -16,8 +16,9 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     private const string ACTION_ITALIC = "italic";
     private const string ACTION_UNDERLINE = "underline";
     private const string ACTION_STRIKETHROUGH = "strikethrough";
-    private const string ACTION_INSERT_LINK = "insert_link";
-    private const string ACTION_REMOVE_FORMAT = "remove_formatting";
+    private const string ACTION_INSERT_LINK = "insert-link";
+    private const string ACTION_INSERT_IMAGE = "insert-image";
+    private const string ACTION_REMOVE_FORMAT = "remove-formatting";
     private const string ACTION_DISCARD = "discard";
     private const string ACTION_SEND = "send";
 
@@ -54,6 +55,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         {ACTION_UNDERLINE, on_edit_action, "s", "''" },
         {ACTION_STRIKETHROUGH, on_edit_action, "s", "''" },
         {ACTION_INSERT_LINK, on_insert_link_clicked, },
+        {ACTION_INSERT_IMAGE, on_insert_image, },
         {ACTION_REMOVE_FORMAT, on_remove_format },
         {ACTION_DISCARD, on_discard },
         {ACTION_SEND, on_send }
@@ -261,6 +263,11 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             )
         };
 
+        var image = new Gtk.Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.MENU) {
+            action_name = ACTION_PREFIX + ACTION_INSERT_IMAGE,
+            tooltip_text = _("Insert Image")
+        };
+
         var button_row = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12) {
             margin_start = 6,
             margin_bottom = 6
@@ -268,6 +275,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         button_row.add (formatting_buttons);
         button_row.add (clear_format );
         button_row.add (link);
+        button_row.add (image);
 
         web_view = new WebView ();
         try {
@@ -463,10 +471,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 foreach (var path in result["attachment"]) {
                     var file = path.has_prefix ("file://") ? File.new_for_uri (path) : File.new_for_path (path);
 
-                    var attachment = new Attachment (file);
-                    attachment.margin = 3;
-
-                    attachment_box.add (attachment);
+                    attachment_box.add (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
                 }
                 attachment_box.show_all ();
             }
@@ -499,10 +504,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
             filechooser.hide ();
             foreach (unowned File file in filechooser.get_files ()) {
-                var attachment = new Attachment (file);
-                attachment.margin = 3;
-
-                attachment_box.add (attachment);
+                attachment_box.add (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
             }
             attachment_box.show_all ();
         }
@@ -533,6 +535,63 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 web_view.execute_editor_command ("insertHTML", """<a href="%s">%s</a>""".printf (url, url));
             }
         }
+    }
+
+    private void on_insert_image () {
+        var image_filter = new Gtk.FileFilter ();
+        image_filter.set_filter_name (_("Images"));
+        image_filter.add_mime_type ("image/*");
+
+        var filechooser = new Gtk.FileChooserNative (
+            _("Choose an image"),
+            (Gtk.Window) get_toplevel (),
+            Gtk.FileChooserAction.OPEN,
+            _("Insert"),
+            _("Cancel")
+        ) {
+            filter = image_filter,
+            select_multiple = false
+        };
+
+        filechooser.response.connect ((response) => {
+            if (response == Gtk.ResponseType.ACCEPT) {
+                var file = filechooser.get_file ();
+
+                try {
+                    var inpustream = file.read ();
+
+                    var attachment = new Attachment (file, Attachment.DISPOSITION_INLINE);
+                    attachment_box.add (attachment);
+
+                    web_view.add_internal_resource (attachment.uri, inpustream);
+                    web_view.execute_editor_command ("insertImage", attachment.uri);
+
+                    ulong handler = 0;
+                    handler = web_view.image_removed.connect ((uri) => {
+                        if (uri == attachment.uri) {
+                            attachment.destroy ();
+                            web_view.disconnect (handler);
+                        }
+                    });
+                } catch (Error e) {
+                    var error_dialog = new Granite.MessageDialog (
+                        _("Unable to insert image"),
+                        _("There was an unexpected error while trying to insert the image."),
+                        new ThemedIcon ("insert-image"),
+                        Gtk.ButtonsType.CLOSE
+                    ) {
+                        badge_icon = new ThemedIcon ("dialog-error")
+                    };
+                    error_dialog.show_error_details (e.message);
+                    error_dialog.present ();
+                    error_dialog.response.connect (() => error_dialog.destroy ());
+                }
+            }
+
+            filechooser.destroy ();
+        });
+
+        filechooser.show ();
     }
 
     private void on_mouse_target_changed (WebKit.WebView web_view, WebKit.HitTestResult hit_test, uint mods) {
@@ -897,12 +956,20 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     }
 
     private class Attachment : Gtk.FlowBoxChild {
-        public GLib.FileInfo? info { private get; construct; }
-        public GLib.File file { get; construct; }
+        public const string DISPOSITION_ATTACHMENT = "attachment";
+        public const string DISPOSITION_INLINE = "inline";
 
-        public Attachment (GLib.File file) {
+        public GLib.File file { get; construct; }
+        public string disposition { get; construct; }
+        public string cid { get; construct; }
+        public string uri { get; construct; }
+
+        private GLib.FileInfo? info;
+
+        public Attachment (GLib.File file, string disposition) {
             Object (
-                file: file
+                file: file,
+                disposition: disposition
             );
         }
 
@@ -912,6 +979,9 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 GLib.FileAttribute.STANDARD_DISPLAY_NAME + "," +
                 GLib.FileAttribute.STANDARD_ICON + "," +
                 GLib.FileAttribute.STANDARD_SIZE;
+
+            cid = GLib.Uuid.string_random ();
+            uri = "cid:%s".printf (cid);
 
             try {
                 info = file.query_info (QUERY_STRING, GLib.FileQueryInfoFlags.NONE);
@@ -939,13 +1009,23 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             remove_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
             var box = new Gtk.Box (HORIZONTAL, 3) {
-                margin = 3
+                margin_top = 3,
+                margin_bottom = 3,
+                margin_start = 3,
+                margin_end = 3
             };
             box.add (image);
             box.add (name_label);
             box.add (size_label);
             box.add (remove_button);
 
+            if (disposition == DISPOSITION_INLINE) {
+                no_show_all = true;
+            }
+            margin_top = 3;
+            margin_bottom = 3;
+            margin_start = 3;
+            margin_end = 3;
             add (box);
 
             remove_button.clicked.connect (() => {
@@ -971,10 +1051,13 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
             wrapper.set_mime_type (mime_type);
 
-            var mimepart = new Camel.MimePart ();
-            mimepart.set_disposition ("attachment");
+            var mimepart = new Camel.MimePart () {
+                content_id = cid,
+                disposition = disposition,
+                content = wrapper
+            };
+
             mimepart.set_filename (info.get_display_name ());
-            ((Camel.Medium)mimepart).set_content (wrapper);
 
             if (mimepart.get_content_type ().is ("text", "*")) {
                 // Run text files through a stream filter to get the best transfer encoding
