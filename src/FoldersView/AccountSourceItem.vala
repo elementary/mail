@@ -20,7 +20,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem {
+public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem, Mail.SourceListSortable {
     public Mail.Backend.Account account { get; construct; }
 
     public signal void loaded ();
@@ -121,8 +121,28 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem {
                 show_info ((Camel.FolderInfo?) folderinfo.child, folder_item);
             }
 
-            item.add (folder_item);
+            if (folder_item.is_special_folder) {
+                add (folder_item);
+            } else {
+                item.add (folder_item);
+            }
+
             folderinfo = (Camel.FolderInfo?) folderinfo.next;
         }
+    }
+
+    public int compare (Mail.SourceList.Item a, Mail.SourceList.Item b) {
+        if (a is Mail.FolderSourceItem && b is Mail.FolderSourceItem) {
+            var folder_a = (Mail.FolderSourceItem) a;
+            var folder_b = (Mail.FolderSourceItem) b;
+
+            return folder_a.pos - folder_b.pos;
+        }
+
+        return 0;
+    }
+
+    public bool allow_dnd_sorting () {
+        return false;
     }
 }

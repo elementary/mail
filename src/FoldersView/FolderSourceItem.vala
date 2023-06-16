@@ -23,7 +23,9 @@
 public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
     public signal void start_edit ();
 
-    public string full_name;
+    public string full_name { get; private set; }
+    public bool is_special_folder { get; private set; default = true; }
+    public int pos { get; private set; }
     public Backend.Account account { get; construct; }
 
     private bool can_modify = true;
@@ -73,36 +75,45 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
             case Camel.FolderInfoFlags.TYPE_INBOX:
                 icon = new ThemedIcon ("mail-inbox");
                 can_modify = false;
+                pos = 1;
+                break;
+            case Camel.FolderInfoFlags.TYPE_DRAFTS:
+                icon = new ThemedIcon ("mail-drafts");
+                can_modify = false;
+                pos = 2;
                 break;
             case Camel.FolderInfoFlags.TYPE_OUTBOX:
                 icon = new ThemedIcon ("mail-outbox");
                 can_modify = false;
+                pos = 3;
+                break;
+            case Camel.FolderInfoFlags.TYPE_SENT:
+                icon = new ThemedIcon ("mail-sent");
+                can_modify = false;
+                pos = 4;
+                break;
+            case Camel.FolderInfoFlags.TYPE_ARCHIVE:
+                icon = new ThemedIcon ("mail-archive");
+                can_modify = false;
+                pos = 5;
+                badge = null;
                 break;
             case Camel.FolderInfoFlags.TYPE_TRASH:
                 icon = new ThemedIcon (folderinfo.total == 0 ? "user-trash" : "user-trash-full");
                 can_modify = false;
+                pos = 6;
                 badge = null;
                 break;
             case Camel.FolderInfoFlags.TYPE_JUNK:
                 icon = new ThemedIcon ("edit-flag");
                 can_modify = false;
-                break;
-            case Camel.FolderInfoFlags.TYPE_SENT:
-                icon = new ThemedIcon ("mail-sent");
-                can_modify = false;
-                break;
-            case Camel.FolderInfoFlags.TYPE_ARCHIVE:
-                icon = new ThemedIcon ("mail-archive");
-                can_modify = false;
-                badge = null;
-                break;
-            case Camel.FolderInfoFlags.TYPE_DRAFTS:
-                icon = new ThemedIcon ("mail-drafts");
-                can_modify = false;
+                pos = 7;
                 break;
             default:
                 icon = new ThemedIcon ("folder");
                 can_modify = true;
+                pos = 8;
+                is_special_folder = false;
                 break;
         }
     }

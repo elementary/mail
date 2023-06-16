@@ -9,7 +9,7 @@
  *
  * @since 0.3
  */
-private interface Mail.SourceListSortable : Mail.SourceList.ExpandableItem {
+public interface Mail.SourceListSortable : Mail.SourceList.ExpandableItem {
     /**
      * Emitted after a user has re-ordered an item via DnD.
      *
