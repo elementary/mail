@@ -48,6 +48,11 @@ public class EditorToolbar : Gtk.Box {
             {"<Control>U"}
         );
 
+        var font = new Gtk.FontButton () {
+            show_style = true,
+            level = FAMILY | SIZE
+        };
+
         var bold = new Gtk.ToggleButton () {
             action_name = ACTION_PREFIX + ACTION_BOLD,
             action_target = ACTION_BOLD,
@@ -113,6 +118,7 @@ public class EditorToolbar : Gtk.Box {
         margin_bottom = 6;
         spacing = 6;
         orientation = HORIZONTAL;
+        add (font);
         add (formatting_buttons);
         add (clear_format);
         add (link);
@@ -121,7 +127,23 @@ public class EditorToolbar : Gtk.Box {
             get_toplevel ().insert_action_group (ACTION_GROUP_PREFIX, action_group);
         });
 
+        font.font_set.connect (() => {
+            var current_font = font.get_font ();
+            var font_size = current_font.substring (current_font.last_index_of (" ")).replace (" ", "");
+            set_font.begin (font.get_font_family ().get_name (), font_size);
+        });
+
         web_view.selection_changed.connect (update_actions);
+    }
+
+    private async void set_font (string font_family, string font_size) {
+        var selected_text = yield web_view.get_selected_text ();
+        web_view.execute_editor_command (
+            "insertHTML",
+            """<span style="font-size:%spx;font-family:%s;">%s</span>""".printf (font_size, font_family, selected_text)
+        );
+        // web_view.execute_editor_command ("fontName", font_family);
+        // web_view.execute_editor_command ("increaseFontSize");
     }
 
     private void on_insert_link_clicked () {
