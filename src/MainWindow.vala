@@ -356,4 +356,15 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         return base.configure_event (event);
     }
+
+    public static void notify_error (string error_message) {
+        MainWindow? main_window = null;
+        foreach (unowned var window in ((Application)GLib.Application.get_default ()).get_windows ()) {
+            if (window is MainWindow) {
+                main_window = (MainWindow) window;
+                main_window.send_error_toast (error_message);
+                break;
+            }
+        }
+    }
 }

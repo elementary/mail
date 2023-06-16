@@ -120,19 +120,42 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
     private async void rename (string new_name) {
         var offlinestore = (Camel.Store) account.service;
         try {
-            yield offlinestore.rename_folder (name, new_name, GLib.Priority.DEFAULT, cancellable);
-        } catch (Error e) {
-            warning ("Unable to rename folder '%s': %s", old_name, e.message);
-            name = old_name;
+            if ("/" in new_name) {
+                notify["name"].connect (() => {
+                    name = old_name;
+                });
 
-            MainWindow? main_window = null;
-            foreach (unowned var window in ((Application)GLib.Application.get_default ()).get_windows ()) {
-                if (window is MainWindow) {
-                    main_window = (MainWindow) window;
-                    main_window.send_error_toast (_("Unable to rename folder '%s': %s").printf (old_name, e.message));
-                    break;
-                }
+                MainWindow.notify_error (
+                    _("Unable to rename folder “%s”: Folder names cannot contain “/”").printf (name)
+                );
+
+                return;
             }
+
+            string[] split_full_name = full_name.split_set ("/");
+            split_full_name[split_full_name.length - 1] = new_name;
+            var new_full_name = string.joinv ("/", split_full_name);
+
+            if (null != yield offlinestore.get_folder_info (new_full_name, FAST, GLib.Priority.DEFAULT, cancellable)) {
+                notify["name"].connect (() => {
+                    name = old_name;
+                });
+
+                MainWindow.notify_error (
+                    _("Unable to rename folder “%s”: A folder with name “%s” already exists").printf (name, new_name)
+                );
+
+                return;
+            }
+
+            yield offlinestore.rename_folder (full_name, new_full_name, GLib.Priority.DEFAULT, cancellable);
+        } catch (Error e) {
+            notify["name"].connect (() => {
+                name = old_name;
+            });
+
+            MainWindow.notify_error (_("Unable to rename folder “%s”': %s").printf (name, e.message));
+            warning ("Unable to rename folder '%s': %s", name, e.message);
         }
     }
 }
