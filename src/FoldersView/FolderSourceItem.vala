@@ -135,40 +135,48 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
     }
 
     private async void rename (string new_name) {
+        if ("/" in new_name) {
+            if (name == old_name) {
+                notify["name"].connect (() => { name = old_name; });
+            } else {
+                name = old_name;
+            }
+
+            MainWindow.notify_error (
+                _("Unable to rename folder “%s”: Folder names cannot contain “/”").printf (name)
+            );
+
+            return;
+        }
+
+        string[] split_full_name = full_name.split_set ("/");
+        split_full_name[split_full_name.length - 1] = new_name;
+        var new_full_name = string.joinv ("/", split_full_name);
+
         var offlinestore = (Camel.Store)account.service;
+
+        Camel.FolderInfo? folder_info = null;
         try {
-            if ("/" in new_name) {
-                if (name == old_name) {
-                    notify["name"].connect (() => { name = old_name; });
-                } else {
-                    name = old_name;
-                }
+            folder_info = yield offlinestore.get_folder_info (new_full_name, FAST, GLib.Priority.DEFAULT, cancellable);
+        } catch (Error e) {
+            warning (e.message);
+        }
 
-                MainWindow.notify_error (
-                    _("Unable to rename folder “%s”: Folder names cannot contain “/”").printf (name)
-                );
-
-                return;
+        if (null != folder_info) {
+            if (name == old_name) {
+                notify["name"].connect (() => { name = old_name; });
+            } else {
+                name = old_name;
             }
 
-            string[] split_full_name = full_name.split_set ("/");
-            split_full_name[split_full_name.length - 1] = new_name;
-            var new_full_name = string.joinv ("/", split_full_name);
+            MainWindow.notify_error (
+                _("Unable to rename folder “%s”: A folder with name “%s” already exists").printf (name, new_name)
+            );
 
-            if (null != yield offlinestore.get_folder_info (new_full_name, FAST, GLib.Priority.DEFAULT, cancellable)) {
-                if (name == old_name) {
-                    notify["name"].connect (() => { name = old_name; });
-                } else {
-                    name = old_name;
-                }
+            return;
+        }
 
-                MainWindow.notify_error (
-                    _("Unable to rename folder “%s”: A folder with name “%s” already exists").printf (name, new_name)
-                );
-
-                return;
-            }
-
+        try {
             yield offlinestore.rename_folder (full_name, new_full_name, GLib.Priority.DEFAULT, cancellable);
         } catch (Error e) {
             if (name == old_name) {
