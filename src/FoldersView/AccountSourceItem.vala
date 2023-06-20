@@ -68,6 +68,30 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem, Mail.Sourc
     private void folder_renamed (string old_name, Camel.FolderInfo folder_info) {
         var item = folder_items[old_name];
         item.update_infos (folder_info);
+        folder_items.unset (old_name);
+        folder_items[folder_info.full_name] = item;
+
+        var split_old_name = old_name.split_set ("/");
+        var split_new_name = folder_info.full_name.split_set ("/");
+        bool same_parent = true;
+        int longest = split_old_name.length > split_new_name.length ? split_old_name.length : split_new_name.length;
+        for (int i = 0; i < longest - 1; i++) {
+            if (split_old_name[i] != split_new_name[i]) {
+                same_parent = false;
+                break;
+            }
+        }
+
+        if (!same_parent) {
+            item.parent.remove (item);
+            var new_parent_full_name = string.joinv ("/", split_new_name[0:split_new_name.length - 1]);
+            if (new_parent_full_name != "") {
+                var new_parent = folder_items[new_parent_full_name];
+                new_parent.add (item);
+            } else {
+                add (item);
+            }
+        }
     }
 
     private void folder_deleted (Camel.FolderInfo folder_info) {

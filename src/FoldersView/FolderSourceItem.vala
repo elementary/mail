@@ -31,6 +31,7 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
     private bool can_modify = true;
     private Cancellable cancellable;
     private string old_name;
+    private Gtk.Menu move_menu;
 
     public FolderSourceItem (Backend.Account account, Camel.FolderInfo folderinfo) {
         Object (account: account);
@@ -39,6 +40,7 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
 
     construct {
         cancellable = new GLib.Cancellable ();
+        move_menu = new Gtk.Menu ();
     }
 
     ~FolderSourceItem () {
@@ -55,8 +57,33 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
         if (!is_special_folder) {
             var rename_item = new Gtk.MenuItem.with_label (_("Rename folder"));
             rename_item.activate.connect (() => start_edit ());
+
+            var move_item = new Gtk.MenuItem.with_label (_("Move folder to..."));
+            move_item.submenu = move_menu;
+
             menu.add (new Gtk.SeparatorMenuItem ());
             menu.add (rename_item);
+            menu.add (move_item);
+
+            var store = (Camel.Store)account.service;
+            store.get_folder_info.begin (null, Camel.StoreGetFolderInfoFlags.RECURSIVE, GLib.Priority.DEFAULT, null, (obj, res) => {
+                try {
+                    var folder_info = store.get_folder_info.end (res);
+                    foreach (var child in move_menu.get_children ()) {
+                        move_menu.remove (child);
+                    }
+
+                    var top_move_item = new Gtk.MenuItem.with_label (account.service.display_name);
+                    top_move_item.activate.connect (() => move_folder.begin (""));
+
+                    move_menu.add (top_move_item);
+
+                    update_move_menu (folder_info, 1);
+                    move_menu.show_all ();
+                } catch (Error e) {
+                    critical (e.message);
+                }
+            });
         }
 
         menu.show_all ();
@@ -124,6 +151,28 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
         }
     }
 
+    private void update_move_menu (Camel.FolderInfo top, int depth) {
+        /* Hackish way of indenting subfolders */
+        var builder = new StringBuilder ();
+        for (int i = 0; i < depth; i++) {
+            builder.append ("     ");
+        }
+
+        var folder_info = top;
+        while (folder_info != null) {
+            var move_item = new Gtk.MenuItem.with_label (builder.str + folder_info.display_name);
+            var new_parent_full_name = folder_info.full_name;
+            move_item.activate.connect (() => move_folder.begin (new_parent_full_name));
+
+            move_menu.add (move_item);
+
+            if (folder_info.child != null) {
+                update_move_menu (folder_info.child, depth + 1);
+            }
+            folder_info = folder_info.next;
+        }
+    }
+
     private async void refresh () {
         var offlinestore = (Camel.Store)account.service;
         try {
@@ -179,6 +228,20 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
 
             MainWindow.notify_error (_("Unable to rename folder “%s”': %s").printf (name, e.message));
             warning ("Unable to rename folder '%s': %s", name, e.message);
+        }
+    }
+
+    private async void move_folder (string new_parent_full_name) {
+        string[] split_full_name = new_parent_full_name.split_set ("/");
+        split_full_name += name;
+        var new_full_name = string.joinv ("/", split_full_name);
+
+        var offlinestore = (Camel.Store)account.service;
+
+        try {
+            yield offlinestore.rename_folder (full_name, new_full_name, GLib.Priority.DEFAULT, cancellable);
+        } catch (Error e) {
+            MainWindow.notify_error (_("Unable to move folder “%s” to “%s”: %s").printf (name, split_full_name[split_full_name.length - 2], e.message));
         }
     }
 }
