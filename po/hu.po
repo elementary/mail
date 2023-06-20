@@ -12,10 +12,10 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-16 17:05+0000\n"
-"PO-Revision-Date: 2023-06-15 00:07+0000\n"
+"PO-Revision-Date: 2023-06-19 15:07+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
-"Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/"
-">\n"
+"Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/>"
+"\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -62,10 +62,8 @@ msgid "Bcc:"
 msgstr "Titkos másolat:"
 
 #: src/Composer.vala:196
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert Image"
-msgstr "Link beszúrása"
+msgstr "Kép beszúrása"
 
 #: src/Composer.vala:222
 msgid "Delete draft"
@@ -98,34 +96,24 @@ msgid "Cancel"
 msgstr "Mégse"
 
 #: src/Composer.vala:438
-#, fuzzy
-#| msgid "Show Images"
 msgid "Images"
-msgstr "Képek megjelenítése"
+msgstr "Képek"
 
 #: src/Composer.vala:442
-#, fuzzy
-#| msgid "Choose a file"
 msgid "Choose an image"
-msgstr "Válasszon egy fájlt"
+msgstr "Válasszon egy képet"
 
 #: src/Composer.vala:445
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert"
-msgstr "Link beszúrása"
+msgstr "Beszúrás"
 
 #: src/Composer.vala:474
-#, fuzzy
-#| msgid "Unable to send message"
 msgid "Unable to insert image"
-msgstr "Nem sikerült elküldeni az üzenetet"
+msgstr "A kép beszúrása sikertelen"
 
 #: src/Composer.vala:475
-#, fuzzy
-#| msgid "There was an unexpected error while trying to connect to the server."
 msgid "There was an unexpected error while trying to insert the image."
-msgstr "Egy váratlan hiba merült fel a szerverhez való kapcsolódás közben."
+msgstr "Egy váratlan hiba merült fel a kép beszúrása közben."
 
 #: src/Composer.vala:594
 msgid "%a, %b %-e, %Y at %-l:%M %p"
