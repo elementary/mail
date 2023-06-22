@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-16 17:05+0000\n"
-"PO-Revision-Date: 2023-06-15 00:07+0000\n"
+"PO-Revision-Date: 2023-06-21 16:07+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -95,34 +95,24 @@ msgid "Cancel"
 msgstr "Canceŀla"
 
 #: src/Composer.vala:438
-#, fuzzy
-#| msgid "Show Images"
 msgid "Images"
-msgstr "Mostra les imatges"
+msgstr "Imatges"
 
 #: src/Composer.vala:442
-#, fuzzy
-#| msgid "Choose a file"
 msgid "Choose an image"
-msgstr "Escolliu un fitxer"
+msgstr "Trieu una imatge"
 
 #: src/Composer.vala:445
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert"
-msgstr "Insereix un enllaç"
+msgstr "Insereix"
 
 #: src/Composer.vala:474
-#, fuzzy
-#| msgid "Unable to send message"
 msgid "Unable to insert image"
-msgstr "No es pot enviar el missatge."
+msgstr "No es pot inserir la imatge."
 
 #: src/Composer.vala:475
-#, fuzzy
-#| msgid "There was an unexpected error while trying to connect to the server."
 msgid "There was an unexpected error while trying to insert the image."
-msgstr "Hi ha hagut un error inesperat a l'hora de connectar amb el servidor."
+msgstr "Hi ha hagut un error inesperat a l'hora d'inserir la imatge."
 
 #: src/Composer.vala:594
 msgid "%a, %b %-e, %Y at %-l:%M %p"
