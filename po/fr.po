@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-16 17:05+0000\n"
-"PO-Revision-Date: 2023-06-04 16:07+0000\n"
-"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"PO-Revision-Date: 2023-06-24 08:07+0000\n"
+"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -39,6 +39,9 @@ msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
 msgstr ""
+"E-Mail va automatiquement se lancer au démarrage de ce périphérique et "
+"continuer à fonctionner lorsque la fenêtre sera fermée pour notifier de "
+"l'arrivée de nouveaux e-mails."
 
 #: src/Composer.vala:86 src/MessageList/MessageListItem.vala:100
 msgid "From:"
@@ -103,34 +106,24 @@ msgid "Cancel"
 msgstr "Annuler"
 
 #: src/Composer.vala:438
-#, fuzzy
-#| msgid "Show Images"
 msgid "Images"
-msgstr "Afficher les images"
+msgstr "Images"
 
 #: src/Composer.vala:442
-#, fuzzy
-#| msgid "Choose a file"
 msgid "Choose an image"
-msgstr "Choisir un fichier"
+msgstr "Choisir une image"
 
 #: src/Composer.vala:445
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert"
-msgstr "Insérer un lien"
+msgstr "Insérer"
 
 #: src/Composer.vala:474
-#, fuzzy
-#| msgid "Unable to send message"
 msgid "Unable to insert image"
-msgstr "Échec de l'envoi du message"
+msgstr "Impossible d'insérer l'image"
 
 #: src/Composer.vala:475
-#, fuzzy
-#| msgid "There was an unexpected error while trying to connect to the server."
 msgid "There was an unexpected error while trying to insert the image."
-msgstr "Une erreur inattendue s'est produite lors de la connexion au serveur."
+msgstr "Une erreur inattendue s'est produite lors de l'insertion de l'image."
 
 #: src/Composer.vala:594
 msgid "%a, %b %-e, %Y at %-l:%M %p"
