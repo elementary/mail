@@ -711,7 +711,11 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                     sensitive = true;
                     return;
                 }
+
+                send_message.callback ();
             });
+
+            yield;
         }
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
