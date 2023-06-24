@@ -34,13 +34,15 @@ public class Mail.Page : Object {
     private const string JS_CLEAN_HTML = """
         var body = document.querySelector('#elementary-message-body');
         body.removeAttribute ("contenteditable");
-        body.style.height = initial;
+        body.removeAttribute ("id");
+        body.style.height = "initial";
 
         var signature = document.querySelector('#elementary-message-signature');
         if (signature.hidden) {
             signature.remove ();
         } else {
             signature.removeAttribute ("contenteditable");
+            signature.removeAttribute ("id");
         }
 
         var quote = document.querySelector('#elementary-message-quote');
@@ -48,6 +50,7 @@ public class Mail.Page : Object {
             quote.remove ();
         } else {
             quote.removeAttribute ("contenteditable");
+            quote.removeAttribute ("id");
         }
     """;
 
