@@ -289,7 +289,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             margin_top = 12,
             margin_bottom = 12,
             margin_start = 12,
-            margin_end = 12
+            margin_end = 12,
+            bind_height_to_page_height = true
         };
         web_view.mouse_target_changed.connect (on_mouse_target_changed);
         web_view.context_menu.connect (on_webview_context_menu);
