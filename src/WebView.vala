@@ -137,6 +137,7 @@ public class Mail.WebView : WebKit.WebView {
     public new void load_html (string? body) {
         base.load_html (body, INTERNAL_URL_BODY);
     }
+
     public void set_content_of_element (string element, string content) {
         if (loaded) {
             var message = new WebKit.UserMessage ("set-content-of-element", new Variant ("(ss)", element, content));
