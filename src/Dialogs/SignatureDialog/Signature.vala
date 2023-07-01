@@ -19,6 +19,7 @@ public class Mail.Signature : Gtk.ListBoxRow {
     public string title { get; set; }
     public string content { get; set; }
     public string uid { get; private set; }
+    public bool is_deleted { get; private set; default = false; }
 
     private E.Source signature_source;
     private uint timeout_id = 0;
@@ -40,7 +41,7 @@ public class Mail.Signature : Gtk.ListBoxRow {
         var label = new Gtk.Label (title) {
             halign = Gtk.Align.START
         };
-        this.bind_property ("title", label, "label");
+        bind_property ("title", label, "label");
 
         add (label);
         show_all ();
@@ -59,13 +60,13 @@ public class Mail.Signature : Gtk.ListBoxRow {
     public void undo_delete () {
         if (timeout_id != 0) {
             Source.remove (timeout_id);
-            show ();
+            is_deleted = false;
             timeout_id = 0;
         }
     }
 
     public void delete_signature () {
-        hide ();
+        is_deleted = true;
         timeout_id = GLib.Timeout.add_seconds (5, () => {
             finish_delete_signature.begin ();
             return Source.REMOVE;
@@ -100,7 +101,7 @@ public class Mail.Signature : Gtk.ListBoxRow {
             destroy ();
         } catch (Error e) {
             warning ("Failed to delete signature '%s': %s", title, e.message);
-            show ();
+            is_deleted = false;
         }
     }
 }

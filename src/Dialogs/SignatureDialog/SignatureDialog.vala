@@ -15,12 +15,10 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>
 */
 
-public class Mail.SignatureDialog : Hdy.Window {
-    private const string ACTION_GROUP_PREFIX = "default-account";
+public class Mail.SignatureDialog : Hdy.ApplicationWindow {
+    private const string ACTION_GROUP_PREFIX = "win";
     private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
 
-    private SimpleActionGroup action_group_default_account;
-    private string html_template;
     private Gtk.ListBox signature_list;
     private Gtk.Entry title_entry;
     private Mail.WebView web_view;
@@ -30,25 +28,21 @@ public class Mail.SignatureDialog : Hdy.Window {
     private bool selection_change_ongoing = false;
 
     construct {
-        action_group_default_account = new SimpleActionGroup ();
-        insert_action_group (ACTION_GROUP_PREFIX, action_group_default_account);
-
-        try {
-            var template = resources_lookup_data ("/io/elementary/mail/blank-editor-template.html", ResourceLookupFlags.NONE);
-            html_template = (string)template.get_data ();
-        } catch (Error e) {
-            warning ("Failed to load blank editor template: %s", e.message);
-        }
-
         var start_header = new Hdy.HeaderBar () {
             show_close_button = true
         };
         start_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         start_header.get_style_context ().add_class ("default-decoration");
 
+        var placeholder = new Gtk.Label (_("No Signatures added yet"));
+        placeholder.show_all ();
+
         signature_list = new Gtk.ListBox () {
-            vexpand = true
+            vexpand = true,
+            selection_mode = BROWSE
         };
+        signature_list.set_filter_func ((Gtk.ListBoxFilterFunc)filter_func);
+        signature_list.set_placeholder (placeholder);
 
         var add_box = new Gtk.Box (HORIZONTAL, 0);
         add_box.add (new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
@@ -72,8 +66,7 @@ public class Mail.SignatureDialog : Hdy.Window {
         start_box.add (start_actionbar);
 
         var title = new Granite.HeaderLabel (_("Title")) {
-            margin_start = 9,
-            no_show_all = true
+            margin_start = 9
         };
 
         var end_header = new Hdy.HeaderBar () {
@@ -87,12 +80,21 @@ public class Mail.SignatureDialog : Hdy.Window {
             margin_top = 2, //Work around a styling issue
             margin_start = 12,
             margin_end = 12,
-            placeholder_text = _("For example “Work” or “Personal”")
+            placeholder_text = _("For example “Work” or “Personal”"),
+            sensitive = false
         };
 
         web_view = new Mail.WebView () {
-            editable = true
+            editable = true,
+            sensitive = false
         };
+
+        try {
+            var template = resources_lookup_data ("/io/elementary/mail/blank-editor-template.html", ResourceLookupFlags.NONE);
+            web_view.load_html ((string)template.get_data ());
+        } catch (Error e) {
+            warning ("Failed to load blank editor template: %s", e.message);
+        }
 
         var frame = new Gtk.Frame (null) {
             margin_start = 12,
@@ -102,7 +104,8 @@ public class Mail.SignatureDialog : Hdy.Window {
         };
 
         var delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
-            tooltip_text = "Delete"
+            tooltip_text = _("Delete"),
+            sensitive = false
         };
         delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
 
@@ -112,7 +115,8 @@ public class Mail.SignatureDialog : Hdy.Window {
             menu_model = default_menu,
             label = _("Set Default For…"),
             use_popover = false,
-            direction = UP
+            direction = UP,
+            sensitive = false
         };
 
         var end_actionbar = new Gtk.ActionBar ();
@@ -131,23 +135,13 @@ public class Mail.SignatureDialog : Hdy.Window {
         end_box.add (end_header);
         end_box.add (content_box);
 
-        var placeholder = new Gtk.Label (_("No Signature selected"));
-
-        var placeholder_overlay = new Gtk.Overlay () {
-            child = end_box,
-            hexpand = true,
-            vexpand = true
-        };
-        placeholder_overlay.add_overlay (placeholder);
-        placeholder_overlay.set_overlay_pass_through (placeholder, true);
-
         var action_sizegroup = new Gtk.SizeGroup (VERTICAL);
         action_sizegroup.add_widget (start_actionbar);
         action_sizegroup.add_widget (end_actionbar);
 
         var main_box = new Gtk.Box (HORIZONTAL, 0);
         main_box.add (start_box);
-        main_box.add (placeholder_overlay);
+        main_box.add (end_box);
 
         toast = new Granite.Widgets.Toast ("");
         toast.set_default_action (_("Undo"));
@@ -180,15 +174,11 @@ public class Mail.SignatureDialog : Hdy.Window {
         show_all ();
         present ();
 
-        content_box.hide ();
-
-        load_signatures.begin (() => {
-            signature_list.select_row (signature_list.get_row_at_index (0));
-        });
+        load_signatures.begin ();
 
         populate_default_menu (default_menu);
 
-        action_group_default_account.action_state_changed.connect (update_default_signature);
+        action_state_changed.connect (update_default_signature);
 
         add_button.clicked.connect (() => create_new_signature.begin ());
 
@@ -200,18 +190,17 @@ public class Mail.SignatureDialog : Hdy.Window {
 
         delete_button.clicked.connect (delete_selected_signature);
 
-        toast.default_action.connect (() => last_deleted_signature.undo_delete ());
+        toast.default_action.connect (() => {
+            last_deleted_signature.undo_delete ();
+            signature_list.invalidate_filter ();
+        });
 
         signature_list.row_selected.connect ((row) => {
-            if (row == null) {
-                title.hide ();
-                content_box.hide ();
-                placeholder.show ();
-            } else {
-                title.show ();
-                content_box.show ();
-                placeholder.hide ();
-            }
+            title_entry.sensitive = row != null;
+            web_view.sensitive = row != null;
+            delete_button.sensitive = row != null;
+            default_menubutton.sensitive = row != null;
+
             set_selected_signature.begin ((Signature)row);
         });
 
@@ -221,6 +210,10 @@ public class Mail.SignatureDialog : Hdy.Window {
             });
             return Gdk.EVENT_STOP;
         });
+    }
+
+    private static bool filter_func (Signature signature) {
+        return !signature.is_deleted;
     }
 
     private async void finish () {
@@ -241,27 +234,28 @@ public class Mail.SignatureDialog : Hdy.Window {
             yield current_signature.save ();
         }
 
+        current_signature = signature;
+
         if (signature == null) {
-            current_signature = null;
             title_entry.text = "";
-            web_view.load_html (html_template.printf (""));
+            web_view.set_content_of_element ("body", "");
+
             return;
         }
 
         selection_change_ongoing = true;
 
         title_entry.text = signature.title;
-        web_view.load_html (html_template.printf (signature.content));
-        current_signature = signature;
+        web_view.set_content_of_element ("body", signature.content);
 
         unowned var session = Backend.Session.get_default ();
         foreach (var account in session.get_accounts ()) {
             var identity_source = session.get_identity_source_for_account_uid (account.service.uid);
             unowned var identity_extension = (E.SourceMailIdentity)identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
             if (identity_extension.signature_uid == signature.uid) {
-                action_group_default_account.change_action_state (account.service.uid, true);
+                change_action_state (account.service.uid, true);
             } else {
-                action_group_default_account.change_action_state (account.service.uid, false);
+                change_action_state (account.service.uid, false);
             }
         }
 
@@ -273,13 +267,15 @@ public class Mail.SignatureDialog : Hdy.Window {
             var signature = yield new Signature (signature_source);
             signature_list.add (signature);
         }
+
+        signature_list.select_row (signature_list.get_row_at_index (0));
     }
 
     private void populate_default_menu (Menu menu) {
         unowned var session = Backend.Session.get_default ();
         foreach (var account in session.get_accounts ()) {
             var action = new SimpleAction.stateful (account.service.uid, null, false);
-            action_group_default_account.add_action (action);
+            add_action (action);
             menu.append (account.service.display_name, ACTION_PREFIX + account.service.uid);
         }
     }
@@ -316,9 +312,7 @@ public class Mail.SignatureDialog : Hdy.Window {
 
         signature.delete_signature ();
 
-        while (signature_list.get_row_at_index (index) != null && !signature_list.get_row_at_index (index).is_visible ()) {
-            index++;
-        }
+        signature_list.invalidate_filter ();
         signature_list.select_row (signature_list.get_row_at_index (index));
 
         toast.title = _("'%s' deleted".printf (signature.title));
