@@ -17,6 +17,7 @@ public class Mail.Application : Gtk.Application {
     public static GLib.Settings settings;
     public static bool run_in_background;
     private Gtk.Settings gtk_settings;
+    private bool first_activation = true;
 
     public Application () {
         Object (
@@ -30,6 +31,9 @@ public class Mail.Application : Gtk.Application {
     }
 
     construct {
+        // FIXME: Remove once ported to Gtk.FileDialog
+        Environment.set_variable ("GTK_USE_PORTAL", "1", true);
+
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
         Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
@@ -148,18 +152,17 @@ public class Mail.Application : Gtk.Application {
         manage_signatures_action.activate.connect (() => new SignatureDialog ());
         add_action (manage_signatures_action);
 
-        /* Needed to ask the flatpak portal for autostart and background permissions with a parent window
-           and to prevent issues with Session.start being called from the InboxMonitor first */
-        if (!run_in_background) {
-            activate ();
-        }
-
         new InboxMonitor ().start.begin ();
-        hold ();
     }
 
     public override void activate () {
+        if (first_activation) {
+            first_activation = false;
+            hold ();
+        }
+
         if (run_in_background) {
+            request_background.begin ();
             run_in_background = false;
             return;
         }
@@ -196,6 +199,35 @@ public class Mail.Application : Gtk.Application {
         }
 
         main_window.present ();
+    }
+
+    public async void request_background () {
+        var portal = new Xdp.Portal ();
+
+        Xdp.Parent? parent = active_window != null ? Xdp.parent_new_gtk (active_window) : null;
+
+        var command = new GenericArray<weak string> ();
+        command.add ("io.elementary.mail");
+        command.add ("--background");
+
+        try {
+            if (!yield portal.request_background (
+                parent,
+                _("Mail will automatically start when this device turns on and run when its window is closed so that it can send notifications when new mail arrives."),
+                (owned) command,
+                Xdp.BackgroundFlags.AUTOSTART,
+                null
+            )) {
+                release ();
+            }
+        } catch (Error e) {
+            if (e is IOError.CANCELLED) {
+                debug ("Request for autostart and background permissions denied: %s", e.message);
+                release ();
+            } else {
+                warning ("Failed to request autostart and background permissions: %s", e.message);
+            }
+        }
     }
 
     private void check_theme () {

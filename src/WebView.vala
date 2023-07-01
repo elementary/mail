@@ -22,10 +22,12 @@ public extern const string WEBKIT_EXTENSION_PATH;
 
 public class Mail.WebView : WebKit.WebView {
     public signal void image_load_blocked ();
+    public signal void image_removed (string uri);
     public signal void link_activated (string url);
     public signal void selection_changed ();
     public signal void load_finished ();
 
+    public bool bind_height_to_page_height { get; set; default = false; }
     public bool body_html_changed { get; private set; default = false; }
 
     private const string INTERNAL_URL_BODY = "elementary-mail:body";
@@ -35,11 +37,7 @@ public class Mail.WebView : WebKit.WebView {
 
     private bool loaded = false;
     private bool queued_load_images = false;
-    private string? queued_html_message = null;
-    private string? queued_body_content = null;
-    private string? queued_signature_content = null;
-    private string? queued_quote_content = null;
-    public bool bind_height_to_page_height { get; set; default = false; }
+    private Gee.HashMap<string, string> queued_elements;
     private GLib.Cancellable cancellable;
 
     static construct {
@@ -62,6 +60,7 @@ public class Mail.WebView : WebKit.WebView {
         hexpand = true;
 
         internal_resources = new Gee.HashMap<string, InputStream> ();
+        queued_elements = new Gee.HashMap<string, string> ();
 
         decide_policy.connect (on_decide_policy);
         load_changed.connect (on_load_changed);
@@ -101,17 +100,11 @@ public class Mail.WebView : WebKit.WebView {
 
         if (event == WebKit.LoadEvent.FINISHED) {
             loaded = true;
-            if (queued_html_message != null) {
-                load_html_message ((owned) queued_html_message);
-            }
-            if (queued_body_content != null) {
-                set_body_content ((owned) queued_body_content);
-            }
-            if (queued_signature_content != null) {
-                set_signature_content ((owned) queued_signature_content);
-            }
-            if (queued_quote_content != null) {
-                set_quote_content ((owned) queued_quote_content);
+
+            if (queued_elements.size > 0) {
+                foreach (var element in queued_elements.keys) {
+                    set_content_of_element (element, queued_elements.get (element));
+                }
             }
 
             if (queued_load_images) {
@@ -144,47 +137,12 @@ public class Mail.WebView : WebKit.WebView {
     public new void load_html (string? body) {
         base.load_html (body, INTERNAL_URL_BODY);
     }
-
-    public void load_html_message (owned string html_message) {
-        if (!html_message.contains ("elementary-message-body")) {
-            //We have to asume the message wasn't created using the elementary mail composer
-            //and therefore doesn't have tags with the necessary ids
-            set_body_content ((owned) html_message);
-            return;
-        }
-
+    public void set_content_of_element (string element, string content) {
         if (loaded) {
-            var message = new WebKit.UserMessage ("set-message", new Variant.take_string ((owned) html_message));
+            var message = new WebKit.UserMessage ("set-content-of-element", new Variant ("(ss)", element, content));
             send_message_to_page.begin (message, cancellable);
         } else {
-            queued_html_message = (owned) html_message;
-        }
-    }
-
-    public void set_body_content (owned string content) {
-        if (loaded) {
-            var message = new WebKit.UserMessage ("set-body-content", new Variant.take_string ((owned) content));
-            send_message_to_page.begin (message, cancellable);
-        } else {
-            queued_body_content = (owned) content;
-        }
-    }
-
-    public void set_signature_content (owned string content) {
-        if (loaded) {
-            var message = new WebKit.UserMessage ("set-signature-content", new Variant.take_string ((owned) content));
-            send_message_to_page.begin (message, cancellable);
-        } else {
-            queued_signature_content = (owned) content;
-        }
-    }
-
-    public void set_quote_content (owned string content) {
-        if (loaded) {
-            var message = new WebKit.UserMessage ("set-quote-content", new Variant.take_string ((owned) content));
-            send_message_to_page.begin (message, cancellable);
-        } else {
-            queued_quote_content = (owned) content;
+            queued_elements[element] = content;
         }
     }
 
@@ -221,8 +179,8 @@ public class Mail.WebView : WebKit.WebView {
         return Gdk.EVENT_STOP;
     }
 
-    public void add_internal_resource (string name, InputStream data) {
-        internal_resources[name] = data;
+    public void add_internal_resource (string uri, InputStream data) {
+        internal_resources[uri] = data;
     }
 
     public void load_images () {
@@ -300,11 +258,11 @@ public class Mail.WebView : WebKit.WebView {
 
     private bool handle_internal_response (WebKit.URISchemeRequest request) {
 #if HAS_SOUP_3
-        string name = GLib.Uri.unescape_string (request.get_path ());
+        string uri = GLib.Uri.unescape_string (request.get_uri ());
 #else
-        string name = Soup.URI.decode (request.get_path ());
+        string uri = Soup.URI.decode (request.get_uri ());
 #endif
-        InputStream? buf = this.internal_resources[name];
+        InputStream? buf = this.internal_resources[uri];
         if (buf != null) {
             request.finish (buf, -1, null);
             return true;
@@ -320,6 +278,11 @@ public class Mail.WebView : WebKit.WebView {
                     image_load_blocked ();
                 }
 
+                return true;
+            case "image-removed":
+                unowned var uri = message.parameters.get_string ();
+                internal_resources.unset (uri);
+                image_removed (uri);
                 return true;
             case "selection-changed":
                 selection_changed ();

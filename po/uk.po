@@ -12,160 +12,169 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 17:11+0000\n"
-"PO-Revision-Date: 2023-05-30 17:11+0000\n"
+"POT-Creation-Date: 2023-06-16 17:05+0000\n"
+"PO-Revision-Date: 2023-06-19 15:07+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/"
-">\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/>"
+"\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Project-Style: gnome\n"
 
-#: src/Composer.vala:99 src/MessageList/MessageListItem.vala:100
+#: src/Application.vala:208
+msgid ""
+"Mail will automatically start when this device turns on and run when its "
+"window is closed so that it can send notifications when new mail arrives."
+msgstr ""
+"Пошта автоматично запускається, коли пристрій вмикається, і працює, коли "
+"його вікно закривається, щоб надсилати сповіщення про надходження нової "
+"пошти."
+
+#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:100
 msgid "From:"
 msgstr "Від:"
 
-#: src/Composer.vala:118 src/MessageList/MessageListItem.vala:106
+#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:106
 msgid "To:"
 msgstr "Кому:"
 
-#: src/Composer.vala:123 src/MessageList/MessageListItem.vala:112
+#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:112
 msgid "Subject:"
 msgstr "Тема:"
 
-#: src/Composer.vala:132
+#: src/Composer.vala:119
 msgid "Cc"
 msgstr "Копія"
 
-#: src/Composer.vala:134
+#: src/Composer.vala:121
 msgid "Bcc"
 msgstr "Таємна копія"
 
-#: src/Composer.vala:141 src/MessageList/MessageListItem.vala:146
+#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:146
 msgid "Cc:"
 msgstr "Копія:"
 
-#: src/Composer.vala:159
+#: src/Composer.vala:146
 msgid "Bcc:"
 msgstr "Таємна копія:"
 
-#: src/Composer.vala:211
-msgid "Bold"
-msgstr "Грубий"
+#: src/Composer.vala:196
+msgid "Insert Image"
+msgstr "Вставити зображення"
 
-#: src/Composer.vala:218
-msgid "Italic"
-msgstr "Курсив"
-
-#: src/Composer.vala:227
-msgid "Underline"
-msgstr "Підкреслений"
-
-#: src/Composer.vala:237
-msgid "Strikethrough"
-msgstr "Закреслений"
-
-#: src/Composer.vala:245
-msgid "Remove formatting"
-msgstr "Прибрати форматування"
-
-#: src/Composer.vala:260 src/Dialogs/InsertLinkDialog.vala:68
-msgid "Insert Link"
-msgstr "Вставити посилання"
-
-#: src/Composer.vala:293
+#: src/Composer.vala:222
 msgid "Delete draft"
 msgstr "Видалити чернетку"
 
-#: src/Composer.vala:301
+#: src/Composer.vala:230
 msgid "Attach file"
 msgstr "Вкласти файл"
 
-#: src/Composer.vala:308
+#: src/Composer.vala:237
 msgid "Send"
 msgstr "Надіслати"
 
-#: src/Composer.vala:345
+#: src/Composer.vala:274
 msgid "New Message"
 msgstr "Створити повідомлення"
 
-#: src/Composer.vala:492
+#: src/Composer.vala:418
 msgid "Choose a file"
 msgstr "Виберіть файл"
 
-#: src/Composer.vala:495
+#: src/Composer.vala:421
 msgid "Attach"
 msgstr "Долучити"
 
-#: src/Composer.vala:496 src/Composer.vala:729
+#: src/Composer.vala:422 src/Composer.vala:446 src/Composer.vala:658
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: src/Composer.vala:639
+#: src/Composer.vala:438
+msgid "Images"
+msgstr "Зображення"
+
+#: src/Composer.vala:442
+msgid "Choose an image"
+msgstr "Виберіть зображення"
+
+#: src/Composer.vala:445
+msgid "Insert"
+msgstr "Вставити"
+
+#: src/Composer.vala:474
+msgid "Unable to insert image"
+msgstr "Не вдалося вставити зображення"
+
+#: src/Composer.vala:475
+msgid "There was an unexpected error while trying to insert the image."
+msgstr "Сталася помилка під час спроби вставити зображення."
+
+#: src/Composer.vala:594
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %b %-e, %Y at %-l:%M %p"
 
-#: src/Composer.vala:669
+#: src/Composer.vala:624
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Написано %1$s, %2$s:"
 
-#: src/Composer.vala:673
+#: src/Composer.vala:628
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Переслане повідомлення ----------"
 
-#: src/Composer.vala:675
+#: src/Composer.vala:630
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Від: %s<br/>"
 
-#: src/Composer.vala:676
+#: src/Composer.vala:631
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Тема: %s<br/>"
 
-#: src/Composer.vala:677
+#: src/Composer.vala:632
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Дата: %s<br/>"
 
-#: src/Composer.vala:678
+#: src/Composer.vala:633
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Кому: %s<br/>"
 
-#: src/Composer.vala:680
+#: src/Composer.vala:635
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Копія: %s<br/>"
 
-#: src/Composer.vala:720
+#: src/Composer.vala:649
 msgid "Permanently delete this draft?"
 msgstr "Вилучити чернетку остаточно?"
 
-#: src/Composer.vala:721
+#: src/Composer.vala:650
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Ви не можете скасувати цю дію та відновити чернетку після її видалення."
 
-#: src/Composer.vala:731
+#: src/Composer.vala:660
 msgid "Delete Draft"
 msgstr "Видалити чернетку"
 
-#: src/Composer.vala:755
+#: src/Composer.vala:684
 msgid "Send without subject?"
 msgstr "Надіслати без теми?"
 
-#: src/Composer.vala:756
+#: src/Composer.vala:685
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -173,40 +182,64 @@ msgstr ""
 "У цьому повідомленні поле теми порожнє. Одержувач може не змогти зробити "
 "висновок про його зміст або важливість."
 
-#: src/Composer.vala:763
+#: src/Composer.vala:692
 msgid "Don't Send"
 msgstr "Не надсилати"
 
-#: src/Composer.vala:765
+#: src/Composer.vala:694
 msgid "Send Anyway"
 msgstr "Все одно надіслати"
 
-#: src/Composer.vala:790
+#: src/Composer.vala:719
 msgid "Sent message was not saved"
 msgstr "Надіслане повідомлення не збережено"
 
-#: src/Composer.vala:791
+#: src/Composer.vala:720
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 "Повідомлення надіслано, однак копія не була збережена у теці «Надіслані»."
 
-#: src/Composer.vala:806
+#: src/Composer.vala:735
 msgid "Unable to send message"
 msgstr "Не вдалося надіслати повідомлення"
 
-#: src/Composer.vala:807
+#: src/Composer.vala:736
 msgid "There was an unexpected error while sending your message."
 msgstr "Сталася помилка під час надсилання повідомлення."
 
-#: src/Composer.vala:1027
+#: src/Composer.vala:980
 msgid "Unable to save draft"
 msgstr "Не вдалося зберегти чернетку"
 
-#: src/Composer.vala:1028
+#: src/Composer.vala:981
 msgid "There was an unexpected error while saving your draft."
 msgstr "Сталася помилка під час збереження чернетки."
+
+#: src/EditorToolbar.vala:55
+msgid "Bold"
+msgstr "Грубий"
+
+#: src/EditorToolbar.vala:62
+msgid "Italic"
+msgstr "Курсив"
+
+#: src/EditorToolbar.vala:73
+msgid "Underline"
+msgstr "Підкреслений"
+
+#: src/EditorToolbar.vala:85
+msgid "Strikethrough"
+msgstr "Закреслений"
+
+#: src/EditorToolbar.vala:100
+msgid "Remove formatting"
+msgstr "Прибрати форматування"
+
+#: src/EditorToolbar.vala:108 src/Dialogs/InsertLinkDialog.vala:68
+msgid "Insert Link"
+msgstr "Вставити посилання"
 
 #: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
@@ -240,29 +273,26 @@ msgstr "Пошта"
 msgid "Undo"
 msgstr "Повернути"
 
-#: src/MainWindow.vala:271
+#: src/MainWindow.vala:277
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "Повідомлення архівовано"
 msgstr[1] "Повідомлення архівовано"
 msgstr[2] "Повідомлення архівовано"
 
-#: src/MainWindow.vala:274 src/MainWindow.vala:288 src/MainWindow.vala:302
+#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
 #, c-format
 msgid "Failed to move messages: %s"
 msgstr "Не вдалося перемістити повідомлення: %s"
 
-#: src/MainWindow.vala:285
-#, fuzzy
-#| msgid "Message Archived"
-#| msgid_plural "Messages Archived"
+#: src/MainWindow.vala:291
 msgid "Message Moved"
 msgid_plural "Messages Moved"
-msgstr[0] "Повідомлення архівовано"
-msgstr[1] "Повідомлення архівовано"
-msgstr[2] "Повідомлення архівовано"
+msgstr[0] "Повідомлення переміщено"
+msgstr[1] "Повідомлення переміщено"
+msgstr[2] "Повідомлення переміщено"
 
-#: src/MainWindow.vala:299
+#: src/MainWindow.vala:305
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Повідомлення видалено"
@@ -341,17 +371,17 @@ msgid "Mark As Unread"
 msgstr "Позначити непрочитаним"
 
 #: src/ConversationList/ConversationList.vala:578
-#: src/MessageList/MessageList.vala:89
+#: src/MessageList/MessageList.vala:60
 msgid "Mark as Read"
 msgstr "Позначити як прочитане"
 
 #: src/ConversationList/ConversationList.vala:588
-#: src/MessageList/MessageList.vala:95
+#: src/MessageList/MessageList.vala:66
 msgid "Star"
 msgstr "Позначити зірочкою"
 
 #: src/ConversationList/ConversationList.vala:596
-#: src/MessageList/MessageList.vala:101
+#: src/MessageList/MessageList.vala:72
 msgid "Unstar"
 msgstr "Прибрати позначення зірочкою"
 
@@ -387,7 +417,30 @@ msgstr "Приклад вебсайту"
 msgid "Compose new message"
 msgstr "Написати нове повідомлення"
 
-#: src/FoldersView/FolderSourceItem.vala:38
+#: src/FoldersView/FoldersListView.vala:59
+msgid "Always Show Remote Images"
+msgstr "Завжди показувати віддалені зображення"
+
+#: src/FoldersView/FoldersListView.vala:62
+msgid "Account Settings…"
+msgstr "Налаштування облікового запису…"
+
+#: src/FoldersView/FoldersListView.vala:86
+msgid "Menu"
+msgstr "Меню"
+
+#: src/FoldersView/FoldersListView.vala:140
+msgid "Unable to open System Settings"
+msgstr "Не вдалося відкрити системні налаштування"
+
+#: src/FoldersView/FoldersListView.vala:141
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+"Відкрийте системні налаштування вручну або встановіть Evolution, щоб "
+"налаштувати онлайн-облікові записи."
+
+#: src/FoldersView/FolderSourceItem.vala:40
 msgid "Refresh folder"
 msgstr "Оновити теку"
 
@@ -407,53 +460,39 @@ msgstr "Надіслані"
 msgid "All Mailboxes"
 msgstr "Вся пошта"
 
-#: src/MessageList/MessageList.vala:23
-msgid "Always Show Remote Images"
-msgstr "Завжди показувати віддалені зображення"
-
-#: src/MessageList/MessageList.vala:26
-msgid "Account Settings…"
-msgstr "Налаштування облікового запису…"
-
-#: src/MessageList/MessageList.vala:49
-msgid "Menu"
-msgstr "Меню"
-
-#: src/MessageList/MessageList.vala:58 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Відповідь"
 
-#: src/MessageList/MessageList.vala:67 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Відповісти всім"
 
-#: src/MessageList/MessageList.vala:76 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Переслати"
 
-#: src/MessageList/MessageList.vala:83
+#: src/MessageList/MessageList.vala:54
 msgid "Mark as Unread"
 msgstr "Позначити непрочитаним"
 
-#: src/MessageList/MessageList.vala:114
+#: src/MessageList/MessageList.vala:85
 msgid "Mark Conversation"
 msgstr "Позначити бесіду"
 
-#: src/MessageList/MessageList.vala:122
-#, fuzzy
-#| msgid "Move conversations to Trash"
+#: src/MessageList/MessageList.vala:93
 msgid "Move Conversation to…"
-msgstr "Перемістити бесіди до смітника"
+msgstr "Перемістити бесіди до…"
 
-#: src/MessageList/MessageList.vala:132
+#: src/MessageList/MessageList.vala:103
 msgid "Move conversations to archive"
 msgstr "Перемістити бесіди до архіву"
 
-#: src/MessageList/MessageList.vala:140
+#: src/MessageList/MessageList.vala:111
 msgid "Move conversations to Trash"
 msgstr "Перемістити бесіди до смітника"
 
-#: src/MessageList/MessageList.vala:168
+#: src/MessageList/MessageList.vala:126
 msgid "No Message Selected"
 msgstr "Повідомлення не вибрано"
 
@@ -551,9 +590,6 @@ msgstr "Зберегти"
 
 #~ msgid "Unquote text"
 #~ msgstr "Скасувати цитування тексту"
-
-#~ msgid "Insert Image"
-#~ msgstr "Вставити зображення"
 
 #~ msgid "Drafts | Draft"
 #~ msgstr "Чернетки | Чернетка | Draft | Drafts"

@@ -37,9 +37,6 @@
         body.plain a {
             cursor: text;
         }
-        .fill {
-            min-height: 100%;
-        }
         #elementary-message-body {
             box-sizing: border-box;
             padding: 6px;
@@ -53,6 +50,7 @@
         #elementary-message-quote {
             box-sizing: border-box;
             padding: 6px;
+            padding-top: 12px !important;
             outline: 0px solid transparent;
         }
         blockquote {
@@ -74,8 +72,8 @@
     </style>
 </head>
 <body>
-    <div contenteditable="true" class="fill" id="elementary-message-body" dir="auto"></div>
+    <div contenteditable="true" style="height:100%;" id="elementary-message-body" dir="auto"></div>
     <div contenteditable="true" hidden="true" id="elementary-message-signature" dir="auto"></div>
-    <br/><div contenteditable="true" hidden="true" id="elementary-message-quote" dir="auto"></div>
+    <div contenteditable="true" hidden="true" id="elementary-message-quote" dir="auto"></div>
 </body>
 </html>
