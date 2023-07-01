@@ -224,7 +224,7 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
 
         foreach (var child in signature_list.get_children ()) {
             var signature = (Signature)child;
-            if (!signature.is_visible ()) {
+            if (signature.is_deleted) {
                 yield signature.finish_delete_signature ();
             }
         }
