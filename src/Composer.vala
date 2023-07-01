@@ -13,6 +13,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
     private const string ACTION_ADD_ATTACHMENT= "add-attachment";
     private const string ACTION_INSERT_IMAGE = "insert-image";
+    private const string ACTION_INSERT_SIGNATURE = "insert-signature";
     private const string ACTION_DISCARD = "discard";
     private const string ACTION_SEND = "send";
 
@@ -45,6 +46,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     private const ActionEntry[] ACTION_ENTRIES = {
         {ACTION_ADD_ATTACHMENT, on_add_attachment },
         {ACTION_INSERT_IMAGE, on_insert_image, },
+        {ACTION_INSERT_SIGNATURE, on_insert_signature, "s" },
         {ACTION_DISCARD, on_discard },
         {ACTION_SEND, on_send }
     };
@@ -882,14 +884,14 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         unowned var signature_uid = parameter.get_string ();
 
         if (signature_uid == "none") {
-            web_view.set_signature_content ("");
+            web_view.set_content_of_element ("#elementary-message-signature", "");
             return;
         }
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
         session.get_signature_for_uid.begin (signature_uid, (obj, res) => {
             var signature = session.get_signature_for_uid.end (res);
-            web_view.set_signature_content (signature);
+            web_view.set_content_of_element ("#elementary-message-signature", signature);
         });
     }
 
