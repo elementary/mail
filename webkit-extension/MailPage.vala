@@ -110,12 +110,6 @@ public class Mail.Page : Object {
                 JSC.Value val = js_context.evaluate ("document.querySelector('body').innerHTML;", -1);
                 message.send_reply (new WebKit.UserMessage ("get-body-html", new Variant.take_string (val.to_string ())));
                 return true;
-            case "set-message":
-                unowned string message_html = message.parameters.get_string ();
-                var body = js_context.evaluate ("document.querySelector('body')", -1);
-                body.object_set_property ("innerHTML", new JSC.Value.string (js_context, message_html));
-                js_context.evaluate (JS_EXPAND_BODY, -1);
-                return true;
             case "get-page-height":
                 JSC.Value val = js_context.evaluate ("""
                 Math.max(
