@@ -20,28 +20,93 @@
 
 public class Mail.Page : Object {
     private const string[] ALLOWED_SCHEMES = { "cid", "data", "about", "elementary-mail" };
+    private const string JS_EXPAND_BODY = """
+        var body = document.querySelector('#elementary-message-body');
+        var signature = document.querySelector('#elementary-message-signature');
+        var quote = document.querySelector('#elementary-message-quote');
+        if (!signature.hidden || !quote.hidden) {
+            body.style.height = "initial";
+        } else {
+            body.style.height = "100%";
+        }
+    """;
+
+    private const string JS_CLEAN_HTML = """
+        var body = document.querySelector('#elementary-message-body');
+        body.removeAttribute ("contenteditable");
+        body.removeAttribute ("id");
+        body.style.height = "initial";
+
+        var signature = document.querySelector('#elementary-message-signature');
+        if (signature.hidden) {
+            signature.remove ();
+        } else {
+            signature.removeAttribute ("contenteditable");
+            signature.removeAttribute ("id");
+        }
+
+        var quote = document.querySelector('#elementary-message-quote');
+        if (quote.hidden) {
+            quote.remove ();
+        } else {
+            quote.removeAttribute ("contenteditable");
+            quote.removeAttribute ("id");
+        }
+    """;
 
     private bool show_images = false;
+    private List<string> image_uris;
     unowned WebKit.WebPage page;
 
     public Page (WebKit.WebPage page) {
         this.page = page;
+        image_uris = new List<string> ();
+
         page.send_request.connect (on_send_request);
         page.user_message_received.connect (on_page_user_message_received);
         page.get_editor ().selection_changed.connect (() => {
             page.send_message_to_view.begin (new WebKit.UserMessage ("selection-changed", null), null);
+
+            var js_context = page.get_main_frame ().get_js_context ();
+            foreach (var image_uri in image_uris) {
+                var val = js_context.evaluate ("""document.querySelector('[src="%s"]')""".printf (image_uri), -1);
+                if (val.is_null ()) {
+                    unowned List<string> entry = image_uris.find_custom (image_uri, strcmp);
+                    image_uris.remove_link (entry);
+                    page.send_message_to_view.begin (new WebKit.UserMessage ("image-removed", image_uri), null);
+                }
+            }
         });
     }
 
     private bool on_page_user_message_received (WebKit.WebPage page, WebKit.UserMessage message) {
         var js_context = page.get_main_frame ().get_js_context ();
         switch (message.name) {
-            case "set-body-html":
-                unowned string body_html = message.parameters.get_string ();
-                var body = js_context.evaluate ("document.querySelector('#message-body')", -1);
-                body.object_set_property ("innerHTML", new JSC.Value.string (js_context, body_html));
+            case "set-content-of-element":
+                string element_selector, content;
+                message.parameters.get ("(ss)", out element_selector, out content);
+
+                var element = js_context.evaluate ("document.querySelector('%s')".printf (element_selector), -1);
+
+                if (element.is_null ()) {
+                    warning ("HTML element '%s' not found.", element_selector);
+                    return true;
+                }
+
+                if (element_selector == "#elementary-message-signature" ||
+                    element_selector == "#elementary-message-quote") {
+                    element.object_set_property ("hidden", new JSC.Value.boolean (js_context, content.strip () == ""));
+                }
+
+                element.object_set_property ("innerHTML", new JSC.Value.string (js_context, content));
+
+                js_context.evaluate (JS_EXPAND_BODY, -1);
+
                 return true;
             case "get-body-html":
+                if (message.parameters.get_boolean ()) {
+                    js_context.evaluate (JS_CLEAN_HTML, -1);
+                }
                 JSC.Value val = js_context.evaluate ("document.querySelector('body').innerHTML;", -1);
                 message.send_reply (new WebKit.UserMessage ("get-body-html", new Variant.take_string (val.to_string ())));
                 return true;
@@ -77,6 +142,11 @@ public class Mail.Page : Object {
                     new JSC.Value.boolean (js_context, false),
                     new JSC.Value.string (js_context, argument)
                 };
+
+                if (command == "insertImage") {
+                    image_uris.append (argument);
+                }
+
                 var ret = document.object_invoke_methodv ("execCommand", parameters);
                 if (!ret.is_boolean () || ret.to_boolean () == false) {
                     critical (ret.to_string ());

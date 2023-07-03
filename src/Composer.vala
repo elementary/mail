@@ -12,12 +12,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
 
     private const string ACTION_ADD_ATTACHMENT= "add-attachment";
-    private const string ACTION_BOLD = "bold";
-    private const string ACTION_ITALIC = "italic";
-    private const string ACTION_UNDERLINE = "underline";
-    private const string ACTION_STRIKETHROUGH = "strikethrough";
-    private const string ACTION_INSERT_LINK = "insert_link";
-    private const string ACTION_REMOVE_FORMAT = "remove_formatting";
+    private const string ACTION_INSERT_IMAGE = "insert-image";
     private const string ACTION_DISCARD = "discard";
     private const string ACTION_SEND = "send";
 
@@ -49,12 +44,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
     private const ActionEntry[] ACTION_ENTRIES = {
         {ACTION_ADD_ATTACHMENT, on_add_attachment },
-        {ACTION_BOLD, on_edit_action, "s", "''" },
-        {ACTION_ITALIC, on_edit_action, "s", "''" },
-        {ACTION_UNDERLINE, on_edit_action, "s", "''" },
-        {ACTION_STRIKETHROUGH, on_edit_action, "s", "''" },
-        {ACTION_INSERT_LINK, on_insert_link_clicked, },
-        {ACTION_REMOVE_FORMAT, on_remove_format },
+        {ACTION_INSERT_IMAGE, on_insert_image, },
         {ACTION_DISCARD, on_discard },
         {ACTION_SEND, on_send }
     };
@@ -77,10 +67,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         application = (Gtk.Application) GLib.Application.get_default ();
         // Alt+I from Outlook, Shift+Ctrl+A from Apple Mail
         application.set_accels_for_action (ACTION_PREFIX + ACTION_ADD_ATTACHMENT, {"<Alt>I", "<Shift><Control>A"});
-        application.set_accels_for_action (ACTION_PREFIX + ACTION_INSERT_LINK, {"<Control>K"});
         application.set_accels_for_action (ACTION_PREFIX + ACTION_SEND, {"<Control>Return"});
-        application.set_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH), {"<Control>percent"});
-        application.set_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_UNDERLINE, ACTION_UNDERLINE), {"<Control>U"});
 
         foreach (unowned var window in application.get_windows ()) {
             if (window is MainWindow) {
@@ -204,70 +191,10 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         recipient_grid.attach (subject_label, 0, 4);
         recipient_grid.attach (subject_val, 1, 4);
 
-        var bold = new Gtk.ToggleButton () {
-            action_name = ACTION_PREFIX + ACTION_BOLD,
-            action_target = ACTION_BOLD,
-            image = new Gtk.Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.MENU),
-            tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>B"}, _("Bold"))
+        var image = new Gtk.Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.MENU) {
+            action_name = ACTION_PREFIX + ACTION_INSERT_IMAGE,
+            tooltip_text = _("Insert Image")
         };
-
-        var italic = new Gtk.ToggleButton () {
-            action_name = ACTION_PREFIX + ACTION_ITALIC,
-            action_target = ACTION_ITALIC,
-            image = new Gtk.Image.from_icon_name ("format-text-italic-symbolic", Gtk.IconSize.MENU),
-            tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>I"}, _("Italic"))
-        };
-
-        var underline = new Gtk.ToggleButton () {
-            action_name = ACTION_PREFIX + ACTION_UNDERLINE,
-            action_target = ACTION_UNDERLINE,
-            image = new Gtk.Image.from_icon_name ("format-text-underline-symbolic", Gtk.IconSize.MENU),
-            tooltip_markup = Granite.markup_accel_tooltip (
-                application.get_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_UNDERLINE, ACTION_UNDERLINE)),
-                _("Underline")
-            )
-        };
-
-        var strikethrough = new Gtk.ToggleButton () {
-            action_name = ACTION_PREFIX + ACTION_STRIKETHROUGH,
-            action_target = ACTION_STRIKETHROUGH,
-            image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU),
-            tooltip_markup = Granite.markup_accel_tooltip (
-                application.get_accels_for_action (Action.print_detailed_name (ACTION_PREFIX + ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH)),
-                _("Strikethrough")
-            )
-        };
-
-        var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU) {
-            action_name = ACTION_PREFIX + ACTION_REMOVE_FORMAT,
-            tooltip_markup = Granite.markup_accel_tooltip (
-                application.get_accels_for_action (ACTION_PREFIX + ACTION_REMOVE_FORMAT),
-                _("Remove formatting")
-            )
-        };
-
-        var formatting_buttons = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-        formatting_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-        formatting_buttons.add (bold);
-        formatting_buttons.add (italic);
-        formatting_buttons.add (underline);
-        formatting_buttons.add (strikethrough);
-
-        var link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU) {
-            action_name = ACTION_PREFIX + ACTION_INSERT_LINK,
-            tooltip_markup = Granite.markup_accel_tooltip (
-                application.get_accels_for_action (ACTION_PREFIX + ACTION_INSERT_LINK),
-                _("Insert Link")
-            )
-        };
-
-        var button_row = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12) {
-            margin_start = 6,
-            margin_bottom = 6
-        };
-        button_row.add (formatting_buttons);
-        button_row.add (clear_format );
-        button_row.add (link);
 
         web_view = new WebView ();
         try {
@@ -277,8 +204,10 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             warning ("Failed to load blank message template: %s", e.message);
         }
 
-        web_view.selection_changed.connect (update_actions);
         web_view.mouse_target_changed.connect (on_mouse_target_changed);
+
+        var editor_toolbar = new EditorToolbar (web_view);
+        editor_toolbar.add (image);
 
         attachment_box = new Gtk.FlowBox () {
             homogeneous = true,
@@ -334,7 +263,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         var main_box = new Gtk.Box (VERTICAL, 0);
         main_box.add (headerbar);
         main_box.add (recipient_grid);
-        main_box.add (button_row);
+        main_box.add (editor_toolbar);
         main_box.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         main_box.add (view_overlay);
         main_box.add (attachment_box);
@@ -456,15 +385,17 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                     Camel.MimeFilterToHTMLFlags.CONVERT_SPACES |
                     Camel.MimeFilterToHTMLFlags.CONVERT_URLS;
 
-                web_view.set_body_content (Camel.text_to_html (result["body"].to_array ()[0], flags, 0));
+                web_view.set_content_of_element (
+                    "#elementary-message-body",
+                    Camel.text_to_html (result["body"].to_array ()[0], flags, 0)
+                );
             }
 
             if ("attachment" in result) {
                 foreach (var path in result["attachment"]) {
                     var file = path.has_prefix ("file://") ? File.new_for_uri (path) : File.new_for_path (path);
 
-                    var attachment = new Attachment (file);
-                    attachment_box.add (attachment);
+                    attachment_box.add (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
                 }
                 attachment_box.show_all ();
             }
@@ -497,8 +428,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
             filechooser.hide ();
             foreach (unowned File file in filechooser.get_files ()) {
-                var attachment = new Attachment (file);
-                attachment_box.add (attachment);
+                attachment_box.add (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
             }
             attachment_box.show_all ();
         }
@@ -506,29 +436,61 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         filechooser.destroy ();
     }
 
-    private void on_insert_link_clicked () {
-        ask_insert_link.begin ();
-    }
+    private void on_insert_image () {
+        var image_filter = new Gtk.FileFilter ();
+        image_filter.set_filter_name (_("Images"));
+        image_filter.add_mime_type ("image/*");
 
-    private async void ask_insert_link () {
-        var selected_text = yield web_view.get_selected_text ();
-        var insert_link_dialog = new InsertLinkDialog (selected_text) {
-            transient_for = this
+        var filechooser = new Gtk.FileChooserNative (
+            _("Choose an image"),
+            (Gtk.Window) get_toplevel (),
+            Gtk.FileChooserAction.OPEN,
+            _("Insert"),
+            _("Cancel")
+        ) {
+            filter = image_filter,
+            select_multiple = false
         };
-        insert_link_dialog.present ();
-        insert_link_dialog.insert_link.connect ((url, title) => on_link_inserted (url, title, selected_text));
-    }
 
-    private void on_link_inserted (string url, string title, string? selected_text) {
-        if (selected_text != null && title == selected_text) {
-            web_view.execute_editor_command ("createLink", url);
-        } else {
-            if (title != null && title.length > 0) {
-                web_view.execute_editor_command ("insertHTML", """<a href="%s">%s</a>""".printf (url, title));
-            } else {
-                web_view.execute_editor_command ("insertHTML", """<a href="%s">%s</a>""".printf (url, url));
+        filechooser.response.connect ((response) => {
+            if (response == Gtk.ResponseType.ACCEPT) {
+                var file = filechooser.get_file ();
+
+                try {
+                    var inpustream = file.read ();
+
+                    var attachment = new Attachment (file, Attachment.DISPOSITION_INLINE);
+                    attachment_box.add (attachment);
+
+                    web_view.add_internal_resource (attachment.uri, inpustream);
+                    web_view.execute_editor_command ("insertImage", attachment.uri);
+
+                    ulong handler = 0;
+                    handler = web_view.image_removed.connect ((uri) => {
+                        if (uri == attachment.uri) {
+                            attachment.destroy ();
+                            web_view.disconnect (handler);
+                        }
+                    });
+                } catch (Error e) {
+                    var error_dialog = new Granite.MessageDialog (
+                        _("Unable to insert image"),
+                        _("There was an unexpected error while trying to insert the image."),
+                        new ThemedIcon ("insert-image"),
+                        Gtk.ButtonsType.CLOSE
+                    ) {
+                        badge_icon = new ThemedIcon ("dialog-error")
+                    };
+                    error_dialog.show_error_details (e.message);
+                    error_dialog.present ();
+                    error_dialog.response.connect (() => error_dialog.destroy ());
+                }
             }
-        }
+
+            filechooser.destroy ();
+        });
+
+        filechooser.show ();
     }
 
     private void on_mouse_target_changed (WebKit.WebView web_view, WebKit.HitTestResult hit_test, uint mods) {
@@ -602,11 +564,17 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         }
 
         if (content_to_quote != null) {
-            string message_content;
-
             if (type == Type.DRAFT) {
                 ancestor_message_info = info;
-                message_content = content_to_quote;
+
+                if (content_to_quote.contains ("elementary-message-body")) {
+                    //We can assume the message was created using the elementary mail composer
+                    //and has the necessary tags. Therefore we overwrite the blank templates
+                    //whole html body
+                    web_view.set_content_of_element ("body", content_to_quote);
+                } else {
+                    web_view.set_content_of_element ("#elementary-message-body", content_to_quote);
+                }
 
                 unowned var to = message.get_recipients (Camel.RECIPIENT_TYPE_TO);
                 if (to != null) {
@@ -631,7 +599,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                     }
                 }
             } else {
-                message_content = "<br/><br/>";
+                string message_content = "";
                 string date_format = _("%a, %b %-e, %Y at %-l:%M %p");
                 if (type == Type.REPLY || type == Type.REPLY_ALL) {
                     var reply_to = message.get_reply_to ();
@@ -683,9 +651,9 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                         get_attachments.begin (message.content);
                     }
                 }
-            }
 
-            web_view.set_body_content (message_content);
+                web_view.set_content_of_element ("#elementary-message-quote", message_content);
+            }
         }
     }
 
@@ -711,9 +679,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                             yield part.content.decode_to_output_stream (output_stream, GLib.Priority.DEFAULT, null);
                         }
 
-                        var attachment = new Attachment (file);
-                        attachment_box.add (attachment);
-
+                        attachment_box.add (new Attachment (file, DISPOSITION_ATTACHMENT));
                         attachment_box.show_all ();
                     } catch (Error e) {
                         critical (e.message);
@@ -723,32 +689,6 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 }
             }
         }
-    }
-
-    private void on_edit_action (SimpleAction action, Variant? param) {
-        var command = param.get_string ();
-        web_view.execute_editor_command (command);
-        update_actions ();
-    }
-
-    private void on_remove_format () {
-        web_view.execute_editor_command ("removeformat");
-        web_view.execute_editor_command ("unlink");
-    }
-
-    private void update_actions () {
-        web_view.query_command_state.begin ("bold", (obj, res) => {
-            change_action_state (ACTION_BOLD, web_view.query_command_state.end (res) ? ACTION_BOLD : "");
-        });
-        web_view.query_command_state.begin ("italic", (obj, res) => {
-            change_action_state (ACTION_ITALIC, web_view.query_command_state.end (res) ? ACTION_ITALIC : "");
-        });
-        web_view.query_command_state.begin ("underline", (obj, res) => {
-            change_action_state (ACTION_UNDERLINE, web_view.query_command_state.end (res) ? ACTION_UNDERLINE : "");
-        });
-        web_view.query_command_state.begin ("strikethrough", (obj, res) => {
-            change_action_state (ACTION_STRIKETHROUGH, web_view.query_command_state.end (res) ? ACTION_STRIKETHROUGH : "");
-        });
     }
 
     private void on_discard () {
@@ -809,11 +749,15 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                     sensitive = true;
                     return;
                 }
+
+                send_message.callback ();
             });
+
+            yield;
         }
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
-        var body_html = yield web_view.get_body_html ();
+        var body_html = yield web_view.get_body_html (true);
         var message = build_message (body_html);
         var sender = build_sender (message, from_combo.get_active_text ());
         var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
@@ -933,12 +877,20 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     }
 
     private class Attachment : Gtk.FlowBoxChild {
-        public GLib.FileInfo? info { private get; construct; }
-        public GLib.File file { get; construct; }
+        public const string DISPOSITION_ATTACHMENT = "attachment";
+        public const string DISPOSITION_INLINE = "inline";
 
-        public Attachment (GLib.File file) {
+        public GLib.File file { get; construct; }
+        public string disposition { get; construct; }
+        public string cid { get; construct; }
+        public string uri { get; construct; }
+
+        private GLib.FileInfo? info;
+
+        public Attachment (GLib.File file, string disposition) {
             Object (
-                file: file
+                file: file,
+                disposition: disposition
             );
         }
 
@@ -948,6 +900,9 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 GLib.FileAttribute.STANDARD_DISPLAY_NAME + "," +
                 GLib.FileAttribute.STANDARD_ICON + "," +
                 GLib.FileAttribute.STANDARD_SIZE;
+
+            cid = GLib.Uuid.string_random ();
+            uri = "cid:%s".printf (cid);
 
             try {
                 info = file.query_info (QUERY_STRING, GLib.FileQueryInfoFlags.NONE);
@@ -985,6 +940,10 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             box.add (size_label);
             box.add (remove_button);
 
+            if (disposition == DISPOSITION_INLINE) {
+                no_show_all = true;
+            }
+
             margin_top = 3;
             margin_bottom = 3;
             margin_start = 3;
@@ -1014,10 +973,13 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
             wrapper.set_mime_type (mime_type);
 
-            var mimepart = new Camel.MimePart ();
-            mimepart.set_disposition ("attachment");
+            var mimepart = new Camel.MimePart () {
+                content_id = cid,
+                disposition = disposition,
+                content = wrapper
+            };
+
             mimepart.set_filename (info.get_display_name ());
-            ((Camel.Medium)mimepart).set_content (wrapper);
 
             if (mimepart.get_content_type ().is ("text", "*")) {
                 // Run text files through a stream filter to get the best transfer encoding

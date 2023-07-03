@@ -37,11 +37,21 @@
         body.plain a {
             cursor: text;
         }
-        #message-body {
+        #elementary-message-body {
             box-sizing: border-box;
             padding: 6px;
             outline: 0px solid transparent;
-            min-height: 100%;
+        }
+        #elementary-message-signature {
+            box-sizing: border-box;
+            padding: 6px;
+            outline: 0px solid transparent;
+        }
+        #elementary-message-quote {
+            box-sizing: border-box;
+            padding: 6px;
+            padding-top: 12px !important;
+            outline: 0px solid transparent;
         }
         blockquote {
             margin-top: 0px;
@@ -62,6 +72,8 @@
     </style>
 </head>
 <body>
-    <div contenteditable="true" id="message-body" dir="auto"></div>
+    <div contenteditable="true" style="height:100%;" id="elementary-message-body" dir="auto"></div>
+    <div contenteditable="true" hidden="true" id="elementary-message-signature" dir="auto"></div>
+    <div contenteditable="true" hidden="true" id="elementary-message-quote" dir="auto"></div>
 </body>
 </html>

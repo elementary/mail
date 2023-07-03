@@ -289,7 +289,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             margin_top = 12,
             margin_bottom = 12,
             margin_start = 12,
-            margin_end = 12
+            margin_end = 12,
+            bind_height_to_page_height = true
         };
         web_view.mouse_target_changed.connect (on_mouse_target_changed);
         web_view.context_menu.connect (on_webview_context_menu);
@@ -661,7 +662,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         Bytes bytes = ByteArray.free_to_bytes (byte_array);
         var inline_stream = new MemoryInputStream.from_bytes (bytes);
-        web_view.add_internal_resource (part.get_content_id (), inline_stream);
+        web_view.add_internal_resource ("cid:%s".printf (part.get_content_id ()), inline_stream);
     }
 
     public async string get_message_body_html () {

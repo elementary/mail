@@ -22,10 +22,12 @@ public extern const string WEBKIT_EXTENSION_PATH;
 
 public class Mail.WebView : WebKit.WebView {
     public signal void image_load_blocked ();
+    public signal void image_removed (string uri);
     public signal void link_activated (string url);
     public signal void selection_changed ();
     public signal void load_finished ();
 
+    public bool bind_height_to_page_height { get; set; default = false; }
     public bool body_html_changed { get; private set; default = false; }
 
     private const string INTERNAL_URL_BODY = "elementary-mail:body";
@@ -35,7 +37,7 @@ public class Mail.WebView : WebKit.WebView {
 
     private bool loaded = false;
     private bool queued_load_images = false;
-    private string? queued_body_content = null;
+    private Gee.HashMap<string, string> queued_elements;
     private GLib.Cancellable cancellable;
 
     static construct {
@@ -58,6 +60,7 @@ public class Mail.WebView : WebKit.WebView {
         hexpand = true;
 
         internal_resources = new Gee.HashMap<string, InputStream> ();
+        queued_elements = new Gee.HashMap<string, string> ();
 
         decide_policy.connect (on_decide_policy);
         load_changed.connect (on_load_changed);
@@ -97,8 +100,11 @@ public class Mail.WebView : WebKit.WebView {
 
         if (event == WebKit.LoadEvent.FINISHED) {
             loaded = true;
-            if (queued_body_content != null) {
-                set_body_content ((owned) queued_body_content);
+
+            if (queued_elements.size > 0) {
+                foreach (var element in queued_elements.keys) {
+                    set_content_of_element (element, queued_elements.get (element));
+                }
             }
 
             if (queued_load_images) {
@@ -110,6 +116,10 @@ public class Mail.WebView : WebKit.WebView {
     }
 
     private void update_height () {
+        if (!bind_height_to_page_height) {
+            return;
+        }
+
         var message = new WebKit.UserMessage ("get-page-height", null);
         send_message_to_page.begin (message, cancellable, (obj, res) => {
             try {
@@ -128,12 +138,12 @@ public class Mail.WebView : WebKit.WebView {
         base.load_html (body, INTERNAL_URL_BODY);
     }
 
-    public void set_body_content (owned string content) {
+    public void set_content_of_element (string element, string content) {
         if (loaded) {
-            var message = new WebKit.UserMessage ("set-body-html", new Variant.take_string ((owned) content));
+            var message = new WebKit.UserMessage ("set-content-of-element", new Variant ("(ss)", element, content));
             send_message_to_page.begin (message, cancellable);
         } else {
-            queued_body_content = (owned) content;
+            queued_elements[element] = content;
         }
     }
 
@@ -170,8 +180,8 @@ public class Mail.WebView : WebKit.WebView {
         return Gdk.EVENT_STOP;
     }
 
-    public void add_internal_resource (string name, InputStream data) {
-        internal_resources[name] = data;
+    public void add_internal_resource (string uri, InputStream data) {
+        internal_resources[uri] = data;
     }
 
     public void load_images () {
@@ -204,12 +214,12 @@ public class Mail.WebView : WebKit.WebView {
         return false;
     }
 
-    public async string? get_body_html () {
+    public async string? get_body_html (bool clean_for_sending = false) {
         string? body_html = null;
 
         if (!loaded && !cancellable.is_cancelled ()) {
             load_finished.connect (() => {
-                get_body_html.begin ((obj, res) => {
+                get_body_html.begin (clean_for_sending, (obj, res) => {
                     body_html = get_body_html.end (res);
                     get_body_html.callback ();
                 });
@@ -227,7 +237,7 @@ public class Mail.WebView : WebKit.WebView {
             yield;
         } else {
             try {
-                var message = new WebKit.UserMessage ("get-body-html", new Variant.boolean (true));
+                var message = new WebKit.UserMessage ("get-body-html", new Variant.boolean (clean_for_sending));
                 var response = yield send_message_to_page (message, cancellable);
                 body_html = response.parameters.get_string ();
             } catch (Error e) {
@@ -249,11 +259,11 @@ public class Mail.WebView : WebKit.WebView {
 
     private bool handle_internal_response (WebKit.URISchemeRequest request) {
 #if HAS_SOUP_3
-        string name = GLib.Uri.unescape_string (request.get_path ());
+        string uri = GLib.Uri.unescape_string (request.get_uri ());
 #else
-        string name = Soup.URI.decode (request.get_path ());
+        string uri = Soup.URI.decode (request.get_uri ());
 #endif
-        InputStream? buf = this.internal_resources[name];
+        InputStream? buf = this.internal_resources[uri];
         if (buf != null) {
             request.finish (buf, -1, null);
             return true;
@@ -269,6 +279,11 @@ public class Mail.WebView : WebKit.WebView {
                     image_load_blocked ();
                 }
 
+                return true;
+            case "image-removed":
+                unowned var uri = message.parameters.get_string ();
+                internal_resources.unset (uri);
+                image_removed (uri);
                 return true;
             case "selection-changed":
                 selection_changed ();
