@@ -679,7 +679,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                             yield part.content.decode_to_output_stream (output_stream, GLib.Priority.DEFAULT, null);
                         }
 
-                        attachment_box.add (new Attachment (file, DISPOSITION_ATTACHMENT));
+                        attachment_box.add (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
                         attachment_box.show_all ();
                     } catch (Error e) {
                         critical (e.message);
