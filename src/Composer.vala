@@ -667,10 +667,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 if (part.disposition == "attachment") {
                     try {
                         if (tmp_dir == null) {
-                            tmp_dir = GLib.File.new_for_path (
-                                Path.build_filename (Environment.get_tmp_dir (), Uuid.string_random ())
-                            );
-                            yield tmp_dir.make_directory_async ();
+                            tmp_dir = GLib.File.new_for_path (GLib.DirUtils.make_tmp (".XXXXXX"));
                         }
 
                         var file = tmp_dir.get_child (part.get_filename ());
