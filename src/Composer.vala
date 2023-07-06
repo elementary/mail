@@ -385,7 +385,10 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                     Camel.MimeFilterToHTMLFlags.CONVERT_SPACES |
                     Camel.MimeFilterToHTMLFlags.CONVERT_URLS;
 
-                web_view.set_body_content (Camel.text_to_html (result["body"].to_array ()[0], flags, 0));
+                web_view.set_content_of_element (
+                    "#elementary-message-body",
+                    Camel.text_to_html (result["body"].to_array ()[0], flags, 0)
+                );
             }
 
             if ("attachment" in result) {
@@ -561,11 +564,17 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         }
 
         if (content_to_quote != null) {
-            string message_content;
-
             if (type == Type.DRAFT) {
                 ancestor_message_info = info;
-                message_content = content_to_quote;
+
+                if (content_to_quote.contains ("elementary-message-body")) {
+                    //We can assume the message was created using the elementary mail composer
+                    //and has the necessary tags. Therefore we overwrite the blank templates
+                    //whole html body
+                    web_view.set_content_of_element ("body", content_to_quote);
+                } else {
+                    web_view.set_content_of_element ("#elementary-message-body", content_to_quote);
+                }
 
                 unowned var to = message.get_recipients (Camel.RECIPIENT_TYPE_TO);
                 if (to != null) {
@@ -590,7 +599,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                     }
                 }
             } else {
-                message_content = "<br/><br/>";
+                string message_content = "";
                 string date_format = _("%a, %b %-e, %Y at %-l:%M %p");
                 if (type == Type.REPLY || type == Type.REPLY_ALL) {
                     var reply_to = message.get_reply_to ();
@@ -638,9 +647,9 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                     message_content += "<br/><br/>";
                     message_content += content_to_quote;
                 }
-            }
 
-            web_view.set_body_content (message_content);
+                web_view.set_content_of_element ("#elementary-message-quote", message_content);
+            }
         }
     }
 
@@ -702,11 +711,15 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                     sensitive = true;
                     return;
                 }
+
+                send_message.callback ();
             });
+
+            yield;
         }
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
-        var body_html = yield web_view.get_body_html ();
+        var body_html = yield web_view.get_body_html (true);
         var message = build_message (body_html);
         var sender = build_sender (message, from_combo.get_active_text ());
         var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
