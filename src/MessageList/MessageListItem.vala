@@ -33,6 +33,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private Gtk.StyleContext style_context;
     private Hdy.Avatar avatar;
     private Gtk.FlowBox attachment_bar = null;
+    private File? temp_dir = null;
 
     private string message_content;
     private bool message_is_html = false;
@@ -716,15 +717,17 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     }
 
     private async void show_file_anyway (Camel.MimePart mime_part) {
-        var path = Path.build_path (Environment.get_tmp_dir (), Uuid.string_random ());
-        var dir = File.new_for_path (path);
-        var file = File.new_build_filename (path, mime_part.get_filename ());
-
         try {
-            yield dir.make_directory_async ();
+            if (temp_dir == null) {
+                temp_dir = File.new_for_path (GLib.DirUtils.make_tmp (".XXXXXX"));
+            }
 
-            var output_stream = yield file.create_async (GLib.FileCreateFlags.NONE, GLib.Priority.DEFAULT, null);
-            yield mime_part.content.decode_to_output_stream (output_stream, GLib.Priority.DEFAULT, null);
+            var file = temp_dir.get_child (mime_part.get_filename ());
+
+            if (!file.query_exists ()) {
+                var output_stream = yield file.create_async (GLib.FileCreateFlags.NONE, GLib.Priority.DEFAULT, null);
+                yield mime_part.content.decode_to_output_stream (output_stream, GLib.Priority.DEFAULT, null);
+            }
 
             yield AppInfo.launch_default_for_uri_async (file.get_uri (), null, null);
         } catch (Error e) {
