@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-16 17:05+0000\n"
-"PO-Revision-Date: 2023-03-02 10:25+0000\n"
+"PO-Revision-Date: 2023-07-08 21:07+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
 "extra/nb/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-04-08 06:35+0000\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
@@ -89,32 +89,36 @@ msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
 msgstr ""
+"Velkomstvisningen er fjernet når en konto er lagt til i «Nettbaserte kontoer»"
+" uten at man må starte «E-post» på ny"
 
 #: data/mail.metainfo.xml.in:88
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
 msgstr ""
+"Forfattingsfeltet vises alltid som nytt vindu og inkluderer flere "
+"tastatursnarveier"
 
 #: data/mail.metainfo.xml.in:89
 msgid "The search filter menu now appears next to the search bar"
-msgstr ""
+msgstr "Søkefiltermenyen vises nå ved siden av søkefeltet"
 
 #: data/mail.metainfo.xml.in:90
 msgid "HeaderBars appear to float above content when scrolled"
-msgstr ""
+msgstr "HeaderBar-felter tilsynelatende flytende over innhold ved rulling"
 
 #: data/mail.metainfo.xml.in:91
 msgid "Fix a potential crash with empty messages"
-msgstr ""
+msgstr "Fikset potensielt krasj ved tomme meldinger"
 
 #: data/mail.metainfo.xml.in:92
 msgid "Stop resizing from cutting off the message list"
-msgstr ""
+msgstr "Stopp endring av størrelse fra å kutte av meldingslisten"
 
 #: data/mail.metainfo.xml.in:93
 msgid "Performance improvements"
-msgstr ""
+msgstr "Ytelsesforbedringer"
 
 #: data/mail.metainfo.xml.in:119 data/mail.metainfo.xml.in:141
 #: data/mail.metainfo.xml.in:157
@@ -151,30 +155,32 @@ msgid "Use message subject for composer window title"
 msgstr "Bruk meldingsemne for innskriving av vindusnavn"
 
 #: data/mail.metainfo.xml.in:139
+#, fuzzy
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
-msgstr ""
+msgstr "Tillagt støtte for sammenlagt innboks for Microsoft 365-kontoer"
 
 #: data/mail.metainfo.xml.in:143
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
-msgstr ""
+msgstr "Fikset feil som fikk innboksoversikt i bakgrunnen til å krasje"
 
 #: data/mail.metainfo.xml.in:144
 msgid "Removed duplicate sender addresses when composing a message"
-msgstr ""
+msgstr "Fjernet duplikat-senderadresser ved forfatting av melding"
 
 #: data/mail.metainfo.xml.in:145
 msgid "Fix a freeze when archiving the last message in a folder"
-msgstr ""
+msgstr "Fikset frysing ved arkivering av siste melding i en mappe"
 
 #: data/mail.metainfo.xml.in:149
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
+"Endret navn fra Office 365 til Microsoft 365 ihht. Microsofts nye navnesystem"
 
 #: data/mail.metainfo.xml.in:159
 msgid "Fix a potential crash while loading messages"
-msgstr ""
+msgstr "Fikset potensielt krasj ved innlasting av meldinger"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
