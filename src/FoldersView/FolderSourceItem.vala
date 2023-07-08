@@ -118,9 +118,12 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
                 break;
         }
 
-        if (!is_special_folder) {
+        if (!is_special_folder && editable != true) {
             editable = true;
             edited.connect (rename);
+        } else if (is_special_folder) {
+            editable = false;
+            edited.disconnect (rename);
         }
     }
 
@@ -134,12 +137,21 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
         }
     }
 
+    private void cancel_rename () {
+        name = old_name;
+        notify["name"].disconnect (cancel_rename);
+    }
+
     private async void rename (string new_name) {
+        if (new_name == old_name) {
+            return;
+        }
+
         if ("/" in new_name) {
             if (name == old_name) {
-                notify["name"].connect (() => { name = old_name; });
+                notify["name"].connect (cancel_rename);
             } else {
-                name = old_name;
+                cancel_rename ();
             }
 
             MainWindow.notify_error (
@@ -164,9 +176,9 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
 
         if (null != folder_info) {
             if (name == old_name) {
-                notify["name"].connect (() => { name = old_name; });
+                notify["name"].connect (cancel_rename);
             } else {
-                name = old_name;
+                cancel_rename ();
             }
 
             MainWindow.notify_error (
@@ -180,9 +192,9 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
             yield offlinestore.rename_folder (full_name, new_full_name, GLib.Priority.DEFAULT, cancellable);
         } catch (Error e) {
             if (name == old_name) {
-                notify["name"].connect (() => { name = old_name; });
+                notify["name"].connect (cancel_rename);
             } else {
-                name = old_name;
+                cancel_rename ();
             }
 
             MainWindow.notify_error (_("Unable to rename folder “%s”': %s").printf (name, e.message));
