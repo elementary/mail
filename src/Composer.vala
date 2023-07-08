@@ -667,9 +667,44 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
                     message_content += "<br/><br/>";
                     message_content += content_to_quote;
+
+                    if (message.has_attachment ()) {
+                        get_attachments.begin (message.content);
+                    }
                 }
 
                 web_view.set_content_of_element ("#elementary-message-quote", message_content);
+            }
+        }
+    }
+
+    private async void get_attachments (Camel.DataWrapper message_content) {
+        if (message_content is Camel.Multipart) {
+            GLib.File? tmp_dir = null;
+            unowned var content = (Camel.Multipart)message_content;
+            for (uint i = 0; i < content.get_number (); i++) {
+                unowned var part = content.get_part (i);
+                unowned var field = part.get_mime_type_field ();
+                if (part.disposition == "attachment") {
+                    try {
+                        if (tmp_dir == null) {
+                            tmp_dir = GLib.File.new_for_path (GLib.DirUtils.make_tmp (".XXXXXX"));
+                        }
+
+                        var file = tmp_dir.get_child (part.get_filename ());
+                        if (!file.query_exists ()) {
+                            var output_stream = yield file.create_async (FileCreateFlags.NONE);
+                            yield part.content.decode_to_output_stream (output_stream, GLib.Priority.DEFAULT, null);
+                        }
+
+                        attachment_box.add (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
+                        attachment_box.show_all ();
+                    } catch (Error e) {
+                        critical (e.message);
+                    }
+                } else if (field.type == "multipart") {
+                    yield get_attachments (part.content);
+                }
             }
         }
     }
@@ -968,6 +1003,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             if (disposition == DISPOSITION_INLINE) {
                 no_show_all = true;
             }
+
             margin_top = 3;
             margin_bottom = 3;
             margin_start = 3;
