@@ -25,6 +25,8 @@ vala_files = files(
     'FoldersView/GroupedFolderSourceItem.vala',
     'FoldersView/SessionSourceItem.vala',
     'MessageList/AttachmentButton.vala',
+    'MessageList/FolderPopover/FolderPopover.vala',
+    'MessageList/FolderPopover/FolderRow.vala',
     'MessageList/MessageList.vala',
     'MessageList/MessageListItem.vala',
     'SourceList/CellRendererBadge.vala',
