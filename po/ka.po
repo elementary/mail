@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-16 17:05+0000\n"
-"PO-Revision-Date: 2023-05-20 04:06+0000\n"
+"PO-Revision-Date: 2023-07-13 17:30+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/mail/mail/ka/>\n"
 "Language: ka\n"
@@ -48,10 +48,8 @@ msgid "Bcc:"
 msgstr "ფარულიასლი:"
 
 #: src/Composer.vala:196
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert Image"
-msgstr "ბმულის დამატება"
+msgstr "გამოსახულების ჩასმა"
 
 #: src/Composer.vala:222
 msgid "Delete draft"
@@ -84,34 +82,24 @@ msgid "Cancel"
 msgstr "გაუქმება"
 
 #: src/Composer.vala:438
-#, fuzzy
-#| msgid "Show Images"
 msgid "Images"
-msgstr "გამოსახულებების ჩვენება"
+msgstr "გამოსახულებები"
 
 #: src/Composer.vala:442
-#, fuzzy
-#| msgid "Choose a file"
 msgid "Choose an image"
-msgstr "ფაილის არჩევა"
+msgstr "აირჩიეთ გამოსახულება"
 
 #: src/Composer.vala:445
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert"
-msgstr "ბმულის დამატება"
+msgstr "ჩასმა"
 
 #: src/Composer.vala:474
-#, fuzzy
-#| msgid "Unable to send message"
 msgid "Unable to insert image"
-msgstr "შეტყობინების გაგზავნა შეუძლებელია"
+msgstr "გამოსახულების ჩასმა შეუძლებელია"
 
 #: src/Composer.vala:475
-#, fuzzy
-#| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to insert the image."
-msgstr "თქვენი შეტყობინების გაგზავნისას აღმოჩენილია მოულოდნელი შეცდომა."
+msgstr "გამოსახულების ჩასმისას აღმოჩენილია მოულოდნელი შეცდომა."
 
 #: src/Composer.vala:594
 msgid "%a, %b %-e, %Y at %-l:%M %p"
@@ -275,19 +263,15 @@ msgstr[0] "შეტყობინება წაშლილია"
 msgstr[1] "შეტყობინება წაშლილია"
 
 #: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
-#, fuzzy, c-format
-#| msgid "Unable to send message"
+#, c-format
 msgid "Failed to move messages: %s"
-msgstr "შეტყობინების გაგზავნა შეუძლებელია"
+msgstr "შეტყობინებების გადატანის შეცდომა: %s"
 
 #: src/MainWindow.vala:291
-#, fuzzy
-#| msgid "Message Archived"
-#| msgid_plural "Messages Archived"
 msgid "Message Moved"
 msgid_plural "Messages Moved"
-msgstr[0] "შეტყობინება წაშლილია"
-msgstr[1] "შეტყობინება წაშლილია"
+msgstr[0] "შეტყობინება გადატანილია"
+msgstr[1] "შეტყობინება გადატანილია"
 
 #: src/MainWindow.vala:305
 msgid "Message Deleted"
@@ -308,33 +292,29 @@ msgid "Online Accounts…"
 msgstr "ონლაინ ანგარიშები…"
 
 #: src/Backend/Account.vala:48
-#, fuzzy
-#| msgid "Unable to save draft"
 msgid "Unable to connect"
-msgstr "მონახაზად შენახვის შეცდომა"
+msgstr "მიერთების შეცდომა"
 
 #: src/Backend/Account.vala:49
-#, fuzzy
-#| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to connect to the server."
-msgstr "თქვენი შეტყობინების გაგზავნისას აღმოჩენილია მოულოდნელი შეცდომა."
+msgstr "სერვერთან მიერთებისა მცდელობისას აღმოჩენილია მოულოდნელი შეცდომა."
 
 #: src/Backend/MoveOperation.vala:65
 #, c-format
 msgid "Moving messages… (%u remaining)"
-msgstr ""
+msgstr "შეტყობინებების გადატანა... (დარჩენილია %u)"
 
 #: src/Backend/MoveOperation.vala:98
 msgid "No Archive folder is configured."
-msgstr ""
+msgstr "არქივის საქაღლდე მორგებული არაა."
 
 #: src/Backend/MoveOperation.vala:126
 msgid "The destination folder was not found."
-msgstr ""
+msgstr "სამიზნე საქაღალდე აღმოჩენილი არაა."
 
 #: src/Backend/MoveOperation.vala:130
 msgid "The source folder is the destination folder."
-msgstr ""
+msgstr "საწყისი საქაღალდე სამიზნე საქაღალდეა."
 
 #: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
@@ -428,10 +408,8 @@ msgid "Menu"
 msgstr "მენიუ"
 
 #: src/FoldersView/FoldersListView.vala:140
-#, fuzzy
-#| msgid "Unable to print email"
 msgid "Unable to open System Settings"
-msgstr "ელფოსტის დაბეჭდვის შეცდომა"
+msgstr "სისტემის მორგების ფანჯრის გახსნის შეცდომა"
 
 #: src/FoldersView/FoldersListView.vala:141
 msgid ""
@@ -479,10 +457,8 @@ msgid "Mark Conversation"
 msgstr "საუბრის მონიშვნა"
 
 #: src/MessageList/MessageList.vala:93
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move Conversation to…"
-msgstr "საუბრის ნაგავში გადატანა"
+msgstr "საუბრების გადატანა…"
 
 #: src/MessageList/MessageList.vala:103
 msgid "Move conversations to archive"
