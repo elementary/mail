@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-16 17:05+0000\n"
+"POT-Creation-Date: 2023-07-13 17:30+0000\n"
 "PO-Revision-Date: 2022-09-30 22:24+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/mail/extra/sk/>\n"
@@ -67,115 +67,135 @@ msgstr "Funguje s Gmail, Yahoo! Mail a s inými populárnymi IMAP servermi"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:85
-#: data/mail.metainfo.xml.in:106 data/mail.metainfo.xml.in:125
-#: data/mail.metainfo.xml.in:147 data/mail.metainfo.xml.in:161
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:98
+#: data/mail.metainfo.xml.in:119 data/mail.metainfo.xml.in:138
+#: data/mail.metainfo.xml.in:160 data/mail.metainfo.xml.in:174
 msgid "Improvements:"
 msgstr "Vylepšenia:"
 
-#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:94
-#: data/mail.metainfo.xml.in:108 data/mail.metainfo.xml.in:129
-#: data/mail.metainfo.xml.in:150 data/mail.metainfo.xml.in:163
+#: data/mail.metainfo.xml.in:74
+msgid "Add support for inline images in the composer"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:75
+msgid "Move settings menu to the mailboxes pane"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:76
+msgid "Use the FileChooser portal"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:77
+msgid "Improve network availability handling"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:78
+msgid "Fix issues with fetching Mail when it is not autostarted"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:79 data/mail.metainfo.xml.in:107
+#: data/mail.metainfo.xml.in:121 data/mail.metainfo.xml.in:142
+#: data/mail.metainfo.xml.in:163 data/mail.metainfo.xml.in:176
 msgid "Updated translations"
 msgstr "Aktualizované preklady"
 
-#: data/mail.metainfo.xml.in:87
+#: data/mail.metainfo.xml.in:100
 msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:88
+#: data/mail.metainfo.xml.in:101
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:89
+#: data/mail.metainfo.xml.in:102
 msgid "The search filter menu now appears next to the search bar"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:90
+#: data/mail.metainfo.xml.in:103
 msgid "HeaderBars appear to float above content when scrolled"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:91
+#: data/mail.metainfo.xml.in:104
 #, fuzzy
 #| msgid "Fix a potential crash while loading messages"
 msgid "Fix a potential crash with empty messages"
 msgstr "Opravený potenciálny pád pri načítaní správ"
 
-#: data/mail.metainfo.xml.in:92
+#: data/mail.metainfo.xml.in:105
 msgid "Stop resizing from cutting off the message list"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:93
+#: data/mail.metainfo.xml.in:106
 #, fuzzy
 #| msgid "Stability improvements"
 msgid "Performance improvements"
 msgstr "Zlepšenia stability"
 
-#: data/mail.metainfo.xml.in:119 data/mail.metainfo.xml.in:141
-#: data/mail.metainfo.xml.in:157
+#: data/mail.metainfo.xml.in:132 data/mail.metainfo.xml.in:154
+#: data/mail.metainfo.xml.in:170
 msgid "Fixes:"
 msgstr "Opravy:"
 
-#: data/mail.metainfo.xml.in:121
+#: data/mail.metainfo.xml.in:134
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
 "Opravená chyba, ktorá zapríčiňovala opakované načítanie e-mailových účtov"
 
-#: data/mail.metainfo.xml.in:122
+#: data/mail.metainfo.xml.in:135
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr "Opravená chyba, ktorá občas spôsobovala pád aplikácie Pošta"
 
-#: data/mail.metainfo.xml.in:123
+#: data/mail.metainfo.xml.in:136
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "Zobrazovať príjemcu v priečinku Odoslané namiesto odosielateľa"
 
-#: data/mail.metainfo.xml.in:127
+#: data/mail.metainfo.xml.in:140
 msgid "Updated app icon"
 msgstr "Aktualizovaná ikonka aplikácie"
 
-#: data/mail.metainfo.xml.in:128
+#: data/mail.metainfo.xml.in:141
 msgid "New design"
 msgstr "Nový vzhľad"
 
-#: data/mail.metainfo.xml.in:136
+#: data/mail.metainfo.xml.in:149
 msgid "New features:"
 msgstr "Nové funkcie:"
 
-#: data/mail.metainfo.xml.in:138
+#: data/mail.metainfo.xml.in:151
 msgid "Use message subject for composer window title"
 msgstr "Zobrazovať predmet správy v záhlaví okna editora"
 
-#: data/mail.metainfo.xml.in:139
+#: data/mail.metainfo.xml.in:152
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
 "Pridaná podpora zjednotenej schránky doručenej pošty pre účty Microsoft 365"
 
-#: data/mail.metainfo.xml.in:143
+#: data/mail.metainfo.xml.in:156
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
 "Opravená chyba, ktorá spôsobovala pád služby zisťovania novej pošty na pozadí"
 
-#: data/mail.metainfo.xml.in:144
+#: data/mail.metainfo.xml.in:157
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr "Odstránené duplicitné adresy odosielateľa pri písaní správy"
 
-#: data/mail.metainfo.xml.in:145
+#: data/mail.metainfo.xml.in:158
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr "Opravené zamrznutie pri archivácii poslednej správy v priečinku"
 
-#: data/mail.metainfo.xml.in:149
+#: data/mail.metainfo.xml.in:162
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "Office 365 premenované na Microsoft 365 v súlade s premenovaním služby "
 "Microsoftu"
 
-#: data/mail.metainfo.xml.in:159
+#: data/mail.metainfo.xml.in:172
 msgid "Fix a potential crash while loading messages"
 msgstr "Opravený potenciálny pád pri načítaní správ"
 
