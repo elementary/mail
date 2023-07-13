@@ -11,10 +11,10 @@ public class Mail.FolderPopover : Gtk.Popover {
 
     construct {
         search_entry = new Gtk.SearchEntry () {
-            margin_top = 3,
-            margin_bottom = 3,
-            margin_start = 3,
-            margin_end = 3
+            margin_top = 12,
+            margin_bottom = 9,
+            margin_start = 12,
+            margin_end = 12
         };
 
         list_box = new Gtk.ListBox () {
@@ -28,17 +28,17 @@ public class Mail.FolderPopover : Gtk.Popover {
             hexpand = true,
             vexpand = true,
             margin_bottom = 3,
+            max_content_height = 350,
+            propagate_natural_height = true,
             hscrollbar_policy = NEVER
         };
 
         var box = new Gtk.Box (VERTICAL, 0);
         box.add (search_entry);
-        box.add (new Gtk.Separator (HORIZONTAL));
         box.add (scrolled_window);
         box.show_all ();
 
         width_request = 250;
-        height_request = 350;
         child = box;
 
         search_entry.search_changed.connect (() => list_box.invalidate_filter ());
