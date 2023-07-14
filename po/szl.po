@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-13 17:30+0000\n"
+"POT-Creation-Date: 2023-07-14 09:26+0000\n"
 "PO-Revision-Date: 2020-02-23 14:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/mail/mail/szl/"
@@ -290,13 +290,13 @@ msgstr[0] "Wiadōmość skasowano"
 msgstr[1] "Wiadōmości skasowane"
 msgstr[2] "Wiadōmości skasowane"
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
+#: src/MainWindow.vala:280 src/MainWindow.vala:293 src/MainWindow.vala:306
 #, fuzzy, c-format
 #| msgid "Delete draft"
 msgid "Failed to move messages: %s"
 msgstr "Wychrōń cechōnek"
 
-#: src/MainWindow.vala:291
+#: src/MainWindow.vala:290
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -306,7 +306,7 @@ msgstr[0] "Wiadōmość skasowano"
 msgstr[1] "Wiadōmości skasowane"
 msgstr[2] "Wiadōmości skasowane"
 
-#: src/MainWindow.vala:305
+#: src/MainWindow.vala:303
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Wiadōmość skasowano"
@@ -468,9 +468,30 @@ msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:40
+#: src/FoldersView/FolderSourceItem.vala:51
 msgid "Refresh folder"
 msgstr "Ôdświyż katalog"
+
+#: src/FoldersView/FolderSourceItem.vala:56
+#, fuzzy
+#| msgid "Refresh folder"
+msgid "Rename folder"
+msgstr "Ôdświyż katalog"
+
+#: src/FoldersView/FolderSourceItem.vala:158
+#, c-format
+msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:185
+#, c-format
+msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:200
+#, c-format
+msgid "Unable to rename folder “%s”': %s"
+msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"

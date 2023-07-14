@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-13 17:30+0000\n"
-"PO-Revision-Date: 2023-05-01 22:53+0000\n"
+"POT-Creation-Date: 2023-07-14 09:26+0000\n"
+"PO-Revision-Date: 2023-07-14 09:26+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/extra/uk/"
 ">\n"
@@ -75,23 +75,24 @@ msgstr "Поліпшення:"
 
 #: data/mail.metainfo.xml.in:74
 msgid "Add support for inline images in the composer"
-msgstr ""
+msgstr "Додано підтримку вбудованих зображень у редакторі"
 
 #: data/mail.metainfo.xml.in:75
 msgid "Move settings menu to the mailboxes pane"
-msgstr ""
+msgstr "Меню налаштувань перенесено на панель поштових скриньок"
 
 #: data/mail.metainfo.xml.in:76
 msgid "Use the FileChooser portal"
-msgstr ""
+msgstr "Використовується портал FileChooser"
 
 #: data/mail.metainfo.xml.in:77
 msgid "Improve network availability handling"
-msgstr ""
+msgstr "Поліпшено обробку доступності мережі"
 
 #: data/mail.metainfo.xml.in:78
 msgid "Fix issues with fetching Mail when it is not autostarted"
 msgstr ""
+"Усунено проблеми з отриманням пошти, коли вона не запускається автоматично"
 
 #: data/mail.metainfo.xml.in:79 data/mail.metainfo.xml.in:107
 #: data/mail.metainfo.xml.in:121 data/mail.metainfo.xml.in:142
