@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-13 17:30+0000\n"
+"POT-Creation-Date: 2023-07-14 09:26+0000\n"
 "PO-Revision-Date: 2023-06-04 16:07+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
 "io>\n"
@@ -280,17 +280,17 @@ msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "Pesan Diarsipkan"
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
+#: src/MainWindow.vala:280 src/MainWindow.vala:293 src/MainWindow.vala:306
 #, c-format
 msgid "Failed to move messages: %s"
 msgstr "Gagal memindahkan pesan: %s"
 
-#: src/MainWindow.vala:291
+#: src/MainWindow.vala:290
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "Pesan Dipindahkan"
 
-#: src/MainWindow.vala:305
+#: src/MainWindow.vala:303
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Pesan Dihapus"
@@ -434,9 +434,30 @@ msgstr ""
 "Buka Pengaturan Sistem secara manual atau pasang Evolution untuk menyiapkan "
 "akun daring."
 
-#: src/FoldersView/FolderSourceItem.vala:40
+#: src/FoldersView/FolderSourceItem.vala:51
 msgid "Refresh folder"
 msgstr "Segarkan folder"
+
+#: src/FoldersView/FolderSourceItem.vala:56
+#, fuzzy
+#| msgid "Refresh folder"
+msgid "Rename folder"
+msgstr "Segarkan folder"
+
+#: src/FoldersView/FolderSourceItem.vala:158
+#, c-format
+msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:185
+#, c-format
+msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:200
+#, c-format
+msgid "Unable to rename folder “%s”': %s"
+msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"

@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-13 17:30+0000\n"
+"POT-Creation-Date: 2023-07-14 09:26+0000\n"
 "PO-Revision-Date: 2023-06-19 15:07+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
@@ -284,19 +284,19 @@ msgstr[0] "Сообщение архивировано"
 msgstr[1] "Сообщения архивированы"
 msgstr[2] "Сообщения архивированы"
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
+#: src/MainWindow.vala:280 src/MainWindow.vala:293 src/MainWindow.vala:306
 #, c-format
 msgid "Failed to move messages: %s"
 msgstr "Не удалось переместить сообщения: %s"
 
-#: src/MainWindow.vala:291
+#: src/MainWindow.vala:290
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "Сообщение перемещено"
 msgstr[1] "Сообщения перемещены"
 msgstr[2] "Сообщения перемещены"
 
-#: src/MainWindow.vala:305
+#: src/MainWindow.vala:303
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Сообщение удалено"
@@ -444,9 +444,30 @@ msgstr ""
 "Откройте Параметры системы вручную, либо установите Evolution, чтобы "
 "настроить онлайн-аккаунты."
 
-#: src/FoldersView/FolderSourceItem.vala:40
+#: src/FoldersView/FolderSourceItem.vala:51
 msgid "Refresh folder"
 msgstr "Обновить папку"
+
+#: src/FoldersView/FolderSourceItem.vala:56
+#, fuzzy
+#| msgid "Refresh folder"
+msgid "Rename folder"
+msgstr "Обновить папку"
+
+#: src/FoldersView/FolderSourceItem.vala:158
+#, c-format
+msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:185
+#, c-format
+msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:200
+#, c-format
+msgid "Unable to rename folder “%s”': %s"
+msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"

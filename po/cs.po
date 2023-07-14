@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-13 17:30+0000\n"
+"POT-Creation-Date: 2023-07-14 09:26+0000\n"
 "PO-Revision-Date: 2022-01-10 23:40+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/mail/cs/>\n"
@@ -288,13 +288,13 @@ msgstr[0] "Žádná vybraná zpráva"
 msgstr[1] "Žádné vybrané zprávy"
 msgstr[2] "Žádné vybrané zprávy"
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
+#: src/MainWindow.vala:280 src/MainWindow.vala:293 src/MainWindow.vala:306
 #, fuzzy, c-format
 #| msgid "Unable to send message"
 msgid "Failed to move messages: %s"
 msgstr "Zprávu se nedaří odeslat"
 
-#: src/MainWindow.vala:291
+#: src/MainWindow.vala:290
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -304,7 +304,7 @@ msgstr[0] "Žádná vybraná zpráva"
 msgstr[1] "Žádné vybrané zprávy"
 msgstr[2] "Žádné vybrané zprávy"
 
-#: src/MainWindow.vala:305
+#: src/MainWindow.vala:303
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Žádná vybraná zpráva"
@@ -456,9 +456,30 @@ msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:40
+#: src/FoldersView/FolderSourceItem.vala:51
 msgid "Refresh folder"
 msgstr "Obnovit složku"
+
+#: src/FoldersView/FolderSourceItem.vala:56
+#, fuzzy
+#| msgid "Refresh folder"
+msgid "Rename folder"
+msgstr "Obnovit složku"
+
+#: src/FoldersView/FolderSourceItem.vala:158
+#, c-format
+msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:185
+#, c-format
+msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:200
+#, c-format
+msgid "Unable to rename folder “%s”': %s"
+msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-13 17:30+0000\n"
+"POT-Creation-Date: 2023-07-14 09:26+0000\n"
 "PO-Revision-Date: 2017-01-21 10:51+0000\n"
 "Last-Translator: Marius Albina <marius.albina@gmail.com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
@@ -303,13 +303,13 @@ msgstr[0] "Nici o conversație selectată."
 msgstr[1] "Nici o conversație selectată."
 msgstr[2] "Nici o conversație selectată."
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
+#: src/MainWindow.vala:280 src/MainWindow.vala:293 src/MainWindow.vala:306
 #, fuzzy, c-format
 #| msgid "Delete draft"
 msgid "Failed to move messages: %s"
 msgstr "Șterge schiţa"
 
-#: src/MainWindow.vala:291
+#: src/MainWindow.vala:290
 #, fuzzy
 msgid "Message Moved"
 msgid_plural "Messages Moved"
@@ -317,7 +317,7 @@ msgstr[0] "Nici o conversație selectată."
 msgstr[1] "Nici o conversație selectată."
 msgstr[2] "Nici o conversație selectată."
 
-#: src/MainWindow.vala:305
+#: src/MainWindow.vala:303
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -492,8 +492,27 @@ msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:40
+#: src/FoldersView/FolderSourceItem.vala:51
 msgid "Refresh folder"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:56
+msgid "Rename folder"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:158
+#, c-format
+msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:185
+#, c-format
+msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:200
+#, c-format
+msgid "Unable to rename folder “%s”': %s"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38

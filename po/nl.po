@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-13 17:30+0000\n"
+"POT-Creation-Date: 2023-07-14 09:26+0000\n"
 "PO-Revision-Date: 2023-06-04 16:07+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
@@ -291,18 +291,18 @@ msgid_plural "Messages Archived"
 msgstr[0] "Bericht gearchiveerd"
 msgstr[1] "Berichten gearchiveerd"
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
+#: src/MainWindow.vala:280 src/MainWindow.vala:293 src/MainWindow.vala:306
 #, c-format
 msgid "Failed to move messages: %s"
 msgstr "Kon berichten niet verplaatsen: %s"
 
-#: src/MainWindow.vala:291
+#: src/MainWindow.vala:290
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "Bericht verplaatst"
 msgstr[1] "Berichten verplaatst"
 
-#: src/MainWindow.vala:305
+#: src/MainWindow.vala:303
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Bericht verwijderd"
@@ -450,9 +450,30 @@ msgstr ""
 "Open Systeeminstellingen handmatig of installeer Evolution om online "
 "accounts op te zetten."
 
-#: src/FoldersView/FolderSourceItem.vala:40
+#: src/FoldersView/FolderSourceItem.vala:51
 msgid "Refresh folder"
 msgstr "Map vernieuwen"
+
+#: src/FoldersView/FolderSourceItem.vala:56
+#, fuzzy
+#| msgid "Refresh folder"
+msgid "Rename folder"
+msgstr "Map vernieuwen"
+
+#: src/FoldersView/FolderSourceItem.vala:158
+#, c-format
+msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:185
+#, c-format
+msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:200
+#, c-format
+msgid "Unable to rename folder “%s”': %s"
+msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
