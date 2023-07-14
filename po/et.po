@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-13 17:30+0000\n"
+"POT-Creation-Date: 2023-07-14 09:26+0000\n"
 "PO-Revision-Date: 2017-02-02 09:29+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/geary/language/"
@@ -284,20 +284,20 @@ msgid_plural "Messages Archived"
 msgstr[0] "Kirjad puuduvad"
 msgstr[1] "Kirjad puuduvad"
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
+#: src/MainWindow.vala:280 src/MainWindow.vala:293 src/MainWindow.vala:306
 #, fuzzy, c-format
 #| msgid "Unable to validate:\n"
 msgid "Failed to move messages: %s"
 msgstr "Valideerimine ebaõnnestus:\n"
 
-#: src/MainWindow.vala:291
+#: src/MainWindow.vala:290
 #, fuzzy
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "Kirjad puuduvad"
 msgstr[1] "Kirjad puuduvad"
 
-#: src/MainWindow.vala:305
+#: src/MainWindow.vala:303
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -461,8 +461,27 @@ msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:40
+#: src/FoldersView/FolderSourceItem.vala:51
 msgid "Refresh folder"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:56
+msgid "Rename folder"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:158
+#, c-format
+msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:185
+#, c-format
+msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:200
+#, c-format
+msgid "Unable to rename folder “%s”': %s"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
