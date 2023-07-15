@@ -19,7 +19,7 @@ public class Mail.FolderPopover : Gtk.Popover {
 
         var placeholder_image = new Gtk.Image.from_icon_name ("edit-find-symbolic", DND);
 
-        var placeholder_title = new Gtk.Label ("") {
+        var placeholder_title = new Gtk.Label (_("No mailboxes found")) {
             xalign = 0
         };
 
@@ -66,14 +66,7 @@ public class Mail.FolderPopover : Gtk.Popover {
         width_request = 250;
         child = box;
 
-        search_entry.activate.connect (() => {
-            list_box.get_row_at_y (0).activate ();
-        });
-
-        search_entry.search_changed.connect (() => {
-            list_box.invalidate_filter ();
-            placeholder_title.label = _("No mailboxes found for “%s”").printf (search_entry.text);
-        });
+        search_entry.search_changed.connect (list_box.invalidate_filter);
 
         list_box.row_activated.connect ((row) => {
             if (row is FolderRow) {
