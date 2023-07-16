@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-14 09:26+0000\n"
+"POT-Creation-Date: 2023-07-16 00:15+0000\n"
 "PO-Revision-Date: 2023-07-14 09:26+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/extra/uk/"
@@ -90,7 +90,9 @@ msgid "Improve network availability handling"
 msgstr "Поліпшено обробку доступності мережі"
 
 #: data/mail.metainfo.xml.in:78
-msgid "Fix issues with fetching Mail when it is not autostarted"
+#, fuzzy
+#| msgid "Fix issues with fetching Mail when it is not autostarted"
+msgid "Fix issues with fetching e-mail when Mail is not autostarted"
 msgstr ""
 "Усунено проблеми з отриманням пошти, коли вона не запускається автоматично"
 
