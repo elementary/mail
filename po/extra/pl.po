@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-16 00:15+0000\n"
-"PO-Revision-Date: 2023-05-03 17:06+0000\n"
+"PO-Revision-Date: 2023-07-17 17:55+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/extra/pl/>\n"
 "Language: pl\n"
@@ -76,23 +76,24 @@ msgstr "Ulepszenia:"
 
 #: data/mail.metainfo.xml.in:74
 msgid "Add support for inline images in the composer"
-msgstr ""
+msgstr "Dodano wsparcie dla obrazków w tekście w kompozytorze"
 
 #: data/mail.metainfo.xml.in:75
 msgid "Move settings menu to the mailboxes pane"
-msgstr ""
+msgstr "Przeniesiono menu ustawień do powierzchni skrzynek pocztowych"
 
 #: data/mail.metainfo.xml.in:76
 msgid "Use the FileChooser portal"
-msgstr ""
+msgstr "Używany jest teraz portal FileChooser"
 
 #: data/mail.metainfo.xml.in:77
 msgid "Improve network availability handling"
-msgstr ""
+msgstr "Ulepszono obsługę dostępności sieci"
 
 #: data/mail.metainfo.xml.in:78
 msgid "Fix issues with fetching e-mail when Mail is not autostarted"
 msgstr ""
+"Naprawiono problemy z pobieraniem e-maili gdy Poczta nie jest autouruchamiana"
 
 #: data/mail.metainfo.xml.in:79 data/mail.metainfo.xml.in:107
 #: data/mail.metainfo.xml.in:121 data/mail.metainfo.xml.in:142
