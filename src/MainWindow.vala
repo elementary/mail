@@ -277,8 +277,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                         move_toast.title = ngettext ("Message Archived", "Messages Archived", result);
                         move_toast.send_notification ();
                     } else if (error_message != "") {
-                        error_toast.title = _("Failed to move messages: %s").printf (error_message);
-                        error_toast.send_notification ();
+                        send_error_toast (_("Failed to move messages: %s").printf (error_message));
                     }
                 });
                 break;
@@ -291,8 +290,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                         move_toast.title = ngettext ("Message Moved", "Messages Moved", result);
                         move_toast.send_notification ();
                     } else if (error_message != "") {
-                        error_toast.title = _("Failed to move messages: %s").printf (error_message);
-                        error_toast.send_notification ();
+                        send_error_toast (_("Failed to move messages: %s").printf (error_message));
                     }
                 });
                 break;
@@ -305,8 +303,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                         move_toast.title = ngettext ("Message Deleted", "Messages Deleted", result);
                         move_toast.send_notification ();
                     } else if (error_message != "") {
-                        error_toast.title = _("Failed to move messages: %s").printf (error_message);
-                        error_toast.send_notification ();
+                        send_error_toast (_("Failed to move messages: %s").printf (error_message));
                     }
                 });
                 break;
@@ -325,6 +322,11 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
     private SimpleAction? get_action (string name) {
         return (SimpleAction) lookup_action (name);
+    }
+
+    public void send_error_toast (string error_message) {
+        error_toast.title = error_message;
+        error_toast.send_notification ();
     }
 
     public override bool configure_event (Gdk.EventConfigure event) {
@@ -353,5 +355,16 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         });
 
         return base.configure_event (event);
+    }
+
+    public static void notify_error (string error_message) {
+        MainWindow? main_window = null;
+        foreach (unowned var window in ((Application)GLib.Application.get_default ()).get_windows ()) {
+            if (window is MainWindow) {
+                main_window = (MainWindow) window;
+                main_window.send_error_toast (error_message);
+                break;
+            }
+        }
     }
 }

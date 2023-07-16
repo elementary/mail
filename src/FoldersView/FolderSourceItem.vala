@@ -21,7 +21,7 @@
  */
 
 public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
-    public signal void refresh ();
+    public signal void start_edit ();
 
     public string full_name { get; private set; }
     public bool is_special_folder { get; private set; default = true; }
@@ -29,24 +29,43 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
     public Backend.Account account { get; construct; }
 
     private bool can_modify = true;
+    private Cancellable cancellable;
+    private string old_name;
 
     public FolderSourceItem (Backend.Account account, Camel.FolderInfo folderinfo) {
         Object (account: account);
         update_infos (folderinfo);
     }
 
+    construct {
+        cancellable = new GLib.Cancellable ();
+    }
+
+    ~FolderSourceItem () {
+        cancellable.cancel ();
+    }
+
     public override Gtk.Menu? get_context_menu () {
         var menu = new Gtk.Menu ();
+
         var refresh_item = new Gtk.MenuItem.with_label (_("Refresh folder"));
+        refresh_item.activate.connect (() => refresh.begin ());
         menu.add (refresh_item);
+
+        if (!is_special_folder) {
+            var rename_item = new Gtk.MenuItem.with_label (_("Rename folder"));
+            rename_item.activate.connect (() => start_edit ());
+            menu.add (new Gtk.SeparatorMenuItem ());
+            menu.add (rename_item);
+        }
+
         menu.show_all ();
 
-        refresh_item.activate.connect (() => refresh ());
         return menu;
     }
 
     public void update_infos (Camel.FolderInfo folderinfo) {
-        name = folderinfo.display_name;
+        name = old_name = folderinfo.display_name;
         full_name = folderinfo.full_name;
         if (folderinfo.unread > 0) {
             badge = "%d".printf (folderinfo.unread);
@@ -97,6 +116,89 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
                 pos = 8;
                 is_special_folder = false;
                 break;
+        }
+
+        if (!is_special_folder && editable != true) {
+            editable = true;
+            edited.connect (rename);
+        } else if (is_special_folder) {
+            editable = false;
+            edited.disconnect (rename);
+        }
+    }
+
+    private async void refresh () {
+        var offlinestore = (Camel.Store)account.service;
+        try {
+            var folder = yield offlinestore.get_folder (full_name, 0, GLib.Priority.DEFAULT, cancellable);
+            yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
+        } catch (Error e) {
+            critical (e.message);
+        }
+    }
+
+    private void cancel_rename () {
+        name = old_name;
+        notify["name"].disconnect (cancel_rename);
+    }
+
+    private async void rename (string new_name) {
+        if (new_name == old_name) {
+            return;
+        }
+
+        if ("/" in new_name) {
+            if (name == old_name) {
+                notify["name"].connect (cancel_rename);
+            } else {
+                cancel_rename ();
+            }
+
+            MainWindow.notify_error (
+                _("Unable to rename folder “%s”: Folder names cannot contain “/”").printf (name)
+            );
+
+            return;
+        }
+
+        string[] split_full_name = full_name.split_set ("/");
+        split_full_name[split_full_name.length - 1] = new_name;
+        var new_full_name = string.joinv ("/", split_full_name);
+
+        var offlinestore = (Camel.Store)account.service;
+
+        Camel.FolderInfo? folder_info = null;
+        try {
+            folder_info = yield offlinestore.get_folder_info (new_full_name, FAST, GLib.Priority.DEFAULT, cancellable);
+        } catch (Error e) {
+            warning (e.message);
+        }
+
+        if (null != folder_info) {
+            if (name == old_name) {
+                notify["name"].connect (cancel_rename);
+            } else {
+                cancel_rename ();
+            }
+
+            MainWindow.notify_error (
+                _("Unable to rename folder “%s”: A folder with name “%s” already exists").printf (name, new_name)
+            );
+
+            return;
+        }
+
+        try {
+            yield offlinestore.rename_folder (full_name, new_full_name, GLib.Priority.DEFAULT, cancellable);
+        } catch (Error e) {
+            if (name == old_name) {
+                notify["name"].connect (cancel_rename);
+            } else {
+                cancel_rename ();
+            }
+
+            MainWindow.notify_error (_("Unable to rename folder “%s”': %s").printf (name, e.message));
+            warning ("Unable to rename folder '%s': %s", name, e.message);
         }
     }
 }

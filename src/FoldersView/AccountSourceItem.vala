@@ -24,6 +24,7 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem, Mail.Sourc
     public Mail.Backend.Account account { get; construct; }
 
     public signal void loaded ();
+    public signal void start_edit (Mail.SourceList.Item item);
 
     private GLib.Cancellable connect_cancellable;
     private Gee.HashMap<string, FolderSourceItem> folder_items;
@@ -65,8 +66,10 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem, Mail.Sourc
     }
 
     private void folder_renamed (string old_name, Camel.FolderInfo folder_info) {
-        var item = folder_items[old_name];
+        FolderSourceItem item;
+        folder_items.unset (old_name, out item);
         item.update_infos (folder_info);
+        folder_items[item.full_name] = item;
     }
 
     private void folder_deleted (Camel.FolderInfo folder_info) {
@@ -114,9 +117,7 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem, Mail.Sourc
             var folder_item = new FolderSourceItem (account, folderinfo);
             saved_state.bind_with_expandable_item (folder_item);
             folder_items[folderinfo.full_name] = folder_item;
-            folder_item.refresh.connect (() => {
-                refresh_folder.begin (folder_item.full_name);
-            });
+            folder_item.start_edit.connect (() => start_edit (folder_item));
 
             if (folderinfo.child != null) {
                 show_info ((Camel.FolderInfo?) folderinfo.child, folder_item);
@@ -129,16 +130,6 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem, Mail.Sourc
             }
 
             folderinfo = (Camel.FolderInfo?) folderinfo.next;
-        }
-    }
-
-    private async void refresh_folder (string folder_name) {
-        var offlinestore = (Camel.Store) account.service;
-        try {
-            var folder = yield offlinestore.get_folder (folder_name, 0, GLib.Priority.DEFAULT, connect_cancellable);
-            yield folder.refresh_info (GLib.Priority.DEFAULT, connect_cancellable);
-        } catch (Error e) {
-            critical (e.message);
         }
     }
 

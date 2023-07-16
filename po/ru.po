@@ -11,21 +11,21 @@
 # Aleksandr Stepanov <alex.eri@ya.ru>, 2015.
 # Stas Solovey <whats_up@tut.by>, 2015.
 #
-#: src/MessageList/MessageListItem.vala:427
+#: src/MessageList/MessageListItem.vala:428
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-16 17:05+0000\n"
-"PO-Revision-Date: 2023-06-19 15:07+0000\n"
+"POT-Creation-Date: 2023-07-16 00:15+0000\n"
+"PO-Revision-Date: 2023-07-15 04:11+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
@@ -86,98 +86,98 @@ msgstr "Отправить"
 msgid "New Message"
 msgstr "Новое сообщение"
 
-#: src/Composer.vala:418
+#: src/Composer.vala:421
 msgid "Choose a file"
 msgstr "Выберите файл"
 
-#: src/Composer.vala:421
+#: src/Composer.vala:424
 msgid "Attach"
 msgstr "Прикрепить"
 
-#: src/Composer.vala:422 src/Composer.vala:446 src/Composer.vala:658
+#: src/Composer.vala:425 src/Composer.vala:449 src/Composer.vala:702
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
 msgstr "Отменить"
 
-#: src/Composer.vala:438
+#: src/Composer.vala:441
 msgid "Images"
 msgstr "Изображения"
 
-#: src/Composer.vala:442
+#: src/Composer.vala:445
 msgid "Choose an image"
 msgstr "Выберите изображение"
 
-#: src/Composer.vala:445
+#: src/Composer.vala:448
 msgid "Insert"
 msgstr "Вставить"
 
-#: src/Composer.vala:474
+#: src/Composer.vala:477
 msgid "Unable to insert image"
 msgstr "Не удалось вставить изображение"
 
-#: src/Composer.vala:475
+#: src/Composer.vala:478
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "При попытке вставить изображение произошла непредвиденная ошибка."
 
-#: src/Composer.vala:594
+#: src/Composer.vala:603
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%A, %-e %b. %Y в %-k:%M"
 
-#: src/Composer.vala:624
+#: src/Composer.vala:633
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "В %1$s, %2$s написал:"
 
-#: src/Composer.vala:628
+#: src/Composer.vala:637
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Пересланное сообщение ----------"
 
-#: src/Composer.vala:630
+#: src/Composer.vala:639
 #, c-format
 msgid "From: %s<br/>"
 msgstr "От: %s<br/>"
 
-#: src/Composer.vala:631
+#: src/Composer.vala:640
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Тема: %s<br/>"
 
-#: src/Composer.vala:632
+#: src/Composer.vala:641
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Дата: %s<br/>"
 
-#: src/Composer.vala:633
+#: src/Composer.vala:642
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Кому: %s<br/>"
 
-#: src/Composer.vala:635
+#: src/Composer.vala:644
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Копия: %s<br/>"
 
-#: src/Composer.vala:649
+#: src/Composer.vala:693
 msgid "Permanently delete this draft?"
 msgstr "Навсегда удалить черновик?"
 
-#: src/Composer.vala:650
+#: src/Composer.vala:694
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Вы не можете отменить это действие и восстановить черновик после его "
 "удаления."
 
-#: src/Composer.vala:660
+#: src/Composer.vala:704
 msgid "Delete Draft"
 msgstr "Удалить черновик"
 
-#: src/Composer.vala:684
+#: src/Composer.vala:728
 msgid "Send without subject?"
 msgstr "Отправить без темы?"
 
-#: src/Composer.vala:685
+#: src/Composer.vala:729
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -185,19 +185,19 @@ msgstr ""
 "В этом сообщении пустое поле темы. Получатель может быть не в состоянии "
 "сделать вывод о его содержании или важности."
 
-#: src/Composer.vala:692
+#: src/Composer.vala:736
 msgid "Don't Send"
 msgstr "Не отправлять"
 
-#: src/Composer.vala:694
+#: src/Composer.vala:738
 msgid "Send Anyway"
 msgstr "Всё равно отправить"
 
-#: src/Composer.vala:719
+#: src/Composer.vala:767
 msgid "Sent message was not saved"
 msgstr "Отправленное сообщение не сохранено"
 
-#: src/Composer.vala:720
+#: src/Composer.vala:768
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -205,19 +205,19 @@ msgstr ""
 "Сообщение было отправлено, однако его копия не была сохранена в папке "
 "«Отправленные»."
 
-#: src/Composer.vala:735
+#: src/Composer.vala:783
 msgid "Unable to send message"
 msgstr "Не удалось отправить сообщение"
 
-#: src/Composer.vala:736
+#: src/Composer.vala:784
 msgid "There was an unexpected error while sending your message."
 msgstr "При отправке сообщения произошла непредвиденная ошибка."
 
-#: src/Composer.vala:980
+#: src/Composer.vala:1029
 msgid "Unable to save draft"
 msgstr "Не удалось сохранить черновик"
 
-#: src/Composer.vala:981
+#: src/Composer.vala:1030
 msgid "There was an unexpected error while saving your draft."
 msgstr "При сохранении черновика произошла непредвиденная ошибка."
 
@@ -284,19 +284,19 @@ msgstr[0] "Сообщение архивировано"
 msgstr[1] "Сообщения архивированы"
 msgstr[2] "Сообщения архивированы"
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
+#: src/MainWindow.vala:280 src/MainWindow.vala:293 src/MainWindow.vala:306
 #, c-format
 msgid "Failed to move messages: %s"
 msgstr "Не удалось переместить сообщения: %s"
 
-#: src/MainWindow.vala:291
+#: src/MainWindow.vala:290
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "Сообщение перемещено"
 msgstr[1] "Сообщения перемещены"
 msgstr[2] "Сообщения перемещены"
 
-#: src/MainWindow.vala:305
+#: src/MainWindow.vala:303
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Сообщение удалено"
@@ -375,17 +375,17 @@ msgid "Mark As Unread"
 msgstr "Отметить как непрочитанное"
 
 #: src/ConversationList/ConversationList.vala:578
-#: src/MessageList/MessageList.vala:60
+#: src/MessageList/MessageList.vala:59
 msgid "Mark as Read"
 msgstr "Отметить как прочитанное"
 
 #: src/ConversationList/ConversationList.vala:588
-#: src/MessageList/MessageList.vala:66
+#: src/MessageList/MessageList.vala:65
 msgid "Star"
 msgstr "Добавить в избранное"
 
 #: src/ConversationList/ConversationList.vala:596
-#: src/MessageList/MessageList.vala:72
+#: src/MessageList/MessageList.vala:71
 msgid "Unstar"
 msgstr "Удалить из избранных"
 
@@ -444,9 +444,30 @@ msgstr ""
 "Откройте Параметры системы вручную, либо установите Evolution, чтобы "
 "настроить онлайн-аккаунты."
 
-#: src/FoldersView/FolderSourceItem.vala:40
+#: src/FoldersView/FolderSourceItem.vala:51
 msgid "Refresh folder"
 msgstr "Обновить папку"
+
+#: src/FoldersView/FolderSourceItem.vala:56
+msgid "Rename folder"
+msgstr "Переименовать папку"
+
+#: src/FoldersView/FolderSourceItem.vala:158
+#, c-format
+msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgstr ""
+"Не удалось переименовать папку «%s»: название папки не может содержать «/»"
+
+#: src/FoldersView/FolderSourceItem.vala:185
+#, c-format
+msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+msgstr ""
+"Не удалось переименовать папку «%s»: папка с названием «%s» уже существует"
+
+#: src/FoldersView/FolderSourceItem.vala:200
+#, c-format
+msgid "Unable to rename folder “%s”': %s"
+msgstr "Не удалось переименовать папку «%s»: %s"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
@@ -464,39 +485,39 @@ msgstr "Отправленные"
 msgid "All Mailboxes"
 msgstr "Все почтовые ящики"
 
-#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Ответить"
 
-#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Ответить всем"
 
-#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Переслать"
 
-#: src/MessageList/MessageList.vala:54
+#: src/MessageList/MessageList.vala:53
 msgid "Mark as Unread"
 msgstr "Отметить как непрочитанное"
 
-#: src/MessageList/MessageList.vala:85
+#: src/MessageList/MessageList.vala:84
 msgid "Mark Conversation"
 msgstr "Отметить беседу"
 
-#: src/MessageList/MessageList.vala:93
+#: src/MessageList/MessageList.vala:92
 msgid "Move Conversation to…"
 msgstr "Переместить беседу в…"
 
-#: src/MessageList/MessageList.vala:103
+#: src/MessageList/MessageList.vala:101
 msgid "Move conversations to archive"
 msgstr "Переместить беседы в архив"
 
-#: src/MessageList/MessageList.vala:111
+#: src/MessageList/MessageList.vala:109
 msgid "Move conversations to Trash"
 msgstr "Переместить беседы в корзину"
 
-#: src/MessageList/MessageList.vala:126
+#: src/MessageList/MessageList.vala:124
 msgid "No Message Selected"
 msgstr "Нет выбранных писем"
 
@@ -507,12 +528,12 @@ msgid "%s at %s"
 msgstr "%s в %s"
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:382
+#: src/MessageList/MessageListItem.vala:383
 msgid "Unstar message"
 msgstr "Убрать из избранного"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:378
+#: src/MessageList/MessageListItem.vala:379
 msgid "Star message"
 msgstr "Добавить в избранное"
 
@@ -536,25 +557,25 @@ msgstr "Всегда показывать от этого отправителя
 msgid "This message contains remote images."
 msgstr "Данное сообщение содержит изображения."
 
-#: src/MessageList/MessageListItem.vala:320
+#: src/MessageList/MessageListItem.vala:321
 msgid "This message contains one or more attachments"
 msgstr "Это письмо содержит одно или больше вложений"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:404
+#: src/MessageList/MessageListItem.vala:405
 msgid "Email Message"
 msgstr "Сообщения электронной почты"
 
-#: src/MessageList/MessageListItem.vala:426
+#: src/MessageList/MessageListItem.vala:427
 msgid "Unable to print email"
 msgstr "Не удалось напечатать электронное письмо"
 
-#: src/MessageList/MessageListItem.vala:673
+#: src/MessageList/MessageListItem.vala:674
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr "Довериться и открыть «%s»?"
 
-#: src/MessageList/MessageListItem.vala:674
+#: src/MessageList/MessageListItem.vala:675
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -562,7 +583,7 @@ msgstr ""
 "Вложения могут нанести ущерб вашей системы при открытии. Открывайте файлы "
 "только из надёжных источников."
 
-#: src/MessageList/MessageListItem.vala:681
+#: src/MessageList/MessageListItem.vala:682
 msgid "Open Anyway"
 msgstr "Всё равно открыть"
 

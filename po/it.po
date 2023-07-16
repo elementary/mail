@@ -13,12 +13,12 @@
 # Vincenzo Cerminara <rebek994@gmail.com>, 2012
 # Federico Bruni <fede@inventati.org>, 2013, 2014, 2015.
 #
-#: src/MessageList/MessageListItem.vala:427
+#: src/MessageList/MessageListItem.vala:428
 msgid ""
 msgstr ""
 "Project-Id-Version: geary master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-16 17:05+0000\n"
+"POT-Creation-Date: 2023-07-16 00:15+0000\n"
 "PO-Revision-Date: 2021-01-30 01:07+0000\n"
 "Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/mail/mail/it/>\n"
@@ -84,110 +84,110 @@ msgstr "Invia"
 msgid "New Message"
 msgstr "Nuovo messaggio"
 
-#: src/Composer.vala:418
+#: src/Composer.vala:421
 msgid "Choose a file"
 msgstr "Scegli un file"
 
-#: src/Composer.vala:421
+#: src/Composer.vala:424
 #, fuzzy
 #| msgid "_Attach"
 msgid "Attach"
 msgstr "_Allega"
 
-#: src/Composer.vala:422 src/Composer.vala:446 src/Composer.vala:658
+#: src/Composer.vala:425 src/Composer.vala:449 src/Composer.vala:702
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
 msgstr "Annulla"
 
-#: src/Composer.vala:438
+#: src/Composer.vala:441
 #, fuzzy
 #| msgid "Show Images"
 msgid "Images"
 msgstr "Mostra immagini"
 
-#: src/Composer.vala:442
+#: src/Composer.vala:445
 #, fuzzy
 #| msgid "Choose a file"
 msgid "Choose an image"
 msgstr "Scegli un file"
 
-#: src/Composer.vala:445
+#: src/Composer.vala:448
 #, fuzzy
 #| msgid "Insert Link"
 msgid "Insert"
 msgstr "Inserisci collegamento"
 
-#: src/Composer.vala:474
+#: src/Composer.vala:477
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to insert image"
 msgstr "Elimina bozza"
 
-#: src/Composer.vala:475
+#: src/Composer.vala:478
 msgid "There was an unexpected error while trying to insert the image."
 msgstr ""
 
-#: src/Composer.vala:594
+#: src/Composer.vala:603
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a %-e %b %Y alle %-k:%M"
 
-#: src/Composer.vala:624
+#: src/Composer.vala:633
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Il giorno %1$s, %2$s ha scritto:"
 
-#: src/Composer.vala:628
+#: src/Composer.vala:637
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Messaggio inoltrato ----------"
 
-#: src/Composer.vala:630
+#: src/Composer.vala:639
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Da: %s<br/>"
 
-#: src/Composer.vala:631
+#: src/Composer.vala:640
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Oggetto: %s<br/>"
 
-#: src/Composer.vala:632
+#: src/Composer.vala:641
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Data: %s<br/>"
 
-#: src/Composer.vala:633
+#: src/Composer.vala:642
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Per: %s<br/>"
 
-#: src/Composer.vala:635
+#: src/Composer.vala:644
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
-#: src/Composer.vala:649
+#: src/Composer.vala:693
 msgid "Permanently delete this draft?"
 msgstr "Eliminare permanentemente questa bozza?"
 
-#: src/Composer.vala:650
+#: src/Composer.vala:694
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Non è possibile annullare questa azione né recuperare la bozza una volta "
 "eliminata."
 
-#: src/Composer.vala:660
+#: src/Composer.vala:704
 msgid "Delete Draft"
 msgstr "Elimina bozza"
 
-#: src/Composer.vala:684
+#: src/Composer.vala:728
 #, fuzzy
 #| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
 msgstr "Inviare il messaggio senza un oggetto?"
 
-#: src/Composer.vala:685
+#: src/Composer.vala:729
 #, fuzzy
 #| msgid ""
 #| "This message has an empty subject field. The recipient may not be able to "
@@ -199,43 +199,43 @@ msgstr ""
 "Questo messaggio non contiene un oggetto. Il destinatario potrebbe non "
 "comprendere correttamente il contenuto o l'importanza del messaggio."
 
-#: src/Composer.vala:692
+#: src/Composer.vala:736
 msgid "Don't Send"
 msgstr "Non inviare"
 
-#: src/Composer.vala:694
+#: src/Composer.vala:738
 msgid "Send Anyway"
 msgstr "Invia comunque"
 
-#: src/Composer.vala:719
+#: src/Composer.vala:767
 #, fuzzy
 #| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
 msgstr "Inviare il messaggio senza il testo?"
 
-#: src/Composer.vala:720
+#: src/Composer.vala:768
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer.vala:735
+#: src/Composer.vala:783
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to send message"
 msgstr "Elimina bozza"
 
-#: src/Composer.vala:736
+#: src/Composer.vala:784
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer.vala:980
+#: src/Composer.vala:1029
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to save draft"
 msgstr "Elimina bozza"
 
-#: src/Composer.vala:981
+#: src/Composer.vala:1030
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -305,13 +305,13 @@ msgid_plural "Messages Archived"
 msgstr[0] "Messaggio eliminato"
 msgstr[1] "Messaggi eliminati"
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
+#: src/MainWindow.vala:280 src/MainWindow.vala:293 src/MainWindow.vala:306
 #, fuzzy, c-format
 #| msgid "Delete draft"
 msgid "Failed to move messages: %s"
 msgstr "Elimina bozza"
 
-#: src/MainWindow.vala:291
+#: src/MainWindow.vala:290
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -320,7 +320,7 @@ msgid_plural "Messages Moved"
 msgstr[0] "Messaggio eliminato"
 msgstr[1] "Messaggi eliminati"
 
-#: src/MainWindow.vala:305
+#: src/MainWindow.vala:303
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Messaggio eliminato"
@@ -415,17 +415,17 @@ msgid "Mark As Unread"
 msgstr "Segna come non letto"
 
 #: src/ConversationList/ConversationList.vala:578
-#: src/MessageList/MessageList.vala:60
+#: src/MessageList/MessageList.vala:59
 msgid "Mark as Read"
 msgstr "Segna come letto"
 
 #: src/ConversationList/ConversationList.vala:588
-#: src/MessageList/MessageList.vala:66
+#: src/MessageList/MessageList.vala:65
 msgid "Star"
 msgstr "_Speciale"
 
 #: src/ConversationList/ConversationList.vala:596
-#: src/MessageList/MessageList.vala:72
+#: src/MessageList/MessageList.vala:71
 msgid "Unstar"
 msgstr "_Non speciale"
 
@@ -484,9 +484,30 @@ msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:40
+#: src/FoldersView/FolderSourceItem.vala:51
 msgid "Refresh folder"
 msgstr "Ricarica cartella"
+
+#: src/FoldersView/FolderSourceItem.vala:56
+#, fuzzy
+#| msgid "Refresh folder"
+msgid "Rename folder"
+msgstr "Ricarica cartella"
+
+#: src/FoldersView/FolderSourceItem.vala:158
+#, c-format
+msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:185
+#, c-format
+msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:200
+#, c-format
+msgid "Unable to rename folder “%s”': %s"
+msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
@@ -508,44 +529,44 @@ msgstr "Posta inviata"
 msgid "All Mailboxes"
 msgstr "Tutta la posta"
 
-#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "Rispondi"
 
-#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "Rispondi a tutti"
 
-#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "Inoltra"
 
-#: src/MessageList/MessageList.vala:54
+#: src/MessageList/MessageList.vala:53
 msgid "Mark as Unread"
 msgstr "Segna come non letto"
 
-#: src/MessageList/MessageList.vala:85
+#: src/MessageList/MessageList.vala:84
 msgid "Mark Conversation"
 msgstr "Segna la conversazione"
 
-#: src/MessageList/MessageList.vala:93
+#: src/MessageList/MessageList.vala:92
 #, fuzzy
 #| msgid "Move conversation"
 #| msgid_plural "Move conversations"
 msgid "Move Conversation to…"
 msgstr "Sposta la conversazione"
 
-#: src/MessageList/MessageList.vala:103
+#: src/MessageList/MessageList.vala:101
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move conversations to archive"
 msgstr "Sposta le conversazioni nel cestino"
 
-#: src/MessageList/MessageList.vala:111
+#: src/MessageList/MessageList.vala:109
 msgid "Move conversations to Trash"
 msgstr "Sposta le conversazioni nel cestino"
 
-#: src/MessageList/MessageList.vala:126
+#: src/MessageList/MessageList.vala:124
 msgid "No Message Selected"
 msgstr "Nessuna conversazione selezionata"
 
@@ -556,12 +577,12 @@ msgid "%s at %s"
 msgstr ""
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:382
+#: src/MessageList/MessageListItem.vala:383
 msgid "Unstar message"
 msgstr "Togli tag \"speciale\" dal messaggio"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:378
+#: src/MessageList/MessageListItem.vala:379
 msgid "Star message"
 msgstr "Marca il messaggio come speciale"
 
@@ -585,29 +606,29 @@ msgstr "Mostra sempre dal mittente"
 msgid "This message contains remote images."
 msgstr "Questo messaggio contiene immagini remote."
 
-#: src/MessageList/MessageListItem.vala:320
+#: src/MessageList/MessageListItem.vala:321
 msgid "This message contains one or more attachments"
 msgstr "Questo messaggio contiene uno o più allegati"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:404
+#: src/MessageList/MessageListItem.vala:405
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Nuovo messaggio"
 
-#: src/MessageList/MessageListItem.vala:426
+#: src/MessageList/MessageListItem.vala:427
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
 msgstr "Impossibile convalidare:\n"
 
-#: src/MessageList/MessageListItem.vala:673
+#: src/MessageList/MessageListItem.vala:674
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:674
+#: src/MessageList/MessageListItem.vala:675
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -615,7 +636,7 @@ msgstr ""
 "Gli allegati possono causare danni al sistema in caso di apertura. Apri solo "
 "i file provenienti da fonti attendibili."
 
-#: src/MessageList/MessageListItem.vala:681
+#: src/MessageList/MessageListItem.vala:682
 msgid "Open Anyway"
 msgstr "Apri comunque"
 
