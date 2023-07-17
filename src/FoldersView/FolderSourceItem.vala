@@ -185,7 +185,7 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
 
             MainWindow.send_error_message (
                 _("Unable to rename folder “%s”").printf (name),
-                _("A folder with name “%s” already exists").printf (new_name),
+                _("A folder named “%s” already exists").printf (new_name),
                 "folder"
             );
 
