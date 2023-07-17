@@ -296,7 +296,8 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                     } else if (error_message != "") {
                         send_error_message (
                             _("Couldn't move message"),
-                            error_message
+                            error_message,
+                            "mail-move"
                         );
                     }
                 });
