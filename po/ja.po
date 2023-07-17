@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-14 09:26+0000\n"
+"POT-Creation-Date: 2023-07-16 00:15+0000\n"
 "PO-Revision-Date: 2023-07-15 04:11+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
@@ -426,13 +426,15 @@ msgstr "フォルダー名を変更"
 #: src/FoldersView/FolderSourceItem.vala:158
 #, c-format
 msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
-msgstr "フォルダー “%s” の名前を変更できません: フォルダー名には “/” を使えません"
+msgstr ""
+"フォルダー “%s” の名前を変更できません: フォルダー名には “/” を使えません"
 
 #: src/FoldersView/FolderSourceItem.vala:185
 #, c-format
 msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
-msgstr "フォルダー “%s” の名前を変更できません: “%s” "
-"というフォルダーはすでに存在します"
+msgstr ""
+"フォルダー “%s” の名前を変更できません: “%s” というフォルダーはすでに存在しま"
+"す"
 
 #: src/FoldersView/FolderSourceItem.vala:200
 #, c-format
