@@ -154,8 +154,10 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
                 cancel_rename ();
             }
 
-            MainWindow.notify_error (
-                _("Unable to rename folder “%s”: Folder names cannot contain “/”").printf (name)
+            MainWindow.send_error_message (
+                _("Unable to rename folder “%s”").printf (name),
+                _("Folder names cannot contain “/”"),
+                "folder"
             );
 
             return;
@@ -181,8 +183,10 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
                 cancel_rename ();
             }
 
-            MainWindow.notify_error (
-                _("Unable to rename folder “%s”: A folder with name “%s” already exists").printf (name, new_name)
+            MainWindow.send_error_message (
+                _("Unable to rename folder “%s”").printf (name),
+                _("A folder with name “%s” already exists").printf (new_name),
+                "folder"
             );
 
             return;
@@ -197,8 +201,11 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
                 cancel_rename ();
             }
 
-            MainWindow.notify_error (_("Unable to rename folder “%s”': %s").printf (name, e.message));
-            warning ("Unable to rename folder '%s': %s", name, e.message);
+            MainWindow.send_error_message (
+                _("Unable to rename folder “%s”").printf (name),
+                e.message,
+                "folder"
+            );
         }
     }
 }
