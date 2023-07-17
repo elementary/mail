@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-17 17:55+0000\n"
-"PO-Revision-Date: 2023-07-17 17:55+0000\n"
+"PO-Revision-Date: 2023-07-19 08:07+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/"
-">\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/>"
+"\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -76,13 +76,11 @@ msgstr "改善点:"
 
 #: data/mail.metainfo.xml.in:74
 msgid "Add support for inline images in the composer"
-msgstr "メール作成画面にインライン画像への対応を追加"
+msgstr "メール作成画面でインライン画像に対応"
 
 #: data/mail.metainfo.xml.in:75
-#, fuzzy
-#| msgid "Add support for inline images in the composer"
 msgid "Add support for renaming folders"
-msgstr "メール作成画面にインライン画像への対応を追加"
+msgstr "フォルダーの名前変更に対応"
 
 #: data/mail.metainfo.xml.in:76
 msgid "Move settings menu to the mailboxes pane"
