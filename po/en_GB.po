@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-16 00:15+0000\n"
-"PO-Revision-Date: 2023-06-16 17:05+0000\n"
+"PO-Revision-Date: 2023-07-17 17:55+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/mail/en_GB/>\n"
@@ -435,25 +435,23 @@ msgid "Refresh folder"
 msgstr "Refresh folder"
 
 #: src/FoldersView/FolderSourceItem.vala:56
-#, fuzzy
-#| msgid "Refresh folder"
 msgid "Rename folder"
-msgstr "Refresh folder"
+msgstr "Rename folder"
 
 #: src/FoldersView/FolderSourceItem.vala:158
 #, c-format
 msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
-msgstr ""
+msgstr "Unable to rename folder “%s”: Folder names cannot contain “/”"
 
 #: src/FoldersView/FolderSourceItem.vala:185
 #, c-format
 msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
-msgstr ""
+msgstr "Unable to rename folder “%s”: A folder with name “%s” already exists"
 
 #: src/FoldersView/FolderSourceItem.vala:200
 #, c-format
 msgid "Unable to rename folder “%s”': %s"
-msgstr ""
+msgstr "Unable to rename folder “%s”': %s"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
