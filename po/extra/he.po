@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-17 17:55+0000\n"
-"PO-Revision-Date: 2023-07-17 17:55+0000\n"
+"PO-Revision-Date: 2023-07-19 08:07+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/extra/he/>\n"
 "Language: he\n"
@@ -76,10 +76,8 @@ msgid "Add support for inline images in the composer"
 msgstr "הוספת תמיכה לתמונות פנימיות במחבר ההודעות"
 
 #: data/mail.metainfo.xml.in:75
-#, fuzzy
-#| msgid "Add support for inline images in the composer"
 msgid "Add support for renaming folders"
-msgstr "הוספת תמיכה לתמונות פנימיות במחבר ההודעות"
+msgstr "הוספת תמיכה בשינוי שמות תיקיות"
 
 #: data/mail.metainfo.xml.in:76
 msgid "Move settings menu to the mailboxes pane"
