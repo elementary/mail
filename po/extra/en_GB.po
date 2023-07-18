@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-17 17:55+0000\n"
-"PO-Revision-Date: 2023-07-17 17:55+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"PO-Revision-Date: 2023-07-19 08:07+0000\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/extra/en_GB/>\n"
 "Language: en_GB\n"
@@ -77,10 +77,8 @@ msgid "Add support for inline images in the composer"
 msgstr "Add support for inline images in the composer"
 
 #: data/mail.metainfo.xml.in:75
-#, fuzzy
-#| msgid "Add support for inline images in the composer"
 msgid "Add support for renaming folders"
-msgstr "Add support for inline images in the composer"
+msgstr "Add support for renaming folders"
 
 #: data/mail.metainfo.xml.in:76
 msgid "Move settings menu to the mailboxes pane"
