@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-17 17:55+0000\n"
-"PO-Revision-Date: 2023-05-03 17:06+0000\n"
+"PO-Revision-Date: 2023-07-19 08:07+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/extra/ca/>\n"
 "Language: ca\n"
@@ -74,27 +74,29 @@ msgstr "Millores:"
 
 #: data/mail.metainfo.xml.in:74
 msgid "Add support for inline images in the composer"
-msgstr ""
+msgstr "Addició de suport per a imatges en línia al compositor"
 
 #: data/mail.metainfo.xml.in:75
 msgid "Add support for renaming folders"
-msgstr ""
+msgstr "Addició de suport per canviar el nom de carpetes"
 
 #: data/mail.metainfo.xml.in:76
 msgid "Move settings menu to the mailboxes pane"
-msgstr ""
+msgstr "Menú de configuració al plafó de bústies de correu"
 
 #: data/mail.metainfo.xml.in:77
 msgid "Use the FileChooser portal"
-msgstr ""
+msgstr "Ús del portal FileChooser"
 
 #: data/mail.metainfo.xml.in:78
 msgid "Improve network availability handling"
-msgstr ""
+msgstr "Millorar la gestió de la disponibilitat de la xarxa"
 
 #: data/mail.metainfo.xml.in:79
 msgid "Fix issues with fetching e-mail when Mail is not autostarted"
 msgstr ""
+"Solució de problemes amb l'obtenció del correu electrònic quan el correu no "
+"s'inicia automàticament"
 
 #: data/mail.metainfo.xml.in:80 data/mail.metainfo.xml.in:108
 #: data/mail.metainfo.xml.in:122 data/mail.metainfo.xml.in:143
