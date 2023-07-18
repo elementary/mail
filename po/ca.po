@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-17 17:55+0000\n"
-"PO-Revision-Date: 2023-06-21 16:07+0000\n"
+"PO-Revision-Date: 2023-07-19 08:07+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -436,25 +436,27 @@ msgid "Refresh folder"
 msgstr "Refresca la carpeta"
 
 #: src/FoldersView/FolderSourceItem.vala:56
-#, fuzzy
-#| msgid "Refresh folder"
 msgid "Rename folder"
-msgstr "Refresca la carpeta"
+msgstr "Canvia de nom la carpeta"
 
 #: src/FoldersView/FolderSourceItem.vala:158
 #, c-format
 msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
 msgstr ""
+"No es pot canviar el nom de la carpeta %s. Els noms de les carpetes no poden "
+"contenir /."
 
 #: src/FoldersView/FolderSourceItem.vala:185
 #, c-format
 msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
 msgstr ""
+"No es pot canviar el nom de la carpeta %s. Ja existeix una carpeta amb el "
+"nom %s."
 
 #: src/FoldersView/FolderSourceItem.vala:200
 #, c-format
 msgid "Unable to rename folder “%s”': %s"
-msgstr ""
+msgstr "No es pot canviar el nom de la carpeta %s: %s"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
