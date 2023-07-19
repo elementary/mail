@@ -96,8 +96,6 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
 
         title_entry = new Gtk.Entry () {
             margin_top = 2, //Work around a styling issue
-            margin_start = 12,
-            margin_end = 12,
             placeholder_text = _("For example “Work” or “Personal”"),
             sensitive = false
         };
@@ -115,22 +113,23 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
         }
 
         var frame = new Gtk.Frame (null) {
-            margin_start = 12,
-            margin_end = 12,
             margin_bottom = 12,
             child = web_view
         };
 
         var delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
+            halign = START,
             tooltip_text = _("Delete"),
             sensitive = false
         };
         delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
+        delete_button.get_style_context ().remove_class ("image-button");
 
         var default_menu = new Menu ();
 
         var default_menubutton = new Gtk.MenuButton () {
             always_show_image = true,
+            halign = END,
             image = new Gtk.Image.from_icon_name ("pan-down-symbolic", SMALL_TOOLBAR),
             image_position = RIGHT,
             menu_model = default_menu,
@@ -139,16 +138,20 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
             direction = UP,
             sensitive = false
         };
-        default_menubutton.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var end_actionbar = new Gtk.ActionBar ();
-        end_actionbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        var end_actionbar = new Gtk.Box (HORIZONTAL, 12) {
+            margin_top = 12
+        };
         end_actionbar.pack_start (delete_button);
         end_actionbar.pack_end (default_menubutton);
 
-        var content_box = new Gtk.Box (VERTICAL, 0);
+        var content_box = new Gtk.Box (VERTICAL, 0) {
+            margin_start = 12,
+            margin_end = 12,
+            margin_bottom = 12
+        };
         content_box.add (title_entry);
-        content_box.add (new Granite.HeaderLabel (_("Signature")) { margin_top = 6, margin_start = 12 });
+        content_box.add (new Granite.HeaderLabel (_("Signature")) { margin_top = 6 });
         content_box.add (frame);
         content_box.add (end_actionbar);
 
@@ -156,10 +159,6 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
         end_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         end_box.add (end_header);
         end_box.add (content_box);
-
-        var action_sizegroup = new Gtk.SizeGroup (VERTICAL);
-        action_sizegroup.add_widget (start_actionbar);
-        action_sizegroup.add_widget (end_actionbar);
 
         var paned = new Gtk.Paned (HORIZONTAL) {
             position = 140
