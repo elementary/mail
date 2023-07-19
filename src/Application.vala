@@ -149,7 +149,11 @@ public class Mail.Application : Gtk.Application {
         set_accels_for_action ("app.quit", {"<Control>q"});
 
         var manage_signatures_action = new SimpleAction (ACTION_MANAGE_SIGNATURES, null);
-        manage_signatures_action.activate.connect (() => new SignatureDialog ());
+        manage_signatures_action.activate.connect (() => {
+            new SignatureDialog () {
+                transient_for = active_window
+            };
+        });
         add_action (manage_signatures_action);
 
         new InboxMonitor ().start.begin ();
