@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-16 00:15+0000\n"
-"PO-Revision-Date: 2023-06-16 17:05+0000\n"
+"POT-Creation-Date: 2023-07-17 17:55+0000\n"
+"PO-Revision-Date: 2023-07-17 17:55+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
 "Language: pl\n"
@@ -451,25 +451,26 @@ msgid "Refresh folder"
 msgstr "Odśwież katalog"
 
 #: src/FoldersView/FolderSourceItem.vala:56
-#, fuzzy
-#| msgid "Refresh folder"
 msgid "Rename folder"
-msgstr "Odśwież katalog"
+msgstr "Zmień nazwę folderu"
 
 #: src/FoldersView/FolderSourceItem.vala:158
 #, c-format
 msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
 msgstr ""
+"Nie udało się zmienić nazwy folderu „%s”: Nazwy folderów nie mogą zawierać "
+"„/”"
 
 #: src/FoldersView/FolderSourceItem.vala:185
 #, c-format
 msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
 msgstr ""
+"Nie udało się zmienić nazwy folderu „%s”: Folder o nazwie „%s” już istnieje"
 
 #: src/FoldersView/FolderSourceItem.vala:200
 #, c-format
 msgid "Unable to rename folder “%s”': %s"
-msgstr ""
+msgstr "Nie udało się zmienić nazwy folderu „%s”: %s"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
