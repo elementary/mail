@@ -36,7 +36,23 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
         start_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         start_header.get_style_context ().add_class ("default-decoration");
 
-        var placeholder = new Gtk.Label (_("No Signatures added yet"));
+        var placeholder_title = new Gtk.Label (_("No Signatures")) {
+            xalign = 0
+        };
+
+        var placeholder_description = new Gtk.Label (_("Add signatures using the button in the toolbar below")) {
+            wrap = true,
+            xalign = 0
+        };
+        placeholder_description.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        placeholder_description.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+
+        var placeholder = new Gtk.Box (VERTICAL, 0) {
+            margin_start = 12,
+            margin_end = 12
+        };
+        placeholder.add (placeholder_title);
+        placeholder.add (placeholder_description);
         placeholder.show_all ();
 
         signature_list = new Gtk.ListBox () {
