@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-20 11:55+0000\n"
-"PO-Revision-Date: 2023-07-17 17:55+0000\n"
+"PO-Revision-Date: 2023-07-20 22:57+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/mail/en_GB/>\n"
@@ -276,10 +276,8 @@ msgstr[0] "Message Archived"
 msgstr[1] "Messages Archived"
 
 #: src/MainWindow.vala:281
-#, fuzzy
-#| msgid "Unstar message"
 msgid "Couldn't archive message"
-msgstr "Unstar message"
+msgstr "Couldn't archive message"
 
 #: src/MainWindow.vala:294
 msgid "Message Moved"
@@ -288,10 +286,8 @@ msgstr[0] "Message Moved"
 msgstr[1] "Messages Moved"
 
 #: src/MainWindow.vala:298
-#, fuzzy
-#| msgid "Failed to move messages: %s"
 msgid "Couldn't move message"
-msgstr "Failed to move messages: %s"
+msgstr "Couldn't move message"
 
 #: src/MainWindow.vala:311
 msgid "Message Deleted"
@@ -301,7 +297,7 @@ msgstr[1] "Messages Deleted"
 
 #: src/MainWindow.vala:315
 msgid "Couldn't delete message"
-msgstr ""
+msgstr "Couldn't delete message"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -454,19 +450,16 @@ msgstr "Rename folder"
 #: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
 msgid "Couldn't rename “%s”"
-msgstr ""
+msgstr "Couldn't rename “%s”"
 
 #: src/FoldersView/FolderSourceItem.vala:159
-#, fuzzy
-#| msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
 msgid "Folder names cannot contain “/”"
-msgstr "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgstr "Folder names cannot contain “/”"
 
 #: src/FoldersView/FolderSourceItem.vala:188
-#, fuzzy, c-format
-#| msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+#, c-format
 msgid "A folder named “%s” already exists"
-msgstr "Unable to rename folder “%s”: A folder with name “%s” already exists"
+msgstr "A folder named “%s” already exists"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
