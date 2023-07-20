@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-17 17:55+0000\n"
+"POT-Creation-Date: 2023-07-20 11:55+0000\n"
 "PO-Revision-Date: 2020-02-23 14:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/mail/mail/szl/"
@@ -290,13 +290,13 @@ msgstr[0] "Wiadōmość skasowano"
 msgstr[1] "Wiadōmości skasowane"
 msgstr[2] "Wiadōmości skasowane"
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:293 src/MainWindow.vala:306
-#, fuzzy, c-format
-#| msgid "Delete draft"
-msgid "Failed to move messages: %s"
-msgstr "Wychrōń cechōnek"
+#: src/MainWindow.vala:281
+#, fuzzy
+#| msgid "Unstar message"
+msgid "Couldn't archive message"
+msgstr "Ôdznocz wiadōmość"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:294
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -306,12 +306,22 @@ msgstr[0] "Wiadōmość skasowano"
 msgstr[1] "Wiadōmości skasowane"
 msgstr[2] "Wiadōmości skasowane"
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:298
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Couldn't move message"
+msgstr "Wychrōń cechōnek"
+
+#: src/MainWindow.vala:311
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Wiadōmość skasowano"
 msgstr[1] "Wiadōmości skasowane"
 msgstr[2] "Wiadōmości skasowane"
+
+#: src/MainWindow.vala:315
+msgid "Couldn't delete message"
+msgstr ""
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -479,18 +489,19 @@ msgid "Rename folder"
 msgstr "Ôdświyż katalog"
 
 #: src/FoldersView/FolderSourceItem.vala:158
+#: src/FoldersView/FolderSourceItem.vala:187
+#: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
-msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgid "Couldn't rename “%s”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:185
-#, c-format
-msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+#: src/FoldersView/FolderSourceItem.vala:159
+msgid "Folder names cannot contain “/”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:200
+#: src/FoldersView/FolderSourceItem.vala:188
 #, c-format
-msgid "Unable to rename folder “%s”': %s"
+msgid "A folder named “%s” already exists"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
