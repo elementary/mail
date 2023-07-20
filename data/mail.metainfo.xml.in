@@ -67,16 +67,30 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
-    <release version="7.1.1" date="2023-05-01" urgency="medium">
+    <release version="7.2.0" date="2023-05-01" urgency="medium">
       <description>
         <p>Improvements:</p>
         <ul>
+          <li>Add support for inline images in the composer</li>
+          <li>Add support for renaming folders</li>
+          <li>Move settings menu to the mailboxes pane</li>
+          <li>Use the FileChooser portal</li>
+          <li>Improve network availability handling</li>
+          <li>Fix issues with fetching e-mail when Mail is not autostarted</li>
           <li>Updated translations</li>
         </ul>
       </description>
       <issues>
         <issue url="https://github.com/elementary/mail/issues/567">Cannot undo Archive</issue>
+        <issue url="https://github.com/elementary/mail/issues/657">Move mails to trash folder instead of setting delete flag</issue>
+        <issue url="https://github.com/elementary/mail/issues/729">Include Attachments when Forwarding an E-Mail</issue>
+        <issue url="https://github.com/elementary/mail/issues/774">Missing icons</issue>
+        <issue url="https://github.com/elementary/mail/issues/800">Missing move ability</issue>
         <issue url="https://github.com/elementary/mail/issues/822">Mail reading view displays nested scroll views</issue>
+        <issue url="https://github.com/elementary/mail/issues/880">Use the background portal</issue>
+        <issue url="https://github.com/elementary/mail/issues/896">Performance issues when trashing lots of conversations</issue>
+        <issue url="https://github.com/elementary/mail/issues/903">Show special folders at the top level of the account sidebar tree</issue>
+        <issue url="https://github.com/elementary/mail/issues/904">Search move menu</issue>
       </issues>
     </release>
 

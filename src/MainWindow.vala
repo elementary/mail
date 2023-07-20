@@ -277,8 +277,11 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                         move_toast.title = ngettext ("Message Archived", "Messages Archived", result);
                         move_toast.send_notification ();
                     } else if (error_message != "") {
-                        error_toast.title = _("Failed to move messages: %s").printf (error_message);
-                        error_toast.send_notification ();
+                        send_error_message (
+                            _("Couldn't archive message"),
+                            error_message,
+                            "mail-archive"
+                        );
                     }
                 });
                 break;
@@ -291,8 +294,11 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                         move_toast.title = ngettext ("Message Moved", "Messages Moved", result);
                         move_toast.send_notification ();
                     } else if (error_message != "") {
-                        error_toast.title = _("Failed to move messages: %s").printf (error_message);
-                        error_toast.send_notification ();
+                        send_error_message (
+                            _("Couldn't move message"),
+                            error_message,
+                            "mail-move"
+                        );
                     }
                 });
                 break;
@@ -305,8 +311,11 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                         move_toast.title = ngettext ("Message Deleted", "Messages Deleted", result);
                         move_toast.send_notification ();
                     } else if (error_message != "") {
-                        error_toast.title = _("Failed to move messages: %s").printf (error_message);
-                        error_toast.send_notification ();
+                        send_error_message (
+                            _("Couldn't delete message"),
+                            error_message,
+                            "edit-delete"
+                        );
                     }
                 });
                 break;
@@ -325,6 +334,25 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
     private SimpleAction? get_action (string name) {
         return (SimpleAction) lookup_action (name);
+    }
+
+    public static void send_error_message (string title, string description, string? icon_name = null) {
+        var dialog = new Granite.MessageDialog (
+            title,
+            description,
+            new ThemedIcon ("dialog-error")
+        ) {
+            modal = true,
+            transient_for = ((Gtk.Application) GLib.Application.get_default ()).active_window
+        };
+
+        if (icon_name != null) {
+            dialog.image_icon = new ThemedIcon (icon_name);
+            dialog.badge_icon = new ThemedIcon ("dialog-error");
+        }
+
+        dialog.present ();
+        dialog.response.connect (dialog.destroy);
     }
 
     public override bool configure_event (Gdk.EventConfigure event) {

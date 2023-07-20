@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-16 17:05+0000\n"
+"POT-Creation-Date: 2023-07-20 11:55+0000\n"
 "PO-Revision-Date: 2023-05-26 21:06+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
 "io>\n"
@@ -67,19 +67,43 @@ msgstr "Bekerja dengan Gmail, Yahoo! Mail, dan server IMAP populer lainnya"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:85
-#: data/mail.metainfo.xml.in:106 data/mail.metainfo.xml.in:125
-#: data/mail.metainfo.xml.in:147 data/mail.metainfo.xml.in:161
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:99
+#: data/mail.metainfo.xml.in:120 data/mail.metainfo.xml.in:139
+#: data/mail.metainfo.xml.in:161 data/mail.metainfo.xml.in:175
 msgid "Improvements:"
 msgstr "Peningkatan:"
 
-#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:94
-#: data/mail.metainfo.xml.in:108 data/mail.metainfo.xml.in:129
-#: data/mail.metainfo.xml.in:150 data/mail.metainfo.xml.in:163
+#: data/mail.metainfo.xml.in:74
+msgid "Add support for inline images in the composer"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:75
+msgid "Add support for renaming folders"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:76
+msgid "Move settings menu to the mailboxes pane"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:77
+msgid "Use the FileChooser portal"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:78
+msgid "Improve network availability handling"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:79
+msgid "Fix issues with fetching e-mail when Mail is not autostarted"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:80 data/mail.metainfo.xml.in:108
+#: data/mail.metainfo.xml.in:122 data/mail.metainfo.xml.in:143
+#: data/mail.metainfo.xml.in:164 data/mail.metainfo.xml.in:177
 msgid "Updated translations"
 msgstr "Pembaruan terjemahan"
 
-#: data/mail.metainfo.xml.in:87
+#: data/mail.metainfo.xml.in:101
 msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
@@ -87,7 +111,7 @@ msgstr ""
 "Tampilan selamat datang dihapus saat akun ditambahkan di Akun Daring tanpa "
 "harus memulai ulang Surat"
 
-#: data/mail.metainfo.xml.in:88
+#: data/mail.metainfo.xml.in:102
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
@@ -95,87 +119,87 @@ msgstr ""
 "Komposer selalu disajikan sebagai jendela baru dan menyertakan lebih banyak "
 "pintasan papan ketik"
 
-#: data/mail.metainfo.xml.in:89
+#: data/mail.metainfo.xml.in:103
 msgid "The search filter menu now appears next to the search bar"
 msgstr "Menu saring pencarian sekarang muncul di sebelah bilah pencarian"
 
-#: data/mail.metainfo.xml.in:90
+#: data/mail.metainfo.xml.in:104
 msgid "HeaderBars appear to float above content when scrolled"
 msgstr "Bilah Kepala tampak melayang di atas konten saat digulir"
 
-#: data/mail.metainfo.xml.in:91
+#: data/mail.metainfo.xml.in:105
 msgid "Fix a potential crash with empty messages"
 msgstr "Memperbaiki potensi kesalahan dengan pesan kosong"
 
-#: data/mail.metainfo.xml.in:92
+#: data/mail.metainfo.xml.in:106
 msgid "Stop resizing from cutting off the message list"
 msgstr "Menghentikan pengubahan ukuran agar tidak memotong daftar pesan"
 
-#: data/mail.metainfo.xml.in:93
+#: data/mail.metainfo.xml.in:107
 msgid "Performance improvements"
 msgstr "Peningkatan kinerja"
 
-#: data/mail.metainfo.xml.in:119 data/mail.metainfo.xml.in:141
-#: data/mail.metainfo.xml.in:157
+#: data/mail.metainfo.xml.in:133 data/mail.metainfo.xml.in:155
+#: data/mail.metainfo.xml.in:171
 msgid "Fixes:"
 msgstr "Perbaikan:"
 
-#: data/mail.metainfo.xml.in:121
+#: data/mail.metainfo.xml.in:135
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr "Memperbaiki kesalahan yang menyebabkan akun surel dimuat beberapa kali"
 
-#: data/mail.metainfo.xml.in:122
+#: data/mail.metainfo.xml.in:136
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr "Memperbaiki bug yang menyebabkan Surat terkadang mogok"
 
-#: data/mail.metainfo.xml.in:123
+#: data/mail.metainfo.xml.in:137
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "Menampilkan penerima di folder Terkirim, bukan pengirim"
 
-#: data/mail.metainfo.xml.in:127
+#: data/mail.metainfo.xml.in:141
 msgid "Updated app icon"
 msgstr "Pembaruan ikon aplikasi"
 
-#: data/mail.metainfo.xml.in:128
+#: data/mail.metainfo.xml.in:142
 msgid "New design"
 msgstr "Desain baru"
 
-#: data/mail.metainfo.xml.in:136
+#: data/mail.metainfo.xml.in:150
 msgid "New features:"
 msgstr "Fitur baru:"
 
-#: data/mail.metainfo.xml.in:138
+#: data/mail.metainfo.xml.in:152
 msgid "Use message subject for composer window title"
 msgstr "Menggunakan subjek pesan untuk judul jendela komposer"
 
-#: data/mail.metainfo.xml.in:139
+#: data/mail.metainfo.xml.in:153
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
 "Menambahkan dukungan untuk Kotak Masuk Terpadu untuk akun Microsoft 365"
 
-#: data/mail.metainfo.xml.in:143
+#: data/mail.metainfo.xml.in:157
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
 "Memperbaiki kesalahan yang menyebabkan pemantauan kotak masuk di latar "
 "belakang mogok"
 
-#: data/mail.metainfo.xml.in:144
+#: data/mail.metainfo.xml.in:158
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr "Menghapus alamat pengirim duplikat saat menulis pesan"
 
-#: data/mail.metainfo.xml.in:145
+#: data/mail.metainfo.xml.in:159
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr "Memperbaiki pembekuan saat mengarsipkan pesan terakhir dalam folder"
 
-#: data/mail.metainfo.xml.in:149
+#: data/mail.metainfo.xml.in:163
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "Mengganti nama Office 365 menjadi Microsoft 365 untuk mengikuti rangkaian "
 "perubahan merek Microsoft"
 
-#: data/mail.metainfo.xml.in:159
+#: data/mail.metainfo.xml.in:173
 msgid "Fix a potential crash while loading messages"
 msgstr "Memperbaiki potensi kesalahan saat memuat pesan"
 

@@ -11,8 +11,6 @@
  * it might be used to show how much songs are in a playlist or how much updates
  * are available.
  *
- * {{../doc/images/cellrendererbadge.png}}
- *
  * @since 0.2
  */
 public class Mail.CellRendererBadge : Gtk.CellRenderer {

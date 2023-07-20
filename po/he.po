@@ -12,13 +12,13 @@
 # yoseforb <yoseforb@gmail.com>, 2013
 # Yosef Or Boczko <yoseforb@gnome.org>, 2013, 2014, 2015.
 #
-#: src/MessageList/MessageListItem.vala:427
+#: src/MessageList/MessageListItem.vala:428
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-16 17:05+0000\n"
-"PO-Revision-Date: 2023-06-16 17:05+0000\n"
+"POT-Creation-Date: 2023-07-20 11:55+0000\n"
+"PO-Revision-Date: 2023-07-17 17:55+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
 "Language: he\n"
@@ -85,96 +85,96 @@ msgstr "שליחה"
 msgid "New Message"
 msgstr "הודעה חדשה"
 
-#: src/Composer.vala:418
+#: src/Composer.vala:421
 msgid "Choose a file"
 msgstr "בחירת קובץ"
 
-#: src/Composer.vala:421
+#: src/Composer.vala:424
 msgid "Attach"
 msgstr "צירוף"
 
-#: src/Composer.vala:422 src/Composer.vala:446 src/Composer.vala:658
+#: src/Composer.vala:425 src/Composer.vala:449 src/Composer.vala:702
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
 msgstr "ביטול"
 
-#: src/Composer.vala:438
+#: src/Composer.vala:441
 msgid "Images"
 msgstr "תמונות"
 
-#: src/Composer.vala:442
+#: src/Composer.vala:445
 msgid "Choose an image"
 msgstr "בחירת תמונה"
 
-#: src/Composer.vala:445
+#: src/Composer.vala:448
 msgid "Insert"
 msgstr "הוספה"
 
-#: src/Composer.vala:474
+#: src/Composer.vala:477
 msgid "Unable to insert image"
 msgstr "לא ניתן להוסיף תמונה"
 
-#: src/Composer.vala:475
+#: src/Composer.vala:478
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "אירעה שגיאה בלתי צפויה בהוספת התמונה."
 
-#: src/Composer.vala:594
+#: src/Composer.vala:603
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a ,ה־%-e ב%b,‏ %Y בשעה %-l:%M %p"
 
-#: src/Composer.vala:624
+#: src/Composer.vala:633
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "בתאריך %1$s, נכתב ע״י %2$s:"
 
-#: src/Composer.vala:628
+#: src/Composer.vala:637
 msgid "---------- Forwarded message ----------"
 msgstr "---------- הודעה שהועברה ----------"
 
-#: src/Composer.vala:630
+#: src/Composer.vala:639
 #, c-format
 msgid "From: %s<br/>"
 msgstr "מאת: %s<br/>"
 
-#: src/Composer.vala:631
+#: src/Composer.vala:640
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "נושא: %s<br/>"
 
-#: src/Composer.vala:632
+#: src/Composer.vala:641
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "תאריך: %s<br/>"
 
-#: src/Composer.vala:633
+#: src/Composer.vala:642
 #, c-format
 msgid "To: %s<br/>"
 msgstr "אל: %s<br/>"
 
-#: src/Composer.vala:635
+#: src/Composer.vala:644
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "עותק: %s<br/>"
 
-#: src/Composer.vala:649
+#: src/Composer.vala:693
 msgid "Permanently delete this draft?"
 msgstr "למחוק את הטיוטה הזאת לצמיתות?"
 
-#: src/Composer.vala:650
+#: src/Composer.vala:694
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr "פעולה זו אינה הפיכה, שחזור הטיוטה שלך אינו אפשרי לאחר מחיקה."
 
-#: src/Composer.vala:660
+#: src/Composer.vala:704
 msgid "Delete Draft"
 msgstr "מחיקת טיוטה"
 
-#: src/Composer.vala:684
+#: src/Composer.vala:728
 msgid "Send without subject?"
 msgstr "לשלוח ללא נושא?"
 
-#: src/Composer.vala:685
+#: src/Composer.vala:729
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -182,37 +182,37 @@ msgstr ""
 "שדה הנושא של ההודעה הזו ריק. יתכן שהנמען לא יוכל להבין במה מדובר או להעריך "
 "את חשיבות ההודעה."
 
-#: src/Composer.vala:692
+#: src/Composer.vala:736
 msgid "Don't Send"
 msgstr "לא לשלוח"
 
-#: src/Composer.vala:694
+#: src/Composer.vala:738
 msgid "Send Anyway"
 msgstr "לשלוח בכל זאת"
 
-#: src/Composer.vala:719
+#: src/Composer.vala:767
 msgid "Sent message was not saved"
 msgstr "ההודעה שנשלחה לא נשמרה"
 
-#: src/Composer.vala:720
+#: src/Composer.vala:768
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr "ההודעה נשמרה, עם זאת, לא נשמע עותק ממנה בתיקיית ההודעות שנשלחו."
 
-#: src/Composer.vala:735
+#: src/Composer.vala:783
 msgid "Unable to send message"
 msgstr "לא ניתן לשלוח הודעה"
 
-#: src/Composer.vala:736
+#: src/Composer.vala:784
 msgid "There was an unexpected error while sending your message."
 msgstr "אירעה שגיאה בלתי צפויה בשליחת ההודעה שלך."
 
-#: src/Composer.vala:980
+#: src/Composer.vala:1029
 msgid "Unable to save draft"
 msgstr "לא ניתן לשמור טיוטה"
 
-#: src/Composer.vala:981
+#: src/Composer.vala:1030
 msgid "There was an unexpected error while saving your draft."
 msgstr "אירעה שגיאה בלתי צפויה בשמירת הטיוטה שלך."
 
@@ -276,22 +276,33 @@ msgid_plural "Messages Archived"
 msgstr[0] "הודעה הועברה לארכיון"
 msgstr[1] "הודעות הועברו לארכיון"
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:294 src/MainWindow.vala:308
-#, c-format
-msgid "Failed to move messages: %s"
-msgstr "העברת הודעות נכשלה: %s"
+#: src/MainWindow.vala:281
+#, fuzzy
+#| msgid "Unstar message"
+msgid "Couldn't archive message"
+msgstr "ביטול הכוכב להודעה"
 
-#: src/MainWindow.vala:291
+#: src/MainWindow.vala:294
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "הודעה הועברה"
 msgstr[1] "הודעות הועברו"
 
-#: src/MainWindow.vala:305
+#: src/MainWindow.vala:298
+#, fuzzy
+#| msgid "Failed to move messages: %s"
+msgid "Couldn't move message"
+msgstr "העברת הודעות נכשלה: %s"
+
+#: src/MainWindow.vala:311
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "הודעה נמחקה"
 msgstr[1] "הודעות נמחקו"
+
+#: src/MainWindow.vala:315
+msgid "Couldn't delete message"
+msgstr ""
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -363,17 +374,17 @@ msgid "Mark As Unread"
 msgstr "סימון כלא נקרא"
 
 #: src/ConversationList/ConversationList.vala:578
-#: src/MessageList/MessageList.vala:60
+#: src/MessageList/MessageList.vala:59
 msgid "Mark as Read"
 msgstr "סימון כנקרא"
 
 #: src/ConversationList/ConversationList.vala:588
-#: src/MessageList/MessageList.vala:66
+#: src/MessageList/MessageList.vala:65
 msgid "Star"
 msgstr "כוכב"
 
 #: src/ConversationList/ConversationList.vala:596
-#: src/MessageList/MessageList.vala:72
+#: src/MessageList/MessageList.vala:71
 msgid "Unstar"
 msgstr "הסרת כוכב"
 
@@ -432,9 +443,32 @@ msgstr ""
 "יש לפתוח את הגדרות המערכת ידנית או להתקין את Evolution כדי להקים חשבונות "
 "מקוונים."
 
-#: src/FoldersView/FolderSourceItem.vala:40
+#: src/FoldersView/FolderSourceItem.vala:51
 msgid "Refresh folder"
 msgstr "רענון התיקייה"
+
+#: src/FoldersView/FolderSourceItem.vala:56
+msgid "Rename folder"
+msgstr "שינוי שם התיקייה"
+
+#: src/FoldersView/FolderSourceItem.vala:158
+#: src/FoldersView/FolderSourceItem.vala:187
+#: src/FoldersView/FolderSourceItem.vala:205
+#, c-format
+msgid "Couldn't rename “%s”"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:159
+#, fuzzy
+#| msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgid "Folder names cannot contain “/”"
+msgstr "לא ניתן לשנות את שם התיקייה „%s”: שמות תיקיות לא יכולים להכיל „/”"
+
+#: src/FoldersView/FolderSourceItem.vala:188
+#, fuzzy, c-format
+#| msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+msgid "A folder named “%s” already exists"
+msgstr "לא ניתן לשנות את שם התיקייה „%s”: כבר קיימת תיקייה בשם „%s”"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
@@ -452,39 +486,39 @@ msgstr "נשלח"
 msgid "All Mailboxes"
 msgstr "כל תיבות הדוא״ל"
 
-#: src/MessageList/MessageList.vala:29 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:207
 msgid "Reply"
 msgstr "להשיב"
 
-#: src/MessageList/MessageList.vala:38 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:210
 msgid "Reply All"
 msgstr "להשיב לכולם"
 
-#: src/MessageList/MessageList.vala:47 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:213
 msgid "Forward"
 msgstr "העברה"
 
-#: src/MessageList/MessageList.vala:54
+#: src/MessageList/MessageList.vala:53
 msgid "Mark as Unread"
 msgstr "סימון כלא נקרא"
 
-#: src/MessageList/MessageList.vala:85
+#: src/MessageList/MessageList.vala:84
 msgid "Mark Conversation"
 msgstr "סימון הדיון"
 
-#: src/MessageList/MessageList.vala:93
+#: src/MessageList/MessageList.vala:92
 msgid "Move Conversation to…"
 msgstr "העברת דיון אל…"
 
-#: src/MessageList/MessageList.vala:103
+#: src/MessageList/MessageList.vala:101
 msgid "Move conversations to archive"
 msgstr "העברת דיונים לארכיון"
 
-#: src/MessageList/MessageList.vala:111
+#: src/MessageList/MessageList.vala:109
 msgid "Move conversations to Trash"
 msgstr "העברת דיונים לאשפה"
 
-#: src/MessageList/MessageList.vala:126
+#: src/MessageList/MessageList.vala:124
 msgid "No Message Selected"
 msgstr "לא נבחרה הודעה"
 
@@ -495,12 +529,12 @@ msgid "%s at %s"
 msgstr "%s ב־%s"
 
 #: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:382
+#: src/MessageList/MessageListItem.vala:383
 msgid "Unstar message"
 msgstr "ביטול הכוכב להודעה"
 
 #: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:378
+#: src/MessageList/MessageListItem.vala:379
 msgid "Star message"
 msgstr "סימון ההודעה בכוכב"
 
@@ -524,25 +558,25 @@ msgstr "תמיד להציג מהשולח"
 msgid "This message contains remote images."
 msgstr "הודעה זו מכילה תמונות מרוחקות."
 
-#: src/MessageList/MessageListItem.vala:320
+#: src/MessageList/MessageListItem.vala:321
 msgid "This message contains one or more attachments"
 msgstr "הודעה זו מכילה צרופה אחת או יותר"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:404
+#: src/MessageList/MessageListItem.vala:405
 msgid "Email Message"
 msgstr "הודעת דוא״ל"
 
-#: src/MessageList/MessageListItem.vala:426
+#: src/MessageList/MessageListItem.vala:427
 msgid "Unable to print email"
 msgstr "לא ניתן להדפיס דוא״ל"
 
-#: src/MessageList/MessageListItem.vala:673
+#: src/MessageList/MessageListItem.vala:674
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr "לתת אמון ולפתוח את „%s”?"
 
-#: src/MessageList/MessageListItem.vala:674
+#: src/MessageList/MessageListItem.vala:675
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -550,7 +584,7 @@ msgstr ""
 "צרופות עשויות לגרום נזק למערכת שלך אם הן תיפתחנה. יש לפתוח קבצים רק ממקורות "
 "מהימנים."
 
-#: src/MessageList/MessageListItem.vala:681
+#: src/MessageList/MessageListItem.vala:682
 msgid "Open Anyway"
 msgstr "לפתוח בכל זאת"
 
@@ -569,6 +603,10 @@ msgstr "לא ידוע"
 #: src/MessageList/AttachmentButton.vala:138
 msgid "Save"
 msgstr "שמירה"
+
+#, c-format
+#~ msgid "Unable to rename folder “%s”': %s"
+#~ msgstr "לא ניתן לשנות את שם התיקייה „%s”:‏ %s"
 
 #~ msgid "Reply to All"
 #~ msgstr "להשיב לכולם"

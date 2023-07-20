@@ -88,7 +88,7 @@ public class Mail.MessageList : Gtk.Box {
 
         var move_button = new Gtk.MenuButton () {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MODIFY,
-            image = new Gtk.Image.from_icon_name ("folder", Gtk.IconSize.LARGE_TOOLBAR),
+            image = new Gtk.Image.from_icon_name ("mail-move", Gtk.IconSize.LARGE_TOOLBAR),
             tooltip_text = _("Move Conversation to…"),
             popover = folder_popover
         };
