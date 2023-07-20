@@ -26,12 +26,14 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private Mail.WebView web_view;
     private GLib.Cancellable loading_cancellable;
 
+    private Gtk.InfoBar calendar_info_bar;
     private Gtk.InfoBar blocked_images_infobar;
     private Gtk.Revealer secondary_revealer;
     private Gtk.Stack header_stack;
     private Gtk.StyleContext style_context;
     private Hdy.Avatar avatar;
     private Gtk.FlowBox attachment_bar = null;
+    private File? temp_dir = null;
 
     private string message_content;
     private bool message_is_html = false;
@@ -267,6 +269,22 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         settings = new GLib.Settings ("io.elementary.mail");
 
+        calendar_info_bar = new Gtk.InfoBar () {
+            margin_top = 12,
+            margin_bottom = 12,
+            margin_start = 12,
+            margin_end = 12,
+            message_type = INFO
+        };
+        calendar_info_bar.add_button (_("Open in Calendar"), 1);
+        calendar_info_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FRAME);
+        calendar_info_bar.no_show_all = true;
+
+        var calendar_info_bar_content = calendar_info_bar.get_content_area ();
+        calendar_info_bar_content.add (new Gtk.Image.from_icon_name ("x-office-calendar", LARGE_TOOLBAR));
+        calendar_info_bar_content.add (new Gtk.Label (_("This message contains a Calendar Event.")));
+        calendar_info_bar_content.show_all ();
+
         blocked_images_infobar = new Gtk.InfoBar () {
             margin_top = 12,
             margin_bottom = 12,
@@ -300,6 +318,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         var secondary_box = new Gtk.Box (VERTICAL, 0);
         secondary_box.add (separator);
+        secondary_box.add (calendar_info_bar);
         secondary_box.add (blocked_images_infobar);
         secondary_box.add (web_view);
 
@@ -579,6 +598,11 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                     var button = new AttachmentButton (part, loading_cancellable);
                     button.activate.connect (() => show_attachment (button.mime_part));
                     attachment_bar.add (button);
+
+                    if (part.get_mime_type () == "text/calendar" && !calendar_info_bar.visible) {
+                        calendar_info_bar.response.connect (() => show_attachment (part));
+                        calendar_info_bar.show ();
+                    }
                 }
                 if (field.type == "text") {
                     yield handle_text_mime (part.content);
@@ -694,12 +718,20 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     private async void show_file_anyway (Camel.MimePart mime_part) {
         try {
-            GLib.FileIOStream iostream;
-            var file = File.new_tmp ("XXXXXX-%s".printf (mime_part.get_filename ()), out iostream);
-            yield mime_part.content.decode_to_output_stream (iostream.output_stream, GLib.Priority.DEFAULT, null);
-            yield GLib.AppInfo.launch_default_for_uri_async (file.get_uri (), (AppLaunchContext) null, null);
+            if (temp_dir == null) {
+                temp_dir = File.new_for_path (GLib.DirUtils.make_tmp (".XXXXXX"));
+            }
+
+            var file = temp_dir.get_child (mime_part.get_filename ());
+
+            if (!file.query_exists ()) {
+                var output_stream = yield file.create_async (GLib.FileCreateFlags.NONE, GLib.Priority.DEFAULT, null);
+                yield mime_part.content.decode_to_output_stream (output_stream, GLib.Priority.DEFAULT, null);
+            }
+
+            yield AppInfo.launch_default_for_uri_async (file.get_uri (), null, null);
         } catch (Error e) {
-            critical (e.message);
+            warning ("Failed to show file '%s': %s", mime_part.get_filename (), e.message);
         }
     }
 }
