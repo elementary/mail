@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-20 11:55+0000\n"
-"PO-Revision-Date: 2023-07-15 04:11+0000\n"
+"PO-Revision-Date: 2023-07-20 22:57+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -262,10 +262,8 @@ msgid_plural "Messages Archived"
 msgstr[0] "メッセージをアーカイブしました"
 
 #: src/MainWindow.vala:281
-#, fuzzy
-#| msgid "Unstar message"
 msgid "Couldn't archive message"
-msgstr "スターなしメッセージ"
+msgstr "メッセージをアーカイブできませんでした"
 
 #: src/MainWindow.vala:294
 msgid "Message Moved"
@@ -273,10 +271,8 @@ msgid_plural "Messages Moved"
 msgstr[0] "メッセージを移動しました"
 
 #: src/MainWindow.vala:298
-#, fuzzy
-#| msgid "Failed to move messages: %s"
 msgid "Couldn't move message"
-msgstr "メッセージを移動できませんでした: %s"
+msgstr "メッセージを移動できませんでした"
 
 #: src/MainWindow.vala:311
 msgid "Message Deleted"
@@ -285,7 +281,7 @@ msgstr[0] "メッセージを削除しました"
 
 #: src/MainWindow.vala:315
 msgid "Couldn't delete message"
-msgstr ""
+msgstr "メッセージを削除できませんでした"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -439,22 +435,16 @@ msgstr "フォルダー名を変更"
 #: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
 msgid "Couldn't rename “%s”"
-msgstr ""
+msgstr "“%s” の名前を変更できませんでした"
 
 #: src/FoldersView/FolderSourceItem.vala:159
-#, fuzzy
-#| msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
 msgid "Folder names cannot contain “/”"
-msgstr ""
-"フォルダー “%s” の名前を変更できません: フォルダー名には “/” を使えません"
+msgstr "フォルダー名には “/” を使えません"
 
 #: src/FoldersView/FolderSourceItem.vala:188
-#, fuzzy, c-format
-#| msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+#, c-format
 msgid "A folder named “%s” already exists"
-msgstr ""
-"フォルダー “%s” の名前を変更できません: “%s” というフォルダーはすでに存在しま"
-"す"
+msgstr "“%s” というフォルダーはすでに存在します"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
