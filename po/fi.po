@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-17 17:55+0000\n"
+"POT-Creation-Date: 2023-07-20 11:55+0000\n"
 "PO-Revision-Date: 2023-05-20 04:06+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/mail/fi/>\n"
@@ -282,13 +282,13 @@ msgid_plural "Messages Archived"
 msgstr[0] "Viesti arkistoitu"
 msgstr[1] "Viestit arkistoitu"
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:293 src/MainWindow.vala:306
-#, fuzzy, c-format
-#| msgid "Unable to send message"
-msgid "Failed to move messages: %s"
-msgstr "Viestin lähettäminen ei onnistu"
+#: src/MainWindow.vala:281
+#, fuzzy
+#| msgid "Unstar message"
+msgid "Couldn't archive message"
+msgstr "Poista viestin tähtimerkintä"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:294
 #, fuzzy
 #| msgid "Message Archived"
 #| msgid_plural "Messages Archived"
@@ -297,11 +297,21 @@ msgid_plural "Messages Moved"
 msgstr[0] "Viesti arkistoitu"
 msgstr[1] "Viestit arkistoitu"
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:298
+#, fuzzy
+#| msgid "Unable to send message"
+msgid "Couldn't move message"
+msgstr "Viestin lähettäminen ei onnistu"
+
+#: src/MainWindow.vala:311
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Viesti poistettu"
 msgstr[1] "Viestit poistettu"
+
+#: src/MainWindow.vala:315
+msgid "Couldn't delete message"
+msgstr ""
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -459,18 +469,19 @@ msgid "Rename folder"
 msgstr "Päivitä kansio"
 
 #: src/FoldersView/FolderSourceItem.vala:158
+#: src/FoldersView/FolderSourceItem.vala:187
+#: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
-msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgid "Couldn't rename “%s”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:185
-#, c-format
-msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+#: src/FoldersView/FolderSourceItem.vala:159
+msgid "Folder names cannot contain “/”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:200
+#: src/FoldersView/FolderSourceItem.vala:188
 #, c-format
-msgid "Unable to rename folder “%s”': %s"
+msgid "A folder named “%s” already exists"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38

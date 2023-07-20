@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-17 17:55+0000\n"
+"POT-Creation-Date: 2023-07-20 11:55+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
@@ -253,24 +253,31 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:293 src/MainWindow.vala:306
-#, c-format
-msgid "Failed to move messages: %s"
+#: src/MainWindow.vala:281
+msgid "Couldn't archive message"
 msgstr ""
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:294
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:298
+msgid "Couldn't move message"
+msgstr ""
+
+#: src/MainWindow.vala:311
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
+
+#: src/MainWindow.vala:315
+msgid "Couldn't delete message"
+msgstr ""
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -418,18 +425,19 @@ msgid "Rename folder"
 msgstr ""
 
 #: src/FoldersView/FolderSourceItem.vala:158
+#: src/FoldersView/FolderSourceItem.vala:187
+#: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
-msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgid "Couldn't rename “%s”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:185
-#, c-format
-msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+#: src/FoldersView/FolderSourceItem.vala:159
+msgid "Folder names cannot contain “/”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:200
+#: src/FoldersView/FolderSourceItem.vala:188
 #, c-format
-msgid "Unable to rename folder “%s”': %s"
+msgid "A folder named “%s” already exists"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38

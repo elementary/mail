@@ -14,7 +14,9 @@
     <file alias="16x16/actions/mail-filter-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-filter-symbolic.svg</file>
     <file alias="16x16@2/actions/mail-filter-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-filter-symbolic.svg</file>
 
-    <file alias="24x24/actions/mail-move.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-move.svg</file>
-    <file alias="24x24@2/actions/mail-move.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-move.svg</file>
+    <file alias="24x24/actions/mail-move.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-move/24.svg</file>
+    <file alias="24x24@2/actions/mail-move.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-move/24.svg</file>
+    <file alias="48x48/actions/mail-move.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-move/48.svg</file>
+    <file alias="48x48@2/actions/mail-move.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-move/48.svg</file>
   </gresource>
 </gresources>

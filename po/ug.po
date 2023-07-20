@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-17 17:55+0000\n"
+"POT-Creation-Date: 2023-07-20 11:55+0000\n"
 "PO-Revision-Date: 2017-04-15 20:40+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Uighur <https://l10n.elementary.io/projects/mail/mail/ug/>\n"
@@ -291,23 +291,33 @@ msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "ھىچقانداق دىئالوگ تاللانمىدى."
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:293 src/MainWindow.vala:306
-#, fuzzy, c-format
-#| msgid "Delete draft"
-msgid "Failed to move messages: %s"
-msgstr "ئورگىنالنى ئۆچۈرۈش"
+#: src/MainWindow.vala:281
+#, fuzzy
+#| msgid "Unstar message"
+msgid "Couldn't archive message"
+msgstr "يۇلتۇز بەلگىسىنى ئۆچۈرۈش"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:294
 #, fuzzy
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "ھىچقانداق دىئالوگ تاللانمىدى."
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:298
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Couldn't move message"
+msgstr "ئورگىنالنى ئۆچۈرۈش"
+
+#: src/MainWindow.vala:311
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "ھىچقانداق دىئالوگ تاللانمىدى."
+
+#: src/MainWindow.vala:315
+msgid "Couldn't delete message"
+msgstr ""
 
 #: src/WelcomeView.vala:45
 #, fuzzy
@@ -485,18 +495,19 @@ msgid "Rename folder"
 msgstr ""
 
 #: src/FoldersView/FolderSourceItem.vala:158
+#: src/FoldersView/FolderSourceItem.vala:187
+#: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
-msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgid "Couldn't rename “%s”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:185
-#, c-format
-msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+#: src/FoldersView/FolderSourceItem.vala:159
+msgid "Folder names cannot contain “/”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:200
+#: src/FoldersView/FolderSourceItem.vala:188
 #, c-format
-msgid "Unable to rename folder “%s”': %s"
+msgid "A folder named “%s” already exists"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38

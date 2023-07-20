@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-17 17:55+0000\n"
+"POT-Creation-Date: 2023-07-20 11:55+0000\n"
 "PO-Revision-Date: 2018-12-19 00:07+0000\n"
 "Last-Translator: Mayank Arya <mmaismma@hotmail.com>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/mail/mail/hi/>\n"
@@ -287,13 +287,12 @@ msgid_plural "Messages Archived"
 msgstr[0] "पुरालेख"
 msgstr[1] "पुरालेख"
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:293 src/MainWindow.vala:306
-#, fuzzy, c-format
-#| msgid "Unable to validate:\n"
-msgid "Failed to move messages: %s"
-msgstr "पुष्टि नहीं हो पाई:\n"
+#: src/MainWindow.vala:281
+#, fuzzy
+msgid "Couldn't archive message"
+msgstr "%d नया संदेश"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:294
 #, fuzzy
 #| msgid "Archive"
 msgid "Message Moved"
@@ -301,11 +300,21 @@ msgid_plural "Messages Moved"
 msgstr[0] "पुरालेख"
 msgstr[1] "पुरालेख"
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:298
+#, fuzzy
+#| msgid "Unable to validate:\n"
+msgid "Couldn't move message"
+msgstr "पुष्टि नहीं हो पाई:\n"
+
+#: src/MainWindow.vala:311
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
+
+#: src/MainWindow.vala:315
+msgid "Couldn't delete message"
+msgstr ""
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -474,18 +483,19 @@ msgid "Rename folder"
 msgstr ""
 
 #: src/FoldersView/FolderSourceItem.vala:158
+#: src/FoldersView/FolderSourceItem.vala:187
+#: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
-msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgid "Couldn't rename “%s”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:185
-#, c-format
-msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+#: src/FoldersView/FolderSourceItem.vala:159
+msgid "Folder names cannot contain “/”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:200
+#: src/FoldersView/FolderSourceItem.vala:188
 #, c-format
-msgid "Unable to rename folder “%s”': %s"
+msgid "A folder named “%s” already exists"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
