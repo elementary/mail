@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-17 17:55+0000\n"
+"POT-Creation-Date: 2023-07-20 11:55+0000\n"
 "PO-Revision-Date: 2023-07-17 17:55+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
@@ -288,24 +288,35 @@ msgstr[0] "Wiadomość zarchiwizowana"
 msgstr[1] "Wiadomości zarchiwizowane"
 msgstr[2] "Wiadomości zarchiwizowane"
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:293 src/MainWindow.vala:306
-#, c-format
-msgid "Failed to move messages: %s"
-msgstr "Nie udało się przenieść wiadomości: %s"
+#: src/MainWindow.vala:281
+#, fuzzy
+#| msgid "Unstar message"
+msgid "Couldn't archive message"
+msgstr "Odznacz wiadomość gwiazdką"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:294
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "Wiadomość przeniesiona"
 msgstr[1] "Wiadomości przeniesione"
 msgstr[2] "Wiadomości przeniesione"
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:298
+#, fuzzy
+#| msgid "Failed to move messages: %s"
+msgid "Couldn't move message"
+msgstr "Nie udało się przenieść wiadomości: %s"
+
+#: src/MainWindow.vala:311
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Wiadomość usunięta"
 msgstr[1] "Wiadomości usunięte"
 msgstr[2] "Wiadomości usuniętych"
+
+#: src/MainWindow.vala:315
+msgid "Couldn't delete message"
+msgstr ""
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -455,22 +466,26 @@ msgid "Rename folder"
 msgstr "Zmień nazwę folderu"
 
 #: src/FoldersView/FolderSourceItem.vala:158
+#: src/FoldersView/FolderSourceItem.vala:187
+#: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
-msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgid "Couldn't rename “%s”"
+msgstr ""
+
+#: src/FoldersView/FolderSourceItem.vala:159
+#, fuzzy
+#| msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgid "Folder names cannot contain “/”"
 msgstr ""
 "Nie udało się zmienić nazwy folderu „%s”: Nazwy folderów nie mogą zawierać "
 "„/”"
 
-#: src/FoldersView/FolderSourceItem.vala:185
-#, c-format
-msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+#: src/FoldersView/FolderSourceItem.vala:188
+#, fuzzy, c-format
+#| msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+msgid "A folder named “%s” already exists"
 msgstr ""
 "Nie udało się zmienić nazwy folderu „%s”: Folder o nazwie „%s” już istnieje"
-
-#: src/FoldersView/FolderSourceItem.vala:200
-#, c-format
-msgid "Unable to rename folder “%s”': %s"
-msgstr "Nie udało się zmienić nazwy folderu „%s”: %s"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
@@ -605,6 +620,10 @@ msgstr "Nieznane"
 #: src/MessageList/AttachmentButton.vala:138
 msgid "Save"
 msgstr "Zapisz"
+
+#, c-format
+#~ msgid "Unable to rename folder “%s”': %s"
+#~ msgstr "Nie udało się zmienić nazwy folderu „%s”: %s"
 
 #~ msgid "Reply to All"
 #~ msgstr "Odpowiedz wszystkim"
