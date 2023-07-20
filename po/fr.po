@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-20 11:55+0000\n"
-"PO-Revision-Date: 2023-06-24 08:07+0000\n"
-"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
+"PO-Revision-Date: 2023-07-20 22:57+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -289,10 +289,8 @@ msgstr[0] "Message archivé"
 msgstr[1] "Messages archivés"
 
 #: src/MainWindow.vala:281
-#, fuzzy
-#| msgid "Unstar message"
 msgid "Couldn't archive message"
-msgstr "Ne plus suivre ce message"
+msgstr "Impossible d'archiver le message"
 
 #: src/MainWindow.vala:294
 msgid "Message Moved"
@@ -301,10 +299,8 @@ msgstr[0] "Message déplacé"
 msgstr[1] "Messages déplacés"
 
 #: src/MainWindow.vala:298
-#, fuzzy
-#| msgid "Failed to move messages: %s"
 msgid "Couldn't move message"
-msgstr "Échec du déplacement des messages : %s"
+msgstr "Impossible de déplacer le message"
 
 #: src/MainWindow.vala:311
 msgid "Message Deleted"
@@ -314,7 +310,7 @@ msgstr[1] "Messages supprimés"
 
 #: src/MainWindow.vala:315
 msgid "Couldn't delete message"
-msgstr ""
+msgstr "Impossible de supprimer le message"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -462,26 +458,24 @@ msgid "Refresh folder"
 msgstr "Actualiser le dossier"
 
 #: src/FoldersView/FolderSourceItem.vala:56
-#, fuzzy
-#| msgid "Refresh folder"
 msgid "Rename folder"
-msgstr "Actualiser le dossier"
+msgstr "Renommer le dossier"
 
 #: src/FoldersView/FolderSourceItem.vala:158
 #: src/FoldersView/FolderSourceItem.vala:187
 #: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
 msgid "Couldn't rename “%s”"
-msgstr ""
+msgstr "Impossible de renommer « %s »"
 
 #: src/FoldersView/FolderSourceItem.vala:159
 msgid "Folder names cannot contain “/”"
-msgstr ""
+msgstr "Les noms de dossier ne peuvent pas contenir « / »"
 
 #: src/FoldersView/FolderSourceItem.vala:188
 #, c-format
 msgid "A folder named “%s” already exists"
-msgstr ""
+msgstr "Un dossier nommé « %s » existe déjà"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
