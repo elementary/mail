@@ -15,12 +15,12 @@
 # Enrico Nicoletto <liverig@gmail.com>, 2014.
 # Rafael Ferreira <rafael.f.f1@gmail.com>, 2014.
 #
-#: src/MessageList/MessageListItem.vala:428
+#: src/MessageList/MessageListItem.vala:447
 msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-20 11:55+0000\n"
+"POT-Creation-Date: 2023-07-20 22:57+0000\n"
 "PO-Revision-Date: 2019-08-27 22:23+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/mail/"
@@ -39,15 +39,15 @@ msgid ""
 "window is closed so that it can send notifications when new mail arrives."
 msgstr ""
 
-#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:100
+#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:102
 msgid "From:"
 msgstr "De:"
 
-#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:106
+#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:108
 msgid "To:"
 msgstr "Para:"
 
-#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:112
+#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:114
 msgid "Subject:"
 msgstr "Assunto:"
 
@@ -59,7 +59,7 @@ msgstr "Cc"
 msgid "Bcc"
 msgstr "Cco"
 
-#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:146
+#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:148
 msgid "Cc:"
 msgstr "Cc:"
 
@@ -545,15 +545,15 @@ msgstr "Enviados"
 msgid "All Mailboxes"
 msgstr "Todos"
 
-#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:209
 msgid "Reply"
 msgstr "Responder"
 
-#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:212
 msgid "Reply All"
 msgstr "Responder a Todos"
 
-#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:215
 msgid "Forward"
 msgstr "Encaminhar"
 
@@ -587,64 +587,74 @@ msgid "No Message Selected"
 msgstr "Nenhuma mensagem selecionada"
 
 #. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:189
 #, c-format
 msgid "%s at %s"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:383
+#: src/MessageList/MessageListItem.vala:197
+#: src/MessageList/MessageListItem.vala:402
 msgid "Unstar message"
 msgstr "Remover favorito da mensagem"
 
-#: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:379
+#: src/MessageList/MessageListItem.vala:200
+#: src/MessageList/MessageListItem.vala:398
 msgid "Star message"
 msgstr "Favoritar mensagem"
 
-#: src/MessageList/MessageListItem.vala:218
+#: src/MessageList/MessageListItem.vala:220
 msgid "Print…"
 msgstr "Imprimir…"
 
-#: src/MessageList/MessageListItem.vala:228
+#: src/MessageList/MessageListItem.vala:230
 msgid "More"
 msgstr "Mais"
 
-#: src/MessageList/MessageListItem.vala:277
+#: src/MessageList/MessageListItem.vala:279
+msgid "Open in Calendar"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:285
+#, fuzzy
+#| msgid "This message contains remote images."
+msgid "This message contains a Calendar Event."
+msgstr "Esta mensagem contém imagens remotas."
+
+#: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"
 msgstr "Mostrar imagens"
 
-#: src/MessageList/MessageListItem.vala:278
+#: src/MessageList/MessageListItem.vala:296
 msgid "Always Show from Sender"
 msgstr "Sempre mostrar deste remetente"
 
-#: src/MessageList/MessageListItem.vala:283
+#: src/MessageList/MessageListItem.vala:301
 msgid "This message contains remote images."
 msgstr "Esta mensagem contém imagens remotas."
 
-#: src/MessageList/MessageListItem.vala:321
+#: src/MessageList/MessageListItem.vala:340
 msgid "This message contains one or more attachments"
 msgstr "Esta mensagem contém um ou mais anexos"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:405
+#: src/MessageList/MessageListItem.vala:424
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Nova mensagem"
 
-#: src/MessageList/MessageListItem.vala:427
+#: src/MessageList/MessageListItem.vala:446
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
 msgstr "Incapaz de validar:\n"
 
-#: src/MessageList/MessageListItem.vala:674
+#: src/MessageList/MessageListItem.vala:698
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:675
+#: src/MessageList/MessageListItem.vala:699
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -652,7 +662,7 @@ msgstr ""
 "Se abertos, anexos podem causar danos ao seu sistema. Abra apenas arquivos "
 "de fontes confiáveis."
 
-#: src/MessageList/MessageListItem.vala:682
+#: src/MessageList/MessageListItem.vala:706
 msgid "Open Anyway"
 msgstr "Abrir de qualquer maneira"
 

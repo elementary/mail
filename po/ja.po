@@ -1,9 +1,9 @@
-#: src/MessageList/MessageListItem.vala:428
+#: src/MessageList/MessageListItem.vala:447
 msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-20 11:55+0000\n"
+"POT-Creation-Date: 2023-07-20 22:57+0000\n"
 "PO-Revision-Date: 2023-07-20 22:57+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
@@ -23,15 +23,15 @@ msgstr ""
 "メール受信時に通知できるよう、“メール”はデバイス起動時に自動的にバックグラウ"
 "ンドで起動し、ウィンドウを閉じても常駐します。"
 
-#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:100
+#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:102
 msgid "From:"
 msgstr "差出人:"
 
-#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:106
+#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:108
 msgid "To:"
 msgstr "To:"
 
-#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:112
+#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:114
 msgid "Subject:"
 msgstr "件名:"
 
@@ -43,7 +43,7 @@ msgstr "Cc"
 msgid "Bcc"
 msgstr "Bcc"
 
-#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:146
+#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:148
 msgid "Cc:"
 msgstr "Cc:"
 
@@ -462,15 +462,15 @@ msgstr "送信済み"
 msgid "All Mailboxes"
 msgstr "すべての受信箱"
 
-#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:209
 msgid "Reply"
 msgstr "返信"
 
-#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:212
 msgid "Reply All"
 msgstr "全員に返信"
 
-#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:215
 msgid "Forward"
 msgstr "転送"
 
@@ -499,60 +499,70 @@ msgid "No Message Selected"
 msgstr "メッセージが選択されていません"
 
 #. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:189
 #, c-format
 msgid "%s at %s"
 msgstr "%s %s"
 
-#: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:383
+#: src/MessageList/MessageListItem.vala:197
+#: src/MessageList/MessageListItem.vala:402
 msgid "Unstar message"
 msgstr "スターなしメッセージ"
 
-#: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:379
+#: src/MessageList/MessageListItem.vala:200
+#: src/MessageList/MessageListItem.vala:398
 msgid "Star message"
 msgstr "スター付きメッセージ"
 
-#: src/MessageList/MessageListItem.vala:218
+#: src/MessageList/MessageListItem.vala:220
 msgid "Print…"
 msgstr "印刷…"
 
-#: src/MessageList/MessageListItem.vala:228
+#: src/MessageList/MessageListItem.vala:230
 msgid "More"
 msgstr "詳細"
 
-#: src/MessageList/MessageListItem.vala:277
+#: src/MessageList/MessageListItem.vala:279
+msgid "Open in Calendar"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:285
+#, fuzzy
+#| msgid "This message contains remote images."
+msgid "This message contains a Calendar Event."
+msgstr "このメッセージは、リモートイメージを含んでいます。"
+
+#: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"
 msgstr "画像を表示"
 
-#: src/MessageList/MessageListItem.vala:278
+#: src/MessageList/MessageListItem.vala:296
 msgid "Always Show from Sender"
 msgstr "常に送信者から表示"
 
-#: src/MessageList/MessageListItem.vala:283
+#: src/MessageList/MessageListItem.vala:301
 msgid "This message contains remote images."
 msgstr "このメッセージは、リモートイメージを含んでいます。"
 
-#: src/MessageList/MessageListItem.vala:321
+#: src/MessageList/MessageListItem.vala:340
 msgid "This message contains one or more attachments"
 msgstr "このメッセージは、何らかの添付ファイルを含んでいます"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:405
+#: src/MessageList/MessageListItem.vala:424
 msgid "Email Message"
 msgstr "メールのメッセージ"
 
-#: src/MessageList/MessageListItem.vala:427
+#: src/MessageList/MessageListItem.vala:446
 msgid "Unable to print email"
 msgstr "メールを印刷できません"
 
-#: src/MessageList/MessageListItem.vala:674
+#: src/MessageList/MessageListItem.vala:698
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr "“%s”を信頼し開きますか？"
 
-#: src/MessageList/MessageListItem.vala:675
+#: src/MessageList/MessageListItem.vala:699
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -560,7 +570,7 @@ msgstr ""
 "添付ファイルは、システムにダメージを与える恐れがあります。信頼できる送信元の"
 "ファイルのみを開くようにしてください。"
 
-#: src/MessageList/MessageListItem.vala:682
+#: src/MessageList/MessageListItem.vala:706
 msgid "Open Anyway"
 msgstr "了解して開く"
 
