@@ -178,19 +178,6 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
         header_group.add_header_bar (start_header);
         header_group.add_header_bar (end_header);
 
-        unowned var application = (Application)GLib.Application.get_default ();
-        MainWindow? main_window = null;
-        foreach (unowned var window in application.get_windows ()) {
-            if (window is MainWindow) {
-                main_window = (MainWindow) window;
-                break;
-            }
-        }
-
-        if (main_window != null) {
-            transient_for = main_window;
-        }
-
         default_height = 300;
         default_width = 500;
         add (overlay);
