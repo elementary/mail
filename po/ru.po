@@ -11,14 +11,14 @@
 # Aleksandr Stepanov <alex.eri@ya.ru>, 2015.
 # Stas Solovey <whats_up@tut.by>, 2015.
 #
-#: src/MessageList/MessageListItem.vala:428
+#: src/MessageList/MessageListItem.vala:447
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-20 11:55+0000\n"
-"PO-Revision-Date: 2023-07-15 04:11+0000\n"
-"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
+"POT-Creation-Date: 2023-07-20 22:57+0000\n"
+"PO-Revision-Date: 2023-07-20 22:57+0000\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -38,15 +38,15 @@ msgstr ""
 "когда окно закрыто, чтобы вы могли получать уведомления о появлении новой "
 "почты."
 
-#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:100
+#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:102
 msgid "From:"
 msgstr "От:"
 
-#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:106
+#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:108
 msgid "To:"
 msgstr "Кому:"
 
-#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:112
+#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:114
 msgid "Subject:"
 msgstr "Тема:"
 
@@ -58,7 +58,7 @@ msgstr "Копия"
 msgid "Bcc"
 msgstr "Скрытая копия"
 
-#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:146
+#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:148
 msgid "Cc:"
 msgstr "Копия:"
 
@@ -285,10 +285,8 @@ msgstr[1] "Сообщения архивированы"
 msgstr[2] "Сообщения архивированы"
 
 #: src/MainWindow.vala:281
-#, fuzzy
-#| msgid "Unstar message"
 msgid "Couldn't archive message"
-msgstr "Убрать из избранного"
+msgstr "Не удалось заархивировать письмо"
 
 #: src/MainWindow.vala:294
 msgid "Message Moved"
@@ -298,10 +296,8 @@ msgstr[1] "Сообщения перемещены"
 msgstr[2] "Сообщения перемещены"
 
 #: src/MainWindow.vala:298
-#, fuzzy
-#| msgid "Failed to move messages: %s"
 msgid "Couldn't move message"
-msgstr "Не удалось переместить сообщения: %s"
+msgstr "Не удалось переместить сообщение"
 
 #: src/MainWindow.vala:311
 msgid "Message Deleted"
@@ -312,7 +308,7 @@ msgstr[2] "Сообщения удалены"
 
 #: src/MainWindow.vala:315
 msgid "Couldn't delete message"
-msgstr ""
+msgstr "Не удалось удалить сообщение"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -468,21 +464,16 @@ msgstr "Переименовать папку"
 #: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
 msgid "Couldn't rename “%s”"
-msgstr ""
+msgstr "Не удалось переименовать «%s»"
 
 #: src/FoldersView/FolderSourceItem.vala:159
-#, fuzzy
-#| msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
 msgid "Folder names cannot contain “/”"
-msgstr ""
-"Не удалось переименовать папку «%s»: название папки не может содержать «/»"
+msgstr "Название папки не может содержать «/»"
 
 #: src/FoldersView/FolderSourceItem.vala:188
-#, fuzzy, c-format
-#| msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+#, c-format
 msgid "A folder named “%s” already exists"
-msgstr ""
-"Не удалось переименовать папку «%s»: папка с названием «%s» уже существует"
+msgstr "Папка с названием «%s» уже существует"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
@@ -500,15 +491,15 @@ msgstr "Отправленные"
 msgid "All Mailboxes"
 msgstr "Все почтовые ящики"
 
-#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:209
 msgid "Reply"
 msgstr "Ответить"
 
-#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:212
 msgid "Reply All"
 msgstr "Ответить всем"
 
-#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:215
 msgid "Forward"
 msgstr "Переслать"
 
@@ -537,60 +528,70 @@ msgid "No Message Selected"
 msgstr "Нет выбранных писем"
 
 #. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:189
 #, c-format
 msgid "%s at %s"
 msgstr "%s в %s"
 
-#: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:383
+#: src/MessageList/MessageListItem.vala:197
+#: src/MessageList/MessageListItem.vala:402
 msgid "Unstar message"
 msgstr "Убрать из избранного"
 
-#: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:379
+#: src/MessageList/MessageListItem.vala:200
+#: src/MessageList/MessageListItem.vala:398
 msgid "Star message"
 msgstr "Добавить в избранное"
 
-#: src/MessageList/MessageListItem.vala:218
+#: src/MessageList/MessageListItem.vala:220
 msgid "Print…"
 msgstr "Печать…"
 
-#: src/MessageList/MessageListItem.vala:228
+#: src/MessageList/MessageListItem.vala:230
 msgid "More"
 msgstr "Ещё"
 
-#: src/MessageList/MessageListItem.vala:277
+#: src/MessageList/MessageListItem.vala:279
+msgid "Open in Calendar"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:285
+#, fuzzy
+#| msgid "This message contains remote images."
+msgid "This message contains a Calendar Event."
+msgstr "Данное сообщение содержит изображения."
+
+#: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"
 msgstr "Показать изображения"
 
-#: src/MessageList/MessageListItem.vala:278
+#: src/MessageList/MessageListItem.vala:296
 msgid "Always Show from Sender"
 msgstr "Всегда показывать от этого отправителя"
 
-#: src/MessageList/MessageListItem.vala:283
+#: src/MessageList/MessageListItem.vala:301
 msgid "This message contains remote images."
 msgstr "Данное сообщение содержит изображения."
 
-#: src/MessageList/MessageListItem.vala:321
+#: src/MessageList/MessageListItem.vala:340
 msgid "This message contains one or more attachments"
 msgstr "Это письмо содержит одно или больше вложений"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:405
+#: src/MessageList/MessageListItem.vala:424
 msgid "Email Message"
 msgstr "Сообщения электронной почты"
 
-#: src/MessageList/MessageListItem.vala:427
+#: src/MessageList/MessageListItem.vala:446
 msgid "Unable to print email"
 msgstr "Не удалось напечатать электронное письмо"
 
-#: src/MessageList/MessageListItem.vala:674
+#: src/MessageList/MessageListItem.vala:698
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr "Довериться и открыть «%s»?"
 
-#: src/MessageList/MessageListItem.vala:675
+#: src/MessageList/MessageListItem.vala:699
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -598,7 +599,7 @@ msgstr ""
 "Вложения могут нанести ущерб вашей системы при открытии. Открывайте файлы "
 "только из надёжных источников."
 
-#: src/MessageList/MessageListItem.vala:682
+#: src/MessageList/MessageListItem.vala:706
 msgid "Open Anyway"
 msgstr "Всё равно открыть"
 

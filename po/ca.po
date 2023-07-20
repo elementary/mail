@@ -6,13 +6,13 @@
 # Translators:
 # Alfredo Hernández <aldomann.designs@gmail.com>, 2012
 # martin.steghoefer <martin@steghoefer.de>, 2013
-#: src/MessageList/MessageListItem.vala:428
+#: src/MessageList/MessageListItem.vala:447
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-20 11:55+0000\n"
-"PO-Revision-Date: 2023-07-19 08:07+0000\n"
+"POT-Creation-Date: 2023-07-20 22:57+0000\n"
+"PO-Revision-Date: 2023-07-20 22:57+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -32,15 +32,15 @@ msgstr ""
 "s'executarà quan se'n tanqui la finestra perquè pugui enviar notificacions "
 "quan arribi correu nou."
 
-#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:100
+#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:102
 msgid "From:"
 msgstr "De:"
 
-#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:106
+#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:108
 msgid "To:"
 msgstr "Per a:"
 
-#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:112
+#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:114
 msgid "Subject:"
 msgstr "Assumpte:"
 
@@ -52,7 +52,7 @@ msgstr "A/c"
 msgid "Bcc"
 msgstr "C/o"
 
-#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:146
+#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:148
 msgid "Cc:"
 msgstr "A/c:"
 
@@ -275,10 +275,8 @@ msgstr[0] "Missatge arxivat"
 msgstr[1] "Missatges arxivats"
 
 #: src/MainWindow.vala:281
-#, fuzzy
-#| msgid "Unstar message"
 msgid "Couldn't archive message"
-msgstr "Desmarca'n l'estrella"
+msgstr "No s'ha pogut arxivar el missatge."
 
 #: src/MainWindow.vala:294
 msgid "Message Moved"
@@ -287,10 +285,8 @@ msgstr[0] "Missatge mogut"
 msgstr[1] "Missatges moguts"
 
 #: src/MainWindow.vala:298
-#, fuzzy
-#| msgid "Failed to move messages: %s"
 msgid "Couldn't move message"
-msgstr "No s'han pogut moure els missatges: %s"
+msgstr "No s'ha pogut moure el missatge."
 
 #: src/MainWindow.vala:311
 msgid "Message Deleted"
@@ -300,7 +296,7 @@ msgstr[1] "Missatges suprimits"
 
 #: src/MainWindow.vala:315
 msgid "Couldn't delete message"
-msgstr ""
+msgstr "No s'ha pogut suprimir el missatge."
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -455,23 +451,16 @@ msgstr "Canvia de nom la carpeta"
 #: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
 msgid "Couldn't rename “%s”"
-msgstr ""
+msgstr "No s'ha pogut canviar el nom de %s."
 
 #: src/FoldersView/FolderSourceItem.vala:159
-#, fuzzy
-#| msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
 msgid "Folder names cannot contain “/”"
-msgstr ""
-"No es pot canviar el nom de la carpeta %s. Els noms de les carpetes no poden "
-"contenir /."
+msgstr "Els noms de les carpetes no poden contenir /."
 
 #: src/FoldersView/FolderSourceItem.vala:188
-#, fuzzy, c-format
-#| msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+#, c-format
 msgid "A folder named “%s” already exists"
-msgstr ""
-"No es pot canviar el nom de la carpeta %s. Ja existeix una carpeta amb el "
-"nom %s."
+msgstr "Ja existeix una carpeta anomenada %s."
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
@@ -489,15 +478,15 @@ msgstr "Enviats"
 msgid "All Mailboxes"
 msgstr "Totes les bústies"
 
-#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:209
 msgid "Reply"
 msgstr "Respon"
 
-#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:212
 msgid "Reply All"
 msgstr "Respon a tothom"
 
-#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:215
 msgid "Forward"
 msgstr "Reenvia"
 
@@ -526,60 +515,70 @@ msgid "No Message Selected"
 msgstr "No hi ha cap missatge seleccionat."
 
 #. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:189
 #, c-format
 msgid "%s at %s"
 msgstr "%s a les %s"
 
-#: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:383
+#: src/MessageList/MessageListItem.vala:197
+#: src/MessageList/MessageListItem.vala:402
 msgid "Unstar message"
 msgstr "Desmarca'n l'estrella"
 
-#: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:379
+#: src/MessageList/MessageListItem.vala:200
+#: src/MessageList/MessageListItem.vala:398
 msgid "Star message"
 msgstr "Marca amb una estrella"
 
-#: src/MessageList/MessageListItem.vala:218
+#: src/MessageList/MessageListItem.vala:220
 msgid "Print…"
 msgstr "Imprimeix…"
 
-#: src/MessageList/MessageListItem.vala:228
+#: src/MessageList/MessageListItem.vala:230
 msgid "More"
 msgstr "Més"
 
-#: src/MessageList/MessageListItem.vala:277
+#: src/MessageList/MessageListItem.vala:279
+msgid "Open in Calendar"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:285
+#, fuzzy
+#| msgid "This message contains remote images."
+msgid "This message contains a Calendar Event."
+msgstr "Aquest missatge conté imatges remotes."
+
+#: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"
 msgstr "Mostra les imatges"
 
-#: src/MessageList/MessageListItem.vala:278
+#: src/MessageList/MessageListItem.vala:296
 msgid "Always Show from Sender"
 msgstr "Mostra sempre el remitent"
 
-#: src/MessageList/MessageListItem.vala:283
+#: src/MessageList/MessageListItem.vala:301
 msgid "This message contains remote images."
 msgstr "Aquest missatge conté imatges remotes."
 
-#: src/MessageList/MessageListItem.vala:321
+#: src/MessageList/MessageListItem.vala:340
 msgid "This message contains one or more attachments"
 msgstr "Aquest missatge conté un o més adjunts"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:405
+#: src/MessageList/MessageListItem.vala:424
 msgid "Email Message"
 msgstr "Missatge de correu"
 
-#: src/MessageList/MessageListItem.vala:427
+#: src/MessageList/MessageListItem.vala:446
 msgid "Unable to print email"
 msgstr "No s'ha pogut imprimir el missatge."
 
-#: src/MessageList/MessageListItem.vala:674
+#: src/MessageList/MessageListItem.vala:698
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr "Voleu que confiï en %s i que l'obri?"
 
-#: src/MessageList/MessageListItem.vala:675
+#: src/MessageList/MessageListItem.vala:699
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -587,7 +586,7 @@ msgstr ""
 "Els adjunts poden causar danys al sistema si s'obren. Obriu només els "
 "fitxers de fonts de confiança."
 
-#: src/MessageList/MessageListItem.vala:682
+#: src/MessageList/MessageListItem.vala:706
 msgid "Open Anyway"
 msgstr "Obre-ho de tota manera"
 

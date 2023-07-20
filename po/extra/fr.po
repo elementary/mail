@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-20 11:55+0000\n"
-"PO-Revision-Date: 2023-05-22 15:23+0000\n"
+"POT-Creation-Date: 2023-07-20 22:57+0000\n"
+"PO-Revision-Date: 2023-07-20 22:57+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/extra/fr/>\n"
 "Language: fr\n"
@@ -81,27 +81,30 @@ msgstr "Améliorations :"
 
 #: data/mail.metainfo.xml.in:74
 msgid "Add support for inline images in the composer"
-msgstr ""
+msgstr "Ajout de la prise en charge des images dans l'éditeur"
 
 #: data/mail.metainfo.xml.in:75
 msgid "Add support for renaming folders"
-msgstr ""
+msgstr "Ajout de la possibilité de renommer les dossiers"
 
 #: data/mail.metainfo.xml.in:76
 msgid "Move settings menu to the mailboxes pane"
 msgstr ""
+"Déplacement du menu des paramètres dans le panneau des boîtes de réception"
 
 #: data/mail.metainfo.xml.in:77
 msgid "Use the FileChooser portal"
-msgstr ""
+msgstr "Utilisation du portail de sélection de fichiers"
 
 #: data/mail.metainfo.xml.in:78
 msgid "Improve network availability handling"
-msgstr ""
+msgstr "Amélioration de la gestion de la disponibilité du réseau"
 
 #: data/mail.metainfo.xml.in:79
 msgid "Fix issues with fetching e-mail when Mail is not autostarted"
 msgstr ""
+"Correction de problèmes liés à la récupération d'e-mails lorsque Messagerie "
+"n'est pas démarré automatiquement"
 
 #: data/mail.metainfo.xml.in:80 data/mail.metainfo.xml.in:108
 #: data/mail.metainfo.xml.in:122 data/mail.metainfo.xml.in:143
