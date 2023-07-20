@@ -28,9 +28,10 @@ public class Mail.ContactManager : GLib.Object {
         return instance;
     }
 
+    public Gtk.ListStore list_store { get; private set; }
+
     private Gee.TreeSet<string> email_addresses;
     private Folks.IndividualAggregator individual_aggregator;
-    public Gtk.ListStore list_store { get; private set; }
 
     construct {
         email_addresses = new Gee.TreeSet<string> ();
@@ -70,7 +71,7 @@ public class Mail.ContactManager : GLib.Object {
     }
 
     public async void remember_mail_address (string address, string? name) {
-        debug ("Remember '%s' with email address '%s'.", name ?? address, address);
+        name = name ?? address;
 
         if (!Granite.Services.System.history_is_enabled ()) {
             debug ("History disabled, don't remember email addresses.");
@@ -83,6 +84,11 @@ public class Mail.ContactManager : GLib.Object {
         }
 
         if (individual_aggregator.primary_store == null) {
+            MainWindow.send_error_message (
+                _("Couldn't add “%s” to addressbook").printf (name),
+                _("No addressbook available."),
+                "avatar-default"
+            );
             return;
         } else if (!individual_aggregator.primary_store.is_prepared) {
             ulong handler = 0;
@@ -102,15 +108,22 @@ public class Mail.ContactManager : GLib.Object {
         address_val.set_object (address_set);
 
         var name_val = Value (typeof (string));
-        name_val.set_string (name ?? address);
+        name_val.set_string (name);
 
         details[Folks.PersonaStore.detail_key (EMAIL_ADDRESSES)] = address_val;
         details[Folks.PersonaStore.detail_key (FULL_NAME)] = name_val;
 
         try {
+            debug ("Remember '%s' with email address '%s'.", name, address);
             yield individual_aggregator.add_persona_from_details (null, individual_aggregator.primary_store, details);
         } catch (Error e) {
             warning ("Failed to add mail address: %s", e.message);
+            MainWindow.send_error_message (
+                _("Couldn't add “%s” to addressbook").printf (name),
+                _("Operation failed."),
+                "avatar-default",
+                e.message
+            );
         }
     }
 

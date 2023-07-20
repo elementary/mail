@@ -336,7 +336,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         return (SimpleAction) lookup_action (name);
     }
 
-    public static void send_error_message (string title, string description, string? icon_name = null) {
+    public static void send_error_message (string title, string description, string? icon_name = null, string? error_details = null) {
         var dialog = new Granite.MessageDialog (
             title,
             description,
@@ -349,6 +349,10 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         if (icon_name != null) {
             dialog.image_icon = new ThemedIcon (icon_name);
             dialog.badge_icon = new ThemedIcon ("dialog-error");
+        }
+
+        if (error_details != null) {
+            dialog.show_error_details (error_details);
         }
 
         dialog.present ();
