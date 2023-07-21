@@ -26,7 +26,7 @@ public class Mail.ConversationList : Gtk.Box {
 
     private const int MARK_READ_TIMEOUT_SECONDS = 5;
 
-    public Gee.Map<Backend.Account, string?> folder_full_name_per_account { get; private set; }
+    public Gee.Map<Backend.Account, Camel.FolderInfo?> folder_info_per_account { get; private set; }
     public Gee.HashMap<string, Camel.Folder> folders { get; private set; }
     public Gee.HashMap<string, Camel.FolderInfoFlags> folder_info_flags { get; private set; }
     public Hdy.HeaderBar search_header { get; private set; }
@@ -157,7 +157,7 @@ public class Mail.ConversationList : Gtk.Box {
         add (scrolled_window);
         add (conversation_action_bar);
 
-        search_entry.search_changed.connect (() => load_folder.begin (folder_full_name_per_account));
+        search_entry.search_changed.connect (() => load_folder.begin (folder_info_per_account));
 
         // Disable delete accelerators when the conversation list box loses keyboard focus,
         // restore them when it returns (Replace with EventControllerFocus in GTK4)
@@ -213,9 +213,9 @@ public class Mail.ConversationList : Gtk.Box {
             }
         });
 
-        hide_read_switch.toggled.connect (() => load_folder.begin (folder_full_name_per_account));
+        hide_read_switch.toggled.connect (() => load_folder.begin (folder_info_per_account));
 
-        hide_unstarred_switch.toggled.connect (() => load_folder.begin (folder_full_name_per_account));
+        hide_unstarred_switch.toggled.connect (() => load_folder.begin (folder_info_per_account));
 
         button_release_event.connect ((e) => {
 
@@ -258,9 +258,9 @@ public class Mail.ConversationList : Gtk.Box {
         }
     }
 
-    public async void load_folder (Gee.Map<Backend.Account, string?> folder_full_name_per_account) {
-        lock (this.folder_full_name_per_account) {
-            this.folder_full_name_per_account = folder_full_name_per_account;
+    public async void load_folder (Gee.Map<Backend.Account, Camel.FolderInfo?> folder_info_per_account) {
+        lock (this.folder_info_per_account) {
+            this.folder_info_per_account = folder_info_per_account;
         }
 
         if (cancellable != null) {
@@ -283,22 +283,22 @@ public class Mail.ConversationList : Gtk.Box {
 
                     cancellable = new GLib.Cancellable ();
 
-                    lock (this.folder_full_name_per_account) {
-                        foreach (var folder_full_name_entry in this.folder_full_name_per_account) {
-                            var current_account = folder_full_name_entry.key;
-                            var current_full_name = folder_full_name_entry.value;
+                    lock (this.folder_info_per_account) {
+                        foreach (var folder_info_entry in this.folder_info_per_account) {
+                            var current_account = folder_info_entry.key;
+                            var current_folder_info = folder_info_entry.value;
 
-                            if (current_full_name == null) {
+                            if (current_folder_info == null) {
                                 continue;
                             }
 
                             try {
                                 var camel_store = (Camel.Store) current_account.service;
 
-                                var folder = yield camel_store.get_folder (current_full_name, 0, GLib.Priority.DEFAULT, cancellable);
+                                var folder = yield camel_store.get_folder (current_folder_info.full_name, 0, GLib.Priority.DEFAULT, cancellable);
                                 folders[current_account.service.uid] = folder;
 
-                                var info_flags = Utils.get_full_folder_info_flags (current_account.service, yield camel_store.get_folder_info (folder.full_name, 0, GLib.Priority.DEFAULT));
+                                var info_flags = Utils.get_full_folder_info_flags (current_account.service, current_folder_info);
                                 folder_info_flags[current_account.service.uid] = info_flags;
 
                                 folder.changed.connect ((change_info) => folder_changed (change_info, current_account.service.uid, cancellable));
