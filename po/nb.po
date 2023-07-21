@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-20 22:57+0000\n"
-"PO-Revision-Date: 2023-06-15 00:07+0000\n"
+"PO-Revision-Date: 2023-07-21 09:38+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
 "mail/nb/>\n"
@@ -100,34 +100,28 @@ msgid "Cancel"
 msgstr "Avbryt"
 
 #: src/Composer.vala:441
-#, fuzzy
-#| msgid "Show Images"
 msgid "Images"
-msgstr "Vis bilder"
+msgstr "Bilder"
 
 #: src/Composer.vala:445
-#, fuzzy
-#| msgid "Choose a file"
 msgid "Choose an image"
-msgstr "Velg en fil"
+msgstr "Velg et bilde"
 
 #: src/Composer.vala:448
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert"
-msgstr "Sett inn lenke"
+msgstr "Sett inn"
 
 #: src/Composer.vala:477
 #, fuzzy
 #| msgid "Unable to send message"
 msgid "Unable to insert image"
-msgstr "Kunne ikke sende melding"
+msgstr "Kunne ikke sette inn bilde"
 
 #: src/Composer.vala:478
 #, fuzzy
 #| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to insert the image."
-msgstr "En uventet feil inntraff under forsendelse av meldingen din."
+msgstr "En uventet feil inntraff under forsøk på innsetting av bildet."
 
 #: src/Composer.vala:603
 msgid "%a, %b %-e, %Y at %-l:%M %p"
@@ -285,34 +279,28 @@ msgid "Undo"
 msgstr "Angre"
 
 #: src/MainWindow.vala:277
-#, fuzzy
-#| msgid "Message Deleted"
-#| msgid_plural "Messages Deleted"
 msgid "Message Archived"
 msgid_plural "Messages Archived"
-msgstr[0] "Melding slettet"
-msgstr[1] "Meldinger slettet"
+msgstr[0] "Melding arkivert"
+msgstr[1] "Meldinger arkivert"
 
 #: src/MainWindow.vala:281
 #, fuzzy
 #| msgid "Unstar message"
 msgid "Couldn't archive message"
-msgstr "Ta vekk denne meldingen fra favoritter"
+msgstr "Kunne ikke arkivere melding"
 
 #: src/MainWindow.vala:294
-#, fuzzy
-#| msgid "Message Deleted"
-#| msgid_plural "Messages Deleted"
 msgid "Message Moved"
 msgid_plural "Messages Moved"
-msgstr[0] "Melding slettet"
-msgstr[1] "Meldinger slettet"
+msgstr[0] "Melding flyttet"
+msgstr[1] "Meldinger flyttet"
 
 #: src/MainWindow.vala:298
 #, fuzzy
 #| msgid "Unable to send message"
 msgid "Couldn't move message"
-msgstr "Kunne ikke sende melding"
+msgstr "Kunne ikke flytte melding"
 
 #: src/MainWindow.vala:311
 msgid "Message Deleted"
@@ -322,7 +310,7 @@ msgstr[1] "Meldinger slettet"
 
 #: src/MainWindow.vala:315
 msgid "Couldn't delete message"
-msgstr ""
+msgstr "Kunne ikke slette melding"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -333,21 +321,18 @@ msgid "Mail uses email accounts configured in System Settings."
 msgstr "Mail bruker e-postkontoer satt opp i systeminnstillingene."
 
 #: src/WelcomeView.vala:59
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "Nettkontoer…"
+msgstr "Nettkontoer …"
 
 #: src/Backend/Account.vala:48
-#, fuzzy
-#| msgid "Unable to save draft"
 msgid "Unable to connect"
-msgstr "Kunne ikke lagre utkast"
+msgstr "Kunne ikke koble til"
 
 #: src/Backend/Account.vala:49
 #, fuzzy
 #| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to connect to the server."
-msgstr "En uventet feil inntraff under forsendelse av meldingen din."
+msgstr "En uventet feil inntraff under tilkobling til tjeneren."
 
 #: src/Backend/MoveOperation.vala:65
 #, c-format
@@ -460,10 +445,8 @@ msgid "Menu"
 msgstr "Meny"
 
 #: src/FoldersView/FoldersListView.vala:140
-#, fuzzy
-#| msgid "Unable to print email"
 msgid "Unable to open System Settings"
-msgstr "Kunne ikke skrive ut e-post"
+msgstr "Kunne ikke åpne systeminnstillinger"
 
 #: src/FoldersView/FoldersListView.vala:141
 msgid ""
@@ -477,26 +460,24 @@ msgid "Refresh folder"
 msgstr "Gjenoppfrisk mappe"
 
 #: src/FoldersView/FolderSourceItem.vala:56
-#, fuzzy
-#| msgid "Refresh folder"
 msgid "Rename folder"
-msgstr "Gjenoppfrisk mappe"
+msgstr "Endre mappenavn"
 
 #: src/FoldersView/FolderSourceItem.vala:158
 #: src/FoldersView/FolderSourceItem.vala:187
 #: src/FoldersView/FolderSourceItem.vala:205
-#, c-format
+#, c-format, fuzzy
 msgid "Couldn't rename “%s”"
-msgstr ""
+msgstr "Kunne ikke endre navn på «%s»"
 
 #: src/FoldersView/FolderSourceItem.vala:159
 msgid "Folder names cannot contain “/”"
-msgstr ""
+msgstr "Mappenavn kan ikke inneholde «/»"
 
 #: src/FoldersView/FolderSourceItem.vala:188
 #, c-format
 msgid "A folder named “%s” already exists"
-msgstr ""
+msgstr "En mappe med navnet «%s» finnes allerede"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
@@ -536,11 +517,8 @@ msgid "Mark Conversation"
 msgstr "Merk samtale"
 
 #: src/MessageList/MessageList.vala:92
-#, fuzzy
-#| msgid "Move conversation"
-#| msgid_plural "Move conversations"
 msgid "Move Conversation to…"
-msgstr "Flytt samtale"
+msgstr "Flytt samtale til …"
 
 #: src/MessageList/MessageList.vala:101
 msgid "Move conversations to archive"
@@ -580,13 +558,13 @@ msgstr "Mer"
 
 #: src/MessageList/MessageListItem.vala:279
 msgid "Open in Calendar"
-msgstr ""
+msgstr "Åpne i kalender"
 
 #: src/MessageList/MessageListItem.vala:285
 #, fuzzy
 #| msgid "This message contains remote images."
 msgid "This message contains a Calendar Event."
-msgstr "Denne meldingen inneholder eksterne bilder."
+msgstr "Denne meldingen inneholder en kalenderbegivenhet."
 
 #: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"

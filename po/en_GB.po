@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-20 22:57+0000\n"
-"PO-Revision-Date: 2023-07-20 22:57+0000\n"
+"PO-Revision-Date: 2023-07-21 09:38+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/mail/en_GB/>\n"
@@ -539,13 +539,11 @@ msgstr "More"
 
 #: src/MessageList/MessageListItem.vala:279
 msgid "Open in Calendar"
-msgstr ""
+msgstr "Open in Calendar"
 
 #: src/MessageList/MessageListItem.vala:285
-#, fuzzy
-#| msgid "This message contains remote images."
 msgid "This message contains a Calendar Event."
-msgstr "This message contains remote images."
+msgstr "This message contains a Calendar Event."
 
 #: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"

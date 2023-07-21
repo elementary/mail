@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-20 22:57+0000\n"
-"PO-Revision-Date: 2023-07-17 17:55+0000\n"
+"PO-Revision-Date: 2023-07-21 09:38+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
 "Language: he\n"
@@ -277,10 +277,8 @@ msgstr[0] "הודעה הועברה לארכיון"
 msgstr[1] "הודעות הועברו לארכיון"
 
 #: src/MainWindow.vala:281
-#, fuzzy
-#| msgid "Unstar message"
 msgid "Couldn't archive message"
-msgstr "ביטול הכוכב להודעה"
+msgstr "לא ניתן להעביר הודעה לארכיון"
 
 #: src/MainWindow.vala:294
 msgid "Message Moved"
@@ -289,10 +287,8 @@ msgstr[0] "הודעה הועברה"
 msgstr[1] "הודעות הועברו"
 
 #: src/MainWindow.vala:298
-#, fuzzy
-#| msgid "Failed to move messages: %s"
 msgid "Couldn't move message"
-msgstr "העברת הודעות נכשלה: %s"
+msgstr "לא ניתן להעביר הודעות"
 
 #: src/MainWindow.vala:311
 msgid "Message Deleted"
@@ -302,7 +298,7 @@ msgstr[1] "הודעות נמחקו"
 
 #: src/MainWindow.vala:315
 msgid "Couldn't delete message"
-msgstr ""
+msgstr "לא ניתן למחוק הודעה"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -456,19 +452,16 @@ msgstr "שינוי שם התיקייה"
 #: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
 msgid "Couldn't rename “%s”"
-msgstr ""
+msgstr "לא ניתן לשנות ל־„%s” את השם"
 
 #: src/FoldersView/FolderSourceItem.vala:159
-#, fuzzy
-#| msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
 msgid "Folder names cannot contain “/”"
-msgstr "לא ניתן לשנות את שם התיקייה „%s”: שמות תיקיות לא יכולים להכיל „/”"
+msgstr "שמות תיקיות לא יכולים להכיל „/”"
 
 #: src/FoldersView/FolderSourceItem.vala:188
-#, fuzzy, c-format
-#| msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+#, c-format
 msgid "A folder named “%s” already exists"
-msgstr "לא ניתן לשנות את שם התיקייה „%s”: כבר קיימת תיקייה בשם „%s”"
+msgstr "כבר קיימת תיקייה בשם „%s”"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
@@ -548,13 +541,11 @@ msgstr "עוד"
 
 #: src/MessageList/MessageListItem.vala:279
 msgid "Open in Calendar"
-msgstr ""
+msgstr "פתיחה בלוח השנה"
 
 #: src/MessageList/MessageListItem.vala:285
-#, fuzzy
-#| msgid "This message contains remote images."
 msgid "This message contains a Calendar Event."
-msgstr "הודעה זו מכילה תמונות מרוחקות."
+msgstr "הודעה זו מכילה אירוע לוח שנה."
 
 #: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"
