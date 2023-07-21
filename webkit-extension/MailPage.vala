@@ -82,14 +82,25 @@ public class Mail.Page : Object {
     private bool on_page_user_message_received (WebKit.WebPage page, WebKit.UserMessage message) {
         var js_context = page.get_main_frame ().get_js_context ();
         switch (message.name) {
+            case "get-content-of-element":
+                unowned string element_selector = message.parameters.get_string ();
+                JSC.Value val = js_context.evaluate ("document.querySelector('%s').innerHTML;".printf (element_selector), -1);
+                message.send_reply (new WebKit.UserMessage ("get-content-of-element", new Variant.take_string (val.to_string ())));
+                return true;
             case "set-content-of-element":
-                string element_selector, content;
-                message.parameters.get ("(ss)", out element_selector, out content);
+                string element_selector;
+                string? content;
+                message.parameters.get ("(sms)", out element_selector, out content);
 
                 var element = js_context.evaluate ("document.querySelector('%s')".printf (element_selector), -1);
 
                 if (element.is_null ()) {
-                    warning ("HTML element '%s' not found.", element_selector);
+                    debug ("HTML element '%s' not found.", element_selector);
+                    return true;
+                }
+
+                if (content == null) {
+                    element.object_invoke_methodv ("remove", null);
                     return true;
                 }
 

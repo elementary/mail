@@ -916,18 +916,27 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     }
 
     private void on_insert_signature (Action action, Variant? parameter) {
+        on_insert_signature_async.begin (parameter);
+    }
+
+    private async void on_insert_signature_async (Variant? parameter) {
         unowned var signature_uid = parameter.get_string ();
 
         if (signature_uid == "none") {
-            web_view.set_content_of_element ("#elementary-message-signature", "");
+            web_view.set_content_of_element ("#elementary-message-signature", null);
+            return;
+        }
+
+        var body_content = yield web_view.get_content_of_element ("#elementary-message-body");
+        if ("elementary-message-signature" in body_content) {
             return;
         }
 
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
-        session.get_signature_for_uid.begin (signature_uid, (obj, res) => {
-            var signature = session.get_signature_for_uid.end (res);
-            web_view.set_content_of_element ("#elementary-message-signature", signature);
-        });
+        var signature = yield session.get_signature_for_uid (signature_uid);
+        body_content += """</br><div contenteditable="true" id="elementary-message-signature" dir="auto">%s</div>""".printf (signature);
+
+        web_view.set_content_of_element ("#elementary-message-body", body_content);
     }
 
     private void set_default_signature_for_sender () {

@@ -138,9 +138,35 @@ public class Mail.WebView : WebKit.WebView {
         base.load_html (body, INTERNAL_URL_BODY);
     }
 
-    public void set_content_of_element (string element, string content) {
+    public async string? get_content_of_element (string element) {
+        string? content = null;
+        if (!loaded && !cancellable.is_cancelled ()) {
+            load_finished.connect (() => {
+                get_content_of_element.begin (element, (obj, res) => {
+                    content = get_content_of_element.end (res);
+                    get_content_of_element.callback ();
+                });
+            });
+            yield;
+        } else {
+            try {
+                var message = new WebKit.UserMessage ("get-content-of-element", new Variant.string (element));
+                var response = yield send_message_to_page (message, cancellable);
+                content = response.parameters.get_string ();
+            } catch (Error e) {
+                // We can cancel the operation
+                if (!(e is GLib.IOError.CANCELLED)) {
+                    critical (e.message);
+                }
+            }
+        }
+
+        return content;
+    }
+
+    public void set_content_of_element (string element, string? content) {
         if (loaded) {
-            var message = new WebKit.UserMessage ("set-content-of-element", new Variant ("(ss)", element, content));
+            var message = new WebKit.UserMessage ("set-content-of-element", new Variant ("(sms)", element, content));
             send_message_to_page.begin (message, cancellable);
         } else {
             queued_elements[element] = content;
