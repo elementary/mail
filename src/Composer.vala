@@ -936,6 +936,10 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             return;
         }
 
+        if (body_content.has_suffix ("<br>")) {
+            body_content = body_content.slice (0, body_content.length - "<br>".length) ;
+        }
+
         body_content += """</br><div id="elementary-message-signature" dir="auto">%s</div>""".printf (signature);
 
         web_view.set_content_of_element ("#elementary-message-body", body_content);
