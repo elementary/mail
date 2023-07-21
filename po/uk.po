@@ -13,16 +13,16 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-20 22:57+0000\n"
-"PO-Revision-Date: 2023-07-15 04:11+0000\n"
+"PO-Revision-Date: 2023-07-23 07:07+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/"
-">\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/>"
+"\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Project-Style: gnome\n"
@@ -281,10 +281,8 @@ msgstr[1] "Повідомлення архівовано"
 msgstr[2] "Повідомлення архівовано"
 
 #: src/MainWindow.vala:281
-#, fuzzy
-#| msgid "Unstar message"
 msgid "Couldn't archive message"
-msgstr "Прибрати позначення зірочкою з повідомлення"
+msgstr "Не вдалось архівувати повідомлення"
 
 #: src/MainWindow.vala:294
 msgid "Message Moved"
@@ -294,10 +292,8 @@ msgstr[1] "Повідомлення переміщено"
 msgstr[2] "Повідомлення переміщено"
 
 #: src/MainWindow.vala:298
-#, fuzzy
-#| msgid "Failed to move messages: %s"
 msgid "Couldn't move message"
-msgstr "Не вдалося перемістити повідомлення: %s"
+msgstr "Не вдалося перемістити повідомлення"
 
 #: src/MainWindow.vala:311
 msgid "Message Deleted"
@@ -308,7 +304,7 @@ msgstr[2] "Повідомлення видалено"
 
 #: src/MainWindow.vala:315
 msgid "Couldn't delete message"
-msgstr ""
+msgstr "Не вдалося видалити повідомлення"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -464,19 +460,16 @@ msgstr "Перейменувати теку"
 #: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
 msgid "Couldn't rename “%s”"
-msgstr ""
+msgstr "Не вдалося перейменувати «%s»"
 
 #: src/FoldersView/FolderSourceItem.vala:159
-#, fuzzy
-#| msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
 msgid "Folder names cannot contain “/”"
-msgstr "Не вдалося перейменувати теку «%s»: назва теки не може містити «/»"
+msgstr "Назва теки не може містити «/»"
 
 #: src/FoldersView/FolderSourceItem.vala:188
-#, fuzzy, c-format
-#| msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+#, c-format
 msgid "A folder named “%s” already exists"
-msgstr "Не вдалося перейменувати теку «%s»: тека з назвою «%s» вже існує"
+msgstr "Тека з назвою «%s» вже існує"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
@@ -556,13 +549,11 @@ msgstr "Більше"
 
 #: src/MessageList/MessageListItem.vala:279
 msgid "Open in Calendar"
-msgstr ""
+msgstr "Відкрити в Календарі"
 
 #: src/MessageList/MessageListItem.vala:285
-#, fuzzy
-#| msgid "This message contains remote images."
 msgid "This message contains a Calendar Event."
-msgstr "Цей лист містить віддалені зображення."
+msgstr "Цей лист містить події Календаря."
 
 #: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"
