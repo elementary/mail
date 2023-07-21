@@ -67,7 +67,18 @@ public class Mail.GroupedFolderSourceItem : Mail.SourceList.Item {
     }
 
     public Gee.Map<Mail.Backend.Account, Camel.FolderInfo?> get_folder_info_per_account () {
-        return account_folderinfo.read_only_view;
+        var folder_info_per_account = new Gee.HashMap<Mail.Backend.Account, Camel.FolderInfo?> ();
+        lock (account_folderinfo) {
+            foreach (var entry in account_folderinfo) {
+                if (entry.value != null) {
+                    folder_info_per_account.set (entry.key, entry.value);
+                } else {
+                    folder_info_per_account.set (entry.key, null);
+                }
+            }
+        }
+
+        return folder_info_per_account.read_only_view;
     }
 
     private void add_account (Mail.Backend.Account account) {
