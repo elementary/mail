@@ -927,14 +927,16 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             return;
         }
 
+        unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+        var signature = yield session.get_signature_for_uid (signature_uid);
+
         var body_content = yield web_view.get_content_of_element ("#elementary-message-body");
         if ("elementary-message-signature" in body_content) {
+            web_view.set_content_of_element ("#elementary-message-signature", signature);
             return;
         }
 
-        unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
-        var signature = yield session.get_signature_for_uid (signature_uid);
-        body_content += """</br><div contenteditable="true" id="elementary-message-signature" dir="auto">%s</div>""".printf (signature);
+        body_content += """</br><div id="elementary-message-signature" dir="auto">%s</div>""".printf (signature);
 
         web_view.set_content_of_element ("#elementary-message-body", body_content);
     }
