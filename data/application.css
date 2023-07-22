@@ -44,15 +44,3 @@ entry button:checked label {
 entry button:disabled label {
     opacity: 0.5;
 }
-
-.unread-message {
-    font-weight: bolder;
-}
-
-.suggested-background {
-    background: blue;
-}
-
-.destructive-background {
-    background: red;
-}
