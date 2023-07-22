@@ -58,7 +58,8 @@ public class Mail.ConversationList : Gtk.Box {
 
         list_box = new VirtualizingListBox () {
             activate_on_single_click = true,
-            model = list_store
+            model = list_store,
+            selection_mode = SINGLE
         };
         list_box.factory_func = (item, old_widget) => {
             ConversationListItem? row = null;
@@ -66,6 +67,7 @@ public class Mail.ConversationList : Gtk.Box {
                 row = old_widget as ConversationListItem;
             } else {
                 row = new ConversationListItem ();
+                row.select.connect (() => list_box.select_row (row));
             }
 
             row.assign ((ConversationItemModel)item);

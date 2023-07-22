@@ -48,3 +48,7 @@ entry button:disabled label {
 .unread-message {
     font-weight: bolder;
 }
+
+.destructive-background {
+    background: red;
+}

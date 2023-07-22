@@ -20,6 +20,8 @@
  */
 
 public class Mail.ConversationListItem : VirtualizingListBoxRow {
+    public signal void select ();
+
     private Gtk.Image status_icon;
     private Gtk.Label date;
     private Gtk.Label messages;
@@ -73,7 +75,8 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
             margin_start = 12,
             margin_end = 12,
             column_spacing = 12,
-            row_spacing = 6
+            row_spacing = 6,
+            hexpand = true
         };
 
         grid.attach (status_revealer, 0, 0);
@@ -83,10 +86,78 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         grid.attach (topic, 1, 1, 2, 1);
         grid.attach (messages, 3, 1, 1, 1);
 
+        var archive_image = new Gtk.Image.from_icon_name ("mail-archive", LARGE_TOOLBAR);
+
+        var archive_label = new Gtk.Label (_("Archive"));
+
+        var archive_v_box = new Gtk.Box (VERTICAL, 3) {
+            halign = END,
+            valign = CENTER,
+            hexpand = false,
+            margin_end = 12
+        };
+        archive_v_box.add (archive_image);
+        archive_v_box.add (archive_label);
+
+        var archive_h_box = new Gtk.Box (HORIZONTAL, 0){
+            hexpand = true,
+            homogeneous = true
+        };
+        archive_h_box.get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
+        archive_h_box.add (archive_v_box);
+
+        var trash_image = new Gtk.Image.from_icon_name ("edit-delete", LARGE_TOOLBAR);
+
+        var trash_label = new Gtk.Label (_("Trash"));
+
+        var trash_v_box = new Gtk.Box (VERTICAL, 3) {
+            halign = START,
+            valign = CENTER,
+            hexpand = false,
+            margin_start = 12
+        };
+        trash_v_box.add (trash_image);
+        trash_v_box.add (trash_label);
+
+        var trash_h_box = new Gtk.Box (HORIZONTAL, 0){
+            hexpand = true,
+            homogeneous = true
+        };
+        trash_h_box.get_style_context ().add_class ("destructive-background");
+        trash_h_box.add (trash_v_box);
+
+        var carousel = new Hdy.Carousel () {
+            allow_scroll_wheel = false
+        };
+        carousel.add (archive_h_box);
+        carousel.add (grid);
+        carousel.add (trash_h_box);
+        carousel.scroll_to (grid);
+
         get_style_context ().add_class ("conversation-list-item");
-        add (grid);
+        child = carousel;
 
         show_all ();
+
+        carousel.page_changed.connect ((index) => {
+            if (index == 1) {
+                return;
+            }
+
+            select ();
+
+            var main_window = (MainWindow)get_toplevel ();
+            if (index == 2) {
+                main_window.activate_action (MainWindow.ACTION_MOVE_TO_TRASH, null);
+            } else if (index == 0) {
+                main_window.activate_action (MainWindow.ACTION_ARCHIVE, null);
+            }
+
+            Idle.add (() => {
+                carousel.scroll_to_full (grid, 0);
+                return Source.REMOVE;
+            });
+        });
     }
 
     public void assign (ConversationItemModel data) {
