@@ -49,6 +49,10 @@ entry button:disabled label {
     font-weight: bolder;
 }
 
+.suggested-background {
+    background: blue;
+}
+
 .destructive-background {
     background: red;
 }

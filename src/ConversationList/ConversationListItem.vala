@@ -29,6 +29,8 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     private Gtk.Label topic;
     private Gtk.Revealer flagged_icon_revealer;
     private Gtk.Revealer status_revealer;
+    private Gtk.Grid grid;
+    private Hdy.Carousel carousel;
 
     construct {
         status_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic", Gtk.IconSize.MENU);
@@ -69,7 +71,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         };
         date.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        var grid = new Gtk.Grid () {
+        grid = new Gtk.Grid () {
             margin_top = 12,
             margin_bottom = 12,
             margin_start = 12,
@@ -103,7 +105,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
             hexpand = true,
             homogeneous = true
         };
-        archive_h_box.get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
+        archive_h_box.get_style_context ().add_class ("suggested-background");
         archive_h_box.add (archive_v_box);
 
         var trash_image = new Gtk.Image.from_icon_name ("edit-delete", LARGE_TOOLBAR);
@@ -126,7 +128,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         trash_h_box.get_style_context ().add_class ("destructive-background");
         trash_h_box.add (trash_v_box);
 
-        var carousel = new Hdy.Carousel () {
+        carousel = new Hdy.Carousel () {
             allow_scroll_wheel = false
         };
         carousel.add (archive_h_box);
@@ -179,6 +181,8 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     }
 
     public void assign (ConversationItemModel data) {
+        carousel.scroll_to_full (grid, 0);
+
         date.label = data.formatted_date;
         topic.label = data.subject;
 
@@ -197,7 +201,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         messages.no_show_all = num_messages <= 1;
 
         if (data.unread) {
-            get_style_context ().add_class ("unread-message");
+            grid.get_style_context ().add_class ("unread-message");
 
             status_icon.icon_name = "mail-unread-symbolic";
             status_icon.tooltip_text = _("Unread");
@@ -207,7 +211,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
 
             source.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
         } else {
-            get_style_context ().remove_class ("unread-message");
+            grid.get_style_context ().remove_class ("unread-message");
             status_icon.get_style_context ().remove_class (Granite.STYLE_CLASS_ACCENT);
             source.get_style_context ().remove_class (Granite.STYLE_CLASS_ACCENT);
 
