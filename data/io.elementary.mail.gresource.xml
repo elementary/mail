@@ -5,6 +5,7 @@
     <file alias="blank-message-template.html" compressed="true">blank-message-template.html</file>
   </gresource>
   <gresource prefix="/io/elementary/mail/icons">
+    <file alias="scalable/places/mail-archive-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-archive/symbolic.svg</file>
     <file alias="16x16/places/mail-archive.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-archive/16.svg</file>
     <file alias="16x16@2/places/mail-archive.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-archive/16.svg</file>
     <file alias="24x24/actions/mail-archive.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-archive/24.svg</file>
