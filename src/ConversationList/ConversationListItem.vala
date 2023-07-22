@@ -22,6 +22,8 @@
 public class Mail.ConversationListItem : VirtualizingListBoxRow {
     public signal void select ();
 
+    private static Gtk.CssProvider provider;
+
     private Gtk.Image status_icon;
     private Gtk.Label date;
     private Gtk.Label messages;
@@ -31,6 +33,11 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     private Gtk.Revealer status_revealer;
     private Gtk.Grid grid;
     private Hdy.Carousel carousel;
+
+    static construct {
+        provider = new Gtk.CssProvider ();
+        provider.load_from_resource ("io/elementary/mail/ConversationListItem.css");
+    }
 
     construct {
         status_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic", Gtk.IconSize.MENU);
@@ -88,52 +95,18 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         grid.attach (topic, 1, 1, 2, 1);
         grid.attach (messages, 3, 1, 1, 1);
 
-        var archive_image = new Gtk.Image.from_icon_name ("mail-archive", LARGE_TOOLBAR);
+        var archive_affordance = new ArchiveAffordance (Gtk.Align.END);
+        archive_affordance.get_style_context ().add_class ("left");
 
-        var archive_label = new Gtk.Label (_("Archive"));
-
-        var archive_v_box = new Gtk.Box (VERTICAL, 3) {
-            halign = END,
-            valign = CENTER,
-            hexpand = false,
-            margin_end = 12
-        };
-        archive_v_box.add (archive_image);
-        archive_v_box.add (archive_label);
-
-        var archive_h_box = new Gtk.Box (HORIZONTAL, 0){
-            hexpand = true,
-            homogeneous = true
-        };
-        archive_h_box.get_style_context ().add_class ("suggested-background");
-        archive_h_box.add (archive_v_box);
-
-        var trash_image = new Gtk.Image.from_icon_name ("edit-delete", LARGE_TOOLBAR);
-
-        var trash_label = new Gtk.Label (_("Trash"));
-
-        var trash_v_box = new Gtk.Box (VERTICAL, 3) {
-            halign = START,
-            valign = CENTER,
-            hexpand = false,
-            margin_start = 12
-        };
-        trash_v_box.add (trash_image);
-        trash_v_box.add (trash_label);
-
-        var trash_h_box = new Gtk.Box (HORIZONTAL, 0){
-            hexpand = true,
-            homogeneous = true
-        };
-        trash_h_box.get_style_context ().add_class ("destructive-background");
-        trash_h_box.add (trash_v_box);
+        var trash_affordance = new TrashAffordance (Gtk.Align.START);
+        trash_affordance.get_style_context ().add_class ("right");
 
         carousel = new Hdy.Carousel () {
             allow_scroll_wheel = false
         };
-        carousel.add (archive_h_box);
+        carousel.add (archive_affordance);
         carousel.add (grid);
-        carousel.add (trash_h_box);
+        carousel.add (trash_affordance);
         carousel.scroll_to (grid);
 
         get_style_context ().add_class ("conversation-list-item");
@@ -293,5 +266,75 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         }
 
         return Gdk.EVENT_PROPAGATE;
+    }
+
+    private class TrashAffordance : Gtk.Box {
+        public Gtk.Align alignment { get; construct; }
+
+        public TrashAffordance (Gtk.Align alignment) {
+            Object (alignment: alignment);
+        }
+
+        class construct {
+            set_css_name ("trash-affordance");
+        }
+
+        construct {
+            var image = new Gtk.Image.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU);
+            image.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            var label = new Gtk.Label ("<small>%s</small>".printf (_("Trash"))) {
+                use_markup = true
+            };
+            label.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            var trash_internal_box = new Gtk.Box (VERTICAL, 3) {
+                halign = alignment,
+                hexpand = true,
+                valign = CENTER,
+                vexpand = false
+            };
+            trash_internal_box.add (image);
+            trash_internal_box.add (label);
+
+            add (trash_internal_box);
+
+            get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+    }
+
+    private class ArchiveAffordance : Gtk.Box {
+        public Gtk.Align alignment { get; construct; }
+
+        public ArchiveAffordance (Gtk.Align alignment) {
+            Object (alignment: alignment);
+        }
+
+        class construct {
+            set_css_name ("archive-affordance");
+        }
+
+        construct {
+            var image = new Gtk.Image.from_icon_name ("mail-archive-symbolic", Gtk.IconSize.MENU);
+            image.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            var label = new Gtk.Label ("<small>%s</small>".printf (_("Archive"))) {
+                use_markup = true
+            };
+            label.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            var archive_internal_box = new Gtk.Box (VERTICAL, 3) {
+                halign = alignment,
+                hexpand = true,
+                valign = Gtk.Align.CENTER,
+                vexpand = true
+            };
+            archive_internal_box.add (image);
+            archive_internal_box.add (label);
+
+            add (archive_internal_box);
+
+            get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
     }
 }
