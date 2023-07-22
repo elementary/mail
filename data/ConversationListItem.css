@@ -1,0 +1,41 @@
+trash-affordance {
+    background-color: mix(@theme_bg_color, @STRAWBERRY_500, 0.3);
+    padding: 12px;
+}
+
+trash-affordance.left {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+trash-affordance.right {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+trash-affordance image,
+trash-affordance label {
+    color: mix(@theme_fg_color, @error_color, 0.6);
+    font-weight: 600;
+}
+
+archive-affordance {
+    background-color: mix(@theme_bg_color, @LIME_500, 0.3);
+    padding: 12px;
+}
+
+archive-affordance.left {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+archive-affordance.right {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+archive-affordance image,
+archive-affordance label {
+    color: mix(@theme_fg_color, @success_color, 0.6);
+    font-weight: 600;
+}
