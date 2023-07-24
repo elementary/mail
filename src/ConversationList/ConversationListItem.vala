@@ -33,6 +33,8 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     private Gtk.Revealer status_revealer;
     private Gtk.Grid grid;
     private Hdy.Carousel carousel;
+    private Gtk.GestureMultiPress gesture_controller;
+    private Gtk.EventControllerKey key_controller;
 
     static construct {
         provider = new Gtk.CssProvider ();
@@ -114,22 +116,24 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
 
         show_all ();
 
-        button_release_event.connect ((e) => {
-            if (e.button != Gdk.BUTTON_SECONDARY) {
-                return Gdk.EVENT_PROPAGATE;
-            }
+        gesture_controller = new Gtk.GestureMultiPress (this) {
+            button = Gdk.BUTTON_SECONDARY,
+            propagation_phase = BUBBLE
+        };
 
+        gesture_controller.released.connect ((n_press, x, y) => {
             select ();
-
-            return create_context_menu (e);
+            create_context_menu (x, y);
         });
 
-        key_release_event.connect ((e) => {
-            if (e.keyval != Gdk.Key.Menu) {
-                return Gdk.EVENT_PROPAGATE;
+        key_controller = new Gtk.EventControllerKey (this);
+
+        key_controller.key_released.connect ((keyval) => {
+            if (keyval != Gdk.Key.Menu) {
+                return;
             }
 
-            return create_context_menu (e);
+            create_context_menu ();
         });
 
         carousel.page_changed.connect ((index) => {
@@ -204,7 +208,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         flagged_icon_revealer.reveal_child = data.flagged;
     }
 
-    private bool create_context_menu (Gdk.Event e) {
+    private void create_context_menu (double? x = null, double? y = null) {
         var item = (ConversationItemModel)model_item;
 
         var main_window = (MainWindow)get_toplevel ();
@@ -256,16 +260,13 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         }
 
         menu.show_all ();
+        menu.popup_at_pointer (null);
 
-        if (e.type == Gdk.EventType.BUTTON_RELEASE) {
-            menu.popup_at_pointer (e);
-            return Gdk.EVENT_STOP;
-        } else if (e.type == Gdk.EventType.KEY_RELEASE) {
-            menu.popup_at_widget (this, Gdk.Gravity.EAST, Gdk.Gravity.CENTER, e);
-            return Gdk.EVENT_STOP;
+        if (x == null || y == null) {
+            menu.popup_at_widget (this, Gdk.Gravity.EAST, Gdk.Gravity.CENTER, null);
+        } else {
+            menu.popup_at_pointer (null);
         }
-
-        return Gdk.EVENT_PROPAGATE;
     }
 
     private class TrashAffordance : Gtk.Box {
