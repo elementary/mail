@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-20 22:57+0000\n"
-"PO-Revision-Date: 2023-07-17 17:55+0000\n"
+"PO-Revision-Date: 2023-07-23 07:07+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
 "Language: pl\n"
@@ -289,10 +289,8 @@ msgstr[1] "Wiadomości zarchiwizowane"
 msgstr[2] "Wiadomości zarchiwizowane"
 
 #: src/MainWindow.vala:281
-#, fuzzy
-#| msgid "Unstar message"
 msgid "Couldn't archive message"
-msgstr "Odznacz wiadomość gwiazdką"
+msgstr "Nie udało się zarchiwizować wiadomości"
 
 #: src/MainWindow.vala:294
 msgid "Message Moved"
@@ -302,10 +300,8 @@ msgstr[1] "Wiadomości przeniesione"
 msgstr[2] "Wiadomości przeniesione"
 
 #: src/MainWindow.vala:298
-#, fuzzy
-#| msgid "Failed to move messages: %s"
 msgid "Couldn't move message"
-msgstr "Nie udało się przenieść wiadomości: %s"
+msgstr "Nie udało się przenieść wiadomości"
 
 #: src/MainWindow.vala:311
 msgid "Message Deleted"
@@ -316,7 +312,7 @@ msgstr[2] "Wiadomości usuniętych"
 
 #: src/MainWindow.vala:315
 msgid "Couldn't delete message"
-msgstr ""
+msgstr "Nie udało się usunąć wiadomości"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -470,22 +466,16 @@ msgstr "Zmień nazwę folderu"
 #: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
 msgid "Couldn't rename “%s”"
-msgstr ""
+msgstr "Nie udało się zmienić nazwy „%s”"
 
 #: src/FoldersView/FolderSourceItem.vala:159
-#, fuzzy
-#| msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
 msgid "Folder names cannot contain “/”"
-msgstr ""
-"Nie udało się zmienić nazwy folderu „%s”: Nazwy folderów nie mogą zawierać "
-"„/”"
+msgstr "Nazwy folderów nie mogą zawierać „/”"
 
 #: src/FoldersView/FolderSourceItem.vala:188
-#, fuzzy, c-format
-#| msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+#, c-format
 msgid "A folder named “%s” already exists"
-msgstr ""
-"Nie udało się zmienić nazwy folderu „%s”: Folder o nazwie „%s” już istnieje"
+msgstr "Folder o nazwie „%s” już istnieje"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
@@ -565,13 +555,11 @@ msgstr "Więcej"
 
 #: src/MessageList/MessageListItem.vala:279
 msgid "Open in Calendar"
-msgstr ""
+msgstr "Otwórz w Kalendarzu"
 
 #: src/MessageList/MessageListItem.vala:285
-#, fuzzy
-#| msgid "This message contains remote images."
 msgid "This message contains a Calendar Event."
-msgstr "Ta wiadomość zawiera zewnętrzne obrazy."
+msgstr "Ta wiadomość zawiera zdarzenie Kalendarza."
 
 #: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"

@@ -63,7 +63,7 @@ public class Mail.Utils {
     }
 
     public static string? strip_folder_full_name (string service_uid, string? folder_uri) {
-        if (folder_uri != null) {
+        if (folder_uri != null && folder_uri.strip () != "") {
             return folder_uri.replace ("folder://%s/".printf (service_uid), "");
         }
 
