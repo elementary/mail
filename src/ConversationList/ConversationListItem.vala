@@ -211,7 +211,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     private void create_context_menu (double? x = null, double? y = null) {
         var item = (ConversationItemModel)model_item;
 
-        var main_window = (MainWindow)get_toplevel ();
+        unowned var main_window = (MainWindow)get_toplevel ();
 
         var menu = new Gtk.Menu ();
 
