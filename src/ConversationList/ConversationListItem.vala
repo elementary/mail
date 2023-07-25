@@ -208,52 +208,58 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     private void create_context_menu (double? x = null, double? y = null) {
         var item = (ConversationItemModel)model_item;
 
-        unowned var main_window = (MainWindow)get_toplevel ();
+        var menu = new Gtk.Menu () {
+            attach_widget = this
+        };
 
-        var menu = new Gtk.Menu ();
+        var trash_menu_item = new Gtk.MenuItem () {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH,
+            child = new Granite.AccelLabel.from_action_name (
+                _("Move To Trash"),
+                MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH
+            )
+        };
 
-        var trash_menu_item = new Gtk.MenuItem ();
-        trash_menu_item.add (new Granite.AccelLabel.from_action_name (_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH));
         menu.add (trash_menu_item);
 
-        trash_menu_item.activate.connect (() => {
-            main_window.activate_action (MainWindow.ACTION_MOVE_TO_TRASH, null);
-        });
-
         if (!item.unread) {
-            var mark_unread_menu_item = new Gtk.MenuItem ();
-            mark_unread_menu_item.add (new Granite.AccelLabel.from_action_name (_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD));
+            var mark_unread_menu_item = new Gtk.MenuItem () {
+                action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD,
+                child = new Granite.AccelLabel.from_action_name (
+                    _("Mark As Unread"),
+                    MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD
+                )
+            };
             menu.add (mark_unread_menu_item);
-
-            mark_unread_menu_item.activate.connect (() => {
-                main_window.activate_action (MainWindow.ACTION_MARK_UNREAD, null);
-            });
         } else {
-            var mark_read_menu_item = new Gtk.MenuItem ();
-            mark_read_menu_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ));
+            var mark_read_menu_item = new Gtk.MenuItem () {
+                action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ,
+                child = new Granite.AccelLabel.from_action_name (
+                    _("Mark as Read"),
+                    MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ
+                )
+            };
             menu.add (mark_read_menu_item);
-
-            mark_read_menu_item.activate.connect (() => {
-                main_window.activate_action (MainWindow.ACTION_MARK_READ, null);
-            });
         }
 
         if (!item.flagged) {
-            var mark_starred_menu_item = new Gtk.MenuItem ();
-            mark_starred_menu_item.add (new Granite.AccelLabel.from_action_name (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR));
+            var mark_starred_menu_item = new Gtk.MenuItem () {
+                action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR,
+                child = new Granite.AccelLabel.from_action_name (
+                    _("Star"),
+                    MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR
+                )
+            };
             menu.add (mark_starred_menu_item);
-
-            mark_starred_menu_item.activate.connect (() => {
-                main_window.activate_action (MainWindow.ACTION_MARK_STAR, null);
-            });
         } else {
-            var mark_unstarred_menu_item = new Gtk.MenuItem ();
-            mark_unstarred_menu_item.add (new Granite.AccelLabel.from_action_name (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR));
+            var mark_unstarred_menu_item = new Gtk.MenuItem () {
+                action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR,
+                child = new Granite.AccelLabel.from_action_name (
+                    _("Unstar"),
+                    MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR
+                )
+            };
             menu.add (mark_unstarred_menu_item);
-
-            mark_unstarred_menu_item.activate.connect (() => {
-                main_window.activate_action (MainWindow.ACTION_MARK_UNSTAR, null);
-            });
         }
 
         menu.show_all ();
