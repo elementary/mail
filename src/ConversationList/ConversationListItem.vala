@@ -20,6 +20,8 @@
  */
 
 public class Mail.ConversationListItem : VirtualizingListBoxRow {
+    public signal void select ();
+
     private Gtk.Image status_icon;
     private Gtk.Label date;
     private Gtk.Label messages;
@@ -27,6 +29,10 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     private Gtk.Label topic;
     private Gtk.Revealer flagged_icon_revealer;
     private Gtk.Revealer status_revealer;
+    private Gtk.Grid grid;
+    private Hdy.Carousel carousel;
+    private Gtk.GestureMultiPress gesture_controller;
+    private Gtk.EventControllerKey key_controller;
 
     construct {
         status_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic", Gtk.IconSize.MENU);
@@ -67,13 +73,14 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         };
         date.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        var grid = new Gtk.Grid () {
+        grid = new Gtk.Grid () {
             margin_top = 12,
             margin_bottom = 12,
             margin_start = 12,
             margin_end = 12,
             column_spacing = 12,
-            row_spacing = 6
+            row_spacing = 6,
+            hexpand = true
         };
 
         grid.attach (status_revealer, 0, 0);
@@ -83,13 +90,73 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         grid.attach (topic, 1, 1, 2, 1);
         grid.attach (messages, 3, 1, 1, 1);
 
+        var archive_affordance = new SwipeAffordance (
+            _("Archive"), "mail-archive-symbolic", END
+        );
+        archive_affordance.get_style_context ().add_class ("archive");
+
+        var trash_affordance = new SwipeAffordance (
+            _("Trash"), "edit-delete-symbolic", START
+        );
+        trash_affordance.get_style_context ().add_class ("trash");
+
+        carousel = new Hdy.Carousel () {
+            allow_scroll_wheel = false
+        };
+        carousel.add (archive_affordance);
+        carousel.add (grid);
+        carousel.add (trash_affordance);
+        carousel.scroll_to (grid);
+
         get_style_context ().add_class ("conversation-list-item");
-        add (grid);
+        child = carousel;
 
         show_all ();
+
+        gesture_controller = new Gtk.GestureMultiPress (this) {
+            button = Gdk.BUTTON_SECONDARY,
+            propagation_phase = BUBBLE
+        };
+
+        gesture_controller.released.connect ((n_press, x, y) => {
+            select ();
+            create_context_menu (x, y);
+        });
+
+        key_controller = new Gtk.EventControllerKey (this);
+
+        key_controller.key_released.connect ((keyval) => {
+            if (keyval != Gdk.Key.Menu) {
+                return;
+            }
+
+            create_context_menu ();
+        });
+
+        carousel.page_changed.connect ((index) => {
+            if (index == 1) {
+                return;
+            }
+
+            select ();
+
+            var main_window = (MainWindow)get_toplevel ();
+            if (index == 2) {
+                main_window.activate_action (MainWindow.ACTION_MOVE_TO_TRASH, null);
+            } else if (index == 0) {
+                main_window.activate_action (MainWindow.ACTION_ARCHIVE, null);
+            }
+
+            Idle.add (() => {
+                carousel.scroll_to_full (grid, 0);
+                return Source.REMOVE;
+            });
+        });
     }
 
     public void assign (ConversationItemModel data) {
+        carousel.scroll_to_full (grid, 0);
+
         date.label = data.formatted_date;
         topic.label = data.subject;
 
@@ -108,7 +175,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         messages.no_show_all = num_messages <= 1;
 
         if (data.unread) {
-            get_style_context ().add_class ("unread-message");
+            grid.get_style_context ().add_class ("unread-message");
 
             status_icon.icon_name = "mail-unread-symbolic";
             status_icon.tooltip_text = _("Unread");
@@ -118,7 +185,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
 
             source.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
         } else {
-            get_style_context ().remove_class ("unread-message");
+            grid.get_style_context ().remove_class ("unread-message");
             status_icon.get_style_context ().remove_class (Granite.STYLE_CLASS_ACCENT);
             source.get_style_context ().remove_class (Granite.STYLE_CLASS_ACCENT);
 
@@ -136,5 +203,124 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         }
 
         flagged_icon_revealer.reveal_child = data.flagged;
+    }
+
+    private void create_context_menu (double? x = null, double? y = null) {
+        var item = (ConversationItemModel)model_item;
+
+        var menu = new Gtk.Menu () {
+            attach_widget = this
+        };
+
+        var trash_menu_item = new Gtk.MenuItem () {
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH,
+            child = new Granite.AccelLabel.from_action_name (
+                _("Move To Trash"),
+                MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH
+            )
+        };
+
+        menu.add (trash_menu_item);
+
+        if (!item.unread) {
+            var mark_unread_menu_item = new Gtk.MenuItem () {
+                action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD,
+                child = new Granite.AccelLabel.from_action_name (
+                    _("Mark As Unread"),
+                    MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD
+                )
+            };
+            menu.add (mark_unread_menu_item);
+        } else {
+            var mark_read_menu_item = new Gtk.MenuItem () {
+                action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ,
+                child = new Granite.AccelLabel.from_action_name (
+                    _("Mark as Read"),
+                    MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ
+                )
+            };
+            menu.add (mark_read_menu_item);
+        }
+
+        if (!item.flagged) {
+            var mark_starred_menu_item = new Gtk.MenuItem () {
+                action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR,
+                child = new Granite.AccelLabel.from_action_name (
+                    _("Star"),
+                    MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR
+                )
+            };
+            menu.add (mark_starred_menu_item);
+        } else {
+            var mark_unstarred_menu_item = new Gtk.MenuItem () {
+                action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR,
+                child = new Granite.AccelLabel.from_action_name (
+                    _("Unstar"),
+                    MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR
+                )
+            };
+            menu.add (mark_unstarred_menu_item);
+        }
+
+        menu.show_all ();
+        menu.popup_at_pointer (null);
+
+        if (x == null || y == null) {
+            menu.popup_at_widget (this, Gdk.Gravity.EAST, Gdk.Gravity.CENTER, null);
+        } else {
+            menu.popup_at_pointer (null);
+        }
+    }
+
+    private class SwipeAffordance : Gtk.Box {
+        public Gtk.Align alignment { get; construct; }
+        public string icon_name { get; construct; }
+        public string label { get; construct; }
+
+        private static Gtk.CssProvider provider;
+
+        static construct {
+            provider = new Gtk.CssProvider ();
+            provider.load_from_resource ("io/elementary/mail/ConversationListItem.css");
+        }
+
+        class construct {
+            set_css_name ("affordance");
+        }
+
+        public SwipeAffordance (string label, string icon_name, Gtk.Align alignment) {
+            Object (
+                alignment: alignment,
+                icon_name: icon_name,
+                label: label
+            );
+        }
+
+        construct {
+            var image = new Gtk.Image.from_icon_name (icon_name, MENU);
+
+            var label = new Gtk.Label (label);
+            label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            label.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            var box = new Gtk.Box (VERTICAL, 3) {
+                halign = alignment,
+                hexpand = true,
+                valign = CENTER,
+                vexpand = false
+            };
+            box.add (image);
+            box.add (label);
+
+            add (box);
+
+            get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+            if (alignment == Gtk.Align.START) {
+                get_style_context ().add_class ("start");
+            } else if (alignment == Gtk.Align.END) {
+                get_style_context ().add_class ("end");
+            }
+        }
     }
 }

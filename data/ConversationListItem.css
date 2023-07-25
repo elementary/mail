@@ -1,0 +1,31 @@
+affordance {
+    padding: 1em;
+}
+
+affordance.start:dir(ltr),
+affordance.end:dir(rtl) {
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+
+}
+
+affordance.end:dir(ltr),
+affordance.start:dir(rtl) {
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+}
+
+affordance label {
+    color: inherit;
+    font-weight: 600;
+}
+
+affordance.archive {
+    background-color: mix(@theme_bg_color, @GRAPE_500, 0.3);
+    color: mix(@theme_fg_color, @GRAPE_500, 0.6);
+}
+
+affordance.trash {
+    background-color: mix(@theme_bg_color, @STRAWBERRY_500, 0.3);
+    color: mix(@theme_fg_color, @error_color, 0.6);
+}
