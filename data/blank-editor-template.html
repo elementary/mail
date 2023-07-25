@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        :root {
+            --bg-color: white;
+            --fg-color: black;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #3A3A3A;
+                --fg-color: white;
+            }
+        }
+
+        body {
+            margin: 0px !important;
+            padding: 6px !important;
+            background-color: var(--bg-color) !important;
+            color: var(--fg-color);
+            font-size: small !important;
+        }
+        body.plain, body.plain * {
+            font-family: monospace !important;
+            font-weight: normal;
+            font-style: normal;
+            font-size: small !important;
+            color: var(--fg-color);
+            text-decoration: none;
+        }
+        body.plain a {
+            cursor: text;
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>

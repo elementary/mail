@@ -58,6 +58,11 @@ public class Mail.FoldersListView : Gtk.Grid {
 
         var load_images_menuitem = new Granite.SwitchModelButton (_("Always Show Remote Images"));
 
+        var manage_signatures_menuitem = new Gtk.ModelButton () {
+            text = _("Edit Signatures…"),
+            action_name = Application.ACTION_PREFIX + Application.ACTION_MANAGE_SIGNATURES,
+        };
+
         var account_settings_menuitem = new Gtk.ModelButton () {
             text = _("Account Settings…")
         };
@@ -73,6 +78,7 @@ public class Mail.FoldersListView : Gtk.Grid {
         };
         app_menu_box.add (load_images_menuitem);
         app_menu_box.add (app_menu_separator);
+        app_menu_box.add (manage_signatures_menuitem);
         app_menu_box.add (account_settings_menuitem);
         app_menu_box.show_all ();
 

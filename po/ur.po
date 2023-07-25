@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the pantheon-mail package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
 #
-#: src/MessageList/MessageListItem.vala:428
+#: src/MessageList/MessageListItem.vala:447
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-16 00:15+0000\n"
+"POT-Creation-Date: 2023-07-25 17:31+0000\n"
 "PO-Revision-Date: 2016-12-10 14:51+0000\n"
 "Last-Translator: Waqar Ahmed <waqar.17a@gmail.com>\n"
 "Language-Team: Urdu <ur@li.org>\n"
@@ -20,188 +20,200 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Generator: Launchpad (build 18330)\n"
 
-#: src/Application.vala:208
+#: src/Application.vala:220
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
 msgstr ""
 
-#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:100
+#: src/Composer.vala:88 src/MessageList/MessageListItem.vala:102
 msgid "From:"
 msgstr ""
 
-#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:106
+#: src/Composer.vala:107 src/MessageList/MessageListItem.vala:108
 msgid "To:"
 msgstr ""
 
-#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:112
+#: src/Composer.vala:112 src/MessageList/MessageListItem.vala:114
 msgid "Subject:"
 msgstr ""
 
-#: src/Composer.vala:119
+#: src/Composer.vala:121
 msgid "Cc"
 msgstr ""
 
-#: src/Composer.vala:121
+#: src/Composer.vala:123
 msgid "Bcc"
 msgstr ""
 
-#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:146
+#: src/Composer.vala:130 src/MessageList/MessageListItem.vala:148
 msgid "Cc:"
 msgstr ""
 
-#: src/Composer.vala:146
+#: src/Composer.vala:148
 msgid "Bcc:"
 msgstr ""
 
-#: src/Composer.vala:196
+#: src/Composer.vala:198
 msgid "Insert Image"
 msgstr ""
 
-#: src/Composer.vala:222
+#: src/Composer.vala:224
 msgid "Delete draft"
 msgstr ""
 
-#: src/Composer.vala:230
+#: src/Composer.vala:232
 msgid "Attach file"
 msgstr ""
 
-#: src/Composer.vala:237
+#: src/Composer.vala:243
+msgid "Insert Signature…"
+msgstr ""
+
+#: src/Composer.vala:249
 msgid "Send"
 msgstr ""
 
-#: src/Composer.vala:274
+#: src/Composer.vala:287
 msgid "New Message"
 msgstr ""
 
-#: src/Composer.vala:421
+#: src/Composer.vala:442
 msgid "Choose a file"
 msgstr ""
 
-#: src/Composer.vala:424
+#: src/Composer.vala:445
 msgid "Attach"
 msgstr ""
 
-#: src/Composer.vala:425 src/Composer.vala:449 src/Composer.vala:702
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
 msgstr ""
 
-#: src/Composer.vala:441
+#: src/Composer.vala:462
 msgid "Images"
 msgstr ""
 
-#: src/Composer.vala:445
+#: src/Composer.vala:466
 msgid "Choose an image"
 msgstr ""
 
-#: src/Composer.vala:448
+#: src/Composer.vala:469
 msgid "Insert"
 msgstr ""
 
-#: src/Composer.vala:477
+#: src/Composer.vala:498
 msgid "Unable to insert image"
 msgstr ""
 
-#: src/Composer.vala:478
+#: src/Composer.vala:499
 msgid "There was an unexpected error while trying to insert the image."
 msgstr ""
 
-#: src/Composer.vala:603
+#: src/Composer.vala:624
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr ""
 
-#: src/Composer.vala:633
+#: src/Composer.vala:654
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr ""
 
-#: src/Composer.vala:637
+#: src/Composer.vala:658
 msgid "---------- Forwarded message ----------"
 msgstr ""
 
-#: src/Composer.vala:639
+#: src/Composer.vala:660
 #, c-format
 msgid "From: %s<br/>"
 msgstr ""
 
-#: src/Composer.vala:640
+#: src/Composer.vala:661
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr ""
 
-#: src/Composer.vala:641
+#: src/Composer.vala:662
 #, c-format
 msgid "Date: %s<br/>"
 msgstr ""
 
-#: src/Composer.vala:642
+#: src/Composer.vala:663
 #, c-format
 msgid "To: %s<br/>"
 msgstr ""
 
-#: src/Composer.vala:644
+#: src/Composer.vala:665
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr ""
 
-#: src/Composer.vala:693
+#: src/Composer.vala:714
 msgid "Permanently delete this draft?"
 msgstr ""
 
-#: src/Composer.vala:694
+#: src/Composer.vala:715
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer.vala:704
+#: src/Composer.vala:725
 #, fuzzy
 #| msgid "Drafts | Draft"
 msgid "Delete Draft"
 msgstr "ڈرافٹس | ڈرافٹ"
 
-#: src/Composer.vala:728
+#: src/Composer.vala:749
 msgid "Send without subject?"
 msgstr ""
 
-#: src/Composer.vala:729
+#: src/Composer.vala:750
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
 
-#: src/Composer.vala:736
+#: src/Composer.vala:757
 msgid "Don't Send"
 msgstr ""
 
-#: src/Composer.vala:738
+#: src/Composer.vala:759
 msgid "Send Anyway"
 msgstr ""
 
-#: src/Composer.vala:767
+#: src/Composer.vala:788
 msgid "Sent message was not saved"
 msgstr ""
 
-#: src/Composer.vala:768
+#: src/Composer.vala:789
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer.vala:783
+#: src/Composer.vala:804
 msgid "Unable to send message"
 msgstr ""
 
-#: src/Composer.vala:784
+#: src/Composer.vala:805
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer.vala:1029
+#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+msgid "Edit Signatures…"
+msgstr ""
+
+#: src/Composer.vala:903
+msgid "None"
+msgstr "کچھ نہیں"
+
+#: src/Composer.vala:1092
 msgid "Unable to save draft"
 msgstr ""
 
-#: src/Composer.vala:1030
+#: src/Composer.vala:1093
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -267,22 +279,29 @@ msgid_plural "Messages Archived"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:293 src/MainWindow.vala:306
-#, c-format
-msgid "Failed to move messages: %s"
+#: src/MainWindow.vala:281
+msgid "Couldn't archive message"
 msgstr ""
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:294
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:298
+msgid "Couldn't move message"
+msgstr ""
+
+#: src/MainWindow.vala:311
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
+
+#: src/MainWindow.vala:315
+msgid "Couldn't delete message"
+msgstr ""
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -319,6 +338,10 @@ msgstr ""
 
 #: src/Backend/MoveOperation.vala:130
 msgid "The source folder is the destination folder."
+msgstr ""
+
+#: src/Backend/Session.vala:624
+msgid "New Signature"
 msgstr ""
 
 #: src/ConversationList/ConversationList.vala:80
@@ -405,19 +428,19 @@ msgstr ""
 msgid "Always Show Remote Images"
 msgstr ""
 
-#: src/FoldersView/FoldersListView.vala:62
+#: src/FoldersView/FoldersListView.vala:67
 msgid "Account Settings…"
 msgstr ""
 
-#: src/FoldersView/FoldersListView.vala:86
+#: src/FoldersView/FoldersListView.vala:92
 msgid "Menu"
 msgstr ""
 
-#: src/FoldersView/FoldersListView.vala:140
+#: src/FoldersView/FoldersListView.vala:146
 msgid "Unable to open System Settings"
 msgstr ""
 
-#: src/FoldersView/FoldersListView.vala:141
+#: src/FoldersView/FoldersListView.vala:147
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
@@ -431,18 +454,19 @@ msgid "Rename folder"
 msgstr ""
 
 #: src/FoldersView/FolderSourceItem.vala:158
+#: src/FoldersView/FolderSourceItem.vala:187
+#: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
-msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgid "Couldn't rename “%s”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:185
-#, c-format
-msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+#: src/FoldersView/FolderSourceItem.vala:159
+msgid "Folder names cannot contain “/”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:200
+#: src/FoldersView/FolderSourceItem.vala:188
 #, c-format
-msgid "Unable to rename folder “%s”': %s"
+msgid "A folder named “%s” already exists"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
@@ -461,15 +485,15 @@ msgstr ""
 msgid "All Mailboxes"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:209
 msgid "Reply"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:212
 msgid "Reply All"
 msgstr ""
 
-#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:215
 msgid "Forward"
 msgstr ""
 
@@ -498,66 +522,74 @@ msgid "No Message Selected"
 msgstr ""
 
 #. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:189
 #, c-format
 msgid "%s at %s"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:383
+#: src/MessageList/MessageListItem.vala:197
+#: src/MessageList/MessageListItem.vala:402
 msgid "Unstar message"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:379
+#: src/MessageList/MessageListItem.vala:200
+#: src/MessageList/MessageListItem.vala:398
 msgid "Star message"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:218
+#: src/MessageList/MessageListItem.vala:220
 msgid "Print…"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:228
+#: src/MessageList/MessageListItem.vala:230
 msgid "More"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:277
+#: src/MessageList/MessageListItem.vala:279
+msgid "Open in Calendar"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:285
+msgid "This message contains a Calendar Event."
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:278
+#: src/MessageList/MessageListItem.vala:296
 msgid "Always Show from Sender"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:283
+#: src/MessageList/MessageListItem.vala:301
 msgid "This message contains remote images."
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:321
+#: src/MessageList/MessageListItem.vala:340
 msgid "This message contains one or more attachments"
 msgstr ""
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:405
+#: src/MessageList/MessageListItem.vala:424
 msgid "Email Message"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:427
+#: src/MessageList/MessageListItem.vala:446
 msgid "Unable to print email"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:674
+#: src/MessageList/MessageListItem.vala:698
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:675
+#: src/MessageList/MessageListItem.vala:699
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:682
+#: src/MessageList/MessageListItem.vala:706
 msgid "Open Anyway"
 msgstr ""
 
@@ -606,9 +638,6 @@ msgstr ""
 
 #~ msgid "Search"
 #~ msgstr "تلاش کریں"
-
-#~ msgid "None"
-#~ msgstr "کچھ نہیں"
 
 #~ msgid "Gmail"
 #~ msgstr "جی میل"

@@ -1,8 +1,8 @@
-#: src/MessageList/MessageListItem.vala:428
+#: src/MessageList/MessageListItem.vala:447
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-16 00:15+0000\n"
+"POT-Creation-Date: 2023-07-25 17:31+0000\n"
 "PO-Revision-Date: 2023-07-13 17:30+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/mail/mail/ka/>\n"
@@ -13,152 +13,158 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.17\n"
 
-#: src/Application.vala:208
+#: src/Application.vala:220
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
 msgstr ""
 
-#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:100
+#: src/Composer.vala:88 src/MessageList/MessageListItem.vala:102
 msgid "From:"
 msgstr "ვისგან:"
 
-#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:106
+#: src/Composer.vala:107 src/MessageList/MessageListItem.vala:108
 msgid "To:"
 msgstr "ვის:"
 
-#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:112
+#: src/Composer.vala:112 src/MessageList/MessageListItem.vala:114
 msgid "Subject:"
 msgstr "სათაური:"
 
-#: src/Composer.vala:119
+#: src/Composer.vala:121
 msgid "Cc"
 msgstr "ასლი"
 
-#: src/Composer.vala:121
+#: src/Composer.vala:123
 msgid "Bcc"
 msgstr "ფარულიასლი"
 
-#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:146
+#: src/Composer.vala:130 src/MessageList/MessageListItem.vala:148
 msgid "Cc:"
 msgstr "ასლი:"
 
-#: src/Composer.vala:146
+#: src/Composer.vala:148
 msgid "Bcc:"
 msgstr "ფარულიასლი:"
 
-#: src/Composer.vala:196
+#: src/Composer.vala:198
 msgid "Insert Image"
 msgstr "გამოსახულების ჩასმა"
 
-#: src/Composer.vala:222
+#: src/Composer.vala:224
 msgid "Delete draft"
 msgstr "მონახაზის წაშლა"
 
-#: src/Composer.vala:230
+#: src/Composer.vala:232
 msgid "Attach file"
 msgstr "ფაილის მიმაგრება"
 
-#: src/Composer.vala:237
+#: src/Composer.vala:243
+#, fuzzy
+#| msgid "Insert Link"
+msgid "Insert Signature…"
+msgstr "ბმულის დამატება"
+
+#: src/Composer.vala:249
 msgid "Send"
 msgstr "გაგზავნა"
 
-#: src/Composer.vala:274
+#: src/Composer.vala:287
 msgid "New Message"
 msgstr "ახალი შეტყობინება"
 
-#: src/Composer.vala:421
+#: src/Composer.vala:442
 msgid "Choose a file"
 msgstr "ფაილის არჩევა"
 
-#: src/Composer.vala:424
+#: src/Composer.vala:445
 msgid "Attach"
 msgstr "მიმაგრება"
 
-#: src/Composer.vala:425 src/Composer.vala:449 src/Composer.vala:702
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
 msgstr "გაუქმება"
 
-#: src/Composer.vala:441
+#: src/Composer.vala:462
 msgid "Images"
 msgstr "გამოსახულებები"
 
-#: src/Composer.vala:445
+#: src/Composer.vala:466
 msgid "Choose an image"
 msgstr "აირჩიეთ გამოსახულება"
 
-#: src/Composer.vala:448
+#: src/Composer.vala:469
 msgid "Insert"
 msgstr "ჩასმა"
 
-#: src/Composer.vala:477
+#: src/Composer.vala:498
 msgid "Unable to insert image"
 msgstr "გამოსახულების ჩასმა შეუძლებელია"
 
-#: src/Composer.vala:478
+#: src/Composer.vala:499
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "გამოსახულების ჩასმისას აღმოჩენილია მოულოდნელი შეცდომა."
 
-#: src/Composer.vala:603
+#: src/Composer.vala:624
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %b %-e, %Y %-l:%M %p"
 
-#: src/Composer.vala:633
+#: src/Composer.vala:654
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s-ზე, %2$s-მა მოგწერათ:"
 
-#: src/Composer.vala:637
+#: src/Composer.vala:658
 msgid "---------- Forwarded message ----------"
 msgstr "---------- გადაგზავნილი შეტყობინება ----------"
 
-#: src/Composer.vala:639
+#: src/Composer.vala:660
 #, c-format
 msgid "From: %s<br/>"
 msgstr "ვისგან: %s<br/>"
 
-#: src/Composer.vala:640
+#: src/Composer.vala:661
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "თემა: %s<br/>"
 
-#: src/Composer.vala:641
+#: src/Composer.vala:662
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "თარიღი: %s<br/>"
 
-#: src/Composer.vala:642
+#: src/Composer.vala:663
 #, c-format
 msgid "To: %s<br/>"
 msgstr "ვის: %s<br/>"
 
-#: src/Composer.vala:644
+#: src/Composer.vala:665
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "ასლი: %s<br/>"
 
-#: src/Composer.vala:693
+#: src/Composer.vala:714
 msgid "Permanently delete this draft?"
 msgstr "წავშალო სამუდამოდ ეს მონახაზი?"
 
-#: src/Composer.vala:694
+#: src/Composer.vala:715
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "ამ ქმედების დაბრუნება არ შეგიძლიათ, არც თქვენი მონახაზის აღდგენა, თუ მას "
 "წაშლით."
 
-#: src/Composer.vala:704
+#: src/Composer.vala:725
 msgid "Delete Draft"
 msgstr "მონახაზის წაშლა"
 
-#: src/Composer.vala:728
+#: src/Composer.vala:749
 msgid "Send without subject?"
 msgstr "გავგზავნო თემის გარეშე?"
 
-#: src/Composer.vala:729
+#: src/Composer.vala:750
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -166,19 +172,19 @@ msgstr ""
 "შეტყობინებას თემის ველი შევსებული არ აქვს. მიმღები შეიძლება ვერ მიხვდეს მისი "
 "შემცველობის მნიშვნელობას."
 
-#: src/Composer.vala:736
+#: src/Composer.vala:757
 msgid "Don't Send"
 msgstr "არ გააგზავნო"
 
-#: src/Composer.vala:738
+#: src/Composer.vala:759
 msgid "Send Anyway"
 msgstr "მაინც გაგზავნა"
 
-#: src/Composer.vala:767
+#: src/Composer.vala:788
 msgid "Sent message was not saved"
 msgstr "გაგზავნილი შეტყობინება შენახული არაა"
 
-#: src/Composer.vala:768
+#: src/Composer.vala:789
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -186,19 +192,27 @@ msgstr ""
 "შეტყობინება გაგზავნილია, მაგრამ მისი ასლი გაგზავნილი შეტყობინებების "
 "საქაღალდეში არ შენახულა."
 
-#: src/Composer.vala:783
+#: src/Composer.vala:804
 msgid "Unable to send message"
 msgstr "შეტყობინების გაგზავნა შეუძლებელია"
 
-#: src/Composer.vala:784
+#: src/Composer.vala:805
 msgid "There was an unexpected error while sending your message."
 msgstr "თქვენი შეტყობინების გაგზავნისას აღმოჩენილია მოულოდნელი შეცდომა."
 
-#: src/Composer.vala:1029
+#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+msgid "Edit Signatures…"
+msgstr ""
+
+#: src/Composer.vala:903
+msgid "None"
+msgstr ""
+
+#: src/Composer.vala:1092
 msgid "Unable to save draft"
 msgstr "მონახაზად შენახვის შეცდომა"
 
-#: src/Composer.vala:1030
+#: src/Composer.vala:1093
 msgid "There was an unexpected error while saving your draft."
 msgstr "აღმოჩენილია შეცდომა თქვენი შეტყობინების მონახაზად შენახვისას."
 
@@ -262,22 +276,33 @@ msgid_plural "Messages Archived"
 msgstr[0] "შეტყობინება წაშლილია"
 msgstr[1] "შეტყობინება წაშლილია"
 
-#: src/MainWindow.vala:280 src/MainWindow.vala:293 src/MainWindow.vala:306
-#, c-format
-msgid "Failed to move messages: %s"
-msgstr "შეტყობინებების გადატანის შეცდომა: %s"
+#: src/MainWindow.vala:281
+#, fuzzy
+#| msgid "Unstar message"
+msgid "Couldn't archive message"
+msgstr "შეტყობინებაზე ვარსკვლავის მოხსნა"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:294
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "შეტყობინება გადატანილია"
 msgstr[1] "შეტყობინება გადატანილია"
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:298
+#, fuzzy
+#| msgid "Failed to move messages: %s"
+msgid "Couldn't move message"
+msgstr "შეტყობინებების გადატანის შეცდომა: %s"
+
+#: src/MainWindow.vala:311
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "შეტყობინება წაშლილია"
 msgstr[1] "შეტყობინება წაშლილია"
+
+#: src/MainWindow.vala:315
+msgid "Couldn't delete message"
+msgstr ""
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -315,6 +340,10 @@ msgstr "სამიზნე საქაღალდე აღმოჩენ�
 #: src/Backend/MoveOperation.vala:130
 msgid "The source folder is the destination folder."
 msgstr "საწყისი საქაღალდე სამიზნე საქაღალდეა."
+
+#: src/Backend/Session.vala:624
+msgid "New Signature"
+msgstr ""
 
 #: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
@@ -399,19 +428,19 @@ msgstr "ახალი შეტყობინება"
 msgid "Always Show Remote Images"
 msgstr "დაშორებული სურათების ყოველთვის ჩვენება"
 
-#: src/FoldersView/FoldersListView.vala:62
+#: src/FoldersView/FoldersListView.vala:67
 msgid "Account Settings…"
 msgstr "ანგარიშის მორგება…"
 
-#: src/FoldersView/FoldersListView.vala:86
+#: src/FoldersView/FoldersListView.vala:92
 msgid "Menu"
 msgstr "მენიუ"
 
-#: src/FoldersView/FoldersListView.vala:140
+#: src/FoldersView/FoldersListView.vala:146
 msgid "Unable to open System Settings"
 msgstr "სისტემის მორგების ფანჯრის გახსნის შეცდომა"
 
-#: src/FoldersView/FoldersListView.vala:141
+#: src/FoldersView/FoldersListView.vala:147
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
@@ -427,18 +456,19 @@ msgid "Rename folder"
 msgstr "საქაღალდის განახლება"
 
 #: src/FoldersView/FolderSourceItem.vala:158
+#: src/FoldersView/FolderSourceItem.vala:187
+#: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
-msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
+msgid "Couldn't rename “%s”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:185
-#, c-format
-msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+#: src/FoldersView/FolderSourceItem.vala:159
+msgid "Folder names cannot contain “/”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:200
+#: src/FoldersView/FolderSourceItem.vala:188
 #, c-format
-msgid "Unable to rename folder “%s”': %s"
+msgid "A folder named “%s” already exists"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
@@ -457,15 +487,15 @@ msgstr "გაგზავნილია"
 msgid "All Mailboxes"
 msgstr "ყველა საფოსტო ყუთი"
 
-#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:207
+#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:209
 msgid "Reply"
 msgstr "პასუხი"
 
-#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:210
+#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:212
 msgid "Reply All"
 msgstr "ყველასთვის პასუხი"
 
-#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:213
+#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:215
 msgid "Forward"
 msgstr "წინ"
 
@@ -494,60 +524,70 @@ msgid "No Message Selected"
 msgstr "შეტყობინება არ აგირჩევიათ"
 
 #. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
-#: src/MessageList/MessageListItem.vala:187
+#: src/MessageList/MessageListItem.vala:189
 #, c-format
 msgid "%s at %s"
 msgstr "%s %s"
 
-#: src/MessageList/MessageListItem.vala:195
-#: src/MessageList/MessageListItem.vala:383
+#: src/MessageList/MessageListItem.vala:197
+#: src/MessageList/MessageListItem.vala:402
 msgid "Unstar message"
 msgstr "შეტყობინებაზე ვარსკვლავის მოხსნა"
 
-#: src/MessageList/MessageListItem.vala:198
-#: src/MessageList/MessageListItem.vala:379
+#: src/MessageList/MessageListItem.vala:200
+#: src/MessageList/MessageListItem.vala:398
 msgid "Star message"
 msgstr "შეტყობინებაზე ვარსკვლავის დაყენება"
 
-#: src/MessageList/MessageListItem.vala:218
+#: src/MessageList/MessageListItem.vala:220
 msgid "Print…"
 msgstr "ბეჭდვა…"
 
-#: src/MessageList/MessageListItem.vala:228
+#: src/MessageList/MessageListItem.vala:230
 msgid "More"
 msgstr "მეტი"
 
-#: src/MessageList/MessageListItem.vala:277
+#: src/MessageList/MessageListItem.vala:279
+msgid "Open in Calendar"
+msgstr ""
+
+#: src/MessageList/MessageListItem.vala:285
+#, fuzzy
+#| msgid "This message contains remote images."
+msgid "This message contains a Calendar Event."
+msgstr "ეს შეტყობინება დაშორებულ სურათებს შეიცავს."
+
+#: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"
 msgstr "გამოსახულებების ჩვენება"
 
-#: src/MessageList/MessageListItem.vala:278
+#: src/MessageList/MessageListItem.vala:296
 msgid "Always Show from Sender"
 msgstr "გამომგავნის ყოველთვის ჩვენება"
 
-#: src/MessageList/MessageListItem.vala:283
+#: src/MessageList/MessageListItem.vala:301
 msgid "This message contains remote images."
 msgstr "ეს შეტყობინება დაშორებულ სურათებს შეიცავს."
 
-#: src/MessageList/MessageListItem.vala:321
+#: src/MessageList/MessageListItem.vala:340
 msgid "This message contains one or more attachments"
 msgstr "ეს შეტყობინება ერთ ან მეტ დანართს შეიცავს"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:405
+#: src/MessageList/MessageListItem.vala:424
 msgid "Email Message"
 msgstr "ელფოსტის სეტყობინება"
 
-#: src/MessageList/MessageListItem.vala:427
+#: src/MessageList/MessageListItem.vala:446
 msgid "Unable to print email"
 msgstr "ელფოსტის დაბეჭდვის შეცდომა"
 
-#: src/MessageList/MessageListItem.vala:674
+#: src/MessageList/MessageListItem.vala:698
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr "ვენდო და გავხსნა \"%s\"?"
 
-#: src/MessageList/MessageListItem.vala:675
+#: src/MessageList/MessageListItem.vala:699
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -555,7 +595,7 @@ msgstr ""
 "დანართებმა შეიძლება თქვენი სისტემა დააზიანონ. გახსენით მხოლოდ სანდო "
 "წყაროებიდან მიღებული ფაილები."
 
-#: src/MessageList/MessageListItem.vala:682
+#: src/MessageList/MessageListItem.vala:706
 msgid "Open Anyway"
 msgstr "მაინც გახსნა"
 

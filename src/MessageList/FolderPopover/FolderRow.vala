@@ -57,8 +57,8 @@ public class Mail.FolderRow : Gtk.ListBoxRow {
        }
 
        var box = new Gtk.Box (HORIZONTAL, 0) {
-           margin_top = 3,
-           margin_bottom = 3,
+           margin_top = 6,
+           margin_bottom = 6,
            margin_start = 12,
            margin_end = 12
        };

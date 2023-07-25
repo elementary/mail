@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-16 00:15+0000\n"
+"POT-Creation-Date: 2023-07-25 17:31+0000\n"
 "PO-Revision-Date: 2022-05-25 13:31+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/extra/pt/"
@@ -66,9 +66,9 @@ msgstr "Funciona com Gmail, Yahoo! Mail e outros servidores IMAP populares"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:98
-#: data/mail.metainfo.xml.in:119 data/mail.metainfo.xml.in:138
-#: data/mail.metainfo.xml.in:160 data/mail.metainfo.xml.in:174
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:99
+#: data/mail.metainfo.xml.in:120 data/mail.metainfo.xml.in:139
+#: data/mail.metainfo.xml.in:161 data/mail.metainfo.xml.in:175
 msgid "Improvements:"
 msgstr "Melhorias:"
 
@@ -77,127 +77,131 @@ msgid "Add support for inline images in the composer"
 msgstr ""
 
 #: data/mail.metainfo.xml.in:75
-msgid "Move settings menu to the mailboxes pane"
+msgid "Add support for renaming folders"
 msgstr ""
 
 #: data/mail.metainfo.xml.in:76
-msgid "Use the FileChooser portal"
+msgid "Move settings menu to the mailboxes pane"
 msgstr ""
 
 #: data/mail.metainfo.xml.in:77
-msgid "Improve network availability handling"
+msgid "Use the FileChooser portal"
 msgstr ""
 
 #: data/mail.metainfo.xml.in:78
+msgid "Improve network availability handling"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:79
 msgid "Fix issues with fetching e-mail when Mail is not autostarted"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:79 data/mail.metainfo.xml.in:107
-#: data/mail.metainfo.xml.in:121 data/mail.metainfo.xml.in:142
-#: data/mail.metainfo.xml.in:163 data/mail.metainfo.xml.in:176
+#: data/mail.metainfo.xml.in:80 data/mail.metainfo.xml.in:108
+#: data/mail.metainfo.xml.in:122 data/mail.metainfo.xml.in:143
+#: data/mail.metainfo.xml.in:164 data/mail.metainfo.xml.in:177
 msgid "Updated translations"
 msgstr "Traduções atualizadas"
 
-#: data/mail.metainfo.xml.in:100
+#: data/mail.metainfo.xml.in:101
 msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:101
+#: data/mail.metainfo.xml.in:102
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:102
+#: data/mail.metainfo.xml.in:103
 msgid "The search filter menu now appears next to the search bar"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:103
+#: data/mail.metainfo.xml.in:104
 msgid "HeaderBars appear to float above content when scrolled"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:104
+#: data/mail.metainfo.xml.in:105
 #, fuzzy
 #| msgid "Fix a potential crash while loading messages"
 msgid "Fix a potential crash with empty messages"
 msgstr "Corrige uma falha potencial durante o carregamento de mensagens"
 
-#: data/mail.metainfo.xml.in:105
+#: data/mail.metainfo.xml.in:106
 msgid "Stop resizing from cutting off the message list"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:106
+#: data/mail.metainfo.xml.in:107
 #, fuzzy
 #| msgid "Stability improvements"
 msgid "Performance improvements"
 msgstr "Melhorias de estabilidade"
 
-#: data/mail.metainfo.xml.in:132 data/mail.metainfo.xml.in:154
-#: data/mail.metainfo.xml.in:170
+#: data/mail.metainfo.xml.in:133 data/mail.metainfo.xml.in:155
+#: data/mail.metainfo.xml.in:171
 msgid "Fixes:"
 msgstr "Correções:"
 
-#: data/mail.metainfo.xml.in:134
+#: data/mail.metainfo.xml.in:135
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
 "Corrigido um erro que fazia com que as contas de correio fossem carregadas "
 "várias vezes"
 
-#: data/mail.metainfo.xml.in:135
+#: data/mail.metainfo.xml.in:136
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr "Corrigido um bug que fazia com que o Correio falhasse ocasionalmente"
 
-#: data/mail.metainfo.xml.in:136
+#: data/mail.metainfo.xml.in:137
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "Mostrar o destinatário na pasta Enviado em vez do remetente"
 
-#: data/mail.metainfo.xml.in:140
+#: data/mail.metainfo.xml.in:141
 msgid "Updated app icon"
 msgstr "Ícone da aplicação atualizado"
 
-#: data/mail.metainfo.xml.in:141
+#: data/mail.metainfo.xml.in:142
 msgid "New design"
 msgstr "Novo design"
 
-#: data/mail.metainfo.xml.in:149
+#: data/mail.metainfo.xml.in:150
 msgid "New features:"
 msgstr "Novas funcionalidades:"
 
-#: data/mail.metainfo.xml.in:151
+#: data/mail.metainfo.xml.in:152
 msgid "Use message subject for composer window title"
 msgstr "Usar o assunto da mensagem para o título da janela do compositor"
 
-#: data/mail.metainfo.xml.in:152
+#: data/mail.metainfo.xml.in:153
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr "Adicionado suporte para contas Unified Inbox para Microsoft 365"
 
-#: data/mail.metainfo.xml.in:156
+#: data/mail.metainfo.xml.in:157
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
 "Corrigido um erro que fazia com que a monitorização da caixa de entrada em "
 "segundo plano se bloqueasse"
 
-#: data/mail.metainfo.xml.in:157
+#: data/mail.metainfo.xml.in:158
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr ""
 "Removidos endereços de remetente duplicados quando da composição de uma "
 "mensagem"
 
-#: data/mail.metainfo.xml.in:158
+#: data/mail.metainfo.xml.in:159
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr "Corrige um bloqueio ao arquivar a última mensagem numa pasta"
 
-#: data/mail.metainfo.xml.in:162
+#: data/mail.metainfo.xml.in:163
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "Renomeado Office 365 para Microsoft 365 para seguir o conjunto sobre a "
 "rebranding da Microsoft"
 
-#: data/mail.metainfo.xml.in:172
+#: data/mail.metainfo.xml.in:173
 msgid "Fix a potential crash while loading messages"
 msgstr "Corrige uma falha potencial durante o carregamento de mensagens"
 
