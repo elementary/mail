@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 18:38+0000\n"
+"POT-Creation-Date: 2023-07-25 22:00+0000\n"
 "PO-Revision-Date: 2016-12-10 14:51+0000\n"
 "Last-Translator: Waqar Ahmed <waqar.17a@gmail.com>\n"
 "Language-Team: Urdu <ur@li.org>\n"
@@ -273,33 +273,33 @@ msgstr "ارسال کردہ میل"
 msgid "Undo"
 msgstr ""
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:285
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:289
 msgid "Couldn't archive message"
 msgstr ""
 
-#: src/MainWindow.vala:294
+#: src/MainWindow.vala:302
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:298
+#: src/MainWindow.vala:306
 msgid "Couldn't move message"
 msgstr ""
 
-#: src/MainWindow.vala:311
+#: src/MainWindow.vala:319
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:323
 msgid "Couldn't delete message"
 msgstr ""
 
@@ -344,64 +344,73 @@ msgstr ""
 msgid "New Signature"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:80
+#: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/ConversationList/ConversationList.vala:90
 msgid "Hide read conversations"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:86
+#: src/ConversationList/ConversationList.vala:92
 msgid "Hide unstarred conversations"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:103
+#: src/ConversationList/ConversationList.vala:109
 msgid "Filter Conversations"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:126
+#: src/ConversationList/ConversationList.vala:132
 msgid "Fetch new messages"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:133
+#: src/ConversationList/ConversationList.vala:139
 msgid "Fetching new messages…"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:561
+#: src/ConversationList/ConversationListItem.vala:94
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:99
+msgid "Trash"
+msgstr "ردی"
+
+#: src/ConversationList/ConversationListItem.vala:181
+msgid "Unread"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:194
+msgid "Replied"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:198
+msgid "Forwarded"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:218
 msgid "Move To Trash"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:570
+#: src/ConversationList/ConversationListItem.vala:229
 msgid "Mark As Unread"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationListItem.vala:238
 #: src/MessageList/MessageList.vala:59
 msgid "Mark as Read"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:588
+#: src/ConversationList/ConversationListItem.vala:249
 #: src/MessageList/MessageList.vala:65
 #, fuzzy
 msgid "Star"
 msgstr "ستارہ نشان زد شدہ"
 
-#: src/ConversationList/ConversationList.vala:596
+#: src/ConversationList/ConversationListItem.vala:258
 #: src/MessageList/MessageList.vala:71
 msgid "Unstar"
-msgstr ""
-
-#: src/ConversationList/ConversationListItem.vala:114
-msgid "Unread"
-msgstr ""
-
-#: src/ConversationList/ConversationListItem.vala:127
-msgid "Replied"
-msgstr ""
-
-#: src/ConversationList/ConversationListItem.vala:131
-msgid "Forwarded"
 msgstr ""
 
 #: src/Dialogs/InsertLinkDialog.vala:29
@@ -472,10 +481,6 @@ msgstr ""
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "اِن باکس"
-
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
-msgid "Archive"
-msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 msgid "Sent"
@@ -632,9 +637,6 @@ msgstr ""
 
 #~ msgid "Spam"
 #~ msgstr "سپام"
-
-#~ msgid "Trash"
-#~ msgstr "ردی"
 
 #~ msgid "Search"
 #~ msgstr "تلاش کریں"

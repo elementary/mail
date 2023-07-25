@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 18:38+0000\n"
+"POT-Creation-Date: 2023-07-25 22:00+0000\n"
 "PO-Revision-Date: 2023-07-20 22:57+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
@@ -296,33 +296,33 @@ msgstr "Messagerie"
 msgid "Undo"
 msgstr "Annuler"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:285
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "Message archivé"
 msgstr[1] "Messages archivés"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:289
 msgid "Couldn't archive message"
 msgstr "Impossible d'archiver le message"
 
-#: src/MainWindow.vala:294
+#: src/MainWindow.vala:302
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "Message déplacé"
 msgstr[1] "Messages déplacés"
 
-#: src/MainWindow.vala:298
+#: src/MainWindow.vala:306
 msgid "Couldn't move message"
 msgstr "Impossible de déplacer le message"
 
-#: src/MainWindow.vala:311
+#: src/MainWindow.vala:319
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Message supprimé"
 msgstr[1] "Messages supprimés"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:323
 msgid "Couldn't delete message"
 msgstr "Impossible de supprimer le message"
 
@@ -369,64 +369,73 @@ msgstr "Le dossier source est identique au dossier de destination."
 msgid "New Signature"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:80
+#: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
 msgstr "Rechercher"
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/ConversationList/ConversationList.vala:90
 msgid "Hide read conversations"
 msgstr "Masquer les conversations lues"
 
-#: src/ConversationList/ConversationList.vala:86
+#: src/ConversationList/ConversationList.vala:92
 msgid "Hide unstarred conversations"
 msgstr "Marquer les conversations non favorites"
 
-#: src/ConversationList/ConversationList.vala:103
+#: src/ConversationList/ConversationList.vala:109
 msgid "Filter Conversations"
 msgstr "Filtrer les conversations"
 
-#: src/ConversationList/ConversationList.vala:126
+#: src/ConversationList/ConversationList.vala:132
 msgid "Fetch new messages"
 msgstr "Récupérer les nouveaux messages"
 
-#: src/ConversationList/ConversationList.vala:133
+#: src/ConversationList/ConversationList.vala:139
 msgid "Fetching new messages…"
 msgstr "Récupération des nouveaux messages…"
 
-#: src/ConversationList/ConversationList.vala:561
+#: src/ConversationList/ConversationListItem.vala:94
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Archives"
+
+#: src/ConversationList/ConversationListItem.vala:99
+msgid "Trash"
+msgstr "Corbeille"
+
+#: src/ConversationList/ConversationListItem.vala:181
+msgid "Unread"
+msgstr "Non lu"
+
+#: src/ConversationList/ConversationListItem.vala:194
+msgid "Replied"
+msgstr "Répondu"
+
+#: src/ConversationList/ConversationListItem.vala:198
+msgid "Forwarded"
+msgstr "Transféré"
+
+#: src/ConversationList/ConversationListItem.vala:218
 msgid "Move To Trash"
 msgstr "Déplacer vers la corbeille"
 
-#: src/ConversationList/ConversationList.vala:570
+#: src/ConversationList/ConversationListItem.vala:229
 msgid "Mark As Unread"
 msgstr "Marquer comme non lu"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationListItem.vala:238
 #: src/MessageList/MessageList.vala:59
 msgid "Mark as Read"
 msgstr "Marquer comme lu"
 
-#: src/ConversationList/ConversationList.vala:588
+#: src/ConversationList/ConversationListItem.vala:249
 #: src/MessageList/MessageList.vala:65
 msgid "Star"
 msgstr "Marquer d'une étoile"
 
-#: src/ConversationList/ConversationList.vala:596
+#: src/ConversationList/ConversationListItem.vala:258
 #: src/MessageList/MessageList.vala:71
 msgid "Unstar"
 msgstr "Supprimer l'étoile"
-
-#: src/ConversationList/ConversationListItem.vala:114
-msgid "Unread"
-msgstr "Non lu"
-
-#: src/ConversationList/ConversationListItem.vala:127
-msgid "Replied"
-msgstr "Répondu"
-
-#: src/ConversationList/ConversationListItem.vala:131
-msgid "Forwarded"
-msgstr "Transféré"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -498,10 +507,6 @@ msgstr "Un dossier nommé « %s » existe déjà"
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "Boîte de réception"
-
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
-msgid "Archive"
-msgstr "Archives"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 msgid "Sent"
@@ -684,9 +689,6 @@ msgstr "Enregistrer"
 
 #~ msgid "Spam"
 #~ msgstr "Courrier indésirable"
-
-#~ msgid "Trash"
-#~ msgstr "Corbeille"
 
 #~ msgid "Outbox"
 #~ msgstr "Boîte d'envoi"

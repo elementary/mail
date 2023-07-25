@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 18:38+0000\n"
+"POT-Creation-Date: 2023-07-25 22:00+0000\n"
 "PO-Revision-Date: 2015-12-25 15:48+0000\n"
 "Last-Translator: Rockworld <sumoisrock@gmail.com>\n"
 "Language-Team: Thai <th@li.org>\n"
@@ -276,34 +276,34 @@ msgstr "จดหมายทั้งหมด"
 msgid "Undo"
 msgstr ""
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:285
 #, fuzzy
 #| msgid "Archive"
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "แฟ้มจัดเก็บ"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:289
 msgid "Couldn't archive message"
 msgstr ""
 
-#: src/MainWindow.vala:294
+#: src/MainWindow.vala:302
 #, fuzzy
 #| msgid "Archive"
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "แฟ้มจัดเก็บ"
 
-#: src/MainWindow.vala:298
+#: src/MainWindow.vala:306
 msgid "Couldn't move message"
 msgstr ""
 
-#: src/MainWindow.vala:311
+#: src/MainWindow.vala:319
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:323
 msgid "Couldn't delete message"
 msgstr ""
 
@@ -348,72 +348,81 @@ msgstr ""
 msgid "New Signature"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:80
+#: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/ConversationList/ConversationList.vala:90
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide read conversations"
 msgstr "เพิ่มป้ายชื่อไปยังการสนทนา"
 
-#: src/ConversationList/ConversationList.vala:86
+#: src/ConversationList/ConversationList.vala:92
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide unstarred conversations"
 msgstr "เพิ่มป้ายชื่อไปยังการสนทนา"
 
-#: src/ConversationList/ConversationList.vala:103
+#: src/ConversationList/ConversationList.vala:109
 #, fuzzy
 msgid "Filter Conversations"
 msgstr "ทำเครื่องหมายคู่สนทนา"
 
-#: src/ConversationList/ConversationList.vala:126
+#: src/ConversationList/ConversationList.vala:132
 msgid "Fetch new messages"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:133
+#: src/ConversationList/ConversationList.vala:139
 msgid "Fetching new messages…"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:561
+#: src/ConversationList/ConversationListItem.vala:94
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "แฟ้มจัดเก็บ"
+
+#: src/ConversationList/ConversationListItem.vala:99
+msgid "Trash"
+msgstr "ถังขยะ"
+
+#: src/ConversationList/ConversationListItem.vala:181
+msgid "Unread"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:194
+msgid "Replied"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:198
+msgid "Forwarded"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:218
 #, fuzzy
 msgid "Move To Trash"
 msgstr "ย้ายคู่สนทนา"
 
-#: src/ConversationList/ConversationList.vala:570
+#: src/ConversationList/ConversationListItem.vala:229
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "ทำเครื่องหมายว่าเป็นส_แปม"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationListItem.vala:238
 #: src/MessageList/MessageList.vala:59
 #, fuzzy
 msgid "Mark as Read"
 msgstr "ทำเครื่องหมายว่าเป็นส_แปม"
 
-#: src/ConversationList/ConversationList.vala:588
+#: src/ConversationList/ConversationListItem.vala:249
 #: src/MessageList/MessageList.vala:65
 #, fuzzy
 msgid "Star"
 msgstr "ที่ติดดาว"
 
-#: src/ConversationList/ConversationList.vala:596
+#: src/ConversationList/ConversationListItem.vala:258
 #: src/MessageList/MessageList.vala:71
 msgid "Unstar"
-msgstr ""
-
-#: src/ConversationList/ConversationListItem.vala:114
-msgid "Unread"
-msgstr ""
-
-#: src/ConversationList/ConversationListItem.vala:127
-msgid "Replied"
-msgstr ""
-
-#: src/ConversationList/ConversationListItem.vala:131
-msgid "Forwarded"
 msgstr ""
 
 #: src/Dialogs/InsertLinkDialog.vala:29
@@ -484,10 +493,6 @@ msgstr ""
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "กล่องขาเข้า"
-
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
-msgid "Archive"
-msgstr "แฟ้มจัดเก็บ"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 #, fuzzy
@@ -653,9 +658,6 @@ msgstr ""
 
 #~ msgid "Spam"
 #~ msgstr "สแปม"
-
-#~ msgid "Trash"
-#~ msgstr "ถังขยะ"
 
 #~ msgid "Outbox"
 #~ msgstr "ถาดออก"
