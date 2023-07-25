@@ -9,6 +9,11 @@ public class Mail.Application : Gtk.Application {
         { null }
     };
 
+    public const string ACTION_GROUP_PREFIX = "app";
+    public const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
+
+    public const string ACTION_MANAGE_SIGNATURES = "manage-signatures";
+
     public static GLib.Settings settings;
     public static bool run_in_background;
     private Gtk.Settings gtk_settings;
@@ -140,9 +145,16 @@ public class Mail.Application : Gtk.Application {
                 }
             }
         });
-
         add_action (quit_action);
         set_accels_for_action ("app.quit", {"<Control>q"});
+
+        var manage_signatures_action = new SimpleAction (ACTION_MANAGE_SIGNATURES, null);
+        manage_signatures_action.activate.connect (() => {
+            new SignatureDialog () {
+                transient_for = active_window
+            };
+        });
+        add_action (manage_signatures_action);
 
         new InboxMonitor ().start.begin ();
     }

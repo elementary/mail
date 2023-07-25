@@ -30,6 +30,7 @@ public class Mail.Backend.Session : Camel.Session {
 
     public signal void account_added (Mail.Backend.Account account);
     public signal void account_removed (Mail.Backend.Account account);
+    public signal void signature_changed ();
 
     private bool started = false;
     private E.SourceRegistry registry;
@@ -73,7 +74,11 @@ public class Mail.Backend.Session : Camel.Session {
             if (source_item.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
                 add_source (source_item);
             }
+
+            check_for_signature_change (source_item);
         });
+        registry.source_removed.connect (check_for_signature_change);
+        registry.source_changed.connect (check_for_signature_change);
     }
 
     public override bool authenticate_sync (Camel.Service service, string? mechanism, GLib.Cancellable? cancellable = null) throws GLib.Error {
@@ -211,12 +216,16 @@ public class Mail.Backend.Session : Camel.Session {
         return result == Camel.AuthenticationResult.REJECTED;
     }
 
-    public E.Source get_identity_source_for_service (Camel.Service service) {
-        var account_source = registry.ref_source (service.get_uid ());
-        var account_extension = (E.SourceMailAccount) account_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
-        var identity_uid = account_extension.get_identity_uid ();
+    public E.Source get_identity_source_for_account_uid (string account_uid) {
+        var account_source = registry.ref_source (account_uid);
+        unowned var account_extension = (E.SourceMailAccount) account_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
+        unowned var identity_uid = account_extension.get_identity_uid ();
 
         return registry.ref_source (identity_uid);
+    }
+
+    public E.Source get_identity_source_for_service (Camel.Service service) {
+        return get_identity_source_for_account_uid (service.uid);
     }
 
     public string? get_archive_folder_uri_for_service (Camel.Service service) {
@@ -552,6 +561,86 @@ public class Mail.Backend.Session : Camel.Session {
             ancestor_message_info.set_flags (Camel.MessageFlags.DELETED, ~0);
             yield drafts_folder.expunge (GLib.Priority.DEFAULT, null);
         }
+    }
+
+    public void check_for_signature_change (E.Source source) {
+        if (source.has_extension (E.SOURCE_EXTENSION_MAIL_SIGNATURE)) {
+            signature_changed ();
+        }
+    }
+
+    public async void set_signature_uid_for_account_uid (string account_uid, string signature_uid) {
+        var identity_source = get_identity_source_for_account_uid (account_uid);
+        unowned var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+
+        identity_extension.signature_uid = signature_uid;
+
+        try {
+            yield identity_source.write (null);
+        } catch (Error e) {
+            warning ("Failed to update default signature for '%s': %s", identity_extension.address, e.message);
+        }
+    }
+
+    public string get_signature_uid_for_sender (string sender) {
+        var sender_address = new Camel.InternetAddress ();
+        sender_address.unformat (sender);
+
+        var store = get_camel_store_from_email (sender_address);
+        if (store == null) {
+            return "none";
+        }
+        var identity_source = get_identity_source_for_service (store);
+        unowned var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+
+        return identity_extension.signature_uid;
+    }
+
+    public async string get_signature_for_uid (string uid) {
+        var signature_source = registry.ref_source (uid);
+
+        if (signature_source == null) {
+            warning ("Signature with uid '%s' not found.", uid);
+            return "";
+        }
+
+        string signature;
+        size_t length;
+        try {
+            if (yield signature_source.mail_signature_load (GLib.Priority.DEFAULT, null, out signature, out length)) {
+                return signature;
+            }
+        } catch (Error e) {
+            warning ("Failed to load signature: %s", e.message);
+        }
+
+        return "";
+    }
+
+    public async E.Source? create_new_signature () {
+        try {
+            var uid = GLib.Uuid.string_random ();
+            var signature_source = new E.Source.with_uid (uid, null) {
+                display_name = _("New Signature")
+            };
+            /* Create the signature extension. We don't really use it but need it to know this source is for a signature */
+            signature_source.get_extension (E.SOURCE_EXTENSION_MAIL_SIGNATURE);
+
+            yield registry.commit_source (signature_source, null);
+            yield signature_source.mail_signature_replace ("", "".length, GLib.Priority.DEFAULT, null);
+            return registry.ref_source (uid);
+        } catch (Error e) {
+            warning ("Failed to commit the new signature source: %s", e.message);
+            return null;
+        }
+    }
+
+    public List<E.Source> get_all_identity_sources () {
+        return registry.list_enabled (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+    }
+
+    public List<E.Source> get_all_signature_sources () {
+        return registry.list_enabled (E.SOURCE_EXTENSION_MAIL_SIGNATURE);
     }
 
     private class MessageInfo: Camel.MessageInfoBase {

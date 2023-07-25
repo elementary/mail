@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-20 22:57+0000\n"
+"POT-Creation-Date: 2023-07-25 22:00+0000\n"
 "PO-Revision-Date: 2023-02-17 14:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/mail/mail/ar/>\n"
@@ -24,199 +24,213 @@ msgstr ""
 "X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:58+0000\n"
 
-#: src/Application.vala:208
+#: src/Application.vala:220
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
 msgstr ""
 
-#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:102
+#: src/Composer.vala:88 src/MessageList/MessageListItem.vala:102
 msgid "From:"
 msgstr "من:"
 
-#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:108
+#: src/Composer.vala:107 src/MessageList/MessageListItem.vala:108
 msgid "To:"
 msgstr "إلى:"
 
-#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:114
+#: src/Composer.vala:112 src/MessageList/MessageListItem.vala:114
 msgid "Subject:"
 msgstr "الموضوع:"
 
-#: src/Composer.vala:119
+#: src/Composer.vala:121
 msgid "Cc"
 msgstr "نسخة كربونية"
 
-#: src/Composer.vala:121
+#: src/Composer.vala:123
 msgid "Bcc"
 msgstr "نسخة كربونية غير مرئية"
 
-#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:148
+#: src/Composer.vala:130 src/MessageList/MessageListItem.vala:148
 msgid "Cc:"
 msgstr "نسخة كربونية:"
 
-#: src/Composer.vala:146
+#: src/Composer.vala:148
 msgid "Bcc:"
 msgstr "نسخة كربونية غير مرئية:"
 
-#: src/Composer.vala:196
+#: src/Composer.vala:198
 msgid "Insert Image"
 msgstr "إدراج صورة"
 
-#: src/Composer.vala:222
+#: src/Composer.vala:224
 msgid "Delete draft"
 msgstr "حذف المسودة"
 
-#: src/Composer.vala:230
+#: src/Composer.vala:232
 msgid "Attach file"
 msgstr "إرفاق ملف"
 
-#: src/Composer.vala:237
+#: src/Composer.vala:243
+#, fuzzy
+#| msgid "Insert Link"
+msgid "Insert Signature…"
+msgstr "إدراج رابط"
+
+#: src/Composer.vala:249
 msgid "Send"
 msgstr "إرسال"
 
-#: src/Composer.vala:274
+#: src/Composer.vala:287
 msgid "New Message"
 msgstr "رسالة جديدة"
 
-#: src/Composer.vala:421
+#: src/Composer.vala:442
 msgid "Choose a file"
 msgstr "اختر ملف"
 
-#: src/Composer.vala:424
+#: src/Composer.vala:445
 msgid "Attach"
 msgstr "إرفاق"
 
-#: src/Composer.vala:425 src/Composer.vala:449 src/Composer.vala:702
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
 msgstr "إلغاء"
 
-#: src/Composer.vala:441
+#: src/Composer.vala:462
 #, fuzzy
 #| msgid "Show Images"
 msgid "Images"
 msgstr "عرض الصور"
 
-#: src/Composer.vala:445
+#: src/Composer.vala:466
 #, fuzzy
 #| msgid "Choose a file"
 msgid "Choose an image"
 msgstr "اختر ملف"
 
-#: src/Composer.vala:448
+#: src/Composer.vala:469
 #, fuzzy
 #| msgid "Insert Link"
 msgid "Insert"
 msgstr "إدراج رابط"
 
-#: src/Composer.vala:477
+#: src/Composer.vala:498
 #, fuzzy
 #| msgid "Unable to send message"
 msgid "Unable to insert image"
 msgstr "غير قادر على إرسال الرسالة"
 
-#: src/Composer.vala:478
+#: src/Composer.vala:499
 #, fuzzy
 #| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "وجد خطأ غير متوقع عند إرسال الرسالة."
 
-#: src/Composer.vala:603
+#: src/Composer.vala:624
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "a, %b %-e, %Y at %-l:%M %p%"
 
-#: src/Composer.vala:633
+#: src/Composer.vala:654
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "في %1$s, %2$s كتب:"
 
-#: src/Composer.vala:637
+#: src/Composer.vala:658
 msgid "---------- Forwarded message ----------"
 msgstr "---------- رسالة معاد توجيهها ----------"
 
-#: src/Composer.vala:639
+#: src/Composer.vala:660
 #, c-format
 msgid "From: %s<br/>"
 msgstr "من: %s<br/>"
 
-#: src/Composer.vala:640
+#: src/Composer.vala:661
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "العنوان: %s<br/>"
 
-#: src/Composer.vala:641
+#: src/Composer.vala:662
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "التاريخ: %s<br/>"
 
-#: src/Composer.vala:642
+#: src/Composer.vala:663
 #, c-format
 msgid "To: %s<br/>"
 msgstr "إلى: %s<br/>"
 
-#: src/Composer.vala:644
+#: src/Composer.vala:665
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "نسخة: %s<br/>"
 
-#: src/Composer.vala:693
+#: src/Composer.vala:714
 msgid "Permanently delete this draft?"
 msgstr "حذف المسودّة بشكل نهائي؟"
 
-#: src/Composer.vala:694
+#: src/Composer.vala:715
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "لا يمكنك التراجع عن هذا الإجراء، ولا يمكنك استعادة المسودة عند إتمام عملية "
 "الحذف."
 
-#: src/Composer.vala:704
+#: src/Composer.vala:725
 msgid "Delete Draft"
 msgstr "حذف المسودة"
 
-#: src/Composer.vala:728
+#: src/Composer.vala:749
 msgid "Send without subject?"
 msgstr "إرسال بدون عنوان؟"
 
-#: src/Composer.vala:729
+#: src/Composer.vala:750
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
 "حقل عنوان هذه الرسالة فارغ. المستلِم قد لا يعرف محتوى الرسالة أو أهميتها."
 
-#: src/Composer.vala:736
+#: src/Composer.vala:757
 msgid "Don't Send"
 msgstr "لا ترسل"
 
-#: src/Composer.vala:738
+#: src/Composer.vala:759
 msgid "Send Anyway"
 msgstr "ارسل على أي حال"
 
-#: src/Composer.vala:767
+#: src/Composer.vala:788
 msgid "Sent message was not saved"
 msgstr "الرسالة المُرسَلة لم يتم حفظها"
 
-#: src/Composer.vala:768
+#: src/Composer.vala:789
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr "تم إرسال الرسالة، ولكن لم يتم حفظ نسخة منها في مجلد الرسائل المرسلة."
 
-#: src/Composer.vala:783
+#: src/Composer.vala:804
 msgid "Unable to send message"
 msgstr "غير قادر على إرسال الرسالة"
 
-#: src/Composer.vala:784
+#: src/Composer.vala:805
 msgid "There was an unexpected error while sending your message."
 msgstr "وجد خطأ غير متوقع عند إرسال الرسالة."
 
-#: src/Composer.vala:1029
+#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+msgid "Edit Signatures…"
+msgstr ""
+
+#: src/Composer.vala:903
+msgid "None"
+msgstr ""
+
+#: src/Composer.vala:1092
 msgid "Unable to save draft"
 msgstr "غير قادر على حفظ المسودة"
 
-#: src/Composer.vala:1030
+#: src/Composer.vala:1093
 msgid "There was an unexpected error while saving your draft."
 msgstr "حدث خطأ غير متوقع عند محاولة حفظ المسودة."
 
@@ -282,7 +296,7 @@ msgstr "البريد"
 msgid "Undo"
 msgstr "تراجع"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:285
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -295,13 +309,13 @@ msgstr[3] "رسائل محذوفة"
 msgstr[4] "رسالة محذوفة"
 msgstr[5] "رسائل محذوفة"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:289
 #, fuzzy
 #| msgid "Unstar message"
 msgid "Couldn't archive message"
 msgstr "ازالة النجمة من الرسالة"
 
-#: src/MainWindow.vala:294
+#: src/MainWindow.vala:302
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -314,13 +328,13 @@ msgstr[3] "رسائل محذوفة"
 msgstr[4] "رسالة محذوفة"
 msgstr[5] "رسائل محذوفة"
 
-#: src/MainWindow.vala:298
+#: src/MainWindow.vala:306
 #, fuzzy
 #| msgid "Unable to send message"
 msgid "Couldn't move message"
 msgstr "غير قادر على إرسال الرسالة"
 
-#: src/MainWindow.vala:311
+#: src/MainWindow.vala:319
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "لا توجد رسائل مختارة"
@@ -330,7 +344,7 @@ msgstr[3] "رسائل محذوفة"
 msgstr[4] "رسالة محذوفة"
 msgstr[5] "رسائل محذوفة"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:323
 msgid "Couldn't delete message"
 msgstr ""
 
@@ -376,78 +390,91 @@ msgstr ""
 msgid "The source folder is the destination folder."
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:80
+#: src/Backend/Session.vala:624
+msgid "New Signature"
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
 msgstr "بحث في البريد"
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/ConversationList/ConversationList.vala:90
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Hide read conversations"
 msgstr "حذف المحادثة"
 
-#: src/ConversationList/ConversationList.vala:86
+#: src/ConversationList/ConversationList.vala:92
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Hide unstarred conversations"
 msgstr "حذف المحادثة"
 
-#: src/ConversationList/ConversationList.vala:103
+#: src/ConversationList/ConversationList.vala:109
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Filter Conversations"
 msgstr "حذف المحادثة"
 
-#: src/ConversationList/ConversationList.vala:126
+#: src/ConversationList/ConversationList.vala:132
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetch new messages"
 msgstr "رسالة جديدة"
 
-#: src/ConversationList/ConversationList.vala:133
+#: src/ConversationList/ConversationList.vala:139
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetching new messages…"
 msgstr "رسالة جديدة"
 
-#: src/ConversationList/ConversationList.vala:561
+#: src/ConversationList/ConversationListItem.vala:94
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "الأرشيف"
+
+#: src/ConversationList/ConversationListItem.vala:99
+msgid "Trash"
+msgstr "سلة المهملات"
+
+#: src/ConversationList/ConversationListItem.vala:181
+msgid "Unread"
+msgstr "علم كغير مقروء"
+
+#: src/ConversationList/ConversationListItem.vala:194
+msgid "Replied"
+msgstr "رد"
+
+#: src/ConversationList/ConversationListItem.vala:198
+msgid "Forwarded"
+msgstr "إعادة توجيه"
+
+#: src/ConversationList/ConversationListItem.vala:218
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "نقل المحادثة الى سلة المهملات"
 
-#: src/ConversationList/ConversationList.vala:570
+#: src/ConversationList/ConversationListItem.vala:229
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "علم كغير مقروء"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationListItem.vala:238
 #: src/MessageList/MessageList.vala:59
 msgid "Mark as Read"
 msgstr "علم كمقروء"
 
-#: src/ConversationList/ConversationList.vala:588
+#: src/ConversationList/ConversationListItem.vala:249
 #: src/MessageList/MessageList.vala:65
 msgid "Star"
 msgstr "نجمة"
 
-#: src/ConversationList/ConversationList.vala:596
+#: src/ConversationList/ConversationListItem.vala:258
 #: src/MessageList/MessageList.vala:71
 msgid "Unstar"
 msgstr "الغاء النجمة"
-
-#: src/ConversationList/ConversationListItem.vala:114
-msgid "Unread"
-msgstr "علم كغير مقروء"
-
-#: src/ConversationList/ConversationListItem.vala:127
-msgid "Replied"
-msgstr "رد"
-
-#: src/ConversationList/ConversationListItem.vala:131
-msgid "Forwarded"
-msgstr "إعادة توجيه"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -473,21 +500,21 @@ msgstr "رسالة جديدة"
 msgid "Always Show Remote Images"
 msgstr "دائماً اعرض الصور عن بعد"
 
-#: src/FoldersView/FoldersListView.vala:62
+#: src/FoldersView/FoldersListView.vala:67
 msgid "Account Settings…"
 msgstr "إعدادات الحساب…"
 
-#: src/FoldersView/FoldersListView.vala:86
+#: src/FoldersView/FoldersListView.vala:92
 msgid "Menu"
 msgstr "القائمة"
 
-#: src/FoldersView/FoldersListView.vala:140
+#: src/FoldersView/FoldersListView.vala:146
 #, fuzzy
 #| msgid "Unable to print email"
 msgid "Unable to open System Settings"
 msgstr "غير قادر على طباعة الرسالة"
 
-#: src/FoldersView/FoldersListView.vala:141
+#: src/FoldersView/FoldersListView.vala:147
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
@@ -521,10 +548,6 @@ msgstr ""
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "صندوق الوارد"
-
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
-msgid "Archive"
-msgstr "الأرشيف"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 msgid "Sent"
@@ -705,9 +728,6 @@ msgstr "حفظ"
 
 #~ msgid "Spam"
 #~ msgstr "السبام"
-
-#~ msgid "Trash"
-#~ msgstr "سلة المهملات"
 
 #~ msgid "Outbox"
 #~ msgstr "البريد المرسل"

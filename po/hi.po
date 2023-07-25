@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-20 22:57+0000\n"
+"POT-Creation-Date: 2023-07-25 22:00+0000\n"
 "PO-Revision-Date: 2018-12-19 00:07+0000\n"
 "Last-Translator: Mayank Arya <mmaismma@hotmail.com>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/mail/mail/hi/>\n"
@@ -22,203 +22,217 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/Application.vala:208
+#: src/Application.vala:220
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
 msgstr ""
 
-#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:102
+#: src/Composer.vala:88 src/MessageList/MessageListItem.vala:102
 msgid "From:"
 msgstr ""
 
-#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:108
+#: src/Composer.vala:107 src/MessageList/MessageListItem.vala:108
 msgid "To:"
 msgstr "किसे:"
 
-#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:114
+#: src/Composer.vala:112 src/MessageList/MessageListItem.vala:114
 msgid "Subject:"
 msgstr "विषय:"
 
-#: src/Composer.vala:119
+#: src/Composer.vala:121
 msgid "Cc"
 msgstr "सीसी"
 
-#: src/Composer.vala:121
+#: src/Composer.vala:123
 #, fuzzy
 msgid "Bcc"
 msgstr "प्रतिभागी"
 
-#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:148
+#: src/Composer.vala:130 src/MessageList/MessageListItem.vala:148
 msgid "Cc:"
 msgstr ""
 
-#: src/Composer.vala:146
+#: src/Composer.vala:148
 msgid "Bcc:"
 msgstr ""
 
-#: src/Composer.vala:196
+#: src/Composer.vala:198
 msgid "Insert Image"
 msgstr "तस्वीर डाले"
 
-#: src/Composer.vala:222
+#: src/Composer.vala:224
 msgid "Delete draft"
 msgstr ""
 
-#: src/Composer.vala:230
+#: src/Composer.vala:232
 msgid "Attach file"
 msgstr ""
 
-#: src/Composer.vala:237
+#: src/Composer.vala:243
+#, fuzzy
+#| msgid "Insert Link"
+msgid "Insert Signature…"
+msgstr "लिंक डाले"
+
+#: src/Composer.vala:249
 msgid "Send"
 msgstr ""
 
-#: src/Composer.vala:274
+#: src/Composer.vala:287
 msgid "New Message"
 msgstr "नया पत्र"
 
-#: src/Composer.vala:421
+#: src/Composer.vala:442
 msgid "Choose a file"
 msgstr ""
 
-#: src/Composer.vala:424
+#: src/Composer.vala:445
 #, fuzzy
 #| msgid "attachment"
 msgid "Attach"
 msgstr "आसक्ति"
 
-#: src/Composer.vala:425 src/Composer.vala:449 src/Composer.vala:702
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
 msgstr ""
 
-#: src/Composer.vala:441
+#: src/Composer.vala:462
 #, fuzzy
 #| msgid "Show Images"
 msgid "Images"
 msgstr "तस्वीरें दिखाए"
 
-#: src/Composer.vala:445
+#: src/Composer.vala:466
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Choose an image"
 msgstr "नया पत्र लिखे"
 
-#: src/Composer.vala:448
+#: src/Composer.vala:469
 #, fuzzy
 #| msgid "Insert Link"
 msgid "Insert"
 msgstr "लिंक डाले"
 
-#: src/Composer.vala:477
+#: src/Composer.vala:498
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to insert image"
 msgstr "पुष्टि नहीं हो पाई:\n"
 
-#: src/Composer.vala:478
+#: src/Composer.vala:499
 msgid "There was an unexpected error while trying to insert the image."
 msgstr ""
 
-#: src/Composer.vala:603
+#: src/Composer.vala:624
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr ""
 
-#: src/Composer.vala:633
+#: src/Composer.vala:654
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "दिनाक %1$s, %2$s ने लिखा:"
 
-#: src/Composer.vala:637
+#: src/Composer.vala:658
 msgid "---------- Forwarded message ----------"
 msgstr "---------- प्रस्तुत पत्र ----------"
 
-#: src/Composer.vala:639
+#: src/Composer.vala:660
 #, c-format
 msgid "From: %s<br/>"
 msgstr "किससे: %s<br/>"
 
-#: src/Composer.vala:640
+#: src/Composer.vala:661
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "विषय: %s<br/>"
 
-#: src/Composer.vala:641
+#: src/Composer.vala:662
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "दिनाक: %s<br/>"
 
-#: src/Composer.vala:642
+#: src/Composer.vala:663
 #, c-format
 msgid "To: %s<br/>"
 msgstr "किसको: %s<br/>"
 
-#: src/Composer.vala:644
+#: src/Composer.vala:665
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "सहभागी: %s<br/>"
 
-#: src/Composer.vala:693
+#: src/Composer.vala:714
 msgid "Permanently delete this draft?"
 msgstr ""
 
-#: src/Composer.vala:694
+#: src/Composer.vala:715
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer.vala:704
+#: src/Composer.vala:725
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Delete Draft"
 msgstr "संवाद हटाऍ"
 
-#: src/Composer.vala:728
+#: src/Composer.vala:749
 #, fuzzy
 #| msgid "(no subject)"
 msgid "Send without subject?"
 msgstr "(कोई विषय नहीं)"
 
-#: src/Composer.vala:729
+#: src/Composer.vala:750
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
 
-#: src/Composer.vala:736
+#: src/Composer.vala:757
 msgid "Don't Send"
 msgstr ""
 
-#: src/Composer.vala:738
+#: src/Composer.vala:759
 msgid "Send Anyway"
 msgstr ""
 
-#: src/Composer.vala:767
+#: src/Composer.vala:788
 msgid "Sent message was not saved"
 msgstr ""
 
-#: src/Composer.vala:768
+#: src/Composer.vala:789
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer.vala:783
+#: src/Composer.vala:804
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to send message"
 msgstr "पुष्टि नहीं हो पाई:\n"
 
-#: src/Composer.vala:784
+#: src/Composer.vala:805
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer.vala:1029
+#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+msgid "Edit Signatures…"
+msgstr ""
+
+#: src/Composer.vala:903
+msgid "None"
+msgstr "कुछ नही"
+
+#: src/Composer.vala:1092
 msgid "Unable to save draft"
 msgstr ""
 
-#: src/Composer.vala:1030
+#: src/Composer.vala:1093
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -279,7 +293,7 @@ msgstr "सब पत्र"
 msgid "Undo"
 msgstr ""
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:285
 #, fuzzy
 #| msgid "Archive"
 msgid "Message Archived"
@@ -287,12 +301,12 @@ msgid_plural "Messages Archived"
 msgstr[0] "पुरालेख"
 msgstr[1] "पुरालेख"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:289
 #, fuzzy
 msgid "Couldn't archive message"
 msgstr "%d नया संदेश"
 
-#: src/MainWindow.vala:294
+#: src/MainWindow.vala:302
 #, fuzzy
 #| msgid "Archive"
 msgid "Message Moved"
@@ -300,19 +314,19 @@ msgid_plural "Messages Moved"
 msgstr[0] "पुरालेख"
 msgstr[1] "पुरालेख"
 
-#: src/MainWindow.vala:298
+#: src/MainWindow.vala:306
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Couldn't move message"
 msgstr "पुष्टि नहीं हो पाई:\n"
 
-#: src/MainWindow.vala:311
+#: src/MainWindow.vala:319
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:323
 msgid "Couldn't delete message"
 msgstr ""
 
@@ -355,81 +369,94 @@ msgstr ""
 msgid "The source folder is the destination folder."
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:80
+#: src/Backend/Session.vala:624
+msgid "New Signature"
+msgstr ""
+
+#: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
 msgstr "पत्र ढूंदे।"
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/ConversationList/ConversationList.vala:90
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide read conversations"
 msgstr "अधिक संवाद को लेबल जोड़े"
 
-#: src/ConversationList/ConversationList.vala:86
+#: src/ConversationList/ConversationList.vala:92
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide unstarred conversations"
 msgstr "अधिक संवाद को लेबल जोड़े"
 
-#: src/ConversationList/ConversationList.vala:103
+#: src/ConversationList/ConversationList.vala:109
 #, fuzzy
 msgid "Filter Conversations"
 msgstr "अधिक संवाद संकेत"
 
-#: src/ConversationList/ConversationList.vala:126
+#: src/ConversationList/ConversationList.vala:132
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetch new messages"
 msgstr "नया पत्र लिखे"
 
-#: src/ConversationList/ConversationList.vala:133
+#: src/ConversationList/ConversationList.vala:139
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetching new messages…"
 msgstr "नया पत्र लिखे"
 
-#: src/ConversationList/ConversationList.vala:561
+#: src/ConversationList/ConversationListItem.vala:94
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "पुरालेख"
+
+#: src/ConversationList/ConversationListItem.vala:99
+msgid "Trash"
+msgstr "रद्दी"
+
+#: src/ConversationList/ConversationListItem.vala:181
+msgid "Unread"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:194
+#, fuzzy
+msgid "Replied"
+msgstr "जवाब दें"
+
+#: src/ConversationList/ConversationListItem.vala:198
+#, fuzzy
+msgid "Forwarded"
+msgstr "फॉरवर्ड"
+
+#: src/ConversationList/ConversationListItem.vala:218
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "संवाद तो ट्रैश में डाले"
 
-#: src/ConversationList/ConversationList.vala:570
+#: src/ConversationList/ConversationListItem.vala:229
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "पढ़ा नही संकेत करे"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationListItem.vala:238
 #: src/MessageList/MessageList.vala:59
 #, fuzzy
 msgid "Mark as Read"
 msgstr "पढ़ लिया संकेत करे"
 
-#: src/ConversationList/ConversationList.vala:588
+#: src/ConversationList/ConversationListItem.vala:249
 #: src/MessageList/MessageList.vala:65
 #, fuzzy
 msgid "Star"
 msgstr "तारा"
 
-#: src/ConversationList/ConversationList.vala:596
+#: src/ConversationList/ConversationListItem.vala:258
 #: src/MessageList/MessageList.vala:71
 #, fuzzy
 msgid "Unstar"
 msgstr "तारा हटाए"
-
-#: src/ConversationList/ConversationListItem.vala:114
-msgid "Unread"
-msgstr ""
-
-#: src/ConversationList/ConversationListItem.vala:127
-#, fuzzy
-msgid "Replied"
-msgstr "जवाब दें"
-
-#: src/ConversationList/ConversationListItem.vala:131
-#, fuzzy
-msgid "Forwarded"
-msgstr "फॉरवर्ड"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -455,21 +482,21 @@ msgstr "नया पत्र लिखे"
 msgid "Always Show Remote Images"
 msgstr ""
 
-#: src/FoldersView/FoldersListView.vala:62
+#: src/FoldersView/FoldersListView.vala:67
 msgid "Account Settings…"
 msgstr "खाता सेटिंग्स…"
 
-#: src/FoldersView/FoldersListView.vala:86
+#: src/FoldersView/FoldersListView.vala:92
 msgid "Menu"
 msgstr "मेनू"
 
-#: src/FoldersView/FoldersListView.vala:140
+#: src/FoldersView/FoldersListView.vala:146
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to open System Settings"
 msgstr "पुष्टि नहीं हो पाई:\n"
 
-#: src/FoldersView/FoldersListView.vala:141
+#: src/FoldersView/FoldersListView.vala:147
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
@@ -501,10 +528,6 @@ msgstr ""
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "आए पत्र"
-
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
-msgid "Archive"
-msgstr "पुरालेख"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 #, fuzzy
@@ -686,17 +709,11 @@ msgstr ""
 #~ msgid "Spam"
 #~ msgstr "अवांछनीय(स्पैम)"
 
-#~ msgid "Trash"
-#~ msgstr "रद्दी"
-
 #~ msgid "Outbox"
 #~ msgstr "जाती डाक"
 
 #~ msgid "Search"
 #~ msgstr "खोज"
-
-#~ msgid "None"
-#~ msgstr "कुछ नही"
 
 #~ msgid "IMAP"
 #~ msgstr "आईमैप"
