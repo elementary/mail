@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-25 18:38+0000\n"
-"PO-Revision-Date: 2023-07-21 09:38+0000\n"
+"PO-Revision-Date: 2023-07-25 22:00+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
 "mail/nb/>\n"
@@ -28,13 +28,12 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Application.vala:220
-#, fuzzy
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
 msgstr ""
-"Mail vil starte med enheten og kjøre selv når vinduet lukkes slik at det kan "
-"sende merknader når det kommer ny e-post."
+"E-post vil starte med enheten og kjøre selv når vinduet lukkes slik at det "
+"kan sende merknader når det kommer ny e-post."
 
 #: src/Composer.vala:88 src/MessageList/MessageListItem.vala:102
 msgid "From:"
@@ -81,7 +80,7 @@ msgstr "Legg ved fil"
 #, fuzzy
 #| msgid "Insert Link"
 msgid "Insert Signature…"
-msgstr "Sett inn lenke"
+msgstr "Sett inn signatur …"
 
 #: src/Composer.vala:249
 msgid "Send"
@@ -223,8 +222,9 @@ msgid "There was an unexpected error while sending your message."
 msgstr "En uventet feil inntraff under forsendelse av meldingen din."
 
 #: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+#, fuzzy
 msgid "Edit Signatures…"
-msgstr ""
+msgstr "Rediger signaturer …"
 
 #: src/Composer.vala:903
 msgid "None"
@@ -331,8 +331,9 @@ msgid "Connect an Account"
 msgstr "Koble til en konto"
 
 #: src/WelcomeView.vala:52
+#, fuzzy
 msgid "Mail uses email accounts configured in System Settings."
-msgstr "Mail bruker e-postkontoer satt opp i systeminnstillingene."
+msgstr "E-post bruker e-postkontoer satt opp i systeminnstillingene."
 
 #: src/WelcomeView.vala:59
 msgid "Online Accounts…"
@@ -367,11 +368,12 @@ msgstr "Kildemappen er målmappen."
 
 #: src/Backend/Session.vala:624
 msgid "New Signature"
-msgstr ""
+msgstr "Ny signatur"
 
 #: src/ConversationList/ConversationList.vala:80
+#, fuzzy
 msgid "Search Mail"
-msgstr "Søk Mail"
+msgstr "Søk i E-post"
 
 #: src/ConversationList/ConversationList.vala:84
 msgid "Hide read conversations"
