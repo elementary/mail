@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-20 22:57+0000\n"
+"POT-Creation-Date: 2023-07-25 17:31+0000\n"
 "PO-Revision-Date: 2023-07-21 09:38+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
@@ -27,7 +27,7 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/Application.vala:208
+#: src/Application.vala:220
 #, fuzzy
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
@@ -36,151 +36,157 @@ msgstr ""
 "Mail vil starte med enheten og kjøre selv når vinduet lukkes slik at det kan "
 "sende merknader når det kommer ny e-post."
 
-#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:102
+#: src/Composer.vala:88 src/MessageList/MessageListItem.vala:102
 msgid "From:"
 msgstr "Fra:"
 
-#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:108
+#: src/Composer.vala:107 src/MessageList/MessageListItem.vala:108
 msgid "To:"
 msgstr "Til:"
 
-#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:114
+#: src/Composer.vala:112 src/MessageList/MessageListItem.vala:114
 msgid "Subject:"
 msgstr "Emne:"
 
-#: src/Composer.vala:119
+#: src/Composer.vala:121
 msgid "Cc"
 msgstr "Kopi"
 
-#: src/Composer.vala:121
+#: src/Composer.vala:123
 #, fuzzy
 msgid "Bcc"
 msgstr "Blindkopi"
 
-#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:148
+#: src/Composer.vala:130 src/MessageList/MessageListItem.vala:148
 msgid "Cc:"
 msgstr "Kopi:"
 
-#: src/Composer.vala:146
+#: src/Composer.vala:148
 msgid "Bcc:"
 msgstr "Blindkopi:"
 
-#: src/Composer.vala:196
+#: src/Composer.vala:198
 msgid "Insert Image"
 msgstr "Sett inn bilde"
 
-#: src/Composer.vala:222
+#: src/Composer.vala:224
 msgid "Delete draft"
 msgstr "Forkast utkast"
 
-#: src/Composer.vala:230
+#: src/Composer.vala:232
 msgid "Attach file"
 msgstr "Legg ved fil"
 
-#: src/Composer.vala:237
+#: src/Composer.vala:243
+#, fuzzy
+#| msgid "Insert Link"
+msgid "Insert Signature…"
+msgstr "Sett inn lenke"
+
+#: src/Composer.vala:249
 msgid "Send"
 msgstr "Send"
 
-#: src/Composer.vala:274
+#: src/Composer.vala:287
 msgid "New Message"
 msgstr "Ny melding"
 
-#: src/Composer.vala:421
+#: src/Composer.vala:442
 msgid "Choose a file"
 msgstr "Velg en fil"
 
-#: src/Composer.vala:424
+#: src/Composer.vala:445
 msgid "Attach"
 msgstr "Legg ved"
 
-#: src/Composer.vala:425 src/Composer.vala:449 src/Composer.vala:702
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: src/Composer.vala:441
+#: src/Composer.vala:462
 msgid "Images"
 msgstr "Bilder"
 
-#: src/Composer.vala:445
+#: src/Composer.vala:466
 msgid "Choose an image"
 msgstr "Velg et bilde"
 
-#: src/Composer.vala:448
+#: src/Composer.vala:469
 msgid "Insert"
 msgstr "Sett inn"
 
-#: src/Composer.vala:477
+#: src/Composer.vala:498
 #, fuzzy
 #| msgid "Unable to send message"
 msgid "Unable to insert image"
 msgstr "Kunne ikke sette inn bilde"
 
-#: src/Composer.vala:478
+#: src/Composer.vala:499
 #, fuzzy
 #| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "En uventet feil inntraff under forsøk på innsetting av bildet."
 
-#: src/Composer.vala:603
+#: src/Composer.vala:624
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a. %e. %b, %Y, kl %-k:%M"
 
-#: src/Composer.vala:633
+#: src/Composer.vala:654
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Den %1$s, %2$s skrev:"
 
-#: src/Composer.vala:637
+#: src/Composer.vala:658
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Videresendt melding ----------"
 
-#: src/Composer.vala:639
+#: src/Composer.vala:660
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Fra: %s<br/>"
 
-#: src/Composer.vala:640
+#: src/Composer.vala:661
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Emne: %s<br/>"
 
-#: src/Composer.vala:641
+#: src/Composer.vala:662
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Dato: %s<br/>"
 
-#: src/Composer.vala:642
+#: src/Composer.vala:663
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Til: %s<br/>"
 
-#: src/Composer.vala:644
+#: src/Composer.vala:665
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Kopi: %s<br/>"
 
-#: src/Composer.vala:693
+#: src/Composer.vala:714
 msgid "Permanently delete this draft?"
 msgstr "Ønsker du å slette denne kladden?"
 
-#: src/Composer.vala:694
+#: src/Composer.vala:715
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Du kan ikke angre denne handlingen, ei heller gjenopprette kladden din om "
 "noe har blitt slettet."
 
-#: src/Composer.vala:704
+#: src/Composer.vala:725
 msgid "Delete Draft"
 msgstr "Forkast utkast"
 
-#: src/Composer.vala:728
+#: src/Composer.vala:749
 msgid "Send without subject?"
 msgstr "Send uten emne?"
 
-#: src/Composer.vala:729
+#: src/Composer.vala:750
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -188,19 +194,19 @@ msgstr ""
 "Denne meldingen har tomt emnefelt. Mottageren kan ikke anta hensikt eller "
 "hvor viktig den er."
 
-#: src/Composer.vala:736
+#: src/Composer.vala:757
 msgid "Don't Send"
 msgstr "Ikke send"
 
-#: src/Composer.vala:738
+#: src/Composer.vala:759
 msgid "Send Anyway"
 msgstr "Send uansett"
 
-#: src/Composer.vala:767
+#: src/Composer.vala:788
 msgid "Sent message was not saved"
 msgstr "Sendt melding ble ikke lagret"
 
-#: src/Composer.vala:768
+#: src/Composer.vala:789
 #, fuzzy
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
@@ -208,19 +214,27 @@ msgid ""
 msgstr ""
 "Meldingen ble sendt, men ingen kopi ble lagret i «Lagret»-meldingsmappen."
 
-#: src/Composer.vala:783
+#: src/Composer.vala:804
 msgid "Unable to send message"
 msgstr "Kunne ikke sende melding"
 
-#: src/Composer.vala:784
+#: src/Composer.vala:805
 msgid "There was an unexpected error while sending your message."
 msgstr "En uventet feil inntraff under forsendelse av meldingen din."
 
-#: src/Composer.vala:1029
+#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+msgid "Edit Signatures…"
+msgstr ""
+
+#: src/Composer.vala:903
+msgid "None"
+msgstr "Ingen"
+
+#: src/Composer.vala:1092
 msgid "Unable to save draft"
 msgstr "Kunne ikke lagre utkast"
 
-#: src/Composer.vala:1030
+#: src/Composer.vala:1093
 msgid "There was an unexpected error while saving your draft."
 msgstr "En uventet feil inntraff under lagring av utkastet ditt."
 
@@ -351,6 +365,10 @@ msgstr "Fant ikke målmappen."
 msgid "The source folder is the destination folder."
 msgstr "Kildemappen er målmappen."
 
+#: src/Backend/Session.vala:624
+msgid "New Signature"
+msgstr ""
+
 #: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
 msgstr "Søk Mail"
@@ -436,19 +454,19 @@ msgstr "Skriv ny melding"
 msgid "Always Show Remote Images"
 msgstr "Alltid vis eksterne bilder"
 
-#: src/FoldersView/FoldersListView.vala:62
+#: src/FoldersView/FoldersListView.vala:67
 msgid "Account Settings…"
 msgstr "Kontoinnstillinger"
 
-#: src/FoldersView/FoldersListView.vala:86
+#: src/FoldersView/FoldersListView.vala:92
 msgid "Menu"
 msgstr "Meny"
 
-#: src/FoldersView/FoldersListView.vala:140
+#: src/FoldersView/FoldersListView.vala:146
 msgid "Unable to open System Settings"
 msgstr "Kunne ikke åpne systeminnstillinger"
 
-#: src/FoldersView/FoldersListView.vala:141
+#: src/FoldersView/FoldersListView.vala:147
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
@@ -466,7 +484,7 @@ msgstr "Endre mappenavn"
 #: src/FoldersView/FolderSourceItem.vala:158
 #: src/FoldersView/FolderSourceItem.vala:187
 #: src/FoldersView/FolderSourceItem.vala:205
-#, c-format, fuzzy
+#, fuzzy, c-format
 msgid "Couldn't rename “%s”"
 msgstr "Kunne ikke endre navn på «%s»"
 
@@ -676,9 +694,6 @@ msgstr "Lagre"
 
 #~ msgid "Search"
 #~ msgstr "Søk"
-
-#~ msgid "None"
-#~ msgstr "Ingen"
 
 #~ msgid "IMAP"
 #~ msgstr "IMAP"

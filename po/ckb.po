@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-20 22:57+0000\n"
+"POT-Creation-Date: 2023-07-25 17:31+0000\n"
 "PO-Revision-Date: 2022-09-21 00:19+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/mail/"
@@ -14,183 +14,189 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: src/Application.vala:208
+#: src/Application.vala:220
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
 msgstr ""
 
-#: src/Composer.vala:86 src/MessageList/MessageListItem.vala:102
+#: src/Composer.vala:88 src/MessageList/MessageListItem.vala:102
 msgid "From:"
 msgstr "لە:"
 
-#: src/Composer.vala:105 src/MessageList/MessageListItem.vala:108
+#: src/Composer.vala:107 src/MessageList/MessageListItem.vala:108
 msgid "To:"
 msgstr "بۆ:"
 
-#: src/Composer.vala:110 src/MessageList/MessageListItem.vala:114
+#: src/Composer.vala:112 src/MessageList/MessageListItem.vala:114
 msgid "Subject:"
 msgstr "بابەت:"
 
-#: src/Composer.vala:119
+#: src/Composer.vala:121
 msgid "Cc"
 msgstr "وێنەی کاربۆنی"
 
-#: src/Composer.vala:121
+#: src/Composer.vala:123
 msgid "Bcc"
 msgstr "وێنەی کاربۆنی کوێر"
 
-#: src/Composer.vala:128 src/MessageList/MessageListItem.vala:148
+#: src/Composer.vala:130 src/MessageList/MessageListItem.vala:148
 msgid "Cc:"
 msgstr "وێنەی کاربۆنی:"
 
-#: src/Composer.vala:146
+#: src/Composer.vala:148
 msgid "Bcc:"
 msgstr "وێنەی کاربۆنی کوێر:"
 
-#: src/Composer.vala:196
+#: src/Composer.vala:198
 #, fuzzy
 #| msgid "Insert Link"
 msgid "Insert Image"
 msgstr "هێنانی بەستەر"
 
-#: src/Composer.vala:222
+#: src/Composer.vala:224
 msgid "Delete draft"
 msgstr "سڕینەوەی ڕەشنووس"
 
-#: src/Composer.vala:230
+#: src/Composer.vala:232
 msgid "Attach file"
 msgstr "هاوپێچکردنی پەڕگە"
 
-#: src/Composer.vala:237
+#: src/Composer.vala:243
+#, fuzzy
+#| msgid "Insert Link"
+msgid "Insert Signature…"
+msgstr "هێنانی بەستەر"
+
+#: src/Composer.vala:249
 msgid "Send"
 msgstr "ناردن"
 
-#: src/Composer.vala:274
+#: src/Composer.vala:287
 msgid "New Message"
 msgstr "نامەی نوێ"
 
-#: src/Composer.vala:421
+#: src/Composer.vala:442
 msgid "Choose a file"
 msgstr "پەڕگە دیاریبکە"
 
-#: src/Composer.vala:424
+#: src/Composer.vala:445
 msgid "Attach"
 msgstr "هاوپێچکردن"
 
-#: src/Composer.vala:425 src/Composer.vala:449 src/Composer.vala:702
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
 msgstr "هەڵوەشاندنەوە"
 
-#: src/Composer.vala:441
+#: src/Composer.vala:462
 #, fuzzy
 #| msgid "Show Images"
 msgid "Images"
 msgstr "پشاندانی وێنەکان"
 
-#: src/Composer.vala:445
+#: src/Composer.vala:466
 #, fuzzy
 #| msgid "Choose a file"
 msgid "Choose an image"
 msgstr "پەڕگە دیاریبکە"
 
-#: src/Composer.vala:448
+#: src/Composer.vala:469
 #, fuzzy
 #| msgid "Insert Link"
 msgid "Insert"
 msgstr "هێنانی بەستەر"
 
-#: src/Composer.vala:477
+#: src/Composer.vala:498
 #, fuzzy
 #| msgid "Unable to send message"
 msgid "Unable to insert image"
 msgstr "نەتوانرا نامەکە بنێردرێت"
 
-#: src/Composer.vala:478
+#: src/Composer.vala:499
 #, fuzzy
 #| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "هەڵەیەکی چاوەڕواننەکراو ڕوویدا لەکاتی ناردنی نامەکەت."
 
-#: src/Composer.vala:603
+#: src/Composer.vala:624
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %b %-e, %Y at %-l:%M %p"
 
-#: src/Composer.vala:633
+#: src/Composer.vala:654
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "لە ڕێکەوەت %1$s، %2$s نووسی:"
 
-#: src/Composer.vala:637
+#: src/Composer.vala:658
 msgid "---------- Forwarded message ----------"
 msgstr "---------- نامەی نێردراو ----------"
 
-#: src/Composer.vala:639
+#: src/Composer.vala:660
 #, c-format
 msgid "From: %s<br/>"
 msgstr "لە: %s<br/>"
 
-#: src/Composer.vala:640
+#: src/Composer.vala:661
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "بابەت: %s<br/>"
 
-#: src/Composer.vala:641
+#: src/Composer.vala:662
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "ڕێکەوت: %s<br/>"
 
-#: src/Composer.vala:642
+#: src/Composer.vala:663
 #, c-format
 msgid "To: %s<br/>"
 msgstr "بۆ: %s<br/>"
 
-#: src/Composer.vala:644
+#: src/Composer.vala:665
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "وێنەی کاربۆنی: %s<br/>"
 
-#: src/Composer.vala:693
+#: src/Composer.vala:714
 msgid "Permanently delete this draft?"
 msgstr "دەتەوێت بۆ هەمیشە ئەم ڕەشنووسە بسڕیتەوە؟"
 
-#: src/Composer.vala:694
+#: src/Composer.vala:715
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "ناتوانیت ئەم کارە هەڵوەشێنیەوە و، ناشتوانیت ڕەشنووسی سڕاوە بگەڕێنیتەوە کاتێک "
 "سڕایەوە."
 
-#: src/Composer.vala:704
+#: src/Composer.vala:725
 msgid "Delete Draft"
 msgstr "سڕینەوەی ڕەشنووس"
 
-#: src/Composer.vala:728
+#: src/Composer.vala:749
 msgid "Send without subject?"
 msgstr "بەبێ ناونیشانی بابەت دەینێریت؟"
 
-#: src/Composer.vala:729
+#: src/Composer.vala:750
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
 "بابەتی ئەم نامەیە نەنوسراوە، لەوانەیە وەرگر بە گرنگییەوە نەڕوانێتە نامەکە."
 
-#: src/Composer.vala:736
+#: src/Composer.vala:757
 msgid "Don't Send"
 msgstr "مەینێرە"
 
-#: src/Composer.vala:738
+#: src/Composer.vala:759
 msgid "Send Anyway"
 msgstr "ئاگادارم، بینێرە"
 
-#: src/Composer.vala:767
+#: src/Composer.vala:788
 msgid "Sent message was not saved"
 msgstr "نامەی نێردراوە پاشەکەوت نەکرا"
 
-#: src/Composer.vala:768
+#: src/Composer.vala:789
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -198,19 +204,27 @@ msgstr ""
 "نامەکە نێردرا، هەرچەندە وێنەیەک لە نامەکە لە سندوقی نامە نێردراوەکاندا "
 "پاشەکەوت نەکرا."
 
-#: src/Composer.vala:783
+#: src/Composer.vala:804
 msgid "Unable to send message"
 msgstr "نەتوانرا نامەکە بنێردرێت"
 
-#: src/Composer.vala:784
+#: src/Composer.vala:805
 msgid "There was an unexpected error while sending your message."
 msgstr "هەڵەیەکی چاوەڕواننەکراو ڕوویدا لەکاتی ناردنی نامەکەت."
 
-#: src/Composer.vala:1029
+#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+msgid "Edit Signatures…"
+msgstr ""
+
+#: src/Composer.vala:903
+msgid "None"
+msgstr ""
+
+#: src/Composer.vala:1092
 msgid "Unable to save draft"
 msgstr "نەتوانرا ڕەشنووس پاشەکەوت بکرێت"
 
-#: src/Composer.vala:1030
+#: src/Composer.vala:1093
 msgid "There was an unexpected error while saving your draft."
 msgstr "هەڵەیەکی چاوەڕواننەکراو لەکاتی پاشەکەوتکردنی ڕەشنووسەکەت ڕوویدا."
 
@@ -351,6 +365,10 @@ msgstr ""
 msgid "The source folder is the destination folder."
 msgstr ""
 
+#: src/Backend/Session.vala:624
+msgid "New Signature"
+msgstr ""
+
 #: src/ConversationList/ConversationList.vala:80
 msgid "Search Mail"
 msgstr "بە دوای نامەیەکدا بگەڕێ"
@@ -434,21 +452,21 @@ msgstr "نووسینی نامەی نوێ"
 msgid "Always Show Remote Images"
 msgstr "هەمیشە وێنەکان پشان بدە"
 
-#: src/FoldersView/FoldersListView.vala:62
+#: src/FoldersView/FoldersListView.vala:67
 msgid "Account Settings…"
 msgstr "ڕێکخستنەکانی هەژمار…"
 
-#: src/FoldersView/FoldersListView.vala:86
+#: src/FoldersView/FoldersListView.vala:92
 msgid "Menu"
 msgstr "لیست"
 
-#: src/FoldersView/FoldersListView.vala:140
+#: src/FoldersView/FoldersListView.vala:146
 #, fuzzy
 #| msgid "Unable to print email"
 msgid "Unable to open System Settings"
 msgstr "نەتوانرا پۆستە ئەلیکترۆنییەکە چاپ بکرێت"
 
-#: src/FoldersView/FoldersListView.vala:141
+#: src/FoldersView/FoldersListView.vala:147
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
