@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 17:31+0000\n"
+"POT-Creation-Date: 2023-07-25 18:38+0000\n"
 "PO-Revision-Date: 2017-01-19 13:36+0000\n"
 "Last-Translator: Marius Albina <marius.albina@gmail.com>\n"
 "Language-Team: Romanian <ro@li.org>\n"
@@ -53,7 +53,9 @@ msgid "Multiple account support"
 msgstr "Suportă multiple conturi"
 
 #: data/mail.metainfo.xml.in:19
-msgid "Inline HTML composer that saves drafts to the server"
+#, fuzzy
+#| msgid "Inline HTML composer that saves drafts to the server"
+msgid "Powerful HTML composer that saves drafts to the server"
 msgstr "Compozitor HTML in-linie care salvează schiţele pe server"
 
 #: data/mail.metainfo.xml.in:20
@@ -70,130 +72,138 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr ""
 
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:99
-#: data/mail.metainfo.xml.in:120 data/mail.metainfo.xml.in:139
-#: data/mail.metainfo.xml.in:161 data/mail.metainfo.xml.in:175
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:103
+#: data/mail.metainfo.xml.in:124 data/mail.metainfo.xml.in:143
+#: data/mail.metainfo.xml.in:165 data/mail.metainfo.xml.in:179
 msgid "Improvements:"
 msgstr ""
 
 #: data/mail.metainfo.xml.in:74
-msgid "Add support for inline images in the composer"
+msgid "Ability to create multiple signatures and set defaults per account"
 msgstr ""
 
 #: data/mail.metainfo.xml.in:75
-msgid "Add support for renaming folders"
+msgid "Add support for inline images in the composer"
 msgstr ""
 
 #: data/mail.metainfo.xml.in:76
-msgid "Move settings menu to the mailboxes pane"
+msgid "Add support for renaming folders"
 msgstr ""
 
 #: data/mail.metainfo.xml.in:77
-msgid "Use the FileChooser portal"
+msgid "Move settings menu to the mailboxes pane"
 msgstr ""
 
 #: data/mail.metainfo.xml.in:78
-msgid "Improve network availability handling"
+msgid "Use the FileChooser portal"
 msgstr ""
 
 #: data/mail.metainfo.xml.in:79
+msgid "Improve network availability handling"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:80
 msgid "Fix issues with fetching e-mail when Mail is not autostarted"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:80 data/mail.metainfo.xml.in:108
-#: data/mail.metainfo.xml.in:122 data/mail.metainfo.xml.in:143
-#: data/mail.metainfo.xml.in:164 data/mail.metainfo.xml.in:177
+#: data/mail.metainfo.xml.in:81
+msgid "Notify the user when a calendar event is included in a message"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:82 data/mail.metainfo.xml.in:112
+#: data/mail.metainfo.xml.in:126 data/mail.metainfo.xml.in:147
+#: data/mail.metainfo.xml.in:168 data/mail.metainfo.xml.in:181
 msgid "Updated translations"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:101
+#: data/mail.metainfo.xml.in:105
 msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:102
+#: data/mail.metainfo.xml.in:106
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:103
+#: data/mail.metainfo.xml.in:107
 msgid "The search filter menu now appears next to the search bar"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:104
+#: data/mail.metainfo.xml.in:108
 msgid "HeaderBars appear to float above content when scrolled"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:105
+#: data/mail.metainfo.xml.in:109
 msgid "Fix a potential crash with empty messages"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:106
+#: data/mail.metainfo.xml.in:110
 msgid "Stop resizing from cutting off the message list"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:107
+#: data/mail.metainfo.xml.in:111
 msgid "Performance improvements"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:133 data/mail.metainfo.xml.in:155
-#: data/mail.metainfo.xml.in:171
+#: data/mail.metainfo.xml.in:137 data/mail.metainfo.xml.in:159
+#: data/mail.metainfo.xml.in:175
 msgid "Fixes:"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:135
+#: data/mail.metainfo.xml.in:139
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:136
+#: data/mail.metainfo.xml.in:140
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:137
+#: data/mail.metainfo.xml.in:141
 msgid "Display recipient in Sent folder instead of sender"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:141
+#: data/mail.metainfo.xml.in:145
 msgid "Updated app icon"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:142
+#: data/mail.metainfo.xml.in:146
 msgid "New design"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:150
+#: data/mail.metainfo.xml.in:154
 msgid "New features:"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:152
+#: data/mail.metainfo.xml.in:156
 msgid "Use message subject for composer window title"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:153
+#: data/mail.metainfo.xml.in:157
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:157
+#: data/mail.metainfo.xml.in:161
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:158
+#: data/mail.metainfo.xml.in:162
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:159
+#: data/mail.metainfo.xml.in:163
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:163
+#: data/mail.metainfo.xml.in:167
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 
-#: data/mail.metainfo.xml.in:173
+#: data/mail.metainfo.xml.in:177
 msgid "Fix a potential crash while loading messages"
 msgstr ""
 
