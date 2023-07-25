@@ -1,41 +1,31 @@
-trash-affordance {
-    background-color: mix(@theme_bg_color, @STRAWBERRY_500, 0.3);
-    padding: 12px;
+affordance {
+    padding: 1em;
 }
 
-trash-affordance.left {
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
+affordance.start:dir(ltr),
+affordance.end:dir(rtl) {
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+
 }
 
-trash-affordance.right {
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
+affordance.end:dir(ltr),
+affordance.start:dir(rtl) {
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
 }
 
-trash-affordance image,
-trash-affordance label {
-    color: mix(@theme_fg_color, @error_color, 0.6);
+affordance label {
+    color: inherit;
     font-weight: 600;
 }
 
-archive-affordance {
+affordance.archive {
     background-color: mix(@theme_bg_color, @GRAPE_500, 0.3);
-    padding: 12px;
-}
-
-archive-affordance.left {
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-}
-
-archive-affordance.right {
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-}
-
-archive-affordance image,
-archive-affordance label {
     color: mix(@theme_fg_color, @GRAPE_500, 0.6);
-    font-weight: 600;
+}
+
+affordance.trash {
+    background-color: mix(@theme_bg_color, @STRAWBERRY_500, 0.3);
+    color: mix(@theme_fg_color, @error_color, 0.6);
 }
