@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-25 22:00+0000\n"
-"PO-Revision-Date: 2023-07-21 09:38+0000\n"
+"PO-Revision-Date: 2023-07-26 19:32+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
 "Language: he\n"
@@ -78,10 +78,8 @@ msgid "Attach file"
 msgstr "צירוף קובץ"
 
 #: src/Composer.vala:243
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert Signature…"
-msgstr "הוספת קישור"
+msgstr "הוספת חתימה…"
 
 #: src/Composer.vala:249
 msgid "Send"
@@ -216,7 +214,7 @@ msgstr "אירעה שגיאה בלתי צפויה בשליחת ההודעה של
 
 #: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
-msgstr ""
+msgstr "עריכת חתימות…"
 
 #: src/Composer.vala:903
 msgid "None"
@@ -353,7 +351,7 @@ msgstr "תיקיית המקור היא תיקיית היעד."
 
 #: src/Backend/Session.vala:624
 msgid "New Signature"
-msgstr ""
+msgstr "חתימה חדשה"
 
 #: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
