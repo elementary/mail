@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bosnianuniversetranslation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 17:31+0000\n"
+"POT-Creation-Date: 2023-07-25 22:00+0000\n"
 "PO-Revision-Date: 2015-11-24 15:43+0000\n"
 "Last-Translator: elementary Apps team <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -298,7 +298,7 @@ msgstr "Sva pošta"
 msgid "Undo"
 msgstr ""
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:285
 #, fuzzy
 msgid "Message Archived"
 msgid_plural "Messages Archived"
@@ -307,12 +307,12 @@ msgstr[1] "Nema odabranih konverzacija."
 msgstr[2] "Nema odabranih konverzacija."
 
 #         translations.
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:289
 #, fuzzy
 msgid "Couldn't archive message"
 msgstr "%d poruka"
 
-#: src/MainWindow.vala:294
+#: src/MainWindow.vala:302
 #, fuzzy
 msgid "Message Moved"
 msgid_plural "Messages Moved"
@@ -320,13 +320,13 @@ msgstr[0] "Nema odabranih konverzacija."
 msgstr[1] "Nema odabranih konverzacija."
 msgstr[2] "Nema odabranih konverzacija."
 
-#: src/MainWindow.vala:298
+#: src/MainWindow.vala:306
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Couldn't move message"
 msgstr "Neuspješna validacija:\n"
 
-#: src/MainWindow.vala:311
+#: src/MainWindow.vala:319
 #, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
@@ -334,7 +334,7 @@ msgstr[0] "Nema odabranih konverzacija."
 msgstr[1] "Nema odabranih konverzacija."
 msgstr[2] "Nema odabranih konverzacija."
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:323
 msgid "Couldn't delete message"
 msgstr ""
 
@@ -382,29 +382,29 @@ msgstr ""
 msgid "New Signature"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:80
+#: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/ConversationList/ConversationList.vala:90
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide read conversations"
 msgstr "Dodaj oznaku konverzacija"
 
-#: src/ConversationList/ConversationList.vala:86
+#: src/ConversationList/ConversationList.vala:92
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide unstarred conversations"
 msgstr "Dodaj oznaku konverzacija"
 
-#: src/ConversationList/ConversationList.vala:103
+#: src/ConversationList/ConversationList.vala:109
 #, fuzzy
 msgid "Filter Conversations"
 msgstr "Označi konverzacije"
 
 #         translations.
-#: src/ConversationList/ConversationList.vala:126
+#: src/ConversationList/ConversationList.vala:132
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
@@ -412,56 +412,65 @@ msgid "Fetch new messages"
 msgstr "%d nova poruka"
 
 #         translations.
-#: src/ConversationList/ConversationList.vala:133
+#: src/ConversationList/ConversationList.vala:139
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages…"
 msgstr "%d nova poruka"
 
-#: src/ConversationList/ConversationList.vala:561
+#: src/ConversationList/ConversationListItem.vala:94
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Arhiva"
+
+#: src/ConversationList/ConversationListItem.vala:99
+msgid "Trash"
+msgstr "Smeće"
+
+#         translations.
+#: src/ConversationList/ConversationListItem.vala:181
+#, fuzzy
+msgid "Unread"
+msgstr "%d nepročitana"
+
+#: src/ConversationList/ConversationListItem.vala:194
+#, fuzzy
+msgid "Replied"
+msgstr "_Zamijeni"
+
+#: src/ConversationList/ConversationListItem.vala:198
+#, fuzzy
+msgid "Forwarded"
+msgstr "_Proslijedi"
+
+#: src/ConversationList/ConversationListItem.vala:218
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Pomjeri konverzacije"
 
-#: src/ConversationList/ConversationList.vala:570
+#: src/ConversationList/ConversationListItem.vala:229
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "_Označi kao nepročitano"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationListItem.vala:238
 #: src/MessageList/MessageList.vala:59
 #, fuzzy
 msgid "Mark as Read"
 msgstr "_Označi kao pročitano"
 
-#: src/ConversationList/ConversationList.vala:588
+#: src/ConversationList/ConversationListItem.vala:249
 #: src/MessageList/MessageList.vala:65
 #, fuzzy
 msgid "Star"
 msgstr "_Dodaj zvijezdu"
 
-#: src/ConversationList/ConversationList.vala:596
+#: src/ConversationList/ConversationListItem.vala:258
 #: src/MessageList/MessageList.vala:71
 #, fuzzy
 msgid "Unstar"
 msgstr "U_kloni zvijezdu"
-
-#         translations.
-#: src/ConversationList/ConversationListItem.vala:114
-#, fuzzy
-msgid "Unread"
-msgstr "%d nepročitana"
-
-#: src/ConversationList/ConversationListItem.vala:127
-#, fuzzy
-msgid "Replied"
-msgstr "_Zamijeni"
-
-#: src/ConversationList/ConversationListItem.vala:131
-#, fuzzy
-msgid "Forwarded"
-msgstr "_Proslijedi"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -535,10 +544,6 @@ msgstr ""
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "Dolazna pošta"
-
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
-msgid "Archive"
-msgstr "Arhiva"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 #, fuzzy
@@ -724,9 +729,6 @@ msgstr "_Snimi"
 
 #~ msgid "Spam"
 #~ msgstr "Spam"
-
-#~ msgid "Trash"
-#~ msgstr "Smeće"
 
 #~ msgid "Outbox"
 #~ msgstr "Odlazno sanduče"

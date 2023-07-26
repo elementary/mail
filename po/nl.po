@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 17:31+0000\n"
+"POT-Creation-Date: 2023-07-25 22:00+0000\n"
 "PO-Revision-Date: 2023-06-04 16:07+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
@@ -299,37 +299,37 @@ msgstr "Mail"
 msgid "Undo"
 msgstr "Ongedaan maken"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:285
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "Bericht gearchiveerd"
 msgstr[1] "Berichten gearchiveerd"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:289
 #, fuzzy
 #| msgid "Unstar message"
 msgid "Couldn't archive message"
 msgstr "Ster bij bericht verwijderen"
 
-#: src/MainWindow.vala:294
+#: src/MainWindow.vala:302
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "Bericht verplaatst"
 msgstr[1] "Berichten verplaatst"
 
-#: src/MainWindow.vala:298
+#: src/MainWindow.vala:306
 #, fuzzy
 #| msgid "Failed to move messages: %s"
 msgid "Couldn't move message"
 msgstr "Kon berichten niet verplaatsen: %s"
 
-#: src/MainWindow.vala:311
+#: src/MainWindow.vala:319
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Bericht verwijderd"
 msgstr[1] "Berichten verwijderd"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:323
 msgid "Couldn't delete message"
 msgstr ""
 
@@ -377,64 +377,73 @@ msgstr "De bronmap is hetzelfde als de doelmap."
 msgid "New Signature"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:80
+#: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
 msgstr "Mail doorzoeken"
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/ConversationList/ConversationList.vala:90
 msgid "Hide read conversations"
 msgstr "Gelezen gesprekken verbergen"
 
-#: src/ConversationList/ConversationList.vala:86
+#: src/ConversationList/ConversationList.vala:92
 msgid "Hide unstarred conversations"
 msgstr "Gesprekken zonder ster verbergen"
 
-#: src/ConversationList/ConversationList.vala:103
+#: src/ConversationList/ConversationList.vala:109
 msgid "Filter Conversations"
 msgstr "Gesprekken filteren"
 
-#: src/ConversationList/ConversationList.vala:126
+#: src/ConversationList/ConversationList.vala:132
 msgid "Fetch new messages"
 msgstr "Nieuwe berichten ophalen"
 
-#: src/ConversationList/ConversationList.vala:133
+#: src/ConversationList/ConversationList.vala:139
 msgid "Fetching new messages…"
 msgstr "Nieuwe berichten worden opgehaald…"
 
-#: src/ConversationList/ConversationList.vala:561
+#: src/ConversationList/ConversationListItem.vala:94
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Archief"
+
+#: src/ConversationList/ConversationListItem.vala:99
+msgid "Trash"
+msgstr "Prullenbak"
+
+#: src/ConversationList/ConversationListItem.vala:181
+msgid "Unread"
+msgstr "Ongelezen"
+
+#: src/ConversationList/ConversationListItem.vala:194
+msgid "Replied"
+msgstr "Beantwoord"
+
+#: src/ConversationList/ConversationListItem.vala:198
+msgid "Forwarded"
+msgstr "Doorgestuurd"
+
+#: src/ConversationList/ConversationListItem.vala:218
 msgid "Move To Trash"
 msgstr "Verplaatsen naar prullenbak"
 
-#: src/ConversationList/ConversationList.vala:570
+#: src/ConversationList/ConversationListItem.vala:229
 msgid "Mark As Unread"
 msgstr "Markeren als ongelezen"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationListItem.vala:238
 #: src/MessageList/MessageList.vala:59
 msgid "Mark as Read"
 msgstr "Als gelezen markeren"
 
-#: src/ConversationList/ConversationList.vala:588
+#: src/ConversationList/ConversationListItem.vala:249
 #: src/MessageList/MessageList.vala:65
 msgid "Star"
 msgstr "Ster toevoegen"
 
-#: src/ConversationList/ConversationList.vala:596
+#: src/ConversationList/ConversationListItem.vala:258
 #: src/MessageList/MessageList.vala:71
 msgid "Unstar"
 msgstr "Ster verwijderen"
-
-#: src/ConversationList/ConversationListItem.vala:114
-msgid "Unread"
-msgstr "Ongelezen"
-
-#: src/ConversationList/ConversationListItem.vala:127
-msgid "Replied"
-msgstr "Beantwoord"
-
-#: src/ConversationList/ConversationListItem.vala:131
-msgid "Forwarded"
-msgstr "Doorgestuurd"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -508,10 +517,6 @@ msgstr ""
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "Postvak IN"
-
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
-msgid "Archive"
-msgstr "Archief"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 msgid "Sent"
@@ -693,9 +698,6 @@ msgstr "Opslaan"
 
 #~ msgid "Spam"
 #~ msgstr "Spam"
-
-#~ msgid "Trash"
-#~ msgstr "Prullenbak"
 
 #~ msgid "Outbox"
 #~ msgstr "Postvak UIT"

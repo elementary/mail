@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 17:31+0000\n"
+"POT-Creation-Date: 2023-07-25 22:00+0000\n"
 "PO-Revision-Date: 2021-10-05 20:07+0000\n"
 "Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -294,7 +294,7 @@ msgstr "郵件"
 msgid "Undo"
 msgstr "復原"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:285
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -302,13 +302,13 @@ msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "訊息已被刪除"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:289
 #, fuzzy
 #| msgid "Unstar message"
 msgid "Couldn't archive message"
 msgstr "取消訊息標星"
 
-#: src/MainWindow.vala:294
+#: src/MainWindow.vala:302
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -316,18 +316,18 @@ msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "訊息已被刪除"
 
-#: src/MainWindow.vala:298
+#: src/MainWindow.vala:306
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Couldn't move message"
 msgstr "刪除草稿"
 
-#: src/MainWindow.vala:311
+#: src/MainWindow.vala:319
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "訊息已被刪除"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:323
 msgid "Couldn't delete message"
 msgstr ""
 
@@ -374,83 +374,92 @@ msgstr ""
 msgid "New Signature"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:80
+#: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
 msgstr "搜尋郵件"
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/ConversationList/ConversationList.vala:90
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide read conversations"
 msgstr "標記對話"
 
-#: src/ConversationList/ConversationList.vala:86
+#: src/ConversationList/ConversationList.vala:92
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
 msgstr "標記對話"
 
-#: src/ConversationList/ConversationList.vala:103
+#: src/ConversationList/ConversationList.vala:109
 #, fuzzy
 #| msgid "Delete Conversation"
 msgid "Filter Conversations"
 msgstr "刪除對話"
 
-#: src/ConversationList/ConversationList.vala:126
+#: src/ConversationList/ConversationList.vala:132
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d 封新訊息"
 
-#: src/ConversationList/ConversationList.vala:133
+#: src/ConversationList/ConversationList.vala:139
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages…"
 msgstr "%d 封新訊息"
 
-#: src/ConversationList/ConversationList.vala:561
+#: src/ConversationList/ConversationListItem.vala:94
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "封存"
+
+#: src/ConversationList/ConversationListItem.vala:99
+msgid "Trash"
+msgstr "垃圾桶"
+
+#: src/ConversationList/ConversationListItem.vala:181
+#, fuzzy
+msgid "Unread"
+msgstr "%d 封未讀"
+
+#: src/ConversationList/ConversationListItem.vala:194
+#, fuzzy
+msgid "Replied"
+msgstr "回覆"
+
+#: src/ConversationList/ConversationListItem.vala:198
+#, fuzzy
+msgid "Forwarded"
+msgstr "轉寄"
+
+#: src/ConversationList/ConversationListItem.vala:218
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "移動對話至垃圾桶"
 
-#: src/ConversationList/ConversationList.vala:570
+#: src/ConversationList/ConversationListItem.vala:229
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "標記為未讀"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationListItem.vala:238
 #: src/MessageList/MessageList.vala:59
 msgid "Mark as Read"
 msgstr "標記為已讀"
 
-#: src/ConversationList/ConversationList.vala:588
+#: src/ConversationList/ConversationListItem.vala:249
 #: src/MessageList/MessageList.vala:65
 msgid "Star"
 msgstr "增加星星"
 
-#: src/ConversationList/ConversationList.vala:596
+#: src/ConversationList/ConversationListItem.vala:258
 #: src/MessageList/MessageList.vala:71
 msgid "Unstar"
 msgstr "取消星星"
-
-#: src/ConversationList/ConversationListItem.vala:114
-#, fuzzy
-msgid "Unread"
-msgstr "%d 封未讀"
-
-#: src/ConversationList/ConversationListItem.vala:127
-#, fuzzy
-msgid "Replied"
-msgstr "回覆"
-
-#: src/ConversationList/ConversationListItem.vala:131
-#, fuzzy
-msgid "Forwarded"
-msgstr "轉寄"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -527,10 +536,6 @@ msgstr ""
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "收信匣"
-
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
-msgid "Archive"
-msgstr "封存"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 #, fuzzy
@@ -726,9 +731,6 @@ msgstr "儲存(_S)"
 
 #~ msgid "Spam"
 #~ msgstr "垃圾郵件"
-
-#~ msgid "Trash"
-#~ msgstr "垃圾桶"
 
 #~ msgid "Outbox"
 #~ msgstr "寄件匣"

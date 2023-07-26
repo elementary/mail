@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 17:31+0000\n"
+"POT-Creation-Date: 2023-07-25 22:00+0000\n"
 "PO-Revision-Date: 2016-08-25 14:39+0000\n"
 "Last-Translator: Nate <natejms@outlook.com>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
@@ -275,7 +275,7 @@ msgstr "Tout le Courrier"
 msgid "Undo"
 msgstr ""
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:285
 #, fuzzy
 #| msgid "Archive"
 msgid "Message Archived"
@@ -283,11 +283,11 @@ msgid_plural "Messages Archived"
 msgstr[0] "Archiver"
 msgstr[1] "Archiver"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:289
 msgid "Couldn't archive message"
 msgstr ""
 
-#: src/MainWindow.vala:294
+#: src/MainWindow.vala:302
 #, fuzzy
 #| msgid "Archive"
 msgid "Message Moved"
@@ -295,17 +295,17 @@ msgid_plural "Messages Moved"
 msgstr[0] "Archiver"
 msgstr[1] "Archiver"
 
-#: src/MainWindow.vala:298
+#: src/MainWindow.vala:306
 msgid "Couldn't move message"
 msgstr ""
 
-#: src/MainWindow.vala:311
+#: src/MainWindow.vala:319
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:323
 msgid "Couldn't delete message"
 msgstr ""
 
@@ -350,70 +350,79 @@ msgstr ""
 msgid "New Signature"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:80
+#: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/ConversationList/ConversationList.vala:90
 #, fuzzy
 #| msgid "Archive conversations (A)"
 msgid "Hide read conversations"
 msgstr "Archiver les conversations (A)"
 
-#: src/ConversationList/ConversationList.vala:86
+#: src/ConversationList/ConversationList.vala:92
 #, fuzzy
 msgid "Hide unstarred conversations"
 msgstr "Supprimer la conversation"
 
-#: src/ConversationList/ConversationList.vala:103
+#: src/ConversationList/ConversationList.vala:109
 #, fuzzy
 msgid "Filter Conversations"
 msgstr "Supprimer la conversation"
 
-#: src/ConversationList/ConversationList.vala:126
+#: src/ConversationList/ConversationList.vala:132
 msgid "Fetch new messages"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:133
+#: src/ConversationList/ConversationList.vala:139
 msgid "Fetching new messages…"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:561
+#: src/ConversationList/ConversationListItem.vala:94
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Archiver"
+
+#: src/ConversationList/ConversationListItem.vala:99
+msgid "Trash"
+msgstr "Déchets"
+
+#: src/ConversationList/ConversationListItem.vala:181
+msgid "Unread"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:194
+msgid "Replied"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:198
+msgid "Forwarded"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:218
 #, fuzzy
 msgid "Move To Trash"
 msgstr "Bouger la conversation à la poubelle (Suppr, Retour Arrière)"
 
-#: src/ConversationList/ConversationList.vala:570
+#: src/ConversationList/ConversationListItem.vala:229
 #, fuzzy
 msgid "Mark As Unread"
 msgstr "Marquer comme S_pam"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationListItem.vala:238
 #: src/MessageList/MessageList.vala:59
 #, fuzzy
 msgid "Mark as Read"
 msgstr "Marquer comme S_pam"
 
-#: src/ConversationList/ConversationList.vala:588
+#: src/ConversationList/ConversationListItem.vala:249
 #: src/MessageList/MessageList.vala:65
 msgid "Star"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:596
+#: src/ConversationList/ConversationListItem.vala:258
 #: src/MessageList/MessageList.vala:71
 msgid "Unstar"
-msgstr ""
-
-#: src/ConversationList/ConversationListItem.vala:114
-msgid "Unread"
-msgstr ""
-
-#: src/ConversationList/ConversationListItem.vala:127
-msgid "Replied"
-msgstr ""
-
-#: src/ConversationList/ConversationListItem.vala:131
-msgid "Forwarded"
 msgstr ""
 
 #: src/Dialogs/InsertLinkDialog.vala:29
@@ -484,10 +493,6 @@ msgstr ""
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "Boîte de réception"
-
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
-msgid "Archive"
-msgstr "Archiver"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 #, fuzzy
@@ -653,9 +658,6 @@ msgstr ""
 
 #~ msgid "Spam"
 #~ msgstr "Pourriel"
-
-#~ msgid "Trash"
-#~ msgstr "Déchets"
 
 #~ msgid "Outbox"
 #~ msgstr "Boîte d'envoi"

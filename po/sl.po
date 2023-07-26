@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 17:31+0000\n"
+"POT-Creation-Date: 2023-07-25 22:00+0000\n"
 "PO-Revision-Date: 2020-01-06 00:07+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/mail/mail/sl/"
@@ -312,7 +312,7 @@ msgstr "Elektronska pošta"
 msgid "Undo"
 msgstr "Razveljavi"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:285
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -323,13 +323,13 @@ msgstr[1] "Sporočila izbrisana"
 msgstr[2] "Sporočila izbrisana"
 msgstr[3] "Sporočila izbrisana"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:289
 #, fuzzy
 #| msgid "Unstar message"
 msgid "Couldn't archive message"
 msgstr "Odstrani zvezdico s sporočila"
 
-#: src/MainWindow.vala:294
+#: src/MainWindow.vala:302
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -340,13 +340,13 @@ msgstr[1] "Sporočila izbrisana"
 msgstr[2] "Sporočila izbrisana"
 msgstr[3] "Sporočila izbrisana"
 
-#: src/MainWindow.vala:298
+#: src/MainWindow.vala:306
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Couldn't move message"
 msgstr "Izbriši osnutek"
 
-#: src/MainWindow.vala:311
+#: src/MainWindow.vala:319
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Sporočilo izbrisano"
@@ -354,7 +354,7 @@ msgstr[1] "Sporočila izbrisana"
 msgstr[2] "Sporočila izbrisana"
 msgstr[3] "Sporočila izbrisana"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:323
 msgid "Couldn't delete message"
 msgstr ""
 
@@ -401,80 +401,89 @@ msgstr ""
 msgid "New Signature"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:80
+#: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
 msgstr "Išči pošto"
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/ConversationList/ConversationList.vala:90
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide read conversations"
 msgstr "Označi pogovore"
 
-#: src/ConversationList/ConversationList.vala:86
+#: src/ConversationList/ConversationList.vala:92
 #, fuzzy
 #| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
 msgstr "Označi pogovore"
 
-#: src/ConversationList/ConversationList.vala:103
+#: src/ConversationList/ConversationList.vala:109
 #, fuzzy
 #| msgid "Delete Conversation"
 msgid "Filter Conversations"
 msgstr "Izbriši pogovor"
 
-#: src/ConversationList/ConversationList.vala:126
+#: src/ConversationList/ConversationList.vala:132
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetch new messages"
 msgstr "%d novo sporočilo"
 
-#: src/ConversationList/ConversationList.vala:133
+#: src/ConversationList/ConversationList.vala:139
 #, fuzzy
 #| msgid "%d new message"
 #| msgid_plural "%d new messages"
 msgid "Fetching new messages…"
 msgstr "%d novo sporočilo"
 
-#: src/ConversationList/ConversationList.vala:561
+#: src/ConversationList/ConversationListItem.vala:94
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Arhiv"
+
+#: src/ConversationList/ConversationListItem.vala:99
+msgid "Trash"
+msgstr "Smeti"
+
+#: src/ConversationList/ConversationListItem.vala:181
+msgid "Unread"
+msgstr "Neprebrano"
+
+#: src/ConversationList/ConversationListItem.vala:194
+msgid "Replied"
+msgstr "Odgovorjeno"
+
+#: src/ConversationList/ConversationListItem.vala:198
+msgid "Forwarded"
+msgstr "Posredovano"
+
+#: src/ConversationList/ConversationListItem.vala:218
 #, fuzzy
 #| msgid "Move conversations to Trash"
 msgid "Move To Trash"
 msgstr "Premakni pogovore v smetnjak"
 
-#: src/ConversationList/ConversationList.vala:570
+#: src/ConversationList/ConversationListItem.vala:229
 #, fuzzy
 #| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Označi kot neprebrano"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationListItem.vala:238
 #: src/MessageList/MessageList.vala:59
 msgid "Mark as Read"
 msgstr "Označi kot prebrano"
 
-#: src/ConversationList/ConversationList.vala:588
+#: src/ConversationList/ConversationListItem.vala:249
 #: src/MessageList/MessageList.vala:65
 msgid "Star"
 msgstr "Dodaj zvezdico"
 
-#: src/ConversationList/ConversationList.vala:596
+#: src/ConversationList/ConversationListItem.vala:258
 #: src/MessageList/MessageList.vala:71
 msgid "Unstar"
 msgstr "Odstrani zvezdico"
-
-#: src/ConversationList/ConversationListItem.vala:114
-msgid "Unread"
-msgstr "Neprebrano"
-
-#: src/ConversationList/ConversationListItem.vala:127
-msgid "Replied"
-msgstr "Odgovorjeno"
-
-#: src/ConversationList/ConversationListItem.vala:131
-msgid "Forwarded"
-msgstr "Posredovano"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -548,10 +557,6 @@ msgstr ""
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "Prejeto"
-
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
-msgid "Archive"
-msgstr "Arhiv"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 #, fuzzy
@@ -745,9 +750,6 @@ msgstr "Shrani"
 
 #~ msgid "Spam"
 #~ msgstr "Neželena pošta"
-
-#~ msgid "Trash"
-#~ msgstr "Smeti"
 
 #~ msgid "Outbox"
 #~ msgstr "Odhodno"

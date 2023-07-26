@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 17:31+0000\n"
+"POT-Creation-Date: 2023-07-25 22:00+0000\n"
 "PO-Revision-Date: 2023-07-21 09:38+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
@@ -282,33 +282,33 @@ msgstr "Correu"
 msgid "Undo"
 msgstr "Desfés-ho"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:285
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "Missatge arxivat"
 msgstr[1] "Missatges arxivats"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:289
 msgid "Couldn't archive message"
 msgstr "No s'ha pogut arxivar el missatge."
 
-#: src/MainWindow.vala:294
+#: src/MainWindow.vala:302
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "Missatge mogut"
 msgstr[1] "Missatges moguts"
 
-#: src/MainWindow.vala:298
+#: src/MainWindow.vala:306
 msgid "Couldn't move message"
 msgstr "No s'ha pogut moure el missatge."
 
-#: src/MainWindow.vala:311
+#: src/MainWindow.vala:319
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Missatge suprimit"
 msgstr[1] "Missatges suprimits"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:323
 msgid "Couldn't delete message"
 msgstr "No s'ha pogut suprimir el missatge."
 
@@ -354,64 +354,73 @@ msgstr "La carpeta d'origen és la carpeta de destinació."
 msgid "New Signature"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:80
+#: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
 msgstr "Cerca correu"
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/ConversationList/ConversationList.vala:90
 msgid "Hide read conversations"
 msgstr "Amaga les converses llegides"
 
-#: src/ConversationList/ConversationList.vala:86
+#: src/ConversationList/ConversationList.vala:92
 msgid "Hide unstarred conversations"
 msgstr "Amaga les converses no destacades"
 
-#: src/ConversationList/ConversationList.vala:103
+#: src/ConversationList/ConversationList.vala:109
 msgid "Filter Conversations"
 msgstr "Filtra les converses"
 
-#: src/ConversationList/ConversationList.vala:126
+#: src/ConversationList/ConversationList.vala:132
 msgid "Fetch new messages"
 msgstr "Obtén missatges nous"
 
-#: src/ConversationList/ConversationList.vala:133
+#: src/ConversationList/ConversationList.vala:139
 msgid "Fetching new messages…"
 msgstr "S'obtenen missatges nous…"
 
-#: src/ConversationList/ConversationList.vala:561
+#: src/ConversationList/ConversationListItem.vala:94
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "Arxiu"
+
+#: src/ConversationList/ConversationListItem.vala:99
+msgid "Trash"
+msgstr "Paperera"
+
+#: src/ConversationList/ConversationListItem.vala:181
+msgid "Unread"
+msgstr "Sense llegir"
+
+#: src/ConversationList/ConversationListItem.vala:194
+msgid "Replied"
+msgstr "Respost"
+
+#: src/ConversationList/ConversationListItem.vala:198
+msgid "Forwarded"
+msgstr "Reenviat"
+
+#: src/ConversationList/ConversationListItem.vala:218
 msgid "Move To Trash"
 msgstr "Mou a la paperera"
 
-#: src/ConversationList/ConversationList.vala:570
+#: src/ConversationList/ConversationListItem.vala:229
 msgid "Mark As Unread"
 msgstr "Marca com a no llegit"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationListItem.vala:238
 #: src/MessageList/MessageList.vala:59
 msgid "Mark as Read"
 msgstr "Marca com a llegit"
 
-#: src/ConversationList/ConversationList.vala:588
+#: src/ConversationList/ConversationListItem.vala:249
 #: src/MessageList/MessageList.vala:65
 msgid "Star"
 msgstr "Destaca"
 
-#: src/ConversationList/ConversationList.vala:596
+#: src/ConversationList/ConversationListItem.vala:258
 #: src/MessageList/MessageList.vala:71
 msgid "Unstar"
 msgstr "No ho destaquis"
-
-#: src/ConversationList/ConversationListItem.vala:114
-msgid "Unread"
-msgstr "Sense llegir"
-
-#: src/ConversationList/ConversationListItem.vala:127
-msgid "Replied"
-msgstr "Respost"
-
-#: src/ConversationList/ConversationListItem.vala:131
-msgid "Forwarded"
-msgstr "Reenviat"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -483,10 +492,6 @@ msgstr "Ja existeix una carpeta anomenada %s."
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "Safata d'entrada"
-
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
-msgid "Archive"
-msgstr "Arxiu"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 msgid "Sent"
@@ -669,9 +674,6 @@ msgstr "Desa"
 
 #~ msgid "Spam"
 #~ msgstr "Correu brossa"
-
-#~ msgid "Trash"
-#~ msgstr "Paperera"
 
 #~ msgid "Outbox"
 #~ msgstr "Safata de sortida"

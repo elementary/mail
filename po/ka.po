@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 17:31+0000\n"
+"POT-Creation-Date: 2023-07-25 22:00+0000\n"
 "PO-Revision-Date: 2023-07-13 17:30+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/mail/mail/ka/>\n"
@@ -270,37 +270,37 @@ msgstr "ელფოსტა"
 msgid "Undo"
 msgstr "დაბრუნება"
 
-#: src/MainWindow.vala:277
+#: src/MainWindow.vala:285
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "შეტყობინება წაშლილია"
 msgstr[1] "შეტყობინება წაშლილია"
 
-#: src/MainWindow.vala:281
+#: src/MainWindow.vala:289
 #, fuzzy
 #| msgid "Unstar message"
 msgid "Couldn't archive message"
 msgstr "შეტყობინებაზე ვარსკვლავის მოხსნა"
 
-#: src/MainWindow.vala:294
+#: src/MainWindow.vala:302
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "შეტყობინება გადატანილია"
 msgstr[1] "შეტყობინება გადატანილია"
 
-#: src/MainWindow.vala:298
+#: src/MainWindow.vala:306
 #, fuzzy
 #| msgid "Failed to move messages: %s"
 msgid "Couldn't move message"
 msgstr "შეტყობინებების გადატანის შეცდომა: %s"
 
-#: src/MainWindow.vala:311
+#: src/MainWindow.vala:319
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "შეტყობინება წაშლილია"
 msgstr[1] "შეტყობინება წაშლილია"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:323
 msgid "Couldn't delete message"
 msgstr ""
 
@@ -345,64 +345,73 @@ msgstr "საწყისი საქაღალდე სამიზნე 
 msgid "New Signature"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:80
+#: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
 msgstr "ელფოსტაში ძებნა"
 
-#: src/ConversationList/ConversationList.vala:84
+#: src/ConversationList/ConversationList.vala:90
 msgid "Hide read conversations"
 msgstr "წაკითხული საუბრების დამალვა"
 
-#: src/ConversationList/ConversationList.vala:86
+#: src/ConversationList/ConversationList.vala:92
 msgid "Hide unstarred conversations"
 msgstr "უვარსკვლავო საუბრების დამალვა"
 
-#: src/ConversationList/ConversationList.vala:103
+#: src/ConversationList/ConversationList.vala:109
 msgid "Filter Conversations"
 msgstr "საუბრების გაფილტვრა"
 
-#: src/ConversationList/ConversationList.vala:126
+#: src/ConversationList/ConversationList.vala:132
 msgid "Fetch new messages"
 msgstr "ახალი შეტყობინებების გამოთხოვა"
 
-#: src/ConversationList/ConversationList.vala:133
+#: src/ConversationList/ConversationList.vala:139
 msgid "Fetching new messages…"
 msgstr "ახალი შეტყობინებების გამოთხოვა…"
 
-#: src/ConversationList/ConversationList.vala:561
+#: src/ConversationList/ConversationListItem.vala:94
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgid "Archive"
+msgstr "არქივი"
+
+#: src/ConversationList/ConversationListItem.vala:99
+msgid "Trash"
+msgstr ""
+
+#: src/ConversationList/ConversationListItem.vala:181
+msgid "Unread"
+msgstr "წაუკითხავი"
+
+#: src/ConversationList/ConversationListItem.vala:194
+msgid "Replied"
+msgstr "ნაპასუხები"
+
+#: src/ConversationList/ConversationListItem.vala:198
+msgid "Forwarded"
+msgstr "გადაგზავნილი"
+
+#: src/ConversationList/ConversationListItem.vala:218
 msgid "Move To Trash"
 msgstr "ნაგავში გადატანა"
 
-#: src/ConversationList/ConversationList.vala:570
+#: src/ConversationList/ConversationListItem.vala:229
 msgid "Mark As Unread"
 msgstr "წაუკითხავად მონიშვნა"
 
-#: src/ConversationList/ConversationList.vala:578
+#: src/ConversationList/ConversationListItem.vala:238
 #: src/MessageList/MessageList.vala:59
 msgid "Mark as Read"
 msgstr "მონიშნე როგორც წაკითხული"
 
-#: src/ConversationList/ConversationList.vala:588
+#: src/ConversationList/ConversationListItem.vala:249
 #: src/MessageList/MessageList.vala:65
 msgid "Star"
 msgstr "ვარსკვლავი"
 
-#: src/ConversationList/ConversationList.vala:596
+#: src/ConversationList/ConversationListItem.vala:258
 #: src/MessageList/MessageList.vala:71
 msgid "Unstar"
 msgstr "ვარსკვლავის მოხსნა"
-
-#: src/ConversationList/ConversationListItem.vala:114
-msgid "Unread"
-msgstr "წაუკითხავი"
-
-#: src/ConversationList/ConversationListItem.vala:127
-msgid "Replied"
-msgstr "ნაპასუხები"
-
-#: src/ConversationList/ConversationListItem.vala:131
-msgid "Forwarded"
-msgstr "გადაგზავნილი"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
@@ -474,10 +483,6 @@ msgstr ""
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
 msgstr "საფოსტო ყუთი"
-
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
-msgid "Archive"
-msgstr "არქივი"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 msgid "Sent"
