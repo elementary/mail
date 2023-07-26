@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-25 22:00+0000\n"
-"PO-Revision-Date: 2023-07-19 08:07+0000\n"
+"PO-Revision-Date: 2023-07-26 19:32+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/extra/he/>\n"
 "Language: he\n"
@@ -54,10 +54,8 @@ msgid "Multiple account support"
 msgstr "תמיכה בריבוי חשבונות"
 
 #: data/mail.metainfo.xml.in:19
-#, fuzzy
-#| msgid "Inline HTML composer that saves drafts to the server"
 msgid "Powerful HTML composer that saves drafts to the server"
-msgstr "הודעות שטרם הושלמו נשמרות אוטומטית בשרת"
+msgstr "מחבר HTML חזק במיוחד ששומר טיוטות לשרת"
 
 #: data/mail.metainfo.xml.in:20
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
@@ -75,7 +73,7 @@ msgstr "שיפורים:"
 
 #: data/mail.metainfo.xml.in:74
 msgid "Ability to create multiple signatures and set defaults per account"
-msgstr ""
+msgstr "יכולת ליצור מספר חתימות ולהגדיר ברירות מחדל לכל חשבון בנפרד"
 
 #: data/mail.metainfo.xml.in:75
 msgid "Add support for inline images in the composer"
@@ -103,7 +101,7 @@ msgstr "תוקנו תקלות במשיכת דוא״ל כשהיישום לא פו
 
 #: data/mail.metainfo.xml.in:81
 msgid "Notify the user when a calendar event is included in a message"
-msgstr ""
+msgstr "שליחת הודעה למשתמש כאשר אירוע לוח שנה מצורף להודעה"
 
 #: data/mail.metainfo.xml.in:82 data/mail.metainfo.xml.in:113
 #: data/mail.metainfo.xml.in:127 data/mail.metainfo.xml.in:148
