@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-25 22:00+0000\n"
-"PO-Revision-Date: 2023-07-17 17:55+0000\n"
+"PO-Revision-Date: 2023-07-28 12:08+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
 "Language: de\n"
@@ -80,10 +80,8 @@ msgid "Attach file"
 msgstr "Anhang hinzufügen"
 
 #: src/Composer.vala:243
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert Signature…"
-msgstr "Link einfügen"
+msgstr "Signatur einfügen …"
 
 #: src/Composer.vala:249
 msgid "Send"
@@ -222,7 +220,7 @@ msgstr "Unvorhergesehener Fehler beim Senden der Nachricht."
 
 #: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
-msgstr ""
+msgstr "Signaturen bearbeiten …"
 
 #: src/Composer.vala:903
 msgid "None"
@@ -297,10 +295,8 @@ msgstr[0] "Nachricht archiviert"
 msgstr[1] "Nachrichten archiviert"
 
 #: src/MainWindow.vala:289
-#, fuzzy
-#| msgid "Unstar message"
 msgid "Couldn't archive message"
-msgstr "Kennzeichnung der Nachricht entfernen"
+msgstr "Nachricht konnte nicht archiviert werden"
 
 #: src/MainWindow.vala:302
 msgid "Message Moved"
@@ -309,10 +305,8 @@ msgstr[0] "Nachricht verschoben"
 msgstr[1] "Nachrichten verschoben"
 
 #: src/MainWindow.vala:306
-#, fuzzy
-#| msgid "Failed to move messages: %s"
 msgid "Couldn't move message"
-msgstr "Nachrichten konnten nicht verschoben werden: %s"
+msgstr "Nachricht konnte nicht verschoben werden"
 
 #: src/MainWindow.vala:319
 msgid "Message Deleted"
@@ -322,7 +316,7 @@ msgstr[1] "Nachrichten gelöscht"
 
 #: src/MainWindow.vala:323
 msgid "Couldn't delete message"
-msgstr ""
+msgstr "Nachricht konnte nicht gelöscht werden"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -365,7 +359,7 @@ msgstr "Der Quellordner ist identisch mit dem Zielordner."
 
 #: src/Backend/Session.vala:624
 msgid "New Signature"
-msgstr ""
+msgstr "Neue Signatur"
 
 #: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
@@ -491,23 +485,16 @@ msgstr "Ordner umbenennen"
 #: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
 msgid "Couldn't rename “%s”"
-msgstr ""
+msgstr "»%s« konnte nicht umbenannt werden"
 
 #: src/FoldersView/FolderSourceItem.vala:159
-#, fuzzy
-#| msgid "Unable to rename folder “%s”: Folder names cannot contain “/”"
 msgid "Folder names cannot contain “/”"
-msgstr ""
-"Ordner »%s« kann nicht umbenannt werden: Ordnernamen dürfen kein »/« "
-"enthalten"
+msgstr "Ordnernamen dürfen kein »/« enthalten"
 
 #: src/FoldersView/FolderSourceItem.vala:188
-#, fuzzy, c-format
-#| msgid "Unable to rename folder “%s”: A folder with name “%s” already exists"
+#, c-format
 msgid "A folder named “%s” already exists"
-msgstr ""
-"Ordner »%s« kann nicht umbenannt werden: Es gibt bereits einen Ordner mit "
-"dem Namen »%s«"
+msgstr "Es gibt bereits einen Ordner mit dem Namen »%s«"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
@@ -583,13 +570,11 @@ msgstr "Mehr"
 
 #: src/MessageList/MessageListItem.vala:279
 msgid "Open in Calendar"
-msgstr ""
+msgstr "In Kalender öffnen"
 
 #: src/MessageList/MessageListItem.vala:285
-#, fuzzy
-#| msgid "This message contains remote images."
 msgid "This message contains a Calendar Event."
-msgstr "Diese Nachricht enthält externe Bilder."
+msgstr "Diese Nachricht enthält einen Termin."
 
 #: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"
