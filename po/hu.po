@@ -12,10 +12,10 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-25 22:00+0000\n"
-"PO-Revision-Date: 2023-06-19 15:07+0000\n"
+"PO-Revision-Date: 2023-07-30 13:08+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
-"Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/"
-">\n"
+"Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/>"
+"\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,10 +74,8 @@ msgid "Attach file"
 msgstr "Fájl csatolása"
 
 #: src/Composer.vala:243
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert Signature…"
-msgstr "Link beszúrása"
+msgstr "Aláírás beszúrása…"
 
 #: src/Composer.vala:249
 msgid "Send"
@@ -183,7 +181,7 @@ msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
-"Az üzenet tárgy mezője üres. A fogadó nem biztos, hogy meg tudja ítélni a "
+"A levél tárgy mezője üres. A fogadó nem biztos, hogy meg tudja ítélni a "
 "besorolását vagy fontosságát."
 
 #: src/Composer.vala:757
@@ -196,27 +194,26 @@ msgstr "Elküldés mindenképp"
 
 #: src/Composer.vala:788
 msgid "Sent message was not saved"
-msgstr "Az elküldött üzenet nem lett elmentve"
+msgstr "Az elküldött levél nem lett elmentve"
 
 #: src/Composer.vala:789
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
-"Az üzenet el lett küldve, de nem került mentésre egy másolat az Elküldött "
-"üzenetek mappába."
+"A levél el lett küldve, de nem került mentésre másolat az Elküldött mappába."
 
 #: src/Composer.vala:804
 msgid "Unable to send message"
-msgstr "Nem sikerült elküldeni az üzenetet"
+msgstr "Nem sikerült elküldeni a levelet"
 
 #: src/Composer.vala:805
 msgid "There was an unexpected error while sending your message."
-msgstr "Egy váratlan hiba merült fel az üzenet küldése közben."
+msgstr "Egy váratlan hiba merült fel a levél küldése közben."
 
 #: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
-msgstr ""
+msgstr "Aláírások szerkesztése…"
 
 #: src/Composer.vala:903
 msgid "None"
@@ -287,36 +284,32 @@ msgstr "Visszavonás"
 #: src/MainWindow.vala:285
 msgid "Message Archived"
 msgid_plural "Messages Archived"
-msgstr[0] "Üzenet archiválva"
-msgstr[1] "Üzenetek archiválva"
+msgstr[0] "Levél archiválva"
+msgstr[1] "Levelek archiválva"
 
 #: src/MainWindow.vala:289
-#, fuzzy
-#| msgid "Unstar message"
 msgid "Couldn't archive message"
-msgstr "Üzenet csillagozásának megszüntetése"
+msgstr "A levél archiválásának megszüntetése sikertelen"
 
 #: src/MainWindow.vala:302
 msgid "Message Moved"
 msgid_plural "Messages Moved"
-msgstr[0] "Üzenet áthelyezve"
-msgstr[1] "Üzenetek áthelyezve"
+msgstr[0] "Levél áthelyezve"
+msgstr[1] "Levelek áthelyezve"
 
 #: src/MainWindow.vala:306
-#, fuzzy
-#| msgid "Failed to move messages: %s"
 msgid "Couldn't move message"
-msgstr "Az üzenetek áthelyezése sikertelen: %s"
+msgstr "A levél áthelyezése sikertelen"
 
 #: src/MainWindow.vala:319
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Üzenet törölve"
-msgstr[1] "Üzenetek törölve"
+msgstr[0] "Levél törölve"
+msgstr[1] "Levelek törölve"
 
 #: src/MainWindow.vala:323
 msgid "Couldn't delete message"
-msgstr ""
+msgstr "A levél törlése sikertelen"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -343,7 +336,7 @@ msgstr "Egy váratlan hiba merült fel a szerverhez való kapcsolódás közben.
 #: src/Backend/MoveOperation.vala:65
 #, c-format
 msgid "Moving messages… (%u remaining)"
-msgstr "Üzenetek áthelyezése… (fennmaradó: %u)"
+msgstr "Levelek áthelyezése… (fennmaradó: %u)"
 
 #: src/Backend/MoveOperation.vala:98
 msgid "No Archive folder is configured."
@@ -359,7 +352,7 @@ msgstr "A forrásmappa megegyezik a célmappával."
 
 #: src/Backend/Session.vala:624
 msgid "New Signature"
-msgstr ""
+msgstr "Új aláírás"
 
 #: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
@@ -379,11 +372,11 @@ msgstr "Beszélgetések szűrése"
 
 #: src/ConversationList/ConversationList.vala:132
 msgid "Fetch new messages"
-msgstr "Új üzenetek lekérése"
+msgstr "Új levelek lekérése"
 
 #: src/ConversationList/ConversationList.vala:139
 msgid "Fetching new messages…"
-msgstr "Új üzenetek lekérése…"
+msgstr "Új levelek lekérése…"
 
 #: src/ConversationList/ConversationListItem.vala:94
 #: src/FoldersView/GroupedFolderSourceItem.vala:42
@@ -477,34 +470,32 @@ msgid "Refresh folder"
 msgstr "Mappa frissítése"
 
 #: src/FoldersView/FolderSourceItem.vala:56
-#, fuzzy
-#| msgid "Refresh folder"
 msgid "Rename folder"
-msgstr "Mappa frissítése"
+msgstr "Mappa átnevezése"
 
 #: src/FoldersView/FolderSourceItem.vala:158
 #: src/FoldersView/FolderSourceItem.vala:187
 #: src/FoldersView/FolderSourceItem.vala:205
 #, c-format
 msgid "Couldn't rename “%s”"
-msgstr ""
+msgstr "Nem sikerült átnevezni ezt: \"%s\""
 
 #: src/FoldersView/FolderSourceItem.vala:159
 msgid "Folder names cannot contain “/”"
-msgstr ""
+msgstr "A mappanevek nem tartalmazhatnak perjelet (\"/\")"
 
 #: src/FoldersView/FolderSourceItem.vala:188
 #, c-format
 msgid "A folder named “%s” already exists"
-msgstr ""
+msgstr "Egy \"%s\" nevű mappa már létezik"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
-msgstr "Beérkezett üzenetek"
+msgstr "Beérkező levelek"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 msgid "Sent"
-msgstr "Elküldve"
+msgstr "Elküldött"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
@@ -544,7 +535,7 @@ msgstr "Beszélgetések áthelyezése a kukába"
 
 #: src/MessageList/MessageList.vala:124
 msgid "No Message Selected"
-msgstr "Nincs üzenet kiválasztva"
+msgstr "Nincs levél kiválasztva"
 
 #. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
 #: src/MessageList/MessageListItem.vala:189
@@ -555,12 +546,12 @@ msgstr "%s %s"
 #: src/MessageList/MessageListItem.vala:197
 #: src/MessageList/MessageListItem.vala:402
 msgid "Unstar message"
-msgstr "Üzenet csillagozásának megszüntetése"
+msgstr "Levél csillagozásának megszüntetése"
 
 #: src/MessageList/MessageListItem.vala:200
 #: src/MessageList/MessageListItem.vala:398
 msgid "Star message"
-msgstr "Üzenet csillagozása"
+msgstr "Levél csillagozása"
 
 #: src/MessageList/MessageListItem.vala:220
 msgid "Print…"
@@ -572,13 +563,11 @@ msgstr "Továbbiak"
 
 #: src/MessageList/MessageListItem.vala:279
 msgid "Open in Calendar"
-msgstr ""
+msgstr "Megnyitás a Naptárban"
 
 #: src/MessageList/MessageListItem.vala:285
-#, fuzzy
-#| msgid "This message contains remote images."
 msgid "This message contains a Calendar Event."
-msgstr "Ez a levél távoli képeket tartalmaz."
+msgstr "Ez a levél egy naptáreseményt tartalmaz."
 
 #: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"
@@ -594,7 +583,7 @@ msgstr "Ez a levél távoli képeket tartalmaz."
 
 #: src/MessageList/MessageListItem.vala:340
 msgid "This message contains one or more attachments"
-msgstr "Ennek az üzenetnek több csatolmánya is van"
+msgstr "Ennek a levélnek több csatolmánya is van"
 
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:424
