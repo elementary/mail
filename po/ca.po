@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-25 22:00+0000\n"
-"PO-Revision-Date: 2023-07-21 09:38+0000\n"
+"PO-Revision-Date: 2023-07-28 12:08+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -73,10 +73,8 @@ msgid "Attach file"
 msgstr "Adjunta-hi un fitxer"
 
 #: src/Composer.vala:243
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert Signature…"
-msgstr "Insereix un enllaç"
+msgstr "Insereix-hi una signatura…"
 
 #: src/Composer.vala:249
 msgid "Send"
@@ -214,7 +212,7 @@ msgstr "Hi ha hagut un error inesperat a l'hora de d'enviar el missatge."
 
 #: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
-msgstr ""
+msgstr "Edita les signatures…"
 
 #: src/Composer.vala:903
 msgid "None"
@@ -352,7 +350,7 @@ msgstr "La carpeta d'origen és la carpeta de destinació."
 
 #: src/Backend/Session.vala:624
 msgid "New Signature"
-msgstr ""
+msgstr "Signatura nova"
 
 #: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"

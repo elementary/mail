@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-25 22:00+0000\n"
-"PO-Revision-Date: 2023-07-19 08:07+0000\n"
-"Last-Translator: Andi Chandler <andi@gowling.com>\n"
+"PO-Revision-Date: 2023-07-26 19:32+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/extra/en_GB/>\n"
 "Language: en_GB\n"
@@ -55,10 +55,8 @@ msgid "Multiple account support"
 msgstr "Multiple account support"
 
 #: data/mail.metainfo.xml.in:19
-#, fuzzy
-#| msgid "Inline HTML composer that saves drafts to the server"
 msgid "Powerful HTML composer that saves drafts to the server"
-msgstr "Inline HTML composer that saves drafts to the server"
+msgstr "Powerful HTML composer that saves drafts to the server"
 
 #: data/mail.metainfo.xml.in:20
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
@@ -76,7 +74,7 @@ msgstr "Improvements:"
 
 #: data/mail.metainfo.xml.in:74
 msgid "Ability to create multiple signatures and set defaults per account"
-msgstr ""
+msgstr "Ability to create multiple signatures and set defaults per account"
 
 #: data/mail.metainfo.xml.in:75
 msgid "Add support for inline images in the composer"
@@ -104,7 +102,7 @@ msgstr "Fix issues with fetching e-mail when Mail is not autostarted"
 
 #: data/mail.metainfo.xml.in:81
 msgid "Notify the user when a calendar event is included in a message"
-msgstr ""
+msgstr "Notify the user when a calendar event is included in a message"
 
 #: data/mail.metainfo.xml.in:82 data/mail.metainfo.xml.in:113
 #: data/mail.metainfo.xml.in:127 data/mail.metainfo.xml.in:148
