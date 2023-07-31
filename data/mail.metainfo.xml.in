@@ -16,7 +16,7 @@
       <li>Mail grouped into conversations, not a tree of threads</li>
       <li>As-you-type searching</li>
       <li>Multiple account support</li>
-      <li>Inline HTML composer that saves drafts to the server</li>
+      <li>Powerful HTML composer that saves drafts to the server</li>
       <li>Works with Gmail, Yahoo! Mail, and other popular IMAP servers</li>
     </ul>
   </description>
@@ -71,17 +71,21 @@
       <description>
         <p>Improvements:</p>
         <ul>
+          <li>Ability to create multiple signatures and set defaults per account</li>
           <li>Add support for inline images in the composer</li>
           <li>Add support for renaming folders</li>
           <li>Move settings menu to the mailboxes pane</li>
           <li>Use the FileChooser portal</li>
           <li>Improve network availability handling</li>
           <li>Fix issues with fetching e-mail when Mail is not autostarted</li>
+          <li>Notify the user when a calendar event is included in a message</li>
           <li>Updated translations</li>
         </ul>
       </description>
       <issues>
+        <issue url="https://github.com/elementary/mail/issues/551">Support for Multi-touch track pad gestures</issue>
         <issue url="https://github.com/elementary/mail/issues/567">Cannot undo Archive</issue>
+        <issue url="https://github.com/elementary/mail/issues/616">Email account signature</issue>
         <issue url="https://github.com/elementary/mail/issues/657">Move mails to trash folder instead of setting delete flag</issue>
         <issue url="https://github.com/elementary/mail/issues/729">Include Attachments when Forwarding an E-Mail</issue>
         <issue url="https://github.com/elementary/mail/issues/774">Missing icons</issue>
@@ -91,6 +95,7 @@
         <issue url="https://github.com/elementary/mail/issues/896">Performance issues when trashing lots of conversations</issue>
         <issue url="https://github.com/elementary/mail/issues/903">Show special folders at the top level of the account sidebar tree</issue>
         <issue url="https://github.com/elementary/mail/issues/904">Search move menu</issue>
+        <issue url="https://github.com/elementary/mail/issues/913">Send button off window if quoted message text is long</issue>
       </issues>
     </release>
 

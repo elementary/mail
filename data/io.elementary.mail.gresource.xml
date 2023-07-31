@@ -2,9 +2,19 @@
 <gresources>
   <gresource prefix="/io/elementary/mail">
     <file alias="application.css" compressed="true">application.css</file>
+    <file alias="blank-editor-template.html" compressed="true">blank-editor-template.html</file>
     <file alias="blank-message-template.html" compressed="true">blank-message-template.html</file>
+    <file alias="ConversationListItem.css" compressed="true">ConversationListItem.css</file>
   </gresource>
   <gresource prefix="/io/elementary/mail/icons">
+    <file alias="scalable/places/mail-archive-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-archive/symbolic.svg</file>
+    <file alias="16x16/places/mail-archive.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-archive/16.svg</file>
+    <file alias="16x16@2/places/mail-archive.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-archive/16.svg</file>
+    <file alias="24x24/actions/mail-archive.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-archive/24.svg</file>
+    <file alias="24x24@2/actions/mail-archive.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-archive/24.svg</file>
+    <file alias="48x48/places/mail-archive.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-archive/48.svg</file>
+    <file alias="48x48@2/places/mail-archive.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-archive/48.svg</file>
+
     <file alias="16x16/places/mail-drafts.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-drafts/16.svg</file>
     <file alias="16x16@2/places/mail-drafts.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-drafts/16.svg</file>
     <file alias="48x48/places/mail-drafts.svg" compressed="true" preprocess="xml-stripblanks">icons/mail-drafts/48.svg</file>

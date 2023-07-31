@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-20 11:55+0000\n"
-"PO-Revision-Date: 2023-07-19 08:07+0000\n"
+"POT-Creation-Date: 2023-07-25 22:00+0000\n"
+"PO-Revision-Date: 2023-07-28 12:08+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/extra/ca/>\n"
 "Language: ca\n"
@@ -55,8 +55,8 @@ msgid "Multiple account support"
 msgstr "Suport per a comptes diversos"
 
 #: data/mail.metainfo.xml.in:19
-msgid "Inline HTML composer that saves drafts to the server"
-msgstr "Compositor incorporat d'HTML que desa els esborranys al servidor"
+msgid "Powerful HTML composer that saves drafts to the server"
+msgstr "Compositor potent d'HTML que desa els esborranys al servidor"
 
 #: data/mail.metainfo.xml.in:20
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
@@ -66,45 +66,57 @@ msgstr "Funciona amb Gmail, Yahoo! i altres servidors d'IMAP populars."
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:99
-#: data/mail.metainfo.xml.in:120 data/mail.metainfo.xml.in:139
-#: data/mail.metainfo.xml.in:161 data/mail.metainfo.xml.in:175
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:104
+#: data/mail.metainfo.xml.in:125 data/mail.metainfo.xml.in:144
+#: data/mail.metainfo.xml.in:166 data/mail.metainfo.xml.in:180
 msgid "Improvements:"
 msgstr "Millores:"
 
 #: data/mail.metainfo.xml.in:74
+msgid "Ability to create multiple signatures and set defaults per account"
+msgstr ""
+"Possibilitat de crear diverses signatures i establir valors predeterminats "
+"per compte"
+
+#: data/mail.metainfo.xml.in:75
 msgid "Add support for inline images in the composer"
 msgstr "Addició de suport per a imatges en línia al compositor"
 
-#: data/mail.metainfo.xml.in:75
+#: data/mail.metainfo.xml.in:76
 msgid "Add support for renaming folders"
 msgstr "Addició de suport per canviar el nom de carpetes"
 
-#: data/mail.metainfo.xml.in:76
+#: data/mail.metainfo.xml.in:77
 msgid "Move settings menu to the mailboxes pane"
 msgstr "Menú de configuració al plafó de bústies de correu"
 
-#: data/mail.metainfo.xml.in:77
+#: data/mail.metainfo.xml.in:78
 msgid "Use the FileChooser portal"
 msgstr "Ús del portal FileChooser"
 
-#: data/mail.metainfo.xml.in:78
+#: data/mail.metainfo.xml.in:79
 msgid "Improve network availability handling"
 msgstr "Millorar la gestió de la disponibilitat de la xarxa"
 
-#: data/mail.metainfo.xml.in:79
+#: data/mail.metainfo.xml.in:80
 msgid "Fix issues with fetching e-mail when Mail is not autostarted"
 msgstr ""
 "Solució de problemes amb l'obtenció del correu electrònic quan el correu no "
 "s'inicia automàticament"
 
-#: data/mail.metainfo.xml.in:80 data/mail.metainfo.xml.in:108
-#: data/mail.metainfo.xml.in:122 data/mail.metainfo.xml.in:143
-#: data/mail.metainfo.xml.in:164 data/mail.metainfo.xml.in:177
+#: data/mail.metainfo.xml.in:81
+msgid "Notify the user when a calendar event is included in a message"
+msgstr ""
+"Notifica a l'usuari quan s'inclogui un esdeveniment del calendari en un "
+"missatge"
+
+#: data/mail.metainfo.xml.in:82 data/mail.metainfo.xml.in:113
+#: data/mail.metainfo.xml.in:127 data/mail.metainfo.xml.in:148
+#: data/mail.metainfo.xml.in:169 data/mail.metainfo.xml.in:182
 msgid "Updated translations"
 msgstr "Traduccions actualitzades"
 
-#: data/mail.metainfo.xml.in:101
+#: data/mail.metainfo.xml.in:106
 msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
@@ -112,7 +124,7 @@ msgstr ""
 "La vista de la benvinguda s'elimina quan s'afegeix un compte als comptes en "
 "línia sense haver de reiniciar el Mail"
 
-#: data/mail.metainfo.xml.in:102
+#: data/mail.metainfo.xml.in:107
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
@@ -120,95 +132,95 @@ msgstr ""
 "El compositor sempre es presenta com una finestra nova i inclou més dreceres "
 "de teclat"
 
-#: data/mail.metainfo.xml.in:103
+#: data/mail.metainfo.xml.in:108
 msgid "The search filter menu now appears next to the search bar"
 msgstr "El menú del filtre de cerca ara apareix al costat de la barra de cerca"
 
-#: data/mail.metainfo.xml.in:104
+#: data/mail.metainfo.xml.in:109
 msgid "HeaderBars appear to float above content when scrolled"
 msgstr ""
 "Les barres de capçalera semblen flotar per sobre del contingut quan es "
 "desplacen"
 
-#: data/mail.metainfo.xml.in:105
+#: data/mail.metainfo.xml.in:110
 msgid "Fix a potential crash with empty messages"
 msgstr "Solució d'un error potencial amb missatges buits"
 
-#: data/mail.metainfo.xml.in:106
+#: data/mail.metainfo.xml.in:111
 msgid "Stop resizing from cutting off the message list"
 msgstr "Deixa de canviar la mida per tal de tallar la llista de missatges"
 
-#: data/mail.metainfo.xml.in:107
+#: data/mail.metainfo.xml.in:112
 msgid "Performance improvements"
 msgstr "Millores de rendiment"
 
-#: data/mail.metainfo.xml.in:133 data/mail.metainfo.xml.in:155
-#: data/mail.metainfo.xml.in:171
+#: data/mail.metainfo.xml.in:138 data/mail.metainfo.xml.in:160
+#: data/mail.metainfo.xml.in:176
 msgid "Fixes:"
 msgstr "Correccions:"
 
-#: data/mail.metainfo.xml.in:135
+#: data/mail.metainfo.xml.in:140
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
 "S'ha solucionat un error que provocava que els comptes de correu es "
 "carreguessin diverses vegades."
 
-#: data/mail.metainfo.xml.in:136
+#: data/mail.metainfo.xml.in:141
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr ""
 "S'ha solucionat un error que provocava que el Correu es bloquegés de tant en "
 "tant."
 
-#: data/mail.metainfo.xml.in:137
+#: data/mail.metainfo.xml.in:142
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "Es mostra el destinatari a la carpeta Enviats en lloc del remitent."
 
-#: data/mail.metainfo.xml.in:141
+#: data/mail.metainfo.xml.in:146
 msgid "Updated app icon"
 msgstr "Icona de l'aplicació actualitzada"
 
-#: data/mail.metainfo.xml.in:142
+#: data/mail.metainfo.xml.in:147
 msgid "New design"
 msgstr "Disseny nou"
 
-#: data/mail.metainfo.xml.in:150
+#: data/mail.metainfo.xml.in:155
 msgid "New features:"
 msgstr "Característiques noves:"
 
-#: data/mail.metainfo.xml.in:152
+#: data/mail.metainfo.xml.in:157
 msgid "Use message subject for composer window title"
 msgstr "Usa l'assumpte del missatge per al títol de la finestra de redacció."
 
-#: data/mail.metainfo.xml.in:153
+#: data/mail.metainfo.xml.in:158
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
 "S'ha afegit el suport per a la safata d'entrada unificada per als comptes de "
 "Microsoft 365."
 
-#: data/mail.metainfo.xml.in:157
+#: data/mail.metainfo.xml.in:162
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
 "Correcció d'un error que provocava que la supervisió de la safata d'entrada "
 "en segon pla es bloquegés"
 
-#: data/mail.metainfo.xml.in:158
+#: data/mail.metainfo.xml.in:163
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr ""
 "S'han eliminat les adreces de remitents duplicades en redactar un missatge."
 
-#: data/mail.metainfo.xml.in:159
+#: data/mail.metainfo.xml.in:164
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr "Correcció d'un bloqueig en arxivar l'últim missatge d'una carpeta"
 
-#: data/mail.metainfo.xml.in:163
+#: data/mail.metainfo.xml.in:168
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "S'ha canviat el nom d'Office 365 a Microsoft 365 per seguir el canvi de "
 "marca de Microsoft."
 
-#: data/mail.metainfo.xml.in:173
+#: data/mail.metainfo.xml.in:178
 msgid "Fix a potential crash while loading messages"
 msgstr "Correcció d'una fallada potencial en carregar missatges"
 

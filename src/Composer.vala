@@ -13,6 +13,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
     private const string ACTION_ADD_ATTACHMENT= "add-attachment";
     private const string ACTION_INSERT_IMAGE = "insert-image";
+    private const string ACTION_INSERT_SIGNATURE = "insert-signature";
     private const string ACTION_DISCARD = "discard";
     private const string ACTION_SEND = "send";
 
@@ -45,6 +46,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     private const ActionEntry[] ACTION_ENTRIES = {
         {ACTION_ADD_ATTACHMENT, on_add_attachment },
         {ACTION_INSERT_IMAGE, on_insert_image, },
+        {ACTION_INSERT_SIGNATURE, on_insert_signature, "s" },
         {ACTION_DISCARD, on_discard },
         {ACTION_SEND, on_send }
     };
@@ -231,6 +233,16 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             )
         };
 
+        var signature_menu = new Menu ();
+
+        var signature_button = new Gtk.MenuButton () {
+            image = new Gtk.Image.from_icon_name ("document-edit-symbolic", Gtk.IconSize.MENU),
+            menu_model = signature_menu,
+            use_popover = false,
+            direction = UP,
+            tooltip_text = _("Insert Signature…")
+        };
+
         var send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU) {
             action_name = ACTION_PREFIX + ACTION_SEND,
             always_show_image = true,
@@ -253,6 +265,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         action_bar.pack_start (discard);
         action_bar.pack_start (attach);
+        action_bar.pack_start (signature_button);
         action_bar.pack_end (send);
 
         var view_overlay = new Gtk.Overlay ();
@@ -289,6 +302,10 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         contact_manager.setup_entry (to_val);
         contact_manager.setup_entry (cc_val);
         contact_manager.setup_entry (bcc_val);
+
+        from_combo.changed.connect (() => {
+            set_default_signature_for_sender ();
+        });
 
         load_from_combobox ();
         from_revealer.reveal_child = from_combo.model.iter_n_children (null) > 1;
@@ -346,6 +363,10 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         if (to != null) {
             to_val.text = to;
         }
+
+        unowned var session = Mail.Backend.Session.get_default ();
+        session.signature_changed.connect (() => populate_signature_menu (signature_menu));
+        populate_signature_menu (signature_menu);
 
         if (mailto_query != null) {
             var result = new Gee.HashMultiMap<string, string> ();
@@ -883,6 +904,48 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         }
 
         from_combo.active = 0;
+    }
+
+    private void populate_signature_menu (Menu menu) {
+        var manage_section = new Menu ();
+        var manage_item = new MenuItem (_("Edit Signatures…"), Application.ACTION_PREFIX + Application.ACTION_MANAGE_SIGNATURES);
+        manage_section.append_item (manage_item);
+
+        var selection_section = new Menu ();
+        selection_section.append (_("None"), Action.print_detailed_name (ACTION_PREFIX + ACTION_INSERT_SIGNATURE, "none"));
+
+        unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+        foreach (var signature_source in session.get_all_signature_sources ()) {
+            selection_section.append (
+                signature_source.display_name,
+                Action.print_detailed_name (ACTION_PREFIX + ACTION_INSERT_SIGNATURE, signature_source.uid)
+            );
+        }
+
+        menu.remove_all ();
+        menu.append_section (null, manage_section);
+        menu.append_section (null, selection_section);
+    }
+
+    private void on_insert_signature (Action action, Variant? parameter) {
+        unowned var signature_uid = parameter.get_string ();
+
+        if (signature_uid == "none") {
+            web_view.set_content_of_element ("#elementary-message-signature", "");
+            return;
+        }
+
+        unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+        session.get_signature_for_uid.begin (signature_uid, (obj, res) => {
+            var signature = session.get_signature_for_uid.end (res);
+            web_view.set_content_of_element ("#elementary-message-signature", signature);
+        });
+    }
+
+    private void set_default_signature_for_sender () {
+        var sender = from_combo.get_active_text ();
+        unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+        activate_action (ACTION_INSERT_SIGNATURE, session.get_signature_uid_for_sender (sender));
     }
 
     private class Attachment : Gtk.FlowBoxChild {
