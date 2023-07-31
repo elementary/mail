@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-25 22:00+0000\n"
-"PO-Revision-Date: 2023-07-23 07:07+0000\n"
+"PO-Revision-Date: 2023-08-01 17:46+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
 "Language: pl\n"
@@ -83,10 +83,8 @@ msgid "Attach file"
 msgstr "Dołącz plik"
 
 #: src/Composer.vala:243
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert Signature…"
-msgstr "Wstaw odnośnik"
+msgstr "Wstaw podpis…"
 
 #: src/Composer.vala:249
 msgid "Send"
@@ -225,7 +223,7 @@ msgstr "Wystąpił nieoczekiwany błąd podczas wysyłania twojej wiadomości."
 
 #: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
-msgstr ""
+msgstr "Edytuje podpis…"
 
 #: src/Composer.vala:903
 msgid "None"
@@ -367,7 +365,7 @@ msgstr "Folder źródłowy jest taki sam jak folder docelowy."
 
 #: src/Backend/Session.vala:624
 msgid "New Signature"
-msgstr ""
+msgstr "Nowy podpis"
 
 #: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
