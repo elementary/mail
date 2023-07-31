@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-25 22:00+0000\n"
-"PO-Revision-Date: 2023-07-23 07:07+0000\n"
+"PO-Revision-Date: 2023-07-30 13:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -53,21 +53,19 @@ msgstr "Bcc:"
 
 #: src/Composer.vala:198
 msgid "Insert Image"
-msgstr "画像を挿入します"
+msgstr "画像を挿入"
 
 #: src/Composer.vala:224
 msgid "Delete draft"
-msgstr "下書きを削除します"
+msgstr "下書きを削除"
 
 #: src/Composer.vala:232
 msgid "Attach file"
-msgstr "ファイルを添付します"
+msgstr "ファイルを添付"
 
 #: src/Composer.vala:243
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert Signature…"
-msgstr "リンクを挿入します"
+msgstr "署名を挿入…"
 
 #: src/Composer.vala:249
 msgid "Send"
@@ -204,7 +202,7 @@ msgstr "メッセージの送信中に予期しないエラーが発生しまし
 
 #: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
-msgstr ""
+msgstr "署名を編集…"
 
 #: src/Composer.vala:903
 msgid "None"
@@ -236,11 +234,11 @@ msgstr "取り消し線"
 
 #: src/EditorToolbar.vala:100
 msgid "Remove formatting"
-msgstr "書式を解除します"
+msgstr "書式を解除"
 
 #: src/EditorToolbar.vala:108 src/Dialogs/InsertLinkDialog.vala:68
 msgid "Insert Link"
-msgstr "リンクを挿入します"
+msgstr "リンクを挿入"
 
 #: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
@@ -336,7 +334,7 @@ msgstr "移動元フォルダーが移動先です。"
 
 #: src/Backend/Session.vala:624
 msgid "New Signature"
-msgstr ""
+msgstr "新しい署名"
 
 #: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
@@ -424,7 +422,7 @@ msgstr "Web サイト名を入力"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
-msgstr "新しいメッセージを作成します"
+msgstr "新しいメッセージを作成"
 
 #: src/FoldersView/FoldersListView.vala:59
 msgid "Always Show Remote Images"
@@ -511,11 +509,11 @@ msgstr "メッセージの移動先を選択…"
 
 #: src/MessageList/MessageList.vala:101
 msgid "Move conversations to archive"
-msgstr "スレッドをアーカイブします"
+msgstr "スレッドをアーカイブ"
 
 #: src/MessageList/MessageList.vala:109
 msgid "Move conversations to Trash"
-msgstr "スレッドをゴミ箱に移動します"
+msgstr "スレッドをゴミ箱に移動"
 
 #: src/MessageList/MessageList.vala:124
 msgid "No Message Selected"
