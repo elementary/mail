@@ -311,6 +311,8 @@ public class Mail.ConversationList : Gtk.Box {
         }
 
         list_store.items_changed (0, 0, list_store.get_n_items ());
+
+        refresh_folder.begin (cancellable);
     }
 
     public async void refresh_folder (GLib.Cancellable? cancellable = null) {
