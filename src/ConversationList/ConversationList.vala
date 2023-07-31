@@ -247,6 +247,9 @@ public class Mail.ConversationList : Gtk.Box {
             cancellable.cancel ();
         }
 
+        var cancellable = new GLib.Cancellable ();
+        this.cancellable = cancellable;
+
         conversation_focused (null);
         conversation_selected (null);
 
@@ -260,8 +263,6 @@ public class Mail.ConversationList : Gtk.Box {
 
                     list_store.remove_all ();
                     list_store.items_changed (0, previous_items, 0);
-
-                    cancellable = new GLib.Cancellable ();
 
                     lock (this.folder_full_name_per_account) {
                         foreach (var folder_full_name_entry in this.folder_full_name_per_account) {
@@ -311,21 +312,28 @@ public class Mail.ConversationList : Gtk.Box {
         }
 
         list_store.items_changed (0, 0, list_store.get_n_items ());
-
         refresh_folder.begin (cancellable);
     }
 
     public async void refresh_folder (GLib.Cancellable? cancellable = null) {
+        if (cancellable != null && cancellable.is_cancelled ()) {
+            return;
+        }
+
         refresh_stack.set_visible_child_name ("spinner");
         lock (folders) {
             foreach (var folder in folders.values) {
                 try {
                     yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
                 } catch (Error e) {
-                    warning ("Error fetching messages for '%s' from '%s': %s",
-                    folder.display_name,
-                    folder.parent_store.display_name,
-                    e.message);
+                    if (e is IOError.CANCELLED) {
+                        break;
+                    } else {
+                        warning ("Error fetching messages for '%s' from '%s': %s",
+                        folder.display_name,
+                        folder.parent_store.display_name,
+                        e.message);
+                    }
                 }
             }
         }
