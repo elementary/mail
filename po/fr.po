@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 22:00+0000\n"
+"POT-Creation-Date: 2023-08-01 17:46+0000\n"
 "PO-Revision-Date: 2023-08-01 17:46+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
@@ -478,26 +478,26 @@ msgstr ""
 "Ouvrez manuellement les paramètres du système ou installez Evolution pour "
 "configurer des comptes en ligne."
 
-#: src/FoldersView/FolderSourceItem.vala:51
+#: src/FoldersView/FolderSourceItem.vala:52
 msgid "Refresh folder"
 msgstr "Actualiser le dossier"
 
-#: src/FoldersView/FolderSourceItem.vala:56
+#: src/FoldersView/FolderSourceItem.vala:57
 msgid "Rename folder"
 msgstr "Renommer le dossier"
 
-#: src/FoldersView/FolderSourceItem.vala:158
-#: src/FoldersView/FolderSourceItem.vala:187
-#: src/FoldersView/FolderSourceItem.vala:205
+#: src/FoldersView/FolderSourceItem.vala:161
+#: src/FoldersView/FolderSourceItem.vala:190
+#: src/FoldersView/FolderSourceItem.vala:208
 #, c-format
 msgid "Couldn't rename “%s”"
 msgstr "Impossible de renommer « %s »"
 
-#: src/FoldersView/FolderSourceItem.vala:159
+#: src/FoldersView/FolderSourceItem.vala:162
 msgid "Folder names cannot contain “/”"
 msgstr "Les noms de dossier ne peuvent pas contenir « / »"
 
-#: src/FoldersView/FolderSourceItem.vala:188
+#: src/FoldersView/FolderSourceItem.vala:191
 #, c-format
 msgid "A folder named “%s” already exists"
 msgstr "Un dossier nommé « %s » existe déjà"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 22:00+0000\n"
+"POT-Creation-Date: 2023-08-01 17:46+0000\n"
 "PO-Revision-Date: 2015-12-01 22:33+0000\n"
 "Last-Translator: Félix Brezo <felixbrezo@gmail.com>\n"
 "Language-Team: Basque <librezale@librezale.org>\n"
@@ -508,26 +508,26 @@ msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:51
+#: src/FoldersView/FolderSourceItem.vala:52
 msgid "Refresh folder"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:56
+#: src/FoldersView/FolderSourceItem.vala:57
 msgid "Rename folder"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:158
-#: src/FoldersView/FolderSourceItem.vala:187
-#: src/FoldersView/FolderSourceItem.vala:205
+#: src/FoldersView/FolderSourceItem.vala:161
+#: src/FoldersView/FolderSourceItem.vala:190
+#: src/FoldersView/FolderSourceItem.vala:208
 #, c-format
 msgid "Couldn't rename “%s”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:159
+#: src/FoldersView/FolderSourceItem.vala:162
 msgid "Folder names cannot contain “/”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:188
+#: src/FoldersView/FolderSourceItem.vala:191
 #, c-format
 msgid "A folder named “%s” already exists"
 msgstr ""
