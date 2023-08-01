@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 22:00+0000\n"
+"POT-Creation-Date: 2023-08-01 17:46+0000\n"
 "PO-Revision-Date: 2021-10-05 20:07+0000\n"
 "Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -507,28 +507,28 @@ msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:51
+#: src/FoldersView/FolderSourceItem.vala:52
 msgid "Refresh folder"
 msgstr "重新整理"
 
-#: src/FoldersView/FolderSourceItem.vala:56
+#: src/FoldersView/FolderSourceItem.vala:57
 #, fuzzy
 #| msgid "Refresh folder"
 msgid "Rename folder"
 msgstr "重新整理"
 
-#: src/FoldersView/FolderSourceItem.vala:158
-#: src/FoldersView/FolderSourceItem.vala:187
-#: src/FoldersView/FolderSourceItem.vala:205
+#: src/FoldersView/FolderSourceItem.vala:161
+#: src/FoldersView/FolderSourceItem.vala:190
+#: src/FoldersView/FolderSourceItem.vala:208
 #, c-format
 msgid "Couldn't rename “%s”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:159
+#: src/FoldersView/FolderSourceItem.vala:162
 msgid "Folder names cannot contain “/”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:188
+#: src/FoldersView/FolderSourceItem.vala:191
 #, c-format
 msgid "A folder named “%s” already exists"
 msgstr ""

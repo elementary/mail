@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 22:00+0000\n"
+"POT-Creation-Date: 2023-08-01 17:46+0000\n"
 "PO-Revision-Date: 2023-07-26 19:32+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
@@ -464,26 +464,26 @@ msgstr ""
 "יש לפתוח את הגדרות המערכת ידנית או להתקין את Evolution כדי להקים חשבונות "
 "מקוונים."
 
-#: src/FoldersView/FolderSourceItem.vala:51
+#: src/FoldersView/FolderSourceItem.vala:52
 msgid "Refresh folder"
 msgstr "רענון התיקייה"
 
-#: src/FoldersView/FolderSourceItem.vala:56
+#: src/FoldersView/FolderSourceItem.vala:57
 msgid "Rename folder"
 msgstr "שינוי שם התיקייה"
 
-#: src/FoldersView/FolderSourceItem.vala:158
-#: src/FoldersView/FolderSourceItem.vala:187
-#: src/FoldersView/FolderSourceItem.vala:205
+#: src/FoldersView/FolderSourceItem.vala:161
+#: src/FoldersView/FolderSourceItem.vala:190
+#: src/FoldersView/FolderSourceItem.vala:208
 #, c-format
 msgid "Couldn't rename “%s”"
 msgstr "לא ניתן לשנות ל־„%s” את השם"
 
-#: src/FoldersView/FolderSourceItem.vala:159
+#: src/FoldersView/FolderSourceItem.vala:162
 msgid "Folder names cannot contain “/”"
 msgstr "שמות תיקיות לא יכולים להכיל „/”"
 
-#: src/FoldersView/FolderSourceItem.vala:188
+#: src/FoldersView/FolderSourceItem.vala:191
 #, c-format
 msgid "A folder named “%s” already exists"
 msgstr "כבר קיימת תיקייה בשם „%s”"
