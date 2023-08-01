@@ -66,19 +66,19 @@ public class Mail.GroupedFolderSourceItem : Mail.SourceList.Item {
         connect_cancellable.cancel ();
     }
 
-    public Gee.Map<Mail.Backend.Account, string?> get_folder_full_name_per_account () {
-        var folder_full_name_per_account = new Gee.HashMap<Mail.Backend.Account, string?> ();
+    public Gee.Map<Mail.Backend.Account, Camel.FolderInfo?> get_folder_info_per_account () {
+        var folder_info_per_account = new Gee.HashMap<Mail.Backend.Account, Camel.FolderInfo?> ();
         lock (account_folderinfo) {
             foreach (var entry in account_folderinfo) {
                 if (entry.value != null) {
-                    folder_full_name_per_account.set (entry.key, entry.value.full_name);
+                    folder_info_per_account.set (entry.key, entry.value);
                 } else {
-                    folder_full_name_per_account.set (entry.key, null);
+                    folder_info_per_account.set (entry.key, null);
                 }
             }
         }
 
-        return folder_full_name_per_account.read_only_view;
+        return folder_info_per_account.read_only_view;
     }
 
     private void add_account (Mail.Backend.Account account) {

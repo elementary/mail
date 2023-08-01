@@ -23,6 +23,7 @@
 public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
     public signal void start_edit ();
 
+    public Camel.FolderInfo folder_info { get; private set; }
     public string full_name { get; private set; }
     public bool is_special_folder { get; private set; default = true; }
     public int pos { get; private set; }
@@ -65,6 +66,8 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
     }
 
     public void update_infos (Camel.FolderInfo folderinfo) {
+        folder_info = folderinfo;
+
         name = old_name = folderinfo.display_name;
         full_name = folderinfo.full_name;
         if (folderinfo.unread > 0) {
