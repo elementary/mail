@@ -21,7 +21,7 @@
  */
 
 public class Mail.FoldersListView : Gtk.Grid {
-    public signal void folder_selected (Gee.Map<Backend.Account, string?> folder_full_name_per_account);
+    public signal void folder_selected (Gee.Map<Backend.Account, Camel.FolderInfo?> folder_info_per_account);
 
     public Hdy.HeaderBar header_bar { get; private set; }
 
@@ -121,15 +121,15 @@ public class Mail.FoldersListView : Gtk.Grid {
 
             if (item is FolderSourceItem) {
                 unowned FolderSourceItem folder_item = (FolderSourceItem) item;
-                var folder_name_per_account = new Gee.HashMap<Mail.Backend.Account, string?> ();
-                folder_name_per_account.set (folder_item.account, folder_item.full_name);
-                folder_selected (folder_name_per_account.read_only_view);
+                var folder_info_per_account = new Gee.HashMap<Mail.Backend.Account, Camel.FolderInfo?> ();
+                folder_info_per_account.set (folder_item.account, folder_item.folder_info);
+                folder_selected (folder_info_per_account.read_only_view);
 
                 settings.set ("selected-folder", "(ss)", folder_item.account.service.uid, folder_item.full_name);
 
             } else if (item is GroupedFolderSourceItem) {
                 unowned GroupedFolderSourceItem grouped_folder_item = (GroupedFolderSourceItem) item;
-                folder_selected (grouped_folder_item.get_folder_full_name_per_account ());
+                folder_selected (grouped_folder_item.get_folder_info_per_account ());
 
                 settings.set ("selected-folder", "(ss)", "GROUPED", grouped_folder_item.name);
             }
@@ -186,16 +186,16 @@ public class Mail.FoldersListView : Gtk.Grid {
                 if (folder_item.full_name == selected_folder_name) {
                     source_list.selected = child;
 
-                    var folder_name_per_account = new Gee.HashMap<Mail.Backend.Account, string?> ();
-                    folder_name_per_account.set (folder_item.account, folder_item.full_name);
-                    folder_selected (folder_name_per_account.read_only_view);
+                    var folder_info_per_account = new Gee.HashMap<Mail.Backend.Account, Camel.FolderInfo?> ();
+                    folder_info_per_account.set (folder_item.account, folder_item.folder_info);
+                    folder_selected (folder_info_per_account.read_only_view);
                     return true;
                 }
             } else if (child is GroupedFolderSourceItem) {
                 unowned GroupedFolderSourceItem grouped_folder_item = (GroupedFolderSourceItem) child;
                 if (grouped_folder_item.name == selected_folder_name) {
                     source_list.selected = child;
-                    folder_selected (grouped_folder_item.get_folder_full_name_per_account ());
+                    folder_selected (grouped_folder_item.get_folder_info_per_account ());
                     return true;
                 }
             }
