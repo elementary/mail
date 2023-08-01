@@ -325,15 +325,13 @@ public class Mail.ConversationList : Gtk.Box {
             foreach (var folder in folders.values) {
                 try {
                     yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
-                } catch (Error e) {
-                    if (e is IOError.CANCELLED) {
+                } catch (IOError.CANCELLED e) {
                         break;
-                    } else {
-                        warning ("Error fetching messages for '%s' from '%s': %s",
-                        folder.display_name,
-                        folder.parent_store.display_name,
-                        e.message);
-                    }
+                } catch (Error e) {
+                    warning ("Error fetching messages for '%s' from '%s': %s",
+                    folder.display_name,
+                    folder.parent_store.display_name,
+                    e.message);
                 }
             }
         }
