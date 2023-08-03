@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-03 14:22+0000\n"
-"PO-Revision-Date: 2023-08-01 17:46+0000\n"
-"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"PO-Revision-Date: 2023-08-03 18:03+0000\n"
+"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -463,29 +463,27 @@ msgid "Example Website"
 msgstr "Site Web"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
-#, fuzzy
-#| msgid "New Signature"
 msgid "No Signatures"
-msgstr "Nouvelle signature"
+msgstr "Aucune signature"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
 msgid "Add signatures using the button in the toolbar below"
 msgstr ""
+"Ajoutez des signatures en utilisant le bouton dans la barre d'outils ci-"
+"dessous"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
-#, fuzzy
-#| msgid "New Signature"
 msgid "Create Signature"
-msgstr "Nouvelle signature"
+msgstr "Créer une signature"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
 msgid "Title"
-msgstr ""
+msgstr "Titre"
 
 #. Work around a styling issue
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
 msgid "For example “Work” or “Personal”"
-msgstr ""
+msgstr "Par exemple « Travail » ou « Personnel »"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
 msgid "Delete"
@@ -493,18 +491,16 @@ msgstr "Supprimer"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
 msgid "Set Default For…"
-msgstr ""
+msgstr "Définir par défaut pour…"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
-#, fuzzy
-#| msgid "New Signature"
 msgid "Signature"
-msgstr "Nouvelle signature"
+msgstr "Signature"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
 #, c-format
 msgid "'%s' deleted"
-msgstr ""
+msgstr "\"%s\" supprimé"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -558,22 +554,16 @@ msgid "A folder named “%s” already exists"
 msgstr "Un dossier nommé « %s » existe déjà"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
-#, fuzzy
-#| msgid "Inbox"
 msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Boîte de réception"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:42
-#, fuzzy
-#| msgid "Archive"
 msgctxt "Archive Folder"
 msgid "Archive"
 msgstr "Archives"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent"
 msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "Envoyés"
@@ -706,11 +696,11 @@ msgstr "Enregistrer"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:22
 msgid "No mailboxes found"
-msgstr ""
+msgstr "Aucune boîte-mail n'a été trouvée"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
-msgstr ""
+msgstr "Essayez de modifier la recherche"
 
 #~ msgid "Reply to All"
 #~ msgstr "Répondre à tous"
