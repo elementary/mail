@@ -10,9 +10,14 @@ src/Backend/Account.vala
 src/Backend/MoveOperation.vala
 src/Backend/Session.vala
 src/Backend/ContactManager.vala
+src/ConversationList/ConversationItemModel.vala
 src/ConversationList/ConversationList.vala
 src/ConversationList/ConversationListItem.vala
+src/ConversationList/ConversationListStore.vala
 src/Dialogs/InsertLinkDialog.vala
+src/Dialogs/SignatureDialog/Signature.vala
+src/Dialogs/SignatureDialog/SignatureDialog.vala
+src/FoldersView/AccountSavedState.vala
 src/FoldersView/AccountSourceItem.vala
 src/FoldersView/FoldersListView.vala
 src/FoldersView/FolderSourceItem.vala
@@ -21,6 +26,11 @@ src/FoldersView/SessionSourceItem.vala
 src/MessageList/MessageList.vala
 src/MessageList/MessageListItem.vala
 src/MessageList/AttachmentButton.vala
+src/MessageList/FolderPopover/FolderRow.vala
+src/MessageList/FolderPopover/FolderPopover.vala
 src/SourceList/CellRendererBadge.vala
 src/SourceList/CellRendererExpander.vala
 src/SourceList/SourceList.vala
+src/VirtualizingListBox/VirtualizingListBoxRow.vala
+src/VirtualizingListBox/VirtualizingListBoxModel.vala
+src/VirtualizingListBox/VirtualizingListBox.vala
