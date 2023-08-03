@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-03 12:11+0000\n"
-"PO-Revision-Date: 2023-07-26 19:32+0000\n"
+"PO-Revision-Date: 2023-08-03 14:22+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/mail/en_GB/>\n"
@@ -449,29 +449,25 @@ msgid "Example Website"
 msgstr "Example Website"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
-#, fuzzy
-#| msgid "New Signature"
 msgid "No Signatures"
-msgstr "New Signature"
+msgstr "No Signatures"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
 msgid "Add signatures using the button in the toolbar below"
-msgstr ""
+msgstr "Add signatures using the button in the toolbar below"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
-#, fuzzy
-#| msgid "New Signature"
 msgid "Create Signature"
-msgstr "New Signature"
+msgstr "Create Signature"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
 msgid "Title"
-msgstr ""
+msgstr "Title"
 
 #. Work around a styling issue
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
 msgid "For example “Work” or “Personal”"
-msgstr ""
+msgstr "For example “Work” or “Personal”"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
 msgid "Delete"
@@ -479,18 +475,16 @@ msgstr "Delete"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
 msgid "Set Default For…"
-msgstr ""
+msgstr "Set Default For…"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
-#, fuzzy
-#| msgid "New Signature"
 msgid "Signature"
-msgstr "New Signature"
+msgstr "Signature"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
 #, c-format
 msgid "'%s' deleted"
-msgstr ""
+msgstr "'%s' deleted"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -678,11 +672,11 @@ msgstr "Save"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:22
 msgid "No mailboxes found"
-msgstr ""
+msgstr "No mailboxes found"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
-msgstr ""
+msgstr "Try changing search terms"
 
 #, c-format
 #~ msgid "Unable to rename folder “%s”': %s"
