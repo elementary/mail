@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-01 17:46+0000\n"
-"PO-Revision-Date: 2023-07-13 17:30+0000\n"
+"PO-Revision-Date: 2023-08-03 12:11+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/mail/mail/ka/>\n"
 "Language: ka\n"
@@ -60,10 +60,8 @@ msgid "Attach file"
 msgstr "ფაილის მიმაგრება"
 
 #: src/Composer.vala:243
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert Signature…"
-msgstr "ბმულის დამატება"
+msgstr "ხელმოწერის ჩასმა…"
 
 #: src/Composer.vala:249
 msgid "Send"
@@ -202,11 +200,11 @@ msgstr "თქვენი შეტყობინების გაგზა�
 
 #: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
-msgstr ""
+msgstr "ხელმოწერების ჩასწორება…"
 
 #: src/Composer.vala:903
 msgid "None"
-msgstr ""
+msgstr "არც ერთი"
 
 #: src/Composer.vala:1092
 msgid "Unable to save draft"
@@ -277,10 +275,8 @@ msgstr[0] "შეტყობინება წაშლილია"
 msgstr[1] "შეტყობინება წაშლილია"
 
 #: src/MainWindow.vala:289
-#, fuzzy
-#| msgid "Unstar message"
 msgid "Couldn't archive message"
-msgstr "შეტყობინებაზე ვარსკვლავის მოხსნა"
+msgstr "შეტყობინებბის დაარქივება შეუძლებელია"
 
 #: src/MainWindow.vala:302
 msgid "Message Moved"
@@ -289,10 +285,8 @@ msgstr[0] "შეტყობინება გადატანილია"
 msgstr[1] "შეტყობინება გადატანილია"
 
 #: src/MainWindow.vala:306
-#, fuzzy
-#| msgid "Failed to move messages: %s"
 msgid "Couldn't move message"
-msgstr "შეტყობინებების გადატანის შეცდომა: %s"
+msgstr "შეტყობინების გადატანა შეუძლებელია"
 
 #: src/MainWindow.vala:319
 msgid "Message Deleted"
@@ -302,7 +296,7 @@ msgstr[1] "შეტყობინება წაშლილია"
 
 #: src/MainWindow.vala:323
 msgid "Couldn't delete message"
-msgstr ""
+msgstr "შეტყობინების წაშლა შეუძლებელია"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -343,7 +337,7 @@ msgstr "საწყისი საქაღალდე სამიზნე 
 
 #: src/Backend/Session.vala:624
 msgid "New Signature"
-msgstr ""
+msgstr "ახალი ხელმოწერა"
 
 #: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
@@ -376,7 +370,7 @@ msgstr "არქივი"
 
 #: src/ConversationList/ConversationListItem.vala:99
 msgid "Trash"
-msgstr ""
+msgstr "ნაგვის ყუთი"
 
 #: src/ConversationList/ConversationListItem.vala:181
 msgid "Unread"
@@ -459,26 +453,24 @@ msgid "Refresh folder"
 msgstr "საქაღალდის განახლება"
 
 #: src/FoldersView/FolderSourceItem.vala:57
-#, fuzzy
-#| msgid "Refresh folder"
 msgid "Rename folder"
-msgstr "საქაღალდის განახლება"
+msgstr "საქაღალდის სახელის გადარქმევა"
 
 #: src/FoldersView/FolderSourceItem.vala:161
 #: src/FoldersView/FolderSourceItem.vala:190
 #: src/FoldersView/FolderSourceItem.vala:208
 #, c-format
 msgid "Couldn't rename “%s”"
-msgstr ""
+msgstr "\"%s\"-ის სახელის გადარქმევა შეუძლებელია"
 
 #: src/FoldersView/FolderSourceItem.vala:162
 msgid "Folder names cannot contain “/”"
-msgstr ""
+msgstr "საქაღალდის სახელი არ შეიძლება, \"/\"-ს შეიცავდეს"
 
 #: src/FoldersView/FolderSourceItem.vala:191
 #, c-format
 msgid "A folder named “%s” already exists"
-msgstr ""
+msgstr "საქაღალდე სახელით \"%s\" უკვე არსებობს"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgid "Inbox"
@@ -554,13 +546,11 @@ msgstr "მეტი"
 
 #: src/MessageList/MessageListItem.vala:279
 msgid "Open in Calendar"
-msgstr ""
+msgstr "კალენდარში გახსნა"
 
 #: src/MessageList/MessageListItem.vala:285
-#, fuzzy
-#| msgid "This message contains remote images."
 msgid "This message contains a Calendar Event."
-msgstr "ეს შეტყობინება დაშორებულ სურათებს შეიცავს."
+msgstr "ეს შეტყობინება კალენდრის მოვლენას შეიცავს."
 
 #: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"
