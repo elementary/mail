@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-03 12:11+0000\n"
+"POT-Creation-Date: 2023-08-03 14:22+0000\n"
 "PO-Revision-Date: 2023-07-25 22:00+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
@@ -402,7 +402,6 @@ msgid "Fetching new messages…"
 msgstr "Получение новых сообщений…"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
 msgid "Archive"
 msgstr "Архив"
 
@@ -557,10 +556,23 @@ msgid "A folder named “%s” already exists"
 msgstr "Папка с названием «%s» уже существует"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
+#, fuzzy
+#| msgid "Inbox"
+msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Входящие"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+#, fuzzy
+#| msgid "Archive"
+msgctxt "Archive Folder"
+msgid "Archive"
+msgstr "Архив"
+
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent"
+msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "Отправленные"
 

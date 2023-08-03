@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-03 12:11+0000\n"
+"POT-Creation-Date: 2023-08-03 14:22+0000\n"
 "PO-Revision-Date: 2020-02-23 14:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/mail/mail/szl/"
@@ -427,7 +427,6 @@ msgid "Fetching new messages…"
 msgstr "Napisz nowo wiadōmość"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
 msgid "Archive"
 msgstr ""
 
@@ -590,10 +589,20 @@ msgid "A folder named “%s” already exists"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr ""
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+#, fuzzy
+#| msgid "Message Deleted"
+#| msgid_plural "Messages Deleted"
+msgctxt "Archive Folder"
+msgid "Archive"
+msgstr "Wiadōmość skasowano"
+
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
+msgctxt "Sent Folder"
 msgid "Sent"
 msgstr ""
 

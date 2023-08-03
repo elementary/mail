@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-03 12:11+0000\n"
+"POT-Creation-Date: 2023-08-03 14:22+0000\n"
 "PO-Revision-Date: 2023-02-04 10:25+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/mail/"
@@ -403,7 +403,6 @@ msgid "Fetching new messages…"
 msgstr "Hentar nye meldingar…"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
 msgid "Archive"
 msgstr "Arkiv"
 
@@ -562,10 +561,23 @@ msgid "A folder named “%s” already exists"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
+#, fuzzy
+#| msgid "Inbox"
+msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Innboks"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+#, fuzzy
+#| msgid "Archive"
+msgctxt "Archive Folder"
+msgid "Archive"
+msgstr "Arkiv"
+
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent"
+msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "Sendt"
 

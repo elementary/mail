@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-03 12:11+0000\n"
+"POT-Creation-Date: 2023-08-03 14:22+0000\n"
 "PO-Revision-Date: 2017-01-27 17:54+0000\n"
 "Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: www.gnome.gr\n"
@@ -429,7 +429,6 @@ msgid "Fetching new messages…"
 msgstr "%d νέο μήνυμα"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
 msgid "Archive"
 msgstr "Αρχειοθέτηση"
 
@@ -589,12 +588,23 @@ msgid "A folder named “%s” already exists"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
+#, fuzzy
+#| msgid "Inbox"
+msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Εισερχόμενα"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+#, fuzzy
+#| msgid "Archive"
+msgctxt "Archive Folder"
+msgid "Archive"
+msgstr "Αρχειοθέτηση"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 #, fuzzy
 #| msgid "Sent Mail"
+msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "Απεσταλμένα"
 

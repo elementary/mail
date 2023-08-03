@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-03 12:11+0000\n"
+"POT-Creation-Date: 2023-08-03 14:22+0000\n"
 "PO-Revision-Date: 2017-04-15 20:37+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: km (generated) <https://l10n.elementary.io/projects/mail/mail/"
@@ -398,7 +398,6 @@ msgid "Fetching new messages…"
 msgstr "%d សារ​ថ្មី"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
 #, fuzzy
 #| msgid "_Archive"
 msgid "Archive"
@@ -554,12 +553,23 @@ msgid "A folder named “%s” already exists"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
+#, fuzzy
+#| msgid "Inbox"
+msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "ប្រអប់​ទទួល"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+#, fuzzy
+#| msgid "_Archive"
+msgctxt "Archive Folder"
+msgid "Archive"
+msgstr "_ទុក​ក្នុង​ប័ណ្ណសារ"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 #, fuzzy
 #| msgid "Sent Mail"
+msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "អ៊ីមែលផ្ញើ​ហើយ"
 

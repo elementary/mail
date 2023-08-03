@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-03 12:11+0000\n"
+"POT-Creation-Date: 2023-08-03 14:22+0000\n"
 "PO-Revision-Date: 2016-03-07 18:31+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Burmese <my@li.org>\n"
@@ -372,7 +372,6 @@ msgid "Fetching new messages…"
 msgstr ""
 
 #: src/ConversationList/ConversationListItem.vala:94
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
 msgid "Archive"
 msgstr ""
 
@@ -519,10 +518,17 @@ msgid "A folder named “%s” already exists"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr ""
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgctxt "Archive Folder"
+msgid "Archive"
+msgstr ""
+
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
+msgctxt "Sent Folder"
 msgid "Sent"
 msgstr ""
 
