@@ -35,15 +35,15 @@ public class Mail.GroupedFolderSourceItem : Mail.SourceList.Item {
 
         switch (folder_type & Camel.FOLDER_TYPE_MASK) {
             case Camel.FolderInfoFlags.TYPE_INBOX:
-                name = _("Inbox");
+                name = C_("Inbox Folder", "Inbox");
                 icon = new ThemedIcon ("mail-inbox");
                 break;
             case Camel.FolderInfoFlags.TYPE_ARCHIVE:
-                name = _("Archive");
+                name = C_("Archive Folder", "Archive");
                 icon = new ThemedIcon ("mail-archive");
                 break;
             case Camel.FolderInfoFlags.TYPE_SENT:
-                name = _("Sent");
+                name = C_("Sent Folder", "Sent");
                 icon = new ThemedIcon ("mail-sent");
                 break;
             default:
