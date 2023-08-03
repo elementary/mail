@@ -444,7 +444,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         } catch (Error e) {
             var print_error_dialog = new Granite.MessageDialog.with_image_from_icon_name (
                 _("Unable to print email"),
-                _(""),
+                "",
                 "printer"
             ) {
                 badge_icon = new ThemedIcon ("dialog-error"),

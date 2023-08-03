@@ -325,7 +325,7 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
         signature_list.invalidate_filter ();
         signature_list.select_row (signature_list.get_row_at_index (index));
 
-        toast.title = _("'%s' deleted".printf (signature.title));
+        toast.title = _("'%s' deleted").printf (signature.title);
         toast.send_notification ();
     }
 }

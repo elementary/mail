@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-01 17:46+0000\n"
+"POT-Creation-Date: 2023-08-03 14:22+0000\n"
 "PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/mail/mail/lt/"
@@ -309,7 +309,7 @@ msgstr[2] "Visada rodyti nuo siuntėjo"
 msgid "Mail"
 msgstr "Paštas"
 
-#: src/MainWindow.vala:123
+#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Atšaukti"
 
@@ -399,6 +399,18 @@ msgstr ""
 msgid "New Signature"
 msgstr ""
 
+#: src/ConversationList/ConversationItemModel.vala:74
+#: src/ConversationList/ConversationItemModel.vala:112
+msgid ", "
+msgstr ", "
+
+#: src/ConversationList/ConversationItemModel.vala:77
+#: src/ConversationList/ConversationItemModel.vala:115
+#: src/ConversationList/ConversationItemModel.vala:123
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Unknown"
+msgstr "Nežinoma"
+
 #: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
 msgstr "Ieškoti pašte"
@@ -436,7 +448,6 @@ msgid "Fetching new messages…"
 msgstr "%d naujas laiškas"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
 msgid "Archive"
 msgstr "Archyvas"
 
@@ -499,6 +510,50 @@ msgstr "Nuorodos tekstas:"
 msgid "Example Website"
 msgstr "Pavyzdinė svetainė"
 
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
+#, fuzzy
+#| msgid "Insert Link"
+msgid "No Signatures"
+msgstr "Įterpti nuorodą"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
+msgid "Add signatures using the button in the toolbar below"
+msgstr ""
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
+#, fuzzy
+#| msgid "Insert Link"
+msgid "Create Signature"
+msgstr "Įterpti nuorodą"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
+msgid "Title"
+msgstr ""
+
+#. Work around a styling issue
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
+msgid "For example “Work” or “Personal”"
+msgstr ""
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
+msgid "Delete"
+msgstr "Ištrinti"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
+msgid "Set Default For…"
+msgstr ""
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
+#, fuzzy
+#| msgid "Insert Link"
+msgid "Signature"
+msgstr "Įterpti nuorodą"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr ""
+
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
 msgstr "Rašyti naują laišką"
@@ -553,12 +608,23 @@ msgid "A folder named “%s” already exists"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
+#, fuzzy
+#| msgid "Inbox"
+msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Gautieji"
+
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+#, fuzzy
+#| msgid "Archive"
+msgctxt "Archive Folder"
+msgid "Archive"
+msgstr "Archyvas"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
 #, fuzzy
 #| msgid "Sent Mail"
+msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "Išsiųstieji"
 
@@ -697,13 +763,17 @@ msgstr "Atverti"
 msgid "Save As…"
 msgstr "Įrašyti kaip…"
 
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Unknown"
-msgstr "Nežinoma"
-
 #: src/MessageList/AttachmentButton.vala:138
 msgid "Save"
 msgstr "Įrašyti"
+
+#: src/MessageList/FolderPopover/FolderPopover.vala:22
+msgid "No mailboxes found"
+msgstr ""
+
+#: src/MessageList/FolderPopover/FolderPopover.vala:26
+msgid "Try changing search terms"
+msgstr ""
 
 #~ msgid "Reply to All"
 #~ msgstr "Atsakyti visiems"
@@ -1116,9 +1186,6 @@ msgstr "Įrašyti"
 
 #~ msgid "Error emptying %s"
 #~ msgstr "Klaida išvalant %s"
-
-#~ msgid "Delete"
-#~ msgstr "Ištrinti"
 
 #~ msgid "Undo archive (Ctrl+Z)"
 #~ msgstr "Atšaukti archyvavimą (Ctrl+Z (Vald+Z))"
@@ -2220,9 +2287,6 @@ msgstr "Įrašyti"
 
 #~ msgid "Authenticate"
 #~ msgstr "Nustatyti tapatybę"
-
-#~ msgid ", "
-#~ msgstr ", "
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "Perbrauktas (Ctrl+% (Vald+%))"
