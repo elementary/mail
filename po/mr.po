@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-01 17:46+0000\n"
+"POT-Creation-Date: 2023-08-03 12:11+0000\n"
 "PO-Revision-Date: 2021-03-21 10:03+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/mail/mail/mr/>\n"
@@ -286,7 +286,7 @@ msgstr[1] "या प्रेषकांकडून येणारे ने
 msgid "Mail"
 msgstr "मेल"
 
-#: src/MainWindow.vala:123
+#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "पूर्ववत करा"
 
@@ -372,6 +372,18 @@ msgstr ""
 #: src/Backend/Session.vala:624
 msgid "New Signature"
 msgstr ""
+
+#: src/ConversationList/ConversationItemModel.vala:74
+#: src/ConversationList/ConversationItemModel.vala:112
+msgid ", "
+msgstr ""
+
+#: src/ConversationList/ConversationItemModel.vala:77
+#: src/ConversationList/ConversationItemModel.vala:115
+#: src/ConversationList/ConversationItemModel.vala:123
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Unknown"
+msgstr "अज्ञात"
 
 #: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
@@ -470,6 +482,52 @@ msgstr "दुवा मजकूर:"
 #: src/Dialogs/InsertLinkDialog.vala:45
 msgid "Example Website"
 msgstr "उदाहरण वेबसाइट"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
+#, fuzzy
+#| msgid "Insert Link"
+msgid "No Signatures"
+msgstr "दुवा टाका"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
+msgid "Add signatures using the button in the toolbar below"
+msgstr ""
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
+#, fuzzy
+#| msgid "Insert Link"
+msgid "Create Signature"
+msgstr "दुवा टाका"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
+msgid "Title"
+msgstr ""
+
+#. Work around a styling issue
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
+msgid "For example “Work” or “Personal”"
+msgstr ""
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete"
+msgstr "लिहून ठेवलेला मसुदा हटवा"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
+msgid "Set Default For…"
+msgstr ""
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
+#, fuzzy
+#| msgid "Insert Link"
+msgid "Signature"
+msgstr "दुवा टाका"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr ""
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -660,13 +718,17 @@ msgstr "उघडा"
 msgid "Save As…"
 msgstr "म्हणून जतन करा…"
 
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Unknown"
-msgstr "अज्ञात"
-
 #: src/MessageList/AttachmentButton.vala:138
 msgid "Save"
 msgstr "जतन करा"
+
+#: src/MessageList/FolderPopover/FolderPopover.vala:22
+msgid "No mailboxes found"
+msgstr ""
+
+#: src/MessageList/FolderPopover/FolderPopover.vala:26
+msgid "Try changing search terms"
+msgstr ""
 
 #~ msgid "Reply to All"
 #~ msgstr "सर्वांना उत्तर द्या"

@@ -11,11 +11,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-01 17:46+0000\n"
+"POT-Creation-Date: 2023-08-03 12:11+0000\n"
 "PO-Revision-Date: 2023-08-03 12:11+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
-"Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/>"
-"\n"
+"Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/"
+">\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -277,7 +277,7 @@ msgstr[1] "%s %u feladótól"
 msgid "Mail"
 msgstr "E-mail"
 
-#: src/MainWindow.vala:123
+#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Visszavonás"
 
@@ -353,6 +353,18 @@ msgstr "A forrásmappa megegyezik a célmappával."
 #: src/Backend/Session.vala:624
 msgid "New Signature"
 msgstr "Új aláírás"
+
+#: src/ConversationList/ConversationItemModel.vala:74
+#: src/ConversationList/ConversationItemModel.vala:112
+msgid ", "
+msgstr ""
+
+#: src/ConversationList/ConversationItemModel.vala:77
+#: src/ConversationList/ConversationItemModel.vala:115
+#: src/ConversationList/ConversationItemModel.vala:123
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Unknown"
+msgstr "Ismeretlen"
 
 #: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
@@ -437,6 +449,52 @@ msgstr "Link szövege:"
 #: src/Dialogs/InsertLinkDialog.vala:45
 msgid "Example Website"
 msgstr "Példaoldal"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
+#, fuzzy
+#| msgid "New Signature"
+msgid "No Signatures"
+msgstr "Új aláírás"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
+msgid "Add signatures using the button in the toolbar below"
+msgstr ""
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
+#, fuzzy
+#| msgid "New Signature"
+msgid "Create Signature"
+msgstr "Új aláírás"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
+msgid "Title"
+msgstr ""
+
+#. Work around a styling issue
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
+msgid "For example “Work” or “Personal”"
+msgstr ""
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete"
+msgstr "Piszkozat törlése"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
+msgid "Set Default For…"
+msgstr ""
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
+#, fuzzy
+#| msgid "New Signature"
+msgid "Signature"
+msgstr "Új aláírás"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr ""
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -619,13 +677,17 @@ msgstr "Megnyitás"
 msgid "Save As…"
 msgstr "Mentés másként…"
 
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Unknown"
-msgstr "Ismeretlen"
-
 #: src/MessageList/AttachmentButton.vala:138
 msgid "Save"
 msgstr "Mentés"
+
+#: src/MessageList/FolderPopover/FolderPopover.vala:22
+msgid "No mailboxes found"
+msgstr ""
+
+#: src/MessageList/FolderPopover/FolderPopover.vala:26
+msgid "Try changing search terms"
+msgstr ""
 
 #~ msgid "Reply to All"
 #~ msgstr "Válasz mindenkinek"
