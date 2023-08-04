@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-03 14:22+0000\n"
-"PO-Revision-Date: 2023-07-30 13:08+0000\n"
+"PO-Revision-Date: 2023-08-04 14:24+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -432,29 +432,25 @@ msgid "Example Website"
 msgstr "Web サイト名を入力"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
-#, fuzzy
-#| msgid "New Signature"
 msgid "No Signatures"
-msgstr "新しい署名"
+msgstr "署名がありません"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
 msgid "Add signatures using the button in the toolbar below"
-msgstr ""
+msgstr "以下のツールバー内のボタンを使って、署名を追加してください"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
-#, fuzzy
-#| msgid "New Signature"
 msgid "Create Signature"
-msgstr "新しい署名"
+msgstr "署名を作成"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
 msgid "Title"
-msgstr ""
+msgstr "タイトル"
 
 #. Work around a styling issue
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
 msgid "For example “Work” or “Personal”"
-msgstr ""
+msgstr "“仕事用” や “個人用” など"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
 msgid "Delete"
@@ -462,18 +458,16 @@ msgstr "削除する"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
 msgid "Set Default For…"
-msgstr ""
+msgstr "デフォルトに設定…"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
-#, fuzzy
-#| msgid "New Signature"
 msgid "Signature"
-msgstr "新しい署名"
+msgstr "署名"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
 #, c-format
 msgid "'%s' deleted"
-msgstr ""
+msgstr "'%s' を削除しました"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -527,22 +521,16 @@ msgid "A folder named “%s” already exists"
 msgstr "“%s” というフォルダーはすでに存在します"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
-#, fuzzy
-#| msgid "Inbox"
 msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "受信トレイ"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:42
-#, fuzzy
-#| msgid "Archive"
 msgctxt "Archive Folder"
 msgid "Archive"
 msgstr "アーカイブ"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent"
 msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "送信済み"
@@ -675,11 +663,11 @@ msgstr "保存"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:22
 msgid "No mailboxes found"
-msgstr ""
+msgstr "メールボックスが見つかりません"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
-msgstr ""
+msgstr "検索用語を変更してみてください"
 
 #, c-format
 #~ msgid "Unable to rename folder “%s”': %s"
