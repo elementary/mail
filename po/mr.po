@@ -1,8 +1,7 @@
-#: src/MessageList/MessageListItem.vala:447
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-03 14:22+0000\n"
+"POT-Creation-Date: 2023-08-04 14:24+0000\n"
 "PO-Revision-Date: 2021-03-21 10:03+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/mail/mail/mr/>\n"
@@ -470,10 +469,6 @@ msgstr "अतारांकित करा"
 msgid "URL:"
 msgstr "URL:"
 
-#: src/Dialogs/InsertLinkDialog.vala:36
-msgid "https://example.com"
-msgstr "https://example.com"
-
 #: src/Dialogs/InsertLinkDialog.vala:39
 msgid "Link Text:"
 msgstr "दुवा मजकूर:"
@@ -738,6 +733,9 @@ msgstr ""
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
 msgstr ""
+
+#~ msgid "https://example.com"
+#~ msgstr "https://example.com"
 
 #~ msgid "Reply to All"
 #~ msgstr "सर्वांना उत्तर द्या"

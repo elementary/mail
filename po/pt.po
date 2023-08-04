@@ -9,12 +9,11 @@
 # Sérgio Marques <smarquespt@gmail.com>, 2012-2013
 # Pedro Albuquerque <palbuquerque73@gmail.com>, 2015.
 #
-#: src/MessageList/MessageListItem.vala:447
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-03 14:22+0000\n"
+"POT-Creation-Date: 2023-08-04 14:24+0000\n"
 "PO-Revision-Date: 2023-04-14 17:57+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/"
@@ -461,10 +460,6 @@ msgstr "Remover favorito"
 msgid "URL:"
 msgstr "URL:"
 
-#: src/Dialogs/InsertLinkDialog.vala:36
-msgid "https://example.com"
-msgstr "https://exemplo.com"
-
 #: src/Dialogs/InsertLinkDialog.vala:39
 msgid "Link Text:"
 msgstr "Texto de ligação:"
@@ -729,6 +724,9 @@ msgstr ""
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
 msgstr ""
+
+#~ msgid "https://example.com"
+#~ msgstr "https://exemplo.com"
 
 #~ msgid "Reply to All"
 #~ msgstr "Responder a todos"

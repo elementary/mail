@@ -6,12 +6,11 @@
 # Translators:
 # Humaidan Mohammed <contact@humaidan.tk>, 2013
 # Mohamedation <mohamedation@gmail.com>, 2012
-#: src/MessageList/MessageListItem.vala:447
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-03 14:22+0000\n"
+"POT-Creation-Date: 2023-08-04 14:24+0000\n"
 "PO-Revision-Date: 2023-02-17 14:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/mail/mail/ar/>\n"
@@ -491,10 +490,6 @@ msgstr "الغاء النجمة"
 msgid "URL:"
 msgstr "الرابط:"
 
-#: src/Dialogs/InsertLinkDialog.vala:36
-msgid "https://example.com"
-msgstr "https://example.com"
-
 #: src/Dialogs/InsertLinkDialog.vala:39
 msgid "Link Text:"
 msgstr "نص الرابط:"
@@ -760,6 +755,9 @@ msgstr ""
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
 msgstr ""
+
+#~ msgid "https://example.com"
+#~ msgstr "https://example.com"
 
 #~ msgid "Reply to All"
 #~ msgstr "الرد على الجميع"
