@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-04 14:24+0000\n"
-"PO-Revision-Date: 2023-08-01 17:46+0000\n"
+"PO-Revision-Date: 2023-08-08 09:08+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
 "Language: pl\n"
@@ -458,29 +458,25 @@ msgid "Example Website"
 msgstr "Przykładowa strona internetowa"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
-#, fuzzy
-#| msgid "New Signature"
 msgid "No Signatures"
-msgstr "Nowy podpis"
+msgstr "Brak podpisów"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
 msgid "Add signatures using the button in the toolbar below"
-msgstr ""
+msgstr "Dodaj podpisy korzystając z przycisku w paku poniżej"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
-#, fuzzy
-#| msgid "New Signature"
 msgid "Create Signature"
-msgstr "Nowy podpis"
+msgstr "Stwórz podpis"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
 msgid "Title"
-msgstr ""
+msgstr "Tytuł"
 
 #. Work around a styling issue
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
 msgid "For example “Work” or “Personal”"
-msgstr ""
+msgstr "Na przykład „Praca” lub „Osobisty”"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
 msgid "Delete"
@@ -488,18 +484,16 @@ msgstr "Usuń"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
 msgid "Set Default For…"
-msgstr ""
+msgstr "Ustaw jako domyślny dla…"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
-#, fuzzy
-#| msgid "New Signature"
 msgid "Signature"
-msgstr "Nowy podpis"
+msgstr "Podpis"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
 #, c-format
 msgid "'%s' deleted"
-msgstr ""
+msgstr "Usunięto „%s”"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -553,22 +547,16 @@ msgid "A folder named “%s” already exists"
 msgstr "Folder o nazwie „%s” już istnieje"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
-#, fuzzy
-#| msgid "Inbox"
 msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Odebrane"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:42
-#, fuzzy
-#| msgid "Archive"
 msgctxt "Archive Folder"
 msgid "Archive"
 msgstr "Archiwum"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent"
 msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "Wysłane"
@@ -701,11 +689,11 @@ msgstr "Zapisz"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:22
 msgid "No mailboxes found"
-msgstr ""
+msgstr "Nie znaleziono skrzynek pocztowych"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
-msgstr ""
+msgstr "Spróbuj zmienić wyszukiwany termin"
 
 #~ msgid "https://example.com"
 #~ msgstr "https://przykład.pl"
