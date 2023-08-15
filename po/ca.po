@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-04 14:24+0000\n"
-"PO-Revision-Date: 2023-07-28 12:08+0000\n"
+"PO-Revision-Date: 2023-08-16 20:08+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -443,29 +443,25 @@ msgid "Example Website"
 msgstr "Lloc web d'exemple"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
-#, fuzzy
-#| msgid "New Signature"
 msgid "No Signatures"
-msgstr "Signatura nova"
+msgstr "Sense signatures"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
 msgid "Add signatures using the button in the toolbar below"
-msgstr ""
+msgstr "Afegiu signatures mitjançant el botó de la barra d'eines de sota."
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
-#, fuzzy
-#| msgid "New Signature"
 msgid "Create Signature"
-msgstr "Signatura nova"
+msgstr "Crea una signatura"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
 msgid "Title"
-msgstr ""
+msgstr "Títol"
 
 #. Work around a styling issue
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
 msgid "For example “Work” or “Personal”"
-msgstr ""
+msgstr "Per exemple, \"Feina\" o \"Personal\""
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
 msgid "Delete"
@@ -473,18 +469,16 @@ msgstr "Esborra"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
 msgid "Set Default For…"
-msgstr ""
+msgstr "Valor per defecte per a…"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
-#, fuzzy
-#| msgid "New Signature"
 msgid "Signature"
-msgstr "Signatura nova"
+msgstr "Signatura"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
 #, c-format
 msgid "'%s' deleted"
-msgstr ""
+msgstr "'%s' s'ha suprimit"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -538,22 +532,16 @@ msgid "A folder named “%s” already exists"
 msgstr "Ja existeix una carpeta anomenada %s."
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
-#, fuzzy
-#| msgid "Inbox"
 msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Safata d'entrada"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:42
-#, fuzzy
-#| msgid "Archive"
 msgctxt "Archive Folder"
 msgid "Archive"
 msgstr "Arxiu"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent"
 msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "Enviats"
@@ -686,11 +674,11 @@ msgstr "Desa"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:22
 msgid "No mailboxes found"
-msgstr ""
+msgstr "No s'ha trobat cap bústia de correu."
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
-msgstr ""
+msgstr "Proveu de canviar els termes de cerca."
 
 #~ msgid "https://example.com"
 #~ msgstr "https://exemple.com"
