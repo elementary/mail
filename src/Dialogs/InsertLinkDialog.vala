@@ -33,7 +33,7 @@ public class InsertLinkDialog : Granite.Dialog {
         var url_entry = new Gtk.Entry () {
             activates_default = true,
             input_purpose = URL,
-            placeholder_text = _("https://example.com")
+            placeholder_text = "https://example.com"
         };
 
         var title_label = new Gtk.Label (_("Link Text:")) {

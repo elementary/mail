@@ -7,21 +7,20 @@
 # petr.simacek <petr.simacek@gmail.com>, 2012, 2013.
 # Marek Černocký <marek@manet.cz>, 2014, 2015.
 #
-#: src/MessageList/MessageListItem.vala:447
 msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 22:00+0000\n"
-"PO-Revision-Date: 2022-01-10 23:40+0000\n"
-"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
+"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"PO-Revision-Date: 2023-08-11 12:08+0000\n"
+"Last-Translator: Jakub Kyzr <jakubkyzr@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/mail/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-14 07:52+0000\n"
 
 #: src/Application.vala:220
@@ -29,6 +28,8 @@ msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
 msgstr ""
+"Pošta se spustí automaticky po spuštění zařízení a zůstane běžet po zavření, "
+"aby mohla posílat oznámení o nové poště."
 
 #: src/Composer.vala:88 src/MessageList/MessageListItem.vala:102
 msgid "From:"
@@ -60,7 +61,7 @@ msgstr "Skrytá kopie:"
 
 #: src/Composer.vala:198
 msgid "Insert Image"
-msgstr "Přidat obrázek"
+msgstr "Vložit obrázek"
 
 #: src/Composer.vala:224
 msgid "Delete draft"
@@ -71,10 +72,8 @@ msgid "Attach file"
 msgstr "Připojit soubor"
 
 #: src/Composer.vala:243
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert Signature…"
-msgstr "Přidat odkaz"
+msgstr "Vložit podpis…"
 
 #: src/Composer.vala:249
 msgid "Send"
@@ -99,34 +98,24 @@ msgid "Cancel"
 msgstr "Storno"
 
 #: src/Composer.vala:462
-#, fuzzy
-#| msgid "Show Images"
 msgid "Images"
-msgstr "Zobrazit obrázky"
+msgstr "Obrázky"
 
 #: src/Composer.vala:466
-#, fuzzy
-#| msgid "Choose a file"
 msgid "Choose an image"
-msgstr "Vybrat soubor"
+msgstr "Vybrat obrázek"
 
 #: src/Composer.vala:469
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert"
-msgstr "Přidat odkaz"
+msgstr "Vložit"
 
 #: src/Composer.vala:498
-#, fuzzy
-#| msgid "Unable to send message"
 msgid "Unable to insert image"
-msgstr "Zprávu se nedaří odeslat"
+msgstr "Nepodařilo se vložit obrázek"
 
 #: src/Composer.vala:499
-#, fuzzy
-#| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to insert the image."
-msgstr "Došlo k neočekávané chybě při odesílání zprávy."
+msgstr "Došlo k neočekávané chybě při vkládání obrázku."
 
 #: src/Composer.vala:624
 msgid "%a, %b %-e, %Y at %-l:%M %p"
@@ -222,7 +211,7 @@ msgstr "Došlo k neočekávané chybě při odesílání zprávy."
 
 #: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
-msgstr ""
+msgstr "Upravit podpisy…"
 
 #: src/Composer.vala:903
 msgid "None"
@@ -288,41 +277,31 @@ msgstr[2] "%s od %u odesilatelů"
 msgid "Mail"
 msgstr "Mail"
 
-#: src/MainWindow.vala:123
+#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Zpět"
 
 #: src/MainWindow.vala:285
-#, fuzzy
-#| msgid "Message Deleted"
-#| msgid_plural "Messages Deleted"
 msgid "Message Archived"
 msgid_plural "Messages Archived"
-msgstr[0] "Žádná vybraná zpráva"
-msgstr[1] "Žádné vybrané zprávy"
-msgstr[2] "Žádné vybrané zprávy"
+msgstr[0] "Zpráva archivována"
+msgstr[1] "Zprávy archivovány"
+msgstr[2] "Zprávy archivovány"
 
 #: src/MainWindow.vala:289
-#, fuzzy
-#| msgid "Unstar message"
 msgid "Couldn't archive message"
-msgstr "Zrušit označení zprávy hvězdičkou"
+msgstr "Nepodařilo se archivovat zprávu"
 
 #: src/MainWindow.vala:302
-#, fuzzy
-#| msgid "Message Deleted"
-#| msgid_plural "Messages Deleted"
 msgid "Message Moved"
 msgid_plural "Messages Moved"
-msgstr[0] "Žádná vybraná zpráva"
-msgstr[1] "Žádné vybrané zprávy"
-msgstr[2] "Žádné vybrané zprávy"
+msgstr[0] "Zpráva přesunuta"
+msgstr[1] "Zprávy přesunuty"
+msgstr[2] "Zprávy přesunuty"
 
 #: src/MainWindow.vala:306
-#, fuzzy
-#| msgid "Unable to send message"
 msgid "Couldn't move message"
-msgstr "Zprávu se nedaří odeslat"
+msgstr "Nepodařilo se přesunout zprávu"
 
 #: src/MainWindow.vala:319
 msgid "Message Deleted"
@@ -333,7 +312,7 @@ msgstr[2] "Žádné vybrané zprávy"
 
 #: src/MainWindow.vala:323
 msgid "Couldn't delete message"
-msgstr ""
+msgstr "Nepodařilo se smazat zprávu"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -348,37 +327,45 @@ msgid "Online Accounts…"
 msgstr "Online účty…"
 
 #: src/Backend/Account.vala:48
-#, fuzzy
-#| msgid "Unable to save draft"
 msgid "Unable to connect"
-msgstr "Koncept se nepodařilo uložit"
+msgstr "Nepodařilo se připojit"
 
 #: src/Backend/Account.vala:49
-#, fuzzy
-#| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to connect to the server."
-msgstr "Došlo k neočekávané chybě při odesílání zprávy."
+msgstr "Došlo k neočekávané chybě při připojování na server."
 
 #: src/Backend/MoveOperation.vala:65
 #, c-format
 msgid "Moving messages… (%u remaining)"
-msgstr ""
+msgstr "Přesouvání zpráv… (%u zbývá)"
 
 #: src/Backend/MoveOperation.vala:98
 msgid "No Archive folder is configured."
-msgstr ""
+msgstr "Není nastavena žádná složka Archiv."
 
 #: src/Backend/MoveOperation.vala:126
 msgid "The destination folder was not found."
-msgstr ""
+msgstr "Cílová složka nebyla nalezena."
 
 #: src/Backend/MoveOperation.vala:130
 msgid "The source folder is the destination folder."
-msgstr ""
+msgstr "Zdrojová složka je stejná jako cílová složka."
 
 #: src/Backend/Session.vala:624
 msgid "New Signature"
-msgstr ""
+msgstr "Nový podpis"
+
+#: src/ConversationList/ConversationItemModel.vala:74
+#: src/ConversationList/ConversationItemModel.vala:112
+msgid ", "
+msgstr ", "
+
+#: src/ConversationList/ConversationItemModel.vala:77
+#: src/ConversationList/ConversationItemModel.vala:115
+#: src/ConversationList/ConversationItemModel.vala:123
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Unknown"
+msgstr "Neznámý"
 
 #: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
@@ -401,13 +388,10 @@ msgid "Fetch new messages"
 msgstr "Stáhnout si nové zprávy"
 
 #: src/ConversationList/ConversationList.vala:139
-#, fuzzy
-#| msgid "Fetching new messages"
 msgid "Fetching new messages…"
-msgstr "Stahování nových zpráv"
+msgstr "Stahování nových zpráv…"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
 msgid "Archive"
 msgstr "Archiv"
 
@@ -454,10 +438,6 @@ msgstr "Odebrat hvězdičku"
 msgid "URL:"
 msgstr "URL:"
 
-#: src/Dialogs/InsertLinkDialog.vala:36
-msgid "https://example.com"
-msgstr "https://example.com"
-
 #: src/Dialogs/InsertLinkDialog.vala:39
 msgid "Link Text:"
 msgstr "Text odkazu:"
@@ -465,6 +445,44 @@ msgstr "Text odkazu:"
 #: src/Dialogs/InsertLinkDialog.vala:45
 msgid "Example Website"
 msgstr "Příklad webové stránky"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
+msgid "No Signatures"
+msgstr "Žádné podpisy"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
+msgid "Add signatures using the button in the toolbar below"
+msgstr "Přidejte podpisy pomocí tlačítka ve spodní liště"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
+msgid "Create Signature"
+msgstr "Vytvořit podpis"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
+msgid "Title"
+msgstr "Název"
+
+#. Work around a styling issue
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
+msgid "For example “Work” or “Personal”"
+msgstr "Například \"Pracovní\" nebo \"Osobní\""
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
+msgid "Delete"
+msgstr "Smazat"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
+msgid "Set Default For…"
+msgstr "Nastavit jako výchozí pro…"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
+msgid "Signature"
+msgstr "Podpis"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "Smazán „%s“"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -483,47 +501,52 @@ msgid "Menu"
 msgstr "Nabídka"
 
 #: src/FoldersView/FoldersListView.vala:146
-#, fuzzy
-#| msgid "Unable to print email"
 msgid "Unable to open System Settings"
-msgstr "Nedaří se vytisknout e-mail"
+msgstr "Nepodařilo se otevřít Nastavení systému"
 
 #: src/FoldersView/FoldersListView.vala:147
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
+"Otevřete Nastavení systému ručně nebo nainstalujte aplikaci Evolution pro "
+"nastavení online účtů."
 
-#: src/FoldersView/FolderSourceItem.vala:51
+#: src/FoldersView/FolderSourceItem.vala:52
 msgid "Refresh folder"
 msgstr "Obnovit složku"
 
-#: src/FoldersView/FolderSourceItem.vala:56
-#, fuzzy
-#| msgid "Refresh folder"
+#: src/FoldersView/FolderSourceItem.vala:57
 msgid "Rename folder"
-msgstr "Obnovit složku"
+msgstr "Přejmenovat složku"
 
-#: src/FoldersView/FolderSourceItem.vala:158
-#: src/FoldersView/FolderSourceItem.vala:187
-#: src/FoldersView/FolderSourceItem.vala:205
+#: src/FoldersView/FolderSourceItem.vala:161
+#: src/FoldersView/FolderSourceItem.vala:190
+#: src/FoldersView/FolderSourceItem.vala:208
 #, c-format
 msgid "Couldn't rename “%s”"
-msgstr ""
+msgstr "Nepodařilo se přejmenovat „%s“"
 
-#: src/FoldersView/FolderSourceItem.vala:159
+#: src/FoldersView/FolderSourceItem.vala:162
 msgid "Folder names cannot contain “/”"
-msgstr ""
+msgstr "Názvy složek nesmí obsahovat „/“"
 
-#: src/FoldersView/FolderSourceItem.vala:188
+#: src/FoldersView/FolderSourceItem.vala:191
 #, c-format
 msgid "A folder named “%s” already exists"
-msgstr ""
+msgstr "Složka s názvem „%s“ již existuje"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Doručená pošta"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgctxt "Archive Folder"
+msgid "Archive"
+msgstr "Archiv"
+
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
+msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "Odeslané"
 
@@ -552,11 +575,8 @@ msgid "Mark Conversation"
 msgstr "Označit konverzaci"
 
 #: src/MessageList/MessageList.vala:92
-#, fuzzy
-#| msgid "Move conversation"
-#| msgid_plural "Move conversations"
 msgid "Move Conversation to…"
-msgstr "Přesunout koverzaci"
+msgstr "Přesunout konverzaci do…"
 
 #: src/MessageList/MessageList.vala:101
 msgid "Move conversations to archive"
@@ -596,13 +616,11 @@ msgstr "Více"
 
 #: src/MessageList/MessageListItem.vala:279
 msgid "Open in Calendar"
-msgstr ""
+msgstr "Otevřít v Kalendáři"
 
 #: src/MessageList/MessageListItem.vala:285
-#, fuzzy
-#| msgid "This message contains remote images."
 msgid "This message contains a Calendar Event."
-msgstr "Tato zpráva obsahuje externí obrázky."
+msgstr "Tato zpráva obsahuje událost kalendáře."
 
 #: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"
@@ -632,7 +650,7 @@ msgstr "Nedaří se vytisknout e-mail"
 #: src/MessageList/MessageListItem.vala:698
 #, c-format
 msgid "Trust and open “%s”?"
-msgstr ""
+msgstr "Důvěřovat a otevřít „%s“?"
 
 #: src/MessageList/MessageListItem.vala:699
 msgid ""
@@ -654,13 +672,20 @@ msgstr "Otevřít"
 msgid "Save As…"
 msgstr "Uložit jako…"
 
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Unknown"
-msgstr "Neznámý"
-
 #: src/MessageList/AttachmentButton.vala:138
 msgid "Save"
 msgstr "Uložit"
+
+#: src/MessageList/FolderPopover/FolderPopover.vala:22
+msgid "No mailboxes found"
+msgstr "Nebyly nalezeny žádné schránky"
+
+#: src/MessageList/FolderPopover/FolderPopover.vala:26
+msgid "Try changing search terms"
+msgstr "Zkuste změnit hledaný výraz"
+
+#~ msgid "https://example.com"
+#~ msgstr "https://example.com"
 
 #~ msgid "Reply to All"
 #~ msgstr "Odpovědět všem"
@@ -1078,9 +1103,6 @@ msgstr "Uložit"
 
 #~ msgid "Error emptying %s"
 #~ msgstr "Chyba při vyprazďňování složky %s"
-
-#~ msgid "Delete"
-#~ msgstr "Smazat"
 
 #~ msgid "Undo archive (Ctrl+Z)"
 #~ msgstr "Zpět archivace (Ctrl+Z)"

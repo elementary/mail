@@ -10,12 +10,11 @@
 # hepin <hepin@sosia.us>, 2013
 # Kuang Chen <kchenphy@gmail.com>, 2012
 # Dianjin Wang <1132321739qq@gmail.com>, 2012
-#: src/MessageList/MessageListItem.vala:447
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 22:00+0000\n"
+"POT-Creation-Date: 2023-08-04 14:24+0000\n"
 "PO-Revision-Date: 2022-07-21 17:49+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -283,7 +282,7 @@ msgstr[0] "来自 %u 个发件人的 %s"
 msgid "Mail"
 msgstr "邮件"
 
-#: src/MainWindow.vala:123
+#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "撤消"
 
@@ -369,6 +368,18 @@ msgstr ""
 msgid "New Signature"
 msgstr ""
 
+#: src/ConversationList/ConversationItemModel.vala:74
+#: src/ConversationList/ConversationItemModel.vala:112
+msgid ", "
+msgstr ", "
+
+#: src/ConversationList/ConversationItemModel.vala:77
+#: src/ConversationList/ConversationItemModel.vala:115
+#: src/ConversationList/ConversationItemModel.vala:123
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Unknown"
+msgstr "未知"
+
 #: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
 msgstr "搜索邮件"
@@ -394,7 +405,6 @@ msgid "Fetching new messages…"
 msgstr "正在获取新邮件…"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
 msgid "Archive"
 msgstr "归档邮件"
 
@@ -441,10 +451,6 @@ msgstr "取消星标"
 msgid "URL:"
 msgstr "网址："
 
-#: src/Dialogs/InsertLinkDialog.vala:36
-msgid "https://example.com"
-msgstr "https://example.com"
-
 #: src/Dialogs/InsertLinkDialog.vala:39
 msgid "Link Text:"
 msgstr "超链接文本："
@@ -452,6 +458,50 @@ msgstr "超链接文本："
 #: src/Dialogs/InsertLinkDialog.vala:45
 msgid "Example Website"
 msgstr "网站示例"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
+#, fuzzy
+#| msgid "Insert Link"
+msgid "No Signatures"
+msgstr "插入链接"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
+msgid "Add signatures using the button in the toolbar below"
+msgstr ""
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
+#, fuzzy
+#| msgid "Insert Link"
+msgid "Create Signature"
+msgstr "插入链接"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
+msgid "Title"
+msgstr ""
+
+#. Work around a styling issue
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
+msgid "For example “Work” or “Personal”"
+msgstr ""
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
+msgid "Delete"
+msgstr "删除"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
+msgid "Set Default For…"
+msgstr ""
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
+#, fuzzy
+#| msgid "Insert Link"
+msgid "Signature"
+msgstr "插入链接"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr ""
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -480,37 +530,50 @@ msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:51
+#: src/FoldersView/FolderSourceItem.vala:52
 msgid "Refresh folder"
 msgstr "更新文件夹"
 
-#: src/FoldersView/FolderSourceItem.vala:56
+#: src/FoldersView/FolderSourceItem.vala:57
 #, fuzzy
 #| msgid "Refresh folder"
 msgid "Rename folder"
 msgstr "更新文件夹"
 
-#: src/FoldersView/FolderSourceItem.vala:158
-#: src/FoldersView/FolderSourceItem.vala:187
-#: src/FoldersView/FolderSourceItem.vala:205
+#: src/FoldersView/FolderSourceItem.vala:161
+#: src/FoldersView/FolderSourceItem.vala:190
+#: src/FoldersView/FolderSourceItem.vala:208
 #, c-format
 msgid "Couldn't rename “%s”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:159
+#: src/FoldersView/FolderSourceItem.vala:162
 msgid "Folder names cannot contain “/”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:188
+#: src/FoldersView/FolderSourceItem.vala:191
 #, c-format
 msgid "A folder named “%s” already exists"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
+#, fuzzy
+#| msgid "Inbox"
+msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "收件箱"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+#, fuzzy
+#| msgid "Archive"
+msgctxt "Archive Folder"
+msgid "Archive"
+msgstr "归档邮件"
+
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent"
+msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "发送"
 
@@ -639,13 +702,20 @@ msgstr "打开"
 msgid "Save As…"
 msgstr "另存为…"
 
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Unknown"
-msgstr "未知"
-
 #: src/MessageList/AttachmentButton.vala:138
 msgid "Save"
 msgstr "保存"
+
+#: src/MessageList/FolderPopover/FolderPopover.vala:22
+msgid "No mailboxes found"
+msgstr ""
+
+#: src/MessageList/FolderPopover/FolderPopover.vala:26
+msgid "Try changing search terms"
+msgstr ""
+
+#~ msgid "https://example.com"
+#~ msgstr "https://example.com"
 
 #~ msgid "Reply to All"
 #~ msgstr "全部回复"
@@ -1040,9 +1110,6 @@ msgstr "保存"
 
 #~ msgid "Error emptying %s"
 #~ msgstr "清空 %s 出错"
-
-#~ msgid "Delete"
-#~ msgstr "删除"
 
 #~ msgid "Undo archive (Ctrl+Z)"
 #~ msgstr "撤销归档"
@@ -2080,9 +2147,6 @@ msgstr "保存"
 
 #~ msgid "Authenticate"
 #~ msgstr "认证"
-
-#~ msgid ", "
-#~ msgstr ", "
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "删除线"

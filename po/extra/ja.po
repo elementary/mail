@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 22:00+0000\n"
-"PO-Revision-Date: 2023-07-30 13:08+0000\n"
+"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"PO-Revision-Date: 2023-08-03 12:11+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/>"
-"\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/extra/ja/"
+">\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -68,9 +68,9 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:104
-#: data/mail.metainfo.xml.in:125 data/mail.metainfo.xml.in:144
-#: data/mail.metainfo.xml.in:166 data/mail.metainfo.xml.in:180
+#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:105
+#: data/mail.metainfo.xml.in:126 data/mail.metainfo.xml.in:145
+#: data/mail.metainfo.xml.in:167 data/mail.metainfo.xml.in:181
 msgid "Improvements:"
 msgstr "改善点:"
 
@@ -104,15 +104,20 @@ msgstr "“メール”が自動起動していない場合に、メールの取
 
 #: data/mail.metainfo.xml.in:81
 msgid "Notify the user when a calendar event is included in a message"
-msgstr "メッセージにカレンダーの予定が含まれる場合にユーザーに通知する機能を追加"
+msgstr ""
+"メッセージにカレンダーの予定が含まれる場合にユーザーに通知する機能を追加"
 
-#: data/mail.metainfo.xml.in:82 data/mail.metainfo.xml.in:113
-#: data/mail.metainfo.xml.in:127 data/mail.metainfo.xml.in:148
-#: data/mail.metainfo.xml.in:169 data/mail.metainfo.xml.in:182
+#: data/mail.metainfo.xml.in:82
+msgid "Improve performance when switching between folders"
+msgstr "フォルダー切り替え時のパフォーマンスを改善"
+
+#: data/mail.metainfo.xml.in:83 data/mail.metainfo.xml.in:114
+#: data/mail.metainfo.xml.in:128 data/mail.metainfo.xml.in:149
+#: data/mail.metainfo.xml.in:170 data/mail.metainfo.xml.in:183
 msgid "Updated translations"
 msgstr "翻訳の更新"
 
-#: data/mail.metainfo.xml.in:106
+#: data/mail.metainfo.xml.in:107
 msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
@@ -120,7 +125,7 @@ msgstr ""
 "オンラインアカウントの設定でアカウントが追加された場合、“メール”を再起動しな"
 "くてもようこそ画面が消えるように修正"
 
-#: data/mail.metainfo.xml.in:107
+#: data/mail.metainfo.xml.in:108
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
@@ -128,86 +133,86 @@ msgstr ""
 "メール作成画面が常に新しいウィンドウとして表示されるようになり、使用可能な"
 "キーボードショートカットも増加"
 
-#: data/mail.metainfo.xml.in:108
+#: data/mail.metainfo.xml.in:109
 msgid "The search filter menu now appears next to the search bar"
 msgstr "検索フィルターメニューを検索バーの隣に移動"
 
-#: data/mail.metainfo.xml.in:109
+#: data/mail.metainfo.xml.in:110
 msgid "HeaderBars appear to float above content when scrolled"
 msgstr ""
 "メール本文をスクロールすると、ヘッダーバーがその上に浮いて見える効果を追加"
 
-#: data/mail.metainfo.xml.in:110
+#: data/mail.metainfo.xml.in:111
 msgid "Fix a potential crash with empty messages"
 msgstr "空のメッセージが原因でクラッシュする可能性のある不具合を修正"
 
-#: data/mail.metainfo.xml.in:111
+#: data/mail.metainfo.xml.in:112
 msgid "Stop resizing from cutting off the message list"
 msgstr "サイズの変更によってメッセージ一覧が見えなくなってしまわないように修正"
 
-#: data/mail.metainfo.xml.in:112
+#: data/mail.metainfo.xml.in:113
 msgid "Performance improvements"
 msgstr "パフォーマンスの改善"
 
-#: data/mail.metainfo.xml.in:138 data/mail.metainfo.xml.in:160
-#: data/mail.metainfo.xml.in:176
+#: data/mail.metainfo.xml.in:139 data/mail.metainfo.xml.in:161
+#: data/mail.metainfo.xml.in:177
 msgid "Fixes:"
 msgstr "修正点:"
 
-#: data/mail.metainfo.xml.in:140
+#: data/mail.metainfo.xml.in:141
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr "メールアカウントが複数回読み込まれてしまうエラーを修正"
 
-#: data/mail.metainfo.xml.in:141
+#: data/mail.metainfo.xml.in:142
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr "“メール”がクラッシュする原因になっていた不具合を修正"
 
-#: data/mail.metainfo.xml.in:142
+#: data/mail.metainfo.xml.in:143
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "“送信済み”受信箱では、送信者ではなく宛先を表示するように修正"
 
-#: data/mail.metainfo.xml.in:146
+#: data/mail.metainfo.xml.in:147
 msgid "Updated app icon"
 msgstr "アプリのアイコンをアップデート"
 
-#: data/mail.metainfo.xml.in:147
+#: data/mail.metainfo.xml.in:148
 msgid "New design"
 msgstr "新しいデザイン"
 
-#: data/mail.metainfo.xml.in:155
+#: data/mail.metainfo.xml.in:156
 msgid "New features:"
 msgstr "新機能:"
 
-#: data/mail.metainfo.xml.in:157
+#: data/mail.metainfo.xml.in:158
 msgid "Use message subject for composer window title"
 msgstr "メール作成ウィンドウのタイトルにメッセージの件名を使うように修正"
 
-#: data/mail.metainfo.xml.in:158
+#: data/mail.metainfo.xml.in:159
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr "Microsoft 365 アカウントの統合受信トレイに対応"
 
-#: data/mail.metainfo.xml.in:162
+#: data/mail.metainfo.xml.in:163
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr "バックグランドでの新着メールの確認がクラッシュするエラーを修正"
 
-#: data/mail.metainfo.xml.in:163
+#: data/mail.metainfo.xml.in:164
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr "メッセージ作成時、重複する宛先を削除するように修正"
 
-#: data/mail.metainfo.xml.in:164
+#: data/mail.metainfo.xml.in:165
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
 "フォルダー内の最後のメッセージをアーカイブするとフリーズする不具合を修正"
 
-#: data/mail.metainfo.xml.in:168
+#: data/mail.metainfo.xml.in:169
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "Microsoft のブランド名変更に伴い、“Office 365” という表示を “Microsoft 365” "
 "に変更"
 
-#: data/mail.metainfo.xml.in:178
+#: data/mail.metainfo.xml.in:179
 msgid "Fix a potential crash while loading messages"
 msgstr "メッセージ読み込み中にクラッシュする可能性のある不具合を修正"
 

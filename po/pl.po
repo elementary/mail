@@ -14,13 +14,12 @@
 # zacol <zacol1@gmail.com>, 2012.
 # Piotr Drąg <piotrdrag@gmail.com>, 2014-2015.
 # Aviary.pl <gnomepl@aviary.pl>, 2014-2015.
-#: src/MessageList/MessageListItem.vala:447
 msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 22:00+0000\n"
-"PO-Revision-Date: 2023-07-23 07:07+0000\n"
+"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"PO-Revision-Date: 2023-08-08 09:08+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
 "Language: pl\n"
@@ -83,10 +82,8 @@ msgid "Attach file"
 msgstr "Dołącz plik"
 
 #: src/Composer.vala:243
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert Signature…"
-msgstr "Wstaw odnośnik"
+msgstr "Wstaw podpis…"
 
 #: src/Composer.vala:249
 msgid "Send"
@@ -225,7 +222,7 @@ msgstr "Wystąpił nieoczekiwany błąd podczas wysyłania twojej wiadomości."
 
 #: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
-msgstr ""
+msgstr "Edytuje podpis…"
 
 #: src/Composer.vala:903
 msgid "None"
@@ -291,7 +288,7 @@ msgstr[2] "%s od %u nadawców"
 msgid "Mail"
 msgstr "Poczta"
 
-#: src/MainWindow.vala:123
+#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Cofnij"
 
@@ -367,7 +364,19 @@ msgstr "Folder źródłowy jest taki sam jak folder docelowy."
 
 #: src/Backend/Session.vala:624
 msgid "New Signature"
-msgstr ""
+msgstr "Nowy podpis"
+
+#: src/ConversationList/ConversationItemModel.vala:74
+#: src/ConversationList/ConversationItemModel.vala:112
+msgid ", "
+msgstr ", "
+
+#: src/ConversationList/ConversationItemModel.vala:77
+#: src/ConversationList/ConversationItemModel.vala:115
+#: src/ConversationList/ConversationItemModel.vala:123
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Unknown"
+msgstr "Nieznane"
 
 #: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
@@ -394,7 +403,6 @@ msgid "Fetching new messages…"
 msgstr "Pobieranie nowych wiadomości…"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
 msgid "Archive"
 msgstr "Archiwum"
 
@@ -441,10 +449,6 @@ msgstr "Usuń wyróżnienie"
 msgid "URL:"
 msgstr "URL:"
 
-#: src/Dialogs/InsertLinkDialog.vala:36
-msgid "https://example.com"
-msgstr "https://przykład.pl"
-
 #: src/Dialogs/InsertLinkDialog.vala:39
 msgid "Link Text:"
 msgstr "Tekst z odnośnikiem:"
@@ -452,6 +456,44 @@ msgstr "Tekst z odnośnikiem:"
 #: src/Dialogs/InsertLinkDialog.vala:45
 msgid "Example Website"
 msgstr "Przykładowa strona internetowa"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
+msgid "No Signatures"
+msgstr "Brak podpisów"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
+msgid "Add signatures using the button in the toolbar below"
+msgstr "Dodaj podpisy korzystając z przycisku w paku poniżej"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
+msgid "Create Signature"
+msgstr "Stwórz podpis"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
+msgid "Title"
+msgstr "Tytuł"
+
+#. Work around a styling issue
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
+msgid "For example “Work” or “Personal”"
+msgstr "Na przykład „Praca” lub „Osobisty”"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
+msgid "Delete"
+msgstr "Usuń"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
+msgid "Set Default For…"
+msgstr "Ustaw jako domyślny dla…"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
+msgid "Signature"
+msgstr "Podpis"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "Usunięto „%s”"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -480,35 +522,42 @@ msgstr ""
 "Otwórz ustawienia systemowe ręcznie lub zainstaluj Evolution by ustawić "
 "konta online."
 
-#: src/FoldersView/FolderSourceItem.vala:51
+#: src/FoldersView/FolderSourceItem.vala:52
 msgid "Refresh folder"
 msgstr "Odśwież katalog"
 
-#: src/FoldersView/FolderSourceItem.vala:56
+#: src/FoldersView/FolderSourceItem.vala:57
 msgid "Rename folder"
 msgstr "Zmień nazwę folderu"
 
-#: src/FoldersView/FolderSourceItem.vala:158
-#: src/FoldersView/FolderSourceItem.vala:187
-#: src/FoldersView/FolderSourceItem.vala:205
+#: src/FoldersView/FolderSourceItem.vala:161
+#: src/FoldersView/FolderSourceItem.vala:190
+#: src/FoldersView/FolderSourceItem.vala:208
 #, c-format
 msgid "Couldn't rename “%s”"
 msgstr "Nie udało się zmienić nazwy „%s”"
 
-#: src/FoldersView/FolderSourceItem.vala:159
+#: src/FoldersView/FolderSourceItem.vala:162
 msgid "Folder names cannot contain “/”"
 msgstr "Nazwy folderów nie mogą zawierać „/”"
 
-#: src/FoldersView/FolderSourceItem.vala:188
+#: src/FoldersView/FolderSourceItem.vala:191
 #, c-format
 msgid "A folder named “%s” already exists"
 msgstr "Folder o nazwie „%s” już istnieje"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Odebrane"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgctxt "Archive Folder"
+msgid "Archive"
+msgstr "Archiwum"
+
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
+msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "Wysłane"
 
@@ -634,13 +683,20 @@ msgstr "Otwórz"
 msgid "Save As…"
 msgstr "Zapisz jako…"
 
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Unknown"
-msgstr "Nieznane"
-
 #: src/MessageList/AttachmentButton.vala:138
 msgid "Save"
 msgstr "Zapisz"
+
+#: src/MessageList/FolderPopover/FolderPopover.vala:22
+msgid "No mailboxes found"
+msgstr "Nie znaleziono skrzynek pocztowych"
+
+#: src/MessageList/FolderPopover/FolderPopover.vala:26
+msgid "Try changing search terms"
+msgstr "Spróbuj zmienić wyszukiwany termin"
+
+#~ msgid "https://example.com"
+#~ msgstr "https://przykład.pl"
 
 #, c-format
 #~ msgid "Unable to rename folder “%s”': %s"
@@ -1071,9 +1127,6 @@ msgstr "Zapisz"
 
 #~ msgid "Error emptying %s"
 #~ msgstr "Błąd podczas opróżniania %s"
-
-#~ msgid "Delete"
-#~ msgstr "Usuń"
 
 #~ msgid "Undo archive (Ctrl+Z)"
 #~ msgstr "Cofnij archiwizację (Ctrl+Z)"
@@ -2180,9 +2233,6 @@ msgstr "Zapisz"
 
 #~ msgid "Authenticate"
 #~ msgstr "Uwierzytelnij"
-
-#~ msgid ", "
-#~ msgstr ", "
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "Przekreślenie (Ctrl+%)"

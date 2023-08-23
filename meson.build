@@ -1,7 +1,8 @@
 project(
     'io.elementary.mail',
     'vala', 'c',
-    version: '7.1.0'
+    version: '7.2.0',
+    meson_version: '>=0.58.0'
 )
 
 gnome = import('gnome')
@@ -68,7 +69,7 @@ add_global_arguments([
     language:'c'
 )
 
-meson.add_install_script('meson/post_install.py')
+gnome.post_install(glib_compile_schemas: true)
 
 config_data = configuration_data()
 config_data.set('GETTEXT_PACKAGE', meson.project_name())

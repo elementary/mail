@@ -7,22 +7,21 @@
 # furyruf <ruffian.ua@gmail.com>, 2013
 # sp4rr0w <sasha.anpilov@gmail.com>, 2012
 # Daniel Korostil <ted.korostiled@gmail.com>, 2014.
-#: src/MessageList/MessageListItem.vala:447
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 22:00+0000\n"
-"PO-Revision-Date: 2023-07-26 19:32+0000\n"
+"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"PO-Revision-Date: 2023-08-04 14:24+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/>"
-"\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/"
+">\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Project-Style: gnome\n"
@@ -281,7 +280,7 @@ msgstr[2] "%s від %u відправників"
 msgid "Mail"
 msgstr "Пошта"
 
-#: src/MainWindow.vala:123
+#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Повернути"
 
@@ -361,6 +360,18 @@ msgstr "Початкова тека є текою призначення."
 msgid "New Signature"
 msgstr "Новий підпис"
 
+#: src/ConversationList/ConversationItemModel.vala:74
+#: src/ConversationList/ConversationItemModel.vala:112
+msgid ", "
+msgstr ", "
+
+#: src/ConversationList/ConversationItemModel.vala:77
+#: src/ConversationList/ConversationItemModel.vala:115
+#: src/ConversationList/ConversationItemModel.vala:123
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Unknown"
+msgstr "Невідомий"
+
 #: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
 msgstr "Пошук пошти"
@@ -386,7 +397,6 @@ msgid "Fetching new messages…"
 msgstr "Отримання нових повідомлень…"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
 msgid "Archive"
 msgstr "Архів"
 
@@ -433,10 +443,6 @@ msgstr "Прибрати позначення зірочкою"
 msgid "URL:"
 msgstr "URL:"
 
-#: src/Dialogs/InsertLinkDialog.vala:36
-msgid "https://example.com"
-msgstr "https://example.com"
-
 #: src/Dialogs/InsertLinkDialog.vala:39
 msgid "Link Text:"
 msgstr "Текст посилання:"
@@ -444,6 +450,44 @@ msgstr "Текст посилання:"
 #: src/Dialogs/InsertLinkDialog.vala:45
 msgid "Example Website"
 msgstr "Приклад вебсайту"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
+msgid "No Signatures"
+msgstr "Підписів немає"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
+msgid "Add signatures using the button in the toolbar below"
+msgstr "Додати підписи можна натиснувши кнопку на панелі інструментів нижче"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
+msgid "Create Signature"
+msgstr "Створити підпис"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
+msgid "Title"
+msgstr "Заголовок"
+
+#. Work around a styling issue
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
+msgid "For example “Work” or “Personal”"
+msgstr "Наприклад “Робота” або “Особисті”"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
+msgid "Delete"
+msgstr "Видалити"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
+msgid "Set Default For…"
+msgstr "Налаштувати типовим для…"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
+msgid "Signature"
+msgstr "Підпис"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "'%s' видалено"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -472,35 +516,42 @@ msgstr ""
 "Відкрийте системні налаштування вручну або встановіть Evolution, щоб "
 "налаштувати онлайн-облікові записи."
 
-#: src/FoldersView/FolderSourceItem.vala:51
+#: src/FoldersView/FolderSourceItem.vala:52
 msgid "Refresh folder"
 msgstr "Оновити теку"
 
-#: src/FoldersView/FolderSourceItem.vala:56
+#: src/FoldersView/FolderSourceItem.vala:57
 msgid "Rename folder"
 msgstr "Перейменувати теку"
 
-#: src/FoldersView/FolderSourceItem.vala:158
-#: src/FoldersView/FolderSourceItem.vala:187
-#: src/FoldersView/FolderSourceItem.vala:205
+#: src/FoldersView/FolderSourceItem.vala:161
+#: src/FoldersView/FolderSourceItem.vala:190
+#: src/FoldersView/FolderSourceItem.vala:208
 #, c-format
 msgid "Couldn't rename “%s”"
 msgstr "Не вдалося перейменувати «%s»"
 
-#: src/FoldersView/FolderSourceItem.vala:159
+#: src/FoldersView/FolderSourceItem.vala:162
 msgid "Folder names cannot contain “/”"
 msgstr "Назва теки не може містити «/»"
 
-#: src/FoldersView/FolderSourceItem.vala:188
+#: src/FoldersView/FolderSourceItem.vala:191
 #, c-format
 msgid "A folder named “%s” already exists"
 msgstr "Тека з назвою «%s» вже існує"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
+msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Вхідні"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+msgctxt "Archive Folder"
+msgid "Archive"
+msgstr "Архів"
+
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
+msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "Надіслані"
 
@@ -626,13 +677,20 @@ msgstr "Відкрити"
 msgid "Save As…"
 msgstr "Зберегти як…"
 
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Unknown"
-msgstr "Невідомий"
-
 #: src/MessageList/AttachmentButton.vala:138
 msgid "Save"
 msgstr "Зберегти"
+
+#: src/MessageList/FolderPopover/FolderPopover.vala:22
+msgid "No mailboxes found"
+msgstr "Поштових скриньок не знайдено"
+
+#: src/MessageList/FolderPopover/FolderPopover.vala:26
+msgid "Try changing search terms"
+msgstr "Спробуйте змінити пошукові запити"
+
+#~ msgid "https://example.com"
+#~ msgstr "https://example.com"
 
 #, c-format
 #~ msgid "Unable to rename folder “%s”': %s"
@@ -1042,9 +1100,6 @@ msgstr "Зберегти"
 
 #~ msgid "Error emptying %s"
 #~ msgstr "омилка при видалленні %s"
-
-#~ msgid "Delete"
-#~ msgstr "Вилучити"
 
 #~ msgid "Undo archive (Ctrl+Z)"
 #~ msgstr "Скасувати архівування (Ctrl+Z)"

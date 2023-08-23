@@ -12,12 +12,11 @@
 # Necdet Yücel <necdetyucel@gmail.com>, 2015.
 # Simge Sezgin <simgesezgin88@gmail.com>, 2015.
 #
-#: src/MessageList/MessageListItem.vala:447
 msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 22:00+0000\n"
+"POT-Creation-Date: 2023-08-04 14:24+0000\n"
 "PO-Revision-Date: 2023-05-17 21:00+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
@@ -292,7 +291,7 @@ msgstr[1] "%u gönderenden %s"
 msgid "Mail"
 msgstr "Posta"
 
-#: src/MainWindow.vala:123
+#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Geri Al"
 
@@ -380,6 +379,18 @@ msgstr ""
 msgid "New Signature"
 msgstr ""
 
+#: src/ConversationList/ConversationItemModel.vala:74
+#: src/ConversationList/ConversationItemModel.vala:112
+msgid ", "
+msgstr ", "
+
+#: src/ConversationList/ConversationItemModel.vala:77
+#: src/ConversationList/ConversationItemModel.vala:115
+#: src/ConversationList/ConversationItemModel.vala:123
+#: src/MessageList/AttachmentButton.vala:114
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
 #: src/ConversationList/ConversationList.vala:86
 msgid "Search Mail"
 msgstr "Posta Ara"
@@ -405,7 +416,6 @@ msgid "Fetching new messages…"
 msgstr "Yeni mesajlar getiriliyor…"
 
 #: src/ConversationList/ConversationListItem.vala:94
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
 msgid "Archive"
 msgstr "Arşiv"
 
@@ -452,10 +462,6 @@ msgstr "Yıldızı Kaldır"
 msgid "URL:"
 msgstr "URL:"
 
-#: src/Dialogs/InsertLinkDialog.vala:36
-msgid "https://example.com"
-msgstr "https://example.com"
-
 #: src/Dialogs/InsertLinkDialog.vala:39
 msgid "Link Text:"
 msgstr "Bağlantı Metni:"
@@ -463,6 +469,50 @@ msgstr "Bağlantı Metni:"
 #: src/Dialogs/InsertLinkDialog.vala:45
 msgid "Example Website"
 msgstr "Örnek Web Sitesi"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
+#, fuzzy
+#| msgid "Insert Link"
+msgid "No Signatures"
+msgstr "Bağlantı Ekle"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
+msgid "Add signatures using the button in the toolbar below"
+msgstr ""
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
+#, fuzzy
+#| msgid "Insert Link"
+msgid "Create Signature"
+msgstr "Bağlantı Ekle"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
+msgid "Title"
+msgstr ""
+
+#. Work around a styling issue
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
+msgid "For example “Work” or “Personal”"
+msgstr ""
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
+msgid "Delete"
+msgstr "Sil"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
+msgid "Set Default For…"
+msgstr ""
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
+#, fuzzy
+#| msgid "Insert Link"
+msgid "Signature"
+msgstr "Bağlantı Ekle"
+
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr ""
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -491,37 +541,50 @@ msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:51
+#: src/FoldersView/FolderSourceItem.vala:52
 msgid "Refresh folder"
 msgstr "Klasörü yenile"
 
-#: src/FoldersView/FolderSourceItem.vala:56
+#: src/FoldersView/FolderSourceItem.vala:57
 #, fuzzy
 #| msgid "Refresh folder"
 msgid "Rename folder"
 msgstr "Klasörü yenile"
 
-#: src/FoldersView/FolderSourceItem.vala:158
-#: src/FoldersView/FolderSourceItem.vala:187
-#: src/FoldersView/FolderSourceItem.vala:205
+#: src/FoldersView/FolderSourceItem.vala:161
+#: src/FoldersView/FolderSourceItem.vala:190
+#: src/FoldersView/FolderSourceItem.vala:208
 #, c-format
 msgid "Couldn't rename “%s”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:159
+#: src/FoldersView/FolderSourceItem.vala:162
 msgid "Folder names cannot contain “/”"
 msgstr ""
 
-#: src/FoldersView/FolderSourceItem.vala:188
+#: src/FoldersView/FolderSourceItem.vala:191
 #, c-format
 msgid "A folder named “%s” already exists"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
+#, fuzzy
+#| msgid "Inbox"
+msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Gelen Kutusu"
 
+#: src/FoldersView/GroupedFolderSourceItem.vala:42
+#, fuzzy
+#| msgid "Archive"
+msgctxt "Archive Folder"
+msgid "Archive"
+msgstr "Arşiv"
+
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
+#, fuzzy
+#| msgid "Sent"
+msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "Gönder"
 
@@ -652,13 +715,20 @@ msgstr "Aç"
 msgid "Save As…"
 msgstr "Farklı Kaydet…"
 
-#: src/MessageList/AttachmentButton.vala:114
-msgid "Unknown"
-msgstr "Bilinmeyen"
-
 #: src/MessageList/AttachmentButton.vala:138
 msgid "Save"
 msgstr "Kaydet"
+
+#: src/MessageList/FolderPopover/FolderPopover.vala:22
+msgid "No mailboxes found"
+msgstr ""
+
+#: src/MessageList/FolderPopover/FolderPopover.vala:26
+msgid "Try changing search terms"
+msgstr ""
+
+#~ msgid "https://example.com"
+#~ msgstr "https://example.com"
 
 #~ msgid "Reply to All"
 #~ msgstr "Tümünü Yanıtla"
@@ -1077,9 +1147,6 @@ msgstr "Kaydet"
 
 #~ msgid "Error emptying %s"
 #~ msgstr "%s boşaltılırken bir sorun meydana geldi"
-
-#~ msgid "Delete"
-#~ msgstr "Sil"
 
 #~ msgid "Undo archive (Ctrl+Z)"
 #~ msgstr "Geri Al - Arşiv (Ctrl+Z)"
@@ -2148,9 +2215,6 @@ msgstr "Kaydet"
 
 #~ msgid "Authenticate"
 #~ msgstr "Kimlik Doğrula"
-
-#~ msgid ", "
-#~ msgstr ", "
 
 #~ msgid "Strikethrough (Ctrl+%)"
 #~ msgstr "Üstü çizili (Ctrl+%)"
