@@ -119,16 +119,19 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         var from_val_label = new Gtk.Label (message_info.from) {
             wrap = true,
+            wrap_mode = WORD_CHAR,
             xalign = 0
         };
 
         var to_val_label = new Gtk.Label (message_info.to) {
             wrap = true,
+            wrap_mode = WORD_CHAR,
             xalign = 0
         };
 
         var subject_val_label = new Gtk.Label (message_info.subject) {
             wrap = true,
+            wrap_mode = WORD_CHAR,
             xalign = 0
         };
 
