@@ -37,10 +37,10 @@ public class Mail.Alias : Gtk.ListBoxRow {
         );
     }
 
-    public Alias.create_new () {
+    public Alias.create_new (string alias_name) {
         Object (
             address: "",
-            alias_name: ""
+            alias_name: alias_name
         );
     }
 
@@ -130,11 +130,27 @@ public class Mail.Alias : Gtk.ListBoxRow {
             }
         });
 
+        edit_popover.map.connect (() => {
+            Idle.add (() => {
+                if (address == "") {
+                    address_entry.grab_focus ();
+                } else {
+                    name_entry.grab_focus ();
+                }
+
+                return Source.REMOVE;
+            });
+        });
+
         edit_popover.closed.connect (() => {
             if (address_entry.is_valid) {
                 save (old_address);
             } else {
                 address = old_address;
+
+                if (address.strip () == "") {
+                    finish_delete ();
+                }
             }
         });
 
@@ -144,6 +160,9 @@ public class Mail.Alias : Gtk.ListBoxRow {
         save.connect (() => {
             old_address = address;
         });
+
+        name_entry.activate.connect (edit_popover.popdown);
+        address_entry.activate.connect (edit_popover.popdown);
 
         delete_button.clicked.connect (() => {
             edit_popover.popdown ();

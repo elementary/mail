@@ -26,6 +26,7 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
     private HashTable<string, string?> aliases;
     private Gtk.ListBox list;
     private Granite.Widgets.Toast toast;
+    private string primary_name;
     private bool selection_change_ongoing = false;
 
     public AliasDialog (string account_uid) {
@@ -67,7 +68,8 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
         list.set_placeholder (placeholder);
 
         var scrolled_window = new Gtk.ScrolledWindow (null, null) {
-            child = list
+            child = list,
+            hscrollbar_policy = NEVER
         };
 
         var add_box = new Gtk.Box (HORIZONTAL, 0);
@@ -113,6 +115,10 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
         add (overlay);
         show_all ();
         present ();
+
+        var identity_source = Backend.Session.get_default ().get_identity_source_for_account_uid (account_uid);
+        var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+        primary_name = identity_extension.name;
 
         populate_list ();
 
@@ -182,19 +188,23 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
     private void populate_list () {
         aliases = Mail.Backend.Session.get_default ().get_aliases_for_account_uid (account_uid);
 
+        if (aliases == null) {
+            aliases = new HashTable<string, string> (str_hash, str_equal);
+        }
+
         foreach (var address in aliases.get_keys ()) {
             add_alias (address, aliases[address]);
         }
     }
 
     private void create_new_alias () {
-        add_alias (null, null);
+        add_alias (null, primary_name);
     }
 
     private void add_alias (string? address, string? name) {
         Alias alias;
         if (address == null) {
-            alias = new Alias.create_new ();
+            alias = new Alias.create_new (name);
         } else {
             alias = new Alias (address, name ?? "");
         }
