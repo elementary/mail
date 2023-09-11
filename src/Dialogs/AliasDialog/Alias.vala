@@ -26,7 +26,7 @@ public class Mail.Alias : Gtk.ListBoxRow {
     public string alias_name { get; set construct; }
     public bool is_deleted { get { return timeout_id != 0; } }
 
-    private Gtk.Label name_label;
+    private Gtk.Label label;
     private string old_address;
     private uint timeout_id = 0;
 
@@ -40,22 +40,18 @@ public class Mail.Alias : Gtk.ListBoxRow {
     construct {
         old_address = address;
 
-        name_label = new Gtk.Label ("") {
+        label = new Gtk.Label ("") {
             hexpand = true,
             xalign = 0
         };
-
-        var address_label = new Gtk.Label (address) {
-            halign = END
-        };
-        bind_property ("address", address_label, "label", DEFAULT);
 
         var edit_name_label = new Gtk.Label (_("Name:")) {
             halign = END
         };
 
         var name_entry = new Gtk.Entry () {
-            text = alias_name
+            text = alias_name,
+            placeholder_text = _("Enter name…")
         };
         name_entry.bind_property ("text", this, "alias-name", DEFAULT);
 
@@ -71,28 +67,25 @@ public class Mail.Alias : Gtk.ListBoxRow {
         }
 
         var address_entry = new Granite.ValidatedEntry.from_regex (regex) {
-            text = address
+            text = address,
+            placeholder_text = _("Enter e-mail address…")
         };
         address_entry.bind_property ("text", this, "address", BIDIRECTIONAL);
 
-        var delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
-            halign = END
-        };
-        delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        var delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic");
 
         var edit_popover_content = new Gtk.Grid () {
-            margin_start = 3,
-            margin_end = 3,
-            margin_top = 3,
-            margin_bottom = 3,
-            column_spacing = 3,
-            row_spacing = 3
+            margin_start = 6,
+            margin_end = 6,
+            margin_top = 6,
+            margin_bottom = 6,
+            column_spacing = 6,
+            row_spacing = 6
         };
         edit_popover_content.attach (edit_name_label, 0, 0);
         edit_popover_content.attach (name_entry, 1, 0);
         edit_popover_content.attach (edit_address_label, 0, 1);
         edit_popover_content.attach (address_entry, 1, 1);
-        edit_popover_content.attach (delete_button, 1, 2);
         edit_popover_content.show_all ();
 
         var edit_popover = new Gtk.Popover (null) {
@@ -104,16 +97,15 @@ public class Mail.Alias : Gtk.ListBoxRow {
             popover = edit_popover
         };
 
-        var box = new Gtk.Box (HORIZONTAL, 3) {
-            margin_start = 3,
-            margin_end = 3,
-            margin_top = 3,
-            margin_bottom = 3
+        var box = new Gtk.Box (HORIZONTAL, 6) {
+            margin_start = 6,
+            margin_end = 6,
+            margin_top = 6,
+            margin_bottom = 6
         };
-        box.add (name_label);
-        box.add (address_label);
-        box.add (new Gtk.Separator (VERTICAL));
+        box.add (label);
         box.add (edit_button);
+        box.add (delete_button);
 
         child = box;
         show_all ();
@@ -148,13 +140,14 @@ public class Mail.Alias : Gtk.ListBoxRow {
             }
         });
 
-        notify["alias-name"].connect (update_name_label);
-        update_name_label ();
+        notify["alias-name"].connect (update_label);
+        notify["address"].connect (update_label);
+        update_label ();
 
         save.connect (() => old_address = address);
 
         name_entry.activate.connect (edit_popover.popdown);
-        address_entry.activate.connect (() => Idle.add (() => { // Without Idle this could cause activation of the '+ Add Alias' button
+        address_entry.activate.connect (() => Idle.add (() => { // Without Idle this could cause activation of the '+ Add Alias…' button
             edit_popover.popdown ();
             return Source.REMOVE;
         }));
@@ -175,20 +168,9 @@ public class Mail.Alias : Gtk.ListBoxRow {
         });
     }
 
-    private void update_name_label () {
-        if (alias_name.strip () != "") {
-            name_label.label = alias_name;
-            name_label.get_style_context ().remove_class (Gtk.STYLE_CLASS_DIM_LABEL);
-            return;
-        }
-
-        if (address.strip () == "") {
-            name_label.label = "";
-            return;
-        }
-
-        name_label.label = _("Name not set");
-        name_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+    private void update_label () {
+        var name = alias_name.strip () != "" ? alias_name : _("Name not set");
+        label.label = "%s — %s".printf (address, name);
     }
 
     public void undo_delete () {
