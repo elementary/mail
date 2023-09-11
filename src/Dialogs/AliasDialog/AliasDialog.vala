@@ -108,6 +108,7 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
         };
         overlay.add_overlay (toast);
 
+        title = _("Aliases");
         default_height = 300;
         default_width = 500;
         add (overlay);
