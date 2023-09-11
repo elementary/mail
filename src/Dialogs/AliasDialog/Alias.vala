@@ -51,7 +51,7 @@ public class Mail.Alias : Gtk.ListBoxRow {
 
         var name_entry = new Gtk.Entry () {
             text = alias_name,
-            placeholder_text = "Enter name…"
+            placeholder_text = _("Enter name…")
         };
         name_entry.bind_property ("text", this, "alias-name", DEFAULT);
 
@@ -68,7 +68,7 @@ public class Mail.Alias : Gtk.ListBoxRow {
 
         var address_entry = new Granite.ValidatedEntry.from_regex (regex) {
             text = address,
-            placeholder_text = "Enter e-mail address…"
+            placeholder_text = _("Enter e-mail address…")
         };
         address_entry.bind_property ("text", this, "address", BIDIRECTIONAL);
 
