@@ -72,7 +72,7 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
 
         var add_box = new Gtk.Box (HORIZONTAL, 0);
         add_box.add (new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
-        add_box.add (new Gtk.Label (_("Add Alias")));
+        add_box.add (new Gtk.Label (_("Add Alias…")));
 
         var add_button = new Gtk.Button () {
             child = add_box,
