@@ -133,6 +133,18 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
 
             list.invalidate_filter ();
         });
+
+        delete_event.connect (() => {
+            foreach (var child in list.get_children ()) {
+                if (child is Alias && ((Alias) child).is_deleted) {
+                    aliases.remove (((Alias) child).address);
+                }
+            }
+
+            write_aliases ();
+
+            return Gdk.EVENT_PROPAGATE;
+        });
     }
 
     private static bool filter_func (Alias alias) {
