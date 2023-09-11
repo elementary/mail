@@ -163,7 +163,10 @@ public class Mail.Alias : Gtk.ListBoxRow {
         });
 
         name_entry.activate.connect (edit_popover.popdown);
-        address_entry.activate.connect (edit_popover.popdown);
+        address_entry.activate.connect (() => Idle.add (() => { // Without Idle this could cause activation of the '+ Add Alias' button
+            edit_popover.popdown ();
+            return Source.REMOVE;
+        }));
 
         delete_button.clicked.connect (() => {
             edit_popover.popdown ();
