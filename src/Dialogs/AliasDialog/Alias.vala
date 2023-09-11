@@ -151,9 +151,7 @@ public class Mail.Alias : Gtk.ListBoxRow {
         notify["alias-name"].connect (update_name_label);
         update_name_label ();
 
-        save.connect (() => {
-            old_address = address;
-        });
+        save.connect (() => old_address = address);
 
         name_entry.activate.connect (edit_popover.popdown);
         address_entry.activate.connect (() => Idle.add (() => { // Without Idle this could cause activation of the '+ Add Alias' button
