@@ -18,16 +18,12 @@
 */
 
 public class Mail.AliasDialog : Hdy.ApplicationWindow {
-    private const string ACTION_GROUP_PREFIX = "win";
-    private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
-
     public string account_uid { get; construct; }
 
     private HashTable<string, string?> aliases;
     private Gtk.ListBox list;
     private Granite.Widgets.Toast toast;
     private string primary_name;
-    private bool selection_change_ongoing = false;
 
     public AliasDialog (string account_uid) {
         Object (account_uid: account_uid);
@@ -44,7 +40,7 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
             xalign = 0
         };
 
-        var placeholder_description = new Gtk.Label (_("Add signatures using the button in the toolbar below")) {
+        var placeholder_description = new Gtk.Label (_("Add aliases using the button in the toolbar below")) {
             wrap = true,
             xalign = 0
         };
@@ -53,7 +49,9 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
 
         var placeholder = new Gtk.Box (VERTICAL, 0) {
             margin_start = 12,
-            margin_end = 12
+            margin_end = 12,
+            halign = CENTER,
+            valign = CENTER
         };
         placeholder.add (placeholder_title);
         placeholder.add (placeholder_description);

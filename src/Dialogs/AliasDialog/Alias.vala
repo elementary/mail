@@ -85,6 +85,7 @@ public class Mail.Alias : Gtk.ListBoxRow {
         var delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
             halign = END
         };
+        delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
         var edit_popover_content = new Gtk.Grid () {
             margin_start = 3,
