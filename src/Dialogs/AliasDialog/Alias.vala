@@ -19,14 +19,17 @@
 
 public class Mail.Alias : Gtk.ListBoxRow {
     public signal void save (string old_address);
+    public signal void finish_delete ();
+    public signal void start_delete ();
 
     public string address { get; set construct; }
-    public string? alias_name { get; set construct; }
-    public bool is_deleted { get; private set; default = false; }
+    public string alias_name { get; set construct; }
+    public bool is_deleted { get { return timeout_id != 0; } }
 
     private string old_address;
+    private uint timeout_id = 0;
 
-    public Alias (string address, string? alias_name) {
+    public Alias (string address, string alias_name) {
         Object (
             address: address,
             alias_name: alias_name
@@ -36,7 +39,7 @@ public class Mail.Alias : Gtk.ListBoxRow {
     construct {
         old_address = address;
 
-        var name_label = new Gtk.Label (alias_name ?? "Name not set") {
+        var name_label = new Gtk.Label (alias_name.strip () != "" ? alias_name : "Name not set") {
             hexpand = true,
             xalign = 0
         };
@@ -132,21 +135,25 @@ public class Mail.Alias : Gtk.ListBoxRow {
         save.connect (() => {
             old_address = address;
         });
+
+        delete_button.clicked.connect (() => {
+            edit_popover.popdown ();
+
+            timeout_id = GLib.Timeout.add_seconds (5, () => {
+                finish_delete ();
+                return Source.REMOVE;
+            });
+
+            start_delete ();
+        });
     }
 
-    // public void undo_delete () {
-    //     if (timeout_id != 0) {
-    //         Source.remove (timeout_id);
-    //         timeout_id = 0;
-    //     }
-    // }
-
-    // public void delete_signature () {
-    //     timeout_id = GLib.Timeout.add_seconds (5, () => {
-    //         finish_delete_signature.begin ();
-    //         return Source.REMOVE;
-    //     });
-    // }
+    public void undo_delete () {
+        if (timeout_id != 0) {
+            Source.remove (timeout_id);
+            timeout_id = 0;
+        }
+    }
 
     // public async void finish_delete_signature () {
     //     if (timeout_id != 0) {
