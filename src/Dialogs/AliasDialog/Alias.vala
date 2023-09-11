@@ -26,6 +26,7 @@ public class Mail.Alias : Gtk.ListBoxRow {
     public string alias_name { get; set construct; }
     public bool is_deleted { get { return timeout_id != 0; } }
 
+    private Gtk.Label name_label;
     private string old_address;
     private uint timeout_id = 0;
 
@@ -46,7 +47,7 @@ public class Mail.Alias : Gtk.ListBoxRow {
     construct {
         old_address = address;
 
-        var name_label = new Gtk.Label (alias_name.strip () != "" ? alias_name : address.strip () != "" ? "Name not set" : "") {
+        name_label = new Gtk.Label ("") {
             hexpand = true,
             xalign = 0
         };
@@ -137,13 +138,8 @@ public class Mail.Alias : Gtk.ListBoxRow {
             }
         });
 
-        notify["alias-name"].connect (() => {
-            if (alias_name.strip () == "") {
-                name_label.label = "Name not set";
-            } else {
-                name_label.label = alias_name;
-            }
-        });
+        notify["alias-name"].connect (update_name_label);
+        update_name_label ();
 
         save.connect (() => {
             old_address = address;
@@ -159,6 +155,22 @@ public class Mail.Alias : Gtk.ListBoxRow {
 
             start_delete ();
         });
+    }
+
+    private void update_name_label () {
+        if (alias_name.strip () != "") {
+            name_label.label = alias_name;
+            name_label.get_style_context ().remove_class (Gtk.STYLE_CLASS_DIM_LABEL);
+            return;
+        }
+
+        if (address.strip () == "") {
+            name_label.label = "";
+            return;
+        }
+
+        name_label.label = _("Name not set");
+        name_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
     }
 
     public void undo_delete () {
