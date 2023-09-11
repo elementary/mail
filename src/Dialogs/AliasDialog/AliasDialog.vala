@@ -151,52 +151,6 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
         return !alias.is_deleted;
     }
 
-    // private async void finish () {
-    //     /* Save the current open signature */
-    //     yield set_selected_signature (null);
-
-    //     foreach (var child in signature_list.get_children ()) {
-    //         var signature = (Signature)child;
-    //         if (signature.is_deleted) {
-    //             yield signature.finish_delete_signature ();
-    //         }
-    //     }
-    // }
-
-    // private async void set_selected_signature (Signature? signature) {
-    //     if (current_signature != null) {
-    //         current_signature.content = yield web_view.get_body_html ();
-    //         yield current_signature.save ();
-    //     }
-
-    //     current_signature = signature;
-
-    //     if (signature == null) {
-    //         title_entry.text = "";
-    //         web_view.set_content_of_element ("body", "");
-
-    //         return;
-    //     }
-
-    //     selection_change_ongoing = true;
-
-    //     title_entry.text = signature.title;
-    //     web_view.set_content_of_element ("body", signature.content);
-
-    //     unowned var session = Backend.Session.get_default ();
-    //     foreach (var account in session.get_accounts ()) {
-    //         var identity_source = session.get_identity_source_for_account_uid (account.service.uid);
-    //         unowned var identity_extension = (E.SourceMailIdentity)identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
-    //         if (identity_extension.signature_uid == signature.uid) {
-    //             change_action_state (account.service.uid, true);
-    //         } else {
-    //             change_action_state (account.service.uid, false);
-    //         }
-    //     }
-
-    //     selection_change_ongoing = false;
-    // }
-
     private void populate_list () {
         aliases = Mail.Backend.Session.get_default ().get_aliases_for_account_uid (account_uid);
 
@@ -255,52 +209,4 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
 
         Backend.Session.get_default ().set_aliases_for_account_uid.begin (account_uid, encoded_aliases.encode ());
     }
-
-    // private void populate_default_menu (Menu menu) {
-    //     unowned var session = Backend.Session.get_default ();
-    //     foreach (var account in session.get_accounts ()) {
-    //         var action = new SimpleAction.stateful (account.service.uid, null, false);
-    //         add_action (action);
-    //         menu.append (account.service.display_name, ACTION_PREFIX + account.service.uid);
-    //     }
-    // }
-
-    // private void update_default_signature (string account_uid, Variant? set_default) {
-    //     if (selection_change_ongoing || current_signature == null) {
-    //         return;
-    //     }
-
-    //     unowned var session = Backend.Session.get_default ();
-    //     if (set_default.get_boolean ()) {
-    //         session.set_signature_uid_for_account_uid.begin (account_uid, current_signature.uid);
-    //     } else {
-    //         session.set_signature_uid_for_account_uid.begin (account_uid, "none");
-    //     }
-    // }
-
-    // private async void create_new_signature () {
-    //     var new_signature_source = yield Mail.Backend.Session.get_default ().create_new_signature ();
-
-    //     if (new_signature_source == null) {
-    //         return;
-    //     }
-
-    //     var new_signature = yield new Signature (new_signature_source);
-    //     signature_list.add (new_signature);
-    //     signature_list.select_row (new_signature);
-    // }
-
-    // private void delete_selected_signature () {
-    //     var signature = (Signature)signature_list.get_selected_row ();
-    //     var index = signature.get_index () + 1;
-    //     last_deleted_signature = signature;
-
-    //     signature.delete_signature ();
-
-    //     signature_list.invalidate_filter ();
-    //     signature_list.select_row (signature_list.get_row_at_index (index));
-
-    //     toast.title = _("'%s' deleted").printf (signature.title);
-    //     toast.send_notification ();
-    // }
 }
