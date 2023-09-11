@@ -188,11 +188,16 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
     }
 
     private void create_new_alias () {
-        add_alias ("me@example.com", "No name");
+        add_alias (null, null);
     }
 
-    private void add_alias (string address, string? name) {
-        var alias = new Alias (address, name ?? "");
+    private void add_alias (string? address, string? name) {
+        Alias alias;
+        if (address == null) {
+            alias = new Alias.create_new ();
+        } else {
+            alias = new Alias (address, name ?? "");
+        }
 
         alias.save.connect ((old_address) => {
             if (old_address != alias.address) {

@@ -36,10 +36,17 @@ public class Mail.Alias : Gtk.ListBoxRow {
         );
     }
 
+    public Alias.create_new () {
+        Object (
+            address: "",
+            alias_name: ""
+        );
+    }
+
     construct {
         old_address = address;
 
-        var name_label = new Gtk.Label (alias_name.strip () != "" ? alias_name : "Name not set") {
+        var name_label = new Gtk.Label (alias_name.strip () != "" ? alias_name : address.strip () != "" ? "Name not set" : "") {
             hexpand = true,
             xalign = 0
         };
@@ -54,7 +61,7 @@ public class Mail.Alias : Gtk.ListBoxRow {
         };
 
         var name_entry = new Gtk.Entry () {
-            text = name_label.label
+            text = alias_name
         };
         name_entry.bind_property ("text", this, "alias-name", DEFAULT);
 
@@ -116,6 +123,12 @@ public class Mail.Alias : Gtk.ListBoxRow {
         child = box;
         show_all ();
 
+        map.connect (() => {
+            if (address == "") {
+                edit_button.active = true;
+            }
+        });
+
         edit_popover.closed.connect (() => {
             if (address_entry.is_valid) {
                 save (old_address);
@@ -154,35 +167,4 @@ public class Mail.Alias : Gtk.ListBoxRow {
             timeout_id = 0;
         }
     }
-
-    // public async void finish_delete_signature () {
-    //     if (timeout_id != 0) {
-    //         Source.remove (timeout_id);
-    //         timeout_id = 0;
-    //     }
-
-    //     foreach (var identity_source in Mail.Backend.Session.get_default ().get_all_identity_sources ()) {
-    //         unowned var identity_extension = (E.SourceMailIdentity)identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
-    //         if (identity_extension.signature_uid == signature_source.uid) {
-    //             identity_extension.signature_uid = "none";
-    //             try {
-    //                 yield identity_source.write (null);
-    //             } catch (Error e) {
-    //                 warning (
-    //                     "Failed to remove signature '%s' as default for mail address '%s': %s",
-    //                     title,
-    //                     identity_extension.address,
-    //                     e.message
-    //                 );
-    //             }
-    //         }
-    //     }
-
-    //     try {
-    //         yield signature_source.remove (null);
-    //         destroy ();
-    //     } catch (Error e) {
-    //         warning ("Failed to delete signature '%s': %s", title, e.message);
-    //     }
-    // }
 }
