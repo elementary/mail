@@ -115,8 +115,8 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
         present ();
 
         var identity_source = Backend.Session.get_default ().get_identity_source_for_account_uid (account_uid);
-        var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
-        primary_name = identity_extension.name;
+        var extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+        primary_name = extension.name;
 
         populate_list ();
 
@@ -180,7 +180,7 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
         alias.start_delete.connect (() => {
             list.invalidate_filter ();
 
-            toast.title = _("'%s' deleted").printf (alias.alias_name.strip () != "" ? alias.alias_name : alias.address);
+            toast.title = _("'%s' deleted").printf (alias.alias_name != "" ? alias.alias_name : alias.address);
             toast.send_notification ();
         });
 
@@ -200,6 +200,7 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
             encoded_aliases.add (val ?? "", key);
         });
 
-        Backend.Session.get_default ().set_aliases_for_account_uid.begin (account_uid, encoded_aliases.encode () ?? "");
+        var session = Backend.Session.get_default ();
+        session.set_aliases_for_account_uid.begin (account_uid, encoded_aliases.encode () ?? "");
     }
 }
