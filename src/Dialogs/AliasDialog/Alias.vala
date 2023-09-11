@@ -168,6 +168,10 @@ public class Mail.Alias : Gtk.ListBoxRow {
         delete_button.clicked.connect (() => {
             edit_popover.popdown ();
 
+            if (old_address == "") {
+                return; // Deletion will be handled by the closed handler
+            }
+
             timeout_id = GLib.Timeout.add_seconds (5, () => {
                 finish_delete ();
                 return Source.REMOVE;

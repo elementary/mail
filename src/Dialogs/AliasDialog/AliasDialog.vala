@@ -205,6 +205,8 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
             encoded_aliases.add (val ?? "", key);
         });
 
-        Backend.Session.get_default ().set_aliases_for_account_uid.begin (account_uid, encoded_aliases.encode ());
+        if (encoded_aliases.length () > 0) {
+            Backend.Session.get_default ().set_aliases_for_account_uid.begin (account_uid, encoded_aliases.encode ());
+        }
     }
 }
