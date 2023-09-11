@@ -37,13 +37,6 @@ public class Mail.Alias : Gtk.ListBoxRow {
         );
     }
 
-    public Alias.create_new (string alias_name) {
-        Object (
-            address: "",
-            alias_name: alias_name
-        );
-    }
-
     construct {
         old_address = address;
 
