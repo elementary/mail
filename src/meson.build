@@ -18,6 +18,8 @@ vala_files = files(
     'Dialogs/InsertLinkDialog.vala',
     'Dialogs/SignatureDialog/Signature.vala',
     'Dialogs/SignatureDialog/SignatureDialog.vala',
+    'Dialogs/AliasDialog/AliasDialog.vala',
+    'Dialogs/AliasDialog/Alias.vala',
     'FoldersView/AccountSavedState.vala',
     'FoldersView/AccountSourceItem.vala',
     'FoldersView/FoldersListView.vala',

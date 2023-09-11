@@ -147,4 +147,16 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem, Mail.Sourc
     public bool allow_dnd_sorting () {
         return false;
     }
+
+    public override Gtk.Menu? get_context_menu () {
+        var menu = new Gtk.Menu ();
+
+        var alias_item = new Gtk.MenuItem.with_label (_("Edit Aliases..."));
+        alias_item.activate.connect (() => new AliasDialog (account.service.uid));
+        menu.add (alias_item);
+
+        menu.show_all ();
+
+        return menu;
+    }
 }
