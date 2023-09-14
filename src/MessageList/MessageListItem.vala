@@ -317,7 +317,11 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         });
 
         var donate_label = new Gtk.Label (_("The message isn't displayed correctly?") + " ");
-        var donate_link = new Gtk.LinkButton.with_label ("", _("Donate it to elementary for debugging purposes."));
+
+        var donate_link = new Gtk.LinkButton.with_label (
+            _("Send the message to elementary to allow improving the quality of Mail."),
+            _("Donate it to elementary for debugging purposes.")
+        );
 
         var donate_box = new Gtk.Box (HORIZONTAL, 0) {
             margin_start = 12,
