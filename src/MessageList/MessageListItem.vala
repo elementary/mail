@@ -475,7 +475,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         var dialog = new Granite.MessageDialog (
             _("Donate message to elementary?"),
             _("elementary staff will be able to read the contents of the message as well as your e-mail address."),
-            new ThemedIcon ("dialog-information"),
+            new ThemedIcon ("dialog-question"),
             NONE
         );
         dialog.add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
