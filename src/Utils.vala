@@ -116,7 +116,7 @@ public class Mail.Utils {
         return "folder://%s/%s".printf (encoded_service_uid, encoded_normed_folder_name);
     }
 
-    public static string? get_sender_from_message (Camel.MimeMessage message) {
+    public static string? get_identity_address_from_message (Camel.MimeMessage message) {
         unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
         unowned var account_source_uid = message.get_source ();
         var account_source = session.ref_source (account_source_uid);
@@ -131,7 +131,8 @@ public class Mail.Utils {
                 if (identity_source != null && identity_source.has_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY)) {
                     unowned var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
 
-                    return identity_extension.get_address ();
+                    var address = identity_extension.get_address ();
+                    return address != "" ? address : null;
                 }
             }
         }

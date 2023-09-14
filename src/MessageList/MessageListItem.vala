@@ -510,7 +510,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             return;
         }
 
-        var from_address = Utils.get_sender_from_message (donation_message);
+        var from_address = Utils.get_identity_address_from_message (donation_message);
         if (from_address == null) {
             MainWindow.send_error_message (
                 _("Failed to donate message"),
