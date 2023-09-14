@@ -115,4 +115,27 @@ public class Mail.Utils {
 
         return "folder://%s/%s".printf (encoded_service_uid, encoded_normed_folder_name);
     }
+
+    public static string? get_sender_from_message (Camel.MimeMessage message) {
+        unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
+        unowned var account_source_uid = message.get_source ();
+        var account_source = session.ref_source (account_source_uid);
+
+        if (account_source != null && account_source.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
+            unowned var account_extension = (E.SourceMailAccount) account_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
+
+            var identity_uid = account_extension.identity_uid;
+            if (identity_uid != null && identity_uid != "") {
+                var identity_source = session.ref_source (identity_uid);
+
+                if (identity_source != null && identity_source.has_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY)) {
+                    unowned var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+
+                    return identity_extension.get_address ();
+                }
+            }
+        }
+
+        return null;
+    }
 }
