@@ -52,7 +52,7 @@ jobs:
     name: Gettext
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/elementary/flatpak-platform/runtime:7.2-x86_64
+      image: ghcr.io/elementary/flatpak-platform/runtime:7-x86_64
       options: --privileged
 
     steps:
