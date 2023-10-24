@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-10-24 22:57+0000\n"
 "PO-Revision-Date: 2023-08-03 18:03+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
@@ -277,7 +277,8 @@ msgstr[1] "%s מ־%u מענים"
 msgid "Mail"
 msgstr "דוא״ל"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "ביטול"
 
@@ -348,7 +349,7 @@ msgstr "תיקיית היעד לא נמצאה."
 msgid "The source folder is the destination folder."
 msgstr "תיקיית המקור היא תיקיית היעד."
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr "חתימה חדשה"
 
@@ -443,6 +444,56 @@ msgstr "טקסט הקישור:"
 msgid "Example Website"
 msgstr "אתר לדוגמה"
 
+#: src/Dialogs/AliasDialog/Alias.vala:48
+#, fuzzy
+#| msgid "N_ame:"
+msgid "Name:"
+msgstr "_שם:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:54
+msgid "Enter name…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:58
+#, fuzzy
+#| msgid "Email Address:"
+msgid "Address:"
+msgstr "כתובת דוא״ל:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+#, fuzzy
+#| msgid "Email address:"
+msgid "Enter e-mail address…"
+msgstr "כתובת דוא״ל:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:172
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+#, fuzzy
+#| msgid "Add signatures using the button in the toolbar below"
+msgid "Add aliases using the button in the toolbar below"
+msgstr "הוספת חתימות באמצעות הכפתור בסרגל הכלים שלהלן"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "‚%s’ נמחקה"
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 msgid "No Signatures"
 msgstr "אין חתימות"
@@ -476,10 +527,11 @@ msgstr "הגדרת ברירת מחדל עבור…"
 msgid "Signature"
 msgstr "חתימה"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
-msgstr "‚%s’ נמחקה"
+#: src/FoldersView/AccountSourceItem.vala:154
+#, fuzzy
+#| msgid "Edit Signatures…"
+msgid "Edit Aliases…"
+msgstr "עריכת חתימות…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -1662,9 +1714,6 @@ msgstr "כדאי לשנות את ביטוי החיפוש"
 #~ msgid "Nickname:"
 #~ msgstr "כינוי:"
 
-#~ msgid "Email address:"
-#~ msgstr "כתובת דוא״ל:"
-
 #~ msgid "Find"
 #~ msgstr "חיפוש"
 
@@ -1883,9 +1932,6 @@ msgstr "כדאי לשנות את ביטוי החיפוש"
 
 #~ msgid "N_ickname:"
 #~ msgstr "_כינוי:"
-
-#~ msgid "N_ame:"
-#~ msgstr "_שם:"
 
 #~ msgid "S_ervice:"
 #~ msgstr "שי_רות:"
@@ -2133,9 +2179,6 @@ msgstr "כדאי לשנות את ביטוי החיפוש"
 
 #~ msgid "Are you sure you want to remove this account?"
 #~ msgstr "להסיר חשבון זה?"
-
-#~ msgid "Email Address:"
-#~ msgstr "כתובת דוא״ל:"
 
 #~ msgid "Username:"
 #~ msgstr "שם משתמש:"
