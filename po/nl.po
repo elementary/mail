@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-10-24 22:57+0000\n"
 "PO-Revision-Date: 2023-08-08 09:08+0000\n"
 "Last-Translator: drspider <neodragonfox@outlook.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
@@ -285,7 +285,8 @@ msgstr[1] "%s van %u afzenders"
 msgid "Mail"
 msgstr "Mail"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Ongedaan maken"
 
@@ -359,7 +360,7 @@ msgstr "Kon de doelmap niet vinden."
 msgid "The source folder is the destination folder."
 msgstr "De bronmap is hetzelfde als de doelmap."
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr "Nieuwe handtekening"
 
@@ -454,6 +455,50 @@ msgstr "Link tekst:"
 msgid "Example Website"
 msgstr "Voorbeeldwebsite"
 
+#: src/Dialogs/AliasDialog/Alias.vala:48
+msgid "Name:"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:54
+msgid "Enter name…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:58
+msgid "Address:"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+msgid "Enter e-mail address…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:172
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+#, fuzzy
+#| msgid "Add signatures using the button in the toolbar below"
+msgid "Add aliases using the button in the toolbar below"
+msgstr "Voeg handtekeningen toe met de knop in de ondergelegen werkbalk"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "'%s' verwijdert"
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 msgid "No Signatures"
 msgstr "Geen handtekeningen"
@@ -487,10 +532,11 @@ msgstr "Zet standaard voor…"
 msgid "Signature"
 msgstr "Handtekening"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
-msgstr "'%s' verwijdert"
+#: src/FoldersView/AccountSourceItem.vala:154
+#, fuzzy
+#| msgid "Edit Signatures…"
+msgid "Edit Aliases…"
+msgstr "Handtekeningen aanpassen…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"

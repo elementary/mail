@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-10-24 22:57+0000\n"
 "PO-Revision-Date: 2023-08-11 12:08+0000\n"
 "Last-Translator: Jakub Kyzr <jakubkyzr@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/mail/cs/>\n"
@@ -277,7 +277,8 @@ msgstr[2] "%s od %u odesilatelů"
 msgid "Mail"
 msgstr "Mail"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Zpět"
 
@@ -351,7 +352,7 @@ msgstr "Cílová složka nebyla nalezena."
 msgid "The source folder is the destination folder."
 msgstr "Zdrojová složka je stejná jako cílová složka."
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr "Nový podpis"
 
@@ -446,6 +447,56 @@ msgstr "Text odkazu:"
 msgid "Example Website"
 msgstr "Příklad webové stránky"
 
+#: src/Dialogs/AliasDialog/Alias.vala:48
+#, fuzzy
+#| msgid "N_ame:"
+msgid "Name:"
+msgstr "J_méno:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:54
+msgid "Enter name…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:58
+#, fuzzy
+#| msgid "Email Address:"
+msgid "Address:"
+msgstr "E-mailová adresa:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+#, fuzzy
+#| msgid "Email address:"
+msgid "Enter e-mail address…"
+msgstr "E-mailová adresa:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:172
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+#, fuzzy
+#| msgid "Add signatures using the button in the toolbar below"
+msgid "Add aliases using the button in the toolbar below"
+msgstr "Přidejte podpisy pomocí tlačítka ve spodní liště"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "Smazán „%s“"
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 msgid "No Signatures"
 msgstr "Žádné podpisy"
@@ -479,10 +530,11 @@ msgstr "Nastavit jako výchozí pro…"
 msgid "Signature"
 msgstr "Podpis"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
-msgstr "Smazán „%s“"
+#: src/FoldersView/AccountSourceItem.vala:154
+#, fuzzy
+#| msgid "Edit Signatures…"
+msgid "Edit Aliases…"
+msgstr "Upravit podpisy…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -1679,9 +1731,6 @@ msgstr "Zkuste změnit hledaný výraz"
 #~ msgid "Nickname:"
 #~ msgstr "Přezdívka:"
 
-#~ msgid "Email address:"
-#~ msgstr "E-mailová adresa:"
-
 #~ msgid "Previous Result"
 #~ msgstr "Předchozí výsledek"
 
@@ -1793,9 +1842,6 @@ msgstr "Zkuste změnit hledaný výraz"
 #~ msgid "N_ickname:"
 #~ msgstr "P_řezdívka:"
 
-#~ msgid "N_ame:"
-#~ msgstr "J_méno:"
-
 #~ msgid "S_ervice:"
 #~ msgstr "S_lužba:"
 
@@ -1895,9 +1941,6 @@ msgstr "Zkuste změnit hledaný výraz"
 
 #~ msgid "Are you sure you want to remove this account?"
 #~ msgstr "Opravdu chcete odebrat tento účet?"
-
-#~ msgid "Email Address:"
-#~ msgstr "E-mailová adresa:"
 
 #~ msgid "Username:"
 #~ msgstr "Uživatelské jméno:"

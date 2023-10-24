@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-10-24 22:57+0000\n"
 "PO-Revision-Date: 2023-08-04 14:24+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
@@ -284,7 +284,8 @@ msgstr[2] "%s от %u отправителей"
 msgid "Mail"
 msgstr "Почта"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Отменить"
 
@@ -360,7 +361,7 @@ msgstr "Папка назначения не найдена."
 msgid "The source folder is the destination folder."
 msgstr "Исходная папка является папкой назначения."
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr "Новая подпись"
 
@@ -455,6 +456,56 @@ msgstr "Текст ссылки:"
 msgid "Example Website"
 msgstr "Пример веб-сайта"
 
+#: src/Dialogs/AliasDialog/Alias.vala:48
+#, fuzzy
+#| msgid "N_ame:"
+msgid "Name:"
+msgstr "_Имя:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:54
+msgid "Enter name…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:58
+#, fuzzy
+#| msgid "Email Address:"
+msgid "Address:"
+msgstr "Адрес электронной почты:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+#, fuzzy
+#| msgid "Email address:"
+msgid "Enter e-mail address…"
+msgstr "Адрес почты:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:172
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+#, fuzzy
+#| msgid "Add signatures using the button in the toolbar below"
+msgid "Add aliases using the button in the toolbar below"
+msgstr "Добавьте подписи с помощью кнопки на панели инструментов ниже"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "«%s» удалена"
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 msgid "No Signatures"
 msgstr "Нет подписей"
@@ -488,10 +539,11 @@ msgstr "По умолчанию для…"
 msgid "Signature"
 msgstr "Подпись"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
-msgstr "«%s» удалена"
+#: src/FoldersView/AccountSourceItem.vala:154
+#, fuzzy
+#| msgid "Edit Signatures…"
+msgid "Edit Aliases…"
+msgstr "Редактировать подписи…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -1710,9 +1762,6 @@ msgstr "Попробуйте изменить поисковый запрос"
 #~ msgid "Nickname:"
 #~ msgstr "Псевдоним:"
 
-#~ msgid "Email address:"
-#~ msgstr "Адрес почты:"
-
 #~ msgid "Find"
 #~ msgstr "Найти"
 
@@ -1934,9 +1983,6 @@ msgstr "Попробуйте изменить поисковый запрос"
 
 #~ msgid "N_ickname:"
 #~ msgstr "_Псевдоним:"
-
-#~ msgid "N_ame:"
-#~ msgstr "_Имя:"
 
 #~ msgid "S_ervice:"
 #~ msgstr "Сервис:"
@@ -2192,9 +2238,6 @@ msgstr "Попробуйте изменить поисковый запрос"
 
 #~ msgid "Are you sure you want to remove this account?"
 #~ msgstr "Вы уверены, что хотите удалить этот аккаунт?"
-
-#~ msgid "Email Address:"
-#~ msgstr "Адрес электронной почты:"
 
 #~ msgid "Username:"
 #~ msgstr "Имя пользователя:"

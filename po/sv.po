@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-10-24 22:57+0000\n"
 "PO-Revision-Date: 2017-04-15 20:42+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Swedish <https://l10n.elementary.io/projects/mail/mail/sv/>\n"
@@ -297,7 +297,8 @@ msgstr[1] ""
 msgid "Mail"
 msgstr "Alla brev"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr ""
 
@@ -377,7 +378,7 @@ msgstr ""
 msgid "The source folder is the destination folder."
 msgstr ""
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr ""
 
@@ -492,6 +493,52 @@ msgstr ""
 msgid "Example Website"
 msgstr ""
 
+#: src/Dialogs/AliasDialog/Alias.vala:48
+msgid "Name:"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:54
+msgid "Enter name…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:58
+#, fuzzy
+#| msgid "Email Address:"
+msgid "Address:"
+msgstr "E-postadress:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+#, fuzzy
+#| msgid "Email address:"
+msgid "Enter e-mail address…"
+msgstr "E-postadress:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:172
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+msgid "Add aliases using the button in the toolbar below"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr ""
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 msgid "No Signatures"
 msgstr ""
@@ -527,9 +574,8 @@ msgstr ""
 msgid "Signature"
 msgstr ""
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
+#: src/FoldersView/AccountSourceItem.vala:154
+msgid "Edit Aliases…"
 msgstr ""
 
 #: src/FoldersView/FoldersListView.vala:47
@@ -1643,9 +1689,6 @@ msgstr ""
 #~ msgid "Welcome to Mail"
 #~ msgstr "Välkommen till Mail"
 
-#~ msgid "Email address:"
-#~ msgstr "E-postadress:"
-
 #~ msgid "Password"
 #~ msgstr "Lösenord"
 
@@ -1654,9 +1697,6 @@ msgstr ""
 
 #~ msgid "Copy Email Address"
 #~ msgstr "Kopiera e-postadress"
-
-#~ msgid "Email Address:"
-#~ msgstr "E-postadress:"
 
 #~ msgid "Password:"
 #~ msgstr "Lösenord:"

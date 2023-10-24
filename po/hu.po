@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-10-24 22:57+0000\n"
 "PO-Revision-Date: 2023-08-03 18:03+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/mail/hu/"
@@ -276,7 +276,8 @@ msgstr[1] "%s %u feladótól"
 msgid "Mail"
 msgstr "E-mail"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Visszavonás"
 
@@ -349,7 +350,7 @@ msgstr "A célmappa nem található."
 msgid "The source folder is the destination folder."
 msgstr "A forrásmappa megegyezik a célmappával."
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr "Új aláírás"
 
@@ -444,6 +445,50 @@ msgstr "Link szövege:"
 msgid "Example Website"
 msgstr "Példaoldal"
 
+#: src/Dialogs/AliasDialog/Alias.vala:48
+msgid "Name:"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:54
+msgid "Enter name…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:58
+msgid "Address:"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+msgid "Enter e-mail address…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:172
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+#, fuzzy
+#| msgid "Add signatures using the button in the toolbar below"
+msgid "Add aliases using the button in the toolbar below"
+msgstr "Adjon hozzá aláírásokat az alul található gombbal"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "'%s' törölve"
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 msgid "No Signatures"
 msgstr "Nincsenek aláírások"
@@ -477,10 +522,11 @@ msgstr "Beállítás alapértelmezettként ehhez…"
 msgid "Signature"
 msgstr "Aláírás"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
-msgstr "'%s' törölve"
+#: src/FoldersView/AccountSourceItem.vala:154
+#, fuzzy
+#| msgid "Edit Signatures…"
+msgid "Edit Aliases…"
+msgstr "Aláírások szerkesztése…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"

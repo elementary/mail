@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-10-24 22:57+0000\n"
 "PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/mail/mail/lt/"
@@ -308,7 +308,8 @@ msgstr[2] "Visada rodyti nuo siuntėjo"
 msgid "Mail"
 msgstr "Paštas"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Atšaukti"
 
@@ -394,7 +395,7 @@ msgstr ""
 msgid "The source folder is the destination folder."
 msgstr ""
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr ""
 
@@ -505,6 +506,54 @@ msgstr "Nuorodos tekstas:"
 msgid "Example Website"
 msgstr "Pavyzdinė svetainė"
 
+#: src/Dialogs/AliasDialog/Alias.vala:48
+#, fuzzy
+#| msgid "N_ame:"
+msgid "Name:"
+msgstr "V_ardas:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:54
+msgid "Enter name…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:58
+#, fuzzy
+#| msgid "Email Address:"
+msgid "Address:"
+msgstr "El. pašto adresas:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+#, fuzzy
+#| msgid "Email address:"
+msgid "Enter e-mail address…"
+msgstr "El. pašto adresas:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:172
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+msgid "Add aliases using the button in the toolbar below"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr ""
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 #, fuzzy
 #| msgid "Insert Link"
@@ -544,9 +593,8 @@ msgstr ""
 msgid "Signature"
 msgstr "Įterpti nuorodą"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
+#: src/FoldersView/AccountSourceItem.vala:154
+msgid "Edit Aliases…"
 msgstr ""
 
 #: src/FoldersView/FoldersListView.vala:47
@@ -1782,9 +1830,6 @@ msgstr ""
 #~ msgid "Nickname:"
 #~ msgstr "Slapyvardis:"
 
-#~ msgid "Email address:"
-#~ msgstr "El. pašto adresas:"
-
 #~ msgid "Find"
 #~ msgstr "Rasti"
 
@@ -2006,9 +2051,6 @@ msgstr ""
 
 #~ msgid "N_ickname:"
 #~ msgstr "S_lapyvardis:"
-
-#~ msgid "N_ame:"
-#~ msgstr "V_ardas:"
 
 #~ msgid "S_ervice:"
 #~ msgstr "_Paslauga:"
@@ -2267,9 +2309,6 @@ msgstr ""
 
 #~ msgid "Are you sure you want to remove this account?"
 #~ msgstr "Ar tikrai norite pašalinti šią paskyrą?"
-
-#~ msgid "Email Address:"
-#~ msgstr "El. pašto adresas:"
 
 #~ msgid "Username:"
 #~ msgstr "Naudotojo vardas:"

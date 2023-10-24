@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-10-24 22:57+0000\n"
 "PO-Revision-Date: 2023-08-04 14:24+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
@@ -263,7 +263,8 @@ msgstr[0] "%2$u人から%1$s"
 msgid "Mail"
 msgstr "メール"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "元に戻す"
 
@@ -331,7 +332,7 @@ msgstr "移動先フォルダーが見つかりませんでした。"
 msgid "The source folder is the destination folder."
 msgstr "移動元フォルダーが移動先です。"
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr "新しい署名"
 
@@ -426,6 +427,56 @@ msgstr "リンクテキスト:"
 msgid "Example Website"
 msgstr "Web サイト名を入力"
 
+#: src/Dialogs/AliasDialog/Alias.vala:48
+#, fuzzy
+#| msgid "N_ame:"
+msgid "Name:"
+msgstr "名前 (_A):"
+
+#: src/Dialogs/AliasDialog/Alias.vala:54
+msgid "Enter name…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:58
+#, fuzzy
+#| msgid "Email Address:"
+msgid "Address:"
+msgstr "メールアドレス:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+#, fuzzy
+#| msgid "Email address:"
+msgid "Enter e-mail address…"
+msgstr "メールアドレス:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:172
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+#, fuzzy
+#| msgid "Add signatures using the button in the toolbar below"
+msgid "Add aliases using the button in the toolbar below"
+msgstr "以下のツールバー内のボタンを使って、署名を追加してください"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "'%s' を削除しました"
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 msgid "No Signatures"
 msgstr "署名がありません"
@@ -459,10 +510,11 @@ msgstr "デフォルトに設定…"
 msgid "Signature"
 msgstr "署名"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
-msgstr "'%s' を削除しました"
+#: src/FoldersView/AccountSourceItem.vala:154
+#, fuzzy
+#| msgid "Edit Signatures…"
+msgid "Edit Aliases…"
+msgstr "署名を編集…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -1627,9 +1679,6 @@ msgstr "検索用語を変更してみてください"
 #~ msgid "Nickname:"
 #~ msgstr "ニックネーム:"
 
-#~ msgid "Email address:"
-#~ msgstr "メールアドレス:"
-
 #~ msgid "Find"
 #~ msgstr "検索"
 
@@ -1850,9 +1899,6 @@ msgstr "検索用語を変更してみてください"
 
 #~ msgid "N_ickname:"
 #~ msgstr "ニックネーム (_I):"
-
-#~ msgid "N_ame:"
-#~ msgstr "名前 (_A):"
 
 #~ msgid "S_ervice:"
 #~ msgstr "サービス (_E):"
@@ -2104,9 +2150,6 @@ msgstr "検索用語を変更してみてください"
 
 #~ msgid "Are you sure you want to remove this account?"
 #~ msgstr "本当にこのアカウントを削除しますか？"
-
-#~ msgid "Email Address:"
-#~ msgstr "メールアドレス:"
 
 #~ msgid "Username:"
 #~ msgstr "ユーザー名:"
