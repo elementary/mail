@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-10-24 22:57+0000\n"
 "PO-Revision-Date: 2023-08-03 14:22+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
@@ -287,7 +287,8 @@ msgstr[1] "%s fra %u avsendere"
 msgid "Mail"
 msgstr "E-post"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Angre"
 
@@ -365,7 +366,7 @@ msgstr "Fant ikke målmappen."
 msgid "The source folder is the destination folder."
 msgstr "Kildemappen er målmappen."
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr "Ny signatur"
 
@@ -462,6 +463,56 @@ msgstr "Lenketekst"
 msgid "Example Website"
 msgstr "Eksempelnettside"
 
+#: src/Dialogs/AliasDialog/Alias.vala:48
+#, fuzzy
+#| msgid "N_ame:"
+msgid "Name:"
+msgstr "N_avn:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:54
+msgid "Enter name…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:58
+#, fuzzy
+#| msgid "Email Address:"
+msgid "Address:"
+msgstr "E-postadresse:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+#, fuzzy
+#| msgid "Email address:"
+msgid "Enter e-mail address…"
+msgstr "E-postadresse:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:172
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+#, fuzzy
+#| msgid "Add signatures using the button in the toolbar below"
+msgid "Add aliases using the button in the toolbar below"
+msgstr "Legg til signaturer ved å bruke knappen i verktøylinjen nedenfor"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "«%s» slettet"
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 #, fuzzy
 #| msgid "New Signature"
@@ -503,10 +554,10 @@ msgstr "Sett som forvalg for …"
 msgid "Signature"
 msgstr "Ny signatur"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
-msgstr "«%s» slettet"
+#: src/FoldersView/AccountSourceItem.vala:154
+#, fuzzy
+msgid "Edit Aliases…"
+msgstr "Rediger signaturer …"
 
 #: src/FoldersView/FoldersListView.vala:47
 #, fuzzy
@@ -1714,9 +1765,6 @@ msgstr "Prøv å endre søket"
 #~ msgid "Nickname:"
 #~ msgstr "Kallenavn:"
 
-#~ msgid "Email address:"
-#~ msgstr "E-postadresse:"
-
 #~ msgid "Find"
 #~ msgstr "Finn"
 
@@ -1935,9 +1983,6 @@ msgstr "Prøv å endre søket"
 
 #~ msgid "N_ickname:"
 #~ msgstr "K_allenavn:"
-
-#~ msgid "N_ame:"
-#~ msgstr "N_avn:"
 
 #~ msgid "S_ervice:"
 #~ msgstr "T_jeneste:"
@@ -2191,9 +2236,6 @@ msgstr "Prøv å endre søket"
 
 #~ msgid "Are you sure you want to remove this account?"
 #~ msgstr "Er du sikker på at du vil fjerne denne kontoen?"
-
-#~ msgid "Email Address:"
-#~ msgstr "E-postadresse:"
 
 #~ msgid "Username:"
 #~ msgstr "Brukernavn:"

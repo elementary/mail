@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-10-24 22:57+0000\n"
 "PO-Revision-Date: 2020-05-27 12:11+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/mail/mail/da/>\n"
@@ -301,7 +301,8 @@ msgstr[1] "Vis altid afsender"
 msgid "Mail"
 msgstr "Mail"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Fortryd"
 
@@ -384,7 +385,7 @@ msgstr ""
 msgid "The source folder is the destination folder."
 msgstr ""
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr ""
 
@@ -495,6 +496,54 @@ msgstr "Link Tekst:"
 msgid "Example Website"
 msgstr "Eksempel Websted"
 
+#: src/Dialogs/AliasDialog/Alias.vala:48
+#, fuzzy
+#| msgid "N_ame:"
+msgid "Name:"
+msgstr "_Navn:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:54
+msgid "Enter name…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:58
+#, fuzzy
+#| msgid "Email Address:"
+msgid "Address:"
+msgstr "E-mailadresse:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+#, fuzzy
+#| msgid "Email address:"
+msgid "Enter e-mail address…"
+msgstr "E-mailadresse:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:172
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+msgid "Add aliases using the button in the toolbar below"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr ""
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 #, fuzzy
 #| msgid "Insert Link"
@@ -534,9 +583,8 @@ msgstr ""
 msgid "Signature"
 msgstr "Indsæt Link"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
+#: src/FoldersView/AccountSourceItem.vala:154
+msgid "Edit Aliases…"
 msgstr ""
 
 #: src/FoldersView/FoldersListView.vala:47
@@ -1757,9 +1805,6 @@ msgstr ""
 #~ msgid "Nickname:"
 #~ msgstr "Kaldenavn:"
 
-#~ msgid "Email address:"
-#~ msgstr "E-mailadresse:"
-
 #~ msgid "Find"
 #~ msgstr "Find"
 
@@ -1978,9 +2023,6 @@ msgstr ""
 
 #~ msgid "N_ickname:"
 #~ msgstr "_Kaldenavn:"
-
-#~ msgid "N_ame:"
-#~ msgstr "_Navn:"
 
 #~ msgid "S_ervice:"
 #~ msgstr "_Tjeneste:"
@@ -2235,9 +2277,6 @@ msgstr ""
 
 #~ msgid "Are you sure you want to remove this account?"
 #~ msgstr "Er du sikker på, at du vil fjerne denne konto?"
-
-#~ msgid "Email Address:"
-#~ msgstr "E-mailadresse:"
 
 #~ msgid "Username:"
 #~ msgstr "Brugernavn:"

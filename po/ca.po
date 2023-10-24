@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-10-24 22:57+0000\n"
 "PO-Revision-Date: 2023-08-16 20:08+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
@@ -275,7 +275,8 @@ msgstr[1] "%s de %u remitents"
 msgid "Mail"
 msgstr "Correu"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Desfés-ho"
 
@@ -347,7 +348,7 @@ msgstr "No s'ha trobat la carpeta de destinació."
 msgid "The source folder is the destination folder."
 msgstr "La carpeta d'origen és la carpeta de destinació."
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr "Signatura nova"
 
@@ -442,6 +443,56 @@ msgstr "Text de l'enllaç:"
 msgid "Example Website"
 msgstr "Lloc web d'exemple"
 
+#: src/Dialogs/AliasDialog/Alias.vala:48
+#, fuzzy
+#| msgid "N_ame:"
+msgid "Name:"
+msgstr "N_om:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:54
+msgid "Enter name…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:58
+#, fuzzy
+#| msgid "Email Address:"
+msgid "Address:"
+msgstr "Adreça electrònica:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+#, fuzzy
+#| msgid "Email address:"
+msgid "Enter e-mail address…"
+msgstr "Adreça electrònica:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:172
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+#, fuzzy
+#| msgid "Add signatures using the button in the toolbar below"
+msgid "Add aliases using the button in the toolbar below"
+msgstr "Afegiu signatures mitjançant el botó de la barra d'eines de sota."
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "'%s' s'ha suprimit"
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 msgid "No Signatures"
 msgstr "Sense signatures"
@@ -475,10 +526,11 @@ msgstr "Valor per defecte per a…"
 msgid "Signature"
 msgstr "Signatura"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
-msgstr "'%s' s'ha suprimit"
+#: src/FoldersView/AccountSourceItem.vala:154
+#, fuzzy
+#| msgid "Edit Signatures…"
+msgid "Edit Aliases…"
+msgstr "Edita les signatures…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -1690,9 +1742,6 @@ msgstr "Proveu de canviar els termes de cerca."
 #~ msgid "Nickname:"
 #~ msgstr "Sobrenom:"
 
-#~ msgid "Email address:"
-#~ msgstr "Adreça electrònica:"
-
 #~ msgid "Find"
 #~ msgstr "Cerca"
 
@@ -1913,9 +1962,6 @@ msgstr "Proveu de canviar els termes de cerca."
 
 #~ msgid "N_ickname:"
 #~ msgstr "So_brenom:"
-
-#~ msgid "N_ame:"
-#~ msgstr "N_om:"
 
 #~ msgid "S_ervice:"
 #~ msgstr "S_ervei:"
@@ -2176,9 +2222,6 @@ msgstr "Proveu de canviar els termes de cerca."
 
 #~ msgid "Are you sure you want to remove this account?"
 #~ msgstr "Segur que voleu eliminar aquest compte?"
-
-#~ msgid "Email Address:"
-#~ msgstr "Adreça electrònica:"
 
 #~ msgid "Username:"
 #~ msgstr "Nom d'usuari:"
