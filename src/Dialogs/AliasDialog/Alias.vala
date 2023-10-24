@@ -45,18 +45,16 @@ public class Mail.Alias : Gtk.ListBoxRow {
             xalign = 0
         };
 
-        var edit_name_label = new Gtk.Label (_("Name:")) {
-            halign = END
-        };
-
         var name_entry = new Gtk.Entry () {
+            margin_start = 12,
+            margin_end = 12,
             text = alias_name,
-            placeholder_text = _("Enter name…")
+            placeholder_text = _("John Doe")
         };
         name_entry.bind_property ("text", this, "alias-name", DEFAULT);
 
-        var edit_address_label = new Gtk.Label (_("Address:")) {
-            halign = END
+        var edit_name_label = new Granite.HeaderLabel (_("Name")) {
+            mnemonic_widget = name_entry
         };
 
         Regex? regex = null;
@@ -67,25 +65,29 @@ public class Mail.Alias : Gtk.ListBoxRow {
         }
 
         var address_entry = new Granite.ValidatedEntry.from_regex (regex) {
+            margin_start = 12,
+            margin_end = 12,
             text = address,
-            placeholder_text = _("Enter e-mail address…")
+            placeholder_text = _("Email@example.com")
         };
         address_entry.bind_property ("text", this, "address", BIDIRECTIONAL);
 
-        var delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic");
-
-        var edit_popover_content = new Gtk.Grid () {
-            margin_start = 6,
-            margin_end = 6,
-            margin_top = 6,
-            margin_bottom = 6,
-            column_spacing = 6,
-            row_spacing = 6
+        var edit_address_label = new Granite.HeaderLabel (_("E-mail Address")) {
+            mnemonic_widget = address_entry
         };
-        edit_popover_content.attach (edit_name_label, 0, 0);
-        edit_popover_content.attach (name_entry, 1, 0);
-        edit_popover_content.attach (edit_address_label, 0, 1);
-        edit_popover_content.attach (address_entry, 1, 1);
+
+        var delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
+            tooltip_text = _("Delete alias")
+        };
+
+        var edit_popover_content = new Gtk.Box (VERTICAL, 6) {
+            margin_top = 6,
+            margin_bottom = 12
+        };
+        edit_popover_content.add (edit_name_label);
+        edit_popover_content.add (name_entry);
+        edit_popover_content.add (edit_address_label);
+        edit_popover_content.add (address_entry);
         edit_popover_content.show_all ();
 
         var edit_popover = new Gtk.Popover (null) {
@@ -94,7 +96,8 @@ public class Mail.Alias : Gtk.ListBoxRow {
 
         var edit_button = new Gtk.MenuButton () {
             image = new Gtk.Image.from_icon_name ("document-edit-symbolic", BUTTON),
-            popover = edit_popover
+            popover = edit_popover,
+            tooltip_text = _("Edit alias")
         };
 
         var box = new Gtk.Box (HORIZONTAL, 6) {
@@ -164,6 +167,7 @@ public class Mail.Alias : Gtk.ListBoxRow {
                 return Source.REMOVE;
             });
 
+            start_delete ();
             start_delete ();
         });
     }

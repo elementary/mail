@@ -152,7 +152,11 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem, Mail.Sourc
         var menu = new Gtk.Menu ();
 
         var alias_item = new Gtk.MenuItem.with_label (_("Edit Aliases…"));
-        alias_item.activate.connect (() => new AliasDialog (account.service.uid));
+        alias_item.activate.connect (() => {
+            new AliasDialog (account.service.uid) {
+                transient_for = ((Gtk.Application) GLib.Application.get_default ()).active_window
+            };
+        });
         menu.add (alias_item);
 
         menu.show_all ();

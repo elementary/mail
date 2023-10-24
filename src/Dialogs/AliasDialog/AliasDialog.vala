@@ -17,7 +17,7 @@
 * Authored by: Leonhard Kargl <leo.kargl@proton.me>
 */
 
-public class Mail.AliasDialog : Hdy.ApplicationWindow {
+public class Mail.AliasDialog : Granite.Dialog {
     public string account_uid { get; construct; }
 
     private HashTable<string, string?> aliases;
@@ -30,12 +30,6 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
     }
 
     construct {
-        var header = new Hdy.HeaderBar () {
-            show_close_button = true
-        };
-        header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-        header.get_style_context ().add_class ("default-decoration");
-
         var placeholder_title = new Gtk.Label (_("No Aliases")) {
             xalign = 0
         };
@@ -70,16 +64,19 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
             hscrollbar_policy = NEVER
         };
 
+        var add_button_label = new Gtk.Label (_("Add Alias…"));
+
         var add_box = new Gtk.Box (HORIZONTAL, 0);
         add_box.add (new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
-        add_box.add (new Gtk.Label (_("Add Alias…")));
+        add_box.add (add_button_label);
 
         var add_button = new Gtk.Button () {
             child = add_box,
-            margin_top = 2,
-            margin_bottom = 2
+            margin_top = 3,
+            margin_bottom = 3
         };
         add_button.get_style_context ().add_class ("image-button");
+        add_button_label.mnemonic_widget = add_button;
 
         var actionbar = new Gtk.ActionBar ();
         actionbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
@@ -92,27 +89,23 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
         var frame = new Gtk.Frame (null) {
             margin_start = 12,
             margin_end = 12,
-            margin_bottom = 12,
             child = content_box
         };
-
-        var box = new Gtk.Box (VERTICAL, 0);
-        box.add (header);
-        box.add (frame);
 
         toast = new Granite.Widgets.Toast ("");
         toast.set_default_action (_("Undo"));
 
         var overlay = new Gtk.Overlay () {
-            child = box
+            child = frame
         };
         overlay.add_overlay (toast);
+        overlay.show_all ();
 
         title = _("Aliases");
         default_height = 300;
         default_width = 500;
-        add (overlay);
-        show_all ();
+        get_content_area ().add (overlay);
+        this.add_button (_("Close"), Gtk.ResponseType.CLOSE);
         present ();
 
         var identity_source = Backend.Session.get_default ().get_identity_source_for_account_uid (account_uid);
@@ -132,6 +125,8 @@ public class Mail.AliasDialog : Hdy.ApplicationWindow {
 
             list.invalidate_filter ();
         });
+
+        response.connect (destroy);
 
         delete_event.connect (() => {
             foreach (var child in list.get_children ()) {
