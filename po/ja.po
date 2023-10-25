@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-24 22:57+0000\n"
-"PO-Revision-Date: 2023-08-04 14:24+0000\n"
+"PO-Revision-Date: 2023-10-27 06:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Application.vala:220
@@ -428,48 +428,40 @@ msgid "Example Website"
 msgstr "Web サイト名を入力"
 
 #: src/Dialogs/AliasDialog/Alias.vala:48
-#, fuzzy
-#| msgid "N_ame:"
 msgid "Name:"
-msgstr "名前 (_A):"
+msgstr "名前:"
 
 #: src/Dialogs/AliasDialog/Alias.vala:54
 msgid "Enter name…"
-msgstr ""
+msgstr "名前を入力…"
 
 #: src/Dialogs/AliasDialog/Alias.vala:58
-#, fuzzy
-#| msgid "Email Address:"
 msgid "Address:"
-msgstr "メールアドレス:"
+msgstr "アドレス:"
 
 #: src/Dialogs/AliasDialog/Alias.vala:71
-#, fuzzy
-#| msgid "Email address:"
 msgid "Enter e-mail address…"
-msgstr "メールアドレス:"
+msgstr "メールアドレスを入力…"
 
 #: src/Dialogs/AliasDialog/Alias.vala:172
 msgid "Name not set"
-msgstr ""
+msgstr "名前未設定"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:39
 msgid "No Aliases"
-msgstr ""
+msgstr "エイリアスがありません"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:43
-#, fuzzy
-#| msgid "Add signatures using the button in the toolbar below"
 msgid "Add aliases using the button in the toolbar below"
-msgstr "以下のツールバー内のボタンを使って、署名を追加してください"
+msgstr "以下のツールバー内のボタンを使って、エイリアスを追加してください"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:75
 msgid "Add Alias…"
-msgstr ""
+msgstr "エイリアスを追加…"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:111
 msgid "Aliases"
-msgstr ""
+msgstr "エイリアス"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:184
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
@@ -511,10 +503,8 @@ msgid "Signature"
 msgstr "署名"
 
 #: src/FoldersView/AccountSourceItem.vala:154
-#, fuzzy
-#| msgid "Edit Signatures…"
 msgid "Edit Aliases…"
-msgstr "署名を編集…"
+msgstr "エイリアスを編集…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
