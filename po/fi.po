@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
-"PO-Revision-Date: 2023-05-20 04:06+0000\n"
+"POT-Creation-Date: 2023-10-24 22:57+0000\n"
+"PO-Revision-Date: 2023-11-01 23:10+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/mail/fi/>\n"
 "Language: fi\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Application.vala:220
@@ -27,6 +27,9 @@ msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
 msgstr ""
+"Sähköposti käynnistyy automaattisesti, kun laite käynnistyy, ja pysyy "
+"käynnissä kun sen ikkuna suljetaan, jotta se voi lähettää ilmoituksia uuden "
+"sähköpostin saapuessa."
 
 #: src/Composer.vala:88 src/MessageList/MessageListItem.vala:102
 msgid "From:"
@@ -69,10 +72,8 @@ msgid "Attach file"
 msgstr "Liitä tiedosto"
 
 #: src/Composer.vala:243
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert Signature…"
-msgstr "Sisällytä linkki"
+msgstr "Sisällytä allekirjoitus…"
 
 #: src/Composer.vala:249
 msgid "Send"
@@ -97,28 +98,20 @@ msgid "Cancel"
 msgstr "Peru"
 
 #: src/Composer.vala:462
-#, fuzzy
-#| msgid "Show Images"
 msgid "Images"
-msgstr "Näytä kuvat"
+msgstr "Kuvat"
 
 #: src/Composer.vala:466
-#, fuzzy
-#| msgid "Choose a file"
 msgid "Choose an image"
-msgstr "Valitse tiedosto"
+msgstr "Valitse kuva"
 
 #: src/Composer.vala:469
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert"
-msgstr "Sisällytä linkki"
+msgstr "Sisällytä"
 
 #: src/Composer.vala:498
-#, fuzzy
-#| msgid "Unable to send message"
 msgid "Unable to insert image"
-msgstr "Viestin lähettäminen ei onnistu"
+msgstr "Kuvan sisällyttäminen ei onnistu"
 
 #: src/Composer.vala:499
 #, fuzzy
@@ -220,7 +213,7 @@ msgstr "Viestiäsi lähettäessä tapahtui odottamaton virhe."
 
 #: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
-msgstr ""
+msgstr "Muokkaa allekirjoituksia…"
 
 #: src/Composer.vala:903
 msgid "None"
@@ -285,7 +278,8 @@ msgstr[1] "Näytä aina lähettäjältä"
 msgid "Mail"
 msgstr "Sähköposti"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Kumoa"
 
@@ -302,19 +296,14 @@ msgid "Couldn't archive message"
 msgstr "Poista viestin tähtimerkintä"
 
 #: src/MainWindow.vala:302
-#, fuzzy
-#| msgid "Message Archived"
-#| msgid_plural "Messages Archived"
 msgid "Message Moved"
 msgid_plural "Messages Moved"
-msgstr[0] "Viesti arkistoitu"
-msgstr[1] "Viestit arkistoitu"
+msgstr[0] "Viesti siirretty"
+msgstr[1] "Viestit siirretty"
 
 #: src/MainWindow.vala:306
-#, fuzzy
-#| msgid "Unable to send message"
 msgid "Couldn't move message"
-msgstr "Viestin lähettäminen ei onnistu"
+msgstr "Viestin siirtäminen ei onnistu"
 
 #: src/MainWindow.vala:319
 msgid "Message Deleted"
@@ -324,7 +313,7 @@ msgstr[1] "Viestit poistettu"
 
 #: src/MainWindow.vala:323
 msgid "Couldn't delete message"
-msgstr ""
+msgstr "Viestiä ei voitu poistaa"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -341,21 +330,17 @@ msgid "Online Accounts…"
 msgstr "Verkkotilit…"
 
 #: src/Backend/Account.vala:48
-#, fuzzy
-#| msgid "Unable to save draft"
 msgid "Unable to connect"
-msgstr "Luonnoksen tallentaminen ei onnistu"
+msgstr "Yhdistäminen ei onnistu"
 
 #: src/Backend/Account.vala:49
-#, fuzzy
-#| msgid "There was an unexpected error while sending your message."
 msgid "There was an unexpected error while trying to connect to the server."
-msgstr "Viestiäsi lähettäessä tapahtui odottamaton virhe."
+msgstr "Palvelimeen yhdistäessä tapahtui odottamaton virhe."
 
 #: src/Backend/MoveOperation.vala:65
 #, c-format
 msgid "Moving messages… (%u remaining)"
-msgstr ""
+msgstr "Siirretään viestejä… (%u jäljellä)"
 
 #: src/Backend/MoveOperation.vala:98
 msgid "No Archive folder is configured."
@@ -369,9 +354,9 @@ msgstr ""
 msgid "The source folder is the destination folder."
 msgstr ""
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
-msgstr ""
+msgstr "Uusi allekirjoitus"
 
 #: src/ConversationList/ConversationItemModel.vala:74
 #: src/ConversationList/ConversationItemModel.vala:112
@@ -464,30 +449,68 @@ msgstr "Linkin teksti:"
 msgid "Example Website"
 msgstr "Esimerkkisivusto"
 
+#: src/Dialogs/AliasDialog/Alias.vala:48
+msgid "Name:"
+msgstr "Nimi:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:54
+msgid "Enter name…"
+msgstr "Kirjoita nimi…"
+
+#: src/Dialogs/AliasDialog/Alias.vala:58
+msgid "Address:"
+msgstr "Osoite:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+msgid "Enter e-mail address…"
+msgstr "Kirjoita sähköpostiosoite…"
+
+#: src/Dialogs/AliasDialog/Alias.vala:172
+msgid "Name not set"
+msgstr "Nimeä ei ole asetettu"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+msgid "No Aliases"
+msgstr "Ei aliaksia"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+msgid "Add aliases using the button in the toolbar below"
+msgstr "Lisää aliaksia alla olevan työkalupalkin painikkeesta"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+msgid "Add Alias…"
+msgstr "Lisää alias…"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+msgid "Aliases"
+msgstr "Aliakset"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "'%s' poistettu"
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
-#, fuzzy
-#| msgid "Insert Link"
 msgid "No Signatures"
-msgstr "Sisällytä linkki"
+msgstr "Ei allekirjoituksia"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
 msgid "Add signatures using the button in the toolbar below"
-msgstr ""
+msgstr "Lisää allekirjoituksia alla olevan työkalupalkin painikkeesta"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Create Signature"
-msgstr "Sisällytä linkki"
+msgstr "Luo allekirjoitus"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
 msgid "Title"
-msgstr ""
+msgstr "Otsikko"
 
 #. Work around a styling issue
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
 msgid "For example “Work” or “Personal”"
-msgstr ""
+msgstr "Esimerkiksi “Työ” tai “Henkilökohtainen”"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
 msgid "Delete"
@@ -495,18 +518,15 @@ msgstr "Poista"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
 msgid "Set Default For…"
-msgstr ""
+msgstr "Aseta oletukseksi…"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Signature"
-msgstr "Sisällytä linkki"
+msgstr "Allekirjoitus"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
-msgstr ""
+#: src/FoldersView/AccountSourceItem.vala:154
+msgid "Edit Aliases…"
+msgstr "Muokkaa aliaksia…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -525,59 +545,51 @@ msgid "Menu"
 msgstr "Valikko"
 
 #: src/FoldersView/FoldersListView.vala:146
-#, fuzzy
-#| msgid "Unable to print email"
 msgid "Unable to open System Settings"
-msgstr "Sähköpostin tulostaminen epäonnistui"
+msgstr "Järjestelmän asetuksia ei voitu avata"
 
 #: src/FoldersView/FoldersListView.vala:147
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
+"Avaa järjestelmän asetukset manuaalisesti tai asenna Evolution "
+"määrittääksesi verkkotilit."
 
 #: src/FoldersView/FolderSourceItem.vala:52
 msgid "Refresh folder"
 msgstr "Päivitä kansio"
 
 #: src/FoldersView/FolderSourceItem.vala:57
-#, fuzzy
-#| msgid "Refresh folder"
 msgid "Rename folder"
-msgstr "Päivitä kansio"
+msgstr "Nimeä kansio uudelleen"
 
 #: src/FoldersView/FolderSourceItem.vala:161
 #: src/FoldersView/FolderSourceItem.vala:190
 #: src/FoldersView/FolderSourceItem.vala:208
 #, c-format
 msgid "Couldn't rename “%s”"
-msgstr ""
+msgstr "Ei voitu nimetä uudelleen “%s”"
 
 #: src/FoldersView/FolderSourceItem.vala:162
 msgid "Folder names cannot contain “/”"
-msgstr ""
+msgstr "Kansioiden nimessä ei voi olla merkkiä “/”"
 
 #: src/FoldersView/FolderSourceItem.vala:191
 #, c-format
 msgid "A folder named “%s” already exists"
-msgstr ""
+msgstr "Kansio nimeltä “%s” on jo olemassa"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
-#, fuzzy
-#| msgid "Inbox"
 msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Saapuneet"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:42
-#, fuzzy
-#| msgid "Archive"
 msgctxt "Archive Folder"
 msgid "Archive"
 msgstr "Arkisto"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent"
 msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "Lähetetyt"
@@ -607,11 +619,8 @@ msgid "Mark Conversation"
 msgstr "Merkitse keskustelu"
 
 #: src/MessageList/MessageList.vala:92
-#, fuzzy
-#| msgid "Move conversation"
-#| msgid_plural "Move conversations"
 msgid "Move Conversation to…"
-msgstr "Siirrä keskustelu"
+msgstr "Siirrä keskustelu…"
 
 #: src/MessageList/MessageList.vala:101
 msgid "Move conversations to archive"
@@ -651,13 +660,11 @@ msgstr "Lisää"
 
 #: src/MessageList/MessageListItem.vala:279
 msgid "Open in Calendar"
-msgstr ""
+msgstr "Avaa kalenterissa"
 
 #: src/MessageList/MessageListItem.vala:285
-#, fuzzy
-#| msgid "This message contains remote images."
 msgid "This message contains a Calendar Event."
-msgstr "Tämä viesti sisältää etäkuvia."
+msgstr "Tämä viesti sisältää kalenteritapahtuman."
 
 #: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"
@@ -715,11 +722,11 @@ msgstr "Tallenna"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:22
 msgid "No mailboxes found"
-msgstr ""
+msgstr "Postilaatikoita ei löytynyt"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
-msgstr ""
+msgstr "Kokeile eri hakuehtoja"
 
 #~ msgid "https://example.com"
 #~ msgstr "https://esimerkki.com"
@@ -1705,9 +1712,6 @@ msgstr ""
 #~ msgid "Nickname:"
 #~ msgstr "Nimimerkki:"
 
-#~ msgid "Email address:"
-#~ msgstr "Sähköpostiosoite:"
-
 #~ msgid "Find"
 #~ msgstr "Etsi"
 
@@ -1926,9 +1930,6 @@ msgstr ""
 #~ msgid "N_ickname:"
 #~ msgstr "Ni_mimerkki:"
 
-#~ msgid "N_ame:"
-#~ msgstr "_Nimi:"
-
 #~ msgid "S_ervice:"
 #~ msgstr "_Palvelu:"
 
@@ -2146,9 +2147,6 @@ msgstr ""
 
 #~ msgid "Are you sure you want to remove this account?"
 #~ msgstr "Haluatko varmasti poistaa tämän tilin?"
-
-#~ msgid "Email Address:"
-#~ msgstr "Sähköpostiosoite:"
 
 #~ msgid "Username:"
 #~ msgstr "Käyttäjätunnus:"

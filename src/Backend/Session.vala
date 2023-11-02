@@ -242,6 +242,24 @@ public class Mail.Backend.Session : Camel.Session {
         return null;
     }
 
+    public HashTable<string, string?> get_aliases_for_account_uid (string uid) {
+        var identity_source = get_identity_source_for_account_uid (uid);
+        var extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+        return extension.get_aliases_as_hash_table ();
+    }
+
+    public async void set_aliases_for_account_uid (string uid, string encoded_aliases) {
+        var identity_source = get_identity_source_for_account_uid (uid);
+        var extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
+        extension.set_aliases (encoded_aliases);
+
+        try {
+            yield identity_source.write (null);
+        } catch (Error e) {
+            critical ("Failed to write new aliases: %s", e.message);
+        }
+    }
+
     public string? get_drafts_folder_uri_for_store (Camel.Store store) {
         var source = registry.ref_source (store.uid);
         if (source != null && source.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
