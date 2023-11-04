@@ -13,11 +13,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-10-24 22:57+0000\n"
 "PO-Revision-Date: 2023-08-11 12:08+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/>"
-"\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/"
+">\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -278,7 +278,8 @@ msgstr[1] "%s de %u remetentes"
 msgid "Mail"
 msgstr "Correio"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Anular"
 
@@ -350,7 +351,7 @@ msgstr "A pasta de destino não foi encontrada."
 msgid "The source folder is the destination folder."
 msgstr "A pasta de origem é a pasta de destino."
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr "Nova assinatura"
 
@@ -445,13 +446,65 @@ msgstr "Texto de ligação:"
 msgid "Example Website"
 msgstr "Exemplo de website"
 
+#: src/Dialogs/AliasDialog/Alias.vala:48
+#, fuzzy
+#| msgid "N_ame:"
+msgid "Name:"
+msgstr "N_ome"
+
+#: src/Dialogs/AliasDialog/Alias.vala:54
+msgid "Enter name…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:58
+#, fuzzy
+#| msgid "Email Address:"
+msgid "Address:"
+msgstr "Endereço de Email:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+#, fuzzy
+#| msgid "Email address:"
+msgid "Enter e-mail address…"
+msgstr "Endereço de email:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:172
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+#, fuzzy
+#| msgid "Add signatures using the button in the toolbar below"
+msgid "Add aliases using the button in the toolbar below"
+msgstr ""
+"Adicionar assinaturas utilizando o botão na barra de ferramentas abaixo"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "'%s' eliminada"
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 msgid "No Signatures"
 msgstr "Sem assinaturas"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
 msgid "Add signatures using the button in the toolbar below"
-msgstr "Adicionar assinaturas utilizando o botão na barra de ferramentas abaixo"
+msgstr ""
+"Adicionar assinaturas utilizando o botão na barra de ferramentas abaixo"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
 msgid "Create Signature"
@@ -478,10 +531,11 @@ msgstr "Definir predefinição para...…"
 msgid "Signature"
 msgstr "Assinatura"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
-msgstr "'%s' eliminada"
+#: src/FoldersView/AccountSourceItem.vala:154
+#, fuzzy
+#| msgid "Edit Signatures…"
+msgid "Edit Aliases…"
+msgstr "Editar assinaturas…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -1682,9 +1736,6 @@ msgstr "Tente alterar os termos de pesquisa"
 #~ msgid "Nickname:"
 #~ msgstr "Alcunha:"
 
-#~ msgid "Email address:"
-#~ msgstr "Endereço de email:"
-
 #~ msgid "Find"
 #~ msgstr "Procurar"
 
@@ -1905,9 +1956,6 @@ msgstr "Tente alterar os termos de pesquisa"
 
 #~ msgid "N_ickname:"
 #~ msgstr "Alcun_ha"
-
-#~ msgid "N_ame:"
-#~ msgstr "N_ome"
 
 #~ msgid "S_ervice:"
 #~ msgstr "S_erviço:"
@@ -2161,9 +2209,6 @@ msgstr "Tente alterar os termos de pesquisa"
 
 #~ msgid "Are you sure you want to remove this account?"
 #~ msgstr "Tem a certeza que pretende remover esta conta?"
-
-#~ msgid "Email Address:"
-#~ msgstr "Endereço de Email:"
 
 #~ msgid "Username:"
 #~ msgstr "Nome de utilizador:"
