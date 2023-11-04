@@ -554,6 +554,8 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             bool found = false;
 
             if (type != DRAFT) {
+                // Try to preselect the email address the message was sent to when replying.
+                // This method is preferred to the fallback below because it handles aliases.
                 Camel.InternetAddress recipients = new Camel.InternetAddress ();
 
                 unowned var to_recipients = message.get_recipients (Camel.RECIPIENT_TYPE_TO);
@@ -588,6 +590,8 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 }
             }
 
+            // If no matching address was found fall back to using the address
+            // associated with the E.Source the message belongs to
             if (!found) {
                 unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
                 unowned var account_source_uid = message.get_source ();
