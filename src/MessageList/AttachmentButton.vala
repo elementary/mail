@@ -90,7 +90,9 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         };
 
         name_label = new Gtk.Label (mime_part.get_filename ()) {
-            xalign = 0
+            xalign = 0,
+            wrap = true,
+            wrap_mode = WORD_CHAR
         };
 
         size_label = new Gtk.Label (null) {
