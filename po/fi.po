@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-24 22:57+0000\n"
-"PO-Revision-Date: 2023-10-16 14:10+0000\n"
+"PO-Revision-Date: 2023-11-01 23:10+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/mail/fi/>\n"
 "Language: fi\n"
@@ -27,6 +27,9 @@ msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
 msgstr ""
+"Sähköposti käynnistyy automaattisesti, kun laite käynnistyy, ja pysyy "
+"käynnissä kun sen ikkuna suljetaan, jotta se voi lähettää ilmoituksia uuden "
+"sähköpostin saapuessa."
 
 #: src/Composer.vala:88 src/MessageList/MessageListItem.vala:102
 msgid "From:"
@@ -447,48 +450,40 @@ msgid "Example Website"
 msgstr "Esimerkkisivusto"
 
 #: src/Dialogs/AliasDialog/Alias.vala:48
-#, fuzzy
-#| msgid "N_ame:"
 msgid "Name:"
-msgstr "_Nimi:"
+msgstr "Nimi:"
 
 #: src/Dialogs/AliasDialog/Alias.vala:54
 msgid "Enter name…"
-msgstr ""
+msgstr "Kirjoita nimi…"
 
 #: src/Dialogs/AliasDialog/Alias.vala:58
-#, fuzzy
-#| msgid "Email Address:"
 msgid "Address:"
-msgstr "Sähköpostiosoite:"
+msgstr "Osoite:"
 
 #: src/Dialogs/AliasDialog/Alias.vala:71
-#, fuzzy
-#| msgid "Email address:"
 msgid "Enter e-mail address…"
-msgstr "Sähköpostiosoite:"
+msgstr "Kirjoita sähköpostiosoite…"
 
 #: src/Dialogs/AliasDialog/Alias.vala:172
 msgid "Name not set"
-msgstr ""
+msgstr "Nimeä ei ole asetettu"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:39
 msgid "No Aliases"
-msgstr ""
+msgstr "Ei aliaksia"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:43
-#, fuzzy
-#| msgid "Add signatures using the button in the toolbar below"
 msgid "Add aliases using the button in the toolbar below"
-msgstr "Lisää allekirjoituksia alla olevan työkalupalkin painikkeesta"
+msgstr "Lisää aliaksia alla olevan työkalupalkin painikkeesta"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:75
 msgid "Add Alias…"
-msgstr ""
+msgstr "Lisää alias…"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:111
 msgid "Aliases"
-msgstr ""
+msgstr "Aliakset"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:184
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
@@ -530,10 +525,8 @@ msgid "Signature"
 msgstr "Allekirjoitus"
 
 #: src/FoldersView/AccountSourceItem.vala:154
-#, fuzzy
-#| msgid "Edit Signatures…"
 msgid "Edit Aliases…"
-msgstr "Muokkaa allekirjoituksia…"
+msgstr "Muokkaa aliaksia…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -559,6 +552,8 @@ msgstr "Järjestelmän asetuksia ei voitu avata"
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
+"Avaa järjestelmän asetukset manuaalisesti tai asenna Evolution "
+"määrittääksesi verkkotilit."
 
 #: src/FoldersView/FolderSourceItem.vala:52
 msgid "Refresh folder"
