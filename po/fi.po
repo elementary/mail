@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
-"PO-Revision-Date: 2023-10-16 14:10+0000\n"
+"POT-Creation-Date: 2023-10-24 22:57+0000\n"
+"PO-Revision-Date: 2023-11-01 23:10+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/mail/fi/>\n"
 "Language: fi\n"
@@ -27,6 +27,9 @@ msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
 msgstr ""
+"Sähköposti käynnistyy automaattisesti, kun laite käynnistyy, ja pysyy "
+"käynnissä kun sen ikkuna suljetaan, jotta se voi lähettää ilmoituksia uuden "
+"sähköpostin saapuessa."
 
 #: src/Composer.vala:88 src/MessageList/MessageListItem.vala:102
 msgid "From:"
@@ -275,7 +278,8 @@ msgstr[1] "Näytä aina lähettäjältä"
 msgid "Mail"
 msgstr "Sähköposti"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Kumoa"
 
@@ -350,7 +354,7 @@ msgstr ""
 msgid "The source folder is the destination folder."
 msgstr ""
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr "Uusi allekirjoitus"
 
@@ -445,6 +449,48 @@ msgstr "Linkin teksti:"
 msgid "Example Website"
 msgstr "Esimerkkisivusto"
 
+#: src/Dialogs/AliasDialog/Alias.vala:48
+msgid "Name:"
+msgstr "Nimi:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:54
+msgid "Enter name…"
+msgstr "Kirjoita nimi…"
+
+#: src/Dialogs/AliasDialog/Alias.vala:58
+msgid "Address:"
+msgstr "Osoite:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+msgid "Enter e-mail address…"
+msgstr "Kirjoita sähköpostiosoite…"
+
+#: src/Dialogs/AliasDialog/Alias.vala:172
+msgid "Name not set"
+msgstr "Nimeä ei ole asetettu"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+msgid "No Aliases"
+msgstr "Ei aliaksia"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+msgid "Add aliases using the button in the toolbar below"
+msgstr "Lisää aliaksia alla olevan työkalupalkin painikkeesta"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+msgid "Add Alias…"
+msgstr "Lisää alias…"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+msgid "Aliases"
+msgstr "Aliakset"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "'%s' poistettu"
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 msgid "No Signatures"
 msgstr "Ei allekirjoituksia"
@@ -478,10 +524,9 @@ msgstr "Aseta oletukseksi…"
 msgid "Signature"
 msgstr "Allekirjoitus"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
-msgstr "'%s' poistettu"
+#: src/FoldersView/AccountSourceItem.vala:154
+msgid "Edit Aliases…"
+msgstr "Muokkaa aliaksia…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -507,6 +552,8 @@ msgstr "Järjestelmän asetuksia ei voitu avata"
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
+"Avaa järjestelmän asetukset manuaalisesti tai asenna Evolution "
+"määrittääksesi verkkotilit."
 
 #: src/FoldersView/FolderSourceItem.vala:52
 msgid "Refresh folder"
@@ -1665,9 +1712,6 @@ msgstr "Kokeile eri hakuehtoja"
 #~ msgid "Nickname:"
 #~ msgstr "Nimimerkki:"
 
-#~ msgid "Email address:"
-#~ msgstr "Sähköpostiosoite:"
-
 #~ msgid "Find"
 #~ msgstr "Etsi"
 
@@ -1886,9 +1930,6 @@ msgstr "Kokeile eri hakuehtoja"
 #~ msgid "N_ickname:"
 #~ msgstr "Ni_mimerkki:"
 
-#~ msgid "N_ame:"
-#~ msgstr "_Nimi:"
-
 #~ msgid "S_ervice:"
 #~ msgstr "_Palvelu:"
 
@@ -2106,9 +2147,6 @@ msgstr "Kokeile eri hakuehtoja"
 
 #~ msgid "Are you sure you want to remove this account?"
 #~ msgstr "Haluatko varmasti poistaa tämän tilin?"
-
-#~ msgid "Email Address:"
-#~ msgstr "Sähköpostiosoite:"
 
 #~ msgid "Username:"
 #~ msgstr "Käyttäjätunnus:"

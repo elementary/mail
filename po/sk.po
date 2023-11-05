@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-10-24 22:57+0000\n"
 "PO-Revision-Date: 2022-09-30 22:24+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/mail/mail/sk/>\n"
@@ -287,7 +287,8 @@ msgstr[2] "%s od %u odosielateľov"
 msgid "Mail"
 msgstr "Pošta"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Späť"
 
@@ -375,7 +376,7 @@ msgstr ""
 msgid "The source folder is the destination folder."
 msgstr ""
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr ""
 
@@ -470,6 +471,54 @@ msgstr "Text odkazu:"
 msgid "Example Website"
 msgstr "Príklad webstránky"
 
+#: src/Dialogs/AliasDialog/Alias.vala:48
+#, fuzzy
+#| msgid "N_ame:"
+msgid "Name:"
+msgstr "M_eno"
+
+#: src/Dialogs/AliasDialog/Alias.vala:54
+msgid "Enter name…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:58
+#, fuzzy
+#| msgid "Email address:"
+msgid "Address:"
+msgstr "Emailová adresa:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+#, fuzzy
+#| msgid "Email address:"
+msgid "Enter e-mail address…"
+msgstr "Emailová adresa:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:172
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+msgid "Add aliases using the button in the toolbar below"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr ""
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 #, fuzzy
 #| msgid "Insert Link"
@@ -511,9 +560,8 @@ msgstr ""
 msgid "Signature"
 msgstr "Vložiť odkaz"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
+#: src/FoldersView/AccountSourceItem.vala:154
+msgid "Edit Aliases…"
 msgstr ""
 
 #: src/FoldersView/FoldersListView.vala:47
@@ -1697,9 +1745,6 @@ msgstr ""
 #~ msgid "Nickname:"
 #~ msgstr "Prezývka:"
 
-#~ msgid "Email address:"
-#~ msgstr "Emailová adresa:"
-
 #~ msgid "Find"
 #~ msgstr "Nájsť"
 
@@ -1916,9 +1961,6 @@ msgstr ""
 
 #~ msgid "N_ickname:"
 #~ msgstr "P_rezývka"
-
-#~ msgid "N_ame:"
-#~ msgstr "M_eno"
 
 #~ msgid "S_ervice:"
 #~ msgstr "S_lužba:"
