@@ -316,11 +316,28 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             loaded = true;
         });
 
+        var donate_label = new Gtk.Label (_("The message isn't displayed correctly?") + " ");
+
+        var donate_link = new Gtk.LinkButton.with_label (
+            _("Send the message to elementary to allow improving the quality of Mail."),
+            _("Donate it to elementary for debugging purposes.")
+        );
+
+        var donate_box = new Gtk.Box (HORIZONTAL, 0) {
+            margin_start = 12,
+            margin_end = 12,
+            margin_bottom = 12,
+            margin_top = 12
+        };
+        donate_box.add (donate_label);
+        donate_box.add (donate_link);
+
         var secondary_box = new Gtk.Box (VERTICAL, 0);
         secondary_box.add (separator);
         secondary_box.add (calendar_info_bar);
         secondary_box.add (blocked_images_infobar);
         secondary_box.add (web_view);
+        secondary_box.add (donate_box);
 
         secondary_revealer = new Gtk.Revealer () {
             transition_type = SLIDE_UP
@@ -359,6 +376,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 avatar.set_loadable_icon (file_icon);
             });
         }
+
+        donate_link.activate_link.connect (ask_donate_message);
 
         /* Override default handler to stop event propagation. Otherwise clicking the menu will
            expand or collapse the MessageListItem. */
@@ -453,6 +472,75 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             print_error_dialog.show_error_details (e.message);
             print_error_dialog.present ();
             print_error_dialog.response.connect (() => print_error_dialog.destroy ());
+        }
+    }
+
+    private bool ask_donate_message () {
+        var dialog = new Granite.MessageDialog (
+            _("Donate message to elementary?"),
+            _("elementary staff will be able to read the contents of the message as well as your e-mail address."),
+            new ThemedIcon ("dialog-question"),
+            NONE
+        );
+        dialog.add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
+        var button = dialog.add_button (_("Donate"), Gtk.ResponseType.ACCEPT);
+        button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+
+        dialog.response.connect ((res) => {
+            if (res == Gtk.ResponseType.ACCEPT) {
+                donate_message.begin ();
+            }
+
+            dialog.destroy ();
+        });
+
+        dialog.present ();
+
+        return true; // Only to stop other handlers from being invoked for the LinkButton
+    }
+
+    private async void donate_message () {
+        var folder = message_info.summary.folder;
+        Camel.MimeMessage? donation_message = null;
+        try {
+            donation_message = yield folder.get_message (message_info.uid, GLib.Priority.DEFAULT, null);
+        } catch (Error e) {
+            MainWindow.send_error_message (
+                _("Failed to donate message"),
+                _("Could not get mime message."),
+                null,
+                e.message
+            );
+            return;
+        }
+
+        var from_address = Utils.get_identity_address_from_message (donation_message);
+        if (from_address == null) {
+            MainWindow.send_error_message (
+                _("Failed to donate message"),
+                _("No sender address found.")
+            );
+            return;
+        }
+
+        var from = new Camel.InternetAddress ();
+        from.unformat (from_address);
+        donation_message.set_from (from);
+
+        var to = new Camel.InternetAddress ();
+        to.unformat ("leolost@gmx.net");
+        donation_message.set_recipients (Camel.RECIPIENT_TYPE_TO, to);
+
+        try {
+            yield Backend.Session.get_default ().send_email (donation_message, from, to);
+            ((MainWindow) get_toplevel ()).send_info_toast (_("Message donated."));
+        } catch (Error e) {
+            MainWindow.send_error_message (
+                _("Failed to donate message"),
+                _("Could not send message."),
+                null,
+                e.message
+            );
         }
     }
 

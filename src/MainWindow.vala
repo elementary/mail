@@ -24,7 +24,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
     private FoldersListView folders_list_view;
     private Granite.Widgets.Toast move_toast;
-    private Granite.Widgets.Toast error_toast;
+    private Granite.Widgets.Toast info_toast;
     private ConversationList conversation_list;
     private MessageList message_list;
 
@@ -128,9 +128,9 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             MoveOperation.undo_last_move ();
         });
 
-        error_toast = new Granite.Widgets.Toast ("");
-        error_toast.show_all ();
-        view_overlay.add_overlay (error_toast);
+        info_toast = new Granite.Widgets.Toast ("");
+        info_toast.show_all ();
+        view_overlay.add_overlay (info_toast);
 
         var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
         message_overlay.no_show_all = true;
@@ -344,7 +344,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         return (SimpleAction) lookup_action (name);
     }
 
-    public static void send_error_message (string title, string description, string? icon_name = null) {
+    public static void send_error_message (string title, string description, string? icon_name = null, string? error_details = null) {
         var dialog = new Granite.MessageDialog (
             title,
             description,
@@ -359,8 +359,17 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             dialog.badge_icon = new ThemedIcon ("dialog-error");
         }
 
+        if (error_details != null) {
+            dialog.show_error_details (error_details);
+        }
+
         dialog.present ();
         dialog.response.connect (dialog.destroy);
+    }
+
+    public void send_info_toast (string title) {
+        info_toast.title = title;
+        info_toast.send_notification ();
     }
 
     public override bool configure_event (Gdk.EventConfigure event) {

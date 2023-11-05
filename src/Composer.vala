@@ -551,36 +551,19 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         }
 
         if (from_combo.model.iter_n_children (null) > 1) {
-            unowned Mail.Backend.Session session = Mail.Backend.Session.get_default ();
-            unowned var account_source_uid = message.get_source ();
-            var account_source = session.ref_source (account_source_uid);
+            var identity_address = Utils.get_identity_address_from_message (message);
+            if (identity_address != null) {
+                from_combo.model.foreach ((model, path, iter) => {
+                    GLib.Value value;
+                    model.get_value (iter, 0, out value);
 
-            if (account_source != null && account_source.has_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT)) {
-                unowned var account_extension = (E.SourceMailAccount) account_source.get_extension (E.SOURCE_EXTENSION_MAIL_ACCOUNT);
-
-                var identity_uid = account_extension.identity_uid;
-                if (identity_uid != null && identity_uid != "") {
-                    var identity_source = session.ref_source (identity_uid);
-
-                    if (identity_source != null && identity_source.has_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY)) {
-                        unowned var identity_extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
-
-                        var identity_address = identity_extension.get_address ();
-                        if (identity_address != "") {
-                            from_combo.model.foreach ((model, path, iter) => {
-                                GLib.Value value;
-                                model.get_value (iter, 0, out value);
-
-                                if (value.get_string () == identity_address) {
-                                    from_combo.set_active_iter (iter);
-                                    return true;
-                                }
-
-                                return false;
-                            });
-                        }
+                    if (value.get_string () == identity_address) {
+                        from_combo.set_active_iter (iter);
+                        return true;
                     }
-                }
+
+                    return false;
+                });
             }
         }
 
