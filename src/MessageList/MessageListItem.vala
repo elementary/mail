@@ -594,7 +594,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 var field = part.get_mime_type_field ();
                 if (part.disposition == "inline") {
                     yield handle_inline_mime (part);
-                } else if (part.disposition == "attachment") {
+                } else if (part.get_content_disposition ().is_attachment (part.get_content_type ())) {
                     var button = new AttachmentButton (part, loading_cancellable);
                     button.activate.connect (() => show_attachment (button.mime_part));
                     attachment_bar.add (button);
