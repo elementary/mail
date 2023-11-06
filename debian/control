@@ -13,6 +13,8 @@ Build-Depends: appstream,
                libgtk-3-dev (>= 3.10.0),
                libglib2.0-dev (>= 2.34.0),
                libhandy-1-dev,
+               libportal-dev,
+               libportal-gtk3-dev,
                libwebkit2gtk-4.1-dev,
                meson,
                valac
@@ -21,7 +23,7 @@ Homepage: http://github.com/elementary/mail
 
 Package: io.elementary.mail
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: io.elementary.portals (>=7.1.0), ${misc:Depends}, ${shlibs:Depends}
 Description: Email client
  Mail is an email client built for elementary's Pantheon desktop environment. It
  allows you to read and send email with a simple, modern interface.

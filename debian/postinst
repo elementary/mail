@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+#DEBHELPER#
+
+rm /etc/xdg/autostart/io.elementary.mail-daemon.desktop || true
+
+exit 0
