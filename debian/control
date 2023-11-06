@@ -15,7 +15,7 @@ Build-Depends: appstream,
                libhandy-1-dev,
                libportal-dev,
                libportal-gtk3-dev,
-               libwebkit2gtk-4.0-dev,
+               libwebkit2gtk-4.1-dev | libwebkit2gtk-4.0-dev,
                meson,
                valac
 Standards-Version: 4.1.1
