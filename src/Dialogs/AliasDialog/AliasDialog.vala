@@ -106,7 +106,6 @@ public class Mail.AliasDialog : Granite.Dialog {
         default_width = 500;
         get_content_area ().add (overlay);
         this.add_button (_("Close"), Gtk.ResponseType.CLOSE);
-        present ();
 
         var identity_source = Backend.Session.get_default ().get_identity_source_for_account_uid (account_uid);
         var extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);

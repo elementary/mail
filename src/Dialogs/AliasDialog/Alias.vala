@@ -168,7 +168,6 @@ public class Mail.Alias : Gtk.ListBoxRow {
             });
 
             start_delete ();
-            start_delete ();
         });
     }
 

@@ -155,7 +155,7 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem, Mail.Sourc
         alias_item.activate.connect (() => {
             new AliasDialog (account.service.uid) {
                 transient_for = ((Gtk.Application) GLib.Application.get_default ()).active_window
-            };
+            }.present ();
         });
         menu.add (alias_item);
 
