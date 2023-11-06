@@ -728,7 +728,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             for (uint i = 0; i < content.get_number (); i++) {
                 unowned var part = content.get_part (i);
                 unowned var field = part.get_mime_type_field ();
-                if (part.disposition == "attachment") {
+                if (part.get_content_disposition ().is_attachment (part.get_content_type ())) {
                     try {
                         if (tmp_dir == null) {
                             tmp_dir = GLib.File.new_for_path (GLib.DirUtils.make_tmp (".XXXXXX"));
