@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-24 22:57+0000\n"
+"POT-Creation-Date: 2023-11-07 10:19+0000\n"
 "PO-Revision-Date: 2023-10-23 05:10+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/mail/mail/ka/>\n"
@@ -81,7 +81,7 @@ msgstr "ფაილის არჩევა"
 msgid "Attach"
 msgstr "მიმაგრება"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
@@ -107,64 +107,64 @@ msgstr "გამოსახულების ჩასმა შეუძლ�
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "გამოსახულების ჩასმისას აღმოჩენილია მოულოდნელი შეცდომა."
 
-#: src/Composer.vala:624
+#: src/Composer.vala:667
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %b %-e, %Y %-l:%M %p"
 
-#: src/Composer.vala:654
+#: src/Composer.vala:697
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s-ზე, %2$s-მა მოგწერათ:"
 
-#: src/Composer.vala:658
+#: src/Composer.vala:701
 msgid "---------- Forwarded message ----------"
 msgstr "---------- გადაგზავნილი შეტყობინება ----------"
 
-#: src/Composer.vala:660
+#: src/Composer.vala:703
 #, c-format
 msgid "From: %s<br/>"
 msgstr "ვისგან: %s<br/>"
 
-#: src/Composer.vala:661
+#: src/Composer.vala:704
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "თემა: %s<br/>"
 
-#: src/Composer.vala:662
+#: src/Composer.vala:705
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "თარიღი: %s<br/>"
 
-#: src/Composer.vala:663
+#: src/Composer.vala:706
 #, c-format
 msgid "To: %s<br/>"
 msgstr "ვის: %s<br/>"
 
-#: src/Composer.vala:665
+#: src/Composer.vala:708
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "ასლი: %s<br/>"
 
-#: src/Composer.vala:714
+#: src/Composer.vala:757
 msgid "Permanently delete this draft?"
 msgstr "წავშალო სამუდამოდ ეს მონახაზი?"
 
-#: src/Composer.vala:715
+#: src/Composer.vala:758
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "ამ ქმედების დაბრუნება არ შეგიძლიათ, არც თქვენი მონახაზის აღდგენა, თუ მას "
 "წაშლით."
 
-#: src/Composer.vala:725
+#: src/Composer.vala:768
 msgid "Delete Draft"
 msgstr "მონახაზის წაშლა"
 
-#: src/Composer.vala:749
+#: src/Composer.vala:792
 msgid "Send without subject?"
 msgstr "გავგზავნო თემის გარეშე?"
 
-#: src/Composer.vala:750
+#: src/Composer.vala:793
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -172,19 +172,19 @@ msgstr ""
 "შეტყობინებას თემის ველი შევსებული არ აქვს. მიმღები შეიძლება ვერ მიხვდეს მისი "
 "შემცველობის მნიშვნელობას."
 
-#: src/Composer.vala:757
+#: src/Composer.vala:800
 msgid "Don't Send"
 msgstr "არ გააგზავნო"
 
-#: src/Composer.vala:759
+#: src/Composer.vala:802
 msgid "Send Anyway"
 msgstr "მაინც გაგზავნა"
 
-#: src/Composer.vala:788
+#: src/Composer.vala:831
 msgid "Sent message was not saved"
 msgstr "გაგზავნილი შეტყობინება შენახული არაა"
 
-#: src/Composer.vala:789
+#: src/Composer.vala:832
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -192,27 +192,27 @@ msgstr ""
 "შეტყობინება გაგზავნილია, მაგრამ მისი ასლი გაგზავნილი შეტყობინებების "
 "საქაღალდეში არ შენახულა."
 
-#: src/Composer.vala:804
+#: src/Composer.vala:847
 msgid "Unable to send message"
 msgstr "შეტყობინების გაგზავნა შეუძლებელია"
 
-#: src/Composer.vala:805
+#: src/Composer.vala:848
 msgid "There was an unexpected error while sending your message."
 msgstr "თქვენი შეტყობინების გაგზავნისას აღმოჩენილია მოულოდნელი შეცდომა."
 
-#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr "ხელმოწერების ჩასწორება…"
 
-#: src/Composer.vala:903
+#: src/Composer.vala:946
 msgid "None"
 msgstr "არც ერთი"
 
-#: src/Composer.vala:1092
+#: src/Composer.vala:1135
 msgid "Unable to save draft"
 msgstr "მონახაზად შენახვის შეცდომა"
 
-#: src/Composer.vala:1093
+#: src/Composer.vala:1136
 msgid "There was an unexpected error while saving your draft."
 msgstr "აღმოჩენილია შეცდომა თქვენი შეტყობინების მონახაზად შენახვისას."
 
@@ -266,7 +266,7 @@ msgstr[1] "%s %u გამომგზავნისგან"
 msgid "Mail"
 msgstr "ელფოსტა"
 
-#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "დაბრუნება"
@@ -433,45 +433,65 @@ msgstr "ბმულის ტექსტი:"
 msgid "Example Website"
 msgstr "ვებგვერდს მაგალითი"
 
-#: src/Dialogs/AliasDialog/Alias.vala:48
-msgid "Name:"
+#: src/Dialogs/AliasDialog/Alias.vala:52
+msgid "John Doe"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/Alias.vala:54
-msgid "Enter name…"
-msgstr ""
-
-#: src/Dialogs/AliasDialog/Alias.vala:58
-msgid "Address:"
+#: src/Dialogs/AliasDialog/Alias.vala:56
+msgid "Name"
 msgstr ""
 
 #: src/Dialogs/AliasDialog/Alias.vala:71
-msgid "Enter e-mail address…"
-msgstr ""
+#, fuzzy
+#| msgid "https://example.com"
+msgid "Email@example.com"
+msgstr "https://example.com"
 
-#: src/Dialogs/AliasDialog/Alias.vala:172
+#: src/Dialogs/AliasDialog/Alias.vala:75
+#, fuzzy
+#| msgid "Email Message"
+msgid "E-mail Address"
+msgstr "ელფოსტის სეტყობინება"
+
+#: src/Dialogs/AliasDialog/Alias.vala:80
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete alias"
+msgstr "მონახაზის წაშლა"
+
+#: src/Dialogs/AliasDialog/Alias.vala:100
+#, fuzzy
+#| msgid "Edit Signatures…"
+msgid "Edit alias"
+msgstr "ხელმოწერების ჩასწორება…"
+
+#: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+#: src/Dialogs/AliasDialog/AliasDialog.vala:33
 msgid "No Aliases"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+#: src/Dialogs/AliasDialog/AliasDialog.vala:37
 #, fuzzy
 #| msgid "Add signatures using the button in the toolbar below"
 msgid "Add aliases using the button in the toolbar below"
 msgstr "დაამატეთ ხელმოწერები ქვემო პანელზე არსებული ღილაკით"
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+#: src/Dialogs/AliasDialog/AliasDialog.vala:67
 msgid "Add Alias…"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+#: src/Dialogs/AliasDialog/AliasDialog.vala:104
 msgid "Aliases"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/AliasDialog/AliasDialog.vala:108
+msgid "Close"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:178
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
 #, c-format
 msgid "'%s' deleted"
@@ -715,9 +735,6 @@ msgstr "საფოსტო ყუთების გარეშე"
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
 msgstr "სცადეთ, ძებნის პირობები შეცვალოთ"
-
-#~ msgid "https://example.com"
-#~ msgstr "https://example.com"
 
 #~ msgid "Reply to All"
 #~ msgstr "ყველასთვის პასუხი"

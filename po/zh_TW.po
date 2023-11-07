@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-24 22:57+0000\n"
+"POT-Creation-Date: 2023-11-07 10:19+0000\n"
 "PO-Revision-Date: 2021-10-05 20:07+0000\n"
 "Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -94,7 +94,7 @@ msgstr "選擇一個檔案"
 msgid "Attach"
 msgstr "附加(_A)"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
@@ -128,113 +128,113 @@ msgstr "刪除草稿"
 msgid "There was an unexpected error while trying to insert the image."
 msgstr ""
 
-#: src/Composer.vala:624
+#: src/Composer.vala:667
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%Y年%b%-e日 %a %p %-l:%M"
 
-#: src/Composer.vala:654
+#: src/Composer.vala:697
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%2$s 於 %1$s 寫下："
 
-#: src/Composer.vala:658
+#: src/Composer.vala:701
 msgid "---------- Forwarded message ----------"
 msgstr "---------- 轉寄的訊息 ----------"
 
-#: src/Composer.vala:660
+#: src/Composer.vala:703
 #, c-format
 msgid "From: %s<br/>"
 msgstr "寄件者：%s<br/>"
 
-#: src/Composer.vala:661
+#: src/Composer.vala:704
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "主旨：%s<br/>"
 
-#: src/Composer.vala:662
+#: src/Composer.vala:705
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "日期：%s<br/>"
 
-#: src/Composer.vala:663
+#: src/Composer.vala:706
 #, c-format
 msgid "To: %s<br/>"
 msgstr "收件者：%s<br/>"
 
-#: src/Composer.vala:665
+#: src/Composer.vala:708
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "副本：%s<br/>"
 
-#: src/Composer.vala:714
+#: src/Composer.vala:757
 msgid "Permanently delete this draft?"
 msgstr "永久刪除此草稿？"
 
-#: src/Composer.vala:715
+#: src/Composer.vala:758
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr "你不能還原此動作，亦不能復原已被刪除的草稿。"
 
-#: src/Composer.vala:725
+#: src/Composer.vala:768
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Delete Draft"
 msgstr "刪除草稿"
 
-#: src/Composer.vala:749
+#: src/Composer.vala:792
 #, fuzzy
 msgid "Send without subject?"
 msgstr "是否要寄送主旨空白的訊息？"
 
-#: src/Composer.vala:750
+#: src/Composer.vala:793
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr "此訊息之主旨為空。收件者可能無法推斷其主題及重要性。"
 
-#: src/Composer.vala:757
+#: src/Composer.vala:800
 msgid "Don't Send"
 msgstr "不要寄出"
 
-#: src/Composer.vala:759
+#: src/Composer.vala:802
 msgid "Send Anyway"
 msgstr "無論如何都送出"
 
-#: src/Composer.vala:788
+#: src/Composer.vala:831
 msgid "Sent message was not saved"
 msgstr "寄出的訊息未被保存"
 
-#: src/Composer.vala:789
+#: src/Composer.vala:832
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer.vala:804
+#: src/Composer.vala:847
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to send message"
 msgstr "刪除草稿"
 
-#: src/Composer.vala:805
+#: src/Composer.vala:848
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr ""
 
-#: src/Composer.vala:903
+#: src/Composer.vala:946
 msgid "None"
 msgstr "無"
 
-#: src/Composer.vala:1092
+#: src/Composer.vala:1135
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to save draft"
 msgstr "刪除草稿"
 
-#: src/Composer.vala:1093
+#: src/Composer.vala:1136
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -289,7 +289,7 @@ msgstr[0] "總是顯示寄件者"
 msgid "Mail"
 msgstr "郵件"
 
-#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "復原"
@@ -486,49 +486,67 @@ msgstr "豐富文字(_R)"
 msgid "Example Website"
 msgstr "網站"
 
-#: src/Dialogs/AliasDialog/Alias.vala:48
-#, fuzzy
-#| msgid "N_ame:"
-msgid "Name:"
-msgstr "名稱(_A)："
-
-#: src/Dialogs/AliasDialog/Alias.vala:54
-msgid "Enter name…"
+#: src/Dialogs/AliasDialog/Alias.vala:52
+msgid "John Doe"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/Alias.vala:58
+#: src/Dialogs/AliasDialog/Alias.vala:56
 #, fuzzy
-#| msgid "Email Address:"
-msgid "Address:"
-msgstr "電子郵件位址："
+#| msgid "N_ame:"
+msgid "Name"
+msgstr "名稱(_A)："
 
 #: src/Dialogs/AliasDialog/Alias.vala:71
 #, fuzzy
-#| msgid "Email address:"
-msgid "Enter e-mail address…"
-msgstr "電子郵件位址："
+#| msgid "https://example.com"
+msgid "Email@example.com"
+msgstr "https://example.com"
 
-#: src/Dialogs/AliasDialog/Alias.vala:172
+#: src/Dialogs/AliasDialog/Alias.vala:75
+#, fuzzy
+#| msgid "E_mail address:"
+msgid "E-mail Address"
+msgstr "電子郵件位址(_M)："
+
+#: src/Dialogs/AliasDialog/Alias.vala:80
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete alias"
+msgstr "刪除草稿"
+
+#: src/Dialogs/AliasDialog/Alias.vala:100
+#, fuzzy
+#| msgid "Edit Draft"
+msgid "Edit alias"
+msgstr "編輯草稿"
+
+#: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+#: src/Dialogs/AliasDialog/AliasDialog.vala:33
 msgid "No Aliases"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+#: src/Dialogs/AliasDialog/AliasDialog.vala:37
 msgid "Add aliases using the button in the toolbar below"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+#: src/Dialogs/AliasDialog/AliasDialog.vala:67
 msgid "Add Alias…"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+#: src/Dialogs/AliasDialog/AliasDialog.vala:104
 msgid "Aliases"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/AliasDialog/AliasDialog.vala:108
+#, fuzzy
+#| msgid "_Close"
+msgid "Close"
+msgstr "關閉(_C)"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:178
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
 #, c-format
 msgid "'%s' deleted"
@@ -797,8 +815,15 @@ msgstr ""
 msgid "Try changing search terms"
 msgstr ""
 
-#~ msgid "https://example.com"
-#~ msgstr "https://example.com"
+#, fuzzy
+#~| msgid "Email Address:"
+#~ msgid "Address:"
+#~ msgstr "電子郵件位址："
+
+#, fuzzy
+#~| msgid "Email address:"
+#~ msgid "Enter e-mail address…"
+#~ msgstr "電子郵件位址："
 
 #~ msgid "Reply to All"
 #~ msgstr "回覆所有人"
@@ -1506,9 +1531,6 @@ msgstr ""
 #~ msgid "Always Show From Sender"
 #~ msgstr "總是顯示寄件者"
 
-#~ msgid "Edit Draft"
-#~ msgstr "編輯草稿"
-
 #~ msgid "Date:"
 #~ msgstr "日期："
 
@@ -1672,9 +1694,6 @@ msgstr ""
 
 #~ msgid "_Cancel"
 #~ msgstr "取消(_C)"
-
-#~ msgid "_Close"
-#~ msgstr "關閉(_C)"
 
 #~ msgid "_Discard"
 #~ msgstr "丟棄(_D)"
@@ -1967,9 +1986,6 @@ msgstr ""
 
 #~ msgid "_Password:"
 #~ msgstr "密碼(_P)："
-
-#~ msgid "E_mail address:"
-#~ msgstr "電子郵件位址(_M)："
 
 #~ msgid "Work, Home, etc."
 #~ msgstr "工作用、自家用等。"

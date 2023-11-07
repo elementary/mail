@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-24 22:57+0000\n"
+"POT-Creation-Date: 2023-11-07 10:19+0000\n"
 "PO-Revision-Date: 2023-10-27 10:00+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
@@ -102,7 +102,7 @@ msgstr "Choisir un fichier"
 msgid "Attach"
 msgstr "Joindre"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
@@ -128,64 +128,64 @@ msgstr "Impossible d'insérer l'image"
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "Une erreur inattendue s'est produite lors de l'insertion de l'image."
 
-#: src/Composer.vala:624
+#: src/Composer.vala:667
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a %-e %b %Y à %-H:%M"
 
-#: src/Composer.vala:654
+#: src/Composer.vala:697
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Le %1$s, %2$s a écrit :"
 
-#: src/Composer.vala:658
+#: src/Composer.vala:701
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Message transféré ----------"
 
-#: src/Composer.vala:660
+#: src/Composer.vala:703
 #, c-format
 msgid "From: %s<br/>"
 msgstr "De : %s<br/>"
 
-#: src/Composer.vala:661
+#: src/Composer.vala:704
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Objet : %s<br/>"
 
-#: src/Composer.vala:662
+#: src/Composer.vala:705
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Date : %s<br/>"
 
-#: src/Composer.vala:663
+#: src/Composer.vala:706
 #, c-format
 msgid "To: %s<br/>"
 msgstr "À : %s<br/>"
 
-#: src/Composer.vala:665
+#: src/Composer.vala:708
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc : %s<br/>"
 
-#: src/Composer.vala:714
+#: src/Composer.vala:757
 msgid "Permanently delete this draft?"
 msgstr "Supprimer définitivement ce brouillon ?"
 
-#: src/Composer.vala:715
+#: src/Composer.vala:758
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Vous ne pouvez pas annuler cette action, ni récupérer votre brouillon une "
 "fois qu'il a été supprimé."
 
-#: src/Composer.vala:725
+#: src/Composer.vala:768
 msgid "Delete Draft"
 msgstr "Supprimer le brouillon"
 
-#: src/Composer.vala:749
+#: src/Composer.vala:792
 msgid "Send without subject?"
 msgstr "Envoyer sans objet ?"
 
-#: src/Composer.vala:750
+#: src/Composer.vala:793
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -193,19 +193,19 @@ msgstr ""
 "Le champ objet de ce message est vide. Le destinataire pourrait ne pas être "
 "en mesure de reconnaître son importance."
 
-#: src/Composer.vala:757
+#: src/Composer.vala:800
 msgid "Don't Send"
 msgstr "Ne pas envoyer"
 
-#: src/Composer.vala:759
+#: src/Composer.vala:802
 msgid "Send Anyway"
 msgstr "Envoyer quand même"
 
-#: src/Composer.vala:788
+#: src/Composer.vala:831
 msgid "Sent message was not saved"
 msgstr "Le message envoyé n'a pas été enregistré"
 
-#: src/Composer.vala:789
+#: src/Composer.vala:832
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -213,27 +213,27 @@ msgstr ""
 "Le message a été envoyé, mais aucune copie n'a été enregistrée dans le "
 "dossier des messages envoyés."
 
-#: src/Composer.vala:804
+#: src/Composer.vala:847
 msgid "Unable to send message"
 msgstr "Échec de l'envoi du message"
 
-#: src/Composer.vala:805
+#: src/Composer.vala:848
 msgid "There was an unexpected error while sending your message."
 msgstr "Une erreur inattendue s'est produite lors de l'envoi de votre message."
 
-#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr "Modifier les signatures…"
 
-#: src/Composer.vala:903
+#: src/Composer.vala:946
 msgid "None"
 msgstr "Aucun"
 
-#: src/Composer.vala:1092
+#: src/Composer.vala:1135
 msgid "Unable to save draft"
 msgstr "Échec de l'enregistrement du brouillon"
 
-#: src/Composer.vala:1093
+#: src/Composer.vala:1136
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 "Une erreur inattendue s'est produite lors de l'enregistrement de votre "
@@ -289,7 +289,7 @@ msgstr[1] "%s de %u émetteurs"
 msgid "Mail"
 msgstr "Messagerie"
 
-#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Annuler"
@@ -458,44 +458,68 @@ msgstr "Texte du lien :"
 msgid "Example Website"
 msgstr "Site Web"
 
-#: src/Dialogs/AliasDialog/Alias.vala:48
-msgid "Name:"
+#: src/Dialogs/AliasDialog/Alias.vala:52
+msgid "John Doe"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:56
+#, fuzzy
+#| msgid "Name:"
+msgid "Name"
 msgstr "Nom :"
 
-#: src/Dialogs/AliasDialog/Alias.vala:54
-msgid "Enter name…"
-msgstr "Saisissez un nom…"
-
-#: src/Dialogs/AliasDialog/Alias.vala:58
-msgid "Address:"
-msgstr "Adresse :"
-
 #: src/Dialogs/AliasDialog/Alias.vala:71
-msgid "Enter e-mail address…"
-msgstr "Saisissez une adresse e-mail…"
+#, fuzzy
+#| msgid "https://example.com"
+msgid "Email@example.com"
+msgstr "https://domaine.com"
 
-#: src/Dialogs/AliasDialog/Alias.vala:172
+#: src/Dialogs/AliasDialog/Alias.vala:75
+#, fuzzy
+#| msgid "E_mail address:"
+msgid "E-mail Address"
+msgstr "Adresse électronique :"
+
+#: src/Dialogs/AliasDialog/Alias.vala:80
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete alias"
+msgstr "Supprimer le brouillon"
+
+#: src/Dialogs/AliasDialog/Alias.vala:100
+#, fuzzy
+#| msgid "Edit Aliases…"
+msgid "Edit alias"
+msgstr "Modifier les alias…"
+
+#: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
 msgstr "Le nom n'est pas défini"
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+#: src/Dialogs/AliasDialog/AliasDialog.vala:33
 msgid "No Aliases"
 msgstr "Aucun alias"
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+#: src/Dialogs/AliasDialog/AliasDialog.vala:37
 msgid "Add aliases using the button in the toolbar below"
 msgstr ""
 "Ajoutez des alias en utilisant le bouton dans la barre d'outils ci-dessous"
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+#: src/Dialogs/AliasDialog/AliasDialog.vala:67
 msgid "Add Alias…"
 msgstr "Ajouter un alias…"
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+#: src/Dialogs/AliasDialog/AliasDialog.vala:104
 msgid "Aliases"
 msgstr "Alias"
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/AliasDialog/AliasDialog.vala:108
+#, fuzzy
+#| msgid "_Close"
+msgid "Close"
+msgstr "_Fermer"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:178
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
 #, c-format
 msgid "'%s' deleted"
@@ -740,8 +764,14 @@ msgstr "Aucune boîte-mail n'a été trouvée"
 msgid "Try changing search terms"
 msgstr "Essayez de modifier la recherche"
 
-#~ msgid "https://example.com"
-#~ msgstr "https://domaine.com"
+#~ msgid "Enter name…"
+#~ msgstr "Saisissez un nom…"
+
+#~ msgid "Address:"
+#~ msgstr "Adresse :"
+
+#~ msgid "Enter e-mail address…"
+#~ msgstr "Saisissez une adresse e-mail…"
 
 #~ msgid "Reply to All"
 #~ msgstr "Répondre à tous"
@@ -1680,9 +1710,6 @@ msgstr "Essayez de modifier la recherche"
 #~ msgid "_Cancel"
 #~ msgstr "_Annuler"
 
-#~ msgid "_Close"
-#~ msgstr "_Fermer"
-
 #~ msgid "_Discard"
 #~ msgstr "A_bandonner"
 
@@ -1980,9 +2007,6 @@ msgstr "Essayez de modifier la recherche"
 
 #~ msgid "_Password:"
 #~ msgstr "Mot de _passe :"
-
-#~ msgid "E_mail address:"
-#~ msgstr "Adresse électronique :"
 
 #~ msgid "Work, Home, etc."
 #~ msgstr "Travail, Maison, etc."

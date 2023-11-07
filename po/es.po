@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-24 22:57+0000\n"
+"POT-Creation-Date: 2023-11-07 10:19+0000\n"
 "PO-Revision-Date: 2021-07-15 13:34+0000\n"
 "Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/mail/mail/es/>\n"
@@ -96,7 +96,7 @@ msgstr "Elija un archivo"
 msgid "Attach"
 msgstr "Adjuntar"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
@@ -132,64 +132,64 @@ msgstr "No se pudo guardar el borrador"
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "Se produjo un error inesperado al guardar el borrador."
 
-#: src/Composer.vala:624
+#: src/Composer.vala:667
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e de %b %Y a las %-l:%M %p"
 
-#: src/Composer.vala:654
+#: src/Composer.vala:697
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "El %1$s, %2$s escribió:"
 
-#: src/Composer.vala:658
+#: src/Composer.vala:701
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Mensaje reenviado ----------"
 
-#: src/Composer.vala:660
+#: src/Composer.vala:703
 #, c-format
 msgid "From: %s<br/>"
 msgstr "De: %s<br/>"
 
-#: src/Composer.vala:661
+#: src/Composer.vala:704
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Asunto: %s<br/>"
 
-#: src/Composer.vala:662
+#: src/Composer.vala:705
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Fecha: %s<br/>"
 
-#: src/Composer.vala:663
+#: src/Composer.vala:706
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Para: %s<br/>"
 
-#: src/Composer.vala:665
+#: src/Composer.vala:708
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
-#: src/Composer.vala:714
+#: src/Composer.vala:757
 msgid "Permanently delete this draft?"
 msgstr "¿Quiere eliminar permanentemente este borrador?"
 
-#: src/Composer.vala:715
+#: src/Composer.vala:758
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "No podrá deshacer esta acción ni será capaz de recuperar el borrador una vez "
 "que se elimine."
 
-#: src/Composer.vala:725
+#: src/Composer.vala:768
 msgid "Delete Draft"
 msgstr "Eliminar borrador"
 
-#: src/Composer.vala:749
+#: src/Composer.vala:792
 msgid "Send without subject?"
 msgstr "¿Enviar sin asunto?"
 
-#: src/Composer.vala:750
+#: src/Composer.vala:793
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -197,51 +197,51 @@ msgstr ""
 "Este mensaje tiene un campo de asunto vacío. Es posible que el destinatario "
 "no pueda inferir su alcance o importancia."
 
-#: src/Composer.vala:757
+#: src/Composer.vala:800
 msgid "Don't Send"
 msgstr "No enviar"
 
-#: src/Composer.vala:759
+#: src/Composer.vala:802
 msgid "Send Anyway"
 msgstr "Enviar de todos modos"
 
-#: src/Composer.vala:788
+#: src/Composer.vala:831
 #, fuzzy
 #| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
 msgstr "¿Quiere enviar el mensaje sin cuerpo?"
 
-#: src/Composer.vala:789
+#: src/Composer.vala:832
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer.vala:804
+#: src/Composer.vala:847
 #, fuzzy
 #| msgid "Unable to save draft"
 msgid "Unable to send message"
 msgstr "No se pudo guardar el borrador"
 
-#: src/Composer.vala:805
+#: src/Composer.vala:848
 #, fuzzy
 #| msgid "There was an unexpected error while saving your draft."
 msgid "There was an unexpected error while sending your message."
 msgstr "Se produjo un error inesperado al guardar el borrador."
 
-#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr ""
 
-#: src/Composer.vala:903
+#: src/Composer.vala:946
 msgid "None"
 msgstr "Ninguno"
 
-#: src/Composer.vala:1092
+#: src/Composer.vala:1135
 msgid "Unable to save draft"
 msgstr "No se pudo guardar el borrador"
 
-#: src/Composer.vala:1093
+#: src/Composer.vala:1136
 msgid "There was an unexpected error while saving your draft."
 msgstr "Se produjo un error inesperado al guardar el borrador."
 
@@ -298,7 +298,7 @@ msgstr[1] "Mostrar siempre el remitente"
 msgid "Mail"
 msgstr "Correo"
 
-#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Deshacer"
@@ -495,49 +495,67 @@ msgstr "Texto de enlace:"
 msgid "Example Website"
 msgstr "Sitio web de ejemplo"
 
-#: src/Dialogs/AliasDialog/Alias.vala:48
-#, fuzzy
-#| msgid "N_ame:"
-msgid "Name:"
-msgstr "N_ombre:"
-
-#: src/Dialogs/AliasDialog/Alias.vala:54
-msgid "Enter name…"
+#: src/Dialogs/AliasDialog/Alias.vala:52
+msgid "John Doe"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/Alias.vala:58
+#: src/Dialogs/AliasDialog/Alias.vala:56
 #, fuzzy
-#| msgid "Email Address:"
-msgid "Address:"
-msgstr "Dirección de correo electrónico:"
+#| msgid "N_ame:"
+msgid "Name"
+msgstr "N_ombre:"
 
 #: src/Dialogs/AliasDialog/Alias.vala:71
 #, fuzzy
-#| msgid "Email address:"
-msgid "Enter e-mail address…"
-msgstr "Dirección de correo:"
+#| msgid "https://example.com"
+msgid "Email@example.com"
+msgstr "https://ejemplo.com"
 
-#: src/Dialogs/AliasDialog/Alias.vala:172
+#: src/Dialogs/AliasDialog/Alias.vala:75
+#, fuzzy
+#| msgid "E_mail address:"
+msgid "E-mail Address"
+msgstr "Dirección de correo electró_nico:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:80
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete alias"
+msgstr "Eliminar borrador"
+
+#: src/Dialogs/AliasDialog/Alias.vala:100
+#, fuzzy
+#| msgid "Edit Draft"
+msgid "Edit alias"
+msgstr "Editar borrador"
+
+#: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+#: src/Dialogs/AliasDialog/AliasDialog.vala:33
 msgid "No Aliases"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+#: src/Dialogs/AliasDialog/AliasDialog.vala:37
 msgid "Add aliases using the button in the toolbar below"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+#: src/Dialogs/AliasDialog/AliasDialog.vala:67
 msgid "Add Alias…"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+#: src/Dialogs/AliasDialog/AliasDialog.vala:104
 msgid "Aliases"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/AliasDialog/AliasDialog.vala:108
+#, fuzzy
+#| msgid "_Close"
+msgid "Close"
+msgstr "_Cerrar"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:178
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
 #, c-format
 msgid "'%s' deleted"
@@ -799,8 +817,15 @@ msgstr ""
 msgid "Try changing search terms"
 msgstr ""
 
-#~ msgid "https://example.com"
-#~ msgstr "https://ejemplo.com"
+#, fuzzy
+#~| msgid "Email Address:"
+#~ msgid "Address:"
+#~ msgstr "Dirección de correo electrónico:"
+
+#, fuzzy
+#~| msgid "Email address:"
+#~ msgid "Enter e-mail address…"
+#~ msgstr "Dirección de correo:"
 
 #~ msgid "Reply to All"
 #~ msgstr "Responder a todos"
@@ -1555,9 +1580,6 @@ msgstr ""
 #~ msgid "Always Show From Sender"
 #~ msgstr "Mostrar siempre el remitente"
 
-#~ msgid "Edit Draft"
-#~ msgstr "Editar borrador"
-
 #~ msgid "Date:"
 #~ msgstr "Fecha:"
 
@@ -1725,9 +1747,6 @@ msgstr ""
 
 #~ msgid "_Cancel"
 #~ msgstr "_Cancelar"
-
-#~ msgid "_Close"
-#~ msgstr "_Cerrar"
 
 #~ msgid "_Discard"
 #~ msgstr "_Descartar"
@@ -2025,9 +2044,6 @@ msgstr ""
 
 #~ msgid "_Password:"
 #~ msgstr "_Contraseña:"
-
-#~ msgid "E_mail address:"
-#~ msgstr "Dirección de correo electró_nico:"
 
 #~ msgid "Work, Home, etc."
 #~ msgstr "Trabajo, Hogar, etc."
