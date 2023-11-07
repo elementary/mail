@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-24 22:57+0000\n"
+"POT-Creation-Date: 2023-11-07 10:19+0000\n"
 "PO-Revision-Date: 2019-07-20 09:24+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/mail/mail/lt/"
@@ -97,7 +97,7 @@ msgstr "Pasirinkite failą"
 msgid "Attach"
 msgstr "_Pridėti"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
@@ -131,69 +131,69 @@ msgstr "Ištrinti juodraštį"
 msgid "There was an unexpected error while trying to insert the image."
 msgstr ""
 
-#: src/Composer.vala:624
+#: src/Composer.vala:667
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%Y %b %-e, %a, %-k:%M"
 
-#: src/Composer.vala:654
+#: src/Composer.vala:697
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s, %2$s rašė:"
 
-#: src/Composer.vala:658
+#: src/Composer.vala:701
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Persiųstas laiškas ----------"
 
-#: src/Composer.vala:660
+#: src/Composer.vala:703
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Nuo: %s<br/>"
 
-#: src/Composer.vala:661
+#: src/Composer.vala:704
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Tema: %s<br/>"
 
-#: src/Composer.vala:662
+#: src/Composer.vala:705
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Data: %s<br/>"
 
-#: src/Composer.vala:663
+#: src/Composer.vala:706
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Kam: %s<br/>"
 
-#: src/Composer.vala:665
+#: src/Composer.vala:708
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Kopija: %s<br/>"
 
-#: src/Composer.vala:714
+#: src/Composer.vala:757
 #, fuzzy
 #| msgid "Do you want to permanently delete this message?"
 #| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
 msgstr "Ar norite visam laikui ištrinti šį laišką?"
 
-#: src/Composer.vala:715
+#: src/Composer.vala:758
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer.vala:725
+#: src/Composer.vala:768
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Delete Draft"
 msgstr "Ištrinti juodraštį"
 
-#: src/Composer.vala:749
+#: src/Composer.vala:792
 #, fuzzy
 #| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
 msgstr "Ar siųsti laišką be temos?"
 
-#: src/Composer.vala:750
+#: src/Composer.vala:793
 #, fuzzy
 #| msgid ""
 #| "This message has an empty subject field. The recipient may not be able to "
@@ -205,51 +205,51 @@ msgstr ""
 "Šiame laiške yra tuščias temos laukas. Gavėjas gali neįvertinti laiško "
 "svarbumo ar turinio."
 
-#: src/Composer.vala:757
+#: src/Composer.vala:800
 msgid "Don't Send"
 msgstr "Nesiųsti"
 
-#: src/Composer.vala:759
+#: src/Composer.vala:802
 msgid "Send Anyway"
 msgstr "Vis tiek siųsti"
 
-#: src/Composer.vala:788
+#: src/Composer.vala:831
 #, fuzzy
 #| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
 msgstr "Ar siųsti laišką be teksto?"
 
-#: src/Composer.vala:789
+#: src/Composer.vala:832
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer.vala:804
+#: src/Composer.vala:847
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to send message"
 msgstr "Ištrinti juodraštį"
 
-#: src/Composer.vala:805
+#: src/Composer.vala:848
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr ""
 
-#: src/Composer.vala:903
+#: src/Composer.vala:946
 msgid "None"
 msgstr "Nieko"
 
-#: src/Composer.vala:1092
+#: src/Composer.vala:1135
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to save draft"
 msgstr "Ištrinti juodraštį"
 
-#: src/Composer.vala:1093
+#: src/Composer.vala:1136
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -308,7 +308,7 @@ msgstr[2] "Visada rodyti nuo siuntėjo"
 msgid "Mail"
 msgstr "Paštas"
 
-#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Atšaukti"
@@ -506,49 +506,67 @@ msgstr "Nuorodos tekstas:"
 msgid "Example Website"
 msgstr "Pavyzdinė svetainė"
 
-#: src/Dialogs/AliasDialog/Alias.vala:48
-#, fuzzy
-#| msgid "N_ame:"
-msgid "Name:"
-msgstr "V_ardas:"
-
-#: src/Dialogs/AliasDialog/Alias.vala:54
-msgid "Enter name…"
+#: src/Dialogs/AliasDialog/Alias.vala:52
+msgid "John Doe"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/Alias.vala:58
+#: src/Dialogs/AliasDialog/Alias.vala:56
 #, fuzzy
-#| msgid "Email Address:"
-msgid "Address:"
-msgstr "El. pašto adresas:"
+#| msgid "N_ame:"
+msgid "Name"
+msgstr "V_ardas:"
 
 #: src/Dialogs/AliasDialog/Alias.vala:71
 #, fuzzy
-#| msgid "Email address:"
-msgid "Enter e-mail address…"
+#| msgid "https://example.com"
+msgid "Email@example.com"
+msgstr "https://example.com"
+
+#: src/Dialogs/AliasDialog/Alias.vala:75
+#, fuzzy
+#| msgid "E_mail address:"
+msgid "E-mail Address"
 msgstr "El. pašto adresas:"
 
-#: src/Dialogs/AliasDialog/Alias.vala:172
+#: src/Dialogs/AliasDialog/Alias.vala:80
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete alias"
+msgstr "Ištrinti juodraštį"
+
+#: src/Dialogs/AliasDialog/Alias.vala:100
+#, fuzzy
+#| msgid "Edit Draft"
+msgid "Edit alias"
+msgstr "Redaguoti juodraštį"
+
+#: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+#: src/Dialogs/AliasDialog/AliasDialog.vala:33
 msgid "No Aliases"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+#: src/Dialogs/AliasDialog/AliasDialog.vala:37
 msgid "Add aliases using the button in the toolbar below"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+#: src/Dialogs/AliasDialog/AliasDialog.vala:67
 msgid "Add Alias…"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+#: src/Dialogs/AliasDialog/AliasDialog.vala:104
 msgid "Aliases"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/AliasDialog/AliasDialog.vala:108
+#, fuzzy
+#| msgid "_Close"
+msgid "Close"
+msgstr "_Užverti"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:178
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
 #, c-format
 msgid "'%s' deleted"
@@ -818,8 +836,15 @@ msgstr ""
 msgid "Try changing search terms"
 msgstr ""
 
-#~ msgid "https://example.com"
-#~ msgstr "https://example.com"
+#, fuzzy
+#~| msgid "Email Address:"
+#~ msgid "Address:"
+#~ msgstr "El. pašto adresas:"
+
+#, fuzzy
+#~| msgid "Email address:"
+#~ msgid "Enter e-mail address…"
+#~ msgstr "El. pašto adresas:"
 
 #~ msgid "Reply to All"
 #~ msgstr "Atsakyti visiems"
@@ -1565,9 +1590,6 @@ msgstr ""
 #~ msgid "Always Show From Sender"
 #~ msgstr "Visada rodyti nuo siuntėjo"
 
-#~ msgid "Edit Draft"
-#~ msgstr "Redaguoti juodraštį"
-
 #~ msgid "Date:"
 #~ msgstr "Data:"
 
@@ -1740,9 +1762,6 @@ msgstr ""
 
 #~ msgid "_Cancel"
 #~ msgstr "_Atsisakyti"
-
-#~ msgid "_Close"
-#~ msgstr "_Užverti"
 
 #~ msgid "_Discard"
 #~ msgstr "_Atmesti"
@@ -2042,9 +2061,6 @@ msgstr ""
 
 #~ msgid "_Password:"
 #~ msgstr "Sla_ptažodis:"
-
-#~ msgid "E_mail address:"
-#~ msgstr "El. pašto adresas:"
 
 #~ msgid "Work, Home, etc."
 #~ msgstr "Darbas, namai ir t.t."

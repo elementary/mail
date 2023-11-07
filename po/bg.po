@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-24 22:57+0000\n"
+"POT-Creation-Date: 2023-11-07 10:19+0000\n"
 "PO-Revision-Date: 2016-09-29 12:13+0000\n"
 "Last-Translator: Адмирал АнимЕ <Unknown>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
@@ -87,7 +87,7 @@ msgstr ""
 msgid "Attach"
 msgstr "прикрепен файл"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
@@ -113,110 +113,110 @@ msgstr ""
 msgid "There was an unexpected error while trying to insert the image."
 msgstr ""
 
-#: src/Composer.vala:624
+#: src/Composer.vala:667
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr ""
 
-#: src/Composer.vala:654
+#: src/Composer.vala:697
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr ""
 
-#: src/Composer.vala:658
+#: src/Composer.vala:701
 msgid "---------- Forwarded message ----------"
 msgstr ""
 
-#: src/Composer.vala:660
+#: src/Composer.vala:703
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "От: %s\n"
 
-#: src/Composer.vala:661
+#: src/Composer.vala:704
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "Тема: %s\n"
 
-#: src/Composer.vala:662
+#: src/Composer.vala:705
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "Дата: %s\n"
 
-#: src/Composer.vala:663
+#: src/Composer.vala:706
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "До: %s\n"
 
-#: src/Composer.vala:665
+#: src/Composer.vala:708
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr ""
 
-#: src/Composer.vala:714
+#: src/Composer.vala:757
 msgid "Permanently delete this draft?"
 msgstr ""
 
-#: src/Composer.vala:715
+#: src/Composer.vala:758
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer.vala:725
+#: src/Composer.vala:768
 #, fuzzy
 #| msgid "Delete conversation"
 msgid "Delete Draft"
 msgstr "Изтриване на разговора"
 
-#: src/Composer.vala:749
+#: src/Composer.vala:792
 #, fuzzy
 #| msgid "(no subject)"
 msgid "Send without subject?"
 msgstr "(няма тема)"
 
-#: src/Composer.vala:750
+#: src/Composer.vala:793
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
 
-#: src/Composer.vala:757
+#: src/Composer.vala:800
 msgid "Don't Send"
 msgstr ""
 
-#: src/Composer.vala:759
+#: src/Composer.vala:802
 msgid "Send Anyway"
 msgstr ""
 
-#: src/Composer.vala:788
+#: src/Composer.vala:831
 msgid "Sent message was not saved"
 msgstr ""
 
-#: src/Composer.vala:789
+#: src/Composer.vala:832
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer.vala:804
+#: src/Composer.vala:847
 msgid "Unable to send message"
 msgstr ""
 
-#: src/Composer.vala:805
+#: src/Composer.vala:848
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr ""
 
-#: src/Composer.vala:903
+#: src/Composer.vala:946
 msgid "None"
 msgstr "Няма"
 
-#: src/Composer.vala:1092
+#: src/Composer.vala:1135
 msgid "Unable to save draft"
 msgstr ""
 
-#: src/Composer.vala:1093
+#: src/Composer.vala:1136
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -272,7 +272,7 @@ msgstr[1] ""
 msgid "Mail"
 msgstr "Всички писма"
 
-#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr ""
@@ -453,47 +453,59 @@ msgstr ""
 msgid "Example Website"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/Alias.vala:48
-msgid "Name:"
+#: src/Dialogs/AliasDialog/Alias.vala:52
+msgid "John Doe"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/Alias.vala:54
-msgid "Enter name…"
+#: src/Dialogs/AliasDialog/Alias.vala:56
+msgid "Name"
 msgstr ""
-
-#: src/Dialogs/AliasDialog/Alias.vala:58
-#, fuzzy
-#| msgid "Email Address:"
-msgid "Address:"
-msgstr "Електронна поща:"
 
 #: src/Dialogs/AliasDialog/Alias.vala:71
+msgid "Email@example.com"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:75
 #, fuzzy
 #| msgid "Remove email address"
-msgid "Enter e-mail address…"
+msgid "E-mail Address"
 msgstr "Премахване на адреса"
 
-#: src/Dialogs/AliasDialog/Alias.vala:172
+#: src/Dialogs/AliasDialog/Alias.vala:80
+#, fuzzy
+#| msgid "Delete conversation"
+msgid "Delete alias"
+msgstr "Изтриване на разговора"
+
+#: src/Dialogs/AliasDialog/Alias.vala:100
+msgid "Edit alias"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+#: src/Dialogs/AliasDialog/AliasDialog.vala:33
 msgid "No Aliases"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+#: src/Dialogs/AliasDialog/AliasDialog.vala:37
 msgid "Add aliases using the button in the toolbar below"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+#: src/Dialogs/AliasDialog/AliasDialog.vala:67
 msgid "Add Alias…"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+#: src/Dialogs/AliasDialog/AliasDialog.vala:104
 msgid "Aliases"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/AliasDialog/AliasDialog.vala:108
+msgid "Close"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:178
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
 #, c-format
 msgid "'%s' deleted"
@@ -746,6 +758,11 @@ msgstr ""
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Email Address:"
+#~ msgid "Address:"
+#~ msgstr "Електронна поща:"
 
 #~ msgid "Drafts"
 #~ msgstr "Чернови"

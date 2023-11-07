@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-24 22:57+0000\n"
+"POT-Creation-Date: 2023-11-07 10:19+0000\n"
 "PO-Revision-Date: 2023-10-27 06:10+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
@@ -96,7 +96,7 @@ msgstr "בחירת קובץ"
 msgid "Attach"
 msgstr "צירוף"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
@@ -122,62 +122,62 @@ msgstr "לא ניתן להוסיף תמונה"
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "אירעה שגיאה בלתי צפויה בהוספת התמונה."
 
-#: src/Composer.vala:624
+#: src/Composer.vala:667
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a ,ה־%-e ב%b,‏ %Y בשעה %-l:%M %p"
 
-#: src/Composer.vala:654
+#: src/Composer.vala:697
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "בתאריך %1$s, נכתב ע״י %2$s:"
 
-#: src/Composer.vala:658
+#: src/Composer.vala:701
 msgid "---------- Forwarded message ----------"
 msgstr "---------- הודעה שהועברה ----------"
 
-#: src/Composer.vala:660
+#: src/Composer.vala:703
 #, c-format
 msgid "From: %s<br/>"
 msgstr "מאת: %s<br/>"
 
-#: src/Composer.vala:661
+#: src/Composer.vala:704
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "נושא: %s<br/>"
 
-#: src/Composer.vala:662
+#: src/Composer.vala:705
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "תאריך: %s<br/>"
 
-#: src/Composer.vala:663
+#: src/Composer.vala:706
 #, c-format
 msgid "To: %s<br/>"
 msgstr "אל: %s<br/>"
 
-#: src/Composer.vala:665
+#: src/Composer.vala:708
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "עותק: %s<br/>"
 
-#: src/Composer.vala:714
+#: src/Composer.vala:757
 msgid "Permanently delete this draft?"
 msgstr "למחוק את הטיוטה הזאת לצמיתות?"
 
-#: src/Composer.vala:715
+#: src/Composer.vala:758
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr "פעולה זו אינה הפיכה, שחזור הטיוטה שלך אינו אפשרי לאחר מחיקה."
 
-#: src/Composer.vala:725
+#: src/Composer.vala:768
 msgid "Delete Draft"
 msgstr "מחיקת טיוטה"
 
-#: src/Composer.vala:749
+#: src/Composer.vala:792
 msgid "Send without subject?"
 msgstr "לשלוח ללא נושא?"
 
-#: src/Composer.vala:750
+#: src/Composer.vala:793
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -185,45 +185,45 @@ msgstr ""
 "שדה הנושא של ההודעה הזו ריק. יתכן שהנמען לא יוכל להבין במה מדובר או להעריך "
 "את חשיבות ההודעה."
 
-#: src/Composer.vala:757
+#: src/Composer.vala:800
 msgid "Don't Send"
 msgstr "לא לשלוח"
 
-#: src/Composer.vala:759
+#: src/Composer.vala:802
 msgid "Send Anyway"
 msgstr "לשלוח בכל זאת"
 
-#: src/Composer.vala:788
+#: src/Composer.vala:831
 msgid "Sent message was not saved"
 msgstr "ההודעה שנשלחה לא נשמרה"
 
-#: src/Composer.vala:789
+#: src/Composer.vala:832
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr "ההודעה נשמרה, עם זאת, לא נשמע עותק ממנה בתיקיית ההודעות שנשלחו."
 
-#: src/Composer.vala:804
+#: src/Composer.vala:847
 msgid "Unable to send message"
 msgstr "לא ניתן לשלוח הודעה"
 
-#: src/Composer.vala:805
+#: src/Composer.vala:848
 msgid "There was an unexpected error while sending your message."
 msgstr "אירעה שגיאה בלתי צפויה בשליחת ההודעה שלך."
 
-#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr "עריכת חתימות…"
 
-#: src/Composer.vala:903
+#: src/Composer.vala:946
 msgid "None"
 msgstr "כלום"
 
-#: src/Composer.vala:1092
+#: src/Composer.vala:1135
 msgid "Unable to save draft"
 msgstr "לא ניתן לשמור טיוטה"
 
-#: src/Composer.vala:1093
+#: src/Composer.vala:1136
 msgid "There was an unexpected error while saving your draft."
 msgstr "אירעה שגיאה בלתי צפויה בשמירת הטיוטה שלך."
 
@@ -277,7 +277,7 @@ msgstr[1] "%s מ־%u מענים"
 msgid "Mail"
 msgstr "דוא״ל"
 
-#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "החזרה"
@@ -444,43 +444,67 @@ msgstr "טקסט הקישור:"
 msgid "Example Website"
 msgstr "אתר לדוגמה"
 
-#: src/Dialogs/AliasDialog/Alias.vala:48
-msgid "Name:"
+#: src/Dialogs/AliasDialog/Alias.vala:52
+msgid "John Doe"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:56
+#, fuzzy
+#| msgid "Name:"
+msgid "Name"
 msgstr "שם:"
 
-#: src/Dialogs/AliasDialog/Alias.vala:54
-msgid "Enter name…"
-msgstr "נא למלא שם…"
-
-#: src/Dialogs/AliasDialog/Alias.vala:58
-msgid "Address:"
-msgstr "כתובת אתר:"
-
 #: src/Dialogs/AliasDialog/Alias.vala:71
-msgid "Enter e-mail address…"
-msgstr "נא למלא כתובת דוא״ל…"
+#, fuzzy
+#| msgid "https://example.com"
+msgid "Email@example.com"
+msgstr "https://example.com"
 
-#: src/Dialogs/AliasDialog/Alias.vala:172
+#: src/Dialogs/AliasDialog/Alias.vala:75
+#, fuzzy
+#| msgid "E_mail address:"
+msgid "E-mail Address"
+msgstr "_כתובת דוא״ל:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:80
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete alias"
+msgstr "מחיקת טיוטה"
+
+#: src/Dialogs/AliasDialog/Alias.vala:100
+#, fuzzy
+#| msgid "Edit Aliases…"
+msgid "Edit alias"
+msgstr "עריכת כינויים…"
+
+#: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
 msgstr "לא הוגדר שם"
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+#: src/Dialogs/AliasDialog/AliasDialog.vala:33
 msgid "No Aliases"
 msgstr "אין כינויים"
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+#: src/Dialogs/AliasDialog/AliasDialog.vala:37
 msgid "Add aliases using the button in the toolbar below"
 msgstr "אפשר להוסיף כינויים באמצעות הכפתור בסרגל הכלים שלהלן"
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+#: src/Dialogs/AliasDialog/AliasDialog.vala:67
 msgid "Add Alias…"
 msgstr "הוספת כינוי…"
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+#: src/Dialogs/AliasDialog/AliasDialog.vala:104
 msgid "Aliases"
 msgstr "כינויים"
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/AliasDialog/AliasDialog.vala:108
+#, fuzzy
+#| msgid "_Close"
+msgid "Close"
+msgstr "_סגירה"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:178
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
 #, c-format
 msgid "'%s' deleted"
@@ -723,8 +747,14 @@ msgstr "לא נמצאו תיבות דואר"
 msgid "Try changing search terms"
 msgstr "כדאי לשנות את ביטוי החיפוש"
 
-#~ msgid "https://example.com"
-#~ msgstr "https://example.com"
+#~ msgid "Enter name…"
+#~ msgstr "נא למלא שם…"
+
+#~ msgid "Address:"
+#~ msgstr "כתובת אתר:"
+
+#~ msgid "Enter e-mail address…"
+#~ msgstr "נא למלא כתובת דוא״ל…"
 
 #, c-format
 #~ msgid "Unable to rename folder “%s”': %s"
@@ -1618,9 +1648,6 @@ msgstr "כדאי לשנות את ביטוי החיפוש"
 #~ msgid "_Cancel"
 #~ msgstr "_ביטול"
 
-#~ msgid "_Close"
-#~ msgstr "_סגירה"
-
 #~ msgid "_Discard"
 #~ msgstr "השל_כה"
 
@@ -1913,9 +1940,6 @@ msgstr "כדאי לשנות את ביטוי החיפוש"
 
 #~ msgid "_Password:"
 #~ msgstr "_ססמה:"
-
-#~ msgid "E_mail address:"
-#~ msgstr "_כתובת דוא״ל:"
 
 #~ msgid "Work, Home, etc."
 #~ msgstr "עבודה, בית וכו׳"

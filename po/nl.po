@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-24 22:57+0000\n"
+"POT-Creation-Date: 2023-11-07 10:19+0000\n"
 "PO-Revision-Date: 2023-08-08 09:08+0000\n"
 "Last-Translator: drspider <neodragonfox@outlook.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
@@ -97,7 +97,7 @@ msgstr "Een bestand kiezen"
 msgid "Attach"
 msgstr "Bijvoegen"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
@@ -124,64 +124,64 @@ msgid "There was an unexpected error while trying to insert the image."
 msgstr ""
 "Er is een onverwachte fout opgetreden tijdens het invoegen van de afbeelding."
 
-#: src/Composer.vala:624
+#: src/Composer.vala:667
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e %b %Y om %-l:%M %p"
 
-#: src/Composer.vala:654
+#: src/Composer.vala:697
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Op %1$s, schreef %2$s:"
 
-#: src/Composer.vala:658
+#: src/Composer.vala:701
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Doorgestuurd bericht ----------"
 
-#: src/Composer.vala:660
+#: src/Composer.vala:703
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Van: %s<br/>"
 
-#: src/Composer.vala:661
+#: src/Composer.vala:704
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Onderwerp: %s<br/>"
 
-#: src/Composer.vala:662
+#: src/Composer.vala:705
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Datum: %s<br/>"
 
-#: src/Composer.vala:663
+#: src/Composer.vala:706
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Aan: %s<br/>"
 
-#: src/Composer.vala:665
+#: src/Composer.vala:708
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
-#: src/Composer.vala:714
+#: src/Composer.vala:757
 msgid "Permanently delete this draft?"
 msgstr "Dit concept permanent verwijderen?"
 
-#: src/Composer.vala:715
+#: src/Composer.vala:758
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "U kunt deze actie niet ongedaan maken, noch uw concept terughalen nadat het "
 "is verwijderd."
 
-#: src/Composer.vala:725
+#: src/Composer.vala:768
 msgid "Delete Draft"
 msgstr "Verwijder concept"
 
-#: src/Composer.vala:749
+#: src/Composer.vala:792
 msgid "Send without subject?"
 msgstr "Bericht versturen zonder onderwerp?"
 
-#: src/Composer.vala:750
+#: src/Composer.vala:793
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -189,19 +189,19 @@ msgstr ""
 "Dit bericht heeft geen onderwerp. De ontvanger kan daardoor mogelijk "
 "moeilijk het draagwijdte of belang inschatten."
 
-#: src/Composer.vala:757
+#: src/Composer.vala:800
 msgid "Don't Send"
 msgstr "Niet verzenden"
 
-#: src/Composer.vala:759
+#: src/Composer.vala:802
 msgid "Send Anyway"
 msgstr "Toch verzenden"
 
-#: src/Composer.vala:788
+#: src/Composer.vala:831
 msgid "Sent message was not saved"
 msgstr "Verzonden bericht was niet opgeslagen"
 
-#: src/Composer.vala:789
+#: src/Composer.vala:832
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -209,28 +209,28 @@ msgstr ""
 "Het bericht was verstuurd, maar er was geen kopie opgeslagen in de map "
 "Verzonden berichten."
 
-#: src/Composer.vala:804
+#: src/Composer.vala:847
 msgid "Unable to send message"
 msgstr "Kon bericht niet versturen"
 
-#: src/Composer.vala:805
+#: src/Composer.vala:848
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 "Er is een onverwachte fout opgetreden tijdens het versturen van uw bericht."
 
-#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr "Handtekeningen aanpassen…"
 
-#: src/Composer.vala:903
+#: src/Composer.vala:946
 msgid "None"
 msgstr "Geen"
 
-#: src/Composer.vala:1092
+#: src/Composer.vala:1135
 msgid "Unable to save draft"
 msgstr "Kan concept niet opslaan"
 
-#: src/Composer.vala:1093
+#: src/Composer.vala:1136
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 "Er is een onverwachte fout opgetreden tijdens het opslaan van uw concept."
@@ -285,7 +285,7 @@ msgstr[1] "%s van %u afzenders"
 msgid "Mail"
 msgstr "Mail"
 
-#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:104
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Ongedaan maken"
@@ -455,45 +455,67 @@ msgstr "Link tekst:"
 msgid "Example Website"
 msgstr "Voorbeeldwebsite"
 
-#: src/Dialogs/AliasDialog/Alias.vala:48
-msgid "Name:"
+#: src/Dialogs/AliasDialog/Alias.vala:52
+msgid "John Doe"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/Alias.vala:54
-msgid "Enter name…"
-msgstr ""
-
-#: src/Dialogs/AliasDialog/Alias.vala:58
-msgid "Address:"
+#: src/Dialogs/AliasDialog/Alias.vala:56
+msgid "Name"
 msgstr ""
 
 #: src/Dialogs/AliasDialog/Alias.vala:71
-msgid "Enter e-mail address…"
-msgstr ""
+#, fuzzy
+#| msgid "https://example.com"
+msgid "Email@example.com"
+msgstr "https://voorbeeld.nl"
 
-#: src/Dialogs/AliasDialog/Alias.vala:172
+#: src/Dialogs/AliasDialog/Alias.vala:75
+#, fuzzy
+#| msgid "Copy _Email Address"
+msgid "E-mail Address"
+msgstr "_E-mailadres kopiëren"
+
+#: src/Dialogs/AliasDialog/Alias.vala:80
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete alias"
+msgstr "Verwijder concept"
+
+#: src/Dialogs/AliasDialog/Alias.vala:100
+#, fuzzy
+#| msgid "Edit Signatures…"
+msgid "Edit alias"
+msgstr "Handtekeningen aanpassen…"
+
+#: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:39
+#: src/Dialogs/AliasDialog/AliasDialog.vala:33
 msgid "No Aliases"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:43
+#: src/Dialogs/AliasDialog/AliasDialog.vala:37
 #, fuzzy
 #| msgid "Add signatures using the button in the toolbar below"
 msgid "Add aliases using the button in the toolbar below"
 msgstr "Voeg handtekeningen toe met de knop in de ondergelegen werkbalk"
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:75
+#: src/Dialogs/AliasDialog/AliasDialog.vala:67
 msgid "Add Alias…"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:111
+#: src/Dialogs/AliasDialog/AliasDialog.vala:104
 msgid "Aliases"
 msgstr ""
 
-#: src/Dialogs/AliasDialog/AliasDialog.vala:184
+#: src/Dialogs/AliasDialog/AliasDialog.vala:108
+#, fuzzy
+#| msgid "_Close"
+msgid "Close"
+msgstr "_Sluiten"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:178
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
 #, c-format
 msgid "'%s' deleted"
@@ -737,9 +759,6 @@ msgstr "Geen postvakken gevonden"
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
 msgstr "Probeer een andere zoekopdracht"
-
-#~ msgid "https://example.com"
-#~ msgstr "https://voorbeeld.nl"
 
 #~ msgid "Reply to All"
 #~ msgstr "Allen beantwoorden"
@@ -1439,9 +1458,6 @@ msgstr "Probeer een andere zoekopdracht"
 #~ msgid "_Copy"
 #~ msgstr "_Kopiëren"
 
-#~ msgid "Copy _Email Address"
-#~ msgstr "_E-mailadres kopiëren"
-
 #~ msgid "Copy _Link"
 #~ msgstr "_Koppeling kopiëren"
 
@@ -1567,9 +1583,6 @@ msgstr "Probeer een andere zoekopdracht"
 
 #~ msgid "_Cancel"
 #~ msgstr "_Annuleren"
-
-#~ msgid "_Close"
-#~ msgstr "_Sluiten"
 
 #~ msgid "_Discard"
 #~ msgstr "_Verwerpen"
