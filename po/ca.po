@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-07 10:19+0000\n"
-"PO-Revision-Date: 2023-10-31 16:10+0000\n"
+"PO-Revision-Date: 2023-11-09 15:10+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -445,37 +445,27 @@ msgstr "Lloc web d'exemple"
 
 #: src/Dialogs/AliasDialog/Alias.vala:52
 msgid "John Doe"
-msgstr ""
+msgstr "Jordi Puig"
 
 #: src/Dialogs/AliasDialog/Alias.vala:56
-#, fuzzy
-#| msgid "Name:"
 msgid "Name"
-msgstr "Nom:"
+msgstr "Nom"
 
 #: src/Dialogs/AliasDialog/Alias.vala:71
-#, fuzzy
-#| msgid "https://example.com"
 msgid "Email@example.com"
-msgstr "https://exemple.com"
+msgstr "adreça@exemple.com"
 
 #: src/Dialogs/AliasDialog/Alias.vala:75
-#, fuzzy
-#| msgid "E_mail address:"
 msgid "E-mail Address"
-msgstr "Adreça e_lectrònica:"
+msgstr "Adreça electrònica"
 
 #: src/Dialogs/AliasDialog/Alias.vala:80
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Delete alias"
-msgstr "Suprimeix l'esborrany"
+msgstr "Suprimeix l'àlies"
 
 #: src/Dialogs/AliasDialog/Alias.vala:100
-#, fuzzy
-#| msgid "Edit Aliases…"
 msgid "Edit alias"
-msgstr "Edita els àlies…"
+msgstr "Edita l'àlies"
 
 #: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
@@ -498,10 +488,8 @@ msgid "Aliases"
 msgstr "Àlies"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:108
-#, fuzzy
-#| msgid "_Close"
 msgid "Close"
-msgstr "Tan_ca"
+msgstr "Tanca"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:178
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
