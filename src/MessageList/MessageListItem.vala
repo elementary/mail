@@ -195,9 +195,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         ///TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
         var datetime_label = new Gtk.Label (new DateTime.from_unix_utc (relevant_timestamp).to_local ().format (_("%s at %s").printf (date_format, time_format))) {
-            ellipsize = MIDDLE
+            wrap = true,
+            wrap_mode = WORD
         };
-        datetime_label.tooltip_text = datetime_label.label;
         datetime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         var starred_icon = new Gtk.Image ();
