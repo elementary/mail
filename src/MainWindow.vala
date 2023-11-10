@@ -379,10 +379,6 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
                 Gdk.Rectangle rect;
                 get_allocation (out rect);
                 Mail.Application.settings.set ("window-size", "(ii)", rect.width, rect.height);
-
-                int root_x, root_y;
-                get_position (out root_x, out root_y);
-                Mail.Application.settings.set ("window-position", "(ii)", root_x, root_y);
             }
 
             return false;
