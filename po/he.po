@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-07 10:19+0000\n"
-"PO-Revision-Date: 2023-10-27 06:10+0000\n"
+"PO-Revision-Date: 2023-11-09 15:10+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
 "Language: he\n"
@@ -446,37 +446,27 @@ msgstr "אתר לדוגמה"
 
 #: src/Dialogs/AliasDialog/Alias.vala:52
 msgid "John Doe"
-msgstr ""
+msgstr "אלי ישראלי"
 
 #: src/Dialogs/AliasDialog/Alias.vala:56
-#, fuzzy
-#| msgid "Name:"
 msgid "Name"
-msgstr "שם:"
+msgstr "שם"
 
 #: src/Dialogs/AliasDialog/Alias.vala:71
-#, fuzzy
-#| msgid "https://example.com"
 msgid "Email@example.com"
-msgstr "https://example.com"
+msgstr "Email@example.com"
 
 #: src/Dialogs/AliasDialog/Alias.vala:75
-#, fuzzy
-#| msgid "E_mail address:"
 msgid "E-mail Address"
-msgstr "_כתובת דוא״ל:"
+msgstr "כתובת דוא״ל"
 
 #: src/Dialogs/AliasDialog/Alias.vala:80
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Delete alias"
-msgstr "מחיקת טיוטה"
+msgstr "מחיקת כינוי"
 
 #: src/Dialogs/AliasDialog/Alias.vala:100
-#, fuzzy
-#| msgid "Edit Aliases…"
 msgid "Edit alias"
-msgstr "עריכת כינויים…"
+msgstr "עריכת כינוי"
 
 #: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
@@ -499,10 +489,8 @@ msgid "Aliases"
 msgstr "כינויים"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:108
-#, fuzzy
-#| msgid "_Close"
 msgid "Close"
-msgstr "_סגירה"
+msgstr "סגירה"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:178
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
