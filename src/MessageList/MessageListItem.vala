@@ -23,7 +23,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     public Camel.MessageInfo message_info { get; construct; }
     public Camel.MimeMessage? mime_message { get; private set; default = null; }
 
-    private Mail.WebView web_view;
+    public Mail.WebView web_view { get; private set; }
     private GLib.Cancellable loading_cancellable;
 
     private Gtk.InfoBar calendar_info_bar;
@@ -58,18 +58,22 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             } else {
                 style_context.add_class ("collapsed");
             }
+
+            message_list.row_expand_changed (this);
         }
     }
 
     private GLib.Settings settings;
+    public unowned Mail.MessageList message_list { get; construct; }
 
-    public MessageListItem (Camel.MessageInfo message_info) {
+    public MessageListItem (Camel.MessageInfo message_info, Mail.MessageList message_list) {
         Object (
             margin_top: 12,
             margin_bottom: 12,
             margin_start: 12,
             margin_end: 12,
-            message_info: message_info
+            message_info: message_info,
+            message_list: message_list
         );
     }
 
@@ -315,11 +319,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         ((Gtk.Box) blocked_images_infobar.get_action_area ()).orientation = Gtk.Orientation.VERTICAL;
 
         web_view = new Mail.WebView () {
-            margin_top = 12,
-            margin_bottom = 12,
-            margin_start = 12,
-            margin_end = 12,
-            bind_height_to_page_height = true
+            bind_height_to_page_height = false
         };
         web_view.mouse_target_changed.connect (on_mouse_target_changed);
         web_view.context_menu.connect (on_webview_context_menu);
@@ -331,7 +331,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         secondary_box.add (separator);
         secondary_box.add (calendar_info_bar);
         secondary_box.add (blocked_images_infobar);
-        secondary_box.add (web_view);
 
         secondary_revealer = new Gtk.Revealer () {
             transition_type = SLIDE_UP

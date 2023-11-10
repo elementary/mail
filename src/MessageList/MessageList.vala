@@ -11,7 +11,8 @@ public class Mail.MessageList : Gtk.Box {
 
     private FolderPopover folder_popover;
     private Gtk.ListBox list_box;
-    private Gtk.ScrolledWindow scrolled_window;
+    private Gtk.Paned vpaned;
+    private Gtk.Frame web_view_frame;
     private Gee.HashMap<string, MessageListItem> messages;
 
     construct {
@@ -139,20 +140,51 @@ public class Mail.MessageList : Gtk.Box {
         list_box.set_placeholder (placeholder);
         list_box.set_sort_func (message_sort_function);
 
-        scrolled_window = new Gtk.ScrolledWindow (null, null) {
-            hscrollbar_policy = NEVER
+        vpaned = new Gtk.Paned (Gtk.Orientation.VERTICAL);
+        var scrolled_window = new Gtk.ScrolledWindow (null, null) {
+            hscrollbar_policy = NEVER,
+            min_content_height = 150
         };
         scrolled_window.add (list_box);
 
-        // Prevent the focus of the webview causing the ScrolledWindow to scroll
-        var scrolled_child = scrolled_window.get_child ();
-        if (scrolled_child is Gtk.Container) {
-            ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
-        }
+        web_view_frame = new Gtk.Frame ("") {
+            margin_top = 12,
+            margin_bottom = 12,
+            margin_start = 12,
+            margin_end = 12,
+            shadow_type = Gtk.ShadowType.ETCHED_IN
+        };
+
+        vpaned.pack1 (scrolled_window, false, false);
+        vpaned.pack2 (web_view_frame, true, true);
 
         orientation = VERTICAL;
         add (headerbar);
-        add (scrolled_window);
+        add (vpaned);
+        show_all ();
+    }
+
+    private Gtk.Widget? view_widget = null;
+    public void row_expand_changed (Mail.MessageListItem row) {
+        if (view_widget != null) {
+            web_view_frame.remove (view_widget);
+        }
+
+        if (row.expanded) {
+            var index = 0;
+            while (list_box.get_row_at_index (index) != null) {
+                var rw = (Mail.MessageListItem) list_box.get_row_at_index (index);
+                if (rw != row) {
+                    rw.expanded = false;
+                }
+
+                index++;
+            }
+
+            view_widget = row.web_view;
+            web_view_frame.add (view_widget);
+            row.web_view.show_all ();
+        }
     }
 
     public void set_conversation (Camel.FolderThreadNode? node) {
@@ -182,7 +214,7 @@ public class Mail.MessageList : Gtk.Box {
         var store = node.message.summary.folder.parent_store;
         folder_popover.set_store (store);
 
-        var item = new MessageListItem (node.message);
+        var item = new MessageListItem (node.message, this);
         list_box.add (item);
         messages.set (node.message.uid, item);
         if (node.child != null) {
@@ -211,7 +243,7 @@ public class Mail.MessageList : Gtk.Box {
     private void go_down (Camel.FolderThreadNode node) {
         unowned Camel.FolderThreadNode? current_node = node;
         while (current_node != null) {
-            var item = new MessageListItem (current_node.message);
+            var item = new MessageListItem (current_node.message, this);
             list_box.add (item);
             messages.set (current_node.message.uid, item);
             if (current_node.next != null) {
