@@ -143,7 +143,7 @@ public class Mail.MessageList : Gtk.Box {
         vpaned = new Gtk.Paned (Gtk.Orientation.VERTICAL);
         var scrolled_window = new Gtk.ScrolledWindow (null, null) {
             hscrollbar_policy = NEVER,
-            min_content_height = 150
+            min_content_height = 200
         };
         scrolled_window.add (list_box);
 
@@ -152,7 +152,8 @@ public class Mail.MessageList : Gtk.Box {
             margin_bottom = 12,
             margin_start = 12,
             margin_end = 12,
-            shadow_type = Gtk.ShadowType.ETCHED_IN
+            shadow_type = Gtk.ShadowType.ETCHED_IN,
+            no_show_all = true
         };
 
         vpaned.pack1 (scrolled_window, false, false);
@@ -168,7 +169,10 @@ public class Mail.MessageList : Gtk.Box {
     public void row_expand_changed (Mail.MessageListItem row) {
         if (view_widget != null) {
             web_view_frame.remove (view_widget);
+            view_widget = null;
         }
+
+        web_view_frame.hide ();
 
         if (row.expanded) {
             var index = 0;
@@ -184,6 +188,7 @@ public class Mail.MessageList : Gtk.Box {
             view_widget = row.web_view;
             web_view_frame.add (view_widget);
             row.web_view.show_all ();
+            web_view_frame.show ();
         }
     }
 
