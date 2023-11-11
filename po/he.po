@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-11 06:04+0000\n"
-"PO-Revision-Date: 2023-11-09 15:10+0000\n"
+"PO-Revision-Date: 2023-11-14 18:10+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
 "Language: he\n"
@@ -354,18 +354,17 @@ msgid "New Signature"
 msgstr "חתימה חדשה"
 
 #: src/Backend/ContactManager.vala:88 src/Backend/ContactManager.vala:122
-#, fuzzy, c-format
-#| msgid "Couldn't rename “%s”"
+#, c-format
 msgid "Couldn't add “%s” to addressbook"
-msgstr "לא ניתן לשנות ל־„%s” את השם"
+msgstr "לא ניתן להוסיף את „%s” לפנקס הכתובות"
 
 #: src/Backend/ContactManager.vala:89
 msgid "No addressbook available."
-msgstr ""
+msgstr "אין פנקס כתובות זמין."
 
 #: src/Backend/ContactManager.vala:123
 msgid "Operation failed."
-msgstr ""
+msgstr "הפעולה נכשלה."
 
 #: src/ConversationList/ConversationItemModel.vala:74
 #: src/ConversationList/ConversationItemModel.vala:112
