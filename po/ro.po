@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-11-07 10:19+0000\n"
 "PO-Revision-Date: 2017-01-21 10:51+0000\n"
 "Last-Translator: Marius Albina <marius.albina@gmail.com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
@@ -95,7 +95,7 @@ msgstr "Alegeți un fișier"
 msgid "Attach"
 msgstr "_Atașează"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
@@ -127,119 +127,119 @@ msgstr "Șterge schiţa"
 msgid "There was an unexpected error while trying to insert the image."
 msgstr ""
 
-#: src/Composer.vala:624
+#: src/Composer.vala:667
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e %b %Y la %-l:%M %p"
 
-#: src/Composer.vala:654
+#: src/Composer.vala:697
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "La %1$s, %2$s a scris:"
 
-#: src/Composer.vala:658
+#: src/Composer.vala:701
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Mesaj înaintat ----------"
 
-#: src/Composer.vala:660
+#: src/Composer.vala:703
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "De la: %s\n"
 
-#: src/Composer.vala:661
+#: src/Composer.vala:704
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "Subiect: %s\n"
 
-#: src/Composer.vala:662
+#: src/Composer.vala:705
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "Data: %s\n"
 
-#: src/Composer.vala:663
+#: src/Composer.vala:706
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "Către: %s\n"
 
-#: src/Composer.vala:665
+#: src/Composer.vala:708
 #, fuzzy, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s\n"
 
-#: src/Composer.vala:714
+#: src/Composer.vala:757
 #, fuzzy
 #| msgid "Do you want to permanently delete this message?"
 #| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
 msgstr "Doriți să ștergeți permanent acest mesaj?"
 
-#: src/Composer.vala:715
+#: src/Composer.vala:758
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer.vala:725
+#: src/Composer.vala:768
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Delete Draft"
 msgstr "Șterge schiţa"
 
-#: src/Composer.vala:749
+#: src/Composer.vala:792
 #, fuzzy
 msgid "Send without subject?"
 msgstr "Trimiteți mesajul fără subiect?"
 
-#: src/Composer.vala:750
+#: src/Composer.vala:793
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
 
-#: src/Composer.vala:757
+#: src/Composer.vala:800
 msgid "Don't Send"
 msgstr ""
 
-#: src/Composer.vala:759
+#: src/Composer.vala:802
 #, fuzzy
 msgid "Send Anyway"
 msgstr "Deschide oricum"
 
-#: src/Composer.vala:788
+#: src/Composer.vala:831
 #, fuzzy
 #| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
 msgstr "Trimiteți mesajul fără conținut?"
 
-#: src/Composer.vala:789
+#: src/Composer.vala:832
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer.vala:804
+#: src/Composer.vala:847
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to send message"
 msgstr "Șterge schiţa"
 
-#: src/Composer.vala:805
+#: src/Composer.vala:848
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr ""
 
-#: src/Composer.vala:903
+#: src/Composer.vala:946
 msgid "None"
 msgstr "Nici una"
 
-#: src/Composer.vala:1092
+#: src/Composer.vala:1135
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to save draft"
 msgstr "Șterge schiţa"
 
-#: src/Composer.vala:1093
+#: src/Composer.vala:1136
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -301,7 +301,8 @@ msgstr[2] "Arată întotdeauna de la expeditor"
 msgid "Mail"
 msgstr "Poştă electronică"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 #, fuzzy
 msgid "Undo"
 msgstr "_Anulează"
@@ -387,7 +388,7 @@ msgstr ""
 msgid "The source folder is the destination folder."
 msgstr ""
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr ""
 
@@ -504,6 +505,70 @@ msgstr "Text îmbogăţit"
 msgid "Example Website"
 msgstr "Pagină web"
 
+#: src/Dialogs/AliasDialog/Alias.vala:52
+msgid "John Doe"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:56
+#, fuzzy
+#| msgid "N_ame:"
+msgid "Name"
+msgstr "Nume:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+msgid "Email@example.com"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:75
+#, fuzzy
+#| msgid "E_mail address:"
+msgid "E-mail Address"
+msgstr "Adresă de e_mail:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:80
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete alias"
+msgstr "Șterge schiţa"
+
+#: src/Dialogs/AliasDialog/Alias.vala:100
+#, fuzzy
+#| msgid "Edit Draft"
+msgid "Edit alias"
+msgstr "Editează ciorna"
+
+#: src/Dialogs/AliasDialog/Alias.vala:175
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:33
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:37
+msgid "Add aliases using the button in the toolbar below"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:67
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:104
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:108
+#, fuzzy
+#| msgid "_Close"
+msgid "Close"
+msgstr "În_chide"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:178
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr ""
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 msgid "No Signatures"
 msgstr ""
@@ -537,9 +602,8 @@ msgstr ""
 msgid "Signature"
 msgstr ""
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
+#: src/FoldersView/AccountSourceItem.vala:154
+msgid "Edit Aliases…"
 msgstr ""
 
 #: src/FoldersView/FoldersListView.vala:47
@@ -766,6 +830,16 @@ msgstr ""
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Email Address:"
+#~ msgid "Address:"
+#~ msgstr "Adresa de email:"
+
+#, fuzzy
+#~| msgid "Email address:"
+#~ msgid "Enter e-mail address…"
+#~ msgstr "Adresă email:"
 
 #~ msgid "Reply to All"
 #~ msgstr "Răspunde tuturor"
@@ -1518,9 +1592,6 @@ msgstr ""
 #~ msgid "Always Show From Sender"
 #~ msgstr "Afișează întotdeauna de la acest expeditor"
 
-#~ msgid "Edit Draft"
-#~ msgstr "Editează ciorna"
-
 #~ msgid "Date:"
 #~ msgstr "Data:"
 
@@ -1694,9 +1765,6 @@ msgstr ""
 #~ msgid "_Cancel"
 #~ msgstr "_Anulează"
 
-#~ msgid "_Close"
-#~ msgstr "În_chide"
-
 #~ msgid "_Discard"
 #~ msgstr "_Renunță"
 
@@ -1782,9 +1850,6 @@ msgstr ""
 
 #~ msgid "Nickname:"
 #~ msgstr "Pseudonim:"
-
-#~ msgid "Email address:"
-#~ msgstr "Adresă email:"
 
 #~ msgid "Find"
 #~ msgstr "Caută"
@@ -1997,17 +2062,11 @@ msgstr ""
 #~ msgid "_Password:"
 #~ msgstr "_Parolă:"
 
-#~ msgid "E_mail address:"
-#~ msgstr "Adresă de e_mail:"
-
 #~ msgid "Work, Home, etc."
 #~ msgstr "Muncă, Acasă, etc."
 
 #~ msgid "N_ickname:"
 #~ msgstr "Pseudon_im:"
-
-#~ msgid "N_ame:"
-#~ msgstr "Nume:"
 
 #~ msgid "S_ervice:"
 #~ msgstr "S_erviciu:"
@@ -2262,9 +2321,6 @@ msgstr ""
 
 #~ msgid "Are you sure you want to remove this account?"
 #~ msgstr "Sigur vrei să înlături acest cont?"
-
-#~ msgid "Email Address:"
-#~ msgstr "Adresa de email:"
 
 #~ msgid "Username:"
 #~ msgstr "Nume utilizator:"

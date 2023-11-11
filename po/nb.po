@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-11-07 10:19+0000\n"
 "PO-Revision-Date: 2023-08-03 14:22+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
@@ -97,7 +97,7 @@ msgstr "Velg en fil"
 msgid "Attach"
 msgstr "Legg ved"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
@@ -127,64 +127,64 @@ msgstr "Kunne ikke sette inn bilde"
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "En uventet feil inntraff under forsøk på innsetting av bildet."
 
-#: src/Composer.vala:624
+#: src/Composer.vala:667
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a. %e. %b, %Y, kl %-k:%M"
 
-#: src/Composer.vala:654
+#: src/Composer.vala:697
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Den %1$s, %2$s skrev:"
 
-#: src/Composer.vala:658
+#: src/Composer.vala:701
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Videresendt melding ----------"
 
-#: src/Composer.vala:660
+#: src/Composer.vala:703
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Fra: %s<br/>"
 
-#: src/Composer.vala:661
+#: src/Composer.vala:704
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Emne: %s<br/>"
 
-#: src/Composer.vala:662
+#: src/Composer.vala:705
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Dato: %s<br/>"
 
-#: src/Composer.vala:663
+#: src/Composer.vala:706
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Til: %s<br/>"
 
-#: src/Composer.vala:665
+#: src/Composer.vala:708
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Kopi: %s<br/>"
 
-#: src/Composer.vala:714
+#: src/Composer.vala:757
 msgid "Permanently delete this draft?"
 msgstr "Ønsker du å slette denne kladden?"
 
-#: src/Composer.vala:715
+#: src/Composer.vala:758
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Du kan ikke angre denne handlingen, ei heller gjenopprette kladden din om "
 "noe har blitt slettet."
 
-#: src/Composer.vala:725
+#: src/Composer.vala:768
 msgid "Delete Draft"
 msgstr "Forkast utkast"
 
-#: src/Composer.vala:749
+#: src/Composer.vala:792
 msgid "Send without subject?"
 msgstr "Send uten emne?"
 
-#: src/Composer.vala:750
+#: src/Composer.vala:793
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -192,19 +192,19 @@ msgstr ""
 "Denne meldingen har tomt emnefelt. Mottageren kan ikke anta hensikt eller "
 "hvor viktig den er."
 
-#: src/Composer.vala:757
+#: src/Composer.vala:800
 msgid "Don't Send"
 msgstr "Ikke send"
 
-#: src/Composer.vala:759
+#: src/Composer.vala:802
 msgid "Send Anyway"
 msgstr "Send uansett"
 
-#: src/Composer.vala:788
+#: src/Composer.vala:831
 msgid "Sent message was not saved"
 msgstr "Sendt melding ble ikke lagret"
 
-#: src/Composer.vala:789
+#: src/Composer.vala:832
 #, fuzzy
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
@@ -212,28 +212,28 @@ msgid ""
 msgstr ""
 "Meldingen ble sendt, men ingen kopi ble lagret i «Lagret»-meldingsmappen."
 
-#: src/Composer.vala:804
+#: src/Composer.vala:847
 msgid "Unable to send message"
 msgstr "Kunne ikke sende melding"
 
-#: src/Composer.vala:805
+#: src/Composer.vala:848
 msgid "There was an unexpected error while sending your message."
 msgstr "En uventet feil inntraff under forsendelse av meldingen din."
 
-#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
 #, fuzzy
 msgid "Edit Signatures…"
 msgstr "Rediger signaturer …"
 
-#: src/Composer.vala:903
+#: src/Composer.vala:946
 msgid "None"
 msgstr "Ingen"
 
-#: src/Composer.vala:1092
+#: src/Composer.vala:1135
 msgid "Unable to save draft"
 msgstr "Kunne ikke lagre utkast"
 
-#: src/Composer.vala:1093
+#: src/Composer.vala:1136
 msgid "There was an unexpected error while saving your draft."
 msgstr "En uventet feil inntraff under lagring av utkastet ditt."
 
@@ -287,7 +287,8 @@ msgstr[1] "%s fra %u avsendere"
 msgid "Mail"
 msgstr "E-post"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Angre"
 
@@ -365,7 +366,7 @@ msgstr "Fant ikke målmappen."
 msgid "The source folder is the destination folder."
 msgstr "Kildemappen er målmappen."
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr "Ny signatur"
 
@@ -462,6 +463,73 @@ msgstr "Lenketekst"
 msgid "Example Website"
 msgstr "Eksempelnettside"
 
+#: src/Dialogs/AliasDialog/Alias.vala:52
+msgid "John Doe"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:56
+#, fuzzy
+#| msgid "N_ame:"
+msgid "Name"
+msgstr "N_avn:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+#, fuzzy
+#| msgid "https://example.com"
+msgid "Email@example.com"
+msgstr "https://eksempel.no"
+
+#: src/Dialogs/AliasDialog/Alias.vala:75
+#, fuzzy
+#| msgid "E_mail address:"
+msgid "E-mail Address"
+msgstr "E_mail adresse:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:80
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete alias"
+msgstr "Forkast utkast"
+
+#: src/Dialogs/AliasDialog/Alias.vala:100
+#, fuzzy
+msgid "Edit alias"
+msgstr "Rediger signaturer …"
+
+#: src/Dialogs/AliasDialog/Alias.vala:175
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:33
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:37
+#, fuzzy
+#| msgid "Add signatures using the button in the toolbar below"
+msgid "Add aliases using the button in the toolbar below"
+msgstr "Legg til signaturer ved å bruke knappen i verktøylinjen nedenfor"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:67
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:104
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:108
+#, fuzzy
+#| msgid "_Close"
+msgid "Close"
+msgstr "_Lukk"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:178
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "«%s» slettet"
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 #, fuzzy
 #| msgid "New Signature"
@@ -503,10 +571,10 @@ msgstr "Sett som forvalg for …"
 msgid "Signature"
 msgstr "Ny signatur"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
-msgstr "«%s» slettet"
+#: src/FoldersView/AccountSourceItem.vala:154
+#, fuzzy
+msgid "Edit Aliases…"
+msgstr "Rediger signaturer …"
 
 #: src/FoldersView/FoldersListView.vala:47
 #, fuzzy
@@ -720,8 +788,15 @@ msgstr "Fant ingen e-postbokser"
 msgid "Try changing search terms"
 msgstr "Prøv å endre søket"
 
-#~ msgid "https://example.com"
-#~ msgstr "https://eksempel.no"
+#, fuzzy
+#~| msgid "Email Address:"
+#~ msgid "Address:"
+#~ msgstr "E-postadresse:"
+
+#, fuzzy
+#~| msgid "Email address:"
+#~ msgid "Enter e-mail address…"
+#~ msgstr "E-postadresse:"
 
 #~ msgid "Reply to All"
 #~ msgstr "Svar til alle"
@@ -1626,9 +1701,6 @@ msgstr "Prøv å endre søket"
 #~ msgid "_Cancel"
 #~ msgstr "_Avbryt"
 
-#~ msgid "_Close"
-#~ msgstr "_Lukk"
-
 #~ msgid "_Discard"
 #~ msgstr "_Forkast"
 
@@ -1713,9 +1785,6 @@ msgstr "Prøv å endre søket"
 
 #~ msgid "Nickname:"
 #~ msgstr "Kallenavn:"
-
-#~ msgid "Email address:"
-#~ msgstr "E-postadresse:"
 
 #~ msgid "Find"
 #~ msgstr "Finn"
@@ -1927,17 +1996,11 @@ msgstr "Prøv å endre søket"
 #~ msgid "_Password:"
 #~ msgstr "_Passord:"
 
-#~ msgid "E_mail address:"
-#~ msgstr "E_mail adresse:"
-
 #~ msgid "Work, Home, etc."
 #~ msgstr "Jobb, Hjemme, etc."
 
 #~ msgid "N_ickname:"
 #~ msgstr "K_allenavn:"
-
-#~ msgid "N_ame:"
-#~ msgstr "N_avn:"
 
 #~ msgid "S_ervice:"
 #~ msgstr "T_jeneste:"
@@ -2191,9 +2254,6 @@ msgstr "Prøv å endre søket"
 
 #~ msgid "Are you sure you want to remove this account?"
 #~ msgstr "Er du sikker på at du vil fjerne denne kontoen?"
-
-#~ msgid "Email Address:"
-#~ msgstr "E-postadresse:"
 
 #~ msgid "Username:"
 #~ msgstr "Brukernavn:"

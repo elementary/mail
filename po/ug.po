@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-11-07 10:19+0000\n"
 "PO-Revision-Date: 2017-04-15 20:40+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Uighur <https://l10n.elementary.io/projects/mail/mail/ug/>\n"
@@ -89,7 +89,7 @@ msgstr "ھۆججەت تاللاش"
 msgid "Attach"
 msgstr "قوشۇمچە ھۆججەت"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
@@ -121,119 +121,119 @@ msgstr "ئورگىنالنى ئۆچۈرۈش"
 msgid "There was an unexpected error while trying to insert the image."
 msgstr ""
 
-#: src/Composer.vala:624
+#: src/Composer.vala:667
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%Y-%b-%e日，%p %-l:%M"
 
-#: src/Composer.vala:654
+#: src/Composer.vala:697
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s دە، %2$s يىزىش:"
 
-#: src/Composer.vala:658
+#: src/Composer.vala:701
 msgid "---------- Forwarded message ----------"
 msgstr "---------- يەتكۈزۈلگەن ئۇچۇرلار ----------"
 
-#: src/Composer.vala:660
+#: src/Composer.vala:703
 #, fuzzy, c-format
 msgid "From: %s<br/>"
 msgstr "يوللىغۇچى: %s\n"
 
-#: src/Composer.vala:661
+#: src/Composer.vala:704
 #, fuzzy, c-format
 msgid "Subject: %s<br/>"
 msgstr "تېمىسى: %s\n"
 
-#: src/Composer.vala:662
+#: src/Composer.vala:705
 #, fuzzy, c-format
 msgid "Date: %s<br/>"
 msgstr "چىسلاسى: %s\n"
 
-#: src/Composer.vala:663
+#: src/Composer.vala:706
 #, fuzzy, c-format
 msgid "To: %s<br/>"
 msgstr "تاپشۇرۇۋالغۇچى: %s\n"
 
-#: src/Composer.vala:665
+#: src/Composer.vala:708
 #, fuzzy, c-format
 msgid "Cc: %s<br/>"
 msgstr "كۆچۈرۈپ ئەۋەتىش: %s\n"
 
-#: src/Composer.vala:714
+#: src/Composer.vala:757
 #, fuzzy
 #| msgid "Do you want to permanently delete this message?"
 #| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
 msgstr "سىز بۇ ئۇچۇرلارنى مەڭگۈلۈك ئۆچۈرەمسىز؟"
 
-#: src/Composer.vala:715
+#: src/Composer.vala:758
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer.vala:725
+#: src/Composer.vala:768
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Delete Draft"
 msgstr "ئورگىنالنى ئۆچۈرۈش"
 
-#: src/Composer.vala:749
+#: src/Composer.vala:792
 #, fuzzy
 msgid "Send without subject?"
 msgstr "تېمىسى يوق ئېلخەتنى ئەۋەتەمسىز؟"
 
-#: src/Composer.vala:750
+#: src/Composer.vala:793
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
 
-#: src/Composer.vala:757
+#: src/Composer.vala:800
 msgid "Don't Send"
 msgstr ""
 
-#: src/Composer.vala:759
+#: src/Composer.vala:802
 #, fuzzy
 msgid "Send Anyway"
 msgstr "يەنىلا ئىچىش"
 
-#: src/Composer.vala:788
+#: src/Composer.vala:831
 #, fuzzy
 #| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
 msgstr "مەزمۇنى يوق ئېلخەتنى ئەۋەتەمسىز؟"
 
-#: src/Composer.vala:789
+#: src/Composer.vala:832
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer.vala:804
+#: src/Composer.vala:847
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to send message"
 msgstr "ئورگىنالنى ئۆچۈرۈش"
 
-#: src/Composer.vala:805
+#: src/Composer.vala:848
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr ""
 
-#: src/Composer.vala:903
+#: src/Composer.vala:946
 msgid "None"
 msgstr "ھىچنىمە يوق"
 
-#: src/Composer.vala:1092
+#: src/Composer.vala:1135
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to save draft"
 msgstr "ئورگىنالنى ئۆچۈرۈش"
 
-#: src/Composer.vala:1093
+#: src/Composer.vala:1136
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -291,7 +291,8 @@ msgstr[0] "يوللىغۇچىنى داۋاملىق كۆرسىتىش"
 msgid "Mail"
 msgstr "ئېلخەت"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 #, fuzzy
 msgid "Undo"
 msgstr "بىكار قىلىش"
@@ -371,7 +372,7 @@ msgstr ""
 msgid "The source folder is the destination folder."
 msgstr ""
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr ""
 
@@ -488,6 +489,70 @@ msgstr "كۆپ تېكست"
 msgid "Example Website"
 msgstr "توربىكەت"
 
+#: src/Dialogs/AliasDialog/Alias.vala:52
+msgid "John Doe"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:56
+#, fuzzy
+#| msgid "N_ame:"
+msgid "Name"
+msgstr "ئىسمى:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+msgid "Email@example.com"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:75
+#, fuzzy
+#| msgid "E_mail address:"
+msgid "E-mail Address"
+msgstr "ئېلخەت ئادىرىسى:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:80
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete alias"
+msgstr "ئورگىنالنى ئۆچۈرۈش"
+
+#: src/Dialogs/AliasDialog/Alias.vala:100
+#, fuzzy
+#| msgid "Edit Draft"
+msgid "Edit alias"
+msgstr "ئورگىنالنى تەھرىرلەش"
+
+#: src/Dialogs/AliasDialog/Alias.vala:175
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:33
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:37
+msgid "Add aliases using the button in the toolbar below"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:67
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:104
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:108
+#, fuzzy
+#| msgid "_Close"
+msgid "Close"
+msgstr "تاقاش"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:178
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr ""
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 msgid "No Signatures"
 msgstr ""
@@ -521,9 +586,8 @@ msgstr ""
 msgid "Signature"
 msgstr ""
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
+#: src/FoldersView/AccountSourceItem.vala:154
+msgid "Edit Aliases…"
 msgstr ""
 
 #: src/FoldersView/FoldersListView.vala:47
@@ -750,6 +814,16 @@ msgstr ""
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Email Address:"
+#~ msgid "Address:"
+#~ msgstr "ئېلخەت ئادىرىسى:"
+
+#, fuzzy
+#~| msgid "Email address:"
+#~ msgid "Enter e-mail address…"
+#~ msgstr "ئېلخەت ئادىرىسى:"
 
 #~ msgid "Reply to All"
 #~ msgstr "ھەممىسىگە جاۋاپ قايتۇرۇش"
@@ -1450,9 +1524,6 @@ msgstr ""
 #~ msgid "Always Show From Sender"
 #~ msgstr "يوللىغۇچىنى داۋاملىق كۆرسىتىش"
 
-#~ msgid "Edit Draft"
-#~ msgstr "ئورگىنالنى تەھرىرلەش"
-
 #~ msgid "Date:"
 #~ msgstr "چىسلاسى:"
 
@@ -1618,9 +1689,6 @@ msgstr ""
 #~ msgid "_Cancel"
 #~ msgstr "ياق"
 
-#~ msgid "_Close"
-#~ msgstr "تاقاش"
-
 #~ msgid "_Discard"
 #~ msgstr "تاشلىۋىتىش"
 
@@ -1704,9 +1772,6 @@ msgstr ""
 
 #~ msgid "Nickname:"
 #~ msgstr "ئەركىلەتمە ئىسمى:"
-
-#~ msgid "Email address:"
-#~ msgstr "ئېلخەت ئادىرىسى:"
 
 #~ msgid "Find"
 #~ msgstr "ئىزدەش"
@@ -1920,17 +1985,11 @@ msgstr ""
 #~ msgid "_Password:"
 #~ msgstr "پارول:"
 
-#~ msgid "E_mail address:"
-#~ msgstr "ئېلخەت ئادىرىسى:"
-
 #~ msgid "Work, Home, etc."
 #~ msgstr "خىزمەت، تۇرمۇش قاتارلىقلار."
 
 #~ msgid "N_ickname:"
 #~ msgstr "ئەركىلەتمە ئىسمى:"
-
-#~ msgid "N_ame:"
-#~ msgstr "ئىسمى:"
 
 #~ msgid "S_ervice:"
 #~ msgstr "مۇلازىمەت:"
@@ -2172,9 +2231,6 @@ msgstr ""
 
 #~ msgid "Are you sure you want to remove this account?"
 #~ msgstr "بۇ ھىساۋاتنى راسىتتىنلا ئۆچۈرەمسىز؟"
-
-#~ msgid "Email Address:"
-#~ msgstr "ئېلخەت ئادىرىسى:"
 
 #~ msgid "Username:"
 #~ msgstr "ئابونت ئىسمى:"

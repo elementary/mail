@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
-"PO-Revision-Date: 2023-08-16 20:08+0000\n"
+"POT-Creation-Date: 2023-11-07 10:19+0000\n"
+"PO-Revision-Date: 2023-11-09 15:10+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
 "Language: ca\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Application.vala:220
@@ -91,7 +91,7 @@ msgstr "Escolliu un fitxer"
 msgid "Attach"
 msgstr "Adjunta"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
@@ -117,63 +117,63 @@ msgstr "No es pot inserir la imatge."
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "Hi ha hagut un error inesperat a l'hora d'inserir la imatge."
 
-#: src/Composer.vala:624
+#: src/Composer.vala:667
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e %b de %Y a les %-H.%M"
 
-#: src/Composer.vala:654
+#: src/Composer.vala:697
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s, %2$s va escriure el següent:"
 
-#: src/Composer.vala:658
+#: src/Composer.vala:701
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Missatge reenviat ----------"
 
-#: src/Composer.vala:660
+#: src/Composer.vala:703
 #, c-format
 msgid "From: %s<br/>"
 msgstr "De: %s<br/>"
 
-#: src/Composer.vala:661
+#: src/Composer.vala:704
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Assumpte: %s<br/>"
 
-#: src/Composer.vala:662
+#: src/Composer.vala:705
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Data: %s<br/>"
 
-#: src/Composer.vala:663
+#: src/Composer.vala:706
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Per a: %s<br/>"
 
-#: src/Composer.vala:665
+#: src/Composer.vala:708
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "A/c: %s<br/>"
 
-#: src/Composer.vala:714
+#: src/Composer.vala:757
 msgid "Permanently delete this draft?"
 msgstr "Voleu suprimir permanentment aquest esborrany?"
 
-#: src/Composer.vala:715
+#: src/Composer.vala:758
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "No podreu desfer aquesta acció ni recuperar l'esborrany un cop suprimit."
 
-#: src/Composer.vala:725
+#: src/Composer.vala:768
 msgid "Delete Draft"
 msgstr "Suprimeix l'esborrany"
 
-#: src/Composer.vala:749
+#: src/Composer.vala:792
 msgid "Send without subject?"
 msgstr "Voleu enviar-lo sense assumpte?"
 
-#: src/Composer.vala:750
+#: src/Composer.vala:793
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -181,19 +181,19 @@ msgstr ""
 "Aquest missatge té un camp d'assumpte buit. És possible que el destinatari "
 "no pugui inferir-ne l’abast o la importància."
 
-#: src/Composer.vala:757
+#: src/Composer.vala:800
 msgid "Don't Send"
 msgstr "No l'enviïs"
 
-#: src/Composer.vala:759
+#: src/Composer.vala:802
 msgid "Send Anyway"
 msgstr "Envia'l tanmateix"
 
-#: src/Composer.vala:788
+#: src/Composer.vala:831
 msgid "Sent message was not saved"
 msgstr "No s'ha desat el missatge enviat."
 
-#: src/Composer.vala:789
+#: src/Composer.vala:832
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -201,27 +201,27 @@ msgstr ""
 "El missatge s'ha enviat, però no se n'ha desat una còpia a la carpeta "
 "d'enviats."
 
-#: src/Composer.vala:804
+#: src/Composer.vala:847
 msgid "Unable to send message"
 msgstr "No es pot enviar el missatge."
 
-#: src/Composer.vala:805
+#: src/Composer.vala:848
 msgid "There was an unexpected error while sending your message."
 msgstr "Hi ha hagut un error inesperat a l'hora de d'enviar el missatge."
 
-#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr "Edita les signatures…"
 
-#: src/Composer.vala:903
+#: src/Composer.vala:946
 msgid "None"
 msgstr "Cap"
 
-#: src/Composer.vala:1092
+#: src/Composer.vala:1135
 msgid "Unable to save draft"
 msgstr "No es pot desar l'esborrany."
 
-#: src/Composer.vala:1093
+#: src/Composer.vala:1136
 msgid "There was an unexpected error while saving your draft."
 msgstr "Hi ha hagut un error inesperat a l'hora de desar l'esborrany."
 
@@ -275,7 +275,8 @@ msgstr[1] "%s de %u remitents"
 msgid "Mail"
 msgstr "Correu"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Desfés-ho"
 
@@ -347,7 +348,7 @@ msgstr "No s'ha trobat la carpeta de destinació."
 msgid "The source folder is the destination folder."
 msgstr "La carpeta d'origen és la carpeta de destinació."
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr "Signatura nova"
 
@@ -442,6 +443,60 @@ msgstr "Text de l'enllaç:"
 msgid "Example Website"
 msgstr "Lloc web d'exemple"
 
+#: src/Dialogs/AliasDialog/Alias.vala:52
+msgid "John Doe"
+msgstr "Jordi Puig"
+
+#: src/Dialogs/AliasDialog/Alias.vala:56
+msgid "Name"
+msgstr "Nom"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+msgid "Email@example.com"
+msgstr "adreça@exemple.com"
+
+#: src/Dialogs/AliasDialog/Alias.vala:75
+msgid "E-mail Address"
+msgstr "Adreça electrònica"
+
+#: src/Dialogs/AliasDialog/Alias.vala:80
+msgid "Delete alias"
+msgstr "Suprimeix l'àlies"
+
+#: src/Dialogs/AliasDialog/Alias.vala:100
+msgid "Edit alias"
+msgstr "Edita l'àlies"
+
+#: src/Dialogs/AliasDialog/Alias.vala:175
+msgid "Name not set"
+msgstr "Nom no establert"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:33
+msgid "No Aliases"
+msgstr "Sense àlies"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:37
+msgid "Add aliases using the button in the toolbar below"
+msgstr "Afegiu àlies amb el botó de la barra d'eines de sota."
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:67
+msgid "Add Alias…"
+msgstr "Afegeix un àlies…"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:104
+msgid "Aliases"
+msgstr "Àlies"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:108
+msgid "Close"
+msgstr "Tanca"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:178
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "'%s' s'ha suprimit"
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 msgid "No Signatures"
 msgstr "Sense signatures"
@@ -475,10 +530,9 @@ msgstr "Valor per defecte per a…"
 msgid "Signature"
 msgstr "Signatura"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
-msgstr "'%s' s'ha suprimit"
+#: src/FoldersView/AccountSourceItem.vala:154
+msgid "Edit Aliases…"
+msgstr "Edita els àlies…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -680,8 +734,14 @@ msgstr "No s'ha trobat cap bústia de correu."
 msgid "Try changing search terms"
 msgstr "Proveu de canviar els termes de cerca."
 
-#~ msgid "https://example.com"
-#~ msgstr "https://exemple.com"
+#~ msgid "Enter name…"
+#~ msgstr "Introduïu un nom…"
+
+#~ msgid "Address:"
+#~ msgstr "Adreça:"
+
+#~ msgid "Enter e-mail address…"
+#~ msgstr "Introduïu una adreça electrònica…"
 
 #, c-format
 #~ msgid "Unable to rename folder “%s”': %s"
@@ -1602,9 +1662,6 @@ msgstr "Proveu de canviar els termes de cerca."
 #~ msgid "_Cancel"
 #~ msgstr "_Cancel·la"
 
-#~ msgid "_Close"
-#~ msgstr "Tan_ca"
-
 #~ msgid "_Discard"
 #~ msgstr "_Descarta"
 
@@ -1689,9 +1746,6 @@ msgstr "Proveu de canviar els termes de cerca."
 
 #~ msgid "Nickname:"
 #~ msgstr "Sobrenom:"
-
-#~ msgid "Email address:"
-#~ msgstr "Adreça electrònica:"
 
 #~ msgid "Find"
 #~ msgstr "Cerca"
@@ -1905,17 +1959,11 @@ msgstr "Proveu de canviar els termes de cerca."
 #~ msgid "_Password:"
 #~ msgstr "_Contrasenya:"
 
-#~ msgid "E_mail address:"
-#~ msgstr "Adreça e_lectrònica:"
-
 #~ msgid "Work, Home, etc."
 #~ msgstr "Feina, casa, etc."
 
 #~ msgid "N_ickname:"
 #~ msgstr "So_brenom:"
-
-#~ msgid "N_ame:"
-#~ msgstr "N_om:"
 
 #~ msgid "S_ervice:"
 #~ msgstr "S_ervei:"
@@ -2176,9 +2224,6 @@ msgstr "Proveu de canviar els termes de cerca."
 
 #~ msgid "Are you sure you want to remove this account?"
 #~ msgstr "Segur que voleu eliminar aquest compte?"
-
-#~ msgid "Email Address:"
-#~ msgstr "Adreça electrònica:"
 
 #~ msgid "Username:"
 #~ msgstr "Nom d'usuari:"

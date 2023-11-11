@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-11-07 10:19+0000\n"
 "PO-Revision-Date: 2023-08-11 12:08+0000\n"
 "Last-Translator: Jakub Kyzr <jakubkyzr@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/mail/cs/>\n"
@@ -91,7 +91,7 @@ msgstr "Vybrat soubor"
 msgid "Attach"
 msgstr "Připojit"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
@@ -117,63 +117,63 @@ msgstr "Nepodařilo se vložit obrázek"
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "Došlo k neočekávané chybě při vkládání obrázku."
 
-#: src/Composer.vala:624
+#: src/Composer.vala:667
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %b %-e, %Y v %-l∶%M %p"
 
-#: src/Composer.vala:654
+#: src/Composer.vala:697
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%2$s napsal %1$s:"
 
-#: src/Composer.vala:658
+#: src/Composer.vala:701
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Přeposlaná zpráva ----------"
 
-#: src/Composer.vala:660
+#: src/Composer.vala:703
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Od: %s<br/>"
 
-#: src/Composer.vala:661
+#: src/Composer.vala:704
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Předmět: %s<br/>"
 
-#: src/Composer.vala:662
+#: src/Composer.vala:705
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Datum: %s<br/>"
 
-#: src/Composer.vala:663
+#: src/Composer.vala:706
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Příjemce: %s<br/>"
 
-#: src/Composer.vala:665
+#: src/Composer.vala:708
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Kopie: %s<br/>"
 
-#: src/Composer.vala:714
+#: src/Composer.vala:757
 msgid "Permanently delete this draft?"
 msgstr "Chcete trvale smazat tento koncept?"
 
-#: src/Composer.vala:715
+#: src/Composer.vala:758
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Tuto akci nepůjde vzít zpět, ani obnovit vás koncept, jakmile bude smazán."
 
-#: src/Composer.vala:725
+#: src/Composer.vala:768
 msgid "Delete Draft"
 msgstr "Smazat koncept"
 
-#: src/Composer.vala:749
+#: src/Composer.vala:792
 msgid "Send without subject?"
 msgstr "Poslat zprávu bez předmětu?"
 
-#: src/Composer.vala:750
+#: src/Composer.vala:793
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -181,19 +181,19 @@ msgstr ""
 "Tato zpráva nemá vyplněnou kolonku předmět. Příjemce možná nebude moci "
 "odhadnout rozsah nebo důležitost."
 
-#: src/Composer.vala:757
+#: src/Composer.vala:800
 msgid "Don't Send"
 msgstr "Neodesílat"
 
-#: src/Composer.vala:759
+#: src/Composer.vala:802
 msgid "Send Anyway"
 msgstr "Přesto odeslat"
 
-#: src/Composer.vala:788
+#: src/Composer.vala:831
 msgid "Sent message was not saved"
 msgstr "Odeslaná zpráva nebyla uložena"
 
-#: src/Composer.vala:789
+#: src/Composer.vala:832
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -201,27 +201,27 @@ msgstr ""
 "Zpráva byla odeslána, nicméně kopie nebyla uložena do složky odeslaných "
 "zpráv."
 
-#: src/Composer.vala:804
+#: src/Composer.vala:847
 msgid "Unable to send message"
 msgstr "Zprávu se nedaří odeslat"
 
-#: src/Composer.vala:805
+#: src/Composer.vala:848
 msgid "There was an unexpected error while sending your message."
 msgstr "Došlo k neočekávané chybě při odesílání zprávy."
 
-#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr "Upravit podpisy…"
 
-#: src/Composer.vala:903
+#: src/Composer.vala:946
 msgid "None"
 msgstr "Žádný"
 
-#: src/Composer.vala:1092
+#: src/Composer.vala:1135
 msgid "Unable to save draft"
 msgstr "Koncept se nepodařilo uložit"
 
-#: src/Composer.vala:1093
+#: src/Composer.vala:1136
 msgid "There was an unexpected error while saving your draft."
 msgstr "Došlo k neočekávané chybě při ukládání konceptu."
 
@@ -277,7 +277,8 @@ msgstr[2] "%s od %u odesilatelů"
 msgid "Mail"
 msgstr "Mail"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "Zpět"
 
@@ -351,7 +352,7 @@ msgstr "Cílová složka nebyla nalezena."
 msgid "The source folder is the destination folder."
 msgstr "Zdrojová složka je stejná jako cílová složka."
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr "Nový podpis"
 
@@ -446,6 +447,74 @@ msgstr "Text odkazu:"
 msgid "Example Website"
 msgstr "Příklad webové stránky"
 
+#: src/Dialogs/AliasDialog/Alias.vala:52
+msgid "John Doe"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:56
+#, fuzzy
+#| msgid "N_ame:"
+msgid "Name"
+msgstr "J_méno:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+#, fuzzy
+#| msgid "https://example.com"
+msgid "Email@example.com"
+msgstr "https://example.com"
+
+#: src/Dialogs/AliasDialog/Alias.vala:75
+#, fuzzy
+#| msgid "E_mail address:"
+msgid "E-mail Address"
+msgstr "E_-mailová adresa:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:80
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete alias"
+msgstr "Smazat koncept"
+
+#: src/Dialogs/AliasDialog/Alias.vala:100
+#, fuzzy
+#| msgid "Edit Signatures…"
+msgid "Edit alias"
+msgstr "Upravit podpisy…"
+
+#: src/Dialogs/AliasDialog/Alias.vala:175
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:33
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:37
+#, fuzzy
+#| msgid "Add signatures using the button in the toolbar below"
+msgid "Add aliases using the button in the toolbar below"
+msgstr "Přidejte podpisy pomocí tlačítka ve spodní liště"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:67
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:104
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:108
+#, fuzzy
+#| msgid "_Close"
+msgid "Close"
+msgstr "_Zavřít"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:178
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "Smazán „%s“"
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 msgid "No Signatures"
 msgstr "Žádné podpisy"
@@ -479,10 +548,11 @@ msgstr "Nastavit jako výchozí pro…"
 msgid "Signature"
 msgstr "Podpis"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
-msgstr "Smazán „%s“"
+#: src/FoldersView/AccountSourceItem.vala:154
+#, fuzzy
+#| msgid "Edit Signatures…"
+msgid "Edit Aliases…"
+msgstr "Upravit podpisy…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -684,8 +754,15 @@ msgstr "Nebyly nalezeny žádné schránky"
 msgid "Try changing search terms"
 msgstr "Zkuste změnit hledaný výraz"
 
-#~ msgid "https://example.com"
-#~ msgstr "https://example.com"
+#, fuzzy
+#~| msgid "Email Address:"
+#~ msgid "Address:"
+#~ msgstr "E-mailová adresa:"
+
+#, fuzzy
+#~| msgid "Email address:"
+#~ msgid "Enter e-mail address…"
+#~ msgstr "E-mailová adresa:"
 
 #~ msgid "Reply to All"
 #~ msgstr "Odpovědět všem"
@@ -1602,9 +1679,6 @@ msgstr "Zkuste změnit hledaný výraz"
 #~ msgid "_Cancel"
 #~ msgstr "_Zrušit"
 
-#~ msgid "_Close"
-#~ msgstr "_Zavřít"
-
 #~ msgid "_Discard"
 #~ msgstr "_Vyřadit"
 
@@ -1678,9 +1752,6 @@ msgstr "Zkuste změnit hledaný výraz"
 
 #~ msgid "Nickname:"
 #~ msgstr "Přezdívka:"
-
-#~ msgid "Email address:"
-#~ msgstr "E-mailová adresa:"
 
 #~ msgid "Previous Result"
 #~ msgstr "Předchozí výsledek"
@@ -1787,14 +1858,8 @@ msgstr "Zkuste změnit hledaný výraz"
 #~ msgid "_Password:"
 #~ msgstr "_Heslo:"
 
-#~ msgid "E_mail address:"
-#~ msgstr "E_-mailová adresa:"
-
 #~ msgid "N_ickname:"
 #~ msgstr "P_řezdívka:"
-
-#~ msgid "N_ame:"
-#~ msgstr "J_méno:"
 
 #~ msgid "S_ervice:"
 #~ msgstr "S_lužba:"
@@ -1895,9 +1960,6 @@ msgstr "Zkuste změnit hledaný výraz"
 
 #~ msgid "Are you sure you want to remove this account?"
 #~ msgstr "Opravdu chcete odebrat tento účet?"
-
-#~ msgid "Email Address:"
-#~ msgstr "E-mailová adresa:"
 
 #~ msgid "Username:"
 #~ msgstr "Uživatelské jméno:"

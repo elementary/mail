@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-11-07 10:19+0000\n"
 "PO-Revision-Date: 2021-07-27 15:38+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/mail/mail/pa/>\n"
@@ -84,7 +84,7 @@ msgstr "ਫ਼ਾਇਲ ਚੁਣੋ"
 msgid "Attach"
 msgstr "ਨੱਥੀ ਕਰੋ"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
@@ -120,108 +120,108 @@ msgstr "ਸੁਨੇਹਾ ਭੇਜਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ"
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "ਤੁਹਾਡਾ ਸੁਨੇਹਾ ਭੇਜਦੇ ਵਕ਼ਤ ਇੱਕ ਖ਼ਰਾਬੀ ਆ ਗਈ ਸੀ।"
 
-#: src/Composer.vala:624
+#: src/Composer.vala:667
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr ""
 
-#: src/Composer.vala:654
+#: src/Composer.vala:697
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s 'ਤੇ, %2$s ਨੇ ਲਿਖਿਆ:"
 
-#: src/Composer.vala:658
+#: src/Composer.vala:701
 msgid "---------- Forwarded message ----------"
 msgstr "---------- ਅੱਗੇ ਭੇਜਿਆ ਹੋਇਆ ਸੁਨੇਹਾ ----------"
 
-#: src/Composer.vala:660
+#: src/Composer.vala:703
 #, c-format
 msgid "From: %s<br/>"
 msgstr "ਵੱਲੋਂ: %s<br/>"
 
-#: src/Composer.vala:661
+#: src/Composer.vala:704
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "ਵਿਸ਼ਾ: %s<br/>"
 
-#: src/Composer.vala:662
+#: src/Composer.vala:705
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "ਮਿਤੀ: %s<br/>"
 
-#: src/Composer.vala:663
+#: src/Composer.vala:706
 #, c-format
 msgid "To: %s<br/>"
 msgstr "ਵੱਲ: %s<br/>"
 
-#: src/Composer.vala:665
+#: src/Composer.vala:708
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "ਨਕਲ ਭੇਜੋ (ਸ਼ਰੇਆਮ): %s<br/>"
 
-#: src/Composer.vala:714
+#: src/Composer.vala:757
 msgid "Permanently delete this draft?"
 msgstr "ਇਸ ਖ਼ਾਕੇ ਨੂੰ ਪੱਕੇ ਤੌਰ 'ਤੇ ਮਿਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: src/Composer.vala:715
+#: src/Composer.vala:758
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "ਇਹ ਕਾਰਵਾਈ ਵਾਪਸ ਨਹੀਂ ਮੋੜੀ ਜਾ ਸਕਣੀ ਅਤੇ ਨਾ ਹੀ ਤੁਸੀਂ ਮਿਟਾਏ ਖ਼ਾਕੇ ਨੂੰ ਦੁਬਾਰਾ ਹਾਸਲ ਕਰ ਸਕਦੇ ਹੋ।"
 
-#: src/Composer.vala:725
+#: src/Composer.vala:768
 msgid "Delete Draft"
 msgstr "ਖ਼ਾਕਾ ਮਿਟਾਓ"
 
-#: src/Composer.vala:749
+#: src/Composer.vala:792
 msgid "Send without subject?"
 msgstr "ਬਿਨਾਂ ਵਿਸ਼ਾ ਲਿਖੇ ਭੇਜਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: src/Composer.vala:750
+#: src/Composer.vala:793
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr ""
 "ਇਸ ਸੁਨੇਹੇ ਦੀ ਵਿਸ਼ੇ ਵਾਲ਼ੀ ਲਾਈਨ ਖ਼ਾਲੀ ਹੈ। ਪ੍ਰਾਪਤ-ਕਰਤਾ ਨੂੰ ਸ਼ਾਇਦ ਇਸਦੀ ਅਹਿਮੀਅਤ ਬਾਰੇ ਨਾ ਲੱਗੇ।"
 
-#: src/Composer.vala:757
+#: src/Composer.vala:800
 msgid "Don't Send"
 msgstr "ਨਾ ਭੇਜੋ"
 
-#: src/Composer.vala:759
+#: src/Composer.vala:802
 msgid "Send Anyway"
 msgstr "ਕੋਈ ਗੱਲ ਨਹੀਂ, ਭੇਜੋ"
 
-#: src/Composer.vala:788
+#: src/Composer.vala:831
 msgid "Sent message was not saved"
 msgstr "ਭੇਜਿਆ ਗਿਆ ਸੁਨੇਹਾ ਸਾਂਭਿਆ ਨਹੀਂ ਗਿਆ"
 
-#: src/Composer.vala:789
+#: src/Composer.vala:832
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr "ਸੁਨੇਹਾ ਭੇਜ ਦਿੱਤਾ ਗਿਐ, ਹਾਲਾਂਕਿ ਇਸਦੀ ਇੱਕ ਨਕਲ \"ਭੇਜੇ ਗਏ\" ਫ਼ੋਲਡਰ ਵਿੱਚ ਸਾਂਭੀ ਨਹੀਂ ਗਈ।"
 
-#: src/Composer.vala:804
+#: src/Composer.vala:847
 msgid "Unable to send message"
 msgstr "ਸੁਨੇਹਾ ਭੇਜਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ"
 
-#: src/Composer.vala:805
+#: src/Composer.vala:848
 msgid "There was an unexpected error while sending your message."
 msgstr "ਤੁਹਾਡਾ ਸੁਨੇਹਾ ਭੇਜਦੇ ਵਕ਼ਤ ਇੱਕ ਖ਼ਰਾਬੀ ਆ ਗਈ ਸੀ।"
 
-#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr ""
 
-#: src/Composer.vala:903
+#: src/Composer.vala:946
 msgid "None"
 msgstr ""
 
-#: src/Composer.vala:1092
+#: src/Composer.vala:1135
 msgid "Unable to save draft"
 msgstr "ਖ਼ਾਕਾ ਸਾਂਭਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ"
 
-#: src/Composer.vala:1093
+#: src/Composer.vala:1136
 msgid "There was an unexpected error while saving your draft."
 msgstr "ਤੁਹਾਡਾ ਖ਼ਾਕਾ ਸਾਂਭਦੇ ਵਕ਼ਤ ਇੱਕ ਖ਼ਰਾਬੀ ਆ ਗਈ ਸੀ।"
 
@@ -277,7 +277,8 @@ msgstr[1] "ਭੇਜਣ ਵਾਲੇ ਵੱਲੋਂ ਹਮੇਸ਼ਾ ਵਿ�
 msgid "Mail"
 msgstr "ਡਾਕ"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "ਕੀਤੀ ਕਾਰਵਾਈ ਨੂੰ ਵਾਪਸ ਮੋੜੋ"
 
@@ -362,7 +363,7 @@ msgstr ""
 msgid "The source folder is the destination folder."
 msgstr ""
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr ""
 
@@ -471,6 +472,66 @@ msgstr "ਲਿੰਕ ਦੀ ਲਿਖਤ:"
 msgid "Example Website"
 msgstr "ਮਿਸਾਲ ਲਈ ਵੈੱਬਸਾਈਟ"
 
+#: src/Dialogs/AliasDialog/Alias.vala:52
+msgid "John Doe"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:56
+msgid "Name"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+#, fuzzy
+#| msgid "https://example.com"
+msgid "Email@example.com"
+msgstr "ਮਿਸਾਲ: https://example.com"
+
+#: src/Dialogs/AliasDialog/Alias.vala:75
+#, fuzzy
+#| msgid "Email Message"
+msgid "E-mail Address"
+msgstr "ਈਮੇਲ ਸੁਨੇਹਾ"
+
+#: src/Dialogs/AliasDialog/Alias.vala:80
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete alias"
+msgstr "ਖ਼ਾਕਾ ਮਿਟਾਓ"
+
+#: src/Dialogs/AliasDialog/Alias.vala:100
+msgid "Edit alias"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:175
+msgid "Name not set"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:33
+msgid "No Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:37
+msgid "Add aliases using the button in the toolbar below"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:67
+msgid "Add Alias…"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:104
+msgid "Aliases"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:108
+msgid "Close"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:178
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr ""
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 #, fuzzy
 #| msgid "Insert Link"
@@ -512,9 +573,8 @@ msgstr ""
 msgid "Signature"
 msgstr "ਲਿੰਕ ਦਾਖ਼ਲ ਕਰੋ"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
+#: src/FoldersView/AccountSourceItem.vala:154
+msgid "Edit Aliases…"
 msgstr ""
 
 #: src/FoldersView/FoldersListView.vala:47
@@ -728,9 +788,6 @@ msgstr ""
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
 msgstr ""
-
-#~ msgid "https://example.com"
-#~ msgstr "ਮਿਸਾਲ: https://example.com"
 
 #~ msgid "Reply to All"
 #~ msgstr "ਸਾਰਿਆਂ ਨੂੰ ਜਵਾਬ ਦਿਓ"

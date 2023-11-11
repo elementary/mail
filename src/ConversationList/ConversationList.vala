@@ -165,22 +165,6 @@ public class Mail.ConversationList : Gtk.Box {
 
         search_entry.search_changed.connect (() => load_folder.begin (folder_info_per_account));
 
-        // Disable delete accelerators when the conversation list box loses keyboard focus,
-        // restore them when it returns (Replace with EventControllerFocus in GTK4)
-        list_box.set_focus_child.connect ((widget) => {
-            if (widget == null) {
-                application_instance.set_accels_for_action (
-                    MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH,
-                    {}
-                );
-            } else {
-                application_instance.set_accels_for_action (
-                    MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH,
-                    MainWindow.action_accelerators[MainWindow.ACTION_MOVE_TO_TRASH].to_array ()
-                );
-            }
-        });
-
         list_box.row_activated.connect ((row) => {
             if (mark_read_timeout_id != 0) {
                 GLib.Source.remove (mark_read_timeout_id);

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
-"PO-Revision-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2023-11-07 10:19+0000\n"
+"PO-Revision-Date: 2023-10-27 06:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Application.vala:220
@@ -82,7 +82,7 @@ msgstr "ファイルを選択"
 msgid "Attach"
 msgstr "添付"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:723
+#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:139
 msgid "Cancel"
@@ -108,62 +108,62 @@ msgstr "画像を挿入できません"
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "画像の挿入試行中に予期しないエラーが発生しました。"
 
-#: src/Composer.vala:624
+#: src/Composer.vala:667
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%Y年%b%-e日 %a %p %-l:%M"
 
-#: src/Composer.vala:654
+#: src/Composer.vala:697
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s、%2$s さんのメッセージ:"
 
-#: src/Composer.vala:658
+#: src/Composer.vala:701
 msgid "---------- Forwarded message ----------"
 msgstr "---------- 転送されたメッセージ ----------"
 
-#: src/Composer.vala:660
+#: src/Composer.vala:703
 #, c-format
 msgid "From: %s<br/>"
 msgstr "差出人: %s<br/>"
 
-#: src/Composer.vala:661
+#: src/Composer.vala:704
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "件名: %s<br/>"
 
-#: src/Composer.vala:662
+#: src/Composer.vala:705
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "日付: %s<br/>"
 
-#: src/Composer.vala:663
+#: src/Composer.vala:706
 #, c-format
 msgid "To: %s<br/>"
 msgstr "宛先: %s<br/>"
 
-#: src/Composer.vala:665
+#: src/Composer.vala:708
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Cc: %s<br/>"
 
-#: src/Composer.vala:714
+#: src/Composer.vala:757
 msgid "Permanently delete this draft?"
 msgstr "この下書きを完全に削除してもよろしいですか？"
 
-#: src/Composer.vala:715
+#: src/Composer.vala:758
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr "この操作はやり直せません。下書きを削除すると復元できなくなります。"
 
-#: src/Composer.vala:725
+#: src/Composer.vala:768
 msgid "Delete Draft"
 msgstr "下書きを削除"
 
-#: src/Composer.vala:749
+#: src/Composer.vala:792
 msgid "Send without subject?"
 msgstr "件名なしで送信しますか？"
 
-#: src/Composer.vala:750
+#: src/Composer.vala:793
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -171,19 +171,19 @@ msgstr ""
 "このメッセージには件名がありません。受信者が話題や重要性を推測できない可能性"
 "があります。"
 
-#: src/Composer.vala:757
+#: src/Composer.vala:800
 msgid "Don't Send"
 msgstr "送信しない"
 
-#: src/Composer.vala:759
+#: src/Composer.vala:802
 msgid "Send Anyway"
 msgstr "了解して送信"
 
-#: src/Composer.vala:788
+#: src/Composer.vala:831
 msgid "Sent message was not saved"
 msgstr "送信したメッセージは保存されませんでした"
 
-#: src/Composer.vala:789
+#: src/Composer.vala:832
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -191,27 +191,27 @@ msgstr ""
 "メッセージは送信されましたが、そのコピーは送信済みフォルダーに保存されません"
 "でした。"
 
-#: src/Composer.vala:804
+#: src/Composer.vala:847
 msgid "Unable to send message"
 msgstr "メッセージを送信できません"
 
-#: src/Composer.vala:805
+#: src/Composer.vala:848
 msgid "There was an unexpected error while sending your message."
 msgstr "メッセージの送信中に予期しないエラーが発生しました。"
 
-#: src/Composer.vala:899 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr "署名を編集…"
 
-#: src/Composer.vala:903
+#: src/Composer.vala:946
 msgid "None"
 msgstr "なし"
 
-#: src/Composer.vala:1092
+#: src/Composer.vala:1135
 msgid "Unable to save draft"
 msgstr "下書きを保存できません"
 
-#: src/Composer.vala:1093
+#: src/Composer.vala:1136
 msgid "There was an unexpected error while saving your draft."
 msgstr "下書きの保存中に予期しないエラーが発生しました。"
 
@@ -263,7 +263,8 @@ msgstr[0] "%2$u人から%1$s"
 msgid "Mail"
 msgstr "メール"
 
-#: src/MainWindow.vala:123 src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
 msgid "Undo"
 msgstr "元に戻す"
 
@@ -331,7 +332,7 @@ msgstr "移動先フォルダーが見つかりませんでした。"
 msgid "The source folder is the destination folder."
 msgstr "移動元フォルダーが移動先です。"
 
-#: src/Backend/Session.vala:624
+#: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr "新しい署名"
 
@@ -426,6 +427,72 @@ msgstr "リンクテキスト:"
 msgid "Example Website"
 msgstr "Web サイト名を入力"
 
+#: src/Dialogs/AliasDialog/Alias.vala:52
+msgid "John Doe"
+msgstr ""
+
+#: src/Dialogs/AliasDialog/Alias.vala:56
+#, fuzzy
+#| msgid "Name:"
+msgid "Name"
+msgstr "名前:"
+
+#: src/Dialogs/AliasDialog/Alias.vala:71
+#, fuzzy
+#| msgid "https://example.com"
+msgid "Email@example.com"
+msgstr "https://example.com"
+
+#: src/Dialogs/AliasDialog/Alias.vala:75
+#, fuzzy
+#| msgid "E_mail address:"
+msgid "E-mail Address"
+msgstr "メールアドレス (_M):"
+
+#: src/Dialogs/AliasDialog/Alias.vala:80
+#, fuzzy
+#| msgid "Delete draft"
+msgid "Delete alias"
+msgstr "下書きを削除"
+
+#: src/Dialogs/AliasDialog/Alias.vala:100
+#, fuzzy
+#| msgid "Edit Aliases…"
+msgid "Edit alias"
+msgstr "エイリアスを編集…"
+
+#: src/Dialogs/AliasDialog/Alias.vala:175
+msgid "Name not set"
+msgstr "名前未設定"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:33
+msgid "No Aliases"
+msgstr "エイリアスがありません"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:37
+msgid "Add aliases using the button in the toolbar below"
+msgstr "以下のツールバー内のボタンを使って、エイリアスを追加してください"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:67
+msgid "Add Alias…"
+msgstr "エイリアスを追加…"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:104
+msgid "Aliases"
+msgstr "エイリアス"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:108
+#, fuzzy
+#| msgid "_Close"
+msgid "Close"
+msgstr "閉じる (_C)"
+
+#: src/Dialogs/AliasDialog/AliasDialog.vala:178
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#, c-format
+msgid "'%s' deleted"
+msgstr "'%s' を削除しました"
+
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 msgid "No Signatures"
 msgstr "署名がありません"
@@ -459,10 +526,9 @@ msgstr "デフォルトに設定…"
 msgid "Signature"
 msgstr "署名"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
-#, c-format
-msgid "'%s' deleted"
-msgstr "'%s' を削除しました"
+#: src/FoldersView/AccountSourceItem.vala:154
+msgid "Edit Aliases…"
+msgstr "エイリアスを編集…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -664,8 +730,14 @@ msgstr "メールボックスが見つかりません"
 msgid "Try changing search terms"
 msgstr "検索用語を変更してみてください"
 
-#~ msgid "https://example.com"
-#~ msgstr "https://example.com"
+#~ msgid "Enter name…"
+#~ msgstr "名前を入力…"
+
+#~ msgid "Address:"
+#~ msgstr "アドレス:"
+
+#~ msgid "Enter e-mail address…"
+#~ msgstr "メールアドレスを入力…"
 
 #, c-format
 #~ msgid "Unable to rename folder “%s”': %s"
@@ -1540,9 +1612,6 @@ msgstr "検索用語を変更してみてください"
 #~ msgid "_Cancel"
 #~ msgstr "キャンセル (_C)"
 
-#~ msgid "_Close"
-#~ msgstr "閉じる (_C)"
-
 #~ msgid "_Discard"
 #~ msgstr "破棄 (_D)"
 
@@ -1626,9 +1695,6 @@ msgstr "検索用語を変更してみてください"
 
 #~ msgid "Nickname:"
 #~ msgstr "ニックネーム:"
-
-#~ msgid "Email address:"
-#~ msgstr "メールアドレス:"
 
 #~ msgid "Find"
 #~ msgstr "検索"
@@ -1842,17 +1908,11 @@ msgstr "検索用語を変更してみてください"
 #~ msgid "_Password:"
 #~ msgstr "パスワード (_P):"
 
-#~ msgid "E_mail address:"
-#~ msgstr "メールアドレス (_M):"
-
 #~ msgid "Work, Home, etc."
 #~ msgstr "仕事用、自宅用など"
 
 #~ msgid "N_ickname:"
 #~ msgstr "ニックネーム (_I):"
-
-#~ msgid "N_ame:"
-#~ msgstr "名前 (_A):"
 
 #~ msgid "S_ervice:"
 #~ msgstr "サービス (_E):"
@@ -2104,9 +2164,6 @@ msgstr "検索用語を変更してみてください"
 
 #~ msgid "Are you sure you want to remove this account?"
 #~ msgstr "本当にこのアカウントを削除しますか？"
-
-#~ msgid "Email Address:"
-#~ msgstr "メールアドレス:"
 
 #~ msgid "Username:"
 #~ msgstr "ユーザー名:"
