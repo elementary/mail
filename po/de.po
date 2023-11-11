@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-07 10:19+0000\n"
+"POT-Creation-Date: 2023-11-11 06:04+0000\n"
 "PO-Revision-Date: 2023-10-27 06:10+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
@@ -29,7 +29,7 @@ msgstr ""
 "X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/Application.vala:220
+#: src/Application.vala:212
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
@@ -197,11 +197,11 @@ msgstr "Nicht senden"
 msgid "Send Anyway"
 msgstr "Trotzdem senden"
 
-#: src/Composer.vala:831
+#: src/Composer.vala:833
 msgid "Sent message was not saved"
 msgstr "Gesendete Nachricht nicht gespeichert"
 
-#: src/Composer.vala:832
+#: src/Composer.vala:834
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -209,27 +209,27 @@ msgstr ""
 "Die Nachricht wurde gesendet, allerdings wurde keine Kopie im Ordner "
 "»Gesendete Nachrichten« gespeichert."
 
-#: src/Composer.vala:847
+#: src/Composer.vala:849
 msgid "Unable to send message"
 msgstr "Nachricht kann nicht gesendet werden"
 
-#: src/Composer.vala:848
+#: src/Composer.vala:850
 msgid "There was an unexpected error while sending your message."
 msgstr "Unvorhergesehener Fehler beim Senden der Nachricht."
 
-#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:954 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr "Signaturen bearbeiten …"
 
-#: src/Composer.vala:946
+#: src/Composer.vala:958
 msgid "None"
 msgstr "Nichts"
 
-#: src/Composer.vala:1135
+#: src/Composer.vala:1147
 msgid "Unable to save draft"
 msgstr "Entwurf kann nicht gespeichert werden"
 
-#: src/Composer.vala:1136
+#: src/Composer.vala:1148
 msgid "There was an unexpected error while saving your draft."
 msgstr "Unvorhergesehener Fehler beim Speichern des Entwurfs."
 
@@ -360,6 +360,20 @@ msgstr "Der Quellordner ist identisch mit dem Zielordner."
 #: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr "Neue Signatur"
+
+#: src/Backend/ContactManager.vala:88 src/Backend/ContactManager.vala:122
+#, fuzzy, c-format
+#| msgid "Couldn't rename “%s”"
+msgid "Couldn't add “%s” to addressbook"
+msgstr "»%s« konnte nicht umbenannt werden"
+
+#: src/Backend/ContactManager.vala:89
+msgid "No addressbook available."
+msgstr ""
+
+#: src/Backend/ContactManager.vala:123
+msgid "Operation failed."
+msgstr ""
 
 #: src/ConversationList/ConversationItemModel.vala:74
 #: src/ConversationList/ConversationItemModel.vala:112

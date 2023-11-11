@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-07 10:19+0000\n"
+"POT-Creation-Date: 2023-11-11 06:04+0000\n"
 "PO-Revision-Date: 2023-05-17 21:00+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
@@ -29,7 +29,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-POOTLE-MTIME: 1423290848.000000\n"
 
-#: src/Application.vala:220
+#: src/Application.vala:212
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
@@ -205,11 +205,11 @@ msgstr "Gönderme"
 msgid "Send Anyway"
 msgstr "Yine de Gönder"
 
-#: src/Composer.vala:831
+#: src/Composer.vala:833
 msgid "Sent message was not saved"
 msgstr "Gönderilen mesaj kaydedilmedi"
 
-#: src/Composer.vala:832
+#: src/Composer.vala:834
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -217,27 +217,27 @@ msgstr ""
 "Mesaj gönderildi, ancak bir kopyası Gönderilmiş mesajlar klasörüne "
 "kaydedilmedi."
 
-#: src/Composer.vala:847
+#: src/Composer.vala:849
 msgid "Unable to send message"
 msgstr "Mesaj gönderilemiyor"
 
-#: src/Composer.vala:848
+#: src/Composer.vala:850
 msgid "There was an unexpected error while sending your message."
 msgstr "Mesajınız gönderilirken beklenmeyen bir hata oluştu."
 
-#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:954 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr ""
 
-#: src/Composer.vala:946
+#: src/Composer.vala:958
 msgid "None"
 msgstr "Hiç"
 
-#: src/Composer.vala:1135
+#: src/Composer.vala:1147
 msgid "Unable to save draft"
 msgstr "Taslak kaydedilemiyor"
 
-#: src/Composer.vala:1136
+#: src/Composer.vala:1148
 msgid "There was an unexpected error while saving your draft."
 msgstr "Taslağınız kaydedilirken beklenmeyen bir hata oluştu."
 
@@ -378,6 +378,19 @@ msgstr ""
 
 #: src/Backend/Session.vala:642
 msgid "New Signature"
+msgstr ""
+
+#: src/Backend/ContactManager.vala:88 src/Backend/ContactManager.vala:122
+#, c-format
+msgid "Couldn't add “%s” to addressbook"
+msgstr ""
+
+#: src/Backend/ContactManager.vala:89
+msgid "No addressbook available."
+msgstr ""
+
+#: src/Backend/ContactManager.vala:123
+msgid "Operation failed."
 msgstr ""
 
 #: src/ConversationList/ConversationItemModel.vala:74

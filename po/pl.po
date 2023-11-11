@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-07 10:19+0000\n"
+"POT-Creation-Date: 2023-11-11 06:04+0000\n"
 "PO-Revision-Date: 2023-11-11 06:04+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
@@ -33,7 +33,7 @@ msgstr ""
 "X-Poedit-Country: Poland\n"
 "X-Poedit-Language: Polish\n"
 
-#: src/Application.vala:220
+#: src/Application.vala:212
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
@@ -200,11 +200,11 @@ msgstr "Nie wysyłaj"
 msgid "Send Anyway"
 msgstr "Wyślij mimo to"
 
-#: src/Composer.vala:831
+#: src/Composer.vala:833
 msgid "Sent message was not saved"
 msgstr "Wysłana wiadomość nie została zapisana"
 
-#: src/Composer.vala:832
+#: src/Composer.vala:834
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -212,27 +212,27 @@ msgstr ""
 "Wiadomość została wysłana, ale jej kopia nie została zapisana do katalogu "
 "wysłanych wiadomości."
 
-#: src/Composer.vala:847
+#: src/Composer.vala:849
 msgid "Unable to send message"
 msgstr "Nie można wysłać wiadomości"
 
-#: src/Composer.vala:848
+#: src/Composer.vala:850
 msgid "There was an unexpected error while sending your message."
 msgstr "Wystąpił nieoczekiwany błąd podczas wysyłania twojej wiadomości."
 
-#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:954 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr "Edytuje podpis…"
 
-#: src/Composer.vala:946
+#: src/Composer.vala:958
 msgid "None"
 msgstr "Brak"
 
-#: src/Composer.vala:1135
+#: src/Composer.vala:1147
 msgid "Unable to save draft"
 msgstr "Nie można zapisać wersji roboczej"
 
-#: src/Composer.vala:1136
+#: src/Composer.vala:1148
 msgid "There was an unexpected error while saving your draft."
 msgstr "Wystąpił nieoczekiwany błąd podczas zapisywania wersji roboczej."
 
@@ -366,6 +366,20 @@ msgstr "Folder źródłowy jest taki sam jak folder docelowy."
 #: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr "Nowy podpis"
+
+#: src/Backend/ContactManager.vala:88 src/Backend/ContactManager.vala:122
+#, fuzzy, c-format
+#| msgid "Couldn't rename “%s”"
+msgid "Couldn't add “%s” to addressbook"
+msgstr "Nie udało się zmienić nazwy „%s”"
+
+#: src/Backend/ContactManager.vala:89
+msgid "No addressbook available."
+msgstr ""
+
+#: src/Backend/ContactManager.vala:123
+msgid "Operation failed."
+msgstr ""
 
 #: src/ConversationList/ConversationItemModel.vala:74
 #: src/ConversationList/ConversationItemModel.vala:112
