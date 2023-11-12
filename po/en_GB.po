@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-11 06:04+0000\n"
-"PO-Revision-Date: 2023-10-27 06:10+0000\n"
+"PO-Revision-Date: 2023-11-14 18:10+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "mail/mail/en_GB/>\n"
@@ -353,18 +353,17 @@ msgid "New Signature"
 msgstr "New Signature"
 
 #: src/Backend/ContactManager.vala:88 src/Backend/ContactManager.vala:122
-#, fuzzy, c-format
-#| msgid "Couldn't rename “%s”"
+#, c-format
 msgid "Couldn't add “%s” to addressbook"
-msgstr "Couldn't rename “%s”"
+msgstr "Couldn't add “%s” to addressbook"
 
 #: src/Backend/ContactManager.vala:89
 msgid "No addressbook available."
-msgstr ""
+msgstr "No addressbook available."
 
 #: src/Backend/ContactManager.vala:123
 msgid "Operation failed."
-msgstr ""
+msgstr "Operation failed."
 
 #: src/ConversationList/ConversationItemModel.vala:74
 #: src/ConversationList/ConversationItemModel.vala:112
@@ -459,37 +458,27 @@ msgstr "Example Website"
 
 #: src/Dialogs/AliasDialog/Alias.vala:52
 msgid "John Doe"
-msgstr ""
+msgstr "John Doe"
 
 #: src/Dialogs/AliasDialog/Alias.vala:56
-#, fuzzy
-#| msgid "Name:"
 msgid "Name"
-msgstr "Name:"
+msgstr "Name"
 
 #: src/Dialogs/AliasDialog/Alias.vala:71
-#, fuzzy
-#| msgid "https://example.com"
 msgid "Email@example.com"
-msgstr "https://example.com"
+msgstr "Email@example.com"
 
 #: src/Dialogs/AliasDialog/Alias.vala:75
-#, fuzzy
-#| msgid "E_mail address:"
 msgid "E-mail Address"
-msgstr "E_mail address:"
+msgstr "E-mail Address"
 
 #: src/Dialogs/AliasDialog/Alias.vala:80
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Delete alias"
-msgstr "Delete draft"
+msgstr "Delete alias"
 
 #: src/Dialogs/AliasDialog/Alias.vala:100
-#, fuzzy
-#| msgid "Edit Aliases…"
 msgid "Edit alias"
-msgstr "Edit Aliases…"
+msgstr "Edit alias"
 
 #: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
@@ -512,10 +501,8 @@ msgid "Aliases"
 msgstr "Aliases"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:108
-#, fuzzy
-#| msgid "_Close"
 msgid "Close"
-msgstr "_Close"
+msgstr "Close"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:178
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
