@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-11 06:04+0000\n"
-"PO-Revision-Date: 2023-10-27 06:10+0000\n"
+"PO-Revision-Date: 2023-11-14 18:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -337,18 +337,17 @@ msgid "New Signature"
 msgstr "新しい署名"
 
 #: src/Backend/ContactManager.vala:88 src/Backend/ContactManager.vala:122
-#, fuzzy, c-format
-#| msgid "Couldn't rename “%s”"
+#, c-format
 msgid "Couldn't add “%s” to addressbook"
-msgstr "“%s” の名前を変更できませんでした"
+msgstr "“%s” をアドレス帳に追加できませんでした"
 
 #: src/Backend/ContactManager.vala:89
 msgid "No addressbook available."
-msgstr ""
+msgstr "利用可能なアドレス帳がありません。"
 
 #: src/Backend/ContactManager.vala:123
 msgid "Operation failed."
-msgstr ""
+msgstr "操作に失敗しました。"
 
 #: src/ConversationList/ConversationItemModel.vala:74
 #: src/ConversationList/ConversationItemModel.vala:112
@@ -443,37 +442,27 @@ msgstr "Web サイト名を入力"
 
 #: src/Dialogs/AliasDialog/Alias.vala:52
 msgid "John Doe"
-msgstr ""
+msgstr "山田 太郎"
 
 #: src/Dialogs/AliasDialog/Alias.vala:56
-#, fuzzy
-#| msgid "Name:"
 msgid "Name"
-msgstr "名前:"
+msgstr "名前"
 
 #: src/Dialogs/AliasDialog/Alias.vala:71
-#, fuzzy
-#| msgid "https://example.com"
 msgid "Email@example.com"
-msgstr "https://example.com"
+msgstr "Email@example.com"
 
 #: src/Dialogs/AliasDialog/Alias.vala:75
-#, fuzzy
-#| msgid "E_mail address:"
 msgid "E-mail Address"
-msgstr "メールアドレス (_M):"
+msgstr "メールアドレス"
 
 #: src/Dialogs/AliasDialog/Alias.vala:80
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Delete alias"
-msgstr "下書きを削除"
+msgstr "エイリアスを削除"
 
 #: src/Dialogs/AliasDialog/Alias.vala:100
-#, fuzzy
-#| msgid "Edit Aliases…"
 msgid "Edit alias"
-msgstr "エイリアスを編集…"
+msgstr "エイリアスを編集"
 
 #: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
@@ -496,10 +485,8 @@ msgid "Aliases"
 msgstr "エイリアス"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:108
-#, fuzzy
-#| msgid "_Close"
 msgid "Close"
-msgstr "閉じる (_C)"
+msgstr "閉じる"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:178
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
