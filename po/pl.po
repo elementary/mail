@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-11 06:04+0000\n"
-"PO-Revision-Date: 2023-11-11 06:04+0000\n"
+"PO-Revision-Date: 2023-11-18 21:10+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/mail/pl/>\n"
 "Language: pl\n"
@@ -368,18 +368,17 @@ msgid "New Signature"
 msgstr "Nowy podpis"
 
 #: src/Backend/ContactManager.vala:88 src/Backend/ContactManager.vala:122
-#, fuzzy, c-format
-#| msgid "Couldn't rename “%s”"
+#, c-format
 msgid "Couldn't add “%s” to addressbook"
-msgstr "Nie udało się zmienić nazwy „%s”"
+msgstr "Nie udało się dodać „%s” to książki adresowej"
 
 #: src/Backend/ContactManager.vala:89
 msgid "No addressbook available."
-msgstr ""
+msgstr "Brak dostępnej książki adresowej."
 
 #: src/Backend/ContactManager.vala:123
 msgid "Operation failed."
-msgstr ""
+msgstr "Operacja nie powiodła się."
 
 #: src/ConversationList/ConversationItemModel.vala:74
 #: src/ConversationList/ConversationItemModel.vala:112
