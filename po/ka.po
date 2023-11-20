@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-11 06:04+0000\n"
-"PO-Revision-Date: 2023-10-23 05:10+0000\n"
+"PO-Revision-Date: 2023-11-21 12:10+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/mail/mail/ka/>\n"
 "Language: ka\n"
@@ -343,18 +343,17 @@ msgid "New Signature"
 msgstr "ახალი ხელმოწერა"
 
 #: src/Backend/ContactManager.vala:88 src/Backend/ContactManager.vala:122
-#, fuzzy, c-format
-#| msgid "Couldn't rename “%s”"
+#, c-format
 msgid "Couldn't add “%s” to addressbook"
-msgstr "\"%s\"-ის სახელის გადარქმევა შეუძლებელია"
+msgstr "\"%s\" მისამართები წიგნში ვერ ჩავამატე"
 
 #: src/Backend/ContactManager.vala:89
 msgid "No addressbook available."
-msgstr ""
+msgstr "მისამართების წიგნების გარეშე."
 
 #: src/Backend/ContactManager.vala:123
 msgid "Operation failed."
-msgstr ""
+msgstr "ოპერაცია ჩავარდა."
 
 #: src/ConversationList/ConversationItemModel.vala:74
 #: src/ConversationList/ConversationItemModel.vala:112
@@ -449,61 +448,51 @@ msgstr "ვებგვერდს მაგალითი"
 
 #: src/Dialogs/AliasDialog/Alias.vala:52
 msgid "John Doe"
-msgstr ""
+msgstr "მზევინარ ღობეგლეჯიაშვილი"
 
 #: src/Dialogs/AliasDialog/Alias.vala:56
 msgid "Name"
-msgstr ""
+msgstr "სახელი"
 
 #: src/Dialogs/AliasDialog/Alias.vala:71
-#, fuzzy
-#| msgid "https://example.com"
 msgid "Email@example.com"
-msgstr "https://example.com"
+msgstr "email@example.com"
 
 #: src/Dialogs/AliasDialog/Alias.vala:75
-#, fuzzy
-#| msgid "Email Message"
 msgid "E-mail Address"
-msgstr "ელფოსტის სეტყობინება"
+msgstr "ელფოსტის მისამართი"
 
 #: src/Dialogs/AliasDialog/Alias.vala:80
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Delete alias"
-msgstr "მონახაზის წაშლა"
+msgstr "ფსევდონიმის წაშლა"
 
 #: src/Dialogs/AliasDialog/Alias.vala:100
-#, fuzzy
-#| msgid "Edit Signatures…"
 msgid "Edit alias"
-msgstr "ხელმოწერების ჩასწორება…"
+msgstr "ფსევდონიმის ჩასწორება"
 
 #: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
-msgstr ""
+msgstr "სახელი დაყენებული არაა"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:33
 msgid "No Aliases"
-msgstr ""
+msgstr "ფსევდონიმების გარეშე"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:37
-#, fuzzy
-#| msgid "Add signatures using the button in the toolbar below"
 msgid "Add aliases using the button in the toolbar below"
-msgstr "დაამატეთ ხელმოწერები ქვემო პანელზე არსებული ღილაკით"
+msgstr "დაამატეთ ფსევდონიმები ქვემო პანელზე არსებული ღილაკით"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:67
 msgid "Add Alias…"
-msgstr ""
+msgstr "ფსევდონიმის დამატება…"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:104
 msgid "Aliases"
-msgstr ""
+msgstr "ფსევდონიმები"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:108
 msgid "Close"
-msgstr ""
+msgstr "დახურვა"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:178
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
@@ -545,10 +534,8 @@ msgid "Signature"
 msgstr "ხელმოწერა"
 
 #: src/FoldersView/AccountSourceItem.vala:154
-#, fuzzy
-#| msgid "Edit Signatures…"
 msgid "Edit Aliases…"
-msgstr "ხელმოწერების ჩასწორება…"
+msgstr "ფსევდონიმების ჩასწორება…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
