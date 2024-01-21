@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-07 10:19+0000\n"
+"POT-Creation-Date: 2023-11-11 06:04+0000\n"
 "PO-Revision-Date: 2023-02-17 14:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/mail/mail/ar/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:58+0000\n"
 
-#: src/Application.vala:220
+#: src/Application.vala:212
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
@@ -199,37 +199,37 @@ msgstr "لا ترسل"
 msgid "Send Anyway"
 msgstr "ارسل على أي حال"
 
-#: src/Composer.vala:831
+#: src/Composer.vala:833
 msgid "Sent message was not saved"
 msgstr "الرسالة المُرسَلة لم يتم حفظها"
 
-#: src/Composer.vala:832
+#: src/Composer.vala:834
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr "تم إرسال الرسالة، ولكن لم يتم حفظ نسخة منها في مجلد الرسائل المرسلة."
 
-#: src/Composer.vala:847
+#: src/Composer.vala:849
 msgid "Unable to send message"
 msgstr "غير قادر على إرسال الرسالة"
 
-#: src/Composer.vala:848
+#: src/Composer.vala:850
 msgid "There was an unexpected error while sending your message."
 msgstr "وجد خطأ غير متوقع عند إرسال الرسالة."
 
-#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:954 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr ""
 
-#: src/Composer.vala:946
+#: src/Composer.vala:958
 msgid "None"
 msgstr ""
 
-#: src/Composer.vala:1135
+#: src/Composer.vala:1147
 msgid "Unable to save draft"
 msgstr "غير قادر على حفظ المسودة"
 
-#: src/Composer.vala:1136
+#: src/Composer.vala:1148
 msgid "There was an unexpected error while saving your draft."
 msgstr "حدث خطأ غير متوقع عند محاولة حفظ المسودة."
 
@@ -392,6 +392,19 @@ msgstr ""
 
 #: src/Backend/Session.vala:642
 msgid "New Signature"
+msgstr ""
+
+#: src/Backend/ContactManager.vala:88 src/Backend/ContactManager.vala:122
+#, c-format
+msgid "Couldn't add “%s” to addressbook"
+msgstr ""
+
+#: src/Backend/ContactManager.vala:89
+msgid "No addressbook available."
+msgstr ""
+
+#: src/Backend/ContactManager.vala:123
+msgid "Operation failed."
 msgstr ""
 
 #: src/ConversationList/ConversationItemModel.vala:74

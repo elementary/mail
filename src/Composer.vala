@@ -823,6 +823,8 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         var sender = build_sender (message, from_combo.get_active_text ());
         var recipients = build_recipients (message, to_val.text, cc_val.text, bcc_val.text);
 
+        remember_recipients.begin (recipients);
+
         try {
             var sent_message_saved = yield session.send_email (message, sender, recipients);
 
@@ -926,6 +928,16 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         message.content = body;
 
         return message;
+    }
+
+    private async void remember_recipients (Camel.InternetAddress recipients) {
+        var contact_manager = ContactManager.get_default ();
+        for (int i = 0; i < recipients.length (); i++) {
+            string name;
+            string address;
+            recipients.get (i, out name, out address);
+            yield contact_manager.remember_mail_address (address, name);
+        }
     }
 
     private void load_from_combobox () {

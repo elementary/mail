@@ -28,10 +28,13 @@ public class Mail.ContactManager : GLib.Object {
         return instance;
     }
 
-    private Folks.IndividualAggregator individual_aggregator;
     public Gtk.ListStore list_store { get; private set; }
 
+    private Gee.TreeSet<string> email_addresses;
+    private Folks.IndividualAggregator individual_aggregator;
+
     construct {
+        email_addresses = new Gee.TreeSet<string> ();
         list_store = new Gtk.ListStore (3, typeof (string), typeof (string), typeof (string));
         list_store.set_default_sort_func (list_store_sort_func);
         list_store.set_sort_column_id (2, Gtk.SortType.ASCENDING);
@@ -65,6 +68,63 @@ public class Mail.ContactManager : GLib.Object {
             return true;
         });
         entry.set_completion (completion);
+    }
+
+    public async void remember_mail_address (string address, string? name) {
+        name = name ?? address;
+
+        if (!Granite.Services.System.history_is_enabled ()) {
+            debug ("History disabled, don't remember email addresses.");
+            return;
+        }
+
+        if (address in email_addresses) {
+            debug ("Mail address already in addressbook.");
+            return;
+        }
+
+        if (individual_aggregator.primary_store == null) {
+            MainWindow.send_error_message (
+                _("Couldn't add “%s” to addressbook").printf (name),
+                _("No addressbook available."),
+                "avatar-default"
+            );
+            return;
+        } else if (!individual_aggregator.primary_store.is_prepared) {
+            ulong handler = 0;
+            handler = individual_aggregator.primary_store.notify["is-prepared"].connect (() => {
+                remember_mail_address.begin (address, name);
+                individual_aggregator.primary_store.disconnect (handler);
+            });
+            return;
+        }
+
+
+        var details = new HashTable<string, Value?> (str_hash, str_equal);
+
+        var address_set = new Gee.HashSet<Folks.EmailFieldDetails> ();
+        address_set.add (new Folks.EmailFieldDetails (address));
+        var address_val = Value (typeof (Gee.Set));
+        address_val.set_object (address_set);
+
+        var name_val = Value (typeof (string));
+        name_val.set_string (name);
+
+        details[Folks.PersonaStore.detail_key (EMAIL_ADDRESSES)] = address_val;
+        details[Folks.PersonaStore.detail_key (FULL_NAME)] = name_val;
+
+        try {
+            debug ("Remember '%s' with email address '%s'.", name, address);
+            yield individual_aggregator.add_persona_from_details (null, individual_aggregator.primary_store, details);
+        } catch (Error e) {
+            warning ("Failed to add mail address: %s", e.message);
+            MainWindow.send_error_message (
+                _("Couldn't add “%s” to addressbook").printf (name),
+                _("Operation failed."),
+                "avatar-default",
+                e.message
+            );
+        }
     }
 
     private string current_key = null;
@@ -131,6 +191,9 @@ public class Mail.ContactManager : GLib.Object {
         string individual_collate = individual_name.collate_key ();
         foreach (var email_object in individual.email_addresses) {
             string email = email_object.value;
+            if (!(email in email_addresses)) {
+                email_addresses.add (email);
+            }
             Gtk.TreeIter iter;
             list_store.append (out iter);
             string collation_key;

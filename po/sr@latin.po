@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-07 10:19+0000\n"
+"POT-Creation-Date: 2023-11-11 06:04+0000\n"
 "PO-Revision-Date: 2015-11-23 11:51+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Generator: Launchpad (build 18330)\n"
 "X-Project-Style: gnome\n"
 
-#: src/Application.vala:220
+#: src/Application.vala:212
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
@@ -207,41 +207,41 @@ msgstr ""
 msgid "Send Anyway"
 msgstr ""
 
-#: src/Composer.vala:831
+#: src/Composer.vala:833
 #, fuzzy
 #| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
 msgstr "Da pošaljem poruku sa praznom razradom?"
 
-#: src/Composer.vala:832
+#: src/Composer.vala:834
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer.vala:847
+#: src/Composer.vala:849
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to send message"
 msgstr "Ne mogu da potvrdim:\n"
 
-#: src/Composer.vala:848
+#: src/Composer.vala:850
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:954 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr ""
 
-#: src/Composer.vala:946
+#: src/Composer.vala:958
 msgid "None"
 msgstr "Ništa"
 
-#: src/Composer.vala:1135
+#: src/Composer.vala:1147
 msgid "Unable to save draft"
 msgstr ""
 
-#: src/Composer.vala:1136
+#: src/Composer.vala:1148
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -395,6 +395,19 @@ msgstr ""
 
 #: src/Backend/Session.vala:642
 msgid "New Signature"
+msgstr ""
+
+#: src/Backend/ContactManager.vala:88 src/Backend/ContactManager.vala:122
+#, c-format
+msgid "Couldn't add “%s” to addressbook"
+msgstr ""
+
+#: src/Backend/ContactManager.vala:89
+msgid "No addressbook available."
+msgstr ""
+
+#: src/Backend/ContactManager.vala:123
+msgid "Operation failed."
 msgstr ""
 
 #: src/ConversationList/ConversationItemModel.vala:74

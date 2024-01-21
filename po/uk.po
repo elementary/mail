@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-07 10:19+0000\n"
-"PO-Revision-Date: 2023-11-09 15:10+0000\n"
+"POT-Creation-Date: 2023-11-11 06:04+0000\n"
+"PO-Revision-Date: 2023-11-14 18:10+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/mail/uk/>"
 "\n"
@@ -26,7 +26,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 "X-Project-Style: gnome\n"
 
-#: src/Application.vala:220
+#: src/Application.vala:212
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
@@ -193,38 +193,38 @@ msgstr "Не надсилати"
 msgid "Send Anyway"
 msgstr "Все одно надіслати"
 
-#: src/Composer.vala:831
+#: src/Composer.vala:833
 msgid "Sent message was not saved"
 msgstr "Надіслане повідомлення не збережено"
 
-#: src/Composer.vala:832
+#: src/Composer.vala:834
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 "Повідомлення надіслано, однак копія не була збережена у теці «Надіслані»."
 
-#: src/Composer.vala:847
+#: src/Composer.vala:849
 msgid "Unable to send message"
 msgstr "Не вдалося надіслати повідомлення"
 
-#: src/Composer.vala:848
+#: src/Composer.vala:850
 msgid "There was an unexpected error while sending your message."
 msgstr "Сталася помилка під час надсилання повідомлення."
 
-#: src/Composer.vala:942 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:954 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr "Змінити підписи…"
 
-#: src/Composer.vala:946
+#: src/Composer.vala:958
 msgid "None"
 msgstr "Немає"
 
-#: src/Composer.vala:1135
+#: src/Composer.vala:1147
 msgid "Unable to save draft"
 msgstr "Не вдалося зберегти чернетку"
 
-#: src/Composer.vala:1136
+#: src/Composer.vala:1148
 msgid "There was an unexpected error while saving your draft."
 msgstr "Сталася помилка під час збереження чернетки."
 
@@ -360,6 +360,19 @@ msgstr "Початкова тека є текою призначення."
 #: src/Backend/Session.vala:642
 msgid "New Signature"
 msgstr "Новий підпис"
+
+#: src/Backend/ContactManager.vala:88 src/Backend/ContactManager.vala:122
+#, c-format
+msgid "Couldn't add “%s” to addressbook"
+msgstr "Не вдалося додати «%s» до адресної книги"
+
+#: src/Backend/ContactManager.vala:89
+msgid "No addressbook available."
+msgstr "Немає адресних книг."
+
+#: src/Backend/ContactManager.vala:123
+msgid "Operation failed."
+msgstr "Збій операції."
 
 #: src/ConversationList/ConversationItemModel.vala:74
 #: src/ConversationList/ConversationItemModel.vala:112
