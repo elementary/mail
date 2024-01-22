@@ -143,8 +143,9 @@ public class Mail.MessageList : Gtk.Box {
         vpaned = new Gtk.Paned (Gtk.Orientation.VERTICAL);
         var scrolled_window = new Gtk.ScrolledWindow (null, null) {
             hscrollbar_policy = NEVER,
-            min_content_height = 200
+            min_content_height = 120
         };
+
         scrolled_window.add (list_box);
 
         web_view_frame = new Gtk.Frame ("") {
@@ -229,7 +230,7 @@ public class Mail.MessageList : Gtk.Box {
         var children = list_box.get_children ();
         var num_children = children.length ();
         if (num_children > 0) {
-            var child = list_box.get_row_at_index ((int) num_children - 1);
+            var child = list_box.get_row_at_index (0);
             if (child != null && child is MessageListItem) {
                 var list_item = (MessageListItem) child;
                 list_item.expanded = true;
@@ -324,6 +325,6 @@ public class Mail.MessageList : Gtk.Box {
             timestamp2 = message2.message_info.date_sent;
         }
 
-        return (int)(timestamp1 - timestamp2);
+        return (int)(timestamp2 - timestamp1);
     }
 }
