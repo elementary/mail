@@ -2,16 +2,16 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-04 14:24+0000\n"
-"PO-Revision-Date: 2023-03-16 13:25+0000\n"
+"PO-Revision-Date: 2024-01-24 03:31+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
-"Language-Team: Georgian <https://l10n.elementary.io/projects/mail/extra/ka/"
-">\n"
+"Language-Team: Georgian <https://l10n.elementary.io/projects/mail/extra/ka/>"
+"\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.0.2\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
 msgid "Mail"
@@ -27,6 +27,9 @@ msgid ""
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
 msgstr ""
+"Mail დაგეგმილია ისე, რომ საშუალება მოგცეთ, თქვენი ელფოსტა სწრაფად და "
+"ეფექტურად მართოთ. მისი ინტერფეისი ეყრდნობა საუბრებს, ასე რომ, მთელი დისკუსია "
+"შეგიძლიათ, ერთიანად წაიკითხოთ, შეტყობინებებზე წკაპუნის გარეშე."
 
 #: data/mail.metainfo.xml.in:15
 msgid "Lightweight mail client with full IMAP support"
@@ -46,7 +49,7 @@ msgstr "ბევრი ანგარიშის მხარდაჭერ�
 
 #: data/mail.metainfo.xml.in:19
 msgid "Powerful HTML composer that saves drafts to the server"
-msgstr ""
+msgstr "მძლავრი HTML კომპოზიტორი, რომელიც მონახაზებს სერვერზე ინახავს"
 
 #: data/mail.metainfo.xml.in:20
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
@@ -65,26 +68,28 @@ msgstr "გაუმჯობესებები:"
 #: data/mail.metainfo.xml.in:74
 msgid "Ability to create multiple signatures and set defaults per account"
 msgstr ""
+"შესაძლებლობა, თითოეულ ანგარიშს ერთზე მეტი ხელმოწერა და ნაგულისხმევი "
+"მნიშვნელობა მიაბათ"
 
 #: data/mail.metainfo.xml.in:75
 msgid "Add support for inline images in the composer"
-msgstr ""
+msgstr "კომპოზიტორისთვის გამოსახულების ხაზში ჩასმის მხარდაჭერის დამატება"
 
 #: data/mail.metainfo.xml.in:76
 msgid "Add support for renaming folders"
-msgstr ""
+msgstr "საქაღალდის სახელის გადარქმევის მხარდაჭერა"
 
 #: data/mail.metainfo.xml.in:77
 msgid "Move settings menu to the mailboxes pane"
-msgstr ""
+msgstr "მორგების მენიუს გადატანა საფოსტო ყუთების პანელზე"
 
 #: data/mail.metainfo.xml.in:78
 msgid "Use the FileChooser portal"
-msgstr ""
+msgstr "გამოიყენეთ პორტალი FileChooser"
 
 #: data/mail.metainfo.xml.in:79
 msgid "Improve network availability handling"
-msgstr ""
+msgstr "ქსელის ხელმისაწვდომობის უკეთესი აღქმა"
 
 #: data/mail.metainfo.xml.in:80
 msgid "Fix issues with fetching e-mail when Mail is not autostarted"
@@ -125,10 +130,8 @@ msgid "HeaderBars appear to float above content when scrolled"
 msgstr ""
 
 #: data/mail.metainfo.xml.in:111
-#, fuzzy
-#| msgid "Fix a potential crash while loading messages"
 msgid "Fix a potential crash with empty messages"
-msgstr "შეტყობინებების ჩატვირთვისას პოტენციური ავარიის გასწორება"
+msgstr "პოტენციური ავარიის გასწორება ცარიელი შეტყობინებების ქონისას"
 
 #: data/mail.metainfo.xml.in:112
 msgid "Stop resizing from cutting off the message list"
@@ -136,7 +139,7 @@ msgstr ""
 
 #: data/mail.metainfo.xml.in:113
 msgid "Performance improvements"
-msgstr ""
+msgstr "წარმადობის გაუმჯობესებები"
 
 #: data/mail.metainfo.xml.in:139 data/mail.metainfo.xml.in:161
 #: data/mail.metainfo.xml.in:177
