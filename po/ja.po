@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-11 06:04+0000\n"
-"PO-Revision-Date: 2023-11-14 18:10+0000\n"
+"PO-Revision-Date: 2024-02-12 08:12+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -148,7 +148,7 @@ msgstr "Cc: %s<br/>"
 
 #: src/Composer.vala:757
 msgid "Permanently delete this draft?"
-msgstr "この下書きを完全に削除してもよろしいですか？"
+msgstr "この下書きを完全に削除しますか?"
 
 #: src/Composer.vala:758
 msgid ""
@@ -161,7 +161,7 @@ msgstr "下書きを削除"
 
 #: src/Composer.vala:792
 msgid "Send without subject?"
-msgstr "件名なしで送信しますか？"
+msgstr "件名なしで送信しますか?"
 
 #: src/Composer.vala:793
 msgid ""
@@ -697,7 +697,7 @@ msgstr "メールを印刷できません"
 #: src/MessageList/MessageListItem.vala:698
 #, c-format
 msgid "Trust and open “%s”?"
-msgstr "“%s”を信頼し開きますか？"
+msgstr "“%s” を信頼し開きますか?"
 
 #: src/MessageList/MessageListItem.vala:699
 msgid ""
