@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-11 06:04+0000\n"
-"PO-Revision-Date: 2024-02-12 08:12+0000\n"
+"PO-Revision-Date: 2024-02-18 16:18+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -322,7 +322,7 @@ msgstr "メッセージを移動しています… (残り%u件)"
 
 #: src/Backend/MoveOperation.vala:98
 msgid "No Archive folder is configured."
-msgstr "アーカイブフォルダーが設定されていません。"
+msgstr "アーカイブフォルダーが未設定です。"
 
 #: src/Backend/MoveOperation.vala:126
 msgid "The destination folder was not found."
@@ -470,7 +470,7 @@ msgstr "名前未設定"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:33
 msgid "No Aliases"
-msgstr "エイリアスがありません"
+msgstr "エイリアスなし"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:37
 msgid "Add aliases using the button in the toolbar below"
@@ -496,7 +496,7 @@ msgstr "'%s' を削除しました"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 msgid "No Signatures"
-msgstr "署名がありません"
+msgstr "署名なし"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
 msgid "Add signatures using the button in the toolbar below"
@@ -635,7 +635,7 @@ msgstr "スレッドをゴミ箱に移動"
 
 #: src/MessageList/MessageList.vala:124
 msgid "No Message Selected"
-msgstr "メッセージが選択されていません"
+msgstr "メッセージ未選択"
 
 #. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
 #: src/MessageList/MessageListItem.vala:189
