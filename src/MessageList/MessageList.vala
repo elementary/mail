@@ -16,6 +16,7 @@ public class Mail.MessageList : Gtk.Box {
 
     construct {
         get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
+        get_style_context ().add_class ("message-list");
 
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
@@ -138,6 +139,7 @@ public class Mail.MessageList : Gtk.Box {
         list_box.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
         list_box.set_placeholder (placeholder);
         list_box.set_sort_func (message_sort_function);
+        list_box.set_header_func (message_header_func);
 
         scrolled_window = new Gtk.ScrolledWindow (null, null) {
             hscrollbar_policy = NEVER
@@ -271,6 +273,35 @@ public class Mail.MessageList : Gtk.Box {
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_ARCHIVE)).set_enabled (enabled);
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE)).set_enabled (enabled);
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE_TO_TRASH)).set_enabled (enabled);
+    }
+
+    private void message_header_func (Gtk.ListBoxRow row, Gtk.ListBoxRow? before) {
+        unowned var message = (MessageListItem) row;
+        unowned var message_before = (MessageListItem) before;
+
+        var subject = message.message_info.subject;
+
+        if (message_before == null || message_before != null && sanitize_subject (message_before.message_info.subject) != sanitize_subject (subject)) {
+            if (subject == "") {
+                subject = _("No Subject");
+            }
+
+            var header_label = new Granite.HeaderLabel (subject) {
+                wrap = true,
+            };
+
+            row.set_header (header_label);
+        }
+    }
+
+    private string sanitize_subject (string _subject) {
+        var subject = _subject.down ();
+        subject = subject.replace (" ", "");
+        subject = subject.replace (":", "");
+        subject = subject.replace ("re", "");
+        subject = subject.replace ("fwd", "");
+
+        return subject;
     }
 
     private static int message_sort_function (Gtk.ListBoxRow item1, Gtk.ListBoxRow item2) {
