@@ -18,6 +18,12 @@ install_data(
     install_dir: join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
 )
 
+install_data(
+    meson.project_name() + '.apparmor',
+    install_dir: join_paths(get_option('sysconfdir'), 'apparmor.d'),
+    rename: meson.project_name()
+)
+
 i18n.merge_file (
     input: meson.project_name() + '.desktop.in',
     output: meson.project_name() + '.desktop',
