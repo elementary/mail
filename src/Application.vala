@@ -234,6 +234,7 @@ public class Mail.Application : Gtk.Application {
 }
 
 public static int main (string[] args) {
+    GLib.Environment.set_variable ("WEBKIT_DISABLE_COMPOSITING_MODE", "1", true);
     var application = new Mail.Application ();
     return application.run (args);
 }
