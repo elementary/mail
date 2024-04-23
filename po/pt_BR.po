@@ -20,8 +20,8 @@ msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-11 06:04+0000\n"
-"PO-Revision-Date: 2019-08-27 22:23+0000\n"
-"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
+"PO-Revision-Date: 2024-04-24 13:13+0000\n"
+"Last-Translator: Matheus Torres Carvalho <matheustcarvalho@hotmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/mail/"
 "mail/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: src/Application.vala:212
@@ -289,23 +289,20 @@ msgstr ""
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:165
-#, fuzzy, c-format
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
+#, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "%d nova mensagem"
-msgstr[1] "%d novas mensagens"
+msgstr[0] "%u nova mensagem"
+msgstr[1] "%u novas mensagens"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
 #: src/InboxMonitor.vala:177
-#, fuzzy, c-format
-#| msgid "Always Show from Sender"
+#, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] "Sempre mostrar deste remetente"
-msgstr[1] "Sempre mostrar deste remetente"
+msgstr[0] "%s de %u remetente"
+msgstr[1] "%s de %u remetentes"
 
 #: src/MainWindow.vala:80
 msgid "Mail"
