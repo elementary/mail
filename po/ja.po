@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-11 06:04+0000\n"
-"PO-Revision-Date: 2024-02-18 16:18+0000\n"
+"PO-Revision-Date: 2024-05-07 05:13+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Application.vala:212
@@ -249,7 +249,7 @@ msgstr "%s から %s"
 #, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "%u件の新着メッセージ"
+msgstr[0] "%u 件の新着メッセージ"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
@@ -257,7 +257,7 @@ msgstr[0] "%u件の新着メッセージ"
 #, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] "%2$u人から%1$s"
+msgstr[0] "%2$u 人から %1$s"
 
 #: src/MainWindow.vala:80
 msgid "Mail"
@@ -318,7 +318,7 @@ msgstr "サーバーへの接続試行中に予期しないエラーが発生し
 #: src/Backend/MoveOperation.vala:65
 #, c-format
 msgid "Moving messages… (%u remaining)"
-msgstr "メッセージを移動しています… (残り%u件)"
+msgstr "メッセージを移動しています… (残り %u 件)"
 
 #: src/Backend/MoveOperation.vala:98
 msgid "No Archive folder is configured."
@@ -697,7 +697,7 @@ msgstr "メールを印刷できません"
 #: src/MessageList/MessageListItem.vala:698
 #, c-format
 msgid "Trust and open “%s”?"
-msgstr "“%s” を信頼し開きますか?"
+msgstr "“%s” を信頼して開きますか?"
 
 #: src/MessageList/MessageListItem.vala:699
 msgid ""
