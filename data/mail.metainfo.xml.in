@@ -69,6 +69,23 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="8.0.0" date="2024-05-20" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Use the actual recipients of a message as sender when replying or forwarding</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/mail/issues/636">Email aliases</issue>
+        <issue url="https://github.com/elementary/mail/issues/743">Autocomplete recipients using known addresses</issue>
+        <issue url="https://github.com/elementary/mail/issues/950">Many mails flash to white after opening</issue>
+        <issue url="https://github.com/elementary/mail/issues/952">Make delete/backspace key work with focus on email</issue>
+        <issue url="https://github.com/elementary/mail/issues/957">Can't download attachment from email</issue>
+      </issues>
+    </release>
+
     <release version="7.2.0" date="2023-08-01" urgency="medium">
       <description>
         <p>Improvements:</p>
@@ -174,19 +191,7 @@
       </description>
     </release>
 
-    <release version="6.3.1" date="2021-12-13" urgency="medium">
-      <description>
-        <p>Fixes:</p>
-        <ul>
-          <li>Fix a potential crash while loading messages</li>
-        </ul>
-        <p>Improvements:</p>
-        <ul>
-          <li>Updated translations</li>
-        </ul>
-      </description>
-    </release>
-
+    <release version="6.3.1" date="2021-12-13" urgency="medium" />
     <release version="6.3.0" date="2021-10-27" urgency="medium" />
     <release version="6.2.0" date="2021-09-27" urgency="medium" />
     <release version="6.1.1" date="2021-08-30" urgency="medium" />
