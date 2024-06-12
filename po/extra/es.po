@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-04 14:24+0000\n"
-"PO-Revision-Date: 2021-08-27 14:52+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2024-06-12 22:52+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/mail/extra/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
@@ -33,13 +33,13 @@ msgid ""
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
 msgstr ""
-"Correo se ha diseñado para permitirle gestionar su buzón rápida y "
-"eficientemente. Su interfaz se organiza en conversaciones, de modo que puede "
-"seguir un debate entero sin tener que desplazarse de mensaje en mensaje."
+"Correo se ha diseñado para permitirle gestionar su buzón de manera rápida y "
+"eficiente. Su interfaz se organiza en conversaciones, de modo que puede "
+"seguir una discusión entera sin tener que desplazarse de mensaje en mensaje."
 
 #: data/mail.metainfo.xml.in:15
 msgid "Lightweight mail client with full IMAP support"
-msgstr "Cliente de correo ligero con compatibilidad completa con IMAP"
+msgstr "Cliente ligero de correo con compatibilidad completa con IMAP"
 
 #: data/mail.metainfo.xml.in:16
 msgid "Mail grouped into conversations, not a tree of threads"
@@ -54,10 +54,8 @@ msgid "Multiple account support"
 msgstr "Permite gestionar varias cuentas"
 
 #: data/mail.metainfo.xml.in:19
-#, fuzzy
-#| msgid "Inline HTML composer that saves drafts to the server"
 msgid "Powerful HTML composer that saves drafts to the server"
-msgstr "Editor HTML que guarda sus borradores en el servidor"
+msgstr "Con un poderoso editor HTML que guarda sus borradores en el servidor"
 
 #: data/mail.metainfo.xml.in:20
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
@@ -76,38 +74,44 @@ msgstr "Mejoras:"
 #: data/mail.metainfo.xml.in:74
 msgid "Ability to create multiple signatures and set defaults per account"
 msgstr ""
+"Ahora se pueden crear múltiples firmas y establecer una firma predeterminada "
+"en cada cuenta"
 
 #: data/mail.metainfo.xml.in:75
 msgid "Add support for inline images in the composer"
-msgstr ""
+msgstr "Se agregó soporte para imágenes incrustadas al redactar un mensaje"
 
 #: data/mail.metainfo.xml.in:76
 msgid "Add support for renaming folders"
-msgstr ""
+msgstr "Se agregó la capacidad de cambiar nombres de carpetas"
 
 #: data/mail.metainfo.xml.in:77
 msgid "Move settings menu to the mailboxes pane"
-msgstr ""
+msgstr "Se movió el menú de ajustes al panel de buzones de correo"
 
 #: data/mail.metainfo.xml.in:78
 msgid "Use the FileChooser portal"
-msgstr ""
+msgstr "Ahora se usa el widget «FileChooser»"
 
 #: data/mail.metainfo.xml.in:79
 msgid "Improve network availability handling"
-msgstr ""
+msgstr "Se ha mejorado el manejo de disponibilidad de redes"
 
 #: data/mail.metainfo.xml.in:80
 msgid "Fix issues with fetching e-mail when Mail is not autostarted"
 msgstr ""
+"Se corrigieron problemas al obtener correos electrónicos cuando Correo no se "
+"inicia automáticamente"
 
 #: data/mail.metainfo.xml.in:81
 msgid "Notify the user when a calendar event is included in a message"
 msgstr ""
+"Ahora se notifica al usuario cuando un evento de calendario se incluye en un "
+"mensaje"
 
 #: data/mail.metainfo.xml.in:82
 msgid "Improve performance when switching between folders"
-msgstr ""
+msgstr "Se ha mejorado el rendimiento al cambiar entre carpetas"
 
 #: data/mail.metainfo.xml.in:83 data/mail.metainfo.xml.in:114
 #: data/mail.metainfo.xml.in:128 data/mail.metainfo.xml.in:149
@@ -120,93 +124,114 @@ msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
 msgstr ""
+"La vista de bienvenida ahora se quita cuando una cuenta se agrega a «Cuentas "
+"en línea» sin tener que reiniciar Correo"
 
 #: data/mail.metainfo.xml.in:108
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
 msgstr ""
+"Ahora el editor de mensajes siempre se presenta como una nueva ventana e "
+"incluye más atajos de teclado"
 
 #: data/mail.metainfo.xml.in:109
 msgid "The search filter menu now appears next to the search bar"
 msgstr ""
+"El filtro de búsqueda del menú ahora aparece al lado de la barra de búsqueda"
 
 #: data/mail.metainfo.xml.in:110
 msgid "HeaderBars appear to float above content when scrolled"
 msgstr ""
+"Se corrigieron las barras de encabezado que parecían flotar sobre el "
+"contenido al desplazarlo"
 
 #: data/mail.metainfo.xml.in:111
 msgid "Fix a potential crash with empty messages"
-msgstr ""
+msgstr "Se corrigió una posible falla grave con mensajes vacíos"
 
 #: data/mail.metainfo.xml.in:112
 msgid "Stop resizing from cutting off the message list"
-msgstr ""
+msgstr "Ahora redimensionar la ventana ya no corta la lista de mensajes"
 
 #: data/mail.metainfo.xml.in:113
 msgid "Performance improvements"
-msgstr ""
+msgstr "Mejoras de rendimiento"
 
 #: data/mail.metainfo.xml.in:139 data/mail.metainfo.xml.in:161
 #: data/mail.metainfo.xml.in:177
 msgid "Fixes:"
-msgstr ""
+msgstr "Correcciones:"
 
 #: data/mail.metainfo.xml.in:141
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
+"Se corrigió un error que causaba que las cuentas de correo se cargaran "
+"varias veces"
 
 #: data/mail.metainfo.xml.in:142
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr ""
+"Se corrigió un error que hacía que Correo dejara de funcionar algunas veces"
 
 #: data/mail.metainfo.xml.in:143
 msgid "Display recipient in Sent folder instead of sender"
 msgstr ""
+"Ahora se muestra el destinatario en la carpeta de Enviados en vez del "
+"remitente"
 
 #: data/mail.metainfo.xml.in:147
-#, fuzzy
-#| msgid "Updated translations"
 msgid "Updated app icon"
-msgstr "Traducciones actualizadas"
+msgstr "Actualizado el icono de la aplicación"
 
 #: data/mail.metainfo.xml.in:148
 msgid "New design"
-msgstr ""
+msgstr "Correo ahora tiene un nuevo diseño"
 
 #: data/mail.metainfo.xml.in:156
 msgid "New features:"
-msgstr ""
+msgstr "Características nuevas:"
 
 #: data/mail.metainfo.xml.in:158
 msgid "Use message subject for composer window title"
 msgstr ""
+"Ahora se usa al asunto del mensaje como título en la ventana del editor de "
+"mensajes"
 
 #: data/mail.metainfo.xml.in:159
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
+"Se agregó el soporte para utilizar el buzón de correo unificado de las "
+"cuentas de Microsoft 365"
 
 #: data/mail.metainfo.xml.in:163
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
+"Se corrigió un error que hacía que el monitor de correo entrante en segundo "
+"plano fallara y dejara de ejecutarse"
 
 #: data/mail.metainfo.xml.in:164
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr ""
+"Ahora se eliminan mensajes de correo de destinatarios duplicados al crear un "
+"mensaje"
 
 #: data/mail.metainfo.xml.in:165
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
+"Se corrigió un bloqueo cuando se archiva el último mensaje de una carpeta"
 
 #: data/mail.metainfo.xml.in:169
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
+"Se cambió el nombre de Office 365 a Microsoft 365 para respetar las "
+"convenciones de la marca de Microsoft"
 
 #: data/mail.metainfo.xml.in:179
 msgid "Fix a potential crash while loading messages"
-msgstr ""
+msgstr "Se corrigió una posible falla grave cuando se cargan mensajes"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -214,7 +239,7 @@ msgstr "Correo;Correo electrónico;Mensaje;Email;E-mail;"
 
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
-msgstr "Redactar mensaje"
+msgstr "Redactar un mensaje"
 
 #, fuzzy
 #~| msgid "Move Undo notification to the message view"
