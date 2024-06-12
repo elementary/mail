@@ -17,15 +17,15 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-11 06:04+0000\n"
-"PO-Revision-Date: 2021-07-15 13:34+0000\n"
-"Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
+"PO-Revision-Date: 2024-06-12 22:52+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/mail/mail/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: src/Application.vala:212
@@ -33,6 +33,9 @@ msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
 msgstr ""
+"Correo se iniciará automáticamente cuando este equipo se encienda y seguirá "
+"ejecutándose cuando cierre esta ventana para poder enviar notificaciones de "
+"correo nuevo."
 
 #: src/Composer.vala:88 src/MessageList/MessageListItem.vala:102
 msgid "From:"
@@ -75,10 +78,8 @@ msgid "Attach file"
 msgstr "Adjuntar archivo"
 
 #: src/Composer.vala:243
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert Signature…"
-msgstr "Insertar enlace"
+msgstr "Insertar firma…"
 
 #: src/Composer.vala:249
 msgid "Send"
@@ -103,34 +104,24 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #: src/Composer.vala:462
-#, fuzzy
-#| msgid "Show Images"
 msgid "Images"
-msgstr "Mostrar imágenes"
+msgstr "Imágenes"
 
 #: src/Composer.vala:466
-#, fuzzy
-#| msgid "Choose a file"
 msgid "Choose an image"
-msgstr "Elija un archivo"
+msgstr "Elija una imagen"
 
 #: src/Composer.vala:469
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert"
-msgstr "Insertar enlace"
+msgstr "Insertar"
 
 #: src/Composer.vala:498
-#, fuzzy
-#| msgid "Unable to save draft"
 msgid "Unable to insert image"
-msgstr "No se pudo guardar el borrador"
+msgstr "No se pudo insertar la imagen"
 
 #: src/Composer.vala:499
-#, fuzzy
-#| msgid "There was an unexpected error while saving your draft."
 msgid "There was an unexpected error while trying to insert the image."
-msgstr "Se produjo un error inesperado al guardar el borrador."
+msgstr "Se produjo un error inesperado al insertar la imagen."
 
 #: src/Composer.vala:667
 msgid "%a, %b %-e, %Y at %-l:%M %p"
@@ -172,7 +163,7 @@ msgstr "Cc: %s<br/>"
 
 #: src/Composer.vala:757
 msgid "Permanently delete this draft?"
-msgstr "¿Quiere eliminar permanentemente este borrador?"
+msgstr "¿Desea eliminar permanentemente este borrador?"
 
 #: src/Composer.vala:758
 msgid ""
@@ -206,32 +197,28 @@ msgid "Send Anyway"
 msgstr "Enviar de todos modos"
 
 #: src/Composer.vala:833
-#, fuzzy
-#| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
-msgstr "¿Quiere enviar el mensaje sin cuerpo?"
+msgstr "El mensaje enviado no fue guardado"
 
 #: src/Composer.vala:834
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
+"El mensaje fue enviado. Sin embargo, no se guardó una copia en la carpeta de "
+"enviados."
 
 #: src/Composer.vala:849
-#, fuzzy
-#| msgid "Unable to save draft"
 msgid "Unable to send message"
-msgstr "No se pudo guardar el borrador"
+msgstr "No se pudo enviar el mensaje"
 
 #: src/Composer.vala:850
-#, fuzzy
-#| msgid "There was an unexpected error while saving your draft."
 msgid "There was an unexpected error while sending your message."
-msgstr "Se produjo un error inesperado al guardar el borrador."
+msgstr "Se produjo un error inesperado al enviar el mensaje."
 
 #: src/Composer.vala:954 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
-msgstr ""
+msgstr "Editar firmas…"
 
 #: src/Composer.vala:958
 msgid "None"
@@ -272,27 +259,24 @@ msgstr "Insertar enlace"
 #: src/InboxMonitor.vala:158 src/InboxMonitor.vala:170
 #, c-format
 msgid "%s to %s"
-msgstr ""
+msgstr "De %s en %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:165
-#, fuzzy, c-format
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
+#, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "%d mensaje nuevo"
-msgstr[1] "%d mensajes nuevos"
+msgstr[0] "%u mensaje nuevo"
+msgstr[1] "%u mensajes nuevos"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
 #: src/InboxMonitor.vala:177
-#, fuzzy, c-format
-#| msgid "Always Show from Sender"
+#, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] "Mostrar siempre el remitente"
-msgstr[1] "Mostrar siempre el remitente"
+msgstr[0] "%s de %u remitente"
+msgstr[1] "%s de %u remitentes"
 
 #: src/MainWindow.vala:80
 msgid "Mail"
@@ -304,34 +288,24 @@ msgid "Undo"
 msgstr "Deshacer"
 
 #: src/MainWindow.vala:285
-#, fuzzy
-#| msgid "Message Deleted"
-#| msgid_plural "Messages Deleted"
 msgid "Message Archived"
 msgid_plural "Messages Archived"
-msgstr[0] "Mensaje eliminado"
-msgstr[1] "Mensajes eliminados"
+msgstr[0] "Mensaje archivado"
+msgstr[1] "Mensajes archivados"
 
 #: src/MainWindow.vala:289
-#, fuzzy
-#| msgid "Unstar message"
 msgid "Couldn't archive message"
-msgstr "Desmarcar mensaje como importante"
+msgstr "No se pudo archivar el mensaje"
 
 #: src/MainWindow.vala:302
-#, fuzzy
-#| msgid "Message Deleted"
-#| msgid_plural "Messages Deleted"
 msgid "Message Moved"
 msgid_plural "Messages Moved"
-msgstr[0] "Mensaje eliminado"
-msgstr[1] "Mensajes eliminados"
+msgstr[0] "Mensaje movido"
+msgstr[1] "Mensajes movidos"
 
 #: src/MainWindow.vala:306
-#, fuzzy
-#| msgid "Unable to save draft"
 msgid "Couldn't move message"
-msgstr "No se pudo guardar el borrador"
+msgstr "No se pudo mover el mensaje"
 
 #: src/MainWindow.vala:319
 msgid "Message Deleted"
@@ -341,7 +315,7 @@ msgstr[1] "Mensajes eliminados"
 
 #: src/MainWindow.vala:323
 msgid "Couldn't delete message"
-msgstr ""
+msgstr "No se pudo eliminar el mensaje"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -349,57 +323,53 @@ msgstr "Conectar una cuenta"
 
 #: src/WelcomeView.vala:52
 msgid "Mail uses email accounts configured in System Settings."
-msgstr "Correo utiliza las cuentas definidas en Configuración del sistema."
+msgstr "Correo utiliza las cuentas definidas en Configuración del Sistema."
 
 #: src/WelcomeView.vala:59
 msgid "Online Accounts…"
 msgstr "Cuentas en línea…"
 
 #: src/Backend/Account.vala:48
-#, fuzzy
-#| msgid "Unable to save draft"
 msgid "Unable to connect"
-msgstr "No se pudo guardar el borrador"
+msgstr "No se pudo conectar"
 
 #: src/Backend/Account.vala:49
-#, fuzzy
-#| msgid "There was an unexpected error while saving your draft."
 msgid "There was an unexpected error while trying to connect to the server."
-msgstr "Se produjo un error inesperado al guardar el borrador."
+msgstr "Se produjo un error inesperado al intentar conectarse al servidor."
 
 #: src/Backend/MoveOperation.vala:65
 #, c-format
 msgid "Moving messages… (%u remaining)"
-msgstr ""
+msgstr "Moviendo mensajes… (%u restante(s))"
 
 #: src/Backend/MoveOperation.vala:98
 msgid "No Archive folder is configured."
-msgstr ""
+msgstr "No se ha configurado una carpeta de Archivados."
 
 #: src/Backend/MoveOperation.vala:126
 msgid "The destination folder was not found."
-msgstr ""
+msgstr "No se encontró la carpeta de destino."
 
 #: src/Backend/MoveOperation.vala:130
 msgid "The source folder is the destination folder."
-msgstr ""
+msgstr "La carpeta de origen es la misma que la de destino."
 
 #: src/Backend/Session.vala:642
 msgid "New Signature"
-msgstr ""
+msgstr "Nueva firma"
 
 #: src/Backend/ContactManager.vala:88 src/Backend/ContactManager.vala:122
 #, c-format
 msgid "Couldn't add “%s” to addressbook"
-msgstr ""
+msgstr "No se pudo agregar «%s» a la libreta de direcciones"
 
 #: src/Backend/ContactManager.vala:89
 msgid "No addressbook available."
-msgstr ""
+msgstr "No hay una libreta de direcciones disponible."
 
 #: src/Backend/ContactManager.vala:123
 msgid "Operation failed."
-msgstr ""
+msgstr "La operación falló."
 
 #: src/ConversationList/ConversationItemModel.vala:74
 #: src/ConversationList/ConversationItemModel.vala:112
@@ -418,36 +388,24 @@ msgid "Search Mail"
 msgstr "Buscar correo"
 
 #: src/ConversationList/ConversationList.vala:90
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide read conversations"
-msgstr "Marcar conversaciones"
+msgstr "Ocultar conversaciones leídas"
 
 #: src/ConversationList/ConversationList.vala:92
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
-msgstr "Marcar conversaciones"
+msgstr "Ocultar conversaciones no destacadas"
 
 #: src/ConversationList/ConversationList.vala:109
-#, fuzzy
-#| msgid "Delete Conversation"
 msgid "Filter Conversations"
-msgstr "Eliminar conversación"
+msgstr "Filtrar conversaciones"
 
 #: src/ConversationList/ConversationList.vala:132
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
 msgid "Fetch new messages"
-msgstr "%d mensaje nuevo"
+msgstr "Obtener mensajes nuevos"
 
 #: src/ConversationList/ConversationList.vala:139
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
 msgid "Fetching new messages…"
-msgstr "%d mensaje nuevo"
+msgstr "Obteniendo mensajes nuevos…"
 
 #: src/ConversationList/ConversationListItem.vala:94
 msgid "Archive"
@@ -459,7 +417,7 @@ msgstr "Papelera"
 
 #: src/ConversationList/ConversationListItem.vala:181
 msgid "Unread"
-msgstr "Sin leer"
+msgstr "No leído"
 
 #: src/ConversationList/ConversationListItem.vala:194
 msgid "Replied"
@@ -470,14 +428,10 @@ msgid "Forwarded"
 msgstr "Reenviado"
 
 #: src/ConversationList/ConversationListItem.vala:218
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move To Trash"
-msgstr "Enviar conversaciones a la papelera"
+msgstr "Enviar a la papelera"
 
 #: src/ConversationList/ConversationListItem.vala:229
-#, fuzzy
-#| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "Marcar como no leído"
 
@@ -510,94 +464,82 @@ msgstr "Sitio web de ejemplo"
 
 #: src/Dialogs/AliasDialog/Alias.vala:52
 msgid "John Doe"
-msgstr ""
+msgstr "Juan Pérez"
 
 #: src/Dialogs/AliasDialog/Alias.vala:56
-#, fuzzy
-#| msgid "N_ame:"
 msgid "Name"
-msgstr "N_ombre:"
+msgstr "Nombre"
 
 #: src/Dialogs/AliasDialog/Alias.vala:71
-#, fuzzy
-#| msgid "https://example.com"
 msgid "Email@example.com"
-msgstr "https://ejemplo.com"
+msgstr "correo@ejemplo.com"
 
 #: src/Dialogs/AliasDialog/Alias.vala:75
-#, fuzzy
-#| msgid "E_mail address:"
 msgid "E-mail Address"
-msgstr "Dirección de correo electró_nico:"
+msgstr "Dirección de correo electrónico"
 
 #: src/Dialogs/AliasDialog/Alias.vala:80
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Delete alias"
-msgstr "Eliminar borrador"
+msgstr "Eliminar alias"
 
 #: src/Dialogs/AliasDialog/Alias.vala:100
-#, fuzzy
-#| msgid "Edit Draft"
 msgid "Edit alias"
-msgstr "Editar borrador"
+msgstr "Editar alias"
 
 #: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
-msgstr ""
+msgstr "No se ha definido un nombre"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:33
 msgid "No Aliases"
-msgstr ""
+msgstr "No se han agregado alias"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:37
 msgid "Add aliases using the button in the toolbar below"
 msgstr ""
+"Agregue un alias utilizando el botón en la barra de herramientas a "
+"continuación"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:67
 msgid "Add Alias…"
-msgstr ""
+msgstr "Agregar un alias…"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:104
 msgid "Aliases"
-msgstr ""
+msgstr "Alias"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:108
-#, fuzzy
-#| msgid "_Close"
 msgid "Close"
-msgstr "_Cerrar"
+msgstr "Cerrar"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:178
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
 #, c-format
 msgid "'%s' deleted"
-msgstr ""
+msgstr "«%s» eliminado"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
-#, fuzzy
-#| msgid "Insert Link"
 msgid "No Signatures"
-msgstr "Insertar enlace"
+msgstr "No se han agregado firmas"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
 msgid "Add signatures using the button in the toolbar below"
 msgstr ""
+"Agregue una firma utilizando el botón en la barra de herramientas a "
+"continuación"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Create Signature"
-msgstr "Insertar enlace"
+msgstr "Crear una firma"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
 #. Work around a styling issue
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
 msgid "For example “Work” or “Personal”"
-msgstr ""
+msgstr "Por ejemplo, «trabajo» o «personal»"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
 msgid "Delete"
@@ -605,17 +547,15 @@ msgstr "Eliminar"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
 msgid "Set Default For…"
-msgstr ""
+msgstr "Establecer como predeterminado para…"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Signature"
-msgstr "Insertar enlace"
+msgstr "Firma"
 
 #: src/FoldersView/AccountSourceItem.vala:154
 msgid "Edit Aliases…"
-msgstr ""
+msgstr "Editar alias…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
@@ -634,62 +574,54 @@ msgid "Menu"
 msgstr "Menú"
 
 #: src/FoldersView/FoldersListView.vala:146
-#, fuzzy
-#| msgid "Unable to print email"
 msgid "Unable to open System Settings"
-msgstr "No se puede imprimir el mensaje"
+msgstr "No se puede abrir la configuración del sistema"
 
 #: src/FoldersView/FoldersListView.vala:147
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
+"Abra la configuración del sistema manualmente, o instale Evolution para "
+"configurar cuentas en línea."
 
 #: src/FoldersView/FolderSourceItem.vala:52
 msgid "Refresh folder"
 msgstr "Actualizar carpeta"
 
 #: src/FoldersView/FolderSourceItem.vala:57
-#, fuzzy
-#| msgid "Refresh folder"
 msgid "Rename folder"
-msgstr "Actualizar carpeta"
+msgstr "Cambiar nombre de carpeta"
 
 #: src/FoldersView/FolderSourceItem.vala:161
 #: src/FoldersView/FolderSourceItem.vala:190
 #: src/FoldersView/FolderSourceItem.vala:208
 #, c-format
 msgid "Couldn't rename “%s”"
-msgstr ""
+msgstr "No se pudo cambiar el nombre de «%s»"
 
 #: src/FoldersView/FolderSourceItem.vala:162
 msgid "Folder names cannot contain “/”"
-msgstr ""
+msgstr "Los nombres de las carpetas no pueden contener «/»"
 
 #: src/FoldersView/FolderSourceItem.vala:191
 #, c-format
 msgid "A folder named “%s” already exists"
-msgstr ""
+msgstr "Ya existe una carpeta con el nombre «%s»"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
-#, fuzzy
-#| msgid "Inbox"
 msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Bandeja de entrada"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:42
-#, fuzzy
-#| msgid "Archive"
 msgctxt "Archive Folder"
 msgid "Archive"
 msgstr "Archivados"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent"
 msgctxt "Sent Folder"
 msgid "Sent"
-msgstr "Enviado"
+msgstr "Enviados"
 
 #: src/FoldersView/SessionSourceItem.vala:28
 msgid "All Mailboxes"
@@ -716,15 +648,12 @@ msgid "Mark Conversation"
 msgstr "Marcar conversación"
 
 #: src/MessageList/MessageList.vala:92
-#, fuzzy
-#| msgid "Move conversation"
-#| msgid_plural "Move conversations"
 msgid "Move Conversation to…"
-msgstr "Mover conversación"
+msgstr "Mover conversación a…"
 
 #: src/MessageList/MessageList.vala:101
 msgid "Move conversations to archive"
-msgstr "Mover conversaciones al archivo"
+msgstr "Archivar conversaciones"
 
 #: src/MessageList/MessageList.vala:109
 msgid "Move conversations to Trash"
@@ -738,17 +667,17 @@ msgstr "No se seleccionó ningún mensaje"
 #: src/MessageList/MessageListItem.vala:189
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s a las %s"
 
 #: src/MessageList/MessageListItem.vala:197
 #: src/MessageList/MessageListItem.vala:402
 msgid "Unstar message"
-msgstr "Desmarcar mensaje como importante"
+msgstr "Marcar mensaje como no destacado"
 
 #: src/MessageList/MessageListItem.vala:200
 #: src/MessageList/MessageListItem.vala:398
 msgid "Star message"
-msgstr "Marcar mensaje como importante"
+msgstr "Marcar mensaje como destacado"
 
 #: src/MessageList/MessageListItem.vala:220
 msgid "Print…"
@@ -760,13 +689,11 @@ msgstr "Más"
 
 #: src/MessageList/MessageListItem.vala:279
 msgid "Open in Calendar"
-msgstr ""
+msgstr "Abrir en Calendario"
 
 #: src/MessageList/MessageListItem.vala:285
-#, fuzzy
-#| msgid "This message contains remote images."
 msgid "This message contains a Calendar Event."
-msgstr "Este mensaje contiene imágenes remotas."
+msgstr "Este mensaje contiene un evento de Calendario."
 
 #: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"
@@ -782,7 +709,7 @@ msgstr "Este mensaje contiene imágenes remotas."
 
 #: src/MessageList/MessageListItem.vala:340
 msgid "This message contains one or more attachments"
-msgstr "Este mensaje contiene uno o más adjuntos"
+msgstr "Este mensaje contiene uno o más archivos adjuntos"
 
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:424
@@ -796,15 +723,15 @@ msgstr "No se puede imprimir el mensaje"
 #: src/MessageList/MessageListItem.vala:698
 #, c-format
 msgid "Trust and open “%s”?"
-msgstr ""
+msgstr "¿Desea confiar y abrir «%s»?"
 
 #: src/MessageList/MessageListItem.vala:699
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr ""
-"Los adjuntos pueden causar errores en el equipo tras abrirse. Abra solamente "
-"archivos de fuentes confiables."
+"Los archivos adjuntos pueden causar daño a su equipo después de abrirse. "
+"Abra solamente archivos de fuentes confiables."
 
 #: src/MessageList/MessageListItem.vala:706
 msgid "Open Anyway"
@@ -824,11 +751,11 @@ msgstr "Guardar"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:22
 msgid "No mailboxes found"
-msgstr ""
+msgstr "No se encontraron buzones de correo"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
-msgstr ""
+msgstr "Intente cambiar los términos de búsqueda"
 
 #, fuzzy
 #~| msgid "Email Address:"
