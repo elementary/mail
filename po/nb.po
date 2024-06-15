@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: geary-master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-11 06:04+0000\n"
-"PO-Revision-Date: 2023-08-03 14:22+0000\n"
+"PO-Revision-Date: 2024-06-16 21:16+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
 "mail/nb/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Application.vala:212
@@ -377,11 +377,11 @@ msgstr "Kunne ikke endre navn på «%s»"
 
 #: src/Backend/ContactManager.vala:89
 msgid "No addressbook available."
-msgstr ""
+msgstr "Ingen adressebok tilgjengelig."
 
 #: src/Backend/ContactManager.vala:123
 msgid "Operation failed."
-msgstr ""
+msgstr "Operasjonen mislyktes."
 
 #: src/ConversationList/ConversationItemModel.vala:74
 #: src/ConversationList/ConversationItemModel.vala:112
@@ -478,7 +478,7 @@ msgstr "Eksempelnettside"
 
 #: src/Dialogs/AliasDialog/Alias.vala:52
 msgid "John Doe"
-msgstr ""
+msgstr "Ola Nordmann"
 
 #: src/Dialogs/AliasDialog/Alias.vala:56
 #, fuzzy
@@ -511,11 +511,11 @@ msgstr "Rediger signaturer …"
 
 #: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
-msgstr ""
+msgstr "Navn ikke valgt"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:33
 msgid "No Aliases"
-msgstr ""
+msgstr "Ingen alias"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:37
 #, fuzzy
@@ -525,11 +525,11 @@ msgstr "Legg til signaturer ved å bruke knappen i verktøylinjen nedenfor"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:67
 msgid "Add Alias…"
-msgstr ""
+msgstr "Legg til alias …"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:104
 msgid "Aliases"
-msgstr ""
+msgstr "Alias"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:108
 #, fuzzy
