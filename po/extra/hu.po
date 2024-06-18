@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-04 14:24+0000\n"
-"PO-Revision-Date: 2023-03-16 13:25+0000\n"
+"PO-Revision-Date: 2024-06-19 22:01+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
-"Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/extra/hu/"
-">\n"
+"Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/extra/hu/>"
+"\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
@@ -55,10 +55,8 @@ msgid "Multiple account support"
 msgstr "Több fiók támogatása"
 
 #: data/mail.metainfo.xml.in:19
-#, fuzzy
-#| msgid "Inline HTML composer that saves drafts to the server"
 msgid "Powerful HTML composer that saves drafts to the server"
-msgstr "Beágyazott HTML-szerkesztő, amely a szerverre menti a piszkozatokat"
+msgstr "Hathatós HTML-szerkesztő, amely a szerverre menti a piszkozatokat"
 
 #: data/mail.metainfo.xml.in:20
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
