@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-11 06:04+0000\n"
-"PO-Revision-Date: 2024-05-26 15:05+0000\n"
+"PO-Revision-Date: 2024-06-19 22:01+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Application.vala:212
@@ -339,7 +339,7 @@ msgstr "新しい署名"
 #: src/Backend/ContactManager.vala:88 src/Backend/ContactManager.vala:122
 #, c-format
 msgid "Couldn't add “%s” to addressbook"
-msgstr "“%s” をアドレス帳に追加できませんでした"
+msgstr "“%s”をアドレス帳に追加できませんでした"
 
 #: src/Backend/ContactManager.vala:89
 msgid "No addressbook available."
@@ -513,7 +513,7 @@ msgstr "タイトル"
 #. Work around a styling issue
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
 msgid "For example “Work” or “Personal”"
-msgstr "“仕事用” や “個人用” など"
+msgstr "“仕事用”や“個人用”など"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
 msgid "Delete"
@@ -571,16 +571,16 @@ msgstr "フォルダー名を変更"
 #: src/FoldersView/FolderSourceItem.vala:208
 #, c-format
 msgid "Couldn't rename “%s”"
-msgstr "“%s” の名前を変更できませんでした"
+msgstr "“%s”の名前を変更できませんでした"
 
 #: src/FoldersView/FolderSourceItem.vala:162
 msgid "Folder names cannot contain “/”"
-msgstr "フォルダー名には “/” を使えません"
+msgstr "フォルダー名には“/”を使えません"
 
 #: src/FoldersView/FolderSourceItem.vala:191
 #, c-format
 msgid "A folder named “%s” already exists"
-msgstr "“%s” というフォルダーはすでに存在します"
+msgstr "“%s”というフォルダーはすでに存在します"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
 msgctxt "Inbox Folder"
@@ -697,7 +697,7 @@ msgstr "メールを印刷できません"
 #: src/MessageList/MessageListItem.vala:698
 #, c-format
 msgid "Trust and open “%s”?"
-msgstr "“%s” を信頼して開きますか?"
+msgstr "“%s”を信頼して開きますか?"
 
 #: src/MessageList/MessageListItem.vala:699
 msgid ""
