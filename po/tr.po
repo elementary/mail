@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-11 06:04+0000\n"
+"POT-Creation-Date: 2024-06-23 05:58+0000\n"
 "PO-Revision-Date: 2023-05-17 21:00+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/mail/mail/tr/>\n"
@@ -494,12 +494,6 @@ msgstr ""
 msgid "Name"
 msgstr "A_d:"
 
-#: src/Dialogs/AliasDialog/Alias.vala:71
-#, fuzzy
-#| msgid "https://example.com"
-msgid "Email@example.com"
-msgstr "https://example.com"
-
 #: src/Dialogs/AliasDialog/Alias.vala:75
 #, fuzzy
 #| msgid "E_mail address:"
@@ -805,6 +799,11 @@ msgstr ""
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
 msgstr ""
+
+#, fuzzy
+#~| msgid "https://example.com"
+#~ msgid "Email@example.com"
+#~ msgstr "https://example.com"
 
 #, fuzzy
 #~| msgid "Email Address:"

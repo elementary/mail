@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-11 06:04+0000\n"
+"POT-Creation-Date: 2024-06-23 05:58+0000\n"
 "PO-Revision-Date: 2023-11-01 23:10+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/mail/mail/fi/>\n"
@@ -473,12 +473,6 @@ msgstr ""
 msgid "Name"
 msgstr "Nimi:"
 
-#: src/Dialogs/AliasDialog/Alias.vala:71
-#, fuzzy
-#| msgid "https://example.com"
-msgid "Email@example.com"
-msgstr "https://esimerkki.com"
-
 #: src/Dialogs/AliasDialog/Alias.vala:75
 #, fuzzy
 #| msgid "E_mail address:"
@@ -765,6 +759,11 @@ msgstr "Postilaatikoita ei löytynyt"
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
 msgstr "Kokeile eri hakuehtoja"
+
+#, fuzzy
+#~| msgid "https://example.com"
+#~ msgid "Email@example.com"
+#~ msgstr "https://esimerkki.com"
 
 #~ msgid "Enter name…"
 #~ msgstr "Kirjoita nimi…"

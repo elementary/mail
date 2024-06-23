@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-11 06:04+0000\n"
+"POT-Creation-Date: 2024-06-23 05:58+0000\n"
 "PO-Revision-Date: 2024-06-19 22:01+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
@@ -448,10 +448,6 @@ msgstr "山田 太郎"
 msgid "Name"
 msgstr "名前"
 
-#: src/Dialogs/AliasDialog/Alias.vala:71
-msgid "Email@example.com"
-msgstr "Email@example.com"
-
 #: src/Dialogs/AliasDialog/Alias.vala:75
 msgid "E-mail Address"
 msgstr "メールアドレス"
@@ -730,6 +726,9 @@ msgstr "メールボックスが見つかりません"
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
 msgstr "検索語句を変更してみてください"
+
+#~ msgid "Email@example.com"
+#~ msgstr "Email@example.com"
 
 #~ msgid "Enter name…"
 #~ msgstr "名前を入力…"

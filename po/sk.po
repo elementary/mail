@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-11 06:04+0000\n"
+"POT-Creation-Date: 2024-06-23 05:58+0000\n"
 "PO-Revision-Date: 2022-09-30 22:24+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/mail/mail/sk/>\n"
@@ -494,12 +494,6 @@ msgstr ""
 msgid "Name"
 msgstr "M_eno"
 
-#: src/Dialogs/AliasDialog/Alias.vala:71
-#, fuzzy
-#| msgid "https://example.com"
-msgid "Email@example.com"
-msgstr "https://priklad.sk"
-
 #: src/Dialogs/AliasDialog/Alias.vala:75
 #, fuzzy
 #| msgid "E_mail address:"
@@ -806,6 +800,11 @@ msgstr ""
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
 msgstr ""
+
+#, fuzzy
+#~| msgid "https://example.com"
+#~ msgid "Email@example.com"
+#~ msgstr "https://priklad.sk"
 
 #, fuzzy
 #~| msgid "Email address:"

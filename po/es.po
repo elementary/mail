@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-11 06:04+0000\n"
+"POT-Creation-Date: 2024-06-23 05:58+0000\n"
 "PO-Revision-Date: 2024-06-12 22:52+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/mail/mail/es/>\n"
@@ -470,10 +470,6 @@ msgstr "Juan Pérez"
 msgid "Name"
 msgstr "Nombre"
 
-#: src/Dialogs/AliasDialog/Alias.vala:71
-msgid "Email@example.com"
-msgstr "correo@ejemplo.com"
-
 #: src/Dialogs/AliasDialog/Alias.vala:75
 msgid "E-mail Address"
 msgstr "Dirección de correo electrónico"
@@ -756,6 +752,9 @@ msgstr "No se encontraron buzones de correo"
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
 msgstr "Intente cambiar los términos de búsqueda"
+
+#~ msgid "Email@example.com"
+#~ msgstr "correo@ejemplo.com"
 
 #, fuzzy
 #~| msgid "Email Address:"

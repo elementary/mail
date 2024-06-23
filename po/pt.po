@@ -13,11 +13,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-11 06:04+0000\n"
+"POT-Creation-Date: 2024-06-23 05:58+0000\n"
 "PO-Revision-Date: 2024-04-20 16:13+0000\n"
 "Last-Translator: Denzil Ferreira <ferreiradenzil@gmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/>"
-"\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/"
+">\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -467,10 +467,6 @@ msgstr "Hugo Carvalho"
 msgid "Name"
 msgstr "Nome"
 
-#: src/Dialogs/AliasDialog/Alias.vala:71
-msgid "Email@example.com"
-msgstr "Email@exemplo.com"
-
 #: src/Dialogs/AliasDialog/Alias.vala:75
 msgid "E-mail Address"
 msgstr "Endereço de e-mail"
@@ -750,6 +746,9 @@ msgstr "Não foram encontradas caixas de correio"
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
 msgstr "Tente alterar os termos de pesquisa"
+
+#~ msgid "Email@example.com"
+#~ msgstr "Email@exemplo.com"
 
 #, fuzzy
 #~| msgid "Email Address:"
@@ -1269,9 +1268,9 @@ msgstr "Tente alterar os termos de pesquisa"
 #~ "Selecting \"Trust This Server\" or \"Always Trust This Server\" may cause "
 #~ "your username and password to be transmitted insecurely."
 #~ msgstr ""
-#~ "Selecionar \"Confiar neste servidor\" ou \"Confiar sempre neste servidor"
-#~ "\" pode fazer com que o seu nome de utilizador e a sua senha sejam "
-#~ "transmitidos sem segurança."
+#~ "Selecionar \"Confiar neste servidor\" ou \"Confiar sempre neste "
+#~ "servidor\" pode fazer com que o seu nome de utilizador e a sua senha "
+#~ "sejam transmitidos sem segurança."
 
 #~ msgid ""
 #~ "Selecting \"Don't Trust This Server\" will cause Geary not to access this "

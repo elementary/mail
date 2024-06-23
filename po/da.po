@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-11 06:04+0000\n"
+"POT-Creation-Date: 2024-06-23 05:58+0000\n"
 "PO-Revision-Date: 2020-05-27 12:11+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/mail/mail/da/>\n"
@@ -519,12 +519,6 @@ msgstr ""
 msgid "Name"
 msgstr "_Navn:"
 
-#: src/Dialogs/AliasDialog/Alias.vala:71
-#, fuzzy
-#| msgid "https://example.com"
-msgid "Email@example.com"
-msgstr "https://eksempel.com"
-
 #: src/Dialogs/AliasDialog/Alias.vala:75
 #, fuzzy
 #| msgid "E_mail address:"
@@ -838,6 +832,11 @@ msgstr ""
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
 msgstr ""
+
+#, fuzzy
+#~| msgid "https://example.com"
+#~ msgid "Email@example.com"
+#~ msgstr "https://eksempel.com"
 
 #, fuzzy
 #~| msgid "Email Address:"
@@ -1356,8 +1355,9 @@ msgstr ""
 #~ "Selecting \"Trust This Server\" or \"Always Trust This Server\" may cause "
 #~ "your username and password to be transmitted insecurely."
 #~ msgstr ""
-#~ "Hvis du vælger \"Stol på denne server\" eller \"Stol altid på denne server"
-#~ "\" risikerer du at dit brugernavn og adgangskode bliver overført usikkert."
+#~ "Hvis du vælger \"Stol på denne server\" eller \"Stol altid på denne "
+#~ "server\" risikerer du at dit brugernavn og adgangskode bliver overført "
+#~ "usikkert."
 
 #~ msgid ""
 #~ "Selecting \"Don't Trust This Server\" will cause Geary not to access this "

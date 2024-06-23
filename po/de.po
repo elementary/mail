@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-11 06:04+0000\n"
+"POT-Creation-Date: 2024-06-23 05:58+0000\n"
 "PO-Revision-Date: 2024-01-09 12:11+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/mail/mail/de/>\n"
@@ -473,10 +473,6 @@ msgstr "Max Mustermann"
 msgid "Name"
 msgstr "Name"
 
-#: src/Dialogs/AliasDialog/Alias.vala:71
-msgid "Email@example.com"
-msgstr "Email@example.com"
-
 #: src/Dialogs/AliasDialog/Alias.vala:75
 msgid "E-mail Address"
 msgstr "E-Mail-Adresse"
@@ -755,6 +751,9 @@ msgstr "Keine Mailboxen gefunden"
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
 msgstr "Versuchen Sie es mit anderen Suchbegriffen"
+
+#~ msgid "Email@example.com"
+#~ msgstr "Email@example.com"
 
 #~ msgid "Enter name…"
 #~ msgstr "Namen eingeben …"
