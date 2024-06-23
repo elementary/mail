@@ -68,7 +68,7 @@ public class Mail.Alias : Gtk.ListBoxRow {
             margin_start = 12,
             margin_end = 12,
             text = address,
-            placeholder_text = _("Email@example.com")
+            placeholder_text = "email@example.com"
         };
         address_entry.bind_property ("text", this, "address", BIDIRECTIONAL);
 
