@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-23 05:58+0000\n"
-"PO-Revision-Date: 2024-06-12 22:52+0000\n"
+"PO-Revision-Date: 2024-06-26 21:16+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/mail/mail/es/>\n"
 "Language: es\n"
@@ -214,7 +214,7 @@ msgstr "No se pudo enviar el mensaje"
 
 #: src/Composer.vala:850
 msgid "There was an unexpected error while sending your message."
-msgstr "Se produjo un error inesperado al enviar el mensaje."
+msgstr "Se ha producido un error inesperado al enviar el mensaje."
 
 #: src/Composer.vala:954 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
