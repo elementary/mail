@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-23 05:58+0000\n"
-"PO-Revision-Date: 2024-06-19 22:01+0000\n"
+"PO-Revision-Date: 2024-06-30 15:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
 "Language: ja\n"
@@ -375,7 +375,7 @@ msgstr "スターなしのスレッドを非表示"
 
 #: src/ConversationList/ConversationList.vala:109
 msgid "Filter Conversations"
-msgstr "スレッドを検索"
+msgstr "スレッドをフィルター"
 
 #: src/ConversationList/ConversationList.vala:132
 msgid "Fetch new messages"
@@ -513,7 +513,7 @@ msgstr "“仕事用”や“個人用”など"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
 msgid "Delete"
-msgstr "削除する"
+msgstr "削除"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
 msgid "Set Default For…"
