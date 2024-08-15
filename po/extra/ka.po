@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-04 14:24+0000\n"
-"PO-Revision-Date: 2024-07-16 07:16+0000\n"
+"PO-Revision-Date: 2024-08-16 04:16+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/mail/extra/ka/>"
 "\n"
@@ -140,7 +140,7 @@ msgstr "პოტენციური ავარიის გასწორ�
 
 #: data/mail.metainfo.xml.in:112
 msgid "Stop resizing from cutting off the message list"
-msgstr ""
+msgstr "ზომის შეცვლისთვის შეტყობინებების სიისთვის მოკვეთის აკრძალვა"
 
 #: data/mail.metainfo.xml.in:113
 msgid "Performance improvements"
@@ -154,14 +154,16 @@ msgstr "შეცდომების გასწორებები:"
 #: data/mail.metainfo.xml.in:141
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
+"გასწორდა შეცდომა, რომელიც ელფოსტის ანგარიშების მრავალჯერ ჩატვირთვას იწვევდა"
 
 #: data/mail.metainfo.xml.in:142
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr ""
+"გასწორდა შეცდომა, რომელიც Mail-ის, ხანდახან, ავარიულად დასრულებას იწვევდა"
 
 #: data/mail.metainfo.xml.in:143
 msgid "Display recipient in Sent folder instead of sender"
-msgstr ""
+msgstr "გაგზავნილების საქაღალდეში მიმღების ჩვენება, გამგზავნის მაგიერ"
 
 #: data/mail.metainfo.xml.in:147
 msgid "Updated app icon"
@@ -177,29 +179,34 @@ msgstr "ახალი ფუნქციები:"
 
 #: data/mail.metainfo.xml.in:158
 msgid "Use message subject for composer window title"
-msgstr ""
+msgstr "შეტყობინების სათაურის ჩვენება კომპოზიტორის ფანჯრის სათაურისთვის"
 
 #: data/mail.metainfo.xml.in:159
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
+"დაემატა გაერთიანებული საფოსტო ყუთის მხარდაჭერა Microsoft 365-ს "
+"ანგარიშებისთვის"
 
 #: data/mail.metainfo.xml.in:163
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
+"გასწორდა შეცდომა, რომელიც საფოსტო ყუთის ფონური შემოწმებისას ავარიას იწვევდა"
 
 #: data/mail.metainfo.xml.in:164
 msgid "Removed duplicate sender addresses when composing a message"
-msgstr ""
+msgstr "მოცილებულია გამგზავნის მისამართების გამეორება შეტყობინების შექმნისას"
 
 #: data/mail.metainfo.xml.in:165
 msgid "Fix a freeze when archiving the last message in a folder"
-msgstr ""
+msgstr "გასწორდა გაშეშება საქაღალდის ბოლო შეტყობინების დაარქივებისას"
 
 #: data/mail.metainfo.xml.in:169
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
+"Office 365-ის სახელის გადარქმევა Microsoft 365-ზე, რომ Microsoft-ის "
+"რებრენდინგს მივყვეთ"
 
 #: data/mail.metainfo.xml.in:179
 msgid "Fix a potential crash while loading messages"
