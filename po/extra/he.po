@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2024-09-01 10:33+0000\n"
 "PO-Revision-Date: 2023-11-11 06:04+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/extra/he/>\n"
@@ -61,59 +61,60 @@ msgstr "מחבר HTML חזק במיוחד ששומר טיוטות לשרת"
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr "עובד עם Gmail,‏ Yahoo! Mail ושרתי IMAP נפוצים נוספים"
 
-#: data/mail.metainfo.xml.in:65
-msgid "elementary, Inc."
-msgstr "elementary בע״מ"
-
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:105
-#: data/mail.metainfo.xml.in:126 data/mail.metainfo.xml.in:145
-#: data/mail.metainfo.xml.in:167 data/mail.metainfo.xml.in:181
+#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:91
+#: data/mail.metainfo.xml.in:124 data/mail.metainfo.xml.in:145
+#: data/mail.metainfo.xml.in:164 data/mail.metainfo.xml.in:186
 msgid "Improvements:"
 msgstr "שיפורים:"
 
-#: data/mail.metainfo.xml.in:74
-msgid "Ability to create multiple signatures and set defaults per account"
-msgstr "יכולת ליצור מספר חתימות ולהגדיר ברירות מחדל לכל חשבון בנפרד"
-
-#: data/mail.metainfo.xml.in:75
-msgid "Add support for inline images in the composer"
-msgstr "הוספת תמיכה לתמונות פנימיות במחבר ההודעות"
-
 #: data/mail.metainfo.xml.in:76
-msgid "Add support for renaming folders"
-msgstr "הוספת תמיכה בשינוי שמות תיקיות"
+msgid ""
+"Use the actual recipients of a message as sender when replying or forwarding"
+msgstr ""
 
-#: data/mail.metainfo.xml.in:77
-msgid "Move settings menu to the mailboxes pane"
-msgstr "העברת תפריט ההגדרות לסרגל תיבות הדוא״ל"
-
-#: data/mail.metainfo.xml.in:78
-msgid "Use the FileChooser portal"
-msgstr "להשתמש בשער בורר הקבצים"
-
-#: data/mail.metainfo.xml.in:79
-msgid "Improve network availability handling"
-msgstr "שיפור טיפול בזמינות הרשת"
-
-#: data/mail.metainfo.xml.in:80
-msgid "Fix issues with fetching e-mail when Mail is not autostarted"
-msgstr "תוקנו תקלות במשיכת דוא״ל כשהיישום לא פועל בהתחלה אוטומטית"
-
-#: data/mail.metainfo.xml.in:81
-msgid "Notify the user when a calendar event is included in a message"
-msgstr "שליחת הודעה למשתמש כאשר אירוע לוח שנה מצורף להודעה"
-
-#: data/mail.metainfo.xml.in:82
-msgid "Improve performance when switching between folders"
-msgstr "שופרו הביצועים במעבר בין תיקיות"
-
-#: data/mail.metainfo.xml.in:83 data/mail.metainfo.xml.in:114
-#: data/mail.metainfo.xml.in:128 data/mail.metainfo.xml.in:149
-#: data/mail.metainfo.xml.in:170 data/mail.metainfo.xml.in:183
+#: data/mail.metainfo.xml.in:77 data/mail.metainfo.xml.in:102
+#: data/mail.metainfo.xml.in:133 data/mail.metainfo.xml.in:147
+#: data/mail.metainfo.xml.in:168 data/mail.metainfo.xml.in:189
 msgid "Updated translations"
 msgstr "עודכנו תרגומים"
 
-#: data/mail.metainfo.xml.in:107
+#: data/mail.metainfo.xml.in:93
+msgid "Ability to create multiple signatures and set defaults per account"
+msgstr "יכולת ליצור מספר חתימות ולהגדיר ברירות מחדל לכל חשבון בנפרד"
+
+#: data/mail.metainfo.xml.in:94
+msgid "Add support for inline images in the composer"
+msgstr "הוספת תמיכה לתמונות פנימיות במחבר ההודעות"
+
+#: data/mail.metainfo.xml.in:95
+msgid "Add support for renaming folders"
+msgstr "הוספת תמיכה בשינוי שמות תיקיות"
+
+#: data/mail.metainfo.xml.in:96
+msgid "Move settings menu to the mailboxes pane"
+msgstr "העברת תפריט ההגדרות לסרגל תיבות הדוא״ל"
+
+#: data/mail.metainfo.xml.in:97
+msgid "Use the FileChooser portal"
+msgstr "להשתמש בשער בורר הקבצים"
+
+#: data/mail.metainfo.xml.in:98
+msgid "Improve network availability handling"
+msgstr "שיפור טיפול בזמינות הרשת"
+
+#: data/mail.metainfo.xml.in:99
+msgid "Fix issues with fetching e-mail when Mail is not autostarted"
+msgstr "תוקנו תקלות במשיכת דוא״ל כשהיישום לא פועל בהתחלה אוטומטית"
+
+#: data/mail.metainfo.xml.in:100
+msgid "Notify the user when a calendar event is included in a message"
+msgstr "שליחת הודעה למשתמש כאשר אירוע לוח שנה מצורף להודעה"
+
+#: data/mail.metainfo.xml.in:101
+msgid "Improve performance when switching between folders"
+msgstr "שופרו הביצועים במעבר בין תיקיות"
+
+#: data/mail.metainfo.xml.in:126
 msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
@@ -121,92 +122,87 @@ msgstr ""
 "תצוגת קבלת הפנים הוסרה כאשר נוסף חשבון לחשבונות המקוונים מבלי צורך להפעיל את "
 "יישום הדואר מחדש"
 
-#: data/mail.metainfo.xml.in:108
+#: data/mail.metainfo.xml.in:127
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
 msgstr "חיבור הודעה חדשה תמיד מופיע כחלון חדש וכולל קיצורי דרך נוספים"
 
-#: data/mail.metainfo.xml.in:109
+#: data/mail.metainfo.xml.in:128
 msgid "The search filter menu now appears next to the search bar"
 msgstr "תפריט מסנן החיפושים מופיע מעתה ליד סרגל החיפוש"
 
-#: data/mail.metainfo.xml.in:110
+#: data/mail.metainfo.xml.in:129
 msgid "HeaderBars appear to float above content when scrolled"
 msgstr "סרגלי כותרת נראים צפים מעל תוכן כשגוללים אותם"
 
-#: data/mail.metainfo.xml.in:111
+#: data/mail.metainfo.xml.in:130
 msgid "Fix a potential crash with empty messages"
 msgstr "תוקנה קריסה שמתרחשת לפעמים עם הודעות ריקות"
 
-#: data/mail.metainfo.xml.in:112
+#: data/mail.metainfo.xml.in:131
 msgid "Stop resizing from cutting off the message list"
 msgstr "שינוי גודל לא חותך עוד את רשימת ההודעות"
 
-#: data/mail.metainfo.xml.in:113
+#: data/mail.metainfo.xml.in:132
 msgid "Performance improvements"
 msgstr "שיפורי ביצועים"
 
-#: data/mail.metainfo.xml.in:139 data/mail.metainfo.xml.in:161
-#: data/mail.metainfo.xml.in:177
+#: data/mail.metainfo.xml.in:158 data/mail.metainfo.xml.in:180
 msgid "Fixes:"
 msgstr "תיקונים:"
 
-#: data/mail.metainfo.xml.in:141
+#: data/mail.metainfo.xml.in:160
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr "תוקנה שגיאה שגרמה לטעינת חשבונות דוא״ל מספר פעמים"
 
-#: data/mail.metainfo.xml.in:142
+#: data/mail.metainfo.xml.in:161
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr "תוקנה תקלה שגרמה לתוכנת הדוא״ל לקרוס לעתים קרובות"
 
-#: data/mail.metainfo.xml.in:143
+#: data/mail.metainfo.xml.in:162
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "הצגת הנמען בתיקיית ההודעות שנשלחו במקום השולח"
 
-#: data/mail.metainfo.xml.in:147
+#: data/mail.metainfo.xml.in:166
 msgid "Updated app icon"
 msgstr "סמל היישום עודכן"
 
-#: data/mail.metainfo.xml.in:148
+#: data/mail.metainfo.xml.in:167
 msgid "New design"
 msgstr "עיצוב חדש"
 
-#: data/mail.metainfo.xml.in:156
+#: data/mail.metainfo.xml.in:175
 msgid "New features:"
 msgstr "יכולות חדשות:"
 
-#: data/mail.metainfo.xml.in:158
+#: data/mail.metainfo.xml.in:177
 msgid "Use message subject for composer window title"
 msgstr "נושא ההודעה משמש ככותרת חלון כתיבת הודעות"
 
-#: data/mail.metainfo.xml.in:159
+#: data/mail.metainfo.xml.in:178
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr "נוספה תמיכה בתיבת דואר נכנס מאוחדת לחשבונות Microsoft 365"
 
-#: data/mail.metainfo.xml.in:163
+#: data/mail.metainfo.xml.in:182
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr "תוקנה שגיאה שגרמה למעקב אחר הדואר הנכנס ברקע לקרוס"
 
-#: data/mail.metainfo.xml.in:164
+#: data/mail.metainfo.xml.in:183
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr "הוסרה כתובת מוען כפולה בעת כתיבת הודעה"
 
-#: data/mail.metainfo.xml.in:165
+#: data/mail.metainfo.xml.in:184
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr "תוקן קיפאון בעת העברת ההודעה האחרונה בתיקייה לארכיון"
 
-#: data/mail.metainfo.xml.in:169
+#: data/mail.metainfo.xml.in:188
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "השם של Office 365 השתנה ל־Microsoft 365 כדי לענות על המיתוג המחודש של "
 "Microsoft"
-
-#: data/mail.metainfo.xml.in:179
-msgid "Fix a potential crash while loading messages"
-msgstr "תוקנה קריסה שמתרחשת לפעמים בעת טעינת הודעות"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -215,6 +211,12 @@ msgstr "דואר;דוא״ל;דואר אלקטרוני;מייל;דוא\"ל;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "כתיבת חדשה"
+
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary בע״מ"
+
+#~ msgid "Fix a potential crash while loading messages"
+#~ msgstr "תוקנה קריסה שמתרחשת לפעמים בעת טעינת הודעות"
 
 #~ msgid "Secondary-click menu on the conversations list"
 #~ msgstr "תפריט כפתור משני ברשימת הדיונים"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 14:24+0000\n"
+"POT-Creation-Date: 2024-09-01 10:33+0000\n"
 "PO-Revision-Date: 2023-08-08 09:08+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/mail/extra/pl/>\n"
@@ -64,63 +64,64 @@ msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 "Współpracuje z Gmailem, Pocztą Yahoo! oraz innymi popularnymi serwerami IMAP"
 
-#: data/mail.metainfo.xml.in:65
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
-
-#: data/mail.metainfo.xml.in:72 data/mail.metainfo.xml.in:105
-#: data/mail.metainfo.xml.in:126 data/mail.metainfo.xml.in:145
-#: data/mail.metainfo.xml.in:167 data/mail.metainfo.xml.in:181
+#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:91
+#: data/mail.metainfo.xml.in:124 data/mail.metainfo.xml.in:145
+#: data/mail.metainfo.xml.in:164 data/mail.metainfo.xml.in:186
 msgid "Improvements:"
 msgstr "Ulepszenia:"
 
-#: data/mail.metainfo.xml.in:74
+#: data/mail.metainfo.xml.in:76
+msgid ""
+"Use the actual recipients of a message as sender when replying or forwarding"
+msgstr ""
+
+#: data/mail.metainfo.xml.in:77 data/mail.metainfo.xml.in:102
+#: data/mail.metainfo.xml.in:133 data/mail.metainfo.xml.in:147
+#: data/mail.metainfo.xml.in:168 data/mail.metainfo.xml.in:189
+msgid "Updated translations"
+msgstr "Zaktualizowane tłumaczenia"
+
+#: data/mail.metainfo.xml.in:93
 msgid "Ability to create multiple signatures and set defaults per account"
 msgstr ""
 "Możliwość stworzenia kilku podpisów i ustawienia domyślnych dla każdego konta"
 
-#: data/mail.metainfo.xml.in:75
+#: data/mail.metainfo.xml.in:94
 msgid "Add support for inline images in the composer"
 msgstr "Dodano wsparcie dla obrazków w tekście w kompozytorze"
 
-#: data/mail.metainfo.xml.in:76
+#: data/mail.metainfo.xml.in:95
 msgid "Add support for renaming folders"
 msgstr "Dodano wsparcie dla zmieniania nazwy folderów"
 
-#: data/mail.metainfo.xml.in:77
+#: data/mail.metainfo.xml.in:96
 msgid "Move settings menu to the mailboxes pane"
 msgstr "Przeniesiono menu ustawień do powierzchni skrzynek pocztowych"
 
-#: data/mail.metainfo.xml.in:78
+#: data/mail.metainfo.xml.in:97
 msgid "Use the FileChooser portal"
 msgstr "Używany jest teraz portal FileChooser"
 
-#: data/mail.metainfo.xml.in:79
+#: data/mail.metainfo.xml.in:98
 msgid "Improve network availability handling"
 msgstr "Ulepszono obsługę dostępności sieci"
 
-#: data/mail.metainfo.xml.in:80
+#: data/mail.metainfo.xml.in:99
 msgid "Fix issues with fetching e-mail when Mail is not autostarted"
 msgstr ""
 "Naprawiono problemy z pobieraniem e-maili gdy Poczta nie jest autouruchamiana"
 
-#: data/mail.metainfo.xml.in:81
+#: data/mail.metainfo.xml.in:100
 msgid "Notify the user when a calendar event is included in a message"
 msgstr ""
 "Powiadomienie dla użytkonika gdy wydarzenie kalendarza jest dołączone w "
 "wiadomości"
 
-#: data/mail.metainfo.xml.in:82
+#: data/mail.metainfo.xml.in:101
 msgid "Improve performance when switching between folders"
 msgstr "Poprawiono wydajność przy przełączaniu między folderami"
 
-#: data/mail.metainfo.xml.in:83 data/mail.metainfo.xml.in:114
-#: data/mail.metainfo.xml.in:128 data/mail.metainfo.xml.in:149
-#: data/mail.metainfo.xml.in:170 data/mail.metainfo.xml.in:183
-msgid "Updated translations"
-msgstr "Zaktualizowane tłumaczenia"
-
-#: data/mail.metainfo.xml.in:107
+#: data/mail.metainfo.xml.in:126
 msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
@@ -128,7 +129,7 @@ msgstr ""
 "Widok powitalny jest usunięty po dodaniu konta w Kontach online bez potrzeby "
 "restartu aplikacji"
 
-#: data/mail.metainfo.xml.in:108
+#: data/mail.metainfo.xml.in:127
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
@@ -136,88 +137,83 @@ msgstr ""
 "Kompozytor jest teraz zawsze prezentowany jako nowe okno i posiada więcej "
 "skrótów klawiszowych"
 
-#: data/mail.metainfo.xml.in:109
+#: data/mail.metainfo.xml.in:128
 msgid "The search filter menu now appears next to the search bar"
 msgstr "Menu filtra do wyszukiwania pojawia się teraz obok paska wyszukiwania"
 
-#: data/mail.metainfo.xml.in:110
+#: data/mail.metainfo.xml.in:129
 msgid "HeaderBars appear to float above content when scrolled"
 msgstr "Paski główne zdają się unosić nad treścią podczas przewijania"
 
-#: data/mail.metainfo.xml.in:111
+#: data/mail.metainfo.xml.in:130
 msgid "Fix a potential crash with empty messages"
 msgstr "Naprawiono potencjalny błąd krytyczny przy pustych wiadomościach"
 
-#: data/mail.metainfo.xml.in:112
+#: data/mail.metainfo.xml.in:131
 msgid "Stop resizing from cutting off the message list"
 msgstr "Zmiana rozmiaru nie przycina już listy wiadomości"
 
-#: data/mail.metainfo.xml.in:113
+#: data/mail.metainfo.xml.in:132
 msgid "Performance improvements"
 msgstr "Ulepszenia wydajności"
 
-#: data/mail.metainfo.xml.in:139 data/mail.metainfo.xml.in:161
-#: data/mail.metainfo.xml.in:177
+#: data/mail.metainfo.xml.in:158 data/mail.metainfo.xml.in:180
 msgid "Fixes:"
 msgstr "Poprawki:"
 
-#: data/mail.metainfo.xml.in:141
+#: data/mail.metainfo.xml.in:160
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr "Naprawiono błąd przez który konta email ładowane były kilkakrotnie"
 
-#: data/mail.metainfo.xml.in:142
+#: data/mail.metainfo.xml.in:161
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr "Naprawiono problem przez który Poczta wyłączała się czasami sama"
 
-#: data/mail.metainfo.xml.in:143
+#: data/mail.metainfo.xml.in:162
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "Wyświetl odbiorcę zamiast nadawcy w folderze Wysłane"
 
-#: data/mail.metainfo.xml.in:147
+#: data/mail.metainfo.xml.in:166
 msgid "Updated app icon"
 msgstr "Zaktualizowano ikonę aplikacji"
 
-#: data/mail.metainfo.xml.in:148
+#: data/mail.metainfo.xml.in:167
 msgid "New design"
 msgstr "Nowy wygląd"
 
-#: data/mail.metainfo.xml.in:156
+#: data/mail.metainfo.xml.in:175
 msgid "New features:"
 msgstr "Nowe funkcje:"
 
-#: data/mail.metainfo.xml.in:158
+#: data/mail.metainfo.xml.in:177
 msgid "Use message subject for composer window title"
 msgstr "Temat wiadomości jest teraz użyty w tytule okna kompozycji"
 
-#: data/mail.metainfo.xml.in:159
+#: data/mail.metainfo.xml.in:178
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr "Dodano wsparcie dla Ujednoliconej Skrzynki w kontach Microsoft 365"
 
-#: data/mail.metainfo.xml.in:163
+#: data/mail.metainfo.xml.in:182
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
 "Naprawiono problem powodujący wyłączanie procesu monitorującego skrzynkę w "
 "tle"
 
-#: data/mail.metainfo.xml.in:164
+#: data/mail.metainfo.xml.in:183
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr "Usunięto zduplikowane adresy nadawcy przy komponowaniu wiadomości"
 
-#: data/mail.metainfo.xml.in:165
+#: data/mail.metainfo.xml.in:184
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
 "Naprawiono zawieszenie przy archiwizowaniu ostatniej wiadomości w folderze"
 
-#: data/mail.metainfo.xml.in:169
+#: data/mail.metainfo.xml.in:188
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 "Zmieniono nazwę Office 365 na Microsoft 365 by być zgodnym z marką Microsoftu"
-
-#: data/mail.metainfo.xml.in:179
-msgid "Fix a potential crash while loading messages"
-msgstr "Naprawiono potencjalny błąd krytyczny przy ładowaniu wiadomości"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -226,6 +222,12 @@ msgstr "Email;E-mail;Mail;Poczta;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Utwórz wiadomość"
+
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary, Inc."
+
+#~ msgid "Fix a potential crash while loading messages"
+#~ msgstr "Naprawiono potencjalny błąd krytyczny przy ładowaniu wiadomości"
 
 #~ msgid "Secondary-click menu on the conversations list"
 #~ msgstr "Menu po kliknięciu drugim przyciskiem myszy na liście konwersacji"
