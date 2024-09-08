@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-01 10:33+0000\n"
-"PO-Revision-Date: 2024-06-13 21:19+0000\n"
+"PO-Revision-Date: 2024-09-09 10:20+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/mail/extra/es/>\n"
 "Language: es\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
@@ -71,6 +71,8 @@ msgstr "Mejoras:"
 msgid ""
 "Use the actual recipients of a message as sender when replying or forwarding"
 msgstr ""
+"Ahora se utilizan los verdaderos destinatarios de un mensaje como remitentes "
+"al responder o reenviar un correo"
 
 #: data/mail.metainfo.xml.in:77 data/mail.metainfo.xml.in:102
 #: data/mail.metainfo.xml.in:133 data/mail.metainfo.xml.in:147
