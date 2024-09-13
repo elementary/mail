@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-01 10:33+0000\n"
-"PO-Revision-Date: 2016-08-06 15:00+0000\n"
-"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2024-09-13 00:58+0000\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
+"mail/extra/zh_Hant/>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
 msgid "Mail"
@@ -24,20 +26,19 @@ msgstr "郵件"
 
 #: data/mail.metainfo.xml.in:11 data/io.elementary.mail.desktop.in:4
 msgid "Send and receive mail"
-msgstr ""
+msgstr "傳送或收取郵件"
 
 #: data/mail.metainfo.xml.in:13
 msgid ""
 "Mail is designed to let you manage your email quickly and effortlessly. Its "
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
-msgstr ""
-"《郵件》的設計是要讓您以迅雷不及掩耳之速且不費吹灰之力地管理郵件。其介面依據"
-"對話分門別類，所以您可以一次閱讀整串前後討論內容而不必一封一封訊息點按。"
+msgstr "《郵件》設計來讓您簡單快速地管理您的郵件。其介面依據對話分門別類，讓您可以一"
+"次閱讀整串前後討論內容而不必一封一封訊息點開。"
 
 #: data/mail.metainfo.xml.in:15
 msgid "Lightweight mail client with full IMAP support"
-msgstr "輕量級郵件客戶端具備完整 IMAP 支援"
+msgstr "具備完整 IMAP 支援的輕量級郵件客戶端"
 
 #: data/mail.metainfo.xml.in:16
 msgid "Mail grouped into conversations, not a tree of threads"
@@ -52,159 +53,151 @@ msgid "Multiple account support"
 msgstr "多帳號支援"
 
 #: data/mail.metainfo.xml.in:19
-#, fuzzy
-#| msgid "Inline HTML composer that saves drafts to the server"
 msgid "Powerful HTML composer that saves drafts to the server"
-msgstr "行內 HTML 編寫器，可將草稿存至伺服器"
+msgstr "強大的 HTML 撰寫工具，且可將草稿存至伺服器"
 
 #: data/mail.metainfo.xml.in:20
-#, fuzzy
-#| msgid ""
-#| "Works with Gmail, Yahoo! Mail, Outlook.com (experimental), and other "
-#| "popular IMAP servers"
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
-msgstr ""
-"能搭配 Gmail、Yahoo! 信箱、Outlook.com（實驗中），以及其他熱門 IMAP 伺服器使"
-"用"
+msgstr "能搭配 Gmail、Yahoo! 信箱和其他常用的 IMAP 伺服器使用"
 
 #: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:91
 #: data/mail.metainfo.xml.in:124 data/mail.metainfo.xml.in:145
 #: data/mail.metainfo.xml.in:164 data/mail.metainfo.xml.in:186
 msgid "Improvements:"
-msgstr ""
+msgstr "改善項目："
 
 #: data/mail.metainfo.xml.in:76
 msgid ""
 "Use the actual recipients of a message as sender when replying or forwarding"
-msgstr ""
+msgstr "回覆或轉寄時使用原訊息實際的收件者作為新訊息的寄件者"
 
 #: data/mail.metainfo.xml.in:77 data/mail.metainfo.xml.in:102
 #: data/mail.metainfo.xml.in:133 data/mail.metainfo.xml.in:147
 #: data/mail.metainfo.xml.in:168 data/mail.metainfo.xml.in:189
 msgid "Updated translations"
-msgstr ""
+msgstr "翻譯更新"
 
 #: data/mail.metainfo.xml.in:93
 msgid "Ability to create multiple signatures and set defaults per account"
-msgstr ""
+msgstr "新增為各個帳號建立多個簽章並可設定預設值的功能"
 
 #: data/mail.metainfo.xml.in:94
 msgid "Add support for inline images in the composer"
-msgstr ""
+msgstr "在撰寫工具中新增對行內圖片的支援"
 
 #: data/mail.metainfo.xml.in:95
 msgid "Add support for renaming folders"
-msgstr ""
+msgstr "支援重新命名資料夾"
 
 #: data/mail.metainfo.xml.in:96
 msgid "Move settings menu to the mailboxes pane"
-msgstr ""
+msgstr "將設定選單移到信箱面板中"
 
 #: data/mail.metainfo.xml.in:97
 msgid "Use the FileChooser portal"
-msgstr ""
+msgstr "使用檔案選擇器 portal"
 
 #: data/mail.metainfo.xml.in:98
 msgid "Improve network availability handling"
-msgstr ""
+msgstr "改善對於目前網路連線狀態的處理"
 
 #: data/mail.metainfo.xml.in:99
 msgid "Fix issues with fetching e-mail when Mail is not autostarted"
-msgstr ""
+msgstr "修正《郵件》沒有自動啟動時取得郵件會發生的問題"
 
 #: data/mail.metainfo.xml.in:100
 msgid "Notify the user when a calendar event is included in a message"
-msgstr ""
+msgstr "訊息中包含行事曆活動時告知使用者"
 
 #: data/mail.metainfo.xml.in:101
 msgid "Improve performance when switching between folders"
-msgstr ""
+msgstr "改善切換資料夾時的效能"
 
 #: data/mail.metainfo.xml.in:126
 msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
-msgstr ""
+msgstr "在線上帳號設定中加入帳號之後就關閉歡迎畫面，而不用重新啟動《郵件》"
 
 #: data/mail.metainfo.xml.in:127
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
-msgstr ""
+msgstr "撰寫工具總是以新視窗顯示，並提供更多鍵盤快捷鍵"
 
 #: data/mail.metainfo.xml.in:128
 msgid "The search filter menu now appears next to the search bar"
-msgstr ""
+msgstr "將搜尋過濾選單移到搜尋列旁邊"
 
 #: data/mail.metainfo.xml.in:129
 msgid "HeaderBars appear to float above content when scrolled"
-msgstr ""
+msgstr "讓標題列在捲動後看起來浮動在內容上方"
 
 #: data/mail.metainfo.xml.in:130
 msgid "Fix a potential crash with empty messages"
-msgstr ""
+msgstr "修正訊息空白時一個可能發生的崩潰"
 
 #: data/mail.metainfo.xml.in:131
 msgid "Stop resizing from cutting off the message list"
-msgstr ""
+msgstr "修正調整視窗大小之後訊息列表被切掉的問題"
 
 #: data/mail.metainfo.xml.in:132
 msgid "Performance improvements"
-msgstr ""
+msgstr "效能改善"
 
 #: data/mail.metainfo.xml.in:158 data/mail.metainfo.xml.in:180
 msgid "Fixes:"
-msgstr ""
+msgstr "修正："
 
 #: data/mail.metainfo.xml.in:160
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
-msgstr ""
+msgstr "修正郵件帳號會被載入多次的問題"
 
 #: data/mail.metainfo.xml.in:161
 msgid "Fixed a bug which caused Mail to crash occasionally"
-msgstr ""
+msgstr "修正造成《郵件》時不時會崩潰的問題"
 
 #: data/mail.metainfo.xml.in:162
 msgid "Display recipient in Sent folder instead of sender"
-msgstr ""
+msgstr "在寄件備份資料夾顯示收件者而非寄件者"
 
 #: data/mail.metainfo.xml.in:166
 msgid "Updated app icon"
-msgstr ""
+msgstr "更新應用程式圖示"
 
 #: data/mail.metainfo.xml.in:167
 msgid "New design"
-msgstr ""
+msgstr "新設計"
 
 #: data/mail.metainfo.xml.in:175
 msgid "New features:"
-msgstr ""
+msgstr "新功能："
 
 #: data/mail.metainfo.xml.in:177
 msgid "Use message subject for composer window title"
-msgstr ""
+msgstr "在撰寫工具視窗標題使用訊息主旨"
 
 #: data/mail.metainfo.xml.in:178
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
-msgstr ""
+msgstr "新增對 Microsoft 365 帳號的整合收件匣的支援"
 
 #: data/mail.metainfo.xml.in:182
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
-msgstr ""
+msgstr "修正造成背景寄件匣確認工作崩潰的錯誤"
 
 #: data/mail.metainfo.xml.in:183
 msgid "Removed duplicate sender addresses when composing a message"
-msgstr ""
+msgstr "撰寫訊息時移除重複的寄件者地址"
 
 #: data/mail.metainfo.xml.in:184
 msgid "Fix a freeze when archiving the last message in a folder"
-msgstr ""
+msgstr "修正將資料夾中最後一個訊息封存時應用程式會鎖住的問題"
 
 #: data/mail.metainfo.xml.in:188
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
-msgstr ""
+msgstr "改稱 Office 365 為 Microsoft 365 以符合微軟的品牌名稱變更"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
@@ -212,7 +205,7 @@ msgstr "Email;E-mail;Mail;電子郵件;郵件;電郵;"
 
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
-msgstr "編寫訊息"
+msgstr "撰寫訊息"
 
 #~ msgid "Desktop notifications"
 #~ msgstr "桌面通知"
