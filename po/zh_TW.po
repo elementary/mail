@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-01 10:33+0000\n"
-"PO-Revision-Date: 2021-10-05 20:07+0000\n"
-"Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
+"PO-Revision-Date: 2024-09-13 00:58+0000\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "mail/mail/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -19,14 +19,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: src/Application.vala:212
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
-msgstr ""
+msgstr "《郵件》會在此裝置開機時自動啟動，並在其視窗關閉時繼續執行，以便在有新信件時"
+"傳送通知。"
 
 #: src/Composer.vala:88 src/MessageList/MessageListItem.vala:102
 msgid "From:"
@@ -57,10 +58,8 @@ msgid "Bcc:"
 msgstr "密件副本："
 
 #: src/Composer.vala:198
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert Image"
-msgstr "插入連結"
+msgstr "插入圖片"
 
 #: src/Composer.vala:224
 msgid "Delete draft"
@@ -71,10 +70,8 @@ msgid "Attach file"
 msgstr "附上檔案"
 
 #: src/Composer.vala:243
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert Signature…"
-msgstr "插入連結"
+msgstr "插入簽章…"
 
 #: src/Composer.vala:249
 msgid "Send"
@@ -89,10 +86,8 @@ msgid "Choose a file"
 msgstr "選擇一個檔案"
 
 #: src/Composer.vala:445
-#, fuzzy
-#| msgid "_Attach"
 msgid "Attach"
-msgstr "附加(_A)"
+msgstr "附加"
 
 #: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
 #: src/Dialogs/InsertLinkDialog.vala:66
@@ -101,36 +96,28 @@ msgid "Cancel"
 msgstr "取消"
 
 #: src/Composer.vala:462
-#, fuzzy
-#| msgid "Show Images"
 msgid "Images"
-msgstr "顯示影像"
+msgstr "圖片"
 
 #: src/Composer.vala:466
-#, fuzzy
-#| msgid "Choose a file"
 msgid "Choose an image"
-msgstr "選擇一個檔案"
+msgstr "選擇圖片"
 
 #: src/Composer.vala:469
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Insert"
-msgstr "插入連結"
+msgstr "插入"
 
 #: src/Composer.vala:498
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to insert image"
-msgstr "刪除草稿"
+msgstr "無法插入圖片"
 
 #: src/Composer.vala:499
 msgid "There was an unexpected error while trying to insert the image."
-msgstr ""
+msgstr "嘗試插入圖片時發生非預期的錯誤。"
 
 #: src/Composer.vala:667
 msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%Y年%b%-e日 %a %p %-l:%M"
+msgstr "%Y年%-m月%-e日 %A %p %-l:%M"
 
 #: src/Composer.vala:697
 #, c-format
@@ -176,13 +163,10 @@ msgid ""
 msgstr "你不能還原此動作，亦不能復原已被刪除的草稿。"
 
 #: src/Composer.vala:768
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Delete Draft"
 msgstr "刪除草稿"
 
 #: src/Composer.vala:792
-#, fuzzy
 msgid "Send without subject?"
 msgstr "是否要寄送主旨空白的訊息？"
 
@@ -208,35 +192,31 @@ msgstr "寄出的訊息未被保存"
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
-msgstr ""
+msgstr "訊息已傳送，但是副本並未存入寄件備份資料夾。"
 
 #: src/Composer.vala:849
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to send message"
-msgstr "刪除草稿"
+msgstr "無法傳送訊息"
 
 #: src/Composer.vala:850
 msgid "There was an unexpected error while sending your message."
-msgstr ""
+msgstr "傳送訊息時發生非預期的錯誤。"
 
 #: src/Composer.vala:954 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
-msgstr ""
+msgstr "編輯簽章…"
 
 #: src/Composer.vala:958
 msgid "None"
 msgstr "無"
 
 #: src/Composer.vala:1147
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to save draft"
-msgstr "刪除草稿"
+msgstr "無法儲存草稿"
 
 #: src/Composer.vala:1148
 msgid "There was an unexpected error while saving your draft."
-msgstr ""
+msgstr "儲存草稿時發生非預期的錯誤。"
 
 #: src/EditorToolbar.vala:55
 msgid "Bold"
@@ -269,21 +249,18 @@ msgstr "%s 至 %s"
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:165
-#, fuzzy, c-format
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
+#, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "%d 封新訊息"
+msgstr[0] "%u 封新訊息"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
 #: src/InboxMonitor.vala:177
-#, fuzzy, c-format
-#| msgid "Always Show from Sender"
+#, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] "總是顯示寄件者"
+msgstr[0] "來自 %2$u 人的 %1$s"
 
 #: src/MainWindow.vala:80
 msgid "Mail"
@@ -295,32 +272,22 @@ msgid "Undo"
 msgstr "復原"
 
 #: src/MainWindow.vala:285
-#, fuzzy
-#| msgid "Message Deleted"
-#| msgid_plural "Messages Deleted"
 msgid "Message Archived"
 msgid_plural "Messages Archived"
-msgstr[0] "訊息已被刪除"
+msgstr[0] "訊息已封存"
 
 #: src/MainWindow.vala:289
-#, fuzzy
-#| msgid "Unstar message"
 msgid "Couldn't archive message"
-msgstr "取消訊息標星"
+msgstr "無法封存訊息"
 
 #: src/MainWindow.vala:302
-#, fuzzy
-#| msgid "Message Deleted"
-#| msgid_plural "Messages Deleted"
 msgid "Message Moved"
 msgid_plural "Messages Moved"
-msgstr[0] "訊息已被刪除"
+msgstr[0] "訊息已移動"
 
 #: src/MainWindow.vala:306
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Couldn't move message"
-msgstr "刪除草稿"
+msgstr "無法移動訊息"
 
 #: src/MainWindow.vala:319
 msgid "Message Deleted"
@@ -329,7 +296,7 @@ msgstr[0] "訊息已被刪除"
 
 #: src/MainWindow.vala:323
 msgid "Couldn't delete message"
-msgstr ""
+msgstr "無法刪除訊息"
 
 #: src/WelcomeView.vala:45
 msgid "Connect an Account"
@@ -337,55 +304,53 @@ msgstr "連接帳號"
 
 #: src/WelcomeView.vala:52
 msgid "Mail uses email accounts configured in System Settings."
-msgstr "「郵件」使用系統設定中的電子郵件帳號。"
+msgstr "《郵件》使用系統設定值中所設定的電子郵件帳號。"
 
 #: src/WelcomeView.vala:59
 msgid "Online Accounts…"
 msgstr "線上帳號…"
 
 #: src/Backend/Account.vala:48
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Unable to connect"
-msgstr "刪除草稿"
+msgstr "無法連接"
 
 #: src/Backend/Account.vala:49
 msgid "There was an unexpected error while trying to connect to the server."
-msgstr ""
+msgstr "嘗試連接到伺服器時發生非預期的錯誤。"
 
 #: src/Backend/MoveOperation.vala:65
 #, c-format
 msgid "Moving messages… (%u remaining)"
-msgstr ""
+msgstr "訊息移動中…（剩下 %u 封）"
 
 #: src/Backend/MoveOperation.vala:98
 msgid "No Archive folder is configured."
-msgstr ""
+msgstr "未設定封存資料夾。"
 
 #: src/Backend/MoveOperation.vala:126
 msgid "The destination folder was not found."
-msgstr ""
+msgstr "找不到目的地資料夾。"
 
 #: src/Backend/MoveOperation.vala:130
 msgid "The source folder is the destination folder."
-msgstr ""
+msgstr "來源資料夾與目的地資料夾相同。"
 
 #: src/Backend/Session.vala:642
 msgid "New Signature"
-msgstr ""
+msgstr "新增簽章"
 
 #: src/Backend/ContactManager.vala:88 src/Backend/ContactManager.vala:122
 #, c-format
 msgid "Couldn't add “%s” to addressbook"
-msgstr ""
+msgstr "無法將「%s」加入通訊錄"
 
 #: src/Backend/ContactManager.vala:89
 msgid "No addressbook available."
-msgstr ""
+msgstr "無可用的通訊錄。"
 
 #: src/Backend/ContactManager.vala:123
 msgid "Operation failed."
-msgstr ""
+msgstr "操作失敗了。"
 
 #: src/ConversationList/ConversationItemModel.vala:74
 #: src/ConversationList/ConversationItemModel.vala:112
@@ -404,36 +369,24 @@ msgid "Search Mail"
 msgstr "搜尋郵件"
 
 #: src/ConversationList/ConversationList.vala:90
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide read conversations"
-msgstr "標記對話"
+msgstr "隱藏已讀對話"
 
 #: src/ConversationList/ConversationList.vala:92
-#, fuzzy
-#| msgid "Mark conversations"
 msgid "Hide unstarred conversations"
-msgstr "標記對話"
+msgstr "隱藏未加星號的對話"
 
 #: src/ConversationList/ConversationList.vala:109
-#, fuzzy
-#| msgid "Delete Conversation"
 msgid "Filter Conversations"
-msgstr "刪除對話"
+msgstr "過濾對話"
 
 #: src/ConversationList/ConversationList.vala:132
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
 msgid "Fetch new messages"
-msgstr "%d 封新訊息"
+msgstr "取得新訊息"
 
 #: src/ConversationList/ConversationList.vala:139
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
 msgid "Fetching new messages…"
-msgstr "%d 封新訊息"
+msgstr "正在取得新訊息…"
 
 #: src/ConversationList/ConversationListItem.vala:94
 msgid "Archive"
@@ -444,29 +397,22 @@ msgid "Trash"
 msgstr "垃圾桶"
 
 #: src/ConversationList/ConversationListItem.vala:181
-#, fuzzy
 msgid "Unread"
-msgstr "%d 封未讀"
+msgstr "未讀"
 
 #: src/ConversationList/ConversationListItem.vala:194
-#, fuzzy
 msgid "Replied"
-msgstr "回覆"
+msgstr "已回覆"
 
 #: src/ConversationList/ConversationListItem.vala:198
-#, fuzzy
 msgid "Forwarded"
-msgstr "轉寄"
+msgstr "已轉寄"
 
 #: src/ConversationList/ConversationListItem.vala:218
-#, fuzzy
-#| msgid "Move conversations to Trash"
 msgid "Move To Trash"
-msgstr "移動對話至垃圾桶"
+msgstr "移至垃圾桶"
 
 #: src/ConversationList/ConversationListItem.vala:229
-#, fuzzy
-#| msgid "Mark as Unread"
 msgid "Mark As Unread"
 msgstr "標記為未讀"
 
@@ -478,111 +424,95 @@ msgstr "標記為已讀"
 #: src/ConversationList/ConversationListItem.vala:249
 #: src/MessageList/MessageList.vala:65
 msgid "Star"
-msgstr "增加星星"
+msgstr "加上星號"
 
 #: src/ConversationList/ConversationListItem.vala:258
 #: src/MessageList/MessageList.vala:71
 msgid "Unstar"
-msgstr "取消星星"
+msgstr "移除星號"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
 msgstr "URL:"
 
 #: src/Dialogs/InsertLinkDialog.vala:39
-#, fuzzy
 msgid "Link Text:"
-msgstr "豐富文字(_R)"
+msgstr "連結文字："
 
 #: src/Dialogs/InsertLinkDialog.vala:45
-#, fuzzy
 msgid "Example Website"
-msgstr "網站"
+msgstr "輸入網站名稱"
 
 #: src/Dialogs/AliasDialog/Alias.vala:52
 msgid "John Doe"
-msgstr ""
+msgstr "無名氏"
 
 #: src/Dialogs/AliasDialog/Alias.vala:56
-#, fuzzy
-#| msgid "N_ame:"
 msgid "Name"
-msgstr "名稱(_A)："
+msgstr "名稱"
 
 #: src/Dialogs/AliasDialog/Alias.vala:75
-#, fuzzy
-#| msgid "E_mail address:"
 msgid "E-mail Address"
-msgstr "電子郵件位址(_M)："
+msgstr "電子郵件位址"
 
 #: src/Dialogs/AliasDialog/Alias.vala:80
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Delete alias"
-msgstr "刪除草稿"
+msgstr "刪除別名"
 
 #: src/Dialogs/AliasDialog/Alias.vala:100
-#, fuzzy
-#| msgid "Edit Draft"
 msgid "Edit alias"
-msgstr "編輯草稿"
+msgstr "編輯別名"
 
 #: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
-msgstr ""
+msgstr "名稱未設定"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:33
 msgid "No Aliases"
-msgstr ""
+msgstr "無別名"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:37
 msgid "Add aliases using the button in the toolbar below"
-msgstr ""
+msgstr "用下方工具列中的按鈕來新增別名"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:67
 msgid "Add Alias…"
-msgstr ""
+msgstr "新增別名…"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:104
 msgid "Aliases"
-msgstr ""
+msgstr "別名"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:108
-#, fuzzy
-#| msgid "_Close"
 msgid "Close"
-msgstr "關閉(_C)"
+msgstr "關閉"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:178
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
 #, c-format
 msgid "'%s' deleted"
-msgstr ""
+msgstr "「%s」已刪除"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
-#, fuzzy
-#| msgid "Insert Link"
 msgid "No Signatures"
-msgstr "插入連結"
+msgstr "無簽章"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
 msgid "Add signatures using the button in the toolbar below"
-msgstr ""
+msgstr "用下方工具列中的按鈕來新增簽章"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Create Signature"
-msgstr "插入連結"
+msgstr "建立簽章"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
 msgid "Title"
-msgstr ""
+msgstr "標題"
 
 #. Work around a styling issue
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
 msgid "For example “Work” or “Personal”"
-msgstr ""
+msgstr "例如「工作」或「個人」"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
 msgid "Delete"
@@ -590,22 +520,19 @@ msgstr "刪除"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
 msgid "Set Default For…"
-msgstr ""
+msgstr "設為預設…"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
-#, fuzzy
-#| msgid "Insert Link"
 msgid "Signature"
-msgstr "插入連結"
+msgstr "簽章"
 
 #: src/FoldersView/AccountSourceItem.vala:154
 msgid "Edit Aliases…"
-msgstr ""
+msgstr "編輯別名…"
 
 #: src/FoldersView/FoldersListView.vala:47
-#, fuzzy
 msgid "Compose new message"
-msgstr "編撰新訊息"
+msgstr "撰寫新訊息"
 
 #: src/FoldersView/FoldersListView.vala:59
 msgid "Always Show Remote Images"
@@ -620,68 +547,56 @@ msgid "Menu"
 msgstr "選單"
 
 #: src/FoldersView/FoldersListView.vala:146
-#, fuzzy
-#| msgid "Unable to validate:\n"
 msgid "Unable to open System Settings"
-msgstr "無法成功驗證：\n"
+msgstr "無法開啟系統設定值"
 
 #: src/FoldersView/FoldersListView.vala:147
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
-msgstr ""
+msgstr "請手動開啟系統設定或是安裝 Evolution 來設定線上帳號。"
 
 #: src/FoldersView/FolderSourceItem.vala:52
 msgid "Refresh folder"
 msgstr "重新整理"
 
 #: src/FoldersView/FolderSourceItem.vala:57
-#, fuzzy
-#| msgid "Refresh folder"
 msgid "Rename folder"
-msgstr "重新整理"
+msgstr "重新命名資料夾"
 
 #: src/FoldersView/FolderSourceItem.vala:161
 #: src/FoldersView/FolderSourceItem.vala:190
 #: src/FoldersView/FolderSourceItem.vala:208
 #, c-format
 msgid "Couldn't rename “%s”"
-msgstr ""
+msgstr "無法重新命名「%s」"
 
 #: src/FoldersView/FolderSourceItem.vala:162
 msgid "Folder names cannot contain “/”"
-msgstr ""
+msgstr "資料夾名稱中不能包含 \"/\""
 
 #: src/FoldersView/FolderSourceItem.vala:191
 #, c-format
 msgid "A folder named “%s” already exists"
-msgstr ""
+msgstr "名為「%s」的資料夾已經存在"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
-#, fuzzy
-#| msgid "Inbox"
 msgctxt "Inbox Folder"
 msgid "Inbox"
-msgstr "收信匣"
+msgstr "收件匣"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:42
-#, fuzzy
-#| msgid "Archive"
 msgctxt "Archive Folder"
 msgid "Archive"
 msgstr "封存"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent Mail"
 msgctxt "Sent Folder"
 msgid "Sent"
-msgstr "已寄郵件"
+msgstr "寄件備份"
 
 #: src/FoldersView/SessionSourceItem.vala:28
-#, fuzzy
-#| msgid "All Mail"
 msgid "All Mailboxes"
-msgstr "所有郵件"
+msgstr "所有信箱"
 
 #: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:209
 msgid "Reply"
@@ -704,20 +619,16 @@ msgid "Mark Conversation"
 msgstr "標記對話"
 
 #: src/MessageList/MessageList.vala:92
-#, fuzzy
-#| msgid "Move conversation"
-#| msgid_plural "Move conversations"
 msgid "Move Conversation to…"
-msgstr "搬移對話"
+msgstr "將對話移動到…"
 
 #: src/MessageList/MessageList.vala:101
-#, fuzzy
 msgid "Move conversations to archive"
-msgstr "搬移對話"
+msgstr "將對話封存"
 
 #: src/MessageList/MessageList.vala:109
 msgid "Move conversations to Trash"
-msgstr "移動對話至垃圾桶"
+msgstr "將對話移至垃圾桶"
 
 #: src/MessageList/MessageList.vala:124
 msgid "No Message Selected"
@@ -727,21 +638,21 @@ msgstr "未選取任何訊息"
 #: src/MessageList/MessageListItem.vala:189
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s的%s"
 
 #: src/MessageList/MessageListItem.vala:197
 #: src/MessageList/MessageListItem.vala:402
 msgid "Unstar message"
-msgstr "取消訊息標星"
+msgstr "從訊息移除星號"
 
 #: src/MessageList/MessageListItem.vala:200
 #: src/MessageList/MessageListItem.vala:398
 msgid "Star message"
-msgstr "將訊息標星"
+msgstr "為訊息標上星號"
 
 #: src/MessageList/MessageListItem.vala:220
 msgid "Print…"
-msgstr "列印..."
+msgstr "列印…"
 
 #: src/MessageList/MessageListItem.vala:230
 msgid "More"
@@ -749,17 +660,15 @@ msgstr "更多"
 
 #: src/MessageList/MessageListItem.vala:279
 msgid "Open in Calendar"
-msgstr ""
+msgstr "在行事曆中開啟"
 
 #: src/MessageList/MessageListItem.vala:285
-#, fuzzy
-#| msgid "This message contains remote images."
 msgid "This message contains a Calendar Event."
-msgstr "此訊息包含遠端影像。"
+msgstr "此訊息包含行事曆活動。"
 
 #: src/MessageList/MessageListItem.vala:295
 msgid "Show Images"
-msgstr "顯示影像"
+msgstr "顯示圖片"
 
 #: src/MessageList/MessageListItem.vala:296
 msgid "Always Show from Sender"
@@ -767,7 +676,7 @@ msgstr "總是顯示寄件者"
 
 #: src/MessageList/MessageListItem.vala:301
 msgid "This message contains remote images."
-msgstr "此訊息包含遠端影像。"
+msgstr "此訊息包含遠端圖片。"
 
 #: src/MessageList/MessageListItem.vala:340
 msgid "This message contains one or more attachments"
@@ -775,21 +684,17 @@ msgstr "這封訊息含有一項或多項附件"
 
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:424
-#, fuzzy
-#| msgid "New Message"
 msgid "Email Message"
-msgstr "新訊息"
+msgstr "郵件訊息"
 
 #: src/MessageList/MessageListItem.vala:446
-#, fuzzy
-#| msgid "Unable to validate:\n"
 msgid "Unable to print email"
-msgstr "無法成功驗證：\n"
+msgstr "無法列印郵件"
 
 #: src/MessageList/MessageListItem.vala:698
 #, c-format
 msgid "Trust and open “%s”?"
-msgstr ""
+msgstr "要信任並開啟「%s」嗎？"
 
 #: src/MessageList/MessageListItem.vala:699
 msgid ""
@@ -810,17 +715,16 @@ msgid "Save As…"
 msgstr "儲存為…"
 
 #: src/MessageList/AttachmentButton.vala:138
-#, fuzzy
 msgid "Save"
-msgstr "儲存(_S)"
+msgstr "儲存"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:22
 msgid "No mailboxes found"
-msgstr ""
+msgstr "沒有找到信箱"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
-msgstr ""
+msgstr "請嘗試變更搜尋內容"
 
 #, fuzzy
 #~| msgid "https://example.com"
