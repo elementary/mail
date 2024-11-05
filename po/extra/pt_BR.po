@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-01 10:33+0000\n"
-"PO-Revision-Date: 2021-07-22 10:38+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"PO-Revision-Date: 2024-11-05 17:24+0000\n"
+"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/mail/"
 "extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
@@ -74,46 +74,50 @@ msgstr ""
 #: data/mail.metainfo.xml.in:124 data/mail.metainfo.xml.in:145
 #: data/mail.metainfo.xml.in:164 data/mail.metainfo.xml.in:186
 msgid "Improvements:"
-msgstr ""
+msgstr "Melhorias:"
 
 #: data/mail.metainfo.xml.in:76
 msgid ""
 "Use the actual recipients of a message as sender when replying or forwarding"
 msgstr ""
+"Use os destinatários reais de uma mensagem como remetente ao responder ou "
+"encaminhar"
 
 #: data/mail.metainfo.xml.in:77 data/mail.metainfo.xml.in:102
 #: data/mail.metainfo.xml.in:133 data/mail.metainfo.xml.in:147
 #: data/mail.metainfo.xml.in:168 data/mail.metainfo.xml.in:189
 msgid "Updated translations"
-msgstr ""
+msgstr "Traduções atualizadas"
 
 #: data/mail.metainfo.xml.in:93
 msgid "Ability to create multiple signatures and set defaults per account"
-msgstr ""
+msgstr "Capacidade de criar múltiplas assinaturas e definir padrões por conta"
 
 #: data/mail.metainfo.xml.in:94
 msgid "Add support for inline images in the composer"
-msgstr ""
+msgstr "Adicione suporte para imagens embutidas no compositor"
 
 #: data/mail.metainfo.xml.in:95
 msgid "Add support for renaming folders"
-msgstr ""
+msgstr "Adicione suporte para renomear pastas"
 
 #: data/mail.metainfo.xml.in:96
 msgid "Move settings menu to the mailboxes pane"
-msgstr ""
+msgstr "Mover o menu de configurações para o painel de caixas de correio"
 
 #: data/mail.metainfo.xml.in:97
 msgid "Use the FileChooser portal"
-msgstr ""
+msgstr "Use o portal FileChooser"
 
 #: data/mail.metainfo.xml.in:98
 msgid "Improve network availability handling"
-msgstr ""
+msgstr "Melhore o tratamento da disponibilidade da rede"
 
 #: data/mail.metainfo.xml.in:99
 msgid "Fix issues with fetching e-mail when Mail is not autostarted"
 msgstr ""
+"Corrigir problemas de busca de e-mail quando o Mail não é iniciado "
+"automaticamente"
 
 #: data/mail.metainfo.xml.in:100
 msgid "Notify the user when a calendar event is included in a message"
