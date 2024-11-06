@@ -21,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-01 10:33+0000\n"
 "PO-Revision-Date: 2024-11-06 01:46+0000\n"
-"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
+"Last-Translator: Fulvio Leo <fulviokaldas@outlook.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/mail/"
 "mail/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -188,6 +188,8 @@ msgstr "Você deseja descartar permanentemente essa mensagem?"
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
+"Você não pode desfazer esta ação, nem recuperar seu rascunho depois de "
+"deletado."
 
 #: src/Composer.vala:768
 #, fuzzy
@@ -231,7 +233,7 @@ msgstr "Enviar mensagem com o corpo vazio?"
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
-msgstr ""
+msgstr "A mensagem foi enviada, mas uma cópia não foi salva na pasta Enviadas."
 
 #: src/Composer.vala:849
 #, fuzzy
