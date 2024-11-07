@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-01 10:33+0000\n"
-"PO-Revision-Date: 2024-11-05 17:24+0000\n"
+"PO-Revision-Date: 2024-11-07 17:45+0000\n"
 "Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/mail/"
 "extra/pt_BR/>\n"
@@ -122,62 +122,70 @@ msgstr ""
 #: data/mail.metainfo.xml.in:100
 msgid "Notify the user when a calendar event is included in a message"
 msgstr ""
+"Notificar o usuário quando um evento de calendário for incluído em uma "
+"mensagem"
 
 #: data/mail.metainfo.xml.in:101
 msgid "Improve performance when switching between folders"
-msgstr ""
+msgstr "Melhore o desempenho ao alternar entre pastas"
 
 #: data/mail.metainfo.xml.in:126
 msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
 msgstr ""
+"A visualização de boas-vindas é removida quando uma conta é adicionada em "
+"Contas Online sem a necessidade de reiniciar o Mail"
 
 #: data/mail.metainfo.xml.in:127
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
 msgstr ""
+"O compositor é sempre apresentado como uma nova janela e inclui mais atalhos "
+"de teclado"
 
 #: data/mail.metainfo.xml.in:128
 msgid "The search filter menu now appears next to the search bar"
-msgstr ""
+msgstr "O menu de filtro de pesquisa agora aparece próximo à barra de pesquisa"
 
 #: data/mail.metainfo.xml.in:129
 msgid "HeaderBars appear to float above content when scrolled"
-msgstr ""
+msgstr "HeaderBars parecem flutuar acima do conteúdo quando rolados"
 
 #: data/mail.metainfo.xml.in:130
 msgid "Fix a potential crash with empty messages"
-msgstr ""
+msgstr "Corrija uma possível falha com mensagens vazias"
 
 #: data/mail.metainfo.xml.in:131
 msgid "Stop resizing from cutting off the message list"
-msgstr ""
+msgstr "Pare de redimensionar e cortar a lista de mensagens"
 
 #: data/mail.metainfo.xml.in:132
 msgid "Performance improvements"
-msgstr ""
+msgstr "Melhorias de desempenho"
 
 #: data/mail.metainfo.xml.in:158 data/mail.metainfo.xml.in:180
 msgid "Fixes:"
-msgstr ""
+msgstr "Correções:"
 
 #: data/mail.metainfo.xml.in:160
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
+"Corrigido um erro que fazia com que as contas de e-mail fossem carregadas "
+"diversas vezes"
 
 #: data/mail.metainfo.xml.in:161
 msgid "Fixed a bug which caused Mail to crash occasionally"
-msgstr ""
+msgstr "Corrigido um bug que fazia o Mail travar ocasionalmente"
 
 #: data/mail.metainfo.xml.in:162
 msgid "Display recipient in Sent folder instead of sender"
-msgstr ""
+msgstr "Exibir destinatário na pasta Enviados em vez do remetente"
 
 #: data/mail.metainfo.xml.in:166
 msgid "Updated app icon"
-msgstr ""
+msgstr "Ícone do aplicativo atualizado"
 
 #: data/mail.metainfo.xml.in:167
 msgid "New design"
