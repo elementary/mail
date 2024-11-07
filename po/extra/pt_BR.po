@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-01 10:33+0000\n"
-"PO-Revision-Date: 2024-11-07 17:45+0000\n"
+"PO-Revision-Date: 2024-11-07 18:55+0000\n"
 "Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/mail/"
 "extra/pt_BR/>\n"
@@ -189,37 +189,43 @@ msgstr "Ícone do aplicativo atualizado"
 
 #: data/mail.metainfo.xml.in:167
 msgid "New design"
-msgstr ""
+msgstr "Novo design"
 
 #: data/mail.metainfo.xml.in:175
 msgid "New features:"
-msgstr ""
+msgstr "Novos recursos:"
 
 #: data/mail.metainfo.xml.in:177
 msgid "Use message subject for composer window title"
-msgstr ""
+msgstr "Use o assunto da mensagem para o título da janela do compositor"
 
 #: data/mail.metainfo.xml.in:178
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
+"Adicionado suporte para Caixa de Entrada Unificada para contas do Microsoft "
+"365"
 
 #: data/mail.metainfo.xml.in:182
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
+"Corrigido um erro que causava falha no monitoramento da caixa de entrada em "
+"segundo plano"
 
 #: data/mail.metainfo.xml.in:183
 msgid "Removed duplicate sender addresses when composing a message"
-msgstr ""
+msgstr "Endereços de remetentes duplicados removidos ao redigir uma mensagem"
 
 #: data/mail.metainfo.xml.in:184
 msgid "Fix a freeze when archiving the last message in a folder"
-msgstr ""
+msgstr "Corrija um congelamento ao arquivar a última mensagem em uma pasta"
 
 #: data/mail.metainfo.xml.in:188
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
+"Renomeado Office 365 para Microsoft 365 para seguir o exemplo da mudança de "
+"marca da Microsoft"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
