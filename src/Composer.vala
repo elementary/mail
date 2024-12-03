@@ -375,11 +375,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             foreach (unowned string param in params) {
                 var terms = param.split ("=");
                 if (terms.length == 2) {
-#if HAS_SOUP_3
                     result[terms[0].down ()] = (GLib.Uri.unescape_string (terms[1]));
-#else
-                    result[terms[0].down ()] = (Soup.URI.decode (terms[1]));
-#endif
                 } else {
                     critical ("Invalid mailto URL");
                 }
@@ -517,11 +513,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     private void on_mouse_target_changed (WebKit.WebView web_view, WebKit.HitTestResult hit_test, uint mods) {
         if (hit_test.context_is_link ()) {
             var url = hit_test.get_link_uri ();
-#if HAS_SOUP_3
             var hover_url = url != null ? GLib.Uri.unescape_string (url) : null;
-#else
-            var hover_url = url != null ? Soup.URI.decode (url) : null;
-#endif
 
             if (hover_url == null) {
                 message_url_overlay.hide ();
