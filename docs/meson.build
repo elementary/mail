@@ -21,16 +21,9 @@ basic_command = [
     '--use-svg-images'
 ]
 
-if libedataserverui_dep.version().version_compare('>=3.45.1')
-    basic_command += [
-        '--pkg', 'webkit2gtk-4.1',
-        '--define=HAS_SOUP_3'
-    ]
-else
-    basic_command += [
-        '--pkg', 'webkit2gtk-4.0',
-    ]
-endif
+basic_command += [
+    '--pkg', 'webkit2gtk-4.0',
+]
 
 all_doc_target = custom_target(
     'full documentation',
