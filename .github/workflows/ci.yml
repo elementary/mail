@@ -17,9 +17,9 @@ jobs:
         version: [stable, unstable, development-target]
         include:
           - version: stable
-            webkit_pkg: libwebkit2gtk-4.0-dev
+            webkit_pkg: libwebkit2gtk-4.1-dev
           - version: unstable
-            webkit_pkg: libwebkit2gtk-4.0-dev
+            webkit_pkg: libwebkit2gtk-4.1-dev
           - version: development-target
             webkit_pkg: libwebkit2gtk-4.1-dev
     container:
