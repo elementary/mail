@@ -59,20 +59,6 @@ public class AttachmentButton : Gtk.FlowBoxChild {
 
         var menu = new Gtk.Menu.from_model (context_menu_model);
 
-        var event_box = new Gtk.EventBox ();
-        event_box.events |= Gdk.EventMask.BUTTON_PRESS_MASK;
-        event_box.button_press_event.connect ((event) => {
-            if (event.button == Gdk.BUTTON_SECONDARY) {
-                menu.attach_widget = this;
-                menu.show_all ();
-                menu.popup_at_pointer (event);
-            } else {
-                activate ();
-            }
-
-            return true;
-        });
-
         var grid = new Gtk.Grid () {
             margin_top = 6,
             margin_bottom = 6,
@@ -124,9 +110,28 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         grid.attach (preview_image, 0, 0, 1, 2);
         grid.attach (name_label, 1, 0, 1, 1);
         grid.attach (size_label, 1, 1, 1, 1);
-        event_box.add (grid);
-        add (event_box);
+
+        var event_box = new Gtk.EventBox () {
+            child = grid
+        };
+
+        child = event_box;
         show_all ();
+
+        var gesture_click = new Gtk.GestureMultiPress (event_box) {
+            button = 0
+        };
+
+        gesture_click.released.connect ((n_press, x, y) => {
+            if (gesture_click.get_current_button () == Gdk.BUTTON_SECONDARY) {
+                menu.attach_widget = this;
+                menu.popup_at_pointer ();
+            } else {
+                activate ();
+            }
+
+            gesture_click.set_state (CLAIMED);
+        });
     }
 
     private void on_save_as () {
