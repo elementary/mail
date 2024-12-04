@@ -136,11 +136,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         message_overlay.no_show_all = true;
 
         message_list.hovering_over_link.connect ((label, url) => {
-#if HAS_SOUP_3
             var hover_url = url != null ? GLib.Uri.unescape_string (url) : null;
-#else
-            var hover_url = url != null ? Soup.URI.decode (url) : null;
-#endif
 
             if (hover_url == null) {
                 message_overlay.hide ();
