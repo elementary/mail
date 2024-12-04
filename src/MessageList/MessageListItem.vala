@@ -169,7 +169,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         small_fields_grid.attach (small_from_label, 0, 0, 1, 1);
 
         header_stack = new Gtk.Stack () {
-            homogeneous = false,
+            hhomogeneous = false,
+            vhomogeneous = false,
             transition_type = CROSSFADE
         };
         header_stack.add_named (fields_grid, "large");
@@ -290,12 +291,12 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             margin_bottom = 12,
             margin_start = 12,
             margin_end = 12,
-            message_type = WARNING
+            message_type = WARNING,
+            revealed = false
         };
         blocked_images_infobar.add_button (_("Show Images"), 1);
         blocked_images_infobar.add_button (_("Always Show from Sender"), 2);
         blocked_images_infobar.get_style_context ().add_class (Gtk.STYLE_CLASS_FRAME);
-        blocked_images_infobar.no_show_all = true;
 
         var infobar_content = blocked_images_infobar.get_content_area ();
         infobar_content.add (new Gtk.Label (_("This message contains remote images.")));
@@ -323,9 +324,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         secondary_box.add (web_view);
 
         secondary_revealer = new Gtk.Revealer () {
+            child = secondary_box,
             transition_type = SLIDE_UP
         };
-        secondary_revealer.add (secondary_box);
 
         var base_box = new Gtk.Box (VERTICAL, 0) {
             hexpand = true,
@@ -349,7 +350,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             secondary_box.add (attachment_bar);
         }
 
-        add (base_box);
+        child = base_box;
         expanded = false;
         show_all ();
 
@@ -359,13 +360,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 avatar.set_loadable_icon (file_icon);
             });
         }
-
-        /* Override default handler to stop event propagation. Otherwise clicking the menu will
-           expand or collapse the MessageListItem. */
-        actions_menu_button.button_release_event.connect ((event) => {
-            actions_menu_button.set_active (true);
-            return Gdk.EVENT_STOP;
-        });
 
         header_event_box.enter_notify_event.connect ((event) => {
             if (event.detail != Gdk.NotifyType.INFERIOR) {
@@ -381,17 +375,18 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             }
         });
 
-        header_event_box.button_release_event.connect ((event) => {
+        var click_gesture = new Gtk.GestureMultiPress (header_event_box);
+
+        click_gesture.released.connect (() => {
             expanded = !expanded;
-            return Gdk.EVENT_STOP;
+            click_gesture.set_state (CLAIMED);
         });
 
         destroy.connect (() => {
             loading_cancellable.cancel ();
         });
 
-        /* Connecting to clicked () doesn't allow us to prevent the event from propagating to header_event_box */
-        starred_button.button_release_event.connect (() => {
+        starred_button.clicked.connect (() => {
             if (Camel.MessageFlags.FLAGGED in (int) message_info.flags) {
                 message_info.set_flags (Camel.MessageFlags.FLAGGED, 0);
                 starred_icon.icon_name = "non-starred-symbolic";
@@ -401,12 +396,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 starred_icon.icon_name = "starred-symbolic";
                 starred_icon.tooltip_text = _("Unstar message");
             }
-
-            return Gdk.EVENT_STOP;
         });
 
         web_view.image_load_blocked.connect (() => {
-            blocked_images_infobar.show ();
+            blocked_images_infobar.revealed = true;
         });
         web_view.link_activated.connect ((uri) => {
             try {
@@ -550,7 +543,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 }
 
                 web_view.load_images ();
-                blocked_images_infobar.destroy ();
+                blocked_images_infobar.revealed = false;
             });
         }
 
