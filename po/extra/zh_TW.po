@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-01 10:33+0000\n"
+"POT-Creation-Date: 2024-12-11 22:21+0000\n"
 "PO-Revision-Date: 2024-09-19 10:09+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -33,7 +33,8 @@ msgid ""
 "Mail is designed to let you manage your email quickly and effortlessly. Its "
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
-msgstr "《郵件》設計來讓您簡單快速地管理您的郵件。其介面依據對話分門別類，讓您可以一"
+msgstr ""
+"《郵件》設計來讓您簡單快速地管理您的郵件。其介面依據對話分門別類，讓您可以一"
 "次閱讀整串前後討論內容而不必一封一封訊息點開。"
 
 #: data/mail.metainfo.xml.in:15
@@ -59,6 +60,10 @@ msgstr "強大的 HTML 撰寫工具，且可將草稿存至伺服器"
 #: data/mail.metainfo.xml.in:20
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr "能搭配 Gmail、Yahoo! 信箱和其他常用的 IMAP 伺服器使用"
+
+#: data/mail.metainfo.xml.in:66
+msgid "elementary, Inc."
+msgstr ""
 
 #: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:91
 #: data/mail.metainfo.xml.in:124 data/mail.metainfo.xml.in:145

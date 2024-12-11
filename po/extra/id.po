@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-01 10:33+0000\n"
+"POT-Creation-Date: 2024-12-11 22:21+0000\n"
 "PO-Revision-Date: 2023-05-26 21:06+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
 "io>\n"
@@ -64,6 +64,10 @@ msgstr "Penyusun HTML dalam baris yang menyimpan konsep ke server"
 #: data/mail.metainfo.xml.in:20
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr "Bekerja dengan Gmail, Yahoo! Mail, dan server IMAP populer lainnya"
+
+#: data/mail.metainfo.xml.in:66
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:91
 #: data/mail.metainfo.xml.in:124 data/mail.metainfo.xml.in:145
@@ -220,9 +224,6 @@ msgstr "Surel;Surat Elektronik;Surat;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Tulis Pesan"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #~ msgid "Fix a potential crash while loading messages"
 #~ msgstr "Memperbaiki potensi kesalahan saat memuat pesan"

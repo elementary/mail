@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-01 10:33+0000\n"
+"POT-Creation-Date: 2024-12-11 22:21+0000\n"
 "PO-Revision-Date: 2021-07-22 10:38+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/mail/extra/ko/>\n"
@@ -67,6 +67,10 @@ msgstr "보관함을 서버에 저장하는 내장형 HTML 구성"
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 "지메일, 야후! 메일, 아웃룩 닷컴 (시험 버전)과 기타 IMAP 서버를 지원합니다"
+
+#: data/mail.metainfo.xml.in:66
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:91
 #: data/mail.metainfo.xml.in:124 data/mail.metainfo.xml.in:145
@@ -214,9 +218,6 @@ msgstr "이메일;E-메일;메일;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "편지 쓰기"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #~ msgid "io.elementary.mail"
 #~ msgstr "io.elementary.mail"

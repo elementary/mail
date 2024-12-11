@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-01 10:33+0000\n"
+"POT-Creation-Date: 2024-12-11 22:21+0000\n"
 "PO-Revision-Date: 2024-06-19 22:01+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/mail/extra/hu/"
@@ -61,6 +61,10 @@ msgstr "Hathatós HTML-szerkesztő, amely a szerverre menti a piszkozatokat"
 #: data/mail.metainfo.xml.in:20
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr "Támogatja a Gmailt, Yahoo! Mailt és egyéb népszerű IMAP szervereket"
+
+#: data/mail.metainfo.xml.in:66
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:91
 #: data/mail.metainfo.xml.in:124 data/mail.metainfo.xml.in:145
@@ -211,6 +215,3 @@ msgstr ""
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Üzenet írása"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-01 10:33+0000\n"
+"POT-Creation-Date: 2024-12-11 22:21+0000\n"
 "PO-Revision-Date: 2024-06-16 21:16+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/mail/"
@@ -69,6 +69,10 @@ msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
 msgstr ""
 "Fungerer med Gmail, Yahoo! Mail, Outlook.com (ufullstendig) og andre "
 "populære IMAP-tjenere"
+
+#: data/mail.metainfo.xml.in:66
+msgid "elementary, Inc."
+msgstr "elementary LLC. (selskap med begrenset ansvar)"
 
 #: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:91
 #: data/mail.metainfo.xml.in:124 data/mail.metainfo.xml.in:145
@@ -224,9 +228,6 @@ msgstr "Epost;E-post;Post;"
 #: data/io.elementary.mail.desktop.in:17
 msgid "Compose Message"
 msgstr "Skriv ny melding"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary LLC. (selskap med begrenset ansvar)"
 
 #~ msgid "Fix a potential crash while loading messages"
 #~ msgstr "Fikset potensielt krasj ved innlasting av meldinger"
