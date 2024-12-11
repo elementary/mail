@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-01 10:33+0000\n"
+"POT-Creation-Date: 2024-12-11 22:21+0000\n"
 "PO-Revision-Date: 2020-04-10 14:01+0000\n"
 "Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <https://l10n.elementary.io/projects/mail/mail/hr/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
-#: src/Application.vala:212
+#: src/Application.vala:191
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
@@ -84,113 +84,113 @@ msgstr "Pošalji"
 msgid "New Message"
 msgstr "Nova poruka"
 
-#: src/Composer.vala:442
+#: src/Composer.vala:438
 msgid "Choose a file"
 msgstr "Odaberi datoteku"
 
-#: src/Composer.vala:445
+#: src/Composer.vala:441
 #, fuzzy
 #| msgid "_Attach"
 msgid "Attach"
 msgstr "_Privitak"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
+#: src/Composer.vala:442 src/Composer.vala:466 src/Composer.vala:758
 #: src/Dialogs/InsertLinkDialog.vala:66
-#: src/MessageList/AttachmentButton.vala:139
+#: src/MessageList/AttachmentButton.vala:144
 msgid "Cancel"
 msgstr "Odustani"
 
-#: src/Composer.vala:462
+#: src/Composer.vala:458
 #, fuzzy
 #| msgid "Show Images"
 msgid "Images"
 msgstr "Prikaži slike"
 
-#: src/Composer.vala:466
+#: src/Composer.vala:462
 #, fuzzy
 #| msgid "Choose a file"
 msgid "Choose an image"
 msgstr "Odaberi datoteku"
 
-#: src/Composer.vala:469
+#: src/Composer.vala:465
 #, fuzzy
 #| msgid "Insert Link"
 msgid "Insert"
 msgstr "Umetanje poveznice"
 
-#: src/Composer.vala:498
+#: src/Composer.vala:494
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to insert image"
 msgstr "Obriši skicu"
 
-#: src/Composer.vala:499
+#: src/Composer.vala:495
 msgid "There was an unexpected error while trying to insert the image."
 msgstr ""
 
-#: src/Composer.vala:667
+#: src/Composer.vala:659
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e. %b, %Y u %H:%M"
 
-#: src/Composer.vala:697
+#: src/Composer.vala:689
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "Dana %1$s, %2$s je napisao:"
 
-#: src/Composer.vala:701
+#: src/Composer.vala:693
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Proslijeđena poruka ----------"
 
-#: src/Composer.vala:703
+#: src/Composer.vala:695
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Šalje: %s<br/>"
 
-#: src/Composer.vala:704
+#: src/Composer.vala:696
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Predmet: %s<br/>"
 
-#: src/Composer.vala:705
+#: src/Composer.vala:697
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Datum: %s<br/>"
 
-#: src/Composer.vala:706
+#: src/Composer.vala:698
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Prima: %s<br/>"
 
-#: src/Composer.vala:708
+#: src/Composer.vala:700
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Prima kopiju: %s<br/>"
 
-#: src/Composer.vala:757
+#: src/Composer.vala:749
 #, fuzzy
 #| msgid "Do you want to permanently delete this message?"
 #| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
 msgstr "Želite li trajno obrisati ovu poruku?"
 
-#: src/Composer.vala:758
+#: src/Composer.vala:750
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 
-#: src/Composer.vala:768
+#: src/Composer.vala:760
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Delete Draft"
 msgstr "Obriši skicu"
 
-#: src/Composer.vala:792
+#: src/Composer.vala:784
 #, fuzzy
 #| msgid "Send Message With an Empty Subject?"
 msgid "Send without subject?"
 msgstr "Pošalji poruku bez predmeta?"
 
-#: src/Composer.vala:793
+#: src/Composer.vala:785
 #, fuzzy
 #| msgid ""
 #| "This message has an empty subject field. The recipient may not be able to "
@@ -202,51 +202,51 @@ msgstr ""
 "Ova poruka ima prazno polje predmeta. Primatelj možda neće moći opaziti "
 "područje ili značaj poruke."
 
-#: src/Composer.vala:800
+#: src/Composer.vala:792
 msgid "Don't Send"
 msgstr "Nemoj poslati"
 
-#: src/Composer.vala:802
+#: src/Composer.vala:794
 msgid "Send Anyway"
 msgstr "Svejedno pošalji"
 
-#: src/Composer.vala:833
+#: src/Composer.vala:825
 #, fuzzy
 #| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
 msgstr "Želite li poslati poruku s praznim sadržajem?"
 
-#: src/Composer.vala:834
+#: src/Composer.vala:826
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 
-#: src/Composer.vala:849
+#: src/Composer.vala:841
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to send message"
 msgstr "Obriši skicu"
 
-#: src/Composer.vala:850
+#: src/Composer.vala:842
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer.vala:954 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:946 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr ""
 
-#: src/Composer.vala:958
+#: src/Composer.vala:950
 msgid "None"
 msgstr "Nema"
 
-#: src/Composer.vala:1147
+#: src/Composer.vala:1139
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Unable to save draft"
 msgstr "Obriši skicu"
 
-#: src/Composer.vala:1148
+#: src/Composer.vala:1140
 msgid "There was an unexpected error while saving your draft."
 msgstr ""
 
@@ -310,7 +310,7 @@ msgstr "Pošta"
 msgid "Undo"
 msgstr "Vrati"
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:281
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -320,13 +320,13 @@ msgstr[0] "Poruka obrisana"
 msgstr[1] "Poruka obrisane"
 msgstr[2] "Poruka obrisane"
 
-#: src/MainWindow.vala:289
+#: src/MainWindow.vala:285
 #, fuzzy
 #| msgid "Unstar message"
 msgid "Couldn't archive message"
 msgstr "Ukloni oznaku poruke"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:298
 #, fuzzy
 #| msgid "Message Deleted"
 #| msgid_plural "Messages Deleted"
@@ -336,20 +336,20 @@ msgstr[0] "Poruka obrisana"
 msgstr[1] "Poruka obrisane"
 msgstr[2] "Poruka obrisane"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:302
 #, fuzzy
 #| msgid "Delete draft"
 msgid "Couldn't move message"
 msgstr "Obriši skicu"
 
-#: src/MainWindow.vala:319
+#: src/MainWindow.vala:315
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Poruka obrisana"
 msgstr[1] "Poruka obrisane"
 msgstr[2] "Poruka obrisane"
 
-#: src/MainWindow.vala:323
+#: src/MainWindow.vala:319
 msgid "Couldn't delete message"
 msgstr ""
 
@@ -417,7 +417,7 @@ msgstr ", "
 #: src/ConversationList/ConversationItemModel.vala:77
 #: src/ConversationList/ConversationItemModel.vala:115
 #: src/ConversationList/ConversationItemModel.vala:123
-#: src/MessageList/AttachmentButton.vala:114
+#: src/MessageList/AttachmentButton.vala:100
 msgid "Unknown"
 msgstr "Nepoznata"
 
@@ -699,15 +699,15 @@ msgstr "Poslana pošta"
 msgid "All Mailboxes"
 msgstr "Sva pošta"
 
-#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:209
+#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:210
 msgid "Reply"
 msgstr "Odgovori"
 
-#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:213
 msgid "Reply All"
 msgstr "Odgovori svima"
 
-#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:215
+#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:216
 msgid "Forward"
 msgstr "Proslijedi"
 
@@ -741,74 +741,74 @@ msgid "No Message Selected"
 msgstr "Nema odabrane poruke"
 
 #. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
-#: src/MessageList/MessageListItem.vala:189
+#: src/MessageList/MessageListItem.vala:190
 #, c-format
 msgid "%s at %s"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:197
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:198
+#: src/MessageList/MessageListItem.vala:397
 msgid "Unstar message"
 msgstr "Ukloni oznaku poruke"
 
-#: src/MessageList/MessageListItem.vala:200
-#: src/MessageList/MessageListItem.vala:398
+#: src/MessageList/MessageListItem.vala:201
+#: src/MessageList/MessageListItem.vala:393
 msgid "Star message"
 msgstr "Označi poruku"
 
-#: src/MessageList/MessageListItem.vala:220
+#: src/MessageList/MessageListItem.vala:221
 msgid "Print…"
 msgstr "Ispis…"
 
-#: src/MessageList/MessageListItem.vala:230
+#: src/MessageList/MessageListItem.vala:231
 msgid "More"
 msgstr "Više"
 
-#: src/MessageList/MessageListItem.vala:279
+#: src/MessageList/MessageListItem.vala:280
 msgid "Open in Calendar"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:285
+#: src/MessageList/MessageListItem.vala:286
 #, fuzzy
 #| msgid "This message contains remote images."
 msgid "This message contains a Calendar Event."
 msgstr "Ova poruka sadrži udaljene slike."
 
-#: src/MessageList/MessageListItem.vala:295
+#: src/MessageList/MessageListItem.vala:297
 msgid "Show Images"
 msgstr "Prikaži slike"
 
-#: src/MessageList/MessageListItem.vala:296
+#: src/MessageList/MessageListItem.vala:298
 msgid "Always Show from Sender"
 msgstr "Uvijek prikaži pošiljatelja"
 
-#: src/MessageList/MessageListItem.vala:301
+#: src/MessageList/MessageListItem.vala:302
 msgid "This message contains remote images."
 msgstr "Ova poruka sadrži udaljene slike."
 
-#: src/MessageList/MessageListItem.vala:340
+#: src/MessageList/MessageListItem.vala:341
 msgid "This message contains one or more attachments"
 msgstr "Ova poruka sadrži jedan ili više privitaka"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:417
 #, fuzzy
 #| msgid "New Message"
 msgid "Email Message"
 msgstr "Nova poruka"
 
-#: src/MessageList/MessageListItem.vala:446
+#: src/MessageList/MessageListItem.vala:439
 #, fuzzy
 #| msgid "Unable to validate:\n"
 msgid "Unable to print email"
 msgstr "Nije moguće ovjeriti:\n"
 
-#: src/MessageList/MessageListItem.vala:698
+#: src/MessageList/MessageListItem.vala:691
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr ""
 
-#: src/MessageList/MessageListItem.vala:699
+#: src/MessageList/MessageListItem.vala:692
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -816,7 +816,7 @@ msgstr ""
 "Privitci mogu oštetiti vaš sustav ako ih otvorite. Otvorite samo datoteke od "
 "pouzdanih korisnika."
 
-#: src/MessageList/MessageListItem.vala:706
+#: src/MessageList/MessageListItem.vala:699
 msgid "Open Anyway"
 msgstr "Svejedno otvori"
 
@@ -828,7 +828,7 @@ msgstr "Otvori"
 msgid "Save As…"
 msgstr "Spremi kao…"
 
-#: src/MessageList/AttachmentButton.vala:138
+#: src/MessageList/AttachmentButton.vala:143
 msgid "Save"
 msgstr "Spremi"
 

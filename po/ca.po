@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-01 10:33+0000\n"
+"POT-Creation-Date: 2024-12-11 22:21+0000\n"
 "PO-Revision-Date: 2023-11-14 18:10+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/mail/mail/ca/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/Application.vala:212
+#: src/Application.vala:191
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
@@ -83,97 +83,97 @@ msgstr "Envia"
 msgid "New Message"
 msgstr "Missatge nou"
 
-#: src/Composer.vala:442
+#: src/Composer.vala:438
 msgid "Choose a file"
 msgstr "Escolliu un fitxer"
 
-#: src/Composer.vala:445
+#: src/Composer.vala:441
 msgid "Attach"
 msgstr "Adjunta"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
+#: src/Composer.vala:442 src/Composer.vala:466 src/Composer.vala:758
 #: src/Dialogs/InsertLinkDialog.vala:66
-#: src/MessageList/AttachmentButton.vala:139
+#: src/MessageList/AttachmentButton.vala:144
 msgid "Cancel"
 msgstr "Canceŀla"
 
-#: src/Composer.vala:462
+#: src/Composer.vala:458
 msgid "Images"
 msgstr "Imatges"
 
-#: src/Composer.vala:466
+#: src/Composer.vala:462
 msgid "Choose an image"
 msgstr "Trieu una imatge"
 
-#: src/Composer.vala:469
+#: src/Composer.vala:465
 msgid "Insert"
 msgstr "Insereix"
 
-#: src/Composer.vala:498
+#: src/Composer.vala:494
 msgid "Unable to insert image"
 msgstr "No es pot inserir la imatge."
 
-#: src/Composer.vala:499
+#: src/Composer.vala:495
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "Hi ha hagut un error inesperat a l'hora d'inserir la imatge."
 
-#: src/Composer.vala:667
+#: src/Composer.vala:659
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %-e %b de %Y a les %-H.%M"
 
-#: src/Composer.vala:697
+#: src/Composer.vala:689
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s, %2$s va escriure el següent:"
 
-#: src/Composer.vala:701
+#: src/Composer.vala:693
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Missatge reenviat ----------"
 
-#: src/Composer.vala:703
+#: src/Composer.vala:695
 #, c-format
 msgid "From: %s<br/>"
 msgstr "De: %s<br/>"
 
-#: src/Composer.vala:704
+#: src/Composer.vala:696
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Assumpte: %s<br/>"
 
-#: src/Composer.vala:705
+#: src/Composer.vala:697
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Data: %s<br/>"
 
-#: src/Composer.vala:706
+#: src/Composer.vala:698
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Per a: %s<br/>"
 
-#: src/Composer.vala:708
+#: src/Composer.vala:700
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "A/c: %s<br/>"
 
-#: src/Composer.vala:757
+#: src/Composer.vala:749
 msgid "Permanently delete this draft?"
 msgstr "Voleu suprimir permanentment aquest esborrany?"
 
-#: src/Composer.vala:758
+#: src/Composer.vala:750
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "No podreu desfer aquesta acció ni recuperar l'esborrany un cop suprimit."
 
-#: src/Composer.vala:768
+#: src/Composer.vala:760
 msgid "Delete Draft"
 msgstr "Suprimeix l'esborrany"
 
-#: src/Composer.vala:792
+#: src/Composer.vala:784
 msgid "Send without subject?"
 msgstr "Voleu enviar-lo sense assumpte?"
 
-#: src/Composer.vala:793
+#: src/Composer.vala:785
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -181,19 +181,19 @@ msgstr ""
 "Aquest missatge té un camp d'assumpte buit. És possible que el destinatari "
 "no pugui inferir-ne l’abast o la importància."
 
-#: src/Composer.vala:800
+#: src/Composer.vala:792
 msgid "Don't Send"
 msgstr "No l'enviïs"
 
-#: src/Composer.vala:802
+#: src/Composer.vala:794
 msgid "Send Anyway"
 msgstr "Envia'l tanmateix"
 
-#: src/Composer.vala:833
+#: src/Composer.vala:825
 msgid "Sent message was not saved"
 msgstr "No s'ha desat el missatge enviat."
 
-#: src/Composer.vala:834
+#: src/Composer.vala:826
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
@@ -201,27 +201,27 @@ msgstr ""
 "El missatge s'ha enviat, però no se n'ha desat una còpia a la carpeta "
 "d'enviats."
 
-#: src/Composer.vala:849
+#: src/Composer.vala:841
 msgid "Unable to send message"
 msgstr "No es pot enviar el missatge."
 
-#: src/Composer.vala:850
+#: src/Composer.vala:842
 msgid "There was an unexpected error while sending your message."
 msgstr "Hi ha hagut un error inesperat a l'hora de d'enviar el missatge."
 
-#: src/Composer.vala:954 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:946 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr "Edita les signatures…"
 
-#: src/Composer.vala:958
+#: src/Composer.vala:950
 msgid "None"
 msgstr "Cap"
 
-#: src/Composer.vala:1147
+#: src/Composer.vala:1139
 msgid "Unable to save draft"
 msgstr "No es pot desar l'esborrany."
 
-#: src/Composer.vala:1148
+#: src/Composer.vala:1140
 msgid "There was an unexpected error while saving your draft."
 msgstr "Hi ha hagut un error inesperat a l'hora de desar l'esborrany."
 
@@ -280,33 +280,33 @@ msgstr "Correu"
 msgid "Undo"
 msgstr "Desfés-ho"
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:281
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "Missatge arxivat"
 msgstr[1] "Missatges arxivats"
 
-#: src/MainWindow.vala:289
+#: src/MainWindow.vala:285
 msgid "Couldn't archive message"
 msgstr "No s'ha pogut arxivar el missatge."
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:298
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "Missatge mogut"
 msgstr[1] "Missatges moguts"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:302
 msgid "Couldn't move message"
 msgstr "No s'ha pogut moure el missatge."
 
-#: src/MainWindow.vala:319
+#: src/MainWindow.vala:315
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "Missatge suprimit"
 msgstr[1] "Missatges suprimits"
 
-#: src/MainWindow.vala:323
+#: src/MainWindow.vala:319
 msgid "Couldn't delete message"
 msgstr "No s'ha pogut suprimir el missatge."
 
@@ -373,7 +373,7 @@ msgstr ", "
 #: src/ConversationList/ConversationItemModel.vala:77
 #: src/ConversationList/ConversationItemModel.vala:115
 #: src/ConversationList/ConversationItemModel.vala:123
-#: src/MessageList/AttachmentButton.vala:114
+#: src/MessageList/AttachmentButton.vala:100
 msgid "Unknown"
 msgstr "No es coneix"
 
@@ -613,15 +613,15 @@ msgstr "Enviats"
 msgid "All Mailboxes"
 msgstr "Totes les bústies"
 
-#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:209
+#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:210
 msgid "Reply"
 msgstr "Respon"
 
-#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:213
 msgid "Reply All"
 msgstr "Respon a tothom"
 
-#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:215
+#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:216
 msgid "Forward"
 msgstr "Reenvia"
 
@@ -650,68 +650,68 @@ msgid "No Message Selected"
 msgstr "No hi ha cap missatge seleccionat."
 
 #. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
-#: src/MessageList/MessageListItem.vala:189
+#: src/MessageList/MessageListItem.vala:190
 #, c-format
 msgid "%s at %s"
 msgstr "%s a les %s"
 
-#: src/MessageList/MessageListItem.vala:197
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:198
+#: src/MessageList/MessageListItem.vala:397
 msgid "Unstar message"
 msgstr "Desmarca'n l'estrella"
 
-#: src/MessageList/MessageListItem.vala:200
-#: src/MessageList/MessageListItem.vala:398
+#: src/MessageList/MessageListItem.vala:201
+#: src/MessageList/MessageListItem.vala:393
 msgid "Star message"
 msgstr "Marca amb una estrella"
 
-#: src/MessageList/MessageListItem.vala:220
+#: src/MessageList/MessageListItem.vala:221
 msgid "Print…"
 msgstr "Imprimeix…"
 
-#: src/MessageList/MessageListItem.vala:230
+#: src/MessageList/MessageListItem.vala:231
 msgid "More"
 msgstr "Més"
 
-#: src/MessageList/MessageListItem.vala:279
+#: src/MessageList/MessageListItem.vala:280
 msgid "Open in Calendar"
 msgstr "Obre-ho al Calendari"
 
-#: src/MessageList/MessageListItem.vala:285
+#: src/MessageList/MessageListItem.vala:286
 msgid "This message contains a Calendar Event."
 msgstr "Aquest missatge conté un esdeveniment del Calendari."
 
-#: src/MessageList/MessageListItem.vala:295
+#: src/MessageList/MessageListItem.vala:297
 msgid "Show Images"
 msgstr "Mostra les imatges"
 
-#: src/MessageList/MessageListItem.vala:296
+#: src/MessageList/MessageListItem.vala:298
 msgid "Always Show from Sender"
 msgstr "Mostra sempre el remitent"
 
-#: src/MessageList/MessageListItem.vala:301
+#: src/MessageList/MessageListItem.vala:302
 msgid "This message contains remote images."
 msgstr "Aquest missatge conté imatges remotes."
 
-#: src/MessageList/MessageListItem.vala:340
+#: src/MessageList/MessageListItem.vala:341
 msgid "This message contains one or more attachments"
 msgstr "Aquest missatge conté un o més adjunts"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:417
 msgid "Email Message"
 msgstr "Missatge de correu"
 
-#: src/MessageList/MessageListItem.vala:446
+#: src/MessageList/MessageListItem.vala:439
 msgid "Unable to print email"
 msgstr "No s'ha pogut imprimir el missatge."
 
-#: src/MessageList/MessageListItem.vala:698
+#: src/MessageList/MessageListItem.vala:691
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr "Voleu que confiï en %s i que l'obri?"
 
-#: src/MessageList/MessageListItem.vala:699
+#: src/MessageList/MessageListItem.vala:692
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
@@ -719,7 +719,7 @@ msgstr ""
 "Els adjunts poden causar danys al sistema si s'obren. Obriu només els "
 "fitxers de fonts de confiança."
 
-#: src/MessageList/MessageListItem.vala:706
+#: src/MessageList/MessageListItem.vala:699
 msgid "Open Anyway"
 msgstr "Obre-ho de tota manera"
 
@@ -731,7 +731,7 @@ msgstr "Obre"
 msgid "Save As…"
 msgstr "Anomena i desa…"
 
-#: src/MessageList/AttachmentButton.vala:138
+#: src/MessageList/AttachmentButton.vala:143
 msgid "Save"
 msgstr "Desa"
 

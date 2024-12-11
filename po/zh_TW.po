@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-01 10:33+0000\n"
+"POT-Creation-Date: 2024-12-11 22:21+0000\n"
 "PO-Revision-Date: 2024-09-13 00:58+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -22,11 +22,12 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
-#: src/Application.vala:212
+#: src/Application.vala:191
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
-msgstr "《郵件》會在此裝置開機時自動啟動，並在其視窗關閉時繼續執行，以便在有新信件時"
+msgstr ""
+"《郵件》會在此裝置開機時自動啟動，並在其視窗關閉時繼續執行，以便在有新信件時"
 "傳送通知。"
 
 #: src/Composer.vala:88 src/MessageList/MessageListItem.vala:102
@@ -81,140 +82,140 @@ msgstr "寄送"
 msgid "New Message"
 msgstr "新訊息"
 
-#: src/Composer.vala:442
+#: src/Composer.vala:438
 msgid "Choose a file"
 msgstr "選擇一個檔案"
 
-#: src/Composer.vala:445
+#: src/Composer.vala:441
 msgid "Attach"
 msgstr "附加"
 
-#: src/Composer.vala:446 src/Composer.vala:470 src/Composer.vala:766
+#: src/Composer.vala:442 src/Composer.vala:466 src/Composer.vala:758
 #: src/Dialogs/InsertLinkDialog.vala:66
-#: src/MessageList/AttachmentButton.vala:139
+#: src/MessageList/AttachmentButton.vala:144
 msgid "Cancel"
 msgstr "取消"
 
-#: src/Composer.vala:462
+#: src/Composer.vala:458
 msgid "Images"
 msgstr "圖片"
 
-#: src/Composer.vala:466
+#: src/Composer.vala:462
 msgid "Choose an image"
 msgstr "選擇圖片"
 
-#: src/Composer.vala:469
+#: src/Composer.vala:465
 msgid "Insert"
 msgstr "插入"
 
-#: src/Composer.vala:498
+#: src/Composer.vala:494
 msgid "Unable to insert image"
 msgstr "無法插入圖片"
 
-#: src/Composer.vala:499
+#: src/Composer.vala:495
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "嘗試插入圖片時發生非預期的錯誤。"
 
-#: src/Composer.vala:667
+#: src/Composer.vala:659
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%Y年%-m月%-e日 %A %p %-l:%M"
 
-#: src/Composer.vala:697
+#: src/Composer.vala:689
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%2$s 於 %1$s 寫下："
 
-#: src/Composer.vala:701
+#: src/Composer.vala:693
 msgid "---------- Forwarded message ----------"
 msgstr "---------- 轉寄的訊息 ----------"
 
-#: src/Composer.vala:703
+#: src/Composer.vala:695
 #, c-format
 msgid "From: %s<br/>"
 msgstr "寄件者：%s<br/>"
 
-#: src/Composer.vala:704
+#: src/Composer.vala:696
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "主旨：%s<br/>"
 
-#: src/Composer.vala:705
+#: src/Composer.vala:697
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "日期：%s<br/>"
 
-#: src/Composer.vala:706
+#: src/Composer.vala:698
 #, c-format
 msgid "To: %s<br/>"
 msgstr "收件者：%s<br/>"
 
-#: src/Composer.vala:708
+#: src/Composer.vala:700
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "副本：%s<br/>"
 
-#: src/Composer.vala:757
+#: src/Composer.vala:749
 msgid "Permanently delete this draft?"
 msgstr "永久刪除此草稿？"
 
-#: src/Composer.vala:758
+#: src/Composer.vala:750
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr "你不能還原此動作，亦不能復原已被刪除的草稿。"
 
-#: src/Composer.vala:768
+#: src/Composer.vala:760
 msgid "Delete Draft"
 msgstr "刪除草稿"
 
-#: src/Composer.vala:792
+#: src/Composer.vala:784
 msgid "Send without subject?"
 msgstr "是否要寄送主旨空白的訊息？"
 
-#: src/Composer.vala:793
+#: src/Composer.vala:785
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
 msgstr "此訊息之主旨為空。收件者可能無法推斷其主題及重要性。"
 
-#: src/Composer.vala:800
+#: src/Composer.vala:792
 msgid "Don't Send"
 msgstr "不要寄出"
 
-#: src/Composer.vala:802
+#: src/Composer.vala:794
 msgid "Send Anyway"
 msgstr "無論如何都送出"
 
-#: src/Composer.vala:833
+#: src/Composer.vala:825
 msgid "Sent message was not saved"
 msgstr "寄出的訊息未被保存"
 
-#: src/Composer.vala:834
+#: src/Composer.vala:826
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr "訊息已傳送，但是副本並未存入寄件備份資料夾。"
 
-#: src/Composer.vala:849
+#: src/Composer.vala:841
 msgid "Unable to send message"
 msgstr "無法傳送訊息"
 
-#: src/Composer.vala:850
+#: src/Composer.vala:842
 msgid "There was an unexpected error while sending your message."
 msgstr "傳送訊息時發生非預期的錯誤。"
 
-#: src/Composer.vala:954 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:946 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
 msgstr "編輯簽章…"
 
-#: src/Composer.vala:958
+#: src/Composer.vala:950
 msgid "None"
 msgstr "無"
 
-#: src/Composer.vala:1147
+#: src/Composer.vala:1139
 msgid "Unable to save draft"
 msgstr "無法儲存草稿"
 
-#: src/Composer.vala:1148
+#: src/Composer.vala:1140
 msgid "There was an unexpected error while saving your draft."
 msgstr "儲存草稿時發生非預期的錯誤。"
 
@@ -271,30 +272,30 @@ msgstr "郵件"
 msgid "Undo"
 msgstr "復原"
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:281
 msgid "Message Archived"
 msgid_plural "Messages Archived"
 msgstr[0] "訊息已封存"
 
-#: src/MainWindow.vala:289
+#: src/MainWindow.vala:285
 msgid "Couldn't archive message"
 msgstr "無法封存訊息"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:298
 msgid "Message Moved"
 msgid_plural "Messages Moved"
 msgstr[0] "訊息已移動"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:302
 msgid "Couldn't move message"
 msgstr "無法移動訊息"
 
-#: src/MainWindow.vala:319
+#: src/MainWindow.vala:315
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
 msgstr[0] "訊息已被刪除"
 
-#: src/MainWindow.vala:323
+#: src/MainWindow.vala:319
 msgid "Couldn't delete message"
 msgstr "無法刪除訊息"
 
@@ -360,7 +361,7 @@ msgstr "、 "
 #: src/ConversationList/ConversationItemModel.vala:77
 #: src/ConversationList/ConversationItemModel.vala:115
 #: src/ConversationList/ConversationItemModel.vala:123
-#: src/MessageList/AttachmentButton.vala:114
+#: src/MessageList/AttachmentButton.vala:100
 msgid "Unknown"
 msgstr "未知"
 
@@ -598,15 +599,15 @@ msgstr "寄件備份"
 msgid "All Mailboxes"
 msgstr "所有信箱"
 
-#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:209
+#: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:210
 msgid "Reply"
 msgstr "回覆"
 
-#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:212
+#: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:213
 msgid "Reply All"
 msgstr "回覆所有人"
 
-#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:215
+#: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:216
 msgid "Forward"
 msgstr "轉寄"
 
@@ -635,74 +636,74 @@ msgid "No Message Selected"
 msgstr "未選取任何訊息"
 
 #. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
-#: src/MessageList/MessageListItem.vala:189
+#: src/MessageList/MessageListItem.vala:190
 #, c-format
 msgid "%s at %s"
 msgstr "%s的%s"
 
-#: src/MessageList/MessageListItem.vala:197
-#: src/MessageList/MessageListItem.vala:402
+#: src/MessageList/MessageListItem.vala:198
+#: src/MessageList/MessageListItem.vala:397
 msgid "Unstar message"
 msgstr "從訊息移除星號"
 
-#: src/MessageList/MessageListItem.vala:200
-#: src/MessageList/MessageListItem.vala:398
+#: src/MessageList/MessageListItem.vala:201
+#: src/MessageList/MessageListItem.vala:393
 msgid "Star message"
 msgstr "為訊息標上星號"
 
-#: src/MessageList/MessageListItem.vala:220
+#: src/MessageList/MessageListItem.vala:221
 msgid "Print…"
 msgstr "列印…"
 
-#: src/MessageList/MessageListItem.vala:230
+#: src/MessageList/MessageListItem.vala:231
 msgid "More"
 msgstr "更多"
 
-#: src/MessageList/MessageListItem.vala:279
+#: src/MessageList/MessageListItem.vala:280
 msgid "Open in Calendar"
 msgstr "在行事曆中開啟"
 
-#: src/MessageList/MessageListItem.vala:285
+#: src/MessageList/MessageListItem.vala:286
 msgid "This message contains a Calendar Event."
 msgstr "此訊息包含行事曆活動。"
 
-#: src/MessageList/MessageListItem.vala:295
+#: src/MessageList/MessageListItem.vala:297
 msgid "Show Images"
 msgstr "顯示圖片"
 
-#: src/MessageList/MessageListItem.vala:296
+#: src/MessageList/MessageListItem.vala:298
 msgid "Always Show from Sender"
 msgstr "總是顯示寄件者"
 
-#: src/MessageList/MessageListItem.vala:301
+#: src/MessageList/MessageListItem.vala:302
 msgid "This message contains remote images."
 msgstr "此訊息包含遠端圖片。"
 
-#: src/MessageList/MessageListItem.vala:340
+#: src/MessageList/MessageListItem.vala:341
 msgid "This message contains one or more attachments"
 msgstr "這封訊息含有一項或多項附件"
 
 #. / Translators: This is the default file name of a printed email
-#: src/MessageList/MessageListItem.vala:424
+#: src/MessageList/MessageListItem.vala:417
 msgid "Email Message"
 msgstr "郵件訊息"
 
-#: src/MessageList/MessageListItem.vala:446
+#: src/MessageList/MessageListItem.vala:439
 msgid "Unable to print email"
 msgstr "無法列印郵件"
 
-#: src/MessageList/MessageListItem.vala:698
+#: src/MessageList/MessageListItem.vala:691
 #, c-format
 msgid "Trust and open “%s”?"
 msgstr "要信任並開啟「%s」嗎？"
 
-#: src/MessageList/MessageListItem.vala:699
+#: src/MessageList/MessageListItem.vala:692
 msgid ""
 "Attachments may cause damage to your system if opened. Only open files from "
 "trusted sources."
 msgstr "開啟附件可能有機會損害您的系統。請僅只開啟源自受信任來源的檔案。"
 
-#: src/MessageList/MessageListItem.vala:706
+#: src/MessageList/MessageListItem.vala:699
 msgid "Open Anyway"
 msgstr "無論如何都開啟"
 
@@ -714,7 +715,7 @@ msgstr "開啟"
 msgid "Save As…"
 msgstr "儲存為…"
 
-#: src/MessageList/AttachmentButton.vala:138
+#: src/MessageList/AttachmentButton.vala:143
 msgid "Save"
 msgstr "儲存"
 
