@@ -1,7 +1,7 @@
 {
     "app-id": "io.elementary.mail",
     "runtime": "io.elementary.Platform",
-    "runtime-version": "7",
+    "runtime-version": "8",
     "sdk": "io.elementary.Sdk",
     "command": "io.elementary.mail",
     "finish-args": [
@@ -37,6 +37,7 @@
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DENABLE_EXAMPLES=OFF",
+                "-DENABLE_TESTS=OFF",
                 "-DENABLE_GOA=OFF",
                 "-DWITH_LIBDB=OFF",
                 "-DENABLE_WEATHER=OFF",
@@ -50,7 +51,7 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/evolution-data-server.git",
-                    "tag": "3.40.2"
+                    "tag": "3.52.4"
                 }
             ],
             "modules": [
@@ -64,21 +65,6 @@
                             "type": "archive",
                             "url": "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
                             "md5": "12e517cac2b57a0121cda351570f1e63"
-                        }
-                    ]
-                },
-                {
-                    "name": "libgdata",
-                    "buildsystem": "meson",
-                    "config-opts": [
-                        "-Dalways_build_tests=false",
-                        "-Dgoa=disabled"
-                    ],
-                    "sources": [
-                        {
-                            "type": "git",
-                            "url": "https://gitlab.gnome.org/GNOME/libgdata.git",
-                            "tag": "0.18.0"
                         }
                     ]
                 },
@@ -134,7 +120,7 @@
                 "-Ddocs=false",
                 "-Dbackends=['gtk3']"
             ],
-            "sources" : [
+            "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/libportal.git",
