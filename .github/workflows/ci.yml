@@ -64,7 +64,7 @@ jobs:
           platforms: arm64
 
       - name: Build
-        uses: flatpak/flatpak-github-actions/flatpak-builder@v6
+        uses: flatpak/flatpak-github-actions/flatpak-builder@v6.4
         with:
           bundle: mail.flatpak
           manifest-path: io.elementary.mail.json
