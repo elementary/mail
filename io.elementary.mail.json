@@ -114,21 +114,6 @@
             ]
         },
         {
-            "name": "libportal",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Ddocs=false",
-                "-Dbackends=['gtk3']"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/flatpak/libportal.git",
-                    "tag": "0.6"
-                }
-            ]
-        },
-        {
             "name": "mail",
             "buildsystem": "meson",
             "sources": [
