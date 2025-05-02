@@ -1,7 +1,7 @@
 {
     "app-id": "io.elementary.mail",
     "runtime": "io.elementary.Platform",
-    "runtime-version": "8",
+    "runtime-version": "8.1",
     "sdk": "io.elementary.Sdk",
     "command": "io.elementary.mail",
     "finish-args": [
@@ -103,13 +103,14 @@
                 "-Dofono_backend=false",
                 "-Dtelepathy_backend=false",
                 "-Dimport_tool=false",
-                "-Dinspect_tool=false"
+                "-Dinspect_tool=false",
+                "-Dlibdir=/app/lib"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/folks.git",
-                    "tag": "0.15.5"
+                    "tag": "0.15.9"
                 }
             ]
         },
