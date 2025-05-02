@@ -103,7 +103,8 @@
                 "-Dofono_backend=false",
                 "-Dtelepathy_backend=false",
                 "-Dimport_tool=false",
-                "-Dinspect_tool=false"
+                "-Dinspect_tool=false",
+                "-Dlibdir=/app/lib"
             ],
             "sources": [
                 {
