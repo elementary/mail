@@ -3,15 +3,16 @@ msgstr ""
 "Project-Id-Version: Japanese (Mail)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-11 22:21+0000\n"
-"PO-Revision-Date: 2024-06-30 15:16+0000\n"
+"PO-Revision-Date: 2025-08-30 02:22+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/mail/mail/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementaryos.org/projects/mail/mail/ja/"
+">\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Application.vala:191
@@ -537,7 +538,7 @@ msgstr "常にリモートの画像を表示"
 
 #: src/FoldersView/FoldersListView.vala:67
 msgid "Account Settings…"
-msgstr "アカウントの設定…"
+msgstr "アカウント設定…"
 
 #: src/FoldersView/FoldersListView.vala:92
 msgid "Menu"
