@@ -179,14 +179,28 @@ public class Mail.MessageList : Gtk.Box {
          */
         can_move_thread (true);
 
+#if HAS_CAMEL_3_57
+        var store = ((Camel.MessageInfo?) node.get_item ()).summary.folder.parent_store;
+#else
         var store = node.message.summary.folder.parent_store;
+#endif
         folder_popover.set_store (store);
 
+#if HAS_CAMEL_3_57
+        var item = new MessageListItem ((Camel.MessageInfo?) node.get_item ());
+#else
         var item = new MessageListItem (node.message);
+#endif
         list_box.add (item);
+#if HAS_CAMEL_3_57
+        messages.set (((Camel.MessageInfo?) node.get_item ()).uid, item);
+        if (node.get_child () != null) {
+            go_down ((Camel.FolderThreadNode?) node.get_child ());
+#else
         messages.set (node.message.uid, item);
         if (node.child != null) {
             go_down ((Camel.FolderThreadNode?) node.child);
+#endif
         }
 
         var children = list_box.get_children ();
@@ -203,7 +217,11 @@ public class Mail.MessageList : Gtk.Box {
             }
         }
 
+#if HAS_CAMEL_3_57
+        if (node.get_item () != null && Camel.MessageFlags.DRAFT in (int) ((Camel.MessageInfo?) node.get_item ()).flags) {
+#else
         if (node.message != null && Camel.MessageFlags.DRAFT in (int) node.message.flags) {
+#endif
             compose.begin (Composer.Type.DRAFT, "");
         }
     }
@@ -211,14 +229,28 @@ public class Mail.MessageList : Gtk.Box {
     private void go_down (Camel.FolderThreadNode node) {
         unowned Camel.FolderThreadNode? current_node = node;
         while (current_node != null) {
+#if HAS_CAMEL_3_57
+            var item = new MessageListItem ((Camel.MessageInfo?) current_node.get_item ());
+#else
             var item = new MessageListItem (current_node.message);
+#endif
             list_box.add (item);
+#if HAS_CAMEL_3_57
+            messages.set (((Camel.MessageInfo?) current_node.get_item ()).uid, item);
+            if (current_node.get_next () != null) {
+                go_down ((Camel.FolderThreadNode?) current_node.get_next ());
+#else
             messages.set (current_node.message.uid, item);
             if (current_node.next != null) {
                 go_down ((Camel.FolderThreadNode?) current_node.next);
+#endif
             }
 
+#if HAS_CAMEL_3_57
+            current_node = (Camel.FolderThreadNode?) current_node.get_child ();
+#else
             current_node = (Camel.FolderThreadNode?) current_node.child;
+#endif
         }
     }
 
