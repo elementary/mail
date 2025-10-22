@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: geary-0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-11 22:21+0000\n"
-"PO-Revision-Date: 2025-10-22 10:00+0000\n"
+"PO-Revision-Date: 2025-10-23 10:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/mail/mail/sv/>"
 "\n"
@@ -34,7 +34,7 @@ msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
 msgstr ""
-"Mail startar automatiskt när enheten slås på och körs när fönstret stängs, "
+"E-post startar automatiskt när enheten slås på och körs när fönstret stängs, "
 "så att det kan skicka meddelanden när ny post kommer in."
 
 #: src/Composer.vala:88 src/MessageList/MessageListItem.vala:102
@@ -323,7 +323,8 @@ msgstr "Anslut ett konto"
 
 #: src/WelcomeView.vala:52
 msgid "Mail uses email accounts configured in System Settings."
-msgstr "Mail använder e-postkonton som har konfigurerats i Systeminställningar."
+msgstr ""
+"E-post använder e-postkonton som har konfigurerats i Systeminställningar."
 
 #: src/WelcomeView.vala:59
 msgid "Online Accounts…"
@@ -574,7 +575,7 @@ msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
 "Öppna Systeminställningar manuellt eller installera Evolution för att "
-"konfigurera onlinekonton."
+"konfigurera nätkonton."
 
 #: src/FoldersView/FolderSourceItem.vala:52
 msgid "Refresh folder"
