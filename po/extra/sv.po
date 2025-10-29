@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-29 17:12+0000\n"
-"PO-Revision-Date: 2025-10-23 10:55+0000\n"
+"PO-Revision-Date: 2025-10-30 18:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/mail/extra/sv/"
 ">\n"
@@ -34,8 +34,8 @@ msgid ""
 "interface is based on conversations, so you can read an entire discussion "
 "without having to click from message to message."
 msgstr ""
-"Mail är utformat för att du ska kunna hantera din e-post snabbt och enkelt. "
-"Gränssnittet är baserat på konversationer, så att du kan läsa en hel "
+"E-post är utformat för att du ska kunna hantera din e-post snabbt och "
+"enkelt. Gränssnittet är baserat på konversationer, så att du kan läsa en hel "
 "diskussion utan att behöva klicka från meddelande till meddelande."
 
 #: data/mail.metainfo.xml.in:15
@@ -44,11 +44,11 @@ msgstr "Lättviktig e-postklient med fullt stöd för IMAP"
 
 #: data/mail.metainfo.xml.in:16
 msgid "Mail grouped into conversations, not a tree of threads"
-msgstr "Mail grupperade i konversationer, inte ett träd av trådar"
+msgstr "E-post grupperade i konversationer, inte ett träd av trådar"
 
 #: data/mail.metainfo.xml.in:17
 msgid "As-you-type searching"
-msgstr "Sökning efter eget tycke och smak"
+msgstr "Sökning när du skriver"
 
 #: data/mail.metainfo.xml.in:18
 msgid "Multiple account support"
@@ -102,7 +102,7 @@ msgstr "Lägg till stöd för att byta namn på mappar"
 
 #: data/mail.metainfo.xml.in:105
 msgid "Move settings menu to the mailboxes pane"
-msgstr "Flytta inställningsmenyn till brevlådefönstret"
+msgstr "Flytta inställningsmenyn till brevlådepanelen"
 
 #: data/mail.metainfo.xml.in:106
 msgid "Use the FileChooser portal"
@@ -114,11 +114,11 @@ msgstr "Förbättra hanteringen av nätverkstillgänglighet"
 
 #: data/mail.metainfo.xml.in:108
 msgid "Fix issues with fetching e-mail when Mail is not autostarted"
-msgstr "Åtgärdat problem med att hämta e-post när Mail inte autostartas"
+msgstr "Åtgärdat problem med att hämta e-post när E-post inte autostartas"
 
 #: data/mail.metainfo.xml.in:109
 msgid "Notify the user when a calendar event is included in a message"
-msgstr "Meddela användaren när en kalenderhändelse ingår i ett meddelande"
+msgstr "Meddela användaren när en kalenderhändelse inkluderats i ett meddelande"
 
 #: data/mail.metainfo.xml.in:110
 msgid "Improve performance when switching between folders"
@@ -137,7 +137,8 @@ msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
 msgstr ""
-"Komponisten visas alltid i ett nytt fönster och innehåller fler kortkommandon"
+"Kompositören visas alltid i ett nytt fönster och innehåller fler "
+"kortkommandon"
 
 #: data/mail.metainfo.xml.in:137
 msgid "The search filter menu now appears next to the search bar"
@@ -166,11 +167,11 @@ msgstr "Åtgärdar:"
 #: data/mail.metainfo.xml.in:169
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
-"Åtgärdade ett fel som ledde till att e-postkonton laddades flera gånger"
+"Åtgärdade ett fel som ledde till att e-postkonton lästes in flera gånger"
 
 #: data/mail.metainfo.xml.in:170
 msgid "Fixed a bug which caused Mail to crash occasionally"
-msgstr "Åtgärdat en bugg som gjorde att Mail kraschade ibland"
+msgstr "Åtgärdat en bugg som gjorde att E-post kraschade ibland"
 
 #: data/mail.metainfo.xml.in:171
 msgid "Display recipient in Sent folder instead of sender"
@@ -190,7 +191,7 @@ msgstr "Nya funktioner:"
 
 #: data/mail.metainfo.xml.in:186
 msgid "Use message subject for composer window title"
-msgstr "Använd meddelandets ämne som titel på composer-fönstret"
+msgstr "Använd meddelandets ämne som titel på kompositörsfönstret"
 
 #: data/mail.metainfo.xml.in:187
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
