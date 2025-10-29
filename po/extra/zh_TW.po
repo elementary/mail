@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-11 22:21+0000\n"
+"POT-Creation-Date: 2025-10-29 17:12+0000\n"
 "PO-Revision-Date: 2024-12-12 06:50+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://l10n.elementary.io/"
@@ -65,141 +65,143 @@ msgstr "能搭配 Gmail、Yahoo! 信箱和其他常用的 IMAP 伺服器使用"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:91
-#: data/mail.metainfo.xml.in:124 data/mail.metainfo.xml.in:145
-#: data/mail.metainfo.xml.in:164 data/mail.metainfo.xml.in:186
+#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:83
+#: data/mail.metainfo.xml.in:100 data/mail.metainfo.xml.in:133
+#: data/mail.metainfo.xml.in:154 data/mail.metainfo.xml.in:173
+#: data/mail.metainfo.xml.in:195
 msgid "Improvements:"
 msgstr "改善項目："
 
-#: data/mail.metainfo.xml.in:76
+#: data/mail.metainfo.xml.in:76 data/mail.metainfo.xml.in:86
+#: data/mail.metainfo.xml.in:111 data/mail.metainfo.xml.in:142
+#: data/mail.metainfo.xml.in:156 data/mail.metainfo.xml.in:177
+#: data/mail.metainfo.xml.in:198
+msgid "Updated translations"
+msgstr "翻譯更新"
+
+#: data/mail.metainfo.xml.in:85
 msgid ""
 "Use the actual recipients of a message as sender when replying or forwarding"
 msgstr "回覆或轉寄時使用原訊息實際的收件者作為新訊息的寄件者"
 
-#: data/mail.metainfo.xml.in:77 data/mail.metainfo.xml.in:102
-#: data/mail.metainfo.xml.in:133 data/mail.metainfo.xml.in:147
-#: data/mail.metainfo.xml.in:168 data/mail.metainfo.xml.in:189
-msgid "Updated translations"
-msgstr "翻譯更新"
-
-#: data/mail.metainfo.xml.in:93
+#: data/mail.metainfo.xml.in:102
 msgid "Ability to create multiple signatures and set defaults per account"
 msgstr "新增為各個帳號建立多個簽章並可設定預設值的功能"
 
-#: data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:103
 msgid "Add support for inline images in the composer"
 msgstr "在撰寫工具中新增對行內圖片的支援"
 
-#: data/mail.metainfo.xml.in:95
+#: data/mail.metainfo.xml.in:104
 msgid "Add support for renaming folders"
 msgstr "支援重新命名資料夾"
 
-#: data/mail.metainfo.xml.in:96
+#: data/mail.metainfo.xml.in:105
 msgid "Move settings menu to the mailboxes pane"
 msgstr "將設定選單移到信箱面板中"
 
-#: data/mail.metainfo.xml.in:97
+#: data/mail.metainfo.xml.in:106
 msgid "Use the FileChooser portal"
 msgstr "使用檔案選擇器桌面入口"
 
-#: data/mail.metainfo.xml.in:98
+#: data/mail.metainfo.xml.in:107
 msgid "Improve network availability handling"
 msgstr "改善對於目前網路連線狀態的處理"
 
-#: data/mail.metainfo.xml.in:99
+#: data/mail.metainfo.xml.in:108
 msgid "Fix issues with fetching e-mail when Mail is not autostarted"
 msgstr "修正《郵件》沒有自動啟動時取得郵件會發生的問題"
 
-#: data/mail.metainfo.xml.in:100
+#: data/mail.metainfo.xml.in:109
 msgid "Notify the user when a calendar event is included in a message"
 msgstr "訊息中包含行事曆活動時告知使用者"
 
-#: data/mail.metainfo.xml.in:101
+#: data/mail.metainfo.xml.in:110
 msgid "Improve performance when switching between folders"
 msgstr "改善切換資料夾時的效能"
 
-#: data/mail.metainfo.xml.in:126
+#: data/mail.metainfo.xml.in:135
 msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
 msgstr "在線上帳號設定中加入帳號之後就關閉歡迎畫面，而不用重新啟動《郵件》"
 
-#: data/mail.metainfo.xml.in:127
+#: data/mail.metainfo.xml.in:136
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
 msgstr "撰寫工具總是以新視窗顯示，並提供更多鍵盤快捷鍵"
 
-#: data/mail.metainfo.xml.in:128
+#: data/mail.metainfo.xml.in:137
 msgid "The search filter menu now appears next to the search bar"
 msgstr "將搜尋過濾選單移到搜尋列旁邊"
 
-#: data/mail.metainfo.xml.in:129
+#: data/mail.metainfo.xml.in:138
 msgid "HeaderBars appear to float above content when scrolled"
 msgstr "讓標題列在捲動後看起來浮動在內容上方"
 
-#: data/mail.metainfo.xml.in:130
+#: data/mail.metainfo.xml.in:139
 msgid "Fix a potential crash with empty messages"
 msgstr "修正訊息空白時一個可能發生的崩潰"
 
-#: data/mail.metainfo.xml.in:131
+#: data/mail.metainfo.xml.in:140
 msgid "Stop resizing from cutting off the message list"
 msgstr "修正調整視窗大小之後訊息列表被切掉的問題"
 
-#: data/mail.metainfo.xml.in:132
+#: data/mail.metainfo.xml.in:141
 msgid "Performance improvements"
 msgstr "效能改善"
 
-#: data/mail.metainfo.xml.in:158 data/mail.metainfo.xml.in:180
+#: data/mail.metainfo.xml.in:167 data/mail.metainfo.xml.in:189
 msgid "Fixes:"
 msgstr "修正："
 
-#: data/mail.metainfo.xml.in:160
+#: data/mail.metainfo.xml.in:169
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr "修正郵件帳號會被載入多次的問題"
 
-#: data/mail.metainfo.xml.in:161
+#: data/mail.metainfo.xml.in:170
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr "修正造成《郵件》時不時會崩潰的問題"
 
-#: data/mail.metainfo.xml.in:162
+#: data/mail.metainfo.xml.in:171
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "在寄件備份資料夾顯示收件者而非寄件者"
 
-#: data/mail.metainfo.xml.in:166
+#: data/mail.metainfo.xml.in:175
 msgid "Updated app icon"
 msgstr "更新應用程式圖示"
 
-#: data/mail.metainfo.xml.in:167
+#: data/mail.metainfo.xml.in:176
 msgid "New design"
 msgstr "新設計"
 
-#: data/mail.metainfo.xml.in:175
+#: data/mail.metainfo.xml.in:184
 msgid "New features:"
 msgstr "新功能："
 
-#: data/mail.metainfo.xml.in:177
+#: data/mail.metainfo.xml.in:186
 msgid "Use message subject for composer window title"
 msgstr "在撰寫工具視窗標題使用訊息主旨"
 
-#: data/mail.metainfo.xml.in:178
+#: data/mail.metainfo.xml.in:187
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr "新增對 Microsoft 365 帳號的整合收件匣的支援"
 
-#: data/mail.metainfo.xml.in:182
+#: data/mail.metainfo.xml.in:191
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr "修正造成背景寄件匣確認工作崩潰的錯誤"
 
-#: data/mail.metainfo.xml.in:183
+#: data/mail.metainfo.xml.in:192
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr "撰寫訊息時移除重複的寄件者地址"
 
-#: data/mail.metainfo.xml.in:184
+#: data/mail.metainfo.xml.in:193
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr "修正將資料夾中最後一個訊息封存時應用程式會鎖住的問題"
 
-#: data/mail.metainfo.xml.in:188
+#: data/mail.metainfo.xml.in:197
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr "改稱 Office 365 為 Microsoft 365 以符合微軟的品牌名稱變更"

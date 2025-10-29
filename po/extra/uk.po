@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-11 22:21+0000\n"
+"POT-Creation-Date: 2025-10-29 17:12+0000\n"
 "PO-Revision-Date: 2024-09-02 20:05+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/mail/extra/uk/"
@@ -67,65 +67,67 @@ msgstr "Працює з Gmail, Yahoo! Mail та іншими популярни�
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:91
-#: data/mail.metainfo.xml.in:124 data/mail.metainfo.xml.in:145
-#: data/mail.metainfo.xml.in:164 data/mail.metainfo.xml.in:186
+#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:83
+#: data/mail.metainfo.xml.in:100 data/mail.metainfo.xml.in:133
+#: data/mail.metainfo.xml.in:154 data/mail.metainfo.xml.in:173
+#: data/mail.metainfo.xml.in:195
 msgid "Improvements:"
 msgstr "Поліпшення:"
 
-#: data/mail.metainfo.xml.in:76
+#: data/mail.metainfo.xml.in:76 data/mail.metainfo.xml.in:86
+#: data/mail.metainfo.xml.in:111 data/mail.metainfo.xml.in:142
+#: data/mail.metainfo.xml.in:156 data/mail.metainfo.xml.in:177
+#: data/mail.metainfo.xml.in:198
+msgid "Updated translations"
+msgstr "Оновлено переклади"
+
+#: data/mail.metainfo.xml.in:85
 msgid ""
 "Use the actual recipients of a message as sender when replying or forwarding"
 msgstr ""
 "Фактичні одержувачі повідомлень вказуються відправниками під час відповіді "
 "або пересилання"
 
-#: data/mail.metainfo.xml.in:77 data/mail.metainfo.xml.in:102
-#: data/mail.metainfo.xml.in:133 data/mail.metainfo.xml.in:147
-#: data/mail.metainfo.xml.in:168 data/mail.metainfo.xml.in:189
-msgid "Updated translations"
-msgstr "Оновлено переклади"
-
-#: data/mail.metainfo.xml.in:93
+#: data/mail.metainfo.xml.in:102
 msgid "Ability to create multiple signatures and set defaults per account"
 msgstr ""
 "Можливість створювати кілька підписів і налаштовувати типове значення для "
 "кожного облікового запису"
 
-#: data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:103
 msgid "Add support for inline images in the composer"
 msgstr "Додано підтримку вбудованих зображень у редакторі"
 
-#: data/mail.metainfo.xml.in:95
+#: data/mail.metainfo.xml.in:104
 msgid "Add support for renaming folders"
 msgstr "Додано підтримку тек, які залишились"
 
-#: data/mail.metainfo.xml.in:96
+#: data/mail.metainfo.xml.in:105
 msgid "Move settings menu to the mailboxes pane"
 msgstr "Меню налаштувань перенесено на панель поштових скриньок"
 
-#: data/mail.metainfo.xml.in:97
+#: data/mail.metainfo.xml.in:106
 msgid "Use the FileChooser portal"
 msgstr "Використовується портал FileChooser"
 
-#: data/mail.metainfo.xml.in:98
+#: data/mail.metainfo.xml.in:107
 msgid "Improve network availability handling"
 msgstr "Поліпшено обробку доступності мережі"
 
-#: data/mail.metainfo.xml.in:99
+#: data/mail.metainfo.xml.in:108
 msgid "Fix issues with fetching e-mail when Mail is not autostarted"
 msgstr ""
 "Усунено проблеми з отриманням е-пошти, коли Пошта не запускається автоматично"
 
-#: data/mail.metainfo.xml.in:100
+#: data/mail.metainfo.xml.in:109
 msgid "Notify the user when a calendar event is included in a message"
 msgstr "Сповіщати користувача, коли подію календаря включено до повідомлення"
 
-#: data/mail.metainfo.xml.in:101
+#: data/mail.metainfo.xml.in:110
 msgid "Improve performance when switching between folders"
 msgstr "Поліпшення швидкодії під час перемикання між теками"
 
-#: data/mail.metainfo.xml.in:126
+#: data/mail.metainfo.xml.in:135
 msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
@@ -133,7 +135,7 @@ msgstr ""
 "Вітальне вікно прибирається, коли обліковий запис додається до Онлайнових "
 "облікових записів без необхідності перезапуску Пошти"
 
-#: data/mail.metainfo.xml.in:127
+#: data/mail.metainfo.xml.in:136
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
@@ -141,81 +143,81 @@ msgstr ""
 "Редактор завжди відкривається у новому вікні та містить більше комбінацій "
 "клавіш"
 
-#: data/mail.metainfo.xml.in:128
+#: data/mail.metainfo.xml.in:137
 msgid "The search filter menu now appears next to the search bar"
 msgstr "Меню фільтрів пошуку тепер з'являється поруч із панеллю пошуку"
 
-#: data/mail.metainfo.xml.in:129
+#: data/mail.metainfo.xml.in:138
 msgid "HeaderBars appear to float above content when scrolled"
 msgstr "Панелі заголовків під час гортання з'являються над вмістом"
 
-#: data/mail.metainfo.xml.in:130
+#: data/mail.metainfo.xml.in:139
 msgid "Fix a potential crash with empty messages"
 msgstr "Усунуто ймовірність збою через порожні повідомлення"
 
-#: data/mail.metainfo.xml.in:131
+#: data/mail.metainfo.xml.in:140
 msgid "Stop resizing from cutting off the message list"
 msgstr "Припинено зміну розміру від обрізання списку повідомлень"
 
-#: data/mail.metainfo.xml.in:132
+#: data/mail.metainfo.xml.in:141
 msgid "Performance improvements"
 msgstr "Поліпшення швидкодії"
 
-#: data/mail.metainfo.xml.in:158 data/mail.metainfo.xml.in:180
+#: data/mail.metainfo.xml.in:167 data/mail.metainfo.xml.in:189
 msgid "Fixes:"
 msgstr "Виправлення:"
 
-#: data/mail.metainfo.xml.in:160
+#: data/mail.metainfo.xml.in:169
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
 "Усунута помилка, яка спричиняла завантаження облікових записів електронної "
 "пошти кілька разів"
 
-#: data/mail.metainfo.xml.in:161
+#: data/mail.metainfo.xml.in:170
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr "Виправлена помилка, яка спричиняла збої пошти"
 
-#: data/mail.metainfo.xml.in:162
+#: data/mail.metainfo.xml.in:171
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "Показ одержувача в теці Надіслані замість відправника"
 
-#: data/mail.metainfo.xml.in:166
+#: data/mail.metainfo.xml.in:175
 msgid "Updated app icon"
 msgstr "Оновлено піктограму застосунку"
 
-#: data/mail.metainfo.xml.in:167
+#: data/mail.metainfo.xml.in:176
 msgid "New design"
 msgstr "Новий дизайн"
 
-#: data/mail.metainfo.xml.in:175
+#: data/mail.metainfo.xml.in:184
 msgid "New features:"
 msgstr "Нові можливості:"
 
-#: data/mail.metainfo.xml.in:177
+#: data/mail.metainfo.xml.in:186
 msgid "Use message subject for composer window title"
 msgstr "Тема повідомлення відтепер буде назвою вікна редактора"
 
-#: data/mail.metainfo.xml.in:178
+#: data/mail.metainfo.xml.in:187
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr "Додано підтримку Unified Inbox для облікових записів Microsoft 365"
 
-#: data/mail.metainfo.xml.in:182
+#: data/mail.metainfo.xml.in:191
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
 "Виправлена помилка, яка призводила до збою моніторингу вхідних у фоновому "
 "режимі"
 
-#: data/mail.metainfo.xml.in:183
+#: data/mail.metainfo.xml.in:192
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr "Прибрано дублювання адреси відправника під час створення повідомлення"
 
-#: data/mail.metainfo.xml.in:184
+#: data/mail.metainfo.xml.in:193
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
 "Виправлено заморожування під час архівування останнього повідомлення у теці"
 
-#: data/mail.metainfo.xml.in:188
+#: data/mail.metainfo.xml.in:197
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""

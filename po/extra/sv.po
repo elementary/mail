@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-11 22:21+0000\n"
+"POT-Creation-Date: 2025-10-29 17:12+0000\n"
 "PO-Revision-Date: 2025-10-23 10:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/mail/extra/sv/"
@@ -66,63 +66,65 @@ msgstr "Fungerar med Gmail, Yahoo! Mail och andra populära IMAP-servrar"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:91
-#: data/mail.metainfo.xml.in:124 data/mail.metainfo.xml.in:145
-#: data/mail.metainfo.xml.in:164 data/mail.metainfo.xml.in:186
+#: data/mail.metainfo.xml.in:74 data/mail.metainfo.xml.in:83
+#: data/mail.metainfo.xml.in:100 data/mail.metainfo.xml.in:133
+#: data/mail.metainfo.xml.in:154 data/mail.metainfo.xml.in:173
+#: data/mail.metainfo.xml.in:195
 msgid "Improvements:"
 msgstr "Förbättringar:"
 
-#: data/mail.metainfo.xml.in:76
+#: data/mail.metainfo.xml.in:76 data/mail.metainfo.xml.in:86
+#: data/mail.metainfo.xml.in:111 data/mail.metainfo.xml.in:142
+#: data/mail.metainfo.xml.in:156 data/mail.metainfo.xml.in:177
+#: data/mail.metainfo.xml.in:198
+msgid "Updated translations"
+msgstr "Uppdaterade översättningar"
+
+#: data/mail.metainfo.xml.in:85
 msgid ""
 "Use the actual recipients of a message as sender when replying or forwarding"
 msgstr ""
 "Använd den faktiska mottagaren av ett meddelande som avsändare när du svarar "
 "eller vidarebefordrar"
 
-#: data/mail.metainfo.xml.in:77 data/mail.metainfo.xml.in:102
-#: data/mail.metainfo.xml.in:133 data/mail.metainfo.xml.in:147
-#: data/mail.metainfo.xml.in:168 data/mail.metainfo.xml.in:189
-msgid "Updated translations"
-msgstr "Uppdaterade översättningar"
-
-#: data/mail.metainfo.xml.in:93
+#: data/mail.metainfo.xml.in:102
 msgid "Ability to create multiple signatures and set defaults per account"
 msgstr ""
 "Möjlighet att skapa flera signaturer och ställa in standardvärden per konto"
 
-#: data/mail.metainfo.xml.in:94
+#: data/mail.metainfo.xml.in:103
 msgid "Add support for inline images in the composer"
 msgstr "Lägg till stöd för inline-bilder i kompositören"
 
-#: data/mail.metainfo.xml.in:95
+#: data/mail.metainfo.xml.in:104
 msgid "Add support for renaming folders"
 msgstr "Lägg till stöd för att byta namn på mappar"
 
-#: data/mail.metainfo.xml.in:96
+#: data/mail.metainfo.xml.in:105
 msgid "Move settings menu to the mailboxes pane"
 msgstr "Flytta inställningsmenyn till brevlådefönstret"
 
-#: data/mail.metainfo.xml.in:97
+#: data/mail.metainfo.xml.in:106
 msgid "Use the FileChooser portal"
 msgstr "Använd FileChooser-portalen"
 
-#: data/mail.metainfo.xml.in:98
+#: data/mail.metainfo.xml.in:107
 msgid "Improve network availability handling"
 msgstr "Förbättra hanteringen av nätverkstillgänglighet"
 
-#: data/mail.metainfo.xml.in:99
+#: data/mail.metainfo.xml.in:108
 msgid "Fix issues with fetching e-mail when Mail is not autostarted"
 msgstr "Åtgärdat problem med att hämta e-post när Mail inte autostartas"
 
-#: data/mail.metainfo.xml.in:100
+#: data/mail.metainfo.xml.in:109
 msgid "Notify the user when a calendar event is included in a message"
 msgstr "Meddela användaren när en kalenderhändelse ingår i ett meddelande"
 
-#: data/mail.metainfo.xml.in:101
+#: data/mail.metainfo.xml.in:110
 msgid "Improve performance when switching between folders"
 msgstr "Förbättrad prestanda när du växlar mellan mappar"
 
-#: data/mail.metainfo.xml.in:126
+#: data/mail.metainfo.xml.in:135
 msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
@@ -130,85 +132,86 @@ msgstr ""
 "Välkomstvyn tas bort när ett konto läggs till i Nätkonton utan att E-post "
 "behöver startas om"
 
-#: data/mail.metainfo.xml.in:127
+#: data/mail.metainfo.xml.in:136
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
 msgstr ""
 "Komponisten visas alltid i ett nytt fönster och innehåller fler kortkommandon"
 
-#: data/mail.metainfo.xml.in:128
+#: data/mail.metainfo.xml.in:137
 msgid "The search filter menu now appears next to the search bar"
 msgstr "Sökfiltermenyn visas nu bredvid sökfältet"
 
-#: data/mail.metainfo.xml.in:129
+#: data/mail.metainfo.xml.in:138
 msgid "HeaderBars appear to float above content when scrolled"
 msgstr "HeaderBars ser ut att flyta över innehållet när de rullas"
 
-#: data/mail.metainfo.xml.in:130
+#: data/mail.metainfo.xml.in:139
 msgid "Fix a potential crash with empty messages"
 msgstr "Åtgärdat en potentiell krasch med tomma meddelanden"
 
-#: data/mail.metainfo.xml.in:131
+#: data/mail.metainfo.xml.in:140
 msgid "Stop resizing from cutting off the message list"
 msgstr "Stoppa storleksändringar från att klippa av meddelandelistan"
 
-#: data/mail.metainfo.xml.in:132
+#: data/mail.metainfo.xml.in:141
 msgid "Performance improvements"
 msgstr "Förbättringar av prestanda"
 
-#: data/mail.metainfo.xml.in:158 data/mail.metainfo.xml.in:180
+#: data/mail.metainfo.xml.in:167 data/mail.metainfo.xml.in:189
 msgid "Fixes:"
 msgstr "Åtgärdar:"
 
-#: data/mail.metainfo.xml.in:160
+#: data/mail.metainfo.xml.in:169
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
-msgstr "Åtgärdade ett fel som ledde till att e-postkonton laddades flera gånger"
+msgstr ""
+"Åtgärdade ett fel som ledde till att e-postkonton laddades flera gånger"
 
-#: data/mail.metainfo.xml.in:161
+#: data/mail.metainfo.xml.in:170
 msgid "Fixed a bug which caused Mail to crash occasionally"
 msgstr "Åtgärdat en bugg som gjorde att Mail kraschade ibland"
 
-#: data/mail.metainfo.xml.in:162
+#: data/mail.metainfo.xml.in:171
 msgid "Display recipient in Sent folder instead of sender"
 msgstr "Visa mottagaren i mappen Skickat i stället för avsändaren"
 
-#: data/mail.metainfo.xml.in:166
+#: data/mail.metainfo.xml.in:175
 msgid "Updated app icon"
 msgstr "Uppdaterad app-ikon"
 
-#: data/mail.metainfo.xml.in:167
+#: data/mail.metainfo.xml.in:176
 msgid "New design"
 msgstr "Ny design"
 
-#: data/mail.metainfo.xml.in:175
+#: data/mail.metainfo.xml.in:184
 msgid "New features:"
 msgstr "Nya funktioner:"
 
-#: data/mail.metainfo.xml.in:177
+#: data/mail.metainfo.xml.in:186
 msgid "Use message subject for composer window title"
 msgstr "Använd meddelandets ämne som titel på composer-fönstret"
 
-#: data/mail.metainfo.xml.in:178
+#: data/mail.metainfo.xml.in:187
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr "Stöd för Unified Inbox för Microsoft 365-konton har lagts till"
 
-#: data/mail.metainfo.xml.in:182
+#: data/mail.metainfo.xml.in:191
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
 "Åtgärdat ett fel som ledde till att inkorgsövervakningen i bakgrunden "
 "kraschade"
 
-#: data/mail.metainfo.xml.in:183
+#: data/mail.metainfo.xml.in:192
 msgid "Removed duplicate sender addresses when composing a message"
 msgstr "Borttagning av dubbla avsändaradresser när ett meddelande skrivs"
 
-#: data/mail.metainfo.xml.in:184
+#: data/mail.metainfo.xml.in:193
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr "Fixa en frysning vid arkivering av det sista meddelandet i en mapp"
 
-#: data/mail.metainfo.xml.in:188
+#: data/mail.metainfo.xml.in:197
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
