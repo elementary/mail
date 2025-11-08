@@ -32,6 +32,16 @@
       <summary>Whether to always load remote images without prompting</summary>
       <description>Whether to always load remote images without prompting</description>
     </key>
+    <key name="hide-read-conversations" type="b">
+      <default>false</default>
+      <summary>Whether to hide read conversations in the list</summary>
+      <description>Stores the last used state of the “Hide read conversations” filter</description>
+    </key>
+    <key name="hide-unstarred-conversations" type="b">
+      <default>false</default>
+      <summary>Whether to hide unstarred conversations in the list</summary>
+      <description>Stores the last used state of the “Hide unstarred conversations” filter</description>
+    </key>
     <key name="remote-images-whitelist" type="as">
       <default>[]</default>
       <summary>A list of sender addresses for which remote images will be automatically loaded</summary>
@@ -51,4 +61,3 @@
     </key>
   </schema>
 </schemalist>
-
