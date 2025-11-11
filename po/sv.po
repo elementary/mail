@@ -17,10 +17,10 @@ msgstr ""
 "Project-Id-Version: geary-0.5.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-29 17:12+0000\n"
-"PO-Revision-Date: 2025-10-23 10:55+0000\n"
+"PO-Revision-Date: 2025-10-30 18:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
-"Language-Team: Swedish <https://l10n.elementaryos.org/projects/mail/mail/sv/"
-">\n"
+"Language-Team: Swedish <https://l10n.elementaryos.org/projects/mail/mail/sv/>"
+"\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -194,7 +194,7 @@ msgstr "Skicka inte"
 
 #: src/Composer.vala:794
 msgid "Send Anyway"
-msgstr "Skicka hur som helst"
+msgstr "Skicka ändå"
 
 #: src/Composer.vala:825
 msgid "Sent message was not saved"
@@ -210,11 +210,11 @@ msgstr ""
 
 #: src/Composer.vala:841
 msgid "Unable to send message"
-msgstr "Det går inte att skicka ett meddelande"
+msgstr "Det går inte att skicka meddelande"
 
 #: src/Composer.vala:842
 msgid "There was an unexpected error while sending your message."
-msgstr "Det uppstod ett oväntat fel när vi skickade ditt meddelande."
+msgstr "Det uppstod ett oväntat fel vid sändning av ditt meddelande."
 
 #: src/Composer.vala:946 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
@@ -230,15 +230,15 @@ msgstr "Det går inte att spara utkast"
 
 #: src/Composer.vala:1140
 msgid "There was an unexpected error while saving your draft."
-msgstr "Det uppstod ett oväntat fel när du sparade ditt utkast."
+msgstr "Det uppstod ett oväntat fel vid sparning av ditt utkast."
 
 #: src/EditorToolbar.vala:55
 msgid "Bold"
-msgstr "Fett"
+msgstr "Fet text"
 
 #: src/EditorToolbar.vala:62
 msgid "Italic"
-msgstr "Kursiv"
+msgstr "Kursiv text"
 
 #: src/EditorToolbar.vala:73
 msgid "Underline"
@@ -336,12 +336,12 @@ msgstr "Det går inte att ansluta"
 
 #: src/Backend/Account.vala:49
 msgid "There was an unexpected error while trying to connect to the server."
-msgstr "Det uppstod ett oväntat fel när vi försökte ansluta till servern."
+msgstr "Det uppstod ett oväntat fel vid försök att ansluta till servern."
 
 #: src/Backend/MoveOperation.vala:65
 #, c-format
 msgid "Moving messages… (%u remaining)"
-msgstr "Flyttar meddelanden... (%u kvar)"
+msgstr "Flyttar meddelanden... (%u återstår)"
 
 #: src/Backend/MoveOperation.vala:98
 msgid "No Archive folder is configured."
@@ -353,7 +353,7 @@ msgstr "Målmappen hittades inte."
 
 #: src/Backend/MoveOperation.vala:130
 msgid "The source folder is the destination folder."
-msgstr "Källmappen är destinationsmappen."
+msgstr "Källmappen är målmappen."
 
 #: src/Backend/Session.vala:642
 msgid "New Signature"
@@ -394,7 +394,7 @@ msgstr "Dölj läskonversationer"
 
 #: src/ConversationList/ConversationList.vala:92
 msgid "Hide unstarred conversations"
-msgstr "Dölj ostartade konversationer"
+msgstr "Dölj icke-stjärnmärkta konversationer"
 
 #: src/ConversationList/ConversationList.vala:109
 msgid "Filter Conversations"
@@ -422,7 +422,7 @@ msgstr "Oläst"
 
 #: src/ConversationList/ConversationListItem.vala:194
 msgid "Replied"
-msgstr "Kommenterades"
+msgstr "Besvarade"
 
 #: src/ConversationList/ConversationListItem.vala:198
 msgid "Forwarded"
@@ -485,7 +485,7 @@ msgstr "Redigera alias"
 
 #: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
-msgstr "Namnet är inte angivet"
+msgstr "Namnet är inte inställt"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:33
 msgid "No Aliases"
@@ -511,11 +511,11 @@ msgstr "Stäng"
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
 #, c-format
 msgid "'%s' deleted"
-msgstr "'%s' borttagen"
+msgstr "'%s' togs bort"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:39
 msgid "No Signatures"
-msgstr "Inga underskrifter"
+msgstr "Inga signaturer"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:43
 msgid "Add signatures using the button in the toolbar below"
@@ -544,7 +544,7 @@ msgstr "Ställ in standard för…"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
 msgid "Signature"
-msgstr "Underskrift"
+msgstr "Signatur"
 
 #: src/FoldersView/AccountSourceItem.vala:154
 msgid "Edit Aliases…"
@@ -552,7 +552,7 @@ msgstr "Redigera alias…"
 
 #: src/FoldersView/FoldersListView.vala:47
 msgid "Compose new message"
-msgstr "Skriva nytt meddelande"
+msgstr "Skriv nytt meddelande"
 
 #: src/FoldersView/FoldersListView.vala:59
 msgid "Always Show Remote Images"
@@ -579,11 +579,11 @@ msgstr ""
 
 #: src/FoldersView/FolderSourceItem.vala:52
 msgid "Refresh folder"
-msgstr "Uppdatera mappen"
+msgstr "Uppdatera mapp"
 
 #: src/FoldersView/FolderSourceItem.vala:57
 msgid "Rename folder"
-msgstr "Byt namn på mappen"
+msgstr "Byt namn på mapp"
 
 #: src/FoldersView/FolderSourceItem.vala:161
 #: src/FoldersView/FolderSourceItem.vala:190
@@ -594,7 +594,7 @@ msgstr "Det gick inte att byta namn på \"%s\""
 
 #: src/FoldersView/FolderSourceItem.vala:162
 msgid "Folder names cannot contain “/”"
-msgstr "Mappnamn kan inte innehålla \"/\""
+msgstr "Mappnamn får inte innehålla \"/\""
 
 #: src/FoldersView/FolderSourceItem.vala:191
 #, c-format
@@ -630,7 +630,7 @@ msgstr "Svara alla"
 
 #: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:216
 msgid "Forward"
-msgstr "Framåt"
+msgstr "Vidarebefordra"
 
 #: src/MessageList/MessageList.vala:53
 msgid "Mark as Unread"
@@ -638,11 +638,11 @@ msgstr "Markera som oläst"
 
 #: src/MessageList/MessageList.vala:84
 msgid "Mark Conversation"
-msgstr "Mark Konversation"
+msgstr "Markera konversation"
 
 #: src/MessageList/MessageList.vala:92
 msgid "Move Conversation to…"
-msgstr "Flytta konversationen till…"
+msgstr "Flytta konversation till…"
 
 #: src/MessageList/MessageList.vala:101
 msgid "Move conversations to archive"
@@ -654,23 +654,23 @@ msgstr "Flytta konversationer till papperskorgen"
 
 #: src/MessageList/MessageList.vala:124
 msgid "No Message Selected"
-msgstr "Inget meddelande valt"
+msgstr "Inget meddelande markerat"
 
 #. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
 #: src/MessageList/MessageListItem.vala:190
 #, c-format
 msgid "%s at %s"
-msgstr "%s den %s"
+msgstr "%s klockan %s"
 
 #: src/MessageList/MessageListItem.vala:198
 #: src/MessageList/MessageListItem.vala:397
 msgid "Unstar message"
-msgstr "Stjärnlöst meddelande"
+msgstr "Ta bort stjärna från meddelande"
 
 #: src/MessageList/MessageListItem.vala:201
 #: src/MessageList/MessageListItem.vala:393
 msgid "Star message"
-msgstr "Stjärnmeddelande"
+msgstr "Stjärnmärk meddelande"
 
 #: src/MessageList/MessageListItem.vala:221
 msgid "Print…"
@@ -682,7 +682,7 @@ msgstr "Mer"
 
 #: src/MessageList/MessageListItem.vala:280
 msgid "Open in Calendar"
-msgstr "Öppna i kalender"
+msgstr "Öppna i Kalender"
 
 #: src/MessageList/MessageListItem.vala:286
 msgid "This message contains a Calendar Event."
@@ -728,7 +728,7 @@ msgstr ""
 
 #: src/MessageList/MessageListItem.vala:699
 msgid "Open Anyway"
-msgstr "Fortsätt ändå"
+msgstr "Öppna ändå"
 
 #: src/MessageList/AttachmentButton.vala:57
 msgid "Open"
