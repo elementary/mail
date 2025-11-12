@@ -88,7 +88,6 @@ public class Mail.ConversationList : Gtk.Box {
         };
 
         hide_read_switch = new Granite.SwitchModelButton (_("Hide read conversations"));
-
         hide_unstarred_switch = new Granite.SwitchModelButton (_("Hide unstarred conversations"));
 
         var filter_menu_popover_box = new Gtk.Box (VERTICAL, 0) {
@@ -203,8 +202,11 @@ public class Mail.ConversationList : Gtk.Box {
             }
         });
 
-        hide_read_switch.toggled.connect (() => load_folder.begin (folder_info_per_account));
+        var settings = new GLib.Settings ("io.elementary.mail");
+        settings.bind ("hide-read-conversations", hide_read_switch, "active", DEFAULT);
+        settings.bind ("hide-unstarred-conversations", hide_unstarred_switch, "active", DEFAULT);
 
+        hide_read_switch.toggled.connect (() => load_folder.begin (folder_info_per_account));
         hide_unstarred_switch.toggled.connect (() => load_folder.begin (folder_info_per_account));
     }
 
@@ -222,7 +224,7 @@ public class Mail.ConversationList : Gtk.Box {
         }
     }
 
-    public async void load_folder (Gee.Map<Backend.Account, Camel.FolderInfo?> folder_info_per_account) {
+    public async void load_folder (Gee.Map<Backend.Account, Camel.FolderInfo?> folder_info_per_account) requires (folder_info_per_account != null) {
         lock (this.folder_info_per_account) {
             this.folder_info_per_account = folder_info_per_account;
         }
