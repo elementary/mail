@@ -213,11 +213,11 @@ public class Mail.ConversationList : Gtk.Box {
             return;
         }
 
-        if (!(flag in (int)node.message.flags)) {
-            node.message.set_flags (flag, ~0);
+        if (!(flag in (int)((Camel.MessageInfo?) node.get_item ()).flags)) {
+            ((Camel.MessageInfo?) node.get_item ()).set_flags (flag, ~0);
         }
 
-        for (unowned Camel.FolderThreadNode? child = node.child; child != null; child = child.next) {
+        for (unowned Camel.FolderThreadNode? child = node.get_child (); child != null; child = child.get_next ()) {
             set_thread_flag (child, flag);
         }
     }
@@ -269,17 +269,17 @@ public class Mail.ConversationList : Gtk.Box {
 
                                 var search_result_uids = get_search_result_uids (current_account.service.uid);
                                 if (search_result_uids != null) {
-                                    var thread = new Camel.FolderThread (folder, search_result_uids, false);
+                                    var thread = new Camel.FolderThread (folder, (GLib.GenericArray<string>?) search_result_uids, Camel.FolderThreadFlags.NONE);
                                     threads[current_account.service.uid] = thread;
 
-                                    weak Camel.FolderThreadNode? child = thread.tree;
+                                    weak Camel.FolderThreadNode? child = thread.get_tree ();
                                     while (child != null) {
                                         if (cancellable.is_cancelled ()) {
                                             break;
                                         }
 
                                         add_conversation_item (folder_info_flags[current_account.service.uid], child, thread, current_account.service.uid);
-                                        child = child.next;
+                                        child = child.get_next ();
                                     }
                                 }
                             } catch (Error e) {
@@ -326,7 +326,7 @@ public class Mail.ConversationList : Gtk.Box {
                     return;
                 }
 
-                threads[service_uid] = new Camel.FolderThread (folders[service_uid], search_result_uids, false);
+                threads[service_uid] = new Camel.FolderThread (folders[service_uid], (GLib.GenericArray<string>?) search_result_uids, Camel.FolderThreadFlags.NONE);
 
                 var removed = 0;
                 change_info.get_removed_uids ().foreach ((uid) => {
@@ -338,25 +338,25 @@ public class Mail.ConversationList : Gtk.Box {
                     }
                 });
 
-                unowned Camel.FolderThreadNode? child = threads[service_uid].tree;
+                unowned Camel.FolderThreadNode? child = threads[service_uid].get_tree ();
                 while (child != null) {
                     if (cancellable.is_cancelled ()) {
                         return;
                     }
 
-                    var item = conversations[child.message.uid];
+                    var item = conversations[((Camel.MessageInfo?) child.get_item ()).uid];
                     if (item == null) {
                         add_conversation_item (folder_info_flags[service_uid], child, threads[service_uid], service_uid);
                     } else {
                         if (item.is_older_than (child)) {
-                            conversations.unset (child.message.uid);
+                            conversations.unset (((Camel.MessageInfo?) child.get_item ()).uid);
                             list_store.remove (item);
                             removed++;
                             add_conversation_item (folder_info_flags[service_uid], child, threads[service_uid], service_uid);
                         };
                     }
 
-                    child = child.next;
+                    child = child.get_next ();
                 }
 
                 list_store.items_changed (0, removed, list_store.get_n_items ());
@@ -364,7 +364,7 @@ public class Mail.ConversationList : Gtk.Box {
         }
     }
 
-    private GenericArray<string>? get_search_result_uids (string service_uid) {
+    private GenericArray<weak string>? get_search_result_uids (string service_uid) {
         var style_context = filter_button.get_style_context ();
         if (hide_read_switch.active || hide_unstarred_switch.active) {
             if (!style_context.has_class (Granite.STYLE_CLASS_ACCENT)) {
@@ -381,7 +381,7 @@ public class Mail.ConversationList : Gtk.Box {
 
             var has_current_search_query = search_entry.text.strip () != "";
             if (!has_current_search_query && !hide_read_switch.active && !hide_unstarred_switch.active) {
-                return folders[service_uid].get_uids ();
+                return folders[service_uid].dup_uids ();
             }
 
             string[] current_search_expressions = {};
@@ -406,20 +406,22 @@ public class Mail.ConversationList : Gtk.Box {
             string search_query = "(match-all (and " + string.joinv ("", current_search_expressions) + "))";
 
             try {
-                return folders[service_uid].search_by_expression (search_query, cancellable);
+                GenericArray<weak string>? uids = null;
+                folders[service_uid].search_sync (search_query, out uids, cancellable);
+                return uids;
             } catch (Error e) {
                 if (!(e is GLib.IOError.CANCELLED)) {
                     warning ("Error while searching: %s", e.message);
                 }
 
-                return folders[service_uid].get_uids ();
+                return folders[service_uid].dup_uids ();
             }
         }
     }
 
     private void add_conversation_item (Camel.FolderInfoFlags folder_info_flags, Camel.FolderThreadNode child, Camel.FolderThread thread, string service_uid) {
         var item = new ConversationItemModel (folder_info_flags, child, thread, service_uid);
-        conversations[child.message.uid] = item;
+        conversations[((Camel.MessageInfo?) child.get_item ()).uid] = item;
         list_store.add (item);
     }
 
@@ -439,28 +441,28 @@ public class Mail.ConversationList : Gtk.Box {
     public void mark_read_selected_messages () {
         var selected_rows = list_box.get_selected_rows ();
         foreach (var row in selected_rows) {
-            (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.SEEN, ~0);
+            ((Camel.MessageInfo?) (((ConversationItemModel)row).node).get_item ()).set_flags (Camel.MessageFlags.SEEN, ~0);
         }
     }
 
     public void mark_star_selected_messages () {
         var selected_rows = list_box.get_selected_rows ();
         foreach (var row in selected_rows) {
-            (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.FLAGGED, ~0);
+            ((Camel.MessageInfo?) (((ConversationItemModel)row).node).get_item ()).set_flags (Camel.MessageFlags.FLAGGED, ~0);
         }
     }
 
     public void mark_unread_selected_messages () {
         var selected_rows = list_box.get_selected_rows ();
         foreach (var row in selected_rows) {
-            (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.SEEN, 0);
+            ((Camel.MessageInfo?) (((ConversationItemModel)row).node).get_item ()).set_flags (Camel.MessageFlags.SEEN, 0);
         }
     }
 
     public void mark_unstar_selected_messages () {
         var selected_rows = list_box.get_selected_rows ();
         foreach (var row in selected_rows) {
-            (((ConversationItemModel)row).node).message.set_flags (Camel.MessageFlags.FLAGGED, 0);
+            ((Camel.MessageInfo?) (((ConversationItemModel)row).node).get_item ()).set_flags (Camel.MessageFlags.FLAGGED, 0);
         }
     }
 
