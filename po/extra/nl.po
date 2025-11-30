@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-29 17:12+0000\n"
-"PO-Revision-Date: 2023-02-10 17:25+0000\n"
-"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/mail/extra/nl/>\n"
+"PO-Revision-Date: 2025-12-01 11:55+0000\n"
+"Last-Translator: Bas Ernst <bas@ernstgenova.it>\n"
+"Language-Team: Dutch <https://l10n.elementaryos.org/projects/mail/extra/nl/>"
+"\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
 #: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
@@ -54,12 +55,8 @@ msgid "Multiple account support"
 msgstr "Ondersteuning voor meerdere accounts"
 
 #: data/mail.metainfo.xml.in:19
-#, fuzzy
-#| msgid "Inline HTML composer that saves drafts to the server"
 msgid "Powerful HTML composer that saves drafts to the server"
-msgstr ""
-"HTML tekstverwerker waarbij concepten automatisch op de server worden "
-"opgeslagen"
+msgstr "Krachtige HTML tekstverwerker die concepten op de server opslaat"
 
 #: data/mail.metainfo.xml.in:20
 msgid "Works with Gmail, Yahoo! Mail, and other popular IMAP servers"
@@ -81,48 +78,56 @@ msgstr "Verbeteringen:"
 #: data/mail.metainfo.xml.in:156 data/mail.metainfo.xml.in:177
 #: data/mail.metainfo.xml.in:198
 msgid "Updated translations"
-msgstr ""
+msgstr "Bijgewerkte vertalingen"
 
 #: data/mail.metainfo.xml.in:85
 msgid ""
 "Use the actual recipients of a message as sender when replying or forwarding"
 msgstr ""
+"Gebruik de daadwerkelijke geadresseerden als verzender bij antwoorden of "
+"doorsturen"
 
 #: data/mail.metainfo.xml.in:102
 msgid "Ability to create multiple signatures and set defaults per account"
 msgstr ""
+"Mogelijkheid om meerdere handtekeningen te maken en standaardinstellingen "
+"per account in te stellen"
 
 #: data/mail.metainfo.xml.in:103
 msgid "Add support for inline images in the composer"
-msgstr ""
+msgstr "Ondersteuning toevoegen voor in-tekst afbeeldingen in het tekstveld"
 
 #: data/mail.metainfo.xml.in:104
 msgid "Add support for renaming folders"
-msgstr ""
+msgstr "Ondersteuning toevoegen om folders te hernoemen"
 
 #: data/mail.metainfo.xml.in:105
 msgid "Move settings menu to the mailboxes pane"
-msgstr ""
+msgstr "Verplaats het instellingenmenu naar het postvakvenster"
 
 #: data/mail.metainfo.xml.in:106
 msgid "Use the FileChooser portal"
-msgstr ""
+msgstr "Gebruik het Bestandskeuze portaal"
 
 #: data/mail.metainfo.xml.in:107
 msgid "Improve network availability handling"
-msgstr ""
+msgstr "Verbeter de afhandeling van netwerkbeschikbaarheid"
 
 #: data/mail.metainfo.xml.in:108
 msgid "Fix issues with fetching e-mail when Mail is not autostarted"
 msgstr ""
+"Problemen oplossen met mail ophalen wanneer Mail niet automatisch wordt "
+"opgestart"
 
 #: data/mail.metainfo.xml.in:109
 msgid "Notify the user when a calendar event is included in a message"
 msgstr ""
+"De gebruiker informeren wanneer een kalenderevent is bijgevoegd in een "
+"bericht"
 
 #: data/mail.metainfo.xml.in:110
 msgid "Improve performance when switching between folders"
-msgstr ""
+msgstr "De prestaties verbeteren bij het schakelen tussen folders"
 
 #: data/mail.metainfo.xml.in:135
 msgid ""
@@ -158,7 +163,7 @@ msgstr ""
 
 #: data/mail.metainfo.xml.in:167 data/mail.metainfo.xml.in:189
 msgid "Fixes:"
-msgstr ""
+msgstr "Oplossingen:"
 
 #: data/mail.metainfo.xml.in:169
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
@@ -178,15 +183,15 @@ msgstr ""
 
 #: data/mail.metainfo.xml.in:176
 msgid "New design"
-msgstr ""
+msgstr "Nieuw ontwerp"
 
 #: data/mail.metainfo.xml.in:184
 msgid "New features:"
-msgstr ""
+msgstr "Nieuwe functies:"
 
 #: data/mail.metainfo.xml.in:186
 msgid "Use message subject for composer window title"
-msgstr ""
+msgstr "Gebruik het onderwerp van het bericht als titel voor het opstelvenster"
 
 #: data/mail.metainfo.xml.in:187
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
