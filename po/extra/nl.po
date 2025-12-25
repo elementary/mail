@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-29 17:12+0000\n"
-"PO-Revision-Date: 2025-12-01 11:55+0000\n"
+"PO-Revision-Date: 2025-12-26 16:55+0000\n"
 "Last-Translator: Bas Ernst <bas@ernstgenova.it>\n"
 "Language-Team: Dutch <https://l10n.elementaryos.org/projects/mail/extra/nl/>"
 "\n"
@@ -134,32 +134,38 @@ msgid ""
 "The welcome view is removed when an account is added in Online Accounts "
 "without having to restart Mail"
 msgstr ""
+"Het welkomstscherm wordt weggehaald wanneer een account wordt toegevoegd in "
+"Online Accounts zonder dat Mail opnieuw opgestart moet worden"
 
 #: data/mail.metainfo.xml.in:136
 msgid ""
 "The composer is always presented as a new window and includes more keyboard "
 "shortcuts"
 msgstr ""
+"Het tekstveld is altijd als een nieuw venster aanwezig en bevat meer "
+"sneltoetsen"
 
 #: data/mail.metainfo.xml.in:137
 msgid "The search filter menu now appears next to the search bar"
-msgstr ""
+msgstr "Het menu met zoekfilters verschijnt nu naast de zoekbalk"
 
 #: data/mail.metainfo.xml.in:138
 msgid "HeaderBars appear to float above content when scrolled"
-msgstr ""
+msgstr "De kopbalken lijken boven de inhoud te zweven wanneer er gescrold wordt"
 
 #: data/mail.metainfo.xml.in:139
 msgid "Fix a potential crash with empty messages"
-msgstr ""
+msgstr "Een mogelijk vastloper met lege berichten verhelpen"
 
 #: data/mail.metainfo.xml.in:140
 msgid "Stop resizing from cutting off the message list"
 msgstr ""
+"Stop met het aanpassen van de grootte, zodat de berichtenlijst niet wordt "
+"afgesneden"
 
 #: data/mail.metainfo.xml.in:141
 msgid "Performance improvements"
-msgstr ""
+msgstr "Prestatieverbeteringen"
 
 #: data/mail.metainfo.xml.in:167 data/mail.metainfo.xml.in:189
 msgid "Fixes:"
@@ -168,18 +174,19 @@ msgstr "Oplossingen:"
 #: data/mail.metainfo.xml.in:169
 msgid "Fixed an error which caused mail accounts to be loaded multiple times"
 msgstr ""
+"Een fout is hersteld waardoor mailaccounts meerdere keren werden geladen"
 
 #: data/mail.metainfo.xml.in:170
 msgid "Fixed a bug which caused Mail to crash occasionally"
-msgstr ""
+msgstr "Een bug is verholpen die veroorzaakte dat Mail soms vastliep"
 
 #: data/mail.metainfo.xml.in:171
 msgid "Display recipient in Sent folder instead of sender"
-msgstr ""
+msgstr "Toon ontvanger in de map Verzonden in plaats van de zender"
 
 #: data/mail.metainfo.xml.in:175
 msgid "Updated app icon"
-msgstr ""
+msgstr "Bijgewerkte app pictogram"
 
 #: data/mail.metainfo.xml.in:176
 msgid "New design"
@@ -196,24 +203,29 @@ msgstr "Gebruik het onderwerp van het bericht als titel voor het opstelvenster"
 #: data/mail.metainfo.xml.in:187
 msgid "Added support for Unified Inbox for Microsoft 365 accounts"
 msgstr ""
+"Ondersteuning toegevoegd voor de Unified Inbox voor Microsoft 365 accounts"
 
 #: data/mail.metainfo.xml.in:191
 msgid ""
 "Fixed an error which caused the inbox monitoring in the background to crash"
 msgstr ""
+"Een fout is opgelost die ervoor zorgde dat de monitoring van de inbox op de "
+"achtergrond vastliep"
 
 #: data/mail.metainfo.xml.in:192
 msgid "Removed duplicate sender addresses when composing a message"
-msgstr ""
+msgstr "Dubbele afzenderadressen verwijderd bij het opstellen van een bericht"
 
 #: data/mail.metainfo.xml.in:193
 msgid "Fix a freeze when archiving the last message in a folder"
 msgstr ""
+"Een vastloper oplossen wanneer het laatste bericht in de map gearchiveerd "
+"wordt"
 
 #: data/mail.metainfo.xml.in:197
 msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
-msgstr ""
+msgstr "Office 365 veranderd in Microsoft 365 conform Microsofts rebranding"
 
 #: data/io.elementary.mail.desktop.in:7
 msgid "Email;E-mail;Mail;"
