@@ -179,14 +179,14 @@ public class Mail.MessageList : Gtk.Box {
          */
         can_move_thread (true);
 
-        var store = node.message.summary.folder.parent_store;
+        var store = ((Camel.MessageInfo?) node.get_item ()).summary.folder.parent_store;
         folder_popover.set_store (store);
 
-        var item = new MessageListItem (node.message);
+        var item = new MessageListItem ((Camel.MessageInfo?) node.get_item ());
         list_box.add (item);
-        messages.set (node.message.uid, item);
-        if (node.child != null) {
-            go_down ((Camel.FolderThreadNode?) node.child);
+        messages.set (((Camel.MessageInfo?) node.get_item ()).uid, item);
+        if (node.get_child () != null) {
+            go_down ((Camel.FolderThreadNode?) node.get_child ());
         }
 
         var children = list_box.get_children ();
@@ -203,7 +203,7 @@ public class Mail.MessageList : Gtk.Box {
             }
         }
 
-        if (node.message != null && Camel.MessageFlags.DRAFT in (int) node.message.flags) {
+        if (node.get_item () != null && Camel.MessageFlags.DRAFT in (int) ((Camel.MessageInfo?) node.get_item ()).flags) {
             compose.begin (Composer.Type.DRAFT, "");
         }
     }
@@ -211,14 +211,14 @@ public class Mail.MessageList : Gtk.Box {
     private void go_down (Camel.FolderThreadNode node) {
         unowned Camel.FolderThreadNode? current_node = node;
         while (current_node != null) {
-            var item = new MessageListItem (current_node.message);
+            var item = new MessageListItem ((Camel.MessageInfo?) current_node.get_item ());
             list_box.add (item);
-            messages.set (current_node.message.uid, item);
-            if (current_node.next != null) {
-                go_down ((Camel.FolderThreadNode?) current_node.next);
+            messages.set (((Camel.MessageInfo?) current_node.get_item ()).uid, item);
+            if (current_node.get_next () != null) {
+                go_down ((Camel.FolderThreadNode?) current_node.get_next ());
             }
 
-            current_node = (Camel.FolderThreadNode?) current_node.child;
+            current_node = (Camel.FolderThreadNode?) current_node.get_child ();
         }
     }
 
