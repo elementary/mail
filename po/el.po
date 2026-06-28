@@ -12,16 +12,16 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-29 17:12+0000\n"
-"PO-Revision-Date: 2017-01-27 17:54+0000\n"
-"Last-Translator: Christos Iatropoulos <Unknown>\n"
-"Language-Team: www.gnome.gr\n"
+"PO-Revision-Date: 2026-06-29 14:57+0000\n"
+"Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
+"Language-Team: Greek <https://l10n.elementaryos.org/projects/mail/mail/el/>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
-"X-Generator: Launchpad (build 18330)\n"
 "X-Project-Style: gnome\n"
 
 #: src/Application.vala:191
@@ -43,18 +43,16 @@ msgid "Subject:"
 msgstr "Θέμα:"
 
 #: src/Composer.vala:121
-#, fuzzy
 msgid "Cc"
-msgstr "Κοινοποίηση:"
+msgstr "Κοιν."
 
 #: src/Composer.vala:123
-#, fuzzy
 msgid "Bcc"
-msgstr "Κρυφή κοιν.:"
+msgstr "Κρυφή κοιν."
 
 #: src/Composer.vala:130 src/MessageList/MessageListItem.vala:148
 msgid "Cc:"
-msgstr "Κοινοποίηση:"
+msgstr "Κοιν.:"
 
 #: src/Composer.vala:148
 msgid "Bcc:"
@@ -62,11 +60,11 @@ msgstr "Κρυφή κοιν.:"
 
 #: src/Composer.vala:198
 msgid "Insert Image"
-msgstr ""
+msgstr "Εισαγωγή εικόνας"
 
 #: src/Composer.vala:224
 msgid "Delete draft"
-msgstr "Διαγραφή προχείρου"
+msgstr "Διαγραφή προσχεδίου"
 
 #: src/Composer.vala:232
 msgid "Attach file"
@@ -74,7 +72,7 @@ msgstr "Επισύναψη αρχείου"
 
 #: src/Composer.vala:243
 msgid "Insert Signature…"
-msgstr ""
+msgstr "Εισαγωγή υπογραφής…"
 
 #: src/Composer.vala:249
 msgid "Send"
@@ -89,22 +87,18 @@ msgid "Choose a file"
 msgstr "Επιλέξτε ένα αρχείο"
 
 #: src/Composer.vala:441
-#, fuzzy
-#| msgid "_Attach"
 msgid "Attach"
-msgstr "_Επισύναψη"
+msgstr "Επισύναψη"
 
 #: src/Composer.vala:442 src/Composer.vala:466 src/Composer.vala:758
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:144
 msgid "Cancel"
-msgstr "Άκυρο"
+msgstr "Ακύρωση"
 
 #: src/Composer.vala:458
-#, fuzzy
-#| msgid "Show Images"
 msgid "Images"
-msgstr "Προβολή εικόνων"
+msgstr "Εικόνες"
 
 #: src/Composer.vala:462
 #, fuzzy
@@ -114,7 +108,7 @@ msgstr "Επιλέξτε ένα αρχείο"
 
 #: src/Composer.vala:465
 msgid "Insert"
-msgstr ""
+msgstr "Εισαγωγή"
 
 #: src/Composer.vala:494
 #, fuzzy
@@ -128,7 +122,7 @@ msgstr ""
 
 #: src/Composer.vala:659
 msgid "%a, %b %-e, %Y at %-l:%M %p"
-msgstr "%a, %-e %b, %Y at %-l:%M %p"
+msgstr "%a, %-e %b %Y στις %H:%M"
 
 #: src/Composer.vala:689
 #, c-format
@@ -140,36 +134,33 @@ msgid "---------- Forwarded message ----------"
 msgstr "---------- Προωθημένο μήνυμα ----------"
 
 #: src/Composer.vala:695
-#, fuzzy, c-format
+#, c-format
 msgid "From: %s<br/>"
-msgstr "Από: %s\n"
+msgstr "Από: %s<br/>"
 
 #: src/Composer.vala:696
-#, fuzzy, c-format
+#, c-format
 msgid "Subject: %s<br/>"
-msgstr "Θέμα %s\n"
+msgstr "Θέμα: %s<br/>"
 
 #: src/Composer.vala:697
-#, fuzzy, c-format
+#, c-format
 msgid "Date: %s<br/>"
-msgstr "Ημερομηνία:%s\n"
+msgstr "Ημερομηνία: %s<br/>"
 
 #: src/Composer.vala:698
-#, fuzzy, c-format
+#, c-format
 msgid "To: %s<br/>"
-msgstr "Προς: %s\n"
+msgstr "Προς: %s<br/>"
 
 #: src/Composer.vala:700
-#, fuzzy, c-format
+#, c-format
 msgid "Cc: %s<br/>"
-msgstr "Κοινοποίηση: %s\n"
+msgstr "Κοιν.: %s<br/>"
 
 #: src/Composer.vala:749
-#, fuzzy
-#| msgid "Do you want to permanently delete this message?"
-#| msgid_plural "Do you want to permanently delete these messages?"
 msgid "Permanently delete this draft?"
-msgstr "Θέλετε να διαγράψετε οριστικά αυτό το μήνυμα;"
+msgstr "Οριστική διαγραφή αυτού του προσχεδίου;"
 
 #: src/Composer.vala:750
 msgid ""
@@ -177,15 +168,12 @@ msgid ""
 msgstr ""
 
 #: src/Composer.vala:760
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Delete Draft"
-msgstr "Διαγραφή προχείρου"
+msgstr "Διαγραφή προσχεδίου"
 
 #: src/Composer.vala:784
-#, fuzzy
 msgid "Send without subject?"
-msgstr "Να αποσταλεί το μήνυμα με κενό θέμα;"
+msgstr "Αποστολή χωρίς θέμα;"
 
 #: src/Composer.vala:785
 msgid ""
@@ -195,17 +183,15 @@ msgstr ""
 
 #: src/Composer.vala:792
 msgid "Don't Send"
-msgstr ""
+msgstr "Ακύρωση αποστολής"
 
 #: src/Composer.vala:794
 msgid "Send Anyway"
-msgstr ""
+msgstr "Αποστολή ούτως ή άλλως"
 
 #: src/Composer.vala:825
-#, fuzzy
-#| msgid "Send message with an empty body?"
 msgid "Sent message was not saved"
-msgstr "Να αποσταλεί το μήνυμα με κενό περιεχόμενο;"
+msgstr "Το απεσταλμένο μήνυμα δεν αποθηκεύτηκε"
 
 #: src/Composer.vala:826
 msgid ""
@@ -272,13 +258,11 @@ msgstr ""
 
 #. /TRANSLATORS: The %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #: src/InboxMonitor.vala:165
-#, fuzzy, c-format
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
+#, c-format
 msgid "%u new message"
 msgid_plural "%u new messages"
-msgstr[0] "%d νέο μήνυμα"
-msgstr[1] "%d νέα μηνύματα"
+msgstr[0] "%u νέο μήνυμα"
+msgstr[1] "%u νέα μηνύματα"
 
 #. /TRANSLATORS: The first %s represents the number of new messages translated in your language, e.g. "2 new messages"
 #. /The next %s represents the number of senders
@@ -295,9 +279,8 @@ msgstr "Αλληλογραφία"
 
 #: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
-#, fuzzy
 msgid "Undo"
-msgstr "_Αναίρεση"
+msgstr "Αναίρεση"
 
 #: src/MainWindow.vala:281
 #, fuzzy
@@ -336,18 +319,16 @@ msgid "Couldn't delete message"
 msgstr ""
 
 #: src/WelcomeView.vala:45
-#, fuzzy
 msgid "Connect an Account"
-msgstr "Αφαίρεση λογαριασμού"
+msgstr "Συνδέστε έναν λογαριασμό"
 
 #: src/WelcomeView.vala:52
 msgid "Mail uses email accounts configured in System Settings."
 msgstr ""
 
 #: src/WelcomeView.vala:59
-#, fuzzy
 msgid "Online Accounts…"
-msgstr "Λογαριασμοί"
+msgstr "Διαδικτυακοί λογαριασμοί…"
 
 #: src/Backend/Account.vala:48
 #, fuzzy
@@ -378,7 +359,7 @@ msgstr ""
 
 #: src/Backend/Session.vala:642
 msgid "New Signature"
-msgstr ""
+msgstr "Νέα υπογραφή"
 
 #: src/Backend/ContactManager.vala:88 src/Backend/ContactManager.vala:122
 #, c-format
@@ -422,10 +403,8 @@ msgid "Hide unstarred conversations"
 msgstr "Σήμανση συνομιλιών"
 
 #: src/ConversationList/ConversationList.vala:109
-#, fuzzy
-#| msgid "Delete Conversation"
 msgid "Filter Conversations"
-msgstr "Διαγραφή συνομιλίας"
+msgstr "Φιλτράρισμα συνομιλιών"
 
 #: src/ConversationList/ConversationList.vala:132
 #, fuzzy
@@ -435,11 +414,8 @@ msgid "Fetch new messages"
 msgstr "%d νέο μήνυμα"
 
 #: src/ConversationList/ConversationList.vala:139
-#, fuzzy
-#| msgid "%d new message"
-#| msgid_plural "%d new messages"
 msgid "Fetching new messages…"
-msgstr "%d νέο μήνυμα"
+msgstr "Λήψη νέων μηνυμάτων…"
 
 #: src/ConversationList/ConversationListItem.vala:94
 msgid "Archive"
@@ -447,7 +423,7 @@ msgstr "Αρχειοθέτηση"
 
 #: src/ConversationList/ConversationListItem.vala:99
 msgid "Trash"
-msgstr "Απορρίμματα"
+msgstr "Κάδος"
 
 #: src/ConversationList/ConversationListItem.vala:181
 #, fuzzy
@@ -494,24 +470,23 @@ msgstr "Κα_τάργηση αστεριού"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: src/Dialogs/InsertLinkDialog.vala:39
 msgid "Link Text:"
-msgstr ""
+msgstr "Κείμενο συνδέσμου:"
 
 #: src/Dialogs/InsertLinkDialog.vala:45
-#, fuzzy
 msgid "Example Website"
-msgstr "Ιστοσελίδα"
+msgstr "Παράδειγμα ιστοτόπου"
 
 #: src/Dialogs/AliasDialog/Alias.vala:52
 msgid "John Doe"
-msgstr ""
+msgstr "Γιώργος Πετρόπουλος"
 
 #: src/Dialogs/AliasDialog/Alias.vala:56
 msgid "Name"
-msgstr ""
+msgstr "Όνομα"
 
 #: src/Dialogs/AliasDialog/Alias.vala:75
 #, fuzzy
@@ -520,16 +495,12 @@ msgid "E-mail Address"
 msgstr "Αντιγραφή _διεύθυνσης ηλεκτρονικού ταχυδρομείου"
 
 #: src/Dialogs/AliasDialog/Alias.vala:80
-#, fuzzy
-#| msgid "Delete draft"
 msgid "Delete alias"
-msgstr "Διαγραφή προχείρου"
+msgstr "Διαγραφή ψευδώνυμου"
 
 #: src/Dialogs/AliasDialog/Alias.vala:100
-#, fuzzy
-#| msgid "Edit Draft"
 msgid "Edit alias"
-msgstr "Επεξεργασία πρόχειρου μηνύματος"
+msgstr "Επεξεργασία ψευδώνυμου"
 
 #: src/Dialogs/AliasDialog/Alias.vala:175
 msgid "Name not set"
@@ -549,13 +520,11 @@ msgstr ""
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:104
 msgid "Aliases"
-msgstr ""
+msgstr "Ψευδώνυμα"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:108
-#, fuzzy
-#| msgid "_Close"
 msgid "Close"
-msgstr "_Κλείσιμο"
+msgstr "Κλείσιμο"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:178
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
@@ -577,7 +546,7 @@ msgstr ""
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
 msgid "Title"
-msgstr ""
+msgstr "Τίτλος"
 
 #. Work around a styling issue
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
@@ -594,35 +563,31 @@ msgstr ""
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
 msgid "Signature"
-msgstr ""
+msgstr "Υπογραφή"
 
 #: src/FoldersView/AccountSourceItem.vala:154
 msgid "Edit Aliases…"
-msgstr ""
+msgstr "Επεξεργασία ψευδώνυμων…"
 
 #: src/FoldersView/FoldersListView.vala:47
-#, fuzzy
 msgid "Compose new message"
 msgstr "Σύνταξη νέου μηνύματος"
 
 #: src/FoldersView/FoldersListView.vala:59
-#, fuzzy
 msgid "Always Show Remote Images"
-msgstr "Να εμφανίζεται πάντοτε ο αποστολέας"
+msgstr "Να εμφανίζονται πάντα οι απομακρυσμένες εικόνες"
 
 #: src/FoldersView/FoldersListView.vala:67
 msgid "Account Settings…"
-msgstr ""
+msgstr "Ρυθμίσεις λογαριασμού…"
 
 #: src/FoldersView/FoldersListView.vala:92
 msgid "Menu"
 msgstr "Μενού"
 
 #: src/FoldersView/FoldersListView.vala:146
-#, fuzzy
-#| msgid "Unable to validate:\n"
 msgid "Unable to open System Settings"
-msgstr "Δεν ήταν δυνατή η επικύρωση:\n"
+msgstr "Αδυναμία ανοίγματος των Ρυθμίσεων συστήματος"
 
 #: src/FoldersView/FoldersListView.vala:147
 msgid ""
@@ -654,82 +619,65 @@ msgid "A folder named “%s” already exists"
 msgstr ""
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:38
-#, fuzzy
-#| msgid "Inbox"
 msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Εισερχόμενα"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:42
-#, fuzzy
-#| msgid "Archive"
 msgctxt "Archive Folder"
 msgid "Archive"
-msgstr "Αρχειοθέτηση"
+msgstr "Αρχειοθήκη"
 
 #: src/FoldersView/GroupedFolderSourceItem.vala:46
-#, fuzzy
-#| msgid "Sent Mail"
 msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "Απεσταλμένα"
 
 #: src/FoldersView/SessionSourceItem.vala:28
-#, fuzzy
-#| msgid "All Mail"
 msgid "All Mailboxes"
-msgstr "Όλο το ταχυδρομείο"
+msgstr "Όλα τα γραμματοκιβώτια"
 
 #: src/MessageList/MessageList.vala:28 src/MessageList/MessageListItem.vala:210
 msgid "Reply"
 msgstr "Απάντηση"
 
 #: src/MessageList/MessageList.vala:37 src/MessageList/MessageListItem.vala:213
-#, fuzzy
 msgid "Reply All"
-msgstr "Α_πάντηση σε όλους"
+msgstr "Απάντηση σε όλους"
 
 #: src/MessageList/MessageList.vala:46 src/MessageList/MessageListItem.vala:216
 msgid "Forward"
-msgstr ""
+msgstr "Προώθηση"
 
 #: src/MessageList/MessageList.vala:53
-#, fuzzy
 msgid "Mark as Unread"
-msgstr "_Σήμανση ως μη αναγνωσμένα"
+msgstr "Σήμανση ως μη αναγνωσμένο"
 
 #: src/MessageList/MessageList.vala:84
-#, fuzzy
 msgid "Mark Conversation"
 msgstr "Σήμανση συνομιλίας"
 
 #: src/MessageList/MessageList.vala:92
-#, fuzzy
-#| msgid "Move conversation"
-#| msgid_plural "Move conversations"
 msgid "Move Conversation to…"
-msgstr "Μετακίνηση συνομιλίας"
+msgstr "Μετακίνηση συνομιλίας σε…"
 
 #: src/MessageList/MessageList.vala:101
-#, fuzzy
 msgid "Move conversations to archive"
-msgstr "Μετακίνηση συνομιλιών"
+msgstr "Μετακίνηση συνομιλιών στην αρχειοθήκη"
 
 #: src/MessageList/MessageList.vala:109
-#, fuzzy
 msgid "Move conversations to Trash"
-msgstr "Μετακίνηση συνομιλιών"
+msgstr "Μετακίνηση συνομιλιών στον Κάδο"
 
 #: src/MessageList/MessageList.vala:124
-#, fuzzy
 msgid "No Message Selected"
-msgstr "Δεν επιλέχθηκαν συνομιλίες."
+msgstr "Κανένα επιλεγμένο μήνυμα"
 
 #. /TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
 #: src/MessageList/MessageListItem.vala:190
 #, c-format
 msgid "%s at %s"
-msgstr ""
+msgstr "%s στις %s"
 
 #: src/MessageList/MessageListItem.vala:198
 #: src/MessageList/MessageListItem.vala:397
@@ -745,7 +693,7 @@ msgstr "%d μήνυμα"
 
 #: src/MessageList/MessageListItem.vala:221
 msgid "Print…"
-msgstr "Εκτύπωση..."
+msgstr "Εκτύπωση…"
 
 #: src/MessageList/MessageListItem.vala:231
 msgid "More"
@@ -753,7 +701,7 @@ msgstr "Περισσότερα"
 
 #: src/MessageList/MessageListItem.vala:280
 msgid "Open in Calendar"
-msgstr ""
+msgstr "Άνοιγμα στο Ημερολόγιο"
 
 #: src/MessageList/MessageListItem.vala:286
 #, fuzzy
@@ -763,7 +711,7 @@ msgstr "Αυτό το μήνυμα περιέχει απομακρυσμένες
 
 #: src/MessageList/MessageListItem.vala:297
 msgid "Show Images"
-msgstr "Προβολή εικόνων"
+msgstr "Εμφάνιση εικόνων"
 
 #: src/MessageList/MessageListItem.vala:298
 msgid "Always Show from Sender"
@@ -775,7 +723,7 @@ msgstr "Αυτό το μήνυμα περιέχει απομακρυσμένες
 
 #: src/MessageList/MessageListItem.vala:341
 msgid "This message contains one or more attachments"
-msgstr "Αυτό το μήνυμα εμπεριέχει ένα ή περισσότερα συνημμένα"
+msgstr "Αυτό το μήνυμα περιέχει ένα ή περισσότερα συνημμένα"
 
 #. / Translators: This is the default file name of a printed email
 #: src/MessageList/MessageListItem.vala:417
@@ -785,10 +733,8 @@ msgid "Email Message"
 msgstr "Νέο μήνυμα"
 
 #: src/MessageList/MessageListItem.vala:439
-#, fuzzy
-#| msgid "Unable to validate:\n"
 msgid "Unable to print email"
-msgstr "Δεν ήταν δυνατή η επικύρωση:\n"
+msgstr "Αδυναμία εκτύπωσης email"
 
 #: src/MessageList/MessageListItem.vala:691
 #, c-format
@@ -805,28 +751,27 @@ msgstr ""
 
 #: src/MessageList/MessageListItem.vala:699
 msgid "Open Anyway"
-msgstr ""
+msgstr "Άνοιγμα ούτως ή άλλως"
 
 #: src/MessageList/AttachmentButton.vala:57
 msgid "Open"
-msgstr "Aνοιχτό"
+msgstr "Άνοιγμα"
 
 #: src/MessageList/AttachmentButton.vala:58
 msgid "Save As…"
 msgstr "Αποθήκευση ως…"
 
 #: src/MessageList/AttachmentButton.vala:143
-#, fuzzy
 msgid "Save"
-msgstr "_Αποθήκευση"
+msgstr "Αποθήκευση"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:22
 msgid "No mailboxes found"
-msgstr ""
+msgstr "Δεν βρέθηκαν γραμματοκιβώτια"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:26
 msgid "Try changing search terms"
-msgstr ""
+msgstr "Δοκιμάστε να αλλάξετε τους όρους αναζήτησης"
 
 #, fuzzy
 #~| msgid "Email Address:"
