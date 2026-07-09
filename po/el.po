@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-29 17:12+0000\n"
-"PO-Revision-Date: 2026-06-29 14:57+0000\n"
+"PO-Revision-Date: 2026-07-10 04:43+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/mail/mail/el/>\n"
 "Language: el\n"
@@ -211,7 +211,7 @@ msgstr ""
 
 #: src/Composer.vala:946 src/FoldersView/FoldersListView.vala:62
 msgid "Edit Signatures…"
-msgstr ""
+msgstr "Επεξεργασία υπογραφών…"
 
 #: src/Composer.vala:950
 msgid "None"
@@ -229,19 +229,19 @@ msgstr ""
 
 #: src/EditorToolbar.vala:55
 msgid "Bold"
-msgstr ""
+msgstr "Έντονη γραφή"
 
 #: src/EditorToolbar.vala:62
 msgid "Italic"
-msgstr ""
+msgstr "Πλάγια γραφή"
 
 #: src/EditorToolbar.vala:73
 msgid "Underline"
-msgstr ""
+msgstr "Υπογράμμιση"
 
 #: src/EditorToolbar.vala:85
 msgid "Strikethrough"
-msgstr ""
+msgstr "Διαγράμμιση"
 
 #: src/EditorToolbar.vala:100
 msgid "Remove formatting"
@@ -283,11 +283,10 @@ msgid "Undo"
 msgstr "Αναίρεση"
 
 #: src/MainWindow.vala:281
-#, fuzzy
 msgid "Message Archived"
 msgid_plural "Messages Archived"
-msgstr[0] "Δεν επιλέχθηκαν συνομιλίες."
-msgstr[1] "Δεν επιλέχθηκαν συνομιλίες."
+msgstr[0] "Το μήνυμα αρχειοθετήθηκε"
+msgstr[1] "Τα μηνύματα αρχειοθετήθηκαν"
 
 #: src/MainWindow.vala:285
 #, fuzzy
@@ -516,7 +515,7 @@ msgstr ""
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:67
 msgid "Add Alias…"
-msgstr ""
+msgstr "Προσθήκη ψευδώνυμου…"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:104
 msgid "Aliases"
@@ -542,7 +541,7 @@ msgstr ""
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:67
 msgid "Create Signature"
-msgstr ""
+msgstr "Δημιουργία υπογραφής"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
 msgid "Title"
@@ -551,7 +550,7 @@ msgstr "Τίτλος"
 #. Work around a styling issue
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
 msgid "For example “Work” or “Personal”"
-msgstr ""
+msgstr "Για παράδειγμα, «Εργασία» ή «Προσωπικό»"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
 msgid "Delete"
@@ -559,7 +558,7 @@ msgstr "Διαγραφή"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
 msgid "Set Default For…"
-msgstr ""
+msgstr "Ορισμός προεπιλογής για…"
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
 msgid "Signature"
@@ -596,11 +595,11 @@ msgstr ""
 
 #: src/FoldersView/FolderSourceItem.vala:52
 msgid "Refresh folder"
-msgstr ""
+msgstr "Ανανέωση φακέλου"
 
 #: src/FoldersView/FolderSourceItem.vala:57
 msgid "Rename folder"
-msgstr ""
+msgstr "Μετονομασία φακέλου"
 
 #: src/FoldersView/FolderSourceItem.vala:161
 #: src/FoldersView/FolderSourceItem.vala:190
