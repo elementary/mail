@@ -46,41 +46,17 @@ public class Mail.MessageList : Gtk.Box {
             _("Forward")
         );
 
-        var mark_unread_item = new Gtk.MenuItem () {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD
-        };
-        mark_unread_item.bind_property ("sensitive", mark_unread_item, "visible");
-        mark_unread_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Unread"), mark_unread_item.action_name));
-
-        var mark_read_item = new Gtk.MenuItem () {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ
-        };
-        mark_read_item.bind_property ("sensitive", mark_read_item, "visible");
-        mark_read_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Read"), mark_read_item.action_name));
-
-        var mark_star_item = new Gtk.MenuItem () {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR
-        };
-        mark_star_item.bind_property ("sensitive", mark_star_item, "visible");
-        mark_star_item.add (new Granite.AccelLabel.from_action_name (_("Star"), mark_star_item.action_name));
-
-        var mark_unstar_item = new Gtk.MenuItem () {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR
-        };
-        mark_unstar_item.bind_property ("sensitive", mark_unstar_item, "visible");
-        mark_unstar_item.add (new Granite.AccelLabel.from_action_name (_("Unstar"), mark_unstar_item.action_name));
-
-        var mark_menu = new Gtk.Menu ();
-        mark_menu.add (mark_unread_item);
-        mark_menu.add (mark_read_item);
-        mark_menu.add (mark_star_item);
-        mark_menu.add (mark_unstar_item);
-        mark_menu.show_all ();
+        var mark_menumodel = new Menu ();
+        mark_menumodel.append (_("Mark as Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD);
+        mark_menumodel.append (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ);
+        mark_menumodel.append (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR);
+        mark_menumodel.append (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR);
 
         var mark_button = new Gtk.MenuButton () {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MODIFY,
             image = new Gtk.Image.from_icon_name ("edit-mark", Gtk.IconSize.LARGE_TOOLBAR),
-            popup = mark_menu,
+            menu_model = mark_menumodel,
+            use_popover = false,
             tooltip_text = _("Mark Conversation")
         };
 
