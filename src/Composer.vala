@@ -5,7 +5,7 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class Mail.Composer : Hdy.ApplicationWindow {
+public class Mail.Composer : Adw.ApplicationWindow {
     public signal void finished ();
 
     private const string ACTION_GROUP_PREFIX = "win";
@@ -32,7 +32,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     private Gtk.Revealer cc_revealer;
     private Gtk.Revealer bcc_revealer;
     private Gtk.ToggleButton cc_button;
-    private Granite.Widgets.OverlayBar message_url_overlay;
+    private Granite.OverlayBar message_url_overlay;
     private Gtk.ComboBoxText from_combo;
     private Gtk.Entry subject_val;
 
@@ -78,7 +78,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             }
         }
 
-        var headerbar = new Hdy.HeaderBar () {
+        var headerbar = new Adw.HeaderBar () {
             has_subtitle = false,
             show_close_button = true
         };
@@ -270,7 +270,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
         var view_overlay = new Gtk.Overlay ();
         view_overlay.add (web_view);
-        message_url_overlay = new Granite.Widgets.OverlayBar (view_overlay);
+        message_url_overlay = new Granite.OverlayBar (view_overlay);
         message_url_overlay.no_show_all = true;
 
         var main_box = new Gtk.Box (VERTICAL, 0);

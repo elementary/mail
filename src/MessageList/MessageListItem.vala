@@ -31,7 +31,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private Gtk.Revealer secondary_revealer;
     private Gtk.Stack header_stack;
     private Gtk.StyleContext style_context;
-    private Hdy.Avatar avatar;
+    private Adw.Avatar avatar;
     private Gtk.FlowBox attachment_bar = null;
     private File? temp_dir = null;
 
@@ -95,7 +95,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             parsed_name = parsed_address;
         }
 
-        avatar = new Hdy.Avatar (48, parsed_name, true) {
+        avatar = new Adw.Avatar (48, parsed_name, true) {
             valign = Gtk.Align.START
         };
 
@@ -375,7 +375,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             }
         });
 
-        var click_gesture = new Gtk.GestureMultiPress (header_event_box);
+        var click_gesture = new Gtk.GestureClick (header_event_box);
 
         click_gesture.released.connect (() => {
             expanded = !expanded;

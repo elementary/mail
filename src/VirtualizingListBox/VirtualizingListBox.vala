@@ -118,14 +118,14 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
     private bool block;
     private int last_valid_widget_height = 1;
     private VirtualizingListBoxRow? active_row;
-    private Gtk.GestureMultiPress multipress;
+    private Gtk.GestureClick multipress;
 
     static construct {
         set_css_name ("list");
     }
 
     construct {
-        multipress = new Gtk.GestureMultiPress (this);
+        multipress = new Gtk.GestureClick (this);
         multipress.set_propagation_phase (Gtk.PropagationPhase.BUBBLE);
         multipress.touch_only = false;
         multipress.button = Gdk.BUTTON_PRIMARY;

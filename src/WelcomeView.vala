@@ -20,7 +20,7 @@
 
 public class Mail.WelcomeView : Gtk.Box {
     construct {
-        var headerbar = new Hdy.HeaderBar () {
+        var headerbar = new Adw.HeaderBar () {
             show_close_button = true
         };
         headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
@@ -75,7 +75,7 @@ public class Mail.WelcomeView : Gtk.Box {
         main_box.add (headerbar);
         main_box.add (grid);
 
-        var window_handle = new Hdy.WindowHandle () {
+        var window_handle = new Adw.WindowHandle () {
             child = main_box
         };
 

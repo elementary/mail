@@ -96,7 +96,7 @@ public class Mail.Application : Gtk.Application {
     protected override void startup () {
         base.startup ();
 
-        Hdy.init ();
+        Adw.init ();
 
         var granite_settings = Granite.Settings.get_default ();
         gtk_settings = Gtk.Settings.get_default ();

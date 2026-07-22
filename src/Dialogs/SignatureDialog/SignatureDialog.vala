@@ -17,7 +17,7 @@
 * Authored by: Leonhard Kargl <leo.kargl@proton.me>
 */
 
-public class Mail.SignatureDialog : Hdy.ApplicationWindow {
+public class Mail.SignatureDialog : Adw.ApplicationWindow {
     private const string ACTION_GROUP_PREFIX = "win";
     private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
 
@@ -26,11 +26,11 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
     private Mail.WebView web_view;
     private Signature? current_signature;
     private Signature? last_deleted_signature;
-    private Granite.Widgets.Toast toast;
+    private Granite.Toast toast;
     private bool selection_change_ongoing = false;
 
     construct {
-        var start_header = new Hdy.HeaderBar () {
+        var start_header = new Adw.HeaderBar () {
             show_close_button = true
         };
         start_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
@@ -87,7 +87,7 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
             margin_start = 9
         };
 
-        var end_header = new Hdy.HeaderBar () {
+        var end_header = new Adw.HeaderBar () {
             show_close_button = true
         };
         end_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
@@ -166,7 +166,7 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
         paned.pack1 (start_box, false, false);
         paned.pack2 (end_box, true, false);
 
-        toast = new Granite.Widgets.Toast ("");
+        toast = new Granite.Toast ("");
         toast.set_default_action (_("Undo"));
 
         var overlay = new Gtk.Overlay () {
@@ -174,7 +174,7 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
         };
         overlay.add_overlay (toast);
 
-        var header_group = new Hdy.HeaderGroup ();
+        var header_group = new Adw.HeaderGroup ();
         header_group.add_header_bar (start_header);
         header_group.add_header_bar (end_header);
 

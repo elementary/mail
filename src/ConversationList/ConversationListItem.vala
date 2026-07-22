@@ -30,8 +30,8 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     private Gtk.Revealer flagged_icon_revealer;
     private Gtk.Revealer status_revealer;
     private Gtk.Grid grid;
-    private Hdy.Carousel carousel;
-    private Gtk.GestureMultiPress gesture_controller;
+    private Adw.Carousel carousel;
+    private Gtk.GestureClick gesture_controller;
     private Gtk.EventControllerKey key_controller;
 
     construct {
@@ -100,7 +100,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         );
         trash_affordance.get_style_context ().add_class ("trash");
 
-        carousel = new Hdy.Carousel () {
+        carousel = new Adw.Carousel () {
             allow_scroll_wheel = false
         };
         carousel.add (archive_affordance);
@@ -113,7 +113,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
 
         show_all ();
 
-        gesture_controller = new Gtk.GestureMultiPress (this) {
+        gesture_controller = new Gtk.GestureClick (this) {
             button = Gdk.BUTTON_SECONDARY,
             propagation_phase = BUBBLE
         };

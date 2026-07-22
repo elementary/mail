@@ -7,7 +7,7 @@
 
 public class Mail.MessageList : Gtk.Box {
     public signal void hovering_over_link (string? label, string? uri);
-    public Hdy.HeaderBar headerbar { get; private set; }
+    public Adw.HeaderBar headerbar { get; private set; }
 
     private FolderPopover folder_popover;
     private Gtk.ListBox list_box;
@@ -109,7 +109,7 @@ public class Mail.MessageList : Gtk.Box {
             _("Move conversations to Trash")
         );
 
-        headerbar = new Hdy.HeaderBar () {
+        headerbar = new Adw.HeaderBar () {
             show_close_button = true
         };
         headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);

@@ -118,7 +118,7 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         child = event_box;
         show_all ();
 
-        var gesture_click = new Gtk.GestureMultiPress (event_box) {
+        var gesture_click = new Gtk.GestureClick (event_box) {
             button = 0
         };
 

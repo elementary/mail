@@ -22,7 +22,7 @@ public class Mail.AliasDialog : Granite.Dialog {
 
     private HashTable<string, string?> aliases;
     private Gtk.ListBox list;
-    private Granite.Widgets.Toast toast;
+    private Granite.Toast toast;
     private string primary_name;
 
     public AliasDialog (string account_uid) {
@@ -92,7 +92,7 @@ public class Mail.AliasDialog : Granite.Dialog {
             child = content_box
         };
 
-        toast = new Granite.Widgets.Toast ("");
+        toast = new Granite.Toast ("");
         toast.set_default_action (_("Undo"));
 
         var overlay = new Gtk.Overlay () {

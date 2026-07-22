@@ -18,13 +18,13 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.MainWindow : Hdy.ApplicationWindow {
+public class Mail.MainWindow : Adw.ApplicationWindow {
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
 
     private FoldersListView folders_list_view;
-    private Granite.Widgets.Toast move_toast;
-    private Granite.Widgets.Toast error_toast;
+    private Granite.Toast move_toast;
+    private Granite.Toast error_toast;
     private ConversationList conversation_list;
     private MessageList message_list;
 
@@ -119,7 +119,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             child = message_list
         };
 
-        move_toast = new Granite.Widgets.Toast ("");
+        move_toast = new Granite.Toast ("");
         move_toast.set_default_action (_("Undo"));
         move_toast.show_all ();
         view_overlay.add_overlay (move_toast);
@@ -128,11 +128,11 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             MoveOperation.undo_last_move ();
         });
 
-        error_toast = new Granite.Widgets.Toast ("");
+        error_toast = new Granite.Toast ("");
         error_toast.show_all ();
         view_overlay.add_overlay (error_toast);
 
-        var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
+        var message_overlay = new Granite.OverlayBar (view_overlay);
         message_overlay.no_show_all = true;
 
         message_list.hovering_over_link.connect ((label, url) => {
@@ -162,7 +162,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         add (placeholder_stack);
 
-        var header_group = new Hdy.HeaderGroup ();
+        var header_group = new Adw.HeaderGroup ();
         header_group.add_header_bar (folders_list_view.header_bar);
         header_group.add_header_bar (conversation_list.search_header);
         header_group.add_header_bar (message_list.headerbar);

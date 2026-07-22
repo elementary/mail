@@ -29,7 +29,7 @@ public class Mail.ConversationList : Gtk.Box {
     public Gee.Map<Backend.Account, Camel.FolderInfo?> folder_info_per_account { get; private set; }
     public Gee.HashMap<string, Camel.Folder> folders { get; private set; }
     public Gee.HashMap<string, Camel.FolderInfoFlags> folder_info_flags { get; private set; }
-    public Hdy.HeaderBar search_header { get; private set; }
+    public Adw.HeaderBar search_header { get; private set; }
 
     private GLib.Cancellable? cancellable = null;
     private Gee.HashMap<string, Camel.FolderThread> threads;
@@ -109,7 +109,7 @@ public class Mail.ConversationList : Gtk.Box {
             valign = Gtk.Align.CENTER
         };
 
-        search_header = new Hdy.HeaderBar () {
+        search_header = new Adw.HeaderBar () {
             custom_title = search_entry
         };
         search_header.pack_end (filter_button);

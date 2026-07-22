@@ -20,7 +20,7 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class VirtualizingListBoxRow : Gtk.Bin {
+public class VirtualizingListBoxRow : Granite.Bin {
     public bool selectable { get; set; default = true; }
     public weak GLib.Object model_item { get; set; }
 

@@ -23,7 +23,7 @@
 public class Mail.FoldersListView : Gtk.Grid {
     public signal void folder_selected (Gee.Map<Backend.Account, Camel.FolderInfo?> folder_info_per_account);
 
-    public Hdy.HeaderBar header_bar { get; private set; }
+    public Adw.HeaderBar header_bar { get; private set; }
 
     private Mail.SourceList source_list;
     private Mail.SessionSourceItem session_source_item;
@@ -47,7 +47,7 @@ public class Mail.FoldersListView : Gtk.Grid {
             _("Compose new message")
         );
 
-        header_bar = new Hdy.HeaderBar () {
+        header_bar = new Adw.HeaderBar () {
             show_close_button = true
         };
         header_bar.pack_end (compose_button);
