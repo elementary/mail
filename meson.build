@@ -22,7 +22,7 @@ libedataserverui_dep = dependency('libedataserverui4-1.0', version: '>= 3.46.4')
 webkit_dep = dependency('webkitgtk-6.0')
 webkit_web_extension_dep = dependency('webkitgtk-web-process-extension-6.0')
 libportal_dep = dependency('libportal')
-libportal_gtk_dep = dependency('libportal-gtk3')
+libportal_gtk_dep = dependency('libportal-gtk4')
 folks_dep = dependency('folks')
 m_dep = meson.get_compiler('c').find_library('m')
 
