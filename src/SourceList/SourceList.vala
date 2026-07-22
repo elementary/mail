@@ -239,7 +239,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
      *   - editable      | DataModel::on_item_prop_changed   | Queried when needed (See Tree::start_editing_item)
      *   - visible       | DataModel::on_item_prop_changed   | DataModel::filter_visible_func
      *   - icon          | DataModel::on_item_prop_changed   | Tree::icon_cell_data_func
-     *   - activatable   | Same as @icon                     | Same as @icon
      * + ExpandableItem  |                                   |
      *   - collapsible   | DataModel::on_item_prop_changed   | Tree::update_expansion
      *                   |                                   | Tree::expander_cell_data_func
@@ -277,14 +276,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             if (editable && new_name.strip () != "")
                 this.name = new_name;
         }
-
-        /**
-         * The {@link Granite.Widgets.SourceList.Item.activatable} icon was activated.
-         *
-         * @see Granite.Widgets.SourceList.Item.activatable
-         * @since 0.2
-         */
-        public virtual signal void action_activated () { }
 
         /**
          * Emitted when the item is double-clicked or when it is selected and one of the keys:
@@ -386,23 +377,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         public Icon icon { get; set; }
 
         /**
-         * An activatable icon that works like a button.
-         *
-         * It can be used for e.g. showing an //"eject"// icon on a device's item.
-         *
-         * @see Granite.Widgets.SourceList.Item.action_activated
-         * @since 0.2
-         */
-        public Icon activatable { get; set; }
-
-        /**
-         * The tooltip for the activatable icon.
-         *
-         * @since 5.0
-         */
-        public string activatable_tooltip { get; set; default = ""; }
-
-        /**
          * Creates a new {@link Granite.Widgets.SourceList.Item}.
          *
          * @param name Name of the item.
@@ -440,7 +414,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
      * * {@link Granite.Widgets.SourceList.Item.selectable}
      * * {@link Granite.Widgets.SourceList.Item.editable}
      * * {@link Granite.Widgets.SourceList.Item.icon}
-     * * {@link Granite.Widgets.SourceList.Item.activatable}
      * * {@link Granite.Widgets.SourceList.Item.badge}
      *
      * Root-level expandable items (i.e. Main Categories) are ''not'' displayed when they contain
@@ -1458,7 +1431,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         private Gtk.Entry? editable_entry;
         private Gtk.CellRendererText text_cell;
         private CellRendererIcon icon_cell;
-        private CellRendererIcon activatable_cell;
         private CellRendererBadge badge_cell;
         private CellRendererExpander primary_expander_cell;
         private CellRendererExpander secondary_expander_cell;
@@ -1556,12 +1528,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             secondary_expander_cell.xpad = 10;
             item_column.pack_end (secondary_expander_cell, false);
             item_column.set_cell_data_func (secondary_expander_cell, expander_cell_data_func);
-
-            activatable_cell = new CellRendererIcon ();
-            activatable_cell.xpad = 6;
-            activatable_cell.activated.connect (on_activatable_activated);
-            item_column.pack_end (activatable_cell, false);
-            item_column.set_cell_data_func (activatable_cell, icon_cell_data_func);
 
             badge_cell = new CellRendererBadge ();
             badge_cell.xpad = 1;
@@ -1792,13 +1758,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                     over_cell (column, path, icon_cell, x - start_cell_area.x)) {
 
                     return should_show;
-                } else if (over_cell (column, path, activatable_cell, x - start_cell_area.x)) {
-                    if (item.activatable_tooltip == "") {
-                        return false;
-                    } else {
-                        tooltip.set_markup (item.activatable_tooltip);
-                        return true;
-                    }
                 }
             }
 
@@ -2039,12 +1998,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             on_editing_canceled ();
         }
 
-        private void on_activatable_activated (string item_path_str) {
-            var item = get_item_from_path_string (item_path_str);
-            if (item != null)
-                item.action_activated ();
-        }
-
         private Item? get_item_from_path_string (string item_path_str) {
             var item_path = new Gtk.TreePath.from_string (item_path_str);
             return data_model.get_item_from_path (item_path);
@@ -2193,8 +2146,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                                 // normal expandable item that is not selectable (special care is taken to
                                 // not break the activatable/action icons for such cases).
                                 // The expander only works like a visual indicator for these items.
-                                unselectable_item_clicked = is_category
-                                    || (!item.selectable && !over_cell (column, path, activatable_cell, cell_x));
+                                unselectable_item_clicked = is_category || (!item.selectable);
 
                                 if (!unselectable_item_clicked
                                     && over_primary_expander (column, path, cell_x)
@@ -2408,8 +2360,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                 if (visible) {
                     if (icon_renderer == icon_cell)
                         icon = item.icon;
-                    else if (icon_renderer == activatable_cell)
-                        icon = item.activatable;
                     else
                         assert_not_reached ();
                 }
