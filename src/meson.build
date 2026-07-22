@@ -34,6 +34,9 @@ vala_files = files(
     'SourceList/CellRendererBadge.vala',
     'SourceList/CellRendererExpander.vala',
     'SourceList/SourceList.vala',
+    'SourceList' / 'SourceListDragDest.vala',
+    'SourceList' / 'SourceListDragSource.vala',
+    'SourceList' / 'SourceListSortable.vala',
     'VirtualizingListBox/VirtualizingListBoxModel.vala',
     'VirtualizingListBox/VirtualizingListBoxRow.vala',
     'VirtualizingListBox/VirtualizingListBox.vala'
