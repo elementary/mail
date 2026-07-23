@@ -29,8 +29,8 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
     public signal void row_selected (GLib.Object row);
     public signal void selected_rows_changed ();
 
-    private VirtualizingListBoxModel? _model;
-    public VirtualizingListBoxModel? model {
+    private Mail.ConversationListStore? _model;
+    public Mail.ConversationListStore? model {
         get {
            return _model;
         }
