@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-29 17:12+0000\n"
-"PO-Revision-Date: 2026-07-10 04:43+0000\n"
+"PO-Revision-Date: 2026-07-25 20:01+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/mail/mail/el/>\n"
 "Language: el\n"
@@ -29,6 +29,9 @@ msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
 msgstr ""
+"Η εφαρμογή «Αλληλογραφία» εκκινεί αυτόματα κατά την ενεργοποίηση της "
+"συσκευής και εκτελείται ακόμη κι όταν είναι κλειστό το παράθυρό της, ώστε να "
+"μπορεί να στέλνει ειδοποιήσεις όταν καταφθάνουν νέα email."
 
 #: src/Composer.vala:88 src/MessageList/MessageListItem.vala:102
 msgid "From:"
@@ -245,7 +248,7 @@ msgstr "Διαγράμμιση"
 
 #: src/EditorToolbar.vala:100
 msgid "Remove formatting"
-msgstr ""
+msgstr "Αφαίρεση μορφοποίησης"
 
 #: src/EditorToolbar.vala:108 src/Dialogs/InsertLinkDialog.vala:68
 msgid "Insert Link"
@@ -270,8 +273,8 @@ msgstr[1] "%u νέα μηνύματα"
 #, c-format
 msgid "%s from %u sender"
 msgid_plural "%s from %u senders"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s από %u αποστολέα"
+msgstr[1] "%s από %u αποστολείς"
 
 #: src/MainWindow.vala:80
 msgid "Mail"
@@ -294,11 +297,10 @@ msgid "Couldn't archive message"
 msgstr "%d μήνυμα"
 
 #: src/MainWindow.vala:298
-#, fuzzy
 msgid "Message Moved"
 msgid_plural "Messages Moved"
-msgstr[0] "Δεν επιλέχθηκαν συνομιλίες."
-msgstr[1] "Δεν επιλέχθηκαν συνομιλίες."
+msgstr[0] "Το μήνυμα μετακινήθηκε"
+msgstr[1] "Τα μηνύματα μετακινήθηκαν"
 
 #: src/MainWindow.vala:302
 #, fuzzy
@@ -307,11 +309,10 @@ msgid "Couldn't move message"
 msgstr "Διαγραφή προχείρου"
 
 #: src/MainWindow.vala:315
-#, fuzzy
 msgid "Message Deleted"
 msgid_plural "Messages Deleted"
-msgstr[0] "Δεν επιλέχθηκαν συνομιλίες."
-msgstr[1] "Δεν επιλέχθηκαν συνομιλίες."
+msgstr[0] "Το μήνυμα διαγράφηκε"
+msgstr[1] "Τα μηνύματα διαγράφηκαν"
 
 #: src/MainWindow.vala:319
 msgid "Couldn't delete message"
@@ -457,15 +458,13 @@ msgstr "_Σήμανση ως αναγνωσμένα"
 
 #: src/ConversationList/ConversationListItem.vala:249
 #: src/MessageList/MessageList.vala:65
-#, fuzzy
 msgid "Star"
-msgstr "_Αστέρι"
+msgstr "Αστέρι"
 
 #: src/ConversationList/ConversationListItem.vala:258
 #: src/MessageList/MessageList.vala:71
-#, fuzzy
 msgid "Unstar"
-msgstr "Κα_τάργηση αστεριού"
+msgstr "Αφαίρεση αστεριού"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
