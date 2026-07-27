@@ -68,7 +68,7 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
     private void folder_renamed (string old_name, Camel.FolderInfo folder_info) {
         FolderItemModel item;
         folder_items.unset (old_name, out item);
-        item.update_infos (folder_info);
+        item.folder_info = folder_info;
         folder_items[item.full_name] = item;
     }
 
@@ -101,7 +101,7 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
         foreach (var folder_item in folder_items.values) {
             try {
                 var folder_info = yield offlinestore.get_folder_info (folder_item.full_name, 0, GLib.Priority.DEFAULT, connect_cancellable);
-                folder_item.update_infos (folder_info);
+                folder_item.folder_info = folder_info;
             } catch (Error e) {
                 // We can cancel the operation
                 if (!(e is GLib.IOError.CANCELLED)) {
@@ -115,6 +115,7 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
         var folderinfo = _folderinfo;
         while (folderinfo != null) {
             var folder_item = new FolderItemModel (account, folderinfo);
+
             saved_state.bind_with_expandable_item (folder_item);
             folder_items[folderinfo.full_name] = folder_item;
             folder_item.start_edit.connect (() => start_edit (folder_item));
