@@ -15,7 +15,7 @@ public class Mail.FolderItemModel : Mail.SourceList.ExpandableItem {
         get {
             return _folder_info;
         }
-        set {
+        construct set {
             _folder_info = value;
             update_infos ();
         }
