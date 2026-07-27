@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-29 17:12+0000\n"
+"POT-Creation-Date: 2026-07-27 22:28+0000\n"
 "PO-Revision-Date: 2024-04-20 16:13+0000\n"
 "Last-Translator: Denzil Ferreira <ferreiradenzil@gmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/mail/mail/pt/"
@@ -212,7 +212,7 @@ msgstr "Não foi possível enviar mensagem"
 msgid "There was an unexpected error while sending your message."
 msgstr "Ocorreu um erro inesperado ao enviar a mensagem."
 
-#: src/Composer.vala:946 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:946 src/FolderList/FolderList.vala:62
 msgid "Edit Signatures…"
 msgstr "Editar assinaturas…"
 
@@ -388,19 +388,19 @@ msgstr "Procurar correio"
 msgid "Hide read conversations"
 msgstr "Ocultar conversas lidas"
 
-#: src/ConversationList/ConversationList.vala:92
+#: src/ConversationList/ConversationList.vala:91
 msgid "Hide unstarred conversations"
 msgstr "Ocultar conversas não favoritas"
 
-#: src/ConversationList/ConversationList.vala:109
+#: src/ConversationList/ConversationList.vala:108
 msgid "Filter Conversations"
 msgstr "Filtrar conversas"
 
-#: src/ConversationList/ConversationList.vala:132
+#: src/ConversationList/ConversationList.vala:131
 msgid "Fetch new messages"
 msgstr "Procurar novas mensagens"
 
-#: src/ConversationList/ConversationList.vala:139
+#: src/ConversationList/ConversationList.vala:138
 msgid "Fetching new messages…"
 msgstr "A procurar novas mensagens…"
 
@@ -424,26 +424,26 @@ msgstr "Respondido"
 msgid "Forwarded"
 msgstr "Reencaminhado"
 
-#: src/ConversationList/ConversationListItem.vala:218
+#: src/ConversationList/ConversationListItem.vala:212
 msgid "Move To Trash"
 msgstr "Mover para o Lixo"
 
-#: src/ConversationList/ConversationListItem.vala:229
+#: src/ConversationList/ConversationListItem.vala:215
 msgid "Mark As Unread"
 msgstr "Marcar como não lida"
 
-#: src/ConversationList/ConversationListItem.vala:238
-#: src/MessageList/MessageList.vala:59
+#: src/ConversationList/ConversationListItem.vala:217
+#: src/MessageList/MessageList.vala:51
 msgid "Mark as Read"
 msgstr "Marcar como Lido"
 
-#: src/ConversationList/ConversationListItem.vala:249
-#: src/MessageList/MessageList.vala:65
+#: src/ConversationList/ConversationListItem.vala:221
+#: src/MessageList/MessageList.vala:52
 msgid "Star"
 msgstr "Favorito"
 
-#: src/ConversationList/ConversationListItem.vala:258
-#: src/MessageList/MessageList.vala:71
+#: src/ConversationList/ConversationListItem.vala:223
+#: src/MessageList/MessageList.vala:53
 msgid "Unstar"
 msgstr "Remover favorito"
 
@@ -543,77 +543,77 @@ msgstr "Definir predefinição para...…"
 msgid "Signature"
 msgstr "Assinatura"
 
-#: src/FoldersView/AccountSourceItem.vala:154
+#: src/FolderList/AccountItemModel.vala:154
 msgid "Edit Aliases…"
 msgstr "Editar abreviaturas…"
 
-#: src/FoldersView/FoldersListView.vala:47
+#: src/FolderList/FolderItemModel.vala:52
+msgid "Refresh folder"
+msgstr "Atualizar pasta"
+
+#: src/FolderList/FolderItemModel.vala:57
+msgid "Rename folder"
+msgstr "Renomear pasta"
+
+#: src/FolderList/FolderItemModel.vala:161
+#: src/FolderList/FolderItemModel.vala:190
+#: src/FolderList/FolderItemModel.vala:208
+#, c-format
+msgid "Couldn't rename “%s”"
+msgstr "Não foi possível renomear “%s”"
+
+#: src/FolderList/FolderItemModel.vala:162
+msgid "Folder names cannot contain “/”"
+msgstr "Os nomes das pastas não podem conter “/”"
+
+#: src/FolderList/FolderItemModel.vala:191
+#, c-format
+msgid "A folder named “%s” already exists"
+msgstr "Já existe uma pasta com o nome “%s”"
+
+#: src/FolderList/FolderList.vala:47
 msgid "Compose new message"
 msgstr "Criar nova mensagem"
 
-#: src/FoldersView/FoldersListView.vala:59
+#: src/FolderList/FolderList.vala:59
 msgid "Always Show Remote Images"
 msgstr "Mostrar sempre imagens remotas"
 
-#: src/FoldersView/FoldersListView.vala:67
+#: src/FolderList/FolderList.vala:67
 msgid "Account Settings…"
 msgstr "Definições de Conta…"
 
-#: src/FoldersView/FoldersListView.vala:92
+#: src/FolderList/FolderList.vala:92
 msgid "Menu"
 msgstr "Menu"
 
-#: src/FoldersView/FoldersListView.vala:146
+#: src/FolderList/FolderList.vala:146
 msgid "Unable to open System Settings"
 msgstr "Não foi possível abrir as Definições do Sistema"
 
-#: src/FoldersView/FoldersListView.vala:147
+#: src/FolderList/FolderList.vala:147
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
 "Abrir manualmente as Definições do Sistema ou instalar o Evolution para "
 "configurar contas online."
 
-#: src/FoldersView/FolderSourceItem.vala:52
-msgid "Refresh folder"
-msgstr "Atualizar pasta"
-
-#: src/FoldersView/FolderSourceItem.vala:57
-msgid "Rename folder"
-msgstr "Renomear pasta"
-
-#: src/FoldersView/FolderSourceItem.vala:161
-#: src/FoldersView/FolderSourceItem.vala:190
-#: src/FoldersView/FolderSourceItem.vala:208
-#, c-format
-msgid "Couldn't rename “%s”"
-msgstr "Não foi possível renomear “%s”"
-
-#: src/FoldersView/FolderSourceItem.vala:162
-msgid "Folder names cannot contain “/”"
-msgstr "Os nomes das pastas não podem conter “/”"
-
-#: src/FoldersView/FolderSourceItem.vala:191
-#, c-format
-msgid "A folder named “%s” already exists"
-msgstr "Já existe uma pasta com o nome “%s”"
-
-#: src/FoldersView/GroupedFolderSourceItem.vala:38
+#: src/FolderList/GroupedFolderItemModel.vala:38
 msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Caixa de entrada"
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
+#: src/FolderList/GroupedFolderItemModel.vala:42
 msgctxt "Archive Folder"
 msgid "Archive"
 msgstr "Arquivo"
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#: src/FolderList/GroupedFolderItemModel.vala:46
 msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "Enviado"
 
-#: src/FoldersView/SessionSourceItem.vala:28
+#: src/FolderList/SessionItemModel.vala:28
 msgid "All Mailboxes"
 msgstr "Todas as caixas de correio"
 
@@ -629,27 +629,27 @@ msgstr "Responder a todos"
 msgid "Forward"
 msgstr "Reencaminhar"
 
-#: src/MessageList/MessageList.vala:53
+#: src/MessageList/MessageList.vala:50
 msgid "Mark as Unread"
 msgstr "Marcar como não lido"
 
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:60
 msgid "Mark Conversation"
 msgstr "Sinalizar conversação"
 
-#: src/MessageList/MessageList.vala:92
+#: src/MessageList/MessageList.vala:68
 msgid "Move Conversation to…"
 msgstr "Mover conversa para…"
 
-#: src/MessageList/MessageList.vala:101
+#: src/MessageList/MessageList.vala:77
 msgid "Move conversations to archive"
 msgstr "Mover conversas para o arquivo"
 
-#: src/MessageList/MessageList.vala:109
+#: src/MessageList/MessageList.vala:85
 msgid "Move conversations to Trash"
 msgstr "Mover conversas para o Lixo"
 
-#: src/MessageList/MessageList.vala:124
+#: src/MessageList/MessageList.vala:100
 msgid "No Message Selected"
 msgstr "Nenhuma mensagem selecionada"
 

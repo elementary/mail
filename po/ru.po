@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-29 17:12+0000\n"
+"POT-Creation-Date: 2026-07-27 22:28+0000\n"
 "PO-Revision-Date: 2023-11-14 18:10+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/mail/mail/ru/>\n"
@@ -216,7 +216,7 @@ msgstr "Не удалось отправить сообщение"
 msgid "There was an unexpected error while sending your message."
 msgstr "При отправке сообщения произошла непредвиденная ошибка."
 
-#: src/Composer.vala:946 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:946 src/FolderList/FolderList.vala:62
 msgid "Edit Signatures…"
 msgstr "Редактировать подписи…"
 
@@ -398,19 +398,19 @@ msgstr "Поиск писем"
 msgid "Hide read conversations"
 msgstr "Скрыть прочитанные беседы"
 
-#: src/ConversationList/ConversationList.vala:92
+#: src/ConversationList/ConversationList.vala:91
 msgid "Hide unstarred conversations"
 msgstr "Скрыть беседы"
 
-#: src/ConversationList/ConversationList.vala:109
+#: src/ConversationList/ConversationList.vala:108
 msgid "Filter Conversations"
 msgstr "Сортировать беседы"
 
-#: src/ConversationList/ConversationList.vala:132
+#: src/ConversationList/ConversationList.vala:131
 msgid "Fetch new messages"
 msgstr "Получить новые сообщения"
 
-#: src/ConversationList/ConversationList.vala:139
+#: src/ConversationList/ConversationList.vala:138
 msgid "Fetching new messages…"
 msgstr "Получение новых сообщений…"
 
@@ -434,26 +434,26 @@ msgstr "Отвеченное"
 msgid "Forwarded"
 msgstr "Пересланное"
 
-#: src/ConversationList/ConversationListItem.vala:218
+#: src/ConversationList/ConversationListItem.vala:212
 msgid "Move To Trash"
 msgstr "Переместить в корзину"
 
-#: src/ConversationList/ConversationListItem.vala:229
+#: src/ConversationList/ConversationListItem.vala:215
 msgid "Mark As Unread"
 msgstr "Отметить как непрочитанное"
 
-#: src/ConversationList/ConversationListItem.vala:238
-#: src/MessageList/MessageList.vala:59
+#: src/ConversationList/ConversationListItem.vala:217
+#: src/MessageList/MessageList.vala:51
 msgid "Mark as Read"
 msgstr "Отметить как прочитанное"
 
-#: src/ConversationList/ConversationListItem.vala:249
-#: src/MessageList/MessageList.vala:65
+#: src/ConversationList/ConversationListItem.vala:221
+#: src/MessageList/MessageList.vala:52
 msgid "Star"
 msgstr "Добавить в избранное"
 
-#: src/ConversationList/ConversationListItem.vala:258
-#: src/MessageList/MessageList.vala:71
+#: src/ConversationList/ConversationListItem.vala:223
+#: src/MessageList/MessageList.vala:53
 msgid "Unstar"
 msgstr "Удалить из избранных"
 
@@ -552,77 +552,77 @@ msgstr "По умолчанию для…"
 msgid "Signature"
 msgstr "Подпись"
 
-#: src/FoldersView/AccountSourceItem.vala:154
+#: src/FolderList/AccountItemModel.vala:154
 msgid "Edit Aliases…"
 msgstr "Редактировать псевдонимы…"
 
-#: src/FoldersView/FoldersListView.vala:47
+#: src/FolderList/FolderItemModel.vala:52
+msgid "Refresh folder"
+msgstr "Обновить папку"
+
+#: src/FolderList/FolderItemModel.vala:57
+msgid "Rename folder"
+msgstr "Переименовать папку"
+
+#: src/FolderList/FolderItemModel.vala:161
+#: src/FolderList/FolderItemModel.vala:190
+#: src/FolderList/FolderItemModel.vala:208
+#, c-format
+msgid "Couldn't rename “%s”"
+msgstr "Не удалось переименовать «%s»"
+
+#: src/FolderList/FolderItemModel.vala:162
+msgid "Folder names cannot contain “/”"
+msgstr "Название папки не может содержать «/»"
+
+#: src/FolderList/FolderItemModel.vala:191
+#, c-format
+msgid "A folder named “%s” already exists"
+msgstr "Папка с названием «%s» уже существует"
+
+#: src/FolderList/FolderList.vala:47
 msgid "Compose new message"
 msgstr "Написать новое письмо"
 
-#: src/FoldersView/FoldersListView.vala:59
+#: src/FolderList/FolderList.vala:59
 msgid "Always Show Remote Images"
 msgstr "Всегда показывать удалённые изображения"
 
-#: src/FoldersView/FoldersListView.vala:67
+#: src/FolderList/FolderList.vala:67
 msgid "Account Settings…"
 msgstr "Параметры учётных записей…"
 
-#: src/FoldersView/FoldersListView.vala:92
+#: src/FolderList/FolderList.vala:92
 msgid "Menu"
 msgstr "Меню"
 
-#: src/FoldersView/FoldersListView.vala:146
+#: src/FolderList/FolderList.vala:146
 msgid "Unable to open System Settings"
 msgstr "Не удалось открыть Параметры системы"
 
-#: src/FoldersView/FoldersListView.vala:147
+#: src/FolderList/FolderList.vala:147
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
 "Откройте Параметры системы вручную, либо установите Evolution, чтобы "
 "настроить онлайн-аккаунты."
 
-#: src/FoldersView/FolderSourceItem.vala:52
-msgid "Refresh folder"
-msgstr "Обновить папку"
-
-#: src/FoldersView/FolderSourceItem.vala:57
-msgid "Rename folder"
-msgstr "Переименовать папку"
-
-#: src/FoldersView/FolderSourceItem.vala:161
-#: src/FoldersView/FolderSourceItem.vala:190
-#: src/FoldersView/FolderSourceItem.vala:208
-#, c-format
-msgid "Couldn't rename “%s”"
-msgstr "Не удалось переименовать «%s»"
-
-#: src/FoldersView/FolderSourceItem.vala:162
-msgid "Folder names cannot contain “/”"
-msgstr "Название папки не может содержать «/»"
-
-#: src/FoldersView/FolderSourceItem.vala:191
-#, c-format
-msgid "A folder named “%s” already exists"
-msgstr "Папка с названием «%s» уже существует"
-
-#: src/FoldersView/GroupedFolderSourceItem.vala:38
+#: src/FolderList/GroupedFolderItemModel.vala:38
 msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Входящие"
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
+#: src/FolderList/GroupedFolderItemModel.vala:42
 msgctxt "Archive Folder"
 msgid "Archive"
 msgstr "Архив"
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#: src/FolderList/GroupedFolderItemModel.vala:46
 msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "Отправленные"
 
-#: src/FoldersView/SessionSourceItem.vala:28
+#: src/FolderList/SessionItemModel.vala:28
 msgid "All Mailboxes"
 msgstr "Все почтовые ящики"
 
@@ -638,27 +638,27 @@ msgstr "Ответить всем"
 msgid "Forward"
 msgstr "Переслать"
 
-#: src/MessageList/MessageList.vala:53
+#: src/MessageList/MessageList.vala:50
 msgid "Mark as Unread"
 msgstr "Отметить как непрочитанное"
 
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:60
 msgid "Mark Conversation"
 msgstr "Отметить беседу"
 
-#: src/MessageList/MessageList.vala:92
+#: src/MessageList/MessageList.vala:68
 msgid "Move Conversation to…"
 msgstr "Переместить беседу в…"
 
-#: src/MessageList/MessageList.vala:101
+#: src/MessageList/MessageList.vala:77
 msgid "Move conversations to archive"
 msgstr "Переместить беседы в архив"
 
-#: src/MessageList/MessageList.vala:109
+#: src/MessageList/MessageList.vala:85
 msgid "Move conversations to Trash"
 msgstr "Переместить беседы в корзину"
 
-#: src/MessageList/MessageList.vala:124
+#: src/MessageList/MessageList.vala:100
 msgid "No Message Selected"
 msgstr "Нет выбранных писем"
 

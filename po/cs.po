@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-29 17:12+0000\n"
+"POT-Creation-Date: 2026-07-27 22:28+0000\n"
 "PO-Revision-Date: 2023-08-11 12:08+0000\n"
 "Last-Translator: Jakub Kyzr <jakubkyzr@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/mail/mail/cs/>\n"
@@ -209,7 +209,7 @@ msgstr "Zprávu se nedaří odeslat"
 msgid "There was an unexpected error while sending your message."
 msgstr "Došlo k neočekávané chybě při odesílání zprávy."
 
-#: src/Composer.vala:946 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:946 src/FolderList/FolderList.vala:62
 msgid "Edit Signatures…"
 msgstr "Upravit podpisy…"
 
@@ -390,19 +390,19 @@ msgstr "Hledat poštu"
 msgid "Hide read conversations"
 msgstr "Skrýt už přečtené konverzace"
 
-#: src/ConversationList/ConversationList.vala:92
+#: src/ConversationList/ConversationList.vala:91
 msgid "Hide unstarred conversations"
 msgstr "Skrýt konverzace bez hvězdičky"
 
-#: src/ConversationList/ConversationList.vala:109
+#: src/ConversationList/ConversationList.vala:108
 msgid "Filter Conversations"
 msgstr "Filtrovat konverzace"
 
-#: src/ConversationList/ConversationList.vala:132
+#: src/ConversationList/ConversationList.vala:131
 msgid "Fetch new messages"
 msgstr "Stáhnout si nové zprávy"
 
-#: src/ConversationList/ConversationList.vala:139
+#: src/ConversationList/ConversationList.vala:138
 msgid "Fetching new messages…"
 msgstr "Stahování nových zpráv…"
 
@@ -426,26 +426,26 @@ msgstr "Odpověděli jste"
 msgid "Forwarded"
 msgstr "Přeposláno"
 
-#: src/ConversationList/ConversationListItem.vala:218
+#: src/ConversationList/ConversationListItem.vala:212
 msgid "Move To Trash"
 msgstr "Přesunout do koše"
 
-#: src/ConversationList/ConversationListItem.vala:229
+#: src/ConversationList/ConversationListItem.vala:215
 msgid "Mark As Unread"
 msgstr "Označit jako nepřečtené"
 
-#: src/ConversationList/ConversationListItem.vala:238
-#: src/MessageList/MessageList.vala:59
+#: src/ConversationList/ConversationListItem.vala:217
+#: src/MessageList/MessageList.vala:51
 msgid "Mark as Read"
 msgstr "Označit jako přečtené"
 
-#: src/ConversationList/ConversationListItem.vala:249
-#: src/MessageList/MessageList.vala:65
+#: src/ConversationList/ConversationListItem.vala:221
+#: src/MessageList/MessageList.vala:52
 msgid "Star"
 msgstr "Označit hvězdičkou"
 
-#: src/ConversationList/ConversationListItem.vala:258
-#: src/MessageList/MessageList.vala:71
+#: src/ConversationList/ConversationListItem.vala:223
+#: src/MessageList/MessageList.vala:53
 msgid "Unstar"
 msgstr "Odebrat hvězdičku"
 
@@ -556,79 +556,79 @@ msgstr "Nastavit jako výchozí pro…"
 msgid "Signature"
 msgstr "Podpis"
 
-#: src/FoldersView/AccountSourceItem.vala:154
+#: src/FolderList/AccountItemModel.vala:154
 #, fuzzy
 #| msgid "Edit Signatures…"
 msgid "Edit Aliases…"
 msgstr "Upravit podpisy…"
 
-#: src/FoldersView/FoldersListView.vala:47
+#: src/FolderList/FolderItemModel.vala:52
+msgid "Refresh folder"
+msgstr "Obnovit složku"
+
+#: src/FolderList/FolderItemModel.vala:57
+msgid "Rename folder"
+msgstr "Přejmenovat složku"
+
+#: src/FolderList/FolderItemModel.vala:161
+#: src/FolderList/FolderItemModel.vala:190
+#: src/FolderList/FolderItemModel.vala:208
+#, c-format
+msgid "Couldn't rename “%s”"
+msgstr "Nepodařilo se přejmenovat „%s“"
+
+#: src/FolderList/FolderItemModel.vala:162
+msgid "Folder names cannot contain “/”"
+msgstr "Názvy složek nesmí obsahovat „/“"
+
+#: src/FolderList/FolderItemModel.vala:191
+#, c-format
+msgid "A folder named “%s” already exists"
+msgstr "Složka s názvem „%s“ již existuje"
+
+#: src/FolderList/FolderList.vala:47
 msgid "Compose new message"
 msgstr "Napsat novou zprávu"
 
-#: src/FoldersView/FoldersListView.vala:59
+#: src/FolderList/FolderList.vala:59
 msgid "Always Show Remote Images"
 msgstr "Vždy zobrazovat externí obrázky"
 
-#: src/FoldersView/FoldersListView.vala:67
+#: src/FolderList/FolderList.vala:67
 msgid "Account Settings…"
 msgstr "Nastavení účtu…"
 
-#: src/FoldersView/FoldersListView.vala:92
+#: src/FolderList/FolderList.vala:92
 msgid "Menu"
 msgstr "Nabídka"
 
-#: src/FoldersView/FoldersListView.vala:146
+#: src/FolderList/FolderList.vala:146
 msgid "Unable to open System Settings"
 msgstr "Nepodařilo se otevřít Nastavení systému"
 
-#: src/FoldersView/FoldersListView.vala:147
+#: src/FolderList/FolderList.vala:147
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
 "Otevřete Nastavení systému ručně nebo nainstalujte aplikaci Evolution pro "
 "nastavení online účtů."
 
-#: src/FoldersView/FolderSourceItem.vala:52
-msgid "Refresh folder"
-msgstr "Obnovit složku"
-
-#: src/FoldersView/FolderSourceItem.vala:57
-msgid "Rename folder"
-msgstr "Přejmenovat složku"
-
-#: src/FoldersView/FolderSourceItem.vala:161
-#: src/FoldersView/FolderSourceItem.vala:190
-#: src/FoldersView/FolderSourceItem.vala:208
-#, c-format
-msgid "Couldn't rename “%s”"
-msgstr "Nepodařilo se přejmenovat „%s“"
-
-#: src/FoldersView/FolderSourceItem.vala:162
-msgid "Folder names cannot contain “/”"
-msgstr "Názvy složek nesmí obsahovat „/“"
-
-#: src/FoldersView/FolderSourceItem.vala:191
-#, c-format
-msgid "A folder named “%s” already exists"
-msgstr "Složka s názvem „%s“ již existuje"
-
-#: src/FoldersView/GroupedFolderSourceItem.vala:38
+#: src/FolderList/GroupedFolderItemModel.vala:38
 msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Doručená pošta"
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
+#: src/FolderList/GroupedFolderItemModel.vala:42
 msgctxt "Archive Folder"
 msgid "Archive"
 msgstr "Archiv"
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#: src/FolderList/GroupedFolderItemModel.vala:46
 msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "Odeslané"
 
-#: src/FoldersView/SessionSourceItem.vala:28
+#: src/FolderList/SessionItemModel.vala:28
 msgid "All Mailboxes"
 msgstr "Všechny schránky"
 
@@ -644,27 +644,27 @@ msgstr "Odpovědět všem"
 msgid "Forward"
 msgstr "Přeposlat"
 
-#: src/MessageList/MessageList.vala:53
+#: src/MessageList/MessageList.vala:50
 msgid "Mark as Unread"
 msgstr "Označit jako nepřečtené"
 
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:60
 msgid "Mark Conversation"
 msgstr "Označit konverzaci"
 
-#: src/MessageList/MessageList.vala:92
+#: src/MessageList/MessageList.vala:68
 msgid "Move Conversation to…"
 msgstr "Přesunout konverzaci do…"
 
-#: src/MessageList/MessageList.vala:101
+#: src/MessageList/MessageList.vala:77
 msgid "Move conversations to archive"
 msgstr "Přesunout konverzace do archivu"
 
-#: src/MessageList/MessageList.vala:109
+#: src/MessageList/MessageList.vala:85
 msgid "Move conversations to Trash"
 msgstr "Přesunout konverzace do koše"
 
-#: src/MessageList/MessageList.vala:124
+#: src/MessageList/MessageList.vala:100
 msgid "No Message Selected"
 msgstr "Žádná vybraná zpráva"
 
