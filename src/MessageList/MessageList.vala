@@ -122,8 +122,8 @@ public class Mail.MessageList : Gtk.Box {
 
         // Prevent the focus of the webview causing the ScrolledWindow to scroll
         var scrolled_child = scrolled_window.get_child ();
-        if (scrolled_child is Gtk.Container) {
-            ((Gtk.Container) scrolled_child).set_focus_vadjustment (new Gtk.Adjustment (0, 0, 0, 0, 0, 0));
+        if (scrolled_child is Gtk.Viewport) {
+            ((Gtk.Viewport) scrolled_child).scroll_to_focus = false;
         }
 
         orientation = VERTICAL;
