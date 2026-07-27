@@ -20,13 +20,13 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.FoldersListView : Gtk.Grid {
+public class Mail.FolderList : Gtk.Grid {
     public signal void folder_selected (Gee.Map<Backend.Account, Camel.FolderInfo?> folder_info_per_account);
 
     public Hdy.HeaderBar header_bar { get; private set; }
 
     private Mail.SourceList source_list;
-    private Mail.SessionSourceItem session_source_item;
+    private Mail.SessionItemModel session_source_item;
     private static GLib.Settings settings;
 
     static construct {
@@ -105,7 +105,7 @@ public class Mail.FoldersListView : Gtk.Grid {
 
         var session = Mail.Backend.Session.get_default ();
 
-        session_source_item = new Mail.SessionSourceItem (session);
+        session_source_item = new Mail.SessionItemModel (session);
         source_list.root.add (session_source_item);
 
         session.get_accounts ().foreach ((account) => {
@@ -119,16 +119,16 @@ public class Mail.FoldersListView : Gtk.Grid {
                 return;
             }
 
-            if (item is FolderSourceItem) {
-                unowned FolderSourceItem folder_item = (FolderSourceItem) item;
+            if (item is FolderItemModel) {
+                unowned FolderItemModel folder_item = (FolderItemModel) item;
                 var folder_info_per_account = new Gee.HashMap<Mail.Backend.Account, Camel.FolderInfo?> ();
                 folder_info_per_account.set (folder_item.account, folder_item.folder_info);
                 folder_selected (folder_info_per_account.read_only_view);
 
                 settings.set ("selected-folder", "(ss)", folder_item.account.service.uid, folder_item.full_name);
 
-            } else if (item is GroupedFolderSourceItem) {
-                unowned GroupedFolderSourceItem grouped_folder_item = (GroupedFolderSourceItem) item;
+            } else if (item is GroupedFolderItemModel) {
+                unowned GroupedFolderItemModel grouped_folder_item = (GroupedFolderItemModel) item;
                 folder_selected (grouped_folder_item.get_folder_info_per_account ());
 
                 settings.set ("selected-folder", "(ss)", "GROUPED", grouped_folder_item.name);
@@ -158,7 +158,7 @@ public class Mail.FoldersListView : Gtk.Grid {
     }
 
     private void add_account (Mail.Backend.Account account) {
-        var account_item = new Mail.AccountSourceItem (account);
+        var account_item = new Mail.AccountItemModel (account);
         account_item.start_edit.connect ((item) => source_list.start_editing_item (item));
         source_list.root.add (account_item);
         account_item.load.begin ((obj, res) => {
@@ -177,12 +177,12 @@ public class Mail.FoldersListView : Gtk.Grid {
 
     private bool select_saved_folder (Mail.SourceList.ExpandableItem item, string selected_folder_name) {
         foreach (var child in item.children) {
-            if (child is FolderSourceItem) {
+            if (child is FolderItemModel) {
                 if (select_saved_folder ((Mail.SourceList.ExpandableItem) child, selected_folder_name)) {
                     return true;
                 }
 
-                unowned FolderSourceItem folder_item = (FolderSourceItem) child;
+                unowned FolderItemModel folder_item = (FolderItemModel) child;
                 if (folder_item.full_name == selected_folder_name) {
                     source_list.selected = child;
 
@@ -191,8 +191,8 @@ public class Mail.FoldersListView : Gtk.Grid {
                     folder_selected (folder_info_per_account.read_only_view);
                     return true;
                 }
-            } else if (child is GroupedFolderSourceItem) {
-                unowned GroupedFolderSourceItem grouped_folder_item = (GroupedFolderSourceItem) child;
+            } else if (child is GroupedFolderItemModel) {
+                unowned GroupedFolderItemModel grouped_folder_item = (GroupedFolderItemModel) child;
                 if (grouped_folder_item.name == selected_folder_name) {
                     source_list.selected = child;
                     folder_selected (grouped_folder_item.get_folder_info_per_account ());

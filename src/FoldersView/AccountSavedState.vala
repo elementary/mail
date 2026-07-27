@@ -22,7 +22,7 @@ public class Mail.AccountSavedState : GLib.Object {
     public unowned Mail.Backend.Account account { get; construct; }
 
     private GLib.Settings settings;
-    private Gee.HashMap<string, FolderSourceItem> items;
+    private Gee.HashMap<string, FolderItemModel> items;
 
     public AccountSavedState (Mail.Backend.Account account) {
         Object (account: account);
@@ -30,14 +30,14 @@ public class Mail.AccountSavedState : GLib.Object {
 
     construct {
         settings = new GLib.Settings.with_path ("io.elementary.mail.accounts", "/io/elementary/mail/accounts/%s/".printf (account.service.uid));
-        items = new Gee.HashMap<string, FolderSourceItem> ();
+        items = new Gee.HashMap<string, FolderItemModel> ();
     }
 
     public void bind_with_expandable_item (Mail.SourceList.ExpandableItem item) {
-        if (item is AccountSourceItem) {
+        if (item is AccountItemModel) {
             settings.bind ("expanded", item, "expanded", SettingsBindFlags.DEFAULT | SettingsBindFlags.GET_NO_CHANGES);
-        } else if (item is FolderSourceItem) {
-            var folder_item = (FolderSourceItem) item;
+        } else if (item is FolderItemModel) {
+            var folder_item = (FolderItemModel) item;
             items[folder_item.full_name] = folder_item;
             if (folder_item.full_name in settings.get_strv ("expanded-folders")) {
                 item.expanded = true;

@@ -20,7 +20,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
+public class Mail.FolderItemModel : Mail.SourceList.ExpandableItem {
     public signal void start_edit ();
 
     public Camel.FolderInfo folder_info { get; private set; }
@@ -33,7 +33,7 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
     private Cancellable cancellable;
     private string old_name;
 
-    public FolderSourceItem (Backend.Account account, Camel.FolderInfo folderinfo) {
+    public FolderItemModel (Backend.Account account, Camel.FolderInfo folderinfo) {
         Object (account: account);
         update_infos (folderinfo);
     }
@@ -42,7 +42,7 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
         cancellable = new GLib.Cancellable ();
     }
 
-    ~FolderSourceItem () {
+    ~FolderItemModel () {
         cancellable.cancel ();
     }
 

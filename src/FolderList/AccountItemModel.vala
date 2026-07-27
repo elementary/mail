@@ -20,25 +20,25 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem, Mail.SourceListSortable {
+public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.SourceListSortable {
     public Mail.Backend.Account account { get; construct; }
 
     public signal void loaded ();
     public signal void start_edit (Mail.SourceList.Item item);
 
     private GLib.Cancellable connect_cancellable;
-    private Gee.HashMap<string, FolderSourceItem> folder_items;
+    private Gee.HashMap<string, FolderItemModel> folder_items;
     private AccountSavedState saved_state;
     private unowned Camel.OfflineStore offlinestore;
 
-    public AccountSourceItem (Mail.Backend.Account account) {
+    public AccountItemModel (Mail.Backend.Account account) {
         Object (account: account);
     }
 
     construct {
         visible = true;
         connect_cancellable = new GLib.Cancellable ();
-        folder_items = new Gee.HashMap<string, FolderSourceItem> ();
+        folder_items = new Gee.HashMap<string, FolderItemModel> ();
         saved_state = new AccountSavedState (account);
         saved_state.bind_with_expandable_item (this);
 
@@ -50,7 +50,7 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem, Mail.Sourc
         offlinestore.folder_renamed.connect (folder_renamed);
     }
 
-    ~AccountSourceItem () {
+    ~AccountItemModel () {
         connect_cancellable.cancel ();
     }
 
@@ -66,14 +66,14 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem, Mail.Sourc
     }
 
     private void folder_renamed (string old_name, Camel.FolderInfo folder_info) {
-        FolderSourceItem item;
+        FolderItemModel item;
         folder_items.unset (old_name, out item);
         item.update_infos (folder_info);
         folder_items[item.full_name] = item;
     }
 
     private void folder_deleted (Camel.FolderInfo folder_info) {
-        Mail.FolderSourceItem? item = folder_items[folder_info.full_name];
+        Mail.FolderItemModel? item = folder_items[folder_info.full_name];
         if (item != null) {
             item.parent.remove (item);
             folder_items.unset (folder_info.full_name);
@@ -114,7 +114,7 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem, Mail.Sourc
     private void show_info (Camel.FolderInfo? _folderinfo, Mail.SourceList.ExpandableItem item) {
         var folderinfo = _folderinfo;
         while (folderinfo != null) {
-            var folder_item = new FolderSourceItem (account, folderinfo);
+            var folder_item = new FolderItemModel (account, folderinfo);
             saved_state.bind_with_expandable_item (folder_item);
             folder_items[folderinfo.full_name] = folder_item;
             folder_item.start_edit.connect (() => start_edit (folder_item));
@@ -134,9 +134,9 @@ public class Mail.AccountSourceItem : Mail.SourceList.ExpandableItem, Mail.Sourc
     }
 
     public int compare (Mail.SourceList.Item a, Mail.SourceList.Item b) {
-        if (a is Mail.FolderSourceItem && b is Mail.FolderSourceItem) {
-            var folder_a = (Mail.FolderSourceItem) a;
-            var folder_b = (Mail.FolderSourceItem) b;
+        if (a is Mail.FolderItemModel && b is Mail.FolderItemModel) {
+            var folder_a = (Mail.FolderItemModel) a;
+            var folder_b = (Mail.FolderItemModel) b;
 
             return folder_a.pos - folder_b.pos;
         }

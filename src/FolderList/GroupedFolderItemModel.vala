@@ -17,14 +17,14 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class Mail.GroupedFolderSourceItem : Mail.SourceList.Item {
+public class Mail.GroupedFolderItemModel : Mail.SourceList.Item {
     public Mail.Backend.Session session { get; construct; }
     public Camel.FolderInfoFlags folder_type { get; construct; }
 
     private GLib.Cancellable connect_cancellable;
     private Gee.HashMap<Backend.Account, Camel.FolderInfo?> account_folderinfo;
 
-    public GroupedFolderSourceItem (Mail.Backend.Session session, Camel.FolderInfoFlags folder_type) {
+    public GroupedFolderItemModel (Mail.Backend.Session session, Camel.FolderInfoFlags folder_type) {
         Object (session: session, folder_type: folder_type);
     }
 
@@ -62,7 +62,7 @@ public class Mail.GroupedFolderSourceItem : Mail.SourceList.Item {
         session.account_removed.connect (removed_account);
     }
 
-    ~GroupedFolderSourceItem () {
+    ~GroupedFolderItemModel () {
         connect_cancellable.cancel ();
     }
 
