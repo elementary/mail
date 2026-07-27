@@ -107,18 +107,16 @@ public class Mail.FolderList : Gtk.Box {
             }
 
             if (item is FolderItemModel) {
-                unowned FolderItemModel folder_item = (FolderItemModel) item;
                 var folder_info_per_account = new Gee.HashMap<Mail.Backend.Account, Camel.FolderInfo?> ();
-                folder_info_per_account.set (folder_item.account, folder_item.folder_info);
+                folder_info_per_account.set (item.account, item.folder_info);
                 folder_selected (folder_info_per_account.read_only_view);
 
-                settings.set ("selected-folder", "(ss)", folder_item.account.service.uid, folder_item.full_name);
+                settings.set ("selected-folder", "(ss)", item.account.service.uid, item.full_name);
 
             } else if (item is GroupedFolderItemModel) {
-                unowned GroupedFolderItemModel grouped_folder_item = (GroupedFolderItemModel) item;
-                folder_selected (grouped_folder_item.get_folder_info_per_account ());
+                folder_selected (item.get_folder_info_per_account ());
 
-                settings.set ("selected-folder", "(ss)", "GROUPED", grouped_folder_item.name);
+                settings.set ("selected-folder", "(ss)", "GROUPED", item.name);
             }
         });
 
