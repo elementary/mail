@@ -35,49 +35,47 @@ public class Mail.ConversationList : Gtk.Box {
     private Gee.HashMap<string, Camel.FolderThread> threads;
     private Gee.HashMap<string, ConversationItemModel> conversations;
     private ConversationListStore list_store;
-    private VirtualizingListBox list_box;
     private Gtk.SearchEntry search_entry;
     private Granite.SwitchModelButton hide_read_switch;
     private Granite.SwitchModelButton hide_unstarred_switch;
     private Gtk.MenuButton filter_button;
     private Gtk.Stack refresh_stack;
+    private Gtk.SingleSelection selection_model;
+    private Gtk.ListView list_view;
 
     private uint mark_read_timeout_id = 0;
 
     construct {
         orientation = VERTICAL;
-        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        add_css_class (Gtk.STYLE_CLASS_VIEW);
 
         conversations = new Gee.HashMap<string, ConversationItemModel> ();
         folders = new Gee.HashMap<string, Camel.Folder> ();
         folder_info_flags = new Gee.HashMap<string, Camel.FolderInfoFlags> ();
         threads = new Gee.HashMap<string, Camel.FolderThread> ();
-        list_store = new ConversationListStore ();
-        list_store.set_sort_func (thread_sort_function);
-        list_store.set_filter_func (filter_function);
 
-        list_box = new VirtualizingListBox () {
-            activate_on_single_click = true,
-            model = list_store,
-            selection_mode = SINGLE
-        };
-        list_box.factory_func = (item, old_widget) => {
-            ConversationListItem? row = null;
-            if (old_widget != null) {
-                row = old_widget as ConversationListItem;
-            } else {
-                row = new ConversationListItem ();
-                row.select.connect (() => {
-                    if (list_box.selected_row_widget != row) {
-                        list_box.select_row (row);
-                    }
-                });
-            }
+        // list_box = new VirtualizingListBox () {
+        //     activate_on_single_click = true,
+        //     model = list_store,
+        //     selection_mode = SINGLE
+        // };
+        // list_box.factory_func = (item, old_widget) => {
+        //     ConversationListItem? row = null;
+        //     if (old_widget != null) {
+        //         row = old_widget as ConversationListItem;
+        //     } else {
+        //         row = new ConversationListItem ();
+        //         row.select.connect (() => {
+        //             if (list_box.selected_row_widget != row) {
+        //                 list_box.select_row (row);
+        //             }
+        //         });
+        //     }
 
-            row.assign ((ConversationItemModel)item);
-            row.show_all ();
-            return row;
-        };
+        //     row.assign ((ConversationItemModel)item);
+        //     row.show_all ();
+        //     return row;
+        // };
 
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
@@ -94,16 +92,15 @@ public class Mail.ConversationList : Gtk.Box {
             margin_bottom = 3,
             margin_top = 3
         };
-        filter_menu_popover_box.add (hide_read_switch);
-        filter_menu_popover_box.add (hide_unstarred_switch);
-        filter_menu_popover_box.show_all ();
+        filter_menu_popover_box.append (hide_read_switch);
+        filter_menu_popover_box.append (hide_unstarred_switch);
 
-        var filter_popover = new Gtk.Popover (null) {
+        var filter_popover = new Gtk.Popover () {
             child = filter_menu_popover_box
         };
 
         filter_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("mail-filter-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            icon_name = "mail-filter-symbolic",
             popover = filter_popover,
             tooltip_text = _("Filter Conversations"),
             valign = Gtk.Align.CENTER
@@ -113,16 +110,34 @@ public class Mail.ConversationList : Gtk.Box {
             custom_title = search_entry
         };
         search_header.pack_end (filter_button);
-        search_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        search_header.add_css_class (Gtk.STYLE_CLASS_FLAT);
 
-        var scrolled_window = new Gtk.ScrolledWindow (null, null) {
+        list_store = new ConversationListStore ();
+        list_store.set_sort_func (thread_sort_function);
+        list_store.set_filter_func (filter_function);
+
+        var deleted_filter = new Gtk.CustomFilter (deleted_filter_func);
+
+        var filter_model = new Gtk.FilterListModel (list_store, deleted_filter);
+
+        selection_model = new Gtk.SingleSelection (filter_model) {
+            autoselect = false
+        };
+
+        var factory = new Gtk.SignalListItemFactory ();
+
+        list_view = new Gtk.ListView (selection_model, factory) {
+            show_separators = false
+        };
+
+        var scrolled_window = new Gtk.ScrolledWindow () {
             hscrollbar_policy = Gtk.PolicyType.NEVER,
             width_request = 158,
             expand = true,
-            child = list_box
+            child = list_view
         };
 
-        var refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
+        var refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic") {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REFRESH
         };
 
@@ -132,7 +147,7 @@ public class Mail.ConversationList : Gtk.Box {
         );
 
         var refresh_spinner = new Gtk.Spinner () {
-            active = true,
+            spinning = true,
             halign = Gtk.Align.CENTER,
             valign = Gtk.Align.CENTER,
             tooltip_text = _("Fetching new messages…")
@@ -156,11 +171,11 @@ public class Mail.ConversationList : Gtk.Box {
         var conversation_action_bar = new Gtk.ActionBar ();
         conversation_action_bar.pack_start (refresh_stack);
         conversation_action_bar.pack_end (move_spinner);
-        conversation_action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        conversation_action_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
-        add (search_header);
-        add (scrolled_window);
-        add (conversation_action_bar);
+        append (search_header);
+        append (scrolled_window);
+        append (conversation_action_bar);
 
         search_entry.search_changed.connect (() => load_folder.begin (folder_info_per_account));
 

@@ -19,7 +19,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.ConversationListItem : VirtualizingListBoxRow {
+public class Mail.ConversationListItem : Granite.Bin {
     public signal void select ();
 
     private Gtk.Image status_icon;

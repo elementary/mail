@@ -36,9 +36,7 @@ vala_files = files(
     'SourceList/SourceList.vala',
     'SourceList' / 'SourceListDragDest.vala',
     'SourceList' / 'SourceListDragSource.vala',
-    'SourceList' / 'SourceListSortable.vala',
-    'VirtualizingListBox/VirtualizingListBoxRow.vala',
-    'VirtualizingListBox/VirtualizingListBox.vala'
+    'SourceList' / 'SourceListSortable.vala'
 )
 
 executable(
