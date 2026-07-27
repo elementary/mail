@@ -17,10 +17,10 @@
 * Boston, MA 02110-1301 USA
 */
 
- public class Mail.SessionSourceItem : Mail.SourceList.ExpandableItem {
+ public class Mail.SessionItemModel : Mail.SourceList.ExpandableItem {
     public Mail.Backend.Session session { get; construct; }
 
-    public SessionSourceItem (Mail.Backend.Session session) {
+    public SessionItemModel (Mail.Backend.Session session) {
         Object (session: session);
     }
 
@@ -30,9 +30,9 @@
         expanded = true;
         collapsible = false;
 
-        add (new GroupedFolderSourceItem (session, Camel.FolderInfoFlags.TYPE_INBOX));
-        add (new GroupedFolderSourceItem (session, Camel.FolderInfoFlags.TYPE_ARCHIVE));
-        add (new GroupedFolderSourceItem (session, Camel.FolderInfoFlags.TYPE_SENT));
+        add (new GroupedFolderItemModel (session, Camel.FolderInfoFlags.TYPE_INBOX));
+        add (new GroupedFolderItemModel (session, Camel.FolderInfoFlags.TYPE_ARCHIVE));
+        add (new GroupedFolderItemModel (session, Camel.FolderInfoFlags.TYPE_SENT));
 
         session.account_added.connect (added_account);
         session.account_removed.connect (removed_account);
