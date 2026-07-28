@@ -21,7 +21,6 @@ public class Mail.FolderItemModel : Mail.SourceList.ExpandableItem {
         }
     }
 
-    public string full_name { get; private set; }
     public bool is_special_folder { get; private set; default = true; }
     public int pos { get; private set; }
 
@@ -64,7 +63,6 @@ public class Mail.FolderItemModel : Mail.SourceList.ExpandableItem {
 
     private void update_infos () {
         name = old_name = folder_info.display_name;
-        full_name = folder_info.full_name;
         if (folder_info.unread > 0) {
             badge = "%d".printf (folder_info.unread);
         }
@@ -120,7 +118,7 @@ public class Mail.FolderItemModel : Mail.SourceList.ExpandableItem {
     private async void refresh () {
         var offlinestore = (Camel.Store)account.service;
         try {
-            var folder = yield offlinestore.get_folder (full_name, 0, GLib.Priority.DEFAULT, cancellable);
+            var folder = yield offlinestore.get_folder (folder_info.full_name, 0, GLib.Priority.DEFAULT, cancellable);
             yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
         } catch (Error e) {
             critical (e.message);
@@ -153,7 +151,7 @@ public class Mail.FolderItemModel : Mail.SourceList.ExpandableItem {
             return;
         }
 
-        string[] split_full_name = full_name.split_set ("/");
+        string[] split_full_name = folder_info.full_name.split_set ("/");
         split_full_name[split_full_name.length - 1] = new_name;
         var new_full_name = string.joinv ("/", split_full_name);
 
@@ -183,7 +181,7 @@ public class Mail.FolderItemModel : Mail.SourceList.ExpandableItem {
         }
 
         try {
-            yield offlinestore.rename_folder (full_name, new_full_name, GLib.Priority.DEFAULT, cancellable);
+            yield offlinestore.rename_folder (folder_info.full_name, new_full_name, GLib.Priority.DEFAULT, cancellable);
         } catch (Error e) {
             if (name == old_name) {
                 notify["name"].connect (cancel_rename);
