@@ -1980,14 +1980,15 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                 case Gdk.Key.F2:
                    var modifiers = Gtk.accelerator_get_default_mod_mask ();
                     // try to start editing selected item
-                    if ((state & modifiers) == 0 && selected_item.editable)
+                    if ((state & modifiers) == 0 && selected_item.editable) {
                         start_editing_item (selected_item);
+                    }
                 break;
             }
         }
 
         private void on_button_released (int n_press, double x, double y) {
-             if (unselectable_item_clicked) {
+            if (unselectable_item_clicked) {
                 unselectable_item_clicked = false;
 
                 Gtk.TreePath path;
@@ -1998,8 +1999,9 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                     var item = data_model.get_item_from_path (path) as ExpandableItem;
 
                     if (item != null) {
-                        if (!item.selectable || data_model.is_category (item, null, path))
+                        if (!item.selectable || data_model.is_category (item, null, path)) {
                             toggle_expansion (item);
+                        }
                     }
                 }
             }
