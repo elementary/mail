@@ -151,8 +151,10 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
 
     public override GLib.Menu? get_context_menu () {
         var menu = new Menu ();
-        //FIXME: Properly set action target
-        menu.append (_("Edit Aliases…"), "folder-list.account-edit-aliases::%s".printf (account.service.uid));
+        menu.append (
+            _("Edit Aliases…"),
+            Action.print_detailed_name ("folder-list.account-edit-aliases", account.service.uid)
+        );
 
         return menu;
     }
