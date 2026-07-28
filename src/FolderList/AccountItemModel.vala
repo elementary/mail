@@ -70,7 +70,7 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
 
     private void folder_renamed (string old_name, Camel.FolderInfo folder_info) {
         //FIXME: find by old name?
-        // item.update_infos (folder_info);
+        // item.folder_info = folder_info;
     }
 
     private void folder_deleted (Camel.FolderInfo folder_info) {
@@ -107,8 +107,8 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
         for (int i = 0; i < folder_list.n_items; i++) {
             try {
                 var folder_item = (FolderItemModel) folder_list.get_item (i);
-                var folder_info = yield offlinestore.get_folder_info (folder_item.full_name, 0, GLib.Priority.DEFAULT, connect_cancellable);
-                folder_item.update_infos (folder_info);
+                var folder_info = yield offlinestore.get_folder_info (folder_item.folder_info.full_name, 0, GLib.Priority.DEFAULT, connect_cancellable);
+                folder_item.folder_info = folder_info;
             } catch (Error e) {
                 // We can cancel the operation
                 if (!(e is GLib.IOError.CANCELLED)) {
@@ -123,6 +123,7 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
         while (folderinfo != null) {
             var folder_item = new FolderItemModel (account, folderinfo);
             folder_list.append (folder_item);
+
             saved_state.bind_with_expandable_item (folder_item);
             folder_item.start_edit.connect (() => start_edit (folder_item));
 
