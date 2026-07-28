@@ -26,10 +26,9 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
     public signal void loaded ();
     public signal void start_edit (Mail.SourceList.Item item);
 
-    public ListStore? folder_list { get; protected set; default = null; }
-
     private GLib.Cancellable connect_cancellable;
     private AccountSavedState saved_state;
+    private ListStore? folder_list;
     private unowned Camel.OfflineStore offlinestore;
 
     public AccountItemModel (Mail.Backend.Account account) {
