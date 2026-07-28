@@ -38,19 +38,19 @@ public class Mail.AccountSavedState : GLib.Object {
             settings.bind ("expanded", item, "expanded", SettingsBindFlags.DEFAULT | SettingsBindFlags.GET_NO_CHANGES);
         } else if (item is FolderItemModel) {
             var folder_item = (FolderItemModel) item;
-            items[folder_item.full_name] = folder_item;
-            if (folder_item.full_name in settings.get_strv ("expanded-folders")) {
+            items[folder_item.folder_info.full_name] = folder_item;
+            if (folder_item.folder_info.full_name in settings.get_strv ("expanded-folders")) {
                 item.expanded = true;
             }
 
             item.notify["expanded"].connect (() => {
                 var folders = settings.get_strv ("expanded-folders");
                 if (item.expanded) {
-                    folders += folder_item.full_name;
+                    folders += folder_item.folder_info.full_name;
                 } else {
                     string[] new_folders = {};
                     foreach (var folder in folders) {
-                        if (folder != folder_item.full_name) {
+                        if (folder != folder_item.folder_info.full_name) {
                             new_folders += folder;
                         }
                     }
