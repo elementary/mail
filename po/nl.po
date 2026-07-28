@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-29 17:12+0000\n"
+"POT-Creation-Date: 2026-07-27 22:28+0000\n"
 "PO-Revision-Date: 2023-12-06 21:10+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/mail/mail/nl/>\n"
@@ -218,7 +218,7 @@ msgid "There was an unexpected error while sending your message."
 msgstr ""
 "Er is een onverwachte fout opgetreden tijdens het versturen van uw bericht."
 
-#: src/Composer.vala:946 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:946 src/FolderList/FolderList.vala:62
 msgid "Edit Signatures…"
 msgstr "Handtekeningen aanpassen…"
 
@@ -397,19 +397,19 @@ msgstr "Mail doorzoeken"
 msgid "Hide read conversations"
 msgstr "Gelezen gesprekken verbergen"
 
-#: src/ConversationList/ConversationList.vala:92
+#: src/ConversationList/ConversationList.vala:91
 msgid "Hide unstarred conversations"
 msgstr "Gesprekken zonder ster verbergen"
 
-#: src/ConversationList/ConversationList.vala:109
+#: src/ConversationList/ConversationList.vala:108
 msgid "Filter Conversations"
 msgstr "Gesprekken filteren"
 
-#: src/ConversationList/ConversationList.vala:132
+#: src/ConversationList/ConversationList.vala:131
 msgid "Fetch new messages"
 msgstr "Nieuwe berichten ophalen"
 
-#: src/ConversationList/ConversationList.vala:139
+#: src/ConversationList/ConversationList.vala:138
 msgid "Fetching new messages…"
 msgstr "Nieuwe berichten worden opgehaald…"
 
@@ -433,26 +433,26 @@ msgstr "Beantwoord"
 msgid "Forwarded"
 msgstr "Doorgestuurd"
 
-#: src/ConversationList/ConversationListItem.vala:218
+#: src/ConversationList/ConversationListItem.vala:212
 msgid "Move To Trash"
 msgstr "Verplaatsen naar prullenbak"
 
-#: src/ConversationList/ConversationListItem.vala:229
+#: src/ConversationList/ConversationListItem.vala:215
 msgid "Mark As Unread"
 msgstr "Markeren als ongelezen"
 
-#: src/ConversationList/ConversationListItem.vala:238
-#: src/MessageList/MessageList.vala:59
+#: src/ConversationList/ConversationListItem.vala:217
+#: src/MessageList/MessageList.vala:51
 msgid "Mark as Read"
 msgstr "Als gelezen markeren"
 
-#: src/ConversationList/ConversationListItem.vala:249
-#: src/MessageList/MessageList.vala:65
+#: src/ConversationList/ConversationListItem.vala:221
+#: src/MessageList/MessageList.vala:52
 msgid "Star"
 msgstr "Ster toevoegen"
 
-#: src/ConversationList/ConversationListItem.vala:258
-#: src/MessageList/MessageList.vala:71
+#: src/ConversationList/ConversationListItem.vala:223
+#: src/MessageList/MessageList.vala:53
 msgid "Unstar"
 msgstr "Ster verwijderen"
 
@@ -551,77 +551,77 @@ msgstr "Zet standaard voor…"
 msgid "Signature"
 msgstr "Handtekening"
 
-#: src/FoldersView/AccountSourceItem.vala:154
+#: src/FolderList/AccountItemModel.vala:154
 msgid "Edit Aliases…"
 msgstr "Aliassen aanpassen…"
 
-#: src/FoldersView/FoldersListView.vala:47
+#: src/FolderList/FolderItemModel.vala:52
+msgid "Refresh folder"
+msgstr "Map vernieuwen"
+
+#: src/FolderList/FolderItemModel.vala:57
+msgid "Rename folder"
+msgstr "Map hernoemen"
+
+#: src/FolderList/FolderItemModel.vala:161
+#: src/FolderList/FolderItemModel.vala:190
+#: src/FolderList/FolderItemModel.vala:208
+#, c-format
+msgid "Couldn't rename “%s”"
+msgstr "Kon “%s” niet hernoemen"
+
+#: src/FolderList/FolderItemModel.vala:162
+msgid "Folder names cannot contain “/”"
+msgstr "De naam van een map kan geen “/” bevatten"
+
+#: src/FolderList/FolderItemModel.vala:191
+#, c-format
+msgid "A folder named “%s” already exists"
+msgstr "Er bestaat al een map genaamd “%s”"
+
+#: src/FolderList/FolderList.vala:47
 msgid "Compose new message"
 msgstr "Nieuw bericht opstellen"
 
-#: src/FoldersView/FoldersListView.vala:59
+#: src/FolderList/FolderList.vala:59
 msgid "Always Show Remote Images"
 msgstr "Toon externe afbeeldingen altijd"
 
-#: src/FoldersView/FoldersListView.vala:67
+#: src/FolderList/FolderList.vala:67
 msgid "Account Settings…"
 msgstr "Accountinstellingen…"
 
-#: src/FoldersView/FoldersListView.vala:92
+#: src/FolderList/FolderList.vala:92
 msgid "Menu"
 msgstr "Menu"
 
-#: src/FoldersView/FoldersListView.vala:146
+#: src/FolderList/FolderList.vala:146
 msgid "Unable to open System Settings"
 msgstr "Kon Systeeminstellingen niet openen"
 
-#: src/FoldersView/FoldersListView.vala:147
+#: src/FolderList/FolderList.vala:147
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
 "Open Systeeminstellingen handmatig of installeer Evolution om online "
 "accounts op te zetten."
 
-#: src/FoldersView/FolderSourceItem.vala:52
-msgid "Refresh folder"
-msgstr "Map vernieuwen"
-
-#: src/FoldersView/FolderSourceItem.vala:57
-msgid "Rename folder"
-msgstr "Map hernoemen"
-
-#: src/FoldersView/FolderSourceItem.vala:161
-#: src/FoldersView/FolderSourceItem.vala:190
-#: src/FoldersView/FolderSourceItem.vala:208
-#, c-format
-msgid "Couldn't rename “%s”"
-msgstr "Kon “%s” niet hernoemen"
-
-#: src/FoldersView/FolderSourceItem.vala:162
-msgid "Folder names cannot contain “/”"
-msgstr "De naam van een map kan geen “/” bevatten"
-
-#: src/FoldersView/FolderSourceItem.vala:191
-#, c-format
-msgid "A folder named “%s” already exists"
-msgstr "Er bestaat al een map genaamd “%s”"
-
-#: src/FoldersView/GroupedFolderSourceItem.vala:38
+#: src/FolderList/GroupedFolderItemModel.vala:38
 msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "Inbox"
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
+#: src/FolderList/GroupedFolderItemModel.vala:42
 msgctxt "Archive Folder"
 msgid "Archive"
 msgstr "Archief"
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#: src/FolderList/GroupedFolderItemModel.vala:46
 msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "Verzonden"
 
-#: src/FoldersView/SessionSourceItem.vala:28
+#: src/FolderList/SessionItemModel.vala:28
 msgid "All Mailboxes"
 msgstr "Alle Mailboxen"
 
@@ -637,27 +637,27 @@ msgstr "Allen beantwoorden"
 msgid "Forward"
 msgstr "Doorsturen"
 
-#: src/MessageList/MessageList.vala:53
+#: src/MessageList/MessageList.vala:50
 msgid "Mark as Unread"
 msgstr "Als ongelezen markeren"
 
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:60
 msgid "Mark Conversation"
 msgstr "Gesprek markeren"
 
-#: src/MessageList/MessageList.vala:92
+#: src/MessageList/MessageList.vala:68
 msgid "Move Conversation to…"
 msgstr "Gesprekken verplaatsen naar…"
 
-#: src/MessageList/MessageList.vala:101
+#: src/MessageList/MessageList.vala:77
 msgid "Move conversations to archive"
 msgstr "Verplaats gesprekken naar archief"
 
-#: src/MessageList/MessageList.vala:109
+#: src/MessageList/MessageList.vala:85
 msgid "Move conversations to Trash"
 msgstr "Verplaats gesprekken naar de prullenbak"
 
-#: src/MessageList/MessageList.vala:124
+#: src/MessageList/MessageList.vala:100
 msgid "No Message Selected"
 msgstr "Geen bericht geselecteerd"
 

@@ -22,7 +22,7 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
 
-    private FoldersListView folders_list_view;
+    private FolderList folders_list_view;
     private Granite.Toast move_toast;
     private Granite.Toast error_toast;
     private ConversationList conversation_list;
@@ -108,7 +108,7 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
             );
         }
 
-        folders_list_view = new FoldersListView ();
+        folders_list_view = new FolderList ();
         conversation_list = new ConversationList ();
 
         message_list = new MessageList ();

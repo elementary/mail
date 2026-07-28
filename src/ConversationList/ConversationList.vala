@@ -22,7 +22,6 @@
 
 public class Mail.ConversationList : Gtk.Box {
     public signal void conversation_selected (Camel.FolderThreadNode? node);
-    public signal void conversation_focused (Camel.FolderThreadNode? node);
 
     private const int MARK_READ_TIMEOUT_SECONDS = 5;
 
@@ -185,19 +184,13 @@ public class Mail.ConversationList : Gtk.Box {
                 mark_read_timeout_id = 0;
             }
 
-            if (row == null) {
-                conversation_focused (null);
-            } else {
-                conversation_focused (((ConversationItemModel) row).node);
+            if (row != null && ((ConversationItemModel) row).unread) {
+                mark_read_timeout_id = GLib.Timeout.add_seconds (MARK_READ_TIMEOUT_SECONDS, () => {
+                    set_thread_flag (((ConversationItemModel) row).node, Camel.MessageFlags.SEEN);
 
-                if (((ConversationItemModel) row).unread) {
-                    mark_read_timeout_id = GLib.Timeout.add_seconds (MARK_READ_TIMEOUT_SECONDS, () => {
-                        set_thread_flag (((ConversationItemModel) row).node, Camel.MessageFlags.SEEN);
-
-                        mark_read_timeout_id = 0;
-                        return false;
-                    });
-                }
+                    mark_read_timeout_id = 0;
+                    return Source.REMOVE;
+                });
             }
         });
 
@@ -248,7 +241,6 @@ public class Mail.ConversationList : Gtk.Box {
             cancellable.cancel ();
         }
 
-        conversation_focused (null);
         conversation_selected (null);
 
         uint previous_items = list_store.get_n_items ();

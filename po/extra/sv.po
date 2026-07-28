@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-29 17:12+0000\n"
+"POT-Creation-Date: 2026-07-27 22:28+0000\n"
 "PO-Revision-Date: 2025-10-30 18:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/mail/extra/sv/"
@@ -20,11 +20,11 @@ msgstr ""
 "X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
-#: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
+#: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:2
 msgid "Mail"
 msgstr "E-post"
 
-#: data/mail.metainfo.xml.in:11 data/io.elementary.mail.desktop.in:4
+#: data/mail.metainfo.xml.in:11 data/io.elementary.mail.desktop.in:3
 msgid "Send and receive mail"
 msgstr "Skicka och ta emot e-post"
 
@@ -118,7 +118,8 @@ msgstr "Åtgärdat problem med att hämta e-post när E-post inte autostartas"
 
 #: data/mail.metainfo.xml.in:109
 msgid "Notify the user when a calendar event is included in a message"
-msgstr "Meddela användaren när en kalenderhändelse inkluderats i ett meddelande"
+msgstr ""
+"Meddela användaren när en kalenderhändelse inkluderats i ett meddelande"
 
 #: data/mail.metainfo.xml.in:110
 msgid "Improve performance when switching between folders"
@@ -219,11 +220,11 @@ msgstr ""
 "Byte av namn från Office 365 till Microsoft 365 för att följa Microsofts "
 "omprofilering"
 
-#: data/io.elementary.mail.desktop.in:7
+#: data/io.elementary.mail.desktop.in:6
 msgid "Email;E-mail;Mail;"
 msgstr "E-post;Mail;Mejl;"
 
-#: data/io.elementary.mail.desktop.in:17
+#: data/io.elementary.mail.desktop.in:16
 msgid "Compose Message"
 msgstr "Skriv meddelande"
 

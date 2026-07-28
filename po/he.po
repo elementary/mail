@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-29 17:12+0000\n"
+"POT-Creation-Date: 2026-07-27 22:28+0000\n"
 "PO-Revision-Date: 2023-11-14 18:10+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/mail/mail/he/>\n"
@@ -211,7 +211,7 @@ msgstr "לא ניתן לשלוח הודעה"
 msgid "There was an unexpected error while sending your message."
 msgstr "אירעה שגיאה בלתי צפויה בשליחת ההודעה שלך."
 
-#: src/Composer.vala:946 src/FoldersView/FoldersListView.vala:62
+#: src/Composer.vala:946 src/FolderList/FolderList.vala:62
 msgid "Edit Signatures…"
 msgstr "עריכת חתימות…"
 
@@ -386,19 +386,19 @@ msgstr "חיפוש בדואר"
 msgid "Hide read conversations"
 msgstr "הסתרת דיונים שנקראו"
 
-#: src/ConversationList/ConversationList.vala:92
+#: src/ConversationList/ConversationList.vala:91
 msgid "Hide unstarred conversations"
 msgstr "הסתרת דיונים ללא כוכב"
 
-#: src/ConversationList/ConversationList.vala:109
+#: src/ConversationList/ConversationList.vala:108
 msgid "Filter Conversations"
 msgstr "סינון דיונים"
 
-#: src/ConversationList/ConversationList.vala:132
+#: src/ConversationList/ConversationList.vala:131
 msgid "Fetch new messages"
 msgstr "משיכת הודעות חדשות"
 
-#: src/ConversationList/ConversationList.vala:139
+#: src/ConversationList/ConversationList.vala:138
 msgid "Fetching new messages…"
 msgstr "הודעות חדשות נמשכות…"
 
@@ -422,26 +422,26 @@ msgstr "נשלח מענה"
 msgid "Forwarded"
 msgstr "הועברה"
 
-#: src/ConversationList/ConversationListItem.vala:218
+#: src/ConversationList/ConversationListItem.vala:212
 msgid "Move To Trash"
 msgstr "העברה לאשפה"
 
-#: src/ConversationList/ConversationListItem.vala:229
+#: src/ConversationList/ConversationListItem.vala:215
 msgid "Mark As Unread"
 msgstr "סימון כלא נקרא"
 
-#: src/ConversationList/ConversationListItem.vala:238
-#: src/MessageList/MessageList.vala:59
+#: src/ConversationList/ConversationListItem.vala:217
+#: src/MessageList/MessageList.vala:51
 msgid "Mark as Read"
 msgstr "סימון כנקרא"
 
-#: src/ConversationList/ConversationListItem.vala:249
-#: src/MessageList/MessageList.vala:65
+#: src/ConversationList/ConversationListItem.vala:221
+#: src/MessageList/MessageList.vala:52
 msgid "Star"
 msgstr "כוכב"
 
-#: src/ConversationList/ConversationListItem.vala:258
-#: src/MessageList/MessageList.vala:71
+#: src/ConversationList/ConversationListItem.vala:223
+#: src/MessageList/MessageList.vala:53
 msgid "Unstar"
 msgstr "הסרת כוכב"
 
@@ -540,77 +540,77 @@ msgstr "הגדרת ברירת מחדל עבור…"
 msgid "Signature"
 msgstr "חתימה"
 
-#: src/FoldersView/AccountSourceItem.vala:154
+#: src/FolderList/AccountItemModel.vala:154
 msgid "Edit Aliases…"
 msgstr "עריכת כינויים…"
 
-#: src/FoldersView/FoldersListView.vala:47
+#: src/FolderList/FolderItemModel.vala:52
+msgid "Refresh folder"
+msgstr "רענון התיקייה"
+
+#: src/FolderList/FolderItemModel.vala:57
+msgid "Rename folder"
+msgstr "שינוי שם התיקייה"
+
+#: src/FolderList/FolderItemModel.vala:161
+#: src/FolderList/FolderItemModel.vala:190
+#: src/FolderList/FolderItemModel.vala:208
+#, c-format
+msgid "Couldn't rename “%s”"
+msgstr "לא ניתן לשנות ל־„%s” את השם"
+
+#: src/FolderList/FolderItemModel.vala:162
+msgid "Folder names cannot contain “/”"
+msgstr "שמות תיקיות לא יכולים להכיל „/”"
+
+#: src/FolderList/FolderItemModel.vala:191
+#, c-format
+msgid "A folder named “%s” already exists"
+msgstr "כבר קיימת תיקייה בשם „%s”"
+
+#: src/FolderList/FolderList.vala:47
 msgid "Compose new message"
 msgstr "כתיבת הודעה חדשה"
 
-#: src/FoldersView/FoldersListView.vala:59
+#: src/FolderList/FolderList.vala:59
 msgid "Always Show Remote Images"
 msgstr "תמיד להציג תמונות מרוחקות"
 
-#: src/FoldersView/FoldersListView.vala:67
+#: src/FolderList/FolderList.vala:67
 msgid "Account Settings…"
 msgstr "הגדרות חשבון…"
 
-#: src/FoldersView/FoldersListView.vala:92
+#: src/FolderList/FolderList.vala:92
 msgid "Menu"
 msgstr "תפריט"
 
-#: src/FoldersView/FoldersListView.vala:146
+#: src/FolderList/FolderList.vala:146
 msgid "Unable to open System Settings"
 msgstr "לא ניתן לפתוח את ההגדרות המערכת"
 
-#: src/FoldersView/FoldersListView.vala:147
+#: src/FolderList/FolderList.vala:147
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
 "יש לפתוח את הגדרות המערכת ידנית או להתקין את Evolution כדי להקים חשבונות "
 "מקוונים."
 
-#: src/FoldersView/FolderSourceItem.vala:52
-msgid "Refresh folder"
-msgstr "רענון התיקייה"
-
-#: src/FoldersView/FolderSourceItem.vala:57
-msgid "Rename folder"
-msgstr "שינוי שם התיקייה"
-
-#: src/FoldersView/FolderSourceItem.vala:161
-#: src/FoldersView/FolderSourceItem.vala:190
-#: src/FoldersView/FolderSourceItem.vala:208
-#, c-format
-msgid "Couldn't rename “%s”"
-msgstr "לא ניתן לשנות ל־„%s” את השם"
-
-#: src/FoldersView/FolderSourceItem.vala:162
-msgid "Folder names cannot contain “/”"
-msgstr "שמות תיקיות לא יכולים להכיל „/”"
-
-#: src/FoldersView/FolderSourceItem.vala:191
-#, c-format
-msgid "A folder named “%s” already exists"
-msgstr "כבר קיימת תיקייה בשם „%s”"
-
-#: src/FoldersView/GroupedFolderSourceItem.vala:38
+#: src/FolderList/GroupedFolderItemModel.vala:38
 msgctxt "Inbox Folder"
 msgid "Inbox"
 msgstr "דואר נכנס"
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:42
+#: src/FolderList/GroupedFolderItemModel.vala:42
 msgctxt "Archive Folder"
 msgid "Archive"
 msgstr "ארכיון"
 
-#: src/FoldersView/GroupedFolderSourceItem.vala:46
+#: src/FolderList/GroupedFolderItemModel.vala:46
 msgctxt "Sent Folder"
 msgid "Sent"
 msgstr "נשלח"
 
-#: src/FoldersView/SessionSourceItem.vala:28
+#: src/FolderList/SessionItemModel.vala:28
 msgid "All Mailboxes"
 msgstr "כל תיבות הדוא״ל"
 
@@ -626,27 +626,27 @@ msgstr "להשיב לכולם"
 msgid "Forward"
 msgstr "העברה"
 
-#: src/MessageList/MessageList.vala:53
+#: src/MessageList/MessageList.vala:50
 msgid "Mark as Unread"
 msgstr "סימון כלא נקרא"
 
-#: src/MessageList/MessageList.vala:84
+#: src/MessageList/MessageList.vala:60
 msgid "Mark Conversation"
 msgstr "סימון הדיון"
 
-#: src/MessageList/MessageList.vala:92
+#: src/MessageList/MessageList.vala:68
 msgid "Move Conversation to…"
 msgstr "העברת דיון אל…"
 
-#: src/MessageList/MessageList.vala:101
+#: src/MessageList/MessageList.vala:77
 msgid "Move conversations to archive"
 msgstr "העברת דיונים לארכיון"
 
-#: src/MessageList/MessageList.vala:109
+#: src/MessageList/MessageList.vala:85
 msgid "Move conversations to Trash"
 msgstr "העברת דיונים לאשפה"
 
-#: src/MessageList/MessageList.vala:124
+#: src/MessageList/MessageList.vala:100
 msgid "No Message Selected"
 msgstr "לא נבחרה הודעה"
 

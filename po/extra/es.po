@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-29 17:12+0000\n"
+"POT-Creation-Date: 2026-07-27 22:28+0000\n"
 "PO-Revision-Date: 2024-09-09 10:20+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/mail/extra/es/>\n"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
-#: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
+#: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:2
 msgid "Mail"
 msgstr "Correo"
 
-#: data/mail.metainfo.xml.in:11 data/io.elementary.mail.desktop.in:4
+#: data/mail.metainfo.xml.in:11 data/io.elementary.mail.desktop.in:3
 msgid "Send and receive mail"
 msgstr "Enviar y recibir correos"
 
@@ -237,11 +237,11 @@ msgstr ""
 "Se cambió el nombre de Office 365 a Microsoft 365 para respetar las "
 "convenciones de la marca de Microsoft"
 
-#: data/io.elementary.mail.desktop.in:7
+#: data/io.elementary.mail.desktop.in:6
 msgid "Email;E-mail;Mail;"
 msgstr "Correo;Correo electrónico;Mensaje;Email;E-mail;"
 
-#: data/io.elementary.mail.desktop.in:17
+#: data/io.elementary.mail.desktop.in:16
 msgid "Compose Message"
 msgstr "Redactar un mensaje"
 

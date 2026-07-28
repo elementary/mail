@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-29 17:12+0000\n"
+"POT-Creation-Date: 2026-07-27 22:28+0000\n"
 "PO-Revision-Date: 2022-01-28 09:04+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -20,11 +20,11 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 07:52+0000\n"
 
-#: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:3
+#: data/mail.metainfo.xml.in:10 data/io.elementary.mail.desktop.in:2
 msgid "Mail"
 msgstr "邮件"
 
-#: data/mail.metainfo.xml.in:11 data/io.elementary.mail.desktop.in:4
+#: data/mail.metainfo.xml.in:11 data/io.elementary.mail.desktop.in:3
 msgid "Send and receive mail"
 msgstr "发送和接收邮件"
 
@@ -208,11 +208,11 @@ msgid ""
 "Renamed Office 365 to Microsoft 365 to follow suite on Microsoft's rebranding"
 msgstr ""
 
-#: data/io.elementary.mail.desktop.in:7
+#: data/io.elementary.mail.desktop.in:6
 msgid "Email;E-mail;Mail;"
 msgstr "消息;电子邮件;邮件;"
 
-#: data/io.elementary.mail.desktop.in:17
+#: data/io.elementary.mail.desktop.in:16
 msgid "Compose Message"
 msgstr "撰写邮件"
 
