@@ -69,8 +69,13 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
     }
 
     private void folder_renamed (string old_name, Camel.FolderInfo folder_info) {
-        //FIXME: find by old name?
-        // item.folder_info = folder_info;
+        for (int i = 0; i < folder_list.n_items; i++) {
+            var folder_item = (FolderItemModel) folder_list.get_item (i);
+            if (folder_item.folder_info.full_name == old_name) {
+                folder_item.folder_info = folder_info;
+                return;
+            }
+        }
     }
 
     private void folder_deleted (Camel.FolderInfo folder_info) {
