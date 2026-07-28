@@ -1,26 +1,11 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 3 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+/*
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2017-2026 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.FolderList : Gtk.Grid {
+public class Mail.FolderList : Gtk.Box {
     public signal void folder_selected (Gee.Map<Backend.Account, Camel.FolderInfo?> folder_info_per_account);
 
     public Hdy.HeaderBar header_bar { get; private set; }
@@ -34,13 +19,11 @@ public class Mail.FolderList : Gtk.Grid {
     }
 
     construct {
-        source_list = new Mail.SourceList ();
-
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
         var compose_button = new Gtk.Button.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR) {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_COMPOSE_MESSAGE,
-            halign = Gtk.Align.START
+            halign = START
         };
         compose_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (compose_button.action_name),
@@ -53,8 +36,16 @@ public class Mail.FolderList : Gtk.Grid {
         header_bar.pack_end (compose_button);
         header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var scrolled_window = new Gtk.ScrolledWindow (null, null);
-        scrolled_window.add (source_list);
+        var session = Mail.Backend.Session.get_default ();
+
+        session_source_item = new Mail.SessionItemModel (session);
+
+        source_list = new Mail.SourceList ();
+        source_list.root.add (session_source_item);
+
+        var scrolled_window = new Gtk.ScrolledWindow (null, null) {
+            child = source_list
+        };
 
         var load_images_menuitem = new Granite.SwitchModelButton (_("Always Show Remote Images"));
 
@@ -67,7 +58,7 @@ public class Mail.FolderList : Gtk.Grid {
             text = _("Account Settings…")
         };
 
-        var app_menu_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+        var app_menu_separator = new Gtk.Separator (HORIZONTAL) {
             margin_bottom = 3,
             margin_top = 3
         };
@@ -96,17 +87,12 @@ public class Mail.FolderList : Gtk.Grid {
         action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         action_bar.pack_end (app_menu);
 
-        orientation = Gtk.Orientation.VERTICAL;
+        orientation = VERTICAL;
         width_request = 100;
         get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
         add (header_bar);
         add (scrolled_window);
         add (action_bar);
-
-        var session = Mail.Backend.Session.get_default ();
-
-        session_source_item = new Mail.SessionItemModel (session);
-        source_list.root.add (session_source_item);
 
         session.get_accounts ().foreach ((account) => {
             add_account (account);
@@ -114,28 +100,26 @@ public class Mail.FolderList : Gtk.Grid {
         });
 
         session.account_added.connect (add_account);
+
         source_list.item_selected.connect ((item) => {
             if (item == null) {
                 return;
             }
 
             if (item is FolderItemModel) {
-                unowned FolderItemModel folder_item = (FolderItemModel) item;
                 var folder_info_per_account = new Gee.HashMap<Mail.Backend.Account, Camel.FolderInfo?> ();
-                folder_info_per_account.set (folder_item.account, folder_item.folder_info);
+                folder_info_per_account.set (item.account, item.folder_info);
                 folder_selected (folder_info_per_account.read_only_view);
 
-                settings.set ("selected-folder", "(ss)", folder_item.account.service.uid, folder_item.full_name);
+                settings.set ("selected-folder", "(ss)", item.account.service.uid, item.full_name);
 
             } else if (item is GroupedFolderItemModel) {
-                unowned GroupedFolderItemModel grouped_folder_item = (GroupedFolderItemModel) item;
-                folder_selected (grouped_folder_item.get_folder_info_per_account ());
+                folder_selected (item.get_folder_info_per_account ());
 
-                settings.set ("selected-folder", "(ss)", "GROUPED", grouped_folder_item.name);
+                settings.set ("selected-folder", "(ss)", "GROUPED", item.name);
             }
         });
 
-        var settings = new GLib.Settings ("io.elementary.mail");
         settings.bind ("always-load-remote-images", load_images_menuitem, "active", SettingsBindFlags.DEFAULT);
 
         account_settings_menuitem.clicked.connect (() => {
