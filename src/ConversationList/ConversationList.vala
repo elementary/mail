@@ -174,7 +174,7 @@ public class Mail.ConversationList : Gtk.Box {
                     set_thread_flag (((ConversationItemModel) row).node, Camel.MessageFlags.SEEN);
 
                     mark_read_timeout_id = 0;
-                    return false;
+                    return Source.REMOVE;
                 });
             }
         });
