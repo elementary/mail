@@ -69,7 +69,7 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
         FolderItemModel item;
         folder_items.unset (old_name, out item);
         item.folder_info = folder_info;
-        folder_items[item.full_name] = item;
+        folder_items[folder_info.full_name] = item;
     }
 
     private void folder_deleted (Camel.FolderInfo folder_info) {
@@ -100,7 +100,7 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
         var offlinestore = (Camel.OfflineStore) account.service;
         foreach (var folder_item in folder_items.values) {
             try {
-                var folder_info = yield offlinestore.get_folder_info (folder_item.full_name, 0, GLib.Priority.DEFAULT, connect_cancellable);
+                var folder_info = yield offlinestore.get_folder_info (folder_item.folder_info.full_name, 0, GLib.Priority.DEFAULT, connect_cancellable);
                 folder_item.folder_info = folder_info;
             } catch (Error e) {
                 // We can cancel the operation
