@@ -143,7 +143,7 @@ public class Mail.FolderList : Gtk.Box {
         var edit_aliases_action = new SimpleAction ("account-edit-aliases", VariantType.STRING);
         edit_aliases_action.activate.connect ((param) => {
             new AliasDialog (param.get_string ()) {
-                transient_for = ((Gtk.Application) GLib.Application.get_default ()).active_window
+                transient_for = (Gtk.Window) get_toplevel ()
             }.present ();
         });
 
