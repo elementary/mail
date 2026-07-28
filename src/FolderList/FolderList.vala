@@ -139,6 +139,18 @@ public class Mail.FolderList : Gtk.Box {
                 dialog.present ();
             }
         });
+
+        var edit_aliases_action = new SimpleAction ("account-edit-aliases", VariantType.STRING);
+        edit_aliases_action.activate.connect ((param) => {
+            new AliasDialog (param.get_string ()) {
+                transient_for = ((Gtk.Application) GLib.Application.get_default ()).active_window
+            }.present ();
+        });
+
+        var action_group = new SimpleActionGroup ();
+        action_group.add_action (edit_aliases_action);
+
+        insert_action_group ("folder-list", action_group);
     }
 
     private void add_account (Mail.Backend.Account account) {

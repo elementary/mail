@@ -149,18 +149,10 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
         return false;
     }
 
-    public override Gtk.Menu? get_context_menu () {
-        var menu = new Gtk.Menu ();
-
-        var alias_item = new Gtk.MenuItem.with_label (_("Edit Aliases…"));
-        alias_item.activate.connect (() => {
-            new AliasDialog (account.service.uid) {
-                transient_for = ((Gtk.Application) GLib.Application.get_default ()).active_window
-            }.present ();
-        });
-        menu.add (alias_item);
-
-        menu.show_all ();
+    public override GLib.Menu? get_context_menu () {
+        var menu = new Menu ();
+        //FIXME: Properly set action target
+        menu.append (_("Edit Aliases…"), "folder-list.account-edit-aliases::%s".printf (account.service.uid));
 
         return menu;
     }
