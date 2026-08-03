@@ -1625,7 +1625,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                             && over_cell (column, path, text_cell, cell_x)
                         ) {
                             // Start editing after native event handlers finished else fails
-                            Idle.add (() => { start_editing_item (item); return Source.REMOVE; });
+                            Idle.add_once (() => { start_editing_item (item); });
                         }
                     }
                 }
