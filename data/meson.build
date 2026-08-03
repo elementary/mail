@@ -3,24 +3,24 @@ icon_sizes = ['16', '24', '32', '48', '64', '128']
 foreach i : icon_sizes
     install_data(
         join_paths('icons', i + '.svg'),
-        install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', i + 'x' + i, 'apps'),
+        install_dir: get_option('datadir') / 'icons' / 'hicolor' / i + 'x' + i / 'apps',
         rename: meson.project_name() + '.svg'
     )
     install_data(
         join_paths('icons', i + '.svg'),
-        install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', i + 'x' + i + '@2', 'apps'),
+        install_dir: get_option('datadir') / 'icons' / 'hicolor' / i + 'x' + i + '@2' / 'apps',
         rename: meson.project_name() + '.svg'
     )
 endforeach
 
 install_data(
     meson.project_name() + '.gschema.xml',
-    install_dir: join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
+    install_dir: get_option('datadir') / 'glib-2.0' / 'schemas'
 )
 
 install_data(
     meson.project_name() + '.apparmor',
-    install_dir: join_paths(get_option('sysconfdir'), 'apparmor.d'),
+    install_dir: get_option('sysconfdir') / 'apparmor.d',
     rename: meson.project_name()
 )
 
@@ -28,8 +28,8 @@ i18n.merge_file (
     input: meson.project_name() + '.desktop.in',
     output: meson.project_name() + '.desktop',
     install: true,
-    install_dir: join_paths(get_option('datadir'), 'applications'),
-    po_dir: join_paths(meson.source_root (), 'po', 'extra'),
+    install_dir: get_option('datadir') / 'applications',
+    po_dir: meson.project_source_root() / 'po' / 'extra',
     type: 'desktop'
 )
 
@@ -37,6 +37,6 @@ i18n.merge_file (
     input: 'mail.metainfo.xml.in',
     output: meson.project_name() + '.metainfo.xml',
     install: true,
-    install_dir: join_paths(get_option('datadir'), 'metainfo'),
-    po_dir: join_paths(meson.source_root (), 'po', 'extra')
+    install_dir: get_option('datadir') / 'metainfo',
+    po_dir: meson.project_source_root () / 'po' / 'extra'
 )
