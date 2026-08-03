@@ -103,9 +103,11 @@
                 "-Dofono_backend=false",
                 "-Dtelepathy_backend=false",
                 "-Dimport_tool=false",
-                "-Dinspect_tool=false",
-                "-Dlibdir=/app/lib"
+                "-Dinspect_tool=false"
             ],
+            "build-options": {
+                "libdir": "/app/lib"
+            },
             "sources": [
                 {
                     "type": "git",
