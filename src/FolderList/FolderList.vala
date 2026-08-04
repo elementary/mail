@@ -8,6 +8,10 @@
 public class Mail.FolderList : Gtk.Box {
     public signal void folder_selected (Gee.Map<Backend.Account, Camel.FolderInfo?> folder_info_per_account);
 
+    public const string ACTION_GROUP_PREFIX = "folder-list";
+    public const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
+    public const string ACTION_EDIT_ALIASES = "edit-alises";
+
     public Hdy.HeaderBar header_bar { get; private set; }
 
     private Mail.SourceList source_list;
@@ -98,6 +102,18 @@ public class Mail.FolderList : Gtk.Box {
                 settings.set ("selected-folder", "(ss)", "GROUPED", item.name);
             }
         });
+
+        var edit_aliases_action = new SimpleAction (ACTION_EDIT_ALIASES, VariantType.STRING);
+        edit_aliases_action.activate.connect ((param) => {
+            new AliasDialog (param.get_string ()) {
+                transient_for = (Gtk.Window) get_toplevel ()
+            }.present ();
+        });
+
+        var action_group = new SimpleActionGroup ();
+        action_group.add_action (edit_aliases_action);
+
+        insert_action_group (ACTION_GROUP_PREFIX, action_group);
     }
 
     private void add_account (Mail.Backend.Account account) {
