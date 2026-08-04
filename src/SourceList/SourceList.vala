@@ -1702,7 +1702,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             if (item != null) {
                 var menu_model = item.get_context_menu ();
                 if (menu_model != null) {
-
                     var menu = new Gtk.Menu.from_model (menu_model) {
                         attach_widget = this
                     };
