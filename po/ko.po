@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-27 22:28+0000\n"
+"POT-Creation-Date: 2026-08-04 22:03+0000\n"
 "PO-Revision-Date: 2022-08-07 12:22+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/mail/mail/ko/>\n"
@@ -19,7 +19,18 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/Application.vala:191
+#: src/Application.vala:145
+#, fuzzy
+#| msgid "Unable to print email"
+msgid "Unable to open System Settings"
+msgstr "이메일을 인쇄할 수 없습니다"
+
+#: src/Application.vala:146
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+
+#: src/Application.vala:217
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
@@ -212,7 +223,7 @@ msgstr "편지를 보낼 수 없습니다"
 msgid "There was an unexpected error while sending your message."
 msgstr "메시지를 보내는 동안 예기치 않은 오류가 생겼습니다."
 
-#: src/Composer.vala:946 src/FolderList/FolderList.vala:62
+#: src/Composer.vala:946 src/FolderList/FolderList.vala:55
 msgid "Edit Signatures…"
 msgstr ""
 
@@ -388,27 +399,27 @@ msgstr ", "
 msgid "Unknown"
 msgstr "모름"
 
-#: src/ConversationList/ConversationList.vala:86
+#: src/ConversationList/ConversationList.vala:85
 msgid "Search Mail"
 msgstr "편지 검색"
 
-#: src/ConversationList/ConversationList.vala:90
+#: src/ConversationList/ConversationList.vala:89
 msgid "Hide read conversations"
 msgstr "읽은 대화 숨기기"
 
-#: src/ConversationList/ConversationList.vala:91
+#: src/ConversationList/ConversationList.vala:90
 msgid "Hide unstarred conversations"
 msgstr "별표 없는 대화 숨기기"
 
-#: src/ConversationList/ConversationList.vala:108
+#: src/ConversationList/ConversationList.vala:107
 msgid "Filter Conversations"
 msgstr "대화 필터링"
 
-#: src/ConversationList/ConversationList.vala:131
+#: src/ConversationList/ConversationList.vala:130
 msgid "Fetch new messages"
 msgstr "새 메시지 가져오기"
 
-#: src/ConversationList/ConversationList.vala:138
+#: src/ConversationList/ConversationList.vala:137
 msgid "Fetching new messages…"
 msgstr "새 메시지 가져오는 중…"
 
@@ -566,62 +577,51 @@ msgstr ""
 msgid "Signature"
 msgstr "링크 삽입"
 
-#: src/FolderList/AccountItemModel.vala:154
+#: src/FolderList/AccountItemModel.vala:155
 msgid "Edit Aliases…"
 msgstr ""
 
-#: src/FolderList/FolderItemModel.vala:52
+#: src/FolderList/FolderItemModel.vala:48
 msgid "Refresh folder"
 msgstr "폴더 새로 고침"
 
-#: src/FolderList/FolderItemModel.vala:57
+#: src/FolderList/FolderItemModel.vala:53
 #, fuzzy
 #| msgid "Refresh folder"
 msgid "Rename folder"
 msgstr "폴더 새로 고침"
 
-#: src/FolderList/FolderItemModel.vala:161
-#: src/FolderList/FolderItemModel.vala:190
-#: src/FolderList/FolderItemModel.vala:208
+#: src/FolderList/FolderItemModel.vala:146
+#: src/FolderList/FolderItemModel.vala:175
+#: src/FolderList/FolderItemModel.vala:193
 #, c-format
 msgid "Couldn't rename “%s”"
 msgstr ""
 
-#: src/FolderList/FolderItemModel.vala:162
+#: src/FolderList/FolderItemModel.vala:147
 msgid "Folder names cannot contain “/”"
 msgstr ""
 
-#: src/FolderList/FolderItemModel.vala:191
+#: src/FolderList/FolderItemModel.vala:176
 #, c-format
 msgid "A folder named “%s” already exists"
 msgstr ""
 
-#: src/FolderList/FolderList.vala:47
+#: src/FolderList/FolderList.vala:34
 msgid "Compose new message"
 msgstr "새 편지 쓰기"
+
+#: src/FolderList/FolderList.vala:56
+msgid "Account Settings…"
+msgstr "계정 설정…"
 
 #: src/FolderList/FolderList.vala:59
 msgid "Always Show Remote Images"
 msgstr "원격 이미지 항상 표시"
 
-#: src/FolderList/FolderList.vala:67
-msgid "Account Settings…"
-msgstr "계정 설정…"
-
-#: src/FolderList/FolderList.vala:92
+#: src/FolderList/FolderList.vala:65
 msgid "Menu"
 msgstr "메뉴"
-
-#: src/FolderList/FolderList.vala:146
-#, fuzzy
-#| msgid "Unable to print email"
-msgid "Unable to open System Settings"
-msgstr "이메일을 인쇄할 수 없습니다"
-
-#: src/FolderList/FolderList.vala:147
-msgid ""
-"Open System Settings manually or install Evolution to set up online accounts."
-msgstr ""
 
 #: src/FolderList/GroupedFolderItemModel.vala:38
 #, fuzzy

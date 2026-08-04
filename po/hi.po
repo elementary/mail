@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-27 22:28+0000\n"
+"POT-Creation-Date: 2026-08-04 22:03+0000\n"
 "PO-Revision-Date: 2018-12-19 00:07+0000\n"
 "Last-Translator: Mayank Arya <mmaismma@hotmail.com>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/mail/mail/hi/>\n"
@@ -21,7 +21,18 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/Application.vala:191
+#: src/Application.vala:145
+#, fuzzy
+#| msgid "Unable to validate:\n"
+msgid "Unable to open System Settings"
+msgstr "पुष्टि नहीं हो पाई:\n"
+
+#: src/Application.vala:146
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+
+#: src/Application.vala:217
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
@@ -219,7 +230,7 @@ msgstr "पुष्टि नहीं हो पाई:\n"
 msgid "There was an unexpected error while sending your message."
 msgstr ""
 
-#: src/Composer.vala:946 src/FolderList/FolderList.vala:62
+#: src/Composer.vala:946 src/FolderList/FolderList.vala:55
 msgid "Edit Signatures…"
 msgstr ""
 
@@ -398,34 +409,34 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-#: src/ConversationList/ConversationList.vala:86
+#: src/ConversationList/ConversationList.vala:85
 msgid "Search Mail"
 msgstr "पत्र ढूंदे।"
 
-#: src/ConversationList/ConversationList.vala:90
+#: src/ConversationList/ConversationList.vala:89
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide read conversations"
 msgstr "अधिक संवाद को लेबल जोड़े"
 
-#: src/ConversationList/ConversationList.vala:91
+#: src/ConversationList/ConversationList.vala:90
 #, fuzzy
 #| msgid "Add label to conversations"
 msgid "Hide unstarred conversations"
 msgstr "अधिक संवाद को लेबल जोड़े"
 
-#: src/ConversationList/ConversationList.vala:108
+#: src/ConversationList/ConversationList.vala:107
 #, fuzzy
 msgid "Filter Conversations"
 msgstr "अधिक संवाद संकेत"
 
-#: src/ConversationList/ConversationList.vala:131
+#: src/ConversationList/ConversationList.vala:130
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetch new messages"
 msgstr "नया पत्र लिखे"
 
-#: src/ConversationList/ConversationList.vala:138
+#: src/ConversationList/ConversationList.vala:137
 #, fuzzy
 #| msgid "Compose new message"
 msgid "Fetching new messages…"
@@ -589,60 +600,49 @@ msgstr ""
 msgid "Signature"
 msgstr "लिंक डाले"
 
-#: src/FolderList/AccountItemModel.vala:154
+#: src/FolderList/AccountItemModel.vala:155
 msgid "Edit Aliases…"
 msgstr ""
 
-#: src/FolderList/FolderItemModel.vala:52
+#: src/FolderList/FolderItemModel.vala:48
 msgid "Refresh folder"
 msgstr ""
 
-#: src/FolderList/FolderItemModel.vala:57
+#: src/FolderList/FolderItemModel.vala:53
 msgid "Rename folder"
 msgstr ""
 
-#: src/FolderList/FolderItemModel.vala:161
-#: src/FolderList/FolderItemModel.vala:190
-#: src/FolderList/FolderItemModel.vala:208
+#: src/FolderList/FolderItemModel.vala:146
+#: src/FolderList/FolderItemModel.vala:175
+#: src/FolderList/FolderItemModel.vala:193
 #, c-format
 msgid "Couldn't rename “%s”"
 msgstr ""
 
-#: src/FolderList/FolderItemModel.vala:162
+#: src/FolderList/FolderItemModel.vala:147
 msgid "Folder names cannot contain “/”"
 msgstr ""
 
-#: src/FolderList/FolderItemModel.vala:191
+#: src/FolderList/FolderItemModel.vala:176
 #, c-format
 msgid "A folder named “%s” already exists"
 msgstr ""
 
-#: src/FolderList/FolderList.vala:47
+#: src/FolderList/FolderList.vala:34
 msgid "Compose new message"
 msgstr "नया पत्र लिखे"
+
+#: src/FolderList/FolderList.vala:56
+msgid "Account Settings…"
+msgstr "खाता सेटिंग्स…"
 
 #: src/FolderList/FolderList.vala:59
 msgid "Always Show Remote Images"
 msgstr ""
 
-#: src/FolderList/FolderList.vala:67
-msgid "Account Settings…"
-msgstr "खाता सेटिंग्स…"
-
-#: src/FolderList/FolderList.vala:92
+#: src/FolderList/FolderList.vala:65
 msgid "Menu"
 msgstr "मेनू"
-
-#: src/FolderList/FolderList.vala:146
-#, fuzzy
-#| msgid "Unable to validate:\n"
-msgid "Unable to open System Settings"
-msgstr "पुष्टि नहीं हो पाई:\n"
-
-#: src/FolderList/FolderList.vala:147
-msgid ""
-"Open System Settings manually or install Evolution to set up online accounts."
-msgstr ""
 
 #: src/FolderList/GroupedFolderItemModel.vala:38
 #, fuzzy
