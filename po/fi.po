@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-27 22:28+0000\n"
+"POT-Creation-Date: 2026-08-04 22:03+0000\n"
 "PO-Revision-Date: 2025-09-29 19:55+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementaryos.org/projects/mail/mail/fi/"
@@ -23,7 +23,18 @@ msgstr ""
 "X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/Application.vala:191
+#: src/Application.vala:145
+msgid "Unable to open System Settings"
+msgstr "Järjestelmän asetuksia ei voitu avata"
+
+#: src/Application.vala:146
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+"Avaa järjestelmän asetukset manuaalisesti tai asenna Evolution "
+"määrittääksesi verkkotilit."
+
+#: src/Application.vala:217
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
@@ -210,7 +221,7 @@ msgstr "Viestin lähettäminen ei onnistu"
 msgid "There was an unexpected error while sending your message."
 msgstr "Viestiäsi lähettäessä tapahtui odottamaton virhe."
 
-#: src/Composer.vala:946 src/FolderList/FolderList.vala:62
+#: src/Composer.vala:946 src/FolderList/FolderList.vala:55
 msgid "Edit Signatures…"
 msgstr "Muokkaa allekirjoituksia…"
 
@@ -380,27 +391,27 @@ msgstr ", "
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: src/ConversationList/ConversationList.vala:86
+#: src/ConversationList/ConversationList.vala:85
 msgid "Search Mail"
 msgstr "Etsi sähköposteista"
 
-#: src/ConversationList/ConversationList.vala:90
+#: src/ConversationList/ConversationList.vala:89
 msgid "Hide read conversations"
 msgstr "Piilota luetut keskustelut"
 
-#: src/ConversationList/ConversationList.vala:91
+#: src/ConversationList/ConversationList.vala:90
 msgid "Hide unstarred conversations"
 msgstr "Piilota keskustelut ilman tähteä"
 
-#: src/ConversationList/ConversationList.vala:108
+#: src/ConversationList/ConversationList.vala:107
 msgid "Filter Conversations"
 msgstr "Suodata keskusteluja"
 
-#: src/ConversationList/ConversationList.vala:131
+#: src/ConversationList/ConversationList.vala:130
 msgid "Fetch new messages"
 msgstr "Nouda uudet viestit"
 
-#: src/ConversationList/ConversationList.vala:138
+#: src/ConversationList/ConversationList.vala:137
 msgid "Fetching new messages…"
 msgstr "Noudetaan uusia viestejä…"
 
@@ -542,60 +553,49 @@ msgstr "Aseta oletukseksi…"
 msgid "Signature"
 msgstr "Allekirjoitus"
 
-#: src/FolderList/AccountItemModel.vala:154
+#: src/FolderList/AccountItemModel.vala:155
 msgid "Edit Aliases…"
 msgstr "Muokkaa aliaksia…"
 
-#: src/FolderList/FolderItemModel.vala:52
+#: src/FolderList/FolderItemModel.vala:48
 msgid "Refresh folder"
 msgstr "Päivitä kansio"
 
-#: src/FolderList/FolderItemModel.vala:57
+#: src/FolderList/FolderItemModel.vala:53
 msgid "Rename folder"
 msgstr "Nimeä kansio uudelleen"
 
-#: src/FolderList/FolderItemModel.vala:161
-#: src/FolderList/FolderItemModel.vala:190
-#: src/FolderList/FolderItemModel.vala:208
+#: src/FolderList/FolderItemModel.vala:146
+#: src/FolderList/FolderItemModel.vala:175
+#: src/FolderList/FolderItemModel.vala:193
 #, c-format
 msgid "Couldn't rename “%s”"
 msgstr "Ei voitu nimetä uudelleen “%s”"
 
-#: src/FolderList/FolderItemModel.vala:162
+#: src/FolderList/FolderItemModel.vala:147
 msgid "Folder names cannot contain “/”"
 msgstr "Kansioiden nimessä ei voi olla merkkiä “/”"
 
-#: src/FolderList/FolderItemModel.vala:191
+#: src/FolderList/FolderItemModel.vala:176
 #, c-format
 msgid "A folder named “%s” already exists"
 msgstr "Kansio nimeltä “%s” on jo olemassa"
 
-#: src/FolderList/FolderList.vala:47
+#: src/FolderList/FolderList.vala:34
 msgid "Compose new message"
 msgstr "Luo uusi viesti"
+
+#: src/FolderList/FolderList.vala:56
+msgid "Account Settings…"
+msgstr "Tilin asetukset…"
 
 #: src/FolderList/FolderList.vala:59
 msgid "Always Show Remote Images"
 msgstr "Näytä aina etäkuvat"
 
-#: src/FolderList/FolderList.vala:67
-msgid "Account Settings…"
-msgstr "Tilin asetukset…"
-
-#: src/FolderList/FolderList.vala:92
+#: src/FolderList/FolderList.vala:65
 msgid "Menu"
 msgstr "Valikko"
-
-#: src/FolderList/FolderList.vala:146
-msgid "Unable to open System Settings"
-msgstr "Järjestelmän asetuksia ei voitu avata"
-
-#: src/FolderList/FolderList.vala:147
-msgid ""
-"Open System Settings manually or install Evolution to set up online accounts."
-msgstr ""
-"Avaa järjestelmän asetukset manuaalisesti tai asenna Evolution "
-"määrittääksesi verkkotilit."
 
 #: src/FolderList/GroupedFolderItemModel.vala:38
 msgctxt "Inbox Folder"

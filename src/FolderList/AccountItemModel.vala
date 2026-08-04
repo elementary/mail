@@ -153,7 +153,7 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
         var menu = new Menu ();
         menu.append (
             _("Edit Aliases…"),
-            Action.print_detailed_name ("folder-list.account-edit-aliases", account.service.uid)
+            Action.print_detailed_name (FolderList.ACTION_PREFIX + FolderList.ACTION_EDIT_ALIASES, account.service.uid)
         );
 
         return menu;
