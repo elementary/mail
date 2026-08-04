@@ -1055,6 +1055,8 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
 
         private Gtk.Entry? editable_entry;
         private Gtk.CellRendererText text_cell;
+        private Gtk.EventControllerKey key_controller;
+        private Gtk.GestureMultiPress button_controller;
         private CellRendererIcon icon_cell;
         private CellRendererBadge badge_cell;
         private CellRendererExpander primary_expander_cell;
@@ -1198,6 +1200,16 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
 
             query_tooltip.connect_after (on_query_tooltip);
             has_tooltip = true;
+
+            key_controller = new Gtk.EventControllerKey (this);
+            key_controller.key_released.connect (on_key_released);
+
+            button_controller = new Gtk.GestureMultiPress (this) {
+                propagation_phase = CAPTURE,
+                button = 0
+            };
+            button_controller.pressed.connect (on_button_pressed);
+            button_controller.released.connect (on_button_released);
         }
 
         ~Tree () {
@@ -1532,51 +1544,48 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             }
         }
 
-        public override bool key_release_event (Gdk.EventKey event) {
-           if (selected_item != null) {
-                switch (event.keyval) {
-                    case Gdk.Key.F2:
-                       var modifiers = Gtk.accelerator_get_default_mod_mask ();
-                        // try to start editing selected item
-                        if ((event.state & modifiers) == 0 && selected_item.editable)
-                            start_editing_item (selected_item);
-                    break;
-                }
+        private void on_key_released (uint keyval, uint keycode, Gdk.ModifierType state) {
+            if (selected_item == null) {
+                return;
             }
 
-            return base.key_release_event (event);
+            switch (keyval) {
+                case Gdk.Key.F2:
+                   var modifiers = Gtk.accelerator_get_default_mod_mask ();
+                    // try to start editing selected item
+                    if ((state & modifiers) == 0 && selected_item.editable) {
+                        start_editing_item (selected_item);
+                    }
+                break;
+            }
         }
 
-        public override bool button_release_event (Gdk.EventButton event) {
-            if (unselectable_item_clicked && event.window == get_bin_window ()) {
+        private void on_button_released (int n_press, double x, double y) {
+            if (unselectable_item_clicked) {
                 unselectable_item_clicked = false;
 
                 Gtk.TreePath path;
                 Gtk.TreeViewColumn column;
-                int x = (int) event.x, y = (int) event.y, cell_x, cell_y;
+                int cell_x, cell_y;
 
-                if (get_path_at_pos (x, y, out path, out column, out cell_x, out cell_y)) {
+                if (get_path_at_pos ((int) x, (int) y, out path, out column, out cell_x, out cell_y)) {
                     var item = data_model.get_item_from_path (path) as ExpandableItem;
 
                     if (item != null) {
-                        if (!item.selectable || data_model.is_category (item, null, path))
+                        if (!item.selectable || data_model.is_category (item, null, path)) {
                             toggle_expansion (item);
+                        }
                     }
                 }
             }
-
-            return base.button_release_event (event);
         }
 
-        public override bool button_press_event (Gdk.EventButton event) {
-            if (event.window != get_bin_window ())
-                return base.button_press_event (event);
-
+        private void on_button_pressed (int n_press, double x, double y) {
             Gtk.TreePath path;
             Gtk.TreeViewColumn column;
-            int x = (int) event.x, y = (int) event.y, cell_x, cell_y;
+            int cell_x, cell_y;
 
-            if (get_path_at_pos (x, y, out path, out column, out cell_x, out cell_y)) {
+            if (get_path_at_pos ((int) x, (int) y, out path, out column, out cell_x, out cell_y)) {
                 var item = data_model.get_item_from_path (path);
 
                 // This is needed because the treeview adds an offset at the beginning of every level
@@ -1588,15 +1597,14 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                     // Cancel any editing operation going on
                     stop_editing ();
 
-                    if (event.button == Gdk.BUTTON_SECONDARY) {
+                    var event = button_controller.get_last_event (null);
+                    if (event.triggers_context_menu ()) {
                         popup_context_menu (item, event);
-                        return true;
-                    } else if (event.button == Gdk.BUTTON_PRIMARY) {
+                    } else if (button_controller.get_current_button () == Gdk.BUTTON_PRIMARY) {
                         // Check whether an expander (or an equivalent area) was clicked.
                         bool is_expandable = item is ExpandableItem;
                         bool is_category = is_expandable && data_model.is_category (item, null, path);
-
-                        if (event.type == Gdk.EventType.BUTTON_PRESS) {
+                        if (n_press == 1) {
                             if (is_expandable) {
                                 // Checking for secondary_expander_cell is not necessary because the entire row
                                 // serves for this purpose when the item is a category or when the item is a
@@ -1605,27 +1613,23 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                                 // The expander only works like a visual indicator for these items.
                                 unselectable_item_clicked = is_category || (!item.selectable);
 
-                                if (!unselectable_item_clicked
-                                    && over_primary_expander (column, path, cell_x)
-                                    && toggle_expansion (item as ExpandableItem))
-                                    return true;
+                                if (!unselectable_item_clicked && over_primary_expander (column, path, cell_x)) {
+                                    toggle_expansion (item as ExpandableItem);
+                                }
                             }
                         } else if (
-                            event.type == Gdk.EventType.2BUTTON_PRESS
+                            n_press == 2
                             && !is_category // Main categories are *not* editable
                             && item.editable
                             && item.selectable
                             && over_cell (column, path, text_cell, cell_x)
-                            && start_editing_item (item)
                         ) {
-                            // The user double-clicked over the text cell, and editing started successfully.
-                            return true;
+                            // Start editing after native event handlers finished else fails
+                            Idle.add_once (() => { start_editing_item (item); });
                         }
                     }
                 }
             }
-
-            return base.button_press_event (event);
         }
 
         private bool over_primary_expander (Gtk.TreeViewColumn col, Gtk.TreePath path, int x) {
@@ -1689,12 +1693,13 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         }
 
         public override bool popup_menu () {
-            return popup_context_menu (null, null);
+            return popup_context_menu ();
         }
 
-        private bool popup_context_menu (Item? item, Gdk.EventButton? event) {
-            if (item == null)
+        private bool popup_context_menu (Item? item = null, Gdk.Event? event = null) {
+            if (item == null) {
                 item = selected_item;
+            }
 
             if (item != null) {
                 var menu = item.get_context_menu ();
