@@ -51,40 +51,19 @@ public class Mail.FolderList : Gtk.Box {
             child = source_list
         };
 
-        var load_images_menuitem = new Granite.SwitchModelButton (_("Always Show Remote Images"));
+        var dialogs_section = new Menu ();
+        dialogs_section.append (_("Edit Signatures…"), Application.ACTION_PREFIX + Application.ACTION_MANAGE_SIGNATURES);
+        dialogs_section.append (_("Account Settings…"), Application.ACTION_PREFIX + Application.ACTION_ACCOUNT_SETTINGS);
 
-        var manage_signatures_menuitem = new Gtk.ModelButton () {
-            text = _("Edit Signatures…"),
-            action_name = Application.ACTION_PREFIX + Application.ACTION_MANAGE_SIGNATURES,
-        };
-
-        var account_settings_menuitem = new Gtk.ModelButton () {
-            text = _("Account Settings…")
-        };
-
-        var app_menu_separator = new Gtk.Separator (HORIZONTAL) {
-            margin_bottom = 3,
-            margin_top = 3
-        };
-
-        var app_menu_box = new Gtk.Box (VERTICAL, 0) {
-            margin_bottom = 3,
-            margin_top = 3
-        };
-        app_menu_box.add (load_images_menuitem);
-        app_menu_box.add (app_menu_separator);
-        app_menu_box.add (manage_signatures_menuitem);
-        app_menu_box.add (account_settings_menuitem);
-        app_menu_box.show_all ();
-
-        var app_menu_popover = new Gtk.Popover (null) {
-            child = app_menu_box
-        };
+        var menu_model = new Menu ();
+        menu_model.append (_("Always Show Remote Images"), Application.ACTION_PREFIX + Application.ACTION_LOAD_IMAGES);
+        menu_model.append_section (null, dialogs_section);
 
         var app_menu = new Gtk.MenuButton () {
             image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
-            popover = app_menu_popover,
-            tooltip_text = _("Menu")
+            menu_model = menu_model,
+            tooltip_text = _("Menu"),
+            use_popover = false
         };
 
         var action_bar = new Gtk.ActionBar ();
@@ -121,26 +100,6 @@ public class Mail.FolderList : Gtk.Box {
                 folder_selected (item.get_folder_info_per_account ());
 
                 settings.set ("selected-folder", "(ss)", "GROUPED", item.name);
-            }
-        });
-
-        settings.bind ("always-load-remote-images", load_images_menuitem, "active", SettingsBindFlags.DEFAULT);
-
-        account_settings_menuitem.clicked.connect (() => {
-            try {
-                Gtk.show_uri_on_window ((Gtk.Window) get_toplevel (), "settings://accounts/online", Gtk.get_current_event_time ());
-            } catch (Error e) {
-                var dialog = new Granite.MessageDialog (
-                    _("Unable to open System Settings"),
-                    _("Open System Settings manually or install Evolution to set up online accounts."),
-                    new ThemedIcon ("preferences-system")
-                ) {
-                    badge_icon = new ThemedIcon ("dialog-warning"),
-                    modal = true,
-                    transient_for = (Gtk.Window) get_toplevel ()
-                };
-                dialog.response.connect (dialog.destroy);
-                dialog.present ();
             }
         });
 
