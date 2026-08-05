@@ -46,7 +46,7 @@ public class Mail.ConversationList : Gtk.Box {
 
     construct {
         orientation = VERTICAL;
-        add_css_class (Gtk.STYLE_CLASS_VIEW);
+        add_css_class (Granite.STYLE_CLASS_VIEW);
 
         conversations = new Gee.HashMap<string, ConversationItemModel> ();
         folders = new Gee.HashMap<string, Camel.Folder> ();
@@ -130,9 +130,10 @@ public class Mail.ConversationList : Gtk.Box {
         };
 
         var scrolled_window = new Gtk.ScrolledWindow () {
-            hscrollbar_policy = Gtk.PolicyType.NEVER,
+            hscrollbar_policy = NEVER,
             width_request = 158,
-            expand = true,
+            hexpand = true,
+            vexpand = true,
             child = list_view
         };
 
@@ -160,7 +161,7 @@ public class Mail.ConversationList : Gtk.Box {
         refresh_stack.visible_child = refresh_button;
 
         var move_spinner = new Gtk.Spinner () {
-            active = true,
+            spinning = true,
             halign = Gtk.Align.CENTER,
             valign = Gtk.Align.CENTER,
             no_show_all = true
@@ -200,7 +201,7 @@ public class Mail.ConversationList : Gtk.Box {
             } else {
                 // We call get_action_group() on the parent window, instead of on `this` directly, due to a
                 // bug with Gtk.Widget.get_action_group(). See https://gitlab.gnome.org/GNOME/gtk/issues/1396
-                var window = (Gtk.ApplicationWindow) get_toplevel ();
+                var window = (Gtk.ApplicationWindow) get_root ();
                 weak GLib.ActionMap win_action_map = (GLib.ActionMap) window.get_action_group (MainWindow.ACTION_GROUP_PREFIX);
                 ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_READ)).set_enabled (((ConversationItemModel) row).unread);
                 ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_UNREAD)).set_enabled (!((ConversationItemModel) row).unread);
@@ -374,13 +375,12 @@ public class Mail.ConversationList : Gtk.Box {
     }
 
     private GenericArray<string>? get_search_result_uids (string service_uid) {
-        var style_context = filter_button.get_style_context ();
         if (hide_read_switch.active || hide_unstarred_switch.active) {
-            if (!style_context.has_class (Granite.STYLE_CLASS_ACCENT)) {
-                style_context.add_class (Granite.STYLE_CLASS_ACCENT);
+            if (!filter_button.has_css_class (Granite.CssClass.ACCENT)) {
+                filter_button.add_css_class (Granite.CssClass.ACCENT);
             }
-        } else if (style_context.has_class (Granite.STYLE_CLASS_ACCENT)) {
-            style_context.remove_class (Granite.STYLE_CLASS_ACCENT);
+        } else if (filter_button.has_css_class (Granite.CssClass.ACCENT)) {
+            filter_button.remove_css_class (Granite.CssClass.ACCENT);
         }
 
         lock (folders) {

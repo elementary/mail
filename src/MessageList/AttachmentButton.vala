@@ -82,7 +82,7 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         size_label = new Gtk.Label (null) {
             xalign = 0
         };
-        size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        size_label.add_css_class (Granite.CssClass.DIM);
 
         new Thread<void*> (null, () => {
             string? size_text = null;
@@ -98,7 +98,7 @@ public class AttachmentButton : Gtk.FlowBoxChild {
                     size_label.label = size_text;
                 } else {
                     size_label.label = _("Unknown");
-                    size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
+                    size_label.add_css_class (Granite.CssClass.ERROR);
                 }
 
                 return GLib.Source.REMOVE;
@@ -116,7 +116,6 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         };
 
         child = event_box;
-        show_all ();
 
         var gesture_click = new Gtk.GestureClick (event_box) {
             button = 0
@@ -135,7 +134,7 @@ public class AttachmentButton : Gtk.FlowBoxChild {
     }
 
     private void on_save_as () {
-        Gtk.Window? parent_window = get_toplevel () as Gtk.Window;
+        Gtk.Window? parent_window = get_root () as Gtk.Window;
         var chooser = new Gtk.FileChooserNative (
             null,
             parent_window,

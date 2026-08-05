@@ -82,13 +82,13 @@ public class Mail.Composer : Adw.ApplicationWindow {
             has_subtitle = false,
             show_close_button = true
         };
-        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-        headerbar.get_style_context ().add_class ("default-decoration");
+        headerbar.add_css_class (Gtk.STYLE_CLASS_FLAT);
+        headerbar.add_css_class ("default-decoration");
 
         var from_label = new Gtk.Label (_("From:")) {
             xalign = 1
         };
-        from_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        from_label.add_css_class (Granite.CssClass.DIM);
 
         from_combo = new Gtk.ComboBoxText () {
             hexpand = true
@@ -97,8 +97,8 @@ public class Mail.Composer : Adw.ApplicationWindow {
         var from_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
             margin_bottom = 6
         };
-        from_box.add (from_label);
-        from_box.add (from_combo);
+        from_box.append (from_label);
+        from_box.append (from_combo);
 
         var from_revealer = new Gtk.Revealer () {
             child = from_box
@@ -107,12 +107,12 @@ public class Mail.Composer : Adw.ApplicationWindow {
         var to_label = new Gtk.Label (_("To:")) {
             xalign = 1
         };
-        to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        to_label.add_css_class (Granite.CssClass.DIM);
 
         var subject_label = new Gtk.Label (_("Subject:")) {
             xalign = 1
         };
-        subject_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        subject_label.add_css_class (Granite.CssClass.DIM);
 
         to_val = new Gtk.Entry () {
             hexpand = true
@@ -130,7 +130,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
         var cc_label = new Gtk.Label (_("Cc:")) {
             xalign = 1
         };
-        cc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        cc_label.add_css_class (Granite.CssClass.DIM);
 
         cc_val = new Gtk.Entry () {
             hexpand = true
@@ -139,8 +139,8 @@ public class Mail.Composer : Adw.ApplicationWindow {
         var cc_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
             margin_top = 6
         };
-        cc_box.add (cc_label);
-        cc_box.add (cc_val);
+        cc_box.append (cc_label);
+        cc_box.append (cc_val);
 
         cc_revealer = new Gtk.Revealer ();
         cc_revealer.add (cc_box);
@@ -148,7 +148,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
         var bcc_label = new Gtk.Label (_("Bcc:")) {
             xalign = 1
         };
-        bcc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        bcc_label.add_css_class (Granite.CssClass.DIM);
 
         bcc_val = new Gtk.Entry () {
             hexpand = true
@@ -157,8 +157,8 @@ public class Mail.Composer : Adw.ApplicationWindow {
         var bcc_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
             margin_top = 6
         };
-        bcc_box.add (bcc_label);
-        bcc_box.add (bcc_val);
+        bcc_box.append (bcc_label);
+        bcc_box.append (bcc_val);
 
         bcc_revealer = new Gtk.Revealer ();
         bcc_revealer.add (bcc_box);
@@ -193,7 +193,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
         recipient_grid.attach (subject_label, 0, 4);
         recipient_grid.attach (subject_val, 1, 4);
 
-        var image = new Gtk.Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.MENU) {
+        var image = new Gtk.Button.from_icon_name ("insert-image-symbolic") {
             action_name = ACTION_PREFIX + ACTION_INSERT_IMAGE,
             tooltip_text = _("Insert Image")
         };
@@ -215,9 +215,9 @@ public class Mail.Composer : Adw.ApplicationWindow {
             homogeneous = true,
             selection_mode = Gtk.SelectionMode.NONE
         };
-        attachment_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        attachment_box.add_css_class (Granite.STYLE_CLASS_VIEW);
 
-        var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU) {
+        var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
             action_name = ACTION_PREFIX + ACTION_DISCARD,
             tooltip_markup = Granite.markup_accel_tooltip (
                 application.get_accels_for_action (ACTION_PREFIX + ACTION_DISCARD),
@@ -225,7 +225,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
             )
         };
 
-        var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU) {
+        var attach = new Gtk.Button.from_icon_name ("mail-attachment-symbolic") {
             action_name = ACTION_PREFIX + ACTION_ADD_ATTACHMENT,
             tooltip_markup = Granite.markup_accel_tooltip (
                 application.get_accels_for_action (ACTION_PREFIX + ACTION_ADD_ATTACHMENT),
@@ -236,14 +236,14 @@ public class Mail.Composer : Adw.ApplicationWindow {
         var signature_menu = new Menu ();
 
         var signature_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("document-edit-symbolic", Gtk.IconSize.MENU),
+            image = new Gtk.Image.from_icon_name ("document-edit-symbolic"),
             menu_model = signature_menu,
             use_popover = false,
             direction = UP,
             tooltip_text = _("Insert Signature…")
         };
 
-        var send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU) {
+        var send = new Gtk.Button.from_icon_name ("mail-send-symbolic") {
             action_name = ACTION_PREFIX + ACTION_SEND,
             always_show_image = true,
             label = _("Send"),
@@ -256,37 +256,38 @@ public class Mail.Composer : Adw.ApplicationWindow {
                 application.get_accels_for_action (ACTION_PREFIX + ACTION_SEND)
             )
         };
-        send.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        send.add_css_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         var action_bar = new Gtk.ActionBar () {
             // Workaround styling issue
             margin_top = 1
         };
-        action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        action_bar.add_css_class (Gtk.STYLE_CLASS_FLAT);
         action_bar.pack_start (discard);
         action_bar.pack_start (attach);
         action_bar.pack_start (signature_button);
         action_bar.pack_end (send);
 
-        var view_overlay = new Gtk.Overlay ();
-        view_overlay.add (web_view);
+        var view_overlay = new Gtk.Overlay () {
+            child = web_view
+        };
+
         message_url_overlay = new Granite.OverlayBar (view_overlay);
         message_url_overlay.no_show_all = true;
 
         var main_box = new Gtk.Box (VERTICAL, 0);
-        main_box.add (headerbar);
-        main_box.add (recipient_grid);
-        main_box.add (editor_toolbar);
-        main_box.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        main_box.add (view_overlay);
-        main_box.add (attachment_box);
-        main_box.add (action_bar);
+        main_box.append (headerbar);
+        main_box.append (recipient_grid);
+        main_box.append (editor_toolbar);
+        main_box.append (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        main_box.append (view_overlay);
+        main_box.append (attachment_box);
+        main_box.append (action_bar);
 
         default_height = 500;
         default_width = 680;
         title = _("New Message");
         add (main_box);
-        show_all ();
 
         delete_event.connect (() => {
             save_draft.begin ((obj, res) => {
@@ -412,9 +413,8 @@ public class Mail.Composer : Adw.ApplicationWindow {
                 foreach (var path in result["attachment"]) {
                     var file = path.has_prefix ("file://") ? File.new_for_uri (path) : File.new_for_path (path);
 
-                    attachment_box.add (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
+                    attachment_box.append (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
                 }
-                attachment_box.show_all ();
             }
         }
     }
@@ -436,7 +436,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
     private void on_add_attachment () {
         var filechooser = new Gtk.FileChooserNative (
             _("Choose a file"),
-            (Gtk.Window) get_toplevel (),
+            (Gtk.Window) get_root (),
             Gtk.FileChooserAction.OPEN,
             _("Attach"),
             _("Cancel")
@@ -445,9 +445,8 @@ public class Mail.Composer : Adw.ApplicationWindow {
         if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
             filechooser.hide ();
             foreach (unowned File file in filechooser.get_files ()) {
-                attachment_box.add (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
+                attachment_box.append (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
             }
-            attachment_box.show_all ();
         }
 
         filechooser.destroy ();
@@ -460,7 +459,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
 
         var filechooser = new Gtk.FileChooserNative (
             _("Choose an image"),
-            (Gtk.Window) get_toplevel (),
+            (Gtk.Window) get_root (),
             Gtk.FileChooserAction.OPEN,
             _("Insert"),
             _("Cancel")
@@ -477,7 +476,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
                     var inpustream = file.read ();
 
                     var attachment = new Attachment (file, Attachment.DISPOSITION_INLINE);
-                    attachment_box.add (attachment);
+                    attachment_box.append (attachment);
 
                     web_view.add_internal_resource (attachment.uri, inpustream);
                     web_view.execute_editor_command ("insertImage", attachment.uri);
@@ -520,7 +519,6 @@ public class Mail.Composer : Adw.ApplicationWindow {
             } else {
                 message_url_overlay.label = hover_url;
                 message_url_overlay.no_show_all = false;
-                message_url_overlay.show_all ();
             }
         } else {
             message_url_overlay.hide ();
@@ -732,8 +730,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
                             yield part.content.decode_to_output_stream (output_stream, GLib.Priority.DEFAULT, null);
                         }
 
-                        attachment_box.add (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
-                        attachment_box.show_all ();
+                        attachment_box.append (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
                     } catch (Error e) {
                         critical (e.message);
                     }
@@ -758,7 +755,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
         discard_dialog.add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
 
         var discard_anyway = discard_dialog.add_button (_("Delete Draft"), Gtk.ResponseType.ACCEPT);
-        discard_anyway.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        discard_anyway.add_css_class (Granite.CssClass.DESTRUCTIVE);
 
         discard_dialog.present ();
         discard_dialog.response.connect ((response) => {
@@ -792,7 +789,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
             no_subject_dialog.add_button (_("Don't Send"), Gtk.ResponseType.CANCEL);
 
             var send_anyway = no_subject_dialog.add_button (_("Send Anyway"), Gtk.ResponseType.ACCEPT);
-            send_anyway.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+            send_anyway.add_css_class (Granite.CssClass.DESTRUCTIVE);
 
             no_subject_dialog.present ();
             no_subject_dialog.response.connect ((response) => {
@@ -1028,13 +1025,12 @@ public class Mail.Composer : Adw.ApplicationWindow {
             };
 
             var size_label = new Gtk.Label ("(%s)".printf (GLib.format_size (info.get_size ())));
-            size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+            size_label.add_css_class (Granite.CssClass.DIM);
 
-            var remove_button = new Gtk.Button.from_icon_name ("process-stop-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-
-            unowned Gtk.StyleContext remove_button_context = remove_button.get_style_context ();
-            remove_button_context.add_class (Gtk.STYLE_CLASS_FLAT);
-            remove_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+            var remove_button = new Gtk.Button.from_icon_name ("process-stop-symbolic") {
+                has_frame = false
+            };
+            remove_button.get_style_context ().add_class (Granite.CssClass.DESTRUCTIVE);
 
             var box = new Gtk.Box (HORIZONTAL, 3) {
                 margin_top = 3,
@@ -1042,10 +1038,10 @@ public class Mail.Composer : Adw.ApplicationWindow {
                 margin_start = 3,
                 margin_end = 3
             };
-            box.add (image);
-            box.add (name_label);
-            box.add (size_label);
-            box.add (remove_button);
+            box.append (image);
+            box.append (name_label);
+            box.append (size_label);
+            box.append (remove_button);
 
             if (disposition == DISPOSITION_INLINE) {
                 no_show_all = true;
@@ -1055,7 +1051,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
             margin_bottom = 3;
             margin_start = 3;
             margin_end = 3;
-            add (box);
+            child = box;
 
             remove_button.clicked.connect (() => {
                 destroy ();

@@ -30,7 +30,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
     private Gtk.InfoBar blocked_images_infobar;
     private Gtk.Revealer secondary_revealer;
     private Gtk.Stack header_stack;
-    private Gtk.StyleContext style_context;
     private Adw.Avatar avatar;
     private Gtk.FlowBox attachment_bar = null;
     private File? temp_dir = null;
@@ -54,9 +53,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                     get_message.begin ();
                     message_loaded = true;
                 }
-                style_context.remove_class ("collapsed");
+                remove_css_class ("collapsed");
             } else {
-                style_context.add_class ("collapsed");
+                add_css_class ("collapsed");
             }
         }
     }
@@ -80,9 +79,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     construct {
         loading_cancellable = new GLib.Cancellable ();
-
-        style_context = get_style_context ();
-        style_context.add_class (Granite.STYLE_CLASS_CARD);
+        add_css_class (Granite.STYLE_CLASS_CARD);
 
         unowned string? parsed_address;
         unowned string? parsed_name;
@@ -103,19 +100,19 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             halign = END,
             valign = START
         };
-        from_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        from_label.add_css_class (Granite.CssClass.DIM);
 
         var to_label = new Gtk.Label (_("To:")) {
             halign = END,
             valign = START
         };
-        to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        to_label.add_css_class (Granite.CssClass.DIM);
 
         var subject_label = new Gtk.Label (_("Subject:")) {
             halign = END,
             valign = START
         };
-        subject_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        subject_label.add_css_class (Granite.CssClass.DIM);
 
         var from_val_label = new Gtk.Label (message_info.from) {
             wrap = true,
@@ -149,7 +146,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 halign = END,
                 valign = START
             };
-            cc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+            cc_label.add_css_class (Granite.CssClass.DIM);
 
             var cc_val_label = new Gtk.Label (cc_info) {
                 wrap = true,
@@ -175,7 +172,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         };
         header_stack.add_named (fields_grid, "large");
         header_stack.add_named (small_fields_grid, "small");
-        header_stack.show_all ();
 
         var relevant_timestamp = message_info.date_received;
         if (relevant_timestamp == 0) {
@@ -188,10 +184,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         ///TRANSLATORS: The first %s represents the date and the second %s the time of the message (either when it was received or sent)
         var datetime_label = new Gtk.Label (new DateTime.from_unix_utc (relevant_timestamp).to_local ().format (_("%s at %s").printf (date_format, time_format)));
-        datetime_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        datetime_label.add_css_class (Granite.CssClass.DIM);
 
         var starred_icon = new Gtk.Image ();
-        starred_icon.icon_size = Gtk.IconSize.MENU;
 
         if (Camel.MessageFlags.FLAGGED in (int) message_info.flags) {
             starred_icon.icon_name = "starred-symbolic";
@@ -204,7 +199,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         var starred_button = new Gtk.Button () {
             child = starred_icon
         };
-        starred_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        starred_button.add_css_class (Gtk.STYLE_CLASS_FLAT);
 
         var upper_section = new Menu ();
         upper_section.append (_("Reply"), Action.print_detailed_name (
@@ -227,7 +222,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         actions_menu.append_section (null, lower_section);
 
         var actions_menu_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("view-more-symbolic", Gtk.IconSize.MENU),
+            icon_name = "view-more-symbolic",
             tooltip_text = _("More"),
             margin_top = 6,
             valign = START,
@@ -235,7 +230,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             menu_model = actions_menu,
             use_popover = false
         };
-        actions_menu_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        actions_menu_button.add_css_class (Gtk.STYLE_CLASS_FLAT);
 
         var action_grid = new Gtk.Grid () {
             column_spacing = 3,
@@ -262,7 +257,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         header_event_box.events |= Gdk.EventMask.ENTER_NOTIFY_MASK;
         header_event_box.events |= Gdk.EventMask.LEAVE_NOTIFY_MASK;
         header_event_box.events |= Gdk.EventMask.BUTTON_RELEASE_MASK;
-        header_event_box.add (header);
+        header_event_box.append (header);
 
         var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
             hexpand = true
@@ -278,13 +273,12 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             message_type = INFO
         };
         calendar_info_bar.add_button (_("Open in Calendar"), 1);
-        calendar_info_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FRAME);
+        calendar_info_bar.add_css_class (Gtk.STYLE_CLASS_FRAME);
         calendar_info_bar.no_show_all = true;
 
         var calendar_info_bar_content = calendar_info_bar.get_content_area ();
         calendar_info_bar_content.add (new Gtk.Image.from_icon_name ("x-office-calendar", LARGE_TOOLBAR));
         calendar_info_bar_content.add (new Gtk.Label (_("This message contains a Calendar Event.")));
-        calendar_info_bar_content.show_all ();
 
         blocked_images_infobar = new Gtk.InfoBar () {
             margin_top = 12,
@@ -296,11 +290,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         };
         blocked_images_infobar.add_button (_("Show Images"), 1);
         blocked_images_infobar.add_button (_("Always Show from Sender"), 2);
-        blocked_images_infobar.get_style_context ().add_class (Gtk.STYLE_CLASS_FRAME);
+        blocked_images_infobar.add_css_class (Gtk.STYLE_CLASS_FRAME);
 
         var infobar_content = blocked_images_infobar.get_content_area ();
         infobar_content.add (new Gtk.Label (_("This message contains remote images.")));
-        infobar_content.show_all ();
 
         ((Gtk.Box) blocked_images_infobar.get_action_area ()).orientation = Gtk.Orientation.VERTICAL;
 
@@ -318,10 +311,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         });
 
         var secondary_box = new Gtk.Box (VERTICAL, 0);
-        secondary_box.add (separator);
-        secondary_box.add (calendar_info_bar);
-        secondary_box.add (blocked_images_infobar);
-        secondary_box.add (web_view);
+        secondary_box.append (separator);
+        secondary_box.append (calendar_info_bar);
+        secondary_box.append (blocked_images_infobar);
+        secondary_box.append (web_view);
 
         secondary_revealer = new Gtk.Revealer () {
             child = secondary_box,
@@ -332,11 +325,11 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             hexpand = true,
             vexpand = true
         };
-        base_box.add (header_event_box);
-        base_box.add (secondary_revealer);
+        base_box.append (header_event_box);
+        base_box.append (secondary_revealer);
 
         if (Camel.MessageFlags.ATTACHMENTS in (int) message_info.flags) {
-            var attachment_icon = new Gtk.Image.from_icon_name ("mail-attachment-symbolic", Gtk.IconSize.MENU);
+            var attachment_icon = new Gtk.Image.from_icon_name ("mail-attachment-symbolic");
             attachment_icon.margin_start = 6;
             attachment_icon.tooltip_text = _("This message contains one or more attachments");
             action_grid.attach (attachment_icon, 1, 0);
@@ -345,9 +338,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 hexpand = true,
                 homogeneous = true
             };
-            attachment_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-            attachment_bar.get_style_context ().add_class ("bottom-toolbar");
-            secondary_box.add (attachment_bar);
+            attachment_bar.add_css_class (Gtk.STYLE_CLASS_FLAT);
+            attachment_bar.add_css_class ("bottom-toolbar");
+            secondary_box.append (attachment_bar);
         }
 
         child = base_box;
@@ -433,7 +426,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             /* @TODO: include header fields in printed output */
             var print_operation = new WebKit.PrintOperation (web_view);
             print_operation.set_print_settings (settings);
-            print_operation.run_dialog ((Gtk.ApplicationWindow) get_toplevel ());
+            print_operation.run_dialog ((Gtk.ApplicationWindow) get_root ());
         } catch (Error e) {
             var print_error_dialog = new Granite.MessageDialog.with_image_from_icon_name (
                 _("Unable to print email"),
@@ -441,7 +434,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 "printer"
             ) {
                 badge_icon = new ThemedIcon ("dialog-error"),
-                transient_for = (Gtk.Window) get_toplevel ()
+                transient_for = (Gtk.Window) get_root ()
             };
             print_error_dialog.show_error_details (e.message);
             print_error_dialog.present ();
@@ -590,7 +583,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 } else if (part.get_content_disposition ().is_attachment (part.get_content_type ())) {
                     var button = new AttachmentButton (part, loading_cancellable);
                     button.activate.connect (() => show_attachment (button.mime_part));
-                    attachment_bar.add (button);
+                    attachment_bar.append (button);
 
                     if (part.get_mime_type () == "text/calendar" && !calendar_info_bar.visible) {
                         calendar_info_bar.response.connect (() => show_attachment (part));
@@ -693,11 +686,11 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             new ThemedIcon ("dialog-warning"),
             Gtk.ButtonsType.CANCEL
         ) {
-            transient_for = (Gtk.Window) get_toplevel ()
+            transient_for = (Gtk.Window) get_root ()
         };
 
         var open_button = dialog.add_button (_("Open Anyway"), Gtk.ResponseType.OK);
-        open_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        open_button.add_css_class (Granite.CssClass.DESTRUCTIVE);
 
         dialog.present ();
         dialog.response.connect ((response_id) => {

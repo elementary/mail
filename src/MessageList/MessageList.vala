@@ -15,7 +15,7 @@ public class Mail.MessageList : Gtk.Box {
     private Gee.HashMap<string, MessageListItem> messages;
 
     construct {
-        get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
+        add_css_class (Gtk.STYLE_CLASS_BACKGROUND);
 
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
@@ -88,7 +88,7 @@ public class Mail.MessageList : Gtk.Box {
         headerbar = new Adw.HeaderBar () {
             show_close_button = true
         };
-        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        headerbar.add_css_class (Gtk.STYLE_CLASS_FLAT);
         headerbar.pack_start (reply_button);
         headerbar.pack_start (reply_all_button);
         headerbar.pack_start (forward_button);
@@ -97,13 +97,9 @@ public class Mail.MessageList : Gtk.Box {
         headerbar.pack_end (move_button);
         headerbar.pack_end (mark_button);
 
-        var placeholder = new Gtk.Label (_("No Message Selected")) {
-            visible = true
-        };
-
-        var placeholder_style_context = placeholder.get_style_context ();
-        placeholder_style_context.add_class (Granite.STYLE_CLASS_H2_LABEL);
-        placeholder_style_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        var placeholder = new Gtk.Label (_("No Message Selected"));
+        placeholder.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        placeholder.get_style_context ().add_class (Granite.CssClass.DIM);
 
         list_box = new Gtk.ListBox () {
             hexpand = true,
@@ -111,14 +107,14 @@ public class Mail.MessageList : Gtk.Box {
             selection_mode = NONE
         };
 
-        list_box.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
+        list_box.add_css_class (Gtk.STYLE_CLASS_BACKGROUND);
         list_box.set_placeholder (placeholder);
         list_box.set_sort_func (message_sort_function);
 
-        scrolled_window = new Gtk.ScrolledWindow (null, null) {
-            hscrollbar_policy = NEVER
+        scrolled_window = new Gtk.ScrolledWindow () {
+            hscrollbar_policy = NEVER,
+            child = list_box
         };
-        scrolled_window.add (list_box);
 
         // Prevent the focus of the webview causing the ScrolledWindow to scroll
         var scrolled_child = scrolled_window.get_child ();
@@ -159,7 +155,7 @@ public class Mail.MessageList : Gtk.Box {
         folder_popover.set_store (store);
 
         var item = new MessageListItem (node.message);
-        list_box.add (item);
+        list_box.append (item);
         messages.set (node.message.uid, item);
         if (node.child != null) {
             go_down ((Camel.FolderThreadNode?) node.child);
@@ -188,7 +184,7 @@ public class Mail.MessageList : Gtk.Box {
         unowned Camel.FolderThreadNode? current_node = node;
         while (current_node != null) {
             var item = new MessageListItem (current_node.message);
-            list_box.add (item);
+            list_box.append (item);
             messages.set (current_node.message.uid, item);
             if (current_node.next != null) {
                 go_down ((Camel.FolderThreadNode?) current_node.next);
@@ -235,14 +231,14 @@ public class Mail.MessageList : Gtk.Box {
     }
 
     private void can_reply (bool enabled) {
-        unowned var main_window = (Gtk.ApplicationWindow) get_toplevel ();
+        unowned var main_window = (Gtk.ApplicationWindow) get_root ();
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_FORWARD)).set_enabled (enabled);
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_REPLY_ALL)).set_enabled (enabled);
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_REPLY)).set_enabled (enabled);
     }
 
     private void can_move_thread (bool enabled) {
-        unowned var main_window = (Gtk.ApplicationWindow) get_toplevel ();
+        unowned var main_window = (Gtk.ApplicationWindow) get_root ();
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MODIFY)).set_enabled (enabled);
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_ARCHIVE)).set_enabled (enabled);
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE)).set_enabled (enabled);

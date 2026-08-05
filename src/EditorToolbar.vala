@@ -51,21 +51,21 @@ public class EditorToolbar : Gtk.Box {
         var bold = new Gtk.ToggleButton () {
             action_name = ACTION_PREFIX + ACTION_BOLD,
             action_target = ACTION_BOLD,
-            image = new Gtk.Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.MENU),
+            image = new Gtk.Image.from_icon_name ("format-text-bold-symbolic"),
             tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>B"}, _("Bold"))
         };
 
         var italic = new Gtk.ToggleButton () {
             action_name = ACTION_PREFIX + ACTION_ITALIC,
             action_target = ACTION_ITALIC,
-            image = new Gtk.Image.from_icon_name ("format-text-italic-symbolic", Gtk.IconSize.MENU),
+            image = new Gtk.Image.from_icon_name ("format-text-italic-symbolic"),
             tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>I"}, _("Italic"))
         };
 
         var underline = new Gtk.ToggleButton () {
             action_name = ACTION_PREFIX + ACTION_UNDERLINE,
             action_target = ACTION_UNDERLINE,
-            image = new Gtk.Image.from_icon_name ("format-text-underline-symbolic", Gtk.IconSize.MENU),
+            image = new Gtk.Image.from_icon_name ("format-text-underline-symbolic"),
             tooltip_markup = Granite.markup_accel_tooltip (
                 application.get_accels_for_action (
                     Action.print_detailed_name (ACTION_PREFIX + ACTION_UNDERLINE, ACTION_UNDERLINE)
@@ -77,7 +77,7 @@ public class EditorToolbar : Gtk.Box {
         var strikethrough = new Gtk.ToggleButton () {
             action_name = ACTION_PREFIX + ACTION_STRIKETHROUGH,
             action_target = ACTION_STRIKETHROUGH,
-            image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.MENU),
+            image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic"),
             tooltip_markup = Granite.markup_accel_tooltip (
                 application.get_accels_for_action (
                     Action.print_detailed_name (ACTION_PREFIX + ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH)
@@ -86,14 +86,14 @@ public class EditorToolbar : Gtk.Box {
             )
         };
 
-        var formatting_buttons = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-        formatting_buttons.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-        formatting_buttons.add (bold);
-        formatting_buttons.add (italic);
-        formatting_buttons.add (underline);
-        formatting_buttons.add (strikethrough);
+        var formatting_buttons = new Gtk.Box (HORIZONTAL, 0);
+        formatting_buttons.append_css_class (Gtk.STYLE_CLASS_LINKED);
+        formatting_buttons.append (bold);
+        formatting_buttons.append (italic);
+        formatting_buttons.append (underline);
+        formatting_buttons.append (strikethrough);
 
-        var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic", Gtk.IconSize.MENU) {
+        var clear_format = new Gtk.Button.from_icon_name ("format-text-clear-formatting-symbolic") {
             action_name = ACTION_PREFIX + ACTION_REMOVE_FORMAT,
             tooltip_markup = Granite.markup_accel_tooltip (
                 application.get_accels_for_action (ACTION_PREFIX + ACTION_REMOVE_FORMAT),
@@ -101,7 +101,7 @@ public class EditorToolbar : Gtk.Box {
             )
         };
 
-        var link = new Gtk.Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.MENU) {
+        var link = new Gtk.Button.from_icon_name ("insert-link-symbolic") {
             action_name = ACTION_PREFIX + ACTION_INSERT_LINK,
             tooltip_markup = Granite.markup_accel_tooltip (
                 application.get_accels_for_action (ACTION_PREFIX + ACTION_INSERT_LINK),
@@ -118,7 +118,7 @@ public class EditorToolbar : Gtk.Box {
         add (link);
 
         map.connect (() => {
-            get_toplevel ().insert_action_group (ACTION_GROUP_PREFIX, action_group);
+            get_root ().insert_action_group (ACTION_GROUP_PREFIX, action_group);
         });
 
         web_view.selection_changed.connect (update_actions);
@@ -131,7 +131,7 @@ public class EditorToolbar : Gtk.Box {
     private async void ask_insert_link () {
         var selected_text = yield web_view.get_selected_text ();
         var insert_link_dialog = new InsertLinkDialog (selected_text) {
-            transient_for = (Gtk.Window)get_toplevel ()
+            transient_for = (Gtk.Window)get_root ()
         };
         insert_link_dialog.present ();
         insert_link_dialog.insert_link.connect ((url, title) => on_link_inserted (url, title, selected_text));

@@ -1113,9 +1113,8 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         }
 
         construct {
-            unowned Gtk.StyleContext style_context = get_style_context ();
-            style_context.add_class (Gtk.STYLE_CLASS_SIDEBAR);
-            style_context.add_class (Granite.STYLE_CLASS_SOURCE_LIST);
+            get_style_context ().add_class (Granite.STYLE_CLASS_SIDEBAR);
+            get_style_context ().add_class (Granite.STYLE_CLASS_SOURCE_LIST);
 
             var css_provider = new Gtk.CssProvider ();
             try {
@@ -1128,7 +1127,8 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             set_model (data_model);
 
             halign = valign = Gtk.Align.FILL;
-            expand = true;
+            hexpand = true;
+            vexpand = true;
 
             enable_search = false;
             headers_visible = false;

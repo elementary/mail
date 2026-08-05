@@ -16,42 +16,42 @@ public class Mail.FolderRow : Gtk.ListBoxRow {
    }
 
    construct {
-       var icon = new Gtk.Image.from_icon_name ("folder", MENU) {
+       var icon = new Gtk.Image.from_icon_name ("folder") {
            margin_end = 3
        };
 
        var full_folder_info_flags = Utils.get_full_folder_info_flags (store, folder_info);
        switch (full_folder_info_flags & Camel.FOLDER_TYPE_MASK) {
-           case Camel.FolderInfoFlags.TYPE_INBOX:
-               icon.set_from_icon_name ("mail-inbox", MENU);
+           case TYPE_INBOX:
+               icon.icon_name = "mail-inbox";
                pos = 1;
                break;
-           case Camel.FolderInfoFlags.TYPE_DRAFTS:
-               icon.set_from_icon_name ("mail-drafts", MENU);
+           case TYPE_DRAFTS:
+               icon.icon_name = "mail-drafts";
                pos = 2;
                break;
-           case Camel.FolderInfoFlags.TYPE_OUTBOX:
-               icon.set_from_icon_name ("mail-outbox", MENU);
+           case TYPE_OUTBOX:
+               icon.icon_name = "mail-outbox";
                pos = 3;
                break;
-           case Camel.FolderInfoFlags.TYPE_SENT:
-               icon.set_from_icon_name ("mail-sent", MENU);
+           case TYPE_SENT:
+               icon.icon_name = "mail-sent";
                pos = 4;
                break;
-           case Camel.FolderInfoFlags.TYPE_ARCHIVE:
-               icon.set_from_icon_name ("mail-archive", MENU);
+           case TYPE_ARCHIVE:
+               icon.icon_name = "mail-archive";
                pos = 5;
                break;
-           case Camel.FolderInfoFlags.TYPE_TRASH:
-               icon.set_from_icon_name (folder_info.total == 0 ? "user-trash" : "user-trash-full", MENU);
+           case TYPE_TRASH:
+               icon.icon_name = folder_info.total == 0 ? "user-trash" : "user-trash-full";
                pos = 6;
                break;
-           case Camel.FolderInfoFlags.TYPE_JUNK:
-               icon.set_from_icon_name ("edit-flag", MENU);
+           case TYPE_JUNK:
+               icon.icon_name = "edit-flag";
                pos = 7;
                break;
            default:
-               icon.set_from_icon_name ("folder", MENU);
+               icon.icon_name = "folder";
                pos = 8;
                break;
        }
@@ -63,10 +63,9 @@ public class Mail.FolderRow : Gtk.ListBoxRow {
            margin_end = 12
        };
 
-       box.add (icon);
-       box.add (new Gtk.Label (folder_info.display_name));
+       box.append (icon);
+       box.append (new Gtk.Label (folder_info.display_name));
 
        child = box;
-       show_all ();
    }
 }

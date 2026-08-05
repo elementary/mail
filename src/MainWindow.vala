@@ -119,7 +119,6 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
 
         move_toast = new Granite.Toast ("");
         move_toast.set_default_action (_("Undo"));
-        move_toast.show_all ();
         view_overlay.add_overlay (move_toast);
 
         move_toast.default_action.connect (() => {
@@ -127,7 +126,6 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
         });
 
         error_toast = new Granite.Toast ("");
-        error_toast.show_all ();
         view_overlay.add_overlay (error_toast);
 
         var message_overlay = new Granite.OverlayBar (view_overlay);
@@ -158,7 +156,7 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
         placeholder_stack.add_named (paned_end, "mail");
         placeholder_stack.add_named (welcome_view, "welcome");
 
-        add (placeholder_stack);
+        content = placeholder_stack;
 
         var header_group = new Adw.HeaderGroup ();
         header_group.add_header_bar (folders_list_view.header_bar);

@@ -23,7 +23,7 @@ public class Mail.WelcomeView : Gtk.Box {
         var headerbar = new Adw.HeaderBar () {
             show_close_button = true
         };
-        headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        headerbar.add_css_class (Gtk.STYLE_CLASS_FLAT);
 
         var welcome_icon = new Gtk.Image () {
             icon_name = "io.elementary.mail",
@@ -47,19 +47,19 @@ public class Mail.WelcomeView : Gtk.Box {
             wrap = true,
             xalign = 0
         };
-        welcome_title.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
+        welcome_title.add_css_class (Granite.STYLE_CLASS_H1_LABEL);
 
         var welcome_description = new Gtk.Label (_("Mail uses email accounts configured in System Settings.")) {
             max_width_chars = 70,
             wrap = true,
             xalign = 0
         };
-        welcome_description.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        welcome_description.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var welcome_button = new Gtk.Button.with_label (_("Online Accounts…")) {
             margin_top = 24
         };
-        welcome_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        welcome_button.add_css_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         var grid = new Gtk.Grid () {
             column_spacing = 12,
@@ -72,19 +72,18 @@ public class Mail.WelcomeView : Gtk.Box {
         grid.attach (welcome_button, 1, 2);
 
         var main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        main_box.add (headerbar);
-        main_box.add (grid);
+        main_box.append (headerbar);
+        main_box.append (grid);
 
         var window_handle = new Adw.WindowHandle () {
             child = main_box
         };
 
         add (window_handle);
-        show_all ();
 
         welcome_button.clicked.connect (() => {
             try {
-                Gtk.show_uri_on_window ((Gtk.Window) get_toplevel (), "settings://accounts/online", Gdk.CURRENT_TIME);
+                Gtk.show_uri_on_window ((Gtk.Window) get_root (), "settings://accounts/online", Gdk.CURRENT_TIME);
             } catch (Error e) {
                 critical (e.message);
             }

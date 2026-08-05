@@ -31,17 +31,15 @@ public class Mail.ConversationListItem : Granite.Bin {
     private Gtk.Revealer status_revealer;
     private Gtk.Grid grid;
     private Adw.Carousel carousel;
-    private Gtk.GestureClick gesture_controller;
-    private Gtk.EventControllerKey key_controller;
 
     construct {
-        status_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic", Gtk.IconSize.MENU);
+        status_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic");
 
         status_revealer = new Gtk.Revealer () {
             child = status_icon
         };
 
-        var flagged_icon = new Gtk.Image.from_icon_name ("starred-symbolic", Gtk.IconSize.MENU);
+        var flagged_icon = new Gtk.Image.from_icon_name ("starred-symbolic");
         flagged_icon_revealer = new Gtk.Revealer () {
             child = flagged_icon
         };
@@ -52,15 +50,13 @@ public class Mail.ConversationListItem : Granite.Bin {
             use_markup = true,
             xalign = 0
         };
-        source.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        source.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         messages = new Gtk.Label (null) {
             halign = Gtk.Align.END
         };
-
-        weak Gtk.StyleContext messages_style = messages.get_style_context ();
-        messages_style.add_class (Granite.STYLE_CLASS_BADGE);
-        messages_style.add_class (Gtk.STYLE_CLASS_FLAT);
+        messages.add_css_class (Granite.STYLE_CLASS_BADGE);
+        messages.add_css_class (Gtk.STYLE_CLASS_FLAT);
 
         topic = new Gtk.Label (null) {
             hexpand = true,
@@ -71,7 +67,7 @@ public class Mail.ConversationListItem : Granite.Bin {
         date = new Gtk.Label (null) {
             halign = Gtk.Align.END
         };
-        date.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        date.add_css_class (Granite.CssClass.DIM);
 
         grid = new Gtk.Grid () {
             margin_top = 12,
@@ -93,27 +89,25 @@ public class Mail.ConversationListItem : Granite.Bin {
         var archive_affordance = new SwipeAffordance (
             _("Archive"), "mail-archive-symbolic", END
         );
-        archive_affordance.get_style_context ().add_class ("archive");
+        archive_affordance.add_css_class ("archive");
 
         var trash_affordance = new SwipeAffordance (
             _("Trash"), "edit-delete-symbolic", START
         );
-        trash_affordance.get_style_context ().add_class ("trash");
+        trash_affordance.add_css_class ("trash");
 
         carousel = new Adw.Carousel () {
             allow_scroll_wheel = false
         };
-        carousel.add (archive_affordance);
-        carousel.add (grid);
-        carousel.add (trash_affordance);
-        carousel.scroll_to (grid);
+        carousel.append (archive_affordance);
+        carousel.append (grid);
+        carousel.append (trash_affordance);
+        carousel.scroll_to (grid, true);
 
-        get_style_context ().add_class ("conversation-list-item");
+        add_css_class ("conversation-list-item");
         child = carousel;
 
-        show_all ();
-
-        gesture_controller = new Gtk.GestureClick (this) {
+        var gesture_controller = new Gtk.GestureClick () {
             button = Gdk.BUTTON_SECONDARY,
             propagation_phase = BUBBLE
         };
@@ -123,7 +117,7 @@ public class Mail.ConversationListItem : Granite.Bin {
             create_context_menu (x, y);
         });
 
-        key_controller = new Gtk.EventControllerKey (this);
+        var key_controller = new Gtk.EventControllerKey ();
 
         key_controller.key_released.connect ((keyval) => {
             if (keyval != Gdk.Key.Menu) {
@@ -133,6 +127,9 @@ public class Mail.ConversationListItem : Granite.Bin {
             create_context_menu ();
         });
 
+        add_controller (gesture_controller);
+        add_controller (key_controller);
+
         carousel.page_changed.connect ((index) => {
             if (index == 1) {
                 return;
@@ -140,7 +137,7 @@ public class Mail.ConversationListItem : Granite.Bin {
 
             select ();
 
-            var main_window = (MainWindow)get_toplevel ();
+            var main_window = (MainWindow)get_root ();
             if (index == 2) {
                 main_window.activate_action (MainWindow.ACTION_MOVE_TO_TRASH, null);
             } else if (index == 0) {
@@ -148,14 +145,14 @@ public class Mail.ConversationListItem : Granite.Bin {
             }
 
             Idle.add (() => {
-                carousel.scroll_to_full (grid, 0);
+                carousel.scroll_to (grid, false);
                 return Source.REMOVE;
             });
         });
     }
 
     public void assign (ConversationItemModel data) {
-        carousel.scroll_to_full (grid, 0);
+        carousel.scroll_to (grid, false);
 
         date.label = data.formatted_date;
         topic.label = data.subject;
@@ -175,19 +172,19 @@ public class Mail.ConversationListItem : Granite.Bin {
         messages.no_show_all = num_messages <= 1;
 
         if (data.unread) {
-            grid.get_style_context ().add_class ("unread-message");
+            grid.add_css_class ("unread-message");
 
             status_icon.icon_name = "mail-unread-symbolic";
             status_icon.tooltip_text = _("Unread");
-            status_icon.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
+            status_icon.add_css_class (Granite.CssClass.ACCENT);
 
             status_revealer.reveal_child = true;
 
-            source.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
+            source.add_css_class (Granite.CssClass.ACCENT);
         } else {
-            grid.get_style_context ().remove_class ("unread-message");
-            status_icon.get_style_context ().remove_class (Granite.STYLE_CLASS_ACCENT);
-            source.get_style_context ().remove_class (Granite.STYLE_CLASS_ACCENT);
+            grid.remove_css_class ("unread-message");
+            status_icon.remove_css_class (Granite.CssClass.ACCENT);
+            source.remove_css_class (Granite.CssClass.ACCENT);
 
             if (data.replied_all || data.replied) {
                 status_icon.icon_name = "mail-replied-symbolic";
@@ -226,7 +223,6 @@ public class Mail.ConversationListItem : Granite.Bin {
         var menu = new Gtk.Menu.from_model (menu_model) {
             attach_widget = this
         };
-        menu.show_all ();
         menu.popup_at_pointer (null);
 
         if (x == null || y == null) {
@@ -261,10 +257,10 @@ public class Mail.ConversationListItem : Granite.Bin {
         }
 
         construct {
-            var image = new Gtk.Image.from_icon_name (icon_name, MENU);
+            var image = new Gtk.Image.from_icon_name (icon_name);
 
             var label = new Gtk.Label (label);
-            label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            label.add_css_class (Granite.CssClass.SMALL);
             label.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var box = new Gtk.Box (VERTICAL, 3) {
@@ -273,17 +269,17 @@ public class Mail.ConversationListItem : Granite.Bin {
                 valign = CENTER,
                 vexpand = false
             };
-            box.add (image);
-            box.add (label);
+            box.append (image);
+            box.append (label);
 
-            add (box);
+            append (box);
 
             get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             if (alignment == Gtk.Align.START) {
-                get_style_context ().add_class ("start");
+                add_css_class ("start");
             } else if (alignment == Gtk.Align.END) {
-                get_style_context ().add_class ("end");
+                add_css_class ("end");
             }
         }
     }

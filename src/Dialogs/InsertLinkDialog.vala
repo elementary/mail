@@ -59,7 +59,6 @@ public class InsertLinkDialog : Granite.Dialog {
         grid.attach (url_entry, 1, 0);
         grid.attach (title_label, 0, 1);
         grid.attach (title_entry, 1, 1);
-        grid.show_all ();
 
         get_content_area ().add (grid);
 
@@ -69,7 +68,7 @@ public class InsertLinkDialog : Granite.Dialog {
         insert_button.can_default = true;
         insert_button.has_default = true;
         insert_button.sensitive = false;
-        insert_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        insert_button.add_css_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         deletable = false;
         modal = true;

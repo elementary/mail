@@ -33,8 +33,8 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
         var start_header = new Adw.HeaderBar () {
             show_close_button = true
         };
-        start_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-        start_header.get_style_context ().add_class ("default-decoration");
+        start_header.add_css_class (Gtk.STYLE_CLASS_FLAT);
+        start_header.add_css_class ("default-decoration");
 
         var placeholder_title = new Gtk.Label (_("No Signatures")) {
             xalign = 0
@@ -44,16 +44,15 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
             wrap = true,
             xalign = 0
         };
-        placeholder_description.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-        placeholder_description.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+        placeholder_description.add_css_class (Granite.CssClass.DIM);
+        placeholder_description.add_css_class (Granite.CssClass.SMALL);
 
         var placeholder = new Gtk.Box (VERTICAL, 0) {
             margin_start = 12,
             margin_end = 12
         };
-        placeholder.add (placeholder_title);
-        placeholder.add (placeholder_description);
-        placeholder.show_all ();
+        placeholder.append (placeholder_title);
+        placeholder.append (placeholder_description);
 
         signature_list = new Gtk.ListBox () {
             vexpand = true,
@@ -63,25 +62,25 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
         signature_list.set_placeholder (placeholder);
 
         var add_box = new Gtk.Box (HORIZONTAL, 0);
-        add_box.add (new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
-        add_box.add (new Gtk.Label (_("Create Signature")));
+        add_box.append (new Gtk.Image.from_icon_name ("list-add-symbolic"));
+        add_box.append (new Gtk.Label (_("Create Signature")));
 
         var add_button = new Gtk.Button () {
             child = add_box,
             margin_top = 2,
             margin_bottom = 2
         };
-        add_button.get_style_context ().add_class ("image-button");
+        add_button.add_css_class ("image-button");
 
         var start_actionbar = new Gtk.ActionBar ();
-        start_actionbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        start_actionbar.add_css_class (Gtk.STYLE_CLASS_FLAT);
         start_actionbar.pack_start (add_button);
 
         var start_box = new Gtk.Box (VERTICAL, 0);
-        start_box.get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
-        start_box.add (start_header);
-        start_box.add (signature_list);
-        start_box.add (start_actionbar);
+        start_box.add_css_class (Granite.STYLE_CLASS_SIDEBAR);
+        start_box.append (start_header);
+        start_box.append (signature_list);
+        start_box.append (start_actionbar);
 
         var title = new Granite.HeaderLabel (_("Title")) {
             margin_start = 9
@@ -90,8 +89,8 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
         var end_header = new Adw.HeaderBar () {
             show_close_button = true
         };
-        end_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-        end_header.get_style_context ().add_class ("default-decoration");
+        end_header.add_css_class (Gtk.STYLE_CLASS_FLAT);
+        end_header.add_css_class ("default-decoration");
         end_header.pack_start (title);
 
         title_entry = new Gtk.Entry () {
@@ -117,20 +116,20 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
             child = web_view
         };
 
-        var delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
+        var delete_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
             halign = START,
             tooltip_text = _("Delete"),
             sensitive = false
         };
-        delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
-        delete_button.get_style_context ().remove_class ("image-button");
+        delete_button.add_css_class (Granite.CssClass.ERROR);
+        delete_button.remove_css_class ("image-button");
 
         var default_menu = new Menu ();
 
         var default_menubutton = new Gtk.MenuButton () {
             always_show_image = true,
             halign = END,
-            image = new Gtk.Image.from_icon_name ("pan-down-symbolic", SMALL_TOOLBAR),
+            icon_name = "pan-down-symbolic",
             image_position = RIGHT,
             menu_model = default_menu,
             label = _("Set Default For…"),
@@ -150,15 +149,15 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
             margin_end = 12,
             margin_bottom = 12
         };
-        content_box.add (title_entry);
-        content_box.add (new Granite.HeaderLabel (_("Signature")) { margin_top = 6 });
-        content_box.add (frame);
-        content_box.add (end_actionbar);
+        content_box.append (title_entry);
+        content_box.append (new Granite.HeaderLabel (_("Signature")) { margin_top = 6 });
+        content_box.append (frame);
+        content_box.append (end_actionbar);
 
         var end_box = new Gtk.Box (VERTICAL, 0);
-        end_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        end_box.add (end_header);
-        end_box.add (content_box);
+        end_box.add_css_class (Granite.STYLE_CLASS_VIEW);
+        end_box.append (end_header);
+        end_box.append (content_box);
 
         var paned = new Gtk.Paned (HORIZONTAL) {
             position = 140
@@ -180,8 +179,7 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
 
         default_height = 300;
         default_width = 500;
-        add (overlay);
-        show_all ();
+        content = overlay;
         present ();
 
         load_signatures.begin ();
@@ -275,7 +273,7 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
     private async void load_signatures () {
         foreach (var signature_source in Mail.Backend.Session.get_default ().get_all_signature_sources ()) {
             var signature = yield new Signature (signature_source);
-            signature_list.add (signature);
+            signature_list.append (signature);
         }
 
         signature_list.select_row (signature_list.get_row_at_index (0));
@@ -311,7 +309,7 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
         }
 
         var new_signature = yield new Signature (new_signature_source);
-        signature_list.add (new_signature);
+        signature_list.append (new_signature);
         signature_list.select_row (new_signature);
     }
 

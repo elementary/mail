@@ -88,7 +88,6 @@ public class Mail.Alias : Gtk.ListBoxRow {
         edit_popover_content.add (name_entry);
         edit_popover_content.add (edit_address_label);
         edit_popover_content.add (address_entry);
-        edit_popover_content.show_all ();
 
         var edit_popover = new Gtk.Popover (null) {
             child = edit_popover_content
@@ -106,12 +105,11 @@ public class Mail.Alias : Gtk.ListBoxRow {
             margin_top = 6,
             margin_bottom = 6
         };
-        box.add (label);
-        box.add (edit_button);
-        box.add (delete_button);
+        box.append (label);
+        box.append (edit_button);
+        box.append (delete_button);
 
         child = box;
-        show_all ();
 
         map.connect (() => {
             if (address == "") {

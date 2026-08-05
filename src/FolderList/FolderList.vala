@@ -38,7 +38,7 @@ public class Mail.FolderList : Gtk.Box {
             show_close_button = true
         };
         header_bar.pack_end (compose_button);
-        header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        header_bar.add_css_class (Gtk.STYLE_CLASS_FLAT);
 
         var session = Mail.Backend.Session.get_default ();
 
@@ -47,7 +47,7 @@ public class Mail.FolderList : Gtk.Box {
         source_list = new Mail.SourceList ();
         source_list.root.add (session_source_item);
 
-        var scrolled_window = new Gtk.ScrolledWindow (null, null) {
+        var scrolled_window = new Gtk.ScrolledWindow () {
             child = source_list
         };
 
@@ -60,19 +60,19 @@ public class Mail.FolderList : Gtk.Box {
         menu_model.append_section (null, dialogs_section);
 
         var app_menu = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            image = new Gtk.Image.from_icon_name ("open-menu-symbolic"),
             menu_model = menu_model,
             tooltip_text = _("Menu"),
             use_popover = false
         };
 
         var action_bar = new Gtk.ActionBar ();
-        action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        action_bar.add_css_class (Gtk.STYLE_CLASS_FLAT);
         action_bar.pack_end (app_menu);
 
         orientation = VERTICAL;
         width_request = 100;
-        get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
+        add_css_class (Granite.STYLE_CLASS_SIDEBAR);
         add (header_bar);
         add (scrolled_window);
         add (action_bar);
@@ -106,7 +106,7 @@ public class Mail.FolderList : Gtk.Box {
         var edit_aliases_action = new SimpleAction (ACTION_EDIT_ALIASES, VariantType.STRING);
         edit_aliases_action.activate.connect ((param) => {
             new AliasDialog (param.get_string ()) {
-                transient_for = (Gtk.Window) get_toplevel ()
+                transient_for = (Gtk.Window) get_root ()
             }.present ();
         });
 
