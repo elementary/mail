@@ -6,13 +6,12 @@
  */
 
 public class Mail.FolderRow : Gtk.ListBoxRow {
-   public int depth { get; construct; } //Currently not used
    public Camel.FolderInfo folder_info { get; construct; }
    public Camel.Store store { get; construct; }
    public int pos { get; construct; }
 
-   public FolderRow (int depth, Camel.FolderInfo folder_info, Camel.Store store) {
-       Object (depth: depth, folder_info: folder_info, store: store);
+   public FolderRow (Camel.FolderInfo folder_info, Camel.Store store) {
+       Object (folder_info: folder_info, store: store);
    }
 
    construct {
