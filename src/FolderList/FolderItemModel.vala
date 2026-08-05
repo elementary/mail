@@ -42,7 +42,7 @@ public class Mail.FolderItemModel : Mail.SourceList.ExpandableItem {
         cancellable.cancel ();
     }
 
-    public override Gtk.Menu? get_context_menu () {
+    public override GLib.Menu? get_context_menu () {
         var menu = new Gtk.Menu ();
 
         var refresh_item = new Gtk.MenuItem.with_label (_("Refresh folder"));
