@@ -416,10 +416,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             base (name);
         }
 
-        construct {
-            editable = false;
-        }
-
         /**
          * Adds an item.
          *
@@ -1052,6 +1048,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
 
         private Item? selected;
         private unowned Item? edited;
+        private Item? activated;
 
         private Gtk.Entry? editable_entry;
         private Gtk.CellRendererText text_cell;
@@ -1624,8 +1621,11 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                             && item.selectable
                             && over_cell (column, path, text_cell, cell_x)
                         ) {
+                            // Keep back reference of item so that it can be accessed in Idle.add_once()
+                            // where item is already freed
+                            activated = item;
                             // Start editing after native event handlers finished else fails
-                            Idle.add_once (() => { start_editing_item (item); });
+                            Idle.add_once (() => { start_editing_item (activated); });
                         }
                     }
                 }
