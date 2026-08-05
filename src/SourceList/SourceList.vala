@@ -1110,8 +1110,8 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         }
 
         construct {
-            get_style_context ().add_class (Granite.STYLE_CLASS_SIDEBAR);
-            get_style_context ().add_class (Granite.STYLE_CLASS_SOURCE_LIST);
+            add_css_class (Granite.STYLE_CLASS_SIDEBAR);
+            add_css_class (Granite.STYLE_CLASS_SOURCE_LIST);
 
             var css_provider = new Gtk.CssProvider ();
             try {
@@ -1968,7 +1968,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
 
         set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
         add (tree);
-        show_all ();
 
         tree.item_selected.connect ((item) => item_selected (item));
     }

@@ -197,9 +197,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         }
 
         var starred_button = new Gtk.Button () {
-            child = starred_icon
+            child = starred_icon,
+            has_frame = false
         };
-        starred_button.add_css_class (Gtk.STYLE_CLASS_FLAT);
 
         var upper_section = new Menu ();
         upper_section.append (_("Reply"), Action.print_detailed_name (
@@ -222,6 +222,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         actions_menu.append_section (null, lower_section);
 
         var actions_menu_button = new Gtk.MenuButton () {
+            has_frame = false,
             icon_name = "view-more-symbolic",
             tooltip_text = _("More"),
             margin_top = 6,
@@ -230,7 +231,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             menu_model = actions_menu,
             use_popover = false
         };
-        actions_menu_button.add_css_class (Gtk.STYLE_CLASS_FLAT);
 
         var action_grid = new Gtk.Grid () {
             column_spacing = 3,
@@ -338,14 +338,13 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 hexpand = true,
                 homogeneous = true
             };
-            attachment_bar.add_css_class (Gtk.STYLE_CLASS_FLAT);
+            attachment_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
             attachment_bar.add_css_class ("bottom-toolbar");
             secondary_box.append (attachment_bar);
         }
 
         child = base_box;
         expanded = false;
-        show_all ();
 
         if (GLib.NetworkMonitor.get_default ().network_available) {
             get_gravatar.begin (parsed_address, (obj, res) => {

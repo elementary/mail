@@ -106,10 +106,11 @@ public class Mail.ConversationList : Gtk.Box {
         };
 
         search_header = new Adw.HeaderBar () {
+            // show_end_title_buttons = false,
             custom_title = search_entry
         };
         search_header.pack_end (filter_button);
-        search_header.add_css_class (Gtk.STYLE_CLASS_FLAT);
+        search_header.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         list_store = new ConversationListStore ();
         list_store.set_sort_func (thread_sort_function);

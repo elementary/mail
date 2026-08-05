@@ -78,7 +78,7 @@ public class Mail.AliasDialog : Granite.Dialog {
         add_button_label.mnemonic_widget = add_button;
 
         var actionbar = new Gtk.ActionBar ();
-        actionbar.add_css_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+        actionbar.add_css_class (Granite.STYLE_CLASS_FLAT);
         actionbar.pack_start (add_button);
 
         var content_box = new Gtk.Box (VERTICAL, 0);
@@ -98,7 +98,6 @@ public class Mail.AliasDialog : Granite.Dialog {
             child = frame
         };
         overlay.add_overlay (toast);
-        overlay.show_all ();
 
         title = _("Aliases");
         default_height = 300;

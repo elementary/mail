@@ -18,68 +18,30 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.WelcomeView : Gtk.Box {
+public class Mail.WelcomeView : Granite.Bin {
     construct {
         var headerbar = new Adw.HeaderBar () {
-            show_close_button = true
+            // show_start_title_buttons = true
         };
-        headerbar.add_css_class (Gtk.STYLE_CLASS_FLAT);
+        headerbar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
-        var welcome_icon = new Gtk.Image () {
-            icon_name = "io.elementary.mail",
-            margin_bottom = 6,
-            margin_end = 12,
-            pixel_size = 64
+        var placeholder = new Granite.Placeholder (_("Connect an Account")) {
+            description = _("Mail uses email accounts configured in System Settings."),
+            icon = new ThemedIcon ("io.elementary.mail")
         };
 
-        var welcome_badge = new Gtk.Image.from_icon_name ("preferences-desktop-online-accounts", Gtk.IconSize.DIALOG) {
-            halign = valign = Gtk.Align.END,
-        };
-
-        var welcome_overlay = new Gtk.Overlay () {
-            halign = Gtk.Align.CENTER,
-            child = welcome_icon
-        };
-        welcome_overlay.add_overlay (welcome_badge);
-
-        var welcome_title = new Gtk.Label (_("Connect an Account")) {
-            max_width_chars = 70,
-            wrap = true,
-            xalign = 0
-        };
-        welcome_title.add_css_class (Granite.STYLE_CLASS_H1_LABEL);
-
-        var welcome_description = new Gtk.Label (_("Mail uses email accounts configured in System Settings.")) {
-            max_width_chars = 70,
-            wrap = true,
-            xalign = 0
-        };
-        welcome_description.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
-
-        var welcome_button = new Gtk.Button.with_label (_("Online Accounts…")) {
-            margin_top = 24
-        };
-        welcome_button.add_css_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-
-        var grid = new Gtk.Grid () {
-            column_spacing = 12,
-            halign = valign = Gtk.Align.CENTER,
-            expand = true
-        };
-        grid.attach (welcome_overlay, 0, 0, 1, 2);
-        grid.attach (welcome_title, 1, 0);
-        grid.attach (welcome_description, 1, 1);
-        grid.attach (welcome_button, 1, 2);
+        var welcome_button = placeholder.append_button (new ThemedIcon ("preferences-desktop-online-accounts"), _("Online Accounts…"), "");
+        welcome_button.add_css_class (Granite.CssClass.SUGGESTED);
 
         var main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         main_box.append (headerbar);
-        main_box.append (grid);
+        main_box.append (placeholder);
 
         var window_handle = new Adw.WindowHandle () {
             child = main_box
         };
 
-        add (window_handle);
+        child = window_handle;
 
         welcome_button.clicked.connect (() => {
             try {

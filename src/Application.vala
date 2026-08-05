@@ -113,10 +113,6 @@ public class Mail.Application : Gtk.Application {
             gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
         });
 
-        var css_provider = new Gtk.CssProvider ();
-        css_provider.load_from_resource ("io/elementary/mail/application.css");
-        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (() => {
             foreach (unowned var window in get_windows ()) {
@@ -139,7 +135,7 @@ public class Mail.Application : Gtk.Application {
         var account_settings_action = new SimpleAction (ACTION_ACCOUNT_SETTINGS, null);
         account_settings_action.activate.connect (() => {
             try {
-                Gtk.show_uri_on_window (active_window, "settings://accounts/online", Gtk.get_current_event_time ());
+                Gtk.show_uri (active_window, "settings://accounts/online", Gtk.get_current_event_time ());
             } catch (Error e) {
                 var dialog = new Granite.MessageDialog (
                     _("Unable to open System Settings"),

@@ -79,10 +79,10 @@ public class Mail.Composer : Adw.ApplicationWindow {
         }
 
         var headerbar = new Adw.HeaderBar () {
-            has_subtitle = false,
-            show_close_button = true
+            // has_subtitle = false,
+            // show_close_button = true
         };
-        headerbar.add_css_class (Gtk.STYLE_CLASS_FLAT);
+        headerbar.add_css_class (Granite.STYLE_CLASS_FLAT);
         headerbar.add_css_class ("default-decoration");
 
         var from_label = new Gtk.Label (_("From:")) {
@@ -258,13 +258,13 @@ public class Mail.Composer : Adw.ApplicationWindow {
                 application.get_accels_for_action (ACTION_PREFIX + ACTION_SEND)
             )
         };
-        send.add_css_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        send.add_css_class (Granite.CssClass.SUGGESTED);
 
         var action_bar = new Gtk.ActionBar () {
             // Workaround styling issue
             margin_top = 1
         };
-        action_bar.add_css_class (Gtk.STYLE_CLASS_FLAT);
+        action_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
         action_bar.pack_start (discard);
         action_bar.pack_start (attach);
         action_bar.pack_start (signature_button);
@@ -1032,7 +1032,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
             var remove_button = new Gtk.Button.from_icon_name ("process-stop-symbolic") {
                 has_frame = false
             };
-            remove_button.get_style_context ().add_class (Granite.CssClass.DESTRUCTIVE);
+            remove_button.add_css_class (Granite.CssClass.DESTRUCTIVE);
 
             var box = new Gtk.Box (HORIZONTAL, 3) {
                 margin_top = 3,

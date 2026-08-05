@@ -31,9 +31,9 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
 
     construct {
         var start_header = new Adw.HeaderBar () {
-            show_close_button = true
+            show_start_title_buttons = true
         };
-        start_header.add_css_class (Gtk.STYLE_CLASS_FLAT);
+        start_header.add_css_class (Granite.STYLE_CLASS_FLAT);
         start_header.add_css_class ("default-decoration");
 
         var placeholder_title = new Gtk.Label (_("No Signatures")) {
@@ -73,7 +73,7 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
         add_button.add_css_class ("image-button");
 
         var start_actionbar = new Gtk.ActionBar ();
-        start_actionbar.add_css_class (Gtk.STYLE_CLASS_FLAT);
+        start_actionbar.add_css_class (Granite.STYLE_CLASS_FLAT);
         start_actionbar.pack_start (add_button);
 
         var start_box = new Gtk.Box (VERTICAL, 0);
@@ -87,9 +87,9 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
         };
 
         var end_header = new Adw.HeaderBar () {
-            show_close_button = true
+            show_end_title_buttons = true
         };
-        end_header.add_css_class (Gtk.STYLE_CLASS_FLAT);
+        end_header.add_css_class (Granite.STYLE_CLASS_FLAT);
         end_header.add_css_class ("default-decoration");
         end_header.pack_start (title);
 
@@ -128,13 +128,14 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
 
         var default_buttonbox = new Gtk.Box (HORIZONTAL, 0);
         default_buttonbox.append (new Gtk.Label (_("Set Default For…")));
+        // FIXME: Always show arrow?
         default_buttonbox.append (new Gtk.Image.from_icon_name ("pan-down-symbolic"));
 
         var default_menubutton = new Gtk.MenuButton () {
             child = default_buttonbox,
             halign = END,
             menu_model = default_menu,
-            use_popover = false,
+            // use_popover = false,
             direction = UP,
             sensitive = false
         };
@@ -161,10 +162,14 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
         end_box.append (content_box);
 
         var paned = new Gtk.Paned (HORIZONTAL) {
+            start_child = start_box,
+            shrink_start_child = false,
+            end_child = end_box,
+            shrink_end_child = false,
             position = 140
         };
-        paned.pack1 (start_box, false, false);
-        paned.pack2 (end_box, true, false);
+        // paned.pack1 (start_box, false, false);
+        // paned.pack2 (end_box, true, false);
 
         toast = new Granite.Toast ("");
         toast.set_default_action (_("Undo"));
@@ -173,10 +178,6 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
             child = paned
         };
         overlay.add_overlay (toast);
-
-        var header_group = new Adw.HeaderGroup ();
-        header_group.add_header_bar (start_header);
-        header_group.add_header_bar (end_header);
 
         default_height = 300;
         default_width = 500;

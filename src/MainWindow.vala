@@ -142,13 +142,23 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
             }
         });
 
-        paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
-        paned_start.pack1 (folders_list_view, false, false);
-        paned_start.pack2 (conversation_list, true, false);
+        paned_start = new Gtk.Paned (HORIZONTAL) {
+            start_child = folders_list_view,
+            shrink_start_child = false,
+            end_child = conversation_list,
+            shrink_end_child = false
+        };
+        // paned_start.pack1 (folders_list_view, false, false);
+        // paned_start.pack2 (conversation_list, true, false);
 
-        paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
-        paned_end.pack1 (paned_start, false, false);
-        paned_end.pack2 (view_overlay, true, false);
+        paned_end = new Gtk.Paned (HORIZONTAL) {
+            start_child = paned_start,
+            shrink_start_child = false,
+            end_child = view_overlay,
+            shrink_end_child = false
+        };
+        // paned_end.pack1 (paned_start, false, false);
+        // paned_end.pack2 (view_overlay, true, false);
 
         var welcome_view = new Mail.WelcomeView ();
 
@@ -157,11 +167,6 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
         placeholder_stack.add_named (welcome_view, "welcome");
 
         content = placeholder_stack;
-
-        var header_group = new Adw.HeaderGroup ();
-        header_group.add_header_bar (folders_list_view.header_bar);
-        header_group.add_header_bar (conversation_list.search_header);
-        header_group.add_header_bar (message_list.headerbar);
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.VERTICAL);
         size_group.add_widget (folders_list_view.header_bar);
@@ -323,11 +328,11 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
     }
 
     private void on_fullscreen () {
-        if (Gdk.WindowState.FULLSCREEN in get_window ().get_state ()) {
-            message_list.headerbar.show_close_button = true;
+        if (is_fullscreen) {
+            message_list.headerbar.show_end_title_buttons = true;
             unfullscreen ();
         } else {
-            message_list.headerbar.show_close_button = false;
+            message_list.headerbar.show_end_title_buttons = false;
             fullscreen ();
         }
     }

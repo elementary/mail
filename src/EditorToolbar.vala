@@ -51,21 +51,21 @@ public class EditorToolbar : Gtk.Box {
         var bold = new Gtk.ToggleButton () {
             action_name = ACTION_PREFIX + ACTION_BOLD,
             action_target = ACTION_BOLD,
-            image = new Gtk.Image.from_icon_name ("format-text-bold-symbolic"),
+            icon_name = "format-text-bold-symbolic",
             tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>B"}, _("Bold"))
         };
 
         var italic = new Gtk.ToggleButton () {
             action_name = ACTION_PREFIX + ACTION_ITALIC,
             action_target = ACTION_ITALIC,
-            image = new Gtk.Image.from_icon_name ("format-text-italic-symbolic"),
+            icon_name = "format-text-italic-symbolic",
             tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>I"}, _("Italic"))
         };
 
         var underline = new Gtk.ToggleButton () {
             action_name = ACTION_PREFIX + ACTION_UNDERLINE,
             action_target = ACTION_UNDERLINE,
-            image = new Gtk.Image.from_icon_name ("format-text-underline-symbolic"),
+            icon_name = "format-text-underline-symbolic",
             tooltip_markup = Granite.markup_accel_tooltip (
                 application.get_accels_for_action (
                     Action.print_detailed_name (ACTION_PREFIX + ACTION_UNDERLINE, ACTION_UNDERLINE)
@@ -77,7 +77,7 @@ public class EditorToolbar : Gtk.Box {
         var strikethrough = new Gtk.ToggleButton () {
             action_name = ACTION_PREFIX + ACTION_STRIKETHROUGH,
             action_target = ACTION_STRIKETHROUGH,
-            image = new Gtk.Image.from_icon_name ("format-text-strikethrough-symbolic"),
+            icon_name = "format-text-strikethrough-symbolic",
             tooltip_markup = Granite.markup_accel_tooltip (
                 application.get_accels_for_action (
                     Action.print_detailed_name (ACTION_PREFIX + ACTION_STRIKETHROUGH, ACTION_STRIKETHROUGH)
@@ -113,9 +113,9 @@ public class EditorToolbar : Gtk.Box {
         margin_bottom = 6;
         spacing = 6;
         orientation = HORIZONTAL;
-        add (formatting_buttons);
-        add (clear_format);
-        add (link);
+        append (formatting_buttons);
+        append (clear_format);
+        append (link);
 
         map.connect (() => {
             get_root ().insert_action_group (ACTION_GROUP_PREFIX, action_group);

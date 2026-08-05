@@ -56,7 +56,7 @@ public class Mail.ConversationListItem : Granite.Bin {
             halign = Gtk.Align.END
         };
         messages.add_css_class (Granite.STYLE_CLASS_BADGE);
-        messages.add_css_class (Gtk.STYLE_CLASS_FLAT);
+        messages.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         topic = new Gtk.Label (null) {
             hexpand = true,

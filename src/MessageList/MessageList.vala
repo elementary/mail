@@ -15,11 +15,11 @@ public class Mail.MessageList : Gtk.Box {
     private Gee.HashMap<string, MessageListItem> messages;
 
     construct {
-        add_css_class (Gtk.STYLE_CLASS_BACKGROUND);
+        add_css_class (Granite.STYLE_CLASS_BACKGROUND);
 
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
-        var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender", Gtk.IconSize.LARGE_TOOLBAR) {
+        var reply_button = new Gtk.Button.from_icon_name ("mail-reply-sender") {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY,
             action_target = ""
         };
@@ -27,8 +27,9 @@ public class Mail.MessageList : Gtk.Box {
             application_instance.get_accels_for_action (reply_button.action_name + "::"),
             _("Reply")
         );
+        reply_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
-        var reply_all_button = new Gtk.Button.from_icon_name ("mail-reply-all", Gtk.IconSize.LARGE_TOOLBAR) {
+        var reply_all_button = new Gtk.Button.from_icon_name ("mail-reply-all") {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL,
             action_target = ""
         };
@@ -36,8 +37,9 @@ public class Mail.MessageList : Gtk.Box {
             application_instance.get_accels_for_action (reply_all_button.action_name + "::"),
             _("Reply All")
         );
+        reply_all_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
-        var forward_button = new Gtk.Button.from_icon_name ("mail-forward", Gtk.IconSize.LARGE_TOOLBAR) {
+        var forward_button = new Gtk.Button.from_icon_name ("mail-forward") {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD,
             action_target = ""
         };
@@ -45,6 +47,7 @@ public class Mail.MessageList : Gtk.Box {
             application_instance.get_accels_for_action (forward_button.action_name + "::"),
             _("Forward")
         );
+        forward_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var mark_menumodel = new Menu ();
         mark_menumodel.append (_("Mark as Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD);
@@ -54,20 +57,22 @@ public class Mail.MessageList : Gtk.Box {
 
         var mark_button = new Gtk.MenuButton () {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MODIFY,
-            image = new Gtk.Image.from_icon_name ("edit-mark", Gtk.IconSize.LARGE_TOOLBAR),
+            icon_name = "edit-mark",
             menu_model = mark_menumodel,
-            use_popover = false,
+            // use_popover = false,
             tooltip_text = _("Mark Conversation")
         };
+        mark_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         folder_popover = new FolderPopover ();
 
         var move_button = new Gtk.MenuButton () {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MODIFY,
-            image = new Gtk.Image.from_icon_name ("mail-move", Gtk.IconSize.LARGE_TOOLBAR),
+            icon_name = "mail-move",
             tooltip_text = _("Move Conversation to…"),
             popover = folder_popover
         };
+        move_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         var archive_button = new Gtk.Button.from_icon_name ("mail-archive", Gtk.IconSize.LARGE_TOOLBAR) {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_ARCHIVE
@@ -76,19 +81,21 @@ public class Mail.MessageList : Gtk.Box {
             application_instance.get_accels_for_action (archive_button.action_name),
             _("Move conversations to archive")
         );
+        archive_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
-        var trash_button = new Gtk.Button.from_icon_name ("edit-delete", Gtk.IconSize.LARGE_TOOLBAR) {
+        var trash_button = new Gtk.Button.from_icon_name ("edit-delete") {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH
         };
         trash_button.tooltip_markup = Granite.markup_accel_tooltip (
             application_instance.get_accels_for_action (trash_button.action_name),
             _("Move conversations to Trash")
         );
+        trash_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         headerbar = new Adw.HeaderBar () {
-            show_close_button = true
+            show_end_title_buttons = true
         };
-        headerbar.add_css_class (Gtk.STYLE_CLASS_FLAT);
+        headerbar.add_css_class (Granite.STYLE_CLASS_FLAT);
         headerbar.pack_start (reply_button);
         headerbar.pack_start (reply_all_button);
         headerbar.pack_start (forward_button);
@@ -98,8 +105,8 @@ public class Mail.MessageList : Gtk.Box {
         headerbar.pack_end (mark_button);
 
         var placeholder = new Gtk.Label (_("No Message Selected"));
-        placeholder.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
-        placeholder.get_style_context ().add_class (Granite.CssClass.DIM);
+        placeholder.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
+        placeholder.add_css_class (Granite.CssClass.DIM);
 
         list_box = new Gtk.ListBox () {
             hexpand = true,
@@ -107,7 +114,7 @@ public class Mail.MessageList : Gtk.Box {
             selection_mode = NONE
         };
 
-        list_box.add_css_class (Gtk.STYLE_CLASS_BACKGROUND);
+        list_box.add_css_class (Granite.STYLE_CLASS_BACKGROUND);
         list_box.set_placeholder (placeholder);
         list_box.set_sort_func (message_sort_function);
 
@@ -123,8 +130,8 @@ public class Mail.MessageList : Gtk.Box {
         }
 
         orientation = VERTICAL;
-        add (headerbar);
-        add (scrolled_window);
+        append (headerbar);
+        append (scrolled_window);
     }
 
     public void set_conversation (Camel.FolderThreadNode? node) {

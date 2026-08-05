@@ -35,10 +35,10 @@ public class Mail.FolderList : Gtk.Box {
         );
 
         header_bar = new Adw.HeaderBar () {
-            show_close_button = true
+            show_start_title_buttons = true,
         };
         header_bar.pack_end (compose_button);
-        header_bar.add_css_class (Gtk.STYLE_CLASS_FLAT);
+        header_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         var session = Mail.Backend.Session.get_default ();
 
@@ -67,7 +67,7 @@ public class Mail.FolderList : Gtk.Box {
         };
 
         var action_bar = new Gtk.ActionBar ();
-        action_bar.add_css_class (Gtk.STYLE_CLASS_FLAT);
+        action_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
         action_bar.pack_end (app_menu);
 
         orientation = VERTICAL;
