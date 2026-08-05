@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-27 22:28+0000\n"
+"POT-Creation-Date: 2026-08-04 22:03+0000\n"
 "PO-Revision-Date: 2024-09-13 00:58+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -22,7 +22,16 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 06:00+0000\n"
 
-#: src/Application.vala:191
+#: src/Application.vala:145
+msgid "Unable to open System Settings"
+msgstr "無法開啟系統設定值"
+
+#: src/Application.vala:146
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr "請手動開啟系統設定或是安裝 Evolution 來設定線上帳號。"
+
+#: src/Application.vala:217
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
@@ -203,7 +212,7 @@ msgstr "無法傳送訊息"
 msgid "There was an unexpected error while sending your message."
 msgstr "傳送訊息時發生非預期的錯誤。"
 
-#: src/Composer.vala:946 src/FolderList/FolderList.vala:62
+#: src/Composer.vala:946 src/FolderList/FolderList.vala:55
 msgid "Edit Signatures…"
 msgstr "編輯簽章…"
 
@@ -365,27 +374,27 @@ msgstr "、 "
 msgid "Unknown"
 msgstr "未知"
 
-#: src/ConversationList/ConversationList.vala:86
+#: src/ConversationList/ConversationList.vala:85
 msgid "Search Mail"
 msgstr "搜尋郵件"
 
-#: src/ConversationList/ConversationList.vala:90
+#: src/ConversationList/ConversationList.vala:89
 msgid "Hide read conversations"
 msgstr "隱藏已讀對話"
 
-#: src/ConversationList/ConversationList.vala:91
+#: src/ConversationList/ConversationList.vala:90
 msgid "Hide unstarred conversations"
 msgstr "隱藏未加星號的對話"
 
-#: src/ConversationList/ConversationList.vala:108
+#: src/ConversationList/ConversationList.vala:107
 msgid "Filter Conversations"
 msgstr "過濾對話"
 
-#: src/ConversationList/ConversationList.vala:131
+#: src/ConversationList/ConversationList.vala:130
 msgid "Fetch new messages"
 msgstr "取得新訊息"
 
-#: src/ConversationList/ConversationList.vala:138
+#: src/ConversationList/ConversationList.vala:137
 msgid "Fetching new messages…"
 msgstr "正在取得新訊息…"
 
@@ -527,58 +536,49 @@ msgstr "設為預設…"
 msgid "Signature"
 msgstr "簽章"
 
-#: src/FolderList/AccountItemModel.vala:154
+#: src/FolderList/AccountItemModel.vala:155
 msgid "Edit Aliases…"
 msgstr "編輯別名…"
 
-#: src/FolderList/FolderItemModel.vala:52
+#: src/FolderList/FolderItemModel.vala:48
 msgid "Refresh folder"
 msgstr "重新整理"
 
-#: src/FolderList/FolderItemModel.vala:57
+#: src/FolderList/FolderItemModel.vala:53
 msgid "Rename folder"
 msgstr "重新命名資料夾"
 
-#: src/FolderList/FolderItemModel.vala:161
-#: src/FolderList/FolderItemModel.vala:190
-#: src/FolderList/FolderItemModel.vala:208
+#: src/FolderList/FolderItemModel.vala:146
+#: src/FolderList/FolderItemModel.vala:175
+#: src/FolderList/FolderItemModel.vala:193
 #, c-format
 msgid "Couldn't rename “%s”"
 msgstr "無法重新命名「%s」"
 
-#: src/FolderList/FolderItemModel.vala:162
+#: src/FolderList/FolderItemModel.vala:147
 msgid "Folder names cannot contain “/”"
 msgstr "資料夾名稱中不能包含 \"/\""
 
-#: src/FolderList/FolderItemModel.vala:191
+#: src/FolderList/FolderItemModel.vala:176
 #, c-format
 msgid "A folder named “%s” already exists"
 msgstr "名為「%s」的資料夾已經存在"
 
-#: src/FolderList/FolderList.vala:47
+#: src/FolderList/FolderList.vala:34
 msgid "Compose new message"
 msgstr "撰寫新訊息"
+
+#: src/FolderList/FolderList.vala:56
+msgid "Account Settings…"
+msgstr "帳號設定…"
 
 #: src/FolderList/FolderList.vala:59
 msgid "Always Show Remote Images"
 msgstr "永遠顯示遠端圖片"
 
-#: src/FolderList/FolderList.vala:67
-msgid "Account Settings…"
-msgstr "帳號設定…"
-
-#: src/FolderList/FolderList.vala:92
+#: src/FolderList/FolderList.vala:65
 msgid "Menu"
 msgstr "選單"
-
-#: src/FolderList/FolderList.vala:146
-msgid "Unable to open System Settings"
-msgstr "無法開啟系統設定值"
-
-#: src/FolderList/FolderList.vala:147
-msgid ""
-"Open System Settings manually or install Evolution to set up online accounts."
-msgstr "請手動開啟系統設定或是安裝 Evolution 來設定線上帳號。"
 
 #: src/FolderList/GroupedFolderItemModel.vala:38
 msgctxt "Inbox Folder"

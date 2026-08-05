@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-27 22:28+0000\n"
+"POT-Creation-Date: 2026-08-04 22:03+0000\n"
 "PO-Revision-Date: 2023-11-14 18:10+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/mail/mail/fr/>\n"
@@ -33,7 +33,18 @@ msgstr ""
 "X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
-#: src/Application.vala:191
+#: src/Application.vala:145
+msgid "Unable to open System Settings"
+msgstr "Impossible d'ouvrir les paramètres du système"
+
+#: src/Application.vala:146
+msgid ""
+"Open System Settings manually or install Evolution to set up online accounts."
+msgstr ""
+"Ouvrez manuellement les paramètres du système ou installez Evolution pour "
+"configurer des comptes en ligne."
+
+#: src/Application.vala:217
 msgid ""
 "Mail will automatically start when this device turns on and run when its "
 "window is closed so that it can send notifications when new mail arrives."
@@ -221,7 +232,7 @@ msgstr "Échec de l'envoi du message"
 msgid "There was an unexpected error while sending your message."
 msgstr "Une erreur inattendue s'est produite lors de l'envoi de votre message."
 
-#: src/Composer.vala:946 src/FolderList/FolderList.vala:62
+#: src/Composer.vala:946 src/FolderList/FolderList.vala:55
 msgid "Edit Signatures…"
 msgstr "Modifier les signatures…"
 
@@ -392,27 +403,27 @@ msgstr ", "
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: src/ConversationList/ConversationList.vala:86
+#: src/ConversationList/ConversationList.vala:85
 msgid "Search Mail"
 msgstr "Rechercher"
 
-#: src/ConversationList/ConversationList.vala:90
+#: src/ConversationList/ConversationList.vala:89
 msgid "Hide read conversations"
 msgstr "Masquer les conversations lues"
 
-#: src/ConversationList/ConversationList.vala:91
+#: src/ConversationList/ConversationList.vala:90
 msgid "Hide unstarred conversations"
 msgstr "Marquer les conversations non favorites"
 
-#: src/ConversationList/ConversationList.vala:108
+#: src/ConversationList/ConversationList.vala:107
 msgid "Filter Conversations"
 msgstr "Filtrer les conversations"
 
-#: src/ConversationList/ConversationList.vala:131
+#: src/ConversationList/ConversationList.vala:130
 msgid "Fetch new messages"
 msgstr "Récupérer les nouveaux messages"
 
-#: src/ConversationList/ConversationList.vala:138
+#: src/ConversationList/ConversationList.vala:137
 msgid "Fetching new messages…"
 msgstr "Récupération des nouveaux messages…"
 
@@ -557,60 +568,49 @@ msgstr "Définir par défaut pour…"
 msgid "Signature"
 msgstr "Signature"
 
-#: src/FolderList/AccountItemModel.vala:154
+#: src/FolderList/AccountItemModel.vala:155
 msgid "Edit Aliases…"
 msgstr "Modifier les alias…"
 
-#: src/FolderList/FolderItemModel.vala:52
+#: src/FolderList/FolderItemModel.vala:48
 msgid "Refresh folder"
 msgstr "Actualiser le dossier"
 
-#: src/FolderList/FolderItemModel.vala:57
+#: src/FolderList/FolderItemModel.vala:53
 msgid "Rename folder"
 msgstr "Renommer le dossier"
 
-#: src/FolderList/FolderItemModel.vala:161
-#: src/FolderList/FolderItemModel.vala:190
-#: src/FolderList/FolderItemModel.vala:208
+#: src/FolderList/FolderItemModel.vala:146
+#: src/FolderList/FolderItemModel.vala:175
+#: src/FolderList/FolderItemModel.vala:193
 #, c-format
 msgid "Couldn't rename “%s”"
 msgstr "Impossible de renommer « %s »"
 
-#: src/FolderList/FolderItemModel.vala:162
+#: src/FolderList/FolderItemModel.vala:147
 msgid "Folder names cannot contain “/”"
 msgstr "Les noms de dossier ne peuvent pas contenir « / »"
 
-#: src/FolderList/FolderItemModel.vala:191
+#: src/FolderList/FolderItemModel.vala:176
 #, c-format
 msgid "A folder named “%s” already exists"
 msgstr "Un dossier nommé « %s » existe déjà"
 
-#: src/FolderList/FolderList.vala:47
+#: src/FolderList/FolderList.vala:34
 msgid "Compose new message"
 msgstr "Rédiger un nouveau message"
+
+#: src/FolderList/FolderList.vala:56
+msgid "Account Settings…"
+msgstr "Paramètres de compte…"
 
 #: src/FolderList/FolderList.vala:59
 msgid "Always Show Remote Images"
 msgstr "Toujours afficher les images distantes"
 
-#: src/FolderList/FolderList.vala:67
-msgid "Account Settings…"
-msgstr "Paramètres de compte…"
-
-#: src/FolderList/FolderList.vala:92
+#: src/FolderList/FolderList.vala:65
 msgid "Menu"
 msgstr "Menu"
-
-#: src/FolderList/FolderList.vala:146
-msgid "Unable to open System Settings"
-msgstr "Impossible d'ouvrir les paramètres du système"
-
-#: src/FolderList/FolderList.vala:147
-msgid ""
-"Open System Settings manually or install Evolution to set up online accounts."
-msgstr ""
-"Ouvrez manuellement les paramètres du système ou installez Evolution pour "
-"configurer des comptes en ligne."
 
 #: src/FolderList/GroupedFolderItemModel.vala:38
 msgctxt "Inbox Folder"
