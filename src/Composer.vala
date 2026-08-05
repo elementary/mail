@@ -243,12 +243,14 @@ public class Mail.Composer : Adw.ApplicationWindow {
             tooltip_text = _("Insert Signature…")
         };
 
-        var send = new Gtk.Button.from_icon_name ("mail-send-symbolic") {
+        var send_buttonbox = new Gtk.Box (HORIZONTAL, 0);
+        send_buttonbox.append (new Gtk.Image.from_icon_name ("mail-send-symbolic"));
+        send_buttonbox.append (new Gtk.Label (_("Send")));
+
+        var send = new Gtk.Button () {
             action_name = ACTION_PREFIX + ACTION_SEND,
-            always_show_image = true,
-            label = _("Send"),
+            child = send_buttonbox,
             margin_top = 6,
-            margin_end = 0,
             margin_bottom = 6,
             margin_start = 6,
             sensitive = false,

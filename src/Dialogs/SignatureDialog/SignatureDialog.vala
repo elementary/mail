@@ -126,13 +126,14 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
 
         var default_menu = new Menu ();
 
+        var default_buttonbox = new Gtk.Box (HORIZONTAL, 0);
+        default_buttonbox.append (new Gtk.Label (_("Set Default For…")));
+        default_buttonbox.append (new Gtk.Image.from_icon_name ("pan-down-symbolic"));
+
         var default_menubutton = new Gtk.MenuButton () {
-            always_show_image = true,
+            child = default_buttonbox,
             halign = END,
-            icon_name = "pan-down-symbolic",
-            image_position = RIGHT,
             menu_model = default_menu,
-            label = _("Set Default For…"),
             use_popover = false,
             direction = UP,
             sensitive = false
