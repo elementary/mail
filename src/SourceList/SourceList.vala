@@ -416,10 +416,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             base (name);
         }
 
-        construct {
-            editable = false;
-        }
-
         /**
          * Adds an item.
          *
