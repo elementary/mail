@@ -28,8 +28,6 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
     private ConversationList conversation_list;
     private MessageList message_list;
 
-    private uint configure_id;
-
     public bool is_session_started { get; private set; default = false; }
     public signal void session_started ();
 
@@ -361,29 +359,5 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
 
         dialog.present ();
         dialog.response.connect (dialog.destroy);
-    }
-
-    public override bool configure_event (Gdk.EventConfigure event) {
-        if (configure_id != 0) {
-            GLib.Source.remove (configure_id);
-        }
-
-        configure_id = Timeout.add (100, () => {
-            configure_id = 0;
-
-            if (is_maximized) {
-                Mail.Application.settings.set_boolean ("window-maximized", true);
-            } else {
-                Mail.Application.settings.set_boolean ("window-maximized", false);
-
-                Gdk.Rectangle rect;
-                get_allocation (out rect);
-                Mail.Application.settings.set ("window-size", "(ii)", rect.width, rect.height);
-            }
-
-            return false;
-        });
-
-        return base.configure_event (event);
     }
 }

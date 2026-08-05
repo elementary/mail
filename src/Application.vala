@@ -188,15 +188,19 @@ public class Mail.Application : Gtk.Application {
             main_window = new MainWindow (this);
             add_window (main_window);
 
-            var rect = Gtk.Allocation ();
-            settings.get ("window-size", "(ii)", out rect.width, out rect.height);
-            main_window.set_allocation (rect);
+            /*
+            * This is very finicky. Bind size after present else set_titlebar gives us bad sizes
+            * Set maximize after height/width else window is min size on unmaximize
+            * Bind maximize as SET else get get bad sizes
+            */
+            settings.bind ("window-height", main_window, "default-height", SettingsBindFlags.DEFAULT);
+            settings.bind ("window-width", main_window, "default-width", SettingsBindFlags.DEFAULT);
 
             if (settings.get_boolean ("window-maximized")) {
                 main_window.maximize ();
             }
 
-            main_window.show_all ();
+            settings.bind ("window-maximized", main_window, "maximized", SettingsBindFlags.SET);
         }
 
         main_window.present ();
