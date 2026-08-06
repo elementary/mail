@@ -25,7 +25,7 @@ public class Mail.FolderList : Gtk.Box {
     construct {
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
-        var compose_button = new Gtk.Button.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR) {
+        var compose_button = new Gtk.Button.from_icon_name ("mail-message-new") {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_COMPOSE_MESSAGE,
             halign = START
         };
@@ -33,6 +33,7 @@ public class Mail.FolderList : Gtk.Box {
             application_instance.get_accels_for_action (compose_button.action_name),
             _("Compose new message")
         );
+        compose_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         header_bar = new Adw.HeaderBar () {
             show_start_title_buttons = true,

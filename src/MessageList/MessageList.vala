@@ -74,7 +74,7 @@ public class Mail.MessageList : Gtk.Box {
         };
         move_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
-        var archive_button = new Gtk.Button.from_icon_name ("mail-archive", Gtk.IconSize.LARGE_TOOLBAR) {
+        var archive_button = new Gtk.Button.from_icon_name ("mail-archive") {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_ARCHIVE
         };
         archive_button.tooltip_markup = Granite.markup_accel_tooltip (
