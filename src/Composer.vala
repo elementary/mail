@@ -222,7 +222,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             homogeneous = true,
             selection_mode = Gtk.SelectionMode.NONE
         };
-        attachment_box.bind_model (attachment_list, (obj) => { return (Attachment) obj; });
+        attachment_box.bind_model (attachment_list, (obj) => (Attachment) obj);
         attachment_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
         var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU) {
