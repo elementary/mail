@@ -10,11 +10,12 @@ public class Mail.MessageList : Gtk.Box {
     public Hdy.HeaderBar headerbar { get; private set; }
 
     private FolderPopover folder_popover;
-    private Gtk.ListBox list_box;
-    private Gtk.ScrolledWindow scrolled_window;
     private Gee.HashMap<string, MessageListItem> messages;
+    private ListStore message_list;
 
     construct {
+        message_list = new ListStore (typeof (MessageListItem));
+
         get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
 
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
@@ -105,20 +106,21 @@ public class Mail.MessageList : Gtk.Box {
         placeholder_style_context.add_class (Granite.STYLE_CLASS_H2_LABEL);
         placeholder_style_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        list_box = new Gtk.ListBox () {
+        var list_box = new Gtk.ListBox () {
             hexpand = true,
             vexpand = true,
             selection_mode = NONE
         };
+        list_box.bind_model (message_list, (obj) => (MessageListItem) obj);
 
         list_box.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
         list_box.set_placeholder (placeholder);
         list_box.set_sort_func (message_sort_function);
 
-        scrolled_window = new Gtk.ScrolledWindow (null, null) {
+        var scrolled_window = new Gtk.ScrolledWindow (null, null) {
+            child = list_box,
             hscrollbar_policy = NEVER
         };
-        scrolled_window.add (list_box);
 
         // Prevent the focus of the webview causing the ScrolledWindow to scroll
         var scrolled_child = scrolled_window.get_child ();
@@ -140,10 +142,8 @@ public class Mail.MessageList : Gtk.Box {
         can_reply (false);
         can_move_thread (false);
 
-        list_box.get_children ().foreach ((child) => {
-            child.destroy ();
-        });
         messages = new Gee.HashMap<string, MessageListItem> (null, null);
+        message_list.remove_all ();
 
         if (node == null) {
             return;
@@ -159,24 +159,21 @@ public class Mail.MessageList : Gtk.Box {
         folder_popover.set_store (store);
 
         var item = new MessageListItem (node.message);
-        list_box.add (item);
+
         messages.set (node.message.uid, item);
+        message_list.append (item);
+
         if (node.child != null) {
             go_down ((Camel.FolderThreadNode?) node.child);
         }
 
-        var children = list_box.get_children ();
-        var num_children = children.length ();
-        if (num_children > 0) {
-            var child = list_box.get_row_at_index ((int) num_children - 1);
-            if (child != null && child is MessageListItem) {
-                var list_item = (MessageListItem) child;
-                list_item.expanded = true;
-                can_reply (list_item.loaded);
-                list_item.notify["loaded"].connect (() => {
-                    can_reply (list_item.loaded);
-                });
-            }
+        if (message_list.n_items > 0) {
+            var last_item = (MessageListItem) message_list.get_item (message_list.n_items - 1);
+            last_item.expanded = true;
+            can_reply (last_item.loaded);
+            last_item.notify["loaded"].connect (() => {
+                can_reply (last_item.loaded);
+            });
         }
 
         if (node.message != null && Camel.MessageFlags.DRAFT in (int) node.message.flags) {
@@ -188,8 +185,10 @@ public class Mail.MessageList : Gtk.Box {
         unowned Camel.FolderThreadNode? current_node = node;
         while (current_node != null) {
             var item = new MessageListItem (current_node.message);
-            list_box.add (item);
+
             messages.set (current_node.message.uid, item);
+            message_list.append (item);
+
             if (current_node.next != null) {
                 go_down ((Camel.FolderThreadNode?) current_node.next);
             }
@@ -200,15 +199,14 @@ public class Mail.MessageList : Gtk.Box {
 
     public async void compose (Composer.Type type, Variant uid) {
         /* Can't open a new composer if thread is empty*/
-        var last_child = list_box.get_row_at_index ((int) list_box.get_children ().length () - 1);
-        if (last_child == null) {
+        if (message_list.n_items == 0) {
             return;
         }
 
         MessageListItem message_item = null;
 
         if (uid.get_string () == "") {
-            message_item = (MessageListItem) last_child;
+            message_item = (MessageListItem) message_list.get_item (message_list.n_items - 1);
         } else {
             message_item = messages.get (uid.get_string ());
         }
