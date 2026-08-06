@@ -115,7 +115,6 @@ public class Mail.MessageList : Gtk.Box {
 
         list_box.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
         list_box.set_placeholder (placeholder);
-        list_box.set_sort_func (message_sort_function);
 
         var scrolled_window = new Gtk.ScrolledWindow (null, null) {
             child = list_box,
@@ -161,7 +160,7 @@ public class Mail.MessageList : Gtk.Box {
         var item = new MessageListItem (node.message);
 
         messages.set (node.message.uid, item);
-        message_list.append (item);
+        message_list.insert_sorted (item, message_sort_function);
 
         if (node.child != null) {
             go_down ((Camel.FolderThreadNode?) node.child);
@@ -187,7 +186,7 @@ public class Mail.MessageList : Gtk.Box {
             var item = new MessageListItem (current_node.message);
 
             messages.set (current_node.message.uid, item);
-            message_list.append (item);
+            message_list.insert_sorted (item, message_sort_function);
 
             if (current_node.next != null) {
                 go_down ((Camel.FolderThreadNode?) current_node.next);
@@ -247,7 +246,7 @@ public class Mail.MessageList : Gtk.Box {
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE_TO_TRASH)).set_enabled (enabled);
     }
 
-    private static int message_sort_function (Gtk.ListBoxRow item1, Gtk.ListBoxRow item2) {
+    private static int message_sort_function (Object item1, Object item2) {
         unowned MessageListItem message1 = (MessageListItem)item1;
         unowned MessageListItem message2 = (MessageListItem)item2;
 
