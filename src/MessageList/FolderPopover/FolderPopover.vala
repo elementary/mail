@@ -84,20 +84,20 @@ public class Mail.FolderPopover : Gtk.Popover {
         store.get_folder_info.begin (null, Camel.StoreGetFolderInfoFlags.RECURSIVE, GLib.Priority.DEFAULT, null, (obj, res) => {
             try {
                 var folder_info = store.get_folder_info.end (res);
-                update (folder_info, 0, store);
+                update (folder_info, store);
             } catch (Error e) {
                 critical (e.message);
             }
         });
     }
 
-    private void update (Camel.FolderInfo top, int depth, Camel.Store store) {
+    private void update (Camel.FolderInfo top, Camel.Store store) {
         var folder_info = top;
         while (folder_info != null) {
-            list_box.append (new FolderRow (depth, folder_info, store));
+            list_box.append (new FolderRow (folder_info, store));
 
             if (folder_info.child != null) {
-                update (folder_info.child, depth + 1, store);
+                update (folder_info.child, store);
             }
             folder_info = folder_info.next;
         }

@@ -85,16 +85,17 @@ public class Mail.Composer : Adw.ApplicationWindow {
         headerbar.add_css_class (Granite.STYLE_CLASS_FLAT);
         headerbar.add_css_class ("default-decoration");
 
-        var from_label = new Gtk.Label (_("From:")) {
-            xalign = 1
-        };
-        from_label.add_css_class (Granite.CssClass.DIM);
-
         from_combo = new Gtk.ComboBoxText () {
             hexpand = true
         };
 
-        var from_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+        var from_label = new Gtk.Label (_("From:")) {
+            mnemonic_widget = from_combo,
+            xalign = 1
+        };
+        from_label.add_css_class (Granite.CssClass.DIM);
+
+        var from_box = new Gtk.Box (HORIZONTAL, 6) {
             margin_bottom = 6
         };
         from_box.append (from_label);
@@ -104,19 +105,15 @@ public class Mail.Composer : Adw.ApplicationWindow {
             child = from_box
         };
 
-        var to_label = new Gtk.Label (_("To:")) {
-            xalign = 1
-        };
-        to_label.add_css_class (Granite.CssClass.DIM);
-
-        var subject_label = new Gtk.Label (_("Subject:")) {
-            xalign = 1
-        };
-        subject_label.add_css_class (Granite.CssClass.DIM);
-
         to_val = new Gtk.Entry () {
             hexpand = true
         };
+
+        var to_label = new Gtk.Label (_("To:")) {
+            mnemonic_widget = to_val,
+            xalign = 1
+        };
+        to_label.add_css_class (Granite.CssClass.DIM);
 
         cc_button = new Gtk.ToggleButton.with_label (_("Cc"));
 
@@ -127,16 +124,17 @@ public class Mail.Composer : Adw.ApplicationWindow {
         to_grid.add (cc_button);
         to_grid.add (bcc_button);
 
-        var cc_label = new Gtk.Label (_("Cc:")) {
-            xalign = 1
-        };
-        cc_label.add_css_class (Granite.CssClass.DIM);
-
         cc_val = new Gtk.Entry () {
             hexpand = true
         };
 
-        var cc_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+        var cc_label = new Gtk.Label (_("Cc:")) {
+            mnemonic_widget = cc_val,
+            xalign = 1
+        };
+        cc_label.add_css_class (Granite.CssClass.DIM);
+
+        var cc_box = new Gtk.Box (HORIZONTAL, 6) {
             margin_top = 6
         };
         cc_box.append (cc_label);
@@ -145,16 +143,17 @@ public class Mail.Composer : Adw.ApplicationWindow {
         cc_revealer = new Gtk.Revealer ();
         cc_revealer.add (cc_box);
 
-        var bcc_label = new Gtk.Label (_("Bcc:")) {
-            xalign = 1
-        };
-        bcc_label.add_css_class (Granite.CssClass.DIM);
-
         bcc_val = new Gtk.Entry () {
             hexpand = true
         };
 
-        var bcc_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+        var bcc_label = new Gtk.Label (_("Bcc:")) {
+            mnemonic_widget = bcc_val,
+            xalign = 1
+        };
+        bcc_label.add_css_class (Granite.CssClass.DIM);
+
+        var bcc_box = new Gtk.Box (HORIZONTAL, 6) {
             margin_top = 6
         };
         bcc_box.append (bcc_label);
@@ -166,6 +165,12 @@ public class Mail.Composer : Adw.ApplicationWindow {
         subject_val = new Gtk.Entry () {
             margin_top = 6
         };
+
+        var subject_label = new Gtk.Label (_("Subject:")) {
+            mnemonic_widget = subject_val,
+            xalign = 1
+        };
+        subject_label.add_css_class (Granite.CssClass.DIM);
 
         subject_val.changed.connect (() => {
             title = subject_val.text;
@@ -215,7 +220,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
             homogeneous = true,
             selection_mode = Gtk.SelectionMode.NONE
         };
-        attachment_box.add_css_class (Granite.STYLE_CLASS_VIEW);
+        attachment_box.append_css_class (Granite.STYLE_CLASS_VIEW);
 
         var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
             action_name = ACTION_PREFIX + ACTION_DISCARD,
@@ -274,14 +279,14 @@ public class Mail.Composer : Adw.ApplicationWindow {
             child = web_view
         };
 
-        message_url_overlay = new Granite.OverlayBar (view_overlay);
+        message_url_overlay = new Granite.Widgets.OverlayBar (view_overlay);
         message_url_overlay.no_show_all = true;
 
         var main_box = new Gtk.Box (VERTICAL, 0);
         main_box.append (headerbar);
         main_box.append (recipient_grid);
         main_box.append (editor_toolbar);
-        main_box.append (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        main_box.append (new Gtk.Separator (HORIZONTAL));
         main_box.append (view_overlay);
         main_box.append (attachment_box);
         main_box.append (action_bar);
@@ -316,9 +321,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
         bind_property ("has-recipients", send, "sensitive");
         bind_property ("title", headerbar, "title");
 
-        cc_button.clicked.connect (() => {
-            cc_revealer.reveal_child = cc_button.active;
-        });
+        cc_button.bind_property ("active", cc_revealer, "reveal-child", SYNC_CREATE);
 
         cc_val.changed.connect (() => {
             on_sanitize_recipient_entry (cc_val);
@@ -329,9 +332,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
             }
         });
 
-        bcc_button.clicked.connect (() => {
-            bcc_revealer.reveal_child = bcc_button.active;
-        });
+        bcc_button.bind_property ("active", bcc_revealer, "reveal-child", SYNC_CREATE);
 
         bcc_val.changed.connect (() => {
             on_sanitize_recipient_entry (bcc_val);
@@ -385,12 +386,12 @@ public class Mail.Composer : Adw.ApplicationWindow {
             }
 
             if ("bcc" in result) {
-                bcc_button.clicked ();
+                bcc_button.active = true;
                 bcc_val.text = result["bcc"].to_array ()[0];
             }
 
             if ("cc" in result) {
-                cc_button.clicked ();
+                cc_button.active = true;
                 cc_val.text = result["cc"].to_array ()[0];
             }
 
@@ -1053,6 +1054,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
             margin_bottom = 3;
             margin_start = 3;
             margin_end = 3;
+
             child = box;
 
             remove_button.clicked.connect (() => {
