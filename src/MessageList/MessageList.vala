@@ -56,7 +56,7 @@ public class Mail.MessageList : Gtk.Box {
         mark_menumodel.append (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR);
 
         var mark_button = new Gtk.MenuButton () {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MODIFY,
+            // action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MODIFY,
             icon_name = "edit-mark",
             menu_model = mark_menumodel,
             // use_popover = false,
@@ -67,7 +67,7 @@ public class Mail.MessageList : Gtk.Box {
         folder_popover = new FolderPopover ();
 
         var move_button = new Gtk.MenuButton () {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MODIFY,
+            // action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MODIFY,
             icon_name = "mail-move",
             tooltip_text = _("Move Conversation to…"),
             popover = folder_popover

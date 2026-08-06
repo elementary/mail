@@ -165,7 +165,7 @@ public class Mail.ConversationList : Gtk.Box {
             spinning = true,
             halign = Gtk.Align.CENTER,
             valign = Gtk.Align.CENTER,
-            no_show_all = true
+            visible = false
         };
         MoveOperation.bind_spinner (move_spinner);
 

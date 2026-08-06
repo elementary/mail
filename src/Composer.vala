@@ -120,9 +120,9 @@ public class Mail.Composer : Adw.ApplicationWindow {
         var bcc_button = new Gtk.ToggleButton.with_label (_("Bcc"));
 
         var to_grid = new EntryGrid ();
-        to_grid.add (to_val);
-        to_grid.add (cc_button);
-        to_grid.add (bcc_button);
+        // to_grid.add (to_val);
+        // to_grid.add (cc_button);
+        // to_grid.add (bcc_button);
 
         cc_val = new Gtk.Entry () {
             hexpand = true
@@ -140,8 +140,9 @@ public class Mail.Composer : Adw.ApplicationWindow {
         cc_box.append (cc_label);
         cc_box.append (cc_val);
 
-        cc_revealer = new Gtk.Revealer ();
-        cc_revealer.add (cc_box);
+        cc_revealer = new Gtk.Revealer () {
+            child = cc_box
+        };
 
         bcc_val = new Gtk.Entry () {
             hexpand = true
@@ -159,8 +160,9 @@ public class Mail.Composer : Adw.ApplicationWindow {
         bcc_box.append (bcc_label);
         bcc_box.append (bcc_val);
 
-        bcc_revealer = new Gtk.Revealer ();
-        bcc_revealer.add (bcc_box);
+        bcc_revealer = new Gtk.Revealer () {
+            child = bcc_box
+        };
 
         subject_val = new Gtk.Entry () {
             margin_top = 6
@@ -220,7 +222,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
             homogeneous = true,
             selection_mode = Gtk.SelectionMode.NONE
         };
-        attachment_box.append_css_class (Granite.STYLE_CLASS_VIEW);
+        attachment_box.add_css_class (Granite.STYLE_CLASS_VIEW);
 
         var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic") {
             action_name = ACTION_PREFIX + ACTION_DISCARD,
@@ -241,9 +243,9 @@ public class Mail.Composer : Adw.ApplicationWindow {
         var signature_menu = new Menu ();
 
         var signature_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("document-edit-symbolic"),
+            icon_name = "document-edit-symbolic",
             menu_model = signature_menu,
-            use_popover = false,
+            // use_popover = false,
             direction = UP,
             tooltip_text = _("Insert Signature…")
         };
@@ -279,8 +281,9 @@ public class Mail.Composer : Adw.ApplicationWindow {
             child = web_view
         };
 
-        message_url_overlay = new Granite.Widgets.OverlayBar (view_overlay);
-        message_url_overlay.no_show_all = true;
+        message_url_overlay = new Granite.OverlayBar (view_overlay) {
+            visible = false
+        };
 
         var main_box = new Gtk.Box (VERTICAL, 0);
         main_box.append (headerbar);
@@ -294,7 +297,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
         default_height = 500;
         default_width = 680;
         title = _("New Message");
-        add (main_box);
+        content = main_box;
 
         delete_event.connect (() => {
             save_draft.begin ((obj, res) => {
@@ -350,18 +353,6 @@ public class Mail.Composer : Adw.ApplicationWindow {
         to_val.changed.connect (() => {
             on_sanitize_recipient_entry (to_val);
             has_recipients = to_val.text != "";
-        });
-
-        to_val.get_style_context ().changed.connect (() => {
-            unowned Gtk.StyleContext to_grid_style_context = to_grid.get_style_context ();
-            var state = to_grid_style_context.get_state ();
-            if (to_val.has_focus) {
-                state |= Gtk.StateFlags.FOCUSED;
-            } else {
-                state ^= Gtk.StateFlags.FOCUSED;
-            }
-
-            to_grid_style_context.set_state (state);
         });
 
         if (to != null) {
@@ -521,7 +512,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
                 message_url_overlay.hide ();
             } else {
                 message_url_overlay.label = hover_url;
-                message_url_overlay.no_show_all = false;
+                message_url_overlay.visible = true;
             }
         } else {
             message_url_overlay.hide ();

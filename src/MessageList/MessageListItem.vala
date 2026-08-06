@@ -277,7 +277,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         calendar_info_bar.no_show_all = true;
 
         var calendar_info_bar_content = calendar_info_bar.get_content_area ();
-        calendar_info_bar_content.add (new Gtk.Image.from_icon_name ("x-office-calendar", LARGE_TOOLBAR));
+        calendar_info_bar_content.add (new Gtk.Image.from_icon_name ("x-office-calendar") { pixel_size = 24 });
         calendar_info_bar_content.add (new Gtk.Label (_("This message contains a Calendar Event.")));
 
         blocked_images_infobar = new Gtk.InfoBar () {
@@ -290,7 +290,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         };
         blocked_images_infobar.add_button (_("Show Images"), 1);
         blocked_images_infobar.add_button (_("Always Show from Sender"), 2);
-        blocked_images_infobar.add_css_class (Gtk.STYLE_CLASS_FRAME);
+        blocked_images_infobar.add_css_class (Granite.STYLE_CLASS_FRAME);
 
         var infobar_content = blocked_images_infobar.get_content_area ();
         infobar_content.add (new Gtk.Label (_("This message contains remote images.")));
@@ -367,12 +367,14 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             }
         });
 
-        var click_gesture = new Gtk.GestureClick (header_event_box);
+        var click_gesture = new Gtk.GestureClick ();
 
         click_gesture.released.connect (() => {
             expanded = !expanded;
             click_gesture.set_state (CLAIMED);
         });
+
+        add_controller (click_gesture);
 
         destroy.connect (() => {
             loading_cancellable.cancel ();
@@ -480,7 +482,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         /* GLib.File.new_for_uri seemingly doesn't support https */
         var uri = "http://www.gravatar.com/avatar/%s?d=404&s=%d".printf (
             Checksum.compute_for_string (ChecksumType.MD5, address.strip ().down ()),
-            avatar.size * get_style_context ().get_scale ()
+            avatar.size * scale_factor
         );
         var server_file = File.new_for_uri (uri);
         var path = Path.build_filename (Environment.get_tmp_dir (), server_file.get_basename ());

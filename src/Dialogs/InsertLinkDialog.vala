@@ -65,11 +65,10 @@ public class InsertLinkDialog : Granite.Dialog {
         add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
 
         var insert_button = add_button (_("Insert Link"), Gtk.ResponseType.APPLY);
-        insert_button.can_default = true;
-        insert_button.has_default = true;
         insert_button.sensitive = false;
         insert_button.add_css_class (Granite.CssClass.SUGGESTED);
 
+        default_widget = insert_button;
         deletable = false;
         modal = true;
 

@@ -37,7 +37,7 @@ public class Mail.WelcomeView : Granite.Bin {
         main_box.append (headerbar);
         main_box.append (placeholder);
 
-        var window_handle = new Adw.WindowHandle () {
+        var window_handle = new Gtk.WindowHandle () {
             child = main_box
         };
 

@@ -128,8 +128,9 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
         error_toast = new Granite.Toast ("");
         view_overlay.add_overlay (error_toast);
 
-        var message_overlay = new Granite.OverlayBar (view_overlay);
-        message_overlay.no_show_all = true;
+        var message_overlay = new Granite.OverlayBar (view_overlay) {
+            visible = false
+        };
 
         message_list.hovering_over_link.connect ((label, url) => {
             var hover_url = url != null ? GLib.Uri.unescape_string (url) : null;

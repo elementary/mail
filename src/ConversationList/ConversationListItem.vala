@@ -169,7 +169,6 @@ public class Mail.ConversationListItem : Granite.Bin {
         uint num_messages = data.num_messages;
         messages.label = num_messages > 1 ? "%u".printf (num_messages) : null;
         messages.visible = num_messages > 1;
-        messages.no_show_all = num_messages <= 1;
 
         if (data.unread) {
             grid.add_css_class ("unread-message");

@@ -17,28 +17,10 @@ public class Mail.FolderPopover : Gtk.Popover {
             margin_end = 12
         };
 
-        var placeholder_image = new Gtk.Image.from_icon_name ("edit-find-symbolic", DND);
-
-        var placeholder_title = new Gtk.Label (_("No mailboxes found")) {
-            xalign = 0
+        var placeholder = new Granite.Placeholder (_("No mailboxes found")) {
+            description = _("Try changing search terms"),
+            icon = new ThemedIcon ("edit-find-symbolic")
         };
-
-        var placeholder_subtitle = new Gtk.Label (_("Try changing search terms")) {
-            xalign = 0
-        };
-        placeholder_subtitle.add_css_class (Granite.CssClass.DIM);
-        placeholder_subtitle.add_css_class (Granite.CssClass.SMALL);
-
-        var placeholder = new Gtk.Grid () {
-            column_spacing = 6,
-            margin_top = 6,
-            margin_start = 12,
-            margin_bottom = 12,
-            margin_end = 12
-        };
-        placeholder.attach (placeholder_image, 0, 0, 1, 2);
-        placeholder.attach (placeholder_title, 1, 0);
-        placeholder.attach (placeholder_subtitle, 1, 1);
 
         list_box = new Gtk.ListBox () {
             activate_on_single_click = true
