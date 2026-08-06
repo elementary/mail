@@ -23,12 +23,12 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
     private bool discard_draft = false;
     private Camel.MessageInfo? ancestor_message_info = null;
+    private ListStore attachment_list;
 
     private WebView web_view;
     private Gtk.Entry to_val;
     private Gtk.Entry cc_val;
     private Gtk.Entry bcc_val;
-    private Gtk.FlowBox attachment_box;
     private Gtk.Revealer cc_revealer;
     private Gtk.Revealer bcc_revealer;
     private Gtk.ToggleButton cc_button;
@@ -64,6 +64,8 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     }
 
     construct {
+        attachment_list = new ListStore (typeof (Attachment));
+
         add_action_entries (ACTION_ENTRIES, this);
 
         application = (Gtk.Application) GLib.Application.get_default ();
@@ -216,10 +218,11 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         var editor_toolbar = new EditorToolbar (web_view);
         editor_toolbar.add (image);
 
-        attachment_box = new Gtk.FlowBox () {
+        var attachment_box = new Gtk.FlowBox () {
             homogeneous = true,
             selection_mode = Gtk.SelectionMode.NONE
         };
+        attachment_box.bind_model (attachment_list, (obj) => { return (Attachment) obj; });
         attachment_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
         var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU) {
@@ -417,9 +420,8 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 foreach (var path in result["attachment"]) {
                     var file = path.has_prefix ("file://") ? File.new_for_uri (path) : File.new_for_path (path);
 
-                    attachment_box.add (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
+                    attachment_list.append (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
                 }
-                attachment_box.show_all ();
             }
         }
     }
@@ -450,9 +452,8 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
             filechooser.hide ();
             foreach (unowned File file in filechooser.get_files ()) {
-                attachment_box.add (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
+                attachment_list.append (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
             }
-            attachment_box.show_all ();
         }
 
         filechooser.destroy ();
@@ -482,7 +483,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                     var inpustream = file.read ();
 
                     var attachment = new Attachment (file, Attachment.DISPOSITION_INLINE);
-                    attachment_box.add (attachment);
+                    attachment_list.append (attachment);
 
                     web_view.add_internal_resource (attachment.uri, inpustream);
                     web_view.execute_editor_command ("insertImage", attachment.uri);
@@ -737,8 +738,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                             yield part.content.decode_to_output_stream (output_stream, GLib.Priority.DEFAULT, null);
                         }
 
-                        attachment_box.add (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
-                        attachment_box.show_all ();
+                        attachment_list.append (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
                     } catch (Error e) {
                         critical (e.message);
                     }
@@ -908,15 +908,9 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         body.set_boundary (null);
         body.add_part (part);
 
-        if (attachment_box.get_children ().length () > 0) {
-            foreach (unowned Gtk.Widget attachment in attachment_box.get_children ()) {
-                if (!(attachment is Attachment)) {
-                    continue;
-                }
-
-                unowned var attachment_obj = (Attachment)attachment;
-                body.add_part (attachment_obj.get_mime_part ());
-            }
+        for (int i = 0; i < attachment_list.n_items; i++) {
+            var attachment = (Attachment) attachment_list.get_item (i);
+            body.add_part (attachment.get_mime_part ());
         }
 
         var message = new Camel.MimeMessage ();
@@ -1062,6 +1056,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             margin_end = 3;
 
             child = box;
+            show_all ();
 
             remove_button.clicked.connect (() => {
                 destroy ();
