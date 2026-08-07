@@ -952,7 +952,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         }
     }
 
-
     /**
      * Class responsible for rendering Item.icon and Item.activatable. It also
      * notifies about clicks through the activated() signal.
@@ -1066,19 +1065,15 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
 
         construct {
             get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
-
-            set_model (data_model);
-
-            halign = valign = Gtk.Align.FILL;
-            expand = true;
-
+            enable_grid_lines = NONE;
             enable_search = false;
             headers_visible = false;
-            enable_grid_lines = Gtk.TreeViewGridLines.NONE;
-
+            vexpand = true;
             // Deactivate GtkTreeView's built-in expander functionality
             expander_column = null;
             show_expanders = false;
+
+            set_model (data_model);
 
             // Second expander. Used for main categories
             secondary_expander_cell = new CellRendererExpander () {
