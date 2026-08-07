@@ -435,14 +435,18 @@ public class Mail.Composer : Adw.ApplicationWindow {
             _("Cancel")
         );
 
-        if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
+        filechooser.response.connect ((response) => {
             filechooser.hide ();
-            foreach (unowned File file in filechooser.get_files ()) {
-                attachment_list.append (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
+            if (response == Gtk.ResponseType.ACCEPT) {
+                var files = filechooser.get_files ();
+                for (int i = 0; files.get_item (i) != null; i++) {
+                    attachment_list.append (new Attachment ((File) files.get_item (i), Attachment.DISPOSITION_ATTACHMENT));
+                }
             }
-        }
+            filechooser.destroy ();
+        });
 
-        filechooser.destroy ();
+        filechooser.show ();
     }
 
     private void on_insert_image () {

@@ -340,8 +340,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         if (GLib.NetworkMonitor.get_default ().network_available) {
             get_gravatar.begin (parsed_address, (obj, res) => {
-                FileIcon? file_icon = get_gravatar.end (res);
-                avatar.set_loadable_icon (file_icon);
+                avatar.custom_image = get_gravatar.end (res);
             });
         }
 
@@ -429,7 +428,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         }
     }
 
-    private bool on_webview_context_menu (WebKit.ContextMenu menu, Gdk.Event event, WebKit.HitTestResult hit_test) {
+    private bool on_webview_context_menu (WebKit.ContextMenu menu, WebKit.HitTestResult hit_test) {
         WebKit.ContextMenu new_context_menu = new WebKit.ContextMenu ();
 
         for (int i = 0; i < menu.get_n_items (); i++) {
@@ -455,7 +454,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
         return false;
     }
 
-    private async FileIcon? get_gravatar (string address) {
+    private async Gdk.Texture? get_gravatar (string address) {
         /* GLib.File.new_for_uri seemingly doesn't support https */
         var uri = "http://www.gravatar.com/avatar/%s?d=404&s=%d".printf (
             Checksum.compute_for_string (ChecksumType.MD5, address.strip ().down ()),
@@ -476,7 +475,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             }
         }
 
-        return new FileIcon (local_file);
+        return Gdk.Texture.from_file (local_file);
     }
 
     private async void get_message () {

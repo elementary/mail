@@ -74,9 +74,9 @@ public class Mail.FolderList : Gtk.Box {
         orientation = VERTICAL;
         width_request = 100;
         add_css_class (Granite.STYLE_CLASS_SIDEBAR);
-        add (header_bar);
-        add (scrolled_window);
-        add (action_bar);
+        append (header_bar);
+        append (scrolled_window);
+        append (action_bar);
 
         session.get_accounts ().foreach ((account) => {
             add_account (account);
