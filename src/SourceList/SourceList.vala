@@ -879,8 +879,8 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         }
 
         private void resort () {
-            child_tree.set_sort_column_id (Gtk.SortColumn.UNSORTED, Gtk.SortType.ASCENDING);
-            child_tree.set_sort_column_id (Gtk.SortColumn.DEFAULT, Gtk.SortType.ASCENDING);
+            child_tree.set_sort_column_id (Gtk.TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID, Gtk.SortType.ASCENDING);
+            child_tree.set_sort_column_id (Gtk.TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID, Gtk.SortType.ASCENDING);
         }
 
         private int child_model_sort_func (Gtk.TreeModel model, Gtk.TreeIter a, Gtk.TreeIter b) {
