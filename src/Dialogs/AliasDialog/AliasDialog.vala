@@ -102,7 +102,7 @@ public class Mail.AliasDialog : Granite.Dialog {
         title = _("Aliases");
         default_height = 300;
         default_width = 500;
-        get_content_area ().add (overlay);
+        get_content_area ().append (overlay);
         this.add_button (_("Close"), Gtk.ResponseType.CLOSE);
 
         var identity_source = Backend.Session.get_default ().get_identity_source_for_account_uid (account_uid);

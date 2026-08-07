@@ -79,12 +79,10 @@ public class Mail.WebView : WebKit.WebView {
         setts.enable_fullscreen = false;
         setts.enable_html5_database = false;
         setts.enable_html5_local_storage = false;
-        setts.enable_java = false;
         setts.enable_javascript = false;
         setts.enable_media_stream = false;
         setts.enable_offline_web_application_cache = false;
         setts.enable_page_cache = false;
-        setts.enable_plugins = false;
 
         Object (settings: setts);
     }

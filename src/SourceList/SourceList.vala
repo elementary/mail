@@ -1955,7 +1955,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         tree = new Tree (data_model);
 
         set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
-        add (tree);
+        child = tree;
 
         tree.item_selected.connect ((item) => item_selected (item));
     }
