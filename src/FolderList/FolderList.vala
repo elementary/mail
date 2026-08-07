@@ -61,10 +61,10 @@ public class Mail.FolderList : Gtk.Box {
         menu_model.append_section (null, dialogs_section);
 
         var app_menu = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("open-menu-symbolic"),
+            icon_name = "open-menu-symbolic",
             menu_model = menu_model,
-            tooltip_text = _("Menu"),
-            use_popover = false
+            tooltip_text = _("Menu")
+            // use_popover = false
         };
 
         var action_bar = new Gtk.ActionBar ();

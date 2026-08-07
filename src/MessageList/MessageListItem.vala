@@ -228,8 +228,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             margin_top = 6,
             valign = START,
             halign = END,
-            menu_model = actions_menu,
-            use_popover = false
+            menu_model = actions_menu
+            // use_popover = false
         };
 
         var action_grid = new Gtk.Grid () {

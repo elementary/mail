@@ -75,7 +75,8 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         var glib_type = GLib.ContentType.from_mime_type (mime_type);
         var content_icon = GLib.ContentType.get_icon (glib_type);
 
-        preview_image = new Gtk.Image.from_gicon (content_icon, Gtk.IconSize.DND) {
+        preview_image = new Gtk.Image.from_gicon (content_icon) {
+            pixel_size = 32,
             valign = Gtk.Align.CENTER
         };
 

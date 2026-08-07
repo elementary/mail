@@ -64,11 +64,9 @@ public class Mail.CellRendererBadge : Gtk.CellRenderer {
         // This is needed in order to fetch the proper style information.
         ctx.add_class (Granite.STYLE_CLASS_BADGE);
 
-        var state = ctx.get_state ();
-
-        margin = ctx.get_margin (state);
-        padding = ctx.get_padding (state);
-        border = ctx.get_border (state);
+        margin = ctx.get_margin ();
+        padding = ctx.get_padding ();
+        border = ctx.get_border ();
 
         text_layout = widget.create_pango_layout (text);
 
@@ -78,13 +76,7 @@ public class Mail.CellRendererBadge : Gtk.CellRenderer {
         text_layout.get_pixel_extents (out ink_rect, out text_logical_rect);
     }
 
-    public override void render (
-        Cairo.Context context,
-        Gtk.Widget widget,
-        Gdk.Rectangle bg_area,
-        Gdk.Rectangle cell_area,
-        Gtk.CellRendererState flags
-    ) {
+    public override void snapshot (Gtk.Snapshot snapshot, Gtk.Widget widget, Gdk.Rectangle bg_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
         update_layout_properties (widget);
 
         Gdk.Rectangle aligned_area = get_aligned_area (widget, flags, cell_area);
@@ -103,8 +95,8 @@ public class Mail.CellRendererBadge : Gtk.CellRenderer {
         var ctx = widget.get_style_context ();
         ctx.add_class (Granite.STYLE_CLASS_BADGE);
 
-        ctx.render_background (context, x, y, width, height);
-        ctx.render_frame (context, x, y, width, height);
+        snapshot.render_background (ctx, x, y, width, height);
+        snapshot.render_frame (ctx, x, y, width, height);
 
         // Apply border width and padding offsets
         x += border.right + padding.right;
@@ -116,6 +108,6 @@ public class Mail.CellRendererBadge : Gtk.CellRenderer {
         x += text_logical_rect.x + (width - text_logical_rect.width) / 2;
         y += text_logical_rect.y + (height - text_logical_rect.height) / 2;
 
-        ctx.render_layout (context, x, y, text_layout);
+        snapshot.render_layout (ctx, x, y, text_layout);
     }
 }

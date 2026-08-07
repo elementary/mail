@@ -86,8 +86,7 @@ public class EditorToolbar : Gtk.Box {
             )
         };
 
-        var formatting_buttons = new Gtk.Box (HORIZONTAL, 0);
-        formatting_buttons.append_css_class (Gtk.STYLE_CLASS_LINKED);
+        var formatting_buttons = new Granite.Box (HORIZONTAL, LINKED);
         formatting_buttons.append (bold);
         formatting_buttons.append (italic);
         formatting_buttons.append (underline);

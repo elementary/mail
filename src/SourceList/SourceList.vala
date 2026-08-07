@@ -879,8 +879,8 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         }
 
         private void resort () {
-            child_tree.set_sort_column_id (Gtk.SortColumn.UNSORTED, Gtk.SortType.ASCENDING);
-            child_tree.set_sort_column_id (Gtk.SortColumn.DEFAULT, Gtk.SortType.ASCENDING);
+            child_tree.set_sort_column_id (Gtk.TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID, Gtk.SortType.ASCENDING);
+            child_tree.set_sort_column_id (Gtk.TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID, Gtk.SortType.ASCENDING);
         }
 
         private int child_model_sort_func (Gtk.TreeModel model, Gtk.TreeIter a, Gtk.TreeIter b) {
@@ -962,7 +962,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
 
         construct {
             mode = Gtk.CellRendererMode.ACTIVATABLE;
-            stock_size = Gtk.IconSize.MENU;
         }
 
         public override bool activate (
@@ -1004,13 +1003,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             min_height = natural_height = 2 * (int) ypad;
         }
 
-        public override void render (
-            Cairo.Context context,
-            Gtk.Widget widget,
-            Gdk.Rectangle bg_area,
-            Gdk.Rectangle cell_area,
-            Gtk.CellRendererState flags
-        ) {
+        public override void snapshot (Gtk.Snapshot snapshot, Gtk.Widget widget, Gdk.Rectangle bg_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
             // Nothing to do. This renderer only adds space.
         }
     }
@@ -1111,12 +1104,11 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
 
         construct {
             add_css_class (Granite.STYLE_CLASS_SIDEBAR);
-            add_css_class (Granite.STYLE_CLASS_SOURCE_LIST);
 
             var css_provider = new Gtk.CssProvider ();
             try {
-                css_provider.load_from_data (DEFAULT_STYLESHEET, -1);
-                style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK);
+                css_provider.load_from_string (DEFAULT_STYLESHEET);
+                get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK);
             } catch (Error e) {
                 warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, DEFAULT_STYLESHEET);
             }
@@ -1219,7 +1211,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             Gtk.TreePath path;
             Gtk.TreeViewColumn column = get_column (Column.ITEM);
 
-            get_tooltip_context (ref x, ref y, keyboard_tooltip, null, out path, null);
+            get_tooltip_context (x, y, keyboard_tooltip, null, out path, null);
             if (path == null) {
                 return false;
             }
@@ -1535,7 +1527,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             enable_item_property_monitor ();
         }
 
-        public override void row_activated (Gtk.TreePath path, Gtk.TreeViewColumn column) {
+        public override void row_activated (Gtk.TreePath path, Gtk.TreeViewColumn? column) {
             if (column == get_column (Column.ITEM)) {
                 var item = data_model.get_item_from_path (path);
                 if (item != null)
@@ -1692,10 +1684,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             Gtk.Requisition min_req;
             cell_renderer.get_preferred_size (this, out min_req, null);
             return min_req.width;
-        }
-
-        public override bool popup_menu () {
-            return popup_context_menu ();
         }
 
         private bool popup_context_menu (Item? item = null, Gdk.Event? event = null) {
