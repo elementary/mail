@@ -1619,10 +1619,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             return min_req.width;
         }
 
-        public override bool popup_menu () {
-            return popup_context_menu ();
-        }
-
         private bool popup_context_menu (Item? item = null, Gdk.Event? event = null) {
             if (item == null) {
                 item = selected_item;
