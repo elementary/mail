@@ -265,6 +265,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         settings = new GLib.Settings ("io.elementary.mail");
 
+        var calendar_info_box = new Gtk.Box (HORIZONTAL, 6);
+        calendar_info_box.append (new Gtk.Image.from_icon_name ("x-office-calendar") { pixel_size = 24 });
+        calendar_info_box.append (new Gtk.Label (_("This message contains a Calendar Event.")));
+
         calendar_info_bar = new Gtk.InfoBar () {
             margin_top = 12,
             margin_bottom = 12,
@@ -274,11 +278,8 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             revealed = false
         };
         calendar_info_bar.add_button (_("Open in Calendar"), 1);
+        calendar_info_bar.add_child (calendar_info_box);
         calendar_info_bar.add_css_class (Granite.STYLE_CLASS_FRAME);
-
-        var calendar_info_bar_content = calendar_info_bar.get_content_area ();
-        calendar_info_bar_content.add (new Gtk.Image.from_icon_name ("x-office-calendar") { pixel_size = 24 });
-        calendar_info_bar_content.add (new Gtk.Label (_("This message contains a Calendar Event.")));
 
         blocked_images_infobar = new Gtk.InfoBar () {
             margin_top = 12,
@@ -288,14 +289,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             message_type = WARNING,
             revealed = false
         };
+        blocked_images_infobar.add_child (new Gtk.Label (_("This message contains remote images.")));
         blocked_images_infobar.add_button (_("Show Images"), 1);
         blocked_images_infobar.add_button (_("Always Show from Sender"), 2);
         blocked_images_infobar.add_css_class (Granite.STYLE_CLASS_FRAME);
-
-        var infobar_content = blocked_images_infobar.get_content_area ();
-        infobar_content.add (new Gtk.Label (_("This message contains remote images.")));
-
-        ((Gtk.Box) blocked_images_infobar.get_action_area ()).orientation = Gtk.Orientation.VERTICAL;
 
         web_view = new Mail.WebView () {
             margin_top = 12,

@@ -1034,7 +1034,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
             box.append (remove_button);
 
             if (disposition == DISPOSITION_INLINE) {
-                no_show_all = true;
+                visible = false;
             }
 
             margin_top = 3;
@@ -1043,7 +1043,6 @@ public class Mail.Composer : Adw.ApplicationWindow {
             margin_end = 3;
 
             child = box;
-            show_all ();
 
             remove_button.clicked.connect (() => {
                 destroy ();
