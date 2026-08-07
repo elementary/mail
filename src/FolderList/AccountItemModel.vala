@@ -27,8 +27,8 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
     public signal void start_edit (Mail.SourceList.Item item);
 
     private GLib.Cancellable connect_cancellable;
-    private Gee.HashMap<string, FolderItemModel> folder_items;
     private AccountSavedState saved_state;
+    private ListStore? folder_list;
     private unowned Camel.OfflineStore offlinestore;
 
     public AccountItemModel (Mail.Backend.Account account) {
@@ -38,12 +38,14 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
     construct {
         visible = true;
         connect_cancellable = new GLib.Cancellable ();
-        folder_items = new Gee.HashMap<string, FolderItemModel> ();
         saved_state = new AccountSavedState (account);
         saved_state.bind_with_expandable_item (this);
 
         offlinestore = (Camel.OfflineStore) account.service;
+
         name = offlinestore.display_name;
+        folder_list = new ListStore (typeof (FolderItemModel));
+
         offlinestore.folder_created.connect (folder_created);
         offlinestore.folder_deleted.connect (folder_deleted);
         offlinestore.folder_info_stale.connect (reload_folders);
@@ -66,40 +68,49 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
     }
 
     private void folder_renamed (string old_name, Camel.FolderInfo folder_info) {
-        FolderItemModel item;
-        folder_items.unset (old_name, out item);
-        item.folder_info = folder_info;
-        folder_items[folder_info.full_name] = item;
+        for (int i = 0; i < folder_list.n_items; i++) {
+            var folder_item = (FolderItemModel) folder_list.get_item (i);
+            if (folder_item.folder_info.full_name == old_name) {
+                folder_item.folder_info = folder_info;
+                return;
+            }
+        }
     }
 
     private void folder_deleted (Camel.FolderInfo folder_info) {
-        Mail.FolderItemModel? item = folder_items[folder_info.full_name];
-        if (item != null) {
+        uint pos = -1;
+        if (folder_list.find (new FolderItemModel (account, folder_info), out pos)) {
+            var item = (FolderItemModel) folder_list.get_item (pos);
             item.parent.remove (item);
-            folder_items.unset (folder_info.full_name);
+
+            folder_list.remove (pos);
         }
     }
 
     private void folder_created (Camel.FolderInfo folder_info) {
         if (folder_info.parent == null) {
             show_info (folder_info, this);
-        } else {
-            unowned Camel.FolderInfo parent_info = (Camel.FolderInfo) folder_info.parent;
-            var parent_item = folder_items[parent_info.full_name];
-            if (parent_item == null) {
-                // Create the parent, then retry to create the children.
-                folder_created (parent_info);
-                folder_created (folder_info);
-            } else {
-                show_info (folder_info, parent_item);
-            }
+            return;
         }
+
+        uint pos = -1;
+        unowned var parent_info = (Camel.FolderInfo) folder_info.parent;
+        if (folder_list.find (new FolderItemModel (account, parent_info), out pos)) {
+            var parent_item = (FolderItemModel) folder_list.get_item (pos);
+            show_info (folder_info, parent_item);
+            return;
+        }
+
+        // Create the parent, then retry to create the children.
+        folder_created (parent_info);
+        folder_created (folder_info);
     }
 
     private async void reload_folders () {
         var offlinestore = (Camel.OfflineStore) account.service;
-        foreach (var folder_item in folder_items.values) {
+        for (int i = 0; i < folder_list.n_items; i++) {
             try {
+                var folder_item = (FolderItemModel) folder_list.get_item (i);
                 var folder_info = yield offlinestore.get_folder_info (folder_item.folder_info.full_name, 0, GLib.Priority.DEFAULT, connect_cancellable);
                 folder_item.folder_info = folder_info;
             } catch (Error e) {
@@ -115,9 +126,9 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
         var folderinfo = _folderinfo;
         while (folderinfo != null) {
             var folder_item = new FolderItemModel (account, folderinfo);
+            folder_list.append (folder_item);
 
             saved_state.bind_with_expandable_item (folder_item);
-            folder_items[folderinfo.full_name] = folder_item;
             folder_item.start_edit.connect (() => start_edit (folder_item));
 
             if (folderinfo.child != null) {
