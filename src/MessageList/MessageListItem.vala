@@ -270,11 +270,11 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             margin_bottom = 12,
             margin_start = 12,
             margin_end = 12,
-            message_type = INFO
+            message_type = INFO,
+            revealed = false
         };
         calendar_info_bar.add_button (_("Open in Calendar"), 1);
-        calendar_info_bar.add_css_class (Gtk.STYLE_CLASS_FRAME);
-        calendar_info_bar.no_show_all = true;
+        calendar_info_bar.add_css_class (Granite.STYLE_CLASS_FRAME);
 
         var calendar_info_bar_content = calendar_info_bar.get_content_area ();
         calendar_info_bar_content.add (new Gtk.Image.from_icon_name ("x-office-calendar") { pixel_size = 24 });
@@ -586,9 +586,9 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                     button.activate.connect (() => show_attachment (button.mime_part));
                     attachment_bar.append (button);
 
-                    if (part.get_mime_type () == "text/calendar" && !calendar_info_bar.visible) {
+                    if (part.get_mime_type () == "text/calendar" && !calendar_info_bar.revealed) {
                         calendar_info_bar.response.connect (() => show_attachment (part));
-                        calendar_info_bar.show ();
+                        calendar_info_bar.revealed = true;
                     }
                 }
                 if (field.type == "text") {
