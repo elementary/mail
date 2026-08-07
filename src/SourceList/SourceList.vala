@@ -1061,30 +1061,12 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         private Gee.HashMap<int, CellRendererSpacer> spacer_cells; // cells used for left spacing
         private bool unselectable_item_clicked = false;
 
-        private const string DEFAULT_STYLESHEET = """
-            .sidebar.badge {
-                border-radius: 10px;
-                border-width: 0;
-                padding: 1px 2px 1px 2px;
-                font-weight: bold;
-            }
-        """;
-
         public Tree (DataModel data_model) {
             Object (data_model: data_model);
         }
 
         construct {
-            unowned Gtk.StyleContext style_context = get_style_context ();
-            style_context.add_class (Gtk.STYLE_CLASS_SIDEBAR);
-
-            var css_provider = new Gtk.CssProvider ();
-            try {
-                css_provider.load_from_data (DEFAULT_STYLESHEET, -1);
-                style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK);
-            } catch (Error e) {
-                warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, DEFAULT_STYLESHEET);
-            }
+            get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
 
             set_model (data_model);
 
