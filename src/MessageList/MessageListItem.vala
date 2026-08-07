@@ -249,15 +249,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             margin_end = 12,
             column_spacing = 12
         };
+        header.set_cursor_from_name ("pointer");
         header.attach (avatar, 0, 0, 1, 3);
         header.attach (header_stack, 1, 0, 1, 3);
         header.attach (action_grid, 2, 0);
-
-        var header_event_box = new Gtk.EventBox ();
-        header_event_box.events |= Gdk.EventMask.ENTER_NOTIFY_MASK;
-        header_event_box.events |= Gdk.EventMask.LEAVE_NOTIFY_MASK;
-        header_event_box.events |= Gdk.EventMask.BUTTON_RELEASE_MASK;
-        header_event_box.append (header);
 
         var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
             hexpand = true
@@ -322,7 +317,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             hexpand = true,
             vexpand = true
         };
-        base_box.append (header_event_box);
+        base_box.append (header);
         base_box.append (secondary_revealer);
 
         if (Camel.MessageFlags.ATTACHMENTS in (int) message_info.flags) {
@@ -350,22 +345,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
             });
         }
 
-        header_event_box.enter_notify_event.connect ((event) => {
-            if (event.detail != Gdk.NotifyType.INFERIOR) {
-                var window = header_event_box.get_window ();
-                var cursor = new Gdk.Cursor.from_name (window.get_display (), "pointer");
-                window.set_cursor (cursor);
-            }
-        });
-
-        header_event_box.leave_notify_event.connect ((event) => {
-            if (event.detail != Gdk.NotifyType.INFERIOR) {
-                header_event_box.get_window ().set_cursor (null);
-            }
-        });
-
         var click_gesture = new Gtk.GestureClick ();
-
         click_gesture.released.connect (() => {
             expanded = !expanded;
             click_gesture.set_state (CLAIMED);
