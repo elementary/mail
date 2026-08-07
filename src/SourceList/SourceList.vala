@@ -962,7 +962,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
 
         construct {
             mode = Gtk.CellRendererMode.ACTIVATABLE;
-            stock_size = Gtk.IconSize.MENU;
         }
 
         public override bool activate (
