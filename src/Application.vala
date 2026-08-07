@@ -134,21 +134,25 @@ public class Mail.Application : Gtk.Application {
 
         var account_settings_action = new SimpleAction (ACTION_ACCOUNT_SETTINGS, null);
         account_settings_action.activate.connect (() => {
-            try {
-                Gtk.show_uri (active_window, "settings://accounts/online", Gtk.get_current_event_time ());
-            } catch (Error e) {
-                var dialog = new Granite.MessageDialog (
-                    _("Unable to open System Settings"),
-                    _("Open System Settings manually or install Evolution to set up online accounts."),
-                    new ThemedIcon ("preferences-system")
-                ) {
-                    badge_icon = new ThemedIcon ("dialog-warning"),
-                    modal = true,
-                    transient_for = active_window,
-                };
-                dialog.response.connect (dialog.destroy);
-                dialog.present ();
-            }
+            var uri_launcher = new Gtk.UriLauncher ("settings://accounts/online");
+            uri_launcher.launch.begin (active_window, null, (obj, res) => {
+                try {
+                    uri_launcher.launch.end (res);
+                } catch (Error e){
+                    var dialog = new Granite.MessageDialog (
+                        _("Unable to open System Settings"),
+                        _("Open System Settings manually or install Evolution to set up online accounts."),
+                        new ThemedIcon ("preferences-system")
+                    ) {
+                        badge_icon = new ThemedIcon ("dialog-warning"),
+                        modal = true,
+                        transient_for = active_window,
+                    };
+                    dialog.show_error_details (e.message);
+                    dialog.response.connect (dialog.destroy);
+                    dialog.present ();
+                }
+            });
         });
 
         var load_images_action = settings.create_action (ACTION_LOAD_IMAGES);
