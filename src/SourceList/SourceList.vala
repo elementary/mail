@@ -1099,11 +1099,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             expander_column = null;
             show_expanders = false;
 
-            // Now pack the cell renderers. We insert them in reverse order (using pack_end)
-            // because we want to use TreeViewColumn.pack_start exclusively for inserting
-            // spacer cell renderers for level-indentation purposes.
-            // See add_spacer_cell_for_level() for more details.
-
             // Second expander. Used for main categories
             secondary_expander_cell = new CellRendererExpander () {
                 is_category_expander = true,
@@ -1132,6 +1127,10 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                 xpad = 3
             };
 
+            // Now pack the cell renderers. We insert them in reverse order (using pack_end)
+            // because we want to use TreeViewColumn.pack_start exclusively for inserting
+            // spacer cell renderers for level-indentation purposes.
+            // See add_spacer_cell_for_level() for more details.
             var item_column = new Gtk.TreeViewColumn () {
                 expand = true
             };
