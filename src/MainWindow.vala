@@ -211,16 +211,13 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
             session_started ();
         });
 
-        delete_event.connect (() => {
+        close_request.connect (() => {
+            session.disconnect (account_removed_handler);
+            session.disconnect (account_added_handler);
+
             ((Application)application).request_background.begin (() => destroy ());
 
             return Gdk.EVENT_STOP;
-        });
-
-        destroy.connect (() => {
-            session.disconnect (account_removed_handler);
-            session.disconnect (account_added_handler);
-            destroy ();
         });
     }
 
@@ -329,7 +326,7 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
     }
 
     private void on_fullscreen () {
-        if (is_fullscreen) {
+        if (fullscreened) {
             message_list.headerbar.show_end_title_buttons = true;
             unfullscreen ();
         } else {

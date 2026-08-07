@@ -118,13 +118,10 @@ public class Mail.Composer : Adw.ApplicationWindow {
         to_label.add_css_class (Granite.CssClass.DIM);
 
         cc_button = new Gtk.ToggleButton.with_label (_("Cc"));
+        cc_button.insert_after (to_val, to_val.get_last_child ());
 
         var bcc_button = new Gtk.ToggleButton.with_label (_("Bcc"));
-
-        var to_grid = new EntryGrid ();
-        // to_grid.add (to_val);
-        // to_grid.add (cc_button);
-        // to_grid.add (bcc_button);
+        bcc_button.insert_after (to_val, cc_button);
 
         cc_val = new Gtk.Entry () {
             hexpand = true
@@ -196,7 +193,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
         };
         recipient_grid.attach (from_revealer, 0, 0, 2);
         recipient_grid.attach (to_label, 0, 1);
-        recipient_grid.attach (to_grid, 1, 1);
+        recipient_grid.attach (to_val, 1, 1);
         recipient_grid.attach (cc_revealer, 0, 2, 2);
         recipient_grid.attach (bcc_revealer, 0, 3, 2);
         recipient_grid.attach (subject_label, 0, 4);
@@ -218,7 +215,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
         web_view.mouse_target_changed.connect (on_mouse_target_changed);
 
         var editor_toolbar = new EditorToolbar (web_view);
-        editor_toolbar.add (image);
+        editor_toolbar.append (image);
 
         var attachment_box = new Gtk.FlowBox () {
             homogeneous = true,
@@ -302,7 +299,7 @@ public class Mail.Composer : Adw.ApplicationWindow {
         title = _("New Message");
         content = main_box;
 
-        delete_event.connect (() => {
+        close_request.connect (() => {
             save_draft.begin ((obj, res) => {
                 if (!save_draft.end (res)) {
                     finished ();
@@ -1096,12 +1093,6 @@ public class Mail.Composer : Adw.ApplicationWindow {
             }
 
             return mimepart;
-        }
-    }
-
-    private class EntryGrid : Gtk.Grid {
-        static construct {
-            set_css_name (Gtk.STYLE_CLASS_ENTRY);
         }
     }
 

@@ -214,7 +214,7 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
             set_selected_signature.begin ((Signature)row);
         });
 
-        delete_event.connect (() => {
+        close_request.connect (() => {
             finish.begin (() => {
                 destroy ();
             });

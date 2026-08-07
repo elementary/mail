@@ -31,6 +31,7 @@ public class Mail.WelcomeView : Granite.Bin {
         };
 
         var welcome_button = placeholder.append_button (new ThemedIcon ("preferences-desktop-online-accounts"), _("Online Accounts…"), "");
+        welcome_button.action_name = Application.ACTION_PREFIX + Application.ACTION_ACCOUNT_SETTINGS;
         welcome_button.add_css_class (Granite.CssClass.SUGGESTED);
 
         var main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
@@ -42,13 +43,5 @@ public class Mail.WelcomeView : Granite.Bin {
         };
 
         child = window_handle;
-
-        welcome_button.clicked.connect (() => {
-            try {
-                Gtk.show_uri_on_window ((Gtk.Window) get_root (), "settings://accounts/online", Gdk.CURRENT_TIME);
-            } catch (Error e) {
-                critical (e.message);
-            }
-        });
     }
 }

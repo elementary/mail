@@ -353,10 +353,6 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
         add_controller (click_gesture);
 
-        destroy.connect (() => {
-            loading_cancellable.cancel ();
-        });
-
         starred_button.clicked.connect (() => {
             if (Camel.MessageFlags.FLAGGED in (int) message_info.flags) {
                 message_info.set_flags (Camel.MessageFlags.FLAGGED, 0);
@@ -379,6 +375,10 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
                 warning ("Failed to open link: %s", e.message);
             }
         });
+    }
+
+    ~MessageListItem () {
+        loading_cancellable.cancel ();
     }
 
     public void print () {

@@ -60,7 +60,7 @@ public class InsertLinkDialog : Granite.Dialog {
         grid.attach (title_label, 0, 1);
         grid.attach (title_entry, 1, 1);
 
-        get_content_area ().add (grid);
+        get_content_area ().append (grid);
 
         add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
 

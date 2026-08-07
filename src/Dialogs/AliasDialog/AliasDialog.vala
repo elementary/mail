@@ -125,7 +125,7 @@ public class Mail.AliasDialog : Granite.Dialog {
 
         response.connect (destroy);
 
-        delete_event.connect (() => {
+        close_request.connect (() => {
             foreach (var child in list.get_children ()) {
                 if (child is Alias && ((Alias) child).is_deleted) {
                     aliases.remove (((Alias) child).address);
