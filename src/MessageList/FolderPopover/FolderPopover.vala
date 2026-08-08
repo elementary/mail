@@ -7,7 +7,7 @@
 
 public class Mail.FolderPopover : Gtk.Popover {
     private Gtk.SearchEntry search_entry;
-    private Gtk.ListBox list_box;
+    private ListStore folder_list;
 
     construct {
         search_entry = new Gtk.SearchEntry () {
@@ -22,10 +22,12 @@ public class Mail.FolderPopover : Gtk.Popover {
             icon = new ThemedIcon ("edit-find-symbolic")
         };
 
-        list_box = new Gtk.ListBox () {
+        folder_list = new ListStore (typeof (FolderRow));
+
+        var list_box = new Gtk.ListBox () {
             activate_on_single_click = true
         };
-        list_box.set_sort_func (sort_func);
+        list_box.bind_model (folder_list, (obj) => (FolderRow) obj);
         list_box.set_filter_func (filter_func);
         list_box.set_placeholder (placeholder);
 
@@ -59,9 +61,7 @@ public class Mail.FolderPopover : Gtk.Popover {
     }
 
     public void set_store (Camel.Store store) {
-        foreach (var child in list_box.get_children ()) {
-            child.destroy ();
-        }
+        folder_list.remove_all ();
 
         store.get_folder_info.begin (null, Camel.StoreGetFolderInfoFlags.RECURSIVE, GLib.Priority.DEFAULT, null, (obj, res) => {
             try {
@@ -76,24 +76,21 @@ public class Mail.FolderPopover : Gtk.Popover {
     private void update (Camel.FolderInfo top, Camel.Store store) {
         var folder_info = top;
         while (folder_info != null) {
-            list_box.append (new FolderRow (folder_info, store));
+            folder_list.insert_sorted (new FolderRow (folder_info, store), sort_func);
 
             if (folder_info.child != null) {
                 update (folder_info.child, store);
             }
+
             folder_info = folder_info.next;
         }
     }
 
-    private int sort_func (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
-        if (row1 is FolderRow && row2 is FolderRow) {
-            var folder_row1 = (FolderRow) row1;
-            var folder_row2 = (FolderRow) row2;
+    private int sort_func (Object row1, Object row2) {
+        var folder_row1 = (FolderRow) row1;
+        var folder_row2 = (FolderRow) row2;
 
-            return folder_row1.pos - folder_row2.pos;
-        }
-
-        return 0;
+        return folder_row1.pos - folder_row2.pos;
     }
 
     private bool filter_func (Gtk.ListBoxRow row) {

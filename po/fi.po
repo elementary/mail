@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geary-0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-04 22:03+0000\n"
+"POT-Creation-Date: 2026-08-08 16:46+0000\n"
 "PO-Revision-Date: 2025-09-29 19:55+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementaryos.org/projects/mail/mail/fi/"
@@ -43,150 +43,150 @@ msgstr ""
 "käynnissä kun sen ikkuna suljetaan, jotta se voi lähettää ilmoituksia uuden "
 "sähköpostin saapuessa."
 
-#: src/Composer.vala:88 src/MessageList/MessageListItem.vala:102
+#: src/Composer.vala:94 src/MessageList/MessageListItem.vala:102
 msgid "From:"
 msgstr "Lähettäjä:"
 
-#: src/Composer.vala:107 src/MessageList/MessageListItem.vala:108
+#: src/Composer.vala:114 src/MessageList/MessageListItem.vala:108
 msgid "To:"
 msgstr "Vastaanottaja:"
 
-#: src/Composer.vala:112 src/MessageList/MessageListItem.vala:114
-msgid "Subject:"
-msgstr "Aihe:"
-
-#: src/Composer.vala:121
+#: src/Composer.vala:120
 msgid "Cc"
 msgstr "Kopio"
 
-#: src/Composer.vala:123
+#: src/Composer.vala:122
 msgid "Bcc"
 msgstr "Piilokopio"
 
-#: src/Composer.vala:130 src/MessageList/MessageListItem.vala:148
+#: src/Composer.vala:133 src/MessageList/MessageListItem.vala:148
 msgid "Cc:"
 msgstr "Kopio:"
 
-#: src/Composer.vala:148
+#: src/Composer.vala:152
 msgid "Bcc:"
 msgstr "Piilokopio:"
 
-#: src/Composer.vala:198
+#: src/Composer.vala:171 src/MessageList/MessageListItem.vala:114
+msgid "Subject:"
+msgstr "Aihe:"
+
+#: src/Composer.vala:205
 msgid "Insert Image"
 msgstr "Sisällytä kuva"
 
-#: src/Composer.vala:224
+#: src/Composer.vala:232
 msgid "Delete draft"
 msgstr "Poista luonnos"
 
-#: src/Composer.vala:232
+#: src/Composer.vala:240
 msgid "Attach file"
 msgstr "Liitä tiedosto"
 
-#: src/Composer.vala:243
+#: src/Composer.vala:251
 msgid "Insert Signature…"
 msgstr "Sisällytä allekirjoitus…"
 
-#: src/Composer.vala:249
+#: src/Composer.vala:256
 msgid "Send"
 msgstr "Lähetä"
 
-#: src/Composer.vala:287
+#: src/Composer.vala:299
 msgid "New Message"
 msgstr "Uusi viesti"
 
-#: src/Composer.vala:438
+#: src/Composer.vala:445
 msgid "Choose a file"
 msgstr "Valitse tiedosto"
 
-#: src/Composer.vala:441
+#: src/Composer.vala:448
 msgid "Attach"
 msgstr "Liitä"
 
-#: src/Composer.vala:442 src/Composer.vala:466 src/Composer.vala:758
+#: src/Composer.vala:449 src/Composer.vala:472 src/Composer.vala:763
 #: src/Dialogs/InsertLinkDialog.vala:66
 #: src/MessageList/AttachmentButton.vala:144
 msgid "Cancel"
 msgstr "Peru"
 
-#: src/Composer.vala:458
+#: src/Composer.vala:464
 msgid "Images"
 msgstr "Kuvat"
 
-#: src/Composer.vala:462
+#: src/Composer.vala:468
 msgid "Choose an image"
 msgstr "Valitse kuva"
 
-#: src/Composer.vala:465
+#: src/Composer.vala:471
 msgid "Insert"
 msgstr "Sisällytä"
 
-#: src/Composer.vala:494
+#: src/Composer.vala:500
 msgid "Unable to insert image"
 msgstr "Kuvan sisällyttäminen ei onnistu"
 
-#: src/Composer.vala:495
+#: src/Composer.vala:501
 msgid "There was an unexpected error while trying to insert the image."
 msgstr "Kuvaa sisällyttäessä tapahtui odottamaton virhe."
 
-#: src/Composer.vala:659
+#: src/Composer.vala:665
 msgid "%a, %b %-e, %Y at %-l:%M %p"
 msgstr "%a, %e. %b %Y klo %H.%M"
 
-#: src/Composer.vala:689
+#: src/Composer.vala:695
 #, c-format
 msgid "On %1$s, %2$s wrote:"
 msgstr "%1$s %2$s kirjoitti:"
 
-#: src/Composer.vala:693
+#: src/Composer.vala:699
 msgid "---------- Forwarded message ----------"
 msgstr "---------- Edelleenlähetetty viesti ----------"
 
-#: src/Composer.vala:695
+#: src/Composer.vala:701
 #, c-format
 msgid "From: %s<br/>"
 msgstr "Lähettäjä: %s<br/>"
 
-#: src/Composer.vala:696
+#: src/Composer.vala:702
 #, c-format
 msgid "Subject: %s<br/>"
 msgstr "Aihe: %s<br/>"
 
-#: src/Composer.vala:697
+#: src/Composer.vala:703
 #, c-format
 msgid "Date: %s<br/>"
 msgstr "Päiväys: %s<br/>"
 
-#: src/Composer.vala:698
+#: src/Composer.vala:704
 #, c-format
 msgid "To: %s<br/>"
 msgstr "Vastaanottaja: %s<br/>"
 
-#: src/Composer.vala:700
+#: src/Composer.vala:706
 #, c-format
 msgid "Cc: %s<br/>"
 msgstr "Kopio: %s<br/>"
 
-#: src/Composer.vala:749
+#: src/Composer.vala:754
 msgid "Permanently delete this draft?"
 msgstr "Haluatko poistaa tämän luonnoksen pysyvästi?"
 
-#: src/Composer.vala:750
+#: src/Composer.vala:755
 msgid ""
 "You cannot undo this action, nor recover your draft once it has been deleted."
 msgstr ""
 "Et voi kumota tätä toimintoa, etkä voi palauttaa luonnosta kun se on "
 "poistettu."
 
-#: src/Composer.vala:760
+#: src/Composer.vala:765
 msgid "Delete Draft"
 msgstr "Poista luonnos"
 
-#: src/Composer.vala:784
+#: src/Composer.vala:789
 msgid "Send without subject?"
 msgstr "Lähetetäänkö viesti ilman aihetta?"
 
-#: src/Composer.vala:785
+#: src/Composer.vala:790
 msgid ""
 "This message has an empty subject field. The recipient may be unable to "
 "infer its scope or importance."
@@ -194,46 +194,46 @@ msgstr ""
 "Viestin aihekenttä on tyhjä. Vastaanottaja ei välttämättä pysty päätellä "
 "viestin tärkeyttä ilman aihetta."
 
-#: src/Composer.vala:792
+#: src/Composer.vala:797
 msgid "Don't Send"
 msgstr "Älä lähetä"
 
-#: src/Composer.vala:794
+#: src/Composer.vala:799
 msgid "Send Anyway"
 msgstr "Lähetä silti"
 
-#: src/Composer.vala:825
+#: src/Composer.vala:830
 msgid "Sent message was not saved"
 msgstr "Lähetettyä viestiä ei tallennettu"
 
-#: src/Composer.vala:826
+#: src/Composer.vala:831
 msgid ""
 "The message was sent, however a copy was not saved to the Sent message "
 "folder."
 msgstr ""
 "Viesti lähetettiin, mutta kopiota ei tallennettu Lähetetyt-viestikansioon."
 
-#: src/Composer.vala:841
+#: src/Composer.vala:846
 msgid "Unable to send message"
 msgstr "Viestin lähettäminen ei onnistu"
 
-#: src/Composer.vala:842
+#: src/Composer.vala:847
 msgid "There was an unexpected error while sending your message."
 msgstr "Viestiäsi lähettäessä tapahtui odottamaton virhe."
 
-#: src/Composer.vala:946 src/FolderList/FolderList.vala:55
+#: src/Composer.vala:945 src/FolderList/FolderList.vala:55
 msgid "Edit Signatures…"
 msgstr "Muokkaa allekirjoituksia…"
 
-#: src/Composer.vala:950
+#: src/Composer.vala:949
 msgid "None"
 msgstr "Ei mitään"
 
-#: src/Composer.vala:1139
+#: src/Composer.vala:1140
 msgid "Unable to save draft"
 msgstr "Luonnoksen tallentaminen ei onnistu"
 
-#: src/Composer.vala:1140
+#: src/Composer.vala:1141
 msgid "There was an unexpected error while saving your draft."
 msgstr "Luonnosta tallentaessa tapahtui odottamaton virhe."
 
@@ -289,7 +289,7 @@ msgid "Mail"
 msgstr "Sähköposti"
 
 #: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:170
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:172
 msgid "Undo"
 msgstr "Kumoa"
 
@@ -515,7 +515,7 @@ msgid "Close"
 msgstr "Sulje"
 
 #: src/Dialogs/AliasDialog/AliasDialog.vala:178
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:328
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:330
 #, c-format
 msgid "'%s' deleted"
 msgstr "'%s' poistettu"
@@ -545,11 +545,11 @@ msgstr "Esimerkiksi “Työ” tai “Henkilökohtainen”"
 msgid "Delete"
 msgstr "Poista"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:136
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:131
 msgid "Set Default For…"
 msgstr "Aseta oletukseksi…"
 
-#: src/Dialogs/SignatureDialog/SignatureDialog.vala:154
+#: src/Dialogs/SignatureDialog/SignatureDialog.vala:156
 msgid "Signature"
 msgstr "Allekirjoitus"
 
@@ -676,7 +676,7 @@ msgstr "Tulosta…"
 msgid "More"
 msgstr "Lisää"
 
-#: src/MessageList/MessageListItem.vala:280
+#: src/MessageList/MessageListItem.vala:281
 msgid "Open in Calendar"
 msgstr "Avaa kalenterissa"
 
