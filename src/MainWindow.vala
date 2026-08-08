@@ -18,17 +18,15 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.MainWindow : Hdy.ApplicationWindow {
+public class Mail.MainWindow : Adw.ApplicationWindow {
     private Gtk.Paned paned_end;
     private Gtk.Paned paned_start;
 
     private FolderList folders_list_view;
-    private Granite.Widgets.Toast move_toast;
-    private Granite.Widgets.Toast error_toast;
+    private Granite.Toast move_toast;
+    private Granite.Toast error_toast;
     private ConversationList conversation_list;
     private MessageList message_list;
-
-    private uint configure_id;
 
     public bool is_session_started { get; private set; default = false; }
     public signal void session_started ();
@@ -119,21 +117,20 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             child = message_list
         };
 
-        move_toast = new Granite.Widgets.Toast ("");
+        move_toast = new Granite.Toast ("");
         move_toast.set_default_action (_("Undo"));
-        move_toast.show_all ();
         view_overlay.add_overlay (move_toast);
 
         move_toast.default_action.connect (() => {
             MoveOperation.undo_last_move ();
         });
 
-        error_toast = new Granite.Widgets.Toast ("");
-        error_toast.show_all ();
+        error_toast = new Granite.Toast ("");
         view_overlay.add_overlay (error_toast);
 
-        var message_overlay = new Granite.Widgets.OverlayBar (view_overlay);
-        message_overlay.no_show_all = true;
+        var message_overlay = new Granite.OverlayBar (view_overlay) {
+            visible = false
+        };
 
         message_list.hovering_over_link.connect ((label, url) => {
             var hover_url = url != null ? GLib.Uri.unescape_string (url) : null;
@@ -146,13 +143,23 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             }
         });
 
-        paned_start = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
-        paned_start.pack1 (folders_list_view, false, false);
-        paned_start.pack2 (conversation_list, true, false);
+        paned_start = new Gtk.Paned (HORIZONTAL) {
+            start_child = folders_list_view,
+            shrink_start_child = false,
+            end_child = conversation_list,
+            shrink_end_child = false
+        };
+        // paned_start.pack1 (folders_list_view, false, false);
+        // paned_start.pack2 (conversation_list, true, false);
 
-        paned_end = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
-        paned_end.pack1 (paned_start, false, false);
-        paned_end.pack2 (view_overlay, true, false);
+        paned_end = new Gtk.Paned (HORIZONTAL) {
+            start_child = paned_start,
+            shrink_start_child = false,
+            end_child = view_overlay,
+            shrink_end_child = false
+        };
+        // paned_end.pack1 (paned_start, false, false);
+        // paned_end.pack2 (view_overlay, true, false);
 
         var welcome_view = new Mail.WelcomeView ();
 
@@ -160,12 +167,7 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
         placeholder_stack.add_named (paned_end, "mail");
         placeholder_stack.add_named (welcome_view, "welcome");
 
-        add (placeholder_stack);
-
-        var header_group = new Hdy.HeaderGroup ();
-        header_group.add_header_bar (folders_list_view.header_bar);
-        header_group.add_header_bar (conversation_list.search_header);
-        header_group.add_header_bar (message_list.headerbar);
+        content = placeholder_stack;
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.VERTICAL);
         size_group.add_widget (folders_list_view.header_bar);
@@ -209,16 +211,13 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
             session_started ();
         });
 
-        delete_event.connect (() => {
+        close_request.connect (() => {
+            session.disconnect (account_removed_handler);
+            session.disconnect (account_added_handler);
+
             ((Application)application).request_background.begin (() => destroy ());
 
             return Gdk.EVENT_STOP;
-        });
-
-        destroy.connect (() => {
-            session.disconnect (account_removed_handler);
-            session.disconnect (account_added_handler);
-            destroy ();
         });
     }
 
@@ -327,11 +326,11 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void on_fullscreen () {
-        if (Gdk.WindowState.FULLSCREEN in get_window ().get_state ()) {
-            message_list.headerbar.show_close_button = true;
+        if (fullscreened) {
+            message_list.headerbar.show_end_title_buttons = true;
             unfullscreen ();
         } else {
-            message_list.headerbar.show_close_button = false;
+            message_list.headerbar.show_end_title_buttons = false;
             fullscreen ();
         }
     }
@@ -361,29 +360,5 @@ public class Mail.MainWindow : Hdy.ApplicationWindow {
 
         dialog.present ();
         dialog.response.connect (dialog.destroy);
-    }
-
-    public override bool configure_event (Gdk.EventConfigure event) {
-        if (configure_id != 0) {
-            GLib.Source.remove (configure_id);
-        }
-
-        configure_id = Timeout.add (100, () => {
-            configure_id = 0;
-
-            if (is_maximized) {
-                Mail.Application.settings.set_boolean ("window-maximized", true);
-            } else {
-                Mail.Application.settings.set_boolean ("window-maximized", false);
-
-                Gdk.Rectangle rect;
-                get_allocation (out rect);
-                Mail.Application.settings.set ("window-size", "(ii)", rect.width, rect.height);
-            }
-
-            return false;
-        });
-
-        return base.configure_event (event);
     }
 }

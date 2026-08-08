@@ -17,29 +17,10 @@ public class Mail.FolderPopover : Gtk.Popover {
             margin_end = 12
         };
 
-        var placeholder_image = new Gtk.Image.from_icon_name ("edit-find-symbolic", DND);
-
-        var placeholder_title = new Gtk.Label (_("No mailboxes found")) {
-            xalign = 0
+        var placeholder = new Granite.Placeholder (_("No mailboxes found")) {
+            description = _("Try changing search terms"),
+            icon = new ThemedIcon ("edit-find-symbolic")
         };
-
-        var placeholder_subtitle = new Gtk.Label (_("Try changing search terms")) {
-            xalign = 0
-        };
-        placeholder_subtitle.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-        placeholder_subtitle.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
-
-        var placeholder = new Gtk.Grid () {
-            column_spacing = 6,
-            margin_top = 6,
-            margin_start = 12,
-            margin_bottom = 12,
-            margin_end = 12
-        };
-        placeholder.attach (placeholder_image, 0, 0, 1, 2);
-        placeholder.attach (placeholder_title, 1, 0);
-        placeholder.attach (placeholder_subtitle, 1, 1);
-        placeholder.show_all ();
 
         list_box = new Gtk.ListBox () {
             activate_on_single_click = true
@@ -48,7 +29,7 @@ public class Mail.FolderPopover : Gtk.Popover {
         list_box.set_filter_func (filter_func);
         list_box.set_placeholder (placeholder);
 
-        var scrolled_window = new Gtk.ScrolledWindow (null, null) {
+        var scrolled_window = new Gtk.ScrolledWindow () {
             child = list_box,
             hexpand = true,
             vexpand = true,
@@ -59,9 +40,8 @@ public class Mail.FolderPopover : Gtk.Popover {
         };
 
         var box = new Gtk.Box (VERTICAL, 0);
-        box.add (search_entry);
-        box.add (scrolled_window);
-        box.show_all ();
+        box.append (search_entry);
+        box.append (scrolled_window);
 
         width_request = 250;
         child = box;
@@ -73,7 +53,7 @@ public class Mail.FolderPopover : Gtk.Popover {
                 var folder_row = (FolderRow)row;
 
                 popdown ();
-                ((MainWindow)get_toplevel ()).activate_action (MainWindow.ACTION_MOVE, row.folder_info.full_name);
+                ((MainWindow)get_root ()).activate_action (MainWindow.ACTION_MOVE, row.folder_info.full_name);
             }
         });
     }
@@ -96,7 +76,7 @@ public class Mail.FolderPopover : Gtk.Popover {
     private void update (Camel.FolderInfo top, Camel.Store store) {
         var folder_info = top;
         while (folder_info != null) {
-            list_box.add (new FolderRow (folder_info, store));
+            list_box.append (new FolderRow (folder_info, store));
 
             if (folder_info.child != null) {
                 update (folder_info.child, store);

@@ -15,7 +15,7 @@ public class Mail.FolderRow : Gtk.ListBoxRow {
    }
 
    construct {
-       var icon = new Gtk.Image.from_icon_name ("folder", MENU);
+       var icon = new Gtk.Image.from_icon_name ("folder");
 
        var full_folder_info_flags = Utils.get_full_folder_info_flags (store, folder_info);
        switch (full_folder_info_flags & Camel.FOLDER_TYPE_MASK) {
@@ -60,10 +60,9 @@ public class Mail.FolderRow : Gtk.ListBoxRow {
            margin_end = 12
        };
 
-       box.add (icon);
-       box.add (new Gtk.Label (folder_info.display_name));
+       box.append (icon);
+       box.append (new Gtk.Label (folder_info.display_name));
 
        child = box;
-       show_all ();
    }
 }

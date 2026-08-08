@@ -98,7 +98,7 @@ public class Mail.Application : Gtk.Application {
     protected override void startup () {
         base.startup ();
 
-        Hdy.init ();
+        Adw.init ();
 
         var granite_settings = Granite.Settings.get_default ();
         gtk_settings = Gtk.Settings.get_default ();
@@ -112,10 +112,6 @@ public class Mail.Application : Gtk.Application {
         granite_settings.notify["prefers-color-scheme"].connect (() => {
             gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
         });
-
-        var css_provider = new Gtk.CssProvider ();
-        css_provider.load_from_resource ("io/elementary/mail/application.css");
-        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (() => {
@@ -138,21 +134,25 @@ public class Mail.Application : Gtk.Application {
 
         var account_settings_action = new SimpleAction (ACTION_ACCOUNT_SETTINGS, null);
         account_settings_action.activate.connect (() => {
-            try {
-                Gtk.show_uri_on_window (active_window, "settings://accounts/online", Gtk.get_current_event_time ());
-            } catch (Error e) {
-                var dialog = new Granite.MessageDialog (
-                    _("Unable to open System Settings"),
-                    _("Open System Settings manually or install Evolution to set up online accounts."),
-                    new ThemedIcon ("preferences-system")
-                ) {
-                    badge_icon = new ThemedIcon ("dialog-warning"),
-                    modal = true,
-                    transient_for = active_window,
-                };
-                dialog.response.connect (dialog.destroy);
-                dialog.present ();
-            }
+            var uri_launcher = new Gtk.UriLauncher ("settings://accounts/online");
+            uri_launcher.launch.begin (active_window, null, (obj, res) => {
+                try {
+                    uri_launcher.launch.end (res);
+                } catch (Error e){
+                    var dialog = new Granite.MessageDialog (
+                        _("Unable to open System Settings"),
+                        _("Open System Settings manually or install Evolution to set up online accounts."),
+                        new ThemedIcon ("preferences-system")
+                    ) {
+                        badge_icon = new ThemedIcon ("dialog-warning"),
+                        modal = true,
+                        transient_for = active_window,
+                    };
+                    dialog.show_error_details (e.message);
+                    dialog.response.connect (dialog.destroy);
+                    dialog.present ();
+                }
+            });
         });
 
         var load_images_action = settings.create_action (ACTION_LOAD_IMAGES);
@@ -188,15 +188,19 @@ public class Mail.Application : Gtk.Application {
             main_window = new MainWindow (this);
             add_window (main_window);
 
-            var rect = Gtk.Allocation ();
-            settings.get ("window-size", "(ii)", out rect.width, out rect.height);
-            main_window.set_allocation (rect);
+            /*
+            * This is very finicky. Bind size after present else set_titlebar gives us bad sizes
+            * Set maximize after height/width else window is min size on unmaximize
+            * Bind maximize as SET else get get bad sizes
+            */
+            settings.bind ("window-height", main_window, "default-height", SettingsBindFlags.DEFAULT);
+            settings.bind ("window-width", main_window, "default-width", SettingsBindFlags.DEFAULT);
 
             if (settings.get_boolean ("window-maximized")) {
                 main_window.maximize ();
             }
 
-            main_window.show_all ();
+            settings.bind ("window-maximized", main_window, "maximized", SettingsBindFlags.SET);
         }
 
         main_window.present ();

@@ -34,9 +34,7 @@ vala_files = files(
     'SourceList/CellRendererBadge.vala',
     'SourceList/CellRendererExpander.vala',
     'SourceList/SourceList.vala',
-    'SourceList' / 'SourceListSortable.vala',
-    'VirtualizingListBox/VirtualizingListBoxRow.vala',
-    'VirtualizingListBox/VirtualizingListBox.vala'
+    'SourceList' / 'SourceListSortable.vala'
 )
 
 executable(
@@ -45,6 +43,6 @@ executable(
     config_file,
     asresources,
     dependencies: dependencies,
-    c_args: '-DWEBKIT_EXTENSION_PATH="' + webkit2_extension_path + '"',
+    c_args: '-DWEBKIT_EXTENSION_PATH="' + webkit_extension_path + '"',
     install: true
 )

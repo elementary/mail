@@ -57,7 +57,11 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         context_menu_model.append (_("Open"), ACTION_PREFIX + ACTION_OPEN);
         context_menu_model.append (_("Save As…"), ACTION_PREFIX + ACTION_SAVE_AS);
 
-        var menu = new Gtk.Menu.from_model (context_menu_model);
+        var context_menu = new Gtk.PopoverMenu.from_model (context_menu_model) {
+            has_arrow = false,
+            position = BOTTOM
+        };
+        context_menu.set_parent (this);
 
         var grid = new Gtk.Grid () {
             margin_top = 6,
@@ -71,7 +75,8 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         var glib_type = GLib.ContentType.from_mime_type (mime_type);
         var content_icon = GLib.ContentType.get_icon (glib_type);
 
-        preview_image = new Gtk.Image.from_gicon (content_icon, Gtk.IconSize.DND) {
+        preview_image = new Gtk.Image.from_gicon (content_icon) {
+            pixel_size = 32,
             valign = Gtk.Align.CENTER
         };
 
@@ -82,7 +87,7 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         size_label = new Gtk.Label (null) {
             xalign = 0
         };
-        size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        size_label.add_css_class (Granite.CssClass.DIM);
 
         new Thread<void*> (null, () => {
             string? size_text = null;
@@ -98,7 +103,7 @@ public class AttachmentButton : Gtk.FlowBoxChild {
                     size_label.label = size_text;
                 } else {
                     size_label.label = _("Unknown");
-                    size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
+                    size_label.add_css_class (Granite.CssClass.ERROR);
                 }
 
                 return GLib.Source.REMOVE;
@@ -111,31 +116,39 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         grid.attach (name_label, 1, 0, 1, 1);
         grid.attach (size_label, 1, 1, 1, 1);
 
-        var event_box = new Gtk.EventBox () {
-            child = grid
-        };
+        child = grid;
 
-        child = event_box;
-        show_all ();
-
-        var gesture_click = new Gtk.GestureMultiPress (event_box) {
+        var gesture_click = new Gtk.GestureClick () {
             button = 0
         };
-
-        gesture_click.released.connect ((n_press, x, y) => {
-            if (gesture_click.get_current_button () == Gdk.BUTTON_SECONDARY) {
-                menu.attach_widget = this;
-                menu.popup_at_pointer ();
-            } else {
+        gesture_click.pressed.connect ((gesture, n_press, x, y) => {
+            var sequence = gesture.get_current_sequence ();
+            var event = gesture.get_last_event (sequence);
+            if (event.triggers_context_menu ()) {
+                context_menu.halign = START;
+                menu_popup_at_pointer (context_menu, x, y);
+            } else if (gesture.get_current_button () == Gdk.BUTTON_PRIMARY) {
                 activate ();
             }
 
             gesture_click.set_state (CLAIMED);
+            gesture.reset ();
         });
+
+        add_controller (gesture_click);
+    }
+
+    private void menu_popup_at_pointer (Gtk.PopoverMenu popover, double x, double y) {
+        var rect = Gdk.Rectangle () {
+            x = (int) x,
+            y = (int) y
+        };
+        popover.pointing_to = rect;
+        popover.popup ();
     }
 
     private void on_save_as () {
-        Gtk.Window? parent_window = get_toplevel () as Gtk.Window;
+        Gtk.Window? parent_window = get_root () as Gtk.Window;
         var chooser = new Gtk.FileChooserNative (
             null,
             parent_window,
@@ -145,13 +158,15 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         );
 
         chooser.set_current_name (mime_part.get_filename ());
-        chooser.do_overwrite_confirmation = true;
 
-        if (chooser.run () == Gtk.ResponseType.ACCEPT) {
-            write_to_file.begin (chooser.get_file ());
-        }
+        chooser.response.connect ((response) => {
+            if (response == Gtk.ResponseType.ACCEPT) {
+                write_to_file.begin (chooser.get_file ());
+            }
+            chooser.destroy ();
+        });
 
-        chooser.destroy ();
+        chooser.show ();
     }
 
     private async void write_to_file (GLib.File file) {

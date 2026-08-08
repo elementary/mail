@@ -278,10 +278,10 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
          * any context menu items should be actioned on the item instance rather than the selected item
          * in the SourceList
          *
-         * @return A {@link Gtk.Menu} or //null// if nothing should be displayed.
+         * @return A {@link GLib.Menu} or //null// if nothing should be displayed.
          * @since 0.2
          */
-        public virtual Gtk.Menu? get_context_menu () {
+        public virtual GLib.Menu? get_context_menu () {
             return null;
         }
     }
@@ -879,8 +879,8 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         }
 
         private void resort () {
-            child_tree.set_sort_column_id (Gtk.SortColumn.UNSORTED, Gtk.SortType.ASCENDING);
-            child_tree.set_sort_column_id (Gtk.SortColumn.DEFAULT, Gtk.SortType.ASCENDING);
+            child_tree.set_sort_column_id (Gtk.TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID, Gtk.SortType.ASCENDING);
+            child_tree.set_sort_column_id (Gtk.TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID, Gtk.SortType.ASCENDING);
         }
 
         private int child_model_sort_func (Gtk.TreeModel model, Gtk.TreeIter a, Gtk.TreeIter b) {
@@ -962,7 +962,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
 
         construct {
             mode = Gtk.CellRendererMode.ACTIVATABLE;
-            stock_size = Gtk.IconSize.MENU;
         }
 
         public override bool activate (
@@ -1004,13 +1003,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             min_height = natural_height = 2 * (int) ypad;
         }
 
-        public override void render (
-            Cairo.Context context,
-            Gtk.Widget widget,
-            Gdk.Rectangle bg_area,
-            Gdk.Rectangle cell_area,
-            Gtk.CellRendererState flags
-        ) {
+        public override void snapshot (Gtk.Snapshot snapshot, Gtk.Widget widget, Gdk.Rectangle bg_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
             // Nothing to do. This renderer only adds space.
         }
     }
@@ -1052,8 +1045,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
 
         private Gtk.Entry? editable_entry;
         private Gtk.CellRendererText text_cell;
-        private Gtk.EventControllerKey key_controller;
-        private Gtk.GestureMultiPress button_controller;
+        private Gtk.GestureClick button_controller;
         private CellRendererIcon icon_cell;
         private CellRendererBadge badge_cell;
         private CellRendererExpander primary_expander_cell;
@@ -1111,14 +1103,12 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         }
 
         construct {
-            unowned Gtk.StyleContext style_context = get_style_context ();
-            style_context.add_class (Gtk.STYLE_CLASS_SIDEBAR);
-            style_context.add_class (Granite.STYLE_CLASS_SOURCE_LIST);
+            add_css_class (Granite.STYLE_CLASS_SIDEBAR);
 
             var css_provider = new Gtk.CssProvider ();
             try {
-                css_provider.load_from_data (DEFAULT_STYLESHEET, -1);
-                style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK);
+                css_provider.load_from_string (DEFAULT_STYLESHEET);
+                get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK);
             } catch (Error e) {
                 warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, DEFAULT_STYLESHEET);
             }
@@ -1126,7 +1116,8 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             set_model (data_model);
 
             halign = valign = Gtk.Align.FILL;
-            expand = true;
+            hexpand = true;
+            vexpand = true;
 
             enable_search = false;
             headers_visible = false;
@@ -1198,15 +1189,18 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             query_tooltip.connect_after (on_query_tooltip);
             has_tooltip = true;
 
-            key_controller = new Gtk.EventControllerKey (this);
+            var key_controller = new Gtk.EventControllerKey ();
             key_controller.key_released.connect (on_key_released);
 
-            button_controller = new Gtk.GestureMultiPress (this) {
+            button_controller = new Gtk.GestureClick () {
                 propagation_phase = CAPTURE,
                 button = 0
             };
             button_controller.pressed.connect (on_button_pressed);
             button_controller.released.connect (on_button_released);
+
+            add_controller (button_controller);
+            add_controller (key_controller);
         }
 
         ~Tree () {
@@ -1217,7 +1211,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             Gtk.TreePath path;
             Gtk.TreeViewColumn column = get_column (Column.ITEM);
 
-            get_tooltip_context (ref x, ref y, keyboard_tooltip, null, out path, null);
+            get_tooltip_context (x, y, keyboard_tooltip, null, out path, null);
             if (path == null) {
                 return false;
             }
@@ -1533,7 +1527,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             enable_item_property_monitor ();
         }
 
-        public override void row_activated (Gtk.TreePath path, Gtk.TreeViewColumn column) {
+        public override void row_activated (Gtk.TreePath path, Gtk.TreeViewColumn? column) {
             if (column == get_column (Column.ITEM)) {
                 var item = data_model.get_item_from_path (path);
                 if (item != null)
@@ -1690,10 +1684,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             Gtk.Requisition min_req;
             cell_renderer.get_preferred_size (this, out min_req, null);
             return min_req.width;
-        }
-
-        public override bool popup_menu () {
-            return popup_context_menu ();
         }
 
         private bool popup_context_menu (Item? item = null, Gdk.Event? event = null) {
@@ -1965,8 +1955,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         tree = new Tree (data_model);
 
         set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
-        add (tree);
-        show_all ();
+        child = tree;
 
         tree.item_selected.connect ((item) => item_selected (item));
     }

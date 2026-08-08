@@ -22,7 +22,7 @@ public class Mail.AliasDialog : Granite.Dialog {
 
     private HashTable<string, string?> aliases;
     private Gtk.ListBox list;
-    private Granite.Widgets.Toast toast;
+    private Granite.Toast toast;
     private string primary_name;
 
     public AliasDialog (string account_uid) {
@@ -38,8 +38,8 @@ public class Mail.AliasDialog : Granite.Dialog {
             wrap = true,
             xalign = 0
         };
-        placeholder_description.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-        placeholder_description.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+        placeholder_description.add_css_class (Granite.CssClass.DIM);
+        placeholder_description.add_css_class (Granite.CssClass.SMALL);
 
         var placeholder = new Gtk.Box (VERTICAL, 0) {
             margin_start = 12,
@@ -47,9 +47,8 @@ public class Mail.AliasDialog : Granite.Dialog {
             halign = CENTER,
             valign = CENTER
         };
-        placeholder.add (placeholder_title);
-        placeholder.add (placeholder_description);
-        placeholder.show_all ();
+        placeholder.append (placeholder_title);
+        placeholder.append (placeholder_description);
 
         list = new Gtk.ListBox () {
             vexpand = true,
@@ -59,7 +58,7 @@ public class Mail.AliasDialog : Granite.Dialog {
         list.set_filter_func ((Gtk.ListBoxFilterFunc) filter_func);
         list.set_placeholder (placeholder);
 
-        var scrolled_window = new Gtk.ScrolledWindow (null, null) {
+        var scrolled_window = new Gtk.ScrolledWindow () {
             child = list,
             hscrollbar_policy = NEVER
         };
@@ -67,24 +66,24 @@ public class Mail.AliasDialog : Granite.Dialog {
         var add_button_label = new Gtk.Label (_("Add Alias…"));
 
         var add_box = new Gtk.Box (HORIZONTAL, 0);
-        add_box.add (new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
-        add_box.add (add_button_label);
+        add_box.append (new Gtk.Image.from_icon_name ("list-add-symbolic"));
+        add_box.append (add_button_label);
 
         var add_button = new Gtk.Button () {
             child = add_box,
             margin_top = 3,
             margin_bottom = 3
         };
-        add_button.get_style_context ().add_class ("image-button");
+        add_button.add_css_class ("image-button");
         add_button_label.mnemonic_widget = add_button;
 
         var actionbar = new Gtk.ActionBar ();
-        actionbar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+        actionbar.add_css_class (Granite.STYLE_CLASS_FLAT);
         actionbar.pack_start (add_button);
 
         var content_box = new Gtk.Box (VERTICAL, 0);
-        content_box.add (scrolled_window);
-        content_box.add (actionbar);
+        content_box.append (scrolled_window);
+        content_box.append (actionbar);
 
         var frame = new Gtk.Frame (null) {
             margin_start = 12,
@@ -92,19 +91,18 @@ public class Mail.AliasDialog : Granite.Dialog {
             child = content_box
         };
 
-        toast = new Granite.Widgets.Toast ("");
+        toast = new Granite.Toast ("");
         toast.set_default_action (_("Undo"));
 
         var overlay = new Gtk.Overlay () {
             child = frame
         };
         overlay.add_overlay (toast);
-        overlay.show_all ();
 
         title = _("Aliases");
         default_height = 300;
         default_width = 500;
-        get_content_area ().add (overlay);
+        get_content_area ().append (overlay);
         this.add_button (_("Close"), Gtk.ResponseType.CLOSE);
 
         var identity_source = Backend.Session.get_default ().get_identity_source_for_account_uid (account_uid);
@@ -127,7 +125,7 @@ public class Mail.AliasDialog : Granite.Dialog {
 
         response.connect (destroy);
 
-        delete_event.connect (() => {
+        close_request.connect (() => {
             foreach (var child in list.get_children ()) {
                 if (child is Alias && ((Alias) child).is_deleted) {
                     aliases.remove (((Alias) child).address);
