@@ -119,7 +119,7 @@ public class Mail.MessageList : Gtk.Box {
         list_box.add_css_class (Granite.STYLE_CLASS_BACKGROUND);
         list_box.set_placeholder (placeholder);
 
-        scrolled_window = new Gtk.ScrolledWindow () {
+        var scrolled_window = new Gtk.ScrolledWindow () {
             child = list_box,
             hscrollbar_policy = NEVER
         };

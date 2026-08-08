@@ -144,8 +144,8 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
         var end_actionbar = new Gtk.Box (HORIZONTAL, 12) {
             margin_top = 12
         };
-        end_actionbar.add (delete_button);
-        end_actionbar.add (default_menubutton);
+        end_actionbar.append (delete_button);
+        end_actionbar.append (default_menubutton);
 
         var content_box = new Gtk.Box (VERTICAL, 0) {
             margin_start = 12,
