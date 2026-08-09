@@ -43,20 +43,24 @@ public class Mail.FolderItemModel : Mail.SourceList.ExpandableItem {
     }
 
     public override GLib.Menu? get_context_menu () {
-        var menu = new Gtk.Menu ();
+        var refresh_action = new SimpleAction ("refresh", null);
+        refresh_action.activate.connect (refresh.begin);
 
-        var refresh_item = new Gtk.MenuItem.with_label (_("Refresh folder"));
-        refresh_item.activate.connect (() => refresh.begin ());
-        menu.add (refresh_item);
+        var rename_action = new SimpleAction ("rename", null);
+        rename_action.activate.connect (() => start_edit ());
+
+        var action_group = new SimpleActionGroup ();
+        action_group.add_action (refresh_action);
+        action_group.add_action (rename_action);
+
+        // insert_action_group ("folder", action_group);
+
+        var menu = new Menu ();
+        menu.append (_("Refresh"), "folder.refresh");
 
         if (!is_special_folder) {
-            var rename_item = new Gtk.MenuItem.with_label (_("Rename folder"));
-            rename_item.activate.connect (() => start_edit ());
-            menu.add (new Gtk.SeparatorMenuItem ());
-            menu.add (rename_item);
+            menu.append (_("Rename"), "folder.rename");
         }
-
-        menu.show_all ();
 
         return menu;
     }

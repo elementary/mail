@@ -156,6 +156,6 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
             Action.print_detailed_name (FolderList.ACTION_PREFIX + FolderList.ACTION_EDIT_ALIASES, account.service.uid)
         );
 
-        return new Gtk.Menu.from_model (menu);
+        return menu;
     }
 }

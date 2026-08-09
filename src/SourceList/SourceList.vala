@@ -286,8 +286,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         }
     }
 
-
-
     /**
      * An item that can contain more items.
      *
@@ -1621,9 +1619,11 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             }
 
             if (item != null) {
-                var menu = item.get_context_menu ();
-                if (menu != null) {
-                    menu.attach_widget = this;
+                var menu_model = item.get_context_menu ();
+                if (menu_model != null) {
+                    var menu = new Gtk.Menu.from_model (menu_model) {
+                        attach_widget = this
+                    };
                     menu.popup_at_pointer (event);
                     if (event == null) {
                         menu.select_first (false);
