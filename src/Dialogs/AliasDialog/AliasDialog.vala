@@ -21,7 +21,8 @@ public class Mail.AliasDialog : Granite.Dialog {
     public string account_uid { get; construct; }
 
     private HashTable<string, string?> aliases;
-    private Gtk.ListBox list;
+    private ListStore alias_list;
+    private Gtk.ListBox list_box;
     private Granite.Toast toast;
     private string primary_name;
 
@@ -50,23 +51,26 @@ public class Mail.AliasDialog : Granite.Dialog {
         placeholder.append (placeholder_title);
         placeholder.append (placeholder_description);
 
-        list = new Gtk.ListBox () {
+        alias_list = new ListStore (typeof (Alias));
+
+        list_box = new Gtk.ListBox () {
             vexpand = true,
             hexpand = true,
             selection_mode = NONE
         };
-        list.set_filter_func ((Gtk.ListBoxFilterFunc) filter_func);
-        list.set_placeholder (placeholder);
+        list_box.bind_model (alias_list, (obj) => (Alias) obj);
+        list_box.set_filter_func ((Gtk.ListBoxFilterFunc) filter_func);
+        list_box.set_placeholder (placeholder);
 
         var scrolled_window = new Gtk.ScrolledWindow () {
-            child = list,
+            child = list_box,
             hscrollbar_policy = NEVER
         };
 
         var add_button_label = new Gtk.Label (_("Add Alias…"));
 
         var add_box = new Gtk.Box (HORIZONTAL, 0);
-        add_box.append (new Gtk.Image.from_icon_name ("list-add-symbolic"));
+        add_box.append (new Gtk.Image.from_icon_name ("list_box-add-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
         add_box.append (add_button_label);
 
         var add_button = new Gtk.Button () {
@@ -109,26 +113,26 @@ public class Mail.AliasDialog : Granite.Dialog {
         var extension = (E.SourceMailIdentity) identity_source.get_extension (E.SOURCE_EXTENSION_MAIL_IDENTITY);
         primary_name = extension.name;
 
-        populate_list ();
+        populate_list_box ();
 
         add_button.clicked.connect (() => create_new_alias ());
 
         toast.default_action.connect (() => {
-            foreach (var child in list.get_children ()) {
-                if (child is Alias) {
-                    ((Alias) child).undo_delete ();
-                }
+            for (int i = 0; i < alias_list.n_items; i++) {
+                ((Alias) alias_list.get_item (i)).undo_delete ();
             }
 
-            list.invalidate_filter ();
+            list_box.invalidate_filter ();
         });
 
         response.connect (destroy);
 
         close_request.connect (() => {
-            foreach (var child in list.get_children ()) {
-                if (child is Alias && ((Alias) child).is_deleted) {
-                    aliases.remove (((Alias) child).address);
+            for (int i = 0; i < alias_list.n_items; i++) {
+                var alias = (Alias) alias_list.get_item (i);
+                if (alias.is_deleted) {
+                    alias_list.remove (i);
+                    aliases.remove (alias.address);
                 }
             }
 
@@ -142,7 +146,7 @@ public class Mail.AliasDialog : Granite.Dialog {
         return !alias.is_deleted;
     }
 
-    private void populate_list () {
+    private void populate_list_box () {
         aliases = Mail.Backend.Session.get_default ().get_aliases_for_account_uid (account_uid);
 
         if (aliases == null) {
@@ -171,19 +175,21 @@ public class Mail.AliasDialog : Granite.Dialog {
         });
 
         alias.start_delete.connect (() => {
-            list.invalidate_filter ();
+            list_box.invalidate_filter ();
 
             toast.title = _("'%s' deleted").printf (alias.alias_name != "" ? alias.alias_name : alias.address);
             toast.send_notification ();
         });
 
         alias.finish_delete.connect (() => {
-            list.remove (alias);
+            uint pos = -1;
+            if (alias_list.find (alias, out pos)) {
+                alias_list.remove (pos);
+            };
+
             aliases.remove (alias.address);
             write_aliases ();
         });
-
-        list.add (alias);
     }
 
     private void write_aliases () {
