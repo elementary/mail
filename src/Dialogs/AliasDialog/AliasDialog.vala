@@ -70,7 +70,7 @@ public class Mail.AliasDialog : Granite.Dialog {
         var add_button_label = new Gtk.Label (_("Add Alias…"));
 
         var add_box = new Gtk.Box (HORIZONTAL, 0);
-        add_box.append (new Gtk.Image.from_icon_name ("list_box-add-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
+        add_box.append (new Gtk.Image.from_icon_name ("list_box-add-symbolic"));
         add_box.append (add_button_label);
 
         var add_button = new Gtk.Button () {
