@@ -21,7 +21,8 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
     private const string ACTION_GROUP_PREFIX = "win";
     private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
 
-    private Gtk.ListBox signature_list;
+    private ListStore signature_list;
+    private Gtk.ListBox signature_list_box;
     private Gtk.Entry title_entry;
     private Mail.WebView web_view;
     private Signature? current_signature;
@@ -54,12 +55,15 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
         placeholder.append (placeholder_title);
         placeholder.append (placeholder_description);
 
-        signature_list = new Gtk.ListBox () {
+        signature_list = new ListStore (typeof (Signature));
+
+        signature_list_box = new Gtk.ListBox () {
             vexpand = true,
             selection_mode = BROWSE
         };
-        signature_list.set_filter_func ((Gtk.ListBoxFilterFunc)filter_func);
-        signature_list.set_placeholder (placeholder);
+        signature_list_box.bind_model (signature_list, (obj) => (Signature) obj);
+        signature_list_box.set_filter_func ((Gtk.ListBoxFilterFunc)filter_func);
+        signature_list_box.set_placeholder (placeholder);
 
         var add_box = new Gtk.Box (HORIZONTAL, 0);
         add_box.append (new Gtk.Image.from_icon_name ("list-add-symbolic"));
@@ -79,7 +83,7 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
         var start_box = new Gtk.Box (VERTICAL, 0);
         start_box.add_css_class (Granite.STYLE_CLASS_SIDEBAR);
         start_box.append (start_header);
-        start_box.append (signature_list);
+        start_box.append (signature_list_box);
         start_box.append (start_actionbar);
 
         var title = new Granite.HeaderLabel (_("Title")) {
@@ -194,8 +198,8 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
         add_button.clicked.connect (() => create_new_signature.begin ());
 
         title_entry.changed.connect (() => {
-            if (!selection_change_ongoing && signature_list.get_selected_row () != null) {
-                ((Signature)signature_list.get_selected_row ()).title = title_entry.text;
+            if (!selection_change_ongoing && signature_list_box.get_selected_row () != null) {
+                ((Signature)signature_list_box.get_selected_row ()).title = title_entry.text;
             }
         });
 
@@ -203,10 +207,10 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
 
         toast.default_action.connect (() => {
             last_deleted_signature.undo_delete ();
-            signature_list.invalidate_filter ();
+            signature_list_box.invalidate_filter ();
         });
 
-        signature_list.row_selected.connect ((row) => {
+        signature_list_box.row_selected.connect ((row) => {
             title_entry.sensitive = row != null;
             web_view.sensitive = row != null;
             delete_button.sensitive = row != null;
@@ -231,8 +235,8 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
         /* Save the current open signature */
         yield set_selected_signature (null);
 
-        foreach (var child in signature_list.get_children ()) {
-            var signature = (Signature)child;
+        for (int i = 0; i < signature_list.n_items; i++) {
+            var signature = (Signature) signature_list.get_item (i);
             if (signature.is_deleted) {
                 yield signature.finish_delete_signature ();
             }
@@ -279,7 +283,7 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
             signature_list.append (signature);
         }
 
-        signature_list.select_row (signature_list.get_row_at_index (0));
+        signature_list_box.select_row (signature_list_box.get_row_at_index (0));
     }
 
     private void populate_default_menu (Menu menu) {
@@ -313,18 +317,18 @@ public class Mail.SignatureDialog : Adw.ApplicationWindow {
 
         var new_signature = yield new Signature (new_signature_source);
         signature_list.append (new_signature);
-        signature_list.select_row (new_signature);
+        signature_list_box.select_row (new_signature);
     }
 
     private void delete_selected_signature () {
-        var signature = (Signature)signature_list.get_selected_row ();
+        var signature = (Signature)signature_list_box.get_selected_row ();
         var index = signature.get_index () + 1;
         last_deleted_signature = signature;
 
         signature.delete_signature ();
 
-        signature_list.invalidate_filter ();
-        signature_list.select_row (signature_list.get_row_at_index (index));
+        signature_list_box.invalidate_filter ();
+        signature_list_box.select_row (signature_list_box.get_row_at_index (index));
 
         toast.title = _("'%s' deleted").printf (signature.title);
         toast.send_notification ();
