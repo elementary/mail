@@ -23,12 +23,12 @@ public class Mail.Composer : Hdy.ApplicationWindow {
 
     private bool discard_draft = false;
     private Camel.MessageInfo? ancestor_message_info = null;
+    private ListStore attachment_list;
 
     private WebView web_view;
     private Gtk.Entry to_val;
     private Gtk.Entry cc_val;
     private Gtk.Entry bcc_val;
-    private Gtk.FlowBox attachment_box;
     private Gtk.Revealer cc_revealer;
     private Gtk.Revealer bcc_revealer;
     private Gtk.ToggleButton cc_button;
@@ -64,6 +64,8 @@ public class Mail.Composer : Hdy.ApplicationWindow {
     }
 
     construct {
+        attachment_list = new ListStore (typeof (Attachment));
+
         add_action_entries (ACTION_ENTRIES, this);
 
         application = (Gtk.Application) GLib.Application.get_default ();
@@ -85,16 +87,17 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         headerbar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         headerbar.get_style_context ().add_class ("default-decoration");
 
-        var from_label = new Gtk.Label (_("From:")) {
-            xalign = 1
-        };
-        from_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-
         from_combo = new Gtk.ComboBoxText () {
             hexpand = true
         };
 
-        var from_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+        var from_label = new Gtk.Label (_("From:")) {
+            mnemonic_widget = from_combo,
+            xalign = 1
+        };
+        from_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        var from_box = new Gtk.Box (HORIZONTAL, 6) {
             margin_bottom = 6
         };
         from_box.add (from_label);
@@ -104,19 +107,15 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             child = from_box
         };
 
-        var to_label = new Gtk.Label (_("To:")) {
-            xalign = 1
-        };
-        to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-
-        var subject_label = new Gtk.Label (_("Subject:")) {
-            xalign = 1
-        };
-        subject_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-
         to_val = new Gtk.Entry () {
             hexpand = true
         };
+
+        var to_label = new Gtk.Label (_("To:")) {
+            mnemonic_widget = to_val,
+            xalign = 1
+        };
+        to_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         cc_button = new Gtk.ToggleButton.with_label (_("Cc"));
 
@@ -127,16 +126,17 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         to_grid.add (cc_button);
         to_grid.add (bcc_button);
 
-        var cc_label = new Gtk.Label (_("Cc:")) {
-            xalign = 1
-        };
-        cc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-
         cc_val = new Gtk.Entry () {
             hexpand = true
         };
 
-        var cc_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+        var cc_label = new Gtk.Label (_("Cc:")) {
+            mnemonic_widget = cc_val,
+            xalign = 1
+        };
+        cc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        var cc_box = new Gtk.Box (HORIZONTAL, 6) {
             margin_top = 6
         };
         cc_box.add (cc_label);
@@ -145,16 +145,17 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         cc_revealer = new Gtk.Revealer ();
         cc_revealer.add (cc_box);
 
-        var bcc_label = new Gtk.Label (_("Bcc:")) {
-            xalign = 1
-        };
-        bcc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-
         bcc_val = new Gtk.Entry () {
             hexpand = true
         };
 
-        var bcc_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+        var bcc_label = new Gtk.Label (_("Bcc:")) {
+            mnemonic_widget = bcc_val,
+            xalign = 1
+        };
+        bcc_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        var bcc_box = new Gtk.Box (HORIZONTAL, 6) {
             margin_top = 6
         };
         bcc_box.add (bcc_label);
@@ -166,6 +167,12 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         subject_val = new Gtk.Entry () {
             margin_top = 6
         };
+
+        var subject_label = new Gtk.Label (_("Subject:")) {
+            mnemonic_widget = subject_val,
+            xalign = 1
+        };
+        subject_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         subject_val.changed.connect (() => {
             title = subject_val.text;
@@ -211,10 +218,11 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         var editor_toolbar = new EditorToolbar (web_view);
         editor_toolbar.add (image);
 
-        attachment_box = new Gtk.FlowBox () {
+        var attachment_box = new Gtk.FlowBox () {
             homogeneous = true,
             selection_mode = Gtk.SelectionMode.NONE
         };
+        attachment_box.bind_model (attachment_list, (obj) => (Attachment) obj);
         attachment_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
         var discard = new Gtk.Button.from_icon_name ("edit-delete-symbolic", Gtk.IconSize.MENU) {
@@ -243,12 +251,14 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             tooltip_text = _("Insert Signature…")
         };
 
-        var send = new Gtk.Button.from_icon_name ("mail-send-symbolic", Gtk.IconSize.MENU) {
+        var send_buttonbox = new Gtk.Box (HORIZONTAL, 0);
+        send_buttonbox.add (new Gtk.Image.from_icon_name ("mail-send-symbolic", MENU));
+        send_buttonbox.add (new Gtk.Label (_("Send")));
+
+        var send = new Gtk.Button () {
             action_name = ACTION_PREFIX + ACTION_SEND,
-            always_show_image = true,
-            label = _("Send"),
+            child = send_buttonbox,
             margin_top = 6,
-            margin_end = 0,
             margin_bottom = 6,
             margin_start = 6,
             sensitive = false,
@@ -268,8 +278,10 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         action_bar.pack_start (signature_button);
         action_bar.pack_end (send);
 
-        var view_overlay = new Gtk.Overlay ();
-        view_overlay.add (web_view);
+        var view_overlay = new Gtk.Overlay () {
+            child = web_view
+        };
+
         message_url_overlay = new Granite.Widgets.OverlayBar (view_overlay);
         message_url_overlay.no_show_all = true;
 
@@ -277,7 +289,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         main_box.add (headerbar);
         main_box.add (recipient_grid);
         main_box.add (editor_toolbar);
-        main_box.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        main_box.add (new Gtk.Separator (HORIZONTAL));
         main_box.add (view_overlay);
         main_box.add (attachment_box);
         main_box.add (action_bar);
@@ -313,9 +325,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         bind_property ("has-recipients", send, "sensitive");
         bind_property ("title", headerbar, "title");
 
-        cc_button.clicked.connect (() => {
-            cc_revealer.reveal_child = cc_button.active;
-        });
+        cc_button.bind_property ("active", cc_revealer, "reveal-child", SYNC_CREATE);
 
         cc_val.changed.connect (() => {
             on_sanitize_recipient_entry (cc_val);
@@ -326,9 +336,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             }
         });
 
-        bcc_button.clicked.connect (() => {
-            bcc_revealer.reveal_child = bcc_button.active;
-        });
+        bcc_button.bind_property ("active", bcc_revealer, "reveal-child", SYNC_CREATE);
 
         bcc_val.changed.connect (() => {
             on_sanitize_recipient_entry (bcc_val);
@@ -382,12 +390,12 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             }
 
             if ("bcc" in result) {
-                bcc_button.clicked ();
+                bcc_button.active = true;
                 bcc_val.text = result["bcc"].to_array ()[0];
             }
 
             if ("cc" in result) {
-                cc_button.clicked ();
+                cc_button.active = true;
                 cc_val.text = result["cc"].to_array ()[0];
             }
 
@@ -412,9 +420,8 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                 foreach (var path in result["attachment"]) {
                     var file = path.has_prefix ("file://") ? File.new_for_uri (path) : File.new_for_path (path);
 
-                    attachment_box.add (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
+                    attachment_list.append (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
                 }
-                attachment_box.show_all ();
             }
         }
     }
@@ -445,9 +452,8 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         if (filechooser.run () == Gtk.ResponseType.ACCEPT) {
             filechooser.hide ();
             foreach (unowned File file in filechooser.get_files ()) {
-                attachment_box.add (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
+                attachment_list.append (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
             }
-            attachment_box.show_all ();
         }
 
         filechooser.destroy ();
@@ -477,7 +483,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                     var inpustream = file.read ();
 
                     var attachment = new Attachment (file, Attachment.DISPOSITION_INLINE);
-                    attachment_box.add (attachment);
+                    attachment_list.append (attachment);
 
                     web_view.add_internal_resource (attachment.uri, inpustream);
                     web_view.execute_editor_command ("insertImage", attachment.uri);
@@ -732,8 +738,7 @@ public class Mail.Composer : Hdy.ApplicationWindow {
                             yield part.content.decode_to_output_stream (output_stream, GLib.Priority.DEFAULT, null);
                         }
 
-                        attachment_box.add (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
-                        attachment_box.show_all ();
+                        attachment_list.append (new Attachment (file, Attachment.DISPOSITION_ATTACHMENT));
                     } catch (Error e) {
                         critical (e.message);
                     }
@@ -903,15 +908,9 @@ public class Mail.Composer : Hdy.ApplicationWindow {
         body.set_boundary (null);
         body.add_part (part);
 
-        if (attachment_box.get_children ().length () > 0) {
-            foreach (unowned Gtk.Widget attachment in attachment_box.get_children ()) {
-                if (!(attachment is Attachment)) {
-                    continue;
-                }
-
-                unowned var attachment_obj = (Attachment)attachment;
-                body.add_part (attachment_obj.get_mime_part ());
-            }
+        for (int i = 0; i < attachment_list.n_items; i++) {
+            var attachment = (Attachment) attachment_list.get_item (i);
+            body.add_part (attachment.get_mime_part ());
         }
 
         var message = new Camel.MimeMessage ();
@@ -1055,7 +1054,9 @@ public class Mail.Composer : Hdy.ApplicationWindow {
             margin_bottom = 3;
             margin_start = 3;
             margin_end = 3;
-            add (box);
+
+            child = box;
+            show_all ();
 
             remove_button.clicked.connect (() => {
                 destroy ();

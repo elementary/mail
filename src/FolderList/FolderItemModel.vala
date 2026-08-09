@@ -161,14 +161,14 @@ public class Mail.FolderItemModel : Mail.SourceList.ExpandableItem {
 
         var offlinestore = (Camel.Store)account.service;
 
-        Camel.FolderInfo? folder_info = null;
+        Camel.FolderInfo? new_folder_info = null;
         try {
-            folder_info = yield offlinestore.get_folder_info (new_full_name, FAST, GLib.Priority.DEFAULT, cancellable);
+            new_folder_info = yield offlinestore.get_folder_info (new_full_name, FAST, GLib.Priority.DEFAULT, cancellable);
         } catch (Error e) {
             warning (e.message);
         }
 
-        if (null != folder_info) {
+        if (new_folder_info != null) {
             if (name == old_name) {
                 notify["name"].connect (cancel_rename);
             } else {

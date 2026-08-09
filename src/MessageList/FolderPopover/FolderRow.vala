@@ -6,57 +6,54 @@
  */
 
 public class Mail.FolderRow : Gtk.ListBoxRow {
-   public int depth { get; construct; } //Currently not used
    public Camel.FolderInfo folder_info { get; construct; }
    public Camel.Store store { get; construct; }
    public int pos { get; construct; }
 
-   public FolderRow (int depth, Camel.FolderInfo folder_info, Camel.Store store) {
-       Object (depth: depth, folder_info: folder_info, store: store);
+   public FolderRow (Camel.FolderInfo folder_info, Camel.Store store) {
+       Object (folder_info: folder_info, store: store);
    }
 
    construct {
-       var icon = new Gtk.Image.from_icon_name ("folder", MENU) {
-           margin_end = 3
-       };
+       var icon = new Gtk.Image.from_icon_name ("folder", MENU);
 
        var full_folder_info_flags = Utils.get_full_folder_info_flags (store, folder_info);
        switch (full_folder_info_flags & Camel.FOLDER_TYPE_MASK) {
-           case Camel.FolderInfoFlags.TYPE_INBOX:
-               icon.set_from_icon_name ("mail-inbox", MENU);
+           case TYPE_INBOX:
+               icon.icon_name = "mail-inbox";
                pos = 1;
                break;
-           case Camel.FolderInfoFlags.TYPE_DRAFTS:
-               icon.set_from_icon_name ("mail-drafts", MENU);
+           case TYPE_DRAFTS:
+               icon.icon_name = "mail-drafts";
                pos = 2;
                break;
-           case Camel.FolderInfoFlags.TYPE_OUTBOX:
-               icon.set_from_icon_name ("mail-outbox", MENU);
+           case TYPE_OUTBOX:
+               icon.icon_name = "mail-outbox";
                pos = 3;
                break;
-           case Camel.FolderInfoFlags.TYPE_SENT:
-               icon.set_from_icon_name ("mail-sent", MENU);
+           case TYPE_SENT:
+               icon.icon_name = "mail-sent";
                pos = 4;
                break;
-           case Camel.FolderInfoFlags.TYPE_ARCHIVE:
-               icon.set_from_icon_name ("mail-archive", MENU);
+           case TYPE_ARCHIVE:
+               icon.icon_name = "mail-archive";
                pos = 5;
                break;
-           case Camel.FolderInfoFlags.TYPE_TRASH:
-               icon.set_from_icon_name (folder_info.total == 0 ? "user-trash" : "user-trash-full", MENU);
+           case TYPE_TRASH:
+               icon.icon_name = folder_info.total == 0 ? "user-trash" : "user-trash-full";
                pos = 6;
                break;
-           case Camel.FolderInfoFlags.TYPE_JUNK:
-               icon.set_from_icon_name ("edit-flag", MENU);
+           case TYPE_JUNK:
+               icon.icon_name = "edit-flag";
                pos = 7;
                break;
            default:
-               icon.set_from_icon_name ("folder", MENU);
+               icon.icon_name = "folder";
                pos = 8;
                break;
        }
 
-       var box = new Gtk.Box (HORIZONTAL, 0) {
+       var box = new Gtk.Box (HORIZONTAL, 6) {
            margin_top = 6,
            margin_bottom = 6,
            margin_start = 12,

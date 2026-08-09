@@ -414,10 +414,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             base (name);
         }
 
-        construct {
-            editable = false;
-        }
-
         /**
          * Adds an item.
          *
@@ -881,8 +877,8 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         }
 
         private void resort () {
-            child_tree.set_sort_column_id (Gtk.SortColumn.UNSORTED, Gtk.SortType.ASCENDING);
-            child_tree.set_sort_column_id (Gtk.SortColumn.DEFAULT, Gtk.SortType.ASCENDING);
+            child_tree.set_sort_column_id (Gtk.TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID, Gtk.SortType.ASCENDING);
+            child_tree.set_sort_column_id (Gtk.TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID, Gtk.SortType.ASCENDING);
         }
 
         private int child_model_sort_func (Gtk.TreeModel model, Gtk.TreeIter a, Gtk.TreeIter b) {
@@ -954,7 +950,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         }
     }
 
-
     /**
      * Class responsible for rendering Item.icon and Item.activatable. It also
      * notifies about clicks through the activated() signal.
@@ -964,7 +959,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
 
         construct {
             mode = Gtk.CellRendererMode.ACTIVATABLE;
-            stock_size = Gtk.IconSize.MENU;
         }
 
         public override bool activate (
@@ -1050,6 +1044,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
 
         private Item? selected;
         private unowned Item? edited;
+        private Item? activated;
 
         private Gtk.Entry? editable_entry;
         private Gtk.CellRendererText text_cell;
@@ -1062,128 +1057,69 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         private Gee.HashMap<int, CellRendererSpacer> spacer_cells; // cells used for left spacing
         private bool unselectable_item_clicked = false;
 
-        private const string DEFAULT_STYLESHEET = """
-            .sidebar.badge {
-                border-radius: 10px;
-                border-width: 0;
-                padding: 1px 2px 1px 2px;
-                font-weight: bold;
-            }
-        """;
-
-        private const string STYLE_PROP_LEVEL_INDENTATION = "level-indentation";
-        private const string STYLE_PROP_LEFT_PADDING = "left-padding";
-        private const string STYLE_PROP_EXPANDER_SPACING = "expander-spacing";
-
-        static construct {
-            install_style_property (new ParamSpecInt (
-                STYLE_PROP_LEVEL_INDENTATION,
-                "Level Indentation",
-                "Space to add at the beginning of every indentation level. Must be an even number.",
-                1,
-                50,
-                6,
-                ParamFlags.READABLE
-            ));
-
-            install_style_property (new ParamSpecInt (
-                STYLE_PROP_LEFT_PADDING,
-                "Left Padding",
-                "Padding added to the left side of the tree. Must be an even number.",
-                1,
-                50,
-                4,
-                ParamFlags.READABLE
-            ));
-
-            install_style_property (new ParamSpecInt (
-                STYLE_PROP_EXPANDER_SPACING,
-                "Expander Spacing",
-                "Space added between an item and its expander. Must be an even number.",
-                1,
-                50,
-                4,
-                ParamFlags.READABLE
-            ));
-        }
-
         public Tree (DataModel data_model) {
             Object (data_model: data_model);
         }
 
         construct {
-            unowned Gtk.StyleContext style_context = get_style_context ();
-            style_context.add_class (Gtk.STYLE_CLASS_SIDEBAR);
-            style_context.add_class (Granite.STYLE_CLASS_SOURCE_LIST);
-
-            var css_provider = new Gtk.CssProvider ();
-            try {
-                css_provider.load_from_data (DEFAULT_STYLESHEET, -1);
-                style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK);
-            } catch (Error e) {
-                warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, DEFAULT_STYLESHEET);
-            }
-
-            set_model (data_model);
-
-            halign = valign = Gtk.Align.FILL;
-            expand = true;
-
+            get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
+            enable_grid_lines = NONE;
             enable_search = false;
             headers_visible = false;
-            enable_grid_lines = Gtk.TreeViewGridLines.NONE;
-
+            vexpand = true;
             // Deactivate GtkTreeView's built-in expander functionality
             expander_column = null;
             show_expanders = false;
 
-            var item_column = new Gtk.TreeViewColumn ();
-            item_column.expand = true;
+            set_model (data_model);
 
-            insert_column (item_column, Column.ITEM);
+            // Second expander. Used for main categories
+            secondary_expander_cell = new CellRendererExpander () {
+                is_category_expander = true,
+                xpad = 3
+            };
+
+            badge_cell = new CellRendererBadge () {
+                xpad = 3,
+                xalign = 1
+            };
+
+            text_cell = new Gtk.CellRendererText () {
+                editable_set = true,
+                editable = false,
+                ellipsize = END,
+                xalign = 0,
+                xpad = 6
+            };
+            text_cell.editing_started.connect (on_editing_started);
+            text_cell.editing_canceled.connect (on_editing_canceled);
+
+            icon_cell = new CellRendererIcon ();
+
+            // First expander. Used for normal expandable items
+            primary_expander_cell = new CellRendererExpander () {
+                xpad = 3
+            };
 
             // Now pack the cell renderers. We insert them in reverse order (using pack_end)
             // because we want to use TreeViewColumn.pack_start exclusively for inserting
             // spacer cell renderers for level-indentation purposes.
             // See add_spacer_cell_for_level() for more details.
-
-            // Second expander. Used for main categories
-            secondary_expander_cell = new CellRendererExpander ();
-            secondary_expander_cell.is_category_expander = true;
-            secondary_expander_cell.xpad = 10;
+            var item_column = new Gtk.TreeViewColumn () {
+                expand = true
+            };
             item_column.pack_end (secondary_expander_cell, false);
             item_column.set_cell_data_func (secondary_expander_cell, expander_cell_data_func);
-
-            badge_cell = new CellRendererBadge ();
-            badge_cell.xpad = 1;
-            badge_cell.xalign = 1;
             item_column.pack_end (badge_cell, false);
             item_column.set_cell_data_func (badge_cell, badge_cell_data_func);
-
-            text_cell = new Gtk.CellRendererText ();
-            text_cell.editable_set = true;
-            text_cell.editable = false;
-            text_cell.editing_started.connect (on_editing_started);
-            text_cell.editing_canceled.connect (on_editing_canceled);
-            text_cell.ellipsize = Pango.EllipsizeMode.END;
-            text_cell.xalign = 0;
             item_column.pack_end (text_cell, true);
             item_column.set_cell_data_func (text_cell, name_cell_data_func);
-
-            icon_cell = new CellRendererIcon ();
-            icon_cell.xpad = 2;
             item_column.pack_end (icon_cell, false);
             item_column.set_cell_data_func (icon_cell, icon_cell_data_func);
-
-            // First expander. Used for normal expandable items
-            primary_expander_cell = new CellRendererExpander ();
-
-            int expander_spacing;
-            style_get (STYLE_PROP_EXPANDER_SPACING, out expander_spacing);
-            primary_expander_cell.xpad = expander_spacing / 2;
-
             item_column.pack_end (primary_expander_cell, false);
             item_column.set_cell_data_func (primary_expander_cell, expander_cell_data_func);
+
+            insert_column (item_column, Column.ITEM);
 
             // Selection
             var selection = get_selection ();
@@ -1282,8 +1218,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                 spacer_cell.level = level;
                 spacer_cells[level] = spacer_cell;
 
-                uint cell_xpadding;
-
                 // The primary expander is not visible for root-level (i.e. first level)
                 // items, so for the second level of indentation we use a low padding
                 // because the primary expander will add enough space. For the root level,
@@ -1292,23 +1226,13 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                 // so we set the value to a half of actual (desired) value.
                 switch (level) {
                     case 1: // root
-                        int left_padding;
-                        style_get (STYLE_PROP_LEFT_PADDING, out left_padding);
-                        cell_xpadding = left_padding / 2;
-                    break;
-
                     case 2: // second level
-                        cell_xpadding = 0;
-                    break;
+                        break;
 
                     default: // remaining levels
-                        int level_indentation;
-                        style_get (STYLE_PROP_LEVEL_INDENTATION, out level_indentation);
-                        cell_xpadding = level_indentation / 2;
-                    break;
+                        spacer_cell.xpad = 3;
+                        break;
                 }
-
-                spacer_cell.xpad = cell_xpadding;
 
                 var item_column = get_column (Column.ITEM);
                 item_column.pack_start (spacer_cell, false);
@@ -1622,8 +1546,11 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                             && item.selectable
                             && over_cell (column, path, text_cell, cell_x)
                         ) {
+                            // Keep back reference of item so that it can be accessed in Idle.add_once()
+                            // where item is already freed
+                            activated = item;
                             // Start editing after native event handlers finished else fails
-                            Idle.add_once (() => { start_editing_item (item); });
+                            Idle.add_once (() => { start_editing_item (activated); });
                         }
                     }
                 }
@@ -1688,10 +1615,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             Gtk.Requisition min_req;
             cell_renderer.get_preferred_size (this, out min_req, null);
             return min_req.width;
-        }
-
-        public override bool popup_menu () {
-            return popup_context_menu ();
         }
 
         private bool popup_context_menu (Item? item = null, Gdk.Event? event = null) {
@@ -1965,8 +1888,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         tree = new Tree (data_model);
 
         set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
-        add (tree);
-        show_all ();
+        child = tree;
 
         tree.item_selected.connect ((item) => item_selected (item));
     }

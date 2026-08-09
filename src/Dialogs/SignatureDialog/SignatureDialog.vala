@@ -127,13 +127,15 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
 
         var default_menu = new Menu ();
 
+        var default_buttonbox = new Gtk.Box (HORIZONTAL, 0);
+        default_buttonbox.add (new Gtk.Label (_("Set Default For…")));
+        default_buttonbox.add (new Gtk.Image.from_icon_name ("pan-down-symbolic", SMALL_TOOLBAR));
+
         var default_menubutton = new Gtk.MenuButton () {
-            always_show_image = true,
+            child = default_buttonbox,
             halign = END,
-            image = new Gtk.Image.from_icon_name ("pan-down-symbolic", SMALL_TOOLBAR),
-            image_position = RIGHT,
+            hexpand = true,
             menu_model = default_menu,
-            label = _("Set Default For…"),
             use_popover = false,
             direction = UP,
             sensitive = false
@@ -142,8 +144,8 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
         var end_actionbar = new Gtk.Box (HORIZONTAL, 12) {
             margin_top = 12
         };
-        end_actionbar.pack_start (delete_button);
-        end_actionbar.pack_end (default_menubutton);
+        end_actionbar.add (delete_button);
+        end_actionbar.add (default_menubutton);
 
         var content_box = new Gtk.Box (VERTICAL, 0) {
             margin_start = 12,
