@@ -192,6 +192,8 @@ public class Mail.AliasDialog : Granite.Dialog {
             aliases.remove (alias.address);
             write_aliases ();
         });
+
+        alias_list.append (alias);
     }
 
     private void write_aliases () {
