@@ -15,6 +15,8 @@
 public class Mail.CellRendererExpander : Gtk.CellRenderer {
     public bool is_category_expander { get; set; default = false; }
 
+    private const int ARROW_SIZE = 16;
+
     public override Gtk.SizeRequestMode get_request_mode () {
         return Gtk.SizeRequestMode.HEIGHT_FOR_WIDTH;
     }
@@ -25,7 +27,7 @@ public class Mail.CellRendererExpander : Gtk.CellRenderer {
         out int natural_size
     ) {
         apply_style_changes (widget);
-        minimum_size = natural_size = get_arrow_size (widget) + 2 * (int) xpad;
+        minimum_size = natural_size = ARROW_SIZE + 2 * (int) xpad;
         revert_style_changes (widget);
     }
 
@@ -35,25 +37,8 @@ public class Mail.CellRendererExpander : Gtk.CellRenderer {
         out int natural_height
     ) {
         apply_style_changes (widget);
-        minimum_height = natural_height = get_arrow_size (widget) + 2 * (int) ypad;
+        minimum_height = natural_height = ARROW_SIZE + 2 * (int) ypad;
         revert_style_changes (widget);
-    }
-
-    /**
-     * Gets the size of the expander arrow.
-     *
-     * The default implementation tries to retrieve the "expander-size" style property from
-     * //widget//, as it is primarily meant to be used along with a {@link Gtk.TreeView}.
-     * For those with special needs, it is recommended to override this method.
-     *
-     * @param widget Widget used to query the "expander-size" style property (should be a Gtk.TreeView.)
-     * @return Size of the expander arrow.
-     * @since 0.2
-     */
-    public virtual int get_arrow_size (Gtk.Widget widget) {
-        int arrow_size;
-        widget.style_get ("expander-size", out arrow_size);
-        return arrow_size;
     }
 
     public override void render (
@@ -71,7 +56,7 @@ public class Mail.CellRendererExpander : Gtk.CellRenderer {
 
         Gdk.Rectangle aligned_area = get_aligned_area (widget, flags, cell_area);
 
-        int arrow_size = int.min (get_arrow_size (widget), aligned_area.width);
+        int arrow_size = int.min (ARROW_SIZE, aligned_area.width);
 
         int offset = arrow_size / 2;
         int x = aligned_area.x + aligned_area.width / 2 - offset;
