@@ -33,7 +33,7 @@ entry button:hover label {
 }
 
 entry button:focus {
-    background-color: alpha (@text_color, 0.15);
+    background-color: alpha(@text_color, 0.15);
 }
 
 entry button:checked label {

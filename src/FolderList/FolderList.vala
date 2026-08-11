@@ -36,7 +36,8 @@ public class Mail.FolderList : Gtk.Box {
         compose_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         header_bar = new Adw.HeaderBar () {
-            show_start_title_buttons = true,
+            show_end_title_buttons = false,
+            show_title = false
         };
         header_bar.pack_end (compose_button);
         header_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
@@ -45,7 +46,9 @@ public class Mail.FolderList : Gtk.Box {
 
         session_source_item = new Mail.SessionItemModel (session);
 
-        source_list = new Mail.SourceList ();
+        source_list = new Mail.SourceList () {
+            vexpand = true
+        };
         source_list.root.add (session_source_item);
 
         var scrolled_window = new Gtk.ScrolledWindow () {

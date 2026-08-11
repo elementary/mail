@@ -94,7 +94,8 @@ public class Mail.MessageList : Gtk.Box {
         trash_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
         headerbar = new Adw.HeaderBar () {
-            show_end_title_buttons = true
+            show_start_title_buttons = false,
+            show_title = false
         };
         headerbar.add_css_class (Granite.STYLE_CLASS_FLAT);
         headerbar.pack_start (reply_button);

@@ -20,7 +20,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.ConversationList : Gtk.Box {
+public class Mail.ConversationList : Granite.Bin {
     public signal void conversation_selected (Camel.FolderThreadNode? node);
 
     private const int MARK_READ_TIMEOUT_SECONDS = 5;
@@ -28,7 +28,7 @@ public class Mail.ConversationList : Gtk.Box {
     public Gee.Map<Backend.Account, Camel.FolderInfo?> folder_info_per_account { get; private set; }
     public Gee.HashMap<string, Camel.Folder> folders { get; private set; }
     public Gee.HashMap<string, Camel.FolderInfoFlags> folder_info_flags { get; private set; }
-    public Adw.HeaderBar search_header { get; private set; }
+    public Granite.Box search_header { get; private set; }
 
     private GLib.Cancellable? cancellable = null;
     private Gee.HashMap<string, Camel.FolderThread> threads;
@@ -46,7 +46,6 @@ public class Mail.ConversationList : Gtk.Box {
     private uint mark_read_timeout_id = 0;
 
     construct {
-        orientation = VERTICAL;
         add_css_class (Granite.STYLE_CLASS_VIEW);
 
         conversations = new Gee.HashMap<string, ConversationItemModel> ();
@@ -83,12 +82,12 @@ public class Mail.ConversationList : Gtk.Box {
             valign = Gtk.Align.CENTER
         };
 
-        search_header = new Adw.HeaderBar () {
-            // show_end_title_buttons = false,
-            title_widget = search_entry
+        search_header = new Granite.Box (HORIZONTAL, HALF) {
+            margin_start = 9,
+            margin_end = 9
         };
-        search_header.pack_end (filter_button);
-        search_header.add_css_class (Granite.STYLE_CLASS_FLAT);
+        search_header.append (search_entry);
+        search_header.append (filter_button);
 
         list_store = new ConversationListStore ();
         list_store.set_sort_func (thread_sort_function);
@@ -159,11 +158,15 @@ public class Mail.ConversationList : Gtk.Box {
         var conversation_action_bar = new Gtk.ActionBar ();
         conversation_action_bar.pack_start (refresh_stack);
         conversation_action_bar.pack_end (move_spinner);
-        conversation_action_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
-        append (search_header);
-        append (scrolled_window);
-        append (conversation_action_bar);
+        var toolbar_view = new Adw.ToolbarView () {
+            bottom_bar_style = RAISED,
+            content = scrolled_window
+        };
+        toolbar_view.add_top_bar (search_header);
+        toolbar_view.add_bottom_bar (conversation_action_bar);
+
+        child = toolbar_view;
 
         search_entry.search_changed.connect (() => load_folder.begin (folder_info_per_account));
 

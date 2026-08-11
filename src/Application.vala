@@ -98,20 +98,11 @@ public class Mail.Application : Gtk.Application {
     protected override void startup () {
         base.startup ();
 
+        Granite.init ();
         Adw.init ();
 
-        var granite_settings = Granite.Settings.get_default ();
         gtk_settings = Gtk.Settings.get_default ();
         gtk_settings.gtk_icon_theme_name = "elementary";
-
-        check_theme ();
-        gtk_settings.notify["gtk-theme-name"].connect (check_theme);
-
-        gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
-
-        granite_settings.notify["prefers-color-scheme"].connect (() => {
-            gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
-        });
 
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (() => {
@@ -232,12 +223,6 @@ public class Mail.Application : Gtk.Application {
             } else {
                 warning ("Failed to request autostart and background permissions: %s", e.message);
             }
-        }
-    }
-
-    private void check_theme () {
-        if (!gtk_settings.gtk_theme_name.has_prefix ("io.elementary")) {
-            gtk_settings.gtk_theme_name = "io.elementary.stylesheet.blueberry";
         }
     }
 }
