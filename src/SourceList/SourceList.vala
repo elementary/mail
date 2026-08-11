@@ -99,7 +99,7 @@
  * @since 0.2
  * @see Gtk.Paned
  */
-public class Mail.SourceList : Gtk.Bin {
+public class Mail.SourceList : Tree {
 
     /**
      * = WORKING INTERNALS =
@@ -490,7 +490,7 @@ public class Mail.SourceList : Gtk.Bin {
      * for sorting, adding, removing and updating items, eliminating the need of repeatedly dealing with
      * the Gtk.TreeModel API directly.
      */
-    private class DataModel : Gtk.TreeModelFilter, Gtk.TreeDragSource, Gtk.TreeDragDest {
+    public class DataModel : Gtk.TreeModelFilter, Gtk.TreeDragSource, Gtk.TreeDragDest {
 
         /**
          * An object that references a particular row in a model. This class is a wrapper built around
@@ -1020,7 +1020,7 @@ public class Mail.SourceList : Gtk.Bin {
      *
      * All the user interaction happens here.
      */
-    private class Tree : Gtk.TreeView {
+    public class Tree : Gtk.TreeView {
         public DataModel data_model { get; construct set; }
 
         public signal void item_selected (Item? item);
@@ -1784,16 +1784,6 @@ public class Mail.SourceList : Gtk.Bin {
         }
     }
 
-
-
-    /**
-     * Emitted when the source list selection changes.
-     *
-     * @param item Selected item; //null// if nothing is selected.
-     * @since 0.2
-     */
-    public virtual signal void item_selected (Item? item) { }
-
     /**
      * A {@link Granite.Widgets.SourceList.VisibleFunc} should return true if the item should be
      * visible; false otherwise. If //item//'s {@link Granite.Widgets.SourceList.Item.visible}
@@ -1843,36 +1833,15 @@ public class Mail.SourceList : Gtk.Bin {
      * @since 0.2
      */
     public Item? selected {
-        get { return tree.selected_item; }
+        get { return selected_item; }
         set {
-            if (value != null && value.parent != null)
+            if (value != null && value.parent != null) {
                 value.parent.expand_with_parents ();
-            tree.selected_item = value;
+            }
+
+            selected_item = value;
         }
     }
-
-    /**
-     * Text ellipsize mode.
-     *
-     * @since 0.2
-     */
-    private Pango.EllipsizeMode ellipsize_mode {
-        get { return tree.ellipsize_mode; }
-        set { tree.ellipsize_mode = value; }
-    }
-
-    /**
-     * Whether an item is being edited.
-     *
-     * @see Granite.Widgets.SourceList.start_editing_item
-     * @since 0.2
-     */
-    private bool editing {
-        get { return tree.editing; }
-    }
-
-    private Tree tree;
-    private DataModel data_model = new DataModel ();
 
     /**
      * Creates a new {@link Granite.Widgets.SourceList}.
@@ -1881,14 +1850,8 @@ public class Mail.SourceList : Gtk.Bin {
      * @since 0.2
      */
     public SourceList (ExpandableItem root = new ExpandableItem ()) {
+        Object (data_model: new DataModel ());
         this.root = root;
-    }
-
-    construct {
-        tree = new Tree (data_model);
-        child = tree;
-
-        tree.item_selected.connect ((item) => item_selected (item));
     }
 
     /**
@@ -1915,10 +1878,6 @@ public class Mail.SourceList : Gtk.Bin {
         data_model.set_filter_func (visible_func);
         if (refilter)
             this.refilter ();
-    }
-
-    public void start_editing_item (Item item) {
-        tree.start_editing_item (item);
     }
 
     /**
