@@ -68,9 +68,9 @@ public class Mail.WebView : WebKit.WebView {
             resource.finished.connect (() => update_height ());
         });
 
-        key_release_event.connect (() => {
-            body_html_changed = true;
-        });
+        // key_release_event.connect (() => {
+        //     body_html_changed = true;
+        // });
     }
 
     public WebView () {

@@ -1621,13 +1621,9 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             if (item != null) {
                 var menu_model = item.get_context_menu ();
                 if (menu_model != null) {
-                    var menu = new Gtk.Menu.from_model (menu_model) {
-                        attach_widget = this
-                    };
-                    menu.popup_at_pointer (event);
-                    if (event == null) {
-                        menu.select_first (false);
-                    }
+                    var menu = new Gtk.PopoverMenu.from_model (menu_model);
+                    menu.set_parent (this);
+                    // menu.popup_at_pointer (event);
 
                     return true;
                 }

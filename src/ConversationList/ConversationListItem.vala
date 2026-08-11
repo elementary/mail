@@ -20,7 +20,7 @@
  */
 
 public class Mail.ConversationListItem : Granite.Bin {
-    public signal void select ();
+    public signal void secondary_click (double x, double y);
 
     private Gtk.Image status_icon;
     private Gtk.Label date;
@@ -113,8 +113,7 @@ public class Mail.ConversationListItem : Granite.Bin {
         };
 
         gesture_controller.released.connect ((n_press, x, y) => {
-            select ();
-            create_context_menu (x, y);
+            secondary_click (x, y);
         });
 
         var key_controller = new Gtk.EventControllerKey ();
@@ -124,7 +123,7 @@ public class Mail.ConversationListItem : Granite.Bin {
                 return;
             }
 
-            create_context_menu ();
+            secondary_click (-1, -1);
         });
 
         add_controller (gesture_controller);
@@ -134,8 +133,6 @@ public class Mail.ConversationListItem : Granite.Bin {
             if (index == 1) {
                 return;
             }
-
-            select ();
 
             var main_window = (MainWindow)get_root ();
             if (index == 2) {
@@ -151,26 +148,26 @@ public class Mail.ConversationListItem : Granite.Bin {
         });
     }
 
-    public void assign (ConversationItemModel data) {
+    public void assign (ConversationItemModel item_model) {
         carousel.scroll_to (grid, false);
 
-        date.label = data.formatted_date;
-        topic.label = data.subject;
+        date.label = item_model.formatted_date;
+        topic.label = item_model.subject;
 
         var source_label_text = "";
-        if (Camel.FolderInfoFlags.TYPE_SENT == (data.folder_info_flags & Camel.FOLDER_TYPE_MASK)) {
-            source_label_text = data.to;
+        if (Camel.FolderInfoFlags.TYPE_SENT == (item_model.folder_info_flags & Camel.FOLDER_TYPE_MASK)) {
+            source_label_text = item_model.to;
         } else {
-            source_label_text = data.from;
+            source_label_text = item_model.from;
         }
         source.label = GLib.Markup.escape_text (source_label_text);
-        tooltip_markup = GLib.Markup.printf_escaped ("<b>%s</b>\n%s", source_label_text, data.subject);
+        tooltip_markup = GLib.Markup.printf_escaped ("<b>%s</b>\n%s", source_label_text, item_model.subject);
 
-        uint num_messages = data.num_messages;
+        uint num_messages = item_model.num_messages;
         messages.label = num_messages > 1 ? "%u".printf (num_messages) : null;
         messages.visible = num_messages > 1;
 
-        if (data.unread) {
+        if (item_model.unread) {
             grid.add_css_class ("unread-message");
 
             status_icon.icon_name = "mail-unread-symbolic";
@@ -185,11 +182,11 @@ public class Mail.ConversationListItem : Granite.Bin {
             status_icon.remove_css_class (Granite.CssClass.ACCENT);
             source.remove_css_class (Granite.CssClass.ACCENT);
 
-            if (data.replied_all || data.replied) {
+            if (item_model.replied_all || item_model.replied) {
                 status_icon.icon_name = "mail-replied-symbolic";
                 status_icon.tooltip_text = _("Replied");
                 status_revealer.reveal_child = true;
-            } else if (data.forwarded) {
+            } else if (item_model.forwarded) {
                 status_icon.icon_name = "mail-forwarded-symbolic";
                 status_icon.tooltip_text = _("Forwarded");
                 status_revealer.reveal_child = true;
@@ -198,37 +195,7 @@ public class Mail.ConversationListItem : Granite.Bin {
             }
         }
 
-        flagged_icon_revealer.reveal_child = data.flagged;
-    }
-
-    private void create_context_menu (double? x = null, double? y = null) {
-        var item = (ConversationItemModel)model_item;
-
-        var menu_model = new Menu ();
-        menu_model.append (_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH);
-
-        if (!item.unread) {
-            menu_model.append (_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD);
-        } else {
-            menu_model.append (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ);
-        }
-
-        if (!item.flagged) {
-            menu_model.append (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR);
-        } else {
-            menu_model.append (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR);
-        }
-
-        var menu = new Gtk.Menu.from_model (menu_model) {
-            attach_widget = this
-        };
-        menu.popup_at_pointer (null);
-
-        if (x == null || y == null) {
-            menu.popup_at_widget (this, Gdk.Gravity.EAST, Gdk.Gravity.CENTER, null);
-        } else {
-            menu.popup_at_pointer (null);
-        }
+        flagged_icon_revealer.reveal_child = item_model.flagged;
     }
 
     private class SwipeAffordance : Gtk.Box {

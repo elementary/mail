@@ -335,7 +335,7 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
         }
     }
 
-    private SimpleAction? get_action (string name) {
+    public SimpleAction? get_action (string name) {
         return (SimpleAction) lookup_action (name);
     }
 
