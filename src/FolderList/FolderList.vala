@@ -49,7 +49,8 @@ public class Mail.FolderList : Gtk.Box {
         source_list.root.add (session_source_item);
 
         var scrolled_window = new Gtk.ScrolledWindow () {
-            child = source_list
+            child = source_list,
+            hscrollbar_policy = NEVER
         };
 
         var dialogs_section = new Menu ();

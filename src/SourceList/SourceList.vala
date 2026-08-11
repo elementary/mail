@@ -99,7 +99,7 @@
  * @since 0.2
  * @see Gtk.Paned
  */
-public class Mail.SourceList : Gtk.ScrolledWindow {
+public class Mail.SourceList : Granite.Bin {
 
     /**
      * = WORKING INTERNALS =
@@ -1878,8 +1878,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
 
     construct {
         tree = new Tree (data_model);
-
-        set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
         child = tree;
 
         tree.item_selected.connect ((item) => item_selected (item));
