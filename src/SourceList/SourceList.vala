@@ -951,30 +951,6 @@ public class Mail.SourceList : Granite.Bin {
     }
 
     /**
-     * Class responsible for rendering Item.icon and Item.activatable. It also
-     * notifies about clicks through the activated() signal.
-     */
-    private class CellRendererIcon : Gtk.CellRendererPixbuf {
-        public signal void activated (string path);
-
-        construct {
-            mode = Gtk.CellRendererMode.ACTIVATABLE;
-        }
-
-        public override bool activate (
-            Gdk.Event event,
-            Gtk.Widget widget,
-            string path,
-            Gdk.Rectangle background_area,
-            Gdk.Rectangle cell_area,
-            Gtk.CellRendererState flags
-        ) {
-            activated (path);
-            return true;
-        }
-    }
-
-    /**
      * A cell renderer that only adds space.
      */
     private class CellRendererSpacer : Gtk.CellRenderer {
@@ -1043,7 +1019,7 @@ public class Mail.SourceList : Granite.Bin {
         private Gtk.Entry? editable_entry;
         private Gtk.CellRendererText text_cell;
         private Gtk.GestureClick button_controller;
-        private CellRendererIcon icon_cell;
+        private Gtk.CellRendererPixbuf icon_cell;
         private CellRendererBadge badge_cell;
         private CellRendererExpander primary_expander_cell;
         private CellRendererExpander secondary_expander_cell;
@@ -1087,7 +1063,9 @@ public class Mail.SourceList : Granite.Bin {
             text_cell.editing_started.connect (on_editing_started);
             text_cell.editing_canceled.connect (on_editing_canceled);
 
-            icon_cell = new CellRendererIcon ();
+            icon_cell = new Gtk.CellRendererPixbuf() {
+                mode = ACTIVATABLE
+            };
 
             // First expander. Used for normal expandable items
             primary_expander_cell = new CellRendererExpander () {
@@ -1723,7 +1701,7 @@ public class Mail.SourceList : Granite.Bin {
             Gtk.CellRenderer renderer,
             Gtk.TreeModel model, Gtk.TreeIter iter
         ) {
-            var icon_renderer = renderer as CellRendererIcon;
+            var icon_renderer = renderer as Gtk.CellRendererPixbuf;
             assert (icon_renderer != null);
 
             bool visible = false;
