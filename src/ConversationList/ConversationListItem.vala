@@ -241,13 +241,6 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         public string icon_name { get; construct; }
         public string label { get; construct; }
 
-        private static Gtk.CssProvider provider;
-
-        static construct {
-            provider = new Gtk.CssProvider ();
-            provider.load_from_resource ("io/elementary/mail/ConversationListItem.css");
-        }
-
         class construct {
             set_css_name ("affordance");
         }
@@ -265,7 +258,6 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
 
             var label = new Gtk.Label (label);
             label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
-            label.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var box = new Gtk.Box (VERTICAL, 3) {
                 halign = alignment,
@@ -277,8 +269,6 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
             box.add (label);
 
             add (box);
-
-            get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             if (alignment == Gtk.Align.START) {
                 get_style_context ().add_class ("start");
