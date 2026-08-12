@@ -51,32 +51,6 @@ public class Mail.ConversationList : Gtk.Box {
         folders = new Gee.HashMap<string, Camel.Folder> ();
         folder_info_flags = new Gee.HashMap<string, Camel.FolderInfoFlags> ();
         threads = new Gee.HashMap<string, Camel.FolderThread> ();
-        list_store = new ConversationListStore ();
-        list_store.set_sort_func (thread_sort_function);
-        list_store.set_filter_func (filter_function);
-
-        list_box = new VirtualizingListBox () {
-            activate_on_single_click = true,
-            model = list_store,
-            selection_mode = SINGLE
-        };
-        list_box.factory_func = (item, old_widget) => {
-            ConversationListItem? row = null;
-            if (old_widget != null) {
-                row = old_widget as ConversationListItem;
-            } else {
-                row = new ConversationListItem ();
-                row.select.connect (() => {
-                    if (list_box.selected_row_widget != row) {
-                        list_box.select_row (row);
-                    }
-                });
-            }
-
-            row.assign ((ConversationItemModel)item);
-            row.show_all ();
-            return row;
-        };
 
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
@@ -114,10 +88,39 @@ public class Mail.ConversationList : Gtk.Box {
         search_header.pack_end (filter_button);
         search_header.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
+        list_store = new ConversationListStore ();
+        list_store.set_sort_func (thread_sort_function);
+        list_store.set_filter_func (filter_function);
+
+        VirtualizingListBox.RowFactoryMethod factory = (item, old_widget) => {
+            ConversationListItem? row = null;
+            if (old_widget != null) {
+                row = old_widget as ConversationListItem;
+            } else {
+                row = new ConversationListItem ();
+                row.select.connect (() => {
+                    if (list_box.selected_row_widget != row) {
+                        list_box.select_row (row);
+                    }
+                });
+            }
+
+            row.assign ((ConversationItemModel)item);
+            row.show_all ();
+            return row;
+        };
+
+        list_box = new VirtualizingListBox (factory) {
+            activate_on_single_click = true,
+            model = list_store,
+            selection_mode = SINGLE
+        };
+
         var scrolled_window = new Gtk.ScrolledWindow (null, null) {
-            hscrollbar_policy = Gtk.PolicyType.NEVER,
+            hscrollbar_policy = NEVER,
             width_request = 158,
-            expand = true,
+            hexpand = true,
+            vexpand = true,
             child = list_box
         };
 
@@ -191,6 +194,7 @@ public class Mail.ConversationList : Gtk.Box {
                 ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_UNREAD)).set_enabled (!((ConversationItemModel) row).unread);
                 ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_STAR)).set_enabled (!((ConversationItemModel) row).flagged);
                 ((SimpleAction) win_action_map.lookup_action (MainWindow.ACTION_MARK_UNSTAR)).set_enabled (((ConversationItemModel) row).flagged);
+
                 conversation_selected (((ConversationItemModel) row).node);
             }
         });

@@ -23,7 +23,7 @@
 public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
     public delegate VirtualizingListBoxRow RowFactoryMethod (GLib.Object item, VirtualizingListBoxRow? old_widget);
 
-    public RowFactoryMethod factory_func;
+    public unowned RowFactoryMethod factory_func;
 
     public signal void row_activated (GLib.Object row);
     public signal void row_selected (GLib.Object row);
@@ -119,6 +119,10 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
     private int last_valid_widget_height = 1;
     private VirtualizingListBoxRow? active_row;
     private Gtk.GestureMultiPress multipress;
+
+    public VirtualizingListBox (RowFactoryMethod factory_func) {
+        this.factory_func = factory_func;
+    }
 
     static construct {
         set_css_name ("list");
