@@ -122,8 +122,10 @@ public class AttachmentButton : Gtk.FlowBoxChild {
             button = 0
         };
 
-        gesture_click.released.connect ((n_press, x, y) => {
-            if (gesture_click.get_current_button () == Gdk.BUTTON_SECONDARY) {
+        gesture_click.pressed.connect ((gesture, n_press, x, y) => {
+            var sequence = gesture.get_current_sequence ();
+            var event = gesture.get_last_event (sequence);
+            if (event.triggers_context_menu ()) {
                 menu.attach_widget = this;
                 menu.popup_at_pointer ();
             } else {
@@ -131,6 +133,7 @@ public class AttachmentButton : Gtk.FlowBoxChild {
             }
 
             gesture_click.set_state (CLAIMED);
+            gesture.reset ();
         });
     }
 
