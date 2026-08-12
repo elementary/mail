@@ -1063,7 +1063,7 @@ public class Mail.SourceList : Granite.Bin {
             text_cell.editing_started.connect (on_editing_started);
             text_cell.editing_canceled.connect (on_editing_canceled);
 
-            icon_cell = new Gtk.CellRendererPixbuf() {
+            icon_cell = new Gtk.CellRendererPixbuf () {
                 mode = ACTIVATABLE
             };
 
