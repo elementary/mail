@@ -99,10 +99,9 @@ public class Mail.ConversationListItem : Granite.Bin {
         carousel = new Adw.Carousel () {
             allow_scroll_wheel = false
         };
-        carousel.append (archive_affordance);
         carousel.append (grid);
+        carousel.prepend (archive_affordance);
         carousel.append (trash_affordance);
-        carousel.scroll_to (grid, true);
 
         add_css_class ("conversation-list-item");
         child = carousel;
