@@ -248,4 +248,8 @@ public class Mail.ConversationItemModel : GLib.Object {
 
         return has_flag;
     }
+
+    public static bool equal_func (ConversationItemModel a, ConversationItemModel b) {
+        return (a.service_uid == b.service_uid);
+    }
 }

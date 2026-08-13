@@ -32,8 +32,7 @@ public class Mail.ConversationList : Granite.Bin {
 
     private GLib.Cancellable? cancellable = null;
     private Gee.HashMap<string, Camel.FolderThread> threads;
-    private Gee.HashMap<string, ConversationItemModel> conversations;
-    private ConversationListStore list_store;
+    private ListStore list_store;
     private Gtk.ListView list_view;
     private Gtk.SearchEntry search_entry;
     private Gtk.SingleSelection selection_model;
@@ -47,12 +46,10 @@ public class Mail.ConversationList : Granite.Bin {
     construct {
         add_css_class (Granite.STYLE_CLASS_VIEW);
 
-        conversations = new Gee.HashMap<string, ConversationItemModel> ();
         folders = new Gee.HashMap<string, Camel.Folder> ();
         folder_info_flags = new Gee.HashMap<string, Camel.FolderInfoFlags> ();
         threads = new Gee.HashMap<string, Camel.FolderThread> ();
-        list_store = new ConversationListStore ();
-        list_store.set_sort_func (thread_sort_function);
+        list_store = new ListStore (typeof (ConversationItemModel));
 
         var filter_model = new Gtk.FilterListModel (list_store, new Gtk.CustomFilter (deleted_filter_func));
 
@@ -226,58 +223,55 @@ public class Mail.ConversationList : Granite.Bin {
         conversation_selected (null);
 
         uint previous_items = list_store.get_n_items ();
-        lock (conversations) {
-            lock (folders) {
-                lock (threads) {
-                    conversations.clear ();
-                    folders.clear ();
-                    threads.clear ();
+        lock (folders) {
+            lock (threads) {
+                folders.clear ();
+                threads.clear ();
 
-                    list_store.remove_all ();
-                    list_store.items_changed (0, previous_items, 0);
+                list_store.remove_all ();
+                list_store.items_changed (0, previous_items, 0);
 
-                    cancellable = new GLib.Cancellable ();
+                cancellable = new GLib.Cancellable ();
 
-                    lock (this.folder_info_per_account) {
-                        foreach (var folder_info_entry in this.folder_info_per_account) {
-                            var current_account = folder_info_entry.key;
-                            var current_folder_info = folder_info_entry.value;
+                lock (this.folder_info_per_account) {
+                    foreach (var folder_info_entry in this.folder_info_per_account) {
+                        var current_account = folder_info_entry.key;
+                        var current_folder_info = folder_info_entry.value;
 
-                            if (current_folder_info == null) {
-                                continue;
-                            }
+                        if (current_folder_info == null) {
+                            continue;
+                        }
 
-                            try {
-                                var camel_store = (Camel.Store) current_account.service;
+                        try {
+                            var camel_store = (Camel.Store) current_account.service;
 
-                                var folder = yield camel_store.get_folder (current_folder_info.full_name, 0, GLib.Priority.DEFAULT, cancellable);
-                                folders[current_account.service.uid] = folder;
+                            var folder = yield camel_store.get_folder (current_folder_info.full_name, 0, GLib.Priority.DEFAULT, cancellable);
+                            folders[current_account.service.uid] = folder;
 
-                                var info_flags = Utils.get_full_folder_info_flags (current_account.service, current_folder_info);
-                                folder_info_flags[current_account.service.uid] = info_flags;
+                            var info_flags = Utils.get_full_folder_info_flags (current_account.service, current_folder_info);
+                            folder_info_flags[current_account.service.uid] = info_flags;
 
-                                folder.changed.connect ((change_info) => folder_changed (change_info, current_account.service.uid, cancellable));
+                            folder.changed.connect ((change_info) => folder_changed (change_info, current_account.service.uid, cancellable));
 
-                                var search_result_uids = get_search_result_uids (current_account.service.uid);
-                                if (search_result_uids != null) {
-                                    var thread = new Camel.FolderThread (folder, search_result_uids, false);
-                                    threads[current_account.service.uid] = thread;
+                            var search_result_uids = get_search_result_uids (current_account.service.uid);
+                            if (search_result_uids != null) {
+                                var thread = new Camel.FolderThread (folder, search_result_uids, false);
+                                threads[current_account.service.uid] = thread;
 
-                                    weak Camel.FolderThreadNode? child = thread.tree;
-                                    while (child != null) {
-                                        if (cancellable.is_cancelled ()) {
-                                            break;
-                                        }
-
-                                        add_conversation_item (folder_info_flags[current_account.service.uid], child, thread, current_account.service.uid);
-                                        child = child.next;
+                                weak Camel.FolderThreadNode? child = thread.tree;
+                                while (child != null) {
+                                    if (cancellable.is_cancelled ()) {
+                                        break;
                                     }
+
+                                    add_conversation_item (folder_info_flags[current_account.service.uid], child, thread, current_account.service.uid);
+                                    child = child.next;
                                 }
-                            } catch (Error e) {
-                                // We can cancel the operation
-                                if (!(e is GLib.IOError.CANCELLED)) {
-                                    critical (e.message);
-                                }
+                            }
+                        } catch (Error e) {
+                            // We can cancel the operation
+                            if (!(e is GLib.IOError.CANCELLED)) {
+                                critical (e.message);
                             }
                         }
                     }
@@ -310,48 +304,59 @@ public class Mail.ConversationList : Granite.Bin {
             return;
         }
 
-        lock (conversations) {
-            lock (threads) {
-                var search_result_uids = get_search_result_uids (service_uid);
-                if (search_result_uids == null) {
+        lock (threads) {
+            var search_result_uids = get_search_result_uids (service_uid);
+            if (search_result_uids == null) {
+                return;
+            }
+
+            threads[service_uid] = new Camel.FolderThread (folders[service_uid], search_result_uids, false);
+            unowned Camel.FolderThreadNode? child = threads[service_uid].tree;
+
+            var removed = 0;
+            change_info.get_removed_uids ().foreach ((uid) => {
+                var temp_item = new ConversationItemModel (folder_info_flags[service_uid], child, threads[service_uid], uid);
+
+                uint pos = -1;
+                if (
+                    list_store.find_with_equal_func (
+                        temp_item,
+                        (EqualFunc<ConversationItemModel>)ConversationItemModel.equal_func,
+                        out pos
+                    )
+                ) {
+                    list_store.remove (pos);
+                }
+            });
+
+            while (child != null) {
+                if (cancellable.is_cancelled ()) {
                     return;
                 }
 
-                threads[service_uid] = new Camel.FolderThread (folders[service_uid], search_result_uids, false);
-
-                var removed = 0;
-                change_info.get_removed_uids ().foreach ((uid) => {
-                    var item = conversations[uid];
-                    if (item != null) {
-                        conversations.unset (uid);
-                        list_store.remove (item);
+                var temp_item = new ConversationItemModel (folder_info_flags[service_uid], child, threads[service_uid], service_uid);
+                uint pos = -1;
+                if (
+                    list_store.find_with_equal_func (
+                        temp_item,
+                        (EqualFunc<ConversationItemModel>)ConversationItemModel.equal_func,
+                        out pos
+                    )
+                ) {
+                    var item = (ConversationItemModel) list_store.get_item (pos);
+                    if (item.is_older_than (child)) {
+                        list_store.remove (pos);
                         removed++;
-                    }
-                });
-
-                unowned Camel.FolderThreadNode? child = threads[service_uid].tree;
-                while (child != null) {
-                    if (cancellable.is_cancelled ()) {
-                        return;
-                    }
-
-                    var item = conversations[child.message.uid];
-                    if (item == null) {
                         add_conversation_item (folder_info_flags[service_uid], child, threads[service_uid], service_uid);
-                    } else {
-                        if (item.is_older_than (child)) {
-                            conversations.unset (child.message.uid);
-                            list_store.remove (item);
-                            removed++;
-                            add_conversation_item (folder_info_flags[service_uid], child, threads[service_uid], service_uid);
-                        };
-                    }
-
-                    child = child.next;
+                    };
+                } else {
+                    add_conversation_item (folder_info_flags[service_uid], child, threads[service_uid], service_uid);
                 }
 
-                list_store.items_changed (0, removed, list_store.get_n_items ());
+                child = child.next;
             }
+
+            list_store.items_changed (0, removed, list_store.get_n_items ());
         }
     }
 
@@ -409,8 +414,7 @@ public class Mail.ConversationList : Granite.Bin {
 
     private void add_conversation_item (Camel.FolderInfoFlags folder_info_flags, Camel.FolderThreadNode child, Camel.FolderThread thread, string service_uid) {
         var item = new ConversationItemModel (folder_info_flags, child, thread, service_uid);
-        conversations[child.message.uid] = item;
-        list_store.add (item);
+        list_store.insert_sorted (item, thread_sort_function);
     }
 
     private static bool deleted_filter_func (GLib.Object obj) {
@@ -422,7 +426,9 @@ public class Mail.ConversationList : Granite.Bin {
         }
     }
 
-    private static int thread_sort_function (ConversationItemModel item1, ConversationItemModel item2) {
+    private static int thread_sort_function (Object obj1, Object obj2) {
+        var item1 = (ConversationItemModel) obj1;
+        var item2 = (ConversationItemModel) obj2;
         return (int)(item2.timestamp - item1.timestamp);
     }
 

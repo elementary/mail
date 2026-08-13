@@ -14,7 +14,6 @@ vala_files = files(
     'ConversationList/ConversationItemModel.vala',
     'ConversationList/ConversationList.vala',
     'ConversationList/ConversationListItem.vala',
-    'ConversationList/ConversationListStore.vala',
     'Dialogs/InsertLinkDialog.vala',
     'Dialogs/AliasDialog/Alias.vala',
     'Dialogs/AliasDialog/AliasDialog.vala',
