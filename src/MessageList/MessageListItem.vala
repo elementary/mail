@@ -79,7 +79,7 @@ public class Mail.MessageListItem : Gtk.ListBoxRow {
 
     construct {
         loading_cancellable = new GLib.Cancellable ();
-        add_css_class (Granite.STYLE_CLASS_CARD);
+        add_css_class (Granite.CssClass.CARD);
 
         unowned string? parsed_address;
         unowned string? parsed_name;

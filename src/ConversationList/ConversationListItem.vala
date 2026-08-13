@@ -19,8 +19,8 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.ConversationListItem : Granite.Bin {
-    public signal void secondary_click (double x, double y);
+public class Mail.ConversationListItem : Granite.ListItem {
+    public signal void select ();
 
     private Gtk.Image status_icon;
     private Gtk.Label date;
@@ -46,7 +46,7 @@ public class Mail.ConversationListItem : Granite.Bin {
 
         source = new Gtk.Label (null) {
             hexpand = true,
-            ellipsize = Pango.EllipsizeMode.END,
+            ellipsize = END,
             use_markup = true,
             xalign = 0
         };
@@ -60,7 +60,7 @@ public class Mail.ConversationListItem : Granite.Bin {
 
         topic = new Gtk.Label (null) {
             hexpand = true,
-            ellipsize = Pango.EllipsizeMode.END,
+            ellipsize = END,
             xalign = 0
         };
 
@@ -106,13 +106,15 @@ public class Mail.ConversationListItem : Granite.Bin {
         add_css_class ("conversation-list-item");
         child = carousel;
 
-        var gesture_controller = new Gtk.GestureClick () {
+        var click_controller = new Gtk.GestureClick () {
             button = Gdk.BUTTON_SECONDARY,
             propagation_phase = BUBBLE
         };
 
-        gesture_controller.released.connect ((n_press, x, y) => {
-            secondary_click (x, y);
+        click_controller.released.connect ((n_press, x, y) => {
+            select ();
+            var menu = create_context_menu ();
+            menu_popup_at_pointer (menu, x, y);
         });
 
         var key_controller = new Gtk.EventControllerKey ();
@@ -122,10 +124,11 @@ public class Mail.ConversationListItem : Granite.Bin {
                 return;
             }
 
-            secondary_click (-1, -1);
+            var menu = create_context_menu ();
+            menu_popup_on_keypress (menu);
         });
 
-        add_controller (gesture_controller);
+        add_controller (click_controller);
         add_controller (key_controller);
 
         carousel.page_changed.connect ((index) => {
@@ -133,7 +136,9 @@ public class Mail.ConversationListItem : Granite.Bin {
                 return;
             }
 
-            var main_window = (MainWindow)get_root ();
+            select ();
+
+            var main_window = (MainWindow) get_root ();
             if (index == 2) {
                 main_window.activate_action (MainWindow.ACTION_MOVE_TO_TRASH, null);
             } else if (index == 0) {
@@ -147,26 +152,26 @@ public class Mail.ConversationListItem : Granite.Bin {
         });
     }
 
-    public void assign (ConversationItemModel item_model) {
+    public void assign (ConversationItemModel data) {
         carousel.scroll_to (grid, false);
 
-        date.label = item_model.formatted_date;
-        topic.label = item_model.subject;
+        date.label = data.formatted_date;
+        topic.label = data.subject;
 
         var source_label_text = "";
-        if (Camel.FolderInfoFlags.TYPE_SENT == (item_model.folder_info_flags & Camel.FOLDER_TYPE_MASK)) {
-            source_label_text = item_model.to;
+        if (Camel.FolderInfoFlags.TYPE_SENT == (data.folder_info_flags & Camel.FOLDER_TYPE_MASK)) {
+            source_label_text = data.to;
         } else {
-            source_label_text = item_model.from;
+            source_label_text = data.from;
         }
         source.label = GLib.Markup.escape_text (source_label_text);
-        tooltip_markup = GLib.Markup.printf_escaped ("<b>%s</b>\n%s", source_label_text, item_model.subject);
+        tooltip_markup = GLib.Markup.printf_escaped ("<b>%s</b>\n%s", source_label_text, data.subject);
 
-        uint num_messages = item_model.num_messages;
+        uint num_messages = data.num_messages;
         messages.label = num_messages > 1 ? "%u".printf (num_messages) : null;
         messages.visible = num_messages > 1;
 
-        if (item_model.unread) {
+        if (data.unread) {
             grid.add_css_class ("unread-message");
 
             status_icon.icon_name = "mail-unread-symbolic";
@@ -181,11 +186,11 @@ public class Mail.ConversationListItem : Granite.Bin {
             status_icon.remove_css_class (Granite.CssClass.ACCENT);
             source.remove_css_class (Granite.CssClass.ACCENT);
 
-            if (item_model.replied_all || item_model.replied) {
+            if (data.replied_all || data.replied) {
                 status_icon.icon_name = "mail-replied-symbolic";
                 status_icon.tooltip_text = _("Replied");
                 status_revealer.reveal_child = true;
-            } else if (item_model.forwarded) {
+            } else if (data.forwarded) {
                 status_icon.icon_name = "mail-forwarded-symbolic";
                 status_icon.tooltip_text = _("Forwarded");
                 status_revealer.reveal_child = true;
@@ -194,10 +199,54 @@ public class Mail.ConversationListItem : Granite.Bin {
             }
         }
 
-        flagged_icon_revealer.reveal_child = item_model.flagged;
+        flagged_icon_revealer.reveal_child = data.flagged;
     }
 
-    private class SwipeAffordance : Gtk.Box {
+    private Gtk.PopoverMenu create_context_menu () {
+        var menu_model = new Menu ();
+        menu_model.append (_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH);
+
+        // var item = (ConversationItemModel) model_item;
+        // if (!item.unread) {
+        //     menu_model.append (_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD);
+        // } else {
+        //     menu_model.append (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ);
+        // }
+
+        // if (!item.flagged) {
+        //     menu_model.append (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR);
+        // } else {
+        //     menu_model.append (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR);
+        // }
+
+        var menu = new Gtk.PopoverMenu.from_model (menu_model) {
+            has_arrow = false,
+            position = BOTTOM
+        };
+        menu.set_parent (this);
+
+        return menu;
+    }
+
+    private void menu_popup_at_pointer (Gtk.PopoverMenu popover, double x, double y) {
+        var rect = Gdk.Rectangle () {
+            x = (int) x,
+            y = (int) y
+        };
+        popover.pointing_to = rect;
+        popover.popup ();
+    }
+
+    private void menu_popup_on_keypress (Gtk.PopoverMenu popover) {
+        popover.halign = END;
+        popover.set_pointing_to (Gdk.Rectangle () {
+            x = (int) get_width (),
+            y = (int) get_height () / 2
+        });
+        popover.popup ();
+    }
+
+    private class SwipeAffordance : Granite.Bin {
         public Gtk.Align alignment { get; construct; }
         public string icon_name { get; construct; }
         public string label { get; construct; }
@@ -218,7 +267,7 @@ public class Mail.ConversationListItem : Granite.Bin {
             var image = new Gtk.Image.from_icon_name (icon_name);
 
             var label = new Gtk.Label (label);
-            label.add_css_class (Granite.CssClass.SMALL);
+            label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
             var box = new Gtk.Box (VERTICAL, 3) {
                 halign = alignment,
@@ -229,7 +278,7 @@ public class Mail.ConversationListItem : Granite.Bin {
             box.append (image);
             box.append (label);
 
-            append (box);
+            child = box;
 
             if (alignment == Gtk.Align.START) {
                 add_css_class ("start");
