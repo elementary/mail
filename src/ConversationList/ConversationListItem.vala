@@ -27,6 +27,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     private Gtk.Label messages;
     private Gtk.Label source;
     private Gtk.Label topic;
+    private Gtk.Revealer message_count_revealer;
     private Gtk.Revealer flagged_icon_revealer;
     private Gtk.Revealer status_revealer;
     private Gtk.Grid grid;
@@ -58,10 +59,12 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         messages = new Gtk.Label (null) {
             halign = Gtk.Align.END
         };
+        messages.get_style_context ().add_class (Granite.STYLE_CLASS_BADGE);
+        messages.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        weak Gtk.StyleContext messages_style = messages.get_style_context ();
-        messages_style.add_class (Granite.STYLE_CLASS_BADGE);
-        messages_style.add_class (Gtk.STYLE_CLASS_FLAT);
+        message_count_revealer = new Gtk.Revealer () {
+            child = messages
+        };
 
         topic = new Gtk.Label (null) {
             hexpand = true,
@@ -89,7 +92,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         grid.attach (source, 1, 0, 1, 1);
         grid.attach (date, 2, 0, 2, 1);
         grid.attach (topic, 1, 1, 2, 1);
-        grid.attach (messages, 3, 1, 1, 1);
+        grid.attach (message_count_revealer, 3, 1);
 
         var archive_affordance = new SwipeAffordance (
             _("Archive"), "mail-archive-symbolic", END
@@ -170,8 +173,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
 
         uint num_messages = item_model.num_messages;
         messages.label = num_messages > 1 ? "%u".printf (num_messages) : null;
-        messages.visible = num_messages > 1;
-        messages.no_show_all = num_messages <= 1;
+        message_count_revealer.reveal_child = num_messages > 1;
 
         if (item_model.unread) {
             grid.get_style_context ().add_class ("unread-message");
