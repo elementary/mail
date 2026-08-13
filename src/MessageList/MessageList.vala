@@ -234,18 +234,16 @@ public class Mail.MessageList : Gtk.Box {
     }
 
     private void can_reply (bool enabled) {
-        unowned var main_window = (Gtk.ApplicationWindow) get_root ();
-        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_FORWARD)).set_enabled (enabled);
-        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_REPLY_ALL)).set_enabled (enabled);
-        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_REPLY)).set_enabled (enabled);
+        action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_FORWARD, enabled);
+        action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY_ALL, enabled);
+        action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_REPLY, enabled);
     }
 
     private void can_move_thread (bool enabled) {
-        unowned var main_window = (Gtk.ApplicationWindow) get_root ();
-        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MODIFY)).set_enabled (enabled);
-        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_ARCHIVE)).set_enabled (enabled);
-        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE)).set_enabled (enabled);
-        ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE_TO_TRASH)).set_enabled (enabled);
+        action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_MODIFY, enabled);
+        action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_ARCHIVE, enabled);
+        action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE, enabled);
+        action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH, enabled);
     }
 
     private static int message_sort_function (Object item1, Object item2) {

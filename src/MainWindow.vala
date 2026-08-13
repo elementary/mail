@@ -97,7 +97,7 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
 
     construct {
         add_action_entries (ACTION_ENTRIES, this);
-        get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
+        action_set_enabled (ACTION_PREFIX + ACTION_COMPOSE_MESSAGE, false);
 
         foreach (var action in action_accelerators.get_keys ()) {
             ((Gtk.Application) GLib.Application.get_default ()).set_accels_for_action (
@@ -187,13 +187,13 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
         var account_removed_handler = session.account_removed.connect (() => {
             var accounts_left = session.get_accounts ();
             if (accounts_left.size == 0) {
-                get_action (ACTION_COMPOSE_MESSAGE).set_enabled (false);
+                action_set_enabled (ACTION_PREFIX + ACTION_COMPOSE_MESSAGE, false);
             }
         });
 
         var account_added_handler = session.account_added.connect (() => {
             placeholder_stack.visible_child = paned_end;
-            get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
+            action_set_enabled (ACTION_PREFIX + ACTION_COMPOSE_MESSAGE, true);
         });
 
         session.start.begin ((obj, res) => {
@@ -201,7 +201,7 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
 
             if (session.get_accounts ().size > 0) {
                 placeholder_stack.visible_child = paned_end;
-                get_action (ACTION_COMPOSE_MESSAGE).set_enabled (true);
+                action_set_enabled (ACTION_PREFIX + ACTION_COMPOSE_MESSAGE, true);
             } else {
                 placeholder_stack.visible_child = welcome_view;
                 placeholder_stack.transition_type = Gtk.StackTransitionType.OVER_DOWN_UP;
@@ -227,26 +227,26 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
 
     private void on_mark_read () {
         conversation_list.mark_read_selected_messages ();
-        get_action (ACTION_MARK_READ).set_enabled (false);
-        get_action (ACTION_MARK_UNREAD).set_enabled (true);
+        action_set_enabled (ACTION_PREFIX + ACTION_MARK_READ, false);
+        action_set_enabled (ACTION_PREFIX + ACTION_MARK_UNREAD, true);
     }
 
     private void on_mark_star () {
         conversation_list.mark_star_selected_messages ();
-        get_action (ACTION_MARK_STAR).set_enabled (false);
-        get_action (ACTION_MARK_UNSTAR).set_enabled (true);
+        action_set_enabled (ACTION_PREFIX + ACTION_MARK_STAR, false);
+        action_set_enabled (ACTION_PREFIX + ACTION_MARK_UNSTAR, true);
     }
 
     private void on_mark_unread () {
         conversation_list.mark_unread_selected_messages ();
-        get_action (ACTION_MARK_UNREAD).set_enabled (false);
-        get_action (ACTION_MARK_READ).set_enabled (true);
+        action_set_enabled (ACTION_PREFIX + ACTION_MARK_UNREAD, false);
+        action_set_enabled (ACTION_PREFIX + ACTION_MARK_READ, true);
     }
 
     private void on_mark_unstar () {
         conversation_list.mark_unstar_selected_messages ();
-        get_action (ACTION_MARK_UNSTAR).set_enabled (false);
-        get_action (ACTION_MARK_STAR).set_enabled (true);
+        action_set_enabled (ACTION_PREFIX + ACTION_MARK_UNSTAR, false);
+        action_set_enabled (ACTION_PREFIX + ACTION_MARK_STAR, true);
     }
 
     private void action_compose (SimpleAction action, Variant? parameter) {
@@ -333,10 +333,6 @@ public class Mail.MainWindow : Adw.ApplicationWindow {
             message_list.headerbar.show_end_title_buttons = false;
             fullscreen ();
         }
-    }
-
-    public SimpleAction? get_action (string name) {
-        return (SimpleAction) lookup_action (name);
     }
 
     public static void send_error_message (string title, string description, string? icon_name = null, string? error_details = null) {

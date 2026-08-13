@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2017-2026 elementary, Inc. (https://elementary.io)
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -19,7 +19,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.ConversationListItem : Granite.ListItem {
+public class Mail.ConversationListItem : Granite.Bin {
     public signal void select ();
 
     private Gtk.Image status_icon;
@@ -71,20 +71,20 @@ public class Mail.ConversationListItem : Granite.ListItem {
 
         grid = new Gtk.Grid () {
             margin_top = 12,
+            margin_end = 12,
             margin_bottom = 12,
             margin_start = 12,
-            margin_end = 12,
             column_spacing = 12,
             row_spacing = 6,
             hexpand = true
         };
 
         grid.attach (status_revealer, 0, 0);
-        grid.attach (flagged_icon_revealer, 0, 1, 1, 1);
-        grid.attach (source, 1, 0, 1, 1);
-        grid.attach (date, 2, 0, 2, 1);
-        grid.attach (topic, 1, 1, 2, 1);
-        grid.attach (messages, 3, 1, 1, 1);
+        grid.attach (flagged_icon_revealer, 0, 1);
+        grid.attach (source, 1, 0);
+        grid.attach (date, 2, 0, 2);
+        grid.attach (topic, 1, 1, 2);
+        grid.attach (messages, 3, 1);
 
         var archive_affordance = new SwipeAffordance (
             _("Archive"), "mail-archive-symbolic", END
@@ -138,17 +138,11 @@ public class Mail.ConversationListItem : Granite.ListItem {
 
             select ();
 
-            var main_window = (MainWindow) get_root ();
             if (index == 2) {
-                main_window.activate_action (MainWindow.ACTION_MOVE_TO_TRASH, null);
+                activate_action (MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH, null);
             } else if (index == 0) {
-                main_window.activate_action (MainWindow.ACTION_ARCHIVE, null);
+                activate_action (MainWindow.ACTION_PREFIX + MainWindow.ACTION_ARCHIVE, null);
             }
-
-            Idle.add (() => {
-                carousel.scroll_to (grid, false);
-                return Source.REMOVE;
-            });
         });
     }
 
