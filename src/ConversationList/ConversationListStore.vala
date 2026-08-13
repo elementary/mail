@@ -76,7 +76,7 @@ public class Mail.ConversationListStore : ListModel, Object {
         }
     }
 
-    public void insert_sorted (ConversationItemModel item,  CompareDataFunc<Object> compare_func) {
+    public void insert_sorted (ConversationItemModel item, CompareDataFunc<Object> compare_func) {
         data.insert_sorted (item, compare_func);
 
         last_iter = null;
