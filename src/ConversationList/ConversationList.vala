@@ -73,7 +73,7 @@ public class Mail.ConversationList : Gtk.Box {
                 });
             }
 
-            row.assign ((ConversationItemModel)item);
+            row.bind_model ((ConversationItemModel)item);
             row.show_all ();
             return row;
         };
