@@ -60,22 +60,16 @@ public class Mail.ConversationList : Granite.Bin {
 
         var factory = new Gtk.SignalListItemFactory ();
         factory.setup.connect ((obj) => {
-            var list_item = (Gtk.ListItem) obj;
             var conversation_list_item = new ConversationListItem ();
-            // conversation_list_item.select.connect (() => {
-            //     if (list_view.selected_row_widget != row) {
-            //         selection_model.select_item (uint position, bool unselect_rest)
-            //         list_view.select_row (row);
-            //     }
-            // });
 
-            list_item.set_child (conversation_list_item);
+            var list_item = (Gtk.ListItem) obj;
+            list_item.child = conversation_list_item;
         });
 
         factory.bind.connect ((obj) => {
             var list_item = (Gtk.ListItem) obj;
             var conversation_list_item = (ConversationListItem) list_item.child;
-            conversation_list_item.assign ((ConversationItemModel) list_item.get_item ());
+            conversation_list_item.bind_model ((ConversationItemModel) list_item.get_item ());
         });
 
         list_view = new Gtk.ListView (selection_model, factory) {

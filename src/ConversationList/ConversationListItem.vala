@@ -104,13 +104,19 @@ public class Mail.ConversationListItem : Granite.Bin {
         add_css_class ("conversation-list-item");
         child = carousel;
 
+        var menu = new Gtk.PopoverMenu.from_model (null) {
+            has_arrow = false,
+            position = BOTTOM
+        };
+        menu.set_parent (this);
+
         var click_controller = new Gtk.GestureClick () {
             button = Gdk.BUTTON_SECONDARY,
             propagation_phase = BUBBLE
         };
 
         click_controller.released.connect ((n_press, x, y) => {
-            var menu = create_context_menu ();
+            menu.set_menu_model (create_menu_model ());
             menu_popup_at_pointer (menu, x, y);
         });
 
@@ -121,7 +127,7 @@ public class Mail.ConversationListItem : Granite.Bin {
                 return;
             }
 
-            var menu = create_context_menu ();
+            menu.set_menu_model (create_menu_model ());
             menu_popup_on_keypress (menu);
         });
 
@@ -141,26 +147,24 @@ public class Mail.ConversationListItem : Granite.Bin {
         });
     }
 
-    public void assign (ConversationItemModel data) {
-        carousel.scroll_to (grid, false);
-
-        date.label = data.formatted_date;
-        topic.label = data.subject;
+    public void bind_model (ConversationItemModel item_model) {
+        date.label = item_model.formatted_date;
+        topic.label = item_model.subject;
 
         var source_label_text = "";
-        if (Camel.FolderInfoFlags.TYPE_SENT == (data.folder_info_flags & Camel.FOLDER_TYPE_MASK)) {
-            source_label_text = data.to;
+        if (Camel.FolderInfoFlags.TYPE_SENT == (item_model.folder_info_flags & Camel.FOLDER_TYPE_MASK)) {
+            source_label_text = item_model.to;
         } else {
-            source_label_text = data.from;
+            source_label_text = item_model.from;
         }
         source.label = GLib.Markup.escape_text (source_label_text);
-        tooltip_markup = GLib.Markup.printf_escaped ("<b>%s</b>\n%s", source_label_text, data.subject);
+        tooltip_markup = GLib.Markup.printf_escaped ("<b>%s</b>\n%s", source_label_text, item_model.subject);
 
-        uint num_messages = data.num_messages;
+        uint num_messages = item_model.num_messages;
         messages.label = num_messages > 1 ? "%u".printf (num_messages) : null;
         messages.visible = num_messages > 1;
 
-        if (data.unread) {
+        if (item_model.unread) {
             grid.add_css_class ("unread-message");
 
             status_icon.icon_name = "mail-unread-symbolic";
@@ -175,11 +179,11 @@ public class Mail.ConversationListItem : Granite.Bin {
             status_icon.remove_css_class (Granite.CssClass.ACCENT);
             source.remove_css_class (Granite.CssClass.ACCENT);
 
-            if (data.replied_all || data.replied) {
+            if (item_model.replied_all || item_model.replied) {
                 status_icon.icon_name = "mail-replied-symbolic";
                 status_icon.tooltip_text = _("Replied");
                 status_revealer.reveal_child = true;
-            } else if (data.forwarded) {
+            } else if (item_model.forwarded) {
                 status_icon.icon_name = "mail-forwarded-symbolic";
                 status_icon.tooltip_text = _("Forwarded");
                 status_revealer.reveal_child = true;
@@ -188,12 +192,12 @@ public class Mail.ConversationListItem : Granite.Bin {
             }
         }
 
-        flagged_icon_revealer.reveal_child = data.flagged;
+        flagged_icon_revealer.reveal_child = item_model.flagged;
     }
 
-    private Gtk.PopoverMenu create_context_menu () {
-        var menu_model = new Menu ();
-        menu_model.append (_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH);
+    private GLib.Menu create_menu_model () {
+        var menu = new Menu ();
+        menu.append (_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH);
 
         // var item = (ConversationItemModel) model_item;
         // if (!item.unread) {
@@ -207,12 +211,6 @@ public class Mail.ConversationListItem : Granite.Bin {
         // } else {
         //     menu_model.append (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR);
         // }
-
-        var menu = new Gtk.PopoverMenu.from_model (menu_model) {
-            has_arrow = false,
-            position = BOTTOM
-        };
-        menu.set_parent (this);
 
         return menu;
     }
