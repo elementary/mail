@@ -229,7 +229,6 @@ public class Mail.ConversationList : Granite.Bin {
                 threads.clear ();
 
                 list_store.remove_all ();
-                list_store.items_changed (0, previous_items, 0);
 
                 cancellable = new GLib.Cancellable ();
 
@@ -279,7 +278,7 @@ public class Mail.ConversationList : Granite.Bin {
             }
         }
 
-        list_store.items_changed (0, 0, list_store.get_n_items ());
+        list_store.items_changed (0, previous_items, list_store.get_n_items ());
     }
 
     public async void refresh_folder (GLib.Cancellable? cancellable = null) {
@@ -313,7 +312,7 @@ public class Mail.ConversationList : Granite.Bin {
             threads[service_uid] = new Camel.FolderThread (folders[service_uid], search_result_uids, false);
             unowned Camel.FolderThreadNode? child = threads[service_uid].tree;
 
-            var removed = 0;
+            var previous_items = list_store.get_n_items ();
             change_info.get_removed_uids ().foreach ((uid) => {
                 var temp_item = new ConversationItemModel (folder_info_flags[service_uid], child, threads[service_uid], uid);
 
@@ -346,7 +345,6 @@ public class Mail.ConversationList : Granite.Bin {
                     var item = (ConversationItemModel) list_store.get_item (pos);
                     if (item.is_older_than (child)) {
                         list_store.remove (pos);
-                        removed++;
                         add_conversation_item (folder_info_flags[service_uid], child, threads[service_uid], service_uid);
                     };
                 } else {
@@ -356,7 +354,7 @@ public class Mail.ConversationList : Granite.Bin {
                 child = child.next;
             }
 
-            list_store.items_changed (0, removed, list_store.get_n_items ());
+            list_store.items_changed (0, previous_items, list_store.get_n_items ());
         }
     }
 
