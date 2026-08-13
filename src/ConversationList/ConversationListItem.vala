@@ -156,8 +156,6 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     }
 
     public void bind_model (ConversationItemModel item_model) {
-        // carousel.scroll_to_full (grid, 0);
-
         date.label = item_model.formatted_date;
         topic.label = item_model.subject;
 
