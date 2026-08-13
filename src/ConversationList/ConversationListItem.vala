@@ -104,8 +104,8 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         carousel = new Hdy.Carousel () {
             allow_scroll_wheel = false
         };
-        carousel.add (archive_affordance);
         carousel.add (grid);
+        carousel.prepend (archive_affordance);
         carousel.add (trash_affordance);
         carousel.scroll_to (grid);
 
