@@ -52,7 +52,6 @@ public class Mail.ConversationList : Gtk.Box {
         folder_info_flags = new Gee.HashMap<string, Camel.FolderInfoFlags> ();
         threads = new Gee.HashMap<string, Camel.FolderThread> ();
         list_store = new ConversationListStore ();
-        list_store.set_sort_func (thread_sort_function);
         list_store.set_filter_func (filter_function);
 
         list_box = new VirtualizingListBox () {
@@ -414,7 +413,7 @@ public class Mail.ConversationList : Gtk.Box {
     private void add_conversation_item (Camel.FolderInfoFlags folder_info_flags, Camel.FolderThreadNode child, Camel.FolderThread thread, string service_uid) {
         var item = new ConversationItemModel (folder_info_flags, child, thread, service_uid);
         conversations[child.message.uid] = item;
-        list_store.add (item);
+        list_store.insert_sorted (item, thread_sort_function);
     }
 
     private static bool filter_function (GLib.Object obj) {

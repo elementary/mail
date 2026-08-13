@@ -27,7 +27,6 @@ public class Mail.ConversationListStore : ListModel, Object {
     private GLib.Sequence<ConversationItemModel> data = new GLib.Sequence<ConversationItemModel> ();
     private uint last_position = uint.MAX;
     private GLib.SequenceIter<ConversationItemModel>? last_iter;
-    private unowned GLib.CompareDataFunc<ConversationItemModel> compare_func;
     private unowned RowVisibilityFunc filter_func;
 
     private GLib.Type get_item_type () {
@@ -77,12 +76,8 @@ public class Mail.ConversationListStore : ListModel, Object {
         }
     }
 
-    public void add (ConversationItemModel data) {
-        if (compare_func != null) {
-            this.data.insert_sorted (data, compare_func);
-        } else {
-            this.data.append (data);
-        }
+    public void insert_sorted (ConversationItemModel item, CompareDataFunc<ConversationItemModel> compare_func) {
+        data.insert_sorted (item, compare_func);
 
         last_iter = null;
         last_position = uint.MAX;
@@ -102,10 +97,6 @@ public class Mail.ConversationListStore : ListModel, Object {
 
         last_iter = null;
         last_position = uint.MAX;
-    }
-
-    public void set_sort_func (GLib.CompareDataFunc<ConversationItemModel> function) {
-        this.compare_func = function;
     }
 
     public void set_filter_func (RowVisibilityFunc? function) {
