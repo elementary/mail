@@ -53,9 +53,10 @@ public class Mail.ConversationList : Granite.Bin {
         threads = new Gee.HashMap<string, Camel.FolderThread> ();
         list_store = new ConversationListStore ();
         list_store.set_sort_func (thread_sort_function);
-        list_store.set_filter_func (filter_function);
 
-        selection_model = new Gtk.SingleSelection (list_store);
+        var filter_model = new Gtk.FilterListModel (list_store, new Gtk.CustomFilter (deleted_filter_func));
+
+        selection_model = new Gtk.SingleSelection (filter_model);
 
         var factory = new Gtk.SignalListItemFactory ();
         factory.setup.connect ((obj) => {
@@ -78,7 +79,6 @@ public class Mail.ConversationList : Granite.Bin {
         });
 
         list_view = new Gtk.ListView (selection_model, factory) {
-            single_click_activate = true,
             vexpand = true
         };
 
@@ -166,35 +166,35 @@ public class Mail.ConversationList : Granite.Bin {
 
         search_entry.search_changed.connect (() => load_folder.begin (folder_info_per_account));
 
-        list_view.activate.connect ((pos) => {
+        selection_model.selection_changed.connect (() => {
             if (mark_read_timeout_id != 0) {
                 GLib.Source.remove (mark_read_timeout_id);
                 mark_read_timeout_id = 0;
             }
 
-            var row = (ConversationItemModel) selection_model.get_item (pos);
+            uint pos;
+            var bitset_iter = Gtk.BitsetIter ();
+            bitset_iter.init_first (selection_model.get_selection (), out pos);
+            if (!bitset_iter.is_valid ()) {
+                conversation_selected (null);
+                return;
+            }
 
-            if (row != null && row.unread) {
+            var row = (ConversationItemModel) selection_model.get_item (pos);
+            action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ, row.unread);
+            action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD, !row.unread);
+            action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR, !row.flagged);
+            action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR, row.flagged);
+
+            conversation_selected (row.node);
+
+            if (row.unread) {
                 mark_read_timeout_id = GLib.Timeout.add_seconds (MARK_READ_TIMEOUT_SECONDS, () => {
                     set_thread_flag (row.node, Camel.MessageFlags.SEEN);
 
                     mark_read_timeout_id = 0;
                     return Source.REMOVE;
                 });
-            }
-        });
-
-        selection_model.selection_changed.connect ((pos, n_items) => {
-            if (pos == -1) {
-                conversation_selected (null);
-            } else {
-                var row = (ConversationItemModel) selection_model.get_item (pos);
-                action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ, row.unread);
-                action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD, !row.unread);
-                action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR, !row.flagged);
-                action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR, row.flagged);
-
-                conversation_selected (row.node);
             }
         });
 
@@ -419,7 +419,7 @@ public class Mail.ConversationList : Granite.Bin {
         list_store.add (item);
     }
 
-    private static bool filter_function (GLib.Object obj) {
+    private static bool deleted_filter_func (GLib.Object obj) {
         if (obj is ConversationItemModel) {
             var conversation_item = (ConversationItemModel)obj;
             return !conversation_item.deleted && !conversation_item.hidden;

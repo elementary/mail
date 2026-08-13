@@ -20,8 +20,6 @@
  */
 
 public class Mail.ConversationListItem : Granite.Bin {
-    public signal void select ();
-
     private Gtk.Image status_icon;
     private Gtk.Label date;
     private Gtk.Label messages;
@@ -112,7 +110,6 @@ public class Mail.ConversationListItem : Granite.Bin {
         };
 
         click_controller.released.connect ((n_press, x, y) => {
-            select ();
             var menu = create_context_menu ();
             menu_popup_at_pointer (menu, x, y);
         });
@@ -135,8 +132,6 @@ public class Mail.ConversationListItem : Granite.Bin {
             if (index == 1) {
                 return;
             }
-
-            select ();
 
             if (index == 2) {
                 activate_action (MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH, null);
@@ -261,7 +256,7 @@ public class Mail.ConversationListItem : Granite.Bin {
             var image = new Gtk.Image.from_icon_name (icon_name);
 
             var label = new Gtk.Label (label);
-            label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            label.add_css_class (Granite.CssClass.SMALL);
 
             var box = new Gtk.Box (VERTICAL, 3) {
                 halign = alignment,
