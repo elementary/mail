@@ -61,9 +61,9 @@ public class Mail.ConversationListItem : Granite.Bin {
 
         grid = new Gtk.Grid () {
             margin_top = 12,
-            margin_end = 12,
             margin_bottom = 12,
             margin_start = 12,
+            margin_end = 12,
             column_spacing = 12,
             row_spacing = 6,
             hexpand = true
