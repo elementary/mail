@@ -27,10 +27,9 @@ public class Mail.ConversationListStore : ListModel, Object {
     private GLib.Sequence<ConversationItemModel> data = new GLib.Sequence<ConversationItemModel> ();
     private uint last_position = uint.MAX;
     private GLib.SequenceIter<ConversationItemModel>? last_iter;
-    private unowned GLib.CompareDataFunc<ConversationItemModel> compare_func;
     private unowned RowVisibilityFunc filter_func;
 
-    public GLib.Type get_item_type () {
+    private GLib.Type get_item_type () {
         return typeof (GLib.Object);
     }
 
@@ -38,12 +37,8 @@ public class Mail.ConversationListStore : ListModel, Object {
         return data.get_length ();
     }
 
-    public GLib.Object? get_item (uint index) {
+    private GLib.Object? get_item (uint index) {
         return get_item_internal (index);
-    }
-
-    public GLib.Object? get_item_unfiltered (uint index) {
-        return get_item_internal (index, true);
     }
 
     private GLib.Object? get_item_internal (uint index, bool unfiltered = false) {
@@ -81,12 +76,8 @@ public class Mail.ConversationListStore : ListModel, Object {
         }
     }
 
-    public void add (ConversationItemModel data) {
-        if (compare_func != null) {
-            this.data.insert_sorted (data, compare_func);
-        } else {
-            this.data.append (data);
-        }
+    public void insert_sorted (ConversationItemModel item, CompareDataFunc<Object> compare_func) {
+        data.insert_sorted (item, compare_func);
 
         last_iter = null;
         last_position = uint.MAX;
@@ -106,10 +97,6 @@ public class Mail.ConversationListStore : ListModel, Object {
 
         last_iter = null;
         last_position = uint.MAX;
-    }
-
-    public void set_sort_func (GLib.CompareDataFunc<ConversationItemModel> function) {
-        this.compare_func = function;
     }
 
     public void set_filter_func (RowVisibilityFunc? function) {
@@ -175,14 +162,14 @@ public class Mail.ConversationListStore : ListModel, Object {
         return -1;
     }
 
-    public int get_index_of_unfiltered (GLib.Object? item) {
+    private int get_index_of_unfiltered (GLib.Object? item) {
         if (item == null) {
             return -1;
         }
 
         var length = get_n_items ();
         for (int i = 0; i < length; i++) {
-            if (item == get_item_unfiltered (i)) {
+            if (item == get_item_internal (i, true)) {
                 return i;
             }
         }
