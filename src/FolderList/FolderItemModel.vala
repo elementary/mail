@@ -1,48 +1,44 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 3 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+/*
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2017-2026 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
+public class Mail.FolderItemModel : Mail.SourceList.ExpandableItem {
     public signal void start_edit ();
 
-    public Camel.FolderInfo folder_info { get; private set; }
-    public string full_name { get; private set; }
-    public bool is_special_folder { get; private set; default = true; }
-    public int pos { get; private set; }
     public Backend.Account account { get; construct; }
 
-    private bool can_modify = true;
+    private Camel.FolderInfo _folder_info;
+    public Camel.FolderInfo folder_info {
+        get {
+            return _folder_info;
+        }
+        construct set {
+            _folder_info = value;
+            update_infos ();
+        }
+    }
+
+    public bool is_special_folder { get; private set; default = true; }
+    public int pos { get; private set; }
+
     private Cancellable cancellable;
     private string old_name;
 
-    public FolderSourceItem (Backend.Account account, Camel.FolderInfo folderinfo) {
-        Object (account: account);
-        update_infos (folderinfo);
+    public FolderItemModel (Backend.Account account, Camel.FolderInfo folder_info) {
+        Object (
+            account: account,
+            folder_info: folder_info
+        );
     }
 
     construct {
         cancellable = new GLib.Cancellable ();
     }
 
-    ~FolderSourceItem () {
+    ~FolderItemModel () {
         cancellable.cancel ();
     }
 
@@ -65,57 +61,46 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
         return menu;
     }
 
-    public void update_infos (Camel.FolderInfo folderinfo) {
-        folder_info = folderinfo;
-
-        name = old_name = folderinfo.display_name;
-        full_name = folderinfo.full_name;
-        if (folderinfo.unread > 0) {
-            badge = "%d".printf (folderinfo.unread);
+    private void update_infos () {
+        name = old_name = folder_info.display_name;
+        if (folder_info.unread > 0) {
+            badge = "%d".printf (folder_info.unread);
         }
 
-        var full_folder_info_flags = Utils.get_full_folder_info_flags (account.service, folderinfo);
+        var full_folder_info_flags = Utils.get_full_folder_info_flags (account.service, folder_info);
         switch (full_folder_info_flags & Camel.FOLDER_TYPE_MASK) {
             case Camel.FolderInfoFlags.TYPE_INBOX:
                 icon = new ThemedIcon ("mail-inbox");
-                can_modify = false;
                 pos = 1;
                 break;
             case Camel.FolderInfoFlags.TYPE_DRAFTS:
                 icon = new ThemedIcon ("mail-drafts");
-                can_modify = false;
                 pos = 2;
                 break;
             case Camel.FolderInfoFlags.TYPE_OUTBOX:
                 icon = new ThemedIcon ("mail-outbox");
-                can_modify = false;
                 pos = 3;
                 break;
             case Camel.FolderInfoFlags.TYPE_SENT:
                 icon = new ThemedIcon ("mail-sent");
-                can_modify = false;
                 pos = 4;
                 break;
             case Camel.FolderInfoFlags.TYPE_ARCHIVE:
                 icon = new ThemedIcon ("mail-archive");
-                can_modify = false;
                 pos = 5;
                 badge = null;
                 break;
             case Camel.FolderInfoFlags.TYPE_TRASH:
-                icon = new ThemedIcon (folderinfo.total == 0 ? "user-trash" : "user-trash-full");
-                can_modify = false;
+                icon = new ThemedIcon (folder_info.total == 0 ? "user-trash" : "user-trash-full");
                 pos = 6;
                 badge = null;
                 break;
             case Camel.FolderInfoFlags.TYPE_JUNK:
                 icon = new ThemedIcon ("edit-flag");
-                can_modify = false;
                 pos = 7;
                 break;
             default:
                 icon = new ThemedIcon ("folder");
-                can_modify = true;
                 pos = 8;
                 is_special_folder = false;
                 break;
@@ -133,7 +118,7 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
     private async void refresh () {
         var offlinestore = (Camel.Store)account.service;
         try {
-            var folder = yield offlinestore.get_folder (full_name, 0, GLib.Priority.DEFAULT, cancellable);
+            var folder = yield offlinestore.get_folder (folder_info.full_name, 0, GLib.Priority.DEFAULT, cancellable);
             yield folder.refresh_info (GLib.Priority.DEFAULT, cancellable);
         } catch (Error e) {
             critical (e.message);
@@ -166,20 +151,20 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
             return;
         }
 
-        string[] split_full_name = full_name.split_set ("/");
+        string[] split_full_name = folder_info.full_name.split_set ("/");
         split_full_name[split_full_name.length - 1] = new_name;
         var new_full_name = string.joinv ("/", split_full_name);
 
         var offlinestore = (Camel.Store)account.service;
 
-        Camel.FolderInfo? folder_info = null;
+        Camel.FolderInfo? new_folder_info = null;
         try {
-            folder_info = yield offlinestore.get_folder_info (new_full_name, FAST, GLib.Priority.DEFAULT, cancellable);
+            new_folder_info = yield offlinestore.get_folder_info (new_full_name, FAST, GLib.Priority.DEFAULT, cancellable);
         } catch (Error e) {
             warning (e.message);
         }
 
-        if (null != folder_info) {
+        if (new_folder_info != null) {
             if (name == old_name) {
                 notify["name"].connect (cancel_rename);
             } else {
@@ -196,7 +181,7 @@ public class Mail.FolderSourceItem : Mail.SourceList.ExpandableItem {
         }
 
         try {
-            yield offlinestore.rename_folder (full_name, new_full_name, GLib.Priority.DEFAULT, cancellable);
+            yield offlinestore.rename_folder (folder_info.full_name, new_full_name, GLib.Priority.DEFAULT, cancellable);
         } catch (Error e) {
             if (name == old_name) {
                 notify["name"].connect (cancel_rename);

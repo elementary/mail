@@ -20,25 +20,25 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class Mail.ConversationListStore : VirtualizingListBoxModel {
+public class Mail.ConversationListStore : ListModel, Object {
     public delegate bool RowVisibilityFunc (GLib.Object row);
 
+    private Gee.HashSet<weak GLib.Object> selected_rows = new Gee.HashSet<weak GLib.Object> ();
     private GLib.Sequence<ConversationItemModel> data = new GLib.Sequence<ConversationItemModel> ();
     private uint last_position = uint.MAX;
     private GLib.SequenceIter<ConversationItemModel>? last_iter;
-    private unowned GLib.CompareDataFunc<ConversationItemModel> compare_func;
     private unowned RowVisibilityFunc filter_func;
 
-    public override uint get_n_items () {
+    private GLib.Type get_item_type () {
+        return typeof (GLib.Object);
+    }
+
+    public uint get_n_items () {
         return data.get_length ();
     }
 
-    public override GLib.Object? get_item (uint index) {
+    private GLib.Object? get_item (uint index) {
         return get_item_internal (index);
-    }
-
-    public override GLib.Object? get_item_unfiltered (uint index) {
-        return get_item_internal (index, true);
     }
 
     private GLib.Object? get_item_internal (uint index, bool unfiltered = false) {
@@ -76,12 +76,8 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
         }
     }
 
-    public void add (ConversationItemModel data) {
-        if (compare_func != null) {
-            this.data.insert_sorted (data, compare_func);
-        } else {
-            this.data.append (data);
-        }
+    public void insert_sorted (ConversationItemModel item, CompareDataFunc<Object> compare_func) {
+        data.insert_sorted (item, compare_func);
 
         last_iter = null;
         last_position = uint.MAX;
@@ -103,11 +99,119 @@ public class Mail.ConversationListStore : VirtualizingListBoxModel {
         last_position = uint.MAX;
     }
 
-    public void set_sort_func (GLib.CompareDataFunc<ConversationItemModel> function) {
-        this.compare_func = function;
-    }
-
     public void set_filter_func (RowVisibilityFunc? function) {
         filter_func = function;
+    }
+
+    public void unselect_all () {
+        selected_rows.clear ();
+    }
+
+    public void set_item_selected (GLib.Object item, bool selected) {
+        if (!selected) {
+            selected_rows.remove (item);
+        } else {
+            selected_rows.add (item);
+        }
+    }
+
+    public bool get_item_selected (GLib.Object item) {
+        return selected_rows.contains (item);
+    }
+
+    public Gee.ArrayList<GLib.Object> get_items_between (GLib.Object from, GLib.Object to) {
+        var items = new Gee.ArrayList<GLib.Object> ();
+        var start_found = false;
+        var ignore_next_break = false;
+        var length = get_n_items ();
+        for (int i = 0; i < length; i++) {
+            var item = get_item (i);
+            if ((item == from || item == to) && !start_found) {
+                start_found = true;
+                ignore_next_break = true;
+            } else if (!start_found) {
+                continue;
+            }
+
+            if (item != null) {
+                items.add (item);
+            }
+
+            if ((item == to || item == from) && !ignore_next_break) {
+                break;
+            }
+
+            ignore_next_break = false;
+        }
+
+        return items;
+    }
+
+    public int get_index_of (GLib.Object? item) {
+        if (item == null) {
+            return -1;
+        }
+
+        var length = get_n_items ();
+        for (int i = 0; i < length; i++) {
+            if (item == get_item (i)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    private int get_index_of_unfiltered (GLib.Object? item) {
+        if (item == null) {
+            return -1;
+        }
+
+        var length = get_n_items ();
+        for (int i = 0; i < length; i++) {
+            if (item == get_item_internal (i, true)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public int get_index_of_item_before (GLib.Object item) {
+        if (item == get_item (0)) {
+            return -1;
+        }
+
+        var length = get_n_items ();
+        for (int i = 1; i < length; i++) {
+            if (get_item (i) == item) {
+                if (get_item (i - 1) != null) {
+                    return i - 1;
+                }
+            }
+        }
+
+        return -1;
+    }
+
+    public int get_index_of_item_after (GLib.Object item) {
+        if (item == get_item (get_n_items () - 1)) {
+            return -1;
+        }
+
+        var length = get_n_items ();
+        for (int i = 0; i < length - 1; i++) {
+            if (get_item (i) == item) {
+                if (get_item (i + 1) != null) {
+                    return i + 1;
+                }
+            }
+        }
+
+        return -1;
+    }
+
+    public Gee.HashSet<weak GLib.Object> get_selected_rows () {
+        return selected_rows;
     }
 }

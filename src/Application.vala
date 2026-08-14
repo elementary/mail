@@ -12,6 +12,8 @@ public class Mail.Application : Gtk.Application {
     public const string ACTION_GROUP_PREFIX = "app";
     public const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
 
+    public const string ACTION_ACCOUNT_SETTINGS = "account-settings";
+    public const string ACTION_LOAD_IMAGES = "always-load-remote-images";
     public const string ACTION_MANAGE_SIGNATURES = "manage-signatures";
 
     public static GLib.Settings settings;
@@ -112,7 +114,7 @@ public class Mail.Application : Gtk.Application {
         });
 
         var css_provider = new Gtk.CssProvider ();
-        css_provider.load_from_resource ("io/elementary/mail/application.css");
+        css_provider.load_from_resource ("io/elementary/mail/Application.css");
         Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var quit_action = new SimpleAction ("quit", null);
@@ -133,6 +135,30 @@ public class Mail.Application : Gtk.Application {
                 transient_for = active_window
             };
         });
+
+        var account_settings_action = new SimpleAction (ACTION_ACCOUNT_SETTINGS, null);
+        account_settings_action.activate.connect (() => {
+            try {
+                Gtk.show_uri_on_window (active_window, "settings://accounts/online", Gtk.get_current_event_time ());
+            } catch (Error e) {
+                var dialog = new Granite.MessageDialog (
+                    _("Unable to open System Settings"),
+                    _("Open System Settings manually or install Evolution to set up online accounts."),
+                    new ThemedIcon ("preferences-system")
+                ) {
+                    badge_icon = new ThemedIcon ("dialog-warning"),
+                    modal = true,
+                    transient_for = active_window,
+                };
+                dialog.response.connect (dialog.destroy);
+                dialog.present ();
+            }
+        });
+
+        var load_images_action = settings.create_action (ACTION_LOAD_IMAGES);
+
+        add_action (account_settings_action);
+        add_action (load_images_action);
         add_action (manage_signatures_action);
 
         new InboxMonitor ().start.begin ();

@@ -248,4 +248,10 @@ public class Mail.ConversationItemModel : GLib.Object {
 
         return has_flag;
     }
+
+    public static int compare_func (Object a, Object b) {
+        var item1 = (ConversationItemModel) a;
+        var item2 = (ConversationItemModel) b;
+        return (int)(item2.timestamp - item1.timestamp);
+    }
 }

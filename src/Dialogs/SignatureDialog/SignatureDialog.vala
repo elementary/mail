@@ -21,7 +21,8 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
     private const string ACTION_GROUP_PREFIX = "win";
     private const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
 
-    private Gtk.ListBox signature_list;
+    private ListStore signature_list;
+    private Gtk.ListBox signature_list_box;
     private Gtk.Entry title_entry;
     private Mail.WebView web_view;
     private Signature? current_signature;
@@ -55,12 +56,15 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
         placeholder.add (placeholder_description);
         placeholder.show_all ();
 
-        signature_list = new Gtk.ListBox () {
+        signature_list = new ListStore (typeof (Signature));
+
+        signature_list_box = new Gtk.ListBox () {
             vexpand = true,
             selection_mode = BROWSE
         };
-        signature_list.set_filter_func ((Gtk.ListBoxFilterFunc)filter_func);
-        signature_list.set_placeholder (placeholder);
+        signature_list_box.bind_model (signature_list, (obj) => (Signature) obj);
+        signature_list_box.set_filter_func ((Gtk.ListBoxFilterFunc)filter_func);
+        signature_list_box.set_placeholder (placeholder);
 
         var add_box = new Gtk.Box (HORIZONTAL, 0);
         add_box.add (new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
@@ -80,7 +84,7 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
         var start_box = new Gtk.Box (VERTICAL, 0);
         start_box.get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
         start_box.add (start_header);
-        start_box.add (signature_list);
+        start_box.add (signature_list_box);
         start_box.add (start_actionbar);
 
         var title = new Granite.HeaderLabel (_("Title")) {
@@ -127,13 +131,15 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
 
         var default_menu = new Menu ();
 
+        var default_buttonbox = new Gtk.Box (HORIZONTAL, 0);
+        default_buttonbox.add (new Gtk.Label (_("Set Default For…")));
+        default_buttonbox.add (new Gtk.Image.from_icon_name ("pan-down-symbolic", SMALL_TOOLBAR));
+
         var default_menubutton = new Gtk.MenuButton () {
-            always_show_image = true,
+            child = default_buttonbox,
             halign = END,
-            image = new Gtk.Image.from_icon_name ("pan-down-symbolic", SMALL_TOOLBAR),
-            image_position = RIGHT,
+            hexpand = true,
             menu_model = default_menu,
-            label = _("Set Default For…"),
             use_popover = false,
             direction = UP,
             sensitive = false
@@ -142,8 +148,8 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
         var end_actionbar = new Gtk.Box (HORIZONTAL, 12) {
             margin_top = 12
         };
-        end_actionbar.pack_start (delete_button);
-        end_actionbar.pack_end (default_menubutton);
+        end_actionbar.add (delete_button);
+        end_actionbar.add (default_menubutton);
 
         var content_box = new Gtk.Box (VERTICAL, 0) {
             margin_start = 12,
@@ -193,8 +199,8 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
         add_button.clicked.connect (() => create_new_signature.begin ());
 
         title_entry.changed.connect (() => {
-            if (!selection_change_ongoing && signature_list.get_selected_row () != null) {
-                ((Signature)signature_list.get_selected_row ()).title = title_entry.text;
+            if (!selection_change_ongoing && signature_list_box.get_selected_row () != null) {
+                ((Signature)signature_list_box.get_selected_row ()).title = title_entry.text;
             }
         });
 
@@ -202,10 +208,10 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
 
         toast.default_action.connect (() => {
             last_deleted_signature.undo_delete ();
-            signature_list.invalidate_filter ();
+            signature_list_box.invalidate_filter ();
         });
 
-        signature_list.row_selected.connect ((row) => {
+        signature_list_box.row_selected.connect ((row) => {
             title_entry.sensitive = row != null;
             web_view.sensitive = row != null;
             delete_button.sensitive = row != null;
@@ -230,8 +236,8 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
         /* Save the current open signature */
         yield set_selected_signature (null);
 
-        foreach (var child in signature_list.get_children ()) {
-            var signature = (Signature)child;
+        for (int i = 0; i < signature_list.n_items; i++) {
+            var signature = (Signature) signature_list.get_item (i);
             if (signature.is_deleted) {
                 yield signature.finish_delete_signature ();
             }
@@ -275,10 +281,10 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
     private async void load_signatures () {
         foreach (var signature_source in Mail.Backend.Session.get_default ().get_all_signature_sources ()) {
             var signature = yield new Signature (signature_source);
-            signature_list.add (signature);
+            signature_list.append (signature);
         }
 
-        signature_list.select_row (signature_list.get_row_at_index (0));
+        signature_list_box.select_row (signature_list_box.get_row_at_index (0));
     }
 
     private void populate_default_menu (Menu menu) {
@@ -311,19 +317,19 @@ public class Mail.SignatureDialog : Hdy.ApplicationWindow {
         }
 
         var new_signature = yield new Signature (new_signature_source);
-        signature_list.add (new_signature);
-        signature_list.select_row (new_signature);
+        signature_list.append (new_signature);
+        signature_list_box.select_row (new_signature);
     }
 
     private void delete_selected_signature () {
-        var signature = (Signature)signature_list.get_selected_row ();
+        var signature = (Signature)signature_list_box.get_selected_row ();
         var index = signature.get_index () + 1;
         last_deleted_signature = signature;
 
         signature.delete_signature ();
 
-        signature_list.invalidate_filter ();
-        signature_list.select_row (signature_list.get_row_at_index (index));
+        signature_list_box.invalidate_filter ();
+        signature_list_box.select_row (signature_list_box.get_row_at_index (index));
 
         toast.title = _("'%s' deleted").printf (signature.title);
         toast.send_notification ();

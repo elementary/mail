@@ -10,11 +10,12 @@ public class Mail.MessageList : Gtk.Box {
     public Hdy.HeaderBar headerbar { get; private set; }
 
     private FolderPopover folder_popover;
-    private Gtk.ListBox list_box;
-    private Gtk.ScrolledWindow scrolled_window;
     private Gee.HashMap<string, MessageListItem> messages;
+    private ListStore message_list;
 
     construct {
+        message_list = new ListStore (typeof (MessageListItem));
+
         get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
 
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
@@ -46,41 +47,17 @@ public class Mail.MessageList : Gtk.Box {
             _("Forward")
         );
 
-        var mark_unread_item = new Gtk.MenuItem () {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD
-        };
-        mark_unread_item.bind_property ("sensitive", mark_unread_item, "visible");
-        mark_unread_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Unread"), mark_unread_item.action_name));
-
-        var mark_read_item = new Gtk.MenuItem () {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ
-        };
-        mark_read_item.bind_property ("sensitive", mark_read_item, "visible");
-        mark_read_item.add (new Granite.AccelLabel.from_action_name (_("Mark as Read"), mark_read_item.action_name));
-
-        var mark_star_item = new Gtk.MenuItem () {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR
-        };
-        mark_star_item.bind_property ("sensitive", mark_star_item, "visible");
-        mark_star_item.add (new Granite.AccelLabel.from_action_name (_("Star"), mark_star_item.action_name));
-
-        var mark_unstar_item = new Gtk.MenuItem () {
-            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR
-        };
-        mark_unstar_item.bind_property ("sensitive", mark_unstar_item, "visible");
-        mark_unstar_item.add (new Granite.AccelLabel.from_action_name (_("Unstar"), mark_unstar_item.action_name));
-
-        var mark_menu = new Gtk.Menu ();
-        mark_menu.add (mark_unread_item);
-        mark_menu.add (mark_read_item);
-        mark_menu.add (mark_star_item);
-        mark_menu.add (mark_unstar_item);
-        mark_menu.show_all ();
+        var mark_menumodel = new Menu ();
+        mark_menumodel.append (_("Mark as Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD);
+        mark_menumodel.append (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ);
+        mark_menumodel.append (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR);
+        mark_menumodel.append (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR);
 
         var mark_button = new Gtk.MenuButton () {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_MODIFY,
             image = new Gtk.Image.from_icon_name ("edit-mark", Gtk.IconSize.LARGE_TOOLBAR),
-            popup = mark_menu,
+            menu_model = mark_menumodel,
+            use_popover = false,
             tooltip_text = _("Mark Conversation")
         };
 
@@ -129,20 +106,20 @@ public class Mail.MessageList : Gtk.Box {
         placeholder_style_context.add_class (Granite.STYLE_CLASS_H2_LABEL);
         placeholder_style_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        list_box = new Gtk.ListBox () {
+        var list_box = new Gtk.ListBox () {
             hexpand = true,
             vexpand = true,
             selection_mode = NONE
         };
+        list_box.bind_model (message_list, (obj) => (MessageListItem) obj);
 
         list_box.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
         list_box.set_placeholder (placeholder);
-        list_box.set_sort_func (message_sort_function);
 
-        scrolled_window = new Gtk.ScrolledWindow (null, null) {
+        var scrolled_window = new Gtk.ScrolledWindow (null, null) {
+            child = list_box,
             hscrollbar_policy = NEVER
         };
-        scrolled_window.add (list_box);
 
         // Prevent the focus of the webview causing the ScrolledWindow to scroll
         var scrolled_child = scrolled_window.get_child ();
@@ -164,10 +141,8 @@ public class Mail.MessageList : Gtk.Box {
         can_reply (false);
         can_move_thread (false);
 
-        list_box.get_children ().foreach ((child) => {
-            child.destroy ();
-        });
         messages = new Gee.HashMap<string, MessageListItem> (null, null);
+        message_list.remove_all ();
 
         if (node == null) {
             return;
@@ -183,24 +158,21 @@ public class Mail.MessageList : Gtk.Box {
         folder_popover.set_store (store);
 
         var item = new MessageListItem ((Camel.MessageInfo?) node.get_item ());
-        list_box.add (item);
+
         messages.set (((Camel.MessageInfo?) node.get_item ()).uid, item);
+        message_list.insert_sorted (item, message_sort_function);
+
         if (node.get_child () != null) {
             go_down ((Camel.FolderThreadNode?) node.get_child ());
         }
 
-        var children = list_box.get_children ();
-        var num_children = children.length ();
-        if (num_children > 0) {
-            var child = list_box.get_row_at_index ((int) num_children - 1);
-            if (child != null && child is MessageListItem) {
-                var list_item = (MessageListItem) child;
-                list_item.expanded = true;
-                can_reply (list_item.loaded);
-                list_item.notify["loaded"].connect (() => {
-                    can_reply (list_item.loaded);
-                });
-            }
+        if (message_list.n_items > 0) {
+            var last_item = (MessageListItem) message_list.get_item (message_list.n_items - 1);
+            last_item.expanded = true;
+            can_reply (last_item.loaded);
+            last_item.notify["loaded"].connect (() => {
+                can_reply (last_item.loaded);
+            });
         }
 
         if (node.get_item () != null && Camel.MessageFlags.DRAFT in (int) ((Camel.MessageInfo?) node.get_item ()).flags) {
@@ -212,8 +184,10 @@ public class Mail.MessageList : Gtk.Box {
         unowned Camel.FolderThreadNode? current_node = node;
         while (current_node != null) {
             var item = new MessageListItem ((Camel.MessageInfo?) current_node.get_item ());
-            list_box.add (item);
+
             messages.set (((Camel.MessageInfo?) current_node.get_item ()).uid, item);
+            message_list.insert_sorted (item, message_sort_function);
+
             if (current_node.get_next () != null) {
                 go_down ((Camel.FolderThreadNode?) current_node.get_next ());
             }
@@ -224,15 +198,14 @@ public class Mail.MessageList : Gtk.Box {
 
     public async void compose (Composer.Type type, Variant uid) {
         /* Can't open a new composer if thread is empty*/
-        var last_child = list_box.get_row_at_index ((int) list_box.get_children ().length () - 1);
-        if (last_child == null) {
+        if (message_list.n_items == 0) {
             return;
         }
 
         MessageListItem message_item = null;
 
         if (uid.get_string () == "") {
-            message_item = (MessageListItem) last_child;
+            message_item = (MessageListItem) message_list.get_item (message_list.n_items - 1);
         } else {
             message_item = messages.get (uid.get_string ());
         }
@@ -273,7 +246,7 @@ public class Mail.MessageList : Gtk.Box {
         ((SimpleAction) main_window.lookup_action (MainWindow.ACTION_MOVE_TO_TRASH)).set_enabled (enabled);
     }
 
-    private static int message_sort_function (Gtk.ListBoxRow item1, Gtk.ListBoxRow item2) {
+    private static int message_sort_function (Object item1, Object item2) {
         unowned MessageListItem message1 = (MessageListItem)item1;
         unowned MessageListItem message2 = (MessageListItem)item2;
 

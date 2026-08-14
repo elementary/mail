@@ -22,7 +22,6 @@
 
 public class Mail.ConversationList : Gtk.Box {
     public signal void conversation_selected (Camel.FolderThreadNode? node);
-    public signal void conversation_focused (Camel.FolderThreadNode? node);
 
     private const int MARK_READ_TIMEOUT_SECONDS = 5;
 
@@ -53,7 +52,6 @@ public class Mail.ConversationList : Gtk.Box {
         folder_info_flags = new Gee.HashMap<string, Camel.FolderInfoFlags> ();
         threads = new Gee.HashMap<string, Camel.FolderThread> ();
         list_store = new ConversationListStore ();
-        list_store.set_sort_func (thread_sort_function);
         list_store.set_filter_func (filter_function);
 
         list_box = new VirtualizingListBox () {
@@ -74,7 +72,7 @@ public class Mail.ConversationList : Gtk.Box {
                 });
             }
 
-            row.assign ((ConversationItemModel)item);
+            row.bind_model ((ConversationItemModel)item);
             row.show_all ();
             return row;
         };
@@ -88,7 +86,6 @@ public class Mail.ConversationList : Gtk.Box {
         };
 
         hide_read_switch = new Granite.SwitchModelButton (_("Hide read conversations"));
-
         hide_unstarred_switch = new Granite.SwitchModelButton (_("Hide unstarred conversations"));
 
         var filter_menu_popover_box = new Gtk.Box (VERTICAL, 0) {
@@ -171,19 +168,13 @@ public class Mail.ConversationList : Gtk.Box {
                 mark_read_timeout_id = 0;
             }
 
-            if (row == null) {
-                conversation_focused (null);
-            } else {
-                conversation_focused (((ConversationItemModel) row).node);
+            if (row != null && ((ConversationItemModel) row).unread) {
+                mark_read_timeout_id = GLib.Timeout.add_seconds (MARK_READ_TIMEOUT_SECONDS, () => {
+                    set_thread_flag (((ConversationItemModel) row).node, Camel.MessageFlags.SEEN);
 
-                if (((ConversationItemModel) row).unread) {
-                    mark_read_timeout_id = GLib.Timeout.add_seconds (MARK_READ_TIMEOUT_SECONDS, () => {
-                        set_thread_flag (((ConversationItemModel) row).node, Camel.MessageFlags.SEEN);
-
-                        mark_read_timeout_id = 0;
-                        return false;
-                    });
-                }
+                    mark_read_timeout_id = 0;
+                    return Source.REMOVE;
+                });
             }
         });
 
@@ -203,8 +194,11 @@ public class Mail.ConversationList : Gtk.Box {
             }
         });
 
-        hide_read_switch.toggled.connect (() => load_folder.begin (folder_info_per_account));
+        var settings = new GLib.Settings ("io.elementary.mail");
+        settings.bind ("hide-read-conversations", hide_read_switch, "active", DEFAULT);
+        settings.bind ("hide-unstarred-conversations", hide_unstarred_switch, "active", DEFAULT);
 
+        hide_read_switch.toggled.connect (() => load_folder.begin (folder_info_per_account));
         hide_unstarred_switch.toggled.connect (() => load_folder.begin (folder_info_per_account));
     }
 
@@ -222,7 +216,7 @@ public class Mail.ConversationList : Gtk.Box {
         }
     }
 
-    public async void load_folder (Gee.Map<Backend.Account, Camel.FolderInfo?> folder_info_per_account) {
+    public async void load_folder (Gee.Map<Backend.Account, Camel.FolderInfo?> folder_info_per_account) requires (folder_info_per_account != null) {
         lock (this.folder_info_per_account) {
             this.folder_info_per_account = folder_info_per_account;
         }
@@ -231,7 +225,6 @@ public class Mail.ConversationList : Gtk.Box {
             cancellable.cancel ();
         }
 
-        conversation_focused (null);
         conversation_selected (null);
 
         uint previous_items = list_store.get_n_items ();
@@ -422,7 +415,7 @@ public class Mail.ConversationList : Gtk.Box {
     private void add_conversation_item (Camel.FolderInfoFlags folder_info_flags, Camel.FolderThreadNode child, Camel.FolderThread thread, string service_uid) {
         var item = new ConversationItemModel (folder_info_flags, child, thread, service_uid);
         conversations[((Camel.MessageInfo?) child.get_item ()).uid] = item;
-        list_store.add (item);
+        list_store.insert_sorted (item, ConversationItemModel.compare_func);
     }
 
     private static bool filter_function (GLib.Object obj) {
@@ -432,10 +425,6 @@ public class Mail.ConversationList : Gtk.Box {
         } else {
             return false;
         }
-    }
-
-    private static int thread_sort_function (ConversationItemModel item1, ConversationItemModel item2) {
-        return (int)(item2.timestamp - item1.timestamp);
     }
 
     public void mark_read_selected_messages () {

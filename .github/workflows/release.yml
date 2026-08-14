@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
 
       - name: Release
         uses: elementary/actions/release@main
@@ -24,4 +24,4 @@ jobs:
           GIT_USER_NAME: "elementaryBot"
           GIT_USER_EMAIL: "builds@elementary.io"
         with:
-          release_branch: "horus"
+          release_branch: "noble"

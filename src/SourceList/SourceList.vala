@@ -5,122 +5,6 @@
  */
 
 /**
- * An interface for sorting items.
- *
- * @since 0.3
- */
-public interface Mail.SourceListSortable : Mail.SourceList.ExpandableItem {
-    /**
-     * Emitted after a user has re-ordered an item via DnD.
-     *
-     * @param moved The item that was moved to a different position by the user.
-     * @since 0.3
-     */
-    public signal void user_moved_item (SourceList.Item moved);
-
-    /**
-     * Whether this item will allow users to re-arrange its children via DnD.
-     *
-     * This feature can co-exist with a sort algorithm (implemented
-     * by {@link Granite.Widgets.SourceListSortable.compare}), but
-     * the actual order of the items in the list will always
-     * honor that method. The sort function has to be compatible with
-     * the kind of DnD reordering the item wants to allow, since the user can
-     * only reorder those items for which //compare// returns 0.
-     *
-     * @return Whether the item's children can be re-arranged by users.
-     * @since 0.3
-     */
-    public abstract bool allow_dnd_sorting ();
-
-    /**
-     * Should return a negative integer, zero, or a positive integer if ''a''
-     * sorts //before// ''b'', ''a'' sorts //with// ''b'', or ''a'' sorts
-     * //after// ''b'' respectively. If two items compare as equal, their
-     * order in the sorted source list is undefined.
-     *
-     * In order to ensure that the source list behaves as expected, this
-     * method must define a partial order on the source list tree; i.e. it
-     * must be reflexive, antisymmetric and transitive. Not complying with
-     * those requirements could make the program fall into an infinite loop
-     * and freeze the user interface.
-     *
-     * Should return //0// to allow any pair of items to be sortable via DnD.
-     *
-     * @param a First item.
-     * @param b Second item.
-     * @return A //negative// integer if //a// sorts before //b//,
-     *         //zero// if //a// equals //b//, or a //positive//
-     *         integer if //a// sorts after //b//.
-     * @since 0.3
-     */
-    public abstract int compare (SourceList.Item a, SourceList.Item b);
-}
-
-/**
- * An interface for dragging items out of the source list widget.
- *
- * @since 0.3
- */
-public interface Mail.SourceListDragSource : Mail.SourceList.Item {
-    /**
-     * Determines whether this item can be dragged outside the source list widget.
-     *
-     * Even if this method returns //false//, the item could still be dragged around
-     * within the source list if its parent allows DnD reordering. This only happens
-     * when the parent implements {@link Granite.Widgets.SourceListSortable}.
-     *
-     * @return //true// if the item can be dragged; //false// otherwise.
-     * @since 0.3
-     * @see Granite.Widgets.SourceListSortable
-     */
-    public abstract bool draggable ();
-
-    /**
-     * This method is called when the drop site requests the data which is dragged.
-     *
-     * It is the responsibility of this method to fill //selection_data// with the
-     * data in the format which is indicated by {@link Gtk.SelectionData.get_target}.
-     *
-     * @param selection_data {@link Gtk.SelectionData} containing source data.
-     * @since 0.3
-     * @see Gtk.SelectionData.set
-     * @see Gtk.SelectionData.set_uris
-     * @see Gtk.SelectionData.set_text
-     */
-    public abstract void prepare_selection_data (Gtk.SelectionData selection_data);
-}
-
-/**
- * An interface for receiving data from other widgets via drag-and-drop.
- *
- * @since 0.3
- */
-public interface Mail.SourceListDragDest : Mail.SourceList.Item {
-    /**
-     * Determines whether //data// can be dropped into this item.
-     *
-     * @param context The drag context.
-     * @param data {@link Gtk.SelectionData} containing source data.
-     * @return //true// if the drop is possible; //false// otherwise.
-     * @since 0.3
-     */
-    public abstract bool data_drop_possible (Gdk.DragContext context, Gtk.SelectionData data);
-
-    /**
-     * If a data drop is deemed possible, then this method is called
-     * when the data is actually dropped into this item. Any actions
-     * consequence of the data received should be handled here.
-     *
-     * @param context The drag context.
-     * @param data {@link Gtk.SelectionData} containing source data.
-     * @return The action taken, or //0// to indicate that the dropped data was not accepted.
-     * @since 0.3
-     */
-    public abstract Gdk.DragAction data_received (Gdk.DragContext context, Gtk.SelectionData data);
-}
-
-/**
  * A widget that can display a list of items organized in categories.
  *
  * The source list widget consists of a collection of items, some of which are also expandable (and
@@ -215,7 +99,7 @@ public interface Mail.SourceListDragDest : Mail.SourceList.Item {
  * @since 0.2
  * @see Gtk.Paned
  */
-public class Mail.SourceList : Gtk.ScrolledWindow {
+public class Mail.SourceList : Gtk.Bin {
 
     /**
      * = WORKING INTERNALS =
@@ -239,7 +123,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
      *   - editable      | DataModel::on_item_prop_changed   | Queried when needed (See Tree::start_editing_item)
      *   - visible       | DataModel::on_item_prop_changed   | DataModel::filter_visible_func
      *   - icon          | DataModel::on_item_prop_changed   | Tree::icon_cell_data_func
-     *   - activatable   | Same as @icon                     | Same as @icon
      * + ExpandableItem  |                                   |
      *   - collapsible   | DataModel::on_item_prop_changed   | Tree::update_expansion
      *                   |                                   | Tree::expander_cell_data_func
@@ -277,14 +160,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             if (editable && new_name.strip () != "")
                 this.name = new_name;
         }
-
-        /**
-         * The {@link Granite.Widgets.SourceList.Item.activatable} icon was activated.
-         *
-         * @see Granite.Widgets.SourceList.Item.activatable
-         * @since 0.2
-         */
-        public virtual signal void action_activated () { }
 
         /**
          * Emitted when the item is double-clicked or when it is selected and one of the keys:
@@ -386,23 +261,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         public Icon icon { get; set; }
 
         /**
-         * An activatable icon that works like a button.
-         *
-         * It can be used for e.g. showing an //"eject"// icon on a device's item.
-         *
-         * @see Granite.Widgets.SourceList.Item.action_activated
-         * @since 0.2
-         */
-        public Icon activatable { get; set; }
-
-        /**
-         * The tooltip for the activatable icon.
-         *
-         * @since 5.0
-         */
-        public string activatable_tooltip { get; set; default = ""; }
-
-        /**
          * Creates a new {@link Granite.Widgets.SourceList.Item}.
          *
          * @param name Name of the item.
@@ -440,7 +298,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
      * * {@link Granite.Widgets.SourceList.Item.selectable}
      * * {@link Granite.Widgets.SourceList.Item.editable}
      * * {@link Granite.Widgets.SourceList.Item.icon}
-     * * {@link Granite.Widgets.SourceList.Item.activatable}
      * * {@link Granite.Widgets.SourceList.Item.badge}
      *
      * Root-level expandable items (i.e. Main Categories) are ''not'' displayed when they contain
@@ -557,10 +414,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
          */
         public ExpandableItem (string name = "") {
             base (name);
-        }
-
-        construct {
-            editable = false;
         }
 
         /**
@@ -1026,8 +879,8 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
         }
 
         private void resort () {
-            child_tree.set_sort_column_id (Gtk.SortColumn.UNSORTED, Gtk.SortType.ASCENDING);
-            child_tree.set_sort_column_id (Gtk.SortColumn.DEFAULT, Gtk.SortType.ASCENDING);
+            child_tree.set_sort_column_id (Gtk.TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID, Gtk.SortType.ASCENDING);
+            child_tree.set_sort_column_id (Gtk.TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID, Gtk.SortType.ASCENDING);
         }
 
         private int child_model_sort_func (Gtk.TreeModel model, Gtk.TreeIter a, Gtk.TreeIter b) {
@@ -1096,291 +949,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                 item_visible = item_visible && filter_func (item);
 
             return item_visible;
-        }
-
-        /**
-         * TreeDragDest implementation
-         */
-
-        private bool drag_data_received (Gtk.TreePath dest, Gtk.SelectionData selection_data) {
-            Gtk.TreeModel model;
-            Gtk.TreePath src_path;
-
-            // Check if the user is dragging a row:
-            //
-            // Due to Gtk.TreeModelFilter's implementation of drag_data_get the values returned by
-            // tree_row_drag_data for GtkModel and GtkPath correspond to the child model and not the filter.
-            if (Gtk.tree_get_row_drag_data (selection_data, out model, out src_path) && model == child_tree) {
-                // get a child path representation of dest
-                var child_dest = convert_path_to_child_path (dest);
-
-                if (child_dest != null) {
-                    // New GtkTreeIters will be assigned to the rows at child_dest and its children.
-                    if (child_tree_drag_data_received (child_dest, src_path))
-                        return true;
-                }
-            }
-
-            // no new row inserted
-            return false;
-        }
-
-        private bool child_tree_drag_data_received (Gtk.TreePath dest, Gtk.TreePath src_path) {
-            bool retval = false;
-            Gtk.TreeIter src_iter, dest_iter;
-
-            if (!child_tree.get_iter (out src_iter, src_path))
-                return false;
-
-            var prev = dest;
-
-            // Get the path to insert _after_ (dest is the path to insert _before_)
-            if (!prev.prev ()) {
-                // dest was the first spot at the current depth; which means
-                // we are supposed to prepend.
-
-                var parent = dest;
-                Gtk.TreeIter? dest_parent = null;
-
-                if (parent.up () && parent.get_depth () > 0)
-                    child_tree.get_iter (out dest_parent, parent);
-
-                child_tree.prepend (out dest_iter, dest_parent);
-                retval = true;
-            } else if (child_tree.get_iter (out dest_iter, prev)) {
-                var tmp_iter = dest_iter;
-                child_tree.insert_after (out dest_iter, null, tmp_iter);
-                retval = true;
-            }
-
-            // If we succeeded in creating dest_iter, walk src_iter tree branch,
-            // duplicating it below dest_iter.
-            if (retval) {
-                recursive_node_copy (src_iter, dest_iter);
-
-                // notify that the item was moved
-                Item item;
-                child_tree.get (src_iter, Column.ITEM, out item, -1);
-                return_val_if_fail (item != null, retval);
-
-                // XXX Workaround:
-                // GtkTreeView automatically collapses expanded items that
-                // are dragged to a new location. Oddly, GtkTreeView doesn't fire
-                // 'row-collapsed' for the respective path, so we cannot keep track
-                // of that behavior via standard means. For now we'll just have
-                // our tree view check the properties of item again and ensure
-                // they're honored
-                update_item (item);
-
-                var parent = item.parent as SourceListSortable;
-                return_val_if_fail (parent != null, retval);
-
-                parent.user_moved_item (item);
-            }
-
-            return retval;
-        }
-
-        private void recursive_node_copy (Gtk.TreeIter src_iter, Gtk.TreeIter dest_iter) {
-            move_item (src_iter, dest_iter);
-
-            Gtk.TreeIter child;
-            if (child_tree.iter_children (out child, src_iter)) {
-                // Need to create children and recurse. Note our dependence on
-                // persistent iterators here.
-                do {
-                    Gtk.TreeIter copy;
-                    child_tree.append (out copy, dest_iter);
-                    recursive_node_copy (child, copy);
-                } while (child_tree.iter_next (ref child));
-            }
-        }
-
-        private void move_item (Gtk.TreeIter src_iter, Gtk.TreeIter dest_iter) {
-            Item item;
-            child_tree.get (src_iter, Column.ITEM, out item, -1);
-            return_if_fail (item != null);
-
-            // update the row reference of item with the new location
-            child_tree.set (dest_iter, Column.ITEM, item, -1);
-            items.set (item, new NodeWrapper (child_tree, dest_iter));
-        }
-
-        private bool row_drop_possible (Gtk.TreePath dest, Gtk.SelectionData selection_data) {
-            Gtk.TreeModel model;
-            Gtk.TreePath src_path;
-
-            // Check if the user is dragging a row:
-            // Due to Gtk.TreeModelFilter's implementation of drag_data_get the values returned by
-            // tree_row_drag_data for GtkModel and GtkPath correspond to the child model and not the filter.
-            if (!Gtk.tree_get_row_drag_data (selection_data, out model, out src_path) || model != child_tree)
-                return false;
-
-            // get a representation of dest in the child model
-            var child_dest = convert_path_to_child_path (dest);
-
-            // don't allow dropping an item into itself
-            if (child_dest == null || src_path.compare (child_dest) == 0)
-                return false;
-
-            // Only allow DnD between items at the same depth (indentation level)
-            // This doesn't mean their parent is the same.
-            int src_depth = src_path.get_depth ();
-            int dest_depth = child_dest.get_depth ();
-
-            if (src_depth != dest_depth)
-                return false;
-
-            // no need to check dest_depth since we know its equal to src_depth
-            if (src_depth < 1)
-                return false;
-
-            Item? parent = null;
-
-            // if the depth is 1, we're talking about the items at root level,
-            // and by definition they share the same parent (root). We don't
-            // need to verify anything else for that specific case
-            if (src_depth == 1) {
-                parent = root;
-            } else {
-                // we verified equality above. this must be true
-                assert (dest_depth > 1);
-
-                // Only allow reordering between siblings, i.e. items with the same
-                // parent. We don't want items to change their parent through DnD
-                // because that would complicate our existing APIs, and may introduce
-                // unpredictable behavior.
-                var src_indices = src_path.get_indices ();
-                var dest_indices = child_dest.get_indices ();
-
-                // parent index is given by indices[depth-2], where depth > 1
-                int src_parent_index = src_indices[src_depth - 2];
-                int dest_parent_index = dest_indices[dest_depth - 2];
-
-                if (src_parent_index != dest_parent_index)
-                    return false;
-
-                // get parent. Note that we don't use the child path for this
-                var dest_parent = dest;
-
-                if (!dest_parent.up () || dest_parent.get_depth () < 1)
-                    return false;
-
-                parent = get_item_from_path (dest_parent);
-            }
-
-            var sortable = parent as SourceListSortable;
-
-            if (sortable == null || !sortable.allow_dnd_sorting ())
-                return false;
-
-            var dest_item = get_item_from_path (dest);
-
-            if (dest_item == null)
-                return true;
-
-            Item? source_item = null;
-            var filter_src_path = convert_child_path_to_path (src_path);
-
-            if (filter_src_path != null)
-                source_item = get_item_from_path (filter_src_path);
-
-            if (source_item == null)
-                return false;
-
-            // If order isn't indifferent (=0), 'dest' has to sort before 'source'.
-            // Otherwise we'd allow the user to move the 'source_item' to a new
-            // location before 'dest_item', but that location would be changed
-            // later by the sort function, making the whole interaction poinless.
-            // We better prevent such reorderings from the start by giving the
-            // user a visual clue about the invalid drop location.
-            if (sortable.compare (dest_item, source_item) >= 0) {
-                if (!dest.prev ())
-                    return true;
-
-                // 'source_item' also has to sort 'after' or 'equal' the item currently
-                // preceding 'dest_item'
-                var dest_item_prev = get_item_from_path (dest);
-
-                return dest_item_prev != null
-                    && dest_item_prev != source_item
-                    && sortable.compare (dest_item_prev, source_item) <= 0;
-            }
-
-            return false;
-        }
-
-        /**
-         * Override default implementation of TreeDragSource
-         *
-         * drag_data_delete is not overriden because the default implementation
-         * does exactly what we need.
-         */
-
-        private bool drag_data_get (Gtk.TreePath path, Gtk.SelectionData selection_data) {
-            // If we're asked for a data about a row, just have the default implementation fill in
-            // selection_data. Please note that it will provide information relative to child_model.
-            if (selection_data.get_target () == Gdk.Atom.intern_static_string ("GTK_TREE_MODEL_ROW"))
-                return base.drag_data_get (path, selection_data);
-
-            // check if the item at path provides DnD source data
-            var drag_source_item = get_item_from_path (path) as SourceListDragSource;
-            if (drag_source_item != null && drag_source_item.draggable ()) {
-                drag_source_item.prepare_selection_data (selection_data);
-                return true;
-            }
-
-            return false;
-        }
-
-        private bool row_draggable (Gtk.TreePath path) {
-            if (!base.row_draggable (path))
-                return false;
-
-            var item = get_item_from_path (path);
-
-            if (item != null) {
-                // check if the item's parent allows DnD sorting
-                var sortable_item = item.parent as SourceListSortable;
-
-                if (sortable_item != null && sortable_item.allow_dnd_sorting ())
-                    return true;
-
-                // Since the parent item does not allow DnD sorting, there's no
-                // reason to allow dragging it unless the row is actually draggable.
-                var drag_source_item = item as SourceListDragSource;
-
-                if (drag_source_item != null && drag_source_item.draggable ())
-                    return true;
-            }
-
-            return false;
-        }
-    }
-
-
-    /**
-     * Class responsible for rendering Item.icon and Item.activatable. It also
-     * notifies about clicks through the activated() signal.
-     */
-    private class CellRendererIcon : Gtk.CellRendererPixbuf {
-        public signal void activated (string path);
-
-        construct {
-            mode = Gtk.CellRendererMode.ACTIVATABLE;
-            stock_size = Gtk.IconSize.MENU;
-        }
-
-        public override bool activate (
-            Gdk.Event event,
-            Gtk.Widget widget,
-            string path,
-            Gdk.Rectangle background_area,
-            Gdk.Rectangle cell_area,
-            Gtk.CellRendererState flags
-        ) {
-            activated (path);
-            return true;
         }
     }
 
@@ -1454,145 +1022,84 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
 
         private Item? selected;
         private unowned Item? edited;
+        private Item? activated;
 
         private Gtk.Entry? editable_entry;
         private Gtk.CellRendererText text_cell;
-        private CellRendererIcon icon_cell;
-        private CellRendererIcon activatable_cell;
+        private Gtk.EventControllerKey key_controller;
+        private Gtk.GestureMultiPress button_controller;
+        private Gtk.CellRendererPixbuf icon_cell;
         private CellRendererBadge badge_cell;
         private CellRendererExpander primary_expander_cell;
         private CellRendererExpander secondary_expander_cell;
         private Gee.HashMap<int, CellRendererSpacer> spacer_cells; // cells used for left spacing
         private bool unselectable_item_clicked = false;
 
-        private const string DEFAULT_STYLESHEET = """
-            .sidebar.badge {
-                border-radius: 10px;
-                border-width: 0;
-                padding: 1px 2px 1px 2px;
-                font-weight: bold;
-            }
-        """;
-
-        private const string STYLE_PROP_LEVEL_INDENTATION = "level-indentation";
-        private const string STYLE_PROP_LEFT_PADDING = "left-padding";
-        private const string STYLE_PROP_EXPANDER_SPACING = "expander-spacing";
-
-        static construct {
-            install_style_property (new ParamSpecInt (
-                STYLE_PROP_LEVEL_INDENTATION,
-                "Level Indentation",
-                "Space to add at the beginning of every indentation level. Must be an even number.",
-                1,
-                50,
-                6,
-                ParamFlags.READABLE
-            ));
-
-            install_style_property (new ParamSpecInt (
-                STYLE_PROP_LEFT_PADDING,
-                "Left Padding",
-                "Padding added to the left side of the tree. Must be an even number.",
-                1,
-                50,
-                4,
-                ParamFlags.READABLE
-            ));
-
-            install_style_property (new ParamSpecInt (
-                STYLE_PROP_EXPANDER_SPACING,
-                "Expander Spacing",
-                "Space added between an item and its expander. Must be an even number.",
-                1,
-                50,
-                4,
-                ParamFlags.READABLE
-            ));
-        }
-
         public Tree (DataModel data_model) {
             Object (data_model: data_model);
         }
 
         construct {
-            unowned Gtk.StyleContext style_context = get_style_context ();
-            style_context.add_class (Gtk.STYLE_CLASS_SIDEBAR);
-            style_context.add_class (Granite.STYLE_CLASS_SOURCE_LIST);
-
-            var css_provider = new Gtk.CssProvider ();
-            try {
-                css_provider.load_from_data (DEFAULT_STYLESHEET, -1);
-                style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK);
-            } catch (Error e) {
-                warning ("Could not create CSS Provider: %s\nStylesheet:\n%s", e.message, DEFAULT_STYLESHEET);
-            }
-
-            set_model (data_model);
-
-            halign = valign = Gtk.Align.FILL;
-            expand = true;
-
+            get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
+            enable_grid_lines = NONE;
             enable_search = false;
             headers_visible = false;
-            enable_grid_lines = Gtk.TreeViewGridLines.NONE;
-
+            vexpand = true;
             // Deactivate GtkTreeView's built-in expander functionality
             expander_column = null;
             show_expanders = false;
 
-            var item_column = new Gtk.TreeViewColumn ();
-            item_column.expand = true;
+            set_model (data_model);
 
-            insert_column (item_column, Column.ITEM);
+            // Second expander. Used for main categories
+            secondary_expander_cell = new CellRendererExpander () {
+                is_category_expander = true,
+                xpad = 3
+            };
+
+            badge_cell = new CellRendererBadge () {
+                xpad = 3,
+                xalign = 1
+            };
+
+            text_cell = new Gtk.CellRendererText () {
+                editable_set = true,
+                editable = false,
+                ellipsize = END,
+                xalign = 0,
+                xpad = 6
+            };
+            text_cell.editing_started.connect (on_editing_started);
+            text_cell.editing_canceled.connect (on_editing_canceled);
+
+            icon_cell = new Gtk.CellRendererPixbuf () {
+                mode = ACTIVATABLE
+            };
+
+            // First expander. Used for normal expandable items
+            primary_expander_cell = new CellRendererExpander () {
+                xpad = 3
+            };
 
             // Now pack the cell renderers. We insert them in reverse order (using pack_end)
             // because we want to use TreeViewColumn.pack_start exclusively for inserting
             // spacer cell renderers for level-indentation purposes.
             // See add_spacer_cell_for_level() for more details.
-
-            // Second expander. Used for main categories
-            secondary_expander_cell = new CellRendererExpander ();
-            secondary_expander_cell.is_category_expander = true;
-            secondary_expander_cell.xpad = 10;
+            var item_column = new Gtk.TreeViewColumn () {
+                expand = true
+            };
             item_column.pack_end (secondary_expander_cell, false);
             item_column.set_cell_data_func (secondary_expander_cell, expander_cell_data_func);
-
-            activatable_cell = new CellRendererIcon ();
-            activatable_cell.xpad = 6;
-            activatable_cell.activated.connect (on_activatable_activated);
-            item_column.pack_end (activatable_cell, false);
-            item_column.set_cell_data_func (activatable_cell, icon_cell_data_func);
-
-            badge_cell = new CellRendererBadge ();
-            badge_cell.xpad = 1;
-            badge_cell.xalign = 1;
             item_column.pack_end (badge_cell, false);
             item_column.set_cell_data_func (badge_cell, badge_cell_data_func);
-
-            text_cell = new Gtk.CellRendererText ();
-            text_cell.editable_set = true;
-            text_cell.editable = false;
-            text_cell.editing_started.connect (on_editing_started);
-            text_cell.editing_canceled.connect (on_editing_canceled);
-            text_cell.ellipsize = Pango.EllipsizeMode.END;
-            text_cell.xalign = 0;
             item_column.pack_end (text_cell, true);
             item_column.set_cell_data_func (text_cell, name_cell_data_func);
-
-            icon_cell = new CellRendererIcon ();
-            icon_cell.xpad = 2;
             item_column.pack_end (icon_cell, false);
             item_column.set_cell_data_func (icon_cell, icon_cell_data_func);
-
-            // First expander. Used for normal expandable items
-            primary_expander_cell = new CellRendererExpander ();
-
-            int expander_spacing;
-            style_get (STYLE_PROP_EXPANDER_SPACING, out expander_spacing);
-            primary_expander_cell.xpad = expander_spacing / 2;
-
             item_column.pack_end (primary_expander_cell, false);
             item_column.set_cell_data_func (primary_expander_cell, expander_cell_data_func);
+
+            insert_column (item_column, Column.ITEM);
 
             // Selection
             var selection = get_selection ();
@@ -1605,157 +1112,22 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             // Add root-level indentation. New levels will be added by update_item_expansion()
             add_spacer_cell_for_level (1);
 
-            // Enable basic row drag and drop
-            configure_drag_source (null);
-            configure_drag_dest (null, 0);
-
             query_tooltip.connect_after (on_query_tooltip);
             has_tooltip = true;
+
+            key_controller = new Gtk.EventControllerKey (this);
+            key_controller.key_released.connect (on_key_released);
+
+            button_controller = new Gtk.GestureMultiPress (this) {
+                propagation_phase = CAPTURE,
+                button = 0
+            };
+            button_controller.pressed.connect (on_button_pressed);
+            button_controller.released.connect (on_button_released);
         }
 
         ~Tree () {
             disable_item_property_monitor ();
-        }
-
-        public override bool drag_motion (Gdk.DragContext context, int x, int y, uint time) {
-            // call the base signal to get rows with children to spring open
-            if (!base.drag_motion (context, x, y, time))
-                return false;
-
-            Gtk.TreePath suggested_path, current_path;
-            Gtk.TreeViewDropPosition suggested_pos, current_pos;
-
-            if (get_dest_row_at_pos (x, y, out suggested_path, out suggested_pos)) {
-                // the base implementation of drag_motion was likely to set a drop
-                // destination row. If that's the case, we configure the row position
-                // to only allow drops before or after it, but not into it
-                get_drag_dest_row (out current_path, out current_pos);
-
-                if (current_path != null && suggested_path.compare (current_path) == 0) {
-                    // If the source widget is this treeview, we assume we're
-                    // just dragging rows around, because at the moment dragging
-                    // rows into other rows (re-parenting) is not implemented.
-                    var source_widget = Gtk.drag_get_source_widget (context);
-                    bool dragging_treemodel_row = (source_widget == this);
-
-                    if (dragging_treemodel_row) {
-                        // we don't allow DnD into other rows, only in between them
-                        // (no row is highlighted)
-                        if (current_pos != Gtk.TreeViewDropPosition.BEFORE) {
-                            if (current_pos == Gtk.TreeViewDropPosition.INTO_OR_BEFORE)
-                                set_drag_dest_row (current_path, Gtk.TreeViewDropPosition.BEFORE);
-                            else
-                                set_drag_dest_row (null, Gtk.TreeViewDropPosition.AFTER);
-                        }
-                    } else {
-                        // for DnD originated on a different widget, we don't want to insert
-                        // between rows, only select the rows themselves
-                        if (current_pos == Gtk.TreeViewDropPosition.BEFORE)
-                            set_drag_dest_row (current_path, Gtk.TreeViewDropPosition.INTO_OR_BEFORE);
-                        else if (current_pos == Gtk.TreeViewDropPosition.AFTER)
-                            set_drag_dest_row (current_path, Gtk.TreeViewDropPosition.INTO_OR_AFTER);
-
-                        // determine if external DnD is supported by the item at destination
-                        var dest = data_model.get_item_from_path (current_path) as SourceListDragDest;
-
-                        if (dest != null) {
-                            var target_list = Gtk.drag_dest_get_target_list (this);
-                            var target = Gtk.drag_dest_find_target (this, context, target_list);
-
-                            // have 'drag_get_data' call 'drag_data_received' to determine
-                            // if the data can actually be dropped.
-                            context.set_data<int> ("suggested-dnd-action", context.get_suggested_action ());
-                            Gtk.drag_get_data (this, context, target, time);
-                        } else {
-                            // dropping data here is not supported. Unset dest row
-                            set_drag_dest_row (null, Gtk.TreeViewDropPosition.BEFORE);
-                        }
-                    }
-                }
-            } else {
-                // dropping into blank areas of SourceList is not allowed
-                set_drag_dest_row (null, Gtk.TreeViewDropPosition.AFTER);
-                return false;
-            }
-
-            return true;
-        }
-
-        public override void drag_data_received (
-            Gdk.DragContext context,
-            int x,
-            int y,
-            Gtk.SelectionData selection_data,
-            uint info,
-            uint time
-        ) {
-            var target_list = Gtk.drag_dest_get_target_list (this);
-            var target = Gtk.drag_dest_find_target (this, context, target_list);
-
-            if (target == Gdk.Atom.intern_static_string ("GTK_TREE_MODEL_ROW")) {
-                base.drag_data_received (context, x, y, selection_data, info, time);
-                return;
-            }
-
-            Gtk.TreePath path;
-            Gtk.TreeViewDropPosition pos;
-
-            if (context.get_data<int> ("suggested-dnd-action") != 0) {
-                context.set_data<int> ("suggested-dnd-action", 0);
-
-                get_drag_dest_row (out path, out pos);
-
-                if (path != null) {
-                    // determine if external DnD is allowed by the item at destination
-                    var dest = data_model.get_item_from_path (path) as SourceListDragDest;
-
-                    if (dest == null || !dest.data_drop_possible (context, selection_data)) {
-                        // dropping data here is not allowed. unset any previously
-                        // selected destination row
-                        set_drag_dest_row (null, Gtk.TreeViewDropPosition.BEFORE);
-                        Gdk.drag_status (context, 0, time);
-                        return;
-                    }
-                }
-
-                Gdk.drag_status (context, context.get_suggested_action (), time);
-            } else {
-                if (get_dest_row_at_pos (x, y, out path, out pos)) {
-                    // Data coming from external source/widget was dropped into this item.
-                    // selection_data contains something other than a tree row; most likely
-                    // we're dealing with a DnD not originated within the Source List tree.
-                    // Let's pass the data to the corresponding item, if there's a handler.
-
-                    var drag_dest = data_model.get_item_from_path (path) as SourceListDragDest;
-
-                    if (drag_dest != null) {
-                        var action = drag_dest.data_received (context, selection_data);
-                        Gtk.drag_finish (context, action != 0, action == Gdk.DragAction.MOVE, time);
-                        return;
-                    }
-                }
-
-                // failure
-                Gtk.drag_finish (context, false, false, time);
-            }
-        }
-
-        public void configure_drag_source (Gtk.TargetEntry[]? src_entries) {
-            // Append GTK_TREE_MODEL_ROW to src_entries and src_entries to enable row DnD.
-            var entries = append_row_target_entry (src_entries);
-
-            unset_rows_drag_source ();
-            enable_model_drag_source (Gdk.ModifierType.BUTTON1_MASK, entries, Gdk.DragAction.MOVE);
-        }
-
-        public void configure_drag_dest (Gtk.TargetEntry[]? dest_entries, Gdk.DragAction actions) {
-            // Append GTK_TREE_MODEL_ROW to dest_entries and dest_entries to enable row DnD.
-            var entries = append_row_target_entry (dest_entries);
-
-            unset_rows_drag_dest ();
-
-            // DragAction.MOVE needs to be enabled for row drag-and-drop to work properly
-            enable_model_drag_dest (entries, Gdk.DragAction.MOVE | actions);
         }
 
         private bool on_query_tooltip (int x, int y, bool keyboard_tooltip, Gtk.Tooltip tooltip) {
@@ -1792,35 +1164,10 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                     over_cell (column, path, icon_cell, x - start_cell_area.x)) {
 
                     return should_show;
-                } else if (over_cell (column, path, activatable_cell, x - start_cell_area.x)) {
-                    if (item.activatable_tooltip == "") {
-                        return false;
-                    } else {
-                        tooltip.set_markup (item.activatable_tooltip);
-                        return true;
-                    }
                 }
             }
 
             return false;
-        }
-
-        private static Gtk.TargetEntry[] append_row_target_entry (Gtk.TargetEntry[]? orig) {
-            const Gtk.TargetEntry row_target_entry = { // vala-lint=naming-convention
-                "GTK_TREE_MODEL_ROW",
-                Gtk.TargetFlags.SAME_WIDGET,
-                0
-            };
-
-            var entries = new Gtk.TargetEntry[0];
-            entries += row_target_entry;
-
-            if (orig != null) {
-                foreach (var target_entry in orig)
-                    entries += target_entry;
-            }
-
-            return entries;
         }
 
         private void enable_item_property_monitor () {
@@ -1851,8 +1198,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                 spacer_cell.level = level;
                 spacer_cells[level] = spacer_cell;
 
-                uint cell_xpadding;
-
                 // The primary expander is not visible for root-level (i.e. first level)
                 // items, so for the second level of indentation we use a low padding
                 // because the primary expander will add enough space. For the root level,
@@ -1861,23 +1206,13 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                 // so we set the value to a half of actual (desired) value.
                 switch (level) {
                     case 1: // root
-                        int left_padding;
-                        style_get (STYLE_PROP_LEFT_PADDING, out left_padding);
-                        cell_xpadding = left_padding / 2;
-                    break;
-
                     case 2: // second level
-                        cell_xpadding = 0;
-                    break;
+                        break;
 
                     default: // remaining levels
-                        int level_indentation;
-                        style_get (STYLE_PROP_LEVEL_INDENTATION, out level_indentation);
-                        cell_xpadding = level_indentation / 2;
-                    break;
+                        spacer_cell.xpad = 3;
+                        break;
                 }
-
-                spacer_cell.xpad = cell_xpadding;
 
                 var item_column = get_column (Column.ITEM);
                 item_column.pack_start (spacer_cell, false);
@@ -2039,17 +1374,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             on_editing_canceled ();
         }
 
-        private void on_activatable_activated (string item_path_str) {
-            var item = get_item_from_path_string (item_path_str);
-            if (item != null)
-                item.action_activated ();
-        }
-
-        private Item? get_item_from_path_string (string item_path_str) {
-            var item_path = new Gtk.TreePath.from_string (item_path_str);
-            return data_model.get_item_from_path (item_path);
-        }
-
         private bool toggle_expansion (ExpandableItem item) {
             if (item.collapsible) {
                 item.expanded = !item.expanded;
@@ -2122,51 +1446,48 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             }
         }
 
-        public override bool key_release_event (Gdk.EventKey event) {
-           if (selected_item != null) {
-                switch (event.keyval) {
-                    case Gdk.Key.F2:
-                       var modifiers = Gtk.accelerator_get_default_mod_mask ();
-                        // try to start editing selected item
-                        if ((event.state & modifiers) == 0 && selected_item.editable)
-                            start_editing_item (selected_item);
-                    break;
-                }
+        private void on_key_released (uint keyval, uint keycode, Gdk.ModifierType state) {
+            if (selected_item == null) {
+                return;
             }
 
-            return base.key_release_event (event);
+            switch (keyval) {
+                case Gdk.Key.F2:
+                   var modifiers = Gtk.accelerator_get_default_mod_mask ();
+                    // try to start editing selected item
+                    if ((state & modifiers) == 0 && selected_item.editable) {
+                        start_editing_item (selected_item);
+                    }
+                break;
+            }
         }
 
-        public override bool button_release_event (Gdk.EventButton event) {
-            if (unselectable_item_clicked && event.window == get_bin_window ()) {
+        private void on_button_released (int n_press, double x, double y) {
+            if (unselectable_item_clicked) {
                 unselectable_item_clicked = false;
 
                 Gtk.TreePath path;
                 Gtk.TreeViewColumn column;
-                int x = (int) event.x, y = (int) event.y, cell_x, cell_y;
+                int cell_x, cell_y;
 
-                if (get_path_at_pos (x, y, out path, out column, out cell_x, out cell_y)) {
+                if (get_path_at_pos ((int) x, (int) y, out path, out column, out cell_x, out cell_y)) {
                     var item = data_model.get_item_from_path (path) as ExpandableItem;
 
                     if (item != null) {
-                        if (!item.selectable || data_model.is_category (item, null, path))
+                        if (!item.selectable || data_model.is_category (item, null, path)) {
                             toggle_expansion (item);
+                        }
                     }
                 }
             }
-
-            return base.button_release_event (event);
         }
 
-        public override bool button_press_event (Gdk.EventButton event) {
-            if (event.window != get_bin_window ())
-                return base.button_press_event (event);
-
+        private void on_button_pressed (int n_press, double x, double y) {
             Gtk.TreePath path;
             Gtk.TreeViewColumn column;
-            int x = (int) event.x, y = (int) event.y, cell_x, cell_y;
+            int cell_x, cell_y;
 
-            if (get_path_at_pos (x, y, out path, out column, out cell_x, out cell_y)) {
+            if (get_path_at_pos ((int) x, (int) y, out path, out column, out cell_x, out cell_y)) {
                 var item = data_model.get_item_from_path (path);
 
                 // This is needed because the treeview adds an offset at the beginning of every level
@@ -2178,45 +1499,42 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                     // Cancel any editing operation going on
                     stop_editing ();
 
-                    if (event.button == Gdk.BUTTON_SECONDARY) {
+                    var event = button_controller.get_last_event (null);
+                    if (event.triggers_context_menu ()) {
                         popup_context_menu (item, event);
-                        return true;
-                    } else if (event.button == Gdk.BUTTON_PRIMARY) {
+                    } else if (button_controller.get_current_button () == Gdk.BUTTON_PRIMARY) {
                         // Check whether an expander (or an equivalent area) was clicked.
                         bool is_expandable = item is ExpandableItem;
                         bool is_category = is_expandable && data_model.is_category (item, null, path);
-
-                        if (event.type == Gdk.EventType.BUTTON_PRESS) {
+                        if (n_press == 1) {
                             if (is_expandable) {
                                 // Checking for secondary_expander_cell is not necessary because the entire row
                                 // serves for this purpose when the item is a category or when the item is a
                                 // normal expandable item that is not selectable (special care is taken to
                                 // not break the activatable/action icons for such cases).
                                 // The expander only works like a visual indicator for these items.
-                                unselectable_item_clicked = is_category
-                                    || (!item.selectable && !over_cell (column, path, activatable_cell, cell_x));
+                                unselectable_item_clicked = is_category || (!item.selectable);
 
-                                if (!unselectable_item_clicked
-                                    && over_primary_expander (column, path, cell_x)
-                                    && toggle_expansion (item as ExpandableItem))
-                                    return true;
+                                if (!unselectable_item_clicked && over_primary_expander (column, path, cell_x)) {
+                                    toggle_expansion (item as ExpandableItem);
+                                }
                             }
                         } else if (
-                            event.type == Gdk.EventType.2BUTTON_PRESS
+                            n_press == 2
                             && !is_category // Main categories are *not* editable
                             && item.editable
                             && item.selectable
                             && over_cell (column, path, text_cell, cell_x)
-                            && start_editing_item (item)
                         ) {
-                            // The user double-clicked over the text cell, and editing started successfully.
-                            return true;
+                            // Keep back reference of item so that it can be accessed in Idle.add_once()
+                            // where item is already freed
+                            activated = item;
+                            // Start editing after native event handlers finished else fails
+                            Idle.add_once (() => { start_editing_item (activated); });
                         }
                     }
                 }
             }
-
-            return base.button_press_event (event);
         }
 
         private bool over_primary_expander (Gtk.TreeViewColumn col, Gtk.TreePath path, int x) {
@@ -2279,13 +1597,10 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             return min_req.width;
         }
 
-        public override bool popup_menu () {
-            return popup_context_menu (null, null);
-        }
-
-        private bool popup_context_menu (Item? item, Gdk.EventButton? event) {
-            if (item == null)
+        private bool popup_context_menu (Item? item = null, Gdk.Event? event = null) {
+            if (item == null) {
                 item = selected_item;
+            }
 
             if (item != null) {
                 var menu = item.get_context_menu ();
@@ -2394,7 +1709,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
             Gtk.CellRenderer renderer,
             Gtk.TreeModel model, Gtk.TreeIter iter
         ) {
-            var icon_renderer = renderer as CellRendererIcon;
+            var icon_renderer = renderer as Gtk.CellRendererPixbuf;
             assert (icon_renderer != null);
 
             bool visible = false;
@@ -2408,8 +1723,6 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
                 if (visible) {
                     if (icon_renderer == icon_cell)
                         icon = item.icon;
-                    else if (icon_renderer == activatable_cell)
-                        icon = item.activatable;
                     else
                         assert_not_reached ();
                 }
@@ -2551,10 +1864,7 @@ public class Mail.SourceList : Gtk.ScrolledWindow {
 
     construct {
         tree = new Tree (data_model);
-
-        set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
-        add (tree);
-        show_all ();
+        child = tree;
 
         tree.item_selected.connect ((item) => item_selected (item));
     }
