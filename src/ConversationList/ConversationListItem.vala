@@ -1,20 +1,6 @@
-/*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 3 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+/*
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2017-2026 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
@@ -27,12 +13,14 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     private Gtk.Label messages;
     private Gtk.Label source;
     private Gtk.Label topic;
+    private Gtk.Revealer message_count_revealer;
     private Gtk.Revealer flagged_icon_revealer;
     private Gtk.Revealer status_revealer;
     private Gtk.Grid grid;
     private Hdy.Carousel carousel;
     private Gtk.GestureMultiPress gesture_controller;
     private Gtk.EventControllerKey key_controller;
+    private Gtk.Menu menu;
 
     construct {
         status_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic", Gtk.IconSize.MENU);
@@ -57,10 +45,12 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         messages = new Gtk.Label (null) {
             halign = Gtk.Align.END
         };
+        messages.get_style_context ().add_class (Granite.STYLE_CLASS_BADGE);
+        messages.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        weak Gtk.StyleContext messages_style = messages.get_style_context ();
-        messages_style.add_class (Granite.STYLE_CLASS_BADGE);
-        messages_style.add_class (Gtk.STYLE_CLASS_FLAT);
+        message_count_revealer = new Gtk.Revealer () {
+            child = messages
+        };
 
         topic = new Gtk.Label (null) {
             hexpand = true,
@@ -88,7 +78,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         grid.attach (source, 1, 0, 1, 1);
         grid.attach (date, 2, 0, 2, 1);
         grid.attach (topic, 1, 1, 2, 1);
-        grid.attach (messages, 3, 1, 1, 1);
+        grid.attach (message_count_revealer, 3, 1);
 
         var archive_affordance = new SwipeAffordance (
             _("Archive"), "mail-archive-symbolic", END
@@ -103,8 +93,8 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         carousel = new Hdy.Carousel () {
             allow_scroll_wheel = false
         };
-        carousel.add (archive_affordance);
         carousel.add (grid);
+        carousel.prepend (archive_affordance);
         carousel.add (trash_affordance);
         carousel.scroll_to (grid);
 
@@ -120,7 +110,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
 
         gesture_controller.released.connect ((n_press, x, y) => {
             select ();
-            create_context_menu (x, y);
+            menu.popup_at_pointer (null);
         });
 
         key_controller = new Gtk.EventControllerKey (this);
@@ -130,7 +120,7 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
                 return;
             }
 
-            create_context_menu ();
+            menu.popup_at_widget (this, Gdk.Gravity.EAST, Gdk.Gravity.CENTER, null);
         });
 
         carousel.page_changed.connect ((index) => {
@@ -154,27 +144,24 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         });
     }
 
-    public void assign (ConversationItemModel data) {
-        carousel.scroll_to_full (grid, 0);
-
-        date.label = data.formatted_date;
-        topic.label = data.subject;
+    public void bind_model (ConversationItemModel item_model) {
+        date.label = item_model.formatted_date;
+        topic.label = item_model.subject;
 
         var source_label_text = "";
-        if (Camel.FolderInfoFlags.TYPE_SENT == (data.folder_info_flags & Camel.FOLDER_TYPE_MASK)) {
-            source_label_text = data.to;
+        if (Camel.FolderInfoFlags.TYPE_SENT == (item_model.folder_info_flags & Camel.FOLDER_TYPE_MASK)) {
+            source_label_text = item_model.to;
         } else {
-            source_label_text = data.from;
+            source_label_text = item_model.from;
         }
         source.label = GLib.Markup.escape_text (source_label_text);
-        tooltip_markup = GLib.Markup.printf_escaped ("<b>%s</b>\n%s", source_label_text, data.subject);
+        tooltip_markup = GLib.Markup.printf_escaped ("<b>%s</b>\n%s", source_label_text, item_model.subject);
 
-        uint num_messages = data.num_messages;
+        uint num_messages = item_model.num_messages;
         messages.label = num_messages > 1 ? "%u".printf (num_messages) : null;
-        messages.visible = num_messages > 1;
-        messages.no_show_all = num_messages <= 1;
+        message_count_revealer.reveal_child = num_messages > 1;
 
-        if (data.unread) {
+        if (item_model.unread) {
             grid.get_style_context ().add_class ("unread-message");
 
             status_icon.icon_name = "mail-unread-symbolic";
@@ -189,11 +176,11 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
             status_icon.get_style_context ().remove_class (Granite.STYLE_CLASS_ACCENT);
             source.get_style_context ().remove_class (Granite.STYLE_CLASS_ACCENT);
 
-            if (data.replied_all || data.replied) {
+            if (item_model.replied_all || item_model.replied) {
                 status_icon.icon_name = "mail-replied-symbolic";
                 status_icon.tooltip_text = _("Replied");
                 status_revealer.reveal_child = true;
-            } else if (data.forwarded) {
+            } else if (item_model.forwarded) {
                 status_icon.icon_name = "mail-forwarded-symbolic";
                 status_icon.tooltip_text = _("Forwarded");
                 status_revealer.reveal_child = true;
@@ -202,38 +189,26 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
             }
         }
 
-        flagged_icon_revealer.reveal_child = data.flagged;
-    }
-
-    private void create_context_menu (double? x = null, double? y = null) {
-        var item = (ConversationItemModel)model_item;
+        flagged_icon_revealer.reveal_child = item_model.flagged;
 
         var menu_model = new Menu ();
         menu_model.append (_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH);
 
-        if (!item.unread) {
+        if (!item_model.unread) {
             menu_model.append (_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD);
         } else {
             menu_model.append (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ);
         }
 
-        if (!item.flagged) {
+        if (!item_model.flagged) {
             menu_model.append (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR);
         } else {
             menu_model.append (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR);
         }
 
-        var menu = new Gtk.Menu.from_model (menu_model) {
+        menu = new Gtk.Menu.from_model (menu_model) {
             attach_widget = this
         };
-        menu.show_all ();
-        menu.popup_at_pointer (null);
-
-        if (x == null || y == null) {
-            menu.popup_at_widget (this, Gdk.Gravity.EAST, Gdk.Gravity.CENTER, null);
-        } else {
-            menu.popup_at_pointer (null);
-        }
     }
 
     private class SwipeAffordance : Gtk.Box {
