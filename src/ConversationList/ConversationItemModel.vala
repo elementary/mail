@@ -252,4 +252,10 @@ public class Mail.ConversationItemModel : GLib.Object {
     public static bool equal_func (ConversationItemModel a, ConversationItemModel b) {
         return (a.service_uid == b.service_uid);
     }
+
+    public static int compare_func (Object a, Object b) {
+        var item1 = (ConversationItemModel) a;
+        var item2 = (ConversationItemModel) b;
+        return (int)(item2.timestamp - item1.timestamp);
+    }
 }

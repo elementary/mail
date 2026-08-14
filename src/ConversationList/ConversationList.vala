@@ -277,8 +277,6 @@ public class Mail.ConversationList : Granite.Bin {
                 }
             }
         }
-
-        list_store.items_changed (0, previous_items, list_store.get_n_items ());
     }
 
     public async void refresh_folder (GLib.Cancellable? cancellable = null) {
@@ -353,8 +351,6 @@ public class Mail.ConversationList : Granite.Bin {
 
                 child = child.next;
             }
-
-            list_store.items_changed (0, previous_items, list_store.get_n_items ());
         }
     }
 
@@ -412,7 +408,7 @@ public class Mail.ConversationList : Granite.Bin {
 
     private void add_conversation_item (Camel.FolderInfoFlags folder_info_flags, Camel.FolderThreadNode child, Camel.FolderThread thread, string service_uid) {
         var item = new ConversationItemModel (folder_info_flags, child, thread, service_uid);
-        list_store.insert_sorted (item, thread_sort_function);
+        list_store.insert_sorted (item, ConversationItemModel.compare_func);
     }
 
     private static bool deleted_filter_func (GLib.Object obj) {
@@ -422,12 +418,6 @@ public class Mail.ConversationList : Granite.Bin {
         } else {
             return false;
         }
-    }
-
-    private static int thread_sort_function (Object obj1, Object obj2) {
-        var item1 = (ConversationItemModel) obj1;
-        var item2 = (ConversationItemModel) obj2;
-        return (int)(item2.timestamp - item1.timestamp);
     }
 
     public void mark_read_selected_messages () {
@@ -486,7 +476,6 @@ public class Mail.ConversationList : Granite.Bin {
         //     move_threads[selected_item_model.service_uid].add (selected_item_model.node);
         // }
 
-        list_store.items_changed (0, list_store.get_n_items (), list_store.get_n_items ());
         // selection_model.select_item (selected_rows_start_index + 1, true);
 
         uint moved = 0;
@@ -514,7 +503,5 @@ public class Mail.ConversationList : Granite.Bin {
         foreach (var item in moved_conversation_items) {
             item.hidden = false;
         }
-
-        list_store.items_changed (0, list_store.get_n_items (), list_store.get_n_items ());
     }
 }

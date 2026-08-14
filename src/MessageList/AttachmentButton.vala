@@ -121,6 +121,7 @@ public class AttachmentButton : Gtk.FlowBoxChild {
         var gesture_click = new Gtk.GestureClick () {
             button = 0
         };
+
         gesture_click.pressed.connect ((gesture, n_press, x, y) => {
             var sequence = gesture.get_current_sequence ();
             var event = gesture.get_last_event (sequence);

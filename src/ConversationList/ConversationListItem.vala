@@ -1,20 +1,6 @@
-/*-
- * Copyright (c) 2017-2026 elementary, Inc. (https://elementary.io)
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 3 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+/*
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2017-2026 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
@@ -25,10 +11,12 @@ public class Mail.ConversationListItem : Granite.Bin {
     private Gtk.Label messages;
     private Gtk.Label source;
     private Gtk.Label topic;
+    private Gtk.Revealer message_count_revealer;
     private Gtk.Revealer flagged_icon_revealer;
     private Gtk.Revealer status_revealer;
     private Gtk.Grid grid;
     private Adw.Carousel carousel;
+    private Gtk.PopoverMenu menu;
 
     construct {
         status_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic");
@@ -56,6 +44,10 @@ public class Mail.ConversationListItem : Granite.Bin {
         messages.add_css_class (Granite.STYLE_CLASS_BADGE);
         messages.add_css_class (Granite.STYLE_CLASS_FLAT);
 
+        message_count_revealer = new Gtk.Revealer () {
+            child = messages
+        };
+
         topic = new Gtk.Label (null) {
             hexpand = true,
             ellipsize = END,
@@ -82,7 +74,7 @@ public class Mail.ConversationListItem : Granite.Bin {
         grid.attach (source, 1, 0);
         grid.attach (date, 2, 0, 2);
         grid.attach (topic, 1, 1, 2);
-        grid.attach (messages, 3, 1);
+        grid.attach (message_count_revealer, 3, 1);
 
         var archive_affordance = new SwipeAffordance (
             _("Archive"), "mail-archive-symbolic", END
@@ -104,7 +96,7 @@ public class Mail.ConversationListItem : Granite.Bin {
         add_css_class ("conversation-list-item");
         child = carousel;
 
-        var menu = new Gtk.PopoverMenu.from_model (null) {
+        menu = new Gtk.PopoverMenu.from_model (null) {
             has_arrow = false,
             position = BOTTOM
         };
@@ -116,7 +108,6 @@ public class Mail.ConversationListItem : Granite.Bin {
         };
 
         click_controller.released.connect ((n_press, x, y) => {
-            menu.set_menu_model (create_menu_model ());
             menu_popup_at_pointer (menu, x, y);
         });
 
@@ -127,7 +118,6 @@ public class Mail.ConversationListItem : Granite.Bin {
                 return;
             }
 
-            menu.set_menu_model (create_menu_model ());
             menu_popup_on_keypress (menu);
         });
 
@@ -162,7 +152,7 @@ public class Mail.ConversationListItem : Granite.Bin {
 
         uint num_messages = item_model.num_messages;
         messages.label = num_messages > 1 ? "%u".printf (num_messages) : null;
-        messages.visible = num_messages > 1;
+        message_count_revealer.reveal_child = num_messages > 1;
 
         if (item_model.unread) {
             grid.add_css_class ("unread-message");
@@ -193,26 +183,23 @@ public class Mail.ConversationListItem : Granite.Bin {
         }
 
         flagged_icon_revealer.reveal_child = item_model.flagged;
-    }
 
-    private GLib.Menu create_menu_model () {
-        var menu = new Menu ();
-        menu.append (_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH);
+        var menu_model = new Menu ();
+        menu_model.append (_("Move To Trash"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH);
 
-        // var item = (ConversationItemModel) model_item;
-        // if (!item.unread) {
-        //     menu_model.append (_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD);
-        // } else {
-        //     menu_model.append (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ);
-        // }
+        if (!item_model.unread) {
+            menu_model.append (_("Mark As Unread"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNREAD);
+        } else {
+            menu_model.append (_("Mark as Read"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_READ);
+        }
 
-        // if (!item.flagged) {
-        //     menu_model.append (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR);
-        // } else {
-        //     menu_model.append (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR);
-        // }
+        if (!item_model.flagged) {
+            menu_model.append (_("Star"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_STAR);
+        } else {
+            menu_model.append (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR);
+        }
 
-        return menu;
+        menu.menu_model = menu_model;
     }
 
     private void menu_popup_at_pointer (Gtk.PopoverMenu popover, double x, double y) {
