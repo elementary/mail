@@ -189,10 +189,9 @@ public class Mail.MoveOperation : Object {
             var vee_folder = (Camel.VeeFolder)src_folder;
 
             store = null;
-            unowned Camel.Folder? orig_folder = null;
 
             foreach (unowned Camel.MessageInfo message in moved_messages) {
-                orig_folder = vee_folder.get_vee_uid_folder (message.uid);
+                Camel.Folder? orig_folder = vee_folder.dup_vee_uid_folder (message.uid);
                 if (orig_folder != null) {
                     if (store != null && orig_folder.get_parent_store () != store) {
                         // Don't know which archive folder to use when messages are from
@@ -214,11 +213,11 @@ public class Mail.MoveOperation : Object {
     }
 
     private async void collect_thread_messages (Camel.FolderThreadNode thread) {
-        moved_messages.add (thread.message);
-        unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.child;
+        moved_messages.add ((Camel.MessageInfo?) thread.get_item ());
+        unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.get_child ();
         while (child != null) {
             yield collect_thread_messages (child);
-            child = (Camel.FolderThreadNode?) child.next;
+            child = (Camel.FolderThreadNode?) child.get_next ();
         }
     }
 

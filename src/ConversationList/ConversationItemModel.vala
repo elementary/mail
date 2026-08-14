@@ -46,7 +46,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
             unowned Camel.FolderThreadNode? current_node = node;
             while (current_node != null) {
-                weak Camel.MessageInfo? message = current_node.message;
+                weak Camel.MessageInfo? message = (Camel.MessageInfo?) current_node.get_item ();
                 if (message != null) {
                     var address = new Camel.InternetAddress ();
                     if (address.decode (message.from) > 0) {
@@ -67,7 +67,7 @@ public class Mail.ConversationItemModel : GLib.Object {
                     }
                 }
 
-                current_node = (Camel.FolderThreadNode?) current_node.child;
+                current_node = (Camel.FolderThreadNode?) current_node.get_child ();
             }
 
             if (senders.length > 0) {
@@ -84,7 +84,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
             unowned Camel.FolderThreadNode? current_node = node;
             while (current_node != null) {
-                weak Camel.MessageInfo? message = current_node.message;
+                weak Camel.MessageInfo? message = (Camel.MessageInfo?) current_node.get_item ();
                 if (message != null) {
                     var address = new Camel.InternetAddress ();
                     if (address.decode (message.to) > 0) {
@@ -105,7 +105,7 @@ public class Mail.ConversationItemModel : GLib.Object {
                     }
                 }
 
-                current_node = (Camel.FolderThreadNode?) current_node.child;
+                current_node = (Camel.FolderThreadNode?) current_node.get_child ();
             }
 
             if (recipients.length > 0) {
@@ -118,7 +118,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public string subject {
         get {
-            weak Camel.MessageInfo? message = node.message;
+            weak Camel.MessageInfo? message = (Camel.MessageInfo?) node.get_item ();
             if (message == null) {
                 return _("Unknown");
             }
@@ -129,7 +129,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public bool flagged {
         get {
-            weak Camel.MessageInfo? message = node.message;
+            weak Camel.MessageInfo? message = (Camel.MessageInfo?) node.get_item ();
             if (message == null) {
                 return false;
             }
@@ -140,7 +140,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public bool forwarded {
         get {
-            weak Camel.MessageInfo? message = node.message;
+            weak Camel.MessageInfo? message = (Camel.MessageInfo?) node.get_item ();
             if (message == null) {
                 return false;
             }
@@ -151,7 +151,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public bool replied {
         get {
-            weak Camel.MessageInfo? message = node.message;
+            weak Camel.MessageInfo? message = (Camel.MessageInfo?) node.get_item ();
             if (message == null) {
                 return false;
             }
@@ -162,7 +162,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public bool replied_all {
         get {
-            weak Camel.MessageInfo? message = node.message;
+            weak Camel.MessageInfo? message = (Camel.MessageInfo?) node.get_item ();
             if (message == null) {
                 return false;
             }
@@ -179,7 +179,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     public bool deleted {
         get {
-            weak Camel.MessageInfo? message = node.message;
+            weak Camel.MessageInfo? message = (Camel.MessageInfo?) node.get_item ();
             if (message == null) {
                 return false;
             }
@@ -204,7 +204,7 @@ public class Mail.ConversationItemModel : GLib.Object {
 
     private static uint count_thread_messages (Camel.FolderThreadNode node) {
         uint i = 1;
-        for (unowned Camel.FolderThreadNode? child = node.child; child != null; child = child.next) {
+        for (unowned Camel.FolderThreadNode? child = node.get_child (); child != null; child = child.get_next ()) {
             i += count_thread_messages (child);
         }
 
@@ -217,13 +217,13 @@ public class Mail.ConversationItemModel : GLib.Object {
             return time;
         }
 
-        weak Camel.MessageInfo? message = node.message;
+        weak Camel.MessageInfo? message = (Camel.MessageInfo?) node.get_item ();
         if (message != null) {
             time = int64.max (time, message.date_received);
             time = int64.max (time, message.date_sent);
         }
 
-        for (unowned Camel.FolderThreadNode? child = node.child; child != null; child = child.next) {
+        for (unowned Camel.FolderThreadNode? child = node.get_child (); child != null; child = child.get_next ()) {
             time = get_newest_timestamp (child, time);
         }
 
@@ -235,10 +235,10 @@ public class Mail.ConversationItemModel : GLib.Object {
             return false;
         }
 
-        var has_flag = !(flag in (int)node.message.flags);
+        var has_flag = !(flag in (int)((Camel.MessageInfo?) node.get_item ()).flags);
 
         if (!has_flag) {
-            for (unowned Camel.FolderThreadNode? child = node.child; child != null; child = child.next) {
+            for (unowned Camel.FolderThreadNode? child = node.get_child (); child != null; child = child.get_next ()) {
                 has_flag = has_thread_flag (child, flag);
                 if (has_flag) {
                     break;
