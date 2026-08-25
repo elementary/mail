@@ -8,26 +8,28 @@ msgstr ""
 "Project-Id-Version: pantheon-mail\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-08 16:46+0000\n"
-"PO-Revision-Date: 2017-05-04 20:01+0000\n"
-"Last-Translator: Rokar <rokartv10@gmail.com>\n"
-"Language-Team: ku (generated) <https://l10n.elementary.io/projects/mail/mail/"
-"ku/>\n"
+"PO-Revision-Date: 2026-08-26 09:02+0000\n"
+"Last-Translator: Cyax <fakecyax@gmail.com>\n"
+"Language-Team: Kurdish <https://l10n.elementaryos.org/projects/mail/mail/ku/>"
+"\n"
 "Language: ku\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2017-03-09 05:59+0000\n"
 
 #: src/Application.vala:145
 msgid "Unable to open System Settings"
-msgstr ""
+msgstr "Nikare sazkariyên pergalê veke"
 
 #: src/Application.vala:146
 msgid ""
 "Open System Settings manually or install Evolution to set up online accounts."
 msgstr ""
+"Sazkariyên pergalê bi destan veke yan jî Evolution saz bike da ku komarên "
+"serhêl bi rêkxstin bikî."
 
 #: src/Application.vala:217
 msgid ""
@@ -54,11 +56,11 @@ msgstr "Giravên Kokos (Keeling)"
 
 #: src/Composer.vala:133 src/MessageList/MessageListItem.vala:148
 msgid "Cc:"
-msgstr ""
+msgstr "Cc:"
 
 #: src/Composer.vala:152
 msgid "Bcc:"
-msgstr ""
+msgstr "Bcc:"
 
 #: src/Composer.vala:171 src/MessageList/MessageListItem.vala:114
 msgid "Subject:"
@@ -86,17 +88,15 @@ msgstr "Bişîne"
 
 #: src/Composer.vala:299
 msgid "New Message"
-msgstr ""
+msgstr "Peyama nû"
 
 #: src/Composer.vala:445
 msgid "Choose a file"
 msgstr "Pelekî hilbijêre"
 
 #: src/Composer.vala:448
-#, fuzzy
-#| msgid "Detach"
 msgid "Attach"
-msgstr "Veqetandin"
+msgstr "Pêve bike"
 
 #: src/Composer.vala:449 src/Composer.vala:472 src/Composer.vala:763
 #: src/Dialogs/InsertLinkDialog.vala:66
@@ -106,7 +106,7 @@ msgstr "Betal bike"
 
 #: src/Composer.vala:464
 msgid "Images"
-msgstr ""
+msgstr "Wêne"
 
 #: src/Composer.vala:468
 #, fuzzy
@@ -116,7 +116,7 @@ msgstr "Pelekî hilbijêre"
 
 #: src/Composer.vala:471
 msgid "Insert"
-msgstr ""
+msgstr "Têxîne"
 
 #: src/Composer.vala:500
 msgid "Unable to insert image"
@@ -162,7 +162,7 @@ msgstr ""
 #: src/Composer.vala:706
 #, c-format
 msgid "Cc: %s<br/>"
-msgstr ""
+msgstr "Cc:%s<br/>"
 
 #: src/Composer.vala:754
 msgid "Permanently delete this draft?"
@@ -235,19 +235,19 @@ msgstr ""
 
 #: src/EditorToolbar.vala:55
 msgid "Bold"
-msgstr ""
+msgstr "Qalind"
 
 #: src/EditorToolbar.vala:62
 msgid "Italic"
-msgstr ""
+msgstr "Xar"
 
 #: src/EditorToolbar.vala:73
 msgid "Underline"
-msgstr ""
+msgstr "Binxêz"
 
 #: src/EditorToolbar.vala:85
 msgid "Strikethrough"
-msgstr ""
+msgstr "Xêz di hundir de"
 
 #: src/EditorToolbar.vala:100
 msgid "Remove formatting"
@@ -285,9 +285,8 @@ msgstr "E-Peyam"
 
 #: src/MainWindow.vala:123 src/Dialogs/AliasDialog/AliasDialog.vala:96
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:172
-#, fuzzy
 msgid "Undo"
-msgstr "_Vegerîne"
+msgstr "Vegerîne"
 
 #: src/MainWindow.vala:281
 #, fuzzy
@@ -390,7 +389,7 @@ msgstr ", "
 #: src/ConversationList/ConversationItemModel.vala:123
 #: src/MessageList/AttachmentButton.vala:100
 msgid "Unknown"
-msgstr ""
+msgstr "Nenas"
 
 #: src/ConversationList/ConversationList.vala:85
 msgid "Search Mail"
@@ -428,17 +427,15 @@ msgstr "Avêtî"
 
 #: src/ConversationList/ConversationListItem.vala:181
 msgid "Unread"
-msgstr ""
+msgstr "Nexwendî"
 
 #: src/ConversationList/ConversationListItem.vala:194
-#, fuzzy
 msgid "Replied"
-msgstr "Bersiv"
+msgstr "Bersivdayî"
 
 #: src/ConversationList/ConversationListItem.vala:198
-#, fuzzy
 msgid "Forwarded"
-msgstr "Pêşve"
+msgstr "Beralîkirî"
 
 #: src/ConversationList/ConversationListItem.vala:212
 msgid "Move To Trash"
@@ -456,20 +453,20 @@ msgstr ""
 #: src/ConversationList/ConversationListItem.vala:221
 #: src/MessageList/MessageList.vala:52
 msgid "Star"
-msgstr ""
+msgstr "Stêrk bike"
 
 #: src/ConversationList/ConversationListItem.vala:223
 #: src/MessageList/MessageList.vala:53
 msgid "Unstar"
-msgstr ""
+msgstr "Stêrk neke"
 
 #: src/Dialogs/InsertLinkDialog.vala:29
 msgid "URL:"
-msgstr ""
+msgstr "Girêdan:"
 
 #: src/Dialogs/InsertLinkDialog.vala:39
 msgid "Link Text:"
-msgstr ""
+msgstr "Nivîsa girêdanê:"
 
 #: src/Dialogs/InsertLinkDialog.vala:45
 #, fuzzy
@@ -548,7 +545,7 @@ msgstr ""
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:86
 msgid "Title"
-msgstr ""
+msgstr "Sernav"
 
 #. Work around a styling issue
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:99
@@ -556,8 +553,6 @@ msgid "For example “Work” or “Personal”"
 msgstr ""
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:122
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete"
 msgstr "Jê bibe"
 
@@ -567,7 +562,7 @@ msgstr ""
 
 #: src/Dialogs/SignatureDialog/SignatureDialog.vala:156
 msgid "Signature"
-msgstr ""
+msgstr "Îmze bike"
 
 #: src/FolderList/AccountItemModel.vala:155
 msgid "Edit Aliases…"
@@ -575,7 +570,7 @@ msgstr ""
 
 #: src/FolderList/FolderItemModel.vala:48
 msgid "Refresh folder"
-msgstr ""
+msgstr "Peldankê rojane bike"
 
 #: src/FolderList/FolderItemModel.vala:53
 msgid "Rename folder"
@@ -615,23 +610,19 @@ msgid "Menu"
 msgstr "Menû"
 
 #: src/FolderList/GroupedFolderItemModel.vala:38
-#, fuzzy
-#| msgid "Inbox"
 msgctxt "Inbox Folder"
 msgid "Inbox"
-msgstr "Peldanka hatiyan"
+msgstr "Hatî"
 
 #: src/FolderList/GroupedFolderItemModel.vala:42
-#, fuzzy
-#| msgid "Archive"
 msgctxt "Archive Folder"
 msgid "Archive"
-msgstr "Arşîv"
+msgstr "Erşîv"
 
 #: src/FolderList/GroupedFolderItemModel.vala:46
 msgctxt "Sent Folder"
 msgid "Sent"
-msgstr ""
+msgstr "Şandî"
 
 #: src/FolderList/SessionItemModel.vala:28
 msgid "All Mailboxes"
@@ -708,7 +699,7 @@ msgstr ""
 
 #: src/MessageList/MessageListItem.vala:297
 msgid "Show Images"
-msgstr ""
+msgstr "Wêneyan nîşan bide"
 
 #: src/MessageList/MessageListItem.vala:298
 msgid "Always Show from Sender"
@@ -757,9 +748,8 @@ msgid "Save As…"
 msgstr "Tomar bike wekî…"
 
 #: src/MessageList/AttachmentButton.vala:143
-#, fuzzy
 msgid "Save"
-msgstr "_Tomar bike"
+msgstr "Tomar bike"
 
 #: src/MessageList/FolderPopover/FolderPopover.vala:22
 msgid "No mailboxes found"
