@@ -12,33 +12,35 @@ add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi
 
 glib_dep = dependency('glib-2.0')
 gobject_dep = dependency('gobject-2.0')
-granite_dep = dependency('granite', version: '>= 6.0.0')
+granite_dep = dependency('granite-7', version: '>= 7.1.0')
+gtk_dep = dependency('gtk4')
 gee_dep = dependency('gee-0.8')
-handy_dep = dependency('libhandy-1', version: '>=1.1.90')
+adw_dep = dependency('libadwaita-1', version: '>=1.0.0')
 camel_dep = dependency('camel-1.2', version: '>= 3.28')
-libedataserver_dep = dependency('libedataserver-1.2', version: '>= 3.28')
-libedataserverui_dep = dependency('libedataserverui-1.2', version: '>=3.45.1')
-webkit2_dep = dependency('webkit2gtk-4.1')
-webkit2_web_extension_dep = dependency('webkit2gtk-web-extension-4.1')
+libedataserver_dep = dependency('libedataserver-1.2', version: '>=3.45.1')
+libedataserverui_dep = dependency('libedataserverui4-1.0', version: '>= 3.46.4')
+webkit_dep = dependency('webkitgtk-6.0')
+webkit_web_extension_dep = dependency('webkitgtk-web-process-extension-6.0')
 libportal_dep = dependency('libportal')
-libportal_gtk_dep = dependency('libportal-gtk3')
+libportal_gtk_dep = dependency('libportal-gtk4')
 folks_dep = dependency('folks')
 m_dep = meson.get_compiler('c').find_library('m')
 
-webkit2_extension_path = join_paths(get_option('prefix'), get_option('libdir'), meson.project_name(), 'webkit2')
+webkit_extension_path = join_paths(get_option('prefix'), get_option('libdir'), meson.project_name(), 'webkit2')
 
 dependencies = [
     glib_dep,
     gobject_dep,
     granite_dep,
+    gtk_dep,
     gee_dep,
-    handy_dep,
+    adw_dep,
     camel_dep,
     libedataserver_dep,
     libedataserverui_dep,
     libportal_dep,
     libportal_gtk_dep,
-    webkit2_dep,
+    webkit_dep,
     folks_dep,
     m_dep
 ]
@@ -53,12 +55,11 @@ extension_dependencies = [
     glib_dep,
     gobject_dep,
     gee_dep,
-    webkit2_web_extension_dep
+    webkit_web_extension_dep
 ]
 
 add_global_arguments([
-        '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
-        '-DHANDY_USE_UNSTABLE_API'
+        '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name())
     ],
     language:'c'
 )

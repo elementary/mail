@@ -41,13 +41,7 @@ public class Mail.CellRendererExpander : Gtk.CellRenderer {
         revert_style_changes (widget);
     }
 
-    public override void render (
-        Cairo.Context context,
-        Gtk.Widget widget,
-        Gdk.Rectangle bg_area,
-        Gdk.Rectangle cell_area,
-        Gtk.CellRendererState flags
-    ) {
+    public override void snapshot (Gtk.Snapshot snapshot, Gtk.Widget widget, Gdk.Rectangle bg_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
         if (!is_expander) {
             return;
         }
@@ -66,6 +60,11 @@ public class Mail.CellRendererExpander : Gtk.CellRenderer {
         const Gtk.StateFlags EXPANDED_FLAG = Gtk.StateFlags.CHECKED;
         ctx.set_state (is_expanded ? state | EXPANDED_FLAG : state & ~EXPANDED_FLAG);
 
+        var rect = Graphene.Rect.alloc ();
+        rect.init (x, y, arrow_size, arrow_size);
+
+        var context = snapshot.append_cairo (rect);
+
         ctx.render_expander (context, x, y, arrow_size, arrow_size);
 
         revert_style_changes (widget);
@@ -76,9 +75,9 @@ public class Mail.CellRendererExpander : Gtk.CellRenderer {
         ctx.save ();
 
         if (is_category_expander)
-            ctx.add_class (Granite.STYLE_CLASS_CATEGORY_EXPANDER);
+            ctx.add_class ("category-expander");
         else
-            ctx.add_class (Gtk.STYLE_CLASS_EXPANDER);
+            ctx.add_class ("expander");
 
         return ctx;
     }

@@ -45,8 +45,7 @@ public class Mail.Signature : Gtk.ListBoxRow {
         };
         bind_property ("title", label, "label");
 
-        add (label);
-        show_all ();
+        child = label;
     }
 
     public async void save () {

@@ -84,18 +84,17 @@ public class Mail.Alias : Gtk.ListBoxRow {
             margin_top = 6,
             margin_bottom = 12
         };
-        edit_popover_content.add (edit_name_label);
-        edit_popover_content.add (name_entry);
-        edit_popover_content.add (edit_address_label);
-        edit_popover_content.add (address_entry);
-        edit_popover_content.show_all ();
+        edit_popover_content.append (edit_name_label);
+        edit_popover_content.append (name_entry);
+        edit_popover_content.append (edit_address_label);
+        edit_popover_content.append (address_entry);
 
-        var edit_popover = new Gtk.Popover (null) {
+        var edit_popover = new Gtk.Popover () {
             child = edit_popover_content
         };
 
         var edit_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("document-edit-symbolic", BUTTON),
+            icon_name = "document-edit-symbolic",
             popover = edit_popover,
             tooltip_text = _("Edit alias")
         };
@@ -106,12 +105,11 @@ public class Mail.Alias : Gtk.ListBoxRow {
             margin_top = 6,
             margin_bottom = 6
         };
-        box.add (label);
-        box.add (edit_button);
-        box.add (delete_button);
+        box.append (label);
+        box.append (edit_button);
+        box.append (delete_button);
 
         child = box;
-        show_all ();
 
         map.connect (() => {
             if (address == "") {
