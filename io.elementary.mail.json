@@ -51,7 +51,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/evolution-data-server.git",
-                    "tag": "3.56.2"
+                    "tag": "3.62.0",
+                    "commit": "99edc087f1207979d951295f1a01f9b010e176ca"
                 }
             ],
             "modules": [
@@ -78,18 +79,19 @@
                     "config-opts": [
                         "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                         "-DCMAKE_INSTALL_LIBDIR=/app/lib",
-                        "-DWITH_CXX_BINDINGS=false",
-                        "-DSHARED_ONLY=true",
-                        "-DGOBJECT_INTROSPECTION=true",
-                        "-DICAL_BUILD_DOCS=false",
-                        "-DICAL_GLIB_VAPI=true",
+                        "-DLIBICAL_CXX_BINDINGS=false",
+                        "-DLIBICAL_JAVA_BINDINGS=false",
+                        "-DLIBICAL_GOBJECT_INTROSPECTION=true",
+                        "-DLIBICAL_BUILD_DOCS=false",
+                        "-DLIBICAL_GLIB_VAPI=true",
                         "-DLIBICAL_BUILD_TESTING=false"
                     ],
                     "sources": [
                         {
                             "type": "git",
                             "url": "https://github.com/libical/libical.git",
-                            "tag": "v3.0.9"
+                            "tag": "v4.0.5",
+                            "commit": "205efeb62fcc6503769bd6d1aca3ff4435d32449"
                         }
                     ]
                 }
