@@ -116,6 +116,10 @@
                     "url": "https://gitlab.gnome.org/GNOME/folks.git",
                     "tag": "0.15.12",
                     "commit": "b13bf053157213749b8ff6444255a7a71cb5ade4"
+                },
+                {
+                    "type": "patch",
+                    "path": "fix-build-wtih-eds-3.59.patch"
                 }
             ]
         },
