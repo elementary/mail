@@ -149,13 +149,13 @@ public class Mail.AccountItemModel : Mail.SourceList.ExpandableItem, Mail.Source
         return false;
     }
 
-    public override Gtk.Menu? get_context_menu () {
+    public override GLib.Menu? get_context_menu () {
         var menu = new Menu ();
         menu.append (
             _("Edit Aliases…"),
             Action.print_detailed_name (FolderList.ACTION_PREFIX + FolderList.ACTION_EDIT_ALIASES, account.service.uid)
         );
 
-        return new Gtk.Menu.from_model (menu);
+        return menu;
     }
 }
