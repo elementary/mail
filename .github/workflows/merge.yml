@@ -48,16 +48,9 @@ jobs:
 
   gettext:
     name: Gettext
-    runs-on: ubuntu-22.04
-    container:
-      image: ghcr.io/elementary/docker:development-target
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Install git
-      run: |
-        apt-get update
-        apt-get install git -y
-
     - name: Clone repository
       uses: actions/checkout@v7
       with:
