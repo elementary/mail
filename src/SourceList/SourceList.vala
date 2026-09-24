@@ -99,7 +99,7 @@
  * @since 0.2
  * @see Gtk.Paned
  */
-public class Mail.SourceList : Gtk.Bin {
+public class Mail.SourceList : Granite.Bin {
 
     /**
      * = WORKING INTERNALS =
@@ -278,15 +278,13 @@ public class Mail.SourceList : Gtk.Bin {
          * any context menu items should be actioned on the item instance rather than the selected item
          * in the SourceList
          *
-         * @return A {@link Gtk.Menu} or //null// if nothing should be displayed.
+         * @return A {@link GLib.Menu} or //null// if nothing should be displayed.
          * @since 0.2
          */
-        public virtual Gtk.Menu? get_context_menu () {
+        public virtual GLib.Menu? get_context_menu () {
             return null;
         }
     }
-
-
 
     /**
      * An item that can contain more items.
@@ -978,13 +976,7 @@ public class Mail.SourceList : Gtk.Bin {
             min_height = natural_height = 2 * (int) ypad;
         }
 
-        public override void render (
-            Cairo.Context context,
-            Gtk.Widget widget,
-            Gdk.Rectangle bg_area,
-            Gdk.Rectangle cell_area,
-            Gtk.CellRendererState flags
-        ) {
+        public override void snapshot (Gtk.Snapshot snapshot, Gtk.Widget widget, Gdk.Rectangle bg_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
             // Nothing to do. This renderer only adds space.
         }
     }
@@ -1026,8 +1018,7 @@ public class Mail.SourceList : Gtk.Bin {
 
         private Gtk.Entry? editable_entry;
         private Gtk.CellRendererText text_cell;
-        private Gtk.EventControllerKey key_controller;
-        private Gtk.GestureMultiPress button_controller;
+        private Gtk.GestureClick button_controller;
         private Gtk.CellRendererPixbuf icon_cell;
         private CellRendererBadge badge_cell;
         private CellRendererExpander primary_expander_cell;
@@ -1040,7 +1031,7 @@ public class Mail.SourceList : Gtk.Bin {
         }
 
         construct {
-            get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
+            add_css_class (Granite.STYLE_CLASS_SIDEBAR);
             enable_grid_lines = NONE;
             enable_search = false;
             headers_visible = false;
@@ -1115,15 +1106,18 @@ public class Mail.SourceList : Gtk.Bin {
             query_tooltip.connect_after (on_query_tooltip);
             has_tooltip = true;
 
-            key_controller = new Gtk.EventControllerKey (this);
+            var key_controller = new Gtk.EventControllerKey ();
             key_controller.key_released.connect (on_key_released);
 
-            button_controller = new Gtk.GestureMultiPress (this) {
+            button_controller = new Gtk.GestureClick () {
                 propagation_phase = CAPTURE,
                 button = 0
             };
             button_controller.pressed.connect (on_button_pressed);
             button_controller.released.connect (on_button_released);
+
+            add_controller (button_controller);
+            add_controller (key_controller);
         }
 
         ~Tree () {
@@ -1134,7 +1128,7 @@ public class Mail.SourceList : Gtk.Bin {
             Gtk.TreePath path;
             Gtk.TreeViewColumn column = get_column (Column.ITEM);
 
-            get_tooltip_context (ref x, ref y, keyboard_tooltip, null, out path, null);
+            get_tooltip_context (x, y, keyboard_tooltip, null, out path, null);
             if (path == null) {
                 return false;
             }
@@ -1438,7 +1432,7 @@ public class Mail.SourceList : Gtk.Bin {
             enable_item_property_monitor ();
         }
 
-        public override void row_activated (Gtk.TreePath path, Gtk.TreeViewColumn column) {
+        public override void row_activated (Gtk.TreePath path, Gtk.TreeViewColumn? column) {
             if (column == get_column (Column.ITEM)) {
                 var item = data_model.get_item_from_path (path);
                 if (item != null)
@@ -1603,13 +1597,11 @@ public class Mail.SourceList : Gtk.Bin {
             }
 
             if (item != null) {
-                var menu = item.get_context_menu ();
-                if (menu != null) {
-                    menu.attach_widget = this;
-                    menu.popup_at_pointer (event);
-                    if (event == null) {
-                        menu.select_first (false);
-                    }
+                var menu_model = item.get_context_menu ();
+                if (menu_model != null) {
+                    var menu = new Gtk.PopoverMenu.from_model (menu_model);
+                    menu.set_parent (this);
+                    // menu.popup_at_pointer (event);
 
                     return true;
                 }

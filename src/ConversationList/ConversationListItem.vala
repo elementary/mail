@@ -5,9 +5,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Mail.ConversationListItem : VirtualizingListBoxRow {
-    public signal void select ();
-
+public class Mail.ConversationListItem : Granite.Bin {
     private Gtk.Image status_icon;
     private Gtk.Label date;
     private Gtk.Label messages;
@@ -17,36 +15,34 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
     private Gtk.Revealer flagged_icon_revealer;
     private Gtk.Revealer status_revealer;
     private Gtk.Grid grid;
-    private Hdy.Carousel carousel;
-    private Gtk.GestureMultiPress gesture_controller;
-    private Gtk.EventControllerKey key_controller;
-    private Gtk.Menu menu;
+    private Adw.Carousel carousel;
+    private Gtk.PopoverMenu menu;
 
     construct {
-        status_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic", Gtk.IconSize.MENU);
+        status_icon = new Gtk.Image.from_icon_name ("mail-unread-symbolic");
 
         status_revealer = new Gtk.Revealer () {
             child = status_icon
         };
 
-        var flagged_icon = new Gtk.Image.from_icon_name ("starred-symbolic", Gtk.IconSize.MENU);
+        var flagged_icon = new Gtk.Image.from_icon_name ("starred-symbolic");
         flagged_icon_revealer = new Gtk.Revealer () {
             child = flagged_icon
         };
 
         source = new Gtk.Label (null) {
             hexpand = true,
-            ellipsize = Pango.EllipsizeMode.END,
+            ellipsize = END,
             use_markup = true,
             xalign = 0
         };
-        source.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        source.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         messages = new Gtk.Label (null) {
             halign = Gtk.Align.END
         };
-        messages.get_style_context ().add_class (Granite.STYLE_CLASS_BADGE);
-        messages.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        messages.add_css_class (Granite.STYLE_CLASS_BADGE);
+        messages.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         message_count_revealer = new Gtk.Revealer () {
             child = messages
@@ -54,14 +50,14 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
 
         topic = new Gtk.Label (null) {
             hexpand = true,
-            ellipsize = Pango.EllipsizeMode.END,
+            ellipsize = END,
             xalign = 0
         };
 
         date = new Gtk.Label (null) {
             halign = Gtk.Align.END
         };
-        date.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        date.add_css_class (Granite.CssClass.DIM);
 
         grid = new Gtk.Grid () {
             margin_top = 12,
@@ -74,73 +70,70 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         };
 
         grid.attach (status_revealer, 0, 0);
-        grid.attach (flagged_icon_revealer, 0, 1, 1, 1);
-        grid.attach (source, 1, 0, 1, 1);
-        grid.attach (date, 2, 0, 2, 1);
-        grid.attach (topic, 1, 1, 2, 1);
+        grid.attach (flagged_icon_revealer, 0, 1);
+        grid.attach (source, 1, 0);
+        grid.attach (date, 2, 0, 2);
+        grid.attach (topic, 1, 1, 2);
         grid.attach (message_count_revealer, 3, 1);
 
         var archive_affordance = new SwipeAffordance (
             _("Archive"), "mail-archive-symbolic", END
         );
-        archive_affordance.get_style_context ().add_class ("archive");
+        archive_affordance.add_css_class ("archive");
 
         var trash_affordance = new SwipeAffordance (
             _("Trash"), "edit-delete-symbolic", START
         );
-        trash_affordance.get_style_context ().add_class ("trash");
+        trash_affordance.add_css_class ("trash");
 
-        carousel = new Hdy.Carousel () {
+        carousel = new Adw.Carousel () {
             allow_scroll_wheel = false
         };
-        carousel.add (grid);
+        carousel.append (grid);
         carousel.prepend (archive_affordance);
-        carousel.add (trash_affordance);
-        carousel.scroll_to (grid);
+        carousel.append (trash_affordance);
 
-        get_style_context ().add_class ("conversation-list-item");
+        add_css_class ("conversation-list-item");
         child = carousel;
 
-        show_all ();
+        menu = new Gtk.PopoverMenu.from_model (null) {
+            has_arrow = false,
+            position = BOTTOM
+        };
+        menu.set_parent (this);
 
-        gesture_controller = new Gtk.GestureMultiPress (this) {
+        var click_controller = new Gtk.GestureClick () {
             button = Gdk.BUTTON_SECONDARY,
             propagation_phase = BUBBLE
         };
 
-        gesture_controller.released.connect ((n_press, x, y) => {
-            select ();
-            menu.popup_at_pointer (null);
+        click_controller.released.connect ((n_press, x, y) => {
+            menu_popup_at_pointer (menu, x, y);
         });
 
-        key_controller = new Gtk.EventControllerKey (this);
+        var key_controller = new Gtk.EventControllerKey ();
 
         key_controller.key_released.connect ((keyval) => {
             if (keyval != Gdk.Key.Menu) {
                 return;
             }
 
-            menu.popup_at_widget (this, Gdk.Gravity.EAST, Gdk.Gravity.CENTER, null);
+            menu_popup_on_keypress (menu);
         });
+
+        add_controller (click_controller);
+        add_controller (key_controller);
 
         carousel.page_changed.connect ((index) => {
             if (index == 1) {
                 return;
             }
 
-            select ();
-
-            var main_window = (MainWindow)get_toplevel ();
             if (index == 2) {
-                main_window.activate_action (MainWindow.ACTION_MOVE_TO_TRASH, null);
+                activate_action (MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TO_TRASH, null);
             } else if (index == 0) {
-                main_window.activate_action (MainWindow.ACTION_ARCHIVE, null);
+                activate_action (MainWindow.ACTION_PREFIX + MainWindow.ACTION_ARCHIVE, null);
             }
-
-            Idle.add (() => {
-                carousel.scroll_to_full (grid, 0);
-                return Source.REMOVE;
-            });
         });
     }
 
@@ -162,19 +155,19 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         message_count_revealer.reveal_child = num_messages > 1;
 
         if (item_model.unread) {
-            grid.get_style_context ().add_class ("unread-message");
+            grid.add_css_class ("unread-message");
 
             status_icon.icon_name = "mail-unread-symbolic";
             status_icon.tooltip_text = _("Unread");
-            status_icon.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
+            status_icon.add_css_class (Granite.CssClass.ACCENT);
 
             status_revealer.reveal_child = true;
 
-            source.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
+            source.add_css_class (Granite.CssClass.ACCENT);
         } else {
-            grid.get_style_context ().remove_class ("unread-message");
-            status_icon.get_style_context ().remove_class (Granite.STYLE_CLASS_ACCENT);
-            source.get_style_context ().remove_class (Granite.STYLE_CLASS_ACCENT);
+            grid.remove_css_class ("unread-message");
+            status_icon.remove_css_class (Granite.CssClass.ACCENT);
+            source.remove_css_class (Granite.CssClass.ACCENT);
 
             if (item_model.replied_all || item_model.replied) {
                 status_icon.icon_name = "mail-replied-symbolic";
@@ -206,12 +199,28 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
             menu_model.append (_("Unstar"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MARK_UNSTAR);
         }
 
-        menu = new Gtk.Menu.from_model (menu_model) {
-            attach_widget = this
-        };
+        menu.menu_model = menu_model;
     }
 
-    private class SwipeAffordance : Gtk.Box {
+    private void menu_popup_at_pointer (Gtk.PopoverMenu popover, double x, double y) {
+        var rect = Gdk.Rectangle () {
+            x = (int) x,
+            y = (int) y
+        };
+        popover.pointing_to = rect;
+        popover.popup ();
+    }
+
+    private void menu_popup_on_keypress (Gtk.PopoverMenu popover) {
+        popover.halign = END;
+        popover.set_pointing_to (Gdk.Rectangle () {
+            x = (int) get_width (),
+            y = (int) get_height () / 2
+        });
+        popover.popup ();
+    }
+
+    private class SwipeAffordance : Granite.Bin {
         public Gtk.Align alignment { get; construct; }
         public string icon_name { get; construct; }
         public string label { get; construct; }
@@ -229,10 +238,10 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
         }
 
         construct {
-            var image = new Gtk.Image.from_icon_name (icon_name, MENU);
+            var image = new Gtk.Image.from_icon_name (icon_name);
 
             var label = new Gtk.Label (label);
-            label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            label.add_css_class (Granite.CssClass.SMALL);
 
             var box = new Gtk.Box (VERTICAL, 3) {
                 halign = alignment,
@@ -240,15 +249,15 @@ public class Mail.ConversationListItem : VirtualizingListBoxRow {
                 valign = CENTER,
                 vexpand = false
             };
-            box.add (image);
-            box.add (label);
+            box.append (image);
+            box.append (label);
 
-            add (box);
+            child = box;
 
             if (alignment == Gtk.Align.START) {
-                get_style_context ().add_class ("start");
+                add_css_class ("start");
             } else if (alignment == Gtk.Align.END) {
-                get_style_context ().add_class ("end");
+                add_css_class ("end");
             }
         }
     }

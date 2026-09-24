@@ -12,7 +12,7 @@ public class Mail.FolderList : Gtk.Box {
     public const string ACTION_PREFIX = ACTION_GROUP_PREFIX + ".";
     public const string ACTION_EDIT_ALIASES = "edit-alises";
 
-    public Hdy.HeaderBar header_bar { get; private set; }
+    public Adw.HeaderBar header_bar { get; private set; }
 
     private Mail.SourceList source_list;
     private Mail.SessionItemModel session_source_item;
@@ -25,7 +25,7 @@ public class Mail.FolderList : Gtk.Box {
     construct {
         var application_instance = (Gtk.Application) GLib.Application.get_default ();
 
-        var compose_button = new Gtk.Button.from_icon_name ("mail-message-new", Gtk.IconSize.LARGE_TOOLBAR) {
+        var compose_button = new Gtk.Button.from_icon_name ("mail-message-new") {
             action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_COMPOSE_MESSAGE,
             halign = START
         };
@@ -33,21 +33,25 @@ public class Mail.FolderList : Gtk.Box {
             application_instance.get_accels_for_action (compose_button.action_name),
             _("Compose new message")
         );
+        compose_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
-        header_bar = new Hdy.HeaderBar () {
-            show_close_button = true
+        header_bar = new Adw.HeaderBar () {
+            show_end_title_buttons = false,
+            show_title = false
         };
         header_bar.pack_end (compose_button);
-        header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        header_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         var session = Mail.Backend.Session.get_default ();
 
         session_source_item = new Mail.SessionItemModel (session);
 
-        source_list = new Mail.SourceList ();
+        source_list = new Mail.SourceList () {
+            vexpand = true
+        };
         source_list.root.add (session_source_item);
 
-        var scrolled_window = new Gtk.ScrolledWindow (null, null) {
+        var scrolled_window = new Gtk.ScrolledWindow () {
             child = source_list,
             hscrollbar_policy = NEVER
         };
@@ -61,22 +65,22 @@ public class Mail.FolderList : Gtk.Box {
         menu_model.append_section (null, dialogs_section);
 
         var app_menu = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            icon_name = "open-menu-symbolic",
             menu_model = menu_model,
-            tooltip_text = _("Menu"),
-            use_popover = false
+            tooltip_text = _("Menu")
+            // use_popover = false
         };
 
         var action_bar = new Gtk.ActionBar ();
-        action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        action_bar.add_css_class (Granite.STYLE_CLASS_FLAT);
         action_bar.pack_end (app_menu);
 
         orientation = VERTICAL;
         width_request = 100;
-        get_style_context ().add_class (Gtk.STYLE_CLASS_SIDEBAR);
-        add (header_bar);
-        add (scrolled_window);
-        add (action_bar);
+        add_css_class (Granite.STYLE_CLASS_SIDEBAR);
+        append (header_bar);
+        append (scrolled_window);
+        append (action_bar);
 
         session.get_accounts ().foreach ((account) => {
             add_account (account);
@@ -107,7 +111,7 @@ public class Mail.FolderList : Gtk.Box {
         var edit_aliases_action = new SimpleAction (ACTION_EDIT_ALIASES, VariantType.STRING);
         edit_aliases_action.activate.connect ((param) => {
             new AliasDialog (param.get_string ()) {
-                transient_for = (Gtk.Window) get_toplevel ()
+                transient_for = (Gtk.Window) get_root ()
             }.present ();
         });
 

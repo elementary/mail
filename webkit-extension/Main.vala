@@ -17,15 +17,15 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-namespace WebkitWebExtension {
+namespace WebkitWebProcessExtension {
     private static void on_page_created (WebKit.WebPage page) {
         var mail_page = new Mail.Page (page);
         // Make so that the Mail.Page is destroyed at the same time of the WebKit.WebPage
         page.set_data ("elementary-mail-page", (owned) mail_page);
     }
 
-    [CCode (cname = "G_MODULE_EXPORT webkit_web_extension_initialize", instance_pos = -1)]
-    public void initialize (WebKit.WebExtension extension) {
+    [CCode (cname = "G_MODULE_EXPORT webkit_web_process_extension_initialize", instance_pos = -1)]
+    public void initialize (WebKit.WebProcessExtension extension) {
         extension.page_created.connect (on_page_created);
     }
 }
