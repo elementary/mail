@@ -15,9 +15,9 @@ gobject_dep = dependency('gobject-2.0')
 granite_dep = dependency('granite', version: '>= 6.0.0')
 gee_dep = dependency('gee-0.8')
 handy_dep = dependency('libhandy-1', version: '>=1.1.90')
-camel_dep = dependency('camel-1.2', version: '>= 3.57.1', required: false)
+camel_dep = dependency('camel-1.2', version: '>= 3.58', required: false)
 if camel_dep.found()
-    add_project_arguments('--define=HAS_CAMEL_3_57', language: 'vala')
+    add_project_arguments('--define=HAS_CAMEL_3_58', language: 'vala')
 else
     camel_dep = dependency('camel-1.2', version: '>= 3.28')
 endif
