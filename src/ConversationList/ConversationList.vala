@@ -208,8 +208,9 @@ public class Mail.ConversationList : Gtk.Box {
         }
 
 #if HAS_CAMEL_3_58
-        if (!(flag in (int)((Camel.MessageInfo?) node.get_item ()).flags)) {
-            ((Camel.MessageInfo?) node.get_item ()).set_flags (flag, ~0);
+        weak Camel.MessageInfo? message = (Camel.MessageInfo?) node.get_item ();
+        if (!(flag in (int)message.flags)) {
+            message.set_flags (flag, ~0);
         }
 
         for (unowned Camel.FolderThreadNode? child = node.get_child (); child != null; child = child.get_next ()) {
