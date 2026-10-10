@@ -191,14 +191,14 @@ public class Mail.MoveOperation : Object {
             store = null;
 #if !HAS_CAMEL_3_58
             unowned Camel.Folder? orig_folder = null;
-#endif
+#endif /* !HAS_CAMEL_3_58 */
 
             foreach (unowned Camel.MessageInfo message in moved_messages) {
 #if HAS_CAMEL_3_58
                 Camel.Folder? orig_folder = vee_folder.dup_vee_uid_folder (message.uid);
 #else
                 orig_folder = vee_folder.get_vee_uid_folder (message.uid);
-#endif
+#endif /* HAS_CAMEL_3_58 */
                 if (orig_folder != null) {
                     if (store != null && orig_folder.get_parent_store () != store) {
                         // Don't know which archive folder to use when messages are from
@@ -226,14 +226,14 @@ public class Mail.MoveOperation : Object {
 #else
         moved_messages.add (thread.message);
         unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.child;
-#endif
+#endif /* HAS_CAMEL_3_58 */
         while (child != null) {
             yield collect_thread_messages (child);
 #if HAS_CAMEL_3_58
             child = (Camel.FolderThreadNode?) child.get_next ();
 #else
             child = (Camel.FolderThreadNode?) child.next;
-#endif
+#endif /* HAS_CAMEL_3_58 */
         }
     }
 
