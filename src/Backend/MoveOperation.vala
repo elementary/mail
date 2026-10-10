@@ -189,15 +189,12 @@ public class Mail.MoveOperation : Object {
             var vee_folder = (Camel.VeeFolder)src_folder;
 
             store = null;
-#if !HAS_CAMEL_3_58
-            unowned Camel.Folder? orig_folder = null;
-#endif /* !HAS_CAMEL_3_58 */
 
             foreach (unowned Camel.MessageInfo message in moved_messages) {
 #if HAS_CAMEL_3_58
                 Camel.Folder? orig_folder = vee_folder.dup_vee_uid_folder (message.uid);
 #else
-                orig_folder = vee_folder.get_vee_uid_folder (message.uid);
+                unowned Camel.Folder? orig_folder = vee_folder.get_vee_uid_folder (message.uid);
 #endif /* HAS_CAMEL_3_58 */
                 if (orig_folder != null) {
                     if (store != null && orig_folder.get_parent_store () != store) {
