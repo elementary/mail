@@ -1,7 +1,7 @@
 {
     "id": "io.elementary.mail",
     "runtime": "io.elementary.Platform",
-    "runtime-version": "8.2",
+    "runtime-version": "9.1",
     "sdk": "io.elementary.Sdk",
     "command": "io.elementary.mail",
     "finish-args": [
@@ -89,7 +89,8 @@
                         {
                             "type": "git",
                             "url": "https://github.com/libical/libical.git",
-                            "tag": "v3.0.9"
+                            "tag": "v3.0.20",
+                            "commit": "57ce34025066935f356fd539e6deb7a7a9952618"
                         }
                     ]
                 }
@@ -113,6 +114,25 @@
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/folks.git",
                     "tag": "0.15.9"
+                }
+            ]
+        },
+        {
+            "name": "libhandy",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dtests=false",
+                "-Dexamples=false"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libhandy/1.8/libhandy-1.8.3.tar.xz",
+                    "sha256": "05b497229073ff557f10b326e074c5066f8743a302d4820ab97bcb5cd2dab087",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "libhandy"
+                    }
                 }
             ]
         },
