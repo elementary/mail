@@ -189,10 +189,13 @@ public class Mail.MoveOperation : Object {
             var vee_folder = (Camel.VeeFolder)src_folder;
 
             store = null;
-            unowned Camel.Folder? orig_folder = null;
 
             foreach (unowned Camel.MessageInfo message in moved_messages) {
-                orig_folder = vee_folder.get_vee_uid_folder (message.uid);
+#if HAS_CAMEL_3_58
+                Camel.Folder? orig_folder = vee_folder.dup_vee_uid_folder (message.uid);
+#else
+                unowned Camel.Folder? orig_folder = vee_folder.get_vee_uid_folder (message.uid);
+#endif /* HAS_CAMEL_3_58 */
                 if (orig_folder != null) {
                     if (store != null && orig_folder.get_parent_store () != store) {
                         // Don't know which archive folder to use when messages are from
@@ -214,11 +217,20 @@ public class Mail.MoveOperation : Object {
     }
 
     private async void collect_thread_messages (Camel.FolderThreadNode thread) {
+#if HAS_CAMEL_3_58
+        moved_messages.add ((Camel.MessageInfo?) thread.get_item ());
+        unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.get_child ();
+#else
         moved_messages.add (thread.message);
         unowned Camel.FolderThreadNode? child = (Camel.FolderThreadNode?) thread.child;
+#endif /* HAS_CAMEL_3_58 */
         while (child != null) {
             yield collect_thread_messages (child);
+#if HAS_CAMEL_3_58
+            child = (Camel.FolderThreadNode?) child.get_next ();
+#else
             child = (Camel.FolderThreadNode?) child.next;
+#endif /* HAS_CAMEL_3_58 */
         }
     }
 

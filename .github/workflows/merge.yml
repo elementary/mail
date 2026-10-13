@@ -21,7 +21,7 @@ jobs:
       fail-fast: false
 
     container:
-      image: ghcr.io/elementary/flatpak-platform/runtime:8.2-${{ matrix.configuration.arch }}
+      image: ghcr.io/elementary/flatpak-platform/runtime:9.1-${{ matrix.configuration.arch }}
       options: --privileged
 
     steps:
@@ -48,16 +48,9 @@ jobs:
 
   gettext:
     name: Gettext
-    runs-on: ubuntu-22.04
-    container:
-      image: ghcr.io/elementary/docker:development-target
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Install git
-      run: |
-        apt-get update
-        apt-get install git -y
-
     - name: Clone repository
       uses: actions/checkout@v7
       with:
