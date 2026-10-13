@@ -51,7 +51,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/evolution-data-server.git",
-                    "tag": "3.56.2"
+                    "tag": "3.62.1",
+                    "commit": "757672184698ec9f46cc16cf8860ec312d1e9d36"
                 }
             ],
             "modules": [
@@ -78,19 +79,19 @@
                     "config-opts": [
                         "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                         "-DCMAKE_INSTALL_LIBDIR=/app/lib",
-                        "-DWITH_CXX_BINDINGS=false",
-                        "-DSHARED_ONLY=true",
-                        "-DGOBJECT_INTROSPECTION=true",
-                        "-DICAL_BUILD_DOCS=false",
-                        "-DICAL_GLIB_VAPI=true",
+                        "-DLIBICAL_CXX_BINDINGS=false",
+                        "-DLIBICAL_JAVA_BINDINGS=false",
+                        "-DLIBICAL_GOBJECT_INTROSPECTION=true",
+                        "-DLIBICAL_BUILD_DOCS=false",
+                        "-DLIBICAL_GLIB_VAPI=true",
                         "-DLIBICAL_BUILD_TESTING=false"
                     ],
                     "sources": [
                         {
                             "type": "git",
                             "url": "https://github.com/libical/libical.git",
-                            "tag": "v3.0.20",
-                            "commit": "57ce34025066935f356fd539e6deb7a7a9952618"
+                            "tag": "v4.0.6",
+                            "commit": "9cfca65c122fa23b9680a28e0c9225a2fd015fc5"
                         }
                     ]
                 }
@@ -113,7 +114,12 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/folks.git",
-                    "tag": "0.15.9"
+                    "tag": "0.15.12",
+                    "commit": "b13bf053157213749b8ff6444255a7a71cb5ade4"
+                },
+                {
+                    "type": "patch",
+                    "path": "fix-build-wtih-eds-3.59.patch"
                 }
             ]
         },
