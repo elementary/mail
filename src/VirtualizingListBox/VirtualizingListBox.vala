@@ -26,7 +26,7 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
     public RowFactoryMethod factory_func;
 
     public signal void row_activated (GLib.Object row);
-    public signal void row_selected (GLib.Object row);
+    public signal void row_selected (GLib.Object? row);
     public signal void selected_rows_changed ();
 
     private Mail.ConversationListStore? _model;
@@ -723,6 +723,8 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
 
         if (row != null) {
             select_and_activate (row);
+        } else if (unselect_all_internal ()) {
+            row_selected (selected_row);
         }
     }
 
@@ -754,6 +756,11 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
             return null;
         }
 
+        // A filtered item never gets a row widget, so we cannot scroll to it.
+        if (model.get_object (index) == null) {
+            return null;
+        }
+
         if (index == 0) {
             set_value (0.0);
             ensure_visible_widgets ();
@@ -775,12 +782,22 @@ public class VirtualizingListBox : Gtk.Container, Gtk.Scrollable {
         }
 
         while (index <= shown_from) {
+            var previous_value = vadjustment.value;
             vadjustment.value--;
+            if (vadjustment.value == previous_value) {
+                break;
+            }
+
             ensure_visible_widgets ();
         }
 
         while (index + 1 >= shown_to) {
+            var previous_value = vadjustment.value;
             vadjustment.value++;
+            if (vadjustment.value == previous_value) {
+                break;
+            }
+
             ensure_visible_widgets ();
         }
 
