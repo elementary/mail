@@ -95,17 +95,32 @@ namespace Camel {
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_cipher_context_get_type ()")]
 	public class CipherContext : GLib.Object {
 		[CCode (has_construct_function = false)]
+#if HAS_CAMEL_3_58
+		public CipherContext (Camel.Session? session);
+#else
 		public CipherContext (Camel.Session session);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.0")]
 		public async Camel.CipherValidity decrypt (Camel.MimePart ipart, Camel.MimePart opart, int io_priority, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "3.0")]
 		public virtual Camel.CipherValidity decrypt_sync (Camel.MimePart ipart, Camel.MimePart opart, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "3.0")]
+#if HAS_CAMEL_3_58
+		public async bool encrypt (string? userid, GLib.GenericArray<string> recipients, Camel.MimePart ipart, Camel.MimePart opart, int io_priority, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[Version (since = "3.0")]
+		public virtual bool encrypt_sync (string? userid, GLib.GenericArray<string> recipients, Camel.MimePart ipart, Camel.MimePart opart, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		public static GLib.Quark error_quark ();
+#else
 		public async bool encrypt (string userid, GLib.GenericArray<string> recipients, Camel.MimePart ipart, Camel.MimePart opart, int io_priority, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "3.0")]
 		public virtual bool encrypt_sync (string userid, GLib.GenericArray<string> recipients, Camel.MimePart ipart, Camel.MimePart opart, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "2.32")]
+#if HAS_CAMEL_3_58
+		public unowned Camel.Session? get_session ();
+#else
 		public unowned Camel.Session get_session ();
+#endif /* HAS_CAMEL_3_58 */
 		public virtual unowned string hash_to_id (Camel.CipherHash hash);
 		public virtual Camel.CipherHash id_to_hash (string id);
 		[Version (since = "3.0")]
@@ -125,18 +140,30 @@ namespace Camel {
 		public CipherValidity ();
 		public int add_certinfo (Camel.CipherValidityMode mode, string name, string email);
 		[Version (since = "2.30")]
+#if HAS_CAMEL_3_58
+		public int add_certinfo_ex (Camel.CipherValidityMode mode, string name, string email, void* cert_data, GLib.DestroyNotify? cert_data_free, Camel.CipherCloneFunc? cert_data_clone);
+#else
 		public int add_certinfo_ex (Camel.CipherValidityMode mode, string name, string email, [CCode (destroy_notify_pos = 4.5)] owned void* cert_data, Camel.CipherCloneFunc? cert_data_clone);
+#endif /* HAS_CAMEL_3_58 */
 		public void clear ();
 		public Camel.CipherValidity clone ();
 		public void envelope (Camel.CipherValidity valid);
 		public void free ();
 		[Version (since = "3.22")]
 		public void* get_certinfo_property (Camel.CipherValidityMode mode, int info_index, string name);
+#if HAS_CAMEL_3_58
+		public unowned string get_description ();
+#else
 		public string get_description ();
+#endif /* HAS_CAMEL_3_58 */
 		public bool get_valid ();
 		public void init ();
 		[Version (since = "3.22")]
+#if HAS_CAMEL_3_58
+		public void set_certinfo_property (Camel.CipherValidityMode mode, int info_index, string name, void* value, GLib.DestroyNotify? value_free, Camel.CipherCloneFunc? value_clone);
+#else
 		public void set_certinfo_property (Camel.CipherValidityMode mode, int info_index, string name, [CCode (destroy_notify_pos = 4.5)] owned void* value, Camel.CipherCloneFunc? value_clone);
+#endif /* HAS_CAMEL_3_58 */
 		public void set_description (string description);
 		public void set_valid (bool valid);
 	}
@@ -178,8 +205,25 @@ namespace Camel {
 	[Version (since = "2.24")]
 	public class DB : GLib.Object {
 		[CCode (has_construct_function = false)]
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+#else
 		[Version (since = "3.24")]
+#endif /* HAS_CAMEL_3_58 */
 		public DB (string filename) throws GLib.Error;
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public bool abort_transaction () throws GLib.Error;
+		[Version (since = "3.58")]
+		public bool begin_transaction () throws GLib.Error;
+		[Version (since = "3.58")]
+		public bool end_transaction () throws GLib.Error;
+		public static GLib.Quark error_quark ();
+		[Version (since = "3.58")]
+		public bool exec_select (string stmt, Camel.DBSelectCB callback) throws GLib.Error;
+		[Version (since = "3.58")]
+		public bool exec_statement (string stmt) throws GLib.Error;
+#else
 		public int abort_transaction () throws GLib.Error;
 		public int add_to_transaction (string query) throws GLib.Error;
 		public int begin_transaction () throws GLib.Error;
@@ -202,34 +246,66 @@ namespace Camel {
 		public int end_transaction () throws GLib.Error;
 		[Version (since = "2.26")]
 		public int flush_in_memory_transactions (string folder_name) throws GLib.Error;
+#endif /* HAS_CAMEL_3_58 */
 		public static void free_sqlized_string (string? string);
+#if !HAS_CAMEL_3_58
 		[Version (since = "3.4")]
 		public static Camel.DBKnownColumnNames get_column_ident (ref GLib.HashTable<void*,void*> hash, int index, [CCode (array_length_cname = "ncols", array_length_pos = 2.5)] string[] col_names);
 		public static string? get_column_name (string raw_name);
+#endif /* !HAS_CAMEL_3_58 */
 		[Version (since = "3.24")]
 		public unowned string get_filename ();
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public bool has_table (string table_name);
+		[Version (since = "3.58")]
+		public bool has_table_with_column (string table_name, string column_name);
+#else
 		public GLib.GenericArray<string>? get_folder_deleted_uids (string folder_name) throws GLib.Error;
 		public GLib.GenericArray<string>? get_folder_junk_uids (string folder_name) throws GLib.Error;
 		public int get_folder_uids (string folder_name, string? sort_by, string? collate, GLib.HashTable<string,uint32> hash) throws GLib.Error;
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.16")]
 		public bool maybe_run_maintenance () throws GLib.Error;
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public bool open (string filename) throws GLib.Error;
+		[Version (since = "3.58")]
+		public void reader_lock ();
+		[Version (since = "3.58")]
+		public void reader_unlock ();
+#else
 		public int prepare_message_info_table (string folder_name) throws GLib.Error;
 		public int read_folder_info_record (string folder_name, out Camel.FIRecord record) throws GLib.Error;
 		public int read_message_info_record_with_uid (string folder_name, string uid, [CCode (delegate_target_pos = 2.5)] Camel.DBSelectCB callback) throws GLib.Error;
 		public int read_message_info_records (string folder_name, [CCode (delegate_target_pos = 1.5, scope = "async")] Camel.DBSelectCB callback) throws GLib.Error;
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.24")]
 		public static void release_cache_memory ();
+#if HAS_CAMEL_3_58
+		public bool set_collate (string col, string collate, Camel.DBCollate func);
+#else
 		public int rename_folder (string old_folder_name, string new_folder_name) throws GLib.Error;
 		[Version (since = "2.28")]
 		public int reset_folder_version (string folder_name, int reset_version) throws GLib.Error;
 		public int select (string stmt, Camel.DBSelectCB callback) throws GLib.Error;
 		public int set_collate (string col, string collate, Camel.DBCollate func);
+#endif /* HAS_CAMEL_3_58 */
 		public static string sqlize_string (string string);
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public static void sqlize_to_statement (GLib.StringBuilder stmt, string? str, Camel.DBSqlizeFlags flags);
+		[Version (since = "3.58")]
+		public void writer_lock ();
+		[Version (since = "3.58")]
+		public void writer_unlock ();
+#else
 		[Version (since = "2.26")]
 		public int start_in_memory_transactions () throws GLib.Error;
 		public int transaction_command (GLib.List<string> qry_list) throws GLib.Error;
 		public int write_folder_info_record (Camel.FIRecord record) throws GLib.Error;
 		public int write_message_info_record (string folder_name, Camel.MIRecord record) throws GLib.Error;
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_data_cache_get_type ()")]
 	public class DataCache : GLib.Object {
@@ -248,8 +324,13 @@ namespace Camel {
 		[Version (since = "2.32")]
 		public unowned string get_path ();
 		public int remove (string path, string key) throws GLib.Error;
+#if HAS_CAMEL_3_58
+		public void set_expire_access (time_t when);
+		public void set_expire_age (time_t when);
+#else
 		public void set_expire_access (long when);
 		public void set_expire_age (long when);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.24")]
 		public void set_expire_enabled (bool expire_enabled);
 		[Version (since = "2.32")]
@@ -265,6 +346,10 @@ namespace Camel {
 		public size_t calculate_decoded_size_sync (GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "3.24")]
 		public size_t calculate_size_sync (GLib.Cancellable? cancellable = null) throws GLib.Error;
+#if HAS_CAMEL_3_58
+		[Version (since = "3.46")]
+		public bool construct_from_data_sync (void* data, ssize_t data_len, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.12")]
 		public async bool construct_from_input_stream (GLib.InputStream input_stream, int io_priority, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "3.12")]
@@ -286,7 +371,11 @@ namespace Camel {
 		[Version (since = "3.24")]
 		public Camel.TransferEncoding get_encoding ();
 		public virtual string get_mime_type ();
+#if HAS_CAMEL_3_58
+		public virtual unowned Camel.ContentType? get_mime_type_field ();
+#else
 		public virtual unowned Camel.ContentType get_mime_type_field ();
+#endif /* HAS_CAMEL_3_58 */
 		public virtual bool is_offline ();
 		[Version (since = "3.24")]
 		public void set_encoding (Camel.TransferEncoding encoding);
@@ -310,9 +399,17 @@ namespace Camel {
 		[CCode (has_construct_function = false)]
 		public FilterDriver (Camel.Session session);
 		public void add_rule (string name, string match, string action);
+#if HAS_CAMEL_3_58
+		public int filter_folder (Camel.Folder folder, Camel.UIDCache cache, GLib.GenericArray<string>? uids, bool remove, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#else
 		public int filter_folder (Camel.Folder folder, Camel.UIDCache cache, GLib.GenericArray<string> uids, bool remove, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#endif /* HAS_CAMEL_3_58 */
 		public int filter_mbox (string mbox, string? original_source_url, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#if HAS_CAMEL_3_58
+		public int filter_message (Camel.MimeMessage? message, Camel.MessageInfo? info, string? uid, Camel.Folder? source, string? store_uid, string? original_store_uid, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#else
 		public int filter_message (Camel.MimeMessage message, Camel.MessageInfo info, string uid, Camel.Folder source, string store_uid, string original_store_uid, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#endif /* HAS_CAMEL_3_58 */
 		public void flush () throws GLib.Error;
 		public bool remove_rule_by_name (string name);
 		public void set_default_folder (Camel.Folder? def);
@@ -342,7 +439,11 @@ namespace Camel {
 		public Camel.MimeFilter filter { get; construct; }
 	}
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_folder_get_type ()")]
+#if HAS_CAMEL_3_58
+	public abstract class Folder : GLib.Object {
+#else
 	public abstract class Folder : Camel.Object {
+#endif /* HAS_CAMEL_3_58 */
 		[CCode (has_construct_function = false)]
 		protected Folder ();
 		[Version (since = "3.0")]
@@ -351,8 +452,10 @@ namespace Camel {
 		public virtual bool append_message_sync (Camel.MimeMessage message, Camel.MessageInfo? info, out string? appended_uid, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "2.28")]
 		public virtual int cmp_uids (string uid1, string uid2);
+#if !HAS_CAMEL_3_58
 		[Version (since = "2.26")]
 		public virtual uint32 count_by_expression (string expression, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#endif /* !HAS_CAMEL_3_58 */
 		public void @delete ();
 		[NoWrapper]
 		public virtual void delete_ ();
@@ -362,16 +465,28 @@ namespace Camel {
 		public string dup_display_name ();
 		[Version (since = "3.8")]
 		public string dup_full_name ();
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public virtual bool dup_headers_sync (string uid, out Camel.NameValueArray out_headers, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[Version (since = "3.58")]
+		public virtual GLib.GenericArray<weak string> dup_uids ();
+		[Version (since = "3.58")]
+		public virtual GLib.GenericArray<weak string> dup_uncached_uids (GLib.GenericArray<string> uids) throws GLib.Error;
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.0")]
 		public async bool expunge (int io_priority, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "3.0")]
 		public virtual bool expunge_sync (GLib.Cancellable? cancellable = null) throws GLib.Error;
+#if !HAS_CAMEL_3_58
 		public void free_deep (GLib.GenericArray<string> array);
 		public void free_shallow (GLib.GenericArray<string> array);
 		public virtual void free_summary (GLib.GenericArray<Camel.MessageInfo> array);
 		public virtual void free_uids (GLib.GenericArray<string> array);
+#endif /* !HAS_CAMEL_3_58 */
 		public virtual void freeze ();
+#if !HAS_CAMEL_3_58
 		public int get_deleted_message_count ();
+#endif /* !HAS_CAMEL_3_58 */
 		[Version (since = "2.32")]
 		public unowned string get_description ();
 		[Version (since = "3.2")]
@@ -381,9 +496,17 @@ namespace Camel {
 		[Version (since = "3.24")]
 		public uint32 get_flags ();
 		[Version (since = "3.24")]
+#if HAS_CAMEL_3_58
+		public unowned Camel.FolderSummary? get_folder_summary ();
+#else
 		public unowned Camel.FolderSummary get_folder_summary ();
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "2.32")]
 		public int get_frozen_count ();
+#if HAS_CAMEL_3_58
+		[Version (since = "3.46")]
+		public virtual unowned string get_full_display_name ();
+#endif /* HAS_CAMEL_3_58 */
 		public unowned string get_full_name ();
 		[Version (since = "3.32")]
 		public Camel.ThreeState get_mark_seen ();
@@ -394,33 +517,55 @@ namespace Camel {
 		[Version (since = "3.24")]
 		public virtual Camel.MimeMessage? get_message_cached (string message_uid, GLib.Cancellable? cancellable = null);
 		public virtual int get_message_count ();
+#if !HAS_CAMEL_3_58
 		[Version (deprecated = true)]
+#endif /* !HAS_CAMEL_3_58 */
 		public virtual uint32 get_message_flags (string uid);
+#if HAS_CAMEL_3_58
+		public virtual Camel.MessageInfo? get_message_info (string uid);
+#else
 		public virtual Camel.MessageInfo get_message_info (string uid);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.0")]
 		public virtual unowned Camel.MimeMessage get_message_sync (string message_uid, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#if !HAS_CAMEL_3_58
 		[Version (deprecated = true)]
 		public virtual bool get_message_user_flag (string uid, string name);
 		[Version (deprecated = true)]
 		public virtual unowned string get_message_user_tag (string uid, string name);
+#endif /* !HAS_CAMEL_3_58 */
 		public unowned Camel.Store get_parent_store ();
 		public virtual uint32 get_permanent_flags ();
 		[Version (since = "3.2")]
 		public async Camel.FolderQuotaInfo get_quota_info (int io_priority, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "3.2")]
 		public virtual Camel.FolderQuotaInfo get_quota_info_sync (GLib.Cancellable? cancellable = null) throws GLib.Error;
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public unowned string? get_state_filename ();
+#else
 		public virtual unowned GLib.GenericArray<string> get_summary ();
 		public virtual unowned GLib.GenericArray<string> get_uids ();
 		[Version (since = "2.26")]
 		public virtual unowned GLib.GenericArray<string> get_uncached_uids (GLib.GenericArray<string> uids) throws GLib.Error;
 		[Version (deprecated = true)]
 		public int get_unread_message_count ();
+#endif /* HAS_CAMEL_3_58 */
 		[NoWrapper]
 		public virtual bool has_search_capability ();
 		public bool has_summary_capability ();
 		public virtual bool is_frozen ();
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public void load_state ();
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "2.32")]
 		public void @lock ();
+#if HAS_CAMEL_3_58
+		[CCode (cname = "camel_folder_class_map_legacy_property")]
+		[Version (since = "3.58")]
+		public class void map_legacy_property (string prop_name, int32 tag);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.22")]
 		public virtual void prepare_content_refresh ();
 		[Version (since = "3.4")]
@@ -432,9 +577,20 @@ namespace Camel {
 		[Version (since = "3.0")]
 		public virtual bool refresh_info_sync (GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public virtual void rename (string new_name);
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public void save_state ();
+		[Version (since = "3.58")]
+		public virtual bool search_body_sync (GLib.GenericArray<string> words, out GLib.GenericArray<weak string> out_uids, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[Version (since = "3.58")]
+		public virtual bool search_header_sync (string header_name, GLib.GenericArray<string>? words, out GLib.GenericArray<weak string> out_uids, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[Version (since = "3.58")]
+		public virtual bool search_sync (string expression, out GLib.GenericArray<weak string>? out_uids, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#else
 		public virtual GLib.GenericArray<string> search_by_expression (string expression, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public virtual GLib.GenericArray<string> search_by_uids (string expression, GLib.GenericArray<string> uids, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public virtual void search_free (GLib.GenericArray<string> result);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "2.32")]
 		public void set_description (string description);
 		[Version (since = "3.2")]
@@ -449,12 +605,16 @@ namespace Camel {
 		public void set_mark_seen (Camel.ThreeState mark_seen);
 		[Version (since = "3.32")]
 		public void set_mark_seen_timeout (int timeout);
+#if !HAS_CAMEL_3_58
 		[Version (deprecated = true)]
+#endif /* !HAS_CAMEL_3_58 */
 		public virtual bool set_message_flags (string uid, uint32 mask, uint32 @set);
+#if !HAS_CAMEL_3_58
 		[Version (deprecated = true)]
 		public virtual void set_message_user_flag (string uid, string name, bool value);
 		[Version (deprecated = true)]
 		public virtual void set_message_user_tag (string uid, string name, string value);
+#endif /* !HAS_CAMEL_3_58 */
 		[Version (since = "2.24")]
 		public virtual void sort_uids (GLib.GenericArray<string> uids);
 		[Version (since = "3.0")]
@@ -467,11 +627,21 @@ namespace Camel {
 		public virtual bool synchronize_sync (bool expunge, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "3.24")]
 		public void take_folder_summary (owned Camel.FolderSummary summary);
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public void take_state_filename (owned string filename);
+#endif /* HAS_CAMEL_3_58 */
 		public virtual void thaw ();
 		[Version (since = "3.0")]
+#if HAS_CAMEL_3_58
+		public async bool transfer_messages_to (GLib.GenericArray<string> message_uids, Camel.Folder destination, bool delete_originals, int io_priority, GLib.Cancellable? cancellable = null, out GLib.GenericArray<weak string>? transferred_uids) throws GLib.Error;
+		[Version (since = "3.0")]
+		public virtual bool transfer_messages_to_sync (GLib.GenericArray<string> message_uids, Camel.Folder destination, bool delete_originals, out GLib.GenericArray<weak string>? transferred_uids, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#else
 		public async bool transfer_messages_to (GLib.GenericArray<string> message_uids, Camel.Folder destination, bool delete_originals, int io_priority, GLib.Cancellable? cancellable = null, out GLib.GenericArray<string>? transferred_uids) throws GLib.Error;
 		[Version (since = "3.0")]
 		public virtual bool transfer_messages_to_sync (GLib.GenericArray<string> message_uids, Camel.Folder destination, bool delete_originals, out GLib.GenericArray<string>? transferred_uids, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "2.32")]
 		public void @unlock ();
 		public string description { get; set construct; }
@@ -551,6 +721,7 @@ namespace Camel {
 		public Camel.FolderQuotaInfo clone ();
 		public void free ();
 	}
+#if !HAS_CAMEL_3_58
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_folder_search_get_type ()")]
 	public class FolderSearch : GLib.Object {
 		[CCode (has_construct_function = false)]
@@ -588,6 +759,7 @@ namespace Camel {
 		[Version (since = "3.30")]
 		public static long util_make_time (int argc, Camel.SExpResult argv);
 	}
+#endif /* !HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_folder_summary_get_type ()")]
 	public class FolderSummary : GLib.Object {
 		[CCode (has_construct_function = false)]
@@ -597,13 +769,21 @@ namespace Camel {
 		public bool check_uid (string uid);
 		public bool clear () throws GLib.Error;
 		public uint count ();
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public GLib.GenericArray<weak string> dup_changed ();
+		[Version (since = "3.58")]
+		public GLib.GenericArray<weak string> dup_uids ();
+#endif /* HAS_CAMEL_3_58 */
 		[CCode (vfunc_name = "message_info_from_uid")]
 		[Version (since = "3.4")]
 		public virtual Camel.MessageInfo? @get (string uid);
+#if !HAS_CAMEL_3_58
 		[Version (since = "3.4")]
 		public GLib.GenericArray<string> get_array ();
 		[Version (since = "2.24")]
 		public GLib.GenericArray<string> get_changed ();
+#endif /* !HAS_CAMEL_3_58 */
 		[Version (since = "3.4")]
 		public uint32 get_deleted_count ();
 		[Version (since = "3.24")]
@@ -613,7 +793,11 @@ namespace Camel {
 		[Version (since = "3.6")]
 		public GLib.HashTable<weak string,int> get_hash ();
 		[Version (since = "3.4")]
+#if HAS_CAMEL_3_58
+		public unowned Camel.Index? get_index ();
+#else
 		public unowned Camel.Index get_index ();
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.12")]
 		public uint32 get_info_flags (string uid);
 		[Version (since = "3.4")]
@@ -636,12 +820,18 @@ namespace Camel {
 		public bool header_load ([CCode (type = "_CamelStore*")] Camel.Store store, string folder_name) throws GLib.Error;
 		[CCode (vfunc_name = "summary_header_load")]
 		[NoWrapper]
+#if HAS_CAMEL_3_58
+		public virtual bool header_load_impl (Camel.StoreDBFolderRecord record);
+#else
 		public virtual bool header_load_impl ([CCode (type = "_CamelFIRecord*")] Camel.FIRecord fir);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.24")]
 		public bool header_save () throws GLib.Error;
+#if !HAS_CAMEL_3_58
 		[CCode (vfunc_name = "summary_header_save")]
 		[NoWrapper]
 		public virtual Camel.FIRecord? header_save_impl () throws GLib.Error;
+#endif /* !HAS_CAMEL_3_58 */
 		[CCode (vfunc_name = "message_info_new_from_headers")]
 		[Version (since = "3.24")]
 		public virtual Camel.MessageInfo info_new_from_headers (Camel.NameValueArray headers);
@@ -658,26 +848,44 @@ namespace Camel {
 		[Version (since = "2.26")]
 		public Camel.MessageInfo? peek_loaded (string uid);
 		[Version (since = "2.32")]
+#if HAS_CAMEL_3_58
+		public virtual bool prepare_fetch_all () throws GLib.Error;
+#else
 		public void prepare_fetch_all () throws GLib.Error;
 		[CCode (vfunc_name = "prepare_fetch_all")]
 		[NoWrapper]
 		public virtual void prepare_fetch_all_v ();
+#endif /* HAS_CAMEL_3_58 */
 		public bool remove (Camel.MessageInfo info);
 		public bool remove_uid (string uid);
 		[Version (since = "3.6")]
+#if HAS_CAMEL_3_58
+		public bool remove_uids (GLib.GenericArray<string> uids);
+		[Version (since = "3.58")]
+		public bool replace_flags (string uid, uint32 new_flags);
+#else
 		public bool remove_uids (GLib.List<string> uids);
 		[Version (since = "3.6")]
 		public bool replace_flags (Camel.MessageInfo info);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.24")]
 		public bool save () throws GLib.Error;
 		[Version (since = "3.24")]
 		public void set_flags (uint32 flags);
+#if HAS_CAMEL_3_58
+		public void set_index (Camel.Index? index);
+#else
 		public void set_index (Camel.Index index);
+#endif /* HAS_CAMEL_3_58 */
 		public void set_next_uid (uint32 uid);
 		[Version (since = "3.24")]
 		public void set_timestamp (int64 timestamp);
 		[Version (since = "3.24")]
 		public void set_version (uint32 version);
+#if HAS_CAMEL_3_58
+		[NoWrapper]
+		public virtual bool summary_header_save (Camel.StoreDBFolderRecord inout_record) throws GLib.Error;
+#endif /* HAS_CAMEL_3_58 */
 		public void touch ();
 		[Version (since = "2.32")]
 		public void @unlock ();
@@ -688,6 +896,19 @@ namespace Camel {
 		public uint saved_count { get; }
 		public uint unread_count { get; }
 		public uint visible_count { get; }
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public signal void info_flags_changed (string uid, uint new_flags);
+	}
+	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_folder_thread_get_type ()")]
+	public class FolderThread : GLib.Object {
+		[CCode (has_construct_function = false)]
+		[Version (since = "3.58")]
+		public FolderThread (Camel.Folder folder, GLib.GenericArray<string>? uids, Camel.FolderThreadFlags flags);
+		public uint dump ();
+		[Version (since = "3.58")]
+		public unowned Camel.FolderThreadNode get_tree ();
+#else
 		public signal void changed ();
 	}
 	[CCode (cheader_filename = "camel/camel.h", lower_case_csuffix = "folder_thread_messages", ref_function = "camel_folder_thread_messages_ref", type_id = "camel_folder_thread_messages_get_type ()", unref_function = "camel_folder_thread_messages_unref")]
@@ -704,10 +925,21 @@ namespace Camel {
 		public void apply (GLib.GenericArray<string> uids);
 		public Camel.FolderThread @ref ();
 		public void unref ();
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
 	[Compact]
 	public class FolderThreadNode {
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public unowned Camel.FolderThreadNode? get_child ();
+		[Version (since = "3.58")]
+		public void* get_item ();
+		[Version (since = "3.58")]
+		public unowned Camel.FolderThreadNode? get_next ();
+		[Version (since = "3.58")]
+		public unowned Camel.FolderThreadNode? get_parent ();
+#else
 		public weak Camel.FolderThreadNode? child;
 		public weak Camel.MessageInfo? message;
 		public weak Camel.FolderThreadNode? next;
@@ -717,20 +949,64 @@ namespace Camel {
 		public weak string root_subject;
 		[CCode (cname = "camel_folder_threaded_messages_dump")]
 		public int dump ();
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_gpg_context_get_type ()")]
 	public class GpgContext : Camel.CipherContext {
 		[CCode (has_construct_function = false, type = "CamelCipherContext*")]
+#if HAS_CAMEL_3_58
+		public GpgContext (Camel.Session? session);
+#else
 		public GpgContext (Camel.Session session);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "2.32")]
 		public bool get_always_trust ();
+#if HAS_CAMEL_3_58
+		[Version (since = "3.50")]
+		public bool get_key_data_info_sync (uint8 data, size_t data_size, uint32 flags, out GLib.SList<Camel.GpgKeyInfo> out_infos, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[Version (since = "3.46")]
+		public bool get_locate_keys ();
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.20")]
 		public bool get_prefer_inline ();
+#if HAS_CAMEL_3_58
+		[Version (since = "3.50")]
+		public bool get_public_key_info_sync (string keyid, uint32 flags, out GLib.SList<Camel.GpgKeyInfo> out_infos, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[Version (since = "3.50")]
+		public bool get_public_key_sync (string keyid, uint32 flags, out uint8 out_data, out size_t out_data_size, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[Version (since = "3.50")]
+		public bool has_public_key_sync (string keyid, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[Version (since = "3.50")]
+		public bool import_key_sync (uint8 data, size_t data_size, uint32 flags, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#endif /* HAS_CAMEL_3_58 */
 		public void set_always_trust (bool always_trust);
+#if HAS_CAMEL_3_58
+		[Version (since = "3.50")]
+		public bool set_key_trust_sync (string keyid, Camel.GpgTrust trust, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[Version (since = "3.46")]
+		public void set_locate_keys (bool locate_keys);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.20")]
 		public void set_prefer_inline (bool prefer_inline);
 		public bool always_trust { get; set construct; }
+#if HAS_CAMEL_3_58
+		public bool locate_keys { get; set construct; }
+#endif /* HAS_CAMEL_3_58 */
 		public bool prefer_inline { get; set construct; }
+#if HAS_CAMEL_3_58
+	}
+	[CCode (cheader_filename = "camel/camel.h", copy_function = "g_boxed_copy", free_function = "g_boxed_free", type_id = "camel_gpg_key_info_get_type ()")]
+	[Compact]
+	[Version (since = "3.50")]
+	public class GpgKeyInfo {
+		public Camel.GpgKeyInfo? copy ();
+		public void free ();
+		public int64 get_creation_date ();
+		public unowned string get_fingerprint ();
+		public unowned string get_id ();
+		public Camel.GpgTrust get_trust ();
+		public unowned GLib.SList<string> get_user_ids ();
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_html_parser_get_type ()")]
 	public class HTMLParser : GLib.Object {
@@ -781,16 +1057,34 @@ namespace Camel {
 		public Camel.HeaderParam? next;
 		public string value;
 		[CCode (cname = "camel_header_param_list_decode")]
+#if HAS_CAMEL_3_58
+		[Version (replacement = "HeaderParam.list_decode")]
+#endif /* HAS_CAMEL_3_58 */
 		public static Camel.HeaderParam? decode (string? @in);
 		[CCode (cname = "camel_header_param_list_format")]
+#if HAS_CAMEL_3_58
+		[Version (replacement = "HeaderParam.list_format")]
+#endif /* HAS_CAMEL_3_58 */
 		public string format ();
 		[CCode (cname = "camel_header_param_list_format_append", instance_pos = 1.5)]
+#if HAS_CAMEL_3_58
+		[Version (replacement = "HeaderParam.list_format_append")]
+#endif /* HAS_CAMEL_3_58 */
 		public void format_append (GLib.StringBuilder @out);
 		[CCode (cname = "camel_header_param_list_free")]
 		[DestroysInstance]
+#if HAS_CAMEL_3_58
+		[Version (replacement = "HeaderParam.list_free")]
+#endif /* HAS_CAMEL_3_58 */
 		public void free ();
 		[CCode (cname = "camel_header_param")]
 		public unowned string get_value (string name);
+#if HAS_CAMEL_3_58
+		public static void* list_decode (string? @in);
+		public static string list_format (void* @params);
+		public static void list_format_append (GLib.StringBuilder @out, void* @params);
+		public static void list_free (void* @params);
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_index_get_type ()")]
 	public class Index : GLib.Object {
@@ -842,13 +1136,21 @@ namespace Camel {
 		[CCode (has_construct_function = false)]
 		public InternetAddress ();
 		public int add (string name, string address);
+#if HAS_CAMEL_3_58
+		public static string encode_address (int? len, string name, string addr);
+#else
 		public static string encode_address (int len, string name, string addr);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.16")]
 		public void ensure_ascii_domains ();
 		public int find_address (string address, out unowned string? namep);
 		public int find_name (string name, out unowned string? addressp);
 		public static string format_address (string name, string addr);
 		public bool @get (int index, out unowned string? namep, out unowned string? addressp);
+#if HAS_CAMEL_3_58
+		[Version (since = "3.44")]
+		public bool sanitize_ascii_domain ();
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_key_file_get_type ()")]
 	public class KeyFile : GLib.Object {
@@ -907,8 +1209,13 @@ namespace Camel {
 		[Version (since = "3.24")]
 		public virtual unowned Camel.NameValueArray get_headers ();
 		public virtual void remove_header (string name);
+#if HAS_CAMEL_3_58
+		public virtual void set_content (Camel.DataWrapper? content);
+		public virtual void set_header (string name, string? value);
+#else
 		public virtual void set_content (Camel.DataWrapper content);
 		public virtual void set_header (string name, string value);
+#endif /* HAS_CAMEL_3_58 */
 		public Camel.DataWrapper content { get; set; }
 	}
 	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
@@ -936,7 +1243,11 @@ namespace Camel {
 		[CCode (has_construct_function = false)]
 		public MessageContentInfo ();
 		[Version (since = "3.24")]
+#if HAS_CAMEL_3_58
+		public Camel.MessageContentInfo? copy ();
+#else
 		public Camel.MessageContentInfo copy ();
+#endif /* HAS_CAMEL_3_58 */
 		public void dump (int depth);
 		public void free ();
 		[CCode (has_construct_function = false)]
@@ -962,7 +1273,11 @@ namespace Camel {
 		[Version (since = "3.24")]
 		public GLib.Array<uint64>? dup_references ();
 		[Version (since = "3.24")]
+#if HAS_CAMEL_3_58
+		public virtual Camel.NamedFlags? dup_user_flags ();
+#else
 		public virtual Camel.NamedFlags dup_user_flags ();
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.42")]
 		public string? dup_user_header (string name);
 		[Version (since = "3.42")]
@@ -971,8 +1286,22 @@ namespace Camel {
 		public string? dup_user_tag (string name);
 		[Version (since = "3.24")]
 		public virtual Camel.NameValueArray? dup_user_tags ();
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public string encode_user_flags ();
+		[Version (since = "3.58")]
+		public string encode_user_tags ();
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.24")]
 		public void freeze_notifications ();
+#if HAS_CAMEL_3_58
+		[CCode (cname = "camel_message_info_new_from_headers")]
+		[Version (since = "3.24")]
+		public static Camel.MessageInfo from_headers (Camel.FolderSummary? summary, Camel.NameValueArray headers);
+		[CCode (cname = "camel_message_info_new_from_message")]
+		[Version (since = "3.54")]
+		public static Camel.MessageInfo from_message (Camel.FolderSummary? summary, Camel.MimeMessage message);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.24")]
 		public bool get_abort_notifications ();
 		[Version (since = "3.24")]
@@ -1024,7 +1353,13 @@ namespace Camel {
 		[Version (since = "3.24")]
 		public virtual unowned Camel.NameValueArray? get_user_tags ();
 		[Version (since = "3.24")]
+#if HAS_CAMEL_3_58
+		public virtual bool load (Camel.StoreDBMessageRecord record, string bdata_ptr);
+		[Version (since = "3.24")]
+		public static Camel.MessageInfo @new (Camel.FolderSummary? summary);
+#else
 		public virtual bool load (Camel.MIRecord? record, string bdata_ptr);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.24")]
 		public unowned string pooldup_uid ();
 		[Version (since = "3.24")]
@@ -1034,7 +1369,11 @@ namespace Camel {
 		[Version (since = "3.24")]
 		public Camel.FolderSummary? ref_summary ();
 		[Version (since = "3.24")]
+#if HAS_CAMEL_3_58
+		public virtual bool save (Camel.StoreDBMessageRecord record, GLib.StringBuilder bdata_str);
+#else
 		public virtual bool save (Camel.MIRecord? record, GLib.StringBuilder bdata_str);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.24")]
 		public void set_abort_notifications (bool abort_notifications);
 		[Version (since = "3.24")]
@@ -1155,8 +1494,16 @@ namespace Camel {
 		public void backup ([CCode (array_length_cname = "length", array_length_pos = 1.1, array_length_type = "gsize")] uint8[] data);
 		public virtual void complete ([CCode (array_length_cname = "len", array_length_pos = 1.5, array_length_type = "gsize")] uint8[] @in, size_t prespace, [CCode (array_length_cname = "outlen", array_length_pos = 3.5, array_length_type = "gsize")] out uint8[] @out, out size_t outprespace);
 		public virtual void filter ([CCode (array_length_cname = "len", array_length_pos = 1.5, array_length_type = "gsize")] uint8[] @in, size_t prespace, [CCode (array_length_cname = "outlen", array_length_pos = 3.5, array_length_type = "gsize")] out uint8[] @out, out size_t outprespace);
+#if HAS_CAMEL_3_58
+		[Version (since = "3.52")]
+		public bool get_request_stop ();
+#endif /* HAS_CAMEL_3_58 */
 		public static Camel.MimeFilter @new ();
 		public virtual void reset ();
+#if HAS_CAMEL_3_58
+		[Version (since = "3.52")]
+		public void set_request_stop (bool request_stop);
+#endif /* HAS_CAMEL_3_58 */
 		public void set_size (size_t size, int keep);
 	}
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_mime_filter_basic_get_type ()")]
@@ -1228,6 +1575,20 @@ namespace Camel {
 		[CCode (has_construct_function = false, type = "CamelMimeFilter*")]
 		public MimeFilterPgp ();
 	}
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_mime_filter_preview_get_type ()")]
+	public class MimeFilterPreview : Camel.MimeFilter {
+		[CCode (has_construct_function = false, type = "CamelMimeFilter*")]
+		[Version (since = "3.52")]
+		public MimeFilterPreview (uint limit);
+		[Version (since = "3.52")]
+		public uint get_limit ();
+		[Version (since = "3.52")]
+		public unowned string? get_text ();
+		[Version (since = "3.52")]
+		public void set_limit (uint limit);
+	}
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_mime_filter_progress_get_type ()")]
 	[Version (since = "2.24")]
 	public class MimeFilterProgress : Camel.MimeFilter {
@@ -1263,9 +1624,15 @@ namespace Camel {
 		public void dump (int body);
 		public void encode_8bit_parts ();
 		[Version (since = "3.34")]
+#if HAS_CAMEL_3_58
+		public void foreach_part (Camel.ForeachPartFunc callback);
+		public time_t get_date (out int offset);
+		public time_t get_date_received (out int offset);
+#else
 		public void foreach_part ();
 		public long get_date (out int offset);
 		public long get_date_received (out int offset);
+#endif /* HAS_CAMEL_3_58 */
 		public unowned Camel.InternetAddress? get_from ();
 		public unowned string? get_message_id ();
 		public unowned Camel.MimePart? get_part_by_content_id (string content_id);
@@ -1277,7 +1644,11 @@ namespace Camel {
 		[Version (since = "2.28")]
 		public bool has_attachment ();
 		public void set_best_encoding (Camel.BestencRequired required, Camel.BestencEncoding enctype);
+#if HAS_CAMEL_3_58
+		public void set_date (time_t date, int offset);
+#else
 		public void set_date (long date, int offset);
+#endif /* HAS_CAMEL_3_58 */
 		public void set_from (Camel.InternetAddress? from);
 		public void set_message_id (string? message_id);
 		public void set_recipients (string type, Camel.InternetAddress? recipients);
@@ -1291,18 +1662,31 @@ namespace Camel {
 		public MimeParser ();
 		[NoWrapper]
 		public virtual void content ();
+#if HAS_CAMEL_3_58
+		public Camel.ContentType? content_type ();
+#else
 		public Camel.ContentType content_type ();
+#endif /* HAS_CAMEL_3_58 */
 		public void drop_step ();
 		[Version (since = "3.24")]
+#if HAS_CAMEL_3_58
+		public Camel.NameValueArray? dup_headers ();
+#else
 		public Camel.NameValueArray dup_headers ();
+#endif /* HAS_CAMEL_3_58 */
 		public int errno ();
 		[Version (since = "2.22")]
 		public int filter_add (Camel.MimeFilter mf);
 		[Version (since = "2.22")]
 		public void filter_remove (int id);
 		[Version (since = "2.22")]
+#if HAS_CAMEL_3_58
+		public unowned string? from_line ();
+		public unowned string? header (string name, int offset);
+#else
 		public unowned string from_line ();
 		public unowned string header (string name, int offset);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.12")]
 		public void init_with_bytes (GLib.Bytes bytes);
 		public int init_with_fd (int fd);
@@ -1314,9 +1698,17 @@ namespace Camel {
 		[NoWrapper]
 		public virtual void part ();
 		[Version (since = "2.22")]
+#if HAS_CAMEL_3_58
+		public unowned string? postface ();
+#else
 		public unowned string postface ();
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "2.22")]
+#if HAS_CAMEL_3_58
+		public unowned string? preface ();
+#else
 		public unowned string preface ();
+#endif /* HAS_CAMEL_3_58 */
 		public void push_state (Camel.MimeParserState newstate, string boundary);
 		public ssize_t read ([CCode (array_length = false)] out uint8[] databuffer, ssize_t len) throws GLib.Error;
 		public void scan_from (bool scan_from);
@@ -1347,7 +1739,21 @@ namespace Camel {
 		public async bool construct_from_parser (Camel.MimeParser parser, int io_priority, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "3.0")]
 		public virtual bool construct_from_parser_sync (Camel.MimeParser parser, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#if HAS_CAMEL_3_58
+		[Version (since = "3.52")]
+		public virtual string? generate_preview (Camel.GeneratePreviewFunc? func);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "2.30")]
+#if HAS_CAMEL_3_58
+		public unowned Camel.ContentDisposition? get_content_disposition ();
+		public unowned string? get_content_id ();
+		public unowned GLib.List<string>? get_content_languages ();
+		public unowned string? get_content_location ();
+		public unowned string? get_content_md5 ();
+		public unowned Camel.ContentType? get_content_type ();
+		public unowned string? get_description ();
+		public unowned string? get_disposition ();
+#else
 		public unowned Camel.ContentDisposition get_content_disposition ();
 		public unowned string get_content_id ();
 		public unowned GLib.List<string> get_content_languages ();
@@ -1356,19 +1762,43 @@ namespace Camel {
 		public unowned Camel.ContentType get_content_type ();
 		public unowned string get_description ();
 		public unowned string get_disposition ();
+#endif /* HAS_CAMEL_3_58 */
 		public Camel.TransferEncoding get_encoding ();
+#if HAS_CAMEL_3_58
+		public unowned string? get_filename ();
+#else
 		public unowned string get_filename ();
+#endif /* HAS_CAMEL_3_58 */
 		public void set_content ([CCode (array_length_cname = "length", array_length_pos = 1.5)] uint8[]? data, string? type);
+#if HAS_CAMEL_3_58
+		public void set_content_id (string? contentid);
+		public void set_content_languages (owned GLib.List<string>? content_languages);
+		public void set_content_location (string? location);
+		public void set_content_md5 (string? md5sum);
+		public void set_content_type (string? content_type);
+#else
 		public void set_content_id (string contentid);
 		public void set_content_languages (GLib.List<string> content_languages);
 		public void set_content_location (string location);
 		public void set_content_md5 (string md5sum);
 		public void set_content_type (string content_type);
+#endif /* HAS_CAMEL_3_58 */
 		public void set_description (string description);
+#if HAS_CAMEL_3_58
+		public void set_disposition (string? disposition);
+#else
 		public void set_disposition (string disposition);
+#endif /* HAS_CAMEL_3_58 */
 		public void set_encoding (Camel.TransferEncoding encoding);
+#if HAS_CAMEL_3_58
+		public void set_filename (string? filename);
+#else
 		public void set_filename (string filename);
+#endif /* HAS_CAMEL_3_58 */
 		public string content_id { get; set; }
+#if HAS_CAMEL_3_58
+		public string content_location { get; set; }
+#endif /* HAS_CAMEL_3_58 */
 		public string content_md5 { get; set; }
 		public string description { get; set; }
 		public string disposition { get; set; }
@@ -1384,9 +1814,17 @@ namespace Camel {
 		public Multipart ();
 		public virtual void add_part (Camel.MimePart part);
 		public virtual int construct_from_parser (Camel.MimeParser parser);
+#if HAS_CAMEL_3_58
+		[Version (since = "3.52")]
+		public virtual string? generate_preview (Camel.GeneratePreviewFunc? func);
+#endif /* HAS_CAMEL_3_58 */
 		public virtual unowned string get_boundary ();
 		public virtual uint get_number ();
+#if HAS_CAMEL_3_58
+		public virtual unowned Camel.MimePart? get_part (uint index);
+#else
 		public virtual unowned Camel.MimePart get_part (uint index);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.12")]
 		public unowned string get_postface ();
 		[Version (since = "3.12")]
@@ -1470,6 +1908,7 @@ namespace Camel {
 		[Version (since = "3.30")]
 		public bool get_ends_with_crlf ();
 	}
+#if !HAS_CAMEL_3_58
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_object_get_type ()")]
 	public abstract class Object : GLib.Object {
 		[CCode (has_construct_function = false)]
@@ -1484,6 +1923,7 @@ namespace Camel {
 		public virtual int state_write ([CCode (type = "FILE*")] GLib.FileStream fp);
 		public string state_filename { get; set construct; }
 	}
+#endif /* !HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
 	[Compact]
 	public class ObjectBag {
@@ -1504,9 +1944,15 @@ namespace Camel {
 		[Version (since = "3.22")]
 		public bool can_downsync ();
 		[Version (since = "3.0")]
+#if HAS_CAMEL_3_58
+		public async bool downsync (string? expression, int io_priority, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[Version (since = "3.0")]
+		public virtual bool downsync_sync (string? expression, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#else
 		public async bool downsync (string expression, int io_priority, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "3.0")]
 		public virtual bool downsync_sync (string expression, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "2.32")]
 		public Camel.ThreeState get_offline_sync ();
 		[Version (since = "2.32")]
@@ -1525,8 +1971,10 @@ namespace Camel {
 		[Version (since = "3.24")]
 		public int get_limit_value ();
 		public bool get_stay_synchronized ();
+#if !HAS_CAMEL_3_58
 		[Version (deprecated = true, deprecated_since = "3.40", since = "3.18")]
 		public int get_store_changes_interval ();
+#endif /* !HAS_CAMEL_3_58 */
 		[Version (since = "3.24")]
 		public void set_limit_by_age (bool limit_by_age);
 		[Version (since = "3.24")]
@@ -1534,8 +1982,10 @@ namespace Camel {
 		[Version (since = "3.24")]
 		public void set_limit_value (bool limit_value);
 		public void set_stay_synchronized (bool stay_synchronized);
+#if !HAS_CAMEL_3_58
 		[Version (deprecated = true, deprecated_since = "3.40", since = "3.18")]
 		public void set_store_changes_interval (int interval);
+#endif /* !HAS_CAMEL_3_58 */
 		public bool limit_by_age { get; set construct; }
 		public Camel.TimeUnit limit_unit { get; set construct; }
 		public int limit_value { get; set construct; }
@@ -1563,6 +2013,10 @@ namespace Camel {
 		[CCode (has_construct_function = false, type = "GCancellable*")]
 		public Operation ();
 		public static void cancel_all ();
+#if HAS_CAMEL_3_58
+		[Version (since = "3.52")]
+		public static string? dup_message (GLib.Cancellable? cancellable = null);
+#endif /* HAS_CAMEL_3_58 */
 		[CCode (has_construct_function = false, type = "GCancellable*")]
 		[Version (since = "3.24")]
 		public Operation.proxy (GLib.Cancellable? cancellable = null);
@@ -1602,7 +2056,9 @@ namespace Camel {
 		public weak GLib.EqualFunc url_equal;
 		public Camel.ProviderURLFlags url_flags;
 		public weak GLib.HashFunc url_hash;
+#if !HAS_CAMEL_3_58
 		public int auto_detect (Camel.URL url, out GLib.HashTable<string,string>? auto_detected) throws GLib.Error;
+#endif /* !HAS_CAMEL_3_58 */
 		public static Camel.Provider @get (string protocol) throws GLib.Error;
 		public static void init ();
 		public static GLib.List<weak Camel.Provider> list (bool load);
@@ -1621,7 +2077,11 @@ namespace Camel {
 		public static void encode_string (GLib.StringBuilder string, string v_string);
 		public unowned string? error ();
 		public unowned Camel.SExpResult? eval ();
+#if HAS_CAMEL_3_58
+		public bool evaluate_occur_times (time_t start, time_t end);
+#else
 		public bool evaluate_occur_times (long start, long end);
+#endif /* HAS_CAMEL_3_58 */
 		public void fatal_error (string why, ...);
 		public void input_file (int fd);
 		public void input_text (string text, int len);
@@ -1633,8 +2093,10 @@ namespace Camel {
 		public void resultv_free ([CCode (array_length_cname = "argc", array_length_pos = 0.5)] Camel.SExpResult[] argv);
 		public int set_scope (uint scope);
 		public Camel.SExpResult? term_eval (Camel.SExpTerm term);
+#if !HAS_CAMEL_3_58
 		[Version (since = "2.26")]
 		public static string to_sql_sexp (string sexp);
+#endif /* !HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_smime_context_get_type ()")]
 	public class SMIMEContext : Camel.CipherContext {
@@ -1643,6 +2105,10 @@ namespace Camel {
 		public uint32 describe_part ([CCode (type = "_CamelMimePart*")] Camel.MimePart part);
 		public void set_encrypt_key (bool use, string key);
 		public void set_sign_mode (Camel.SMIMESign type);
+#if HAS_CAMEL_3_58
+		[Version (since = "3.52")]
+		public static unowned string? util_nss_error_to_string (int nss_error_code);
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_sasl_get_type ()")]
 	public abstract class Sasl : GLib.Object {
@@ -1652,12 +2118,20 @@ namespace Camel {
 		public static unowned Camel.ServiceAuthType? authtype (string mechanism);
 		public static GLib.List<weak Camel.ServiceAuthType?> authtype_list (bool include_plain);
 		[Version (since = "3.0")]
+#if HAS_CAMEL_3_58
+		public async GLib.ByteArray? challenge (GLib.ByteArray? token, int io_priority, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#else
 		public async GLib.ByteArray challenge (GLib.ByteArray token, int io_priority, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.0")]
 		public async string challenge_base64 (string token, int io_priority, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "3.0")]
 		public string challenge_base64_sync (string token, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#if HAS_CAMEL_3_58
+		public virtual GLib.ByteArray? challenge_sync (GLib.ByteArray? token, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#else
 		public virtual GLib.ByteArray challenge_sync (GLib.ByteArray token, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#endif /* HAS_CAMEL_3_58 */
 		[CCode (cname = "camel_sasl_new")]
 		public static Camel.Sasl? for_service (string service_name, string mechanism, Camel.Service service);
 		public bool get_authenticated ();
@@ -1745,7 +2219,11 @@ namespace Camel {
 		protected SaslXOAuth2Yahoo ();
 	}
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_service_get_type ()")]
+#if HAS_CAMEL_3_58
+	public abstract class Service : GLib.Object, GLib.Initable {
+#else
 	public abstract class Service : Camel.Object, GLib.Initable {
+#endif /* HAS_CAMEL_3_58 */
 		[CCode (has_construct_function = false)]
 		protected Service ();
 		[Version (since = "3.4")]
@@ -1761,13 +2239,21 @@ namespace Camel {
 		[Version (since = "3.6")]
 		public virtual bool disconnect_sync (bool clean, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "3.12")]
+#if HAS_CAMEL_3_58
+		public string? dup_display_name ();
+#else
 		public string dup_display_name ();
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.12")]
 		public string dup_password ();
 		[Version (since = "3.2")]
 		public Camel.ServiceConnectionStatus get_connection_status ();
 		[Version (since = "3.2")]
+#if HAS_CAMEL_3_58
+		public unowned string? get_display_name ();
+#else
 		public unowned string get_display_name ();
+#endif /* HAS_CAMEL_3_58 */
 		public virtual string get_name (bool brief);
 		[Version (since = "3.4")]
 		public unowned string get_password ();
@@ -1788,19 +2274,35 @@ namespace Camel {
 		[Version (since = "3.12")]
 		public void queue_task (GLib.Task task, [CCode (scope = "async")] GLib.TaskThreadFunc task_func);
 		[Version (since = "3.12")]
+#if HAS_CAMEL_3_58
+		public GLib.ProxyResolver? ref_proxy_resolver ();
+#else
 		public GLib.ProxyResolver ref_proxy_resolver ();
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.8")]
 		public Camel.Session ref_session ();
 		[Version (since = "3.6")]
 		public Camel.Settings ref_settings ();
 		[Version (since = "3.2")]
+#if HAS_CAMEL_3_58
+		public void set_display_name (string? display_name);
+#else
 		public void set_display_name (string display_name);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.4")]
 		public void set_password (string password);
 		[Version (since = "3.12")]
+#if HAS_CAMEL_3_58
+		public void set_proxy_resolver (GLib.ProxyResolver? proxy_resolver);
+#else
 		public void set_proxy_resolver (GLib.ProxyResolver proxy_resolver);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.2")]
+#if HAS_CAMEL_3_58
+		public void set_settings (Camel.Settings? settings);
+#else
 		public void set_settings (Camel.Settings settings);
+#endif /* HAS_CAMEL_3_58 */
 		public Camel.ServiceConnectionStatus connection_status { get; }
 		public string display_name { get; set construct; }
 		public string password { get; set construct; }
@@ -1812,6 +2314,10 @@ namespace Camel {
 		[NoAccessorMethod]
 		public Camel.Settings settings { owned get; set construct; }
 		public string uid { get; construct; }
+#if HAS_CAMEL_3_58
+		[NoAccessorMethod]
+		public bool with_proxy_resolver { construct; }
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_session_get_type ()")]
 	public class Session : GLib.Object {
@@ -1819,6 +2325,10 @@ namespace Camel {
 		protected Session ();
 		[Version (since = "3.2")]
 		public virtual Camel.Service add_service (string uid, string protocol, Camel.ProviderType type) throws GLib.Error;
+#if HAS_CAMEL_3_58
+		[Version (since = "3.44")]
+		public virtual bool addressbook_contains_sync (string book_uid, string email_address, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.4")]
 		public async bool authenticate (Camel.Service service, string? mechanism, int io_priority, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "3.4")]
@@ -1830,7 +2340,11 @@ namespace Camel {
 		public virtual bool forward_to_sync (Camel.Folder folder, Camel.MimeMessage message, string address, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public virtual unowned Camel.FilterDriver get_filter_driver (string type, Camel.Folder? for_folder) throws GLib.Error;
 		[Version (since = "3.2")]
+#if HAS_CAMEL_3_58
+		public unowned Camel.JunkFilter? get_junk_filter ();
+#else
 		public unowned Camel.JunkFilter get_junk_filter ();
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "2.22")]
 		public unowned GLib.HashTable<string,string> get_junk_headers ();
 		[Version (since = "3.28")]
@@ -1854,15 +2368,27 @@ namespace Camel {
 		[Version (since = "3.22")]
 		public GLib.NetworkMonitor ref_network_monitor ();
 		[Version (since = "3.6")]
+#if HAS_CAMEL_3_58
+		public Camel.Service? ref_service (string uid);
+#else
 		public Camel.Service ref_service (string uid);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.6")]
+#if HAS_CAMEL_3_58
+		public Camel.Service? ref_service_by_url (Camel.URL url, Camel.ProviderType type);
+#else
 		public Camel.Service ref_service_by_url (Camel.URL url, Camel.ProviderType type);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.2")]
 		public virtual void remove_service (Camel.Service service);
 		[Version (since = "3.2")]
 		public void remove_services ();
 		[Version (since = "3.2")]
+#if HAS_CAMEL_3_58
+		public void set_junk_filter (Camel.JunkFilter? junk_filter);
+#else
 		public void set_junk_filter (Camel.JunkFilter junk_filter);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "2.22")]
 		public void set_junk_headers ([CCode (array_length_cname = "len", array_length_pos = 2.1)] string[] headers, [CCode (array_length = false)] string[] values);
 		[Version (since = "3.22")]
@@ -1917,8 +2443,13 @@ namespace Camel {
 		public GLib.GenericArray<Camel.Folder> dup_opened_folders ();
 		[Version (since = "3.40")]
 		public virtual bool get_can_auto_save_changes ();
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public unowned Camel.StoreDB get_db ();
+#else
 		[Version (since = "3.24")]
 		public unowned Camel.DB get_db ();
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.24")]
 		public uint32 get_flags ();
 		[Version (since = "3.0")]
@@ -1974,6 +2505,105 @@ namespace Camel {
 		[HasEmitter]
 		public virtual signal void folder_renamed (string old_name, Camel.FolderInfo folder_info);
 	}
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_store_db_get_type ()")]
+	[Version (since = "3.58")]
+	public class StoreDB : Camel.DB {
+		[CCode (has_construct_function = false)]
+		public StoreDB (string filename, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		public bool clear_folder (string folder_name) throws GLib.Error;
+		public bool count_messages (string folder_name, Camel.StoreDBCountKind kind, out uint32 out_count) throws GLib.Error;
+		public bool delete_folder (string folder_name) throws GLib.Error;
+		public bool delete_message (string folder_name, string uid) throws GLib.Error;
+		public bool delete_messages (string folder_name, GLib.GenericArray<string> uids) throws GLib.Error;
+		public GLib.GenericArray<weak string> dup_deleted_uids (string folder_name) throws GLib.Error;
+		public GLib.GenericArray<weak string> dup_junk_uids (string folder_name) throws GLib.Error;
+		public string? dup_string_key (string key);
+		public GLib.HashTable<weak string,uint32> dup_uids_with_flags (string folder_name) throws GLib.Error;
+		public uint32 get_folder_id (string folder_name);
+		public int get_int_key (string key, int def_value);
+		public bool read_folder (string folder_name, out Camel.StoreDBFolderRecord out_record) throws GLib.Error;
+		public bool read_message (string folder_name, string uid, out Camel.StoreDBMessageRecord out_record) throws GLib.Error;
+		public bool read_messages (string folder_name, Camel.StoreDBReadMessagesFunc func) throws GLib.Error;
+		public bool rename_folder (string old_folder_name, string new_folder_name) throws GLib.Error;
+		public bool set_int_key (string key, int value) throws GLib.Error;
+		public bool set_string_key (string key, string value) throws GLib.Error;
+		public static unowned string? util_get_column_for_header_name (string header_name);
+		public bool write_folder (string folder_name, Camel.StoreDBFolderRecord record) throws GLib.Error;
+		public bool write_message (string folder_name, Camel.StoreDBMessageRecord record) throws GLib.Error;
+	}
+	[CCode (cheader_filename = "camel/camel.h", ref_function = "camel_store_info_ref", type_id = "camel_store_info_get_type ()", unref_function = "camel_store_info_unref")]
+	[Compact]
+	public class StoreInfo {
+		public uint32 flags;
+		public weak string path;
+		public int refcount;
+		public weak Camel.StoreSummary summary;
+		public uint32 total;
+		public uint32 unread;
+		[Version (since = "3.46")]
+		public unowned string get_name ();
+		[Version (since = "3.46")]
+		public unowned string get_path ();
+		[Version (since = "3.46")]
+		public Camel.StoreInfo @ref ();
+		[Version (since = "3.46")]
+		public void set_value (int type, string value);
+		[Version (since = "3.46")]
+		public void unref ();
+	}
+	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_store_search_get_type ()")]
+	[Version (since = "3.58")]
+	public class StoreSearch : GLib.Object {
+		[CCode (has_construct_function = false)]
+		public StoreSearch (Camel.Store store);
+		public void add_folder (Camel.Folder folder);
+		public void add_match_index (Camel.StoreSearchIndex index);
+		public bool add_match_threads_items_sync (ref GLib.GenericArray<weak Camel.StoreSearchThreadItem> inout_items, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		public GLib.GenericArray<weak string>? dup_additional_columns ();
+		public unowned string? get_expression ();
+		public bool get_items_sync (out GLib.GenericArray<weak Camel.StoreSearchItem?> out_items, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		public Camel.MatchThreadsKind get_match_threads_kind (out Camel.FolderThreadFlags out_flags);
+		public unowned Camel.Store get_store ();
+		public bool get_uids_sync (string folder_name, out GLib.GenericArray<weak string> out_uids, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		public GLib.GenericArray<weak Camel.Folder> list_folders ();
+		public GLib.GenericArray<weak Camel.StoreSearchIndex> list_match_indexes ();
+		public bool rebuild_sync (GLib.Cancellable? cancellable = null) throws GLib.Error;
+		public Camel.StoreSearchIndex? ref_result_index ();
+		public void remove_folder (Camel.Folder folder);
+		public void remove_match_index (Camel.StoreSearchIndex index);
+		public void set_additional_columns (GLib.GenericArray<string>? colnames);
+		public void set_expression (string? expression);
+		public void set_result_index (Camel.StoreSearchIndex? index);
+		public Camel.Store store { get; construct; }
+	}
+	[CCode (cheader_filename = "camel/camel.h", ref_function = "camel_store_search_index_ref", type_id = "camel_store_search_index_get_type ()", unref_function = "camel_store_search_index_unref")]
+	[Compact]
+	[Version (since = "3.58")]
+	public class StoreSearchIndex {
+		[CCode (has_construct_function = false)]
+		public StoreSearchIndex ();
+		public void add (Camel.Store store, uint32 folder_id, string uid);
+		public void apply_match_threads (GLib.GenericArray<Camel.StoreSearchThreadItem> items, Camel.MatchThreadsKind kind, Camel.FolderThreadFlags flags, GLib.Cancellable? cancellable = null);
+		public bool contains (Camel.Store store, uint32 folder_id, string uid);
+		public void move_from_existing (Camel.StoreSearchIndex src);
+		public Camel.StoreSearchIndex @ref ();
+		public bool remove (Camel.Store store, uint32 folder_id, string uid);
+		[DestroysInstance]
+		public void unref ();
+	}
+	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
+	[Compact]
+	[Version (since = "3.58")]
+	public class StoreSearchThreadItem {
+		public uint32 get_folder_id ();
+		public uint64 get_message_id ();
+		public unowned GLib.Array<uint64>? get_references ();
+		public unowned Camel.Store get_store ();
+		public unowned string get_subject ();
+		public unowned string get_uid ();
+	}
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_store_settings_get_type ()")]
 	[Version (since = "3.2")]
 	public class StoreSettings : Camel.Settings {
@@ -1992,20 +2622,36 @@ namespace Camel {
 	public class StoreSummary : GLib.Object {
 		[CCode (has_construct_function = false)]
 		public StoreSummary ();
+#if HAS_CAMEL_3_58
+		public void add (owned Camel.StoreInfo info);
+#else
 		public void add (Camel.StoreInfo info);
+#endif /* HAS_CAMEL_3_58 */
 		public unowned Camel.StoreInfo? add_from_path (string path);
+#if HAS_CAMEL_3_58
+		public GLib.GenericArray<Camel.StoreInfo> array ();
+#else
 		public GLib.GenericArray<Camel.StoreInfo?> array ();
 		public void array_free (GLib.GenericArray<Camel.StoreInfo?> array);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.4")]
 		public bool connect_folder_summary (string path, Camel.FolderSummary folder_summary);
 		public int count ();
 		[Version (since = "3.4")]
 		public bool disconnect_folder_summary (Camel.FolderSummary folder_summary);
+#if HAS_CAMEL_3_58
+		public Camel.StoreInfo info_new ();
+#else
 		public unowned Camel.StoreInfo? info_new ();
 		public Camel.StoreInfo? info_ref (Camel.StoreInfo info);
 		public void info_unref (Camel.StoreInfo info);
+#endif /* HAS_CAMEL_3_58 */
 		public int load ();
+#if HAS_CAMEL_3_58
+		public Camel.StoreInfo? path (string path);
+#else
 		public unowned Camel.StoreInfo? path (string path);
+#endif /* HAS_CAMEL_3_58 */
 		public void remove (Camel.StoreInfo info);
 		public void remove_path (string path);
 		public int save ();
@@ -2013,15 +2659,31 @@ namespace Camel {
 		[Version (since = "3.24")]
 		public void sort (GLib.CompareDataFunc compare_func);
 		[NoWrapper]
+#if HAS_CAMEL_3_58
+		public virtual void store_info_free (owned Camel.StoreInfo info);
+#else
 		public virtual void store_info_free (Camel.StoreInfo info);
+#endif /* HAS_CAMEL_3_58 */
 		[NoWrapper]
+#if HAS_CAMEL_3_58
+		public virtual Camel.StoreInfo store_info_load ([CCode (type = "FILE*")] GLib.FileStream file);
+#else
 		public virtual unowned Camel.StoreInfo? store_info_load ([CCode (type = "FILE*")] GLib.FileStream file);
+#endif /* HAS_CAMEL_3_58 */
 		[NoWrapper]
+#if HAS_CAMEL_3_58
+		public virtual Camel.StoreInfo store_info_new (string path);
+#else
 		public virtual unowned Camel.StoreInfo? store_info_new (string path);
+#endif /* HAS_CAMEL_3_58 */
 		[NoWrapper]
 		public virtual int store_info_save ([CCode (type = "FILE*")] GLib.FileStream file, Camel.StoreInfo info);
 		[NoWrapper]
+#if HAS_CAMEL_3_58
+		public virtual void store_info_set_value (Camel.StoreInfo info, int type, string value);
+#else
 		public virtual void store_info_set_string (Camel.StoreInfo info, int type, string value);
+#endif /* HAS_CAMEL_3_58 */
 		[NoWrapper]
 		public virtual int summary_header_load ([CCode (type = "FILE*")] GLib.FileStream file);
 		[NoWrapper]
@@ -2140,10 +2802,18 @@ namespace Camel {
 	public abstract class Transport : Camel.Service, GLib.Initable {
 		[CCode (has_construct_function = false)]
 		protected Transport ();
+#if HAS_CAMEL_3_58
+		[Version (since = "3.50")]
+		public bool get_request_dsn ();
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.0")]
 		public async bool send_to (Camel.MimeMessage message, Camel.Address from, Camel.Address recipients, int io_priority, GLib.Cancellable? cancellable = null, out bool out_sent_message_saved) throws GLib.Error;
 		[Version (since = "3.0")]
 		public virtual bool send_to_sync (Camel.MimeMessage message, Camel.Address from, Camel.Address recipients, out bool out_sent_message_saved, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#if HAS_CAMEL_3_58
+		[Version (since = "3.50")]
+		public void set_request_dsn (bool request_dsn);
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
 	[Compact]
@@ -2171,12 +2841,20 @@ namespace Camel {
 		public Camel.URL copy ();
 		public static void decode (string part);
 		public static string decode_path (string path);
+#if HAS_CAMEL_3_58
+		public static string encode (string part, string? escape_extra);
+#else
 		public static string encode (string part, string escape_extra);
+#endif /* HAS_CAMEL_3_58 */
 		public bool equal (Camel.URL u2);
 		public static bool file_end (string @in, string pos, string inend, Camel.UrlMatch match);
 		public static bool file_start (string @in, string pos, string inend, Camel.UrlMatch match);
 		public void free ();
+#if HAS_CAMEL_3_58
+		public unowned string? get_param (string name);
+#else
 		public unowned string get_param (string name);
+#endif /* HAS_CAMEL_3_58 */
 		public uint hash ();
 		public Camel.URL new_with_base (string url_string);
 		public void set_authmech (string authmech);
@@ -2205,6 +2883,7 @@ namespace Camel {
 		[Version (since = "3.24")]
 		public Camel.VTrashFolderType get_folder_type ();
 	}
+#if !HAS_CAMEL_3_58
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_vee_data_cache_get_type ()")]
 	[Version (since = "3.6")]
 	public class VeeDataCache : GLib.Object {
@@ -2219,16 +2898,29 @@ namespace Camel {
 		public void remove_message_info_data (Camel.VeeMessageInfoData mi_data);
 		public void remove_subfolder (Camel.Folder subfolder);
 	}
+#endif /* !HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_vee_folder_get_type ()")]
 	public class VeeFolder : Camel.Folder {
 		[CCode (has_construct_function = false, type = "CamelFolder*")]
 		public VeeFolder (Camel.Store parent_store, string full, uint32 flags);
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public bool add_folder_sync (Camel.Folder subfolder, Camel.VeeFolderOpFlags op_flags, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		public void @construct (uint32 flags);
+		[Version (since = "3.58")]
+		public GLib.GenericArray<weak Camel.Folder> dup_folders ();
+#else
 		public virtual void add_folder (Camel.Folder subfolder, GLib.Cancellable? cancellable = null);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.6")]
+#if HAS_CAMEL_3_58
+		public Camel.Folder? dup_vee_uid_folder (string vee_message_uid);
+#else
 		public void add_vuid ([CCode (type = "_CamelVeeMessageInfoData*")] Camel.VeeMessageInfoData mi_data, Camel.FolderChangeInfo? changes);
 		public void @construct (uint32 flags);
 		[NoWrapper]
 		public virtual void folder_changed (Camel.Folder subfolder, Camel.FolderChangeInfo changes);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.6")]
 		public bool get_auto_update ();
 		[Version (since = "3.6")]
@@ -2236,6 +2928,10 @@ namespace Camel {
 		[Version (since = "3.24")]
 		public uint32 get_flags ();
 		public unowned Camel.Folder get_location (Camel.VeeMessageInfo vinfo, out string? realuid);
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public bool remove_folder_sync (Camel.Folder subfolder, Camel.VeeFolderOpFlags op_flags, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#else
 		[Version (since = "3.6")]
 		public unowned Camel.Folder? get_vee_uid_folder (string vee_message_uid);
 		[Version (since = "3.2")]
@@ -2250,12 +2946,23 @@ namespace Camel {
 		public void remove_from_ignore_changed_event (Camel.Folder subfolder);
 		[Version (since = "3.6")]
 		public void remove_vuid ([CCode (type = "_CamelVeeMessageInfoData*")] Camel.VeeMessageInfoData mi_data, Camel.FolderChangeInfo? changes);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.6")]
 		public void set_auto_update (bool auto_update);
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public bool set_expression_sync (string expression, Camel.VeeFolderOpFlags op_flags, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[Version (since = "3.58")]
+		public bool set_folders_sync (GLib.GenericArray<Camel.Folder> folders, Camel.VeeFolderOpFlags op_flags, GLib.Cancellable? cancellable = null) throws GLib.Error;
+#else
 		[Version (since = "3.6")]
 		public virtual void set_expression (string expression);
 		public void set_folders (GLib.List<Camel.Folder> folders, GLib.Cancellable? cancellable = null);
+#endif /* HAS_CAMEL_3_58 */
 		public bool auto_update { get; set; }
+#if HAS_CAMEL_3_58
+		public signal void vee_setup_changed ();
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_vee_message_info_get_type ()")]
 	public class VeeMessageInfo : Camel.MessageInfo {
@@ -2267,6 +2974,7 @@ namespace Camel {
 		[Version (since = "3.24")]
 		public unowned Camel.FolderSummary get_original_summary ();
 	}
+#if !HAS_CAMEL_3_58
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_vee_message_info_data_get_type ()")]
 	[Version (since = "3.6")]
 	public class VeeMessageInfoData : GLib.Object {
@@ -2276,9 +2984,13 @@ namespace Camel {
 		public unowned Camel.VeeSubfolderData get_subfolder_data ();
 		public unowned string get_vee_message_uid ();
 	}
+#endif /* !HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_vee_store_get_type ()")]
 	public class VeeStore : Camel.Store, GLib.Initable {
 		[CCode (has_construct_function = false)]
+#if HAS_CAMEL_3_58
+		protected VeeStore ();
+#else
 		public VeeStore ();
 		[Version (since = "3.6")]
 		public bool get_unmatched_enabled ();
@@ -2307,11 +3019,16 @@ namespace Camel {
 		public VeeSubfolderData (Camel.Folder folder);
 		public unowned Camel.Folder get_folder ();
 		public unowned string get_folder_id ();
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", type_id = "camel_vee_summary_get_type ()")]
 	public class VeeSummary : Camel.FolderSummary {
 		[CCode (has_construct_function = false, type = "CamelFolderSummary*")]
 		public VeeSummary (Camel.Folder parent);
+#if HAS_CAMEL_3_58
+		[Version (since = "3.58")]
+		public GLib.GenericSet<Camel.Folder> dup_subfolders ();
+#else
 		public Camel.VeeMessageInfo add (Camel.VeeMessageInfoData mi_data);
 		[Version (since = "3.6")]
 		public GLib.HashTable<weak string,int> get_uids_for_subfolder (Camel.Folder subfolder);
@@ -2319,6 +3036,7 @@ namespace Camel {
 		public void remove (string vuid, Camel.Folder subfolder);
 		[Version (since = "3.6")]
 		public void replace_flags (string uid);
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", ref_function = "camel_weak_ref_group_ref", type_id = "camel_weak_ref_group_get_type ()", unref_function = "camel_weak_ref_group_unref")]
 	[Compact]
@@ -2354,15 +3072,27 @@ namespace Camel {
 		public abstract uint16 get_default_port (Camel.NetworkSecurityMethod method);
 		[Version (since = "3.8")]
 		public bool get_host_reachable ();
+#if HAS_CAMEL_3_58
+		public abstract unowned string? get_service_name (Camel.NetworkSecurityMethod method);
+#else
 		public abstract unowned string get_service_name (Camel.NetworkSecurityMethod method);
+#endif /* HAS_CAMEL_3_58 */
 		[NoWrapper]
 		public abstract unowned GLib.SocketConnectable new_connectable ();
 		[Version (since = "3.8")]
 		public GLib.SocketConnectable ref_connectable ();
 		[Version (since = "3.8")]
+#if HAS_CAMEL_3_58
+		public void set_connectable (GLib.SocketConnectable? connectable);
+#else
 		public void set_connectable (GLib.SocketConnectable connectable);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.12")]
+#if HAS_CAMEL_3_58
+		public GLib.IOStream? starttls (GLib.IOStream base_stream) throws GLib.Error;
+#else
 		public GLib.IOStream starttls (GLib.IOStream base_stream) throws GLib.Error;
+#endif /* HAS_CAMEL_3_58 */
 		[NoAccessorMethod]
 		public abstract GLib.SocketConnectable connectable { owned get; set; }
 		[ConcreteAccessor]
@@ -2372,7 +3102,11 @@ namespace Camel {
 	[Version (since = "3.2")]
 	public interface NetworkSettings : Camel.Settings {
 		[Version (since = "3.4")]
+#if HAS_CAMEL_3_58
+		public string? dup_auth_mechanism ();
+#else
 		public string dup_auth_mechanism ();
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.4")]
 		public string dup_host ();
 		[Version (since = "3.16")]
@@ -2380,7 +3114,11 @@ namespace Camel {
 		[Version (since = "3.4")]
 		public string dup_user ();
 		[Version (since = "3.4")]
+#if HAS_CAMEL_3_58
+		public unowned string? get_auth_mechanism ();
+#else
 		public unowned string get_auth_mechanism ();
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.4")]
 		public unowned string get_host ();
 		[Version (since = "3.4")]
@@ -2389,14 +3127,26 @@ namespace Camel {
 		[Version (since = "3.4")]
 		public unowned string get_user ();
 		[Version (since = "3.4")]
+#if HAS_CAMEL_3_58
+		public void set_auth_mechanism (string? auth_mechanism);
+#else
 		public void set_auth_mechanism (string auth_mechanism);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.4")]
+#if HAS_CAMEL_3_58
+		public void set_host (string? host);
+#else
 		public void set_host (string host);
+#endif /* HAS_CAMEL_3_58 */
 		[Version (since = "3.4")]
 		public void set_port (uint16 port);
 		public void set_security_method (Camel.NetworkSecurityMethod method);
 		[Version (since = "3.4")]
+#if HAS_CAMEL_3_58
+		public void set_user (string? user);
+#else
 		public void set_user (string user);
+#endif /* HAS_CAMEL_3_58 */
 		[ConcreteAccessor]
 		public abstract string auth_mechanism { get; set construct; }
 		[ConcreteAccessor]
@@ -2462,7 +3212,11 @@ namespace Camel {
 		public void* get_property (string name);
 		[CCode (cname = "camel_cipher_certinfo_set_property")]
 		[Version (since = "3.22")]
+#if HAS_CAMEL_3_58
+		public void set_property (string name, void* value, GLib.DestroyNotify? value_free, Camel.CipherCloneFunc? value_clone);
+#else
 		public void set_property (string name, [CCode (destroy_notify_pos = 2.5)] owned void* value, Camel.CipherCloneFunc? value_clone);
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
 	public struct CipherCertInfoProperty {
@@ -2472,8 +3226,138 @@ namespace Camel {
 		public weak Camel.CipherCloneFunc value_clone;
 	}
 	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
+#if HAS_CAMEL_3_58
+	public struct KeyBlock {
+		public Camel._block_t next;
+		public uint32 used;
+		[CCode (array_length = false, cname = "u.keys")]
+		public weak void*[] u_keys;
+		[CCode (array_length = false, cname = "u.keydata")]
+		public weak char u_keydata[1016];
+	}
+	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
+	public struct KeyRootBlock {
+		public Camel._block_t first;
+		public Camel._block_t last;
+		public Camel._key_t free;
+	}
+	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
+#endif /* HAS_CAMEL_3_58 */
 	[Version (since = "2.24")]
+#if HAS_CAMEL_3_58
+	public struct Msg {
+		public weak Camel.MsgPort reply_port;
+	}
+	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
+	public struct PartitionKey {
+		public Camel._hash_t hashid;
+		public Camel._key_t keyid;
+	}
+	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
+	public struct PartitionKeyBlock {
+		public uint32 used;
+		[CCode (array_length = false)]
+		public weak void*[] keys;
+	}
+	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
+	public struct PartitionMap {
+		public Camel._hash_t hashid;
+		public Camel._block_t blockid;
+	}
+	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
+	public struct PartitionMapBlock {
+		public Camel._block_t next;
+		public uint32 used;
+		[CCode (array_length = false)]
+		public weak void*[] partition;
+	}
+	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
+	public struct ProviderConfEntry {
+		public Camel.ProviderConfType type;
+		public weak string name;
+		public weak string depname;
+		public weak string text;
+		public weak string value;
+	}
+	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
+	public struct ProviderModule {
+		public weak string path;
+		public weak GLib.SList<void*> types;
+		public uint loaded;
+		public static void init ();
+	}
+	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
+	[Version (since = "3.2")]
+	public struct ProviderPortEntry {
+		public int port;
+		public weak string desc;
+		public bool is_ssl;
+	}
+	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
+	[Version (since = "3.4")]
+	public struct SExpResult {
+		public Camel.SExpResultType type;
+		public bool time_generator;
+		public time_t occuring_start;
+		public time_t occuring_end;
+		public void* user_data;
+		public weak GLib.DestroyNotify free_user_data;
+		[CCode (cname = "value.ptrarray")]
+		public weak GLib.GenericArray<void*> value_ptrarray;
+		[CCode (cname = "value.number")]
+		public int value_number;
+		[CCode (cname = "value.string")]
+		public weak string value_string;
+		[CCode (cname = "value.boolean")]
+		public int value_boolean;
+		[CCode (cname = "value.time")]
+		public time_t value_time;
+	}
+	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
+	[Version (since = "3.4")]
+	public struct SExpSymbol {
+		public int type;
+		public weak string name;
+		public void* data;
+	}
+	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
+	[Version (since = "3.4")]
+	public struct SExpTerm {
+		public Camel.SExpTermType type;
+		[CCode (cname = "value.string")]
+		public weak string value_string;
+		[CCode (cname = "value.number")]
+		public int value_number;
+		[CCode (cname = "value.boolean")]
+		public int value_boolean;
+		[CCode (cname = "value.time")]
+		public time_t value_time;
+		[CCode (cname = "value.var")]
+		public Camel.SExpSymbol value_var;
+		[CCode (cname = "value.func.sym")]
+		public Camel.SExpSymbol value_func_sym;
+		[CCode (array_length = false, cname = "value.func.terms")]
+		public Camel.SExpTerm[] value_func_terms;
+		[CCode (cname = "value.func.termcount")]
+		public int value_func_termcount;
+	}
+	[CCode (cheader_filename = "camel/camel.h", copy_function = "g_boxed_copy", free_function = "g_boxed_free", type_id = "camel_service_auth_type_get_type ()")]
+	public struct ServiceAuthType {
+		public weak string name;
+		public weak string description;
+		public weak string authproto;
+		public bool need_password;
+		[Version (since = "3.24")]
+		public Camel.ServiceAuthType? copy ();
+		[Version (since = "3.24")]
+		public void free ();
+	}
+	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
+	[Version (since = "3.58")]
+	public struct StoreDBFolderRecord {
+#else
 	public struct FIRecord {
+#endif /* HAS_CAMEL_3_58 */
 		public weak string folder_name;
 		public uint32 version;
 		public uint32 flags;
@@ -2486,8 +3370,17 @@ namespace Camel {
 		public uint32 visible_count;
 		public uint32 jnd_count;
 		public weak string bdata;
+#if HAS_CAMEL_3_58
+		public uint32 folder_id;
+		public void clear ();
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
+#if HAS_CAMEL_3_58
+	[Version (since = "3.58")]
+	public struct StoreDBMessageRecord {
+		public uint32 folder_id;
+#else
 	public struct KeyBlock {
 		public Camel._block_t next;
 		public uint32 used;
@@ -2505,16 +3398,19 @@ namespace Camel {
 	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
 	[Version (since = "2.24")]
 	public struct MIRecord {
+#endif /* HAS_CAMEL_3_58 */
 		public weak string uid;
 		public uint32 flags;
 		public uint32 msg_type;
 		public uint32 dirty;
+#if !HAS_CAMEL_3_58
 		public bool read;
 		public bool deleted;
 		public bool replied;
 		public bool important;
 		public bool junk;
 		public bool attachment;
+#endif /* !HAS_CAMEL_3_58 */
 		public uint32 size;
 		public int64 dsent;
 		public int64 dreceived;
@@ -2523,9 +3419,11 @@ namespace Camel {
 		public weak string to;
 		public weak string cc;
 		public weak string mlist;
+#if !HAS_CAMEL_3_58
 		public weak string followup_flag;
 		public weak string followup_completed_on;
 		public weak string followup_due_by;
+#endif /* !HAS_CAMEL_3_58 */
 		public weak string part;
 		public weak string labels;
 		public weak string usertags;
@@ -2533,8 +3431,19 @@ namespace Camel {
 		public weak string bdata;
 		public weak string userheaders;
 		public weak string preview;
+#if HAS_CAMEL_3_58
+		public void clear ();
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
+#if HAS_CAMEL_3_58
+	[Version (since = "3.58")]
+	public struct StoreSearchItem {
+		public uint32 folder_id;
+		public weak string uid;
+		public unowned string? get_additional_value (uint32 index);
+		public uint32 get_n_additional_values ();
+#else
 	[Version (since = "2.24")]
 	public struct Msg {
 		public weak Camel.MsgPort reply_port;
@@ -2650,6 +3559,7 @@ namespace Camel {
 		public uint32 total;
 		public static unowned string name (Camel.StoreSummary summary, Camel.StoreInfo info);
 		public static void set_string (Camel.StoreSummary summary, Camel.StoreInfo info, int type, string value);
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", has_type_id = false)]
 	public struct SummaryMessageID {
@@ -2671,8 +3581,12 @@ namespace Camel {
 		public size_t size;
 		public int fd;
 		public void destroy ();
+#if HAS_CAMEL_3_58
+		public GLib.GenericArray<weak string> dup_new_uids (GLib.GenericArray<string> uids);
+#else
 		public static void free_uids (owned GLib.GenericArray<string> uids);
 		public GLib.GenericArray<string> get_new_uids (GLib.GenericArray<string> uids);
+#endif /* HAS_CAMEL_3_58 */
 		public bool save ();
 		public void save_uid (string uid);
 	}
@@ -2781,6 +3695,14 @@ namespace Camel {
 		FULLY,
 		ULTIMATE,
 		TEMPORARY
+#if HAS_CAMEL_3_58
+	}
+	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_CIPHER_CONTEXT_ERROR_KEY_NOT_", has_type_id = false)]
+	[Version (since = "3.50")]
+	public enum CipherContextError {
+		[CCode (cname = "CAMEL_CIPHER_CONTEXT_ERROR_KEY_NOT_FOUND")]
+		CIPHER_CONTEXT_ERROR_KEY_NOT_FOUND
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_CIPHER_HASH_", has_type_id = false)]
 	public enum CipherHash {
@@ -2815,12 +3737,45 @@ namespace Camel {
 		UNKNOWN,
 		NEED_PUBLIC_KEY
 	}
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h", cname = "CmpBodyKind", cprefix = "CMP_BODY_", has_type_id = false)]
+	public enum CmpBodyKind {
+		TEXT,
+		REGEX
+	}
+	[CCode (cheader_filename = "camel/camel.h", cname = "CmpHeaderKind", cprefix = "CMP_HEADER_", has_type_id = false)]
+	public enum CmpHeaderKind {
+		CONTAINS,
+		MATCHES,
+		STARTS_WITH,
+		ENDS_WITH,
+		EXISTS,
+		SOUNDEX,
+		REGEX,
+		FULL_REGEX,
+		HAS_WORDS
+	}
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_COMPARE_CASE_", type_id = "camel_compare_type_get_type ()")]
 	[Version (since = "3.24")]
 	public enum CompareType {
 		INSENSITIVE,
 		SENSITIVE
 	}
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_DB_ERROR_", has_type_id = false)]
+	[Version (since = "3.44")]
+	public enum DBError {
+		[CCode (cname = "CAMEL_DB_ERROR_CORRUPT")]
+		DB_ERROR_CORRUPT
+	}
+	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_DB_SQLIZE_FLAG_", type_id = "camel_db_sqlize_flags_get_type ()")]
+	[Flags]
+	[Version (since = "3.58")]
+	public enum DBSqlizeFlags {
+		FULL,
+		ESCAPE_ONLY
+#else
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_DB_COLUMN_", has_type_id = false)]
 	[Version (since = "3.4")]
 	public enum DBKnownColumnNames {
@@ -2862,6 +3817,7 @@ namespace Camel {
 		VERSION,
 		VISIBLE_COUNT,
 		VUID
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_FETCH_HEADERS_", type_id = "camel_fetch_headers_type_get_type ()")]
 	[Version (since = "3.2")]
@@ -2917,11 +3873,39 @@ namespace Camel {
 		FLAGGED,
 		FLAGS_LAST
 	}
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_FOLDER_PARAM_", type_id = "camel_folder_param_flags_get_type ()")]
+	[Flags]
+	[Version (since = "3.58")]
+	public enum FolderParamFlags {
+		PERSISTENT
+	}
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_FOLDER_SUMMARY_", has_type_id = false)]
 	[Flags]
 	public enum FolderSummaryFlags {
 		DIRTY,
 		IN_MEMORY_ONLY
+#if HAS_CAMEL_3_58
+	}
+	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_FOLDER_THREAD_FLAG_", type_id = "camel_folder_thread_flags_get_type ()")]
+	[Flags]
+	[Version (since = "3.58")]
+	public enum FolderThreadFlags {
+		NONE,
+		SUBJECT,
+		SORT
+	}
+	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_GPG_TRUST_", type_id = "camel_gpg_trust_get_type ()")]
+	[Version (since = "3.50")]
+	public enum GpgTrust {
+		NONE,
+		UNKNOWN,
+		NEVER,
+		MARGINAL,
+		FULL,
+		ULTIMATE
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_HTML_PARSER_", has_type_id = false)]
 	public enum HTMLParserState {
@@ -2957,6 +3941,17 @@ namespace Camel {
 	public enum LockType {
 		READ,
 		WRITE
+#if HAS_CAMEL_3_58
+	}
+	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_MATCH_THREADS_KIND_", type_id = "camel_match_threads_kind_get_type ()")]
+	[Version (since = "3.58")]
+	public enum MatchThreadsKind {
+		NONE,
+		ALL,
+		REPLIES,
+		REPLIES_AND_PARENTS,
+		SINGLE
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_MEMPOOL_ALIGN_", has_type_id = false)]
 	[Version (since = "2.32")]
@@ -3070,6 +4065,7 @@ namespace Camel {
 		SSL_ON_ALTERNATE_PORT,
 		STARTTLS_ON_STANDARD_PORT
 	}
+#if !HAS_CAMEL_3_58
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_PARAM_", has_type_id = false)]
 	[Flags]
 	[Version (since = "2.32")]
@@ -3077,6 +4073,7 @@ namespace Camel {
 		[CCode (cname = "CAMEL_PARAM_PERSISTENT")]
 		PARAM_PERSISTENT
 	}
+#endif /* !HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_PROVIDER_CONF_", type_id = "camel_provider_conf_type_get_type ()")]
 	public enum ProviderConfType {
 		END,
@@ -3088,7 +4085,12 @@ namespace Camel {
 		LABEL,
 		HIDDEN,
 		OPTIONS,
+#if HAS_CAMEL_3_58
+		PLACEHOLDER,
+		ADVANCED_SECTION_START
+#else
 		PLACEHOLDER
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_PROVIDER_", type_id = "camel_provider_flags_get_type ()")]
 	[Flags]
@@ -3204,6 +4206,19 @@ namespace Camel {
 		ASCENDING,
 		DESCENDING
 	}
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_STORE_DB_COUNT_KIND_", type_id = "camel_store_db_count_kind_get_type ()")]
+	[Version (since = "3.58")]
+	public enum StoreDBCountKind {
+		TOTAL,
+		UNREAD,
+		JUNK,
+		DELETED,
+		NOT_JUNK_NOT_DELETED,
+		NOT_JUNK_NOT_DELETED_UNREAD,
+		JUNK_NOT_DELETED
+	}
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_STORE_", type_id = "camel_store_flags_get_type ()")]
 	[Flags]
 	public enum StoreFlags {
@@ -3215,14 +4230,22 @@ namespace Camel {
 		CAN_EDIT_FOLDERS,
 		USE_CACHE_DIR,
 		CAN_DELETE_FOLDERS_AT_ONCE,
+#if HAS_CAMEL_3_58
+		SUPPORTS_INITIAL_SETUP,
+		IS_BUILTIN,
+		USE_TEMP_DIR
+#else
 		SUPPORTS_INITIAL_SETUP
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_STORE_FOLDER_", type_id = "camel_store_get_folder_flags_get_type ()")]
 	[Flags]
 	public enum StoreGetFolderFlags {
 		NONE,
 		CREATE,
+#if !HAS_CAMEL_3_58
 		EXCL,
+#endif /* !HAS_CAMEL_3_58 */
 		BODY_INDEX,
 		PRIVATE
 	}
@@ -3327,6 +4350,16 @@ namespace Camel {
 		JUNK,
 		LAST
 	}
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_VEE_FOLDER_OP_FLAG_", type_id = "camel_vee_folder_op_flags_get_type ()")]
+	[Flags]
+	[Version (since = "3.58")]
+	public enum VeeFolderOpFlags {
+		NONE,
+		SKIP_REBUILD,
+		SKIP_EMIT
+	}
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", cname = "camel_search_flags_t", cprefix = "CAMEL_SEARCH_MATCH_", has_type_id = false)]
 	[Flags]
 	public enum _search_flags_t {
@@ -3343,7 +4376,13 @@ namespace Camel {
 		WORD,
 		STARTS,
 		ENDS,
+#if HAS_CAMEL_3_58
+		SOUNDEX,
+		REGEX_SINGLELINE,
+		REGEX_MULTILINE
+#else
 		SOUNDEX
+#endif /* HAS_CAMEL_3_58 */
 	}
 	[CCode (cheader_filename = "camel/camel.h", cname = "camel_search_t", cprefix = "CAMEL_SEARCH_TYPE_", has_type_id = false)]
 	public enum _search_t {
@@ -3359,14 +4398,22 @@ namespace Camel {
 		COMPLEX,
 		@8BIT
 	}
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_ERROR_", has_type_id = false)]
+#else
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_ERROR_")]
+#endif /* HAS_CAMEL_3_58 */
 	[Version (since = "2.32")]
 	public errordomain Error {
 		[CCode (cname = "CAMEL_ERROR_GENERIC")]
 		ERROR_GENERIC;
 		public static GLib.Quark quark ();
 	}
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_FOLDER_ERROR_", type_id = "camel_folder_error_get_type ()")]
+#else
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_FOLDER_ERROR_")]
+#endif /* HAS_CAMEL_3_58 */
 	[Version (since = "2.32")]
 	public errordomain FolderError {
 		INVALID,
@@ -3379,7 +4426,11 @@ namespace Camel {
 		SUMMARY_INVALID;
 		public static GLib.Quark quark ();
 	}
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_SERVICE_ERROR_", type_id = "camel_service_error_get_type ()")]
+#else
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_SERVICE_ERROR_")]
+#endif /* HAS_CAMEL_3_58 */
 	[Version (since = "2.32")]
 	public errordomain ServiceError {
 		INVALID,
@@ -3389,7 +4440,11 @@ namespace Camel {
 		NOT_CONNECTED;
 		public static GLib.Quark quark ();
 	}
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_STORE_ERROR_", type_id = "camel_store_error_get_type ()")]
+#else
 	[CCode (cheader_filename = "camel/camel.h", cprefix = "CAMEL_STORE_ERROR_")]
+#endif /* HAS_CAMEL_3_58 */
 	[Version (since = "2.32")]
 	public errordomain StoreError {
 		INVALID,
@@ -3404,8 +4459,13 @@ namespace Camel {
 	[Version (since = "2.24")]
 	public delegate int DBCollate (void* enc, int length1, void* data1, int length2, void* data2);
 	[CCode (cheader_filename = "camel/camel.h", instance_pos = 0.9)]
+#if HAS_CAMEL_3_58
+	[Version (since = "3.58")]
+	public delegate bool DBSelectCB ([CCode (array_length_cname = "ncol", array_length_pos = 0.666667)] string[] colvalues, [CCode (array_length_cname = "ncol", array_length_pos = 0.666667)] string[] colnames);
+#else
 	[Version (since = "2.24")]
 	public delegate int DBSelectCB ([CCode (array_length_cname = "ncol", array_length_pos = 0.666667)] string[] colvalues, [CCode (array_length_cname = "ncol", array_length_pos = 0.666667)] string[] colnames);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", instance_pos = 2.9)]
 	[Version (since = "3.26")]
 	public delegate bool DataCacheRemoveFunc (Camel.DataCache cdc, string filename);
@@ -3419,18 +4479,36 @@ namespace Camel {
 	public delegate void FilterStatusFunc (Camel.FilterDriver driver, void* status, int pc, string desc);
 	[CCode (cheader_filename = "camel/camel.h", instance_pos = 1.9)]
 	public delegate void FilterSystemBeepFunc (Camel.FilterDriver driver);
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h", has_target = false)]
+	public delegate int64 FolderThreadInt64Func (void* item);
+	[CCode (cheader_filename = "camel/camel.h", has_target = false)]
+	public delegate unowned string FolderThreadStrFunc (void* item);
+	[CCode (cheader_filename = "camel/camel.h", has_target = false)]
+	public delegate uint64 FolderThreadUint64Func (void* item);
+	[CCode (cheader_filename = "camel/camel.h", has_target = false)]
+	public delegate void FolderThreadVoidFunc (void* item);
+#else
 	[CCode (cheader_filename = "camel/camel.h", instance_pos = 2.9)]
 	public delegate void ForeachInfoData (Camel.VeeMessageInfoData mi_data, Camel.Folder subfolder);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", instance_pos = 3.9)]
 	[Version (since = "3.34")]
 	public delegate bool ForeachPartFunc (Camel.MimeMessage message, Camel.MimePart part, Camel.MimePart? parent_part);
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h", instance_pos = 1.9)]
+	[Version (since = "3.52")]
+	public delegate string? GeneratePreviewFunc (void* part);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", instance_pos = 2.9)]
 	public delegate string IndexNorm (Camel.Index index, string word);
 	[CCode (cheader_filename = "camel/camel.h", instance_pos = 2.9)]
 	[Version (since = "3.36")]
 	public delegate bool MessageContentInfoTraverseCallback (Camel.MessageContentInfo ci, int depth);
+#if !HAS_CAMEL_3_58
 	[CCode (cheader_filename = "camel/camel.h", has_target = false)]
 	public delegate int ProviderAutoDetectFunc (Camel.URL url, out GLib.HashTable<string,string>? auto_detected) throws GLib.Error;
+#endif /* !HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", instance_pos = 2.9)]
 	[Version (since = "3.4")]
 	public delegate unowned Camel.SExpResult? SExpFunc (Camel.SExp sexp, [CCode (array_length_cname = "argc", array_length_pos = 1.5)] Camel.SExpResult[] argv);
@@ -3440,6 +4518,11 @@ namespace Camel {
 	[CCode (cheader_filename = "camel/camel.h", instance_pos = 2.9)]
 	[Version (since = "3.2")]
 	public delegate void SessionCallback (Camel.Session session, GLib.Cancellable? cancellable) throws GLib.Error;
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h", instance_pos = 2.9)]
+	[Version (since = "3.58")]
+	public delegate bool StoreDBReadMessagesFunc (Camel.StoreDB storedb, Camel.StoreDBMessageRecord record);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", has_target = false)]
 	public delegate void TextIndexFunc (Camel.TextIndex idx, string word, string buffer);
 	[CCode (cheader_filename = "camel/camel.h", has_target = false)]
@@ -3458,6 +4541,7 @@ namespace Camel {
 	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_CIPHER_CERT_INFO_PROPERTY_SIGNERS_ALT_EMAILS")]
 	[Version (since = "3.28")]
 	public const string CIPHER_CERT_INFO_PROPERTY_SIGNERS_ALT_EMAILS;
+#if !HAS_CAMEL_3_58
 	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_DB_FILE")]
 	[Version (since = "2.24")]
 	public const string DB_FILE;
@@ -3476,6 +4560,7 @@ namespace Camel {
 	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_DB_SLEEP_INTERVAL")]
 	[Version (since = "2.24")]
 	public const int DB_SLEEP_INTERVAL;
+#endif /* !HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_DEBUG_IMAP")]
 	public const string DEBUG_IMAP;
 	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_DEBUG_IMAP_FOLDER")]
@@ -3530,6 +4615,11 @@ namespace Camel {
 	public const int LOCK_DOT_STALE;
 	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_LOCK_RETRY")]
 	public const int LOCK_RETRY;
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_MAX_PREVIEW_LENGTH")]
+	[Version (since = "3.52")]
+	public const int MAX_PREVIEW_LENGTH;
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_MESSAGE_DATE_CURRENT")]
 	public const int MESSAGE_DATE_CURRENT;
 	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_MESSAGE_SYSTEM_MASK")]
@@ -3576,6 +4666,17 @@ namespace Camel {
 	public const string RECIPIENT_TYPE_RESENT_TO;
 	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_RECIPIENT_TYPE_TO")]
 	public const string RECIPIENT_TYPE_TO;
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_SESSION_BOOK_UID_ANY")]
+	[Version (since = "3.44")]
+	public const string SESSION_BOOK_UID_ANY;
+	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_SESSION_BOOK_UID_COMPLETION")]
+	[Version (since = "3.44")]
+	public const string SESSION_BOOK_UID_COMPLETION;
+	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_STORE_DB_FILE")]
+	[Version (since = "3.58")]
+	public const string STORE_DB_FILE;
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_STORE_INFO_FOLDER_TYPE_BIT")]
 	public const int STORE_INFO_FOLDER_TYPE_BIT;
 	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_STORE_INFO_FOLDER_TYPE_MASK")]
@@ -3590,8 +4691,10 @@ namespace Camel {
 	public const string STORE_SETUP_SENT_FOLDER;
 	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_STORE_SETUP_TEMPLATES_FOLDER")]
 	public const string STORE_SETUP_TEMPLATES_FOLDER;
+#if !HAS_CAMEL_3_58
 	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_UNMATCHED_NAME")]
 	public const string UNMATCHED_NAME;
+#endif /* !HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_URL_HIDE_ALL")]
 	public const int URL_HIDE_ALL;
 	[CCode (cheader_filename = "camel/camel.h", cname = "CAMEL_URL_PART_AUTH")]
@@ -3630,12 +4733,30 @@ namespace Camel {
 	[Version (since = "3.16")]
 	public static unowned GLib.Binding binding_bind_property_with_closures (GLib.Object source, string source_property, GLib.Object target, string target_property, GLib.BindingFlags flags, GLib.Closure transform_to, GLib.Closure transform_from);
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	[Version (replacement = "Charset.best")]
+	public static unowned string? charset_best ([CCode (array_length_cname = "len", array_length_pos = 1.1)] char[] @in);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "Charset.iso_to_windows")]
+	public static unowned string charset_iso_to_windows (string isocharset);
+	[CCode (cheader_filename = "camel/camel.h")]
+#endif /* HAS_CAMEL_3_58 */
 	[Version (since = "3.22")]
 	public static bool cipher_can_load_photos ();
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static int cipher_canonical_to_stream (Camel.MimePart part, uint32 flags, Camel.Stream ostream, GLib.Cancellable? cancellable = null) throws GLib.Error;
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	[Version (replacement = "ContentDisposition.decode")]
+	public static Camel.ContentDisposition content_disposition_decode (string @in);
+	[CCode (cheader_filename = "camel/camel.h")]
+#endif /* HAS_CAMEL_3_58 */
 	public static string content_transfer_encoding_decode (string @in);
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "ContentType.decode")]
+	public static Camel.ContentType content_type_decode (string @in);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static bool debug (string mode);
 	[CCode (cheader_filename = "camel/camel.h")]
@@ -3645,10 +4766,18 @@ namespace Camel {
 	public static void debug_end ();
 	[CCode (cheader_filename = "camel/camel.h")]
 	[Version (since = "3.12")]
+#if HAS_CAMEL_3_58
+	public static GLib.StringBuilder? debug_get_backtrace ();
+#else
 	public static GLib.StringBuilder debug_get_backtrace ();
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	[Version (since = "3.30")]
+#if HAS_CAMEL_3_58
+	public static GLib.StringBuilder? debug_get_raw_backtrace ();
+#else
 	public static GLib.StringBuilder debug_get_raw_backtrace ();
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static void debug_init ();
 	[CCode (cheader_filename = "camel/camel.h")]
@@ -3669,13 +4798,26 @@ namespace Camel {
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static int file_util_decode_fixed_string (void* @in, string str, size_t len);
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	[Version (since = "3.50")]
+	public static int file_util_decode_gint64 (void* @in, int64 dest);
+	[CCode (cheader_filename = "camel/camel.h")]
+#endif /* HAS_CAMEL_3_58 */
 	public static int file_util_decode_gsize (void* @in, size_t dest);
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	public static int file_util_decode_off_t (void* @in, off_t dest);
+#else
 	public static int file_util_decode_off_t (void* @in, size_t dest);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static int file_util_decode_string (void* @in, string str);
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	public static int file_util_decode_time_t (void* @in, time_t dest);
+#else
 	public static int file_util_decode_time_t (void* @in, long dest);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static int file_util_decode_uint32 (void* @in, uint32 dest);
 	[CCode (cheader_filename = "camel/camel.h")]
@@ -3683,19 +4825,40 @@ namespace Camel {
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static int file_util_encode_fixed_string (void* @out, string str, size_t len);
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	[Version (since = "3.50")]
+	public static int file_util_encode_gint64 (void* @out, int64 value);
+	[CCode (cheader_filename = "camel/camel.h")]
+#endif /* HAS_CAMEL_3_58 */
 	public static int file_util_encode_gsize (void* @out, size_t value);
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	public static int file_util_encode_off_t (void* @out, off_t value);
+#else
 	public static int file_util_encode_off_t (void* @out, size_t value);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static int file_util_encode_string (void* @out, string str);
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	public static int file_util_encode_time_t (void* @out, time_t value);
+#else
 	public static int file_util_encode_time_t (void* @out, long value);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static int file_util_encode_uint32 (void* @out, uint32 value);
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static string file_util_safe_filename (string name);
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static string file_util_savename (string filename);
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "FolderError.quark")]
+	public static GLib.Quark folder_error_quark ();
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "FolderInfo.build")]
+	public static Camel.FolderInfo folder_info_build (GLib.GenericArray<Camel.FolderInfo> folders, string namespace_, char separator, bool short_names);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	[Version (since = "2.22")]
 	public static void freeaddrinfo (void* host);
@@ -3703,9 +4866,36 @@ namespace Camel {
 	[Version (since = "2.22")]
 	public static void* getaddrinfo (string name, string service, void* hints, GLib.Cancellable? cancellable = null) throws GLib.Error;
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	[Version (replacement = "HeaderAddress.decode")]
+	public static Camel.HeaderAddress header_address_decode (string @in, string charset);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "HeaderAddress.fold")]
+	public static string header_address_fold (string @in, size_t headerlen);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "HeaderAddress.list_append")]
+	public static void header_address_list_append ([CCode (array_length = false, array_null_terminated = true)] Camel.HeaderAddress[] addrlistp, Camel.HeaderAddress addr);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "HeaderAddress.list_append_list")]
+	public static void header_address_list_append_list ([CCode (array_length = false, array_null_terminated = true)] Camel.HeaderAddress[] addrlistp, [CCode (array_length = false, array_null_terminated = true)] Camel.HeaderAddress[] addrs);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "HeaderAddress.list_clear")]
+	public static void header_address_list_clear ([CCode (array_length = false, array_null_terminated = true)] Camel.HeaderAddress[] addrlistp);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "HeaderAddress.list_encode")]
+	public static string header_address_list_encode ([CCode (array_length = false, array_null_terminated = true)] Camel.HeaderAddress[] addrlist);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "HeaderAddress.list_format")]
+	public static string header_address_list_format ([CCode (array_length = false, array_null_terminated = true)] Camel.HeaderAddress[] addrlist);
+	[CCode (cheader_filename = "camel/camel.h")]
+#endif /* HAS_CAMEL_3_58 */
 	public static string header_contentid_decode (string @in);
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	public static time_t header_decode_date (string str, int tz_offset);
+#else
 	public static long header_decode_date (string str, int tz_offset);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static int header_decode_int (string @in);
 	[CCode (cheader_filename = "camel/camel.h")]
@@ -3719,7 +4909,11 @@ namespace Camel {
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static string header_format_ctext (string @in, string default_charset);
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	public static string header_format_date (time_t date, int tz_offset);
+#else
 	public static string header_format_date (long date, int tz_offset);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static string header_location_decode (string @in);
 	[CCode (cheader_filename = "camel/camel.h")]
@@ -3729,7 +4923,11 @@ namespace Camel {
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static string header_msgid_decode (string @in);
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	public static string header_msgid_generate (string? domain);
+#else
 	public static string header_msgid_generate (string domain);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static GLib.SList<string> header_newsgroups_decode (string @in);
 	[CCode (cheader_filename = "camel/camel.h")]
@@ -3744,7 +4942,17 @@ namespace Camel {
 	public static string? headers_dup_mailing_list (Camel.NameValueArray headers);
 	[CCode (cheader_filename = "camel/camel.h")]
 	[Version (since = "3.16")]
+#if HAS_CAMEL_3_58
+	public static string? host_idna_to_ascii (string? host);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (since = "3.54")]
+	public static bool hostname_utils_host_is_in_domain (string? host, string? domain);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (since = "3.44")]
+	public static bool hostname_utils_requires_ascii (string hostname);
+#else
 	public static string host_idna_to_ascii (string host);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static unowned string iconv_charset_language (string charset);
 	[CCode (cheader_filename = "camel/camel.h")]
@@ -3756,7 +4964,11 @@ namespace Camel {
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static int init (string certdb_dir, bool nss_init);
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	public static void localtime_with_offset (time_t tt, [CCode (type = "tm*")] Posix.tm tm, int offset);
+#else
 	public static void localtime_with_offset (long tt, [CCode (type = "tm*")] Posix.tm tm, int offset);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static int lock_dot (string path) throws GLib.Error;
 	[CCode (cheader_filename = "camel/camel.h")]
@@ -3771,7 +4983,11 @@ namespace Camel {
 	public static int lock_helper_unlock (int lockid);
 	[CCode (cheader_filename = "camel/camel.h")]
 	[Version (since = "3.4")]
+#if HAS_CAMEL_3_58
+	public static time_t mktime_utc ([CCode (type = "tm*")] Posix.tm tm);
+#else
 	public static long mktime_utc ([CCode (type = "tm*")] Posix.tm tm);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static int movemail (string source, string dest) throws GLib.Error;
 	[CCode (cheader_filename = "camel/camel.h")]
@@ -3784,20 +5000,53 @@ namespace Camel {
 	[Version (since = "3.6")]
 	public static void pointer_tracker_untrack (void* ptr);
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	[Version (replacement = "Provider.get")]
+	public static Camel.Provider provider_get (string protocol) throws GLib.Error;
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "Provider.init")]
+	public static void provider_init ();
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "Provider.list")]
+	public static GLib.List<weak Camel.Provider> provider_list (bool load);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "Provider.load")]
+	public static bool provider_load (string path) throws GLib.Error;
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "ProviderModule.init")]
+	public static void provider_module_init ();
+	[CCode (cheader_filename = "camel/camel.h")]
+	public static unowned string? pstring_add (string? string, bool own);
+#else
 	public static unowned string pstring_add (string string, bool own);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	[Version (since = "3.22")]
+#if HAS_CAMEL_3_58
+	public static bool pstring_contains (string? string);
+#else
 	public static bool pstring_contains (string string);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	[Version (since = "3.6")]
 	public static void pstring_dump_stat ();
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	public static void pstring_free (string? string);
+#else
 	public static void pstring_free (string string);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	[Version (since = "2.24")]
+#if HAS_CAMEL_3_58
+	public static unowned string? pstring_peek (string? string);
+	[CCode (cheader_filename = "camel/camel.h")]
+	public static unowned string? pstring_strdup (string? string);
+#else
 	public static unowned string pstring_peek (string string);
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static unowned string pstring_strdup (string string);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static size_t quoted_decode_step ([CCode (array_length_cname = "len", array_length_pos = 1.5, array_length_type = "gsize")] uint8[] @in, [CCode (array_length = false)] ref uint8[] @out, [CCode (array_length_cname = "savestate", array_length_pos = 2.5)] ref int[] saveme);
 	[CCode (cheader_filename = "camel/camel.h")]
@@ -3829,16 +5078,43 @@ namespace Camel {
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static bool search_header_match (string value, string match, Camel._search_match_t how, Camel._search_t type, string default_charset);
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	[Version (since = "3.58")]
+	public static time_t search_util_add_months (time_t t, int months);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (since = "3.58")]
+	public static int search_util_compare_date (int64 datetime1, int64 datetime2);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (since = "3.58")]
+	public static uint64 search_util_hash_message_id (string message_id, bool needs_decode);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (since = "3.58")]
+	public static time_t search_util_make_time (int argc, Camel.SExpResult argv);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (since = "3.58")]
+	public static int64 search_util_str_to_time (string? str);
+	[CCode (cheader_filename = "camel/camel.h")]
+#endif /* HAS_CAMEL_3_58 */
 	public static void search_words_free (void* words);
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static void* search_words_simple (void* words);
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static void* search_words_split (uint8 @in);
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "ServiceError.quark")]
+	public static GLib.Quark service_error_quark ();
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	[Version (since = "2.24")]
 	public static void shutdown ();
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	[Version (replacement = "StoreError.quark")]
+	public static GLib.Quark store_error_quark ();
+#else
 	public static unowned string store_info_path (Camel.StoreSummary summary, Camel.StoreInfo info);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static int strcase_equal (void* a, void* b);
 	[CCode (cheader_filename = "camel/camel.h")]
@@ -3846,6 +5122,11 @@ namespace Camel {
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static unowned string strdown (string str);
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	[Version (since = "3.44")]
+	public static bool string_is_all_ascii (string? str);
+	[CCode (cheader_filename = "camel/camel.h")]
+#endif /* HAS_CAMEL_3_58 */
 	public static string strstrcase (string haystack, string needle);
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static Camel.MessageFlags system_flag (string name);
@@ -3855,7 +5136,17 @@ namespace Camel {
 	public static string text_to_html (string @in, Camel.MimeFilterToHTMLFlags flags, uint32 color);
 	[CCode (cheader_filename = "camel/camel.h")]
 	[Version (since = "3.24")]
+#if HAS_CAMEL_3_58
+	public static time_t time_value_apply (time_t src_time, Camel.TimeUnit unit, int value);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "TransferEncoding.from_string")]
+	public static Camel.TransferEncoding transfer_encoding_from_string (string string);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "TransferEncoding.to_string")]
+	public static unowned string transfer_encoding_to_string (Camel.TransferEncoding encoding);
+#else
 	public static long time_value_apply (long src_time, Camel.TimeUnit unit, int value);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static string ucs2_utf8 (string ptr);
 	[CCode (cheader_filename = "camel/camel.h")]
@@ -3866,6 +5157,35 @@ namespace Camel {
 	public static void unlock_flock (int fd);
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static void unlock_folder (string path, int fd);
+#if HAS_CAMEL_3_58
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "URL.addrspec_end")]
+	public static bool url_addrspec_end (string @in, string pos, string inend, Camel.UrlMatch match);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "URL.addrspec_start")]
+	public static bool url_addrspec_start (string @in, string pos, string inend, Camel.UrlMatch match);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "URL.decode")]
+	public static void url_decode (string part);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "URL.decode_path")]
+	public static string url_decode_path (string path);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "URL.encode")]
+	public static string url_encode (string part, string? escape_extra);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "URL.file_end")]
+	public static bool url_file_end (string @in, string pos, string inend, Camel.UrlMatch match);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "URL.file_start")]
+	public static bool url_file_start (string @in, string pos, string inend, Camel.UrlMatch match);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "URL.web_end")]
+	public static bool url_web_end (string @in, string pos, string inend, Camel.UrlMatch match);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (replacement = "URL.web_start")]
+	public static bool url_web_start (string @in, string pos, string inend, Camel.UrlMatch match);
+#endif /* HAS_CAMEL_3_58 */
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static unowned string ustrstrcase (string haystack, string needle);
 	[CCode (cheader_filename = "camel/camel.h")]
@@ -3911,6 +5231,17 @@ namespace Camel {
 	[Version (since = "3.40")]
 	public static GLib.GenericArray<weak string> util_get_directory_variants (string main_path, string replace_prefix, bool with_modules_dir);
 	[CCode (cheader_filename = "camel/camel.h")]
+#if HAS_CAMEL_3_58
+	[Version (since = "3.44")]
+	public static string? utils_sanitize_ascii_domain_in_address (string? email_address, bool do_format);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (since = "3.44")]
+	public static bool utils_sanitize_ascii_domain_in_url (Camel.URL url);
+	[CCode (cheader_filename = "camel/camel.h")]
+	[Version (since = "3.44")]
+	public static string? utils_sanitize_ascii_domain_in_url_str (string? url_str);
+	[CCode (cheader_filename = "camel/camel.h")]
+#endif /* HAS_CAMEL_3_58 */
 	public static size_t uudecode_step ([CCode (array_length_cname = "inlen", array_length_pos = 1.5, array_length_type = "gsize")] uint8[] @in, [CCode (array_length = false)] ref uint8[] @out, [CCode (array_length_cname = "state", array_length_pos = 2.5)] ref uint32[] save);
 	[CCode (cheader_filename = "camel/camel.h")]
 	public static size_t uuencode_close ([CCode (array_length_cname = "len", array_length_pos = 1.5, array_length_type = "gsize")] uint8[] @in, [CCode (array_length = false)] ref uint8[] @out, [CCode (array_length = false)] ref uint8 uubuf[60], [CCode (array_length_cname = "state", array_length_pos = 3.5)] ref uint32[] save);
